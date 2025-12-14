@@ -1,188 +1,188 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 89, 
-    "pseudocode_lines": 59, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 249, 
-    "assembly_lines": 190, 
-    "suspect_count": 2, 
+    "assembly_lines": 190,
+    "complexity_score": 89,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 59,
+    "suspect_count": 2,
     "suspect_types": [
-      "sub_artifact", 
+      "sub_artifact",
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
-      "addr": "005f2e90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Object_grounded_Hit_a_ke_0061c7a6", 
-      "addr": "0061c7a6", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_VertexCount", 
-      "addr": "01626408", 
-      "value": null
-    }, 
-    {
-      "type": "SVertexData[20000]", 
-      "name": "g_LoadedVertices", 
-      "addr": "0162640c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01626410", 
-      "addr": "01626410", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LoadedVertices[0].vertex.z", 
-      "addr": "01626414", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 42, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "local_44 = SUB84 /* extract 2-byte value */(dVar3,0);"
-    }, 
-    {
-      "line": 47, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if (dVar3 < (double)CONCAT44 /* combine 2-byte values */(uStack_28,local_2c)) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00466a30", 
-    "signature": "void shape_design.c_groundCenterObject_FUN_00466a30(void)", 
-    "address_range": [
-      [
-        "00466a30", 
-        "00466c60"
-      ]
-    ], 
-    "name": "shape_design.c_groundCenterObject_FUN_00466a30"
-  }, 
-  "stack_frame": {
-    "local_size": 104, 
-    "variables": [
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 104, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 249
+  },
   "cross_references": [
     {
-      "from_addr": "0046f6e6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
-      "addr": "0046f290"
+      "addr": "0046f290",
+      "from_addr": "0046f6e6",
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00466a30",
+    "address_range": [
+      [
+        "00466a30",
+        "00466c60"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_groundCenterObject_FUN_00466a30",
+    "signature": "void shape_design.c_groundCenterObject_FUN_00466a30(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    },
+    {
+      "addr": "005f2e90",
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061c7a6",
+      "name": "s_Object_grounded_Hit_a_ke_0061c7a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01626408",
+      "name": "g_VertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0162640c",
+      "name": "g_LoadedVertices",
+      "type": "SVertexData[20000]",
+      "value": null
+    },
+    {
+      "addr": "01626410",
+      "name": "DAT_01626410",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626414",
+      "name": "g_LoadedVertices[0].vertex.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 104,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 42,
+      "match": "SUB84",
+      "text": "local_44 = SUB84 /* extract 2-byte value */(dVar3,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 47,
+      "match": "CONCAT44",
+      "text": "if (dVar3 < (double)CONCAT44 /* combine 2-byte values */(uStack_28,local_2c)) {",
+      "type": "concat_artifact"
     }
   ]
 }

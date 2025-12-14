@@ -43,19 +43,19 @@ section .text
     MOV dword ptr [EBX],EDX             ; 0060ae7a
     MOV EBX,dword ptr [ESP + 0x24]      ; 0060ae7c
     INC ECX                             ; 0060ae80
-    MOV BL,byte ptr [EBX + 0x68543c]    ; 0060ae81 | char[36] g_AlphaNumericCharacters2
+    MOV BL,byte ptr [EBX + 0x68543c]    ; 0060ae81 | g_AlphaNumericCharacters2
     MOV byte ptr [ECX + -0x1],BL        ; 0060ae87
     TEST EAX,EAX                        ; 0060ae8a
-    JNZ 0x0060ae6e                      ; 0060ae8c | LAB_0060ae6e
-        ;   XREF to: 0060ae6e (CONDITIONAL_JUMP)
+    JNZ 0x0060ae6e                      ; 0060ae8c
+        ;   XREF to: 0060ae6e (CONDITIONAL_JUMP)  ; LAB_0060ae6e
     INC ESI                             ; 0060ae8e
         ;   Label: LAB_0060ae8e
     MOV AL,byte ptr [ECX + -0x1]        ; 0060ae8f
     DEC ECX                             ; 0060ae92
     MOV byte ptr [ESI + -0x1],AL        ; 0060ae93
     TEST AL,AL                          ; 0060ae96
-    JNZ 0x0060ae8e                      ; 0060ae98 | LAB_0060ae8e
-        ;   XREF to: 0060ae8e (CONDITIONAL_JUMP)
+    JNZ 0x0060ae8e                      ; 0060ae98
+        ;   XREF to: 0060ae8e (CONDITIONAL_JUMP)  ; LAB_0060ae8e
     MOV EAX,EBP                         ; 0060ae9a
     ADD ESP,0x28                        ; 0060ae9c
     POP EBP                             ; 0060ae9f

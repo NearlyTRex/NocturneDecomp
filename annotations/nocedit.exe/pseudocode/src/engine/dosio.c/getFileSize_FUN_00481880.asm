@@ -39,17 +39,17 @@ section .text
     PUSH ECX                            ; 00481895
     LEA EAX,[ESP + 0x8]                 ; 00481896
     PUSH EAX                            ; 0048189a
-    CALL engine_dosio.c_getRelativeFilePath_FUN_004816c0 ; 0048189b | void engine_dosio.c_getRelativeFilePath_FUN_004816c0(char * dest_path, char * directory, char * filename)
-        ;   XREF to: 004816c0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_getRelativeFilePath_FUN_004816c0 ; 0048189b
+        ;   XREF to: 004816c0 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_getRelativeFilePath_FUN_004816c0(char * dest_path, char * directory, char * filename)
     ADD ESP,0xc                         ; 004818a0
     MOV EAX,ESP                         ; 004818a3
     PUSH EAX                            ; 004818a5
-    CALL engine_dosio.c_findFile_FUN_00481760 ; 004818a6 | int engine_dosio.c_findFile_FUN_00481760(SFoundFileInfo * context)
-        ;   XREF to: 00481760 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_findFile_FUN_00481760 ; 004818a6
+        ;   XREF to: 00481760 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFile_FUN_00481760(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 004818ab
     TEST EAX,EAX                        ; 004818ae
-    JZ 0x004818c0                       ; 004818b0 | LAB_004818c0
-        ;   XREF to: 004818c0 (CONDITIONAL_JUMP)
+    JZ 0x004818c0                       ; 004818b0
+        ;   XREF to: 004818c0 (CONDITIONAL_JUMP)  ; LAB_004818c0
     MOV EAX,dword ptr [ESP + 0x204]     ; 004818b2
     ADD ESP,0x214                       ; 004818b9
     RET                                 ; 004818bf

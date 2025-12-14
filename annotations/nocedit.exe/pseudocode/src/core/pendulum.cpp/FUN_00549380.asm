@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x30d5018                   ; 00549380 | CDemonActorType g_CPendulumClassInfo
+    MOV EAX,0x30d5018                   ; 00549380 | g_CPendulumClassInfo
         ;   Label: core_pendulum.cpp_FUN_00549380
     RET                                 ; 00549385
 

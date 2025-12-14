@@ -110,7 +110,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
                   break;
                 case 2:
                   puVar2 = (uint *)piVar9[0x1a];
-                  puVar3 = (uint *)pCVar4->data_ptr;
+                  puVar3 = pCVar4->data_ptr;
                   if (puVar3 != puVar2) {
                     *puVar3 = *puVar2;
                     puVar3[1] = puVar2[1];
@@ -123,7 +123,7 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
                 case 0xb:
                 case 0xc:
                   pcVar11 = (char *)piVar9[0x1a];
-                  pcVar12 = (char *)pCVar4->data_ptr;
+                  pcVar12 = pCVar4->data_ptr;
                   do {
                     cVar1 = *pcVar11;
                     *pcVar12 = cVar1;
@@ -141,13 +141,11 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
                   break;
                 case 6:
                   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-                            ((CKeyFramedModelInstance *)pCVar4->data_ptr,
-                             (char *)(piVar9[0x1a] + 0x78));
+                            (pCVar4->data_ptr,(char *)(piVar9[0x1a] + 0x78));
                   break;
                 case 7:
                   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-                            ((CDeformableModelInstance *)pCVar4->data_ptr,
-                             (char *)(piVar9[0x1a] + 0x2260));
+                            (pCVar4->data_ptr,(char *)(piVar9[0x1a] + 0x2260));
                 }
               }
               local_20 = (CDemonActor *)(local_20->actor_name + 1);

@@ -1,107 +1,107 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 8, 
-    "global_count": 2, 
-    "total_lines": 24, 
-    "assembly_lines": 17, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_MultibyteLocaleActive", 
-      "addr": "03f9c020", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_LeadByteTable", 
-      "addr": "03f9c031", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00605a40", 
-    "signature": "int crt_locale.c_mblen_FUN_00605a40(char * mb_string)", 
-    "address_range": [
-      [
-        "00605a40", 
-        "00605a6b"
-      ]
-    ], 
-    "name": "crt_locale.c_mblen_FUN_00605a40"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "mb_string"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 17,
+    "complexity_score": 7,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
   "cross_references": [
     {
-      "from_addr": "005feca6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_file.c_makepath_FUN_005febfc", 
-      "addr": "005febfc"
-    }, 
+      "addr": "005febfc",
+      "from_addr": "005feca6",
+      "name": "crt_file.c_makepath_FUN_005febfc",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060b21e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_locale.c_mbtowc_FUN_0060b1c0", 
-      "addr": "0060b1c0"
-    }, 
+      "addr": "0060b1c0",
+      "from_addr": "0060b21e",
+      "name": "crt_locale.c_mbtowc_FUN_0060b1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060f318", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_locale.c_toupper_multibyte_FUN_0060f300", 
-      "addr": "0060f300"
-    }, 
+      "addr": "0060f300",
+      "from_addr": "0060f318",
+      "name": "crt_locale.c_toupper_multibyte_FUN_0060f300",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060e35b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_char_in_set_FUN_0060e340", 
-      "addr": "0060e340"
-    }, 
+      "addr": "0060e340",
+      "from_addr": "0060e35b",
+      "name": "crt_string.c_char_in_set_FUN_0060e340",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060c7ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_compare_mb_chars_ci_FUN_0060c790", 
-      "addr": "0060c790"
-    }, 
+      "addr": "0060c790",
+      "from_addr": "0060c7ac",
+      "name": "crt_string.c_compare_mb_chars_ci_FUN_0060c790",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00605eff", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_mbstrnbytes_FUN_00605ec0", 
-      "addr": "00605ec0"
-    }, 
+      "addr": "00605ec0",
+      "from_addr": "00605eff",
+      "name": "crt_string.c_mbstrnbytes_FUN_00605ec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00605e6f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_mbstrnlen_FUN_00605e50", 
-      "addr": "00605e50"
-    }, 
+      "addr": "00605e50",
+      "from_addr": "00605e6f",
+      "name": "crt_string.c_mbstrnlen_FUN_00605e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060e609", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0", 
-      "addr": "0060e5d0"
+      "addr": "0060e5d0",
+      "from_addr": "0060e609",
+      "name": "crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00605a40",
+    "address_range": [
+      [
+        "00605a40",
+        "00605a6b"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_locale.c_mblen_FUN_00605a40",
+    "signature": "int crt_locale.c_mblen_FUN_00605a40(char * mb_string)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f9c020",
+      "name": "g_MultibyteLocaleActive",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9c031",
+      "name": "g_LeadByteTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mb_string",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

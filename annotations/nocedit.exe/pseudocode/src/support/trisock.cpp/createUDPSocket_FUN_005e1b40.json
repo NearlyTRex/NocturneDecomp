@@ -1,61 +1,61 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 26, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_wsock32.c_shutdown", 
-      "addr": "00610f28"
-    }, 
-    {
-      "name": "support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20", 
-      "addr": "005e1d20"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005e1b40", 
-    "signature": "int support_trisock.cpp_createUDPSocket_FUN_005e1b40(SSocketContext * socket_ctx)", 
-    "address_range": [
-      [
-        "005e1b40", 
-        "005e1b67"
-      ]
-    ], 
-    "name": "support_trisock.cpp_createUDPSocket_FUN_005e1b40"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SSocketContext *", 
-        "size": 4, 
-        "name": "socket_ctx"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 18,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
   "cross_references": [
     {
-      "from_addr": "0053fbeb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_initializeNetwork_FUN_0053fbc0", 
-      "addr": "0053fbc0"
+      "addr": "0053fbc0",
+      "from_addr": "0053fbeb",
+      "name": "core_netgame.cpp_initializeNetwork_FUN_0053fbc0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005e1b40",
+    "address_range": [
+      [
+        "005e1b40",
+        "005e1b67"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_createUDPSocket_FUN_005e1b40",
+    "signature": "int support_trisock.cpp_createUDPSocket_FUN_005e1b40(SSocketContext * socket_ctx)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610f28",
+      "name": "crt_wsock32.c_shutdown"
+    },
+    {
+      "addr": "005e1d20",
+      "name": "support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "socket_ctx",
+        "offset": 4,
+        "size": 4,
+        "type": "SSocketContext *"
+      }
+    ]
+  },
+  "suspects": []
 }

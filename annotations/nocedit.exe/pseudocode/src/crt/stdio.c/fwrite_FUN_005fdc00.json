@@ -1,348 +1,348 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 253, 
-    "pseudocode_lines": 113, 
-    "cross_reference_count": 23, 
-    "global_count": 3, 
-    "total_lines": 360, 
-    "assembly_lines": 247, 
-    "suspect_count": 13, 
+    "assembly_lines": 247,
+    "complexity_score": 253,
+    "cross_reference_count": 23,
+    "function_call_count": 7,
+    "global_count": 3,
+    "pseudocode_lines": 113,
+    "suspect_count": 13,
     "suspect_types": [
-      "unaffected_reg", 
+      "unaffected_reg",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_setErrno_FUN_00602790", 
-      "addr": "00602790"
-    }, 
-    {
-      "name": "crt_stdio.c_fflushInternal_FUN_006039d0", 
-      "addr": "006039d0"
-    }, 
-    {
-      "name": "crt_stdio.c_fputc_FUN_006007a0", 
-      "addr": "006007a0"
-    }, 
-    {
-      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0", 
-      "addr": "006027e0"
-    }, 
-    {
-      "name": "crt_stdio.c_write_FUN_006038c0", 
-      "addr": "006038c0"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }, 
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }, 
-    {
-      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
-      "addr": "00684ee8", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
-      "addr": "00684eec", 
-      "value": "00602434"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EBP;"
-    }, 
-    {
-      "line": 41, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "bVar7 = *(byte *)((int)&file->_flag + 1);"
-    }, 
-    {
-      "line": 45, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar7;"
-    }, 
-    {
-      "line": 46, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar7 | 1;"
-    }, 
-    {
-      "line": 59, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "bVar7 = *(byte *)((int)&file->_flag + 1) & 0xfa;"
-    }, 
-    {
-      "line": 60, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar7;"
-    }, 
-    {
-      "line": 61, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar7 | 4;"
-    }, 
-    {
-      "line": 98, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);"
-    }, 
-    {
-      "line": 101, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;"
-    }, 
-    {
-      "line": 108, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = uVar9 - uVar4;"
-    }, 
-    {
-      "line": 109, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while ((unaff_EBP != 0) && (uVar9 = unaff_EBP, (file->_flag & 0x20) == 0));"
-    }, 
-    {
-      "line": 109, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while ((unaff_EBP != 0) && (uVar9 = unaff_EBP, (file->_flag & 0x20) == 0));"
-    }, 
-    {
-      "line": 113, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "SVar3 = unaff_EBP / (uint)file;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005fdc00", 
-    "signature": "SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)", 
-    "address_range": [
-      [
-        "005fdc00", 
-        "005fde38"
-      ]
-    ], 
-    "name": "crt_stdio.c_fwrite_FUN_005fdc00"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "typedef SIZE_T ULONG_PTR", 
-        "size": 4, 
-        "name": "size"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "typedef SIZE_T ULONG_PTR", 
-        "size": 4, 
-        "name": "count"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 360
+  },
   "cross_references": [
     {
-      "from_addr": "0054b64a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0", 
-      "addr": "0054b5c0"
-    }, 
+      "addr": "0054b5c0",
+      "from_addr": "0054b64a",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054b967", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_FUN_0054b930", 
-      "addr": "0054b930"
-    }, 
+      "addr": "0054b930",
+      "from_addr": "0054b967",
+      "name": "cockpit_pkbitmap.cpp_FUN_0054b930",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004552ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250", 
-      "addr": "00455250"
-    }, 
+      "addr": "00455250",
+      "from_addr": "004552ab",
+      "name": "core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00457445", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_CDemonCube_save_FUN_00457430", 
-      "addr": "00457430"
-    }, 
+      "addr": "00457430",
+      "from_addr": "00457445",
+      "name": "core_dcube.cpp_CDemonCube_save_FUN_00457430",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00482363", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dpart.cpp_CDemonPart_write_FUN_00482330", 
-      "addr": "00482330"
-    }, 
+      "addr": "00482330",
+      "from_addr": "00482363",
+      "name": "core_dpart.cpp_CDemonPart_write_FUN_00482330",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00494f66", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50", 
-      "addr": "00494f50"
-    }, 
+      "addr": "00494f50",
+      "from_addr": "00494f66",
+      "name": "core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049a600", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtri.cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0", 
-      "addr": "0049a5f0"
-    }, 
+      "addr": "0049a5f0",
+      "from_addr": "0049a600",
+      "name": "core_dtri.cpp_CDemonTriangle_writeDataBinary_FUN_0049a5f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005544cd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0", 
-      "addr": "005542b0"
-    }, 
+      "addr": "005542b0",
+      "from_addr": "005544cd",
+      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00574b37", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setdir.cpp_CZThumb_write_FUN_00574b20", 
-      "addr": "00574b20"
-    }, 
+      "addr": "00574b20",
+      "from_addr": "00574b37",
+      "name": "core_setdir.cpp_CZThumb_write_FUN_00574b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00577007", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0", 
-      "addr": "00576da0"
-    }, 
+      "addr": "00576da0",
+      "from_addr": "00577007",
+      "name": "core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057d1f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80", 
-      "addr": "0057ce80"
-    }, 
+      "addr": "0057ce80",
+      "from_addr": "0057d1f5",
+      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00402a18", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402930", 
-      "addr": "00402930"
-    }, 
+      "addr": "00402930",
+      "from_addr": "00402a18",
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402930",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b6902", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
-      "addr": "004b5a50"
-    }, 
+      "addr": "004b5a50",
+      "from_addr": "004b6902",
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bd637", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190", 
-      "addr": "004bd190"
-    }, 
+      "addr": "004bd190",
+      "from_addr": "004bd637",
+      "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b216a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_copyFileWithProgress_FUN_004b2030", 
-      "addr": "004b2030"
-    }, 
+      "addr": "004b2030",
+      "from_addr": "004b216a",
+      "name": "engine_fileio.cpp_copyFileWithProgress_FUN_004b2030",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005454ad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180", 
-      "addr": "00545180"
-    }, 
+      "addr": "00545180",
+      "from_addr": "005454ad",
+      "name": "engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005491e0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_005490c0", 
-      "addr": "005490c0"
-    }, 
+      "addr": "005490c0",
+      "from_addr": "005491e0",
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_005490c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005511f7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000", 
-      "addr": "00551000"
-    }, 
+      "addr": "00551000",
+      "from_addr": "005511f7",
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004682db", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_centerKeyframeModels_FUN_004681a0", 
-      "addr": "004681a0"
-    }, 
+      "addr": "004681a0",
+      "from_addr": "004682db",
+      "name": "shape_design.c_centerKeyframeModels_FUN_004681a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046db20", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_cramTextureList_FUN_0046bb80", 
-      "addr": "0046bb80"
-    }, 
+      "addr": "0046bb80",
+      "from_addr": "0046db20",
+      "name": "shape_design.c_cramTextureList_FUN_0046bb80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00468572", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_createKeyframeModel_FUN_00468320", 
-      "addr": "00468320"
-    }, 
+      "addr": "00468320",
+      "from_addr": "00468572",
+      "name": "shape_design.c_createKeyframeModel_FUN_00468320",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045b680", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_exportModelToBIN_FUN_0045aa80", 
-      "addr": "0045aa80"
-    }, 
+      "addr": "0045aa80",
+      "from_addr": "0045b680",
+      "name": "shape_design.c_exportModelToBIN_FUN_0045aa80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053437c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210", 
-      "addr": "00534210"
+      "addr": "00534210",
+      "from_addr": "0053437c",
+      "name": "sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005fdc00",
+    "address_range": [
+      [
+        "005fdc00",
+        "005fde38"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_fwrite_FUN_005fdc00",
+    "signature": "SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)"
+  },
+  "function_calls": [
+    {
+      "addr": "00602790",
+      "name": "crt_errno.c_setErrno_FUN_00602790"
+    },
+    {
+      "addr": "006039d0",
+      "name": "crt_stdio.c_fflushInternal_FUN_006039d0"
+    },
+    {
+      "addr": "006007a0",
+      "name": "crt_stdio.c_fputc_FUN_006007a0"
+    },
+    {
+      "addr": "006027e0",
+      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0"
+    },
+    {
+      "addr": "006038c0",
+      "name": "crt_stdio.c_write_FUN_006038c0"
+    },
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    },
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    },
+    {
+      "addr": "00684ee8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684eec",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec",
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 8,
+        "size": 4,
+        "type": "typedef SIZE_T ULONG_PTR"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "typedef SIZE_T ULONG_PTR"
+      },
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 16,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBP",
+      "text": "uint unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(byte *)((int)",
+      "text": "bVar7 = *(byte *)((int)&file->_flag + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar7 | 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(byte *)((int)",
+      "text": "bVar7 = *(byte *)((int)&file->_flag + 1) & 0xfa;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar7 | 4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(byte *)((int)",
+      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 108,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = uVar9 - uVar4;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 109,
+      "match": "unaff_EBP",
+      "text": "} while ((unaff_EBP != 0) && (uVar9 = unaff_EBP, (file->_flag & 0x20) == 0));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 109,
+      "match": "unaff_EBP",
+      "text": "} while ((unaff_EBP != 0) && (uVar9 = unaff_EBP, (file->_flag & 0x20) == 0));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 113,
+      "match": "unaff_EBP",
+      "text": "SVar3 = unaff_EBP / (uint)file;",
+      "type": "unaffected_reg"
     }
   ]
 }

@@ -1,96 +1,96 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 55, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 32, 
-    "assembly_lines": 22, 
-    "suspect_count": 4, 
+    "assembly_lines": 22,
+    "complexity_score": 55,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 4,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_curtain.cpp_freeVectors_FUN_0044baf0", 
-      "addr": "0044baf0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0", 
-      "addr": "0059a2b0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_freeBoundingBoxes_FUN_005a2030", 
-      "addr": "005a2030"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 7, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_00;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "core_curtain_cpp_freeVectors_FUN_0044baf0((CVector3f **)(extraout_EAX + -0x4bc));"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return (CDeformableModel *)(extraout_EAX_00 + -0x7c90);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059a270", 
-    "signature": "CDeformableModel * core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270(CDeformableModel * this_ptr)", 
-    "address_range": [
-      [
-        "0059a270", 
-        "0059a2a5"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 32
+  },
   "cross_references": [
     {
-      "from_addr": "004be12d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070", 
-      "addr": "004be070"
+      "addr": "004be070",
+      "from_addr": "004be12d",
+      "name": "core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059a270",
+    "address_range": [
+      [
+        "0059a270",
+        "0059a2a5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270",
+    "signature": "CDeformableModel * core_skeleton.cpp_CDeformableModel_dtor_FUN_0059a270(CDeformableModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044baf0",
+      "name": "core_curtain.cpp_freeVectors_FUN_0044baf0"
+    },
+    {
+      "addr": "0059a2b0",
+      "name": "core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0"
+    },
+    {
+      "addr": "005a2030",
+      "name": "core_skeleton.cpp_freeBoundingBoxes_FUN_005a2030"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX_00",
+      "text": "int extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "text": "core_curtain_cpp_freeVectors_FUN_0044baf0((CVector3f **)(extraout_EAX + -0x4bc));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX_00",
+      "text": "return (CDeformableModel *)(extraout_EAX_00 + -0x7c90);",
+      "type": "extra_output"
     }
   ]
 }

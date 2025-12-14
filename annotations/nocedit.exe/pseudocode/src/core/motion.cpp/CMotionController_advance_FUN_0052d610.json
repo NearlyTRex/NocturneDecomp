@@ -1,602 +1,602 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 276, 
-    "pseudocode_lines": 141, 
-    "cross_reference_count": 40, 
-    "global_count": 12, 
-    "total_lines": 479, 
-    "assembly_lines": 338, 
-    "suspect_count": 11, 
+    "assembly_lines": 338,
+    "complexity_score": 276,
+    "cross_reference_count": 40,
+    "function_call_count": 9,
+    "global_count": 12,
+    "pseudocode_lines": 141,
+    "suspect_count": 11,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70", 
-      "addr": "0052de70"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020", 
-      "addr": "0052e020"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0", 
-      "addr": "0052e1d0"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40", 
-      "addr": "0052de40"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950", 
-      "addr": "0052d950"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
-      "addr": "0052dab0"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_reverseTransition_FUN_0052da50", 
-      "addr": "0052da50"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0", 
-      "addr": "0052dbc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_0052d5e4", 
-      "addr": "0052d5e4", 
-      "value": "0052d706"
-    }, 
-    {
-      "type": "void*", 
-      "name": "switchdataD_0052d5f4", 
-      "addr": "0052d5f4", 
-      "value": "0052d89e"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_motion_cpp_0063a96c", 
-      "addr": "0063a96c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CMotionController_advanc_0063a97f", 
-      "addr": "0063a97f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_motion_cpp_0063a9c5", 
-      "addr": "0063a9c5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Invalid_transition_comma_0063a9d8", 
-      "addr": "0063a9d8", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063aa27", 
-      "addr": "0063aa27", 
-      "value": "0.0000100000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063aa2f", 
-      "addr": "0063aa2f", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063aa37", 
-      "addr": "0063aa37", 
-      "value": "0.499900000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063aa3f", 
-      "addr": "0063aa3f", 
-      "value": "0.000100000000000000"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0052d619", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float *in_stack_00000008;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*in_stack_00000008 <= (float)1.0000000000000001e-05) break;"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_44 = *in_stack_00000008;"
-    }, 
-    {
-      "line": 102, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EBP != 0) {"
-    }, 
-    {
-      "line": 131, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = *in_stack_00000008 - local_40;"
-    }, 
-    {
-      "line": 131, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = *in_stack_00000008 - local_40;"
-    }, 
-    {
-      "line": 140, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_14 = (int *)((int)local_14 + 1);"
-    }, 
-    {
-      "line": 142, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = 0.0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052d610", 
-    "signature": "int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)", 
-    "address_range": [
-      [
-        "0052d610", 
-        "0052d936"
-      ]
-    ], 
-    "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610"
-  }, 
-  "stack_frame": {
-    "local_size": 88, 
-    "variables": [
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMotionController *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 92, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param"
+    ],
+    "total_lines": 479
+  },
   "cross_references": [
     {
-      "from_addr": "00412351", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_armour.cpp_CArmour_process_FUN_00412260", 
-      "addr": "00412260"
-    }, 
+      "addr": "00412260",
+      "from_addr": "00412351",
+      "name": "core_armour.cpp_CArmour_process_FUN_00412260",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00413a16", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_FUN_00413a00", 
-      "addr": "00413a00"
-    }, 
+      "addr": "00413a00",
+      "from_addr": "00413a16",
+      "name": "core_baron.cpp_FUN_00413a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00415689", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batcreat.cpp_CBatCreature_process_FUN_00415470", 
-      "addr": "00415470"
-    }, 
+      "addr": "00415470",
+      "from_addr": "00415689",
+      "name": "core_batcreat.cpp_CBatCreature_process_FUN_00415470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00416ab7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batman.cpp_CBatman_process_FUN_00416870", 
-      "addr": "00416870"
-    }, 
+      "addr": "00416870",
+      "from_addr": "00416ab7",
+      "name": "core_batman.cpp_CBatman_process_FUN_00416870",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004182f8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_beast.cpp_FUN_004182a0", 
-      "addr": "004182a0"
-    }, 
+      "addr": "004182a0",
+      "from_addr": "004182f8",
+      "name": "core_beast.cpp_FUN_004182a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041894e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_biggs.cpp_CBiggs_FUN_00418700", 
-      "addr": "00418700"
-    }, 
+      "addr": "00418700",
+      "from_addr": "0041894e",
+      "name": "core_biggs.cpp_CBiggs_FUN_00418700",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041c313", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_FUN_0041bf90", 
-      "addr": "0041bf90"
-    }, 
+      "addr": "0041bf90",
+      "from_addr": "0041c313",
+      "name": "core_boneguy.cpp_FUN_0041bf90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00423bc4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bride.cpp_FUN_00423a30", 
-      "addr": "00423a30"
-    }, 
+      "addr": "00423a30",
+      "from_addr": "00423bc4",
+      "name": "core_bride.cpp_FUN_00423a30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00440446", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_colonel.cpp_FUN_00440430", 
-      "addr": "00440430"
-    }, 
+      "addr": "00440430",
+      "from_addr": "00440446",
+      "name": "core_colonel.cpp_FUN_00440430",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044455a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cow.cpp_FUN_00444310", 
-      "addr": "00444310"
-    }, 
+      "addr": "00444310",
+      "from_addr": "0044455a",
+      "name": "core_cow.cpp_FUN_00444310",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047f3a1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dog.cpp_CZombieDog_process_FUN_0047f140", 
-      "addr": "0047f140"
-    }, 
+      "addr": "0047f140",
+      "from_addr": "0047f3a1",
+      "name": "core_dog.cpp_CZombieDog_process_FUN_0047f140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00484520", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dracbrid.cpp_FUN_00484410", 
-      "addr": "00484410"
-    }, 
+      "addr": "00484410",
+      "from_addr": "00484520",
+      "name": "core_dracbrid.cpp_FUN_00484410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048ef35", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_drone.cpp_FUN_0048ec70", 
-      "addr": "0048ec70"
-    }, 
+      "addr": "0048ec70",
+      "from_addr": "0048ef35",
+      "name": "core_drone.cpp_FUN_0048ec70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d48ad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d4890", 
-      "addr": "004d4890"
-    }, 
+      "addr": "004d4890",
+      "from_addr": "004d48ad",
+      "name": "core_gabriela.cpp_FUN_004d4890",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e4a66", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00", 
-      "addr": "004e4a00"
-    }, 
+      "addr": "004e4a00",
+      "from_addr": "004e4a66",
+      "name": "core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e6f88", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ghoul.cpp_CGhoul_FUN_004e6600", 
-      "addr": "004e6600"
-    }, 
+      "addr": "004e6600",
+      "from_addr": "004e6f88",
+      "name": "core_ghoul.cpp_CGhoul_FUN_004e6600",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f1987", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_haystack.cpp_FUN_004f1970", 
-      "addr": "004f1970"
-    }, 
+      "addr": "004f1970",
+      "from_addr": "004f1987",
+      "name": "core_haystack.cpp_FUN_004f1970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f45c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hiram.cpp_FUN_004f4550", 
-      "addr": "004f4550"
-    }, 
+      "addr": "004f4550",
+      "from_addr": "004f45c5",
+      "name": "core_hiram.cpp_FUN_004f4550",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f4c89", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0", 
-      "addr": "004f4bd0"
-    }, 
+      "addr": "004f4bd0",
+      "from_addr": "004f4c89",
+      "name": "core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f7132", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hotdemon.cpp_FUN_004f6f20", 
-      "addr": "004f6f20"
-    }, 
+      "addr": "004f6f20",
+      "from_addr": "004f7132",
+      "name": "core_hotdemon.cpp_FUN_004f6f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f93b7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_icepick.cpp_FUN_004f93a0", 
-      "addr": "004f93a0"
-    }, 
+      "addr": "004f93a0",
+      "from_addr": "004f93b7",
+      "name": "core_icepick.cpp_FUN_004f93a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f9cae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_imp.cpp_FUN_004f9c30", 
-      "addr": "004f9c30"
-    }, 
+      "addr": "004f9c30",
+      "from_addr": "004f9cae",
+      "name": "core_imp.cpp_FUN_004f9c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005034bc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_larva.cpp_FUN_00503080", 
-      "addr": "00503080"
-    }, 
+      "addr": "00503080",
+      "from_addr": "005034bc",
+      "name": "core_larva.cpp_FUN_00503080",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00520bf6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_CMimic_processMorph_FUN_00520ba0", 
-      "addr": "00520ba0"
-    }, 
+      "addr": "00520ba0",
+      "from_addr": "00520bf6",
+      "name": "core_mimic.cpp_CMimic_processMorph_FUN_00520ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051fdee", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_FUN_0051fcc0", 
-      "addr": "0051fcc0"
-    }, 
+      "addr": "0051fcc0",
+      "from_addr": "0051fdee",
+      "name": "core_mimic.cpp_FUN_0051fcc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005259e8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_FUN_00525840", 
-      "addr": "00525840"
-    }, 
+      "addr": "00525840",
+      "from_addr": "005259e8",
+      "name": "core_mobster.cpp_FUN_00525840",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00528da2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moloch.cpp_CMoloch_process_FUN_00528d20", 
-      "addr": "00528d20"
-    }, 
+      "addr": "00528d20",
+      "from_addr": "00528da2",
+      "name": "core_moloch.cpp_CMoloch_process_FUN_00528d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00544916", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_npc.cpp_CNPC_process_FUN_005448b0", 
-      "addr": "005448b0"
-    }, 
+      "addr": "005448b0",
+      "from_addr": "00544916",
+      "name": "core_npc.cpp_CNPC_process_FUN_005448b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00545f8d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_passngr.cpp_FUN_00545ef0", 
-      "addr": "00545ef0"
-    }, 
+      "addr": "00545ef0",
+      "from_addr": "00545f8d",
+      "name": "core_passngr.cpp_FUN_00545ef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00557d3a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_scat.cpp_FUN_00557d20", 
-      "addr": "00557d20"
-    }, 
+      "addr": "00557d20",
+      "from_addr": "00557d3a",
+      "name": "core_scat.cpp_FUN_00557d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00568415", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sentinel.cpp_FUN_00568030", 
-      "addr": "00568030"
-    }, 
+      "addr": "00568030",
+      "from_addr": "00568415",
+      "name": "core_sentinel.cpp_FUN_00568030",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a28fb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_smiley.cpp_FUN_005a2800", 
-      "addr": "005a2800"
-    }, 
+      "addr": "005a2800",
+      "from_addr": "005a28fb",
+      "name": "core_smiley.cpp_FUN_005a2800",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bdd57", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005bdd20", 
-      "addr": "005bdd20"
-    }, 
+      "addr": "005bdd20",
+      "from_addr": "005bdd57",
+      "name": "core_stranger.cpp_CStranger_FUN_005bdd20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c6f21", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_succubus.cpp_CSuccubus_process_FUN_005c6e90", 
-      "addr": "005c6e90"
-    }, 
+      "addr": "005c6e90",
+      "from_addr": "005c6f21",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_005c6e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d9987", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970", 
-      "addr": "005d9970"
-    }, 
+      "addr": "005d9970",
+      "from_addr": "005d9987",
+      "name": "core_svetlana.cpp_MotionControllerAdvance_ParentBones_FUN_005d9970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005db4c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tentacle.cpp_CTentacle_process_FUN_005db050", 
-      "addr": "005db050"
-    }, 
+      "addr": "005db050",
+      "from_addr": "005db4c0",
+      "name": "core_tentacle.cpp_CTentacle_process_FUN_005db050",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e6322", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970", 
-      "addr": "005e5970"
-    }, 
+      "addr": "005e5970",
+      "from_addr": "005e6322",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e6cc7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_FUN_005e6ca0", 
-      "addr": "005e6ca0"
-    }, 
+      "addr": "005e6ca0",
+      "from_addr": "005e6cc7",
+      "name": "core_vampboss.cpp_FUN_005e6ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005efe53", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_werewolf.cpp_CWerewolf_process_FUN_005efde0", 
-      "addr": "005efde0"
-    }, 
+      "addr": "005efde0",
+      "from_addr": "005efe53",
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_005efde0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f951c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470", 
-      "addr": "005f9470"
+      "addr": "005f9470",
+      "from_addr": "005f951c",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052d610",
+    "address_range": [
+      [
+        "0052d610",
+        "0052d936"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610",
+    "signature": "int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0052de70",
+      "name": "core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70"
+    },
+    {
+      "addr": "0052e020",
+      "name": "core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020"
+    },
+    {
+      "addr": "0052e1d0",
+      "name": "core_motion.cpp_CMotionController_advanceTween_FUN_0052e1d0"
+    },
+    {
+      "addr": "0052de40",
+      "name": "core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40"
+    },
+    {
+      "addr": "0052d950",
+      "name": "core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950"
+    },
+    {
+      "addr": "0052dab0",
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052da50",
+      "name": "core_motion.cpp_CMotionController_reverseTransition_FUN_0052da50"
+    },
+    {
+      "addr": "0052dbc0",
+      "name": "core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0052d5e4",
+      "name": "switchdataD_0052d5e4",
+      "type": "void*",
+      "value": "0052d706"
+    },
+    {
+      "addr": "0052d5f4",
+      "name": "switchdataD_0052d5f4",
+      "type": "void*",
+      "value": "0052d89e"
+    },
+    {
+      "addr": "0063a96c",
+      "name": "s_core_motion_cpp_0063a96c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a97f",
+      "name": "s_CMotionController_advanc_0063a97f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a9c5",
+      "name": "s_core_motion_cpp_0063a9c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a9d8",
+      "name": "s_Invalid_transition_comma_0063a9d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063aa27",
+      "name": "DOUBLE_0063aa27",
+      "type": "double",
+      "value": "0.0000100000000000000"
+    },
+    {
+      "addr": "0063aa2f",
+      "name": "DOUBLE_0063aa2f",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0063aa37",
+      "name": "DOUBLE_0063aa37",
+      "type": "double",
+      "value": "0.499900000000000"
+    },
+    {
+      "addr": "0063aa3f",
+      "name": "DOUBLE_0063aa3f",
+      "type": "double",
+      "value": "0.000100000000000000"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 88,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0052d619",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "float *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "if (*in_stack_00000008 <= (float)1.0000000000000001e-05) break;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000008",
+      "text": "local_44 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 102,
+      "match": "unaff_EBP",
+      "text": "if (unaff_EBP != 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = *in_stack_00000008 - local_40;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = *in_stack_00000008 - local_40;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 140,
+      "match": "(int *)((int)",
+      "text": "local_14 = (int *)((int)local_14 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 142,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = 0.0;",
+      "type": "stack_param"
     }
   ]
 }

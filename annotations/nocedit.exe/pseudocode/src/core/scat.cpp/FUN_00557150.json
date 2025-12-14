@@ -1,109 +1,109 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 52, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 77, 
-    "assembly_lines": 50, 
-    "suspect_count": 2, 
+    "assembly_lines": 50,
+    "complexity_score": 52,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 27,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_createActorByName_FUN_0040c430", 
-      "addr": "0040c430"
-    }, 
-    {
-      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
-      "addr": "004fd600"
-    }, 
-    {
-      "name": "core_inv.cpp_CInventory_initialize_FUN_004fd190", 
-      "addr": "004fd190"
-    }, 
-    {
-      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10", 
-      "addr": "004feb10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CBaronWeapon_00641357", 
-      "addr": "00641357", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_BaronProxy_00641364", 
-      "addr": "00641364", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_aronProxy_00641365", 
-      "addr": "00641365", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ronProxy_00641366", 
-      "addr": "00641366", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_onProxy_00641367", 
-      "addr": "00641367", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr = (CInventory *)(in_stack_00000004 + 0x1f738);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00557150", 
-    "signature": "undefined core_scat.cpp_FUN_00557150()", 
-    "address_range": [
-      [
-        "00557150", 
-        "005571b4"
-      ]
-    ], 
-    "name": "core_scat.cpp_FUN_00557150"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 77
+  },
   "cross_references": [
     {
-      "from_addr": "00556f27", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_scat.cpp_CScat_ctor_FUN_00556ed0", 
-      "addr": "00556ed0"
+      "addr": "00556ed0",
+      "from_addr": "00556f27",
+      "name": "core_scat.cpp_CScat_ctor_FUN_00556ed0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00557150",
+    "address_range": [
+      [
+        "00557150",
+        "005571b4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_scat.cpp_FUN_00557150",
+    "signature": "undefined core_scat.cpp_FUN_00557150()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c430",
+      "name": "core_actor.cpp_createActorByName_FUN_0040c430"
+    },
+    {
+      "addr": "004fd600",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600"
+    },
+    {
+      "addr": "004fd190",
+      "name": "core_inv.cpp_CInventory_initialize_FUN_004fd190"
+    },
+    {
+      "addr": "004feb10",
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00641357",
+      "name": "s_CBaronWeapon_00641357",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641364",
+      "name": "s_BaronProxy_00641364",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641365",
+      "name": "s_aronProxy_00641365",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00641366",
+      "name": "s_ronProxy_00641366",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00641367",
+      "name": "s_onProxy_00641367",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = (CInventory *)(in_stack_00000004 + 0x1f738);",
+      "type": "stack_param"
     }
   ]
 }

@@ -1,119 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 82, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 50, 
-    "assembly_lines": 28, 
-    "suspect_count": 5, 
+    "assembly_lines": 28,
+    "complexity_score": 82,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 7,
+    "pseudocode_lines": 22,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }, 
-    {
-      "type": "EXCEPTION_FILTER_FUNC*", 
-      "name": "g_UserExceptionFilter", 
-      "addr": "006853f0", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "EXCEPTION_CLEANUP_FUNC*", 
-      "name": "g_ExceptionCleanup", 
-      "addr": "006853f4", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_GlobalSignalHandlers[2]", 
-      "addr": "0068550c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_GlobalSignalHandlers[4]", 
-      "addr": "00685514", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_DS", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "ushort in_DS;"
-    }, 
-    {
-      "line": 16, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pTVar1->signal_handlers + iVar2 + -4) ="
-    }, 
-    {
-      "line": 17, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_GlobalSignalHandlers + iVar2);"
-    }, 
-    {
-      "line": 18, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pTVar1 + (uint)bVar4 * -8 + iVar2 + 0x5c) ="
-    }, 
-    {
-      "line": 24, 
-      "match": "in_DS", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "return in_DS;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0060d1a8", 
-    "signature": "undefined crt_unknown.c_FUN_0060d1a8()", 
-    "address_range": [
-      [
-        "0060d1a8", 
-        "0060d1eb"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_0060d1a8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "register_param",
+      "pointer_cast"
+    ],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "0060d215", 
-      "type": "DATA", 
-      "name": "crt_thread.c_staticInit_FUN_0060d214", 
-      "addr": "0060d214"
+      "addr": "0060d214",
+      "from_addr": "0060d215",
+      "name": "crt_thread.c_staticInit_FUN_0060d214",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0060d1a8",
+    "address_range": [
+      [
+        "0060d1a8",
+        "0060d1eb"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0060d1a8",
+    "signature": "undefined crt_unknown.c_FUN_0060d1a8()"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    },
+    {
+      "addr": "006853f0",
+      "name": "g_UserExceptionFilter",
+      "type": "EXCEPTION_FILTER_FUNC*",
+      "value": "00000000"
+    },
+    {
+      "addr": "006853f4",
+      "name": "g_ExceptionCleanup",
+      "type": "EXCEPTION_CLEANUP_FUNC*",
+      "value": "00000000"
+    },
+    {
+      "addr": "0068550c",
+      "name": "g_GlobalSignalHandlers[2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00685510",
+      "name": "g_GlobalSignalHandlers[3]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00685514",
+      "name": "g_GlobalSignalHandlers[4]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00685518",
+      "name": "g_GlobalSignalHandlers[5]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_DS",
+      "text": "ushort in_DS;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pTVar1->signal_handlers + iVar2 + -4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_GlobalSignalHandlers + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pTVar1 + (uint)bVar4 * -8 + iVar2 + 0x5c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 24,
+      "match": "in_DS",
+      "text": "return in_DS;",
+      "type": "register_param"
     }
   ]
 }

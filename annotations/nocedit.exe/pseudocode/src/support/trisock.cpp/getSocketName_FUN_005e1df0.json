@@ -1,145 +1,145 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 126, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 59, 
-    "assembly_lines": 38, 
-    "suspect_count": 8, 
+    "assembly_lines": 38,
+    "complexity_score": 126,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 21,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_wsock32.c_getsockname", 
-      "addr": "00610eec"
-    }, 
-    {
-      "name": "support_trisock.cpp_convertSockAddr_FUN_005e1960", 
-      "addr": "005e1960"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint *in_stack_0000001c;"
-    }, 
-    {
-      "line": 15, 
-      "match": "&stack0xffffffe4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar1 = crt_wsock32_c_getsockname(*socket_handle,(SOCKADDR *)&stack0xffffffe4,&local_4);"
-    }, 
-    {
-      "line": 20, 
-      "match": "&stack0xfffffff4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((SOCKADDR_IN *)&socket_handle,(SOCKADDR *)&stack0xfffffff4);"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000001c = *(uint *)pSVar2;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000001c[(uint)bVar3 * -2 + 1] = *(uint *)((int)pSVar2 + (uint)bVar3 * -8 + 4);"
-    }, 
-    {
-      "line": 22, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "in_stack_0000001c[(uint)bVar3 * -2 + 1] = *(uint *)((int)pSVar2 + (uint)bVar3 * -8 + 4);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005e1df0", 
-    "signature": "int support_trisock.cpp_getSocketName_FUN_005e1df0(SOCKET * socket_handle, SNetworkAddr * param_2)", 
-    "address_range": [
-      [
-        "005e1df0", 
-        "005e1e42"
-      ]
-    ], 
-    "name": "support_trisock.cpp_getSocketName_FUN_005e1df0"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SOCKET *", 
-        "size": 4, 
-        "name": "socket_handle"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SNetworkAddr *", 
-        "size": 4, 
-        "name": "param_2"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 59
+  },
   "cross_references": [
     {
-      "from_addr": "0053fc3e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_initializeNetwork_FUN_0053fbc0", 
-      "addr": "0053fbc0"
+      "addr": "0053fbc0",
+      "from_addr": "0053fc3e",
+      "name": "core_netgame.cpp_initializeNetwork_FUN_0053fbc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e1df0",
+    "address_range": [
+      [
+        "005e1df0",
+        "005e1e42"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_getSocketName_FUN_005e1df0",
+    "signature": "int support_trisock.cpp_getSocketName_FUN_005e1df0(SOCKET * socket_handle, SNetworkAddr * param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610eec",
+      "name": "crt_wsock32.c_getsockname"
+    },
+    {
+      "addr": "005e1960",
+      "name": "support_trisock.cpp_convertSockAddr_FUN_005e1960"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "socket_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "SOCKET *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000001c",
+      "text": "uint *in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xffffffe4",
+      "text": "iVar1 = crt_wsock32_c_getsockname(*socket_handle,(SOCKADDR *)&stack0xffffffe4,&local_4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xfffffff4",
+      "text": "((SOCKADDR_IN *)&socket_handle,(SOCKADDR *)&stack0xfffffff4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000001c",
+      "text": "*in_stack_0000001c = *(uint *)pSVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000001c",
+      "text": "in_stack_0000001c[(uint)bVar3 * -2 + 1] = *(uint *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(uint *)((int)",
+      "text": "in_stack_0000001c[(uint)bVar3 * -2 + 1] = *(uint *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

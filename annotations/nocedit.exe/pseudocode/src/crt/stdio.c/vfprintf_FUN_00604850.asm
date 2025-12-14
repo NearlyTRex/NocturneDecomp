@@ -35,19 +35,19 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00604854
     MOV EDX,dword ptr [EBX + 0x10]      ; 00604858
     PUSH EDX                            ; 0060485b
-    CALL dword ptr [0x00684ee8]         ; 0060485c | ENTER_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
+    CALL dword ptr [0x00684ee8]         ; 0060485c | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
     MOV EAX,dword ptr [EBX + 0x8]       ; 00604862
     MOV ECX,dword ptr [EAX + 0xc]       ; 00604865
     ADD ESP,0x4                         ; 00604868
     CMP ECX,0x1                         ; 0060486b
-    JZ 0x0060488f                       ; 0060486e | LAB_0060488f
-        ;   XREF to: 0060488f (CONDITIONAL_JUMP)
+    JZ 0x0060488f                       ; 0060486e
+        ;   XREF to: 0060488f (CONDITIONAL_JUMP)  ; LAB_0060488f
     TEST ECX,ECX                        ; 00604870
-    JZ 0x00604888                       ; 00604872 | LAB_00604888
-        ;   XREF to: 00604888 (CONDITIONAL_JUMP)
+    JZ 0x00604888                       ; 00604872
+        ;   XREF to: 00604888 (CONDITIONAL_JUMP)  ; LAB_00604888
     MOV EDI,dword ptr [EBX + 0x10]      ; 00604874
     PUSH EDI                            ; 00604877
-    CALL dword ptr [0x00684eec]         ; 00604878 | EXIT_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
+    CALL dword ptr [0x00684eec]         ; 00604878 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 0060487e
     XOR EAX,EAX                         ; 00604881
     POP EBP                             ; 00604883
@@ -66,18 +66,18 @@ section .text
     MOV EDX,dword ptr [EAX + 0x8]       ; 0060489e
     AND EBP,0x30                        ; 006048a1
     TEST EDX,EDX                        ; 006048a4
-    JNZ 0x006048b1                      ; 006048a6 | LAB_006048b1
-        ;   XREF to: 006048b1 (CONDITIONAL_JUMP)
+    JNZ 0x006048b1                      ; 006048a6
+        ;   XREF to: 006048b1 (CONDITIONAL_JUMP)  ; LAB_006048b1
     PUSH EBX                            ; 006048a8
-    CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 006048a9 | void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
-        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_InitializeFileBuffer_FUN_006027e0 ; 006048a9
+        ;   XREF to: 006027e0 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)
     ADD ESP,0x4                         ; 006048ae
     MOV DL,byte ptr [EBX + 0xd]         ; 006048b1
         ;   Label: LAB_006048b1
     XOR EDI,EDI                         ; 006048b4
     TEST DL,0x4                         ; 006048b6
-    JZ 0x006048d0                       ; 006048b9 | LAB_006048d0
-        ;   XREF to: 006048d0 (CONDITIONAL_JUMP)
+    JZ 0x006048d0                       ; 006048b9
+        ;   XREF to: 006048d0 (CONDITIONAL_JUMP)  ; LAB_006048d0
     MOV DH,DL                           ; 006048bb
     AND DH,0xfa                         ; 006048bd
     MOV CL,DH                           ; 006048c0
@@ -92,13 +92,13 @@ section .text
     MOV ESI,dword ptr [ESP + 0x20]      ; 006048da
     PUSH ESI                            ; 006048de
     PUSH EBX                            ; 006048df
-    CALL crt_stdio.c_FormatEngine_FUN_00602950 ; 006048e0 | int crt_stdio.c_FormatEngine_FUN_00602950(void * output_context, char * format, va_list_t args, OUTPUT_CALLBACK callback)
-        ;   XREF to: 00602950 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_FormatEngine_FUN_00602950 ; 006048e0
+        ;   XREF to: 00602950 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FormatEngine_FUN_00602950(void * output_context, char * format, va_list_t args, OUTPUT_CALLBACK callback)
     ADD ESP,0x10                        ; 006048e5
     MOV ESI,EAX                         ; 006048e8
     TEST EDI,EDI                        ; 006048ea
-    JZ 0x00604907                       ; 006048ec | LAB_00604907
-        ;   XREF to: 00604907 (CONDITIONAL_JUMP)
+    JZ 0x00604907                       ; 006048ec
+        ;   XREF to: 00604907 (CONDITIONAL_JUMP)  ; LAB_00604907
     MOV CH,byte ptr [EBX + 0xd]         ; 006048ee
     AND CH,0xfa                         ; 006048f1
     MOV AL,CH                           ; 006048f4
@@ -106,13 +106,13 @@ section .text
     OR AL,0x4                           ; 006048f9
     PUSH EBX                            ; 006048fb
     MOV byte ptr [EBX + 0xd],AL         ; 006048fc
-    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 006048ff | int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
-        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fflushInternal_FUN_006039d0 ; 006048ff
+        ;   XREF to: 006039d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)
     ADD ESP,0x4                         ; 00604904
     TEST byte ptr [EBX + 0xc],0x20      ; 00604907
         ;   Label: LAB_00604907
-    JZ 0x00604912                       ; 0060490b | LAB_00604912
-        ;   XREF to: 00604912 (CONDITIONAL_JUMP)
+    JZ 0x00604912                       ; 0060490b
+        ;   XREF to: 00604912 (CONDITIONAL_JUMP)  ; LAB_00604912
     MOV ESI,0xffffffff                  ; 0060490d
     MOV EDI,dword ptr [EBX + 0xc]       ; 00604912
         ;   Label: LAB_00604912
@@ -120,7 +120,7 @@ section .text
     MOV EBP,dword ptr [EBX + 0x10]      ; 00604917
     PUSH EBP                            ; 0060491a
     MOV dword ptr [EBX + 0xc],EDI       ; 0060491b
-    CALL dword ptr [0x00684eec]         ; 0060491e | EXIT_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
+    CALL dword ptr [0x00684eec]         ; 0060491e | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 00604924
     MOV EAX,ESI                         ; 00604927
     POP EBP                             ; 00604929

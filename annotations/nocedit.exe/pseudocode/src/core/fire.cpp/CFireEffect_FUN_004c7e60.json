@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 24, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 42, 
-    "assembly_lines": 33, 
-    "suspect_count": 1, 
+    "assembly_lines": 33,
+    "complexity_score": 24,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_FUN_004c17c0", 
-      "addr": "004c17c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CFireball*", 
-      "name": "g_CFireEffectFireballsEnd", 
-      "addr": "02d655a8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "(CFireball *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_CFireEffectFireballsEnd = (CFireball *)((int)&(g_CFireEffectFireballsEnd->base).position.x + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c7e60", 
-    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7e60(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c7e60", 
-        "004c7eab"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c7e60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 42
+  },
   "cross_references": [
     {
-      "from_addr": "004a846f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_emitter.cpp_FUN_004a8070", 
-      "addr": "004a8070"
+      "addr": "004a8070",
+      "from_addr": "004a846f",
+      "name": "core_emitter.cpp_FUN_004a8070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c7e60",
+    "address_range": [
+      [
+        "004c7e60",
+        "004c7eab"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c7e60",
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7e60(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c17c0",
+      "name": "core_fire.cpp_FUN_004c17c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d655a8",
+      "name": "g_CFireEffectFireballsEnd",
+      "type": "CFireball*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 5,
+      "match": "(CFireball *)((int)",
+      "text": "g_CFireEffectFireballsEnd = (CFireball *)((int)&(g_CFireEffectFireballsEnd->base).position.x + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

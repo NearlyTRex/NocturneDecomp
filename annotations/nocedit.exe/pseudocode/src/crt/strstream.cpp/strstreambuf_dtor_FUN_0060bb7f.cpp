@@ -22,7 +22,7 @@ crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f(strstreambuf *this_ptr,uint d1)
         crt_memory_c_free_FUN_005fe659(ptr);
       }
       else {
-        (*(code *)this_ptr->__free_fn)();
+        (*this_ptr->__free_fn)();
       }
     }
     this_ptr = (strstreambuf *)

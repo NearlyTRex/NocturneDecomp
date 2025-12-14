@@ -11,8 +11,7 @@ void core_smiley_cpp_FUN_005a23f0(void)
 {
   CSmiley *this_ptr;
   
-  this_ptr = (CSmiley *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf00,"..\\core\\smiley.cpp",0x6e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf00,"..\\core\\smiley.cpp",0x6e);
   if (this_ptr == (CSmiley *)0x0) {
     return;
   }

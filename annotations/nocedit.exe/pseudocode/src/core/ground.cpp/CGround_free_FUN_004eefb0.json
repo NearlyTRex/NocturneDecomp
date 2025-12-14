@@ -1,102 +1,102 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 3, 
-    "global_count": 4, 
-    "total_lines": 66, 
-    "assembly_lines": 48, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0", 
-      "addr": "005dbdf0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_ground_cpp_0062e71f", 
-      "addr": "0062e71f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_ground_cpp_0062e732", 
-      "addr": "0062e732", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004eefb0", 
-    "signature": "void core_ground.cpp_CGround_free_FUN_004eefb0(CGround * this_ptr)", 
-    "address_range": [
-      [
-        "004eefb0", 
-        "004ef020"
-      ]
-    ], 
-    "name": "core_ground.cpp_CGround_free_FUN_004eefb0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGround *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 48,
+    "complexity_score": 18,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 66
+  },
   "cross_references": [
     {
-      "from_addr": "004eeee6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_dtor_FUN_004eeee0", 
-      "addr": "004eeee0"
-    }, 
+      "addr": "004eeee0",
+      "from_addr": "004eeee6",
+      "name": "core_ground.cpp_CGround_dtor_FUN_004eeee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004eef06", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_init_FUN_004eef00", 
-      "addr": "004eef00"
-    }, 
+      "addr": "004eef00",
+      "from_addr": "004eef06",
+      "name": "core_ground.cpp_CGround_init_FUN_004eef00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e1f37", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_terrain.cpp_CTerrain_dtor_FUN_005e1f30", 
-      "addr": "005e1f30"
+      "addr": "005e1f30",
+      "from_addr": "005e1f37",
+      "name": "core_terrain.cpp_CTerrain_dtor_FUN_005e1f30",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004eefb0",
+    "address_range": [
+      [
+        "004eefb0",
+        "004ef020"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_CGround_free_FUN_004eefb0",
+    "signature": "void core_ground.cpp_CGround_free_FUN_004eefb0(CGround * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005dbdf0",
+      "name": "core_texlist.cpp_CTextureList_dtor_FUN_005dbdf0"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e71f",
+      "name": "s_core_ground_cpp_0062e71f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e732",
+      "name": "s_core_ground_cpp_0062e732",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGround *"
+      }
+    ]
+  },
+  "suspects": []
 }

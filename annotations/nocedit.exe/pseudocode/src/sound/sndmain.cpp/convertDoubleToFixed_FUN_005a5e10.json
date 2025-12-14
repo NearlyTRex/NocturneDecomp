@@ -1,130 +1,130 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 100, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 54, 
-    "assembly_lines": 34, 
-    "suspect_count": 6, 
+    "assembly_lines": 34,
+    "complexity_score": 100,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
     "suspect_types": [
-      "concat_artifact", 
-      "unaffected_reg", 
-      "unknown_field", 
-      "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_floor_FUN_005feb90", 
-      "addr": "005feb90"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0064fca7", 
-      "addr": "0064fca7", 
-      "value": "4294967296"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint *extraout_EDX;"
-    }, 
-    {
-      "line": 8, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EBX;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)"
-    }, 
-    {
-      "line": 16, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)"
-    }, 
-    {
-      "line": 18, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "*input._0_4_ = (int)(longlong)ROUND(dVar2);"
-    }, 
-    {
-      "line": 21, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*extraout_EDX = uStackY_18;"
-    }
-  ], 
+      "unaffected_reg",
+      "concat_artifact",
+      "extra_output",
+      "unknown_field"
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a5e10", 
-    "signature": "void sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10(double input, int * out_integer_part, int * out_fractional_part)", 
+    "address": "005a5e10",
     "address_range": [
       [
-        "005a5e10", 
+        "005a5e10",
         "005a5e6e"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10",
+    "signature": "void sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10(double input, int * out_integer_part, int * out_fractional_part)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feb90",
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064fca7",
+      "name": "DOUBLE_0064fca7",
+      "type": "double",
+      "value": "4294967296"
+    }
+  ],
   "stack_frame": {
-    "local_size": 16, 
+    "frame_size": 32,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "input"
-      }, 
+        "is_param": true,
+        "name": "input",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_integer_part"
-      }, 
+        "is_param": true,
+        "name": "out_integer_part",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_fractional_part"
+        "is_param": true,
+        "name": "out_fractional_part",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EDX",
+      "text": "uint *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 16,
+      "match": "CONCAT44",
+      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 18,
+      "match": "._0_4_",
+      "text": "*input._0_4_ = (int)(longlong)ROUND(dVar2);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_EDX",
+      "text": "*extraout_EDX = uStackY_18;",
+      "type": "extra_output"
+    }
+  ]
 }

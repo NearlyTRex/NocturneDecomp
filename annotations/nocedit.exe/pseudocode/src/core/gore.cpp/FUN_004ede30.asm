@@ -27,24 +27,24 @@ section .text
 
     CMP dword ptr [ESP + 0xc],0x2       ; 004ede30
         ;   Label: core_gore.cpp_FUN_004ede30
-    JNZ 0x004ede38                      ; 004ede35 | LAB_004ede38
-        ;   XREF to: 004ede38 (CONDITIONAL_JUMP)
+    JNZ 0x004ede38                      ; 004ede35
+        ;   XREF to: 004ede38 (CONDITIONAL_JUMP)  ; LAB_004ede38
     RET                                 ; 004ede37
     PUSH ESI                            ; 004ede38
         ;   Label: LAB_004ede38
     PUSH EBX                            ; 004ede39
     MOV ECX,dword ptr [ESP + 0xc]       ; 004ede3a
     PUSH ECX                            ; 004ede3e
-    CALL core_gore.cpp_FUN_004edde0     ; 004ede3f | undefined core_gore.cpp_FUN_004edde0()
-        ;   XREF to: 004edde0 (UNCONDITIONAL_CALL)
+    CALL core_gore.cpp_FUN_004edde0     ; 004ede3f
+        ;   XREF to: 004edde0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edde0()
     ADD ESP,0x4                         ; 004ede44
     MOV EBX,dword ptr [ESP + 0x14]      ; 004ede47
     PUSH EBX                            ; 004ede4b
     MOV ESI,dword ptr [ESP + 0x14]      ; 004ede4c
     PUSH ESI                            ; 004ede50
     PUSH EAX                            ; 004ede51
-    CALL core_gore.cpp_FUN_004ed0d0     ; 004ede52 | undefined core_gore.cpp_FUN_004ed0d0()
-        ;   XREF to: 004ed0d0 (UNCONDITIONAL_CALL)
+    CALL core_gore.cpp_FUN_004ed0d0     ; 004ede52
+        ;   XREF to: 004ed0d0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed0d0()
     ADD ESP,0xc                         ; 004ede57
     POP EBX                             ; 004ede5a
     POP ESI                             ; 004ede5b

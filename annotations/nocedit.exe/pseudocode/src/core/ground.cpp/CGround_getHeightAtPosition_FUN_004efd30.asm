@@ -69,11 +69,11 @@ section .text
     MOV dword ptr [ESP + 0x10],EDX      ; 004efda6
     LEA EDX,[ESI + 0x1]                 ; 004efdaa
     CMP EBP,dword ptr [ESP + 0x8]       ; 004efdad
-    JNZ 0x004efeab                      ; 004efdb1 | LAB_004efeab
-        ;   XREF to: 004efeab (CONDITIONAL_JUMP)
+    JNZ 0x004efeab                      ; 004efdb1
+        ;   XREF to: 004efeab (CONDITIONAL_JUMP)  ; LAB_004efeab
     CMP EDI,EBX                         ; 004efdb7
-    JLE 0x004efe32                      ; 004efdb9 | LAB_004efe32
-        ;   XREF to: 004efe32 (CONDITIONAL_JUMP)
+    JLE 0x004efe32                      ; 004efdb9
+        ;   XREF to: 004efe32 (CONDITIONAL_JUMP)  ; LAB_004efe32
     MOV EBP,dword ptr [ECX]             ; 004efdbb
     IMUL EBP,EAX                        ; 004efdbd
     MOV EAX,dword ptr [ECX + 0x24]      ; 004efdc0
@@ -167,8 +167,8 @@ section .text
     SUB EBP,EDI                         ; 004efeb0
     MOV EDI,EBP                         ; 004efeb2
     CMP EBP,EBX                         ; 004efeb4
-    JLE 0x004eff32                      ; 004efeb6 | LAB_004eff32
-        ;   XREF to: 004eff32 (CONDITIONAL_JUMP)
+    JLE 0x004eff32                      ; 004efeb6
+        ;   XREF to: 004eff32 (CONDITIONAL_JUMP)  ; LAB_004eff32
     MOV EBP,dword ptr [ECX]             ; 004efeb8
     IMUL EBP,EAX                        ; 004efeba
     MOV dword ptr [ESP + 0xc],EBP       ; 004efebd

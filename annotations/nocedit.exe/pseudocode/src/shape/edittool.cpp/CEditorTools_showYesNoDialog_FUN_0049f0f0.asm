@@ -48,35 +48,35 @@ section .text
     PUSH EAX                            ; 0049f100
     MOV EDX,dword ptr [ESP + 0x24]      ; 0049f101
     PUSH EDX                            ; 0049f105
-    PUSH 0x2cf0530                      ; 0049f106 | char[1024] g_YesNoDialogBuffer
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049f10b | int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)
+    PUSH 0x2cf0530                      ; 0049f106 | g_YesNoDialogBuffer
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049f10b
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 0049f110
     MOV EAX,ESP                         ; 0049f113
     XOR ECX,ECX                         ; 0049f115
     PUSH EAX                            ; 0049f117
     MOV dword ptr [ESP + 0x14],ECX      ; 0049f118
-    CALL shape_edittool.cpp_CStrList_ctor_FUN_004a2a20 ; 0049f11c | CStrList * shape_edittool.cpp_CStrList_ctor_FUN_004a2a20(CStrList * this_ptr)
-        ;   XREF to: 004a2a20 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_ctor_FUN_004a2a20 ; 0049f11c
+        ;   XREF to: 004a2a20 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_ctor_FUN_004a2a20(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0049f121
-    PUSH 0x6230bc                       ; 0049f124 | = "^Yes" | s_Yes_006230bc = ^Yes
+    PUSH 0x6230bc                       ; 0049f124 | = "^Yes"
     LEA EAX,[ESP + 0x4]                 ; 0049f129
     PUSH EAX                            ; 0049f12d
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0049f12e | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0049f12e
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 0049f133
-    PUSH 0x6230c1                       ; 0049f136 | = "^No" | s_No_006230c1 = ^No
+    PUSH 0x6230c1                       ; 0049f136 | = "^No"
     LEA EAX,[ESP + 0x4]                 ; 0049f13b
     PUSH EAX                            ; 0049f13f
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0049f140 | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0049f140
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 0049f145
     PUSH 0x0                            ; 0049f148
     LEA EAX,[ESP + 0x4]                 ; 0049f14a
     PUSH EAX                            ; 0049f14e
-    PUSH 0x2cf0530                      ; 0049f14f | char[1024] g_YesNoDialogBuffer
-    CALL shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 ; 0049f154 | int shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList * str_list, char * dialog_title, int dialog_mode)
-        ;   XREF to: 0049e9d0 (UNCONDITIONAL_CALL)
+    PUSH 0x2cf0530                      ; 0049f14f | g_YesNoDialogBuffer
+    CALL shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 ; 0049f154
+        ;   XREF to: 0049e9d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList * str_list, char * dialog_title, int dialog_mode)
     ADD ESP,0xc                         ; 0049f159
     XOR EBX,EBX                         ; 0049f15c
     TEST EAX,EAX                        ; 0049f15e
@@ -85,8 +85,8 @@ section .text
     MOV BL,AL                           ; 0049f165
     LEA EAX,[ESP + 0x4]                 ; 0049f167
     PUSH EAX                            ; 0049f16b
-    CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 0049f16c | CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 0049f16c
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
     ADD ESP,0x8                         ; 0049f171
     MOV EAX,EBX                         ; 0049f174
     ADD ESP,0x14                        ; 0049f176

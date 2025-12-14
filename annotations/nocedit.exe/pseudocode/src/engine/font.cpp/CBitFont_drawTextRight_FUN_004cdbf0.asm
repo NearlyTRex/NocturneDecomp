@@ -44,8 +44,8 @@ section .text
     PUSH EDI                            ; 004cdc0c
     MOV EBP,dword ptr [ESP + 0x28]      ; 004cdc0d
     PUSH EBP                            ; 004cdc11
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004cdc12 | int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004cdc12
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
     ADD ESP,0x18                        ; 004cdc17
     POP EBP                             ; 004cdc1a
     POP EDI                             ; 004cdc1b

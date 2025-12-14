@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 26, 
-    "assembly_lines": 17, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_locale.c_islower_multibyte_FUN_00610990", 
-      "addr": "00610990"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060ffb0", 
-    "signature": "wchar_t crt_locale.c_fullwidth_toupper_FUN_0060ffb0(wchar_t character)", 
-    "address_range": [
-      [
-        "0060ffb0", 
-        "0060ffca"
-      ]
-    ], 
-    "name": "crt_locale.c_fullwidth_toupper_FUN_0060ffb0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "wchar_t", 
-        "size": 2, 
-        "name": "character"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 6, 
-    "param_offset": 4, 
-    "param_size": 2
-  }, 
+    "assembly_lines": 17,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
   "cross_references": [
     {
-      "from_addr": "0060f355", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_locale.c_toupper_multibyte_FUN_0060f300", 
-      "addr": "0060f300"
+      "addr": "0060f300",
+      "from_addr": "0060f355",
+      "name": "crt_locale.c_toupper_multibyte_FUN_0060f300",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060ffb0",
+    "address_range": [
+      [
+        "0060ffb0",
+        "0060ffca"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_locale.c_fullwidth_toupper_FUN_0060ffb0",
+    "signature": "wchar_t crt_locale.c_fullwidth_toupper_FUN_0060ffb0(wchar_t character)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610990",
+      "name": "crt_locale.c_islower_multibyte_FUN_00610990"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 6,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 2,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 4,
+        "size": 2,
+        "type": "wchar_t"
+      }
+    ]
+  },
+  "suspects": []
 }

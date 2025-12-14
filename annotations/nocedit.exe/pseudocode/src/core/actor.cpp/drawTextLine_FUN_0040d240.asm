@@ -31,12 +31,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040d243
     MOV EDX,dword ptr [EBX]             ; 0040d247
     PUSH EDX                            ; 0040d249
-    MOV ECX,dword ptr [0x02d02558]      ; 0040d24a | int g_ClipLeft
+    MOV ECX,dword ptr [0x02d02558]      ; 0040d24a | g_ClipLeft
     PUSH ECX                            ; 0040d250
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0040d251
     PUSH ESI                            ; 0040d255
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040d256 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040d256
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     MOV EDI,dword ptr [EBX]             ; 0040d25b
     ADD EDI,0xb                         ; 0040d25d
     ADD ESP,0xc                         ; 0040d260

@@ -16,8 +16,8 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 005d3865
     XOR ECX,ECX                         ; 005d3867
     TEST EDX,EDX                        ; 005d3869
-    JBE 0x005d38a7                      ; 005d386b | LAB_005d38a7
-        ;   XREF to: 005d38a7 (CONDITIONAL_JUMP)
+    JBE 0x005d38a7                      ; 005d386b
+        ;   XREF to: 005d38a7 (CONDITIONAL_JUMP)  ; LAB_005d38a7
     PUSH EDI                            ; 005d386d
     PUSH EBX                            ; 005d386e
     XOR EBX,EBX                         ; 005d386f
@@ -41,8 +41,8 @@ section .text
     MOV EDI,dword ptr [ESI]             ; 005d389c
     ADD EBX,0x38                        ; 005d389e
     CMP ECX,EDI                         ; 005d38a1
-    JC 0x005d3871                       ; 005d38a3 | LAB_005d3871
-        ;   XREF to: 005d3871 (CONDITIONAL_JUMP)
+    JC 0x005d3871                       ; 005d38a3
+        ;   XREF to: 005d3871 (CONDITIONAL_JUMP)  ; LAB_005d3871
     POP EBX                             ; 005d38a5
     POP EDI                             ; 005d38a6
     POP ESI                             ; 005d38a7

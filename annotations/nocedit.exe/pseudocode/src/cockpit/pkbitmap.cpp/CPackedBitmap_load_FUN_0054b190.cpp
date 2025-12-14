@@ -38,8 +38,8 @@ cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(this_ptr);
   this_ptr->width = height;
   this_ptr->height = stride_bytes;
-  ppvVar2 = (void **)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                               ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x378);
+  ppvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                      ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x378);
   this_ptr->row_pointers = ppvVar2;
   if (ppvVar2 == (void **)0x0) {
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
@@ -53,9 +53,8 @@ cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190
   do {
     *(int *)((int)this_ptr->row_pointers + local_1c) = new_size;
     if (this_ptr->height <= local_18) {
-      pcVar6 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                                 (this_ptr->packed_data,new_size,"..\\cockpit\\pkbitmap.cpp",
-                                  0x3d6);
+      pcVar6 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                         (this_ptr->packed_data,new_size,"..\\cockpit\\pkbitmap.cpp",0x3d6);
       this_ptr->packed_data = pcVar6;
       return;
     }
@@ -80,9 +79,9 @@ cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190
           new_size = iVar5 + 4;
           if (new_size_00 < new_size) {
             new_size_00 = iVar5 + 0x4004;
-            pcVar6 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                                       (this_ptr->packed_data,new_size_00,
-                                        "..\\cockpit\\pkbitmap.cpp",0x3ac);
+            pcVar6 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                               (this_ptr->packed_data,new_size_00,"..\\cockpit\\pkbitmap.cpp",
+                                0x3ac);
             this_ptr->packed_data = pcVar6;
             if (pcVar6 == (char *)0x0) {
               crt_stdio_c_sprintf_FUN_005fdbd0

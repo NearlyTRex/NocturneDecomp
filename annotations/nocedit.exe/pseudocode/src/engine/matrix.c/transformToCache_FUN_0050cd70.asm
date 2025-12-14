@@ -34,10 +34,10 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0050cd7a
     SUB EAX,EDX                         ; 0050cd81
     SHL EAX,0x4                         ; 0050cd83
-    ADD EAX,0x688014                    ; 0050cd86 | SRenderVertex[16] g_RenderVertexBuffer
+    ADD EAX,0x688014                    ; 0050cd86 | g_RenderVertexBuffer
     PUSH EAX                            ; 0050cd8b
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0050cd8c | void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0050cd8c
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0050cd91
     POP EBX                             ; 0050cd94
     RET                                 ; 0050cd95

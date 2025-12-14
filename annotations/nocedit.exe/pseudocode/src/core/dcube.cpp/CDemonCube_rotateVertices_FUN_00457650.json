@@ -1,323 +1,323 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 165, 
-    "pseudocode_lines": 100, 
-    "cross_reference_count": 2, 
-    "global_count": 15, 
-    "total_lines": 328, 
-    "assembly_lines": 228, 
-    "suspect_count": 5, 
+    "assembly_lines": 228,
+    "complexity_score": 165,
+    "cross_reference_count": 2,
+    "function_call_count": 7,
+    "global_count": 15,
+    "pseudocode_lines": 100,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0", 
-      "addr": "004566e0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0", 
-      "addr": "0048caa0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
-      "addr": "0048c450"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00", 
-      "addr": "0048ca00"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970", 
-      "addr": "0048c970"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "PTR_LAB_00457630", 
-      "addr": "00457630", 
-      "value": "00457774"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dcube_cpp_0061a7dd", 
-      "addr": "0061a7dd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonCube_rotateVertici_0061a7ef", 
-      "addr": "0061a7ef", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "g_CubeColorScaleFactor", 
-      "addr": "0061a84a", 
-      "value": "127"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_CubeWorldToScreenScale", 
-      "addr": "0065c6b0", 
-      "value": "256"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_StaticColorVector", 
-      "addr": "015c4294", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_StaticColorVector.y", 
-      "addr": "015c4298", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_StaticColorVector.z", 
-      "addr": "015c429c", 
-      "value": null
-    }, 
-    {
-      "type": "uchar", 
-      "name": "g_ColorConstantsInitialized", 
-      "addr": "015c42a0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6d590", 
-      "addr": "02c6d590", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_ZeroVector", 
-      "addr": "03f87558", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 77, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pfVar1 = (float *)((int)pCVar2->vertices + local_18 + 0xc);"
-    }, 
-    {
-      "line": 80, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_38 = *(float *)((int)pCVar2->vertices + local_18 + 0x10);"
-    }, 
-    {
-      "line": 81, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_34 = *(float *)((int)pCVar2->vertices + local_18 + 0x14);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00457650", 
-    "signature": "void core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube * this_ptr, uint rendering_mode)", 
-    "address_range": [
-      [
-        "00457650", 
-        "004578b6"
-      ]
-    ], 
-    "name": "core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650"
-  }, 
-  "stack_frame": {
-    "local_size": 76, 
-    "variables": [
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCube *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "rendering_mode"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 84, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 328
+  },
   "cross_references": [
     {
-      "from_addr": "00497adb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500", 
-      "addr": "00497500"
-    }, 
+      "addr": "00497500",
+      "from_addr": "00497adb",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049913e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0", 
-      "addr": "004990f0"
+      "addr": "004990f0",
+      "from_addr": "0049913e",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00457650",
+    "address_range": [
+      [
+        "00457650",
+        "004578b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650",
+    "signature": "void core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube * this_ptr, uint rendering_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "004566e0",
+      "name": "core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0048caa0",
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0"
+    },
+    {
+      "addr": "0048c450",
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048ca00",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00"
+    },
+    {
+      "addr": "0048c970",
+      "name": "engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00457630",
+      "name": "PTR_LAB_00457630",
+      "type": "void*",
+      "value": "00457774"
+    },
+    {
+      "addr": "0061a7dd",
+      "name": "s_core_dcube_cpp_0061a7dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061a7ef",
+      "name": "s_CDemonCube_rotateVertici_0061a7ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061a84a",
+      "name": "g_CubeColorScaleFactor",
+      "type": "float",
+      "value": "127"
+    },
+    {
+      "addr": "0065c6b0",
+      "name": "g_CubeWorldToScreenScale",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "015c4294",
+      "name": "g_StaticColorVector",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "015c4298",
+      "name": "g_StaticColorVector.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c429c",
+      "name": "g_StaticColorVector.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c42a0",
+      "name": "g_ColorConstantsInitialized",
+      "type": "uchar",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02c6d590",
+      "name": "DAT_02c6d590",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCube *"
+      },
+      {
+        "is_param": true,
+        "name": "rendering_mode",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(float *)((int)",
+      "text": "pfVar1 = (float *)((int)pCVar2->vertices + local_18 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(float *)((int)",
+      "text": "local_38 = *(float *)((int)pCVar2->vertices + local_18 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(float *)((int)",
+      "text": "local_34 = *(float *)((int)pCVar2->vertices + local_18 + 0x14);",
+      "type": "pointer_cast"
     }
   ]
 }

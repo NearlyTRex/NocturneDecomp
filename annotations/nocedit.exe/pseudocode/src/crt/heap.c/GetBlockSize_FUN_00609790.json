@@ -1,62 +1,62 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 19, 
-    "pseudocode_lines": 4, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 11, 
-    "assembly_lines": 7, 
-    "suspect_count": 1, 
+    "assembly_lines": 7,
+    "complexity_score": 19,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "return (*(uint *)((int)ptr + -4) & 0xfffffffe) - 4;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00609790", 
-    "signature": "ulong crt_heap.c_GetBlockSize_FUN_00609790(void * ptr)", 
-    "address_range": [
-      [
-        "00609790", 
-        "0060979e"
-      ]
-    ], 
-    "name": "crt_heap.c_GetBlockSize_FUN_00609790"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 11
+  },
   "cross_references": [
     {
-      "from_addr": "00601e3b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_memory.c_realloc_implementation_FUN_00601e08", 
-      "addr": "00601e08"
+      "addr": "00601e08",
+      "from_addr": "00601e3b",
+      "name": "crt_memory.c_realloc_implementation_FUN_00601e08",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00609790",
+    "address_range": [
+      [
+        "00609790",
+        "0060979e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_heap.c_GetBlockSize_FUN_00609790",
+    "signature": "ulong crt_heap.c_GetBlockSize_FUN_00609790(void * ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 5,
+      "match": "(uint *)((int)",
+      "text": "return (*(uint *)((int)ptr + -4) & 0xfffffffe) - 4;",
+      "type": "pointer_cast"
     }
   ]
 }

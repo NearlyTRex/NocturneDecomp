@@ -35,20 +35,20 @@ section .text
     MOV EBP,ESP                         ; 0046a8e4
     SUB ESP,0x7c                        ; 0046a8e6
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046a8ec
-    MOV [0x01eb1488],EAX                ; 0046a8ef | int g_TextureQualityLevel
+    MOV [0x01eb1488],EAX                ; 0046a8ef | g_TextureQualityLevel
     LEA EAX,[EBP + -0x7c]               ; 0046a8f4
     MOV dword ptr [EBP + -0x8],EAX      ; 0046a8f7
     LEA EAX,[EBP + -0x7c]               ; 0046a8fa
     PUSH EAX                            ; 0046a8fd
-    CALL shape_design.c_initializeCramConfig_FUN_0046b6e0 ; 0046a8fe | void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
-        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_initializeCramConfig_FUN_0046b6e0 ; 0046a8fe
+        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
     ADD ESP,0x4                         ; 0046a903
     LEA EAX,[EBP + -0x7c]               ; 0046a906
     MOV dword ptr [EBP + -0x4],EAX      ; 0046a909
-    CMP dword ptr [0x01eb1488],0x50     ; 0046a90c | int g_TextureQualityLevel
-    JBE 0x0046a91f                      ; 0046a913 | LAB_0046a91f
-        ;   XREF to: 0046a91f (CONDITIONAL_JUMP)
-    MOV dword ptr [0x01eb1488],0x50     ; 0046a915 | int g_TextureQualityLevel
+    CMP dword ptr [0x01eb1488],0x50     ; 0046a90c | g_TextureQualityLevel
+    JBE 0x0046a91f                      ; 0046a913
+        ;   XREF to: 0046a91f (CONDITIONAL_JUMP)  ; LAB_0046a91f
+    MOV dword ptr [0x01eb1488],0x50     ; 0046a915 | g_TextureQualityLevel
     MOV ESP,EBP                         ; 0046a91f
         ;   Label: LAB_0046a91f
     POP EBP                             ; 0046a921

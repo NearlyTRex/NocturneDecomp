@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00574b51
     MOV EDX,dword ptr [EBX + 0x24]      ; 00574b55
     TEST EDX,EDX                        ; 00574b58
-    JNZ 0x00574b6a                      ; 00574b5a | LAB_00574b6a
-        ;   XREF to: 00574b6a (CONDITIONAL_JUMP)
+    JNZ 0x00574b6a                      ; 00574b5a
+        ;   XREF to: 00574b6a (CONDITIONAL_JUMP)  ; LAB_00574b6a
     MOV dword ptr [EBX + 0x4],0x0       ; 00574b5c
     MOV EAX,dword ptr [EBX + 0x4]       ; 00574b63
     MOV dword ptr [EBX],EAX             ; 00574b66
@@ -35,10 +35,10 @@ section .text
     RET                                 ; 00574b69
     PUSH 0xbb                           ; 00574b6a
         ;   Label: LAB_00574b6a
-    PUSH 0x646498                       ; 00574b6f | = "..\\core\\setdir.cpp" | s_core_setdir_cpp_00646498 = ..\core\setdir.cpp
+    PUSH 0x646498                       ; 00574b6f | = "..\\core\\setdir.cpp"
     PUSH EDX                            ; 00574b74
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00574b75 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00574b75
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 00574b7a
     MOV dword ptr [EBX + 0x24],0x0      ; 00574b7d
     MOV dword ptr [EBX + 0x4],0x0       ; 00574b84

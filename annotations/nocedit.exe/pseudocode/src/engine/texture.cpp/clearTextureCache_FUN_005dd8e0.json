@@ -1,98 +1,98 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 8, 
-    "global_count": 1, 
-    "total_lines": 12, 
-    "assembly_lines": 7, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_texture.cpp_CTextureCache_free_FUN_005dcb30", 
-      "addr": "005dcb30"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CTextureCache*", 
-      "name": "g_TextureCacheInstance", 
-      "addr": "03f87358", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005dd8e0", 
-    "signature": "void engine_texture.cpp_clearTextureCache_FUN_005dd8e0(void)", 
-    "address_range": [
-      [
-        "005dd8e0", 
-        "005dd8ef"
-      ]
-    ], 
-    "name": "engine_texture.cpp_clearTextureCache_FUN_005dd8e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 7,
+    "complexity_score": 5,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
   "cross_references": [
     {
-      "from_addr": "0047a7fc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0", 
-      "addr": "0047a3e0"
-    }, 
+      "addr": "0047a3e0",
+      "from_addr": "0047a7fc",
+      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050fe65", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_cleanupMenuTransition_FUN_0050fe60", 
-      "addr": "0050fe60"
-    }, 
+      "addr": "0050fe60",
+      "from_addr": "0050fe65",
+      "name": "core_menu.cpp_cleanupMenuTransition_FUN_0050fe60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00512fe2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40", 
-      "addr": "00512f40"
-    }, 
+      "addr": "00512f40",
+      "from_addr": "00512fe2",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005248f2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_FUN_005248e0", 
-      "addr": "005248e0"
-    }, 
+      "addr": "005248e0",
+      "from_addr": "005248f2",
+      "name": "core_mission.cpp_FUN_005248e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058e09b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058de70", 
-      "addr": "0058de70"
-    }, 
+      "addr": "0058de70",
+      "from_addr": "0058e09b",
+      "name": "core_skeledit.cpp_FUN_0058de70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046df9c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_cramTextureList_FUN_0046bb80", 
-      "addr": "0046bb80"
-    }, 
+      "addr": "0046bb80",
+      "from_addr": "0046df9c",
+      "name": "shape_design.c_cramTextureList_FUN_0046bb80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046a845", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_tileTextureMaps_FUN_0046a180", 
-      "addr": "0046a180"
-    }, 
+      "addr": "0046a180",
+      "from_addr": "0046a845",
+      "name": "shape_design.c_tileTextureMaps_FUN_0046a180",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051bb2f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0", 
-      "addr": "0051bac0"
+      "addr": "0051bac0",
+      "from_addr": "0051bb2f",
+      "name": "shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005dd8e0",
+    "address_range": [
+      [
+        "005dd8e0",
+        "005dd8ef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_clearTextureCache_FUN_005dd8e0",
+    "signature": "void engine_texture.cpp_clearTextureCache_FUN_005dd8e0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005dcb30",
+      "name": "engine_texture.cpp_CTextureCache_free_FUN_005dcb30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f87358",
+      "name": "g_TextureCacheInstance",
+      "type": "CTextureCache*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

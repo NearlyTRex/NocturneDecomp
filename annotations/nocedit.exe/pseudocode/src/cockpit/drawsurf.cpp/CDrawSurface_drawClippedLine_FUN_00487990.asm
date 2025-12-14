@@ -61,12 +61,12 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 004879eb
     PUSH EAX                            ; 004879ef
     PUSH EBX                            ; 004879f0
-    CALL cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20 ; 004879f1 | int cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface * this_ptr, int * x1, int * y1, int * x2, ...)
-        ;   XREF to: 00487e20 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20 ; 004879f1
+        ;   XREF to: 00487e20 (UNCONDITIONAL_CALL)  ; int cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface * this_ptr, int * x1, int * y1, int * x2, ...)
     ADD ESP,0x24                        ; 004879f6
     TEST EAX,EAX                        ; 004879f9
-    JNZ 0x00487a02                      ; 004879fb | LAB_00487a02
-        ;   XREF to: 00487a02 (CONDITIONAL_JUMP)
+    JNZ 0x00487a02                      ; 004879fb
+        ;   XREF to: 00487a02 (CONDITIONAL_JUMP)  ; LAB_00487a02
     POP EBP                             ; 004879fd
     POP EDI                             ; 004879fe
     POP ESI                             ; 004879ff
@@ -82,8 +82,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x24]      ; 00487a11
     PUSH EAX                            ; 00487a15
     PUSH EBX                            ; 00487a16
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0 ; 00487a17 | void cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-        ;   XREF to: 00487ad0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0 ; 00487a17
+        ;   XREF to: 00487ad0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 00487a1c
     POP EBP                             ; 00487a1f
     POP EDI                             ; 00487a20

@@ -304,7 +304,7 @@ core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0
     uVar14 = (int)uVar1 >> 4;
     iVar3 = g_PerspectiveScanlinePixelCount;
     puVar15 = g_PerspectiveScanlineZPtr;
-    puVar16 = (uint *)g_PerspectiveScanlineColorPtr;
+    puVar16 = g_PerspectiveScanlineColorPtr;
     g_PerspectiveLeftZ = uVar1;
     while (-1 < iVar3 + -4) {
       if ((int)*puVar15 <= (int)uVar14) {

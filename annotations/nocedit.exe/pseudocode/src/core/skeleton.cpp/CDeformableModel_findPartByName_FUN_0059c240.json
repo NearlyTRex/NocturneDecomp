@@ -1,178 +1,178 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 28, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 14, 
-    "global_count": 4, 
-    "total_lines": 91, 
-    "assembly_lines": 63, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064ea83", 
-      "addr": "0064ea83", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_find_part_s_in_mod_0064ea98", 
-      "addr": "0064ea98", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059c240", 
-    "signature": "int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)", 
-    "address_range": [
-      [
-        "0059c240", 
-        "0059c2c5"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "part_name"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "error_if_not_found"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 63,
+    "complexity_score": 28,
+    "cross_reference_count": 14,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 91
+  },
   "cross_references": [
     {
-      "from_addr": "00415361", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batcreat.cpp_CBatCreature_FUN_00415150", 
-      "addr": "00415150"
-    }, 
+      "addr": "00415150",
+      "from_addr": "00415361",
+      "name": "core_batcreat.cpp_CBatCreature_FUN_00415150",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00416720", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batman.cpp_CBatman_FUN_00416510", 
-      "addr": "00416510"
-    }, 
+      "addr": "00416510",
+      "from_addr": "00416720",
+      "name": "core_batman.cpp_CBatman_FUN_00416510",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0042392e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bride.cpp_FUN_00423810", 
-      "addr": "00423810"
-    }, 
+      "addr": "00423810",
+      "from_addr": "0042392e",
+      "name": "core_bride.cpp_FUN_00423810",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004442e0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cow.cpp_FUN_004441b0", 
-      "addr": "004441b0"
-    }, 
+      "addr": "004441b0",
+      "from_addr": "004442e0",
+      "name": "core_cow.cpp_FUN_004441b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048421a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0", 
-      "addr": "004840b0"
-    }, 
+      "addr": "004840b0",
+      "from_addr": "0048421a",
+      "name": "core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e4782", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gargoyle.cpp_CGargoyle_FUN_004e45e0", 
-      "addr": "004e45e0"
-    }, 
+      "addr": "004e45e0",
+      "from_addr": "004e4782",
+      "name": "core_gargoyle.cpp_CGargoyle_FUN_004e45e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e6342", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ghoul.cpp_FUN_004e6160", 
-      "addr": "004e6160"
-    }, 
+      "addr": "004e6160",
+      "from_addr": "004e6342",
+      "name": "core_ghoul.cpp_FUN_004e6160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f9ab6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_imp.cpp_FUN_004f9910", 
-      "addr": "004f9910"
-    }, 
+      "addr": "004f9910",
+      "from_addr": "004f9ab6",
+      "name": "core_imp.cpp_FUN_004f9910",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005255a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_FUN_00525340", 
-      "addr": "00525340"
-    }, 
+      "addr": "00525340",
+      "from_addr": "005255a0",
+      "name": "core_mobster.cpp_FUN_00525340",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005597a7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00559730", 
-      "addr": "00559730"
-    }, 
+      "addr": "00559730",
+      "from_addr": "005597a7",
+      "name": "core_script.cpp_FUN_00559730",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a26a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_smiley.cpp_FUN_005a24d0", 
-      "addr": "005a24d0"
-    }, 
+      "addr": "005a24d0",
+      "from_addr": "005a26a0",
+      "name": "core_smiley.cpp_FUN_005a24d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bb7c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005bb4b0", 
-      "addr": "005bb4b0"
-    }, 
+      "addr": "005bb4b0",
+      "from_addr": "005bb7c5",
+      "name": "core_stranger.cpp_CStranger_FUN_005bb4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d8b42", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_svetlana.cpp_CSvetlana_FUN_005d88e0", 
-      "addr": "005d88e0"
-    }, 
+      "addr": "005d88e0",
+      "from_addr": "005d8b42",
+      "name": "core_svetlana.cpp_CSvetlana_FUN_005d88e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f926d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_CZombie_FUN_005f9140", 
-      "addr": "005f9140"
+      "addr": "005f9140",
+      "from_addr": "005f926d",
+      "name": "core_zombie.cpp_CZombie_FUN_005f9140",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0059c240",
+    "address_range": [
+      [
+        "0059c240",
+        "0059c2c5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240",
+    "signature": "int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064ea83",
+      "name": "s_core_skeleton_cpp_0064ea83",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ea98",
+      "name": "s_Can_t_find_part_s_in_mod_0064ea98",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "part_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "error_if_not_found",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -25,8 +25,8 @@ section .text
     PUSH 0x0                            ; 00603bcf
     MOV EDX,dword ptr [EBP + 0x8]       ; 00603bd1
     PUSH EDX                            ; 00603bd4
-    CALL crt_string.c_strtod_main_FUN_00605d5d ; 00603bd5 | double crt_string.c_strtod_main_FUN_00605d5d(char * str, char * * endptr)
-        ;   XREF to: 00605d5d (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strtod_main_FUN_00605d5d ; 00603bd5
+        ;   XREF to: 00605d5d (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_main_FUN_00605d5d(char * str, char * * endptr)
     MOV dword ptr [EBP + -0x8],EAX      ; 00603bda
     MOV dword ptr [EBP + -0x4],EDX      ; 00603bdd
     ADD ESP,0x8                         ; 00603be0

@@ -1,72 +1,72 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 20, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_InputKeyMask", 
-      "addr": "006793a8", 
-      "value": "0x7f"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005024b0", 
-    "signature": "void engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys * this, int enableExtended)", 
-    "address_range": [
-      [
-        "005024b0", 
-        "005024ce"
-      ]
-    ], 
-    "name": "engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeys *", 
-        "size": 4, 
-        "name": "this"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "enableExtended"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
+  },
   "cross_references": [
     {
-      "from_addr": "004db52c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
-    }, 
+      "addr": "004daf80",
+      "from_addr": "004db52c",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00514b1a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0", 
-      "addr": "005138e0"
+      "addr": "005138e0",
+      "from_addr": "00514b1a",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005024b0",
+    "address_range": [
+      [
+        "005024b0",
+        "005024ce"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0",
+    "signature": "void engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys * this, int enableExtended)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006793a8",
+      "name": "g_InputKeyMask",
+      "type": "int",
+      "value": "0x7f"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeys *"
+      },
+      {
+        "is_param": true,
+        "name": "enableExtended",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

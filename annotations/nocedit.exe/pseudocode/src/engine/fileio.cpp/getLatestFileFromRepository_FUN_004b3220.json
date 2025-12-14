@@ -1,401 +1,401 @@
 {
   "complexity": {
-    "function_call_count": 13, 
-    "complexity_score": 296, 
-    "pseudocode_lines": 146, 
-    "cross_reference_count": 6, 
-    "global_count": 12, 
-    "total_lines": 511, 
-    "assembly_lines": 365, 
-    "suspect_count": 12, 
+    "assembly_lines": 361,
+    "complexity_score": 296,
+    "cross_reference_count": 6,
+    "function_call_count": 13,
+    "global_count": 12,
+    "pseudocode_lines": 146,
+    "suspect_count": 12,
     "suspect_types": [
-      "undefined_type", 
-      "concat_artifact", 
-      "unknown_field", 
-      "badspacebase", 
-      "register_param", 
+      "concat_artifact",
+      "badspacebase",
+      "undefined_type",
+      "register_param",
+      "unknown_field",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_errno_FUN_00601450", 
-      "addr": "00601450"
-    }, 
-    {
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
-      "addr": "005ff9d0"
-    }, 
-    {
-      "name": "crt_stdio.c_setvbuf_FUN_00601490", 
-      "addr": "00601490"
-    }, 
-    {
-      "name": "engine_dosio.c_copyFileTimestamp_FUN_00481910", 
-      "addr": "00481910"
-    }, 
-    {
-      "name": "engine_dosio.c_ensureTrailingSlash_FUN_00481f80", 
-      "addr": "00481f80"
-    }, 
-    {
-      "name": "engine_dosio.c_findFileNormally_FUN_004817c0", 
-      "addr": "004817c0"
-    }, 
-    {
-      "name": "engine_dosio.c_getFileTimestamp_FUN_00481960", 
-      "addr": "00481960"
-    }, 
-    {
-      "name": "engine_dosio.c_makePath_FUN_00481f50", 
-      "addr": "00481f50"
-    }, 
-    {
-      "name": "engine_dosio.c_setFileAttributes_FUN_004819f0", 
-      "addr": "004819f0"
-    }, 
-    {
-      "name": "engine_fileio.cpp_copyFileWithProgress_FUN_004b2030", 
-      "addr": "004b2030"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "Sleep*", 
-      "name": "Sleep", 
-      "addr": "00611644", 
-      "value": "00212228"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_0062604b", 
-      "addr": "0062604b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00626129", 
-      "addr": "00626129", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_WARNING_Error_setting_da_00626577", 
-      "addr": "00626577", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_0062660e", 
-      "addr": "0062660e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_access_s_Perhaps_s_00626611", 
-      "addr": "00626611", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006266a4", 
-      "addr": "006266a4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wb_006266b9", 
-      "addr": "006266b9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_create_s_006266bc", 
-      "addr": "006266bc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Error_turning_on_read_on_006266cd", 
-      "addr": "006266cd", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 2, 
-    "patterns": [
-      {
-        "address": "004b3272", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }, 
-      {
-        "address": "004b3298", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "undefined3 extraout_var", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var;"
-    }, 
-    {
-      "line": 14, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 32, 
-      "match": "&stack0xfffffac8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xfffffac8,&stack0xfffffff0,acStack_110,(char *)0x0,(char *)0x0);"
-    }, 
-    {
-      "line": 32, 
-      "match": "&stack0xfffffff0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xfffffac8,&stack0xfffffff0,acStack_110,(char *)0x0,(char *)0x0);"
-    }, 
-    {
-      "line": 34, 
-      "match": "&stack0xfffffacc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar6 = &stack0xfffffacc;"
-    }, 
-    {
-      "line": 57, 
-      "match": "&stack0xfffffacc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xfffffacc,(char *)0x0,\"rb\",\"..\\\\engine\\\\fileio.cpp\","
-    }, 
-    {
-      "line": 71, 
-      "match": "&stack0xfffffad4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(iVar5 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)&stack0xfffffad4),"
-    }, 
-    {
-      "line": 110, 
-      "match": "&stack0xfffffae8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(stream_ptr,dest_file,&stack0xfffffae8,auStack_314 + 0x10,auStack_314._0_4_"
-    }, 
-    {
-      "line": 110, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(stream_ptr,dest_file,&stack0xfffffae8,auStack_314 + 0x10,auStack_314._0_4_"
-    }, 
-    {
-      "line": 123, 
-      "match": "._16_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar5 = engine_dosio_c_copyFileTimestamp_FUN_00481910(acStack_2fc,(char *)auStack_314._16_4_);"
-    }, 
-    {
-      "line": 137, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0)) && (-1 < (int)uVar4)) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004b3220", 
-    "signature": "int engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220(char * base_directory, char * filename)", 
-    "address_range": [
-      [
-        "004b3220", 
-        "004b3591"
-      ]
-    ], 
-    "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220"
-  }, 
-  "stack_frame": {
-    "local_size": 1344, 
-    "variables": [
-      {
-        "offset": -1340, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_53c"
-      }, 
-      {
-        "offset": -1339, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_53b"
-      }, 
-      {
-        "offset": -824, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_338"
-      }, 
-      {
-        "offset": -816, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_330"
-      }, 
-      {
-        "offset": -808, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_328"
-      }, 
-      {
-        "offset": -807, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_327"
-      }, 
-      {
-        "offset": -292, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_124"
-      }, 
-      {
-        "offset": -284, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_11c"
-      }, 
-      {
-        "offset": -276, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_114"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "base_directory"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 1352, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 507
+  },
   "cross_references": [
     {
-      "from_addr": "004b3eae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920", 
-      "addr": "004b3920"
-    }, 
+      "addr": "004b3920",
+      "from_addr": "004b3eae",
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b4583", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
-      "addr": "004b4220"
-    }, 
+      "addr": "004b4220",
+      "from_addr": "004b4583",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b420e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_revert_FUN_004b41c0", 
-      "addr": "004b41c0"
-    }, 
+      "addr": "004b41c0",
+      "from_addr": "004b420e",
+      "name": "engine_fileio.cpp_CCheckOutItem_revert_FUN_004b41c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bb465", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bb465",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bad65", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
-      "addr": "004ba740"
-    }, 
+      "addr": "004ba740",
+      "from_addr": "004bad65",
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bc34c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0", 
-      "addr": "004bc2b0"
+      "addr": "004bc2b0",
+      "from_addr": "004bc34c",
+      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b3220",
+    "address_range": [
+      [
+        "004b3220",
+        "004b3591"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220",
+    "signature": "int engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220(char * base_directory, char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601450",
+      "name": "crt_errno.c_errno_FUN_00601450"
+    },
+    {
+      "addr": "005ff9d0",
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
+    },
+    {
+      "addr": "00601490",
+      "name": "crt_stdio.c_setvbuf_FUN_00601490"
+    },
+    {
+      "addr": "00481910",
+      "name": "engine_dosio.c_copyFileTimestamp_FUN_00481910"
+    },
+    {
+      "addr": "00481f80",
+      "name": "engine_dosio.c_ensureTrailingSlash_FUN_00481f80"
+    },
+    {
+      "addr": "004817c0",
+      "name": "engine_dosio.c_findFileNormally_FUN_004817c0"
+    },
+    {
+      "addr": "00481960",
+      "name": "engine_dosio.c_getFileTimestamp_FUN_00481960"
+    },
+    {
+      "addr": "00481f50",
+      "name": "engine_dosio.c_makePath_FUN_00481f50"
+    },
+    {
+      "addr": "004819f0",
+      "name": "engine_dosio.c_setFileAttributes_FUN_004819f0"
+    },
+    {
+      "addr": "004b2030",
+      "name": "engine_fileio.cpp_copyFileWithProgress_FUN_004b2030"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611644",
+      "name": "Sleep",
+      "type": "Sleep*",
+      "value": "00212228"
+    },
+    {
+      "addr": "0062604b",
+      "name": "s_engine_fileio_cpp_0062604b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626129",
+      "name": "s_engine_fileio_cpp_00626129",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626577",
+      "name": "s_WARNING_Error_setting_da_00626577",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062660e",
+      "name": "s_rb_0062660e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626611",
+      "name": "s_Can_t_access_s_Perhaps_s_00626611",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006266a4",
+      "name": "s_engine_fileio_cpp_006266a4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006266b9",
+      "name": "s_wb_006266b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006266bc",
+      "name": "s_Can_t_create_s_006266bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006266cd",
+      "name": "s_Error_turning_on_read_on_006266cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 1352,
+    "local_size": 1344,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_53c",
+        "offset": -1340,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_53b",
+        "offset": -1339,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_338",
+        "offset": -824,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_330",
+        "offset": -816,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_328",
+        "offset": -808,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_327",
+        "offset": -807,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "base_directory",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004b3272",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004b3298",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved type",
+      "line": 12,
+      "match": "undefined3 extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 14,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xfffffac8",
+      "text": "(&stack0xfffffac8,&stack0xfffffff0,acStack_110,(char *)0x0,(char *)0x0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xfffffff0",
+      "text": "(&stack0xfffffac8,&stack0xfffffff0,acStack_110,(char *)0x0,(char *)0x0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xfffffacc",
+      "text": "pcVar6 = &stack0xfffffacc;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 57,
+      "match": "&stack0xfffffacc",
+      "text": "(&stack0xfffffacc,(char *)0x0,\"rb\",\"..\\\\engine\\\\fileio.cpp\",",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 71,
+      "match": "&stack0xfffffad4",
+      "text": "(iVar5 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)&stack0xfffffad4),",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 110,
+      "match": "&stack0xfffffae8",
+      "text": "(stream_ptr,dest_file,&stack0xfffffae8,auStack_314 + 0x10,auStack_314._0_4_",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 110,
+      "match": "._0_4_",
+      "text": "(stream_ptr,dest_file,&stack0xfffffae8,auStack_314 + 0x10,auStack_314._0_4_",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 123,
+      "match": "._16_4_",
+      "text": "iVar5 = engine_dosio_c_copyFileTimestamp_FUN_00481910(acStack_2fc,(char *)auStack_314._16_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 137,
+      "match": "CONCAT31",
+      "text": "CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0)) && (-1 < (int)uVar4)) {",
+      "type": "concat_artifact"
     }
   ]
 }

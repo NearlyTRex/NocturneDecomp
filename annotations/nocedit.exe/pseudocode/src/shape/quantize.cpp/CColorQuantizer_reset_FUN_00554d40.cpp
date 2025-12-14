@@ -49,7 +49,7 @@ shape_quantize_cpp_CColorQuantizer_reset_FUN_00554d40(CColorQuantizer *this_ptr)
   }
   pCVar1 = this_ptr->progress_callback;
   iVar2 = this_ptr->num_colors;
-  pCVar3 = (CColorQuantizer *)crt_memory_c_memset_FUN_005fde40(this_ptr,0,0x4b44);
+  pCVar3 = crt_memory_c_memset_FUN_005fde40(this_ptr,0,0x4b44);
   this_ptr->status = -1;
   this_ptr->progress_callback = pCVar1;
   this_ptr->num_colors = iVar2;

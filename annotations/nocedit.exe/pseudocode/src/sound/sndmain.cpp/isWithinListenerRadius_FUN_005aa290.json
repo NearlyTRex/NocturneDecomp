@@ -1,122 +1,122 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 6, 
-    "global_count": 3, 
-    "total_lines": 39, 
-    "assembly_lines": 28, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CVector3d", 
-      "name": "g_Cached3DListenerPos", 
-      "addr": "03f68830", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.y", 
-      "addr": "03f68838", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.z", 
-      "addr": "03f68840", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005aa290", 
-    "signature": "int sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290(double pos_x, double pos_y, double pos_z, double radius)", 
-    "address_range": [
-      [
-        "005aa290", 
-        "005aa2e8"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "pos_x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "pos_y"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "pos_z"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "radius"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 32
-  }, 
+    "assembly_lines": 28,
+    "complexity_score": 11,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
   "cross_references": [
     {
-      "from_addr": "00414b98", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bat.cpp_CBat_process_FUN_00414a00", 
-      "addr": "00414a00"
-    }, 
+      "addr": "00414a00",
+      "from_addr": "00414b98",
+      "name": "core_bat.cpp_CBat_process_FUN_00414a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041c567", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_FUN_0041bf90", 
-      "addr": "0041bf90"
-    }, 
+      "addr": "0041bf90",
+      "from_addr": "0041c567",
+      "name": "core_boneguy.cpp_FUN_0041bf90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048edc9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_drone.cpp_FUN_0048ec70", 
-      "addr": "0048ec70"
-    }, 
+      "addr": "0048ec70",
+      "from_addr": "0048edc9",
+      "name": "core_drone.cpp_FUN_0048ec70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a80f4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_emitter.cpp_FUN_004a8070", 
-      "addr": "004a8070"
-    }, 
+      "addr": "004a8070",
+      "from_addr": "004a80f4",
+      "name": "core_emitter.cpp_FUN_004a8070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f1a19", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_haystack.cpp_FUN_004f1970", 
-      "addr": "004f1970"
-    }, 
+      "addr": "004f1970",
+      "from_addr": "004f1a19",
+      "name": "core_haystack.cpp_FUN_004f1970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e4d10", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tvbat.cpp_CTVBat_process_FUN_005e4210", 
-      "addr": "005e4210"
+      "addr": "005e4210",
+      "from_addr": "005e4d10",
+      "name": "core_tvbat.cpp_CTVBat_process_FUN_005e4210",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005aa290",
+    "address_range": [
+      [
+        "005aa290",
+        "005aa2e8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290",
+    "signature": "int sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290(double pos_x, double pos_y, double pos_z, double radius)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f68830",
+      "name": "g_Cached3DListenerPos",
+      "type": "CVector3d",
+      "value": null
+    },
+    {
+      "addr": "03f68838",
+      "name": "g_Cached3DListenerPos.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68840",
+      "name": "g_Cached3DListenerPos.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "pos_x",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "pos_y",
+        "offset": 12,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "pos_z",
+        "offset": 20,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "radius",
+        "offset": 28,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "suspects": []
 }

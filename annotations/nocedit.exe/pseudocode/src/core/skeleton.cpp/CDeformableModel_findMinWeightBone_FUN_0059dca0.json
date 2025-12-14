@@ -1,113 +1,113 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 104, 
-    "pseudocode_lines": 49, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 131, 
-    "assembly_lines": 82, 
-    "suspect_count": 4, 
+    "assembly_lines": 82,
+    "complexity_score": 104,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 49,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 23, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_1a4 + iVar5) = 0;"
-    }, 
-    {
-      "line": 45, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (local_1a4[iVar5] < *(float *)((int)local_1a4 + iVar3)) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059dca0", 
-    "signature": "int core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel * this_ptr, int lod_level, int triangle_index)", 
-    "address_range": [
-      [
-        "0059dca0", 
-        "0059dd5e"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0"
-  }, 
-  "stack_frame": {
-    "local_size": 424, 
-    "variables": [
-      {
-        "offset": -420, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1a4"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "lod_level"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "triangle_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 436, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 131
+  },
   "cross_references": [
     {
-      "from_addr": "004097f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470", 
-      "addr": "00409470"
+      "addr": "00409470",
+      "from_addr": "004097f5",
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059dca0",
+    "address_range": [
+      [
+        "0059dca0",
+        "0059dd5e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0",
+    "signature": "int core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel * this_ptr, int lod_level, int triangle_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 436,
+    "local_size": 424,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1a4",
+        "offset": -420,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_level",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 14,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_1a4 + iVar5) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(float *)((int)",
+      "text": "if (local_1a4[iVar5] < *(float *)((int)local_1a4 + iVar3)) {",
+      "type": "pointer_cast"
     }
   ]
 }

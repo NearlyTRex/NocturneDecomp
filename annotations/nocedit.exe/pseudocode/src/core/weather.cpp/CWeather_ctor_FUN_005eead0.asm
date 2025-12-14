@@ -21,8 +21,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005eead1
     PUSH 0x0                            ; 005eead5
     PUSH EBX                            ; 005eead7
-    CALL core_weather.cpp_CWeather_FUN_005ef8c0 ; 005eead8 | undefined core_weather.cpp_CWeather_FUN_005ef8c0()
-        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)
+    CALL core_weather.cpp_CWeather_FUN_005ef8c0 ; 005eead8
+        ;   XREF to: 005ef8c0 (UNCONDITIONAL_CALL)  ; undefined core_weather.cpp_CWeather_FUN_005ef8c0()
     ADD ESP,0x8                         ; 005eeadd
     MOV EAX,EBX                         ; 005eeae0
     POP EBX                             ; 005eeae2

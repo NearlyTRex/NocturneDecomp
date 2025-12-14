@@ -36,8 +36,8 @@ section .text
     MOV EDX,dword ptr [ESI + 0x24]      ; 004824fa
     XOR EDI,EDI                         ; 004824fd
     TEST EDX,EDX                        ; 004824ff
-    JLE 0x004825b2                      ; 00482501 | LAB_004825b2
-        ;   XREF to: 004825b2 (CONDITIONAL_JUMP)
+    JLE 0x004825b2                      ; 00482501
+        ;   XREF to: 004825b2 (CONDITIONAL_JUMP)  ; LAB_004825b2
     PUSH EBX                            ; 00482507
     XOR EBX,EBX                         ; 00482508
     MOV dword ptr [ESP + 0x8],0x3       ; 0048250a
@@ -67,8 +67,8 @@ section .text
     PUSH EAX                            ; 00482562
     MOV EBP,dword ptr [ESI + 0x2c]      ; 00482563
     PUSH EBP                            ; 00482566
-    CALL engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0 ; 00482567 | void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SSurfaceNormal * output)
-        ;   XREF to: 00501bc0 (UNCONDITIONAL_CALL)
+    CALL engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0 ; 00482567
+        ;   XREF to: 00501bc0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SSurfaceNormal * output)
     MOV EAX,dword ptr [ESI + 0x34]      ; 0048256c
     ADD ESP,0x8                         ; 0048256f
     LEA EDX,[EAX + EBX*0x1]             ; 00482572
@@ -90,8 +90,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x24]      ; 004825a3
     ADD EBX,0x20                        ; 004825a6
     CMP EDI,EAX                         ; 004825a9
-    JL 0x0048250a                       ; 004825ab | LAB_0048250a
-        ;   XREF to: 0048250a (CONDITIONAL_JUMP)
+    JL 0x0048250a                       ; 004825ab
+        ;   XREF to: 0048250a (CONDITIONAL_JUMP)  ; LAB_0048250a
     POP EBX                             ; 004825b1
     ADD ESP,0x3c                        ; 004825b2
         ;   Label: LAB_004825b2

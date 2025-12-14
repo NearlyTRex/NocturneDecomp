@@ -39,43 +39,43 @@ section .text
     SUB ESP,0x4                         ; 00602884
     MOV EBX,dword ptr [ESP + 0x18]      ; 00602887
     TEST EBX,EBX                        ; 0060288b
-    JL 0x00602897                       ; 0060288d | LAB_00602897
-        ;   XREF to: 00602897 (CONDITIONAL_JUMP)
-    CMP EBX,dword ptr [0x00685214]      ; 0060288f | uint g_MaxHandleCount
-    JBE 0x006028ab                      ; 00602895 | LAB_006028ab
-        ;   XREF to: 006028ab (CONDITIONAL_JUMP)
+    JL 0x00602897                       ; 0060288d
+        ;   XREF to: 00602897 (CONDITIONAL_JUMP)  ; LAB_00602897
+    CMP EBX,dword ptr [0x00685214]      ; 0060288f | g_MaxHandleCount
+    JBE 0x006028ab                      ; 00602895
+        ;   XREF to: 006028ab (CONDITIONAL_JUMP)  ; LAB_006028ab
     PUSH 0x4                            ; 00602897
         ;   Label: LAB_00602897
-    CALL crt_errno.c_setErrno_FUN_00602790 ; 00602899 | void crt_errno.c_setErrno_FUN_00602790(int error_code)
-        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_setErrno_FUN_00602790 ; 00602899
+        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00602790(int error_code)
     MOV EAX,0xffffffff                  ; 0060289e
     ADD ESP,0x4                         ; 006028a3
-    JMP 0x00602941                      ; 006028a6 | LAB_00602941
-        ;   XREF to: 00602941 (UNCONDITIONAL_JUMP)
+    JMP 0x00602941                      ; 006028a6
+        ;   XREF to: 00602941 (UNCONDITIONAL_JUMP)  ; LAB_00602941
     PUSH EBX                            ; 006028ab
         ;   Label: LAB_006028ab
-    CALL dword ptr [0x00684ee8]         ; 006028ac | ENTER_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
-    MOV ECX,dword ptr [0x006852ac]      ; 006028b2 | SPECIAL_DEVICE_READ_FUNC * g_SpecialDeviceReadFuncPtr
+    CALL dword ptr [0x00684ee8]         ; 006028ac | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
+    MOV ECX,dword ptr [0x006852ac]      ; 006028b2 | g_SpecialDeviceReadFuncPtr
     ADD ESP,0x4                         ; 006028b8
     TEST ECX,ECX                        ; 006028bb
-    JZ 0x006028f7                       ; 006028bd | LAB_006028f7
-        ;   XREF to: 006028f7 (CONDITIONAL_JUMP)
+    JZ 0x006028f7                       ; 006028bd
+        ;   XREF to: 006028f7 (CONDITIONAL_JUMP)  ; LAB_006028f7
     PUSH EBX                            ; 006028bf
-    CALL dword ptr [0x00685284]         ; 006028c0 | IS_SPECIAL_DEVICE_FUNC * g_IsSpecialDeviceFuncPtr
+    CALL dword ptr [0x00685284]         ; 006028c0 | g_IsSpecialDeviceFuncPtr
     ADD ESP,0x4                         ; 006028c6
     TEST EAX,EAX                        ; 006028c9
-    JZ 0x006028f7                       ; 006028cb | LAB_006028f7
-        ;   XREF to: 006028f7 (CONDITIONAL_JUMP)
+    JZ 0x006028f7                       ; 006028cb
+        ;   XREF to: 006028f7 (CONDITIONAL_JUMP)  ; LAB_006028f7
     MOV EDX,dword ptr [ESP + 0x20]      ; 006028cd
     PUSH EDX                            ; 006028d1
     MOV ECX,dword ptr [ESP + 0x20]      ; 006028d2
     PUSH ECX                            ; 006028d6
     PUSH EAX                            ; 006028d7
-    CALL dword ptr [0x006852ac]         ; 006028d8 | SPECIAL_DEVICE_READ_FUNC * g_SpecialDeviceReadFuncPtr
+    CALL dword ptr [0x006852ac]         ; 006028d8 | g_SpecialDeviceReadFuncPtr
     ADD ESP,0xc                         ; 006028de
     PUSH EBX                            ; 006028e1
     MOV ESI,EAX                         ; 006028e2
-    CALL dword ptr [0x00684eec]         ; 006028e4 | EXIT_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
+    CALL dword ptr [0x00684eec]         ; 006028e4 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 006028ea
     MOV EAX,ESI                         ; 006028ed
     ADD ESP,0x4                         ; 006028ef
@@ -91,19 +91,19 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 006028fe
     PUSH EDI                            ; 00602902
     MOV EBP,dword ptr [ESP + 0x28]      ; 00602903
-    MOV ESI,dword ptr [0x0068526c]      ; 00602907 | SIOControlBlock * g_IOControlBlock
+    MOV ESI,dword ptr [0x0068526c]      ; 00602907 | g_IOControlBlock
     PUSH EBP                            ; 0060290d
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 0060290e
     PUSH ESI                            ; 00602911
-    CALL dword ptr CS:[0x611604]        ; 00602912 | ReadFile * PTR_ReadFile_00611604
+    CALL dword ptr CS:[0x611604]        ; 00602912 | PTR_ReadFile_00611604
     TEST EAX,EAX                        ; 00602919
-    JNZ 0x00602934                      ; 0060291b | LAB_00602934
-        ;   XREF to: 00602934 (CONDITIONAL_JUMP)
+    JNZ 0x00602934                      ; 0060291b
+        ;   XREF to: 00602934 (CONDITIONAL_JUMP)  ; LAB_00602934
     PUSH EBX                            ; 0060291d
-    CALL dword ptr [0x00684eec]         ; 0060291e | EXIT_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
+    CALL dword ptr [0x00684eec]         ; 0060291e | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 00602924
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00602927 | DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00602927
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
     ADD ESP,0x4                         ; 0060292c
     POP EBP                             ; 0060292f
     POP EDI                             ; 00602930
@@ -112,7 +112,7 @@ section .text
     RET                                 ; 00602933
     PUSH EBX                            ; 00602934
         ;   Label: LAB_00602934
-    CALL dword ptr [0x00684eec]         ; 00602935 | EXIT_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
+    CALL dword ptr [0x00684eec]         ; 00602935 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 0060293b
     MOV EAX,dword ptr [ESP]             ; 0060293e
     ADD ESP,0x4                         ; 00602941

@@ -24,26 +24,26 @@ section .text
     PUSH EBP                            ; 004ccd81
     MOV EDX,dword ptr [ESP + 0x14]      ; 004ccd82
     MOV ECX,dword ptr [ESP + 0x18]      ; 004ccd86
-    CMP EDX,dword ptr [0x02d02558]      ; 004ccd8a | int g_ClipLeft
-    JL 0x004ccdba                       ; 004ccd90 | LAB_004ccdba
-        ;   XREF to: 004ccdba (CONDITIONAL_JUMP)
-    CMP ECX,dword ptr [0x02d0255c]      ; 004ccd92 | int g_ClipTop
-    JL 0x004ccdba                       ; 004ccd98 | LAB_004ccdba
-        ;   XREF to: 004ccdba (CONDITIONAL_JUMP)
-    MOV EAX,[0x02d02560]                ; 004ccd9a | int g_ClipRight
+    CMP EDX,dword ptr [0x02d02558]      ; 004ccd8a | g_ClipLeft
+    JL 0x004ccdba                       ; 004ccd90
+        ;   XREF to: 004ccdba (CONDITIONAL_JUMP)  ; LAB_004ccdba
+    CMP ECX,dword ptr [0x02d0255c]      ; 004ccd92 | g_ClipTop
+    JL 0x004ccdba                       ; 004ccd98
+        ;   XREF to: 004ccdba (CONDITIONAL_JUMP)  ; LAB_004ccdba
+    MOV EAX,[0x02d02560]                ; 004ccd9a | g_ClipRight
     MOV EDI,dword ptr [ESP + 0xc]       ; 004ccd9f
     INC EAX                             ; 004ccda3
     SUB EAX,EDI                         ; 004ccda4
     CMP EDX,EAX                         ; 004ccda6
-    JG 0x004ccdba                       ; 004ccda8 | LAB_004ccdba
-        ;   XREF to: 004ccdba (CONDITIONAL_JUMP)
-    MOV EAX,[0x02d02564]                ; 004ccdaa | int g_ClipBottom
+    JG 0x004ccdba                       ; 004ccda8
+        ;   XREF to: 004ccdba (CONDITIONAL_JUMP)  ; LAB_004ccdba
+    MOV EAX,[0x02d02564]                ; 004ccdaa | g_ClipBottom
     MOV EBP,dword ptr [ESP + 0x10]      ; 004ccdaf
     INC EAX                             ; 004ccdb3
     SUB EAX,EBP                         ; 004ccdb4
     CMP ECX,EAX                         ; 004ccdb6
-    JLE 0x004ccdc2                      ; 004ccdb8 | LAB_004ccdc2
-        ;   XREF to: 004ccdc2 (CONDITIONAL_JUMP)
+    JLE 0x004ccdc2                      ; 004ccdb8
+        ;   XREF to: 004ccdc2 (CONDITIONAL_JUMP)  ; LAB_004ccdc2
     MOV EAX,0x1                         ; 004ccdba
         ;   Label: LAB_004ccdba
     POP EBP                             ; 004ccdbf

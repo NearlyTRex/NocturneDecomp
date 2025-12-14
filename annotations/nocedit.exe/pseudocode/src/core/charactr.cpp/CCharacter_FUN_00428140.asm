@@ -28,6 +28,6 @@ section .text
     SUB ESP,0x4                         ; 00428144
     MOV EBP,dword ptr [ESP + 0x18]      ; 00428147
     PUSH EBP                            ; 0042814b
-    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 0042814c | void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 0042814c
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
 

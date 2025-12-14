@@ -57,10 +57,10 @@ section .text
     SUB ESP,0x98                        ; 0045cc86
     PUSH 0x0                            ; 0045cc8c
     PUSH 0x0                            ; 0045cc8e
-    MOV EAX,0x61b391                    ; 0045cc90 | = "Enter in point list going CW, ie 1,2,3" | s_Enter_in_point_list_goin_0061b391 = Enter in point list going CW, ie 1,2,3
-    PUSH EAX                            ; 0045cc95 | = "Enter in point list going CW, ie 1,2,3" | s_Enter_in_point_list_goin_0061b391 = Enter in point list going CW, ie 1,2,3
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045cc96 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    MOV EAX,0x61b391                    ; 0045cc90 | = "Enter in point list going CW, ie 1,2,3"
+    PUSH EAX                            ; 0045cc95 | = "Enter in point list going CW, ie 1,2,3"
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045cc96
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0045cc9b
     PUSH 0x0                            ; 0045cc9e
     PUSH 0xb                            ; 0045cca0
@@ -68,8 +68,8 @@ section .text
     PUSH 0x3c                           ; 0045cca4
     LEA EAX,[EBP + 0xffffff68]          ; 0045cca6
     PUSH EAX                            ; 0045ccac
-    CALL engine_2d.c_getInputWithPrompt_FUN_004032c0 ; 0045ccad | int engine_2d.c_getInputWithPrompt_FUN_004032c0(char * buffer, int max_length, int x, int y, ...)
-        ;   XREF to: 004032c0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_getInputWithPrompt_FUN_004032c0 ; 0045ccad
+        ;   XREF to: 004032c0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getInputWithPrompt_FUN_004032c0(char * buffer, int max_length, int x, int y, ...)
     ADD ESP,0x14                        ; 0045ccb2
     LEA EAX,[EBP + -0xc]                ; 0045ccb5
     PUSH EAX                            ; 0045ccb8
@@ -103,70 +103,70 @@ section .text
     PUSH EAX                            ; 0045ccf0
     LEA EAX,[EBP + -0x48]               ; 0045ccf1
     PUSH EAX                            ; 0045ccf4
-    MOV EAX,0x61b3b8                    ; 0045ccf5 | = "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%..." | s_d_d_d_d_d_d_d_d_d_d_d_d__0061b3b8 = %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d
-    PUSH EAX                            ; 0045ccfa | = "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%..." | s_d_d_d_d_d_d_d_d_d_d_d_d__0061b3b8 = %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d
+    MOV EAX,0x61b3b8                    ; 0045ccf5 | = "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%..."
+    PUSH EAX                            ; 0045ccfa | = "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%..."
     LEA EAX,[EBP + 0xffffff68]          ; 0045ccfb
     PUSH EAX                            ; 0045cd01
-    CALL crt_stdio.c_sscanf_FUN_0060013c ; 0045cd02 | int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
-        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sscanf_FUN_0060013c ; 0045cd02
+        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
     ADD ESP,0x48                        ; 0045cd07
     MOV dword ptr [EBP + -0x8],EAX      ; 0045cd0a
     CMP dword ptr [EBP + -0x8],0x2      ; 0045cd0d
-    JLE 0x0045cd19                      ; 0045cd11 | LAB_0045cd19
-        ;   XREF to: 0045cd19 (CONDITIONAL_JUMP)
+    JLE 0x0045cd19                      ; 0045cd11
+        ;   XREF to: 0045cd19 (CONDITIONAL_JUMP)  ; LAB_0045cd19
     CMP dword ptr [EBP + -0x8],0x10     ; 0045cd13
-    JL 0x0045cd1e                       ; 0045cd17 | LAB_0045cd1e
-        ;   XREF to: 0045cd1e (CONDITIONAL_JUMP)
-    JMP 0x0045cdf0                      ; 0045cd19 | LAB_0045cdf0
+    JL 0x0045cd1e                       ; 0045cd17
+        ;   XREF to: 0045cd1e (CONDITIONAL_JUMP)  ; LAB_0045cd1e
+    JMP 0x0045cdf0                      ; 0045cd19
+        ;   XREF to: 0045cdf0 (UNCONDITIONAL_JUMP)  ; LAB_0045cdf0
         ;   Label: LAB_0045cd19
-        ;   XREF to: 0045cdf0 (UNCONDITIONAL_JUMP)
-    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd1e | int g_PolygonCount
+    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd1e | g_PolygonCount
         ;   Label: LAB_0045cd1e
     MOV EAX,dword ptr [EBP + -0x8]      ; 0045cd28
     MOV dword ptr [EDX + 0x16e99b4],EAX ; 0045cd2b | DAT_016e99b4
-    IMUL EAX,dword ptr [0x016e990c],0x184 ; 0045cd31 | int g_PolygonCount
-    MOV dword ptr [EAX + 0x16e9910],0x1 ; 0045cd3b | SShapeEditorPolygon[20000] g_ModelPolygonData
-    IMUL EAX,dword ptr [0x016e990c],0x184 ; 0045cd45 | int g_PolygonCount
+    IMUL EAX,dword ptr [0x016e990c],0x184 ; 0045cd31 | g_PolygonCount
+    MOV dword ptr [EAX + 0x16e9910],0x1 ; 0045cd3b | g_ModelPolygonData
+    IMUL EAX,dword ptr [0x016e990c],0x184 ; 0045cd45 | g_PolygonCount
     MOV byte ptr [EAX + 0x16e9914],0x0  ; 0045cd4f | DAT_016e9914
-    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd56 | int g_PolygonCount
-    MOV EAX,[0x01e6614c]                ; 0045cd60 | int g_CurrentPartIndex
+    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd56 | g_PolygonCount
+    MOV EAX,[0x01e6614c]                ; 0045cd60 | g_CurrentPartIndex
     MOV dword ptr [EDX + 0x16e9a88],EAX ; 0045cd65 | DAT_016e9a88
-    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd6b | int g_PolygonCount
-    MOV EAX,[0x01626368]                ; 0045cd75 | int g_EditorColorIndex
+    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd6b | g_PolygonCount
+    MOV EAX,[0x01626368]                ; 0045cd75 | g_EditorColorIndex
     MOV dword ptr [EDX + 0x16e9a8c],EAX ; 0045cd7a | DAT_016e9a8c
-    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd80 | int g_PolygonCount
-    MOV EAX,[0x01626368]                ; 0045cd8a | int g_EditorColorIndex
+    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cd80 | g_PolygonCount
+    MOV EAX,[0x01626368]                ; 0045cd8a | g_EditorColorIndex
     MOV dword ptr [EDX + 0x16e9a90],EAX ; 0045cd8f | DAT_016e9a90
     MOV dword ptr [EBP + -0x4],0x0      ; 0045cd95
-    JMP 0x0045cda4                      ; 0045cd9c | LAB_0045cda4
-        ;   XREF to: 0045cda4 (UNCONDITIONAL_JUMP)
+    JMP 0x0045cda4                      ; 0045cd9c
+        ;   XREF to: 0045cda4 (UNCONDITIONAL_JUMP)  ; LAB_0045cda4
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045cd9e
         ;   Label: LAB_0045cd9e
     INC dword ptr [EBP + -0x4]          ; 0045cda1
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045cda4
         ;   Label: LAB_0045cda4
     CMP EAX,dword ptr [EBP + -0x8]      ; 0045cda7
-    JGE 0x0045cdd0                      ; 0045cdaa | LAB_0045cdd0
-        ;   XREF to: 0045cdd0 (CONDITIONAL_JUMP)
+    JGE 0x0045cdd0                      ; 0045cdaa
+        ;   XREF to: 0045cdd0 (CONDITIONAL_JUMP)  ; LAB_0045cdd0
     MOV ECX,dword ptr [EBP + -0x4]      ; 0045cdac
     SHL ECX,0x2                         ; 0045cdaf
-    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cdb2 | int g_PolygonCount
+    IMUL EDX,dword ptr [0x016e990c],0x184 ; 0045cdb2 | g_PolygonCount
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045cdbc
     SHL EAX,0x2                         ; 0045cdbf
     ADD EDX,EAX                         ; 0045cdc2
     MOV EAX,dword ptr [ECX + EBP*0x1 + -0x48] ; 0045cdc4
     MOV dword ptr [EDX + 0x16e99c8],EAX ; 0045cdc8 | DAT_016e99c8
-    JMP 0x0045cd9e                      ; 0045cdce | LAB_0045cd9e
-        ;   XREF to: 0045cd9e (UNCONDITIONAL_JUMP)
-    IMUL EAX,dword ptr [0x016e990c],0x184 ; 0045cdd0 | int g_PolygonCount
+    JMP 0x0045cd9e                      ; 0045cdce
+        ;   XREF to: 0045cd9e (UNCONDITIONAL_JUMP)  ; LAB_0045cd9e
+    IMUL EAX,dword ptr [0x016e990c],0x184 ; 0045cdd0 | g_PolygonCount
         ;   Label: LAB_0045cdd0
-    MOV EDX,0x16e9910                   ; 0045cdda | SShapeEditorPolygon[20000] g_ModelPolygonData
+    MOV EDX,0x16e9910                   ; 0045cdda | g_ModelPolygonData
     ADD EAX,EDX                         ; 0045cddf
     PUSH EAX                            ; 0045cde1
-    CALL shape_design.c_calculatePolygonNormal_FUN_0045caa0 ; 0045cde2 | void shape_design.c_calculatePolygonNormal_FUN_0045caa0(SShapeEditorPolygon * polygon)
-        ;   XREF to: 0045caa0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_calculatePolygonNormal_FUN_0045caa0 ; 0045cde2
+        ;   XREF to: 0045caa0 (UNCONDITIONAL_CALL)  ; void shape_design.c_calculatePolygonNormal_FUN_0045caa0(SShapeEditorPolygon * polygon)
     ADD ESP,0x4                         ; 0045cde7
-    INC dword ptr [0x016e990c]          ; 0045cdea | int g_PolygonCount
+    INC dword ptr [0x016e990c]          ; 0045cdea | g_PolygonCount
     MOV ESP,EBP                         ; 0045cdf0
         ;   Label: LAB_0045cdf0
     POP EBP                             ; 0045cdf2

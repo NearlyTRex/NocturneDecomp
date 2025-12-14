@@ -17,14 +17,14 @@ section .text
         ;   Label: core_trash.cpp_CTrash_FUN_005df750
     MOV EBX,dword ptr [ESP + 0x8]       ; 005df751
     PUSH EBX                            ; 005df755
-    CALL core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 ; 005df756 | void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
-        ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 ; 005df756
+        ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
     LEA EAX,[EBX + 0x2d4]               ; 005df75b
     LEA EDX,[EBX + 0x20]                ; 005df761
     ADD ESP,0x4                         ; 005df764
     CMP EAX,EDX                         ; 005df767
-    JNZ 0x005df76d                      ; 005df769 | LAB_005df76d
-        ;   XREF to: 005df76d (CONDITIONAL_JUMP)
+    JNZ 0x005df76d                      ; 005df769
+        ;   XREF to: 005df76d (CONDITIONAL_JUMP)  ; LAB_005df76d
     POP EBX                             ; 005df76b
     RET                                 ; 005df76c
     MOV ECX,dword ptr [EDX]             ; 005df76d

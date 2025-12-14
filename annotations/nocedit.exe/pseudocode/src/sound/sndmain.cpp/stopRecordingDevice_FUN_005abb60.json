@@ -1,72 +1,72 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 45, 
-    "assembly_lines": 27, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
-      "addr": "005abd30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "IDirectSoundCapture*", 
-      "name": "g_RecordingDeviceInterface", 
-      "addr": "03f69c54", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "isRecordingStarted", 
-      "addr": "03f69c58", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005abb60", 
-    "signature": "int sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60(void)", 
-    "address_range": [
-      [
-        "005abb60", 
-        "005abb98"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 27,
+    "complexity_score": 18,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 45
+  },
   "cross_references": [
     {
-      "from_addr": "005ab930", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930", 
-      "addr": "005ab930"
-    }, 
+      "addr": "005ab930",
+      "from_addr": "005ab930",
+      "name": "sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005aaece", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0", 
-      "addr": "005aaeb0"
+      "addr": "005aaeb0",
+      "from_addr": "005aaece",
+      "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005abb60",
+    "address_range": [
+      [
+        "005abb60",
+        "005abb98"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60",
+    "signature": "int sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005abd30",
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f69c54",
+      "name": "g_RecordingDeviceInterface",
+      "type": "IDirectSoundCapture*",
+      "value": null
+    },
+    {
+      "addr": "03f69c58",
+      "name": "isRecordingStarted",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

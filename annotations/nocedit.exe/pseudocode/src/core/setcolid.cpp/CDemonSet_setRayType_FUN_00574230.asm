@@ -38,18 +38,18 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00574234
     MOV dword ptr [EAX + 0x15f680],EDX  ; 00574238
     CMP EDX,0x3                         ; 0057423e
-    JZ 0x00574244                       ; 00574241 | LAB_00574244
-        ;   XREF to: 00574244 (CONDITIONAL_JUMP)
+    JZ 0x00574244                       ; 00574241
+        ;   XREF to: 00574244 (CONDITIONAL_JUMP)  ; LAB_00574244
     RET                                 ; 00574243
     PUSH EBX                            ; 00574244
         ;   Label: LAB_00574244
-    MOV ECX,0x6463b9                    ; 00574245 | = "..\\core\\setcolid.cpp" | s_core_setcolid_cpp_006463b9 = ..\core\setcolid.cpp
+    MOV ECX,0x6463b9                    ; 00574245 | = "..\\core\\setcolid.cpp"
     MOV EBX,0x49a                       ; 0057424a
-    PUSH 0x6463ce                       ; 0057424f | = "CDemonSet::setRayType - use setRayTyp..." | s_CDemonSet_setRayType_use_006463ce = CDemonSet::setRayType - use setRayTypeLaser
-    MOV dword ptr [0x02f0ca48],ECX      ; 00574254 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 0057425a | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00574260 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6463ce                       ; 0057424f | = "CDemonSet::setRayType - use setRayTyp..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 00574254 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 0057425a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00574260
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00574265
     POP EBX                             ; 00574268
     RET                                 ; 00574269

@@ -62,15 +62,15 @@ section .text
     MOV ESI,dword ptr [EBP + 0x20]      ; 004edbbf
     MOV EDI,dword ptr [EBP + 0x24]      ; 004edbc2
     CMP EDI,0x2                         ; 004edbc5
-    JZ 0x004edbf0                       ; 004edbc8 | LAB_004edbf0
-        ;   XREF to: 004edbf0 (CONDITIONAL_JUMP)
+    JZ 0x004edbf0                       ; 004edbc8
+        ;   XREF to: 004edbf0 (CONDITIONAL_JUMP)  ; LAB_004edbf0
     TEST EDX,EDX                        ; 004edbca
-    JNZ 0x004edbf7                      ; 004edbcc | LAB_004edbf7
-        ;   XREF to: 004edbf7 (CONDITIONAL_JUMP)
+    JNZ 0x004edbf7                      ; 004edbcc
+        ;   XREF to: 004edbf7 (CONDITIONAL_JUMP)  ; LAB_004edbf7
     XOR EBX,EBX                         ; 004edbce
     TEST ESI,ESI                        ; 004edbd0
-    JLE 0x004edbf0                      ; 004edbd2 | LAB_004edbf0
-        ;   XREF to: 004edbf0 (CONDITIONAL_JUMP)
+    JLE 0x004edbf0                      ; 004edbd2
+        ;   XREF to: 004edbf0 (CONDITIONAL_JUMP)  ; LAB_004edbf0
     PUSH EDI                            ; 004edbd4
         ;   Label: LAB_004edbd4
     PUSH 0x0                            ; 004edbd5
@@ -79,12 +79,12 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 004edbdb
     PUSH EDX                            ; 004edbde
     INC EBX                             ; 004edbdf
-    CALL core_gore.cpp_FUN_004edaa0     ; 004edbe0 | undefined core_gore.cpp_FUN_004edaa0()
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)
+    CALL core_gore.cpp_FUN_004edaa0     ; 004edbe0
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edaa0()
     ADD ESP,0x10                        ; 004edbe5
     CMP EBX,ESI                         ; 004edbe8
-    JL 0x004edbd4                       ; 004edbea | LAB_004edbd4
-        ;   XREF to: 004edbd4 (CONDITIONAL_JUMP)
+    JL 0x004edbd4                       ; 004edbea
+        ;   XREF to: 004edbd4 (CONDITIONAL_JUMP)  ; LAB_004edbd4
     LEA EAX,[EAX]                       ; 004edbec
     MOV ESP,EBP                         ; 004edbf0
         ;   Label: LAB_004edbf0
@@ -106,8 +106,8 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 004edc0b
     FSTP float ptr [ESP + 0x5c]         ; 004edc0f
     CMP EAX,EDX                         ; 004edc13
-    JZ 0x004edc2b                       ; 004edc15 | LAB_004edc2b
-        ;   XREF to: 004edc2b (CONDITIONAL_JUMP)
+    JZ 0x004edc2b                       ; 004edc15
+        ;   XREF to: 004edc2b (CONDITIONAL_JUMP)  ; LAB_004edc2b
     MOV EAX,dword ptr [EDX]             ; 004edc17
     MOV dword ptr [ESP + 0x38],EAX      ; 004edc19
     MOV EAX,dword ptr [EDX + 0x4]       ; 004edc1d
@@ -129,8 +129,8 @@ section .text
     FCOMPP                              ; 004edc48
     FNSTSW AX                           ; 004edc4a
     SAHF                                ; 004edc4c
-    JNC 0x004eddc2                      ; 004edc4d | LAB_004eddc2
-        ;   XREF to: 004eddc2 (CONDITIONAL_JUMP)
+    JNC 0x004eddc2                      ; 004edc4d
+        ;   XREF to: 004eddc2 (CONDITIONAL_JUMP)  ; LAB_004eddc2
     FLD1                                ; 004edc53
     FLD float ptr [ESP + 0x38]          ; 004edc55
     FXCH                                ; 004edc59
@@ -153,22 +153,22 @@ section .text
     FADDP                               ; 004edc88
     FSQRT                               ; 004edc8a
     FLD float ptr [ESP + 0x3c]          ; 004edc8c
-    CALL crt_math.c_atan2_FUN_006013b1  ; 004edc90 | float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_atan2_FUN_006013b1  ; 004edc90
+        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
     FLD float ptr [ESP + 0x40]          ; 004edc95
     XOR EAX,EAX                         ; 004edc99
     FLD float ptr [ESP + 0x38]          ; 004edc9b
     MOV dword ptr [ESP + 0x58],EAX      ; 004edc9f
-    CALL crt_math.c_atan2_FUN_006013b1  ; 004edca3 | float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_atan2_FUN_006013b1  ; 004edca3
+        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
     XOR EBX,EBX                         ; 004edca8
     FXCH                                ; 004edcaa
     FCHS                                ; 004edcac
     FSTP float ptr [ESP + 0x50]         ; 004edcae
     FSTP float ptr [ESP + 0x54]         ; 004edcb2
     TEST ESI,ESI                        ; 004edcb6
-    JLE 0x004edbf0                      ; 004edcb8 | LAB_004edbf0
-        ;   XREF to: 004edbf0 (CONDITIONAL_JUMP)
+    JLE 0x004edbf0                      ; 004edcb8
+        ;   XREF to: 004edbf0 (CONDITIONAL_JUMP)  ; LAB_004edbf0
     MOV EAX,dword ptr [ESP + 0x50]      ; 004edcbe
         ;   Label: LAB_004edcbe
     MOV dword ptr [ESP + 0x44],EAX      ; 004edcc2
@@ -178,13 +178,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x5c]      ; 004edcd3
     PUSH 0xbf490fdb                     ; 004edcd7
     MOV dword ptr [ESP + 0x54],EAX      ; 004edcdc
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004edce0 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004edce0
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     XOR EDX,EDX                         ; 004eddc2
         ;   Label: LAB_004eddc2
     MOV dword ptr [ESP + 0x3c],EDX      ; 004eddc4
     MOV dword ptr [ESP + 0x38],EDX      ; 004eddc8
     MOV dword ptr [ESP + 0x40],EDX      ; 004eddcc
-    JMP 0x004edc7c                      ; 004eddd0 | LAB_004edc7c
-        ;   XREF to: 004edc7c (UNCONDITIONAL_JUMP)
+    JMP 0x004edc7c                      ; 004eddd0
+        ;   XREF to: 004edc7c (UNCONDITIONAL_JUMP)  ; LAB_004edc7c
 

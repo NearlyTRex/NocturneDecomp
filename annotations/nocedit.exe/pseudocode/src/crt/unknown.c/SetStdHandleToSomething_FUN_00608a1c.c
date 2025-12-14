@@ -36,15 +36,14 @@ LAB_00608a6a:
     g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;
   }
   else {
-    g_IOControlBlock =
-         (SIOControlBlock *)
-         crt_memory_c_realloc_FUN_00601df0(g_IOControlBlock,in_stack_00000008 * 4 + 4);
+    g_IOControlBlock = crt_memory_c_realloc_FUN_00601df0(g_IOControlBlock,in_stack_00000008 * 4 + 4)
+    ;
     if (g_CurrentHandleCount < (int)in_stack_00000008) {
       iVar1 = g_CurrentHandleCount * 4;
       do {
         *(uint *)((int)g_IOControlBlock->standard_handles + iVar1) = 0;
         iVar1 = iVar1 + 4;
-      } while (SBORROW /* signed borrow */4(iVar1,in_stack_00000008 * 4) != (int)(iVar1 + in_stack_00000008 * -4) < 0);
+      } while (iVar1 < (int)(in_stack_00000008 * 4));
     }
     g_CurrentHandleCount = in_stack_00000008 + 1;
     g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;

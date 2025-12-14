@@ -1,158 +1,158 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 102, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 79, 
-    "assembly_lines": 47, 
-    "suspect_count": 6, 
+    "assembly_lines": 47,
+    "complexity_score": 102,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 32,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "suspect_float"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_D_00649c60", 
-      "addr": "00649c60", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_emo_00649c61", 
-      "addr": "00649c61", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Coffin_Lid_00649c65", 
-      "addr": "00649c65", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_offin_Lid_00649c66", 
-      "addr": "00649c66", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ffin_Lid_00649c67", 
-      "addr": "00649c67", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_fin_Lid_00649c68", 
-      "addr": "00649c68", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unknown_00649c70", 
-      "addr": "00649c70", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_nknown_00649c71", 
-      "addr": "00649c71", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CSimBoxClassInfo.name_hash", 
-      "addr": "03659820", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_0000000c;"
-    }, 
-    {
-      "line": 17, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "else if (fVar2 == 1.4013e-45) {"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = cVar1;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c[1] = cVar1;"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00589270", 
-    "signature": "void core_simbox.cpp_FUN_00589270(CSimBox * this_ptr)", 
-    "address_range": [
-      [
-        "00589270", 
-        "005892c8"
-      ]
-    ], 
-    "name": "core_simbox.cpp_FUN_00589270"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSimBox *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "suspect_float",
+      "stack_param"
+    ],
+    "total_lines": 79
+  },
   "cross_references": [
     {
-      "from_addr": "00589357", 
-      "type": "DATA", 
-      "name": "core_simbox.cpp_CSimBox_FUN_00589310", 
-      "addr": "00589310"
+      "addr": "00589310",
+      "from_addr": "00589357",
+      "name": "core_simbox.cpp_CSimBox_FUN_00589310",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00589270",
+    "address_range": [
+      [
+        "00589270",
+        "005892c8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_simbox.cpp_FUN_00589270",
+    "signature": "void core_simbox.cpp_FUN_00589270(CSimBox * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649c60",
+      "name": "s_D_00649c60",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c61",
+      "name": "s_emo_00649c61",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00649c65",
+      "name": "s_Coffin_Lid_00649c65",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c66",
+      "name": "s_offin_Lid_00649c66",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00649c67",
+      "name": "s_ffin_Lid_00649c67",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00649c68",
+      "name": "s_fin_Lid_00649c68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00649c70",
+      "name": "s_Unknown_00649c70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649c71",
+      "name": "s_nknown_00649c71",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03659820",
+      "name": "g_CSimBoxClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimBox *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 17,
+      "match": "1.4013e-45",
+      "text": "else if (fVar2 == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = cVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c[1] = cVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
+      "type": "stack_param"
     }
   ]
 }

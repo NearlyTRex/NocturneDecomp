@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 82, 
-    "assembly_lines": 57, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_pow_FUN_005ffd76", 
-      "addr": "005ffd76"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00532540", 
-    "signature": "void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int unused_param3, int sample_index, float * output_buffer)", 
-    "address_range": [
-      [
-        "00532540", 
-        "005325d2"
-      ]
-    ], 
-    "name": "sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540"
-  }, 
-  "stack_frame": {
-    "local_size": 16, 
-    "variables": [
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "intensity_position"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "ratio"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "unused_param3"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "sample_index"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    "assembly_lines": 57,
+    "complexity_score": 25,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 82
+  },
   "cross_references": [
     {
-      "from_addr": "0053320f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0", 
-      "addr": "005325e0"
+      "addr": "005325e0",
+      "from_addr": "0053320f",
+      "name": "sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00532540",
+    "address_range": [
+      [
+        "00532540",
+        "005325d2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540",
+    "signature": "void sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540(int intensity_position, double ratio, int unused_param3, int sample_index, float * output_buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ffd76",
+      "name": "crt_math.c_pow_FUN_005ffd76"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "intensity_position",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "ratio",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "unused_param3",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sample_index",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 24,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "suspects": []
 }

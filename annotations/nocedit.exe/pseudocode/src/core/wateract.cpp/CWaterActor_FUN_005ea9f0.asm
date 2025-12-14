@@ -37,6 +37,6 @@ section .text
     AND ESP,0xfffffff8                  ; 005ea9f9
     MOV EDI,dword ptr [EBP + 0x14]      ; 005ea9fc
     PUSH EDI                            ; 005ea9ff
-    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 005eaa00 | void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 005eaa00
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
 

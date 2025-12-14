@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 24, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 0, 
-    "global_count": 11, 
-    "total_lines": 70, 
-    "assembly_lines": 46, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_matrix_c_00635b73", 
-      "addr": "00635b73", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Matrix_unbalance3_00635b86", 
-      "addr": "00635b86", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeX", 
-      "addr": "02d052b8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeY", 
-      "addr": "02d052bc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeZ", 
-      "addr": "02d052c0", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MatrixStackIndex", 
-      "addr": "02f0d3c0", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_RelX", 
-      "addr": "02f0d52c", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_RelY", 
-      "addr": "02f0d554", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_RelZ", 
-      "addr": "02f0d57c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 46,
+    "complexity_score": 24,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 11,
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 70
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0050e640", 
-    "signature": "void engine_matrix.c_pushMatrixRelativeOffset_FUN_0050e640(int offset_x, int offset_y, int offset_z)", 
+    "address": "0050e640",
     "address_range": [
       [
-        "0050e640", 
+        "0050e640",
         "0050e6e0"
       ]
-    ], 
-    "name": "engine_matrix.c_pushMatrixRelativeOffset_FUN_0050e640"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_pushMatrixRelativeOffset_FUN_0050e640",
+    "signature": "void engine_matrix.c_pushMatrixRelativeOffset_FUN_0050e640(int offset_x, int offset_y, int offset_z)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635b73",
+      "name": "s_engine_matrix_c_00635b73",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635b86",
+      "name": "s_Matrix_unbalance3_00635b86",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d052b8",
+      "name": "g_RelativeX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052bc",
+      "name": "g_RelativeY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c0",
+      "name": "g_RelativeZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d3c0",
+      "name": "g_MatrixStackIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d52c",
+      "name": "g_MatrixStack_RelX",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d554",
+      "name": "g_MatrixStack_RelY",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d57c",
+      "name": "g_MatrixStack_RelZ",
+      "type": "int[10]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "offset_x"
-      }, 
+        "is_param": true,
+        "name": "offset_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "offset_y"
-      }, 
+        "is_param": true,
+        "name": "offset_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "offset_z"
+        "is_param": true,
+        "name": "offset_z",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

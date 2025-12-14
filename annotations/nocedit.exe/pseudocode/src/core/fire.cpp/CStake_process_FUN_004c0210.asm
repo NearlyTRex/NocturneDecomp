@@ -22,7 +22,7 @@
 
 section .text
 
-    MOV EAX,[0x0067b654]                ; 004c0210 | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 004c0210 | g_CGamePtr
         ;   Label: core_fire.cpp_CStake_process_FUN_004c0210
     SUB ESP,0x4                         ; 004c0215
     FLD float ptr [EAX + 0x264]         ; 004c0218 | g_CGameInstance.delta_time_float
@@ -30,8 +30,8 @@ section .text
     ADD EAX,0x4                         ; 004c0222
     FSTP float ptr [ESP]                ; 004c0225
     PUSH EAX                            ; 004c0228
-    CALL core_box.cpp_CBox_processPhysics_FUN_0041e350 ; 004c0229 | void core_box.cpp_CBox_processPhysics_FUN_0041e350(CBox * this_ptr, float delta_time)
-        ;   XREF to: 0041e350 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBox_processPhysics_FUN_0041e350 ; 004c0229
+        ;   XREF to: 0041e350 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_processPhysics_FUN_0041e350(CBox * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004c022e
     RET                                 ; 004c0231
 

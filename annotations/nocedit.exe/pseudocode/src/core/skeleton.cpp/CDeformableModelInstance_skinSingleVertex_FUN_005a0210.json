@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 37, 
-    "assembly_lines": 24, 
-    "suspect_count": 2, 
+    "assembly_lines": 24,
+    "complexity_score": 38,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00", 
-      "addr": "0059aa00"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
-      "addr": "005a07a0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CMatrix3x4f *unaff_ESI;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(this_ptr_00,(CVector3f *)lod_index,vertex_index,(int)vertex_index_00,unaff_ESI);"
-    }
-  ], 
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a0210", 
-    "signature": "CVector3f * core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210(CDeformableModelInstance * this_ptr, CVector3f * output_pos, int lod_index, int vertex_index)", 
+    "address": "005a0210",
     "address_range": [
       [
-        "005a0210", 
+        "005a0210",
         "005a0242"
       ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210",
+    "signature": "CVector3f * core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210(CDeformableModelInstance * this_ptr, CVector3f * output_pos, int lod_index, int vertex_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059aa00",
+      "name": "core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00"
+    },
+    {
+      "addr": "005a07a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "output_pos"
-      }, 
+        "is_param": true,
+        "name": "output_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "lod_index"
-      }, 
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_index"
+        "is_param": true,
+        "name": "vertex_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_ESI",
+      "text": "CMatrix3x4f *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "text": "(this_ptr_00,(CVector3f *)lod_index,vertex_index,(int)vertex_index_00,unaff_ESI);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

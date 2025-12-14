@@ -1,142 +1,142 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 55, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 4, 
-    "global_count": 1, 
-    "total_lines": 90, 
-    "assembly_lines": 65, 
-    "suspect_count": 2, 
+    "assembly_lines": 65,
+    "complexity_score": 55,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50", 
-      "addr": "00499a50"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRaytrace", 
-      "name": "g_CDemonRaytraceInstance", 
-      "addr": "03277d14", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00546ba0", 
-    "signature": "int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)", 
-    "address_range": [
-      [
-        "00546ba0", 
-        "00546c34"
-      ]
-    ], 
-    "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPathMap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "grid_z"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "grid_x"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "current_height"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 90
+  },
   "cross_references": [
     {
-      "from_addr": "00547060", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90", 
-      "addr": "00546e90"
-    }, 
+      "addr": "00546e90",
+      "from_addr": "00547060",
+      "name": "core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00547688", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320", 
-      "addr": "00547320"
-    }, 
+      "addr": "00547320",
+      "from_addr": "00547688",
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00546dc2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40", 
-      "addr": "00546c40"
-    }, 
+      "addr": "00546c40",
+      "from_addr": "00546dc2",
+      "name": "core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005488fc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_path.cpp_CPathMap_queuePop_FUN_005487a0", 
-      "addr": "005487a0"
+      "addr": "005487a0",
+      "from_addr": "005488fc",
+      "name": "core_path.cpp_CPathMap_queuePop_FUN_005487a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00546ba0",
+    "address_range": [
+      [
+        "00546ba0",
+        "00546c34"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
+    "signature": "int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)"
+  },
+  "function_calls": [
+    {
+      "addr": "00499a50",
+      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03277d14",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPathMap *"
+      },
+      {
+        "is_param": true,
+        "name": "grid_z",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "current_height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

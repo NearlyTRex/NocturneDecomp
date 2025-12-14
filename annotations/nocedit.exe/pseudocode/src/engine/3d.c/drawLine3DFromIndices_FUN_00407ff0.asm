@@ -31,16 +31,16 @@ section .text
     MOV ECX,0xc                         ; 00408002
     SHL EAX,0x4                         ; 00408007
     MOV EDI,ESP                         ; 0040800a
-    LEA ESI,[EAX + 0x688014]            ; 0040800c | SRenderVertex[16] g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 00408012 | SRenderVertex[16] g_RenderVertexBuffer
+    LEA ESI,[EAX + 0x688014]            ; 0040800c | g_RenderVertexBuffer
+    MOVSD.REP ES:EDI,ESI                ; 00408012 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     MOV EDI,dword ptr [ESP + 0x70]      ; 00408014
     LEA EAX,[EDI*0x4 + 0x0]             ; 00408018
     SUB EAX,EDI                         ; 0040801f
     MOV ECX,0xc                         ; 00408021
     SHL EAX,0x4                         ; 00408026
     LEA EDI,[ESP + 0x30]                ; 00408029
-    LEA ESI,[EAX + 0x688014]            ; 0040802d | SRenderVertex[16] g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 00408033 | SRenderVertex[16] g_RenderVertexBuffer
+    LEA ESI,[EAX + 0x688014]            ; 0040802d | g_RenderVertexBuffer
+    MOVSD.REP ES:EDI,ESI                ; 00408033 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     MOV ECX,0xc                         ; 00408035
     SUB ESP,0x30                        ; 0040803a
     LEA ESI,[ESP + 0x60]                ; 0040803d
@@ -51,8 +51,8 @@ section .text
     LEA ESI,[ESP + 0x60]                ; 0040804d
     MOV EDI,ESP                         ; 00408051
     MOVSD.REP ES:EDI,ESI                ; 00408053
-    CALL engine_3d.c_clipAndDrawLine3D_FUN_00408070 ; 00408055 | void engine_3d.c_clipAndDrawLine3D_FUN_00408070(SRenderVertex * vertex1, SRenderVertex * vertex2)
-        ;   XREF to: 00408070 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_clipAndDrawLine3D_FUN_00408070 ; 00408055
+        ;   XREF to: 00408070 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine3D_FUN_00408070(SRenderVertex * vertex1, SRenderVertex * vertex2)
     ADD ESP,0x60                        ; 0040805a
     ADD ESP,0x60                        ; 0040805d
     POP EDI                             ; 00408060

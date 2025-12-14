@@ -28,35 +28,35 @@ section .text
     PUSH ESI                            ; 00564501
     PUSH EDI                            ; 00564502
     PUSH EBP                            ; 00564503
-    MOV ESI,dword ptr [0x0310fd50]      ; 00564504 | undefined4 DAT_0310fd50
-    MOV EDI,dword ptr [0x0310fd4c]      ; 0056450a | undefined4 DAT_0310fd4c
+    MOV ESI,dword ptr [0x0310fd50]      ; 00564504 | DAT_0310fd50
+    MOV EDI,dword ptr [0x0310fd4c]      ; 0056450a | DAT_0310fd4c
     TEST EDI,EDI                        ; 00564510
-    JL 0x0056449b                       ; 00564512 | LAB_0056449b
-        ;   XREF to: 0056449b (CONDITIONAL_JUMP)
+    JL 0x0056449b                       ; 00564512
+        ;   XREF to: 0056449b (CONDITIONAL_JUMP)  ; LAB_0056449b
     TEST ESI,ESI                        ; 00564514
-    JL 0x0056449b                       ; 00564516 | LAB_0056449b
-        ;   XREF to: 0056449b (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x0310fd48]      ; 00564518 | undefined4 DAT_0310fd48
+    JL 0x0056449b                       ; 00564516
+        ;   XREF to: 0056449b (CONDITIONAL_JUMP)  ; LAB_0056449b
+    MOV ECX,dword ptr [0x0310fd48]      ; 00564518 | DAT_0310fd48
     CMP ESI,ECX                         ; 0056451e
-    JL 0x005644ab                       ; 00564520 | LAB_005644ab
-        ;   XREF to: 005644ab (CONDITIONAL_JUMP)
-    JG 0x005644ba                       ; 00564522 | LAB_005644ba
-        ;   XREF to: 005644ba (CONDITIONAL_JUMP)
-    MOV EAX,[0x0310fd44]                ; 00564524 | undefined4 DAT_0310fd44
+    JL 0x005644ab                       ; 00564520
+        ;   XREF to: 005644ab (CONDITIONAL_JUMP)  ; LAB_005644ab
+    JG 0x005644ba                       ; 00564522
+        ;   XREF to: 005644ba (CONDITIONAL_JUMP)  ; LAB_005644ba
+    MOV EAX,[0x0310fd44]                ; 00564524 | DAT_0310fd44
     MOV EBP,ESI                         ; 00564529
     MOV ECX,ESI                         ; 0056452b
     CMP EDI,EAX                         ; 0056452d
-    JGE 0x005644cb                      ; 0056452f | LAB_005644cb
-        ;   XREF to: 005644cb (CONDITIONAL_JUMP)
+    JGE 0x005644cb                      ; 0056452f
+        ;   XREF to: 005644cb (CONDITIONAL_JUMP)  ; LAB_005644cb
     MOV EDX,EAX                         ; 00564531
     MOV EBX,EDI                         ; 00564533
-    MOV dword ptr [0x031141c4],EBP      ; 00564535 | undefined4 DAT_031141c4
+    MOV dword ptr [0x031141c4],EBP      ; 00564535 | DAT_031141c4
         ;   Label: LAB_00564535
-    MOV dword ptr [0x0310fd4c],EDI      ; 0056453b | undefined4 DAT_0310fd4c
-    MOV dword ptr [0x0310fd50],ESI      ; 00564541 | undefined4 DAT_0310fd50
-    MOV dword ptr [0x031141c0],EBX      ; 00564547 | undefined4 DAT_031141c0
-    MOV dword ptr [0x031141cc],ECX      ; 0056454d | undefined4 DAT_031141cc
-    MOV dword ptr [0x031141c8],EDX      ; 00564553 | undefined4 DAT_031141c8
+    MOV dword ptr [0x0310fd4c],EDI      ; 0056453b | DAT_0310fd4c
+    MOV dword ptr [0x0310fd50],ESI      ; 00564541 | DAT_0310fd50
+    MOV dword ptr [0x031141c0],EBX      ; 00564547 | DAT_031141c0
+    MOV dword ptr [0x031141cc],ECX      ; 0056454d | DAT_031141cc
+    MOV dword ptr [0x031141c8],EDX      ; 00564553 | DAT_031141c8
     POP EBP                             ; 00564559
     POP EDI                             ; 0056455a
     POP ESI                             ; 0056455b

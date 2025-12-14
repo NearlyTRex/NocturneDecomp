@@ -1,70 +1,70 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 29, 
-    "assembly_lines": 15, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_camview.cpp_CCameraView_ctor_FUN_00427ce0", 
-      "addr": "00427ce0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CCameraView_vtable", 
-      "name": "g_CDemonCameraVTable", 
-      "addr": "0065c664", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0044c030", 
-    "signature": "CDemonCamera * core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030(CDemonCamera * this_ptr)", 
-    "address_range": [
-      [
-        "0044c030", 
-        "0044c08a"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 15,
+    "complexity_score": 14,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
   "cross_references": [
     {
-      "from_addr": "004726a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0", 
-      "addr": "004726a0"
-    }, 
+      "addr": "004726a0",
+      "from_addr": "004726a5",
+      "name": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056905f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_staticInit_FUN_00569040", 
-      "addr": "00569040"
+      "addr": "00569040",
+      "from_addr": "0056905f",
+      "name": "core_set.cpp_staticInit_FUN_00569040",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0044c030",
+    "address_range": [
+      [
+        "0044c030",
+        "0044c08a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030",
+    "signature": "CDemonCamera * core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030(CDemonCamera * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00427ce0",
+      "name": "core_camview.cpp_CCameraView_ctor_FUN_00427ce0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065c664",
+      "name": "g_CDemonCameraVTable",
+      "type": "CCameraView_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      }
+    ]
+  },
+  "suspects": []
 }

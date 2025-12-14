@@ -1,58 +1,58 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 27, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "IDirectSoundBuffer*[31]", 
-      "name": "g_DirectSoundHardwareSfxBuffers", 
-      "addr": "03f6aa44", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectSound3DBuffer*[31]", 
-      "name": "g_DirectSound3DBufferInterfaces", 
-      "addr": "03f6aac0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 18,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005af720", 
-    "signature": "int sound_snddx.cpp_isValidSfxHandle_FUN_005af720(int sfx_handle)", 
+    "address": "005af720",
     "address_range": [
       [
-        "005af720", 
+        "005af720",
         "005af748"
       ]
-    ], 
-    "name": "sound_snddx.cpp_isValidSfxHandle_FUN_005af720"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_isValidSfxHandle_FUN_005af720",
+    "signature": "int sound_snddx.cpp_isValidSfxHandle_FUN_005af720(int sfx_handle)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f6aa44",
+      "name": "g_DirectSoundHardwareSfxBuffers",
+      "type": "IDirectSoundBuffer*[31]",
+      "value": null
+    },
+    {
+      "addr": "03f6aac0",
+      "name": "g_DirectSound3DBufferInterfaces",
+      "type": "IDirectSound3DBuffer*[31]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "sfx_handle"
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

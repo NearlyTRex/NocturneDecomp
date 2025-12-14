@@ -18,8 +18,8 @@ section .text
         ;   Label: core_manpuz.cpp_FUN_0050aef0
     DEC EAX                             ; 0050aef4
     TEST EAX,EAX                        ; 0050aef5
-    JL 0x0050aefa                       ; 0050aef7 | LAB_0050aefa
-        ;   XREF to: 0050aefa (CONDITIONAL_JUMP)
+    JL 0x0050aefa                       ; 0050aef7
+        ;   XREF to: 0050aefa (CONDITIONAL_JUMP)  ; LAB_0050aefa
     RET                                 ; 0050aef9
     MOV EAX,0xb                         ; 0050aefa
         ;   Label: LAB_0050aefa

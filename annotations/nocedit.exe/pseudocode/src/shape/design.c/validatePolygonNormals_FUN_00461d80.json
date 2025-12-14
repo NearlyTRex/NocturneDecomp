@@ -1,97 +1,97 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 5, 
-    "global_count": 0, 
-    "total_lines": 50, 
-    "assembly_lines": 39, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00461d80", 
-    "signature": "int shape_design.c_validatePolygonNormals_FUN_00461d80(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double cos_tolerance)", 
-    "address_range": [
-      [
-        "00461d80", 
-        "00461de7"
-      ]
-    ], 
-    "name": "shape_design.c_validatePolygonNormals_FUN_00461d80"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SShapeEditorPolygon *", 
-        "size": 4, 
-        "name": "polygon1"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SShapeEditorPolygon *", 
-        "size": 4, 
-        "name": "polygon2"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "cos_tolerance"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 39,
+    "complexity_score": 11,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "004656c3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560", 
-      "addr": "00465560"
-    }, 
+      "addr": "00465560",
+      "from_addr": "004656c3",
+      "name": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00465b81", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_mergePolygonsWithValidation_FUN_00465b40", 
-      "addr": "00465b40"
-    }, 
+      "addr": "00465b40",
+      "from_addr": "00465b81",
+      "name": "shape_design.c_mergePolygonsWithValidation_FUN_00465b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004627b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_mergeTrianglesIntoQuad_FUN_00462190", 
-      "addr": "00462190"
-    }, 
+      "addr": "00462190",
+      "from_addr": "004627b5",
+      "name": "shape_design.c_mergeTrianglesIntoQuad_FUN_00462190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004659de", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_optimizePolygonMesh_FUN_004658e0", 
-      "addr": "004658e0"
-    }, 
+      "addr": "004658e0",
+      "from_addr": "004659de",
+      "name": "shape_design.c_optimizePolygonMesh_FUN_004658e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00467cc0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_vertexReducer_FUN_00467850", 
-      "addr": "00467850"
+      "addr": "00467850",
+      "from_addr": "00467cc0",
+      "name": "shape_design.c_vertexReducer_FUN_00467850",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00461d80",
+    "address_range": [
+      [
+        "00461d80",
+        "00461de7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_validatePolygonNormals_FUN_00461d80",
+    "signature": "int shape_design.c_validatePolygonNormals_FUN_00461d80(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double cos_tolerance)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "polygon1",
+        "offset": 4,
+        "size": 4,
+        "type": "SShapeEditorPolygon *"
+      },
+      {
+        "is_param": true,
+        "name": "polygon2",
+        "offset": 8,
+        "size": 4,
+        "type": "SShapeEditorPolygon *"
+      },
+      {
+        "is_param": true,
+        "name": "cos_tolerance",
+        "offset": 12,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "suspects": []
 }

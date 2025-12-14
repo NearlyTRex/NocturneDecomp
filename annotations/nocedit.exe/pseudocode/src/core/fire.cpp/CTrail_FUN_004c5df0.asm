@@ -17,8 +17,8 @@ section .text
         ;   Label: core_fire.cpp_CTrail_FUN_004c5df0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004c5df4
     CMP EAX,EDX                         ; 004c5df8
-    JNZ 0x004c5e23                      ; 004c5dfa | LAB_004c5e23
-        ;   XREF to: 004c5e23 (CONDITIONAL_JUMP)
+    JNZ 0x004c5e23                      ; 004c5dfa
+        ;   XREF to: 004c5e23 (CONDITIONAL_JUMP)  ; LAB_004c5e23
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c5dfc
         ;   Label: LAB_004c5dfc
     MOV dword ptr [EAX + 0xc],EDX       ; 004c5e00
@@ -39,6 +39,6 @@ section .text
     MOV dword ptr [EAX + 0x4],ECX       ; 004c5e2a
     MOV ECX,dword ptr [EDX + 0x8]       ; 004c5e2d
     MOV dword ptr [EAX + 0x8],ECX       ; 004c5e30
-    JMP 0x004c5dfc                      ; 004c5e33 | LAB_004c5dfc
-        ;   XREF to: 004c5dfc (UNCONDITIONAL_JUMP)
+    JMP 0x004c5dfc                      ; 004c5e33
+        ;   XREF to: 004c5dfc (UNCONDITIONAL_JUMP)  ; LAB_004c5dfc
 

@@ -1,181 +1,181 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 94, 
-    "pseudocode_lines": 64, 
-    "cross_reference_count": 0, 
-    "global_count": 12, 
-    "total_lines": 202, 
-    "assembly_lines": 138, 
-    "suspect_count": 2, 
+    "assembly_lines": 138,
+    "complexity_score": 94,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 12,
+    "pseudocode_lines": 64,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "sound_snddx.cpp_fillStreamBuffer_FUN_005adff0", 
-      "addr": "005adff0"
-    }, 
-    {
-      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70", 
-      "addr": "005ade70"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00", 
-      "addr": "005abc00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DirectSux_Unable_to_s_s_00651a6c", 
-      "addr": "00651a6c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Position_secondary_buffe_00651adc", 
-      "addr": "00651adc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Play_the_secondary_buffe_00651afb", 
-      "addr": "00651afb", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00651b1c", 
-      "addr": "00651b1c", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "IDirectSoundBuffer*", 
-      "name": "g_DirectSoundSecondaryBuffer", 
-      "addr": "03f6a9b8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StreamBitsPerSample", 
-      "addr": "03f6a9c4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StreamSampleRate", 
-      "addr": "03f6a9c8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StreamChannelCount", 
-      "addr": "03f6a9cc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StreamSamplesPerBlock", 
-      "addr": "03f6a9d0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StreamBlockSizeBytes", 
-      "addr": "03f6a9d4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StreamBlockCount", 
-      "addr": "03f6a9d8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StreamCurrentBlock", 
-      "addr": "03f6a9dc", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005ae34c", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 202
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ae340", 
-    "signature": "int sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDevice * this_ptr)", 
+    "address": "005ae340",
     "address_range": [
       [
-        "005ae340", 
+        "005ae340",
         "005ae4a1"
       ]
-    ], 
-    "name": "sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340",
+    "signature": "int sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDevice * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005adff0",
+      "name": "sound_snddx.cpp_fillStreamBuffer_FUN_005adff0"
+    },
+    {
+      "addr": "005ade70",
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70"
+    },
+    {
+      "addr": "005adba0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
+    },
+    {
+      "addr": "005abc00",
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00651a6c",
+      "name": "s_DirectSux_Unable_to_s_s_00651a6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00651adc",
+      "name": "s_Position_secondary_buffe_00651adc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00651afb",
+      "name": "s_Play_the_secondary_buffe_00651afb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00651b1c",
+      "name": "DOUBLE_00651b1c",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "03f6a9b8",
+      "name": "g_DirectSoundSecondaryBuffer",
+      "type": "IDirectSoundBuffer*",
+      "value": null
+    },
+    {
+      "addr": "03f6a9c4",
+      "name": "g_StreamBitsPerSample",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6a9c8",
+      "name": "g_StreamSampleRate",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6a9cc",
+      "name": "g_StreamChannelCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6a9d0",
+      "name": "g_StreamSamplesPerBlock",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6a9d4",
+      "name": "g_StreamBlockSizeBytes",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6a9d8",
+      "name": "g_StreamBlockCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6a9dc",
+      "name": "g_StreamCurrentBlock",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 828, 
+    "frame_size": 832,
+    "local_size": 828,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -824, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_338"
-      }, 
+        "is_param": false,
+        "name": "local_338",
+        "offset": -824,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDirectSoundDevice *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 832, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005ae34c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    }
+  ]
 }

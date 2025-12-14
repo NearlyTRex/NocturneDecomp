@@ -30,7 +30,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0048caa0
         ;   Label: engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
     MOV EDX,dword ptr [ESP + 0x4]       ; 0048caa4
-    MOV [0x006793bc],EAX                ; 0048caa8 | uint g_VertexProcessingEnabled
+    MOV [0x006793bc],EAX                ; 0048caa8 | g_VertexProcessingEnabled
     MOV dword ptr [EDX + 0x10],EAX      ; 0048caad
     RET                                 ; 0048cab0
 

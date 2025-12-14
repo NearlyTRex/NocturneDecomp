@@ -1,98 +1,98 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 24, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 3, 
-    "global_count": 3, 
-    "total_lines": 51, 
-    "assembly_lines": 42, 
-    "suspect_count": 1, 
+    "assembly_lines": 42,
+    "complexity_score": 24,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CLaserBeam_FUN_004c2420", 
-      "addr": "004c2420"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065dcc0", 
-      "addr": "0065dcc0", 
-      "value": null
-    }, 
-    {
-      "type": "CRock*", 
-      "name": "g_CFireEffectRocksEnd", 
-      "addr": "02d667ac", 
-      "value": null
-    }, 
-    {
-      "type": "CLaserBeam[64]", 
-      "name": "g_LaserBeamPool", 
-      "addr": "02d667b0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "(CRock *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksEnd->base).position.x + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c7f20", 
-    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7f20(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c7f20", 
-        "004c7f7e"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c7f20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 51
+  },
   "cross_references": [
     {
-      "from_addr": "004a7b64", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_elephant.cpp_FUN_004a79f0", 
-      "addr": "004a79f0"
-    }, 
+      "addr": "004a79f0",
+      "from_addr": "004a7b64",
+      "name": "core_elephant.cpp_FUN_004a79f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050684a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lightgun.cpp_FUN_005066b0", 
-      "addr": "005066b0"
-    }, 
+      "addr": "005066b0",
+      "from_addr": "0050684a",
+      "name": "core_lightgun.cpp_FUN_005066b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00588a64", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_shotgun.cpp_FUN_005888f0", 
-      "addr": "005888f0"
+      "addr": "005888f0",
+      "from_addr": "00588a64",
+      "name": "core_shotgun.cpp_FUN_005888f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c7f20",
+    "address_range": [
+      [
+        "004c7f20",
+        "004c7f7e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c7f20",
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7f20(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c2420",
+      "name": "core_fire.cpp_CLaserBeam_FUN_004c2420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065dcc0",
+      "name": "DAT_0065dcc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d667ac",
+      "name": "g_CFireEffectRocksEnd",
+      "type": "CRock*",
+      "value": null
+    },
+    {
+      "addr": "02d667b0",
+      "name": "g_LaserBeamPool",
+      "type": "CLaserBeam[64]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(CRock *)((int)",
+      "text": "g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksEnd->base).position.x + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

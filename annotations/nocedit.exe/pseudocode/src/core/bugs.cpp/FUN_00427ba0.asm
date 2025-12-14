@@ -20,8 +20,8 @@ section .text
     FCOMP float ptr [ESP + 0xc]         ; 00427ba7
     FNSTSW AX                           ; 00427bab
     SAHF                                ; 00427bad
-    JBE 0x00427bbe                      ; 00427bae | LAB_00427bbe
-        ;   XREF to: 00427bbe (CONDITIONAL_JUMP)
+    JBE 0x00427bbe                      ; 00427bae
+        ;   XREF to: 00427bbe (CONDITIONAL_JUMP)  ; LAB_00427bbe
     MOV EAX,dword ptr [ESP + 0x8]       ; 00427bb0
     MOV dword ptr [ESP],EAX             ; 00427bb4
     MOV EAX,dword ptr [ESP]             ; 00427bb7

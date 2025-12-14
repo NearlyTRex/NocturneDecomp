@@ -1,104 +1,104 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 35, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 32, 
-    "assembly_lines": 22, 
-    "suspect_count": 2, 
+    "assembly_lines": 22,
+    "complexity_score": 35,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 10,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_writeModelDependencies_FUN_0047ee30", 
-      "addr": "0047ee30"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
-      "addr": "0049e790"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Adding_files_for_s_to_ex_006297fa", 
-      "addr": "006297fa", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_0000000c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(*(FILE **)filename,in_stack_0000000c);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004be230", 
-    "signature": "void core_fileman.cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230(CDemonFileManager * this_ptr, char * filename)", 
-    "address_range": [
-      [
-        "004be230", 
-        "004be261"
-      ]
-    ], 
-    "name": "core_fileman.cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonFileManager *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 32
+  },
   "cross_references": [
     {
-      "from_addr": "004bdf52", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20", 
-      "addr": "004bda20"
+      "addr": "004bda20",
+      "from_addr": "004bdf52",
+      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004be230",
+    "address_range": [
+      [
+        "004be230",
+        "004be261"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fileman.cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230",
+    "signature": "void core_fileman.cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230(CDemonFileManager * this_ptr, char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "0047ee30",
+      "name": "core_dmodel.cpp_writeModelDependencies_FUN_0047ee30"
+    },
+    {
+      "addr": "0049e790",
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006297fa",
+      "name": "s_Adding_files_for_s_to_ex_006297fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonFileManager *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "text": "core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(*(FILE **)filename,in_stack_0000000c);",
+      "type": "stack_param"
     }
   ]
 }

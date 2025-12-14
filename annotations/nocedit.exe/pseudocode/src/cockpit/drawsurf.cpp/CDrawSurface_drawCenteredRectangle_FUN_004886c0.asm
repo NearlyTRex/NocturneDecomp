@@ -30,8 +30,8 @@ section .text
     SAR EAX,0x1                         ; 004886d4
     ADD EAX,dword ptr [ESP + 0x14]      ; 004886d6
     TEST BL,0x1                         ; 004886da
-    JZ 0x0048872c                       ; 004886dd | LAB_0048872c
-        ;   XREF to: 0048872c (CONDITIONAL_JUMP)
+    JZ 0x0048872c                       ; 004886dd
+        ;   XREF to: 0048872c (CONDITIONAL_JUMP)  ; LAB_0048872c
     MOV ESI,EAX                         ; 004886df
         ;   Label: LAB_004886df
     MOV EDX,ECX                         ; 004886e1
@@ -41,8 +41,8 @@ section .text
     SAR EAX,0x1                         ; 004886ea
     ADD EAX,dword ptr [ESP + 0x18]      ; 004886ec
     TEST CL,0x1                         ; 004886f0
-    JZ 0x0048872f                       ; 004886f3 | LAB_0048872f
-        ;   XREF to: 0048872f (CONDITIONAL_JUMP)
+    JZ 0x0048872f                       ; 004886f3
+        ;   XREF to: 0048872f (CONDITIONAL_JUMP)  ; LAB_0048872f
     PUSH EAX                            ; 004886f5
         ;   Label: LAB_004886f5
     MOV EDX,ECX                         ; 004886f6
@@ -64,8 +64,8 @@ section .text
     PUSH ECX                            ; 0048871a
     MOV EBP,dword ptr [ESP + 0x20]      ; 0048871b
     PUSH EBP                            ; 0048871f
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630 ; 00488720 | void cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-        ;   XREF to: 00488630 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630 ; 00488720
+        ;   XREF to: 00488630 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 00488725
     POP EBP                             ; 00488728
     POP ESI                             ; 00488729
@@ -73,10 +73,10 @@ section .text
     RET                                 ; 0048872b
     DEC EAX                             ; 0048872c
         ;   Label: LAB_0048872c
-    JMP 0x004886df                      ; 0048872d | LAB_004886df
-        ;   XREF to: 004886df (UNCONDITIONAL_JUMP)
+    JMP 0x004886df                      ; 0048872d
+        ;   XREF to: 004886df (UNCONDITIONAL_JUMP)  ; LAB_004886df
     DEC EAX                             ; 0048872f
         ;   Label: LAB_0048872f
-    JMP 0x004886f5                      ; 00488730 | LAB_004886f5
-        ;   XREF to: 004886f5 (UNCONDITIONAL_JUMP)
+    JMP 0x004886f5                      ; 00488730
+        ;   XREF to: 004886f5 (UNCONDITIONAL_JUMP)  ; LAB_004886f5
 

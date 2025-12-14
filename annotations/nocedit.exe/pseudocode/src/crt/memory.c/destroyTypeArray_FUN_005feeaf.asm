@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 005feeca
         ;   Label: LAB_005feeca
     TEST EDX,EDX                        ; 005feecc
-    JA 0x005feed8                       ; 005feece | LAB_005feed8
-        ;   XREF to: 005feed8 (CONDITIONAL_JUMP)
+    JA 0x005feed8                       ; 005feece
+        ;   XREF to: 005feed8 (CONDITIONAL_JUMP)  ; LAB_005feed8
     MOV EAX,dword ptr [EBX + 0x8]       ; 005feed0
     POP EBP                             ; 005feed3
     POP EDI                             ; 005feed4
@@ -45,6 +45,6 @@ section .text
     MOV dword ptr [EBX],ECX             ; 005feee0
     CALL EBP                            ; 005feee2
     ADD ESP,0x8                         ; 005feee4
-    JMP 0x005feeca                      ; 005feee7 | LAB_005feeca
-        ;   XREF to: 005feeca (UNCONDITIONAL_JUMP)
+    JMP 0x005feeca                      ; 005feee7
+        ;   XREF to: 005feeca (UNCONDITIONAL_JUMP)  ; LAB_005feeca
 

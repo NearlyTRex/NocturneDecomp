@@ -24,8 +24,8 @@ section .text
         ;   Label: shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950
     MOV EBX,dword ptr [ESP + 0x8]       ; 00515951
     PUSH EBX                            ; 00515955
-    CALL shape_meshlod.cpp_CLodMesh_free_FUN_00515970 ; 00515956 | void shape_meshlod.cpp_CLodMesh_free_FUN_00515970(CLodMesh * this_ptr)
-        ;   XREF to: 00515970 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_free_FUN_00515970 ; 00515956
+        ;   XREF to: 00515970 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_free_FUN_00515970(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051595b
     MOV EAX,EBX                         ; 0051595e
     POP EBX                             ; 00515960

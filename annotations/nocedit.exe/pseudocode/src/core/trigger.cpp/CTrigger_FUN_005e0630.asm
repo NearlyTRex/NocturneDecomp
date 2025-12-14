@@ -19,7 +19,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005e0634
     FLD float ptr [EDX + 0x160]         ; 005e0638
     FCHS                                ; 005e063e
-    FLD double ptr [0x0065566c]         ; 005e0640 | double DOUBLE_0065566c
+    FLD double ptr [0x0065566c]         ; 005e0640 | DOUBLE_0065566c
     FXCH                                ; 005e0646
     FMUL ST1                            ; 005e0648
     MOV dword ptr [EAX + 0x4],0xbdcccccd ; 005e064a
@@ -32,7 +32,7 @@ section .text
     FMUL ST1                            ; 005e0666
     FSTP float ptr [EAX + 0xc]          ; 005e0668
     FLD float ptr [EDX + 0x164]         ; 005e066b
-    FADD double ptr [0x00655674]        ; 005e0671 | double DOUBLE_00655674
+    FADD double ptr [0x00655674]        ; 005e0671 | DOUBLE_00655674
     FSTP float ptr [EAX + 0x10]         ; 005e0677
     FMUL float ptr [EDX + 0x168]        ; 005e067a
     FSTP float ptr [EAX + 0x14]         ; 005e0680

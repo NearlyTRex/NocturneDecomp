@@ -36,7 +36,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00453d1b
     MOV EDX,dword ptr [ESP + 0x20]      ; 00453d1f
     LEA EAX,[ECX*0x4 + 0x0]             ; 00453d23
-    MOV ESI,dword ptr [EDX*0x4 + 0x2cf6a9c] ; 00453d2a | void *[1024] g_ScreenBufferArray
+    MOV ESI,dword ptr [EDX*0x4 + 0x2cf6a9c] ; 00453d2a | g_ScreenBufferArray
     ADD ESI,EAX                         ; 00453d31
     MOV dword ptr [ESP],ESI             ; 00453d33
     MOV ESI,dword ptr [EBX + 0x144]     ; 00453d36
@@ -55,11 +55,11 @@ section .text
     ADD ESI,EAX                         ; 00453d66
     MOV EAX,ECX                         ; 00453d68
     IDIV dword ptr [EBX + 0x14c]        ; 00453d6a
-    MOV EBP,0xbbb9b8                    ; 00453d70 | char[241][320] g_CoronaBlurWorkBuffer
+    MOV EBP,0xbbb9b8                    ; 00453d70 | g_CoronaBlurWorkBuffer
     SHL ESI,0x6                         ; 00453d75
     ADD EBP,ESI                         ; 00453d78
     MOV EBX,dword ptr [ESP + 0x24]      ; 00453d7a
-    ADD ESI,0x13da778                   ; 00453d7e | SFogImagePlane g_CameraPlaneWorkBuffer
+    ADD ESI,0x13da778                   ; 00453d7e | g_CameraPlaneWorkBuffer
     LEA EDX,[EAX + EBP*0x1]             ; 00453d84
     ADD EAX,ESI                         ; 00453d87
     ADD EAX,EBX                         ; 00453d89
@@ -69,8 +69,8 @@ section .text
     PUSH EDI                            ; 00453d8f
     MOV EDI,dword ptr [ESP + 0xc]       ; 00453d90
     PUSH EDI                            ; 00453d94
-    CALL core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90 ; 00453d95 | void core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90(uint * output_pixel, uint * texture_pixel, byte * texture_index, byte * lightmap_index)
-        ;   XREF to: 00491f90 (UNCONDITIONAL_CALL)
+    CALL core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90 ; 00453d95
+        ;   XREF to: 00491f90 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90(uint * output_pixel, uint * texture_pixel, byte * texture_index, byte * lightmap_index)
     ADD ESP,0x10                        ; 00453d9a
     ADD ESP,0x4                         ; 00453d9d
     POP EBP                             ; 00453da0

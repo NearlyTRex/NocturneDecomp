@@ -44,8 +44,8 @@ section .text
     MOV EAX,ESP                         ; 0051b338
     PUSH EAX                            ; 0051b33a
     PUSH EBX                            ; 0051b33b
-    CALL shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 ; 0051b33c | CBoundingBox3D * shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(CLodMesh * this_ptr, CBoundingBox3D * out_bbox)
-        ;   XREF to: 00516500 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 ; 0051b33c
+        ;   XREF to: 00516500 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(CLodMesh * this_ptr, CBoundingBox3D * out_bbox)
     LEA EDX,[EAX + 0xc]                 ; 0051b341
     FLD float ptr [EDX]                 ; 0051b344
     FSUB float ptr [EAX]                ; 0051b346
@@ -65,38 +65,38 @@ section .text
     FMUL float ptr [ESP + 0x20]         ; 0051b371
     FADDP                               ; 0051b375
     FSQRT                               ; 0051b377
-    FMUL double ptr [0x00637ced]        ; 0051b379 | double DOUBLE_00637ced
+    FMUL double ptr [0x00637ced]        ; 0051b379 | DOUBLE_00637ced
     SUB ESP,0x4                         ; 0051b37f
     FSTP float ptr [ESP]                ; 0051b382
     PUSH EBX                            ; 0051b385
-    CALL shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 ; 0051b386 | int shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh * this_ptr, float weld_threshold)
-        ;   XREF to: 0051a150 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 ; 0051b386
+        ;   XREF to: 0051a150 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh * this_ptr, float weld_threshold)
     ADD ESP,0x8                         ; 0051b38b
     PUSH EBX                            ; 0051b38e
-    CALL shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 ; 0051b38f | void shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(CLodMesh * this_ptr)
-        ;   XREF to: 00516b40 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 ; 0051b38f
+        ;   XREF to: 00516b40 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b394
     PUSH EBX                            ; 0051b397
-    CALL shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 ; 0051b398 | void shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh * this_ptr)
-        ;   XREF to: 00516a40 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 ; 0051b398
+        ;   XREF to: 00516a40 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b39d
-    PUSH 0x637cce                       ; 0051b3a0 | = "Computing plane equations..." | s_Computing_plane_equation_00637cce = Computing plane equations...
-    MOV EDX,dword ptr [0x00678a60]      ; 0051b3a5 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
-    PUSH EDX                            ; 0051b3ab | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0051b3ac | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x637cce                       ; 0051b3a0 | = "Computing plane equations..."
+    MOV EDX,dword ptr [0x00678a60]      ; 0051b3a5 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0051b3ab | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0051b3ac
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x8                         ; 0051b3b1
     PUSH EBX                            ; 0051b3b4
-    CALL shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0 ; 0051b3b5 | void shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh * this_ptr)
-        ;   XREF to: 005197c0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0 ; 0051b3b5
+        ;   XREF to: 005197c0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b3ba
     PUSH EBX                            ; 0051b3bd
-    CALL shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 ; 0051b3be | void shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh * this_ptr)
-        ;   XREF to: 0051b570 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 ; 0051b3be
+        ;   XREF to: 0051b570 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b3c3
     PUSH EBX                            ; 0051b3c6
-    CALL shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 ; 0051b3c7 | void shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(CLodMesh * this_ptr)
-        ;   XREF to: 0051b3e0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 ; 0051b3c7
+        ;   XREF to: 0051b3e0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b3cc
     ADD ESP,0x24                        ; 0051b3cf
     POP EBX                             ; 0051b3d2

@@ -1,227 +1,227 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 120, 
-    "pseudocode_lines": 35, 
-    "cross_reference_count": 1, 
-    "global_count": 11, 
-    "total_lines": 120, 
-    "assembly_lines": 85, 
-    "suspect_count": 8, 
+    "assembly_lines": 85,
+    "complexity_score": 120,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 11,
+    "pseudocode_lines": 35,
+    "suspect_count": 8,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530", 
-      "addr": "005a5530"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
-      "addr": "005a7100"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0", 
-      "addr": "005a7fe0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0", 
-      "addr": "005ab5a0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
-      "addr": "005f2dc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_0065104e", 
-      "addr": "0065104e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_SfxSlot_kill_must_be_loc_00651063", 
-      "addr": "00651063", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00651087", 
-      "addr": "00651087", 
-      "value": "8.47710503472222E-7"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0065108f", 
-      "addr": "0065108f", 
-      "value": "0.25"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CSfxSlot[64]", 
-      "name": "g_SfxSlots", 
-      "addr": "03f5daa4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SfxSlots[1].status", 
-      "addr": "03f5dbcc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SfxLastSlot", 
-      "addr": "03f624a4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundLockCount", 
-      "addr": "03f6940c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundStartTime", 
-      "addr": "03f69410", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005acdb8", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CSfxSlot *unaff_ESI;"
-    }, 
-    {
-      "line": 20, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = (CSfxSlot *)((float)(g_SoundStartTime - iVar2) * (float)8.4771050347222196e-07);"
-    }, 
-    {
-      "line": 21, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((float)unaff_ESI < 0.0) {"
-    }, 
-    {
-      "line": 22, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = (CSfxSlot *)0x0;"
-    }, 
-    {
-      "line": 24, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((float)0.25 < (float)unaff_ESI) {"
-    }, 
-    {
-      "line": 25, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = (CSfxSlot *)0x3e800000;"
-    }, 
-    {
-      "line": 30, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar2 = sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,(float)unaff_ESI);"
-    }, 
-    {
-      "line": 32, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = this_ptr;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005acdb0", 
-    "signature": "void sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0(void)", 
-    "address_range": [
-      [
-        "005acdb0", 
-        "005ace81"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 120
+  },
   "cross_references": [
     {
-      "from_addr": "005aed74", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50", 
-      "addr": "005aed50"
+      "addr": "005aed50",
+      "from_addr": "005aed74",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005acdb0",
+    "address_range": [
+      [
+        "005acdb0",
+        "005ace81"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0",
+    "signature": "void sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005a5530",
+      "name": "sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530"
+    },
+    {
+      "addr": "005a7100",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100"
+    },
+    {
+      "addr": "005a7fe0",
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0"
+    },
+    {
+      "addr": "005ab5a0",
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0"
+    },
+    {
+      "addr": "005f2dc0",
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065104e",
+      "name": "s_sound_sndmain_cpp_0065104e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00651063",
+      "name": "s_SfxSlot_kill_must_be_loc_00651063",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00651087",
+      "name": "DOUBLE_00651087",
+      "type": "double",
+      "value": "8.47710503472222E-7"
+    },
+    {
+      "addr": "0065108f",
+      "name": "DOUBLE_0065108f",
+      "type": "double",
+      "value": "0.25"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f5daa4",
+      "name": "g_SfxSlots",
+      "type": "CSfxSlot[64]",
+      "value": null
+    },
+    {
+      "addr": "03f5dbcc",
+      "name": "g_SfxSlots[1].status",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f624a4",
+      "name": "g_SfxLastSlot",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6940c",
+      "name": "g_SoundLockCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69410",
+      "name": "g_SoundStartTime",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005acdb8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_ESI",
+      "text": "CSfxSlot *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = (CSfxSlot *)((float)(g_SoundStartTime - iVar2) * (float)8.4771050347222196e-07);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_ESI",
+      "text": "if ((float)unaff_ESI < 0.0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = (CSfxSlot *)0x0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_ESI",
+      "text": "if ((float)0.25 < (float)unaff_ESI) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = (CSfxSlot *)0x3e800000;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_ESI",
+      "text": "iVar2 = sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,(float)unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = this_ptr;",
+      "type": "unaffected_reg"
     }
   ]
 }

@@ -29,8 +29,8 @@ section .text
     PUSH EBX                            ; 005097ef
     MOV EDX,dword ptr [EBP + 0x14]      ; 005097f0
     PUSH EDX                            ; 005097f3
-    CALL core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840 ; 005097f4 | void core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor * this_ptr, SSurfaceInfo * surface_info)
-        ;   XREF to: 00409840 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840 ; 005097f4
+        ;   XREF to: 00409840 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor * this_ptr, SSurfaceInfo * surface_info)
     ADD ESP,0x8                         ; 005097f9
     XOR ESI,ESI                         ; 005097fc
     MOV EDX,dword ptr [EBP + 0x14]      ; 005097fe
@@ -53,16 +53,16 @@ section .text
     FCOMPP                              ; 00509828
     FNSTSW AX                           ; 0050982a
     SAHF                                ; 0050982c
-    JA 0x005098a3                       ; 0050982d | LAB_005098a3
-        ;   XREF to: 005098a3 (CONDITIONAL_JUMP)
+    JA 0x005098a3                       ; 0050982d
+        ;   XREF to: 005098a3 (CONDITIONAL_JUMP)  ; LAB_005098a3
     INC ESI                             ; 00509833
     ADD EDX,0x60                        ; 00509834
     CMP ESI,0x2                         ; 00509837
-    JL 0x0050980a                       ; 0050983a | LAB_0050980a
-        ;   XREF to: 0050980a (CONDITIONAL_JUMP)
+    JL 0x0050980a                       ; 0050983a
+        ;   XREF to: 0050980a (CONDITIONAL_JUMP)  ; LAB_0050980a
     CMP dword ptr [EBX + 0x8],0x2       ; 0050983c
-    JNZ 0x0050989c                      ; 00509840 | LAB_0050989c
-        ;   XREF to: 0050989c (CONDITIONAL_JUMP)
+    JNZ 0x0050989c                      ; 00509840
+        ;   XREF to: 0050989c (CONDITIONAL_JUMP)  ; LAB_0050989c
     MOV EDX,dword ptr [EBP + 0x14]      ; 00509842
     MOV ECX,dword ptr [EBP + 0x14]      ; 00509845
     LEA EDI,[EBX + 0x2c]                ; 00509848
@@ -86,17 +86,17 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 0050987d
     FADDP                               ; 00509881
     ADD EDX,EAX                         ; 00509883
-    FCOMP double ptr [0x00635705]       ; 00509885 | double DOUBLE_00635705
+    FCOMP double ptr [0x00635705]       ; 00509885 | DOUBLE_00635705
     FNSTSW AX                           ; 0050988b
     SAHF                                ; 0050988d
-    JC 0x005098ac                       ; 0050988e | LAB_005098ac
-        ;   XREF to: 005098ac (CONDITIONAL_JUMP)
+    JC 0x005098ac                       ; 0050988e
+        ;   XREF to: 005098ac (CONDITIONAL_JUMP)  ; LAB_005098ac
     INC ESI                             ; 00509890
         ;   Label: LAB_00509890
     ADD ECX,0xb8                        ; 00509891
     CMP ESI,0xc                         ; 00509897
-    JL 0x0050985d                       ; 0050989a | LAB_0050985d
-        ;   XREF to: 0050985d (CONDITIONAL_JUMP)
+    JL 0x0050985d                       ; 0050989a
+        ;   XREF to: 0050985d (CONDITIONAL_JUMP)  ; LAB_0050985d
     MOV ESP,EBP                         ; 0050989c
         ;   Label: LAB_0050989c
     POP EBP                             ; 0050989e
@@ -106,13 +106,13 @@ section .text
     RET                                 ; 005098a2
     MOV dword ptr [EBX + 0x50],0x3f800000 ; 005098a3
         ;   Label: LAB_005098a3
-    JMP 0x0050989c                      ; 005098aa | LAB_0050989c
-        ;   XREF to: 0050989c (UNCONDITIONAL_JUMP)
+    JMP 0x0050989c                      ; 005098aa
+        ;   XREF to: 0050989c (UNCONDITIONAL_JUMP)  ; LAB_0050989c
     FILD dword ptr [EBX + 0xc]          ; 005098ac
         ;   Label: LAB_005098ac
     FMUL float ptr [EBX]                ; 005098af
     FMUL float ptr [EDX]                ; 005098b1
-    FLD double ptr [0x006356fd]         ; 005098b3 | double DOUBLE_006356fd
+    FLD double ptr [0x006356fd]         ; 005098b3 | DOUBLE_006356fd
     FXCH                                ; 005098b9
     FMUL ST1                            ; 005098bb
     FADD float ptr [EDX + 0x18]         ; 005098bd
@@ -129,6 +129,6 @@ section .text
     FMULP                               ; 005098db
     FADD float ptr [EDX + 0x20]         ; 005098dd
     FSTP float ptr [EDX + 0x20]         ; 005098e0
-    JMP 0x00509890                      ; 005098e3 | LAB_00509890
-        ;   XREF to: 00509890 (UNCONDITIONAL_JUMP)
+    JMP 0x00509890                      ; 005098e3
+        ;   XREF to: 00509890 (UNCONDITIONAL_JUMP)  ; LAB_00509890
 

@@ -29,20 +29,20 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 0049d3d5
     MOV dword ptr [EBX + 0x12c],ECX     ; 0049d3d9
     CMP ECX,0x12c                       ; 0049d3df
-    JC 0x0049d3f1                       ; 0049d3e5 | LAB_0049d3f1
-        ;   XREF to: 0049d3f1 (CONDITIONAL_JUMP)
+    JC 0x0049d3f1                       ; 0049d3e5
+        ;   XREF to: 0049d3f1 (CONDITIONAL_JUMP)  ; LAB_0049d3f1
     MOV dword ptr [EBX + 0x12c],0x12b   ; 0049d3e7
     PUSH 0x12c                          ; 0049d3f1
         ;   Label: LAB_0049d3f1
     PUSH 0x0                            ; 0049d3f6
     PUSH EBX                            ; 0049d3f8
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0049d3f9 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0049d3f9
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0049d3fe
     MOV ECX,dword ptr [ESP + 0xc]       ; 0049d401
     TEST ECX,ECX                        ; 0049d405
-    JNZ 0x0049d431                      ; 0049d407 | LAB_0049d431
-        ;   XREF to: 0049d431 (CONDITIONAL_JUMP)
+    JNZ 0x0049d431                      ; 0049d407
+        ;   XREF to: 0049d431 (CONDITIONAL_JUMP)  ; LAB_0049d431
     MOV dword ptr [EBX + 0x130],ECX     ; 0049d409
     MOV ECX,dword ptr [EBX + 0x130]     ; 0049d40f
         ;   Label: LAB_0049d40f
@@ -59,8 +59,8 @@ section .text
     PUSH ESI                            ; 0049d439
     PUSH ECX                            ; 0049d43a
     PUSH EBX                            ; 0049d43b
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 0049d43c | char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strncpy_FUN_00600f40 ; 0049d43c
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 0049d441
     MOV EDI,EBX                         ; 0049d444
     SUB ECX,ECX                         ; 0049d446
@@ -72,6 +72,6 @@ section .text
     MOV dword ptr [EBX + 0x130],ECX     ; 0049d450
     POP ESI                             ; 0049d456
     POP EDI                             ; 0049d457
-    JMP 0x0049d40f                      ; 0049d458 | LAB_0049d40f
-        ;   XREF to: 0049d40f (UNCONDITIONAL_JUMP)
+    JMP 0x0049d40f                      ; 0049d458
+        ;   XREF to: 0049d40f (UNCONDITIONAL_JUMP)  ; LAB_0049d40f
 

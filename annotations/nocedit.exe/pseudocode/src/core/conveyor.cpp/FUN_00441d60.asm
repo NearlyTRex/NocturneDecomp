@@ -24,13 +24,13 @@ section .text
     LEA EDX,[EBX + 0x20]                ; 00441d70
     MOV ECX,EAX                         ; 00441d73
     CMP EAX,EDX                         ; 00441d75
-    JNZ 0x00441ddb                      ; 00441d77 | LAB_00441ddb
-        ;   XREF to: 00441ddb (CONDITIONAL_JUMP)
+    JNZ 0x00441ddb                      ; 00441d77
+        ;   XREF to: 00441ddb (CONDITIONAL_JUMP)  ; LAB_00441ddb
     LEA EAX,[EBX + 0x31c]               ; 00441d79
         ;   Label: LAB_00441d79
     CMP EAX,ECX                         ; 00441d7f
-    JZ 0x00441d93                       ; 00441d81 | LAB_00441d93
-        ;   XREF to: 00441d93 (CONDITIONAL_JUMP)
+    JZ 0x00441d93                       ; 00441d81
+        ;   XREF to: 00441d93 (CONDITIONAL_JUMP)  ; LAB_00441d93
     MOV EDX,dword ptr [ECX]             ; 00441d83
     MOV dword ptr [EAX],EDX             ; 00441d85
     MOV EDX,dword ptr [ECX + 0x4]       ; 00441d87
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_00441d93
     PUSH EAX                            ; 00441d96
     LEA ESI,[ESP + 0x4]                 ; 00441d97
-    CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 00441d9b | CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)
-        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 00441d9b
+        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)
     LEA ESI,[ESP + 0x4]                 ; 00441da0
     LEA EDI,[EBX + 0x344]               ; 00441da4
     ADD ESP,0x4                         ; 00441daa
@@ -57,8 +57,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00441dbf
     MOVSD ES:EDI,ESI                    ; 00441dc0
     MOVSD ES:EDI,ESI                    ; 00441dc1
-    CALL core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20 ; 00441dc2 | undefined core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20()
-        ;   XREF to: 0054ca20 (UNCONDITIONAL_CALL)
+    CALL core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20 ; 00441dc2
+        ;   XREF to: 0054ca20 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_0054ca20()
     ADD ESP,0x4                         ; 00441dc7
     MOV dword ptr [EBX + 0xfc],0x1      ; 00441dca
     ADD ESP,0x10                        ; 00441dd4
@@ -73,6 +73,6 @@ section .text
     MOV dword ptr [EAX + 0x4],ESI       ; 00441de2
     MOV ESI,dword ptr [EDX + 0x8]       ; 00441de5
     MOV dword ptr [EAX + 0x8],ESI       ; 00441de8
-    JMP 0x00441d79                      ; 00441deb | LAB_00441d79
-        ;   XREF to: 00441d79 (UNCONDITIONAL_JUMP)
+    JMP 0x00441d79                      ; 00441deb
+        ;   XREF to: 00441d79 (UNCONDITIONAL_JUMP)  ; LAB_00441d79
 

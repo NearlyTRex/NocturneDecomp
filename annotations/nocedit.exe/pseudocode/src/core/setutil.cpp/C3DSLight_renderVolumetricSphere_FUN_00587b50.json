@@ -1,396 +1,396 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 258, 
-    "pseudocode_lines": 103, 
-    "cross_reference_count": 0, 
-    "global_count": 12, 
-    "total_lines": 310, 
-    "assembly_lines": 207, 
-    "suspect_count": 13, 
+    "assembly_lines": 207,
+    "complexity_score": 258,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 12,
+    "pseudocode_lines": 103,
+    "suspect_count": 13,
     "suspect_types": [
-      "stack_param", 
-      "extra_output", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
-      "addr": "0048c450"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0", 
-      "addr": "0048bcf0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
-      "addr": "0048ca50"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
-      "addr": "0048ca60"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00", 
-      "addr": "0048ca00"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_00649aab", 
-      "addr": "00649aab", 
-      "value": "0.25"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00649ab3", 
-      "addr": "00649ab3", 
-      "value": "0.0625"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00649abb", 
-      "addr": "00649abb", 
-      "value": "3.14159265350000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00649ac3", 
-      "addr": "00649ac3", 
-      "value": "2"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00649acb", 
-      "addr": "00649acb", 
-      "value": "0.25"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00649ad3", 
-      "addr": "00649ad3", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00649adb", 
-      "addr": "00649adb", 
-      "value": "255"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00662a40", 
-      "addr": "00662a40", 
-      "value": "256"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "SMRGLTextureBasic_006817fc", 
-      "addr": "006817fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00800000", 
-      "addr": "00800000", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EDX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EDX_00;"
-    }, 
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 60, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar4) = 0x800000;"
-    }, 
-    {
-      "line": 61, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->v + iVar4) = 0x800000;"
-    }, 
-    {
-      "line": 64, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&pSVar1->light + iVar4) = (int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 65, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar2 = *extraout_EDX;"
-    }, 
-    {
-      "line": 69, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar2 = *extraout_EDX_00;"
-    }, 
-    {
-      "line": 101, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = in_stack_00000008 + 10;"
-    }, 
-    {
-      "line": 101, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = in_stack_00000008 + 10;"
-    }, 
-    {
-      "line": 103, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (in_stack_00000008 != 0xa0);"
-    }
-  ], 
+      "extra_output",
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param"
+    ],
+    "total_lines": 310
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00587b50", 
-    "signature": "void core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DSLight * this_ptr)", 
+    "address": "00587b50",
     "address_range": [
       [
-        "00587b50", 
+        "00587b50",
         "00587de0"
       ]
-    ], 
-    "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50",
+    "signature": "void core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DSLight * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048c450",
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048bcf0",
+      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0"
+    },
+    {
+      "addr": "0048ca50",
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "0048ca60",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    },
+    {
+      "addr": "0048ca00",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649aab",
+      "name": "DOUBLE_00649aab",
+      "type": "double",
+      "value": "0.25"
+    },
+    {
+      "addr": "00649ab3",
+      "name": "FLOAT_00649ab3",
+      "type": "float",
+      "value": "0.0625"
+    },
+    {
+      "addr": "00649abb",
+      "name": "DOUBLE_00649abb",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00649ac3",
+      "name": "DOUBLE_00649ac3",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00649acb",
+      "name": "FLOAT_00649acb",
+      "type": "float",
+      "value": "0.25"
+    },
+    {
+      "addr": "00649ad3",
+      "name": "DOUBLE_00649ad3",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00649adb",
+      "name": "FLOAT_00649adb",
+      "type": "float",
+      "value": "255"
+    },
+    {
+      "addr": "00662a40",
+      "name": "FLOAT_00662a40",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006817fc",
+      "name": "SMRGLTextureBasic_006817fc",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "00800000",
+      "name": "DAT_00800000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 124, 
+    "frame_size": 128,
+    "local_size": 124,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_78"
-      }, 
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "C3DSLight *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSLight *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 128, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EDX",
+      "text": "int *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EDX_00",
+      "text": "int *extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar4) = 0x800000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->v + iVar4) = 0x800000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&pSVar1->light + iVar4) = (int)ROUND(dVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 65,
+      "match": "extraout_EDX",
+      "text": "iVar2 = *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 69,
+      "match": "extraout_EDX_00",
+      "text": "iVar2 = *extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = in_stack_00000008 + 10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = in_stack_00000008 + 10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 103,
+      "match": "in_stack_00000008",
+      "text": "} while (in_stack_00000008 != 0xa0);",
+      "type": "stack_param"
+    }
+  ]
 }

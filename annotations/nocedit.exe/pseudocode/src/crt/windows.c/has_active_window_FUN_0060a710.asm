@@ -23,19 +23,19 @@ section .text
 
     PUSH EBX                            ; 0060a710
         ;   Label: crt_windows.c_has_active_window_FUN_0060a710
-    PUSH 0x659110                       ; 0060a711 | = "USER32.DLL" | s_USER32_DLL_00659110 = USER32.DLL
-    CALL dword ptr CS:[0x6115e8]        ; 0060a716 | LoadLibraryA * PTR_LoadLibraryA_006115e8
+    PUSH 0x659110                       ; 0060a711 | = "USER32.DLL"
+    CALL dword ptr CS:[0x6115e8]        ; 0060a716 | PTR_LoadLibraryA_006115e8
     XOR EBX,EBX                         ; 0060a71d
     TEST EAX,EAX                        ; 0060a71f
-    JZ 0x0060a73a                       ; 0060a721 | LAB_0060a73a
-        ;   XREF to: 0060a73a (CONDITIONAL_JUMP)
-    PUSH 0x65911c                       ; 0060a723 | = "GetActiveWindow" | s_GetActiveWindow_0065911c = GetActiveWindow
+    JZ 0x0060a73a                       ; 0060a721
+        ;   XREF to: 0060a73a (CONDITIONAL_JUMP)  ; LAB_0060a73a
+    PUSH 0x65911c                       ; 0060a723 | = "GetActiveWindow"
     PUSH EAX                            ; 0060a728
-    CALL dword ptr CS:[0x6115bc]        ; 0060a729 | GetProcAddress * GetProcAddress
+    CALL dword ptr CS:[0x6115bc]        ; 0060a729 | GetProcAddress
     MOV EDX,EAX                         ; 0060a730
     TEST EAX,EAX                        ; 0060a732
-    JZ 0x0060a73a                       ; 0060a734 | LAB_0060a73a
-        ;   XREF to: 0060a73a (CONDITIONAL_JUMP)
+    JZ 0x0060a73a                       ; 0060a734
+        ;   XREF to: 0060a73a (CONDITIONAL_JUMP)  ; LAB_0060a73a
     CALL EDX                            ; 0060a736
     MOV EBX,EAX                         ; 0060a738
     TEST EBX,EBX                        ; 0060a73a

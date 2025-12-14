@@ -42,15 +42,15 @@ section .text
     PUSH ESI                            ; 005dd801
     PUSH EBP                            ; 005dd802
     MOV EBX,dword ptr [ESP + 0x10]      ; 005dd803
-    MOV EDX,dword ptr [0x00772a74]      ; 005dd807 | int g_TexturesDisabled
+    MOV EDX,dword ptr [0x00772a74]      ; 005dd807 | g_TexturesDisabled
     LEA EAX,[EBX + 0x18]                ; 005dd80d
     XOR ESI,ESI                         ; 005dd810
     TEST EDX,EDX                        ; 005dd812
-    JNZ 0x005dd81c                      ; 005dd814 | LAB_005dd81c
-        ;   XREF to: 005dd81c (CONDITIONAL_JUMP)
+    JNZ 0x005dd81c                      ; 005dd814
+        ;   XREF to: 005dd81c (CONDITIONAL_JUMP)  ; LAB_005dd81c
     CMP byte ptr [EBX + 0x8],0x0        ; 005dd816
-    JNZ 0x005dd820                      ; 005dd81a | LAB_005dd820
-        ;   XREF to: 005dd820 (CONDITIONAL_JUMP)
+    JNZ 0x005dd820                      ; 005dd81a
+        ;   XREF to: 005dd820 (CONDITIONAL_JUMP)  ; LAB_005dd820
     POP EBP                             ; 005dd81c
         ;   Label: LAB_005dd81c
     POP ESI                             ; 005dd81d
@@ -63,43 +63,43 @@ section .text
     PUSH EDI                            ; 005dd827
     AND EAX,0xffff                      ; 005dd828
     PUSH EAX                            ; 005dd82d
-    MOV ECX,dword ptr [0x03f87358]      ; 005dd82e | CTextureCache * g_TextureCacheInstance
+    MOV ECX,dword ptr [0x03f87358]      ; 005dd82e | g_TextureCacheInstance
     PUSH ECX                            ; 005dd834
-    CALL engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180 ; 005dd835 | int engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180(CTextureCache * this_ptr, int hint_index, char * texture_name)
-        ;   XREF to: 005dd180 (UNCONDITIONAL_CALL)
+    CALL engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180 ; 005dd835
+        ;   XREF to: 005dd180 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180(CTextureCache * this_ptr, int hint_index, char * texture_name)
     MOV EDX,EAX                         ; 005dd83a
     ADD ESP,0xc                         ; 005dd83c
     CMP EAX,-0x1                        ; 005dd83f
-    JNZ 0x005dd859                      ; 005dd842 | LAB_005dd859
-        ;   XREF to: 005dd859 (CONDITIONAL_JUMP)
+    JNZ 0x005dd859                      ; 005dd842
+        ;   XREF to: 005dd859 (CONDITIONAL_JUMP)  ; LAB_005dd859
     PUSH EDI                            ; 005dd844
-    MOV ESI,dword ptr [0x03f87358]      ; 005dd845 | CTextureCache * g_TextureCacheInstance
+    MOV ESI,dword ptr [0x03f87358]      ; 005dd845 | g_TextureCacheInstance
     PUSH ESI                            ; 005dd84b
-    CALL engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 ; 005dd84c | void engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache * cache, char * texture_name)
-        ;   XREF to: 005dcc00 (UNCONDITIONAL_CALL)
+    CALL engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 ; 005dd84c
+        ;   XREF to: 005dcc00 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache * cache, char * texture_name)
     MOV ESI,0x1                         ; 005dd851
     ADD ESP,0x8                         ; 005dd856
     MOV dword ptr [EBX + 0x4],EAX       ; 005dd859
         ;   Label: LAB_005dd859
     PUSH EAX                            ; 005dd85c
-    MOV EDI,dword ptr [0x03f87358]      ; 005dd85d | CTextureCache * g_TextureCacheInstance
+    MOV EDI,dword ptr [0x03f87358]      ; 005dd85d | g_TextureCacheInstance
     PUSH EDI                            ; 005dd863
-    MOV [0x03f87354],EAX                ; 005dd864 | int g_CurrentTextureIndex
-    CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 ; 005dd869 | void engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache * cache, int texture_index)
-        ;   XREF to: 005dd200 (UNCONDITIONAL_CALL)
-    MOV EBP,dword ptr [0x02d03e94]      ; 005dd86e | int g_UseExternalRenderer
+    MOV [0x03f87354],EAX                ; 005dd864 | g_CurrentTextureIndex
+    CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 ; 005dd869
+        ;   XREF to: 005dd200 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache * cache, int texture_index)
+    MOV EBP,dword ptr [0x02d03e94]      ; 005dd86e | g_UseExternalRenderer
     ADD ESP,0x8                         ; 005dd874
     TEST EBP,EBP                        ; 005dd877
-    JZ 0x005dd88f                       ; 005dd879 | LAB_005dd88f
-        ;   XREF to: 005dd88f (CONDITIONAL_JUMP)
+    JZ 0x005dd88f                       ; 005dd879
+        ;   XREF to: 005dd88f (CONDITIONAL_JUMP)  ; LAB_005dd88f
     TEST ESI,ESI                        ; 005dd87b
-    JNZ 0x005dd897                      ; 005dd87d | LAB_005dd897
-        ;   XREF to: 005dd897 (CONDITIONAL_JUMP)
-    MOV ESI,dword ptr [0x02d01920]      ; 005dd87f | byte * g_CurrentPalette
+    JNZ 0x005dd897                      ; 005dd87d
+        ;   XREF to: 005dd897 (CONDITIONAL_JUMP)  ; LAB_005dd897
+    MOV ESI,dword ptr [0x02d01920]      ; 005dd87f | g_CurrentPalette
     PUSH ESI                            ; 005dd885
     PUSH EBX                            ; 005dd886
-    CALL wincore_windll.cpp_selectTexture_FUN_005b7340 ; 005dd887 | int wincore_windll.cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic * tex, byte * palette_data)
-        ;   XREF to: 005b7340 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_selectTexture_FUN_005b7340 ; 005dd887
+        ;   XREF to: 005b7340 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic * tex, byte * palette_data)
     ADD ESP,0x8                         ; 005dd88c
     LEA EAX,[EBX + 0x18]                ; 005dd88f
         ;   Label: LAB_005dd88f
@@ -108,16 +108,16 @@ section .text
     POP ESI                             ; 005dd894
     POP EBX                             ; 005dd895
     RET                                 ; 005dd896
-    MOV EAX,[0x02d01920]                ; 005dd897 | byte * g_CurrentPalette
+    MOV EAX,[0x02d01920]                ; 005dd897 | g_CurrentPalette
         ;   Label: LAB_005dd897
     PUSH EAX                            ; 005dd89c
     PUSH EBX                            ; 005dd89d
-    CALL wincore_windll.cpp_updateTexture_FUN_005b7380 ; 005dd89e | int wincore_windll.cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
-        ;   XREF to: 005b7380 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_updateTexture_FUN_005b7380 ; 005dd89e
+        ;   XREF to: 005b7380 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)
     ADD ESP,0x8                         ; 005dd8a3
-    MOV EDX,dword ptr [0x03f87354]      ; 005dd8a6 | int g_CurrentTextureIndex
+    MOV EDX,dword ptr [0x03f87354]      ; 005dd8a6 | g_CurrentTextureIndex
     PUSH EDX                            ; 005dd8ac
-    MOV ECX,dword ptr [0x03f87358]      ; 005dd8ad | CTextureCache * g_TextureCacheInstance
+    MOV ECX,dword ptr [0x03f87358]      ; 005dd8ad | g_TextureCacheInstance
     PUSH ECX                            ; 005dd8b3
     ADD ESP,0x8                         ; 005dd8b4
     LEA EAX,[EBX + 0x18]                ; 005dd8b7

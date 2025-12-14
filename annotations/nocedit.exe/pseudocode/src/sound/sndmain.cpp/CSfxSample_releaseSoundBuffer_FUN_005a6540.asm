@@ -23,17 +23,17 @@ section .text
     PUSH EBP                            ; 005a6541
     MOV EBX,dword ptr [ESP + 0xc]       ; 005a6542
     CMP dword ptr [EBX + 0x17c],0x0     ; 005a6546
-    JZ 0x005a6579                       ; 005a654d | LAB_005a6579
-        ;   XREF to: 005a6579 (CONDITIONAL_JUMP)
+    JZ 0x005a6579                       ; 005a654d
+        ;   XREF to: 005a6579 (CONDITIONAL_JUMP)  ; LAB_005a6579
     PUSH ESI                            ; 005a654f
     MOV ECX,dword ptr [EBX + 0x158]     ; 005a6550
     TEST ECX,ECX                        ; 005a6556
-    JZ 0x005a6564                       ; 005a6558 | LAB_005a6564
-        ;   XREF to: 005a6564 (CONDITIONAL_JUMP)
-    MOV ESI,dword ptr [0x03f69268]      ; 005a655a | CSoundDevice * g_CSoundDevicePtr
+    JZ 0x005a6564                       ; 005a6558
+        ;   XREF to: 005a6564 (CONDITIONAL_JUMP)  ; LAB_005a6564
+    MOV ESI,dword ptr [0x03f69268]      ; 005a655a | g_CSoundDevicePtr
     TEST ESI,ESI                        ; 005a6560
-    JNZ 0x005a657c                      ; 005a6562 | LAB_005a657c
-        ;   XREF to: 005a657c (CONDITIONAL_JUMP)
+    JNZ 0x005a657c                      ; 005a6562
+        ;   XREF to: 005a657c (CONDITIONAL_JUMP)  ; LAB_005a657c
     MOV dword ptr [EBX + 0x17c],0x0     ; 005a6564
         ;   Label: LAB_005a6564
     MOV dword ptr [EBX + 0x178],0x0     ; 005a656e
@@ -54,6 +54,6 @@ section .text
     CALL dword ptr [EDX + 0x38]         ; 005a658f
     ADD ESP,0x10                        ; 005a6592
     POP EDI                             ; 005a6595
-    JMP 0x005a6564                      ; 005a6596 | LAB_005a6564
-        ;   XREF to: 005a6564 (UNCONDITIONAL_JUMP)
+    JMP 0x005a6564                      ; 005a6596
+        ;   XREF to: 005a6564 (UNCONDITIONAL_JUMP)  ; LAB_005a6564
 

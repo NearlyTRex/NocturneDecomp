@@ -1,193 +1,185 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 62, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 0, 
-    "global_count": 22, 
-    "total_lines": 92, 
-    "assembly_lines": 60, 
-    "suspect_count": 2, 
+    "assembly_lines": 60,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 22,
+    "pseudocode_lines": 30,
+    "suspect_count": 1,
     "suspect_types": [
-      "sborrow_artifact", 
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_00613357", 
-      "addr": "00613357", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_unmapFrameBuffer_frame_b_00613366", 
-      "addr": "00613366", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredWindowWidth", 
-      "addr": "00772a38", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredWindowHeight", 
-      "addr": "00772a3c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredClipLeft", 
-      "addr": "00772a40", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredClipTop", 
-      "addr": "00772a44", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredClipRight", 
-      "addr": "00772a48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredClipBottom", 
-      "addr": "00772a4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredBitsPerPixel", 
-      "addr": "00772a50", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_StoredMappedFrameBuffer", 
-      "addr": "00772a54", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ScreenBufferStride", 
-      "addr": "00772a58", 
-      "value": null
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 30, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pvVar4 = (void *)((int)pvVar4 + g_ScreenBufferStride);"
-    }, 
-    {
-      "line": 31, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar3,iVar1) != iVar3 + iVar2 * -4 < 0);"
-    }
-  ], 
+    ],
+    "total_lines": 90
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00403670", 
-    "signature": "void engine_2d.c_unmapFrameBuffer_FUN_00403670(void)", 
+    "address": "00403670",
     "address_range": [
       [
-        "00403670", 
+        "00403670",
         "0040373b"
       ]
-    ], 
-    "name": "engine_2d.c_unmapFrameBuffer_FUN_00403670"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_unmapFrameBuffer_FUN_00403670",
+    "signature": "void engine_2d.c_unmapFrameBuffer_FUN_00403670(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00613357",
+      "name": "s_engine_2d_c_00613357",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613366",
+      "name": "s_unmapFrameBuffer_frame_b_00613366",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00772a38",
+      "name": "g_StoredWindowWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a3c",
+      "name": "g_StoredWindowHeight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a40",
+      "name": "g_StoredClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a44",
+      "name": "g_StoredClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a48",
+      "name": "g_StoredClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a4c",
+      "name": "g_StoredClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a50",
+      "name": "g_StoredBitsPerPixel",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a54",
+      "name": "g_StoredMappedFrameBuffer",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "00772a58",
+      "name": "g_ScreenBufferStride",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(void *)((int)",
+      "text": "pvVar3 = (void *)((int)pvVar3 + g_ScreenBufferStride);",
+      "type": "pointer_cast"
+    }
+  ]
 }

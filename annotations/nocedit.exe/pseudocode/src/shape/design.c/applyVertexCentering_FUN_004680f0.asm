@@ -35,14 +35,14 @@ section .text
     SUB ESP,0x18                        ; 004680f6
     MOV EAX,dword ptr [EBP + 0x14]      ; 004680fc
     PUSH EAX                            ; 004680ff
-    CALL shape_design.c_findVertexListInModel_FUN_00468000 ; 00468100 | CVector3i * shape_design.c_findVertexListInModel_FUN_00468000(SMRGLHeaderExtended * model_ptr)
-        ;   XREF to: 00468000 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_findVertexListInModel_FUN_00468000 ; 00468100
+        ;   XREF to: 00468000 (UNCONDITIONAL_CALL)  ; CVector3i * shape_design.c_findVertexListInModel_FUN_00468000(SMRGLHeaderExtended * model_ptr)
     ADD ESP,0x4                         ; 00468105
     MOV dword ptr [EBP + -0x4],EAX      ; 00468108
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046810b
     PUSH EAX                            ; 0046810e
-    CALL shape_design.c_getVertexCountFromModel_FUN_00468080 ; 0046810f | int shape_design.c_getVertexCountFromModel_FUN_00468080(SMRGLHeaderExtended * model_ptr)
-        ;   XREF to: 00468080 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_getVertexCountFromModel_FUN_00468080 ; 0046810f
+        ;   XREF to: 00468080 (UNCONDITIONAL_CALL)  ; int shape_design.c_getVertexCountFromModel_FUN_00468080(SMRGLHeaderExtended * model_ptr)
     ADD ESP,0x4                         ; 00468114
     MOV dword ptr [EBP + -0x8],EAX      ; 00468117
     IMUL ESI,dword ptr [EBP + 0x1c],0xc ; 0046811a
@@ -52,16 +52,16 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00468125
     MOVSD ES:EDI,ESI                    ; 00468126
     MOV dword ptr [EBP + -0xc],0x0      ; 00468127
-    JMP 0x00468136                      ; 0046812e | LAB_00468136
-        ;   XREF to: 00468136 (UNCONDITIONAL_JUMP)
+    JMP 0x00468136                      ; 0046812e
+        ;   XREF to: 00468136 (UNCONDITIONAL_JUMP)  ; LAB_00468136
     MOV EAX,dword ptr [EBP + -0xc]      ; 00468130
         ;   Label: LAB_00468130
     INC dword ptr [EBP + -0xc]          ; 00468133
     MOV EAX,dword ptr [EBP + -0xc]      ; 00468136
         ;   Label: LAB_00468136
     CMP EAX,dword ptr [EBP + -0x8]      ; 00468139
-    JGE 0x00468194                      ; 0046813c | LAB_00468194
-        ;   XREF to: 00468194 (CONDITIONAL_JUMP)
+    JGE 0x00468194                      ; 0046813c
+        ;   XREF to: 00468194 (CONDITIONAL_JUMP)  ; LAB_00468194
     IMUL EAX,dword ptr [EBP + -0xc],0xc ; 0046813e
     ADD EAX,dword ptr [EBP + -0x4]      ; 00468142
     MOV EDX,dword ptr [EAX]             ; 00468145
@@ -89,8 +89,8 @@ section .text
     IMUL EAX,dword ptr [EBP + -0xc],0xc ; 00468188
     ADD EAX,dword ptr [EBP + -0x4]      ; 0046818c
     MOV dword ptr [EAX + 0x8],EDX       ; 0046818f
-    JMP 0x00468130                      ; 00468192 | LAB_00468130
-        ;   XREF to: 00468130 (UNCONDITIONAL_JUMP)
+    JMP 0x00468130                      ; 00468192
+        ;   XREF to: 00468130 (UNCONDITIONAL_JUMP)  ; LAB_00468130
     MOV ESP,EBP                         ; 00468194
         ;   Label: LAB_00468194
     POP EBP                             ; 00468196

@@ -1,182 +1,182 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 131, 
-    "pseudocode_lines": 41, 
-    "cross_reference_count": 0, 
-    "global_count": 8, 
-    "total_lines": 127, 
-    "assembly_lines": 86, 
-    "suspect_count": 8, 
+    "assembly_lines": 86,
+    "complexity_score": 131,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 8,
+    "pseudocode_lines": 41,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitPosition", 
-      "addr": "02d01f24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitPosition", 
-      "addr": "02d01f30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitPosition", 
-      "addr": "02d01f3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03365cc0", 
-      "addr": "03365cc0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03365cc4", 
-      "addr": "03365cc4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_1c = in_stack_0000000c << 2;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_18 = in_stack_00000004 * 0x3000;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "puVar1 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + in_stack_00000008 * 4);"
-    }, 
-    {
-      "line": 22, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar1 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + in_stack_00000008 * 4);"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = local_14 * 0x100 + in_stack_00000004 * 0x3000;"
-    }
-  ], 
+    ],
+    "total_lines": 127
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00577330", 
-    "signature": "undefined core_setedit.cpp_FUN_00577330()", 
+    "address": "00577330",
     "address_range": [
       [
-        "00577330", 
+        "00577330",
         "00577428"
       ]
-    ], 
-    "name": "core_setedit.cpp_FUN_00577330"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_setedit.cpp_FUN_00577330",
+    "signature": "undefined core_setedit.cpp_FUN_00577330()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03365cc0",
+      "name": "DAT_03365cc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03365cc4",
+      "name": "DAT_03365cc4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 40, 
+    "frame_size": 40,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "local_1c = in_stack_0000000c << 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "local_18 = in_stack_00000004 * 0x3000;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "puVar1 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + in_stack_00000008 * 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(int *)((int)",
+      "text": "puVar1 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + in_stack_00000008 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "iVar2 = local_14 * 0x100 + in_stack_00000004 * 0x3000;",
+      "type": "stack_param"
+    }
+  ]
 }

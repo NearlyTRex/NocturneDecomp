@@ -34,35 +34,35 @@ section .text
     MOV EDX,dword ptr [EBX + 0x18c]     ; 0041af9c
     XOR ESI,ESI                         ; 0041afa2
     TEST EDX,EDX                        ; 0041afa4
-    JLE 0x0041afce                      ; 0041afa6 | LAB_0041afce
-        ;   XREF to: 0041afce (CONDITIONAL_JUMP)
+    JLE 0x0041afce                      ; 0041afa6
+        ;   XREF to: 0041afce (CONDITIONAL_JUMP)  ; LAB_0041afce
     LEA EDI,[EBX + 0x198]               ; 0041afa8
     PUSH EBP                            ; 0041afae
         ;   Label: LAB_0041afae
     PUSH EDI                            ; 0041afaf
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0041afb0 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0041afb0
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0041afb5
     TEST EAX,EAX                        ; 0041afb8
-    JZ 0x0041b067                       ; 0041afba | LAB_0041b067
-        ;   XREF to: 0041b067 (CONDITIONAL_JUMP)
+    JZ 0x0041b067                       ; 0041afba
+        ;   XREF to: 0041b067 (CONDITIONAL_JUMP)  ; LAB_0041b067
     INC ESI                             ; 0041afc0
     MOV ECX,dword ptr [EBX + 0x18c]     ; 0041afc1
     ADD EDI,0x18                        ; 0041afc7
     CMP ESI,ECX                         ; 0041afca
-    JL 0x0041afae                       ; 0041afcc | LAB_0041afae
-        ;   XREF to: 0041afae (CONDITIONAL_JUMP)
+    JL 0x0041afae                       ; 0041afcc
+        ;   XREF to: 0041afae (CONDITIONAL_JUMP)  ; LAB_0041afae
     CMP dword ptr [EBX + 0x18c],0xa     ; 0041afce
         ;   Label: LAB_0041afce
-    JL 0x0041aff9                       ; 0041afd5 | LAB_0041aff9
-        ;   XREF to: 0041aff9 (CONDITIONAL_JUMP)
-    MOV EDI,0x615e6a                    ; 0041afd7 | = "..\\core\\bodypart.cpp" | s_core_bodypart_cpp_00615e6a = ..\core\bodypart.cpp
+    JL 0x0041aff9                       ; 0041afd5
+        ;   XREF to: 0041aff9 (CONDITIONAL_JUMP)  ; LAB_0041aff9
+    MOV EDI,0x615e6a                    ; 0041afd7 | = "..\\core\\bodypart.cpp"
     MOV EAX,0x47a                       ; 0041afdc
-    PUSH 0x615e7f                       ; 0041afe1 | = "Too many body part textures!" | s_Too_many_body_part_textu_00615e7f = Too many body part textures!
-    MOV dword ptr [0x02f0ca48],EDI      ; 0041afe6 | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 0041afec | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0041aff1 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x615e7f                       ; 0041afe1 | = "Too many body part textures!"
+    MOV dword ptr [0x02f0ca48],EDI      ; 0041afe6 | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 0041afec | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0041aff1
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0041aff6
     MOV ESI,dword ptr [EBX + 0x18c]     ; 0041aff9
         ;   Label: LAB_0041aff9
@@ -74,8 +74,8 @@ section .text
     PUSH 0x0                            ; 0041b013
     ADD EAX,EDI                         ; 0041b015
     PUSH EAX                            ; 0041b017
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0041b018 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0041b018
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV ESI,dword ptr [EBX + 0x18c]     ; 0041b01d
     LEA EAX,[ESI*0x4 + 0x0]             ; 0041b023
     SUB EAX,ESI                         ; 0041b02a
@@ -89,15 +89,15 @@ section .text
         ;   Label: LAB_0041b03a
     MOV byte ptr [EDI],AL               ; 0041b03c
     CMP AL,0x0                          ; 0041b03e
-    JZ 0x0041b052                       ; 0041b040 | LAB_0041b052
-        ;   XREF to: 0041b052 (CONDITIONAL_JUMP)
+    JZ 0x0041b052                       ; 0041b040
+        ;   XREF to: 0041b052 (CONDITIONAL_JUMP)  ; LAB_0041b052
     MOV AL,byte ptr [ESI + 0x1]         ; 0041b042
     ADD ESI,0x2                         ; 0041b045
     MOV byte ptr [EDI + 0x1],AL         ; 0041b048
     ADD EDI,0x2                         ; 0041b04b
     CMP AL,0x0                          ; 0041b04e
-    JNZ 0x0041b03a                      ; 0041b050 | LAB_0041b03a
-        ;   XREF to: 0041b03a (CONDITIONAL_JUMP)
+    JNZ 0x0041b03a                      ; 0041b050
+        ;   XREF to: 0041b03a (CONDITIONAL_JUMP)  ; LAB_0041b03a
     POP EDI                             ; 0041b052
         ;   Label: LAB_0041b052
     MOV EAX,dword ptr [EBX + 0x18c]     ; 0041b053

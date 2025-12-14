@@ -12,16 +12,14 @@ void * __cdecl crt_string_c_memcpy_FUN_0060cd60(void *dest,void *src,SIZE_T coun
   uint uVar1;
   uint *puVar2;
   
-  puVar2 = (uint *)dest;
-                    /* WARNING: Load size is inaccurate */
+  puVar2 = dest;
   for (uVar1 = count >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
-    *puVar2 = *src;
+    *puVar2 = *(uint *)src;
     src = (uint *)((int)src + 4);
     puVar2 = puVar2 + 1;
   }
-                    /* WARNING: Load size is inaccurate */
   for (uVar1 = count & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
-    *(byte *)puVar2 = *src;
+    *(byte *)puVar2 = *(byte *)src;
     src = (uint *)((int)src + 1);
     puVar2 = (uint *)((int)puVar2 + 1);
   }

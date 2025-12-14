@@ -26,8 +26,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 005b3b90
         ;   Label: core_sound.cpp_CSound_killSound_FUN_005b3b90
     PUSH EDX                            ; 005b3b94
-    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b3b95 | int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
-        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b3b95
+        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
     ADD ESP,0x4                         ; 005b3b9a
     RET                                 ; 005b3b9d
 

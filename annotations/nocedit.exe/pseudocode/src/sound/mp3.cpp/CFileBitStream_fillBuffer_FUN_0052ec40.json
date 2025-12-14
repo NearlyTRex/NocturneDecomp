@@ -1,50 +1,50 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 91, 
-    "assembly_lines": 62, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 62,
+    "complexity_score": 29,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 91
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0052ec40", 
-    "signature": "void sound_mp3.cpp_CFileBitStream_fillBuffer_FUN_0052ec40(CFileBitStream * this_ptr)", 
+    "address": "0052ec40",
     "address_range": [
       [
-        "0052ec40", 
+        "0052ec40",
         "0052ec9f"
       ]
-    ], 
-    "name": "sound_mp3.cpp_CFileBitStream_fillBuffer_FUN_0052ec40"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CFileBitStream_fillBuffer_FUN_0052ec40",
+    "signature": "void sound_mp3.cpp_CFileBitStream_fillBuffer_FUN_0052ec40(CFileBitStream * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileBitStream *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileBitStream *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

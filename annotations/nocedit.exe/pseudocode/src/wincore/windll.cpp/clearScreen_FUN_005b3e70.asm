@@ -37,11 +37,11 @@ section .text
     PUSH ESI                            ; 005b3e70
         ;   Label: wincore_windll.cpp_clearScreen_FUN_005b3e70
     PUSH EDI                            ; 005b3e71
-    CMP dword ptr [0x02d03e94],0x0      ; 005b3e72 | int g_UseExternalRenderer
-    JZ 0x005b3e83                       ; 005b3e79 | LAB_005b3e83
-        ;   XREF to: 005b3e83 (CONDITIONAL_JUMP)
-    CALL wincore_windll.cpp_clear_FUN_005b7a30 ; 005b3e7b | int wincore_windll.cpp_clear_FUN_005b7a30()
-        ;   XREF to: 005b7a30 (UNCONDITIONAL_CALL)
+    CMP dword ptr [0x02d03e94],0x0      ; 005b3e72 | g_UseExternalRenderer
+    JZ 0x005b3e83                       ; 005b3e79
+        ;   XREF to: 005b3e83 (CONDITIONAL_JUMP)  ; LAB_005b3e83
+    CALL wincore_windll.cpp_clear_FUN_005b7a30 ; 005b3e7b
+        ;   XREF to: 005b7a30 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_clear_FUN_005b7a30()
     POP EDI                             ; 005b3e80
     POP ESI                             ; 005b3e81
     RET                                 ; 005b3e82
@@ -52,13 +52,13 @@ section .text
     POP ES                              ; 005b3e86
     MOV EAX,0x0                         ; 005b3e87
     MOV EBX,0x0                         ; 005b3e8c
-    MOV EAX,[0x00679394]                ; 005b3e91 | int g_WindowWidth
+    MOV EAX,[0x00679394]                ; 005b3e91 | g_WindowWidth
         ;   Label: LAB_005b3e91
-    IMUL dword ptr [0x0067939c]         ; 005b3e96 | int g_BitsPerPixel
+    IMUL dword ptr [0x0067939c]         ; 005b3e96 | g_BitsPerPixel
     SHR EAX,0x3                         ; 005b3e9c
     MOV ECX,EAX                         ; 005b3e9f
-    MOV EDI,dword ptr [EBX*0x4 + 0x2cf6a9c] ; 005b3ea1 | void *[1024] g_ScreenBufferArray
-    FLD double ptr [0x0068261c]         ; 005b3ea8 | double g_SelectedClearColor
+    MOV EDI,dword ptr [EBX*0x4 + 0x2cf6a9c] ; 005b3ea1 | g_ScreenBufferArray | g_ScreenBufferArray[1]
+    FLD double ptr [0x0068261c]         ; 005b3ea8 | g_SelectedClearColor
     FST double ptr [EDI]                ; 005b3eae
         ;   Label: LAB_005b3eae
     FST double ptr [EDI + 0x8]          ; 005b3eb0
@@ -66,13 +66,13 @@ section .text
     FST double ptr [EDI + 0x18]         ; 005b3eb6
     ADD EDI,0x20                        ; 005b3eb9
     SUB ECX,0x20                        ; 005b3ebc
-    JG 0x005b3eae                       ; 005b3ebf | LAB_005b3eae
-        ;   XREF to: 005b3eae (CONDITIONAL_JUMP)
-    FSTP double ptr [0x00682624]        ; 005b3ec1 | double g_ClearColor
+    JG 0x005b3eae                       ; 005b3ebf
+        ;   XREF to: 005b3eae (CONDITIONAL_JUMP)  ; LAB_005b3eae
+    FSTP double ptr [0x00682624]        ; 005b3ec1 | g_ClearColor
     INC EBX                             ; 005b3ec7
-    CMP EBX,dword ptr [0x00679398]      ; 005b3ec8 | int g_WindowHeight
-    JL 0x005b3e91                       ; 005b3ece | LAB_005b3e91
-        ;   XREF to: 005b3e91 (CONDITIONAL_JUMP)
+    CMP EBX,dword ptr [0x00679398]      ; 005b3ec8 | g_WindowHeight
+    JL 0x005b3e91                       ; 005b3ece
+        ;   XREF to: 005b3e91 (CONDITIONAL_JUMP)  ; LAB_005b3e91
     POPAD                               ; 005b3ed0
     POP EDI                             ; 005b3ed1
     POP ESI                             ; 005b3ed2

@@ -61,32 +61,32 @@ section .text
     SUB ESP,0x120                       ; 005542b4
     MOV EBX,dword ptr [ESP + 0x134]     ; 005542ba
     LEA ESI,[EBX + 0x200]               ; 005542c1
-    CALL crt_stdlib.c_rand_FUN_005feb5c ; 005542c7 | int crt_stdlib.c_rand_FUN_005feb5c()
+    CALL crt_stdlib.c_rand_FUN_005feb5c ; 005542c7
+        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
         ;   Label: LAB_005542c7
-        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)
     MOV dword ptr [ESP + 0x11c],EAX     ; 005542cc
     FILD dword ptr [ESP + 0x11c]        ; 005542d3
-    FMUL float ptr [0x006409e4]         ; 005542da | float FLOAT_006409e4
-    FMUL double ptr [0x006409e8]        ; 005542e0 | double DOUBLE_006409e8
+    FMUL float ptr [0x006409e4]         ; 005542da | FLOAT_006409e4
+    FMUL double ptr [0x006409e8]        ; 005542e0 | DOUBLE_006409e8
     FSTP float ptr [EBX + 0x10008]      ; 005542e6
-    CALL crt_stdlib.c_rand_FUN_005feb5c ; 005542ec | int crt_stdlib.c_rand_FUN_005feb5c()
-        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_rand_FUN_005feb5c ; 005542ec
+        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
     MOV dword ptr [ESP + 0x11c],EAX     ; 005542f1
     FILD dword ptr [ESP + 0x11c]        ; 005542f8
-    FMUL float ptr [0x006409e4]         ; 005542ff | float FLOAT_006409e4
-    FMUL double ptr [0x006409e8]        ; 00554305 | double DOUBLE_006409e8
+    FMUL float ptr [0x006409e4]         ; 005542ff | FLOAT_006409e4
+    FMUL double ptr [0x006409e8]        ; 00554305 | DOUBLE_006409e8
     FSTP float ptr [EBX + 0x10208]      ; 0055430b
-    CALL crt_stdlib.c_rand_FUN_005feb5c ; 00554311 | int crt_stdlib.c_rand_FUN_005feb5c()
-        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_rand_FUN_005feb5c ; 00554311
+        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
     MOV dword ptr [ESP + 0x11c],EAX     ; 00554316
     FILD dword ptr [ESP + 0x11c]        ; 0055431d
-    FMUL float ptr [0x006409e4]         ; 00554324 | float FLOAT_006409e4
-    FMUL double ptr [0x006409f0]        ; 0055432a | double DOUBLE_006409f0
+    FMUL float ptr [0x006409e4]         ; 00554324 | FLOAT_006409e4
+    FMUL double ptr [0x006409f0]        ; 0055432a | DOUBLE_006409f0
     ADD EBX,0x4                         ; 00554330
     FSTP float ptr [EBX + 0x10404]      ; 00554333
     CMP EBX,ESI                         ; 00554339
-    JNZ 0x005542c7                      ; 0055433b | LAB_005542c7
-        ;   XREF to: 005542c7 (CONDITIONAL_JUMP)
+    JNZ 0x005542c7                      ; 0055433b
+        ;   XREF to: 005542c7 (CONDITIONAL_JUMP)  ; LAB_005542c7
     MOV EAX,dword ptr [ESP + 0x134]     ; 0055433d
     ADD EAX,0x8                         ; 00554344
     MOV dword ptr [ESP + 0x108],EAX     ; 00554347
@@ -107,8 +107,8 @@ section .text
     PUSH 0x0                            ; 0055439c
     MOV ECX,dword ptr [ESP + 0x110]     ; 0055439e
     PUSH ECX                            ; 005543a5
-    CALL crt_memory.c_memset_FUN_005fde40 ; 005543a6 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 005543a6
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005543ab
     MOV EBX,dword ptr [ESP + 0x134]     ; 005543ae
     MOV ESI,dword ptr [ESP + 0x134]     ; 005543b5
@@ -121,8 +121,8 @@ section .text
     FSTP float ptr [ESP]                ; 005543db
     PUSH dword ptr [EBX + 0x10408]      ; 005543de
     PUSH ESI                            ; 005543e4
-    CALL core_procedur.cpp_FUN_00554620 ; 005543e5 | undefined core_procedur.cpp_FUN_00554620()
-        ;   XREF to: 00554620 (UNCONDITIONAL_CALL)
+    CALL core_procedur.cpp_FUN_00554620 ; 005543e5
+        ;   XREF to: 00554620 (UNCONDITIONAL_CALL)  ; undefined core_procedur.cpp_FUN_00554620()
     MOV dword ptr [ESP + 0x128],EAX     ; 005543ea
     FLD float ptr [ESP + 0x128]         ; 005543f1
     ADD ESP,0xc                         ; 005543f8
@@ -132,12 +132,12 @@ section .text
     PUSH dword ptr [EBX + 0x10008]      ; 00554407
     PUSH ESI                            ; 0055440d
     ADD EBX,0x4                         ; 0055440e
-    CALL core_procedur.cpp_FUN_00554670 ; 00554411 | undefined core_procedur.cpp_FUN_00554670()
-        ;   XREF to: 00554670 (UNCONDITIONAL_CALL)
+    CALL core_procedur.cpp_FUN_00554670 ; 00554411
+        ;   XREF to: 00554670 (UNCONDITIONAL_CALL)  ; undefined core_procedur.cpp_FUN_00554670()
     ADD ESP,0x10                        ; 00554416
     CMP EBX,EBP                         ; 00554419
-    JNZ 0x005543c3                      ; 0055441b | LAB_005543c3
-        ;   XREF to: 005543c3 (CONDITIONAL_JUMP)
+    JNZ 0x005543c3                      ; 0055441b
+        ;   XREF to: 005543c3 (CONDITIONAL_JUMP)  ; LAB_005543c3
     MOV EBP,0xff                        ; 0055441d
     MOV EDI,dword ptr [ESP + 0x100]     ; 00554422
     MOV EDX,ESI                         ; 00554429
@@ -149,48 +149,48 @@ section .text
     MOV AL,byte ptr [ECX + 0x8]         ; 00554431
     ADD EAX,0x10                        ; 00554434
     CMP EAX,0xff                        ; 00554437
-    JBE 0x00554440                      ; 0055443c | LAB_00554440
-        ;   XREF to: 00554440 (CONDITIONAL_JUMP)
+    JBE 0x00554440                      ; 0055443c
+        ;   XREF to: 00554440 (CONDITIONAL_JUMP)  ; LAB_00554440
     MOV EAX,EBP                         ; 0055443e
     INC EDX                             ; 00554440
         ;   Label: LAB_00554440
     INC ECX                             ; 00554441
     MOV byte ptr [EDX + 0x7],AL         ; 00554442
     CMP EDX,EBX                         ; 00554445
-    JNZ 0x0055442f                      ; 00554447 | LAB_0055442f
-        ;   XREF to: 0055442f (CONDITIONAL_JUMP)
+    JNZ 0x0055442f                      ; 00554447
+        ;   XREF to: 0055442f (CONDITIONAL_JUMP)  ; LAB_0055442f
     MOV EAX,dword ptr [ESP + 0x110]     ; 00554449
     ADD ESI,0x100                       ; 00554450
     ADD EDI,0x100                       ; 00554456
     CMP ESI,EAX                         ; 0055445c
-    JNZ 0x00554429                      ; 0055445e | LAB_00554429
-        ;   XREF to: 00554429 (CONDITIONAL_JUMP)
+    JNZ 0x00554429                      ; 0055445e
+        ;   XREF to: 00554429 (CONDITIONAL_JUMP)  ; LAB_00554429
     MOV EDX,dword ptr [ESP + 0x114]     ; 00554460
     PUSH EDX                            ; 00554467
-    PUSH 0x640938                       ; 00554468 | = "water%d.raw" | s_water_d_raw_00640938 = water%d.raw
+    PUSH 0x640938                       ; 00554468 | = "water%d.raw"
     LEA EAX,[ESP + 0x8]                 ; 0055446d
     PUSH EAX                            ; 00554471
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00554472 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00554472
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00554477
-    PUSH 0x640944                       ; 0055447a | = "wb" | s_wb_00640944 = wb
+    PUSH 0x640944                       ; 0055447a | = "wb"
     LEA EAX,[ESP + 0x4]                 ; 0055447f
     PUSH EAX                            ; 00554483
-    PUSH 0x640947                       ; 00554484 | = "art" | s_art_00640947 = art
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00554489 | FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)
+    PUSH 0x640947                       ; 00554484 | = "art"
+    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00554489
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0055448e
     MOV ESI,EAX                         ; 00554491
     TEST EAX,EAX                        ; 00554493
-    JNZ 0x005544ba                      ; 00554495 | LAB_005544ba
-        ;   XREF to: 005544ba (CONDITIONAL_JUMP)
-    MOV ECX,0x64094b                    ; 00554497 | = "..\\core\\procedur.cpp" | s_core_procedur_cpp_0064094b = ..\core\procedur.cpp
+    JNZ 0x005544ba                      ; 00554495
+        ;   XREF to: 005544ba (CONDITIONAL_JUMP)  ; LAB_005544ba
+    MOV ECX,0x64094b                    ; 00554497 | = "..\\core\\procedur.cpp"
     MOV EBX,0x64                        ; 0055449c
-    PUSH 0x640960                       ; 005544a1 | = "Can't write water frame" | s_Can_t_write_water_frame_00640960 = Can't write water frame
-    MOV dword ptr [0x02f0ca48],ECX      ; 005544a6 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 005544ac | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005544b2 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x640960                       ; 005544a1 | = "Can't write water frame"
+    MOV dword ptr [0x02f0ca48],ECX      ; 005544a6 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 005544ac | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005544b2
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005544b7
     PUSH ESI                            ; 005544ba
         ;   Label: LAB_005544ba
@@ -198,61 +198,61 @@ section .text
     PUSH 0x100                          ; 005544c0
     MOV EDI,dword ptr [ESP + 0x114]     ; 005544c5
     PUSH EDI                            ; 005544cc
-    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 005544cd | SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 005544cd
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
     ADD ESP,0x10                        ; 005544d2
     PUSH 0x66                           ; 005544d5
-    PUSH 0x640978                       ; 005544d7 | = "..\\core\\procedur.cpp" | s_core_procedur_cpp_00640978 = ..\core\procedur.cpp
+    PUSH 0x640978                       ; 005544d7 | = "..\\core\\procedur.cpp"
     PUSH ESI                            ; 005544dc
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005544dd | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005544dd
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005544e2
     MOV EBP,dword ptr [ESP + 0x114]     ; 005544e5
     PUSH EBP                            ; 005544ec
-    PUSH 0x64098d                       ; 005544ed | = "water%d.act" | s_water_d_act_0064098d = water%d.act
+    PUSH 0x64098d                       ; 005544ed | = "water%d.act"
     LEA EAX,[ESP + 0x8]                 ; 005544f2
     PUSH EAX                            ; 005544f6
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005544f7 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005544f7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005544fc
-    PUSH 0x640999                       ; 005544ff | = "wb" | s_wb_00640999 = wb
+    PUSH 0x640999                       ; 005544ff | = "wb"
     LEA EAX,[ESP + 0x4]                 ; 00554504
     PUSH EAX                            ; 00554508
-    PUSH 0x64099c                       ; 00554509 | = "art" | s_art_0064099c = art
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0055450e | FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)
+    PUSH 0x64099c                       ; 00554509 | = "art"
+    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0055450e
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00554513
     MOV ESI,EAX                         ; 00554516
     TEST EAX,EAX                        ; 00554518
-    JZ 0x005545ea                       ; 0055451a | LAB_005545ea
-        ;   XREF to: 005545ea (CONDITIONAL_JUMP)
+    JZ 0x005545ea                       ; 0055451a
+        ;   XREF to: 005545ea (CONDITIONAL_JUMP)  ; LAB_005545ea
     XOR EBX,EBX                         ; 00554520
         ;   Label: LAB_00554520
     PUSH ESI                            ; 00554522
         ;   Label: LAB_00554522
     PUSH EBX                            ; 00554523
-    CALL crt_stdio.c_fputc_FUN_006007a0 ; 00554524 | int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fputc_FUN_006007a0 ; 00554524
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
     ADD ESP,0x8                         ; 00554529
     PUSH ESI                            ; 0055452c
     PUSH EBX                            ; 0055452d
-    CALL crt_stdio.c_fputc_FUN_006007a0 ; 0055452e | int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fputc_FUN_006007a0 ; 0055452e
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
     ADD ESP,0x8                         ; 00554533
     PUSH ESI                            ; 00554536
     PUSH EBX                            ; 00554537
-    CALL crt_stdio.c_fputc_FUN_006007a0 ; 00554538 | int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fputc_FUN_006007a0 ; 00554538
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
     INC EBX                             ; 0055453d
     ADD ESP,0x8                         ; 0055453e
     CMP EBX,0x100                       ; 00554541
-    JL 0x00554522                       ; 00554547 | LAB_00554522
-        ;   XREF to: 00554522 (CONDITIONAL_JUMP)
+    JL 0x00554522                       ; 00554547
+        ;   XREF to: 00554522 (CONDITIONAL_JUMP)  ; LAB_00554522
     PUSH 0x6f                           ; 00554549
-    PUSH 0x6409cd                       ; 0055454b | = "..\\core\\procedur.cpp" | s_core_procedur_cpp_006409cd = ..\core\procedur.cpp
+    PUSH 0x6409cd                       ; 0055454b | = "..\\core\\procedur.cpp"
     PUSH ESI                            ; 00554550
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00554551 | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00554551
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00554556
     XOR EDI,EDI                         ; 00554559
     MOV EAX,dword ptr [ESP + 0x104]     ; 0055455b
@@ -263,7 +263,7 @@ section .text
     MOV EAX,EDI                         ; 00554572
     MOV ESI,dword ptr [ESP + 0x118]     ; 00554574
     SHL EAX,0x8                         ; 0055457b
-    MOV ECX,dword ptr [EBP + 0x2cf6a9c] ; 0055457e | void *[1024] g_ScreenBufferArray
+    MOV ECX,dword ptr [EBP + 0x2cf6a9c] ; 0055457e | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EDX,EAX                         ; 00554584
     XOR EAX,EAX                         ; 00554586
         ;   Label: LAB_00554586
@@ -277,39 +277,39 @@ section .text
     INC EDX                             ; 0055459a
     MOV dword ptr [ECX + -0x4],EAX      ; 0055459b
     CMP EDX,ESI                         ; 0055459e
-    JNZ 0x00554586                      ; 005545a0 | LAB_00554586
-        ;   XREF to: 00554586 (CONDITIONAL_JUMP)
+    JNZ 0x00554586                      ; 005545a0
+        ;   XREF to: 00554586 (CONDITIONAL_JUMP)  ; LAB_00554586
     MOV ECX,dword ptr [ESP + 0x118]     ; 005545a2
     ADD EBP,0x4                         ; 005545a9
     ADD ECX,0x100                       ; 005545ac
     INC EDI                             ; 005545b2
     MOV dword ptr [ESP + 0x118],ECX     ; 005545b3
     CMP EDI,0x100                       ; 005545ba
-    JL 0x0055456b                       ; 005545c0 | LAB_0055456b
-        ;   XREF to: 0055456b (CONDITIONAL_JUMP)
+    JL 0x0055456b                       ; 005545c0
+        ;   XREF to: 0055456b (CONDITIONAL_JUMP)  ; LAB_0055456b
     MOV EBX,dword ptr [ESP + 0x114]     ; 005545c2
     INC EBX                             ; 005545c9
-    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005545ca | void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005545ca
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV dword ptr [ESP + 0x114],EBX     ; 005545cf
     CMP EBX,0x10                        ; 005545d6
-    JL 0x00554397                       ; 005545d9 | LAB_00554397
-        ;   XREF to: 00554397 (CONDITIONAL_JUMP)
+    JL 0x00554397                       ; 005545d9
+        ;   XREF to: 00554397 (CONDITIONAL_JUMP)  ; LAB_00554397
     ADD ESP,0x120                       ; 005545df
     POP EBP                             ; 005545e5
     POP EDI                             ; 005545e6
     POP ESI                             ; 005545e7
     POP EBX                             ; 005545e8
     RET                                 ; 005545e9
-    MOV EAX,0x6409a0                    ; 005545ea | = "..\\core\\procedur.cpp" | s_core_procedur_cpp_006409a0 = ..\core\procedur.cpp
+    MOV EAX,0x6409a0                    ; 005545ea | = "..\\core\\procedur.cpp"
         ;   Label: LAB_005545ea
     MOV EDX,0x69                        ; 005545ef
-    PUSH 0x6409b5                       ; 005545f4 | = "Can't write water frame" | s_Can_t_write_water_frame_006409b5 = Can't write water frame
-    MOV [0x02f0ca48],EAX                ; 005545f9 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 005545fe | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00554604 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6409b5                       ; 005545f4 | = "Can't write water frame"
+    MOV [0x02f0ca48],EAX                ; 005545f9 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 005545fe | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00554604
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00554609
-    JMP 0x00554520                      ; 0055460c | LAB_00554520
-        ;   XREF to: 00554520 (UNCONDITIONAL_JUMP)
+    JMP 0x00554520                      ; 0055460c
+        ;   XREF to: 00554520 (UNCONDITIONAL_JUMP)  ; LAB_00554520
 

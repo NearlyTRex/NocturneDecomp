@@ -1,123 +1,123 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 69, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 50, 
-    "assembly_lines": 36, 
-    "suspect_count": 5, 
+    "assembly_lines": 36,
+    "complexity_score": 69,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 14,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0", 
-      "addr": "005741b0"
-    }, 
-    {
-      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180", 
-      "addr": "00574180"
-    }, 
-    {
-      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0", 
-      "addr": "005716b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000008 == (CDemonActor *)0x0) {"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000008);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonSetPtr,&(in_stack_00000008->location).position,0.0);"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008->location).position.y = fVar1;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0053c8d0", 
-    "signature": "void core_msnedit.cpp_CDemonMission_FUN_0053c8d0(CDemonMission * this_ptr)", 
-    "address_range": [
-      [
-        "0053c8d0", 
-        "0053c924"
-      ]
-    ], 
-    "name": "core_msnedit.cpp_CDemonMission_FUN_0053c8d0"
-  }, 
-  "stack_frame": {
-    "local_size": 12, 
-    "variables": [
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonMission *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "0040d097", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040", 
-      "addr": "0040d040"
+      "addr": "0040d040",
+      "from_addr": "0040d097",
+      "name": "core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053c8d0",
+    "address_range": [
+      [
+        "0053c8d0",
+        "0053c924"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_msnedit.cpp_CDemonMission_FUN_0053c8d0",
+    "signature": "void core_msnedit.cpp_CDemonMission_FUN_0053c8d0(CDemonMission * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005741b0",
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0"
+    },
+    {
+      "addr": "00574180",
+      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180"
+    },
+    {
+      "addr": "005716b0",
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "CDemonActor *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 == (CDemonActor *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "(g_CDemonSetPtr,&(in_stack_00000008->location).position,0.0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008->location).position.y = fVar1;",
+      "type": "stack_param"
     }
   ]
 }

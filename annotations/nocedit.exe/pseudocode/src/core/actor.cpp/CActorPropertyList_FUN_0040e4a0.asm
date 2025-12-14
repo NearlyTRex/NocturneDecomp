@@ -36,8 +36,8 @@ section .text
     PUSH 0x7                            ; 0040e4ad
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040e4af
     PUSH EBX                            ; 0040e4b3
-    CALL core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0 ; 0040e4b4 | int core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList * this_ptr, int property_type, char * property_name, void * data_ptr, ...)
-        ;   XREF to: 0040e6c0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0 ; 0040e4b4
+        ;   XREF to: 0040e6c0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList * this_ptr, int property_type, char * property_name, void * data_ptr, ...)
     ADD ESP,0x14                        ; 0040e4b9
     MOV dword ptr [EAX + 0x58],0x1      ; 0040e4bc
     MOV EDX,dword ptr [ESP + 0x14]      ; 0040e4c3

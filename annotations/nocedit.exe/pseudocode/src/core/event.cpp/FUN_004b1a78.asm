@@ -23,15 +23,15 @@ section .text
         ;   Label: core_event.cpp_FUN_004b1a78
     PUSH EBX                            ; 004b1a7c
     SUB EAX,0x8                         ; 004b1a7d
-    JBE 0x004b1aab                      ; 004b1a80 | LAB_004b1aab
-        ;   XREF to: 004b1aab (CONDITIONAL_JUMP)
+    JBE 0x004b1aab                      ; 004b1a80
+        ;   XREF to: 004b1aab (CONDITIONAL_JUMP)  ; LAB_004b1aab
     MOV EBX,ECX                         ; 004b1a82
     NEG EBX                             ; 004b1a84
     AND EBX,0x7                         ; 004b1a86
     ADD ECX,EBX                         ; 004b1a89
     ADD EDX,EBX                         ; 004b1a8b
     SUB EAX,EBX                         ; 004b1a8d
-    JMP dword ptr [EBX*0x4 + 0x679d54]  ; 004b1a8f | pointer switchdataD_00679d54
+    JMP dword ptr [EBX*0x4 + 0x679d54]  ; 004b1a8f | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
     FISTP qword ptr [ECX + -0x8]        ; 004b1a98
         ;   Label: LAB_004b1a98
@@ -40,8 +40,8 @@ section .text
     ADD ECX,0x8                         ; 004b1a9d
     ADD EDX,0x8                         ; 004b1aa0
     SUB EAX,0x8                         ; 004b1aa3
-    JA 0x004b1a98                       ; 004b1aa6 | LAB_004b1a98
-        ;   XREF to: 004b1a98 (CONDITIONAL_JUMP)
+    JA 0x004b1a98                       ; 004b1aa6
+        ;   XREF to: 004b1a98 (CONDITIONAL_JUMP)  ; LAB_004b1a98
     FISTP qword ptr [ECX + -0x8]        ; 004b1aa8
     POP EBX                             ; 004b1aab
         ;   Label: LAB_004b1aab
@@ -55,8 +55,8 @@ section .text
     MOV EBX,dword ptr [EDX + -0x4]      ; 004b1ac2
         ;   Label: caseD_4
     MOV dword ptr [ECX + -0x4],EBX      ; 004b1ac5
-    JA 0x004b1a9b                       ; 004b1ac8 | caseD_0
-        ;   XREF to: 004b1a9b (CONDITIONAL_JUMP)
+    JA 0x004b1a9b                       ; 004b1ac8
+        ;   XREF to: 004b1a9b (CONDITIONAL_JUMP)  ; caseD_0
     POP EBX                             ; 004b1aca
     JMP dword ptr [EAX*0x4 + 0x679d94]  ; 004b1acb | DAT_00679d94
     MOV BL,byte ptr [EDX + -0x5]        ; 004b1ad4
@@ -64,8 +64,8 @@ section .text
     MOV byte ptr [ECX + -0x5],BL        ; 004b1ad7
     MOV EBX,dword ptr [EDX + -0x4]      ; 004b1ada
     MOV dword ptr [ECX + -0x4],EBX      ; 004b1add
-    JA 0x004b1a9b                       ; 004b1ae0 | caseD_0
-        ;   XREF to: 004b1a9b (CONDITIONAL_JUMP)
+    JA 0x004b1a9b                       ; 004b1ae0
+        ;   XREF to: 004b1a9b (CONDITIONAL_JUMP)  ; caseD_0
     POP EBX                             ; 004b1ae2
     JMP dword ptr [EAX*0x4 + 0x679d94]  ; 004b1ae3 | DAT_00679d94
     MOV BL,byte ptr [EDX + -0x3]        ; 004b1aec
@@ -74,15 +74,15 @@ section .text
     MOV BX,word ptr [EDX + -0x2]        ; 004b1af2
         ;   Label: caseD_2
     MOV word ptr [ECX + -0x2],BX        ; 004b1af6
-    JA 0x004b1a9b                       ; 004b1afa | caseD_0
-        ;   XREF to: 004b1a9b (CONDITIONAL_JUMP)
+    JA 0x004b1a9b                       ; 004b1afa
+        ;   XREF to: 004b1a9b (CONDITIONAL_JUMP)  ; caseD_0
     POP EBX                             ; 004b1afc
     JMP dword ptr [EAX*0x4 + 0x679d94]  ; 004b1afd | DAT_00679d94
     MOV BL,byte ptr [EDX + -0x1]        ; 004b1b04
         ;   Label: caseD_1
     MOV byte ptr [ECX + -0x1],BL        ; 004b1b07
-    JA 0x004b1a9b                       ; 004b1b0a | caseD_0
-        ;   XREF to: 004b1a9b (CONDITIONAL_JUMP)
+    JA 0x004b1a9b                       ; 004b1b0a
+        ;   XREF to: 004b1a9b (CONDITIONAL_JUMP)  ; caseD_0
     POP EBX                             ; 004b1b0c
     JMP dword ptr [EAX*0x4 + 0x679d94]  ; 004b1b0d | DAT_00679d94
 

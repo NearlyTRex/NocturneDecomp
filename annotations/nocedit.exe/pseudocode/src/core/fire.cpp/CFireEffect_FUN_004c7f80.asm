@@ -67,13 +67,13 @@ section .text
     MOV EBX,dword ptr [EBP + 0x34]      ; 004c7f9b
     MOV dword ptr [ESP + 0x8],EAX       ; 004c7f9e
     FLD float ptr [ESP + 0x8]           ; 004c7fa2
-    FMUL float ptr [0x0062a05f]         ; 004c7fa6 | float FLOAT_0062a05f
+    FMUL float ptr [0x0062a05f]         ; 004c7fa6 | FLOAT_0062a05f
     FST float ptr [ESP]                 ; 004c7fac
-    FCOMP double ptr [0x0062a063]       ; 004c7faf | double DOUBLE_0062a063
+    FCOMP double ptr [0x0062a063]       ; 004c7faf | DOUBLE_0062a063
     FNSTSW AX                           ; 004c7fb5
     SAHF                                ; 004c7fb7
-    JC 0x004c8194                       ; 004c7fb8 | LAB_004c8194
-        ;   XREF to: 004c8194 (CONDITIONAL_JUMP)
+    JC 0x004c8194                       ; 004c7fb8
+        ;   XREF to: 004c8194 (CONDITIONAL_JUMP)  ; LAB_004c8194
     MOV EAX,dword ptr [ECX]             ; 004c7fbe
         ;   Label: LAB_004c7fbe
     MOV dword ptr [ESP + 0x18],EAX      ; 004c7fc0
@@ -102,8 +102,8 @@ section .text
     FCOMP float ptr [ESP]               ; 004c800b
     FNSTSW AX                           ; 004c800e
     SAHF                                ; 004c8010
-    JBE 0x004c801a                      ; 004c8011 | LAB_004c801a
-        ;   XREF to: 004c801a (CONDITIONAL_JUMP)
+    JBE 0x004c801a                      ; 004c8011
+        ;   XREF to: 004c801a (CONDITIONAL_JUMP)  ; LAB_004c801a
     MOV EAX,dword ptr [ESP]             ; 004c8013
     MOV dword ptr [ESP + 0x4],EAX       ; 004c8016
     FLD float ptr [ESP + 0x60]          ; 004c801a
@@ -113,7 +113,7 @@ section .text
     FMUL float ptr [ESP + 0x4]          ; 004c8026
     FLD float ptr [ESP + 0x4]           ; 004c802a
     FLD ST0                             ; 004c802e
-    FMUL double ptr [0x0062a06b]        ; 004c8030 | double DOUBLE_0062a06b
+    FMUL double ptr [0x0062a06b]        ; 004c8030 | DOUBLE_0062a06b
     FLD float ptr [ESP + 0x68]          ; 004c8036
     FMUL float ptr [ESP + 0x4]          ; 004c803a
     FXCH                                ; 004c803e
@@ -179,10 +179,10 @@ section .text
     FCOMPP                              ; 004c80fc
     FNSTSW AX                           ; 004c80fe
     SAHF                                ; 004c8100
-    JNC 0x004c81ba                      ; 004c8101 | LAB_004c81ba
-        ;   XREF to: 004c81ba (CONDITIONAL_JUMP)
+    JNC 0x004c81ba                      ; 004c8101
+        ;   XREF to: 004c81ba (CONDITIONAL_JUMP)  ; LAB_004c81ba
     MOV EDX,dword ptr [EBP + 0x38]      ; 004c8107
-    PUSH dword ptr [0x0065dcc0]         ; 004c810a | undefined4 DAT_0065dcc0
+    PUSH dword ptr [0x0065dcc0]         ; 004c810a | DAT_0065dcc0
     PUSH EDX                            ; 004c8110
     PUSH EBX                            ; 004c8111
     PUSH EDI                            ; 004c8112
@@ -195,14 +195,14 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 004c8121
     PUSH EAX                            ; 004c8125
     PUSH ESI                            ; 004c8126
-    CALL core_fire.cpp_CFireEffect_FUN_004c7eb0 ; 004c8127 | void core_fire.cpp_CFireEffect_FUN_004c7eb0(CFireEffect * this_ptr)
-        ;   XREF to: 004c7eb0 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_CFireEffect_FUN_004c7eb0 ; 004c8127
+        ;   XREF to: 004c7eb0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c7eb0(CFireEffect * this_ptr)
     LEA EDX,[ESP + 0x70]                ; 004c812c
     LEA EAX,[ESP + 0x40]                ; 004c8130
     ADD ESP,0x28                        ; 004c8134
     CMP EAX,EDX                         ; 004c8137
-    JNZ 0x004c81a0                      ; 004c8139 | LAB_004c81a0
-        ;   XREF to: 004c81a0 (CONDITIONAL_JUMP)
+    JNZ 0x004c81a0                      ; 004c8139
+        ;   XREF to: 004c81a0 (CONDITIONAL_JUMP)  ; LAB_004c81a0
     FLD float ptr [ESP + 0x4]           ; 004c813b
         ;   Label: LAB_004c813b
     FLD float ptr [ESP + 0xc]           ; 004c813f
@@ -230,12 +230,12 @@ section .text
     FSTP float ptr [ESP + 0x60]         ; 004c8183
     FSTP float ptr [ESP + 0x64]         ; 004c8187
     FSTP float ptr [ESP + 0x68]         ; 004c818b
-    JMP 0x004c7fff                      ; 004c818f | LAB_004c7fff
-        ;   XREF to: 004c7fff (UNCONDITIONAL_JUMP)
+    JMP 0x004c7fff                      ; 004c818f
+        ;   XREF to: 004c7fff (UNCONDITIONAL_JUMP)  ; LAB_004c7fff
     MOV dword ptr [ESP],0x3d4ccccd      ; 004c8194
         ;   Label: LAB_004c8194
-    JMP 0x004c7fbe                      ; 004c819b | LAB_004c7fbe
-        ;   XREF to: 004c7fbe (UNCONDITIONAL_JUMP)
+    JMP 0x004c7fbe                      ; 004c819b
+        ;   XREF to: 004c7fbe (UNCONDITIONAL_JUMP)  ; LAB_004c7fbe
     MOV EAX,dword ptr [ESP + 0x48]      ; 004c81a0
         ;   Label: LAB_004c81a0
     MOV dword ptr [ESP + 0x18],EAX      ; 004c81a4
@@ -243,11 +243,11 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 004c81ac
     MOV EAX,dword ptr [ESP + 0x50]      ; 004c81b0
     MOV dword ptr [ESP + 0x20],EAX      ; 004c81b4
-    JMP 0x004c813b                      ; 004c81b8 | LAB_004c813b
-        ;   XREF to: 004c813b (UNCONDITIONAL_JUMP)
+    JMP 0x004c813b                      ; 004c81b8
+        ;   XREF to: 004c813b (UNCONDITIONAL_JUMP)  ; LAB_004c813b
     MOV EAX,dword ptr [EBP + 0x38]      ; 004c81ba
         ;   Label: LAB_004c81ba
-    PUSH dword ptr [0x0065dcc0]         ; 004c81bd | undefined4 DAT_0065dcc0
+    PUSH dword ptr [0x0065dcc0]         ; 004c81bd | DAT_0065dcc0
     PUSH EAX                            ; 004c81c3
     PUSH EBX                            ; 004c81c4
     PUSH EDI                            ; 004c81c5
@@ -260,8 +260,8 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 004c81d5
     PUSH EAX                            ; 004c81d9
     PUSH ESI                            ; 004c81da
-    CALL core_fire.cpp_CFireEffect_FUN_004c7eb0 ; 004c81db | void core_fire.cpp_CFireEffect_FUN_004c7eb0(CFireEffect * this_ptr)
-        ;   XREF to: 004c7eb0 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_CFireEffect_FUN_004c7eb0 ; 004c81db
+        ;   XREF to: 004c7eb0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c7eb0(CFireEffect * this_ptr)
     ADD ESP,0x28                        ; 004c81e0
     MOV ESP,EBP                         ; 004c81e3
     POP EBP                             ; 004c81e5

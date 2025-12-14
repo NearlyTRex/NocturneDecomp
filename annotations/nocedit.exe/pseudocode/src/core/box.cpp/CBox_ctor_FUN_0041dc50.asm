@@ -26,12 +26,12 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0041dc50
         ;   Label: core_box.cpp_CBox_ctor_FUN_0041dc50
-    PUSH 0x65b140                       ; 0041dc54 | WatcomTypeInfo g_SScrapeTypeInfo
+    PUSH 0x65b140                       ; 0041dc54 | g_SScrapeTypeInfo
     PUSH 0x8                            ; 0041dc59
     ADD EAX,0xb4                        ; 0041dc5b
     PUSH EAX                            ; 0041dc60
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0041dc61 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0041dc61
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     SUB EAX,0xb4                        ; 0041dc66
     MOV dword ptr [EAX + 0x8],0x0       ; 0041dc6b
     FLD float ptr [EAX + 0x8]           ; 0041dc72

@@ -1,130 +1,130 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 75, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 118, 
-    "assembly_lines": 78, 
-    "suspect_count": 3, 
+    "assembly_lines": 78,
+    "complexity_score": 75,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 8,
+    "pseudocode_lines": 40,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_cloth_cpp_006184ca", 
-      "addr": "006184ca", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CCloth_saveJoinedLight_C_006184dc", 
-      "addr": "006184dc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_cloth_cpp_00618516", 
-      "addr": "00618516", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CCloth_saveJoinedLight_M_00618528", 
-      "addr": "00618528", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000008 == 0) {"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = *(int *)(in_stack_00000008 + 0x2230);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043b9f0", 
-    "signature": "int core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth * this_ptr)", 
-    "address_range": [
-      [
-        "0043b9f0", 
-        "0043bad4"
-      ]
-    ], 
-    "name": "core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCloth *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 118
+  },
   "cross_references": [
     {
-      "from_addr": "0043c346", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320", 
-      "addr": "0043c320"
+      "addr": "0043c320",
+      "from_addr": "0043c346",
+      "name": "core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043b9f0",
+    "address_range": [
+      [
+        "0043b9f0",
+        "0043bad4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0",
+    "signature": "int core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0(CCloth * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006184ca",
+      "name": "s_core_cloth_cpp_006184ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006184dc",
+      "name": "s_CCloth_saveJoinedLight_C_006184dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618516",
+      "name": "s_core_cloth_cpp_00618516",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618528",
+      "name": "s_CCloth_saveJoinedLight_M_00618528",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = *(int *)(in_stack_00000008 + 0x2230);",
+      "type": "stack_param"
     }
   ]
 }

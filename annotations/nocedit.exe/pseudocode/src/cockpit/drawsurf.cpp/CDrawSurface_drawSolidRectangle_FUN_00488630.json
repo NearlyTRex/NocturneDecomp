@@ -1,145 +1,145 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 3, 
-    "global_count": 2, 
-    "total_lines": 55, 
-    "assembly_lines": 39, 
-    "suspect_count": 2, 
+    "assembly_lines": 39,
+    "complexity_score": 41,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0", 
-      "addr": "004887a0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_DashLength", 
-      "addr": "006703dc", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_DashAnimationThreshold", 
-      "addr": "006703e0", 
-      "value": "0.1000000"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "float extraout_EAX;"
-    }, 
-    {
-      "line": 17, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "0.1f = extraout_EAX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00488630", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)", 
-    "address_range": [
-      [
-        "00488630", 
-        "0048869c"
-      ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y1"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x2"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y2"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 55
+  },
   "cross_references": [
     {
-      "from_addr": "00488720", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle_FUN_004886c0", 
-      "addr": "004886c0"
-    }, 
+      "addr": "004886c0",
+      "from_addr": "00488720",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle_FUN_004886c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004886b2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawFullSurface_FUN_004886a0", 
-      "addr": "004886a0"
-    }, 
+      "addr": "004886a0",
+      "from_addr": "004886b2",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawFullSurface_FUN_004886a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048878c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawInsetRectangle_FUN_00488740", 
-      "addr": "00488740"
+      "addr": "00488740",
+      "from_addr": "0048878c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawInsetRectangle_FUN_00488740",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00488630",
+    "address_range": [
+      [
+        "00488630",
+        "0048869c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004887a0",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703dc",
+      "name": "g_DashLength",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "006703e0",
+      "name": "g_DashAnimationThreshold",
+      "type": "float",
+      "value": "0.1000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "float extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EAX",
+      "text": "0.1f = extraout_EAX;",
+      "type": "extra_output"
     }
   ]
 }

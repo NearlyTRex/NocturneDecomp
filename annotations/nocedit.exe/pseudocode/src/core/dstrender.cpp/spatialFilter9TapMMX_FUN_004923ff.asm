@@ -59,8 +59,8 @@ section .text
     ADD ESI,0x4                         ; 00492496
     ADD EDI,0x4                         ; 00492499
     DEC ECX                             ; 0049249c
-    JG 0x00492410                       ; 0049249d | LAB_00492410
-        ;   XREF to: 00492410 (CONDITIONAL_JUMP)
+    JG 0x00492410                       ; 0049249d
+        ;   XREF to: 00492410 (CONDITIONAL_JUMP)  ; LAB_00492410
     EMMS                                ; 004924a3
     POP EDI                             ; 004924a5
     POP ESI                             ; 004924a6

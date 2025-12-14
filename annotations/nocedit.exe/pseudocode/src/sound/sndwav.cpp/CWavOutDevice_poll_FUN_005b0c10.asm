@@ -29,30 +29,30 @@ section .text
     PUSH EDI                            ; 005b0c12
     PUSH EBP                            ; 005b0c13
     MOV EDI,0x1                         ; 005b0c14
-    MOV EDX,dword ptr [0x03f6adc8]      ; 005b0c19 | int g_WaveOutNumBuffers
+    MOV EDX,dword ptr [0x03f6adc8]      ; 005b0c19 | g_WaveOutNumBuffers
     XOR ESI,ESI                         ; 005b0c1f
     TEST EDX,EDX                        ; 005b0c21
-    JLE 0x005b0c4e                      ; 005b0c23 | LAB_005b0c4e
-        ;   XREF to: 005b0c4e (CONDITIONAL_JUMP)
+    JLE 0x005b0c4e                      ; 005b0c23
+        ;   XREF to: 005b0c4e (CONDITIONAL_JUMP)  ; LAB_005b0c4e
     XOR EBX,EBX                         ; 005b0c25
-    MOV EBP,dword ptr [EBX + 0x3f6ad58] ; 005b0c27 | LPWAVEHDR[8] g_WaveOutHeaders
+    MOV EBP,dword ptr [EBX + 0x3f6ad58] ; 005b0c27 | g_WaveOutHeaders | DAT_03f6ad5c
         ;   Label: LAB_005b0c27
     TEST EBP,EBP                        ; 005b0c2d
-    JZ 0x005b0c55                       ; 005b0c2f | LAB_005b0c55
-        ;   XREF to: 005b0c55 (CONDITIONAL_JUMP)
-    CMP dword ptr [EBX + 0x3f6ad98],0x0 ; 005b0c31 | LPVOID[8] g_WaveOutBuffers
-    JZ 0x005b0c55                       ; 005b0c38 | LAB_005b0c55
-        ;   XREF to: 005b0c55 (CONDITIONAL_JUMP)
+    JZ 0x005b0c55                       ; 005b0c2f
+        ;   XREF to: 005b0c55 (CONDITIONAL_JUMP)  ; LAB_005b0c55
+    CMP dword ptr [EBX + 0x3f6ad98],0x0 ; 005b0c31 | g_WaveOutBuffers | DAT_03f6ad9c
+    JZ 0x005b0c55                       ; 005b0c38
+        ;   XREF to: 005b0c55 (CONDITIONAL_JUMP)  ; LAB_005b0c55
     TEST byte ptr [EBP + 0x10],0x1      ; 005b0c3a
-    JNZ 0x005b0c66                      ; 005b0c3e | LAB_005b0c66
-        ;   XREF to: 005b0c66 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x03f6adc8]      ; 005b0c40 | int g_WaveOutNumBuffers
+    JNZ 0x005b0c66                      ; 005b0c3e
+        ;   XREF to: 005b0c66 (CONDITIONAL_JUMP)  ; LAB_005b0c66
+    MOV ECX,dword ptr [0x03f6adc8]      ; 005b0c40 | g_WaveOutNumBuffers
         ;   Label: LAB_005b0c40
     INC ESI                             ; 005b0c46
     ADD EBX,0x4                         ; 005b0c47
     CMP ESI,ECX                         ; 005b0c4a
-    JL 0x005b0c27                       ; 005b0c4c | LAB_005b0c27
-        ;   XREF to: 005b0c27 (CONDITIONAL_JUMP)
+    JL 0x005b0c27                       ; 005b0c4c
+        ;   XREF to: 005b0c27 (CONDITIONAL_JUMP)  ; LAB_005b0c27
     MOV EAX,EDI                         ; 005b0c4e
         ;   Label: LAB_005b0c4e
     POP EBP                             ; 005b0c50
@@ -60,25 +60,25 @@ section .text
     POP ESI                             ; 005b0c52
     POP EBX                             ; 005b0c53
     RET                                 ; 005b0c54
-    PUSH 0x6523b7                       ; 005b0c55 | = "WavOutDevice::poll - NULL pointer??" | s_WavOutDevice_poll_NULL_p_006523b7 = WavOutDevice::poll - NULL pointer??
+    PUSH 0x6523b7                       ; 005b0c55 | = "WavOutDevice::poll - NULL pointer??"
         ;   Label: LAB_005b0c55
-    CALL sound_sndmain.cpp_logSoundError_FUN_005adba0 ; 005b0c5a | void sound_sndmain.cpp_logSoundError_FUN_005adba0(char * format)
-        ;   XREF to: 005adba0 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_logSoundError_FUN_005adba0 ; 005b0c5a
+        ;   XREF to: 005adba0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005adba0(char * format)
     XOR EDI,EDI                         ; 005b0c5f
     ADD ESP,0x4                         ; 005b0c61
-    JMP 0x005b0c4e                      ; 005b0c64 | LAB_005b0c4e
-        ;   XREF to: 005b0c4e (UNCONDITIONAL_JUMP)
+    JMP 0x005b0c4e                      ; 005b0c64
+        ;   XREF to: 005b0c4e (UNCONDITIONAL_JUMP)  ; LAB_005b0c4e
     PUSH ESI                            ; 005b0c66
         ;   Label: LAB_005b0c66
-    CALL sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0 ; 005b0c67 | int sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0(int buffer_index)
-        ;   XREF to: 005b06c0 (UNCONDITIONAL_CALL)
+    CALL sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0 ; 005b0c67
+        ;   XREF to: 005b06c0 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0(int buffer_index)
     ADD ESP,0x4                         ; 005b0c6c
     TEST EAX,EAX                        ; 005b0c6f
-    JNZ 0x005b0c40                      ; 005b0c71 | LAB_005b0c40
-        ;   XREF to: 005b0c40 (CONDITIONAL_JUMP)
-    PUSH 0x6523db                       ; 005b0c73 | = "WavOutDevice::poll - sendWavOutBuffer..." | s_WavOutDevice_poll_sendWa_006523db = WavOutDevice::poll - sendWavOutBuffer failed
-    CALL sound_sndmain.cpp_logSoundError_FUN_005adba0 ; 005b0c78 | void sound_sndmain.cpp_logSoundError_FUN_005adba0(char * format)
-        ;   XREF to: 005adba0 (UNCONDITIONAL_CALL)
+    JNZ 0x005b0c40                      ; 005b0c71
+        ;   XREF to: 005b0c40 (CONDITIONAL_JUMP)  ; LAB_005b0c40
+    PUSH 0x6523db                       ; 005b0c73 | = "WavOutDevice::poll - sendWavOutBuffer..."
+    CALL sound_sndmain.cpp_logSoundError_FUN_005adba0 ; 005b0c78
+        ;   XREF to: 005adba0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005adba0(char * format)
     XOR EDI,EDI                         ; 005b0c7d
     ADD ESP,0x4                         ; 005b0c7f
     MOV EAX,EDI                         ; 005b0c82

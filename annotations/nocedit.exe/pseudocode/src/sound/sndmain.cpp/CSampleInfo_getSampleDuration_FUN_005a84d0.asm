@@ -22,8 +22,8 @@ section .text
     AND ESP,0xfffffff8                  ; 005a84d6
     MOV EAX,dword ptr [EBP + 0x8]       ; 005a84d9
     CMP dword ptr [EAX + 0x10c],0x0     ; 005a84dc
-    JLE 0x005a8501                      ; 005a84e3 | LAB_005a8501
-        ;   XREF to: 005a8501 (CONDITIONAL_JUMP)
+    JLE 0x005a8501                      ; 005a84e3
+        ;   XREF to: 005a8501 (CONDITIONAL_JUMP)  ; LAB_005a8501
     FILD dword ptr [EAX + 0x110]        ; 005a84e5
     FILD dword ptr [EAX + 0x10c]        ; 005a84eb
     FDIVP                               ; 005a84f1

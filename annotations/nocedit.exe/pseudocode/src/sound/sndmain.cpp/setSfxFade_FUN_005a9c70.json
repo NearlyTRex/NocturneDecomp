@@ -1,112 +1,112 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 43, 
-    "assembly_lines": 27, 
-    "suspect_count": 2, 
+    "assembly_lines": 27,
+    "complexity_score": 41,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00", 
-      "addr": "005a5d00"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar1->stop_after_fade = (int)(float)in_stack_00000014;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a9c70", 
-    "signature": "int sound_sndmain.cpp_setSfxFade_FUN_005a9c70(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)", 
-    "address_range": [
-      [
-        "005a9c70", 
-        "005a9cbb"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_setSfxFade_FUN_005a9c70"
-  }, 
-  "stack_frame": {
-    "local_size": 8, 
-    "variables": [
-      {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "sfx_handle"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "target_volume"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "fade_duration"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "stop_after_fade"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 43
+  },
   "cross_references": [
     {
-      "from_addr": "004ab6ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
-      "addr": "004aacc0"
-    }, 
+      "addr": "004aacc0",
+      "from_addr": "004ab6ab",
+      "name": "core_event.cpp_CEventList_FUN_004aacc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bdd07", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005bb960", 
-      "addr": "005bb960"
+      "addr": "005bb960",
+      "from_addr": "005bdd07",
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a9c70",
+    "address_range": [
+      [
+        "005a9c70",
+        "005a9cbb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setSfxFade_FUN_005a9c70",
+    "signature": "int sound_sndmain.cpp_setSfxFade_FUN_005a9c70(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a5d00",
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "target_volume",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "fade_duration",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "stop_after_fade",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000014",
+      "text": "pCVar1->stop_after_fade = (int)(float)in_stack_00000014;",
+      "type": "stack_param"
     }
   ]
 }

@@ -11,8 +11,7 @@ void core_vehicle_cpp_FUN_005e7900(void)
 {
   CVehicle *this_ptr;
   
-  this_ptr = (CVehicle *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1078,"..\\core\\vehicle.cpp",0x40);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1078,"..\\core\\vehicle.cpp",0x40);
   if (this_ptr == (CVehicle *)0x0) {
     return;
   }

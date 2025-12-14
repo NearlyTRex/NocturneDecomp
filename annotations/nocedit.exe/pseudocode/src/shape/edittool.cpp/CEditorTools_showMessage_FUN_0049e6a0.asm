@@ -44,18 +44,18 @@ section .text
     PUSH EAX                            ; 0049e6ad
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049e6ae
     PUSH EDX                            ; 0049e6b2
-    PUSH 0x2ceed30                      ; 0049e6b3 | char[512] g_MessageFormatBuffer
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e6b8 | int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)
+    PUSH 0x2ceed30                      ; 0049e6b3 | g_MessageFormatBuffer
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e6b8
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 0049e6bd
-    MOV EBX,dword ptr [0x02cf2a8c]      ; 0049e6c0 | int g_WindowFontColor
+    MOV EBX,dword ptr [0x02cf2a8c]      ; 0049e6c0 | g_WindowFontColor
     PUSH EBX                            ; 0049e6c6
-    PUSH 0x2ceed30                      ; 0049e6c7 | char[512] g_MessageFormatBuffer
+    PUSH 0x2ceed30                      ; 0049e6c7 | g_MessageFormatBuffer
     XOR ECX,ECX                         ; 0049e6cc
-    PUSH 0x623008                       ; 0049e6ce | = "Message" | s_Message_00623008 = Message
+    PUSH 0x623008                       ; 0049e6ce | = "Message"
     MOV dword ptr [ESP + 0xc],ECX       ; 0049e6d3
-    CALL shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130 ; 0049e6d7 | void shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130(char * title, char * message, int color)
-        ;   XREF to: 0049e130 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130 ; 0049e6d7
+        ;   XREF to: 0049e130 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130(char * title, char * message, int color)
     ADD ESP,0xc                         ; 0049e6dc
     ADD ESP,0x4                         ; 0049e6df
     POP EBX                             ; 0049e6e2

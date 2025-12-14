@@ -27,8 +27,7 @@ shape_edittool_cpp_CStrList_remove_FUN_004a2e00(CStrList *this_ptr,int start_ind
         shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\shape\\edittool.cpp",0xb80);
       }
       iVar1 = iVar1 + 4;
-    } while (iVar1 == in_stack_00000010 * 4 ||
-             SBORROW /* signed borrow */4(iVar1,in_stack_00000010 * 4) != iVar1 + in_stack_00000010 * -4 < 0);
+    } while (iVar1 <= in_stack_00000010 * 4);
   }
   iVar1 = this_ptr->item_count - ((in_stack_00000010 - start_index) + 1);
   this_ptr->item_count = iVar1;

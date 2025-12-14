@@ -37,40 +37,39 @@ section .text
         ;   Label: core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
     MOV EBX,dword ptr [ESP + 0x8]       ; 0047edd1
     PUSH EBX                            ; 0047edd5
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 0047edd6 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 0047edd6
+        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0047eddb
     PUSH EBX                            ; 0047edde
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0047eddf | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0047eddf
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     MOV EDX,dword ptr [EAX + 0x110]     ; 0047ede4
     ADD ESP,0x4                         ; 0047edea
     CMP EDX,0x1                         ; 0047eded
-    JGE 0x0047edf4                      ; 0047edf0 | LAB_0047edf4
-        ;   XREF to: 0047edf4 (CONDITIONAL_JUMP)
+    JGE 0x0047edf4                      ; 0047edf0
+        ;   XREF to: 0047edf4 (CONDITIONAL_JUMP)  ; LAB_0047edf4
     POP EBX                             ; 0047edf2
     RET                                 ; 0047edf3
     PUSH ESI                            ; 0047edf4
         ;   Label: LAB_0047edf4
     LEA EAX,[EBX + 0x78]                ; 0047edf5
     PUSH EAX                            ; 0047edf8
-    PUSH 0x620f23                       ; 0047edf9 | = "MODELS\\%s\n" | s_MODELS_s_00620f23 = MODELS\%s
-
+    PUSH 0x620f23                       ; 0047edf9 | = "MODELS\\%s\n"
     MOV ECX,dword ptr [ESP + 0x18]      ; 0047edfe
     PUSH ECX                            ; 0047ee02
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0047ee03 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0047ee03
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0047ee08
     PUSH 0x0                            ; 0047ee0b
     MOV ESI,dword ptr [ESP + 0x14]      ; 0047ee0d
     PUSH ESI                            ; 0047ee11
     PUSH EBX                            ; 0047ee12
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0047ee13 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0047ee13
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0047ee18
     PUSH EAX                            ; 0047ee1b
-    CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 0047ee1c | void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 0047ee1c
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
     ADD ESP,0xc                         ; 0047ee21
     POP ESI                             ; 0047ee24
     POP EBX                             ; 0047ee25

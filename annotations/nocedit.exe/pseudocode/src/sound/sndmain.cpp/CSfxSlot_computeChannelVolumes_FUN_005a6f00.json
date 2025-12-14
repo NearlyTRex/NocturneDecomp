@@ -1,216 +1,216 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 129, 
-    "pseudocode_lines": 69, 
-    "cross_reference_count": 1, 
-    "global_count": 7, 
-    "total_lines": 204, 
-    "assembly_lines": 135, 
-    "suspect_count": 5, 
+    "assembly_lines": 135,
+    "complexity_score": 129,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 69,
+    "suspect_count": 5,
     "suspect_types": [
-      "sub_artifact", 
+      "sub_artifact",
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90", 
-      "addr": "005a9d90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_006501a3", 
-      "addr": "006501a3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_SfxSlot_kill_must_be_loc_006501b8", 
-      "addr": "006501b8", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_006501df", 
-      "addr": "006501df", 
-      "value": "0.0500000000000000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AudioChannelCount", 
-      "addr": "00681b18", 
-      "value": "0x2"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundLockCount", 
-      "addr": "03f6940c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005a6f09", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 24, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));"
-    }, 
-    {
-      "line": 24, 
-      "match": "CONCAT11", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));"
-    }, 
-    {
-      "line": 24, 
-      "match": "SUB41", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));"
-    }, 
-    {
-      "line": 33, 
-      "match": "CONCAT21", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar5 = (float)((uint)CONCAT21 /* combine 2-byte values */((short)((uint)fVar2 >> 0x10),local_28 < fVar4) << 8);"
-    }, 
-    {
-      "line": 52, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a6f00", 
-    "signature": "float sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot * this_ptr)", 
-    "address_range": [
-      [
-        "005a6f00", 
-        "005a7067"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00"
-  }, 
-  "stack_frame": {
-    "local_size": 52, 
-    "variables": [
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSfxSlot *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 56, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 204
+  },
   "cross_references": [
     {
-      "from_addr": "005a7293", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
-      "addr": "005a7100"
+      "addr": "005a7100",
+      "from_addr": "005a7293",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a6f00",
+    "address_range": [
+      [
+        "005a6f00",
+        "005a7067"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00",
+    "signature": "float sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005a9d90",
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006501a3",
+      "name": "s_sound_sndmain_cpp_006501a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006501b8",
+      "name": "s_SfxSlot_kill_must_be_loc_006501b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006501df",
+      "name": "DOUBLE_006501df",
+      "type": "double",
+      "value": "0.0500000000000000"
+    },
+    {
+      "addr": "00681b18",
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6940c",
+      "name": "g_SoundLockCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005a6f09",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 24,
+      "match": "CONCAT22",
+      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 24,
+      "match": "CONCAT11",
+      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 24,
+      "match": "SUB41",
+      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 33,
+      "match": "CONCAT21",
+      "text": "fVar5 = (float)((uint)CONCAT21 /* combine 2-byte values */((short)((uint)fVar2 >> 0x10),local_28 < fVar4) << 8);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 52,
+      "match": "CONCAT22",
+      "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),",
+      "type": "concat_artifact"
     }
   ]
 }

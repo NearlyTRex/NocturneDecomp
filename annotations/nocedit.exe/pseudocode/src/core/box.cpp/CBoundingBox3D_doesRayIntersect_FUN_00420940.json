@@ -1,276 +1,276 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 210, 
-    "pseudocode_lines": 180, 
-    "cross_reference_count": 8, 
-    "global_count": 0, 
-    "total_lines": 614, 
-    "assembly_lines": 434, 
-    "suspect_count": 2, 
+    "assembly_lines": 434,
+    "complexity_score": 210,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 180,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00420949", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00420940", 
-    "signature": "float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)", 
-    "address_range": [
-      [
-        "00420940", 
-        "00420d69"
-      ]
-    ], 
-    "name": "core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940"
-  }, 
-  "stack_frame": {
-    "local_size": 100, 
-    "variables": [
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBoundingBox3D *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "ray_origin"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "ray_direction"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "out_normal"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 116, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 614
+  },
   "cross_references": [
     {
-      "from_addr": "004095af", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470", 
-      "addr": "00409470"
-    }, 
+      "addr": "00409470",
+      "from_addr": "004095af",
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00422413", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_FUN_00422390", 
-      "addr": "00422390"
-    }, 
+      "addr": "00422390",
+      "from_addr": "00422413",
+      "name": "core_boxactor.cpp_FUN_00422390",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047821d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0", 
-      "addr": "004781d0"
-    }, 
+      "addr": "004781d0",
+      "from_addr": "0047821d",
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005096a4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_FUN_00509330", 
-      "addr": "00509330"
-    }, 
+      "addr": "00509330",
+      "from_addr": "005096a4",
+      "name": "core_manpuz.cpp_FUN_00509330",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053c493", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053c340", 
-      "addr": "0053c340"
-    }, 
+      "addr": "0053c340",
+      "from_addr": "0053c493",
+      "name": "core_msnedit.cpp_FUN_0053c340",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005765ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setdir.cpp_FUN_005763a0", 
-      "addr": "005763a0"
-    }, 
+      "addr": "005763a0",
+      "from_addr": "005765ab",
+      "name": "core_setdir.cpp_FUN_005763a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005840f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
-      "addr": "00583170"
-    }, 
+      "addr": "00583170",
+      "from_addr": "005840f5",
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005eb76f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740", 
-      "addr": "005eb740"
+      "addr": "005eb740",
+      "from_addr": "005eb76f",
+      "name": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00420940",
+    "address_range": [
+      [
+        "00420940",
+        "00420d69"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940",
+    "signature": "float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 116,
+    "local_size": 100,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "out_normal",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00420949",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

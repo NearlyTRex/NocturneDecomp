@@ -22,17 +22,17 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 005c7a97
     MOV EDX,dword ptr [EBX + 0x4]       ; 005c7a9b
     TEST EDX,EDX                        ; 005c7a9e
-    JZ 0x005c7aaa                       ; 005c7aa0 | LAB_005c7aaa
-        ;   XREF to: 005c7aaa (CONDITIONAL_JUMP)
+    JZ 0x005c7aaa                       ; 005c7aa0
+        ;   XREF to: 005c7aaa (CONDITIONAL_JUMP)  ; LAB_005c7aaa
     MOV EAX,dword ptr [EDX]             ; 005c7aa2
     MOV ECX,dword ptr [ESI]             ; 005c7aa4
     CMP ECX,dword ptr [EAX]             ; 005c7aa6
-    JNZ 0x005c7b13                      ; 005c7aa8 | LAB_005c7b13
-        ;   XREF to: 005c7b13 (CONDITIONAL_JUMP)
+    JNZ 0x005c7b13                      ; 005c7aa8
+        ;   XREF to: 005c7b13 (CONDITIONAL_JUMP)  ; LAB_005c7b13
     CMP dword ptr [EBX + 0x4],0x0       ; 005c7aaa
         ;   Label: LAB_005c7aaa
-    JNZ 0x005c7ade                      ; 005c7aae | LAB_005c7ade
-        ;   XREF to: 005c7ade (CONDITIONAL_JUMP)
+    JNZ 0x005c7ade                      ; 005c7aae
+        ;   XREF to: 005c7ade (CONDITIONAL_JUMP)  ; LAB_005c7ade
     LEA EDX,[ESI + 0x40]                ; 005c7ab0
     LEA EAX,[EBX + 0x14]                ; 005c7ab3
     MOV ECX,dword ptr [EDX]             ; 005c7ab6
@@ -56,12 +56,12 @@ section .text
     PUSH EAX                            ; 005c7ae4
     MOV EBP,dword ptr [EBX + 0x4]       ; 005c7ae5
     PUSH EBP                            ; 005c7ae8
-    CALL crt_memory.c_realloc_FUN_00601df0 ; 005c7ae9 | void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)
-        ;   XREF to: 00601df0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_realloc_FUN_00601df0 ; 005c7ae9
+        ;   XREF to: 00601df0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 005c7aee
     TEST EAX,EAX                        ; 005c7af1
-    JZ 0x005c7b0f                       ; 005c7af3 | LAB_005c7b0f
-        ;   XREF to: 005c7b0f (CONDITIONAL_JUMP)
+    JZ 0x005c7b0f                       ; 005c7af3
+        ;   XREF to: 005c7b0f (CONDITIONAL_JUMP)  ; LAB_005c7b0f
     MOV dword ptr [EBX + 0x4],EAX       ; 005c7af5
     MOV EAX,dword ptr [EBX]             ; 005c7af8
     LEA EDX,[EAX*0x4 + 0x0]             ; 005c7afa

@@ -29,9 +29,9 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 00570fa4
     PUSH dword ptr [ESP + 0x14]         ; 00570fa8
     PUSH dword ptr [ESP + 0x14]         ; 00570fac
-    PUSH 0x32758e4                      ; 00570fb0 | CDemonCamera g_CDemonCameraInstance
-    CALL core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0 ; 00570fb5 | void core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCamera * this_ptr, float peak_intensity, float attack_time, float sustain_duration, ...)
-        ;   XREF to: 00453fc0 (UNCONDITIONAL_CALL)
+    PUSH 0x32758e4                      ; 00570fb0 | g_CDemonCameraInstance
+    CALL core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0 ; 00570fb5
+        ;   XREF to: 00453fc0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCamera * this_ptr, float peak_intensity, float attack_time, float sustain_duration, ...)
     ADD ESP,0x14                        ; 00570fba
     RET                                 ; 00570fbd
 

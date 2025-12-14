@@ -49,10 +49,8 @@ core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00452730
     iVar9 = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
             ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
             ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
-    if (((iVar9 < iVar7 - iVar1) ||
-        (iVar7 = iVar7 + iVar1, SBORROW /* signed borrow */4(iVar7,-iVar9) != iVar7 + iVar9 < 0)) ||
-       ((iVar9 < iVar8 - iVar2 ||
-        (iVar8 = iVar8 + iVar2, SBORROW /* signed borrow */4(iVar8,-iVar9) != iVar8 + iVar9 < 0)))) {
+    if (((iVar9 < iVar7 - iVar1) || (iVar7 + iVar1 < -iVar9)) ||
+       ((iVar9 < iVar8 - iVar2 || (iVar8 + iVar2 < -iVar9)))) {
       return 0;
     }
   }

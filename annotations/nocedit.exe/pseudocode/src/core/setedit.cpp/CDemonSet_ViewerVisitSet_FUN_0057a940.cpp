@@ -44,7 +44,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
   pvVar2 = PTR_DAT_00681ab8;
   this_ptr->actor_list_ptr = (void *)0x0;
-  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)pvVar2);
+  core_slew_cpp_CSlew_init_FUN_005a2060(pvVar2);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffae8);
   core_setedit_cpp_CallToFreeSomeMemory_FUN_00580560(this_ptr);
   core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310();
@@ -60,10 +60,9 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
     (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,in_stack_fffffafc);
     this_ptr_00 = *(CDemonSet **)((int)PTR_DAT_00681ab8 + 8);
     pCStack00000010 = *(C3DSCamera **)((int)PTR_DAT_00681ab8 + 0x14);
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)PTR_DAT_00681ab8);
-    if ((CVector3i *)PTR_DAT_00681ab8 != &g_CDemonCameraInstance.base.position) {
-                    /* WARNING: Load size is inaccurate */
-      g_CDemonCameraInstance.base.position.x = *PTR_DAT_00681ab8;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0(PTR_DAT_00681ab8);
+    if (PTR_DAT_00681ab8 != &g_CDemonCameraInstance.base.position) {
+      g_CDemonCameraInstance.base.position.x = *(int *)PTR_DAT_00681ab8;
       g_CDemonCameraInstance.base.position.z = *(int *)((int)PTR_DAT_00681ab8 + 8);
       g_CDemonCameraInstance.base.position.y = *(int *)((int)PTR_DAT_00681ab8 + 4);
     }
@@ -79,8 +78,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr_00,9999.9,0);
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
     wincore_windll_cpp_lockFrame_FUN_005b7210();
-                    /* WARNING: Load size is inaccurate */
-    if ((((in_stack_00000018 != *PTR_DAT_00681ab8) ||
+    if ((((in_stack_00000018 != *(float *)PTR_DAT_00681ab8) ||
          (in_stack_0000001c != *(float *)((int)PTR_DAT_00681ab8 + 4))) ||
         (in_stack_00000020 != *(float *)((int)PTR_DAT_00681ab8 + 8))) ||
        (((in_stack_00000024 != *(float *)((int)PTR_DAT_00681ab8 + 0xc) ||
@@ -105,7 +103,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
           engine_2d_c_drawTextXY_FUN_00402130(0,y_pos,(char *)(*piVar1 * 0x1a4 + in_stack_0000004c))
           ;
           y_pos = y_pos + 0xb;
-        } while (SBORROW /* signed borrow */4(iVar4,iVar3 * 4) != iVar4 + iVar3 * -4 < 0);
+        } while (iVar4 < iVar3 * 4);
       }
       shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
     }
@@ -113,9 +111,8 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
               (acStack_d8,"Visit %d, rotate: %d, zcheck %d, render %d",g_CubesTestedCount,
                g_CubesWithVoxelsCount,g_CubesVisibleCount);
     engine_2d_c_drawText_FUN_00401fd0(acStack_d4,0,0x16);
-                    /* WARNING: Load size is inaccurate */
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (acStack_d0,"Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6.3f,%6.3f,%6.3f",(double)*PTR_DAT_00681ab8,
+              (acStack_d0,"Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6.3f,%6.3f,%6.3f",(double)*(float *)PTR_DAT_00681ab8,
                (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
                (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
                (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc),

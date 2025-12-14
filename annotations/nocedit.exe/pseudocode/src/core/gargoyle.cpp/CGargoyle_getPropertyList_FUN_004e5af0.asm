@@ -32,56 +32,56 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 004e5af7
     PUSH EBX                            ; 004e5afb
     PUSH ESI                            ; 004e5afc
-    CALL core_enemy.cpp_CEnemy_FUN_004aa170 ; 004e5afd | int core_enemy.cpp_CEnemy_FUN_004aa170(CEnemy * this_ptr)
-        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_FUN_004aa170 ; 004e5afd
+        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004aa170(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 004e5b02
     PUSH 0x0                            ; 004e5b05
     LEA EDI,[ESI + 0x158]               ; 004e5b07
     PUSH EDI                            ; 004e5b0d
-    PUSH 0x62da47                       ; 004e5b0e | = "Model" | s_Model_0062da47 = Model
+    PUSH 0x62da47                       ; 004e5b0e | = "Model"
     PUSH EBX                            ; 004e5b13
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 004e5b14 | void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 004e5b14
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 004e5b19
     PUSH EDI                            ; 004e5b1c
-    PUSH 0x62da4d                       ; 004e5b1d | = "State" | s_State_0062da4d = State
+    PUSH 0x62da4d                       ; 004e5b1d | = "State"
     PUSH EBX                            ; 004e5b22
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 004e5b23 | void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 004e5b23
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 004e5b28
     PUSH 0x0                            ; 004e5b2b
     LEA EDI,[ESI + 0xbeec]              ; 004e5b2d
     PUSH EDI                            ; 004e5b33
-    PUSH 0x62da53                       ; 004e5b34 | = "Stone red" | s_Stone_red_0062da53 = Stone red
+    PUSH 0x62da53                       ; 004e5b34 | = "Stone red"
     PUSH EBX                            ; 004e5b39
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 004e5b3a | void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 004e5b3a
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 004e5b3f
     PUSH 0x0                            ; 004e5b42
     LEA EDI,[ESI + 0xbef0]              ; 004e5b44
     PUSH EDI                            ; 004e5b4a
-    PUSH 0x62da5d                       ; 004e5b4b | = "Stone green" | s_Stone_green_0062da5d = Stone green
+    PUSH 0x62da5d                       ; 004e5b4b | = "Stone green"
     PUSH EBX                            ; 004e5b50
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 004e5b51 | void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 004e5b51
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 004e5b56
     PUSH 0x0                            ; 004e5b59
     LEA EDI,[ESI + 0xbef4]              ; 004e5b5b
     PUSH EDI                            ; 004e5b61
-    PUSH 0x62da69                       ; 004e5b62 | = "Stone blue" | s_Stone_blue_0062da69 = Stone blue
+    PUSH 0x62da69                       ; 004e5b62 | = "Stone blue"
     PUSH EBX                            ; 004e5b67
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 004e5b68 | void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1e0 ; 004e5b68
+        ;   XREF to: 0040e1e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1e0(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 004e5b6d
     PUSH 0x0                            ; 004e5b70
-    PUSH 0x62da74                       ; 004e5b72 | = "CWayPoint" | s_CWayPoint_0062da74 = CWayPoint
+    PUSH 0x62da74                       ; 004e5b72 | = "CWayPoint"
     PUSH 0x1                            ; 004e5b77
     ADD ESI,0xbef8                      ; 004e5b79
     PUSH ESI                            ; 004e5b7f
-    PUSH 0x62da7e                       ; 004e5b80 | = "Home waypoint" | s_Home_waypoint_0062da7e = Home waypoint
+    PUSH 0x62da7e                       ; 004e5b80 | = "Home waypoint"
     PUSH EBX                            ; 004e5b85
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 004e5b86 | int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 004e5b86
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
     ADD ESP,0x18                        ; 004e5b8b
     POP EDI                             ; 004e5b8e
     POP ESI                             ; 004e5b8f

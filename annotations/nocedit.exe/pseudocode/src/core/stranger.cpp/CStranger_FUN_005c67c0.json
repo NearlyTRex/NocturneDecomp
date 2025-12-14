@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 32, 
-    "assembly_lines": 19, 
-    "suspect_count": 2, 
+    "assembly_lines": 19,
+    "complexity_score": 38,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c580", 
-      "addr": "0042c580"
-    }, 
-    {
-      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0", 
-      "addr": "004adca0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_strangerCannotDie_00653fa7", 
-      "addr": "00653fa7", 
-      "value": null
-    }, 
-    {
-      "type": "CEventList*", 
-      "name": "g_CEventListPtr", 
-      "addr": "006793d0", 
-      "value": "02d05310"
-    }, 
-    {
-      "type": "CEventList", 
-      "name": "g_CEventListInstance", 
-      "addr": "02d05310", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CCharacter *in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = core_charactr_cpp_CCharacter_FUN_0042c580(in_stack_00000008);"
-    }
-  ], 
+    ],
+    "total_lines": 32
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "005c67c0", 
-    "signature": "undefined core_stranger.cpp_CStranger_FUN_005c67c0()", 
+    "address": "005c67c0",
     "address_range": [
       [
-        "005c67c0", 
+        "005c67c0",
         "005c67e8"
       ]
-    ], 
-    "name": "core_stranger.cpp_CStranger_FUN_005c67c0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_stranger.cpp_CStranger_FUN_005c67c0",
+    "signature": "undefined core_stranger.cpp_CStranger_FUN_005c67c0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0042c580",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042c580"
+    },
+    {
+      "addr": "004adca0",
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00653fa7",
+      "name": "s_strangerCannotDie_00653fa7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "CCharacter *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = core_charactr_cpp_CCharacter_FUN_0042c580(in_stack_00000008);",
+      "type": "stack_param"
+    }
+  ]
 }

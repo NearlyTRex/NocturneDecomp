@@ -119,7 +119,7 @@ LAB_004095c9:
         pCVar4 = &local_40;
         frame_index = auStack_28;
         this_ptr_01 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                                ((CKeyFramedModelInstance *)collision_info->field9_0x24);
+                                (collision_info->field9_0x24);
         local_84 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
                              (this_ptr_01,(int)frame_index,pCVar4,pCVar5,in_stack_ffffff5c);
         local_9c._0_8_ = (ulonglong)local_84;
@@ -133,8 +133,7 @@ LAB_004095c9:
     }
     else {
       fStack_88 = core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0
-                            ((CDeformableModelInstance *)collision_info->result_ptr,
-                             (CVector3f *)auStack_28,&local_40);
+                            (collision_info->result_ptr,(CVector3f *)auStack_28,&local_40);
       uStack_90 = (double)fStack_88;
       if (uStack_90 < 0.0) {
         return 2.0;
@@ -147,7 +146,7 @@ LAB_004095c9:
       iVar2 = g_DeformableModelRayHitTriangleIndex;
       out_hit_normal[1].z = (float)g_DeformableModelRayHitTriangleIndex;
       this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                              ((CDeformableModelInstance *)collision_info->result_ptr);
+                              (collision_info->result_ptr);
       fVar3 = (float)core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
                                (this_ptr_02,iVar2,in_stack_ffffff60);
       out_hit_normal[2].x = fVar3;

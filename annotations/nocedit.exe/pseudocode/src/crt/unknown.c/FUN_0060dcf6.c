@@ -41,7 +41,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
   }
   if (param_1 == 0) {
     if ((param_2 & 0x7fffffff) == 0) {
-      return param_1;
+      return 0;
     }
     param_2 = param_2 & 0x7fffffff | (uint)CARRY4(param_2,param_2) << 0x1f;
   }
@@ -149,7 +149,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
       uVar16 = sVar14 + 0x3fe;
       if (bVar17) {
         uVar4 = local_20 & 1;
-        local_20 = local_20 >> 1 | (uint)bVar17 << 0x1f;
+        local_20 = local_20 >> 1 | 0x80000000;
         local_24 = local_24 >> 1 | (uint)(uVar4 != 0) << 0x1f;
         uVar16 = uVar15;
       }

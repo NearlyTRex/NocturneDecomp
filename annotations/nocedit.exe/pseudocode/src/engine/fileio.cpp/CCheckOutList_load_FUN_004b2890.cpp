@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Removing unreachable block (ram,0x004b29c8) */
+
 int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *this_ptr)
 
 {
@@ -26,11 +28,6 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(this_ptr);
   if (g_VersionControlDirectory[0] == '\0') {
     return 1;
-  }
-  if (g_VersionControlDirectory[0] == '\0') {
-    g_CurrentFilename = "..\\engine\\fileio.cpp";
-    g_CurrentLineNumber = 0xdd;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80
             (g_VersionControlDirectory,&stack0xfffffff4,acStack_110);
@@ -82,10 +79,10 @@ LAB_004b295b:
     return iVar3;
   }
   piVar2 = (int *)crt_errno_c_errno_FUN_00601450();
-  if (*piVar2 == 1) {
-    return 1;
+  if (*piVar2 != 1) {
+    shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+              (g_CEditorToolsPtr,"Can't access %s.");
+    return 0;
   }
-  shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-            (g_CEditorToolsPtr,"Can't access %s.");
-  return 0;
+  return 1;
 }

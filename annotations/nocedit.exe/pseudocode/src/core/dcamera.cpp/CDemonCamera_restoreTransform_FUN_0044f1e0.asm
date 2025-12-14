@@ -22,8 +22,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0044f1fc
     MOVSD ES:EDI,ESI                    ; 0044f1fd
     CMP ECX,EDX                         ; 0044f1fe
-    JNZ 0x0044f271                      ; 0044f200 | LAB_0044f271
-        ;   XREF to: 0044f271 (CONDITIONAL_JUMP)
+    JNZ 0x0044f271                      ; 0044f200
+        ;   XREF to: 0044f271 (CONDITIONAL_JUMP)  ; LAB_0044f271
     MOV EDX,dword ptr [EAX + 0x14a4]    ; 0044f202
         ;   Label: LAB_0044f202
     MOV dword ptr [EAX + 0x178],EDX     ; 0044f208
@@ -55,6 +55,6 @@ section .text
     MOV EBX,dword ptr [EDX + 0x8]       ; 0044f27c
     MOV dword ptr [ECX + 0x8],EBX       ; 0044f27f
     POP EBX                             ; 0044f282
-    JMP 0x0044f202                      ; 0044f283 | LAB_0044f202
-        ;   XREF to: 0044f202 (UNCONDITIONAL_JUMP)
+    JMP 0x0044f202                      ; 0044f283
+        ;   XREF to: 0044f202 (UNCONDITIONAL_JUMP)  ; LAB_0044f202
 

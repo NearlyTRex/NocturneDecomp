@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 28, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_0062604b", 
-      "addr": "0062604b", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 19,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004b1db0", 
-    "signature": "void engine_fileio.cpp_safeCloseFile_FUN_004b1db0(FILE * * file_ptr)", 
+    "address": "004b1db0",
     "address_range": [
       [
-        "004b1db0", 
+        "004b1db0",
         "004b1dd7"
       ]
-    ], 
-    "name": "engine_fileio.cpp_safeCloseFile_FUN_004b1db0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_safeCloseFile_FUN_004b1db0",
+    "signature": "void engine_fileio.cpp_safeCloseFile_FUN_004b1db0(FILE * * file_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062604b",
+      "name": "s_engine_fileio_cpp_0062604b",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE * *", 
-        "size": 4, 
-        "name": "file_ptr"
+        "is_param": true,
+        "name": "file_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE * *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

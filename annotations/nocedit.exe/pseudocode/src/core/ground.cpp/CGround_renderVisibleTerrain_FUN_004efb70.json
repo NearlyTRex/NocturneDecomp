@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 46, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 202, 
-    "assembly_lines": 156, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_ground.cpp_CGround_renderTerrainQuad_FUN_004ef990", 
-      "addr": "004ef990"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004efb70", 
-    "signature": "void core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70(CGround * this_ptr)", 
-    "address_range": [
-      [
-        "004efb70", 
-        "004efc80"
-      ]
-    ], 
-    "name": "core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGround *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 156,
+    "complexity_score": 46,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 46,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 202
+  },
   "cross_references": [
     {
-      "from_addr": "004efcf1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_render_FUN_004efc90", 
-      "addr": "004efc90"
+      "addr": "004efc90",
+      "from_addr": "004efcf1",
+      "name": "core_ground.cpp_CGround_render_FUN_004efc90",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004efb70",
+    "address_range": [
+      [
+        "004efb70",
+        "004efc80"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70",
+    "signature": "void core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70(CGround * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ef990",
+      "name": "core_ground.cpp_CGround_renderTerrainQuad_FUN_004ef990"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGround *"
+      }
+    ]
+  },
+  "suspects": []
 }

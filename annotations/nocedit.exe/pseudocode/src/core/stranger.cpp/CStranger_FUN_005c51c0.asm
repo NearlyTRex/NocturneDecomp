@@ -39,8 +39,8 @@ section .text
     PUSH EAX                            ; 005c51e2
     MOV dword ptr [ESP + 0x38],EDX      ; 005c51e3
     MOV dword ptr [ESP + 0x34],EDX      ; 005c51e7
-    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 005c51eb | void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 005c51eb
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005c51f0
     MOV EAX,dword ptr [ESP + 0x4c]      ; 005c51f3
     MOV EAX,dword ptr [EAX + 0x1fbe4]   ; 005c51f7
@@ -53,8 +53,8 @@ section .text
     PUSH EAX                            ; 005c520d
     MOV dword ptr [ESP + 0x40],ESI      ; 005c520e
     MOV dword ptr [ESP + 0x44],ESI      ; 005c5212
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 005c5216 | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 005c5216
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 005c521b
     MOV EAX,EBX                         ; 005c521e
     ADD ESP,0x40                        ; 005c5220

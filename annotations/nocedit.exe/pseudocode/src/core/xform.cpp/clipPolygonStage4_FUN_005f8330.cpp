@@ -53,7 +53,7 @@ void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005f8330(void)
           pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
           iVar5 = iVar5 + -8;
         }
-        if (iVar5 != 0 && SCARRY4(iVar5 + -8,8) == iVar5 < 0) {
+        if (iVar5 != 0 && -9 < iVar5 + -8) {
           (pSVar7->projected_vertex).transformed_x = (pSVar6->projected_vertex).transformed_x;
           if (4 < iVar5) {
             *(uint *)((int)pSVar7 + (uint)bVar8 * -8 + 4) =
@@ -82,7 +82,7 @@ void __cdecl core_xform_cpp_clipPolygonStage4_FUN_005f8330(void)
           pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
           iVar5 = iVar5 + -8;
         }
-        if (iVar5 != 0 && SCARRY4(iVar5 + -8,8) == iVar5 < 0) {
+        if (iVar5 != 0 && -9 < iVar5 + -8) {
           (pSVar7->projected_vertex).transformed_x = (pSVar6->projected_vertex).transformed_x;
           if (4 < iVar5) {
             *(uint *)((int)pSVar7 + (uint)bVar8 * -8 + 4) =

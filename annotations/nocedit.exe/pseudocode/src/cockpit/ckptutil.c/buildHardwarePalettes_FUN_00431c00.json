@@ -1,143 +1,143 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 65, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 0, 
-    "global_count": 11, 
-    "total_lines": 136, 
-    "assembly_lines": 96, 
-    "suspect_count": 2, 
+    "assembly_lines": 96,
+    "complexity_score": 65,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 11,
+    "pseudocode_lines": 40,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "byte*", 
-      "name": "g_CurrentPalette", 
-      "addr": "02d01920", 
-      "value": null
-    }, 
-    {
-      "type": "uint[256]", 
-      "name": "g_Hardware32BitPalette", 
-      "addr": "02d01924", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_GlobalPalette[1]", 
-      "addr": "02d01928", 
-      "value": null
-    }, 
-    {
-      "type": "ushort[256]", 
-      "name": "g_Hardware16BitPalette", 
-      "addr": "02d01d24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitPosition", 
-      "addr": "02d01f24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedScaleFactor", 
-      "addr": "02d01f28", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitPosition", 
-      "addr": "02d01f30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenScaleFactor", 
-      "addr": "02d01f34", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitPosition", 
-      "addr": "02d01f3c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueScaleFactor", 
-      "addr": "02d01f40", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 22, 
-      "match": "(ushort *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar4) ="
-    }, 
-    {
-      "line": 37, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) ="
-    }
-  ], 
+    ],
+    "total_lines": 136
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00431c00", 
-    "signature": "void cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00(char * rgb_palette_data)", 
+    "address": "00431c00",
     "address_range": [
       [
-        "00431c00", 
+        "00431c00",
         "00431cf9"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00",
+    "signature": "void cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00(char * rgb_palette_data)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02d01920",
+      "name": "g_CurrentPalette",
+      "type": "byte*",
+      "value": null
+    },
+    {
+      "addr": "02d01924",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "02d01928",
+      "name": "g_GlobalPalette[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01d24",
+      "name": "g_Hardware16BitPalette",
+      "type": "ushort[256]",
+      "value": null
+    },
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f28",
+      "name": "g_RedScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f34",
+      "name": "g_GreenScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f40",
+      "name": "g_BlueScaleFactor",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "rgb_palette_data"
+        "is_param": true,
+        "name": "rgb_palette_data",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(ushort *)((int)",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) =",
+      "type": "pointer_cast"
+    }
+  ]
 }

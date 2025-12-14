@@ -22,15 +22,15 @@ section .text
         ;   Label: engine_matrix.c_calculateTransformedZ_FUN_0050cd10
     PUSH ESI                            ; 0050cd11
     MOV EBX,dword ptr [ESP + 0xc]       ; 0050cd12
-    MOV EDX,dword ptr [0x02d052b8]      ; 0050cd16 | int g_RelativeX
+    MOV EDX,dword ptr [0x02d052b8]      ; 0050cd16 | g_RelativeX
     MOV EAX,dword ptr [EBX]             ; 0050cd1c
     SUB EAX,EDX                         ; 0050cd1e
-    MOV ECX,dword ptr [0x02d052bc]      ; 0050cd20 | int g_RelativeY
+    MOV ECX,dword ptr [0x02d052bc]      ; 0050cd20 | g_RelativeY
     MOV EDX,EAX                         ; 0050cd26
     MOV EAX,dword ptr [EBX + 0x4]       ; 0050cd28
     MOV ESI,dword ptr [EBX + 0x8]       ; 0050cd2b
     SUB EAX,ECX                         ; 0050cd2e
-    MOV EBX,dword ptr [0x02d052c0]      ; 0050cd30 | int g_RelativeZ
+    MOV EBX,dword ptr [0x02d052c0]      ; 0050cd30 | g_RelativeZ
     MOV ECX,EAX                         ; 0050cd36
     MOV EAX,[0x02d052f0]                ; 0050cd38 | g_TransformMatrix[0][2]
     SUB ESI,EBX                         ; 0050cd3d

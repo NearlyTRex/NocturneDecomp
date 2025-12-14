@@ -33,8 +33,8 @@ section .text
     MOV EDX,0x9                         ; 0054394d
     PUSH EBX                            ; 00543952
     MOV dword ptr [ESP + 0xc],EDX       ; 00543953
-    CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 00543957 | undefined core_netgame.cpp_CNetGame_FUN_00541230()
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)
+    CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 00543957
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00541230()
     ADD ESP,0xc                         ; 0054395c
     ADD ESP,0xc                         ; 0054395f
     POP EBX                             ; 00543962

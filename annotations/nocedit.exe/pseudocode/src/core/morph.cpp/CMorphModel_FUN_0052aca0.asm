@@ -43,19 +43,19 @@ section .text
     MOV ESI,dword ptr [ESP + 0x30]      ; 0052acab
     MOV EDI,dword ptr [ESP + 0x40]      ; 0052acaf
     TEST ESI,ESI                        ; 0052acb3
-    JL 0x0052acbb                       ; 0052acb5 | LAB_0052acbb
-        ;   XREF to: 0052acbb (CONDITIONAL_JUMP)
+    JL 0x0052acbb                       ; 0052acb5
+        ;   XREF to: 0052acbb (CONDITIONAL_JUMP)  ; LAB_0052acbb
     CMP ESI,dword ptr [EBX]             ; 0052acb7
-    JL 0x0052acde                       ; 0052acb9 | LAB_0052acde
-        ;   XREF to: 0052acde (CONDITIONAL_JUMP)
-    MOV ECX,0x63a325                    ; 0052acbb | = "..\\core\\morph.cpp" | s_core_morph_cpp_0063a325 = ..\core\morph.cpp
+    JL 0x0052acde                       ; 0052acb9
+        ;   XREF to: 0052acde (CONDITIONAL_JUMP)  ; LAB_0052acde
+    MOV ECX,0x63a325                    ; 0052acbb | = "..\\core\\morph.cpp"
         ;   Label: LAB_0052acbb
     MOV EBP,0x191                       ; 0052acc0
-    PUSH 0x63a337                       ; 0052acc5 | = "CMorphModel::setFaceList - invalid pa..." | s_CMorphModel_setFaceList__0063a337 = CMorphModel::setFaceList - invalid part index
-    MOV dword ptr [0x02f0ca48],ECX      ; 0052acca | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 0052acd0 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052acd6 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63a337                       ; 0052acc5 | = "CMorphModel::setFaceList - invalid pa..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 0052acca | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 0052acd0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052acd6
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0052acdb
     MOV EAX,ESI                         ; 0052acde
         ;   Label: LAB_0052acde
@@ -67,15 +67,15 @@ section .text
     ADD EDX,ECX                         ; 0052acf1
     ADD EAX,EDI                         ; 0052acf3
     CMP EAX,EDX                         ; 0052acf5
-    JLE 0x0052ad1b                      ; 0052acf7 | LAB_0052ad1b
-        ;   XREF to: 0052ad1b (CONDITIONAL_JUMP)
-    MOV EBP,0x63a365                    ; 0052acf9 | = "..\\core\\morph.cpp" | s_core_morph_cpp_0063a365 = ..\core\morph.cpp
+    JLE 0x0052ad1b                      ; 0052acf7
+        ;   XREF to: 0052ad1b (CONDITIONAL_JUMP)  ; LAB_0052ad1b
+    MOV EBP,0x63a365                    ; 0052acf9 | = "..\\core\\morph.cpp"
     MOV EAX,0x198                       ; 0052acfe
-    PUSH 0x63a377                       ; 0052ad03 | = "CMorphModel::setFaceList - invalid ve..." | s_CMorphModel_setFaceList__0063a377 = CMorphModel::setFaceList - invalid vertex range
-    MOV dword ptr [0x02f0ca48],EBP      ; 0052ad08 | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 0052ad0e | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052ad13 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63a377                       ; 0052ad03 | = "CMorphModel::setFaceList - invalid ve..."
+    MOV dword ptr [0x02f0ca48],EBP      ; 0052ad08 | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 0052ad0e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052ad13
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0052ad18
     MOV EAX,dword ptr [ESP + 0x34]      ; 0052ad1b
         ;   Label: LAB_0052ad1b
@@ -84,8 +84,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EDX       ; 0052ad25
     MOV dword ptr [ESP + 0x4],EAX       ; 0052ad29
     TEST ECX,ECX                        ; 0052ad2d
-    JLE 0x0052ae50                      ; 0052ad2f | LAB_0052ae50
-        ;   XREF to: 0052ae50 (CONDITIONAL_JUMP)
+    JLE 0x0052ae50                      ; 0052ad2f
+        ;   XREF to: 0052ae50 (CONDITIONAL_JUMP)  ; LAB_0052ae50
     SHL ESI,0x4                         ; 0052ad35
     LEA EAX,[EBX + ESI*0x1]             ; 0052ad38
     MOV dword ptr [ESP + 0x10],EAX      ; 0052ad3b
@@ -103,8 +103,8 @@ section .text
     ADD EAX,0x8                         ; 0052ad64
     PUSH EAX                            ; 0052ad67
     PUSH EBX                            ; 0052ad68
-    CALL core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60 ; 0052ad69 | int core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel * this_ptr, char * filename)
-        ;   XREF to: 0052ae60 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60 ; 0052ad69
+        ;   XREF to: 0052ae60 (UNCONDITIONAL_CALL)  ; int core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0052ad6e
     MOV EDI,dword ptr [ESP + 0x14]      ; 0052ad71
     MOV dword ptr [ESP],EAX             ; 0052ad75
@@ -114,10 +114,10 @@ section .text
     MOV ESI,EDI                         ; 0052ad7f
     MOV dword ptr [EAX + 0x4],0x3       ; 0052ad81
     MOV EAX,dword ptr [ESP + 0x4]       ; 0052ad88
-    CMP dword ptr [0x02f43974],0x0      ; 0052ad8c | undefined4 DAT_02f43974
+    CMP dword ptr [0x02f43974],0x0      ; 0052ad8c | DAT_02f43974
         ;   Label: LAB_0052ad8c
-    JZ 0x0052ae58                       ; 0052ad93 | LAB_0052ae58
-        ;   XREF to: 0052ae58 (CONDITIONAL_JUMP)
+    JZ 0x0052ae58                       ; 0052ad93
+        ;   XREF to: 0052ae58 (CONDITIONAL_JUMP)  ; LAB_0052ae58
     MOV ECX,0x2                         ; 0052ad99
     SUB ECX,EDX                         ; 0052ad9e
     IMUL ECX,ECX,0xc                    ; 0052ada0
@@ -141,8 +141,8 @@ section .text
     SHL EDI,0x8                         ; 0052add0
     MOV dword ptr [ECX + 0x20],EDI      ; 0052add3
     CMP EDX,0x3                         ; 0052add6
-    JL 0x0052ad8c                       ; 0052add9 | LAB_0052ad8c
-        ;   XREF to: 0052ad8c (CONDITIONAL_JUMP)
+    JL 0x0052ad8c                       ; 0052add9
+        ;   XREF to: 0052ad8c (CONDITIONAL_JUMP)  ; LAB_0052ad8c
     MOV EAX,dword ptr [EBX + 0x60]      ; 0052addb
     MOV EDX,dword ptr [ESP]             ; 0052adde
     MOV dword ptr [ESI + EAX*0x1],EDX   ; 0052ade1
@@ -177,8 +177,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x44]      ; 0052ae40
     MOV dword ptr [ESP + 0x4],ESI       ; 0052ae44
     CMP EBP,EDX                         ; 0052ae48
-    JL 0x0052ad59                       ; 0052ae4a | LAB_0052ad59
-        ;   XREF to: 0052ad59 (CONDITIONAL_JUMP)
+    JL 0x0052ad59                       ; 0052ae4a
+        ;   XREF to: 0052ad59 (CONDITIONAL_JUMP)  ; LAB_0052ad59
     ADD ESP,0x18                        ; 0052ae50
         ;   Label: LAB_0052ae50
     POP EBP                             ; 0052ae53
@@ -188,6 +188,6 @@ section .text
     RET                                 ; 0052ae57
     MOV ECX,EDX                         ; 0052ae58
         ;   Label: LAB_0052ae58
-    JMP 0x0052ada0                      ; 0052ae5a | LAB_0052ada0
-        ;   XREF to: 0052ada0 (UNCONDITIONAL_JUMP)
+    JMP 0x0052ada0                      ; 0052ae5a
+        ;   XREF to: 0052ada0 (UNCONDITIONAL_JUMP)  ; LAB_0052ada0
 

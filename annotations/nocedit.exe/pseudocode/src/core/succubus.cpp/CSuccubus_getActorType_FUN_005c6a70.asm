@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f6bb98                   ; 005c6a70 | CDemonActorType g_CSuccubusClassInfo
+    MOV EAX,0x3f6bb98                   ; 005c6a70 | g_CSuccubusClassInfo
         ;   Label: core_succubus.cpp_CSuccubus_getActorType_FUN_005c6a70
     RET                                 ; 005c6a75
 

@@ -1,110 +1,110 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 36, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 4, 
-    "global_count": 4, 
-    "total_lines": 71, 
-    "assembly_lines": 50, 
-    "suspect_count": 1, 
+    "assembly_lines": 50,
+    "complexity_score": 32,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_00622727", 
-      "addr": "00622727", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_0062273a", 
-      "addr": "0062273a", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "pCVar1[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "crt_memory_c_free_FUN_005fe659(&pCVar1[-1].area);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00494690", 
-    "signature": "void core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytrace * this_ptr)", 
-    "address_range": [
-      [
-        "00494690", 
-        "00494707"
-      ]
-    ], 
-    "name": "core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRaytrace *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 67
+  },
   "cross_references": [
     {
-      "from_addr": "00494470", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450", 
-      "addr": "00494450"
-    }, 
+      "addr": "00494450",
+      "from_addr": "00494470",
+      "name": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00495837", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310", 
-      "addr": "00495310"
-    }, 
+      "addr": "00495310",
+      "from_addr": "00495837",
+      "name": "core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049424f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240", 
-      "addr": "00494240"
-    }, 
+      "addr": "00494240",
+      "from_addr": "0049424f",
+      "name": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00494d8a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0", 
-      "addr": "004947a0"
+      "addr": "004947a0",
+      "from_addr": "00494d8a",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00494690",
+    "address_range": [
+      [
+        "00494690",
+        "00494707"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690",
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytrace * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622727",
+      "name": "s_core_dtrace_cpp_00622727",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062273a",
+      "name": "s_core_dtrace_cpp_0062273a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 8,
+      "match": "triangle_list[-1].",
+      "text": "crt_memory_c_free_FUN_005fe659(&this_ptr->triangle_list[-1].area);",
+      "type": "negative_offset"
     }
   ]
 }

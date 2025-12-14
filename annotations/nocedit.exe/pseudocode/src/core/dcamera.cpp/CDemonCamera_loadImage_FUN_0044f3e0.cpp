@@ -420,7 +420,7 @@ LAB_0044f4fd:
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (g_CDemonRendererPtr,&g_CameraBackdropTexture);
       puVar12 = g_CameraTextureWorkBuffer;
-      puVar26 = (uint *)g_CurrentTextureData;
+      puVar26 = g_CurrentTextureData;
       for (iVar6 = 0x4000; iVar6 != 0; iVar6 = iVar6 + -1) {
         *puVar26 = *puVar12;
         puVar12 = puVar12 + (uint)bVar29 * -2 + 1;

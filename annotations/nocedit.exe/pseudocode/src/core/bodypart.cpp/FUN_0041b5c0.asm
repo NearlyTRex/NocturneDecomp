@@ -31,7 +31,7 @@ section .text
     FLD float ptr [ECX + 0x8]           ; 0041b5e4
     FADD float ptr [EAX + 0x8]          ; 0041b5e7
     FXCH                                ; 0041b5ea
-    FLD float ptr [0x00615b78]          ; 0041b5ec | float FLOAT_00615b78
+    FLD float ptr [0x00615b78]          ; 0041b5ec | FLOAT_00615b78
     FXCH                                ; 0041b5f2
     FMUL ST1                            ; 0041b5f4
     FXCH ST2                            ; 0041b5f6

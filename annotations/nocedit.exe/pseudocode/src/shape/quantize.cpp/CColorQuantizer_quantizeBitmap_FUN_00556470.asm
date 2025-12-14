@@ -23,8 +23,8 @@ section .text
     PUSH 0x1                            ; 00556475
     MOV ECX,dword ptr [ESP + 0xc]       ; 00556477
     PUSH ECX                            ; 0055647b
-    CALL shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0 ; 0055647c | int shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0(CColorQuantizer * this_ptr, int bitmap_count, CBitmap * * bitmap_array)
-        ;   XREF to: 005563d0 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0 ; 0055647c
+        ;   XREF to: 005563d0 (UNCONDITIONAL_CALL)  ; int shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0(CColorQuantizer * this_ptr, int bitmap_count, CBitmap * * bitmap_array)
     ADD ESP,0xc                         ; 00556481
     RET                                 ; 00556484
 

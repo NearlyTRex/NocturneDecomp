@@ -11,6 +11,7 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr)
 {
   void *pvVar1;
   CTextureList *this_ptr_00;
+  CTextureList *pCVar2;
   
   core_ground_cpp_CGround_free_FUN_004eefb0(this_ptr);
   pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
@@ -21,13 +22,13 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr)
     g_CurrentLineNumber = 0xd3;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CGround::init - Out of memory");
   }
-  this_ptr_00 = (CTextureList *)
-                shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1a5ec,"..\\core\\ground.cpp",0xd7);
+  this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1a5ec,"..\\core\\ground.cpp",0xd7);
+  pCVar2 = (CTextureList *)0x0;
   if (this_ptr_00 != (CTextureList *)0x0) {
-    this_ptr_00 = core_texlist_cpp_CTextureList_ctor_FUN_005dbdd0(this_ptr_00);
+    pCVar2 = core_texlist_cpp_CTextureList_ctor_FUN_005dbdd0(this_ptr_00);
   }
-  this_ptr->texture_list = this_ptr_00;
-  if (this_ptr_00 != (CTextureList *)0x0) {
+  this_ptr->texture_list = pCVar2;
+  if (pCVar2 != (CTextureList *)0x0) {
     return;
   }
   g_CurrentFilename = "..\\core\\ground.cpp";

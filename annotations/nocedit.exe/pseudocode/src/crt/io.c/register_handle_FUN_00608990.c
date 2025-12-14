@@ -27,10 +27,9 @@ int __cdecl crt_io_c_register_handle_FUN_00608990(HANDLE handle)
       }
       iVar1 = iVar1 + 4;
       iVar4 = iVar4 + 1;
-    } while (SBORROW /* signed borrow */4(iVar1,g_CurrentHandleCount * 4) != iVar1 + g_CurrentHandleCount * -4 < 0);
+    } while (iVar1 < g_CurrentHandleCount * 4);
   }
   g_IOControlBlock =
-       (SIOControlBlock *)
        crt_memory_c_realloc_FUN_00601df0(g_IOControlBlock,(g_CurrentHandleCount + 1) * 4);
   ppvVar2 = g_IOControlBlock->standard_handles + g_CurrentHandleCount;
   g_CurrentHandleCount = g_CurrentHandleCount + 1;

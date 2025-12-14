@@ -21,10 +21,10 @@
 
 section .text
 
-    PUSH 0x3277d14                      ; 00574560 | CDemonRaytrace g_CDemonRaytraceInstance
+    PUSH 0x3277d14                      ; 00574560 | g_CDemonRaytraceInstance
         ;   Label: core_setcolid.cpp_CDemonSet_FUN_00574560
-    CALL core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70 ; 00574565 | void core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70(CDemonRaytrace * this_ptr)
-        ;   XREF to: 00499e70 (UNCONDITIONAL_CALL)
+    CALL core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70 ; 00574565
+        ;   XREF to: 00499e70 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70(CDemonRaytrace * this_ptr)
     ADD ESP,0x4                         ; 0057456a
     JMP 0x00548590                      ; 0057456d
         ;   XREF to: 00548590 (UNCONDITIONAL_CALL)

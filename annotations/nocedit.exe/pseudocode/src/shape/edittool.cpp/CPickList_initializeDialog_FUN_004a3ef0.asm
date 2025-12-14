@@ -29,14 +29,14 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 004a3efa
     PUSH ECX                            ; 004a3efe
     PUSH EBX                            ; 004a3eff
-    CALL shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 ; 004a3f00 | void shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList * this_ptr, char * dialog_title, int config_parameter)
-        ;   XREF to: 004a45d0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 ; 004a3f00
+        ;   XREF to: 004a45d0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList * this_ptr, char * dialog_title, int config_parameter)
     ADD ESP,0xc                         ; 004a3f05
     MOV EAX,dword ptr [ESP + 0x10]      ; 004a3f08
     PUSH EBX                            ; 004a3f0c
     MOV dword ptr [EBX + 0x17c],EAX     ; 004a3f0d
-    CALL shape_edittool.cpp_CPickList_validateScrollBounds_FUN_004a5240 ; 004a3f13 | void shape_edittool.cpp_CPickList_validateScrollBounds_FUN_004a5240(CPickList * this_ptr)
-        ;   XREF to: 004a5240 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CPickList_validateScrollBounds_FUN_004a5240 ; 004a3f13
+        ;   XREF to: 004a5240 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_validateScrollBounds_FUN_004a5240(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004a3f18
     POP EBX                             ; 004a3f1b
     RET                                 ; 004a3f1c

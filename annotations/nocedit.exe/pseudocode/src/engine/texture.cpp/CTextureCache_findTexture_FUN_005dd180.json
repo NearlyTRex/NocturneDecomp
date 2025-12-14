@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 26, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 89, 
-    "assembly_lines": 63, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005dd180", 
-    "signature": "int engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180(CTextureCache * this_ptr, int hint_index, char * texture_name)", 
-    "address_range": [
-      [
-        "005dd180", 
-        "005dd1f2"
-      ]
-    ], 
-    "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CTextureCache *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "hint_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "texture_name"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 63,
+    "complexity_score": 26,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 89
+  },
   "cross_references": [
     {
-      "from_addr": "005dd835", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
-      "addr": "005dd800"
+      "addr": "005dd800",
+      "from_addr": "005dd835",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005dd180",
+    "address_range": [
+      [
+        "005dd180",
+        "005dd1f2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180",
+    "signature": "int engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180(CTextureCache * this_ptr, int hint_index, char * texture_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTextureCache *"
+      },
+      {
+        "is_param": true,
+        "name": "hint_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

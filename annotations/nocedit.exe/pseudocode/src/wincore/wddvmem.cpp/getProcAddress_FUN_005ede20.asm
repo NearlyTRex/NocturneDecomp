@@ -26,6 +26,6 @@ section .text
     PUSH EDX                            ; 005ede24
     MOV ECX,dword ptr [ESP + 0x8]       ; 005ede25
     PUSH ECX                            ; 005ede29
-    CALL dword ptr CS:[0x6115bc]        ; 005ede2a | GetProcAddress * GetProcAddress
+    CALL dword ptr CS:[0x6115bc]        ; 005ede2a | GetProcAddress
     RET                                 ; 005ede31
 

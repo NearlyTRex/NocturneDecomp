@@ -1,154 +1,154 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 10, 
-    "global_count": 4, 
-    "total_lines": 96, 
-    "assembly_lines": 66, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
-      "addr": "00403950"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
-      "addr": "0048a740"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "RenderScanlineFunc*", 
-      "name": "g_ScanlineRenderFunc", 
-      "addr": "02d0257c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048ae10", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)", 
-    "address_range": [
-      [
-        "0048ae10", 
-        "0048aea8"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "polygon_info"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_flags"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 66,
+    "complexity_score": 30,
+    "cross_reference_count": 10,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 96
+  },
   "cross_references": [
     {
-      "from_addr": "00421463", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_box.cpp_CBoundingBox3D_render_FUN_004210b0", 
-      "addr": "004210b0"
-    }, 
+      "addr": "004210b0",
+      "from_addr": "00421463",
+      "name": "core_box.cpp_CBoundingBox3D_render_FUN_004210b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00429e6a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_00429b40", 
-      "addr": "00429b40"
-    }, 
+      "addr": "00429b40",
+      "from_addr": "00429e6a",
+      "name": "core_charactr.cpp_CCharacter_FUN_00429b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c3e5d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10", 
-      "addr": "004c3b10"
-    }, 
+      "addr": "004c3b10",
+      "from_addr": "004c3e5d",
+      "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ef981", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004ef970", 
-      "addr": "004ef970"
-    }, 
+      "addr": "004ef970",
+      "from_addr": "004ef981",
+      "name": "core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004ef970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00500318", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_drawItemIconBackground_FUN_005001e0", 
-      "addr": "005001e0"
-    }, 
+      "addr": "005001e0",
+      "from_addr": "00500318",
+      "name": "core_inv.cpp_drawItemIconBackground_FUN_005001e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00500188", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_drawWeaponIconBackground_FUN_00500050", 
-      "addr": "00500050"
-    }, 
+      "addr": "00500050",
+      "from_addr": "00500188",
+      "name": "core_inv.cpp_drawWeaponIconBackground_FUN_00500050",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00504558", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
-      "addr": "00504160"
-    }, 
+      "addr": "00504160",
+      "from_addr": "00504558",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050c037", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_marquee.cpp_FUN_0050bec0", 
-      "addr": "0050bec0"
-    }, 
+      "addr": "0050bec0",
+      "from_addr": "0050c037",
+      "name": "core_marquee.cpp_FUN_0050bec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050ffc7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70", 
-      "addr": "0050fe70"
-    }, 
+      "addr": "0050fe70",
+      "from_addr": "0050ffc7",
+      "name": "core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e050d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_trigger.cpp_CTrigger_FUN_005e00d0", 
-      "addr": "005e00d0"
+      "addr": "005e00d0",
+      "from_addr": "005e050d",
+      "name": "core_trigger.cpp_CTrigger_FUN_005e00d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0048ae10",
+    "address_range": [
+      [
+        "0048ae10",
+        "0048aea8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10",
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "0048a740",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "RenderScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "polygon_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

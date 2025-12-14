@@ -1,151 +1,151 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 106, 
-    "pseudocode_lines": 51, 
-    "cross_reference_count": 0, 
-    "global_count": 8, 
-    "total_lines": 147, 
-    "assembly_lines": 96, 
-    "suspect_count": 4, 
+    "assembly_lines": 96,
+    "complexity_score": 106,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 8,
+    "pseudocode_lines": 51,
+    "suspect_count": 4,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CHAINLINK_RAW_00617906", 
-      "addr": "00617906", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ART_s_00617914", 
-      "addr": "00617914", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_chain_cpp_0061791c", 
-      "addr": "0061791c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CChain_addFilesToExtract_0061792e", 
-      "addr": "0061792e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ACT_0061795e", 
-      "addr": "0061795e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ART_s_00617963", 
-      "addr": "00617963", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 49, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CChain::addFilesToExtractList - invalid texture\",unaff_EBX);"
-    }
-  ], 
+      "unaffected_reg",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 147
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00431250", 
-    "signature": "undefined core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250()", 
+    "address": "00431250",
     "address_range": [
       [
-        "00431250", 
+        "00431250",
         "0043132c"
       ]
-    ], 
-    "name": "core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250",
+    "signature": "undefined core_chain.cpp_CChain_addFilesToExtractList_FUN_00431250()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00617906",
+      "name": "s_CHAINLINK_RAW_00617906",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617914",
+      "name": "s_ART_s_00617914",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061791c",
+      "name": "s_core_chain_cpp_0061791c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061792e",
+      "name": "s_CChain_addFilesToExtract_0061792e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061795e",
+      "name": "s_ACT_0061795e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617963",
+      "name": "s_ART_s_00617963",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 264, 
+    "frame_size": 264,
+    "local_size": 264,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -260, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_104"
-      }, 
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -259, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_103"
+        "is_param": false,
+        "name": "local_103",
+        "offset": -259,
+        "size": 1,
+        "type": "undefined1"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 264, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_EBX",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CChain::addFilesToExtractList - invalid texture\",unaff_EBX);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

@@ -1,227 +1,227 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 26, 
-    "global_count": 4, 
-    "total_lines": 42, 
-    "assembly_lines": 28, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_CurrentRenderColor", 
-      "addr": "0066df84", 
-      "value": "0xffffff"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentAlphaValue", 
-      "addr": "006793b4", 
-      "value": "0xff"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentInvertedColor", 
-      "addr": "00772a80", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00ffffff", 
-      "addr": "00ffffff", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00406d80", 
-    "signature": "void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)", 
-    "address_range": [
-      [
-        "00406d80", 
-        "00406dc4"
-      ]
-    ], 
-    "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "alpha_color_value"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 28,
+    "complexity_score": 14,
+    "cross_reference_count": 26,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
+  },
   "cross_references": [
     {
-      "from_addr": "00413b75", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0", 
-      "addr": "00413ae0"
-    }, 
+      "addr": "00413ae0",
+      "from_addr": "00413b75",
+      "name": "core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3ad0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800", 
-      "addr": "004e3800"
-    }, 
+      "addr": "004e3800",
+      "from_addr": "004e3ad0",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3f47", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90", 
-      "addr": "004e3b90"
-    }, 
+      "addr": "004e3b90",
+      "from_addr": "004e3f47",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d8431", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040", 
-      "addr": "004d8040"
-    }, 
+      "addr": "004d8040",
+      "from_addr": "004d8431",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e4163", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
-      "addr": "004e4010"
-    }, 
+      "addr": "004e4010",
+      "from_addr": "004e4163",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d89ec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0", 
-      "addr": "004d89d0"
-    }, 
+      "addr": "004d89d0",
+      "from_addr": "004d89ec",
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00500ee0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690", 
-      "addr": "00500690"
-    }, 
+      "addr": "00500690",
+      "from_addr": "00500ee0",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00510206", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000", 
-      "addr": "00510000"
-    }, 
+      "addr": "00510000",
+      "from_addr": "00510206",
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00559cc1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00559b20", 
-      "addr": "00559b20"
-    }, 
+      "addr": "00559b20",
+      "from_addr": "00559cc1",
+      "name": "core_script.cpp_FUN_00559b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004060e7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_004060a0", 
-      "addr": "004060a0"
-    }, 
+      "addr": "004060a0",
+      "from_addr": "004060e7",
+      "name": "engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_004060a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004062f0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290", 
-      "addr": "00406290"
-    }, 
+      "addr": "00406290",
+      "from_addr": "004062f0",
+      "name": "engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00405ada", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_renderPolygonUVVertexLit_FUN_00405aa0", 
-      "addr": "00405aa0"
-    }, 
+      "addr": "00405aa0",
+      "from_addr": "00405ada",
+      "name": "engine_3d.c_renderPolygonUVVertexLit_FUN_00405aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00404167", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_renderPolygonVertexLit_FUN_00404120", 
-      "addr": "00404120"
-    }, 
+      "addr": "00404120",
+      "from_addr": "00404167",
+      "name": "engine_3d.c_renderPolygonVertexLit_FUN_00404120",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00406d68", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_setRenderAlpha_FUN_00406d60", 
-      "addr": "00406d60"
-    }, 
+      "addr": "00406d60",
+      "from_addr": "00406d68",
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048ca65", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
-      "addr": "0048ca60"
-    }, 
+      "addr": "0048ca60",
+      "from_addr": "0048ca65",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048ca89", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70", 
-      "addr": "0048ca70"
-    }, 
+      "addr": "0048ca70",
+      "from_addr": "0048ca89",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ce718", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0", 
-      "addr": "004ce2d0"
-    }, 
+      "addr": "004ce2d0",
+      "from_addr": "004ce718",
+      "name": "engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049e7f0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
-      "addr": "0049e790"
-    }, 
+      "addr": "0049e790",
+      "from_addr": "0049e7f0",
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a1e5d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0", 
-      "addr": "004a1ca0"
-    }, 
+      "addr": "004a1ca0",
+      "from_addr": "004a1e5d",
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049e8d9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870", 
-      "addr": "0049e870"
-    }, 
+      "addr": "0049e870",
+      "from_addr": "0049e8d9",
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a112e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
-      "addr": "004a0f80"
-    }, 
+      "addr": "004a0f80",
+      "from_addr": "004a112e",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049fd29", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70", 
-      "addr": "0049fb70"
-    }, 
+      "addr": "0049fb70",
+      "from_addr": "0049fd29",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a07e2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530", 
-      "addr": "004a0530"
-    }, 
+      "addr": "004a0530",
+      "from_addr": "004a07e2",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049d9e6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CInputString_draw_FUN_0049d9b0", 
-      "addr": "0049d9b0"
-    }, 
+      "addr": "0049d9b0",
+      "from_addr": "0049d9e6",
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_0049d9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a5111", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40", 
-      "addr": "004a4d40"
-    }, 
+      "addr": "004a4d40",
+      "from_addr": "004a5111",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049e323", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
-      "addr": "0049e130"
+      "addr": "0049e130",
+      "from_addr": "0049e323",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00406d80",
+    "address_range": [
+      [
+        "00406d80",
+        "00406dc4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_setRenderAlpha_FUN_00406d80",
+    "signature": "void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0066df84",
+      "name": "g_CurrentRenderColor",
+      "type": "int",
+      "value": "0xffffff"
+    },
+    {
+      "addr": "006793b4",
+      "name": "g_CurrentAlphaValue",
+      "type": "int",
+      "value": "0xff"
+    },
+    {
+      "addr": "00772a80",
+      "name": "g_CurrentInvertedColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00ffffff",
+      "name": "DAT_00ffffff",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "alpha_color_value",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

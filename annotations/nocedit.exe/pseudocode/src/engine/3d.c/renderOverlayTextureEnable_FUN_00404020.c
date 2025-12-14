@@ -10,11 +10,10 @@ void * __cdecl
 engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *polygon_info)
 
 {
-  int iVar1;
-  uint uVar2;
-  SMRGLHeaderPrimitive *pSVar3;
-  int *piVar4;
-  int iVar5;
+  uint uVar1;
+  SMRGLHeaderPrimitive *pSVar2;
+  int *piVar3;
+  int iVar4;
   
   if (g_MMXSupported == 0) {
     if (g_BitsPerPixel == 0x20) {
@@ -33,15 +32,15 @@ engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive *polygo
   g_RenderStateFlags = RENDER_TEXTURE_ENABLE;
   g_RenderStateFlag2 = PREPROCESS_NONE;
   engine_3d_c_calculatePolygonLighting_FUN_00403a00(polygon_info);
-  piVar4 = g_ProcessedVertexIndices;
-  pSVar3 = polygon_info + 1;
-  for (iVar5 = 0; uVar2 = g_ProcessedVertexOffset, iVar1 = (polygon_info->base).count,
-      SBORROW /* signed borrow */4(iVar5,iVar1 * 3) != iVar5 + iVar1 * -3 < 0; iVar5 = iVar5 + 3) {
-    *piVar4 = (pSVar3->base).type + g_ProcessedVertexOffset;
-    g_RenderVertexBuffer[(pSVar3->base).type + uVar2].u = (float)(pSVar3->base).count;
-    piVar4 = piVar4 + 1;
-    g_RenderVertexBuffer[(pSVar3->base).type + uVar2].v = (float)(pSVar3->surface_normal).A;
-    pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
+  piVar3 = g_ProcessedVertexIndices;
+  pSVar2 = polygon_info + 1;
+  for (iVar4 = 0; uVar1 = g_ProcessedVertexOffset, iVar4 < (polygon_info->base).count * 3;
+      iVar4 = iVar4 + 3) {
+    *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
+    g_RenderVertexBuffer[(pSVar2->base).type + uVar1].u = (float)(pSVar2->base).count;
+    piVar3 = piVar3 + 1;
+    g_RenderVertexBuffer[(pSVar2->base).type + uVar1].v = (float)(pSVar2->surface_normal).A;
+    pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
   engine_clipper_c_clipAndRasterize_FUN_004371b0
             ((polygon_info->base).count,g_ProcessedVertexIndices);

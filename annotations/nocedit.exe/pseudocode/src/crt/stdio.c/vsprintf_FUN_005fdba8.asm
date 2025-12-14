@@ -37,8 +37,8 @@ section .text
     PUSH EBX                            ; 005fdbb7
     MOV ECX,dword ptr [ESP + 0x14]      ; 005fdbb8
     PUSH ECX                            ; 005fdbbc
-    CALL crt_stdio.c_FormatEngine_FUN_00602950 ; 005fdbbd | int crt_stdio.c_FormatEngine_FUN_00602950(void * output_context, char * format, va_list_t args, OUTPUT_CALLBACK callback)
-        ;   XREF to: 00602950 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_FormatEngine_FUN_00602950 ; 005fdbbd
+        ;   XREF to: 00602950 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_FormatEngine_FUN_00602950(void * output_context, char * format, va_list_t args, OUTPUT_CALLBACK callback)
     ADD ESP,0x10                        ; 005fdbc2
     MOV EDX,dword ptr [ESP + 0x8]       ; 005fdbc5
     MOV byte ptr [EDX + EAX*0x1],0x0    ; 005fdbc9

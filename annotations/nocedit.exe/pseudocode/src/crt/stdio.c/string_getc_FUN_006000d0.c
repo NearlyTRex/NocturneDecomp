@@ -11,8 +11,7 @@ int __cdecl crt_stdio_c_string_getc_FUN_006000d0(scanf_state_t *state)
 {
   uint uVar1;
   
-                    /* WARNING: Load size is inaccurate */
-  uVar1 = (uint)*state->input_ptr;
+  uVar1 = (uint)*(byte *)state->input_ptr;
   if (uVar1 != 0) {
     state->input_ptr = (byte *)((int)state->input_ptr + 1);
     return uVar1;

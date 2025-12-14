@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 34, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 113, 
-    "assembly_lines": 79, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0", 
-      "addr": "0054f2e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char[65536]", 
-      "name": "g_FileIOBuffer", 
-      "addr": "030d5090", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030d5091", 
-      "addr": "030d5091", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 79,
+    "complexity_score": 31,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 110
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0054f3e0", 
-    "signature": "uint engine_pod.cpp_crc32ComputeFromFile_FUN_0054f3e0(FILE * file_stream, uint total_bytes)", 
+    "address": "0054f3e0",
     "address_range": [
       [
-        "0054f3e0", 
+        "0054f3e0",
         "0054f487"
       ]
-    ], 
-    "name": "engine_pod.cpp_crc32ComputeFromFile_FUN_0054f3e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_crc32ComputeFromFile_FUN_0054f3e0",
+    "signature": "uint engine_pod.cpp_crc32ComputeFromFile_FUN_0054f3e0(FILE * file_stream, uint total_bytes)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "0054f2e0",
+      "name": "engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "030d5090",
+      "name": "g_FileIOBuffer",
+      "type": "char[65536]",
+      "value": null
+    },
+    {
+      "addr": "030d5091",
+      "name": "DAT_030d5091",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 24, 
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_stream"
-      }, 
+        "is_param": true,
+        "name": "file_stream",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "total_bytes"
+        "is_param": true,
+        "name": "total_bytes",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

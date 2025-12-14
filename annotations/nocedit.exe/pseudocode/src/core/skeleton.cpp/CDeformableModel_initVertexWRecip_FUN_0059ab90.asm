@@ -24,8 +24,8 @@ section .text
     PUSH ESI                            ; 0059ab91
     PUSH EDI                            ; 0059ab92
     PUSH EBP                            ; 0059ab93
-    MOV EDI,dword ptr [0x006703ec]      ; 0059ab94 | CDemonRenderer * g_CDemonRendererPtr
-    MOV EBP,dword ptr [0x02d051f4]      ; 0059ab9a | float g_PerspectiveReciprocal
+    MOV EDI,dword ptr [0x006703ec]      ; 0059ab94 | g_CDemonRendererPtr
+    MOV EBP,dword ptr [0x02d051f4]      ; 0059ab9a | g_PerspectiveReciprocal
     MOV ESI,dword ptr [ESP + 0x18]      ; 0059aba0
     MOV ECX,dword ptr [ESP + 0x14]      ; 0059aba4
     SHL ESI,0x2                         ; 0059aba8
@@ -34,22 +34,22 @@ section .text
     MOV EBX,dword ptr [ESI + 0x2c]      ; 0059abaf
     XOR EDX,EDX                         ; 0059abb2
     TEST EBX,EBX                        ; 0059abb4
-    JLE 0x0059abd0                      ; 0059abb6 | LAB_0059abd0
-        ;   XREF to: 0059abd0 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [EDI]             ; 0059abb8 | CDemonRenderer g_CDemonRendererInstance
+    JLE 0x0059abd0                      ; 0059abb6
+        ;   XREF to: 0059abd0 (CONDITIONAL_JUMP)  ; LAB_0059abd0
+    MOV ECX,dword ptr [EDI]             ; 0059abb8 | g_CDemonRendererInstance
         ;   Label: LAB_0059abb8
     MOV dword ptr [ECX + EAX*0x1 + 0x2c],EBP ; 0059abba
     INC EDX                             ; 0059abbe
     MOV ECX,dword ptr [ESI + 0x2c]      ; 0059abbf
     ADD EAX,0x30                        ; 0059abc2
     CMP EDX,ECX                         ; 0059abc5
-    JL 0x0059abb8                       ; 0059abc7 | LAB_0059abb8
-        ;   XREF to: 0059abb8 (CONDITIONAL_JUMP)
+    JL 0x0059abb8                       ; 0059abc7
+        ;   XREF to: 0059abb8 (CONDITIONAL_JUMP)  ; LAB_0059abb8
     LEA EAX,[EAX]                       ; 0059abc9
     NOP                                 ; 0059abcf
-    MOV dword ptr [0x02d051f4],EBP      ; 0059abd0 | float g_PerspectiveReciprocal
+    MOV dword ptr [0x02d051f4],EBP      ; 0059abd0 | g_PerspectiveReciprocal
         ;   Label: LAB_0059abd0
-    MOV dword ptr [0x006703ec],EDI      ; 0059abd6 | CDemonRenderer * g_CDemonRendererPtr
+    MOV dword ptr [0x006703ec],EDI      ; 0059abd6 | g_CDemonRendererPtr
     POP EBP                             ; 0059abdc
     POP EDI                             ; 0059abdd
     POP ESI                             ; 0059abde

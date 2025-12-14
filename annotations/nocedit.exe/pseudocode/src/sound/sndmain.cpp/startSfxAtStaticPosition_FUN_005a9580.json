@@ -1,134 +1,134 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 90, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 55, 
-    "assembly_lines": 40, 
-    "suspect_count": 6, 
+    "assembly_lines": 40,
+    "complexity_score": 90,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
-      "unknown_field"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0", 
-      "addr": "005a8bb0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
-      "addr": "005a8cb0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
-      "addr": "005a8c30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0", 
-      "addr": "005a88e0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
-      "addr": "005a8e90"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000020;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000024;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pos_y,pos_z,(double)CONCAT44 /* combine 2-byte values */(in_stack_00000024,in_stack_00000020));"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pos_y,pos_z,(double)CONCAT44 /* combine 2-byte values */(in_stack_00000024,in_stack_00000020));"
-    }, 
-    {
-      "line": 14, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(pos_y,pos_z,(double)CONCAT44 /* combine 2-byte values */(in_stack_00000024,in_stack_00000020));"
-    }, 
-    {
-      "line": 15, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "uVar1 = sound_sndmain_cpp_startSfx_FUN_005a8e90(pos_y._0_4_);"
-    }
-  ], 
+      "stack_param",
+      "unknown_field",
+      "concat_artifact"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a9580", 
-    "signature": "uint sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580(char * filename, double pos_x, double pos_y, double pos_z)", 
+    "address": "005a9580",
     "address_range": [
       [
-        "005a9580", 
+        "005a9580",
         "005a95d3"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580",
+    "signature": "uint sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580(char * filename, double pos_x, double pos_y, double pos_z)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a8bb0",
+      "name": "sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0"
+    },
+    {
+      "addr": "005a8cb0",
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a88e0",
+      "name": "sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0"
+    },
+    {
+      "addr": "005a8e90",
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "pos_x"
-      }, 
+        "is_param": true,
+        "name": "pos_x",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "pos_y"
-      }, 
+        "is_param": true,
+        "name": "pos_y",
+        "offset": 16,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "pos_z"
+        "is_param": true,
+        "name": "pos_z",
+        "offset": 24,
+        "size": 8,
+        "type": "double"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000020",
+      "text": "uint in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000024",
+      "text": "uint in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000024",
+      "text": "(pos_y,pos_z,(double)CONCAT44 /* combine 2-byte values */(in_stack_00000024,in_stack_00000020));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000020",
+      "text": "(pos_y,pos_z,(double)CONCAT44 /* combine 2-byte values */(in_stack_00000024,in_stack_00000020));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 14,
+      "match": "CONCAT44",
+      "text": "(pos_y,pos_z,(double)CONCAT44 /* combine 2-byte values */(in_stack_00000024,in_stack_00000020));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 15,
+      "match": "._0_4_",
+      "text": "uVar1 = sound_sndmain_cpp_startSfx_FUN_005a8e90(pos_y._0_4_);",
+      "type": "unknown_field"
+    }
+  ]
 }

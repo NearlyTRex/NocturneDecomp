@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 30, 
-    "assembly_lines": 20, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006276ab", 
-      "addr": "006276ab", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AuditRecordCount", 
-      "addr": "02d12d30", 
-      "value": null
-    }, 
-    {
-      "type": "CPodAuditRecord*", 
-      "name": "g_AuditRecordsArray", 
-      "addr": "02d12d34", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 20,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004b5910", 
-    "signature": "void engine_fileio.cpp_CFileManager_freeAuditRecords_FUN_004b5910(CFileManager * this_ptr)", 
+    "address": "004b5910",
     "address_range": [
       [
-        "004b5910", 
+        "004b5910",
         "004b5940"
       ]
-    ], 
-    "name": "engine_fileio.cpp_CFileManager_freeAuditRecords_FUN_004b5910"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CFileManager_freeAuditRecords_FUN_004b5910",
+    "signature": "void engine_fileio.cpp_CFileManager_freeAuditRecords_FUN_004b5910(CFileManager * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006276ab",
+      "name": "s_engine_fileio_cpp_006276ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d12d30",
+      "name": "g_AuditRecordCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d12d34",
+      "name": "g_AuditRecordsArray",
+      "type": "CPodAuditRecord*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileManager *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileManager *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

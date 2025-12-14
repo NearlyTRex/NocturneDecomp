@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2dcd798                   ; 00501680 | CDemonActorType g_CKeyActorClassInfo
+    MOV EAX,0x2dcd798                   ; 00501680 | g_CKeyActorClassInfo
         ;   Label: core_keyactor.cpp_FUN_00501680
     RET                                 ; 00501685
 

@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 81, 
-    "assembly_lines": 63, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40", 
-      "addr": "0052ef40"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 63,
+    "complexity_score": 18,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 81
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0052f0e0", 
-    "signature": "int sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_0052f0e0(CFileBitStream * this_ptr, uint sync_pattern, uint pattern_bits)", 
+    "address": "0052f0e0",
     "address_range": [
       [
-        "0052f0e0", 
+        "0052f0e0",
         "0052f153"
       ]
-    ], 
-    "name": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_0052f0e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_0052f0e0",
+    "signature": "int sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_0052f0e0(CFileBitStream * this_ptr, uint sync_pattern, uint pattern_bits)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052ef40",
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileBitStream *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileBitStream *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "sync_pattern"
-      }, 
+        "is_param": true,
+        "name": "sync_pattern",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "pattern_bits"
+        "is_param": true,
+        "name": "pattern_bits",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

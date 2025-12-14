@@ -29,7 +29,7 @@ section .text
     PUSH EBX                            ; 0060316a
     MOV ECX,dword ptr [ESP + 0x10]      ; 0060316b
     PUSH ECX                            ; 0060316f
-    CALL dword ptr [0x0068540c]         ; 00603170 | STRTOD_FUNC * PTR_crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30_0068540c
+    CALL dword ptr [0x0068540c]         ; 00603170 | PTR_crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30_0068540c
     ADD ESP,0xc                         ; 00603176
     POP EBX                             ; 00603179
     RET                                 ; 0060317a

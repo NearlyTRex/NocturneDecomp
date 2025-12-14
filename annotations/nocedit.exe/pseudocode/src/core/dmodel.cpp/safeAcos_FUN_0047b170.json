@@ -1,120 +1,120 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 61, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 70, 
-    "assembly_lines": 49, 
-    "suspect_count": 3, 
+    "assembly_lines": 49,
+    "complexity_score": 61,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 21,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_acos_FUN_00600162", 
-      "addr": "00600162"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062044b", 
-      "addr": "0062044b", 
-      "value": "-1"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0047b177", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar1 = (double)in_stack_00000004;"
-    }, 
-    {
-      "line": 23, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "return (double)CONCAT44 /* combine 2-byte values */(local_c,local_10);"
-    }
-  ], 
+    ],
+    "total_lines": 70
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0047b170", 
-    "signature": "double core_dmodel.cpp_safeAcos_FUN_0047b170(float value)", 
+    "address": "0047b170",
     "address_range": [
       [
-        "0047b170", 
+        "0047b170",
         "0047b1dd"
       ]
-    ], 
-    "name": "core_dmodel.cpp_safeAcos_FUN_0047b170"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_safeAcos_FUN_0047b170",
+    "signature": "double core_dmodel.cpp_safeAcos_FUN_0047b170(float value)"
+  },
+  "function_calls": [
+    {
+      "addr": "00600162",
+      "name": "crt_math.c_acos_FUN_00600162"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062044b",
+      "name": "DOUBLE_0062044b",
+      "type": "double",
+      "value": "-1"
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "value"
+        "is_param": true,
+        "name": "value",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0047b177",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000004",
+      "text": "float in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "dVar1 = (double)in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 23,
+      "match": "CONCAT44",
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(local_c,local_10);",
+      "type": "concat_artifact"
+    }
+  ]
 }

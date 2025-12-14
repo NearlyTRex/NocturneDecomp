@@ -30,12 +30,12 @@ section .text
     PUSH ESI                            ; 005a022a
     PUSH EBX                            ; 005a022b
     PUSH EDX                            ; 005a022c
-    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005a022d | CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005a022d
+        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a0232
     PUSH EAX                            ; 005a0235
-    CALL core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00 ; 005a0236 | CVector3f * core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00(CDeformableModel * this_ptr, CVector3f * output_pos, int lod_index, int vertex_index, ...)
-        ;   XREF to: 0059aa00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00 ; 005a0236
+        ;   XREF to: 0059aa00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00(CDeformableModel * this_ptr, CVector3f * output_pos, int lod_index, int vertex_index, ...)
     ADD ESP,0x14                        ; 005a023b
     MOV EAX,EBX                         ; 005a023e
     POP ESI                             ; 005a0240

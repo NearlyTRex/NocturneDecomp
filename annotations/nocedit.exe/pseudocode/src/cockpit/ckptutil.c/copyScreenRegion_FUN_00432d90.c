@@ -23,7 +23,7 @@ cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90
       iVar3 = g_WindowWidth * start_row;
       start_row = start_row + 1;
       puVar4 = (uint *)(iVar3 + src_y + src_x);
-      puVar5 = (uint *)dest_buffer;
+      puVar5 = dest_buffer;
       for (uVar2 = (uint)bytes_per_row >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
         *puVar5 = *puVar4;
         puVar4 = puVar4 + 1;

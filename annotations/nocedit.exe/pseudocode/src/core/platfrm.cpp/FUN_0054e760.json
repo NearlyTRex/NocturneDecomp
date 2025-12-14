@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 58, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 51, 
-    "assembly_lines": 33, 
-    "suspect_count": 3, 
+    "assembly_lines": 33,
+    "complexity_score": 58,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 18,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param", 
-      "suspect_float"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }, 
-    {
-      "name": "core_platfrm.cpp_FUN_0054cab0", 
-      "addr": "0054cab0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "g_CPlatformClassInfo.name_hash", 
-      "addr": "030d508c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004,g_CPlatformClassInfo.name_hash);"
-    }, 
-    {
-      "line": 14, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "pCVar1[2].location.position.y = 1.4013e-45;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0054e760", 
-    "signature": "undefined core_platfrm.cpp_FUN_0054e760()", 
-    "address_range": [
-      [
-        "0054e760", 
-        "0054e7c8"
-      ]
-    ], 
-    "name": "core_platfrm.cpp_FUN_0054e760"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "suspect_float",
+      "stack_param"
+    ],
+    "total_lines": 51
+  },
   "cross_references": [
     {
-      "from_addr": "0054e8fd", 
-      "type": "DATA", 
-      "name": "core_platfrm.cpp_FUN_0054e7d0", 
-      "addr": "0054e7d0"
+      "addr": "0054e7d0",
+      "from_addr": "0054e8fd",
+      "name": "core_platfrm.cpp_FUN_0054e7d0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0054e760",
+    "address_range": [
+      [
+        "0054e760",
+        "0054e7c8"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_platfrm.cpp_FUN_0054e760",
+    "signature": "undefined core_platfrm.cpp_FUN_0054e760()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "0054cab0",
+      "name": "core_platfrm.cpp_FUN_0054cab0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "030d508c",
+      "name": "g_CPlatformClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,g_CPlatformClassInfo.name_hash);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 14,
+      "match": "1.4013e-45",
+      "text": "pCVar1[2].location.position.y = 1.4013e-45;",
+      "type": "suspect_float"
     }
   ]
 }

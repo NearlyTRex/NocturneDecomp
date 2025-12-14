@@ -33,8 +33,8 @@ section .text
     PUSH EDX                            ; 00601df5
     MOV EBX,dword ptr [ESP + 0xc]       ; 00601df6
     PUSH EBX                            ; 00601dfa
-    CALL crt_memory.c_realloc_implementation_FUN_00601e08 ; 00601dfb | void * crt_memory.c_realloc_implementation_FUN_00601e08(void * ptr, ulong new_size)
-        ;   XREF to: 00601e08 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_realloc_implementation_FUN_00601e08 ; 00601dfb
+        ;   XREF to: 00601e08 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_implementation_FUN_00601e08(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00601e00
     POP EBX                             ; 00601e03
     RET                                 ; 00601e04

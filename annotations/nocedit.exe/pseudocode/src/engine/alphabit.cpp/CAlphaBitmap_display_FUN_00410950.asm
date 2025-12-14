@@ -56,20 +56,20 @@ section .text
     MOV EAX,dword ptr [ESI + 0xc]       ; 0041095f
     ADD EAX,EDI                         ; 00410962
     TEST EAX,EAX                        ; 00410964
-    JL 0x00410987                       ; 00410966 | LAB_00410987
-        ;   XREF to: 00410987 (CONDITIONAL_JUMP)
-    CMP EDI,dword ptr [0x00679394]      ; 00410968 | int g_WindowWidth
-    JGE 0x00410987                      ; 0041096e | LAB_00410987
-        ;   XREF to: 00410987 (CONDITIONAL_JUMP)
+    JL 0x00410987                       ; 00410966
+        ;   XREF to: 00410987 (CONDITIONAL_JUMP)  ; LAB_00410987
+    CMP EDI,dword ptr [0x00679394]      ; 00410968 | g_WindowWidth
+    JGE 0x00410987                      ; 0041096e
+        ;   XREF to: 00410987 (CONDITIONAL_JUMP)  ; LAB_00410987
     MOV EAX,dword ptr [ESP + 0x38]      ; 00410970
     ADD EAX,dword ptr [ESI + 0x10]      ; 00410974
     TEST EAX,EAX                        ; 00410977
-    JL 0x00410987                       ; 00410979 | LAB_00410987
-        ;   XREF to: 00410987 (CONDITIONAL_JUMP)
+    JL 0x00410987                       ; 00410979
+        ;   XREF to: 00410987 (CONDITIONAL_JUMP)  ; LAB_00410987
     MOV EAX,dword ptr [ESP + 0x38]      ; 0041097b
-    CMP EAX,dword ptr [0x00679398]      ; 0041097f | int g_WindowHeight
-    JL 0x0041098f                       ; 00410985 | LAB_0041098f
-        ;   XREF to: 0041098f (CONDITIONAL_JUMP)
+    CMP EAX,dword ptr [0x00679398]      ; 0041097f | g_WindowHeight
+    JL 0x0041098f                       ; 00410985
+        ;   XREF to: 0041098f (CONDITIONAL_JUMP)  ; LAB_0041098f
     ADD ESP,0x1c                        ; 00410987
         ;   Label: LAB_00410987
     POP EBP                             ; 0041098a
@@ -79,22 +79,22 @@ section .text
     RET                                 ; 0041098e
     PUSH ESI                            ; 0041098f
         ;   Label: LAB_0041098f
-    CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 ; 00410990 | void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap * this_ptr)
-        ;   XREF to: 00410cf0 (UNCONDITIONAL_CALL)
+    CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 ; 00410990
+        ;   XREF to: 00410cf0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 00410995
     MOV EAX,dword ptr [ESI]             ; 00410998
     MOV dword ptr [ESP + 0x18],EAX      ; 0041099a
-    MOV EAX,[0x0067939c]                ; 0041099e | int g_BitsPerPixel
+    MOV EAX,[0x0067939c]                ; 0041099e | g_BitsPerPixel
     MOV EBP,dword ptr [ESI + 0x4]       ; 004109a3
     CMP EAX,0x20                        ; 004109a6
-    JNZ 0x00410a55                      ; 004109a9 | LAB_00410a55
-        ;   XREF to: 00410a55 (CONDITIONAL_JUMP)
+    JNZ 0x00410a55                      ; 004109a9
+        ;   XREF to: 00410a55 (CONDITIONAL_JUMP)  ; LAB_00410a55
     XOR EBX,EBX                         ; 004109af
     MOV EAX,dword ptr [ESI + 0x10]      ; 004109b1
     MOV dword ptr [ESP + 0x8],EBX       ; 004109b4
     TEST EAX,EAX                        ; 004109b8
-    JLE 0x00410987                      ; 004109ba | LAB_00410987
-        ;   XREF to: 00410987 (CONDITIONAL_JUMP)
+    JLE 0x00410987                      ; 004109ba
+        ;   XREF to: 00410987 (CONDITIONAL_JUMP)  ; LAB_00410987
     LEA EAX,[EDI*0x4 + 0x0]             ; 004109bc
     MOV dword ptr [ESP + 0x4],EAX       ; 004109c3
     MOV EAX,dword ptr [ESP + 0x38]      ; 004109c7
@@ -102,24 +102,24 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 004109cf
         ;   Label: LAB_004109cf
     TEST ECX,ECX                        ; 004109d3
-    JL 0x00410a1f                       ; 004109d5 | LAB_00410a1f
-        ;   XREF to: 00410a1f (CONDITIONAL_JUMP)
-    CMP ECX,dword ptr [0x00679398]      ; 004109d7 | int g_WindowHeight
-    JGE 0x00410a1f                      ; 004109dd | LAB_00410a1f
-        ;   XREF to: 00410a1f (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [ECX*0x4 + 0x2cf6a9c] ; 004109df | void *[1024] g_ScreenBufferArray
+    JL 0x00410a1f                       ; 004109d5
+        ;   XREF to: 00410a1f (CONDITIONAL_JUMP)  ; LAB_00410a1f
+    CMP ECX,dword ptr [0x00679398]      ; 004109d7 | g_WindowHeight
+    JGE 0x00410a1f                      ; 004109dd
+        ;   XREF to: 00410a1f (CONDITIONAL_JUMP)  ; LAB_00410a1f
+    MOV ECX,dword ptr [ECX*0x4 + 0x2cf6a9c] ; 004109df | g_ScreenBufferArray
     MOV EAX,dword ptr [ESI + 0xc]       ; 004109e6
     XOR EDX,EDX                         ; 004109e9
     TEST EDI,EDI                        ; 004109eb
-    JL 0x00410a4d                       ; 004109ed | LAB_00410a4d
-        ;   XREF to: 00410a4d (CONDITIONAL_JUMP)
+    JL 0x00410a4d                       ; 004109ed
+        ;   XREF to: 00410a4d (CONDITIONAL_JUMP)  ; LAB_00410a4d
     ADD ECX,dword ptr [ESP + 0x4]       ; 004109ef
     LEA EBX,[EDI + EAX*0x1]             ; 004109f3
         ;   Label: LAB_004109f3
-    CMP EBX,dword ptr [0x00679394]      ; 004109f6 | int g_WindowWidth
-    JLE 0x00410a05                      ; 004109fc | LAB_00410a05
-        ;   XREF to: 00410a05 (CONDITIONAL_JUMP)
-    MOV EAX,[0x00679394]                ; 004109fe | int g_WindowWidth
+    CMP EBX,dword ptr [0x00679394]      ; 004109f6 | g_WindowWidth
+    JLE 0x00410a05                      ; 004109fc
+        ;   XREF to: 00410a05 (CONDITIONAL_JUMP)  ; LAB_00410a05
+    MOV EAX,[0x00679394]                ; 004109fe | g_WindowWidth
     SUB EAX,EDI                         ; 00410a03
     PUSH EAX                            ; 00410a05
         ;   Label: LAB_00410a05
@@ -131,8 +131,8 @@ section .text
     ADD EDX,EBX                         ; 00410a13
     PUSH EDX                            ; 00410a15
     PUSH ECX                            ; 00410a16
-    CALL wincore_windll.cpp_renderAlphaRow32_FUN_005b555c ; 00410a17 | void wincore_windll.cpp_renderAlphaRow32_FUN_005b555c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
-        ;   XREF to: 005b555c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_renderAlphaRow32_FUN_005b555c ; 00410a17
+        ;   XREF to: 005b555c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderAlphaRow32_FUN_005b555c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 00410a1c
     MOV EDX,dword ptr [ESP + 0x18]      ; 00410a1f
         ;   Label: LAB_00410a1f
@@ -148,23 +148,23 @@ section .text
     MOV EDX,dword ptr [ESI + 0x10]      ; 00410a3c
     MOV dword ptr [ESP + 0x8],EAX       ; 00410a3f
     CMP EAX,EDX                         ; 00410a43
-    JGE 0x00410987                      ; 00410a45 | LAB_00410987
-        ;   XREF to: 00410987 (CONDITIONAL_JUMP)
-    JMP 0x004109cf                      ; 00410a4b | LAB_004109cf
-        ;   XREF to: 004109cf (UNCONDITIONAL_JUMP)
+    JGE 0x00410987                      ; 00410a45
+        ;   XREF to: 00410987 (CONDITIONAL_JUMP)  ; LAB_00410987
+    JMP 0x004109cf                      ; 00410a4b
+        ;   XREF to: 004109cf (UNCONDITIONAL_JUMP)  ; LAB_004109cf
     MOV EDX,EDI                         ; 00410a4d
         ;   Label: LAB_00410a4d
     NEG EDX                             ; 00410a4f
     SUB EAX,EDX                         ; 00410a51
-    JMP 0x004109f3                      ; 00410a53 | LAB_004109f3
-        ;   XREF to: 004109f3 (UNCONDITIONAL_JUMP)
+    JMP 0x004109f3                      ; 00410a53
+        ;   XREF to: 004109f3 (UNCONDITIONAL_JUMP)  ; LAB_004109f3
     XOR EDX,EDX                         ; 00410a55
         ;   Label: LAB_00410a55
     MOV ECX,dword ptr [ESI + 0x10]      ; 00410a57
     MOV dword ptr [ESP + 0xc],EDX       ; 00410a5a
     TEST ECX,ECX                        ; 00410a5e
-    JLE 0x00410987                      ; 00410a60 | LAB_00410987
-        ;   XREF to: 00410987 (CONDITIONAL_JUMP)
+    JLE 0x00410987                      ; 00410a60
+        ;   XREF to: 00410987 (CONDITIONAL_JUMP)  ; LAB_00410987
     LEA EAX,[EDI + EDI*0x1]             ; 00410a66
     MOV dword ptr [ESP],EAX             ; 00410a69
     MOV EAX,dword ptr [ESP + 0x38]      ; 00410a6c
@@ -172,24 +172,24 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 00410a74
         ;   Label: LAB_00410a74
     TEST ECX,ECX                        ; 00410a78
-    JL 0x00410ac3                       ; 00410a7a | LAB_00410ac3
-        ;   XREF to: 00410ac3 (CONDITIONAL_JUMP)
-    CMP ECX,dword ptr [0x00679398]      ; 00410a7c | int g_WindowHeight
-    JGE 0x00410ac3                      ; 00410a82 | LAB_00410ac3
-        ;   XREF to: 00410ac3 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [ECX*0x4 + 0x2cf6a9c] ; 00410a84 | void *[1024] g_ScreenBufferArray
+    JL 0x00410ac3                       ; 00410a7a
+        ;   XREF to: 00410ac3 (CONDITIONAL_JUMP)  ; LAB_00410ac3
+    CMP ECX,dword ptr [0x00679398]      ; 00410a7c | g_WindowHeight
+    JGE 0x00410ac3                      ; 00410a82
+        ;   XREF to: 00410ac3 (CONDITIONAL_JUMP)  ; LAB_00410ac3
+    MOV ECX,dword ptr [ECX*0x4 + 0x2cf6a9c] ; 00410a84 | g_ScreenBufferArray
     MOV EAX,dword ptr [ESI + 0xc]       ; 00410a8b
     XOR EDX,EDX                         ; 00410a8e
     TEST EDI,EDI                        ; 00410a90
-    JL 0x00410af1                       ; 00410a92 | LAB_00410af1
-        ;   XREF to: 00410af1 (CONDITIONAL_JUMP)
+    JL 0x00410af1                       ; 00410a92
+        ;   XREF to: 00410af1 (CONDITIONAL_JUMP)  ; LAB_00410af1
     ADD ECX,dword ptr [ESP]             ; 00410a94
     LEA EBX,[EDI + EAX*0x1]             ; 00410a97
         ;   Label: LAB_00410a97
-    CMP EBX,dword ptr [0x00679394]      ; 00410a9a | int g_WindowWidth
-    JLE 0x00410aa9                      ; 00410aa0 | LAB_00410aa9
-        ;   XREF to: 00410aa9 (CONDITIONAL_JUMP)
-    MOV EAX,[0x00679394]                ; 00410aa2 | int g_WindowWidth
+    CMP EBX,dword ptr [0x00679394]      ; 00410a9a | g_WindowWidth
+    JLE 0x00410aa9                      ; 00410aa0
+        ;   XREF to: 00410aa9 (CONDITIONAL_JUMP)  ; LAB_00410aa9
+    MOV EAX,[0x00679394]                ; 00410aa2 | g_WindowWidth
     SUB EAX,EDI                         ; 00410aa7
     PUSH EAX                            ; 00410aa9
         ;   Label: LAB_00410aa9
@@ -201,8 +201,8 @@ section .text
     ADD EDX,EBX                         ; 00410ab7
     PUSH EDX                            ; 00410ab9
     PUSH ECX                            ; 00410aba
-    CALL wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7 ; 00410abb | void wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
-        ;   XREF to: 005b55f7 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7 ; 00410abb
+        ;   XREF to: 005b55f7 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 00410ac0
     MOV EDX,dword ptr [ESP + 0x18]      ; 00410ac3
         ;   Label: LAB_00410ac3
@@ -218,14 +218,14 @@ section .text
     MOV EDX,dword ptr [ESI + 0x10]      ; 00410ae0
     MOV dword ptr [ESP + 0xc],EAX       ; 00410ae3
     CMP EAX,EDX                         ; 00410ae7
-    JGE 0x00410987                      ; 00410ae9 | LAB_00410987
-        ;   XREF to: 00410987 (CONDITIONAL_JUMP)
-    JMP 0x00410a74                      ; 00410aef | LAB_00410a74
-        ;   XREF to: 00410a74 (UNCONDITIONAL_JUMP)
+    JGE 0x00410987                      ; 00410ae9
+        ;   XREF to: 00410987 (CONDITIONAL_JUMP)  ; LAB_00410987
+    JMP 0x00410a74                      ; 00410aef
+        ;   XREF to: 00410a74 (UNCONDITIONAL_JUMP)  ; LAB_00410a74
     MOV EDX,EDI                         ; 00410af1
         ;   Label: LAB_00410af1
     NEG EDX                             ; 00410af3
     SUB EAX,EDX                         ; 00410af5
-    JMP 0x00410a97                      ; 00410af7 | LAB_00410a97
-        ;   XREF to: 00410a97 (UNCONDITIONAL_JUMP)
+    JMP 0x00410a97                      ; 00410af7
+        ;   XREF to: 00410a97 (UNCONDITIONAL_JUMP)  ; LAB_00410a97
 

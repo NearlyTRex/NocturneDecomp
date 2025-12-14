@@ -27,7 +27,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
   ulonglong *local_18;
   int local_14;
   
-  puVar9 = (ulonglong *)g_BackBuffer;
+  puVar9 = g_BackBuffer;
   if (g_WindowActive != 0) {
     if (g_UseExternalRenderer != 0) {
       wincore_windll_cpp_presentToExternalRenderer_FUN_005b7c30(0);
@@ -37,7 +37,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
     }
     if (g_RenderingInProgress == 0) {
       if (g_UseSoftwareRendering == 0) {
-        local_20 = (ulonglong *)g_BackBuffer;
+        local_20 = g_BackBuffer;
         iVar11 = g_WindowWidth *
                  ((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
                        (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3);

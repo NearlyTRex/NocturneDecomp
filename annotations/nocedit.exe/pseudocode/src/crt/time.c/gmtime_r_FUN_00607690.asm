@@ -36,11 +36,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 0060769f
     MOV EDI,dword ptr [ESP + 0x24]      ; 006076a3
     CMP EBX,0xa8c0                      ; 006076a7
-    JNC 0x006076cb                      ; 006076ad | LAB_006076cb
-        ;   XREF to: 006076cb (CONDITIONAL_JUMP)
+    JNC 0x006076cb                      ; 006076ad
+        ;   XREF to: 006076cb (CONDITIONAL_JUMP)  ; LAB_006076cb
     TEST EAX,EAX                        ; 006076af
-    JLE 0x006076cb                      ; 006076b1 | LAB_006076cb
-        ;   XREF to: 006076cb (CONDITIONAL_JUMP)
+    JLE 0x006076cb                      ; 006076b1
+        ;   XREF to: 006076cb (CONDITIONAL_JUMP)  ; LAB_006076cb
     ADD EBX,0x15180                     ; 006076b3
     MOV ESI,0x15180                     ; 006076b9
     SUB EBX,EAX                         ; 006076be
@@ -49,8 +49,8 @@ section .text
     DIV ESI                             ; 006076c4
     ADD EBP,EAX                         ; 006076c6
     DEC EBP                             ; 006076c8
-    JMP 0x006076da                      ; 006076c9 | LAB_006076da
-        ;   XREF to: 006076da (UNCONDITIONAL_JUMP)
+    JMP 0x006076da                      ; 006076c9
+        ;   XREF to: 006076da (UNCONDITIONAL_JUMP)  ; LAB_006076da
     MOV ESI,0x15180                     ; 006076cb
         ;   Label: LAB_006076cb
     SUB EBX,EAX                         ; 006076d0
@@ -97,41 +97,41 @@ section .text
     MOV EBX,EBP                         ; 00607731
     SUB EBX,EAX                         ; 00607733
     TEST ESI,ESI                        ; 00607735
-    JBE 0x00607741                      ; 00607737 | LAB_00607741
-        ;   XREF to: 00607741 (CONDITIONAL_JUMP)
+    JBE 0x00607741                      ; 00607737
+        ;   XREF to: 00607741 (CONDITIONAL_JUMP)  ; LAB_00607741
     LEA EAX,[ESI + -0x1]                ; 00607739
     SHR EAX,0x2                         ; 0060773c
     SUB EBX,EAX                         ; 0060773f
     LEA EAX,[ESI + 0x76c]               ; 00607741
         ;   Label: LAB_00607741
     PUSH EAX                            ; 00607747
-    CALL crt_time.c_is_leap_year_FUN_00607820 ; 00607748 | int crt_time.c_is_leap_year_FUN_00607820(int year)
-        ;   XREF to: 00607820 (UNCONDITIONAL_CALL)
+    CALL crt_time.c_is_leap_year_FUN_00607820 ; 00607748
+        ;   XREF to: 00607820 (UNCONDITIONAL_CALL)  ; int crt_time.c_is_leap_year_FUN_00607820(int year)
     ADD EAX,0x16d                       ; 0060774d
     ADD ESP,0x4                         ; 00607752
     CMP EBX,EAX                         ; 00607755
-    JC 0x00607760                       ; 00607757 | LAB_00607760
-        ;   XREF to: 00607760 (CONDITIONAL_JUMP)
+    JC 0x00607760                       ; 00607757
+        ;   XREF to: 00607760 (CONDITIONAL_JUMP)  ; LAB_00607760
     SUB EBX,EAX                         ; 00607759
         ;   Label: LAB_00607759
     INC ESI                             ; 0060775b
     CMP EBX,EAX                         ; 0060775c
-    JNC 0x00607759                      ; 0060775e | LAB_00607759
-        ;   XREF to: 00607759 (CONDITIONAL_JUMP)
+    JNC 0x00607759                      ; 0060775e
+        ;   XREF to: 00607759 (CONDITIONAL_JUMP)  ; LAB_00607759
     MOV dword ptr [EDI + 0x14],ESI      ; 00607760
         ;   Label: LAB_00607760
     ADD ESI,0x76c                       ; 00607763
-    MOV EDX,0x665f38                    ; 00607769 | short g_DaysInMonth_Normal
+    MOV EDX,0x665f38                    ; 00607769 | g_DaysInMonth_Normal
     PUSH ESI                            ; 0060776e
     MOV dword ptr [EDI + 0x1c],EBX      ; 0060776f
-    MOV dword ptr [ESP + 0x4],EDX       ; 00607772 | short g_DaysInMonth_Normal
-    CALL crt_time.c_is_leap_year_FUN_00607820 ; 00607776 | int crt_time.c_is_leap_year_FUN_00607820(int year)
-        ;   XREF to: 00607820 (UNCONDITIONAL_CALL)
+    MOV dword ptr [ESP + 0x4],EDX       ; 00607772 | g_DaysInMonth_Normal
+    CALL crt_time.c_is_leap_year_FUN_00607820 ; 00607776
+        ;   XREF to: 00607820 (UNCONDITIONAL_CALL)  ; int crt_time.c_is_leap_year_FUN_00607820(int year)
     ADD ESP,0x4                         ; 0060777b
     TEST EAX,EAX                        ; 0060777e
-    JZ 0x00607789                       ; 00607780 | LAB_00607789
-        ;   XREF to: 00607789 (CONDITIONAL_JUMP)
-    MOV dword ptr [ESP],0x665f52        ; 00607782 | short g_DaysInMonth_Leap
+    JZ 0x00607789                       ; 00607780
+        ;   XREF to: 00607789 (CONDITIONAL_JUMP)  ; LAB_00607789
+    MOV dword ptr [ESP],0x665f52        ; 00607782 | g_DaysInMonth_Leap
     MOV ESI,0x1f                        ; 00607789
         ;   Label: LAB_00607789
     MOV EAX,EBX                         ; 0060778e
@@ -140,18 +140,18 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00607794
     LEA ESI,[EAX*0x2 + 0x0]             ; 00607797
     ADD ESI,EDX                         ; 0060779e
-    MOV ESI,dword ptr [ESI]             ; 006077a0 | short g_DaysInMonth_Normal | g_DaysInMonth_Leap = 0x0
+    MOV ESI,dword ptr [ESI]             ; 006077a0 | g_DaysInMonth_Normal | g_DaysInMonth_Leap
     SAR ESI,0x10                        ; 006077a2
     CMP EBX,ESI                         ; 006077a5
-    JC 0x006077aa                       ; 006077a7 | LAB_006077aa
-        ;   XREF to: 006077aa (CONDITIONAL_JUMP)
+    JC 0x006077aa                       ; 006077a7
+        ;   XREF to: 006077aa (CONDITIONAL_JUMP)  ; LAB_006077aa
     INC EAX                             ; 006077a9
     MOV ECX,dword ptr [ESP]             ; 006077aa
         ;   Label: LAB_006077aa
     MOV dword ptr [EDI + 0x10],EAX      ; 006077ad
     ADD EAX,EAX                         ; 006077b0
     ADD EAX,ECX                         ; 006077b2
-    MOVSX EAX,word ptr [EAX]            ; 006077b4 | short g_DaysInMonth_Normal | g_DaysInMonth_Leap = 0x0
+    MOVSX EAX,word ptr [EAX]            ; 006077b4 | g_DaysInMonth_Normal | g_DaysInMonth_Leap
     SUB EBX,EAX                         ; 006077b7
     XOR EDX,EDX                         ; 006077b9
     INC EBX                             ; 006077bb

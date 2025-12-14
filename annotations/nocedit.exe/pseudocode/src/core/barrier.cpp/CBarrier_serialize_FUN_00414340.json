@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 47, 
-    "assembly_lines": 34, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
-      "addr": "0040c1c0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
-      "addr": "0040b7f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
-      "addr": "0040b5c0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeVector_FUN_0040b340", 
-      "addr": "0040b340"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_size_0061516f", 
-      "addr": "0061516f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_effectClassNameList_00615174", 
-      "addr": "00615174", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_addToPathGrid_00615188", 
-      "addr": "00615188", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CBarrierClassVersion", 
-      "addr": "0066e4a0", 
-      "value": "0x2"
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 34,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00414340", 
-    "signature": "void core_barrier.cpp_CBarrier_serialize_FUN_00414340(CBarrier * this_ptr)", 
+    "address": "00414340",
     "address_range": [
       [
-        "00414340", 
+        "00414340",
         "00414398"
       ]
-    ], 
-    "name": "core_barrier.cpp_CBarrier_serialize_FUN_00414340"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_barrier.cpp_CBarrier_serialize_FUN_00414340",
+    "signature": "void core_barrier.cpp_CBarrier_serialize_FUN_00414340(CBarrier * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c1c0",
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
+    },
+    {
+      "addr": "0040b7f0",
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b5c0",
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+    },
+    {
+      "addr": "0040b340",
+      "name": "core_actor.cpp_serializeVector_FUN_0040b340"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061516f",
+      "name": "s_size_0061516f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615174",
+      "name": "s_effectClassNameList_00615174",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615188",
+      "name": "s_addToPathGrid_00615188",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e4a0",
+      "name": "g_CBarrierClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBarrier *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBarrier *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

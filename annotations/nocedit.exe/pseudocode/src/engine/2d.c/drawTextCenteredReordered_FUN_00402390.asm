@@ -27,8 +27,8 @@ section .text
     PUSH EBX                            ; 004023a0
     MOV ESI,dword ptr [ESP + 0x24]      ; 004023a1
     PUSH ESI                            ; 004023a5
-    CALL engine_2d.c_drawTextCentered_FUN_00402350 ; 004023a6 | void engine_2d.c_drawTextCentered_FUN_00402350(char * text, int left_x, int right_x, int y_pos)
-        ;   XREF to: 00402350 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawTextCentered_FUN_00402350 ; 004023a6
+        ;   XREF to: 00402350 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCentered_FUN_00402350(char * text, int left_x, int right_x, int y_pos)
     ADD ESP,0x10                        ; 004023ab
     POP ESI                             ; 004023ae
     POP EBX                             ; 004023af

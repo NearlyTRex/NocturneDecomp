@@ -1,115 +1,115 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 76, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 89, 
-    "assembly_lines": 68, 
-    "suspect_count": 4, 
+    "assembly_lines": 68,
+    "complexity_score": 76,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 21,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20", 
-      "addr": "00487e20"
-    }, 
-    {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0", 
-      "addr": "00487bc0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(this_ptr,y1,x2,y2,in_stack_00000018)"
-    }
-  ], 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00487a30", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)", 
+    "address": "00487a30",
     "address_range": [
       [
-        "00487a30", 
+        "00487a30",
         "00487ac3"
       ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00487e20",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20"
+    },
+    {
+      "addr": "00487bc0",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x1"
-      }, 
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y1"
-      }, 
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x2"
-      }, 
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y2"
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000018",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(this_ptr,y1,x2,y2,in_stack_00000018)",
+      "type": "stack_param"
+    }
+  ]
 }

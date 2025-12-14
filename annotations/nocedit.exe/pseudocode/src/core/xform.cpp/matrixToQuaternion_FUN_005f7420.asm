@@ -47,27 +47,27 @@ section .text
     FCOMP double ptr [ESP]              ; 005f7442
     FNSTSW AX                           ; 005f7445
     SAHF                                ; 005f7447
-    JC 0x005f74c7                       ; 005f7448 | LAB_005f74c7
-        ;   XREF to: 005f74c7 (CONDITIONAL_JUMP)
+    JC 0x005f74c7                       ; 005f7448
+        ;   XREF to: 005f74c7 (CONDITIONAL_JUMP)  ; LAB_005f74c7
     FLD float ptr [EDX]                 ; 005f744a
     FCOMP float ptr [EDX + 0x14]        ; 005f744c
     FNSTSW AX                           ; 005f744f
     SAHF                                ; 005f7451
-    JBE 0x005f756a                      ; 005f7452 | LAB_005f756a
-        ;   XREF to: 005f756a (CONDITIONAL_JUMP)
+    JBE 0x005f756a                      ; 005f7452
+        ;   XREF to: 005f756a (CONDITIONAL_JUMP)  ; LAB_005f756a
     FLD float ptr [EDX]                 ; 005f7458
     FCOMP float ptr [EDX + 0x28]        ; 005f745a
     FNSTSW AX                           ; 005f745d
     SAHF                                ; 005f745f
-    JBE 0x005f750a                      ; 005f7460 | LAB_005f750a
-        ;   XREF to: 005f750a (CONDITIONAL_JUMP)
+    JBE 0x005f750a                      ; 005f7460
+        ;   XREF to: 005f750a (CONDITIONAL_JUMP)  ; LAB_005f750a
     FLD float ptr [EDX + 0x14]          ; 005f7466
     FADD float ptr [EDX + 0x28]         ; 005f7469
     FSUBR float ptr [EDX]               ; 005f746c
     FLD1                                ; 005f746e
     FADDP                               ; 005f7470
     FSQRT                               ; 005f7472
-    FLD double ptr [0x006583e5]         ; 005f7474 | double g_QuaternionMatrixConversionHalf
+    FLD double ptr [0x006583e5]         ; 005f7474 | g_QuaternionMatrixConversionHalf
     FLD ST0                             ; 005f747a
     FDIV ST0,ST2                        ; 005f747c
     FLD ST2                             ; 005f747e
@@ -107,7 +107,7 @@ section .text
         ;   Label: LAB_005f74c7
     FADD double ptr [ESP]               ; 005f74c9
     FSQRT                               ; 005f74cc
-    FLD double ptr [0x006583e5]         ; 005f74ce | double g_QuaternionMatrixConversionHalf
+    FLD double ptr [0x006583e5]         ; 005f74ce | g_QuaternionMatrixConversionHalf
     FLD ST0                             ; 005f74d4
     FDIV ST0,ST2                        ; 005f74d6
     FLD ST2                             ; 005f74d8
@@ -129,15 +129,15 @@ section .text
     FXCH ST2                            ; 005f74fe
     FSTP float ptr [ESP + 0x8]          ; 005f7500
     FSTP float ptr [ESP + 0xc]          ; 005f7504
-    JMP 0x005f74ae                      ; 005f7508 | LAB_005f74ae
-        ;   XREF to: 005f74ae (UNCONDITIONAL_JUMP)
+    JMP 0x005f74ae                      ; 005f7508
+        ;   XREF to: 005f74ae (UNCONDITIONAL_JUMP)  ; LAB_005f74ae
     FLD float ptr [EDX + 0x28]          ; 005f750a
         ;   Label: LAB_005f750a
     FSUB float ptr [ESP + 0x40]         ; 005f750d
     FLD1                                ; 005f7511
     FADDP                               ; 005f7513
     FSQRT                               ; 005f7515
-    FLD double ptr [0x006583e5]         ; 005f7517 | double g_QuaternionMatrixConversionHalf
+    FLD double ptr [0x006583e5]         ; 005f7517 | g_QuaternionMatrixConversionHalf
     FLD ST0                             ; 005f751d
     FDIV ST0,ST2                        ; 005f751f
     FLD ST2                             ; 005f7521
@@ -177,15 +177,15 @@ section .text
     FCOMP float ptr [EDX + 0x28]        ; 005f756d
     FNSTSW AX                           ; 005f7570
     SAHF                                ; 005f7572
-    JBE 0x005f750a                      ; 005f7573 | LAB_005f750a
-        ;   XREF to: 005f750a (CONDITIONAL_JUMP)
+    JBE 0x005f750a                      ; 005f7573
+        ;   XREF to: 005f750a (CONDITIONAL_JUMP)  ; LAB_005f750a
     FLD float ptr [EDX + 0x28]          ; 005f7575
     FADD float ptr [EDX]                ; 005f7578
     FSUBR float ptr [EDX + 0x14]        ; 005f757a
     FLD1                                ; 005f757d
     FADDP                               ; 005f757f
     FSQRT                               ; 005f7581
-    FLD double ptr [0x006583e5]         ; 005f7583 | double g_QuaternionMatrixConversionHalf
+    FLD double ptr [0x006583e5]         ; 005f7583 | g_QuaternionMatrixConversionHalf
     FLD ST0                             ; 005f7589
     FDIV ST0,ST2                        ; 005f758b
     FLD ST2                             ; 005f758d

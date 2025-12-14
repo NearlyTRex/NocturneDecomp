@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 65, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 21, 
-    "assembly_lines": 11, 
-    "suspect_count": 5, 
+    "assembly_lines": 11,
+    "complexity_score": 65,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_voicubat_wav_00656cdf", 
-      "addr": "00656cdf", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0xcdcc0) = 1;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0xce904) = 1;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0xce8f4) = 0x40000000;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005e7480", 
-    "signature": "undefined core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480()", 
-    "address_range": [
-      [
-        "005e7480", 
-        "005e74b4"
-      ]
-    ], 
-    "name": "core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 21
+  },
   "cross_references": [
     {
-      "from_addr": "005e6561", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970", 
-      "addr": "005e5970"
+      "addr": "005e5970",
+      "from_addr": "005e6561",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e7480",
+    "address_range": [
+      [
+        "005e7480",
+        "005e74b4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480",
+    "signature": "undefined core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00656cdf",
+      "name": "s_voicubat_wav_00656cdf",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0xcdcc0) = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0xce904) = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0xce8f4) = 0x40000000;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();",
+      "type": "stack_param"
     }
   ]
 }

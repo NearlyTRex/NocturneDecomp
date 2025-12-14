@@ -37,8 +37,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0051d0ec
     MOV EDX,dword ptr [EBP + 0x18]      ; 0051d0ef
     TEST EDX,EDX                        ; 0051d0f2
-    JNZ 0x0051d0fd                      ; 0051d0f4 | LAB_0051d0fd
-        ;   XREF to: 0051d0fd (CONDITIONAL_JUMP)
+    JNZ 0x0051d0fd                      ; 0051d0f4
+        ;   XREF to: 0051d0fd (CONDITIONAL_JUMP)  ; LAB_0051d0fd
     MOV ESP,EBP                         ; 0051d0f6
         ;   Label: LAB_0051d0f6
     POP EBP                             ; 0051d0f8
@@ -49,19 +49,18 @@ section .text
     MOV ECX,dword ptr [EDI + 0x44]      ; 0051d0fd
         ;   Label: LAB_0051d0fd
     PUSH ECX                            ; 0051d100
-    PUSH 0x6380b5                       ; 0051d101 | = "%d\n" | s_d_006380b5 = %d
-
+    PUSH 0x6380b5                       ; 0051d101 | = "%d\n"
     PUSH EDX                            ; 0051d106
     XOR EBX,EBX                         ; 0051d107
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0051d109 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0051d109
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     MOV ESI,dword ptr [EDI + 0x44]      ; 0051d10e
     ADD ESP,0xc                         ; 0051d111
     TEST ESI,ESI                        ; 0051d114
-    JLE 0x0051d0f6                      ; 0051d116 | LAB_0051d0f6
-        ;   XREF to: 0051d0f6 (CONDITIONAL_JUMP)
-    FLD double ptr [0x00661388]         ; 0051d118 | double g_InfiniteCollapseCost
-    FMUL double ptr [0x006380cd]        ; 0051d11e | double DOUBLE_006380cd
+    JLE 0x0051d0f6                      ; 0051d116
+        ;   XREF to: 0051d0f6 (CONDITIONAL_JUMP)  ; LAB_0051d0f6
+    FLD double ptr [0x00661388]         ; 0051d118 | g_InfiniteCollapseCost
+    FMUL double ptr [0x006380cd]        ; 0051d11e | DOUBLE_006380cd
     XOR ESI,ESI                         ; 0051d124
     FSTP double ptr [ESP]               ; 0051d126
     MOV EDX,dword ptr [EDI + 0x48]      ; 0051d129
@@ -71,8 +70,8 @@ section .text
     FCOMP double ptr [ESP]              ; 0051d131
     FNSTSW AX                           ; 0051d134
     SAHF                                ; 0051d136
-    JC 0x0051d140                       ; 0051d137 | LAB_0051d140
-        ;   XREF to: 0051d140 (CONDITIONAL_JUMP)
+    JC 0x0051d140                       ; 0051d137
+        ;   XREF to: 0051d140 (CONDITIONAL_JUMP)  ; LAB_0051d140
     MOV dword ptr [EDX + 0x10],0x0      ; 0051d139
     SUB ESP,0x8                         ; 0051d140
         ;   Label: LAB_0051d140
@@ -86,19 +85,18 @@ section .text
     PUSH EAX                            ; 0051d154
     MOV ECX,dword ptr [EDX]             ; 0051d155
     PUSH ECX                            ; 0051d157
-    PUSH 0x6380b9                       ; 0051d158 | = "%d,%d,%lg,%g\n" | s_d_d_lg_g_006380b9 = %d,%d,%lg,%g
-
+    PUSH 0x6380b9                       ; 0051d158 | = "%d,%d,%lg,%g\n"
     MOV EAX,dword ptr [EBP + 0x18]      ; 0051d15d
     PUSH EAX                            ; 0051d160
     ADD ESI,0xf0                        ; 0051d161
     INC EBX                             ; 0051d167
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0051d168 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0051d168
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     MOV EDX,dword ptr [EDI + 0x44]      ; 0051d16d
     ADD ESP,0x20                        ; 0051d170
     CMP EBX,EDX                         ; 0051d173
-    JGE 0x0051d0f6                      ; 0051d175 | LAB_0051d0f6
-        ;   XREF to: 0051d0f6 (CONDITIONAL_JUMP)
-    JMP 0x0051d129                      ; 0051d17b | LAB_0051d129
-        ;   XREF to: 0051d129 (UNCONDITIONAL_JUMP)
+    JGE 0x0051d0f6                      ; 0051d175
+        ;   XREF to: 0051d0f6 (CONDITIONAL_JUMP)  ; LAB_0051d0f6
+    JMP 0x0051d129                      ; 0051d17b
+        ;   XREF to: 0051d129 (UNCONDITIONAL_JUMP)  ; LAB_0051d129
 

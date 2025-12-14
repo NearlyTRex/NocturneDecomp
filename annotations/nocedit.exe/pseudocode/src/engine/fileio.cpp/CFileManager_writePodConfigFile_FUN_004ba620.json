@@ -1,177 +1,177 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 7, 
-    "global_count": 10, 
-    "total_lines": 93, 
-    "assembly_lines": 64, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
-      "addr": "004a2f70"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00628d4f", 
-      "addr": "00628d4f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wt_00628d64", 
-      "addr": "00628d64", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pod_ini_00628d67", 
-      "addr": "00628d67", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00628d6f", 
-      "addr": "00628d6f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_create_POD_INI_00628d84", 
-      "addr": "00628d84", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_00628d9a", 
-      "addr": "00628d9a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_00628d9e", 
-      "addr": "00628d9e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00628da2", 
-      "addr": "00628da2", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ba620", 
-    "signature": "void engine_fileio.cpp_CFileManager_writePodConfigFile_FUN_004ba620(CFileManager * this_ptr, CStrList * pod_list)", 
-    "address_range": [
-      [
-        "004ba620", 
-        "004ba6b3"
-      ]
-    ], 
-    "name": "engine_fileio.cpp_CFileManager_writePodConfigFile_FUN_004ba620"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileManager *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "pod_list"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 64,
+    "complexity_score": 29,
+    "cross_reference_count": 7,
+    "function_call_count": 5,
+    "global_count": 10,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 93
+  },
   "cross_references": [
     {
-      "from_addr": "004bc1d6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bc1d6",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bae8e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
-      "addr": "004ba740"
-    }, 
+      "addr": "004ba740",
+      "from_addr": "004bae8e",
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bce22", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0", 
-      "addr": "004bccf0"
-    }, 
+      "addr": "004bccf0",
+      "from_addr": "004bce22",
+      "name": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b71a1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10", 
-      "addr": "004b6e10"
-    }, 
+      "addr": "004b6e10",
+      "from_addr": "004b71a1",
+      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b8f93", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
-      "addr": "004b86b0"
-    }, 
+      "addr": "004b86b0",
+      "from_addr": "004b8f93",
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bd0dc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0", 
-      "addr": "004bcec0"
-    }, 
+      "addr": "004bcec0",
+      "from_addr": "004bd0dc",
+      "name": "engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bc512", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0", 
-      "addr": "004bc2b0"
+      "addr": "004bc2b0",
+      "from_addr": "004bc512",
+      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004ba620",
+    "address_range": [
+      [
+        "004ba620",
+        "004ba6b3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CFileManager_writePodConfigFile_FUN_004ba620",
+    "signature": "void engine_fileio.cpp_CFileManager_writePodConfigFile_FUN_004ba620(CFileManager * this_ptr, CStrList * pod_list)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    },
+    {
+      "addr": "004a2f70",
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00628d4f",
+      "name": "s_engine_fileio_cpp_00628d4f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628d64",
+      "name": "s_wt_00628d64",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628d67",
+      "name": "s_pod_ini_00628d67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628d6f",
+      "name": "s_engine_fileio_cpp_00628d6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628d84",
+      "name": "s_Can_t_create_POD_INI_00628d84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628d9a",
+      "name": "s_d_00628d9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628d9e",
+      "name": "s_s_00628d9e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628da2",
+      "name": "s_engine_fileio_cpp_00628da2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileManager *"
+      },
+      {
+        "is_param": true,
+        "name": "pod_list",
+        "offset": 8,
+        "size": 4,
+        "type": "CStrList *"
+      }
+    ]
+  },
+  "suspects": []
 }

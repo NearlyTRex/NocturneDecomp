@@ -23,14 +23,14 @@ section .text
         ;   Label: sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240
     FDIV double ptr [ESP + 0x4]         ; 005aa242
     MOV EAX,dword ptr [ESP + 0x4]       ; 005aa246
-    MOV [0x00681b30],EAX                ; 005aa24a | double DOUBLE_00681b30
+    MOV [0x00681b30],EAX                ; 005aa24a | DOUBLE_00681b30
     MOV EAX,dword ptr [ESP + 0x8]       ; 005aa24f
-    MOV EDX,dword ptr [0x03f69268]      ; 005aa253 | CSoundDevice * g_CSoundDevicePtr
+    MOV EDX,dword ptr [0x03f69268]      ; 005aa253 | g_CSoundDevicePtr
     MOV [0x00681b34],EAX                ; 005aa259 | DOUBLE_00681b30+4
-    FSTP double ptr [0x00681b38]        ; 005aa25e | double DOUBLE_00681b38
+    FSTP double ptr [0x00681b38]        ; 005aa25e | DOUBLE_00681b38
     TEST EDX,EDX                        ; 005aa264
-    JNZ 0x005aa269                      ; 005aa266 | LAB_005aa269
-        ;   XREF to: 005aa269 (CONDITIONAL_JUMP)
+    JNZ 0x005aa269                      ; 005aa266
+        ;   XREF to: 005aa269 (CONDITIONAL_JUMP)  ; LAB_005aa269
     RET                                 ; 005aa268
     PUSH EBX                            ; 005aa269
         ;   Label: LAB_005aa269

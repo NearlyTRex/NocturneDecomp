@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 27, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 103, 
-    "assembly_lines": 76, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_lseek_FUN_00606690", 
-      "addr": "00606690"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 76,
+    "complexity_score": 27,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__watcallStack", 
-    "address": "0060dbe8", 
-    "signature": "int crt_fstream.cpp_filebuf_seekoff_FUN_0060dbe8(filebuf * this_ptr, long offset, int direction, int mode)", 
+    "address": "0060dbe8",
     "address_range": [
       [
-        "0060dbe8", 
+        "0060dbe8",
         "0060dc5d"
       ]
-    ], 
-    "name": "crt_fstream.cpp_filebuf_seekoff_FUN_0060dbe8"
-  }, 
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_fstream.cpp_filebuf_seekoff_FUN_0060dbe8",
+    "signature": "int crt_fstream.cpp_filebuf_seekoff_FUN_0060dbe8(filebuf * this_ptr, long offset, int direction, int mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00606690",
+      "name": "crt_stdio.c_lseek_FUN_00606690"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "filebuf *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "filebuf *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "long", 
-        "size": 4, 
-        "name": "offset"
-      }, 
+        "is_param": true,
+        "name": "offset",
+        "offset": 8,
+        "size": 4,
+        "type": "long"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "direction"
-      }, 
+        "is_param": true,
+        "name": "direction",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "mode"
+        "is_param": true,
+        "name": "mode",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

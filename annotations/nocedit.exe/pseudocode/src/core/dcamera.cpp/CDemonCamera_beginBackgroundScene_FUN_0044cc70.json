@@ -1,244 +1,244 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 77, 
-    "pseudocode_lines": 62, 
-    "cross_reference_count": 2, 
-    "global_count": 27, 
-    "total_lines": 175, 
-    "assembly_lines": 113, 
-    "suspect_count": 1, 
+    "assembly_lines": 113,
+    "complexity_score": 77,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 27,
+    "pseudocode_lines": 62,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20", 
-      "addr": "0048de20"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890", 
-      "addr": "0048c890"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dcamera_cpp_0061a050", 
-      "addr": "0061a050", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonCamera_beginBackgr_0061a064", 
-      "addr": "0061a064", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BackgroundSceneDepth", 
-      "addr": "0151abb0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BackgroundSavedBitsPerPixel", 
-      "addr": "0151abb4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BackgroundSavedUseExternalRenderer", 
-      "addr": "0151abb8", 
-      "value": null
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_BackgroundSavedScreenBufferArray", 
-      "addr": "0151abbc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0151abc0", 
-      "addr": "0151abc0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BackgroundSavedRedBitPosition", 
-      "addr": "0151be7c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BackgroundSavedGreenBitPosition", 
-      "addr": "0151be80", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BackgroundSavedBlueBitPosition", 
-      "addr": "0151be84", 
-      "value": null
-    }, 
-    {
-      "type": "SCameraViewportState", 
-      "name": "g_BackgroundSavedCameraState", 
-      "addr": "0151be98", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitPosition", 
-      "addr": "02d01f24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitPosition", 
-      "addr": "02d01f30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitPosition", 
-      "addr": "02d01f3c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterXFixed", 
-      "addr": "02d02548", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterYFixed", 
-      "addr": "02d0254c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportRightFixed", 
-      "addr": "02d02550", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportBottomFixed", 
-      "addr": "02d02554", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 48, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(void *)((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * iVar2 * 4);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0044cc70", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(CDemonCamera * this_ptr)", 
-    "address_range": [
-      [
-        "0044cc70", 
-        "0044cdef"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 175
+  },
   "cross_references": [
     {
-      "from_addr": "0056c5b6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
-    }, 
+      "addr": "0056c1a0",
+      "from_addr": "0056c5b6",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056b392", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
-      "addr": "0056ae50"
+      "addr": "0056ae50",
+      "from_addr": "0056b392",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044cc70",
+    "address_range": [
+      [
+        "0044cc70",
+        "0044cdef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70",
+    "signature": "void core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(CDemonCamera * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0048de20",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20"
+    },
+    {
+      "addr": "0048c890",
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061a050",
+      "name": "s_core_dcamera_cpp_0061a050",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061a064",
+      "name": "s_CDemonCamera_beginBackgr_0061a064",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "0151abb0",
+      "name": "g_BackgroundSceneDepth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151abb4",
+      "name": "g_BackgroundSavedBitsPerPixel",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151abb8",
+      "name": "g_BackgroundSavedUseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151abbc",
+      "name": "g_BackgroundSavedScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "0151abc0",
+      "name": "DAT_0151abc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0151be7c",
+      "name": "g_BackgroundSavedRedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151be80",
+      "name": "g_BackgroundSavedGreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151be84",
+      "name": "g_BackgroundSavedBlueBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151be98",
+      "name": "g_BackgroundSavedCameraState",
+      "type": "SCameraViewportState",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02548",
+      "name": "g_ViewportCenterXFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_ViewportCenterYFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02550",
+      "name": "g_ViewportRightFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02554",
+      "name": "g_ViewportBottomFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(void *)((int)",
+      "text": "(void *)((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * iVar2 * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

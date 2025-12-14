@@ -49,9 +49,9 @@ section .text
     FCOMPP                              ; 004c4011
     FNSTSW AX                           ; 004c4013
     SAHF                                ; 004c4015
-    JNC 0x004c4050                      ; 004c4016 | LAB_004c4050
-        ;   XREF to: 004c4050 (CONDITIONAL_JUMP)
-    MOV EAX,[0x0067b654]                ; 004c4018 | CGame * g_CGamePtr
+    JNC 0x004c4050                      ; 004c4016
+        ;   XREF to: 004c4050 (CONDITIONAL_JUMP)  ; LAB_004c4050
+    MOV EAX,[0x0067b654]                ; 004c4018 | g_CGamePtr
     MOV EAX,dword ptr [EAX + 0x264]     ; 004c401d | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x24],EAX      ; 004c4023
     FLD float ptr [EBX + 0x3dc]         ; 004c4027
@@ -62,12 +62,12 @@ section .text
     FCOMPP                              ; 004c403f
     FNSTSW AX                           ; 004c4041
     SAHF                                ; 004c4043
-    JC 0x004c413f                       ; 004c4044 | LAB_004c413f
-        ;   XREF to: 004c413f (CONDITIONAL_JUMP)
+    JC 0x004c413f                       ; 004c4044
+        ;   XREF to: 004c413f (CONDITIONAL_JUMP)  ; LAB_004c413f
     MOV EAX,dword ptr [EBX]             ; 004c404a
     TEST EAX,EAX                        ; 004c404c
-    JZ 0x004c4056                       ; 004c404e | LAB_004c4056
-        ;   XREF to: 004c4056 (CONDITIONAL_JUMP)
+    JZ 0x004c4056                       ; 004c404e
+        ;   XREF to: 004c4056 (CONDITIONAL_JUMP)  ; LAB_004c4056
     ADD ESP,0x28                        ; 004c4050
         ;   Label: LAB_004c4050
     POP ESI                             ; 004c4053
@@ -78,21 +78,21 @@ section .text
     PUSH 0x42c80000                     ; 004c405b
     PUSH 0x41800000                     ; 004c4060
     PUSH ESI                            ; 004c4065
-    MOV ECX,dword ptr [0x0067a3d0]      ; 004c4066 | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
-    PUSH ECX                            ; 004c406c | CFireEffect g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8c10 ; 004c406d | void core_fire.cpp_CFireEffect_FUN_004c8c10(CFireEffect * this_ptr)
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x0067a3d0]      ; 004c4066 | g_CFireEffectInstance | g_CFireEffectPtr
+    PUSH ECX                            ; 004c406c | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_FUN_004c8c10 ; 004c406d
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8c10(CFireEffect * this_ptr)
     ADD ESP,0x14                        ; 004c4072
     MOV ESI,dword ptr [EBX + 0x3e0]     ; 004c4075
     PUSH ESI                            ; 004c407b
-    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 004c407c | int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
-        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 004c407c
+        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
     ADD ESP,0x4                         ; 004c4081
     ADD ESP,0x28                        ; 004c4084
     POP ESI                             ; 004c4087
     POP EBX                             ; 004c4088
     RET                                 ; 004c4089
-    MOV EAX,[0x03f87558]                ; 004c408a | CVector3f g_ZeroVector
+    MOV EAX,[0x03f87558]                ; 004c408a | g_ZeroVector
         ;   Label: LAB_004c408a
     MOV dword ptr [ESP],EAX             ; 004c408f
     MOV EAX,[0x03f8755c]                ; 004c4092 | g_ZeroVector.y
@@ -101,8 +101,8 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004c40a0
     LEA EAX,[EBX + 0x4]                 ; 004c40a4
     PUSH EAX                            ; 004c40a7
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004c40a8 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004c40a8
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c40ad
     FLD float ptr [ESP + 0x8]           ; 004c40b0
     FADD float ptr [EAX + 0x568c]       ; 004c40b4
@@ -113,8 +113,8 @@ section .text
     ADD EBX,0x198                       ; 004c40c2
     PUSH EBX                            ; 004c40c8
     FSTP float ptr [ESP + 0x14]         ; 004c40c9
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 004c40cd | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 004c40cd
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 004c40d2
     FADD float ptr [EAX]                ; 004c40d4
     ADD ESP,0xc                         ; 004c40d6
@@ -128,8 +128,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004c40ef
     FSTP float ptr [ESP + 0x14]         ; 004c40f3
     CMP EBX,EAX                         ; 004c40f7
-    JZ 0x004c4112                       ; 004c40f9 | LAB_004c4112
-        ;   XREF to: 004c4112 (CONDITIONAL_JUMP)
+    JZ 0x004c4112                       ; 004c40f9
+        ;   XREF to: 004c4112 (CONDITIONAL_JUMP)  ; LAB_004c4112
     MOV EAX,dword ptr [ESP + 0xc]       ; 004c40fb
     MOV dword ptr [ESP],EAX             ; 004c40ff
     MOV EAX,dword ptr [ESP + 0x10]      ; 004c4102
@@ -144,10 +144,10 @@ section .text
     PUSH 0x0                            ; 004c4123
     LEA EAX,[ESP + 0x14]                ; 004c4125
     PUSH EAX                            ; 004c4129
-    MOV EDX,dword ptr [0x0067a3d0]      ; 004c412a | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
-    PUSH EDX                            ; 004c4130 | CFireEffect g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004c4131 | void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x0067a3d0]      ; 004c412a | g_CFireEffectInstance | g_CFireEffectPtr
+    PUSH EDX                            ; 004c4130 | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004c4131
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
     ADD ESP,0x1c                        ; 004c4136
     ADD ESP,0x28                        ; 004c4139
     POP ESI                             ; 004c413c
@@ -156,13 +156,13 @@ section .text
     PUSH dword ptr [ESP + 0x24]         ; 004c413f
         ;   Label: LAB_004c413f
     PUSH ESI                            ; 004c4143
-    CALL core_box.cpp_CBox_process_FUN_0041e2f0 ; 004c4144 | void core_box.cpp_CBox_process_FUN_0041e2f0(CBox * this_ptr, float delta_time)
-        ;   XREF to: 0041e2f0 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBox_process_FUN_0041e2f0 ; 004c4144
+        ;   XREF to: 0041e2f0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_process_FUN_0041e2f0(CBox * this_ptr, float delta_time)
     MOV EAX,dword ptr [EBX]             ; 004c4149
     ADD ESP,0x8                         ; 004c414b
     TEST EAX,EAX                        ; 004c414e
-    JZ 0x004c408a                       ; 004c4150 | LAB_004c408a
-        ;   XREF to: 004c408a (CONDITIONAL_JUMP)
+    JZ 0x004c408a                       ; 004c4150
+        ;   XREF to: 004c408a (CONDITIONAL_JUMP)  ; LAB_004c408a
     ADD ESP,0x28                        ; 004c4156
     POP ESI                             ; 004c4159
     POP EBX                             ; 004c415a

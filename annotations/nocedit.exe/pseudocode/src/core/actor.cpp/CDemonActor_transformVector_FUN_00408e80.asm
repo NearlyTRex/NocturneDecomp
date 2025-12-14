@@ -37,8 +37,8 @@ section .text
     PUSH EBX                            ; 00408e8e
     ADD EAX,0x3c                        ; 00408e8f
     PUSH EAX                            ; 00408e92
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 00408e93 | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 00408e93
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00408e98
     MOV EAX,EBX                         ; 00408e9b
     POP EBX                             ; 00408e9d

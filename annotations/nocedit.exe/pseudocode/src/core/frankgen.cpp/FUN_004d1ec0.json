@@ -1,156 +1,156 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 127, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 44, 
-    "assembly_lines": 27, 
-    "suspect_count": 10, 
+    "assembly_lines": 27,
+    "complexity_score": 127,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 17,
+    "suspect_count": 10,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_floor_FUN_005feb90", 
-      "addr": "005feb90"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EBX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000008;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_0000000c;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = in_stack_00000008 * in_stack_0000000c + *(float *)(in_stack_00000004 + 0x48c);"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = in_stack_00000008 * in_stack_0000000c + *(float *)(in_stack_00000004 + 0x48c);"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = in_stack_00000008 * in_stack_0000000c + *(float *)(in_stack_00000004 + 0x48c);"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000004 + 0x48c) = fVar1;"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(float *)(extraout_EBX + 0x48c) = *(float *)(extraout_EBX + 0x48c) - (float)(int)ROUND(dVar2);"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(float *)(extraout_EBX + 0x48c) = *(float *)(extraout_EBX + 0x48c) - (float)(int)ROUND(dVar2);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004d1ec0", 
-    "signature": "undefined core_frankgen.cpp_FUN_004d1ec0()", 
-    "address_range": [
-      [
-        "004d1ec0", 
-        "004d1f1b"
-      ]
-    ], 
-    "name": "core_frankgen.cpp_FUN_004d1ec0"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 44
+  },
   "cross_references": [
     {
-      "from_addr": "004d1b0c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_frankgen.cpp_PlaySounds_FUN_004d1a40", 
-      "addr": "004d1a40"
+      "addr": "004d1a40",
+      "from_addr": "004d1b0c",
+      "name": "core_frankgen.cpp_PlaySounds_FUN_004d1a40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d1ec0",
+    "address_range": [
+      [
+        "004d1ec0",
+        "004d1f1b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_frankgen.cpp_FUN_004d1ec0",
+    "signature": "undefined core_frankgen.cpp_FUN_004d1ec0()"
+  },
+  "function_calls": [
+    {
+      "addr": "005feb90",
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EBX",
+      "text": "int extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "text": "float in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "fVar1 = in_stack_00000008 * in_stack_0000000c + *(float *)(in_stack_00000004 + 0x48c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_0000000c",
+      "text": "fVar1 = in_stack_00000008 * in_stack_0000000c + *(float *)(in_stack_00000004 + 0x48c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "fVar1 = in_stack_00000008 * in_stack_0000000c + *(float *)(in_stack_00000004 + 0x48c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004 + 0x48c) = fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 0x48c) = *(float *)(extraout_EBX + 0x48c) - (float)(int)ROUND(dVar2);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 0x48c) = *(float *)(extraout_EBX + 0x48c) - (float)(int)ROUND(dVar2);",
+      "type": "extra_output"
     }
   ]
 }

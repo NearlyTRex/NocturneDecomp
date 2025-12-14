@@ -22,8 +22,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043f591
     MOV EDX,dword ptr [EBX + 0x2c]      ; 0043f595
     TEST EDX,EDX                        ; 0043f598
-    JGE 0x0043f5a3                      ; 0043f59a | LAB_0043f5a3
-        ;   XREF to: 0043f5a3 (CONDITIONAL_JUMP)
+    JGE 0x0043f5a3                      ; 0043f59a
+        ;   XREF to: 0043f5a3 (CONDITIONAL_JUMP)  ; LAB_0043f5a3
     MOV EAX,0x1                         ; 0043f59c
     POP EBX                             ; 0043f5a1
     RET                                 ; 0043f5a2
@@ -33,8 +33,8 @@ section .text
     PUSH EDX                            ; 0043f5a8
     LEA EAX,[EBX + 0x4]                 ; 0043f5a9
     PUSH EAX                            ; 0043f5ac
-    CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 ; 0043f5ad | int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, FILE * output_file)
-        ;   XREF to: 0043f200 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 ; 0043f5ad
+        ;   XREF to: 0043f200 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, FILE * output_file)
     ADD ESP,0xc                         ; 0043f5b2
     MOV dword ptr [EBX + 0x2c],0xffffffff ; 0043f5b5
     MOV EAX,0x1                         ; 0043f5bc

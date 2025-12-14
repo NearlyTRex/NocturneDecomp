@@ -39,92 +39,92 @@ section .text
     MOV EBP,ESP                         ; 00465b44
     SUB ESP,0x0                         ; 00465b46
     FLD float ptr [EBP + 0x1c]          ; 00465b4c
-    FMUL double ptr [0x0061c65e]        ; 00465b4f | double g_ModelPolygonDegreesToRadiansConversion
+    FMUL double ptr [0x0061c65e]        ; 00465b4f | g_ModelPolygonDegreesToRadiansConversion
     FCOS                                ; 00465b55
     FSTP float ptr [EBP + 0x1c]         ; 00465b57
     FLD float ptr [EBP + 0x1c]          ; 00465b5a
     SUB ESP,0x8                         ; 00465b5d
     FSTP double ptr [ESP]               ; 00465b60
     IMUL EDX,dword ptr [EBP + 0x18],0x184 ; 00465b63
-    MOV EAX,0x16e9910                   ; 00465b6a | SShapeEditorPolygon[20000] g_ModelPolygonData
+    MOV EAX,0x16e9910                   ; 00465b6a | g_ModelPolygonData
     ADD EAX,EDX                         ; 00465b6f
     PUSH EAX                            ; 00465b71
     IMUL EDX,dword ptr [EBP + 0x14],0x184 ; 00465b72
-    MOV EAX,0x16e9910                   ; 00465b79 | SShapeEditorPolygon[20000] g_ModelPolygonData
+    MOV EAX,0x16e9910                   ; 00465b79 | g_ModelPolygonData
     ADD EAX,EDX                         ; 00465b7e
     PUSH EAX                            ; 00465b80
-    CALL shape_design.c_validatePolygonNormals_FUN_00461d80 ; 00465b81 | int shape_design.c_validatePolygonNormals_FUN_00461d80(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double cos_tolerance)
-        ;   XREF to: 00461d80 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_validatePolygonNormals_FUN_00461d80 ; 00465b81
+        ;   XREF to: 00461d80 (UNCONDITIONAL_CALL)  ; int shape_design.c_validatePolygonNormals_FUN_00461d80(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double cos_tolerance)
     ADD ESP,0x10                        ; 00465b86
     TEST EAX,EAX                        ; 00465b89
-    JZ 0x00465bdb                       ; 00465b8b | LAB_00465bdb
-        ;   XREF to: 00465bdb (CONDITIONAL_JUMP)
+    JZ 0x00465bdb                       ; 00465b8b
+        ;   XREF to: 00465bdb (CONDITIONAL_JUMP)  ; LAB_00465bdb
     IMUL EAX,dword ptr [EBP + 0x18],0x184 ; 00465b8d
     PUSH dword ptr [EAX + 0x16e99b4]    ; 00465b94 | DAT_016e99b4
     IMUL EAX,dword ptr [EBP + 0x14],0x184 ; 00465b9a
     PUSH dword ptr [EAX + 0x16e99b4]    ; 00465ba1 | DAT_016e99b4
     IMUL EAX,dword ptr [EBP + 0x18],0x184 ; 00465ba7
-    MOV EDX,0x16e9910                   ; 00465bae | SShapeEditorPolygon[20000] g_ModelPolygonData
+    MOV EDX,0x16e9910                   ; 00465bae | g_ModelPolygonData
     ADD EAX,EDX                         ; 00465bb3
     ADD EAX,0xb8                        ; 00465bb5
     PUSH EAX                            ; 00465bba
     IMUL EAX,dword ptr [EBP + 0x14],0x184 ; 00465bbb
-    MOV EDX,0x16e9910                   ; 00465bc2 | SShapeEditorPolygon[20000] g_ModelPolygonData
+    MOV EDX,0x16e9910                   ; 00465bc2 | g_ModelPolygonData
     ADD EAX,EDX                         ; 00465bc7
     ADD EAX,0xb8                        ; 00465bc9
     PUSH EAX                            ; 00465bce
-    CALL shape_design.c_findVertexMatches_FUN_00461ae0 ; 00465bcf | int shape_design.c_findVertexMatches_FUN_00461ae0(int * vertices1, int * vertices2, int count1, int count2)
-        ;   XREF to: 00461ae0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_findVertexMatches_FUN_00461ae0 ; 00465bcf
+        ;   XREF to: 00461ae0 (UNCONDITIONAL_CALL)  ; int shape_design.c_findVertexMatches_FUN_00461ae0(int * vertices1, int * vertices2, int count1, int count2)
     ADD ESP,0x10                        ; 00465bd4
     TEST EAX,EAX                        ; 00465bd7
-    JNZ 0x00465bdd                      ; 00465bd9 | LAB_00465bdd
-        ;   XREF to: 00465bdd (CONDITIONAL_JUMP)
-    JMP 0x00465c0d                      ; 00465bdb | LAB_00465c0d
+    JNZ 0x00465bdd                      ; 00465bd9
+        ;   XREF to: 00465bdd (CONDITIONAL_JUMP)  ; LAB_00465bdd
+    JMP 0x00465c0d                      ; 00465bdb
+        ;   XREF to: 00465c0d (UNCONDITIONAL_JUMP)  ; LAB_00465c0d
         ;   Label: LAB_00465bdb
-        ;   XREF to: 00465c0d (UNCONDITIONAL_JUMP)
     IMUL EDX,dword ptr [EBP + 0x18],0x184 ; 00465bdd
         ;   Label: LAB_00465bdd
-    MOV EAX,0x16e9910                   ; 00465be4 | SShapeEditorPolygon[20000] g_ModelPolygonData
+    MOV EAX,0x16e9910                   ; 00465be4 | g_ModelPolygonData
     ADD EAX,EDX                         ; 00465be9
     ADD EAX,0x54                        ; 00465beb
     PUSH EAX                            ; 00465bee
     IMUL EDX,dword ptr [EBP + 0x14],0x184 ; 00465bef
-    MOV EAX,0x16e9910                   ; 00465bf6 | SShapeEditorPolygon[20000] g_ModelPolygonData
+    MOV EAX,0x16e9910                   ; 00465bf6 | g_ModelPolygonData
     ADD EAX,EDX                         ; 00465bfb
     ADD EAX,0x54                        ; 00465bfd
     PUSH EAX                            ; 00465c00
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00465c01 | int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strcmp_FUN_005fef20 ; 00465c01
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00465c06
     TEST EAX,EAX                        ; 00465c09
-    JZ 0x00465c0f                       ; 00465c0b | LAB_00465c0f
-        ;   XREF to: 00465c0f (CONDITIONAL_JUMP)
-    JMP 0x00465c43                      ; 00465c0d | LAB_00465c43
+    JZ 0x00465c0f                       ; 00465c0b
+        ;   XREF to: 00465c0f (CONDITIONAL_JUMP)  ; LAB_00465c0f
+    JMP 0x00465c43                      ; 00465c0d
+        ;   XREF to: 00465c43 (UNCONDITIONAL_JUMP)  ; LAB_00465c43
         ;   Label: LAB_00465c0d
-        ;   XREF to: 00465c43 (UNCONDITIONAL_JUMP)
     CMP dword ptr [EBP + 0x20],0x0      ; 00465c0f
         ;   Label: LAB_00465c0f
-    JZ 0x00465c33                       ; 00465c13 | LAB_00465c33
-        ;   XREF to: 00465c33 (CONDITIONAL_JUMP)
+    JZ 0x00465c33                       ; 00465c13
+        ;   XREF to: 00465c33 (CONDITIONAL_JUMP)  ; LAB_00465c33
     IMUL EAX,dword ptr [EBP + 0x14],0x184 ; 00465c15
     IMUL EDX,dword ptr [EBP + 0x18],0x184 ; 00465c1c
     MOV EAX,dword ptr [EAX + 0x16e9a88] ; 00465c23 | DAT_016e9a88
     CMP EAX,dword ptr [EDX + 0x16e9a88] ; 00465c29 | DAT_016e9a88
-    JZ 0x00465c33                       ; 00465c2f | LAB_00465c33
-        ;   XREF to: 00465c33 (CONDITIONAL_JUMP)
-    JMP 0x00465c48                      ; 00465c31 | LAB_00465c48
-        ;   XREF to: 00465c48 (UNCONDITIONAL_JUMP)
+    JZ 0x00465c33                       ; 00465c2f
+        ;   XREF to: 00465c33 (CONDITIONAL_JUMP)  ; LAB_00465c33
+    JMP 0x00465c48                      ; 00465c31
+        ;   XREF to: 00465c48 (UNCONDITIONAL_JUMP)  ; LAB_00465c48
     MOV EAX,dword ptr [EBP + 0x18]      ; 00465c33
         ;   Label: LAB_00465c33
     PUSH EAX                            ; 00465c36
     MOV EAX,dword ptr [EBP + 0x14]      ; 00465c37
     PUSH EAX                            ; 00465c3a
-    CALL shape_design.c_mergeAdjacentPolygons_FUN_00462b70 ; 00465c3b | void shape_design.c_mergeAdjacentPolygons_FUN_00462b70(int polygon1_index, int polygon2_index)
-        ;   XREF to: 00462b70 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_mergeAdjacentPolygons_FUN_00462b70 ; 00465c3b
+        ;   XREF to: 00462b70 (UNCONDITIONAL_CALL)  ; void shape_design.c_mergeAdjacentPolygons_FUN_00462b70(int polygon1_index, int polygon2_index)
     ADD ESP,0x8                         ; 00465c40
-    CALL shape_design.c_removeUnusedVertices_FUN_00463830 ; 00465c43 | void shape_design.c_removeUnusedVertices_FUN_00463830()
+    CALL shape_design.c_removeUnusedVertices_FUN_00463830 ; 00465c43
+        ;   XREF to: 00463830 (UNCONDITIONAL_CALL)  ; void shape_design.c_removeUnusedVertices_FUN_00463830()
         ;   Label: LAB_00465c43
-        ;   XREF to: 00463830 (UNCONDITIONAL_CALL)
     POP EBP                             ; 00465c48
         ;   Label: LAB_00465c48
     POP EDI                             ; 00465c49

@@ -34,13 +34,13 @@ section .text
     POP ES                              ; 0060a628
     LEA EBX,[ECX + 0x1]                 ; 0060a629
     PUSH EBX                            ; 0060a62c
-    CALL crt_memory.c_malloc_FUN_00601bb0 ; 0060a62d | void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
-        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_malloc_FUN_00601bb0 ; 0060a62d
+        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
     ADD ESP,0x4                         ; 0060a632
     MOV EDX,EAX                         ; 0060a635
     TEST EAX,EAX                        ; 0060a637
-    JZ 0x0060a655                       ; 0060a639 | LAB_0060a655
-        ;   XREF to: 0060a655 (CONDITIONAL_JUMP)
+    JZ 0x0060a655                       ; 0060a639
+        ;   XREF to: 0060a655 (CONDITIONAL_JUMP)  ; LAB_0060a655
     MOV ECX,EBX                         ; 0060a63b
     MOV EDI,EAX                         ; 0060a63d
     PUSH ES                             ; 0060a63f

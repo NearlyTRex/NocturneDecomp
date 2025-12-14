@@ -24,21 +24,21 @@ section .text
     PUSH EBX                            ; 00570700
         ;   Label: core_set.cpp_FUN_00570700
     PUSH EBP                            ; 00570701
-    MOV EAX,[0x0067b654]                ; 00570702 | CGame g_CGameInstance | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 00570702 | g_CGamePtr | g_CGameInstance
     CMP dword ptr [EAX + 0x1f0],0x0     ; 00570707 | DAT_02d81c8c
-    JNZ 0x0057074a                      ; 0057070e | LAB_0057074a
-        ;   XREF to: 0057074a (CONDITIONAL_JUMP)
+    JNZ 0x0057074a                      ; 0057070e
+        ;   XREF to: 0057074a (CONDITIONAL_JUMP)  ; LAB_0057074a
     CMP dword ptr [EAX + 0x1f4],0x0     ; 00570710 | DAT_02d81c90
-    JZ 0x0057072c                       ; 00570717 | LAB_0057072c
-        ;   XREF to: 0057072c (CONDITIONAL_JUMP)
-    MOV EBX,dword ptr [0x006703ec]      ; 00570719 | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EBX                            ; 0057071f | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00570720 | int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
-        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)
+    JZ 0x0057072c                       ; 00570717
+        ;   XREF to: 0057072c (CONDITIONAL_JUMP)  ; LAB_0057072c
+    MOV EBX,dword ptr [0x006703ec]      ; 00570719 | g_CDemonRendererPtr | g_CDemonRendererInstance
+    PUSH EBX                            ; 0057071f | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 00570720
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00570725
     TEST EAX,EAX                        ; 00570728
-    JZ 0x0057074d                       ; 0057072a | LAB_0057074d
-        ;   XREF to: 0057074d (CONDITIONAL_JUMP)
+    JZ 0x0057074d                       ; 0057072a
+        ;   XREF to: 0057074d (CONDITIONAL_JUMP)  ; LAB_0057074d
     MOV EAX,dword ptr [ESP + 0x18]      ; 0057072c
         ;   Label: LAB_0057072c
     PUSH EAX                            ; 00570730
@@ -46,10 +46,10 @@ section .text
     PUSH EDX                            ; 00570735
     MOV ECX,dword ptr [ESP + 0x18]      ; 00570736
     PUSH ECX                            ; 0057073a
-    MOV EBX,dword ptr [0x006703ec]      ; 0057073b | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EBX                            ; 00570741 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 ; 00570742 | int engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
-        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)
+    MOV EBX,dword ptr [0x006703ec]      ; 0057073b | g_CDemonRendererPtr
+    PUSH EBX                            ; 00570741 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 ; 00570742
+        ;   XREF to: 0048ce20 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00570747
     POP EBP                             ; 0057074a
         ;   Label: LAB_0057074a
@@ -65,8 +65,8 @@ section .text
     PUSH EDI                            ; 0057075d
     MOV EBP,dword ptr [ESP + 0x20]      ; 0057075e
     PUSH EBP                            ; 00570762
-    CALL core_set.cpp_CDemonSet_FUN_0056ffe0 ; 00570763 | void core_set.cpp_CDemonSet_FUN_0056ffe0(CDemonSet * this_ptr)
-        ;   XREF to: 0056ffe0 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_FUN_0056ffe0 ; 00570763
+        ;   XREF to: 0056ffe0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056ffe0(CDemonSet * this_ptr)
     ADD ESP,0x10                        ; 00570768
     POP ESI                             ; 0057076b
     POP EDI                             ; 0057076c

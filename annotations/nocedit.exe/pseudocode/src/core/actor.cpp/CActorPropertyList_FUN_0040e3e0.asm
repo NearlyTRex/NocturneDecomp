@@ -28,8 +28,8 @@ section .text
     PUSH 0xa                            ; 0040e3ef
     MOV EBX,dword ptr [ESP + 0x20]      ; 0040e3f1
     PUSH EBX                            ; 0040e3f5
-    CALL core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0 ; 0040e3f6 | int core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList * this_ptr, int property_type, char * property_name, void * data_ptr, ...)
-        ;   XREF to: 0040e6c0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0 ; 0040e3f6
+        ;   XREF to: 0040e6c0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList * this_ptr, int property_type, char * property_name, void * data_ptr, ...)
     ADD ESP,0x14                        ; 0040e3fb
     MOV EDX,EAX                         ; 0040e3fe
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0040e400
@@ -39,15 +39,15 @@ section .text
         ;   Label: LAB_0040e408
     MOV byte ptr [EDI],AL               ; 0040e40a
     CMP AL,0x0                          ; 0040e40c
-    JZ 0x0040e420                       ; 0040e40e | LAB_0040e420
-        ;   XREF to: 0040e420 (CONDITIONAL_JUMP)
+    JZ 0x0040e420                       ; 0040e40e
+        ;   XREF to: 0040e420 (CONDITIONAL_JUMP)  ; LAB_0040e420
     MOV AL,byte ptr [ESI + 0x1]         ; 0040e410
     ADD ESI,0x2                         ; 0040e413
     MOV byte ptr [EDI + 0x1],AL         ; 0040e416
     ADD EDI,0x2                         ; 0040e419
     CMP AL,0x0                          ; 0040e41c
-    JNZ 0x0040e408                      ; 0040e41e | LAB_0040e408
-        ;   XREF to: 0040e408 (CONDITIONAL_JUMP)
+    JNZ 0x0040e408                      ; 0040e41e
+        ;   XREF to: 0040e408 (CONDITIONAL_JUMP)  ; LAB_0040e408
     POP EDI                             ; 0040e420
         ;   Label: LAB_0040e420
     MOV ESI,dword ptr [ESP + 0x20]      ; 0040e421
@@ -57,15 +57,15 @@ section .text
         ;   Label: LAB_0040e42c
     MOV byte ptr [EDI],AL               ; 0040e42e
     CMP AL,0x0                          ; 0040e430
-    JZ 0x0040e444                       ; 0040e432 | LAB_0040e444
-        ;   XREF to: 0040e444 (CONDITIONAL_JUMP)
+    JZ 0x0040e444                       ; 0040e432
+        ;   XREF to: 0040e444 (CONDITIONAL_JUMP)  ; LAB_0040e444
     MOV AL,byte ptr [ESI + 0x1]         ; 0040e434
     ADD ESI,0x2                         ; 0040e437
     MOV byte ptr [EDI + 0x1],AL         ; 0040e43a
     ADD EDI,0x2                         ; 0040e43d
     CMP AL,0x0                          ; 0040e440
-    JNZ 0x0040e42c                      ; 0040e442 | LAB_0040e42c
-        ;   XREF to: 0040e42c (CONDITIONAL_JUMP)
+    JNZ 0x0040e42c                      ; 0040e442
+        ;   XREF to: 0040e42c (CONDITIONAL_JUMP)  ; LAB_0040e42c
     POP EDI                             ; 0040e444
         ;   Label: LAB_0040e444
     MOV EDI,dword ptr [ESP + 0x24]      ; 0040e445

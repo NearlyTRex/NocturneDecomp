@@ -22,17 +22,17 @@ section .text
     SUB ESP,0x4                         ; 0060e8e2
     MOV EBX,dword ptr [ESP + 0x14]      ; 0060e8e5
     XOR EDX,EDX                         ; 0060e8e9
-    MOV AH,byte ptr [0x00684acc]        ; 0060e8eb | undefined1 DAT_00684acc
+    MOV AH,byte ptr [0x00684acc]        ; 0060e8eb | DAT_00684acc
     MOV dword ptr [ESP],EDX             ; 0060e8f1
     TEST AH,AH                          ; 0060e8f4
-    JZ 0x0060e922                       ; 0060e8f6 | LAB_0060e922
-        ;   XREF to: 0060e922 (CONDITIONAL_JUMP)
+    JZ 0x0060e922                       ; 0060e8f6
+        ;   XREF to: 0060e922 (CONDITIONAL_JUMP)  ; LAB_0060e922
     MOV EDI,ESP                         ; 0060e8f8
     FNSTCW word ptr SS:[EDI]            ; 0060e8fa
     WAIT                                ; 0060e8fd
     TEST EBX,EBX                        ; 0060e8fe
-    JZ 0x0060e922                       ; 0060e900 | LAB_0060e922
-        ;   XREF to: 0060e922 (CONDITIONAL_JUMP)
+    JZ 0x0060e922                       ; 0060e900
+        ;   XREF to: 0060e922 (CONDITIONAL_JUMP)  ; LAB_0060e922
     MOV ECX,dword ptr [ESP]             ; 0060e902
     MOV EAX,EBX                         ; 0060e905
     MOV EDI,dword ptr [ESP + 0x10]      ; 0060e907

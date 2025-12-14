@@ -15,8 +15,8 @@ section .text
         ;   Label: crt_unknown.c_FUN_00604104
     CMP AL,CL                           ; 00604106
     XCHG AH,AL                          ; 00604108
-    JC 0x00604110                       ; 0060410a | LAB_00604110
-        ;   XREF to: 00604110 (CONDITIONAL_JUMP)
+    JC 0x00604110                       ; 0060410a
+        ;   XREF to: 00604110 (CONDITIONAL_JUMP)  ; LAB_00604110
     XCHG AH,AL                          ; 0060410c
     DIV CL                              ; 0060410e
     ADD AH,0x30                         ; 00604110

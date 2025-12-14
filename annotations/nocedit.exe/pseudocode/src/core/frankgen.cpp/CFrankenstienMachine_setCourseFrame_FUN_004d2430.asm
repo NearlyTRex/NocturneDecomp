@@ -38,8 +38,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 004d2445
     MOV ESI,EAX                         ; 004d2447
     CMP EAX,0x1                         ; 004d2449
-    JL 0x004d24bd                       ; 004d244c | LAB_004d24bd
-        ;   XREF to: 004d24bd (CONDITIONAL_JUMP)
+    JL 0x004d24bd                       ; 004d244c
+        ;   XREF to: 004d24bd (CONDITIONAL_JUMP)  ; LAB_004d24bd
     FLD float ptr [EBP + 0x18]          ; 004d244e
         ;   Label: LAB_004d244e
     FLD float ptr [EBX + 0x15c]         ; 004d2451
@@ -55,8 +55,8 @@ section .text
     FCOMPP                              ; 004d246f
     FNSTSW AX                           ; 004d2471
     SAHF                                ; 004d2473
-    JBE 0x004d247b                      ; 004d2474 | LAB_004d247b
-        ;   XREF to: 004d247b (CONDITIONAL_JUMP)
+    JBE 0x004d247b                      ; 004d2474
+        ;   XREF to: 004d247b (CONDITIONAL_JUMP)  ; LAB_004d247b
     XOR EDI,EDI                         ; 004d2476
     MOV dword ptr [ESP],EDI             ; 004d2478
     DEC ESI                             ; 004d247b
@@ -68,8 +68,8 @@ section .text
     FCOMP float ptr [ESP + 0x4]         ; 004d248b
     FNSTSW AX                           ; 004d248f
     SAHF                                ; 004d2491
-    JBE 0x004d249b                      ; 004d2492 | LAB_004d249b
-        ;   XREF to: 004d249b (CONDITIONAL_JUMP)
+    JBE 0x004d249b                      ; 004d2492
+        ;   XREF to: 004d249b (CONDITIONAL_JUMP)  ; LAB_004d249b
     MOV EAX,dword ptr [ESP + 0x4]       ; 004d2494
     MOV dword ptr [ESP],EAX             ; 004d2498
     LEA EAX,[EBX + 0x30]                ; 004d249b
@@ -80,8 +80,8 @@ section .text
     ADD EBX,0x300                       ; 004d24a3
     PUSH dword ptr [ESP + 0x8]          ; 004d24a9
     PUSH EBX                            ; 004d24ad
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 004d24ae | void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_FUN_00442710 ; 004d24ae
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
     ADD ESP,0x10                        ; 004d24b3
     MOV ESP,EBP                         ; 004d24b6
     POP EBP                             ; 004d24b8
@@ -89,15 +89,15 @@ section .text
     POP ESI                             ; 004d24ba
     POP EBX                             ; 004d24bb
     RET                                 ; 004d24bc
-    MOV EDX,0x62ab98                    ; 004d24bd | = "..\\core\\frankgen.cpp" | s_core_frankgen_cpp_0062ab98 = ..\core\frankgen.cpp
+    MOV EDX,0x62ab98                    ; 004d24bd | = "..\\core\\frankgen.cpp"
         ;   Label: LAB_004d24bd
     MOV ECX,0x1dc                       ; 004d24c2
-    PUSH 0x62abad                       ; 004d24c7 | = "CFrankenstienMachine::setCourseFrame ..." | s_CFrankenstienMachine_set_0062abad = CFrankenstienMachine::setCourseFrame - no course!
-    MOV dword ptr [0x02f0ca48],EDX      ; 004d24cc | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 004d24d2 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004d24d8 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x62abad                       ; 004d24c7 | = "CFrankenstienMachine::setCourseFrame ..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 004d24cc | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 004d24d2 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004d24d8
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004d24dd
-    JMP 0x004d244e                      ; 004d24e0 | LAB_004d244e
-        ;   XREF to: 004d244e (UNCONDITIONAL_JUMP)
+    JMP 0x004d244e                      ; 004d24e0
+        ;   XREF to: 004d244e (UNCONDITIONAL_JUMP)  ; LAB_004d244e
 

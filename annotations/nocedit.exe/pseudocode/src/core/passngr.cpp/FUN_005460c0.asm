@@ -27,11 +27,11 @@ section .text
     FCOMPP                              ; 005460d0
     FNSTSW AX                           ; 005460d2
     SAHF                                ; 005460d4
-    JC 0x005460e0                       ; 005460d5 | LAB_005460e0
-        ;   XREF to: 005460e0 (CONDITIONAL_JUMP)
+    JC 0x005460e0                       ; 005460d5
+        ;   XREF to: 005460e0 (CONDITIONAL_JUMP)  ; LAB_005460e0
     CMP dword ptr [EBX + 0x240c],0x0    ; 005460d7
-    JZ 0x005460e7                       ; 005460de | LAB_005460e7
-        ;   XREF to: 005460e7 (CONDITIONAL_JUMP)
+    JZ 0x005460e7                       ; 005460de
+        ;   XREF to: 005460e7 (CONDITIONAL_JUMP)  ; LAB_005460e7
     XOR EAX,EAX                         ; 005460e0
         ;   Label: LAB_005460e0
     ADD ESP,0x18                        ; 005460e2
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_005460e7
     PUSH ESI                            ; 005460e8
     PUSH EBX                            ; 005460e9
-    CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 005460ea | void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
-        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 ; 005460ea
+        ;   XREF to: 00408b00 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActor * actor)
     ADD ESP,0x4                         ; 005460ef
     LEA EAX,[ESP + 0x8]                 ; 005460f2
     PUSH EAX                            ; 005460f6
@@ -51,24 +51,24 @@ section .text
     CALL dword ptr [ESI + 0x14]         ; 005460fe
     ADD ESP,0x8                         ; 00546101
     PUSH EAX                            ; 00546104
-    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 ; 00546105 | int core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D * this_ptr)
-        ;   XREF to: 004204f0 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 ; 00546105
+        ;   XREF to: 004204f0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 0054610a
     MOV EDI,EAX                         ; 0054610d
     TEST EAX,EAX                        ; 0054610f
-    JZ 0x00546128                       ; 00546111 | LAB_00546128
-        ;   XREF to: 00546128 (CONDITIONAL_JUMP)
+    JZ 0x00546128                       ; 00546111
+        ;   XREF to: 00546128 (CONDITIONAL_JUMP)  ; LAB_00546128
     TEST dword ptr [EBX + 0x20440],0x7fffffff ; 00546113
-    JNZ 0x0054613a                      ; 0054611d | LAB_0054613a
-        ;   XREF to: 0054613a (CONDITIONAL_JUMP)
+    JNZ 0x0054613a                      ; 0054611d
+        ;   XREF to: 0054613a (CONDITIONAL_JUMP)  ; LAB_0054613a
     PUSH EBX                            ; 0054611f
-    CALL core_charactr.cpp_CCharacter_FUN_00429aa0 ; 00546120 | void core_charactr.cpp_CCharacter_FUN_00429aa0(CCharacter * this_ptr)
-        ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_00429aa0 ; 00546120
+        ;   XREF to: 00429aa0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00429aa0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00546125
     PUSH EBX                            ; 00546128
         ;   Label: LAB_00546128
-    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 00546129 | void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 00546129
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0054612e
     MOV EAX,EDI                         ; 00546131
     POP ESI                             ; 00546133
@@ -83,8 +83,8 @@ section .text
     PUSH 0x0                            ; 00546143
     LEA ESI,[EBX + 0x1f814]             ; 00546145
     PUSH ESI                            ; 0054614b
-    CALL core_morph.cpp_FUN_0052b600    ; 0054614c | undefined core_morph.cpp_FUN_0052b600()
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_FUN_0052b600    ; 0054614c
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 00546151
     MOV EAX,dword ptr [EBX + 0x1f810]   ; 00546154
     PUSH 0x0                            ; 0054615a
@@ -92,17 +92,17 @@ section .text
     PUSH EAX                            ; 00546161
     PUSH 0x1                            ; 00546162
     PUSH ESI                            ; 00546164
-    CALL core_morph.cpp_FUN_0052b600    ; 00546165 | undefined core_morph.cpp_FUN_0052b600()
-        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_FUN_0052b600    ; 00546165
+        ;   XREF to: 0052b600 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b600()
     ADD ESP,0x10                        ; 0054616a
     PUSH dword ptr [EBX + 0x20440]      ; 0054616d
     PUSH ESI                            ; 00546173
-    CALL core_morph.cpp_CMorphModel_FUN_0052bae0 ; 00546174 | void core_morph.cpp_CMorphModel_FUN_0052bae0(CMorphModel * this_ptr)
-        ;   XREF to: 0052bae0 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_FUN_0052bae0 ; 00546174
+        ;   XREF to: 0052bae0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052bae0(CMorphModel * this_ptr)
     ADD ESP,0x8                         ; 00546179
     PUSH EBX                            ; 0054617c
-    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 0054617d | void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
-        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 0054617d
+        ;   XREF to: 00408b40 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00546182
     MOV EAX,EDI                         ; 00546185
     POP ESI                             ; 00546187

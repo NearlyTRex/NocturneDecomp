@@ -1,127 +1,133 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 67, 
-    "pseudocode_lines": 67, 
-    "cross_reference_count": 1, 
-    "global_count": 7, 
-    "total_lines": 203, 
-    "assembly_lines": 136, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "CloseHandle", 
-      "addr": "EXTERNAL:0000004c"
-    }, 
-    {
-      "name": "CreateFileA", 
-      "addr": "EXTERNAL:0000004f"
-    }, 
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }, 
-    {
-      "name": "GetFileType", 
-      "addr": "EXTERNAL:00000072"
-    }, 
-    {
-      "name": "GetLastError", 
-      "addr": "EXTERNAL:00000074"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CloseHandle*", 
-      "name": "CloseHandle", 
-      "addr": "00611504", 
-      "value": "00211c38"
-    }, 
-    {
-      "type": "GetFileType*", 
-      "name": "PTR_GetFileType_0061159c", 
-      "addr": "0061159c", 
-      "value": "00211f00"
-    }, 
-    {
-      "type": "GetLastError*", 
-      "name": "GetLastError", 
-      "addr": "006115a4", 
-      "value": "00211f22"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_con_0065905c", 
-      "addr": "0065905c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_conin_00659060", 
-      "addr": "00659060", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_EXE_00659068", 
-      "addr": "00659068", 
-      "value": null
-    }, 
-    {
-      "type": "WORD", 
-      "name": "g_WindowsPlatformVersion", 
-      "addr": "00685019", 
-      "value": "0x0"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00607d50", 
-    "signature": "uint crt_io.c_analyze_file_type_FUN_00607d50(uint open_flags, char * filename)", 
-    "address_range": [
-      [
-        "00607d50", 
-        "00607e61"
-      ]
-    ], 
-    "name": "crt_io.c_analyze_file_type_FUN_00607d50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "open_flags"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 136,
+    "complexity_score": 67,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 8,
+    "pseudocode_lines": 67,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 203
+  },
   "cross_references": [
     {
-      "from_addr": "00607ff7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_stat_FUN_00607e64", 
-      "addr": "00607e64"
+      "addr": "00607e64",
+      "from_addr": "00607ff7",
+      "name": "crt_io.c_stat_FUN_00607e64",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00607d50",
+    "address_range": [
+      [
+        "00607d50",
+        "00607e61"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_io.c_analyze_file_type_FUN_00607d50",
+    "signature": "uint crt_io.c_analyze_file_type_FUN_00607d50(uint open_flags, char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000004c",
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "EXTERNAL:0000004f",
+      "name": "CreateFileA"
+    },
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    },
+    {
+      "addr": "EXTERNAL:00000072",
+      "name": "GetFileType"
+    },
+    {
+      "addr": "EXTERNAL:00000074",
+      "name": "GetLastError"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611504",
+      "name": "CloseHandle",
+      "type": "CloseHandle*",
+      "value": "00211c38"
+    },
+    {
+      "addr": "00611510",
+      "name": "PTR_CreateFileA_00611510",
+      "type": "CreateFileA*",
+      "value": "00211c6a"
+    },
+    {
+      "addr": "0061159c",
+      "name": "PTR_GetFileType_0061159c",
+      "type": "GetFileType*",
+      "value": "00211f00"
+    },
+    {
+      "addr": "006115a4",
+      "name": "GetLastError",
+      "type": "GetLastError*",
+      "value": "00211f22"
+    },
+    {
+      "addr": "0065905c",
+      "name": "s_con_0065905c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00659060",
+      "name": "s_conin_00659060",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00659068",
+      "name": "s_EXE_00659068",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00685019",
+      "name": "g_WindowsPlatformVersion",
+      "type": "WORD",
+      "value": "0x0"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "open_flags",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

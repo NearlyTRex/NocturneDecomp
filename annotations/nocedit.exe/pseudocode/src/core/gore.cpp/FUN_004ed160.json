@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 54, 
-    "assembly_lines": 42, 
-    "suspect_count": 2, 
+    "assembly_lines": 42,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0062e39e", 
-      "addr": "0062e39e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_d_0062e3a8", 
-      "addr": "0062e3a8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_f_d_d_d_0062e3af", 
-      "addr": "0062e3af", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 10, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(param_6,\"%d,%d\\n\",param_5,param_5 + 0x10,unaff_EBX);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004ed160", 
-    "signature": "undefined core_gore.cpp_FUN_004ed160()", 
-    "address_range": [
-      [
-        "004ed160", 
-        "004ed1bb"
-      ]
-    ], 
-    "name": "core_gore.cpp_FUN_004ed160"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "004ee22b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gore.cpp_FUN_004ee1e0", 
-      "addr": "004ee1e0"
+      "addr": "004ee1e0",
+      "from_addr": "004ee22b",
+      "name": "core_gore.cpp_FUN_004ee1e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ed160",
+    "address_range": [
+      [
+        "004ed160",
+        "004ed1bb"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_gore.cpp_FUN_004ed160",
+    "signature": "undefined core_gore.cpp_FUN_004ed160()"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e39e",
+      "name": "s_f_f_f_0062e39e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e3a8",
+      "name": "s_d_d_0062e3a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e3af",
+      "name": "s_d_f_d_d_d_0062e3af",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(param_6,\"%d,%d\\n\",param_5,param_5 + 0x10,unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

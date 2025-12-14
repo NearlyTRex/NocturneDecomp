@@ -39,25 +39,25 @@ section .text
     MOV EBP,dword ptr [ESP + 0x28]      ; 0047874c
     MOV EDX,dword ptr [EDI + 0x100]     ; 00478750
     CMP ESI,EDX                         ; 00478756
-    JL 0x0047875d                       ; 00478758 | LAB_0047875d
-        ;   XREF to: 0047875d (CONDITIONAL_JUMP)
+    JL 0x0047875d                       ; 00478758
+        ;   XREF to: 0047875d (CONDITIONAL_JUMP)  ; LAB_0047875d
     LEA ESI,[EDX + -0x1]                ; 0047875a
     TEST ESI,ESI                        ; 0047875d
         ;   Label: LAB_0047875d
-    JL 0x00478809                       ; 0047875f | LAB_00478809
-        ;   XREF to: 00478809 (CONDITIONAL_JUMP)
+    JL 0x00478809                       ; 0047875f
+        ;   XREF to: 00478809 (CONDITIONAL_JUMP)  ; LAB_00478809
     CMP dword ptr [EDI + 0x5698],0x0    ; 00478765
         ;   Label: LAB_00478765
-    JNZ 0x00478791                      ; 0047876c | LAB_00478791
-        ;   XREF to: 00478791 (CONDITIONAL_JUMP)
+    JNZ 0x00478791                      ; 0047876c
+        ;   XREF to: 00478791 (CONDITIONAL_JUMP)  ; LAB_00478791
     PUSH EDI                            ; 0047876e
-    MOV EBX,0x61f82e                    ; 0047876f | = "..\\core\\dmodel.cpp" | s_core_dmodel_cpp_0061f82e = ..\core\dmodel.cpp
+    MOV EBX,0x61f82e                    ; 0047876f | = "..\\core\\dmodel.cpp"
     MOV EAX,0x43e                       ; 00478774
-    PUSH 0x61f841                       ; 00478779 | = "Tried to call CKeyFramedModel::getFlo..." | s_Tried_to_call_CKeyFramed_0061f841 = Tried to call CKeyFramedModel::getFloorHeight for model %s but this model does not have a collision triangle list!
-    MOV dword ptr [0x02f0ca48],EBX      ; 0047877e | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 00478784 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00478789 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x61f841                       ; 00478779 | = "Tried to call CKeyFramedModel::getFlo..."
+    MOV dword ptr [0x02f0ca48],EBX      ; 0047877e | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 00478784 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00478789
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 0047878e
     LEA EBX,[EDI + 0x56a4]              ; 00478791
         ;   Label: LAB_00478791
@@ -65,13 +65,13 @@ section .text
     FCOMP float ptr [EBP]               ; 00478799
     FNSTSW AX                           ; 0047879c
     SAHF                                ; 0047879e
-    JZ 0x00478810                       ; 0047879f | LAB_00478810
-        ;   XREF to: 00478810 (CONDITIONAL_JUMP)
+    JZ 0x00478810                       ; 0047879f
+        ;   XREF to: 00478810 (CONDITIONAL_JUMP)  ; LAB_00478810
     PUSH EBP                            ; 004787a1
         ;   Label: LAB_004787a1
     PUSH EDI                            ; 004787a2
-    CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 ; 004787a3 | void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
-        ;   XREF to: 00478950 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 ; 004787a3
+        ;   XREF to: 00478950 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
     ADD ESP,0x8                         ; 004787a8
     MOV EAX,dword ptr [EDI + 0x5694]    ; 004787ab
         ;   Label: LAB_004787ab
@@ -86,8 +86,8 @@ section .text
     ADD ESI,EAX                         ; 004787cc
     XOR EBX,EBX                         ; 004787ce
     TEST EDX,EDX                        ; 004787d0
-    JLE 0x00478802                      ; 004787d2 | LAB_00478802
-        ;   XREF to: 00478802 (CONDITIONAL_JUMP)
+    JLE 0x00478802                      ; 004787d2
+        ;   XREF to: 00478802 (CONDITIONAL_JUMP)  ; LAB_00478802
     MOV EAX,dword ptr [ESP + 0x24]      ; 004787d4
         ;   Label: LAB_004787d4
     PUSH EAX                            ; 004787d8
@@ -95,20 +95,20 @@ section .text
     PUSH dword ptr [ESP + 0x24]         ; 004787dd
     PUSH EDX                            ; 004787e1
     PUSH ESI                            ; 004787e2
-    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 004787e3 | int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
-        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 004787e3
+        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
     ADD ESP,0x10                        ; 004787e8
     TEST EAX,EAX                        ; 004787eb
-    JZ 0x004787f4                       ; 004787ed | LAB_004787f4
-        ;   XREF to: 004787f4 (CONDITIONAL_JUMP)
+    JZ 0x004787f4                       ; 004787ed
+        ;   XREF to: 004787f4 (CONDITIONAL_JUMP)  ; LAB_004787f4
     MOV EBP,0x1                         ; 004787ef
     INC EBX                             ; 004787f4
         ;   Label: LAB_004787f4
     MOV ECX,dword ptr [EDI + 0x5694]    ; 004787f5
     ADD ESI,0x38                        ; 004787fb
     CMP EBX,ECX                         ; 004787fe
-    JL 0x004787d4                       ; 00478800 | LAB_004787d4
-        ;   XREF to: 004787d4 (CONDITIONAL_JUMP)
+    JL 0x004787d4                       ; 00478800
+        ;   XREF to: 004787d4 (CONDITIONAL_JUMP)  ; LAB_004787d4
     MOV EAX,EBP                         ; 00478802
         ;   Label: LAB_00478802
     POP EBP                             ; 00478804
@@ -118,21 +118,21 @@ section .text
     RET                                 ; 00478808
     XOR ESI,ESI                         ; 00478809
         ;   Label: LAB_00478809
-    JMP 0x00478765                      ; 0047880b | LAB_00478765
-        ;   XREF to: 00478765 (UNCONDITIONAL_JUMP)
+    JMP 0x00478765                      ; 0047880b
+        ;   XREF to: 00478765 (UNCONDITIONAL_JUMP)  ; LAB_00478765
     FLD float ptr [EBX + 0x4]           ; 00478810
         ;   Label: LAB_00478810
     FCOMP float ptr [EBP + 0x4]         ; 00478813
     FNSTSW AX                           ; 00478816
     SAHF                                ; 00478818
-    JNZ 0x004787a1                      ; 00478819 | LAB_004787a1
-        ;   XREF to: 004787a1 (CONDITIONAL_JUMP)
+    JNZ 0x004787a1                      ; 00478819
+        ;   XREF to: 004787a1 (CONDITIONAL_JUMP)  ; LAB_004787a1
     FLD float ptr [EBX + 0x8]           ; 0047881b
     FCOMP float ptr [EBP + 0x8]         ; 0047881e
     FNSTSW AX                           ; 00478821
     SAHF                                ; 00478823
-    JZ 0x004787ab                       ; 00478824 | LAB_004787ab
-        ;   XREF to: 004787ab (CONDITIONAL_JUMP)
-    JMP 0x004787a1                      ; 00478826 | LAB_004787a1
-        ;   XREF to: 004787a1 (UNCONDITIONAL_JUMP)
+    JZ 0x004787ab                       ; 00478824
+        ;   XREF to: 004787ab (CONDITIONAL_JUMP)  ; LAB_004787ab
+    JMP 0x004787a1                      ; 00478826
+        ;   XREF to: 004787a1 (UNCONDITIONAL_JUMP)  ; LAB_004787a1
 

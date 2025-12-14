@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 38, 
-    "assembly_lines": 28, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_clampToValidRange_FUN_004a63b0", 
-      "addr": "004a63b0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_clampToVisibleRange_FUN_004a63e0", 
-      "addr": "004a63e0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0", 
-      "addr": "004a5fc0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_scrollToMakeVisible_FUN_004a6420", 
-      "addr": "004a6420"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 28,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004a6450", 
-    "signature": "void shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450(CEdScrollBar * this_ptr, int * selection_index_ptr)", 
+    "address": "004a6450",
     "address_range": [
       [
-        "004a6450", 
+        "004a6450",
         "004a6485"
       ]
-    ], 
-    "name": "shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450",
+    "signature": "void shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450(CEdScrollBar * this_ptr, int * selection_index_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a63b0",
+      "name": "shape_edittool.cpp_CEdScrollBar_clampToValidRange_FUN_004a63b0"
+    },
+    {
+      "addr": "004a63e0",
+      "name": "shape_edittool.cpp_CEdScrollBar_clampToVisibleRange_FUN_004a63e0"
+    },
+    {
+      "addr": "004a5fc0",
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0"
+    },
+    {
+      "addr": "004a6420",
+      "name": "shape_edittool.cpp_CEdScrollBar_scrollToMakeVisible_FUN_004a6420"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEdScrollBar *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdScrollBar *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "selection_index_ptr"
+        "is_param": true,
+        "name": "selection_index_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

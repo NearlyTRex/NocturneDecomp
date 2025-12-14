@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 23, 
-    "assembly_lines": 15, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0", 
-      "addr": "004a2ac0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CStrList_vtable", 
-      "name": "g_CStrListVTable", 
-      "addr": "0065d474", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 15,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004a2a90", 
-    "signature": "CStrList * shape_edittool.cpp_CStrList_copy_FUN_004a2a90(CStrList * this_ptr, CStrList * other)", 
+    "address": "004a2a90",
     "address_range": [
       [
-        "004a2a90", 
+        "004a2a90",
         "004a2aba"
       ]
-    ], 
-    "name": "shape_edittool.cpp_CStrList_copy_FUN_004a2a90"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_copy_FUN_004a2a90",
+    "signature": "CStrList * shape_edittool.cpp_CStrList_copy_FUN_004a2a90(CStrList * this_ptr, CStrList * other)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a2ac0",
+      "name": "shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065d474",
+      "name": "g_CStrListVTable",
+      "type": "CStrList_vtable",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "other"
+        "is_param": true,
+        "name": "other",
+        "offset": 8,
+        "size": 4,
+        "type": "CStrList *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

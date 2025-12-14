@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 17, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_io.c_check_file_access_FUN_0060c9f0", 
-      "addr": "0060c9f0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060f380", 
-    "signature": "bool crt_io.c_file_exists_FUN_0060f380(char * filename)", 
-    "address_range": [
-      [
-        "0060f380", 
-        "0060f399"
-      ]
-    ], 
-    "name": "crt_io.c_file_exists_FUN_0060f380"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
   "cross_references": [
     {
-      "from_addr": "0060f64a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
-      "addr": "0060f39c"
+      "addr": "0060f39c",
+      "from_addr": "0060f64a",
+      "name": "crt_process.c_spawnvp_FUN_0060f39c",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060f380",
+    "address_range": [
+      [
+        "0060f380",
+        "0060f399"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_io.c_file_exists_FUN_0060f380",
+    "signature": "bool crt_io.c_file_exists_FUN_0060f380(char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060c9f0",
+      "name": "crt_io.c_check_file_access_FUN_0060c9f0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

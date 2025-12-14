@@ -30,8 +30,8 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 004a2ad1
     ADD ESP,0x4                         ; 004a2ad3
     CMP EAX,0x1                         ; 004a2ad6
-    JGE 0x004a2ae0                      ; 004a2ad9 | LAB_004a2ae0
-        ;   XREF to: 004a2ae0 (CONDITIONAL_JUMP)
+    JGE 0x004a2ae0                      ; 004a2ad9
+        ;   XREF to: 004a2ae0 (CONDITIONAL_JUMP)  ; LAB_004a2ae0
     MOV EAX,EDI                         ; 004a2adb
     POP EDI                             ; 004a2add
     POP ESI                             ; 004a2ade
@@ -41,26 +41,26 @@ section .text
     PUSH EAX                            ; 004a2ae1
     PUSH EDI                            ; 004a2ae2
     XOR EBX,EBX                         ; 004a2ae3
-    CALL shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0 ; 004a2ae5 | void shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0(CStrList * this_ptr, int new_capacity)
-        ;   XREF to: 004a2cc0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0 ; 004a2ae5
+        ;   XREF to: 004a2cc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0(CStrList * this_ptr, int new_capacity)
     ADD ESP,0x8                         ; 004a2aea
         ;   Label: LAB_004a2aea
     MOV EAX,dword ptr [ESI]             ; 004a2aed
     CMP EBX,EAX                         ; 004a2aef
-    JGE 0x004a2b07                      ; 004a2af1 | LAB_004a2b07
-        ;   XREF to: 004a2b07 (CONDITIONAL_JUMP)
+    JGE 0x004a2b07                      ; 004a2af1
+        ;   XREF to: 004a2b07 (CONDITIONAL_JUMP)  ; LAB_004a2b07
     PUSH EBX                            ; 004a2af3
     PUSH ESI                            ; 004a2af4
-    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004a2af5 | char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
-        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004a2af5
+        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004a2afa
     PUSH EAX                            ; 004a2afd
     PUSH EDI                            ; 004a2afe
     INC EBX                             ; 004a2aff
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 004a2b00 | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
-    JMP 0x004a2aea                      ; 004a2b05 | LAB_004a2aea
-        ;   XREF to: 004a2aea (UNCONDITIONAL_JUMP)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 004a2b00
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
+    JMP 0x004a2aea                      ; 004a2b05
+        ;   XREF to: 004a2aea (UNCONDITIONAL_JUMP)  ; LAB_004a2aea
     MOV EAX,EDI                         ; 004a2b07
         ;   Label: LAB_004a2b07
     POP EBX                             ; 004a2b09

@@ -22,8 +22,8 @@ section .text
         ;   Label: core_glass.cpp_CGlass_process_FUN_004e98e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004e98e1
     CMP dword ptr [EBX + 0x180],0x0     ; 004e98e5
-    JZ 0x004e98fa                       ; 004e98ec | LAB_004e98fa
-        ;   XREF to: 004e98fa (CONDITIONAL_JUMP)
+    JZ 0x004e98fa                       ; 004e98ec
+        ;   XREF to: 004e98fa (CONDITIONAL_JUMP)  ; LAB_004e98fa
     MOV dword ptr [EBX + 0x104],0x1     ; 004e98ee
     POP EBX                             ; 004e98f8
         ;   Label: LAB_004e98f8
@@ -31,19 +31,19 @@ section .text
     LEA EAX,[EBX + 0x184]               ; 004e98fa
         ;   Label: LAB_004e98fa
     PUSH EAX                            ; 004e9900
-    MOV ECX,dword ptr [0x006793d0]      ; 004e9901 | CEventList g_CEventListInstance | CEventList * g_CEventListPtr
-    PUSH ECX                            ; 004e9907 | CEventList g_CEventListInstance
-    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004e9908 | int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
-        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x006793d0]      ; 004e9901 | g_CEventListInstance | g_CEventListPtr
+    PUSH ECX                            ; 004e9907 | g_CEventListInstance
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004e9908
+        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004e990d
     TEST EAX,EAX                        ; 004e9910
-    JZ 0x004e98f8                       ; 004e9912 | LAB_004e98f8
-        ;   XREF to: 004e98f8 (CONDITIONAL_JUMP)
+    JZ 0x004e98f8                       ; 004e9912
+        ;   XREF to: 004e98f8 (CONDITIONAL_JUMP)  ; LAB_004e98f8
     LEA EAX,[EBX + 0x20]                ; 004e9914
     PUSH EAX                            ; 004e9917
     PUSH EBX                            ; 004e9918
-    CALL core_glass.cpp_CGlass_shatter_FUN_004eaef0 ; 004e9919 | void core_glass.cpp_CGlass_shatter_FUN_004eaef0(CGlass * this_ptr, CVector3f * location)
-        ;   XREF to: 004eaef0 (UNCONDITIONAL_CALL)
+    CALL core_glass.cpp_CGlass_shatter_FUN_004eaef0 ; 004e9919
+        ;   XREF to: 004eaef0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_shatter_FUN_004eaef0(CGlass * this_ptr, CVector3f * location)
     ADD ESP,0x8                         ; 004e991e
     POP EBX                             ; 004e9921
     RET                                 ; 004e9922

@@ -1,343 +1,343 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 323, 
-    "pseudocode_lines": 63, 
-    "cross_reference_count": 3, 
-    "global_count": 10, 
-    "total_lines": 232, 
-    "assembly_lines": 169, 
-    "suspect_count": 25, 
+    "assembly_lines": 169,
+    "complexity_score": 323,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 10,
+    "pseudocode_lines": 63,
+    "suspect_count": 25,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_skeledit.cpp_FUN_0058ac80", 
-      "addr": "0058ac80"
-    }, 
-    {
-      "name": "core_xform.cpp_hasNegativeDeterminant_FUN_005f6be0", 
-      "addr": "005f6be0"
-    }, 
-    {
-      "name": "core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690", 
-      "addr": "005f6690"
-    }, 
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0064a3db", 
-      "addr": "0064a3db", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeledit_cpp_0064a3e5", 
-      "addr": "0064a3e5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CBoneStructure_readBONfr_0064a3fa", 
-      "addr": "0064a3fa", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0064a42a", 
-      "addr": "0064a42a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0064a434", 
-      "addr": "0064a434", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0064a43e", 
-      "addr": "0064a43e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeledit_cpp_0064a448", 
-      "addr": "0064a448", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CBoneStructure_readBONfr_0064a45d", 
-      "addr": "0064a45d", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000024;"
-    }, 
-    {
-      "line": 16, 
-      "match": "(CMatrix3x4f *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "matrix = (CMatrix3x4f *)((int)file + iVar2 + 0x58);"
-    }, 
-    {
-      "line": 40, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000024 != 0) {"
-    }, 
-    {
-      "line": 41, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;"
-    }, 
-    {
-      "line": 41, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;"
-    }, 
-    {
-      "line": 42, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;"
-    }, 
-    {
-      "line": 42, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;"
-    }, 
-    {
-      "line": 43, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x7b) = *(byte *)((int)file + iVar2 + 0x7b) ^ 0x80;"
-    }, 
-    {
-      "line": 43, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x7b) = *(byte *)((int)file + iVar2 + 0x7b) ^ 0x80;"
-    }, 
-    {
-      "line": 44, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;"
-    }, 
-    {
-      "line": 44, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;"
-    }, 
-    {
-      "line": 45, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x67) = *(byte *)((int)file + iVar2 + 0x67) ^ 0x80;"
-    }, 
-    {
-      "line": 45, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x67) = *(byte *)((int)file + iVar2 + 0x67) ^ 0x80;"
-    }, 
-    {
-      "line": 46, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x83) = *(byte *)((int)file + iVar2 + 0x83) ^ 0x80;"
-    }, 
-    {
-      "line": 46, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x83) = *(byte *)((int)file + iVar2 + 0x83) ^ 0x80;"
-    }, 
-    {
-      "line": 47, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x7f) = *(byte *)((int)file + iVar2 + 0x7f) ^ 0x80;"
-    }, 
-    {
-      "line": 47, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x7f) = *(byte *)((int)file + iVar2 + 0x7f) ^ 0x80;"
-    }, 
-    {
-      "line": 48, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x87) = *(byte *)((int)file + iVar2 + 0x87) ^ 0x80;"
-    }, 
-    {
-      "line": 48, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x87) = *(byte *)((int)file + iVar2 + 0x87) ^ 0x80;"
-    }, 
-    {
-      "line": 52, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;"
-    }, 
-    {
-      "line": 52, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;"
-    }, 
-    {
-      "line": 53, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;"
-    }, 
-    {
-      "line": 53, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;"
-    }, 
-    {
-      "line": 54, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;"
-    }, 
-    {
-      "line": 54, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0058aa10", 
-    "signature": "void core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure * this_ptr, FILE * file, int mirror_flag)", 
-    "address_range": [
-      [
-        "0058aa10", 
-        "0058aba8"
-      ]
-    ], 
-    "name": "core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CBoneStructure *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "mirror_flag"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 232
+  },
   "cross_references": [
     {
-      "from_addr": "0058a44b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0", 
-      "addr": "0058a3d0"
-    }, 
+      "addr": "0058a3d0",
+      "from_addr": "0058a44b",
+      "name": "core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058c245", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058c190", 
-      "addr": "0058c190"
-    }, 
+      "addr": "0058c190",
+      "from_addr": "0058c245",
+      "name": "core_skeledit.cpp_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0059548b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00592690", 
-      "addr": "00592690"
+      "addr": "00592690",
+      "from_addr": "0059548b",
+      "name": "core_skeledit.cpp_FUN_00592690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058aa10",
+    "address_range": [
+      [
+        "0058aa10",
+        "0058aba8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10",
+    "signature": "void core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure * this_ptr, FILE * file, int mirror_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0058ac80",
+      "name": "core_skeledit.cpp_FUN_0058ac80"
+    },
+    {
+      "addr": "005f6be0",
+      "name": "core_xform.cpp_hasNegativeDeterminant_FUN_005f6be0"
+    },
+    {
+      "addr": "005f6690",
+      "name": "core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690"
+    },
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064a3db",
+      "name": "s_f_f_f_0064a3db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a3e5",
+      "name": "s_core_skeledit_cpp_0064a3e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a3fa",
+      "name": "s_CBoneStructure_readBONfr_0064a3fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a42a",
+      "name": "s_f_f_f_0064a42a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a434",
+      "name": "s_f_f_f_0064a434",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a43e",
+      "name": "s_f_f_f_0064a43e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a448",
+      "name": "s_core_skeledit_cpp_0064a448",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a45d",
+      "name": "s_CBoneStructure_readBONfr_0064a45d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoneStructure *"
+      },
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 12,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "mirror_flag",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000024",
+      "text": "int in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "matrix = (CMatrix3x4f *)((int)file + iVar2 + 0x58);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000024",
+      "text": "if (in_stack_00000024 != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x7b) = *(byte *)((int)file + iVar2 + 0x7b) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x7b) = *(byte *)((int)file + iVar2 + 0x7b) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x67) = *(byte *)((int)file + iVar2 + 0x67) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x67) = *(byte *)((int)file + iVar2 + 0x67) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x83) = *(byte *)((int)file + iVar2 + 0x83) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x83) = *(byte *)((int)file + iVar2 + 0x83) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x7f) = *(byte *)((int)file + iVar2 + 0x7f) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x7f) = *(byte *)((int)file + iVar2 + 0x7f) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x87) = *(byte *)((int)file + iVar2 + 0x87) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x87) = *(byte *)((int)file + iVar2 + 0x87) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -11,8 +11,7 @@ void core_trash_cpp_FUN_005deb30(void)
 {
   CTrash *this_ptr;
   
-  this_ptr = (CTrash *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x328,"..\\core\\trash.cpp",0x43);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x328,"..\\core\\trash.cpp",0x43);
   if (this_ptr == (CTrash *)0x0) {
     return;
   }

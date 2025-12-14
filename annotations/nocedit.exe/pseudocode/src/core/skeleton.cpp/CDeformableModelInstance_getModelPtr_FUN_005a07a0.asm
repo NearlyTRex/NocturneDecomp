@@ -40,18 +40,18 @@ section .text
     PUSH EBP                            ; 005a07a2
     MOV EBX,dword ptr [ESP + 0x10]      ; 005a07a3
     CMP dword ptr [EBX + 0x22b0],0x0    ; 005a07a7
-    JNZ 0x005a07dc                      ; 005a07ae | LAB_005a07dc
-        ;   XREF to: 005a07dc (CONDITIONAL_JUMP)
+    JNZ 0x005a07dc                      ; 005a07ae
+        ;   XREF to: 005a07dc (CONDITIONAL_JUMP)  ; LAB_005a07dc
     CMP byte ptr [EBX + 0x2260],0x0     ; 005a07b0
-    JNZ 0x005a07e6                      ; 005a07b7 | LAB_005a07e6
-        ;   XREF to: 005a07e6 (CONDITIONAL_JUMP)
-    MOV EDI,0x64eef0                    ; 005a07b9 | = "..\\core\\skeleton.cpp" | s_core_skeleton_cpp_0064eef0 = ..\core\skeleton.cpp
+    JNZ 0x005a07e6                      ; 005a07b7
+        ;   XREF to: 005a07e6 (CONDITIONAL_JUMP)  ; LAB_005a07e6
+    MOV EDI,0x64eef0                    ; 005a07b9 | = "..\\core\\skeleton.cpp"
     MOV EBP,0xdd1                       ; 005a07be
-    PUSH 0x64ef05                       ; 005a07c3 | = "CDeformableModelInstance::getModelPtr..." | s_CDeformableModelInstance_0064ef05 = CDeformableModelInstance::getModelPtr - modelPtr=NULL, and no name specified.
-    MOV dword ptr [0x02f0ca48],EDI      ; 005a07c8 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 005a07ce | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a07d4 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64ef05                       ; 005a07c3 | = "CDeformableModelInstance::getModelPtr..."
+    MOV dword ptr [0x02f0ca48],EDI      ; 005a07c8 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 005a07ce | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a07d4
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005a07d9
     MOV EAX,dword ptr [EBX + 0x22b0]    ; 005a07dc
         ;   Label: LAB_005a07dc
@@ -63,13 +63,13 @@ section .text
         ;   Label: LAB_005a07e6
     LEA EAX,[EBX + 0x2260]              ; 005a07e7
     PUSH EAX                            ; 005a07ed
-    MOV ECX,0x64ef53                    ; 005a07ee | = "..\\core\\skeleton.cpp" | s_core_skeleton_cpp_0064ef53 = ..\core\skeleton.cpp
+    MOV ECX,0x64ef53                    ; 005a07ee | = "..\\core\\skeleton.cpp"
     MOV ESI,0xdd3                       ; 005a07f3
-    PUSH 0x64ef68                       ; 005a07f8 | = "Tried to do something with model %s, ..." | s_Tried_to_do_something_wi_0064ef68 = Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.
-    MOV dword ptr [0x02f0ca48],ECX      ; 005a07fd | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 005a0803 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a0809 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64ef68                       ; 005a07f8 | = "Tried to do something with model %s, ..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 005a07fd | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 005a0803 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a0809
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 005a080e
     POP ESI                             ; 005a0811
     MOV EAX,dword ptr [EBX + 0x22b0]    ; 005a0812

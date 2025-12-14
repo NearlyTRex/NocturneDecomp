@@ -57,16 +57,16 @@ section .text
     MOV dword ptr [ESP + 0x4],EDX       ; 00554ed4
     ADD EBX,EAX                         ; 00554ed8
     CMP EBP,ESI                         ; 00554eda
-    JGE 0x00554f7c                      ; 00554edc | LAB_00554f7c
-        ;   XREF to: 00554f7c (CONDITIONAL_JUMP)
+    JGE 0x00554f7c                      ; 00554edc
+        ;   XREF to: 00554f7c (CONDITIONAL_JUMP)  ; LAB_00554f7c
     MOV ECX,dword ptr [ESP + 0x4]       ; 00554ee2
         ;   Label: LAB_00554ee2
     PUSH ECX                            ; 00554ee6
     MOV EAX,dword ptr [ESP + 0x10]      ; 00554ee7
     PUSH EAX                            ; 00554eeb
     PUSH EDI                            ; 00554eec
-    CALL shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 ; 00554eed | float shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer * this_ptr, SColorBox * box_ptr, uchar * pixel_ptr)
-        ;   XREF to: 00554ff0 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 ; 00554eed
+        ;   XREF to: 00554ff0 (UNCONDITIONAL_CALL)  ; float shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer * this_ptr, SColorBox * box_ptr, uchar * pixel_ptr)
     MOV dword ptr [ESP + 0xc],EAX       ; 00554ef2
     ADD ESP,0xc                         ; 00554ef6
     MOV EDX,dword ptr [ESP + 0x4]       ; 00554ef9
@@ -74,46 +74,46 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 00554efe
     PUSH ECX                            ; 00554f02
     PUSH EDI                            ; 00554f03
-    CALL shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 ; 00554f04 | float shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer * this_ptr, SColorBox * box_ptr, uchar * pixel_ptr)
-        ;   XREF to: 00554ff0 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 ; 00554f04
+        ;   XREF to: 00554ff0 (UNCONDITIONAL_CALL)  ; float shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer * this_ptr, SColorBox * box_ptr, uchar * pixel_ptr)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00554f09
     FLD float ptr [ESP + 0x1c]          ; 00554f0d
     ADD ESP,0xc                         ; 00554f11
     FCOMP float ptr [ESP]               ; 00554f14
     FNSTSW AX                           ; 00554f17
     SAHF                                ; 00554f19
-    JNC 0x00554f68                      ; 00554f1a | LAB_00554f68
-        ;   XREF to: 00554f68 (CONDITIONAL_JUMP)
+    JNC 0x00554f68                      ; 00554f1a
+        ;   XREF to: 00554f68 (CONDITIONAL_JUMP)  ; LAB_00554f68
     CMP EBP,ESI                         ; 00554f1c
         ;   Label: LAB_00554f1c
-    JGE 0x00554f58                      ; 00554f1e | LAB_00554f58
-        ;   XREF to: 00554f58 (CONDITIONAL_JUMP)
+    JGE 0x00554f58                      ; 00554f1e
+        ;   XREF to: 00554f58 (CONDITIONAL_JUMP)  ; LAB_00554f58
     PUSH EBX                            ; 00554f20
     MOV EAX,dword ptr [ESP + 0x10]      ; 00554f21
     PUSH EAX                            ; 00554f25
     PUSH EDI                            ; 00554f26
-    CALL shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 ; 00554f27 | float shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer * this_ptr, SColorBox * box_ptr, uchar * pixel_ptr)
-        ;   XREF to: 00554ff0 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 ; 00554f27
+        ;   XREF to: 00554ff0 (UNCONDITIONAL_CALL)  ; float shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer * this_ptr, SColorBox * box_ptr, uchar * pixel_ptr)
     MOV dword ptr [ESP + 0xc],EAX       ; 00554f2c
     ADD ESP,0xc                         ; 00554f30
     PUSH EBX                            ; 00554f33
     MOV EDX,dword ptr [ESP + 0xc]       ; 00554f34
     PUSH EDX                            ; 00554f38
     PUSH EDI                            ; 00554f39
-    CALL shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 ; 00554f3a | float shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer * this_ptr, SColorBox * box_ptr, uchar * pixel_ptr)
-        ;   XREF to: 00554ff0 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 ; 00554f3a
+        ;   XREF to: 00554ff0 (UNCONDITIONAL_CALL)  ; float shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer * this_ptr, SColorBox * box_ptr, uchar * pixel_ptr)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00554f3f
     FLD float ptr [ESP + 0x1c]          ; 00554f43
     ADD ESP,0xc                         ; 00554f47
     FCOMP float ptr [ESP]               ; 00554f4a
     FNSTSW AX                           ; 00554f4d
     SAHF                                ; 00554f4f
-    JNC 0x00554f58                      ; 00554f50 | LAB_00554f58
-        ;   XREF to: 00554f58 (CONDITIONAL_JUMP)
+    JNC 0x00554f58                      ; 00554f50
+        ;   XREF to: 00554f58 (CONDITIONAL_JUMP)  ; LAB_00554f58
     SUB EBX,0x4                         ; 00554f52
     DEC ESI                             ; 00554f55
-    JMP 0x00554f1c                      ; 00554f56 | LAB_00554f1c
-        ;   XREF to: 00554f1c (UNCONDITIONAL_JUMP)
+    JMP 0x00554f1c                      ; 00554f56
+        ;   XREF to: 00554f1c (UNCONDITIONAL_JUMP)  ; LAB_00554f1c
     MOV EAX,dword ptr [ESP + 0x4]       ; 00554f58
         ;   Label: LAB_00554f58
     MOV ECX,dword ptr [ESP + 0x4]       ; 00554f5c
@@ -127,8 +127,8 @@ section .text
     INC EBP                             ; 00554f6f
     MOV dword ptr [ESP + 0x4],EDX       ; 00554f70
     CMP EBP,ESI                         ; 00554f74
-    JL 0x00554ee2                       ; 00554f76 | LAB_00554ee2
-        ;   XREF to: 00554ee2 (CONDITIONAL_JUMP)
+    JL 0x00554ee2                       ; 00554f76
+        ;   XREF to: 00554ee2 (CONDITIONAL_JUMP)  ; LAB_00554ee2
     MOV EDX,dword ptr [ESP + 0x30]      ; 00554f7c
         ;   Label: LAB_00554f7c
     LEA EAX,[EDX*0x4 + 0x0]             ; 00554f80
@@ -151,14 +151,14 @@ section .text
     MOV ESI,dword ptr [ESP + 0x2c]      ; 00554fcc
     PUSH ESI                            ; 00554fd0
     PUSH EDI                            ; 00554fd1
-    CALL shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 ; 00554fd2 | void shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer * this_ptr, int box_index)
-        ;   XREF to: 00555090 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 ; 00554fd2
+        ;   XREF to: 00555090 (UNCONDITIONAL_CALL)  ; void shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer * this_ptr, int box_index)
     ADD ESP,0x8                         ; 00554fd7
     MOV EBP,dword ptr [ESP + 0x30]      ; 00554fda
     PUSH EBP                            ; 00554fde
     PUSH EDI                            ; 00554fdf
-    CALL shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 ; 00554fe0 | void shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer * this_ptr, int box_index)
-        ;   XREF to: 00555090 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 ; 00554fe0
+        ;   XREF to: 00555090 (UNCONDITIONAL_CALL)  ; void shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer * this_ptr, int box_index)
     ADD ESP,0x8                         ; 00554fe5
     ADD ESP,0x14                        ; 00554fe8
     POP EBP                             ; 00554feb

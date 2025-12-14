@@ -30,8 +30,8 @@ section .text
     PUSH EAX                            ; 004878c2
     MOV EDX,dword ptr [ESP + 0x10]      ; 004878c3
     PUSH EDX                            ; 004878c7
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_00487730 ; 004878c8 | void cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_00487730(CDrawSurface * this_ptr, int center_x, int center_y, int radius)
-        ;   XREF to: 00487730 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_00487730 ; 004878c8
+        ;   XREF to: 00487730 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_00487730(CDrawSurface * this_ptr, int center_x, int center_y, int radius)
     ADD ESP,0x10                        ; 004878cd
     RET                                 ; 004878d0
 

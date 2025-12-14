@@ -24,13 +24,13 @@ section .text
         ;   Label: crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200
     MOV ECX,dword ptr [ESP + 0xc]       ; 00601204
     TEST EDX,EDX                        ; 00601208
-    JZ 0x00601228                       ; 0060120a | LAB_00601228
-        ;   XREF to: 00601228 (CONDITIONAL_JUMP)
+    JZ 0x00601228                       ; 0060120a
+        ;   XREF to: 00601228 (CONDITIONAL_JUMP)  ; LAB_00601228
     XOR EAX,EAX                         ; 0060120c
     MOV AL,byte ptr [ECX]               ; 0060120e
     CMP EAX,0x4                         ; 00601210
-    JNZ 0x0060122b                      ; 00601213 | LAB_0060122b
-        ;   XREF to: 0060122b (CONDITIONAL_JUMP)
+    JNZ 0x0060122b                      ; 00601213
+        ;   XREF to: 0060122b (CONDITIONAL_JUMP)  ; LAB_0060122b
     MOV EAX,0x608dc8                    ; 00601215
     PUSH ECX                            ; 0060121a
         ;   Label: LAB_0060121a
@@ -45,6 +45,6 @@ section .text
     RET                                 ; 0060122a
     MOV EAX,0x5fe667                    ; 0060122b
         ;   Label: LAB_0060122b
-    JMP 0x0060121a                      ; 00601230 | LAB_0060121a
-        ;   XREF to: 0060121a (UNCONDITIONAL_JUMP)
+    JMP 0x0060121a                      ; 00601230
+        ;   XREF to: 0060121a (UNCONDITIONAL_JUMP)  ; LAB_0060121a
 

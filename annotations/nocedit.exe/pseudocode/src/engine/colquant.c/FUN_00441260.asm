@@ -72,8 +72,8 @@ section .text
     MOV EBX,dword ptr [EDI + EBX*0x1 + 0x4040] ; 004412a7
     ADD EDX,ESI                         ; 004412ae
     CMP EBX,EDX                         ; 004412b0
-    JGE 0x00441332                      ; 004412b2 | LAB_00441332
-        ;   XREF to: 00441332 (CONDITIONAL_JUMP)
+    JGE 0x00441332                      ; 004412b2
+        ;   XREF to: 00441332 (CONDITIONAL_JUMP)  ; LAB_00441332
     FLD double ptr [ESP + 0x48]         ; 004412b8
     FLD double ptr [ESP + 0x40]         ; 004412bc
     LEA ESI,[EBX*0x4 + 0x0]             ; 004412c0
@@ -110,8 +110,8 @@ section .text
     FSTP ST3                            ; 0044131e
     FSTP ST3                            ; 00441320
     CMP EBX,EDX                         ; 00441322
-    JL 0x004412d3                       ; 00441324 | LAB_004412d3
-        ;   XREF to: 004412d3 (CONDITIONAL_JUMP)
+    JL 0x004412d3                       ; 00441324
+        ;   XREF to: 004412d3 (CONDITIONAL_JUMP)  ; LAB_004412d3
     FSTP double ptr [ESP + 0x18]        ; 00441326
     FSTP double ptr [ESP + 0x40]        ; 0044132a
     FSTP double ptr [ESP + 0x48]        ; 0044132e
@@ -125,8 +125,8 @@ section .text
     MOV dword ptr [ESP + 0x60],EAX      ; 00441346
     FILD qword ptr [ESP + 0x60]         ; 0044134a
     FDIVR double ptr [ESP + 0x18]       ; 0044134e
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00441352 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00441352
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x74]        ; 00441357
     MOV EAX,dword ptr [ESP + 0x74]      ; 0044135b
     XOR ECX,ECX                         ; 0044135f
@@ -136,8 +136,8 @@ section .text
     MOV dword ptr [ESP + 0x60],EAX      ; 00441372
     FILD qword ptr [ESP + 0x60]         ; 00441376
     FDIVR double ptr [ESP + 0x20]       ; 0044137a
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0044137e | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0044137e
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x74]        ; 00441383
     MOV EAX,dword ptr [ESP + 0x74]      ; 00441387
     MOV word ptr [EBX + 0x400a],AX      ; 0044138b
@@ -146,8 +146,8 @@ section .text
     MOV dword ptr [ESP + 0x60],EAX      ; 0044139c
     FILD qword ptr [ESP + 0x60]         ; 004413a0
     FDIVR double ptr [ESP + 0x40]       ; 004413a4
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004413a8 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004413a8
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x74]        ; 004413ad
     MOV EAX,dword ptr [ESP + 0x74]      ; 004413b1
     MOV word ptr [EBX + 0x400c],AX      ; 004413b5
@@ -175,8 +175,8 @@ section .text
     MOV dword ptr [EBX + 0x4034],ECX    ; 0044141e
     MOV dword ptr [ESP + 0x34],ECX      ; 00441424
     MOV dword ptr [EBX + 0x4010],ECX    ; 00441428
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0044142e | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0044142e
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x74]        ; 00441433
     MOV EAX,dword ptr [ESP + 0x74]      ; 00441437
     MOV dword ptr [ESP + 0x68],ESI      ; 0044143b
@@ -190,16 +190,16 @@ section .text
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00441461
     ADD EBX,EDI                         ; 00441465
     CMP ESI,EAX                         ; 00441467
-    JL 0x00441587                       ; 00441469 | LAB_00441587
-        ;   XREF to: 00441587 (CONDITIONAL_JUMP)
+    JL 0x00441587                       ; 00441469
+        ;   XREF to: 00441587 (CONDITIONAL_JUMP)  ; LAB_00441587
     FLD double ptr [EBX + 0x4018]       ; 0044146f
-    FMUL double ptr [0x00618de1]        ; 00441475 | double DOUBLE_00618de1
+    FMUL double ptr [0x00618de1]        ; 00441475 | DOUBLE_00618de1
     FLD double ptr [EBX + 0x4020]       ; 0044147b
-    FMUL double ptr [0x00618dc9]        ; 00441481 | double DOUBLE_00618dc9
+    FMUL double ptr [0x00618dc9]        ; 00441481 | DOUBLE_00618dc9
     FLD double ptr [EBX + 0x4028]       ; 00441487
-    FMUL double ptr [0x00618dd1]        ; 0044148d | double DOUBLE_00618dd1
+    FMUL double ptr [0x00618dd1]        ; 0044148d | DOUBLE_00618dd1
     FLD double ptr [EBX + 0x4030]       ; 00441493
-    FMUL double ptr [0x00618dd9]        ; 00441499 | double DOUBLE_00618dd9
+    FMUL double ptr [0x00618dd9]        ; 00441499 | DOUBLE_00618dd9
     FXCH ST3                            ; 0044149f
     FMUL double ptr [ESP + 0x28]        ; 004414a1
     FXCH ST2                            ; 004414a5
@@ -223,8 +223,8 @@ section .text
     FSTP double ptr [EBX + 0x4028]      ; 004414e3
     PUSH EDX                            ; 004414e9
     FSTP double ptr [EBX + 0x4030]      ; 004414ea
-    CALL engine_colquant.c_FUN_00441790 ; 004414f0 | undefined engine_colquant.c_FUN_00441790()
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441790 ; 004414f0
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 004414f5
     MOV dword ptr [ESP + 0x74],EDX      ; 004414f9
     FLD double ptr [ESP + 0x70]         ; 004414fd
@@ -238,8 +238,8 @@ section .text
     PUSH EDI                            ; 0044151e
     MOV EAX,dword ptr [EBX + 0x4038]    ; 0044151f
     PUSH EAX                            ; 00441525
-    CALL engine_colquant.c_FUN_00441790 ; 00441526 | undefined engine_colquant.c_FUN_00441790()
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441790 ; 00441526
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 0044152b
     MOV dword ptr [ESP + 0x74],EDX      ; 0044152f
     FLD double ptr [ESP + 0x70]         ; 00441533
@@ -253,8 +253,8 @@ section .text
     PUSH ESI                            ; 00441554
     MOV EDI,dword ptr [EBX + 0x4038]    ; 00441555
     PUSH EDI                            ; 0044155b
-    CALL engine_colquant.c_FUN_00441790 ; 0044155c | undefined engine_colquant.c_FUN_00441790()
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441790 ; 0044155c
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 00441561
     MOV dword ptr [ESP + 0x74],EDX      ; 00441565
     MOV EAX,dword ptr [ESP + 0x70]      ; 00441569
@@ -344,8 +344,8 @@ section .text
     FADD double ptr [ESP + 0x5c]        ; 00441686
     PUSH EDX                            ; 0044168a
     FSTP double ptr [EBX + 0x4030]      ; 0044168b
-    CALL engine_colquant.c_FUN_00441790 ; 00441691 | undefined engine_colquant.c_FUN_00441790()
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441790 ; 00441691
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 00441696
     MOV dword ptr [ESP + 0x74],EDX      ; 0044169a
     FLD double ptr [ESP + 0x70]         ; 0044169e
@@ -359,8 +359,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x44]      ; 004416b4
     PUSH ECX                            ; 004416b8
     FSTP double ptr [ESP + 0x38]        ; 004416b9
-    CALL engine_colquant.c_FUN_00441790 ; 004416bd | undefined engine_colquant.c_FUN_00441790()
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441790 ; 004416bd
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 004416c2
     MOV dword ptr [ESP + 0x74],EDX      ; 004416c6
     FLD double ptr [ESP + 0x70]         ; 004416ca
@@ -374,8 +374,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 004416e0
     PUSH EAX                            ; 004416e4
     FSTP double ptr [ESP + 0x48]        ; 004416e5
-    CALL engine_colquant.c_FUN_00441790 ; 004416e9 | undefined engine_colquant.c_FUN_00441790()
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441790 ; 004416e9
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 004416ee
     MOV dword ptr [ESP + 0x74],EDX      ; 004416f2
     FLD double ptr [ESP + 0x70]         ; 004416f6
@@ -389,26 +389,26 @@ section .text
     PUSH EAX                            ; 0044170e
     MOV EDX,dword ptr [ESP + 0x3c]      ; 0044170f
     PUSH EDX                            ; 00441713
-    CALL engine_colquant.c_FUN_00441790 ; 00441714 | undefined engine_colquant.c_FUN_00441790()
-        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441790 ; 00441714
+        ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441790()
     MOV dword ptr [ESP + 0x70],EAX      ; 00441719
     MOV dword ptr [ESP + 0x74],EDX      ; 0044171d
     FLD double ptr [ESP + 0x70]         ; 00441721
     ADD ESP,0x10                        ; 00441725
     FLD double ptr [ESP + 0x58]         ; 00441728
     FMUL ST0                            ; 0044172c
-    FMUL double ptr [0x00618dc1]        ; 0044172e | double DOUBLE_00618dc1
+    FMUL double ptr [0x00618dc1]        ; 0044172e | DOUBLE_00618dc1
     FLD double ptr [ESP + 0x8]          ; 00441734
     FMUL ST0                            ; 00441738
-    FMUL double ptr [0x00618dc9]        ; 0044173a | double DOUBLE_00618dc9
+    FMUL double ptr [0x00618dc9]        ; 0044173a | DOUBLE_00618dc9
     FADDP                               ; 00441740
     FLD double ptr [ESP + 0x10]         ; 00441742
     FMUL ST0                            ; 00441746
-    FMUL double ptr [0x00618dd1]        ; 00441748 | double DOUBLE_00618dd1
+    FMUL double ptr [0x00618dd1]        ; 00441748 | DOUBLE_00618dd1
     FADDP                               ; 0044174e
     FLD double ptr [ESP + 0x50]         ; 00441750
     FMUL ST0                            ; 00441754
-    FMUL double ptr [0x00618dd9]        ; 00441756 | double DOUBLE_00618dd9
+    FMUL double ptr [0x00618dd9]        ; 00441756 | DOUBLE_00618dd9
     ADD ESI,0x4                         ; 0044175c
     FXCH ST2                            ; 0044175f
     FSTP double ptr [ESP + 0x30]        ; 00441761
@@ -418,6 +418,6 @@ section .text
     FADD double ptr [EBX + 0x4010]      ; 0044176c
     MOV dword ptr [ESP + 0x70],ECX      ; 00441772
     FSTP double ptr [EBX + 0x4010]      ; 00441776
-    JMP 0x0044145d                      ; 0044177c | LAB_0044145d
-        ;   XREF to: 0044145d (UNCONDITIONAL_JUMP)
+    JMP 0x0044145d                      ; 0044177c
+        ;   XREF to: 0044145d (UNCONDITIONAL_JUMP)  ; LAB_0044145d
 

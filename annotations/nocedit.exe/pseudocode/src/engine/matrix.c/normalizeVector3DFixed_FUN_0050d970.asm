@@ -46,8 +46,8 @@ section .text
     IMUL ECX,ECX                        ; 0050d98c
     ADD EAX,ECX                         ; 0050d98f
     PUSH EAX                            ; 0050d991
-    CALL engine_matrix.c_integerSquareRoot_FUN_0050d890 ; 0050d992 | int engine_matrix.c_integerSquareRoot_FUN_0050d890(int value)
-        ;   XREF to: 0050d890 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_integerSquareRoot_FUN_0050d890 ; 0050d992
+        ;   XREF to: 0050d890 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_integerSquareRoot_FUN_0050d890(int value)
     MOV EDX,0x7fff                      ; 0050d997
     MOV ECX,EAX                         ; 0050d99c
     ADD ESP,0x4                         ; 0050d99e

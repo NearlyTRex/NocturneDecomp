@@ -1,151 +1,151 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 103, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 61, 
-    "assembly_lines": 43, 
-    "suspect_count": 7, 
+    "assembly_lines": 43,
+    "complexity_score": 103,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 5,
+    "pseudocode_lines": 18,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
-      "addr": "0040c1c0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
-      "addr": "0040b7f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0", 
-      "addr": "0040b8f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeLocalizedString_FUN_0040b6e0", 
-      "addr": "0040b6e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_0062e9fb", 
-      "addr": "0062e9fb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_useCount_0062ea05", 
-      "addr": "0062ea05", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_hpRestored_0062ea0e", 
-      "addr": "0062ea0e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_descriptiveName_0062ea19", 
-      "addr": "0062ea19", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CHealthItemClassVersion", 
-      "addr": "0067cc04", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 5, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((int *)&in_stack_00000004[2].location.position.y,\"useCount\");"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&in_stack_00000004[2].location.position.z,\"hpRestored\");"
-    }
-  ], 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004f1f20", 
-    "signature": "undefined core_health.cpp_CHealthItem_serialize_FUN_004f1f20()", 
+    "address": "004f1f20",
     "address_range": [
       [
-        "004f1f20", 
+        "004f1f20",
         "004f1f9f"
       ]
-    ], 
-    "name": "core_health.cpp_CHealthItem_serialize_FUN_004f1f20"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_health.cpp_CHealthItem_serialize_FUN_004f1f20",
+    "signature": "undefined core_health.cpp_CHealthItem_serialize_FUN_004f1f20()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c1c0",
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
+    },
+    {
+      "addr": "0040b770",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b7f0",
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b8f0",
+      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040b6e0",
+      "name": "core_actor.cpp_serializeLocalizedString_FUN_0040b6e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e9fb",
+      "name": "s_modelName_0062e9fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ea05",
+      "name": "s_useCount_0062ea05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ea0e",
+      "name": "s_hpRestored_0062ea0e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ea19",
+      "name": "s_descriptiveName_0062ea19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067cc04",
+      "name": "g_CHealthItemClassVersion",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 264, 
+    "frame_size": 264,
+    "local_size": 264,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -260, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_104"
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 1,
+        "type": "undefined1"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 264, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 5,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "((int *)&in_stack_00000004[2].location.position.y,\"useCount\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004[2].location.position.z,\"hpRestored\");",
+      "type": "stack_param"
+    }
+  ]
 }

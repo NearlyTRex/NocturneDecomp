@@ -27,15 +27,15 @@ section .text
     FCOMP double ptr [ESP]              ; 00442413
     FNSTSW AX                           ; 00442416
     SAHF                                ; 00442418
-    JBE 0x00442461                      ; 00442419 | LAB_00442461
-        ;   XREF to: 00442461 (CONDITIONAL_JUMP)
+    JBE 0x00442461                      ; 00442419
+        ;   XREF to: 00442461 (CONDITIONAL_JUMP)  ; LAB_00442461
     FLD float ptr [EBP + 0x8]           ; 0044241b
     FCHS                                ; 0044241e
     FDIV float ptr [EBP + 0xc]          ; 00442420
     SUB ESP,0x8                         ; 00442423
     FSTP double ptr [ESP]               ; 00442426
-    CALL crt_math.c_floor_FUN_005feb90  ; 00442429 | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 00442429
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x10],EAX      ; 0044242e
     MOV dword ptr [ESP + 0x14],EDX      ; 00442432
     FLD double ptr [ESP + 0x10]         ; 00442436
@@ -47,8 +47,8 @@ section .text
     FCOMPP                              ; 00442448
     FNSTSW AX                           ; 0044244a
     SAHF                                ; 0044244c
-    JA 0x00442456                       ; 0044244d | LAB_00442456
-        ;   XREF to: 00442456 (CONDITIONAL_JUMP)
+    JA 0x00442456                       ; 0044244d
+        ;   XREF to: 00442456 (CONDITIONAL_JUMP)  ; LAB_00442456
     MOV EAX,dword ptr [EBP + 0x8]       ; 0044244f
         ;   Label: LAB_0044244f
     MOV ESP,EBP                         ; 00442452
@@ -58,15 +58,15 @@ section .text
         ;   Label: LAB_00442456
     FADD float ptr [EBP + 0xc]          ; 00442459
     FSTP float ptr [EBP + 0x8]          ; 0044245c
-    JMP 0x0044244f                      ; 0044245f | LAB_0044244f
-        ;   XREF to: 0044244f (UNCONDITIONAL_JUMP)
+    JMP 0x0044244f                      ; 0044245f
+        ;   XREF to: 0044244f (UNCONDITIONAL_JUMP)  ; LAB_0044244f
     FLD float ptr [EBP + 0x8]           ; 00442461
         ;   Label: LAB_00442461
     FDIV float ptr [EBP + 0xc]          ; 00442464
     SUB ESP,0x8                         ; 00442467
     FSTP double ptr [ESP]               ; 0044246a
-    CALL crt_math.c_floor_FUN_005feb90  ; 0044246d | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 0044246d
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x10],EAX      ; 00442472
     MOV dword ptr [ESP + 0x14],EDX      ; 00442476
     FLD double ptr [ESP + 0x10]         ; 0044247a

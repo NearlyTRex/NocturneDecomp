@@ -29,24 +29,24 @@ section .text
     MOV EDX,dword ptr [EDI + 0x8]       ; 00403a2b
     XOR EBX,EBX                         ; 00403a2e
     TEST EDX,EDX                        ; 00403a30
-    JLE 0x00403a60                      ; 00403a32 | LAB_00403a60
-        ;   XREF to: 00403a60 (CONDITIONAL_JUMP)
+    JLE 0x00403a60                      ; 00403a32
+        ;   XREF to: 00403a60 (CONDITIONAL_JUMP)  ; LAB_00403a60
     MOV EAX,dword ptr [EDI + 0x4]       ; 00403a34
         ;   Label: LAB_00403a34
-    MOV ECX,dword ptr [0x00772a60]      ; 00403a37 | uint g_ProcessedVertexOffset
+    MOV ECX,dword ptr [0x00772a60]      ; 00403a37 | g_ProcessedVertexOffset
     ADD EAX,EBX                         ; 00403a3d
     PUSH ESI                            ; 00403a3f
     ADD EAX,ECX                         ; 00403a40
     PUSH EAX                            ; 00403a42
     ADD ESI,0xc                         ; 00403a43
     INC EBX                             ; 00403a46
-    CALL engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850 ; 00403a47 | void engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850(int vertex_index, CVector3i * vertex_position)
-        ;   XREF to: 00505850 (UNCONDITIONAL_CALL)
+    CALL engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850 ; 00403a47
+        ;   XREF to: 00505850 (UNCONDITIONAL_CALL)  ; void engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850(int vertex_index, CVector3i * vertex_position)
     MOV EBP,dword ptr [EDI + 0x8]       ; 00403a4c
     ADD ESP,0x8                         ; 00403a4f
     CMP EBX,EBP                         ; 00403a52
-    JL 0x00403a34                       ; 00403a54 | LAB_00403a34
-        ;   XREF to: 00403a34 (CONDITIONAL_JUMP)
+    JL 0x00403a34                       ; 00403a54
+        ;   XREF to: 00403a34 (CONDITIONAL_JUMP)  ; LAB_00403a34
     LEA EAX,[EAX]                       ; 00403a56
     LEA EDX,[EDX]                       ; 00403a5c
     MOV EBX,dword ptr [EDI + 0x8]       ; 00403a60

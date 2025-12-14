@@ -33,8 +33,8 @@ section .text
     PUSH EAX                            ; 0046622b
     MOV EAX,dword ptr [EBP + -0x8]      ; 0046622c
     PUSH EAX                            ; 0046622f
-    CALL shape_design.c_qsortCompareByField4_FUN_004661d0 ; 00466230 | int shape_design.c_qsortCompareByField4_FUN_004661d0(void * element_a, void * element_b)
-        ;   XREF to: 004661d0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_qsortCompareByField4_FUN_004661d0 ; 00466230
+        ;   XREF to: 004661d0 (UNCONDITIONAL_CALL)  ; int shape_design.c_qsortCompareByField4_FUN_004661d0(void * element_a, void * element_b)
     ADD ESP,0x8                         ; 00466235
     MOV dword ptr [EBP + -0xc],EAX      ; 00466238
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046623b

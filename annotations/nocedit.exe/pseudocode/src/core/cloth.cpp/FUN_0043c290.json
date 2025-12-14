@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 50, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 51, 
-    "assembly_lines": 36, 
-    "suspect_count": 3, 
+    "assembly_lines": 36,
+    "complexity_score": 50,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_cloth.cpp_FUN_00439710", 
-      "addr": "00439710"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *in_stack_00000004) {"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar1 < *in_stack_00000004);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0043c290", 
-    "signature": "undefined core_cloth.cpp_FUN_0043c290()", 
-    "address_range": [
-      [
-        "0043c290", 
-        "0043c2ce"
-      ]
-    ], 
-    "name": "core_cloth.cpp_FUN_0043c290"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 51
+  },
   "cross_references": [
     {
-      "from_addr": "005c6bec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_succubus.cpp_CSuccubus_FUN_005c6b60", 
-      "addr": "005c6b60"
+      "addr": "005c6b60",
+      "from_addr": "005c6bec",
+      "name": "core_succubus.cpp_CSuccubus_FUN_005c6b60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043c290",
+    "address_range": [
+      [
+        "0043c290",
+        "0043c2ce"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_cloth.cpp_FUN_0043c290",
+    "signature": "undefined core_cloth.cpp_FUN_0043c290()"
+  },
+  "function_calls": [
+    {
+      "addr": "00439710",
+      "name": "core_cloth.cpp_FUN_00439710"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "int *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *in_stack_00000004) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar1 < *in_stack_00000004);",
+      "type": "stack_param"
     }
   ]
 }

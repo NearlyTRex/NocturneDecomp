@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 5, 
-    "global_count": 1, 
-    "total_lines": 41, 
-    "assembly_lines": 26, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_00428140", 
-      "addr": "00428140"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_priest_dfm_0063e314", 
-      "addr": "0063e314", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00544870", 
-    "signature": "void core_npc.cpp_CNPC_FUN_00544870(CNPC * this_ptr)", 
-    "address_range": [
-      [
-        "00544870", 
-        "005448a7"
-      ]
-    ], 
-    "name": "core_npc.cpp_CNPC_FUN_00544870"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CNPC *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 26,
+    "complexity_score": 15,
+    "cross_reference_count": 5,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
+  },
   "cross_references": [
     {
-      "from_addr": "004f4535", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hiram.cpp_FUN_004f4530", 
-      "addr": "004f4530"
-    }, 
+      "addr": "004f4530",
+      "from_addr": "004f4535",
+      "name": "core_hiram.cpp_FUN_004f4530",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f4b0c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970", 
-      "addr": "004f4970"
-    }, 
+      "addr": "004f4970",
+      "from_addr": "004f4b0c",
+      "name": "core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00545d38", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_passngr.cpp_FUN_00545d30", 
-      "addr": "00545d30"
-    }, 
+      "addr": "00545d30",
+      "from_addr": "00545d38",
+      "name": "core_passngr.cpp_FUN_00545d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005da097", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tbplayer.cpp_CBassPlayer_FUN_005da090", 
-      "addr": "005da090"
-    }, 
+      "addr": "005da090",
+      "from_addr": "005da097",
+      "name": "core_tbplayer.cpp_CBassPlayer_FUN_005da090",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005da2f7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tbplayer.cpp_CDrummer_FUN_005da2f0", 
-      "addr": "005da2f0"
+      "addr": "005da2f0",
+      "from_addr": "005da2f7",
+      "name": "core_tbplayer.cpp_CDrummer_FUN_005da2f0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00544870",
+    "address_range": [
+      [
+        "00544870",
+        "005448a7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_FUN_00544870",
+    "signature": "void core_npc.cpp_CNPC_FUN_00544870(CNPC * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00428140",
+      "name": "core_charactr.cpp_CCharacter_FUN_00428140"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063e314",
+      "name": "s_priest_dfm_0063e314",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "suspects": []
 }

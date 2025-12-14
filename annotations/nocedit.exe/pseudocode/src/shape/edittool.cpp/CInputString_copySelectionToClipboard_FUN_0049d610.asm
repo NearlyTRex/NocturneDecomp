@@ -28,12 +28,12 @@ section .text
     MOV ECX,dword ptr [EAX + 0x134]     ; 0049d617
     MOV EDX,dword ptr [EAX + 0x138]     ; 0049d61d
     CMP EDX,ECX                         ; 0049d623
-    JZ 0x0049d659                       ; 0049d625 | LAB_0049d659
-        ;   XREF to: 0049d659 (CONDITIONAL_JUMP)
+    JZ 0x0049d659                       ; 0049d625
+        ;   XREF to: 0049d659 (CONDITIONAL_JUMP)  ; LAB_0049d659
     PUSH ESI                            ; 0049d627
     PUSH EBX                            ; 0049d628
-    JLE 0x0049d631                      ; 0049d629 | LAB_0049d631
-        ;   XREF to: 0049d631 (CONDITIONAL_JUMP)
+    JLE 0x0049d631                      ; 0049d629
+        ;   XREF to: 0049d631 (CONDITIONAL_JUMP)  ; LAB_0049d631
     MOV EBX,EDX                         ; 0049d62b
     MOV EDX,ECX                         ; 0049d62d
     MOV ECX,EBX                         ; 0049d62f
@@ -42,13 +42,13 @@ section .text
     ADD EAX,EDX                         ; 0049d634
     XOR ECX,ECX                         ; 0049d636
     PUSH EAX                            ; 0049d638
-    MOV ESI,dword ptr [0x00678a60]      ; 0049d639 | CEditorTools * g_CEditorToolsPtr
+    MOV ESI,dword ptr [0x00678a60]      ; 0049d639 | g_CEditorToolsPtr
     MOV CL,byte ptr [EBX]               ; 0049d63f
-    PUSH ESI                            ; 0049d641 | CEditorTools g_CEditorToolsPtr
+    PUSH ESI                            ; 0049d641 | g_CEditorToolsPtr
     MOV dword ptr [ESP + 0x10],ECX      ; 0049d642
     MOV byte ptr [EBX],0x0              ; 0049d646
-    CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 ; 0049d649 | void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)
-        ;   XREF to: 004a1bc0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0 ; 0049d649
+        ;   XREF to: 004a1bc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)
     ADD ESP,0x8                         ; 0049d64e
     MOV AL,byte ptr [ESP + 0x8]         ; 0049d651
     MOV byte ptr [EBX],AL               ; 0049d655

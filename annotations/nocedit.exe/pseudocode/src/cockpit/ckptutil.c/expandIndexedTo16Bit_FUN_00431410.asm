@@ -21,9 +21,9 @@ section .text
     MOV EBP,ESP                         ; 00431411
     PUSH ESI                            ; 00431413
     PUSH EDI                            ; 00431414
-    CMP dword ptr [0x006793b0],0x6      ; 00431415 | uint g_CPUFamily
-    JNC 0x00431489                      ; 0043141c | LAB_00431489
-        ;   XREF to: 00431489 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x006793b0],0x6      ; 00431415 | g_CPUFamily
+    JNC 0x00431489                      ; 0043141c
+        ;   XREF to: 00431489 (CONDITIONAL_JUMP)  ; LAB_00431489
     PUSH EAX                            ; 0043141e
     PUSH EBX                            ; 0043141f
     PUSH ECX                            ; 00431420
@@ -32,34 +32,34 @@ section .text
     MOV ECX,dword ptr [EBP + 0x10]      ; 00431427
     MOV EAX,0x0                         ; 0043142a
     TEST EDI,0x2                        ; 0043142f
-    JZ 0x00431449                       ; 00431435 | LAB_00431449
-        ;   XREF to: 00431449 (CONDITIONAL_JUMP)
+    JZ 0x00431449                       ; 00431435
+        ;   XREF to: 00431449 (CONDITIONAL_JUMP)  ; LAB_00431449
     MOV AL,byte ptr [ESI]               ; 00431437
-    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 00431439 | ushort[256] g_Hardware16BitPalette
+    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 00431439 | g_Hardware16BitPalette
     MOV word ptr [EDI],BX               ; 00431441
     ADD EDI,0x2                         ; 00431444
     INC ESI                             ; 00431447
     DEC ECX                             ; 00431448
     SUB ECX,0x2                         ; 00431449
         ;   Label: LAB_00431449
-    JL 0x00431470                       ; 0043144c | LAB_00431470
-        ;   XREF to: 00431470 (CONDITIONAL_JUMP)
+    JL 0x00431470                       ; 0043144c
+        ;   XREF to: 00431470 (CONDITIONAL_JUMP)  ; LAB_00431470
     MOV AL,byte ptr [ESI + 0x1]         ; 0043144e
-    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 00431451 | ushort[256] g_Hardware16BitPalette
+    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 00431451 | g_Hardware16BitPalette
     SHL EBX,0x10                        ; 00431459
     MOV AL,byte ptr [ESI]               ; 0043145c
-    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 0043145e | ushort[256] g_Hardware16BitPalette
+    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 0043145e | g_Hardware16BitPalette
     MOV dword ptr [EDI],EBX             ; 00431466
     ADD ESI,0x2                         ; 00431468
     ADD EDI,0x4                         ; 0043146b
-    JMP 0x00431449                      ; 0043146e | LAB_00431449
-        ;   XREF to: 00431449 (UNCONDITIONAL_JUMP)
+    JMP 0x00431449                      ; 0043146e
+        ;   XREF to: 00431449 (UNCONDITIONAL_JUMP)  ; LAB_00431449
     CMP ECX,-0x1                        ; 00431470
         ;   Label: LAB_00431470
-    JNZ 0x00431482                      ; 00431473 | LAB_00431482
-        ;   XREF to: 00431482 (CONDITIONAL_JUMP)
+    JNZ 0x00431482                      ; 00431473
+        ;   XREF to: 00431482 (CONDITIONAL_JUMP)  ; LAB_00431482
     MOV AL,byte ptr [ESI]               ; 00431475
-    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 00431477 | ushort[256] g_Hardware16BitPalette
+    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 00431477 | g_Hardware16BitPalette
     MOV word ptr [EDI],BX               ; 0043147f
     POP ECX                             ; 00431482
         ;   Label: LAB_00431482
@@ -78,35 +78,35 @@ section .text
     MOV ECX,dword ptr [EBP + 0x10]      ; 00431492
     MOV EAX,0x0                         ; 00431495
     TEST EDI,0x2                        ; 0043149a
-    JZ 0x004314b5                       ; 004314a0 | LAB_004314b5
-        ;   XREF to: 004314b5 (CONDITIONAL_JUMP)
+    JZ 0x004314b5                       ; 004314a0
+        ;   XREF to: 004314b5 (CONDITIONAL_JUMP)  ; LAB_004314b5
     MOVZX EAX,byte ptr [ESI]            ; 004314a2
-    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 004314a5 | ushort[256] g_Hardware16BitPalette
+    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 004314a5 | g_Hardware16BitPalette
     MOV word ptr [EDI],BX               ; 004314ad
     ADD EDI,0x2                         ; 004314b0
     INC ESI                             ; 004314b3
     DEC ECX                             ; 004314b4
     SUB ECX,0x2                         ; 004314b5
         ;   Label: LAB_004314b5
-    JL 0x004314e0                       ; 004314b8 | LAB_004314e0
-        ;   XREF to: 004314e0 (CONDITIONAL_JUMP)
+    JL 0x004314e0                       ; 004314b8
+        ;   XREF to: 004314e0 (CONDITIONAL_JUMP)  ; LAB_004314e0
     MOVZX EAX,byte ptr [ESI + 0x1]      ; 004314ba
-    MOVZX EBX,word ptr [EAX*0x2 + 0x2d01d24] ; 004314be | ushort[256] g_Hardware16BitPalette
+    MOVZX EBX,word ptr [EAX*0x2 + 0x2d01d24] ; 004314be | g_Hardware16BitPalette
     MOVZX EAX,byte ptr [ESI]            ; 004314c6
     SHL EBX,0x10                        ; 004314c9
-    MOVZX EAX,word ptr [EAX*0x2 + 0x2d01d24] ; 004314cc | ushort[256] g_Hardware16BitPalette
+    MOVZX EAX,word ptr [EAX*0x2 + 0x2d01d24] ; 004314cc | g_Hardware16BitPalette
     OR EBX,EAX                          ; 004314d4
     ADD ESI,0x2                         ; 004314d6
     MOV dword ptr [EDI],EBX             ; 004314d9
     ADD EDI,0x4                         ; 004314db
-    JMP 0x004314b5                      ; 004314de | LAB_004314b5
-        ;   XREF to: 004314b5 (UNCONDITIONAL_JUMP)
+    JMP 0x004314b5                      ; 004314de
+        ;   XREF to: 004314b5 (UNCONDITIONAL_JUMP)  ; LAB_004314b5
     CMP ECX,-0x1                        ; 004314e0
         ;   Label: LAB_004314e0
-    JNZ 0x004314f3                      ; 004314e3 | LAB_004314f3
-        ;   XREF to: 004314f3 (CONDITIONAL_JUMP)
+    JNZ 0x004314f3                      ; 004314e3
+        ;   XREF to: 004314f3 (CONDITIONAL_JUMP)  ; LAB_004314f3
     MOVZX EAX,byte ptr [ESI]            ; 004314e5
-    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 004314e8 | ushort[256] g_Hardware16BitPalette
+    MOV BX,word ptr [EAX*0x2 + 0x2d01d24] ; 004314e8 | g_Hardware16BitPalette
     MOV word ptr [EDI],BX               ; 004314f0
     POP ECX                             ; 004314f3
         ;   Label: LAB_004314f3

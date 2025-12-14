@@ -35,18 +35,18 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0044c0f7
     PUSH 0x10000                        ; 0044c0fb
     PUSH EBX                            ; 0044c100
-    CALL core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0 ; 0044c101 | void core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera * this_ptr, int gamma_value)
-        ;   XREF to: 00453bd0 (UNCONDITIONAL_CALL)
+    CALL core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0 ; 0044c101
+        ;   XREF to: 00453bd0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera * this_ptr, int gamma_value)
     ADD ESP,0x8                         ; 0044c106
-    MOV EDX,dword ptr [0x00679398]      ; 0044c109 | int g_WindowHeight
+    MOV EDX,dword ptr [0x00679398]      ; 0044c109 | g_WindowHeight
     PUSH EDX                            ; 0044c10f
     PUSH EBX                            ; 0044c110
-    CALL core_dcamera.cpp_CDemonCamera_init_FUN_0044c190 ; 0044c111 | void core_dcamera.cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera * this_ptr, int screen_height)
-        ;   XREF to: 0044c190 (UNCONDITIONAL_CALL)
+    CALL core_dcamera.cpp_CDemonCamera_init_FUN_0044c190 ; 0044c111
+        ;   XREF to: 0044c190 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera * this_ptr, int screen_height)
     ADD ESP,0x8                         ; 0044c116
     PUSH EBX                            ; 0044c119
-    CALL core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_004529a0 ; 0044c11a | void core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_004529a0(CDemonCamera * this_ptr)
-        ;   XREF to: 004529a0 (UNCONDITIONAL_CALL)
+    CALL core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_004529a0 ; 0044c11a
+        ;   XREF to: 004529a0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_004529a0(CDemonCamera * this_ptr)
     MOV ECX,0x40                        ; 0044c11f
     ADD ESP,0x4                         ; 0044c124
     XOR EBP,EBP                         ; 0044c127
@@ -72,10 +72,10 @@ section .text
     SAR EAX,0x2                         ; 0044c158
     INC EBX                             ; 0044c15b
     ADD ECX,ESI                         ; 0044c15c
-    MOV byte ptr [EBX + 0x13d9757],AL   ; 0044c15e | char[4096] g_CameraLookupTable
+    MOV byte ptr [EBX + 0x13d9757],AL   ; 0044c15e | g_CameraLookupTable | DAT_013d9759
     CMP EBX,EDI                         ; 0044c164
-    JNZ 0x0044c13f                      ; 0044c166 | LAB_0044c13f
-        ;   XREF to: 0044c13f (CONDITIONAL_JUMP)
+    JNZ 0x0044c13f                      ; 0044c166
+        ;   XREF to: 0044c13f (CONDITIONAL_JUMP)  ; LAB_0044c13f
     MOV EDI,dword ptr [ESP + 0x4]       ; 0044c168
     MOV ESI,dword ptr [ESP]             ; 0044c16c
     INC EBP                             ; 0044c16f
@@ -84,8 +84,8 @@ section .text
     MOV dword ptr [ESP + 0x4],EDI       ; 0044c174
     MOV dword ptr [ESP],ESI             ; 0044c178
     CMP EBP,0x40                        ; 0044c17b
-    JL 0x0044c130                       ; 0044c17e | LAB_0044c130
-        ;   XREF to: 0044c130 (CONDITIONAL_JUMP)
+    JL 0x0044c130                       ; 0044c17e
+        ;   XREF to: 0044c130 (CONDITIONAL_JUMP)  ; LAB_0044c130
     ADD ESP,0x8                         ; 0044c180
     POP EBP                             ; 0044c183
     POP EDI                             ; 0044c184

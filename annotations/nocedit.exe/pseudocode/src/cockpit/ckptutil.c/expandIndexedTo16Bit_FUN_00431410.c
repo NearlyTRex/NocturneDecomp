@@ -16,39 +16,34 @@ cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410
   
   if (g_CPUFamily < 6) {
     if (((uint)output_buffer & 2) != 0) {
-                    /* WARNING: Load size is inaccurate */
-      *(ushort *)output_buffer = g_Hardware16BitPalette[*indexed_input_buffer];
+      *(ushort *)output_buffer = g_Hardware16BitPalette[*(byte *)indexed_input_buffer];
       output_buffer = (void *)((int)output_buffer + 2);
       indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);
       pixel_count = pixel_count + -1;
     }
     while( true ) {
       if (pixel_count < 2) break;
-                    /* WARNING: Load size is inaccurate */
       *(uint *)output_buffer =
            CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],
-                    g_Hardware16BitPalette[*indexed_input_buffer]);
+                    g_Hardware16BitPalette[*(byte *)indexed_input_buffer]);
       indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);
       output_buffer = (void *)((int)output_buffer + 4);
       pixel_count = pixel_count + -2;
     }
     if (pixel_count + -2 == -1) {
-                    /* WARNING: Load size is inaccurate */
-      *(ushort *)output_buffer = g_Hardware16BitPalette[*indexed_input_buffer];
+      *(ushort *)output_buffer = g_Hardware16BitPalette[*(byte *)indexed_input_buffer];
     }
     return;
   }
   if (((uint)output_buffer & 2) != 0) {
-                    /* WARNING: Load size is inaccurate */
-    *(ushort *)output_buffer = g_Hardware16BitPalette[*indexed_input_buffer];
+    *(ushort *)output_buffer = g_Hardware16BitPalette[*(byte *)indexed_input_buffer];
     output_buffer = (void *)((int)output_buffer + 2);
     indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);
     pixel_count = pixel_count + -1;
   }
   while (1 < pixel_count) {
     pbVar1 = (byte *)((int)indexed_input_buffer + 1);
-                    /* WARNING: Load size is inaccurate */
-    bVar2 = *indexed_input_buffer;
+    bVar2 = *(byte *)indexed_input_buffer;
     indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);
     *(uint *)output_buffer = CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*pbVar1],g_Hardware16BitPalette[bVar2])
     ;
@@ -56,8 +51,7 @@ cockpit_ckptutil_c_expandIndexedTo16Bit_FUN_00431410
     pixel_count = pixel_count + -2;
   }
   if (pixel_count + -2 == -1) {
-                    /* WARNING: Load size is inaccurate */
-    *(ushort *)output_buffer = g_Hardware16BitPalette[*indexed_input_buffer];
+    *(ushort *)output_buffer = g_Hardware16BitPalette[*(byte *)indexed_input_buffer];
   }
   return;
 }

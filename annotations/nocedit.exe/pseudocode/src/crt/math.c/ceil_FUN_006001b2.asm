@@ -31,8 +31,8 @@ section .text
     SUB ESP,0x8                         ; 006001bb
     FCHS                                ; 006001be
     FSTP double ptr [ESP]               ; 006001c0
-    CALL crt_math.c_floor_FUN_005feb90  ; 006001c3 | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 006001c3
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [EBP + -0x8],EAX      ; 006001c8
     MOV dword ptr [EBP + -0x4],EDX      ; 006001cb
     ADD ESP,0x8                         ; 006001ce

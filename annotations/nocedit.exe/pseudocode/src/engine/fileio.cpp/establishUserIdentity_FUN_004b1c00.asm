@@ -42,9 +42,9 @@ section .text
     PUSH EBX                            ; 004b1c00
         ;   Label: engine_fileio.cpp_establishUserIdentity_FUN_004b1c00
     SUB ESP,0x200                       ; 004b1c01
-    CMP byte ptr [0x02d12bd0],0x0       ; 004b1c07 | SVersionControlSession g_VersionControlSession
-    JZ 0x004b1c1d                       ; 004b1c0e | LAB_004b1c1d
-        ;   XREF to: 004b1c1d (CONDITIONAL_JUMP)
+    CMP byte ptr [0x02d12bd0],0x0       ; 004b1c07 | g_VersionControlSession
+    JZ 0x004b1c1d                       ; 004b1c0e
+        ;   XREF to: 004b1c1d (CONDITIONAL_JUMP)  ; LAB_004b1c1d
     MOV EAX,0x1                         ; 004b1c10
         ;   Label: LAB_004b1c10
     ADD ESP,0x200                       ; 004b1c15
@@ -53,89 +53,89 @@ section .text
     MOV EAX,ESP                         ; 004b1c1d
         ;   Label: LAB_004b1c1d
     PUSH EAX                            ; 004b1c1f
-    CALL wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140 ; 004b1c20 | void wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140(char * buffer)
-        ;   XREF to: 005f4140 (UNCONDITIONAL_CALL)
+    CALL wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140 ; 004b1c20
+        ;   XREF to: 005f4140 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140(char * buffer)
     ADD ESP,0x4                         ; 004b1c25
     CMP byte ptr [ESP],0x0              ; 004b1c28
-    JNZ 0x004b1cc6                      ; 004b1c2c | LAB_004b1cc6
-        ;   XREF to: 004b1cc6 (CONDITIONAL_JUMP)
-    PUSH 0x625ff5                       ; 004b1c32 | = "USERNAME" | s_USERNAME_00625ff5 = USERNAME
-    CALL crt_env.c_getenv_FUN_006013f0  ; 004b1c37 | char * crt_env.c_getenv_FUN_006013f0(char * name)
-        ;   XREF to: 006013f0 (UNCONDITIONAL_CALL)
+    JNZ 0x004b1cc6                      ; 004b1c2c
+        ;   XREF to: 004b1cc6 (CONDITIONAL_JUMP)  ; LAB_004b1cc6
+    PUSH 0x625ff5                       ; 004b1c32 | = "USERNAME"
+    CALL crt_env.c_getenv_FUN_006013f0  ; 004b1c37
+        ;   XREF to: 006013f0 (UNCONDITIONAL_CALL)  ; char * crt_env.c_getenv_FUN_006013f0(char * name)
     ADD ESP,0x4                         ; 004b1c3c
     TEST EAX,EAX                        ; 004b1c3f
-    JNZ 0x004b1cfa                      ; 004b1c41 | LAB_004b1cfa
-        ;   XREF to: 004b1cfa (CONDITIONAL_JUMP)
+    JNZ 0x004b1cfa                      ; 004b1c41
+        ;   XREF to: 004b1cfa (CONDITIONAL_JUMP)  ; LAB_004b1cfa
     PUSH 0x1                            ; 004b1c47
         ;   Label: LAB_004b1c47
     PUSH 0x20                           ; 004b1c49
-    PUSH 0x2d12bd0                      ; 004b1c4b | SVersionControlSession g_VersionControlSession
-    PUSH 0x625ffe                       ; 004b1c50 | = "Enter user name" | s_Enter_user_name_00625ffe = Enter user name
-    MOV EDX,dword ptr [0x00678a60]      ; 004b1c55 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
-    PUSH EDX                            ; 004b1c5b | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004b1c5c | int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
-        ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)
+    PUSH 0x2d12bd0                      ; 004b1c4b | g_VersionControlSession
+    PUSH 0x625ffe                       ; 004b1c50 | = "Enter user name"
+    MOV EDX,dword ptr [0x00678a60]      ; 004b1c55 | g_CEditorToolsPtr
+    PUSH EDX                            ; 004b1c5b | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004b1c5c
+        ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004b1c61
     TEST EAX,EAX                        ; 004b1c64
-    JZ 0x004b1d17                       ; 004b1c66 | LAB_004b1d17
-        ;   XREF to: 004b1d17 (CONDITIONAL_JUMP)
-    MOV BL,byte ptr [0x02d12bd0]        ; 004b1c6c | SVersionControlSession g_VersionControlSession
+    JZ 0x004b1d17                       ; 004b1c66
+        ;   XREF to: 004b1d17 (CONDITIONAL_JUMP)  ; LAB_004b1d17
+    MOV BL,byte ptr [0x02d12bd0]        ; 004b1c6c | g_VersionControlSession
     TEST BL,BL                          ; 004b1c72
-    JZ 0x004b1d27                       ; 004b1c74 | LAB_004b1d27
-        ;   XREF to: 004b1d27 (CONDITIONAL_JUMP)
-    MOV EAX,0x2d12bd0                   ; 004b1c7a | SVersionControlSession g_VersionControlSession
+    JZ 0x004b1d27                       ; 004b1c74
+        ;   XREF to: 004b1d27 (CONDITIONAL_JUMP)  ; LAB_004b1d27
+    MOV EAX,0x2d12bd0                   ; 004b1c7a | g_VersionControlSession
     MOV ECX,0x1                         ; 004b1c7f
-    JZ 0x004b1ca8                       ; 004b1c84 | LAB_004b1ca8
-        ;   XREF to: 004b1ca8 (CONDITIONAL_JUMP)
-    MOV DH,byte ptr [EAX]               ; 004b1c86 | SVersionControlSession g_VersionControlSession
+    JZ 0x004b1ca8                       ; 004b1c84
+        ;   XREF to: 004b1ca8 (CONDITIONAL_JUMP)  ; LAB_004b1ca8
+    MOV DH,byte ptr [EAX]               ; 004b1c86 | g_VersionControlSession | DAT_02d12bd1
         ;   Label: LAB_004b1c86
     CMP DH,0x5f                         ; 004b1c88
-    JZ 0x004b1ca0                       ; 004b1c8b | LAB_004b1ca0
-        ;   XREF to: 004b1ca0 (CONDITIONAL_JUMP)
+    JZ 0x004b1ca0                       ; 004b1c8b
+        ;   XREF to: 004b1ca0 (CONDITIONAL_JUMP)  ; LAB_004b1ca0
     MOV DL,DH                           ; 004b1c8d
     INC DL                              ; 004b1c8f
     AND EDX,0xff                        ; 004b1c91
-    TEST byte ptr [EDX + 0x6849c4],0xe0 ; 004b1c97 | char[256] g_CharacterClassificationTable
-    JZ 0x004b1cb0                       ; 004b1c9e | LAB_004b1cb0
-        ;   XREF to: 004b1cb0 (CONDITIONAL_JUMP)
-    MOV DL,byte ptr [EAX + 0x1]         ; 004b1ca0 | DAT_02d12bd1
+    TEST byte ptr [EDX + 0x6849c4],0xe0 ; 004b1c97 | g_CharacterClassificationTable
+    JZ 0x004b1cb0                       ; 004b1c9e
+        ;   XREF to: 004b1cb0 (CONDITIONAL_JUMP)  ; LAB_004b1cb0
+    MOV DL,byte ptr [EAX + 0x1]         ; 004b1ca0 | DAT_02d12bd1 | DAT_02d12bd2
         ;   Label: LAB_004b1ca0
     INC EAX                             ; 004b1ca3 | DAT_02d12bd1
     TEST DL,DL                          ; 004b1ca4
-    JNZ 0x004b1c86                      ; 004b1ca6 | LAB_004b1c86
-        ;   XREF to: 004b1c86 (CONDITIONAL_JUMP)
+    JNZ 0x004b1c86                      ; 004b1ca6
+        ;   XREF to: 004b1c86 (CONDITIONAL_JUMP)  ; LAB_004b1c86
     TEST ECX,ECX                        ; 004b1ca8
         ;   Label: LAB_004b1ca8
-    JNZ 0x004b1c10                      ; 004b1caa | LAB_004b1c10
-        ;   XREF to: 004b1c10 (CONDITIONAL_JUMP)
-    PUSH 0x62602a                       ; 004b1cb0 | = "Name contains invalid characters" | s_Name_contains_invalid_ch_0062602a = Name contains invalid characters
+    JNZ 0x004b1c10                      ; 004b1caa
+        ;   XREF to: 004b1c10 (CONDITIONAL_JUMP)  ; LAB_004b1c10
+    PUSH 0x62602a                       ; 004b1cb0 | = "Name contains invalid characters"
         ;   Label: LAB_004b1cb0
-    MOV EBX,dword ptr [0x00678a60]      ; 004b1cb5 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
-    PUSH EBX                            ; 004b1cbb | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b1cbc | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    MOV EBX,dword ptr [0x00678a60]      ; 004b1cb5 | g_CEditorToolsPtr
+    PUSH EBX                            ; 004b1cbb | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b1cbc
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b1cc1
-    JMP 0x004b1c47                      ; 004b1cc4 | LAB_004b1c47
-        ;   XREF to: 004b1c47 (UNCONDITIONAL_JUMP)
+    JMP 0x004b1c47                      ; 004b1cc4
+        ;   XREF to: 004b1c47 (UNCONDITIONAL_JUMP)  ; LAB_004b1c47
     PUSH EDI                            ; 004b1cc6
         ;   Label: LAB_004b1cc6
     PUSH ESI                            ; 004b1cc7
     LEA ESI,[ESP + 0x8]                 ; 004b1cc8
-    MOV EDI,0x2d12bd0                   ; 004b1ccc | SVersionControlSession g_VersionControlSession
-    PUSH EDI                            ; 004b1cd1 | SVersionControlSession g_VersionControlSession
+    MOV EDI,0x2d12bd0                   ; 004b1ccc | g_VersionControlSession
+    PUSH EDI                            ; 004b1cd1 | g_VersionControlSession
     MOV AL,byte ptr [ESI]               ; 004b1cd2
         ;   Label: LAB_004b1cd2
-    MOV byte ptr [EDI],AL               ; 004b1cd4 | SVersionControlSession g_VersionControlSession
+    MOV byte ptr [EDI],AL               ; 004b1cd4 | g_VersionControlSession | DAT_02d12bd2
     CMP AL,0x0                          ; 004b1cd6
-    JZ 0x004b1cea                       ; 004b1cd8 | LAB_004b1cea
-        ;   XREF to: 004b1cea (CONDITIONAL_JUMP)
+    JZ 0x004b1cea                       ; 004b1cd8
+        ;   XREF to: 004b1cea (CONDITIONAL_JUMP)  ; LAB_004b1cea
     MOV AL,byte ptr [ESI + 0x1]         ; 004b1cda
     ADD ESI,0x2                         ; 004b1cdd
-    MOV byte ptr [EDI + 0x1],AL         ; 004b1ce0 | DAT_02d12bd1
+    MOV byte ptr [EDI + 0x1],AL         ; 004b1ce0 | DAT_02d12bd1 | DAT_02d12bd3
     ADD EDI,0x2                         ; 004b1ce3
     CMP AL,0x0                          ; 004b1ce6
-    JNZ 0x004b1cd2                      ; 004b1ce8 | LAB_004b1cd2
-        ;   XREF to: 004b1cd2 (CONDITIONAL_JUMP)
+    JNZ 0x004b1cd2                      ; 004b1ce8
+        ;   XREF to: 004b1cd2 (CONDITIONAL_JUMP)  ; LAB_004b1cd2
     POP EDI                             ; 004b1cea
         ;   Label: LAB_004b1cea
     MOV EAX,0x1                         ; 004b1ceb
@@ -147,9 +147,9 @@ section .text
     PUSH 0x1f                           ; 004b1cfa
         ;   Label: LAB_004b1cfa
     PUSH EAX                            ; 004b1cfc
-    PUSH 0x2d12bd0                      ; 004b1cfd | SVersionControlSession g_VersionControlSession
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 004b1d02 | char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)
+    PUSH 0x2d12bd0                      ; 004b1cfd | g_VersionControlSession
+    CALL crt_string.c_strncpy_FUN_00600f40 ; 004b1d02
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     MOV EAX,0x1                         ; 004b1d07
     ADD ESP,0xc                         ; 004b1d0c
     ADD ESP,0x200                       ; 004b1d0f
@@ -157,17 +157,17 @@ section .text
     RET                                 ; 004b1d16
     XOR DH,DH                           ; 004b1d17
         ;   Label: LAB_004b1d17
-    MOV byte ptr [0x02d12bd0],DH        ; 004b1d19 | SVersionControlSession g_VersionControlSession
+    MOV byte ptr [0x02d12bd0],DH        ; 004b1d19 | g_VersionControlSession
     ADD ESP,0x200                       ; 004b1d1f
     POP EBX                             ; 004b1d25
     RET                                 ; 004b1d26
-    PUSH 0x62600e                       ; 004b1d27 | = "You must enter a user name." | s_You_must_enter_a_user_na_0062600e = You must enter a user name.
+    PUSH 0x62600e                       ; 004b1d27 | = "You must enter a user name."
         ;   Label: LAB_004b1d27
-    MOV ECX,dword ptr [0x00678a60]      ; 004b1d2c | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
-    PUSH ECX                            ; 004b1d32 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b1d33 | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x00678a60]      ; 004b1d2c | g_CEditorToolsPtr
+    PUSH ECX                            ; 004b1d32 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004b1d33
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b1d38
-    JMP 0x004b1c47                      ; 004b1d3b | LAB_004b1c47
-        ;   XREF to: 004b1c47 (UNCONDITIONAL_JUMP)
+    JMP 0x004b1c47                      ; 004b1d3b
+        ;   XREF to: 004b1c47 (UNCONDITIONAL_JUMP)  ; LAB_004b1c47
 

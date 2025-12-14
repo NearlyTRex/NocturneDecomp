@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 32, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 19, 
-    "assembly_lines": 12, 
-    "suspect_count": 2, 
+    "assembly_lines": 12,
+    "complexity_score": 32,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_0000000c;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_memory_c_memset_FUN_005fde40(in_stack_0000000c,0,0x310);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00589fc0", 
-    "signature": "undefined core_skeledit.cpp_FUN_00589fc0()", 
-    "address_range": [
-      [
-        "00589fc0", 
-        "00589fde"
-      ]
-    ], 
-    "name": "core_skeledit.cpp_FUN_00589fc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 19
+  },
   "cross_references": [
     {
-      "from_addr": "00589fb0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589fa0", 
-      "addr": "00589fa0"
-    }, 
+      "addr": "00589fa0",
+      "from_addr": "00589fb0",
+      "name": "core_skeledit.cpp_FUN_00589fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00589ff8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589fe0", 
-      "addr": "00589fe0"
+      "addr": "00589fe0",
+      "from_addr": "00589ff8",
+      "name": "core_skeledit.cpp_FUN_00589fe0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00589fc0",
+    "address_range": [
+      [
+        "00589fc0",
+        "00589fde"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_skeledit.cpp_FUN_00589fc0",
+    "signature": "undefined core_skeledit.cpp_FUN_00589fc0()"
+  },
+  "function_calls": [
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_0000000c",
+      "text": "void *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "crt_memory_c_memset_FUN_005fde40(in_stack_0000000c,0,0x310);",
+      "type": "stack_param"
     }
   ]
 }

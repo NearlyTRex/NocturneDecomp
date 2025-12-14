@@ -16,13 +16,13 @@
 
 section .text
 
-    PUSH 0x65ddf0                       ; 004c99d0 | WatcomTypeInfo g_CStakeTypeInfo
+    PUSH 0x65ddf0                       ; 004c99d0 | g_CStakeTypeInfo
         ;   Label: core_fire.cpp_freeStakes_FUN_004c99d0
     PUSH 0x100                          ; 004c99d5
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c99da
     PUSH EDX                            ; 004c99de
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 004c99df | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 004c99df
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c99e4
     RET                                 ; 004c99e7
 

@@ -1,102 +1,102 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 25, 
-    "assembly_lines": 17, 
-    "suspect_count": 2, 
+    "assembly_lines": 17,
+    "complexity_score": 33,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590", 
-      "addr": "00489590"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "char *unaff_ESI;"
-    }, 
-    {
-      "line": 9, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_drawTextCentered_FUN_00489590(this_ptr,height,x,y,unaff_ESI);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004895c0", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_004895c0(CDrawSurface * this_ptr, int x, int y, int height, char * text)", 
-    "address_range": [
-      [
-        "004895c0", 
-        "004895e0"
-      ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_004895c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 25
+  },
   "cross_references": [
     {
-      "from_addr": "00489f00", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30", 
-      "addr": "00489d30"
+      "addr": "00489d30",
+      "from_addr": "00489f00",
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004895c0",
+    "address_range": [
+      [
+        "004895c0",
+        "004895e0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_004895c0",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_004895c0(CDrawSurface * this_ptr, int x, int y, int height, char * text)"
+  },
+  "function_calls": [
+    {
+      "addr": "00489590",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "text": "char *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_drawTextCentered_FUN_00489590(this_ptr,height,x,y,unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ]
 }

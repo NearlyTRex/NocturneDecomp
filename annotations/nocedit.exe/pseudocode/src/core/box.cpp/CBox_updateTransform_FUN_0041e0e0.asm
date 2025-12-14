@@ -40,13 +40,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 0041e0eb
     MOV EBX,dword ptr [ESP + 0x38]      ; 0041e0ef
     CMP ESI,EAX                         ; 0041e0f3
-    JNZ 0x0041e2b8                      ; 0041e0f5 | LAB_0041e2b8
-        ;   XREF to: 0041e2b8 (CONDITIONAL_JUMP)
+    JNZ 0x0041e2b8                      ; 0041e0f5
+        ;   XREF to: 0041e2b8 (CONDITIONAL_JUMP)  ; LAB_0041e2b8
     LEA EAX,[ESI + 0xc]                 ; 0041e0fb
         ;   Label: LAB_0041e0fb
     CMP EAX,EBX                         ; 0041e0fe
-    JZ 0x0041e112                       ; 0041e100 | LAB_0041e112
-        ;   XREF to: 0041e112 (CONDITIONAL_JUMP)
+    JZ 0x0041e112                       ; 0041e100
+        ;   XREF to: 0041e112 (CONDITIONAL_JUMP)  ; LAB_0041e112
     MOV EDX,dword ptr [EBX]             ; 0041e102
     MOV dword ptr [EAX],EDX             ; 0041e104
     MOV EDX,dword ptr [EBX + 0x4]       ; 0041e106
@@ -58,8 +58,8 @@ section .text
     PUSH EAX                            ; 0041e115
     LEA EBP,[ESI + 0x18]                ; 0041e116
     PUSH EBP                            ; 0041e119
-    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0041e11a | void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0041e11a
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     FLD float ptr [ESI + 0xa8]          ; 0041e11f
     FMUL ST0                            ; 0041e125
     FLD float ptr [ESI + 0xa4]          ; 0041e127
@@ -68,7 +68,7 @@ section .text
     ADD ESP,0x8                         ; 0041e135
     FMUL float ptr [ESI + 0xa4]         ; 0041e138
     FLD float ptr [ESP + 0x3c]          ; 0041e13e
-    FMUL double ptr [0x006164af]        ; 0041e142 | double g_BoxDensityScale
+    FMUL double ptr [0x006164af]        ; 0041e142 | g_BoxDensityScale
     FLD float ptr [ESI + 0xac]          ; 0041e148
     FMUL ST0                            ; 0041e14e
     FLD float ptr [ESI + 0xac]          ; 0041e150
@@ -79,7 +79,7 @@ section .text
     FADDP ST6,ST0                       ; 0041e162
     FXCH ST2                            ; 0041e164
     FST float ptr [ESI + 0x94]          ; 0041e166
-    FLD double ptr [0x006164b7]         ; 0041e16c | double g_BoxInertiaCoefficient
+    FLD double ptr [0x006164b7]         ; 0041e16c | g_BoxInertiaCoefficient
     FXCH                                ; 0041e172
     FMUL ST1                            ; 0041e174
     FXCH ST3                            ; 0041e176
@@ -144,8 +144,8 @@ section .text
     MOV EDX,dword ptr [ESI + 0xb0]      ; 0041e242
     XOR EDI,EDI                         ; 0041e248
     TEST EDX,EDX                        ; 0041e24a
-    JLE 0x0041e2a6                      ; 0041e24c | LAB_0041e2a6
-        ;   XREF to: 0041e2a6 (CONDITIONAL_JUMP)
+    JLE 0x0041e2a6                      ; 0041e24c
+        ;   XREF to: 0041e2a6 (CONDITIONAL_JUMP)  ; LAB_0041e2a6
     LEA EAX,[ESI + 0xb4]                ; 0041e24e
     LEA EBX,[ESI + 0xc0]                ; 0041e254
     MOV dword ptr [ESP + 0x18],EAX      ; 0041e25a
@@ -156,8 +156,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0041e266
     PUSH EAX                            ; 0041e26a
     PUSH EBP                            ; 0041e26b
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 0041e26c | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 0041e26c
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 0041e271
     FADD float ptr [EAX]                ; 0041e273
     ADD ESP,0xc                         ; 0041e275
@@ -170,15 +170,15 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0041e28c
     FSTP float ptr [ESP + 0x14]         ; 0041e290
     CMP EBX,EAX                         ; 0041e294
-    JNZ 0x0041e2cd                      ; 0041e296 | LAB_0041e2cd
-        ;   XREF to: 0041e2cd (CONDITIONAL_JUMP)
+    JNZ 0x0041e2cd                      ; 0041e296
+        ;   XREF to: 0041e2cd (CONDITIONAL_JUMP)  ; LAB_0041e2cd
     INC EDI                             ; 0041e298
         ;   Label: LAB_0041e298
     MOV ECX,dword ptr [ESI + 0xb0]      ; 0041e299
     ADD EBX,0x34                        ; 0041e29f
     CMP EDI,ECX                         ; 0041e2a2
-    JL 0x0041e25e                       ; 0041e2a4 | LAB_0041e25e
-        ;   XREF to: 0041e25e (CONDITIONAL_JUMP)
+    JL 0x0041e25e                       ; 0041e2a4
+        ;   XREF to: 0041e25e (CONDITIONAL_JUMP)  ; LAB_0041e25e
     MOV dword ptr [ESI + 0x254],0x1     ; 0041e2a6
         ;   Label: LAB_0041e2a6
     ADD ESP,0x1c                        ; 0041e2b0
@@ -194,8 +194,8 @@ section .text
     MOV dword ptr [ESI + 0x4],EDX       ; 0041e2bf
     MOV EDX,dword ptr [EAX + 0x8]       ; 0041e2c2
     MOV dword ptr [ESI + 0x8],EDX       ; 0041e2c5
-    JMP 0x0041e0fb                      ; 0041e2c8 | LAB_0041e0fb
-        ;   XREF to: 0041e0fb (UNCONDITIONAL_JUMP)
+    JMP 0x0041e0fb                      ; 0041e2c8
+        ;   XREF to: 0041e0fb (UNCONDITIONAL_JUMP)  ; LAB_0041e0fb
     MOV EAX,dword ptr [ESP + 0xc]       ; 0041e2cd
         ;   Label: LAB_0041e2cd
     MOV dword ptr [EBX],EAX             ; 0041e2d1
@@ -203,6 +203,6 @@ section .text
     MOV dword ptr [EBX + 0x4],EAX       ; 0041e2d7
     MOV EAX,dword ptr [ESP + 0x14]      ; 0041e2da
     MOV dword ptr [EBX + 0x8],EAX       ; 0041e2de
-    JMP 0x0041e298                      ; 0041e2e1 | LAB_0041e298
-        ;   XREF to: 0041e298 (UNCONDITIONAL_JUMP)
+    JMP 0x0041e298                      ; 0041e2e1
+        ;   XREF to: 0041e298 (UNCONDITIONAL_JUMP)  ; LAB_0041e298
 

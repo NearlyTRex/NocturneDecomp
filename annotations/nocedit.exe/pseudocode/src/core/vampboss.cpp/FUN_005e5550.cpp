@@ -11,8 +11,7 @@ void core_vampboss_cpp_FUN_005e5550(void)
 {
   CVampireBoss *this_ptr;
   
-  this_ptr = (CVampireBoss *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xce920,"..\\core\\vampboss.cpp",0x60);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xce920,"..\\core\\vampboss.cpp",0x60);
   if (this_ptr == (CVampireBoss *)0x0) {
     return;
   }

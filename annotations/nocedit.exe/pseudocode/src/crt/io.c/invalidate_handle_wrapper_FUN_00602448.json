@@ -1,63 +1,63 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 12, 
-    "assembly_lines": 7, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_io.c_invalidate_handle_FUN_00608af4", 
-      "addr": "00608af4"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00602448", 
-    "signature": "void crt_io.c_invalidate_handle_wrapper_FUN_00602448(int handle_index)", 
-    "address_range": [
-      [
-        "00602448", 
-        "00602457"
-      ]
-    ], 
-    "name": "crt_io.c_invalidate_handle_wrapper_FUN_00602448"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "handle_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 7,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
   "cross_references": [
     {
-      "from_addr": "0060c324", 
-      "type": "COMPUTED_CALL", 
-      "name": "crt_io.c_close_handle_safe_FUN_0060c2e0", 
-      "addr": "0060c2e0"
-    }, 
+      "addr": "0060c2e0",
+      "from_addr": "0060c324",
+      "name": "crt_io.c_close_handle_safe_FUN_0060c2e0",
+      "type": "COMPUTED_CALL"
+    },
     {
-      "from_addr": "006020ac", 
-      "type": "COMPUTED_CALL", 
-      "name": "crt_stdio.c_fclose_force_FUN_00601fd0", 
-      "addr": "00601fd0"
+      "addr": "00601fd0",
+      "from_addr": "006020ac",
+      "name": "crt_stdio.c_fclose_force_FUN_00601fd0",
+      "type": "COMPUTED_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00602448",
+    "address_range": [
+      [
+        "00602448",
+        "00602457"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_invalidate_handle_wrapper_FUN_00602448",
+    "signature": "void crt_io.c_invalidate_handle_wrapper_FUN_00602448(int handle_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00608af4",
+      "name": "crt_io.c_invalidate_handle_FUN_00608af4"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "handle_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

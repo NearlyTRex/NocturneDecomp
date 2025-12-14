@@ -29,7 +29,7 @@ section .text
     FLD double ptr [ESP + 0xc]          ; 005aa290
         ;   Label: sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290
     FLD double ptr [ESP + 0x4]          ; 005aa294
-    FSUB double ptr [0x03f68830]        ; 005aa298 | CVector3d g_Cached3DListenerPos
+    FSUB double ptr [0x03f68830]        ; 005aa298 | g_Cached3DListenerPos
     FXCH                                ; 005aa29e
     FSUB double ptr [0x03f68838]        ; 005aa2a0 | g_Cached3DListenerPos.y
     FXCH                                ; 005aa2a6

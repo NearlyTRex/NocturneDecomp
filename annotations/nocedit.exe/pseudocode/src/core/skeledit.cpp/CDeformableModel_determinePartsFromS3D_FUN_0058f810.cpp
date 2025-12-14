@@ -377,8 +377,8 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
           local_138 = pFVar23;
           crt_stdio_c_fprintf_FUN_005fe6d0(local_158,"Automap capped faces is active\n");
         }
-        local_154 = (FILE *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                                      ((int)local_140 * 0x3c,"..\\core\\skeledit.cpp",0xc4e);
+        local_154 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                              ((int)local_140 * 0x3c,"..\\core\\skeledit.cpp",0xc4e);
         if (local_154 == (FILE *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0xc4f;
@@ -425,8 +425,8 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
             iVar21 = iVar21 + 0x3c;
           } while (iVar7 < (int)local_c0);
         }
-        pFVar23 = (FILE *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                                    ((int)local_12c * 0xc + 4,"..\\core\\skeledit.cpp",0xc7c);
+        pFVar23 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                            ((int)local_12c * 0xc + 4,"..\\core\\skeledit.cpp",0xc7c);
         local_148 = pFVar23;
         if (pFVar23 != (FILE *)0x0) {
           local_148 = (FILE *)&pFVar23->_cnt;
@@ -607,16 +607,16 @@ LAB_005902c8:
         crt_stdio_c_fprintf_FUN_005fe6d0
                   (local_128,"Scale = %7.3f %7.3f %7.3f\n",(double)local_184,
                    (double)(float)local_180,(double)local_17c);
-        piVar9 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                                  ((int)local_110 * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f);
+        piVar9 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                           ((int)local_110 * 0xc + 4,"..\\core\\skeledit.cpp",0xd0f);
         local_11c = piVar9;
         if (piVar9 != (int *)0x0) {
           local_11c = piVar9 + 1;
           *piVar9 = local_10c;
         }
         pFVar23 = (FILE *)in_stack_0000000c[0x15];
-        ppFVar10 = (FILE **)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                                      ((int)pFVar23 * 0xc + 4,"..\\core\\skeledit.cpp",0xd10);
+        ppFVar10 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                             ((int)pFVar23 * 0xc + 4,"..\\core\\skeledit.cpp",0xd10);
         local_114 = ppFVar10;
         if (ppFVar10 != (FILE **)0x0) {
           local_114 = ppFVar10 + 1;
@@ -715,8 +715,7 @@ LAB_005902c8:
         crt_stdio_c_fprintf_FUN_005fe6d0
                   (local_110,"Matching faces in %s\n",in_stack_00000010 + 0x200);
         if (in_stack_0000000c[0x15] <= local_f8) {
-          local_fc = (streambuf *)
-                     shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+          local_fc = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                                (in_stack_0000000c[0x15] * 4,"..\\core\\skeledit.cpp",0xd42);
           if (local_fc == (streambuf *)0x0) {
             g_CurrentFilename = "..\\core\\skeledit.cpp";
@@ -845,8 +844,7 @@ LAB_005902c8:
               piVar9 = piVar9 + 0x18;
             } while (iVar21 < in_stack_0000000c[0x1c50]);
           }
-          psVar25 = (streambuf *)
-                    shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+          psVar25 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                               (in_stack_0000000c[0x15] << 2,"..\\core\\skeledit.cpp",0xe56);
           local_e4 = psVar25;
           local_60 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
@@ -1143,8 +1141,7 @@ LAB_00591f48:
                               ((in_stack_0000000c[0x15] + local_b8) * 0x12,
                                "..\\core\\skeledit.cpp",0xf1a);
           local_ac = pvVar12;
-          local_a4 = (uint *)
-                     shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+          local_a4 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                                (((int)&local_b4->_ptr + in_stack_0000000c[0x15]) * 4,
                                 "..\\core\\skeledit.cpp",0xf1b);
           if ((pvVar12 == (void *)0x0) || (local_a4 == (uint *)0x0)) {

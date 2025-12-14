@@ -28,11 +28,11 @@
 
 section .text
 
-    CALL dword ptr CS:[0x6115a4]        ; 006083fc | GetLastError * GetLastError
+    CALL dword ptr CS:[0x6115a4]        ; 006083fc | GetLastError
         ;   Label: crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc
     PUSH EAX                            ; 00608403
-    CALL crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 ; 00608404 | int crt_errno.c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)
-        ;   XREF to: 00608390 (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 ; 00608404
+        ;   XREF to: 00608390 (UNCONDITIONAL_CALL)  ; int crt_errno.c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)
     ADD ESP,0x4                         ; 00608409
     RET                                 ; 0060840c
 

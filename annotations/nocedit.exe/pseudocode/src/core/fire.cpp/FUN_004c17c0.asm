@@ -23,8 +23,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 004c17d0
     PUSH ECX                            ; 004c17d4
     PUSH EAX                            ; 004c17d5
-    CALL core_particle.cpp_CParticle_setup_FUN_00545680 ; 004c17d6 | void core_particle.cpp_CParticle_setup_FUN_00545680(CParticle * this_ptr, CVector3f * position, CVector3f * velocity)
-        ;   XREF to: 00545680 (UNCONDITIONAL_CALL)
+    CALL core_particle.cpp_CParticle_setup_FUN_00545680 ; 004c17d6
+        ;   XREF to: 00545680 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_setup_FUN_00545680(CParticle * this_ptr, CVector3f * position, CVector3f * velocity)
     ADD ESP,0xc                         ; 004c17db
     MOV EAX,EAX                         ; 004c17de
 

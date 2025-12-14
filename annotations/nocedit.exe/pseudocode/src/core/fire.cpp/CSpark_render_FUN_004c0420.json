@@ -1,518 +1,524 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 397, 
-    "pseudocode_lines": 202, 
-    "cross_reference_count": 0, 
-    "global_count": 25, 
-    "total_lines": 452, 
-    "assembly_lines": 250, 
-    "suspect_count": 18, 
+    "assembly_lines": 250,
+    "complexity_score": 397,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 26,
+    "pseudocode_lines": 202,
+    "suspect_count": 18,
     "suspect_types": [
-      "suspect_float", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0", 
-      "addr": "0048c4a0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50", 
-      "addr": "0048dc50"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
-      "addr": "0048c640"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
-      "addr": "0048c450"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0", 
-      "addr": "0048bad0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
-      "addr": "0048ca50"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformPoint_FUN_005b5a25", 
-      "addr": "005b5a25"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_0065dca8", 
-      "addr": "0065dca8", 
-      "value": "256"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "g_FireEffectSparkTexture", 
-      "addr": "0067a7ac", 
-      "value": null
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "g_FireEffectBlueSparkTexture", 
-      "addr": "0067a7c4", 
-      "value": null
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "g_FireEffectGreenSparkTexture", 
-      "addr": "0067a7dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].light", 
-      "addr": "00688034", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].color", 
-      "addr": "00688038", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].fog", 
-      "addr": "0068803c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].w_recip", 
-      "addr": "00688040", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].light", 
-      "addr": "00688064", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].color", 
-      "addr": "00688068", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].fog", 
-      "addr": "0068806c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].w_recip", 
-      "addr": "00688070", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].light", 
-      "addr": "00688094", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].color", 
-      "addr": "00688098", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].fog", 
-      "addr": "0068809c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].w_recip", 
-      "addr": "006880a0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[3].light", 
-      "addr": "006880c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[3].fog", 
-      "addr": "006880cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[3].w_recip", 
-      "addr": "006880d0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonCamera*", 
-      "name": "g_CurrentSceneCamera", 
-      "addr": "00823a74", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "g_PerspectiveReciprocal", 
-      "addr": "02d051f4", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3i", 
-      "name": "g_BillboardCameraRight", 
-      "addr": "02d12db4", 
-      "value": null
-    }, 
-    {
-      "type": "SMRGLPrimitiveQuadIndex", 
-      "name": "g_BillboardPrimitive", 
-      "addr": "02d12dcc", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004c042c", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 101, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 103, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 104, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 106, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 107, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 109, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 110, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 112, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 183, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 185, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 186, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 188, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 189, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 191, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 192, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 194, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;"
-    }
-  ], 
+      "suspect_float",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 452
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004c0420", 
-    "signature": "void core_fire.cpp_CSpark_render_FUN_004c0420(CSpark * this_ptr)", 
+    "address": "004c0420",
     "address_range": [
       [
-        "004c0420", 
+        "004c0420",
         "004c0578"
-      ], 
+      ],
       [
-        "004c08e3", 
+        "004c08e3",
         "004c0ab5"
       ]
-    ], 
-    "name": "core_fire.cpp_CSpark_render_FUN_004c0420"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CSpark_render_FUN_004c0420",
+    "signature": "void core_fire.cpp_CSpark_render_FUN_004c0420(CSpark * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048c4a0",
+      "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0"
+    },
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048dc50",
+      "name": "engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50"
+    },
+    {
+      "addr": "0048c640",
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    },
+    {
+      "addr": "0048c450",
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048bad0",
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0"
+    },
+    {
+      "addr": "0048ca50",
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    },
+    {
+      "addr": "005b5a25",
+      "name": "wincore_windll.cpp_transformPoint_FUN_005b5a25"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065dca8",
+      "name": "FLOAT_0065dca8",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067a7ac",
+      "name": "g_FireEffectSparkTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "0067a7c4",
+      "name": "g_FireEffectBlueSparkTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "0067a7dc",
+      "name": "g_FireEffectGreenSparkTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "00688034",
+      "name": "g_RenderVertexBuffer[0].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688038",
+      "name": "g_RenderVertexBuffer[0].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068803c",
+      "name": "g_RenderVertexBuffer[0].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688040",
+      "name": "g_RenderVertexBuffer[0].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688064",
+      "name": "g_RenderVertexBuffer[1].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688068",
+      "name": "g_RenderVertexBuffer[1].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068806c",
+      "name": "g_RenderVertexBuffer[1].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688070",
+      "name": "g_RenderVertexBuffer[1].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688094",
+      "name": "g_RenderVertexBuffer[2].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688098",
+      "name": "g_RenderVertexBuffer[2].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068809c",
+      "name": "g_RenderVertexBuffer[2].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880a0",
+      "name": "g_RenderVertexBuffer[2].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c4",
+      "name": "g_RenderVertexBuffer[3].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c8",
+      "name": "g_RenderVertexBuffer[3].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880cc",
+      "name": "g_RenderVertexBuffer[3].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880d0",
+      "name": "g_RenderVertexBuffer[3].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00823a74",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d051f4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "02d12db4",
+      "name": "g_BillboardCameraRight",
+      "type": "CVector3i",
+      "value": null
+    },
+    {
+      "addr": "02d12dcc",
+      "name": "g_BillboardPrimitive",
+      "type": "SMRGLPrimitiveQuadIndex",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 212, 
+    "frame_size": 216,
+    "local_size": 212,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -208, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_d0"
-      }, 
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -204, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_cc"
-      }, 
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -200, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c8"
-      }, 
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -184, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b8"
-      }, 
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -180, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b4"
-      }, 
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -176, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b0"
-      }, 
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a0"
-      }, 
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -156, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_9c"
-      }, 
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -152, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_98"
-      }, 
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSpark *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpark *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 216, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004c042c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 101,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 103,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 104,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 106,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 107,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 109,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 110,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 112,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 183,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 185,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 186,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 188,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 189,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 191,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 192,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 194,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    }
+  ]
 }

@@ -29,19 +29,19 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004d7fa7
     FLD float ptr [ESP + 0x2c]          ; 004d7fab
     MOV EBX,0x2                         ; 004d7faf
-    FCOMP double ptr [0x0062b255]       ; 004d7fb4 | double DOUBLE_0062b255
+    FCOMP double ptr [0x0062b255]       ; 004d7fb4 | DOUBLE_0062b255
     FNSTSW AX                           ; 004d7fba
     SAHF                                ; 004d7fbc
-    JNC 0x004d7fc4                      ; 004d7fbd | LAB_004d7fc4
-        ;   XREF to: 004d7fc4 (CONDITIONAL_JUMP)
+    JNC 0x004d7fc4                      ; 004d7fbd
+        ;   XREF to: 004d7fc4 (CONDITIONAL_JUMP)  ; LAB_004d7fc4
     MOV EBX,0xfb                        ; 004d7fbf
     FLD float ptr [ESP + 0x2c]          ; 004d7fc4
         ;   Label: LAB_004d7fc4
-    FCOMP double ptr [0x0062b25d]       ; 004d7fc8 | double DOUBLE_0062b25d
+    FCOMP double ptr [0x0062b25d]       ; 004d7fc8 | DOUBLE_0062b25d
     FNSTSW AX                           ; 004d7fce
     SAHF                                ; 004d7fd0
-    JNC 0x004d7fd8                      ; 004d7fd1 | LAB_004d7fd8
-        ;   XREF to: 004d7fd8 (CONDITIONAL_JUMP)
+    JNC 0x004d7fd8                      ; 004d7fd1
+        ;   XREF to: 004d7fd8 (CONDITIONAL_JUMP)  ; LAB_004d7fd8
     MOV EBX,0x1                         ; 004d7fd3
     PUSH 0x0                            ; 004d7fd8
         ;   Label: LAB_004d7fd8
@@ -53,8 +53,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x30]      ; 004d7fe6
     PUSH EDI                            ; 004d7fea
     PUSH ESI                            ; 004d7feb
-    CALL engine_2d.c_fillRectWithBorder_FUN_00403200 ; 004d7fec | void engine_2d.c_fillRectWithBorder_FUN_00403200(int x1, int y1, int x2, int y2, ...)
-        ;   XREF to: 00403200 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_fillRectWithBorder_FUN_00403200 ; 004d7fec
+        ;   XREF to: 00403200 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectWithBorder_FUN_00403200(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x18                        ; 004d7ff1
     MOV EAX,dword ptr [ESP + 0x24]      ; 004d7ff4
     SUB EAX,ESI                         ; 004d7ff8
@@ -62,13 +62,13 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 004d7ffb
     FILD dword ptr [ESP + 0x4]          ; 004d7fff
     FMUL float ptr [ESP + 0x2c]         ; 004d8003
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004d8007 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004d8007
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP]               ; 004d800c
     MOV EBP,dword ptr [ESP]             ; 004d800f
     TEST EBP,EBP                        ; 004d8012
-    JG 0x004d801e                       ; 004d8014 | LAB_004d801e
-        ;   XREF to: 004d801e (CONDITIONAL_JUMP)
+    JG 0x004d801e                       ; 004d8014
+        ;   XREF to: 004d801e (CONDITIONAL_JUMP)  ; LAB_004d801e
     ADD ESP,0x8                         ; 004d8016
     POP EBP                             ; 004d8019
     POP EDI                             ; 004d801a
@@ -83,8 +83,8 @@ section .text
     PUSH EAX                            ; 004d8027
     PUSH EDI                            ; 004d8028
     PUSH ESI                            ; 004d8029
-    CALL engine_2d.c_fillRectColor_FUN_00403170 ; 004d802a | void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
-        ;   XREF to: 00403170 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_fillRectColor_FUN_00403170 ; 004d802a
+        ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004d802f
     ADD ESP,0x8                         ; 004d8032
     POP EBP                             ; 004d8035

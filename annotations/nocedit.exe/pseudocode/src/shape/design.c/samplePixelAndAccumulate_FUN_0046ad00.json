@@ -1,179 +1,179 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 63, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 95, 
-    "assembly_lines": 77, 
-    "suspect_count": 4, 
+    "assembly_lines": 77,
+    "complexity_score": 63,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 18,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_design.c_wrapCoordinate_FUN_0046acc0", 
-      "addr": "0046acc0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*red_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2 + 2) * weight + *red_accumulator;"
-    }, 
-    {
-      "line": 17, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*green_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2 + 1) * weight + *green_accumulator;"
-    }, 
-    {
-      "line": 18, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*blue_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2) * weight + *blue_accumulator;"
-    }, 
-    {
-      "line": 19, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*alpha_accumulator = (double)*(byte *)((int)alpha_buffer + iVar1) * weight + *alpha_accumulator;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0046ad00", 
-    "signature": "void shape_design.c_samplePixelAndAccumulate_FUN_0046ad00(void * rgb_buffer, void * alpha_buffer, int atlas_width, int atlas_height, int pixel_x, int pixel_y, double weight, double * red_accumulator, double * green_accumulator, double * blue_accumulator, double * alpha_accumulator)", 
-    "address_range": [
-      [
-        "0046ad00", 
-        "0046adba"
-      ]
-    ], 
-    "name": "shape_design.c_samplePixelAndAccumulate_FUN_0046ad00"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "rgb_buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "alpha_buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "atlas_width"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "atlas_height"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "pixel_x"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "pixel_y"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "weight"
-      }, 
-      {
-        "offset": 36, 
-        "is_param": true, 
-        "type": "double *", 
-        "size": 4, 
-        "name": "red_accumulator"
-      }, 
-      {
-        "offset": 40, 
-        "is_param": true, 
-        "type": "double *", 
-        "size": 4, 
-        "name": "green_accumulator"
-      }, 
-      {
-        "offset": 44, 
-        "is_param": true, 
-        "type": "double *", 
-        "size": 4, 
-        "name": "blue_accumulator"
-      }, 
-      {
-        "offset": 48, 
-        "is_param": true, 
-        "type": "double *", 
-        "size": 4, 
-        "name": "alpha_accumulator"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 80, 
-    "param_offset": 4, 
-    "param_size": 48
-  }, 
+    ],
+    "total_lines": 95
+  },
   "cross_references": [
     {
-      "from_addr": "0046afb6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_sampleAndFilterPixel_FUN_0046ae20", 
-      "addr": "0046ae20"
+      "addr": "0046ae20",
+      "from_addr": "0046afb6",
+      "name": "shape_design.c_sampleAndFilterPixel_FUN_0046ae20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046ad00",
+    "address_range": [
+      [
+        "0046ad00",
+        "0046adba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_samplePixelAndAccumulate_FUN_0046ad00",
+    "signature": "void shape_design.c_samplePixelAndAccumulate_FUN_0046ad00(void * rgb_buffer, void * alpha_buffer, int atlas_width, int atlas_height, int pixel_x, int pixel_y, double weight, double * red_accumulator, double * green_accumulator, double * blue_accumulator, double * alpha_accumulator)"
+  },
+  "function_calls": [
+    {
+      "addr": "0046acc0",
+      "name": "shape_design.c_wrapCoordinate_FUN_0046acc0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 48,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "rgb_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "atlas_width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "atlas_height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_x",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_y",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "weight",
+        "offset": 28,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "red_accumulator",
+        "offset": 36,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": true,
+        "name": "green_accumulator",
+        "offset": 40,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": true,
+        "name": "blue_accumulator",
+        "offset": 44,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_accumulator",
+        "offset": 48,
+        "size": 4,
+        "type": "double *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(byte *)((int)",
+      "text": "*red_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2 + 2) * weight + *red_accumulator;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(byte *)((int)",
+      "text": "*green_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2 + 1) * weight + *green_accumulator;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(byte *)((int)",
+      "text": "*blue_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2) * weight + *blue_accumulator;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(byte *)((int)",
+      "text": "*alpha_accumulator = (double)*(byte *)((int)alpha_buffer + iVar1) * weight + *alpha_accumulator;",
+      "type": "pointer_cast"
     }
   ]
 }

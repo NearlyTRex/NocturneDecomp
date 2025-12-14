@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 005b3b80
         ;   Label: core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
     PUSH EDX                            ; 005b3b84
-    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 ; 005b3b85 | int sound_sndmain.cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
-        ;   XREF to: 005a9660 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 ; 005b3b85
+        ;   XREF to: 005a9660 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
     ADD ESP,0x4                         ; 005b3b8a
     RET                                 ; 005b3b8d
 

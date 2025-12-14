@@ -12,12 +12,12 @@ section .text
         ;   Label: core_bugs.cpp_FUN_00427b00
     MOV EAX,dword ptr [ESP + 0x8]       ; 00427b04
     CMP EDX,EAX                         ; 00427b08
-    JNZ 0x00427b14                      ; 00427b0a | LAB_00427b14
-        ;   XREF to: 00427b14 (CONDITIONAL_JUMP)
+    JNZ 0x00427b14                      ; 00427b0a
+        ;   XREF to: 00427b14 (CONDITIONAL_JUMP)  ; LAB_00427b14
     ADD EDX,0xc                         ; 00427b0c
     CMP EDX,EAX                         ; 00427b0f
-    JNZ 0x00427b2c                      ; 00427b11 | LAB_00427b2c
-        ;   XREF to: 00427b2c (CONDITIONAL_JUMP)
+    JNZ 0x00427b2c                      ; 00427b11
+        ;   XREF to: 00427b2c (CONDITIONAL_JUMP)  ; LAB_00427b2c
     RET                                 ; 00427b13
     MOV ECX,dword ptr [EAX]             ; 00427b14
         ;   Label: LAB_00427b14
@@ -28,8 +28,8 @@ section .text
     MOV dword ptr [EDX + 0x8],ECX       ; 00427b21
     ADD EDX,0xc                         ; 00427b24
     CMP EDX,EAX                         ; 00427b27
-    JNZ 0x00427b2c                      ; 00427b29 | LAB_00427b2c
-        ;   XREF to: 00427b2c (CONDITIONAL_JUMP)
+    JNZ 0x00427b2c                      ; 00427b29
+        ;   XREF to: 00427b2c (CONDITIONAL_JUMP)  ; LAB_00427b2c
     RET                                 ; 00427b2b
     MOV ECX,dword ptr [EAX]             ; 00427b2c
         ;   Label: LAB_00427b2c

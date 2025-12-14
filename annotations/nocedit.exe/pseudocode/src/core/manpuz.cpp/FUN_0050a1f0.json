@@ -1,161 +1,161 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 113, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 83, 
-    "assembly_lines": 60, 
-    "suspect_count": 8, 
+    "assembly_lines": 60,
+    "complexity_score": 113,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 23,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
-      "addr": "00478d80"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
-      "addr": "00478d20"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
-      "addr": "0048c4f0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
-      "addr": "0048c640"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonMission*", 
-      "name": "g_CDemonMissionPtr", 
-      "addr": "0067d550", 
-      "value": "02f33740"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f33744", 
-      "addr": "02f33744", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = in_stack_00000004 + 0x1340 + in_stack_00000008 * 0x60;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = in_stack_00000004 + 0x1340 + in_stack_00000008 * 0x60;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x450));"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x450),"
-    }, 
-    {
-      "line": 24, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(float)(pCVar1->frame_count + -1) * *(float *)(iVar2 + 0x18),unaff_EBP);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0050a1f0", 
-    "signature": "undefined core_manpuz.cpp_FUN_0050a1f0()", 
-    "address_range": [
-      [
-        "0050a1f0", 
-        "0050a281"
-      ]
-    ], 
-    "name": "core_manpuz.cpp_FUN_0050a1f0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 83
+  },
   "cross_references": [
     {
-      "from_addr": "00509184", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_FUN_005090d0", 
-      "addr": "005090d0"
+      "addr": "005090d0",
+      "from_addr": "00509184",
+      "name": "core_manpuz.cpp_FUN_005090d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050a1f0",
+    "address_range": [
+      [
+        "0050a1f0",
+        "0050a281"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_manpuz.cpp_FUN_0050a1f0",
+    "signature": "undefined core_manpuz.cpp_FUN_0050a1f0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00478d80",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "00478d20",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20"
+    },
+    {
+      "addr": "0048c4f0",
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    },
+    {
+      "addr": "0048c640",
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02f33744",
+      "name": "DAT_02f33744",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "iVar2 = in_stack_00000004 + 0x1340 + in_stack_00000008 * 0x60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = in_stack_00000004 + 0x1340 + in_stack_00000008 * 0x60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x450));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x450),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "text": "(float)(pCVar1->frame_count + -1) * *(float *)(iVar2 + 0x18),unaff_EBP);",
+      "type": "unaffected_reg"
     }
   ]
 }

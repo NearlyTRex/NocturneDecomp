@@ -34,7 +34,7 @@ char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
     cVar1 = *pcVar2;
     pcVar2 = pcVar2 + 1;
   } while (cVar1 != '\0');
-  pcVar2 = (char *)crt_memory_c_malloc_FUN_00601bb0(g_MaxHandleCount * 0x1b + ~uVar3);
+  pcVar2 = crt_memory_c_malloc_FUN_00601bb0(g_MaxHandleCount * 0x1b + ~uVar3);
   uVar3 = g_MaxHandleCount;
   if (pcVar2 == (char *)0x0) {
     pcVar2 = (char *)0x0;

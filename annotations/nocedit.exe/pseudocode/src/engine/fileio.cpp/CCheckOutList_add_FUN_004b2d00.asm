@@ -33,18 +33,18 @@ section .text
     PUSH 0x2e7                          ; 004b2d14
     MOV EDX,EAX                         ; 004b2d19
     SHL EAX,0x4                         ; 004b2d1b
-    PUSH 0x626417                       ; 004b2d1e | = "..\\engine\\fileio.cpp" | s_engine_fileio_cpp_00626417 = ..\engine\fileio.cpp
+    PUSH 0x626417                       ; 004b2d1e | = "..\\engine\\fileio.cpp"
     SUB EAX,EDX                         ; 004b2d23
     PUSH EAX                            ; 004b2d25
     MOV EDX,dword ptr [EBX + 0x4]       ; 004b2d26
     PUSH EDX                            ; 004b2d29
-    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004b2d2a | void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
-        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004b2d2a
+        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
     ADD ESP,0x10                        ; 004b2d2f
     MOV dword ptr [EBX + 0x4],EAX       ; 004b2d32
     TEST EAX,EAX                        ; 004b2d35
-    JNZ 0x004b2d3b                      ; 004b2d37 | LAB_004b2d3b
-        ;   XREF to: 004b2d3b (CONDITIONAL_JUMP)
+    JNZ 0x004b2d3b                      ; 004b2d37
+        ;   XREF to: 004b2d3b (CONDITIONAL_JUMP)  ; LAB_004b2d3b
     POP EBX                             ; 004b2d39
     RET                                 ; 004b2d3a
     PUSH EDI                            ; 004b2d3b

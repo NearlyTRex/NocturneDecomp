@@ -1,437 +1,437 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 303, 
-    "pseudocode_lines": 78, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 282, 
-    "assembly_lines": 204, 
-    "suspect_count": 20, 
+    "assembly_lines": 204,
+    "complexity_score": 303,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 1,
+    "pseudocode_lines": 78,
+    "suspect_count": 20,
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
-      "extra_output", 
-      "badspacebase", 
+      "sub_artifact",
+      "concat_artifact",
+      "extra_output",
+      "badspacebase",
       "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_ceil_FUN_006001b2", 
-      "addr": "006001b2"
-    }, 
-    {
-      "name": "crt_math.c_floor_FUN_005feb90", 
-      "addr": "005feb90"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "shape_design.c_calculateSamplingWeight_FUN_0046adc0", 
-      "addr": "0046adc0"
-    }, 
-    {
-      "name": "shape_design.c_samplePixelAndAccumulate_FUN_0046ad00", 
-      "addr": "0046ad00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_RoundingOffset", 
-      "addr": "0061d296", 
-      "value": "0.5"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EAX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EAX_00;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EAX_01;"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EAX_02;"
-    }, 
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 49, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)"
-    }, 
-    {
-      "line": 49, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)"
-    }, 
-    {
-      "line": 51, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),"
-    }, 
-    {
-      "line": 51, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),"
-    }, 
-    {
-      "line": 52, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,(int)((ulonglong)coord_y2 >> 0x20)));"
-    }, 
-    {
-      "line": 55, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x1,0),"
-    }, 
-    {
-      "line": 55, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x1,0),"
-    }, 
-    {
-      "line": 57, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),"
-    }, 
-    {
-      "line": 57, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),"
-    }, 
-    {
-      "line": 58, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,(int)((ulonglong)coord_x2 >> 0x20)));"
-    }, 
-    {
-      "line": 73, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*extraout_EAX = (int)ROUND(dVar1);"
-    }, 
-    {
-      "line": 75, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*extraout_EAX_00 = (int)ROUND(dVar1);"
-    }, 
-    {
-      "line": 77, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*extraout_EAX_01 = (int)ROUND(dVar1);"
-    }, 
-    {
-      "line": 79, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*extraout_EAX_02 = (int)ROUND(dVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0046ae20", 
-    "signature": "void shape_design.c_sampleAndFilterPixel_FUN_0046ae20(void * rgb_buffer, void * alpha_buffer, int col_coord, int row_coord, double coord_x1, double coord_y1, double coord_x2, double coord_y2, int atlas_width, int atlas_height, byte * red_out, byte * green_out, byte * blue_out, byte * alpha_out)", 
-    "address_range": [
-      [
-        "0046ae20", 
-        "0046b051"
-      ]
-    ], 
-    "name": "shape_design.c_sampleAndFilterPixel_FUN_0046ae20"
-  }, 
-  "stack_frame": {
-    "local_size": 132, 
-    "variables": [
-      {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_80"
-      }, 
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "rgb_buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "alpha_buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "col_coord"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "row_coord"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "coord_x1"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "coord_y1"
-      }, 
-      {
-        "offset": 36, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "coord_x2"
-      }, 
-      {
-        "offset": 44, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "coord_y2"
-      }, 
-      {
-        "offset": 52, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "atlas_width"
-      }, 
-      {
-        "offset": 56, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "atlas_height"
-      }, 
-      {
-        "offset": 60, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "red_out"
-      }, 
-      {
-        "offset": 64, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "green_out"
-      }, 
-      {
-        "offset": 68, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "blue_out"
-      }, 
-      {
-        "offset": 72, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "alpha_out"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 204, 
-    "param_offset": 4, 
-    "param_size": 72
-  }, 
+    ],
+    "total_lines": 282
+  },
   "cross_references": [
     {
-      "from_addr": "0046b5f2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadTextureData_FUN_0046b060", 
-      "addr": "0046b060"
+      "addr": "0046b060",
+      "from_addr": "0046b5f2",
+      "name": "shape_design.c_loadTextureData_FUN_0046b060",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046ae20",
+    "address_range": [
+      [
+        "0046ae20",
+        "0046b051"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_sampleAndFilterPixel_FUN_0046ae20",
+    "signature": "void shape_design.c_sampleAndFilterPixel_FUN_0046ae20(void * rgb_buffer, void * alpha_buffer, int col_coord, int row_coord, double coord_x1, double coord_y1, double coord_x2, double coord_y2, int atlas_width, int atlas_height, byte * red_out, byte * green_out, byte * blue_out, byte * alpha_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "006001b2",
+      "name": "crt_math.c_ceil_FUN_006001b2"
+    },
+    {
+      "addr": "005feb90",
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0046adc0",
+      "name": "shape_design.c_calculateSamplingWeight_FUN_0046adc0"
+    },
+    {
+      "addr": "0046ad00",
+      "name": "shape_design.c_samplePixelAndAccumulate_FUN_0046ad00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061d296",
+      "name": "g_RoundingOffset",
+      "type": "double",
+      "value": "0.5"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 204,
+    "local_size": 132,
+    "param_offset": 4,
+    "param_size": 72,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "rgb_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "col_coord",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "row_coord",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "coord_x1",
+        "offset": 20,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "coord_y1",
+        "offset": 28,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "coord_x2",
+        "offset": 36,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "coord_y2",
+        "offset": 44,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "atlas_width",
+        "offset": 52,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "atlas_height",
+        "offset": 56,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "red_out",
+        "offset": 60,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "green_out",
+        "offset": 64,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "blue_out",
+        "offset": 68,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_out",
+        "offset": 72,
+        "size": 4,
+        "type": "byte *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "text": "int *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX_00",
+      "text": "int *extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX_01",
+      "text": "int *extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX_02",
+      "text": "int *extraout_EAX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 49,
+      "match": "CONCAT44",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 49,
+      "match": "SUB84",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 51,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 51,
+      "match": "SUB84",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 52,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,(int)((ulonglong)coord_y2 >> 0x20)));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 55,
+      "match": "CONCAT44",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x1,0),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 55,
+      "match": "SUB84",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x1,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 57,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 57,
+      "match": "SUB84",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 58,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,(int)((ulonglong)coord_x2 >> 0x20)));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 73,
+      "match": "extraout_EAX",
+      "text": "*extraout_EAX = (int)ROUND(dVar1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 75,
+      "match": "extraout_EAX_00",
+      "text": "*extraout_EAX_00 = (int)ROUND(dVar1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 77,
+      "match": "extraout_EAX_01",
+      "text": "*extraout_EAX_01 = (int)ROUND(dVar1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 79,
+      "match": "extraout_EAX_02",
+      "text": "*extraout_EAX_02 = (int)ROUND(dVar1);",
+      "type": "extra_output"
     }
   ]
 }

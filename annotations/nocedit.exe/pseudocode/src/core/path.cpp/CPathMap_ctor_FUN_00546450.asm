@@ -35,33 +35,33 @@ section .text
     MOV dword ptr [EBX + 0x138b4],EAX   ; 00546466
     PUSH EBX                            ; 0054646c
     MOV dword ptr [EBX + 0x138b0],EAX   ; 0054646d
-    CALL core_path.cpp_CPathMap_reset_FUN_00548510 ; 00546473 | void core_path.cpp_CPathMap_reset_FUN_00548510(CPathMap * this_ptr)
-        ;   XREF to: 00548510 (UNCONDITIONAL_CALL)
-    MOV EDX,dword ptr [0x030c3ab8]      ; 00546478 | int g_PathMapCount
+    CALL core_path.cpp_CPathMap_reset_FUN_00548510 ; 00546473
+        ;   XREF to: 00548510 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_00548510(CPathMap * this_ptr)
+    MOV EDX,dword ptr [0x030c3ab8]      ; 00546478 | g_PathMapCount
     ADD ESP,0x4                         ; 0054647e
     CMP EDX,0xc8                        ; 00546481
-    JGE 0x005464a3                      ; 00546487 | LAB_005464a3
-        ;   XREF to: 005464a3 (CONDITIONAL_JUMP)
-    MOV EAX,[0x030c3ab8]                ; 00546489 | int g_PathMapCount
+    JGE 0x005464a3                      ; 00546487
+        ;   XREF to: 005464a3 (CONDITIONAL_JUMP)  ; LAB_005464a3
+    MOV EAX,[0x030c3ab8]                ; 00546489 | g_PathMapCount
         ;   Label: LAB_00546489
     LEA EDI,[EAX + 0x1]                 ; 0054648e
-    MOV dword ptr [EAX*0x4 + 0x30c3abc],EBX ; 00546491 | CPathMap *[200] g_PathMapList
-    MOV dword ptr [0x030c3ab8],EDI      ; 00546498 | int g_PathMapCount
+    MOV dword ptr [EAX*0x4 + 0x30c3abc],EBX ; 00546491 | g_PathMapList
+    MOV dword ptr [0x030c3ab8],EDI      ; 00546498 | g_PathMapCount
     MOV EAX,EBX                         ; 0054649e
     POP EDI                             ; 005464a0
     POP EBX                             ; 005464a1
     RET                                 ; 005464a2
     PUSH ESI                            ; 005464a3
         ;   Label: LAB_005464a3
-    MOV ECX,0x63e8a2                    ; 005464a4 | = "..\\core\\path.cpp" | s_core_path_cpp_0063e8a2 = ..\core\path.cpp
+    MOV ECX,0x63e8a2                    ; 005464a4 | = "..\\core\\path.cpp"
     MOV ESI,0x123                       ; 005464a9
-    PUSH 0x63e8b3                       ; 005464ae | = "Too many pathmaps!" | s_Too_many_pathmaps_0063e8b3 = Too many pathmaps!
-    MOV dword ptr [0x02f0ca48],ECX      ; 005464b3 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 005464b9 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005464bf | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63e8b3                       ; 005464ae | = "Too many pathmaps!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 005464b3 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 005464b9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005464bf
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005464c4
     POP ESI                             ; 005464c7
-    JMP 0x00546489                      ; 005464c8 | LAB_00546489
-        ;   XREF to: 00546489 (UNCONDITIONAL_JUMP)
+    JMP 0x00546489                      ; 005464c8
+        ;   XREF to: 00546489 (UNCONDITIONAL_JUMP)  ; LAB_00546489
 

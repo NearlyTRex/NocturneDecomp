@@ -33,13 +33,13 @@ section .text
     MOV EAX,EBX                         ; 00427304
     MOV EBP,ESI                         ; 00427306
     CMP EBX,ESI                         ; 00427308
-    JNZ 0x004273dd                      ; 0042730a | LAB_004273dd
-        ;   XREF to: 004273dd (CONDITIONAL_JUMP)
+    JNZ 0x004273dd                      ; 0042730a
+        ;   XREF to: 004273dd (CONDITIONAL_JUMP)  ; LAB_004273dd
     LEA EBX,[EAX + 0xc]                 ; 00427310
         ;   Label: LAB_00427310
     CMP EBX,EBP                         ; 00427313
-    JZ 0x00427328                       ; 00427315 | LAB_00427328
-        ;   XREF to: 00427328 (CONDITIONAL_JUMP)
+    JZ 0x00427328                       ; 00427315
+        ;   XREF to: 00427328 (CONDITIONAL_JUMP)  ; LAB_00427328
     MOV EAX,dword ptr [EBP]             ; 00427317
     MOV dword ptr [EBX],EAX             ; 0042731a
     MOV EAX,dword ptr [EBP + 0x4]       ; 0042731c
@@ -49,22 +49,22 @@ section .text
     MOV ESI,0x1                         ; 00427328
         ;   Label: LAB_00427328
     CMP ESI,dword ptr [EDI + 0xbec0]    ; 0042732d
-    JGE 0x00427360                      ; 00427333 | LAB_00427360
-        ;   XREF to: 00427360 (CONDITIONAL_JUMP)
+    JGE 0x00427360                      ; 00427333
+        ;   XREF to: 00427360 (CONDITIONAL_JUMP)  ; LAB_00427360
     LEA EBP,[EDI + 0x199cc]             ; 00427335
     LEA EBX,[EDI + 0xbf0c]              ; 0042733b
     PUSH EBX                            ; 00427341
         ;   Label: LAB_00427341
     PUSH EBP                            ; 00427342
     INC ESI                             ; 00427343
-    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 00427344 | void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
-        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 00427344
+        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD EBX,0x40                        ; 00427349
     MOV ECX,dword ptr [EDI + 0xbec0]    ; 0042734c
     ADD ESP,0x8                         ; 00427352
     CMP ESI,ECX                         ; 00427355
-    JL 0x00427341                       ; 00427357 | LAB_00427341
-        ;   XREF to: 00427341 (CONDITIONAL_JUMP)
+    JL 0x00427341                       ; 00427357
+        ;   XREF to: 00427341 (CONDITIONAL_JUMP)  ; LAB_00427341
     LEA EAX,[EAX]                       ; 00427359
     NOP                                 ; 0042735f
     FLD float ptr [EDI + 0x199cc]       ; 00427360
@@ -75,7 +75,7 @@ section .text
     FLD float ptr [EDI + 0x199dc]       ; 00427378
     FLD float ptr [EDI + 0x199e0]       ; 0042737e
     FXCH ST5                            ; 00427384
-    FLD float ptr [0x00616e5b]          ; 00427386 | float FLOAT_00616e5b
+    FLD float ptr [0x00616e5b]          ; 00427386 | FLOAT_00616e5b
     FXCH                                ; 0042738c
     FADD ST0,ST1                        ; 0042738e
     FXCH ST5                            ; 00427390
@@ -83,7 +83,7 @@ section .text
     FXCH ST4                            ; 00427394
     FADDP                               ; 00427396
     FXCH ST2                            ; 00427398
-    FLD float ptr [0x00616e5f]          ; 0042739a | float FLOAT_00616e5f
+    FLD float ptr [0x00616e5f]          ; 0042739a | FLOAT_00616e5f
     FXCH                                ; 004273a0
     FADD ST0,ST1                        ; 004273a2
     FXCH ST2                            ; 004273a4
@@ -112,6 +112,6 @@ section .text
     MOV dword ptr [EBX + 0x4],EDX       ; 004273e4
     MOV EDX,dword ptr [ESI + 0x8]       ; 004273e7
     MOV dword ptr [EBX + 0x8],EDX       ; 004273ea
-    JMP 0x00427310                      ; 004273ed | LAB_00427310
-        ;   XREF to: 00427310 (UNCONDITIONAL_JUMP)
+    JMP 0x00427310                      ; 004273ed
+        ;   XREF to: 00427310 (UNCONDITIONAL_JUMP)  ; LAB_00427310
 

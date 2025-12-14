@@ -1,95 +1,95 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 3, 
-    "global_count": 5, 
-    "total_lines": 74, 
-    "assembly_lines": 51, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentPolygonColor", 
-      "addr": "00772a5c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitPosition", 
-      "addr": "02d01f24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitPosition", 
-      "addr": "02d01f30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitPosition", 
-      "addr": "02d01f3c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00403e30", 
-    "signature": "SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * polygon_info)", 
-    "address_range": [
-      [
-        "00403e30", 
-        "00403eb9"
-      ]
-    ], 
-    "name": "engine_3d.c_processPolygonColor_FUN_00403e30"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "polygon_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 51,
+    "complexity_score": 23,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 5,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 74
+  },
   "cross_references": [
     {
-      "from_addr": "00443aba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_FUN_00443760", 
-      "addr": "00443760"
-    }, 
+      "addr": "00443760",
+      "from_addr": "00443aba",
+      "name": "core_course.cpp_FUN_00443760",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045d96a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920", 
-      "addr": "0045d920"
-    }, 
+      "addr": "0045d920",
+      "from_addr": "0045d96a",
+      "name": "shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045d163", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_renderSinglePolygon_FUN_0045ce20", 
-      "addr": "0045ce20"
+      "addr": "0045ce20",
+      "from_addr": "0045d163",
+      "name": "shape_design.c_renderSinglePolygon_FUN_0045ce20",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00403e30",
+    "address_range": [
+      [
+        "00403e30",
+        "00403eb9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_processPolygonColor_FUN_00403e30",
+    "signature": "SMRGLHeaderExtended * engine_3d.c_processPolygonColor_FUN_00403e30(SMRGLHeaderPrimitive * polygon_info)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00772a5c",
+      "name": "g_CurrentPolygonColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "polygon_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": []
 }

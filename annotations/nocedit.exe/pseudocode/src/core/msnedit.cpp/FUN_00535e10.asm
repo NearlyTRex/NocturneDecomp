@@ -23,13 +23,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00535e14
     MOV EDX,dword ptr [EBX]             ; 00535e18
     PUSH EDX                            ; 00535e1a
-    MOV ECX,dword ptr [0x02d02558]      ; 00535e1b | int g_ClipLeft
+    MOV ECX,dword ptr [0x02d02558]      ; 00535e1b | g_ClipLeft
     PUSH ECX                            ; 00535e21
     MOV ESI,dword ptr [ESP + 0x20]      ; 00535e22
     PUSH ESI                            ; 00535e26
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00535e27 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
-    MOV EAX,[0x00679394]                ; 00535e2c | int g_WindowWidth
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00535e27
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
+    MOV EAX,[0x00679394]                ; 00535e2c | g_WindowWidth
     MOV EDX,EAX                         ; 00535e31
     SAR EDX,0x1f                        ; 00535e33
     SHL EDX,0x3                         ; 00535e36
@@ -37,14 +37,14 @@ section .text
     SAR EAX,0x3                         ; 00535e3b
     ADD ESP,0xc                         ; 00535e3e
     MOV EDI,dword ptr [EBX]             ; 00535e41
-    MOV EBP,dword ptr [0x02d02558]      ; 00535e43 | int g_ClipLeft
+    MOV EBP,dword ptr [0x02d02558]      ; 00535e43 | g_ClipLeft
     PUSH EDI                            ; 00535e49
     ADD EAX,EBP                         ; 00535e4a
     PUSH EAX                            ; 00535e4c
     MOV EAX,dword ptr [ESP + 0x24]      ; 00535e4d
     PUSH EAX                            ; 00535e51
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00535e52 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00535e52
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     MOV EDX,dword ptr [EBX]             ; 00535e57
     ADD EDX,0xb                         ; 00535e59
     ADD ESP,0xc                         ; 00535e5c

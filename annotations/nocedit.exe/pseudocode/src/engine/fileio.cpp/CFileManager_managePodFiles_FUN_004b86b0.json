@@ -1,2820 +1,2820 @@
 {
   "complexity": {
-    "function_call_count": 51, 
-    "complexity_score": 3126, 
-    "pseudocode_lines": 941, 
-    "cross_reference_count": 0, 
-    "global_count": 109, 
-    "total_lines": 3021, 
-    "assembly_lines": 2080, 
-    "suspect_count": 214, 
+    "assembly_lines": 2078,
+    "complexity_score": 3124,
+    "cross_reference_count": 0,
+    "function_call_count": 51,
+    "global_count": 109,
+    "pseudocode_lines": 939,
+    "suspect_count": 214,
     "suspect_types": [
-      "undefined_type", 
-      "stack_param", 
-      "concat_artifact", 
-      "unaffected_reg", 
-      "unknown_field", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "concat_artifact",
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "undefined_type",
+      "register_param",
+      "stack_param",
+      "unknown_field",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_errno.c_errno_FUN_00601450", 
-      "addr": "00601450"
-    }, 
-    {
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
-      "addr": "005ff9d0"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_stdio.c_setvbuf_FUN_00601490", 
-      "addr": "00601490"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }, 
-    {
-      "name": "engine_dosio.c_copyFileTimestamp_FUN_00481910", 
-      "addr": "00481910"
-    }, 
-    {
-      "name": "engine_dosio.c_findFileNormally_FUN_004817c0", 
-      "addr": "004817c0"
-    }, 
-    {
-      "name": "engine_dosio.c_getFileTimestamp_FUN_00481960", 
-      "addr": "00481960"
-    }, 
-    {
-      "name": "engine_dosio.c_makePath_FUN_00481f50", 
-      "addr": "00481f50"
-    }, 
-    {
-      "name": "engine_dosio.c_setFileAttributes_FUN_004819f0", 
-      "addr": "004819f0"
-    }, 
-    {
-      "name": "engine_dosio.c_splitPath_FUN_00481f20", 
-      "addr": "00481f20"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60", 
-      "addr": "004b2e60"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CCheckOutList_load_FUN_004b2890", 
-      "addr": "004b2890"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860", 
-      "addr": "004b2860"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0", 
-      "addr": "004b82a0"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0", 
-      "addr": "004bccf0"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CFileManager_findPodInList_FUN_004ba6c0", 
-      "addr": "004ba6c0"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0", 
-      "addr": "004ba4f0"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CFileManager_writePodConfigFile_FUN_004ba620", 
-      "addr": "004ba620"
-    }, 
-    {
-      "name": "engine_fileio.cpp_copyFileWithProgress_FUN_004b2030", 
-      "addr": "004b2030"
-    }, 
-    {
-      "name": "engine_fileio.cpp_establishUserIdentity_FUN_004b1c00", 
-      "addr": "004b1c00"
-    }, 
-    {
-      "name": "engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90", 
-      "addr": "004b2f90"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPod_verifyIntegrity_FUN_00551280", 
-      "addr": "00551280"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0", 
-      "addr": "0054f5a0"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPodFile_dtor_FUN_0054f610", 
-      "addr": "0054f610"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650", 
-      "addr": "0054f650"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
-      "addr": "0049e790"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0", 
-      "addr": "004a0dd0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430", 
-      "addr": "004a0430"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0", 
-      "addr": "0049e6a0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
-      "addr": "004a03d0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530", 
-      "addr": "004a0530"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90", 
-      "addr": "004a3b90"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20", 
-      "addr": "004a3e20"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80", 
-      "addr": "004a3c80"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CPickList_setSelectedResult_FUN_004a3e10", 
-      "addr": "004a3e10"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80", 
-      "addr": "004a2b80"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_ctor_FUN_004a2a20", 
-      "addr": "004a2a20"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40", 
-      "addr": "004a2a40"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_findString_FUN_004a3030", 
-      "addr": "004a3030"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
-      "addr": "004a2f70"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0", 
-      "addr": "004a39e0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_removeAt_FUN_004a2de0", 
-      "addr": "004a2de0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_004b868c", 
-      "addr": "004b868c", 
-      "value": "004b97f9"
-    }, 
-    {
-      "type": "Sleep*", 
-      "name": "Sleep", 
-      "addr": "00611644", 
-      "value": "00212228"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_0062604b", 
-      "addr": "0062604b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00626129", 
-      "addr": "00626129", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_You_currently_have_s_che_00626502", 
-      "addr": "00626502", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_A_writable_copy_of_s_exi_0062654c", 
-      "addr": "0062654c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_WARNING_Error_setting_da_00626577", 
-      "addr": "00626577", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_path_to_update_POD_006283fa", 
-      "addr": "006283fa", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Scanning_pods_00628419", 
-      "addr": "00628419", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pod_0062842a", 
-      "addr": "0062842a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_No_POD_files_found_in_s_00628430", 
-      "addr": "00628430", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Skip_00628449", 
-      "addr": "00628449", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Copy_0062844e", 
-      "addr": "0062844e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Copy_Mount_00628453", 
-      "addr": "00628453", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Copy_Extract_00628460", 
-      "addr": "00628460", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Dismount_0062846f", 
-      "addr": "0062846f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Dismount_Delete_00628478", 
-      "addr": "00628478", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_0062848a", 
-      "addr": "0062848a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_0062849f", 
-      "addr": "0062849f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_006284b4", 
-      "addr": "006284b4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Scanning_pods_006284c2", 
-      "addr": "006284c2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pod_006284d0", 
-      "addr": "006284d0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006284d4", 
-      "addr": "006284d4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_querry_for_pod_fil_006284e9", 
-      "addr": "006284e9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_mount_s_to_check_s_0062850c", 
-      "addr": "0062850c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Cannot_recommend_action_0062852b", 
-      "addr": "0062852b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_You_have_this_pod_checke_00628545", 
-      "addr": "00628545", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_You_don_t_have_this_pod_00628563", 
-      "addr": "00628563", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Extracted_your_files_are_0062857b", 
-      "addr": "0062857b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_pod_is_older_and_no_0062859b", 
-      "addr": "0062859b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_pod_is_older_and_mo_006285bd", 
-      "addr": "006285bd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_pod_is_newer_006285db", 
-      "addr": "006285db", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_pod_is_in_sync_and__006285ed", 
-      "addr": "006285ed", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Extracted_and_in_sync_0062860d", 
-      "addr": "0062860d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_pod_is_in_sync_but__00628623", 
-      "addr": "00628623", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00628647", 
-      "addr": "00628647", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_0062865c", 
-      "addr": "0062865c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_00628671", 
-      "addr": "00628671", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_POD_not_under_version_co_0062867f", 
-      "addr": "0062867f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_s_s_0062869d", 
-      "addr": "0062869d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Checked_out_by_s_006286a6", 
-      "addr": "006286a6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Go_006286b9", 
-      "addr": "006286b9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Select_action_for_each_p_006286bd", 
-      "addr": "006286bd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Select_action_for_s_006286f8", 
-      "addr": "006286f8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_You_don_t_have_the_pod_s_0062870e", 
-      "addr": "0062870e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_pod_s_is_newer_than_00628729", 
-      "addr": "00628729", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_pod_s_is_older_than_00628747", 
-      "addr": "00628747", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_pod_s_is_different__00628765", 
-      "addr": "00628765", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_pod_s_is_the_same_a_00628787", 
-      "addr": "00628787", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_is_mounted_but_s_does__006287a6", 
-      "addr": "006287a6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006287cc", 
-      "addr": "006287cc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hell_froze_006287e1", 
-      "addr": "006287e1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_006287ed", 
-      "addr": "006287ed", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Of_the_d_files_in_s_00628804", 
-      "addr": "00628804", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_files_don_t_exist_loca_0062881c", 
-      "addr": "0062881c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_local_files_are_newer_0062883a", 
-      "addr": "0062883a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_local_files_are_older_00628854", 
-      "addr": "00628854", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_local_files_are_differ_0062886e", 
-      "addr": "0062886e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_local_files_are_in_syn_0062888c", 
-      "addr": "0062888c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_006288a8", 
-      "addr": "006288a8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_You_currently_have_this__006288bf", 
-      "addr": "006288bf", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_currently_has_this_pod_006288e8", 
-      "addr": "006288e8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_currently_have_this_0062890f", 
-      "addr": "0062890f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Your_currently_do_not_ha_00628936", 
-      "addr": "00628936", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_delete_s_00628964", 
-      "addr": "00628964", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_dismount_s_because_00628974", 
-      "addr": "00628974", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_exists_and_is_read_onl_006289ae", 
-      "addr": "006289ae", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_006289dc", 
-      "addr": "006289dc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_open_s_006289df", 
-      "addr": "006289df", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006289ed", 
-      "addr": "006289ed", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wb_00628a02", 
-      "addr": "00628a02", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_create_local_s_00628a05", 
-      "addr": "00628a05", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00628a1b", 
-      "addr": "00628a1b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00628a30", 
-      "addr": "00628a30", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00628a45", 
-      "addr": "00628a45", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Warning_couldn_t_mark_s__00628a5a", 
-      "addr": "00628a5a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Warning_s_failed_CRC_che_00628a82", 
-      "addr": "00628a82", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_PODs_not_changed_00628a9f", 
-      "addr": "00628a9f", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ODs_not_changed._00628aa0", 
-      "addr": "00628aa0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_Ds_not_changed._00628aa1", 
-      "addr": "00628aa1", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_s_not_changed._00628aa2", 
-      "addr": "00628aa2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_pods_copied_00628ab1", 
-      "addr": "00628ab1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_pods_extracted_00628ac1", 
-      "addr": "00628ac1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_pods_mounted_00628ad4", 
-      "addr": "00628ad4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_pods_dismounted_00628ae5", 
-      "addr": "00628ae5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_local_pods_deleted_00628af9", 
-      "addr": "00628af9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_POD_INI_re_written_00628b10", 
-      "addr": "00628b10", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_To_apply_these_changes_y_00628b24", 
-      "addr": "00628b24", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_o_apply_these_changes,_you_shoul_00628b25", 
-      "addr": "00628b25", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00628b60", 
-      "addr": "00628b60", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_s_Skip_00679da0", 
-      "addr": "00679da0", 
-      "value": "00628449"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_s_Copy_00679da4", 
-      "addr": "00679da4", 
-      "value": "0062844e"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_s_Copy_Mount_00628453_00679da8", 
-      "addr": "00679da8", 
-      "value": "00628453"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_s_Copy_Extract_00628460_00679dac", 
-      "addr": "00679dac", 
-      "value": "00628460"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_s_Dismount_00679db0", 
-      "addr": "00679db0", 
-      "value": "0062846f"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_s_Dismount_Delete_00628478_00679db4", 
-      "addr": "00679db4", 
-      "value": "00628478"
-    }, 
-    {
-      "type": "string", 
-      "name": "s_Show_local_file_differences_00679db8", 
-      "addr": "00679db8", 
-      "value": null
-    }, 
-    {
-      "type": "char[260]", 
-      "name": "g_DefaultPodDirectoryPath", 
-      "addr": "00679f48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s__00679f4c", 
-      "addr": "00679f4c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonPod*", 
-      "name": "g_CDemonPodPtr", 
-      "addr": "00680cdc", 
-      "value": "030e5090"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "char[264]", 
-      "name": "g_VersionControlDirectory", 
-      "addr": "02d12ac8", 
-      "value": null
-    }, 
-    {
-      "type": "SVersionControlSession", 
-      "name": "g_VersionControlSession", 
-      "addr": "02d12bd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VersionControlSession.field1_0x20[0]", 
-      "addr": "02d12bf0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VersionControlSession.field1_0x20[4]", 
-      "addr": "02d12bf4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonPod", 
-      "name": "g_CDemonPodInstance", 
-      "addr": "030e5090", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 19, 
-      "match": "undefined3 extraout_var", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var;"
-    }, 
-    {
-      "line": 20, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CStrList_vtable *unaff_EBX;"
-    }, 
-    {
-      "line": 22, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 23, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "char *unaff_EBP;"
-    }, 
-    {
-      "line": 25, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "char **unaff_ESI;"
-    }, 
-    {
-      "line": 27, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_0000000c;"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char **in_stack_00000018;"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CFileManager *in_stack_00000020;"
-    }, 
-    {
-      "line": 37, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000024;"
-    }, 
-    {
-      "line": 38, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000028;"
-    }, 
-    {
-      "line": 39, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CFileManager *in_stack_00000034;"
-    }, 
-    {
-      "line": 40, 
-      "match": "in_stack_00000038", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000038;"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CFileManager *in_stack_00000048;"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_stack_0000006c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CFileManager *in_stack_0000006c;"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000078", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CFileManager *in_stack_00000078;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_ffffdce4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffdce4;"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_ffffdd0c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffdd0c;"
-    }, 
-    {
-      "line": 46, 
-      "match": "in_stack_ffffdd10", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffdd10;"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_ffffdd14", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CPickList *in_stack_ffffdd14;"
-    }, 
-    {
-      "line": 48, 
-      "match": "in_stack_ffffdd18", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_ffffdd18;"
-    }, 
-    {
-      "line": 49, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_ffffdd1c;"
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_ffffdd20;"
-    }, 
-    {
-      "line": 52, 
-      "match": "in_stack_ffffdd28", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CFileManager *in_stack_ffffdd28;"
-    }, 
-    {
-      "line": 53, 
-      "match": "in_stack_ffffdd30", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_ffffdd30;"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_ffffdd34", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffdd34;"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_ffffdd38", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffdd38;"
-    }, 
-    {
-      "line": 56, 
-      "match": "in_stack_ffffdd3c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffdd3c;"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_stack_ffffdd40", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffdd40;"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_ffffdd44", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffdd44;"
-    }, 
-    {
-      "line": 118, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_54._0_4_ = 0;"
-    }, 
-    {
-      "line": 119, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_54._4_4_ = 0;"
-    }, 
-    {
-      "line": 120, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_4c._0_4_ = (char **)0x0;"
-    }, 
-    {
-      "line": 152, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((int)auStack_7c._0_4_ < 1) {"
-    }, 
-    {
-      "line": 156, 
-      "match": "in_stack_ffffdce4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CStrList *)(auStack_7c + 4),0,in_stack_ffffdce4);"
-    }, 
-    {
-      "line": 161, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000020,(CStrList *)(local_6c + 4));"
-    }, 
-    {
-      "line": 162, 
-      "match": "._12_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._12_4_ = local_74;"
-    }, 
-    {
-      "line": 170, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_4c._0_4_ = (char **)0x0;"
-    }, 
-    {
-      "line": 171, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_4c._4_4_ = (CCheckOutItem *)0x0;"
-    }, 
-    {
-      "line": 175, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._0_4_ = (char **)0x0;"
-    }, 
-    {
-      "line": 179, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000018 = (char **)local_34._0_4_;"
-    }, 
-    {
-      "line": 179, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "in_stack_00000018 = (char **)local_34._0_4_;"
-    }, 
-    {
-      "line": 181, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(g_CEditorToolsPtr,(float)(int)local_34._0_4_,(float)(int)local_18);"
-    }, 
-    {
-      "line": 182, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "ppcVar10 = (char **)(local_34._8_4_ + local_4c._0_4_ * 0xe7 * 4);"
-    }, 
-    {
-      "line": 182, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "ppcVar10 = (char **)(local_34._8_4_ + local_4c._0_4_ * 0xe7 * 4);"
-    }, 
-    {
-      "line": 184, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "((CStrList *)auStack_7c,local_4c._0_4_);"
-    }, 
-    {
-      "line": 226, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "cVar1 = *(char *)((int)ppcVar12 + 1);"
-    }, 
-    {
-      "line": 249, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000034,(CStrList *)local_54,(char *)(ppcVar10 + 0x40));"
-    }, 
-    {
-      "line": 266, 
-      "match": "._1032_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "ppcVar10[0xe4] = (char *)auStack_1af4._1032_4_;"
-    }, 
-    {
-      "line": 267, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = (CStrList_vtable *)0x0;"
-    }, 
-    {
-      "line": 268, 
-      "match": "._1032_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (0 < (int)auStack_1af4._1032_4_) {"
-    }, 
-    {
-      "line": 269, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._8_4_ = (char **)0x0;"
-    }, 
-    {
-      "line": 271, 
-      "match": "._1036_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "puVar11 = (uint *)(auStack_1af4._1036_4_ + local_34._8_4_);"
-    }, 
-    {
-      "line": 271, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "puVar11 = (uint *)(auStack_1af4._1036_4_ + local_34._8_4_);"
-    }, 
-    {
-      "line": 299, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._8_4_ = local_34._8_4_ + 0x14;"
-    }, 
-    {
-      "line": 299, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._8_4_ = local_34._8_4_ + 0x14;"
-    }, 
-    {
-      "line": 300, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);"
-    }, 
-    {
-      "line": 300, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);"
-    }, 
-    {
-      "line": 300, 
-      "match": "(CStrList_vtable *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);"
-    }, 
-    {
-      "line": 301, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while ((int)unaff_EBX < (int)auStack_1af4._1032_4_);"
-    }, 
-    {
-      "line": 301, 
-      "match": "._1032_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "} while ((int)unaff_EBX < (int)auStack_1af4._1032_4_);"
-    }, 
-    {
-      "line": 310, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "pcVar13 = (char *)(local_34._4_4_ + iVar3 * 0x168 + 0x104);"
-    }, 
-    {
-      "line": 317, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)ppcVar12 + 1) = cVar1;"
-    }, 
-    {
-      "line": 379, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000014 = in_stack_00000014 + 0x39c;"
-    }, 
-    {
-      "line": 379, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000014 = in_stack_00000014 + 0x39c;"
-    }, 
-    {
-      "line": 380, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000018 = in_stack_00000018 + 0xe7;"
-    }, 
-    {
-      "line": 380, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000018 = in_stack_00000018 + 0xe7;"
-    }, 
-    {
-      "line": 385, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000018 = (char **)0x0;"
-    }, 
-    {
-      "line": 386, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (0 < (int)local_54._4_4_) {"
-    }, 
-    {
-      "line": 387, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pod_directory_path = (char *)((int)local_14 * 0x39c);"
-    }, 
-    {
-      "line": 388, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c = pod_directory_path + -0x39c;"
-    }, 
-    {
-      "line": 390, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = (char **)shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70"
-    }, 
-    {
-      "line": 391, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CStrList *)(local_54 + 4),(int)in_stack_00000018);"
-    }, 
-    {
-      "line": 395, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pcVar14 = unaff_EBP + 0x100;"
-    }, 
-    {
-      "line": 397, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)unaff_ESI,pcVar14);"
-    }, 
-    {
-      "line": 406, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c = in_stack_0000000c + 0x39c;"
-    }, 
-    {
-      "line": 406, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c = in_stack_0000000c + 0x39c;"
-    }, 
-    {
-      "line": 407, 
-      "match": "._12_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._12_4_ ="
-    }, 
-    {
-      "line": 409, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(unaff_EBP,(int)pod_directory_path,\"..\\\\engine\\\\fileio.cpp\",0xcd3);"
-    }, 
-    {
-      "line": 410, 
-      "match": "._12_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((CStrList_vtable *)local_34._12_4_ == (CStrList_vtable *)0x0) {"
-    }, 
-    {
-      "line": 415, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pcVar4 = (char *)(local_24 + (int)unaff_ESI);"
-    }, 
-    {
-      "line": 429, 
-      "match": "&stack0x00000010", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(acStack_574,(char *)&stack0x00000010,acStack_370,acStack_170,acStack_270);"
-    }, 
-    {
-      "line": 433, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(unaff_EBP,(char *)0x0,(char *)0x0,acStack_168,acStack_268);"
-    }, 
-    {
-      "line": 435, 
-      "match": "&stack0x0000001c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(pcVar4 + 0x204,&stack0x0000001c,acStack_464,acStack_164,acStack_264);"
-    }, 
-    {
-      "line": 462, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000018 = (char **)((int)in_stack_00000018 + 1);"
-    }, 
-    {
-      "line": 462, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000018 = (char **)((int)in_stack_00000018 + 1);"
-    }, 
-    {
-      "line": 463, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while ((int)in_stack_00000018 < (int)local_54._4_4_);"
-    }, 
-    {
-      "line": 463, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "} while ((int)in_stack_00000018 < (int)local_54._4_4_);"
-    }, 
-    {
-      "line": 465, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._8_4_ = (char **)0x0;"
-    }, 
-    {
-      "line": 470, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "ppcVar10 = unaff_ESI;"
-    }, 
-    {
-      "line": 471, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (0 < unaff_EDI) {"
-    }, 
-    {
-      "line": 473, 
-      "match": "&stack0xffffdd04", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffdd04,\"%s\\t%s\\t%s\");"
-    }, 
-    {
-      "line": 475, 
-      "match": "&stack0xffffdcfc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar13 = &stack0xffffdcfc;"
-    }, 
-    {
-      "line": 488, 
-      "match": "&stack0xffffdd00", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_16d4,&stack0xffffdd00);"
-    }, 
-    {
-      "line": 491, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while (iVar3 < unaff_EDI);"
-    }, 
-    {
-      "line": 500, 
-      "match": "in_stack_ffffdd0c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPickList *)auStack_16c8,0,in_stack_ffffdd0c,in_stack_ffffdd10,"
-    }, 
-    {
-      "line": 500, 
-      "match": "in_stack_ffffdd10", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPickList *)auStack_16c8,0,in_stack_ffffdd0c,in_stack_ffffdd10,"
-    }, 
-    {
-      "line": 501, 
-      "match": "in_stack_ffffdd14", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);"
-    }, 
-    {
-      "line": 501, 
-      "match": "in_stack_ffffdd18", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);"
-    }, 
-    {
-      "line": 501, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);"
-    }, 
-    {
-      "line": 504, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (iVar3 < (int)((int)&((CStrList_vtable *)(auStack_16c8._0_4_ + -0x1c))->handleInput + 3)) {"
-    }, 
-    {
-      "line": 505, 
-      "match": "&stack0xffffdd0c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffdd0c,\"Select action for %s\\n\");"
-    }, 
-    {
-      "line": 506, 
-      "match": "&stack0xffffdd0c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar13 = &stack0xffffdd0c + iVar5;"
-    }, 
-    {
-      "line": 584, 
-      "match": "in_stack_ffffdd0c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd0c = 0x4b96d7;"
-    }, 
-    {
-      "line": 620, 
-      "match": "in_stack_ffffdd18", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd18 = &stack0xffffdd24;"
-    }, 
-    {
-      "line": 620, 
-      "match": "&stack0xffffdd24", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "in_stack_ffffdd18 = &stack0xffffdd24;"
-    }, 
-    {
-      "line": 621, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd20 = (FILE *)0x0;"
-    }, 
-    {
-      "line": 622, 
-      "match": "in_stack_ffffdd14", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd14 = (CPickList *)(auStack_1318 + 0x10);"
-    }, 
-    {
-      "line": 623, 
-      "match": "in_stack_ffffdd10", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd10 = 0x4b97b2;"
-    }, 
-    {
-      "line": 624, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd1c = (char *)config_param1;"
-    }, 
-    {
-      "line": 628, 
-      "match": "in_stack_ffffdd14", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_ffffdd14,&stack0xffffdd24,(int)config_param1,0);"
-    }, 
-    {
-      "line": 628, 
-      "match": "&stack0xffffdd24", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(in_stack_ffffdd14,&stack0xffffdd24,(int)config_param1,0);"
-    }, 
-    {
-      "line": 630, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd1c = auStack_1304;"
-    }, 
-    {
-      "line": 631, 
-      "match": "in_stack_ffffdd18", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd18 = (char *)0x4b97d2;"
-    }, 
-    {
-      "line": 633, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CStrList *)in_stack_ffffdd1c,(int)config_param1);"
-    }, 
-    {
-      "line": 634, 
-      "match": "in_stack_ffffdd28", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = crt_string_c_stricmp_FUN_005fe7f0(pcVar13,(char *)in_stack_ffffdd28);"
-    }, 
-    {
-      "line": 640, 
-      "match": "in_stack_ffffdd28", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd28 = in_stack_0000006c;"
-    }, 
-    {
-      "line": 640, 
-      "match": "in_stack_0000006c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd28 = in_stack_0000006c;"
-    }, 
-    {
-      "line": 642, 
-      "match": "in_stack_0000006c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_0000006c,unaff_retaddr + iVar3 * 0x39c + 0x204);"
-    }, 
-    {
-      "line": 647, 
-      "match": "in_stack_ffffdd0c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPickList *)auStack_16c8,0,in_stack_ffffdd0c,in_stack_ffffdd10,"
-    }, 
-    {
-      "line": 647, 
-      "match": "in_stack_ffffdd10", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPickList *)auStack_16c8,0,in_stack_ffffdd0c,in_stack_ffffdd10,"
-    }, 
-    {
-      "line": 648, 
-      "match": "in_stack_ffffdd14", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);"
-    }, 
-    {
-      "line": 648, 
-      "match": "in_stack_ffffdd18", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);"
-    }, 
-    {
-      "line": 648, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);"
-    }, 
-    {
-      "line": 649, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000024 = (char *)0x0;"
-    }, 
-    {
-      "line": 650, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000048->batch_mode = 1;"
-    }, 
-    {
-      "line": 659, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (0 < (int)unaff_EBX) {"
-    }, 
-    {
-      "line": 660, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000020 = (CFileManager *)(unaff_retaddr + 0x100);"
-    }, 
-    {
-      "line": 662, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar13 = in_stack_00000024;"
-    }, 
-    {
-      "line": 663, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "filename = in_stack_00000020;"
-    }, 
-    {
-      "line": 664, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x378) == 0) {"
-    }, 
-    {
-      "line": 665, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((((*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x370) == 3) &&"
-    }, 
-    {
-      "line": 666, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x37c) == 0)) &&"
-    }, 
-    {
-      "line": 667, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x374) != 0)) &&"
-    }, 
-    {
-      "line": 670, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((char *)0x0,(char *)in_stack_00000020), -1 < (int)uVar6)))) &&"
-    }, 
-    {
-      "line": 672, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_dosio_c_setFileAttributes_FUN_004819f0(in_stack_00000024,(byte)uVar6 | 8);"
-    }, 
-    {
-      "line": 676, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x378) == 5) {"
-    }, 
-    {
-      "line": 677, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_dosio_c_setFileAttributes_FUN_004819f0((char *)in_stack_00000020,0);"
-    }, 
-    {
-      "line": 680, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_EDI + 1;"
-    }, 
-    {
-      "line": 680, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_EDI + 1;"
-    }, 
-    {
-      "line": 690, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000048,(CStrList *)(local_4c + 0xc),"
-    }, 
-    {
-      "line": 698, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);"
-    }, 
-    {
-      "line": 698, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);"
-    }, 
-    {
-      "line": 698, 
-      "match": "(CStrList_vtable *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);"
-    }, 
-    {
-      "line": 702, 
-      "match": "._12_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._12_4_ = (CStrList_vtable *)0x0;"
-    }, 
-    {
-      "line": 706, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "file_size_bytes = in_stack_ffffdd20;"
-    }, 
-    {
-      "line": 714, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 ="
-    }, 
-    {
-      "line": 718, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (-1 < in_stack_00000010) {"
-    }, 
-    {
-      "line": 723, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((uint)in_stack_0000000c & 8) != 0) goto LAB_004b9af4;"
-    }, 
-    {
-      "line": 742, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "file_size_bytes = in_stack_ffffdd20;"
-    }, 
-    {
-      "line": 746, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CStrList *)local_4c,in_stack_00000028);"
-    }, 
-    {
-      "line": 753, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd20 = file_size_bytes;"
-    }, 
-    {
-      "line": 755, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd20 ="
-    }, 
-    {
-      "line": 759, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_ffffdd20 == (FILE *)0x0) {"
-    }, 
-    {
-      "line": 764, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd20 = (FILE *)(unaff_retaddr + (int)pcVar13 * 0x39c + 0x100);"
-    }, 
-    {
-      "line": 765, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd1c = \"Can't create local %s\";"
-    }, 
-    {
-      "line": 766, 
-      "match": "in_stack_ffffdd18", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd18 = &g_CEditorToolsPtr->field0_0x0;"
-    }, 
-    {
-      "line": 773, 
-      "match": "in_stack_00000038", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CStrList *)local_3c,in_stack_00000038);"
-    }, 
-    {
-      "line": 775, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(stream_ptr,in_stack_ffffdd20,pcVar4,pcVar14,"
-    }, 
-    {
-      "line": 777, 
-      "match": "in_stack_ffffdd18", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd18 = (char *)0x4b9cd1;"
-    }, 
-    {
-      "line": 780, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd1c = (char *)0x4b9ce4;"
-    }, 
-    {
-      "line": 782, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_ffffdd20,\"..\\\\engine\\\\fileio.cpp\",0xdc6);"
-    }, 
-    {
-      "line": 788, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;"
-    }, 
-    {
-      "line": 788, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;"
-    }, 
-    {
-      "line": 803, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0)) {"
-    }, 
-    {
-      "line": 819, 
-      "match": "&stack0xfffffff0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CStrList *)&stack0xfffffff0,"
-    }, 
-    {
-      "line": 821, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000020 ="
-    }, 
-    {
-      "line": 822, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(CFileManager *)((int)&in_stack_00000020->file_ptr + 1);"
-    }, 
-    {
-      "line": 822, 
-      "match": "(CFileManager *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(CFileManager *)((int)&in_stack_00000020->file_ptr + 1);"
-    }, 
-    {
-      "line": 825, 
-      "match": "in_stack_00000078", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*in_stack_00000078->vtable->extractPodFile)"
-    }, 
-    {
-      "line": 826, 
-      "match": "in_stack_00000078", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000078,unaff_retaddr + (int)pcVar13 * 0x39c + 0x100)"
-    }, 
-    {
-      "line": 828, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000034 ="
-    }, 
-    {
-      "line": 829, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(CFileManager *)((int)&in_stack_00000034->file_ptr + 1);"
-    }, 
-    {
-      "line": 829, 
-      "match": "(CFileManager *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(CFileManager *)((int)&in_stack_00000034->file_ptr + 1);"
-    }, 
-    {
-      "line": 838, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd20 = file_size_bytes;"
-    }, 
-    {
-      "line": 842, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd20 = file_size_bytes;"
-    }, 
-    {
-      "line": 844, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd1c ="
-    }, 
-    {
-      "line": 846, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CStrList *)(local_4c + 0xc),(int)in_stack_00000034);"
-    }, 
-    {
-      "line": 847, 
-      "match": "in_stack_ffffdd18", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd18 = \"Can't open %s\";"
-    }, 
-    {
-      "line": 853, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000020 = (CFileManager *)(in_stack_00000020->file_entries[7] + 0x14);"
-    }, 
-    {
-      "line": 853, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000020 = (CFileManager *)(in_stack_00000020->file_entries[7] + 0x14);"
-    }, 
-    {
-      "line": 854, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000024 = in_stack_00000024 + 1;"
-    }, 
-    {
-      "line": 854, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000024 = in_stack_00000024 + 1;"
-    }, 
-    {
-      "line": 855, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while ((int)in_stack_00000024 < (int)unaff_EBX);"
-    }, 
-    {
-      "line": 855, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while ((int)in_stack_00000024 < (int)unaff_EBX);"
-    }, 
-    {
-      "line": 857, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000048->batch_mode = 0;"
-    }, 
-    {
-      "line": 858, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((0 < (int)local_14) || (0 < unaff_EDI)) {"
-    }, 
-    {
-      "line": 860, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000048,(CStrList *)(local_4c + 0xc));"
-    }, 
-    {
-      "line": 862, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((((local_18 == (char *)0x0) && (local_14 == (char *)0x0)) && (unaff_EBP == (char *)0x0))"
-    }, 
-    {
-      "line": 863, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "&& ((unaff_ESI == (char **)0x0 && (unaff_EDI == 0)))) {"
-    }, 
-    {
-      "line": 863, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "&& ((unaff_ESI == (char **)0x0 && (unaff_EDI == 0)))) {"
-    }, 
-    {
-      "line": 873, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (0 < (int)unaff_EBP) {"
-    }, 
-    {
-      "line": 881, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (0 < unaff_EDI) {"
-    }, 
-    {
-      "line": 885, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (0 < (int)unaff_ESI) {"
-    }, 
-    {
-      "line": 889, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (((int)local_14 < 1) && (unaff_EDI < 1)) {"
-    }, 
-    {
-      "line": 913, 
-      "match": "in_stack_ffffdd18", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)local_34,0,(uint)in_stack_ffffdd18);"
-    }, 
-    {
-      "line": 915, 
-      "match": "in_stack_ffffdd1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CStrList *)(local_4c + 0xc),0,(uint)in_stack_ffffdd1c);"
-    }, 
-    {
-      "line": 925, 
-      "match": "in_stack_ffffdd20", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd20 = (FILE *)0x4b9962;"
-    }, 
-    {
-      "line": 928, 
-      "match": "in_stack_ffffdd30", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar8 = crt_string_c_stricmp_FUN_005fe7f0(pcVar13,in_stack_ffffdd30);"
-    }, 
-    {
-      "line": 936, 
-      "match": "in_stack_ffffdd30", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPickList *)auStack_12fc,0,(uint)in_stack_ffffdd30,in_stack_ffffdd34,in_stack_ffffdd38"
-    }, 
-    {
-      "line": 936, 
-      "match": "in_stack_ffffdd34", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPickList *)auStack_12fc,0,(uint)in_stack_ffffdd30,in_stack_ffffdd34,in_stack_ffffdd38"
-    }, 
-    {
-      "line": 936, 
-      "match": "in_stack_ffffdd38", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPickList *)auStack_12fc,0,(uint)in_stack_ffffdd30,in_stack_ffffdd34,in_stack_ffffdd38"
-    }, 
-    {
-      "line": 937, 
-      "match": "in_stack_ffffdd3c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": ",in_stack_ffffdd3c,in_stack_ffffdd40);"
-    }, 
-    {
-      "line": 937, 
-      "match": "in_stack_ffffdd40", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": ",in_stack_ffffdd3c,in_stack_ffffdd40);"
-    }, 
-    {
-      "line": 938, 
-      "match": "in_stack_ffffdd30", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd30 = (char *)0x0;"
-    }, 
-    {
-      "line": 939, 
-      "match": "in_stack_ffffdd28", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd28 = (CFileManager *)0x4b9999;"
-    }, 
-    {
-      "line": 941, 
-      "match": "in_stack_ffffdd34", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPickList *)(auStack_16c8 + 0x28),0,in_stack_ffffdd34,in_stack_ffffdd38,"
-    }, 
-    {
-      "line": 941, 
-      "match": "in_stack_ffffdd38", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPickList *)(auStack_16c8 + 0x28),0,in_stack_ffffdd34,in_stack_ffffdd38,"
-    }, 
-    {
-      "line": 942, 
-      "match": "in_stack_ffffdd3c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd3c,in_stack_ffffdd40,in_stack_ffffdd44);"
-    }, 
-    {
-      "line": 942, 
-      "match": "in_stack_ffffdd40", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd3c,in_stack_ffffdd40,in_stack_ffffdd44);"
-    }, 
-    {
-      "line": 942, 
-      "match": "in_stack_ffffdd44", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffdd3c,in_stack_ffffdd40,in_stack_ffffdd44);"
-    }
-  ], 
+    ],
+    "total_lines": 3017
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004b86b0", 
-    "signature": "void engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileManager * this_ptr, char * pod_directory_path)", 
+    "address": "004b86b0",
     "address_range": [
       [
-        "004b86b0", 
+        "004b86b0",
         "004b9f3d"
       ]
-    ], 
-    "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0",
+    "signature": "void engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileManager * this_ptr, char * pod_directory_path)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00601450",
+      "name": "crt_errno.c_errno_FUN_00601450"
+    },
+    {
+      "addr": "005ff9d0",
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "00601490",
+      "name": "crt_stdio.c_setvbuf_FUN_00601490"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    },
+    {
+      "addr": "00481910",
+      "name": "engine_dosio.c_copyFileTimestamp_FUN_00481910"
+    },
+    {
+      "addr": "004817c0",
+      "name": "engine_dosio.c_findFileNormally_FUN_004817c0"
+    },
+    {
+      "addr": "00481960",
+      "name": "engine_dosio.c_getFileTimestamp_FUN_00481960"
+    },
+    {
+      "addr": "00481f50",
+      "name": "engine_dosio.c_makePath_FUN_00481f50"
+    },
+    {
+      "addr": "004819f0",
+      "name": "engine_dosio.c_setFileAttributes_FUN_004819f0"
+    },
+    {
+      "addr": "00481f20",
+      "name": "engine_dosio.c_splitPath_FUN_00481f20"
+    },
+    {
+      "addr": "004b2e60",
+      "name": "engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60"
+    },
+    {
+      "addr": "004b2890",
+      "name": "engine_fileio.cpp_CCheckOutList_load_FUN_004b2890"
+    },
+    {
+      "addr": "004b2860",
+      "name": "engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860"
+    },
+    {
+      "addr": "004b82a0",
+      "name": "engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0"
+    },
+    {
+      "addr": "004bccf0",
+      "name": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0"
+    },
+    {
+      "addr": "004ba6c0",
+      "name": "engine_fileio.cpp_CFileManager_findPodInList_FUN_004ba6c0"
+    },
+    {
+      "addr": "004ba4f0",
+      "name": "engine_fileio.cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0"
+    },
+    {
+      "addr": "004ba620",
+      "name": "engine_fileio.cpp_CFileManager_writePodConfigFile_FUN_004ba620"
+    },
+    {
+      "addr": "004b2030",
+      "name": "engine_fileio.cpp_copyFileWithProgress_FUN_004b2030"
+    },
+    {
+      "addr": "004b1c00",
+      "name": "engine_fileio.cpp_establishUserIdentity_FUN_004b1c00"
+    },
+    {
+      "addr": "004b2f90",
+      "name": "engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90"
+    },
+    {
+      "addr": "00551280",
+      "name": "engine_pod.cpp_CPod_verifyIntegrity_FUN_00551280"
+    },
+    {
+      "addr": "0054f5a0",
+      "name": "engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0"
+    },
+    {
+      "addr": "0054f610",
+      "name": "engine_pod.cpp_CPodFile_dtor_FUN_0054f610"
+    },
+    {
+      "addr": "0054f650",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650"
+    },
+    {
+      "addr": "0049e790",
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    },
+    {
+      "addr": "004a0dd0",
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
+    },
+    {
+      "addr": "004a0430",
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "0049e6a0",
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    },
+    {
+      "addr": "004a03d0",
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "004a0530",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530"
+    },
+    {
+      "addr": "004a3b90",
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
+    },
+    {
+      "addr": "004a3e20",
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+    },
+    {
+      "addr": "004a3c80",
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
+    },
+    {
+      "addr": "004a3e10",
+      "name": "shape_edittool.cpp_CPickList_setSelectedResult_FUN_004a3e10"
+    },
+    {
+      "addr": "004a2b80",
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    },
+    {
+      "addr": "004a2a20",
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_004a2a20"
+    },
+    {
+      "addr": "004a2a40",
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40"
+    },
+    {
+      "addr": "004a3030",
+      "name": "shape_edittool.cpp_CStrList_findString_FUN_004a3030"
+    },
+    {
+      "addr": "004a2f70",
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "004a39e0",
+      "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0"
+    },
+    {
+      "addr": "004a2de0",
+      "name": "shape_edittool.cpp_CStrList_removeAt_FUN_004a2de0"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004b868c",
+      "name": "switchdataD_004b868c",
+      "type": "void*",
+      "value": "004b97f9"
+    },
+    {
+      "addr": "00611644",
+      "name": "Sleep",
+      "type": "Sleep*",
+      "value": "00212228"
+    },
+    {
+      "addr": "0062604b",
+      "name": "s_engine_fileio_cpp_0062604b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626129",
+      "name": "s_engine_fileio_cpp_00626129",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626502",
+      "name": "s_You_currently_have_s_che_00626502",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062654c",
+      "name": "s_A_writable_copy_of_s_exi_0062654c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626577",
+      "name": "s_WARNING_Error_setting_da_00626577",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006283fa",
+      "name": "s_Enter_path_to_update_POD_006283fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628419",
+      "name": "s_Scanning_pods_00628419",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062842a",
+      "name": "s_pod_0062842a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628430",
+      "name": "s_No_POD_files_found_in_s_00628430",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628449",
+      "name": "s_Skip_00628449",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062844e",
+      "name": "s_Copy_0062844e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628453",
+      "name": "s_Copy_Mount_00628453",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628460",
+      "name": "s_Copy_Extract_00628460",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062846f",
+      "name": "s_Dismount_0062846f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628478",
+      "name": "s_Dismount_Delete_00628478",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062848a",
+      "name": "s_engine_fileio_cpp_0062848a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062849f",
+      "name": "s_engine_fileio_cpp_0062849f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006284b4",
+      "name": "s_Out_of_memory_006284b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006284c2",
+      "name": "s_Scanning_pods_006284c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006284d0",
+      "name": "s_pod_006284d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006284d4",
+      "name": "s_engine_fileio_cpp_006284d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006284e9",
+      "name": "s_Can_t_querry_for_pod_fil_006284e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062850c",
+      "name": "s_Can_t_mount_s_to_check_s_0062850c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062852b",
+      "name": "s_Cannot_recommend_action_0062852b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628545",
+      "name": "s_You_have_this_pod_checke_00628545",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628563",
+      "name": "s_You_don_t_have_this_pod_00628563",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062857b",
+      "name": "s_Extracted_your_files_are_0062857b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062859b",
+      "name": "s_Your_pod_is_older_and_no_0062859b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006285bd",
+      "name": "s_Your_pod_is_older_and_mo_006285bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006285db",
+      "name": "s_Your_pod_is_newer_006285db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006285ed",
+      "name": "s_Your_pod_is_in_sync_and__006285ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062860d",
+      "name": "s_Extracted_and_in_sync_0062860d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628623",
+      "name": "s_Your_pod_is_in_sync_but__00628623",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628647",
+      "name": "s_engine_fileio_cpp_00628647",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062865c",
+      "name": "s_engine_fileio_cpp_0062865c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628671",
+      "name": "s_Out_of_memory_00628671",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062867f",
+      "name": "s_POD_not_under_version_co_0062867f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062869d",
+      "name": "s_s_s_s_0062869d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006286a6",
+      "name": "s_Checked_out_by_s_006286a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006286b9",
+      "name": "s_Go_006286b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006286bd",
+      "name": "s_Select_action_for_each_p_006286bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006286f8",
+      "name": "s_Select_action_for_s_006286f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062870e",
+      "name": "s_You_don_t_have_the_pod_s_0062870e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628729",
+      "name": "s_Your_pod_s_is_newer_than_00628729",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628747",
+      "name": "s_Your_pod_s_is_older_than_00628747",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628765",
+      "name": "s_Your_pod_s_is_different__00628765",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628787",
+      "name": "s_Your_pod_s_is_the_same_a_00628787",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006287a6",
+      "name": "s_s_is_mounted_but_s_does__006287a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006287cc",
+      "name": "s_engine_fileio_cpp_006287cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006287e1",
+      "name": "s_Hell_froze_006287e1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006287ed",
+      "name": "s_anon_006287ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628804",
+      "name": "s_Of_the_d_files_in_s_00628804",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062881c",
+      "name": "s_d_files_don_t_exist_loca_0062881c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062883a",
+      "name": "s_d_local_files_are_newer_0062883a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628854",
+      "name": "s_d_local_files_are_older_00628854",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062886e",
+      "name": "s_d_local_files_are_differ_0062886e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062888c",
+      "name": "s_d_local_files_are_in_syn_0062888c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006288a8",
+      "name": "s_anon_006288a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006288bf",
+      "name": "s_You_currently_have_this__006288bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006288e8",
+      "name": "s_s_currently_has_this_pod_006288e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062890f",
+      "name": "s_Your_currently_have_this_0062890f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628936",
+      "name": "s_Your_currently_do_not_ha_00628936",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628964",
+      "name": "s_Can_t_delete_s_00628964",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628974",
+      "name": "s_Can_t_dismount_s_because_00628974",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006289ae",
+      "name": "s_s_exists_and_is_read_onl_006289ae",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006289dc",
+      "name": "s_rb_006289dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006289df",
+      "name": "s_Can_t_open_s_006289df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006289ed",
+      "name": "s_engine_fileio_cpp_006289ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628a02",
+      "name": "s_wb_00628a02",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628a05",
+      "name": "s_Can_t_create_local_s_00628a05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628a1b",
+      "name": "s_engine_fileio_cpp_00628a1b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628a30",
+      "name": "s_engine_fileio_cpp_00628a30",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628a45",
+      "name": "s_engine_fileio_cpp_00628a45",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628a5a",
+      "name": "s_Warning_couldn_t_mark_s__00628a5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628a82",
+      "name": "s_Warning_s_failed_CRC_che_00628a82",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628a9f",
+      "name": "s_PODs_not_changed_00628a9f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628aa0",
+      "name": "s_ODs_not_changed._00628aa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00628aa1",
+      "name": "s_Ds_not_changed._00628aa1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00628aa2",
+      "name": "s_s_not_changed._00628aa2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00628ab1",
+      "name": "s_d_pods_copied_00628ab1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628ac1",
+      "name": "s_d_pods_extracted_00628ac1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628ad4",
+      "name": "s_d_pods_mounted_00628ad4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628ae5",
+      "name": "s_d_pods_dismounted_00628ae5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628af9",
+      "name": "s_d_local_pods_deleted_00628af9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628b10",
+      "name": "s_POD_INI_re_written_00628b10",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628b24",
+      "name": "s_To_apply_these_changes_y_00628b24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00628b25",
+      "name": "s_o_apply_these_changes,_you_shoul_00628b25",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00628b60",
+      "name": "s_engine_fileio_cpp_00628b60",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "00679da0",
+      "name": "PTR_s_Skip_00679da0",
+      "type": "void*",
+      "value": "00628449"
+    },
+    {
+      "addr": "00679da4",
+      "name": "PTR_s_Copy_00679da4",
+      "type": "void*",
+      "value": "0062844e"
+    },
+    {
+      "addr": "00679da8",
+      "name": "PTR_s_Copy_Mount_00628453_00679da8",
+      "type": "void*",
+      "value": "00628453"
+    },
+    {
+      "addr": "00679dac",
+      "name": "PTR_s_Copy_Extract_00628460_00679dac",
+      "type": "void*",
+      "value": "00628460"
+    },
+    {
+      "addr": "00679db0",
+      "name": "PTR_s_Dismount_00679db0",
+      "type": "void*",
+      "value": "0062846f"
+    },
+    {
+      "addr": "00679db4",
+      "name": "PTR_s_Dismount_Delete_00628478_00679db4",
+      "type": "void*",
+      "value": "00628478"
+    },
+    {
+      "addr": "00679db8",
+      "name": "s_Show_local_file_differences_00679db8",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "00679f48",
+      "name": "g_DefaultPodDirectoryPath",
+      "type": "char[260]",
+      "value": null
+    },
+    {
+      "addr": "00679f4c",
+      "name": "s__00679f4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00680cdc",
+      "name": "g_CDemonPodPtr",
+      "type": "CDemonPod*",
+      "value": "030e5090"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d12ac8",
+      "name": "g_VersionControlDirectory",
+      "type": "char[264]",
+      "value": null
+    },
+    {
+      "addr": "02d12bd0",
+      "name": "g_VersionControlSession",
+      "type": "SVersionControlSession",
+      "value": null
+    },
+    {
+      "addr": "02d12bf0",
+      "name": "g_VersionControlSession.field1_0x20[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12bf4",
+      "name": "g_VersionControlSession.field1_0x20[4]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e5090",
+      "name": "g_CDemonPodInstance",
+      "type": "CDemonPod",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 9028, 
+    "frame_size": 9036,
+    "local_size": 9028,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -9024, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2340"
-      }, 
+        "is_param": false,
+        "name": "local_2340",
+        "offset": -9024,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -9020, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_233c"
-      }, 
+        "is_param": false,
+        "name": "local_233c",
+        "offset": -9020,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -9016, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_2338"
-      }, 
+        "is_param": false,
+        "name": "local_2338",
+        "offset": -9016,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -9015, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_2337"
-      }, 
+        "is_param": false,
+        "name": "local_2337",
+        "offset": -9015,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -6968, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_1b38"
-      }, 
+        "is_param": false,
+        "name": "local_1b38",
+        "offset": -6968,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -5928, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1728"
-      }, 
+        "is_param": false,
+        "name": "local_1728",
+        "offset": -5928,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -5924, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1724"
-      }, 
+        "is_param": false,
+        "name": "local_1724",
+        "offset": -5924,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -5900, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_170c"
-      }, 
+        "is_param": false,
+        "name": "local_170c",
+        "offset": -5900,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -4964, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_1364"
-      }, 
+        "is_param": false,
+        "name": "local_1364",
+        "offset": -4964,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -4028, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_fbc"
-      }, 
+        "is_param": false,
+        "name": "local_fbc",
+        "offset": -4028,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -4027, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_fbb"
-      }, 
+        "is_param": false,
+        "name": "local_fbb",
+        "offset": -4027,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -3512, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_db8"
-      }, 
+        "is_param": false,
+        "name": "local_db8",
+        "offset": -3512,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -3504, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_db0"
-      }, 
+        "is_param": false,
+        "name": "local_db0",
+        "offset": -3504,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -3496, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_da8"
-      }, 
+        "is_param": false,
+        "name": "local_da8",
+        "offset": -3496,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -3495, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_da7"
-      }, 
+        "is_param": false,
+        "name": "local_da7",
+        "offset": -3495,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -2980, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_ba4"
-      }, 
+        "is_param": false,
+        "name": "local_ba4",
+        "offset": -2980,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -2972, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b9c"
-      }, 
+        "is_param": false,
+        "name": "local_b9c",
+        "offset": -2972,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -2964, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_b94"
-      }, 
+        "is_param": false,
+        "name": "local_b94",
+        "offset": -2964,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -2963, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_b93"
-      }, 
+        "is_param": false,
+        "name": "local_b93",
+        "offset": -2963,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -2448, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_990"
-      }, 
+        "is_param": false,
+        "name": "local_990",
+        "offset": -2448,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -2440, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_988"
-      }, 
+        "is_param": false,
+        "name": "local_988",
+        "offset": -2440,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -2432, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_980"
-      }, 
+        "is_param": false,
+        "name": "local_980",
+        "offset": -2432,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -1932, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_78c"
-      }, 
+        "is_param": false,
+        "name": "local_78c",
+        "offset": -1932,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -1432, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_598"
-      }, 
+        "is_param": false,
+        "name": "local_598",
+        "offset": -1432,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -1431, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_597"
-      }, 
+        "is_param": false,
+        "name": "local_597",
+        "offset": -1431,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -1172, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_494"
-      }, 
+        "is_param": false,
+        "name": "local_494",
+        "offset": -1172,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -916, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_394"
-      }, 
+        "is_param": false,
+        "name": "local_394",
+        "offset": -916,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -660, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_294"
-      }, 
+        "is_param": false,
+        "name": "local_294",
+        "offset": -660,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -404, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_194"
-      }, 
+        "is_param": false,
+        "name": "local_194",
+        "offset": -404,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -403, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_193"
-      }, 
+        "is_param": false,
+        "name": "local_193",
+        "offset": -403,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -148, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_94"
-      }, 
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -132, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_84"
-      }, 
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileManager *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileManager *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "pod_directory_path"
+        "is_param": true,
+        "name": "pod_directory_path",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 9036, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved type",
+      "line": 19,
+      "match": "undefined3 extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBX",
+      "text": "CStrList_vtable *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 22,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 22,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBP",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_ESI",
+      "text": "char **unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000018",
+      "text": "char **in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000020",
+      "text": "CFileManager *in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000024",
+      "text": "char *in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000028",
+      "text": "int in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000034",
+      "text": "CFileManager *in_stack_00000034;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000038",
+      "text": "int in_stack_00000038;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000048",
+      "text": "CFileManager *in_stack_00000048;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_0000006c",
+      "text": "CFileManager *in_stack_0000006c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000078",
+      "text": "CFileManager *in_stack_00000078;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_ffffdce4",
+      "text": "uint in_stack_ffffdce4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_ffffdd0c",
+      "text": "uint in_stack_ffffdd0c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_ffffdd10",
+      "text": "uint in_stack_ffffdd10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_ffffdd14",
+      "text": "CPickList *in_stack_ffffdd14;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_ffffdd18",
+      "text": "char *in_stack_ffffdd18;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_ffffdd1c",
+      "text": "char *in_stack_ffffdd1c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_ffffdd20",
+      "text": "FILE *in_stack_ffffdd20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_ffffdd28",
+      "text": "CFileManager *in_stack_ffffdd28;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_ffffdd30",
+      "text": "char *in_stack_ffffdd30;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_ffffdd34",
+      "text": "uint in_stack_ffffdd34;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_ffffdd38",
+      "text": "uint in_stack_ffffdd38;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_ffffdd3c",
+      "text": "uint in_stack_ffffdd3c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_ffffdd40",
+      "text": "uint in_stack_ffffdd40;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_ffffdd44",
+      "text": "uint in_stack_ffffdd44;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 118,
+      "match": "._0_4_",
+      "text": "local_54._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 119,
+      "match": "._4_4_",
+      "text": "local_54._4_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 120,
+      "match": "._0_4_",
+      "text": "local_4c._0_4_ = (char **)0x0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 152,
+      "match": "._0_4_",
+      "text": "if ((int)auStack_7c._0_4_ < 1) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 156,
+      "match": "in_stack_ffffdce4",
+      "text": "((CStrList *)(auStack_7c + 4),0,in_stack_ffffdce4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 161,
+      "match": "in_stack_00000020",
+      "text": "(in_stack_00000020,(CStrList *)(local_6c + 4));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 162,
+      "match": "._12_4_",
+      "text": "local_34._12_4_ = local_74;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 170,
+      "match": "._0_4_",
+      "text": "local_4c._0_4_ = (char **)0x0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 171,
+      "match": "._4_4_",
+      "text": "local_4c._4_4_ = (CCheckOutItem *)0x0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 175,
+      "match": "._0_4_",
+      "text": "local_34._0_4_ = (char **)0x0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 179,
+      "match": "in_stack_00000018",
+      "text": "in_stack_00000018 = (char **)local_34._0_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 179,
+      "match": "._0_4_",
+      "text": "in_stack_00000018 = (char **)local_34._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 181,
+      "match": "._0_4_",
+      "text": "(g_CEditorToolsPtr,(float)(int)local_34._0_4_,(float)(int)local_18);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 182,
+      "match": "._8_4_",
+      "text": "ppcVar10 = (char **)(local_34._8_4_ + local_4c._0_4_ * 0xe7 * 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 182,
+      "match": "._0_4_",
+      "text": "ppcVar10 = (char **)(local_34._8_4_ + local_4c._0_4_ * 0xe7 * 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 184,
+      "match": "._0_4_",
+      "text": "((CStrList *)auStack_7c,local_4c._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 226,
+      "match": "(char *)((int)",
+      "text": "cVar1 = *(char *)((int)ppcVar12 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 249,
+      "match": "in_stack_00000034",
+      "text": "(in_stack_00000034,(CStrList *)local_54,(char *)(ppcVar10 + 0x40));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 266,
+      "match": "._1032_4_",
+      "text": "ppcVar10[0xe4] = (char *)auStack_1af4._1032_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 267,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = (CStrList_vtable *)0x0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 268,
+      "match": "._1032_4_",
+      "text": "if (0 < (int)auStack_1af4._1032_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 269,
+      "match": "._8_4_",
+      "text": "local_34._8_4_ = (char **)0x0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 271,
+      "match": "._1036_4_",
+      "text": "puVar11 = (uint *)(auStack_1af4._1036_4_ + local_34._8_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 271,
+      "match": "._8_4_",
+      "text": "puVar11 = (uint *)(auStack_1af4._1036_4_ + local_34._8_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 299,
+      "match": "._8_4_",
+      "text": "local_34._8_4_ = local_34._8_4_ + 0x14;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 299,
+      "match": "._8_4_",
+      "text": "local_34._8_4_ = local_34._8_4_ + 0x14;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 300,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 300,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 300,
+      "match": "(CStrList_vtable *)((int)",
+      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 301,
+      "match": "unaff_EBX",
+      "text": "} while ((int)unaff_EBX < (int)auStack_1af4._1032_4_);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 301,
+      "match": "._1032_4_",
+      "text": "} while ((int)unaff_EBX < (int)auStack_1af4._1032_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 310,
+      "match": "._4_4_",
+      "text": "pcVar13 = (char *)(local_34._4_4_ + iVar3 * 0x168 + 0x104);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 317,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)ppcVar12 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 379,
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014 = in_stack_00000014 + 0x39c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 379,
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014 = in_stack_00000014 + 0x39c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 380,
+      "match": "in_stack_00000018",
+      "text": "in_stack_00000018 = in_stack_00000018 + 0xe7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 380,
+      "match": "in_stack_00000018",
+      "text": "in_stack_00000018 = in_stack_00000018 + 0xe7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 385,
+      "match": "in_stack_00000018",
+      "text": "in_stack_00000018 = (char **)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 386,
+      "match": "._4_4_",
+      "text": "if (0 < (int)local_54._4_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 387,
+      "match": "(char *)((int)",
+      "text": "pod_directory_path = (char *)((int)local_14 * 0x39c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 388,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = pod_directory_path + -0x39c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 390,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = (char **)shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 391,
+      "match": "in_stack_00000018",
+      "text": "((CStrList *)(local_54 + 4),(int)in_stack_00000018);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 395,
+      "match": "unaff_EBP",
+      "text": "pcVar14 = unaff_EBP + 0x100;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 397,
+      "match": "unaff_ESI",
+      "text": "iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)unaff_ESI,pcVar14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 406,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 0x39c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 406,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 0x39c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 407,
+      "match": "._12_4_",
+      "text": "local_34._12_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 409,
+      "match": "unaff_EBP",
+      "text": "(unaff_EBP,(int)pod_directory_path,\"..\\\\engine\\\\fileio.cpp\",0xcd3);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 410,
+      "match": "._12_4_",
+      "text": "if ((CStrList_vtable *)local_34._12_4_ == (CStrList_vtable *)0x0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 415,
+      "match": "unaff_ESI",
+      "text": "pcVar4 = (char *)(local_24 + (int)unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 429,
+      "match": "&stack0x00000010",
+      "text": "(acStack_574,(char *)&stack0x00000010,acStack_370,acStack_170,acStack_270);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 433,
+      "match": "unaff_EBP",
+      "text": "(unaff_EBP,(char *)0x0,(char *)0x0,acStack_168,acStack_268);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 435,
+      "match": "&stack0x0000001c",
+      "text": "(pcVar4 + 0x204,&stack0x0000001c,acStack_464,acStack_164,acStack_264);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 462,
+      "match": "in_stack_00000018",
+      "text": "in_stack_00000018 = (char **)((int)in_stack_00000018 + 1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 462,
+      "match": "in_stack_00000018",
+      "text": "in_stack_00000018 = (char **)((int)in_stack_00000018 + 1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 463,
+      "match": "in_stack_00000018",
+      "text": "} while ((int)in_stack_00000018 < (int)local_54._4_4_);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 463,
+      "match": "._4_4_",
+      "text": "} while ((int)in_stack_00000018 < (int)local_54._4_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 465,
+      "match": "._8_4_",
+      "text": "local_34._8_4_ = (char **)0x0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 470,
+      "match": "unaff_ESI",
+      "text": "ppcVar10 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 471,
+      "match": "unaff_EDI",
+      "text": "if (0 < unaff_EDI) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 473,
+      "match": "&stack0xffffdd04",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffdd04,\"%s\\t%s\\t%s\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 475,
+      "match": "&stack0xffffdcfc",
+      "text": "pcVar13 = &stack0xffffdcfc;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 488,
+      "match": "&stack0xffffdd00",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_16d4,&stack0xffffdd00);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 491,
+      "match": "unaff_EDI",
+      "text": "} while (iVar3 < unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 500,
+      "match": "in_stack_ffffdd0c",
+      "text": "((CPickList *)auStack_16c8,0,in_stack_ffffdd0c,in_stack_ffffdd10,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 500,
+      "match": "in_stack_ffffdd10",
+      "text": "((CPickList *)auStack_16c8,0,in_stack_ffffdd0c,in_stack_ffffdd10,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 501,
+      "match": "in_stack_ffffdd14",
+      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 501,
+      "match": "in_stack_ffffdd18",
+      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 501,
+      "match": "in_stack_ffffdd1c",
+      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 504,
+      "match": "._0_4_",
+      "text": "if (iVar3 < (int)((int)&((CStrList_vtable *)(auStack_16c8._0_4_ + -0x1c))->handleInput + 3)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 505,
+      "match": "&stack0xffffdd0c",
+      "text": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffdd0c,\"Select action for %s\\n\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 506,
+      "match": "&stack0xffffdd0c",
+      "text": "pcVar13 = &stack0xffffdd0c + iVar5;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 584,
+      "match": "in_stack_ffffdd0c",
+      "text": "in_stack_ffffdd0c = 0x4b96d7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 618,
+      "match": "in_stack_ffffdd18",
+      "text": "in_stack_ffffdd18 = &stack0xffffdd24;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 618,
+      "match": "&stack0xffffdd24",
+      "text": "in_stack_ffffdd18 = &stack0xffffdd24;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 619,
+      "match": "in_stack_ffffdd20",
+      "text": "in_stack_ffffdd20 = (FILE *)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 620,
+      "match": "in_stack_ffffdd14",
+      "text": "in_stack_ffffdd14 = (CPickList *)(auStack_1318 + 0x10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 621,
+      "match": "in_stack_ffffdd10",
+      "text": "in_stack_ffffdd10 = 0x4b97b2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 622,
+      "match": "in_stack_ffffdd1c",
+      "text": "in_stack_ffffdd1c = (char *)config_param1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 626,
+      "match": "in_stack_ffffdd14",
+      "text": "(in_stack_ffffdd14,&stack0xffffdd24,(int)config_param1,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 626,
+      "match": "&stack0xffffdd24",
+      "text": "(in_stack_ffffdd14,&stack0xffffdd24,(int)config_param1,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 628,
+      "match": "in_stack_ffffdd1c",
+      "text": "in_stack_ffffdd1c = auStack_1304;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 629,
+      "match": "in_stack_ffffdd18",
+      "text": "in_stack_ffffdd18 = (char *)0x4b97d2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 631,
+      "match": "in_stack_ffffdd1c",
+      "text": "((CStrList *)in_stack_ffffdd1c,(int)config_param1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 632,
+      "match": "in_stack_ffffdd28",
+      "text": "iVar5 = crt_string_c_stricmp_FUN_005fe7f0(pcVar13,(char *)in_stack_ffffdd28);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 638,
+      "match": "in_stack_ffffdd28",
+      "text": "in_stack_ffffdd28 = in_stack_0000006c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 638,
+      "match": "in_stack_0000006c",
+      "text": "in_stack_ffffdd28 = in_stack_0000006c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 640,
+      "match": "in_stack_0000006c",
+      "text": "(in_stack_0000006c,unaff_retaddr + iVar3 * 0x39c + 0x204);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 645,
+      "match": "in_stack_ffffdd0c",
+      "text": "((CPickList *)auStack_16c8,0,in_stack_ffffdd0c,in_stack_ffffdd10,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 645,
+      "match": "in_stack_ffffdd10",
+      "text": "((CPickList *)auStack_16c8,0,in_stack_ffffdd0c,in_stack_ffffdd10,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 646,
+      "match": "in_stack_ffffdd14",
+      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 646,
+      "match": "in_stack_ffffdd18",
+      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 646,
+      "match": "in_stack_ffffdd1c",
+      "text": "(uint)in_stack_ffffdd14,(uint)in_stack_ffffdd18,(uint)in_stack_ffffdd1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 647,
+      "match": "in_stack_00000024",
+      "text": "in_stack_00000024 = (char *)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 648,
+      "match": "in_stack_00000048",
+      "text": "in_stack_00000048->batch_mode = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 657,
+      "match": "unaff_EBX",
+      "text": "if (0 < (int)unaff_EBX) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 658,
+      "match": "in_stack_00000020",
+      "text": "in_stack_00000020 = (CFileManager *)(unaff_retaddr + 0x100);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 660,
+      "match": "in_stack_00000024",
+      "text": "pcVar13 = in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 661,
+      "match": "in_stack_00000020",
+      "text": "filename = in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 662,
+      "match": "in_stack_00000024",
+      "text": "if (*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x378) == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 663,
+      "match": "in_stack_00000024",
+      "text": "if (((((*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x370) == 3) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 664,
+      "match": "in_stack_00000024",
+      "text": "(*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x37c) == 0)) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 665,
+      "match": "in_stack_00000024",
+      "text": "(*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x374) != 0)) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 668,
+      "match": "in_stack_00000020",
+      "text": "((char *)0x0,(char *)in_stack_00000020), -1 < (int)uVar6)))) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 670,
+      "match": "in_stack_00000024",
+      "text": "engine_dosio_c_setFileAttributes_FUN_004819f0(in_stack_00000024,(byte)uVar6 | 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 674,
+      "match": "in_stack_00000024",
+      "text": "if (*(int *)(unaff_retaddr + (int)in_stack_00000024 * 0x39c + 0x378) == 5) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 675,
+      "match": "in_stack_00000020",
+      "text": "engine_dosio_c_setFileAttributes_FUN_004819f0((char *)in_stack_00000020,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 678,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 678,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 688,
+      "match": "in_stack_00000048",
+      "text": "(in_stack_00000048,(CStrList *)(local_4c + 0xc),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 696,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 696,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 696,
+      "match": "(CStrList_vtable *)((int)",
+      "text": "unaff_EBX = (CStrList_vtable *)((int)&unaff_EBX->dtor + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 700,
+      "match": "._12_4_",
+      "text": "local_34._12_4_ = (CStrList_vtable *)0x0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 704,
+      "match": "in_stack_ffffdd20",
+      "text": "file_size_bytes = in_stack_ffffdd20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 712,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 716,
+      "match": "in_stack_00000010",
+      "text": "if (-1 < in_stack_00000010) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 721,
+      "match": "in_stack_0000000c",
+      "text": "if (((uint)in_stack_0000000c & 8) != 0) goto LAB_004b9af4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 740,
+      "match": "in_stack_ffffdd20",
+      "text": "file_size_bytes = in_stack_ffffdd20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 744,
+      "match": "in_stack_00000028",
+      "text": "((CStrList *)local_4c,in_stack_00000028);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 751,
+      "match": "in_stack_ffffdd20",
+      "text": "in_stack_ffffdd20 = file_size_bytes;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 753,
+      "match": "in_stack_ffffdd20",
+      "text": "in_stack_ffffdd20 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 757,
+      "match": "in_stack_ffffdd20",
+      "text": "if (in_stack_ffffdd20 == (FILE *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 762,
+      "match": "in_stack_ffffdd20",
+      "text": "in_stack_ffffdd20 = (FILE *)(unaff_retaddr + (int)pcVar13 * 0x39c + 0x100);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 763,
+      "match": "in_stack_ffffdd1c",
+      "text": "in_stack_ffffdd1c = \"Can't create local %s\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 764,
+      "match": "in_stack_ffffdd18",
+      "text": "in_stack_ffffdd18 = &g_CEditorToolsPtr->field0_0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 771,
+      "match": "in_stack_00000038",
+      "text": "((CStrList *)local_3c,in_stack_00000038);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 773,
+      "match": "in_stack_ffffdd20",
+      "text": "(stream_ptr,in_stack_ffffdd20,pcVar4,pcVar14,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 775,
+      "match": "in_stack_ffffdd18",
+      "text": "in_stack_ffffdd18 = (char *)0x4b9cd1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 778,
+      "match": "in_stack_ffffdd1c",
+      "text": "in_stack_ffffdd1c = (char *)0x4b9ce4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 780,
+      "match": "in_stack_ffffdd20",
+      "text": "(in_stack_ffffdd20,\"..\\\\engine\\\\fileio.cpp\",0xdc6);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 786,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 786,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 801,
+      "match": "CONCAT31",
+      "text": "CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0)) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 817,
+      "match": "&stack0xfffffff0",
+      "text": "((CStrList *)&stack0xfffffff0,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 819,
+      "match": "in_stack_00000020",
+      "text": "in_stack_00000020 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 820,
+      "match": "in_stack_00000020",
+      "text": "(CFileManager *)((int)&in_stack_00000020->file_ptr + 1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 820,
+      "match": "(CFileManager *)((int)",
+      "text": "(CFileManager *)((int)&in_stack_00000020->file_ptr + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 823,
+      "match": "in_stack_00000078",
+      "text": "(*in_stack_00000078->vtable->extractPodFile)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 824,
+      "match": "in_stack_00000078",
+      "text": "(in_stack_00000078,unaff_retaddr + (int)pcVar13 * 0x39c + 0x100)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 826,
+      "match": "in_stack_00000034",
+      "text": "in_stack_00000034 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 827,
+      "match": "in_stack_00000034",
+      "text": "(CFileManager *)((int)&in_stack_00000034->file_ptr + 1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 827,
+      "match": "(CFileManager *)((int)",
+      "text": "(CFileManager *)((int)&in_stack_00000034->file_ptr + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 836,
+      "match": "in_stack_ffffdd20",
+      "text": "in_stack_ffffdd20 = file_size_bytes;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 840,
+      "match": "in_stack_ffffdd20",
+      "text": "in_stack_ffffdd20 = file_size_bytes;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 842,
+      "match": "in_stack_ffffdd1c",
+      "text": "in_stack_ffffdd1c =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 844,
+      "match": "in_stack_00000034",
+      "text": "((CStrList *)(local_4c + 0xc),(int)in_stack_00000034);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 845,
+      "match": "in_stack_ffffdd18",
+      "text": "in_stack_ffffdd18 = \"Can't open %s\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 851,
+      "match": "in_stack_00000020",
+      "text": "in_stack_00000020 = (CFileManager *)(in_stack_00000020->file_entries[7] + 0x14);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 851,
+      "match": "in_stack_00000020",
+      "text": "in_stack_00000020 = (CFileManager *)(in_stack_00000020->file_entries[7] + 0x14);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 852,
+      "match": "in_stack_00000024",
+      "text": "in_stack_00000024 = in_stack_00000024 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 852,
+      "match": "in_stack_00000024",
+      "text": "in_stack_00000024 = in_stack_00000024 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 853,
+      "match": "in_stack_00000024",
+      "text": "} while ((int)in_stack_00000024 < (int)unaff_EBX);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 853,
+      "match": "unaff_EBX",
+      "text": "} while ((int)in_stack_00000024 < (int)unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 855,
+      "match": "in_stack_00000048",
+      "text": "in_stack_00000048->batch_mode = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 856,
+      "match": "unaff_EDI",
+      "text": "if ((0 < (int)local_14) || (0 < unaff_EDI)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 858,
+      "match": "in_stack_00000048",
+      "text": "(in_stack_00000048,(CStrList *)(local_4c + 0xc));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 860,
+      "match": "unaff_EBP",
+      "text": "if ((((local_18 == (char *)0x0) && (local_14 == (char *)0x0)) && (unaff_EBP == (char *)0x0))",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 861,
+      "match": "unaff_ESI",
+      "text": "&& ((unaff_ESI == (char **)0x0 && (unaff_EDI == 0)))) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 861,
+      "match": "unaff_EDI",
+      "text": "&& ((unaff_ESI == (char **)0x0 && (unaff_EDI == 0)))) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 871,
+      "match": "unaff_EBP",
+      "text": "if (0 < (int)unaff_EBP) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 879,
+      "match": "unaff_EDI",
+      "text": "if (0 < unaff_EDI) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 883,
+      "match": "unaff_ESI",
+      "text": "if (0 < (int)unaff_ESI) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 887,
+      "match": "unaff_EDI",
+      "text": "if (((int)local_14 < 1) && (unaff_EDI < 1)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 911,
+      "match": "in_stack_ffffdd18",
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)local_34,0,(uint)in_stack_ffffdd18);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 913,
+      "match": "in_stack_ffffdd1c",
+      "text": "((CStrList *)(local_4c + 0xc),0,(uint)in_stack_ffffdd1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 923,
+      "match": "in_stack_ffffdd20",
+      "text": "in_stack_ffffdd20 = (FILE *)0x4b9962;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 926,
+      "match": "in_stack_ffffdd30",
+      "text": "iVar8 = crt_string_c_stricmp_FUN_005fe7f0(pcVar13,in_stack_ffffdd30);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 934,
+      "match": "in_stack_ffffdd30",
+      "text": "((CPickList *)auStack_12fc,0,(uint)in_stack_ffffdd30,in_stack_ffffdd34,in_stack_ffffdd38",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 934,
+      "match": "in_stack_ffffdd34",
+      "text": "((CPickList *)auStack_12fc,0,(uint)in_stack_ffffdd30,in_stack_ffffdd34,in_stack_ffffdd38",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 934,
+      "match": "in_stack_ffffdd38",
+      "text": "((CPickList *)auStack_12fc,0,(uint)in_stack_ffffdd30,in_stack_ffffdd34,in_stack_ffffdd38",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 935,
+      "match": "in_stack_ffffdd3c",
+      "text": ",in_stack_ffffdd3c,in_stack_ffffdd40);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 935,
+      "match": "in_stack_ffffdd40",
+      "text": ",in_stack_ffffdd3c,in_stack_ffffdd40);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 936,
+      "match": "in_stack_ffffdd30",
+      "text": "in_stack_ffffdd30 = (char *)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 937,
+      "match": "in_stack_ffffdd28",
+      "text": "in_stack_ffffdd28 = (CFileManager *)0x4b9999;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 939,
+      "match": "in_stack_ffffdd34",
+      "text": "((CPickList *)(auStack_16c8 + 0x28),0,in_stack_ffffdd34,in_stack_ffffdd38,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 939,
+      "match": "in_stack_ffffdd38",
+      "text": "((CPickList *)(auStack_16c8 + 0x28),0,in_stack_ffffdd34,in_stack_ffffdd38,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 940,
+      "match": "in_stack_ffffdd3c",
+      "text": "in_stack_ffffdd3c,in_stack_ffffdd40,in_stack_ffffdd44);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 940,
+      "match": "in_stack_ffffdd40",
+      "text": "in_stack_ffffdd3c,in_stack_ffffdd40,in_stack_ffffdd44);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 940,
+      "match": "in_stack_ffffdd44",
+      "text": "in_stack_ffffdd3c,in_stack_ffffdd40,in_stack_ffffdd44);",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -29,20 +29,20 @@ section .text
     MOV ECX,dword ptr [EDI + 0x28558]   ; 004ddaa9
     XOR EBX,EBX                         ; 004ddaaf
     TEST ECX,ECX                        ; 004ddab1
-    JLE 0x004ddacd                      ; 004ddab3 | LAB_004ddacd
-        ;   XREF to: 004ddacd (CONDITIONAL_JUMP)
+    JLE 0x004ddacd                      ; 004ddab3
+        ;   XREF to: 004ddacd (CONDITIONAL_JUMP)  ; LAB_004ddacd
     MOV ESI,EDI                         ; 004ddab5
     CMP EBP,dword ptr [ESI + 0x2857c]   ; 004ddab7
         ;   Label: LAB_004ddab7
-    JZ 0x004ddad2                       ; 004ddabd | LAB_004ddad2
-        ;   XREF to: 004ddad2 (CONDITIONAL_JUMP)
+    JZ 0x004ddad2                       ; 004ddabd
+        ;   XREF to: 004ddad2 (CONDITIONAL_JUMP)  ; LAB_004ddad2
     INC EBX                             ; 004ddabf
         ;   Label: LAB_004ddabf
     MOV EAX,dword ptr [EDI + 0x28558]   ; 004ddac0
     ADD ESI,0x24                        ; 004ddac6
     CMP EBX,EAX                         ; 004ddac9
-    JL 0x004ddab7                       ; 004ddacb | LAB_004ddab7
-        ;   XREF to: 004ddab7 (CONDITIONAL_JUMP)
+    JL 0x004ddab7                       ; 004ddacb
+        ;   XREF to: 004ddab7 (CONDITIONAL_JUMP)  ; LAB_004ddab7
     POP EBP                             ; 004ddacd
         ;   Label: LAB_004ddacd
     POP EDI                             ; 004ddace
@@ -55,9 +55,9 @@ section .text
     PUSH EDI                            ; 004ddad7
     MOV ECX,dword ptr [ESP + 0x20]      ; 004ddad8
     PUSH ECX                            ; 004ddadc
-    CALL core_game.cpp_CGame_FUN_004dda80 ; 004ddadd | void core_game.cpp_CGame_FUN_004dda80(CGame * this_ptr)
-        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)
+    CALL core_game.cpp_CGame_FUN_004dda80 ; 004ddadd
+        ;   XREF to: 004dda80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004dda80(CGame * this_ptr)
     ADD ESP,0x10                        ; 004ddae2
-    JMP 0x004ddabf                      ; 004ddae5 | LAB_004ddabf
-        ;   XREF to: 004ddabf (UNCONDITIONAL_JUMP)
+    JMP 0x004ddabf                      ; 004ddae5
+        ;   XREF to: 004ddabf (UNCONDITIONAL_JUMP)  ; LAB_004ddabf
 

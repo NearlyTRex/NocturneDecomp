@@ -39,7 +39,7 @@ section .text
     FSUBRP ST2,ST0                      ; 005b90b1
     FMUL float ptr [ESP + 0x2c]         ; 005b90b3
     FXCH                                ; 005b90b7
-    FMUL double ptr [0x00652fc6]        ; 005b90b9 | double DOUBLE_00652fc6
+    FMUL double ptr [0x00652fc6]        ; 005b90b9 | DOUBLE_00652fc6
     FXCH                                ; 005b90bf
     FST float ptr [ESP + 0x4]           ; 005b90c1
     FMUL float ptr [ESP + 0x2c]         ; 005b90c5
@@ -49,11 +49,11 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 005b90d0
     FMUL float ptr [ESP + 0x8]          ; 005b90d4
     FLD float ptr [ESP]                 ; 005b90d8
-    FMUL float ptr [0x00652fce]         ; 005b90db | float FLOAT_00652fce
-    FLD float ptr [0x00652fd2]          ; 005b90e1 | float FLOAT_00652fd2
+    FMUL float ptr [0x00652fce]         ; 005b90db | FLOAT_00652fce
+    FLD float ptr [0x00652fd2]          ; 005b90e1 | FLOAT_00652fd2
     FLD float ptr [ESP]                 ; 005b90e7
     FMUL ST1                            ; 005b90ea
-    FLD float ptr [0x00652fce]          ; 005b90ec | float FLOAT_00652fce
+    FLD float ptr [0x00652fce]          ; 005b90ec | FLOAT_00652fce
     FSUB float ptr [ESP]                ; 005b90f2
     FXCH                                ; 005b90f5
     FMUL float ptr [ESP + 0x4]          ; 005b90f7
@@ -77,7 +77,7 @@ section .text
     FMUL float ptr [ESP + 0x4]          ; 005b912a
     FLD float ptr [ESP]                 ; 005b912e
     FMUL float ptr [ESP + 0x2c]         ; 005b9131
-    FLD float ptr [0x00652fd6]          ; 005b9135 | float FLOAT_00652fd6
+    FLD float ptr [0x00652fd6]          ; 005b9135 | FLOAT_00652fd6
     FXCH ST2                            ; 005b913b
     FADDP ST5,ST0                       ; 005b913d
     FLD float ptr [ESP]                 ; 005b913f
@@ -97,9 +97,9 @@ section .text
     FLD float ptr [ESP + 0x1c]          ; 005b9167
     FMUL float ptr [ESP + 0x4]          ; 005b916b
     FLD float ptr [ESP]                 ; 005b916f
-    FMUL float ptr [0x00652fde]         ; 005b9172 | float FLOAT_00652fde
+    FMUL float ptr [0x00652fde]         ; 005b9172 | FLOAT_00652fde
     FLD float ptr [ESP]                 ; 005b9178
-    FADD float ptr [0x00652fda]         ; 005b917b | float FLOAT_00652fda
+    FADD float ptr [0x00652fda]         ; 005b917b | FLOAT_00652fda
     FXCH ST4                            ; 005b9181
     FSUBP ST6,ST0                       ; 005b9183
     FXCH ST3                            ; 005b9185
@@ -108,13 +108,13 @@ section .text
     FXCH ST5                            ; 005b918f
     FSTP float ptr [EAX + 0xc]          ; 005b9191
     FLD float ptr [ESP]                 ; 005b9194
-    FMUL float ptr [0x00652fd6]         ; 005b9197 | float FLOAT_00652fd6
+    FMUL float ptr [0x00652fd6]         ; 005b9197 | FLOAT_00652fd6
     FXCH ST3                            ; 005b919d
     FMUL float ptr [ESP + 0x2c]         ; 005b919f
     FLD float ptr [ESP + 0x14]          ; 005b91a3
     FXCH                                ; 005b91a7
     FADDP ST3,ST0                       ; 005b91a9
-    FMUL float ptr [0x00652fd6]         ; 005b91ab | float FLOAT_00652fd6
+    FMUL float ptr [0x00652fd6]         ; 005b91ab | FLOAT_00652fd6
     FXCH ST2                            ; 005b91b1
     FSUB float ptr [ESP]                ; 005b91b3
     FXCH ST2                            ; 005b91b6
@@ -122,13 +122,13 @@ section .text
     FXCH ST2                            ; 005b91bc
     FSTP float ptr [EAX + 0x10]         ; 005b91be
     FLD float ptr [ESP + 0x18]          ; 005b91c1
-    FMUL float ptr [0x00652fce]         ; 005b91c5 | float FLOAT_00652fce
+    FMUL float ptr [0x00652fce]         ; 005b91c5 | FLOAT_00652fce
     FXCH ST3                            ; 005b91cb
     FMUL float ptr [ESP + 0x4]          ; 005b91cd
     FXCH ST3                            ; 005b91d1
     FMUL float ptr [ESP + 0x2c]         ; 005b91d3
     FLD float ptr [ESP + 0x1c]          ; 005b91d7
-    FMUL float ptr [0x00652fce]         ; 005b91db | float FLOAT_00652fce
+    FMUL float ptr [0x00652fce]         ; 005b91db | FLOAT_00652fce
     FXCH                                ; 005b91e1
     FADDP ST3,ST0                       ; 005b91e3
     FMUL float ptr [ESP + 0x2c]         ; 005b91e5
@@ -137,7 +137,7 @@ section .text
     FLD float ptr [ESP + 0xc]           ; 005b91ee
     FMUL float ptr [ESP + 0x2c]         ; 005b91f2
     FLD float ptr [ESP + 0x20]          ; 005b91f6
-    FMUL float ptr [0x00652fd6]         ; 005b91fa | float FLOAT_00652fd6
+    FMUL float ptr [0x00652fd6]         ; 005b91fa | FLOAT_00652fd6
     FXCH                                ; 005b9200
     FSUBP ST4,ST0                       ; 005b9202
     FMUL float ptr [ESP + 0x4]          ; 005b9204

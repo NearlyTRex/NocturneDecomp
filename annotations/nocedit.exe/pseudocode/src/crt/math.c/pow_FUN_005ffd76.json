@@ -1,247 +1,190 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 291, 
-    "pseudocode_lines": 96, 
-    "cross_reference_count": 5, 
-    "global_count": 1, 
-    "total_lines": 259, 
-    "assembly_lines": 163, 
-    "suspect_count": 17, 
+    "assembly_lines": 163,
+    "complexity_score": 193,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 83,
+    "suspect_count": 9,
     "suspect_types": [
-      "undefined_type", 
-      "sub_artifact", 
-      "concat_artifact", 
-      "unknown_field", 
-      "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_exp_FUN_006068e2", 
-      "addr": "006068e2"
-    }, 
-    {
-      "name": "crt_math.c_function_dispatch_FUN_00606a77", 
-      "addr": "00606a77"
-    }, 
-    {
-      "name": "crt_math.c_integer_power_FUN_005ffeb2", 
-      "addr": "005ffeb2"
-    }, 
-    {
-      "name": "crt_math.c_math_domain_error_FUN_00606832", 
-      "addr": "00606832"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_UseSoftwareMath", 
-      "addr": "00685060", 
-      "value": "0x0"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "extraout_AL", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "char extraout_AL;"
-    }, 
-    {
-      "line": 14, 
-      "match": "extraout_ST0", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "float10 extraout_ST0;"
-    }, 
-    {
-      "line": 17, 
-      "match": "undefined6 uVar10", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined6 uVar10;"
-    }, 
-    {
-      "line": 42, 
-      "match": "SUB86", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uVar10 = SUB86 /* extract 2-byte value */((double)exp,0);"
-    }, 
-    {
-      "line": 47, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "_local_c = CONCAT44 /* combine 2-byte values */(iVar1,local_c);"
-    }, 
-    {
-      "line": 49, 
-      "match": "._2_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "uStack_8._2_2_ = (ushort)((uint)iVar1 >> 0x10);"
-    }, 
-    {
-      "line": 51, 
-      "match": "._2_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (uStack_8._2_2_ == 0) {"
-    }, 
-    {
-      "line": 52, 
-      "match": "CONCAT64", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar6 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar10,uVar9),exponent);"
-    }, 
-    {
-      "line": 56, 
-      "match": "._2_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))"
-    }, 
-    {
-      "line": 56, 
-      "match": "._0_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))"
-    }, 
-    {
-      "line": 58, 
-      "match": "CONCAT64", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar7 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar10,uVar9),exponent);"
-    }, 
-    {
-      "line": 65, 
-      "match": "extraout_ST0", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "fVar6 = extraout_ST0;"
-    }, 
-    {
-      "line": 69, 
-      "match": "SUB82", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "exponent = SUB82 /* extract 2-byte value */(dVar2,0);"
-    }, 
-    {
-      "line": 71, 
-      "match": "._0_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "uStack_8._0_2_ = (short)((ulonglong)dVar2 >> 0x20);"
-    }, 
-    {
-      "line": 73, 
-      "match": "._2_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(uStack_8._2_2_ = (ushort)((ulonglong)dVar2 >> 0x30), exp = fVar7,"
-    }, 
-    {
-      "line": 74, 
-      "match": "._2_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(uStack_8._2_2_ & 0x7fff) != 0x7ff0)) goto LAB_005ffea7;"
-    }, 
-    {
-      "line": 82, 
-      "match": "extraout_AL", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if (extraout_AL == '\\0') {"
-    }
-  ], 
-  "function": {
-    "convention": "__fpustack", 
-    "address": "005ffd76", 
-    "signature": "float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)", 
-    "address_range": [
-      [
-        "005ffd76", 
-        "005ffeb1"
-      ]
-    ], 
-    "name": "crt_math.c_pow_FUN_005ffd76"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_c"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 0, 
-    "param_size": 0
-  }, 
+      "sub_artifact",
+      "concat_artifact",
+      "extra_output",
+      "undefined_type"
+    ],
+    "total_lines": 246
+  },
   "cross_references": [
     {
-      "from_addr": "00453c08", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0", 
-      "addr": "00453bd0"
-    }, 
+      "addr": "00453bd0",
+      "from_addr": "00453c08",
+      "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00512597", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
-      "addr": "00511e50"
-    }, 
+      "addr": "00511e50",
+      "from_addr": "00512597",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00570dab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setGamma_FUN_00570d60", 
-      "addr": "00570d60"
-    }, 
+      "addr": "00570d60",
+      "from_addr": "00570dab",
+      "name": "core_set.cpp_CDemonSet_setGamma_FUN_00570d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00532580", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540", 
-      "addr": "00532540"
-    }, 
+      "addr": "00532540",
+      "from_addr": "00532580",
+      "name": "sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053214b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50", 
-      "addr": "00531d50"
+      "addr": "00531d50",
+      "from_addr": "0053214b",
+      "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ffd76",
+    "address_range": [
+      [
+        "005ffd76",
+        "005ffeb1"
+      ]
+    ],
+    "convention": "__fpustack",
+    "name": "crt_math.c_pow_FUN_005ffd76",
+    "signature": "float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)"
+  },
+  "function_calls": [
+    {
+      "addr": "006068e2",
+      "name": "crt_math.c_exp_FUN_006068e2"
+    },
+    {
+      "addr": "00606a77",
+      "name": "crt_math.c_function_dispatch_FUN_00606a77"
+    },
+    {
+      "addr": "005ffeb2",
+      "name": "crt_math.c_integer_power_FUN_005ffeb2"
+    },
+    {
+      "addr": "00606832",
+      "name": "crt_math.c_math_domain_error_FUN_00606832"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00685060",
+      "name": "g_UseSoftwareMath",
+      "type": "int",
+      "value": "0x0"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 0,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 8,
+        "type": "undefined8"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_AL",
+      "text": "char extraout_AL;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_ST0",
+      "text": "float10 extraout_ST0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 15,
+      "match": "undefined6 uVar7",
+      "text": "undefined6 uVar7;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 37,
+      "match": "SUB86",
+      "text": "uVar7 = SUB86 /* extract 2-byte value */((double)exp,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 42,
+      "match": "CONCAT64",
+      "text": "fVar3 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar7,uVar6),exponent);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 48,
+      "match": "CONCAT64",
+      "text": "fVar4 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar7,uVar6),exponent);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 55,
+      "match": "extraout_ST0",
+      "text": "fVar3 = extraout_ST0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 61,
+      "match": "SUB82",
+      "text": "if (((SUB82 /* extract 2-byte value */(dVar1,0) != 0 || sStack_a != 0) || sStack_8 != 0) ||",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 69,
+      "match": "extraout_AL",
+      "text": "if (extraout_AL == '\\0') {",
+      "type": "extra_output"
     }
   ]
 }

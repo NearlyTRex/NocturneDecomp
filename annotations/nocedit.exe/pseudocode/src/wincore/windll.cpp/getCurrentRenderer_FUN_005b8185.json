@@ -1,58 +1,58 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 14, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "g_RendererDllName", 
-      "addr": "00684010", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RendererHandle", 
-      "addr": "03f6b87c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 9,
+    "complexity_score": 5,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005b8185", 
-    "signature": "char * wincore_windll.cpp_getCurrentRenderer_FUN_005b8185(int * renderer)", 
+    "address": "005b8185",
     "address_range": [
       [
-        "005b8185", 
+        "005b8185",
         "005b81a0"
       ]
-    ], 
-    "name": "wincore_windll.cpp_getCurrentRenderer_FUN_005b8185"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_getCurrentRenderer_FUN_005b8185",
+    "signature": "char * wincore_windll.cpp_getCurrentRenderer_FUN_005b8185(int * renderer)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00684010",
+      "name": "g_RendererDllName",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "03f6b87c",
+      "name": "g_RendererHandle",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "renderer"
+        "is_param": true,
+        "name": "renderer",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

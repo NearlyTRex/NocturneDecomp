@@ -28,15 +28,15 @@ section .text
         ;   Label: LAB_00562505
     MOV byte ptr [EDI],AL               ; 00562507
     CMP AL,0x0                          ; 00562509
-    JZ 0x0056251d                       ; 0056250b | LAB_0056251d
-        ;   XREF to: 0056251d (CONDITIONAL_JUMP)
+    JZ 0x0056251d                       ; 0056250b
+        ;   XREF to: 0056251d (CONDITIONAL_JUMP)  ; LAB_0056251d
     MOV AL,byte ptr [ESI + 0x1]         ; 0056250d
     ADD ESI,0x2                         ; 00562510
     MOV byte ptr [EDI + 0x1],AL         ; 00562513
     ADD EDI,0x2                         ; 00562516
     CMP AL,0x0                          ; 00562519
-    JNZ 0x00562505                      ; 0056251b | LAB_00562505
-        ;   XREF to: 00562505 (CONDITIONAL_JUMP)
+    JNZ 0x00562505                      ; 0056251b
+        ;   XREF to: 00562505 (CONDITIONAL_JUMP)  ; LAB_00562505
     POP EDI                             ; 0056251d
         ;   Label: LAB_0056251d
     MOV ESI,dword ptr [ESP + 0x18]      ; 0056251e
@@ -52,22 +52,22 @@ section .text
         ;   Label: LAB_00562532
     MOV byte ptr [EDI],AL               ; 00562534
     CMP AL,0x0                          ; 00562536
-    JZ 0x0056254a                       ; 00562538 | LAB_0056254a
-        ;   XREF to: 0056254a (CONDITIONAL_JUMP)
+    JZ 0x0056254a                       ; 00562538
+        ;   XREF to: 0056254a (CONDITIONAL_JUMP)  ; LAB_0056254a
     MOV AL,byte ptr [ESI + 0x1]         ; 0056253a
     ADD ESI,0x2                         ; 0056253d
     MOV byte ptr [EDI + 0x1],AL         ; 00562540
     ADD EDI,0x2                         ; 00562543
     CMP AL,0x0                          ; 00562546
-    JNZ 0x00562532                      ; 00562548 | LAB_00562532
-        ;   XREF to: 00562532 (CONDITIONAL_JUMP)
+    JNZ 0x00562532                      ; 00562548
+        ;   XREF to: 00562532 (CONDITIONAL_JUMP)  ; LAB_00562532
     POP EDI                             ; 0056254a
         ;   Label: LAB_0056254a
     MOV ECX,dword ptr [EBX + 0xcc]      ; 0056254b
     XOR EBP,EBP                         ; 00562551
     TEST ECX,ECX                        ; 00562553
-    JLE 0x005625e0                      ; 00562555 | LAB_005625e0
-        ;   XREF to: 005625e0 (CONDITIONAL_JUMP)
+    JLE 0x005625e0                      ; 00562555
+        ;   XREF to: 005625e0 (CONDITIONAL_JUMP)  ; LAB_005625e0
     ADD EBX,0xd0                        ; 0056255b
     MOV dword ptr [ESP],EBX             ; 00562561
     MOV EBX,dword ptr [ESP + 0x18]      ; 00562564
@@ -86,15 +86,15 @@ section .text
         ;   Label: LAB_00562582
     MOV byte ptr [EDI],AL               ; 00562584
     CMP AL,0x0                          ; 00562586
-    JZ 0x0056259a                       ; 00562588 | LAB_0056259a
-        ;   XREF to: 0056259a (CONDITIONAL_JUMP)
+    JZ 0x0056259a                       ; 00562588
+        ;   XREF to: 0056259a (CONDITIONAL_JUMP)  ; LAB_0056259a
     MOV AL,byte ptr [ESI + 0x1]         ; 0056258a
     ADD ESI,0x2                         ; 0056258d
     MOV byte ptr [EDI + 0x1],AL         ; 00562590
     ADD EDI,0x2                         ; 00562593
     CMP AL,0x0                          ; 00562596
-    JNZ 0x00562582                      ; 00562598 | LAB_00562582
-        ;   XREF to: 00562582 (CONDITIONAL_JUMP)
+    JNZ 0x00562582                      ; 00562598
+        ;   XREF to: 00562582 (CONDITIONAL_JUMP)  ; LAB_00562582
     POP EDI                             ; 0056259a
         ;   Label: LAB_0056259a
     MOV ESI,EBX                         ; 0056259b
@@ -108,15 +108,15 @@ section .text
         ;   Label: LAB_005625a6
     MOV byte ptr [EDI],AL               ; 005625a8
     CMP AL,0x0                          ; 005625aa
-    JZ 0x005625be                       ; 005625ac | LAB_005625be
-        ;   XREF to: 005625be (CONDITIONAL_JUMP)
+    JZ 0x005625be                       ; 005625ac
+        ;   XREF to: 005625be (CONDITIONAL_JUMP)  ; LAB_005625be
     MOV AL,byte ptr [ESI + 0x1]         ; 005625ae
     ADD ESI,0x2                         ; 005625b1
     MOV byte ptr [EDI + 0x1],AL         ; 005625b4
     ADD EDI,0x2                         ; 005625b7
     CMP AL,0x0                          ; 005625ba
-    JNZ 0x005625a6                      ; 005625bc | LAB_005625a6
-        ;   XREF to: 005625a6 (CONDITIONAL_JUMP)
+    JNZ 0x005625a6                      ; 005625bc
+        ;   XREF to: 005625a6 (CONDITIONAL_JUMP)  ; LAB_005625a6
     POP EDI                             ; 005625be
         ;   Label: LAB_005625be
     MOV ESI,dword ptr [ESP + 0x18]      ; 005625bf
@@ -124,8 +124,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0xcc]      ; 005625c4
     ADD EBX,0x328                       ; 005625ca
     CMP EBP,EAX                         ; 005625d0
-    JL 0x0056256e                       ; 005625d2 | LAB_0056256e
-        ;   XREF to: 0056256e (CONDITIONAL_JUMP)
+    JL 0x0056256e                       ; 005625d2
+        ;   XREF to: 0056256e (CONDITIONAL_JUMP)  ; LAB_0056256e
     LEA EAX,[EAX]                       ; 005625d4
     LEA EDX,[EDX]                       ; 005625da
     MOV ESI,dword ptr [ESP + 0x18]      ; 005625e0
@@ -142,15 +142,15 @@ section .text
         ;   Label: LAB_005625f5
     MOV byte ptr [EDI],AL               ; 005625f7
     CMP AL,0x0                          ; 005625f9
-    JZ 0x0056260d                       ; 005625fb | LAB_0056260d
-        ;   XREF to: 0056260d (CONDITIONAL_JUMP)
+    JZ 0x0056260d                       ; 005625fb
+        ;   XREF to: 0056260d (CONDITIONAL_JUMP)  ; LAB_0056260d
     MOV AL,byte ptr [ESI + 0x1]         ; 005625fd
     ADD ESI,0x2                         ; 00562600
     MOV byte ptr [EDI + 0x1],AL         ; 00562603
     ADD EDI,0x2                         ; 00562606
     CMP AL,0x0                          ; 00562609
-    JNZ 0x005625f5                      ; 0056260b | LAB_005625f5
-        ;   XREF to: 005625f5 (CONDITIONAL_JUMP)
+    JNZ 0x005625f5                      ; 0056260b
+        ;   XREF to: 005625f5 (CONDITIONAL_JUMP)  ; LAB_005625f5
     POP EDI                             ; 0056260d
         ;   Label: LAB_0056260d
     ADD ESP,0x4                         ; 0056260e

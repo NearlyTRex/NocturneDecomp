@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 19, 
-    "assembly_lines": 13, 
-    "suspect_count": 2, 
+    "assembly_lines": 13,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_vfprintf_FUN_00604850", 
-      "addr": "00604850"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "va_list_t in_stack_0000000c;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_vfprintf_FUN_00604850(stream,format,in_stack_0000000c);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006021c0", 
-    "signature": "void crt_stdio.c_fprintf_FUN_006021c0(FILE * stream, char * format, ...)", 
-    "address_range": [
-      [
-        "006021c0", 
-        "006021d9"
-      ]
-    ], 
-    "name": "crt_stdio.c_fprintf_FUN_006021c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "stream"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "format"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 19
+  },
   "cross_references": [
     {
-      "from_addr": "005c7970", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_logToFile_FUN_005c7910", 
-      "addr": "005c7910"
+      "addr": "005c7910",
+      "from_addr": "005c7970",
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "006021c0",
+    "address_range": [
+      [
+        "006021c0",
+        "006021d9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_fprintf_FUN_006021c0",
+    "signature": "void crt_stdio.c_fprintf_FUN_006021c0(FILE * stream, char * format, ...)"
+  },
+  "function_calls": [
+    {
+      "addr": "00604850",
+      "name": "crt_stdio.c_vfprintf_FUN_00604850"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_0000000c",
+      "text": "va_list_t in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "crt_stdio_c_vfprintf_FUN_00604850(stream,format,in_stack_0000000c);",
+      "type": "stack_param"
     }
   ]
 }

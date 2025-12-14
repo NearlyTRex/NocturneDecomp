@@ -21,11 +21,11 @@ core_xform_cpp_clipInterpolateBottomPlane_FUN_005f7e00
   iVar5 = uVar4 - ((vertex_b->projected_vertex).transformed_y +
                   (vertex_b->projected_vertex).transformed_z);
   if ((int)uVar4 < iVar5) {
-    if (uVar4 == -iVar5 || SBORROW /* signed borrow */4(uVar4,-iVar5) != (int)(uVar4 + iVar5) < 0) {
-      iVar5 = -0x80000000;
+    if (-iVar5 < (int)uVar4) {
+      iVar5 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);
     }
     else {
-      iVar5 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar5);
+      iVar5 = -0x80000000;
     }
   }
   else {

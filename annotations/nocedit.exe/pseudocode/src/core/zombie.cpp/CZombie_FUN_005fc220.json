@@ -1,524 +1,524 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 656, 
-    "pseudocode_lines": 101, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 385, 
-    "assembly_lines": 284, 
-    "suspect_count": 55, 
+    "assembly_lines": 284,
+    "complexity_score": 656,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 9,
+    "pseudocode_lines": 101,
+    "suspect_count": 55,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_randomChance_FUN_0040cd10", 
-      "addr": "0040cd10"
-    }, 
-    {
-      "name": "core_bodypart.cpp_CreateBodyPart_FUN_00418e10", 
-      "addr": "00418e10"
-    }, 
-    {
-      "name": "core_bodypart.cpp_FUN_0041a050", 
-      "addr": "0041a050"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042bcc0", 
-      "addr": "0042bcc0"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042bd30", 
-      "addr": "0042bd30"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042f300", 
-      "addr": "0042f300"
-    }, 
-    {
-      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
-      "addr": "005feb5c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_005fc200", 
-      "addr": "005fc200", 
-      "value": "005fc25d"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_limb_wav_006589b9", 
-      "addr": "006589b9", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006589c5", 
-      "addr": "006589c5", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006589cd", 
-      "addr": "006589cd", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006589d5", 
-      "addr": "006589d5", 
-      "value": null
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.blood_flag", 
-      "addr": "02d81ab0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.field57_0x1e0", 
-      "addr": "02d81c7c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CCharacter *in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float *in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].base_actor.vtable;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar2 = in_stack_00000004[1].model.motion_controller.motion_list_ptr;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.current_frame_number;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_progress;"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_speed;"
-    }, 
-    {
-      "line": 39, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = (float)pCVar2;"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar2 = (CMotionList *)*in_stack_00000008;"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((((pCVar2 == (CMotionList *)in_stack_00000004[1].base_actor.vtable) ||"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar2 == in_stack_00000004[1].model.motion_controller.motion_list_ptr)) ||"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar2 == (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index))"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].model.motion_controller.current_frame_number ||"
-    }, 
-    {
-      "line": 48, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar2 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_speed)))) ||"
-    }, 
-    {
-      "line": 49, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar2 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_progress)) {"
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar3 = in_stack_00000008[0xb];"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].model.motion_controller.tween_progress == *in_stack_00000008) {"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].model.motion_controller.tween_progress == *in_stack_00000008) {"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].model.motion_controller.tween_speed == *in_stack_00000008) {"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].model.motion_controller.tween_speed == *in_stack_00000008) {"
-    }, 
-    {
-      "line": 66, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);"
-    }, 
-    {
-      "line": 67, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((CDemonActor_vtable *)*in_stack_00000008 == in_stack_00000004[1].base_actor.vtable) {"
-    }, 
-    {
-      "line": 67, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((CDemonActor_vtable *)*in_stack_00000008 == in_stack_00000004[1].base_actor.vtable) {"
-    }, 
-    {
-      "line": 68, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);"
-    }, 
-    {
-      "line": 70, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((float)in_stack_00000004[1].model.motion_controller.current_motion_index =="
-    }, 
-    {
-      "line": 71, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008) {"
-    }, 
-    {
-      "line": 72, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);"
-    }, 
-    {
-      "line": 74, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].model.motion_controller.tween_speed == *in_stack_00000008) {"
-    }, 
-    {
-      "line": 74, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].model.motion_controller.tween_speed == *in_stack_00000008) {"
-    }, 
-    {
-      "line": 75, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);"
-    }, 
-    {
-      "line": 76, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);"
-    }, 
-    {
-      "line": 77, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);"
-    }, 
-    {
-      "line": 78, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);"
-    }, 
-    {
-      "line": 79, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);"
-    }, 
-    {
-      "line": 81, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);"
-    }, 
-    {
-      "line": 83, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000004->model).part_visibility_flags"
-    }, 
-    {
-      "line": 84, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "[(int)in_stack_00000004[1].model.motion_controller.tween_progress] == 0) {"
-    }, 
-    {
-      "line": 85, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[1] = 9999.0;"
-    }, 
-    {
-      "line": 87, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[2] = in_stack_00000008[2] * (float)_DAT_006589c5;"
-    }, 
-    {
-      "line": 87, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[2] = in_stack_00000008[2] * (float)_DAT_006589c5;"
-    }, 
-    {
-      "line": 88, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].model.motion_controller.tween_type < 0) {"
-    }, 
-    {
-      "line": 89, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[1] = 999.0;"
-    }, 
-    {
-      "line": 93, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar3 = *in_stack_00000008;"
-    }, 
-    {
-      "line": 94, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (fVar3 == in_stack_00000004[1].model.motion_controller.tween_progress) {"
-    }, 
-    {
-      "line": 95, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589d5;"
-    }, 
-    {
-      "line": 95, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589d5;"
-    }, 
-    {
-      "line": 98, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((fVar3 != (float)in_stack_00000004[1].model.motion_controller.tween_type) &&"
-    }, 
-    {
-      "line": 99, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(fVar3 != in_stack_00000004[1].model.motion_controller.tween_speed)) {"
-    }, 
-    {
-      "line": 100, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589cd;"
-    }, 
-    {
-      "line": 100, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589cd;"
-    }, 
-    {
-      "line": 103, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[1] = in_stack_00000008[1];"
-    }, 
-    {
-      "line": 103, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[1] = in_stack_00000008[1];"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005fc220", 
-    "signature": "undefined core_zombie.cpp_CZombie_FUN_005fc220()", 
-    "address_range": [
-      [
-        "005fc220", 
-        "005fc4ea"
-      ]
-    ], 
-    "name": "core_zombie.cpp_CZombie_FUN_005fc220"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 385
+  },
   "cross_references": [
     {
-      "from_addr": "005fc4fd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_CZombie_FUN_005fc4f0", 
-      "addr": "005fc4f0"
+      "addr": "005fc4f0",
+      "from_addr": "005fc4fd",
+      "name": "core_zombie.cpp_CZombie_FUN_005fc4f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005fc220",
+    "address_range": [
+      [
+        "005fc220",
+        "005fc4ea"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_zombie.cpp_CZombie_FUN_005fc220",
+    "signature": "undefined core_zombie.cpp_CZombie_FUN_005fc220()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd10",
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "00418e10",
+      "name": "core_bodypart.cpp_CreateBodyPart_FUN_00418e10"
+    },
+    {
+      "addr": "0041a050",
+      "name": "core_bodypart.cpp_FUN_0041a050"
+    },
+    {
+      "addr": "0042bcc0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bcc0"
+    },
+    {
+      "addr": "0042bd30",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bd30"
+    },
+    {
+      "addr": "0042f300",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042f300"
+    },
+    {
+      "addr": "005feb5c",
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fc200",
+      "name": "switchdataD_005fc200",
+      "type": "void*",
+      "value": "005fc25d"
+    },
+    {
+      "addr": "006589b9",
+      "name": "s_limb_wav_006589b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006589c5",
+      "name": "DAT_006589c5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006589cd",
+      "name": "DAT_006589cd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006589d5",
+      "name": "DAT_006589d5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ab0",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81c7c",
+      "name": "g_CGameInstance.field57_0x1e0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "CCharacter *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "float *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].base_actor.vtable;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "pCVar2 = in_stack_00000004[1].model.motion_controller.motion_list_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.current_frame_number;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000004",
+      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_progress;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_speed;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = (float)pCVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000008",
+      "text": "pCVar2 = (CMotionList *)*in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "if (((((pCVar2 == (CMotionList *)in_stack_00000004[1].base_actor.vtable) ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "text": "(pCVar2 == in_stack_00000004[1].model.motion_controller.motion_list_ptr)) ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "(pCVar2 == (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].model.motion_controller.current_frame_number ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "text": "(pCVar2 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_speed)))) ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "text": "(pCVar2 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_progress)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000008",
+      "text": "fVar3 = in_stack_00000008[0xb];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].model.motion_controller.tween_progress == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000004[1].model.motion_controller.tween_progress == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].model.motion_controller.tween_speed == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000004[1].model.motion_controller.tween_speed == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000008",
+      "text": "if ((CDemonActor_vtable *)*in_stack_00000008 == in_stack_00000004[1].base_actor.vtable) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000004",
+      "text": "if ((CDemonActor_vtable *)*in_stack_00000008 == in_stack_00000004[1].base_actor.vtable) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_00000004",
+      "text": "if ((float)in_stack_00000004[1].model.motion_controller.current_motion_index ==",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].model.motion_controller.tween_speed == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000004[1].model.motion_controller.tween_speed == *in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 77,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042bcc0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 81,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042f300(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004->model).part_visibility_flags",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_00000004",
+      "text": "[(int)in_stack_00000004[1].model.motion_controller.tween_progress] == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = 9999.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[2] = in_stack_00000008[2] * (float)_DAT_006589c5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[2] = in_stack_00000008[2] * (float)_DAT_006589c5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].model.motion_controller.tween_type < 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = 999.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_00000008",
+      "text": "fVar3 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 94,
+      "match": "in_stack_00000004",
+      "text": "if (fVar3 == in_stack_00000004[1].model.motion_controller.tween_progress) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589d5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589d5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 98,
+      "match": "in_stack_00000004",
+      "text": "if ((fVar3 != (float)in_stack_00000004[1].model.motion_controller.tween_type) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 99,
+      "match": "in_stack_00000004",
+      "text": "(fVar3 != in_stack_00000004[1].model.motion_controller.tween_speed)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 100,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589cd;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 100,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589cd;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 103,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 103,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = in_stack_00000008[1];",
+      "type": "stack_param"
     }
   ]
 }

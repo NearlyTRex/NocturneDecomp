@@ -29,11 +29,11 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 005801b7
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005801bb
     PUSH EDX                            ; 005801bf
-    CALL core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 ; 005801c0 | undefined core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310()
-        ;   XREF to: 00580310 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310 ; 005801c0
+        ;   XREF to: 00580310 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310()
     ADD ESP,0x4                         ; 005801c5
     IMUL EAX,dword ptr [ESP + 0x24],0x4b030 ; 005801c8
-    MOV ECX,dword ptr [0x03659384]      ; 005801d0 | undefined4 DAT_03659384
+    MOV ECX,dword ptr [0x03659384]      ; 005801d0 | DAT_03659384
     ADD ECX,EAX                         ; 005801d6
     MOV EBX,dword ptr [EDI]             ; 005801d8
     MOV ESI,dword ptr [ECX]             ; 005801da
@@ -61,8 +61,8 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00580215
     ADD ESI,EAX                         ; 00580219
     TEST ESI,ESI                        ; 0058021b
-    JG 0x00580229                       ; 0058021d | LAB_00580229
-        ;   XREF to: 00580229 (CONDITIONAL_JUMP)
+    JG 0x00580229                       ; 0058021d
+        ;   XREF to: 00580229 (CONDITIONAL_JUMP)  ; LAB_00580229
     XOR EAX,EAX                         ; 0058021f
         ;   Label: LAB_0058021f
     ADD ESP,0x8                         ; 00580221
@@ -88,15 +88,15 @@ section .text
     SHRD EAX,EDX,0x10                   ; 0058024c
     ADD EBP,EAX                         ; 00580250
     CMP EBP,ESI                         ; 00580252
-    JGE 0x0058021f                      ; 00580254 | LAB_0058021f
-        ;   XREF to: 0058021f (CONDITIONAL_JUMP)
+    JGE 0x0058021f                      ; 00580254
+        ;   XREF to: 0058021f (CONDITIONAL_JUMP)  ; LAB_0058021f
     MOV EDX,ESI                         ; 00580256
     MOV dword ptr [ESP],ESI             ; 00580258
     NEG EDX                             ; 0058025b
     MOV dword ptr [ESP],EDX             ; 0058025d
     CMP EBP,EDX                         ; 00580260
-    JLE 0x0058021f                      ; 00580262 | LAB_0058021f
-        ;   XREF to: 0058021f (CONDITIONAL_JUMP)
+    JLE 0x0058021f                      ; 00580262
+        ;   XREF to: 0058021f (CONDITIONAL_JUMP)  ; LAB_0058021f
     MOV EDX,EBX                         ; 00580264
     MOV EAX,dword ptr [ECX + 0x10]      ; 00580266
     IMUL EDX                            ; 00580269
@@ -113,11 +113,11 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00580287
     LEA EDI,[EBX + EAX*0x1]             ; 0058028b
     CMP EDI,ESI                         ; 0058028e
-    JGE 0x0058021f                      ; 00580290 | LAB_0058021f
-        ;   XREF to: 0058021f (CONDITIONAL_JUMP)
+    JGE 0x0058021f                      ; 00580290
+        ;   XREF to: 0058021f (CONDITIONAL_JUMP)  ; LAB_0058021f
     CMP EDI,dword ptr [ESP]             ; 00580292
-    JLE 0x0058021f                      ; 00580295 | LAB_0058021f
-        ;   XREF to: 0058021f (CONDITIONAL_JUMP)
+    JLE 0x0058021f                      ; 00580295
+        ;   XREF to: 0058021f (CONDITIONAL_JUMP)  ; LAB_0058021f
     MOV EDX,0xa0                        ; 00580297
     MOV EBX,ESI                         ; 0058029c
     MOV EAX,EBP                         ; 0058029e
@@ -131,17 +131,17 @@ section .text
     IDIV EBX                            ; 005802b5
     LEA EDI,[EAX + 0x78]                ; 005802b7
     CMP EBP,0x1                         ; 005802ba
-    JL 0x0058021f                       ; 005802bd | LAB_0058021f
-        ;   XREF to: 0058021f (CONDITIONAL_JUMP)
+    JL 0x0058021f                       ; 005802bd
+        ;   XREF to: 0058021f (CONDITIONAL_JUMP)  ; LAB_0058021f
     CMP EDI,0x1                         ; 005802c3
-    JL 0x0058021f                       ; 005802c6 | LAB_0058021f
-        ;   XREF to: 0058021f (CONDITIONAL_JUMP)
+    JL 0x0058021f                       ; 005802c6
+        ;   XREF to: 0058021f (CONDITIONAL_JUMP)  ; LAB_0058021f
     CMP EBP,0x13f                       ; 005802cc
-    JGE 0x0058021f                      ; 005802d2 | LAB_0058021f
-        ;   XREF to: 0058021f (CONDITIONAL_JUMP)
+    JGE 0x0058021f                      ; 005802d2
+        ;   XREF to: 0058021f (CONDITIONAL_JUMP)  ; LAB_0058021f
     CMP EDI,0xef                        ; 005802d8
-    JGE 0x0058021f                      ; 005802de | LAB_0058021f
-        ;   XREF to: 0058021f (CONDITIONAL_JUMP)
+    JGE 0x0058021f                      ; 005802de
+        ;   XREF to: 0058021f (CONDITIONAL_JUMP)  ; LAB_0058021f
     SHL EBP,0x6                         ; 005802e4
     MOV EAX,EBP                         ; 005802e7
     SHL EAX,0x4                         ; 005802e9

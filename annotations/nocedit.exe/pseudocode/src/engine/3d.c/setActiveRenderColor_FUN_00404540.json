@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 3, 
-    "global_count": 3, 
-    "total_lines": 24, 
-    "assembly_lines": 15, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int[16]", 
-      "name": "g_ColorLookupTable", 
-      "addr": "0066e094", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentPolygonColor", 
-      "addr": "00772a5c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00404540", 
-    "signature": "void engine_3d.c_setActiveRenderColor_FUN_00404540(void)", 
-    "address_range": [
-      [
-        "00404540", 
-        "0040456e"
-      ]
-    ], 
-    "name": "engine_3d.c_setActiveRenderColor_FUN_00404540"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 15,
+    "complexity_score": 9,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
   "cross_references": [
     {
-      "from_addr": "00404577", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_drawLineStrip2D_FUN_00404570", 
-      "addr": "00404570"
-    }, 
+      "addr": "00404570",
+      "from_addr": "00404577",
+      "name": "engine_3d.c_drawLineStrip2D_FUN_00404570",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00404607", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_drawLineStrip3D_FUN_00404600", 
-      "addr": "00404600"
-    }, 
+      "addr": "00404600",
+      "from_addr": "00404607",
+      "name": "engine_3d.c_drawLineStrip3D_FUN_00404600",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045d32c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_renderPolygonWireframe_FUN_0045d300", 
-      "addr": "0045d300"
+      "addr": "0045d300",
+      "from_addr": "0045d32c",
+      "name": "shape_design.c_renderPolygonWireframe_FUN_0045d300",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00404540",
+    "address_range": [
+      [
+        "00404540",
+        "0040456e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_setActiveRenderColor_FUN_00404540",
+    "signature": "void engine_3d.c_setActiveRenderColor_FUN_00404540(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0066e094",
+      "name": "g_ColorLookupTable",
+      "type": "int[16]",
+      "value": null
+    },
+    {
+      "addr": "00772a5c",
+      "name": "g_CurrentPolygonColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

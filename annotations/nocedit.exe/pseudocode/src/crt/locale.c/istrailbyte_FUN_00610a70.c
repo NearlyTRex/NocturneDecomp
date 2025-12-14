@@ -11,10 +11,7 @@ int __watcallStack crt_locale_c_istrailbyte_FUN_00610a70(uchar byte_value)
 {
   undefined3 in_stack_00000005;
   
-  if (g_MultibyteLocaleActive == 0) {
-    _byte_value = 0;
-  }
-  else {
+  if (g_MultibyteLocaleActive != 0) {
     if (g_CodePage == 0x3a4) {
       return (uint)(g_ShiftJIS_TrailByteTable[byte_value] & 8);
     }
@@ -22,5 +19,5 @@ int __watcallStack crt_locale_c_istrailbyte_FUN_00610a70(uchar byte_value)
       return 1;
     }
   }
-  return _byte_value;
+  return 0;
 }

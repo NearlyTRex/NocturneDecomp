@@ -22,14 +22,14 @@ section .text
     MOV ESI,dword ptr [EDX + 0x8]       ; 0050b9ba
     MOV dword ptr [EAX + 0x8],ESI       ; 0050b9bd
     CMP ECX,EBX                         ; 0050b9c0
-    JNZ 0x0050ba39                      ; 0050b9c2 | LAB_0050ba39
-        ;   XREF to: 0050ba39 (CONDITIONAL_JUMP)
+    JNZ 0x0050ba39                      ; 0050b9c2
+        ;   XREF to: 0050ba39 (CONDITIONAL_JUMP)  ; LAB_0050ba39
     LEA EBX,[EDX + 0x18]                ; 0050b9c4
         ;   Label: LAB_0050b9c4
     LEA ECX,[EAX + 0x18]                ; 0050b9c7
     CMP ECX,EBX                         ; 0050b9ca
-    JZ 0x0050b9de                       ; 0050b9cc | LAB_0050b9de
-        ;   XREF to: 0050b9de (CONDITIONAL_JUMP)
+    JZ 0x0050b9de                       ; 0050b9cc
+        ;   XREF to: 0050b9de (CONDITIONAL_JUMP)  ; LAB_0050b9de
     MOV ESI,dword ptr [EBX]             ; 0050b9ce
     MOV dword ptr [ECX],ESI             ; 0050b9d0
     MOV ESI,dword ptr [EBX + 0x4]       ; 0050b9d2
@@ -66,8 +66,8 @@ section .text
     MOV dword ptr [EAX + 0x54],ECX      ; 0050ba2c
     LEA ECX,[EAX + 0x58]                ; 0050ba2f
     CMP ECX,EDX                         ; 0050ba32
-    JNZ 0x0050ba4e                      ; 0050ba34 | LAB_0050ba4e
-        ;   XREF to: 0050ba4e (CONDITIONAL_JUMP)
+    JNZ 0x0050ba4e                      ; 0050ba34
+        ;   XREF to: 0050ba4e (CONDITIONAL_JUMP)  ; LAB_0050ba4e
     POP ESI                             ; 0050ba36
     POP EBX                             ; 0050ba37
     RET                                 ; 0050ba38
@@ -78,8 +78,8 @@ section .text
     MOV dword ptr [ECX + 0x4],ESI       ; 0050ba40
     MOV ESI,dword ptr [EBX + 0x8]       ; 0050ba43
     MOV dword ptr [ECX + 0x8],ESI       ; 0050ba46
-    JMP 0x0050b9c4                      ; 0050ba49 | LAB_0050b9c4
-        ;   XREF to: 0050b9c4 (UNCONDITIONAL_JUMP)
+    JMP 0x0050b9c4                      ; 0050ba49
+        ;   XREF to: 0050b9c4 (UNCONDITIONAL_JUMP)  ; LAB_0050b9c4
     MOV EBX,dword ptr [EDX]             ; 0050ba4e
         ;   Label: LAB_0050ba4e
     MOV dword ptr [ECX],EBX             ; 0050ba50

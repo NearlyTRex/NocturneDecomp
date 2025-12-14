@@ -44,12 +44,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 0057715c
     MOV ESI,dword ptr [ESP]             ; 00577160
     MOV EBP,dword ptr [ESP + 0x8]       ; 00577163
-    MOV ECX,dword ptr [ECX + 0x2cf6a9c] ; 00577167 | void *[1024] g_ScreenBufferArray
+    MOV ECX,dword ptr [ECX + 0x2cf6a9c] ; 00577167 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     SHL EAX,0x8                         ; 0057716d
     ADD ECX,EBX                         ; 00577170
     ADD EAX,ESI                         ; 00577172
     INC ECX                             ; 00577174
-    MOV EDX,dword ptr [EAX + 0x3365cc0] ; 00577175 | DAT_03365cc0
+    MOV EDX,dword ptr [EAX + 0x3365cc0] ; 00577175 | DAT_03365cc0 | DAT_03365cc4
         ;   Label: LAB_00577175
     MOV ESI,EDX                         ; 0057717b
     MOV EBX,EDX                         ; 0057717d
@@ -67,12 +67,12 @@ section .text
     ADD EDX,EBX                         ; 005771a7
     SHR EDI,0x3                         ; 005771a9
     INC ECX                             ; 005771ac
-    MOV DL,byte ptr [EDX + EDI*0x1 + 0x2cf9020] ; 005771ad | uchar[32768] g_ColorCubeLookup
+    MOV DL,byte ptr [EDX + EDI*0x1 + 0x2cf9020] ; 005771ad | g_ColorCubeLookup
     ADD EAX,0x4                         ; 005771b4
     MOV byte ptr [ECX + -0x1],DL        ; 005771b7
     CMP EAX,EBP                         ; 005771ba
-    JNZ 0x00577175                      ; 005771bc | LAB_00577175
-        ;   XREF to: 00577175 (CONDITIONAL_JUMP)
+    JNZ 0x00577175                      ; 005771bc
+        ;   XREF to: 00577175 (CONDITIONAL_JUMP)  ; LAB_00577175
     MOV EBP,dword ptr [ESP + 0x4]       ; 005771be
     MOV EAX,dword ptr [ESP + 0xc]       ; 005771c2
     MOV EDI,dword ptr [ESP + 0x8]       ; 005771c6
@@ -83,8 +83,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 005771d8
     MOV dword ptr [ESP + 0x8],EDI       ; 005771dc
     CMP EAX,0x30                        ; 005771e0
-    JL 0x00577154                       ; 005771e3 | LAB_00577154
-        ;   XREF to: 00577154 (CONDITIONAL_JUMP)
+    JL 0x00577154                       ; 005771e3
+        ;   XREF to: 00577154 (CONDITIONAL_JUMP)  ; LAB_00577154
     ADD ESP,0x10                        ; 005771e9
     POP EBP                             ; 005771ec
     POP EDI                             ; 005771ed

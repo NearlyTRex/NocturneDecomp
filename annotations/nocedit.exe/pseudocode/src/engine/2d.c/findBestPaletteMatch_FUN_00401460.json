@@ -1,238 +1,238 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 93, 
-    "pseudocode_lines": 43, 
-    "cross_reference_count": 1, 
-    "global_count": 12, 
-    "total_lines": 159, 
-    "assembly_lines": 116, 
-    "suspect_count": 4, 
+    "assembly_lines": 116,
+    "complexity_score": 93,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 12,
+    "pseudocode_lines": 43,
+    "suspect_count": 4,
     "suspect_types": [
-      "unaffected_reg", 
+      "unaffected_reg",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_PaletteLuminanceScaleFactor", 
-      "addr": "00613084", 
-      "value": "0.577350270000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_RedComponentWeight", 
-      "addr": "0061308c", 
-      "value": "0.300000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_GreenComponentWeight", 
-      "addr": "00613094", 
-      "value": "0.590000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_BlueComponentWeight", 
-      "addr": "0061309c", 
-      "value": "0.110000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_LuminanceDifferenceWeight", 
-      "addr": "006130a4", 
-      "value": "0.150000000000000"
-    }, 
-    {
-      "type": "float[256]", 
-      "name": "g_PaletteLuminanceCache", 
-      "addr": "00772638", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0077263c", 
-      "addr": "0077263c", 
-      "value": null
-    }, 
-    {
-      "type": "char[768]", 
-      "name": "g_SourcePaletteData", 
-      "addr": "02d01f48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f49", 
-      "addr": "02d01f49", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4a", 
-      "addr": "02d01f4a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4b", 
-      "addr": "02d01f4b", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4c", 
-      "addr": "02d01f4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 30, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)g_PaletteLuminanceCache + iVar7));"
-    }, 
-    {
-      "line": 37, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = start_index;"
-    }, 
-    {
-      "line": 45, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_EDI;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00401460", 
-    "signature": "int engine_2d.c_findBestPaletteMatch_FUN_00401460(int red, int green, int blue, int start_index, int end_index)", 
-    "address_range": [
-      [
-        "00401460", 
-        "0040158f"
-      ], 
-      [
-        "00401591", 
-        "0040159c"
-      ]
-    ], 
-    "name": "engine_2d.c_findBestPaletteMatch_FUN_00401460"
-  }, 
-  "stack_frame": {
-    "local_size": 68, 
-    "variables": [
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "red"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "green"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "blue"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "start_index"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "end_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 88, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 159
+  },
   "cross_references": [
     {
-      "from_addr": "004028f2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_buildColorLookupTable_FUN_00402870", 
-      "addr": "00402870"
+      "addr": "00402870",
+      "from_addr": "004028f2",
+      "name": "engine_2d.c_buildColorLookupTable_FUN_00402870",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00401460",
+    "address_range": [
+      [
+        "00401460",
+        "0040158f"
+      ],
+      [
+        "00401591",
+        "0040159c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_findBestPaletteMatch_FUN_00401460",
+    "signature": "int engine_2d.c_findBestPaletteMatch_FUN_00401460(int red, int green, int blue, int start_index, int end_index)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00613084",
+      "name": "g_PaletteLuminanceScaleFactor",
+      "type": "double",
+      "value": "0.577350270000000"
+    },
+    {
+      "addr": "0061308c",
+      "name": "g_RedComponentWeight",
+      "type": "double",
+      "value": "0.300000000000000"
+    },
+    {
+      "addr": "00613094",
+      "name": "g_GreenComponentWeight",
+      "type": "double",
+      "value": "0.590000000000000"
+    },
+    {
+      "addr": "0061309c",
+      "name": "g_BlueComponentWeight",
+      "type": "double",
+      "value": "0.110000000000000"
+    },
+    {
+      "addr": "006130a4",
+      "name": "g_LuminanceDifferenceWeight",
+      "type": "double",
+      "value": "0.150000000000000"
+    },
+    {
+      "addr": "00772638",
+      "name": "g_PaletteLuminanceCache",
+      "type": "float[256]",
+      "value": null
+    },
+    {
+      "addr": "0077263c",
+      "name": "DAT_0077263c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f48",
+      "name": "g_SourcePaletteData",
+      "type": "char[768]",
+      "value": null
+    },
+    {
+      "addr": "02d01f49",
+      "name": "CHAR_ARRAY_02d01f49",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4a",
+      "name": "CHAR_ARRAY_02d01f4a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4b",
+      "name": "CHAR_ARRAY_02d01f4b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4c",
+      "name": "CHAR_ARRAY_02d01f4c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "start_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_index",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)g_PaletteLuminanceCache + iVar7));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 37,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = start_index;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EDI",
+      "text": "return unaff_EDI;",
+      "type": "unaffected_reg"
     }
   ]
 }

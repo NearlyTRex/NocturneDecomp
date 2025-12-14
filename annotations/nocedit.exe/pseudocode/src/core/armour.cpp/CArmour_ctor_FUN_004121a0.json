@@ -1,110 +1,110 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 46, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 94, 
-    "assembly_lines": 48, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
-      "addr": "004a9500"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_armour_dfm_00614dbb", 
-      "addr": "00614dbb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_none_00614dc6", 
-      "addr": "00614dc6", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_one_00614dc7", 
-      "addr": "00614dc7", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ne_00614dc8", 
-      "addr": "00614dc8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_00614dc9", 
-      "addr": "00614dc9", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00659d28", 
-      "addr": "00659d28", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "PTR_FUN_00659d29+3", 
-      "addr": "00659d2c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CArmourVTable", 
-      "addr": "00659d34", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004121a0", 
-    "signature": "CArmour * core_armour.cpp_CArmour_ctor_FUN_004121a0(CArmour * this_ptr)", 
-    "address_range": [
-      [
-        "004121a0", 
-        "00412232"
-      ]
-    ], 
-    "name": "core_armour.cpp_CArmour_ctor_FUN_004121a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CArmour *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 48,
+    "complexity_score": 46,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 8,
+    "pseudocode_lines": 46,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 94
+  },
   "cross_references": [
     {
-      "from_addr": "0041217a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_armour.cpp_constructor_FUN_00412160", 
-      "addr": "00412160"
+      "addr": "00412160",
+      "from_addr": "0041217a",
+      "name": "core_armour.cpp_constructor_FUN_00412160",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004121a0",
+    "address_range": [
+      [
+        "004121a0",
+        "00412232"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_armour.cpp_CArmour_ctor_FUN_004121a0",
+    "signature": "CArmour * core_armour.cpp_CArmour_ctor_FUN_004121a0(CArmour * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9500",
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614dbb",
+      "name": "s_armour_dfm_00614dbb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614dc6",
+      "name": "s_none_00614dc6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614dc7",
+      "name": "s_one_00614dc7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614dc8",
+      "name": "s_ne_00614dc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614dc9",
+      "name": "s_e_00614dc9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00659d28",
+      "name": "DAT_00659d28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00659d2c",
+      "name": "PTR_FUN_00659d29+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00659d34",
+      "name": "g_CArmourVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CArmour *"
+      }
+    ]
+  },
+  "suspects": []
 }

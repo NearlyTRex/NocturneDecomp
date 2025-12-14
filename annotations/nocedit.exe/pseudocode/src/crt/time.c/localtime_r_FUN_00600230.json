@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 51, 
-    "assembly_lines": 38, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_time.c_determine_dst_status_FUN_006079b4", 
-      "addr": "006079b4"
-    }, 
-    {
-      "name": "crt_time.c_gmtime_r_FUN_00607690", 
-      "addr": "00607690"
-    }, 
-    {
-      "name": "crt_time.c_tzset_FUN_006072f8", 
-      "addr": "006072f8"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_TimezoneOffset", 
-      "addr": "006851c8", 
-      "value": "0x4650"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DaylightSavingOffset", 
-      "addr": "006851d0", 
-      "value": "0xe10"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00600230", 
-    "signature": "tm * crt_time.c_localtime_r_FUN_00600230(time_t * timer, tm * result)", 
-    "address_range": [
-      [
-        "00600230", 
-        "00600285"
-      ]
-    ], 
-    "name": "crt_time.c_localtime_r_FUN_00600230"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "time_t *", 
-        "size": 4, 
-        "name": "timer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "tm *", 
-        "size": 4, 
-        "name": "result"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 38,
+    "complexity_score": 13,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
+  },
   "cross_references": [
     {
-      "from_addr": "00600297", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_time.c_localtime_FUN_00600288", 
-      "addr": "00600288"
+      "addr": "00600288",
+      "from_addr": "00600297",
+      "name": "crt_time.c_localtime_FUN_00600288",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00600230",
+    "address_range": [
+      [
+        "00600230",
+        "00600285"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c_localtime_r_FUN_00600230",
+    "signature": "tm * crt_time.c_localtime_r_FUN_00600230(time_t * timer, tm * result)"
+  },
+  "function_calls": [
+    {
+      "addr": "006079b4",
+      "name": "crt_time.c_determine_dst_status_FUN_006079b4"
+    },
+    {
+      "addr": "00607690",
+      "name": "crt_time.c_gmtime_r_FUN_00607690"
+    },
+    {
+      "addr": "006072f8",
+      "name": "crt_time.c_tzset_FUN_006072f8"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006851c8",
+      "name": "g_TimezoneOffset",
+      "type": "int",
+      "value": "0x4650"
+    },
+    {
+      "addr": "006851d0",
+      "name": "g_DaylightSavingOffset",
+      "type": "int",
+      "value": "0xe10"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "timer",
+        "offset": 4,
+        "size": 4,
+        "type": "time_t *"
+      },
+      {
+        "is_param": true,
+        "name": "result",
+        "offset": 8,
+        "size": 4,
+        "type": "tm *"
+      }
+    ]
+  },
+  "suspects": []
 }

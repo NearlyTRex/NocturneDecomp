@@ -1,304 +1,304 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 175, 
-    "pseudocode_lines": 75, 
-    "cross_reference_count": 1, 
-    "global_count": 17, 
-    "total_lines": 296, 
-    "assembly_lines": 221, 
-    "suspect_count": 9, 
+    "assembly_lines": 221,
+    "complexity_score": 175,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 17,
+    "pseudocode_lines": 75,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042f9e0", 
-      "addr": "0042f9e0"
-    }, 
-    {
-      "name": "core_script.cpp_FUN_00559ac0", 
-      "addr": "00559ac0"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }, 
-    {
-      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80", 
-      "addr": "00406d80"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80", 
-      "addr": "004cda80"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
-      "addr": "004d01d0"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
-      "addr": "004cfe80"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_wrapText_FUN_004d0010", 
-      "addr": "004d0010"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_00641794", 
-      "addr": "00641794", 
-      "value": "0.3500000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_MediumFont", 
-      "addr": "020a5718", 
-      "value": null
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_TinyFont", 
-      "addr": "020a571c", 
-      "value": null
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_SmallEditorFont", 
-      "addr": "020a5724", 
-      "value": null
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_MicroFont", 
-      "addr": "020a572c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81aac", 
-      "addr": "02d81aac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81cc4", 
-      "addr": "02d81cc4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MessageCount", 
-      "addr": "02fa8cd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_031061e0", 
-      "addr": "031061e0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_031061e8", 
-      "addr": "031061e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_031065e8", 
-      "addr": "031065e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0310f4a0", 
-      "addr": "0310f4a0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 46, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((*(char *)(in_stack_00000004 + 0x54) != '\\0') && (g_CGamePtr->subtitle_mode != 0)) {"
-    }, 
-    {
-      "line": 56, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,(char *)(in_stack_00000004 + 0x54),&DAT_031061e8,10,0x400,iVar3);"
-    }, 
-    {
-      "line": 65, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (0 < unaff_ESI) {"
-    }, 
-    {
-      "line": 71, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(this_ptr,text,(unaff_EDI - iVar4) / 2,iVar3,0xf8,0);"
-    }, 
-    {
-      "line": 73, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar3 = iVar3 + unaff_EDI;"
-    }, 
-    {
-      "line": 74, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while (iVar6 < unaff_ESI);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00559b20", 
-    "signature": "undefined core_script.cpp_FUN_00559b20()", 
-    "address_range": [
-      [
-        "00559b20", 
-        "00559d70"
-      ]
-    ], 
-    "name": "core_script.cpp_FUN_00559b20"
-  }, 
-  "stack_frame": {
-    "local_size": 52, 
-    "variables": [
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 296
+  },
   "cross_references": [
     {
-      "from_addr": "004da55e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
+      "addr": "004da100",
+      "from_addr": "004da55e",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00559b20",
+    "address_range": [
+      [
+        "00559b20",
+        "00559d70"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_FUN_00559b20",
+    "signature": "undefined core_script.cpp_FUN_00559b20()"
+  },
+  "function_calls": [
+    {
+      "addr": "0042f9e0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042f9e0"
+    },
+    {
+      "addr": "00559ac0",
+      "name": "core_script.cpp_FUN_00559ac0"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    },
+    {
+      "addr": "00406d80",
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
+    },
+    {
+      "addr": "004cda80",
+      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
+    },
+    {
+      "addr": "004d01d0",
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
+    },
+    {
+      "addr": "004cfe80",
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
+    },
+    {
+      "addr": "004d0010",
+      "name": "engine_font.cpp_CBitFont_wrapText_FUN_004d0010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00641794",
+      "name": "FLOAT_00641794",
+      "type": "float",
+      "value": "0.3500000"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "020a5718",
+      "name": "g_MediumFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "020a571c",
+      "name": "g_TinyFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "020a5724",
+      "name": "g_SmallEditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "020a572c",
+      "name": "g_MicroFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81aac",
+      "name": "DAT_02d81aac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81cc4",
+      "name": "DAT_02d81cc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02fa8cd0",
+      "name": "g_MessageCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "031061e0",
+      "name": "DAT_031061e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031061e8",
+      "name": "DAT_031061e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031065e8",
+      "name": "DAT_031065e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310f4a0",
+      "name": "DAT_0310f4a0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000004",
+      "text": "if ((*(char *)(in_stack_00000004 + 0x54) != '\\0') && (g_CGamePtr->subtitle_mode != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000004",
+      "text": "(this_ptr,(char *)(in_stack_00000004 + 0x54),&DAT_031061e8,10,0x400,iVar3);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_ESI",
+      "text": "if (0 < unaff_ESI) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 71,
+      "match": "unaff_EDI",
+      "text": "(this_ptr,text,(unaff_EDI - iVar4) / 2,iVar3,0xf8,0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 73,
+      "match": "unaff_EDI",
+      "text": "iVar3 = iVar3 + unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_ESI",
+      "text": "} while (iVar6 < unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ]
 }

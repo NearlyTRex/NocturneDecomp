@@ -1,338 +1,338 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 52, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 39, 
-    "global_count": 4, 
-    "total_lines": 90, 
-    "assembly_lines": 63, 
-    "suspect_count": 2, 
+    "assembly_lines": 63,
+    "complexity_score": 52,
+    "cross_reference_count": 39,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 27,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e482", 
-      "addr": "0064e482", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_find_bone_s_in_ske_0064e497", 
-      "addr": "0064e497", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c == 0) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00599fc0", 
-    "signature": "int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)", 
-    "address_range": [
-      [
-        "00599fc0", 
-        "0059a045"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSkeleton *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "bone_name"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 90
+  },
   "cross_references": [
     {
-      "from_addr": "00412d80", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_CBaron_FUN_00412cb0", 
-      "addr": "00412cb0"
-    }, 
+      "addr": "00412cb0",
+      "from_addr": "00412d80",
+      "name": "core_baron.cpp_CBaron_FUN_00412cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00415200", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batcreat.cpp_CBatCreature_FUN_00415150", 
-      "addr": "00415150"
-    }, 
+      "addr": "00415150",
+      "from_addr": "00415200",
+      "name": "core_batcreat.cpp_CBatCreature_FUN_00415150",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004165c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batman.cpp_CBatman_FUN_00416510", 
-      "addr": "00416510"
-    }, 
+      "addr": "00416510",
+      "from_addr": "004165c0",
+      "name": "core_batman.cpp_CBatman_FUN_00416510",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041bea0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90", 
-      "addr": "0041bd90"
-    }, 
+      "addr": "0041bd90",
+      "from_addr": "0041bea0",
+      "name": "core_boneguy.cpp_CBoneGuy_explode_FUN_0041bd90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0042383c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bride.cpp_FUN_00423810", 
-      "addr": "00423810"
-    }, 
+      "addr": "00423810",
+      "from_addr": "0042383c",
+      "name": "core_bride.cpp_FUN_00423810",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0042ebc4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ea40", 
-      "addr": "0042ea40"
-    }, 
+      "addr": "0042ea40",
+      "from_addr": "0042ebc4",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042ea40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0042ec83", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40", 
-      "addr": "0042ec40"
-    }, 
+      "addr": "0042ec40",
+      "from_addr": "0042ec83",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043a156", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_OrientBoneCheck_FUN_0043a110", 
-      "addr": "0043a110"
-    }, 
+      "addr": "0043a110",
+      "from_addr": "0043a156",
+      "name": "core_cloth.cpp_OrientBoneCheck_FUN_0043a110",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043f920", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_colonel.cpp_FUN_0043f850", 
-      "addr": "0043f850"
-    }, 
+      "addr": "0043f850",
+      "from_addr": "0043f920",
+      "name": "core_colonel.cpp_FUN_0043f850",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004441ef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cow.cpp_FUN_004441b0", 
-      "addr": "004441b0"
-    }, 
+      "addr": "004441b0",
+      "from_addr": "004441ef",
+      "name": "core_cow.cpp_FUN_004441b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047f0e8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dog.cpp_CZombieDog_setup_FUN_0047f0c0", 
-      "addr": "0047f0c0"
-    }, 
+      "addr": "0047f0c0",
+      "from_addr": "0047f0e8",
+      "name": "core_dog.cpp_CZombieDog_setup_FUN_0047f0c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00484167", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0", 
-      "addr": "004840b0"
-    }, 
+      "addr": "004840b0",
+      "from_addr": "00484167",
+      "name": "core_dracbrid.cpp_DraculaBrideModels_FUN_004840b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048ec08", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_drone.cpp_FUN_0048ebc0", 
-      "addr": "0048ebc0"
-    }, 
+      "addr": "0048ebc0",
+      "from_addr": "0048ec08",
+      "name": "core_drone.cpp_FUN_0048ebc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d2de1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d2c40", 
-      "addr": "004d2c40"
-    }, 
+      "addr": "004d2c40",
+      "from_addr": "004d2de1",
+      "name": "core_gabriela.cpp_FUN_004d2c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e00eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
-      "addr": "004ddaf0"
-    }, 
+      "addr": "004ddaf0",
+      "from_addr": "004e00eb",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e4762", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gargoyle.cpp_CGargoyle_FUN_004e45e0", 
-      "addr": "004e45e0"
-    }, 
+      "addr": "004e45e0",
+      "from_addr": "004e4762",
+      "name": "core_gargoyle.cpp_CGargoyle_FUN_004e45e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e6246", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ghoul.cpp_FUN_004e6160", 
-      "addr": "004e6160"
-    }, 
+      "addr": "004e6160",
+      "from_addr": "004e6246",
+      "name": "core_ghoul.cpp_FUN_004e6160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f0de3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_haystack.cpp_FUN_004f0c80", 
-      "addr": "004f0c80"
-    }, 
+      "addr": "004f0c80",
+      "from_addr": "004f0de3",
+      "name": "core_haystack.cpp_FUN_004f0c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f4a63", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970", 
-      "addr": "004f4970"
-    }, 
+      "addr": "004f4970",
+      "from_addr": "004f4a63",
+      "name": "core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f501b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0", 
-      "addr": "004f4bd0"
-    }, 
+      "addr": "004f4bd0",
+      "from_addr": "004f501b",
+      "name": "core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f6dc0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hotdemon.cpp_FUN_004f6d00", 
-      "addr": "004f6d00"
-    }, 
+      "addr": "004f6d00",
+      "from_addr": "004f6dc0",
+      "name": "core_hotdemon.cpp_FUN_004f6d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f7fe3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_icepick.cpp_FUN_004f7e80", 
-      "addr": "004f7e80"
-    }, 
+      "addr": "004f7e80",
+      "from_addr": "004f7fe3",
+      "name": "core_icepick.cpp_FUN_004f7e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f9945", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_imp.cpp_FUN_004f9910", 
-      "addr": "004f9910"
-    }, 
+      "addr": "004f9910",
+      "from_addr": "004f9945",
+      "name": "core_imp.cpp_FUN_004f9910",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051f582", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_CMimic_setup_FUN_0051f3e0", 
-      "addr": "0051f3e0"
-    }, 
+      "addr": "0051f3e0",
+      "from_addr": "0051f582",
+      "name": "core_mimic.cpp_CMimic_setup_FUN_0051f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005254a4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_FUN_00525340", 
-      "addr": "00525340"
-    }, 
+      "addr": "00525340",
+      "from_addr": "005254a4",
+      "name": "core_mobster.cpp_FUN_00525340",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00557060", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_scat.cpp_FUN_00556f90", 
-      "addr": "00556f90"
-    }, 
+      "addr": "00556f90",
+      "from_addr": "00557060",
+      "name": "core_scat.cpp_FUN_00556f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00567fa2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sentinel.cpp_FUN_00567e20", 
-      "addr": "00567e20"
-    }, 
+      "addr": "00567e20",
+      "from_addr": "00567fa2",
+      "name": "core_sentinel.cpp_FUN_00567e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056c9c8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
-      "addr": "0056c990"
-    }, 
+      "addr": "0056c990",
+      "from_addr": "0056c9c8",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00596a5f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
-    }, 
+      "addr": "005968b0",
+      "from_addr": "00596a5f",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a2600", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_smiley.cpp_FUN_005a24d0", 
-      "addr": "005a24d0"
-    }, 
+      "addr": "005a24d0",
+      "from_addr": "005a2600",
+      "name": "core_smiley.cpp_FUN_005a24d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bb641", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005bb4b0", 
-      "addr": "005bb4b0"
-    }, 
+      "addr": "005bb4b0",
+      "from_addr": "005bb641",
+      "name": "core_stranger.cpp_CStranger_FUN_005bb4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c6c80", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_succubus.cpp_CSuccubus_FUN_005c6b60", 
-      "addr": "005c6b60"
-    }, 
+      "addr": "005c6b60",
+      "from_addr": "005c6c80",
+      "name": "core_succubus.cpp_CSuccubus_FUN_005c6b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d8a82", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_svetlana.cpp_CSvetlana_FUN_005d88e0", 
-      "addr": "005d88e0"
-    }, 
+      "addr": "005d88e0",
+      "from_addr": "005d8a82",
+      "name": "core_svetlana.cpp_CSvetlana_FUN_005d88e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005da0ce", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tbplayer.cpp_CBassPlayer_FUN_005da090", 
-      "addr": "005da090"
-    }, 
+      "addr": "005da090",
+      "from_addr": "005da0ce",
+      "name": "core_tbplayer.cpp_CBassPlayer_FUN_005da090",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005da32e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tbplayer.cpp_CDrummer_FUN_005da2f0", 
-      "addr": "005da2f0"
-    }, 
+      "addr": "005da2f0",
+      "from_addr": "005da32e",
+      "name": "core_tbplayer.cpp_CDrummer_FUN_005da2f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005db009", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tentacle.cpp_CTentacle_FUN_005dafc0", 
-      "addr": "005dafc0"
-    }, 
+      "addr": "005dafc0",
+      "from_addr": "005db009",
+      "name": "core_tentacle.cpp_CTentacle_FUN_005dafc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e589a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_CVampireBoss_FUN_005e56c0", 
-      "addr": "005e56c0"
-    }, 
+      "addr": "005e56c0",
+      "from_addr": "005e589a",
+      "name": "core_vampboss.cpp_CVampireBoss_FUN_005e56c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005efceb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_werewolf.cpp_CWerewolf_FUN_005efcc0", 
-      "addr": "005efcc0"
-    }, 
+      "addr": "005efcc0",
+      "from_addr": "005efceb",
+      "name": "core_werewolf.cpp_CWerewolf_FUN_005efcc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f916e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_CZombie_FUN_005f9140", 
-      "addr": "005f9140"
+      "addr": "005f9140",
+      "from_addr": "005f916e",
+      "name": "core_zombie.cpp_CZombie_FUN_005f9140",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00599fc0",
+    "address_range": [
+      [
+        "00599fc0",
+        "0059a045"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0",
+    "signature": "int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064e482",
+      "name": "s_core_skeleton_cpp_0064e482",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e497",
+      "name": "s_Can_t_find_bone_s_in_ske_0064e497",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSkeleton *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c == 0) {",
+      "type": "stack_param"
     }
   ]
 }

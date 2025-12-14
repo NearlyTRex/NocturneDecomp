@@ -213,7 +213,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
         local_c8.z = (int)ROUND(256f * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_c8);
-        (*(code *)((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+        (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
         lVar2 = (longlong)this_ptr->timer * (longlong)(0xffff - (int)g_PerspectiveReciprocal);
         g_RenderVertexBuffer[0].w_recip =
              (float)((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);

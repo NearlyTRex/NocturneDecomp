@@ -23,8 +23,8 @@ section .text
     MOV EAX,dword ptr [EDI + 0x4]       ; 005d344e
     XOR EBX,EBX                         ; 005d3451
     TEST EDX,EDX                        ; 005d3453
-    JBE 0x005d3480                      ; 005d3455 | LAB_005d3480
-        ;   XREF to: 005d3480 (CONDITIONAL_JUMP)
+    JBE 0x005d3480                      ; 005d3455
+        ;   XREF to: 005d3480 (CONDITIONAL_JUMP)  ; LAB_005d3480
     MOV ESI,dword ptr [ESP + 0x18]      ; 005d3457
     MOV ECX,dword ptr [EAX + 0x34]      ; 005d345b
         ;   Label: LAB_005d345b
@@ -37,8 +37,8 @@ section .text
     MOV ECX,dword ptr [EDI]             ; 005d346b
     ADD EAX,0x38                        ; 005d346d
     CMP EBX,ECX                         ; 005d3470
-    JC 0x005d345b                       ; 005d3472 | LAB_005d345b
-        ;   XREF to: 005d345b (CONDITIONAL_JUMP)
+    JC 0x005d345b                       ; 005d3472
+        ;   XREF to: 005d345b (CONDITIONAL_JUMP)  ; LAB_005d345b
     LEA EAX,[EAX]                       ; 005d3474
     LEA EDX,[EDX]                       ; 005d347a
     MOV EAX,dword ptr [EDI + 0x8]       ; 005d3480
@@ -46,8 +46,8 @@ section .text
     MOV EBX,dword ptr [EDI + 0xc]       ; 005d3483
     XOR ESI,ESI                         ; 005d3486
     TEST EAX,EAX                        ; 005d3488
-    JBE 0x005d34b0                      ; 005d348a | LAB_005d34b0
-        ;   XREF to: 005d34b0 (CONDITIONAL_JUMP)
+    JBE 0x005d34b0                      ; 005d348a
+        ;   XREF to: 005d34b0 (CONDITIONAL_JUMP)  ; LAB_005d34b0
     PUSH EBP                            ; 005d348c
         ;   Label: LAB_005d348c
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005d348d
@@ -60,8 +60,8 @@ section .text
     MOV ECX,dword ptr [EDI + 0x8]       ; 005d349d
     ADD EBX,0x68                        ; 005d34a0
     CMP ESI,ECX                         ; 005d34a3
-    JC 0x005d348c                       ; 005d34a5 | LAB_005d348c
-        ;   XREF to: 005d348c (CONDITIONAL_JUMP)
+    JC 0x005d348c                       ; 005d34a5
+        ;   XREF to: 005d348c (CONDITIONAL_JUMP)  ; LAB_005d348c
     LEA EAX,[EAX]                       ; 005d34a7
     LEA EDX,[EDX]                       ; 005d34ad
     MOV EBX,dword ptr [EDI + 0x10]      ; 005d34b0

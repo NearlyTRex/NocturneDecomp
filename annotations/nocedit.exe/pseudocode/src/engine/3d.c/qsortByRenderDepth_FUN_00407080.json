@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 36, 
-    "assembly_lines": 24, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00407080", 
-    "signature": "int engine_3d.c_qsortByRenderDepth_FUN_00407080(SRenderBufferEntry * * entry1_ptr, SRenderBufferEntry * * entry2_ptr)", 
-    "address_range": [
-      [
-        "00407080", 
-        "004070b0"
-      ]
-    ], 
-    "name": "engine_3d.c_qsortByRenderDepth_FUN_00407080"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SRenderBufferEntry * *", 
-        "size": 4, 
-        "name": "entry1_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SRenderBufferEntry * *", 
-        "size": 4, 
-        "name": "entry2_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 24,
+    "complexity_score": 12,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
   "cross_references": [
     {
-      "from_addr": "00407100", 
-      "type": "DATA", 
-      "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0", 
-      "addr": "004070c0"
+      "addr": "004070c0",
+      "from_addr": "00407100",
+      "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "00407080",
+    "address_range": [
+      [
+        "00407080",
+        "004070b0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_qsortByRenderDepth_FUN_00407080",
+    "signature": "int engine_3d.c_qsortByRenderDepth_FUN_00407080(SRenderBufferEntry * * entry1_ptr, SRenderBufferEntry * * entry2_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "entry1_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderBufferEntry * *"
+      },
+      {
+        "is_param": true,
+        "name": "entry2_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderBufferEntry * *"
+      }
+    ]
+  },
+  "suspects": []
 }

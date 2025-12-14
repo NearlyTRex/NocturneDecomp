@@ -54,8 +54,8 @@ section .text
     FSUB float ptr [EBX + 0x8]          ; 005762e7
     PUSH EAX                            ; 005762ea
     FSTP float ptr [ESP + 0x20]         ; 005762eb
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 005762ef | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 005762ef
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 005762f4
     FLD float ptr [EBX + 0xc]           ; 005762f7
     FLD float ptr [ESP]                 ; 005762fa
@@ -63,24 +63,24 @@ section .text
     FCOMPP                              ; 005762ff
     FNSTSW AX                           ; 00576301
     SAHF                                ; 00576303
-    JA 0x00576326                       ; 00576304 | LAB_00576326
-        ;   XREF to: 00576326 (CONDITIONAL_JUMP)
+    JA 0x00576326                       ; 00576304
+        ;   XREF to: 00576326 (CONDITIONAL_JUMP)  ; LAB_00576326
     FLD float ptr [ESP + 0x4]           ; 00576306
     FABS                                ; 0057630a
     FLD float ptr [EBX + 0x10]          ; 0057630c
     FCOMPP                              ; 0057630f
     FNSTSW AX                           ; 00576311
     SAHF                                ; 00576313
-    JC 0x00576326                       ; 00576314 | LAB_00576326
-        ;   XREF to: 00576326 (CONDITIONAL_JUMP)
+    JC 0x00576326                       ; 00576314
+        ;   XREF to: 00576326 (CONDITIONAL_JUMP)  ; LAB_00576326
     FLD float ptr [ESP + 0x8]           ; 00576316
     FABS                                ; 0057631a
     FLD float ptr [EBX + 0x14]          ; 0057631c
     FCOMPP                              ; 0057631f
     FNSTSW AX                           ; 00576321
     SAHF                                ; 00576323
-    JNC 0x0057632d                      ; 00576324 | LAB_0057632d
-        ;   XREF to: 0057632d (CONDITIONAL_JUMP)
+    JNC 0x0057632d                      ; 00576324
+        ;   XREF to: 0057632d (CONDITIONAL_JUMP)  ; LAB_0057632d
     XOR EAX,EAX                         ; 00576326
         ;   Label: LAB_00576326
     MOV ESP,EBP                         ; 00576328

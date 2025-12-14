@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 63, 
-    "assembly_lines": 40, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_HeapFlags", 
-      "addr": "006854f4", 
-      "value": "0x10000"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060972c", 
-    "signature": "int crt_heap.c_CalculateHeapBlockSize_FUN_0060972c(uint * pSize)", 
-    "address_range": [
-      [
-        "0060972c", 
-        "00609775"
-      ]
-    ], 
-    "name": "crt_heap.c_CalculateHeapBlockSize_FUN_0060972c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint *", 
-        "size": 4, 
-        "name": "pSize"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 40,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
+  },
   "cross_references": [
     {
-      "from_addr": "0060968e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_heap.c_AllocateNewHeapBlock_FUN_00609668", 
-      "addr": "00609668"
+      "addr": "00609668",
+      "from_addr": "0060968e",
+      "name": "crt_heap.c_AllocateNewHeapBlock_FUN_00609668",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060972c",
+    "address_range": [
+      [
+        "0060972c",
+        "00609775"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_heap.c_CalculateHeapBlockSize_FUN_0060972c",
+    "signature": "int crt_heap.c_CalculateHeapBlockSize_FUN_0060972c(uint * pSize)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006854f4",
+      "name": "g_HeapFlags",
+      "type": "int",
+      "value": "0x10000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "pSize",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      }
+    ]
+  },
+  "suspects": []
 }

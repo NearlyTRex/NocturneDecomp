@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 21, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 63, 
-    "assembly_lines": 42, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
-      "addr": "006083fc"
-    }, 
-    {
-      "name": "crt_errno.c_setErrno_FUN_00602790", 
-      "addr": "00602790"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }, 
-    {
-      "name": "FlushFileBuffers", 
-      "addr": "EXTERNAL:00000060"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "FlushFileBuffers*", 
-      "name": "PTR_FlushFileBuffers_00611554", 
-      "addr": "00611554", 
-      "value": "00211da6"
-    }, 
-    {
-      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
-      "addr": "00684ee8", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
-      "addr": "00684eec", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_MaxHandleCount", 
-      "addr": "00685214", 
-      "value": "0x14"
-    }, 
-    {
-      "type": "SIOControlBlock*", 
-      "name": "g_IOControlBlock", 
-      "addr": "0068526c", 
-      "value": "00000000"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060af00", 
-    "signature": "int crt_stdio.c_flushFileBuffers_FUN_0060af00(int file_handle_index)", 
-    "address_range": [
-      [
-        "0060af00", 
-        "0060af5c"
-      ]
-    ], 
-    "name": "crt_stdio.c_flushFileBuffers_FUN_0060af00"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "file_handle_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 42,
+    "complexity_score": 21,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
+  },
   "cross_references": [
     {
-      "from_addr": "00603ad1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fflushInternal_FUN_006039d0", 
-      "addr": "006039d0"
+      "addr": "006039d0",
+      "from_addr": "00603ad1",
+      "name": "crt_stdio.c_fflushInternal_FUN_006039d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060af00",
+    "address_range": [
+      [
+        "0060af00",
+        "0060af5c"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_flushFileBuffers_FUN_0060af00",
+    "signature": "int crt_stdio.c_flushFileBuffers_FUN_0060af00(int file_handle_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "006083fc",
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc"
+    },
+    {
+      "addr": "00602790",
+      "name": "crt_errno.c_setErrno_FUN_00602790"
+    },
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    },
+    {
+      "addr": "EXTERNAL:00000060",
+      "name": "FlushFileBuffers"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611554",
+      "name": "PTR_FlushFileBuffers_00611554",
+      "type": "FlushFileBuffers*",
+      "value": "00211da6"
+    },
+    {
+      "addr": "00684ee8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684eec",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec",
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00685214",
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
+    },
+    {
+      "addr": "0068526c",
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

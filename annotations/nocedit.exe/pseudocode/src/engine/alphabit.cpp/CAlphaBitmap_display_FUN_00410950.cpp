@@ -33,7 +33,7 @@ engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *this_ptr,int
         local_14 = alpha;
         do {
           if ((-1 < local_14) && (local_14 < g_WindowHeight)) {
-            destPixels = (uint *)g_ScreenBufferArray[local_14];
+            destPixels = g_ScreenBufferArray[local_14];
             iVar1 = this_ptr->width;
             iVar2 = 0;
             if (x < 0) {
@@ -63,7 +63,7 @@ engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *this_ptr,int
         local_18 = alpha;
         do {
           if ((-1 < local_18) && (local_18 < g_WindowHeight)) {
-            destPixels_00 = (ushort *)g_ScreenBufferArray[local_18];
+            destPixels_00 = g_ScreenBufferArray[local_18];
             iVar1 = this_ptr->width;
             iVar2 = 0;
             if (x < 0) {

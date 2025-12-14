@@ -1,110 +1,110 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 73, 
-    "assembly_lines": 51, 
-    "suspect_count": 2, 
+    "assembly_lines": 51,
+    "complexity_score": 47,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770", 
-      "addr": "00474770"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setutil_cpp_006496b6", 
-      "addr": "006496b6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_C3DSLight_advanceFilter__006496ca", 
-      "addr": "006496ca", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonLight *in_stack_0000000c;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_0000000c,this_ptr->filters[this_ptr->current_filter_frame],"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00586e70", 
-    "signature": "void core_setutil.cpp_C3DSLight_advanceFilter_FUN_00586e70(C3DSLight * this_ptr, CDemonLight * light)", 
-    "address_range": [
-      [
-        "00586e70", 
-        "00586ef9"
-      ]
-    ], 
-    "name": "core_setutil.cpp_C3DSLight_advanceFilter_FUN_00586e70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "C3DSLight *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CDemonLight *", 
-        "size": 4, 
-        "name": "light"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 73
+  },
   "cross_references": [
     {
-      "from_addr": "004aafb7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
-      "addr": "004aacc0"
+      "addr": "004aacc0",
+      "from_addr": "004aafb7",
+      "name": "core_event.cpp_CEventList_FUN_004aacc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00586e70",
+    "address_range": [
+      [
+        "00586e70",
+        "00586ef9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_C3DSLight_advanceFilter_FUN_00586e70",
+    "signature": "void core_setutil.cpp_C3DSLight_advanceFilter_FUN_00586e70(C3DSLight * this_ptr, CDemonLight * light)"
+  },
+  "function_calls": [
+    {
+      "addr": "00474770",
+      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006496b6",
+      "name": "s_core_setutil_cpp_006496b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006496ca",
+      "name": "s_C3DSLight_advanceFilter__006496ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSLight *"
+      },
+      {
+        "is_param": true,
+        "name": "light",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "CDemonLight *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000000c",
+      "text": "(in_stack_0000000c,this_ptr->filters[this_ptr->current_filter_frame],",
+      "type": "stack_param"
     }
   ]
 }

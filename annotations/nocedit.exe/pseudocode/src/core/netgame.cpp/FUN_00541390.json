@@ -1,1103 +1,1103 @@
 {
   "complexity": {
-    "function_call_count": 26, 
-    "complexity_score": 992, 
-    "pseudocode_lines": 312, 
-    "cross_reference_count": 2, 
-    "global_count": 64, 
-    "total_lines": 1149, 
-    "assembly_lines": 837, 
-    "suspect_count": 66, 
+    "assembly_lines": 837,
+    "complexity_score": 992,
+    "cross_reference_count": 2,
+    "function_call_count": 26,
+    "global_count": 64,
+    "pseudocode_lines": 312,
+    "suspect_count": 66,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_setRandomSeed_FUN_0040cb90", 
-      "addr": "0040cb90"
-    }, 
-    {
-      "name": "core_mission.cpp_CDemonMission_createHeros_FUN_00524a80", 
-      "addr": "00524a80"
-    }, 
-    {
-      "name": "core_mission.cpp_CDemonMission_FUN_00524760", 
-      "addr": "00524760"
-    }, 
-    {
-      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90", 
-      "addr": "00522d90"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_FUN_0053fd00", 
-      "addr": "0053fd00"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0", 
-      "addr": "00542cf0"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40", 
-      "addr": "00541e40"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0", 
-      "addr": "005405b0"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0", 
-      "addr": "00542dd0"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0", 
-      "addr": "00542ff0"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0", 
-      "addr": "005401e0"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_updatePing_FUN_00541c80", 
-      "addr": "00541c80"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
-      "addr": "005feb5c"
-    }, 
-    {
-      "name": "crt_stdlib.c_srand_FUN_005feb80", 
-      "addr": "005feb80"
-    }, 
-    {
-      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
-      "addr": "00403260"
-    }, 
-    {
-      "name": "engine_2d.c_drawHLine_FUN_00402ee0", 
-      "addr": "00402ee0"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
-      "addr": "0049e790"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0", 
-      "addr": "0049e6a0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
-      "addr": "004a03d0"
-    }, 
-    {
-      "name": "support_trisock.cpp_formatIPAddress_FUN_005e17c0", 
-      "addr": "005e17c0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
-      "addr": "005f2dc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_You_have_been_disconnect_0063d983", 
-      "addr": "0063d983", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Mission_s_0063d9ad", 
-      "addr": "0063d9ad", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_MyGameSettigsId_d_0063d9b9", 
-      "addr": "0063d9b9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Player_0063d9cd", 
-      "addr": "0063d9cd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_IP_0063d9d4", 
-      "addr": "0063d9d4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Ping_0063d9d7", 
-      "addr": "0063d9d7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Ready_0063d9dc", 
-      "addr": "0063d9dc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_heroType_0063d9e2", 
-      "addr": "0063d9e2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_gameSettings_0063d9eb", 
-      "addr": "0063d9eb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Local_0063d9f8", 
-      "addr": "0063d9f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_Local)_0063d9f9", 
-      "addr": "0063d9f9", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ocal)_0063d9fa", 
-      "addr": "0063d9fa", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_cal)_0063d9fb", 
-      "addr": "0063d9fb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Local_0063da00", 
-      "addr": "0063da00", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_Local)_0063da01", 
-      "addr": "0063da01", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ocal)_0063da02", 
-      "addr": "0063da02", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_cal)_0063da03", 
-      "addr": "0063da03", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_dms_0063da08", 
-      "addr": "0063da08", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0063da0d", 
-      "addr": "0063da0d", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s__0063da0e", 
-      "addr": "0063da0e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Ready_0063da0f", 
-      "addr": "0063da0f", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_eady_0063da10", 
-      "addr": "0063da10", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ady_0063da11", 
-      "addr": "0063da11", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_dy_0063da12", 
-      "addr": "0063da12", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Not_ready_0063da15", 
-      "addr": "0063da15", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ot_ready_0063da16", 
-      "addr": "0063da16", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_0063da1f", 
-      "addr": "0063da1f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_0063da22", 
-      "addr": "0063da22", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Loading_s_0063da25", 
-      "addr": "0063da25", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Loading_s_0063da30", 
-      "addr": "0063da30", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Send_chat_0063da3b", 
-      "addr": "0063da3b", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0063da45", 
-      "addr": "0063da45", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063da4d", 
-      "addr": "0063da4d", 
-      "value": "0.0000152587890625"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063da55", 
-      "addr": "0063da55", 
-      "value": "30"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063da5d", 
-      "addr": "0063da5d", 
-      "value": "0.200000000000000"
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "CKeys*", 
-      "name": "g_CKeysPtr", 
-      "addr": "0067cf44", 
-      "value": "02dcd7d4"
-    }, 
-    {
-      "type": "CDemonMission*", 
-      "name": "g_CDemonMissionPtr", 
-      "addr": "0067d550", 
-      "value": "02f33740"
-    }, 
-    {
-      "type": "CNetGame*", 
-      "name": "g_CNetGameInstance", 
-      "addr": "00680a00", 
-      "value": "02f7c740"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00680a04", 
-      "addr": "00680a04", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ForceMessagePump", 
-      "addr": "006849a8", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CKeysPtr", 
-      "addr": "02dcd7d4", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonMission", 
-      "name": "g_CDemonMissionInstance", 
-      "addr": "02f33740", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c640", 
-      "addr": "02f7c640", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c75c", 
-      "addr": "02f7c75c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c774", 
-      "addr": "02f7c774", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c77c", 
-      "addr": "02f7c77c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c788", 
-      "addr": "02f7c788", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c794", 
-      "addr": "02f7c794", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c7a4", 
-      "addr": "02f7c7a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c854", 
-      "addr": "02f7c854", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LastPingTime", 
-      "addr": "02f7c8b4", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CurrentGameTime", 
-      "addr": "02f7c8b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c8c4", 
-      "addr": "02f7c8c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c8c8", 
-      "addr": "02f7c8c8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ChatHistoryCount", 
-      "addr": "02f7c8cc", 
-      "value": null
-    }, 
-    {
-      "type": "SChatHistory[400]", 
-      "name": "g_ChatHistory", 
-      "addr": "02f7c8d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c8dc", 
-      "addr": "02f7c8dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c8f0", 
-      "addr": "02f7c8f0", 
-      "value": null
-    }, 
-    {
-      "type": "uchar[4]", 
-      "name": "g_AnyAddressIP", 
-      "addr": "03f87498", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0054139c", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CNetGame *in_stack_00000004;"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004->connection_type != 0) {"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar3 = in_stack_00000004->players + in_stack_00000004->local_player_index;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar3 = in_stack_00000004->players + in_stack_00000004->local_player_index;"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar3 = in_stack_00000004->players + in_stack_00000004->local_player_index;"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar3 = in_stack_00000004->players + in_stack_00000004->local_player_index;"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->network_mode = 1;"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004->connection_type == 1) {"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004->field7_0x118 + 0x54) = iVar5;"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "while (in_stack_00000004->connection_type != 0) {"
-    }, 
-    {
-      "line": 53, 
-      "match": "&stack0xfffffe8c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Mission: %s\",uStack_70);"
-    }, 
-    {
-      "line": 54, 
-      "match": "&stack0xfffffe90", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,0xb);"
-    }, 
-    {
-      "line": 55, 
-      "match": "&stack0xfffffe94", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe94,\"MyGameSettigsId: %d\",DAT_02f7c8c4);"
-    }, 
-    {
-      "line": 56, 
-      "match": "&stack0xfffffe98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe98,400,0xb);"
-    }, 
-    {
-      "line": 71, 
-      "match": "&stack0xfffffebc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar9 = &stack0xfffffebc;"
-    }, 
-    {
-      "line": 83, 
-      "match": "&stack0xfffffebc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "support_trisock_cpp_formatIPAddress_FUN_005e17c0((char *)(iVar4 + 0x1c),&stack0xfffffebc);"
-    }, 
-    {
-      "line": 85, 
-      "match": "&stack0xfffffec0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffec0,100,iVar5);"
-    }, 
-    {
-      "line": 89, 
-      "match": "&stack0xfffffec4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar7 = &stack0xfffffec4;"
-    }, 
-    {
-      "line": 108, 
-      "match": "&stack0xfffffec0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec0,\"%dms\");"
-    }, 
-    {
-      "line": 110, 
-      "match": "&stack0xfffffec4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffec4,200,iVar5);"
-    }, 
-    {
-      "line": 111, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004->field7_0x118 + 0x44) == 0) {"
-    }, 
-    {
-      "line": 117, 
-      "match": "&stack0xfffffec8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar7 = &stack0xfffffec8;"
-    }, 
-    {
-      "line": 127, 
-      "match": "&stack0xfffffec8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffec8,300,iVar5);"
-    }, 
-    {
-      "line": 128, 
-      "match": "&stack0xfffffecc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffecc,\"%d\");"
-    }, 
-    {
-      "line": 129, 
-      "match": "&stack0xfffffed0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,400,iVar5);"
-    }, 
-    {
-      "line": 130, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004->connection_type == 1) {"
-    }, 
-    {
-      "line": 150, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(in_stack_00000004);"
-    }, 
-    {
-      "line": 152, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar6 = in_stack_00000004;"
-    }, 
-    {
-      "line": 153, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < in_stack_00000004->player_count) {"
-    }, 
-    {
-      "line": 161, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar5 < in_stack_00000004->player_count);"
-    }, 
-    {
-      "line": 163, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = in_stack_00000004->connection_type;"
-    }, 
-    {
-      "line": 164, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->field7_0x118[0x50] = '\\0';"
-    }, 
-    {
-      "line": 165, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->field7_0x118[0x51] = '\\0';"
-    }, 
-    {
-      "line": 166, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->field7_0x118[0x52] = '\\0';"
-    }, 
-    {
-      "line": 167, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->field7_0x118[0x53] = '\\0';"
-    }, 
-    {
-      "line": 169, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->players[in_stack_00000004->local_player_index].player_id = DAT_02f7c8c4;"
-    }, 
-    {
-      "line": 169, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->players[in_stack_00000004->local_player_index].player_id = DAT_02f7c8c4;"
-    }, 
-    {
-      "line": 172, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar6 = in_stack_00000004;"
-    }, 
-    {
-      "line": 173, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < in_stack_00000004->player_count) {"
-    }, 
-    {
-      "line": 194, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar5 < in_stack_00000004->player_count);"
-    }, 
-    {
-      "line": 196, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((bVar2) && (1 < in_stack_00000004->player_count)) {"
-    }, 
-    {
-      "line": 197, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->network_mode = 2;"
-    }, 
-    {
-      "line": 199, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(in_stack_00000004,1);"
-    }, 
-    {
-      "line": 203, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdlib_c_srand_FUN_005feb80(*(uint *)(in_stack_00000004->field7_0x118 + 0x54));"
-    }, 
-    {
-      "line": 205, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(uint *)(in_stack_00000004->field7_0x118 + 0x54));"
-    }, 
-    {
-      "line": 210, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(in_stack_00000004,2);"
-    }, 
-    {
-      "line": 216, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->network_mode = 1;"
-    }, 
-    {
-      "line": 219, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000004->connection_type == 2) && (in_stack_00000004->network_mode == 2)) {"
-    }, 
-    {
-      "line": 219, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000004->connection_type == 2) && (in_stack_00000004->network_mode == 2)) {"
-    }, 
-    {
-      "line": 222, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdlib_c_srand_FUN_005feb80(*(uint *)(in_stack_00000004->field7_0x118 + 0x54));"
-    }, 
-    {
-      "line": 223, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_setRandomSeed_FUN_0040cb90(*(uint *)(in_stack_00000004->field7_0x118 + 0x54))"
-    }, 
-    {
-      "line": 226, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonMissionPtr,in_stack_00000004->field7_0x118,0);"
-    }, 
-    {
-      "line": 230, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(in_stack_00000004,2);"
-    }, 
-    {
-      "line": 246, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->network_mode = 1;"
-    }, 
-    {
-      "line": 249, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000004->connection_type == 2) && (DAT_00680a04 != 0)) {"
-    }, 
-    {
-      "line": 251, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index]."
-    }, 
-    {
-      "line": 251, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index]."
-    }, 
-    {
-      "line": 268, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004->players[in_stack_00000004->local_player_index].field5_0x38 +"
-    }, 
-    {
-      "line": 268, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004->players[in_stack_00000004->local_player_index].field5_0x38 +"
-    }, 
-    {
-      "line": 270, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)(*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index]."
-    }, 
-    {
-      "line": 270, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)(*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index]."
-    }, 
-    {
-      "line": 272, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004->connection_type == 1) {"
-    }, 
-    {
-      "line": 296, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(in_stack_00000004,iVar5,2.0);"
-    }, 
-    {
-      "line": 307, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00541390", 
-    "signature": "undefined core_netgame.cpp_FUN_00541390()", 
-    "address_range": [
-      [
-        "00541390", 
-        "00541c77"
-      ]
-    ], 
-    "name": "core_netgame.cpp_FUN_00541390"
-  }, 
-  "stack_frame": {
-    "local_size": 316, 
-    "variables": [
-      {
-        "offset": -312, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_138"
-      }, 
-      {
-        "offset": -308, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_134"
-      }, 
-      {
-        "offset": -304, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_130"
-      }, 
-      {
-        "offset": -303, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_12f"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 316, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 1149
+  },
   "cross_references": [
     {
-      "from_addr": "004e2f64", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_FUN_004e2f10", 
-      "addr": "004e2f10"
-    }, 
+      "addr": "004e2f10",
+      "from_addr": "004e2f64",
+      "name": "core_game.cpp_FUN_004e2f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3031", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_FUN_004e2fc0", 
-      "addr": "004e2fc0"
+      "addr": "004e2fc0",
+      "from_addr": "004e3031",
+      "name": "core_game.cpp_FUN_004e2fc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00541390",
+    "address_range": [
+      [
+        "00541390",
+        "00541c77"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_netgame.cpp_FUN_00541390",
+    "signature": "undefined core_netgame.cpp_FUN_00541390()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cb90",
+      "name": "core_actor.cpp_setRandomSeed_FUN_0040cb90"
+    },
+    {
+      "addr": "00524a80",
+      "name": "core_mission.cpp_CDemonMission_createHeros_FUN_00524a80"
+    },
+    {
+      "addr": "00524760",
+      "name": "core_mission.cpp_CDemonMission_FUN_00524760"
+    },
+    {
+      "addr": "00522d90",
+      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90"
+    },
+    {
+      "addr": "0053fd00",
+      "name": "core_netgame.cpp_CNetGame_FUN_0053fd00"
+    },
+    {
+      "addr": "00542cf0",
+      "name": "core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_00542cf0"
+    },
+    {
+      "addr": "00541e40",
+      "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40"
+    },
+    {
+      "addr": "005405b0",
+      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0"
+    },
+    {
+      "addr": "00542dd0",
+      "name": "core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0"
+    },
+    {
+      "addr": "00542ff0",
+      "name": "core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0"
+    },
+    {
+      "addr": "005401e0",
+      "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0"
+    },
+    {
+      "addr": "00541c80",
+      "name": "core_netgame.cpp_CNetGame_updatePing_FUN_00541c80"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005feb5c",
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    },
+    {
+      "addr": "005feb80",
+      "name": "crt_stdlib.c_srand_FUN_005feb80"
+    },
+    {
+      "addr": "00403260",
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "00402ee0",
+      "name": "engine_2d.c_drawHLine_FUN_00402ee0"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "0049e790",
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    },
+    {
+      "addr": "0049e6a0",
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    },
+    {
+      "addr": "004a03d0",
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "005e17c0",
+      "name": "support_trisock.cpp_formatIPAddress_FUN_005e17c0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    },
+    {
+      "addr": "005f2dc0",
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063d983",
+      "name": "s_You_have_been_disconnect_0063d983",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9ad",
+      "name": "s_Mission_s_0063d9ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9b9",
+      "name": "s_MyGameSettigsId_d_0063d9b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9cd",
+      "name": "s_Player_0063d9cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9d4",
+      "name": "s_IP_0063d9d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9d7",
+      "name": "s_Ping_0063d9d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9dc",
+      "name": "s_Ready_0063d9dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9e2",
+      "name": "s_heroType_0063d9e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9eb",
+      "name": "s_gameSettings_0063d9eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9f8",
+      "name": "s_Local_0063d9f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d9f9",
+      "name": "s_Local)_0063d9f9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063d9fa",
+      "name": "s_ocal)_0063d9fa",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063d9fb",
+      "name": "s_cal)_0063d9fb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da00",
+      "name": "s_Local_0063da00",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da01",
+      "name": "s_Local)_0063da01",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da02",
+      "name": "s_ocal)_0063da02",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da03",
+      "name": "s_cal)_0063da03",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da08",
+      "name": "s_dms_0063da08",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da0d",
+      "name": "s_anon_0063da0d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da0e",
+      "name": "s__0063da0e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da0f",
+      "name": "s_Ready_0063da0f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da10",
+      "name": "s_eady_0063da10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da11",
+      "name": "s_ady_0063da11",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da12",
+      "name": "s_dy_0063da12",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da15",
+      "name": "s_Not_ready_0063da15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da16",
+      "name": "s_ot_ready_0063da16",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da1f",
+      "name": "s_d_0063da1f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da22",
+      "name": "s_d_0063da22",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da25",
+      "name": "s_Loading_s_0063da25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da30",
+      "name": "s_Loading_s_0063da30",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da3b",
+      "name": "s_Send_chat_0063da3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063da45",
+      "name": "DAT_0063da45",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063da4d",
+      "name": "DOUBLE_0063da4d",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "0063da55",
+      "name": "DOUBLE_0063da55",
+      "type": "double",
+      "value": "30"
+    },
+    {
+      "addr": "0063da5d",
+      "name": "DOUBLE_0063da5d",
+      "type": "double",
+      "value": "0.200000000000000"
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "00680a00",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame*",
+      "value": "02f7c740"
+    },
+    {
+      "addr": "00680a04",
+      "name": "DAT_00680a04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006849a8",
+      "name": "g_ForceMessagePump",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysPtr",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "02f7c640",
+      "name": "DAT_02f7c640",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c75c",
+      "name": "DAT_02f7c75c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c774",
+      "name": "DAT_02f7c774",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c77c",
+      "name": "DAT_02f7c77c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c788",
+      "name": "DAT_02f7c788",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c794",
+      "name": "DAT_02f7c794",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c7a4",
+      "name": "DAT_02f7c7a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c854",
+      "name": "DAT_02f7c854",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8b4",
+      "name": "g_LastPingTime",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c8b8",
+      "name": "g_CurrentGameTime",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "02f7c8c4",
+      "name": "DAT_02f7c8c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8c8",
+      "name": "DAT_02f7c8c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8cc",
+      "name": "g_ChatHistoryCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c8d0",
+      "name": "g_ChatHistory",
+      "type": "SChatHistory[400]",
+      "value": null
+    },
+    {
+      "addr": "02f7c8dc",
+      "name": "DAT_02f7c8dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8f0",
+      "name": "DAT_02f7c8f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87498",
+      "name": "g_AnyAddressIP",
+      "type": "uchar[4]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 316,
+    "local_size": 316,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_138",
+        "offset": -312,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_134",
+        "offset": -308,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_130",
+        "offset": -304,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_12f",
+        "offset": -303,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0054139c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "CNetGame *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004->connection_type != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000004",
+      "text": "pSVar3 = in_stack_00000004->players + in_stack_00000004->local_player_index;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000004",
+      "text": "pSVar3 = in_stack_00000004->players + in_stack_00000004->local_player_index;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "text": "pSVar3 = in_stack_00000004->players + in_stack_00000004->local_player_index;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "text": "pSVar3 = in_stack_00000004->players + in_stack_00000004->local_player_index;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->network_mode = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004->connection_type == 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004->field7_0x118 + 0x54) = iVar5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "while (in_stack_00000004->connection_type != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 53,
+      "match": "&stack0xfffffe8c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Mission: %s\",uStack_70);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0xfffffe90",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,0xb);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xfffffe94",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe94,\"MyGameSettigsId: %d\",DAT_02f7c8c4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xfffffe98",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe98,400,0xb);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 71,
+      "match": "&stack0xfffffebc",
+      "text": "pcVar9 = &stack0xfffffebc;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 83,
+      "match": "&stack0xfffffebc",
+      "text": "support_trisock_cpp_formatIPAddress_FUN_005e17c0((char *)(iVar4 + 0x1c),&stack0xfffffebc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 85,
+      "match": "&stack0xfffffec0",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffec0,100,iVar5);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 89,
+      "match": "&stack0xfffffec4",
+      "text": "pcVar7 = &stack0xfffffec4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 108,
+      "match": "&stack0xfffffec0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec0,\"%dms\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 110,
+      "match": "&stack0xfffffec4",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffec4,200,iVar5);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 111,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004->field7_0x118 + 0x44) == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 117,
+      "match": "&stack0xfffffec8",
+      "text": "pcVar7 = &stack0xfffffec8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 127,
+      "match": "&stack0xfffffec8",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffec8,300,iVar5);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 128,
+      "match": "&stack0xfffffecc",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffecc,\"%d\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 129,
+      "match": "&stack0xfffffed0",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,400,iVar5);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 130,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004->connection_type == 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 150,
+      "match": "in_stack_00000004",
+      "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 152,
+      "match": "in_stack_00000004",
+      "text": "pCVar6 = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 153,
+      "match": "in_stack_00000004",
+      "text": "if (0 < in_stack_00000004->player_count) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 161,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar5 < in_stack_00000004->player_count);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 163,
+      "match": "in_stack_00000004",
+      "text": "iVar5 = in_stack_00000004->connection_type;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 164,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->field7_0x118[0x50] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 165,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->field7_0x118[0x51] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 166,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->field7_0x118[0x52] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 167,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->field7_0x118[0x53] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 169,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->players[in_stack_00000004->local_player_index].player_id = DAT_02f7c8c4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 169,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->players[in_stack_00000004->local_player_index].player_id = DAT_02f7c8c4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 172,
+      "match": "in_stack_00000004",
+      "text": "pCVar6 = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 173,
+      "match": "in_stack_00000004",
+      "text": "if (0 < in_stack_00000004->player_count) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 194,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar5 < in_stack_00000004->player_count);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_00000004",
+      "text": "if ((bVar2) && (1 < in_stack_00000004->player_count)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 197,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->network_mode = 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 199,
+      "match": "in_stack_00000004",
+      "text": "iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(in_stack_00000004,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 203,
+      "match": "in_stack_00000004",
+      "text": "crt_stdlib_c_srand_FUN_005feb80(*(uint *)(in_stack_00000004->field7_0x118 + 0x54));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 205,
+      "match": "in_stack_00000004",
+      "text": "(*(uint *)(in_stack_00000004->field7_0x118 + 0x54));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 210,
+      "match": "in_stack_00000004",
+      "text": "iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(in_stack_00000004,2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 216,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->network_mode = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 219,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004->connection_type == 2) && (in_stack_00000004->network_mode == 2)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 219,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004->connection_type == 2) && (in_stack_00000004->network_mode == 2)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 222,
+      "match": "in_stack_00000004",
+      "text": "crt_stdlib_c_srand_FUN_005feb80(*(uint *)(in_stack_00000004->field7_0x118 + 0x54));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 223,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_setRandomSeed_FUN_0040cb90(*(uint *)(in_stack_00000004->field7_0x118 + 0x54))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 226,
+      "match": "in_stack_00000004",
+      "text": "(g_CDemonMissionPtr,in_stack_00000004->field7_0x118,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 230,
+      "match": "in_stack_00000004",
+      "text": "iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(in_stack_00000004,2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 246,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->network_mode = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 249,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004->connection_type == 2) && (DAT_00680a04 != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 251,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index].",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 251,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index].",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 268,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004->players[in_stack_00000004->local_player_index].field5_0x38 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 268,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004->players[in_stack_00000004->local_player_index].field5_0x38 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 270,
+      "match": "in_stack_00000004",
+      "text": "(uint)(*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index].",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 270,
+      "match": "in_stack_00000004",
+      "text": "(uint)(*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index].",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 272,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004->connection_type == 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 296,
+      "match": "in_stack_00000004",
+      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(in_stack_00000004,iVar5,2.0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 307,
+      "match": "in_stack_00000004",
+      "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
+      "type": "stack_param"
     }
   ]
 }

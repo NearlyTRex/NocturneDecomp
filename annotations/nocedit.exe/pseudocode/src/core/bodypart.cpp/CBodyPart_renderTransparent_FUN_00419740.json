@@ -1,97 +1,97 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 99, 
-    "assembly_lines": 74, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
-      "addr": "00408b40"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
-      "addr": "00408b00"
-    }, 
-    {
-      "name": "core_bodypart.cpp_FUN_00419340", 
-      "addr": "00419340"
-    }, 
-    {
-      "name": "core_flame.cpp_FUN_004ca110", 
-      "addr": "004ca110"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
-      "addr": "0048ca60"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326ef00", 
-      "addr": "0326ef00", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 74,
+    "complexity_score": 25,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 5,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 99
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00419740", 
-    "signature": "int core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740(CBodyPart * this_ptr)", 
+    "address": "00419740",
     "address_range": [
       [
-        "00419740", 
+        "00419740",
         "00419804"
       ]
-    ], 
-    "name": "core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740",
+    "signature": "int core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740(CBodyPart * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "00419340",
+      "name": "core_bodypart.cpp_FUN_00419340"
+    },
+    {
+      "addr": "004ca110",
+      "name": "core_flame.cpp_FUN_004ca110"
+    },
+    {
+      "addr": "0048ca60",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "0326ef00",
+      "name": "DAT_0326ef00",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBodyPart *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

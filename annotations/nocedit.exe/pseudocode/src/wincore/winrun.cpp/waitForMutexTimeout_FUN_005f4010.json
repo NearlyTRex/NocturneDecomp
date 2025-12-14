@@ -1,88 +1,88 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 39, 
-    "assembly_lines": 24, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "WaitForSingleObject", 
-      "addr": "EXTERNAL:000000a6"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WaitForSingleObject*", 
-      "name": "WaitForSingleObject", 
-      "addr": "0061166c", 
-      "value": "002122c4"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_SecondsToMillisecondsMultiplier", 
-      "addr": "0065817c", 
-      "value": "1000"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f4010", 
-    "signature": "int wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle, double timeout_seconds)", 
-    "address_range": [
-      [
-        "005f4010", 
-        "005f404c"
-      ]
-    ], 
-    "name": "wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010"
-  }, 
-  "stack_frame": {
-    "local_size": 12, 
-    "variables": [
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_8"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef HANDLE void *", 
-        "size": 4, 
-        "name": "mutex_handle"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "timeout_seconds"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 24,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
   "cross_references": [
     {
-      "from_addr": "005abe43", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_processAudio_FUN_005abe20", 
-      "addr": "005abe20"
+      "addr": "005abe20",
+      "from_addr": "005abe43",
+      "name": "sound_sndmain.cpp_processAudio_FUN_005abe20",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005f4010",
+    "address_range": [
+      [
+        "005f4010",
+        "005f404c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010",
+    "signature": "int wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle, double timeout_seconds)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "EXTERNAL:000000a6",
+      "name": "WaitForSingleObject"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061166c",
+      "name": "WaitForSingleObject",
+      "type": "WaitForSingleObject*",
+      "value": "002122c4"
+    },
+    {
+      "addr": "0065817c",
+      "name": "g_SecondsToMillisecondsMultiplier",
+      "type": "double",
+      "value": "1000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "mutex_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef HANDLE void *"
+      },
+      {
+        "is_param": true,
+        "name": "timeout_seconds",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "suspects": []
 }

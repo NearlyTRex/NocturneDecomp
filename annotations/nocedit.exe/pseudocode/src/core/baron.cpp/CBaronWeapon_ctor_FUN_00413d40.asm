@@ -22,9 +22,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00413d40
         ;   Label: core_baron.cpp_CBaronWeapon_ctor_FUN_00413d40
     PUSH EDX                            ; 00413d44
-    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 00413d45 | CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
-        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)
-    MOV dword ptr [EAX + 0x154],0x65a1e4 ; 00413d4a | CDemonActor_vtable g_CBaronWeaponVTable
+    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 00413d45
+        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
+    MOV dword ptr [EAX + 0x154],0x65a1e4 ; 00413d4a | g_CBaronWeaponVTable
     MOV dword ptr [EAX + 0x2e0],0x8     ; 00413d54
     MOV dword ptr [EAX + 0x2e4],0x0     ; 00413d5e
     MOV dword ptr [EAX + 0x2e8],0x43480000 ; 00413d68

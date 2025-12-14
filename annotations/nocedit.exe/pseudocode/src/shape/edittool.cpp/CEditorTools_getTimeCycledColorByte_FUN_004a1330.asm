@@ -32,17 +32,17 @@
 
 section .text
 
-    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004a1330 | int wincore_winrun.cpp_getTime_FUN_005f2dc0()
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004a1330
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
         ;   Label: shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
-        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)
     AND EAX,0x30000                     ; 004a1335
     CMP EAX,0x10000                     ; 004a133a
-    JNC 0x004a1363                      ; 004a133f | LAB_004a1363
-        ;   XREF to: 004a1363 (CONDITIONAL_JUMP)
+    JNC 0x004a1363                      ; 004a133f
+        ;   XREF to: 004a1363 (CONDITIONAL_JUMP)  ; LAB_004a1363
     TEST EAX,EAX                        ; 004a1341
-    JNZ 0x004a1375                      ; 004a1343 | LAB_004a1375
-        ;   XREF to: 004a1375 (CONDITIONAL_JUMP)
-    MOV AL,[0x02cf9020]                 ; 004a1345 | uchar[32768] g_ColorCubeLookup
+    JNZ 0x004a1375                      ; 004a1343
+        ;   XREF to: 004a1375 (CONDITIONAL_JUMP)  ; LAB_004a1375
+    MOV AL,[0x02cf9020]                 ; 004a1345 | g_ColorCubeLookup
     RET                                 ; 004a134a
     XOR EAX,EAX                         ; 004a134b
         ;   Label: LAB_004a134b
@@ -56,17 +56,17 @@ section .text
         ;   Label: LAB_004a135b
     MOV AL,[0x02d00c3f]                 ; 004a135d | UCHAR_ARRAY_02d00c3f
     RET                                 ; 004a1362
-    JBE 0x004a134b                      ; 004a1363 | LAB_004a134b
+    JBE 0x004a134b                      ; 004a1363
+        ;   XREF to: 004a134b (CONDITIONAL_JUMP)  ; LAB_004a134b
         ;   Label: LAB_004a1363
-        ;   XREF to: 004a134b (CONDITIONAL_JUMP)
     CMP EAX,0x20000                     ; 004a1365
-    JC 0x004a1375                       ; 004a136a | LAB_004a1375
-        ;   XREF to: 004a1375 (CONDITIONAL_JUMP)
-    JBE 0x004a1353                      ; 004a136c | LAB_004a1353
-        ;   XREF to: 004a1353 (CONDITIONAL_JUMP)
+    JC 0x004a1375                       ; 004a136a
+        ;   XREF to: 004a1375 (CONDITIONAL_JUMP)  ; LAB_004a1375
+    JBE 0x004a1353                      ; 004a136c
+        ;   XREF to: 004a1353 (CONDITIONAL_JUMP)  ; LAB_004a1353
     CMP EAX,0x30000                     ; 004a136e
-    JZ 0x004a135b                       ; 004a1373 | LAB_004a135b
-        ;   XREF to: 004a135b (CONDITIONAL_JUMP)
+    JZ 0x004a135b                       ; 004a1373
+        ;   XREF to: 004a135b (CONDITIONAL_JUMP)  ; LAB_004a135b
     XOR EAX,EAX                         ; 004a1375
         ;   Label: LAB_004a1375
     RET                                 ; 004a1377

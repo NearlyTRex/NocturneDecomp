@@ -1,112 +1,112 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 60, 
-    "pseudocode_lines": 60, 
-    "cross_reference_count": 1, 
-    "global_count": 7, 
-    "total_lines": 183, 
-    "assembly_lines": 123, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0", 
-      "addr": "005a87d0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60", 
-      "addr": "005a7e60"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_006504ad", 
-      "addr": "006504ad", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_SfxSlot_pollHwHandle_no__006504c2", 
-      "addr": "006504c2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Killing_looped_sfx_s_whi_006504e5", 
-      "addr": "006504e5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Error_setting_hw_sfx_d_o_0065050a", 
-      "addr": "0065050a", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CSoundDevice*", 
-      "name": "g_CSoundDevicePtr", 
-      "addr": "03f69268", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a7fe0", 
-    "signature": "void sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot * this_ptr)", 
-    "address_range": [
-      [
-        "005a7fe0", 
-        "005a80d0"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSfxSlot *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 123,
+    "complexity_score": 60,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 7,
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 183
+  },
   "cross_references": [
     {
-      "from_addr": "005ace03", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0", 
-      "addr": "005acdb0"
+      "addr": "005acdb0",
+      "from_addr": "005ace03",
+      "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005a7fe0",
+    "address_range": [
+      [
+        "005a7fe0",
+        "005a80d0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0",
+    "signature": "void sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005a87d0",
+      "name": "sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0"
+    },
+    {
+      "addr": "005a7e60",
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60"
+    },
+    {
+      "addr": "005adba0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006504ad",
+      "name": "s_sound_sndmain_cpp_006504ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006504c2",
+      "name": "s_SfxSlot_pollHwHandle_no__006504c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006504e5",
+      "name": "s_Killing_looped_sfx_s_whi_006504e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065050a",
+      "name": "s_Error_setting_hw_sfx_d_o_0065050a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69268",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "suspects": []
 }

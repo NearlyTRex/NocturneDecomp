@@ -22,20 +22,20 @@ section .text
     PUSH EDX                            ; 005badd5
     MOV ECX,dword ptr [ESP + 0xc]       ; 005badd6
     PUSH ECX                            ; 005badda
-    CALL core_boxactor.cpp_FUN_004226e0 ; 005baddb | undefined core_boxactor.cpp_FUN_004226e0()
-        ;   XREF to: 004226e0 (UNCONDITIONAL_CALL)
+    CALL core_boxactor.cpp_FUN_004226e0 ; 005baddb
+        ;   XREF to: 004226e0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_004226e0()
     ADD ESP,0x8                         ; 005bade0
     PUSH 0x0                            ; 005bade3
-    PUSH 0x65316a                       ; 005bade5 | = "CActorDestination" | s_CActorDestination_0065316a = CActorDestination
+    PUSH 0x65316a                       ; 005bade5 | = "CActorDestination"
     MOV EAX,dword ptr [ESP + 0x10]      ; 005badea
     PUSH 0x1                            ; 005badee
     ADD EAX,0x66c                       ; 005badf0
     PUSH EAX                            ; 005badf5
-    PUSH 0x65317c                       ; 005badf6 | = "Our destination" | s_Our_destination_0065317c = Our destination
+    PUSH 0x65317c                       ; 005badf6 | = "Our destination"
     MOV EBX,dword ptr [ESP + 0x20]      ; 005badfb
     PUSH EBX                            ; 005badff
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 005bae00 | int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 005bae00
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
     ADD ESP,0x18                        ; 005bae05
     POP EBX                             ; 005bae08
     RET                                 ; 005bae09

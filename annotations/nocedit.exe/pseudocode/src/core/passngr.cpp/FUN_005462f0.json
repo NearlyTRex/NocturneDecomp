@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 54, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 9, 
-    "suspect_count": 4, 
+    "assembly_lines": 9,
+    "complexity_score": 54,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0", 
-      "addr": "0040cfd0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000008;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);"
-    }
-  ], 
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "005462f0", 
-    "signature": "undefined core_passngr.cpp_FUN_005462f0()", 
+    "address": "005462f0",
     "address_range": [
       [
-        "005462f0", 
+        "005462f0",
         "00546302"
       ]
-    ], 
-    "name": "core_passngr.cpp_FUN_005462f0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_passngr.cpp_FUN_005462f0",
+    "signature": "undefined core_passngr.cpp_FUN_005462f0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cfd0",
+      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "FILE *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    }
+  ]
 }

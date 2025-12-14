@@ -84,11 +84,11 @@ section .text
     SUB ESP,0x924                       ; 0059eb56
     AND ESP,0xfffffff8                  ; 0059eb5c
     FLD float ptr [EBP + 0x20]          ; 0059eb5f
-    FCOMP double ptr [0x0064edf0]       ; 0059eb62 | double DOUBLE_0064edf0
+    FCOMP double ptr [0x0064edf0]       ; 0059eb62 | DOUBLE_0064edf0
     FNSTSW AX                           ; 0059eb68
     SAHF                                ; 0059eb6a
-    JA 0x0059eb74                       ; 0059eb6b | LAB_0059eb74
-        ;   XREF to: 0059eb74 (CONDITIONAL_JUMP)
+    JA 0x0059eb74                       ; 0059eb6b
+        ;   XREF to: 0059eb74 (CONDITIONAL_JUMP)  ; LAB_0059eb74
     MOV ESP,EBP                         ; 0059eb6d
         ;   Label: LAB_0059eb6d
     POP EBP                             ; 0059eb6f
@@ -108,25 +108,25 @@ section .text
     PUSH EDX                            ; 0059eb8d
     MOV ECX,dword ptr [EBP + 0x14]      ; 0059eb8e
     PUSH ECX                            ; 0059eb91
-    CALL core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 ; 0059eb92 | void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
-        ;   XREF to: 0052e4c0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 ; 0059eb92
+        ;   XREF to: 0052e4c0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
     ADD ESP,0x18                        ; 0059eb97
     MOV EBX,dword ptr [EBP + 0x14]      ; 0059eb9a
     PUSH EBX                            ; 0059eb9d
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0059eb9e | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0059eb9e
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0059eba3
     MOV ESI,dword ptr [EBP + 0x14]      ; 0059eba6
     MOV EDI,dword ptr [ESI + 0x2250]    ; 0059eba9
     MOV EBX,EAX                         ; 0059ebaf
     TEST EDI,EDI                        ; 0059ebb1
-    JNZ 0x0059eefc                      ; 0059ebb3 | LAB_0059eefc
-        ;   XREF to: 0059eefc (CONDITIONAL_JUMP)
+    JNZ 0x0059eefc                      ; 0059ebb3
+        ;   XREF to: 0059eefc (CONDITIONAL_JUMP)  ; LAB_0059eefc
     MOV ESI,dword ptr [EAX + 0x28558]   ; 0059ebb9
     MOV dword ptr [ESP + 0x91c],EDI     ; 0059ebbf
     TEST ESI,ESI                        ; 0059ebc6
-    JLE 0x0059ecd9                      ; 0059ebc8 | LAB_0059ecd9
-        ;   XREF to: 0059ecd9 (CONDITIONAL_JUMP)
+    JLE 0x0059ecd9                      ; 0059ebc8
+        ;   XREF to: 0059ecd9 (CONDITIONAL_JUMP)  ; LAB_0059ecd9
     MOV EAX,dword ptr [EBP + 0x14]      ; 0059ebce
     MOV ESI,dword ptr [EBP + 0x14]      ; 0059ebd1
     ADD EAX,0x6b0                       ; 0059ebd4
@@ -138,12 +138,12 @@ section .text
     MOV EDI,dword ptr [ESP + 0x920]     ; 0059ebeb
     PUSH EDI                            ; 0059ebf2
     PUSH EBX                            ; 0059ebf3
-    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 ; 0059ebf4 | int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
-        ;   XREF to: 0059a100 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 ; 0059ebf4
+        ;   XREF to: 0059a100 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0059ebf9
     TEST EAX,EAX                        ; 0059ebfc
-    JL 0x0059ec9a                       ; 0059ebfe | LAB_0059ec9a
-        ;   XREF to: 0059ec9a (CONDITIONAL_JUMP)
+    JL 0x0059ec9a                       ; 0059ebfe
+        ;   XREF to: 0059ec9a (CONDITIONAL_JUMP)  ; LAB_0059ec9a
     MOV EDX,dword ptr [EBP + 0x14]      ; 0059ec04
     PUSH EDX                            ; 0059ec07
     PUSH EAX                            ; 0059ec08
@@ -167,8 +167,8 @@ section .text
     PUSH EBX                            ; 0059ec41
     LEA ESI,[ESP + 0x7ec]               ; 0059ec42
     LEA EDI,[ESP + 0x80c]               ; 0059ec49
-    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059ec50 | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
-        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059ec50
+        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
     LEA ESI,[ESP + 0x7ec]               ; 0059ec55
     ADD ESP,0x14                        ; 0059ec5c
     LEA EAX,[ESP + 0x7f8]               ; 0059ec5f
@@ -180,8 +180,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0059ec71
     PUSH ECX                            ; 0059ec72
     LEA ESI,[ESP + 0x7f0]               ; 0059ec73
-    CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 0059ec7a | CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
-        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 0059ec7a
+        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
     ADD ESP,0xc                         ; 0059ec7f
     MOV EDI,dword ptr [ESP + 0x904]     ; 0059ec82
     LEA ESI,[ESP + 0x7e4]               ; 0059ec89
@@ -202,12 +202,12 @@ section .text
     MOV dword ptr [ESP + 0x90c],EAX     ; 0059ecc3
     MOV dword ptr [ESP + 0x91c],EDX     ; 0059ecca
     CMP EDX,ECX                         ; 0059ecd1
-    JL 0x0059ebe7                       ; 0059ecd3 | LAB_0059ebe7
-        ;   XREF to: 0059ebe7 (CONDITIONAL_JUMP)
+    JL 0x0059ebe7                       ; 0059ecd3
+        ;   XREF to: 0059ebe7 (CONDITIONAL_JUMP)  ; LAB_0059ebe7
     CMP dword ptr [EBP + 0x24],0x0      ; 0059ecd9
         ;   Label: LAB_0059ecd9
-    JGE 0x0059eb6d                      ; 0059ecdd | LAB_0059eb6d
-        ;   XREF to: 0059eb6d (CONDITIONAL_JUMP)
+    JGE 0x0059eb6d                      ; 0059ecdd
+        ;   XREF to: 0059eb6d (CONDITIONAL_JUMP)  ; LAB_0059eb6d
     MOV ESI,dword ptr [ESP + 0x8dc]     ; 0059ece3
     LEA EAX,[ESI*0x4 + 0x0]             ; 0059ecea
     SUB EAX,ESI                         ; 0059ecf1
@@ -307,8 +307,8 @@ section .text
     FSTP float ptr [ESP + 0x8d4]        ; 0059eec2
     FSTP float ptr [ESP + 0x8d8]        ; 0059eec9
     CMP EBX,EAX                         ; 0059eed0
-    JZ 0x0059eb6d                       ; 0059eed2 | LAB_0059eb6d
-        ;   XREF to: 0059eb6d (CONDITIONAL_JUMP)
+    JZ 0x0059eb6d                       ; 0059eed2
+        ;   XREF to: 0059eb6d (CONDITIONAL_JUMP)  ; LAB_0059eb6d
     MOV EAX,dword ptr [ESP + 0x8d0]     ; 0059eed8
     MOV dword ptr [EBX],EAX             ; 0059eedf
     MOV EAX,dword ptr [ESP + 0x8d4]     ; 0059eee1
@@ -323,14 +323,14 @@ section .text
     RET                                 ; 0059eefb
     CMP EDI,0x1                         ; 0059eefc
         ;   Label: LAB_0059eefc
-    JNZ 0x0059f1fa                      ; 0059eeff | LAB_0059f1fa
-        ;   XREF to: 0059f1fa (CONDITIONAL_JUMP)
+    JNZ 0x0059f1fa                      ; 0059eeff
+        ;   XREF to: 0059f1fa (CONDITIONAL_JUMP)  ; LAB_0059f1fa
     XOR EDI,EDI                         ; 0059ef05
     MOV EDX,dword ptr [EAX + 0x28558]   ; 0059ef07
     MOV dword ptr [ESP + 0x918],EDI     ; 0059ef0d
     TEST EDX,EDX                        ; 0059ef14
-    JLE 0x0059ef8c                      ; 0059ef16 | LAB_0059ef8c
-        ;   XREF to: 0059ef8c (CONDITIONAL_JUMP)
+    JLE 0x0059ef8c                      ; 0059ef16
+        ;   XREF to: 0059ef8c (CONDITIONAL_JUMP)  ; LAB_0059ef8c
     MOV dword ptr [ESP + 0x8f4],EDI     ; 0059ef18
     MOV dword ptr [ESP + 0x910],EDI     ; 0059ef1f
     MOV EAX,dword ptr [EBP + 0x24]      ; 0059ef26
@@ -339,14 +339,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x91c]     ; 0059ef2a
     PUSH EDX                            ; 0059ef31
     PUSH EBX                            ; 0059ef32
-    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 ; 0059ef33 | int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
-        ;   XREF to: 0059a100 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 ; 0059ef33
+        ;   XREF to: 0059a100 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0059ef38
     MOV ESI,dword ptr [ESP + 0x910]     ; 0059ef3b
     MOV dword ptr [ESP + ESI*0x1 + 0x644],EAX ; 0059ef42
     TEST EAX,EAX                        ; 0059ef49
-    JGE 0x0059f10b                      ; 0059ef4b | LAB_0059f10b
-        ;   XREF to: 0059f10b (CONDITIONAL_JUMP)
+    JGE 0x0059f10b                      ; 0059ef4b
+        ;   XREF to: 0059f10b (CONDITIONAL_JUMP)  ; LAB_0059f10b
     MOV EDI,dword ptr [ESP + 0x910]     ; 0059ef51
         ;   Label: LAB_0059ef51
     MOV EAX,dword ptr [ESP + 0x8f4]     ; 0059ef58
@@ -359,16 +359,16 @@ section .text
     MOV dword ptr [ESP + 0x8f4],EAX     ; 0059ef7a
     MOV dword ptr [ESP + 0x918],EDX     ; 0059ef81
     CMP EDX,ECX                         ; 0059ef88
-    JL 0x0059ef26                       ; 0059ef8a | LAB_0059ef26
-        ;   XREF to: 0059ef26 (CONDITIONAL_JUMP)
+    JL 0x0059ef26                       ; 0059ef8a
+        ;   XREF to: 0059ef26 (CONDITIONAL_JUMP)  ; LAB_0059ef26
     MOV ESI,dword ptr [EBP + 0x24]      ; 0059ef8c
         ;   Label: LAB_0059ef8c
     LEA EAX,[ESI*0x8 + 0x0]             ; 0059ef8f
     ADD EAX,ESI                         ; 0059ef96
     MOV EDI,dword ptr [EBX + EAX*0x4 + 0x2857c] ; 0059ef98
     TEST EDI,EDI                        ; 0059ef9f
-    JL 0x0059efd9                       ; 0059efa1 | LAB_0059efd9
-        ;   XREF to: 0059efd9 (CONDITIONAL_JUMP)
+    JL 0x0059efd9                       ; 0059efa1
+        ;   XREF to: 0059efd9 (CONDITIONAL_JUMP)  ; LAB_0059efd9
     MOV ESI,dword ptr [ESP + 0x8dc]     ; 0059efa3
     PUSH dword ptr [ESP]                ; 0059efaa
     PUSH ESI                            ; 0059efad
@@ -377,8 +377,8 @@ section .text
     PUSH EDI                            ; 0059efb6
     PUSH EBX                            ; 0059efb7
     LEA ESI,[ESP + 0x858]               ; 0059efb8
-    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059efbf | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
-        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059efbf
+        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
     SHL EDI,0x4                         ; 0059efc4
     ADD ESP,0x14                        ; 0059efc7
     LEA ESI,[ESP + 0x844]               ; 0059efca
@@ -392,8 +392,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x28558]   ; 0059efdb
     MOV dword ptr [ESP + 0x914],EDX     ; 0059efe1
     TEST ECX,ECX                        ; 0059efe8
-    JLE 0x0059ecd9                      ; 0059efea | LAB_0059ecd9
-        ;   XREF to: 0059ecd9 (CONDITIONAL_JUMP)
+    JLE 0x0059ecd9                      ; 0059efea
+        ;   XREF to: 0059ecd9 (CONDITIONAL_JUMP)  ; LAB_0059ecd9
     MOV EAX,dword ptr [EBP + 0x14]      ; 0059eff0
     ADD EAX,0x6b0                       ; 0059eff3
     MOV dword ptr [ESP + 0x8ec],EAX     ; 0059eff8
@@ -406,16 +406,16 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8fc]     ; 0059f025
         ;   Label: LAB_0059f025
     CMP dword ptr [ESP + EAX*0x1 + 0x644],0x0 ; 0059f02c
-    JL 0x0059f0a5                       ; 0059f034 | LAB_0059f0a5
-        ;   XREF to: 0059f0a5 (CONDITIONAL_JUMP)
+    JL 0x0059f0a5                       ; 0059f034
+        ;   XREF to: 0059f0a5 (CONDITIONAL_JUMP)  ; LAB_0059f0a5
     MOV ESI,dword ptr [ESP + 0x914]     ; 0059f036
     MOV EAX,dword ptr [ESP + 0x908]     ; 0059f03d
     SHL ESI,0x4                         ; 0059f044
     MOV EAX,dword ptr [EAX + 0x2857c]   ; 0059f047
     MOV dword ptr [ESP + 0x8f0],ESI     ; 0059f04d
     TEST EAX,EAX                        ; 0059f054
-    JGE 0x0059f151                      ; 0059f056 | LAB_0059f151
-        ;   XREF to: 0059f151 (CONDITIONAL_JUMP)
+    JGE 0x0059f151                      ; 0059f056
+        ;   XREF to: 0059f151 (CONDITIONAL_JUMP)  ; LAB_0059f151
     LEA EDI,[ESP + 0x864]               ; 0059f05c
     LEA ESI,[ESP + ESI*0x1 + 0x4]       ; 0059f063
     MOVSD ES:EDI,ESI                    ; 0059f067
@@ -429,8 +429,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x900]     ; 0059f076
     PUSH ESI                            ; 0059f07d
     LEA ESI,[ESP + 0x810]               ; 0059f07e
-    CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 0059f085 | CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
-        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 0059f085
+        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
     ADD ESP,0xc                         ; 0059f08a
     MOV EDI,dword ptr [ESP + 0x900]     ; 0059f08d
     LEA ESI,[ESP + 0x804]               ; 0059f094
@@ -457,10 +457,10 @@ section .text
     MOV EDX,dword ptr [EBX + 0x28558]   ; 0059f0f1
     MOV dword ptr [ESP + 0x914],EAX     ; 0059f0f7
     CMP EAX,EDX                         ; 0059f0fe
-    JGE 0x0059ecd9                      ; 0059f100 | LAB_0059ecd9
-        ;   XREF to: 0059ecd9 (CONDITIONAL_JUMP)
-    JMP 0x0059f025                      ; 0059f106 | LAB_0059f025
-        ;   XREF to: 0059f025 (UNCONDITIONAL_JUMP)
+    JGE 0x0059ecd9                      ; 0059f100
+        ;   XREF to: 0059ecd9 (CONDITIONAL_JUMP)  ; LAB_0059ecd9
+    JMP 0x0059f025                      ; 0059f106
+        ;   XREF to: 0059f025 (UNCONDITIONAL_JUMP)  ; LAB_0059f025
     MOV ESI,dword ptr [ESP + 0x8dc]     ; 0059f10b
         ;   Label: LAB_0059f10b
     PUSH dword ptr [ESP]                ; 0059f112
@@ -471,8 +471,8 @@ section .text
     PUSH EAX                            ; 0059f125
     PUSH EBX                            ; 0059f126
     LEA ESI,[ESP + 0x828]               ; 0059f127
-    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059f12e | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
-        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059f12e
+        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
     ADD ESP,0x14                        ; 0059f133
     MOV EDI,dword ptr [ESP + 0x8f4]     ; 0059f136
     LEA ESI,[ESP + 0x814]               ; 0059f13d
@@ -481,8 +481,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0059f149
     MOVSD ES:EDI,ESI                    ; 0059f14a
     MOVSD ES:EDI,ESI                    ; 0059f14b
-    JMP 0x0059ef51                      ; 0059f14c | LAB_0059ef51
-        ;   XREF to: 0059ef51 (UNCONDITIONAL_JUMP)
+    JMP 0x0059ef51                      ; 0059f14c
+        ;   XREF to: 0059ef51 (UNCONDITIONAL_JUMP)  ; LAB_0059ef51
     SHL EAX,0x4                         ; 0059f151
         ;   Label: LAB_0059f151
     MOV dword ptr [ESP + 0x920],EAX     ; 0059f154
@@ -491,8 +491,8 @@ section .text
     PUSH EAX                            ; 0059f166
     LEA ESI,[ESP + 0x858]               ; 0059f167
     LEA EDI,[ESP + 0x888]               ; 0059f16e
-    CALL core_xform.cpp_negateFirstComponent_FUN_005f75e0 ; 0059f175 | void core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * output_vector, CQuaternion4f * input_vector)
-        ;   XREF to: 005f75e0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_negateFirstComponent_FUN_005f75e0 ; 0059f175
+        ;   XREF to: 005f75e0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * output_vector, CQuaternion4f * input_vector)
     ADD ESP,0x4                         ; 0059f17a
     LEA EAX,[ESP + 0x884]               ; 0059f17d
     MOV EDX,dword ptr [ESP + 0x8f0]     ; 0059f184
@@ -506,8 +506,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0059f19c
     PUSH EAX                            ; 0059f19d
     LEA ESI,[ESP + 0x87c]               ; 0059f19e
-    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059f1a5 | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
-        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059f1a5
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
     ADD ESP,0x8                         ; 0059f1aa
     MOV EAX,dword ptr [ESP + 0x8ec]     ; 0059f1ad
     MOV ECX,dword ptr [ESP + 0x920]     ; 0059f1b4
@@ -523,21 +523,21 @@ section .text
     PUSH EAX                            ; 0059f1d7
     LEA ESI,[ESP + 0x83c]               ; 0059f1d8
     LEA EDI,[ESP + 0x86c]               ; 0059f1df
-    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059f1e6 | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
-        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059f1e6
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
     LEA ESI,[ESP + 0x83c]               ; 0059f1eb
     ADD ESP,0x8                         ; 0059f1f2
-    JMP 0x0059f067                      ; 0059f1f5 | LAB_0059f067
-        ;   XREF to: 0059f067 (UNCONDITIONAL_JUMP)
-    MOV ECX,0x64edd0                    ; 0059f1fa | = "..\\core\\skeleton.cpp" | s_core_skeleton_cpp_0064edd0 = ..\core\skeleton.cpp
+    JMP 0x0059f067                      ; 0059f1f5
+        ;   XREF to: 0059f067 (UNCONDITIONAL_JUMP)  ; LAB_0059f067
+    MOV ECX,0x64edd0                    ; 0059f1fa | = "..\\core\\skeleton.cpp"
         ;   Label: LAB_0059f1fa
     MOV ESI,0xa82                       ; 0059f1ff
-    PUSH 0x64ede5                       ; 0059f204 | = "Write me!" | s_Write_me_0064ede5 = Write me!
-    MOV dword ptr [0x02f0ca48],ECX      ; 0059f209 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 0059f20f | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0059f215 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64ede5                       ; 0059f204 | = "Write me!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 0059f209 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 0059f20f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0059f215
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0059f21a
-    JMP 0x0059ecd9                      ; 0059f21d | LAB_0059ecd9
-        ;   XREF to: 0059ecd9 (UNCONDITIONAL_JUMP)
+    JMP 0x0059ecd9                      ; 0059f21d
+        ;   XREF to: 0059ecd9 (UNCONDITIONAL_JUMP)  ; LAB_0059ecd9
 

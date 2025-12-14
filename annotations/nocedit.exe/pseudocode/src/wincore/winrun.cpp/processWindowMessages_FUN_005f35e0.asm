@@ -44,17 +44,17 @@ section .text
     XOR EDX,EDX                         ; 005f35e6
     XOR EAX,EAX                         ; 005f35e8
     XOR EBX,EBX                         ; 005f35ea
-    CMP dword ptr [EDX + 0x3f9847c],0x1 ; 005f35ec | g_MessageFlags[1]
+    CMP dword ptr [EDX + 0x3f9847c],0x1 ; 005f35ec | g_MessageFlags[1] | g_MessageFlags[2]
         ;   Label: LAB_005f35ec
-    JZ 0x005f3633                       ; 005f35f3 | LAB_005f3633
-        ;   XREF to: 005f3633 (CONDITIONAL_JUMP)
+    JZ 0x005f3633                       ; 005f35f3
+        ;   XREF to: 005f3633 (CONDITIONAL_JUMP)  ; LAB_005f3633
     ADD EDX,0x4                         ; 005f35f5
         ;   Label: LAB_005f35f5
     INC EAX                             ; 005f35f8
-    MOV dword ptr [EDX + 0x3f98478],EBX ; 005f35f9 | g_MessageFlags[1]
+    MOV dword ptr [EDX + 0x3f98478],EBX ; 005f35f9 | g_MessageFlags[1] | g_MessageFlags[2]
     CMP EAX,0x258                       ; 005f35ff
-    JL 0x005f35ec                       ; 005f3604 | LAB_005f35ec
-        ;   XREF to: 005f35ec (CONDITIONAL_JUMP)
+    JL 0x005f35ec                       ; 005f3604
+        ;   XREF to: 005f35ec (CONDITIONAL_JUMP)  ; LAB_005f35ec
     XOR EBX,EBX                         ; 005f3606
     PUSH 0x1                            ; 005f3608
         ;   Label: LAB_005f3608
@@ -63,41 +63,41 @@ section .text
     PUSH EBX                            ; 005f360c
     LEA EAX,[ESP + 0x10]                ; 005f360d
     PUSH EAX                            ; 005f3611
-    CALL dword ptr CS:[0x6114d0]        ; 005f3612 | PeekMessageA * PTR_PeekMessageA_006114d0
+    CALL dword ptr CS:[0x6114d0]        ; 005f3612 | PTR_PeekMessageA_006114d0
     TEST EAX,EAX                        ; 005f3619
-    JZ 0x005f363b                       ; 005f361b | LAB_005f363b
-        ;   XREF to: 005f363b (CONDITIONAL_JUMP)
+    JZ 0x005f363b                       ; 005f361b
+        ;   XREF to: 005f363b (CONDITIONAL_JUMP)  ; LAB_005f363b
     MOV EAX,ESP                         ; 005f361d
     PUSH EAX                            ; 005f361f
-    CALL dword ptr CS:[0x6114f8]        ; 005f3620 | TranslateMessage * PTR_TranslateMessage_006114f8
+    CALL dword ptr CS:[0x6114f8]        ; 005f3620 | PTR_TranslateMessage_006114f8
     MOV EAX,ESP                         ; 005f3627
     PUSH EAX                            ; 005f3629
-    CALL dword ptr CS:[0x61149c]        ; 005f362a | DispatchMessageA * PTR_DispatchMessageA_0061149c
-    JMP 0x005f3608                      ; 005f3631 | LAB_005f3608
-        ;   XREF to: 005f3608 (UNCONDITIONAL_JUMP)
-    MOV byte ptr [EAX + 0x2d03e98],BL   ; 005f3633 | char[256] g_KeyboardState
+    CALL dword ptr CS:[0x61149c]        ; 005f362a | PTR_DispatchMessageA_0061149c
+    JMP 0x005f3608                      ; 005f3631
+        ;   XREF to: 005f3608 (UNCONDITIONAL_JUMP)  ; LAB_005f3608
+    MOV byte ptr [EAX + 0x2d03e98],BL   ; 005f3633 | g_KeyboardState | CHAR_ARRAY_02d03e99
         ;   Label: LAB_005f3633
-    JMP 0x005f35f5                      ; 005f3639 | LAB_005f35f5
-        ;   XREF to: 005f35f5 (UNCONDITIONAL_JUMP)
-    MOV ESI,dword ptr [0x006849a4]      ; 005f363b | int g_WindowActive
+    JMP 0x005f35f5                      ; 005f3639
+        ;   XREF to: 005f35f5 (UNCONDITIONAL_JUMP)  ; LAB_005f35f5
+    MOV ESI,dword ptr [0x006849a4]      ; 005f363b | g_WindowActive
         ;   Label: LAB_005f363b
     CMP EBX,ESI                         ; 005f3641
-    JNZ 0x005f366a                      ; 005f3643 | LAB_005f366a
-        ;   XREF to: 005f366a (CONDITIONAL_JUMP)
-    MOV EDI,dword ptr [0x03f9846c]      ; 005f3645 | int g_InputDisabled
+    JNZ 0x005f366a                      ; 005f3643
+        ;   XREF to: 005f366a (CONDITIONAL_JUMP)  ; LAB_005f366a
+    MOV EDI,dword ptr [0x03f9846c]      ; 005f3645 | g_InputDisabled
     CMP ESI,EDI                         ; 005f364b
-    JNZ 0x005f366a                      ; 005f364d | LAB_005f366a
-        ;   XREF to: 005f366a (CONDITIONAL_JUMP)
-    CMP EDI,dword ptr [0x006849a8]      ; 005f364f | int g_ForceMessagePump
-    JZ 0x005f366a                       ; 005f3655 | LAB_005f366a
-        ;   XREF to: 005f366a (CONDITIONAL_JUMP)
-    CMP EDI,dword ptr [0x006849a4]      ; 005f3657 | int g_WindowActive
-    JNZ 0x005f3608                      ; 005f365d | LAB_005f3608
-        ;   XREF to: 005f3608 (CONDITIONAL_JUMP)
+    JNZ 0x005f366a                      ; 005f364d
+        ;   XREF to: 005f366a (CONDITIONAL_JUMP)  ; LAB_005f366a
+    CMP EDI,dword ptr [0x006849a8]      ; 005f364f | g_ForceMessagePump
+    JZ 0x005f366a                       ; 005f3655
+        ;   XREF to: 005f366a (CONDITIONAL_JUMP)  ; LAB_005f366a
+    CMP EDI,dword ptr [0x006849a4]      ; 005f3657 | g_WindowActive
+    JNZ 0x005f3608                      ; 005f365d
+        ;   XREF to: 005f3608 (CONDITIONAL_JUMP)  ; LAB_005f3608
     PUSH 0x14                           ; 005f365f
-    CALL dword ptr CS:[0x611644]        ; 005f3661 | Sleep * Sleep
-    JMP 0x005f3608                      ; 005f3668 | LAB_005f3608
-        ;   XREF to: 005f3608 (UNCONDITIONAL_JUMP)
+    CALL dword ptr CS:[0x611644]        ; 005f3661 | Sleep
+    JMP 0x005f3608                      ; 005f3668
+        ;   XREF to: 005f3608 (UNCONDITIONAL_JUMP)  ; LAB_005f3608
     ADD ESP,0x1c                        ; 005f366a
         ;   Label: LAB_005f366a
     POP EDI                             ; 005f366d

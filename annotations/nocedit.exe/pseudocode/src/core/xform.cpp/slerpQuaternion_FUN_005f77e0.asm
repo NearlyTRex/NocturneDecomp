@@ -64,14 +64,14 @@ section .text
     FCOMP double ptr [ESP + 0x18]       ; 005f77fe
     FNSTSW AX                           ; 005f7802
     SAHF                                ; 005f7804
-    JNC 0x005f7912                      ; 005f7805 | LAB_005f7912
-        ;   XREF to: 005f7912 (CONDITIONAL_JUMP)
+    JNC 0x005f7912                      ; 005f7805
+        ;   XREF to: 005f7912 (CONDITIONAL_JUMP)  ; LAB_005f7912
     FLD1                                ; 005f780b
     FCOMP double ptr [ESP + 0x18]       ; 005f780d
     FNSTSW AX                           ; 005f7811
     SAHF                                ; 005f7813
-    JBE 0x005f791a                      ; 005f7814 | LAB_005f791a
-        ;   XREF to: 005f791a (CONDITIONAL_JUMP)
+    JBE 0x005f791a                      ; 005f7814
+        ;   XREF to: 005f791a (CONDITIONAL_JUMP)  ; LAB_005f791a
     FLD float ptr [EDX + 0x4]           ; 005f781a
     FMUL float ptr [ESI + 0x4]          ; 005f781d
     FLD float ptr [EDX + 0x8]           ; 005f7820
@@ -98,15 +98,15 @@ section .text
     FCOMP double ptr [ESP]              ; 005f785a
     FNSTSW AX                           ; 005f785d
     SAHF                                ; 005f785f
-    JA 0x005f7920                       ; 005f7860 | LAB_005f7920
-        ;   XREF to: 005f7920 (CONDITIONAL_JUMP)
+    JA 0x005f7920                       ; 005f7860
+        ;   XREF to: 005f7920 (CONDITIONAL_JUMP)  ; LAB_005f7920
     FLD double ptr [ESP]                ; 005f7866
         ;   Label: LAB_005f7866
-    FCOMP double ptr [0x006583fd]       ; 005f7869 | double g_SlerpDotProductThreshold
+    FCOMP double ptr [0x006583fd]       ; 005f7869 | g_SlerpDotProductThreshold
     FNSTSW AX                           ; 005f786f
     SAHF                                ; 005f7871
-    JBE 0x005f795b                      ; 005f7872 | LAB_005f795b
-        ;   XREF to: 005f795b (CONDITIONAL_JUMP)
+    JBE 0x005f795b                      ; 005f7872
+        ;   XREF to: 005f795b (CONDITIONAL_JUMP)  ; LAB_005f795b
     FLD float ptr [EBP + 0x18]          ; 005f7878
     FLD1                                ; 005f787b
     FXCH                                ; 005f787d
@@ -170,12 +170,12 @@ section .text
     LEA EDI,[ESP + 0x30]                ; 005f7912
         ;   Label: LAB_005f7912
     MOV ESI,EDX                         ; 005f7916
-    JMP 0x005f78fc                      ; 005f7918 | LAB_005f78fc
-        ;   XREF to: 005f78fc (UNCONDITIONAL_JUMP)
+    JMP 0x005f78fc                      ; 005f7918
+        ;   XREF to: 005f78fc (UNCONDITIONAL_JUMP)  ; LAB_005f78fc
     LEA EDI,[ESP + 0x30]                ; 005f791a
         ;   Label: LAB_005f791a
-    JMP 0x005f78fc                      ; 005f791e | LAB_005f78fc
-        ;   XREF to: 005f78fc (UNCONDITIONAL_JUMP)
+    JMP 0x005f78fc                      ; 005f791e
+        ;   XREF to: 005f78fc (UNCONDITIONAL_JUMP)  ; LAB_005f78fc
     MOV AH,byte ptr [ESP + 0x27]        ; 005f7920
         ;   Label: LAB_005f7920
     MOV BL,byte ptr [ESP + 0x2b]        ; 005f7924
@@ -192,8 +192,8 @@ section .text
     XOR AH,0x80                         ; 005f794b
     MOV byte ptr [ESP + 0x23],BH        ; 005f794e
     MOV byte ptr [ESP + 0x7],AH         ; 005f7952
-    JMP 0x005f7866                      ; 005f7956 | LAB_005f7866
-        ;   XREF to: 005f7866 (UNCONDITIONAL_JUMP)
+    JMP 0x005f7866                      ; 005f7956
+        ;   XREF to: 005f7866 (UNCONDITIONAL_JUMP)  ; LAB_005f7866
     FLD double ptr [ESP]                ; 005f795b
         ;   Label: LAB_005f795b
     FLD ST0                             ; 005f795e
@@ -204,8 +204,8 @@ section .text
     FLD ST0                             ; 005f7968
     FLD ST2                             ; 005f796a
     FXCH                                ; 005f796c
-    CALL crt_math.c_atan2_FUN_006013b1  ; 005f796e | float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_atan2_FUN_006013b1  ; 005f796e
+        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
     FSTP ST2                            ; 005f7973
     FLD float ptr [EBP + 0x18]          ; 005f7975
     FLD1                                ; 005f7978
@@ -225,6 +225,6 @@ section .text
     FXCH                                ; 005f7994
     FSTP double ptr [ESP + 0x10]        ; 005f7996
     FSTP double ptr [ESP + 0x8]         ; 005f799a
-    JMP 0x005f789b                      ; 005f799e | LAB_005f789b
-        ;   XREF to: 005f789b (UNCONDITIONAL_JUMP)
+    JMP 0x005f789b                      ; 005f799e
+        ;   XREF to: 005f789b (UNCONDITIONAL_JUMP)  ; LAB_005f789b
 

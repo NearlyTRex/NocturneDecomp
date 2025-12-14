@@ -1,105 +1,105 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 35, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 3, 
-    "global_count": 3, 
-    "total_lines": 49, 
-    "assembly_lines": 29, 
-    "suspect_count": 1, 
+    "assembly_lines": 29,
+    "complexity_score": 35,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc", 
-      "addr": "006061fc"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomInheritanceLayout", 
-      "name": "DAT_00665e68", 
-      "addr": "00665e68", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomThunkedDestructor", 
-      "name": "PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74", 
-      "addr": "00665e74", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_FUN_00665e7c", 
-      "addr": "00665e7c", 
-      "value": "006063c9"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "piVar3[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "this_ptr = (istream *)&piVar3[-1].__xalloc_list;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00606376", 
-    "signature": "istream * crt_iostream.cpp_istream_ctor_FUN_00606376(istream * this_ptr, uint c1)", 
-    "address_range": [
-      [
-        "00606376", 
-        "006063c8"
-      ]
-    ], 
-    "name": "crt_iostream.cpp_istream_ctor_FUN_00606376"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "istream *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "c1"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 49
+  },
   "cross_references": [
     {
-      "from_addr": "005ff692", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fstream.cpp_ifstream_constructor_FUN_005ff664", 
-      "addr": "005ff664"
-    }, 
+      "addr": "005ff664",
+      "from_addr": "005ff692",
+      "name": "crt_fstream.cpp_ifstream_constructor_FUN_005ff664",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ff90c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0", 
-      "addr": "005ff8f0"
-    }, 
+      "addr": "005ff8f0",
+      "from_addr": "005ff90c",
+      "name": "crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ff54c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524", 
-      "addr": "005ff524"
+      "addr": "005ff524",
+      "from_addr": "005ff54c",
+      "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00606376",
+    "address_range": [
+      [
+        "00606376",
+        "006063c8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_iostream.cpp_istream_ctor_FUN_00606376",
+    "signature": "istream * crt_iostream.cpp_istream_ctor_FUN_00606376(istream * this_ptr, uint c1)"
+  },
+  "function_calls": [
+    {
+      "addr": "006061fc",
+      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00665e68",
+      "name": "DAT_00665e68",
+      "type": "WatcomInheritanceLayout",
+      "value": null
+    },
+    {
+      "addr": "00665e74",
+      "name": "PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74",
+      "type": "WatcomThunkedDestructor",
+      "value": null
+    },
+    {
+      "addr": "00665e7c",
+      "name": "PTR_FUN_00665e7c",
+      "type": "void*",
+      "value": "006063c9"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "istream *"
+      },
+      {
+        "is_param": true,
+        "name": "c1",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "piVar3[-1].",
+      "text": "this_ptr = (istream *)&piVar3[-1].__xalloc_list;",
+      "type": "negative_offset"
     }
   ]
 }

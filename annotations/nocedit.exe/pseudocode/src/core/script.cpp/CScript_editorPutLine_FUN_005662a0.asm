@@ -38,59 +38,59 @@ section .text
     MOV EDI,dword ptr [ESP + 0x10]      ; 005662a3
     MOV ESI,dword ptr [ESP + 0x14]      ; 005662a7
     TEST ESI,ESI                        ; 005662ab
-    JL 0x005662ef                       ; 005662ad | LAB_005662ef
-        ;   XREF to: 005662ef (CONDITIONAL_JUMP)
+    JL 0x005662ef                       ; 005662ad
+        ;   XREF to: 005662ef (CONDITIONAL_JUMP)  ; LAB_005662ef
     LEA EAX,[EDI + 0x38]                ; 005662af
     PUSH EAX                            ; 005662b2
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005662b3 | int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005662b3
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
     ADD EAX,0xa                         ; 005662b8
     ADD ESP,0x4                         ; 005662bb
     CMP ESI,EAX                         ; 005662be
-    JGE 0x005662ef                      ; 005662c0 | LAB_005662ef
-        ;   XREF to: 005662ef (CONDITIONAL_JUMP)
+    JGE 0x005662ef                      ; 005662c0
+        ;   XREF to: 005662ef (CONDITIONAL_JUMP)  ; LAB_005662ef
     LEA EBX,[EDI + 0x38]                ; 005662c2
         ;   Label: LAB_005662c2
     PUSH EBX                            ; 005662c5
         ;   Label: LAB_005662c5
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005662c6 | int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 005662c6
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
     ADD ESP,0x4                         ; 005662cb
     CMP ESI,EAX                         ; 005662ce
-    JGE 0x00566314                      ; 005662d0 | LAB_00566314
-        ;   XREF to: 00566314 (CONDITIONAL_JUMP)
-    PUSH 0x31101c0                      ; 005662d2 | undefined1 DAT_031101c0
+    JGE 0x00566314                      ; 005662d0
+        ;   XREF to: 00566314 (CONDITIONAL_JUMP)  ; LAB_00566314
+    PUSH 0x31101c0                      ; 005662d2 | DAT_031101c0
     PUSH ESI                            ; 005662d7
     PUSH EBX                            ; 005662d8
-    CALL shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120 ; 005662d9 | void shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120(CStrList * this_ptr, int index, char * new_string)
-        ;   XREF to: 004a3120 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120 ; 005662d9
+        ;   XREF to: 004a3120 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120(CStrList * this_ptr, int index, char * new_string)
     ADD ESP,0xc                         ; 005662de
     PUSH ESI                            ; 005662e1
     PUSH EDI                            ; 005662e2
-    CALL core_script.cpp_FUN_00566800   ; 005662e3 | undefined core_script.cpp_FUN_00566800()
-        ;   XREF to: 00566800 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_00566800   ; 005662e3
+        ;   XREF to: 00566800 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566800()
     ADD ESP,0x8                         ; 005662e8
     POP EDI                             ; 005662eb
     POP ESI                             ; 005662ec
     POP EBX                             ; 005662ed
     RET                                 ; 005662ee
-    MOV EDX,0x643f95                    ; 005662ef | = "..\\core\\script.cpp" | s_core_script_cpp_00643f95 = ..\core\script.cpp
+    MOV EDX,0x643f95                    ; 005662ef | = "..\\core\\script.cpp"
         ;   Label: LAB_005662ef
     MOV ECX,0x1a83                      ; 005662f4
-    PUSH 0x643fa8                       ; 005662f9 | = "CScript::editorPutLine - invalid line..." | s_CScript_editorPutLine_in_00643fa8 = CScript::editorPutLine - invalid line number
-    MOV dword ptr [0x02f0ca48],EDX      ; 005662fe | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 00566304 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0056630a | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x643fa8                       ; 005662f9 | = "CScript::editorPutLine - invalid line..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 005662fe | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 00566304 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0056630a
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0056630f
-    JMP 0x005662c2                      ; 00566312 | LAB_005662c2
-        ;   XREF to: 005662c2 (UNCONDITIONAL_JUMP)
+    JMP 0x005662c2                      ; 00566312
+        ;   XREF to: 005662c2 (UNCONDITIONAL_JUMP)  ; LAB_005662c2
     PUSH 0x643fd5                       ; 00566314 | DAT_00643fd5
         ;   Label: LAB_00566314
     PUSH EBX                            ; 00566319
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0056631a | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0056631a
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 0056631f
-    JMP 0x005662c5                      ; 00566322 | LAB_005662c5
-        ;   XREF to: 005662c5 (UNCONDITIONAL_JUMP)
+    JMP 0x005662c5                      ; 00566322
+        ;   XREF to: 005662c5 (UNCONDITIONAL_JUMP)  ; LAB_005662c5
 

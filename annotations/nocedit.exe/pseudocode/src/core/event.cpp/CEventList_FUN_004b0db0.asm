@@ -43,8 +43,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x3ac8]    ; 004b0dc4
     MOV dword ptr [ESP + 0x15c],EDX     ; 004b0dca
     TEST ECX,ECX                        ; 004b0dd1
-    JLE 0x004b0e76                      ; 004b0dd3 | LAB_004b0e76
-        ;   XREF to: 004b0e76 (CONDITIONAL_JUMP)
+    JLE 0x004b0e76                      ; 004b0dd3
+        ;   XREF to: 004b0e76 (CONDITIONAL_JUMP)  ; LAB_004b0e76
     ADD EAX,0x3acc                      ; 004b0dd9
     MOV EBX,EAX                         ; 004b0dde
     ADD EAX,0x120                       ; 004b0de0
@@ -54,8 +54,8 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 004b0dee
     PUSH EAX                            ; 004b0df0
     XOR ESI,ESI                         ; 004b0df1
-    CALL sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720 ; 004b0df3 | double sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle, uint output_format)
-        ;   XREF to: 005a9720 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720 ; 004b0df3
+        ;   XREF to: 005a9720 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle, uint output_format)
     MOV dword ptr [ESP + 0x158],EAX     ; 004b0df8
     MOV dword ptr [ESP + 0x15c],EDX     ; 004b0dff
     FLDZ                                ; 004b0e06
@@ -67,12 +67,12 @@ section .text
     FCOMP double ptr [EBX + 0x118]      ; 004b0e25
     FNSTSW AX                           ; 004b0e2b
     SAHF                                ; 004b0e2d
-    JBE 0x004b0e7d                      ; 004b0e2e | LAB_004b0e7d
-        ;   XREF to: 004b0e7d (CONDITIONAL_JUMP)
+    JBE 0x004b0e7d                      ; 004b0e2e
+        ;   XREF to: 004b0e7d (CONDITIONAL_JUMP)  ; LAB_004b0e7d
     TEST ESI,ESI                        ; 004b0e30
         ;   Label: LAB_004b0e30
-    JZ 0x004b0ebe                       ; 004b0e32 | LAB_004b0ebe
-        ;   XREF to: 004b0ebe (CONDITIONAL_JUMP)
+    JZ 0x004b0ebe                       ; 004b0e32
+        ;   XREF to: 004b0ebe (CONDITIONAL_JUMP)  ; LAB_004b0ebe
     MOV EAX,dword ptr [ESP + 0x158]     ; 004b0e38
         ;   Label: LAB_004b0e38
     MOV EDX,dword ptr [ESP + 0x15c]     ; 004b0e3f
@@ -85,8 +85,8 @@ section .text
         ;   Label: LAB_004b0e60
     MOV EAX,dword ptr [ESP + 0x15c]     ; 004b0e63
     CMP EAX,dword ptr [ESI + 0x3ac8]    ; 004b0e6a
-    JL 0x004b0dec                       ; 004b0e70 | LAB_004b0dec
-        ;   XREF to: 004b0dec (CONDITIONAL_JUMP)
+    JL 0x004b0dec                       ; 004b0e70
+        ;   XREF to: 004b0dec (CONDITIONAL_JUMP)  ; LAB_004b0dec
     MOV ESP,EBP                         ; 004b0e76
         ;   Label: LAB_004b0e76
     POP EBP                             ; 004b0e78
@@ -97,19 +97,19 @@ section .text
     MOV EAX,ESP                         ; 004b0e7d
         ;   Label: LAB_004b0e7d
     PUSH EAX                            ; 004b0e7f
-    CALL sound_sndmain.cpp_CSfxSample_init_FUN_005a8480 ; 004b0e80 | CSfxSample * sound_sndmain.cpp_CSfxSample_init_FUN_005a8480(CSfxSample * this_ptr)
-        ;   XREF to: 005a8480 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_CSfxSample_init_FUN_005a8480 ; 004b0e80
+        ;   XREF to: 005a8480 (UNCONDITIONAL_CALL)  ; CSfxSample * sound_sndmain.cpp_CSfxSample_init_FUN_005a8480(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 004b0e85
     MOV EAX,ESP                         ; 004b0e88
     PUSH EAX                            ; 004b0e8a
     MOV EDX,dword ptr [EBX]             ; 004b0e8b
     PUSH EDX                            ; 004b0e8d
-    CALL sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0 ; 004b0e8e | int sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0(uint sfx_handle, CSfxSample * output_buffer)
-        ;   XREF to: 005a96e0 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0 ; 004b0e8e
+        ;   XREF to: 005a96e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0(uint sfx_handle, CSfxSample * output_buffer)
     ADD ESP,0x8                         ; 004b0e93
     TEST EAX,EAX                        ; 004b0e96
-    JZ 0x004b0e30                       ; 004b0e98 | LAB_004b0e30
-        ;   XREF to: 004b0e30 (CONDITIONAL_JUMP)
+    JZ 0x004b0e30                       ; 004b0e98
+        ;   XREF to: 004b0e30 (CONDITIONAL_JUMP)  ; LAB_004b0e30
     MOV ESI,ESP                         ; 004b0e9a
     LEA EDI,[EBX + 0x18]                ; 004b0e9c
     PUSH EDI                            ; 004b0e9f
@@ -117,19 +117,19 @@ section .text
         ;   Label: LAB_004b0ea0
     MOV byte ptr [EDI],AL               ; 004b0ea2
     CMP AL,0x0                          ; 004b0ea4
-    JZ 0x004b0eb8                       ; 004b0ea6 | LAB_004b0eb8
-        ;   XREF to: 004b0eb8 (CONDITIONAL_JUMP)
+    JZ 0x004b0eb8                       ; 004b0ea6
+        ;   XREF to: 004b0eb8 (CONDITIONAL_JUMP)  ; LAB_004b0eb8
     MOV AL,byte ptr [ESI + 0x1]         ; 004b0ea8
     ADD ESI,0x2                         ; 004b0eab
     MOV byte ptr [EDI + 0x1],AL         ; 004b0eae
     ADD EDI,0x2                         ; 004b0eb1
     CMP AL,0x0                          ; 004b0eb4
-    JNZ 0x004b0ea0                      ; 004b0eb6 | LAB_004b0ea0
-        ;   XREF to: 004b0ea0 (CONDITIONAL_JUMP)
+    JNZ 0x004b0ea0                      ; 004b0eb6
+        ;   XREF to: 004b0ea0 (CONDITIONAL_JUMP)  ; LAB_004b0ea0
     POP EDI                             ; 004b0eb8
         ;   Label: LAB_004b0eb8
-    JMP 0x004b0e38                      ; 004b0eb9 | LAB_004b0e38
-        ;   XREF to: 004b0e38 (UNCONDITIONAL_JUMP)
+    JMP 0x004b0e38                      ; 004b0eb9
+        ;   XREF to: 004b0e38 (UNCONDITIONAL_JUMP)  ; LAB_004b0e38
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b0ebe
         ;   Label: LAB_004b0ebe
     MOV ECX,dword ptr [EAX + 0x3ac8]    ; 004b0ec1
@@ -143,9 +143,9 @@ section .text
     MOV EDI,dword ptr [ESP + 0x15c]     ; 004b0ee0
     PUSH EDI                            ; 004b0ee7
     PUSH EBX                            ; 004b0ee8
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b0ee9 | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b0ee9
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004b0eee
-    JMP 0x004b0e60                      ; 004b0ef1 | LAB_004b0e60
-        ;   XREF to: 004b0e60 (UNCONDITIONAL_JUMP)
+    JMP 0x004b0e60                      ; 004b0ef1
+        ;   XREF to: 004b0e60 (UNCONDITIONAL_JUMP)  ; LAB_004b0e60
 

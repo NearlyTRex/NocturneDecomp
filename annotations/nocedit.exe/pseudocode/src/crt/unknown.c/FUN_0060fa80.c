@@ -9,6 +9,6 @@
 void crt_unknown_c_FUN_0060fa80(void)
 
 {
-  (*(code *)PTR_FUN_0068502b)();
+  (*PTR_FUN_0068502b)();
   return;
 }

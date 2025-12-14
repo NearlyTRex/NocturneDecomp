@@ -39,27 +39,27 @@ section .text
     MOV EBX,ESP                         ; 00452128
     MOV dword ptr [ESP + 0x14],EAX      ; 0045212a
     LEA EAX,[ESP + 0xc]                 ; 0045212e
-    MOV EDX,dword ptr [0x006703ec]      ; 00452132 | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00452132 | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 00452138
-    FMUL float ptr [0x0065c63c]         ; 0045213a | float g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 0045213a | g_CameraFixedPointScale
     FISTP dword ptr [EBX]               ; 00452140
     FLD float ptr [EAX + 0x4]           ; 00452142
-    FMUL float ptr [0x0065c63c]         ; 00452145 | float g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452145 | g_CameraFixedPointScale
     FISTP dword ptr [EBX + 0x4]         ; 0045214b
     FLD float ptr [EAX + 0x8]           ; 0045214e
-    FMUL float ptr [0x0065c63c]         ; 00452151 | float g_CameraFixedPointScale
+    FMUL float ptr [0x0065c63c]         ; 00452151 | g_CameraFixedPointScale
     FISTP dword ptr [EBX + 0x8]         ; 00452157
     MOV EAX,ESP                         ; 0045215a
     MOV EBX,dword ptr [ESP + 0x20]      ; 0045215c
     PUSH EAX                            ; 00452160
     LEA EAX,[EBX*0x4 + 0x0]             ; 00452161
     SUB EAX,EBX                         ; 00452168
-    MOV EDX,dword ptr [EDX]             ; 0045216a | CDemonRenderer g_CDemonRendererInstance
+    MOV EDX,dword ptr [EDX]             ; 0045216a | g_CDemonRendererInstance
     SHL EAX,0x4                         ; 0045216c
     ADD EAX,EDX                         ; 0045216f
     PUSH EAX                            ; 00452171
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00452172 | void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00452172
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00452177
     ADD ESP,0x18                        ; 0045217a
     POP EBX                             ; 0045217d

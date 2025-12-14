@@ -1,248 +1,248 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 136, 
-    "pseudocode_lines": 91, 
-    "cross_reference_count": 1, 
-    "global_count": 11, 
-    "total_lines": 369, 
-    "assembly_lines": 278, 
-    "suspect_count": 4, 
+    "assembly_lines": 278,
+    "complexity_score": 136,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 11,
+    "pseudocode_lines": 91,
+    "suspect_count": 4,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004fee00", 
-      "addr": "004fee00"
-    }, 
-    {
-      "name": "core_inv.cpp_drawItemIconBackground_FUN_005001e0", 
-      "addr": "005001e0"
-    }, 
-    {
-      "name": "core_inv.cpp_drawWeaponIconBackground_FUN_00500050", 
-      "addr": "00500050"
-    }, 
-    {
-      "name": "core_inv.cpp_loadInventory_FUN_004fd220", 
-      "addr": "004fd220"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_00630b0a", 
-      "addr": "00630b0a", 
-      "value": "65535"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_InventoryWidth", 
-      "addr": "0067ce40", 
-      "value": "0xd0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_InventoryHeight", 
-      "addr": "0067ce44", 
-      "value": "0x60"
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81cc4", 
-      "addr": "02d81cc4", 
-      "value": null
-    }, 
-    {
-      "type": "CHero*[4]", 
-      "name": "g_HeroActors", 
-      "addr": "02db87c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LocalHeroIndex", 
-      "addr": "02db87d0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_InventoryScreenHeight", 
-      "addr": "02dcd790", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX_00;"
-    }, 
-    {
-      "line": 42, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar4 = extraout_ECX;"
-    }, 
-    {
-      "line": 76, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar4 = extraout_ECX_00;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00500370", 
-    "signature": "void core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory * this_ptr)", 
-    "address_range": [
-      [
-        "00500370", 
-        "00500688"
-      ]
-    ], 
-    "name": "core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370"
-  }, 
-  "stack_frame": {
-    "local_size": 64, 
-    "variables": [
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CInventory *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 68, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 369
+  },
   "cross_references": [
     {
-      "from_addr": "0056c962", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
+      "addr": "0056c1a0",
+      "from_addr": "0056c962",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00500370",
+    "address_range": [
+      [
+        "00500370",
+        "00500688"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370",
+    "signature": "void core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fee00",
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004fee00"
+    },
+    {
+      "addr": "005001e0",
+      "name": "core_inv.cpp_drawItemIconBackground_FUN_005001e0"
+    },
+    {
+      "addr": "00500050",
+      "name": "core_inv.cpp_drawWeaponIconBackground_FUN_00500050"
+    },
+    {
+      "addr": "004fd220",
+      "name": "core_inv.cpp_loadInventory_FUN_004fd220"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00630b0a",
+      "name": "FLOAT_00630b0a",
+      "type": "float",
+      "value": "65535"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067ce40",
+      "name": "g_InventoryWidth",
+      "type": "int",
+      "value": "0xd0"
+    },
+    {
+      "addr": "0067ce44",
+      "name": "g_InventoryHeight",
+      "type": "int",
+      "value": "0x60"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81cc4",
+      "name": "DAT_02d81cc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dcd790",
+      "name": "g_InventoryScreenHeight",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_ECX_00",
+      "text": "int extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 42,
+      "match": "extraout_ECX",
+      "text": "iVar4 = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 76,
+      "match": "extraout_ECX_00",
+      "text": "iVar4 = extraout_ECX_00;",
+      "type": "extra_output"
     }
   ]
 }

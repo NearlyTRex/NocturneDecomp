@@ -10,14 +10,15 @@ void __cdecl
 core_dmodel_cpp_writeModelDependencies_FUN_0047ee30(FILE *dependency_file,char *model_filename)
 
 {
+  CKeyFramedModel *this_ptr;
   CKeyFramedModel *pCVar1;
   FILE *in_stack_00000014;
   
   crt_stdio_c_fprintf_FUN_005fe6d0(dependency_file,"models\\%s\n",model_filename);
-  pCVar1 = (CKeyFramedModel *)
-           shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x56d8,"..\\core\\dmodel.cpp",0xe8a);
-  if (pCVar1 != (CKeyFramedModel *)0x0) {
-    pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(pCVar1);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x56d8,"..\\core\\dmodel.cpp",0xe8a);
+  pCVar1 = (CKeyFramedModel *)0x0;
+  if (this_ptr != (CKeyFramedModel *)0x0) {
+    pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(this_ptr);
   }
   if (pCVar1 == (CKeyFramedModel *)0x0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";

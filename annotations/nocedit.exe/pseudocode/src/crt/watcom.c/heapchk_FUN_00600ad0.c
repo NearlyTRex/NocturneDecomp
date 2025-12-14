@@ -14,9 +14,9 @@ int __cdecl crt_watcom_c_heapchk_FUN_00600ad0(void)
   HeapState HStack_18;
   int iStack_8;
   
-  (*(code *)PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
+  (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
   if (DAT_03f9b850 != '\0') {
-    (*(code *)PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
+    (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
     return 0;
   }
   iVar1 = crt_unknown_c_FUN_00600990();
@@ -34,7 +34,7 @@ int __cdecl crt_watcom_c_heapchk_FUN_00600ad0(void)
     }
     if (iStack_8 == 0) {
       if (iVar1 == 5) {
-        (*(code *)PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
+        (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
         return 3;
       }
       if (iVar1 == 4) {
@@ -48,6 +48,6 @@ int __cdecl crt_watcom_c_heapchk_FUN_00600ad0(void)
     }
   }
 LAB_00600b87:
-  (*(code *)PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
+  (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
   return iVar1;
 }

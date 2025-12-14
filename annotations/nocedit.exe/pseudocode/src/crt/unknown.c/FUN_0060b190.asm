@@ -25,8 +25,8 @@ section .text
     FNSTSW AX                           ; 0060b1a1
     MOV AL,0x2                          ; 0060b1a3
     SAHF                                ; 0060b1a5
-    JZ 0x0060b1aa                       ; 0060b1a6 | LAB_0060b1aa
-        ;   XREF to: 0060b1aa (CONDITIONAL_JUMP)
+    JZ 0x0060b1aa                       ; 0060b1a6
+        ;   XREF to: 0060b1aa (CONDITIONAL_JUMP)  ; LAB_0060b1aa
     MOV AL,0x3                          ; 0060b1a8
     FINIT                               ; 0060b1aa
         ;   Label: LAB_0060b1aa

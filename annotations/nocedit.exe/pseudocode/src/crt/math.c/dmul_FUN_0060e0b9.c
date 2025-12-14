@@ -108,8 +108,8 @@ double crt_math_c_dmul_FUN_0060e0b9(double a,double b)
   do {
     uVar12 = (ushort)(uVar18 >> 0x10);
     if ((uVar6 & 0x20000000000000) == 0) {
-      bVar20 = CARRY4(uVar15,uVar15);
-      if (bVar20) {
+      if (CARRY4(uVar15,uVar15)) {
+        bVar20 = true;
         if (((uVar15 & 0x7fffffff) == 0) && (bVar20 = (int)lVar1 != 0, !bVar20)) {
           bVar20 = (uVar6 & 1) != 0;
         }

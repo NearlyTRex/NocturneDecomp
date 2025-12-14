@@ -37,20 +37,20 @@ section .text
         ;   Label: core_weapon.cpp_CWeapon_ctor_FUN_005ede70
     MOV EBX,dword ptr [ESP + 0x8]       ; 005ede71
     PUSH EBX                            ; 005ede75
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 005ede76 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 005ede76
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005ede7b
     ADD EAX,0x158                       ; 005ede7e
     PUSH EAX                            ; 005ede83
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 005ede84 | CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 005ede84
+        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005ede89
     ADD EAX,0x1b0                       ; 005ede8c
     PUSH EAX                            ; 005ede91
-    CALL core_box.cpp_CBox_ctor_FUN_0041dc50 ; 005ede92 | CBox * core_box.cpp_CBox_ctor_FUN_0041dc50(CBox * this_ptr)
-        ;   XREF to: 0041dc50 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBox_ctor_FUN_0041dc50 ; 005ede92
+        ;   XREF to: 0041dc50 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041dc50(CBox * this_ptr)
     LEA EBX,[EAX + 0xfffffcf8]          ; 005ede97
-    MOV dword ptr [EBX + 0x154],0x6655b4 ; 005ede9d | CDemonActor_vtable g_CWeaponVTable
+    MOV dword ptr [EBX + 0x154],0x6655b4 ; 005ede9d | g_CWeaponVTable
     MOV dword ptr [EBX + 0x564],0x40a00000 ; 005edea7
     MOV dword ptr [EBX + 0x300],0x0     ; 005edeb1
     MOV dword ptr [EBX + 0x2d4],0x0     ; 005edebb
@@ -66,14 +66,14 @@ section .text
     MOV dword ptr [EBX + 0x2ec],0x0     ; 005edf1f
     ADD ESP,0x4                         ; 005edf29
     MOV dword ptr [EBX + 0x2f0],0x1     ; 005edf2c
-    PUSH 0x657ab1                       ; 005edf36 | = "gat.kfm" | s_gat_kfm_00657ab1 = gat.kfm
+    PUSH 0x657ab1                       ; 005edf36 | = "gat.kfm"
     MOV dword ptr [EBX + 0x2f4],0xff    ; 005edf3b
     LEA EAX,[EBX + 0x158]               ; 005edf45
     MOV dword ptr [EBX + 0x2f8],0x0     ; 005edf4b
     PUSH EAX                            ; 005edf55
     MOV dword ptr [EBX + 0x2fc],0x0     ; 005edf56
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 005edf60 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 005edf60
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005edf65
     MOV dword ptr [EBX + 0x570],0x0     ; 005edf68
     MOV EAX,EBX                         ; 005edf72

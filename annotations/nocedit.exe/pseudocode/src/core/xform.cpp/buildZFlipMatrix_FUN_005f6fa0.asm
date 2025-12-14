@@ -36,7 +36,7 @@ section .text
     SUB ESP,0x30                        ; 005f6fa1
     MOV EAX,ESI                         ; 005f6fa4
     FLD float ptr [ESP + 0x38]          ; 005f6fa6
-    FMUL double ptr [0x006583d5]        ; 005f6faa | double g_ZFlipMatrixScaleFactor
+    FMUL double ptr [0x006583d5]        ; 005f6faa | g_ZFlipMatrixScaleFactor
     MOV EDX,0x3f800000                  ; 005f6fb0
     MOV EDI,0xbf800000                  ; 005f6fb5
     XOR ECX,ECX                         ; 005f6fba

@@ -70,8 +70,8 @@ section .text
     FCOMP float ptr [ESI + 0x78]        ; 0051a454
     FNSTSW AX                           ; 0051a457
     SAHF                                ; 0051a459
-    JBE 0x0051a461                      ; 0051a45a | LAB_0051a461
-        ;   XREF to: 0051a461 (CONDITIONAL_JUMP)
+    JBE 0x0051a461                      ; 0051a45a
+        ;   XREF to: 0051a461 (CONDITIONAL_JUMP)  ; LAB_0051a461
     MOV EDX,0x1                         ; 0051a45c
     LEA EAX,[ESI + 0x60]                ; 0051a461
         ;   Label: LAB_0051a461
@@ -86,8 +86,8 @@ section .text
     FCOMP float ptr [ESI + 0x7c]        ; 0051a478
     FNSTSW AX                           ; 0051a47b
     SAHF                                ; 0051a47d
-    JBE 0x0051a483                      ; 0051a47e | LAB_0051a483
-        ;   XREF to: 0051a483 (CONDITIONAL_JUMP)
+    JBE 0x0051a483                      ; 0051a47e
+        ;   XREF to: 0051a483 (CONDITIONAL_JUMP)  ; LAB_0051a483
     OR DL,0x2                           ; 0051a480
     LEA EAX,[ESI + 0x6c]                ; 0051a483
         ;   Label: LAB_0051a483
@@ -102,14 +102,14 @@ section .text
     FCOMP float ptr [ESI + 0x80]        ; 0051a49a
     FNSTSW AX                           ; 0051a4a0
     SAHF                                ; 0051a4a2
-    JBE 0x0051a4a8                      ; 0051a4a3 | LAB_0051a4a8
-        ;   XREF to: 0051a4a8 (CONDITIONAL_JUMP)
+    JBE 0x0051a4a8                      ; 0051a4a3
+        ;   XREF to: 0051a4a8 (CONDITIONAL_JUMP)  ; LAB_0051a4a8
     OR DL,0x4                           ; 0051a4a5
     CMP EDX,0x6                         ; 0051a4a8
         ;   Label: LAB_0051a4a8
-    JA 0x0051a62f                       ; 0051a4ab | default
-        ;   XREF to: 0051a62f (CONDITIONAL_JUMP)
-    JMP dword ptr [EDX*0x4 + 0x51a3d8]  ; 0051a4b1 | undefined4 DAT_0051a3f4 | PTR_caseD_3_0051a3e4 = 0051a567 | PTR_caseD_5_0051a3ec = 0051a5d5
+    JA 0x0051a62f                       ; 0051a4ab
+        ;   XREF to: 0051a62f (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EDX*0x4 + 0x51a3d8]  ; 0051a4b1 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
     LEA EAX,[ESI + 0x44]                ; 0051a4b8
         ;   Label: caseD_0
@@ -139,8 +139,8 @@ section .text
     PUSH EBX                            ; 0051a4eb
     LEA EAX,[ESP + 0x38]                ; 0051a4ec
     PUSH EAX                            ; 0051a4f0
-    CALL shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90 ; 0051a4f1 | CVector3f * shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f * out_closest_point, CVector3f * query_point, CVector3f * edge_vertex_0, CVector3f * edge_vertex_1)
-        ;   XREF to: 00514f90 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90 ; 0051a4f1
+        ;   XREF to: 00514f90 (UNCONDITIONAL_CALL)  ; CVector3f * shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f * out_closest_point, CVector3f * query_point, CVector3f * edge_vertex_0, CVector3f * edge_vertex_1)
     FLD float ptr [EBX]                 ; 0051a4f6
     ADD ESP,0x10                        ; 0051a4f8
     FSUB float ptr [EAX]                ; 0051a4fb
@@ -170,8 +170,8 @@ section .text
     PUSH EBX                            ; 0051a52c
     LEA EAX,[ESP + 0x20]                ; 0051a52d
     PUSH EAX                            ; 0051a531
-    CALL shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90 ; 0051a532 | CVector3f * shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f * out_closest_point, CVector3f * query_point, CVector3f * edge_vertex_0, CVector3f * edge_vertex_1)
-        ;   XREF to: 00514f90 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90 ; 0051a532
+        ;   XREF to: 00514f90 (UNCONDITIONAL_CALL)  ; CVector3f * shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f * out_closest_point, CVector3f * query_point, CVector3f * edge_vertex_0, CVector3f * edge_vertex_1)
     FLD float ptr [EBX]                 ; 0051a537
     ADD ESP,0x10                        ; 0051a539
     FSUB float ptr [EAX]                ; 0051a53c
@@ -223,8 +223,8 @@ section .text
     PUSH EBX                            ; 0051a59a
     LEA EAX,[ESP + 0x14]                ; 0051a59b
     PUSH EAX                            ; 0051a59f
-    CALL shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90 ; 0051a5a0 | CVector3f * shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f * out_closest_point, CVector3f * query_point, CVector3f * edge_vertex_0, CVector3f * edge_vertex_1)
-        ;   XREF to: 00514f90 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90 ; 0051a5a0
+        ;   XREF to: 00514f90 (UNCONDITIONAL_CALL)  ; CVector3f * shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f * out_closest_point, CVector3f * query_point, CVector3f * edge_vertex_0, CVector3f * edge_vertex_1)
     FLD float ptr [EBX]                 ; 0051a5a5
     ADD ESP,0x10                        ; 0051a5a7
     FSUB float ptr [EAX]                ; 0051a5aa
@@ -291,22 +291,22 @@ section .text
     POP ESI                             ; 0051a62c
     POP EBX                             ; 0051a62d
     RET                                 ; 0051a62e
-    MOV ECX,0x637aa5                    ; 0051a62f | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_00637aa5 = ..\shape\meshlod.cpp
+    MOV ECX,0x637aa5                    ; 0051a62f | = "..\\shape\\meshlod.cpp"
         ;   Label: default
     MOV EDI,0xec8                       ; 0051a634
-    PUSH 0x637aba                       ; 0051a639 | = "!" | s_anon_00637aba = !
-    MOV dword ptr [0x02f0ca48],ECX      ; 0051a63e | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 0051a644 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0051a64a | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x637aba                       ; 0051a639 | = "!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 0051a63e | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 0051a644 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0051a64a
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0051a64f
     PUSH ESI                            ; 0051a652
     LEA EAX,[ESP + 0x24]                ; 0051a653
     PUSH EAX                            ; 0051a657
     MOV EAX,dword ptr [EBP + 0x14]      ; 0051a658
     PUSH EAX                            ; 0051a65b
-    CALL shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870 ; 0051a65c | CVector3f * shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870(CLodMesh * this_ptr, CVector3f * out_centroid, CLodFace * face)
-        ;   XREF to: 00518870 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870 ; 0051a65c
+        ;   XREF to: 00518870 (UNCONDITIONAL_CALL)  ; CVector3f * shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870(CLodMesh * this_ptr, CVector3f * out_centroid, CLodFace * face)
     FLD float ptr [EBX]                 ; 0051a661
     ADD ESP,0xc                         ; 0051a663
     FSUB float ptr [EAX]                ; 0051a666

@@ -1,156 +1,156 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 44, 
-    "pseudocode_lines": 44, 
-    "cross_reference_count": 3, 
-    "global_count": 12, 
-    "total_lines": 162, 
-    "assembly_lines": 118, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_memdbg_cpp_00635e5a", 
-      "addr": "00635e5a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Head_memory_corruption_d_00635e6e", 
-      "addr": "00635e6e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_memdbg_cpp_00635ef8", 
-      "addr": "00635ef8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Tail_memory_corruption_d_00635f0c", 
-      "addr": "00635f0c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_memdbg_cpp_00635f95", 
-      "addr": "00635f95", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_List_memory_corruption_d_00635fa9", 
-      "addr": "00635fa9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_none_00636540", 
-      "addr": "00636540", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_s_none_00636540_0067d1fc", 
-      "addr": "0067d1fc", 
-      "value": "00636540"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "SMemHead*", 
-      "name": "g_MemoryListHead", 
-      "addr": "02f0d938", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_DebugContext", 
-      "addr": "02f0d940", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050f020", 
-    "signature": "void shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead * header, char * filename, int line_number)", 
-    "address_range": [
-      [
-        "0050f020", 
-        "0050f142"
-      ]
-    ], 
-    "name": "shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMemHead *", 
-        "size": 4, 
-        "name": "header"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "line_number"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 115,
+    "complexity_score": 44,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 12,
+    "pseudocode_lines": 44,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 159
+  },
   "cross_references": [
     {
-      "from_addr": "0050eff8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0", 
-      "addr": "0050efe0"
-    }, 
+      "addr": "0050efe0",
+      "from_addr": "0050eff8",
+      "name": "shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050f4df", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }, 
+      "addr": "0050f460",
+      "from_addr": "0050f4df",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050f5d2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
+      "addr": "0050f540",
+      "from_addr": "0050f5d2",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0050f020",
+    "address_range": [
+      [
+        "0050f020",
+        "0050f142"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020",
+    "signature": "void shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead * header, char * filename, int line_number)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635e5a",
+      "name": "s_shape_memdbg_cpp_00635e5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635e6e",
+      "name": "s_Head_memory_corruption_d_00635e6e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635ef8",
+      "name": "s_shape_memdbg_cpp_00635ef8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635f0c",
+      "name": "s_Tail_memory_corruption_d_00635f0c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635f95",
+      "name": "s_shape_memdbg_cpp_00635f95",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635fa9",
+      "name": "s_List_memory_corruption_d_00635fa9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00636540",
+      "name": "s_none_00636540",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d1fc",
+      "name": "PTR_s_none_00636540_0067d1fc",
+      "type": "void*",
+      "value": "00636540"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d938",
+      "name": "g_MemoryListHead",
+      "type": "SMemHead*",
+      "value": null
+    },
+    {
+      "addr": "02f0d940",
+      "name": "g_DebugContext",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "header",
+        "offset": 4,
+        "size": 4,
+        "type": "SMemHead *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "line_number",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

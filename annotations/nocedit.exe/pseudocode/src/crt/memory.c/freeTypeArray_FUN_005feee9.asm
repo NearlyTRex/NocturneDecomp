@@ -48,8 +48,8 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 005feeff
     MOV EAX,ESP                         ; 005fef03
     PUSH EAX                            ; 005fef05
-    CALL crt_memory.c_destroyTypeArray_FUN_005feeaf ; 005fef06 | void * crt_memory.c_destroyTypeArray_FUN_005feeaf(WatcomTypeArrayInfo * destroy_info)
-        ;   XREF to: 005feeaf (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_destroyTypeArray_FUN_005feeaf ; 005fef06
+        ;   XREF to: 005feeaf (UNCONDITIONAL_CALL)  ; void * crt_memory.c_destroyTypeArray_FUN_005feeaf(WatcomTypeArrayInfo * destroy_info)
     ADD ESP,0x4                         ; 005fef0b
     MOV EAX,dword ptr [ESP + 0x10]      ; 005fef0e
     ADD ESP,0xc                         ; 005fef12

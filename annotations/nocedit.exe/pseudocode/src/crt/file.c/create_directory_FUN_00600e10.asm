@@ -30,7 +30,7 @@ section .text
         ;   Label: crt_file.c_create_directory_FUN_00600e10
     MOV EDX,dword ptr [ESP + 0x8]       ; 00600e12
     PUSH EDX                            ; 00600e16
-    CALL dword ptr CS:[0x611508]        ; 00600e17 | CreateDirectoryA * PTR_CreateDirectoryA_00611508
+    CALL dword ptr CS:[0x611508]        ; 00600e17 | PTR_CreateDirectoryA_00611508
     TEST EAX,EAX                        ; 00600e1e
     JZ 0x006083fc                       ; 00600e20
         ;   XREF to: 006083fc (CONDITIONAL_JUMP)

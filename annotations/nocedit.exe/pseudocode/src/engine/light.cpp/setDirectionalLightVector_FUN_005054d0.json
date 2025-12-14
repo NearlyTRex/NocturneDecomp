@@ -1,121 +1,121 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 4, 
-    "global_count": 6, 
-    "total_lines": 21, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_LightDirectionX", 
-      "addr": "02d052dc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionY", 
-      "addr": "02d052e0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionZ", 
-      "addr": "02d052e4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionX2", 
-      "addr": "02dd3094", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionY2", 
-      "addr": "02dd3098", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionZ2", 
-      "addr": "02dd309c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005054d0", 
-    "signature": "void engine_light.cpp_setDirectionalLightVector_FUN_005054d0(int dir_x, int dir_y, int dir_z)", 
-    "address_range": [
-      [
-        "005054d0", 
-        "005054fe"
-      ]
-    ], 
-    "name": "engine_light.cpp_setDirectionalLightVector_FUN_005054d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dir_x"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dir_y"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dir_z"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 10,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 6,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 21
+  },
   "cross_references": [
     {
-      "from_addr": "005dc844", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760", 
-      "addr": "005dc760"
-    }, 
+      "addr": "005dc760",
+      "from_addr": "005dc844",
+      "name": "core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c6d0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0", 
-      "addr": "0048c6c0"
-    }, 
+      "addr": "0048c6c0",
+      "from_addr": "0048c6d0",
+      "name": "engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c72a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_scaleAndSetDirectionalLight_FUN_0048c6e0", 
-      "addr": "0048c6e0"
-    }, 
+      "addr": "0048c6e0",
+      "from_addr": "0048c72a",
+      "name": "engine_drender.cpp_scaleAndSetDirectionalLight_FUN_0048c6e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045f41e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
-      "addr": "0045f1d0"
+      "addr": "0045f1d0",
+      "from_addr": "0045f41e",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005054d0",
+    "address_range": [
+      [
+        "005054d0",
+        "005054fe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_light.cpp_setDirectionalLightVector_FUN_005054d0",
+    "signature": "void engine_light.cpp_setDirectionalLightVector_FUN_005054d0(int dir_x, int dir_y, int dir_z)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d052dc",
+      "name": "g_LightDirectionX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e0",
+      "name": "g_LightDirectionY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e4",
+      "name": "g_LightDirectionZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dd3094",
+      "name": "g_LightDirectionX2",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dd3098",
+      "name": "g_LightDirectionY2",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dd309c",
+      "name": "g_LightDirectionZ2",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dir_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dir_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "dir_z",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

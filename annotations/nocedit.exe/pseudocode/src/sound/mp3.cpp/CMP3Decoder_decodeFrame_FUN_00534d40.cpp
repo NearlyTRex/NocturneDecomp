@@ -198,7 +198,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           g_CurrentLineNumber = 0x1b2;
           core_main_c_displayErrorAndQuit_FUN_00506f10("js_bound bad layer/modext (%d/%d)  File: %s");
         }
-        pSStack_c0 = (SMpegLayer3Granule *)g_MpegLayer2AllocationTables[local_80][iVar2];
+        pSStack_c0 = g_MpegLayer2AllocationTables[local_80][iVar2];
       }
       local_b0 = (SMpegFrameHeader *)local_cc._4_4_;
       local_a4 = (*(int *)local_d8 != 0) + 1;

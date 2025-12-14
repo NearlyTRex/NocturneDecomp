@@ -40,7 +40,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 0042b953
     FADD float ptr [EDX + 0x4]          ; 0042b956
     FXCH                                ; 0042b959
-    FLD float ptr [0x00617156]          ; 0042b95b | float FLOAT_00617156
+    FLD float ptr [0x00617156]          ; 0042b95b | FLOAT_00617156
     FXCH                                ; 0042b961
     FMUL ST1                            ; 0042b963
     FXCH ST2                            ; 0042b965
@@ -60,26 +60,26 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 0042b98b
     PUSH EBX                            ; 0042b98f
     FSTP float ptr [ESP + 0x2c]         ; 0042b990
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0042b994 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0042b994
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0042b999
     PUSH 0x40800000                     ; 0042b99c
     PUSH 0x44bb8000                     ; 0042b9a1
     LEA EAX,[ESP + 0x2c]                ; 0042b9a6
     PUSH 0x40000000                     ; 0042b9aa
     PUSH EAX                            ; 0042b9af
-    MOV EDX,dword ptr [0x0067a3d0]      ; 0042b9b0 | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
-    PUSH EDX                            ; 0042b9b6 | CFireEffect g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8c10 ; 0042b9b7 | void core_fire.cpp_CFireEffect_FUN_004c8c10(CFireEffect * this_ptr)
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x0067a3d0]      ; 0042b9b0 | g_CFireEffectInstance | g_CFireEffectPtr
+    PUSH EDX                            ; 0042b9b6 | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_FUN_004c8c10 ; 0042b9b7
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8c10(CFireEffect * this_ptr)
     ADD ESP,0x14                        ; 0042b9bc
     PUSH 0x0                            ; 0042b9bf
     MOV ECX,dword ptr [ESP + 0x4c]      ; 0042b9c1
     PUSH dword ptr [ESP + 0x50]         ; 0042b9c5
     PUSH ECX                            ; 0042b9c9
     PUSH EBX                            ; 0042b9ca
-    CALL core_charactr.cpp_CCharacter_FUN_0042b9e0 ; 0042b9cb | void core_charactr.cpp_CCharacter_FUN_0042b9e0(CCharacter * this_ptr)
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042b9e0 ; 0042b9cb
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b9e0(CCharacter * this_ptr)
     ADD ESP,0x10                        ; 0042b9d0
     ADD ESP,0x3c                        ; 0042b9d3
     POP EBX                             ; 0042b9d6

@@ -12,29 +12,22 @@ HeapBlock * __cdecl crt_heap_c_InsertHeapBlockInOrder_FUN_006095f0(HeapBlock *ne
   uchar *puVar1;
   HeapBlock *pHVar2;
   HeapBlock *pHVar3;
-  HeapBlock *pHVar4;
   
-  pHVar3 = (HeapBlock *)g_MainHeap;
-  pHVar4 = (HeapBlock *)0x0;
-  if (g_MainHeap != (Heap *)0x0) {
-    do {
-      pHVar2 = pHVar3;
-      pHVar3 = pHVar2;
-      if (new_block < pHVar2) break;
-      pHVar3 = pHVar2->next;
-      pHVar4 = pHVar2;
-    } while (pHVar3 != (HeapBlock *)0x0);
+  pHVar3 = (HeapBlock *)0x0;
+  for (pHVar2 = (HeapBlock *)g_MainHeap; (pHVar2 != (HeapBlock *)0x0 && (pHVar2 <= new_block));
+      pHVar2 = pHVar2->next) {
+    pHVar3 = pHVar2;
   }
-  new_block->prev = pHVar4;
-  new_block->next = pHVar3;
-  if (pHVar4 == (HeapBlock *)0x0) {
+  new_block->prev = pHVar3;
+  new_block->next = pHVar2;
+  if (pHVar3 == (HeapBlock *)0x0) {
     g_MainHeap = (Heap *)new_block;
   }
   else {
-    pHVar4->next = new_block;
+    pHVar3->next = new_block;
   }
-  if (pHVar3 != (HeapBlock *)0x0) {
-    pHVar3->prev = new_block;
+  if (pHVar2 != (HeapBlock *)0x0) {
+    pHVar2->prev = new_block;
   }
   puVar1 = new_block->free_list_area;
   pHVar3 = new_block + 1;

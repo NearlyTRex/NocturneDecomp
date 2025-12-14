@@ -33,43 +33,43 @@ section .text
     PUSH EDI                            ; 00588d42
     MOV EBX,dword ptr [ESP + 0x10]      ; 00588d43
     PUSH EBX                            ; 00588d47
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 00588d48 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 00588d48
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00588d4d
     ADD EAX,0x158                       ; 00588d50
     PUSH EAX                            ; 00588d55
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 00588d56 | CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 00588d56
+        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00588d5b
     ADD EAX,0x200                       ; 00588d5e
     PUSH EAX                            ; 00588d63
-    CALL core_box.cpp_CBox_ctor_FUN_0041dc50 ; 00588d64 | CBox * core_box.cpp_CBox_ctor_FUN_0041dc50(CBox * this_ptr)
-        ;   XREF to: 0041dc50 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBox_ctor_FUN_0041dc50 ; 00588d64
+        ;   XREF to: 0041dc50 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041dc50(CBox * this_ptr)
     ADD ESP,0x4                         ; 00588d69
     LEA EBX,[EAX + 0xfffffca8]          ; 00588d6c
-    PUSH 0x649bed                       ; 00588d72 | = "question.kfm" | s_question_kfm_00649bed = question.kfm
+    PUSH 0x649bed                       ; 00588d72 | = "question.kfm"
     LEA EAX,[EBX + 0x158]               ; 00588d77
     PUSH EAX                            ; 00588d7d
-    MOV dword ptr [EBX + 0x154],0x662d24 ; 00588d7e | CDemonActor_vtable g_CSimBoxVTable
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00588d88 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EBX + 0x154],0x662d24 ; 00588d7e | g_CSimBoxVTable
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00588d88
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00588d8d
-    MOV ESI,0x649bfa                    ; 00588d90 | = "none" | s_none_00649bfa = none
+    MOV ESI,0x649bfa                    ; 00588d90 | = "none"
     LEA EDI,[EBX + 0x2dc]               ; 00588d95
     PUSH EDI                            ; 00588d9b
-    MOV AL,byte ptr [ESI]               ; 00588d9c | = "none" | s_none_00649bfa = none
+    MOV AL,byte ptr [ESI]               ; 00588d9c | = "none" | s_ne_00649bfc
         ;   Label: LAB_00588d9c
     MOV byte ptr [EDI],AL               ; 00588d9e
     CMP AL,0x0                          ; 00588da0
-    JZ 0x00588db4                       ; 00588da2 | LAB_00588db4
-        ;   XREF to: 00588db4 (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 00588da4 | s_one_00649bfb
+    JZ 0x00588db4                       ; 00588da2
+        ;   XREF to: 00588db4 (CONDITIONAL_JUMP)  ; LAB_00588db4
+    MOV AL,byte ptr [ESI + 0x1]         ; 00588da4 | s_one_00649bfb | s_e_00649bfd
     ADD ESI,0x2                         ; 00588da7
     MOV byte ptr [EDI + 0x1],AL         ; 00588daa
     ADD EDI,0x2                         ; 00588dad
     CMP AL,0x0                          ; 00588db0
-    JNZ 0x00588d9c                      ; 00588db2 | LAB_00588d9c
-        ;   XREF to: 00588d9c (CONDITIONAL_JUMP)
+    JNZ 0x00588d9c                      ; 00588db2
+        ;   XREF to: 00588d9c (CONDITIONAL_JUMP)  ; LAB_00588d9c
     POP EDI                             ; 00588db4
         ;   Label: LAB_00588db4
     LEA EAX,[EBX + 0x340]               ; 00588db5

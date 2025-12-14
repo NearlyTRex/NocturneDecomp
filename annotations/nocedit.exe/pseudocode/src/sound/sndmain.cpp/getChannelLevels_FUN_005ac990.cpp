@@ -23,7 +23,7 @@ sound_sndmain_cpp_getChannelLevels_FUN_005ac990(int channel,float *out_peak,floa
       *out_average = 0.0;
     }
   }
-  pfVar2 = (float *)g_ChannelPrimaryBuffers[channel];
+  pfVar2 = g_ChannelPrimaryBuffers[channel];
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar1 = 0;
   if (0 < g_MixBufferSize) {

@@ -10,13 +10,13 @@ HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_se
 
 {
   double dVar1;
-  HANDLE hThread;
-  HANDLE extraout_EAX;
   int iVar2;
+  HANDLE hThread;
+  int extraout_EAX;
   
-  hThread = (HANDLE)sound_sndmain_cpp_killSoundThread_FUN_005abcb0();
+  iVar2 = sound_sndmain_cpp_killSoundThread_FUN_005abcb0();
   dVar1 = (double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);
-  if (hThread != (HANDLE)0x0) {
+  if (iVar2 != 0) {
     if (latency_seconds < 0.002) {
       latency_seconds = 0.002;
     }
@@ -29,9 +29,8 @@ HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_se
     dVar1 = g_AudioLatencySeconds;
     if (hThread != (HANDLE)0x0) {
       wincore_winrun_cpp_setThreadPriority_FUN_005f40a0(hThread,3);
-      hThread = extraout_EAX;
       dVar1 = g_AudioLatencySeconds;
-      if (extraout_EAX != (HANDLE)0x0) {
+      if (extraout_EAX != 0) {
         do {
           dVar1 = g_AudioLatencySeconds;
           if (g_AudioThreadRunning != 0) break;
@@ -47,5 +46,5 @@ HANDLE __cdecl sound_sndmain_cpp_startSoundThread_FUN_005abc00(double latency_se
   }
   g_AudioLatencySeconds._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);
   g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);
-  return hThread;
+  return (HANDLE)0x0;
 }

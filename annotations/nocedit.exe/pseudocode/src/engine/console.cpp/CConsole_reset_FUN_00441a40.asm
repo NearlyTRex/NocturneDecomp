@@ -28,14 +28,14 @@ section .text
     PUSH 0x0                            ; 00441a4a
     LEA EAX,[EBX + 0x4]                 ; 00441a4c
     PUSH EAX                            ; 00441a4f
-    CALL crt_memory.c_memset_FUN_005fde40 ; 00441a50 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 00441a50
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00441a55
     MOV dword ptr [EBX + 0xfa4],0x0     ; 00441a58
-    PUSH 0x66e8e8                       ; 00441a62 | = "console.txt" | s_console_txt_0066e8e8 = console.txt
+    PUSH 0x66e8e8                       ; 00441a62 | = "console.txt"
     MOV dword ptr [EBX + 0xfa8],0x0     ; 00441a67
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00441a71 | int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 00441a71
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
     ADD ESP,0x4                         ; 00441a76
     POP EBX                             ; 00441a79
     RET                                 ; 00441a7a

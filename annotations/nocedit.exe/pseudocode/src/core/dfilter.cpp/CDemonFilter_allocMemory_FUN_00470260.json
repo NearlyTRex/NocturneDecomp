@@ -1,102 +1,102 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 49, 
-    "assembly_lines": 34, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dfilter.cpp_CDemonFilter_freeMemory_FUN_004702c0", 
-      "addr": "004702c0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dfilter_cpp_0061e549", 
-      "addr": "0061e549", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dfilter_cpp_0061e55d", 
-      "addr": "0061e55d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonFilter_allocMemory_0061e571", 
-      "addr": "0061e571", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00470260", 
-    "signature": "void core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00470260(CDemonFilter * this_ptr)", 
-    "address_range": [
-      [
-        "00470260", 
-        "004702b6"
-      ]
-    ], 
-    "name": "core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00470260"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonFilter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 34,
+    "complexity_score": 15,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
+  },
   "cross_references": [
     {
-      "from_addr": "00470688", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dfilter.cpp_CDemonFilter_init_FUN_004705a0", 
-      "addr": "004705a0"
-    }, 
+      "addr": "004705a0",
+      "from_addr": "00470688",
+      "name": "core_dfilter.cpp_CDemonFilter_init_FUN_004705a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004703ec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dfilter.cpp_CDemonFilter_load_FUN_004702f0", 
-      "addr": "004702f0"
+      "addr": "004702f0",
+      "from_addr": "004703ec",
+      "name": "core_dfilter.cpp_CDemonFilter_load_FUN_004702f0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00470260",
+    "address_range": [
+      [
+        "00470260",
+        "004702b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00470260",
+    "signature": "void core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00470260(CDemonFilter * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004702c0",
+      "name": "core_dfilter.cpp_CDemonFilter_freeMemory_FUN_004702c0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061e549",
+      "name": "s_core_dfilter_cpp_0061e549",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e55d",
+      "name": "s_core_dfilter_cpp_0061e55d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e571",
+      "name": "s_CDemonFilter_allocMemory_0061e571",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonFilter *"
+      }
+    ]
+  },
+  "suspects": []
 }

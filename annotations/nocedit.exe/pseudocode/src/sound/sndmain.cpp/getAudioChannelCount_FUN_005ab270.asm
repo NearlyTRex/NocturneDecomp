@@ -17,7 +17,7 @@
 
 section .text
 
-    MOV EAX,[0x00681b18]                ; 005ab270 | int g_AudioChannelCount
+    MOV EAX,[0x00681b18]                ; 005ab270 | g_AudioChannelCount
         ;   Label: sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270
     RET                                 ; 005ab275
 

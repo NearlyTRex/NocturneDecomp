@@ -63,7 +63,7 @@ int crt_unknown_c_FUN_0060fb40(void)
       return -1;
     }
     uVar3 = crt_string_c_wcslen_FUN_0060cd30(in_stack_00000004);
-    dest_01 = (char *)crt_memory_c_malloc_FUN_00601bb0(in_stack_0000000c * (uVar3 + 1));
+    dest_01 = crt_memory_c_malloc_FUN_00601bb0(in_stack_0000000c * (uVar3 + 1));
     if (dest_01 == (char *)0x0) {
       crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(5);
       return -1;

@@ -1,52 +1,52 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 30, 
-    "assembly_lines": 21, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060cd90", 
-    "signature": "int crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90(_INPUT_RECORD * pInputRecord)", 
-    "address_range": [
-      [
-        "0060cd90", 
-        "0060cdb8"
-      ]
-    ], 
-    "name": "crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "_INPUT_RECORD *", 
-        "size": 4, 
-        "name": "pInputRecord"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 21,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
   "cross_references": [
     {
-      "from_addr": "0060b36c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0060b2e0", 
-      "addr": "0060b2e0"
+      "addr": "0060b2e0",
+      "from_addr": "0060b36c",
+      "name": "crt_stdio.c_DrainConsoleInputWithBuffering_FUN_0060b2e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060cd90",
+    "address_range": [
+      [
+        "0060cd90",
+        "0060cdb8"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90",
+    "signature": "int crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90(_INPUT_RECORD * pInputRecord)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "pInputRecord",
+        "offset": 4,
+        "size": 4,
+        "type": "_INPUT_RECORD *"
+      }
+    ]
+  },
+  "suspects": []
 }

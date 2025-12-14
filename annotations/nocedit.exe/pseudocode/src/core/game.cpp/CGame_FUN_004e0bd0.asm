@@ -21,13 +21,13 @@
 
 section .text
 
-    MOV EAX,[0x02db87d0]                ; 004e0bd0 | int g_LocalHeroIndex
+    MOV EAX,[0x02db87d0]                ; 004e0bd0 | g_LocalHeroIndex
         ;   Label: core_game.cpp_CGame_FUN_004e0bd0
-    MOV EAX,dword ptr [EAX*0x4 + 0x2db87c0] ; 004e0bd5 | CHero *[4] g_HeroActors
+    MOV EAX,dword ptr [EAX*0x4 + 0x2db87c0] ; 004e0bd5 | g_HeroActors
     ADD EAX,0x1f738                     ; 004e0bdc
     PUSH EAX                            ; 004e0be1
-    CALL core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020 ; 004e0be2 | void core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020(CInventory * this_ptr)
-        ;   XREF to: 00500020 (UNCONDITIONAL_CALL)
+    CALL core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020 ; 004e0be2
+        ;   XREF to: 00500020 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004e0be7
     RET                                 ; 004e0bea
 

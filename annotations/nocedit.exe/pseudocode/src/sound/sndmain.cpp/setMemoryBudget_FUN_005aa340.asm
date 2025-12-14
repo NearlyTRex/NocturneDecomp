@@ -20,12 +20,12 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 005aa340
         ;   Label: sound_sndmain.cpp_setMemoryBudget_FUN_005aa340
-    MOV [0x00681b40],EAX                ; 005aa344 | int g_MinimumSoundMemoryBudget
+    MOV [0x00681b40],EAX                ; 005aa344 | g_MinimumSoundMemoryBudget
     MOV EAX,dword ptr [ESP + 0x8]       ; 005aa349
     PUSH 0x0                            ; 005aa34d
-    MOV [0x00681b44],EAX                ; 005aa34f | int g_MaximumSoundMemoryBudget
-    CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450 ; 005aa354 | int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450(int requested_bytes)
-        ;   XREF to: 005a4450 (UNCONDITIONAL_CALL)
+    MOV [0x00681b44],EAX                ; 005aa34f | g_MaximumSoundMemoryBudget
+    CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450 ; 005aa354
+        ;   XREF to: 005a4450 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450(int requested_bytes)
     ADD ESP,0x4                         ; 005aa359
     RET                                 ; 005aa35c
 

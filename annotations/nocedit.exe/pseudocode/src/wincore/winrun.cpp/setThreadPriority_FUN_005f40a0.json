@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 59, 
-    "assembly_lines": 36, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "SetThreadPriority", 
-      "addr": "EXTERNAL:0000009a"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SetThreadPriority*", 
-      "name": "SetThreadPriority", 
-      "addr": "0061163c", 
-      "value": "002121f6"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f40a0", 
-    "signature": "void wincore_winrun.cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread, int priority_level)", 
-    "address_range": [
-      [
-        "005f40a0", 
-        "005f40dc"
-      ]
-    ], 
-    "name": "wincore_winrun.cpp_setThreadPriority_FUN_005f40a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef HANDLE void *", 
-        "size": 4, 
-        "name": "hThread"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "priority_level"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 36,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 59
+  },
   "cross_references": [
     {
-      "from_addr": "005abc6c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00", 
-      "addr": "005abc00"
+      "addr": "005abc00",
+      "from_addr": "005abc6c",
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005f40a0",
+    "address_range": [
+      [
+        "005f40a0",
+        "005f40dc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_setThreadPriority_FUN_005f40a0",
+    "signature": "void wincore_winrun.cpp_setThreadPriority_FUN_005f40a0(HANDLE hThread, int priority_level)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000009a",
+      "name": "SetThreadPriority"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061163c",
+      "name": "SetThreadPriority",
+      "type": "SetThreadPriority*",
+      "value": "002121f6"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "hThread",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef HANDLE void *"
+      },
+      {
+        "is_param": true,
+        "name": "priority_level",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

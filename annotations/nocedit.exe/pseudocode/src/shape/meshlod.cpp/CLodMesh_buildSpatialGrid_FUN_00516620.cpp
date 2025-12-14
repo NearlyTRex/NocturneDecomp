@@ -49,8 +49,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *
   local_24._1_1_ = '\0';
   local_24._2_1_ = '\0';
   local_24._3_1_ = '\0';
-  pSVar8 = (SSpatialGrid *)
-           shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pSVar8 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->spatial_grid_ptr,0x4004,"..\\shape\\meshlod.cpp",0x43f);
   this_ptr->spatial_grid_ptr = pSVar8;
   if (pSVar8 == (SSpatialGrid *)0x0) {
@@ -127,9 +126,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *
                 (local_50 <= fVar4 + fVar5)) &&
                (((local_38 <= local_44 && (local_4c <= fVar6 + fVar7)) && (local_34 <= local_40))))
             {
-              piVar9 = (int *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                                        (this_ptr->spatial_grid_data,unaff_EBP,
-                                         "..\\shape\\meshlod.cpp",0x464);
+              piVar9 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                                 (this_ptr->spatial_grid_data,unaff_EBP,"..\\shape\\meshlod.cpp"
+                                  ,0x464);
               this_ptr->spatial_grid_data = piVar9;
               if (piVar9 == (int *)0x0) {
                 pcVar13 = "Out of memory creating gridList";

@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 14, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_quantize_cpp_00640ab5", 
-      "addr": "00640ab5", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 9,
+    "complexity_score": 5,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00556d40", 
-    "signature": "void shape_quantize.cpp_freeMemory_FUN_00556d40(void * ptr)", 
+    "address": "00556d40",
     "address_range": [
       [
-        "00556d40", 
+        "00556d40",
         "00556d54"
       ]
-    ], 
-    "name": "shape_quantize.cpp_freeMemory_FUN_00556d40"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_quantize.cpp_freeMemory_FUN_00556d40",
+    "signature": "void shape_quantize.cpp_freeMemory_FUN_00556d40(void * ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640ab5",
+      "name": "s_shape_quantize_cpp_00640ab5",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "ptr"
+        "is_param": true,
+        "name": "ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

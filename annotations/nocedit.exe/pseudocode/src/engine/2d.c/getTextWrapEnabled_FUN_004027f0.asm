@@ -15,7 +15,7 @@
 
 section .text
 
-    MOV EAX,[0x0066df74]                ; 004027f0 | int g_TextWrapEnabled
+    MOV EAX,[0x0066df74]                ; 004027f0 | g_TextWrapEnabled
         ;   Label: engine_2d.c_getTextWrapEnabled_FUN_004027f0
     RET                                 ; 004027f5
 

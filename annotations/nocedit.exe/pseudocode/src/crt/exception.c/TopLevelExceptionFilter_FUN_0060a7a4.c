@@ -37,13 +37,13 @@ crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4(_EXCEPTION_POINTERS *Except
   if (puVar4 < (byte *)0xc0000090) {
     if ((byte *)0xc000008c < puVar4) {
       if (puVar4 < (byte *)0xc000008e) {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
       }
       else if (puVar4 < (byte *)0xc000008f) {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
       }
       else {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
       }
       goto LAB_0060a968;
     }
@@ -66,45 +66,45 @@ crt_exception_c_TopLevelExceptionFilter_FUN_0060a7a4(_EXCEPTION_POINTERS *Except
         goto LAB_0060a968;
       }
       if (puVar4 == &DAT_c000001d) {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
         goto LAB_0060a968;
       }
     }
   }
   else {
     if (puVar4 < (byte *)0xc0000091) {
-      pcVar9 = (char *)pEVar2->ExceptionAddress;
+      pcVar9 = pEVar2->ExceptionAddress;
       goto LAB_0060a968;
     }
     if (puVar4 < (byte *)0xc0000093) {
       if (puVar4 < (byte *)0xc0000092) {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
       }
       else if (((pCVar3->FloatSave).StatusWord & 0x200) == 0) {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
       }
       else {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
       }
       goto LAB_0060a968;
     }
     if (puVar4 < (byte *)0xc0000094) {
-      pcVar9 = (char *)pEVar2->ExceptionAddress;
+      pcVar9 = pEVar2->ExceptionAddress;
       goto LAB_0060a968;
     }
     if (puVar4 < (byte *)0xc0000096) {
       if (puVar4 == (byte *)0xc0000094) {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
         goto LAB_0060a968;
       }
     }
     else {
       if (puVar4 < (byte *)0xc0000097) {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
         goto LAB_0060a968;
       }
       if (puVar4 == (byte *)0xc00000fd) {
-        pcVar9 = (char *)pEVar2->ExceptionAddress;
+        pcVar9 = pEVar2->ExceptionAddress;
         goto LAB_0060a968;
       }
     }

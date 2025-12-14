@@ -15,6 +15,7 @@
 ;   undefined4 g_RenderVertexBuffer[1].v
 ;   undefined4 g_RenderVertexBuffer[2].u
 ;   undefined4 g_RenderVertexBuffer[2].v
+;   undefined4 g_RenderVertexBuffer[3].u
 ;   undefined4 g_RenderVertexBuffer[3].v
 ;   undefined4 DAT_00f80000
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -22,7 +23,7 @@
 ;   undefined4 DAT_02d83380
 ;   undefined4 DAT_02d83384
 ;   undefined4 DAT_02d83388
-;   undefined4 DAT_02d8338c
+;   ... and 1 more
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
@@ -54,13 +55,13 @@ section .text
     MOV [0x0068805c],EAX                ; 004ec4c2 | g_RenderVertexBuffer[1].u
     MOV [0x00688060],EAX                ; 004ec4c7 | g_RenderVertexBuffer[1].v
     MOV [0x0068808c],EAX                ; 004ec4cc | g_RenderVertexBuffer[2].u
-    MOV EAX,[0x006703ec]                ; 004ec4d1 | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004ec4d1 | g_CDemonRendererInstance | g_CDemonRendererPtr
     MOV dword ptr [0x00688090],EBP      ; 004ec4d6 | g_RenderVertexBuffer[2].v
-    PUSH EAX                            ; 004ec4dc | CDemonRenderer g_CDemonRendererInstance
+    PUSH EAX                            ; 004ec4dc | g_CDemonRendererInstance
     MOV dword ptr [0x006880bc],EBP      ; 004ec4dd | g_RenderVertexBuffer[3].u
     MOV dword ptr [0x006880c0],EBP      ; 004ec4e3 | g_RenderVertexBuffer[3].v
-    CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004ec4e9 | void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004ec4e9
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004ec4ee
     POP EBP                             ; 004ec4f1
     POP EDI                             ; 004ec4f2

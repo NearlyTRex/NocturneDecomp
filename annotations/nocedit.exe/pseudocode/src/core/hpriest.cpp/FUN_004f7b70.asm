@@ -31,33 +31,33 @@ section .text
     PUSH EDI                            ; 004f7b72
     MOV EDX,dword ptr [ESP + 0x10]      ; 004f7b73
     PUSH EDX                            ; 004f7b77
-    CALL core_npc.cpp_FUN_005447e0      ; 004f7b78 | CNPC * core_npc.cpp_FUN_005447e0(CNPC * this_ptr)
-        ;   XREF to: 005447e0 (UNCONDITIONAL_CALL)
+    CALL core_npc.cpp_FUN_005447e0      ; 004f7b78
+        ;   XREF to: 005447e0 (UNCONDITIONAL_CALL)  ; CNPC * core_npc.cpp_FUN_005447e0(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004f7b7d
-    PUSH 0x62f55d                       ; 004f7b80 | = "priest.dfm" | s_priest_dfm_0062f55d = priest.dfm
+    PUSH 0x62f55d                       ; 004f7b80 | = "priest.dfm"
     MOV EBX,EAX                         ; 004f7b85
     LEA EDI,[EAX + 0x158]               ; 004f7b87
     PUSH EDI                            ; 004f7b8d
-    MOV dword ptr [EAX + 0x154],0x65fe94 ; 004f7b8e | CDemonActor_vtable PTR_core_npc.cpp_FUN_0065fe94
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004f7b98 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + 0x154],0x65fe94 ; 004f7b8e | PTR_core_npc.cpp_FUN_0065fe94
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004f7b98
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004f7b9d
-    MOV ESI,0x62f568                    ; 004f7ba0 | = "killPriest" | s_killPriest_0062f568 = killPriest
+    MOV ESI,0x62f568                    ; 004f7ba0 | = "killPriest"
     LEA EDI,[EBX + 0x1f708]             ; 004f7ba5
     PUSH EDI                            ; 004f7bab
-    MOV AL,byte ptr [ESI]               ; 004f7bac | = "killPriest" | s_killPriest_0062f568 = killPriest
+    MOV AL,byte ptr [ESI]               ; 004f7bac | = "killPriest" | s_llPriest_0062f56a
         ;   Label: LAB_004f7bac
     MOV byte ptr [EDI],AL               ; 004f7bae
     CMP AL,0x0                          ; 004f7bb0
-    JZ 0x004f7bc4                       ; 004f7bb2 | LAB_004f7bc4
-        ;   XREF to: 004f7bc4 (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 004f7bb4 | s_illPriest_0062f569
+    JZ 0x004f7bc4                       ; 004f7bb2
+        ;   XREF to: 004f7bc4 (CONDITIONAL_JUMP)  ; LAB_004f7bc4
+    MOV AL,byte ptr [ESI + 0x1]         ; 004f7bb4 | s_illPriest_0062f569 | s_lPriest_0062f56b
     ADD ESI,0x2                         ; 004f7bb7
     MOV byte ptr [EDI + 0x1],AL         ; 004f7bba
     ADD EDI,0x2                         ; 004f7bbd
     CMP AL,0x0                          ; 004f7bc0
-    JNZ 0x004f7bac                      ; 004f7bc2 | LAB_004f7bac
-        ;   XREF to: 004f7bac (CONDITIONAL_JUMP)
+    JNZ 0x004f7bac                      ; 004f7bc2
+        ;   XREF to: 004f7bac (CONDITIONAL_JUMP)  ; LAB_004f7bac
     POP EDI                             ; 004f7bc4
         ;   Label: LAB_004f7bc4
     MOV EAX,EBX                         ; 004f7bc5

@@ -11,8 +11,7 @@ void core_baron_cpp_FUN_00412b80(void)
 {
   CBaron *this_ptr;
   
-  this_ptr = (CBaron *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fcd4,"..\\core\\baron.cpp",0x52);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fcd4,"..\\core\\baron.cpp",0x52);
   if (this_ptr == (CBaron *)0x0) {
     return;
   }

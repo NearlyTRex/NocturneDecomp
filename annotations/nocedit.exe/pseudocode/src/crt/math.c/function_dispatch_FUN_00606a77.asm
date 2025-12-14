@@ -17,5 +17,5 @@ section .text
 
     SUB ESP,0x2c                        ; 00606a77
         ;   Label: crt_math.c_function_dispatch_FUN_00606a77
-    JMP dword ptr [EAX*0x4 + 0x6873d4]  ; 00606a7a | void * PTR_FUN_006873d4
+    JMP dword ptr [EAX*0x4 + 0x6873d4]  ; 00606a7a | PTR_FUN_006873d4
 

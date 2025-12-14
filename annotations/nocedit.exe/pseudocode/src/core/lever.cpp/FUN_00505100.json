@@ -1,164 +1,164 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 123, 
-    "pseudocode_lines": 33, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 80, 
-    "assembly_lines": 47, 
-    "suspect_count": 8, 
+    "assembly_lines": 47,
+    "complexity_score": 123,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 33,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
-      "suspect_float"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Ground_lever_00631158", 
-      "addr": "00631158", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_round_lever_00631159", 
-      "addr": "00631159", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Wall_lever_00631165", 
-      "addr": "00631165", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_all_lever_00631166", 
-      "addr": "00631166", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ll_lever_00631167", 
-      "addr": "00631167", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_l_lever_00631168", 
-      "addr": "00631168", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unknown_00631170", 
-      "addr": "00631170", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_nknown_00631171", 
-      "addr": "00631171", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CLeverClassInfo.name_hash", 
-      "addr": "02dd3090", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_0000000c;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004,g_CLeverClassInfo.name_hash);"
-    }, 
-    {
-      "line": 18, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "else if (fVar2 == 1.4013e-45) {"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = cVar1;"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c[1] = cVar1;"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00505100", 
-    "signature": "undefined core_lever.cpp_FUN_00505100()", 
-    "address_range": [
-      [
-        "00505100", 
-        "00505158"
-      ]
-    ], 
-    "name": "core_lever.cpp_FUN_00505100"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "suspect_float",
+      "stack_param"
+    ],
+    "total_lines": 80
+  },
   "cross_references": [
     {
-      "from_addr": "00505270", 
-      "type": "DATA", 
-      "name": "core_lever.cpp_FUN_00505240", 
-      "addr": "00505240"
+      "addr": "00505240",
+      "from_addr": "00505270",
+      "name": "core_lever.cpp_FUN_00505240",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00505100",
+    "address_range": [
+      [
+        "00505100",
+        "00505158"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_lever.cpp_FUN_00505100",
+    "signature": "undefined core_lever.cpp_FUN_00505100()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00631158",
+      "name": "s_Ground_lever_00631158",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631159",
+      "name": "s_round_lever_00631159",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631165",
+      "name": "s_Wall_lever_00631165",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631166",
+      "name": "s_all_lever_00631166",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631167",
+      "name": "s_ll_lever_00631167",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631168",
+      "name": "s_l_lever_00631168",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00631170",
+      "name": "s_Unknown_00631170",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631171",
+      "name": "s_nknown_00631171",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dd3090",
+      "name": "g_CLeverClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,g_CLeverClassInfo.name_hash);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 18,
+      "match": "1.4013e-45",
+      "text": "else if (fVar2 == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = cVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c[1] = cVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
+      "type": "stack_param"
     }
   ]
 }

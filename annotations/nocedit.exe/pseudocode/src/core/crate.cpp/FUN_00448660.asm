@@ -18,8 +18,8 @@ section .text
     SUB ESP,0x20                        ; 00448661
     MOV EBX,dword ptr [ESP + 0x28]      ; 00448664
     CMP dword ptr [EBX + 0x2d4],0x0     ; 00448668
-    JNZ 0x00448801                      ; 0044866f | LAB_00448801
-        ;   XREF to: 00448801 (CONDITIONAL_JUMP)
+    JNZ 0x00448801                      ; 0044866f
+        ;   XREF to: 00448801 (CONDITIONAL_JUMP)  ; LAB_00448801
     LEA EDX,[EBX + 0x20]                ; 00448675
     LEA EAX,[EBX + 0xe0]                ; 00448678
     FLD float ptr [EAX]                 ; 0044867e
@@ -56,14 +56,14 @@ section .text
     FCOMP float ptr [EBX + 0x20]        ; 004486e1
     FNSTSW AX                           ; 004486e4
     SAHF                                ; 004486e6
-    JNZ 0x004486fb                      ; 004486e7 | LAB_004486fb
-        ;   XREF to: 004486fb (CONDITIONAL_JUMP)
+    JNZ 0x004486fb                      ; 004486e7
+        ;   XREF to: 004486fb (CONDITIONAL_JUMP)  ; LAB_004486fb
     FLD float ptr [EBX + 0x2e4]         ; 004486e9
     FCOMP float ptr [EBX + 0x24]        ; 004486ef
     FNSTSW AX                           ; 004486f2
     SAHF                                ; 004486f4
-    JZ 0x00448810                       ; 004486f5 | LAB_00448810
-        ;   XREF to: 00448810 (CONDITIONAL_JUMP)
+    JZ 0x00448810                       ; 004486f5
+        ;   XREF to: 00448810 (CONDITIONAL_JUMP)  ; LAB_00448810
     PUSH 0x0                            ; 004486fb
         ;   Label: LAB_004486fb
     MOV EAX,dword ptr [EBX + 0x154]     ; 004486fd
@@ -77,8 +77,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 0044871e
     FSTP float ptr [ESP + 0x18]         ; 00448721
     CMP EDX,EAX                         ; 00448725
-    JZ 0x00448739                       ; 00448727 | LAB_00448739
-        ;   XREF to: 00448739 (CONDITIONAL_JUMP)
+    JZ 0x00448739                       ; 00448727
+        ;   XREF to: 00448739 (CONDITIONAL_JUMP)  ; LAB_00448739
     MOV ECX,dword ptr [EAX]             ; 00448729
     MOV dword ptr [EDX],ECX             ; 0044872b
     MOV ECX,dword ptr [EAX + 0x4]       ; 0044872d
@@ -89,8 +89,8 @@ section .text
         ;   Label: LAB_00448739
     LEA EAX,[EBX + 0x30]                ; 0044873f
     CMP EDX,EAX                         ; 00448742
-    JZ 0x00448756                       ; 00448744 | LAB_00448756
-        ;   XREF to: 00448756 (CONDITIONAL_JUMP)
+    JZ 0x00448756                       ; 00448744
+        ;   XREF to: 00448756 (CONDITIONAL_JUMP)  ; LAB_00448756
     MOV ECX,dword ptr [EAX]             ; 00448746
     MOV dword ptr [EDX],ECX             ; 00448748
     MOV ECX,dword ptr [EAX + 0x4]       ; 0044874a
@@ -104,18 +104,18 @@ section .text
         ;   Label: LAB_00448760
     PUSH ESI                            ; 00448761
     CMP dword ptr [EBX + 0x2dc],0x0     ; 00448762
-    JNZ 0x0044877b                      ; 00448769 | LAB_0044877b
-        ;   XREF to: 0044877b (CONDITIONAL_JUMP)
+    JNZ 0x0044877b                      ; 00448769
+        ;   XREF to: 0044877b (CONDITIONAL_JUMP)  ; LAB_0044877b
     MOV ESI,dword ptr [EBX + 0xdc]      ; 0044876b
     TEST ESI,ESI                        ; 00448771
-    JZ 0x0044877b                       ; 00448773 | LAB_0044877b
-        ;   XREF to: 0044877b (CONDITIONAL_JUMP)
+    JZ 0x0044877b                       ; 00448773
+        ;   XREF to: 0044877b (CONDITIONAL_JUMP)  ; LAB_0044877b
     MOV dword ptr [EBX + 0x2dc],ESI     ; 00448775
     MOV EDI,dword ptr [EBX + 0x2dc]     ; 0044877b
         ;   Label: LAB_0044877b
     TEST EDI,EDI                        ; 00448781
-    JZ 0x00448867                       ; 00448783 | LAB_00448867
-        ;   XREF to: 00448867 (CONDITIONAL_JUMP)
+    JZ 0x00448867                       ; 00448783
+        ;   XREF to: 00448867 (CONDITIONAL_JUMP)  ; LAB_00448867
     MOV EAX,EDI                         ; 00448789
     MOV dword ptr [EBX + 0xdc],EDI      ; 0044878b
     LEA EDX,[EBX + 0x20]                ; 00448791
@@ -131,8 +131,8 @@ section .text
     LEA EDX,[EBX + 0x30]                ; 004487b1
     ADD EAX,0x30                        ; 004487b4
     CMP EDX,EAX                         ; 004487b7
-    JZ 0x004487cb                       ; 004487b9 | LAB_004487cb
-        ;   XREF to: 004487cb (CONDITIONAL_JUMP)
+    JZ 0x004487cb                       ; 004487b9
+        ;   XREF to: 004487cb (CONDITIONAL_JUMP)  ; LAB_004487cb
     MOV ECX,dword ptr [EAX]             ; 004487bb
     MOV dword ptr [EDX],ECX             ; 004487bd
     MOV ECX,dword ptr [EAX + 0x4]       ; 004487bf
@@ -152,8 +152,8 @@ section .text
     FADD float ptr [EBX + 0x24]         ; 004487eb
     FSTP float ptr [EBX + 0x24]         ; 004487ee
     PUSH EBX                            ; 004487f1
-    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 004487f2 | void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 004487f2
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004487f7
     POP ESI                             ; 004487fa
     POP EDI                             ; 004487fb
@@ -170,36 +170,36 @@ section .text
     FCOMP float ptr [EBX + 0x28]        ; 00448816
     FNSTSW AX                           ; 00448819
     SAHF                                ; 0044881b
-    JNZ 0x004486fb                      ; 0044881c | LAB_004486fb
-        ;   XREF to: 004486fb (CONDITIONAL_JUMP)
+    JNZ 0x004486fb                      ; 0044881c
+        ;   XREF to: 004486fb (CONDITIONAL_JUMP)  ; LAB_004486fb
     FLD float ptr [EBX + 0x2ec]         ; 00448822
     FCOMP float ptr [EBX + 0x30]        ; 00448828
     FNSTSW AX                           ; 0044882b
     SAHF                                ; 0044882d
-    JNZ 0x004486fb                      ; 0044882e | LAB_004486fb
-        ;   XREF to: 004486fb (CONDITIONAL_JUMP)
+    JNZ 0x004486fb                      ; 0044882e
+        ;   XREF to: 004486fb (CONDITIONAL_JUMP)  ; LAB_004486fb
     FLD float ptr [EBX + 0x2f0]         ; 00448834
     FCOMP float ptr [EBX + 0x34]        ; 0044883a
     FNSTSW AX                           ; 0044883d
     SAHF                                ; 0044883f
-    JNZ 0x004486fb                      ; 00448840 | LAB_004486fb
-        ;   XREF to: 004486fb (CONDITIONAL_JUMP)
+    JNZ 0x004486fb                      ; 00448840
+        ;   XREF to: 004486fb (CONDITIONAL_JUMP)  ; LAB_004486fb
     FLD float ptr [EBX + 0x2f4]         ; 00448846
     FCOMP float ptr [EBX + 0x38]        ; 0044884c
     FNSTSW AX                           ; 0044884f
     SAHF                                ; 00448851
-    JNZ 0x004486fb                      ; 00448852 | LAB_004486fb
-        ;   XREF to: 004486fb (CONDITIONAL_JUMP)
+    JNZ 0x004486fb                      ; 00448852
+        ;   XREF to: 004486fb (CONDITIONAL_JUMP)  ; LAB_004486fb
     MOV EAX,dword ptr [EBX + 0x2f8]     ; 00448858
     MOV dword ptr [ESP + 0x18],EAX      ; 0044885e
-    JMP 0x00448760                      ; 00448862 | LAB_00448760
-        ;   XREF to: 00448760 (UNCONDITIONAL_JUMP)
+    JMP 0x00448760                      ; 00448862
+        ;   XREF to: 00448760 (UNCONDITIONAL_JUMP)  ; LAB_00448760
     MOV EAX,dword ptr [ESP + 0x20]      ; 00448867
         ;   Label: LAB_00448867
     MOV dword ptr [EBX + 0x24],EAX      ; 0044886b
     PUSH EBX                            ; 0044886e
-    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 0044886f | void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 0044886f
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00448874
     POP ESI                             ; 00448877
     POP EDI                             ; 00448878

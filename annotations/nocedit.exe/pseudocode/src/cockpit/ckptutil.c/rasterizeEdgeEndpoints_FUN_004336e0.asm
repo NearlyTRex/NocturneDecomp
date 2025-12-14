@@ -36,15 +36,15 @@ section .text
     PUSH EBP                            ; 004336e3
     SUB ESP,0x104                       ; 004336e4
     CMP dword ptr [ESP + 0x118],0x0     ; 004336ea
-    JZ 0x0043380d                       ; 004336f2 | LAB_0043380d
-        ;   XREF to: 0043380d (CONDITIONAL_JUMP)
+    JZ 0x0043380d                       ; 004336f2
+        ;   XREF to: 0043380d (CONDITIONAL_JUMP)  ; LAB_0043380d
     MOV ECX,0xfb                        ; 004336f8
     MOV EBX,dword ptr [ESP + 0x120]     ; 004336fd
     XOR EDI,EDI                         ; 00433704
     MOV dword ptr [ESP + 0x100],ECX     ; 00433706
     TEST EBX,EBX                        ; 0043370d
-    JLE 0x0043380d                      ; 0043370f | LAB_0043380d
-        ;   XREF to: 0043380d (CONDITIONAL_JUMP)
+    JLE 0x0043380d                      ; 0043370f
+        ;   XREF to: 0043380d (CONDITIONAL_JUMP)  ; LAB_0043380d
     MOV EBP,dword ptr [ESP + 0x124]     ; 00433715
     IMUL EBP,dword ptr [ESP + 0x128]    ; 0043371c
     MOV ESI,dword ptr [ESP + 0x11c]     ; 00433724
@@ -58,27 +58,27 @@ section .text
     MOVSX EBX,AX                        ; 00433740
     ADD EBX,EDX                         ; 00433743
     TEST EBX,EBX                        ; 00433745
-    JL 0x0043374d                       ; 00433747 | LAB_0043374d
-        ;   XREF to: 0043374d (CONDITIONAL_JUMP)
+    JL 0x0043374d                       ; 00433747
+        ;   XREF to: 0043374d (CONDITIONAL_JUMP)  ; LAB_0043374d
     CMP EBX,EBP                         ; 00433749
-    JLE 0x00433780                      ; 0043374b | LAB_00433780
-        ;   XREF to: 00433780 (CONDITIONAL_JUMP)
+    JLE 0x00433780                      ; 0043374b
+        ;   XREF to: 00433780 (CONDITIONAL_JUMP)  ; LAB_00433780
     PUSH EDI                            ; 0043374d
         ;   Label: LAB_0043374d
-    PUSH 0x617dbc                       ; 0043374e | = "Edge out of range: edge %d" | s_Edge_out_of_range_edge_d_00617dbc = Edge out of range: edge %d
+    PUSH 0x617dbc                       ; 0043374e | = "Edge out of range: edge %d"
     LEA EAX,[ESP + 0x8]                 ; 00433753
     PUSH EAX                            ; 00433757
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00433758 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
-    MOV EAX,0x617dd7                    ; 0043375d | = "..\\cockpit\\ckptutil.c" | s_cockpit_ckptutil_c_00617dd7 = ..\cockpit\ckptutil.c
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00433758
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    MOV EAX,0x617dd7                    ; 0043375d | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 00433762
-    MOV [0x02f0ca48],EAX                ; 00433765 | char * g_CurrentFilename
+    MOV [0x02f0ca48],EAX                ; 00433765 | g_CurrentFilename
     MOV EAX,ESP                         ; 0043376a
     MOV EDX,0x553                       ; 0043376c
     PUSH EAX                            ; 00433771
-    MOV dword ptr [0x02f0ca4c],EDX      ; 00433772 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00433778 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02f0ca4c],EDX      ; 00433772 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00433778
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0043377d
     ADD EBX,dword ptr [ESP + 0x118]     ; 00433780
         ;   Label: LAB_00433780
@@ -94,27 +94,27 @@ section .text
     MOVSX EBX,AX                        ; 004337a8
     ADD EBX,EDX                         ; 004337ab
     TEST EBX,EBX                        ; 004337ad
-    JL 0x004337b5                       ; 004337af | LAB_004337b5
-        ;   XREF to: 004337b5 (CONDITIONAL_JUMP)
+    JL 0x004337b5                       ; 004337af
+        ;   XREF to: 004337b5 (CONDITIONAL_JUMP)  ; LAB_004337b5
     CMP EBX,EBP                         ; 004337b1
-    JLE 0x004337e8                      ; 004337b3 | LAB_004337e8
-        ;   XREF to: 004337e8 (CONDITIONAL_JUMP)
+    JLE 0x004337e8                      ; 004337b3
+        ;   XREF to: 004337e8 (CONDITIONAL_JUMP)  ; LAB_004337e8
     PUSH EDI                            ; 004337b5
         ;   Label: LAB_004337b5
-    PUSH 0x617ded                       ; 004337b6 | = "Edge out of range: edge %d" | s_Edge_out_of_range_edge_d_00617ded = Edge out of range: edge %d
+    PUSH 0x617ded                       ; 004337b6 | = "Edge out of range: edge %d"
     LEA EAX,[ESP + 0x8]                 ; 004337bb
     PUSH EAX                            ; 004337bf
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004337c0 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
-    MOV EAX,0x617e08                    ; 004337c5 | = "..\\cockpit\\ckptutil.c" | s_cockpit_ckptutil_c_00617e08 = ..\cockpit\ckptutil.c
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004337c0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    MOV EAX,0x617e08                    ; 004337c5 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 004337ca
-    MOV [0x02f0ca48],EAX                ; 004337cd | char * g_CurrentFilename
+    MOV [0x02f0ca48],EAX                ; 004337cd | g_CurrentFilename
     MOV EAX,ESP                         ; 004337d2
     MOV EDX,0x55c                       ; 004337d4
     PUSH EAX                            ; 004337d9
-    MOV dword ptr [0x02f0ca4c],EDX      ; 004337da | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004337e0 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02f0ca4c],EDX      ; 004337da | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004337e0
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004337e5
     MOV EAX,dword ptr [ESP + 0x118]     ; 004337e8
         ;   Label: LAB_004337e8
@@ -125,8 +125,8 @@ section .text
     INC EDI                             ; 00433802
     MOV byte ptr [EBX],AL               ; 00433803
     CMP EDI,EDX                         ; 00433805
-    JL 0x0043372c                       ; 00433807 | LAB_0043372c
-        ;   XREF to: 0043372c (CONDITIONAL_JUMP)
+    JL 0x0043372c                       ; 00433807
+        ;   XREF to: 0043372c (CONDITIONAL_JUMP)  ; LAB_0043372c
     ADD ESP,0x104                       ; 0043380d
         ;   Label: LAB_0043380d
     POP EBP                             ; 00433813

@@ -1,136 +1,136 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 7, 
-    "global_count": 3, 
-    "total_lines": 61, 
-    "assembly_lines": 41, 
-    "suspect_count": 2, 
+    "assembly_lines": 41,
+    "complexity_score": 45,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
-      "addr": "00441890"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_received_g_damage_hitp_006557a7", 
-      "addr": "006557a7", 
-      "value": null
-    }, 
-    {
-      "type": "CConsole*", 
-      "name": "g_CConsolePtr", 
-      "addr": "0066e8e0", 
-      "value": "0083b1a4"
-    }, 
-    {
-      "type": "CConsole", 
-      "name": "g_ConsolePtr", 
-      "addr": "0083b1a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 20, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(double)*(float *)(param_5 + 0x2f8),unaff_EBX);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005e0b00", 
-    "signature": "undefined core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()", 
-    "address_range": [
-      [
-        "005e0b00", 
-        "005e0b76"
-      ]
-    ], 
-    "name": "core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_c"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 61
+  },
   "cross_references": [
     {
-      "from_addr": "0040ab67", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210", 
-      "addr": "0040a210"
-    }, 
+      "addr": "0040a210",
+      "from_addr": "0040ab67",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004492a8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_crossbow.cpp_CCrossbow_FUN_00448f20", 
-      "addr": "00448f20"
-    }, 
+      "addr": "00448f20",
+      "from_addr": "004492a8",
+      "name": "core_crossbow.cpp_CCrossbow_FUN_00448f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f0a9d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gun.cpp_FUN_004f0350", 
-      "addr": "004f0350"
-    }, 
+      "addr": "004f0350",
+      "from_addr": "004f0a9d",
+      "name": "core_gun.cpp_FUN_004f0350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00506231", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lightgun.cpp_FUN_00505c70", 
-      "addr": "00505c70"
-    }, 
+      "addr": "00505c70",
+      "from_addr": "00506231",
+      "name": "core_lightgun.cpp_FUN_00505c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056bc47", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056b810", 
-      "addr": "0056b810"
-    }, 
+      "addr": "0056b810",
+      "from_addr": "0056bc47",
+      "name": "core_set.cpp_CDemonSet_FUN_0056b810",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005de2b6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tommygun.cpp_FUN_005ddb30", 
-      "addr": "005ddb30"
-    }, 
+      "addr": "005ddb30",
+      "from_addr": "005de2b6",
+      "name": "core_tommygun.cpp_FUN_005ddb30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e3bc4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_FUN_005e3750", 
-      "addr": "005e3750"
+      "addr": "005e3750",
+      "from_addr": "005e3bc4",
+      "name": "core_turret.cpp_FUN_005e3750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e0b00",
+    "address_range": [
+      [
+        "005e0b00",
+        "005e0b76"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00",
+    "signature": "undefined core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00()"
+  },
+  "function_calls": [
+    {
+      "addr": "00441890",
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006557a7",
+      "name": "s_s_received_g_damage_hitp_006557a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e8e0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "0083b1a4"
+    },
+    {
+      "addr": "0083b1a4",
+      "name": "g_ConsolePtr",
+      "type": "CConsole",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 8,
+        "type": "undefined8"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBX",
+      "text": "(double)*(float *)(param_5 + 0x2f8),unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

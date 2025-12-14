@@ -1,80 +1,80 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 63, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 10, 
-    "suspect_count": 5, 
+    "assembly_lines": 10,
+    "complexity_score": 63,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint *in_stack_0000000c;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint *in_stack_00000010;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = *in_stack_00000010;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = *in_stack_00000010;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return in_stack_0000000c;"
-    }
-  ], 
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00599630", 
-    "signature": "undefined core_skeledit.cpp_FUN_00599630()", 
+    "address": "00599630",
     "address_range": [
       [
-        "00599630", 
+        "00599630",
         "00599648"
       ]
-    ], 
-    "name": "core_skeledit.cpp_FUN_00599630"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_skeledit.cpp_FUN_00599630",
+    "signature": "undefined core_skeledit.cpp_FUN_00599630()"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_0000000c",
+      "text": "uint *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "uint *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000010",
+      "text": "*in_stack_0000000c = *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "return in_stack_0000000c;",
+      "type": "stack_param"
+    }
+  ]
 }

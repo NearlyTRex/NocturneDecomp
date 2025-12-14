@@ -153,9 +153,9 @@ void core_skeledit_cpp_FUN_0058d790(void)
         core_main_c_displayErrorAndQuit_FUN_00506f10("BUG! Count mismatch!!");
       }
       if (0 < in_stack_0000000c->cap_tri_count[in_stack_00000010]) {
-        piVar5 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                                  (in_stack_0000000c->cap_tri_count[in_stack_00000010] * 4,
-                                   "..\\core\\skeledit.cpp",0x8a1);
+        piVar5 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                           (in_stack_0000000c->cap_tri_count[in_stack_00000010] * 4,
+                            "..\\core\\skeledit.cpp",0x8a1);
         in_stack_0000000c->cap_index_ptr[in_stack_00000010] = piVar5;
         if (piVar5 == (int *)0x0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";

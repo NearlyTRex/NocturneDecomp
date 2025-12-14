@@ -1,91 +1,91 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 90, 
-    "assembly_lines": 60, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0", 
-      "addr": "0059c1f0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_loadSkeleton_FUN_005a1df0", 
-      "addr": "005a1df0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059a780", 
-    "signature": "void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel * this_ptr)", 
-    "address_range": [
-      [
-        "0059a780", 
-        "0059a803"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 60,
+    "complexity_score": 30,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 90
+  },
   "cross_references": [
     {
-      "from_addr": "0059d4ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460", 
-      "addr": "0059d460"
-    }, 
+      "addr": "0059d460",
+      "from_addr": "0059d4ac",
+      "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a1da6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_getDeformableModel_FUN_005a1cf0", 
-      "addr": "005a1cf0"
+      "addr": "005a1cf0",
+      "from_addr": "005a1da6",
+      "name": "core_skeleton.cpp_getDeformableModel_FUN_005a1cf0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0059a780",
+    "address_range": [
+      [
+        "0059a780",
+        "0059a803"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780",
+    "signature": "void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059c1f0",
+      "name": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0"
+    },
+    {
+      "addr": "005a1df0",
+      "name": "core_skeleton.cpp_loadSkeleton_FUN_005a1df0"
+    },
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      }
+    ]
+  },
+  "suspects": []
 }

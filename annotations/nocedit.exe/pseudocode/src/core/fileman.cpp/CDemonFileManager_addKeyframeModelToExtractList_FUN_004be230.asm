@@ -28,19 +28,19 @@ section .text
     PUSH ESI                            ; 004be231
     MOV EDX,dword ptr [ESP + 0x10]      ; 004be232
     PUSH EDX                            ; 004be236
-    PUSH 0x6297fa                       ; 004be237 | = "Adding files for %s to extract list..." | s_Adding_files_for_s_to_ex_006297fa = Adding files for %s to extract list...
-    MOV ECX,dword ptr [0x00678a60]      ; 004be23c | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
-    PUSH ECX                            ; 004be242 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004be243 | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x6297fa                       ; 004be237 | = "Adding files for %s to extract list..."
+    MOV ECX,dword ptr [0x00678a60]      ; 004be23c | g_CEditorToolsPtr
+    PUSH ECX                            ; 004be242 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004be243
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004be248
     MOV EBX,dword ptr [ESP + 0x10]      ; 004be24b
     MOV EAX,dword ptr [ESP + 0xc]       ; 004be24f
     PUSH EBX                            ; 004be253
     MOV ESI,dword ptr [EAX]             ; 004be254
     PUSH ESI                            ; 004be256
-    CALL core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 ; 004be257 | void core_dmodel.cpp_writeModelDependencies_FUN_0047ee30(FILE * dependency_file, char * model_filename)
-        ;   XREF to: 0047ee30 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_writeModelDependencies_FUN_0047ee30 ; 004be257
+        ;   XREF to: 0047ee30 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_writeModelDependencies_FUN_0047ee30(FILE * dependency_file, char * model_filename)
     ADD ESP,0x8                         ; 004be25c
     POP ESI                             ; 004be25f
     POP EBX                             ; 004be260

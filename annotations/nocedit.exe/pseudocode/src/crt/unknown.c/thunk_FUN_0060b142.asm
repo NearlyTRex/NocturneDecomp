@@ -12,6 +12,6 @@
 section .text
 
     JMP 0x0060b142                      ; 0060477a
-        ;   Label: crt_unknown.c_thunk_FUN_0060b142
         ;   XREF to: 0060b142 (UNCONDITIONAL_JUMP)
+        ;   Label: crt_unknown.c_thunk_FUN_0060b142
 

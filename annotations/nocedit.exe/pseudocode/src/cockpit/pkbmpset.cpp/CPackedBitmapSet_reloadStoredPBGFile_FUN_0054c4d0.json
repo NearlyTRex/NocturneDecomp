@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 36, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 31, 
-    "assembly_lines": 20, 
-    "suspect_count": 2, 
+    "assembly_lines": 20,
+    "complexity_score": 36,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480", 
-      "addr": "0054c480"
-    }, 
-    {
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60", 
-      "addr": "0054bd60"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_0000000c;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,this_ptr->filename,in_stack_0000000c,this_ptr->config_param,0,unaff_retaddr);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054c4d0", 
-    "signature": "void cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0(CPackedBitmapSet * this_ptr, char * pbg_filename)", 
-    "address_range": [
-      [
-        "0054c4d0", 
-        "0054c4f7"
-      ]
-    ], 
-    "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmapSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "pbg_filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 31
+  },
   "cross_references": [
     {
-      "from_addr": "0054c5ad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500", 
-      "addr": "0054c500"
+      "addr": "0054c500",
+      "from_addr": "0054c5ad",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054c4d0",
+    "address_range": [
+      [
+        "0054c4d0",
+        "0054c4f7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0",
+    "signature": "void cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0(CPackedBitmapSet * this_ptr, char * pbg_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054c480",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480"
+    },
+    {
+      "addr": "0054bd60",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmapSet *"
+      },
+      {
+        "is_param": true,
+        "name": "pbg_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr,this_ptr->filename,in_stack_0000000c,this_ptr->config_param,0,unaff_retaddr);",
+      "type": "stack_param"
     }
   ]
 }

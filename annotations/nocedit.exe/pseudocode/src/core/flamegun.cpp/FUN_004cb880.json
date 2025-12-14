@@ -1,90 +1,90 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 62, 
-    "pseudocode_lines": 47, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 77, 
-    "assembly_lines": 30, 
-    "suspect_count": 1, 
+    "assembly_lines": 30,
+    "complexity_score": 62,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 47,
+    "suspect_count": 1,
     "suspect_types": [
       "suspect_float"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }, 
-    {
-      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
-      "addr": "005ede70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_flamegun_kfm_0062a38e", 
-      "addr": "0062a38e", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065e26c", 
-      "addr": "0065e26c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_0065e284", 
-      "addr": "0065e284", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 39, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "(pCVar2->base_weapon).fire_cooldown = 1.4013e-45;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004cb880", 
-    "signature": "CFlameThrower * core_flamegun.cpp_FUN_004cb880(CFlameThrower * this_ptr)", 
-    "address_range": [
-      [
-        "004cb880", 
-        "004cb91d"
-      ]
-    ], 
-    "name": "core_flamegun.cpp_FUN_004cb880"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFlameThrower *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 77
+  },
   "cross_references": [
     {
-      "from_addr": "004cb85a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flamegun.cpp_FUN_004cb840", 
-      "addr": "004cb840"
+      "addr": "004cb840",
+      "from_addr": "004cb85a",
+      "name": "core_flamegun.cpp_FUN_004cb840",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cb880",
+    "address_range": [
+      [
+        "004cb880",
+        "004cb91d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flamegun.cpp_FUN_004cb880",
+    "signature": "CFlameThrower * core_flamegun.cpp_FUN_004cb880(CFlameThrower * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "005ede70",
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a38e",
+      "name": "s_flamegun_kfm_0062a38e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065e26c",
+      "name": "DAT_0065e26c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065e284",
+      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_0065e284",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlameThrower *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 39,
+      "match": "1.4013e-45",
+      "text": "(pCVar2->base_weapon).fire_cooldown = 1.4013e-45;",
+      "type": "suspect_float"
     }
   ]
 }

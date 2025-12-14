@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 19, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_registerActorClass_FUN_0040c2e0", 
-      "addr": "0040c2e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CBugs_00616cc3", 
-      "addr": "00616cc3", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CBugsClassVersion", 
-      "addr": "0066e65c", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "CDemonActorType", 
-      "name": "g_CBugsClassInfo", 
-      "addr": "00823a38", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActorType", 
-      "name": "g_CEnemyClassInfo", 
-      "addr": "02cf2bb8", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 11,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00424c40", 
-    "signature": "CDemonActorType * core_bugs.cpp_staticInit_FUN_00424c40(void)", 
+    "address": "00424c40",
     "address_range": [
       [
-        "00424c40", 
+        "00424c40",
         "00424c63"
       ]
-    ], 
-    "name": "core_bugs.cpp_staticInit_FUN_00424c40"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_staticInit_FUN_00424c40",
+    "signature": "CDemonActorType * core_bugs.cpp_staticInit_FUN_00424c40(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c2e0",
+      "name": "core_actor.cpp_registerActorClass_FUN_0040c2e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616cc3",
+      "name": "s_CBugs_00616cc3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e65c",
+      "name": "g_CBugsClassVersion",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "00823a38",
+      "name": "g_CBugsClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    },
+    {
+      "addr": "02cf2bb8",
+      "name": "g_CEnemyClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

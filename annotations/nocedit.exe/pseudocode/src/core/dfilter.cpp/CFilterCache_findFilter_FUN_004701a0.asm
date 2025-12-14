@@ -28,24 +28,24 @@ section .text
     MOV EDX,dword ptr [EDI]             ; 004701ac
     XOR EBX,EBX                         ; 004701ae
     TEST EDX,EDX                        ; 004701b0
-    JLE 0x004701cf                      ; 004701b2 | LAB_004701cf
-        ;   XREF to: 004701cf (CONDITIONAL_JUMP)
+    JLE 0x004701cf                      ; 004701b2
+        ;   XREF to: 004701cf (CONDITIONAL_JUMP)  ; LAB_004701cf
     LEA ESI,[EDI + 0x4]                 ; 004701b4
     PUSH EBP                            ; 004701b7
         ;   Label: LAB_004701b7
     PUSH ESI                            ; 004701b8
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 004701b9 | int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strcmp_FUN_005fef20 ; 004701b9
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 004701be
     TEST EAX,EAX                        ; 004701c1
-    JZ 0x004701d6                       ; 004701c3 | LAB_004701d6
-        ;   XREF to: 004701d6 (CONDITIONAL_JUMP)
+    JZ 0x004701d6                       ; 004701c3
+        ;   XREF to: 004701d6 (CONDITIONAL_JUMP)  ; LAB_004701d6
     INC EBX                             ; 004701c5
     MOV ECX,dword ptr [EDI]             ; 004701c6
     ADD ESI,0x28                        ; 004701c8
     CMP EBX,ECX                         ; 004701cb
-    JL 0x004701b7                       ; 004701cd | LAB_004701b7
-        ;   XREF to: 004701b7 (CONDITIONAL_JUMP)
+    JL 0x004701b7                       ; 004701cd
+        ;   XREF to: 004701b7 (CONDITIONAL_JUMP)  ; LAB_004701b7
     XOR EAX,EAX                         ; 004701cf
         ;   Label: LAB_004701cf
     POP EBP                             ; 004701d1

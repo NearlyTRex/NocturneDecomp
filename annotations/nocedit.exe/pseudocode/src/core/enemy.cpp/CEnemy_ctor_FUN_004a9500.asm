@@ -39,13 +39,13 @@ section .text
     SUB ESP,0x4                         ; 004a9503
     MOV EDX,dword ptr [ESP + 0x14]      ; 004a9506
     PUSH EDX                            ; 004a950a
-    CALL core_charactr.cpp_CCharacter_ctor_FUN_00427e20 ; 004a950b | CCharacter * core_charactr.cpp_CCharacter_ctor_FUN_00427e20(CCharacter * this_ptr)
-        ;   XREF to: 00427e20 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_ctor_FUN_00427e20 ; 004a950b
+        ;   XREF to: 00427e20 (UNCONDITIONAL_CALL)  ; CCharacter * core_charactr.cpp_CCharacter_ctor_FUN_00427e20(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004a9510
     PUSH 0x3f8ccccd                     ; 004a9513
     MOV EBX,EAX                         ; 004a9518
     PUSH 0x3f666666                     ; 004a951a
-    MOV dword ptr [EAX + 0x154],0x65d7d4 ; 004a951f | CDemonActor_vtable PTR_core_enemy.cpp_FUN_004a9650_0065d7d4
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a9529 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + 0x154],0x65d7d4 ; 004a951f | PTR_core_enemy.cpp_FUN_004a9650_0065d7d4
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a9529
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

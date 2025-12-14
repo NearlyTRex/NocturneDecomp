@@ -30,8 +30,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00481c31
     PUSH EBX                            ; 00481c35
     MOV dword ptr [EBX + 0x10c],0x0     ; 00481c36
-    CALL engine_dosio.c_CFileFinder_reset_FUN_00481db0 ; 00481c40 | void engine_dosio.c_CFileFinder_reset_FUN_00481db0(CFileFinder * this_ptr)
-        ;   XREF to: 00481db0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_CFileFinder_reset_FUN_00481db0 ; 00481c40
+        ;   XREF to: 00481db0 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_CFileFinder_reset_FUN_00481db0(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00481c45
     MOV EAX,EBX                         ; 00481c48
     POP EBX                             ; 00481c4a

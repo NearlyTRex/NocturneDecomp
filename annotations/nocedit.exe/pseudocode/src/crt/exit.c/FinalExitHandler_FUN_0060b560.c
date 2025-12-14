@@ -11,8 +11,8 @@ void __cdecl crt_exit_c_FinalExitHandler_FUN_0060b560(int exit_code)
 {
   int unaff_EBX;
   
-  (*(code *)PTR_crt_exit_c_ExitHookStub_FUN_0060b530_00685478)();
-  (*(code *)PTR_crt_exit_c_ExitHookStub_FUN_0060b530_0068547c)();
+  (*PTR_crt_exit_c_ExitHookStub_FUN_0060b530_00685478)();
+  (*PTR_crt_exit_c_ExitHookStub_FUN_0060b530_0068547c)();
   if (DAT_006852c4 != (code *)0x0) {
     (*DAT_006852c4)();
   }

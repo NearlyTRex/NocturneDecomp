@@ -11,8 +11,7 @@ void core_wateract_cpp_FUN_005ea860(void)
 {
   CWaterActor *this_ptr;
   
-  this_ptr = (CWaterActor *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2b238,"..\\core\\wateract.cpp",0x55);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2b238,"..\\core\\wateract.cpp",0x55);
   if (this_ptr == (CWaterActor *)0x0) {
     return;
   }

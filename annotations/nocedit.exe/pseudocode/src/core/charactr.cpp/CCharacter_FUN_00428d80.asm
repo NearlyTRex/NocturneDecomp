@@ -35,22 +35,22 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 00428d8d
     PUSH EAX                            ; 00428d91
     PUSH EBX                            ; 00428d92
-    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 ; 00428d93 | CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
-        ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 ; 00428d93
+        ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 00428d98
     PUSH EAX                            ; 00428d9b
     LEA EAX,[ESP + 0x4]                 ; 00428d9c
     PUSH EAX                            ; 00428da0
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00428da1 | CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)
+    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00428da1
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00428da6
     MOV EAX,dword ptr [EAX + 0x4]       ; 00428da9
     MOV dword ptr [ESP + 0x24],EAX      ; 00428dac
     MOV EAX,dword ptr [EBX + 0x2438]    ; 00428db0
     PUSH dword ptr [ESP + 0x24]         ; 00428db6
     MOV dword ptr [ESP + 0x24],EAX      ; 00428dba
-    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 00428dbe | float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
-        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 00428dbe
+        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00428dc3
     FLD float ptr [ESP + 0x2c]          ; 00428dc7
     ADD ESP,0x4                         ; 00428dcb
@@ -63,14 +63,14 @@ section .text
     FCOMP float ptr [ESP + 0x18]        ; 00428de0
     FNSTSW AX                           ; 00428de4
     SAHF                                ; 00428de6
-    JC 0x00428e0d                       ; 00428de7 | LAB_00428e0d
-        ;   XREF to: 00428e0d (CONDITIONAL_JUMP)
+    JC 0x00428e0d                       ; 00428de7
+        ;   XREF to: 00428e0d (CONDITIONAL_JUMP)  ; LAB_00428e0d
     FLD float ptr [ESP + 0x24]          ; 00428de9
     FCOMP float ptr [ESP + 0x20]        ; 00428ded
     FNSTSW AX                           ; 00428df1
     SAHF                                ; 00428df3
-    JBE 0x00428e13                      ; 00428df4 | LAB_00428e13
-        ;   XREF to: 00428e13 (CONDITIONAL_JUMP)
+    JBE 0x00428e13                      ; 00428df4
+        ;   XREF to: 00428e13 (CONDITIONAL_JUMP)  ; LAB_00428e13
     MOV EAX,dword ptr [ESP + 0x20]      ; 00428df6
     MOV dword ptr [ESP + 0x1c],EAX      ; 00428dfa
         ;   Label: LAB_00428dfa
@@ -81,8 +81,8 @@ section .text
     RET                                 ; 00428e0c
     MOV EAX,dword ptr [ESP + 0x18]      ; 00428e0d
         ;   Label: LAB_00428e0d
-    JMP 0x00428dfa                      ; 00428e11 | LAB_00428dfa
-        ;   XREF to: 00428dfa (UNCONDITIONAL_JUMP)
+    JMP 0x00428dfa                      ; 00428e11
+        ;   XREF to: 00428dfa (UNCONDITIONAL_JUMP)  ; LAB_00428dfa
     MOV EAX,dword ptr [ESP + 0x24]      ; 00428e13
         ;   Label: LAB_00428e13
     MOV dword ptr [ESP + 0x1c],EAX      ; 00428e17

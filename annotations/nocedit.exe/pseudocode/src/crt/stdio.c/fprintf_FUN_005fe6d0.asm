@@ -40,8 +40,8 @@ section .text
     PUSH EDX                            ; 005fe6e2
     MOV EBX,dword ptr [ESP + 0x14]      ; 005fe6e3
     PUSH EBX                            ; 005fe6e7
-    CALL crt_stdio.c_vfprintf_FUN_00604850 ; 005fe6e8 | int crt_stdio.c_vfprintf_FUN_00604850(FILE * file, char * format, va_list_t args)
-        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vfprintf_FUN_00604850 ; 005fe6e8
+        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vfprintf_FUN_00604850(FILE * file, char * format, va_list_t args)
     ADD ESP,0xc                         ; 005fe6ed
     ADD ESP,0x4                         ; 005fe6f0
     POP EBX                             ; 005fe6f3

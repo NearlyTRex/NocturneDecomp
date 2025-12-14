@@ -11,7 +11,7 @@ void core_imp_cpp_FUN_004f9860(void)
 {
   CImp *this_ptr;
   
-  this_ptr = (CImp *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbef4,"..\\core\\imp.cpp",0x59);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbef4,"..\\core\\imp.cpp",0x59);
   if (this_ptr == (CImp *)0x0) {
     return;
   }

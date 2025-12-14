@@ -1,99 +1,99 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 38, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 123, 
-    "assembly_lines": 85, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_3d.c_calculatePolygonLighting_FUN_00403a00", 
-      "addr": "00403a00"
-    }, 
-    {
-      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
-      "addr": "00403950"
-    }, 
-    {
-      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
-      "addr": "004371b0"
-    }, 
-    {
-      "name": "engine_clipper.c_clipPolygonToViewport_FUN_00438420", 
-      "addr": "00438420"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AdvancedClippingEnabled", 
-      "addr": "02d02578", 
-      "value": null
-    }, 
-    {
-      "type": "RenderScanlineFunc*", 
-      "name": "g_ScanlineRenderFunc", 
-      "addr": "02d0257c", 
-      "value": null
-    }, 
-    {
-      "type": "BOOL", 
-      "name": "g_MMXSupported", 
-      "addr": "02d05248", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 85,
+    "complexity_score": 38,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 123
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00406c80", 
-    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80(SMRGLHeaderPrimitive * polygon_info)", 
+    "address": "00406c80",
     "address_range": [
       [
-        "00406c80", 
+        "00406c80",
         "00406d5a"
       ]
-    ], 
-    "name": "engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80",
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80(SMRGLHeaderPrimitive * polygon_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403a00",
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_00403a00"
+    },
+    {
+      "addr": "00403950",
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "004371b0",
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0"
+    },
+    {
+      "addr": "00438420",
+      "name": "engine_clipper.c_clipPolygonToViewport_FUN_00438420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02d02578",
+      "name": "g_AdvancedClippingEnabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "RenderScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "BOOL",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "polygon_info"
+        "is_param": true,
+        "name": "polygon_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

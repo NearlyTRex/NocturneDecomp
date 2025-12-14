@@ -1,107 +1,107 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 51, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 5, 
-    "global_count": 0, 
-    "total_lines": 63, 
-    "assembly_lines": 37, 
-    "suspect_count": 2, 
+    "assembly_lines": 37,
+    "complexity_score": 51,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
     "suspect_types": [
       "register_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "void *in_EAX;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "return in_EAX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00492001", 
-    "signature": "void * core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)", 
-    "address_range": [
-      [
-        "00492001", 
-        "00492041"
-      ]
-    ], 
-    "name": "core_dstrender.cpp_memcpyMMX_FUN_00492001"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "dest"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "src"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "byte_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 63
+  },
   "cross_references": [
     {
-      "from_addr": "0044cee2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0", 
-      "addr": "0044cdf0"
-    }, 
+      "addr": "0044cdf0",
+      "from_addr": "0044cee2",
+      "name": "core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044ca67", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860", 
-      "addr": "0044c860"
-    }, 
+      "addr": "0044c860",
+      "from_addr": "0044ca67",
+      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044c820", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780", 
-      "addr": "0044c780"
-    }, 
+      "addr": "0044c780",
+      "from_addr": "0044c820",
+      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00472cef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70", 
-      "addr": "00472c70"
-    }, 
+      "addr": "00472c70",
+      "from_addr": "00472cef",
+      "name": "core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047315c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80", 
-      "addr": "00472f80"
+      "addr": "00472f80",
+      "from_addr": "0047315c",
+      "name": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00492001",
+    "address_range": [
+      [
+        "00492001",
+        "00492041"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dstrender.cpp_memcpyMMX_FUN_00492001",
+    "signature": "void * core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "byte_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EAX",
+      "text": "void *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 28,
+      "match": "in_EAX",
+      "text": "return in_EAX;",
+      "type": "register_param"
     }
   ]
 }

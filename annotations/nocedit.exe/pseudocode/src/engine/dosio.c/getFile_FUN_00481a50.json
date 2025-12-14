@@ -1,743 +1,743 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 128, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 94, 
-    "global_count": 3, 
-    "total_lines": 171, 
-    "assembly_lines": 118, 
-    "suspect_count": 6, 
+    "assembly_lines": 118,
+    "complexity_score": 128,
+    "cross_reference_count": 94,
+    "function_call_count": 6,
+    "global_count": 3,
+    "pseudocode_lines": 53,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
-      "addr": "005ff9e0"
-    }, 
-    {
-      "name": "crt_file.c_create_directory_FUN_00600e10", 
-      "addr": "00600e10"
-    }, 
-    {
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
-    }, 
-    {
-      "name": "engine_dosio.c_findFile_FUN_00481760", 
-      "addr": "00481760"
-    }, 
-    {
-      "name": "engine_dosio.c_getRelativeFilePath_FUN_004816c0", 
-      "addr": "004816c0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_dosio_c_006215a8", 
-      "addr": "006215a8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_dosio_c_006215ba", 
-      "addr": "006215ba", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_dosio_c_006215cc", 
-      "addr": "006215cc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 17, 
-      "match": "&stack0xfffffde0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_dosio_c_getRelativeFilePath_FUN_004816c0(&stack0xfffffde0,directory,filename);"
-    }, 
-    {
-      "line": 27, 
-      "match": "&stack0xfffffde4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xfffffde4,(char *)0x0,mode,\"..\\\\engine\\\\dosio.c\",0x198);"
-    }, 
-    {
-      "line": 34, 
-      "match": "&stack0xfffffde4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar3 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffffde4);"
-    }, 
-    {
-      "line": 46, 
-      "match": "&stack0xfffffde8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "directory_00 = &stack0xfffffde8;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00481a50", 
-    "signature": "FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)", 
-    "address_range": [
-      [
-        "00481a50", 
-        "00481b4c"
-      ]
-    ], 
-    "name": "engine_dosio.c_getFile_FUN_00481a50"
-  }, 
-  "stack_frame": {
-    "local_size": 548, 
-    "variables": [
-      {
-        "offset": -544, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_220"
-      }, 
-      {
-        "offset": -288, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_120"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "directory"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "mode"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 560, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 171
+  },
   "cross_references": [
     {
-      "from_addr": "00431b61", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0", 
-      "addr": "00431ac0"
-    }, 
-    {
-      "from_addr": "0043320a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0", 
-      "addr": "004331f0"
-    }, 
-    {
-      "from_addr": "004346c1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690", 
-      "addr": "00434690"
-    }, 
-    {
-      "from_addr": "00431896", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870", 
-      "addr": "00431870"
-    }, 
-    {
-      "from_addr": "004334a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480", 
-      "addr": "00433480"
-    }, 
-    {
-      "from_addr": "0054b88b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860", 
-      "addr": "0054b860"
-    }, 
-    {
-      "from_addr": "0054bb6a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40", 
-      "addr": "0054bb40"
-    }, 
-    {
-      "from_addr": "0054bf8a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40", 
-      "addr": "0054bf40"
-    }, 
-    {
-      "from_addr": "0054c1ff", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0", 
-      "addr": "0054c1e0"
-    }, 
-    {
-      "from_addr": "00438d13", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_CCloth_load_FUN_00438cf0", 
-      "addr": "00438cf0"
-    }, 
-    {
-      "from_addr": "00439277", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_ParseClothFile_FUN_00439260", 
-      "addr": "00439260"
-    }, 
-    {
-      "from_addr": "004425a3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_CCourse_load_FUN_00442580", 
-      "addr": "00442580"
-    }, 
-    {
-      "from_addr": "00442aa7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_CCourse_save_FUN_00442a90", 
-      "addr": "00442a90"
-    }, 
-    {
-      "from_addr": "0044f480", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0", 
-      "addr": "0044f3e0"
-    }, 
-    {
-      "from_addr": "00452a38", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
-      "addr": "004529b0"
-    }, 
-    {
-      "from_addr": "0047030a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dfilter.cpp_CDemonFilter_load_FUN_004702f0", 
-      "addr": "004702f0"
-    }, 
-    {
-      "from_addr": "00470527", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dfilter.cpp_CDemonFilter_save_FUN_00470510", 
-      "addr": "00470510"
-    }, 
-    {
-      "from_addr": "00470804", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730", 
-      "addr": "00470730"
-    }, 
-    {
-      "from_addr": "00471b13", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dimage.cpp_CDemonImage_load_FUN_00471ad0", 
-      "addr": "00471ad0"
-    }, 
-    {
-      "from_addr": "00479024", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10", 
-      "addr": "00478e10"
-    }, 
-    {
-      "from_addr": "00479568", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
-      "addr": "00479330"
-    }, 
-    {
-      "from_addr": "00476e42", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0", 
-      "addr": "00476db0"
-    }, 
-    {
-      "from_addr": "00494e03", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0", 
-      "addr": "00494de0"
-    }, 
-    {
-      "from_addr": "00495051", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_save_FUN_00495040", 
-      "addr": "00495040"
-    }, 
-    {
-      "from_addr": "004e1424", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
-      "addr": "004e12b0"
-    }, 
-    {
-      "from_addr": "004e2b51", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_openSomething_FUN_004e2910", 
-      "addr": "004e2910"
-    }, 
-    {
-      "from_addr": "004dabe2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
-    }, 
-    {
-      "from_addr": "004e4082", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
-      "addr": "004e4010"
-    }, 
-    {
-      "from_addr": "004e0da6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
-      "addr": "004e0cd0"
-    }, 
-    {
-      "from_addr": "004e2188", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0", 
-      "addr": "004e1cb0"
-    }, 
-    {
-      "from_addr": "004d78d2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_FUN_004d7810", 
-      "addr": "004d7810"
-    }, 
-    {
-      "from_addr": "004e1c69", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_FUN_004e1c30", 
-      "addr": "004e1c30"
-    }, 
-    {
-      "from_addr": "004dd585", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_SaveRelated_FUN_004dcee0", 
-      "addr": "004dcee0"
-    }, 
-    {
-      "from_addr": "004ef24c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_load_FUN_004ef030", 
-      "addr": "004ef030"
-    }, 
-    {
-      "from_addr": "004eec5a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_openFileWithExtension_FUN_004eebc0", 
-      "addr": "004eebc0"
-    }, 
-    {
-      "from_addr": "004fd484", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_loadInventory_FUN_004fd220", 
-      "addr": "004fd220"
-    }, 
-    {
-      "from_addr": "0050859b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
-      "addr": "00508570"
-    }, 
-    {
-      "from_addr": "00522da2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90", 
-      "addr": "00522d90"
-    }, 
-    {
-      "from_addr": "00522e53", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_save_FUN_00522e30", 
-      "addr": "00522e30"
-    }, 
-    {
-      "from_addr": "00537dfb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_00537dd0", 
-      "addr": "00537dd0"
-    }, 
-    {
-      "from_addr": "00538066", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60", 
-      "addr": "00537f60"
-    }, 
-    {
-      "from_addr": "00554489", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0", 
-      "addr": "005542b0"
-    }, 
-    {
-      "from_addr": "0055a040", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80", 
-      "addr": "00559f80"
-    }, 
-    {
-      "from_addr": "00560413", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_dbLoad_FUN_005603c0", 
-      "addr": "005603c0"
-    }, 
-    {
-      "from_addr": "005661ad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00566180", 
-      "addr": "00566180"
-    }, 
-    {
-      "from_addr": "00569d0f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
-      "addr": "00569410"
-    }, 
-    {
-      "from_addr": "00575b55", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40", 
-      "addr": "00575b40"
-    }, 
-    {
-      "from_addr": "00575e56", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40", 
-      "addr": "00575e40"
-    }, 
-    {
-      "from_addr": "00576fc9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0", 
-      "addr": "00576da0"
-    }, 
-    {
-      "from_addr": "0057a132", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0", 
-      "addr": "0057a0c0"
-    }, 
-    {
-      "from_addr": "00584fdc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_FUN_00584e70", 
-      "addr": "00584e70"
-    }, 
-    {
-      "from_addr": "0057a2ca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0", 
-      "addr": "0057a2a0"
-    }, 
-    {
-      "from_addr": "0057f8c2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0", 
-      "addr": "0057e7c0"
-    }, 
-    {
-      "from_addr": "00576ac9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_OpenSomethingBackdropThumbs_FUN_005769a0", 
-      "addr": "005769a0"
-    }, 
-    {
-      "from_addr": "0057d7be", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
-      "addr": "0057d660"
-    }, 
-    {
-      "from_addr": "0057d1ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80", 
-      "addr": "0057ce80"
-    }, 
-    {
-      "from_addr": "0058f0aa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModel_save_FUN_0058f040", 
-      "addr": "0058f040"
-    }, 
-    {
-      "from_addr": "0058b32a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0", 
-      "addr": "0058b2c0"
-    }, 
-    {
-      "from_addr": "0059b908", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0", 
-      "addr": "0059b8d0"
-    }, 
-    {
-      "from_addr": "00599b48", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CSkeleton_load_FUN_00599b10", 
-      "addr": "00599b10"
-    }, 
-    {
-      "from_addr": "005dbe88", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_texlist.cpp_CTextureList_load_FUN_005dbe00", 
-      "addr": "005dbe00"
-    }, 
-    {
-      "from_addr": "005dc158", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_texlist.cpp_CTextureList_save_FUN_005dc0d0", 
-      "addr": "005dc0d0"
-    }, 
-    {
-      "from_addr": "004010bd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010", 
-      "addr": "00401010"
-    }, 
-    {
-      "from_addr": "004029b8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402930", 
-      "addr": "00402930"
-    }, 
-    {
-      "from_addr": "004015b0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_loadPaletteFile_FUN_004015a0", 
-      "addr": "004015a0"
-    }, 
-    {
-      "from_addr": "0041076e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0", 
-      "addr": "004105d0"
-    }, 
-    {
-      "from_addr": "004b548f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0", 
-      "addr": "004b53e0"
-    }, 
-    {
-      "from_addr": "004cd181", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0", 
-      "addr": "004ccff0"
-    }, 
-    {
-      "from_addr": "004cd2e2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004cd2c0", 
-      "addr": "004cd2c0"
-    }, 
-    {
-      "from_addr": "0052898a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_model.c_loadModelChunk_FUN_00528970", 
-      "addr": "00528970"
-    }, 
-    {
-      "from_addr": "00527f44", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_model.c_loadModelFile_FUN_00527ec0", 
-      "addr": "00527ec0"
-    }, 
-    {
-      "from_addr": "005452d1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180", 
-      "addr": "00545180"
-    }, 
-    {
-      "from_addr": "005dcf07", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00", 
-      "addr": "005dcc00"
-    }, 
-    {
-      "from_addr": "0046829a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_centerKeyframeModels_FUN_004681a0", 
-      "addr": "004681a0"
-    }, 
-    {
-      "from_addr": "0046dea2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_cramTextureList_FUN_0046bb80", 
-      "addr": "0046bb80"
-    }, 
-    {
-      "from_addr": "00468512", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_createKeyframeModel_FUN_00468320", 
-      "addr": "00468320"
-    }, 
-    {
-      "from_addr": "0045aaa7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_exportModelToBIN_FUN_0045aa80", 
-      "addr": "0045aa80"
-    }, 
-    {
-      "from_addr": "00459ec1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_exportModelToMDL_FUN_00459e80", 
-      "addr": "00459e80"
-    }, 
-    {
-      "from_addr": "0045a62e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_exportVertexListFile_FUN_0045a610", 
-      "addr": "0045a610"
-    }, 
-    {
-      "from_addr": "00458193", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadModelBinary_FUN_00458170", 
-      "addr": "00458170"
-    }, 
-    {
-      "from_addr": "00458c60", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadModelFile_FUN_00458ac0", 
-      "addr": "00458ac0"
-    }, 
-    {
-      "from_addr": "004593c3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadS3DModelFile_FUN_004593a0", 
-      "addr": "004593a0"
-    }, 
-    {
-      "from_addr": "0046b085", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadTextureData_FUN_0046b060", 
-      "addr": "0046b060"
-    }, 
-    {
-      "from_addr": "00457f28", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showHelpFile_FUN_00457f00", 
-      "addr": "00457f00"
-    }, 
-    {
-      "from_addr": "0046739f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_simpleTexture_FUN_00467350", 
-      "addr": "00467350"
-    }, 
-    {
-      "from_addr": "0048feec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0", 
-      "addr": "0048fed0"
-    }, 
-    {
-      "from_addr": "0053f151", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70", 
-      "addr": "0053ee70"
-    }, 
-    {
-      "from_addr": "0053457b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550", 
-      "addr": "00534550"
-    }, 
-    {
-      "from_addr": "005a46f3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0", 
-      "addr": "005a45c0"
-    }, 
-    {
-      "from_addr": "005aa4cb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0", 
-      "addr": "005aa3f0"
-    }, 
-    {
-      "from_addr": "005a4de4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_getSfxSample_FUN_005a4c80", 
-      "addr": "005a4c80"
-    }, 
-    {
-      "from_addr": "005a5433", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200", 
-      "addr": "005a5200"
-    }, 
-    {
-      "from_addr": "005a9408", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
-      "addr": "005a8e90"
-    }, 
-    {
-      "from_addr": "00543e8c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_newmsg.cpp_readMessageFile_FUN_00543e40", 
-      "addr": "00543e40"
+      "addr": "00431ac0",
+      "from_addr": "00431b61",
+      "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004331f0",
+      "from_addr": "0043320a",
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00434690",
+      "from_addr": "004346c1",
+      "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00431870",
+      "from_addr": "00431896",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00433480",
+      "from_addr": "004334a5",
+      "name": "cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054b860",
+      "from_addr": "0054b88b",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054bb40",
+      "from_addr": "0054bb6a",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054bf40",
+      "from_addr": "0054bf8a",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c1e0",
+      "from_addr": "0054c1ff",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438cf0",
+      "from_addr": "00438d13",
+      "name": "core_cloth.cpp_CCloth_load_FUN_00438cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00439260",
+      "from_addr": "00439277",
+      "name": "core_cloth.cpp_ParseClothFile_FUN_00439260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00442580",
+      "from_addr": "004425a3",
+      "name": "core_course.cpp_CCourse_load_FUN_00442580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00442a90",
+      "from_addr": "00442aa7",
+      "name": "core_course.cpp_CCourse_save_FUN_00442a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044f3e0",
+      "from_addr": "0044f480",
+      "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004529b0",
+      "from_addr": "00452a38",
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004702f0",
+      "from_addr": "0047030a",
+      "name": "core_dfilter.cpp_CDemonFilter_load_FUN_004702f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00470510",
+      "from_addr": "00470527",
+      "name": "core_dfilter.cpp_CDemonFilter_save_FUN_00470510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00470730",
+      "from_addr": "00470804",
+      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00471ad0",
+      "from_addr": "00471b13",
+      "name": "core_dimage.cpp_CDemonImage_load_FUN_00471ad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00478e10",
+      "from_addr": "00479024",
+      "name": "core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00479330",
+      "from_addr": "00479568",
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00476db0",
+      "from_addr": "00476e42",
+      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00494de0",
+      "from_addr": "00494e03",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00495040",
+      "from_addr": "00495051",
+      "name": "core_dtrace.cpp_CDemonRaytrace_save_FUN_00495040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e12b0",
+      "from_addr": "004e1424",
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e2910",
+      "from_addr": "004e2b51",
+      "name": "core_game.cpp_CGame_openSomething_FUN_004e2910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004da100",
+      "from_addr": "004dabe2",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e4010",
+      "from_addr": "004e4082",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e0cd0",
+      "from_addr": "004e0da6",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1cb0",
+      "from_addr": "004e2188",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d7810",
+      "from_addr": "004d78d2",
+      "name": "core_game.cpp_FUN_004d7810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1c30",
+      "from_addr": "004e1c69",
+      "name": "core_game.cpp_FUN_004e1c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dcee0",
+      "from_addr": "004dd585",
+      "name": "core_game.cpp_SaveRelated_FUN_004dcee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ef030",
+      "from_addr": "004ef24c",
+      "name": "core_ground.cpp_CGround_load_FUN_004ef030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eebc0",
+      "from_addr": "004eec5a",
+      "name": "core_ground.cpp_openFileWithExtension_FUN_004eebc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fd220",
+      "from_addr": "004fd484",
+      "name": "core_inv.cpp_loadInventory_FUN_004fd220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00508570",
+      "from_addr": "0050859b",
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522d90",
+      "from_addr": "00522da2",
+      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522e30",
+      "from_addr": "00522e53",
+      "name": "core_mission.cpp_CDemonMission_save_FUN_00522e30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537dd0",
+      "from_addr": "00537dfb",
+      "name": "core_msnedit.cpp_FUN_00537dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537f60",
+      "from_addr": "00538066",
+      "name": "core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005542b0",
+      "from_addr": "00554489",
+      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559f80",
+      "from_addr": "0055a040",
+      "name": "core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005603c0",
+      "from_addr": "00560413",
+      "name": "core_script.cpp_CScript_dbLoad_FUN_005603c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566180",
+      "from_addr": "005661ad",
+      "name": "core_script.cpp_FUN_00566180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00569410",
+      "from_addr": "00569d0f",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575b40",
+      "from_addr": "00575b55",
+      "name": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575e40",
+      "from_addr": "00575e56",
+      "name": "core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576da0",
+      "from_addr": "00576fc9",
+      "name": "core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a0c0",
+      "from_addr": "0057a132",
+      "name": "core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00584e70",
+      "from_addr": "00584fdc",
+      "name": "core_setedit.cpp_CDemonSet_FUN_00584e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a2a0",
+      "from_addr": "0057a2ca",
+      "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057e7c0",
+      "from_addr": "0057f8c2",
+      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005769a0",
+      "from_addr": "00576ac9",
+      "name": "core_setedit.cpp_OpenSomethingBackdropThumbs_FUN_005769a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057d660",
+      "from_addr": "0057d7be",
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ce80",
+      "from_addr": "0057d1ab",
+      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058f040",
+      "from_addr": "0058f0aa",
+      "name": "core_skeledit.cpp_CDeformableModel_save_FUN_0058f040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058b2c0",
+      "from_addr": "0058b32a",
+      "name": "core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b8d0",
+      "from_addr": "0059b908",
+      "name": "core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599b10",
+      "from_addr": "00599b48",
+      "name": "core_skeleton.cpp_CSkeleton_load_FUN_00599b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005dbe00",
+      "from_addr": "005dbe88",
+      "name": "core_texlist.cpp_CTextureList_load_FUN_005dbe00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005dc0d0",
+      "from_addr": "005dc158",
+      "name": "core_texlist.cpp_CTextureList_save_FUN_005dc0d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401010",
+      "from_addr": "004010bd",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402930",
+      "from_addr": "004029b8",
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004015a0",
+      "from_addr": "004015b0",
+      "name": "engine_2d.c_loadPaletteFile_FUN_004015a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004105d0",
+      "from_addr": "0041076e",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b53e0",
+      "from_addr": "004b548f",
+      "name": "engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ccff0",
+      "from_addr": "004cd181",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cd2c0",
+      "from_addr": "004cd2e2",
+      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004cd2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528970",
+      "from_addr": "0052898a",
+      "name": "engine_model.c_loadModelChunk_FUN_00528970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527ec0",
+      "from_addr": "00527f44",
+      "name": "engine_model.c_loadModelFile_FUN_00527ec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545180",
+      "from_addr": "005452d1",
+      "name": "engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005dcc00",
+      "from_addr": "005dcf07",
+      "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004681a0",
+      "from_addr": "0046829a",
+      "name": "shape_design.c_centerKeyframeModels_FUN_004681a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046bb80",
+      "from_addr": "0046dea2",
+      "name": "shape_design.c_cramTextureList_FUN_0046bb80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00468320",
+      "from_addr": "00468512",
+      "name": "shape_design.c_createKeyframeModel_FUN_00468320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045aa80",
+      "from_addr": "0045aaa7",
+      "name": "shape_design.c_exportModelToBIN_FUN_0045aa80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459e80",
+      "from_addr": "00459ec1",
+      "name": "shape_design.c_exportModelToMDL_FUN_00459e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045a610",
+      "from_addr": "0045a62e",
+      "name": "shape_design.c_exportVertexListFile_FUN_0045a610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458170",
+      "from_addr": "00458193",
+      "name": "shape_design.c_loadModelBinary_FUN_00458170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458ac0",
+      "from_addr": "00458c60",
+      "name": "shape_design.c_loadModelFile_FUN_00458ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004593a0",
+      "from_addr": "004593c3",
+      "name": "shape_design.c_loadS3DModelFile_FUN_004593a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046b060",
+      "from_addr": "0046b085",
+      "name": "shape_design.c_loadTextureData_FUN_0046b060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00457f00",
+      "from_addr": "00457f28",
+      "name": "shape_design.c_showHelpFile_FUN_00457f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00467350",
+      "from_addr": "0046739f",
+      "name": "shape_design.c_simpleTexture_FUN_00467350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048fed0",
+      "from_addr": "0048feec",
+      "name": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053ee70",
+      "from_addr": "0053f151",
+      "name": "shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00534550",
+      "from_addr": "0053457b",
+      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a45c0",
+      "from_addr": "005a46f3",
+      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aa3f0",
+      "from_addr": "005aa4cb",
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a4c80",
+      "from_addr": "005a4de4",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_005a4c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a5200",
+      "from_addr": "005a5433",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a8e90",
+      "from_addr": "005a9408",
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00543e40",
+      "from_addr": "00543e8c",
+      "name": "support_newmsg.cpp_readMessageFile_FUN_00543e40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00481a50",
+    "address_range": [
+      [
+        "00481a50",
+        "00481b4c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.c_getFile_FUN_00481a50",
+    "signature": "FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9e0",
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0"
+    },
+    {
+      "addr": "00600e10",
+      "name": "crt_file.c_create_directory_FUN_00600e10"
+    },
+    {
+      "addr": "005ffacc",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc"
+    },
+    {
+      "addr": "00481760",
+      "name": "engine_dosio.c_findFile_FUN_00481760"
+    },
+    {
+      "addr": "004816c0",
+      "name": "engine_dosio.c_getRelativeFilePath_FUN_004816c0"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006215a8",
+      "name": "s_engine_dosio_c_006215a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006215ba",
+      "name": "s_engine_dosio_c_006215ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006215cc",
+      "name": "s_engine_dosio_c_006215cc",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 560,
+    "local_size": 548,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_220",
+        "offset": -544,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_120",
+        "offset": -288,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "directory",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xfffffde0",
+      "text": "engine_dosio_c_getRelativeFilePath_FUN_004816c0(&stack0xfffffde0,directory,filename);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xfffffde4",
+      "text": "(&stack0xfffffde4,(char *)0x0,mode,\"..\\\\engine\\\\dosio.c\",0x198);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xfffffde4",
+      "text": "iVar3 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffffde4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 46,
+      "match": "&stack0xfffffde8",
+      "text": "directory_00 = &stack0xfffffde8;",
+      "type": "stack_ref"
     }
   ]
 }

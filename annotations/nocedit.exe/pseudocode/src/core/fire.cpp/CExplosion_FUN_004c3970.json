@@ -1,200 +1,200 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 135, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 85, 
-    "assembly_lines": 45, 
-    "suspect_count": 9, 
+    "assembly_lines": 45,
+    "complexity_score": 135,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 40,
+    "suspect_count": 9,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
-      "addr": "0040cc10"
-    }, 
-    {
-      "name": "core_actor.cpp_randomChance_FUN_0040cd10", 
-      "addr": "0040cd10"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_00570fa0", 
-      "addr": "00570fa0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CExplosion *in_stack_00000008;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_0000000c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000018;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (this_ptr != in_stack_00000008) {"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)this_ptr->field0_0x0 = *(uint *)in_stack_00000008->field0_0x0;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(this_ptr->field0_0x0 + 4) = *(uint *)(in_stack_00000008->field0_0x0 + 4);"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(this_ptr->field0_0x0 + 8) = *(uint *)(in_stack_00000008->field0_0x0 + 8);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(this_ptr->field0_0x0 + 0x10) = in_stack_0000000c;"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(this_ptr->field0_0x0 + 0x14) = in_stack_00000018;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c3970", 
-    "signature": "void core_fire.cpp_CExplosion_FUN_004c3970(CExplosion * this_ptr)", 
-    "address_range": [
-      [
-        "004c3970", 
-        "004c39eb"
-      ]
-    ], 
-    "name": "core_fire.cpp_CExplosion_FUN_004c3970"
-  }, 
-  "stack_frame": {
-    "local_size": 84, 
-    "variables": [
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CExplosion *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 88, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 85
+  },
   "cross_references": [
     {
-      "from_addr": "004c8c35", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8c10", 
-      "addr": "004c8c10"
+      "addr": "004c8c10",
+      "from_addr": "004c8c35",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8c10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c3970",
+    "address_range": [
+      [
+        "004c3970",
+        "004c39eb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CExplosion_FUN_004c3970",
+    "signature": "void core_fire.cpp_CExplosion_FUN_004c3970(CExplosion * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0040cd10",
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "00570fa0",
+      "name": "core_set.cpp_CDemonSet_FUN_00570fa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CExplosion *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "CExplosion *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000018",
+      "text": "uint in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "if (this_ptr != in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)this_ptr->field0_0x0 = *(uint *)in_stack_00000008->field0_0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(this_ptr->field0_0x0 + 4) = *(uint *)(in_stack_00000008->field0_0x0 + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(this_ptr->field0_0x0 + 8) = *(uint *)(in_stack_00000008->field0_0x0 + 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "text": "*(uint *)(this_ptr->field0_0x0 + 0x10) = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000018",
+      "text": "*(uint *)(this_ptr->field0_0x0 + 0x14) = in_stack_00000018;",
+      "type": "stack_param"
     }
   ]
 }

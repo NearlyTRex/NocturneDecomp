@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 53, 
-    "assembly_lines": 39, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
-      "addr": "00478d20"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
-      "addr": "0048c4f0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
-      "addr": "0048c640"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
-      "addr": "0048c450"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c4160", 
-    "signature": "void core_fire.cpp_CToss_render_FUN_004c4160(CToss * this_ptr)", 
-    "address_range": [
-      [
-        "004c4160", 
-        "004c41bf"
-      ]
-    ], 
-    "name": "core_fire.cpp_CToss_render_FUN_004c4160"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CToss *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 39,
+    "complexity_score": 14,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 2,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 53
+  },
   "cross_references": [
     {
-      "from_addr": "004c73c9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_render_FUN_004c7180", 
-      "addr": "004c7180"
+      "addr": "004c7180",
+      "from_addr": "004c73c9",
+      "name": "core_fire.cpp_CFireEffect_render_FUN_004c7180",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c4160",
+    "address_range": [
+      [
+        "004c4160",
+        "004c41bf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CToss_render_FUN_004c4160",
+    "signature": "void core_fire.cpp_CToss_render_FUN_004c4160(CToss * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478d20",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20"
+    },
+    {
+      "addr": "0048c4f0",
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    },
+    {
+      "addr": "0048c640",
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    },
+    {
+      "addr": "0048c450",
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CToss *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,312 +1,312 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 275, 
-    "pseudocode_lines": 80, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 260, 
-    "assembly_lines": 180, 
-    "suspect_count": 18, 
+    "assembly_lines": 180,
+    "complexity_score": 275,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 80,
+    "suspect_count": 18,
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
+      "sub_artifact",
+      "concat_artifact",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005d5e69", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 34, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar1 = *(uint *)((int)&pCVar8->x + 4);"
-    }, 
-    {
-      "line": 36, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar3 = *(uint *)((int)&pCVar8->y + 4);"
-    }, 
-    {
-      "line": 37, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uStack_44 = *(uint *)((int)&pCVar6->x + 4);"
-    }, 
-    {
-      "line": 39, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uStack_3c = *(uint *)((int)&pCVar6->y + 4);"
-    }, 
-    {
-      "line": 55, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if ((((double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50) <= test_point->y) &&"
-    }, 
-    {
-      "line": 56, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(test_point->y <= (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40))) &&"
-    }, 
-    {
-      "line": 57, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((test_point->y != (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50) ||"
-    }, 
-    {
-      "line": 58, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(test_point->y != (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40))))) {"
-    }, 
-    {
-      "line": 59, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if ((test_point->x < (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58)) ||"
-    }, 
-    {
-      "line": 60, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(test_point->x < (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48))) {"
-    }, 
-    {
-      "line": 61, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) - (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58);"
-    }, 
-    {
-      "line": 61, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) - (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58);"
-    }, 
-    {
-      "line": 62, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40) - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50);"
-    }, 
-    {
-      "line": 62, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40) - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50);"
-    }, 
-    {
-      "line": 63, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "local_38 = SUB84 /* extract 2-byte value */(dVar4,0);"
-    }, 
-    {
-      "line": 64, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "local_30 = SUB84 /* extract 2-byte value */(dVar5,0);"
-    }, 
-    {
-      "line": 71, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(test_point->y - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50)) * local_60 +"
-    }, 
-    {
-      "line": 72, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58)) goto LAB_005d5ef4;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005d5e60", 
-    "signature": "int shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60(CVector2d * vertices, uint vertex_count, CVector2d * test_point)", 
-    "address_range": [
-      [
-        "005d5e60", 
-        "005d6019"
-      ]
-    ], 
-    "name": "shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60"
-  }, 
-  "stack_frame": {
-    "local_size": 116, 
-    "variables": [
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVector2d *", 
-        "size": 4, 
-        "name": "vertices"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "vertex_count"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector2d *", 
-        "size": 4, 
-        "name": "test_point"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 128, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 260
+  },
   "cross_references": [
     {
-      "from_addr": "005d5df7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0", 
-      "addr": "005d5de0"
+      "addr": "005d5de0",
+      "from_addr": "005d5df7",
+      "name": "shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005d5e60",
+    "address_range": [
+      [
+        "005d5e60",
+        "005d6019"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60",
+    "signature": "int shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60(CVector2d * vertices, uint vertex_count, CVector2d * test_point)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 128,
+    "local_size": 116,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "test_point",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector2d *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005d5e69",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "uVar1 = *(uint *)((int)&pCVar8->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "uVar3 = *(uint *)((int)&pCVar8->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "uStack_44 = *(uint *)((int)&pCVar6->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)",
+      "text": "uStack_3c = *(uint *)((int)&pCVar6->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 55,
+      "match": "CONCAT44",
+      "text": "if ((((double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50) <= test_point->y) &&",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 56,
+      "match": "CONCAT44",
+      "text": "(test_point->y <= (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40))) &&",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 57,
+      "match": "CONCAT44",
+      "text": "((test_point->y != (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50) ||",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 58,
+      "match": "CONCAT44",
+      "text": "(test_point->y != (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40))))) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 59,
+      "match": "CONCAT44",
+      "text": "if ((test_point->x < (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58)) ||",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 60,
+      "match": "CONCAT44",
+      "text": "(test_point->x < (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48))) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 61,
+      "match": "CONCAT44",
+      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) - (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 61,
+      "match": "CONCAT44",
+      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_44,local_48) - (double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 62,
+      "match": "CONCAT44",
+      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40) - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 62,
+      "match": "CONCAT44",
+      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_3c,local_40) - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 63,
+      "match": "SUB84",
+      "text": "local_38 = SUB84 /* extract 2-byte value */(dVar4,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 64,
+      "match": "SUB84",
+      "text": "local_30 = SUB84 /* extract 2-byte value */(dVar5,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 71,
+      "match": "CONCAT44",
+      "text": "(test_point->y - (double)CONCAT44 /* combine 2-byte values */(uStack_4c,local_50)) * local_60 +",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 72,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58)) goto LAB_005d5ef4;",
+      "type": "concat_artifact"
     }
   ]
 }

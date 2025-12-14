@@ -37,8 +37,8 @@ section .text
     PUSH EDX                            ; 005d0d06
     MOV ECX,dword ptr [ESP + 0x24]      ; 005d0d07
     PUSH ECX                            ; 005d0d0b
-    CALL shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500 ; 005d0d0c | double shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d * plane_point, CVector3d * plane_normal)
-        ;   XREF to: 005d6500 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500 ; 005d0d0c
+        ;   XREF to: 005d6500 (UNCONDITIONAL_CALL)  ; double shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d * plane_point, CVector3d * plane_normal)
     MOV dword ptr [ESP + 0x18],EAX      ; 005d0d11
     MOV dword ptr [ESP + 0x1c],EDX      ; 005d0d15
     FLD double ptr [ESP + 0x18]         ; 005d0d19

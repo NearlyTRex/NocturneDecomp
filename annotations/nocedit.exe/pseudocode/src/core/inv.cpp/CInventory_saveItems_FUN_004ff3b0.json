@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 17, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 56, 
-    "assembly_lines": 39, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
-      "addr": "00408b90"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_s_s_0063093f", 
-      "addr": "0063093f", 
-      "value": null
-    }, 
-    {
-      "type": "char[104]", 
-      "name": "g_PropertyNamePrefix", 
-      "addr": "0066e178", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ff3b0", 
-    "signature": "void core_inv.cpp_CInventory_saveItems_FUN_004ff3b0(CInventory * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "004ff3b0", 
-        "004ff3f7"
-      ]
-    ], 
-    "name": "core_inv.cpp_CInventory_saveItems_FUN_004ff3b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CInventory *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 39,
+    "complexity_score": 17,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 56
+  },
   "cross_references": [
     {
-      "from_addr": "004ff328", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_save_FUN_004ff210", 
-      "addr": "004ff210"
-    }, 
+      "addr": "004ff210",
+      "from_addr": "004ff328",
+      "name": "core_inv.cpp_CInventory_save_FUN_004ff210",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00523983", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600", 
-      "addr": "00523600"
+      "addr": "00523600",
+      "from_addr": "00523983",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004ff3b0",
+    "address_range": [
+      [
+        "004ff3b0",
+        "004ff3f7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_saveItems_FUN_004ff3b0",
+    "signature": "void core_inv.cpp_CInventory_saveItems_FUN_004ff3b0(CInventory * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b90",
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063093f",
+      "name": "s_s_s_s_0063093f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e178",
+      "name": "g_PropertyNamePrefix",
+      "type": "char[104]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": []
 }

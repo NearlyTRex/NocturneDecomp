@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 4, 
-    "global_count": 4, 
-    "total_lines": 64, 
-    "assembly_lines": 42, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
-      "addr": "005abd30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }, 
-    {
-      "name": "sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560", 
-      "addr": "005b1560"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_SoundDeviceCount", 
-      "addr": "00681b20", 
-      "value": "-0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RecordingDeviceCount", 
-      "addr": "00681b4c", 
-      "value": "-0x1"
-    }, 
-    {
-      "type": "SRecordingDeviceInfo[8]", 
-      "name": "g_RecordingDevices", 
-      "addr": "03f69414", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RecordingDevices[1].device_name[0]", 
-      "addr": "03f6951c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ab720", 
-    "signature": "int sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720(void)", 
-    "address_range": [
-      [
-        "005ab720", 
-        "005ab77d"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 42,
+    "complexity_score": 22,
+    "cross_reference_count": 4,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
   "cross_references": [
     {
-      "from_addr": "005ab7e8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0", 
-      "addr": "005ab7e0"
-    }, 
+      "addr": "005ab7e0",
+      "from_addr": "005ab7e8",
+      "name": "sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ab787", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780", 
-      "addr": "005ab780"
-    }, 
+      "addr": "005ab780",
+      "from_addr": "005ab787",
+      "name": "sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005abf9a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_readIni_FUN_005abf20", 
-      "addr": "005abf20"
-    }, 
+      "addr": "005abf20",
+      "from_addr": "005abf9a",
+      "name": "sound_sndmain.cpp_readIni_FUN_005abf20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ab878", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860", 
-      "addr": "005ab860"
+      "addr": "005ab860",
+      "from_addr": "005ab878",
+      "name": "sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005ab720",
+    "address_range": [
+      [
+        "005ab720",
+        "005ab77d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720",
+    "signature": "int sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005abd30",
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    },
+    {
+      "addr": "005b1560",
+      "name": "sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00681b20",
+      "name": "g_SoundDeviceCount",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "00681b4c",
+      "name": "g_RecordingDeviceCount",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "03f69414",
+      "name": "g_RecordingDevices",
+      "type": "SRecordingDeviceInfo[8]",
+      "value": null
+    },
+    {
+      "addr": "03f6951c",
+      "name": "g_RecordingDevices[1].device_name[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

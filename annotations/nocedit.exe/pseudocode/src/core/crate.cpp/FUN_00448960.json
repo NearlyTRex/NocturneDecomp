@@ -1,61 +1,61 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 44, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 24, 
-    "assembly_lines": 15, 
-    "suspect_count": 3, 
+    "assembly_lines": 15,
+    "complexity_score": 44,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((*(int *)(in_stack_00000004 + 0x70) == 1) && (*(int *)(in_stack_00000004 + 0x2d4) == 0)) {"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((*(int *)(in_stack_00000004 + 0x70) == 1) && (*(int *)(in_stack_00000004 + 0x2d4) == 0)) {"
-    }
-  ], 
+    ],
+    "total_lines": 24
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00448960", 
-    "signature": "undefined core_crate.cpp_FUN_00448960()", 
+    "address": "00448960",
     "address_range": [
       [
-        "00448960", 
+        "00448960",
         "0044897a"
       ]
-    ], 
-    "name": "core_crate.cpp_FUN_00448960"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_crate.cpp_FUN_00448960",
+    "signature": "undefined core_crate.cpp_FUN_00448960()"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "if ((*(int *)(in_stack_00000004 + 0x70) == 1) && (*(int *)(in_stack_00000004 + 0x2d4) == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "if ((*(int *)(in_stack_00000004 + 0x70) == 1) && (*(int *)(in_stack_00000004 + 0x2d4) == 0)) {",
+      "type": "stack_param"
+    }
+  ]
 }

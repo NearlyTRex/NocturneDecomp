@@ -19,15 +19,15 @@
 
 section .text
 
-    PUSH 0x629cd3                       ; 004c1be0 | = "gunflash.kfm" | s_gunflash_kfm_00629cd3 = gunflash.kfm
+    PUSH 0x629cd3                       ; 004c1be0 | = "gunflash.kfm"
         ;   Label: core_fire.cpp_loadGunFlashAssets_FUN_004c1be0
-    PUSH 0x2d133e4                      ; 004c1be5 | CKeyFramedModelInstance g_FireEffectGunFlashModel
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 004c1bea | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    PUSH 0x2d133e4                      ; 004c1be5 | g_FireEffectGunFlashModel
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 004c1bea
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c1bef
-    PUSH 0x2d133e4                      ; 004c1bf2 | CKeyFramedModelInstance g_FireEffectGunFlashModel
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 004c1bf7 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)
+    PUSH 0x2d133e4                      ; 004c1bf2 | g_FireEffectGunFlashModel
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 004c1bf7
+        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004c1bfc
     RET                                 ; 004c1bff
 

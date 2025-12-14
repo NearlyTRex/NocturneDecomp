@@ -33,11 +33,11 @@ section .text
         ;   Label: engine_3d.c_setRenderAlpha_FUN_00406d80
     SAR EDX,0x8                         ; 00406d84
     TEST EDX,EDX                        ; 00406d87
-    JL 0x00406dc1                       ; 00406d89 | LAB_00406dc1
-        ;   XREF to: 00406dc1 (CONDITIONAL_JUMP)
+    JL 0x00406dc1                       ; 00406d89
+        ;   XREF to: 00406dc1 (CONDITIONAL_JUMP)  ; LAB_00406dc1
     CMP EDX,0xff                        ; 00406d8b
-    JLE 0x00406d98                      ; 00406d91 | LAB_00406d98
-        ;   XREF to: 00406d98 (CONDITIONAL_JUMP)
+    JLE 0x00406d98                      ; 00406d91
+        ;   XREF to: 00406d98 (CONDITIONAL_JUMP)  ; LAB_00406d98
     MOV EDX,0xff                        ; 00406d93
     MOV EAX,EDX                         ; 00406d98
         ;   Label: LAB_00406d98
@@ -49,12 +49,12 @@ section .text
     OR ECX,EAX                          ; 00406da6
     MOV EAX,ECX                         ; 00406da8
     XOR EAX,0xffffff                    ; 00406daa | DAT_00ffffff
-    MOV dword ptr [0x0066df84],ECX      ; 00406daf | int g_CurrentRenderColor
-    MOV [0x00772a80],EAX                ; 00406db5 | int g_CurrentInvertedColor
-    MOV dword ptr [0x006793b4],EDX      ; 00406dba | int g_CurrentAlphaValue
+    MOV dword ptr [0x0066df84],ECX      ; 00406daf | g_CurrentRenderColor
+    MOV [0x00772a80],EAX                ; 00406db5 | g_CurrentInvertedColor
+    MOV dword ptr [0x006793b4],EDX      ; 00406dba | g_CurrentAlphaValue
     RET                                 ; 00406dc0
     XOR EDX,EDX                         ; 00406dc1
         ;   Label: LAB_00406dc1
-    JMP 0x00406d98                      ; 00406dc3 | LAB_00406d98
-        ;   XREF to: 00406d98 (UNCONDITIONAL_JUMP)
+    JMP 0x00406d98                      ; 00406dc3
+        ;   XREF to: 00406d98 (UNCONDITIONAL_JUMP)  ; LAB_00406d98
 

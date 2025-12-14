@@ -33,15 +33,15 @@ section .text
     FCOMP float ptr [EBX + 0x15f6c8]    ; 005726ce
     FNSTSW AX                           ; 005726d4
     SAHF                                ; 005726d6
-    JNC 0x005727ec                      ; 005726d7 | LAB_005727ec
-        ;   XREF to: 005727ec (CONDITIONAL_JUMP)
+    JNC 0x005727ec                      ; 005726d7
+        ;   XREF to: 005727ec (CONDITIONAL_JUMP)  ; LAB_005727ec
     PUSH EDI                            ; 005726dd
     PUSH ESI                            ; 005726de
     LEA ESI,[EBX + 0x14d128]            ; 005726df
     LEA EAX,[EBX + 0x15f6cc]            ; 005726e5
     CMP ESI,EAX                         ; 005726eb
-    JZ 0x005726ff                       ; 005726ed | LAB_005726ff
-        ;   XREF to: 005726ff (CONDITIONAL_JUMP)
+    JZ 0x005726ff                       ; 005726ed
+        ;   XREF to: 005726ff (CONDITIONAL_JUMP)  ; LAB_005726ff
     MOV EDX,dword ptr [EAX]             ; 005726ef
     MOV dword ptr [ESI],EDX             ; 005726f1
     MOV EDX,dword ptr [EAX + 0x4]       ; 005726f3
@@ -58,8 +58,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x15f6d8]  ; 00572719
     PUSH EBX                            ; 0057271f
     MOV dword ptr [EBX + 0x14d134],EAX  ; 00572720
-    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 ; 00572726 | float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
-        ;   XREF to: 00572a10 (UNCONDITIONAL_CALL)
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 ; 00572726
+        ;   XREF to: 00572a10 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x44],EAX      ; 0057272b
     MOV EAX,dword ptr [ESP + 0x44]      ; 0057272f
     MOV dword ptr [EBX + 0x15f6c4],EAX  ; 00572733
@@ -69,8 +69,8 @@ section .text
     FCOMPP                              ; 00572744
     FNSTSW AX                           ; 00572746
     SAHF                                ; 00572748
-    JC 0x005727d7                       ; 00572749 | LAB_005727d7
-        ;   XREF to: 005727d7 (CONDITIONAL_JUMP)
+    JC 0x005727d7                       ; 00572749
+        ;   XREF to: 005727d7 (CONDITIONAL_JUMP)  ; LAB_005727d7
     FLD float ptr [EDI]                 ; 0057274f
     FSUB float ptr [ESI]                ; 00572751
     FSTP float ptr [ESP + 0x14]         ; 00572753
@@ -105,8 +105,8 @@ section .text
     LEA ESI,[EBX + 0x14d138]            ; 005727b5
     FSTP float ptr [ESP + 0x10]         ; 005727bb
     CMP ESI,EAX                         ; 005727bf
-    JZ 0x005727d7                       ; 005727c1 | LAB_005727d7
-        ;   XREF to: 005727d7 (CONDITIONAL_JUMP)
+    JZ 0x005727d7                       ; 005727c1
+        ;   XREF to: 005727d7 (CONDITIONAL_JUMP)  ; LAB_005727d7
     MOV EAX,dword ptr [ESP + 0x8]       ; 005727c3
     MOV dword ptr [ESI],EAX             ; 005727c7
     MOV EAX,dword ptr [ESP + 0xc]       ; 005727c9

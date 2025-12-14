@@ -17,21 +17,21 @@ section .text
     MOV ECX,dword ptr [ESI]             ; 0043c3eb
     XOR EBX,EBX                         ; 0043c3ed
     TEST ECX,ECX                        ; 0043c3ef
-    JLE 0x0043c40e                      ; 0043c3f1 | LAB_0043c40e
-        ;   XREF to: 0043c40e (CONDITIONAL_JUMP)
+    JLE 0x0043c40e                      ; 0043c3f1
+        ;   XREF to: 0043c40e (CONDITIONAL_JUMP)  ; LAB_0043c40e
     MOV ECX,ESI                         ; 0043c3f3
     MOV EAX,dword ptr [ECX + 0x194]     ; 0043c3f5
         ;   Label: LAB_0043c3f5
     ADD EAX,0x3fe64                     ; 0043c3fb
     CMP EAX,EDX                         ; 0043c400
-    JNZ 0x0043c412                      ; 0043c402 | LAB_0043c412
-        ;   XREF to: 0043c412 (CONDITIONAL_JUMP)
+    JNZ 0x0043c412                      ; 0043c402
+        ;   XREF to: 0043c412 (CONDITIONAL_JUMP)  ; LAB_0043c412
     INC EBX                             ; 0043c404
     MOV EDI,dword ptr [ESI]             ; 0043c405
     ADD ECX,0x4                         ; 0043c407
     CMP EBX,EDI                         ; 0043c40a
-    JL 0x0043c3f5                       ; 0043c40c | LAB_0043c3f5
-        ;   XREF to: 0043c3f5 (CONDITIONAL_JUMP)
+    JL 0x0043c3f5                       ; 0043c40c
+        ;   XREF to: 0043c3f5 (CONDITIONAL_JUMP)  ; LAB_0043c3f5
     POP EDI                             ; 0043c40e
         ;   Label: LAB_0043c40e
     POP ESI                             ; 0043c40f
@@ -48,8 +48,8 @@ section .text
     MOV EDI,dword ptr [ESI]             ; 0043c423
     ADD ECX,0x4                         ; 0043c425
     CMP EBX,EDI                         ; 0043c428
-    JL 0x0043c3f5                       ; 0043c42a | LAB_0043c3f5
-        ;   XREF to: 0043c3f5 (CONDITIONAL_JUMP)
+    JL 0x0043c3f5                       ; 0043c42a
+        ;   XREF to: 0043c3f5 (CONDITIONAL_JUMP)  ; LAB_0043c3f5
     POP EDI                             ; 0043c42c
     POP ESI                             ; 0043c42d
     POP EBX                             ; 0043c42e

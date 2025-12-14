@@ -24,8 +24,8 @@ section .text
     FCOMPP                              ; 00575b2c
     FNSTSW AX                           ; 00575b2e
     SAHF                                ; 00575b30
-    JC 0x00575b34                       ; 00575b31 | LAB_00575b34
-        ;   XREF to: 00575b34 (CONDITIONAL_JUMP)
+    JC 0x00575b34                       ; 00575b31
+        ;   XREF to: 00575b34 (CONDITIONAL_JUMP)  ; LAB_00575b34
     RET                                 ; 00575b33
     MOV dword ptr [EDX + 0x15aeb4],0x1e3ce508 ; 00575b34
         ;   Label: LAB_00575b34

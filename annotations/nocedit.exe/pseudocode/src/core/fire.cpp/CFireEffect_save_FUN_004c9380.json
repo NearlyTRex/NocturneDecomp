@@ -1,99 +1,99 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 43, 
-    "assembly_lines": 31, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CCrater_save_FUN_004c49c0", 
-      "addr": "004c49c0"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Fire_state_0062a0c7", 
-      "addr": "0062a0c7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_1_0062a0d3", 
-      "addr": "0062a0d3", 
-      "value": null
-    }, 
-    {
-      "type": "CCrater[20]", 
-      "name": "g_CraterPool", 
-      "addr": "02d6c6a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d6c714", 
-      "addr": "02d6c714", 
-      "value": null
-    }, 
-    {
-      "type": "CCrater*", 
-      "name": "g_CraterActiveListHead", 
-      "addr": "02d6cf64", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c9380", 
-    "signature": "void core_fire.cpp_CFireEffect_save_FUN_004c9380(CFireEffect * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "004c9380", 
-        "004c93c2"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_save_FUN_004c9380"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 31,
+    "complexity_score": 12,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
+  },
   "cross_references": [
     {
-      "from_addr": "004e0e78", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
-      "addr": "004e0cd0"
+      "addr": "004e0cd0",
+      "from_addr": "004e0e78",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c9380",
+    "address_range": [
+      [
+        "004c9380",
+        "004c93c2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_save_FUN_004c9380",
+    "signature": "void core_fire.cpp_CFireEffect_save_FUN_004c9380(CFireEffect * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c49c0",
+      "name": "core_fire.cpp_CCrater_save_FUN_004c49c0"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a0c7",
+      "name": "s_Fire_state_0062a0c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062a0d3",
+      "name": "s_s_1_0062a0d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d6c6a4",
+      "name": "g_CraterPool",
+      "type": "CCrater[20]",
+      "value": null
+    },
+    {
+      "addr": "02d6c714",
+      "name": "DAT_02d6c714",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d6cf64",
+      "name": "g_CraterActiveListHead",
+      "type": "CCrater*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": []
 }

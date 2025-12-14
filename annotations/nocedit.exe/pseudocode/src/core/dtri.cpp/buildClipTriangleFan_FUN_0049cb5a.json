@@ -1,125 +1,125 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 64, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 52, 
-    "assembly_lines": 33, 
-    "suspect_count": 4, 
+    "assembly_lines": 33,
+    "complexity_score": 64,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 19,
+    "suspect_count": 4,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790", 
-      "addr": "0049a790"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CVector3f[16]", 
-      "name": "g_ClipOutputVertices", 
-      "addr": "02ceea68", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipOutputVertices[1].x", 
-      "addr": "02ceea74", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipOutputVertices[2].x", 
-      "addr": "02ceea80", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipOutputVertices[3].x", 
-      "addr": "02ceea8c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonTriangle[8]", 
-      "name": "g_ClippedTriangleBuffer", 
-      "addr": "02ceeb28", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClippedTriangleBuffer[1].vertex1.x", 
-      "addr": "02ceeb60", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 15, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = unaff_EBP + 1;"
-    }, 
-    {
-      "line": 15, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = unaff_EBP + 1;"
-    }, 
-    {
-      "line": 20, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while (unaff_EBP < triangle_count);"
-    }
-  ], 
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0049cb5a", 
-    "signature": "CDemonTriangle * core_dtri.cpp_buildClipTriangleFan_FUN_0049cb5a(int triangle_count)", 
+    "address": "0049cb5a",
     "address_range": [
       [
-        "0049cb5a", 
+        "0049cb5a",
         "0049cba0"
       ]
-    ], 
-    "name": "core_dtri.cpp_buildClipTriangleFan_FUN_0049cb5a"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtri.cpp_buildClipTriangleFan_FUN_0049cb5a",
+    "signature": "CDemonTriangle * core_dtri.cpp_buildClipTriangleFan_FUN_0049cb5a(int triangle_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049a790",
+      "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02ceea68",
+      "name": "g_ClipOutputVertices",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "02ceea74",
+      "name": "g_ClipOutputVertices[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ceea80",
+      "name": "g_ClipOutputVertices[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ceea8c",
+      "name": "g_ClipOutputVertices[3].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ceeb28",
+      "name": "g_ClippedTriangleBuffer",
+      "type": "CDemonTriangle[8]",
+      "value": null
+    },
+    {
+      "addr": "02ceeb60",
+      "name": "g_ClippedTriangleBuffer[1].vertex1.x",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 0, 
-        "is_param": true, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_res0"
-      }, 
+        "is_param": true,
+        "name": "local_res0",
+        "offset": 0,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "triangle_count"
+        "is_param": true,
+        "name": "triangle_count",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBP",
+      "text": "} while (unaff_EBP < triangle_count);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

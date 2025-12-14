@@ -18,7 +18,6 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
   int iVar7;
   int iVar8;
   BADSPACEBASE *in_ESP;
-  int iVar9;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   CVector3f *in_stack_00000010;
@@ -43,51 +42,50 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
   int local_1c;
   int local_18;
   
-  iVar8 = g_DynamicLightCount;
   if (in_stack_00000008 == (CVector3f *)0x0) {
     g_PrimaryDirectionalLightCount = (int)in_stack_00000008;
     if (0 < g_DynamicLightCount) {
-      iVar5 = g_DynamicLightCount * 4;
+      iVar8 = g_DynamicLightCount * 4;
       iVar4 = 0;
-      iVar9 = 0;
+      iVar5 = 0;
       do {
-        iVar7 = iVar9;
+        iVar7 = iVar5;
         if (*(int *)(*(int *)((int)g_DynamicLights + iVar4) + 0x1cb4) != 0) {
-          iVar7 = iVar9 + 4;
+          iVar7 = iVar5 + 4;
           g_PrimaryDirectionalLightCount = g_PrimaryDirectionalLightCount + 1;
-          *(int *)((int)&g_PrimaryDirectionalLights + iVar9) =
+          *(int *)((int)&g_PrimaryDirectionalLights + iVar5) =
                *(int *)((int)g_DynamicLights + iVar4);
         }
         iVar4 = iVar4 + 4;
-        iVar9 = iVar7;
-      } while (SBORROW /* signed borrow */4(iVar4,iVar5) != iVar4 + iVar8 * -4 < 0);
+        iVar5 = iVar7;
+      } while (iVar4 < iVar8);
     }
     g_SecondaryDirectionalLightCount = 0;
     if (0 < g_ActiveLightCount) {
-      iVar9 = g_ActiveLightCount * 4;
+      iVar4 = g_ActiveLightCount * 4;
       iVar5 = 0;
       iVar8 = 0;
       do {
-        iVar4 = iVar8;
+        iVar7 = iVar8;
         if (*(int *)(*(int *)((int)g_ActiveLightList + iVar5) + 0x1cb4) != 0) {
-          iVar4 = iVar8 + 4;
+          iVar7 = iVar8 + 4;
           g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;
           *(int *)((int)g_SecondaryDirectionalLights + iVar8) =
                *(int *)((int)g_ActiveLightList + iVar5);
         }
         iVar5 = iVar5 + 4;
-        iVar8 = iVar4;
-      } while (iVar5 < iVar9);
+        iVar8 = iVar7;
+      } while (iVar5 < iVar4);
     }
     g_GlobeLightCount = g_CoronaGlobeCount;
     if (0 < g_CoronaGlobeCount) {
       iVar5 = g_CoronaGlobeCount * 4;
       iVar8 = 0;
       do {
-        iVar9 = iVar8 + 4;
+        iVar4 = iVar8 + 4;
         *(uint *)((int)&g_GlobeLights + iVar8) = *(uint *)((int)g_CoronaGlobes + iVar8);
-        iVar8 = iVar9;
-      } while (iVar9 < iVar5);
+        iVar8 = iVar4;
+      } while (iVar4 < iVar5);
     }
     g_ColorCorrectionEnabled = DAT_03277d80;
     local_70 = DAT_03277d80;
@@ -187,10 +185,11 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
     if (0 < DAT_03277b80) {
       iVar8 = 0;
       do {
-        local_70 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00471770
-                             (*(CDemonGlobe **)((int)&DAT_03277b84 + iVar8),in_stack_00000008,
-                              in_stack_00000018,in_stack_00000010,in_stack_00000014);
-        if (local_70 != 0) {
+        iVar5 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00471770
+                          (*(CDemonGlobe **)((int)&DAT_03277b84 + iVar8),in_stack_00000008,
+                           in_stack_00000018,in_stack_00000010,in_stack_00000014);
+        local_70 = 0;
+        if (iVar5 != 0) {
           g_GlobeLightCount = g_GlobeLightCount + 1;
           local_70 = *(int *)((int)&DAT_03277b84 + iVar8);
           (&g_GlobeLightCount)[g_GlobeLightCount] = local_70;
@@ -215,30 +214,29 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
       if (0 < g_ColorCorrectionEnabled) {
         iVar5 = 0;
         do {
-          iVar9 = *(int *)((int)&DAT_032c1944 + iVar5);
-          if ((*(uint *)(iVar9 + 0x11d4) & 0x7fffffff) == 0) {
-            local_b4 = *(float *)(iVar9 + 0x11c4) + local_b4;
-            local_b0 = *(float *)(iVar9 + 0x11c8) + local_b0;
-            local_ac.x = *(float *)(iVar9 + 0x11cc) + local_ac.x;
+          iVar4 = *(int *)((int)&DAT_032c1944 + iVar5);
+          if ((*(uint *)(iVar4 + 0x11d4) & 0x7fffffff) == 0) {
+            local_b4 = *(float *)(iVar4 + 0x11c4) + local_b4;
+            local_b0 = *(float *)(iVar4 + 0x11c8) + local_b0;
+            local_ac.x = *(float *)(iVar4 + 0x11cc) + local_ac.x;
             iVar8 = iVar8 + 1;
           }
           else {
-            fVar3 = *(float *)(iVar9 + 0x104) - (in_stack_00000008->x + pCVar6->x);
-            fVar1 = *(float *)(iVar9 + 0x108) - (in_stack_00000008->y + pCVar6->y);
-            fVar2 = *(float *)(iVar9 + 0x10c) - (in_stack_00000008->z + pCVar6->z);
+            fVar3 = *(float *)(iVar4 + 0x104) - (in_stack_00000008->x + pCVar6->x);
+            fVar1 = *(float *)(iVar4 + 0x108) - (in_stack_00000008->y + pCVar6->y);
+            fVar2 = *(float *)(iVar4 + 0x10c) - (in_stack_00000008->z + pCVar6->z);
             fVar1 = fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3;
-            if (fVar1 <= *(float *)(iVar9 + 0x11d8)) {
-              fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + DAT_02d7a7b8) * *(float *)(iVar9 + 0x11dc))
+            if (fVar1 <= *(float *)(iVar4 + 0x11d8)) {
+              fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + DAT_02d7a7b8) * *(float *)(iVar4 + 0x11dc))
                       * 0.666f;
               fVar2 = (float)2;
-              local_84 = fVar1 * *(float *)(iVar9 + 0x11c4) * fVar2 + local_84;
-              local_80 = fVar1 * *(float *)(iVar9 + 0x11c8) * fVar2 + local_80;
-              local_7c = fVar1 * *(float *)(iVar9 + 0x11cc) * fVar2 + local_7c;
+              local_84 = fVar1 * *(float *)(iVar4 + 0x11c4) * fVar2 + local_84;
+              local_80 = fVar1 * *(float *)(iVar4 + 0x11c8) * fVar2 + local_80;
+              local_7c = fVar1 * *(float *)(iVar4 + 0x11cc) * fVar2 + local_7c;
             }
           }
           iVar5 = iVar5 + 4;
-        } while (SBORROW /* signed borrow */4(iVar5,g_ColorCorrectionEnabled * 4) !=
-                 iVar5 + g_ColorCorrectionEnabled * -4 < 0);
+        } while (iVar5 < g_ColorCorrectionEnabled * 4);
       }
       if (iVar8 == 0) {
         local_74 = 0xaaaa;

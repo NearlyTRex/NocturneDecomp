@@ -30,8 +30,8 @@ section .text
     MOV EBX,ESI                         ; 0048c7e5
     MOV ESI,ESP                         ; 0048c7e7
     MOV EDI,EBX                         ; 0048c7e9
-    CALL engine_matrix.c_getCameraRotation_FUN_0050e2f0 ; 0048c7eb | void engine_matrix.c_getCameraRotation_FUN_0050e2f0(CVector3i * output)
-        ;   XREF to: 0050e2f0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_getCameraRotation_FUN_0050e2f0 ; 0048c7eb
+        ;   XREF to: 0050e2f0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraRotation_FUN_0050e2f0(CVector3i * output)
     MOV ESI,ESP                         ; 0048c7f0
     MOVSD ES:EDI,ESI                    ; 0048c7f2
     MOVSD ES:EDI,ESI                    ; 0048c7f3

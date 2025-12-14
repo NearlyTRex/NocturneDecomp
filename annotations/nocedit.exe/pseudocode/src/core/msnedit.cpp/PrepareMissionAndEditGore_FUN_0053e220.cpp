@@ -18,8 +18,9 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   CDemonSet *pCVar3;
   CBoxActor *this_ptr_00;
   int iVar4;
+  CBoxActor *pCVar5;
   BADSPACEBASE *in_ESP;
-  byte bVar5;
+  byte bVar6;
   CDemonMission *in_stack_00000004;
   CGore *in_stack_00000008;
   CDemonSet *in_stack_00000028;
@@ -29,7 +30,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   float fStack00000038;
   CDemonActor *pCStack0000003c;
   float fStack00000044;
-  COrientation *pCVar6;
+  COrientation *pCVar7;
   char *in_stack_0000004c;
   CDemonSet *in_stack_00000050;
   CDemonActor *in_stack_00000054;
@@ -66,7 +67,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   CVector3i *in_stack_ffffffe8;
   
   this_ptr = g_CGamePtr;
-  bVar5 = 0;
+  bVar6 = 0;
   DAT_02f7c634 = 0;
   in_stack_00000004->field0_0x0[4] = '\x01';
   in_stack_00000004->field0_0x0[5] = '\0';
@@ -98,13 +99,13 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff68);
   core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&fStack_80);
-  this_ptr_00 = (CBoxActor *)
-                shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);
+  this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);
+  pCVar5 = (CBoxActor *)0x0;
   if (this_ptr_00 != (CBoxActor *)0x0) {
-    this_ptr_00 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(this_ptr_00);
+    pCVar5 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(this_ptr_00);
   }
-  in_stack_00000034 = this_ptr_00;
-  if (this_ptr_00 == (CBoxActor *)0x0) {
+  in_stack_00000034 = pCVar5;
+  if (pCVar5 == (CBoxActor *)0x0) {
     g_CurrentFilename = "..\\core\\msnedit.cpp";
     g_CurrentLineNumber = 0xe7c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::editGore - Out of memory");
@@ -123,7 +124,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   (*pCStack0000003c->vtable->setup)(pCStack0000003c);
   fStack00000044 = (float)((int)fStack00000038 + 0x20);
   core_mission_cpp_CDemonMission_FUN_00523b70(in_stack_00000004);
-  pCVar6 = &pCStack0000003c->orient;
+  pCVar7 = &pCStack0000003c->orient;
   while( true ) {
     wincore_winrun_cpp_doNothing_FUN_005f2f80();
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(g_CEditorToolsPtr,0,0,0);
@@ -181,16 +182,16 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
                   (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)in_stack_ffffffe4);
         output_ptr = (CVector3i *)&stack0x00000084;
         in_stack_00000080 = in_stack_0000006c;
-        (&stack0x00000084)[(uint)bVar5 * -2] = (&stack0x00000070)[(uint)bVar5 * -2];
-        (&stack0x00000088)[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
-             (COrientation *)*(uint *)(&stack0x00000074 + (uint)bVar5 * -8 + (uint)bVar5 * -8)
+        (&stack0x00000084)[(uint)bVar6 * -2] = (&stack0x00000070)[(uint)bVar6 * -2];
+        (&stack0x00000088)[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
+             (COrientation *)*(uint *)(&stack0x00000074 + (uint)bVar6 * -8 + (uint)bVar6 * -8)
         ;
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
                   (&g_CDemonCameraInstance,output_ptr,in_stack_ffffffe8);
         in_stack_00000084 = in_stack_00000064;
-        (&stack0x00000088)[(uint)bVar5 * -2] = (COrientation *)(&stack0x00000068)[(uint)bVar5 * -2];
-        (&stack0x0000008c)[(uint)bVar5 * -2 + (uint)bVar5 * -2] =
-             (char *)(&stack0x0000006c)[(uint)bVar5 * -2 + (uint)bVar5 * -2];
+        (&stack0x00000088)[(uint)bVar6 * -2] = (COrientation *)(&stack0x00000068)[(uint)bVar6 * -2];
+        (&stack0x0000008c)[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
+             (char *)(&stack0x0000006c)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
         in_stack_00000028 = (CDemonSet *)((float)(int)in_stack_0000008c * _DAT_00661c30);
         in_stack_0000002c = (CDemonSet *)((float)(int)in_stack_00000090 * _DAT_00661c30);
         if ((CDemonSet **)&stack0x00000000 != &stack0x00000028) {
@@ -235,10 +236,10 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       in_stack_00000084 = fStack00000044;
       in_stack_0000008c = in_stack_0000004c;
       in_stack_0000002c = g_CDemonSetPtr;
-      in_stack_00000064 = (float)pCVar6 + -100f;
+      in_stack_00000064 = (float)pCVar7 + -100f;
       in_stack_00000068 = in_stack_0000004c;
       in_stack_00000028 = (CDemonSet *)0x53e7bd;
-      in_stack_00000088 = pCVar6;
+      in_stack_00000088 = pCVar7;
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       in_stack_00000030 = (CVector3f *)&stack0x00000064;
       in_stack_0000002c = (CDemonSet *)&stack0x00000088;
@@ -273,7 +274,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       fStack00000044 = 7.705851e-39;
       iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                         (g_CEditorToolsPtr,"Reset gore?");
-      pCVar6 = (COrientation *)pCVar2;
+      pCVar7 = (COrientation *)pCVar2;
       if (iVar4 != 0) {
         core_gore_cpp_FUN_004ed760();
         in_stack_00000054 = (CDemonActor *)g_CDemonSetPtr->selected_camera_index;

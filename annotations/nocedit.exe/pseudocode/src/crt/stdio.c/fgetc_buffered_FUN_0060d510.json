@@ -1,78 +1,78 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 78, 
-    "assembly_lines": 56, 
-    "suspect_count": 2, 
+    "assembly_lines": 56,
+    "complexity_score": 47,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
-      "addr": "00606020"
-    }, 
-    {
-      "name": "crt_stdio.c_stream_valid_FUN_00608cd1", 
-      "addr": "00608cd1"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));"
-    }, 
-    {
-      "line": 23, 
-      "match": "(FileEmbeddedData *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),4);"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060d510", 
-    "signature": "int crt_stdio.c_fgetc_buffered_FUN_0060d510(FILE * stream)", 
-    "address_range": [
-      [
-        "0060d510", 
-        "0060d575"
-      ]
-    ], 
-    "name": "crt_stdio.c_fgetc_buffered_FUN_0060d510"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "stream"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 78
+  },
   "cross_references": [
     {
-      "from_addr": "0060b6dd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_mbstrncpy_core_FUN_0060b670", 
-      "addr": "0060b6d7"
+      "addr": "0060b6d7",
+      "from_addr": "0060b6dd",
+      "name": "crt_string.c_mbstrncpy_core_FUN_0060b670",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060d510",
+    "address_range": [
+      [
+        "0060d510",
+        "0060d575"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_fgetc_buffered_FUN_0060d510",
+    "signature": "int crt_stdio.c_fgetc_buffered_FUN_0060d510(FILE * stream)"
+  },
+  "function_calls": [
+    {
+      "addr": "00606020",
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020"
+    },
+    {
+      "addr": "00608cd1",
+      "name": "crt_stdio.c_stream_valid_FUN_00608cd1"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(FileEmbeddedData *)((int)",
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),4);",
+      "type": "pointer_cast"
     }
   ]
 }

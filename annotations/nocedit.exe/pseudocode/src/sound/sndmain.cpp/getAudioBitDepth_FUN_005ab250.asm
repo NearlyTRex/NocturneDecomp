@@ -17,7 +17,7 @@
 
 section .text
 
-    MOV EAX,[0x00681b14]                ; 005ab250 | int g_AudioBitsPerSample
+    MOV EAX,[0x00681b14]                ; 005ab250 | g_AudioBitsPerSample
         ;   Label: sound_sndmain.cpp_getAudioBitDepth_FUN_005ab250
     RET                                 ; 005ab255
 

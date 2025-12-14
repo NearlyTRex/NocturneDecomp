@@ -24,8 +24,8 @@ section .text
         ;   Label: shape_edittool.cpp_CEdButton_dtor_FUN_004a6510
     MOV EBX,dword ptr [ESP + 0x8]       ; 004a6511
     PUSH EBX                            ; 004a6515
-    CALL shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530 ; 004a6516 | void shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530(CEdButton * this_ptr)
-        ;   XREF to: 004a6530 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530 ; 004a6516
+        ;   XREF to: 004a6530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530(CEdButton * this_ptr)
     ADD ESP,0x4                         ; 004a651b
     MOV EAX,EBX                         ; 004a651e
     POP EBX                             ; 004a6520

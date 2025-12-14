@@ -1,180 +1,180 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 53, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 2, 
-    "global_count": 13, 
-    "total_lines": 194, 
-    "assembly_lines": 141, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004547d0", 
-      "addr": "004547d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_1_00454ef4", 
-      "addr": "00454ef4", 
-      "value": "00454fb4"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_00454efc", 
-      "addr": "00454efc", 
-      "value": "00454f99"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClipStage4Count", 
-      "addr": "015c45b4", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[16]", 
-      "name": "g_ClipStageMinXBuffer", 
-      "addr": "015c45b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c45bc", 
-      "addr": "015c45bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c45c0", 
-      "addr": "015c45c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c45cc", 
-      "addr": "015c45cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c45d0", 
-      "addr": "015c45d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c45d8", 
-      "addr": "015c45d8", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClipStage5Count", 
-      "addr": "015c4678", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[16]", 
-      "name": "g_ClipStageMinZBuffer", 
-      "addr": "015c467c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c4680", 
-      "addr": "015c4680", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipStageMinZBuffer[0].z", 
-      "addr": "015c4684", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00454f09", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00454f00", 
-    "signature": "void core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00(float min_z_plane)", 
-    "address_range": [
-      [
-        "00454f00", 
-        "00455050"
-      ]
-    ], 
-    "name": "core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "min_z_plane"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 141,
+    "complexity_score": 53,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 13,
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 194
+  },
   "cross_references": [
     {
-      "from_addr": "00456d55", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0", 
-      "addr": "00456af0"
-    }, 
+      "addr": "00456af0",
+      "from_addr": "00456d55",
+      "name": "core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045668c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400", 
-      "addr": "00456400"
+      "addr": "00456400",
+      "from_addr": "0045668c",
+      "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00454f00",
+    "address_range": [
+      [
+        "00454f00",
+        "00455050"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00",
+    "signature": "void core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00(float min_z_plane)"
+  },
+  "function_calls": [
+    {
+      "addr": "004547d0",
+      "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004547d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00454ef4",
+      "name": "PTR_caseD_1_00454ef4",
+      "type": "void*",
+      "value": "00454fb4"
+    },
+    {
+      "addr": "00454efc",
+      "name": "PTR_caseD_3_00454efc",
+      "type": "void*",
+      "value": "00454f99"
+    },
+    {
+      "addr": "015c45b4",
+      "name": "g_CubeClipStage4Count",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c45b8",
+      "name": "g_ClipStageMinXBuffer",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "015c45bc",
+      "name": "DAT_015c45bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c45c0",
+      "name": "DAT_015c45c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c45cc",
+      "name": "DAT_015c45cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c45d0",
+      "name": "DAT_015c45d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c45d8",
+      "name": "DAT_015c45d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4678",
+      "name": "g_CubeClipStage5Count",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c467c",
+      "name": "g_ClipStageMinZBuffer",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "015c4680",
+      "name": "DAT_015c4680",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4684",
+      "name": "g_ClipStageMinZBuffer[0].z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "min_z_plane",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00454f09",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

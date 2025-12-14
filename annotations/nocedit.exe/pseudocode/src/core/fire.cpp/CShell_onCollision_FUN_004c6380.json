@@ -1,109 +1,109 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 96, 
-    "pseudocode_lines": 51, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 79, 
-    "assembly_lines": 28, 
-    "suspect_count": 4, 
+    "assembly_lines": 28,
+    "complexity_score": 96,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 51,
+    "suspect_count": 4,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
-      "addr": "0040cc10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_00629ff3", 
-      "addr": "00629ff3", 
-      "value": "0.25"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint extraout_EAX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint extraout_EAX_00;"
-    }, 
-    {
-      "line": 40, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;"
-    }, 
-    {
-      "line": 47, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;"
-    }
-  ], 
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004c6380", 
-    "signature": "int core_fire.cpp_CShell_onCollision_FUN_004c6380(CShell * this_ptr, CVector3f * collision_normal)", 
+    "address": "004c6380",
     "address_range": [
       [
-        "004c6380", 
+        "004c6380",
         "004c63c1"
       ]
-    ], 
-    "name": "core_fire.cpp_CShell_onCollision_FUN_004c6380"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CShell_onCollision_FUN_004c6380",
+    "signature": "int core_fire.cpp_CShell_onCollision_FUN_004c6380(CShell * this_ptr, CVector3f * collision_normal)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629ff3",
+      "name": "DOUBLE_00629ff3",
+      "type": "double",
+      "value": "0.25"
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CShell *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShell *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "collision_normal"
+        "is_param": true,
+        "name": "collision_normal",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "uint extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX_00",
+      "text": "uint extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 40,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 47,
+      "match": "extraout_EAX_00",
+      "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;",
+      "type": "extra_output"
+    }
+  ]
 }

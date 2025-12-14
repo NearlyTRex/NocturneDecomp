@@ -28,13 +28,13 @@ section .text
     PUSH EBP                            ; 00433821
     SUB ESP,0x10                        ; 00433822
     CMP dword ptr [ESP + 0x1c],0x0      ; 00433825
-    JZ 0x004338df                       ; 0043382a | LAB_004338df
-        ;   XREF to: 004338df (CONDITIONAL_JUMP)
+    JZ 0x004338df                       ; 0043382a
+        ;   XREF to: 004338df (CONDITIONAL_JUMP)  ; LAB_004338df
     MOV ECX,dword ptr [ESP + 0x24]      ; 00433830
     XOR ESI,ESI                         ; 00433834
     TEST ECX,ECX                        ; 00433836
-    JLE 0x004338df                      ; 00433838 | LAB_004338df
-        ;   XREF to: 004338df (CONDITIONAL_JUMP)
+    JLE 0x004338df                      ; 00433838
+        ;   XREF to: 004338df (CONDITIONAL_JUMP)  ; LAB_004338df
     PUSH EDI                            ; 0043383e
     PUSH EBX                            ; 0043383f
     MOV EBX,dword ptr [ESP + 0x28]      ; 00433840
@@ -83,15 +83,15 @@ section .text
     PUSH EAX                            ; 004338c1
     ADD ECX,EBP                         ; 004338c2
     PUSH ECX                            ; 004338c4
-    CALL cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0 ; 004338c5 | void cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0(int x0, int y0, int x1, int y1, ...)
-        ;   XREF to: 004339c0 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0 ; 004338c5
+        ;   XREF to: 004339c0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0(int x0, int y0, int x1, int y1, ...)
     ADD ESP,0x1c                        ; 004338ca
     INC ESI                             ; 004338cd
     MOV EBP,dword ptr [ESP + 0x2c]      ; 004338ce
     ADD EBX,0x8                         ; 004338d2
     CMP ESI,EBP                         ; 004338d5
-    JL 0x00433844                       ; 004338d7 | LAB_00433844
-        ;   XREF to: 00433844 (CONDITIONAL_JUMP)
+    JL 0x00433844                       ; 004338d7
+        ;   XREF to: 00433844 (CONDITIONAL_JUMP)  ; LAB_00433844
     POP EBX                             ; 004338dd
     POP EDI                             ; 004338de
     ADD ESP,0x10                        ; 004338df

@@ -29,12 +29,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 005a17c1
     PUSH EBX                            ; 005a17c5
     PUSH EDX                            ; 005a17c6
-    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005a17c7 | CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005a17c7
+        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a17cc
     PUSH EAX                            ; 005a17cf
-    CALL core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 ; 005a17d0 | void core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel * this_ptr, int color, CMatrix3x4f * bone_matrices, int render_flags)
-        ;   XREF to: 0059b640 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 ; 005a17d0
+        ;   XREF to: 0059b640 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel * this_ptr, int color, CMatrix3x4f * bone_matrices, int render_flags)
     ADD ESP,0x10                        ; 005a17d5
     POP EBX                             ; 005a17d8
     RET                                 ; 005a17d9

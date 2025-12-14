@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 53, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 43, 
-    "assembly_lines": 35, 
-    "suspect_count": 4, 
+    "assembly_lines": 35,
+    "complexity_score": 53,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_morph.cpp_CMorphModel_addPart_FUN_0052a580", 
-      "addr": "0052a580"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));"
-    }
-  ], 
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0052b4b0", 
-    "signature": "undefined core_morph.cpp_FUN_0052b4b0()", 
+    "address": "0052b4b0",
     "address_range": [
       [
-        "0052b4b0", 
+        "0052b4b0",
         "0052b4fc"
       ]
-    ], 
-    "name": "core_morph.cpp_FUN_0052b4b0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_morph.cpp_FUN_0052b4b0",
+    "signature": "undefined core_morph.cpp_FUN_0052b4b0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0052a580",
+      "name": "core_morph.cpp_CMorphModel_addPart_FUN_0052a580"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "((CMorphModel *)(in_stack_00000008 * 0x608 + in_stack_00000004));",
+      "type": "stack_param"
+    }
+  ]
 }

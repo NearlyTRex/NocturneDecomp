@@ -84,8 +84,8 @@ section .text
     FCOMP double ptr [ESP + 0x10]       ; 005f56c0
     FNSTSW AX                           ; 005f56c4
     SAHF                                ; 005f56c6
-    JC 0x005f5844                       ; 005f56c7 | LAB_005f5844
-        ;   XREF to: 005f5844 (CONDITIONAL_JUMP)
+    JC 0x005f5844                       ; 005f56c7
+        ;   XREF to: 005f5844 (CONDITIONAL_JUMP)  ; LAB_005f5844
     FLD float ptr [EDX + 0x10]          ; 005f56cd
         ;   Label: LAB_005f56cd
     FMUL ST0                            ; 005f56d0
@@ -102,8 +102,8 @@ section .text
     FCOMP double ptr [ESP + 0x28]       ; 005f56ea
     FNSTSW AX                           ; 005f56ee
     SAHF                                ; 005f56f0
-    JNC 0x005f56fd                      ; 005f56f1 | LAB_005f56fd
-        ;   XREF to: 005f56fd (CONDITIONAL_JUMP)
+    JNC 0x005f56fd                      ; 005f56f1
+        ;   XREF to: 005f56fd (CONDITIONAL_JUMP)  ; LAB_005f56fd
     FLD1                                ; 005f56f3
     FDIV double ptr [ESP + 0x28]        ; 005f56f5
     FSTP double ptr [ESP + 0x28]        ; 005f56f9
@@ -123,8 +123,8 @@ section .text
     FCOMP double ptr [ESP + 0x20]       ; 005f571a
     FNSTSW AX                           ; 005f571e
     SAHF                                ; 005f5720
-    JNC 0x005f572d                      ; 005f5721 | LAB_005f572d
-        ;   XREF to: 005f572d (CONDITIONAL_JUMP)
+    JNC 0x005f572d                      ; 005f5721
+        ;   XREF to: 005f572d (CONDITIONAL_JUMP)  ; LAB_005f572d
     FLD1                                ; 005f5723
     FDIV double ptr [ESP + 0x20]        ; 005f5725
     FSTP double ptr [ESP + 0x20]        ; 005f5729
@@ -133,11 +133,11 @@ section .text
     FCHS                                ; 005f5730
     FMUL double ptr [ESP + 0x28]        ; 005f5732
     FST double ptr [ESP + 0x18]         ; 005f5736
-    FCOMP double ptr [0x0065831d]       ; 005f573a | double g_MatrixToEulerNegativeOne
+    FCOMP double ptr [0x0065831d]       ; 005f573a | g_MatrixToEulerNegativeOne
     FNSTSW AX                           ; 005f5740
     SAHF                                ; 005f5742
-    JA 0x005f5853                       ; 005f5743 | LAB_005f5853
-        ;   XREF to: 005f5853 (CONDITIONAL_JUMP)
+    JA 0x005f5853                       ; 005f5743
+        ;   XREF to: 005f5853 (CONDITIONAL_JUMP)  ; LAB_005f5853
     MOV dword ptr [ECX],0xbfc90fdb      ; 005f5749
     MOV dword ptr [ECX + 0x8],0x0       ; 005f574f
         ;   Label: LAB_005f574f
@@ -158,50 +158,50 @@ section .text
     MOV EAX,dword ptr [ESP + 0x44]      ; 005f5787
     FLD double ptr [ESP + 0x8]          ; 005f578b
     MOV dword ptr [ESP + 0x6c],EAX      ; 005f578f
-    FCOMP double ptr [0x00658335]       ; 005f5793 | double g_MatrixToEulerGimbalLockThreshold
+    FCOMP double ptr [0x00658335]       ; 005f5793 | g_MatrixToEulerGimbalLockThreshold
     FNSTSW AX                           ; 005f5799
     SAHF                                ; 005f579b
-    JNC 0x005f5aab                      ; 005f579c | LAB_005f5aab
-        ;   XREF to: 005f5aab (CONDITIONAL_JUMP)
+    JNC 0x005f5aab                      ; 005f579c
+        ;   XREF to: 005f5aab (CONDITIONAL_JUMP)  ; LAB_005f5aab
     FLD double ptr [ESP + 0x8]          ; 005f57a2
-    FCOMP double ptr [0x0065833d]       ; 005f57a6 | double g_MatrixToEulerNegativeGimbalThreshold
+    FCOMP double ptr [0x0065833d]       ; 005f57a6 | g_MatrixToEulerNegativeGimbalThreshold
     FNSTSW AX                           ; 005f57ac
     SAHF                                ; 005f57ae
-    JBE 0x005f5aab                      ; 005f57af | LAB_005f5aab
-        ;   XREF to: 005f5aab (CONDITIONAL_JUMP)
+    JBE 0x005f5aab                      ; 005f57af
+        ;   XREF to: 005f5aab (CONDITIONAL_JUMP)  ; LAB_005f5aab
     FLD double ptr [ESP + 0x8]          ; 005f57b5
-    CALL crt_math.c_asin_FUN_00600b94   ; 005f57b9 | float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
-        ;   XREF to: 00600b94 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_asin_FUN_00600b94   ; 005f57b9
+        ;   XREF to: 00600b94 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
     FLDZ                                ; 005f57be
     FXCH                                ; 005f57c0
     FSTP float ptr [ESP + 0x94]         ; 005f57c2
     FCOMP double ptr [ESP + 0x40]       ; 005f57c9
     FNSTSW AX                           ; 005f57cd
     SAHF                                ; 005f57cf
-    JBE 0x005f57e6                      ; 005f57d0 | LAB_005f57e6
-        ;   XREF to: 005f57e6 (CONDITIONAL_JUMP)
+    JBE 0x005f57e6                      ; 005f57d0
+        ;   XREF to: 005f57e6 (CONDITIONAL_JUMP)  ; LAB_005f57e6
     FLD float ptr [ESP + 0x94]          ; 005f57d2
-    FSUBR double ptr [0x00658345]       ; 005f57d9 | double g_MatrixToEulerPi
+    FSUBR double ptr [0x00658345]       ; 005f57d9 | g_MatrixToEulerPi
     FSTP float ptr [ESP + 0x94]         ; 005f57df
     FLD float ptr [ESP + 0x94]          ; 005f57e6
         ;   Label: LAB_005f57e6
-    FCOMP double ptr [0x00658325]       ; 005f57ed | double g_MatrixToEulerNegativePi
+    FCOMP double ptr [0x00658325]       ; 005f57ed | g_MatrixToEulerNegativePi
     FNSTSW AX                           ; 005f57f3
     SAHF                                ; 005f57f5
-    JNC 0x005f580c                      ; 005f57f6 | LAB_005f580c
-        ;   XREF to: 005f580c (CONDITIONAL_JUMP)
+    JNC 0x005f580c                      ; 005f57f6
+        ;   XREF to: 005f580c (CONDITIONAL_JUMP)  ; LAB_005f580c
     FLD float ptr [ESP + 0x94]          ; 005f57f8
-    FADD float ptr [0x0065832d]         ; 005f57ff | float g_MatrixToEulerTwoPi
+    FADD float ptr [0x0065832d]         ; 005f57ff | g_MatrixToEulerTwoPi
     FSTP float ptr [ESP + 0x94]         ; 005f5805
     FLD float ptr [ESP + 0x94]          ; 005f580c
         ;   Label: LAB_005f580c
-    FCOMP double ptr [0x00658345]       ; 005f5813 | double g_MatrixToEulerPi
+    FCOMP double ptr [0x00658345]       ; 005f5813 | g_MatrixToEulerPi
     FNSTSW AX                           ; 005f5819
     SAHF                                ; 005f581b
-    JBE 0x005f5832                      ; 005f581c | LAB_005f5832
-        ;   XREF to: 005f5832 (CONDITIONAL_JUMP)
+    JBE 0x005f5832                      ; 005f581c
+        ;   XREF to: 005f5832 (CONDITIONAL_JUMP)  ; LAB_005f5832
     FLD float ptr [ESP + 0x94]          ; 005f581e
-    FADD float ptr [0x0065834d]         ; 005f5825 | float g_MatrixToEulerNegativeTwoPi
+    FADD float ptr [0x0065834d]         ; 005f5825 | g_MatrixToEulerNegativeTwoPi
     FSTP float ptr [ESP + 0x94]         ; 005f582b
     MOV EAX,dword ptr [ESP + 0x94]      ; 005f5832
         ;   Label: LAB_005f5832
@@ -216,23 +216,23 @@ section .text
         ;   Label: LAB_005f5844
     FDIV double ptr [ESP + 0x10]        ; 005f5846
     FSTP double ptr [ESP + 0x10]        ; 005f584a
-    JMP 0x005f56cd                      ; 005f584e | LAB_005f56cd
-        ;   XREF to: 005f56cd (UNCONDITIONAL_JUMP)
+    JMP 0x005f56cd                      ; 005f584e
+        ;   XREF to: 005f56cd (UNCONDITIONAL_JUMP)  ; LAB_005f56cd
     FLD1                                ; 005f5853
         ;   Label: LAB_005f5853
     FCOMP double ptr [ESP + 0x18]       ; 005f5855
     FNSTSW AX                           ; 005f5859
     SAHF                                ; 005f585b
-    JA 0x005f5869                       ; 005f585c | LAB_005f5869
-        ;   XREF to: 005f5869 (CONDITIONAL_JUMP)
+    JA 0x005f5869                       ; 005f585c
+        ;   XREF to: 005f5869 (CONDITIONAL_JUMP)  ; LAB_005f5869
     MOV dword ptr [ECX],0x3fc90fdb      ; 005f585e
-    JMP 0x005f574f                      ; 005f5864 | LAB_005f574f
-        ;   XREF to: 005f574f (UNCONDITIONAL_JUMP)
+    JMP 0x005f574f                      ; 005f5864
+        ;   XREF to: 005f574f (UNCONDITIONAL_JUMP)  ; LAB_005f574f
     FLD double ptr [ESP + 0x18]         ; 005f5869
         ;   Label: LAB_005f5869
     FLD ST0                             ; 005f586d
-    CALL crt_math.c_asin_FUN_00600b94   ; 005f586f | float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
-        ;   XREF to: 00600b94 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_asin_FUN_00600b94   ; 005f586f
+        ;   XREF to: 00600b94 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
     FLD ST1                             ; 005f5874
     FMULP ST2                           ; 005f5876
     FLD1                                ; 005f5878
@@ -243,21 +243,21 @@ section .text
     FST float ptr [ECX]                 ; 005f5882
     FXCH                                ; 005f5884
     FSTP double ptr [ESP + 0x50]        ; 005f5886
-    FCOMP double ptr [0x00658325]       ; 005f588a | double g_MatrixToEulerNegativePi
+    FCOMP double ptr [0x00658325]       ; 005f588a | g_MatrixToEulerNegativePi
     FNSTSW AX                           ; 005f5890
     SAHF                                ; 005f5892
-    JNC 0x005f589f                      ; 005f5893 | LAB_005f589f
-        ;   XREF to: 005f589f (CONDITIONAL_JUMP)
+    JNC 0x005f589f                      ; 005f5893
+        ;   XREF to: 005f589f (CONDITIONAL_JUMP)  ; LAB_005f589f
     FLD float ptr [ECX]                 ; 005f5895
-    FADD float ptr [0x0065832d]         ; 005f5897 | float g_MatrixToEulerTwoPi
+    FADD float ptr [0x0065832d]         ; 005f5897 | g_MatrixToEulerTwoPi
     FSTP float ptr [ECX]                ; 005f589d
     FLDZ                                ; 005f589f
         ;   Label: LAB_005f589f
     FCOMP double ptr [ESP + 0x50]       ; 005f58a1
     FNSTSW AX                           ; 005f58a5
     SAHF                                ; 005f58a7
-    JNC 0x005f574f                      ; 005f58a8 | LAB_005f574f
-        ;   XREF to: 005f574f (CONDITIONAL_JUMP)
+    JNC 0x005f574f                      ; 005f58a8
+        ;   XREF to: 005f574f (CONDITIONAL_JUMP)  ; LAB_005f574f
     FLD1                                ; 005f58ae
     FDIV double ptr [ESP + 0x50]        ; 005f58b0
     FLD float ptr [EDX + 0x28]          ; 005f58b4
@@ -282,50 +282,50 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4c]      ; 005f58fc
     FLD double ptr [ESP + 0x78]         ; 005f5900
     MOV dword ptr [ESP + 0x5c],EAX      ; 005f5904
-    FCOMP double ptr [0x00658335]       ; 005f5908 | double g_MatrixToEulerGimbalLockThreshold
+    FCOMP double ptr [0x00658335]       ; 005f5908 | g_MatrixToEulerGimbalLockThreshold
     FNSTSW AX                           ; 005f590e
     SAHF                                ; 005f5910
-    JNC 0x005f5b09                      ; 005f5911 | LAB_005f5b09
-        ;   XREF to: 005f5b09 (CONDITIONAL_JUMP)
+    JNC 0x005f5b09                      ; 005f5911
+        ;   XREF to: 005f5b09 (CONDITIONAL_JUMP)  ; LAB_005f5b09
     FLD double ptr [ESP + 0x78]         ; 005f5917
-    FCOMP double ptr [0x0065833d]       ; 005f591b | double g_MatrixToEulerNegativeGimbalThreshold
+    FCOMP double ptr [0x0065833d]       ; 005f591b | g_MatrixToEulerNegativeGimbalThreshold
     FNSTSW AX                           ; 005f5921
     SAHF                                ; 005f5923
-    JBE 0x005f5b09                      ; 005f5924 | LAB_005f5b09
-        ;   XREF to: 005f5b09 (CONDITIONAL_JUMP)
+    JBE 0x005f5b09                      ; 005f5924
+        ;   XREF to: 005f5b09 (CONDITIONAL_JUMP)  ; LAB_005f5b09
     FLD double ptr [ESP + 0x78]         ; 005f592a
-    CALL crt_math.c_asin_FUN_00600b94   ; 005f592e | float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
-        ;   XREF to: 00600b94 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_asin_FUN_00600b94   ; 005f592e
+        ;   XREF to: 00600b94 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
     FLDZ                                ; 005f5933
     FXCH                                ; 005f5935
     FSTP float ptr [ESP + 0x98]         ; 005f5937
     FCOMP double ptr [ESP + 0x48]       ; 005f593e
     FNSTSW AX                           ; 005f5942
     SAHF                                ; 005f5944
-    JBE 0x005f595b                      ; 005f5945 | LAB_005f595b
-        ;   XREF to: 005f595b (CONDITIONAL_JUMP)
+    JBE 0x005f595b                      ; 005f5945
+        ;   XREF to: 005f595b (CONDITIONAL_JUMP)  ; LAB_005f595b
     FLD float ptr [ESP + 0x98]          ; 005f5947
-    FSUBR double ptr [0x00658345]       ; 005f594e | double g_MatrixToEulerPi
+    FSUBR double ptr [0x00658345]       ; 005f594e | g_MatrixToEulerPi
     FSTP float ptr [ESP + 0x98]         ; 005f5954
     FLD float ptr [ESP + 0x98]          ; 005f595b
         ;   Label: LAB_005f595b
-    FCOMP double ptr [0x00658325]       ; 005f5962 | double g_MatrixToEulerNegativePi
+    FCOMP double ptr [0x00658325]       ; 005f5962 | g_MatrixToEulerNegativePi
     FNSTSW AX                           ; 005f5968
     SAHF                                ; 005f596a
-    JNC 0x005f5981                      ; 005f596b | LAB_005f5981
-        ;   XREF to: 005f5981 (CONDITIONAL_JUMP)
+    JNC 0x005f5981                      ; 005f596b
+        ;   XREF to: 005f5981 (CONDITIONAL_JUMP)  ; LAB_005f5981
     FLD float ptr [ESP + 0x98]          ; 005f596d
-    FADD float ptr [0x0065832d]         ; 005f5974 | float g_MatrixToEulerTwoPi
+    FADD float ptr [0x0065832d]         ; 005f5974 | g_MatrixToEulerTwoPi
     FSTP float ptr [ESP + 0x98]         ; 005f597a
     FLD float ptr [ESP + 0x98]          ; 005f5981
         ;   Label: LAB_005f5981
-    FCOMP double ptr [0x00658345]       ; 005f5988 | double g_MatrixToEulerPi
+    FCOMP double ptr [0x00658345]       ; 005f5988 | g_MatrixToEulerPi
     FNSTSW AX                           ; 005f598e
     SAHF                                ; 005f5990
-    JBE 0x005f59a7                      ; 005f5991 | LAB_005f59a7
-        ;   XREF to: 005f59a7 (CONDITIONAL_JUMP)
+    JBE 0x005f59a7                      ; 005f5991
+        ;   XREF to: 005f59a7 (CONDITIONAL_JUMP)  ; LAB_005f59a7
     FLD float ptr [ESP + 0x98]          ; 005f5993
-    FADD float ptr [0x0065834d]         ; 005f599a | float g_MatrixToEulerNegativeTwoPi
+    FADD float ptr [0x0065834d]         ; 005f599a | g_MatrixToEulerNegativeTwoPi
     FSTP float ptr [ESP + 0x98]         ; 005f59a0
     MOV EAX,dword ptr [ESP + 0x98]      ; 005f59a7
         ;   Label: LAB_005f59a7
@@ -352,50 +352,50 @@ section .text
     MOV EAX,dword ptr [ESP + 0x3c]      ; 005f59f1
     FLD double ptr [ESP]                ; 005f59f5
     MOV dword ptr [ESP + 0x64],EAX      ; 005f59f8
-    FCOMP double ptr [0x00658335]       ; 005f59fc | double g_MatrixToEulerGimbalLockThreshold
+    FCOMP double ptr [0x00658335]       ; 005f59fc | g_MatrixToEulerGimbalLockThreshold
     FNSTSW AX                           ; 005f5a02
     SAHF                                ; 005f5a04
-    JNC 0x005f5b6a                      ; 005f5a05 | LAB_005f5b6a
-        ;   XREF to: 005f5b6a (CONDITIONAL_JUMP)
+    JNC 0x005f5b6a                      ; 005f5a05
+        ;   XREF to: 005f5b6a (CONDITIONAL_JUMP)  ; LAB_005f5b6a
     FLD double ptr [ESP]                ; 005f5a0b
-    FCOMP double ptr [0x0065833d]       ; 005f5a0e | double g_MatrixToEulerNegativeGimbalThreshold
+    FCOMP double ptr [0x0065833d]       ; 005f5a0e | g_MatrixToEulerNegativeGimbalThreshold
     FNSTSW AX                           ; 005f5a14
     SAHF                                ; 005f5a16
-    JBE 0x005f5b6a                      ; 005f5a17 | LAB_005f5b6a
-        ;   XREF to: 005f5b6a (CONDITIONAL_JUMP)
+    JBE 0x005f5b6a                      ; 005f5a17
+        ;   XREF to: 005f5b6a (CONDITIONAL_JUMP)  ; LAB_005f5b6a
     FLD double ptr [ESP]                ; 005f5a1d
-    CALL crt_math.c_asin_FUN_00600b94   ; 005f5a20 | float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
-        ;   XREF to: 00600b94 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_asin_FUN_00600b94   ; 005f5a20
+        ;   XREF to: 00600b94 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)
     FLDZ                                ; 005f5a25
     FXCH                                ; 005f5a27
     FSTP float ptr [ESP + 0x90]         ; 005f5a29
     FCOMP double ptr [ESP + 0x38]       ; 005f5a30
     FNSTSW AX                           ; 005f5a34
     SAHF                                ; 005f5a36
-    JBE 0x005f5a4d                      ; 005f5a37 | LAB_005f5a4d
-        ;   XREF to: 005f5a4d (CONDITIONAL_JUMP)
+    JBE 0x005f5a4d                      ; 005f5a37
+        ;   XREF to: 005f5a4d (CONDITIONAL_JUMP)  ; LAB_005f5a4d
     FLD float ptr [ESP + 0x90]          ; 005f5a39
-    FSUBR double ptr [0x00658345]       ; 005f5a40 | double g_MatrixToEulerPi
+    FSUBR double ptr [0x00658345]       ; 005f5a40 | g_MatrixToEulerPi
     FSTP float ptr [ESP + 0x90]         ; 005f5a46
     FLD float ptr [ESP + 0x90]          ; 005f5a4d
         ;   Label: LAB_005f5a4d
-    FCOMP double ptr [0x00658325]       ; 005f5a54 | double g_MatrixToEulerNegativePi
+    FCOMP double ptr [0x00658325]       ; 005f5a54 | g_MatrixToEulerNegativePi
     FNSTSW AX                           ; 005f5a5a
     SAHF                                ; 005f5a5c
-    JNC 0x005f5a73                      ; 005f5a5d | LAB_005f5a73
-        ;   XREF to: 005f5a73 (CONDITIONAL_JUMP)
+    JNC 0x005f5a73                      ; 005f5a5d
+        ;   XREF to: 005f5a73 (CONDITIONAL_JUMP)  ; LAB_005f5a73
     FLD float ptr [ESP + 0x90]          ; 005f5a5f
-    FADD float ptr [0x0065832d]         ; 005f5a66 | float g_MatrixToEulerTwoPi
+    FADD float ptr [0x0065832d]         ; 005f5a66 | g_MatrixToEulerTwoPi
     FSTP float ptr [ESP + 0x90]         ; 005f5a6c
     FLD float ptr [ESP + 0x90]          ; 005f5a73
         ;   Label: LAB_005f5a73
-    FCOMP double ptr [0x00658345]       ; 005f5a7a | double g_MatrixToEulerPi
+    FCOMP double ptr [0x00658345]       ; 005f5a7a | g_MatrixToEulerPi
     FNSTSW AX                           ; 005f5a80
     SAHF                                ; 005f5a82
-    JBE 0x005f5a99                      ; 005f5a83 | LAB_005f5a99
-        ;   XREF to: 005f5a99 (CONDITIONAL_JUMP)
+    JBE 0x005f5a99                      ; 005f5a83
+        ;   XREF to: 005f5a99 (CONDITIONAL_JUMP)  ; LAB_005f5a99
     FLD float ptr [ESP + 0x90]          ; 005f5a85
-    FADD float ptr [0x0065834d]         ; 005f5a8c | float g_MatrixToEulerNegativeTwoPi
+    FADD float ptr [0x0065834d]         ; 005f5a8c | g_MatrixToEulerNegativeTwoPi
     FSTP float ptr [ESP + 0x90]         ; 005f5a92
     MOV EAX,dword ptr [ESP + 0x90]      ; 005f5a99
         ;   Label: LAB_005f5a99
@@ -408,110 +408,110 @@ section .text
     RET                                 ; 005f5aaa
     FLD double ptr [ESP + 0x68]         ; 005f5aab
         ;   Label: LAB_005f5aab
-    FCOMP double ptr [0x0065831d]       ; 005f5aaf | double g_MatrixToEulerNegativeOne
+    FCOMP double ptr [0x0065831d]       ; 005f5aaf | g_MatrixToEulerNegativeOne
     FNSTSW AX                           ; 005f5ab5
     SAHF                                ; 005f5ab7
-    JA 0x005f5ae1                       ; 005f5ab8 | LAB_005f5ae1
-        ;   XREF to: 005f5ae1 (CONDITIONAL_JUMP)
+    JA 0x005f5ae1                       ; 005f5ab8
+        ;   XREF to: 005f5ae1 (CONDITIONAL_JUMP)  ; LAB_005f5ae1
     MOV dword ptr [ESP + 0x94],0x40490fdb ; 005f5aba
     FLDZ                                ; 005f5ac5
         ;   Label: LAB_005f5ac5
     FCOMP double ptr [ESP + 0x30]       ; 005f5ac7
     FNSTSW AX                           ; 005f5acb
     SAHF                                ; 005f5acd
-    JBE 0x005f57e6                      ; 005f5ace | LAB_005f57e6
-        ;   XREF to: 005f57e6 (CONDITIONAL_JUMP)
+    JBE 0x005f57e6                      ; 005f5ace
+        ;   XREF to: 005f57e6 (CONDITIONAL_JUMP)  ; LAB_005f57e6
     XOR byte ptr [ESP + 0x97],0x80      ; 005f5ad4
-    JMP 0x005f57e6                      ; 005f5adc | LAB_005f57e6
-        ;   XREF to: 005f57e6 (UNCONDITIONAL_JUMP)
+    JMP 0x005f57e6                      ; 005f5adc
+        ;   XREF to: 005f57e6 (UNCONDITIONAL_JUMP)  ; LAB_005f57e6
     FLD1                                ; 005f5ae1
         ;   Label: LAB_005f5ae1
     FCOMP double ptr [ESP + 0x68]       ; 005f5ae3
     FNSTSW AX                           ; 005f5ae7
     SAHF                                ; 005f5ae9
-    JA 0x005f5af7                       ; 005f5aea | LAB_005f5af7
-        ;   XREF to: 005f5af7 (CONDITIONAL_JUMP)
+    JA 0x005f5af7                       ; 005f5aea
+        ;   XREF to: 005f5af7 (CONDITIONAL_JUMP)  ; LAB_005f5af7
     XOR EDX,EDX                         ; 005f5aec
     MOV dword ptr [ESP + 0x94],EDX      ; 005f5aee
-    JMP 0x005f5ac5                      ; 005f5af5 | LAB_005f5ac5
-        ;   XREF to: 005f5ac5 (UNCONDITIONAL_JUMP)
+    JMP 0x005f5ac5                      ; 005f5af5
+        ;   XREF to: 005f5ac5 (UNCONDITIONAL_JUMP)  ; LAB_005f5ac5
     FLD double ptr [ESP + 0x68]         ; 005f5af7
         ;   Label: LAB_005f5af7
-    CALL crt_math.c_acos_FUN_00600162   ; 005f5afb | double crt_math.c_acos_FUN_00600162(double x)
-        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_acos_FUN_00600162   ; 005f5afb
+        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_00600162(double x)
     FSTP float ptr [ESP + 0x94]         ; 005f5b00
-    JMP 0x005f5ac5                      ; 005f5b07 | LAB_005f5ac5
-        ;   XREF to: 005f5ac5 (UNCONDITIONAL_JUMP)
+    JMP 0x005f5ac5                      ; 005f5b07
+        ;   XREF to: 005f5ac5 (UNCONDITIONAL_JUMP)  ; LAB_005f5ac5
     FLD double ptr [ESP + 0x58]         ; 005f5b09
         ;   Label: LAB_005f5b09
-    FCOMP double ptr [0x0065831d]       ; 005f5b0d | double g_MatrixToEulerNegativeOne
+    FCOMP double ptr [0x0065831d]       ; 005f5b0d | g_MatrixToEulerNegativeOne
     FNSTSW AX                           ; 005f5b13
     SAHF                                ; 005f5b15
-    JA 0x005f5b42                       ; 005f5b16 | LAB_005f5b42
-        ;   XREF to: 005f5b42 (CONDITIONAL_JUMP)
+    JA 0x005f5b42                       ; 005f5b16
+        ;   XREF to: 005f5b42 (CONDITIONAL_JUMP)  ; LAB_005f5b42
     MOV dword ptr [ESP + 0x98],0x40490fdb ; 005f5b18
     FLDZ                                ; 005f5b23
         ;   Label: LAB_005f5b23
     FCOMP double ptr [ESP + 0x80]       ; 005f5b25
     FNSTSW AX                           ; 005f5b2c
     SAHF                                ; 005f5b2e
-    JBE 0x005f595b                      ; 005f5b2f | LAB_005f595b
-        ;   XREF to: 005f595b (CONDITIONAL_JUMP)
+    JBE 0x005f595b                      ; 005f5b2f
+        ;   XREF to: 005f595b (CONDITIONAL_JUMP)  ; LAB_005f595b
     XOR byte ptr [ESP + 0x9b],0x80      ; 005f5b35
-    JMP 0x005f595b                      ; 005f5b3d | LAB_005f595b
-        ;   XREF to: 005f595b (UNCONDITIONAL_JUMP)
+    JMP 0x005f595b                      ; 005f5b3d
+        ;   XREF to: 005f595b (UNCONDITIONAL_JUMP)  ; LAB_005f595b
     FLD1                                ; 005f5b42
         ;   Label: LAB_005f5b42
     FCOMP double ptr [ESP + 0x58]       ; 005f5b44
     FNSTSW AX                           ; 005f5b48
     SAHF                                ; 005f5b4a
-    JA 0x005f5b58                       ; 005f5b4b | LAB_005f5b58
-        ;   XREF to: 005f5b58 (CONDITIONAL_JUMP)
+    JA 0x005f5b58                       ; 005f5b4b
+        ;   XREF to: 005f5b58 (CONDITIONAL_JUMP)  ; LAB_005f5b58
     XOR EBX,EBX                         ; 005f5b4d
     MOV dword ptr [ESP + 0x98],EBX      ; 005f5b4f
-    JMP 0x005f5b23                      ; 005f5b56 | LAB_005f5b23
-        ;   XREF to: 005f5b23 (UNCONDITIONAL_JUMP)
+    JMP 0x005f5b23                      ; 005f5b56
+        ;   XREF to: 005f5b23 (UNCONDITIONAL_JUMP)  ; LAB_005f5b23
     FLD double ptr [ESP + 0x58]         ; 005f5b58
         ;   Label: LAB_005f5b58
-    CALL crt_math.c_acos_FUN_00600162   ; 005f5b5c | double crt_math.c_acos_FUN_00600162(double x)
-        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_acos_FUN_00600162   ; 005f5b5c
+        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_00600162(double x)
     FSTP float ptr [ESP + 0x98]         ; 005f5b61
-    JMP 0x005f5b23                      ; 005f5b68 | LAB_005f5b23
-        ;   XREF to: 005f5b23 (UNCONDITIONAL_JUMP)
+    JMP 0x005f5b23                      ; 005f5b68
+        ;   XREF to: 005f5b23 (UNCONDITIONAL_JUMP)  ; LAB_005f5b23
     FLD double ptr [ESP + 0x60]         ; 005f5b6a
         ;   Label: LAB_005f5b6a
-    FCOMP double ptr [0x0065831d]       ; 005f5b6e | double g_MatrixToEulerNegativeOne
+    FCOMP double ptr [0x0065831d]       ; 005f5b6e | g_MatrixToEulerNegativeOne
     FNSTSW AX                           ; 005f5b74
     SAHF                                ; 005f5b76
-    JA 0x005f5ba3                       ; 005f5b77 | LAB_005f5ba3
-        ;   XREF to: 005f5ba3 (CONDITIONAL_JUMP)
+    JA 0x005f5ba3                       ; 005f5b77
+        ;   XREF to: 005f5ba3 (CONDITIONAL_JUMP)  ; LAB_005f5ba3
     MOV dword ptr [ESP + 0x90],0x40490fdb ; 005f5b79
     FLDZ                                ; 005f5b84
         ;   Label: LAB_005f5b84
     FCOMP double ptr [ESP + 0x88]       ; 005f5b86
     FNSTSW AX                           ; 005f5b8d
     SAHF                                ; 005f5b8f
-    JBE 0x005f5a4d                      ; 005f5b90 | LAB_005f5a4d
-        ;   XREF to: 005f5a4d (CONDITIONAL_JUMP)
+    JBE 0x005f5a4d                      ; 005f5b90
+        ;   XREF to: 005f5a4d (CONDITIONAL_JUMP)  ; LAB_005f5a4d
     XOR byte ptr [ESP + 0x93],0x80      ; 005f5b96
-    JMP 0x005f5a4d                      ; 005f5b9e | LAB_005f5a4d
-        ;   XREF to: 005f5a4d (UNCONDITIONAL_JUMP)
+    JMP 0x005f5a4d                      ; 005f5b9e
+        ;   XREF to: 005f5a4d (UNCONDITIONAL_JUMP)  ; LAB_005f5a4d
     FLD1                                ; 005f5ba3
         ;   Label: LAB_005f5ba3
     FCOMP double ptr [ESP + 0x60]       ; 005f5ba5
     FNSTSW AX                           ; 005f5ba9
     SAHF                                ; 005f5bab
-    JA 0x005f5bb9                       ; 005f5bac | LAB_005f5bb9
-        ;   XREF to: 005f5bb9 (CONDITIONAL_JUMP)
+    JA 0x005f5bb9                       ; 005f5bac
+        ;   XREF to: 005f5bb9 (CONDITIONAL_JUMP)  ; LAB_005f5bb9
     XOR EDI,EDI                         ; 005f5bae
     MOV dword ptr [ESP + 0x90],EDI      ; 005f5bb0
-    JMP 0x005f5b84                      ; 005f5bb7 | LAB_005f5b84
-        ;   XREF to: 005f5b84 (UNCONDITIONAL_JUMP)
+    JMP 0x005f5b84                      ; 005f5bb7
+        ;   XREF to: 005f5b84 (UNCONDITIONAL_JUMP)  ; LAB_005f5b84
     FLD double ptr [ESP + 0x60]         ; 005f5bb9
         ;   Label: LAB_005f5bb9
-    CALL crt_math.c_acos_FUN_00600162   ; 005f5bbd | double crt_math.c_acos_FUN_00600162(double x)
-        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_acos_FUN_00600162   ; 005f5bbd
+        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_00600162(double x)
     FSTP float ptr [ESP + 0x90]         ; 005f5bc2
-    JMP 0x005f5b84                      ; 005f5bc9 | LAB_005f5b84
-        ;   XREF to: 005f5b84 (UNCONDITIONAL_JUMP)
+    JMP 0x005f5b84                      ; 005f5bc9
+        ;   XREF to: 005f5b84 (UNCONDITIONAL_JUMP)  ; LAB_005f5b84
 

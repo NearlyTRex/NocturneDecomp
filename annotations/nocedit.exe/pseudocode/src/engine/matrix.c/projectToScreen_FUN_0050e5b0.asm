@@ -43,8 +43,8 @@ section .text
     PUSH EAX                            ; 0050e5cd
     MOV dword ptr [ESP + 0x4],EDX       ; 0050e5ce
     MOV dword ptr [ESP + 0xc],EDX       ; 0050e5d2
-    CALL engine_matrix.c_transformWorldToView_FUN_0050cc40 ; 0050e5d6 | void engine_matrix.c_transformWorldToView_FUN_0050cc40(int * input_coords, int * output_coords)
-        ;   XREF to: 0050cc40 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_transformWorldToView_FUN_0050cc40 ; 0050e5d6
+        ;   XREF to: 0050cc40 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformWorldToView_FUN_0050cc40(int * input_coords, int * output_coords)
     LEA ESI,[ESP + 0x10]                ; 0050e5db
     ADD ESP,0x4                         ; 0050e5df
     MOVSD ES:EDI,ESI                    ; 0050e5e2
@@ -52,10 +52,10 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0050e5e4
     MOV EBX,dword ptr [ESP + 0x8]       ; 0050e5e5
     TEST EBX,EBX                        ; 0050e5e9
-    JLE 0x0050e628                      ; 0050e5eb | LAB_0050e628
-        ;   XREF to: 0050e628 (CONDITIONAL_JUMP)
+    JLE 0x0050e628                      ; 0050e5eb
+        ;   XREF to: 0050e628 (CONDITIONAL_JUMP)  ; LAB_0050e628
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050e5ed
-    FILD dword ptr [0x02d0254c]         ; 0050e5f0 | int g_ViewportCenterYFixed
+    FILD dword ptr [0x02d0254c]         ; 0050e5f0 | g_ViewportCenterYFixed
     MOV dword ptr [ESP + 0x34],EAX      ; 0050e5f6
     MOV dword ptr [ESP + 0x38],EBX      ; 0050e5fa
     FILD dword ptr [ESP + 0x34]         ; 0050e5fe
@@ -63,10 +63,10 @@ section .text
     FMULP                               ; 0050e604
     FILD dword ptr [ESP + 0x38]         ; 0050e606
     FDIVP                               ; 0050e60a
-    FILD dword ptr [0x006793c0]         ; 0050e60c | int g_ProjectionScale
+    FILD dword ptr [0x006793c0]         ; 0050e60c | g_ProjectionScale
     FDIVP                               ; 0050e612
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050e614 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050e614
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x30]        ; 0050e619
     MOV EAX,dword ptr [ESP + 0x30]      ; 0050e61d
     MOV ESP,EBP                         ; 0050e621

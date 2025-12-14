@@ -24,9 +24,9 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 0048c670
         ;   Label: engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
-    FDIVR double ptr [0x00622045]       ; 0048c674 | double g_ProjectionScaleDivisor
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c67a | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
-    FISTP dword ptr [0x006793c0]        ; 0048c67f | int g_ProjectionScale
+    FDIVR double ptr [0x00622045]       ; 0048c674 | g_ProjectionScaleDivisor
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c67a
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [0x006793c0]        ; 0048c67f | g_ProjectionScale
     RET                                 ; 0048c685
 

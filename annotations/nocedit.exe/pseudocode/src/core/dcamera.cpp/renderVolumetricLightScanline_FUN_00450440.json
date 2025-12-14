@@ -1,187 +1,187 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 97, 
-    "pseudocode_lines": 72, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 221, 
-    "assembly_lines": 149, 
-    "suspect_count": 2, 
+    "assembly_lines": 149,
+    "complexity_score": 97,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 9,
+    "pseudocode_lines": 72,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BackdropSaveActive", 
-      "addr": "013bbe2c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DitherPatternOffset", 
-      "addr": "013bbe30", 
-      "value": null
-    }, 
-    {
-      "type": "int[256]", 
-      "name": "g_DitherPatternTable", 
-      "addr": "013bbe34", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_DitherPatternTable[1]", 
-      "addr": "013bbe38", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraDownscaleIterations", 
-      "addr": "013bc260", 
-      "value": null
-    }, 
-    {
-      "type": "SFogImagePlane", 
-      "name": "g_CameraPlaneWorkBuffer", 
-      "addr": "013da778", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 55, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)puVar2 + iVar16 + (iVar14 << bVar4) * 4) < iVar5) {"
-    }, 
-    {
-      "line": 56, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00450440", 
-    "signature": "void core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
-    "address_range": [
-      [
-        "00450440", 
-        "004505dc"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440"
-  }, 
-  "stack_frame": {
-    "local_size": 48, 
-    "variables": [
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SEdgeData *", 
-        "size": 4, 
-        "name": "left_edge"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SEdgeData *", 
-        "size": 4, 
-        "name": "right_edge"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "scanline_y"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 60, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 221
+  },
   "cross_references": [
     {
-      "from_addr": "00475ee5", 
-      "type": "DATA", 
-      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0", 
-      "addr": "004758d0"
+      "addr": "004758d0",
+      "from_addr": "00475ee5",
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00450440",
+    "address_range": [
+      [
+        "00450440",
+        "004505dc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440",
+    "signature": "void core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "013bbe2c",
+      "name": "g_BackdropSaveActive",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013bbe30",
+      "name": "g_DitherPatternOffset",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013bbe34",
+      "name": "g_DitherPatternTable",
+      "type": "int[256]",
+      "value": null
+    },
+    {
+      "addr": "013bbe38",
+      "name": "g_DitherPatternTable[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bc260",
+      "name": "g_CameraDownscaleIterations",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013da778",
+      "name": "g_CameraPlaneWorkBuffer",
+      "type": "SFogImagePlane",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "left_edge",
+        "offset": 4,
+        "size": 4,
+        "type": "SEdgeData *"
+      },
+      {
+        "is_param": true,
+        "name": "right_edge",
+        "offset": 8,
+        "size": 4,
+        "type": "SEdgeData *"
+      },
+      {
+        "is_param": true,
+        "name": "scanline_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)puVar2 + iVar16 + (iVar14 << bVar4) * 4) < iVar5) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);",
+      "type": "pointer_cast"
     }
   ]
 }

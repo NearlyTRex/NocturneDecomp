@@ -29,13 +29,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005b7b81
     MOV EDX,dword ptr [ESP + 0xc]       ; 005b7b85
     MOV ECX,dword ptr [ESP + 0x10]      ; 005b7b89
-    MOV EBX,dword ptr [0x02d03e94]      ; 005b7b8d | int g_UseExternalRenderer
-    MOV dword ptr [0x03f6b984],EDX      ; 005b7b93 | int g_FogColorGreen
-    MOV dword ptr [0x03f6b988],ECX      ; 005b7b99 | int g_FogColorBlue
-    MOV [0x03f6b980],EAX                ; 005b7b9f | int g_FogColorRed
+    MOV EBX,dword ptr [0x02d03e94]      ; 005b7b8d | g_UseExternalRenderer
+    MOV dword ptr [0x03f6b984],EDX      ; 005b7b93 | g_FogColorGreen
+    MOV dword ptr [0x03f6b988],ECX      ; 005b7b99 | g_FogColorBlue
+    MOV [0x03f6b980],EAX                ; 005b7b9f | g_FogColorRed
     TEST EBX,EBX                        ; 005b7ba4
-    JNZ 0x005b7bac                      ; 005b7ba6 | LAB_005b7bac
-        ;   XREF to: 005b7bac (CONDITIONAL_JUMP)
+    JNZ 0x005b7bac                      ; 005b7ba6
+        ;   XREF to: 005b7bac (CONDITIONAL_JUMP)  ; LAB_005b7bac
     XOR EAX,EAX                         ; 005b7ba8
     POP EBX                             ; 005b7baa
     RET                                 ; 005b7bab
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_005b7bac
     PUSH EDX                            ; 005b7bad
     PUSH EAX                            ; 005b7bae
-    CALL dword ptr [0x03f6b8f0]         ; 005b7baf | APIDLL_setFogColor * g_APIDLL_setFogColor
+    CALL dword ptr [0x03f6b8f0]         ; 005b7baf | g_APIDLL_setFogColor
     ADD ESP,0xc                         ; 005b7bb5
     POP EBX                             ; 005b7bb8
     RET                                 ; 005b7bb9

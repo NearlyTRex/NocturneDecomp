@@ -1,245 +1,245 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 57, 
-    "pseudocode_lines": 57, 
-    "cross_reference_count": 30, 
-    "global_count": 0, 
-    "total_lines": 166, 
-    "assembly_lines": 109, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0", 
-      "addr": "004d01a0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004cfe80", 
-    "signature": "int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)", 
-    "address_range": [
-      [
-        "004cfe80", 
-        "004cff30"
-      ]
-    ], 
-    "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBitFont *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 109,
+    "complexity_score": 57,
+    "cross_reference_count": 30,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 57,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 166
+  },
   "cross_references": [
     {
-      "from_addr": "00489d10", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00", 
-      "addr": "00489d00"
-    }, 
+      "addr": "00489d00",
+      "from_addr": "00489d10",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d8522", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040", 
-      "addr": "004d8040"
-    }, 
+      "addr": "004d8040",
+      "from_addr": "004d8522",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004fe1c8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
-      "addr": "004fd600"
-    }, 
+      "addr": "004fd600",
+      "from_addr": "004fe1c8",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005011e0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690", 
-      "addr": "00500690"
-    }, 
+      "addr": "00500690",
+      "from_addr": "005011e0",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00504693", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
-      "addr": "00504160"
-    }, 
+      "addr": "00504160",
+      "from_addr": "00504693",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00508260", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_drawCenteredText_FUN_00508250", 
-      "addr": "00508250"
-    }, 
+      "addr": "00508250",
+      "from_addr": "00508260",
+      "name": "core_main.c_drawCenteredText_FUN_00508250",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00508629", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
-      "addr": "00508570"
-    }, 
+      "addr": "00508570",
+      "from_addr": "00508629",
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050808d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
-    }, 
+      "addr": "00507a60",
+      "from_addr": "0050808d",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005083c8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showPromoScreen_FUN_00508340", 
-      "addr": "00508340"
-    }, 
+      "addr": "00508340",
+      "from_addr": "005083c8",
+      "name": "core_main.c_showPromoScreen_FUN_00508340",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051050e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0", 
-      "addr": "005104d0"
-    }, 
+      "addr": "005104d0",
+      "from_addr": "0051050e",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00510046", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000", 
-      "addr": "00510000"
-    }, 
+      "addr": "00510000",
+      "from_addr": "00510046",
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00510b4a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_00510a50", 
-      "addr": "00510a50"
-    }, 
+      "addr": "00510a50",
+      "from_addr": "00510b4a",
+      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_00510a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00510429", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410", 
-      "addr": "00510410"
-    }, 
+      "addr": "00510410",
+      "from_addr": "00510429",
+      "name": "core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00559ce6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00559b20", 
-      "addr": "00559b20"
-    }, 
+      "addr": "00559b20",
+      "from_addr": "00559ce6",
+      "name": "core_script.cpp_FUN_00559b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cdf07", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0", 
-      "addr": "004cdee0"
-    }, 
+      "addr": "004cdee0",
+      "from_addr": "004cdf07",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ce01c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0", 
-      "addr": "004cdff0"
-    }, 
+      "addr": "004cdff0",
+      "from_addr": "004ce01c",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cddfc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0", 
-      "addr": "004cdde0"
-    }, 
+      "addr": "004cdde0",
+      "from_addr": "004cddfc",
+      "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cdcfc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0", 
-      "addr": "004cdce0"
-    }, 
+      "addr": "004cdce0",
+      "from_addr": "004cdcfc",
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d0164", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_wrapText_FUN_004d0010", 
-      "addr": "004d0010"
-    }, 
+      "addr": "004d0010",
+      "from_addr": "004d0164",
+      "name": "engine_font.cpp_CBitFont_wrapText_FUN_004d0010",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a6629", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdButton_paint_FUN_004a65e0", 
-      "addr": "004a65e0"
-    }, 
+      "addr": "004a65e0",
+      "from_addr": "004a6629",
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_004a65e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a6b08", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdCheck_setupWithText_FUN_004a6a60", 
-      "addr": "004a6a60"
-    }, 
+      "addr": "004a6a60",
+      "from_addr": "004a6b08",
+      "name": "shape_edittool.cpp_CEdCheck_setupWithText_FUN_004a6a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a0951", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890", 
-      "addr": "004a0890"
-    }, 
+      "addr": "004a0890",
+      "from_addr": "004a0951",
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a1161", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
-      "addr": "004a0f80"
-    }, 
+      "addr": "004a0f80",
+      "from_addr": "004a1161",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a050a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430", 
-      "addr": "004a0430"
-    }, 
+      "addr": "004a0430",
+      "from_addr": "004a050a",
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049fd7b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70", 
-      "addr": "0049fb70"
-    }, 
+      "addr": "0049fb70",
+      "from_addr": "0049fd7b",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049d969", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CInputString_calcX_FUN_0049d8f0", 
-      "addr": "0049d8f0"
-    }, 
+      "addr": "0049d8f0",
+      "from_addr": "0049d969",
+      "name": "shape_edittool.cpp_CInputString_calcX_FUN_0049d8f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a4674", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0", 
-      "addr": "004a45d0"
-    }, 
+      "addr": "004a45d0",
+      "from_addr": "004a4674",
+      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a6946", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0", 
-      "addr": "004a68e0"
-    }, 
+      "addr": "004a68e0",
+      "from_addr": "004a6946",
+      "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049e1cb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
-      "addr": "0049e130"
-    }, 
+      "addr": "0049e130",
+      "from_addr": "0049e1cb",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049ebfc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0", 
-      "addr": "0049e9d0"
+      "addr": "0049e9d0",
+      "from_addr": "0049ebfc",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004cfe80",
+    "address_range": [
+      [
+        "004cfe80",
+        "004cff30"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80",
+    "signature": "int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)"
+  },
+  "function_calls": [
+    {
+      "addr": "004d01a0",
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

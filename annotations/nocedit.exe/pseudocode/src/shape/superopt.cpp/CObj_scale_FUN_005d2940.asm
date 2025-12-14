@@ -54,8 +54,8 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 005d2961
     MOV EDX,dword ptr [EDX + 0x4]       ; 005d2963
     TEST ESI,ESI                        ; 005d2966
-    JBE 0x005d2ab0                      ; 005d2968 | LAB_005d2ab0
-        ;   XREF to: 005d2ab0 (CONDITIONAL_JUMP)
+    JBE 0x005d2ab0                      ; 005d2968
+        ;   XREF to: 005d2ab0 (CONDITIONAL_JUMP)  ; LAB_005d2ab0
     MOV EAX,dword ptr [EBP + 0x18]      ; 005d296e
         ;   Label: LAB_005d296e
     FLD double ptr [EDX]                ; 005d2971
@@ -144,8 +144,8 @@ section .text
     MOV ESI,dword ptr [ECX]             ; 005d2a9c
     MOV dword ptr [ESP + 0xa8],EDI      ; 005d2a9e
     CMP EDI,ESI                         ; 005d2aa5
-    JC 0x005d296e                       ; 005d2aa7 | LAB_005d296e
-        ;   XREF to: 005d296e (CONDITIONAL_JUMP)
+    JC 0x005d296e                       ; 005d2aa7
+        ;   XREF to: 005d296e (CONDITIONAL_JUMP)  ; LAB_005d296e
     LEA EAX,[EAX]                       ; 005d2aad
     MOV ESP,EBP                         ; 005d2ab0
         ;   Label: LAB_005d2ab0

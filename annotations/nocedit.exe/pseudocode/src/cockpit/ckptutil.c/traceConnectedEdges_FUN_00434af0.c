@@ -99,7 +99,7 @@ cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0
   local_48 = max_y + -1;
   local_ec = gap_tolerance_x + -1;
   iVar13 = 0;
-  local_e8 = (int *)output_buffer;
+  local_e8 = output_buffer;
   if (0 < local_ec) {
     do {
       local_dc = iVar13 + 1;

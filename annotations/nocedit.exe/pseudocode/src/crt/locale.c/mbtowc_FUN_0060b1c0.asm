@@ -39,21 +39,21 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 0060b1c9
     MOV EBX,dword ptr [EBP + 0x18]      ; 0060b1cc
     TEST EBX,EBX                        ; 0060b1cf
-    JNZ 0x0060b1da                      ; 0060b1d1 | LAB_0060b1da
-        ;   XREF to: 0060b1da (CONDITIONAL_JUMP)
+    JNZ 0x0060b1da                      ; 0060b1d1
+        ;   XREF to: 0060b1da (CONDITIONAL_JUMP)  ; LAB_0060b1da
     XOR EAX,EAX                         ; 0060b1d3
-    JMP 0x0060b265                      ; 0060b1d5 | LAB_0060b265
-        ;   XREF to: 0060b265 (UNCONDITIONAL_JUMP)
+    JMP 0x0060b265                      ; 0060b1d5
+        ;   XREF to: 0060b265 (UNCONDITIONAL_JUMP)  ; LAB_0060b265
     CMP dword ptr [EBP + 0x1c],0x0      ; 0060b1da
         ;   Label: LAB_0060b1da
-    JBE 0x0060b260                      ; 0060b1de | LAB_0060b260
-        ;   XREF to: 0060b260 (CONDITIONAL_JUMP)
+    JBE 0x0060b260                      ; 0060b1de
+        ;   XREF to: 0060b260 (CONDITIONAL_JUMP)  ; LAB_0060b260
     CMP byte ptr [EBX],0x0              ; 0060b1e4
-    JNZ 0x0060b1fb                      ; 0060b1e7 | LAB_0060b1fb
-        ;   XREF to: 0060b1fb (CONDITIONAL_JUMP)
+    JNZ 0x0060b1fb                      ; 0060b1e7
+        ;   XREF to: 0060b1fb (CONDITIONAL_JUMP)  ; LAB_0060b1fb
     TEST ESI,ESI                        ; 0060b1e9
-    JZ 0x0060b1f2                       ; 0060b1eb | LAB_0060b1f2
-        ;   XREF to: 0060b1f2 (CONDITIONAL_JUMP)
+    JZ 0x0060b1f2                       ; 0060b1eb
+        ;   XREF to: 0060b1f2 (CONDITIONAL_JUMP)  ; LAB_0060b1f2
     MOV word ptr [ESI],0x0              ; 0060b1ed
     XOR EAX,EAX                         ; 0060b1f2
         ;   Label: LAB_0060b1f2
@@ -63,24 +63,24 @@ section .text
     POP ESI                             ; 0060b1f8
     POP EBX                             ; 0060b1f9
     RET                                 ; 0060b1fa
-    CMP dword ptr [0x03f9c020],0x0      ; 0060b1fb | int g_MultibyteLocaleActive
+    CMP dword ptr [0x03f9c020],0x0      ; 0060b1fb | g_MultibyteLocaleActive
         ;   Label: LAB_0060b1fb
-    JZ 0x0060b21d                       ; 0060b202 | LAB_0060b21d
-        ;   XREF to: 0060b21d (CONDITIONAL_JUMP)
+    JZ 0x0060b21d                       ; 0060b202
+        ;   XREF to: 0060b21d (CONDITIONAL_JUMP)  ; LAB_0060b21d
     XOR EAX,EAX                         ; 0060b204
     MOV AL,byte ptr [EBX]               ; 0060b206
-    MOV AL,byte ptr [EAX + 0x3f9c031]   ; 0060b208 | char[256] g_LeadByteTable
+    MOV AL,byte ptr [EAX + 0x3f9c031]   ; 0060b208 | g_LeadByteTable
     AND AL,0x1                          ; 0060b20e
     AND EAX,0xff                        ; 0060b210
-    JZ 0x0060b21d                       ; 0060b215 | LAB_0060b21d
-        ;   XREF to: 0060b21d (CONDITIONAL_JUMP)
+    JZ 0x0060b21d                       ; 0060b215
+        ;   XREF to: 0060b21d (CONDITIONAL_JUMP)  ; LAB_0060b21d
     CMP byte ptr [EBX + 0x1],0x0        ; 0060b217
-    JZ 0x0060b260                       ; 0060b21b | LAB_0060b260
-        ;   XREF to: 0060b260 (CONDITIONAL_JUMP)
+    JZ 0x0060b260                       ; 0060b21b
+        ;   XREF to: 0060b260 (CONDITIONAL_JUMP)  ; LAB_0060b260
     PUSH EBX                            ; 0060b21d
         ;   Label: LAB_0060b21d
-    CALL crt_locale.c_mblen_FUN_00605a40 ; 0060b21e | int crt_locale.c_mblen_FUN_00605a40(char * mb_string)
-        ;   XREF to: 00605a40 (UNCONDITIONAL_CALL)
+    CALL crt_locale.c_mblen_FUN_00605a40 ; 0060b21e
+        ;   XREF to: 00605a40 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mblen_FUN_00605a40(char * mb_string)
     ADD ESP,0x4                         ; 0060b223
     PUSH 0x1                            ; 0060b226
     LEA EDX,[EBP + -0x4]                ; 0060b228
@@ -88,22 +88,22 @@ section .text
     MOV EDX,dword ptr [EBP + 0x1c]      ; 0060b22c
     MOV EDI,EAX                         ; 0060b22f
     CMP EAX,EDX                         ; 0060b231
-    JBE 0x0060b237                      ; 0060b233 | LAB_0060b237
-        ;   XREF to: 0060b237 (CONDITIONAL_JUMP)
+    JBE 0x0060b237                      ; 0060b233
+        ;   XREF to: 0060b237 (CONDITIONAL_JUMP)  ; LAB_0060b237
     MOV EAX,EDX                         ; 0060b235
     PUSH EAX                            ; 0060b237
         ;   Label: LAB_0060b237
     PUSH EBX                            ; 0060b238
     PUSH 0x8                            ; 0060b239
-    MOV EBX,dword ptr [0x00685570]      ; 0060b23b | uint g_CodePage
+    MOV EBX,dword ptr [0x00685570]      ; 0060b23b | g_CodePage
     PUSH EBX                            ; 0060b241
-    CALL dword ptr CS:[0x6115f4]        ; 0060b242 | MultiByteToWideChar * PTR_MultiByteToWideChar_006115f4
+    CALL dword ptr CS:[0x6115f4]        ; 0060b242 | PTR_MultiByteToWideChar_006115f4
     TEST EAX,EAX                        ; 0060b249
-    JZ 0x0060b260                       ; 0060b24b | LAB_0060b260
-        ;   XREF to: 0060b260 (CONDITIONAL_JUMP)
+    JZ 0x0060b260                       ; 0060b24b
+        ;   XREF to: 0060b260 (CONDITIONAL_JUMP)  ; LAB_0060b260
     TEST ESI,ESI                        ; 0060b24d
-    JZ 0x0060b257                       ; 0060b24f | LAB_0060b257
-        ;   XREF to: 0060b257 (CONDITIONAL_JUMP)
+    JZ 0x0060b257                       ; 0060b24f
+        ;   XREF to: 0060b257 (CONDITIONAL_JUMP)  ; LAB_0060b257
     MOV EAX,dword ptr [EBP + -0x4]      ; 0060b251
     MOV word ptr [ESI],AX               ; 0060b254
     MOV EAX,EDI                         ; 0060b257

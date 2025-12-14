@@ -32,29 +32,29 @@ section .text
     PUSH EDX                            ; 0042338f
     MOV ECX,dword ptr [ESP + 0x140]     ; 00423390
     PUSH ECX                            ; 00423397
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00423398 | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00423398
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0042339d
     MOV ESI,dword ptr [ESP + 0x13c]     ; 004233a0
     PUSH ESI                            ; 004233a7
-    PUSH 0x6169b3                       ; 004233a8 | = "Select light type for CLightActor %s" | s_Select_light_type_for_CL_006169b3 = Select light type for CLightActor %s
+    PUSH 0x6169b3                       ; 004233a8 | = "Select light type for CLightActor %s"
     MOV EBX,EAX                         ; 004233ad
     LEA EAX,[ESP + 0x8]                 ; 004233af
     PUSH EAX                            ; 004233b3
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004233b4 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004233b4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004233b9
     MOV EDI,dword ptr [EBX + 0x66c]     ; 004233bc
     PUSH EDI                            ; 004233c2
     PUSH 0x1                            ; 004233c3
     LEA EAX,[ESP + 0x8]                 ; 004233c5
     PUSH EAX                            ; 004233c9
-    CALL core_boxactor.cpp_FUN_00423110 ; 004233ca | undefined core_boxactor.cpp_FUN_00423110()
-        ;   XREF to: 00423110 (UNCONDITIONAL_CALL)
+    CALL core_boxactor.cpp_FUN_00423110 ; 004233ca
+        ;   XREF to: 00423110 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_00423110()
     ADD ESP,0xc                         ; 004233cf
     TEST EAX,EAX                        ; 004233d2
-    JGE 0x004233e2                      ; 004233d4 | LAB_004233e2
-        ;   XREF to: 004233e2 (CONDITIONAL_JUMP)
+    JGE 0x004233e2                      ; 004233d4
+        ;   XREF to: 004233e2 (CONDITIONAL_JUMP)  ; LAB_004233e2
     XOR EAX,EAX                         ; 004233d6
     ADD ESP,0x12c                       ; 004233d8
     POP EDI                             ; 004233de
@@ -64,8 +64,8 @@ section .text
     PUSH EBX                            ; 004233e2
         ;   Label: LAB_004233e2
     MOV dword ptr [EBX + 0x66c],EAX     ; 004233e3
-    CALL core_boxactor.cpp_FUN_00422d60 ; 004233e9 | undefined core_boxactor.cpp_FUN_00422d60()
-        ;   XREF to: 00422d60 (UNCONDITIONAL_CALL)
+    CALL core_boxactor.cpp_FUN_00422d60 ; 004233e9
+        ;   XREF to: 00422d60 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_00422d60()
     MOV EAX,0x1                         ; 004233ee
     ADD ESP,0x4                         ; 004233f3
     ADD ESP,0x12c                       ; 004233f6

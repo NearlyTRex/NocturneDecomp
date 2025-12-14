@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 25, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
-      "addr": "005dd800"
-    }, 
-    {
-      "name": "wincore_windll.cpp_updateTexture_FUN_005b7380", 
-      "addr": "005b7380"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "byte*", 
-      "name": "g_CurrentPalette", 
-      "addr": "02d01920", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005dd900", 
-    "signature": "void engine_texture.cpp_updateTextureWithPalette_FUN_005dd900(SMRGLTextureBasic * texture_to_load, SMRGLTextureBasic * texture_to_update)", 
-    "address_range": [
-      [
-        "005dd900", 
-        "005dd923"
-      ]
-    ], 
-    "name": "engine_texture.cpp_updateTextureWithPalette_FUN_005dd900"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLTextureBasic *", 
-        "size": 4, 
-        "name": "texture_to_load"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLTextureBasic *", 
-        "size": 4, 
-        "name": "texture_to_update"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 16,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
   "cross_references": [
     {
-      "from_addr": "0048dc25", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_updateTextureWithPalette_FUN_0048dc20", 
-      "addr": "0048dc20"
+      "addr": "0048dc20",
+      "from_addr": "0048dc25",
+      "name": "engine_drender.cpp_CDemonRenderer_updateTextureWithPalette_FUN_0048dc20",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005dd900",
+    "address_range": [
+      [
+        "005dd900",
+        "005dd923"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_updateTextureWithPalette_FUN_005dd900",
+    "signature": "void engine_texture.cpp_updateTextureWithPalette_FUN_005dd900(SMRGLTextureBasic * texture_to_load, SMRGLTextureBasic * texture_to_update)"
+  },
+  "function_calls": [
+    {
+      "addr": "005dd800",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800"
+    },
+    {
+      "addr": "005b7380",
+      "name": "wincore_windll.cpp_updateTexture_FUN_005b7380"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d01920",
+      "name": "g_CurrentPalette",
+      "type": "byte*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture_to_load",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_to_update",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      }
+    ]
+  },
+  "suspects": []
 }

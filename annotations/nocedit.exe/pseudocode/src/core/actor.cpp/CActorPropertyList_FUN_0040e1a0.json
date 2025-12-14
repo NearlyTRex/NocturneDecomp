@@ -1,183 +1,183 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 110, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 11, 
-    "global_count": 0, 
-    "total_lines": 39, 
-    "assembly_lines": 24, 
-    "suspect_count": 9, 
+    "assembly_lines": 24,
+    "complexity_score": 110,
+    "cross_reference_count": 11,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 9,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0", 
-      "addr": "0040e6c0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000008;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_0000000c;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000014;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_00000018;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,1,in_stack_00000008,in_stack_0000000c,in_stack_00000018);"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,1,in_stack_00000008,in_stack_0000000c,in_stack_00000018);"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,1,in_stack_00000008,in_stack_0000000c,in_stack_00000018);"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(iVar1 + 0x60) = in_stack_00000014;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(void **)(iVar1 + 100) = in_stack_00000018;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040e1a0", 
-    "signature": "void core_actor.cpp_CActorPropertyList_FUN_0040e1a0(CActorPropertyList * this_ptr)", 
-    "address_range": [
-      [
-        "0040e1a0", 
-        "0040e1de"
-      ]
-    ], 
-    "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CActorPropertyList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 39
+  },
   "cross_references": [
     {
-      "from_addr": "0040d31d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290", 
-      "addr": "0040d290"
-    }, 
+      "addr": "0040d290",
+      "from_addr": "0040d31d",
+      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00422722", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_FUN_004226e0", 
-      "addr": "004226e0"
-    }, 
+      "addr": "004226e0",
+      "from_addr": "00422722",
+      "name": "core_boxactor.cpp_FUN_004226e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a8fac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_emitter.cpp_FUN_004a8db0", 
-      "addr": "004a8db0"
-    }, 
+      "addr": "004a8db0",
+      "from_addr": "004a8fac",
+      "name": "core_emitter.cpp_FUN_004a8db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004aa221", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_enemy.cpp_CEnemy_FUN_004aa170", 
-      "addr": "004aa170"
-    }, 
+      "addr": "004aa170",
+      "from_addr": "004aa221",
+      "name": "core_enemy.cpp_CEnemy_FUN_004aa170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004eea21", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_grave.cpp_FUN_004ee9e0", 
-      "addr": "004ee9e0"
-    }, 
+      "addr": "004ee9e0",
+      "from_addr": "004eea21",
+      "name": "core_grave.cpp_FUN_004ee9e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f2098", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_health.cpp_FUN_004f2040", 
-      "addr": "004f2040"
-    }, 
+      "addr": "004f2040",
+      "from_addr": "004f2098",
+      "name": "core_health.cpp_FUN_004f2040",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050ed72", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_melee.cpp_FUN_0050ecf0", 
-      "addr": "0050ecf0"
-    }, 
+      "addr": "0050ecf0",
+      "from_addr": "0050ed72",
+      "name": "core_melee.cpp_FUN_0050ecf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054e92b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_platfrm.cpp_FUN_0054e7d0", 
-      "addr": "0054e7d0"
-    }, 
+      "addr": "0054e7d0",
+      "from_addr": "0054e92b",
+      "name": "core_platfrm.cpp_FUN_0054e7d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e108a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_trigger.cpp_CTrigger_FUN_005e0f70", 
-      "addr": "005e0f70"
-    }, 
+      "addr": "005e0f70",
+      "from_addr": "005e108a",
+      "name": "core_trigger.cpp_CTrigger_FUN_005e0f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e3d73", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_CTurret_FUN_005e3ca0", 
-      "addr": "005e3ca0"
-    }, 
+      "addr": "005e3ca0",
+      "from_addr": "005e3d73",
+      "name": "core_turret.cpp_CTurret_FUN_005e3ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f2186", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_werewolf.cpp_CWerewolf_FUN_005f20d0", 
-      "addr": "005f20d0"
+      "addr": "005f20d0",
+      "from_addr": "005f2186",
+      "name": "core_werewolf.cpp_CWerewolf_FUN_005f20d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e1a0",
+    "address_range": [
+      [
+        "0040e1a0",
+        "0040e1de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1a0",
+    "signature": "void core_actor.cpp_CActorPropertyList_FUN_0040e1a0(CActorPropertyList * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040e6c0",
+      "name": "core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "void *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000014",
+      "text": "uint in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000018",
+      "text": "void *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr,1,in_stack_00000008,in_stack_0000000c,in_stack_00000018);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr,1,in_stack_00000008,in_stack_0000000c,in_stack_00000018);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000018",
+      "text": "(this_ptr,1,in_stack_00000008,in_stack_0000000c,in_stack_00000018);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000014",
+      "text": "*(uint *)(iVar1 + 0x60) = in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000018",
+      "text": "*(void **)(iVar1 + 100) = in_stack_00000018;",
+      "type": "stack_param"
     }
   ]
 }

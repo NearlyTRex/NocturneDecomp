@@ -20,16 +20,16 @@ section .text
     PUSH EDX                            ; 005df725
     MOV ECX,dword ptr [ESP + 0xc]       ; 005df726
     PUSH ECX                            ; 005df72a
-    CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 005df72b | void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 005df72b
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
     ADD ESP,0x8                         ; 005df730
     MOV EBX,dword ptr [ESP + 0xc]       ; 005df733
     MOV EAX,dword ptr [ESP + 0x8]       ; 005df737
     PUSH EBX                            ; 005df73b
     ADD EAX,0x158                       ; 005df73c
     PUSH EAX                            ; 005df741
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0 ; 005df742 | void core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0(CKeyFramedModelInstance * this_ptr, FILE * file_handle)
-        ;   XREF to: 0047edd0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0 ; 005df742
+        ;   XREF to: 0047edd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0(CKeyFramedModelInstance * this_ptr, FILE * file_handle)
     ADD ESP,0x8                         ; 005df747
     POP EBX                             ; 005df74a
     RET                                 ; 005df74b

@@ -1,70 +1,70 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 4, 
-    "global_count": 0, 
-    "total_lines": 42, 
-    "assembly_lines": 30, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00607820", 
-    "signature": "int crt_time.c_is_leap_year_FUN_00607820(int year)", 
-    "address_range": [
-      [
-        "00607820", 
-        "00607857"
-      ]
-    ], 
-    "name": "crt_time.c_is_leap_year_FUN_00607820"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "year"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 30,
+    "complexity_score": 12,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
+  },
   "cross_references": [
     {
-      "from_addr": "00607a14", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_time.c_determine_dst_status_FUN_006079b4", 
-      "addr": "006079b4"
-    }, 
+      "addr": "006079b4",
+      "from_addr": "00607a14",
+      "name": "crt_time.c_determine_dst_status_FUN_006079b4",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00607748", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_time.c_gmtime_r_FUN_00607690", 
-      "addr": "00607690"
-    }, 
+      "addr": "00607690",
+      "from_addr": "00607748",
+      "name": "crt_time.c_gmtime_r_FUN_00607690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00600feb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_time.c_mktime_FUN_00600f80", 
-      "addr": "00600f80"
-    }, 
+      "addr": "00600f80",
+      "from_addr": "00600feb",
+      "name": "crt_time.c_mktime_FUN_00600f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00607879", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_00607858", 
-      "addr": "00607858"
+      "addr": "00607858",
+      "from_addr": "00607879",
+      "name": "crt_unknown.c_FUN_00607858",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00607820",
+    "address_range": [
+      [
+        "00607820",
+        "00607857"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c_is_leap_year_FUN_00607820",
+    "signature": "int crt_time.c_is_leap_year_FUN_00607820(int year)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "year",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

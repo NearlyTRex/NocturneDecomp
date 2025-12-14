@@ -1,114 +1,114 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 32, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 7, 
-    "global_count": 0, 
-    "total_lines": 20, 
-    "assembly_lines": 13, 
-    "suspect_count": 2, 
+    "assembly_lines": 13,
+    "complexity_score": 32,
+    "cross_reference_count": 7,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_morph.cpp_CMorphModel_FUN_0052b350", 
-      "addr": "0052b350"
-    }, 
-    {
-      "name": "core_morph.cpp_freeMorphModels_FUN_0052cd10", 
-      "addr": "0052cd10"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CMorphModel **in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_morph_cpp_freeMorphModels_FUN_0052cd10(in_stack_00000008);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052b330", 
-    "signature": "void core_morph.cpp_CMorphModel_FUN_0052b330(CMorphModel * this_ptr)", 
-    "address_range": [
-      [
-        "0052b330", 
-        "0052b34c"
-      ]
-    ], 
-    "name": "core_morph.cpp_CMorphModel_FUN_0052b330"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMorphModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 20
+  },
   "cross_references": [
     {
-      "from_addr": "00418d29", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_biggs.cpp_CBiggs_dtor_FUN_00418d10", 
-      "addr": "00418d10"
-    }, 
+      "addr": "00418d10",
+      "from_addr": "00418d29",
+      "name": "core_biggs.cpp_CBiggs_dtor_FUN_00418d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005078ca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
-      "addr": "005073a0"
-    }, 
+      "addr": "005073a0",
+      "from_addr": "005078ca",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051f31f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_FUN_0051f2c0", 
-      "addr": "0051f2c0"
-    }, 
+      "addr": "0051f2c0",
+      "from_addr": "0051f31f",
+      "name": "core_mimic.cpp_FUN_0051f2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00528c0f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moloch.cpp_CMoloch_dtor_FUN_00528bf0", 
-      "addr": "00528bf0"
-    }, 
+      "addr": "00528bf0",
+      "from_addr": "00528c0f",
+      "name": "core_moloch.cpp_CMoloch_dtor_FUN_00528bf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00545c6a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_passngr.cpp_CPassenger_dtor_FUN_00545c10", 
-      "addr": "00545c10"
-    }, 
+      "addr": "00545c10",
+      "from_addr": "00545c6a",
+      "name": "core_passngr.cpp_CPassenger_dtor_FUN_00545c10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c7839", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_succubus.cpp_CSuccubus_dtor_FUN_005c7820", 
-      "addr": "005c7820"
-    }, 
+      "addr": "005c7820",
+      "from_addr": "005c7839",
+      "name": "core_succubus.cpp_CSuccubus_dtor_FUN_005c7820",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e7719", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700", 
-      "addr": "005e7700"
+      "addr": "005e7700",
+      "from_addr": "005e7719",
+      "name": "core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052b330",
+    "address_range": [
+      [
+        "0052b330",
+        "0052b34c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_FUN_0052b330",
+    "signature": "void core_morph.cpp_CMorphModel_FUN_0052b330(CMorphModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052b350",
+      "name": "core_morph.cpp_CMorphModel_FUN_0052b350"
+    },
+    {
+      "addr": "0052cd10",
+      "name": "core_morph.cpp_freeMorphModels_FUN_0052cd10"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "CMorphModel **in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "core_morph_cpp_freeMorphModels_FUN_0052cd10(in_stack_00000008);",
+      "type": "stack_param"
     }
   ]
 }

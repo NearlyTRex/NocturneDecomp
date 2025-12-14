@@ -118,13 +118,13 @@ section .text
     FSUB float ptr [EBX + 0x8]          ; 005465ec
     PUSH EAX                            ; 005465ef
     FSTP float ptr [ESP + 0x70]         ; 005465f0
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005465f4 | CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)
+    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 005465f4
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX]                 ; 005465f9
-    FDIV float ptr [0x0063e950]         ; 005465fb | float g_PathDirectionScale100
+    FDIV float ptr [0x0063e950]         ; 005465fb | g_PathDirectionScale100
     ADD ESP,0x8                         ; 00546601
     FSTP float ptr [ESP + 0x54]         ; 00546604
-    FLD float ptr [0x0063e954]          ; 00546608 | float g_PathRotationScaleFactor
+    FLD float ptr [0x0063e954]          ; 00546608 | g_PathRotationScaleFactor
     FLD float ptr [EAX + 0x4]           ; 0054660e
     FMUL ST1                            ; 00546611
     FSTP float ptr [ESP + 0x58]         ; 00546613
@@ -140,9 +140,9 @@ section .text
     LEA EAX,[ESI + -0x1]                ; 00546641
     FSTP float ptr [ESP + 0x5c]         ; 00546644
     CMP EAX,0x3                         ; 00546648
-    JA 0x00546675                       ; 0054664b | default
-        ;   XREF to: 00546675 (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x546554]  ; 0054664d | void * switchdataD_00546554
+    JA 0x00546675                       ; 0054664b
+        ;   XREF to: 00546675 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x546554]  ; 0054664d | caseD_1 | caseD_2 | caseD_3
         ;   Label: switchD
     MOV ECX,0x3f800000                  ; 00546654
         ;   Label: caseD_1
@@ -155,9 +155,9 @@ section .text
         ;   Label: default
     DEC EAX                             ; 00546678
     CMP EAX,0x3                         ; 00546679
-    JA 0x005466b2                       ; 0054667c | default
-        ;   XREF to: 005466b2 (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x546564]  ; 0054667e | void * switchdataD_00546564
+    JA 0x005466b2                       ; 0054667c
+        ;   XREF to: 005466b2 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x546564]  ; 0054667e | caseD_1 | caseD_2 | caseD_3
         ;   Label: switchD
     FLD1                                ; 00546685
         ;   Label: caseD_1
@@ -172,19 +172,19 @@ section .text
         ;   Label: LAB_005466ab
     TEST dword ptr [ESP + 0xa8],0x7fffffff ; 005466b2
         ;   Label: default
-    JNZ 0x00546901                      ; 005466bd | LAB_00546901
-        ;   XREF to: 00546901 (CONDITIONAL_JUMP)
+    JNZ 0x00546901                      ; 005466bd
+        ;   XREF to: 00546901 (CONDITIONAL_JUMP)  ; LAB_00546901
     TEST dword ptr [ESP + 0xac],0x7fffffff ; 005466c3
-    JNZ 0x00546901                      ; 005466ce | LAB_00546901
-        ;   XREF to: 00546901 (CONDITIONAL_JUMP)
+    JNZ 0x00546901                      ; 005466ce
+        ;   XREF to: 00546901 (CONDITIONAL_JUMP)  ; LAB_00546901
     TEST dword ptr [ESP + 0xb0],0x7fffffff ; 005466d4
-    JNZ 0x00546901                      ; 005466df | LAB_00546901
-        ;   XREF to: 00546901 (CONDITIONAL_JUMP)
+    JNZ 0x00546901                      ; 005466df
+        ;   XREF to: 00546901 (CONDITIONAL_JUMP)  ; LAB_00546901
     LEA EAX,[ESI + -0x1]                ; 005466e5
     CMP EAX,0x7                         ; 005466e8
-    JA 0x005468df                       ; 005466eb | default
-        ;   XREF to: 005468df (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x546574]  ; 005466f1 | void * switchdataD_00546574
+    JA 0x005468df                       ; 005466eb
+        ;   XREF to: 005468df (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x546574]  ; 005466f1 | caseD_1 | caseD_5 | caseD_3
         ;   Label: switchD
     MOV EAX,dword ptr [ESP + 0x58]      ; 005466f8
         ;   Label: caseD_1
@@ -201,8 +201,8 @@ section .text
     MOV dword ptr [ESP + 0x70],EDX      ; 00546716
     MOV dword ptr [ESP + 0x6c],EDX      ; 0054671a
     MOV dword ptr [ESP + 0x74],ECX      ; 0054671e
-    JMP 0x0054666e                      ; 00546722 | LAB_0054666e
-        ;   XREF to: 0054666e (UNCONDITIONAL_JUMP)
+    JMP 0x0054666e                      ; 00546722
+        ;   XREF to: 0054666e (UNCONDITIONAL_JUMP)  ; LAB_0054666e
     MOV EAX,0x3f800000                  ; 00546727
         ;   Label: caseD_3
     MOV dword ptr [ESP + 0x4],EDX       ; 0054672c
@@ -212,9 +212,9 @@ section .text
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0054673e
     DEC EAX                             ; 00546741
     CMP EAX,0x3                         ; 00546742
-    JA 0x005466b2                       ; 00546745 | default
-        ;   XREF to: 005466b2 (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x546564]  ; 0054674b | void * switchdataD_00546564
+    JA 0x005466b2                       ; 00546745
+        ;   XREF to: 005466b2 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x546564]  ; 0054674b | caseD_1 | caseD_2 | caseD_3
         ;   Label: switchD
     MOV EAX,0xbf800000                  ; 00546752
         ;   Label: caseD_4
@@ -225,9 +225,9 @@ section .text
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0054676a
     DEC EAX                             ; 0054676d
     CMP EAX,0x3                         ; 0054676e
-    JA 0x005466b2                       ; 00546771 | default
-        ;   XREF to: 005466b2 (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x546564]  ; 00546777 | void * switchdataD_00546564
+    JA 0x005466b2                       ; 00546771
+        ;   XREF to: 005466b2 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x546564]  ; 00546777 | caseD_1 | caseD_2 | caseD_3
         ;   Label: switchD
     FLD float ptr [ESP + 0xb0]          ; 0054677e
         ;   Label: caseD_2
@@ -236,10 +236,10 @@ section .text
     INC EBX                             ; 0054678c
     MOV dword ptr [ESP + 0x78],EAX      ; 0054678d
     MOV dword ptr [ESP + 0x7c],EAX      ; 00546791
-    FADD float ptr [0x0063e958]         ; 00546795 | float g_PathNegativeOne
+    FADD float ptr [0x0063e958]         ; 00546795 | g_PathNegativeOne
     MOV dword ptr [ESP + 0x80],ECX      ; 0054679b
-    JMP 0x005466ab                      ; 005467a2 | LAB_005466ab
-        ;   XREF to: 005466ab (UNCONDITIONAL_JUMP)
+    JMP 0x005466ab                      ; 005467a2
+        ;   XREF to: 005466ab (UNCONDITIONAL_JUMP)  ; LAB_005466ab
     FLD1                                ; 005467a7
         ;   Label: caseD_3
     MOV EAX,0x3f800000                  ; 005467a9
@@ -250,8 +250,8 @@ section .text
     FADD float ptr [ESP + 0xa8]         ; 005467b9
     MOV dword ptr [ESP + 0x38],EDX      ; 005467c0
     FSTP float ptr [ESP + 0xa8]         ; 005467c4
-    JMP 0x005466b2                      ; 005467cb | default
-        ;   XREF to: 005466b2 (UNCONDITIONAL_JUMP)
+    JMP 0x005466b2                      ; 005467cb
+        ;   XREF to: 005466b2 (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0xa8]          ; 005467d0
         ;   Label: caseD_4
     MOV EAX,0xbf800000                  ; 005467d7
@@ -259,14 +259,14 @@ section .text
     XOR EDX,EDX                         ; 005467dd
     MOV dword ptr [ESP + 0xcc],EAX      ; 005467df
     MOV dword ptr [ESP + 0xd0],EDX      ; 005467e6
-    FADD float ptr [0x0063e958]         ; 005467ed | float g_PathNegativeOne
+    FADD float ptr [0x0063e958]         ; 005467ed | g_PathNegativeOne
     MOV dword ptr [ESP + 0xd4],EDX      ; 005467f3
     FSTP float ptr [ESP + 0xa8]         ; 005467fa
-    JMP 0x005466b2                      ; 00546801 | default
-        ;   XREF to: 005466b2 (UNCONDITIONAL_JUMP)
+    JMP 0x005466b2                      ; 00546801
+        ;   XREF to: 005466b2 (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0x58]          ; 00546806
         ;   Label: caseD_5
-    FADD double ptr [0x0063e978]        ; 0054680a | double g_PathAnglePiOver4
+    FADD double ptr [0x0063e978]        ; 0054680a | g_PathAnglePiOver4
     FSTP float ptr [ESP + 0xdc]         ; 00546810
     MOV EAX,dword ptr [ESP + 0xdc]      ; 00546817
     MOV ESP,EBP                         ; 0054681e
@@ -277,7 +277,7 @@ section .text
     RET                                 ; 00546824
     FLD float ptr [ESP + 0x58]          ; 00546825
         ;   Label: caseD_3
-    FADD double ptr [0x0063e988]        ; 00546829 | double g_PathAnglePiOver2
+    FADD double ptr [0x0063e988]        ; 00546829 | g_PathAnglePiOver2
     FSTP float ptr [ESP + 0xdc]         ; 0054682f
     MOV EAX,dword ptr [ESP + 0xdc]      ; 00546836
     MOV ESP,EBP                         ; 0054683d
@@ -288,7 +288,7 @@ section .text
     RET                                 ; 00546843
     FLD float ptr [ESP + 0x58]          ; 00546844
         ;   Label: caseD_7
-    FADD double ptr [0x0063e968]        ; 00546848 | double g_PathAngle3PiOver4
+    FADD double ptr [0x0063e968]        ; 00546848 | g_PathAngle3PiOver4
     FSTP float ptr [ESP + 0xdc]         ; 0054684e
     MOV EAX,dword ptr [ESP + 0xdc]      ; 00546855
     MOV ESP,EBP                         ; 0054685c
@@ -299,7 +299,7 @@ section .text
     RET                                 ; 00546862
     FLD float ptr [ESP + 0x58]          ; 00546863
         ;   Label: caseD_2
-    FADD double ptr [0x0063e990]        ; 00546867 | double g_PathAnglePi
+    FADD double ptr [0x0063e990]        ; 00546867 | g_PathAnglePi
     FSTP float ptr [ESP + 0xdc]         ; 0054686d
     MOV EAX,dword ptr [ESP + 0xdc]      ; 00546874
     MOV ESP,EBP                         ; 0054687b
@@ -310,7 +310,7 @@ section .text
     RET                                 ; 00546881
     FLD float ptr [ESP + 0x58]          ; 00546882
         ;   Label: caseD_8
-    FADD double ptr [0x0063e960]        ; 00546886 | double g_PathAngleNeg3PiOver4
+    FADD double ptr [0x0063e960]        ; 00546886 | g_PathAngleNeg3PiOver4
     FSTP float ptr [ESP + 0xdc]         ; 0054688c
     MOV EAX,dword ptr [ESP + 0xdc]      ; 00546893
     MOV ESP,EBP                         ; 0054689a
@@ -321,7 +321,7 @@ section .text
     RET                                 ; 005468a0
     FLD float ptr [ESP + 0x58]          ; 005468a1
         ;   Label: caseD_4
-    FADD double ptr [0x0063e980]        ; 005468a5 | double g_PathAngleNegPiOver2
+    FADD double ptr [0x0063e980]        ; 005468a5 | g_PathAngleNegPiOver2
     FSTP float ptr [ESP + 0xdc]         ; 005468ab
     MOV EAX,dword ptr [ESP + 0xdc]      ; 005468b2
     MOV ESP,EBP                         ; 005468b9
@@ -332,7 +332,7 @@ section .text
     RET                                 ; 005468bf
     FLD float ptr [ESP + 0x58]          ; 005468c0
         ;   Label: caseD_6
-    FADD double ptr [0x0063e970]        ; 005468c4 | double g_PathAngleNegPiOver4
+    FADD double ptr [0x0063e970]        ; 005468c4 | g_PathAngleNegPiOver4
     FSTP float ptr [ESP + 0xdc]         ; 005468ca
     MOV EAX,dword ptr [ESP + 0xdc]      ; 005468d1
     MOV ESP,EBP                         ; 005468d8
@@ -341,25 +341,25 @@ section .text
     POP ESI                             ; 005468dc
     POP EBX                             ; 005468dd
     RET                                 ; 005468de
-    MOV EAX,0x63e8c6                    ; 005468df | = "..\\core\\path.cpp" | s_core_path_cpp_0063e8c6 = ..\core\path.cpp
+    MOV EAX,0x63e8c6                    ; 005468df | = "..\\core\\path.cpp"
         ;   Label: default
     MOV EDX,0x183                       ; 005468e4
-    PUSH 0x63e8d7                       ; 005468e9 | = "CPathMap::getDirection - Should never..." | s_CPathMap_getDirection_Sh_0063e8d7 = CPathMap::getDirection - Should never get here either
-    MOV [0x02f0ca48],EAX                ; 005468ee | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 005468f3 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005468f9 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63e8d7                       ; 005468e9 | = "CPathMap::getDirection - Should never..."
+    MOV [0x02f0ca48],EAX                ; 005468ee | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 005468f3 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005468f9
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005468fe
     CMP ESI,EDI                         ; 00546901
         ;   Label: LAB_00546901
-    JNZ 0x005469b5                      ; 00546903 | LAB_005469b5
-        ;   XREF to: 005469b5 (CONDITIONAL_JUMP)
+    JNZ 0x005469b5                      ; 00546903
+        ;   XREF to: 005469b5 (CONDITIONAL_JUMP)  ; LAB_005469b5
     LEA EAX,[EDI + -0x1]                ; 00546909
         ;   Label: LAB_00546909
     CMP EAX,0x3                         ; 0054690c
-    JA 0x0054693c                       ; 0054690f | default
-        ;   XREF to: 0054693c (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x546594]  ; 00546911 | void * switchdataD_00546594
+    JA 0x0054693c                       ; 0054690f
+        ;   XREF to: 0054693c (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x546594]  ; 00546911 | caseD_1 | caseD_2 | caseD_3
         ;   Label: switchD
     FLD1                                ; 00546918
         ;   Label: caseD_1
@@ -394,8 +394,8 @@ section .text
     FSTP float ptr [ESP + 0x20]         ; 00546985
     FSTP float ptr [ESP + 0x24]         ; 00546989
     FSTP float ptr [ESP + 0x28]         ; 0054698d
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00546991 | CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)
+    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 00546991
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 00546996
     FLD float ptr [EAX + 0x4]           ; 00546999
     FADD float ptr [ESP + 0x58]         ; 0054699c
@@ -409,10 +409,10 @@ section .text
     RET                                 ; 005469b4
     CMP EDI,dword ptr [EBP + 0x1c]      ; 005469b5
         ;   Label: LAB_005469b5
-    JZ 0x00546909                       ; 005469b8 | LAB_00546909
-        ;   XREF to: 00546909 (CONDITIONAL_JUMP)
-    JMP 0x0054693c                      ; 005469be | default
-        ;   XREF to: 0054693c (UNCONDITIONAL_JUMP)
+    JZ 0x00546909                       ; 005469b8
+        ;   XREF to: 00546909 (CONDITIONAL_JUMP)  ; LAB_00546909
+    JMP 0x0054693c                      ; 005469be
+        ;   XREF to: 0054693c (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0xb0]          ; 005469c3
         ;   Label: caseD_2
     MOV EDX,0xbf800000                  ; 005469ca
@@ -420,10 +420,10 @@ section .text
     INC EBX                             ; 005469d1
     MOV dword ptr [ESP + 0x48],EDI      ; 005469d2
     MOV dword ptr [ESP + 0x4c],EDI      ; 005469d6
-    FADD float ptr [0x0063e958]         ; 005469da | float g_PathNegativeOne
+    FADD float ptr [0x0063e958]         ; 005469da | g_PathNegativeOne
     MOV dword ptr [ESP + 0x50],EDX      ; 005469e0
-    JMP 0x00546935                      ; 005469e4 | LAB_00546935
-        ;   XREF to: 00546935 (UNCONDITIONAL_JUMP)
+    JMP 0x00546935                      ; 005469e4
+        ;   XREF to: 00546935 (UNCONDITIONAL_JUMP)  ; LAB_00546935
     FLD1                                ; 005469e9
         ;   Label: caseD_3
     MOV EDX,0x3f800000                  ; 005469eb
@@ -434,8 +434,8 @@ section .text
     FADD float ptr [ESP + 0xa8]         ; 00546a01
     MOV dword ptr [ESP + 0xa4],ECX      ; 00546a08
     FSTP float ptr [ESP + 0xa8]         ; 00546a0f
-    JMP 0x0054693c                      ; 00546a16 | default
-        ;   XREF to: 0054693c (UNCONDITIONAL_JUMP)
+    JMP 0x0054693c                      ; 00546a16
+        ;   XREF to: 0054693c (UNCONDITIONAL_JUMP)  ; default
     FLD float ptr [ESP + 0xa8]          ; 00546a1b
         ;   Label: caseD_4
     MOV ESI,0xbf800000                  ; 00546a22
@@ -443,9 +443,9 @@ section .text
     XOR EDI,EDI                         ; 00546a28
     MOV dword ptr [ESP + 0xc0],ESI      ; 00546a2a
     MOV dword ptr [ESP + 0xc4],EDI      ; 00546a31
-    FADD float ptr [0x0063e958]         ; 00546a38 | float g_PathNegativeOne
+    FADD float ptr [0x0063e958]         ; 00546a38 | g_PathNegativeOne
     MOV dword ptr [ESP + 0xc8],EDI      ; 00546a3e
     FSTP float ptr [ESP + 0xa8]         ; 00546a45
-    JMP 0x0054693c                      ; 00546a4c | default
-        ;   XREF to: 0054693c (UNCONDITIONAL_JUMP)
+    JMP 0x0054693c                      ; 00546a4c
+        ;   XREF to: 0054693c (UNCONDITIONAL_JUMP)  ; default
 

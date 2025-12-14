@@ -15,7 +15,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0044bb50
         ;   Label: core_dcamera.cpp_getLightmapPaletteValue_FUN_0044bb50
-    MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 0044bb54 | uint[256] g_LightmapTexturePalette
+    MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 0044bb54 | g_LightmapTexturePalette
     AND EAX,0xff                        ; 0044bb5b
     RET                                 ; 0044bb60
 

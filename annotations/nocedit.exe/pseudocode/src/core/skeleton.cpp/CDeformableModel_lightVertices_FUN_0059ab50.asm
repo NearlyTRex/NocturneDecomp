@@ -41,10 +41,10 @@ section .text
     PUSH ESI                            ; 0059ab71
     MOV EDI,dword ptr [EAX + 0x2c]      ; 0059ab72
     PUSH EDI                            ; 0059ab75
-    MOV EBP,dword ptr [0x006810c8]      ; 0059ab76 | CDemonSet * g_CDemonSetPtr
-    PUSH EBP                            ; 0059ab7c | CDemonSet g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0059ab7d | float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
-        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)
+    MOV EBP,dword ptr [0x006810c8]      ; 0059ab76 | g_CDemonSetPtr
+    PUSH EBP                            ; 0059ab7c | g_CDemonSetInstance
+    CALL core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 ; 0059ab7d
+        ;   XREF to: 0056eac0 (UNCONDITIONAL_CALL)  ; float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, ...)
     ADD ESP,0x1c                        ; 0059ab82
     POP EBP                             ; 0059ab85
     POP EDI                             ; 0059ab86

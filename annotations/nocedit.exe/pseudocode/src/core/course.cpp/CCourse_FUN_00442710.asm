@@ -44,8 +44,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x94]      ; 0044272a
     PUSH dword ptr [ESP + 0x98]         ; 00442731
     PUSH ECX                            ; 00442738
-    CALL core_course.cpp_CCourse_FUN_004427a0 ; 00442739 | undefined core_course.cpp_CCourse_FUN_004427a0()
-        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_FUN_004427a0 ; 00442739
+        ;   XREF to: 004427a0 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_FUN_004427a0()
     ADD ESP,0x10                        ; 0044273e
     LEA EAX,[ESP + 0x70]                ; 00442741
     PUSH EAX                            ; 00442745
@@ -53,20 +53,20 @@ section .text
     PUSH EAX                            ; 0044274a
     LEA ESI,[ESP + 0x38]                ; 0044274b
     LEA EDI,[ESP + 0x8]                 ; 0044274f
-    CALL core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0 ; 00442753 | CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_ptr)
-        ;   XREF to: 005f73e0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0 ; 00442753
+        ;   XREF to: 005f73e0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_ptr)
     MOV ECX,0xc                         ; 00442758
     ADD ESP,0x4                         ; 0044275d
     LEA EAX,[ESP + 0x4]                 ; 00442760
     LEA ESI,[ESP + 0x34]                ; 00442764
     PUSH EAX                            ; 00442768
     MOVSD.REP ES:EDI,ESI                ; 00442769
-    CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 0044276b | CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 0044276b
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
     ADD ESP,0x8                         ; 00442770
     CMP EBX,EAX                         ; 00442773
-    JNZ 0x0044277e                      ; 00442775 | LAB_0044277e
-        ;   XREF to: 0044277e (CONDITIONAL_JUMP)
+    JNZ 0x0044277e                      ; 00442775
+        ;   XREF to: 0044277e (CONDITIONAL_JUMP)  ; LAB_0044277e
     ADD ESP,0x7c                        ; 00442777
     POP EDI                             ; 0044277a
     POP ESI                             ; 0044277b

@@ -35,48 +35,48 @@ section .text
         ;   Label: core_charactr.cpp_CCharacter_ctor_FUN_00427e20
     MOV EDX,dword ptr [ESP + 0x10]      ; 00427e23
     PUSH EDX                            ; 00427e27
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 00427e28 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 00427e28
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00427e2d
     ADD EAX,0x158                       ; 00427e30
     PUSH EAX                            ; 00427e35
-    CALL core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0 ; 00427e36 | CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 0059ddc0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0 ; 00427e36
+        ;   XREF to: 0059ddc0 (UNCONDITIONAL_CALL)  ; CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00427e3b
     ADD EAX,0x293c                      ; 00427e3e
     PUSH EAX                            ; 00427e43
-    CALL core_cloth.cpp_FUN_0043bf40    ; 00427e44 | undefined core_cloth.cpp_FUN_0043bf40()
-        ;   XREF to: 0043bf40 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043bf40    ; 00427e44
+        ;   XREF to: 0043bf40 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bf40()
     ADD ESP,0x4                         ; 00427e49
-    PUSH 0x6598c0                       ; 00427e4c | WatcomTypeInfo g_CVectorTypeInfo
+    PUSH 0x6598c0                       ; 00427e4c | g_CVectorTypeInfo
     PUSH 0xf                            ; 00427e51
     ADD EAX,0x1c8                       ; 00427e53
     PUSH EAX                            ; 00427e58
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00427e59 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00427e59
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00427e5e
-    PUSH 0x6598c0                       ; 00427e61 | WatcomTypeInfo g_CVectorTypeInfo
+    PUSH 0x6598c0                       ; 00427e61 | g_CVectorTypeInfo
     PUSH 0xf                            ; 00427e66
     ADD EAX,0xb4                        ; 00427e68
     PUSH EAX                            ; 00427e6d
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00427e6e | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00427e6e
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00427e73
-    PUSH 0x659f00                       ; 00427e76 | WatcomTypeInfo g_SFireTypeInfo
+    PUSH 0x659f00                       ; 00427e76 | g_SFireTypeInfo
     PUSH 0x32                           ; 00427e7b
     ADD EAX,0x20c                       ; 00427e7d
     PUSH EAX                            ; 00427e82
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00427e83 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00427e83
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00427e88
-    PUSH 0x659ee0                       ; 00427e8b | WatcomTypeInfo g_CFlameTypeInfo
+    PUSH 0x659ee0                       ; 00427e8b | g_CFlameTypeInfo
     PUSH 0x32                           ; 00427e90
     ADD EAX,0x4b0                       ; 00427e92
     PUSH EAX                            ; 00427e97
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00427e98 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00427e98
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xffffcc34]          ; 00427e9d
-    MOV dword ptr [EDX + 0x154],0x65b844 ; 00427ea3 | CDemonActor_vtable g_CCharacterVTable
+    MOV dword ptr [EDX + 0x154],0x65b844 ; 00427ea3 | g_CCharacterVTable
     LEA EAX,[EDX + 0x2428]              ; 00427ead
     MOV dword ptr [EDX + 0x240c],0x0    ; 00427eb3
     MOV dword ptr [EAX + 0x8],0x0       ; 00427ebd
@@ -114,8 +114,8 @@ section .text
     LEA ECX,[EDX + 0x25b8]              ; 00427fae
     MOV dword ptr [ESP + 0xc],ESI       ; 00427fb4
     CMP ECX,EAX                         ; 00427fb8
-    JNZ 0x00428124                      ; 00427fba | LAB_00428124
-        ;   XREF to: 00428124 (CONDITIONAL_JUMP)
+    JNZ 0x00428124                      ; 00427fba
+        ;   XREF to: 00428124 (CONDITIONAL_JUMP)  ; LAB_00428124
     MOV dword ptr [EDX + 0x25e8],0x0    ; 00427fc0
         ;   Label: LAB_00427fc0
     MOV dword ptr [EDX + 0x25ec],0x0    ; 00427fca
@@ -131,8 +131,8 @@ section .text
     MOV dword ptr [EAX + 0x246c],0xffffffff ; 00428008
     MOV dword ptr [EAX + 0x2470],0x0    ; 00428012
     CMP EAX,ECX                         ; 0042801c
-    JNZ 0x00427ffb                      ; 0042801e | LAB_00427ffb
-        ;   XREF to: 00427ffb (CONDITIONAL_JUMP)
+    JNZ 0x00427ffb                      ; 0042801e
+        ;   XREF to: 00427ffb (CONDITIONAL_JUMP)  ; LAB_00427ffb
     MOV dword ptr [EDX + 0x25d8],0x0    ; 00428020
     MOV dword ptr [EDX + 0x25dc],0x0    ; 0042802a
     MOV dword ptr [EDX + 0x25e0],0x0    ; 00428034
@@ -168,6 +168,6 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0042812e
     MOV EAX,dword ptr [ESP + 0xc]       ; 00428131
     MOV dword ptr [ECX + 0x8],EAX       ; 00428135
-    JMP 0x00427fc0                      ; 00428138 | LAB_00427fc0
-        ;   XREF to: 00427fc0 (UNCONDITIONAL_JUMP)
+    JMP 0x00427fc0                      ; 00428138
+        ;   XREF to: 00427fc0 (UNCONDITIONAL_JUMP)  ; LAB_00427fc0
 

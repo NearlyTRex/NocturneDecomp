@@ -1,124 +1,124 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 2, 
-    "global_count": 8, 
-    "total_lines": 110, 
-    "assembly_lines": 80, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780", 
-      "addr": "0059a780"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0", 
-      "addr": "0059b8d0"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064f038", 
-      "addr": "0064f038", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_load_s_because_def_0064f04d", 
-      "addr": "0064f04d", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DeformableModelCount", 
-      "addr": "0368c89c", 
-      "value": null
-    }, 
-    {
-      "type": "CDeformableModel[64]", 
-      "name": "g_DeformableModelPool", 
-      "addr": "0368c8a0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03695850", 
-      "addr": "03695850", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0369e850", 
-      "addr": "0369e850", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a1cf0", 
-    "signature": "CDeformableModel * core_skeleton.cpp_getDeformableModel_FUN_005a1cf0(char * model_filename)", 
-    "address_range": [
-      [
-        "005a1cf0", 
-        "005a1dbb"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_getDeformableModel_FUN_005a1cf0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "model_filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 80,
+    "complexity_score": 30,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 8,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 110
+  },
   "cross_references": [
     {
-      "from_addr": "00413db2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_CBaronWeapon_FUN_00413da0", 
-      "addr": "00413da0"
-    }, 
+      "addr": "00413da0",
+      "from_addr": "00413db2",
+      "name": "core_baron.cpp_CBaronWeapon_FUN_00413da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a045a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450", 
-      "addr": "005a0450"
+      "addr": "005a0450",
+      "from_addr": "005a045a",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005a1cf0",
+    "address_range": [
+      [
+        "005a1cf0",
+        "005a1dbb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_getDeformableModel_FUN_005a1cf0",
+    "signature": "CDeformableModel * core_skeleton.cpp_getDeformableModel_FUN_005a1cf0(char * model_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0059a780",
+      "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780"
+    },
+    {
+      "addr": "0059b8d0",
+      "name": "core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064f038",
+      "name": "s_core_skeleton_cpp_0064f038",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064f04d",
+      "name": "s_Can_t_load_s_because_def_0064f04d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0368c89c",
+      "name": "g_DeformableModelCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0368c8a0",
+      "name": "g_DeformableModelPool",
+      "type": "CDeformableModel[64]",
+      "value": null
+    },
+    {
+      "addr": "03695850",
+      "name": "DAT_03695850",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0369e850",
+      "name": "DAT_0369e850",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "model_filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

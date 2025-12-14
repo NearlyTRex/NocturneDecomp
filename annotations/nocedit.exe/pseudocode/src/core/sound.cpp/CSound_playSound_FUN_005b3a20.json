@@ -1,119 +1,119 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 9, 
-    "global_count": 0, 
-    "total_lines": 20, 
-    "assembly_lines": 14, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0", 
-      "addr": "005b1fd0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b3a20", 
-    "signature": "void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)", 
-    "address_range": [
-      [
-        "005b3a20", 
-        "005b3a3c"
-      ]
-    ], 
-    "name": "core_sound.cpp_CSound_playSound_FUN_005b3a20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSound *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "user_data"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "sound_name"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 14,
+    "complexity_score": 6,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
+  },
   "cross_references": [
     {
-      "from_addr": "004ac5e0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
-      "addr": "004aacc0"
-    }, 
+      "addr": "004aacc0",
+      "from_addr": "004ac5e0",
+      "name": "core_event.cpp_CEventList_FUN_004aacc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004df4a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
-      "addr": "004ddaf0"
-    }, 
+      "addr": "004ddaf0",
+      "from_addr": "004df4a0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004dda6b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_FUN_004dd9d0", 
-      "addr": "004dd9d0"
-    }, 
+      "addr": "004dd9d0",
+      "from_addr": "004dda6b",
+      "name": "core_game.cpp_FUN_004dd9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053eb7d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053eb40", 
-      "addr": "0053eb40"
-    }, 
+      "addr": "0053eb40",
+      "from_addr": "0053eb7d",
+      "name": "core_msnedit.cpp_FUN_0053eb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056007a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_0055ff00", 
-      "addr": "0055ff00"
-    }, 
+      "addr": "0055ff00",
+      "from_addr": "0056007a",
+      "name": "core_script.cpp_FUN_0055ff00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b2ec5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0", 
-      "addr": "005b2dd0"
-    }, 
+      "addr": "005b2dd0",
+      "from_addr": "005b2ec5",
+      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b3a02", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_playAmbientSound_FUN_005b39b0", 
-      "addr": "005b39b0"
-    }, 
+      "addr": "005b39b0",
+      "from_addr": "005b3a02",
+      "name": "core_sound.cpp_CSound_playAmbientSound_FUN_005b39b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e7246", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_FUN_005e7030", 
-      "addr": "005e7030"
-    }, 
+      "addr": "005e7030",
+      "from_addr": "005e7246",
+      "name": "core_vampboss.cpp_FUN_005e7030",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005eee9b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0", 
-      "addr": "005eeaf0"
+      "addr": "005eeaf0",
+      "from_addr": "005eee9b",
+      "name": "core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b3a20",
+    "address_range": [
+      [
+        "005b3a20",
+        "005b3a3c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_playSound_FUN_005b3a20",
+    "signature": "void core_sound.cpp_CSound_playSound_FUN_005b3a20(CSound * this_ptr, void * user_data, char * sound_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b1fd0",
+      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      },
+      {
+        "is_param": true,
+        "name": "user_data",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

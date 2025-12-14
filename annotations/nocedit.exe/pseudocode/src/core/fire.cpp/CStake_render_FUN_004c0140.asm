@@ -45,22 +45,22 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 004c0146
     LEA EBX,[EDI + 0x4]                 ; 004c014a
     PUSH EBX                            ; 004c014d
-    MOV EDX,dword ptr [0x006703ec]      ; 004c014e | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDX                            ; 004c0154 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 004c0155 | void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
-        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006703ec]      ; 004c014e | g_CDemonRendererPtr
+    PUSH EDX                            ; 004c0154 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 004c0155
+        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004c015a
     PUSH 0x0                            ; 004c015d
     LEA ESI,[EDI + 0x10]                ; 004c015f
     PUSH ESI                            ; 004c0162
-    MOV ECX,dword ptr [0x006703ec]      ; 004c0163 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH ECX                            ; 004c0169 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c016a | void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x006703ec]      ; 004c0163 | g_CDemonRendererPtr
+    PUSH ECX                            ; 004c0169 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c016a
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     ADD ESP,0xc                         ; 004c016f
-    PUSH 0x2d12df4                      ; 004c0172 | CKeyFramedModelInstance g_FireEffectFlamingStakeModel
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004c0177 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    PUSH 0x2d12df4                      ; 004c0172 | g_FireEffectFlamingStakeModel
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004c0177
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     LEA EDX,[EAX + 0x5678]              ; 004c017c
     ADD ESP,0x4                         ; 004c0182
     MOV EAX,dword ptr [EDX]             ; 004c0185
@@ -82,17 +82,17 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 004c01b4
     MOV EAX,ESP                         ; 004c01b8
     PUSH EAX                            ; 004c01ba
-    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 ; 004c01bb | int core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D * this_ptr)
-        ;   XREF to: 004204f0 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 ; 004c01bb
+        ;   XREF to: 004204f0 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 004c01c0
     TEST EAX,EAX                        ; 004c01c3
-    JNZ 0x004c01dd                      ; 004c01c5 | LAB_004c01dd
-        ;   XREF to: 004c01dd (CONDITIONAL_JUMP)
-    MOV ESI,dword ptr [0x006703ec]      ; 004c01c7 | CDemonRenderer * g_CDemonRendererPtr
+    JNZ 0x004c01dd                      ; 004c01c5
+        ;   XREF to: 004c01dd (CONDITIONAL_JUMP)  ; LAB_004c01dd
+    MOV ESI,dword ptr [0x006703ec]      ; 004c01c7 | g_CDemonRendererPtr
         ;   Label: LAB_004c01c7
-    PUSH ESI                            ; 004c01cd | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c01ce | void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)
+    PUSH ESI                            ; 004c01cd | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c01ce
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
     LEA EAX,[EDI + 0x1c]                ; 004c01dd
         ;   Label: LAB_004c01dd
     PUSH EAX                            ; 004c01e0
@@ -102,17 +102,17 @@ section .text
     PUSH EAX                            ; 004c01ea
     PUSH ESI                            ; 004c01eb
     PUSH EBX                            ; 004c01ec
-    MOV EBX,dword ptr [0x006810c8]      ; 004c01ed | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
-    PUSH EBX                            ; 004c01f3 | CDemonSet g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_0056d380 ; 004c01f4 | void core_set.cpp_CDemonSet_FUN_0056d380(CDemonSet * this_ptr)
-        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)
+    MOV EBX,dword ptr [0x006810c8]      ; 004c01ed | g_CDemonSetPtr | g_CDemonSetInstance
+    PUSH EBX                            ; 004c01f3 | g_CDemonSetInstance
+    CALL core_set.cpp_CDemonSet_FUN_0056d380 ; 004c01f4
+        ;   XREF to: 0056d380 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d380(CDemonSet * this_ptr)
     ADD ESP,0x18                        ; 004c01f9
     PUSH -0x1                           ; 004c01fc
     PUSH 0x0                            ; 004c01fe
-    PUSH 0x2d12df4                      ; 004c0200 | CKeyFramedModelInstance g_FireEffectFlamingStakeModel
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 004c0205 | void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
-        ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)
+    PUSH 0x2d12df4                      ; 004c0200 | g_FireEffectFlamingStakeModel
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 ; 004c0205
+        ;   XREF to: 00478d20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 004c020a
-    JMP 0x004c01c7                      ; 004c020d | LAB_004c01c7
-        ;   XREF to: 004c01c7 (UNCONDITIONAL_JUMP)
+    JMP 0x004c01c7                      ; 004c020d
+        ;   XREF to: 004c01c7 (UNCONDITIONAL_JUMP)  ; LAB_004c01c7
 

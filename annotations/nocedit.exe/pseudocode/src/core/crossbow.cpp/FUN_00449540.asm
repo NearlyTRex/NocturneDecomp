@@ -22,9 +22,9 @@ section .text
         ;   Label: core_crossbow.cpp_FUN_00449540
     MOV EAX,dword ptr [ESP + 0x8]       ; 00449543
     FLD float ptr [EAX + 0x300]         ; 00449547
-    FSUBR double ptr [0x00619ba2]       ; 0044954d | double DOUBLE_00619ba2
-    FMUL double ptr [0x00619baa]        ; 00449553 | double DOUBLE_00619baa
-    FMUL double ptr [0x00619bb2]        ; 00449559 | double DOUBLE_00619bb2
+    FSUBR double ptr [0x00619ba2]       ; 0044954d | DOUBLE_00619ba2
+    FMUL double ptr [0x00619baa]        ; 00449553 | DOUBLE_00619baa
+    FMUL double ptr [0x00619bb2]        ; 00449559 | DOUBLE_00619bb2
     FSTP float ptr [ESP]                ; 0044955f
     MOV EAX,dword ptr [ESP]             ; 00449562
     ADD ESP,0x4                         ; 00449565

@@ -35,25 +35,25 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 004952bb
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004952bf
     TEST EAX,EAX                        ; 004952c3
-    JL 0x004952e2                       ; 004952c5 | LAB_004952e2
-        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)
+    JL 0x004952e2                       ; 004952c5
+        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)  ; LAB_004952e2
     TEST ECX,ECX                        ; 004952c7
-    JL 0x004952e2                       ; 004952c9 | LAB_004952e2
-        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)
+    JL 0x004952e2                       ; 004952c9
+        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)  ; LAB_004952e2
     TEST EBX,EBX                        ; 004952cb
-    JL 0x004952e2                       ; 004952cd | LAB_004952e2
-        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)
+    JL 0x004952e2                       ; 004952cd
+        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)  ; LAB_004952e2
     CMP EAX,dword ptr [EDX + 0x40]      ; 004952cf
-    JGE 0x004952e2                      ; 004952d2 | LAB_004952e2
-        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)
+    JGE 0x004952e2                      ; 004952d2
+        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)  ; LAB_004952e2
     MOV EDI,dword ptr [EDX + 0x44]      ; 004952d4
     CMP ECX,EDI                         ; 004952d7
-    JGE 0x004952e2                      ; 004952d9 | LAB_004952e2
-        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)
+    JGE 0x004952e2                      ; 004952d9
+        ;   XREF to: 004952e2 (CONDITIONAL_JUMP)  ; LAB_004952e2
     MOV EBP,dword ptr [EDX + 0x48]      ; 004952db
     CMP EBX,EBP                         ; 004952de
-    JL 0x004952e8                       ; 004952e0 | LAB_004952e8
-        ;   XREF to: 004952e8 (CONDITIONAL_JUMP)
+    JL 0x004952e8                       ; 004952e0
+        ;   XREF to: 004952e8 (CONDITIONAL_JUMP)  ; LAB_004952e8
     XOR EAX,EAX                         ; 004952e2
         ;   Label: LAB_004952e2
     POP EBP                             ; 004952e4

@@ -1,125 +1,125 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 100, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 52, 
-    "assembly_lines": 37, 
-    "suspect_count": 8, 
+    "assembly_lines": 37,
+    "complexity_score": 100,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 8,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_set.cpp_CDemonSet_clear_FUN_005693c0", 
-      "addr": "005693c0"
-    }, 
-    {
-      "name": "core_set.cpp_free3DSCameras_FUN_00571530", 
-      "addr": "00571530"
-    }, 
-    {
-      "name": "core_set.cpp_free3DSLights_FUN_00571550", 
-      "addr": "00571550"
-    }, 
-    {
-      "name": "core_set.cpp_freeRooms_FUN_00571570", 
-      "addr": "00571570"
-    }, 
-    {
-      "name": "core_set.cpp_freeVDBoxes_FUN_00571590", 
-      "addr": "00571590"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 6, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_00;"
-    }, 
-    {
-      "line": 7, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_01;"
-    }, 
-    {
-      "line": 8, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_02;"
-    }, 
-    {
-      "line": 13, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "core_set_cpp_freeRooms_FUN_00571570((SRoom **)(extraout_EAX + -0x554));"
-    }, 
-    {
-      "line": 14, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "core_set_cpp_free3DSLights_FUN_00571550((C3DSLight **)(extraout_EAX_00 + -0x141490));"
-    }, 
-    {
-      "line": 16, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "core_set_cpp_free3DSCameras_FUN_00571530((C3DSCamera **)(extraout_EAX_01 + -0x19a2c));"
-    }, 
-    {
-      "line": 17, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return (CDemonSet *)(extraout_EAX_02 + -4);"
-    }
-  ], 
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00569350", 
-    "signature": "CDemonSet * core_set.cpp_CDemonSet_dtor_FUN_00569350(CDemonSet * this_ptr)", 
+    "address": "00569350",
     "address_range": [
       [
-        "00569350", 
+        "00569350",
         "005693b0"
       ]
-    ], 
-    "name": "core_set.cpp_CDemonSet_dtor_FUN_00569350"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_dtor_FUN_00569350",
+    "signature": "CDemonSet * core_set.cpp_CDemonSet_dtor_FUN_00569350(CDemonSet * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005693c0",
+      "name": "core_set.cpp_CDemonSet_clear_FUN_005693c0"
+    },
+    {
+      "addr": "00571530",
+      "name": "core_set.cpp_free3DSCameras_FUN_00571530"
+    },
+    {
+      "addr": "00571550",
+      "name": "core_set.cpp_free3DSLights_FUN_00571550"
+    },
+    {
+      "addr": "00571570",
+      "name": "core_set.cpp_freeRooms_FUN_00571570"
+    },
+    {
+      "addr": "00571590",
+      "name": "core_set.cpp_freeVDBoxes_FUN_00571590"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX_00",
+      "text": "int extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX_01",
+      "text": "int extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX_02",
+      "text": "int extraout_EAX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EAX",
+      "text": "core_set_cpp_freeRooms_FUN_00571570((SRoom **)(extraout_EAX + -0x554));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX_00",
+      "text": "core_set_cpp_free3DSLights_FUN_00571550((C3DSLight **)(extraout_EAX_00 + -0x141490));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EAX_01",
+      "text": "core_set_cpp_free3DSCameras_FUN_00571530((C3DSCamera **)(extraout_EAX_01 + -0x19a2c));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EAX_02",
+      "text": "return (CDemonSet *)(extraout_EAX_02 + -4);",
+      "type": "extra_output"
+    }
+  ]
 }

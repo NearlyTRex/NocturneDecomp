@@ -61,7 +61,7 @@ core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
       *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4) =
            *(uint *)((int)g_ZBufferScanlineArray + iVar4);
       iVar4 = iVar3;
-    } while (SBORROW /* signed borrow */4(iVar3,iVar1 * 4) != iVar3 + iVar1 * -4 < 0);
+    } while (iVar3 < iVar1 * 4);
   }
   core_setdir_cpp_CZThumb_setupZBufferScanlines_FUN_00574e30(this_ptr);
   core_setdir_cpp_CZThumb_pushRenderingContext_FUN_00574e70(this_ptr);
@@ -83,7 +83,7 @@ core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
       *(uint *)((int)g_ZBufferScanlineArray + iVar4) =
            *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4);
       iVar4 = iVar3;
-    } while (SBORROW /* signed borrow */4(iVar3,iVar1 * 4) != iVar3 + iVar1 * -4 < 0);
+    } while (iVar3 < iVar1 * 4);
   }
   g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,value);

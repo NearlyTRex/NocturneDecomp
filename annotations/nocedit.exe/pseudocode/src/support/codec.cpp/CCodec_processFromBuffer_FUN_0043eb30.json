@@ -1,136 +1,136 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 69, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 54, 
-    "assembly_lines": 40, 
-    "suspect_count": 4, 
+    "assembly_lines": 40,
+    "complexity_score": 69,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524", 
-      "addr": "005ff524"
-    }, 
-    {
-      "name": "crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca", 
-      "addr": "005ff5ca"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "&stack0xffffff70", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((istrstream *)&stack0xffffff70,0,(char *)input,*input_length);"
-    }, 
-    {
-      "line": 15, 
-      "match": "&stack0xffffff98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca((istrstream *)&stack0xffffff98,0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043eb30", 
-    "signature": "int support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec * this_ptr, byte * input, int * input_length, byte * output, int * output_length)", 
-    "address_range": [
-      [
-        "0043eb30", 
-        "0043eb9b"
-      ]
-    ], 
-    "name": "support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30"
-  }, 
-  "stack_frame": {
-    "local_size": 148, 
-    "variables": [
-      {
-        "offset": -144, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_90"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCodec *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "input"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "input_length"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "output"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "output_length"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 168, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "00452e86", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
-      "addr": "004529b0"
+      "addr": "004529b0",
+      "from_addr": "00452e86",
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043eb30",
+    "address_range": [
+      [
+        "0043eb30",
+        "0043eb9b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30",
+    "signature": "int support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30(CCodec * this_ptr, byte * input, int * input_length, byte * output, int * output_length)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff524",
+      "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524"
+    },
+    {
+      "addr": "005ff5ca",
+      "name": "crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 168,
+    "local_size": 148,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCodec *"
+      },
+      {
+        "is_param": true,
+        "name": "input",
+        "offset": 8,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "input_length",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "output",
+        "offset": 16,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "output_length",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 12,
+      "match": "&stack0xffffff70",
+      "text": "((istrstream *)&stack0xffffff70,0,(char *)input,*input_length);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xffffff98",
+      "text": "crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca((istrstream *)&stack0xffffff98,0);",
+      "type": "stack_ref"
     }
   ]
 }

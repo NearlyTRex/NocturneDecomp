@@ -1,65 +1,65 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 28, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_addParticle*", 
-      "name": "g_APIDLL_addParticle", 
-      "addr": "03f6b8dc", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 19,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005b7985", 
-    "signature": "int wincore_windll.cpp_addParticle_FUN_005b7985(void * particle_data, int particle_type)", 
+    "address": "005b7985",
     "address_range": [
       [
-        "005b7985", 
+        "005b7985",
         "005b79b1"
       ]
-    ], 
-    "name": "wincore_windll.cpp_addParticle_FUN_005b7985"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_addParticle_FUN_005b7985",
+    "signature": "int wincore_windll.cpp_addParticle_FUN_005b7985(void * particle_data, int particle_type)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8dc",
+      "name": "g_APIDLL_addParticle",
+      "type": "APIDLL_addParticle*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "particle_data"
-      }, 
+        "is_param": true,
+        "name": "particle_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "particle_type"
+        "is_param": true,
+        "name": "particle_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

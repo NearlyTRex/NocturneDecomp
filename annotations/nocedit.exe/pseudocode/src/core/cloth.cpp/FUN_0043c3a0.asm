@@ -20,8 +20,8 @@ section .text
     MOV EDX,dword ptr [EDI]             ; 0043c3ab
     XOR EBX,EBX                         ; 0043c3ad
     TEST EDX,EDX                        ; 0043c3af
-    JLE 0x0043c3d1                      ; 0043c3b1 | LAB_0043c3d1
-        ;   XREF to: 0043c3d1 (CONDITIONAL_JUMP)
+    JLE 0x0043c3d1                      ; 0043c3b1
+        ;   XREF to: 0043c3d1 (CONDITIONAL_JUMP)  ; LAB_0043c3d1
     PUSH ESI                            ; 0043c3b3
     MOV ESI,EDI                         ; 0043c3b4
     PUSH EBP                            ; 0043c3b6
@@ -30,13 +30,13 @@ section .text
     PUSH ECX                            ; 0043c3bd
     ADD ESI,0x4                         ; 0043c3be
     INC EBX                             ; 0043c3c1
-    CALL core_cloth.cpp_FUN_0043e1a0    ; 0043c3c2 | undefined core_cloth.cpp_FUN_0043e1a0()
-        ;   XREF to: 0043e1a0 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043e1a0    ; 0043c3c2
+        ;   XREF to: 0043e1a0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043e1a0()
     MOV EAX,dword ptr [EDI]             ; 0043c3c7
     ADD ESP,0x8                         ; 0043c3c9
     CMP EBX,EAX                         ; 0043c3cc
-    JL 0x0043c3b6                       ; 0043c3ce | LAB_0043c3b6
-        ;   XREF to: 0043c3b6 (CONDITIONAL_JUMP)
+    JL 0x0043c3b6                       ; 0043c3ce
+        ;   XREF to: 0043c3b6 (CONDITIONAL_JUMP)  ; LAB_0043c3b6
     POP ESI                             ; 0043c3d0
     POP EBP                             ; 0043c3d1
         ;   Label: LAB_0043c3d1

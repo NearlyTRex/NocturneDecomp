@@ -43,8 +43,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0044edf5
     MOV ECX,dword ptr [ESP + 0x44]      ; 0044edf9
     TEST ECX,ECX                        ; 0044edfd
-    JNZ 0x0044ee20                      ; 0044edff | LAB_0044ee20
-        ;   XREF to: 0044ee20 (CONDITIONAL_JUMP)
+    JNZ 0x0044ee20                      ; 0044edff
+        ;   XREF to: 0044ee20 (CONDITIONAL_JUMP)  ; LAB_0044ee20
     MOV EAX,0xaaaa                      ; 0044ee01
     PUSH EAX                            ; 0044ee06
         ;   Label: LAB_0044ee06
@@ -53,8 +53,8 @@ section .text
     PUSH ESI                            ; 0044ee0c
     MOV ECX,dword ptr [ESP + 0x44]      ; 0044ee0d
     PUSH ECX                            ; 0044ee11
-    CALL core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790 ; 0044ee12 | int core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, int intensity)
-        ;   XREF to: 0044e790 (UNCONDITIONAL_CALL)
+    CALL core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790 ; 0044ee12
+        ;   XREF to: 0044e790 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, int intensity)
     ADD ESP,0x10                        ; 0044ee17
     ADD ESP,0x2c                        ; 0044ee1a
     POP ESI                             ; 0044ee1d
@@ -64,13 +64,13 @@ section .text
         ;   Label: LAB_0044ee20
     MOV EAX,ESI                         ; 0044ee24
     FILD dword ptr [EAX]                ; 0044ee26
-    FMUL float ptr [0x0065c644]         ; 0044ee28 | float g_WorldToFloat
+    FMUL float ptr [0x0065c644]         ; 0044ee28 | g_WorldToFloat
     FSTP float ptr [EBX]                ; 0044ee2e
     FILD dword ptr [EAX + 0x4]          ; 0044ee30
-    FMUL float ptr [0x0065c644]         ; 0044ee33 | float g_WorldToFloat
+    FMUL float ptr [0x0065c644]         ; 0044ee33 | g_WorldToFloat
     FSTP float ptr [EBX + 0x4]          ; 0044ee39
     FILD dword ptr [EAX + 0x8]          ; 0044ee3c
-    FMUL float ptr [0x0065c644]         ; 0044ee3f | float g_WorldToFloat
+    FMUL float ptr [0x0065c644]         ; 0044ee3f | g_WorldToFloat
     FSTP float ptr [EBX + 0x8]          ; 0044ee45
     MOV EAX,dword ptr [ESP + 0x40]      ; 0044ee48
     FLD float ptr [ESP + 0xc]           ; 0044ee4c
@@ -92,7 +92,7 @@ section .text
     FADDP                               ; 0044ee81
     FSTP float ptr [ESP + 0x24]         ; 0044ee83
     MOV EAX,dword ptr [ESP + 0x24]      ; 0044ee87
-    MOV EDX,dword ptr [0x02d7a7bc]      ; 0044ee8b | int g_LightAttenuationMax
+    MOV EDX,dword ptr [0x02d7a7bc]      ; 0044ee8b | g_LightAttenuationMax
     SAR EAX,0x1                         ; 0044ee91
     SUB EDX,EAX                         ; 0044ee93
     MOV dword ptr [ESP + 0x28],EDX      ; 0044ee95
@@ -109,13 +109,13 @@ section .text
     FSTP float ptr [ESP + 0x1c]         ; 0044eebd
     FSTP float ptr [ESP + 0x20]         ; 0044eec1
     FLD float ptr [EAX]                 ; 0044eec5
-    FMUL float ptr [0x0065c640]         ; 0044eec7 | float g_FixedPointScale
+    FMUL float ptr [0x0065c640]         ; 0044eec7 | g_FixedPointScale
     FISTP dword ptr [EBX]               ; 0044eecd
     FLD float ptr [EAX + 0x4]           ; 0044eecf
-    FMUL float ptr [0x0065c640]         ; 0044eed2 | float g_FixedPointScale
+    FMUL float ptr [0x0065c640]         ; 0044eed2 | g_FixedPointScale
     FISTP dword ptr [EBX + 0x4]         ; 0044eed8
     FLD float ptr [EAX + 0x8]           ; 0044eedb
-    FMUL float ptr [0x0065c640]         ; 0044eede | float g_FixedPointScale
+    FMUL float ptr [0x0065c640]         ; 0044eede | g_FixedPointScale
     FISTP dword ptr [EBX + 0x8]         ; 0044eee4
     MOV EAX,dword ptr [ESP]             ; 0044eee7
     MOV EDX,dword ptr [ECX]             ; 0044eeea
@@ -133,8 +133,8 @@ section .text
     SHRD EAX,EDX,0x10                   ; 0044ef0c
     ADD EAX,EBX                         ; 0044ef10
     TEST EAX,EAX                        ; 0044ef12
-    JL 0x0044ef1e                       ; 0044ef14 | LAB_0044ef1e
-        ;   XREF to: 0044ef1e (CONDITIONAL_JUMP)
+    JL 0x0044ef1e                       ; 0044ef14
+        ;   XREF to: 0044ef1e (CONDITIONAL_JUMP)  ; LAB_0044ef1e
     XOR EAX,EAX                         ; 0044ef16
     ADD ESP,0x2c                        ; 0044ef18
     POP ESI                             ; 0044ef1b
@@ -142,6 +142,6 @@ section .text
     RET                                 ; 0044ef1d
     NEG EAX                             ; 0044ef1e
         ;   Label: LAB_0044ef1e
-    JMP 0x0044ee06                      ; 0044ef20 | LAB_0044ee06
-        ;   XREF to: 0044ee06 (UNCONDITIONAL_JUMP)
+    JMP 0x0044ee06                      ; 0044ef20
+        ;   XREF to: 0044ee06 (UNCONDITIONAL_JUMP)  ; LAB_0044ee06
 

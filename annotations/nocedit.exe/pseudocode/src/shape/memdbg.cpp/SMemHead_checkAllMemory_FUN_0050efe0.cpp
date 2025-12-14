@@ -11,12 +11,8 @@ void __cdecl shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0(char *filenam
 {
   SMemHead *header;
   
-  header = g_MemoryListHead;
-  if (g_MemoryListHead != (SMemHead *)0x0) {
-    do {
-      shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(header,filename,context);
-      header = header->next;
-    } while (header != (SMemHead *)0x0);
+  for (header = g_MemoryListHead; header != (SMemHead *)0x0; header = header->next) {
+    shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(header,filename,context);
   }
   g_DebugContext = (void *)context;
   PTR_s_none_00636540_0067d1fc = filename;

@@ -30,18 +30,18 @@ section .text
     MOV EBP,ESP                         ; 00544872
     MOV EBX,dword ptr [EBP + 0xc]       ; 00544874
     PUSH EBX                            ; 00544877
-    CALL core_charactr.cpp_CCharacter_FUN_00428140 ; 00544878 | void core_charactr.cpp_CCharacter_FUN_00428140(CCharacter * this_ptr)
-        ;   XREF to: 00428140 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_00428140 ; 00544878
+        ;   XREF to: 00428140 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00428140(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0054487d
-    PUSH 0x63e314                       ; 00544880 | = "priest.dfm" | s_priest_dfm_0063e314 = priest.dfm
+    PUSH 0x63e314                       ; 00544880 | = "priest.dfm"
     LEA EAX,[EBX + 0x23b8]              ; 00544885
     PUSH EAX                            ; 0054488b
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0054488c | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0054488c
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00544891
     TEST EAX,EAX                        ; 00544894
-    JZ 0x0054489b                       ; 00544896 | LAB_0054489b
-        ;   XREF to: 0054489b (CONDITIONAL_JUMP)
+    JZ 0x0054489b                       ; 00544896
+        ;   XREF to: 0054489b (CONDITIONAL_JUMP)  ; LAB_0054489b
     POP EBP                             ; 00544898
     POP EBX                             ; 00544899
     RET                                 ; 0054489a

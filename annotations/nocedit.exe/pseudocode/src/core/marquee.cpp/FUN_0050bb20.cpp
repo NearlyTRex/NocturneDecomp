@@ -11,8 +11,7 @@ void core_marquee_cpp_FUN_0050bb20(void)
 {
   CMarquee *this_ptr;
   
-  this_ptr = (CMarquee *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1bc,"..\\core\\marquee.cpp",0x22);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1bc,"..\\core\\marquee.cpp",0x22);
   if (this_ptr == (CMarquee *)0x0) {
     return;
   }

@@ -1,120 +1,120 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 4, 
-    "global_count": 3, 
-    "total_lines": 29, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_CameraOriginX", 
-      "addr": "02d052c4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraOriginY", 
-      "addr": "02d052c8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraOriginZ", 
-      "addr": "02d052cc", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0050e2e1", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050e2c0", 
-    "signature": "void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)", 
-    "address_range": [
-      [
-        "0050e2c0", 
-        "0050e2ee"
-      ]
-    ], 
-    "name": "engine_matrix.c_getCameraOrigin_FUN_0050e2c0"
-  }, 
-  "stack_frame": {
-    "local_size": 20, 
-    "variables": [
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 18,
+    "complexity_score": 11,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
   "cross_references": [
     {
-      "from_addr": "00453957", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950", 
-      "addr": "00453950"
-    }, 
+      "addr": "00453950",
+      "from_addr": "00453957",
+      "name": "core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004efc9c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_render_FUN_004efc90", 
-      "addr": "004efc90"
-    }, 
+      "addr": "004efc90",
+      "from_addr": "004efc9c",
+      "name": "core_ground.cpp_CGround_render_FUN_004efc90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c790", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780", 
-      "addr": "0048c780"
-    }, 
+      "addr": "0048c780",
+      "from_addr": "0048c790",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c76b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760", 
-      "addr": "0048c760"
+      "addr": "0048c760",
+      "from_addr": "0048c76b",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0050e2c0",
+    "address_range": [
+      [
+        "0050e2c0",
+        "0050e2ee"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_getCameraOrigin_FUN_0050e2c0",
+    "signature": "void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d052c4",
+      "name": "g_CameraOriginX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c8",
+      "name": "g_CameraOriginY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052cc",
+      "name": "g_CameraOriginZ",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0050e2e1",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

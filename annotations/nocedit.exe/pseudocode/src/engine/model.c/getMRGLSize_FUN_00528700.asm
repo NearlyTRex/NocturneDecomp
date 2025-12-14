@@ -40,9 +40,9 @@ section .text
     MOV EAX,dword ptr [ESP + 0x104]     ; 00528706
     MOV EDX,dword ptr [EAX]             ; 0052870d
     CMP EDX,0x42                        ; 0052870f
-    JA 0x00528825                       ; 00528712 | caseD_3c
-        ;   XREF to: 00528825 (CONDITIONAL_JUMP)
-    JMP dword ptr [EDX*0x4 + 0x5285ec]  ; 00528718 | void * switchdataD_005285ec
+    JA 0x00528825                       ; 00528712
+        ;   XREF to: 00528825 (CONDITIONAL_JUMP)  ; caseD_3c
+    JMP dword ptr [EDX*0x4 + 0x5285ec]  ; 00528718 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
     MOV EAX,0x4                         ; 0052871f
         ;   Label: caseD_0
@@ -136,20 +136,20 @@ section .text
     RET                                 ; 00528824
     PUSH EDX                            ; 00528825
         ;   Label: caseD_3f
-    PUSH 0x639c36                       ; 00528826 | = "MRGLSize: Bad type : %d" | s_MRGLSize_Bad_type_d_00639c36 = MRGLSize: Bad type : %d
+    PUSH 0x639c36                       ; 00528826 | = "MRGLSize: Bad type : %d"
     LEA EAX,[ESP + 0x8]                 ; 0052882b
     PUSH EAX                            ; 0052882f
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00528830 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
-    MOV EDX,0x639c4e                    ; 00528835 | = "..\\engine\\model.c" | s_engine_model_c_00639c4e = ..\engine\model.c
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00528830
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    MOV EDX,0x639c4e                    ; 00528835 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 0052883a
     MOV EAX,ESP                         ; 0052883d
     MOV ECX,0x25b                       ; 0052883f
     PUSH EAX                            ; 00528844
-    MOV dword ptr [0x02f0ca48],EDX      ; 00528845 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0052884b | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00528851 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02f0ca48],EDX      ; 00528845 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0052884b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00528851
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     MOV EAX,0x4                         ; 00528856
     ADD ESP,0x4                         ; 0052885b
     ADD ESP,0x100                       ; 0052885e

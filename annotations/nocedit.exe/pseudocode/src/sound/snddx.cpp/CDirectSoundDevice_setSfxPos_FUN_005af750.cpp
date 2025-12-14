@@ -192,7 +192,6 @@ LAB_005af982:
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (acStack_1cc,"DirectSux: Unable to %s.  (%s)","Commit hardware sfx 3d buffer settings",
                  pcVar3);
-      uVar4 = 0;
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1cc);
       goto LAB_005af9c4;
     }
@@ -202,5 +201,5 @@ LAB_005af982:
   }
 LAB_005af9c4:
   sound_sndmain_cpp_logSoundError_FUN_005adba0("DirectSoundDevice::setSfxOpt - failed\n");
-  return uVar4;
+  return 0;
 }

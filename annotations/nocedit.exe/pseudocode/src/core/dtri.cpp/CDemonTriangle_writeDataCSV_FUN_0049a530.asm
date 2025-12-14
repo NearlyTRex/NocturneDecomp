@@ -56,12 +56,11 @@ section .text
     SUB ESP,0x8                         ; 0049a57c
     FLD float ptr [EAX]                 ; 0049a57f
     FSTP double ptr [ESP]               ; 0049a581
-    PUSH 0x622dde                       ; 0049a584 | = "%f,%f,%f,%f,%f,%f,%f,%f,%f\n" | s_f_f_f_f_f_f_f_f_f_00622dde = %f,%f,%f,%f,%f,%f,%f,%f,%f
-
+    PUSH 0x622dde                       ; 0049a584 | = "%f,%f,%f,%f,%f,%f,%f,%f,%f\n"
     MOV EDX,dword ptr [ESP + 0x54]      ; 0049a589
     PUSH EDX                            ; 0049a58d
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0049a58e | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0049a58e
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0x50                        ; 0049a593
     RET                                 ; 0049a596
 

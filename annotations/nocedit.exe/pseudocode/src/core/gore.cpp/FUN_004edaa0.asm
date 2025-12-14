@@ -29,21 +29,21 @@ section .text
         ;   Label: core_gore.cpp_FUN_004edaa0
     MOV EDX,dword ptr [ESP + 0x14]      ; 004edaa1
     CMP EDX,0x2                         ; 004edaa5
-    JZ 0x004edaec                       ; 004edaa8 | LAB_004edaec
-        ;   XREF to: 004edaec (CONDITIONAL_JUMP)
+    JZ 0x004edaec                       ; 004edaa8
+        ;   XREF to: 004edaec (CONDITIONAL_JUMP)  ; LAB_004edaec
     PUSH EDI                            ; 004edaaa
-    MOV EAX,[0x02d833d0]                ; 004edaab | undefined4 DAT_02d833d0
-    MOV ECX,dword ptr [0x02d833d0]      ; 004edab0 | undefined4 DAT_02d833d0
+    MOV EAX,[0x02d833d0]                ; 004edaab | DAT_02d833d0
+    MOV ECX,dword ptr [0x02d833d0]      ; 004edab0 | DAT_02d833d0
     SHL EAX,0x6                         ; 004edab6
     INC ECX                             ; 004edab9
-    ADD EAX,0x2d833d4                   ; 004edaba | CBloodParticle[256] DAT_02d833d4
-    MOV dword ptr [0x02d833d0],ECX      ; 004edabf | undefined4 DAT_02d833d0
+    ADD EAX,0x2d833d4                   ; 004edaba | DAT_02d833d4
+    MOV dword ptr [0x02d833d0],ECX      ; 004edabf | DAT_02d833d0
     CMP ECX,0x100                       ; 004edac5
-    JL 0x004edad7                       ; 004edacb | LAB_004edad7
-        ;   XREF to: 004edad7 (CONDITIONAL_JUMP)
+    JL 0x004edad7                       ; 004edacb
+        ;   XREF to: 004edad7 (CONDITIONAL_JUMP)  ; LAB_004edad7
     PUSH ESI                            ; 004edacd
     XOR ESI,ESI                         ; 004edace
-    MOV dword ptr [0x02d833d0],ESI      ; 004edad0 | undefined4 DAT_02d833d0
+    MOV dword ptr [0x02d833d0],ESI      ; 004edad0 | DAT_02d833d0
     POP ESI                             ; 004edad6
     PUSH EDX                            ; 004edad7
         ;   Label: LAB_004edad7
@@ -52,8 +52,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 004edadd
     PUSH EBP                            ; 004edae1
     PUSH EAX                            ; 004edae2
-    CALL core_gore.cpp_FUN_004eb9a0     ; 004edae3 | undefined core_gore.cpp_FUN_004eb9a0()
-        ;   XREF to: 004eb9a0 (UNCONDITIONAL_CALL)
+    CALL core_gore.cpp_FUN_004eb9a0     ; 004edae3
+        ;   XREF to: 004eb9a0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004eb9a0()
     ADD ESP,0x10                        ; 004edae8
     POP EDI                             ; 004edaeb
     POP EBP                             ; 004edaec

@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-byte * engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
+uint engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
 
 {
   char cVar1;
@@ -14,17 +14,18 @@ byte * engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
   int iVar3;
   byte *pbVar4;
   void *pvVar5;
-  byte *puVar6;
+  void *pvVar6;
   FILE *pFVar7;
   int iVar8;
   uint uVar9;
-  BADSPACEBASE *in_ESP;
   uint uVar10;
-  char *pcVar11;
-  uchar *puVar12;
-  char *pcVar13;
-  uchar *puVar14;
-  byte bVar15;
+  BADSPACEBASE *in_ESP;
+  uint uVar11;
+  char *pcVar12;
+  uchar *puVar13;
+  char *pcVar14;
+  uchar *puVar15;
+  byte bVar16;
   int unaff_retaddr;
   int in_stack_00000004;
   void *in_stack_0000000c;
@@ -32,147 +33,147 @@ byte * engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(void)
   char *in_stack_00000018;
   int local_10;
   int local_c;
-  uint uVar16;
+  uint uVar17;
   
-  bVar15 = 0;
+  bVar16 = 0;
   pvVar5 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8308,"..\\engine\\palette.cpp",0xb4);
-  uVar10 = 0;
+  uVar11 = 0;
   if (pvVar5 == (void *)0x0) {
     g_CurrentFilename = "..\\engine\\palette.cpp";
     g_CurrentLineNumber = 0xb6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Unable to create mapper");
   }
-  puVar6 = (byte *)
-           shape_memdbg_cpp_debugCalloc_FUN_0050f350
+  pvVar6 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (*(SIZE_T *)((int)in_stack_0000000c + 8),4,"..\\engine\\palette.cpp",0xbb);
-  if (puVar6 != (byte *)0x0) {
+  uVar10 = 0;
+  if (pvVar6 != (void *)0x0) {
     local_10 = 0;
     if (0 < *in_stack_00000010) {
-      uVar16 = 0;
+      uVar17 = 0;
       do {
-        pcVar13 = &stack0xffffffa0;
-        pcVar11 = (char *)(in_stack_00000010[1] + uVar16);
+        pcVar14 = &stack0xffffffa0;
+        pcVar12 = (char *)(in_stack_00000010[1] + uVar17);
         do {
-          cVar1 = *pcVar11;
-          *pcVar13 = cVar1;
+          cVar1 = *pcVar12;
+          *pcVar14 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar11[1];
-          pcVar11 = pcVar11 + 2;
-          pcVar13[1] = cVar1;
-          pcVar13 = pcVar13 + 2;
+          cVar1 = pcVar12[1];
+          pcVar12 = pcVar12 + 2;
+          pcVar14[1] = cVar1;
+          pcVar14 = pcVar14 + 2;
         } while (cVar1 != '\0');
-        pcVar13 = &stack0xffffffa0;
+        pcVar14 = &stack0xffffffa0;
         do {
-          pcVar11 = pcVar13;
-          if (*pcVar13 == '.') goto LAB_00545254;
-          if (*pcVar13 == '\0') break;
-          pcVar11 = pcVar13 + 1;
-          if (*pcVar11 == '.') goto LAB_00545254;
-          pcVar13 = pcVar13 + 2;
-        } while (*pcVar11 != '\0');
-        pcVar11 = (char *)0x0;
+          pcVar12 = pcVar14;
+          if (*pcVar14 == '.') goto LAB_00545254;
+          if (*pcVar14 == '\0') break;
+          pcVar12 = pcVar14 + 1;
+          if (*pcVar12 == '.') goto LAB_00545254;
+          pcVar14 = pcVar14 + 2;
+        } while (*pcVar12 != '\0');
+        pcVar12 = (char *)0x0;
 LAB_00545254:
-        if (pcVar11 == (char *)0x0) {
+        if (pcVar12 == (char *)0x0) {
           g_CurrentFilename = "..\\engine\\palette.cpp";
           g_CurrentLineNumber = 0xcb;
           core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - No extension found");
         }
-        pcVar13 = ".ACT";
+        pcVar14 = ".ACT";
         do {
-          cVar1 = *pcVar13;
-          *pcVar11 = cVar1;
+          cVar1 = *pcVar14;
+          *pcVar12 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar13[1];
-          pcVar13 = pcVar13 + 2;
-          pcVar11[1] = cVar1;
-          pcVar11 = pcVar11 + 2;
+          cVar1 = pcVar14[1];
+          pcVar14 = pcVar14 + 2;
+          pcVar12[1] = cVar1;
+          pcVar12 = pcVar12 + 2;
         } while (cVar1 != '\0');
-        pcVar13 = &stack0xffffff8c;
+        pcVar14 = &stack0xffffff8c;
         do {
-          pcVar11 = pcVar13;
-          if (*pcVar13 == '\\') goto LAB_005452ba;
-          if (*pcVar13 == '\0') break;
-          pcVar11 = pcVar13 + 1;
-          if (*pcVar11 == '\\') goto LAB_005452ba;
-          pcVar13 = pcVar13 + 2;
-        } while (*pcVar11 != '\0');
-        pcVar11 = (char *)0x0;
+          pcVar12 = pcVar14;
+          if (*pcVar14 == '\\') goto LAB_005452ba;
+          if (*pcVar14 == '\0') break;
+          pcVar12 = pcVar14 + 1;
+          if (*pcVar12 == '\\') goto LAB_005452ba;
+          pcVar14 = pcVar14 + 2;
+        } while (*pcVar12 != '\0');
+        pcVar12 = (char *)0x0;
 LAB_005452ba:
-        if (pcVar11 == (char *)0x0) {
-          pcVar11 = "rb";
-          pcVar13 = "art";
+        if (pcVar12 == (char *)0x0) {
+          pcVar12 = "rb";
+          pcVar14 = "art";
         }
         else {
-          pcVar11 = "rb";
-          pcVar13 = &s_EmptyChar_0063e5a6;
+          pcVar12 = "rb";
+          pcVar14 = &s_EmptyChar_0063e5a6;
         }
-        pFVar7 = engine_dosio_c_getFile_FUN_00481a50(pcVar13,&stack0xffffff8c,pcVar11);
+        pFVar7 = engine_dosio_c_getFile_FUN_00481a50(pcVar14,&stack0xffffff8c,pcVar12);
         if (pFVar7 == (FILE *)0x0) {
-          puVar12 = g_DefaultPalette;
-          puVar14 = (uchar *)&DAT_02fd8d20;
+          puVar13 = g_DefaultPalette;
+          puVar15 = (uchar *)&DAT_02fd8d20;
           for (iVar8 = 0xc0; iVar8 != 0; iVar8 = iVar8 + -1) {
-            *(uint *)puVar14 = *(uint *)puVar12;
-            puVar12 = puVar12 + ((uint)bVar15 * -2 + 1) * 4;
-            puVar14 = puVar14 + ((uint)bVar15 * -2 + 1) * 4;
+            *(uint *)puVar15 = *(uint *)puVar13;
+            puVar13 = puVar13 + ((uint)bVar16 * -2 + 1) * 4;
+            puVar15 = puVar15 + ((uint)bVar16 * -2 + 1) * 4;
           }
           for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
-            *puVar14 = *puVar12;
-            puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
-            puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
+            *puVar15 = *puVar13;
+            puVar13 = puVar13 + (uint)bVar16 * -2 + 1;
+            puVar15 = puVar15 + (uint)bVar16 * -2 + 1;
           }
         }
         else {
           crt_stdio_c_fread_FUN_005fd990(&DAT_02fd8d20,0x300,1,pFVar7);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar7,"..\\engine\\palette.cpp",0xd9);
         }
-        pcVar13 = (char *)(*(int *)(unaff_retaddr + 4) + (int)pvVar5);
+        pcVar14 = (char *)(*(int *)(unaff_retaddr + 4) + (int)pvVar5);
         do {
-          pcVar11 = pcVar13;
-          if (*pcVar13 == '\\') goto LAB_00545332;
-          if (*pcVar13 == '\0') break;
-          pcVar11 = pcVar13 + 1;
-          if (*pcVar11 == '\\') goto LAB_00545332;
-          pcVar13 = pcVar13 + 2;
-        } while (*pcVar11 != '\0');
-        pcVar11 = (char *)0x0;
+          pcVar12 = pcVar14;
+          if (*pcVar14 == '\\') goto LAB_00545332;
+          if (*pcVar14 == '\0') break;
+          pcVar12 = pcVar14 + 1;
+          if (*pcVar12 == '\\') goto LAB_00545332;
+          pcVar14 = pcVar14 + 2;
+        } while (*pcVar12 != '\0');
+        pcVar12 = (char *)0x0;
 LAB_00545332:
-        if (pcVar11 == (char *)0x0) {
+        if (pcVar12 == (char *)0x0) {
           iVar8 = *(int *)(unaff_retaddr + 4);
-          pcVar13 = "art";
+          pcVar14 = "art";
         }
         else {
           iVar8 = *(int *)(unaff_retaddr + 4);
-          pcVar13 = &s_EmptyChar_0063e5c1;
+          pcVar14 = &s_EmptyChar_0063e5c1;
         }
-        iVar8 = engine_dosio_c_getFileSize_FUN_00481880(pcVar13,(char *)(iVar8 + (int)pvVar5));
-        pcVar13 = (char *)(*(int *)(in_stack_00000004 + 4) + local_10);
+        iVar8 = engine_dosio_c_getFileSize_FUN_00481880(pcVar14,(char *)(iVar8 + (int)pvVar5));
+        pcVar14 = (char *)(*(int *)(in_stack_00000004 + 4) + local_10);
         do {
-          pcVar11 = pcVar13;
-          if (*pcVar13 == '\\') goto LAB_0054537a;
-          if (*pcVar13 == '\0') break;
-          pcVar11 = pcVar13 + 1;
-          if (*pcVar11 == '\\') goto LAB_0054537a;
-          pcVar13 = pcVar13 + 2;
-        } while (*pcVar11 != '\0');
-        pcVar11 = (char *)0x0;
+          pcVar12 = pcVar14;
+          if (*pcVar14 == '\\') goto LAB_0054537a;
+          if (*pcVar14 == '\0') break;
+          pcVar12 = pcVar14 + 1;
+          if (*pcVar12 == '\\') goto LAB_0054537a;
+          pcVar14 = pcVar14 + 2;
+        } while (*pcVar12 != '\0');
+        pcVar12 = (char *)0x0;
 LAB_0054537a:
-        if (pcVar11 == (char *)0x0) {
+        if (pcVar12 == (char *)0x0) {
           iVar3 = *(int *)(in_stack_00000004 + 4);
-          pcVar11 = "rb";
-          pcVar13 = "art";
+          pcVar12 = "rb";
+          pcVar14 = "art";
         }
         else {
           iVar3 = *(int *)(in_stack_00000004 + 4);
-          pcVar11 = "rb";
-          pcVar13 = &s_EmptyChar_0063e5cc;
+          pcVar12 = "rb";
+          pcVar14 = &s_EmptyChar_0063e5cc;
         }
-        pFVar7 = engine_dosio_c_getFile_FUN_00481a50(pcVar13,(char *)(iVar3 + local_10),pcVar11);
+        pFVar7 = engine_dosio_c_getFile_FUN_00481a50(pcVar14,(char *)(iVar3 + local_10),pcVar12);
         if (pFVar7 == (FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\palette.cpp";
           g_CurrentLineNumber = 0xf1;
           core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Unable to open texture");
         }
-        pcVar13 = (char *)(uVar10 * 4 + local_c);
+        pcVar14 = (char *)(uVar11 * 4 + local_c);
         while (0 < iVar8) {
           if ((pFVar7->_cnt < 1) || ((byte)*pFVar7->_ptr - 0xd < 0xfe)) {
             uVar9 = crt_stdio_c_fgetc_FUN_005fe840(pFVar7);
@@ -186,49 +187,49 @@ LAB_0054537a:
           if (uVar9 == 0xffffffff) break;
           iVar3 = uVar9 * 3;
           bVar2 = *(byte *)((int)&DAT_02fd8d20 + iVar3 + 1);
-          uVar16 = (uint)bVar2;
+          uVar17 = (uint)bVar2;
           cVar1 = *(char *)((int)&DAT_02fd8d20 + iVar3 + 2);
-          if (((*(char *)((int)&DAT_02fd8d20 + iVar3) != '\0') || (uVar16 != 0)) || (cVar1 != '\0'))
+          if (((*(char *)((int)&DAT_02fd8d20 + iVar3) != '\0') || (uVar17 != 0)) || (cVar1 != '\0'))
           {
-            *pcVar13 = *(char *)((int)&DAT_02fd8d20 + iVar3);
-            pcVar13[1] = bVar2;
-            uVar10 = uVar10 + 1;
-            pcVar13[2] = cVar1;
-            pcVar13 = pcVar13 + 4;
+            *pcVar14 = *(char *)((int)&DAT_02fd8d20 + iVar3);
+            pcVar14[1] = bVar2;
+            uVar11 = uVar11 + 1;
+            pcVar14[2] = cVar1;
+            pcVar14 = pcVar14 + 4;
           }
           iVar8 = iVar8 + -1;
-          if (*(uint *)((int)in_stack_0000000c + 8) < uVar10) {
+          if (*(uint *)((int)in_stack_0000000c + 8) < uVar11) {
             g_CurrentFilename = "..\\engine\\palette.cpp";
             g_CurrentLineNumber = 0x10c;
             core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Too many pixels");
           }
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar7,"..\\engine\\palette.cpp",0x110);
-        uVar16 = uVar16 + 0x40;
+        uVar17 = uVar17 + 0x40;
         local_10 = local_10 + 1;
       } while (local_10 < *in_stack_00000010);
     }
     pvVar5 = (void *)engine_colquant_c_FUN_004406c0();
-    pcVar13 = in_stack_00000018;
+    pcVar14 = in_stack_00000018;
     do {
-      pcVar11 = pcVar13;
-      if (*pcVar13 == '\\') goto LAB_00545459;
-      if (*pcVar13 == '\0') break;
-      pcVar11 = pcVar13 + 1;
-      if (*pcVar11 == '\\') goto LAB_00545459;
-      pcVar13 = pcVar13 + 2;
-    } while (*pcVar11 != '\0');
-    pcVar11 = (char *)0x0;
+      pcVar12 = pcVar14;
+      if (*pcVar14 == '\\') goto LAB_00545459;
+      if (*pcVar14 == '\0') break;
+      pcVar12 = pcVar14 + 1;
+      if (*pcVar12 == '\\') goto LAB_00545459;
+      pcVar14 = pcVar14 + 2;
+    } while (*pcVar12 != '\0');
+    pcVar12 = (char *)0x0;
 LAB_00545459:
-    if (pcVar11 == (char *)0x0) {
-      pcVar11 = "wb";
-      pcVar13 = "art";
+    if (pcVar12 == (char *)0x0) {
+      pcVar12 = "wb";
+      pcVar14 = "art";
     }
     else {
-      pcVar11 = "wb";
-      pcVar13 = &DAT_0063e68c;
+      pcVar12 = "wb";
+      pcVar14 = &DAT_0063e68c;
     }
-    pFVar7 = engine_dosio_c_getFile_FUN_00481a50(pcVar13,in_stack_00000018,pcVar11);
+    pFVar7 = engine_dosio_c_getFile_FUN_00481a50(pcVar14,in_stack_00000018,pcVar12);
     if (pFVar7 == (FILE *)0x0) {
       g_CurrentFilename = "..\\engine\\palette.cpp";
       g_CurrentLineNumber = 0x122;
@@ -240,7 +241,7 @@ LAB_00545459:
     g_CurrentDebugFilename = "..\\engine\\palette.cpp";
     g_CurrentDebugLine = 0x12a;
     shape_memdbg_cpp_debugFree_FUN_0050f210(in_stack_0000000c);
-    puVar6 = &DAT_00000001;
+    uVar10 = 1;
   }
-  return puVar6;
+  return uVar10;
 }

@@ -1,210 +1,210 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 140, 
-    "pseudocode_lines": 55, 
-    "cross_reference_count": 1, 
-    "global_count": 11, 
-    "total_lines": 163, 
-    "assembly_lines": 108, 
-    "suspect_count": 8, 
+    "assembly_lines": 108,
+    "complexity_score": 140,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 11,
+    "pseudocode_lines": 55,
+    "suspect_count": 8,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0", 
-      "addr": "004a1bc0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
-      "addr": "004a2f70"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
-      "addr": "0050f1f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623928", 
-      "addr": "00623928", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_0062393e", 
-      "addr": "0062393e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CStrList_copyToClipboard_00623954", 
-      "addr": "00623954", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_00623995", 
-      "addr": "00623995", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623999", 
-      "addr": "00623999", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "void *unaff_ESI;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "char *unaff_EDI;"
-    }, 
-    {
-      "line": 42, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pcVar2 = unaff_EDI;"
-    }, 
-    {
-      "line": 47, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar7 = crt_stdio_c_sprintf_FUN_005fdbd0(unaff_EDI,\"%s\\n\",pcVar4);"
-    }, 
-    {
-      "line": 48, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_EDI + iVar7;"
-    }, 
-    {
-      "line": 48, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_EDI + iVar7;"
-    }, 
-    {
-      "line": 52, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_EDI = '\\0';"
-    }, 
-    {
-      "line": 56, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "crt_memory_c_free_FUN_005fe659(unaff_ESI);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a3270", 
-    "signature": "void shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270(CStrList * this_ptr)", 
-    "address_range": [
-      [
-        "004a3270", 
-        "004a335f"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 163
+  },
   "cross_references": [
     {
-      "from_addr": "004a3fcd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20", 
-      "addr": "004a3f20"
+      "addr": "004a3f20",
+      "from_addr": "004a3fcd",
+      "name": "shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a3270",
+    "address_range": [
+      [
+        "004a3270",
+        "004a335f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270",
+    "signature": "void shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270(CStrList * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "004a1bc0",
+      "name": "shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0"
+    },
+    {
+      "addr": "004a2f70",
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "0050f1f0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623928",
+      "name": "s_shape_edittool_cpp_00623928",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062393e",
+      "name": "s_shape_edittool_cpp_0062393e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623954",
+      "name": "s_CStrList_copyToClipboard_00623954",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623995",
+      "name": "s_s_00623995",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623999",
+      "name": "s_shape_edittool_cpp_00623999",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "text": "void *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EDI",
+      "text": "char *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_EDI",
+      "text": "pcVar2 = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_EDI",
+      "text": "iVar7 = crt_stdio_c_sprintf_FUN_005fdbd0(unaff_EDI,\"%s\\n\",pcVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + iVar7;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + iVar7;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_EDI",
+      "text": "*unaff_EDI = '\\0';",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_ESI",
+      "text": "crt_memory_c_free_FUN_005fe659(unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ]
 }

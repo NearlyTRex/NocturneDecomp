@@ -22,6 +22,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   int iVar9;
   SMotion *pSVar10;
   CHotDemon *this_ptr_00;
+  CHotDemon *this_ptr_01;
   int extraout_EAX;
   int extraout_EAX_00;
   float fVar11;
@@ -217,36 +218,36 @@ LAB_005c6fd0:
   if ((*(int *)(this_ptr->field1_0xbeb4 + 0x2480) != 0) &&
      (fVar5 = *(float *)(this_ptr->field1_0xbeb4 + 0x2484) + in_stack_00000008,
      *(float *)(this_ptr->field1_0xbeb4 + 0x2484) = fVar5, 4f < fVar5)) {
-    this_ptr_00 = (CHotDemon *)
-                  shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+    this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                             (0xbef0,"..\\core\\succubus.cpp",0x16c);
+    this_ptr_01 = (CHotDemon *)0x0;
     if (this_ptr_00 != (CHotDemon *)0x0) {
-      this_ptr_00 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(this_ptr_00);
+      this_ptr_01 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(this_ptr_00);
     }
     pCVar8 = g_CDemonMissionPtr;
-    if (this_ptr_00 != (CHotDemon *)0x0) {
+    if (this_ptr_01 != (CHotDemon *)0x0) {
       (this_ptr->base_enemy).base_character.base_actor.was_created = 2;
       core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(pCVar8);
-      (this_ptr_00->base_enemy).base_character.base_actor.location.position.x =
+      (this_ptr_01->base_enemy).base_character.base_actor.location.position.x =
            (this_ptr->base_enemy).base_character.base_actor.location.position.x;
-      (this_ptr_00->base_enemy).base_character.base_actor.location.position.y =
+      (this_ptr_01->base_enemy).base_character.base_actor.location.position.y =
            (this_ptr->base_enemy).base_character.base_actor.location.position.y;
-      (this_ptr_00->base_enemy).base_character.base_actor.location.position.z =
+      (this_ptr_01->base_enemy).base_character.base_actor.location.position.z =
            (this_ptr->base_enemy).base_character.base_actor.location.position.z;
-      pCVar13 = &(this_ptr_00->base_enemy).base_character.base_actor.orient;
-      (this_ptr_00->base_enemy).base_character.base_actor.location.area_id =
+      pCVar13 = &(this_ptr_01->base_enemy).base_character.base_actor.orient;
+      (this_ptr_01->base_enemy).base_character.base_actor.location.area_id =
            (this_ptr->base_enemy).base_character.base_actor.location.area_id;
       pCVar1 = &(this_ptr->base_enemy).base_character.base_actor.orient;
       if (pCVar13 != pCVar1) {
         pCVar13->pitch = pCVar1->pitch;
-        (this_ptr_00->base_enemy).base_character.base_actor.orient.bank =
+        (this_ptr_01->base_enemy).base_character.base_actor.orient.bank =
              (this_ptr->base_enemy).base_character.base_actor.orient.bank;
-        (this_ptr_00->base_enemy).base_character.base_actor.orient.heading =
+        (this_ptr_01->base_enemy).base_character.base_actor.orient.heading =
              (this_ptr->base_enemy).base_character.base_actor.orient.heading;
       }
       pcVar14 = "hdwing.cth";
-      pcVar16 = (this_ptr_00->base_enemy).base_character.cloth_data;
-      (this_ptr_00->base_enemy).base_character.cloth_count = 1;
+      pcVar16 = (this_ptr_01->base_enemy).base_character.cloth_data;
+      (this_ptr_01->base_enemy).base_character.cloth_count = 1;
       do {
         cVar2 = *pcVar14;
         *pcVar16 = cVar2;
@@ -256,24 +257,24 @@ LAB_005c6fd0:
         pcVar16[1] = cVar2;
         pcVar16 = pcVar16 + 2;
       } while (cVar2 != '\0');
-      (*((this_ptr_00->base_enemy).base_character.base_actor.vtable)->setup)
-                ((CDemonActor *)this_ptr_00);
-      pCVar15 = &(this_ptr_00->base_enemy).base_character.model;
+      (*((this_ptr_01->base_enemy).base_character.base_actor.vtable)->setup)
+                ((CDemonActor *)this_ptr_01);
+      pCVar15 = &(this_ptr_01->base_enemy).base_character.model;
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
                 (&pCVar15->motion_controller,pSVar10->motion_name,fVar11);
       core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar15);
-      (this_ptr_00->base_enemy).base_character.base_actor.scale.x =
+      (this_ptr_01->base_enemy).base_character.base_actor.scale.x =
            (this_ptr->base_enemy).base_character.base_actor.scale.x;
-      (this_ptr_00->base_enemy).base_character.base_actor.scale.y =
+      (this_ptr_01->base_enemy).base_character.base_actor.scale.y =
            (this_ptr->base_enemy).base_character.base_actor.scale.y;
       pCVar8 = g_CDemonMissionPtr;
-      (this_ptr_00->base_enemy).base_character.base_actor.scale.z =
+      (this_ptr_01->base_enemy).base_character.base_actor.scale.z =
            (this_ptr->base_enemy).base_character.base_actor.scale.z;
       core_mission_cpp_CDemonMission_FUN_00523b70(pCVar8);
       uVar12 = *(uint *)(this_ptr->field1_0xbeb4 + 0x2450);
       *(uint *)(this_ptr->field1_0xbeb4 + 0x2450) =
-           *(uint *)((this_ptr_00->base_enemy).base_character.cloth_data + 400);
-      *(uint *)((this_ptr_00->base_enemy).base_character.cloth_data + 400) = uVar12;
+           *(uint *)((this_ptr_01->base_enemy).base_character.cloth_data + 400);
+      *(uint *)((this_ptr_01->base_enemy).base_character.cloth_data + 400) = uVar12;
     }
   }
   if (*(int *)(this_ptr->base_enemy).base_character.field13_0x2620 != 0) {

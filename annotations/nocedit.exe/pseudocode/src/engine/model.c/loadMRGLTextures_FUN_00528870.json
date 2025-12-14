@@ -1,165 +1,165 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 135, 
-    "pseudocode_lines": 55, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 159, 
-    "assembly_lines": 104, 
-    "suspect_count": 6, 
+    "assembly_lines": 104,
+    "complexity_score": 135,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 55,
+    "suspect_count": 6,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_boss.c_modelStructNotSupported_FUN_0041dc20", 
-      "addr": "0041dc20"
-    }, 
-    {
-      "name": "engine_model.c_getMRGLSize_FUN_00528700", 
-      "addr": "00528700"
-    }, 
-    {
-      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
-      "addr": "005dd800"
-    }
-  ], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00528913", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 40, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "cVar1 = *(char *)((int)piVar6 + 1);"
-    }, 
-    {
-      "line": 41, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar6 = (int *)((int)piVar6 + 2);"
-    }, 
-    {
-      "line": 48, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while (iVar4 < *(int *)(unaff_EBP + 8));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00528870", 
-    "signature": "void engine_model.c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended * block)", 
-    "address_range": [
-      [
-        "00528870", 
-        "00528931"
-      ]
-    ], 
-    "name": "engine_model.c_loadMRGLTextures_FUN_00528870"
-  }, 
-  "stack_frame": {
-    "local_size": 48, 
-    "variables": [
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -39, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_27"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderExtended *", 
-        "size": 4, 
-        "name": "block"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "unaffected_reg",
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 159
+  },
   "cross_references": [
     {
-      "from_addr": "00528957", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_model.c_initializeMRGLModel_FUN_00528940", 
-      "addr": "00528940"
+      "addr": "00528940",
+      "from_addr": "00528957",
+      "name": "engine_model.c_initializeMRGLModel_FUN_00528940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00528870",
+    "address_range": [
+      [
+        "00528870",
+        "00528931"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_model.c_loadMRGLTextures_FUN_00528870",
+    "signature": "void engine_model.c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended * block)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041dc20",
+      "name": "engine_boss.c_modelStructNotSupported_FUN_0041dc20"
+    },
+    {
+      "addr": "00528700",
+      "name": "engine_model.c_getMRGLSize_FUN_00528700"
+    },
+    {
+      "addr": "005dd800",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_27",
+        "offset": -39,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "block",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00528913",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(char *)((int)",
+      "text": "cVar1 = *(char *)((int)piVar6 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(int *)((int)",
+      "text": "piVar6 = (int *)((int)piVar6 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EBP",
+      "text": "} while (iVar4 < *(int *)(unaff_EBP + 8));",
+      "type": "unaffected_reg"
     }
   ]
 }

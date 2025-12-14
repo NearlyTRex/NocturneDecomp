@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 41, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 139, 
-    "assembly_lines": 98, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CEdButton*", 
-      "name": "g_ActiveButton", 
-      "addr": "02cf2b00", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseX", 
-      "addr": "02cf6a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseY", 
-      "addr": "02cf6a90", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseButtonFlags", 
-      "addr": "02cf6a94", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a6d20", 
-    "signature": "int shape_edittool.cpp_CEdCheck_handleInput_FUN_004a6d20(CEdCheck * this_ptr)", 
-    "address_range": [
-      [
-        "004a6d20", 
-        "004a6e13"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CEdCheck_handleInput_FUN_004a6d20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEdCheck *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 98,
+    "complexity_score": 41,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 139
+  },
   "cross_references": [
     {
-      "from_addr": "0053990a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
+      "addr": "005390f0",
+      "from_addr": "0053990a",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a6d20",
+    "address_range": [
+      [
+        "004a6d20",
+        "004a6e13"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdCheck_handleInput_FUN_004a6d20",
+    "signature": "int shape_edittool.cpp_CEdCheck_handleInput_FUN_004a6d20(CEdCheck * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf2b00",
+      "name": "g_ActiveButton",
+      "type": "CEdButton*",
+      "value": null
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdCheck *"
+      }
+    ]
+  },
+  "suspects": []
 }

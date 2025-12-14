@@ -1,264 +1,264 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 136, 
-    "pseudocode_lines": 41, 
-    "cross_reference_count": 0, 
-    "global_count": 25, 
-    "total_lines": 134, 
-    "assembly_lines": 93, 
-    "suspect_count": 8, 
+    "assembly_lines": 93,
+    "complexity_score": 136,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 25,
+    "pseudocode_lines": 41,
+    "suspect_count": 8,
     "suspect_types": [
-      "concat_artifact", 
-      "unknown_field", 
-      "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "uint", 
-      "name": "g_RedMask16", 
-      "addr": "00682748", 
-      "value": "0xf800"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_GreenMask16", 
-      "addr": "00682750", 
-      "value": "0x7e0"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_BlueMask16", 
-      "addr": "00682758", 
-      "value": "0x1f"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_RedMask32", 
-      "addr": "00682760", 
-      "value": "0xf80000"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_GreenMask32", 
-      "addr": "00682780", 
-      "value": "0xfc00"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_BlueMask32", 
-      "addr": "006827a0", 
-      "value": "0xf8"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TotalColorBits", 
-      "addr": "006827a8", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_GreenBlueBits", 
-      "addr": "006827c8", 
-      "value": "0x5"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_BlueBitShift", 
-      "addr": "006827e8", 
-      "value": "0x3"
-    }, 
-    {
-      "type": "ushort[256]", 
-      "name": "g_ColorTable16", 
-      "addr": "02d01020", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitPosition", 
-      "addr": "02d01f24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedScaleFactor", 
-      "addr": "02d01f28", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitCount", 
-      "addr": "02d01f2c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitPosition", 
-      "addr": "02d01f30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenScaleFactor", 
-      "addr": "02d01f34", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitCount", 
-      "addr": "02d01f38", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitPosition", 
-      "addr": "02d01f3c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueScaleFactor", 
-      "addr": "02d01f40", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitCount", 
-      "addr": "02d01f44", 
-      "value": null
-    }, 
-    {
-      "type": "char[768]", 
-      "name": "g_SourcePaletteData", 
-      "addr": "02d01f48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f49", 
-      "addr": "02d01f49", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4a", 
-      "addr": "02d01f4a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4b", 
-      "addr": "02d01f4b", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4c", 
-      "addr": "02d01f4c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4d", 
-      "addr": "02d01f4d", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 23, 
-      "match": "(ushort *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(ushort *)((int)g_ColorTable16 + iVar7) ="
-    }, 
-    {
-      "line": 37, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_BlueMask32._0_4_ = uVar4 << ((byte)g_BlueBitCount & 0x1f);"
-    }, 
-    {
-      "line": 38, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_RedMask32._0_4_ = (uVar9 << ((byte)g_RedBitCount & 0x1f)) << 0x10;"
-    }, 
-    {
-      "line": 39, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_GreenMask32._0_4_ = (uVar6 << ((byte)g_GreenBitCount & 0x1f)) << 8;"
-    }, 
-    {
-      "line": 40, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_TotalColorBits._0_4_ = g_RedBitCount + g_GreenBitCount + g_BlueBitCount;"
-    }, 
-    {
-      "line": 41, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_BlueBitShift._0_4_ = g_BlueBitCount;"
-    }, 
-    {
-      "line": 42, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_GreenBlueBits._0_4_ = g_GreenBitCount + g_BlueBitCount;"
-    }, 
-    {
-      "line": 43, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "return CONCAT44 /* combine 2-byte values */(g_GreenBitCount,g_GreenBitCount + g_BlueBitCount);"
-    }
-  ], 
+      "concat_artifact",
+      "pointer_cast",
+      "unknown_field"
+    ],
+    "total_lines": 134
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004f3ff0", 
-    "signature": "ulonglong wincore_wddvmem.cpp_initializeColorMasks_FUN_004f3ff0(void)", 
+    "address": "004f3ff0",
     "address_range": [
       [
-        "004f3ff0", 
+        "004f3ff0",
         "004f4130"
       ]
-    ], 
-    "name": "wincore_wddvmem.cpp_initializeColorMasks_FUN_004f3ff0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_initializeColorMasks_FUN_004f3ff0",
+    "signature": "ulonglong wincore_wddvmem.cpp_initializeColorMasks_FUN_004f3ff0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00682748",
+      "name": "g_RedMask16",
+      "type": "uint",
+      "value": "0xf800"
+    },
+    {
+      "addr": "00682750",
+      "name": "g_GreenMask16",
+      "type": "uint",
+      "value": "0x7e0"
+    },
+    {
+      "addr": "00682758",
+      "name": "g_BlueMask16",
+      "type": "uint",
+      "value": "0x1f"
+    },
+    {
+      "addr": "00682760",
+      "name": "g_RedMask32",
+      "type": "ulonglong",
+      "value": "0xf80000"
+    },
+    {
+      "addr": "00682780",
+      "name": "g_GreenMask32",
+      "type": "ulonglong",
+      "value": "0xfc00"
+    },
+    {
+      "addr": "006827a0",
+      "name": "g_BlueMask32",
+      "type": "ulonglong",
+      "value": "0xf8"
+    },
+    {
+      "addr": "006827a8",
+      "name": "g_TotalColorBits",
+      "type": "ulonglong",
+      "value": "0x8"
+    },
+    {
+      "addr": "006827c8",
+      "name": "g_GreenBlueBits",
+      "type": "ulonglong",
+      "value": "0x5"
+    },
+    {
+      "addr": "006827e8",
+      "name": "g_BlueBitShift",
+      "type": "ulonglong",
+      "value": "0x3"
+    },
+    {
+      "addr": "02d01020",
+      "name": "g_ColorTable16",
+      "type": "ushort[256]",
+      "value": null
+    },
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f28",
+      "name": "g_RedScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f2c",
+      "name": "g_RedBitCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f34",
+      "name": "g_GreenScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f38",
+      "name": "g_GreenBitCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f40",
+      "name": "g_BlueScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f44",
+      "name": "g_BlueBitCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f48",
+      "name": "g_SourcePaletteData",
+      "type": "char[768]",
+      "value": null
+    },
+    {
+      "addr": "02d01f49",
+      "name": "CHAR_ARRAY_02d01f49",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4a",
+      "name": "CHAR_ARRAY_02d01f4a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4b",
+      "name": "CHAR_ARRAY_02d01f4b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4c",
+      "name": "CHAR_ARRAY_02d01f4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4d",
+      "name": "CHAR_ARRAY_02d01f4d",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(ushort *)((int)",
+      "text": "*(ushort *)((int)g_ColorTable16 + iVar7) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 37,
+      "match": "._0_4_",
+      "text": "g_BlueMask32._0_4_ = uVar4 << ((byte)g_BlueBitCount & 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 38,
+      "match": "._0_4_",
+      "text": "g_RedMask32._0_4_ = (uVar9 << ((byte)g_RedBitCount & 0x1f)) << 0x10;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 39,
+      "match": "._0_4_",
+      "text": "g_GreenMask32._0_4_ = (uVar6 << ((byte)g_GreenBitCount & 0x1f)) << 8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._0_4_",
+      "text": "g_TotalColorBits._0_4_ = g_RedBitCount + g_GreenBitCount + g_BlueBitCount;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 41,
+      "match": "._0_4_",
+      "text": "g_BlueBitShift._0_4_ = g_BlueBitCount;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 42,
+      "match": "._0_4_",
+      "text": "g_GreenBlueBits._0_4_ = g_GreenBitCount + g_BlueBitCount;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 43,
+      "match": "CONCAT44",
+      "text": "return CONCAT44 /* combine 2-byte values */(g_GreenBitCount,g_GreenBitCount + g_BlueBitCount);",
+      "type": "concat_artifact"
+    }
+  ]
 }

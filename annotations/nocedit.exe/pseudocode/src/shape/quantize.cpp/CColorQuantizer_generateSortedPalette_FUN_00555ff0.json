@@ -1,208 +1,208 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 246, 
-    "pseudocode_lines": 111, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 253, 
-    "assembly_lines": 142, 
-    "suspect_count": 13, 
+    "assembly_lines": 142,
+    "complexity_score": 246,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 111,
+    "suspect_count": 13,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640d83", 
-      "addr": "00640d83", 
-      "value": "0.590000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640d8b", 
-      "addr": "00640d8b", 
-      "value": "0.300000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640d93", 
-      "addr": "00640d93", 
-      "value": "0.110000000000000"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 2, 
-    "patterns": [
-      {
-        "address": "00556148", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }, 
-      {
-        "address": "00556164", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 15, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_00;"
-    }, 
-    {
-      "line": 16, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_01;"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 20, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX_00;"
-    }, 
-    {
-      "line": 21, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX_01;"
-    }, 
-    {
-      "line": 101, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(byte *)(extraout_EAX + 2) = uStack_18;"
-    }, 
-    {
-      "line": 102, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EDX + 0x1034));"
-    }, 
-    {
-      "line": 104, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(byte *)(extraout_EAX_00 + -2) = uStack_1c;"
-    }, 
-    {
-      "line": 105, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EDX_00 + 0x1038));"
-    }, 
-    {
-      "line": 108, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(byte *)(extraout_EAX_01 + -3) = local_14;"
-    }, 
-    {
-      "line": 109, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar10 = extraout_EAX_01;"
-    }, 
-    {
-      "line": 110, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pCVar7 = (CColorQuantizer *)(extraout_EDX_01 + 0x10);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00555ff0", 
-    "signature": "int shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer * this_ptr, uchar * output_buffer)", 
-    "address_range": [
-      [
-        "00555ff0", 
-        "00556178"
-      ]
-    ], 
-    "name": "shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CColorQuantizer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uchar *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 253
+  },
   "cross_references": [
     {
-      "from_addr": "00554d31", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0", 
-      "addr": "00554cc0"
+      "addr": "00554cc0",
+      "from_addr": "00554d31",
+      "name": "shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00555ff0",
+    "address_range": [
+      [
+        "00555ff0",
+        "00556178"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0",
+    "signature": "int shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer * this_ptr, uchar * output_buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640d83",
+      "name": "DOUBLE_00640d83",
+      "type": "double",
+      "value": "0.590000000000000"
+    },
+    {
+      "addr": "00640d8b",
+      "name": "DOUBLE_00640d8b",
+      "type": "double",
+      "value": "0.300000000000000"
+    },
+    {
+      "addr": "00640d93",
+      "name": "DOUBLE_00640d93",
+      "type": "double",
+      "value": "0.110000000000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CColorQuantizer *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "uchar *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00556148",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "00556164",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EAX_00",
+      "text": "int extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EAX_01",
+      "text": "int extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_EDX_00",
+      "text": "int extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_EDX_01",
+      "text": "int extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 101,
+      "match": "extraout_EAX",
+      "text": "*(byte *)(extraout_EAX + 2) = uStack_18;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 102,
+      "match": "extraout_EDX",
+      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EDX + 0x1034));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 104,
+      "match": "extraout_EAX_00",
+      "text": "*(byte *)(extraout_EAX_00 + -2) = uStack_1c;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 105,
+      "match": "extraout_EDX_00",
+      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EDX_00 + 0x1038));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 108,
+      "match": "extraout_EAX_01",
+      "text": "*(byte *)(extraout_EAX_01 + -3) = local_14;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 109,
+      "match": "extraout_EAX_01",
+      "text": "iVar10 = extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 110,
+      "match": "extraout_EDX_01",
+      "text": "pCVar7 = (CColorQuantizer *)(extraout_EDX_01 + 0x10);",
+      "type": "extra_output"
     }
   ]
 }

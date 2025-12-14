@@ -25,26 +25,26 @@ section .text
     CALL dword ptr [EAX + 0x4]          ; 005d28e4
     ADD ESP,0x4                         ; 005d28e7
     TEST EAX,EAX                        ; 005d28ea
-    JZ 0x005d290c                       ; 005d28ec | LAB_005d290c
-        ;   XREF to: 005d290c (CONDITIONAL_JUMP)
+    JZ 0x005d290c                       ; 005d28ec
+        ;   XREF to: 005d290c (CONDITIONAL_JUMP)  ; LAB_005d290c
     MOV ECX,dword ptr [EDI]             ; 005d28ee
     MOV EAX,dword ptr [EDI + 0x4]       ; 005d28f0
     XOR EDX,EDX                         ; 005d28f3
     TEST ECX,ECX                        ; 005d28f5
-    JBE 0x005d290c                      ; 005d28f7 | LAB_005d290c
-        ;   XREF to: 005d290c (CONDITIONAL_JUMP)
+    JBE 0x005d290c                      ; 005d28f7
+        ;   XREF to: 005d290c (CONDITIONAL_JUMP)  ; LAB_005d290c
     MOV ECX,dword ptr [EAX + 0x34]      ; 005d28f9
         ;   Label: LAB_005d28f9
     AND ECX,ESI                         ; 005d28fc
     CMP ECX,ESI                         ; 005d28fe
-    JZ 0x005d2911                       ; 005d2900 | LAB_005d2911
-        ;   XREF to: 005d2911 (CONDITIONAL_JUMP)
+    JZ 0x005d2911                       ; 005d2900
+        ;   XREF to: 005d2911 (CONDITIONAL_JUMP)  ; LAB_005d2911
     INC EDX                             ; 005d2902
     MOV EBP,dword ptr [EDI]             ; 005d2903
     ADD EAX,0x38                        ; 005d2905
     CMP EDX,EBP                         ; 005d2908
-    JC 0x005d28f9                       ; 005d290a | LAB_005d28f9
-        ;   XREF to: 005d28f9 (CONDITIONAL_JUMP)
+    JC 0x005d28f9                       ; 005d290a
+        ;   XREF to: 005d28f9 (CONDITIONAL_JUMP)  ; LAB_005d28f9
     POP EBP                             ; 005d290c
         ;   Label: LAB_005d290c
     POP EDI                             ; 005d290d
@@ -65,8 +65,8 @@ section .text
     MOV EBP,dword ptr [EDI]             ; 005d292a
     ADD EAX,0x38                        ; 005d292c
     CMP EDX,EBP                         ; 005d292f
-    JC 0x005d28f9                       ; 005d2931 | LAB_005d28f9
-        ;   XREF to: 005d28f9 (CONDITIONAL_JUMP)
+    JC 0x005d28f9                       ; 005d2931
+        ;   XREF to: 005d28f9 (CONDITIONAL_JUMP)  ; LAB_005d28f9
     POP EBP                             ; 005d2933
     POP EDI                             ; 005d2934
     POP ESI                             ; 005d2935

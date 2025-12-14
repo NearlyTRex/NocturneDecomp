@@ -28,8 +28,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x10]      ; 00605fbf
     MOV ESI,EAX                         ; 00605fc2
     CMP EDX,ECX                         ; 00605fc4
-    JNC 0x00605ff1                      ; 00605fc6 | LAB_00605ff1
-        ;   XREF to: 00605ff1 (CONDITIONAL_JUMP)
+    JNC 0x00605ff1                      ; 00605fc6
+        ;   XREF to: 00605ff1 (CONDITIONAL_JUMP)  ; LAB_00605ff1
     MOV EAX,dword ptr [ESI + 0x14]      ; 00605fc8
         ;   Label: LAB_00605fc8
     LEA EDX,[EAX + 0x1]                 ; 00605fcb
@@ -39,8 +39,8 @@ section .text
     MOV EDX,EAX                         ; 00605fd8
         ;   Label: LAB_00605fd8
     CMP EAX,-0x1                        ; 00605fda
-    JZ 0x00606002                       ; 00605fdd | LAB_00606002
-        ;   XREF to: 00606002 (CONDITIONAL_JUMP)
+    JZ 0x00606002                       ; 00605fdd
+        ;   XREF to: 00606002 (CONDITIONAL_JUMP)  ; LAB_00606002
     MOV EAX,dword ptr [ESP + 0x10]      ; 00605fdf
     MOV byte ptr [EAX],DL               ; 00605fe3
     MOV dword ptr [EBX + 0x4],0x1       ; 00605fe5
@@ -54,18 +54,18 @@ section .text
     CALL dword ptr [EDX + 0x10]         ; 00605ff5
     ADD ESP,0x4                         ; 00605ff8
     CMP EAX,-0x1                        ; 00605ffb
-    JNZ 0x00605fc8                      ; 00605ffe | LAB_00605fc8
-        ;   XREF to: 00605fc8 (CONDITIONAL_JUMP)
-    JMP 0x00605fd8                      ; 00606000 | LAB_00605fd8
-        ;   XREF to: 00605fd8 (UNCONDITIONAL_JUMP)
+    JNZ 0x00605fc8                      ; 00605ffe
+        ;   XREF to: 00605fc8 (CONDITIONAL_JUMP)  ; LAB_00605fc8
+    JMP 0x00605fd8                      ; 00606000
+        ;   XREF to: 00605fd8 (UNCONDITIONAL_JUMP)  ; LAB_00605fd8
     MOV EAX,dword ptr [EBX]             ; 00606002
         ;   Label: LAB_00606002
     MOV EAX,dword ptr [EAX + 0x4]       ; 00606004
     PUSH 0x6                            ; 00606007
     ADD EAX,EBX                         ; 00606009
     PUSH EAX                            ; 0060600b
-    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 0060600c | void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
-        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 0060600c
+        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
     ADD ESP,0x8                         ; 00606011
     MOV dword ptr [EBX + 0x4],0x0       ; 00606014
     MOV EAX,EBX                         ; 0060601b

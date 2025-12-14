@@ -31,26 +31,26 @@ section .text
     MOV EDX,dword ptr [ESI + 0x8]       ; 00435e13
     MOV ECX,dword ptr [ESI + 0x8]       ; 00435e16
     SUB EBX,EDX                         ; 00435e19
-    MOV EDX,dword ptr [0x0066e804]      ; 00435e1b | int g_NearPlaneDistance
+    MOV EDX,dword ptr [0x0066e804]      ; 00435e1b | g_NearPlaneDistance
     SUB EDX,ECX                         ; 00435e21
     CMP EDX,EBX                         ; 00435e23
-    JGE 0x00435e39                      ; 00435e25 | LAB_00435e39
-        ;   XREF to: 00435e39 (CONDITIONAL_JUMP)
+    JGE 0x00435e39                      ; 00435e25
+        ;   XREF to: 00435e39 (CONDITIONAL_JUMP)  ; LAB_00435e39
     NEG EBX                             ; 00435e27
     CMP EDX,EBX                         ; 00435e29
-    JLE 0x00435e40                      ; 00435e2b | LAB_00435e40
-        ;   XREF to: 00435e40 (CONDITIONAL_JUMP)
+    JLE 0x00435e40                      ; 00435e2b
+        ;   XREF to: 00435e40 (CONDITIONAL_JUMP)  ; LAB_00435e40
     NEG EBX                             ; 00435e2d
     XOR EAX,EAX                         ; 00435e2f
     SAR EDX,0x1                         ; 00435e31
     RCR EAX,0x1                         ; 00435e33
     IDIV EBX                            ; 00435e35
-    JMP 0x00435e47                      ; 00435e37 | LAB_00435e47
-        ;   XREF to: 00435e47 (UNCONDITIONAL_JUMP)
+    JMP 0x00435e47                      ; 00435e37
+        ;   XREF to: 00435e47 (UNCONDITIONAL_JUMP)  ; LAB_00435e47
     MOV EAX,0x7fffffff                  ; 00435e39
         ;   Label: LAB_00435e39
-    JMP 0x00435e47                      ; 00435e3e | LAB_00435e47
-        ;   XREF to: 00435e47 (UNCONDITIONAL_JUMP)
+    JMP 0x00435e47                      ; 00435e3e
+        ;   XREF to: 00435e47 (UNCONDITIONAL_JUMP)  ; LAB_00435e47
     NEG EBX                             ; 00435e40
         ;   Label: LAB_00435e40
     MOV EAX,0x80000000                  ; 00435e42

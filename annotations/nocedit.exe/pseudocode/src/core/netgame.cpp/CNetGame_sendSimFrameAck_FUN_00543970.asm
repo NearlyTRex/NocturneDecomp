@@ -42,28 +42,28 @@ section .text
     SUB ESP,0x38                        ; 00543974
     MOV EBX,dword ptr [ESP + 0x4c]      ; 00543977
     CMP dword ptr [EBX],0x2             ; 0054397b
-    JNZ 0x00543a32                      ; 0054397e | LAB_00543a32
-        ;   XREF to: 00543a32 (CONDITIONAL_JUMP)
+    JNZ 0x00543a32                      ; 0054397e
+        ;   XREF to: 00543a32 (CONDITIONAL_JUMP)  ; LAB_00543a32
     CMP dword ptr [EBX + 0x4],0x3       ; 00543984
         ;   Label: LAB_00543984
-    JZ 0x005439ac                       ; 00543988 | LAB_005439ac
-        ;   XREF to: 005439ac (CONDITIONAL_JUMP)
-    MOV EBP,0x63e05d                    ; 0054398a | = "..\\core\\netgame.cpp" | s_core_netgame_cpp_0063e05d = ..\core\netgame.cpp
+    JZ 0x005439ac                       ; 00543988
+        ;   XREF to: 005439ac (CONDITIONAL_JUMP)  ; LAB_005439ac
+    MOV EBP,0x63e05d                    ; 0054398a | = "..\\core\\netgame.cpp"
     MOV EAX,0xa2a                       ; 0054398f
-    PUSH 0x63e071                       ; 00543994 | = "CNetGame::sendSimFrameAck - should on..." | s_CNetGame_sendSimFrameAck_0063e071 = CNetGame::sendSimFrameAck - should only be called in the game loop
-    MOV dword ptr [0x02f0ca48],EBP      ; 00543999 | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 0054399f | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005439a4 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63e071                       ; 00543994 | = "CNetGame::sendSimFrameAck - should on..."
+    MOV dword ptr [0x02f0ca48],EBP      ; 00543999 | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 0054399f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005439a4
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005439a9
     CMP dword ptr [EBX + 0x110],0x0     ; 005439ac
         ;   Label: LAB_005439ac
-    JL 0x00543a5a                       ; 005439b3 | LAB_00543a5a
-        ;   XREF to: 00543a5a (CONDITIONAL_JUMP)
+    JL 0x00543a5a                       ; 005439b3
+        ;   XREF to: 00543a5a (CONDITIONAL_JUMP)  ; LAB_00543a5a
     CMP dword ptr [EBX + 0x114],0x0     ; 005439b9
         ;   Label: LAB_005439b9
-    JL 0x00543a82                       ; 005439c0 | LAB_00543a82
-        ;   XREF to: 00543a82 (CONDITIONAL_JUMP)
+    JL 0x00543a82                       ; 005439c0
+        ;   XREF to: 00543a82 (CONDITIONAL_JUMP)  ; LAB_00543a82
     MOV EDX,0x35                        ; 005439c6
         ;   Label: LAB_005439c6
     MOV AH,0x10                         ; 005439cb
@@ -91,48 +91,48 @@ section .text
     MOV ECX,dword ptr [EBX + 0x110]     ; 00543a10
     PUSH ECX                            ; 00543a16
     PUSH EBX                            ; 00543a17
-    CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00543a18 | undefined core_netgame.cpp_CNetGame_send_FUN_005411c0()
-        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)
-    MOV EAX,[0x02f7c8b8]                ; 00543a1d | uint g_CurrentGameTime
+    CALL core_netgame.cpp_CNetGame_send_FUN_005411c0 ; 00543a18
+        ;   XREF to: 005411c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_send_FUN_005411c0()
+    MOV EAX,[0x02f7c8b8]                ; 00543a1d | g_CurrentGameTime
     ADD ESP,0xc                         ; 00543a22
-    MOV [0x02f7c8c8],EAX                ; 00543a25 | undefined4 DAT_02f7c8c8
+    MOV [0x02f7c8c8],EAX                ; 00543a25 | DAT_02f7c8c8
     ADD ESP,0x38                        ; 00543a2a
     POP EBP                             ; 00543a2d
     POP EDI                             ; 00543a2e
     POP ESI                             ; 00543a2f
     POP EBX                             ; 00543a30
     RET                                 ; 00543a31
-    MOV ECX,0x63e008                    ; 00543a32 | = "..\\core\\netgame.cpp" | s_core_netgame_cpp_0063e008 = ..\core\netgame.cpp
+    MOV ECX,0x63e008                    ; 00543a32 | = "..\\core\\netgame.cpp"
         ;   Label: LAB_00543a32
     MOV ESI,0xa29                       ; 00543a37
-    PUSH 0x63e01c                       ; 00543a3c | = "CNetGame::sendSimFrameAck - should on..." | s_CNetGame_sendSimFrameAck_0063e01c = CNetGame::sendSimFrameAck - should only be called in client mode
-    MOV dword ptr [0x02f0ca48],ECX      ; 00543a41 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 00543a47 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00543a4d | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63e01c                       ; 00543a3c | = "CNetGame::sendSimFrameAck - should on..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 00543a41 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 00543a47 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00543a4d
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00543a52
-    JMP 0x00543984                      ; 00543a55 | LAB_00543984
-        ;   XREF to: 00543984 (UNCONDITIONAL_JUMP)
-    MOV ECX,0x63e0b4                    ; 00543a5a | = "..\\core\\netgame.cpp" | s_core_netgame_cpp_0063e0b4 = ..\core\netgame.cpp
+    JMP 0x00543984                      ; 00543a55
+        ;   XREF to: 00543984 (UNCONDITIONAL_JUMP)  ; LAB_00543984
+    MOV ECX,0x63e0b4                    ; 00543a5a | = "..\\core\\netgame.cpp"
         ;   Label: LAB_00543a5a
     MOV ESI,0xa2b                       ; 00543a5f
-    PUSH 0x63e0c8                       ; 00543a64 | = "CNetGame::sendSimFrameAck - server no..." | s_CNetGame_sendSimFrameAck_0063e0c8 = CNetGame::sendSimFrameAck - server not in player list
-    MOV dword ptr [0x02f0ca48],ECX      ; 00543a69 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 00543a6f | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00543a75 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63e0c8                       ; 00543a64 | = "CNetGame::sendSimFrameAck - server no..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 00543a69 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 00543a6f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00543a75
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00543a7a
-    JMP 0x005439b9                      ; 00543a7d | LAB_005439b9
-        ;   XREF to: 005439b9 (UNCONDITIONAL_JUMP)
-    MOV EBP,0x63e0fe                    ; 00543a82 | = "..\\core\\netgame.cpp" | s_core_netgame_cpp_0063e0fe = ..\core\netgame.cpp
+    JMP 0x005439b9                      ; 00543a7d
+        ;   XREF to: 005439b9 (UNCONDITIONAL_JUMP)  ; LAB_005439b9
+    MOV EBP,0x63e0fe                    ; 00543a82 | = "..\\core\\netgame.cpp"
         ;   Label: LAB_00543a82
     MOV EAX,0xa2c                       ; 00543a87
-    PUSH 0x63e112                       ; 00543a8c | = "CNetGame::sendSimFrameAck - I'm not i..." | s_CNetGame_sendSimFrameAck_0063e112 = CNetGame::sendSimFrameAck - I'm not in player list
-    MOV dword ptr [0x02f0ca48],EBP      ; 00543a91 | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 00543a97 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00543a9c | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63e112                       ; 00543a8c | = "CNetGame::sendSimFrameAck - I'm not i..."
+    MOV dword ptr [0x02f0ca48],EBP      ; 00543a91 | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 00543a97 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00543a9c
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00543aa1
-    JMP 0x005439c6                      ; 00543aa4 | LAB_005439c6
-        ;   XREF to: 005439c6 (UNCONDITIONAL_JUMP)
+    JMP 0x005439c6                      ; 00543aa4
+        ;   XREF to: 005439c6 (UNCONDITIONAL_JUMP)  ; LAB_005439c6
 

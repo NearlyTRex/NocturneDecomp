@@ -27,40 +27,40 @@ section .text
     MOV EAX,dword ptr [EAX + 0x4]       ; 00605f27
     MOV EDX,dword ptr [EBX + EAX*0x1 + 0x10] ; 00605f2a
     TEST EDX,EDX                        ; 00605f2e
-    JNZ 0x00605f8c                      ; 00605f30 | LAB_00605f8c
-        ;   XREF to: 00605f8c (CONDITIONAL_JUMP)
+    JNZ 0x00605f8c                      ; 00605f30
+        ;   XREF to: 00605f8c (CONDITIONAL_JUMP)  ; LAB_00605f8c
     MOV EAX,dword ptr [EBX]             ; 00605f32
     MOV dword ptr [EBX + 0x4],EDX       ; 00605f34
     MOV EAX,dword ptr [EAX + 0x4]       ; 00605f37
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0x8] ; 00605f3a
     TEST EAX,EAX                        ; 00605f3e
-    JNZ 0x00605fa2                      ; 00605f40 | LAB_00605fa2
-        ;   XREF to: 00605fa2 (CONDITIONAL_JUMP)
+    JNZ 0x00605fa2                      ; 00605f40
+        ;   XREF to: 00605fa2 (CONDITIONAL_JUMP)  ; LAB_00605fa2
     CMP dword ptr [ESP + 0xc],0x0       ; 00605f42
         ;   Label: LAB_00605f42
-    JNZ 0x00605f79                      ; 00605f47 | LAB_00605f79
-        ;   XREF to: 00605f79 (CONDITIONAL_JUMP)
+    JNZ 0x00605f79                      ; 00605f47
+        ;   XREF to: 00605f79 (CONDITIONAL_JUMP)  ; LAB_00605f79
     MOV EAX,dword ptr [EBX]             ; 00605f49
     MOV EAX,dword ptr [EAX + 0x4]       ; 00605f4b
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0xc] ; 00605f4e
     TEST AL,0x1                         ; 00605f52
-    JZ 0x00605f79                       ; 00605f54 | LAB_00605f79
-        ;   XREF to: 00605f79 (CONDITIONAL_JUMP)
+    JZ 0x00605f79                       ; 00605f54
+        ;   XREF to: 00605f79 (CONDITIONAL_JUMP)  ; LAB_00605f79
     PUSH EBX                            ; 00605f56
-    CALL crt_string.c_mbstrncpy_core_FUN_0060b670 ; 00605f57 | char * crt_string.c_mbstrncpy_core_FUN_0060b670(char * dest, char * src, int count)
-        ;   XREF to: 0060b6d7 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_mbstrncpy_core_FUN_0060b670 ; 00605f57
+        ;   XREF to: 0060b6d7 (UNCONDITIONAL_CALL)  ; char * crt_string.c_mbstrncpy_core_FUN_0060b670(char * dest, char * src, int count)
     MOV EAX,dword ptr [EBX]             ; 00605f5c
     MOV EAX,dword ptr [EAX + 0x4]       ; 00605f5e
     ADD EAX,EBX                         ; 00605f61
     MOV EDX,dword ptr [EAX + 0x10]      ; 00605f63
     ADD ESP,0x4                         ; 00605f66
     AND EDX,0x4                         ; 00605f69
-    JZ 0x00605f79                       ; 00605f6c | LAB_00605f79
-        ;   XREF to: 00605f79 (CONDITIONAL_JUMP)
+    JZ 0x00605f79                       ; 00605f6c
+        ;   XREF to: 00605f79 (CONDITIONAL_JUMP)  ; LAB_00605f79
     PUSH 0x2                            ; 00605f6e
     PUSH EAX                            ; 00605f70
-    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 00605f71 | void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
-        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 00605f71
+        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
     ADD ESP,0x8                         ; 00605f76
     MOV EAX,dword ptr [EBX]             ; 00605f79
         ;   Label: LAB_00605f79
@@ -76,17 +76,17 @@ section .text
     PUSH 0x2                            ; 00605f91
     ADD EBX,ECX                         ; 00605f93
     PUSH EBX                            ; 00605f95
-    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 00605f96 | void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
-        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 00605f96
+        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
     ADD ESP,0x8                         ; 00605f9b
     XOR EAX,EAX                         ; 00605f9e
     POP EBX                             ; 00605fa0
     RET                                 ; 00605fa1
     PUSH EAX                            ; 00605fa2
         ;   Label: LAB_00605fa2
-    CALL crt_stdio.c_stream_flush_FUN_006060bb ; 00605fa3 | FILE * crt_stdio.c_stream_flush_FUN_006060bb(FILE * stream)
-        ;   XREF to: 006060bb (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_stream_flush_FUN_006060bb ; 00605fa3
+        ;   XREF to: 006060bb (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_stream_flush_FUN_006060bb(FILE * stream)
     ADD ESP,0x4                         ; 00605fa8
-    JMP 0x00605f42                      ; 00605fab | LAB_00605f42
-        ;   XREF to: 00605f42 (UNCONDITIONAL_JUMP)
+    JMP 0x00605f42                      ; 00605fab
+        ;   XREF to: 00605f42 (UNCONDITIONAL_JUMP)  ; LAB_00605f42
 

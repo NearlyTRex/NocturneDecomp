@@ -1,110 +1,110 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 5, 
-    "global_count": 3, 
-    "total_lines": 39, 
-    "assembly_lines": 25, 
-    "suspect_count": 1, 
+    "assembly_lines": 25,
+    "complexity_score": 29,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 14,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_course_cpp_00618f98", 
-      "addr": "00618f98", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "frame_list[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "crt_memory_c_free_FUN_005fe659(&this_ptr->frame_list[-1].frame4.orient.z);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004426c0", 
-    "signature": "void core_course.cpp_CCourse_free_FUN_004426c0(CCourse * this_ptr)", 
-    "address_range": [
-      [
-        "004426c0", 
-        "0044270b"
-      ]
-    ], 
-    "name": "core_course.cpp_CCourse_free_FUN_004426c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCourse *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 39
+  },
   "cross_references": [
     {
-      "from_addr": "00442507", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_CCourse_allocMemory_FUN_00442500", 
-      "addr": "00442500"
-    }, 
+      "addr": "00442500",
+      "from_addr": "00442507",
+      "name": "core_course.cpp_CCourse_allocMemory_FUN_00442500",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004424e6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_CCourse_dtor_FUN_004424e0", 
-      "addr": "004424e0"
-    }, 
+      "addr": "004424e0",
+      "from_addr": "004424e6",
+      "name": "core_course.cpp_CCourse_dtor_FUN_004424e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00442590", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_CCourse_load_FUN_00442580", 
-      "addr": "00442580"
-    }, 
+      "addr": "00442580",
+      "from_addr": "00442590",
+      "name": "core_course.cpp_CCourse_load_FUN_00442580",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00529cf5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moon.cpp_CMoon_free_FUN_00529ce0", 
-      "addr": "00529ce0"
-    }, 
+      "addr": "00529ce0",
+      "from_addr": "00529cf5",
+      "name": "core_moon.cpp_CMoon_free_FUN_00529ce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054e61f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_platfrm.cpp_FUN_0054e530", 
-      "addr": "0054e530"
+      "addr": "0054e530",
+      "from_addr": "0054e61f",
+      "name": "core_platfrm.cpp_FUN_0054e530",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004426c0",
+    "address_range": [
+      [
+        "004426c0",
+        "0044270b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_course.cpp_CCourse_free_FUN_004426c0",
+    "signature": "void core_course.cpp_CCourse_free_FUN_004426c0(CCourse * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00618f98",
+      "name": "s_core_course_cpp_00618f98",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCourse *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "frame_list[-1].",
+      "text": "crt_memory_c_free_FUN_005fe659(&this_ptr->frame_list[-1].frame4.orient.z);",
+      "type": "negative_offset"
     }
   ]
 }

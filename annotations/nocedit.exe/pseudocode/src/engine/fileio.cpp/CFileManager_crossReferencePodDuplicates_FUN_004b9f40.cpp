@@ -95,8 +95,8 @@ engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
   pvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      ((int)local_3c * 0x42c + 4,"..\\engine\\fileio.cpp",0xe36);
   local_28.data_array =
-       (char **)crt_memory_c_constructTypedObjectArray_FUN_00601272
-                          (pvVar3,(int)element_count,in_stack_fffffb18);
+       crt_memory_c_constructTypedObjectArray_FUN_00601272
+                 (pvVar3,(int)element_count,in_stack_fffffb18);
   if (local_28.data_array == (char **)0x0) {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0xe37;

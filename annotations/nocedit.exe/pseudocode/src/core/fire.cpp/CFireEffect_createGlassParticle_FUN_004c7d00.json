@@ -1,111 +1,111 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 17, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 56, 
-    "assembly_lines": 39, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CGlassParticle_init_FUN_004c1c00", 
-      "addr": "004c1c00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_GlassParticleNextIndex", 
-      "addr": "02d59134", 
-      "value": null
-    }, 
-    {
-      "type": "CGlassParticle[256]", 
-      "name": "g_GlassParticlePool", 
-      "addr": "02d59138", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c7d00", 
-    "signature": "void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, SMRGLTextureBasic * texture, int lifetime)", 
-    "address_range": [
-      [
-        "004c7d00", 
-        "004c7d5d"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "STriangleVertices *", 
-        "size": 4, 
-        "name": "triangle_vertices"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "uv_u_per_vertex"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "uv_v_per_vertex"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "SMRGLTextureBasic *", 
-        "size": 4, 
-        "name": "texture"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "lifetime"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    "assembly_lines": 39,
+    "complexity_score": 17,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 56
+  },
   "cross_references": [
     {
-      "from_addr": "004ea362", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0", 
-      "addr": "004ea1c0"
-    }, 
+      "addr": "004ea1c0",
+      "from_addr": "004ea362",
+      "name": "core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0059d424", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0", 
-      "addr": "0059cec0"
+      "addr": "0059cec0",
+      "from_addr": "0059d424",
+      "name": "core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c7d00",
+    "address_range": [
+      [
+        "004c7d00",
+        "004c7d5d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00",
+    "signature": "void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, SMRGLTextureBasic * texture, int lifetime)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c1c00",
+      "name": "core_fire.cpp_CGlassParticle_init_FUN_004c1c00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d59134",
+      "name": "g_GlassParticleNextIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d59138",
+      "name": "g_GlassParticlePool",
+      "type": "CGlassParticle[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_vertices",
+        "offset": 8,
+        "size": 4,
+        "type": "STriangleVertices *"
+      },
+      {
+        "is_param": true,
+        "name": "uv_u_per_vertex",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "uv_v_per_vertex",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 20,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "lifetime",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

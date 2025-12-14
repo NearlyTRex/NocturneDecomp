@@ -54,7 +54,7 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
           plVar10 = plVar10 + 1;
           iVar7 = iVar7 + -8;
         }
-        if (iVar7 != 0 && SCARRY4(iVar7 + -8,8) == iVar7 < 0) {
+        if (iVar7 != 0 && -9 < iVar7 + -8) {
           *(int *)plVar10 = *piVar8;
           if (4 < iVar7) {
             *(int *)((int)plVar10 + 4) = piVar8[1];
@@ -88,7 +88,7 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
               pSVar11 = (SRenderVertex *)&(pSVar11->projected_vertex).transformed_z;
               iVar7 = iVar7 + -8;
             }
-            if (iVar7 != 0 && SCARRY4(iVar7 + -8,8) == iVar7 < 0) {
+            if (iVar7 != 0 && -9 < iVar7 + -8) {
               (pSVar11->projected_vertex).transformed_x = (pSVar9->projected_vertex).transformed_x;
               if (4 < iVar7) {
                 *(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =
@@ -117,7 +117,7 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
               pSVar11 = (SRenderVertex *)&(pSVar11->projected_vertex).transformed_z;
               iVar7 = iVar7 + -8;
             }
-            if (iVar7 != 0 && SCARRY4(iVar7 + -8,8) == iVar7 < 0) {
+            if (iVar7 != 0 && -9 < iVar7 + -8) {
               (pSVar11->projected_vertex).transformed_x = (pSVar9->projected_vertex).transformed_x;
               if (4 < iVar7) {
                 *(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =

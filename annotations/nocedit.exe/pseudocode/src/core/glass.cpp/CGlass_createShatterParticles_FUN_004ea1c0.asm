@@ -159,35 +159,35 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1ec]     ; 004ea1d1
     MOV ESI,dword ptr [ESP + 0x1f0]     ; 004ea1d8
     MOV EDI,dword ptr [ESP + 0x1f4]     ; 004ea1df
-    PUSH 0x6598c0                       ; 004ea1e6 | WatcomTypeInfo g_CVectorTypeInfo
+    PUSH 0x6598c0                       ; 004ea1e6 | g_CVectorTypeInfo
     PUSH 0x4                            ; 004ea1eb
     LEA EAX,[ESP + 0x8]                 ; 004ea1ed
     PUSH EAX                            ; 004ea1f1
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004ea1f2 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004ea1f2
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004ea1f7
     MOV EDX,0x1                         ; 004ea1fa
     MOV ECX,dword ptr [ESP + 0x1f8]     ; 004ea1ff
     MOV dword ptr [ESP + 0x1d0],EDX     ; 004ea206
     CMP ECX,0x3                         ; 004ea20d
-    JG 0x004ea375                       ; 004ea210 | LAB_004ea375
-        ;   XREF to: 004ea375 (CONDITIONAL_JUMP)
+    JG 0x004ea375                       ; 004ea210
+        ;   XREF to: 004ea375 (CONDITIONAL_JUMP)  ; LAB_004ea375
     CMP dword ptr [ESP + 0x1f8],0x2     ; 004ea216
         ;   Label: LAB_004ea216
-    JLE 0x004ea383                      ; 004ea21e | LAB_004ea383
-        ;   XREF to: 004ea383 (CONDITIONAL_JUMP)
+    JLE 0x004ea383                      ; 004ea21e
+        ;   XREF to: 004ea383 (CONDITIONAL_JUMP)  ; LAB_004ea383
     PUSH 0x3f000000                     ; 004ea224
-    CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 004ea229 | int core_actor.cpp_randomChance_FUN_0040cd10(float probability_threshold)
-        ;   XREF to: 0040cd10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_randomChance_FUN_0040cd10 ; 004ea229
+        ;   XREF to: 0040cd10 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cd10(float probability_threshold)
     ADD ESP,0x4                         ; 004ea22e
     TEST EAX,EAX                        ; 004ea231
-    JZ 0x004ea383                       ; 004ea233 | LAB_004ea383
-        ;   XREF to: 004ea383 (CONDITIONAL_JUMP)
+    JZ 0x004ea383                       ; 004ea233
+        ;   XREF to: 004ea383 (CONDITIONAL_JUMP)  ; LAB_004ea383
     MOV EAX,ESP                         ; 004ea239
         ;   Label: LAB_004ea239
     CMP EAX,EBX                         ; 004ea23b
-    JZ 0x004ea252                       ; 004ea23d | LAB_004ea252
-        ;   XREF to: 004ea252 (CONDITIONAL_JUMP)
+    JZ 0x004ea252                       ; 004ea23d
+        ;   XREF to: 004ea252 (CONDITIONAL_JUMP)  ; LAB_004ea252
     MOV EAX,dword ptr [EBX]             ; 004ea23f
     MOV dword ptr [ESP],EAX             ; 004ea241
     MOV EAX,dword ptr [EBX + 0x4]       ; 004ea244
@@ -198,8 +198,8 @@ section .text
         ;   Label: LAB_004ea252
     LEA EDX,[EBX + 0xc]                 ; 004ea256
     CMP EAX,EDX                         ; 004ea259
-    JZ 0x004ea271                       ; 004ea25b | LAB_004ea271
-        ;   XREF to: 004ea271 (CONDITIONAL_JUMP)
+    JZ 0x004ea271                       ; 004ea25b
+        ;   XREF to: 004ea271 (CONDITIONAL_JUMP)  ; LAB_004ea271
     MOV EAX,dword ptr [EDX]             ; 004ea25d
     MOV dword ptr [ESP + 0xc],EAX       ; 004ea25f
     MOV EAX,dword ptr [EDX + 0x4]       ; 004ea263
@@ -210,8 +210,8 @@ section .text
         ;   Label: LAB_004ea271
     LEA EDX,[EBX + 0x18]                ; 004ea275
     CMP EAX,EDX                         ; 004ea278
-    JZ 0x004ea290                       ; 004ea27a | LAB_004ea290
-        ;   XREF to: 004ea290 (CONDITIONAL_JUMP)
+    JZ 0x004ea290                       ; 004ea27a
+        ;   XREF to: 004ea290 (CONDITIONAL_JUMP)  ; LAB_004ea290
     MOV EAX,dword ptr [EDX]             ; 004ea27c
     MOV dword ptr [ESP + 0x18],EAX      ; 004ea27e
     MOV EAX,dword ptr [EDX + 0x4]       ; 004ea282
@@ -241,16 +241,16 @@ section .text
     PUSH EAX                            ; 004ea2cf
     LEA EAX,[ESP + 0x10]                ; 004ea2d0
     PUSH EAX                            ; 004ea2d4
-    MOV EDX,dword ptr [0x0067a3d0]      ; 004ea2d5 | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
-    PUSH EDX                            ; 004ea2db | CFireEffect g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00 ; 004ea2dc | void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, ...)
-        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x0067a3d0]      ; 004ea2d5 | g_CFireEffectInstance | g_CFireEffectPtr
+    PUSH EDX                            ; 004ea2db | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00 ; 004ea2dc
+        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, ...)
     LEA EAX,[ESP + 0x24]                ; 004ea2e1
     LEA EDX,[EBX + 0x18]                ; 004ea2e5
     ADD ESP,0x18                        ; 004ea2e8
     CMP EAX,EDX                         ; 004ea2eb
-    JZ 0x004ea303                       ; 004ea2ed | LAB_004ea303
-        ;   XREF to: 004ea303 (CONDITIONAL_JUMP)
+    JZ 0x004ea303                       ; 004ea2ed
+        ;   XREF to: 004ea303 (CONDITIONAL_JUMP)  ; LAB_004ea303
     MOV EAX,dword ptr [EDX]             ; 004ea2ef
     MOV dword ptr [ESP + 0xc],EAX       ; 004ea2f1
     MOV EAX,dword ptr [EDX + 0x4]       ; 004ea2f5
@@ -261,8 +261,8 @@ section .text
         ;   Label: LAB_004ea303
     ADD EBX,0x24                        ; 004ea307
     CMP EAX,EBX                         ; 004ea30a
-    JZ 0x004ea322                       ; 004ea30c | LAB_004ea322
-        ;   XREF to: 004ea322 (CONDITIONAL_JUMP)
+    JZ 0x004ea322                       ; 004ea30c
+        ;   XREF to: 004ea322 (CONDITIONAL_JUMP)  ; LAB_004ea322
     MOV EAX,dword ptr [EBX]             ; 004ea30e
     MOV dword ptr [ESP + 0x18],EAX      ; 004ea310
     MOV EAX,dword ptr [EBX + 0x4]       ; 004ea314
@@ -288,10 +288,10 @@ section .text
     PUSH EAX                            ; 004ea355
     LEA EAX,[ESP + 0x10]                ; 004ea356
     PUSH EAX                            ; 004ea35a
-    MOV EBX,dword ptr [0x0067a3d0]      ; 004ea35b | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
-    PUSH EBX                            ; 004ea361 | CFireEffect g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00 ; 004ea362 | void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, ...)
-        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)
+    MOV EBX,dword ptr [0x0067a3d0]      ; 004ea35b | g_CFireEffectInstance | g_CFireEffectPtr
+    PUSH EBX                            ; 004ea361 | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00 ; 004ea362
+        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 004ea367
     ADD ESP,0x1d4                       ; 004ea36a
     POP EBP                             ; 004ea370
@@ -302,29 +302,29 @@ section .text
     XOR EAX,EAX                         ; 004ea375
         ;   Label: LAB_004ea375
     MOV dword ptr [ESP + 0x1d0],EAX     ; 004ea377
-    JMP 0x004ea216                      ; 004ea37e | LAB_004ea216
-        ;   XREF to: 004ea216 (UNCONDITIONAL_JUMP)
+    JMP 0x004ea216                      ; 004ea37e
+        ;   XREF to: 004ea216 (UNCONDITIONAL_JUMP)  ; LAB_004ea216
     CMP dword ptr [ESP + 0x1d0],0x0     ; 004ea383
         ;   Label: LAB_004ea383
-    JZ 0x004ea239                       ; 004ea38b | LAB_004ea239
-        ;   XREF to: 004ea239 (CONDITIONAL_JUMP)
+    JZ 0x004ea239                       ; 004ea38b
+        ;   XREF to: 004ea239 (CONDITIONAL_JUMP)  ; LAB_004ea239
     MOV EAX,ESP                         ; 004ea391
     CMP EAX,EBX                         ; 004ea393
-    JNZ 0x004eaecb                      ; 004ea395 | LAB_004eaecb
-        ;   XREF to: 004eaecb (CONDITIONAL_JUMP)
+    JNZ 0x004eaecb                      ; 004ea395
+        ;   XREF to: 004eaecb (CONDITIONAL_JUMP)  ; LAB_004eaecb
     LEA EAX,[EBX + 0xc]                 ; 004ea39b
         ;   Label: LAB_004ea39b
     FLD float ptr [EBX]                 ; 004ea39e
     FADD float ptr [EAX]                ; 004ea3a0
     FST float ptr [ESP + 0x164]         ; 004ea3a2
-    FDIV float ptr [0x0062e0d9]         ; 004ea3a9 | float FLOAT_0062e0d9
+    FDIV float ptr [0x0062e0d9]         ; 004ea3a9 | FLOAT_0062e0d9
     FLD float ptr [EBX + 0x4]           ; 004ea3af
     FADD float ptr [EAX + 0x4]          ; 004ea3b2
     FST float ptr [ESP + 0x168]         ; 004ea3b5
     FLD float ptr [EBX + 0x8]           ; 004ea3bc
     FADD float ptr [EAX + 0x8]          ; 004ea3bf
     FXCH                                ; 004ea3c2
-    FLD float ptr [0x0062e0dd]          ; 004ea3c4 | float FLOAT_0062e0dd
+    FLD float ptr [0x0062e0dd]          ; 004ea3c4 | FLOAT_0062e0dd
     FXCH                                ; 004ea3ca
     FMUL ST1                            ; 004ea3cc
     FXCH ST2                            ; 004ea3ce
@@ -337,8 +337,8 @@ section .text
     FSTP float ptr [ESP + 0x7c]         ; 004ea3e7
     FSTP float ptr [ESP + 0x74]         ; 004ea3eb
     CMP EDX,EAX                         ; 004ea3ef
-    JZ 0x004ea40b                       ; 004ea3f1 | LAB_004ea40b
-        ;   XREF to: 004ea40b (CONDITIONAL_JUMP)
+    JZ 0x004ea40b                       ; 004ea3f1
+        ;   XREF to: 004ea40b (CONDITIONAL_JUMP)  ; LAB_004ea40b
     MOV EAX,dword ptr [ESP + 0x74]      ; 004ea3f3
     MOV dword ptr [ESP + 0xc],EAX       ; 004ea3f7
     MOV EAX,dword ptr [ESP + 0x78]      ; 004ea3fb
@@ -374,7 +374,7 @@ section .text
     FSTP float ptr [ESP + 0xdc]         ; 004ea473
     FADD float ptr [EDX]                ; 004ea47a
     FST float ptr [ESP + 0xf8]          ; 004ea47c
-    FDIV float ptr [0x0062e0e1]         ; 004ea483 | float FLOAT_0062e0e1
+    FDIV float ptr [0x0062e0e1]         ; 004ea483 | FLOAT_0062e0e1
     FLD float ptr [ESP + 0xd8]          ; 004ea489
     FADD float ptr [EDX + 0x4]          ; 004ea490
     FLD float ptr [ESP + 0xdc]          ; 004ea493
@@ -383,7 +383,7 @@ section .text
     FXCH                                ; 004ea4a3
     FADD float ptr [EDX + 0x8]          ; 004ea4a5
     FXCH                                ; 004ea4a8
-    FLD float ptr [0x0062e0e5]          ; 004ea4aa | float FLOAT_0062e0e5
+    FLD float ptr [0x0062e0e5]          ; 004ea4aa | FLOAT_0062e0e5
     FXCH                                ; 004ea4b0
     FMUL ST1                            ; 004ea4b2
     FXCH ST2                            ; 004ea4b4
@@ -396,8 +396,8 @@ section .text
     FSTP float ptr [ESP + 0x154]        ; 004ea4d3
     FSTP float ptr [ESP + 0x14c]        ; 004ea4da
     CMP EDX,EAX                         ; 004ea4e1
-    JZ 0x004ea506                       ; 004ea4e3 | LAB_004ea506
-        ;   XREF to: 004ea506 (CONDITIONAL_JUMP)
+    JZ 0x004ea506                       ; 004ea4e3
+        ;   XREF to: 004ea506 (CONDITIONAL_JUMP)  ; LAB_004ea506
     MOV EAX,dword ptr [ESP + 0x14c]     ; 004ea4e5
     MOV dword ptr [ESP + 0x18],EAX      ; 004ea4ec
     MOV EAX,dword ptr [ESP + 0x150]     ; 004ea4f0
@@ -409,14 +409,14 @@ section .text
     FLD float ptr [EBX]                 ; 004ea509
     FADD float ptr [EAX]                ; 004ea50b
     FST float ptr [ESP + 0x194]         ; 004ea50d
-    FDIV float ptr [0x0062e0d9]         ; 004ea514 | float FLOAT_0062e0d9
+    FDIV float ptr [0x0062e0d9]         ; 004ea514 | FLOAT_0062e0d9
     FLD float ptr [EBX + 0x4]           ; 004ea51a
     FADD float ptr [EAX + 0x4]          ; 004ea51d
     FST float ptr [ESP + 0x198]         ; 004ea520
     FLD float ptr [EBX + 0x8]           ; 004ea527
     FADD float ptr [EAX + 0x8]          ; 004ea52a
     FXCH                                ; 004ea52d
-    FLD float ptr [0x0062e0dd]          ; 004ea52f | float FLOAT_0062e0dd
+    FLD float ptr [0x0062e0dd]          ; 004ea52f | FLOAT_0062e0dd
     FXCH                                ; 004ea535
     FMUL ST1                            ; 004ea537
     FXCH ST2                            ; 004ea539
@@ -429,8 +429,8 @@ section .text
     FSTP float ptr [ESP + 0x190]        ; 004ea558
     FSTP float ptr [ESP + 0x188]        ; 004ea55f
     CMP EDX,EAX                         ; 004ea566
-    JZ 0x004ea58b                       ; 004ea568 | LAB_004ea58b
-        ;   XREF to: 004ea58b (CONDITIONAL_JUMP)
+    JZ 0x004ea58b                       ; 004ea568
+        ;   XREF to: 004ea58b (CONDITIONAL_JUMP)  ; LAB_004ea58b
     MOV EAX,dword ptr [ESP + 0x188]     ; 004ea56a
     MOV dword ptr [ESP + 0x24],EAX      ; 004ea571
     MOV EAX,dword ptr [ESP + 0x18c]     ; 004ea575
@@ -509,21 +509,21 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004ea63d
     PUSH EAX                            ; 004ea641
     PUSH EBP                            ; 004ea642
-    CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 ; 004ea643 | void core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass * this_ptr, SQuadVertices * quad_vertices, CVector4i * quad_uv_u, CVector4i * quad_uv_v, ...)
-        ;   XREF to: 004ea1c0 (UNCONDITIONAL_CALL)
+    CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 ; 004ea643
+        ;   XREF to: 004ea1c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass * this_ptr, SQuadVertices * quad_vertices, CVector4i * quad_uv_u, CVector4i * quad_uv_v, ...)
     LEA EAX,[EBX + 0xc]                 ; 004ea648
     FLD float ptr [EBX]                 ; 004ea64b
     FADD float ptr [EAX]                ; 004ea64d
     ADD ESP,0x14                        ; 004ea64f
     FST float ptr [ESP + 0x1a0]         ; 004ea652
-    FDIV float ptr [0x0062e0d9]         ; 004ea659 | float FLOAT_0062e0d9
+    FDIV float ptr [0x0062e0d9]         ; 004ea659 | FLOAT_0062e0d9
     FLD float ptr [EBX + 0x4]           ; 004ea65f
     FADD float ptr [EAX + 0x4]          ; 004ea662
     FST float ptr [ESP + 0x1a4]         ; 004ea665
     FLD float ptr [EBX + 0x8]           ; 004ea66c
     FADD float ptr [EAX + 0x8]          ; 004ea66f
     FXCH                                ; 004ea672
-    FLD float ptr [0x0062e0dd]          ; 004ea674 | float FLOAT_0062e0dd
+    FLD float ptr [0x0062e0dd]          ; 004ea674 | FLOAT_0062e0dd
     FXCH                                ; 004ea67a
     FMUL ST1                            ; 004ea67c
     FXCH ST2                            ; 004ea67e
@@ -536,8 +536,8 @@ section .text
     FSTP float ptr [ESP + 0xa0]         ; 004ea69b
     FSTP float ptr [ESP + 0x98]         ; 004ea6a2
     CMP EDX,EAX                         ; 004ea6a9
-    JZ 0x004ea6cd                       ; 004ea6ab | LAB_004ea6cd
-        ;   XREF to: 004ea6cd (CONDITIONAL_JUMP)
+    JZ 0x004ea6cd                       ; 004ea6ab
+        ;   XREF to: 004ea6cd (CONDITIONAL_JUMP)  ; LAB_004ea6cd
     MOV EAX,dword ptr [ESP + 0x98]      ; 004ea6ad
     MOV dword ptr [ESP],EAX             ; 004ea6b4
     MOV EAX,dword ptr [ESP + 0x9c]      ; 004ea6b7
@@ -548,8 +548,8 @@ section .text
         ;   Label: LAB_004ea6cd
     LEA EDX,[EBX + 0xc]                 ; 004ea6d1
     CMP EAX,EDX                         ; 004ea6d4
-    JZ 0x004ea6ec                       ; 004ea6d6 | LAB_004ea6ec
-        ;   XREF to: 004ea6ec (CONDITIONAL_JUMP)
+    JZ 0x004ea6ec                       ; 004ea6d6
+        ;   XREF to: 004ea6ec (CONDITIONAL_JUMP)  ; LAB_004ea6ec
     MOV EAX,dword ptr [EDX]             ; 004ea6d8
     MOV dword ptr [ESP + 0xc],EAX       ; 004ea6da
     MOV EAX,dword ptr [EDX + 0x4]       ; 004ea6de
@@ -562,14 +562,14 @@ section .text
     FLD float ptr [EAX]                 ; 004ea6f2
     FADD float ptr [EDX]                ; 004ea6f4
     FST float ptr [ESP + 0x1c4]         ; 004ea6f6
-    FDIV float ptr [0x0062e0d9]         ; 004ea6fd | float FLOAT_0062e0d9
+    FDIV float ptr [0x0062e0d9]         ; 004ea6fd | FLOAT_0062e0d9
     FLD float ptr [EAX + 0x4]           ; 004ea703
     FADD float ptr [EDX + 0x4]          ; 004ea706
     FST float ptr [ESP + 0x1c8]         ; 004ea709
     FLD float ptr [EAX + 0x8]           ; 004ea710
     FADD float ptr [EDX + 0x8]          ; 004ea713
     FXCH                                ; 004ea716
-    FLD float ptr [0x0062e0dd]          ; 004ea718 | float FLOAT_0062e0dd
+    FLD float ptr [0x0062e0dd]          ; 004ea718 | FLOAT_0062e0dd
     FXCH                                ; 004ea71e
     FMUL ST1                            ; 004ea720
     FXCH ST2                            ; 004ea722
@@ -582,8 +582,8 @@ section .text
     FSTP float ptr [ESP + 0xe8]         ; 004ea741
     FSTP float ptr [ESP + 0xe0]         ; 004ea748
     CMP EDX,EAX                         ; 004ea74f
-    JZ 0x004ea774                       ; 004ea751 | LAB_004ea774
-        ;   XREF to: 004ea774 (CONDITIONAL_JUMP)
+    JZ 0x004ea774                       ; 004ea751
+        ;   XREF to: 004ea774 (CONDITIONAL_JUMP)  ; LAB_004ea774
     MOV EAX,dword ptr [ESP + 0xe0]      ; 004ea753
     MOV dword ptr [ESP + 0x18],EAX      ; 004ea75a
     MOV EAX,dword ptr [ESP + 0xe4]      ; 004ea75e
@@ -619,7 +619,7 @@ section .text
     FSTP float ptr [ESP + 0x10c]        ; 004ea7dc
     FADD float ptr [EAX]                ; 004ea7e3
     FST float ptr [ESP + 0x1b8]         ; 004ea7e5
-    FDIV float ptr [0x0062e0e1]         ; 004ea7ec | float FLOAT_0062e0e1
+    FDIV float ptr [0x0062e0e1]         ; 004ea7ec | FLOAT_0062e0e1
     FLD float ptr [ESP + 0x108]         ; 004ea7f2
     FADD float ptr [EAX + 0x4]          ; 004ea7f9
     FLD float ptr [ESP + 0x10c]         ; 004ea7fc
@@ -628,7 +628,7 @@ section .text
     FXCH                                ; 004ea80c
     FADD float ptr [EAX + 0x8]          ; 004ea80e
     FXCH                                ; 004ea811
-    FLD float ptr [0x0062e0e5]          ; 004ea813 | float FLOAT_0062e0e5
+    FLD float ptr [0x0062e0e5]          ; 004ea813 | FLOAT_0062e0e5
     FXCH                                ; 004ea819
     FMUL ST1                            ; 004ea81b
     FXCH ST2                            ; 004ea81d
@@ -641,8 +641,8 @@ section .text
     FSTP float ptr [ESP + 0x70]         ; 004ea836
     FSTP float ptr [ESP + 0x68]         ; 004ea83a
     CMP EAX,EDX                         ; 004ea83e
-    JZ 0x004ea85a                       ; 004ea840 | LAB_004ea85a
-        ;   XREF to: 004ea85a (CONDITIONAL_JUMP)
+    JZ 0x004ea85a                       ; 004ea840
+        ;   XREF to: 004ea85a (CONDITIONAL_JUMP)  ; LAB_004ea85a
     MOV EAX,dword ptr [ESP + 0x68]      ; 004ea842
     MOV dword ptr [ESP + 0x24],EAX      ; 004ea846
     MOV EAX,dword ptr [ESP + 0x6c]      ; 004ea84a
@@ -720,8 +720,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004ea90c
     PUSH EAX                            ; 004ea910
     PUSH EBP                            ; 004ea911
-    CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 ; 004ea912 | void core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass * this_ptr, SQuadVertices * quad_vertices, CVector4i * quad_uv_u, CVector4i * quad_uv_v, ...)
-        ;   XREF to: 004ea1c0 (UNCONDITIONAL_CALL)
+    CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 ; 004ea912
+        ;   XREF to: 004ea1c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass * this_ptr, SQuadVertices * quad_vertices, CVector4i * quad_uv_u, CVector4i * quad_uv_v, ...)
     LEA ECX,[EBX + 0xc]                 ; 004ea917
     FLD float ptr [EBX]                 ; 004ea91a
     ADD ESP,0x14                        ; 004ea91c
@@ -751,7 +751,7 @@ section .text
     FSTP float ptr [ESP + 0x148]        ; 004ea970
     FADD float ptr [EAX]                ; 004ea977
     FST float ptr [ESP + 0x1ac]         ; 004ea979
-    FDIV float ptr [0x0062e0e1]         ; 004ea980 | float FLOAT_0062e0e1
+    FDIV float ptr [0x0062e0e1]         ; 004ea980 | FLOAT_0062e0e1
     FLD float ptr [ESP + 0x144]         ; 004ea986
     FADD float ptr [EAX + 0x4]          ; 004ea98d
     FLD float ptr [ESP + 0x148]         ; 004ea990
@@ -760,7 +760,7 @@ section .text
     FXCH                                ; 004ea9a0
     FADD float ptr [EAX + 0x8]          ; 004ea9a2
     FXCH                                ; 004ea9a5
-    FLD float ptr [0x0062e0e5]          ; 004ea9a7 | float FLOAT_0062e0e5
+    FLD float ptr [0x0062e0e5]          ; 004ea9a7 | FLOAT_0062e0e5
     FXCH                                ; 004ea9ad
     FMUL ST1                            ; 004ea9af
     FXCH ST2                            ; 004ea9b1
@@ -773,8 +773,8 @@ section .text
     FSTP float ptr [ESP + 0xf4]         ; 004ea9ce
     FSTP float ptr [ESP + 0xec]         ; 004ea9d5
     CMP EAX,EDX                         ; 004ea9dc
-    JZ 0x004eaa00                       ; 004ea9de | LAB_004eaa00
-        ;   XREF to: 004eaa00 (CONDITIONAL_JUMP)
+    JZ 0x004eaa00                       ; 004ea9de
+        ;   XREF to: 004eaa00 (CONDITIONAL_JUMP)  ; LAB_004eaa00
     MOV EAX,dword ptr [ESP + 0xec]      ; 004ea9e0
     MOV dword ptr [ESP],EAX             ; 004ea9e7
     MOV EAX,dword ptr [ESP + 0xf0]      ; 004ea9ea
@@ -787,14 +787,14 @@ section .text
     FLD float ptr [EDX]                 ; 004eaa06
     FADD float ptr [EAX]                ; 004eaa08
     FST float ptr [ESP + 0x80]          ; 004eaa0a
-    FDIV float ptr [0x0062e0d9]         ; 004eaa11 | float FLOAT_0062e0d9
+    FDIV float ptr [0x0062e0d9]         ; 004eaa11 | FLOAT_0062e0d9
     FLD float ptr [EDX + 0x4]           ; 004eaa17
     FADD float ptr [EAX + 0x4]          ; 004eaa1a
     FST float ptr [ESP + 0x84]          ; 004eaa1d
     FLD float ptr [EDX + 0x8]           ; 004eaa24
     FADD float ptr [EAX + 0x8]          ; 004eaa27
     FXCH                                ; 004eaa2a
-    FLD float ptr [0x0062e0dd]          ; 004eaa2c | float FLOAT_0062e0dd
+    FLD float ptr [0x0062e0dd]          ; 004eaa2c | FLOAT_0062e0dd
     FXCH                                ; 004eaa32
     FMUL ST1                            ; 004eaa34
     FXCH ST2                            ; 004eaa36
@@ -807,8 +807,8 @@ section .text
     FSTP float ptr [ESP + 0x178]        ; 004eaa55
     FSTP float ptr [ESP + 0x170]        ; 004eaa5c
     CMP EDX,EAX                         ; 004eaa63
-    JZ 0x004eaa88                       ; 004eaa65 | LAB_004eaa88
-        ;   XREF to: 004eaa88 (CONDITIONAL_JUMP)
+    JZ 0x004eaa88                       ; 004eaa65
+        ;   XREF to: 004eaa88 (CONDITIONAL_JUMP)  ; LAB_004eaa88
     MOV EAX,dword ptr [ESP + 0x170]     ; 004eaa67
     MOV dword ptr [ESP + 0xc],EAX       ; 004eaa6e
     MOV EAX,dword ptr [ESP + 0x174]     ; 004eaa72
@@ -819,8 +819,8 @@ section .text
         ;   Label: LAB_004eaa88
     LEA EDX,[EBX + 0x18]                ; 004eaa8c
     CMP EAX,EDX                         ; 004eaa8f
-    JZ 0x004eaaa7                       ; 004eaa91 | LAB_004eaaa7
-        ;   XREF to: 004eaaa7 (CONDITIONAL_JUMP)
+    JZ 0x004eaaa7                       ; 004eaa91
+        ;   XREF to: 004eaaa7 (CONDITIONAL_JUMP)  ; LAB_004eaaa7
     MOV EAX,dword ptr [EDX]             ; 004eaa93
     MOV dword ptr [ESP + 0x18],EAX      ; 004eaa95
     MOV EAX,dword ptr [EDX + 0x4]       ; 004eaa99
@@ -833,14 +833,14 @@ section .text
     FLD float ptr [EDX]                 ; 004eaaad
     FADD float ptr [EAX]                ; 004eaaaf
     FST float ptr [ESP + 0x8c]          ; 004eaab1
-    FDIV float ptr [0x0062e0d9]         ; 004eaab8 | float FLOAT_0062e0d9
+    FDIV float ptr [0x0062e0d9]         ; 004eaab8 | FLOAT_0062e0d9
     FLD float ptr [EDX + 0x4]           ; 004eaabe
     FADD float ptr [EAX + 0x4]          ; 004eaac1
     FST float ptr [ESP + 0x90]          ; 004eaac4
     FLD float ptr [EDX + 0x8]           ; 004eaacb
     FADD float ptr [EAX + 0x8]          ; 004eaace
     FXCH                                ; 004eaad1
-    FLD float ptr [0x0062e0dd]          ; 004eaad3 | float FLOAT_0062e0dd
+    FLD float ptr [0x0062e0dd]          ; 004eaad3 | FLOAT_0062e0dd
     FXCH                                ; 004eaad9
     FMUL ST1                            ; 004eaadb
     FXCH ST2                            ; 004eaadd
@@ -853,8 +853,8 @@ section .text
     FSTP float ptr [ESP + 0x58]         ; 004eaaf6
     FSTP float ptr [ESP + 0x50]         ; 004eaafa
     CMP EAX,EDX                         ; 004eaafe
-    JZ 0x004eab1a                       ; 004eab00 | LAB_004eab1a
-        ;   XREF to: 004eab1a (CONDITIONAL_JUMP)
+    JZ 0x004eab1a                       ; 004eab00
+        ;   XREF to: 004eab1a (CONDITIONAL_JUMP)  ; LAB_004eab1a
     MOV EAX,dword ptr [ESP + 0x50]      ; 004eab02
     MOV dword ptr [ESP + 0x24],EAX      ; 004eab06
     MOV EAX,dword ptr [ESP + 0x54]      ; 004eab0a
@@ -931,21 +931,21 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004eabcd
     PUSH EAX                            ; 004eabd1
     PUSH EBP                            ; 004eabd2
-    CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 ; 004eabd3 | void core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass * this_ptr, SQuadVertices * quad_vertices, CVector4i * quad_uv_u, CVector4i * quad_uv_v, ...)
-        ;   XREF to: 004ea1c0 (UNCONDITIONAL_CALL)
+    CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 ; 004eabd3
+        ;   XREF to: 004ea1c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass * this_ptr, SQuadVertices * quad_vertices, CVector4i * quad_uv_u, CVector4i * quad_uv_v, ...)
     LEA EAX,[EBX + 0x24]                ; 004eabd8
     FLD float ptr [EBX]                 ; 004eabdb
     FADD float ptr [EAX]                ; 004eabdd
     ADD ESP,0x14                        ; 004eabdf
     FST float ptr [ESP + 0xc8]          ; 004eabe2
-    FDIV float ptr [0x0062e0d9]         ; 004eabe9 | float FLOAT_0062e0d9
+    FDIV float ptr [0x0062e0d9]         ; 004eabe9 | FLOAT_0062e0d9
     FLD float ptr [EBX + 0x4]           ; 004eabef
     FADD float ptr [EAX + 0x4]          ; 004eabf2
     FST float ptr [ESP + 0xcc]          ; 004eabf5
     FLD float ptr [EBX + 0x8]           ; 004eabfc
     FADD float ptr [EAX + 0x8]          ; 004eabff
     FXCH                                ; 004eac02
-    FLD float ptr [0x0062e0dd]          ; 004eac04 | float FLOAT_0062e0dd
+    FLD float ptr [0x0062e0dd]          ; 004eac04 | FLOAT_0062e0dd
     FXCH                                ; 004eac0a
     FMUL ST1                            ; 004eac0c
     FXCH ST2                            ; 004eac0e
@@ -958,8 +958,8 @@ section .text
     FSTP float ptr [ESP + 0xb8]         ; 004eac2b
     FSTP float ptr [ESP + 0xb0]         ; 004eac32
     CMP EDX,EAX                         ; 004eac39
-    JZ 0x004eac5d                       ; 004eac3b | LAB_004eac5d
-        ;   XREF to: 004eac5d (CONDITIONAL_JUMP)
+    JZ 0x004eac5d                       ; 004eac3b
+        ;   XREF to: 004eac5d (CONDITIONAL_JUMP)  ; LAB_004eac5d
     MOV EAX,dword ptr [ESP + 0xb0]      ; 004eac3d
     MOV dword ptr [ESP],EAX             ; 004eac44
     MOV EAX,dword ptr [ESP + 0xb4]      ; 004eac47
@@ -995,7 +995,7 @@ section .text
     FSTP float ptr [ESP + 0x118]        ; 004eacc5
     FADD float ptr [ECX]                ; 004eaccc
     FST float ptr [ESP + 0x128]         ; 004eacce
-    FDIV float ptr [0x0062e0e1]         ; 004eacd5 | float FLOAT_0062e0e1
+    FDIV float ptr [0x0062e0e1]         ; 004eacd5 | FLOAT_0062e0e1
     FLD float ptr [ESP + 0x114]         ; 004eacdb
     FADD float ptr [ECX + 0x4]          ; 004eace2
     FLD float ptr [ESP + 0x118]         ; 004eace5
@@ -1004,7 +1004,7 @@ section .text
     FXCH                                ; 004eacf5
     FADD float ptr [ECX + 0x8]          ; 004eacf7
     FXCH                                ; 004eacfa
-    FLD float ptr [0x0062e0e5]          ; 004eacfc | float FLOAT_0062e0e5
+    FLD float ptr [0x0062e0e5]          ; 004eacfc | FLOAT_0062e0e5
     FXCH                                ; 004ead02
     FMUL ST1                            ; 004ead04
     FXCH ST2                            ; 004ead06
@@ -1017,8 +1017,8 @@ section .text
     FSTP float ptr [ESP + 0x160]        ; 004ead25
     FSTP float ptr [ESP + 0x158]        ; 004ead2c
     CMP EDX,EAX                         ; 004ead33
-    JZ 0x004ead58                       ; 004ead35 | LAB_004ead58
-        ;   XREF to: 004ead58 (CONDITIONAL_JUMP)
+    JZ 0x004ead58                       ; 004ead35
+        ;   XREF to: 004ead58 (CONDITIONAL_JUMP)  ; LAB_004ead58
     MOV EAX,dword ptr [ESP + 0x158]     ; 004ead37
     MOV dword ptr [ESP + 0xc],EAX       ; 004ead3e
     MOV EAX,dword ptr [ESP + 0x15c]     ; 004ead42
@@ -1031,14 +1031,14 @@ section .text
     FLD float ptr [EDX]                 ; 004ead5e
     FADD float ptr [EAX]                ; 004ead60
     FST float ptr [ESP + 0x134]         ; 004ead62
-    FDIV float ptr [0x0062e0d9]         ; 004ead69 | float FLOAT_0062e0d9
+    FDIV float ptr [0x0062e0d9]         ; 004ead69 | FLOAT_0062e0d9
     FLD float ptr [EDX + 0x4]           ; 004ead6f
     FADD float ptr [EAX + 0x4]          ; 004ead72
     FST float ptr [ESP + 0x138]         ; 004ead75
     FLD float ptr [EDX + 0x8]           ; 004ead7c
     FADD float ptr [EAX + 0x8]          ; 004ead7f
     FXCH                                ; 004ead82
-    FLD float ptr [0x0062e0dd]          ; 004ead84 | float FLOAT_0062e0dd
+    FLD float ptr [0x0062e0dd]          ; 004ead84 | FLOAT_0062e0dd
     FXCH                                ; 004ead8a
     FMUL ST1                            ; 004ead8c
     FXCH ST2                            ; 004ead8e
@@ -1051,8 +1051,8 @@ section .text
     FSTP float ptr [ESP + 0xac]         ; 004eadad
     FSTP float ptr [ESP + 0xa4]         ; 004eadb4
     CMP EDX,EAX                         ; 004eadbb
-    JZ 0x004eade0                       ; 004eadbd | LAB_004eade0
-        ;   XREF to: 004eade0 (CONDITIONAL_JUMP)
+    JZ 0x004eade0                       ; 004eadbd
+        ;   XREF to: 004eade0 (CONDITIONAL_JUMP)  ; LAB_004eade0
     MOV EAX,dword ptr [ESP + 0xa4]      ; 004eadbf
     MOV dword ptr [ESP + 0x18],EAX      ; 004eadc6
     MOV EAX,dword ptr [ESP + 0xa8]      ; 004eadca
@@ -1063,8 +1063,8 @@ section .text
         ;   Label: LAB_004eade0
     ADD EBX,0x24                        ; 004eade4
     CMP EAX,EBX                         ; 004eade7
-    JZ 0x004eadff                       ; 004eade9 | LAB_004eadff
-        ;   XREF to: 004eadff (CONDITIONAL_JUMP)
+    JZ 0x004eadff                       ; 004eade9
+        ;   XREF to: 004eadff (CONDITIONAL_JUMP)  ; LAB_004eadff
     MOV EAX,dword ptr [EBX]             ; 004eadeb
     MOV dword ptr [ESP + 0x24],EAX      ; 004eaded
     MOV EAX,dword ptr [EBX + 0x4]       ; 004eadf1
@@ -1142,8 +1142,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 004eaeb2
     PUSH EAX                            ; 004eaeb6
     PUSH EBP                            ; 004eaeb7
-    CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 ; 004eaeb8 | void core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass * this_ptr, SQuadVertices * quad_vertices, CVector4i * quad_uv_u, CVector4i * quad_uv_v, ...)
-        ;   XREF to: 004ea1c0 (UNCONDITIONAL_CALL)
+    CALL core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0 ; 004eaeb8
+        ;   XREF to: 004ea1c0 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass * this_ptr, SQuadVertices * quad_vertices, CVector4i * quad_uv_u, CVector4i * quad_uv_v, ...)
     ADD ESP,0x14                        ; 004eaebd
     ADD ESP,0x1d4                       ; 004eaec0
     POP EBP                             ; 004eaec6
@@ -1158,6 +1158,6 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 004eaed3
     MOV EAX,dword ptr [EBX + 0x8]       ; 004eaed7
     MOV dword ptr [ESP + 0x8],EAX       ; 004eaeda
-    JMP 0x004ea39b                      ; 004eaede | LAB_004ea39b
-        ;   XREF to: 004ea39b (UNCONDITIONAL_JUMP)
+    JMP 0x004ea39b                      ; 004eaede
+        ;   XREF to: 004ea39b (UNCONDITIONAL_JUMP)  ; LAB_004ea39b
 

@@ -39,15 +39,15 @@ section .text
 
     SUB ESP,0x8                         ; 0040cd10
         ;   Label: core_actor.cpp_randomChance_FUN_0040cd10
-    MOV EAX,[0x0067b654]                ; 0040cd13 | CGame g_CGameInstance | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 0040cd13 | g_CGameInstance | g_CGamePtr
     CMP dword ptr [EAX + 0x23c],0x0     ; 0040cd18 | DAT_02d81cd8
-    JZ 0x0040cd4d                       ; 0040cd1f | LAB_0040cd4d
-        ;   XREF to: 0040cd4d (CONDITIONAL_JUMP)
-    CALL core_actor.cpp_generateRandomValue_FUN_0040cba0 ; 0040cd21 | uint core_actor.cpp_generateRandomValue_FUN_0040cba0()
-        ;   XREF to: 0040cba0 (UNCONDITIONAL_CALL)
+    JZ 0x0040cd4d                       ; 0040cd1f
+        ;   XREF to: 0040cd4d (CONDITIONAL_JUMP)  ; LAB_0040cd4d
+    CALL core_actor.cpp_generateRandomValue_FUN_0040cba0 ; 0040cd21
+        ;   XREF to: 0040cba0 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040cba0()
     MOV dword ptr [ESP + 0x4],EAX       ; 0040cd26
     FILD dword ptr [ESP + 0x4]          ; 0040cd2a
-    FMUL float ptr [0x0061430c]         ; 0040cd2e | int INT_0061430c
+    FMUL float ptr [0x0061430c]         ; 0040cd2e | INT_0061430c
     FSTP float ptr [ESP]                ; 0040cd34
         ;   Label: LAB_0040cd34
     FLD float ptr [ESP]                 ; 0040cd37
@@ -58,12 +58,12 @@ section .text
     AND EAX,0xff                        ; 0040cd44
     ADD ESP,0x8                         ; 0040cd49
     RET                                 ; 0040cd4c
-    CALL crt_stdlib.c_rand_FUN_005feb5c ; 0040cd4d | int crt_stdlib.c_rand_FUN_005feb5c()
+    CALL crt_stdlib.c_rand_FUN_005feb5c ; 0040cd4d
+        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
         ;   Label: LAB_0040cd4d
-        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)
     MOV dword ptr [ESP + 0x4],EAX       ; 0040cd52
     FILD dword ptr [ESP + 0x4]          ; 0040cd56
-    FMUL float ptr [0x00614308]         ; 0040cd5a | int INT_00614308
-    JMP 0x0040cd34                      ; 0040cd60 | LAB_0040cd34
-        ;   XREF to: 0040cd34 (UNCONDITIONAL_JUMP)
+    FMUL float ptr [0x00614308]         ; 0040cd5a | INT_00614308
+    JMP 0x0040cd34                      ; 0040cd60
+        ;   XREF to: 0040cd34 (UNCONDITIONAL_JUMP)  ; LAB_0040cd34
 

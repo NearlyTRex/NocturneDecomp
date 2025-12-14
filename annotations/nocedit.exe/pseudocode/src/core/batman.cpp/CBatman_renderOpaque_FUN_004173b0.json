@@ -1,298 +1,298 @@
 {
   "complexity": {
-    "function_call_count": 12, 
-    "complexity_score": 318, 
-    "pseudocode_lines": 83, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 278, 
-    "assembly_lines": 195, 
-    "suspect_count": 20, 
+    "assembly_lines": 195,
+    "complexity_score": 318,
+    "cross_reference_count": 0,
+    "function_call_count": 12,
+    "global_count": 5,
+    "pseudocode_lines": 83,
+    "suspect_count": 20,
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
-      "unaffected_reg", 
-      "suspect_float", 
-      "unknown_field", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
-      "addr": "00408b40"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
-      "addr": "00408b00"
-    }, 
-    {
-      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
-      "addr": "004204f0"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_00429aa0", 
-      "addr": "00429aa0"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_render_FUN_0052e700", 
-      "addr": "0052e700"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150", 
-      "addr": "005a0150"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00", 
-      "addr": "0048ce00"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80", 
-      "addr": "0048da80"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
-      "addr": "0048ca50"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70", 
-      "addr": "0048ca70"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0", 
-      "addr": "0048d6c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_006158ed", 
-      "addr": "006158ed", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065a778", 
-      "addr": "0065a778", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f43978", 
-      "addr": "02f43978", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004173b9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EBX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "float unaff_ESI;"
-    }, 
-    {
-      "line": 29, 
-      "match": "6.010999e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_20 = 6.010999e-39;"
-    }, 
-    {
-      "line": 51, 
-      "match": "6.011244e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_20 = 6.011244e-39;"
-    }, 
-    {
-      "line": 54, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(g_CDemonRendererPtr,unaff_ESI);"
-    }, 
-    {
-      "line": 57, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {"
-    }, 
-    {
-      "line": 57, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {"
-    }, 
-    {
-      "line": 57, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {"
-    }, 
-    {
-      "line": 58, 
-      "match": "8.61799e-43", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "uVar3._0_4_ = 8.61799e-43;"
-    }, 
-    {
-      "line": 58, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "uVar3._0_4_ = 8.61799e-43;"
-    }, 
-    {
-      "line": 59, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "uVar3._4_4_ = 1.4013e-45;"
-    }, 
-    {
-      "line": 59, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "uVar3._4_4_ = 1.4013e-45;"
-    }, 
-    {
-      "line": 62, 
-      "match": "1.04116e-42", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "uVar3._0_4_ = 1.04116e-42;"
-    }, 
-    {
-      "line": 62, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "uVar3._0_4_ = 1.04116e-42;"
-    }, 
-    {
-      "line": 63, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "uVar3._4_4_ = 1.4013e-45;"
-    }, 
-    {
-      "line": 63, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "uVar3._4_4_ = 1.4013e-45;"
-    }, 
-    {
-      "line": 65, 
-      "match": "6.01135e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_20 = 6.01135e-39;"
-    }, 
-    {
-      "line": 68, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(int)SUB84 /* extract 2-byte value */(uVar3,4),0);"
-    }
-  ], 
+      "sub_artifact",
+      "suspect_float",
+      "concat_artifact",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "unknown_field"
+    ],
+    "total_lines": 278
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004173b0", 
-    "signature": "int core_batman.cpp_CBatman_renderOpaque_FUN_004173b0(CBatman * this_ptr)", 
+    "address": "004173b0",
     "address_range": [
       [
-        "004173b0", 
+        "004173b0",
         "0041757e"
       ]
-    ], 
-    "name": "core_batman.cpp_CBatman_renderOpaque_FUN_004173b0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_batman.cpp_CBatman_renderOpaque_FUN_004173b0",
+    "signature": "int core_batman.cpp_CBatman_renderOpaque_FUN_004173b0(CBatman * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "004204f0",
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "00429aa0",
+      "name": "core_charactr.cpp_CCharacter_FUN_00429aa0"
+    },
+    {
+      "addr": "0052e700",
+      "name": "core_motion.cpp_CMotionController_render_FUN_0052e700"
+    },
+    {
+      "addr": "005a0150",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150"
+    },
+    {
+      "addr": "0048ce00",
+      "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048da80",
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80"
+    },
+    {
+      "addr": "0048ca50",
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "0048ca70",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70"
+    },
+    {
+      "addr": "0048d6c0",
+      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006158ed",
+      "name": "DOUBLE_006158ed",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0065a778",
+      "name": "DAT_0065a778",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02f43978",
+      "name": "DAT_02f43978",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 48, 
+    "frame_size": 52,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_2c"
-      }, 
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBatman *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBatman *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004173b9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
+      "text": "float unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 29,
+      "match": "6.010999e-39",
+      "text": "fStack_20 = 6.010999e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 51,
+      "match": "6.011244e-39",
+      "text": "fStack_20 = 6.011244e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 54,
+      "match": "unaff_ESI",
+      "text": "(g_CDemonRendererPtr,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_EBX",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_ESI",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 57,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 58,
+      "match": "8.61799e-43",
+      "text": "uVar3._0_4_ = 8.61799e-43;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._0_4_",
+      "text": "uVar3._0_4_ = 8.61799e-43;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 59,
+      "match": "1.4013e-45",
+      "text": "uVar3._4_4_ = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._4_4_",
+      "text": "uVar3._4_4_ = 1.4013e-45;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 62,
+      "match": "1.04116e-42",
+      "text": "uVar3._0_4_ = 1.04116e-42;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "text": "uVar3._0_4_ = 1.04116e-42;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 63,
+      "match": "1.4013e-45",
+      "text": "uVar3._4_4_ = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._4_4_",
+      "text": "uVar3._4_4_ = 1.4013e-45;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 65,
+      "match": "6.01135e-39",
+      "text": "fStack_20 = 6.01135e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 68,
+      "match": "SUB84",
+      "text": "(int)SUB84 /* extract 2-byte value */(uVar3,4),0);",
+      "type": "sub_artifact"
+    }
+  ]
 }

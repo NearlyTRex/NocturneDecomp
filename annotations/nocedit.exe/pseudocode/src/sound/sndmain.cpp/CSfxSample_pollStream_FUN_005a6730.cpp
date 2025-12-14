@@ -189,8 +189,8 @@ LAB_005a6adf:
           if (bVar2) goto LAB_005a6b5d;
         }
         else {
-          pcVar8 = (char *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
-                                     (this_ptr,this_ptr->stream_write_position,(int)local_14);
+          pcVar8 = sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
+                             (this_ptr,this_ptr->stream_write_position,(int)local_14);
           if (pcVar8 == (char *)0x0) {
             pcVar8 = "Error locking %s while streaming\n";
             goto LAB_005a69da;
@@ -229,8 +229,8 @@ LAB_005a6b5d:
           this_ptr->stream_write_position = 0;
         }
       }
-      pcVar8 = (char *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
-                                 (this_ptr,this_ptr->stream_write_position,(int)lock_length);
+      pcVar8 = sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
+                         (this_ptr,this_ptr->stream_write_position,(int)lock_length);
       if ((short *)pcVar8 != (short *)0x0) {
         iVar14 = 0;
         bVar2 = true;

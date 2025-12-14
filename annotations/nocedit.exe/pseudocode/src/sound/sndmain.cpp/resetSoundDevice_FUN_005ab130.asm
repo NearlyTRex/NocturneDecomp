@@ -29,27 +29,27 @@
 
 section .text
 
-    CALL sound_sndmain.cpp_killAllSfx_FUN_005a9cc0 ; 005ab130 | void sound_sndmain.cpp_killAllSfx_FUN_005a9cc0()
+    CALL sound_sndmain.cpp_killAllSfx_FUN_005a9cc0 ; 005ab130
+        ;   XREF to: 005a9cc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_killAllSfx_FUN_005a9cc0()
         ;   Label: sound_sndmain.cpp_resetSoundDevice_FUN_005ab130
-        ;   XREF to: 005a9cc0 (UNCONDITIONAL_CALL)
-    MOV EDX,dword ptr [0x03f69268]      ; 005ab135 | CSoundDevice * g_CSoundDevicePtr
+    MOV EDX,dword ptr [0x03f69268]      ; 005ab135 | g_CSoundDevicePtr
     TEST EDX,EDX                        ; 005ab13b
-    JZ 0x005ab14f                       ; 005ab13d | LAB_005ab14f
-        ;   XREF to: 005ab14f (CONDITIONAL_JUMP)
+    JZ 0x005ab14f                       ; 005ab13d
+        ;   XREF to: 005ab14f (CONDITIONAL_JUMP)  ; LAB_005ab14f
     MOV EAX,EDX                         ; 005ab13f
     PUSH EAX                            ; 005ab141
     MOV EDX,dword ptr [EDX]             ; 005ab142
     CALL dword ptr [EDX + 0x8]          ; 005ab144
     ADD ESP,0x4                         ; 005ab147
     TEST EAX,EAX                        ; 005ab14a
-    JNZ 0x005ab14f                      ; 005ab14c | LAB_005ab14f
-        ;   XREF to: 005ab14f (CONDITIONAL_JUMP)
+    JNZ 0x005ab14f                      ; 005ab14c
+        ;   XREF to: 005ab14f (CONDITIONAL_JUMP)  ; LAB_005ab14f
     RET                                 ; 005ab14e
     XOR ECX,ECX                         ; 005ab14f
         ;   Label: LAB_005ab14f
-    MOV dword ptr [0x03f6926c],ECX      ; 005ab151 | int g_SoundBusyFlag
-    CALL sound_sndmain.cpp_freeMixBuffers_FUN_005a5900 ; 005ab157 | void sound_sndmain.cpp_freeMixBuffers_FUN_005a5900()
-        ;   XREF to: 005a5900 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x03f6926c],ECX      ; 005ab151 | g_SoundBusyFlag
+    CALL sound_sndmain.cpp_freeMixBuffers_FUN_005a5900 ; 005ab157
+        ;   XREF to: 005a5900 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_freeMixBuffers_FUN_005a5900()
     MOV EAX,0x1                         ; 005ab15c
         ;   Label: LAB_005ab15c
     RET                                 ; 005ab161

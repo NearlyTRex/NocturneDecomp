@@ -1,99 +1,99 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 37, 
-    "assembly_lines": 28, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40", 
-      "addr": "00431f40"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 28,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00432af0", 
-    "signature": "void cockpit_ckptutil.c_blitSolidSprite_FUN_00432af0(void * sprite_data, int screen_x, int screen_y, int src_x, int src_y, int width, int height, int src_y_param)", 
+    "address": "00432af0",
     "address_range": [
       [
-        "00432af0", 
+        "00432af0",
         "00432b25"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_blitSolidSprite_FUN_00432af0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_blitSolidSprite_FUN_00432af0",
+    "signature": "void cockpit_ckptutil.c_blitSolidSprite_FUN_00432af0(void * sprite_data, int screen_x, int screen_y, int src_x, int src_y, int width, int height, int src_y_param)"
+  },
+  "function_calls": [
+    {
+      "addr": "00431f40",
+      "name": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 36,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "sprite_data"
-      }, 
+        "is_param": true,
+        "name": "sprite_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "screen_x"
-      }, 
+        "is_param": true,
+        "name": "screen_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "screen_y"
-      }, 
+        "is_param": true,
+        "name": "screen_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "src_x"
-      }, 
+        "is_param": true,
+        "name": "src_x",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "src_y"
-      }, 
+        "is_param": true,
+        "name": "src_y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
+        "is_param": true,
+        "name": "width",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
+        "is_param": true,
+        "name": "height",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 32, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "src_y_param"
+        "is_param": true,
+        "name": "src_y_param",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 32
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

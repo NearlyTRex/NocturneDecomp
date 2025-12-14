@@ -30,8 +30,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0048ca60
         ;   Label: engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
     PUSH EDX                            ; 0048ca64
-    CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0048ca65 | void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0048ca65
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 0048ca6a
     RET                                 ; 0048ca6d
 

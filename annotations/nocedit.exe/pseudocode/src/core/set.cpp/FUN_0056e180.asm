@@ -105,12 +105,12 @@ section .text
     FXCH ST3                            ; 0056e263
     FSTP float ptr [ESP + 0x20]         ; 0056e265
     MOV EAX,dword ptr [ESP + 0x20]      ; 0056e269
-    MOV ECX,dword ptr [0x02d7a7bc]      ; 0056e26d | int g_LightAttenuationMax
+    MOV ECX,dword ptr [0x02d7a7bc]      ; 0056e26d | g_LightAttenuationMax
     SAR EAX,0x1                         ; 0056e273
     SUB ECX,EAX                         ; 0056e275
     MOV dword ptr [ESP + 0x24],ECX      ; 0056e277
     FLD float ptr [ESP + 0x24]          ; 0056e27b
-    FMUL double ptr [0x00645e7b]        ; 0056e27f | double DOUBLE_00645e7b
+    FMUL double ptr [0x00645e7b]        ; 0056e27f | DOUBLE_00645e7b
     FXCH ST3                            ; 0056e285
     FMUL ST3                            ; 0056e287
     FXCH ST2                            ; 0056e289

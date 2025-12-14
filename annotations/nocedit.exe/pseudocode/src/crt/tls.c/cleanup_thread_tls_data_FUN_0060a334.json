@@ -1,125 +1,125 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 60, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 2, 
-    "global_count": 4, 
-    "total_lines": 54, 
-    "assembly_lines": 34, 
-    "suspect_count": 3, 
+    "assembly_lines": 34,
+    "complexity_score": 60,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 20,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "CloseHandle", 
-      "addr": "EXTERNAL:0000004c"
-    }, 
-    {
-      "name": "crt_tls.c_unregister_thread_data_FUN_0060cc3c", 
-      "addr": "0060cc3c"
-    }, 
-    {
-      "name": "TlsGetValue", 
-      "addr": "EXTERNAL:000000a0"
-    }, 
-    {
-      "name": "TlsSetValue", 
-      "addr": "EXTERNAL:000000a1"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CloseHandle*", 
-      "name": "CloseHandle", 
-      "addr": "00611504", 
-      "value": "00211c38"
-    }, 
-    {
-      "type": "TlsGetValue*", 
-      "name": "PTR_TlsGetValue_00611654", 
-      "addr": "00611654", 
-      "value": "0021225e"
-    }, 
-    {
-      "type": "TlsSetValue*", 
-      "name": "PTR_TlsSetValue_00611658", 
-      "addr": "00611658", 
-      "value": "0021226c"
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_TLSIndex", 
-      "addr": "00684ee0", 
-      "value": "0xffffffff"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 13, 
-      "match": "(HANDLE *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "hObject = *(HANDLE *)((int)pvVar1 + 0xde);"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((hObject != (HANDLE)0x0) && (in_stack_0000001c != 0)) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a334", 
-    "signature": "void crt_tls.c_cleanup_thread_tls_data_FUN_0060a334(int shutdownMode)", 
-    "address_range": [
-      [
-        "0060a334", 
-        "0060a387"
-      ]
-    ], 
-    "name": "crt_tls.c_cleanup_thread_tls_data_FUN_0060a334"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "shutdownMode"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "0060fa6e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_thread.c_exit_thread_FUN_0060fa58", 
-      "addr": "0060fa58"
-    }, 
+      "addr": "0060fa58",
+      "from_addr": "0060fa6e",
+      "name": "crt_thread.c_exit_thread_FUN_0060fa58",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a38a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388", 
-      "addr": "0060a388"
+      "addr": "0060a388",
+      "from_addr": "0060a38a",
+      "name": "crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060a334",
+    "address_range": [
+      [
+        "0060a334",
+        "0060a387"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_tls.c_cleanup_thread_tls_data_FUN_0060a334",
+    "signature": "void crt_tls.c_cleanup_thread_tls_data_FUN_0060a334(int shutdownMode)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000004c",
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "0060cc3c",
+      "name": "crt_tls.c_unregister_thread_data_FUN_0060cc3c"
+    },
+    {
+      "addr": "EXTERNAL:000000a0",
+      "name": "TlsGetValue"
+    },
+    {
+      "addr": "EXTERNAL:000000a1",
+      "name": "TlsSetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611504",
+      "name": "CloseHandle",
+      "type": "CloseHandle*",
+      "value": "00211c38"
+    },
+    {
+      "addr": "00611654",
+      "name": "PTR_TlsGetValue_00611654",
+      "type": "TlsGetValue*",
+      "value": "0021225e"
+    },
+    {
+      "addr": "00611658",
+      "name": "PTR_TlsSetValue_00611658",
+      "type": "TlsSetValue*",
+      "value": "0021226c"
+    },
+    {
+      "addr": "00684ee0",
+      "name": "g_TLSIndex",
+      "type": "DWORD",
+      "value": "0xffffffff"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "shutdownMode",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(HANDLE *)((int)",
+      "text": "hObject = *(HANDLE *)((int)pvVar1 + 0xde);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000001c",
+      "text": "if ((hObject != (HANDLE)0x0) && (in_stack_0000001c != 0)) {",
+      "type": "stack_param"
     }
   ]
 }

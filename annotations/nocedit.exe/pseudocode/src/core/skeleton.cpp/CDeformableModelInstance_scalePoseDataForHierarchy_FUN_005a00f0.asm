@@ -27,25 +27,25 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 005a00f4
     MOV EBP,dword ptr [ESP + 0x1c]      ; 005a00f8
     PUSH ESI                            ; 005a00fc
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a00fd | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a00fd
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     XOR EBX,EBX                         ; 005a0102
     ADD ESP,0x4                         ; 005a0104
     MOV EDX,dword ptr [EAX + 0x28558]   ; 005a0107
     MOV EDI,EAX                         ; 005a010d
     TEST EDX,EDX                        ; 005a010f
-    JLE 0x005a0140                      ; 005a0111 | LAB_005a0140
-        ;   XREF to: 005a0140 (CONDITIONAL_JUMP)
+    JLE 0x005a0140                      ; 005a0111
+        ;   XREF to: 005a0140 (CONDITIONAL_JUMP)  ; LAB_005a0140
     PUSH EBP                            ; 005a0113
         ;   Label: LAB_005a0113
     PUSH EBX                            ; 005a0114
     PUSH EDI                            ; 005a0115
-    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 ; 005a0116 | int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
-        ;   XREF to: 0059a100 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 ; 005a0116
+        ;   XREF to: 0059a100 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 005a011b
     TEST EAX,EAX                        ; 005a011e
-    JL 0x005a0132                       ; 005a0120 | LAB_005a0132
-        ;   XREF to: 005a0132 (CONDITIONAL_JUMP)
+    JL 0x005a0132                       ; 005a0120
+        ;   XREF to: 005a0132 (CONDITIONAL_JUMP)  ; LAB_005a0132
     FLD float ptr [ESI + 0xcf0]         ; 005a0122
     FMUL float ptr [ESP + 0x18]         ; 005a0128
     FSTP float ptr [ESI + 0xcf0]        ; 005a012c
@@ -54,8 +54,8 @@ section .text
     MOV ECX,dword ptr [EDI + 0x28558]   ; 005a0133
     ADD ESI,0x4                         ; 005a0139
     CMP EBX,ECX                         ; 005a013c
-    JL 0x005a0113                       ; 005a013e | LAB_005a0113
-        ;   XREF to: 005a0113 (CONDITIONAL_JUMP)
+    JL 0x005a0113                       ; 005a013e
+        ;   XREF to: 005a0113 (CONDITIONAL_JUMP)  ; LAB_005a0113
     POP EBP                             ; 005a0140
         ;   Label: LAB_005a0140
     POP EDI                             ; 005a0141

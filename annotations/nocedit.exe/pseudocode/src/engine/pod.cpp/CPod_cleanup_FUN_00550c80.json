@@ -1,128 +1,128 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 9, 
-    "global_count": 3, 
-    "total_lines": 70, 
-    "assembly_lines": 47, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_pod.cpp_CPodFile_dtor_FUN_0054f610", 
-      "addr": "0054f610"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_00640776", 
-      "addr": "00640776", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00550c80", 
-    "signature": "void engine_pod.cpp_CPod_cleanup_FUN_00550c80(CPod * this_ptr)", 
-    "address_range": [
-      [
-        "00550c80", 
-        "00550cdf"
-      ]
-    ], 
-    "name": "engine_pod.cpp_CPod_cleanup_FUN_00550c80"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPod *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 47,
+    "complexity_score": 23,
+    "cross_reference_count": 9,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 70
+  },
   "cross_references": [
     {
-      "from_addr": "00508819", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
-      "addr": "00508570"
-    }, 
+      "addr": "00508570",
+      "from_addr": "00508819",
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bb52c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bb52c",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004baeb9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
-      "addr": "004ba740"
-    }, 
+      "addr": "004ba740",
+      "from_addr": "004baeb9",
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b71ce", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10", 
-      "addr": "004b6e10"
-    }, 
+      "addr": "004b6e10",
+      "from_addr": "004b71ce",
+      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bd147", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0", 
-      "addr": "004bcec0"
-    }, 
+      "addr": "004bcec0",
+      "from_addr": "004bd147",
+      "name": "engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b6b68", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
-      "addr": "004b5a50"
-    }, 
+      "addr": "004b5a50",
+      "from_addr": "004b6b68",
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bc3f4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0", 
-      "addr": "004bc2b0"
-    }, 
+      "addr": "004bc2b0",
+      "from_addr": "004bc3f4",
+      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b5376", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_remountAllPods_FUN_004b5350", 
-      "addr": "004b5350"
-    }, 
+      "addr": "004b5350",
+      "from_addr": "004b5376",
+      "name": "engine_fileio.cpp_remountAllPods_FUN_004b5350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005509c7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_pod.cpp_CPod_dtor_FUN_005509b0", 
-      "addr": "005509b0"
+      "addr": "005509b0",
+      "from_addr": "005509c7",
+      "name": "engine_pod.cpp_CPod_dtor_FUN_005509b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00550c80",
+    "address_range": [
+      [
+        "00550c80",
+        "00550cdf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPod_cleanup_FUN_00550c80",
+    "signature": "void engine_pod.cpp_CPod_cleanup_FUN_00550c80(CPod * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054f610",
+      "name": "engine_pod.cpp_CPodFile_dtor_FUN_0054f610"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640776",
+      "name": "s_engine_pod_cpp_00640776",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPod *"
+      }
+    ]
+  },
+  "suspects": []
 }

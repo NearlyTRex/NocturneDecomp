@@ -32,8 +32,8 @@ section .text
     PUSH EAX                            ; 0047c4b4
     MOV EDX,dword ptr [ESP + 0x14]      ; 0047c4b5
     PUSH EDX                            ; 0047c4b9
-    CALL core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 ; 0047c4ba | void core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0(CKeyFramedModel * this_ptr, CVector3f * scale_factors)
-        ;   XREF to: 0047c4d0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 ; 0047c4ba
+        ;   XREF to: 0047c4d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0(CKeyFramedModel * this_ptr, CVector3f * scale_factors)
     ADD ESP,0x8                         ; 0047c4bf
     ADD ESP,0xc                         ; 0047c4c2
     RET                                 ; 0047c4c5

@@ -1,120 +1,120 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 85, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 70, 
-    "assembly_lines": 50, 
-    "suspect_count": 6, 
+    "assembly_lines": 50,
+    "complexity_score": 85,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 2,
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
-      "addr": "004204f0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
-      "addr": "00478d20"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
-      "addr": "0048c4f0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
-      "addr": "0048c640"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
-      "addr": "0048c450"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonRendererPtr,(CVector3f *)(in_stack_00000004 + 0x20));"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonRendererPtr,(CVector3i *)(in_stack_00000004 + 0x30),(CVector3i *)0x0);"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0x5e4) = iVar1;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),0.0,-1);"
-    }
-  ], 
+    ],
+    "total_lines": 70
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004cb4c0", 
-    "signature": "undefined core_flamecan.cpp_FUN_004cb4c0()", 
+    "address": "004cb4c0",
     "address_range": [
       [
-        "004cb4c0", 
+        "004cb4c0",
         "004cb521"
-      ], 
+      ],
       [
-        "004cb52d", 
+        "004cb52d",
         "004cb541"
       ]
-    ], 
-    "name": "core_flamecan.cpp_FUN_004cb4c0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_flamecan.cpp_FUN_004cb4c0",
+    "signature": "undefined core_flamecan.cpp_FUN_004cb4c0()"
+  },
+  "function_calls": [
+    {
+      "addr": "004204f0",
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "00478d20",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20"
+    },
+    {
+      "addr": "0048c4f0",
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    },
+    {
+      "addr": "0048c640",
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    },
+    {
+      "addr": "0048c450",
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "(g_CDemonRendererPtr,(CVector3f *)(in_stack_00000004 + 0x20));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "(g_CDemonRendererPtr,(CVector3i *)(in_stack_00000004 + 0x30),(CVector3i *)0x0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = (CBoundingBox3D *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0x5e4) = iVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),0.0,-1);",
+      "type": "stack_param"
+    }
+  ]
 }

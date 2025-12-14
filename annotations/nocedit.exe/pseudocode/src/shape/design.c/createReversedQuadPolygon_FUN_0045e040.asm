@@ -29,8 +29,8 @@ section .text
     PUSH EAX                            ; 0045e057
     MOV EAX,dword ptr [EBP + 0x20]      ; 0045e058
     PUSH EAX                            ; 0045e05b
-    CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e05c | undefined shape_design.c_createQuadPolygon_FUN_0045df60()
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e05c
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e061
     POP EBP                             ; 0045e064
     POP EDI                             ; 0045e065

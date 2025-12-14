@@ -29,19 +29,19 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00605a70
         ;   Label: crt_string.c_mbtowc_next_FUN_00605a70
-    CMP dword ptr [0x03f9c020],0x0      ; 00605a74 | int g_MultibyteLocaleActive
-    JZ 0x00605a9c                       ; 00605a7b | LAB_00605a9c
-        ;   XREF to: 00605a9c (CONDITIONAL_JUMP)
+    CMP dword ptr [0x03f9c020],0x0      ; 00605a74 | g_MultibyteLocaleActive
+    JZ 0x00605a9c                       ; 00605a7b
+        ;   XREF to: 00605a9c (CONDITIONAL_JUMP)  ; LAB_00605a9c
     XOR EDX,EDX                         ; 00605a7d
     MOV DL,byte ptr [EAX]               ; 00605a7f
-    MOV DL,byte ptr [EDX + 0x3f9c031]   ; 00605a81 | char[256] g_LeadByteTable
+    MOV DL,byte ptr [EDX + 0x3f9c031]   ; 00605a81 | g_LeadByteTable
     AND DL,0x1                          ; 00605a87
     AND EDX,0xff                        ; 00605a8a
-    JZ 0x00605a9c                       ; 00605a90 | LAB_00605a9c
-        ;   XREF to: 00605a9c (CONDITIONAL_JUMP)
+    JZ 0x00605a9c                       ; 00605a90
+        ;   XREF to: 00605a9c (CONDITIONAL_JUMP)  ; LAB_00605a9c
     CMP byte ptr [EAX + 0x1],0x0        ; 00605a92
-    JZ 0x00605a9c                       ; 00605a96 | LAB_00605a9c
-        ;   XREF to: 00605a9c (CONDITIONAL_JUMP)
+    JZ 0x00605a9c                       ; 00605a96
+        ;   XREF to: 00605a9c (CONDITIONAL_JUMP)  ; LAB_00605a9c
     ADD EAX,0x2                         ; 00605a98
     RET                                 ; 00605a9b
     INC EAX                             ; 00605a9c

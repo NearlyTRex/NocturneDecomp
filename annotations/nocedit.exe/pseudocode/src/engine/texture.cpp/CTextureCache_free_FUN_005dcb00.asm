@@ -16,8 +16,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005dcb00
         ;   Label: engine_texture.cpp_CTextureCache_free_FUN_005dcb00
     PUSH EDX                            ; 005dcb04
-    CALL engine_texture.cpp_CTextureCache_free_FUN_005dcb30 ; 005dcb05 | void engine_texture.cpp_CTextureCache_free_FUN_005dcb30(CTextureCache * cache)
-        ;   XREF to: 005dcb30 (UNCONDITIONAL_CALL)
+    CALL engine_texture.cpp_CTextureCache_free_FUN_005dcb30 ; 005dcb05
+        ;   XREF to: 005dcb30 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_free_FUN_005dcb30(CTextureCache * cache)
     MOV EAX,0x1                         ; 005dcb0a
     ADD ESP,0x4                         ; 005dcb0f
     RET                                 ; 005dcb12

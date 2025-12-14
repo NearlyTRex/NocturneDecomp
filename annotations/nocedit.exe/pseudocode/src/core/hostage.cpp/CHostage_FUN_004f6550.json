@@ -1,654 +1,633 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 471, 
-    "pseudocode_lines": 161, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 444, 
-    "assembly_lines": 283, 
-    "suspect_count": 28, 
+    "assembly_lines": 283,
+    "complexity_score": 410,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 130,
+    "suspect_count": 25,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "unknown_field", 
-      "badspacebase", 
-      "register_param", 
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param",
+      "unknown_field",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
-      "addr": "0040c6d0"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042d300", 
-      "addr": "0042d300"
-    }, 
-    {
-      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0", 
-      "addr": "005f54c0"
-    }, 
-    {
-      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10", 
-      "addr": "005f4f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CShotgun_0062f224", 
-      "addr": "0062f224", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004f66a0", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint *unaff_ESI;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_fffffd74", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CMatrix3x4f *in_stack_fffffd74;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_fffffd78", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CMatrix3x4f *in_stack_fffffd78;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((this_ptr->base_npc).base_character.carry_hands[in_stack_00000008]."
-    }, 
-    {
-      "line": 49, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_58._8_4_ = -0.287;"
-    }, 
-    {
-      "line": 55, 
-      "match": "&stack0xfffffd74", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "puVar3 = (uint *)&stack0xfffffd74;"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008]."
-    }, 
-    {
-      "line": 60, 
-      "match": "in_stack_fffffd74", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "field0_0x0,in_stack_fffffd74);"
-    }, 
-    {
-      "line": 65, 
-      "match": "&stack0xfffffd74", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "puVar3 = (uint *)&stack0xfffffd74;"
-    }, 
-    {
-      "line": 86, 
-      "match": "&stack0xfffffd78", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "puVar3 = (uint *)&stack0xfffffd78;"
-    }, 
-    {
-      "line": 90, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0"
-    }, 
-    {
-      "line": 91, 
-      "match": "in_stack_fffffd78", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": ",in_stack_fffffd78);"
-    }, 
-    {
-      "line": 116, 
-      "match": "&stack0xfffffd78", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "puVar3 = (uint *)&stack0xfffffd78;"
-    }, 
-    {
-      "line": 120, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008]."
-    }, 
-    {
-      "line": 121, 
-      "match": "in_stack_fffffd78", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "field0_0x0,in_stack_fffffd78);"
-    }, 
-    {
-      "line": 134, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_58._8_4_ = 0.13687;"
-    }, 
-    {
-      "line": 135, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_58._4_4_ = 0.13687;"
-    }, 
-    {
-      "line": 136, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_58._0_4_ = -0.480625;"
-    }, 
-    {
-      "line": 144, 
-      "match": "&stack0xfffffd78", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "puVar3 = (uint *)&stack0xfffffd78;"
-    }, 
-    {
-      "line": 148, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0"
-    }, 
-    {
-      "line": 149, 
-      "match": "in_stack_fffffd78", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": ",in_stack_fffffd78);"
-    }, 
-    {
-      "line": 158, 
-      "match": "&stack0xfffffd78", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "puVar3 = (uint *)&stack0xfffffd78;"
-    }, 
-    {
-      "line": 160, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = *puVar3;"
-    }, 
-    {
-      "line": 162, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;"
-    }, 
-    {
-      "line": 162, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;"
-    }
-  ], 
+    ],
+    "total_lines": 413
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004f6550", 
-    "signature": "void core_hostage.cpp_CHostage_FUN_004f6550(CHostage * this_ptr)", 
+    "address": "004f6550",
     "address_range": [
       [
-        "004f6550", 
+        "004f6550",
         "004f69b8"
       ]
-    ], 
-    "name": "core_hostage.cpp_CHostage_FUN_004f6550"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_hostage.cpp_CHostage_FUN_004f6550",
+    "signature": "void core_hostage.cpp_CHostage_FUN_004f6550(CHostage * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c6d0",
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    },
+    {
+      "addr": "0042d300",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d300"
+    },
+    {
+      "addr": "005f54c0",
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0"
+    },
+    {
+      "addr": "005f4f10",
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062f224",
+      "name": "s_CShotgun_0062f224",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 664, 
+    "frame_size": 668,
+    "local_size": 664,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -660, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_294"
-      }, 
+        "is_param": false,
+        "name": "local_294",
+        "offset": -660,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -612, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_264"
-      }, 
+        "is_param": false,
+        "name": "local_264",
+        "offset": -612,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -564, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_234"
-      }, 
+        "is_param": false,
+        "name": "local_234",
+        "offset": -564,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -516, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_204"
-      }, 
+        "is_param": false,
+        "name": "local_204",
+        "offset": -516,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -468, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1d4"
-      }, 
+        "is_param": false,
+        "name": "local_1d4",
+        "offset": -468,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -420, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1a4"
-      }, 
+        "is_param": false,
+        "name": "local_1a4",
+        "offset": -420,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -372, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_174"
-      }, 
+        "is_param": false,
+        "name": "local_174",
+        "offset": -372,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -324, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_144"
-      }, 
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -276, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_114"
-      }, 
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -228, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_e4"
-      }, 
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -180, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b4"
-      }, 
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -176, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b0"
-      }, 
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -172, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_ac"
-      }, 
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -168, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a8"
-      }, 
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -164, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a4"
-      }, 
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a0"
-      }, 
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -156, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_9c"
-      }, 
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -152, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_98"
-      }, 
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -148, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_94"
-      }, 
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -144, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_90"
-      }, 
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -140, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8c"
-      }, 
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -136, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_88"
-      }, 
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -132, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_84"
-      }, 
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_80"
-      }, 
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_7c"
-      }, 
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_78"
-      }, 
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CHostage *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHostage *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 668, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004f66a0",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_fffffd74",
+      "text": "CMatrix3x4f *in_stack_fffffd74;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_fffffd78",
+      "text": "CMatrix3x4f *in_stack_fffffd78;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000008",
+      "text": "((this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._8_4_",
+      "text": "local_58._8_4_ = -0.287;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 53,
+      "match": "&stack0xfffffd74",
+      "text": "puVar3 = (uint *)&stack0xfffffd74;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000008",
+      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_fffffd74",
+      "text": ",in_stack_fffffd74);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 62,
+      "match": "&stack0xfffffd74",
+      "text": "puVar3 = (uint *)&stack0xfffffd74;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 82,
+      "match": "&stack0xfffffd78",
+      "text": "puVar3 = (uint *)&stack0xfffffd78;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_00000008",
+      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_fffffd78",
+      "text": "field0_0x0,in_stack_fffffd78);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 99,
+      "match": "._8_4_",
+      "text": "local_58._8_4_ = 0.13687;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 100,
+      "match": "._4_4_",
+      "text": "local_58._4_4_ = 0.13687;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 101,
+      "match": "._0_4_",
+      "text": "local_58._0_4_ = -0.480625;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 109,
+      "match": "&stack0xfffffd78",
+      "text": "puVar3 = (uint *)&stack0xfffffd78;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_00000008",
+      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 114,
+      "match": "in_stack_fffffd78",
+      "text": "field0_0x0,in_stack_fffffd78);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 127,
+      "match": "&stack0xfffffd78",
+      "text": "puVar3 = (uint *)&stack0xfffffd78;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 129,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = *puVar3;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 131,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 131,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
+      "type": "unaffected_reg"
+    }
+  ]
 }

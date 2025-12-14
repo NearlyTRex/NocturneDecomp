@@ -1,70 +1,70 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 38, 
-    "assembly_lines": 27, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_locale.c_istrailbyte_FUN_00610a70", 
-      "addr": "00610a70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_MultibyteLocaleActive", 
-      "addr": "03f9c020", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_LeadByteTable", 
-      "addr": "03f9c031", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00610a20", 
-    "signature": "int crt_locale.c_ismultibyte_FUN_00610a20(wchar_t character)", 
-    "address_range": [
-      [
-        "00610a20", 
-        "00610a62"
-      ]
-    ], 
-    "name": "crt_locale.c_ismultibyte_FUN_00610a20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "wchar_t", 
-        "size": 2, 
-        "name": "character"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 6, 
-    "param_offset": 4, 
-    "param_size": 2
-  }, 
+    "assembly_lines": 27,
+    "complexity_score": 11,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
+  },
   "cross_references": [
     {
-      "from_addr": "00610996", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_locale.c_islower_multibyte_FUN_00610990", 
-      "addr": "00610990"
+      "addr": "00610990",
+      "from_addr": "00610996",
+      "name": "crt_locale.c_islower_multibyte_FUN_00610990",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00610a20",
+    "address_range": [
+      [
+        "00610a20",
+        "00610a62"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_locale.c_ismultibyte_FUN_00610a20",
+    "signature": "int crt_locale.c_ismultibyte_FUN_00610a20(wchar_t character)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610a70",
+      "name": "crt_locale.c_istrailbyte_FUN_00610a70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f9c020",
+      "name": "g_MultibyteLocaleActive",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9c031",
+      "name": "g_LeadByteTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 6,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 2,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 4,
+        "size": 2,
+        "type": "wchar_t"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -32,31 +32,31 @@ section .text
     XOR EBX,EBX                         ; 004020f8
     MOV EDI,ECX                         ; 004020fa
     TEST ECX,ECX                        ; 004020fc
-    JLE 0x00402127                      ; 004020fe | LAB_00402127
-        ;   XREF to: 00402127 (CONDITIONAL_JUMP)
+    JLE 0x00402127                      ; 004020fe
+        ;   XREF to: 00402127 (CONDITIONAL_JUMP)  ; LAB_00402127
     XOR EAX,EAX                         ; 00402100
         ;   Label: LAB_00402100
     MOV AL,byte ptr [ESI]               ; 00402102
     CMP EAX,0x20                        ; 00402104
-    JL 0x00402121                       ; 00402107 | LAB_00402121
-        ;   XREF to: 00402121 (CONDITIONAL_JUMP)
+    JL 0x00402121                       ; 00402107
+        ;   XREF to: 00402121 (CONDITIONAL_JUMP)  ; LAB_00402121
     CMP EAX,0x100                       ; 00402109
-    JGE 0x00402121                      ; 0040210e | LAB_00402121
-        ;   XREF to: 00402121 (CONDITIONAL_JUMP)
+    JGE 0x00402121                      ; 0040210e
+        ;   XREF to: 00402121 (CONDITIONAL_JUMP)  ; LAB_00402121
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00402110
     PUSH EDX                            ; 00402114
     PUSH EBP                            ; 00402115
     PUSH EAX                            ; 00402116
-    CALL engine_2d.c_drawCharacterHighlighted_FUN_00401b70 ; 00402117 | int engine_2d.c_drawCharacterHighlighted_FUN_00401b70(int char_code, int x_pos, int y_pos)
-        ;   XREF to: 00401b70 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawCharacterHighlighted_FUN_00401b70 ; 00402117
+        ;   XREF to: 00401b70 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacterHighlighted_FUN_00401b70(int char_code, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0040211c
     ADD EBP,EAX                         ; 0040211f
     INC EBX                             ; 00402121
         ;   Label: LAB_00402121
     INC ESI                             ; 00402122
     CMP EBX,EDI                         ; 00402123
-    JL 0x00402100                       ; 00402125 | LAB_00402100
-        ;   XREF to: 00402100 (CONDITIONAL_JUMP)
+    JL 0x00402100                       ; 00402125
+        ;   XREF to: 00402100 (CONDITIONAL_JUMP)  ; LAB_00402100
     POP EBP                             ; 00402127
         ;   Label: LAB_00402127
     POP EDI                             ; 00402128

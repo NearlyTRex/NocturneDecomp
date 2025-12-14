@@ -1,268 +1,268 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 180, 
-    "pseudocode_lines": 65, 
-    "cross_reference_count": 1, 
-    "global_count": 19, 
-    "total_lines": 201, 
-    "assembly_lines": 136, 
-    "suspect_count": 11, 
+    "assembly_lines": 136,
+    "complexity_score": 180,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 19,
+    "pseudocode_lines": 65,
+    "suspect_count": 11,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10", 
-      "addr": "00408c10"
-    }, 
-    {
-      "name": "core_actor.cpp_createActorByName_FUN_0040c430", 
-      "addr": "0040c430"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700", 
-      "addr": "00524700"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_004f3d50", 
-      "addr": "004f3d50", 
-      "value": "004f3d9a"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CGabriella_0062ece7", 
-      "addr": "0062ece7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CSvetlana_0062ecf2", 
-      "addr": "0062ecf2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CStranger_0062ecfc", 
-      "addr": "0062ecfc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CScat_0062ed06", 
-      "addr": "0062ed06", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CBaron_0062ed0c", 
-      "addr": "0062ed0c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CIcePick_0062ed13", 
-      "addr": "0062ed13", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CHaystack_0062ed1c", 
-      "addr": "0062ed1c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CColonel_0062ed26", 
-      "addr": "0062ed26", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CMoloch_0062ed2f", 
-      "addr": "0062ed2f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_hero_cpp_0062ed37", 
-      "addr": "0062ed37", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CHeroPlaceholder_createH_0062ed48", 
-      "addr": "0062ed48", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_hero_cpp_0062ed7a", 
-      "addr": "0062ed7a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CHeroPlaceholder_createH_0062ed8b", 
-      "addr": "0062ed8b", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonMission*", 
-      "name": "g_CDemonMissionPtr", 
-      "addr": "0067d550", 
-      "value": "02f33740"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CHeroClassInfo.name_hash", 
-      "addr": "02db880c", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonMission", 
-      "name": "g_CDemonMissionInstance", 
-      "addr": "02f33740", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "switch(in_stack_00000008) {"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar1->location).position.x = *(float *)(in_stack_0000000c + 0x20);"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar1->location).position.y = *(float *)(in_stack_0000000c + 0x24);"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar1->location).position.z = *(float *)(in_stack_0000000c + 0x28);"
-    }, 
-    {
-      "line": 60, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar1->location).area_id = *(int *)(in_stack_0000000c + 0x2c);"
-    }, 
-    {
-      "line": 61, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (&pCVar1->orient != (COrientation *)(in_stack_0000000c + 0x30)) {"
-    }, 
-    {
-      "line": 62, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar1->orient).pitch = *(float *)(in_stack_0000000c + 0x30);"
-    }, 
-    {
-      "line": 63, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar1->orient).bank = *(float *)(in_stack_0000000c + 0x34);"
-    }, 
-    {
-      "line": 64, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar1->orient).heading = *(float *)(in_stack_0000000c + 0x38);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004f3d80", 
-    "signature": "CDemonActor * core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder * this_ptr)", 
-    "address_range": [
-      [
-        "004f3d80", 
-        "004f3ee9"
-      ]
-    ], 
-    "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CHeroPlaceholder *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 201
+  },
   "cross_references": [
     {
-      "from_addr": "00524a53", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920", 
-      "addr": "00524920"
+      "addr": "00524920",
+      "from_addr": "00524a53",
+      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f3d80",
+    "address_range": [
+      [
+        "004f3d80",
+        "004f3ee9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80",
+    "signature": "CDemonActor * core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80(CHeroPlaceholder * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00408c10",
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "0040c430",
+      "name": "core_actor.cpp_createActorByName_FUN_0040c430"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00524700",
+      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004f3d50",
+      "name": "switchdataD_004f3d50",
+      "type": "void*",
+      "value": "004f3d9a"
+    },
+    {
+      "addr": "0062ece7",
+      "name": "s_CGabriella_0062ece7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ecf2",
+      "name": "s_CSvetlana_0062ecf2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ecfc",
+      "name": "s_CStranger_0062ecfc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed06",
+      "name": "s_CScat_0062ed06",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed0c",
+      "name": "s_CBaron_0062ed0c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed13",
+      "name": "s_CIcePick_0062ed13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed1c",
+      "name": "s_CHaystack_0062ed1c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed26",
+      "name": "s_CColonel_0062ed26",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed2f",
+      "name": "s_CMoloch_0062ed2f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed37",
+      "name": "s_core_hero_cpp_0062ed37",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed48",
+      "name": "s_CHeroPlaceholder_createH_0062ed48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed7a",
+      "name": "s_core_hero_cpp_0062ed7a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ed8b",
+      "name": "s_CHeroPlaceholder_createH_0062ed8b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "02db880c",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHeroPlaceholder *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "uint in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "switch(in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_0000000c",
+      "text": "(pCVar1->location).position.x = *(float *)(in_stack_0000000c + 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_0000000c",
+      "text": "(pCVar1->location).position.y = *(float *)(in_stack_0000000c + 0x24);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_0000000c",
+      "text": "(pCVar1->location).position.z = *(float *)(in_stack_0000000c + 0x28);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_0000000c",
+      "text": "(pCVar1->location).area_id = *(int *)(in_stack_0000000c + 0x2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_0000000c",
+      "text": "if (&pCVar1->orient != (COrientation *)(in_stack_0000000c + 0x30)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_0000000c",
+      "text": "(pCVar1->orient).pitch = *(float *)(in_stack_0000000c + 0x30);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_0000000c",
+      "text": "(pCVar1->orient).bank = *(float *)(in_stack_0000000c + 0x34);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_0000000c",
+      "text": "(pCVar1->orient).heading = *(float *)(in_stack_0000000c + 0x38);",
+      "type": "stack_param"
     }
   ]
 }

@@ -28,8 +28,8 @@ section .text
     PUSH EBX                            ; 0056fff2
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0056fff3
     PUSH ESI                            ; 0056fff7
-    CALL core_set.cpp_CDemonSet_FUN_00570040 ; 0056fff8 | void core_set.cpp_CDemonSet_FUN_00570040(CDemonSet * this_ptr)
-        ;   XREF to: 00570040 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_FUN_00570040 ; 0056fff8
+        ;   XREF to: 00570040 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570040(CDemonSet * this_ptr)
     ADD ESP,0x14                        ; 0056fffd
     POP ESI                             ; 00570000
     POP EBX                             ; 00570001

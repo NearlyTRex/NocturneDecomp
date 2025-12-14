@@ -28,7 +28,7 @@ CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_005464d0(CPathMap *this_ptr)
       }
       iVar3 = iVar3 + 1;
       iVar2 = iVar1;
-    } while (SBORROW /* signed borrow */4(iVar1,g_PathMapCount * 4) != iVar1 + g_PathMapCount * -4 < 0);
+    } while (iVar1 < g_PathMapCount * 4);
   }
   return this_ptr;
 }

@@ -39,8 +39,8 @@ section .text
     PUSH ESI                            ; 005bfb3e
     MOV dword ptr [ESP + 0xc],EDX       ; 005bfb3f
     MOV dword ptr [ESP + 0x14],EDX      ; 005bfb43
-    CALL core_charactr.cpp_CCharacter_FUN_004285d0 ; 005bfb47 | void core_charactr.cpp_CCharacter_FUN_004285d0(CCharacter * this_ptr)
-        ;   XREF to: 004285d0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_004285d0 ; 005bfb47
+        ;   XREF to: 004285d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_004285d0(CCharacter * this_ptr)
     ADD ESP,0xc                         ; 005bfb4c
     ADD ESP,0xc                         ; 005bfb4f
     POP ESI                             ; 005bfb52

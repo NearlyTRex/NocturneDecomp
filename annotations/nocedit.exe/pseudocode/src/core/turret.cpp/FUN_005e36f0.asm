@@ -18,6 +18,6 @@ section .text
         ;   Label: core_turret.cpp_FUN_005e36f0
     PUSH 0x41700000                     ; 005e36f3
     PUSH 0x41200000                     ; 005e36f8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005e36fd | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005e36fd
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 10, 
-    "suspect_count": 1, 
+    "assembly_lines": 10,
+    "complexity_score": 23,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca", 
-      "addr": "005ff5ca"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "this_ptr[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "((istrstream *)&this_ptr[-2].ios.__fill_character,dtor_flags);"
-    }
-  ], 
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ff59c", 
-    "signature": "void crt_strstream.cpp_istrstream_destructor_thunk_from_istream_FUN_005ff59c(istream * this_ptr, int dtor_flags)", 
+    "address": "005ff59c",
     "address_range": [
       [
-        "005ff59c", 
+        "005ff59c",
         "005ff5b1"
       ]
-    ], 
-    "name": "crt_strstream.cpp_istrstream_destructor_thunk_from_istream_FUN_005ff59c"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "crt_strstream.cpp_istrstream_destructor_thunk_from_istream_FUN_005ff59c",
+    "signature": "void crt_strstream.cpp_istrstream_destructor_thunk_from_istream_FUN_005ff59c(istream * this_ptr, int dtor_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff5ca",
+      "name": "crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "istream *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "istream *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dtor_flags"
+        "is_param": true,
+        "name": "dtor_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 8,
+      "match": "this_ptr[-2].",
+      "text": "((istrstream *)&this_ptr[-2].ios.__fill_character,dtor_flags);",
+      "type": "negative_offset"
+    }
+  ]
 }

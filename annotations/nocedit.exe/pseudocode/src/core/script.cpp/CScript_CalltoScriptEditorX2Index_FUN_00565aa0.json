@@ -1,91 +1,91 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 72, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 46, 
-    "assembly_lines": 29, 
-    "suspect_count": 5, 
+    "assembly_lines": 29,
+    "complexity_score": 72,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 17,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_script.cpp_CScript_editorX2Index_FUN_00566a90", 
-      "addr": "00566a90"
-    }, 
-    {
-      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0", 
-      "addr": "004a6ed0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (-1 < in_stack_0000000c) {"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CBitFont *)(in_stack_00000004 + 0x38));"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c < iVar1) {"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00565aa0", 
-    "signature": "undefined core_script.cpp_CScript_CalltoScriptEditorX2Index_FUN_00565aa0()", 
-    "address_range": [
-      [
-        "00565aa0", 
-        "00565ad3"
-      ]
-    ], 
-    "name": "core_script.cpp_CScript_CalltoScriptEditorX2Index_FUN_00565aa0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 46
+  },
   "cross_references": [
     {
-      "from_addr": "0056590f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_Unk20_FUN_00565130", 
-      "addr": "00565130"
+      "addr": "00565130",
+      "from_addr": "0056590f",
+      "name": "core_script.cpp_CScript_Unk20_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00565aa0",
+    "address_range": [
+      [
+        "00565aa0",
+        "00565ad3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_CScript_CalltoScriptEditorX2Index_FUN_00565aa0",
+    "signature": "undefined core_script.cpp_CScript_CalltoScriptEditorX2Index_FUN_00565aa0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00566a90",
+      "name": "core_script.cpp_CScript_editorX2Index_FUN_00566a90"
+    },
+    {
+      "addr": "004a6ed0",
+      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "text": "if (-1 < in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "((CBitFont *)(in_stack_00000004 + 0x38));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c < iVar1) {",
+      "type": "stack_param"
     }
   ]
 }

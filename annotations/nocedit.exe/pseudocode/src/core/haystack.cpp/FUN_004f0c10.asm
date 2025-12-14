@@ -25,18 +25,18 @@ section .text
         ;   Label: core_haystack.cpp_FUN_004f0c10
     MOV EDX,dword ptr [ESP + 0x8]       ; 004f0c11
     PUSH EDX                            ; 004f0c15
-    CALL core_hero.cpp_FUN_004f2340     ; 004f0c16 | undefined core_hero.cpp_FUN_004f2340()
-        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)
+    CALL core_hero.cpp_FUN_004f2340     ; 004f0c16
+        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2340()
     MOV EBX,EAX                         ; 004f0c1b
     ADD EAX,0x158                       ; 004f0c1d
     ADD ESP,0x4                         ; 004f0c22
-    MOV dword ptr [EAX + -0x4],0x65f3f4 ; 004f0c25 | CDemonActor_vtable PTR_core_haystack.cpp_FUN_0065f3f4
-    PUSH 0x62e7fa                       ; 004f0c2c | = "haystack.dfm" | s_haystack_dfm_0062e7fa = haystack.dfm
+    MOV dword ptr [EAX + -0x4],0x65f3f4 ; 004f0c25 | PTR_core_haystack.cpp_FUN_0065f3f4
+    PUSH 0x62e7fa                       ; 004f0c2c | = "haystack.dfm"
     MOV dword ptr [EAX + 0x1fa7c],0x0   ; 004f0c31
     PUSH EAX                            ; 004f0c3b
     MOV dword ptr [EAX + 0x1fa80],0x0   ; 004f0c3c
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004f0c46 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004f0c46
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x1fbdc]             ; 004f0c4b
     MOV dword ptr [EBX + 0x1fbe8],0x3f800000 ; 004f0c51
     MOV dword ptr [EAX + 0x8],0x0       ; 004f0c5b

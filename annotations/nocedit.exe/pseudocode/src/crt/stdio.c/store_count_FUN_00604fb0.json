@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 48, 
-    "pseudocode_lines": 33, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 94, 
-    "assembly_lines": 61, 
-    "suspect_count": 1, 
+    "assembly_lines": 61,
+    "complexity_score": 48,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 33,
+    "suspect_count": 1,
     "suspect_types": [
       "undefined_ptr_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 27, 
-      "match": "(undefined6 *)", 
-      "description": "Cast to undefined pointer type", 
-      "type": "undefined_ptr_cast", 
-      "text": "piVar3 = (int *)*(undefined6 *)pcVar2;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00604fb0", 
-    "signature": "void crt_stdio.c_store_count_FUN_00604fb0(scanf_state_t * state, va_list_t * args, int chars_consumed)", 
-    "address_range": [
-      [
-        "00604fb0", 
-        "00605019"
-      ]
-    ], 
-    "name": "crt_stdio.c_store_count_FUN_00604fb0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "scanf_state_t *", 
-        "size": 4, 
-        "name": "state"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "va_list_t *", 
-        "size": 4, 
-        "name": "args"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "chars_consumed"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 94
+  },
   "cross_references": [
     {
-      "from_addr": "00604bf8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_doscan_FUN_00604950", 
-      "addr": "00604950"
+      "addr": "00604950",
+      "from_addr": "00604bf8",
+      "name": "crt_stdio.c_doscan_FUN_00604950",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00604fb0",
+    "address_range": [
+      [
+        "00604fb0",
+        "00605019"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_store_count_FUN_00604fb0",
+    "signature": "void crt_stdio.c_store_count_FUN_00604fb0(scanf_state_t * state, va_list_t * args, int chars_consumed)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "state",
+        "offset": 4,
+        "size": 4,
+        "type": "scanf_state_t *"
+      },
+      {
+        "is_param": true,
+        "name": "args",
+        "offset": 8,
+        "size": 4,
+        "type": "va_list_t *"
+      },
+      {
+        "is_param": true,
+        "name": "chars_consumed",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Cast to undefined pointer type",
+      "line": 27,
+      "match": "(undefined6 *)",
+      "text": "piVar3 = (int *)*(undefined6 *)pcVar2;",
+      "type": "undefined_ptr_cast"
     }
   ]
 }

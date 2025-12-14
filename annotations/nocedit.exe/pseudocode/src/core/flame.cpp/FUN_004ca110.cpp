@@ -143,7 +143,7 @@ float core_flame_cpp_FUN_004ca110(void)
           CStack_2c.z = (int)ROUND(fStack_6c * _DAT_0065e010);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                     (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&CStack_2c);
-          (*(code *)((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+          (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
           g_RenderVertexBuffer[0].w_recip = (float)(0xffff - (int)g_PerspectiveReciprocal);
           if (unaff_EBP == 3) {
             g_RenderVertexBuffer[0].w_recip = (float)((int)g_RenderVertexBuffer[0].w_recip / 2);

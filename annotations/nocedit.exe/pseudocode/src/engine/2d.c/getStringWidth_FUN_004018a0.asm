@@ -44,30 +44,30 @@ section .text
     NOT ECX                             ; 004018b7
     DEC ECX                             ; 004018b9
     CMP EBX,ECX                         ; 004018ba
-    JNC 0x004018eb                      ; 004018bc | LAB_004018eb
-        ;   XREF to: 004018eb (CONDITIONAL_JUMP)
+    JNC 0x004018eb                      ; 004018bc
+        ;   XREF to: 004018eb (CONDITIONAL_JUMP)  ; LAB_004018eb
     XOR EAX,EAX                         ; 004018be
     MOV AL,byte ptr [EDX]               ; 004018c0
     CMP EAX,0x20                        ; 004018c2
-    JGE 0x004018cb                      ; 004018c5 | LAB_004018cb
-        ;   XREF to: 004018cb (CONDITIONAL_JUMP)
+    JGE 0x004018cb                      ; 004018c5
+        ;   XREF to: 004018cb (CONDITIONAL_JUMP)  ; LAB_004018cb
     INC EBX                             ; 004018c7
         ;   Label: LAB_004018c7
     INC EDX                             ; 004018c8
-    JMP 0x004018ae                      ; 004018c9 | LAB_004018ae
-        ;   XREF to: 004018ae (UNCONDITIONAL_JUMP)
+    JMP 0x004018ae                      ; 004018c9
+        ;   XREF to: 004018ae (UNCONDITIONAL_JUMP)  ; LAB_004018ae
     CMP EAX,0x100                       ; 004018cb
         ;   Label: LAB_004018cb
-    JGE 0x004018c7                      ; 004018d0 | LAB_004018c7
-        ;   XREF to: 004018c7 (CONDITIONAL_JUMP)
+    JGE 0x004018c7                      ; 004018d0
+        ;   XREF to: 004018c7 (CONDITIONAL_JUMP)  ; LAB_004018c7
     SUB EAX,0x20                        ; 004018d2
     IMUL EAX,EAX,0x91                   ; 004018d5
     MOV AL,byte ptr [EAX + 0x666040]    ; 004018db | g_FontTable
     AND EAX,0xff                        ; 004018e1
     INC EAX                             ; 004018e6
     ADD ESI,EAX                         ; 004018e7
-    JMP 0x004018c7                      ; 004018e9 | LAB_004018c7
-        ;   XREF to: 004018c7 (UNCONDITIONAL_JUMP)
+    JMP 0x004018c7                      ; 004018e9
+        ;   XREF to: 004018c7 (UNCONDITIONAL_JUMP)  ; LAB_004018c7
     MOV EAX,ESI                         ; 004018eb
         ;   Label: LAB_004018eb
     POP EBP                             ; 004018ed

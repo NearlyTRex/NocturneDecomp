@@ -20,11 +20,11 @@ section .text
 
     MOV ECX,dword ptr [ESP + 0x4]       ; 004ffff0
         ;   Label: core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004ffff0
-    MOV EDX,dword ptr [0x02db87d0]      ; 004ffff4 | int g_LocalHeroIndex
+    MOV EDX,dword ptr [0x02db87d0]      ; 004ffff4 | g_LocalHeroIndex
     MOV EAX,dword ptr [ECX + 0x4]       ; 004ffffa
-    CMP EAX,dword ptr [EDX*0x4 + 0x2db87c0] ; 004ffffd | CHero *[4] g_HeroActors
-    JZ 0x00500007                       ; 00500004 | LAB_00500007
-        ;   XREF to: 00500007 (CONDITIONAL_JUMP)
+    CMP EAX,dword ptr [EDX*0x4 + 0x2db87c0] ; 004ffffd | g_HeroActors
+    JZ 0x00500007                       ; 00500004
+        ;   XREF to: 00500007 (CONDITIONAL_JUMP)  ; LAB_00500007
     RET                                 ; 00500006
     MOV dword ptr [ECX + 0x338],0x0     ; 00500007
         ;   Label: LAB_00500007

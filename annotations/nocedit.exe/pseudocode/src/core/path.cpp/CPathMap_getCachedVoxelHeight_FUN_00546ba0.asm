@@ -39,17 +39,17 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 00546bae
     MOV ESI,dword ptr [ESP + 0x28]      ; 00546bb2
     TEST EDX,EDX                        ; 00546bb6
-    JL 0x00546bf6                       ; 00546bb8 | LAB_00546bf6
-        ;   XREF to: 00546bf6 (CONDITIONAL_JUMP)
+    JL 0x00546bf6                       ; 00546bb8
+        ;   XREF to: 00546bf6 (CONDITIONAL_JUMP)  ; LAB_00546bf6
     CMP EDX,0x64                        ; 00546bba
-    JGE 0x00546bf6                      ; 00546bbd | LAB_00546bf6
-        ;   XREF to: 00546bf6 (CONDITIONAL_JUMP)
+    JGE 0x00546bf6                      ; 00546bbd
+        ;   XREF to: 00546bf6 (CONDITIONAL_JUMP)  ; LAB_00546bf6
     TEST ECX,ECX                        ; 00546bbf
-    JL 0x00546bf6                       ; 00546bc1 | LAB_00546bf6
-        ;   XREF to: 00546bf6 (CONDITIONAL_JUMP)
+    JL 0x00546bf6                       ; 00546bc1
+        ;   XREF to: 00546bf6 (CONDITIONAL_JUMP)  ; LAB_00546bf6
     CMP ECX,0x64                        ; 00546bc3
-    JGE 0x00546bf6                      ; 00546bc6 | LAB_00546bf6
-        ;   XREF to: 00546bf6 (CONDITIONAL_JUMP)
+    JGE 0x00546bf6                      ; 00546bc6
+        ;   XREF to: 00546bf6 (CONDITIONAL_JUMP)  ; LAB_00546bf6
     LEA EAX,[ECX*0x4 + 0x0]             ; 00546bc8
     SUB EAX,ECX                         ; 00546bcf
     SHL EAX,0x3                         ; 00546bd1
@@ -59,8 +59,8 @@ section .text
     ADD EAX,EDI                         ; 00546be0
     ADD EBX,EAX                         ; 00546be2
     CMP ESI,dword ptr [EBX + 0x9c70]    ; 00546be4
-    JNZ 0x00546bfd                      ; 00546bea | LAB_00546bfd
-        ;   XREF to: 00546bfd (CONDITIONAL_JUMP)
+    JNZ 0x00546bfd                      ; 00546bea
+        ;   XREF to: 00546bfd (CONDITIONAL_JUMP)  ; LAB_00546bfd
     MOV EAX,dword ptr [EBX + 0x30]      ; 00546bec
     ADD ESP,0xc                         ; 00546bef
         ;   Label: LAB_00546bef
@@ -70,8 +70,8 @@ section .text
     RET                                 ; 00546bf5
     MOV EAX,0xffffd8f1                  ; 00546bf6
         ;   Label: LAB_00546bf6
-    JMP 0x00546bef                      ; 00546bfb | LAB_00546bef
-        ;   XREF to: 00546bef (UNCONDITIONAL_JUMP)
+    JMP 0x00546bef                      ; 00546bfb
+        ;   XREF to: 00546bef (UNCONDITIONAL_JUMP)  ; LAB_00546bef
     MOV EAX,dword ptr [EDI + 0x24]      ; 00546bfd
         ;   Label: LAB_00546bfd
     ADD EAX,EDX                         ; 00546c00
@@ -83,9 +83,9 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 00546c11
     MOV EAX,ESP                         ; 00546c15
     PUSH EAX                            ; 00546c17
-    PUSH 0x3277d14                      ; 00546c18 | CDemonRaytrace g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50 ; 00546c1d | int core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50(CDemonRaytrace * this_ptr, CVector3i * voxel_coords)
-        ;   XREF to: 00499a50 (UNCONDITIONAL_CALL)
+    PUSH 0x3277d14                      ; 00546c18 | g_CDemonRaytraceInstance
+    CALL core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50 ; 00546c1d
+        ;   XREF to: 00499a50 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50(CDemonRaytrace * this_ptr, CVector3i * voxel_coords)
     MOV dword ptr [EBX + 0x30],EAX      ; 00546c22
     ADD ESP,0x8                         ; 00546c25
     MOV dword ptr [EBX + 0x9c70],ESI    ; 00546c28

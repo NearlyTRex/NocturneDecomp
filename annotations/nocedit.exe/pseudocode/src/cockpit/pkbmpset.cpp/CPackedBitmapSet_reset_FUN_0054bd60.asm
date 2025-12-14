@@ -32,19 +32,19 @@ section .text
         ;   Label: cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
     PUSH ESI                            ; 0054bd61
     MOV EBX,dword ptr [ESP + 0xc]       ; 0054bd62
-    MOV EDX,0x63f39e                    ; 0054bd66 | = "..\\cockpit\\pkbmpset.cpp" | s_cockpit_pkbmpset_cpp_0063f39e = ..\cockpit\pkbmpset.cpp
-    PUSH 0x662260                       ; 0054bd6b | WatcomTypeInfo g_CPackedBitmapTypeInfo
+    MOV EDX,0x63f39e                    ; 0054bd66 | = "..\\cockpit\\pkbmpset.cpp"
+    PUSH 0x662260                       ; 0054bd6b | g_CPackedBitmapTypeInfo
     MOV ESI,dword ptr [EBX + 0x4]       ; 0054bd70
     MOV ECX,0x4d                        ; 0054bd73
     PUSH ESI                            ; 0054bd78
-    MOV dword ptr [0x0067d20c],EDX      ; 0054bd79 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],ECX      ; 0054bd7f | int g_CurrentDebugLine
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0054bd85 | void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],EDX      ; 0054bd79 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ECX      ; 0054bd7f | g_CurrentDebugLine
+    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0054bd85
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0054bd8a
     PUSH EAX                            ; 0054bd8d
-    CALL crt_memory.c_free_FUN_005fe659 ; 0054bd8e | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 0054bd8e
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     MOV dword ptr [EBX],0x0             ; 0054bd93
     ADD ESP,0x4                         ; 0054bd99
     MOV dword ptr [EBX + 0x4],0x0       ; 0054bd9c

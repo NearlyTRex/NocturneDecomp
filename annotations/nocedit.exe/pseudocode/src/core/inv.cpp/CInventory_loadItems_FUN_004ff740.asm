@@ -28,24 +28,24 @@ section .text
     MOV EDX,dword ptr [EDI + 0x8]       ; 004ff747
     XOR EBX,EBX                         ; 004ff74a
     TEST EDX,EDX                        ; 004ff74c
-    JLE 0x004ff772                      ; 004ff74e | LAB_004ff772
-        ;   XREF to: 004ff772 (CONDITIONAL_JUMP)
+    JLE 0x004ff772                      ; 004ff74e
+        ;   XREF to: 004ff772 (CONDITIONAL_JUMP)  ; LAB_004ff772
     PUSH ESI                            ; 004ff750
     MOV ESI,EDI                         ; 004ff751
     MOV ECX,dword ptr [ESI + 0xc]       ; 004ff753
         ;   Label: LAB_004ff753
     PUSH ECX                            ; 004ff756
-    MOV EBP,dword ptr [0x0067d550]      ; 004ff757 | CDemonMission * g_CDemonMissionPtr
-    PUSH EBP                            ; 004ff75d | CDemonMission g_CDemonMissionInstance
+    MOV EBP,dword ptr [0x0067d550]      ; 004ff757 | g_CDemonMissionPtr
+    PUSH EBP                            ; 004ff75d | g_CDemonMissionInstance
     ADD ESI,0x4                         ; 004ff75e
     INC EBX                             ; 004ff761
-    CALL core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0 ; 004ff762 | void core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
-        ;   XREF to: 00523be0 (UNCONDITIONAL_CALL)
+    CALL core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0 ; 004ff762
+        ;   XREF to: 00523be0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     MOV EAX,dword ptr [EDI + 0x8]       ; 004ff767
     ADD ESP,0x8                         ; 004ff76a
     CMP EBX,EAX                         ; 004ff76d
-    JL 0x004ff753                       ; 004ff76f | LAB_004ff753
-        ;   XREF to: 004ff753 (CONDITIONAL_JUMP)
+    JL 0x004ff753                       ; 004ff76f
+        ;   XREF to: 004ff753 (CONDITIONAL_JUMP)  ; LAB_004ff753
     POP ESI                             ; 004ff771
     MOV dword ptr [EDI + 0x450],0x0     ; 004ff772
         ;   Label: LAB_004ff772

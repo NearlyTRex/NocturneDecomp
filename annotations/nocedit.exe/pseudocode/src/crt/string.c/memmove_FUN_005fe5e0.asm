@@ -32,14 +32,14 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 005fe5e6
     MOV ECX,dword ptr [ESP + 0x14]      ; 005fe5ea
     CMP ESI,EAX                         ; 005fe5ee
-    JZ 0x005fe62f                       ; 005fe5f0 | LAB_005fe62f
-        ;   XREF to: 005fe62f (CONDITIONAL_JUMP)
-    JNC 0x005fe61b                      ; 005fe5f2 | LAB_005fe61b
-        ;   XREF to: 005fe61b (CONDITIONAL_JUMP)
+    JZ 0x005fe62f                       ; 005fe5f0
+        ;   XREF to: 005fe62f (CONDITIONAL_JUMP)  ; LAB_005fe62f
+    JNC 0x005fe61b                      ; 005fe5f2
+        ;   XREF to: 005fe61b (CONDITIONAL_JUMP)  ; LAB_005fe61b
     LEA EDX,[ESI + ECX*0x1]             ; 005fe5f4
     CMP EDX,EAX                         ; 005fe5f7
-    JBE 0x005fe61b                      ; 005fe5f9 | LAB_005fe61b
-        ;   XREF to: 005fe61b (CONDITIONAL_JUMP)
+    JBE 0x005fe61b                      ; 005fe5f9
+        ;   XREF to: 005fe61b (CONDITIONAL_JUMP)  ; LAB_005fe61b
     LEA EDI,[EAX + ECX*0x1]             ; 005fe5fb
     LEA ESI,[EDX + -0x1]                ; 005fe5fe
     DEC EDI                             ; 005fe601

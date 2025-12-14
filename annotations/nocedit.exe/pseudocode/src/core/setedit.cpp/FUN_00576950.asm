@@ -28,35 +28,35 @@ section .text
     DEC ECX                             ; 00576961
     LEA EDX,[ECX + -0x1]                ; 00576962
     TEST EDX,EDX                        ; 00576965
-    JLE 0x0057697e                      ; 00576967 | LAB_0057697e
-        ;   XREF to: 0057697e (CONDITIONAL_JUMP)
+    JLE 0x0057697e                      ; 00576967
+        ;   XREF to: 0057697e (CONDITIONAL_JUMP)  ; LAB_0057697e
     LEA EAX,[EDX + EBX*0x1]             ; 00576969
     MOV CL,byte ptr [EAX]               ; 0057696c
         ;   Label: LAB_0057696c
     CMP CL,0x30                         ; 0057696e
-    JC 0x0057697e                       ; 00576971 | LAB_0057697e
-        ;   XREF to: 0057697e (CONDITIONAL_JUMP)
+    JC 0x0057697e                       ; 00576971
+        ;   XREF to: 0057697e (CONDITIONAL_JUMP)  ; LAB_0057697e
     CMP CL,0x39                         ; 00576973
-    JA 0x0057697e                       ; 00576976 | LAB_0057697e
-        ;   XREF to: 0057697e (CONDITIONAL_JUMP)
+    JA 0x0057697e                       ; 00576976
+        ;   XREF to: 0057697e (CONDITIONAL_JUMP)  ; LAB_0057697e
     DEC EDX                             ; 00576978
     DEC EAX                             ; 00576979
     TEST EDX,EDX                        ; 0057697a
-    JG 0x0057696c                       ; 0057697c | LAB_0057696c
-        ;   XREF to: 0057696c (CONDITIONAL_JUMP)
+    JG 0x0057696c                       ; 0057697c
+        ;   XREF to: 0057696c (CONDITIONAL_JUMP)  ; LAB_0057696c
     INC EDX                             ; 0057697e
         ;   Label: LAB_0057697e
     ADD EBX,EDX                         ; 0057697f
     PUSH EBX                            ; 00576981
-    CALL crt_stdlib.c_atoi_FUN_005ffef0 ; 00576982 | int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
-        ;   XREF to: 005ffef0 (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_atoi_FUN_005ffef0 ; 00576982
+        ;   XREF to: 005ffef0 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
     ADD ESP,0x4                         ; 00576987
     INC EAX                             ; 0057698a
     PUSH EAX                            ; 0057698b
-    PUSH 0x6465a5                       ; 0057698c | = "%d" | s_d_006465a5 = %d
+    PUSH 0x6465a5                       ; 0057698c | = "%d"
     PUSH EBX                            ; 00576991
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00576992 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00576992
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00576997
     POP EDI                             ; 0057699a
     POP EBX                             ; 0057699b

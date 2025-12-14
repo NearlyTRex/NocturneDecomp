@@ -16,8 +16,8 @@ section .text
     PUSH EDX                            ; 004d7634
     MOV ECX,dword ptr [ESP + 0x8]       ; 004d7635
     PUSH ECX                            ; 004d7639
-    CALL core_hero.cpp_CHero_FUN_004f3fa0 ; 004d763a | void core_hero.cpp_CHero_FUN_004f3fa0(CHero * this_ptr)
-        ;   XREF to: 004f3fa0 (UNCONDITIONAL_CALL)
+    CALL core_hero.cpp_CHero_FUN_004f3fa0 ; 004d763a
+        ;   XREF to: 004f3fa0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f3fa0(CHero * this_ptr)
     ADD ESP,0x8                         ; 004d763f
     RET                                 ; 004d7642
 

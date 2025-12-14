@@ -1,368 +1,374 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 364, 
-    "pseudocode_lines": 109, 
-    "cross_reference_count": 5, 
-    "global_count": 4, 
-    "total_lines": 342, 
-    "assembly_lines": 233, 
-    "suspect_count": 23, 
+    "assembly_lines": 233,
+    "complexity_score": 364,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 109,
+    "suspect_count": 23,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00", 
-      "addr": "0048ce00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CVector3i", 
-      "name": "g_CameraOutOfBoundsCoord", 
-      "addr": "0151bf98", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CameraOutOfBoundsZ", 
-      "addr": "0151bfa0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 4, 
-    "patterns": [
-      {
-        "address": "0044d861", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }, 
-      {
-        "address": "0044d86b", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }, 
-      {
-        "address": "0044da68", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }, 
-      {
-        "address": "0044da77", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CVector3i *unaff_ESI;"
-    }, 
-    {
-      "line": 59, 
-      "match": "&stack0xffffffd8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar7 * -8) ="
-    }, 
-    {
-      "line": 60, 
-      "match": "&stack0xfffffff0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar7 * -8);"
-    }, 
-    {
-      "line": 60, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar7 * -8);"
-    }, 
-    {
-      "line": 61, 
-      "match": "&stack0xffffffdc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar7 * -8 + (uint)bVar7 * -8) ="
-    }, 
-    {
-      "line": 62, 
-      "match": "&stack0xfffffff4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar7 * -8 + (uint)bVar7 * -8);"
-    }, 
-    {
-      "line": 63, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);"
-    }, 
-    {
-      "line": 63, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);"
-    }, 
-    {
-      "line": 64, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->x = iStack_2c;"
-    }, 
-    {
-      "line": 65, 
-      "match": "&stack0xffffffd8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*puVar6 = *(uint *)(&stack0xffffffd8 + (uint)bVar7 * -8);"
-    }, 
-    {
-      "line": 67, 
-      "match": "&stack0xffffffdc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar7 * -8 + (uint)bVar7 * -8);"
-    }, 
-    {
-      "line": 68, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_ESI;"
-    }, 
-    {
-      "line": 102, 
-      "match": "&stack0xffffffd8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar7 * -8) ="
-    }, 
-    {
-      "line": 103, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar7 * -8 + 4);"
-    }, 
-    {
-      "line": 104, 
-      "match": "&stack0xffffffdc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar7 * -8 + (uint)bVar7 * -8) ="
-    }, 
-    {
-      "line": 106, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);"
-    }, 
-    {
-      "line": 106, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);"
-    }, 
-    {
-      "line": 107, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->x = iStack_2c;"
-    }, 
-    {
-      "line": 108, 
-      "match": "&stack0xffffffd8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*puVar6 = *(uint *)(&stack0xffffffd8 + (uint)bVar7 * -8);"
-    }, 
-    {
-      "line": 110, 
-      "match": "&stack0xffffffdc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar7 * -8 + (uint)bVar7 * -8);"
-    }, 
-    {
-      "line": 111, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_ESI;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0044d7d0", 
-    "signature": "CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)", 
-    "address_range": [
-      [
-        "0044d7d0", 
-        "0044da86"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0"
-  }, 
-  "stack_frame": {
-    "local_size": 40, 
-    "variables": [
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "output_ptr"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "input_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 342
+  },
   "cross_references": [
     {
-      "from_addr": "0044e265", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10", 
-      "addr": "0044de10"
-    }, 
+      "addr": "0044de10",
+      "from_addr": "0044e265",
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00450d16", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0", 
-      "addr": "00450ac0"
-    }, 
+      "addr": "00450ac0",
+      "from_addr": "00450d16",
+      "name": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045193e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0", 
-      "addr": "004518f0"
-    }, 
+      "addr": "004518f0",
+      "from_addr": "0045193e",
+      "name": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00450890", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0", 
-      "addr": "004507a0"
-    }, 
+      "addr": "004507a0",
+      "from_addr": "00450890",
+      "name": "core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e0883", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_beginFadeIn_FUN_004e0920", 
-      "addr": "004e0920"
+      "addr": "004e0920",
+      "from_addr": "004e0883",
+      "name": "core_game.cpp_CGame_beginFadeIn_FUN_004e0920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044d7d0",
+    "address_range": [
+      [
+        "0044d7d0",
+        "0044da86"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0",
+    "signature": "CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048ce00",
+      "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0151bf98",
+      "name": "g_CameraOutOfBoundsCoord",
+      "type": "CVector3i",
+      "value": null
+    },
+    {
+      "addr": "0151bf9c",
+      "name": "g_CameraOutOfBoundsY",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0151bfa0",
+      "name": "g_CameraOutOfBoundsZ",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "output_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "input_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 4,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0044d861",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044d86b",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044da68",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044da77",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 12,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "text": "CVector3i *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 59,
+      "match": "&stack0xffffffd8",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar7 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xfffffff0",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar7 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xffffffdc",
+      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 62,
+      "match": "&stack0xfffffff4",
+      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_ESI",
+      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 64,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->x = iStack_2c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xffffffd8",
+      "text": "*puVar6 = *(uint *)(&stack0xffffffd8 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
+      "match": "&stack0xffffffdc",
+      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 68,
+      "match": "unaff_ESI",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 102,
+      "match": "&stack0xffffffd8",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar7 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_CameraOutOfBoundsCoord + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 104,
+      "match": "&stack0xffffffdc",
+      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 106,
+      "match": "unaff_ESI",
+      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 107,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->x = iStack_2c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 108,
+      "match": "&stack0xffffffd8",
+      "text": "*puVar6 = *(uint *)(&stack0xffffffd8 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 110,
+      "match": "&stack0xffffffdc",
+      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 111,
+      "match": "unaff_ESI",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
     }
   ]
 }

@@ -30,14 +30,14 @@ section .text
     SUB ESP,0x8                         ; 004d1ed6
     FST float ptr [EBX + 0x48c]         ; 004d1ed9
     FSTP double ptr [ESP]               ; 004d1edf
-    CALL crt_math.c_floor_FUN_005feb90  ; 004d1ee2 | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 004d1ee2
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 004d1ee7
     MOV dword ptr [ESP + 0xc],EDX       ; 004d1eeb
     FLD double ptr [ESP + 0x8]          ; 004d1eef
     ADD ESP,0x8                         ; 004d1ef3
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004d1ef6 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004d1ef6
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 004d1efb
     MOV EAX,dword ptr [ESP + 0x8]       ; 004d1eff
     MOV dword ptr [ESP + 0xc],EAX       ; 004d1f03

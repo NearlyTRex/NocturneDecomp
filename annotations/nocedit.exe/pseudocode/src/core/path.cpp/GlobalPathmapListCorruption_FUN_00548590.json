@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 4, 
-    "global_count": 7, 
-    "total_lines": 61, 
-    "assembly_lines": 39, 
-    "suspect_count": 2, 
+    "assembly_lines": 39,
+    "complexity_score": 47,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_path.cpp_CPathMap_reset_FUN_00548510", 
-      "addr": "00548510"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_path_cpp_0063ea48", 
-      "addr": "0063ea48", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Global_pathmap_list_corr_0063ea59", 
-      "addr": "0063ea59", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PathMapCount", 
-      "addr": "030c3ab8", 
-      "value": null
-    }, 
-    {
-      "type": "CPathMap*[200]", 
-      "name": "g_PathMapList", 
-      "addr": "030c3abc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030c3ac0", 
-      "addr": "030c3ac0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)g_PathMapList + iVar2) == 0) {"
-    }, 
-    {
-      "line": 18, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar1 = (uint *)((int)g_PathMapList + iVar2);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00548590", 
-    "signature": "undefined core_path.cpp_GlobalPathmapListCorruption_FUN_00548590()", 
-    "address_range": [
-      [
-        "00548590", 
-        "005485ec"
-      ]
-    ], 
-    "name": "core_path.cpp_GlobalPathmapListCorruption_FUN_00548590"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 61
+  },
   "cross_references": [
     {
-      "from_addr": "00569d40", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
-      "addr": "00569410"
-    }, 
+      "addr": "00569410",
+      "from_addr": "00569d40",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005744a2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_FUN_00574440", 
-      "addr": "00574440"
-    }, 
+      "addr": "00574440",
+      "from_addr": "005744a2",
+      "name": "core_setcolid.cpp_CDemonSet_FUN_00574440",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00574532", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_FUN_005744d0", 
-      "addr": "005744d0"
-    }, 
+      "addr": "005744d0",
+      "from_addr": "00574532",
+      "name": "core_setcolid.cpp_CDemonSet_FUN_005744d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057456d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_FUN_00574560", 
-      "addr": "00574560"
+      "addr": "00574560",
+      "from_addr": "0057456d",
+      "name": "core_setcolid.cpp_CDemonSet_FUN_00574560",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00548590",
+    "address_range": [
+      [
+        "00548590",
+        "005485ec"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_path.cpp_GlobalPathmapListCorruption_FUN_00548590",
+    "signature": "undefined core_path.cpp_GlobalPathmapListCorruption_FUN_00548590()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00548510",
+      "name": "core_path.cpp_CPathMap_reset_FUN_00548510"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ea48",
+      "name": "s_core_path_cpp_0063ea48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ea59",
+      "name": "s_Global_pathmap_list_corr_0063ea59",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3ab8",
+      "name": "g_PathMapCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3abc",
+      "name": "g_PathMapList",
+      "type": "CPathMap*[200]",
+      "value": null
+    },
+    {
+      "addr": "030c3ac0",
+      "name": "DAT_030c3ac0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)g_PathMapList + iVar2) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)g_PathMapList + iVar2);",
+      "type": "pointer_cast"
     }
   ]
 }

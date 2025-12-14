@@ -1,137 +1,137 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 68, 
-    "pseudocode_lines": 43, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 139, 
-    "assembly_lines": 96, 
-    "suspect_count": 2, 
+    "assembly_lines": 96,
+    "complexity_score": 68,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 43,
+    "suspect_count": 2,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_game.cpp_FUN_004e09a0", 
-      "addr": "004e09a0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d831ec", 
-      "addr": "02d831ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d831f0", 
-      "addr": "02d831f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d831f4", 
-      "addr": "02d831f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d831f8", 
-      "addr": "02d831f8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 20, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if (0 < extraout_EAX) {"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004e0aa0", 
-    "signature": "undefined core_game.cpp_FUN_004e0aa0()", 
-    "address_range": [
-      [
-        "004e0aa0", 
-        "004e0b8f"
-      ]
-    ], 
-    "name": "core_game.cpp_FUN_004e0aa0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 139
+  },
   "cross_references": [
     {
-      "from_addr": "004da57c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
+      "addr": "004da100",
+      "from_addr": "004da57c",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e0aa0",
+    "address_range": [
+      [
+        "004e0aa0",
+        "004e0b8f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004e0aa0",
+    "signature": "undefined core_game.cpp_FUN_004e0aa0()"
+  },
+  "function_calls": [
+    {
+      "addr": "004e09a0",
+      "name": "core_game.cpp_FUN_004e09a0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d831ec",
+      "name": "DAT_02d831ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d831f0",
+      "name": "DAT_02d831f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d831f4",
+      "name": "DAT_02d831f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d831f8",
+      "name": "DAT_02d831f8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_EAX",
+      "text": "if (0 < extraout_EAX) {",
+      "type": "extra_output"
     }
   ]
 }

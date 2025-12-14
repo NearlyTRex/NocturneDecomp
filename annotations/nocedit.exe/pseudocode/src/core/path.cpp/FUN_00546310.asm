@@ -15,8 +15,8 @@ section .text
 
     XOR EDX,EDX                         ; 00546310
         ;   Label: core_path.cpp_FUN_00546310
-    MOV dword ptr [0x030d284c],EDX      ; 00546312 | int g_PathfindingQueueHead
-    MOV dword ptr [0x030d2850],EDX      ; 00546318 | int g_PathfindingQueueTail
-    MOV dword ptr [0x030d4fcc],EDX      ; 0054631e | int g_PathfindingNodesExpanded
+    MOV dword ptr [0x030d284c],EDX      ; 00546312 | g_PathfindingQueueHead
+    MOV dword ptr [0x030d2850],EDX      ; 00546318 | g_PathfindingQueueTail
+    MOV dword ptr [0x030d4fcc],EDX      ; 0054631e | g_PathfindingNodesExpanded
     RET                                 ; 00546324
 

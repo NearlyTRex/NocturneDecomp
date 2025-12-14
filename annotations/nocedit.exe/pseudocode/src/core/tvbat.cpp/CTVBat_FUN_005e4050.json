@@ -1,65 +1,65 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 42, 
-    "assembly_lines": 20, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
-      "addr": "0040cc10"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60", 
-      "addr": "00478d60"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9650", 
-      "addr": "004a9650"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 20,
+    "complexity_score": 22,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005e4050", 
-    "signature": "void core_tvbat.cpp_CTVBat_FUN_005e4050(CTVBat * this_ptr)", 
+    "address": "005e4050",
     "address_range": [
       [
-        "005e4050", 
+        "005e4050",
         "005e409e"
       ]
-    ], 
-    "name": "core_tvbat.cpp_CTVBat_FUN_005e4050"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_tvbat.cpp_CTVBat_FUN_005e4050",
+    "signature": "void core_tvbat.cpp_CTVBat_FUN_005e4050(CTVBat * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "00478d60",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60"
+    },
+    {
+      "addr": "004a9650",
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9650"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 12, 
+    "frame_size": 16,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CTVBat *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTVBat *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

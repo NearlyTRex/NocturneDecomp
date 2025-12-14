@@ -25,14 +25,14 @@ section .text
     FLD1                                ; 00600b98
     FSUBRP                              ; 00600b9a
     MOV AL,0x2                          ; 00600b9c
-    CALL crt_math.c_sqrt_FUN_0060710c   ; 00600b9e | double crt_math.c_sqrt_FUN_0060710c(double value)
-        ;   XREF to: 0060710c (UNCONDITIONAL_CALL)
+    CALL crt_math.c_sqrt_FUN_0060710c   ; 00600b9e
+        ;   XREF to: 0060710c (UNCONDITIONAL_CALL)  ; double crt_math.c_sqrt_FUN_0060710c(double value)
     CMP AL,0x0                          ; 00600ba3
-    JNZ 0x00600bae                      ; 00600ba5 | LAB_00600bae
-        ;   XREF to: 00600bae (CONDITIONAL_JUMP)
+    JNZ 0x00600bae                      ; 00600ba5
+        ;   XREF to: 00600bae (CONDITIONAL_JUMP)  ; LAB_00600bae
     FXCH                                ; 00600ba7
-    CALL crt_math.c_atan2_FUN_006013b1  ; 00600ba9 | float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_atan2_FUN_006013b1  ; 00600ba9
+        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
     RET                                 ; 00600bae
         ;   Label: LAB_00600bae
 

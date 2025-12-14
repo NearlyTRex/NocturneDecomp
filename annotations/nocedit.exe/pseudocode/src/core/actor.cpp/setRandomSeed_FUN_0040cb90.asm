@@ -20,6 +20,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0040cb90
         ;   Label: core_actor.cpp_setRandomSeed_FUN_0040cb90
-    MOV [0x00822368],EAX                ; 0040cb94 | uint g_RandomSeedValue
+    MOV [0x00822368],EAX                ; 0040cb94 | g_RandomSeedValue
     RET                                 ; 0040cb99
 

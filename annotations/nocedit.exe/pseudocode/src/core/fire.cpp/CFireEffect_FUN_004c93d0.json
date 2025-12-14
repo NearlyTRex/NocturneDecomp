@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 33, 
-    "assembly_lines": 17, 
-    "suspect_count": 1, 
+    "assembly_lines": 17,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 16,
+    "suspect_count": 1,
     "suspect_types": [
       "unknown_field"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CMuzzleFlash[20]", 
-      "name": "g_MuzzleFlashPool", 
-      "addr": "02d58a04", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d58a60", 
-      "addr": "02d58a60", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d58abc", 
-      "addr": "02d58abc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (g_MuzzleFlashPool[0].field0_0x0._0_4_ != 1) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c93d0", 
-    "signature": "int core_fire.cpp_CFireEffect_FUN_004c93d0(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c93d0", 
-        "004c93f9"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c93d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 33
+  },
   "cross_references": [
     {
-      "from_addr": "0056cbfc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
-      "addr": "0056c990"
+      "addr": "0056c990",
+      "from_addr": "0056cbfc",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c93d0",
+    "address_range": [
+      [
+        "004c93d0",
+        "004c93f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c93d0",
+    "signature": "int core_fire.cpp_CFireEffect_FUN_004c93d0(CFireEffect * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d58a04",
+      "name": "g_MuzzleFlashPool",
+      "type": "CMuzzleFlash[20]",
+      "value": null
+    },
+    {
+      "addr": "02d58a60",
+      "name": "DAT_02d58a60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d58abc",
+      "name": "DAT_02d58abc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 9,
+      "match": "._0_4_",
+      "text": "iVar1 = g_MuzzleFlashPool[0].field0_0x0._0_4_;",
+      "type": "unknown_field"
     }
   ]
 }

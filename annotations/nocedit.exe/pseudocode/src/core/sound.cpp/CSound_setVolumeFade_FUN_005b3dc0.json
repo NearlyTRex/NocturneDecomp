@@ -1,79 +1,79 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 14, 
-    "assembly_lines": 6, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "g_TargetVolumeMultiplier", 
-      "addr": "03f6b7b4", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "g_VolumeFadeTimeRemaining", 
-      "addr": "03f6b7b8", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b3dc0", 
-    "signature": "void core_sound.cpp_CSound_setVolumeFade_FUN_005b3dc0(CSound * this_ptr, float target_volume, float fade_time)", 
-    "address_range": [
-      [
-        "005b3dc0", 
-        "005b3dd2"
-      ]
-    ], 
-    "name": "core_sound.cpp_CSound_setVolumeFade_FUN_005b3dc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSound *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "target_volume"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "fade_time"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 6,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
   "cross_references": [
     {
-      "from_addr": "004ab545", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
-      "addr": "004aacc0"
+      "addr": "004aacc0",
+      "from_addr": "004ab545",
+      "name": "core_event.cpp_CEventList_FUN_004aacc0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b3dc0",
+    "address_range": [
+      [
+        "005b3dc0",
+        "005b3dd2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_setVolumeFade_FUN_005b3dc0",
+    "signature": "void core_sound.cpp_CSound_setVolumeFade_FUN_005b3dc0(CSound * this_ptr, float target_volume, float fade_time)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f6b7b4",
+      "name": "g_TargetVolumeMultiplier",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "03f6b7b8",
+      "name": "g_VolumeFadeTimeRemaining",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      },
+      {
+        "is_param": true,
+        "name": "target_volume",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "fade_time",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
 }

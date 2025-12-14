@@ -23,19 +23,19 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 0051ed36
     XOR EBX,EBX                         ; 0051ed38
     TEST EDX,EDX                        ; 0051ed3a
-    JLE 0x0051ed50                      ; 0051ed3c | LAB_0051ed50
-        ;   XREF to: 0051ed50 (CONDITIONAL_JUMP)
+    JLE 0x0051ed50                      ; 0051ed3c
+        ;   XREF to: 0051ed50 (CONDITIONAL_JUMP)  ; LAB_0051ed50
     PUSH EBX                            ; 0051ed3e
         ;   Label: LAB_0051ed3e
     PUSH ESI                            ; 0051ed3f
-    CALL shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0 ; 0051ed40 | void shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh * this_ptr, int vertex_index)
-        ;   XREF to: 0051ecd0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0 ; 0051ed40
+        ;   XREF to: 0051ecd0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh * this_ptr, int vertex_index)
     INC EBX                             ; 0051ed45
     MOV ECX,dword ptr [ESI]             ; 0051ed46
     ADD ESP,0x8                         ; 0051ed48
     CMP EBX,ECX                         ; 0051ed4b
-    JL 0x0051ed3e                       ; 0051ed4d | LAB_0051ed3e
-        ;   XREF to: 0051ed3e (CONDITIONAL_JUMP)
+    JL 0x0051ed3e                       ; 0051ed4d
+        ;   XREF to: 0051ed3e (CONDITIONAL_JUMP)  ; LAB_0051ed3e
     NOP                                 ; 0051ed4f
     POP ESI                             ; 0051ed50
         ;   Label: LAB_0051ed50

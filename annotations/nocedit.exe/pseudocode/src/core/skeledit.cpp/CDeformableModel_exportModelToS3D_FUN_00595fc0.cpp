@@ -72,9 +72,9 @@ core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
               (g_CEditorToolsPtr,"Can't create %s");
     return;
   }
-  dest = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                          (*(int *)(output_filename + (int)bone_matrices * 4 + 0x2c) << 2,
-                           "..\\core\\skeledit.cpp",0x1565);
+  dest = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                   (*(int *)(output_filename + (int)bone_matrices * 4 + 0x2c) << 2,
+                    "..\\core\\skeledit.cpp",0x1565);
   if (dest == (int *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x1566;

@@ -19,6 +19,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0043e9a0
         ;   Label: support_codec.cpp_CCodec_ctor_FUN_0043e9a0
-    MOV dword ptr [EAX],0x65bbc4        ; 0043e9a4 | CCodec_vtable g_CCodecVTable
+    MOV dword ptr [EAX],0x65bbc4        ; 0043e9a4 | g_CCodecVTable
     RET                                 ; 0043e9aa
 

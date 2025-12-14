@@ -34,19 +34,19 @@ section .text
     PUSH EDX                            ; 0042344f
     MOV ECX,dword ptr [ESP + 0x144]     ; 00423450
     PUSH ECX                            ; 00423457
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00423458 | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00423458
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0042345d
     MOV ESI,dword ptr [ESP + 0x140]     ; 00423460
     LEA EBX,[EAX + 0x670]               ; 00423467
     PUSH ESI                            ; 0042346d
     LEA EAX,[ESP + 0x4]                 ; 0042346e
-    PUSH 0x6169de                       ; 00423472 | = "Enter FOV (mm) for CLightActor %s" | s_Enter_FOV_mm_for_CLightA_006169de = Enter FOV (mm) for CLightActor %s
+    PUSH 0x6169de                       ; 00423472 | = "Enter FOV (mm) for CLightActor %s"
     FLD float ptr [EBX + 0x38]          ; 00423477
     PUSH EAX                            ; 0042347a
     FSTP float ptr [ESP + 0x138]        ; 0042347b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00423482 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00423482
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00423487
     PUSH 0x1                            ; 0042348a
     PUSH 0x461c3c00                     ; 0042348c
@@ -56,14 +56,14 @@ section .text
     PUSH EAX                            ; 0042349f
     LEA EAX,[ESP + 0x14]                ; 004234a0
     PUSH EAX                            ; 004234a4
-    MOV EDI,dword ptr [0x00678a60]      ; 004234a5 | CEditorTools * g_CEditorToolsPtr
-    PUSH EDI                            ; 004234ab | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 004234ac | int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
-        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x00678a60]      ; 004234a5 | g_CEditorToolsPtr
+    PUSH EDI                            ; 004234ab | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0 ; 004234ac
+        ;   XREF to: 004a00f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, ...)
     ADD ESP,0x1c                        ; 004234b1
     TEST EAX,EAX                        ; 004234b4
-    JNZ 0x004234c2                      ; 004234b6 | LAB_004234c2
-        ;   XREF to: 004234c2 (CONDITIONAL_JUMP)
+    JNZ 0x004234c2                      ; 004234b6
+        ;   XREF to: 004234c2 (CONDITIONAL_JUMP)  ; LAB_004234c2
     ADD ESP,0x130                       ; 004234b8
     POP EDI                             ; 004234be
     POP ESI                             ; 004234bf

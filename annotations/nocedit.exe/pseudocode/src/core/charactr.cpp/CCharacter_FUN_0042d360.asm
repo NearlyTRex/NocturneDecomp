@@ -21,17 +21,17 @@ section .text
     MOV EBX,dword ptr [ECX + 0x24b4]    ; 0042d367
     XOR EAX,EAX                         ; 0042d36d
     TEST EBX,EBX                        ; 0042d36f
-    JNZ 0x0042d385                      ; 0042d371 | LAB_0042d385
-        ;   XREF to: 0042d385 (CONDITIONAL_JUMP)
+    JNZ 0x0042d385                      ; 0042d371
+        ;   XREF to: 0042d385 (CONDITIONAL_JUMP)  ; LAB_0042d385
     INC EAX                             ; 0042d373
         ;   Label: LAB_0042d373
     ADD EDX,0x44                        ; 0042d374
     CMP EAX,0x2                         ; 0042d377
-    JGE 0x0042d38c                      ; 0042d37a | LAB_0042d38c
-        ;   XREF to: 0042d38c (CONDITIONAL_JUMP)
+    JGE 0x0042d38c                      ; 0042d37a
+        ;   XREF to: 0042d38c (CONDITIONAL_JUMP)  ; LAB_0042d38c
     CMP dword ptr [EDX + 0x24b4],0x0    ; 0042d37c
-    JZ 0x0042d373                       ; 0042d383 | LAB_0042d373
-        ;   XREF to: 0042d373 (CONDITIONAL_JUMP)
+    JZ 0x0042d373                       ; 0042d383
+        ;   XREF to: 0042d373 (CONDITIONAL_JUMP)  ; LAB_0042d373
     MOV EAX,0x1                         ; 0042d385
         ;   Label: LAB_0042d385
     POP EBX                             ; 0042d38a

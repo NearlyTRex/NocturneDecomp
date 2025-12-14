@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 16, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdlib.c_atexit_FUN_005ff060", 
-      "addr": "005ff060"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_CLeakChecker_ctor_FUN_0050fba0", 
-      "addr": "0050fba0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomStaticDestructorNode", 
-      "name": "g_CLeakCheckerDestructorNode", 
-      "addr": "0067d1e0", 
-      "value": null
-    }, 
-    {
-      "type": "CLeakChecker", 
-      "name": "g_CLeakCheckerInstance", 
-      "addr": "02f214ec", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 10,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0050ee40", 
-    "signature": "void shape_memdbg.cpp_staticInit_FUN_0050ee40(void)", 
+    "address": "0050ee40",
     "address_range": [
       [
-        "0050ee40", 
+        "0050ee40",
         "0050ee5a"
       ]
-    ], 
-    "name": "shape_memdbg.cpp_staticInit_FUN_0050ee40"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_memdbg.cpp_staticInit_FUN_0050ee40",
+    "signature": "void shape_memdbg.cpp_staticInit_FUN_0050ee40(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff060",
+      "name": "crt_stdlib.c_atexit_FUN_005ff060"
+    },
+    {
+      "addr": "0050fba0",
+      "name": "shape_memdbg.cpp_CLeakChecker_ctor_FUN_0050fba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067d1e0",
+      "name": "g_CLeakCheckerDestructorNode",
+      "type": "WatcomStaticDestructorNode",
+      "value": null
+    },
+    {
+      "addr": "02f214ec",
+      "name": "g_CLeakCheckerInstance",
+      "type": "CLeakChecker",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

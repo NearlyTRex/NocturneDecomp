@@ -25,7 +25,7 @@ section .text
     PUSH EBP                            ; 0046a863
     MOV EBP,ESP                         ; 0046a864
     SUB ESP,0x4                         ; 0046a866
-    MOV EAX,[0x01eb17b8]                ; 0046a86c | int g_LastTextureProcessIndex
+    MOV EAX,[0x01eb17b8]                ; 0046a86c | g_LastTextureProcessIndex
     MOV dword ptr [EBP + -0x4],EAX      ; 0046a871
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046a874
     MOV ESP,EBP                         ; 0046a877

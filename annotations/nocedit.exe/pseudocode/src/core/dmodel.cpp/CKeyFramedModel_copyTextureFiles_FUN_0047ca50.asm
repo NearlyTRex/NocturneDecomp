@@ -51,40 +51,40 @@ section .text
     PUSH 0x0                            ; 0047ca82
     MOV EDX,dword ptr [ESP + 0x32c]     ; 0047ca84
     PUSH EDX                            ; 0047ca8b
-    CALL crt_string.c_splitpath_FUN_005ff178 ; 0047ca8c | void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
-        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_splitpath_FUN_005ff178 ; 0047ca8c
+        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 0047ca91
-    PUSH 0x62064f                       ; 0047ca94 | = "raw" | s_raw_0062064f = raw
+    PUSH 0x62064f                       ; 0047ca94 | = "raw"
     LEA EAX,[ESP + 0x20c]               ; 0047ca99
     PUSH EAX                            ; 0047caa0
     PUSH EDI                            ; 0047caa1
     PUSH EBX                            ; 0047caa2
     LEA EAX,[ESP + 0x10]                ; 0047caa3
     PUSH EAX                            ; 0047caa7
-    CALL crt_file.c_makepath_FUN_005febfc ; 0047caa8 | void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)
+    CALL crt_file.c_makepath_FUN_005febfc ; 0047caa8
+        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0047caad
-    PUSH 0x620653                       ; 0047cab0 | = "raw" | s_raw_00620653 = raw
+    PUSH 0x620653                       ; 0047cab0 | = "raw"
     LEA EAX,[ESP + 0x20c]               ; 0047cab5
     PUSH EAX                            ; 0047cabc
     PUSH ESI                            ; 0047cabd
     PUSH EBP                            ; 0047cabe
     LEA EAX,[ESP + 0x114]               ; 0047cabf
     PUSH EAX                            ; 0047cac6
-    CALL crt_file.c_makepath_FUN_005febfc ; 0047cac7 | void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)
+    CALL crt_file.c_makepath_FUN_005febfc ; 0047cac7
+        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0047cacc
     PUSH 0x1                            ; 0047cacf
     LEA EAX,[ESP + 0x108]               ; 0047cad1
     PUSH EAX                            ; 0047cad8
     LEA EAX,[ESP + 0x8]                 ; 0047cad9
     PUSH EAX                            ; 0047cadd
-    CALL core_dmodel.cpp_copyFile_FUN_0047c930 ; 0047cade | int core_dmodel.cpp_copyFile_FUN_0047c930(char * source_filename, char * destination_filename, int show_error_if_missing)
-        ;   XREF to: 0047c930 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_copyFile_FUN_0047c930 ; 0047cade
+        ;   XREF to: 0047c930 (UNCONDITIONAL_CALL)  ; int core_dmodel.cpp_copyFile_FUN_0047c930(char * source_filename, char * destination_filename, int show_error_if_missing)
     ADD ESP,0xc                         ; 0047cae3
     TEST EAX,EAX                        ; 0047cae6
-    JNZ 0x0047caf5                      ; 0047cae8 | LAB_0047caf5
-        ;   XREF to: 0047caf5 (CONDITIONAL_JUMP)
+    JNZ 0x0047caf5                      ; 0047cae8
+        ;   XREF to: 0047caf5 (CONDITIONAL_JUMP)  ; LAB_0047caf5
     ADD ESP,0x308                       ; 0047caea
         ;   Label: LAB_0047caea
     POP EBP                             ; 0047caf0
@@ -92,7 +92,7 @@ section .text
     POP ESI                             ; 0047caf2
     POP EBX                             ; 0047caf3
     RET                                 ; 0047caf4
-    PUSH 0x620657                       ; 0047caf5 | = "act" | s_act_00620657 = act
+    PUSH 0x620657                       ; 0047caf5 | = "act"
         ;   Label: LAB_0047caf5
     LEA EAX,[ESP + 0x20c]               ; 0047cafa
     PUSH EAX                            ; 0047cb01
@@ -100,61 +100,61 @@ section .text
     PUSH EBX                            ; 0047cb03
     LEA EAX,[ESP + 0x10]                ; 0047cb04
     PUSH EAX                            ; 0047cb08
-    CALL crt_file.c_makepath_FUN_005febfc ; 0047cb09 | void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)
+    CALL crt_file.c_makepath_FUN_005febfc ; 0047cb09
+        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0047cb0e
-    PUSH 0x62065b                       ; 0047cb11 | = "act" | s_act_0062065b = act
+    PUSH 0x62065b                       ; 0047cb11 | = "act"
     LEA EAX,[ESP + 0x20c]               ; 0047cb16
     PUSH EAX                            ; 0047cb1d
     PUSH ESI                            ; 0047cb1e
     PUSH EBP                            ; 0047cb1f
     LEA EAX,[ESP + 0x114]               ; 0047cb20
     PUSH EAX                            ; 0047cb27
-    CALL crt_file.c_makepath_FUN_005febfc ; 0047cb28 | void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)
+    CALL crt_file.c_makepath_FUN_005febfc ; 0047cb28
+        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0047cb2d
     PUSH 0x1                            ; 0047cb30
     LEA EAX,[ESP + 0x108]               ; 0047cb32
     PUSH EAX                            ; 0047cb39
     LEA EAX,[ESP + 0x8]                 ; 0047cb3a
     PUSH EAX                            ; 0047cb3e
-    CALL core_dmodel.cpp_copyFile_FUN_0047c930 ; 0047cb3f | int core_dmodel.cpp_copyFile_FUN_0047c930(char * source_filename, char * destination_filename, int show_error_if_missing)
-        ;   XREF to: 0047c930 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_copyFile_FUN_0047c930 ; 0047cb3f
+        ;   XREF to: 0047c930 (UNCONDITIONAL_CALL)  ; int core_dmodel.cpp_copyFile_FUN_0047c930(char * source_filename, char * destination_filename, int show_error_if_missing)
     ADD ESP,0xc                         ; 0047cb44
     TEST EAX,EAX                        ; 0047cb47
-    JZ 0x0047caea                       ; 0047cb49 | LAB_0047caea
-        ;   XREF to: 0047caea (CONDITIONAL_JUMP)
-    PUSH 0x62065f                       ; 0047cb4b | = "opa" | s_opa_0062065f = opa
+    JZ 0x0047caea                       ; 0047cb49
+        ;   XREF to: 0047caea (CONDITIONAL_JUMP)  ; LAB_0047caea
+    PUSH 0x62065f                       ; 0047cb4b | = "opa"
     LEA EAX,[ESP + 0x20c]               ; 0047cb50
     PUSH EAX                            ; 0047cb57
     PUSH EDI                            ; 0047cb58
     PUSH EBX                            ; 0047cb59
     LEA EAX,[ESP + 0x10]                ; 0047cb5a
     PUSH EAX                            ; 0047cb5e
-    CALL crt_file.c_makepath_FUN_005febfc ; 0047cb5f | void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)
+    CALL crt_file.c_makepath_FUN_005febfc ; 0047cb5f
+        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0047cb64
-    PUSH 0x620663                       ; 0047cb67 | = "opa" | s_opa_00620663 = opa
+    PUSH 0x620663                       ; 0047cb67 | = "opa"
     LEA EAX,[ESP + 0x20c]               ; 0047cb6c
     PUSH EAX                            ; 0047cb73
     PUSH ESI                            ; 0047cb74
     PUSH EBP                            ; 0047cb75
     LEA EAX,[ESP + 0x114]               ; 0047cb76
     PUSH EAX                            ; 0047cb7d
-    CALL crt_file.c_makepath_FUN_005febfc ; 0047cb7e | void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)
+    CALL crt_file.c_makepath_FUN_005febfc ; 0047cb7e
+        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0047cb83
     PUSH 0x0                            ; 0047cb86
     LEA EAX,[ESP + 0x108]               ; 0047cb88
     PUSH EAX                            ; 0047cb8f
     LEA EAX,[ESP + 0x8]                 ; 0047cb90
     PUSH EAX                            ; 0047cb94
-    CALL core_dmodel.cpp_copyFile_FUN_0047c930 ; 0047cb95 | int core_dmodel.cpp_copyFile_FUN_0047c930(char * source_filename, char * destination_filename, int show_error_if_missing)
-        ;   XREF to: 0047c930 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_copyFile_FUN_0047c930 ; 0047cb95
+        ;   XREF to: 0047c930 (UNCONDITIONAL_CALL)  ; int core_dmodel.cpp_copyFile_FUN_0047c930(char * source_filename, char * destination_filename, int show_error_if_missing)
     ADD ESP,0xc                         ; 0047cb9a
     TEST EAX,EAX                        ; 0047cb9d
-    JZ 0x0047caea                       ; 0047cb9f | LAB_0047caea
-        ;   XREF to: 0047caea (CONDITIONAL_JUMP)
+    JZ 0x0047caea                       ; 0047cb9f
+        ;   XREF to: 0047caea (CONDITIONAL_JUMP)  ; LAB_0047caea
     MOV EAX,0x1                         ; 0047cba5
     ADD ESP,0x308                       ; 0047cbaa
     POP EBP                             ; 0047cbb0

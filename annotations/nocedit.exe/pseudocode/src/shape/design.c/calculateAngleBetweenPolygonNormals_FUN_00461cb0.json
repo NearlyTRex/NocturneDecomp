@@ -1,151 +1,151 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 98, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 57, 
-    "assembly_lines": 39, 
-    "suspect_count": 7, 
+    "assembly_lines": 39,
+    "complexity_score": 98,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 18,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_design.c_clampedArccos_FUN_00461c50", 
-      "addr": "00461c50"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_RadiansToDegrees1", 
-      "addr": "0061bfb6", 
-      "value": "57.2957795130800"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffffe0;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(in_stack_ffffffe0,"
-    }, 
-    {
-      "line": 12, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(in_stack_ffffffe0,"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(double)(*(float *)(in_stack_00000004 + 0xb0) *"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000004 + 0xac) *"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000004 + 0xa8) *"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00461cb0", 
-    "signature": "double shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0(SShapeEditorPolygon * normal1_ptr, SShapeEditorPolygon * normal2_ptr)", 
-    "address_range": [
-      [
-        "00461cb0", 
-        "00461d22"
-      ]
-    ], 
-    "name": "shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SShapeEditorPolygon *", 
-        "size": 4, 
-        "name": "normal1_ptr"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SShapeEditorPolygon *", 
-        "size": 4, 
-        "name": "normal2_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 56, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 57
+  },
   "cross_references": [
     {
-      "from_addr": "00461d44", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_isAngleBelowThreshold_FUN_00461d30", 
-      "addr": "00461d30"
-    }, 
+      "addr": "00461d30",
+      "from_addr": "00461d44",
+      "name": "shape_design.c_isAngleBelowThreshold_FUN_00461d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004650f8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90", 
-      "addr": "00464c90"
+      "addr": "00464c90",
+      "from_addr": "004650f8",
+      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00461cb0",
+    "address_range": [
+      [
+        "00461cb0",
+        "00461d22"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0",
+    "signature": "double shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0(SShapeEditorPolygon * normal1_ptr, SShapeEditorPolygon * normal2_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00461c50",
+      "name": "shape_design.c_clampedArccos_FUN_00461c50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061bfb6",
+      "name": "g_RadiansToDegrees1",
+      "type": "double",
+      "value": "57.2957795130800"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "normal1_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "SShapeEditorPolygon *"
+      },
+      {
+        "is_param": true,
+        "name": "normal2_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "SShapeEditorPolygon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffffe0",
+      "text": "uint in_stack_ffffffe0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffffe0",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(in_stack_ffffffe0,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 12,
+      "match": "CONCAT44",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(in_stack_ffffffe0,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "(double)(*(float *)(in_stack_00000004 + 0xb0) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004 + 0xac) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004 + 0xa8) *",
+      "type": "stack_param"
     }
   ]
 }

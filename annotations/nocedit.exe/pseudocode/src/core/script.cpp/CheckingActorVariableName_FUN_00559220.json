@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 105, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 122, 
-    "assembly_lines": 82, 
-    "suspect_count": 6, 
+    "assembly_lines": 82,
+    "complexity_score": 105,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 40,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Actor_variable_name_must_006414a8", 
-      "addr": "006414a8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Actor_variable_name_s_is_006414d0", 
-      "addr": "006414d0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Actor_variable_name_s_is_006414f5", 
-      "addr": "006414f5", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_0310eca0", 
-      "addr": "0310eca0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000004;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*in_stack_00000004 == '@') {"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar2 = in_stack_00000004;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar2 = in_stack_00000004;"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&DAT_0310eca0,\"Actor variable name \\\"%s\\\" is not valid\",in_stack_00000004);"
-    }, 
-    {
-      "line": 38, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&DAT_0310eca0,\"Actor variable name \\\"%s\\\" is too long\",in_stack_00000004);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00559220", 
-    "signature": "undefined core_script.cpp_CheckingActorVariableName_FUN_00559220()", 
-    "address_range": [
-      [
-        "00559220", 
-        "005592b8"
-      ]
-    ], 
-    "name": "core_script.cpp_CheckingActorVariableName_FUN_00559220"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 122
+  },
   "cross_references": [
     {
-      "from_addr": "0055c3ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
-    }, 
+      "addr": "0055a810",
+      "from_addr": "0055c3ac",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00559504", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_GetDemonActor_FUN_005594e0", 
-      "addr": "005594e0"
+      "addr": "005594e0",
+      "from_addr": "00559504",
+      "name": "core_script.cpp_GetDemonActor_FUN_005594e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00559220",
+    "address_range": [
+      [
+        "00559220",
+        "005592b8"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_CheckingActorVariableName_FUN_00559220",
+    "signature": "undefined core_script.cpp_CheckingActorVariableName_FUN_00559220()"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006414a8",
+      "name": "s_Actor_variable_name_must_006414a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006414d0",
+      "name": "s_Actor_variable_name_s_is_006414d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006414f5",
+      "name": "s_Actor_variable_name_s_is_006414f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "0310eca0",
+      "name": "DAT_0310eca0",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "char *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "if (*in_stack_00000004 == '@') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "pcVar2 = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "pcVar2 = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "(&DAT_0310eca0,\"Actor variable name \\\"%s\\\" is not valid\",in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "text": "(&DAT_0310eca0,\"Actor variable name \\\"%s\\\" is too long\",in_stack_00000004);",
+      "type": "stack_param"
     }
   ]
 }

@@ -14,7 +14,7 @@ void __cdecl crt_unknown_c_staticFinal_FUN_00605b62(void)
   while (g_AtexitListHead != (WatcomStaticDestructorNode *)0x0) {
     ppWVar1 = &g_AtexitListHead->destructor_info;
     g_AtexitListHead = g_AtexitListHead->next;
-    (*(code *)(*ppWVar1)->destructor_func)();
+    (*(*ppWVar1)->destructor_func)();
   }
   return;
 }

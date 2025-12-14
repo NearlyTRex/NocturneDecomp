@@ -1,251 +1,251 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 203, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 1, 
-    "global_count": 13, 
-    "total_lines": 121, 
-    "assembly_lines": 68, 
-    "suspect_count": 14, 
+    "assembly_lines": 68,
+    "complexity_score": 203,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 13,
+    "pseudocode_lines": 53,
+    "suspect_count": 14,
     "suspect_types": [
-      "unaffected_reg", 
+      "unaffected_reg",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "uint", 
-      "name": "g_PerspectiveNextU", 
-      "addr": "006723a8", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_PerspectiveNextV", 
-      "addr": "006723ac", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DeltaTextureU", 
-      "addr": "006723c4", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DeltaTextureV", 
-      "addr": "006723c8", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_PerspectiveScanlineColorPtr", 
-      "addr": "006723d0", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PerspectiveScanlinePixelCount", 
-      "addr": "006723d4", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TextureShift1", 
-      "addr": "006826e0", 
-      "value": "0x10"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TextureShift2", 
-      "addr": "00682700", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TextureMask1", 
-      "addr": "00682720", 
-      "value": "0xff"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TextureMask2", 
-      "addr": "00682740", 
-      "value": "0xff00"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d02584", 
-      "addr": "02d02584", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CurrentTextureData", 
-      "addr": "02d03e80", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 12, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uVar3 = *(uint *)(unaff_ESI + 8);"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uVar4 = *(uint *)(unaff_EDI + 8);"
-    }, 
-    {
-      "line": 19, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar5 = unaff_ESI;"
-    }, 
-    {
-      "line": 23, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar5 = unaff_EDI;"
-    }, 
-    {
-      "line": 24, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_ESI;"
-    }, 
-    {
-      "line": 24, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_ESI;"
-    }, 
-    {
-      "line": 29, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[unaff_EBX] + uVar1 * 4);"
-    }, 
-    {
-      "line": 29, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[unaff_EBX] + uVar1 * 4);"
-    }, 
-    {
-      "line": 34, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x18) - uVar3) *"
-    }, 
-    {
-      "line": 39, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x20) - uVar4) *"
-    }, 
-    {
-      "line": 45, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_PerspectiveScanlineColorPtr + uVar1) ="
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004940e9", 
-    "signature": "void core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
-    "address_range": [
-      [
-        "004940e9", 
-        "004941c2"
-      ], 
-      [
-        "004941d0", 
-        "004941d5"
-      ]
-    ], 
-    "name": "core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SEdgeData *", 
-        "size": 4, 
-        "name": "left_edge"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SEdgeData *", 
-        "size": 4, 
-        "name": "right_edge"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "scanline_y"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 121
+  },
   "cross_references": [
     {
-      "from_addr": "0048adf2", 
-      "type": "DATA", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90", 
-      "addr": "0048ad90"
+      "addr": "0048ad90",
+      "from_addr": "0048adf2",
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "004940e9",
+    "address_range": [
+      [
+        "004940e9",
+        "004941c2"
+      ],
+      [
+        "004941d0",
+        "004941d5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9",
+    "signature": "void core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006723a8",
+      "name": "g_PerspectiveNextU",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723ac",
+      "name": "g_PerspectiveNextV",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723c4",
+      "name": "g_DeltaTextureU",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723c8",
+      "name": "g_DeltaTextureV",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723d0",
+      "name": "g_PerspectiveScanlineColorPtr",
+      "type": "void*",
+      "value": "00000000"
+    },
+    {
+      "addr": "006723d4",
+      "name": "g_PerspectiveScanlinePixelCount",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006826e0",
+      "name": "g_TextureShift1",
+      "type": "ulonglong",
+      "value": "0x10"
+    },
+    {
+      "addr": "00682700",
+      "name": "g_TextureShift2",
+      "type": "ulonglong",
+      "value": "0x8"
+    },
+    {
+      "addr": "00682720",
+      "name": "g_TextureMask1",
+      "type": "ulonglong",
+      "value": "0xff"
+    },
+    {
+      "addr": "00682740",
+      "name": "g_TextureMask2",
+      "type": "ulonglong",
+      "value": "0xff00"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d02584",
+      "name": "DAT_02d02584",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03e80",
+      "name": "g_CurrentTextureData",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "left_edge",
+        "offset": 4,
+        "size": 4,
+        "type": "SEdgeData *"
+      },
+      {
+        "is_param": true,
+        "name": "right_edge",
+        "offset": 8,
+        "size": 4,
+        "type": "SEdgeData *"
+      },
+      {
+        "is_param": true,
+        "name": "scanline_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
+      "text": "uVar3 = *(uint *)(unaff_ESI + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EDI",
+      "text": "uVar4 = *(uint *)(unaff_EDI + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_ESI",
+      "text": "iVar5 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EDI",
+      "text": "iVar5 = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_ESI",
+      "text": "unaff_EDI = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBX",
+      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[unaff_EBX] + uVar1 * 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(void *)((int)",
+      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[unaff_EBX] + uVar1 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EDI",
+      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x18) - uVar3) *",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EDI",
+      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x20) - uVar4) *",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_PerspectiveScanlineColorPtr + uVar1) =",
+      "type": "pointer_cast"
     }
   ]
 }

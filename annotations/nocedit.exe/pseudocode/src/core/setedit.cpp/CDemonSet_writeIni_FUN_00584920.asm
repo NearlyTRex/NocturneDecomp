@@ -21,13 +21,13 @@
 
 section .text
 
-    PUSH 0x6816d8                       ; 00584920 | = ".\\GroundTypes" | s_GroundTypes_006816d8 = .\GroundTypes
+    PUSH 0x6816d8                       ; 00584920 | = ".\\GroundTypes"
         ;   Label: core_setedit.cpp_CDemonSet_writeIni_FUN_00584920
-    PUSH 0x648e59                       ; 00584925 | = "groundTypeDirectory" | s_groundTypeDirectory_00648e59 = groundTypeDirectory
+    PUSH 0x648e59                       ; 00584925 | = "groundTypeDirectory"
     MOV EDX,dword ptr [ESP + 0x10]      ; 0058492a
     PUSH EDX                            ; 0058492e
-    CALL engine_ini.cpp_CIniFile_setString_FUN_004fbbb0 ; 0058492f | void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this, char * key, char * value)
-        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)
+    CALL engine_ini.cpp_CIniFile_setString_FUN_004fbbb0 ; 0058492f
+        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this, char * key, char * value)
     ADD ESP,0xc                         ; 00584934
     RET                                 ; 00584937
 

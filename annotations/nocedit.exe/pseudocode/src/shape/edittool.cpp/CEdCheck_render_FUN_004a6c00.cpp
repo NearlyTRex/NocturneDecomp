@@ -13,10 +13,10 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_004a6c00(CEdCheck *this_ptr)
   int iVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
   char *unaff_EBX;
   int left;
   int in_stack_00000008;
+  int iVar5;
   int color_mode;
   
   iVar2 = this_ptr->y_position;
@@ -39,25 +39,23 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_004a6c00(CEdCheck *this_ptr)
   if (this_ptr->border_style_flag == 0) {
     in_stack_00000008 = in_stack_00000008 + -1;
     iVar2 = iVar2 + -1;
-    iVar5 = this_ptr->checked_state;
-    if (iVar5 != 1) {
+    if (this_ptr->checked_state != 1) {
       return;
     }
   }
   else {
     iVar1 = iVar1 + 1;
     left = left + 1;
-    iVar5 = this_ptr->checked_state;
-    if (iVar5 != 1) {
+    if (this_ptr->checked_state != 1) {
       return;
     }
   }
   g_ActiveRenderColor = 0;
   engine_2d_c_clipLineGlobal_FUN_00402c50
-            ((int *)(left + iVar5),(int *)(iVar1 + iVar5),(int *)(iVar2 + -2),
+            ((int *)(left + 1),(int *)(iVar1 + 1),(int *)(iVar2 + -2),
              (int *)(in_stack_00000008 + -2));
   engine_2d_c_clipLineGlobal_FUN_00402c50
-            ((int *)(iVar2 + -2),(int *)(iVar1 + iVar5),(int *)(left + iVar5),
+            ((int *)(iVar2 + -2),(int *)(iVar1 + 1),(int *)(left + 1),
              (int *)(in_stack_00000008 + -2));
   return;
 }

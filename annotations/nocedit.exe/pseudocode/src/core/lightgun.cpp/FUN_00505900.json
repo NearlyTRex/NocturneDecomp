@@ -1,96 +1,96 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 66, 
-    "pseudocode_lines": 51, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 85, 
-    "assembly_lines": 34, 
-    "suspect_count": 1, 
+    "assembly_lines": 34,
+    "complexity_score": 66,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 51,
+    "suspect_count": 1,
     "suspect_types": [
       "suspect_float"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }, 
-    {
-      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
-      "addr": "005ede70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cre_kfm_00631455", 
-      "addr": "00631455", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00660a3c", 
-      "addr": "00660a3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00660a40", 
-      "addr": "00660a40", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_00660a64", 
-      "addr": "00660a64", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 40, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "(pCVar3->base_weapon).fire_cooldown = 1.4013e-45;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00505900", 
-    "signature": "CLightGun * core_lightgun.cpp_FUN_00505900(CLightGun * this_ptr)", 
-    "address_range": [
-      [
-        "00505900", 
-        "005059b5"
-      ]
-    ], 
-    "name": "core_lightgun.cpp_FUN_00505900"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLightGun *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 85
+  },
   "cross_references": [
     {
-      "from_addr": "005058da", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lightgun.cpp_FUN_005058c0", 
-      "addr": "005058c0"
+      "addr": "005058c0",
+      "from_addr": "005058da",
+      "name": "core_lightgun.cpp_FUN_005058c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00505900",
+    "address_range": [
+      [
+        "00505900",
+        "005059b5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_lightgun.cpp_FUN_00505900",
+    "signature": "CLightGun * core_lightgun.cpp_FUN_00505900(CLightGun * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "005ede70",
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00631455",
+      "name": "s_cre_kfm_00631455",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00660a3c",
+      "name": "DAT_00660a3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00660a40",
+      "name": "DAT_00660a40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00660a64",
+      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_00660a64",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightGun *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 40,
+      "match": "1.4013e-45",
+      "text": "(pCVar3->base_weapon).fire_cooldown = 1.4013e-45;",
+      "type": "suspect_float"
     }
   ]
 }

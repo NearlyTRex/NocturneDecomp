@@ -34,11 +34,11 @@ section .text
     SUB ESP,0x8                         ; 004fbcd8
     FLD float ptr [EAX]                 ; 004fbcdb
     FSTP double ptr [ESP]               ; 004fbcdd
-    PUSH 0x62fd88                       ; 004fbce0 | = "%g" | s_g_0062fd88 = %g
+    PUSH 0x62fd88                       ; 004fbce0 | = "%g"
     LEA EAX,[ESP + 0xc]                 ; 004fbce5
     PUSH EAX                            ; 004fbce9
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fbcea | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fbcea
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004fbcef
     PUSH 0x64                           ; 004fbcf2
     LEA EAX,[ESP + 0x4]                 ; 004fbcf4
@@ -47,16 +47,16 @@ section .text
     PUSH EDX                            ; 004fbcfd
     MOV ECX,dword ptr [ESP + 0x78]      ; 004fbcfe
     PUSH ECX                            ; 004fbd02
-    CALL engine_ini.cpp_CIniFile_getString_FUN_004fbb20 ; 004fbd03 | void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this, char * key, char * output_buffer, int buffer_size, ...)
-        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)
+    CALL engine_ini.cpp_CIniFile_getString_FUN_004fbb20 ; 004fbd03
+        ;   XREF to: 004fbb20 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getString_FUN_004fbb20(CIniFile * this, char * key, char * output_buffer, int buffer_size, ...)
     ADD ESP,0x10                        ; 004fbd08
     MOV EBX,dword ptr [ESP + 0x74]      ; 004fbd0b
     PUSH EBX                            ; 004fbd0f
-    PUSH 0x62fd8b                       ; 004fbd10 | = "%f" | s_f_0062fd8b = %f
+    PUSH 0x62fd8b                       ; 004fbd10 | = "%f"
     LEA EAX,[ESP + 0x8]                 ; 004fbd15
     PUSH EAX                            ; 004fbd19
-    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004fbd1a | int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
-        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004fbd1a
+        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
     ADD ESP,0xc                         ; 004fbd1f
     ADD ESP,0x64                        ; 004fbd22
     POP EBX                             ; 004fbd25

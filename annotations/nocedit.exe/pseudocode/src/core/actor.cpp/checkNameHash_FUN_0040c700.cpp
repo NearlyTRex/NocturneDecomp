@@ -9,13 +9,12 @@
 int __cdecl core_actor_cpp_checkNameHash_FUN_0040c700(CDemonActorType *type_ptr,uint name_hash)
 
 {
-  if (type_ptr != (CDemonActorType *)0x0) {
-    do {
-      if (name_hash == type_ptr->name_hash) {
-        return 1;
-      }
-      type_ptr = type_ptr->parent_type;
-    } while (type_ptr != (CDemonActorType *)0x0);
+  while( true ) {
+    if (type_ptr == (CDemonActorType *)0x0) {
+      return 0;
+    }
+    if (name_hash == type_ptr->name_hash) break;
+    type_ptr = type_ptr->parent_type;
   }
-  return 0;
+  return 1;
 }

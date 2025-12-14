@@ -176,8 +176,8 @@ LAB_005a4cea:
     iVar8 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar7);
     if (iVar8 == 0) goto LAB_005a4ef8;
     output_buffer =
-         (short *)sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430
-                            (pCVar7,0,(pCVar7->sample_info).sample_count);
+         sound_sndmain_cpp_CSfxSample_lock_FUN_005a6430(pCVar7,0,(pCVar7->sample_info).sample_count)
+    ;
     if (output_buffer == (short *)0x0) {
       pcVar13 = "Failed to lock sample %s\n";
     }

@@ -24,8 +24,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043ee11
     MOV EDX,dword ptr [EBX + 0x10]      ; 0043ee15
     TEST EDX,EDX                        ; 0043ee18
-    JNZ 0x0043ee2a                      ; 0043ee1a | LAB_0043ee2a
-        ;   XREF to: 0043ee2a (CONDITIONAL_JUMP)
+    JNZ 0x0043ee2a                      ; 0043ee1a
+        ;   XREF to: 0043ee2a (CONDITIONAL_JUMP)  ; LAB_0043ee2a
     MOV dword ptr [EBX + 0xc],0x0       ; 0043ee1c
     MOV EAX,dword ptr [EBX + 0xc]       ; 0043ee23
     MOV dword ptr [EBX],EAX             ; 0043ee26
@@ -33,10 +33,10 @@ section .text
     RET                                 ; 0043ee29
     PUSH 0x2b5                          ; 0043ee2a
         ;   Label: LAB_0043ee2a
-    PUSH 0x618b0d                       ; 0043ee2f | = "..\\support\\codec.cpp" | s_support_codec_cpp_00618b0d = ..\support\codec.cpp
+    PUSH 0x618b0d                       ; 0043ee2f | = "..\\support\\codec.cpp"
     PUSH EDX                            ; 0043ee34
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0043ee35 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0043ee35
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 0043ee3a
     MOV dword ptr [EBX + 0x10],0x0      ; 0043ee3d
     MOV dword ptr [EBX + 0xc],0x0       ; 0043ee44

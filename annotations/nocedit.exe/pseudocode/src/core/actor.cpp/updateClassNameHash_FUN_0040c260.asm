@@ -17,8 +17,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0040c260
         ;   Label: core_actor.cpp_updateClassNameHash_FUN_0040c260
     PUSH EDX                            ; 0040c264
-    CALL crt_ctype.c_tolower_FUN_005feb30 ; 0040c265 | int crt_ctype.c_tolower_FUN_005feb30(int character)
-        ;   XREF to: 005feb30 (UNCONDITIONAL_CALL)
+    CALL crt_ctype.c_tolower_FUN_005feb30 ; 0040c265
+        ;   XREF to: 005feb30 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_tolower_FUN_005feb30(int character)
     ADD ESP,0x4                         ; 0040c26a
     MOV EDX,dword ptr [ESP + 0x4]       ; 0040c26d
     MOV ECX,dword ptr [ESP + 0x4]       ; 0040c271

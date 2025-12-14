@@ -1,79 +1,79 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 30, 
-    "assembly_lines": 18, 
-    "suspect_count": 2, 
+    "assembly_lines": 18,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_GlobalSignalHandlers[1]", 
-      "addr": "00685508", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 4, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5"
-    }, 
-    {
-      "line": 11, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pTVar1 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(unaff_EBX);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0060ced8", 
-    "signature": "undefined crt_unknown.c_FUN_0060ced8()", 
-    "address_range": [
-      [
-        "0060ced8", 
-        "0060cefb"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_0060ced8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 30
+  },
   "cross_references": [
     {
-      "from_addr": "0060d0a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068", 
-      "addr": "0060d068"
+      "addr": "0060d068",
+      "from_addr": "0060d0a5",
+      "name": "crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060ced8",
+    "address_range": [
+      [
+        "0060ced8",
+        "0060cefb"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0060ced8",
+    "signature": "undefined crt_unknown.c_FUN_0060ced8()"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    },
+    {
+      "addr": "00685508",
+      "name": "g_GlobalSignalHandlers[1]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 4,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,int param_5",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "text": "pTVar1 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

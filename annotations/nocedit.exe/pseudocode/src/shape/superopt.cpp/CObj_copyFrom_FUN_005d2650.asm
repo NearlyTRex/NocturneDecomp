@@ -42,8 +42,8 @@ section .text
     CALL dword ptr [EAX + 0x8]          ; 005d2678
     ADD ESP,0xc                         ; 005d267b
     TEST EAX,EAX                        ; 005d267e
-    JZ 0x005d2704                       ; 005d2680 | LAB_005d2704
-        ;   XREF to: 005d2704 (CONDITIONAL_JUMP)
+    JZ 0x005d2704                       ; 005d2680
+        ;   XREF to: 005d2704 (CONDITIONAL_JUMP)  ; LAB_005d2704
     PUSH EDI                            ; 005d2686
     PUSH ESI                            ; 005d2687
     MOV EAX,dword ptr [EBP]             ; 005d2688
@@ -64,8 +64,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x8]       ; 005d26b1
     XOR ESI,ESI                         ; 005d26b4
     TEST EDI,EDI                        ; 005d26b6
-    JBE 0x005d26f0                      ; 005d26b8 | LAB_005d26f0
-        ;   XREF to: 005d26f0 (CONDITIONAL_JUMP)
+    JBE 0x005d26f0                      ; 005d26b8
+        ;   XREF to: 005d26f0 (CONDITIONAL_JUMP)  ; LAB_005d26f0
     XOR EBX,EBX                         ; 005d26ba
     MOV ECX,dword ptr [ESP + 0x18]      ; 005d26bc
         ;   Label: LAB_005d26bc
@@ -83,8 +83,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x8]       ; 005d26d7
     ADD ESP,0xc                         ; 005d26da
     CMP ESI,EAX                         ; 005d26dd
-    JC 0x005d26bc                       ; 005d26df | LAB_005d26bc
-        ;   XREF to: 005d26bc (CONDITIONAL_JUMP)
+    JC 0x005d26bc                       ; 005d26df
+        ;   XREF to: 005d26bc (CONDITIONAL_JUMP)  ; LAB_005d26bc
     LEA EAX,[EAX]                       ; 005d26e1
     LEA EDX,[EDX]                       ; 005d26e7
     LEA EAX,[EAX]                       ; 005d26ed
@@ -98,10 +98,10 @@ section .text
     POP EBP                             ; 005d2701
     POP EBX                             ; 005d2702
     RET                                 ; 005d2703
-    PUSH 0x6543bf                       ; 005d2704 | = "Unable to allocate RAM for object copy" | s_Unable_to_allocate_RAM_f_006543bf = Unable to allocate RAM for object copy
+    PUSH 0x6543bf                       ; 005d2704 | = "Unable to allocate RAM for object copy"
         ;   Label: LAB_005d2704
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d2709 | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d2709
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     ADD ESP,0x4                         ; 005d270e
     XOR EAX,EAX                         ; 005d2711
     POP EBP                             ; 005d2713

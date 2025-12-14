@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 43, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 40, 
-    "assembly_lines": 22, 
-    "suspect_count": 2, 
+    "assembly_lines": 22,
+    "complexity_score": 43,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }, 
-    {
-      "name": "SetUnhandledExceptionFilter", 
-      "addr": "EXTERNAL:0000009b"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SetUnhandledExceptionFilter*", 
-      "name": "PTR_SetUnhandledExceptionFilter_00611640", 
-      "addr": "00611640", 
-      "value": "0021220a"
-    }, 
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "EXCEPTION_REGISTRATION_RECORD *in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pTVar2->seh_frame = in_stack_00000004;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060aba8", 
-    "signature": "void crt_exception.c_installExceptionHandler_FUN_0060aba8(ExceptionFrame * pExceptionFrame)", 
-    "address_range": [
-      [
-        "0060aba8", 
-        "0060abf3"
-      ]
-    ], 
-    "name": "crt_exception.c_installExceptionHandler_FUN_0060aba8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 40
+  },
   "cross_references": [
     {
-      "from_addr": "006026db", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8", 
-      "addr": "006026a8"
-    }, 
+      "addr": "006026a8",
+      "from_addr": "006026db",
+      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060f937", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_thread.c_threadStartupWrapper_FUN_0060f8c0", 
-      "addr": "0060f8c0"
+      "addr": "0060f8c0",
+      "from_addr": "0060f937",
+      "name": "crt_thread.c_threadStartupWrapper_FUN_0060f8c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060aba8",
+    "address_range": [
+      [
+        "0060aba8",
+        "0060abf3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_exception.c_installExceptionHandler_FUN_0060aba8",
+    "signature": "void crt_exception.c_installExceptionHandler_FUN_0060aba8(ExceptionFrame * pExceptionFrame)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    },
+    {
+      "addr": "EXTERNAL:0000009b",
+      "name": "SetUnhandledExceptionFilter"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611640",
+      "name": "PTR_SetUnhandledExceptionFilter_00611640",
+      "type": "SetUnhandledExceptionFilter*",
+      "value": "0021220a"
+    },
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "EXCEPTION_REGISTRATION_RECORD *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "pTVar2->seh_frame = in_stack_00000004;",
+      "type": "stack_param"
     }
   ]
 }

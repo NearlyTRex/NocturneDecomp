@@ -30,9 +30,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
   if (iVar2 != 0) {
     g_CurrentDebugLine = 0x50;
     g_CurrentDebugFilename = "..\\core\\passngr.cpp";
-    if (iVar2 != 0) {
-      (**(code **)(*(int *)(iVar2 + 0x154) + 0xe4))();
-    }
+    (**(code **)(*(int *)(iVar2 + 0x154) + 0xe4))();
   }
   core_morph_cpp_CMorphModel_FUN_0052b330((CMorphModel *)(this_ptr->field1_0x1f708 + 0x10c));
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(extraout_EAX + -0x139f0));
@@ -48,9 +46,9 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
   ptr = (CPassenger *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
-  if ((d1 & 2) == 0) {
+  if ((d1 & 2) != 0) {
+    shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
     return ptr;
   }
-  shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   return ptr;
 }

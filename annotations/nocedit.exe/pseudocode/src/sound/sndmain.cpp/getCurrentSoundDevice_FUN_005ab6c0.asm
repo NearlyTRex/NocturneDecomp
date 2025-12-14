@@ -16,7 +16,7 @@
 
 section .text
 
-    MOV EAX,[0x00681b24]                ; 005ab6c0 | int g_CurrentSoundDevice
+    MOV EAX,[0x00681b24]                ; 005ab6c0 | g_CurrentSoundDevice
         ;   Label: sound_sndmain.cpp_getCurrentSoundDevice_FUN_005ab6c0
     RET                                 ; 005ab6c5
 

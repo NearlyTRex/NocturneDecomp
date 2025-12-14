@@ -41,26 +41,26 @@ section .text
     FSTP extended double ptr [ESP]      ; 0060c44a
     MOV ECX,dword ptr [ESP + 0x4]       ; 0060c44d
     ADD ECX,ECX                         ; 0060c451
-    JNC 0x0060c630                      ; 0060c453 | LAB_0060c630
-        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)
+    JNC 0x0060c630                      ; 0060c453
+        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)  ; LAB_0060c630
     MOV EAX,dword ptr [ESP + 0x10]      ; 0060c459
     ADD EAX,EAX                         ; 0060c45d
-    JNC 0x0060c630                      ; 0060c45f | LAB_0060c630
-        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)
+    JNC 0x0060c630                      ; 0060c45f
+        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)  ; LAB_0060c630
     MOV ECX,dword ptr [ESP + 0x8]       ; 0060c465
     MOV EAX,dword ptr [ESP + 0x14]      ; 0060c469
     AND ECX,0x7fff                      ; 0060c46d
-    JZ 0x0060c630                       ; 0060c473 | LAB_0060c630
-        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)
+    JZ 0x0060c630                       ; 0060c473
+        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)  ; LAB_0060c630
     AND EAX,0x7fff                      ; 0060c479
-    JZ 0x0060c630                       ; 0060c47e | LAB_0060c630
-        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)
+    JZ 0x0060c630                       ; 0060c47e
+        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)  ; LAB_0060c630
     CMP ECX,0x7fff                      ; 0060c484
-    JZ 0x0060c630                       ; 0060c48a | LAB_0060c630
-        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)
+    JZ 0x0060c630                       ; 0060c48a
+        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)  ; LAB_0060c630
     CMP EAX,0x7fff                      ; 0060c490
-    JZ 0x0060c630                       ; 0060c495 | LAB_0060c630
-        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)
+    JZ 0x0060c630                       ; 0060c495
+        ;   XREF to: 0060c630 (CONDITIONAL_JUMP)  ; LAB_0060c630
     FLD extended double ptr [ESP + 0xc] ; 0060c49b
     FABS                                ; 0060c49f
     FLD extended double ptr [ESP]       ; 0060c4a1
@@ -77,15 +77,15 @@ section .text
     FNSTSW AX                           ; 0060c4c7
     SAHF                                ; 0060c4c9
     POP EAX                             ; 0060c4ca
-    JC 0x0060c4d0                       ; 0060c4cb | LAB_0060c4d0
-        ;   XREF to: 0060c4d0 (CONDITIONAL_JUMP)
+    JC 0x0060c4d0                       ; 0060c4cb
+        ;   XREF to: 0060c4d0 (CONDITIONAL_JUMP)  ; LAB_0060c4d0
     FXCH                                ; 0060c4cd
     INC EDX                             ; 0060c4cf
     PUSH EAX                            ; 0060c4d0
         ;   Label: LAB_0060c4d0
     MOV EAX,0xf                         ; 0060c4d1
-    CALL crt_math.c_function_dispatch_FUN_00606a77 ; 0060c4d6 | void crt_math.c_function_dispatch_FUN_00606a77(int function_index)
-        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_function_dispatch_FUN_00606a77 ; 0060c4d6
+        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)  ; void crt_math.c_function_dispatch_FUN_00606a77(int function_index)
     POP EAX                             ; 0060c4db
     FLD float ptr [0x00687518]          ; 0060c4dc | DAT_00687518
     FMUL ST1                            ; 0060c4e2
@@ -102,8 +102,8 @@ section .text
     FADDP ST2,ST0                       ; 0060c507
     PUSH EAX                            ; 0060c509
     MOV EAX,0xf                         ; 0060c50a
-    CALL crt_math.c_function_dispatch_FUN_00606a77 ; 0060c50f | void crt_math.c_function_dispatch_FUN_00606a77(int function_index)
-        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_function_dispatch_FUN_00606a77 ; 0060c50f
+        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)  ; void crt_math.c_function_dispatch_FUN_00606a77(int function_index)
     POP EAX                             ; 0060c514
     FLD ST0                             ; 0060c515
     FMUL ST1                            ; 0060c517
@@ -154,7 +154,7 @@ section .text
     FADDP                               ; 0060c58f
     FLD extended double ptr [ECX + 0x68755c] ; 0060c591 | DAT_0068755c
     FADDP                               ; 0060c597
-    JMP dword ptr [EDX*0x4 + 0x6874e4]  ; 0060c599 | void * PTR_FUN_006874e4
+    JMP dword ptr [EDX*0x4 + 0x6874e4]  ; 0060c599 | PTR_FUN_006874e4
     FLD extended double ptr [ESP]       ; 0060c630
         ;   Label: LAB_0060c630
     FLD extended double ptr [ESP + 0xc] ; 0060c633

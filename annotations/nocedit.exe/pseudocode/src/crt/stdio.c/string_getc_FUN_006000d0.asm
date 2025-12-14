@@ -20,8 +20,8 @@ section .text
     XOR EAX,EAX                         ; 006000d8
     MOV AL,byte ptr [EDX]               ; 006000da
     TEST EAX,EAX                        ; 006000dc
-    JZ 0x006000e6                       ; 006000de | LAB_006000e6
-        ;   XREF to: 006000e6 (CONDITIONAL_JUMP)
+    JZ 0x006000e6                       ; 006000de
+        ;   XREF to: 006000e6 (CONDITIONAL_JUMP)  ; LAB_006000e6
     INC EDX                             ; 006000e0
     MOV dword ptr [EBX + 0x8],EDX       ; 006000e1
     POP EBX                             ; 006000e4

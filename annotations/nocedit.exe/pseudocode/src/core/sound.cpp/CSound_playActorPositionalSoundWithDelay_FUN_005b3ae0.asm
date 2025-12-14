@@ -30,13 +30,13 @@ section .text
     PUSH EBX                            ; 005b3ae0
         ;   Label: core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0
     MOV EBX,dword ptr [ESP + 0x14]      ; 005b3ae1
-    CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 ; 005b3ae5 | void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30()
-        ;   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 ; 005b3ae5
+        ;   XREF to: 005a8c30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30()
     FLD float ptr [ESP + 0x18]          ; 005b3aea
     SUB ESP,0x8                         ; 005b3aee
     FSTP double ptr [ESP]               ; 005b3af1
-    CALL sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40 ; 005b3af4 | void sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40(double delay_seconds)
-        ;   XREF to: 005a8b40 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40 ; 005b3af4
+        ;   XREF to: 005a8b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40(double delay_seconds)
     ADD ESP,0x8                         ; 005b3af9
     PUSH 0x0                            ; 005b3afc
     PUSH 0x0                            ; 005b3afe
@@ -47,12 +47,12 @@ section .text
     PUSH EDX                            ; 005b3b0c
     MOV ECX,dword ptr [ESP + 0x24]      ; 005b3b0d
     PUSH ECX                            ; 005b3b11
-    CALL core_sound.cpp_playSfxInternal_FUN_005b1fd0 ; 005b3b12 | uint core_sound.cpp_playSfxInternal_FUN_005b1fd0(void * user_data, char * sound_name, float x, float y, ...)
-        ;   XREF to: 005b1fd0 (UNCONDITIONAL_CALL)
+    CALL core_sound.cpp_playSfxInternal_FUN_005b1fd0 ; 005b3b12
+        ;   XREF to: 005b1fd0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_playSfxInternal_FUN_005b1fd0(void * user_data, char * sound_name, float x, float y, ...)
     ADD ESP,0x1c                        ; 005b3b17
     MOV EBX,EAX                         ; 005b3b1a
-    CALL sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0 ; 005b3b1c | void sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0()
-        ;   XREF to: 005a8cb0 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0 ; 005b3b1c
+        ;   XREF to: 005a8cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0()
     MOV EAX,EBX                         ; 005b3b21
     POP EBX                             ; 005b3b23
     RET                                 ; 005b3b24

@@ -16,13 +16,13 @@
 
 section .text
 
-    PUSH 0x6598c0                       ; 0051f0e0 | WatcomTypeInfo g_CVectorTypeInfo
+    PUSH 0x6598c0                       ; 0051f0e0 | g_CVectorTypeInfo
         ;   Label: shape_meshlod.cpp_freeVectors_FUN_0051f0e0
     PUSH 0x190                          ; 0051f0e5
     MOV EDX,dword ptr [ESP + 0xc]       ; 0051f0ea
     PUSH EDX                            ; 0051f0ee
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0051f0ef | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0051f0ef
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0051f0f4
     RET                                 ; 0051f0f7
 

@@ -34,43 +34,43 @@ section .text
         ;   Label: crt_fstream.cpp_fstreambase_dtor_FUN_00606509
     MOV EBX,dword ptr [ESP + 0x8]       ; 0060650a
     TEST byte ptr [ESP + 0xc],0x4       ; 0060650e
-    JNZ 0x00606559                      ; 00606513 | LAB_00606559
-        ;   XREF to: 00606559 (CONDITIONAL_JUMP)
+    JNZ 0x00606559                      ; 00606513
+        ;   XREF to: 00606559 (CONDITIONAL_JUMP)  ; LAB_00606559
     MOV EAX,dword ptr [EBX]             ; 00606515
     MOV EAX,dword ptr [EAX + 0x4]       ; 00606517
     LEA EDX,[EBX + EAX*0x1]             ; 0060651a
     MOV dword ptr [EDX + -0x4],EAX      ; 0060651d
     PUSH 0x0                            ; 00606520
     MOV EAX,dword ptr [EBX]             ; 00606522
-    MOV dword ptr [EBX + 0x40],0x665ed4 ; 00606524 | void * g_FStreamBase_Destructor
+    MOV dword ptr [EBX + 0x40],0x665ed4 ; 00606524 | g_FStreamBase_Destructor
     ADD EBX,0x4                         ; 0060652b
     MOV EAX,dword ptr [EAX + 0x4]       ; 0060652e
     PUSH EBX                            ; 00606531
-    MOV dword ptr [EBX + EAX*0x1 + 0x24],0x665edc ; 00606532 | void * g_FStreamBase_IOSDestructor
-    CALL crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9 ; 0060653a | filebuf * crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9(filebuf * this_ptr, uint d1, uint d2, uint d3)
-        ;   XREF to: 0060bdf9 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EBX + EAX*0x1 + 0x24],0x665edc ; 00606532 | g_FStreamBase_IOSDestructor
+    CALL crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9 ; 0060653a
+        ;   XREF to: 0060bdf9 (UNCONDITIONAL_CALL)  ; filebuf * crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9(filebuf * this_ptr, uint d1, uint d2, uint d3)
     ADD ESP,0x8                         ; 0060653f
     MOV DL,byte ptr [ESP + 0xc]         ; 00606542
     LEA EBX,[EAX + -0x4]                ; 00606546
     TEST DL,0x1                         ; 00606549
-    JZ 0x00606574                       ; 0060654c | LAB_00606574
-        ;   XREF to: 00606574 (CONDITIONAL_JUMP)
+    JZ 0x00606574                       ; 0060654c
+        ;   XREF to: 00606574 (CONDITIONAL_JUMP)  ; LAB_00606574
     TEST byte ptr [ESP + 0xc],0x2       ; 0060654e
         ;   Label: LAB_0060654e
-    JNZ 0x00606587                      ; 00606553 | LAB_00606587
-        ;   XREF to: 00606587 (CONDITIONAL_JUMP)
+    JNZ 0x00606587                      ; 00606553
+        ;   XREF to: 00606587 (CONDITIONAL_JUMP)  ; LAB_00606587
     MOV EAX,EBX                         ; 00606555
     POP EBX                             ; 00606557
     RET                                 ; 00606558
-    PUSH 0x665f10                       ; 00606559 | WatcomTypeInfo g_FStreamBaseTypeInfo
+    PUSH 0x665f10                       ; 00606559 | g_FStreamBaseTypeInfo
         ;   Label: LAB_00606559
     PUSH EBX                            ; 0060655e
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0060655f | void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0060655f
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00606564
     PUSH EAX                            ; 00606567
-    CALL crt_memory.c_free_FUN_005fe659 ; 00606568 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 00606568
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0060656d
         ;   Label: LAB_0060656d
     MOV EAX,EBX                         ; 00606570
@@ -80,16 +80,16 @@ section .text
         ;   Label: LAB_00606574
     ADD EBX,0x48                        ; 00606576
     PUSH EBX                            ; 00606579
-    CALL crt_iostream.cpp_ios_dtor_FUN_0060632c ; 0060657a | ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint d1, uint d2)
-        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)
+    CALL crt_iostream.cpp_ios_dtor_FUN_0060632c ; 0060657a
+        ;   XREF to: 0060632c (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_dtor_FUN_0060632c(ios * this_ptr, uint d1, uint d2)
     ADD ESP,0x8                         ; 0060657f
     LEA EBX,[EAX + -0x48]               ; 00606582
-    JMP 0x0060654e                      ; 00606585 | LAB_0060654e
-        ;   XREF to: 0060654e (UNCONDITIONAL_JUMP)
+    JMP 0x0060654e                      ; 00606585
+        ;   XREF to: 0060654e (UNCONDITIONAL_JUMP)  ; LAB_0060654e
     PUSH EBX                            ; 00606587
         ;   Label: LAB_00606587
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00606588 | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
-    JMP 0x0060656d                      ; 0060658d | LAB_0060656d
-        ;   XREF to: 0060656d (UNCONDITIONAL_JUMP)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00606588
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+    JMP 0x0060656d                      ; 0060658d
+        ;   XREF to: 0060656d (UNCONDITIONAL_JUMP)  ; LAB_0060656d
 

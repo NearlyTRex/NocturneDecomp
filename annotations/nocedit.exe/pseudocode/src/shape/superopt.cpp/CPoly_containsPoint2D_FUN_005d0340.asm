@@ -135,8 +135,8 @@ section .text
     FCOMP double ptr [EDX + 0x40]       ; 005d0356
     FNSTSW AX                           ; 005d0359
     SAHF                                ; 005d035b
-    JBE 0x005d05ba                      ; 005d035c | LAB_005d05ba
-        ;   XREF to: 005d05ba (CONDITIONAL_JUMP)
+    JBE 0x005d05ba                      ; 005d035c
+        ;   XREF to: 005d05ba (CONDITIONAL_JUMP)  ; LAB_005d05ba
     FLD double ptr [EDX + 0x40]         ; 005d0362
     FCHS                                ; 005d0365
     FSTP double ptr [ESP + 0x8]         ; 005d0367
@@ -149,8 +149,8 @@ section .text
     FCOMP double ptr [EDX + 0x48]       ; 005d037d
     FNSTSW AX                           ; 005d0380
     SAHF                                ; 005d0382
-    JA 0x005d05cd                       ; 005d0383 | LAB_005d05cd
-        ;   XREF to: 005d05cd (CONDITIONAL_JUMP)
+    JA 0x005d05cd                       ; 005d0383
+        ;   XREF to: 005d05cd (CONDITIONAL_JUMP)  ; LAB_005d05cd
     MOV EAX,dword ptr [EDX + 0x48]      ; 005d0389
     MOV dword ptr [ESP],EAX             ; 005d038c
     MOV EAX,dword ptr [EDX + 0x4c]      ; 005d038f
@@ -164,8 +164,8 @@ section .text
     FCOMP double ptr [EDX + 0x50]       ; 005d03a7
     FNSTSW AX                           ; 005d03aa
     SAHF                                ; 005d03ac
-    JA 0x005d05da                       ; 005d03ad | LAB_005d05da
-        ;   XREF to: 005d05da (CONDITIONAL_JUMP)
+    JA 0x005d05da                       ; 005d03ad
+        ;   XREF to: 005d05da (CONDITIONAL_JUMP)  ; LAB_005d05da
     MOV EAX,dword ptr [EDX + 0x50]      ; 005d03b3
     MOV dword ptr [ESP + 0x28],EAX      ; 005d03b6
     MOV EAX,dword ptr [EDX + 0x54]      ; 005d03ba
@@ -181,20 +181,20 @@ section .text
     FCOMP double ptr [ESP + 0x10]       ; 005d03da
     FNSTSW AX                           ; 005d03de
     SAHF                                ; 005d03e0
-    JC 0x005d070c                       ; 005d03e1 | LAB_005d070c
-        ;   XREF to: 005d070c (CONDITIONAL_JUMP)
+    JC 0x005d070c                       ; 005d03e1
+        ;   XREF to: 005d070c (CONDITIONAL_JUMP)  ; LAB_005d070c
     FLD double ptr [ESP + 0x20]         ; 005d03e7
     FCOMP double ptr [ESP + 0x28]       ; 005d03eb
     FNSTSW AX                           ; 005d03ef
     SAHF                                ; 005d03f1
-    JC 0x005d070c                       ; 005d03f2 | LAB_005d070c
-        ;   XREF to: 005d070c (CONDITIONAL_JUMP)
+    JC 0x005d070c                       ; 005d03f2
+        ;   XREF to: 005d070c (CONDITIONAL_JUMP)  ; LAB_005d070c
     FLDZ                                ; 005d03f8
     FCOMP double ptr [EDX + 0x40]       ; 005d03fa
     FNSTSW AX                           ; 005d03fd
     SAHF                                ; 005d03ff
-    JBE 0x005d05e8                      ; 005d0400 | LAB_005d05e8
-        ;   XREF to: 005d05e8 (CONDITIONAL_JUMP)
+    JBE 0x005d05e8                      ; 005d0400
+        ;   XREF to: 005d05e8 (CONDITIONAL_JUMP)  ; LAB_005d05e8
     MOV EAX,dword ptr [EDX + 0x4]       ; 005d0406
     SHL EAX,0x3                         ; 005d0409
     MOV ESI,EAX                         ; 005d040c
@@ -281,8 +281,8 @@ section .text
     PUSH EAX                            ; 005d0582
     LEA EAX,[ESP + 0x48]                ; 005d0583
     PUSH EAX                            ; 005d0587
-    CALL shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640 ; 005d0588 | double shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d * p1, CVector2d * p2, CVector2d * p3)
-        ;   XREF to: 005d6640 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640 ; 005d0588
+        ;   XREF to: 005d6640 (UNCONDITIONAL_CALL)  ; double shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d * p1, CVector2d * p2, CVector2d * p3)
     MOV dword ptr [ESP + 0x1cc],EAX     ; 005d058d
     MOV dword ptr [ESP + 0x1d0],EDX     ; 005d0594
     FLD double ptr [ESP + 0x1cc]        ; 005d059b
@@ -291,8 +291,8 @@ section .text
     FCOMPP                              ; 005d05a7
     FNSTSW AX                           ; 005d05a9
     SAHF                                ; 005d05ab
-    JNC 0x005d0c56                      ; 005d05ac | LAB_005d0c56
-        ;   XREF to: 005d0c56 (CONDITIONAL_JUMP)
+    JNC 0x005d0c56                      ; 005d05ac
+        ;   XREF to: 005d0c56 (CONDITIONAL_JUMP)  ; LAB_005d0c56
     XOR EAX,EAX                         ; 005d05b2
         ;   Label: LAB_005d05b2
     MOV ESP,EBP                         ; 005d05b4
@@ -305,20 +305,20 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 005d05bd
     MOV EAX,dword ptr [EDX + 0x44]      ; 005d05c1
     MOV dword ptr [ESP + 0xc],EAX       ; 005d05c4
-    JMP 0x005d036b                      ; 005d05c8 | LAB_005d036b
-        ;   XREF to: 005d036b (UNCONDITIONAL_JUMP)
+    JMP 0x005d036b                      ; 005d05c8
+        ;   XREF to: 005d036b (UNCONDITIONAL_JUMP)  ; LAB_005d036b
     FLD double ptr [EDX + 0x48]         ; 005d05cd
         ;   Label: LAB_005d05cd
     FCHS                                ; 005d05d0
     FSTP double ptr [ESP]               ; 005d05d2
-    JMP 0x005d0396                      ; 005d05d5 | LAB_005d0396
-        ;   XREF to: 005d0396 (UNCONDITIONAL_JUMP)
+    JMP 0x005d0396                      ; 005d05d5
+        ;   XREF to: 005d0396 (UNCONDITIONAL_JUMP)  ; LAB_005d0396
     FLD double ptr [EDX + 0x50]         ; 005d05da
         ;   Label: LAB_005d05da
     FCHS                                ; 005d05dd
     FSTP double ptr [ESP + 0x28]        ; 005d05df
-    JMP 0x005d03c1                      ; 005d05e3 | LAB_005d03c1
-        ;   XREF to: 005d03c1 (UNCONDITIONAL_JUMP)
+    JMP 0x005d03c1                      ; 005d05e3
+        ;   XREF to: 005d03c1 (UNCONDITIONAL_JUMP)  ; LAB_005d03c1
     MOV EAX,dword ptr [EDX + 0x4]       ; 005d05e8
         ;   Label: LAB_005d05e8
     SHL EAX,0x3                         ; 005d05eb
@@ -382,27 +382,27 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10c]     ; 005d06f5
     MOV dword ptr [ESP + 0xf0],ESI      ; 005d06fc
     MOV dword ptr [ESP + 0x4c],EAX      ; 005d0703
-    JMP 0x005d0525                      ; 005d0707 | LAB_005d0525
-        ;   XREF to: 005d0525 (UNCONDITIONAL_JUMP)
+    JMP 0x005d0525                      ; 005d0707
+        ;   XREF to: 005d0525 (UNCONDITIONAL_JUMP)  ; LAB_005d0525
     FLD double ptr [ESP + 0x10]         ; 005d070c
         ;   Label: LAB_005d070c
     FCOMP double ptr [ESP + 0x20]       ; 005d0710
     FNSTSW AX                           ; 005d0714
     SAHF                                ; 005d0716
-    JC 0x005d09c1                       ; 005d0717 | LAB_005d09c1
-        ;   XREF to: 005d09c1 (CONDITIONAL_JUMP)
+    JC 0x005d09c1                       ; 005d0717
+        ;   XREF to: 005d09c1 (CONDITIONAL_JUMP)  ; LAB_005d09c1
     FLD double ptr [ESP + 0x10]         ; 005d071d
     FCOMP double ptr [ESP + 0x18]       ; 005d0721
     FNSTSW AX                           ; 005d0725
     SAHF                                ; 005d0727
-    JC 0x005d09c1                       ; 005d0728 | LAB_005d09c1
-        ;   XREF to: 005d09c1 (CONDITIONAL_JUMP)
+    JC 0x005d09c1                       ; 005d0728
+        ;   XREF to: 005d09c1 (CONDITIONAL_JUMP)  ; LAB_005d09c1
     FLDZ                                ; 005d072e
     FCOMP double ptr [EDX + 0x48]       ; 005d0730
     FNSTSW AX                           ; 005d0733
     SAHF                                ; 005d0735
-    JNC 0x005d08a0                      ; 005d0736 | LAB_005d08a0
-        ;   XREF to: 005d08a0 (CONDITIONAL_JUMP)
+    JNC 0x005d08a0                      ; 005d0736
+        ;   XREF to: 005d08a0 (CONDITIONAL_JUMP)  ; LAB_005d08a0
     MOV EAX,dword ptr [EDX + 0x4]       ; 005d073c
     SHL EAX,0x3                         ; 005d073f
     MOV ESI,EAX                         ; 005d0742
@@ -481,8 +481,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x130]     ; 005d0889
     MOV dword ptr [ESP + 0x58],EAX      ; 005d0890
     MOV EAX,dword ptr [ESP + 0x134]     ; 005d0894
-    JMP 0x005d0575                      ; 005d089b | LAB_005d0575
-        ;   XREF to: 005d0575 (UNCONDITIONAL_JUMP)
+    JMP 0x005d0575                      ; 005d089b
+        ;   XREF to: 005d0575 (UNCONDITIONAL_JUMP)  ; LAB_005d0575
     MOV EAX,dword ptr [EDX + 0x4]       ; 005d08a0
         ;   Label: LAB_005d08a0
     SHL EAX,0x3                         ; 005d08a3
@@ -546,15 +546,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x164]     ; 005d09aa
     MOV dword ptr [ESP + 0x140],ESI     ; 005d09b1
     MOV dword ptr [ESP + 0x4c],EAX      ; 005d09b8
-    JMP 0x005d084c                      ; 005d09bc | LAB_005d084c
-        ;   XREF to: 005d084c (UNCONDITIONAL_JUMP)
+    JMP 0x005d084c                      ; 005d09bc
+        ;   XREF to: 005d084c (UNCONDITIONAL_JUMP)  ; LAB_005d084c
     FLDZ                                ; 005d09c1
         ;   Label: LAB_005d09c1
     FCOMP double ptr [EDX + 0x50]       ; 005d09c3
     FNSTSW AX                           ; 005d09c6
     SAHF                                ; 005d09c8
-    JBE 0x005d0b33                      ; 005d09c9 | LAB_005d0b33
-        ;   XREF to: 005d0b33 (CONDITIONAL_JUMP)
+    JBE 0x005d0b33                      ; 005d09c9
+        ;   XREF to: 005d0b33 (CONDITIONAL_JUMP)  ; LAB_005d0b33
     MOV EAX,dword ptr [EDX + 0x4]       ; 005d09cf
     SHL EAX,0x3                         ; 005d09d2
     MOV ESI,EAX                         ; 005d09d5
@@ -633,8 +633,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xf8]      ; 005d0b1c
     MOV dword ptr [ESP + 0x58],EAX      ; 005d0b23
     MOV EAX,dword ptr [ESP + 0xfc]      ; 005d0b27
-    JMP 0x005d0575                      ; 005d0b2e | LAB_005d0575
-        ;   XREF to: 005d0575 (UNCONDITIONAL_JUMP)
+    JMP 0x005d0575                      ; 005d0b2e
+        ;   XREF to: 005d0575 (UNCONDITIONAL_JUMP)  ; LAB_005d0575
     MOV EAX,dword ptr [EDX + 0x4]       ; 005d0b33
         ;   Label: LAB_005d0b33
     SHL EAX,0x3                         ; 005d0b36
@@ -697,8 +697,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1a4]     ; 005d0c3f
     MOV dword ptr [ESP + 0x128],ESI     ; 005d0c46
     MOV dword ptr [ESP + 0x4c],EAX      ; 005d0c4d
-    JMP 0x005d0adf                      ; 005d0c51 | LAB_005d0adf
-        ;   XREF to: 005d0adf (UNCONDITIONAL_JUMP)
+    JMP 0x005d0adf                      ; 005d0c51
+        ;   XREF to: 005d0adf (UNCONDITIONAL_JUMP)  ; LAB_005d0adf
     LEA EAX,[ESP + 0x50]                ; 005d0c56
         ;   Label: LAB_005d0c56
     PUSH EAX                            ; 005d0c5a
@@ -706,8 +706,8 @@ section .text
     PUSH EAX                            ; 005d0c5f
     LEA EAX,[ESP + 0x68]                ; 005d0c60
     PUSH EAX                            ; 005d0c64
-    CALL shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640 ; 005d0c65 | double shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d * p1, CVector2d * p2, CVector2d * p3)
-        ;   XREF to: 005d6640 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640 ; 005d0c65
+        ;   XREF to: 005d6640 (UNCONDITIONAL_CALL)  ; double shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d * p1, CVector2d * p2, CVector2d * p3)
     MOV dword ptr [ESP + 0x1cc],EAX     ; 005d0c6a
     MOV dword ptr [ESP + 0x1d0],EDX     ; 005d0c71
     FLD double ptr [ESP + 0x1cc]        ; 005d0c78
@@ -716,16 +716,16 @@ section .text
     FCOMPP                              ; 005d0c84
     FNSTSW AX                           ; 005d0c86
     SAHF                                ; 005d0c88
-    JC 0x005d05b2                       ; 005d0c89 | LAB_005d05b2
-        ;   XREF to: 005d05b2 (CONDITIONAL_JUMP)
+    JC 0x005d05b2                       ; 005d0c89
+        ;   XREF to: 005d05b2 (CONDITIONAL_JUMP)  ; LAB_005d05b2
     LEA EAX,[ESP + 0x50]                ; 005d0c8f
     PUSH EAX                            ; 005d0c93
     LEA EAX,[ESP + 0x44]                ; 005d0c94
     PUSH EAX                            ; 005d0c98
     LEA EAX,[ESP + 0x38]                ; 005d0c99
     PUSH EAX                            ; 005d0c9d
-    CALL shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640 ; 005d0c9e | double shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d * p1, CVector2d * p2, CVector2d * p3)
-        ;   XREF to: 005d6640 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640 ; 005d0c9e
+        ;   XREF to: 005d6640 (UNCONDITIONAL_CALL)  ; double shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d * p1, CVector2d * p2, CVector2d * p3)
     MOV dword ptr [ESP + 0x1cc],EAX     ; 005d0ca3
     MOV dword ptr [ESP + 0x1d0],EDX     ; 005d0caa
     FLD double ptr [ESP + 0x1cc]        ; 005d0cb1
@@ -734,8 +734,8 @@ section .text
     FCOMPP                              ; 005d0cbd
     FNSTSW AX                           ; 005d0cbf
     SAHF                                ; 005d0cc1
-    JC 0x005d05b2                       ; 005d0cc2 | LAB_005d05b2
-        ;   XREF to: 005d05b2 (CONDITIONAL_JUMP)
+    JC 0x005d05b2                       ; 005d0cc2
+        ;   XREF to: 005d05b2 (CONDITIONAL_JUMP)  ; LAB_005d05b2
     MOV EAX,0x1                         ; 005d0cc8
     MOV ESP,EBP                         ; 005d0ccd
     POP EBP                             ; 005d0ccf

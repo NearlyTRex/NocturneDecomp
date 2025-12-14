@@ -53,24 +53,24 @@ section .text
     MOV ESI,dword ptr [ESP + 0x64]      ; 00522a60
     LEA EBX,[ESP + 0x3c]                ; 00522a64
     FILD dword ptr [EAX]                ; 00522a68
-    FMUL float ptr [0x006616e8]         ; 00522a6a | float g_MirrorIntToFloat_Coarse
+    FMUL float ptr [0x006616e8]         ; 00522a6a | g_MirrorIntToFloat_Coarse
     FSTP float ptr [EBX]                ; 00522a70
     FILD dword ptr [EAX + 0x4]          ; 00522a72
-    FMUL float ptr [0x006616e8]         ; 00522a75 | float g_MirrorIntToFloat_Coarse
+    FMUL float ptr [0x006616e8]         ; 00522a75 | g_MirrorIntToFloat_Coarse
     FSTP float ptr [EBX + 0x4]          ; 00522a7b
     FILD dword ptr [EAX + 0x8]          ; 00522a7e
-    FMUL float ptr [0x006616e8]         ; 00522a81 | float g_MirrorIntToFloat_Coarse
+    FMUL float ptr [0x006616e8]         ; 00522a81 | g_MirrorIntToFloat_Coarse
     FSTP float ptr [EBX + 0x8]          ; 00522a87
     LEA EBX,[ESP + 0xc]                 ; 00522a8a
     MOV EAX,EDX                         ; 00522a8e
     FILD dword ptr [EAX]                ; 00522a90
-    FMUL float ptr [0x006616ec]         ; 00522a92 | float g_MirrorIntToFloat_Fine
+    FMUL float ptr [0x006616ec]         ; 00522a92 | g_MirrorIntToFloat_Fine
     FSTP float ptr [EBX]                ; 00522a98
     FILD dword ptr [EAX + 0x4]          ; 00522a9a
-    FMUL float ptr [0x006616ec]         ; 00522a9d | float g_MirrorIntToFloat_Fine
+    FMUL float ptr [0x006616ec]         ; 00522a9d | g_MirrorIntToFloat_Fine
     FSTP float ptr [EBX + 0x4]          ; 00522aa3
     FILD dword ptr [EAX + 0x8]          ; 00522aa6
-    FMUL float ptr [0x006616ec]         ; 00522aa9 | float g_MirrorIntToFloat_Fine
+    FMUL float ptr [0x006616ec]         ; 00522aa9 | g_MirrorIntToFloat_Fine
     FSTP float ptr [EBX + 0x8]          ; 00522aaf
     FLD float ptr [ESP + 0xc]           ; 00522ab2
     FLD float ptr [ESP + 0x10]          ; 00522ab6
@@ -89,8 +89,8 @@ section .text
     FSTP float ptr [ESP + 0x4]          ; 00522add
     FSTP float ptr [ESP + 0x8]          ; 00522ae1
     CMP EDX,EAX                         ; 00522ae5
-    JZ 0x00522b00                       ; 00522ae7 | LAB_00522b00
-        ;   XREF to: 00522b00 (CONDITIONAL_JUMP)
+    JZ 0x00522b00                       ; 00522ae7
+        ;   XREF to: 00522b00 (CONDITIONAL_JUMP)  ; LAB_00522b00
     MOV EAX,dword ptr [ESP]             ; 00522ae9
     MOV dword ptr [ESP + 0xc],EAX       ; 00522aec
     MOV EAX,dword ptr [ESP + 0x4]       ; 00522af0
@@ -103,14 +103,14 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 00522b05
     PUSH EAX                            ; 00522b09
     PUSH ESI                            ; 00522b0a
-    CALL core_mirror.cpp_applyMirrorTransform_FUN_005222f0 ; 00522b0b | CVector3f * core_mirror.cpp_applyMirrorTransform_FUN_005222f0(SMirrorReflection * reflection, CVector3f * output_buffer, CVector3f * input_vector)
-        ;   XREF to: 005222f0 (UNCONDITIONAL_CALL)
+    CALL core_mirror.cpp_applyMirrorTransform_FUN_005222f0 ; 00522b0b
+        ;   XREF to: 005222f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_applyMirrorTransform_FUN_005222f0(SMirrorReflection * reflection, CVector3f * output_buffer, CVector3f * input_vector)
     MOV EDX,EAX                         ; 00522b10
     LEA EAX,[ESP + 0x48]                ; 00522b12
     ADD ESP,0xc                         ; 00522b16
     CMP EAX,EDX                         ; 00522b19
-    JZ 0x00522b31                       ; 00522b1b | LAB_00522b31
-        ;   XREF to: 00522b31 (CONDITIONAL_JUMP)
+    JZ 0x00522b31                       ; 00522b1b
+        ;   XREF to: 00522b31 (CONDITIONAL_JUMP)  ; LAB_00522b31
     MOV EAX,dword ptr [EDX]             ; 00522b1d
     MOV dword ptr [ESP + 0x3c],EAX      ; 00522b1f
     MOV EAX,dword ptr [EDX + 0x4]       ; 00522b23
@@ -123,14 +123,14 @@ section .text
     LEA EAX,[ESP + 0x4c]                ; 00522b36
     PUSH EAX                            ; 00522b3a
     PUSH ESI                            ; 00522b3b
-    CALL core_mirror.cpp_applyMirrorTransform_FUN_005222f0 ; 00522b3c | CVector3f * core_mirror.cpp_applyMirrorTransform_FUN_005222f0(SMirrorReflection * reflection, CVector3f * output_buffer, CVector3f * input_vector)
-        ;   XREF to: 005222f0 (UNCONDITIONAL_CALL)
+    CALL core_mirror.cpp_applyMirrorTransform_FUN_005222f0 ; 00522b3c
+        ;   XREF to: 005222f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_applyMirrorTransform_FUN_005222f0(SMirrorReflection * reflection, CVector3f * output_buffer, CVector3f * input_vector)
     MOV EDX,EAX                         ; 00522b41
     LEA EAX,[ESP + 0x18]                ; 00522b43
     ADD ESP,0xc                         ; 00522b47
     CMP EAX,EDX                         ; 00522b4a
-    JZ 0x00522b62                       ; 00522b4c | LAB_00522b62
-        ;   XREF to: 00522b62 (CONDITIONAL_JUMP)
+    JZ 0x00522b62                       ; 00522b4c
+        ;   XREF to: 00522b62 (CONDITIONAL_JUMP)  ; LAB_00522b62
     MOV EAX,dword ptr [EDX]             ; 00522b4e
     MOV dword ptr [ESP + 0xc],EAX       ; 00522b50
     MOV EAX,dword ptr [EDX + 0x4]       ; 00522b54
@@ -155,8 +155,8 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 00522b90
     FSTP float ptr [ESP + 0x30]         ; 00522b94
     CMP EDX,EAX                         ; 00522b98
-    JZ 0x00522bb4                       ; 00522b9a | LAB_00522bb4
-        ;   XREF to: 00522bb4 (CONDITIONAL_JUMP)
+    JZ 0x00522bb4                       ; 00522b9a
+        ;   XREF to: 00522bb4 (CONDITIONAL_JUMP)  ; LAB_00522bb4
     MOV EAX,dword ptr [ESP + 0x30]      ; 00522b9c
     MOV dword ptr [ESP + 0xc],EAX       ; 00522ba0
     MOV EAX,dword ptr [ESP + 0x34]      ; 00522ba4
@@ -169,13 +169,13 @@ section .text
     LEA ESI,[ESP + 0x24]                ; 00522bbc
     MOV EDI,EBP                         ; 00522bc0
     FLD float ptr [EAX]                 ; 00522bc2
-    FMUL float ptr [0x006616e4]         ; 00522bc4 | float g_MirrorFloatToInt
+    FMUL float ptr [0x006616e4]         ; 00522bc4 | g_MirrorFloatToInt
     FISTP dword ptr [EBX]               ; 00522bca
     FLD float ptr [EAX + 0x4]           ; 00522bcc
-    FMUL float ptr [0x006616e4]         ; 00522bcf | float g_MirrorFloatToInt
+    FMUL float ptr [0x006616e4]         ; 00522bcf | g_MirrorFloatToInt
     FISTP dword ptr [EBX + 0x4]         ; 00522bd5
     FLD float ptr [EAX + 0x8]           ; 00522bd8
-    FMUL float ptr [0x006616e4]         ; 00522bdb | float g_MirrorFloatToInt
+    FMUL float ptr [0x006616e4]         ; 00522bdb | g_MirrorFloatToInt
     FISTP dword ptr [EBX + 0x8]         ; 00522be1
     MOVSD ES:EDI,ESI                    ; 00522be4
     MOVSD ES:EDI,ESI                    ; 00522be5

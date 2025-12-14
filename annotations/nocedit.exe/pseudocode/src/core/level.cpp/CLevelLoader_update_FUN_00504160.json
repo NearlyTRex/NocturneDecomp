@@ -1,654 +1,654 @@
 {
   "complexity": {
-    "function_call_count": 18, 
-    "complexity_score": 421, 
-    "pseudocode_lines": 151, 
-    "cross_reference_count": 5, 
-    "global_count": 17, 
-    "total_lines": 620, 
-    "assembly_lines": 469, 
-    "suspect_count": 23, 
+    "assembly_lines": 469,
+    "complexity_score": 421,
+    "cross_reference_count": 5,
+    "function_call_count": 18,
+    "global_count": 17,
+    "pseudocode_lines": 151,
+    "suspect_count": 23,
     "suspect_types": [
-      "stack_param", 
-      "negative_offset", 
-      "unaffected_reg", 
-      "suspect_float", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "suspect_float",
+      "negative_offset",
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850", 
-      "addr": "00477850"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_00570ca0", 
-      "addr": "00570ca0"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480", 
-      "addr": "0048c8c0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
-      "addr": "0048c450"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890", 
-      "addr": "0048c890"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10", 
-      "addr": "0048ae10"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
-      "addr": "0048ca50"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150", 
-      "addr": "0048c150"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650", 
-      "addr": "0048c650"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0", 
-      "addr": "0048c1d0"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80", 
-      "addr": "004cda80"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
-      "addr": "004cfe80"
-    }, 
-    {
-      "name": "engine_matrix.c_interpolatedCos_FUN_0050c600", 
-      "addr": "0050c600"
-    }, 
-    {
-      "name": "engine_matrix.c_interpolatedSin_FUN_0050c5c0", 
-      "addr": "0050c5c0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_006608cc", 
-      "addr": "006608cc", 
-      "value": "256"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "g_LoadingMoonGlowTexture", 
-      "addr": "0067cf84", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01000000", 
-      "addr": "01000000", 
-      "value": null
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_ThemeFont", 
-      "addr": "020a5720", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CKeyFramedModel", 
-      "name": "g_LoadingMoonModel", 
-      "addr": "02dcd980", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0e8", 
-      "addr": "0326f0e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0ec", 
-      "addr": "0326f0ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0f0", 
-      "addr": "0326f0f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0f4", 
-      "addr": "0326f0f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0f8", 
-      "addr": "0326f0f8", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_ZeroVector", 
-      "addr": "03f87558", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "float unaff_ESI;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CBitFont *in_stack_00000030;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000048;"
-    }, 
-    {
-      "line": 71, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_30.z = (int)ROUND(unaff_ESI * 256f);"
-    }, 
-    {
-      "line": 75, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_10 = (float)(int)ROUND(-unaff_ESI * 256f);"
-    }, 
-    {
-      "line": 79, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_1c.x = (int)ROUND(--unaff_ESI * 256f);"
-    }, 
-    {
-      "line": 85, 
-      "match": "2.3509887e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_CDemonRendererPtr->vertex_buffer_ptr->u = 2.3509887e-38;"
-    }, 
-    {
-      "line": 90, 
-      "match": "2.3509887e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "pCVar1->vertex_buffer_ptr[2].v = 2.3509887e-38;"
-    }, 
-    {
-      "line": 91, 
-      "match": "2.3509887e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "pCVar1->vertex_buffer_ptr[3].u = 2.3509887e-38;"
-    }, 
-    {
-      "line": 92, 
-      "match": "2.3509887e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "pCVar1->vertex_buffer_ptr[3].v = 2.3509887e-38;"
-    }, 
-    {
-      "line": 96, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fVar4 = 9.18341e-41;"
-    }, 
-    {
-      "line": 105, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar3) ="
-    }, 
-    {
-      "line": 107, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = (this_ptr->color).g << 8;"
-    }, 
-    {
-      "line": 109, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = (this_ptr->color).b << 8;"
-    }, 
-    {
-      "line": 120, 
-      "match": "&stack0xffffffb0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffffb0,0x327);"
-    }, 
-    {
-      "line": 140, 
-      "match": "pCStack00000034[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "(iVar6 + -1,(int)((int)&pCStack00000034[-1].win_font_helper + 3),iVar3 + 1 + iVar6,"
-    }, 
-    {
-      "line": 142, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000048 != (char *)0x0) {"
-    }, 
-    {
-      "line": 144, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000030,in_stack_00000048);"
-    }, 
-    {
-      "line": 144, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000030,in_stack_00000048);"
-    }, 
-    {
-      "line": 146, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCStack00000034,in_stack_00000048,(iVar6 + iVar3 / 2) - iVar7 / 2,"
-    }, 
-    {
-      "line": 147, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(int)in_stack_00000030 + (iVar5 / 2 - pCStack00000034->max_char_width / 2),0xf8,"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00504160", 
-    "signature": "void core_level.cpp_CLevelLoader_update_FUN_00504160(CLevelLoader * this_ptr, char * text, int clear_screen)", 
-    "address_range": [
-      [
-        "00504160", 
-        "0050471f"
-      ]
-    ], 
-    "name": "core_level.cpp_CLevelLoader_update_FUN_00504160"
-  }, 
-  "stack_frame": {
-    "local_size": 140, 
-    "variables": [
-      {
-        "offset": -136, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_88"
-      }, 
-      {
-        "offset": -132, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_84"
-      }, 
-      {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_80"
-      }, 
-      {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_7c"
-      }, 
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLevelLoader *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "clear_screen"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 152, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 620
+  },
   "cross_references": [
     {
-      "from_addr": "00523d21", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_FUN_00523cf0", 
-      "addr": "00523cf0"
-    }, 
+      "addr": "00523cf0",
+      "from_addr": "00523d21",
+      "name": "core_mission.cpp_CDemonMission_FUN_00523cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00524801", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_FUN_00524760", 
-      "addr": "00524760"
-    }, 
+      "addr": "00524760",
+      "from_addr": "00524801",
+      "name": "core_mission.cpp_CDemonMission_FUN_00524760",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00522dc7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90", 
-      "addr": "00522d90"
-    }, 
+      "addr": "00522d90",
+      "from_addr": "00522dc7",
+      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056aa32", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
-      "addr": "0056aa10"
-    }, 
+      "addr": "0056aa10",
+      "from_addr": "0056aa32",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00569d63", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
-      "addr": "00569410"
+      "addr": "00569410",
+      "from_addr": "00569d63",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00504160",
+    "address_range": [
+      [
+        "00504160",
+        "0050471f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_level.cpp_CLevelLoader_update_FUN_00504160",
+    "signature": "void core_level.cpp_CLevelLoader_update_FUN_00504160(CLevelLoader * this_ptr, char * text, int clear_screen)"
+  },
+  "function_calls": [
+    {
+      "addr": "00477850",
+      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850"
+    },
+    {
+      "addr": "00570ca0",
+      "name": "core_set.cpp_CDemonSet_FUN_00570ca0"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    },
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048c8c0",
+      "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480"
+    },
+    {
+      "addr": "0048c450",
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048c890",
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890"
+    },
+    {
+      "addr": "0048ae10",
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10"
+    },
+    {
+      "addr": "0048ca50",
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "0048c150",
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150"
+    },
+    {
+      "addr": "0048c650",
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650"
+    },
+    {
+      "addr": "0048c1d0",
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0"
+    },
+    {
+      "addr": "004cda80",
+      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
+    },
+    {
+      "addr": "004cfe80",
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
+    },
+    {
+      "addr": "0050c600",
+      "name": "engine_matrix.c_interpolatedCos_FUN_0050c600"
+    },
+    {
+      "addr": "0050c5c0",
+      "name": "engine_matrix.c_interpolatedSin_FUN_0050c5c0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006608cc",
+      "name": "FLOAT_006608cc",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067cf84",
+      "name": "g_LoadingMoonGlowTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "01000000",
+      "name": "DAT_01000000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020a5720",
+      "name": "g_ThemeFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02dcd980",
+      "name": "g_LoadingMoonModel",
+      "type": "CKeyFramedModel",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "0326f0e8",
+      "name": "DAT_0326f0e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326f0ec",
+      "name": "DAT_0326f0ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326f0f0",
+      "name": "DAT_0326f0f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326f0f4",
+      "name": "DAT_0326f0f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326f0f8",
+      "name": "DAT_0326f0f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 152,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLevelLoader *"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "clear_screen",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "text": "float unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000030",
+      "text": "CBitFont *in_stack_00000030;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000048",
+      "text": "char *in_stack_00000048;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 71,
+      "match": "unaff_ESI",
+      "text": "local_30.z = (int)ROUND(unaff_ESI * 256f);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 75,
+      "match": "unaff_ESI",
+      "text": "local_10 = (float)(int)ROUND(-unaff_ESI * 256f);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 79,
+      "match": "unaff_ESI",
+      "text": "local_1c.x = (int)ROUND(--unaff_ESI * 256f);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 85,
+      "match": "2.3509887e-38",
+      "text": "g_CDemonRendererPtr->vertex_buffer_ptr->u = 2.3509887e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 90,
+      "match": "2.3509887e-38",
+      "text": "pCVar1->vertex_buffer_ptr[2].v = 2.3509887e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 91,
+      "match": "2.3509887e-38",
+      "text": "pCVar1->vertex_buffer_ptr[3].u = 2.3509887e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 92,
+      "match": "2.3509887e-38",
+      "text": "pCVar1->vertex_buffer_ptr[3].v = 2.3509887e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 96,
+      "match": "9.18341e-41",
+      "text": "fVar4 = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = (this_ptr->color).g << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 109,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = (this_ptr->color).b << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 120,
+      "match": "&stack0xffffffb0",
+      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffffb0,0x327);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 140,
+      "match": "pCStack00000034[-1].",
+      "text": "(iVar6 + -1,(int)((int)&pCStack00000034[-1].win_font_helper + 3),iVar3 + 1 + iVar6,",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 142,
+      "match": "in_stack_00000048",
+      "text": "if (in_stack_00000048 != (char *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 144,
+      "match": "in_stack_00000030",
+      "text": "(in_stack_00000030,in_stack_00000048);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 144,
+      "match": "in_stack_00000048",
+      "text": "(in_stack_00000030,in_stack_00000048);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 146,
+      "match": "in_stack_00000048",
+      "text": "(pCStack00000034,in_stack_00000048,(iVar6 + iVar3 / 2) - iVar7 / 2,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 147,
+      "match": "in_stack_00000030",
+      "text": "(int)in_stack_00000030 + (iVar5 / 2 - pCStack00000034->max_char_width / 2),0xf8,",
+      "type": "stack_param"
     }
   ]
 }

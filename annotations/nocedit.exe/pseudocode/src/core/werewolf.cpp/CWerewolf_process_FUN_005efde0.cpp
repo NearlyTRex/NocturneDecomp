@@ -570,7 +570,7 @@ LAB_005f0481:
                   ((CDemonActor *)this_ptr);
         iVar7 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
         if (iVar7 == 0) goto LAB_005f0010;
-        if ((iVar7 != 0) && (*(int *)(this_ptr->field6_0xbed8 + 0x10) != 0)) {
+        if (*(int *)(this_ptr->field6_0xbed8 + 0x10) != 0) {
           local_b0 = *(float *)(iVar7 + 0x20) -
                      (this_ptr->base_enemy).base_character.base_actor.location.position.x;
           local_ac = *(float *)(iVar7 + 0x24) -

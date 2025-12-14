@@ -1,124 +1,116 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 131, 
-    "pseudocode_lines": 51, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 188, 
-    "assembly_lines": 137, 
-    "suspect_count": 7, 
+    "assembly_lines": 137,
+    "complexity_score": 114,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 49,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "sborrow_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310", 
-      "addr": "00580310"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_03659384", 
-      "addr": "03659384", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000008;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "piVar2 = (int *)(DAT_03659384 + in_stack_00000010 * 0x4b030);"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = in_stack_00000008[1] - piVar2[1];"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar4 = *in_stack_00000008 - *piVar2;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar7 = in_stack_00000008[2] - piVar2[2];"
-    }, 
-    {
-      "line": 38, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "if ((iVar5 != iVar3 && SBORROW /* signed borrow */4(iVar5,iVar3) == iVar5 + iVar6 < 0) &&"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005801b0", 
-    "signature": "undefined core_setedit.cpp_FUN_005801b0()", 
-    "address_range": [
-      [
-        "005801b0", 
-        "00580309"
-      ]
-    ], 
-    "name": "core_setedit.cpp_FUN_005801b0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_param"
+    ],
+    "total_lines": 186
+  },
   "cross_references": [
     {
-      "from_addr": "00580180", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_FUN_005800d0", 
-      "addr": "005800d0"
+      "addr": "005800d0",
+      "from_addr": "00580180",
+      "name": "core_setedit.cpp_CDemonSet_FUN_005800d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005801b0",
+    "address_range": [
+      [
+        "005801b0",
+        "00580309"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_setedit.cpp_FUN_005801b0",
+    "signature": "undefined core_setedit.cpp_FUN_005801b0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00580310",
+      "name": "core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03659384",
+      "name": "DAT_03659384",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "piVar2 = (int *)(DAT_03659384 + in_stack_00000010 * 0x4b030);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = in_stack_00000008[1] - piVar2[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "text": "iVar3 = *in_stack_00000008 - *piVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "iVar6 = in_stack_00000008[2] - piVar2[2];",
+      "type": "stack_param"
     }
   ]
 }

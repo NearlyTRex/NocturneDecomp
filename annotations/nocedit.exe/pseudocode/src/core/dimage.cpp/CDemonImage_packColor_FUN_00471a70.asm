@@ -31,24 +31,24 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 00471a73
     MOV EBX,dword ptr [ESP + 0x18]      ; 00471a77
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00471a7b
-    MOV ECX,dword ptr [0x02d01f28]      ; 00471a7f | int g_RedScaleFactor
+    MOV ECX,dword ptr [0x02d01f28]      ; 00471a7f | g_RedScaleFactor
     MOV EAX,EDI                         ; 00471a85
     XOR EDX,EDX                         ; 00471a87
     DIV ECX                             ; 00471a89
     MOV EDI,EAX                         ; 00471a8b
     XOR EDX,EDX                         ; 00471a8d
     MOV EAX,EBX                         ; 00471a8f
-    MOV EBX,dword ptr [0x02d01f34]      ; 00471a91 | int g_GreenScaleFactor
+    MOV EBX,dword ptr [0x02d01f34]      ; 00471a91 | g_GreenScaleFactor
     DIV EBX                             ; 00471a97
     MOV EBX,EAX                         ; 00471a99
     XOR EDX,EDX                         ; 00471a9b
     MOV EAX,ESI                         ; 00471a9d
-    DIV dword ptr [0x02d01f40]          ; 00471a9f | int g_BlueScaleFactor
-    MOV CL,byte ptr [0x02d01f24]        ; 00471aa5 | int g_RedBitPosition
+    DIV dword ptr [0x02d01f40]          ; 00471a9f | g_BlueScaleFactor
+    MOV CL,byte ptr [0x02d01f24]        ; 00471aa5 | g_RedBitPosition
     SHL EDI,CL                          ; 00471aab
-    MOV CL,byte ptr [0x02d01f30]        ; 00471aad | int g_GreenBitPosition
+    MOV CL,byte ptr [0x02d01f30]        ; 00471aad | g_GreenBitPosition
     SHL EBX,CL                          ; 00471ab3
-    MOV CL,byte ptr [0x02d01f3c]        ; 00471ab5 | int g_BlueBitPosition
+    MOV CL,byte ptr [0x02d01f3c]        ; 00471ab5 | g_BlueBitPosition
     OR EBX,EDI                          ; 00471abb
     SHL EAX,CL                          ; 00471abd
     OR EAX,EBX                          ; 00471abf

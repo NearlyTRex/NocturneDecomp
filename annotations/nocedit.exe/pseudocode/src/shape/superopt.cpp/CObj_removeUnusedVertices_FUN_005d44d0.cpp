@@ -23,7 +23,8 @@ int __cdecl shape_superopt_cpp_CObj_removeUnusedVertices_FUN_005d44d0(CObj *this
   int iVar8;
   void *pvVar9;
   
-  dest = (int *)crt_memory_c_malloc_FUN_006021da(this_ptr->vertex_count << 2);
+  dest = crt_memory_c_malloc_FUN_006021da(this_ptr->vertex_count << 2);
+  iVar8 = 0;
   if (dest != (int *)0x0) {
     if (1000 < (uint)this_ptr->vertex_count) {
       shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);
@@ -103,14 +104,14 @@ int __cdecl shape_superopt_cpp_CObj_removeUnusedVertices_FUN_005d44d0(CObj *this
         unaff_ESI = unaff_ESI + 0x38;
       } while (pvVar9 < ptr);
     }
-    pCVar4 = (CVert *)crt_memory_c_realloc_FUN_00601df0(this_ptr->vertex_data,(int)ptr * 0x38);
+    pCVar4 = crt_memory_c_realloc_FUN_00601df0(this_ptr->vertex_data,(int)ptr * 0x38);
     if (pCVar4 != (CVert *)0x0) {
       this_ptr->vertex_data = pCVar4;
     }
     this_ptr->vertex_count = unaff_ESI;
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
     crt_memory_c_free_FUN_005fe659(dest);
-    dest = (int *)&DAT_00000001;
+    iVar8 = 1;
   }
-  return (int)dest;
+  return iVar8;
 }

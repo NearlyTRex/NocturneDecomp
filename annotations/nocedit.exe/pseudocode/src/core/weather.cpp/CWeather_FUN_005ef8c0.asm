@@ -26,16 +26,16 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 005ef8c8
     MOV dword ptr [EBX],EAX             ; 005ef8cc
     CMP EAX,0x1                         ; 005ef8ce
-    JNZ 0x005ef92c                      ; 005ef8d1 | LAB_005ef92c
-        ;   XREF to: 005ef92c (CONDITIONAL_JUMP)
+    JNZ 0x005ef92c                      ; 005ef8d1
+        ;   XREF to: 005ef92c (CONDITIONAL_JUMP)  ; LAB_005ef92c
     MOV dword ptr [EBX + 0x4],0x42200000 ; 005ef8d3
     PUSH 0x41a00000                     ; 005ef8da
         ;   Label: LAB_005ef8da
     PUSH 0x41200000                     ; 005ef8df
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005ef8e4 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005ef8e4
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     MOV dword ptr [EBX + 0x4],0x40a00000 ; 005ef92c
         ;   Label: LAB_005ef92c
-    JMP 0x005ef8da                      ; 005ef933 | LAB_005ef8da
-        ;   XREF to: 005ef8da (UNCONDITIONAL_JUMP)
+    JMP 0x005ef8da                      ; 005ef933
+        ;   XREF to: 005ef8da (UNCONDITIONAL_JUMP)  ; LAB_005ef8da
 

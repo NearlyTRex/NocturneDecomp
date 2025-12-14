@@ -11,8 +11,7 @@ void core_filmreel_cpp_FUN_004be670(void)
 {
   CFilmReel *this_ptr;
   
-  this_ptr = (CFilmReel *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x31c,"..\\core\\filmreel.cpp",0x22);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x31c,"..\\core\\filmreel.cpp",0x22);
   if (this_ptr == (CFilmReel *)0x0) {
     return;
   }

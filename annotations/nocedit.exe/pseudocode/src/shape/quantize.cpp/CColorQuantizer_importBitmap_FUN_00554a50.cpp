@@ -64,7 +64,7 @@ shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50
       }
       iVar9 = 0;
       puVar7 = *(uint **)((int)bitmap->row_table + local_24);
-      puVar10 = (uint *)this_ptr->scanline_buffer;
+      puVar10 = this_ptr->scanline_buffer;
       for (uVar6 = (uint)(local_18 >> 2); uVar6 != 0; uVar6 = uVar6 - 1) {
         *puVar10 = *puVar7;
         puVar7 = puVar7 + (uint)bVar11 * -2 + 1;

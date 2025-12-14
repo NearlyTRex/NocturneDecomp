@@ -1,262 +1,262 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 214, 
-    "pseudocode_lines": 144, 
-    "cross_reference_count": 1, 
-    "global_count": 15, 
-    "total_lines": 525, 
-    "assembly_lines": 381, 
-    "suspect_count": 6, 
+    "assembly_lines": 381,
+    "complexity_score": 214,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 15,
+    "pseudocode_lines": 144,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }, 
-    {
-      "name": "engine_font.cpp_getDefaultTextColor_FUN_004ce220", 
-      "addr": "004ce220"
-    }, 
-    {
-      "name": "SetTextColor", 
-      "addr": "EXTERNAL:0000000d"
-    }, 
-    {
-      "name": "TextOutA", 
-      "addr": "EXTERNAL:0000000e"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SetTextColor*", 
-      "name": "SetTextColor", 
-      "addr": "006113f8", 
-      "value": "00211800"
-    }, 
-    {
-      "type": "TextOutA*", 
-      "name": "TextOutA", 
-      "addr": "006113fc", 
-      "value": "00211810"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitPosition", 
-      "addr": "02d01f24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitCount", 
-      "addr": "02d01f2c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitPosition", 
-      "addr": "02d01f30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitCount", 
-      "addr": "02d01f38", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitPosition", 
-      "addr": "02d01f3c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitCount", 
-      "addr": "02d01f44", 
-      "value": null
-    }, 
-    {
-      "type": "char[768]", 
-      "name": "g_SourcePaletteData", 
-      "addr": "02d01f48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f49", 
-      "addr": "02d01f49", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4a", 
-      "addr": "02d01f4a", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 20, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_ffffffac", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "COLORREF in_stack_ffffffac;"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->cached_background_color = in_stack_00000020;"
-    }, 
-    {
-      "line": 68, 
-      "match": "in_stack_ffffffac", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*SetTextColor)(this_ptr->deviceContextHandle,in_stack_ffffffac);"
-    }, 
-    {
-      "line": 98, 
-      "match": "(ushort *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar9 = (ushort *)((int)g_ScreenBufferArray[iVar4] + (int)text_string * 2);"
-    }, 
-    {
-      "line": 130, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar10 = (int *)((int)text_string * 4 + (int)g_ScreenBufferArray[iVar5]);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f2440", 
-    "signature": "void engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont * this_ptr, HDC device_context, int x_position, int y_position, char * text_string, int foreground_color, int background_color)", 
-    "address_range": [
-      [
-        "005f2440", 
-        "005f285c"
-      ]
-    ], 
-    "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440"
-  }, 
-  "stack_frame": {
-    "local_size": 56, 
-    "variables": [
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWinFont *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "typedef HDC HDC__ *", 
-        "size": 4, 
-        "name": "device_context"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_position"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_position"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text_string"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "foreground_color"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "background_color"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 84, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
+    ],
+    "total_lines": 525
+  },
   "cross_references": [
     {
-      "from_addr": "005f242a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0", 
-      "addr": "005f23f0"
+      "addr": "005f23f0",
+      "from_addr": "005f242a",
+      "name": "engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005f2440",
+    "address_range": [
+      [
+        "005f2440",
+        "005f285c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440",
+    "signature": "void engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont * this_ptr, HDC device_context, int x_position, int y_position, char * text_string, int foreground_color, int background_color)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    },
+    {
+      "addr": "004ce220",
+      "name": "engine_font.cpp_getDefaultTextColor_FUN_004ce220"
+    },
+    {
+      "addr": "EXTERNAL:0000000d",
+      "name": "SetTextColor"
+    },
+    {
+      "addr": "EXTERNAL:0000000e",
+      "name": "TextOutA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006113f8",
+      "name": "SetTextColor",
+      "type": "SetTextColor*",
+      "value": "00211800"
+    },
+    {
+      "addr": "006113fc",
+      "name": "TextOutA",
+      "type": "TextOutA*",
+      "value": "00211810"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f2c",
+      "name": "g_RedBitCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f38",
+      "name": "g_GreenBitCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f44",
+      "name": "g_BlueBitCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f48",
+      "name": "g_SourcePaletteData",
+      "type": "char[768]",
+      "value": null
+    },
+    {
+      "addr": "02d01f49",
+      "name": "CHAR_ARRAY_02d01f49",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4a",
+      "name": "CHAR_ARRAY_02d01f4a",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWinFont *"
+      },
+      {
+        "is_param": true,
+        "name": "device_context",
+        "offset": 8,
+        "size": 4,
+        "type": "typedef HDC HDC__ *"
+      },
+      {
+        "is_param": true,
+        "name": "x_position",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_position",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "text_string",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "foreground_color",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "background_color",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_ffffffac",
+      "text": "COLORREF in_stack_ffffffac;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000020",
+      "text": "this_ptr->cached_background_color = in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_ffffffac",
+      "text": "(*SetTextColor)(this_ptr->deviceContextHandle,in_stack_ffffffac);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(ushort *)((int)",
+      "text": "puVar9 = (ushort *)((int)g_ScreenBufferArray[iVar4] + (int)text_string * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(int *)((int)",
+      "text": "piVar10 = (int *)((int)text_string * 4 + (int)g_ScreenBufferArray[iVar5]);",
+      "type": "pointer_cast"
     }
   ]
 }

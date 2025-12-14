@@ -1,248 +1,248 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 202, 
-    "pseudocode_lines": 52, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 199, 
-    "assembly_lines": 147, 
-    "suspect_count": 14, 
+    "assembly_lines": 147,
+    "complexity_score": 202,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 52,
+    "suspect_count": 14,
     "suspect_types": [
-      "unaffected_reg", 
+      "unaffected_reg",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760", 
-      "addr": "00431760"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 17, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);"
-    }, 
-    {
-      "line": 21, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "sprite_data = (void *)((int)sprite_data + width);"
-    }, 
-    {
-      "line": 23, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pvVar2 = (void *)((int)pvVar2 + unaff_EBX);"
-    }, 
-    {
-      "line": 23, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pvVar2 = (void *)((int)pvVar2 + unaff_EBX);"
-    }, 
-    {
-      "line": 29, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y * 2);"
-    }, 
-    {
-      "line": 33, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "sprite_data = (void *)((int)sprite_data + width);"
-    }, 
-    {
-      "line": 35, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pvVar2 = (void *)((int)pvVar2 + (local_20 / 2) * 2);"
-    }, 
-    {
-      "line": 41, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "dest_buffer = (void *)((int)g_ScreenBufferArray[width] + dest_y * 4);"
-    }, 
-    {
-      "line": 46, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "sprite_data = (void *)((int)sprite_data + 1);"
-    }, 
-    {
-      "line": 47, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "dest_buffer = (void *)((int)dest_buffer + unaff_ESI);"
-    }, 
-    {
-      "line": 47, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "dest_buffer = (void *)((int)dest_buffer + unaff_ESI);"
-    }, 
-    {
-      "line": 48, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pvVar2 = (void *)((int)pvVar2 + width);"
-    }
-  ], 
+    ],
+    "total_lines": 199
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00432540", 
-    "signature": "void cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540(void * sprite_data, int dest_x, int dest_y, int width, int height)", 
+    "address": "00432540",
     "address_range": [
       [
-        "00432540", 
+        "00432540",
         "00432690"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540",
+    "signature": "void cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540(void * sprite_data, int dest_x, int dest_y, int width, int height)"
+  },
+  "function_calls": [
+    {
+      "addr": "00431760",
+      "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 48, 
+    "frame_size": 68,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "sprite_data"
-      }, 
+        "is_param": true,
+        "name": "sprite_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dest_x"
-      }, 
+        "is_param": true,
+        "name": "dest_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dest_y"
-      }, 
+        "is_param": true,
+        "name": "dest_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 68, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)",
+      "text": "pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(void *)((int)",
+      "text": "sprite_data = (void *)((int)sprite_data + width);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBX",
+      "text": "pvVar2 = (void *)((int)pvVar2 + unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(void *)((int)",
+      "text": "pvVar2 = (void *)((int)pvVar2 + unaff_EBX);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(void *)((int)",
+      "text": "pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(void *)((int)",
+      "text": "sprite_data = (void *)((int)sprite_data + width);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(void *)((int)",
+      "text": "pvVar2 = (void *)((int)pvVar2 + (local_20 / 2) * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(void *)((int)",
+      "text": "dest_buffer = (void *)((int)g_ScreenBufferArray[width] + dest_y * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(void *)((int)",
+      "text": "sprite_data = (void *)((int)sprite_data + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_ESI",
+      "text": "dest_buffer = (void *)((int)dest_buffer + unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(void *)((int)",
+      "text": "dest_buffer = (void *)((int)dest_buffer + unaff_ESI);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(void *)((int)",
+      "text": "pvVar2 = (void *)((int)pvVar2 + width);",
+      "type": "pointer_cast"
+    }
+  ]
 }

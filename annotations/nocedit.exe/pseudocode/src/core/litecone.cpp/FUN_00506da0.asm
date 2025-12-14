@@ -28,45 +28,45 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 00506da6
     PUSH ESI                            ; 00506daa
     PUSH EBX                            ; 00506dab
-    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 00506dac | void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
-        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 00506dac
+        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 00506db1
     PUSH 0x0                            ; 00506db4
     LEA EAX,[EBX + 0x158]               ; 00506db6
     PUSH EAX                            ; 00506dbc
-    PUSH 0x631591                       ; 00506dbd | = "fov" | s_fov_00631591 = fov
+    PUSH 0x631591                       ; 00506dbd | = "fov"
     PUSH ESI                            ; 00506dc2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 00506dc3 | void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 00506dc3
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 00506dc8
     PUSH 0x0                            ; 00506dcb
     LEA EAX,[EBX + 0x15c]               ; 00506dcd
     PUSH EAX                            ; 00506dd3
-    PUSH 0x631595                       ; 00506dd4 | = "falloff" | s_falloff_00631595 = falloff
+    PUSH 0x631595                       ; 00506dd4 | = "falloff"
     PUSH ESI                            ; 00506dd9
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 00506dda | void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 00506dda
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 00506ddf
     LEA EAX,[EBX + 0x160]               ; 00506de2
     PUSH EAX                            ; 00506de8
-    PUSH 0x63159d                       ; 00506de9 | = "state" | s_state_0063159d = state
+    PUSH 0x63159d                       ; 00506de9 | = "state"
     PUSH ESI                            ; 00506dee
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 00506def | void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 00506def
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 00506df4
     LEA EAX,[EBX + 0x164]               ; 00506df7
     PUSH EAX                            ; 00506dfd
-    PUSH 0x6315a3                       ; 00506dfe | = "On condition" | s_On_condition_006315a3 = On condition
+    PUSH 0x6315a3                       ; 00506dfe | = "On condition"
     PUSH ESI                            ; 00506e03
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00506e04 | void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00506e04
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 00506e09
     ADD EBX,0x1c8                       ; 00506e0c
     PUSH EBX                            ; 00506e12
-    PUSH 0x6315b0                       ; 00506e13 | = "Off condition" | s_Off_condition_006315b0 = Off condition
+    PUSH 0x6315b0                       ; 00506e13 | = "Off condition"
     PUSH ESI                            ; 00506e18
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00506e19 | void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00506e19
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 00506e1e
     POP ESI                             ; 00506e21
     POP EBX                             ; 00506e22

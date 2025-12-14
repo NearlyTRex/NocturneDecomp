@@ -29,13 +29,13 @@
 
 section .text
 
-    PUSH 0x659ee0                       ; 00412720 | WatcomTypeInfo g_CFlameTypeInfo
+    PUSH 0x659ee0                       ; 00412720 | g_CFlameTypeInfo
         ;   Label: core_backgnd.cpp_freeFlames_FUN_00412720
     PUSH 0x32                           ; 00412725
     MOV EDX,dword ptr [ESP + 0xc]       ; 00412727
     PUSH EDX                            ; 0041272b
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0041272c | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0041272c
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00412731
     RET                                 ; 00412734
 

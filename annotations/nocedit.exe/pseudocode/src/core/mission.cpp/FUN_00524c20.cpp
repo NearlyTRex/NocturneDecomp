@@ -14,7 +14,8 @@ void __cdecl core_mission_cpp_FUN_00524c20(void)
   CDemonActor *pCVar2;
   char *pcVar3;
   CHeroPlaceholder *this_ptr;
-  COrientation *pCVar4;
+  CHeroPlaceholder *pCVar4;
+  COrientation *pCVar5;
   BADSPACEBASE *in_ESP;
   CDemonMission *in_stack_00000004;
   uint in_stack_fffffc50;
@@ -48,22 +49,22 @@ void __cdecl core_mission_cpp_FUN_00524c20(void)
             g_CurrentLineNumber = 0x685;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze finding hero.");
           }
-          this_ptr = (CHeroPlaceholder *)
-                     shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+          this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                                (0x15c,"..\\core\\mission.cpp",0x689);
+          pCVar4 = (CHeroPlaceholder *)0x0;
           if (this_ptr != (CHeroPlaceholder *)0x0) {
-            this_ptr = core_hero_cpp_FUN_004f3c00(this_ptr);
+            pCVar4 = core_hero_cpp_FUN_004f3c00(this_ptr);
           }
-          this_ptr->field1_0x158 = 0;
-          (this_ptr->base_actor).location.position.x = *(float *)(pcVar3 + 0x20);
-          (this_ptr->base_actor).location.position.y = *(float *)(pcVar3 + 0x24);
-          (this_ptr->base_actor).location.position.z = *(float *)(pcVar3 + 0x28);
-          pCVar4 = &(this_ptr->base_actor).orient;
-          (this_ptr->base_actor).location.area_id = *(int *)(pcVar3 + 0x2c);
-          if (pCVar4 != (COrientation *)(pcVar3 + 0x30)) {
-            pCVar4->pitch = *(float *)(pcVar3 + 0x30);
-            (this_ptr->base_actor).orient.bank = *(float *)(pcVar3 + 0x34);
-            (this_ptr->base_actor).orient.heading = *(float *)(pcVar3 + 0x38);
+          pCVar4->field1_0x158 = 0;
+          (pCVar4->base_actor).location.position.x = *(float *)(pcVar3 + 0x20);
+          (pCVar4->base_actor).location.position.y = *(float *)(pcVar3 + 0x24);
+          (pCVar4->base_actor).location.position.z = *(float *)(pcVar3 + 0x28);
+          pCVar5 = &(pCVar4->base_actor).orient;
+          (pCVar4->base_actor).location.area_id = *(int *)(pcVar3 + 0x2c);
+          if (pCVar5 != (COrientation *)(pcVar3 + 0x30)) {
+            pCVar5->pitch = *(float *)(pcVar3 + 0x30);
+            (pCVar4->base_actor).orient.bank = *(float *)(pcVar3 + 0x34);
+            (pCVar4->base_actor).orient.heading = *(float *)(pcVar3 + 0x38);
           }
           core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(in_stack_00000004);
           core_mission_cpp_CDemonMission_FUN_00523f20(in_stack_00000004);

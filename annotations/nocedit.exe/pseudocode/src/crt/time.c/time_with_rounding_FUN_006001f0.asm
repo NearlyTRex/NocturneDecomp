@@ -33,23 +33,23 @@ section .text
     MOV EBX,dword ptr [ESP + 0x2c]      ; 006001f4
     MOV EAX,ESP                         ; 006001f8
     PUSH EAX                            ; 006001fa
-    CALL crt_time.c_get_local_time_FUN_00607150 ; 006001fb | void crt_time.c_get_local_time_FUN_00607150(tm * tm_output)
-        ;   XREF to: 00607150 (UNCONDITIONAL_CALL)
+    CALL crt_time.c_get_local_time_FUN_00607150 ; 006001fb
+        ;   XREF to: 00607150 (UNCONDITIONAL_CALL)  ; void crt_time.c_get_local_time_FUN_00607150(tm * tm_output)
     ADD ESP,0x4                         ; 00600200
     CMP EAX,0x1f4                       ; 00600203
-    JL 0x0060020d                       ; 00600208 | LAB_0060020d
-        ;   XREF to: 0060020d (CONDITIONAL_JUMP)
+    JL 0x0060020d                       ; 00600208
+        ;   XREF to: 0060020d (CONDITIONAL_JUMP)  ; LAB_0060020d
     INC dword ptr [ESP]                 ; 0060020a
     MOV EAX,ESP                         ; 0060020d
         ;   Label: LAB_0060020d
     PUSH EAX                            ; 0060020f
-    CALL crt_time.c_mktime_FUN_00600f80 ; 00600210 | time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
-        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)
+    CALL crt_time.c_mktime_FUN_00600f80 ; 00600210
+        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
     ADD ESP,0x4                         ; 00600215
     MOV EDX,EAX                         ; 00600218
     TEST EBX,EBX                        ; 0060021a
-    JZ 0x00600220                       ; 0060021c | LAB_00600220
-        ;   XREF to: 00600220 (CONDITIONAL_JUMP)
+    JZ 0x00600220                       ; 0060021c
+        ;   XREF to: 00600220 (CONDITIONAL_JUMP)  ; LAB_00600220
     MOV dword ptr [EBX],EAX             ; 0060021e
     MOV EAX,EDX                         ; 00600220
         ;   Label: LAB_00600220

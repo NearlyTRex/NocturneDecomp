@@ -11,8 +11,7 @@ void core_baron_cpp_constructor_FUN_00413d00(void)
 {
   CBaronWeapon *this_ptr;
   
-  this_ptr = (CBaronWeapon *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x57c,"..\\core\\baron.cpp",0x2ab);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x57c,"..\\core\\baron.cpp",0x2ab);
   if (this_ptr == (CBaronWeapon *)0x0) {
     return;
   }

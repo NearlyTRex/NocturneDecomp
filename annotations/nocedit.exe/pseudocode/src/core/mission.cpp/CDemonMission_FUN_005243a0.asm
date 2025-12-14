@@ -36,36 +36,36 @@ section .text
         ;   Label: LAB_005243bc
     MOV byte ptr [EDI],AL               ; 005243be
     CMP AL,0x0                          ; 005243c0
-    JZ 0x005243d4                       ; 005243c2 | LAB_005243d4
-        ;   XREF to: 005243d4 (CONDITIONAL_JUMP)
+    JZ 0x005243d4                       ; 005243c2
+        ;   XREF to: 005243d4 (CONDITIONAL_JUMP)  ; LAB_005243d4
     MOV AL,byte ptr [ESI + 0x1]         ; 005243c4
     ADD ESI,0x2                         ; 005243c7
     MOV byte ptr [EDI + 0x1],AL         ; 005243ca
     ADD EDI,0x2                         ; 005243cd
     CMP AL,0x0                          ; 005243d0
-    JNZ 0x005243bc                      ; 005243d2 | LAB_005243bc
-        ;   XREF to: 005243bc (CONDITIONAL_JUMP)
+    JNZ 0x005243bc                      ; 005243d2
+        ;   XREF to: 005243bc (CONDITIONAL_JUMP)  ; LAB_005243bc
     POP EDI                             ; 005243d4
         ;   Label: LAB_005243d4
     PUSH EBX                            ; 005243d5
     MOV dword ptr [EBX],0x0             ; 005243d6
-    CALL core_mission.cpp_CDemonMission_FUN_00523f50 ; 005243dc | void core_mission.cpp_CDemonMission_FUN_00523f50(CDemonMission * this_ptr)
-        ;   XREF to: 00523f50 (UNCONDITIONAL_CALL)
+    CALL core_mission.cpp_CDemonMission_FUN_00523f50 ; 005243dc
+        ;   XREF to: 00523f50 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523f50(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005243e1
-    MOV EDX,dword ptr [0x00680d50]      ; 005243e4 | CScript g_CScriptInstance | CScript * g_CScriptPtr
-    PUSH EDX                            ; 005243ea | CScript g_CScriptInstance
-    CALL core_script.cpp_CScript_FreeSomething1_FUN_00559870 ; 005243eb | undefined core_script.cpp_CScript_FreeSomething1_FUN_00559870()
-        ;   XREF to: 00559870 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x00680d50]      ; 005243e4 | g_CScriptInstance | g_CScriptPtr
+    PUSH EDX                            ; 005243ea | g_CScriptInstance
+    CALL core_script.cpp_CScript_FreeSomething1_FUN_00559870 ; 005243eb
+        ;   XREF to: 00559870 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_FreeSomething1_FUN_00559870()
     ADD ESP,0x4                         ; 005243f0
     PUSH EBX                            ; 005243f3
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 005243f4 | void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)
+    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 005243f4
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 005243f9
     PUSH 0x0                            ; 005243fc
     PUSH EBX                            ; 005243fe
     MOV dword ptr [EBX],0xffffffff      ; 005243ff
-    CALL core_mission.cpp_CDemonMission_FUN_00523fb0 ; 00524405 | void core_mission.cpp_CDemonMission_FUN_00523fb0(CDemonMission * this_ptr)
-        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)
+    CALL core_mission.cpp_CDemonMission_FUN_00523fb0 ; 00524405
+        ;   XREF to: 00523fb0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523fb0(CDemonMission * this_ptr)
     ADD ESP,0x8                         ; 0052440a
     POP EDI                             ; 0052440d
     POP ESI                             ; 0052440e

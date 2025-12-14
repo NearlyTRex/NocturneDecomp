@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 27, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 18,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0050dad0", 
-    "signature": "int engine_matrix.c_vectorLength3DToInt_FUN_0050dad0(CVector3i * vector_ptr)", 
+    "address": "0050dad0",
     "address_range": [
       [
-        "0050dad0", 
+        "0050dad0",
         "0050dafb"
       ]
-    ], 
-    "name": "engine_matrix.c_vectorLength3DToInt_FUN_0050dad0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_vectorLength3DToInt_FUN_0050dad0",
+    "signature": "int engine_matrix.c_vectorLength3DToInt_FUN_0050dad0(CVector3i * vector_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 8, 
+    "frame_size": 12,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4"
-      }, 
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "vector_ptr"
+        "is_param": true,
+        "name": "vector_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3i *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

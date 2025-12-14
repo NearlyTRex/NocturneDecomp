@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 3, 
-    "global_count": 2, 
-    "total_lines": 22, 
-    "assembly_lines": 13, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
-      "addr": "005ff9d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_memdbg_txt_0067d1f0", 
-      "addr": "0067d1f0", 
-      "value": null
-    }, 
-    {
-      "type": "BOOL", 
-      "name": "g_TraceFileInitialized", 
-      "addr": "02f0d930", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050f180", 
-    "signature": "void shape_memdbg.cpp_traceFile_FUN_0050f180(char * format, ...)", 
-    "address_range": [
-      [
-        "0050f180", 
-        "0050f1a2"
-      ]
-    ], 
-    "name": "shape_memdbg.cpp_traceFile_FUN_0050f180"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "format"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 13,
+    "complexity_score": 9,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
   "cross_references": [
     {
-      "from_addr": "0050fc09", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0", 
-      "addr": "0050fbc0"
-    }, 
+      "addr": "0050fbc0",
+      "from_addr": "0050fc09",
+      "name": "shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050fb88", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
+      "addr": "0050f9b0",
+      "from_addr": "0050fb88",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050f8f8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
+      "addr": "0050f7a0",
+      "from_addr": "0050f8f8",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0050f180",
+    "address_range": [
+      [
+        "0050f180",
+        "0050f1a2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_memdbg.cpp_traceFile_FUN_0050f180",
+    "signature": "void shape_memdbg.cpp_traceFile_FUN_0050f180(char * format, ...)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9d0",
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067d1f0",
+      "name": "s_memdbg_txt_0067d1f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0d930",
+      "name": "g_TraceFileInitialized",
+      "type": "BOOL",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

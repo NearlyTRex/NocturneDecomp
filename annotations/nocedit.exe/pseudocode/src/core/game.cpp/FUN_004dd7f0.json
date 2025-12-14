@@ -1,114 +1,114 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 87, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 96, 
-    "assembly_lines": 64, 
-    "suspect_count": 5, 
+    "assembly_lines": 64,
+    "complexity_score": 87,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 32,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
-      "addr": "005ff9e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined1", 
-      "name": "DAT_02d831d6", 
-      "addr": "02d831d6", 
-      "value": null
-    }, 
-    {
-      "type": "char[20]", 
-      "name": "g_InputHistory", 
-      "addr": "02d831d7", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d831d8", 
-      "addr": "02d831d8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "byte *in_stack_00000004;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pbVar6 = in_stack_00000004;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*in_stack_00000004);"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004 = in_stack_00000004 + 1;"
-    }
-  ], 
+    ],
+    "total_lines": 96
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004dd7f0", 
-    "signature": "undefined core_game.cpp_FUN_004dd7f0()", 
+    "address": "004dd7f0",
     "address_range": [
       [
-        "004dd7f0", 
+        "004dd7f0",
         "004dd862"
       ]
-    ], 
-    "name": "core_game.cpp_FUN_004dd7f0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004dd7f0",
+    "signature": "undefined core_game.cpp_FUN_004dd7f0()"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9e0",
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d831d6",
+      "name": "DAT_02d831d6",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "02d831d7",
+      "name": "g_InputHistory",
+      "type": "char[20]",
+      "value": null
+    },
+    {
+      "addr": "02d831d8",
+      "name": "CHAR_ARRAY_02d831d8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "byte *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "pbVar6 = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "uVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    }
+  ]
 }

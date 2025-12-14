@@ -19,7 +19,7 @@ sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80
   int local_18;
   int local_14;
   
-  local_30 = (ushort *)output_buffer;
+  local_30 = output_buffer;
   if ((uint)bits_per_sample < 8) {
 LAB_005a5ccd:
     g_CurrentFilename = "..\\sound\\sndmain.cpp";

@@ -19,13 +19,13 @@
 
 section .text
 
-    PUSH 0x65b0e0                       ; 0041db30 | WatcomTypeInfo g_SBoneGuyBoxTypeInfo
+    PUSH 0x65b0e0                       ; 0041db30 | g_SBoneGuyBoxTypeInfo
         ;   Label: core_boneguy.cpp_FUN_0041db30
     PUSH 0x14                           ; 0041db35
     MOV EDX,dword ptr [ESP + 0xc]       ; 0041db37
     PUSH EDX                            ; 0041db3b
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0041db3c | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0041db3c
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0041db41
     RET                                 ; 0041db44
 

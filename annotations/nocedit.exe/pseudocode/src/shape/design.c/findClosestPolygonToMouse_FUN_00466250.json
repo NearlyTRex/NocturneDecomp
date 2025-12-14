@@ -1,410 +1,410 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 159, 
-    "pseudocode_lines": 114, 
-    "cross_reference_count": 2, 
-    "global_count": 25, 
-    "total_lines": 410, 
-    "assembly_lines": 296, 
-    "suspect_count": 3, 
+    "assembly_lines": 296,
+    "complexity_score": 159,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 25,
+    "pseudocode_lines": 114,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_2d.c_drawTextColor_FUN_00402430", 
-      "addr": "00402430"
-    }, 
-    {
-      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
-      "addr": "00403950"
-    }, 
-    {
-      "name": "engine_matrix.c_transformToCache_FUN_0050cd70", 
-      "addr": "0050cd70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "g_MouseWorldToScreenScale", 
-      "addr": "0061c70a", 
-      "value": "256"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_MouseNormalToFixedPoint", 
-      "addr": "0061c70e", 
-      "value": "65535"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_MousePlaneDistanceScale", 
-      "addr": "0061c712", 
-      "value": "256"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mX_d_mY_d_0061c716", 
-      "addr": "0061c716", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x", 
-      "addr": "00688024", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00688024+3", 
-      "addr": "00688027", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_y", 
-      "addr": "00688028", 
-      "value": null
-    }, 
-    {
-      "type": "SPolygonScreenData[20000]", 
-      "name": "g_PolygonScreenCache", 
-      "addr": "015c48c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c48c8", 
-      "addr": "015c48c8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c48cc", 
-      "addr": "015c48cc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_VertexCount", 
-      "addr": "01626408", 
-      "value": null
-    }, 
-    {
-      "type": "SVertexData[20000]", 
-      "name": "g_LoadedVertices", 
-      "addr": "0162640c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01626410", 
-      "addr": "01626410", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LoadedVertices[0].vertex.z", 
-      "addr": "01626414", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PolygonCount", 
-      "addr": "016e990c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b4", 
-      "addr": "016e99b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b8", 
-      "addr": "016e99b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99bc", 
-      "addr": "016e99bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c0", 
-      "addr": "016e99c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c4", 
-      "addr": "016e99c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c8", 
-      "addr": "016e99c8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseX", 
-      "addr": "02cf6a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseY", 
-      "addr": "02cf6a90", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 37, 
-      "match": "&stack0xfffffefc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_matrix_c_transformToCache_FUN_0050cd70(local_4c,(CVector3i *)&stack0xfffffefc);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00466250", 
-    "signature": "int shape_design.c_findClosestPolygonToMouse_FUN_00466250(void)", 
-    "address_range": [
-      [
-        "00466250", 
-        "0046660c"
-      ]
-    ], 
-    "name": "shape_design.c_findClosestPolygonToMouse_FUN_00466250"
-  }, 
-  "stack_frame": {
-    "local_size": 264, 
-    "variables": [
-      {
-        "offset": -260, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_104"
-      }, 
-      {
-        "offset": -256, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_100"
-      }, 
-      {
-        "offset": -252, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_fc"
-      }, 
-      {
-        "offset": -240, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_f0"
-      }, 
-      {
-        "offset": -236, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_ec"
-      }, 
-      {
-        "offset": -232, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_e8"
-      }, 
-      {
-        "offset": -228, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_e4"
-      }, 
-      {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_a0"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 264, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 410
+  },
   "cross_references": [
     {
-      "from_addr": "00464b4f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0", 
-      "addr": "004648e0"
-    }, 
+      "addr": "004648e0",
+      "from_addr": "00464b4f",
+      "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00464db4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90", 
-      "addr": "00464c90"
+      "addr": "00464c90",
+      "from_addr": "00464db4",
+      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00466250",
+    "address_range": [
+      [
+        "00466250",
+        "0046660c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_findClosestPolygonToMouse_FUN_00466250",
+    "signature": "int shape_design.c_findClosestPolygonToMouse_FUN_00466250(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00402430",
+      "name": "engine_2d.c_drawTextColor_FUN_00402430"
+    },
+    {
+      "addr": "00403950",
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "0050cd70",
+      "name": "engine_matrix.c_transformToCache_FUN_0050cd70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061c70a",
+      "name": "g_MouseWorldToScreenScale",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0061c70e",
+      "name": "g_MouseNormalToFixedPoint",
+      "type": "float",
+      "value": "65535"
+    },
+    {
+      "addr": "0061c712",
+      "name": "g_MousePlaneDistanceScale",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0061c716",
+      "name": "s_mX_d_mY_d_0061c716",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "00688024",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688027",
+      "name": "DAT_00688024+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688028",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c48c4",
+      "name": "g_PolygonScreenCache",
+      "type": "SPolygonScreenData[20000]",
+      "value": null
+    },
+    {
+      "addr": "015c48c8",
+      "name": "DAT_015c48c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c48cc",
+      "name": "DAT_015c48cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626408",
+      "name": "g_VertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0162640c",
+      "name": "g_LoadedVertices",
+      "type": "SVertexData[20000]",
+      "value": null
+    },
+    {
+      "addr": "01626410",
+      "name": "DAT_01626410",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626414",
+      "name": "g_LoadedVertices[0].vertex.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e990c",
+      "name": "g_PolygonCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "016e99b4",
+      "name": "DAT_016e99b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b8",
+      "name": "DAT_016e99b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99bc",
+      "name": "DAT_016e99bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c0",
+      "name": "DAT_016e99c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c4",
+      "name": "DAT_016e99c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c8",
+      "name": "DAT_016e99c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 264,
+    "local_size": 264,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 37,
+      "match": "&stack0xfffffefc",
+      "text": "engine_matrix_c_transformToCache_FUN_0050cd70(local_4c,(CVector3i *)&stack0xfffffefc);",
+      "type": "stack_ref"
     }
   ]
 }

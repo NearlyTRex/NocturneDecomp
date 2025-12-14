@@ -34,8 +34,8 @@ section .text
     MOV ECX,dword ptr [ECX + 0xfb0]     ; 00441a9a
     DEC ECX                             ; 00441aa0
     CMP EBP,ECX                         ; 00441aa1
-    JL 0x00441ad4                       ; 00441aa3 | LAB_00441ad4
-        ;   XREF to: 00441ad4 (CONDITIONAL_JUMP)
+    JL 0x00441ad4                       ; 00441aa3
+        ;   XREF to: 00441ad4 (CONDITIONAL_JUMP)  ; LAB_00441ad4
     MOV EDX,dword ptr [ESP + 0x18]      ; 00441aa5
     MOV EBX,dword ptr [EDX + 0xfac]     ; 00441aa9
     LEA EDX,[ECX*0x4 + 0x0]             ; 00441aaf
@@ -46,8 +46,8 @@ section .text
     PUSH 0x0                            ; 00441abf
     ADD EDX,ESI                         ; 00441ac1
     PUSH EDX                            ; 00441ac3
-    CALL crt_memory.c_memset_FUN_005fde40 ; 00441ac4 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 00441ac4
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00441ac9
     ADD ESP,0x4                         ; 00441acc
     POP EBP                             ; 00441acf
@@ -71,6 +71,6 @@ section .text
     POP EDI                             ; 00441af2
     ADD EDX,0x50                        ; 00441af3
     ADD EBX,0x50                        ; 00441af6
-    JMP 0x00441a96                      ; 00441af9 | LAB_00441a96
-        ;   XREF to: 00441a96 (UNCONDITIONAL_JUMP)
+    JMP 0x00441a96                      ; 00441af9
+        ;   XREF to: 00441a96 (UNCONDITIONAL_JUMP)  ; LAB_00441a96
 

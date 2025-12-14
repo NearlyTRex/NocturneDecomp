@@ -44,7 +44,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24]      ; 005fefdf
     MOV EDX,dword ptr [EDI + 0x10]      ; 005fefe3
     PUSH EDX                            ; 005fefe6
-    CALL dword ptr [0x00684ee8]         ; 005fefe7 | ENTER_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
+    CALL dword ptr [0x00684ee8]         ; 005fefe7 | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
     MOV EAX,dword ptr [EDI + 0xc]       ; 005fefed
     ADD ESP,0x4                         ; 005feff0
     AND EAX,0x30                        ; 005feff3
@@ -56,36 +56,36 @@ section .text
     DEC ESI                             ; 005ff005
         ;   Label: LAB_005ff005
     TEST ESI,ESI                        ; 005ff006
-    JLE 0x005ff026                      ; 005ff008 | LAB_005ff026
-        ;   XREF to: 005ff026 (CONDITIONAL_JUMP)
+    JLE 0x005ff026                      ; 005ff008
+        ;   XREF to: 005ff026 (CONDITIONAL_JUMP)  ; LAB_005ff026
     PUSH EDI                            ; 005ff00a
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005ff00b | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005ff00b
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 005ff010
     MOV dword ptr [ESP],EAX             ; 005ff013
     CMP EAX,-0x1                        ; 005ff016
-    JZ 0x005ff026                       ; 005ff019 | LAB_005ff026
-        ;   XREF to: 005ff026 (CONDITIONAL_JUMP)
+    JZ 0x005ff026                       ; 005ff019
+        ;   XREF to: 005ff026 (CONDITIONAL_JUMP)  ; LAB_005ff026
     INC EBX                             ; 005ff01b
     MOV AL,byte ptr [ESP]               ; 005ff01c
     MOV byte ptr [EBX + -0x1],AL        ; 005ff01f
     CMP AL,0xa                          ; 005ff022
-    JNZ 0x005ff005                      ; 005ff024 | LAB_005ff005
-        ;   XREF to: 005ff005 (CONDITIONAL_JUMP)
+    JNZ 0x005ff005                      ; 005ff024
+        ;   XREF to: 005ff005 (CONDITIONAL_JUMP)  ; LAB_005ff005
     CMP dword ptr [ESP],-0x1            ; 005ff026
         ;   Label: LAB_005ff026
-    JNZ 0x005ff03a                      ; 005ff02a | LAB_005ff03a
-        ;   XREF to: 005ff03a (CONDITIONAL_JUMP)
+    JNZ 0x005ff03a                      ; 005ff02a
+        ;   XREF to: 005ff03a (CONDITIONAL_JUMP)  ; LAB_005ff03a
     CMP EBX,EBP                         ; 005ff02c
-    JZ 0x005ff036                       ; 005ff02e | LAB_005ff036
-        ;   XREF to: 005ff036 (CONDITIONAL_JUMP)
+    JZ 0x005ff036                       ; 005ff02e
+        ;   XREF to: 005ff036 (CONDITIONAL_JUMP)  ; LAB_005ff036
     TEST byte ptr [EDI + 0xc],0x20      ; 005ff030
-    JZ 0x005ff03a                       ; 005ff034 | LAB_005ff03a
-        ;   XREF to: 005ff03a (CONDITIONAL_JUMP)
+    JZ 0x005ff03a                       ; 005ff034
+        ;   XREF to: 005ff03a (CONDITIONAL_JUMP)  ; LAB_005ff03a
     XOR EBP,EBP                         ; 005ff036
         ;   Label: LAB_005ff036
-    JMP 0x005ff03d                      ; 005ff038 | LAB_005ff03d
-        ;   XREF to: 005ff03d (UNCONDITIONAL_JUMP)
+    JMP 0x005ff03d                      ; 005ff038
+        ;   XREF to: 005ff03d (UNCONDITIONAL_JUMP)  ; LAB_005ff03d
     MOV byte ptr [EBX],0x0              ; 005ff03a
         ;   Label: LAB_005ff03a
     MOV EAX,dword ptr [ESP + 0x4]       ; 005ff03d
@@ -95,7 +95,7 @@ section .text
     MOV EAX,dword ptr [EDI + 0x10]      ; 005ff046
     PUSH EAX                            ; 005ff049
     MOV dword ptr [EDI + 0xc],ESI       ; 005ff04a
-    CALL dword ptr [0x00684eec]         ; 005ff04d | EXIT_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
+    CALL dword ptr [0x00684eec]         ; 005ff04d | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 005ff053
     MOV EAX,EBP                         ; 005ff056
     ADD ESP,0x8                         ; 005ff058

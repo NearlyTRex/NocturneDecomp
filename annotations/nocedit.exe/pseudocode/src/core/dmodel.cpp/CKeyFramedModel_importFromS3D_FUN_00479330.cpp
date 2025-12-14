@@ -456,8 +456,8 @@ LAB_00479c73:
       local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
       auStack_8dc[iVar9] = (uchar)local_1c;
     }
-    puVar7 = (uchar *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                                (this_ptr->poly_count,"..\\core\\dmodel.cpp",0x725);
+    puVar7 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                       (this_ptr->poly_count,"..\\core\\dmodel.cpp",0x725);
     this_ptr->env_map_opac_list = puVar7;
     if (puVar7 == (uchar *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";

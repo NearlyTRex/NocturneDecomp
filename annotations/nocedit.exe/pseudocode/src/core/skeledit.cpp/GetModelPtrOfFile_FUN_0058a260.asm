@@ -32,29 +32,28 @@ section .text
 
     PUSH 0x14                           ; 0058a260
         ;   Label: core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058a265 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058a265
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058a26a
     MOV EAX,dword ptr [ESP + 0x8]       ; 0058a26b
     ADD EAX,0x2260                      ; 0058a26f
     PUSH EAX                            ; 0058a274
-    PUSH 0x64a24d                       ; 0058a275 | = "MODELS\\%s\n" | s_MODELS_s_0064a24d = MODELS\%s
-
+    PUSH 0x64a24d                       ; 0058a275 | = "MODELS\\%s\n"
     MOV EDX,dword ptr [ESP + 0x14]      ; 0058a27a
     PUSH EDX                            ; 0058a27e
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058a27f | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058a27f
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0058a284
     MOV ECX,dword ptr [ESP + 0xc]       ; 0058a287
     PUSH ECX                            ; 0058a28b
     MOV EBX,dword ptr [ESP + 0xc]       ; 0058a28c
     PUSH EBX                            ; 0058a290
-    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 0058a291 | CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 0058a291
+        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0058a296
     PUSH EAX                            ; 0058a299
-    CALL core_skeledit.cpp_FUN_0058a2b0 ; 0058a29a | undefined core_skeledit.cpp_FUN_0058a2b0()
-        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)
+    CALL core_skeledit.cpp_FUN_0058a2b0 ; 0058a29a
+        ;   XREF to: 0058a2b0 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_FUN_0058a2b0()
     ADD ESP,0x8                         ; 0058a29f
     POP EBX                             ; 0058a2a2
     RET                                 ; 0058a2a3

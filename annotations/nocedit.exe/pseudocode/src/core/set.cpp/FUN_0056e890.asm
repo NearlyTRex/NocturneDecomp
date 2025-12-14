@@ -35,7 +35,7 @@ section .text
     SUB ESP,0xc                         ; 0056e892
     MOV ECX,dword ptr [ESP + 0x18]      ; 0056e895
     MOV EBX,ESI                         ; 0056e899
-    MOV EAX,[0x02f0d364]                ; 0056e89b | CMatrix3x3i g_InverseMatrix
+    MOV EAX,[0x02f0d364]                ; 0056e89b | g_InverseMatrix
     MOV EDX,dword ptr [ECX]             ; 0056e8a0
     IMUL EDX                            ; 0056e8a2
     SHRD EAX,EDX,0x10                   ; 0056e8a4
@@ -49,7 +49,7 @@ section .text
     MOV EAX,[0x02f0d37c]                ; 0056e8bd | g_InverseMatrix[2][0]
     IMUL EDX                            ; 0056e8c2
     SHRD EAX,EDX,0x10                   ; 0056e8c4
-    MOV EDX,dword ptr [0x02d052c4]      ; 0056e8c8 | int g_CameraOriginX
+    MOV EDX,dword ptr [0x02d052c4]      ; 0056e8c8 | g_CameraOriginX
     ADD EAX,ESI                         ; 0056e8ce
     ADD EDX,EAX                         ; 0056e8d0
     MOV EAX,[0x02f0d368]                ; 0056e8d2 | g_InverseMatrix[0][1]
@@ -67,7 +67,7 @@ section .text
     MOV EAX,[0x02f0d380]                ; 0056e8f7 | g_InverseMatrix[2][1]
     IMUL EDX                            ; 0056e8fc
     SHRD EAX,EDX,0x10                   ; 0056e8fe
-    MOV EDX,dword ptr [0x02d052c8]      ; 0056e902 | int g_CameraOriginY
+    MOV EDX,dword ptr [0x02d052c8]      ; 0056e902 | g_CameraOriginY
     ADD EAX,ESI                         ; 0056e908
     ADD EDX,EAX                         ; 0056e90a
     MOV EAX,[0x02f0d36c]                ; 0056e90c | g_InverseMatrix[0][2]
@@ -85,7 +85,7 @@ section .text
     MOV EAX,[0x02f0d384]                ; 0056e932 | g_InverseMatrix[2][2]
     IMUL EDX                            ; 0056e937
     SHRD EAX,EDX,0x10                   ; 0056e939
-    MOV EDX,dword ptr [0x02d052cc]      ; 0056e93d | int g_CameraOriginZ
+    MOV EDX,dword ptr [0x02d052cc]      ; 0056e93d | g_CameraOriginZ
     ADD EAX,ESI                         ; 0056e943
     MOV EDI,EBX                         ; 0056e945
     ADD EDX,EAX                         ; 0056e947

@@ -27,17 +27,17 @@ section .text
         ;   Label: crt_iostream.cpp_setBuffer_FUN_0060d6a8
     MOV EBX,dword ptr [ESP + 0x8]       ; 0060d6a9
     TEST byte ptr [EBX + 0x24],0x2      ; 0060d6ad
-    JNZ 0x0060d6e3                      ; 0060d6b1 | LAB_0060d6e3
-        ;   XREF to: 0060d6e3 (CONDITIONAL_JUMP)
+    JNZ 0x0060d6e3                      ; 0060d6b1
+        ;   XREF to: 0060d6e3 (CONDITIONAL_JUMP)  ; LAB_0060d6e3
     MOV ECX,dword ptr [ESP + 0xc]       ; 0060d6b3
         ;   Label: LAB_0060d6b3
     TEST ECX,ECX                        ; 0060d6b7
-    JZ 0x0060d6c3                       ; 0060d6b9 | LAB_0060d6c3
-        ;   XREF to: 0060d6c3 (CONDITIONAL_JUMP)
+    JZ 0x0060d6c3                       ; 0060d6b9
+        ;   XREF to: 0060d6c3 (CONDITIONAL_JUMP)  ; LAB_0060d6c3
     MOV EAX,dword ptr [ESP + 0x10]      ; 0060d6bb
     CMP EAX,ECX                         ; 0060d6bf
-    JA 0x0060d6f1                       ; 0060d6c1 | LAB_0060d6f1
-        ;   XREF to: 0060d6f1 (CONDITIONAL_JUMP)
+    JA 0x0060d6f1                       ; 0060d6c1
+        ;   XREF to: 0060d6f1 (CONDITIONAL_JUMP)  ; LAB_0060d6f1
     MOV AL,byte ptr [EBX + 0x24]        ; 0060d6c3
         ;   Label: LAB_0060d6c3
     MOV dword ptr [EBX + 0x4],0x0       ; 0060d6c6
@@ -52,11 +52,11 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4]       ; 0060d6e3
         ;   Label: LAB_0060d6e3
     PUSH EDX                            ; 0060d6e6
-    CALL crt_iostream.cpp_freeBuffer_FUN_0060d7a0 ; 0060d6e7 | void crt_iostream.cpp_freeBuffer_FUN_0060d7a0(void * buffer)
-        ;   XREF to: 0060d7a0 (UNCONDITIONAL_CALL)
+    CALL crt_iostream.cpp_freeBuffer_FUN_0060d7a0 ; 0060d6e7
+        ;   XREF to: 0060d7a0 (UNCONDITIONAL_CALL)  ; void crt_iostream.cpp_freeBuffer_FUN_0060d7a0(void * buffer)
     ADD ESP,0x4                         ; 0060d6ec
-    JMP 0x0060d6b3                      ; 0060d6ef | LAB_0060d6b3
-        ;   XREF to: 0060d6b3 (UNCONDITIONAL_JUMP)
+    JMP 0x0060d6b3                      ; 0060d6ef
+        ;   XREF to: 0060d6b3 (UNCONDITIONAL_JUMP)  ; LAB_0060d6b3
     PUSH EDI                            ; 0060d6f1
         ;   Label: LAB_0060d6f1
     MOV dword ptr [EBX + 0x4],ECX       ; 0060d6f2

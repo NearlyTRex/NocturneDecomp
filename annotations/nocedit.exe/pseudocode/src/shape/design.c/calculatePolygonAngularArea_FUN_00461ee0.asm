@@ -36,6 +36,7 @@
 ; Referenced Globals:
 ;   double g_RadiansToDegrees2 = 57.2957795130800
 ;   SVertexData[20000] g_LoadedVertices
+;   undefined4 DAT_01626410
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;   undefined4 DAT_01626418
 ;   undefined4 DAT_0162641c
@@ -61,16 +62,16 @@ section .text
     MOV EAX,dword ptr [EAX + 0xa4]      ; 00461efd
     MOV dword ptr [EBP + -0x4],EAX      ; 00461f03
     MOV dword ptr [EBP + -0x8],0x0      ; 00461f06
-    JMP 0x00461f15                      ; 00461f0d | LAB_00461f15
-        ;   XREF to: 00461f15 (UNCONDITIONAL_JUMP)
+    JMP 0x00461f15                      ; 00461f0d
+        ;   XREF to: 00461f15 (UNCONDITIONAL_JUMP)  ; LAB_00461f15
     MOV EAX,dword ptr [EBP + -0x8]      ; 00461f0f
         ;   Label: LAB_00461f0f
     INC dword ptr [EBP + -0x8]          ; 00461f12
     MOV EAX,dword ptr [EBP + -0x8]      ; 00461f15
         ;   Label: LAB_00461f15
     CMP EAX,dword ptr [EBP + -0x4]      ; 00461f18
-    JGE 0x00462030                      ; 00461f1b | LAB_00462030
-        ;   XREF to: 00462030 (CONDITIONAL_JUMP)
+    JGE 0x00462030                      ; 00461f1b
+        ;   XREF to: 00462030 (CONDITIONAL_JUMP)  ; LAB_00462030
     MOV EAX,dword ptr [EBP + -0x8]      ; 00461f21
     MOV EDX,dword ptr [EBP + -0x8]      ; 00461f24
     SAR EDX,0x1f                        ; 00461f27
@@ -79,8 +80,8 @@ section .text
     ADD EDX,dword ptr [EBP + 0x14]      ; 00461f30
     IMUL ESI,dword ptr [EDX + 0xb8],0x14 ; 00461f33
     LEA EDI,[EBP + -0x40]               ; 00461f3a
-    LEA ESI,[ESI + 0x162640c]           ; 00461f3d | SVertexData[20000] g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f43 | SVertexData[20000] g_LoadedVertices
+    LEA ESI,[ESI + 0x162640c]           ; 00461f3d | g_LoadedVertices
+    MOVSD ES:EDI,ESI                    ; 00461f43 | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 00461f44 | DAT_01626410
     MOVSD ES:EDI,ESI                    ; 00461f45 | g_LoadedVertices[0].vertex.z
     MOVSD ES:EDI,ESI                    ; 00461f46 | DAT_01626418
@@ -94,8 +95,8 @@ section .text
     ADD EDX,dword ptr [EBP + 0x14]      ; 00461f57
     IMUL ESI,dword ptr [EDX + 0xb8],0x14 ; 00461f5a
     LEA EDI,[EBP + -0x2c]               ; 00461f61
-    LEA ESI,[ESI + 0x162640c]           ; 00461f64 | SVertexData[20000] g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f6a | SVertexData[20000] g_LoadedVertices
+    LEA ESI,[ESI + 0x162640c]           ; 00461f64 | g_LoadedVertices
+    MOVSD ES:EDI,ESI                    ; 00461f6a | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 00461f6b | DAT_01626410
     MOVSD ES:EDI,ESI                    ; 00461f6c | g_LoadedVertices[0].vertex.z
     MOVSD ES:EDI,ESI                    ; 00461f6d | DAT_01626418
@@ -109,8 +110,8 @@ section .text
     ADD EDX,dword ptr [EBP + 0x14]      ; 00461f80
     IMUL ESI,dword ptr [EDX + 0xb8],0x14 ; 00461f83
     LEA EDI,[EBP + -0x54]               ; 00461f8a
-    LEA ESI,[ESI + 0x162640c]           ; 00461f8d | SVertexData[20000] g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00461f93 | SVertexData[20000] g_LoadedVertices
+    LEA ESI,[ESI + 0x162640c]           ; 00461f8d | g_LoadedVertices
+    MOVSD ES:EDI,ESI                    ; 00461f93 | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 00461f94 | DAT_01626410
     MOVSD ES:EDI,ESI                    ; 00461f95 | g_LoadedVertices[0].vertex.z
     MOVSD ES:EDI,ESI                    ; 00461f96 | DAT_01626418
@@ -135,13 +136,13 @@ section .text
     FSTP double ptr [EBP + -0x5c]       ; 00461fce
     LEA EDX,[EBP + 0xffffff7c]          ; 00461fd1
     PUSH EDX                            ; 00461fd7
-    CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 00461fd8 | void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
-        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 00461fd8
+        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)  ; void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
     ADD ESP,0x4                         ; 00461fdd
     LEA EDX,[EBP + -0x6c]               ; 00461fe0
     PUSH EDX                            ; 00461fe3
-    CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 00461fe4 | void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
-        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 00461fe4
+        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)  ; void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
     ADD ESP,0x4                         ; 00461fe9
     FLD double ptr [EBP + -0x7c]        ; 00461fec
     FMUL double ptr [EBP + -0x64]       ; 00461fef
@@ -153,19 +154,19 @@ section .text
     FADDP                               ; 00462003
     SUB ESP,0x8                         ; 00462005
     FSTP double ptr [ESP]               ; 00462008
-    CALL shape_design.c_clampedArccos_FUN_00461c50 ; 0046200b | double shape_design.c_clampedArccos_FUN_00461c50(double dot_product)
-        ;   XREF to: 00461c50 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_clampedArccos_FUN_00461c50 ; 0046200b
+        ;   XREF to: 00461c50 (UNCONDITIONAL_CALL)  ; double shape_design.c_clampedArccos_FUN_00461c50(double dot_product)
     MOV dword ptr [EBP + 0xffffff74],EAX ; 00462010
     MOV dword ptr [EBP + 0xffffff78],EDX ; 00462016
     FLD double ptr [EBP + 0xffffff74]   ; 0046201c
     ADD ESP,0x8                         ; 00462022
     FADD double ptr [EBP + -0x18]       ; 00462025
     FSTP double ptr [EBP + -0x18]       ; 00462028
-    JMP 0x00461f0f                      ; 0046202b | LAB_00461f0f
-        ;   XREF to: 00461f0f (UNCONDITIONAL_JUMP)
+    JMP 0x00461f0f                      ; 0046202b
+        ;   XREF to: 00461f0f (UNCONDITIONAL_JUMP)  ; LAB_00461f0f
     FLD double ptr [EBP + -0x18]        ; 00462030
         ;   Label: LAB_00462030
-    FMUL double ptr [0x0061bfbe]        ; 00462033 | double g_RadiansToDegrees2
+    FMUL double ptr [0x0061bfbe]        ; 00462033 | g_RadiansToDegrees2
     FSTP double ptr [EBP + -0x10]       ; 00462039
     MOV EAX,dword ptr [EBP + -0x10]     ; 0046203c
     MOV EDX,dword ptr [EBP + -0xc]      ; 0046203f

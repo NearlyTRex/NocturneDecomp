@@ -38,36 +38,36 @@ section .text
     LEA EDI,[EBX + 0x4]                 ; 0043f375
     CMP dword ptr [EBP],0x1             ; 0043f378
         ;   Label: LAB_0043f378
-    JGE 0x0043f3a7                      ; 0043f37c | LAB_0043f3a7
-        ;   XREF to: 0043f3a7 (CONDITIONAL_JUMP)
+    JGE 0x0043f3a7                      ; 0043f37c
+        ;   XREF to: 0043f3a7 (CONDITIONAL_JUMP)  ; LAB_0043f3a7
     MOV EAX,0xffffffff                  ; 0043f37e
         ;   Label: LAB_0043f37e
     TEST EAX,EAX                        ; 0043f383
         ;   Label: LAB_0043f383
-    JL 0x0043f431                       ; 0043f385 | LAB_0043f431
-        ;   XREF to: 0043f431 (CONDITIONAL_JUMP)
+    JL 0x0043f431                       ; 0043f385
+        ;   XREF to: 0043f431 (CONDITIONAL_JUMP)  ; LAB_0043f431
     MOV ESI,dword ptr [EBX + 0x28]      ; 0043f38b
     AND ESI,EAX                         ; 0043f38e
     MOV EAX,dword ptr [EBX + 0x30]      ; 0043f390
     PUSH EAX                            ; 0043f393
     PUSH ESI                            ; 0043f394
     PUSH EDI                            ; 0043f395
-    CALL support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50 ; 0043f396 | int support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50(CLZWDictionary * this_ptr, int search_code, int start_index)
-        ;   XREF to: 0043ef50 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50 ; 0043f396
+        ;   XREF to: 0043ef50 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50(CLZWDictionary * this_ptr, int search_code, int start_index)
     ADD ESP,0xc                         ; 0043f39b
     TEST EAX,EAX                        ; 0043f39e
-    JL 0x0043f3de                       ; 0043f3a0 | LAB_0043f3de
-        ;   XREF to: 0043f3de (CONDITIONAL_JUMP)
+    JL 0x0043f3de                       ; 0043f3a0
+        ;   XREF to: 0043f3de (CONDITIONAL_JUMP)  ; LAB_0043f3de
     MOV dword ptr [EBX + 0x30],EAX      ; 0043f3a2
-    JMP 0x0043f378                      ; 0043f3a5 | LAB_0043f378
-        ;   XREF to: 0043f378 (UNCONDITIONAL_JUMP)
+    JMP 0x0043f378                      ; 0043f3a5
+        ;   XREF to: 0043f378 (UNCONDITIONAL_JUMP)  ; LAB_0043f378
     LEA EAX,[ESP + 0x4]                 ; 0043f3a7
         ;   Label: LAB_0043f3a7
     PUSH EAX                            ; 0043f3ab
     MOV ECX,dword ptr [ESP + 0x24]      ; 0043f3ac
     PUSH ECX                            ; 0043f3b0
-    CALL crt_stdio.c_fgetc_outptr_FUN_005ff245 ; 0043f3b1 | int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
-        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_outptr_FUN_005ff245 ; 0043f3b1
+        ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
     ADD ESP,0x8                         ; 0043f3b6
     MOV EAX,dword ptr [ESP + 0x20]      ; 0043f3b9
     MOV EAX,dword ptr [EAX]             ; 0043f3bd
@@ -75,15 +75,15 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 0043f3c3
     LEA EAX,[ESI + EDX*0x1]             ; 0043f3c6
     CMP dword ptr [EAX + 0x10],0x0      ; 0043f3c9
-    JNZ 0x0043f37e                      ; 0043f3cd | LAB_0043f37e
-        ;   XREF to: 0043f37e (CONDITIONAL_JUMP)
+    JNZ 0x0043f37e                      ; 0043f3cd
+        ;   XREF to: 0043f37e (CONDITIONAL_JUMP)  ; LAB_0043f37e
     MOV ESI,dword ptr [EBP]             ; 0043f3cf
     DEC ESI                             ; 0043f3d2
     XOR EAX,EAX                         ; 0043f3d3
     MOV dword ptr [EBP],ESI             ; 0043f3d5
     MOV AL,byte ptr [ESP + 0x4]         ; 0043f3d8
-    JMP 0x0043f383                      ; 0043f3dc | LAB_0043f383
-        ;   XREF to: 0043f383 (UNCONDITIONAL_JUMP)
+    JMP 0x0043f383                      ; 0043f3dc
+        ;   XREF to: 0043f383 (UNCONDITIONAL_JUMP)  ; LAB_0043f383
     MOV EDX,dword ptr [ESP + 0x28]      ; 0043f3de
         ;   Label: LAB_0043f3de
     PUSH EDX                            ; 0043f3e2
@@ -92,35 +92,35 @@ section .text
     MOV EAX,dword ptr [EBX + 0x30]      ; 0043f3e8
     PUSH EAX                            ; 0043f3eb
     PUSH EDI                            ; 0043f3ec
-    CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 ; 0043f3ed | void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, FILE * output_stream)
-        ;   XREF to: 0043f170 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 ; 0043f3ed
+        ;   XREF to: 0043f170 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, FILE * output_stream)
     MOV EDX,dword ptr [EBX + 0x34]      ; 0043f3f2
     ADD ESP,0x10                        ; 0043f3f5
     TEST EDX,EDX                        ; 0043f3f8
-    JL 0x0043f420                       ; 0043f3fa | LAB_0043f420
-        ;   XREF to: 0043f420 (CONDITIONAL_JUMP)
+    JL 0x0043f420                       ; 0043f3fa
+        ;   XREF to: 0043f420 (CONDITIONAL_JUMP)  ; LAB_0043f420
     PUSH EDX                            ; 0043f3fc
     MOV EAX,dword ptr [EBX + 0x2c]      ; 0043f3fd
     PUSH EAX                            ; 0043f400
     PUSH EDI                            ; 0043f401
-    CALL support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90 ; 0043f402 | int support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary * this_ptr, int code, int parent_index)
-        ;   XREF to: 0043ef90 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90 ; 0043f402
+        ;   XREF to: 0043ef90 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary * this_ptr, int code, int parent_index)
     ADD ESP,0xc                         ; 0043f407
     TEST EAX,EAX                        ; 0043f40a
-    JZ 0x0043f420                       ; 0043f40c | LAB_0043f420
-        ;   XREF to: 0043f420 (CONDITIONAL_JUMP)
+    JZ 0x0043f420                       ; 0043f40c
+        ;   XREF to: 0043f420 (CONDITIONAL_JUMP)  ; LAB_0043f420
     MOV dword ptr [EBX + 0x34],0xffffffff ; 0043f40e
     MOV dword ptr [EBX + 0x30],ESI      ; 0043f415
     MOV dword ptr [EBX + 0x2c],ESI      ; 0043f418
-    JMP 0x0043f378                      ; 0043f41b | LAB_0043f378
-        ;   XREF to: 0043f378 (UNCONDITIONAL_JUMP)
+    JMP 0x0043f378                      ; 0043f41b
+        ;   XREF to: 0043f378 (UNCONDITIONAL_JUMP)  ; LAB_0043f378
     MOV EAX,dword ptr [EBX + 0x30]      ; 0043f420
         ;   Label: LAB_0043f420
     MOV dword ptr [EBX + 0x34],EAX      ; 0043f423
     MOV dword ptr [EBX + 0x30],ESI      ; 0043f426
     MOV dword ptr [EBX + 0x2c],ESI      ; 0043f429
-    JMP 0x0043f378                      ; 0043f42c | LAB_0043f378
-        ;   XREF to: 0043f378 (UNCONDITIONAL_JUMP)
+    JMP 0x0043f378                      ; 0043f42c
+        ;   XREF to: 0043f378 (UNCONDITIONAL_JUMP)  ; LAB_0043f378
     MOV EAX,0x1                         ; 0043f431
         ;   Label: LAB_0043f431
     ADD ESP,0x8                         ; 0043f436

@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 6, 
-    "global_count": 0, 
-    "total_lines": 15, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560", 
-      "addr": "00410560"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00410540", 
-    "signature": "CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr)", 
-    "address_range": [
-      [
-        "00410540", 
-        "00410551"
-      ]
-    ], 
-    "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CAlphaBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 5,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "004e3b7b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800", 
-      "addr": "004e3800"
-    }, 
+      "addr": "004e3800",
+      "from_addr": "004e3b7b",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3ffe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90", 
-      "addr": "004e3b90"
-    }, 
+      "addr": "004e3b90",
+      "from_addr": "004e3ffe",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e42ea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
-      "addr": "004e4010"
-    }, 
+      "addr": "004e4010",
+      "from_addr": "004e42ea",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004daf5c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0", 
-      "addr": "004daed0"
-    }, 
+      "addr": "004daed0",
+      "from_addr": "004daf5c",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00503f22", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_level.cpp_CLevelLoader_show_FUN_00503dc0", 
-      "addr": "00503dc0"
-    }, 
+      "addr": "00503dc0",
+      "from_addr": "00503f22",
+      "name": "core_level.cpp_CLevelLoader_show_FUN_00503dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005080fd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
+      "addr": "00507a60",
+      "from_addr": "005080fd",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00410540",
+    "address_range": [
+      [
+        "00410540",
+        "00410551"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540",
+    "signature": "CAlphaBitmap * engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00410560",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAlphaBitmap *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -19,8 +19,8 @@ section .text
     PUSH EDX                            ; 0051ee34
     MOV ECX,dword ptr [ESP + 0x8]       ; 0051ee35
     PUSH ECX                            ; 0051ee39
-    CALL shape_meshlod.cpp_CLodFace_findVertexIndex_FUN_00515e90 ; 0051ee3a | int shape_meshlod.cpp_CLodFace_findVertexIndex_FUN_00515e90(CLodFace * this_ptr, int vertex_index)
-        ;   XREF to: 00515e90 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodFace_findVertexIndex_FUN_00515e90 ; 0051ee3a
+        ;   XREF to: 00515e90 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodFace_findVertexIndex_FUN_00515e90(CLodFace * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 0051ee3f
     TEST EAX,EAX                        ; 0051ee42
     SETGE AL                            ; 0051ee44

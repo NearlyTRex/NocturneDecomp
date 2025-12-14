@@ -36,13 +36,13 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 005d2734
     MOV EBP,dword ptr [EBX]             ; 005d2736
     TEST EDX,EDX                        ; 005d2738
-    JNZ 0x005d282d                      ; 005d273a | LAB_005d282d
-        ;   XREF to: 005d282d (CONDITIONAL_JUMP)
+    JNZ 0x005d282d                      ; 005d273a
+        ;   XREF to: 005d282d (CONDITIONAL_JUMP)  ; LAB_005d282d
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005d2740
         ;   Label: LAB_005d2740
     CMP dword ptr [EAX + 0x8],0x0       ; 005d2744
-    JZ 0x005d2764                       ; 005d2748 | LAB_005d2764
-        ;   XREF to: 005d2764 (CONDITIONAL_JUMP)
+    JZ 0x005d2764                       ; 005d2748
+        ;   XREF to: 005d2764 (CONDITIONAL_JUMP)  ; LAB_005d2764
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005d274a
     MOV EDI,dword ptr [EDX + 0x8]       ; 005d274e
     PUSH EDI                            ; 005d2751
@@ -51,8 +51,8 @@ section .text
     CALL dword ptr [EAX + 0x10]         ; 005d2756
     ADD ESP,0x8                         ; 005d2759
     TEST EAX,EAX                        ; 005d275c
-    JZ 0x005d285c                       ; 005d275e | LAB_005d285c
-        ;   XREF to: 005d285c (CONDITIONAL_JUMP)
+    JZ 0x005d285c                       ; 005d275e
+        ;   XREF to: 005d285c (CONDITIONAL_JUMP)  ; LAB_005d285c
     PUSH ESI                            ; 005d2764
         ;   Label: LAB_005d2764
     MOV EAX,dword ptr [ESP + 0x20]      ; 005d2765
@@ -80,8 +80,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x8]       ; 005d27a5
     MOV dword ptr [ESP + 0x8],EAX       ; 005d27a8
     CMP EAX,EDX                         ; 005d27ac
-    JNC 0x005d2820                      ; 005d27ae | LAB_005d2820
-        ;   XREF to: 005d2820 (CONDITIONAL_JUMP)
+    JNC 0x005d2820                      ; 005d27ae
+        ;   XREF to: 005d2820 (CONDITIONAL_JUMP)  ; LAB_005d2820
     MOV EDX,EAX                         ; 005d27b0
     SHL EAX,0x2                         ; 005d27b2
     SUB EAX,EDX                         ; 005d27b5
@@ -119,8 +119,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x8]       ; 005d2808
     MOV dword ptr [ESP + 0x8],EAX       ; 005d280b
     CMP EAX,EDX                         ; 005d280f
-    JC 0x005d27c8                       ; 005d2811 | LAB_005d27c8
-        ;   XREF to: 005d27c8 (CONDITIONAL_JUMP)
+    JC 0x005d27c8                       ; 005d2811
+        ;   XREF to: 005d27c8 (CONDITIONAL_JUMP)  ; LAB_005d27c8
     LEA EAX,[EAX]                       ; 005d2813
     LEA EDX,[EDX]                       ; 005d2819
     NOP                                 ; 005d281f
@@ -141,11 +141,11 @@ section .text
     CALL dword ptr [EAX + 0x18]         ; 005d2838
     ADD ESP,0x8                         ; 005d283b
     TEST EAX,EAX                        ; 005d283e
-    JNZ 0x005d2740                      ; 005d2840 | LAB_005d2740
-        ;   XREF to: 005d2740 (CONDITIONAL_JUMP)
-    PUSH 0x6543e6                       ; 005d2846 | = "Unable to add vertices to object" | s_Unable_to_add_vertices_t_006543e6 = Unable to add vertices to object
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d284b | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    JNZ 0x005d2740                      ; 005d2840
+        ;   XREF to: 005d2740 (CONDITIONAL_JUMP)  ; LAB_005d2740
+    PUSH 0x6543e6                       ; 005d2846 | = "Unable to add vertices to object"
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d284b
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     ADD ESP,0x4                         ; 005d2850
     XOR EAX,EAX                         ; 005d2853
     ADD ESP,0x8                         ; 005d2855
@@ -153,10 +153,10 @@ section .text
     POP EDI                             ; 005d2859
     POP EBX                             ; 005d285a
     RET                                 ; 005d285b
-    PUSH 0x654407                       ; 005d285c | = "Unable to add polygons to object" | s_Unable_to_add_polygons_t_00654407 = Unable to add polygons to object
+    PUSH 0x654407                       ; 005d285c | = "Unable to add polygons to object"
         ;   Label: LAB_005d285c
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d2861 | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d2861
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     ADD ESP,0x4                         ; 005d2866
     XOR EAX,EAX                         ; 005d2869
     ADD ESP,0x8                         ; 005d286b

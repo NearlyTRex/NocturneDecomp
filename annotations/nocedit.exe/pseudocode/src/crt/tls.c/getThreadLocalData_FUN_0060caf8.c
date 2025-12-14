@@ -28,12 +28,12 @@ void * crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
   }
   if (pTVar1->shouldFreeData == 0) {
     lpTlsValue = crt_memory_c_calloc_FUN_0060ca90(1,g_RuntimeBufferSize);
-    if ((uint *)lpTlsValue == (uint *)0x0) {
+    if (lpTlsValue == (uint *)0x0) {
       crt_startup_c_HandleRuntimeError_FUN_00606660("Unable to resize thread-specific data\r\n",1);
     }
     uVar3 = *(uint *)((int)pTVar1->dataBuffer + 0xf0);
-    puVar4 = (uint *)pTVar1->dataBuffer;
-    puVar5 = (uint *)lpTlsValue;
+    puVar4 = pTVar1->dataBuffer;
+    puVar5 = lpTlsValue;
     for (uVar2 = uVar3 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
       *puVar5 = *puVar4;
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
@@ -59,5 +59,5 @@ void * crt_tls_c_getThreadLocalData_FUN_0060caf8(void)
   *(byte *)((int)lpTlsValue + 0x53) = 0;
   (*PTR_TlsSetValue_00611658)(dwTlsIndex,lpTlsValue);
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f14)();
-  return (uint *)lpTlsValue;
+  return lpTlsValue;
 }

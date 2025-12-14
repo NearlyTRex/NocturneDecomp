@@ -1,303 +1,295 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 108, 
-    "pseudocode_lines": 68, 
-    "cross_reference_count": 1, 
-    "global_count": 32, 
-    "total_lines": 239, 
-    "assembly_lines": 171, 
-    "suspect_count": 3, 
+    "assembly_lines": 171,
+    "complexity_score": 93,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 32,
+    "pseudocode_lines": 68,
+    "suspect_count": 2,
     "suspect_types": [
-      "sborrow_artifact", 
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_00613239", 
-      "addr": "00613239", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mapFrameBuffer_already_m_00613248", 
-      "addr": "00613248", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_00613269", 
-      "addr": "00613269", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mapFrameBuffer_invalid_b_00613278", 
-      "addr": "00613278", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_0061329c", 
-      "addr": "0061329c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mapFrameBuffer_invalid_s_006132ab", 
-      "addr": "006132ab", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_006132cb", 
-      "addr": "006132cb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mapFrameBuffer_invalid_s_006132da", 
-      "addr": "006132da", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_006132f8", 
-      "addr": "006132f8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mapFrameBuffer_ySize_too_00613307", 
-      "addr": "00613307", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_00613327", 
-      "addr": "00613327", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mapFrameBuffer_invalid_b_00613336", 
-      "addr": "00613336", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredWindowWidth", 
-      "addr": "00772a38", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredWindowHeight", 
-      "addr": "00772a3c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredClipLeft", 
-      "addr": "00772a40", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredClipTop", 
-      "addr": "00772a44", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredClipRight", 
-      "addr": "00772a48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredClipBottom", 
-      "addr": "00772a4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredBitsPerPixel", 
-      "addr": "00772a50", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_StoredMappedFrameBuffer", 
-      "addr": "00772a54", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ScreenBufferStride", 
-      "addr": "00772a58", 
-      "value": null
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "frame_buffer = (void *)((int)((height * stride + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3);"
-    }, 
-    {
-      "line": 65, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)g_ScreenBufferArray + iVar1) = height;"
-    }, 
-    {
-      "line": 68, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar1,bits_per_pixel * 4) != iVar1 + bits_per_pixel * -4 < 0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00403430", 
-    "signature": "int engine_2d.c_mapFrameBuffer_FUN_00403430(int width, int height, int bits_per_pixel, int stride, void * frame_buffer)", 
-    "address_range": [
-      [
-        "00403430", 
-        "00403649"
-      ]
-    ], 
-    "name": "engine_2d.c_mapFrameBuffer_FUN_00403430"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bits_per_pixel"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "stride"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "frame_buffer"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 239
+  },
   "cross_references": [
     {
-      "from_addr": "00403663", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_mapTextureFrameBuffer_FUN_00403650", 
-      "addr": "00403650"
+      "addr": "00403650",
+      "from_addr": "00403663",
+      "name": "engine_2d.c_mapTextureFrameBuffer_FUN_00403650",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00403430",
+    "address_range": [
+      [
+        "00403430",
+        "00403649"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_mapFrameBuffer_FUN_00403430",
+    "signature": "int engine_2d.c_mapFrameBuffer_FUN_00403430(int width, int height, int bits_per_pixel, int stride, void * frame_buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00613239",
+      "name": "s_engine_2d_c_00613239",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613248",
+      "name": "s_mapFrameBuffer_already_m_00613248",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613269",
+      "name": "s_engine_2d_c_00613269",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613278",
+      "name": "s_mapFrameBuffer_invalid_b_00613278",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061329c",
+      "name": "s_engine_2d_c_0061329c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006132ab",
+      "name": "s_mapFrameBuffer_invalid_s_006132ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006132cb",
+      "name": "s_engine_2d_c_006132cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006132da",
+      "name": "s_mapFrameBuffer_invalid_s_006132da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006132f8",
+      "name": "s_engine_2d_c_006132f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613307",
+      "name": "s_mapFrameBuffer_ySize_too_00613307",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613327",
+      "name": "s_engine_2d_c_00613327",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613336",
+      "name": "s_mapFrameBuffer_invalid_b_00613336",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00772a38",
+      "name": "g_StoredWindowWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a3c",
+      "name": "g_StoredWindowHeight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a40",
+      "name": "g_StoredClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a44",
+      "name": "g_StoredClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a48",
+      "name": "g_StoredClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a4c",
+      "name": "g_StoredClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a50",
+      "name": "g_StoredBitsPerPixel",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a54",
+      "name": "g_StoredMappedFrameBuffer",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "00772a58",
+      "name": "g_ScreenBufferStride",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bits_per_pixel",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "stride",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame_buffer",
+        "offset": 20,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(void *)((int)",
+      "text": "frame_buffer = (void *)((int)((height * stride + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_ScreenBufferArray + iVar1) = height;",
+      "type": "pointer_cast"
     }
   ]
 }

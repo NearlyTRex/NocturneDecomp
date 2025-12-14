@@ -1,65 +1,65 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 12, 
-    "assembly_lines": 6, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048cdf0", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0(CDemonRenderer * this_ptr, int alpha_mask)", 
-    "address_range": [
-      [
-        "0048cdf0", 
-        "0048cdfe"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "alpha_mask"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 6,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
   "cross_references": [
     {
-      "from_addr": "00570aca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0", 
-      "addr": "005709e0"
-    }, 
+      "addr": "005709e0",
+      "from_addr": "00570aca",
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00570b4a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_FUN_00570af0", 
-      "addr": "00570af0"
+      "addr": "00570af0",
+      "from_addr": "00570b4a",
+      "name": "core_set.cpp_FUN_00570af0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0048cdf0",
+    "address_range": [
+      [
+        "0048cdf0",
+        "0048cdfe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0",
+    "signature": "void engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0(CDemonRenderer * this_ptr, int alpha_mask)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_mask",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -19,12 +19,12 @@
 
 section .text
 
-    CALL crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50 ; 005feb80 | uint * crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50()
+    CALL crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50 ; 005feb80
+        ;   XREF to: 005feb50 (UNCONDITIONAL_CALL)  ; uint * crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50()
         ;   Label: crt_stdlib.c_srand_FUN_005feb80
-        ;   XREF to: 005feb50 (UNCONDITIONAL_CALL)
     TEST EAX,EAX                        ; 005feb85
-    JZ 0x005feb8f                       ; 005feb87 | LAB_005feb8f
-        ;   XREF to: 005feb8f (CONDITIONAL_JUMP)
+    JZ 0x005feb8f                       ; 005feb87
+        ;   XREF to: 005feb8f (CONDITIONAL_JUMP)  ; LAB_005feb8f
     MOV EDX,dword ptr [ESP + 0x4]       ; 005feb89
     MOV dword ptr [EAX],EDX             ; 005feb8d
     RET                                 ; 005feb8f

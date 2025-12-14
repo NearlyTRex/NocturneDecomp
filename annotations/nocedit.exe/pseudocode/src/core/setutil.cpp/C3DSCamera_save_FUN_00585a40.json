@@ -1,208 +1,208 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 51, 
-    "pseudocode_lines": 36, 
-    "cross_reference_count": 1, 
-    "global_count": 18, 
-    "total_lines": 221, 
-    "assembly_lines": 185, 
-    "suspect_count": 1, 
+    "assembly_lines": 185,
+    "complexity_score": 51,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 18,
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
     "suspect_types": [
       "sub_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_saveCameraFog_FUN_00453f10", 
-      "addr": "00453f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_camera_name_00649353", 
-      "addr": "00649353", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_0064937c", 
-      "addr": "0064937c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pos_00649380", 
-      "addr": "00649380", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_00649385", 
-      "addr": "00649385", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_orient_0064938f", 
-      "addr": "0064938f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_00649397", 
-      "addr": "00649397", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_fov_006493a1", 
-      "addr": "006493a1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_006493a6", 
-      "addr": "006493a6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vmat_006493aa", 
-      "addr": "006493aa", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_006493b0", 
-      "addr": "006493b0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_006493ba", 
-      "addr": "006493ba", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_006493c4", 
-      "addr": "006493c4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_006493ce", 
-      "addr": "006493ce", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_box_min_max_006493d2", 
-      "addr": "006493d2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_g_g_g_006493e0", 
-      "addr": "006493e0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_g_g_g_006493ea", 
-      "addr": "006493ea", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_reverbPreset_006493f4", 
-      "addr": "006493f4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_00649402", 
-      "addr": "00649402", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 31, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uStack0000002c = SUB84 /* extract 2-byte value */((double)(this_ptr->box_max).z,0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00585a40", 
-    "signature": "void core_setutil.cpp_C3DSCamera_save_FUN_00585a40(C3DSCamera * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "00585a40", 
-        "00585c84"
-      ]
-    ], 
-    "name": "core_setutil.cpp_C3DSCamera_save_FUN_00585a40"
-  }, 
-  "stack_frame": {
-    "local_size": 40, 
-    "variables": [
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "C3DSCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 221
+  },
   "cross_references": [
     {
-      "from_addr": "0057a512", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0", 
-      "addr": "0057a2a0"
+      "addr": "0057a2a0",
+      "from_addr": "0057a512",
+      "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00585a40",
+    "address_range": [
+      [
+        "00585a40",
+        "00585c84"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_C3DSCamera_save_FUN_00585a40",
+    "signature": "void core_setutil.cpp_C3DSCamera_save_FUN_00585a40(C3DSCamera * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00453f10",
+      "name": "core_dcamera.cpp_saveCameraFog_FUN_00453f10"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649353",
+      "name": "s_camera_name_00649353",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064937c",
+      "name": "s_s_0064937c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649380",
+      "name": "s_pos_00649380",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649385",
+      "name": "s_f_f_f_00649385",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064938f",
+      "name": "s_orient_0064938f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649397",
+      "name": "s_f_f_f_00649397",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493a1",
+      "name": "s_fov_006493a1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493a6",
+      "name": "s_f_006493a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493aa",
+      "name": "s_vmat_006493aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493b0",
+      "name": "s_f_f_f_006493b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493ba",
+      "name": "s_f_f_f_006493ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493c4",
+      "name": "s_f_f_f_006493c4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493ce",
+      "name": "s_d_006493ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493d2",
+      "name": "s_box_min_max_006493d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493e0",
+      "name": "s_g_g_g_006493e0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493ea",
+      "name": "s_g_g_g_006493ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006493f4",
+      "name": "s_reverbPreset_006493f4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649402",
+      "name": "s_d_00649402",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 31,
+      "match": "SUB84",
+      "text": "uStack0000002c = SUB84 /* extract 2-byte value */((double)(this_ptr->box_max).z,0);",
+      "type": "sub_artifact"
     }
   ]
 }

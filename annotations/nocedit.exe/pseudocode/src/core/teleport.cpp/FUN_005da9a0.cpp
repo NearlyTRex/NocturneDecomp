@@ -11,8 +11,7 @@ void core_teleport_cpp_FUN_005da9a0(void)
 {
   CTeleport *this_ptr;
   
-  this_ptr = (CTeleport *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x168,"..\\core\\teleport.cpp",0x8b);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x168,"..\\core\\teleport.cpp",0x8b);
   if (this_ptr == (CTeleport *)0x0) {
     return;
   }

@@ -36,8 +36,8 @@ section .text
     PUSH EAX                            ; 004ee047
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004ee048
     PUSH ESI                            ; 004ee04c
-    CALL core_gore.cpp_CreateFlies_FUN_004edf30 ; 004ee04d | undefined core_gore.cpp_CreateFlies_FUN_004edf30()
-        ;   XREF to: 004edf30 (UNCONDITIONAL_CALL)
+    CALL core_gore.cpp_CreateFlies_FUN_004edf30 ; 004ee04d
+        ;   XREF to: 004edf30 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CreateFlies_FUN_004edf30()
     MOV EDX,dword ptr [EBX + 0x2c]      ; 004ee052
     MOV dword ptr [EAX + 0x2c],EDX      ; 004ee055
     ADD ESP,0x14                        ; 004ee058

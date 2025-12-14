@@ -38,20 +38,20 @@ section .text
     MOV EBX,dword ptr [ESP + 0x24]      ; 005b7647
     MOV EDX,dword ptr [ESP + 0x28]      ; 005b764b
     MOV EBP,dword ptr [ESP + 0x2c]      ; 005b764f
-    CMP dword ptr [0x02d03e94],0x0      ; 005b7653 | int g_UseExternalRenderer
-    JZ 0x005b7738                       ; 005b765a | LAB_005b7738
-        ;   XREF to: 005b7738 (CONDITIONAL_JUMP)
-    MOV EAX,[0x030e56b8]                ; 005b7660 | int g_RenderedTriangleCount
-    MOV ESI,dword ptr [0x03f6b8d0]      ; 005b7665 | APIDLL_drawPolyList * g_APIDLL_drawPolyList
+    CMP dword ptr [0x02d03e94],0x0      ; 005b7653 | g_UseExternalRenderer
+    JZ 0x005b7738                       ; 005b765a
+        ;   XREF to: 005b7738 (CONDITIONAL_JUMP)  ; LAB_005b7738
+    MOV EAX,[0x030e56b8]                ; 005b7660 | g_RenderedTriangleCount
+    MOV ESI,dword ptr [0x03f6b8d0]      ; 005b7665 | g_APIDLL_drawPolyList
     ADD EAX,EBP                         ; 005b766b
     TEST ESI,ESI                        ; 005b766d
-    JNZ 0x005b7754                      ; 005b766f | LAB_005b7754
-        ;   XREF to: 005b7754 (CONDITIONAL_JUMP)
-    MOV [0x030e56b8],EAX                ; 005b7675 | int g_RenderedTriangleCount
+    JNZ 0x005b7754                      ; 005b766f
+        ;   XREF to: 005b7754 (CONDITIONAL_JUMP)  ; LAB_005b7754
+    MOV [0x030e56b8],EAX                ; 005b7675 | g_RenderedTriangleCount
     XOR EDI,EDI                         ; 005b767a
     TEST EBP,EBP                        ; 005b767c
-    JLE 0x005b7729                      ; 005b767e | LAB_005b7729
-        ;   XREF to: 005b7729 (CONDITIONAL_JUMP)
+    JLE 0x005b7729                      ; 005b767e
+        ;   XREF to: 005b7729 (CONDITIONAL_JUMP)  ; LAB_005b7729
     MOV ESI,EDX                         ; 005b7684
     MOV EAX,dword ptr [ESI]             ; 005b7686
         ;   Label: LAB_005b7686
@@ -65,8 +65,8 @@ section .text
     LEA ECX,[EBX + EDX*0x1]             ; 005b76a1
     MOV dword ptr [ESP + 0x8],ECX       ; 005b76a4
     CMP dword ptr [EAX + 0x4],0x4       ; 005b76a8
-    JZ 0x005b7744                       ; 005b76ac | LAB_005b7744
-        ;   XREF to: 005b7744 (CONDITIONAL_JUMP)
+    JZ 0x005b7744                       ; 005b76ac
+        ;   XREF to: 005b7744 (CONDITIONAL_JUMP)  ; LAB_005b7744
     MOV EDX,dword ptr [ESP]             ; 005b76b2
         ;   Label: LAB_005b76b2
     MOV ECX,dword ptr [EAX + 0x1c]      ; 005b76b5
@@ -87,8 +87,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x38]      ; 005b76e6
     MOV dword ptr [EDX + 0x1c],ECX      ; 005b76e9
     CMP dword ptr [EAX + 0x4],0x4       ; 005b76ec
-    JNZ 0x005b7706                      ; 005b76f0 | LAB_005b7706
-        ;   XREF to: 005b7706 (CONDITIONAL_JUMP)
+    JNZ 0x005b7706                      ; 005b76f0
+        ;   XREF to: 005b7706 (CONDITIONAL_JUMP)  ; LAB_005b7706
     MOV EDX,dword ptr [ESP + 0xc]       ; 005b76f2
     MOV ECX,dword ptr [EAX + 0x40]      ; 005b76f6
     MOV dword ptr [EDX + 0x18],ECX      ; 005b76f9
@@ -104,11 +104,11 @@ section .text
     PUSH EAX                            ; 005b7713
     ADD ESI,0x4                         ; 005b7714
     INC EDI                             ; 005b7717
-    CALL dword ptr [0x03f6b8cc]         ; 005b7718 | APIDLL_drawPolygon2 * g_APIDLL_drawPolygon2
+    CALL dword ptr [0x03f6b8cc]         ; 005b7718 | g_APIDLL_drawPolygon2
     ADD ESP,0xc                         ; 005b771e
     CMP EDI,EBP                         ; 005b7721
-    JL 0x005b7686                       ; 005b7723 | LAB_005b7686
-        ;   XREF to: 005b7686 (CONDITIONAL_JUMP)
+    JL 0x005b7686                       ; 005b7723
+        ;   XREF to: 005b7686 (CONDITIONAL_JUMP)  ; LAB_005b7686
     MOV EDX,0x1                         ; 005b7729
         ;   Label: LAB_005b7729
     MOV EAX,EDX                         ; 005b772e
@@ -131,16 +131,16 @@ section .text
         ;   Label: LAB_005b7744
     LEA ECX,[EBX + EDX*0x1]             ; 005b7748
     MOV dword ptr [ESP + 0xc],ECX       ; 005b774b
-    JMP 0x005b76b2                      ; 005b774f | LAB_005b76b2
-        ;   XREF to: 005b76b2 (UNCONDITIONAL_JUMP)
+    JMP 0x005b76b2                      ; 005b774f
+        ;   XREF to: 005b76b2 (UNCONDITIONAL_JUMP)  ; LAB_005b76b2
     MOV EDI,dword ptr [ESP + 0x30]      ; 005b7754
         ;   Label: LAB_005b7754
     PUSH EDI                            ; 005b7758
     PUSH EBP                            ; 005b7759
     PUSH EDX                            ; 005b775a
     PUSH EBX                            ; 005b775b
-    MOV [0x030e56b8],EAX                ; 005b775c | int g_RenderedTriangleCount
-    CALL dword ptr [0x03f6b8d0]         ; 005b7761 | APIDLL_drawPolyList * g_APIDLL_drawPolyList
+    MOV [0x030e56b8],EAX                ; 005b775c | g_RenderedTriangleCount
+    CALL dword ptr [0x03f6b8d0]         ; 005b7761 | g_APIDLL_drawPolyList
     ADD ESP,0x10                        ; 005b7767
     MOV EDX,EAX                         ; 005b776a
     MOV EAX,EDX                         ; 005b776c

@@ -1,287 +1,287 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 169, 
-    "pseudocode_lines": 54, 
-    "cross_reference_count": 0, 
-    "global_count": 17, 
-    "total_lines": 202, 
-    "assembly_lines": 148, 
-    "suspect_count": 11, 
+    "assembly_lines": 148,
+    "complexity_score": 169,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 17,
+    "pseudocode_lines": 54,
+    "suspect_count": 11,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }, 
-    {
-      "name": "engine_2d.c_plotPixel_FUN_00401140", 
-      "addr": "00401140"
-    }, 
-    {
-      "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20", 
-      "addr": "00447c20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SCramWorkingEntry[1]", 
-      "name": "g_CramSortedTextureEntries", 
-      "addr": "0083c1dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c228", 
-      "addr": "0083c228", 
-      "value": null
-    }, 
-    {
-      "type": "SCramRectangle[50]", 
-      "name": "g_CramRectangles", 
-      "addr": "00840c14", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c18", 
-      "addr": "00840c18", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c1c", 
-      "addr": "00840c1c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c38", 
-      "addr": "00840c38", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c3c", 
-      "addr": "00840c3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c40", 
-      "addr": "00840c40", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c44", 
-      "addr": "00840c44", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c60", 
-      "addr": "00840c60", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CramTextureCount", 
-      "addr": "0084a854", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramPlacedTextureCount", 
-      "addr": "0084a85c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramRectangleCount", 
-      "addr": "0084a860", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramCurrentAcceptableSize", 
-      "addr": "0084a884", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramMapNumber", 
-      "addr": "0084a890", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramVisualizationFlag", 
-      "addr": "0084a894", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_fffffff4;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_2d_c_fillRectColor_FUN_00403170(width,height,render_mode + -1,in_stack_0000001c + -1,1);"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SCramWorkingEntry *)y,height,render_mode,in_stack_0000001c,in_stack_00000020,"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SCramWorkingEntry *)y,height,render_mode,in_stack_0000001c,in_stack_00000020,"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffff4);"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = in_stack_0000001c - height;"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "y_00 = in_stack_00000020 - render_mode;"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((x_00 < in_stack_0000001c) && (y_01 < in_stack_00000020)) {"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((x_00 < in_stack_0000001c) && (y_01 < in_stack_00000020)) {"
-    }
-  ], 
+    ],
+    "total_lines": 202
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00447ab0", 
-    "signature": "void shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0(int x, int y, int width, int height, int render_mode)", 
+    "address": "00447ab0",
     "address_range": [
       [
-        "00447ab0", 
+        "00447ab0",
         "00447c15"
       ]
-    ], 
-    "name": "shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0",
+    "signature": "void shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0(int x, int y, int width, int height, int render_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    },
+    {
+      "addr": "00401140",
+      "name": "engine_2d.c_plotPixel_FUN_00401140"
+    },
+    {
+      "addr": "00447c20",
+      "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0083c1dc",
+      "name": "g_CramSortedTextureEntries",
+      "type": "SCramWorkingEntry[1]",
+      "value": null
+    },
+    {
+      "addr": "0083c228",
+      "name": "DAT_0083c228",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c14",
+      "name": "g_CramRectangles",
+      "type": "SCramRectangle[50]",
+      "value": null
+    },
+    {
+      "addr": "00840c18",
+      "name": "DAT_00840c18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c1c",
+      "name": "DAT_00840c1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c38",
+      "name": "DAT_00840c38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c3c",
+      "name": "DAT_00840c3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c40",
+      "name": "DAT_00840c40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c44",
+      "name": "DAT_00840c44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c60",
+      "name": "DAT_00840c60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0084a854",
+      "name": "g_CramTextureCount",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "0084a85c",
+      "name": "g_CramPlacedTextureCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a860",
+      "name": "g_CramRectangleCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a884",
+      "name": "g_CramCurrentAcceptableSize",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a890",
+      "name": "g_CramMapNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a894",
+      "name": "g_CramVisualizationFlag",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 52,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x"
-      }, 
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y"
-      }, 
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_mode"
+        "is_param": true,
+        "name": "render_mode",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_fffffff4",
+      "text": "int in_stack_fffffff4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000001c",
+      "text": "engine_2d_c_fillRectColor_FUN_00403170(width,height,render_mode + -1,in_stack_0000001c + -1,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_0000001c",
+      "text": "((SCramWorkingEntry *)y,height,render_mode,in_stack_0000001c,in_stack_00000020,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000020",
+      "text": "((SCramWorkingEntry *)y,height,render_mode,in_stack_0000001c,in_stack_00000020,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_fffffff4",
+      "text": "in_stack_fffffff4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_0000001c",
+      "text": "iVar2 = in_stack_0000001c - height;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000020",
+      "text": "y_00 = in_stack_00000020 - render_mode;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_0000001c",
+      "text": "if ((x_00 < in_stack_0000001c) && (y_01 < in_stack_00000020)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000020",
+      "text": "if ((x_00 < in_stack_0000001c) && (y_01 < in_stack_00000020)) {",
+      "type": "stack_param"
+    }
+  ]
 }

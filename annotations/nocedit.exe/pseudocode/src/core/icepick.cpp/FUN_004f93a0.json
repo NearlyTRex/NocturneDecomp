@@ -1,248 +1,248 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 259, 
-    "pseudocode_lines": 54, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 163, 
-    "assembly_lines": 109, 
-    "suspect_count": 20, 
+    "assembly_lines": 109,
+    "complexity_score": 259,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 3,
+    "pseudocode_lines": 54,
+    "suspect_count": 20,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40", 
-      "addr": "0042ec40"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0", 
-      "addr": "0042cdb0"
-    }, 
-    {
-      "name": "core_icepick.cpp_FUN_004f9490", 
-      "addr": "004f9490"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610", 
-      "addr": "0052d610"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
-      "addr": "0052db00"
-    }, 
-    {
-      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
-      "addr": "005feb5c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_004f937c", 
-      "addr": "004f937c", 
-      "value": "004f93d4"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02db89a4", 
-      "addr": "02db89a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02db89a8", 
-      "addr": "02db89a8", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004f93a6", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CCharacter *in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&(in_stack_00000004->model).motion_controller);"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8) + 1;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004[2].cloth_data + 0x54f8) = iVar1;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[2].cloth_data[0x54f8] = '\\0';"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[2].cloth_data[0x54f9] = '\\0';"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[2].cloth_data[0x54fa] = '\\0';"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[2].cloth_data[0x54fb] = '\\0';"
-    }, 
-    {
-      "line": 37, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&(in_stack_00000004->model).motion_controller,0x15,1);"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x5518) != 0) {"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[2].cloth_data[0x5518] = '\\0';"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[2].cloth_data[0x5519] = '\\0';"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[2].cloth_data[0x551a] = '\\0';"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[2].cloth_data[0x551b] = '\\0';"
-    }, 
-    {
-      "line": 46, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(in_stack_00000004);"
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&in_stack_00000004->base_actor);"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042ec40(in_stack_00000004);"
-    }, 
-    {
-      "line": 56, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (0.0 < in_stack_00000008);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004f93a0", 
-    "signature": "undefined core_icepick.cpp_FUN_004f93a0()", 
-    "address_range": [
-      [
-        "004f93a0", 
-        "004f948d"
-      ]
-    ], 
-    "name": "core_icepick.cpp_FUN_004f93a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 163
+  },
   "cross_references": [
     {
-      "from_addr": "004f8153", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_icepick.cpp_FUN_004f80b0", 
-      "addr": "004f80b0"
+      "addr": "004f80b0",
+      "from_addr": "004f8153",
+      "name": "core_icepick.cpp_FUN_004f80b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f93a0",
+    "address_range": [
+      [
+        "004f93a0",
+        "004f948d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_icepick.cpp_FUN_004f93a0",
+    "signature": "undefined core_icepick.cpp_FUN_004f93a0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0042ec40",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
+    },
+    {
+      "addr": "0042cdb0",
+      "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0"
+    },
+    {
+      "addr": "004f9490",
+      "name": "core_icepick.cpp_FUN_004f9490"
+    },
+    {
+      "addr": "0052d610",
+      "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610"
+    },
+    {
+      "addr": "0052db00",
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "005feb5c",
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004f937c",
+      "name": "switchdataD_004f937c",
+      "type": "void*",
+      "value": "004f93d4"
+    },
+    {
+      "addr": "02db89a4",
+      "name": "DAT_02db89a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02db89a8",
+      "name": "DAT_02db89a8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004f93a6",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "CCharacter *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "(&(in_stack_00000004->model).motion_controller);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = *(int *)(in_stack_00000004[2].cloth_data + 0x54f8) + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004[2].cloth_data + 0x54f8) = iVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].cloth_data[0x54f8] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].cloth_data[0x54f9] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].cloth_data[0x54fa] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].cloth_data[0x54fb] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "text": "(&(in_stack_00000004->model).motion_controller,0x15,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x5518) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].cloth_data[0x5518] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].cloth_data[0x5519] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].cloth_data[0x551a] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].cloth_data[0x551b] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000004",
+      "text": "(*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->base_actor);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042ec40(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000008",
+      "text": "} while (0.0 < in_stack_00000008);",
+      "type": "stack_param"
     }
   ]
 }

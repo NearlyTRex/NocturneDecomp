@@ -1,108 +1,108 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 35, 
-    "pseudocode_lines": 35, 
-    "cross_reference_count": 1, 
-    "global_count": 7, 
-    "total_lines": 101, 
-    "assembly_lines": 66, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60", 
-      "addr": "0059dd60"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140", 
-      "addr": "0059a140"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_skeletons_d_bytes_d_mo_0064f0e6", 
-      "addr": "0064f0e6", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DeformableModelCount", 
-      "addr": "0368c89c", 
-      "value": null
-    }, 
-    {
-      "type": "CDeformableModel[64]", 
-      "name": "g_DeformableModelPool", 
-      "addr": "0368c8a0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_036958a0", 
-      "addr": "036958a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SkeletonPoolCount", 
-      "addr": "038cc8a0", 
-      "value": null
-    }, 
-    {
-      "type": "CSkeleton[40]", 
-      "name": "g_SkeletonPool", 
-      "addr": "038cc8a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_038f60d0", 
-      "addr": "038f60d0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a1ed0", 
-    "signature": "void core_skeleton.cpp_getMemoryStats_FUN_005a1ed0(char * output_buffer)", 
-    "address_range": [
-      [
-        "005a1ed0", 
-        "005a1f66"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_getMemoryStats_FUN_005a1ed0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 66,
+    "complexity_score": 35,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 7,
+    "pseudocode_lines": 35,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 101
+  },
   "cross_references": [
     {
-      "from_addr": "004da862", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
+      "addr": "004da100",
+      "from_addr": "004da862",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005a1ed0",
+    "address_range": [
+      [
+        "005a1ed0",
+        "005a1f66"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_getMemoryStats_FUN_005a1ed0",
+    "signature": "void core_skeleton.cpp_getMemoryStats_FUN_005a1ed0(char * output_buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059dd60",
+      "name": "core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60"
+    },
+    {
+      "addr": "0059a140",
+      "name": "core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064f0e6",
+      "name": "s_d_skeletons_d_bytes_d_mo_0064f0e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0368c89c",
+      "name": "g_DeformableModelCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0368c8a0",
+      "name": "g_DeformableModelPool",
+      "type": "CDeformableModel[64]",
+      "value": null
+    },
+    {
+      "addr": "036958a0",
+      "name": "DAT_036958a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "038cc8a0",
+      "name": "g_SkeletonPoolCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "038cc8a4",
+      "name": "g_SkeletonPool",
+      "type": "CSkeleton[40]",
+      "value": null
+    },
+    {
+      "addr": "038f60d0",
+      "name": "DAT_038f60d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

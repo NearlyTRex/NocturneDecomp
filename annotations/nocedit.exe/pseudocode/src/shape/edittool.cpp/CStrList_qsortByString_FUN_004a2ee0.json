@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 17, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a2ee0", 
-    "signature": "int shape_edittool.cpp_CStrList_qsortByString_FUN_004a2ee0(char * a, char * b)", 
-    "address_range": [
-      [
-        "004a2ee0", 
-        "004a2ef6"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CStrList_qsortByString_FUN_004a2ee0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "a"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "b"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
   "cross_references": [
     {
-      "from_addr": "004a2f41", 
-      "type": "DATA", 
-      "name": "shape_edittool.cpp_CStrList_sort_FUN_004a2f00", 
-      "addr": "004a2f00"
+      "addr": "004a2f00",
+      "from_addr": "004a2f41",
+      "name": "shape_edittool.cpp_CStrList_sort_FUN_004a2f00",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a2ee0",
+    "address_range": [
+      [
+        "004a2ee0",
+        "004a2ef6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_qsortByString_FUN_004a2ee0",
+    "signature": "int shape_edittool.cpp_CStrList_qsortByString_FUN_004a2ee0(char * a, char * b)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "a",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "b",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

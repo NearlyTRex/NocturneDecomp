@@ -18,18 +18,18 @@
 
 section .text
 
-    PUSH 0x2dcd850                      ; 00503d80 | CLevelLoader g_CLevelLoaderInstance
+    PUSH 0x2dcd850                      ; 00503d80 | g_CLevelLoaderInstance
         ;   Label: core_level.cpp_staticInit_FUN_00503d80
-    CALL core_level.cpp_CLevelLoader_reset_FUN_00503db0 ; 00503d85 | void core_level.cpp_CLevelLoader_reset_FUN_00503db0(CLevelLoader * this_ptr)
-        ;   XREF to: 00503db0 (UNCONDITIONAL_CALL)
+    CALL core_level.cpp_CLevelLoader_reset_FUN_00503db0 ; 00503d85
+        ;   XREF to: 00503db0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_reset_FUN_00503db0(CLevelLoader * this_ptr)
     ADD ESP,0x4                         ; 00503d8a
-    PUSH 0x2dcd980                      ; 00503d8d | CKeyFramedModel g_LoadingMoonModel
-    CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0 ; 00503d92 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel * this_ptr)
-        ;   XREF to: 00476cf0 (UNCONDITIONAL_CALL)
+    PUSH 0x2dcd980                      ; 00503d8d | g_LoadingMoonModel
+    CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0 ; 00503d92
+        ;   XREF to: 00476cf0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00503d97
-    PUSH 0x67cf70                       ; 00503d9a | WatcomStaticDestructorNode g_LoadingMoonModelDestructorNode
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 00503d9f | void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)
+    PUSH 0x67cf70                       ; 00503d9a | g_LoadingMoonModelDestructorNode
+    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 00503d9f
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00503da4
     RET                                 ; 00503da7
 

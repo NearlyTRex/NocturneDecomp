@@ -26,8 +26,8 @@ section .text
     PUSH ECX                            ; 0048c13c
     MOV EBX,dword ptr [EAX]             ; 0048c13d
     PUSH EBX                            ; 0048c13f
-    CALL engine_matrix.c_setCameraOrigin_FUN_0050e270 ; 0048c140 | void engine_matrix.c_setCameraOrigin_FUN_0050e270(int x, int y, int z)
-        ;   XREF to: 0050e270 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_setCameraOrigin_FUN_0050e270 ; 0048c140
+        ;   XREF to: 0050e270 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_setCameraOrigin_FUN_0050e270(int x, int y, int z)
     ADD ESP,0xc                         ; 0048c145
     POP EBX                             ; 0048c148
     RET                                 ; 0048c149

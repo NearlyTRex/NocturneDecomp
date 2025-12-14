@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 51, 
-    "assembly_lines": 35, 
-    "suspect_count": 2, 
+    "assembly_lines": 35,
+    "complexity_score": 41,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_isRecordingStarted_FUN_005ab980", 
-      "addr": "005ab980"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
-      "addr": "005abd30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "IDirectSoundCapture*", 
-      "name": "g_RecordingDeviceInterface", 
-      "addr": "03f69c54", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "LPDSCCAPS in_stack_0000000c;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_RecordingDeviceInterface,in_stack_0000000c);"
-    }
-  ], 
+    ],
+    "total_lines": 51
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005abb10", 
-    "signature": "HRESULT sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS pDSCCaps)", 
+    "address": "005abb10",
     "address_range": [
       [
-        "005abb10", 
+        "005abb10",
         "005abb53"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10",
+    "signature": "HRESULT sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS pDSCCaps)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ab980",
+      "name": "sound_sndmain.cpp_isRecordingStarted_FUN_005ab980"
+    },
+    {
+      "addr": "005abd30",
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f69c54",
+      "name": "g_RecordingDeviceInterface",
+      "type": "IDirectSoundCapture*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "typedef LPDSCCAPS DSCCAPS *", 
-        "size": 4, 
-        "name": "pDSCCaps"
+        "is_param": true,
+        "name": "pDSCCaps",
+        "offset": 8,
+        "size": 4,
+        "type": "typedef LPDSCCAPS DSCCAPS *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "LPDSCCAPS in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "text": "(g_RecordingDeviceInterface,in_stack_0000000c);",
+      "type": "stack_param"
+    }
+  ]
 }

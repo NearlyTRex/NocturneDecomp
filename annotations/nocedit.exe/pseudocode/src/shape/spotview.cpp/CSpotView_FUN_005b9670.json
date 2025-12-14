@@ -1,303 +1,303 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 337, 
-    "pseudocode_lines": 122, 
-    "cross_reference_count": 6, 
-    "global_count": 7, 
-    "total_lines": 430, 
-    "assembly_lines": 308, 
-    "suspect_count": 20, 
+    "assembly_lines": 308,
+    "complexity_score": 337,
+    "cross_reference_count": 6,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 122,
+    "suspect_count": 20,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "suspect_float"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_spotview.cpp_CSpotView_FUN_005b9620", 
-      "addr": "005b9620"
-    }, 
-    {
-      "name": "shape_spotview.cpp_CSpotView_FUN_005b9950", 
-      "addr": "005b9950"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_00652fe2", 
-      "addr": "00652fe2", 
-      "value": "3.14159265350000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00652fea", 
-      "addr": "00652fea", 
-      "value": "1.10000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00652ff2", 
-      "addr": "00652ff2", 
-      "value": "1.5"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CKeys*", 
-      "name": "g_CKeysPtr", 
-      "addr": "0067cf44", 
-      "value": "02dcd7d4"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CKeysPtr", 
-      "addr": "02dcd7d4", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005b9677", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "float unaff_EBP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_fffffff0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_fffffff0;"
-    }, 
-    {
-      "line": 18, 
-      "match": "7.84727e-44", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fVar6 = 7.84727e-44;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_fffffff0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffff0 = 5.88545e-44;"
-    }, 
-    {
-      "line": 21, 
-      "match": "5.88545e-44", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "in_stack_fffffff0 = 5.88545e-44;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = 4.0;"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar3 = in_stack_00000008 * (float)1.1000000000000001;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fStack00000010 = g_CGamePtr->delta_time_float * in_stack_00000008;"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((uint)in_stack_00000008 & 2) != 0) {"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_fffffff0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(this_ptr->field0_0x0 + 0x28) - in_stack_fffffff0;"
-    }, 
-    {
-      "line": 56, 
-      "match": "1.14906e-43", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "*(float *)(this_ptr->field0_0x0 + 0x28) + 1.14906e-43;"
-    }, 
-    {
-      "line": 63, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((uint)in_stack_00000008 & 1) != 0) {"
-    }, 
-    {
-      "line": 67, 
-      "match": "1.03696e-43", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "*(float *)(this_ptr->field0_0x0 + 0x24) + 1.03696e-43;"
-    }, 
-    {
-      "line": 74, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((uint)in_stack_00000008 & 8) != 0) {"
-    }, 
-    {
-      "line": 86, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(this_ptr->field0_0x0 + 0x34) + in_stack_00000008;"
-    }, 
-    {
-      "line": 93, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((uint)in_stack_00000008 & 4) != 0) {"
-    }, 
-    {
-      "line": 96, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*(float *)(this_ptr->field0_0x0 + 0x2c) = *(float *)(this_ptr->field0_0x0 + 0x2c) - unaff_EBP;"
-    }, 
-    {
-      "line": 104, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((uint)in_stack_00000008 & 0x10) != 0) {"
-    }, 
-    {
-      "line": 121, 
-      "match": "8.412e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack00000010 = 8.412e-39;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b9670", 
-    "signature": "void shape_spotview.cpp_CSpotView_FUN_005b9670(CSpotView * this_ptr)", 
-    "address_range": [
-      [
-        "005b9670", 
-        "005b994c"
-      ]
-    ], 
-    "name": "shape_spotview.cpp_CSpotView_FUN_005b9670"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSpotView *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "unaffected_reg",
+      "suspect_float",
+      "stack_param"
+    ],
+    "total_lines": 430
+  },
   "cross_references": [
     {
-      "from_addr": "0043d6e7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590", 
-      "addr": "0043d590"
-    }, 
+      "addr": "0043d590",
+      "from_addr": "0043d6e7",
+      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052c400", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_FUN_0052bcb0", 
-      "addr": "0052bcb0"
-    }, 
+      "addr": "0052bcb0",
+      "from_addr": "0052c400",
+      "name": "core_morph.cpp_FUN_0052bcb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052cb59", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_FUN_0052ca90", 
-      "addr": "0052ca90"
-    }, 
+      "addr": "0052ca90",
+      "from_addr": "0052cb59",
+      "name": "core_morph.cpp_FUN_0052ca90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00597aa3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
-    }, 
+      "addr": "005968b0",
+      "from_addr": "00597aa3",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051e3cc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
-      "addr": "0051d990"
-    }, 
+      "addr": "0051d990",
+      "from_addr": "0051e3cc",
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051d7cc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520", 
-      "addr": "0051d520"
+      "addr": "0051d520",
+      "from_addr": "0051d7cc",
+      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b9670",
+    "address_range": [
+      [
+        "005b9670",
+        "005b994c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_spotview.cpp_CSpotView_FUN_005b9670",
+    "signature": "void shape_spotview.cpp_CSpotView_FUN_005b9670(CSpotView * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b9620",
+      "name": "shape_spotview.cpp_CSpotView_FUN_005b9620"
+    },
+    {
+      "addr": "005b9950",
+      "name": "shape_spotview.cpp_CSpotView_FUN_005b9950"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00652fe2",
+      "name": "DOUBLE_00652fe2",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00652fea",
+      "name": "DOUBLE_00652fea",
+      "type": "double",
+      "value": "1.10000000000000"
+    },
+    {
+      "addr": "00652ff2",
+      "name": "DOUBLE_00652ff2",
+      "type": "double",
+      "value": "1.5"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysPtr",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpotView *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005b9677",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBP",
+      "text": "float unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_fffffff0",
+      "text": "float in_stack_fffffff0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 18,
+      "match": "7.84727e-44",
+      "text": "fVar6 = 7.84727e-44;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_fffffff0",
+      "text": "in_stack_fffffff0 = 5.88545e-44;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 21,
+      "match": "5.88545e-44",
+      "text": "in_stack_fffffff0 = 5.88545e-44;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = 4.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000008",
+      "text": "fVar3 = in_stack_00000008 * (float)1.1000000000000001;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "fStack00000010 = g_CGamePtr->delta_time_float * in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000008",
+      "text": "if (((uint)in_stack_00000008 & 2) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_fffffff0",
+      "text": "*(float *)(this_ptr->field0_0x0 + 0x28) - in_stack_fffffff0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 56,
+      "match": "1.14906e-43",
+      "text": "*(float *)(this_ptr->field0_0x0 + 0x28) + 1.14906e-43;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000008",
+      "text": "if (((uint)in_stack_00000008 & 1) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 67,
+      "match": "1.03696e-43",
+      "text": "*(float *)(this_ptr->field0_0x0 + 0x24) + 1.03696e-43;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000008",
+      "text": "if (((uint)in_stack_00000008 & 8) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_00000008",
+      "text": "*(float *)(this_ptr->field0_0x0 + 0x34) + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_00000008",
+      "text": "if (((uint)in_stack_00000008 & 4) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 96,
+      "match": "unaff_EBP",
+      "text": "*(float *)(this_ptr->field0_0x0 + 0x2c) = *(float *)(this_ptr->field0_0x0 + 0x2c) - unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 104,
+      "match": "in_stack_00000008",
+      "text": "if (((uint)in_stack_00000008 & 0x10) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 121,
+      "match": "8.412e-39",
+      "text": "fStack00000010 = 8.412e-39;",
+      "type": "suspect_float"
     }
   ]
 }

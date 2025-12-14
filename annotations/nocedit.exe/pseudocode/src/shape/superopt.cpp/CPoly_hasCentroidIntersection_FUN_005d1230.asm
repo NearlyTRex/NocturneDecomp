@@ -41,8 +41,8 @@ section .text
     CALL dword ptr [EAX + 0x64]         ; 005d126d
     ADD ESP,0x8                         ; 005d1270
     TEST EAX,EAX                        ; 005d1273
-    JZ 0x005d1284                       ; 005d1275 | LAB_005d1284
-        ;   XREF to: 005d1284 (CONDITIONAL_JUMP)
+    JZ 0x005d1284                       ; 005d1275
+        ;   XREF to: 005d1284 (CONDITIONAL_JUMP)  ; LAB_005d1284
     MOV EAX,0x1                         ; 005d1277
         ;   Label: LAB_005d1277
     ADD ESP,0x64                        ; 005d127c
@@ -70,8 +70,8 @@ section .text
     CALL dword ptr [EAX + 0x64]         ; 005d12b2
     ADD ESP,0x8                         ; 005d12b5
     TEST EAX,EAX                        ; 005d12b8
-    JNZ 0x005d1277                      ; 005d12ba | LAB_005d1277
-        ;   XREF to: 005d1277 (CONDITIONAL_JUMP)
+    JNZ 0x005d1277                      ; 005d12ba
+        ;   XREF to: 005d1277 (CONDITIONAL_JUMP)  ; LAB_005d1277
     ADD ESP,0x64                        ; 005d12bc
     POP EBP                             ; 005d12bf
     POP EDI                             ; 005d12c0

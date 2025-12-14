@@ -11,8 +11,7 @@ void core_ladder_cpp_FUN_00502500(void)
 {
   CLadder *this_ptr;
   
-  this_ptr = (CLadder *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x300,"..\\core\\ladder.cpp",0x2d);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x300,"..\\core\\ladder.cpp",0x2d);
   if (this_ptr == (CLadder *)0x0) {
     return;
   }

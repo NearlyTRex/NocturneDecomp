@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 30, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_drender_cpp_00621f2d", 
-      "addr": "00621f2d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Ortho_isn_t_supported_an_00621f43", 
-      "addr": "00621f43", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 18,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0048a700", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CDemonRenderer * this_ptr, int mode)", 
+    "address": "0048a700",
     "address_range": [
       [
-        "0048a700", 
+        "0048a700",
         "0048a734"
       ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_setProjectionMode_FUN_0048a700"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setProjectionMode_FUN_0048a700",
+    "signature": "void engine_drender.cpp_CDemonRenderer_setProjectionMode_FUN_0048a700(CDemonRenderer * this_ptr, int mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00621f2d",
+      "name": "s_engine_drender_cpp_00621f2d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621f43",
+      "name": "s_Ortho_isn_t_supported_an_00621f43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "mode"
+        "is_param": true,
+        "name": "mode",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

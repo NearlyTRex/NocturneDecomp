@@ -1,238 +1,238 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 189, 
-    "pseudocode_lines": 59, 
-    "cross_reference_count": 1, 
-    "global_count": 14, 
-    "total_lines": 205, 
-    "assembly_lines": 146, 
-    "suspect_count": 12, 
+    "assembly_lines": 146,
+    "complexity_score": 189,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 14,
+    "pseudocode_lines": 59,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_FUN_00542370", 
-      "addr": "00542370"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_string.c_strncpy_FUN_00600f40", 
-      "addr": "00600f40"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
-      "addr": "005f2dc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_netgame_cpp_0063dac5", 
-      "addr": "0063dac5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CNetGame_processChatOut__0063dad9", 
-      "addr": "0063dad9", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LastPingTime", 
-      "addr": "02f7c8b4", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CurrentGameTime", 
-      "addr": "02f7c8b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f98ad0", 
-      "addr": "02f98ad0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f98ad4", 
-      "addr": "02f98ad4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f98ad8", 
-      "addr": "02f98ad8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_02f98adc", 
-      "addr": "02f98adc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_02f98add", 
-      "addr": "02f98add", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f98ae0", 
-      "addr": "02f98ae0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f98ae4", 
-      "addr": "02f98ae4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f9c0bc", 
-      "addr": "02f9c0bc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000018;"
-    }, 
-    {
-      "line": 39, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c < 0) {"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_00000004 + 0x1c)) {"
-    }, 
-    {
-      "line": 49, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)puVar6 + 1);"
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar4 < *(int *)(in_stack_00000004 + 0x1c));"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(byte *)((int)puVar7 + in_stack_0000000c + 8) = 0;"
-    }, 
-    {
-      "line": 54, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)puVar7 + in_stack_0000000c + 8) = 0;"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(&DAT_02f98ae0 + in_stack_0000000c * 4 + iVar1) = g_CurrentGameTime - 0x3c0000;"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(byte *)(*(int *)(in_stack_00000004 + 0x114) + 8 + (int)puVar7) = 1;"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_string_c_strncpy_FUN_00600f40(&DAT_02f98ae8 + iVar1,in_stack_00000018,0xff);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00541e40", 
-    "signature": "undefined core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40()", 
-    "address_range": [
-      [
-        "00541e40", 
-        "00541fe2"
-      ]
-    ], 
-    "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 205
+  },
   "cross_references": [
     {
-      "from_addr": "00541c6b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_FUN_00541390", 
-      "addr": "00541390"
+      "addr": "00541390",
+      "from_addr": "00541c6b",
+      "name": "core_netgame.cpp_FUN_00541390",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00541e40",
+    "address_range": [
+      [
+        "00541e40",
+        "00541fe2"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40",
+    "signature": "undefined core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00542370",
+      "name": "core_netgame.cpp_CNetGame_FUN_00542370"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "00600f40",
+      "name": "crt_string.c_strncpy_FUN_00600f40"
+    },
+    {
+      "addr": "005f2dc0",
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063dac5",
+      "name": "s_core_netgame_cpp_0063dac5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063dad9",
+      "name": "s_CNetGame_processChatOut__0063dad9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c8b4",
+      "name": "g_LastPingTime",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c8b8",
+      "name": "g_CurrentGameTime",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "02f98ad0",
+      "name": "DAT_02f98ad0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f98ad4",
+      "name": "DAT_02f98ad4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f98ad8",
+      "name": "DAT_02f98ad8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f98adc",
+      "name": "DAT_02f98adc",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "02f98add",
+      "name": "DAT_02f98add",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "02f98ae0",
+      "name": "DAT_02f98ae0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f98ae4",
+      "name": "DAT_02f98ae4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f9c0bc",
+      "name": "DAT_02f9c0bc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000018",
+      "text": "char *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c < 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x1c)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)puVar6 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar4 < *(int *)(in_stack_00000004 + 0x1c));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_0000000c",
+      "text": "*(byte *)((int)puVar7 + in_stack_0000000c + 8) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)puVar7 + in_stack_0000000c + 8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_0000000c",
+      "text": "*(uint *)(&DAT_02f98ae0 + in_stack_0000000c * 4 + iVar1) = g_CurrentGameTime - 0x3c0000;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)(*(int *)(in_stack_00000004 + 0x114) + 8 + (int)puVar7) = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000018",
+      "text": "crt_string_c_strncpy_FUN_00600f40(&DAT_02f98ae8 + iVar1,in_stack_00000018,0xff);",
+      "type": "stack_param"
     }
   ]
 }

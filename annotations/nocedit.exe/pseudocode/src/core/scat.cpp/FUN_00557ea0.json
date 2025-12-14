@@ -1,264 +1,264 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 285, 
-    "pseudocode_lines": 60, 
-    "cross_reference_count": 0, 
-    "global_count": 8, 
-    "total_lines": 205, 
-    "assembly_lines": 145, 
-    "suspect_count": 22, 
+    "assembly_lines": 145,
+    "complexity_score": 285,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 8,
+    "pseudocode_lines": 60,
+    "suspect_count": 22,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0", 
-      "addr": "0042c3c0"
-    }, 
-    {
-      "name": "core_gore.cpp_CGore_FUN_004ee030", 
-      "addr": "004ee030"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
-      "addr": "0052dab0"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
-      "addr": "0052db00"
-    }, 
-    {
-      "name": "core_scat.cpp_FUN_00558010", 
-      "addr": "00558010"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_scat_die_wav_00641424", 
-      "addr": "00641424", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_scat_hurt_wav_00641433", 
-      "addr": "00641433", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00662458", 
-      "addr": "00662458", 
-      "value": null
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CGore*", 
-      "name": "g_CGorePtr", 
-      "addr": "0067b9a0", 
-      "value": "02d83364"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81c6c", 
-      "addr": "02d81c6c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81cc8", 
-      "addr": "02d81cc8", 
-      "value": null
-    }, 
-    {
-      "type": "CGore", 
-      "name": "g_CGoreInstance", 
-      "addr": "02d83364", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CCharacter *in_stack_00000004;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((*(uint *)in_stack_00000004[1].base_actor.actor_name & 0x7fffffff) != 0) {"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)in_stack_00000004[1].base_actor.actor_name = DAT_00662458;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr = &in_stack_00000004->model;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->hit_points = fVar1;"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(float *)(in_stack_00000008 + 4) <= 0.0) {"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&in_stack_00000004->base_actor,\"scat-hurt-?.wav\");"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->hit_points = 0.0;"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->grabbed_by = (CDemonActor *)0x0;"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);"
-    }, 
-    {
-      "line": 60, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)"
-    }, 
-    {
-      "line": 61, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&in_stack_00000004->base_actor,\"scat-die-?.wav\");"
-    }, 
-    {
-      "line": 62, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);"
-    }
-  ], 
+    ],
+    "total_lines": 205
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00557ea0", 
-    "signature": "undefined core_scat.cpp_FUN_00557ea0()", 
+    "address": "00557ea0",
     "address_range": [
       [
-        "00557ea0", 
+        "00557ea0",
         "00557fef"
       ]
-    ], 
-    "name": "core_scat.cpp_FUN_00557ea0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_scat.cpp_FUN_00557ea0",
+    "signature": "undefined core_scat.cpp_FUN_00557ea0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0042c3c0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0"
+    },
+    {
+      "addr": "004ee030",
+      "name": "core_gore.cpp_CGore_FUN_004ee030"
+    },
+    {
+      "addr": "0052dab0",
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    },
+    {
+      "addr": "00558010",
+      "name": "core_scat.cpp_FUN_00558010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00641424",
+      "name": "s_scat_die_wav_00641424",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00641433",
+      "name": "s_scat_hurt_wav_00641433",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00662458",
+      "name": "DAT_00662458",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d81c6c",
+      "name": "DAT_02d81c6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81cc8",
+      "name": "DAT_02d81cc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "CCharacter *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "if ((*(uint *)in_stack_00000004[1].base_actor.actor_name & 0x7fffffff) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)in_stack_00000004[1].base_actor.actor_name = DAT_00662458;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000008",
+      "text": "fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = &in_stack_00000004->model;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->hit_points = fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000008",
+      "text": "if (*(float *)(in_stack_00000008 + 4) <= 0.0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000004",
+      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->base_actor,\"scat-hurt-?.wav\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->hit_points = 0.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->grabbed_by = (CDemonActor *)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000004",
+      "text": "core_gore_cpp_CGore_FUN_004ee030(g_CGorePtr,&in_stack_00000004->base_actor);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000004",
+      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->base_actor,\"scat-die-?.wav\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000004",
+      "text": "core_charactr_cpp_CCharacter_FUN_0042c3c0(in_stack_00000004);",
+      "type": "stack_param"
+    }
+  ]
 }

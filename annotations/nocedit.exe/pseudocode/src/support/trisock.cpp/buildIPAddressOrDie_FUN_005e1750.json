@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 64, 
-    "assembly_lines": 48, 
-    "suspect_count": 2, 
+    "assembly_lines": 48,
+    "complexity_score": 41,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "support_trisock.cpp_buildIPAddress_FUN_005e1870", 
-      "addr": "005e1870"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_support_trisock_cpp_006564a3", 
-      "addr": "006564a3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Invalid_IP_values_d_d_d__006564ba", 
-      "addr": "006564ba", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000018;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(\"Invalid IP values: %d, %d, %d, %d\",octet1,octet2,octet4,in_stack_00000018);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005e1750", 
-    "signature": "uint8_t * support_trisock.cpp_buildIPAddressOrDie_FUN_005e1750(uchar * dest_ip, int octet1, int octet2, int octet3, int octet4)", 
-    "address_range": [
-      [
-        "005e1750", 
-        "005e17b4"
-      ]
-    ], 
-    "name": "support_trisock.cpp_buildIPAddressOrDie_FUN_005e1750"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uchar *", 
-        "size": 4, 
-        "name": "dest_ip"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "octet1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "octet2"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "octet3"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "octet4"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 64
+  },
   "cross_references": [
     {
-      "from_addr": "005e16c9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_trisock.cpp_staticInit_FUN_005e16b0", 
-      "addr": "005e16b0"
+      "addr": "005e16b0",
+      "from_addr": "005e16c9",
+      "name": "support_trisock.cpp_staticInit_FUN_005e16b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e1750",
+    "address_range": [
+      [
+        "005e1750",
+        "005e17b4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_buildIPAddressOrDie_FUN_005e1750",
+    "signature": "uint8_t * support_trisock.cpp_buildIPAddressOrDie_FUN_005e1750(uchar * dest_ip, int octet1, int octet2, int octet3, int octet4)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005e1870",
+      "name": "support_trisock.cpp_buildIPAddress_FUN_005e1870"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006564a3",
+      "name": "s_support_trisock_cpp_006564a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006564ba",
+      "name": "s_Invalid_IP_values_d_d_d__006564ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest_ip",
+        "offset": 4,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "octet1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "octet2",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "octet3",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "octet4",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000018",
+      "text": "uint in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000018",
+      "text": "(\"Invalid IP values: %d, %d, %d, %d\",octet1,octet2,octet4,in_stack_00000018);",
+      "type": "stack_param"
     }
   ]
 }

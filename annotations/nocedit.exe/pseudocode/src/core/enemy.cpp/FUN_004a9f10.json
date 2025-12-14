@@ -1,243 +1,243 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 102, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 24, 
-    "global_count": 1, 
-    "total_lines": 97, 
-    "assembly_lines": 60, 
-    "suspect_count": 6, 
+    "assembly_lines": 60,
+    "complexity_score": 102,
+    "cross_reference_count": 24,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 6,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0", 
-      "addr": "0042c3c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "g_CCharacterClassInfo.name_hash", 
-      "addr": "00823c4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,float unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 12, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CVector3f *unaff_EBP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(&param_5->base_actor,unaff_EBP,unaff_ESI,unaff_EBX);"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(&param_5->base_actor,unaff_EBP,unaff_ESI,unaff_EBX);"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(&param_5->base_actor,unaff_EBP,unaff_ESI,unaff_EBX);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004a9f10", 
-    "signature": "undefined core_enemy.cpp_FUN_004a9f10()", 
-    "address_range": [
-      [
-        "004a9f10", 
-        "004a9f96"
-      ]
-    ], 
-    "name": "core_enemy.cpp_FUN_004a9f10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 97
+  },
   "cross_references": [
     {
-      "from_addr": "0041242f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_armour.cpp_CArmour_FUN_00412400", 
-      "addr": "00412400"
-    }, 
+      "addr": "00412400",
+      "from_addr": "0041242f",
+      "name": "core_armour.cpp_CArmour_FUN_00412400",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00416203", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batcreat.cpp_FUN_00416030", 
-      "addr": "00416030"
-    }, 
+      "addr": "00416030",
+      "from_addr": "00416203",
+      "name": "core_batcreat.cpp_FUN_00416030",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00417b73", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batman.cpp_FUN_004179a0", 
-      "addr": "004179a0"
-    }, 
+      "addr": "004179a0",
+      "from_addr": "00417b73",
+      "name": "core_batman.cpp_FUN_004179a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00418391", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_beast.cpp_FUN_00418380", 
-      "addr": "00418380"
-    }, 
+      "addr": "00418380",
+      "from_addr": "00418391",
+      "name": "core_beast.cpp_FUN_00418380",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00418bf8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_biggs.cpp_FUN_00418b50", 
-      "addr": "00418b50"
-    }, 
+      "addr": "00418b50",
+      "from_addr": "00418bf8",
+      "name": "core_biggs.cpp_FUN_00418b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041d519", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0", 
-      "addr": "0041d4d0"
-    }, 
+      "addr": "0041d4d0",
+      "from_addr": "0041d519",
+      "name": "core_boneguy.cpp_ExplodeAndSoundSomething_FUN_0041d4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00424957", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bride.cpp_FUN_00424830", 
-      "addr": "00424830"
-    }, 
+      "addr": "00424830",
+      "from_addr": "00424957",
+      "name": "core_bride.cpp_FUN_00424830",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00425651", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bugs.cpp_FUN_00425640", 
-      "addr": "00425640"
-    }, 
+      "addr": "00425640",
+      "from_addr": "00425651",
+      "name": "core_bugs.cpp_FUN_00425640",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00444be8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cow.cpp_FUN_00444b40", 
-      "addr": "00444b40"
-    }, 
+      "addr": "00444b40",
+      "from_addr": "00444be8",
+      "name": "core_cow.cpp_FUN_00444b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047f8c4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dog.cpp_CZombieDog_FUN_0047f820", 
-      "addr": "0047f820"
-    }, 
+      "addr": "0047f820",
+      "from_addr": "0047f8c4",
+      "name": "core_dog.cpp_CZombieDog_FUN_0047f820",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00486170", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dracbrid.cpp_FUN_00486070", 
-      "addr": "00486070"
-    }, 
+      "addr": "00486070",
+      "from_addr": "00486170",
+      "name": "core_dracbrid.cpp_FUN_00486070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048f415", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_drone.cpp_FUN_0048f360", 
-      "addr": "0048f360"
-    }, 
+      "addr": "0048f360",
+      "from_addr": "0048f415",
+      "name": "core_drone.cpp_FUN_0048f360",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e5914", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gargoyle.cpp_CGargoyle_unk3_FUN_004e57d0", 
-      "addr": "004e57d0"
-    }, 
+      "addr": "004e57d0",
+      "from_addr": "004e5914",
+      "name": "core_gargoyle.cpp_CGargoyle_unk3_FUN_004e57d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e89ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ghoul.cpp_FUN_004e87e0", 
-      "addr": "004e87e0"
-    }, 
+      "addr": "004e87e0",
+      "from_addr": "004e89ab",
+      "name": "core_ghoul.cpp_FUN_004e87e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f788e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hotdemon.cpp_FUN_004f7720", 
-      "addr": "004f7720"
-    }, 
+      "addr": "004f7720",
+      "from_addr": "004f788e",
+      "name": "core_hotdemon.cpp_FUN_004f7720",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004faefe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_imp.cpp_FUN_004fae00", 
-      "addr": "004fae00"
-    }, 
+      "addr": "004fae00",
+      "from_addr": "004faefe",
+      "name": "core_imp.cpp_FUN_004fae00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00503b27", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_larva.cpp_FUN_00503a20", 
-      "addr": "00503a20"
-    }, 
+      "addr": "00503a20",
+      "from_addr": "00503b27",
+      "name": "core_larva.cpp_FUN_00503a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00527807", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_FUN_00527740", 
-      "addr": "00527740"
-    }, 
+      "addr": "00527740",
+      "from_addr": "00527807",
+      "name": "core_mobster.cpp_FUN_00527740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00568d53", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sentinel.cpp_SentinelBehavior_FUN_00568cd0", 
-      "addr": "00568cd0"
-    }, 
+      "addr": "00568cd0",
+      "from_addr": "00568d53",
+      "name": "core_sentinel.cpp_SentinelBehavior_FUN_00568cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a3642", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_smiley.cpp_FUN_005a3580", 
-      "addr": "005a3580"
-    }, 
+      "addr": "005a3580",
+      "from_addr": "005a3642",
+      "name": "core_smiley.cpp_FUN_005a3580",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c7771", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_succubus.cpp_FUN_005c7760", 
-      "addr": "005c7760"
-    }, 
+      "addr": "005c7760",
+      "from_addr": "005c7771",
+      "name": "core_succubus.cpp_FUN_005c7760",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e5194", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tvbat.cpp_FUN_005e5130", 
-      "addr": "005e5130"
-    }, 
+      "addr": "005e5130",
+      "from_addr": "005e5194",
+      "name": "core_tvbat.cpp_FUN_005e5130",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f1bcb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_werewolf.cpp_FUN_005f1ac0", 
-      "addr": "005f1ac0"
-    }, 
+      "addr": "005f1ac0",
+      "from_addr": "005f1bcb",
+      "name": "core_werewolf.cpp_FUN_005f1ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005fc6d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_CZombie_FUN_005fc4f0", 
-      "addr": "005fc4f0"
+      "addr": "005fc4f0",
+      "from_addr": "005fc6d5",
+      "name": "core_zombie.cpp_CZombie_FUN_005fc4f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9f10",
+    "address_range": [
+      [
+        "004a9f10",
+        "004a9f96"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_enemy.cpp_FUN_004a9f10",
+    "signature": "undefined core_enemy.cpp_FUN_004a9f10()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "0042c3c0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00823c4c",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,float unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBP",
+      "text": "CVector3f *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "text": "(&param_5->base_actor,unaff_EBP,unaff_ESI,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
+      "text": "(&param_5->base_actor,unaff_EBP,unaff_ESI,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "text": "(&param_5->base_actor,unaff_EBP,unaff_ESI,unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

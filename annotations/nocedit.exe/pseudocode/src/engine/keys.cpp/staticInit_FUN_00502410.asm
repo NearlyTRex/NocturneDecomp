@@ -12,7 +12,7 @@
 
 section .text
 
-    MOV dword ptr [0x02dcd7d4],0x6605bc ; 00502410 | void * g_CKeysPtr | void * g_CKeysVTable
+    MOV dword ptr [0x02dcd7d4],0x6605bc ; 00502410 | g_CKeysPtr | g_CKeysVTable
         ;   Label: engine_keys.cpp_staticInit_FUN_00502410
     RET                                 ; 0050241a
 

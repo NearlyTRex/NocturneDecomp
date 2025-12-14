@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 33, 
-    "assembly_lines": 22, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_scanf_getc_wrapper_FUN_00604930", 
-      "addr": "00604930"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00605918", 
-    "signature": "int crt_stdio.c_scanf_getc_with_width_FUN_00605918(scanf_state_t * state)", 
-    "address_range": [
-      [
-        "00605918", 
-        "00605941"
-      ]
-    ], 
-    "name": "crt_stdio.c_scanf_getc_with_width_FUN_00605918"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "scanf_state_t *", 
-        "size": 4, 
-        "name": "state"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 22,
+    "complexity_score": 11,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 33
+  },
   "cross_references": [
     {
-      "from_addr": "00605282", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_scanf_float_FUN_00605178", 
-      "addr": "00605178"
-    }, 
+      "addr": "00605178",
+      "from_addr": "00605282",
+      "name": "crt_stdio.c_scanf_float_FUN_00605178",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006055e3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_scanf_integer_FUN_0060547c", 
-      "addr": "0060547c"
-    }, 
+      "addr": "0060547c",
+      "from_addr": "006055e3",
+      "name": "crt_stdio.c_scanf_integer_FUN_0060547c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00604f5b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_scanf_string_FUN_00604e4c", 
-      "addr": "00604e4c"
+      "addr": "00604e4c",
+      "from_addr": "00604f5b",
+      "name": "crt_stdio.c_scanf_string_FUN_00604e4c",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00605918",
+    "address_range": [
+      [
+        "00605918",
+        "00605941"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_scanf_getc_with_width_FUN_00605918",
+    "signature": "int crt_stdio.c_scanf_getc_with_width_FUN_00605918(scanf_state_t * state)"
+  },
+  "function_calls": [
+    {
+      "addr": "00604930",
+      "name": "crt_stdio.c_scanf_getc_wrapper_FUN_00604930"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "state",
+        "offset": 4,
+        "size": 4,
+        "type": "scanf_state_t *"
+      }
+    ]
+  },
+  "suspects": []
 }

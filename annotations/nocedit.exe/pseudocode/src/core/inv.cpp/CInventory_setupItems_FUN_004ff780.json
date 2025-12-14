@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 75, 
-    "assembly_lines": 53, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
-      "addr": "0040ac80"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_inv_cpp_006309a1", 
-      "addr": "006309a1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CInventory_setupItems_we_006309b1", 
-      "addr": "006309b1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_inv_cpp_006309f1", 
-      "addr": "006309f1", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ff780", 
-    "signature": "void core_inv.cpp_CInventory_setupItems_FUN_004ff780(CInventory * this_ptr)", 
-    "address_range": [
-      [
-        "004ff780", 
-        "004ff7f9"
-      ]
-    ], 
-    "name": "core_inv.cpp_CInventory_setupItems_FUN_004ff780"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CInventory *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 53,
+    "complexity_score": 22,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 75
+  },
   "cross_references": [
     {
-      "from_addr": "004f256e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hero.cpp_CHero_FUN_004f2540", 
-      "addr": "004f2540"
+      "addr": "004f2540",
+      "from_addr": "004f256e",
+      "name": "core_hero.cpp_CHero_FUN_004f2540",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004ff780",
+    "address_range": [
+      [
+        "004ff780",
+        "004ff7f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_setupItems_FUN_004ff780",
+    "signature": "void core_inv.cpp_CInventory_setupItems_FUN_004ff780(CInventory * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006309a1",
+      "name": "s_core_inv_cpp_006309a1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006309b1",
+      "name": "s_CInventory_setupItems_we_006309b1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006309f1",
+      "name": "s_core_inv_cpp_006309f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": []
 }

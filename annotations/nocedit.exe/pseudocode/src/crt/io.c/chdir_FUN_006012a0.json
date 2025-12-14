@@ -1,70 +1,70 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 22, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "SetCurrentDirectoryA", 
-      "addr": "EXTERNAL:00000090"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SetCurrentDirectoryA*", 
-      "name": "SetCurrentDirectoryA", 
-      "addr": "00611614", 
-      "value": "00212138"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006012a0", 
-    "signature": "int crt_io.c_chdir_FUN_006012a0(char * path)", 
-    "address_range": [
-      [
-        "006012a0", 
-        "006012b6"
-      ]
-    ], 
-    "name": "crt_io.c_chdir_FUN_006012a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "path"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 13,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
   "cross_references": [
     {
-      "from_addr": "00607f63", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_stat_FUN_00607e64", 
-      "addr": "00607e64"
-    }, 
+      "addr": "00607e64",
+      "from_addr": "00607f63",
+      "name": "crt_io.c_stat_FUN_00607e64",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049f9a2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420", 
-      "addr": "0049f420"
+      "addr": "0049f420",
+      "from_addr": "0049f9a2",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "006012a0",
+    "address_range": [
+      [
+        "006012a0",
+        "006012b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_chdir_FUN_006012a0",
+    "signature": "int crt_io.c_chdir_FUN_006012a0(char * path)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000090",
+      "name": "SetCurrentDirectoryA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611614",
+      "name": "SetCurrentDirectoryA",
+      "type": "SetCurrentDirectoryA*",
+      "value": "00212138"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

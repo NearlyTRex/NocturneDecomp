@@ -40,8 +40,8 @@ section .text
     PUSH EBP                            ; 00432b13
     MOV EAX,dword ptr [ESP + 0x30]      ; 00432b14
     PUSH EAX                            ; 00432b18
-    CALL cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40 ; 00432b19 | void cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40(void * sprite_data, void * span_data, int screen_x, int screen_y, ...)
-        ;   XREF to: 00431f40 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40 ; 00432b19
+        ;   XREF to: 00431f40 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40(void * sprite_data, void * span_data, int screen_x, int screen_y, ...)
     ADD ESP,0x20                        ; 00432b1e
     POP EBP                             ; 00432b21
     POP EDI                             ; 00432b22

@@ -24,12 +24,12 @@ section .text
     PUSH EDX                            ; 004b0834
     MOV ECX,dword ptr [ESP + 0x8]       ; 004b0835
     PUSH ECX                            ; 004b0839
-    CALL core_event.cpp_CEventList_FUN_004b0950 ; 004b083a | int core_event.cpp_CEventList_FUN_004b0950(CEventList * this_ptr)
-        ;   XREF to: 004b0950 (UNCONDITIONAL_CALL)
+    CALL core_event.cpp_CEventList_FUN_004b0950 ; 004b083a
+        ;   XREF to: 004b0950 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0950(CEventList * this_ptr)
     ADD ESP,0x8                         ; 004b083f
     TEST EAX,EAX                        ; 004b0842
-    JL 0x004b0858                       ; 004b0844 | LAB_004b0858
-        ;   XREF to: 004b0858 (CONDITIONAL_JUMP)
+    JL 0x004b0858                       ; 004b0844
+        ;   XREF to: 004b0858 (CONDITIONAL_JUMP)  ; LAB_004b0858
     PUSH EBX                            ; 004b0846
     MOV EBX,dword ptr [ESP + 0x8]       ; 004b0847
     SHL EAX,0x2                         ; 004b084b

@@ -36,7 +36,7 @@ section .text
     PUSH EDI                            ; 00488632
     PUSH EBP                            ; 00488633
     SUB ESP,0x8                         ; 00488634
-    FILD dword ptr [0x006703dc]         ; 00488637 | int g_DashLength
+    FILD dword ptr [0x006703dc]         ; 00488637 | g_DashLength
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0048863d
     MOV EDX,0x1                         ; 00488641
     PUSH EBX                            ; 00488646
@@ -44,7 +44,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 0048864b
     PUSH ESI                            ; 0048864f
     MOV EBP,dword ptr [ESP + 0x28]      ; 00488650
-    MOV EAX,[0x006703e0]                ; 00488654 | float g_DashAnimationThreshold
+    MOV EAX,[0x006703e0]                ; 00488654 | g_DashAnimationThreshold
     PUSH EDI                            ; 00488659
     FSTP float ptr [ESP + 0xc]          ; 0048865a
     MOV dword ptr [ESP + 0x10],EAX      ; 0048865e
@@ -52,17 +52,17 @@ section .text
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00488663
     XOR ECX,ECX                         ; 00488667
     PUSH EAX                            ; 00488669
-    MOV dword ptr [0x006703dc],EDX      ; 0048866a | int g_DashLength
-    MOV dword ptr [0x006703e0],ECX      ; 00488670 | float g_DashAnimationThreshold
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 ; 00488676 | void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-        ;   XREF to: 004887a0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x006703dc],EDX      ; 0048866a | g_DashLength
+    MOV dword ptr [0x006703e0],ECX      ; 00488670 | g_DashAnimationThreshold
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 ; 00488676
+        ;   XREF to: 004887a0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 0048867b
     FLD float ptr [ESP]                 ; 0048867e
     MOV EAX,dword ptr [ESP + 0x4]       ; 00488681
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00488685 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
-    FISTP dword ptr [0x006703dc]        ; 0048868a | int g_DashLength
-    MOV [0x006703e0],EAX                ; 00488690 | float g_DashAnimationThreshold
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00488685
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [0x006703dc]        ; 0048868a | g_DashLength
+    MOV [0x006703e0],EAX                ; 00488690 | g_DashAnimationThreshold
     ADD ESP,0x8                         ; 00488695
     POP EBP                             ; 00488698
     POP EDI                             ; 00488699

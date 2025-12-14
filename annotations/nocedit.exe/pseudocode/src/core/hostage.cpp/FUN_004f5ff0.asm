@@ -31,8 +31,8 @@ section .text
     SUB ESP,0x1c                        ; 004f5ff1
     MOV EBX,dword ptr [ESP + 0x24]      ; 004f5ff4
     CMP dword ptr [EBX + 0x1fae8],0x0   ; 004f5ff8
-    JZ 0x004f60e7                       ; 004f5fff | LAB_004f60e7
-        ;   XREF to: 004f60e7 (CONDITIONAL_JUMP)
+    JZ 0x004f60e7                       ; 004f5fff
+        ;   XREF to: 004f60e7 (CONDITIONAL_JUMP)  ; LAB_004f60e7
     FLD float ptr [EBX + 0x1faec]       ; 004f6005
     FSUB float ptr [ESP + 0x28]         ; 004f600b
     FST float ptr [EBX + 0x1faec]       ; 004f600f
@@ -40,14 +40,14 @@ section .text
     FCOMPP                              ; 004f6017
     FNSTSW AX                           ; 004f6019
     SAHF                                ; 004f601b
-    JNC 0x004f60ee                      ; 004f601c | LAB_004f60ee
-        ;   XREF to: 004f60ee (CONDITIONAL_JUMP)
+    JNC 0x004f60ee                      ; 004f601c
+        ;   XREF to: 004f60ee (CONDITIONAL_JUMP)  ; LAB_004f60ee
     FLD float ptr [EBX + 0x2dd4]        ; 004f6022
-    FCOMP double ptr [0x0062f0ea]       ; 004f6028 | double DOUBLE_0062f0ea
+    FCOMP double ptr [0x0062f0ea]       ; 004f6028 | DOUBLE_0062f0ea
     FNSTSW AX                           ; 004f602e
     SAHF                                ; 004f6030
-    JA 0x004f60ee                       ; 004f6031 | LAB_004f60ee
-        ;   XREF to: 004f60ee (CONDITIONAL_JUMP)
+    JA 0x004f60ee                       ; 004f6031
+        ;   XREF to: 004f60ee (CONDITIONAL_JUMP)  ; LAB_004f60ee
     LEA EDX,[EBX + 0x20]                ; 004f6037
     MOV EAX,dword ptr [EBX + 0x1fae8]   ; 004f603a
     FLD float ptr [EDX]                 ; 004f6040
@@ -63,15 +63,15 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004f605b
     PUSH EAX                            ; 004f605f
     FSTP float ptr [ESP + 0x10]         ; 004f6060
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004f6064 | CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)
+    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004f6064
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     FLD float ptr [EAX + 0x4]           ; 004f6069
     ADD ESP,0x8                         ; 004f606c
     FSUB float ptr [EBX + 0x34]         ; 004f606f
     SUB ESP,0x4                         ; 004f6072
     FSTP float ptr [ESP]                ; 004f6075
-    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 004f6078 | float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
-        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 004f6078
+        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
     FLD float ptr [EBX + 0x2438]        ; 004f607d
     MOV dword ptr [ESP + 0x1c],EAX      ; 004f6083
     FCHS                                ; 004f6087
@@ -81,8 +81,8 @@ section .text
     FCOMP float ptr [EBX + 0x2418]      ; 004f6096
     FNSTSW AX                           ; 004f609c
     SAHF                                ; 004f609e
-    JBE 0x004f60ad                      ; 004f609f | LAB_004f60ad
-        ;   XREF to: 004f60ad (CONDITIONAL_JUMP)
+    JBE 0x004f60ad                      ; 004f609f
+        ;   XREF to: 004f60ad (CONDITIONAL_JUMP)  ; LAB_004f60ad
     MOV EAX,dword ptr [EBX + 0x2438]    ; 004f60a1
     MOV dword ptr [EBX + 0x2418],EAX    ; 004f60a7
     FLD float ptr [EBX + 0x2418]        ; 004f60ad
@@ -90,8 +90,8 @@ section .text
     FCOMP float ptr [EBX + 0x2438]      ; 004f60b3
     FNSTSW AX                           ; 004f60b9
     SAHF                                ; 004f60bb
-    JBE 0x004f60ca                      ; 004f60bc | LAB_004f60ca
-        ;   XREF to: 004f60ca (CONDITIONAL_JUMP)
+    JBE 0x004f60ca                      ; 004f60bc
+        ;   XREF to: 004f60ca (CONDITIONAL_JUMP)  ; LAB_004f60ca
     MOV EAX,dword ptr [EBX + 0x2438]    ; 004f60be
     MOV dword ptr [EBX + 0x2418],EAX    ; 004f60c4
     PUSH 0x1                            ; 004f60ca
@@ -99,8 +99,8 @@ section .text
     PUSH 0x2                            ; 004f60cc
     ADD EBX,0x158                       ; 004f60ce
     PUSH EBX                            ; 004f60d4
-    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004f60d5 | void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
-        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004f60d5
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV EAX,0x1                         ; 004f60da
     ADD ESP,0xc                         ; 004f60df
     ADD ESP,0x1c                        ; 004f60e2
@@ -117,8 +117,8 @@ section .text
     ADD EBX,0x158                       ; 004f60f2
     PUSH EBX                            ; 004f60f8
     MOV dword ptr [EBX + 0x1f990],0x0   ; 004f60f9
-    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004f6103 | void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
-        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004f6103
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 004f6108
     XOR EAX,EAX                         ; 004f610b
     ADD ESP,0x1c                        ; 004f610d

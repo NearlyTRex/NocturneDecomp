@@ -30,14 +30,14 @@
 
 section .text
 
-    CALL dword ptr [0x00684ee4]         ; 00600288 | GET_TLS_FUNC * PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
+    CALL dword ptr [0x00684ee4]         ; 00600288 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
         ;   Label: crt_time.c_localtime_FUN_00600288
     ADD EAX,0x14                        ; 0060028e
     PUSH EAX                            ; 00600291
     MOV EDX,dword ptr [ESP + 0x8]       ; 00600292
     PUSH EDX                            ; 00600296
-    CALL crt_time.c_localtime_r_FUN_00600230 ; 00600297 | tm * crt_time.c_localtime_r_FUN_00600230(time_t * timer, tm * result)
-        ;   XREF to: 00600230 (UNCONDITIONAL_CALL)
+    CALL crt_time.c_localtime_r_FUN_00600230 ; 00600297
+        ;   XREF to: 00600230 (UNCONDITIONAL_CALL)  ; tm * crt_time.c_localtime_r_FUN_00600230(time_t * timer, tm * result)
     ADD ESP,0x8                         ; 0060029c
     RET                                 ; 0060029f
 

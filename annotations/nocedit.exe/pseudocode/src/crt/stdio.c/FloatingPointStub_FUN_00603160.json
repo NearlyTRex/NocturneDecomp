@@ -1,78 +1,78 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 20, 
-    "assembly_lines": 12, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30", 
-      "addr": "0060ad30"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "STRTOD_FUNC*", 
-      "name": "PTR_crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30_0068540c", 
-      "addr": "0068540c", 
-      "value": "0060ad30"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00603160", 
-    "signature": "void crt_stdio.c_FloatingPointStub_FUN_00603160(char * buffer, va_list_t * args, FormatSpec * spec_info)", 
-    "address_range": [
-      [
-        "00603160", 
-        "0060317a"
-      ]
-    ], 
-    "name": "crt_stdio.c_FloatingPointStub_FUN_00603160"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "va_list_t *", 
-        "size": 4, 
-        "name": "args"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "FormatSpec *", 
-        "size": 4, 
-        "name": "spec_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 12,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
+  },
   "cross_references": [
     {
-      "from_addr": "006034cc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238", 
-      "addr": "00603238"
+      "addr": "00603238",
+      "from_addr": "006034cc",
+      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00603160",
+    "address_range": [
+      [
+        "00603160",
+        "0060317a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_FloatingPointStub_FUN_00603160",
+    "signature": "void crt_stdio.c_FloatingPointStub_FUN_00603160(char * buffer, va_list_t * args, FormatSpec * spec_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060ad30",
+      "name": "crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0068540c",
+      "name": "PTR_crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30_0068540c",
+      "type": "STRTOD_FUNC*",
+      "value": "0060ad30"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "args",
+        "offset": 8,
+        "size": 4,
+        "type": "va_list_t *"
+      },
+      {
+        "is_param": true,
+        "name": "spec_info",
+        "offset": 12,
+        "size": 4,
+        "type": "FormatSpec *"
+      }
+    ]
+  },
+  "suspects": []
 }

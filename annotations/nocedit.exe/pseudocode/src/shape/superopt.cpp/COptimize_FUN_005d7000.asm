@@ -28,39 +28,39 @@ section .text
     PUSH EBP                            ; 005d7003
     MOV ESI,dword ptr [ESP + 0x14]      ; 005d7004
     PUSH ESI                            ; 005d7008
-    CALL shape_superopt.cpp_CObj_free_FUN_005d2600 ; 005d7009 | void shape_superopt.cpp_CObj_free_FUN_005d2600(CObj * this_ptr)
-        ;   XREF to: 005d2600 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_CObj_free_FUN_005d2600 ; 005d7009
+        ;   XREF to: 005d2600 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_CObj_free_FUN_005d2600(CObj * this_ptr)
     XOR EDI,EDI                         ; 005d700e
     MOV EDX,dword ptr [ESI + 0x38]      ; 005d7010
     ADD ESP,0x4                         ; 005d7013
     TEST EDX,EDX                        ; 005d7016
-    JBE 0x005d7040                      ; 005d7018 | LAB_005d7040
-        ;   XREF to: 005d7040 (CONDITIONAL_JUMP)
+    JBE 0x005d7040                      ; 005d7018
+        ;   XREF to: 005d7040 (CONDITIONAL_JUMP)  ; LAB_005d7040
     XOR EBX,EBX                         ; 005d701a
     MOV EAX,dword ptr [ESI + 0x3c]      ; 005d701c
         ;   Label: LAB_005d701c
     MOV EBP,dword ptr [EBX + EAX*0x1]   ; 005d701f
     PUSH EBP                            ; 005d7022
-    CALL shape_superopt.cpp_FUN_005c79f0 ; 005d7023 | undefined shape_superopt.cpp_FUN_005c79f0()
-        ;   XREF to: 005c79f0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_FUN_005c79f0 ; 005d7023
+        ;   XREF to: 005c79f0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c79f0()
     MOV EAX,dword ptr [ESI + 0x3c]      ; 005d7028
     MOV EAX,dword ptr [EBX + EAX*0x1]   ; 005d702b
     ADD ESP,0x4                         ; 005d702e
     TEST EAX,EAX                        ; 005d7031
-    JNZ 0x005d70a2                      ; 005d7033 | LAB_005d70a2
-        ;   XREF to: 005d70a2 (CONDITIONAL_JUMP)
+    JNZ 0x005d70a2                      ; 005d7033
+        ;   XREF to: 005d70a2 (CONDITIONAL_JUMP)  ; LAB_005d70a2
     INC EDI                             ; 005d7035
         ;   Label: LAB_005d7035
     MOV ECX,dword ptr [ESI + 0x38]      ; 005d7036
     ADD EBX,0x4                         ; 005d7039
     CMP EDI,ECX                         ; 005d703c
-    JC 0x005d701c                       ; 005d703e | LAB_005d701c
-        ;   XREF to: 005d701c (CONDITIONAL_JUMP)
+    JC 0x005d701c                       ; 005d703e
+        ;   XREF to: 005d701c (CONDITIONAL_JUMP)  ; LAB_005d701c
     MOV EBX,dword ptr [ESI + 0x3c]      ; 005d7040
         ;   Label: LAB_005d7040
     TEST EBX,EBX                        ; 005d7043
-    JNZ 0x005d70bb                      ; 005d7045 | LAB_005d70bb
-        ;   XREF to: 005d70bb (CONDITIONAL_JUMP)
+    JNZ 0x005d70bb                      ; 005d7045
+        ;   XREF to: 005d70bb (CONDITIONAL_JUMP)  ; LAB_005d70bb
     PUSH 0x3f50624d                     ; 005d7047
         ;   Label: LAB_005d7047
     MOV dword ptr [ESI + 0x3c],0x0      ; 005d704c
@@ -95,20 +95,20 @@ section .text
     PUSH 0x0                            ; 005d70a2
         ;   Label: LAB_005d70a2
     PUSH EAX                            ; 005d70a4
-    CALL shape_superopt.cpp_FUN_005c79d0 ; 005d70a5 | undefined shape_superopt.cpp_FUN_005c79d0()
-        ;   XREF to: 005c79d0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_FUN_005c79d0 ; 005d70a5
+        ;   XREF to: 005c79d0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c79d0()
     ADD ESP,0x8                         ; 005d70aa
     PUSH EAX                            ; 005d70ad
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d70ae | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005d70ae
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005d70b3
-    JMP 0x005d7035                      ; 005d70b6 | LAB_005d7035
-        ;   XREF to: 005d7035 (UNCONDITIONAL_JUMP)
+    JMP 0x005d7035                      ; 005d70b6
+        ;   XREF to: 005d7035 (UNCONDITIONAL_JUMP)  ; LAB_005d7035
     PUSH EBX                            ; 005d70bb
         ;   Label: LAB_005d70bb
-    CALL crt_memory.c_free_FUN_00601cd0 ; 005d70bc | void crt_memory.c_free_FUN_00601cd0(void * ptr)
-        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_00601cd0 ; 005d70bc
+        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_00601cd0(void * ptr)
     ADD ESP,0x4                         ; 005d70c1
-    JMP 0x005d7047                      ; 005d70c4 | LAB_005d7047
-        ;   XREF to: 005d7047 (UNCONDITIONAL_JUMP)
+    JMP 0x005d7047                      ; 005d70c4
+        ;   XREF to: 005d7047 (UNCONDITIONAL_JUMP)  ; LAB_005d7047
 

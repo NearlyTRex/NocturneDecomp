@@ -1,127 +1,127 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 74, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 49, 
-    "assembly_lines": 30, 
-    "suspect_count": 4, 
+    "assembly_lines": 30,
+    "complexity_score": 74,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 19,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_exit.c_ExitProcess_FUN_00602700", 
-      "addr": "00602700"
-    }, 
-    {
-      "name": "WriteFile", 
-      "addr": "EXTERNAL:000000a9"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WriteFile*", 
-      "name": "PTR_WriteFile_00611678", 
-      "addr": "00611678", 
-      "value": "00212300"
-    }, 
-    {
-      "type": "SIOControlBlock*", 
-      "name": "g_IOControlBlock", 
-      "addr": "0068526c", 
-      "value": "00000000"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_exit_c_ExitProcess_FUN_00602700(in_stack_00000010);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00606620", 
-    "signature": "void crt_startup.c_WriteErrorAndExit_FUN_00606620(char * error_message, int exit_code)", 
-    "address_range": [
-      [
-        "00606620", 
-        "0060665c"
-      ]
-    ], 
-    "name": "crt_startup.c_WriteErrorAndExit_FUN_00606620"
-  }, 
-  "stack_frame": {
-    "local_size": 12, 
-    "variables": [
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_8"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "error_message"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "exit_code"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 49
+  },
   "cross_references": [
     {
-      "from_addr": "00605b57", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_cpp.c_reportPureVirtualError_FUN_00605b23", 
-      "addr": "00605b23"
-    }, 
+      "addr": "00605b23",
+      "from_addr": "00605b57",
+      "name": "crt_cpp.c_reportPureVirtualError_FUN_00605b23",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00606684", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660", 
-      "addr": "00606660"
+      "addr": "00606660",
+      "from_addr": "00606684",
+      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00606620",
+    "address_range": [
+      [
+        "00606620",
+        "0060665c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_startup.c_WriteErrorAndExit_FUN_00606620",
+    "signature": "void crt_startup.c_WriteErrorAndExit_FUN_00606620(char * error_message, int exit_code)"
+  },
+  "function_calls": [
+    {
+      "addr": "00602700",
+      "name": "crt_exit.c_ExitProcess_FUN_00602700"
+    },
+    {
+      "addr": "EXTERNAL:000000a9",
+      "name": "WriteFile"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611678",
+      "name": "PTR_WriteFile_00611678",
+      "type": "WriteFile*",
+      "value": "00212300"
+    },
+    {
+      "addr": "0068526c",
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "error_message",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "exit_code",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "text": "crt_exit_c_ExitProcess_FUN_00602700(in_stack_00000010);",
+      "type": "stack_param"
     }
   ]
 }

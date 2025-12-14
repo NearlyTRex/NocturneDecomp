@@ -39,25 +39,25 @@ section .text
     MOV EDX,dword ptr [EDI]             ; 00550c88
     XOR ESI,ESI                         ; 00550c8a
     TEST EDX,EDX                        ; 00550c8c
-    JLE 0x00550cbf                      ; 00550c8e | LAB_00550cbf
-        ;   XREF to: 00550cbf (CONDITIONAL_JUMP)
-    MOV EBP,0x640776                    ; 00550c90 | = "..\\engine\\pod.cpp" | s_engine_pod_cpp_00640776 = ..\engine\pod.cpp
+    JLE 0x00550cbf                      ; 00550c8e
+        ;   XREF to: 00550cbf (CONDITIONAL_JUMP)  ; LAB_00550cbf
+    MOV EBP,0x640776                    ; 00550c90 | = "..\\engine\\pod.cpp"
     MOV EBX,EDI                         ; 00550c95
-    MOV dword ptr [0x02f0d944],0x3f8    ; 00550c97 | int g_CurrentDebugLine
+    MOV dword ptr [0x02f0d944],0x3f8    ; 00550c97 | g_CurrentDebugLine
         ;   Label: LAB_00550c97
     MOV EAX,dword ptr [EBX + 0x4]       ; 00550ca1
-    MOV dword ptr [0x0067d20c],EBP      ; 00550ca4 | char * g_CurrentDebugFilename
+    MOV dword ptr [0x0067d20c],EBP      ; 00550ca4 | g_CurrentDebugFilename
     TEST EAX,EAX                        ; 00550caa
-    JNZ 0x00550cca                      ; 00550cac | LAB_00550cca
-        ;   XREF to: 00550cca (CONDITIONAL_JUMP)
+    JNZ 0x00550cca                      ; 00550cac
+        ;   XREF to: 00550cca (CONDITIONAL_JUMP)  ; LAB_00550cca
     MOV dword ptr [EBX + 0x4],0x0       ; 00550cae
         ;   Label: LAB_00550cae
     INC ESI                             ; 00550cb5
     MOV ECX,dword ptr [EDI]             ; 00550cb6
     ADD EBX,0x4                         ; 00550cb8
     CMP ESI,ECX                         ; 00550cbb
-    JL 0x00550c97                       ; 00550cbd | LAB_00550c97
-        ;   XREF to: 00550c97 (CONDITIONAL_JUMP)
+    JL 0x00550c97                       ; 00550cbd
+        ;   XREF to: 00550c97 (CONDITIONAL_JUMP)  ; LAB_00550c97
     MOV dword ptr [EDI],0x0             ; 00550cbf
         ;   Label: LAB_00550cbf
     POP EBP                             ; 00550cc5
@@ -68,13 +68,13 @@ section .text
     PUSH 0x0                            ; 00550cca
         ;   Label: LAB_00550cca
     PUSH EAX                            ; 00550ccc
-    CALL engine_pod.cpp_CPodFile_dtor_FUN_0054f610 ; 00550ccd | CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr)
-        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)
+    CALL engine_pod.cpp_CPodFile_dtor_FUN_0054f610 ; 00550ccd
+        ;   XREF to: 0054f610 (UNCONDITIONAL_CALL)  ; CPodFile * engine_pod.cpp_CPodFile_dtor_FUN_0054f610(CPodFile * this_ptr)
     ADD ESP,0x8                         ; 00550cd2
     PUSH EAX                            ; 00550cd5
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00550cd6 | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00550cd6
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00550cdb
-    JMP 0x00550cae                      ; 00550cde | LAB_00550cae
-        ;   XREF to: 00550cae (UNCONDITIONAL_JUMP)
+    JMP 0x00550cae                      ; 00550cde
+        ;   XREF to: 00550cae (UNCONDITIONAL_JUMP)  ; LAB_00550cae
 

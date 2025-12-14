@@ -30,8 +30,8 @@ section .text
     SUB ESP,0x4                         ; 00606621
     MOV EAX,dword ptr [ESP + 0xc]       ; 00606624
     XOR EDX,EDX                         ; 00606628
-    JMP 0x0060662d                      ; 0060662a | LAB_0060662d
-        ;   XREF to: 0060662d (UNCONDITIONAL_JUMP)
+    JMP 0x0060662d                      ; 0060662a
+        ;   XREF to: 0060662d (UNCONDITIONAL_JUMP)  ; LAB_0060662d
     INC EDX                             ; 0060662c
         ;   Label: LAB_0060662c
     MOV EBX,EAX                         ; 0060662d
@@ -39,18 +39,18 @@ section .text
     MOV CL,byte ptr [EBX]               ; 0060662f
     INC EAX                             ; 00606631
     TEST CL,CL                          ; 00606632
-    JNZ 0x0060662c                      ; 00606634 | LAB_0060662c
-        ;   XREF to: 0060662c (CONDITIONAL_JUMP)
+    JNZ 0x0060662c                      ; 00606634
+        ;   XREF to: 0060662c (CONDITIONAL_JUMP)  ; LAB_0060662c
     PUSH 0x0                            ; 00606636
     LEA EAX,[ESP + 0x4]                 ; 00606638
     PUSH EAX                            ; 0060663c
     PUSH EDX                            ; 0060663d
     MOV EDX,dword ptr [ESP + 0x18]      ; 0060663e
-    MOV EAX,[0x0068526c]                ; 00606642 | SIOControlBlock * g_IOControlBlock
+    MOV EAX,[0x0068526c]                ; 00606642 | g_IOControlBlock
     PUSH EDX                            ; 00606647
     MOV EBX,dword ptr [EAX + 0x8]       ; 00606648
     PUSH EBX                            ; 0060664b
-    CALL dword ptr CS:[0x611678]        ; 0060664c | WriteFile * PTR_WriteFile_00611678
+    CALL dword ptr CS:[0x611678]        ; 0060664c | PTR_WriteFile_00611678
     MOV ECX,dword ptr [ESP + 0x10]      ; 00606653
     PUSH ECX                            ; 00606657
     JMP 0x00602700                      ; 00606658

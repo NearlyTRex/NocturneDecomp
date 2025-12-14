@@ -34,26 +34,26 @@ section .text
     PUSH EBP                            ; 00403134
     PUSH ESI                            ; 00403135
     PUSH EBX                            ; 00403136
-    CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 00403137 | void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
-        ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 00403137
+        ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
     ADD ESP,0xc                         ; 0040313c
     PUSH EBP                            ; 0040313f
     PUSH EDI                            ; 00403140
     PUSH EBX                            ; 00403141
-    CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 00403142 | void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
-        ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 00403142
+        ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
     ADD ESP,0xc                         ; 00403147
     PUSH EDI                            ; 0040314a
     PUSH ESI                            ; 0040314b
     PUSH EBX                            ; 0040314c
-    CALL engine_2d.c_drawVLine_FUN_00402ff0 ; 0040314d | void engine_2d.c_drawVLine_FUN_00402ff0(int x, int y1, int y2)
-        ;   XREF to: 00402ff0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawVLine_FUN_00402ff0 ; 0040314d
+        ;   XREF to: 00402ff0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawVLine_FUN_00402ff0(int x, int y1, int y2)
     ADD ESP,0xc                         ; 00403152
     PUSH EDI                            ; 00403155
     PUSH ESI                            ; 00403156
     PUSH EBP                            ; 00403157
-    CALL engine_2d.c_drawVLine_FUN_00402ff0 ; 00403158 | void engine_2d.c_drawVLine_FUN_00402ff0(int x, int y1, int y2)
-        ;   XREF to: 00402ff0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawVLine_FUN_00402ff0 ; 00403158
+        ;   XREF to: 00402ff0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawVLine_FUN_00402ff0(int x, int y1, int y2)
     ADD ESP,0xc                         ; 0040315d
     POP EBP                             ; 00403160
     POP EDI                             ; 00403161

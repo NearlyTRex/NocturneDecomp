@@ -15,7 +15,7 @@
 
 section .text
 
-    MOV EAX,[0x0066df78]                ; 00402830 | int g_CurrentTextColor
+    MOV EAX,[0x0066df78]                ; 00402830 | g_CurrentTextColor
         ;   Label: engine_2d.c_getTextColor_FUN_00402830
     RET                                 ; 00402835
 

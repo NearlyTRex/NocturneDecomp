@@ -30,9 +30,9 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x006703ec]      ; 00408b40 | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00408b40 | g_CDemonRendererPtr
         ;   Label: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40
-    PUSH EDX                            ; 00408b46 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00408b47 | void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)
+    PUSH EDX                            ; 00408b46 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00408b47
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
 

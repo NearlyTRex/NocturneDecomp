@@ -44,43 +44,43 @@ section .text
     SAR EBX,0x10                        ; 00552f85
     SAR EDI,0x10                        ; 00552f88
     CMP EDI,EBX                         ; 00552f8b
-    JZ 0x0055316b                       ; 00552f8d | LAB_0055316b
-        ;   XREF to: 0055316b (CONDITIONAL_JUMP)
+    JZ 0x0055316b                       ; 00552f8d
+        ;   XREF to: 0055316b (CONDITIONAL_JUMP)  ; LAB_0055316b
     MOV EDX,dword ptr [EBP + 0x14]      ; 00552f93
     CMP EDX,dword ptr [ESI + 0x14]      ; 00552f96
-    JGE 0x00552fa7                      ; 00552f99 | LAB_00552fa7
-        ;   XREF to: 00552fa7 (CONDITIONAL_JUMP)
+    JGE 0x00552fa7                      ; 00552f99
+        ;   XREF to: 00552fa7 (CONDITIONAL_JUMP)  ; LAB_00552fa7
     MOV EAX,ESI                         ; 00552f9b
     MOV ESI,EBP                         ; 00552f9d
     MOV EBP,EAX                         ; 00552f9f
     MOV EAX,EDI                         ; 00552fa1
     MOV EDI,EBX                         ; 00552fa3
     MOV EBX,EAX                         ; 00552fa5
-    MOV EAX,[0x030e56bc]                ; 00552fa7 | int g_ActiveEdgeCount
+    MOV EAX,[0x030e56bc]                ; 00552fa7 | g_ActiveEdgeCount
         ;   Label: LAB_00552fa7
     LEA ECX,[EAX*0x8 + 0x0]             ; 00552fac
     ADD ECX,EAX                         ; 00552fb3
     SHL ECX,0x3                         ; 00552fb5
-    ADD ECX,0x30e56c0                   ; 00552fb8 | SSoftwareEdge[16] g_SoftwareEdgeTable
-    MOV dword ptr [ECX],EDI             ; 00552fbe | SSoftwareEdge[16] g_SoftwareEdgeTable
-    MOV EAX,[0x030e5b40]                ; 00552fc0 | int g_MinScanline
+    ADD ECX,0x30e56c0                   ; 00552fb8 | g_SoftwareEdgeTable
+    MOV dword ptr [ECX],EDI             ; 00552fbe | g_SoftwareEdgeTable
+    MOV EAX,[0x030e5b40]                ; 00552fc0 | g_MinScanline
     MOV dword ptr [ECX + 0x4],EBX       ; 00552fc5 | g_SoftwareEdgeTable[0].y_max
     CMP EDI,EAX                         ; 00552fc8
-    JGE 0x00552fd2                      ; 00552fca | LAB_00552fd2
-        ;   XREF to: 00552fd2 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x030e5b40],EDI      ; 00552fcc | int g_MinScanline
-    CMP EBX,dword ptr [0x030e5b44]      ; 00552fd2 | int g_MaxScanline
+    JGE 0x00552fd2                      ; 00552fca
+        ;   XREF to: 00552fd2 (CONDITIONAL_JUMP)  ; LAB_00552fd2
+    MOV dword ptr [0x030e5b40],EDI      ; 00552fcc | g_MinScanline
+    CMP EBX,dword ptr [0x030e5b44]      ; 00552fd2 | g_MaxScanline
         ;   Label: LAB_00552fd2
-    JLE 0x00552fe0                      ; 00552fd8 | LAB_00552fe0
-        ;   XREF to: 00552fe0 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x030e5b44],EBX      ; 00552fda | int g_MaxScanline
+    JLE 0x00552fe0                      ; 00552fd8
+        ;   XREF to: 00552fe0 (CONDITIONAL_JUMP)  ; LAB_00552fe0
+    MOV dword ptr [0x030e5b44],EBX      ; 00552fda | g_MaxScanline
     MOV EDI,dword ptr [ESI + 0x14]      ; 00552fe0
         ;   Label: LAB_00552fe0
     MOV EBX,dword ptr [EBP + 0x14]      ; 00552fe3
     SUB EBX,EDI                         ; 00552fe6
     CMP EBX,0x10000                     ; 00552fe8
-    JNC 0x00553173                      ; 00552fee | LAB_00553173
-        ;   XREF to: 00553173 (CONDITIONAL_JUMP)
+    JNC 0x00553173                      ; 00552fee
+        ;   XREF to: 00553173 (CONDITIONAL_JUMP)  ; LAB_00553173
     XOR EBX,EBX                         ; 00552ff4
     MOV EAX,dword ptr [EBP + 0x10]      ; 00552ff6
         ;   Label: LAB_00552ff6
@@ -220,7 +220,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x28]      ; 0055315d
     ADD EAX,EDX                         ; 00553160
     MOV dword ptr [ECX + 0x40],EAX      ; 00553162 | g_SoftwareEdgeTable[0].g_current
-    INC dword ptr [0x030e56bc]          ; 00553165 | int g_ActiveEdgeCount
+    INC dword ptr [0x030e56bc]          ; 00553165 | g_ActiveEdgeCount
     ADD ESP,0x4                         ; 0055316b
         ;   Label: LAB_0055316b
     POP EBP                             ; 0055316e
@@ -233,6 +233,6 @@ section .text
     XOR EDX,EDX                         ; 00553178
     DIV EBX                             ; 0055317a
     MOV EBX,EAX                         ; 0055317c
-    JMP 0x00552ff6                      ; 0055317e | LAB_00552ff6
-        ;   XREF to: 00552ff6 (UNCONDITIONAL_JUMP)
+    JMP 0x00552ff6                      ; 0055317e
+        ;   XREF to: 00552ff6 (UNCONDITIONAL_JUMP)  ; LAB_00552ff6
 

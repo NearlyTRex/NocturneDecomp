@@ -1,70 +1,70 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 28, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dimage_cpp_0061ecaa", 
-      "addr": "0061ecaa", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00471a40", 
-    "signature": "void core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a40(CDemonImage * this_ptr)", 
-    "address_range": [
-      [
-        "00471a40", 
-        "00471a6c"
-      ]
-    ], 
-    "name": "core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a40"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonImage *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 19,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
   "cross_references": [
     {
-      "from_addr": "004719e6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dimage.cpp_CDemonImage_allocMemory_FUN_004719e0", 
-      "addr": "004719e0"
-    }, 
+      "addr": "004719e0",
+      "from_addr": "004719e6",
+      "name": "core_dimage.cpp_CDemonImage_allocMemory_FUN_004719e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004719c6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dimage.cpp_CDemonImage_dtor_FUN_004719c0", 
-      "addr": "004719c0"
+      "addr": "004719c0",
+      "from_addr": "004719c6",
+      "name": "core_dimage.cpp_CDemonImage_dtor_FUN_004719c0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00471a40",
+    "address_range": [
+      [
+        "00471a40",
+        "00471a6c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a40",
+    "signature": "void core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a40(CDemonImage * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061ecaa",
+      "name": "s_core_dimage_cpp_0061ecaa",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonImage *"
+      }
+    ]
+  },
+  "suspects": []
 }

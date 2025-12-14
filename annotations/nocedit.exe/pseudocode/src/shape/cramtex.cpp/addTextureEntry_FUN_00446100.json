@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 35, 
-    "assembly_lines": 23, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160", 
-      "addr": "00446160"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SCramWorkingEntry[1]", 
-      "name": "g_CramSortedTextureEntries", 
-      "addr": "0083c1dc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramPlacedTextureCount", 
-      "addr": "0084a85c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 23,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00446100", 
-    "signature": "int shape_cramtex.cpp_addTextureEntry_FUN_00446100(SCramWorkingEntry * texture_entry)", 
+    "address": "00446100",
     "address_range": [
       [
-        "00446100", 
+        "00446100",
         "0044613a"
       ]
-    ], 
-    "name": "shape_cramtex.cpp_addTextureEntry_FUN_00446100"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_cramtex.cpp_addTextureEntry_FUN_00446100",
+    "signature": "int shape_cramtex.cpp_addTextureEntry_FUN_00446100(SCramWorkingEntry * texture_entry)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "00446160",
+      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0083c1dc",
+      "name": "g_CramSortedTextureEntries",
+      "type": "SCramWorkingEntry[1]",
+      "value": null
+    },
+    {
+      "addr": "0084a85c",
+      "name": "g_CramPlacedTextureCount",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SCramWorkingEntry *", 
-        "size": 4, 
-        "name": "texture_entry"
+        "is_param": true,
+        "name": "texture_entry",
+        "offset": 12,
+        "size": 4,
+        "type": "SCramWorkingEntry *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

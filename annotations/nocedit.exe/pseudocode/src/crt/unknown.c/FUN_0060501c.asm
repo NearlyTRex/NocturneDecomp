@@ -26,14 +26,14 @@ section .text
     PUSH 0x0                            ; 00605028
     PUSH ESI                            ; 0060502a
     INC EBX                             ; 0060502b
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0060502c | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0060502c
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     XOR EAX,EAX                         ; 00605031
     MOV AL,byte ptr [EBX + -0x1]        ; 00605033
     ADD ESP,0xc                         ; 00605036
     TEST EAX,EAX                        ; 00605039
-    JZ 0x0060505c                       ; 0060503b | LAB_0060505c
-        ;   XREF to: 0060505c (CONDITIONAL_JUMP)
+    JZ 0x0060505c                       ; 0060503b
+        ;   XREF to: 0060505c (CONDITIONAL_JUMP)  ; LAB_0060505c
     MOV EDX,EAX                         ; 0060503d
         ;   Label: LAB_0060503d
     AND EAX,0x7                         ; 0060503f
@@ -43,12 +43,12 @@ section .text
     XOR EAX,EAX                         ; 0060504e
     MOV AL,byte ptr [EBX]               ; 00605050
     TEST EAX,EAX                        ; 00605052
-    JZ 0x0060505c                       ; 00605054 | LAB_0060505c
-        ;   XREF to: 0060505c (CONDITIONAL_JUMP)
+    JZ 0x0060505c                       ; 00605054
+        ;   XREF to: 0060505c (CONDITIONAL_JUMP)  ; LAB_0060505c
     INC EBX                             ; 00605056
     CMP EAX,0x5d                        ; 00605057
-    JNZ 0x0060503d                      ; 0060505a | LAB_0060503d
-        ;   XREF to: 0060503d (CONDITIONAL_JUMP)
+    JNZ 0x0060503d                      ; 0060505a
+        ;   XREF to: 0060503d (CONDITIONAL_JUMP)  ; LAB_0060503d
     MOV EAX,EBX                         ; 0060505c
         ;   Label: LAB_0060505c
     POP ESI                             ; 0060505e

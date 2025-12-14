@@ -32,8 +32,8 @@ section .text
     PUSH EBX                            ; 0043ab98
     MOV ESI,dword ptr [ESP + 0x20]      ; 0043ab99
     PUSH ESI                            ; 0043ab9d
-    CALL core_cloth.cpp_FUN_0043abb0    ; 0043ab9e | undefined core_cloth.cpp_FUN_0043abb0()
-        ;   XREF to: 0043abb0 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043abb0    ; 0043ab9e
+        ;   XREF to: 0043abb0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043abb0()
     ADD ESP,0x18                        ; 0043aba3
     POP ESI                             ; 0043aba6
     POP EBX                             ; 0043aba7

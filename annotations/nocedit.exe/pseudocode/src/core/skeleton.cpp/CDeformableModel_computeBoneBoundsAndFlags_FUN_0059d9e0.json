@@ -1,157 +1,157 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 96, 
-    "pseudocode_lines": 96, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 297, 
-    "assembly_lines": 201, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240", 
-      "addr": "00420240"
-    }, 
-    {
-      "name": "core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0", 
-      "addr": "00420fb0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810", 
-      "addr": "0059a810"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064ed24", 
-      "addr": "0064ed24", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bug_0064ed39", 
-      "addr": "0064ed39", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059d9e0", 
-    "signature": "void core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0(CDeformableModel * this_ptr)", 
-    "address_range": [
-      [
-        "0059d9e0", 
-        "0059dbd0"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0"
-  }, 
-  "stack_frame": {
-    "local_size": 56, 
-    "variables": [
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 60, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 201,
+    "complexity_score": 96,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 96,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 297
+  },
   "cross_references": [
     {
-      "from_addr": "0059c200", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0", 
-      "addr": "0059c1f0"
+      "addr": "0059c1f0",
+      "from_addr": "0059c200",
+      "name": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0059d9e0",
+    "address_range": [
+      [
+        "0059d9e0",
+        "0059dbd0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0",
+    "signature": "void core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0(CDeformableModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00420240",
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240"
+    },
+    {
+      "addr": "00420fb0",
+      "name": "core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0059a810",
+      "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064ed24",
+      "name": "s_core_skeleton_cpp_0064ed24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ed39",
+      "name": "s_Bug_0064ed39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      }
+    ]
+  },
+  "suspects": []
 }

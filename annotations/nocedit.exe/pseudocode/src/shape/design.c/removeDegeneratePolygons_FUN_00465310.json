@@ -1,129 +1,129 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 59, 
-    "pseudocode_lines": 59, 
-    "cross_reference_count": 3, 
-    "global_count": 6, 
-    "total_lines": 230, 
-    "assembly_lines": 171, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_PolygonCount", 
-      "addr": "016e990c", 
-      "value": null
-    }, 
-    {
-      "type": "SShapeEditorPolygon[20000]", 
-      "name": "g_ModelPolygonData", 
-      "addr": "016e9910", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9914", 
-      "addr": "016e9914", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b4", 
-      "addr": "016e99b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c8", 
-      "addr": "016e99c8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99cc", 
-      "addr": "016e99cc", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00465310", 
-    "signature": "void shape_design.c_removeDegeneratePolygons_FUN_00465310(void)", 
-    "address_range": [
-      [
-        "00465310", 
-        "004654d5"
-      ]
-    ], 
-    "name": "shape_design.c_removeDegeneratePolygons_FUN_00465310"
-  }, 
-  "stack_frame": {
-    "local_size": 40, 
-    "variables": [
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 171,
+    "complexity_score": 59,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 6,
+    "pseudocode_lines": 59,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 230
+  },
   "cross_references": [
     {
-      "from_addr": "00465780", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560", 
-      "addr": "00465560"
-    }, 
+      "addr": "00465560",
+      "from_addr": "00465780",
+      "name": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00465aaf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_optimizePolygonMesh_FUN_004658e0", 
-      "addr": "004658e0"
-    }, 
+      "addr": "004658e0",
+      "from_addr": "00465aaf",
+      "name": "shape_design.c_optimizePolygonMesh_FUN_004658e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d77af", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
-      "addr": "005d77a0"
+      "addr": "005d77a0",
+      "from_addr": "005d77af",
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00465310",
+    "address_range": [
+      [
+        "00465310",
+        "004654d5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_removeDegeneratePolygons_FUN_00465310",
+    "signature": "void shape_design.c_removeDegeneratePolygons_FUN_00465310(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "016e990c",
+      "name": "g_PolygonCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "016e9910",
+      "name": "g_ModelPolygonData",
+      "type": "SShapeEditorPolygon[20000]",
+      "value": null
+    },
+    {
+      "addr": "016e9914",
+      "name": "DAT_016e9914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b4",
+      "name": "DAT_016e99b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c8",
+      "name": "DAT_016e99c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99cc",
+      "name": "DAT_016e99cc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -42,8 +42,8 @@ section .text
     PUSH EDI                            ; 0040e6c2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0040e6c3
     CMP dword ptr [EBX + 0x4],0x28      ; 0040e6c7
-    JG 0x0040e73e                       ; 0040e6cb | LAB_0040e73e
-        ;   XREF to: 0040e73e (CONDITIONAL_JUMP)
+    JG 0x0040e73e                       ; 0040e6cb
+        ;   XREF to: 0040e73e (CONDITIONAL_JUMP)  ; LAB_0040e73e
     MOV EDX,dword ptr [EBX + 0x4]       ; 0040e6cd
         ;   Label: LAB_0040e6cd
     MOV EAX,EDX                         ; 0040e6d0
@@ -66,15 +66,15 @@ section .text
         ;   Label: LAB_0040e6f9
     MOV byte ptr [EDI],AL               ; 0040e6fb
     CMP AL,0x0                          ; 0040e6fd
-    JZ 0x0040e711                       ; 0040e6ff | LAB_0040e711
-        ;   XREF to: 0040e711 (CONDITIONAL_JUMP)
+    JZ 0x0040e711                       ; 0040e6ff
+        ;   XREF to: 0040e711 (CONDITIONAL_JUMP)  ; LAB_0040e711
     MOV AL,byte ptr [ESI + 0x1]         ; 0040e701
     ADD ESI,0x2                         ; 0040e704
     MOV byte ptr [EDI + 0x1],AL         ; 0040e707
     ADD EDI,0x2                         ; 0040e70a
     CMP AL,0x0                          ; 0040e70d
-    JNZ 0x0040e6f9                      ; 0040e70f | LAB_0040e6f9
-        ;   XREF to: 0040e6f9 (CONDITIONAL_JUMP)
+    JNZ 0x0040e6f9                      ; 0040e70f
+        ;   XREF to: 0040e6f9 (CONDITIONAL_JUMP)  ; LAB_0040e6f9
     POP EDI                             ; 0040e711
         ;   Label: LAB_0040e711
     MOV dword ptr [EDX + 0x58],0x0      ; 0040e712
@@ -89,15 +89,15 @@ section .text
     POP ESI                             ; 0040e73b
     POP EBX                             ; 0040e73c
     RET                                 ; 0040e73d
-    MOV ECX,0x614471                    ; 0040e73e | = "..\\core\\actor.cpp" | s_core_actor_cpp_00614471 = ..\core\actor.cpp
+    MOV ECX,0x614471                    ; 0040e73e | = "..\\core\\actor.cpp"
         ;   Label: LAB_0040e73e
     MOV ESI,0xec7                       ; 0040e743
-    PUSH 0x614483                       ; 0040e748 | = "CActorPropertyList::snag - Too many a..." | s_CActorPropertyList_snag__00614483 = CActorPropertyList::snag - Too many actor properties!
-    MOV dword ptr [0x02f0ca48],ECX      ; 0040e74d | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 0040e753 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0040e759 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x614483                       ; 0040e748 | = "CActorPropertyList::snag - Too many a..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 0040e74d | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 0040e753 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0040e759
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0040e75e
-    JMP 0x0040e6cd                      ; 0040e761 | LAB_0040e6cd
-        ;   XREF to: 0040e6cd (UNCONDITIONAL_JUMP)
+    JMP 0x0040e6cd                      ; 0040e761
+        ;   XREF to: 0040e6cd (UNCONDITIONAL_JUMP)  ; LAB_0040e6cd
 

@@ -17,15 +17,15 @@
 
 section .text
 
-    PUSH 0x2cf2bb8                      ; 004f6c30 | CDemonActorType g_CEnemyClassInfo
+    PUSH 0x2cf2bb8                      ; 004f6c30 | g_CEnemyClassInfo
         ;   Label: core_hotdemon.cpp_staticInit_FUN_004f6c30
     PUSH 0x1                            ; 004f6c35
-    PUSH 0x67cc70                       ; 004f6c37 | int g_CHotDemonClassVersion
+    PUSH 0x67cc70                       ; 004f6c37 | g_CHotDemonClassVersion
     PUSH 0x4f6c60                       ; 004f6c3c
-    PUSH 0x62f338                       ; 004f6c41 | = "CHotDemon" | s_CHotDemon_0062f338 = CHotDemon
-    PUSH 0x2db88f8                      ; 004f6c46 | CDemonActorType g_CHotDemonClassInfo
-    CALL core_actor.cpp_registerActorClass_FUN_0040c2e0 ; 004f6c4b | CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
-        ;   XREF to: 0040c2e0 (UNCONDITIONAL_CALL)
+    PUSH 0x62f338                       ; 004f6c41 | = "CHotDemon"
+    PUSH 0x2db88f8                      ; 004f6c46 | g_CHotDemonClassInfo
+    CALL core_actor.cpp_registerActorClass_FUN_0040c2e0 ; 004f6c4b
+        ;   XREF to: 0040c2e0 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
     ADD ESP,0x18                        ; 004f6c50
     RET                                 ; 004f6c53
 

@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 51, 
-    "assembly_lines": 35, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350", 
-      "addr": "0050f350"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_0062258a", 
-      "addr": "0062258a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_0062259d", 
-      "addr": "0062259d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonRaytrace_allocCube_006225b0", 
-      "addr": "006225b0", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00494270", 
-    "signature": "void core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00494270(CDemonRaytrace * this_ptr)", 
-    "address_range": [
-      [
-        "00494270", 
-        "004942c7"
-      ]
-    ], 
-    "name": "core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00494270"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRaytrace *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 35,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "00494927", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0", 
-      "addr": "004947a0"
+      "addr": "004947a0",
+      "from_addr": "00494927",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00494270",
+    "address_range": [
+      [
+        "00494270",
+        "004942c7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00494270",
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_allocCubeList_FUN_00494270(CDemonRaytrace * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f350",
+      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062258a",
+      "name": "s_core_dtrace_cpp_0062258a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062259d",
+      "name": "s_core_dtrace_cpp_0062259d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006225b0",
+      "name": "s_CDemonRaytrace_allocCube_006225b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      }
+    ]
+  },
+  "suspects": []
 }

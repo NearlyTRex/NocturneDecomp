@@ -12,7 +12,7 @@ core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0
 
 {
   longlong lVar1;
-  uint uVar2;
+  int iVar2;
   uint uVar3;
   int iVar4;
   int iVar5;
@@ -25,16 +25,16 @@ core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0
     local_14 = 0;
   }
   else {
-    uVar2 = (int)((ray_length + (ray_length >> 0x1f) * -0x100) -
+    iVar2 = (int)((ray_length + (ray_length >> 0x1f) * -0x100) -
                  (uint)((ray_length >> 0x1f) << 7 < 0)) >> 8;
-    local_14 = uVar2;
-    if (uVar2 != 0) {
+    local_14 = 0;
+    if (iVar2 != 0) {
       local_14 = 0;
       local_2c = start_pos->x + (fog_ptr->sampling_offset).x;
       local_28 = start_pos->y + (fog_ptr->sampling_offset).y;
       iVar5 = 0;
       local_24 = start_pos->z + (fog_ptr->sampling_offset).z;
-      if (0 < (int)uVar2) {
+      if (0 < iVar2) {
         do {
           lVar1 = (longlong)fog_ptr->density_multiplier *
                   (longlong)
@@ -64,11 +64,11 @@ core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0
           if (0x4000 < local_14) {
             return 0x4000;
           }
-          local_2c = local_2c + (end_pos->x - start_pos->x) / (int)uVar2;
+          local_2c = local_2c + (end_pos->x - start_pos->x) / iVar2;
           iVar5 = iVar5 + 1;
-          local_28 = local_28 + (end_pos->y - start_pos->y) / (int)uVar2;
-          local_24 = local_24 + (end_pos->z - start_pos->z) / (int)uVar2;
-        } while (iVar5 < (int)uVar2);
+          local_28 = local_28 + (end_pos->y - start_pos->y) / iVar2;
+          local_24 = local_24 + (end_pos->z - start_pos->z) / iVar2;
+        } while (iVar5 < iVar2);
       }
     }
   }

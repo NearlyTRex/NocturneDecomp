@@ -29,8 +29,8 @@ section .text
         ;   Label: core_mission.cpp_CDemonMission_FUN_00523f20
     MOV EBX,dword ptr [ESP + 0xc]       ; 00523f21
     TEST EBX,EBX                        ; 00523f25
-    JNZ 0x00523f2b                      ; 00523f27 | LAB_00523f2b
-        ;   XREF to: 00523f2b (CONDITIONAL_JUMP)
+    JNZ 0x00523f2b                      ; 00523f27
+        ;   XREF to: 00523f2b (CONDITIONAL_JUMP)  ; LAB_00523f2b
     POP EBX                             ; 00523f29
         ;   Label: LAB_00523f29
     RET                                 ; 00523f2a
@@ -38,15 +38,15 @@ section .text
         ;   Label: LAB_00523f2b
     MOV EDX,dword ptr [ESP + 0xc]       ; 00523f2c
     PUSH EDX                            ; 00523f30
-    CALL core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0 ; 00523f31 | void core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
-        ;   XREF to: 00523be0 (UNCONDITIONAL_CALL)
+    CALL core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0 ; 00523f31
+        ;   XREF to: 00523be0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0(CDemonMission * this_ptr, CDemonActor * actor_ptr)
     ADD ESP,0x8                         ; 00523f36
     CMP dword ptr [ESP + 0x10],0x0      ; 00523f39
-    JZ 0x00523f29                       ; 00523f3e | LAB_00523f29
-        ;   XREF to: 00523f29 (CONDITIONAL_JUMP)
+    JZ 0x00523f29                       ; 00523f3e
+        ;   XREF to: 00523f29 (CONDITIONAL_JUMP)  ; LAB_00523f29
     PUSH EBX                            ; 00523f40
-    CALL core_actor.cpp_deleteActor_FUN_00408820 ; 00523f41 | void core_actor.cpp_deleteActor_FUN_00408820(CDemonActor * actor_ptr)
-        ;   XREF to: 00408820 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_deleteActor_FUN_00408820 ; 00523f41
+        ;   XREF to: 00408820 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_deleteActor_FUN_00408820(CDemonActor * actor_ptr)
     ADD ESP,0x4                         ; 00523f46
     POP EBX                             ; 00523f49
     RET                                 ; 00523f4a

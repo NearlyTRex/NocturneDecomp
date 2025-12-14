@@ -1,629 +1,629 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 704, 
-    "pseudocode_lines": 234, 
-    "cross_reference_count": 1, 
-    "global_count": 30, 
-    "total_lines": 748, 
-    "assembly_lines": 514, 
-    "suspect_count": 45, 
+    "assembly_lines": 514,
+    "complexity_score": 704,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 30,
+    "pseudocode_lines": 234,
+    "suspect_count": 45,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "sborrow_artifact", 
+      "unaffected_reg",
+      "sborrow_artifact",
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_prim.c_adjustNearPlaneTextureCoords_FUN_005520a0", 
-      "addr": "005520a0"
-    }, 
-    {
-      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00552150", 
-      "addr": "00552150"
-    }, 
-    {
-      "name": "engine_prim.c_findEdgeInBuffer_FUN_00551f70", 
-      "addr": "00551f70"
-    }, 
-    {
-      "name": "engine_prim.c_normalizeTextureCoords_FUN_00552020", 
-      "addr": "00552020"
-    }, 
-    {
-      "name": "engine_prim.c_prepareDepthBuffer_FUN_00551fb0", 
-      "addr": "00551fb0"
-    }, 
-    {
-      "name": "engine_prim.c_replaceWWithDepth_FUN_00552110", 
-      "addr": "00552110"
-    }, 
-    {
-      "name": "wincore_windll.cpp_drawPolygon_FUN_005b75e0", 
-      "addr": "005b75e0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_renderScanline_FUN_005b5710", 
-      "addr": "005b5710"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_005524e8", 
-      "addr": "005524e8", 
-      "value": "00552620"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_VertexProcessingEnabled", 
-      "addr": "006793bc", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MaxViewportScanline", 
-      "addr": "00680cf4", 
-      "value": "0x4b0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_TexturesDisabled", 
-      "addr": "00772a74", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CullingMode", 
-      "addr": "00772a7c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterXFixed", 
-      "addr": "02d02548", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterYFixed", 
-      "addr": "02d0254c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportRightFixed", 
-      "addr": "02d02550", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportBottomFixed", 
-      "addr": "02d02554", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoftwareEdgeCount", 
-      "addr": "030e5228", 
-      "value": null
-    }, 
-    {
-      "type": "SSoftwareEdge[16]", 
-      "name": "g_SoftwareEdgeBuffer", 
-      "addr": "030e522c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5230", 
-      "addr": "030e5230", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5234", 
-      "addr": "030e5234", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5238", 
-      "addr": "030e5238", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e523c", 
-      "addr": "030e523c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5240", 
-      "addr": "030e5240", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5244", 
-      "addr": "030e5244", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5248", 
-      "addr": "030e5248", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e524c", 
-      "addr": "030e524c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5250", 
-      "addr": "030e5250", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5254", 
-      "addr": "030e5254", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5258", 
-      "addr": "030e5258", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e525c", 
-      "addr": "030e525c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5260", 
-      "addr": "030e5260", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoftwareMinScanline", 
-      "addr": "030e56ac", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoftwareMaxScanline", 
-      "addr": "030e56b0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderedTriangleCount", 
-      "addr": "030e56b8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_ffffffe4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffe4;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_ffffffec;"
-    }, 
-    {
-      "line": 69, 
-      "match": "in_stack_ffffffe4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar10 < in_stack_ffffffe4);"
-    }, 
-    {
-      "line": 71, 
-      "match": "in_stack_ffffffe4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (iVar9 == in_stack_ffffffe4) {"
-    }, 
-    {
-      "line": 77, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_RenderedTriangleCount = g_RenderedTriangleCount + in_stack_0000000c + -2;"
-    }, 
-    {
-      "line": 79, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c,g_RenderStateFlags);"
-    }, 
-    {
-      "line": 85, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_prim_c_prepareDepthBuffer_FUN_00551fb0((SRenderVertex *)vertex_count,in_stack_0000000c);"
-    }, 
-    {
-      "line": 89, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c);"
-    }, 
-    {
-      "line": 93, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c);"
-    }, 
-    {
-      "line": 97, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c);"
-    }, 
-    {
-      "line": 100, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_prim_c_replaceWWithDepth_FUN_00552110((SRenderVertex *)vertex_count,in_stack_0000000c);"
-    }, 
-    {
-      "line": 106, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < in_stack_0000000c) {"
-    }, 
-    {
-      "line": 110, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c <= iVar9) {"
-    }, 
-    {
-      "line": 186, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "left_data = (void *)((int)left_data + 1);"
-    }, 
-    {
-      "line": 187, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while ((int)left_data < in_stack_0000000c);"
-    }, 
-    {
-      "line": 195, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "bVar12 = SBORROW /* signed borrow */4(g_SoftwareMinScanline,g_MaxViewportScanline);"
-    }, 
-    {
-      "line": 211, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(left_data,in_stack_ffffffec,unaff_EBP);"
-    }, 
-    {
-      "line": 211, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(left_data,in_stack_ffffffec,unaff_EBP);"
-    }, 
-    {
-      "line": 218, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 8) ="
-    }, 
-    {
-      "line": 219, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 8) + *(int *)(in_stack_00000014 + 0xc);"
-    }, 
-    {
-      "line": 219, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 8) + *(int *)(in_stack_00000014 + 0xc);"
-    }, 
-    {
-      "line": 220, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x18) ="
-    }, 
-    {
-      "line": 221, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x18) + *(int *)(in_stack_00000014 + 0x1c);"
-    }, 
-    {
-      "line": 221, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x18) + *(int *)(in_stack_00000014 + 0x1c);"
-    }, 
-    {
-      "line": 222, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x20) ="
-    }, 
-    {
-      "line": 223, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x20) + *(int *)(in_stack_00000014 + 0x24);"
-    }, 
-    {
-      "line": 223, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x20) + *(int *)(in_stack_00000014 + 0x24);"
-    }, 
-    {
-      "line": 224, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;"
-    }, 
-    {
-      "line": 224, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;"
-    }, 
-    {
-      "line": 225, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x10) ="
-    }, 
-    {
-      "line": 226, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x10) + *(int *)(in_stack_00000014 + 0x14);"
-    }, 
-    {
-      "line": 226, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x10) + *(int *)(in_stack_00000014 + 0x14);"
-    }, 
-    {
-      "line": 228, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x28) ="
-    }, 
-    {
-      "line": 229, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x28) + *(int *)(in_stack_00000014 + 0x2c);"
-    }, 
-    {
-      "line": 229, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x28) + *(int *)(in_stack_00000014 + 0x2c);"
-    }, 
-    {
-      "line": 230, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x30) ="
-    }, 
-    {
-      "line": 231, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x30) + *(int *)(in_stack_00000014 + 0x34);"
-    }, 
-    {
-      "line": 231, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x30) + *(int *)(in_stack_00000014 + 0x34);"
-    }, 
-    {
-      "line": 232, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar9 = in_stack_00000010 - iVar2;"
-    }, 
-    {
-      "line": 233, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "bVar12 = SBORROW /* signed borrow */4(in_stack_00000010,iVar2);"
-    }, 
-    {
-      "line": 233, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "bVar12 = SBORROW /* signed borrow */4(in_stack_00000010,iVar2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00552510", 
-    "signature": "void engine_prim.c_renderPolygonSoftware_FUN_00552510(SRenderVertex * vertices, int vertex_count)", 
-    "address_range": [
-      [
-        "00552510", 
-        "00552a30"
-      ]
-    ], 
-    "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510"
-  }, 
-  "stack_frame": {
-    "local_size": 40, 
-    "variables": [
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SRenderVertex *", 
-        "size": 4, 
-        "name": "vertices"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 748
+  },
   "cross_references": [
     {
-      "from_addr": "004371ef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
-      "addr": "004371b0"
+      "addr": "004371b0",
+      "from_addr": "004371ef",
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00552510",
+    "address_range": [
+      [
+        "00552510",
+        "00552a30"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510",
+    "signature": "void engine_prim.c_renderPolygonSoftware_FUN_00552510(SRenderVertex * vertices, int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "005520a0",
+      "name": "engine_prim.c_adjustNearPlaneTextureCoords_FUN_005520a0"
+    },
+    {
+      "addr": "00552150",
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00552150"
+    },
+    {
+      "addr": "00551f70",
+      "name": "engine_prim.c_findEdgeInBuffer_FUN_00551f70"
+    },
+    {
+      "addr": "00552020",
+      "name": "engine_prim.c_normalizeTextureCoords_FUN_00552020"
+    },
+    {
+      "addr": "00551fb0",
+      "name": "engine_prim.c_prepareDepthBuffer_FUN_00551fb0"
+    },
+    {
+      "addr": "00552110",
+      "name": "engine_prim.c_replaceWWithDepth_FUN_00552110"
+    },
+    {
+      "addr": "005b75e0",
+      "name": "wincore_windll.cpp_drawPolygon_FUN_005b75e0"
+    },
+    {
+      "addr": "005b5710",
+      "name": "wincore_windll.cpp_renderScanline_FUN_005b5710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005524e8",
+      "name": "switchdataD_005524e8",
+      "type": "void*",
+      "value": "00552620"
+    },
+    {
+      "addr": "006793bc",
+      "name": "g_VertexProcessingEnabled",
+      "type": "uint",
+      "value": "0x1"
+    },
+    {
+      "addr": "00680cf4",
+      "name": "g_MaxViewportScanline",
+      "type": "int",
+      "value": "0x4b0"
+    },
+    {
+      "addr": "00772a74",
+      "name": "g_TexturesDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a7c",
+      "name": "g_CullingMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02548",
+      "name": "g_ViewportCenterXFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_ViewportCenterYFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02550",
+      "name": "g_ViewportRightFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02554",
+      "name": "g_ViewportBottomFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e5228",
+      "name": "g_SoftwareEdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e522c",
+      "name": "g_SoftwareEdgeBuffer",
+      "type": "SSoftwareEdge[16]",
+      "value": null
+    },
+    {
+      "addr": "030e5230",
+      "name": "DAT_030e5230",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e5234",
+      "name": "DAT_030e5234",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e5238",
+      "name": "DAT_030e5238",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e523c",
+      "name": "DAT_030e523c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e5240",
+      "name": "DAT_030e5240",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e5244",
+      "name": "DAT_030e5244",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e5248",
+      "name": "DAT_030e5248",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e524c",
+      "name": "DAT_030e524c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e5250",
+      "name": "DAT_030e5250",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e5254",
+      "name": "DAT_030e5254",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e5258",
+      "name": "DAT_030e5258",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e525c",
+      "name": "DAT_030e525c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e5260",
+      "name": "DAT_030e5260",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030e56ac",
+      "name": "g_SoftwareMinScanline",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e56b0",
+      "name": "g_SoftwareMaxScanline",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e56b8",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_ffffffe4",
+      "text": "int in_stack_ffffffe4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_ffffffec",
+      "text": "void *in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_ffffffe4",
+      "text": "} while (iVar10 < in_stack_ffffffe4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_ffffffe4",
+      "text": "if (iVar9 == in_stack_ffffffe4) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 77,
+      "match": "in_stack_0000000c",
+      "text": "g_RenderedTriangleCount = g_RenderedTriangleCount + in_stack_0000000c + -2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_0000000c",
+      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c,g_RenderStateFlags);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_0000000c",
+      "text": "engine_prim_c_prepareDepthBuffer_FUN_00551fb0((SRenderVertex *)vertex_count,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_0000000c",
+      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_0000000c",
+      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 97,
+      "match": "in_stack_0000000c",
+      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 100,
+      "match": "in_stack_0000000c",
+      "text": "engine_prim_c_replaceWWithDepth_FUN_00552110((SRenderVertex *)vertex_count,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 106,
+      "match": "in_stack_0000000c",
+      "text": "if (0 < in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c <= iVar9) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 186,
+      "match": "(void *)((int)",
+      "text": "left_data = (void *)((int)left_data + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 187,
+      "match": "in_stack_0000000c",
+      "text": "} while ((int)left_data < in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler signed borrow artifact",
+      "line": 195,
+      "match": "SBORROW",
+      "text": "bVar12 = SBORROW /* signed borrow */4(g_SoftwareMinScanline,g_MaxViewportScanline);",
+      "type": "sborrow_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 211,
+      "match": "in_stack_ffffffec",
+      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(left_data,in_stack_ffffffec,unaff_EBP);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 211,
+      "match": "unaff_EBP",
+      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(left_data,in_stack_ffffffec,unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 218,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 8) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 219,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 8) + *(int *)(in_stack_00000014 + 0xc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 219,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 8) + *(int *)(in_stack_00000014 + 0xc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 220,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x18) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 221,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x18) + *(int *)(in_stack_00000014 + 0x1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 221,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x18) + *(int *)(in_stack_00000014 + 0x1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 222,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x20) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 223,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x20) + *(int *)(in_stack_00000014 + 0x24);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 223,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x20) + *(int *)(in_stack_00000014 + 0x24);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 224,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 224,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 225,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x10) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 226,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x10) + *(int *)(in_stack_00000014 + 0x14);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 226,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x10) + *(int *)(in_stack_00000014 + 0x14);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 228,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x28) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 229,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x28) + *(int *)(in_stack_00000014 + 0x2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 229,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x28) + *(int *)(in_stack_00000014 + 0x2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 230,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x30) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 231,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x30) + *(int *)(in_stack_00000014 + 0x34);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 231,
+      "match": "in_stack_00000014",
+      "text": "*(int *)(in_stack_00000014 + 0x30) + *(int *)(in_stack_00000014 + 0x34);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 232,
+      "match": "in_stack_00000010",
+      "text": "iVar9 = in_stack_00000010 - iVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 233,
+      "match": "in_stack_00000010",
+      "text": "bVar12 = SBORROW /* signed borrow */4(in_stack_00000010,iVar2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler signed borrow artifact",
+      "line": 233,
+      "match": "SBORROW",
+      "text": "bVar12 = SBORROW /* signed borrow */4(in_stack_00000010,iVar2);",
+      "type": "sborrow_artifact"
     }
   ]
 }

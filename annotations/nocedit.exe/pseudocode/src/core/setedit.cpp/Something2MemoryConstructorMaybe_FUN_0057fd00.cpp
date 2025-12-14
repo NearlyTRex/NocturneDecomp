@@ -36,10 +36,10 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
   bVar5 = 0;
   core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310();
   crt_memory_c_memset_FUN_005fde40(in_stack_00000008,0,g_WindowWidth * g_WindowHeight);
-  local_2c = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                              (g_CDemonCameraInstance.framebuffer_height *
-                               g_CDemonCameraInstance.framebuffer_width * 0xc,
-                               "..\\core\\setedit.cpp",0xf22);
+  local_2c = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                       (g_CDemonCameraInstance.framebuffer_height *
+                        g_CDemonCameraInstance.framebuffer_width * 0xc,"..\\core\\setedit.cpp",
+                        0xf22);
   if (local_2c == (int *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0xf23;

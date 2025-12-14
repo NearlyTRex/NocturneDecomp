@@ -1,434 +1,434 @@
 {
   "complexity": {
-    "function_call_count": 10, 
-    "complexity_score": 565, 
-    "pseudocode_lines": 215, 
-    "cross_reference_count": 0, 
-    "global_count": 16, 
-    "total_lines": 654, 
-    "assembly_lines": 439, 
-    "suspect_count": 31, 
+    "assembly_lines": 439,
+    "complexity_score": 565,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 16,
+    "pseudocode_lines": 215,
+    "suspect_count": 31,
     "suspect_types": [
-      "stack_param", 
-      "suspect_float", 
-      "unknown_field", 
-      "extra_output", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "suspect_float",
+      "extra_output",
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
+      "unknown_field",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_FUN_0040dec0", 
-      "addr": "0040dec0"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
-      "addr": "00408b40"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
-      "addr": "00408b00"
-    }, 
-    {
-      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
-      "addr": "004204f0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10", 
-      "addr": "0048ae10"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0", 
-      "addr": "0048c9f0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_005e00a4", 
-      "addr": "005e00a4", 
-      "value": "005e0159"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0065563c", 
-      "addr": "0065563c", 
-      "value": "0.100000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00655644", 
-      "addr": "00655644", 
-      "value": "12"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0065564c", 
-      "addr": "0065564c", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00655654", 
-      "addr": "00655654", 
-      "value": "256"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0065565c", 
-      "addr": "0065565c", 
-      "value": "2"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00655664", 
-      "addr": "00655664", 
-      "value": "3.14159265350000"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00664a00", 
-      "addr": "00664a00", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonMission*", 
-      "name": "g_CDemonMissionPtr", 
-      "addr": "0067d550", 
-      "value": "02f33740"
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "DAT_0068434c", 
-      "addr": "0068434c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00800000", 
-      "addr": "00800000", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonMission", 
-      "name": "g_CDemonMissionInstance", 
-      "addr": "02f33740", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f33744", 
-      "addr": "02f33744", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f33768", 
-      "addr": "02f33768", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005e00dc", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000024;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000028;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_ffffff6c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_ffffff6c;"
-    }, 
-    {
-      "line": 49, 
-      "match": "&stack0xffffff64", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffff64);"
-    }, 
-    {
-      "line": 109, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)(extraout_ECX + 0x20) = iStack0000000c;"
-    }, 
-    {
-      "line": 113, 
-      "match": "1.1754944e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr_01->vertex_buffer_ptr->u = 1.1754944e-38;"
-    }, 
-    {
-      "line": 114, 
-      "match": "1.1754944e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr_01->vertex_buffer_ptr->v = 1.1754944e-38;"
-    }, 
-    {
-      "line": 128, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 129, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 137, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (-1 < (int)auStack_90._0_4_) {"
-    }, 
-    {
-      "line": 141, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000028 = (float)auStack_90._0_4_;"
-    }, 
-    {
-      "line": 141, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "in_stack_00000028 = (float)auStack_90._0_4_;"
-    }, 
-    {
-      "line": 143, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(float10)(int)auStack_90._0_4_;"
-    }, 
-    {
-      "line": 147, 
-      "match": "in_stack_ffffff6c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fStack_28 = (float)(fVar9 * (float10)in_stack_ffffff6c);"
-    }, 
-    {
-      "line": 148, 
-      "match": "in_stack_ffffff6c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fStack_20 = (float)(fVar10 * (float10)in_stack_ffffff6c);"
-    }, 
-    {
-      "line": 150, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar7 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex)."
-    }, 
-    {
-      "line": 154, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 167, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar7 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex)."
-    }, 
-    {
-      "line": 171, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 177, 
-      "match": "&stack0xfffffff8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iStack00000020),(CVector3i *)&stack0xfffffff8);"
-    }, 
-    {
-      "line": 178, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000024 = iStack00000020 + 0x60;"
-    }, 
-    {
-      "line": 181, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "} while ((int)fVar12 <= (int)auStack_90._0_4_);"
-    }, 
-    {
-      "line": 186, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (0 < (int)auStack_90._4_4_) {"
-    }, 
-    {
-      "line": 196, 
-      "match": "4.2039e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "auStack_90._4_4_ = 4.2039e-45;"
-    }, 
-    {
-      "line": 196, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_90._4_4_ = 4.2039e-45;"
-    }, 
-    {
-      "line": 197, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "SStack_88.surface_normal.D = in_stack_00000024;"
-    }, 
-    {
-      "line": 207, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "} while (iVar2 < (int)auStack_90._4_4_);"
-    }, 
-    {
-      "line": 212, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return (int)in_stack_00000028;"
-    }
-  ], 
+    ],
+    "total_lines": 654
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005e00d0", 
-    "signature": "int core_trigger.cpp_CTrigger_FUN_005e00d0(CTrigger * this_ptr)", 
+    "address": "005e00d0",
     "address_range": [
       [
-        "005e00d0", 
+        "005e00d0",
         "005e0623"
       ]
-    ], 
-    "name": "core_trigger.cpp_CTrigger_FUN_005e00d0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_trigger.cpp_CTrigger_FUN_005e00d0",
+    "signature": "int core_trigger.cpp_CTrigger_FUN_005e00d0(CTrigger * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040dec0",
+      "name": "core_actor.cpp_CDemonActor_FUN_0040dec0"
+    },
+    {
+      "addr": "00408b40",
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "004204f0",
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048ae10",
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10"
+    },
+    {
+      "addr": "0048c9f0",
+      "name": "engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e00a4",
+      "name": "switchdataD_005e00a4",
+      "type": "void*",
+      "value": "005e0159"
+    },
+    {
+      "addr": "0065563c",
+      "name": "DOUBLE_0065563c",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
+    {
+      "addr": "00655644",
+      "name": "DOUBLE_00655644",
+      "type": "double",
+      "value": "12"
+    },
+    {
+      "addr": "0065564c",
+      "name": "DOUBLE_0065564c",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00655654",
+      "name": "FLOAT_00655654",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0065565c",
+      "name": "DOUBLE_0065565c",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00655664",
+      "name": "DOUBLE_00655664",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00664a00",
+      "name": "DAT_00664a00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "0068434c",
+      "name": "DAT_0068434c",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "00800000",
+      "name": "DAT_00800000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "02f33744",
+      "name": "DAT_02f33744",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f33768",
+      "name": "DAT_02f33768",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 168, 
+    "frame_size": 172,
+    "local_size": 168,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -164, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_a4"
-      }, 
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CTrigger *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 172, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005e00dc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000024",
+      "text": "int in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000028",
+      "text": "float in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_ffffff6c",
+      "text": "float in_stack_ffffff6c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 49,
+      "match": "&stack0xffffff64",
+      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffff64);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 109,
+      "match": "extraout_ECX",
+      "text": "*(int *)(extraout_ECX + 0x20) = iStack0000000c;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 113,
+      "match": "1.1754944e-38",
+      "text": "this_ptr_01->vertex_buffer_ptr->u = 1.1754944e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 114,
+      "match": "1.1754944e-38",
+      "text": "this_ptr_01->vertex_buffer_ptr->v = 1.1754944e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 129,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 137,
+      "match": "._0_4_",
+      "text": "if (-1 < (int)auStack_90._0_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 141,
+      "match": "in_stack_00000028",
+      "text": "in_stack_00000028 = (float)auStack_90._0_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 141,
+      "match": "._0_4_",
+      "text": "in_stack_00000028 = (float)auStack_90._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 143,
+      "match": "._0_4_",
+      "text": "(float10)(int)auStack_90._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 147,
+      "match": "in_stack_ffffff6c",
+      "text": "fStack_28 = (float)(fVar9 * (float10)in_stack_ffffff6c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 148,
+      "match": "in_stack_ffffff6c",
+      "text": "fStack_20 = (float)(fVar10 * (float10)in_stack_ffffff6c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(int *)((int)",
+      "text": "piVar7 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 167,
+      "match": "(int *)((int)",
+      "text": "piVar7 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 171,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 177,
+      "match": "&stack0xfffffff8",
+      "text": "iStack00000020),(CVector3i *)&stack0xfffffff8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 178,
+      "match": "in_stack_00000024",
+      "text": "in_stack_00000024 = iStack00000020 + 0x60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 181,
+      "match": "._0_4_",
+      "text": "} while ((int)fVar12 <= (int)auStack_90._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 186,
+      "match": "._4_4_",
+      "text": "if (0 < (int)auStack_90._4_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 196,
+      "match": "4.2039e-45",
+      "text": "auStack_90._4_4_ = 4.2039e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 196,
+      "match": "._4_4_",
+      "text": "auStack_90._4_4_ = 4.2039e-45;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 197,
+      "match": "in_stack_00000024",
+      "text": "SStack_88.surface_normal.D = in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 207,
+      "match": "._4_4_",
+      "text": "} while (iVar2 < (int)auStack_90._4_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 212,
+      "match": "in_stack_00000028",
+      "text": "return (int)in_stack_00000028;",
+      "type": "stack_param"
+    }
+  ]
 }

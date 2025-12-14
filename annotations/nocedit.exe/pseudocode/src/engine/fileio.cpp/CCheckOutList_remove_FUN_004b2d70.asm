@@ -36,27 +36,27 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004b2d73
     MOV ESI,dword ptr [ESP + 0x14]      ; 004b2d77
     TEST ESI,ESI                        ; 004b2d7b
-    JL 0x004b2d83                       ; 004b2d7d | LAB_004b2d83
-        ;   XREF to: 004b2d83 (CONDITIONAL_JUMP)
+    JL 0x004b2d83                       ; 004b2d7d
+        ;   XREF to: 004b2d83 (CONDITIONAL_JUMP)  ; LAB_004b2d83
     CMP ESI,dword ptr [EBX]             ; 004b2d7f
-    JL 0x004b2da8                       ; 004b2d81 | LAB_004b2da8
-        ;   XREF to: 004b2da8 (CONDITIONAL_JUMP)
+    JL 0x004b2da8                       ; 004b2d81
+        ;   XREF to: 004b2da8 (CONDITIONAL_JUMP)  ; LAB_004b2da8
     PUSH EDI                            ; 004b2d83
         ;   Label: LAB_004b2d83
-    MOV ECX,0x62642c                    ; 004b2d84 | = "..\\engine\\fileio.cpp" | s_engine_fileio_cpp_0062642c = ..\engine\fileio.cpp
+    MOV ECX,0x62642c                    ; 004b2d84 | = "..\\engine\\fileio.cpp"
     MOV EDI,0x2f4                       ; 004b2d89
-    PUSH 0x626441                       ; 004b2d8e | = "CCheckOutList::remove - invalid index!" | s_CCheckOutList_remove_inv_00626441 = CCheckOutList::remove - invalid index!
-    MOV dword ptr [0x02f0ca48],ECX      ; 004b2d93 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 004b2d99 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b2d9f | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x626441                       ; 004b2d8e | = "CCheckOutList::remove - invalid index!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 004b2d93 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 004b2d99 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b2d9f
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004b2da4
     POP EDI                             ; 004b2da7
     MOV EBP,dword ptr [EBX]             ; 004b2da8
         ;   Label: LAB_004b2da8
     CMP EBP,0x1                         ; 004b2daa
-    JLE 0x004b2e47                      ; 004b2dad | LAB_004b2e47
-        ;   XREF to: 004b2e47 (CONDITIONAL_JUMP)
+    JLE 0x004b2e47                      ; 004b2dad
+        ;   XREF to: 004b2e47 (CONDITIONAL_JUMP)  ; LAB_004b2e47
     LEA EAX,[EBP + -0x1]                ; 004b2db3
     MOV EDX,EAX                         ; 004b2db6
     SUB EDX,ESI                         ; 004b2db8
@@ -86,8 +86,8 @@ section .text
     SUB EAX,EDX                         ; 004b2dfd
     ADD ECX,EAX                         ; 004b2dff
     PUSH ECX                            ; 004b2e01
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b2e02 | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b2e02
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     MOV EDX,dword ptr [EBX]             ; 004b2e07
     LEA EAX,[EDX*0x4 + 0x0]             ; 004b2e09
     SUB EAX,EDX                         ; 004b2e10
@@ -96,13 +96,13 @@ section .text
     PUSH 0x2f8                          ; 004b2e18
     MOV EDX,EAX                         ; 004b2e1d
     SHL EAX,0x4                         ; 004b2e1f
-    PUSH 0x626468                       ; 004b2e22 | = "..\\engine\\fileio.cpp" | s_engine_fileio_cpp_00626468 = ..\engine\fileio.cpp
+    PUSH 0x626468                       ; 004b2e22 | = "..\\engine\\fileio.cpp"
     SUB EAX,EDX                         ; 004b2e27
     PUSH EAX                            ; 004b2e29
     MOV EDX,dword ptr [EBX + 0x4]       ; 004b2e2a
     PUSH EDX                            ; 004b2e2d
-    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004b2e2e | void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
-        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004b2e2e
+        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
     ADD ESP,0x10                        ; 004b2e33
     MOV dword ptr [EBX + 0x4],EAX       ; 004b2e36
     TEST EAX,EAX                        ; 004b2e39
@@ -114,8 +114,8 @@ section .text
     RET                                 ; 004b2e46
     PUSH EBX                            ; 004b2e47
         ;   Label: LAB_004b2e47
-    CALL engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860 ; 004b2e48 | void engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860(CCheckOutList * this_ptr)
-        ;   XREF to: 004b2860 (UNCONDITIONAL_CALL)
+    CALL engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860 ; 004b2e48
+        ;   XREF to: 004b2860 (UNCONDITIONAL_CALL)  ; void engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860(CCheckOutList * this_ptr)
     MOV EAX,0x1                         ; 004b2e4d
     ADD ESP,0x4                         ; 004b2e52
     POP EBP                             ; 004b2e55

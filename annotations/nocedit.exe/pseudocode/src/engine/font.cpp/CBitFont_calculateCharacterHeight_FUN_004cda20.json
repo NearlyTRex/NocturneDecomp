@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 84, 
-    "assembly_lines": 54, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004cda20", 
-    "signature": "int engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20(CBitFont * this_ptr, uchar * char_bitmap, int char_width, int char_height, int bitmap_stride)", 
-    "address_range": [
-      [
-        "004cda20", 
-        "004cda7d"
-      ]
-    ], 
-    "name": "engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBitFont *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uchar *", 
-        "size": 4, 
-        "name": "char_bitmap"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "char_width"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "char_height"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bitmap_stride"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 54,
+    "complexity_score": 30,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 84
+  },
   "cross_references": [
     {
-      "from_addr": "004cd968", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550", 
-      "addr": "004cd550"
+      "addr": "004cd550",
+      "from_addr": "004cd968",
+      "name": "engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004cda20",
+    "address_range": [
+      [
+        "004cda20",
+        "004cda7d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20",
+    "signature": "int engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20(CBitFont * this_ptr, uchar * char_bitmap, int char_width, int char_height, int bitmap_stride)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "char_bitmap",
+        "offset": 8,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "char_width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "char_height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_stride",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

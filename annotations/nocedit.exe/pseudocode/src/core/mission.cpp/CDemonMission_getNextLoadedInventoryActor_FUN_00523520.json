@@ -1,122 +1,122 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 58, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 74, 
-    "assembly_lines": 51, 
-    "suspect_count": 3, 
+    "assembly_lines": 51,
+    "complexity_score": 58,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 23,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_mission_cpp_00638d9c", 
-      "addr": "00638d9c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonMission_getNextLoa_00638db0", 
-      "addr": "00638db0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_mission_cpp_00638de6", 
-      "addr": "00638de6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonMission_getNextLoa_00638dfa", 
-      "addr": "00638dfa", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_0000000c;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(char **)(this_ptr->field6_0x54c + 0x33c),in_stack_0000000c);"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(\"CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!\",in_stack_0000000c,"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00523520", 
-    "signature": "void core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission * this_ptr)", 
-    "address_range": [
-      [
-        "00523520", 
-        "005235ae"
-      ]
-    ], 
-    "name": "core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonMission *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 74
+  },
   "cross_references": [
     {
-      "from_addr": "004ff570", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_load_FUN_004ff400", 
-      "addr": "004ff400"
+      "addr": "004ff400",
+      "from_addr": "004ff570",
+      "name": "core_inv.cpp_CInventory_load_FUN_004ff400",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00523520",
+    "address_range": [
+      [
+        "00523520",
+        "005235ae"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520",
+    "signature": "void core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_00523520(CDemonMission * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00638d9c",
+      "name": "s_core_mission_cpp_00638d9c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00638db0",
+      "name": "s_CDemonMission_getNextLoa_00638db0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00638de6",
+      "name": "s_core_mission_cpp_00638de6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00638dfa",
+      "name": "s_CDemonMission_getNextLoa_00638dfa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_0000000c",
+      "text": "(*(char **)(this_ptr->field6_0x54c + 0x33c),in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000000c",
+      "text": "(\"CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!\",in_stack_0000000c,",
+      "type": "stack_param"
     }
   ]
 }

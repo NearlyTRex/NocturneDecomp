@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 57, 
-    "assembly_lines": 45, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_MouseButtonClickCounter", 
-      "addr": "015c4840", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseButtonFlags", 
-      "addr": "02cf6a94", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00464870", 
-    "signature": "int shape_design.c_detectMouseButtonClick_FUN_00464870(int mouse_button_mask)", 
-    "address_range": [
-      [
-        "00464870", 
-        "004648d6"
-      ]
-    ], 
-    "name": "shape_design.c_detectMouseButtonClick_FUN_00464870"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "mouse_button_mask"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 45,
+    "complexity_score": 12,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 57
+  },
   "cross_references": [
     {
-      "from_addr": "00464b72", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0", 
-      "addr": "004648e0"
-    }, 
+      "addr": "004648e0",
+      "from_addr": "00464b72",
+      "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00464e63", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90", 
-      "addr": "00464c90"
+      "addr": "00464c90",
+      "from_addr": "00464e63",
+      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00464870",
+    "address_range": [
+      [
+        "00464870",
+        "004648d6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_detectMouseButtonClick_FUN_00464870",
+    "signature": "int shape_design.c_detectMouseButtonClick_FUN_00464870(int mouse_button_mask)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "015c4840",
+      "name": "g_MouseButtonClickCounter",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "mouse_button_mask",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -33,8 +33,8 @@ section .text
     FCOMP double ptr [EBP + -0x8]       ; 0046add7
     FNSTSW AX                           ; 0046adda
     SAHF                                ; 0046addc
-    JNC 0x0046aded                      ; 0046addd | LAB_0046aded
-        ;   XREF to: 0046aded (CONDITIONAL_JUMP)
+    JNC 0x0046aded                      ; 0046addd
+        ;   XREF to: 0046aded (CONDITIONAL_JUMP)  ; LAB_0046aded
     MOV dword ptr [EBP + -0x8],0x0      ; 0046addf
     MOV dword ptr [EBP + -0x4],0x3ff00000 ; 0046ade6
     FLD double ptr [EBP + 0x1c]         ; 0046aded
@@ -42,8 +42,8 @@ section .text
     FCOMP double ptr [EBP + 0x14]       ; 0046adf0
     FNSTSW AX                           ; 0046adf3
     SAHF                                ; 0046adf5
-    JBE 0x0046ae04                      ; 0046adf6 | LAB_0046ae04
-        ;   XREF to: 0046ae04 (CONDITIONAL_JUMP)
+    JBE 0x0046ae04                      ; 0046adf6
+        ;   XREF to: 0046ae04 (CONDITIONAL_JUMP)  ; LAB_0046ae04
     FLD double ptr [EBP + 0x1c]         ; 0046adf8
     FSUB double ptr [EBP + 0x14]        ; 0046adfb
     FMUL double ptr [EBP + -0x8]        ; 0046adfe

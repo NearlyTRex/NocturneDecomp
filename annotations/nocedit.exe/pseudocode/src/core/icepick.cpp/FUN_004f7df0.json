@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 36, 
-    "pseudocode_lines": 36, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 66, 
-    "assembly_lines": 30, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_hero.cpp_FUN_004f2340", 
-      "addr": "004f2340"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_icepick_dfm_0062f5a8", 
-      "addr": "0062f5a8", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_icepick.cpp_FUN_00660034", 
-      "addr": "00660034", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004f7df0", 
-    "signature": "CIcePick * core_icepick.cpp_FUN_004f7df0(CIcePick * this_ptr)", 
-    "address_range": [
-      [
-        "004f7df0", 
-        "004f7e71"
-      ]
-    ], 
-    "name": "core_icepick.cpp_FUN_004f7df0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CIcePick *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 30,
+    "complexity_score": 36,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 66
+  },
   "cross_references": [
     {
-      "from_addr": "004f7dca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_icepick.cpp_FUN_004f7db0", 
-      "addr": "004f7db0"
+      "addr": "004f7db0",
+      "from_addr": "004f7dca",
+      "name": "core_icepick.cpp_FUN_004f7db0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004f7df0",
+    "address_range": [
+      [
+        "004f7df0",
+        "004f7e71"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_icepick.cpp_FUN_004f7df0",
+    "signature": "CIcePick * core_icepick.cpp_FUN_004f7df0(CIcePick * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f2340",
+      "name": "core_hero.cpp_FUN_004f2340"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062f5a8",
+      "name": "s_icepick_dfm_0062f5a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00660034",
+      "name": "PTR_core_icepick.cpp_FUN_00660034",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIcePick *"
+      }
+    ]
+  },
+  "suspects": []
 }

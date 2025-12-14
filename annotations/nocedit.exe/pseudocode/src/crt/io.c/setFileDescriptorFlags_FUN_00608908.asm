@@ -28,14 +28,14 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0060890d
     SHL EAX,0x2                         ; 00608911
     TEST EDX,EDX                        ; 00608914
-    JZ 0x00608926                       ; 00608916 | LAB_00608926
-        ;   XREF to: 00608926 (CONDITIONAL_JUMP)
-    MOV EBX,dword ptr [0x00685268]      ; 00608918 | FileDescriptor * PTR_g_FileDescriptorTable_00685268
+    JZ 0x00608926                       ; 00608916
+        ;   XREF to: 00608926 (CONDITIONAL_JUMP)  ; LAB_00608926
+    MOV EBX,dword ptr [0x00685268]      ; 00608918 | PTR_g_FileDescriptorTable_00685268
     OR DH,0x40                          ; 0060891e
     MOV dword ptr [EBX + EAX*0x1],EDX   ; 00608921 | g_FileDescriptorTable
     POP EBX                             ; 00608924
     RET                                 ; 00608925
-    MOV EBX,dword ptr [0x00685268]      ; 00608926 | FileDescriptor * PTR_g_FileDescriptorTable_00685268
+    MOV EBX,dword ptr [0x00685268]      ; 00608926 | PTR_g_FileDescriptorTable_00685268
         ;   Label: LAB_00608926
     MOV dword ptr [EBX + EAX*0x1],EDX   ; 0060892c | g_FileDescriptorTable
     POP EBX                             ; 0060892f

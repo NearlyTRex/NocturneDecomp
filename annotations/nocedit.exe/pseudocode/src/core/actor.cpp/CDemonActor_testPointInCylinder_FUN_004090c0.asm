@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x38]      ; 004090c4
     MOV EAX,ESP                         ; 004090c8
     PUSH EAX                            ; 004090ca
-    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0 ; 004090cb | SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo * this_ptr)
-        ;   XREF to: 005743c0 (UNCONDITIONAL_CALL)
+    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0 ; 004090cb
+        ;   XREF to: 005743c0 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo * this_ptr)
     LEA EAX,[ESP + 0x4]                 ; 004090d0
     ADD ESP,0x4                         ; 004090d4
     XOR EDX,EDX                         ; 004090d7
@@ -40,22 +40,22 @@ section .text
     CALL dword ptr [EDX + 0x34]         ; 004090ed
     ADD ESP,0x8                         ; 004090f0
     CMP EAX,0x2                         ; 004090f3
-    JNZ 0x00409138                      ; 004090f6 | LAB_00409138
-        ;   XREF to: 00409138 (CONDITIONAL_JUMP)
+    JNZ 0x00409138                      ; 004090f6
+        ;   XREF to: 00409138 (CONDITIONAL_JUMP)  ; LAB_00409138
     FLD float ptr [ESP + 0x14]          ; 004090f8
     FSUB float ptr [ESP + 0x3c]         ; 004090fc
     FCOMP float ptr [EBX + 0x4]         ; 00409100
     FNSTSW AX                           ; 00409103
     SAHF                                ; 00409105
-    JA 0x00409138                       ; 00409106 | LAB_00409138
-        ;   XREF to: 00409138 (CONDITIONAL_JUMP)
+    JA 0x00409138                       ; 00409106
+        ;   XREF to: 00409138 (CONDITIONAL_JUMP)  ; LAB_00409138
     FLD float ptr [ESP + 0x18]          ; 00409108
     FADD float ptr [ESP + 0x3c]         ; 0040910c
     FCOMP float ptr [EBX + 0x4]         ; 00409110
     FNSTSW AX                           ; 00409113
     SAHF                                ; 00409115
-    JC 0x00409138                       ; 00409116 | LAB_00409138
-        ;   XREF to: 00409138 (CONDITIONAL_JUMP)
+    JC 0x00409138                       ; 00409116
+        ;   XREF to: 00409138 (CONDITIONAL_JUMP)  ; LAB_00409138
     FLD float ptr [EBX + 0x8]           ; 00409118
     FMUL ST0                            ; 0040911b
     FLD float ptr [ESP + 0x1c]          ; 0040911d
@@ -69,8 +69,8 @@ section .text
     FCOMPP                              ; 00409131
     FNSTSW AX                           ; 00409133
     SAHF                                ; 00409135
-    JNC 0x0040913f                      ; 00409136 | LAB_0040913f
-        ;   XREF to: 0040913f (CONDITIONAL_JUMP)
+    JNC 0x0040913f                      ; 00409136
+        ;   XREF to: 0040913f (CONDITIONAL_JUMP)  ; LAB_0040913f
     XOR EAX,EAX                         ; 00409138
         ;   Label: LAB_00409138
     ADD ESP,0x2c                        ; 0040913a

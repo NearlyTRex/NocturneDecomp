@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x2c14c9c                   ; 0047f040 | CDemonActorType g_CZombieDogClassInfo
+    MOV EAX,0x2c14c9c                   ; 0047f040 | g_CZombieDogClassInfo
         ;   Label: core_dog.cpp_CZombieDog_getActorType_FUN_0047f040
     RET                                 ; 0047f045
 

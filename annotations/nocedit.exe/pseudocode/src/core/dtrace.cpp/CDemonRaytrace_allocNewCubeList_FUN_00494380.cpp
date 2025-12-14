@@ -19,8 +19,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(CDemon
                            ((this_ptr->grid_coord).z *
                             (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * 0x34 + 4,
                             "..\\core\\dtrace.cpp",0xad);
-  pCVar1 = (CDemonCube *)
-           crt_memory_c_constructTypedObjectArray_FUN_00601272
+  pCVar1 = crt_memory_c_constructTypedObjectArray_FUN_00601272
                      (array_memory,(int)element_count,unaff_EBX);
   this_ptr->cube_data = pCVar1;
   if (pCVar1 != (CDemonCube *)0x0) {

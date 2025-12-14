@@ -13,8 +13,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005c6974
     ADD EAX,0x3fe64                     ; 005c6978
     CMP EAX,EDX                         ; 005c697d
-    JNZ 0x005c6982                      ; 005c697f | LAB_005c6982
-        ;   XREF to: 005c6982 (CONDITIONAL_JUMP)
+    JNZ 0x005c6982                      ; 005c697f
+        ;   XREF to: 005c6982 (CONDITIONAL_JUMP)  ; LAB_005c6982
     RET                                 ; 005c6981
     MOV ECX,dword ptr [EDX]             ; 005c6982
         ;   Label: LAB_005c6982

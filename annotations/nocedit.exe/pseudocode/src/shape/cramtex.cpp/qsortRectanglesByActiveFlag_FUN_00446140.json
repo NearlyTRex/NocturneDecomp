@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00446140", 
-    "signature": "int shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140(SCramRectangle * * rect_a, SCramRectangle * * rect_b)", 
-    "address_range": [
-      [
-        "00446140", 
-        "0044615c"
-      ]
-    ], 
-    "name": "shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SCramRectangle * *", 
-        "size": 4, 
-        "name": "rect_a"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "SCramRectangle * *", 
-        "size": 4, 
-        "name": "rect_b"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 7,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "00446249", 
-      "type": "DATA", 
-      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160", 
-      "addr": "00446160"
+      "addr": "00446160",
+      "from_addr": "00446249",
+      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "00446140",
+    "address_range": [
+      [
+        "00446140",
+        "0044615c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140",
+    "signature": "int shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140(SCramRectangle * * rect_a, SCramRectangle * * rect_b)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "rect_a",
+        "offset": 12,
+        "size": 4,
+        "type": "SCramRectangle * *"
+      },
+      {
+        "is_param": true,
+        "name": "rect_b",
+        "offset": 16,
+        "size": 4,
+        "type": "SCramRectangle * *"
+      }
+    ]
+  },
+  "suspects": []
 }

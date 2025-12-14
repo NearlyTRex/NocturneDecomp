@@ -17,8 +17,8 @@ section .text
         ;   Label: core_charactr.cpp_CCharacter_FUN_0042bf40
     MOV ECX,dword ptr [EDX + 0x2598]    ; 0042bf44
     TEST ECX,ECX                        ; 0042bf4a
-    JNZ 0x0042bf4f                      ; 0042bf4c | LAB_0042bf4f
-        ;   XREF to: 0042bf4f (CONDITIONAL_JUMP)
+    JNZ 0x0042bf4f                      ; 0042bf4c
+        ;   XREF to: 0042bf4f (CONDITIONAL_JUMP)  ; LAB_0042bf4f
     RET                                 ; 0042bf4e
     PUSH EDX                            ; 0042bf4f
         ;   Label: LAB_0042bf4f

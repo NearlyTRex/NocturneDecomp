@@ -1,529 +1,529 @@
 {
   "complexity": {
-    "function_call_count": 17, 
-    "complexity_score": 379, 
-    "pseudocode_lines": 139, 
-    "cross_reference_count": 6, 
-    "global_count": 24, 
-    "total_lines": 461, 
-    "assembly_lines": 322, 
-    "suspect_count": 22, 
+    "assembly_lines": 319,
+    "complexity_score": 379,
+    "cross_reference_count": 6,
+    "function_call_count": 17,
+    "global_count": 24,
+    "pseudocode_lines": 139,
+    "suspect_count": 22,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_errno.c_errno_FUN_00601450", 
-      "addr": "00601450"
-    }, 
-    {
-      "name": "crt_stdio.c_setvbuf_FUN_00601490", 
-      "addr": "00601490"
-    }, 
-    {
-      "name": "engine_dosio.c_ensureTrailingSlash_FUN_00481f80", 
-      "addr": "00481f80"
-    }, 
-    {
-      "name": "engine_dosio.c_makePath_FUN_00481f50", 
-      "addr": "00481f50"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60", 
-      "addr": "004b2e60"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60", 
-      "addr": "004b2a60"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70", 
-      "addr": "004b2d70"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860", 
-      "addr": "004b2860"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0", 
-      "addr": "004b2eb0"
-    }, 
-    {
-      "name": "engine_fileio.cpp_logOffVersionControl_FUN_004b2830", 
-      "addr": "004b2830"
-    }, 
-    {
-      "name": "engine_fileio.cpp_logOnAsVersionControlUser_FUN_004b2770", 
-      "addr": "004b2770"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
-      "addr": "0049e790"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0", 
-      "addr": "0049e6f0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "Sleep*", 
-      "name": "Sleep", 
-      "addr": "00611644", 
-      "value": "00212228"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_0062604b", 
-      "addr": "0062604b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00626060", 
-      "addr": "00626060", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_versionControlDirectory__00626075", 
-      "addr": "00626075", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_checkout_txt_00626096", 
-      "addr": "00626096", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_heckout.txt_00626097", 
-      "addr": "00626097", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_eckout.txt_00626098", 
-      "addr": "00626098", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ckout.txt_00626099", 
-      "addr": "00626099", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00626129", 
-      "addr": "00626129", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006266f4", 
-      "addr": "006266f4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_removeCheckOutBookkeepin_00626709", 
-      "addr": "00626709", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Logging_on_as_version_co_0062673b", 
-      "addr": "0062673b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Marking_s_as_no_longer_c_00626761", 
-      "addr": "00626761", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_r_t_00626785", 
-      "addr": "00626785", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_access_s_00626789", 
-      "addr": "00626789", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Tried_to_undo_checkout_o_0062679a", 
-      "addr": "0062679a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_Restart_th_00626836", 
-      "addr": "00626836", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "char[264]", 
-      "name": "g_VersionControlDirectory", 
-      "addr": "02d12ac8", 
-      "value": null
-    }, 
-    {
-      "type": "SVersionControlSession", 
-      "name": "g_VersionControlSession", 
-      "addr": "02d12bd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VersionControlSession.network_username[0]", 
-      "addr": "02d12bf8", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004b367a", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_0000000c;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 47, 
-      "match": "&stack0xfffffff8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(g_VersionControlDirectory,&stack0xfffffff8,acStack_114);"
-    }, 
-    {
-      "line": 49, 
-      "match": "&stack0xfffffde4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xfffffde4,&stack0xfffffffc,acStack_110,(char *)0x0,(char *)0x0);"
-    }, 
-    {
-      "line": 49, 
-      "match": "&stack0xfffffffc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xfffffde4,&stack0xfffffffc,acStack_110,(char *)0x0,(char *)0x0);"
-    }, 
-    {
-      "line": 52, 
-      "match": "&stack0xfffffde4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar6 = &stack0xfffffde4;"
-    }, 
-    {
-      "line": 75, 
-      "match": "&stack0xfffffdf0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xfffffdf0,(char *)0x0,\"r+t\",\"..\\\\engine\\\\fileio.cpp\""
-    }, 
-    {
-      "line": 95, 
-      "match": "&stack0xfffffffc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CCheckOutList *)&stack0xfffffffc,(FILE **)&this_ptr);"
-    }, 
-    {
-      "line": 97, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000000);"
-    }, 
-    {
-      "line": 101, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CCheckOutList *)&stack0x00000000,(char *)filename);"
-    }, 
-    {
-      "line": 103, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c != (FILE *)0x0) {"
-    }, 
-    {
-      "line": 105, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_0000000c,\"..\\\\engine\\\\fileio.cpp\",0xc4);"
-    }, 
-    {
-      "line": 106, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = 0;"
-    }, 
-    {
-      "line": 111, 
-      "match": "&stack0x00000010", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000010);"
-    }, 
-    {
-      "line": 121, 
-      "match": "&stack0xfffffff8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CCheckOutList *)&stack0xfffffff8,(FILE **)&stack0x00000000);"
-    }, 
-    {
-      "line": 121, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CCheckOutList *)&stack0xfffffff8,(FILE **)&stack0x00000000);"
-    }, 
-    {
-      "line": 133, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000000);"
-    }, 
-    {
-      "line": 137, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c != (FILE *)0x0) {"
-    }, 
-    {
-      "line": 138, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_0000000c,\"..\\\\engine\\\\fileio.cpp\",0xc4);"
-    }, 
-    {
-      "line": 139, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c = (FILE *)0x0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004b35a0", 
-    "signature": "int engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem * this_ptr, void * unused_param)", 
-    "address_range": [
-      [
-        "004b35a0", 
-        "004b391c"
-      ]
-    ], 
-    "name": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0"
-  }, 
-  "stack_frame": {
-    "local_size": 552, 
-    "variables": [
-      {
-        "offset": -548, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_224"
-      }, 
-      {
-        "offset": -547, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_223"
-      }, 
-      {
-        "offset": -288, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_120"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCheckOutItem *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "unused_param"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 560, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 458
+  },
   "cross_references": [
     {
-      "from_addr": "004b3ec3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920", 
-      "addr": "004b3920"
-    }, 
+      "addr": "004b3920",
+      "from_addr": "004b3ec3",
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b456e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
-      "addr": "004b4220"
-    }, 
+      "addr": "004b4220",
+      "from_addr": "004b456e",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b41fe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_revert_FUN_004b41c0", 
-      "addr": "004b41c0"
-    }, 
+      "addr": "004b41c0",
+      "from_addr": "004b41fe",
+      "name": "engine_fileio.cpp_CCheckOutItem_revert_FUN_004b41c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bb44c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bb44c",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004badd4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
-      "addr": "004ba740"
-    }, 
+      "addr": "004ba740",
+      "from_addr": "004badd4",
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bc337", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0", 
-      "addr": "004bc2b0"
+      "addr": "004bc2b0",
+      "from_addr": "004bc337",
+      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b35a0",
+    "address_range": [
+      [
+        "004b35a0",
+        "004b391c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0",
+    "signature": "int engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem * this_ptr, void * unused_param)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00601450",
+      "name": "crt_errno.c_errno_FUN_00601450"
+    },
+    {
+      "addr": "00601490",
+      "name": "crt_stdio.c_setvbuf_FUN_00601490"
+    },
+    {
+      "addr": "00481f80",
+      "name": "engine_dosio.c_ensureTrailingSlash_FUN_00481f80"
+    },
+    {
+      "addr": "00481f50",
+      "name": "engine_dosio.c_makePath_FUN_00481f50"
+    },
+    {
+      "addr": "004b2e60",
+      "name": "engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60"
+    },
+    {
+      "addr": "004b2a60",
+      "name": "engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60"
+    },
+    {
+      "addr": "004b2d70",
+      "name": "engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70"
+    },
+    {
+      "addr": "004b2860",
+      "name": "engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860"
+    },
+    {
+      "addr": "004b2eb0",
+      "name": "engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0"
+    },
+    {
+      "addr": "004b2830",
+      "name": "engine_fileio.cpp_logOffVersionControl_FUN_004b2830"
+    },
+    {
+      "addr": "004b2770",
+      "name": "engine_fileio.cpp_logOnAsVersionControlUser_FUN_004b2770"
+    },
+    {
+      "addr": "0049e790",
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "0049e6f0",
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611644",
+      "name": "Sleep",
+      "type": "Sleep*",
+      "value": "00212228"
+    },
+    {
+      "addr": "0062604b",
+      "name": "s_engine_fileio_cpp_0062604b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626060",
+      "name": "s_engine_fileio_cpp_00626060",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626075",
+      "name": "s_versionControlDirectory__00626075",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626096",
+      "name": "s_checkout_txt_00626096",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626097",
+      "name": "s_heckout.txt_00626097",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00626098",
+      "name": "s_eckout.txt_00626098",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00626099",
+      "name": "s_ckout.txt_00626099",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00626129",
+      "name": "s_engine_fileio_cpp_00626129",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006266f4",
+      "name": "s_engine_fileio_cpp_006266f4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626709",
+      "name": "s_removeCheckOutBookkeepin_00626709",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062673b",
+      "name": "s_Logging_on_as_version_co_0062673b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626761",
+      "name": "s_Marking_s_as_no_longer_c_00626761",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626785",
+      "name": "s_r_t_00626785",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626789",
+      "name": "s_Can_t_access_s_00626789",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062679a",
+      "name": "s_Tried_to_undo_checkout_o_0062679a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00626836",
+      "name": "s_Out_of_memory_Restart_th_00626836",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d12ac8",
+      "name": "g_VersionControlDirectory",
+      "type": "char[264]",
+      "value": null
+    },
+    {
+      "addr": "02d12bd0",
+      "name": "g_VersionControlSession",
+      "type": "SVersionControlSession",
+      "value": null
+    },
+    {
+      "addr": "02d12bf8",
+      "name": "g_VersionControlSession.network_username[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 560,
+    "local_size": 552,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_224",
+        "offset": -548,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_223",
+        "offset": -547,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_120",
+        "offset": -288,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCheckOutItem *"
+      },
+      {
+        "is_param": true,
+        "name": "unused_param",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004b367a",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 14,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "FILE *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 47,
+      "match": "&stack0xfffffff8",
+      "text": "(g_VersionControlDirectory,&stack0xfffffff8,acStack_114);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 49,
+      "match": "&stack0xfffffde4",
+      "text": "(&stack0xfffffde4,&stack0xfffffffc,acStack_110,(char *)0x0,(char *)0x0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 49,
+      "match": "&stack0xfffffffc",
+      "text": "(&stack0xfffffde4,&stack0xfffffffc,acStack_110,(char *)0x0,(char *)0x0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xfffffde4",
+      "text": "pcVar6 = &stack0xfffffde4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 75,
+      "match": "&stack0xfffffdf0",
+      "text": "(&stack0xfffffdf0,(char *)0x0,\"r+t\",\"..\\\\engine\\\\fileio.cpp\"",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 95,
+      "match": "&stack0xfffffffc",
+      "text": "((CCheckOutList *)&stack0xfffffffc,(FILE **)&this_ptr);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 97,
+      "match": "&stack0x00000000",
+      "text": "engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000000);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 101,
+      "match": "&stack0x00000000",
+      "text": "((CCheckOutList *)&stack0x00000000,filename);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 103,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c != (FILE *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 105,
+      "match": "in_stack_0000000c",
+      "text": "(in_stack_0000000c,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 106,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 111,
+      "match": "&stack0x00000010",
+      "text": "engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000010);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 121,
+      "match": "&stack0xfffffff8",
+      "text": "((CCheckOutList *)&stack0xfffffff8,(FILE **)&stack0x00000000);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 121,
+      "match": "&stack0x00000000",
+      "text": "((CCheckOutList *)&stack0xfffffff8,(FILE **)&stack0x00000000);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 133,
+      "match": "&stack0x00000000",
+      "text": "engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000000);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 137,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c != (FILE *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 138,
+      "match": "in_stack_0000000c",
+      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_0000000c,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 139,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = (FILE *)0x0;",
+      "type": "stack_param"
     }
   ]
 }

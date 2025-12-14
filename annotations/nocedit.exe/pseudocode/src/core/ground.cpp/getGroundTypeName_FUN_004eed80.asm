@@ -16,6 +16,8 @@
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004eed48 = 004eed91
+;   undefined4 s_NONE_0062e5f8
+;   undefined4 s_CONCRETE_0062e604
 ;   undefined4 s_DIRT_0062e614
 ;   undefined4 s_GRASS_0062e620
 ;   undefined4 s_METAL_0062e62d
@@ -36,9 +38,9 @@ section .text
         ;   Label: core_ground.cpp_getGroundTypeName_FUN_004eed80
     DEC EAX                             ; 004eed84
     CMP EAX,0xc                         ; 004eed85
-    JA 0x004eedd9                       ; 004eed88 | caseD_b
-        ;   XREF to: 004eedd9 (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x4eed48]  ; 004eed8a | void * switchdataD_004eed48
+    JA 0x004eedd9                       ; 004eed88
+        ;   XREF to: 004eedd9 (CONDITIONAL_JUMP)  ; caseD_b
+    JMP dword ptr [EAX*0x4 + 0x4eed48]  ; 004eed8a | caseD_1 | caseD_2 | caseD_3
         ;   Label: switchD
     MOV EAX,0x62e5f8                    ; 004eed91 | s_NONE_0062e5f8
         ;   Label: caseD_1
@@ -76,7 +78,7 @@ section .text
     MOV EAX,0x62e687                    ; 004eedd3 | s_GRAVEL_0062e687
         ;   Label: caseD_d
     RET                                 ; 004eedd8
-    MOV EAX,0x62e68e                    ; 004eedd9 | = "DEFAULT" | s_DEFAULT_0062e68e = DEFAULT
+    MOV EAX,0x62e68e                    ; 004eedd9 | = "DEFAULT"
         ;   Label: caseD_b
     RET                                 ; 004eedde
 

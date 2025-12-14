@@ -1,111 +1,111 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 38, 
-    "assembly_lines": 26, 
-    "suspect_count": 2, 
+    "assembly_lines": 26,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_dosio_c_00621577", 
-      "addr": "00621577", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_addGetFileInfoHook_too_m_00621589", 
-      "addr": "00621589", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_NumSearchHandlers", 
-      "addr": "02c14d18", 
-      "value": null
-    }, 
-    {
-      "type": "FileSearchHandler*[5]", 
-      "name": "g_SearchHandlers", 
-      "addr": "02c14d1c", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FileSearchHandler *in_stack_00000008;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_SearchHandlers[g_NumSearchHandlers] = in_stack_00000008;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00481710", 
-    "signature": "void engine_dosio.c_addGetFileInfoHook_FUN_00481710(FileSearchHandler * handler)", 
-    "address_range": [
-      [
-        "00481710", 
-        "0048175b"
-      ]
-    ], 
-    "name": "engine_dosio.c_addGetFileInfoHook_FUN_00481710"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FileSearchHandler *", 
-        "size": 4, 
-        "name": "handler"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 38
+  },
   "cross_references": [
     {
-      "from_addr": "00507b65", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
+      "addr": "00507a60",
+      "from_addr": "00507b65",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00481710",
+    "address_range": [
+      [
+        "00481710",
+        "0048175b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.c_addGetFileInfoHook_FUN_00481710",
+    "signature": "void engine_dosio.c_addGetFileInfoHook_FUN_00481710(FileSearchHandler * handler)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00621577",
+      "name": "s_engine_dosio_c_00621577",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621589",
+      "name": "s_addGetFileInfoHook_too_m_00621589",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02c14d18",
+      "name": "g_NumSearchHandlers",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c14d1c",
+      "name": "g_SearchHandlers",
+      "type": "FileSearchHandler*[5]",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "handler",
+        "offset": 4,
+        "size": 4,
+        "type": "FileSearchHandler *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "FileSearchHandler *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "g_SearchHandlers[g_NumSearchHandlers] = in_stack_00000008;",
+      "type": "stack_param"
     }
   ]
 }

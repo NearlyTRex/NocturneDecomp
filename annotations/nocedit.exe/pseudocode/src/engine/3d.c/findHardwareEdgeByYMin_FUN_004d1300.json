@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 49, 
-    "assembly_lines": 31, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_EdgeCount", 
-      "addr": "02d7b428", 
-      "value": null
-    }, 
-    {
-      "type": "SHardwareEdge[16]", 
-      "name": "g_HardwareEdgeTable", 
-      "addr": "02d7b42c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d7b464", 
-      "addr": "02d7b464", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 31,
+    "complexity_score": 18,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004d1300", 
-    "signature": "SHardwareEdge * engine_3d.c_findHardwareEdgeByYMin_FUN_004d1300(int y_min, SHardwareEdge * exclude_edge)", 
+    "address": "004d1300",
     "address_range": [
       [
-        "004d1300", 
+        "004d1300",
         "004d1335"
       ]
-    ], 
-    "name": "engine_3d.c_findHardwareEdgeByYMin_FUN_004d1300"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_findHardwareEdgeByYMin_FUN_004d1300",
+    "signature": "SHardwareEdge * engine_3d.c_findHardwareEdgeByYMin_FUN_004d1300(int y_min, SHardwareEdge * exclude_edge)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d7b428",
+      "name": "g_EdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d7b42c",
+      "name": "g_HardwareEdgeTable",
+      "type": "SHardwareEdge[16]",
+      "value": null
+    },
+    {
+      "addr": "02d7b464",
+      "name": "DAT_02d7b464",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_min"
-      }, 
+        "is_param": true,
+        "name": "y_min",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SHardwareEdge *", 
-        "size": 4, 
-        "name": "exclude_edge"
+        "is_param": true,
+        "name": "exclude_edge",
+        "offset": 8,
+        "size": 4,
+        "type": "SHardwareEdge *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

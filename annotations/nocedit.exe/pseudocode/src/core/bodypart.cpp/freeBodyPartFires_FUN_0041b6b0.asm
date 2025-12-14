@@ -19,13 +19,13 @@
 
 section .text
 
-    PUSH 0x65aee0                       ; 0041b6b0 | WatcomTypeInfo g_SBodyPartFireTypeInfo
+    PUSH 0x65aee0                       ; 0041b6b0 | g_SBodyPartFireTypeInfo
         ;   Label: core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0
     PUSH 0x2                            ; 0041b6b5
     MOV EDX,dword ptr [ESP + 0xc]       ; 0041b6b7
     PUSH EDX                            ; 0041b6bb
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0041b6bc | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0041b6bc
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0041b6c1
     RET                                 ; 0041b6c4
 

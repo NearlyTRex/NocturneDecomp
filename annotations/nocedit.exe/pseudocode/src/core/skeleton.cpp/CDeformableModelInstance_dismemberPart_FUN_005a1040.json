@@ -1,123 +1,123 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 79, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 104, 
-    "assembly_lines": 75, 
-    "suspect_count": 4, 
+    "assembly_lines": 75,
+    "complexity_score": 79,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 29,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0", 
-      "addr": "0059c5e0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
-      "addr": "005a07a0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0", 
-      "addr": "005a01d0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CVector3i *unaff_EDI;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CBodyPart *in_stack_00000010;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr_00,this_ptr->cached_skinned_lod_index,in_stack_00000010,part_index,"
-    }, 
-    {
-      "line": 29, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a1040", 
-    "signature": "void core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040(CDeformableModelInstance * this_ptr, CBodyPart * body_part, int part_index)", 
-    "address_range": [
-      [
-        "005a1040", 
-        "005a10df"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CBodyPart *", 
-        "size": 4, 
-        "name": "body_part"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "part_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 104
+  },
   "cross_references": [
     {
-      "from_addr": "0041b49e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280", 
-      "addr": "0041b280"
-    }, 
+      "addr": "0041b280",
+      "from_addr": "0041b49e",
+      "name": "core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0042bd8c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042bd30", 
-      "addr": "0042bd30"
-    }, 
+      "addr": "0042bd30",
+      "from_addr": "0042bd8c",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bd30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a1015", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0", 
-      "addr": "005a0fe0"
+      "addr": "005a0fe0",
+      "from_addr": "005a1015",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a1040",
+    "address_range": [
+      [
+        "005a1040",
+        "005a10df"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040",
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040(CDeformableModelInstance * this_ptr, CBodyPart * body_part, int part_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059c5e0",
+      "name": "core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0"
+    },
+    {
+      "addr": "005a07a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005a01d0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "body_part",
+        "offset": 8,
+        "size": 4,
+        "type": "CBodyPart *"
+      },
+      {
+        "is_param": true,
+        "name": "part_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EDI",
+      "text": "CVector3i *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000010",
+      "text": "CBodyPart *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000010",
+      "text": "(this_ptr_00,this_ptr->cached_skinned_lod_index,in_stack_00000010,part_index,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI);",
+      "type": "unaffected_reg"
     }
   ]
 }

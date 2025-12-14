@@ -1,129 +1,129 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 151, 
-    "pseudocode_lines": 66, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 199, 
-    "assembly_lines": 133, 
-    "suspect_count": 7, 
+    "assembly_lines": 133,
+    "complexity_score": 151,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 66,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_io.c_stat_FUN_00607e64", 
-      "addr": "00607e64"
-    }, 
-    {
-      "name": "crt_stdio.c_CreateFileVariadic_FUN_00609074", 
-      "addr": "00609074"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000010;"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar2 = in_stack_00000010 & 0x7000;"
-    }, 
-    {
-      "line": 65, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 & 0xffff8fff;"
-    }, 
-    {
-      "line": 65, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 & 0xffff8fff;"
-    }, 
-    {
-      "line": 66, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "sStack_50.st_dev = in_stack_00000010;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060c340", 
-    "signature": "int crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340(char * filename, int * iostream_mode, int permissions)", 
-    "address_range": [
-      [
-        "0060c340", 
-        "0060c431"
-      ]
-    ], 
-    "name": "crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "iostream_mode"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "permissions"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 199
+  },
   "cross_references": [
     {
-      "from_addr": "00608c75", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fstream.cpp_filebuf_open_FUN_00608c15", 
-      "addr": "00608c15"
+      "addr": "00608c15",
+      "from_addr": "00608c75",
+      "name": "crt_fstream.cpp_filebuf_open_FUN_00608c15",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060c340",
+    "address_range": [
+      [
+        "0060c340",
+        "0060c431"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340",
+    "signature": "int crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340(char * filename, int * iostream_mode, int permissions)"
+  },
+  "function_calls": [
+    {
+      "addr": "00607e64",
+      "name": "crt_io.c_stat_FUN_00607e64"
+    },
+    {
+      "addr": "00609074",
+      "name": "crt_stdio.c_CreateFileVariadic_FUN_00609074"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "iostream_mode",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "permissions",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000010",
+      "text": "uVar2 = in_stack_00000010 & 0x7000;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 & 0xffff8fff;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 & 0xffff8fff;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000010",
+      "text": "sStack_50.st_dev = in_stack_00000010;",
+      "type": "stack_param"
     }
   ]
 }

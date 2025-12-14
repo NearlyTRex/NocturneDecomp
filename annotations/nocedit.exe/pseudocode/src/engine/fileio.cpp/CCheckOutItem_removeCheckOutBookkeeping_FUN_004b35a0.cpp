@@ -105,7 +105,7 @@ LAB_004b36b4:
     }
     else {
       iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60
-                        ((CCheckOutList *)&stack0x00000000,(char *)filename);
+                        ((CCheckOutList *)&stack0x00000000,filename);
       if (iVar2 < 0) {
         if (in_stack_0000000c != (FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0

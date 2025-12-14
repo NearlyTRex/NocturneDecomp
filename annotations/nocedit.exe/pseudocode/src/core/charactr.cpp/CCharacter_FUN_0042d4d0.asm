@@ -22,8 +22,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0042d4d2
     MOV EDX,dword ptr [EBX + 0x25c8]    ; 0042d4d6
     TEST EDX,EDX                        ; 0042d4dc
-    JGE 0x0042d4e3                      ; 0042d4de | LAB_0042d4e3
-        ;   XREF to: 0042d4e3 (CONDITIONAL_JUMP)
+    JGE 0x0042d4e3                      ; 0042d4de
+        ;   XREF to: 0042d4e3 (CONDITIONAL_JUMP)  ; LAB_0042d4e3
     POP ESI                             ; 0042d4e0
         ;   Label: LAB_0042d4e0
     POP EBX                             ; 0042d4e1
@@ -32,8 +32,8 @@ section .text
         ;   Label: LAB_0042d4e3
     LEA EAX,[EBX + 0x158]               ; 0042d4e9
     PUSH EAX                            ; 0042d4ef
-    CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 0042d4f0 | CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
-        ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 0042d4f0
+        ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0042d4f5
     FLD float ptr [ESP + 0x10]          ; 0042d4f8
     FMUL float ptr [ESI + EAX*0x1 + 0x988] ; 0042d4fc
@@ -43,8 +43,8 @@ section .text
     FCOMP float ptr [EBX + 0x25cc]      ; 0042d516
     FNSTSW AX                           ; 0042d51c
     SAHF                                ; 0042d51e
-    JA 0x0042d4e0                       ; 0042d51f | LAB_0042d4e0
-        ;   XREF to: 0042d4e0 (CONDITIONAL_JUMP)
+    JA 0x0042d4e0                       ; 0042d51f
+        ;   XREF to: 0042d4e0 (CONDITIONAL_JUMP)  ; LAB_0042d4e0
     MOV dword ptr [EBX + 0x25c8],0xffffffff ; 0042d521
     POP ESI                             ; 0042d52b
     POP EBX                             ; 0042d52c

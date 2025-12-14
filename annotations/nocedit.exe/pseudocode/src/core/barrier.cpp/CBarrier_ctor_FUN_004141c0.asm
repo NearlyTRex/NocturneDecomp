@@ -22,9 +22,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004141c0
         ;   Label: core_barrier.cpp_CBarrier_ctor_FUN_004141c0
     PUSH EDX                            ; 004141c4
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004141c5 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
-    MOV dword ptr [EAX + 0x154],0x65a354 ; 004141ca | CDemonActor_vtable g_CBarrierVTable
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004141c5
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
+    MOV dword ptr [EAX + 0x154],0x65a354 ; 004141ca | g_CBarrierVTable
     MOV dword ptr [EAX + 0x160],0x40a00000 ; 004141d4
     MOV byte ptr [EAX + 0x168],0x0      ; 004141de
     MOV dword ptr [EAX + 0x164],0x1     ; 004141e5

@@ -21,7 +21,7 @@ section .text
 
     PUSH EBX                            ; 004a6490
         ;   Label: shape_edittool.cpp_calculateGridWidth_FUN_004a6490
-    MOV EBX,dword ptr [0x00679394]      ; 004a6491 | int g_WindowWidth
+    MOV EBX,dword ptr [0x00679394]      ; 004a6491 | g_WindowWidth
     MOV ECX,0x30                        ; 004a6497
     MOV EDX,EBX                         ; 004a649c
     MOV EAX,EBX                         ; 004a649e

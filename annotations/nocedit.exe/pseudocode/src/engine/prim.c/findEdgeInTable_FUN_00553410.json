@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 49, 
-    "assembly_lines": 31, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_ActiveEdgeCount", 
-      "addr": "030e56bc", 
-      "value": null
-    }, 
-    {
-      "type": "SSoftwareEdge[16]", 
-      "name": "g_SoftwareEdgeTable", 
-      "addr": "030e56c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SoftwareEdgeTable[1].y_min", 
-      "addr": "030e5708", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 31,
+    "complexity_score": 18,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00553410", 
-    "signature": "SSoftwareEdge * engine_prim.c_findEdgeInTable_FUN_00553410(int scanline, SSoftwareEdge * target_edge)", 
+    "address": "00553410",
     "address_range": [
       [
-        "00553410", 
+        "00553410",
         "00553445"
       ]
-    ], 
-    "name": "engine_prim.c_findEdgeInTable_FUN_00553410"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_prim.c_findEdgeInTable_FUN_00553410",
+    "signature": "SSoftwareEdge * engine_prim.c_findEdgeInTable_FUN_00553410(int scanline, SSoftwareEdge * target_edge)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "030e56bc",
+      "name": "g_ActiveEdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e56c0",
+      "name": "g_SoftwareEdgeTable",
+      "type": "SSoftwareEdge[16]",
+      "value": null
+    },
+    {
+      "addr": "030e5708",
+      "name": "g_SoftwareEdgeTable[1].y_min",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "scanline"
-      }, 
+        "is_param": true,
+        "name": "scanline",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SSoftwareEdge *", 
-        "size": 4, 
-        "name": "target_edge"
+        "is_param": true,
+        "name": "target_edge",
+        "offset": 8,
+        "size": 4,
+        "type": "SSoftwareEdge *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

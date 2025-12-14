@@ -16,8 +16,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005a60f0
         ;   Label: sound_sndmain.cpp_CSfxSample_ctor_FUN_005a60f0
     PUSH EDX                            ; 005a60f4
-    CALL sound_sndmain.cpp_CSfxSample_init_FUN_005a8480 ; 005a60f5 | CSfxSample * sound_sndmain.cpp_CSfxSample_init_FUN_005a8480(CSfxSample * this_ptr)
-        ;   XREF to: 005a8480 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_CSfxSample_init_FUN_005a8480 ; 005a60f5
+        ;   XREF to: 005a8480 (UNCONDITIONAL_CALL)  ; CSfxSample * sound_sndmain.cpp_CSfxSample_init_FUN_005a8480(CSfxSample * this_ptr)
     MOV dword ptr [EAX + 0x120],0x0     ; 005a60fa
     MOV dword ptr [EAX + 0x154],0x0     ; 005a6104
     MOV dword ptr [EAX + 0x158],0x0     ; 005a610e

@@ -22,15 +22,15 @@ section .text
     MOV AL,DL                           ; 004b0f94
     INC AL                              ; 004b0f96
     AND EAX,0xff                        ; 004b0f98
-    TEST byte ptr [EAX + 0x6849c4],0xe0 ; 004b0f9d | char[256] g_CharacterClassificationTable
-    JNZ 0x004b0fb4                      ; 004b0fa4 | LAB_004b0fb4
-        ;   XREF to: 004b0fb4 (CONDITIONAL_JUMP)
+    TEST byte ptr [EAX + 0x6849c4],0xe0 ; 004b0f9d | g_CharacterClassificationTable
+    JNZ 0x004b0fb4                      ; 004b0fa4
+        ;   XREF to: 004b0fb4 (CONDITIONAL_JUMP)  ; LAB_004b0fb4
     CMP EDX,0x5f                        ; 004b0fa6
-    JZ 0x004b0fb4                       ; 004b0fa9 | LAB_004b0fb4
-        ;   XREF to: 004b0fb4 (CONDITIONAL_JUMP)
+    JZ 0x004b0fb4                       ; 004b0fa9
+        ;   XREF to: 004b0fb4 (CONDITIONAL_JUMP)  ; LAB_004b0fb4
     CMP EDX,0x2d                        ; 004b0fab
-    JNZ 0x004b0858                      ; 004b0fae | LAB_004b0858
-        ;   XREF to: 004b0858 (CONDITIONAL_JUMP)
+    JNZ 0x004b0858                      ; 004b0fae
+        ;   XREF to: 004b0858 (CONDITIONAL_JUMP)  ; LAB_004b0858
     MOV EAX,0x1                         ; 004b0fb4
         ;   Label: LAB_004b0fb4
     RET                                 ; 004b0fb9

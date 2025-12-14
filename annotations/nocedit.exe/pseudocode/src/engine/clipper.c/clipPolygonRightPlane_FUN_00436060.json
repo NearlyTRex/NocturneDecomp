@@ -1,137 +1,137 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 65, 
-    "pseudocode_lines": 65, 
-    "cross_reference_count": 0, 
-    "global_count": 9, 
-    "total_lines": 188, 
-    "assembly_lines": 123, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_clipper.c_interpolateVertexRightClip_FUN_00435b00", 
-      "addr": "00435b00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_00436048", 
-      "addr": "00436048", 
-      "value": "004360b5"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_1_0043604c", 
-      "addr": "0043604c", 
-      "value": "004360e0"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_00436054", 
-      "addr": "00436054", 
-      "value": "004360ba"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_clipper_c_00618103", 
-      "addr": "00618103", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Ran_out_of_clipped_verts_00618117", 
-      "addr": "00618117", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex[12]", 
-      "name": "g_ClipperTempBuffer", 
-      "addr": "00825aac", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipperTempCount", 
-      "addr": "00825cec", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 123,
+    "complexity_score": 65,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 9,
+    "pseudocode_lines": 65,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 188
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00436060", 
-    "signature": "int engine_clipper.c_clipPolygonRightPlane_FUN_00436060(SRenderVertex * * input_vertices, SRenderVertex * * output_vertices, int vertex_count)", 
+    "address": "00436060",
     "address_range": [
       [
-        "00436060", 
+        "00436060",
         "0043618b"
       ]
-    ], 
-    "name": "engine_clipper.c_clipPolygonRightPlane_FUN_00436060"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_clipper.c_clipPolygonRightPlane_FUN_00436060",
+    "signature": "int engine_clipper.c_clipPolygonRightPlane_FUN_00436060(SRenderVertex * * input_vertices, SRenderVertex * * output_vertices, int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00435b00",
+      "name": "engine_clipper.c_interpolateVertexRightClip_FUN_00435b00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00436048",
+      "name": "switchdataD_00436048",
+      "type": "void*",
+      "value": "004360b5"
+    },
+    {
+      "addr": "0043604c",
+      "name": "PTR_caseD_1_0043604c",
+      "type": "void*",
+      "value": "004360e0"
+    },
+    {
+      "addr": "00436054",
+      "name": "PTR_caseD_3_00436054",
+      "type": "void*",
+      "value": "004360ba"
+    },
+    {
+      "addr": "00618103",
+      "name": "s_engine_clipper_c_00618103",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618117",
+      "name": "s_Ran_out_of_clipped_verts_00618117",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00825aac",
+      "name": "g_ClipperTempBuffer",
+      "type": "SRenderVertex[12]",
+      "value": null
+    },
+    {
+      "addr": "00825cec",
+      "name": "g_ClipperTempCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SRenderVertex * *", 
-        "size": 4, 
-        "name": "input_vertices"
-      }, 
+        "is_param": true,
+        "name": "input_vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SRenderVertex * *", 
-        "size": 4, 
-        "name": "output_vertices"
-      }, 
+        "is_param": true,
+        "name": "output_vertices",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_count"
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

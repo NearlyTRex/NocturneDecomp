@@ -756,12 +756,12 @@ LAB_0046cf33:
           pcVar12[1] = cVar2;
           pcVar12 = pcVar12 + 2;
         } while (cVar2 != '\0');
-        local_2c = (uchar *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
-                                      (g_TextureAtlasDimension * g_TextureAtlasDimension * 3,1,
-                                       "..\\shape\\design.c",0x2aed);
-        local_28 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                                     (g_TextureAtlasDimension * g_TextureAtlasDimension,
-                                      "..\\shape\\design.c",0x2aee);
+        local_2c = shape_memdbg_cpp_debugCalloc_FUN_0050f350
+                             (g_TextureAtlasDimension * g_TextureAtlasDimension * 3,1,
+                              "..\\shape\\design.c",0x2aed);
+        local_28 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                             (g_TextureAtlasDimension * g_TextureAtlasDimension,
+                              "..\\shape\\design.c",0x2aee);
         if ((local_2c == (uchar *)0x0) || (local_28 == (char *)0x0)) {
           g_CurrentFilename = "..\\shape\\design.c";
           g_CurrentLineNumber = 0x2aef;

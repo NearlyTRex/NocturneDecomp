@@ -1,94 +1,94 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 53, 
-    "assembly_lines": 38, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_setErrno_FUN_00602790", 
-      "addr": "00602790"
-    }, 
-    {
-      "name": "crt_io.c_close_FUN_00609bd0", 
-      "addr": "00609bd0"
-    }, 
-    {
-      "name": "crt_io.c_invalidate_handle_wrapper_FUN_00602448", 
-      "addr": "00602448"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
-      "addr": "00684ee8", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
-      "addr": "00684eec", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "INVALIDATE_HANDLE_FUNC*", 
-      "name": "PTR_crt_sync.c_InvalidateHandle_FUN_00602448_00684ef4", 
-      "addr": "00684ef4", 
-      "value": "00602448"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_MaxHandleCount", 
-      "addr": "00685214", 
-      "value": "0x14"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060c2e0", 
-    "signature": "int crt_io.c_close_handle_safe_FUN_0060c2e0(int handle_index)", 
-    "address_range": [
-      [
-        "0060c2e0", 
-        "0060c331"
-      ]
-    ], 
-    "name": "crt_io.c_close_handle_safe_FUN_0060c2e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "handle_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 38,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 53
+  },
   "cross_references": [
     {
-      "from_addr": "00608bff", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fstream.cpp_filebuf_close_FUN_00608bcc", 
-      "addr": "00608bcc"
+      "addr": "00608bcc",
+      "from_addr": "00608bff",
+      "name": "crt_fstream.cpp_filebuf_close_FUN_00608bcc",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060c2e0",
+    "address_range": [
+      [
+        "0060c2e0",
+        "0060c331"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_close_handle_safe_FUN_0060c2e0",
+    "signature": "int crt_io.c_close_handle_safe_FUN_0060c2e0(int handle_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00602790",
+      "name": "crt_errno.c_setErrno_FUN_00602790"
+    },
+    {
+      "addr": "00609bd0",
+      "name": "crt_io.c_close_FUN_00609bd0"
+    },
+    {
+      "addr": "00602448",
+      "name": "crt_io.c_invalidate_handle_wrapper_FUN_00602448"
+    },
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684eec",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec",
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684ef4",
+      "name": "PTR_crt_sync.c_InvalidateHandle_FUN_00602448_00684ef4",
+      "type": "INVALIDATE_HANDLE_FUNC*",
+      "value": "00602448"
+    },
+    {
+      "addr": "00685214",
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "handle_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

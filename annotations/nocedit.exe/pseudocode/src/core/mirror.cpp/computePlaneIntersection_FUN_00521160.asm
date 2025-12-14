@@ -60,8 +60,8 @@ section .text
     FADDP                               ; 00521191
     FSTP float ptr [ESP + 0x24]         ; 00521193
     TEST dword ptr [ESP + 0x24],0x7fffffff ; 00521197
-    JZ 0x00521231                       ; 0052119f | LAB_00521231
-        ;   XREF to: 00521231 (CONDITIONAL_JUMP)
+    JZ 0x00521231                       ; 0052119f
+        ;   XREF to: 00521231 (CONDITIONAL_JUMP)  ; LAB_00521231
     FLD float ptr [ESI]                 ; 005211a5
         ;   Label: LAB_005211a5
     FMUL float ptr [EBX]                ; 005211a7
@@ -106,25 +106,25 @@ section .text
     MOV EAX,ESP                         ; 0052121f
     FSTP float ptr [ESP + 0x8]          ; 00521221
     CMP EBP,EAX                         ; 00521225
-    JNZ 0x00521258                      ; 00521227 | LAB_00521258
-        ;   XREF to: 00521258 (CONDITIONAL_JUMP)
+    JNZ 0x00521258                      ; 00521227
+        ;   XREF to: 00521258 (CONDITIONAL_JUMP)  ; LAB_00521258
     ADD ESP,0x2c                        ; 00521229
     POP EBP                             ; 0052122c
     POP EDI                             ; 0052122d
     POP ESI                             ; 0052122e
     POP EBX                             ; 0052122f
     RET                                 ; 00521230
-    MOV ECX,0x638975                    ; 00521231 | = "..\\core\\mirror.cpp" | s_core_mirror_cpp_00638975 = ..\core\mirror.cpp
+    MOV ECX,0x638975                    ; 00521231 | = "..\\core\\mirror.cpp"
         ;   Label: LAB_00521231
     MOV EAX,0x42                        ; 00521236
-    PUSH 0x638988                       ; 0052123b | = "Bad clip!" | s_Bad_clip_00638988 = Bad clip!
-    MOV dword ptr [0x02f0ca48],ECX      ; 00521240 | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 00521246 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052124b | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x638988                       ; 0052123b | = "Bad clip!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 00521240 | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 00521246 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052124b
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00521250
-    JMP 0x005211a5                      ; 00521253 | LAB_005211a5
-        ;   XREF to: 005211a5 (UNCONDITIONAL_JUMP)
+    JMP 0x005211a5                      ; 00521253
+        ;   XREF to: 005211a5 (UNCONDITIONAL_JUMP)  ; LAB_005211a5
     MOV EAX,dword ptr [ESP]             ; 00521258
         ;   Label: LAB_00521258
     MOV dword ptr [EBP],EAX             ; 0052125b

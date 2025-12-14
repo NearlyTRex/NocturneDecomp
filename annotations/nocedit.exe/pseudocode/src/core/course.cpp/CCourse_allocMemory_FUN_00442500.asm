@@ -31,8 +31,8 @@ section .text
     PUSH ESI                            ; 00442501
     MOV EBX,dword ptr [ESP + 0xc]       ; 00442502
     PUSH EBX                            ; 00442506
-    CALL core_course.cpp_CCourse_free_FUN_004426c0 ; 00442507 | void core_course.cpp_CCourse_free_FUN_004426c0(CCourse * this_ptr)
-        ;   XREF to: 004426c0 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_free_FUN_004426c0 ; 00442507
+        ;   XREF to: 004426c0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_004426c0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 0044250c
     MOV EAX,dword ptr [ESP + 0x10]      ; 0044250f
     MOV ESI,EAX                         ; 00442513
@@ -42,19 +42,19 @@ section .text
     SHL EAX,0x3                         ; 0044251c
     PUSH 0x6d                           ; 0044251f
     SUB EAX,EDX                         ; 00442521
-    PUSH 0x618edb                       ; 00442523 | = "..\\core\\course.cpp" | s_core_course_cpp_00618edb = ..\core\course.cpp
+    PUSH 0x618edb                       ; 00442523 | = "..\\core\\course.cpp"
     ADD EAX,0x4                         ; 00442528
     PUSH EAX                            ; 0044252b
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0044252c | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0044252c
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00442531
     TEST EAX,EAX                        ; 00442534
-    JNZ 0x00442542                      ; 00442536 | LAB_00442542
-        ;   XREF to: 00442542 (CONDITIONAL_JUMP)
+    JNZ 0x00442542                      ; 00442536
+        ;   XREF to: 00442542 (CONDITIONAL_JUMP)  ; LAB_00442542
     MOV dword ptr [EBX + 0x4],EAX       ; 00442538
     TEST EAX,EAX                        ; 0044253b
-    JZ 0x00442552                       ; 0044253d | LAB_00442552
-        ;   XREF to: 00442552 (CONDITIONAL_JUMP)
+    JZ 0x00442552                       ; 0044253d
+        ;   XREF to: 00442552 (CONDITIONAL_JUMP)  ; LAB_00442552
     POP ESI                             ; 0044253f
     POP EBX                             ; 00442540
     RET                                 ; 00442541
@@ -63,19 +63,19 @@ section .text
     MOV dword ptr [EAX + -0x4],ESI      ; 00442545
     MOV dword ptr [EBX + 0x4],EAX       ; 00442548
     TEST EAX,EAX                        ; 0044254b
-    JZ 0x00442552                       ; 0044254d | LAB_00442552
-        ;   XREF to: 00442552 (CONDITIONAL_JUMP)
+    JZ 0x00442552                       ; 0044254d
+        ;   XREF to: 00442552 (CONDITIONAL_JUMP)  ; LAB_00442552
     POP ESI                             ; 0044254f
     POP EBX                             ; 00442550
     RET                                 ; 00442551
-    MOV ECX,0x618eee                    ; 00442552 | = "..\\core\\course.cpp" | s_core_course_cpp_00618eee = ..\core\course.cpp
+    MOV ECX,0x618eee                    ; 00442552 | = "..\\core\\course.cpp"
         ;   Label: LAB_00442552
     MOV EBX,0x6e                        ; 00442557
-    PUSH 0x618f01                       ; 0044255c | = "CCourse::allocMemory - out of hunk!" | s_CCourse_allocMemory_out__00618f01 = CCourse::allocMemory - out of hunk!
-    MOV dword ptr [0x02f0ca48],ECX      ; 00442561 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 00442567 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0044256d | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x618f01                       ; 0044255c | = "CCourse::allocMemory - out of hunk!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 00442561 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 00442567 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0044256d
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00442572
     POP ESI                             ; 00442575
     POP EBX                             ; 00442576

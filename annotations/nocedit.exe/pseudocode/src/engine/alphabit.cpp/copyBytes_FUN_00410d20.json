@@ -1,97 +1,97 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 67, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 41, 
-    "assembly_lines": 19, 
-    "suspect_count": 4, 
+    "assembly_lines": 19,
+    "complexity_score": 66,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 21,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);"
-    }, 
-    {
-      "line": 10, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);"
-    }, 
-    {
-      "line": 21, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar3 = (uint *)((int)puVar3 + 1);"
-    }, 
-    {
-      "line": 22, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (uint *)((int)puVar4 + 1);"
-    }
-  ], 
+    ],
+    "total_lines": 40
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00410d20", 
-    "signature": "void engine_alphabit.cpp_copyBytes_FUN_00410d20(void * src, void * dest, int width, int height)", 
+    "address": "00410d20",
     "address_range": [
       [
-        "00410d20", 
+        "00410d20",
         "00410d44"
       ]
-    ], 
-    "name": "engine_alphabit.cpp_copyBytes_FUN_00410d20"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_alphabit.cpp_copyBytes_FUN_00410d20",
+    "signature": "void engine_alphabit.cpp_copyBytes_FUN_00410d20(void * src, void * dest, int width, int height)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "src"
-      }, 
+        "is_param": true,
+        "name": "src",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "dest"
-      }, 
+        "is_param": true,
+        "name": "dest",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
+        "is_param": true,
+        "name": "width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
+        "is_param": true,
+        "name": "height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(int *)((int)",
+      "text": "uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(int *)((int)",
+      "text": "uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)puVar3 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)puVar4 + 1);",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -43,7 +43,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00493dd3
     MOV EBP,dword ptr [EBP + 0x14]      ; 00493dd6
     PXOR MM7,MM7                        ; 00493dd9
-    MOVD MM5,dword ptr [0x02d052a8]     ; 00493ddc | int g_SolidColorMode
+    MOVD MM5,dword ptr [0x02d052a8]     ; 00493ddc | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00493de3
     PSLLW MM5,0x6                       ; 00493de6
     MOV EAX,dword ptr [ESI]             ; 00493dea
@@ -129,31 +129,31 @@ section .text
     MOVZX EDX,byte ptr [EBX]            ; 00493fbd
         ;   Label: LAB_00493fbd
     MOVQ MM0,qword ptr [ESI]            ; 00493fc0
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00493fc3 | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00493fc3 | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00493fcb
     PUNPCKLBW MM0,MM7                   ; 00493fcf
     SHR EDX,0x1                         ; 00493fd2
     PUNPCKLBW MM2,MM7                   ; 00493fd4
     ADD EAX,EDX                         ; 00493fd7
     PMULLW MM0,MM2                      ; 00493fd9
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00493fdc | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00493fdc | g_LightmapData
     MOVQ MM2,MM3                        ; 00493fe4
     MOVQ MM4,MM5                        ; 00493fe7
-    PXOR MM2,qword ptr [0x006781e8]     ; 00493fea | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00493fea | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 00493ff1
     PMULHW MM4,MM3                      ; 00493ff4
     PADDW MM0,MM4                       ; 00493ff7
-    PADDW MM0,qword ptr [0x00676488]    ; 00493ffa | ulonglong g_AmbientLightMMX1
+    PADDW MM0,qword ptr [0x00676488]    ; 00493ffa | g_AmbientLightMMX1
     PSRLW MM0,0x4                       ; 00494001
     PACKUSWB MM0,MM7                    ; 00494005
     MOVQ MM2,MM0                        ; 00494008
     MOVQ MM3,MM0                        ; 0049400b
-    PAND MM0,qword ptr [0x006827a0]     ; 0049400e | ulonglong g_BlueMask32
-    PAND MM2,qword ptr [0x00682780]     ; 00494015 | ulonglong g_GreenMask32
-    PAND MM3,qword ptr [0x00682760]     ; 0049401c | ulonglong g_RedMask32
-    PSRLQ MM0,qword ptr [0x006827e8]    ; 00494023 | ulonglong g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 0049402a | ulonglong g_GreenBlueBits
-    PSRLQ MM3,qword ptr [0x006827a8]    ; 00494031 | ulonglong g_TotalColorBits
+    PAND MM0,qword ptr [0x006827a0]     ; 0049400e | g_BlueMask32
+    PAND MM2,qword ptr [0x00682780]     ; 00494015 | g_GreenMask32
+    PAND MM3,qword ptr [0x00682760]     ; 0049401c | g_RedMask32
+    PSRLQ MM0,qword ptr [0x006827e8]    ; 00494023 | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 0049402a | g_GreenBlueBits
+    PSRLQ MM3,qword ptr [0x006827a8]    ; 00494031 | g_TotalColorBits
     POR MM0,MM2                         ; 00494038
     POR MM0,MM3                         ; 0049403b
     MOVQ MM6,MM0                        ; 0049403e
@@ -162,31 +162,31 @@ section .text
     INC EBP                             ; 00494045
     MOVZX EDX,byte ptr [EBX]            ; 00494046
     MOVQ MM0,qword ptr [ESI]            ; 00494049
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 0049404c | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 0049404c | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00494054
     PUNPCKLBW MM0,MM7                   ; 00494058
     SHR EDX,0x1                         ; 0049405b
     PUNPCKLBW MM2,MM7                   ; 0049405d
     ADD EAX,EDX                         ; 00494060
     PMULLW MM0,MM2                      ; 00494062
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00494065 | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00494065 | g_LightmapData
     MOVQ MM2,MM3                        ; 0049406d
     MOVQ MM4,MM5                        ; 00494070
-    PXOR MM2,qword ptr [0x006781e8]     ; 00494073 | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00494073 | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 0049407a
     PMULHW MM4,MM3                      ; 0049407d
     PADDW MM0,MM4                       ; 00494080
-    PADDW MM0,qword ptr [0x00676490]    ; 00494083 | ulonglong g_AmbientLightMMX2
+    PADDW MM0,qword ptr [0x00676490]    ; 00494083 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 0049408a
     PACKUSWB MM0,MM7                    ; 0049408e
     MOVQ MM2,MM0                        ; 00494091
     MOVQ MM3,MM0                        ; 00494094
-    PAND MM0,qword ptr [0x006827a0]     ; 00494097 | ulonglong g_BlueMask32
-    PAND MM2,qword ptr [0x00682780]     ; 0049409e | ulonglong g_GreenMask32
-    PAND MM3,qword ptr [0x00682760]     ; 004940a5 | ulonglong g_RedMask32
-    PSRLQ MM0,qword ptr [0x006827e8]    ; 004940ac | ulonglong g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 004940b3 | ulonglong g_GreenBlueBits
-    PSRLQ MM3,qword ptr [0x006827a8]    ; 004940ba | ulonglong g_TotalColorBits
+    PAND MM0,qword ptr [0x006827a0]     ; 00494097 | g_BlueMask32
+    PAND MM2,qword ptr [0x00682780]     ; 0049409e | g_GreenMask32
+    PAND MM3,qword ptr [0x00682760]     ; 004940a5 | g_RedMask32
+    PSRLQ MM0,qword ptr [0x006827e8]    ; 004940ac | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 004940b3 | g_GreenBlueBits
+    PSRLQ MM3,qword ptr [0x006827a8]    ; 004940ba | g_TotalColorBits
     POR MM0,MM2                         ; 004940c1
     POR MM0,MM3                         ; 004940c4
     PSLLQ MM0,0x10                      ; 004940c7
@@ -197,8 +197,8 @@ section .text
     INC EBP                             ; 004940d5
     ADD EDI,0x4                         ; 004940d6
     SUB ECX,0x2                         ; 004940d9
-    JG 0x00493fbd                       ; 004940dc | LAB_00493fbd
-        ;   XREF to: 00493fbd (CONDITIONAL_JUMP)
+    JG 0x00493fbd                       ; 004940dc
+        ;   XREF to: 00493fbd (CONDITIONAL_JUMP)  ; LAB_00493fbd
     POP EBP                             ; 004940e2
     EMMS                                ; 004940e3
     POP EDI                             ; 004940e5

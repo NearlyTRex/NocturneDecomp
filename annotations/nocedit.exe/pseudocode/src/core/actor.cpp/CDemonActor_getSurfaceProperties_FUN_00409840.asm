@@ -28,11 +28,11 @@ section .text
         ;   Label: core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840
     MOV EBX,dword ptr [ESP + 0xc]       ; 00409841
     PUSH 0x495                          ; 00409845
-    PUSH 0x613886                       ; 0040984a | = "..\\core\\actor.cpp" | s_core_actor_cpp_00613886 = ..\core\actor.cpp
+    PUSH 0x613886                       ; 0040984a | = "..\\core\\actor.cpp"
     MOV EDX,dword ptr [ESP + 0x10]      ; 0040984f
     PUSH EDX                            ; 00409853
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00409854 | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00409854
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     MOV dword ptr [EBX + 0x48],0x0      ; 00409859
     FLD float ptr [EBX + 0x44]          ; 00409860
     MOV dword ptr [EBX + 0x50],0x0      ; 00409863

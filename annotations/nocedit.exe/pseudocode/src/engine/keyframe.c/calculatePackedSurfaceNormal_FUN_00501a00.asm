@@ -116,8 +116,8 @@ section .text
     FSQRT                               ; 00501af2
     FSTP float ptr [ESP + 0x1c]         ; 00501af4
     TEST dword ptr [ESP + 0x1c],0x7fffffff ; 00501af8
-    JZ 0x00501baf                       ; 00501b00 | LAB_00501baf
-        ;   XREF to: 00501baf (CONDITIONAL_JUMP)
+    JZ 0x00501baf                       ; 00501b00
+        ;   XREF to: 00501baf (CONDITIONAL_JUMP)  ; LAB_00501baf
     FLD1                                ; 00501b06
         ;   Label: LAB_00501b06
     FLD float ptr [ESP + 0x28]          ; 00501b08
@@ -132,7 +132,7 @@ section .text
     FMULP ST3                           ; 00501b23
     LEA EAX,[ECX*0x4 + 0x0]             ; 00501b25
     FXCH                                ; 00501b2c
-    FLD double ptr [0x00630c98]         ; 00501b2e | double g_NormalTo16BitScale1
+    FLD double ptr [0x00630c98]         ; 00501b2e | g_NormalTo16BitScale1
     FXCH                                ; 00501b34
     FMUL ST1                            ; 00501b36
     SUB EAX,ECX                         ; 00501b38
@@ -158,22 +158,22 @@ section .text
     FLD float ptr [ESP + 0x24]          ; 00501b73
     FLD float ptr [ESP + 0x20]          ; 00501b77
     FXCH ST2                            ; 00501b7b
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00501b7d | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00501b7d
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 00501b82
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00501b84 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00501b84
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST2                            ; 00501b89
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00501b8b | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00501b8b
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 00501b90
     FISTP dword ptr [EDX + 0x8]         ; 00501b92
     FXCH                                ; 00501b95
     FISTP dword ptr [EDX + 0xc]         ; 00501b97
     FISTP dword ptr [EDX + 0x10]        ; 00501b9a
     FADDP                               ; 00501b9d
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00501b9f | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00501b9f
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EDX + 0x14]        ; 00501ba4
     ADD ESP,0x3c                        ; 00501ba7
     POP EBP                             ; 00501baa
@@ -183,6 +183,6 @@ section .text
     RET                                 ; 00501bae
     MOV dword ptr [ESP + 0x1c],0x477fff00 ; 00501baf
         ;   Label: LAB_00501baf
-    JMP 0x00501b06                      ; 00501bb7 | LAB_00501b06
-        ;   XREF to: 00501b06 (UNCONDITIONAL_JUMP)
+    JMP 0x00501b06                      ; 00501bb7
+        ;   XREF to: 00501b06 (UNCONDITIONAL_JUMP)  ; LAB_00501b06
 

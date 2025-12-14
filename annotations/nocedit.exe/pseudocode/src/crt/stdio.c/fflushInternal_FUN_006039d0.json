@@ -1,151 +1,151 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 81, 
-    "pseudocode_lines": 56, 
-    "cross_reference_count": 9, 
-    "global_count": 2, 
-    "total_lines": 192, 
-    "assembly_lines": 136, 
-    "suspect_count": 2, 
+    "assembly_lines": 136,
+    "complexity_score": 81,
+    "cross_reference_count": 9,
+    "function_call_count": 5,
+    "global_count": 2,
+    "pseudocode_lines": 56,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_setErrno_FUN_00602790", 
-      "addr": "00602790"
-    }, 
-    {
-      "name": "crt_stdio.c_flushFileBuffers_FUN_0060af00", 
-      "addr": "0060af00"
-    }, 
-    {
-      "name": "crt_stdio.c_lseek_FUN_00606690", 
-      "addr": "00606690"
-    }, 
-    {
-      "name": "crt_stdio.c_write_FUN_006038c0", 
-      "addr": "006038c0"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
-      "addr": "00684ee8", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
-      "addr": "00684eec", 
-      "value": "00602434"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "bVar1 = *(byte *)((int)&file_handle->_flag + 1);"
-    }, 
-    {
-      "line": 31, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&file_handle->_flag + 1) = bVar1 & 0xef;"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "006039d0", 
-    "signature": "int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)", 
-    "address_range": [
-      [
-        "006039d0", 
-        "00603af6"
-      ]
-    ], 
-    "name": "crt_stdio.c_fflushInternal_FUN_006039d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 192
+  },
   "cross_references": [
     {
-      "from_addr": "00605987", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_FlushFilesByMask_FUN_0060595c", 
-      "addr": "0060595c"
-    }, 
+      "addr": "0060595c",
+      "from_addr": "00605987",
+      "name": "crt_stdio.c_FlushFilesByMask_FUN_0060595c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00601ffc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fclose_force_FUN_00601fd0", 
-      "addr": "00601fd0"
-    }, 
+      "addr": "00601fd0",
+      "from_addr": "00601ffc",
+      "name": "crt_stdio.c_fclose_force_FUN_00601fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00601551", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fflush_FUN_00601540", 
-      "addr": "00601540"
-    }, 
+      "addr": "00601540",
+      "from_addr": "00601551",
+      "name": "crt_stdio.c_fflush_FUN_00601540",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00600861", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fputc_FUN_006007a0", 
-      "addr": "006007a0"
-    }, 
+      "addr": "006007a0",
+      "from_addr": "00600861",
+      "name": "crt_stdio.c_fputc_FUN_006007a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060ec37", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fputs_FUN_0060ebb0", 
-      "addr": "0060ebb0"
-    }, 
+      "addr": "0060ebb0",
+      "from_addr": "0060ec37",
+      "name": "crt_stdio.c_fputs_FUN_0060ebb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ffafc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
-    }, 
+      "addr": "005ffacc",
+      "from_addr": "005ffafc",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005fdd48", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
-      "addr": "005fdc00"
-    }, 
+      "addr": "005fdc00",
+      "from_addr": "005fdd48",
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006060b1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_prepare_stream_for_write_FUN_00606055", 
-      "addr": "00606055"
-    }, 
+      "addr": "00606055",
+      "from_addr": "006060b1",
+      "name": "crt_stdio.c_prepare_stream_for_write_FUN_00606055",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006048ff", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_vfprintf_FUN_00604850", 
-      "addr": "00604850"
+      "addr": "00604850",
+      "from_addr": "006048ff",
+      "name": "crt_stdio.c_vfprintf_FUN_00604850",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "006039d0",
+    "address_range": [
+      [
+        "006039d0",
+        "00603af6"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_fflushInternal_FUN_006039d0",
+    "signature": "int crt_stdio.c_fflushInternal_FUN_006039d0(FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00602790",
+      "name": "crt_errno.c_setErrno_FUN_00602790"
+    },
+    {
+      "addr": "0060af00",
+      "name": "crt_stdio.c_flushFileBuffers_FUN_0060af00"
+    },
+    {
+      "addr": "00606690",
+      "name": "crt_stdio.c_lseek_FUN_00606690"
+    },
+    {
+      "addr": "006038c0",
+      "name": "crt_stdio.c_write_FUN_006038c0"
+    },
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684eec",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec",
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(byte *)((int)",
+      "text": "bVar1 = *(byte *)((int)&file_handle->_flag + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file_handle->_flag + 1) = bVar1 & 0xef;",
+      "type": "pointer_cast"
     }
   ]
 }

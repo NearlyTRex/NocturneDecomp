@@ -11,8 +11,7 @@ void core_batman_cpp_FUN_00416410(void)
 {
   CBatman *this_ptr;
   
-  this_ptr = (CBatman *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf78,"..\\core\\batman.cpp",0x58);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf78,"..\\core\\batman.cpp",0x58);
   if (this_ptr == (CBatman *)0x0) {
     return;
   }

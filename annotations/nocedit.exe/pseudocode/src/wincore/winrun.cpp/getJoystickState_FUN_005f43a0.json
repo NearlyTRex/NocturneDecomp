@@ -1,162 +1,162 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 96, 
-    "pseudocode_lines": 66, 
-    "cross_reference_count": 1, 
-    "global_count": 12, 
-    "total_lines": 184, 
-    "assembly_lines": 118, 
-    "suspect_count": 2, 
+    "assembly_lines": 118,
+    "complexity_score": 96,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 12,
+    "pseudocode_lines": 66,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "joyGetPos", 
-      "addr": "EXTERNAL:00000010"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "joyGetPos*", 
-      "name": "joyGetPos", 
-      "addr": "00611408", 
-      "value": "0021182e"
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_JoyXPos", 
-      "addr": "02d051f8", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_JoyYPos", 
-      "addr": "02d051fc", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_JoyRPos", 
-      "addr": "02d05200", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_JoyZPos", 
-      "addr": "02d05204", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_JoyButtons", 
-      "addr": "02d05208", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_JoystickPresent", 
-      "addr": "02d0520c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_JoyWantUAxis", 
-      "addr": "02d05210", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_JoyWantRAxis", 
-      "addr": "02d05214", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_JoystickHasPOV", 
-      "addr": "02d0521c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_JoyPOVDirection", 
-      "addr": "02d05220", 
-      "value": null
-    }, 
-    {
-      "type": "FARPROC", 
-      "name": "g_joyGetPosEx", 
-      "addr": "03f994f4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 5, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f43a0", 
-    "signature": "void wincore_winrun.cpp_getJoystickState_FUN_005f43a0(void)", 
-    "address_range": [
-      [
-        "005f43a0", 
-        "005f44f5"
-      ]
-    ], 
-    "name": "wincore_winrun.cpp_getJoystickState_FUN_005f43a0"
-  }, 
-  "stack_frame": {
-    "local_size": 84, 
-    "variables": [
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1c"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 84, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 184
+  },
   "cross_references": [
     {
-      "from_addr": "004dbe7e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_resetKeyState_FUN_004dbe60", 
-      "addr": "004dbe60"
+      "addr": "004dbe60",
+      "from_addr": "004dbe7e",
+      "name": "core_game.cpp_CGame_resetKeyState_FUN_004dbe60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005f43a0",
+    "address_range": [
+      [
+        "005f43a0",
+        "005f44f5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_getJoystickState_FUN_005f43a0",
+    "signature": "void wincore_winrun.cpp_getJoystickState_FUN_005f43a0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000010",
+      "name": "joyGetPos"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611408",
+      "name": "joyGetPos",
+      "type": "joyGetPos*",
+      "value": "0021182e"
+    },
+    {
+      "addr": "02d051f8",
+      "name": "g_JoyXPos",
+      "type": "DWORD",
+      "value": null
+    },
+    {
+      "addr": "02d051fc",
+      "name": "g_JoyYPos",
+      "type": "DWORD",
+      "value": null
+    },
+    {
+      "addr": "02d05200",
+      "name": "g_JoyRPos",
+      "type": "DWORD",
+      "value": null
+    },
+    {
+      "addr": "02d05204",
+      "name": "g_JoyZPos",
+      "type": "DWORD",
+      "value": null
+    },
+    {
+      "addr": "02d05208",
+      "name": "g_JoyButtons",
+      "type": "DWORD",
+      "value": null
+    },
+    {
+      "addr": "02d0520c",
+      "name": "g_JoystickPresent",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d05210",
+      "name": "g_JoyWantUAxis",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d05214",
+      "name": "g_JoyWantRAxis",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0521c",
+      "name": "g_JoystickHasPOV",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d05220",
+      "name": "g_JoyPOVDirection",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f994f4",
+      "name": "g_joyGetPosEx",
+      "type": "FARPROC",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 5,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

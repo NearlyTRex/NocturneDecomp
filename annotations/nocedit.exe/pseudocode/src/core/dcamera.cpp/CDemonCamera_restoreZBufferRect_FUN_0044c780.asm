@@ -34,32 +34,32 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0044c788
     MOV EAX,dword ptr [ESI + 0x4]       ; 0044c78c
     CMP EAX,dword ptr [EDX + 0x11d4]    ; 0044c78f
-    JLE 0x0044c830                      ; 0044c795 | LAB_0044c830
-        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)
+    JLE 0x0044c830                      ; 0044c795
+        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)  ; LAB_0044c830
     MOV EBX,dword ptr [EDX + 0x11d8]    ; 0044c79b
     CMP EBX,dword ptr [ESI + 0xc]       ; 0044c7a1
-    JGE 0x0044c830                      ; 0044c7a4 | LAB_0044c830
-        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)
+    JGE 0x0044c830                      ; 0044c7a4
+        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)  ; LAB_0044c830
     MOV EDI,dword ptr [EDX + 0x11dc]    ; 0044c7aa
     CMP EDI,dword ptr [ESI]             ; 0044c7b0
-    JLE 0x0044c830                      ; 0044c7b2 | LAB_0044c830
-        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)
+    JLE 0x0044c830                      ; 0044c7b2
+        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)  ; LAB_0044c830
     MOV EBP,dword ptr [EDX + 0x11e0]    ; 0044c7b8
     CMP EBP,dword ptr [ESI + 0x8]       ; 0044c7be
-    JLE 0x0044c830                      ; 0044c7c1 | LAB_0044c830
-        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x02d03e94],0x0      ; 0044c7c7 | int g_UseExternalRenderer
-    JNZ 0x0044c835                      ; 0044c7ce | LAB_0044c835
-        ;   XREF to: 0044c835 (CONDITIONAL_JUMP)
+    JLE 0x0044c830                      ; 0044c7c1
+        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)  ; LAB_0044c830
+    CMP dword ptr [0x02d03e94],0x0      ; 0044c7c7 | g_UseExternalRenderer
+    JNZ 0x0044c835                      ; 0044c7ce
+        ;   XREF to: 0044c835 (CONDITIONAL_JUMP)  ; LAB_0044c835
     MOV EDX,dword ptr [ESI + 0xc]       ; 0044c7d0
     MOV EDI,dword ptr [ESI + 0x8]       ; 0044c7d3
     CMP EDI,EDX                         ; 0044c7d6
-    JG 0x0044c830                       ; 0044c7d8 | LAB_0044c830
-        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)
+    JG 0x0044c830                       ; 0044c7d8
+        ;   XREF to: 0044c830 (CONDITIONAL_JUMP)  ; LAB_0044c830
     LEA EBP,[EDI*0x4 + 0x0]             ; 0044c7da
     MOV ECX,dword ptr [ESI]             ; 0044c7e1
         ;   Label: LAB_0044c7e1
-    MOV EAX,dword ptr [EBP + 0x2cf7d5c] ; 0044c7e3 | uint *[1024] g_ZBufferScanlineArray
+    MOV EAX,dword ptr [EBP + 0x2cf7d5c] ; 0044c7e3 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     SHL ECX,0x2                         ; 0044c7e9
     ADD ECX,EAX                         ; 0044c7ec
     MOV EAX,dword ptr [ESP + 0x14]      ; 0044c7ee
@@ -80,13 +80,13 @@ section .text
     PUSH ECX                            ; 0044c81b
     ADD EBP,0x4                         ; 0044c81c
     INC EDI                             ; 0044c81f
-    CALL core_dstrender.cpp_memcpyMMX_FUN_00492001 ; 0044c820 | void * core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
-        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)
+    CALL core_dstrender.cpp_memcpyMMX_FUN_00492001 ; 0044c820
+        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void * core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
     MOV EAX,dword ptr [ESI + 0xc]       ; 0044c825
     ADD ESP,0xc                         ; 0044c828
     CMP EDI,EAX                         ; 0044c82b
-    JLE 0x0044c7e1                      ; 0044c82d | LAB_0044c7e1
-        ;   XREF to: 0044c7e1 (CONDITIONAL_JUMP)
+    JLE 0x0044c7e1                      ; 0044c82d
+        ;   XREF to: 0044c7e1 (CONDITIONAL_JUMP)  ; LAB_0044c7e1
     NOP                                 ; 0044c82f
     POP EBP                             ; 0044c830
         ;   Label: LAB_0044c830
@@ -94,18 +94,18 @@ section .text
     POP ESI                             ; 0044c832
     POP EBX                             ; 0044c833
     RET                                 ; 0044c834
-    MOV EAX,[0x00679398]                ; 0044c835 | int g_WindowHeight
+    MOV EAX,[0x00679398]                ; 0044c835 | g_WindowHeight
         ;   Label: LAB_0044c835
     DEC EAX                             ; 0044c83a
     PUSH EAX                            ; 0044c83b
-    MOV EAX,[0x00679394]                ; 0044c83c | int g_WindowWidth
+    MOV EAX,[0x00679394]                ; 0044c83c | g_WindowWidth
     DEC EAX                             ; 0044c841
     PUSH EAX                            ; 0044c842
     PUSH 0x0                            ; 0044c843
     PUSH 0x0                            ; 0044c845
     PUSH 0x0                            ; 0044c847
-    CALL wincore_windll.cpp_restoreZBuffer_FUN_005b7d20 ; 0044c849 | int wincore_windll.cpp_restoreZBuffer_FUN_005b7d20(int left, int top, int mode, int right, ...)
-        ;   XREF to: 005b7d20 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_restoreZBuffer_FUN_005b7d20 ; 0044c849
+        ;   XREF to: 005b7d20 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_restoreZBuffer_FUN_005b7d20(int left, int top, int mode, int right, ...)
     ADD ESP,0x14                        ; 0044c84e
     POP EBP                             ; 0044c851
     POP EDI                             ; 0044c852

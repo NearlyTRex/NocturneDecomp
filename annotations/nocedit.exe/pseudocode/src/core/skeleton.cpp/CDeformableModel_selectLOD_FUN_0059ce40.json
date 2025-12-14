@@ -1,144 +1,144 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 95, 
-    "pseudocode_lines": 35, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 104, 
-    "assembly_lines": 69, 
-    "suspect_count": 5, 
+    "assembly_lines": 69,
+    "complexity_score": 95,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 35,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840", 
-      "addr": "00420840"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CBoundingBox3D *in_stack_0000000c;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar2 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(in_stack_0000000c);"
-    }, 
-    {
-      "line": 20, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar1 = extraout_ECX + -1;"
-    }, 
-    {
-      "line": 22, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "piVar3 = &this_ptr->lod_info[extraout_ECX + -2].shadow_only_flag;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059ce40", 
-    "signature": "int core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40(CDeformableModel * this_ptr, CBoundingBox3D * bounding_box)", 
-    "address_range": [
-      [
-        "0059ce40", 
-        "0059cebc"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40"
-  }, 
-  "stack_frame": {
-    "local_size": 20, 
-    "variables": [
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CBoundingBox3D *", 
-        "size": 4, 
-        "name": "bounding_box"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 104
+  },
   "cross_references": [
     {
-      "from_addr": "0042b045", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042af60", 
-      "addr": "0042af60"
-    }, 
+      "addr": "0042af60",
+      "from_addr": "0042b045",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042af60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a01a8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150", 
-      "addr": "005a0150"
+      "addr": "005a0150",
+      "from_addr": "005a01a8",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059ce40",
+    "address_range": [
+      [
+        "0059ce40",
+        "0059cebc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40",
+    "signature": "int core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40(CDeformableModel * this_ptr, CBoundingBox3D * bounding_box)"
+  },
+  "function_calls": [
+    {
+      "addr": "00420840",
+      "name": "core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "bounding_box",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "text": "CBoundingBox3D *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "fVar2 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_ECX",
+      "text": "iVar1 = extraout_ECX + -1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_ECX",
+      "text": "piVar3 = &this_ptr->lod_info[extraout_ECX + -2].shadow_only_flag;",
+      "type": "extra_output"
     }
   ]
 }

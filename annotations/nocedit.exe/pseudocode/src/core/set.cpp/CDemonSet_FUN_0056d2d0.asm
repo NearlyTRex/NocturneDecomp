@@ -43,57 +43,57 @@ section .text
     PUSH EDI                            ; 0056d2d2
     PUSH EBP                            ; 0056d2d3
     MOV EDI,dword ptr [ESP + 0x14]      ; 0056d2d4
-    MOV EDX,dword ptr [0x03276dac]      ; 0056d2d8 | int g_MasterLightCount
+    MOV EDX,dword ptr [0x03276dac]      ; 0056d2d8 | g_MasterLightCount
     XOR ESI,ESI                         ; 0056d2de
     TEST EDX,EDX                        ; 0056d2e0
-    JLE 0x0056d31c                      ; 0056d2e2 | LAB_0056d31c
-        ;   XREF to: 0056d31c (CONDITIONAL_JUMP)
+    JLE 0x0056d31c                      ; 0056d2e2
+        ;   XREF to: 0056d31c (CONDITIONAL_JUMP)  ; LAB_0056d31c
     XOR EBX,EBX                         ; 0056d2e4
     MOV EBP,0xa0a                       ; 0056d2e6
         ;   Label: LAB_0056d2e6
-    MOV ECX,0x645e0a                    ; 0056d2eb | = "..\\core\\set.cpp" | s_core_set_cpp_00645e0a = ..\core\set.cpp
-    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0056d2f0 | CDemonLight *[96] g_MasterLightList
-    MOV dword ptr [0x02f0d944],EBP      ; 0056d2f6 | int g_CurrentDebugLine
-    MOV dword ptr [0x0067d20c],ECX      ; 0056d2fc | char * g_CurrentDebugFilename
+    MOV ECX,0x645e0a                    ; 0056d2eb | = "..\\core\\set.cpp"
+    MOV EAX,dword ptr [EBX + 0x3276db0] ; 0056d2f0 | g_MasterLightList | DAT_03276db4
+    MOV dword ptr [0x02f0d944],EBP      ; 0056d2f6 | g_CurrentDebugLine
+    MOV dword ptr [0x0067d20c],ECX      ; 0056d2fc | g_CurrentDebugFilename
     TEST EAX,EAX                        ; 0056d302
-    JNZ 0x0056d367                      ; 0056d304 | LAB_0056d367
-        ;   XREF to: 0056d367 (CONDITIONAL_JUMP)
-    MOV EBP,dword ptr [0x03276dac]      ; 0056d306 | int g_MasterLightCount
+    JNZ 0x0056d367                      ; 0056d304
+        ;   XREF to: 0056d367 (CONDITIONAL_JUMP)  ; LAB_0056d367
+    MOV EBP,dword ptr [0x03276dac]      ; 0056d306 | g_MasterLightCount
         ;   Label: LAB_0056d306
     ADD EBX,0x4                         ; 0056d30c
     XOR ECX,ECX                         ; 0056d30f
     INC ESI                             ; 0056d311
-    MOV dword ptr [EBX + 0x3276dac],ECX ; 0056d312 | CDemonLight *[96] g_MasterLightList
+    MOV dword ptr [EBX + 0x3276dac],ECX ; 0056d312 | g_MasterLightList | DAT_03276db4
     CMP ESI,EBP                         ; 0056d318
-    JL 0x0056d2e6                       ; 0056d31a | LAB_0056d2e6
-        ;   XREF to: 0056d2e6 (CONDITIONAL_JUMP)
+    JL 0x0056d2e6                       ; 0056d31a
+        ;   XREF to: 0056d2e6 (CONDITIONAL_JUMP)  ; LAB_0056d2e6
     MOV EDX,dword ptr [EDI + 0x19a2c]   ; 0056d31c
         ;   Label: LAB_0056d31c
     XOR EAX,EAX                         ; 0056d322
     XOR EBX,EBX                         ; 0056d324
-    MOV [0x03276dac],EAX                ; 0056d326 | int g_MasterLightCount
+    MOV [0x03276dac],EAX                ; 0056d326 | g_MasterLightCount
     TEST EDX,EDX                        ; 0056d32b
-    JLE 0x0056d350                      ; 0056d32d | LAB_0056d350
-        ;   XREF to: 0056d350 (CONDITIONAL_JUMP)
+    JLE 0x0056d350                      ; 0056d32d
+        ;   XREF to: 0056d350 (CONDITIONAL_JUMP)  ; LAB_0056d350
     LEA ESI,[EDI + 0x19a30]             ; 0056d32f
     PUSH ESI                            ; 0056d335
         ;   Label: LAB_0056d335
-    CALL core_setutil.cpp_C3DSLight_doNothing_FUN_00586ca0 ; 0056d336 | void core_setutil.cpp_C3DSLight_doNothing_FUN_00586ca0(C3DSLight * this_ptr)
-        ;   XREF to: 00586ca0 (UNCONDITIONAL_CALL)
+    CALL core_setutil.cpp_C3DSLight_doNothing_FUN_00586ca0 ; 0056d336
+        ;   XREF to: 00586ca0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_doNothing_FUN_00586ca0(C3DSLight * this_ptr)
     INC EBX                             ; 0056d33b
     ADD ESP,0x4                         ; 0056d33c
     MOV EAX,dword ptr [EDI + 0x19a2c]   ; 0056d33f
     ADD ESI,0x1898                      ; 0056d345
     CMP EBX,EAX                         ; 0056d34b
-    JL 0x0056d335                       ; 0056d34d | LAB_0056d335
-        ;   XREF to: 0056d335 (CONDITIONAL_JUMP)
+    JL 0x0056d335                       ; 0056d34d
+        ;   XREF to: 0056d335 (CONDITIONAL_JUMP)  ; LAB_0056d335
     NOP                                 ; 0056d34f
-    CALL core_dlight.cpp_resetRestoreMemoryAllocator_FUN_004729c0 ; 0056d350 | void core_dlight.cpp_resetRestoreMemoryAllocator_FUN_004729c0()
+    CALL core_dlight.cpp_resetRestoreMemoryAllocator_FUN_004729c0 ; 0056d350
+        ;   XREF to: 004729c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_resetRestoreMemoryAllocator_FUN_004729c0()
         ;   Label: LAB_0056d350
-        ;   XREF to: 004729c0 (UNCONDITIONAL_CALL)
-    PUSH 0x32758e4                      ; 0056d355 | CDemonCamera g_CDemonCameraInstance
-    CALL core_dcamera.cpp_CDemonCamera_free_FUN_0044c360 ; 0056d35a | void core_dcamera.cpp_CDemonCamera_free_FUN_0044c360(CDemonCamera * this_ptr)
-        ;   XREF to: 0044c360 (UNCONDITIONAL_CALL)
+    PUSH 0x32758e4                      ; 0056d355 | g_CDemonCameraInstance
+    CALL core_dcamera.cpp_CDemonCamera_free_FUN_0044c360 ; 0056d35a
+        ;   XREF to: 0044c360 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_free_FUN_0044c360(CDemonCamera * this_ptr)
     ADD ESP,0x4                         ; 0056d35f
     POP EBP                             ; 0056d362
     POP EDI                             ; 0056d363
@@ -106,6 +106,6 @@ section .text
     PUSH EAX                            ; 0056d36c
     CALL dword ptr [EDX]                ; 0056d36d
     ADD ESP,0x8                         ; 0056d36f
-    JMP 0x0056d306                      ; 0056d372 | LAB_0056d306
-        ;   XREF to: 0056d306 (UNCONDITIONAL_JUMP)
+    JMP 0x0056d306                      ; 0056d372
+        ;   XREF to: 0056d306 (UNCONDITIONAL_JUMP)  ; LAB_0056d306
 

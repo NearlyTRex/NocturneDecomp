@@ -1,60 +1,60 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 27, 
-    "assembly_lines": 17, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_ammo.cpp_CAmmo_ctor_FUN_00410dc0", 
-      "addr": "00410dc0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
-      "addr": "0050f1b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_ammo_cpp_00614923", 
-      "addr": "00614923", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00410d80", 
-    "signature": "CAmmo * core_ammo.cpp_CAmmo_factoryFunc_FUN_00410d80(void)", 
-    "address_range": [
-      [
-        "00410d80", 
-        "00410da2"
-      ]
-    ], 
-    "name": "core_ammo.cpp_CAmmo_factoryFunc_FUN_00410d80"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 17,
+    "complexity_score": 10,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
   "cross_references": [
     {
-      "from_addr": "00410d5c", 
-      "type": "DATA", 
-      "name": "core_ammo.cpp_staticInit_FUN_00410d50", 
-      "addr": "00410d50"
+      "addr": "00410d50",
+      "from_addr": "00410d5c",
+      "name": "core_ammo.cpp_staticInit_FUN_00410d50",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "00410d80",
+    "address_range": [
+      [
+        "00410d80",
+        "00410da2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammo.cpp_CAmmo_factoryFunc_FUN_00410d80",
+    "signature": "CAmmo * core_ammo.cpp_CAmmo_factoryFunc_FUN_00410d80(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00410dc0",
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_00410dc0"
+    },
+    {
+      "addr": "0050f1b0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614923",
+      "name": "s_core_ammo_cpp_00614923",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

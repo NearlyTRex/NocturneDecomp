@@ -1,118 +1,118 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 58, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 151, 
-    "assembly_lines": 123, 
-    "suspect_count": 2, 
+    "assembly_lines": 123,
+    "complexity_score": 58,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
-      "addr": "0040ac80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_actor_cpp_00613a19", 
-      "addr": "00613a19", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00613a30", 
-      "addr": "00613a30", 
-      "value": "2"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00613a38", 
-      "addr": "00613a38", 
-      "value": "6"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0040a0f8", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040a0f0", 
-    "signature": "int core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor * this_ptr)", 
-    "address_range": [
-      [
-        "0040a0f0", 
-        "0040a202"
-      ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0"
-  }, 
-  "stack_frame": {
-    "local_size": 52, 
-    "variables": [
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 56, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 151
+  },
   "cross_references": [
     {
-      "from_addr": "0041b201", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041b1f0", 
-      "addr": "0041b1f0"
+      "addr": "0041b1f0",
+      "from_addr": "0041b201",
+      "name": "core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041b1f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040a0f0",
+    "address_range": [
+      [
+        "0040a0f0",
+        "0040a202"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0",
+    "signature": "int core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00613a19",
+      "name": "s_core_actor_cpp_00613a19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613a30",
+      "name": "DOUBLE_00613a30",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00613a38",
+      "name": "DOUBLE_00613a38",
+      "type": "double",
+      "value": "6"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0040a0f8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

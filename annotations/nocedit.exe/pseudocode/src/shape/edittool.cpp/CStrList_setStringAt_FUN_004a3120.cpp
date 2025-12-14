@@ -35,9 +35,9 @@ shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120(CStrList *this_ptr,int inde
     cVar1 = *pcVar2;
     pcVar2 = pcVar2 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
-  pcVar2 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                             (this_ptr->data_array[(int)new_string],~uVar3,
-                              "..\\shape\\edittool.cpp",0xc1b);
+  pcVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                     (this_ptr->data_array[(int)new_string],~uVar3,"..\\shape\\edittool.cpp",
+                      0xc1b);
   this_ptr->data_array[(int)new_string] = pcVar2;
   if (this_ptr->data_array[(int)new_string] == (char *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";

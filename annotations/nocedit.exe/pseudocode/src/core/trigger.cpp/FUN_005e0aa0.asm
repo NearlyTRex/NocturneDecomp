@@ -18,8 +18,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005e0aa0
         ;   Label: core_trigger.cpp_FUN_005e0aa0
     CMP dword ptr [EAX + 0x174],0x4     ; 005e0aa4
-    JZ 0x005e0aae                       ; 005e0aab | LAB_005e0aae
-        ;   XREF to: 005e0aae (CONDITIONAL_JUMP)
+    JZ 0x005e0aae                       ; 005e0aab
+        ;   XREF to: 005e0aae (CONDITIONAL_JUMP)  ; LAB_005e0aae
     RET                                 ; 005e0aad
     MOV dword ptr [EAX + 0x2f0],0x1     ; 005e0aae
         ;   Label: LAB_005e0aae

@@ -35,8 +35,8 @@ section .text
     PUSH ECX                            ; 004cdd89
     LEA EAX,[ESP + 0x8]                 ; 004cdd8a
     PUSH EAX                            ; 004cdd8e
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004cdd8f | int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004cdd8f
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 004cdd94
     MOV EAX,ESP                         ; 004cdd97
     PUSH EAX                            ; 004cdd99
@@ -50,8 +50,8 @@ section .text
     PUSH EBP                            ; 004cddb9
     MOV EAX,dword ptr [ESP + 0x1028]    ; 004cddba
     PUSH EAX                            ; 004cddc1
-    CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0 ; 004cddc2 | int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0(CBitFont * this_ptr, int right_edge_x, int y_pos, int color_mode, ...)
-        ;   XREF to: 004cdce0 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0 ; 004cddc2
+        ;   XREF to: 004cdce0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0(CBitFont * this_ptr, int right_edge_x, int y_pos, int color_mode, ...)
     ADD ESP,0x18                        ; 004cddc7
     ADD ESP,0x1000                      ; 004cddca
     POP EBP                             ; 004cddd0

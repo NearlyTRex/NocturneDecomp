@@ -23,26 +23,26 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0060d512
     PUSH 0x1                            ; 0060d516
     PUSH EBX                            ; 0060d518
-    CALL crt_stdio.c_stream_valid_FUN_00608cd1 ; 0060d519 | int crt_stdio.c_stream_valid_FUN_00608cd1(FILE * stream, int operation_type)
-        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_stream_valid_FUN_00608cd1 ; 0060d519
+        ;   XREF to: 00608cd1 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_stream_valid_FUN_00608cd1(FILE * stream, int operation_type)
     ADD ESP,0x8                         ; 0060d51e
     TEST EAX,EAX                        ; 0060d521
-    JZ 0x0060d56c                       ; 0060d523 | LAB_0060d56c
-        ;   XREF to: 0060d56c (CONDITIONAL_JUMP)
+    JZ 0x0060d56c                       ; 0060d523
+        ;   XREF to: 0060d56c (CONDITIONAL_JUMP)  ; LAB_0060d56c
     MOV EAX,dword ptr [EBX]             ; 0060d525
     MOV EAX,dword ptr [EAX + 0x4]       ; 0060d527
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0x4] ; 0060d52a
     MOV ESI,dword ptr [EAX + 0x14]      ; 0060d52e
     CMP ESI,dword ptr [EAX + 0x10]      ; 0060d531
-    JNC 0x0060d549                      ; 0060d534 | LAB_0060d549
-        ;   XREF to: 0060d549 (CONDITIONAL_JUMP)
+    JNC 0x0060d549                      ; 0060d534
+        ;   XREF to: 0060d549 (CONDITIONAL_JUMP)  ; LAB_0060d549
     MOV AL,byte ptr [ESI]               ; 0060d536
     AND EAX,0xff                        ; 0060d538
     MOV ESI,EAX                         ; 0060d53d
         ;   Label: LAB_0060d53d
     CMP EAX,-0x1                        ; 0060d53f
-    JZ 0x0060d555                       ; 0060d542 | LAB_0060d555
-        ;   XREF to: 0060d555 (CONDITIONAL_JUMP)
+    JZ 0x0060d555                       ; 0060d542
+        ;   XREF to: 0060d555 (CONDITIONAL_JUMP)  ; LAB_0060d555
     MOV EAX,ESI                         ; 0060d544
     POP ESI                             ; 0060d546
     POP EBX                             ; 0060d547
@@ -52,16 +52,16 @@ section .text
     MOV ESI,dword ptr [EAX + 0x28]      ; 0060d54a
     CALL dword ptr [ESI + 0x10]         ; 0060d54d
     ADD ESP,0x4                         ; 0060d550
-    JMP 0x0060d53d                      ; 0060d553 | LAB_0060d53d
-        ;   XREF to: 0060d53d (UNCONDITIONAL_JUMP)
+    JMP 0x0060d53d                      ; 0060d553
+        ;   XREF to: 0060d53d (UNCONDITIONAL_JUMP)  ; LAB_0060d53d
     MOV EAX,dword ptr [EBX]             ; 0060d555
         ;   Label: LAB_0060d555
     MOV ECX,dword ptr [EAX + 0x4]       ; 0060d557
     PUSH 0x4                            ; 0060d55a
     ADD EBX,ECX                         ; 0060d55c
     PUSH EBX                            ; 0060d55e
-    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 0060d55f | void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
-        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 0060d55f
+        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
     ADD ESP,0x8                         ; 0060d564
     MOV EAX,ESI                         ; 0060d567
     POP ESI                             ; 0060d569

@@ -27,20 +27,20 @@ section .text
     PUSH EBX                            ; 005cc620
         ;   Label: shape_superopt.cpp_CPoly_ctor_FUN_005cc620
     MOV EBX,dword ptr [ESP + 0x8]       ; 005cc621
-    PUSH 0x663ca0                       ; 005cc625 | WatcomTypeInfo g_CP2DTypeInfo
+    PUSH 0x663ca0                       ; 005cc625 | g_CP2DTypeInfo
     PUSH 0x3                            ; 005cc62a
     ADD EBX,0x10                        ; 005cc62c
     PUSH EBX                            ; 005cc62f
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005cc630 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 005cc630
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005cc635
     MOV EDX,dword ptr [ESP + 0xc]       ; 005cc638
     PUSH EDX                            ; 005cc63c
     LEA EBX,[EAX + -0x10]               ; 005cc63d
     PUSH EBX                            ; 005cc640
-    MOV dword ptr [EBX + 0x64],0x663ad4 ; 005cc641 | CPoly_vtable g_CPolyVTable
-    CALL shape_superopt.cpp_CPoly_init_FUN_005cc670 ; 005cc648 | void shape_superopt.cpp_CPoly_init_FUN_005cc670(CPoly * this_ptr, CObj * parent_obj)
-        ;   XREF to: 005cc670 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EBX + 0x64],0x663ad4 ; 005cc641 | g_CPolyVTable
+    CALL shape_superopt.cpp_CPoly_init_FUN_005cc670 ; 005cc648
+        ;   XREF to: 005cc670 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_CPoly_init_FUN_005cc670(CPoly * this_ptr, CObj * parent_obj)
     ADD ESP,0x8                         ; 005cc64d
     MOV EAX,EBX                         ; 005cc650
     POP EBX                             ; 005cc652

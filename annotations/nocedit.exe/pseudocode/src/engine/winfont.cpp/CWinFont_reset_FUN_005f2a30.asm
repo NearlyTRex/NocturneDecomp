@@ -27,8 +27,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005f2a31
     MOV EDX,dword ptr [EBX + 0x4]       ; 005f2a35
     TEST EDX,EDX                        ; 005f2a38
-    JNZ 0x005f2a5a                      ; 005f2a3a | LAB_005f2a5a
-        ;   XREF to: 005f2a5a (CONDITIONAL_JUMP)
+    JNZ 0x005f2a5a                      ; 005f2a3a
+        ;   XREF to: 005f2a5a (CONDITIONAL_JUMP)  ; LAB_005f2a5a
     MOV dword ptr [EBX + 0x128],0x0     ; 005f2a3c
         ;   Label: LAB_005f2a3c
     MOV EAX,dword ptr [EBX + 0x128]     ; 005f2a46
@@ -41,15 +41,15 @@ section .text
     MOV ECX,dword ptr [EBX + 0x10]      ; 005f2a5b
     PUSH ECX                            ; 005f2a5e
     PUSH EDX                            ; 005f2a5f
-    CALL dword ptr CS:[0x6113ec]        ; 005f2a60 | SelectObject * SelectObject
+    CALL dword ptr CS:[0x6113ec]        ; 005f2a60 | SelectObject
     MOV EDI,dword ptr [EBX + 0x4]       ; 005f2a67
     PUSH EDI                            ; 005f2a6a
     MOV dword ptr [EBX + 0x10],0x0      ; 005f2a6b
-    CALL dword ptr CS:[0x6113d8]        ; 005f2a72 | DeleteDC * DeleteDC
+    CALL dword ptr CS:[0x6113d8]        ; 005f2a72 | DeleteDC
     MOV dword ptr [EBX + 0x4],0x0       ; 005f2a79
     MOV dword ptr [EBX + 0x8],0x0       ; 005f2a80
     MOV dword ptr [EBX + 0x14],0x0      ; 005f2a87
     POP EDI                             ; 005f2a8e
-    JMP 0x005f2a3c                      ; 005f2a8f | LAB_005f2a3c
-        ;   XREF to: 005f2a3c (UNCONDITIONAL_JUMP)
+    JMP 0x005f2a3c                      ; 005f2a8f
+        ;   XREF to: 005f2a3c (UNCONDITIONAL_JUMP)  ; LAB_005f2a3c
 

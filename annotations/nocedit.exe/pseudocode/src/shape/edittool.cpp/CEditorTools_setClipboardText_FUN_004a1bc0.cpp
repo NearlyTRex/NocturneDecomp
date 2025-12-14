@@ -37,7 +37,7 @@ shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
   if (BVar2 != 0) {
     hMem = (*GlobalAlloc)(0x2002,uVar4);
     if (hMem != (HGLOBAL)0x0) {
-      pcVar3 = (char *)(*GlobalLock)(hMem);
+      pcVar3 = (*GlobalLock)(hMem);
       if (pcVar3 == (char *)0x0) {
         (*GlobalFree)(hMem);
       }
@@ -60,8 +60,8 @@ shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
     (*CloseClipboard)();
   }
   g_ClipboardBackupText =
-       (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                         (g_ClipboardBackupText,uVar4,"..\\shape\\edittool.cpp",0x99f);
+       shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                 (g_ClipboardBackupText,uVar4,"..\\shape\\edittool.cpp",0x99f);
   if (g_ClipboardBackupText == (char *)0x0) {
     return;
   }

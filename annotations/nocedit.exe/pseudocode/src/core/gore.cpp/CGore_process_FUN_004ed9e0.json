@@ -1,175 +1,175 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 51, 
-    "pseudocode_lines": 36, 
-    "cross_reference_count": 3, 
-    "global_count": 13, 
-    "total_lines": 117, 
-    "assembly_lines": 81, 
-    "suspect_count": 1, 
+    "assembly_lines": 81,
+    "complexity_score": 51,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 13,
+    "pseudocode_lines": 36,
+    "suspect_count": 1,
     "suspect_types": [
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_gore.cpp_FUN_004ecad0", 
-      "addr": "004ecad0"
-    }, 
-    {
-      "name": "core_gore.cpp_FUN_004ecc40", 
-      "addr": "004ecc40"
-    }, 
-    {
-      "name": "core_gore.cpp_FUN_004ed0a0", 
-      "addr": "004ed0a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CBloodParticle[256]", 
-      "name": "DAT_02d833d4", 
-      "addr": "02d833d4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d833ec", 
-      "addr": "02d833ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d83408", 
-      "addr": "02d83408", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d83414", 
-      "addr": "02d83414", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d8342c", 
-      "addr": "02d8342c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d83448", 
-      "addr": "02d83448", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873d4", 
-      "addr": "02d873d4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873d8", 
-      "addr": "02d873d8", 
-      "value": null
-    }, 
-    {
-      "type": "CBloodSplat[2000]", 
-      "name": "DAT_02d873dc", 
-      "addr": "02d873dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d87420", 
-      "addr": "02d87420", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8720", 
-      "addr": "02da8720", 
-      "value": null
-    }, 
-    {
-      "type": "CBloodPool[32]", 
-      "name": "DAT_02da8724", 
-      "addr": "02da8724", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da874c", 
-      "addr": "02da874c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004ed9e6", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 20, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar6 = CONCAT44 /* combine 2-byte values */(DAT_02d873d8,uVar3);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004ed9e0", 
-    "signature": "undefined core_gore.cpp_CGore_process_FUN_004ed9e0()", 
-    "address_range": [
-      [
-        "004ed9e0", 
-        "004eda95"
-      ]
-    ], 
-    "name": "core_gore.cpp_CGore_process_FUN_004ed9e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 117
+  },
   "cross_references": [
     {
-      "from_addr": "004e33b4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_process_FUN_004e3190", 
-      "addr": "004e3190"
-    }, 
+      "addr": "004e3190",
+      "from_addr": "004e33b4",
+      "name": "core_game.cpp_CGame_process_FUN_004e3190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053e525", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
-      "addr": "0053e220"
-    }, 
+      "addr": "0053e220",
+      "from_addr": "0053e525",
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00539934", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
+      "addr": "005390f0",
+      "from_addr": "00539934",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ed9e0",
+    "address_range": [
+      [
+        "004ed9e0",
+        "004eda95"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_gore.cpp_CGore_process_FUN_004ed9e0",
+    "signature": "undefined core_gore.cpp_CGore_process_FUN_004ed9e0()"
+  },
+  "function_calls": [
+    {
+      "addr": "004ecad0",
+      "name": "core_gore.cpp_FUN_004ecad0"
+    },
+    {
+      "addr": "004ecc40",
+      "name": "core_gore.cpp_FUN_004ecc40"
+    },
+    {
+      "addr": "004ed0a0",
+      "name": "core_gore.cpp_FUN_004ed0a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d833d4",
+      "name": "DAT_02d833d4",
+      "type": "CBloodParticle[256]",
+      "value": null
+    },
+    {
+      "addr": "02d833ec",
+      "name": "DAT_02d833ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83408",
+      "name": "DAT_02d83408",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83414",
+      "name": "DAT_02d83414",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d8342c",
+      "name": "DAT_02d8342c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83448",
+      "name": "DAT_02d83448",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873d4",
+      "name": "DAT_02d873d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873d8",
+      "name": "DAT_02d873d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873dc",
+      "name": "DAT_02d873dc",
+      "type": "CBloodSplat[2000]",
+      "value": null
+    },
+    {
+      "addr": "02d87420",
+      "name": "DAT_02d87420",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8720",
+      "name": "DAT_02da8720",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8724",
+      "name": "DAT_02da8724",
+      "type": "CBloodPool[32]",
+      "value": null
+    },
+    {
+      "addr": "02da874c",
+      "name": "DAT_02da874c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ed9e6",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 20,
+      "match": "CONCAT44",
+      "text": "uVar6 = CONCAT44 /* combine 2-byte values */(DAT_02d873d8,uVar3);",
+      "type": "concat_artifact"
     }
   ]
 }

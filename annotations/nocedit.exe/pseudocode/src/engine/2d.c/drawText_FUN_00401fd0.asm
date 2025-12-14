@@ -41,35 +41,35 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00401fd3
     MOV ECX,dword ptr [ESP + 0x14]      ; 00401fd7
     MOV EDX,dword ptr [ESP + 0x18]      ; 00401fdb
-    CMP dword ptr [0x0066df74],0x0      ; 00401fdf | int g_TextWrapEnabled
-    JZ 0x00402007                       ; 00401fe6 | LAB_00402007
-        ;   XREF to: 00402007 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x0066df74],0x0      ; 00401fdf | g_TextWrapEnabled
+    JZ 0x00402007                       ; 00401fe6
+        ;   XREF to: 00402007 (CONDITIONAL_JUMP)  ; LAB_00402007
     PUSH EBX                            ; 00401fe8
-    MOV EBP,dword ptr [0x02d02564]      ; 00401fe9 | int g_ClipBottom
+    MOV EBP,dword ptr [0x02d02564]      ; 00401fe9 | g_ClipBottom
     PUSH EBP                            ; 00401fef
-    MOV EBX,dword ptr [0x02d02560]      ; 00401ff0 | int g_ClipRight
+    MOV EBX,dword ptr [0x02d02560]      ; 00401ff0 | g_ClipRight
     PUSH EBX                            ; 00401ff6
     PUSH EDX                            ; 00401ff7
     PUSH ECX                            ; 00401ff8
     PUSH EAX                            ; 00401ff9
-    CALL engine_2d.c_drawTextWrapped_FUN_00401c60 ; 00401ffa | void engine_2d.c_drawTextWrapped_FUN_00401c60(char * text, int x_start, int y_start, int x_max, ...)
-        ;   XREF to: 00401c60 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawTextWrapped_FUN_00401c60 ; 00401ffa
+        ;   XREF to: 00401c60 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextWrapped_FUN_00401c60(char * text, int x_start, int y_start, int x_max, ...)
     ADD ESP,0x14                        ; 00401fff
     POP EBX                             ; 00402002
     POP EBP                             ; 00402003
     POP EDI                             ; 00402004
     POP ESI                             ; 00402005
     RET                                 ; 00402006
-    MOV ESI,dword ptr [0x02d02564]      ; 00402007 | int g_ClipBottom
+    MOV ESI,dword ptr [0x02d02564]      ; 00402007 | g_ClipBottom
         ;   Label: LAB_00402007
     PUSH ESI                            ; 0040200d
-    MOV EDI,dword ptr [0x02d02560]      ; 0040200e | int g_ClipRight
+    MOV EDI,dword ptr [0x02d02560]      ; 0040200e | g_ClipRight
     PUSH EDI                            ; 00402014
     PUSH EDX                            ; 00402015
     PUSH ECX                            ; 00402016
     PUSH EAX                            ; 00402017
-    CALL engine_2d.c_drawTextMultiline_FUN_00401cf0 ; 00402018 | void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int y_max)
-        ;   XREF to: 00401cf0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawTextMultiline_FUN_00401cf0 ; 00402018
+        ;   XREF to: 00401cf0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int y_max)
     ADD ESP,0x14                        ; 0040201d
     POP EBP                             ; 00402020
     POP EDI                             ; 00402021

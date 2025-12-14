@@ -1,151 +1,151 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 31, 
-    "cross_reference_count": 9, 
-    "global_count": 5, 
-    "total_lines": 122, 
-    "assembly_lines": 91, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b210", 
-      "addr": "0040b210"
-    }, 
-    {
-      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
-      "addr": "005fe840"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_00613e9e", 
-      "addr": "00613e9e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_00613ea9", 
-      "addr": "00613ea9", 
-      "value": null
-    }, 
-    {
-      "type": "FILE*", 
-      "name": "g_ActorDataFile", 
-      "addr": "00822034", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActorReadingMode", 
-      "addr": "00822038", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_IncludeCommentsWhenWriting", 
-      "addr": "00822040", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040b290", 
-    "signature": "void core_actor.cpp_serializeDescription_FUN_0040b290(char * property_description, char * property_name)", 
-    "address_range": [
-      [
-        "0040b290", 
-        "0040b33e"
-      ]
-    ], 
-    "name": "core_actor.cpp_serializeDescription_FUN_0040b290"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "property_description"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "property_name"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 91,
+    "complexity_score": 31,
+    "cross_reference_count": 9,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 122
+  },
   "cross_references": [
     {
-      "from_addr": "0040bec7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_serializeClothList_FUN_0040be60", 
-      "addr": "0040be60"
-    }, 
+      "addr": "0040be60",
+      "from_addr": "0040bec7",
+      "name": "core_actor.cpp_serializeClothList_FUN_0040be60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040b7a3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
+      "addr": "0040b770",
+      "from_addr": "0040b7a3",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040b824", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
-      "addr": "0040b7f0"
-    }, 
+      "addr": "0040b7f0",
+      "from_addr": "0040b824",
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040b4c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_serializeLocation_FUN_0040b480", 
-      "addr": "0040b480"
-    }, 
+      "addr": "0040b480",
+      "from_addr": "0040b4c0",
+      "name": "core_actor.cpp_serializeLocation_FUN_0040b480",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040b41b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_serializeOrientation_FUN_0040b3e0", 
-      "addr": "0040b3e0"
-    }, 
+      "addr": "0040b3e0",
+      "from_addr": "0040b41b",
+      "name": "core_actor.cpp_serializeOrientation_FUN_0040b3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040b55f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_serializeQuaternion_FUN_0040b520", 
-      "addr": "0040b520"
-    }, 
+      "addr": "0040b520",
+      "from_addr": "0040b55f",
+      "name": "core_actor.cpp_serializeQuaternion_FUN_0040b520",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040c065", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_serializeRules_FUN_0040c000", 
-      "addr": "0040c000"
-    }, 
+      "addr": "0040c000",
+      "from_addr": "0040c065",
+      "name": "core_actor.cpp_serializeRules_FUN_0040c000",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040b6c7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
-      "addr": "0040b5c0"
-    }, 
+      "addr": "0040b5c0",
+      "from_addr": "0040b6c7",
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040b37b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_serializeVector_FUN_0040b340", 
-      "addr": "0040b340"
+      "addr": "0040b340",
+      "from_addr": "0040b37b",
+      "name": "core_actor.cpp_serializeVector_FUN_0040b340",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0040b290",
+    "address_range": [
+      [
+        "0040b290",
+        "0040b33e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_serializeDescription_FUN_0040b290",
+    "signature": "void core_actor.cpp_serializeDescription_FUN_0040b290(char * property_description, char * property_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b210",
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b210"
+    },
+    {
+      "addr": "005fe840",
+      "name": "crt_stdio.c_fgetc_FUN_005fe840"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00613e9e",
+      "name": "s_s_00613e9e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613ea9",
+      "name": "s_anon_00613ea9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00822034",
+      "name": "g_ActorDataFile",
+      "type": "FILE*",
+      "value": null
+    },
+    {
+      "addr": "00822038",
+      "name": "g_ActorReadingMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00822040",
+      "name": "g_IncludeCommentsWhenWriting",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "property_description",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -31,14 +31,14 @@ section .text
     MOV EBX,dword ptr [ESP + 0xa4]      ; 00533ba7
     MOV EAX,dword ptr [ESP + 0xac]      ; 00533bae
     CMP dword ptr [EAX + 0x10],0x0      ; 00533bb5
-    JZ 0x00533c46                       ; 00533bb9 | LAB_00533c46
-        ;   XREF to: 00533c46 (CONDITIONAL_JUMP)
+    JZ 0x00533c46                       ; 00533bb9
+        ;   XREF to: 00533c46 (CONDITIONAL_JUMP)  ; LAB_00533c46
     CMP dword ptr [EAX + 0x18],0x0      ; 00533bbf
-    JZ 0x00533c46                       ; 00533bc3 | LAB_00533c46
-        ;   XREF to: 00533c46 (CONDITIONAL_JUMP)
+    JZ 0x00533c46                       ; 00533bc3
+        ;   XREF to: 00533c46 (CONDITIONAL_JUMP)  ; LAB_00533c46
     CMP EBX,0x2                         ; 00533bc9
-    JGE 0x00533c46                      ; 00533bcc | LAB_00533c46
-        ;   XREF to: 00533c46 (CONDITIONAL_JUMP)
+    JGE 0x00533c46                      ; 00533bcc
+        ;   XREF to: 00533c46 (CONDITIONAL_JUMP)  ; LAB_00533c46
     XOR EAX,EAX                         ; 00533bce
     PUSH ESI                            ; 00533bd0
         ;   Label: LAB_00533bd0
@@ -47,8 +47,8 @@ section .text
     PUSH EAX                            ; 00533bd6
     MOV ESI,dword ptr [ESP + 0xa8]      ; 00533bd7
     PUSH ESI                            ; 00533bde
-    CALL sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690 ; 00533bdf | void sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690(float * input_samples, float * output_samples, int mpeg_block_type)
-        ;   XREF to: 00533690 (UNCONDITIONAL_CALL)
+    CALL sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690 ; 00533bdf
+        ;   XREF to: 00533690 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690(float * input_samples, float * output_samples, int mpeg_block_type)
     ADD ESP,0xc                         ; 00533be4
     MOV EDX,dword ptr [ESP + 0xac]      ; 00533be7
     LEA EAX,[EDX*0x8 + 0x0]             ; 00533bee
@@ -74,13 +74,13 @@ section .text
     MOV EBX,dword ptr [ESP + EAX*0x4 + 0x44] ; 00533c32
     MOV dword ptr [EDX + -0x4],EBX      ; 00533c36
     CMP EAX,0x12                        ; 00533c39
-    JL 0x00533c22                       ; 00533c3c | LAB_00533c22
-        ;   XREF to: 00533c22 (CONDITIONAL_JUMP)
+    JL 0x00533c22                       ; 00533c3c
+        ;   XREF to: 00533c22 (CONDITIONAL_JUMP)  ; LAB_00533c22
     ADD ESP,0x90                        ; 00533c3e
     POP EBX                             ; 00533c44
     RET                                 ; 00533c45
     MOV EAX,dword ptr [EAX + 0x14]      ; 00533c46
         ;   Label: LAB_00533c46
-    JMP 0x00533bd0                      ; 00533c49 | LAB_00533bd0
-        ;   XREF to: 00533bd0 (UNCONDITIONAL_JUMP)
+    JMP 0x00533bd0                      ; 00533c49
+        ;   XREF to: 00533bd0 (UNCONDITIONAL_JUMP)  ; LAB_00533bd0
 

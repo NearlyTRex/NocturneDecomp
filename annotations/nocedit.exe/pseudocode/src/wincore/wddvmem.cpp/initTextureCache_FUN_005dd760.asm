@@ -12,6 +12,6 @@
 section .text
 
     JMP 0x005dd760                      ; 00403790
-        ;   Label: wincore_wddvmem.cpp_initTextureCache_FUN_005dd760
         ;   XREF to: 005dd760 (UNCONDITIONAL_JUMP)
+        ;   Label: wincore_wddvmem.cpp_initTextureCache_FUN_005dd760
 

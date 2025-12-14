@@ -31,45 +31,45 @@ section .text
     PUSH EBX                            ; 005ab860
         ;   Label: sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860
     MOV EBX,dword ptr [ESP + 0x8]       ; 005ab861
-    CALL sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970 ; 005ab865 | int sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970()
-        ;   XREF to: 005ab970 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970 ; 005ab865
+        ;   XREF to: 005ab970 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970()
     TEST EAX,EAX                        ; 005ab86a
-    JNZ 0x005ab890                      ; 005ab86c | LAB_005ab890
-        ;   XREF to: 005ab890 (CONDITIONAL_JUMP)
+    JNZ 0x005ab890                      ; 005ab86c
+        ;   XREF to: 005ab890 (CONDITIONAL_JUMP)  ; LAB_005ab890
     TEST EBX,EBX                        ; 005ab86e
         ;   Label: LAB_005ab86e
-    JGE 0x005ab878                      ; 005ab870 | LAB_005ab878
-        ;   XREF to: 005ab878 (CONDITIONAL_JUMP)
-    MOV EBX,dword ptr [0x00681b50]      ; 005ab872 | int g_CurrentRecordingDevice
-    CALL sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720 ; 005ab878 | int sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720()
+    JGE 0x005ab878                      ; 005ab870
+        ;   XREF to: 005ab878 (CONDITIONAL_JUMP)  ; LAB_005ab878
+    MOV EBX,dword ptr [0x00681b50]      ; 005ab872 | g_CurrentRecordingDevice
+    CALL sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720 ; 005ab878
+        ;   XREF to: 005ab720 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720()
         ;   Label: LAB_005ab878
-        ;   XREF to: 005ab720 (UNCONDITIONAL_CALL)
     CMP EBX,EAX                         ; 005ab87d
-    JL 0x005ab8b5                       ; 005ab87f | LAB_005ab8b5
-        ;   XREF to: 005ab8b5 (CONDITIONAL_JUMP)
-    CALL sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0 ; 005ab881 | int sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0()
+    JL 0x005ab8b5                       ; 005ab87f
+        ;   XREF to: 005ab8b5 (CONDITIONAL_JUMP)  ; LAB_005ab8b5
+    CALL sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0 ; 005ab881
+        ;   XREF to: 005ab7e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_findBestRecordingDevice_FUN_005ab7e0()
         ;   Label: LAB_005ab881
-        ;   XREF to: 005ab7e0 (UNCONDITIONAL_CALL)
     MOV EBX,EAX                         ; 005ab886
-    MOV dword ptr [0x00681b50],EBX      ; 005ab888 | int g_CurrentRecordingDevice
+    MOV dword ptr [0x00681b50],EBX      ; 005ab888 | g_CurrentRecordingDevice
     POP EBX                             ; 005ab88e
     RET                                 ; 005ab88f
-    MOV EDX,0x650d68                    ; 005ab890 | = "..\\sound\\sndmain.cpp" | s_sound_sndmain_cpp_00650d68 = ..\sound\sndmain.cpp
+    MOV EDX,0x650d68                    ; 005ab890 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_005ab890
     MOV ECX,0x1447                      ; 005ab895
-    PUSH 0x650d7d                       ; 005ab89a | = "selectRecordingDevice - device alread..." | s_selectRecordingDevice_de_00650d7d = selectRecordingDevice - device already open.
-    MOV dword ptr [0x02f0ca48],EDX      ; 005ab89f | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 005ab8a5 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005ab8ab | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x650d7d                       ; 005ab89a | = "selectRecordingDevice - device alread..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 005ab89f | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 005ab8a5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005ab8ab
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005ab8b0
-    JMP 0x005ab86e                      ; 005ab8b3 | LAB_005ab86e
-        ;   XREF to: 005ab86e (UNCONDITIONAL_JUMP)
+    JMP 0x005ab86e                      ; 005ab8b3
+        ;   XREF to: 005ab86e (UNCONDITIONAL_JUMP)  ; LAB_005ab86e
     TEST EBX,EBX                        ; 005ab8b5
         ;   Label: LAB_005ab8b5
-    JL 0x005ab881                       ; 005ab8b7 | LAB_005ab881
-        ;   XREF to: 005ab881 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x00681b50],EBX      ; 005ab8b9 | int g_CurrentRecordingDevice
+    JL 0x005ab881                       ; 005ab8b7
+        ;   XREF to: 005ab881 (CONDITIONAL_JUMP)  ; LAB_005ab881
+    MOV dword ptr [0x00681b50],EBX      ; 005ab8b9 | g_CurrentRecordingDevice
     POP EBX                             ; 005ab8bf
     RET                                 ; 005ab8c0
 

@@ -38,21 +38,21 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
     PUSH EDI                            ; 004c7b21
     PUSH EBP                            ; 004c7b22
-    MOV EDX,dword ptr [0x02d141e8]      ; 004c7b23 | int g_SmokeParticleAllocIndex
+    MOV EDX,dword ptr [0x02d141e8]      ; 004c7b23 | g_SmokeParticleAllocIndex
     LEA EAX,[EDX*0x4 + 0x0]             ; 004c7b29
     SUB EAX,EDX                         ; 004c7b30
     SHL EAX,0x2                         ; 004c7b32
     SUB EAX,EDX                         ; 004c7b35
     SHL EAX,0x2                         ; 004c7b37
     INC EDX                             ; 004c7b3a
-    ADD EAX,0x2d141ec                   ; 004c7b3b | CSmokeParticle[2048] g_SmokeParticlePool
-    MOV dword ptr [0x02d141e8],EDX      ; 004c7b40 | int g_SmokeParticleAllocIndex
+    ADD EAX,0x2d141ec                   ; 004c7b3b | g_SmokeParticlePool
+    MOV dword ptr [0x02d141e8],EDX      ; 004c7b40 | g_SmokeParticleAllocIndex
     CMP EDX,0x800                       ; 004c7b46
-    JL 0x004c7b58                       ; 004c7b4c | LAB_004c7b58
-        ;   XREF to: 004c7b58 (CONDITIONAL_JUMP)
+    JL 0x004c7b58                       ; 004c7b4c
+        ;   XREF to: 004c7b58 (CONDITIONAL_JUMP)  ; LAB_004c7b58
     PUSH EBX                            ; 004c7b4e
     XOR EBX,EBX                         ; 004c7b4f
-    MOV dword ptr [0x02d141e8],EBX      ; 004c7b51 | int g_SmokeParticleAllocIndex
+    MOV dword ptr [0x02d141e8],EBX      ; 004c7b51 | g_SmokeParticleAllocIndex
     POP EBX                             ; 004c7b57
     MOV ESI,dword ptr [ESP + 0x20]      ; 004c7b58
         ;   Label: LAB_004c7b58
@@ -63,8 +63,8 @@ section .text
     PUSH dword ptr [ESP + 0x20]         ; 004c7b66
     PUSH EBP                            ; 004c7b6a
     PUSH EAX                            ; 004c7b6b
-    CALL core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0 ; 004c7b6c | void core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
-        ;   XREF to: 004bf2f0 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0 ; 004c7b6c
+        ;   XREF to: 004bf2f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
     ADD ESP,0x14                        ; 004c7b71
     POP EBP                             ; 004c7b74
     POP EDI                             ; 004c7b75

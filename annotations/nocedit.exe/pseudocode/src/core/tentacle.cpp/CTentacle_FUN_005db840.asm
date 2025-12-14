@@ -27,21 +27,21 @@ section .text
     CALL dword ptr [EAX + 0x68]         ; 005db84c
     ADD ESP,0x4                         ; 005db84f
     TEST EAX,EAX                        ; 005db852
-    JZ 0x005db86c                       ; 005db854 | LAB_005db86c
-        ;   XREF to: 005db86c (CONDITIONAL_JUMP)
-    MOV EAX,[0x0067d550]                ; 005db856 | CDemonMission g_CDemonMissionInstance | CDemonMission * g_CDemonMissionPtr
+    JZ 0x005db86c                       ; 005db854
+        ;   XREF to: 005db86c (CONDITIONAL_JUMP)  ; LAB_005db86c
+    MOV EAX,[0x0067d550]                ; 005db856 | g_CDemonMissionInstance | g_CDemonMissionPtr
     CMP dword ptr [EAX + 0x4],0x0       ; 005db85b | DAT_02f33744
-    JZ 0x005db877                       ; 005db85f | LAB_005db877
-        ;   XREF to: 005db877 (CONDITIONAL_JUMP)
+    JZ 0x005db877                       ; 005db85f
+        ;   XREF to: 005db877 (CONDITIONAL_JUMP)  ; LAB_005db877
     PUSH 0x3                            ; 005db861
     PUSH EBX                            ; 005db863
-    CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 ; 005db864 | void core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor * this_ptr, uint32_t color)
-        ;   XREF to: 0040d940 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 ; 005db864
+        ;   XREF to: 0040d940 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor * this_ptr, uint32_t color)
     ADD ESP,0x8                         ; 005db869
     PUSH EBX                            ; 005db86c
         ;   Label: LAB_005db86c
-    CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0 ; 005db86d | int core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter * this_ptr)
-        ;   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0 ; 005db86d
+        ;   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005db872
     POP EBX                             ; 005db875
     RET                                 ; 005db876

@@ -1,227 +1,227 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 300, 
-    "pseudocode_lines": 135, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 348, 
-    "assembly_lines": 213, 
-    "suspect_count": 16, 
+    "assembly_lines": 213,
+    "complexity_score": 300,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 5,
+    "pseudocode_lines": 135,
+    "suspect_count": 16,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0", 
-      "addr": "0056d2d0"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
-      "addr": "0056aa10"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470", 
-      "addr": "0056a470"
-    }, 
-    {
-      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
-      "addr": "0057ae50"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
-      "addr": "004a03d0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0", 
-      "addr": "0049f0f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_lights_already_00647814", 
-      "addr": "00647814", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_new_name_for_clone_0064782d", 
-      "addr": "0064782d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Precompute_light_visibil_0064784d", 
-      "addr": "0064784d", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonSet *in_stack_00000004;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004->light_count < 200) {"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar1 = in_stack_00000004->lights + in_stack_00000008;"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar1 = in_stack_00000004->lights + in_stack_00000008;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar3 = in_stack_00000004->lights + in_stack_00000004->light_count;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar3 = in_stack_00000004->lights + in_stack_00000004->light_count;"
-    }, 
-    {
-      "line": 116, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->lights[in_stack_00000004->light_count].name,0x100,0);"
-    }, 
-    {
-      "line": 116, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->lights[in_stack_00000004->light_count].name,0x100,0);"
-    }, 
-    {
-      "line": 120, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (in_stack_00000004->lights[in_stack_00000004->light_count].name[0] == '\\0');"
-    }, 
-    {
-      "line": 120, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (in_stack_00000004->lights[in_stack_00000004->light_count].name[0] == '\\0');"
-    }, 
-    {
-      "line": 123, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->light_count = in_stack_00000004->light_count + 1;"
-    }, 
-    {
-      "line": 123, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->light_count = in_stack_00000004->light_count + 1;"
-    }, 
-    {
-      "line": 124, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_set_cpp_CDemonSet_FUN_0056d2d0(in_stack_00000004);"
-    }, 
-    {
-      "line": 128, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(in_stack_00000004);"
-    }, 
-    {
-      "line": 130, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_set_cpp_CDemonSet_initScene_FUN_0056aa10(in_stack_00000004);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0057b600", 
-    "signature": "undefined core_setedit.cpp_FUN_0057b600()", 
-    "address_range": [
-      [
-        "0057b600", 
-        "0057b900"
-      ]
-    ], 
-    "name": "core_setedit.cpp_FUN_0057b600"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 348
+  },
   "cross_references": [
     {
-      "from_addr": "0057ccaa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
-      "addr": "0057c5d0"
+      "addr": "0057c5d0",
+      "from_addr": "0057ccaa",
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057b600",
+    "address_range": [
+      [
+        "0057b600",
+        "0057b900"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_setedit.cpp_FUN_0057b600",
+    "signature": "undefined core_setedit.cpp_FUN_0057b600()"
+  },
+  "function_calls": [
+    {
+      "addr": "0056d2d0",
+      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
+    },
+    {
+      "addr": "0056aa10",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10"
+    },
+    {
+      "addr": "0056a470",
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470"
+    },
+    {
+      "addr": "0057ae50",
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "004a03d0",
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "0049f0f0",
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00647814",
+      "name": "s_Too_many_lights_already_00647814",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064782d",
+      "name": "s_Enter_new_name_for_clone_0064782d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064784d",
+      "name": "s_Precompute_light_visibil_0064784d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "CDemonSet *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004->light_count < 200) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "text": "pCVar1 = in_stack_00000004->lights + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000008",
+      "text": "pCVar1 = in_stack_00000004->lights + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "text": "pCVar3 = in_stack_00000004->lights + in_stack_00000004->light_count;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "text": "pCVar3 = in_stack_00000004->lights + in_stack_00000004->light_count;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 116,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->lights[in_stack_00000004->light_count].name,0x100,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 116,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->lights[in_stack_00000004->light_count].name,0x100,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 120,
+      "match": "in_stack_00000004",
+      "text": "} while (in_stack_00000004->lights[in_stack_00000004->light_count].name[0] == '\\0');",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 120,
+      "match": "in_stack_00000004",
+      "text": "} while (in_stack_00000004->lights[in_stack_00000004->light_count].name[0] == '\\0');",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 123,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->light_count = in_stack_00000004->light_count + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 123,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->light_count = in_stack_00000004->light_count + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 124,
+      "match": "in_stack_00000004",
+      "text": "core_set_cpp_CDemonSet_FUN_0056d2d0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 128,
+      "match": "in_stack_00000004",
+      "text": "core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 130,
+      "match": "in_stack_00000004",
+      "text": "core_set_cpp_CDemonSet_initScene_FUN_0056aa10(in_stack_00000004);",
+      "type": "stack_param"
     }
   ]
 }

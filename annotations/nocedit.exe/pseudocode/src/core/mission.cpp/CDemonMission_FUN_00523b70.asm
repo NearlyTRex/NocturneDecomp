@@ -32,16 +32,16 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 00523b72
     MOV EBX,dword ptr [ESP + 0x10]      ; 00523b76
     TEST EBX,EBX                        ; 00523b7a
-    JZ 0x00523ba5                       ; 00523b7c | LAB_00523ba5
-        ;   XREF to: 00523ba5 (CONDITIONAL_JUMP)
+    JZ 0x00523ba5                       ; 00523b7c
+        ;   XREF to: 00523ba5 (CONDITIONAL_JUMP)  ; LAB_00523ba5
     CMP byte ptr [EBX],0x0              ; 00523b7e
-    JZ 0x00523ba8                       ; 00523b81 | LAB_00523ba8
-        ;   XREF to: 00523ba8 (CONDITIONAL_JUMP)
+    JZ 0x00523ba8                       ; 00523b81
+        ;   XREF to: 00523ba8 (CONDITIONAL_JUMP)  ; LAB_00523ba8
     MOV EDX,dword ptr [ESI + 0x54c]     ; 00523b83
         ;   Label: LAB_00523b83
     TEST EDX,EDX                        ; 00523b89
-    JNZ 0x00523bb4                      ; 00523b8b | LAB_00523bb4
-        ;   XREF to: 00523bb4 (CONDITIONAL_JUMP)
+    JNZ 0x00523bb4                      ; 00523b8b
+        ;   XREF to: 00523bb4 (CONDITIONAL_JUMP)  ; LAB_00523bb4
     MOV dword ptr [EBX + 0x14c],EDX     ; 00523b8d
     MOV dword ptr [EBX + 0x150],EDX     ; 00523b93
     MOV dword ptr [ESI + 0x548],EBX     ; 00523b99
@@ -53,11 +53,11 @@ section .text
     PUSH EBX                            ; 00523ba8
         ;   Label: LAB_00523ba8
     PUSH ESI                            ; 00523ba9
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 00523baa | void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)
+    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 00523baa
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
     ADD ESP,0x8                         ; 00523baf
-    JMP 0x00523b83                      ; 00523bb2 | LAB_00523b83
-        ;   XREF to: 00523b83 (UNCONDITIONAL_JUMP)
+    JMP 0x00523b83                      ; 00523bb2
+        ;   XREF to: 00523b83 (UNCONDITIONAL_JUMP)  ; LAB_00523b83
     MOV dword ptr [EBX + 0x14c],0x0     ; 00523bb4
         ;   Label: LAB_00523bb4
     MOV dword ptr [EBX + 0x150],EDX     ; 00523bbe

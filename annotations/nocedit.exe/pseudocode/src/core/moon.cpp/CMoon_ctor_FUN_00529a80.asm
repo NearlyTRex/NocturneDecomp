@@ -20,8 +20,8 @@ section .text
         ;   Label: core_moon.cpp_CMoon_ctor_FUN_00529a80
     ADD EAX,0x8                         ; 00529a84
     PUSH EAX                            ; 00529a87
-    CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0 ; 00529a88 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel * this_ptr)
-        ;   XREF to: 00476cf0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0 ; 00529a88
+        ;   XREF to: 00476cf0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel * this_ptr)
     SUB EAX,0x8                         ; 00529a8d
     MOV dword ptr [EAX + 0x4],0x0       ; 00529a90
     ADD ESP,0x4                         ; 00529a97

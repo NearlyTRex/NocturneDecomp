@@ -1,63 +1,63 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 16, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "BOOL", 
-      "name": "g_MMXSupported", 
-      "addr": "02d05248", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00431780", 
-    "signature": "OptimizedMemcpyFunc * cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00431780(void)", 
-    "address_range": [
-      [
-        "00431780", 
-        "00431794"
-      ]
-    ], 
-    "name": "cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00431780"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 7,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "00432888", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860", 
-      "addr": "00432860"
-    }, 
+      "addr": "00432860",
+      "from_addr": "00432888",
+      "name": "cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00431769", 
-      "type": "CONDITIONAL_JUMP", 
-      "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760", 
-      "addr": "00431760"
-    }, 
+      "addr": "00431760",
+      "from_addr": "00431769",
+      "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760",
+      "type": "CONDITIONAL_JUMP"
+    },
     {
-      "from_addr": "0054aeb7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70", 
-      "addr": "0054ae70"
+      "addr": "0054ae70",
+      "from_addr": "0054aeb7",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00431780",
+    "address_range": [
+      [
+        "00431780",
+        "00431794"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00431780",
+    "signature": "OptimizedMemcpyFunc * cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00431780(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "BOOL",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

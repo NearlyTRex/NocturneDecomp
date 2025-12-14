@@ -22,10 +22,10 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005dd970
         ;   Label: engine_texture.cpp_getTextureCacheStats_FUN_005dd970
     PUSH EDX                            ; 005dd974
-    MOV ECX,dword ptr [0x03f87358]      ; 005dd975 | CTextureCache * g_TextureCacheInstance
+    MOV ECX,dword ptr [0x03f87358]      ; 005dd975 | g_TextureCacheInstance
     PUSH ECX                            ; 005dd97b
-    CALL engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690 ; 005dd97c | int engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690(CTextureCache * this_ptr, char * output_buffer)
-        ;   XREF to: 005dd690 (UNCONDITIONAL_CALL)
+    CALL engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690 ; 005dd97c
+        ;   XREF to: 005dd690 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690(CTextureCache * this_ptr, char * output_buffer)
     ADD ESP,0x8                         ; 005dd981
     RET                                 ; 005dd984
 

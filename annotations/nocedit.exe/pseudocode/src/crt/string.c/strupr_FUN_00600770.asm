@@ -30,18 +30,18 @@ section .text
     MOV AL,byte ptr [EDX]               ; 00600777
         ;   Label: LAB_00600777
     TEST AL,AL                          ; 00600779
-    JZ 0x0060078a                       ; 0060077b | LAB_0060078a
-        ;   XREF to: 0060078a (CONDITIONAL_JUMP)
+    JZ 0x0060078a                       ; 0060077b
+        ;   XREF to: 0060078a (CONDITIONAL_JUMP)  ; LAB_0060078a
     SUB AL,0x61                         ; 0060077d
     CMP AL,0x19                         ; 0060077f
-    JA 0x00600787                       ; 00600781 | LAB_00600787
-        ;   XREF to: 00600787 (CONDITIONAL_JUMP)
+    JA 0x00600787                       ; 00600781
+        ;   XREF to: 00600787 (CONDITIONAL_JUMP)  ; LAB_00600787
     ADD AL,0x41                         ; 00600783
     MOV byte ptr [EDX],AL               ; 00600785
     INC EDX                             ; 00600787
         ;   Label: LAB_00600787
-    JMP 0x00600777                      ; 00600788 | LAB_00600777
-        ;   XREF to: 00600777 (UNCONDITIONAL_JUMP)
+    JMP 0x00600777                      ; 00600788
+        ;   XREF to: 00600777 (UNCONDITIONAL_JUMP)  ; LAB_00600777
     MOV EAX,EBX                         ; 0060078a
         ;   Label: LAB_0060078a
     POP EBX                             ; 0060078c

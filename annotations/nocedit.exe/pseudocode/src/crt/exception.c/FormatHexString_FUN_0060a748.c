@@ -10,36 +10,33 @@ void __cdecl crt_exception_c_FormatHexString_FUN_0060a748(char *dest,char *forma
 
 {
   char cVar1;
-  uint uVar2;
+  char *pcVar2;
   char *pcVar3;
-  char *pcVar4;
   
-  pcVar3 = (char *)0x0;
+  pcVar2 = (char *)0x0;
   cVar1 = *dest;
   while (cVar1 != '\0') {
-    pcVar4 = dest + 1;
+    pcVar3 = dest + 1;
     dest = dest + 1;
-    cVar1 = *pcVar4;
+    cVar1 = *pcVar3;
   }
-  pcVar4 = dest + 9;
+  pcVar3 = dest + 9;
   while( true ) {
     cVar1 = *format;
     *dest = cVar1;
     if (cVar1 == '\0') break;
     if ((cVar1 == '0') && (format[1] == 'x')) {
-      pcVar3 = pcVar4;
+      pcVar2 = pcVar3;
     }
-    pcVar4 = pcVar4 + 1;
+    pcVar3 = pcVar3 + 1;
     dest = dest + 1;
     format = format + 1;
   }
-  if ((pcVar3 != (char *)0x0) && (value != 0)) {
-    do {
-      uVar2 = value & 0xf;
-      value = value >> 4;
-      *pcVar3 = g_HexLookupTable[uVar2];
-      pcVar3 = pcVar3 + -1;
-    } while (value != 0);
+  if (pcVar2 != (char *)0x0) {
+    for (; value != 0; value = value >> 4) {
+      *pcVar2 = g_HexLookupTable[value & 0xf];
+      pcVar2 = pcVar2 + -1;
+    }
   }
   return;
 }

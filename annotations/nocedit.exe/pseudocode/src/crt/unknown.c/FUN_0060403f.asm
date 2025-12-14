@@ -22,16 +22,16 @@ section .text
     MOV ECX,dword ptr [EBP + -0x18]     ; 0060403f
         ;   Label: crt_unknown.c_FUN_0060403f
     TEST ECX,ECX                        ; 00604042
-    JLE 0x00604135                      ; 00604044 | LAB_00604135
-        ;   XREF to: 00604135 (CONDITIONAL_JUMP)
+    JLE 0x00604135                      ; 00604044
+        ;   XREF to: 00604135 (CONDITIONAL_JUMP)  ; LAB_00604135
     LEA EAX,[ECX + -0x8]                ; 0060404a
     MOV dword ptr [EBP + -0x18],EAX     ; 0060404d
     TEST EDI,EDI                        ; 00604050
-    JNZ 0x006040c9                      ; 00604052 | LAB_006040c9
-        ;   XREF to: 006040c9 (CONDITIONAL_JUMP)
+    JNZ 0x006040c9                      ; 00604052
+        ;   XREF to: 006040c9 (CONDITIONAL_JUMP)  ; LAB_006040c9
     TEST word ptr [EBP + -0x40],0x7fff  ; 00604054
-    JZ 0x00604135                       ; 0060405a | LAB_00604135
-        ;   XREF to: 00604135 (CONDITIONAL_JUMP)
+    JZ 0x00604135                       ; 0060405a
+        ;   XREF to: 00604135 (CONDITIONAL_JUMP)  ; LAB_00604135
     LEA EAX,[EBP + -0x48]               ; 00604060
     FLD extended double ptr [EAX]       ; 00604063
     PUSH EAX                            ; 00604065
@@ -50,8 +50,8 @@ section .text
     MOV EDX,dword ptr [EBP + -0x18]     ; 0060407e
     MOV EDI,EAX                         ; 00604081
     TEST EDX,EDX                        ; 00604083
-    JLE 0x006040c9                      ; 00604085 | LAB_006040c9
-        ;   XREF to: 006040c9 (CONDITIONAL_JUMP)
+    JLE 0x006040c9                      ; 00604085
+        ;   XREF to: 006040c9 (CONDITIONAL_JUMP)  ; LAB_006040c9
     LEA EDX,[EBP + -0x54]               ; 00604087
     LEA EBX,[EBP + -0x48]               ; 0060408a
     PUSH EAX                            ; 0060408d
@@ -82,8 +82,8 @@ section .text
     MOV EAX,EDI                         ; 006040cc
     PUSH ECX                            ; 006040ce
     PUSH EDX                            ; 006040cf
-    CALL crt_unknown.c_FUN_006040d7     ; 006040d0 | undefined crt_unknown.c_FUN_006040d7()
-        ;   XREF to: 006040d7 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_FUN_006040d7     ; 006040d0
+        ;   XREF to: 006040d7 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_006040d7()
     JMP 0x0060411c                      ; 006040d5
         ;   XREF to: 0060411c (UNCONDITIONAL_CALL)
 

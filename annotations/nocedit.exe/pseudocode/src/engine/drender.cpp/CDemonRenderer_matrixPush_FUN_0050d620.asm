@@ -12,6 +12,6 @@
 section .text
 
     JMP 0x0050d620                      ; 0048c630
-        ;   Label: engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620
         ;   XREF to: 0050d620 (UNCONDITIONAL_JUMP)
+        ;   Label: engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620
 

@@ -22,14 +22,14 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0046fd52
     MOV ESI,dword ptr [ESP + 0x10]      ; 0046fd56
     CMP dword ptr [EBX + 0x184],0x0     ; 0046fd5a
-    JNZ 0x0046fd7c                      ; 0046fd61 | LAB_0046fd7c
-        ;   XREF to: 0046fd7c (CONDITIONAL_JUMP)
+    JNZ 0x0046fd7c                      ; 0046fd61
+        ;   XREF to: 0046fd7c (CONDITIONAL_JUMP)  ; LAB_0046fd7c
     CMP byte ptr [EBX + 0x15c],0x0      ; 0046fd63
-    JNZ 0x0046fd81                      ; 0046fd6a | LAB_0046fd81
-        ;   XREF to: 0046fd81 (CONDITIONAL_JUMP)
+    JNZ 0x0046fd81                      ; 0046fd6a
+        ;   XREF to: 0046fd81 (CONDITIONAL_JUMP)  ; LAB_0046fd81
     CMP ESI,dword ptr [EBX + 0x158]     ; 0046fd6c
-    JNZ 0x0046fd7c                      ; 0046fd72 | LAB_0046fd7c
-        ;   XREF to: 0046fd7c (CONDITIONAL_JUMP)
+    JNZ 0x0046fd7c                      ; 0046fd72
+        ;   XREF to: 0046fd7c (CONDITIONAL_JUMP)  ; LAB_0046fd7c
     MOV EAX,0x1                         ; 0046fd74
     POP ESI                             ; 0046fd79
     POP EBX                             ; 0046fd7a
@@ -43,12 +43,12 @@ section .text
         ;   Label: LAB_0046fd81
     PUSH EAX                            ; 0046fd87
     PUSH ESI                            ; 0046fd88
-    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 0046fd89 | int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 0046fd89
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0046fd8e
     TEST EAX,EAX                        ; 0046fd91
-    JZ 0x0046fd7c                       ; 0046fd93 | LAB_0046fd7c
-        ;   XREF to: 0046fd7c (CONDITIONAL_JUMP)
+    JZ 0x0046fd7c                       ; 0046fd93
+        ;   XREF to: 0046fd7c (CONDITIONAL_JUMP)  ; LAB_0046fd7c
     MOV EAX,0x1                         ; 0046fd95
     MOV dword ptr [EBX + 0x158],ESI     ; 0046fd9a
     POP ESI                             ; 0046fda0

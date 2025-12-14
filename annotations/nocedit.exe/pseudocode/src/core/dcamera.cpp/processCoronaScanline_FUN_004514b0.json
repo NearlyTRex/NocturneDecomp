@@ -1,204 +1,214 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 86, 
-    "pseudocode_lines": 86, 
-    "cross_reference_count": 0, 
-    "global_count": 10, 
-    "total_lines": 384, 
-    "assembly_lines": 298, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CVector3i[15360]", 
-      "name": "g_PrecomputedWorldPositions", 
-      "addr": "00902f74", 
-      "value": null
-    }, 
-    {
-      "type": "int[76800]", 
-      "name": "g_PrecomputedDepthBuffer", 
-      "addr": "00bce6f8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraDownscaleIterations", 
-      "addr": "013bc260", 
-      "value": null
-    }, 
-    {
-      "type": "int[240][320]", 
-      "name": "g_CoronaDepthBuffer", 
-      "addr": "01577728", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonGlobe*", 
-      "name": "g_CurrentGlobe", 
-      "addr": "015c4170", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CoronaVisibilityEnabled", 
-      "addr": "015c4174", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CoronaTargetX", 
-      "addr": "015c4178", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CoronaTargetY", 
-      "addr": "015c417c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CoronaTargetDepth", 
-      "addr": "015c4180", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 298,
+    "complexity_score": 102,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 10,
+    "pseudocode_lines": 87,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 385
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004514b0", 
-    "signature": "void core_dcamera.cpp_processCoronaScanline_FUN_004514b0(int row, int x_start, int x_end, SCorona * corona_buffer)", 
+    "address": "004514b0",
     "address_range": [
       [
-        "004514b0", 
+        "004514b0",
         "004517e2"
       ]
-    ], 
-    "name": "core_dcamera.cpp_processCoronaScanline_FUN_004514b0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_processCoronaScanline_FUN_004514b0",
+    "signature": "void core_dcamera.cpp_processCoronaScanline_FUN_004514b0(int row, int x_start, int x_end, SCorona * corona_buffer)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00902f74",
+      "name": "g_PrecomputedWorldPositions",
+      "type": "CVector3i[15360]",
+      "value": null
+    },
+    {
+      "addr": "00bce6f8",
+      "name": "g_PrecomputedDepthBuffer",
+      "type": "int[76800]",
+      "value": null
+    },
+    {
+      "addr": "013bc260",
+      "name": "g_CameraDownscaleIterations",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01577728",
+      "name": "g_CoronaDepthBuffer",
+      "type": "int[240][320]",
+      "value": null
+    },
+    {
+      "addr": "015c4170",
+      "name": "g_CurrentGlobe",
+      "type": "CDemonGlobe*",
+      "value": null
+    },
+    {
+      "addr": "015c4174",
+      "name": "g_CoronaVisibilityEnabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "015c4178",
+      "name": "g_CoronaTargetX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "015c417c",
+      "name": "g_CoronaTargetY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "015c4180",
+      "name": "g_CoronaTargetDepth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 64, 
+    "frame_size": 80,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "row"
-      }, 
+        "is_param": true,
+        "name": "row",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_start"
-      }, 
+        "is_param": true,
+        "name": "x_start",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_end"
-      }, 
+        "is_param": true,
+        "name": "x_end",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "SCorona *", 
-        "size": 4, 
-        "name": "corona_buffer"
+        "is_param": true,
+        "name": "corona_buffer",
+        "offset": 16,
+        "size": 4,
+        "type": "SCorona *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 80, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._0_1_",
+      "text": "g_CameraDownscaleIterations._0_1_ = bVar1;",
+      "type": "unknown_field"
+    }
+  ]
 }

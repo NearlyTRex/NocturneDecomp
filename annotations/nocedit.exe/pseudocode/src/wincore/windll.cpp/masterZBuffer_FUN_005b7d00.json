@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 21, 
-    "assembly_lines": 12, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_masterZBuffer*", 
-      "name": "g_APIDLL_masterZBuffer", 
-      "addr": "03f6b90c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b7d00", 
-    "signature": "int wincore_windll.cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)", 
-    "address_range": [
-      [
-        "005b7d00", 
-        "005b7d1a"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_masterZBuffer_FUN_005b7d00"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "z_buffer_mode"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 12,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 21
+  },
   "cross_references": [
     {
-      "from_addr": "0044cf0f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0", 
-      "addr": "0044cdf0"
-    }, 
+      "addr": "0044cdf0",
+      "from_addr": "0044cf0f",
+      "name": "core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044cc55", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80", 
-      "addr": "0044cb80"
+      "addr": "0044cb80",
+      "from_addr": "0044cc55",
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b7d00",
+    "address_range": [
+      [
+        "005b7d00",
+        "005b7d1a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_masterZBuffer_FUN_005b7d00",
+    "signature": "int wincore_windll.cpp_masterZBuffer_FUN_005b7d00(int z_buffer_mode)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b90c",
+      "name": "g_APIDLL_masterZBuffer",
+      "type": "APIDLL_masterZBuffer*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "z_buffer_mode",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

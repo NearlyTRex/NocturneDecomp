@@ -1,68 +1,68 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 26, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "CreateEventA", 
-      "addr": "EXTERNAL:0000004e"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CreateEventA*", 
-      "name": "PTR_CreateEventA_0061150c", 
-      "addr": "0061150c", 
-      "value": "00211c5a"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_FakeHandleCounter", 
-      "addr": "00685274", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00608b88", 
-    "signature": "HANDLE crt_io.c_CreateFallbackHandle_FUN_00608b88(void)", 
-    "address_range": [
-      [
-        "00608b88", 
-        "00608bac"
-      ]
-    ], 
-    "name": "crt_io.c_CreateFallbackHandle_FUN_00608b88"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 16,
+    "complexity_score": 10,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
   "cross_references": [
     {
-      "from_addr": "00608b34", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_InitializeStandardHandles_FUN_00608b20", 
-      "addr": "00608b20"
-    }, 
+      "addr": "00608b20",
+      "from_addr": "00608b34",
+      "name": "crt_io.c_InitializeStandardHandles_FUN_00608b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060913b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0", 
-      "addr": "006090a0"
+      "addr": "006090a0",
+      "from_addr": "0060913b",
+      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00608b88",
+    "address_range": [
+      [
+        "00608b88",
+        "00608bac"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_CreateFallbackHandle_FUN_00608b88",
+    "signature": "HANDLE crt_io.c_CreateFallbackHandle_FUN_00608b88(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000004e",
+      "name": "CreateEventA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061150c",
+      "name": "PTR_CreateEventA_0061150c",
+      "type": "CreateEventA*",
+      "value": "00211c5a"
+    },
+    {
+      "addr": "00685274",
+      "name": "g_FakeHandleCounter",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

@@ -20,6 +20,7 @@
 ;   GetCurrentThread* PTR_GetCurrentThread_00611588 = 00211e9a
 ;   WaitForSingleObject* WaitForSingleObject = 002122c4
 ;   TerminatedCString s_bgnthd_00659784
+;   undefined4 DAT_00659788
 ;   undefined4 DAT_0065978c
 ;   DWORD g_TLSIndex = 0xffffffff
 ;
@@ -46,16 +47,16 @@ section .text
     PUSH EBP                            ; 0060f964
     SUB ESP,0x38                        ; 0060f965
     MOV EBX,dword ptr [ESP + 0x54]      ; 0060f968
-    CMP dword ptr [0x00684ee0],-0x1     ; 0060f96c | DWORD g_TLSIndex
-    JNZ 0x0060f987                      ; 0060f973 | LAB_0060f987
-        ;   XREF to: 0060f987 (CONDITIONAL_JUMP)
-    CALL crt_tls.c_allocate_tls_index_FUN_0060a27c ; 0060f975 | BOOL crt_tls.c_allocate_tls_index_FUN_0060a27c()
-        ;   XREF to: 0060a27c (UNCONDITIONAL_CALL)
+    CMP dword ptr [0x00684ee0],-0x1     ; 0060f96c | g_TLSIndex
+    JNZ 0x0060f987                      ; 0060f973
+        ;   XREF to: 0060f987 (CONDITIONAL_JUMP)  ; LAB_0060f987
+    CALL crt_tls.c_allocate_tls_index_FUN_0060a27c ; 0060f975
+        ;   XREF to: 0060a27c (UNCONDITIONAL_CALL)  ; BOOL crt_tls.c_allocate_tls_index_FUN_0060a27c()
     TEST EAX,EAX                        ; 0060f97a
-    JZ 0x0060fa4c                       ; 0060f97c | LAB_0060fa4c
-        ;   XREF to: 0060fa4c (CONDITIONAL_JUMP)
-    CALL crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 ; 0060f982 | void crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4()
-        ;   XREF to: 0060a3b4 (UNCONDITIONAL_CALL)
+    JZ 0x0060fa4c                       ; 0060f97c
+        ;   XREF to: 0060fa4c (CONDITIONAL_JUMP)  ; LAB_0060fa4c
+    CALL crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4 ; 0060f982
+        ;   XREF to: 0060a3b4 (UNCONDITIONAL_CALL)  ; void crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4()
     LEA EAX,[EBX + 0xfff]               ; 0060f987
         ;   Label: LAB_0060f987
     XOR AL,AL                           ; 0060f98d
@@ -66,30 +67,30 @@ section .text
     MOV EAX,dword ptr [ESP + 0x58]      ; 0060f99c
     MOV EDI,ESP                         ; 0060f9a0
     MOV dword ptr [ESP + 0x24],EAX      ; 0060f9a2
-    CALL dword ptr CS:[0x611588]        ; 0060f9a6 | GetCurrentThread * PTR_GetCurrentThread_00611588
+    CALL dword ptr CS:[0x611588]        ; 0060f9a6 | PTR_GetCurrentThread_00611588
     PUSH 0x10                           ; 0060f9ad
     MOV dword ptr [ESP + 0x2c],EAX      ; 0060f9af
     MOV AX,DS                           ; 0060f9b3
     XOR ECX,ECX                         ; 0060f9b5
     MOV ES,AX                           ; 0060f9b7
     LEA EAX,[ESP + 0xc]                 ; 0060f9b9
-    MOV ESI,0x659784                    ; 0060f9bd | = "__bgnthd" | s_bgnthd_00659784 = __bgnthd
+    MOV ESI,0x659784                    ; 0060f9bd | = "__bgnthd"
     MOV dword ptr [ESP + 0x34],ECX      ; 0060f9c2
     PUSH EAX                            ; 0060f9c6
-    MOVSD ES:EDI,ESI                    ; 0060f9c7 | = "__bgnthd" | s_bgnthd_00659784 = __bgnthd
+    MOVSD ES:EDI,ESI                    ; 0060f9c7 | = "__bgnthd"
     MOVSD ES:EDI,ESI                    ; 0060f9c8 | DAT_00659788
     MOVSB ES:EDI,ESI                    ; 0060f9c9 | DAT_0065978c
-    CALL dword ptr CS:[0x611584]        ; 0060f9ca | GetCurrentThreadId * PTR_GetCurrentThreadId_00611584
+    CALL dword ptr CS:[0x611584]        ; 0060f9ca | PTR_GetCurrentThreadId_00611584
     PUSH EAX                            ; 0060f9d1
-    CALL crt_stdio.c_IntegerToString_FUN_00607d18 ; 0060f9d2 | char * crt_stdio.c_IntegerToString_FUN_00607d18(int value, char * buffer, int base)
-        ;   XREF to: 00607d18 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_IntegerToString_FUN_00607d18 ; 0060f9d2
+        ;   XREF to: 00607d18 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_IntegerToString_FUN_00607d18(int value, char * buffer, int base)
     ADD ESP,0xc                         ; 0060f9d7
     MOV EAX,ESP                         ; 0060f9da
     PUSH EAX                            ; 0060f9dc
     PUSH 0x0                            ; 0060f9dd
     PUSH 0x0                            ; 0060f9df
     PUSH 0x0                            ; 0060f9e1
-    CALL dword ptr CS:[0x61150c]        ; 0060f9e3 | CreateEventA * PTR_CreateEventA_0061150c
+    CALL dword ptr CS:[0x61150c]        ; 0060f9e3 | PTR_CreateEventA_0061150c
     MOV dword ptr [ESP + 0x2c],EAX      ; 0060f9ea
     LEA EAX,[ESP + 0x34]                ; 0060f9ee
     PUSH EAX                            ; 0060f9f2
@@ -99,34 +100,34 @@ section .text
     PUSH 0x60f8c0                       ; 0060f9fa
     PUSH EBX                            ; 0060f9ff
     PUSH 0x0                            ; 0060fa00
-    CALL dword ptr CS:[0x61151c]        ; 0060fa02 | CreateThread * CreateThread
+    CALL dword ptr CS:[0x61151c]        ; 0060fa02 | CreateThread
     MOV EBX,EAX                         ; 0060fa09
     MOV ESI,EAX                         ; 0060fa0b
     TEST EAX,EAX                        ; 0060fa0d
-    JNZ 0x0060fa1b                      ; 0060fa0f | LAB_0060fa1b
-        ;   XREF to: 0060fa1b (CONDITIONAL_JUMP)
+    JNZ 0x0060fa1b                      ; 0060fa0f
+        ;   XREF to: 0060fa1b (CONDITIONAL_JUMP)  ; LAB_0060fa1b
     MOV dword ptr [ESP + 0x34],0xffffffff ; 0060fa11
-    JMP 0x0060fa3e                      ; 0060fa19 | LAB_0060fa3e
-        ;   XREF to: 0060fa3e (UNCONDITIONAL_JUMP)
+    JMP 0x0060fa3e                      ; 0060fa19
+        ;   XREF to: 0060fa3e (UNCONDITIONAL_JUMP)  ; LAB_0060fa3e
     PUSH -0x1                           ; 0060fa1b
         ;   Label: LAB_0060fa1b
     MOV EDI,dword ptr [ESP + 0x30]      ; 0060fa1d
     PUSH EDI                            ; 0060fa21
-    CALL dword ptr CS:[0x61166c]        ; 0060fa22 | WaitForSingleObject * WaitForSingleObject
+    CALL dword ptr CS:[0x61166c]        ; 0060fa22 | WaitForSingleObject
     MOV EBP,dword ptr [ESP + 0x30]      ; 0060fa29
     TEST EBP,EBP                        ; 0060fa2d
-    JZ 0x0060fa36                       ; 0060fa2f | LAB_0060fa36
-        ;   XREF to: 0060fa36 (CONDITIONAL_JUMP)
+    JZ 0x0060fa36                       ; 0060fa2f
+        ;   XREF to: 0060fa36 (CONDITIONAL_JUMP)  ; LAB_0060fa36
     MOV dword ptr [EBP],EBX             ; 0060fa31
-    JMP 0x0060fa3e                      ; 0060fa34 | LAB_0060fa3e
-        ;   XREF to: 0060fa3e (UNCONDITIONAL_JUMP)
+    JMP 0x0060fa3e                      ; 0060fa34
+        ;   XREF to: 0060fa3e (UNCONDITIONAL_JUMP)  ; LAB_0060fa3e
     PUSH EBX                            ; 0060fa36
         ;   Label: LAB_0060fa36
-    CALL dword ptr CS:[0x611504]        ; 0060fa37 | CloseHandle * CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 0060fa37 | CloseHandle
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0060fa3e
         ;   Label: LAB_0060fa3e
     PUSH EDX                            ; 0060fa42
-    CALL dword ptr CS:[0x611504]        ; 0060fa43 | CloseHandle * CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 0060fa43 | CloseHandle
     MOV EAX,ESI                         ; 0060fa4a
     ADD ESP,0x38                        ; 0060fa4c
         ;   Label: LAB_0060fa4c

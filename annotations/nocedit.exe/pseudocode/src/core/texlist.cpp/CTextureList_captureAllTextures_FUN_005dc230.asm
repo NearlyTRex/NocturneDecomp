@@ -25,23 +25,23 @@ section .text
     MOV EDX,dword ptr [EDI]             ; 005dc237
     XOR EBX,EBX                         ; 005dc239
     TEST EDX,EDX                        ; 005dc23b
-    JLE 0x005dc25e                      ; 005dc23d | LAB_005dc25e
-        ;   XREF to: 005dc25e (CONDITIONAL_JUMP)
+    JLE 0x005dc25e                      ; 005dc23d
+        ;   XREF to: 005dc25e (CONDITIONAL_JUMP)  ; LAB_005dc25e
     PUSH ESI                            ; 005dc23f
     LEA ESI,[EDI + 0x4]                 ; 005dc240
     PUSH ESI                            ; 005dc243
         ;   Label: LAB_005dc243
-    MOV ECX,dword ptr [0x006703ec]      ; 005dc244 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH ECX                            ; 005dc24a | CDemonRenderer g_CDemonRendererInstance
+    MOV ECX,dword ptr [0x006703ec]      ; 005dc244 | g_CDemonRendererPtr
+    PUSH ECX                            ; 005dc24a | g_CDemonRendererInstance
     INC EBX                             ; 005dc24b
-    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005dc24c | void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-        ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005dc24c
+        ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESI,0x18                        ; 005dc251
     MOV EBP,dword ptr [EDI]             ; 005dc254
     ADD ESP,0x8                         ; 005dc256
     CMP EBX,EBP                         ; 005dc259
-    JL 0x005dc243                       ; 005dc25b | LAB_005dc243
-        ;   XREF to: 005dc243 (CONDITIONAL_JUMP)
+    JL 0x005dc243                       ; 005dc25b
+        ;   XREF to: 005dc243 (CONDITIONAL_JUMP)  ; LAB_005dc243
     POP ESI                             ; 005dc25d
     POP EBP                             ; 005dc25e
         ;   Label: LAB_005dc25e

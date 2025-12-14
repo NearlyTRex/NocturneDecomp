@@ -1,189 +1,189 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 162, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 56, 
-    "assembly_lines": 34, 
-    "suspect_count": 12, 
+    "assembly_lines": 34,
+    "complexity_score": 162,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10", 
-      "addr": "005a0d10"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000014;"
-    }, 
-    {
-      "line": 18, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)start_frame + 0x2254) ="
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)((int)start_frame + 0x2254) + pCVar3->x * in_stack_00000014;"
-    }, 
-    {
-      "line": 19, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)start_frame + 0x2254) + pCVar3->x * in_stack_00000014;"
-    }, 
-    {
-      "line": 20, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)start_frame + 0x2258) ="
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)((int)start_frame + 0x2258) + fVar1 * in_stack_00000014;"
-    }, 
-    {
-      "line": 21, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)start_frame + 0x2258) + fVar1 * in_stack_00000014;"
-    }, 
-    {
-      "line": 22, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)start_frame + 0x225c) ="
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)((int)start_frame + 0x225c) + in_stack_00000014 * fVar2;"
-    }, 
-    {
-      "line": 23, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)start_frame + 0x225c) + in_stack_00000014 * fVar2;"
-    }
-  ], 
+      "register_param",
+      "stack_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 56
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a0c90", 
-    "signature": "void core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90(CDeformableModelInstance * this_ptr, float start_frame, float end_frame, float scale_factor)", 
+    "address": "005a0c90",
     "address_range": [
       [
-        "005a0c90", 
+        "005a0c90",
         "005a0d02"
       ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90",
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90(CDeformableModelInstance * this_ptr, float start_frame, float end_frame, float scale_factor)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a0d10",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 44,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "start_frame"
-      }, 
+        "is_param": true,
+        "name": "start_frame",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "end_frame"
-      }, 
+        "is_param": true,
+        "name": "end_frame",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "scale_factor"
+        "is_param": true,
+        "name": "scale_factor",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000014",
+      "text": "float in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)start_frame + 0x2254) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000014",
+      "text": "*(float *)((int)start_frame + 0x2254) + pCVar3->x * in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)start_frame + 0x2254) + pCVar3->x * in_stack_00000014;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)start_frame + 0x2258) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000014",
+      "text": "*(float *)((int)start_frame + 0x2258) + fVar1 * in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)start_frame + 0x2258) + fVar1 * in_stack_00000014;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)start_frame + 0x225c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000014",
+      "text": "*(float *)((int)start_frame + 0x225c) + in_stack_00000014 * fVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)start_frame + 0x225c) + in_stack_00000014 * fVar2;",
+      "type": "pointer_cast"
+    }
+  ]
 }

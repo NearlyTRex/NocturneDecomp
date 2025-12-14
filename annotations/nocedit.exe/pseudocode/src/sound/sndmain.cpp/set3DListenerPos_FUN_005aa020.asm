@@ -31,7 +31,7 @@ section .text
     PUSH EBP                            ; 005aa020
         ;   Label: sound_sndmain.cpp_set3DListenerPos_FUN_005aa020
     MOV EAX,dword ptr [ESP + 0x8]       ; 005aa021
-    MOV [0x03f68830],EAX                ; 005aa025 | CVector3d g_Cached3DListenerPos
+    MOV [0x03f68830],EAX                ; 005aa025 | g_Cached3DListenerPos
     MOV EAX,dword ptr [ESP + 0xc]       ; 005aa02a
     MOV [0x03f68834],EAX                ; 005aa02e | g_Cached3DListenerPos.x+4
     MOV EAX,dword ptr [ESP + 0x10]      ; 005aa033
@@ -41,11 +41,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 005aa045
     MOV [0x03f68840],EAX                ; 005aa049 | g_Cached3DListenerPos.z
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005aa04e
-    MOV EDX,dword ptr [0x03f69268]      ; 005aa052 | CSoundDevice * g_CSoundDevicePtr
+    MOV EDX,dword ptr [0x03f69268]      ; 005aa052 | g_CSoundDevicePtr
     MOV [0x03f68844],EAX                ; 005aa058 | g_Cached3DListenerPos.z+4
     TEST EDX,EDX                        ; 005aa05d
-    JNZ 0x005aa063                      ; 005aa05f | LAB_005aa063
-        ;   XREF to: 005aa063 (CONDITIONAL_JUMP)
+    JNZ 0x005aa063                      ; 005aa05f
+        ;   XREF to: 005aa063 (CONDITIONAL_JUMP)  ; LAB_005aa063
     POP EBP                             ; 005aa061
     RET                                 ; 005aa062
     PUSH EDI                            ; 005aa063

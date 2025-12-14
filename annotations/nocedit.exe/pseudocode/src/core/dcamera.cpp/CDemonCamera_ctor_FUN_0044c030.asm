@@ -23,9 +23,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0044c030
         ;   Label: core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030
     PUSH EDX                            ; 0044c034
-    CALL core_camview.cpp_CCameraView_ctor_FUN_00427ce0 ; 0044c035 | CCameraView * core_camview.cpp_CCameraView_ctor_FUN_00427ce0(CCameraView * this_ptr)
-        ;   XREF to: 00427ce0 (UNCONDITIONAL_CALL)
-    MOV dword ptr [EAX + 0x3c],0x65c664 ; 0044c03a | CCameraView_vtable g_CDemonCameraVTable
+    CALL core_camview.cpp_CCameraView_ctor_FUN_00427ce0 ; 0044c035
+        ;   XREF to: 00427ce0 (UNCONDITIONAL_CALL)  ; CCameraView * core_camview.cpp_CCameraView_ctor_FUN_00427ce0(CCameraView * this_ptr)
+    MOV dword ptr [EAX + 0x3c],0x65c664 ; 0044c03a | g_CDemonCameraVTable
     MOV dword ptr [EAX + 0x158],0x0     ; 0044c041
     MOV dword ptr [EAX + 0x160],0x0     ; 0044c04b
     MOV dword ptr [EAX + 0x15c],0x0     ; 0044c055

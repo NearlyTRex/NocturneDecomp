@@ -31,7 +31,7 @@ section .text
     PUSH ECX                            ; 005f4081
     PUSH 0x0                            ; 005f4082
     PUSH 0x0                            ; 005f4084
-    CALL dword ptr CS:[0x61151c]        ; 005f4086 | CreateThread * CreateThread
+    CALL dword ptr CS:[0x61151c]        ; 005f4086 | CreateThread
     ADD ESP,0x4                         ; 005f408d
     RET                                 ; 005f4090
 

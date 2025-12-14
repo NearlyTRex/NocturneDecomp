@@ -25,8 +25,8 @@ section .text
     PUSH EDX                            ; 0054c6fa
     ADD EAX,0x8                         ; 0054c6fb
     PUSH EAX                            ; 0054c6fe
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 0054c6ff | char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strncpy_FUN_00600f40 ; 0054c6ff
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 0054c704
     MOV EAX,dword ptr [ESP + 0x4]       ; 0054c707
     MOV byte ptr [EAX + 0x1b],0x0       ; 0054c70b

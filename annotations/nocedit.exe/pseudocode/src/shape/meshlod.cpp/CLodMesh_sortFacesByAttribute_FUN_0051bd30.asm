@@ -58,16 +58,16 @@ section .text
     DEC EAX                             ; 0051bd44
     MOV dword ptr [ESP + 0x8c],EAX      ; 0051bd45
     TEST EAX,EAX                        ; 0051bd4c
-    JL 0x0051be0d                       ; 0051bd4e | LAB_0051be0d
-        ;   XREF to: 0051be0d (CONDITIONAL_JUMP)
+    JL 0x0051be0d                       ; 0051bd4e
+        ;   XREF to: 0051be0d (CONDITIONAL_JUMP)  ; LAB_0051be0d
     MOV EAX,dword ptr [ESP + 0xc8]      ; 0051bd54
     SHL EAX,0x2                         ; 0051bd5b
     MOV dword ptr [ESP + 0x94],EAX      ; 0051bd5e
     MOV ESI,dword ptr [ESP + 0x8c]      ; 0051bd65
         ;   Label: LAB_0051bd65
     TEST ESI,ESI                        ; 0051bd6c
-    JLE 0x0051bdf6                      ; 0051bd6e | LAB_0051bdf6
-        ;   XREF to: 0051bdf6 (CONDITIONAL_JUMP)
+    JLE 0x0051bdf6                      ; 0051bd6e
+        ;   XREF to: 0051bdf6 (CONDITIONAL_JUMP)  ; LAB_0051bdf6
     IMUL EAX,ESI,0x8c                   ; 0051bd74
     MOV EBX,0x8c                        ; 0051bd7a
     XOR ECX,ECX                         ; 0051bd7f
@@ -85,8 +85,8 @@ section .text
     ADD EBX,EDI                         ; 0051bdb9
     MOV ECX,dword ptr [EDX + EBP*0x1]   ; 0051bdbb
     CMP ECX,dword ptr [EBX + EAX*0x1]   ; 0051bdbe
-    JL 0x0051be18                       ; 0051bdc1 | LAB_0051be18
-        ;   XREF to: 0051be18 (CONDITIONAL_JUMP)
+    JL 0x0051be18                       ; 0051bdc1
+        ;   XREF to: 0051be18 (CONDITIONAL_JUMP)  ; LAB_0051be18
     MOV EDI,dword ptr [ESP + 0x9c]      ; 0051bdc3
         ;   Label: LAB_0051bdc3
     MOV EBP,dword ptr [ESP + 0x98]      ; 0051bdca
@@ -96,15 +96,15 @@ section .text
     MOV dword ptr [ESP + 0x9c],EDI      ; 0051bde4
     MOV dword ptr [ESP + 0x98],EBP      ; 0051bdeb
     CMP EDI,EDX                         ; 0051bdf2
-    JL 0x0051bd96                       ; 0051bdf4 | LAB_0051bd96
-        ;   XREF to: 0051bd96 (CONDITIONAL_JUMP)
+    JL 0x0051bd96                       ; 0051bdf4
+        ;   XREF to: 0051bd96 (CONDITIONAL_JUMP)  ; LAB_0051bd96
     MOV ECX,dword ptr [ESP + 0x8c]      ; 0051bdf6
         ;   Label: LAB_0051bdf6
     DEC ECX                             ; 0051bdfd
     MOV dword ptr [ESP + 0x8c],ECX      ; 0051bdfe
     TEST ECX,ECX                        ; 0051be05
-    JGE 0x0051bd65                      ; 0051be07 | LAB_0051bd65
-        ;   XREF to: 0051bd65 (CONDITIONAL_JUMP)
+    JGE 0x0051bd65                      ; 0051be07
+        ;   XREF to: 0051bd65 (CONDITIONAL_JUMP)  ; LAB_0051bd65
     ADD ESP,0xb0                        ; 0051be0d
         ;   Label: LAB_0051be0d
     POP EBP                             ; 0051be13
@@ -142,26 +142,26 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 0051be56
     PUSH EAX                            ; 0051be5a
     MOV dword ptr [ESP + 0xb4],EBP      ; 0051be5b
-    CALL shape_meshlod.cpp_copyFloat_FUN_0051f0b0 ; 0051be62 | float * shape_meshlod.cpp_copyFloat_FUN_0051f0b0(float * dest_ptr, float * src_ptr)
-        ;   XREF to: 0051f0b0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_copyFloat_FUN_0051f0b0 ; 0051be62
+        ;   XREF to: 0051f0b0 (UNCONDITIONAL_CALL)  ; float * shape_meshlod.cpp_copyFloat_FUN_0051f0b0(float * dest_ptr, float * src_ptr)
     MOV EAX,ESI                         ; 0051be67
     ADD ESP,0x8                         ; 0051be69
     ADD EAX,0x4                         ; 0051be6c
     PUSH EAX                            ; 0051be6f
     LEA EAX,[ESP + 0x4c]                ; 0051be70
     PUSH EAX                            ; 0051be74
-    CALL shape_meshlod.cpp_copyFloat_FUN_0051f0a0 ; 0051be75 | float * shape_meshlod.cpp_copyFloat_FUN_0051f0a0(float * dest_ptr, float * src_ptr)
-        ;   XREF to: 0051f0a0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_copyFloat_FUN_0051f0a0 ; 0051be75
+        ;   XREF to: 0051f0a0 (UNCONDITIONAL_CALL)  ; float * shape_meshlod.cpp_copyFloat_FUN_0051f0a0(float * dest_ptr, float * src_ptr)
     MOV EAX,ESI                         ; 0051be7a
     ADD ESP,0x8                         ; 0051be7c
     ADD EAX,0x8                         ; 0051be7f
     PUSH EAX                            ; 0051be82
     LEA EAX,[ESP + 0x50]                ; 0051be83
     PUSH EAX                            ; 0051be87
-    CALL shape_meshlod.cpp_copyFloat_FUN_0051f090 ; 0051be88 | float * shape_meshlod.cpp_copyFloat_FUN_0051f090(float * dest_ptr, float * src_ptr)
-        ;   XREF to: 0051f090 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_copyFloat_FUN_0051f090 ; 0051be88
+        ;   XREF to: 0051f090 (UNCONDITIONAL_CALL)  ; float * shape_meshlod.cpp_copyFloat_FUN_0051f090(float * dest_ptr, float * src_ptr)
     ADD ESP,0x8                         ; 0051be8d
-    PUSH 0x6598c0                       ; 0051be90 | WatcomTypeInfo g_CVectorTypeInfo
+    PUSH 0x6598c0                       ; 0051be90 | g_CVectorTypeInfo
     MOV EAX,dword ptr [EBX + 0x50]      ; 0051be95
     PUSH 0x3                            ; 0051be98
     MOV dword ptr [ESP + 0x58],EAX      ; 0051be9a
@@ -170,8 +170,8 @@ section .text
     LEA EAX,[ESP + 0x60]                ; 0051bea2
     PUSH EAX                            ; 0051bea6
     LEA EDI,[ESP + 0x88]                ; 0051bea7
-    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0051beae | void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
-        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0051beae
+        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
     LEA ESI,[EBX + 0x78]                ; 0051beb3
     ADD ESP,0x10                        ; 0051beb6
     MOVSD ES:EDI,ESI                    ; 0051beb9
@@ -208,8 +208,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0xa8]      ; 0051bf11
     MOV dword ptr [EBX + 0x40],EAX      ; 0051bf18
     CMP EBP,EDI                         ; 0051bf1b
-    JZ 0x0051bf30                       ; 0051bf1d | LAB_0051bf30
-        ;   XREF to: 0051bf30 (CONDITIONAL_JUMP)
+    JZ 0x0051bf30                       ; 0051bf1d
+        ;   XREF to: 0051bf30 (CONDITIONAL_JUMP)  ; LAB_0051bf30
     MOV EAX,dword ptr [EBP]             ; 0051bf1f
     MOV dword ptr [EDI],EAX             ; 0051bf22
     MOV EAX,dword ptr [EBP + 0x4]       ; 0051bf24
@@ -230,8 +230,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xb0]      ; 0051bf58
     ADD EAX,0x54                        ; 0051bf5f
     PUSH EAX                            ; 0051bf62
-    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051bf63 | void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
-        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051bf63
+        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
     ADD ESP,0x14                        ; 0051bf68
     MOV EDI,dword ptr [ESP + 0xa0]      ; 0051bf6b
     MOV ESI,dword ptr [ESP + 0xa4]      ; 0051bf72
@@ -276,8 +276,8 @@ section .text
     MOV dword ptr [EBX + 0x40],EAX      ; 0051bfed
     LEA EAX,[ESP + 0x44]                ; 0051bff0
     CMP EBP,EAX                         ; 0051bff4
-    JZ 0x0051c00d                       ; 0051bff6 | LAB_0051c00d
-        ;   XREF to: 0051c00d (CONDITIONAL_JUMP)
+    JZ 0x0051c00d                       ; 0051bff6
+        ;   XREF to: 0051c00d (CONDITIONAL_JUMP)  ; LAB_0051c00d
     MOV EAX,dword ptr [ESP + 0x44]      ; 0051bff8
     MOV dword ptr [EBP],EAX             ; 0051bffc
     MOV EAX,dword ptr [ESP + 0x48]      ; 0051bfff
@@ -295,8 +295,8 @@ section .text
     LEA EAX,[EBX + 0x54]                ; 0051c022
     PUSH EAX                            ; 0051c025
     LEA ESI,[ESP + 0x8c]                ; 0051c026
-    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051c02d | void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
-        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051c02d
+        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
     LEA EDI,[EBX + 0x78]                ; 0051c032
     ADD ESP,0x14                        ; 0051c035
     MOVSD ES:EDI,ESI                    ; 0051c038
@@ -309,9 +309,9 @@ section .text
     MOV dword ptr [EBX + 0x88],EAX      ; 0051c051
     LEA EAX,[ESP + 0x58]                ; 0051c057
     PUSH EAX                            ; 0051c05b
-    CALL core_cloth.cpp_freeVectors_FUN_0043e460 ; 0051c05c | int core_cloth.cpp_freeVectors_FUN_0043e460(CVector3f * * array)
-        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_freeVectors_FUN_0043e460 ; 0051c05c
+        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_freeVectors_FUN_0043e460(CVector3f * * array)
     ADD ESP,0x8                         ; 0051c061
-    JMP 0x0051bdc3                      ; 0051c064 | LAB_0051bdc3
-        ;   XREF to: 0051bdc3 (UNCONDITIONAL_JUMP)
+    JMP 0x0051bdc3                      ; 0051c064
+        ;   XREF to: 0051bdc3 (UNCONDITIONAL_JUMP)  ; LAB_0051bdc3
 

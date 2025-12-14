@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 114, 
-    "assembly_lines": 84, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_ddraw.c_DirectDrawCreate", 
-      "addr": "00610ece"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "IDirectDraw*", 
-      "name": "g_DirectDrawObject", 
-      "addr": "03f95920", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectDrawSurface*", 
-      "name": "g_DirectDrawSurface", 
-      "addr": "03f95924", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectDrawSurface*", 
-      "name": "g_SoftwareRenderSurface", 
-      "addr": "03f95928", 
-      "value": null
-    }, 
-    {
-      "type": "IUnknown*", 
-      "name": "g_DirectDrawUnknown", 
-      "addr": "03f9592c", 
-      "value": null
-    }, 
-    {
-      "type": "HWND", 
-      "name": "g_MainWindowHandle", 
-      "addr": "03f98468", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 84,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 114
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ec980", 
-    "signature": "int wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005ec980(void)", 
+    "address": "005ec980",
     "address_range": [
       [
-        "005ec980", 
+        "005ec980",
         "005eca2b"
       ]
-    ], 
-    "name": "wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005ec980"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005ec980",
+    "signature": "int wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005ec980(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610ece",
+      "name": "crt_ddraw.c_DirectDrawCreate"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f95920",
+      "name": "g_DirectDrawObject",
+      "type": "IDirectDraw*",
+      "value": null
+    },
+    {
+      "addr": "03f95924",
+      "name": "g_DirectDrawSurface",
+      "type": "IDirectDrawSurface*",
+      "value": null
+    },
+    {
+      "addr": "03f95928",
+      "name": "g_SoftwareRenderSurface",
+      "type": "IDirectDrawSurface*",
+      "value": null
+    },
+    {
+      "addr": "03f9592c",
+      "name": "g_DirectDrawUnknown",
+      "type": "IUnknown*",
+      "value": null
+    },
+    {
+      "addr": "03f98468",
+      "name": "g_MainWindowHandle",
+      "type": "HWND",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

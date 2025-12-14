@@ -29,15 +29,15 @@ section .text
     MOV EBP,ESP                         ; 00424aa4
     SUB ESP,0x6c                        ; 00424aa6
     MOV EBX,dword ptr [EBP + 0x18]      ; 00424aa9
-    MOV EDX,dword ptr [0x00822cdc]      ; 00424aac | undefined4 DAT_00822cdc
+    MOV EDX,dword ptr [0x00822cdc]      ; 00424aac | DAT_00822cdc
     MOV ESI,dword ptr [EBP + 0x14]      ; 00424ab2
     PUSH EDX                            ; 00424ab5
     ADD ESI,0x158                       ; 00424ab6
     PUSH ESI                            ; 00424abc
     LEA ESI,[EBP + -0x3c]               ; 00424abd
     LEA EDI,[EBP + -0x6c]               ; 00424ac0
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 ; 00424ac3 | void core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
-        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 ; 00424ac3
+        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     MOV ECX,0xc                         ; 00424ac8
     LEA ESI,[EBP + -0x3c]               ; 00424acd
     MOVSD.REP ES:EDI,ESI                ; 00424ad0
@@ -52,8 +52,8 @@ section .text
     PUSH EBX                            ; 00424aeb
     MOV dword ptr [EBP + -0xc],ECX      ; 00424aec
     MOV dword ptr [EBP + -0x4],EDI      ; 00424aef
-    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 00424af2 | CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 00424af2
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 00424af7
     MOV EAX,EBX                         ; 00424afa
     MOV ESP,EBP                         ; 00424afc

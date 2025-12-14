@@ -27,16 +27,16 @@ section .text
         ;   Label: core_sentinel.cpp_CSentinel_ctor_FUN_00567db0
     MOV EDX,dword ptr [ESP + 0x8]       ; 00567db1
     PUSH EDX                            ; 00567db5
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 00567db6 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 00567db6
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00567dbb
-    PUSH 0x645719                       ; 00567dbe | = "sentinel.dfm" | s_sentinel_dfm_00645719 = sentinel.dfm
+    PUSH 0x645719                       ; 00567dbe | = "sentinel.dfm"
     MOV EBX,EAX                         ; 00567dc3
     ADD EAX,0x158                       ; 00567dc5
     PUSH EAX                            ; 00567dca
-    MOV dword ptr [EAX + -0x4],0x662694 ; 00567dcb | CDemonActor_vtable PTR_core_sentinel.cpp_FUN_00662694
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00567dd2 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x662694 ; 00567dcb | PTR_core_sentinel.cpp_FUN_00662694
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00567dd2
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0066267c]          ; 00567dd7 | DAT_0066267c
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 00567ddd
     FLD float ptr [0x00662680]          ; 00567de7 | PTR_FUN_0066267d+3

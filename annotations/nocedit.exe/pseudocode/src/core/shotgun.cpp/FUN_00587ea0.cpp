@@ -11,8 +11,7 @@ void core_shotgun_cpp_FUN_00587ea0(void)
 {
   CShotgun *this_ptr;
   
-  this_ptr = (CShotgun *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\shotgun.cpp",0x2e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\shotgun.cpp",0x2e);
   if (this_ptr == (CShotgun *)0x0) {
     return;
   }

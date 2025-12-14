@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 21, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 64, 
-    "assembly_lines": 43, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30", 
-      "addr": "00471d30"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004bfe20", 
-    "signature": "void core_fire.cpp_CStake_init_FUN_004bfe20(CStake * this_ptr, CVector3f * position, CVector3f * orientation)", 
-    "address_range": [
-      [
-        "004bfe20", 
-        "004bfe80"
-      ]
-    ], 
-    "name": "core_fire.cpp_CStake_init_FUN_004bfe20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStake *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "position"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "orientation"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 43,
+    "complexity_score": 21,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
   "cross_references": [
     {
-      "from_addr": "004c7cde", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0", 
-      "addr": "004c7bb0"
+      "addr": "004c7bb0",
+      "from_addr": "004c7cde",
+      "name": "core_fire.cpp_CFireEffect_createStake_FUN_004c7bb0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004bfe20",
+    "address_range": [
+      [
+        "004bfe20",
+        "004bfe80"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CStake_init_FUN_004bfe20",
+    "signature": "void core_fire.cpp_CStake_init_FUN_004bfe20(CStake * this_ptr, CVector3f * position, CVector3f * orientation)"
+  },
+  "function_calls": [
+    {
+      "addr": "00471d30",
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStake *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
 }

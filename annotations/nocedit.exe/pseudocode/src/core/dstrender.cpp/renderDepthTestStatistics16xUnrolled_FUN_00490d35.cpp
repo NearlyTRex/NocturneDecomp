@@ -80,7 +80,7 @@ core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35
       puVar5 = puVar5 + 0x10;
       iVar2 = iVar3;
     }
-    if (iVar3 != -4 && SCARRY4(iVar3,4) == iVar3 + 4 < 0) {
+    if (-4 < iVar3) {
       g_RenderPixelCounter = (g_RenderPixelCounter + 1) - (uint)(uVar9 >> 8 < *puVar6);
       if (iVar3 != -3 && 0 < iVar3 + 4) {
         g_RenderPixelCounter = (g_RenderPixelCounter + 1) - (uint)(uVar9 + iVar4 >> 8 < puVar6[1]);

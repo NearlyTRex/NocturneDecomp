@@ -31,7 +31,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x1c]      ; 004ce252
     MOV ECX,dword ptr [EBP + 0x20]      ; 004ce258
     PXOR MM7,MM7                        ; 004ce25e
-    MOVD MM4,dword ptr [0x0066df84]     ; 004ce261 | int g_CurrentRenderColor
+    MOVD MM4,dword ptr [0x0066df84]     ; 004ce261 | g_CurrentRenderColor
     PUNPCKLBW MM4,MM7                   ; 004ce268
     MOV EAX,0xffffffff                  ; 004ce26b
     MOVD MM6,EAX                        ; 004ce270
@@ -39,8 +39,8 @@ section .text
     MOVZX EAX,byte ptr [ESI]            ; 004ce276
         ;   Label: LAB_004ce276
     CMP EAX,0x0                         ; 004ce279
-    JZ 0x004ce2bd                       ; 004ce27c | LAB_004ce2bd
-        ;   XREF to: 004ce2bd (CONDITIONAL_JUMP)
+    JZ 0x004ce2bd                       ; 004ce27c
+        ;   XREF to: 004ce2bd (CONDITIONAL_JUMP)  ; LAB_004ce2bd
     SHL EAX,0x2                         ; 004ce27e
     MOV EAX,dword ptr [EAX + EDX*0x1]   ; 004ce281
     MOVD MM2,EAX                        ; 004ce284
@@ -64,8 +64,8 @@ section .text
         ;   Label: LAB_004ce2bd
     ADD EDI,0x4                         ; 004ce2be
     DEC ECX                             ; 004ce2c1
-    JG 0x004ce276                       ; 004ce2c2 | LAB_004ce276
-        ;   XREF to: 004ce276 (CONDITIONAL_JUMP)
+    JG 0x004ce276                       ; 004ce2c2
+        ;   XREF to: 004ce276 (CONDITIONAL_JUMP)  ; LAB_004ce276
     EMMS                                ; 004ce2c4
     MOV ESP,EBP                         ; 004ce2c6
     POP EBP                             ; 004ce2c8

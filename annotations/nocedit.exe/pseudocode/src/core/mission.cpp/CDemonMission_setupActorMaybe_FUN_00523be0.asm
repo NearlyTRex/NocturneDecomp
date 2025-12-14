@@ -33,8 +33,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 00523be4
     MOV ESI,dword ptr [ESP + 0x18]      ; 00523be8
     TEST ESI,ESI                        ; 00523bec
-    JNZ 0x00523bf5                      ; 00523bee | LAB_00523bf5
-        ;   XREF to: 00523bf5 (CONDITIONAL_JUMP)
+    JNZ 0x00523bf5                      ; 00523bee
+        ;   XREF to: 00523bf5 (CONDITIONAL_JUMP)  ; LAB_00523bf5
     POP EBP                             ; 00523bf0
     POP EDI                             ; 00523bf1
     POP ESI                             ; 00523bf2
@@ -42,35 +42,35 @@ section .text
     RET                                 ; 00523bf4
     PUSH 0x2c8                          ; 00523bf5
         ;   Label: LAB_00523bf5
-    PUSH 0x639087                       ; 00523bfa | = "..\\core\\mission.cpp" | s_core_mission_cpp_00639087 = ..\core\mission.cpp
+    PUSH 0x639087                       ; 00523bfa | = "..\\core\\mission.cpp"
     PUSH ESI                            ; 00523bff
     XOR EBP,EBP                         ; 00523c00
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00523c02 | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00523c02
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     MOV EBX,dword ptr [EDI + 0x548]     ; 00523c07
     ADD ESP,0xc                         ; 00523c0d
     TEST EBX,EBX                        ; 00523c10
-    JZ 0x00523c6e                       ; 00523c12 | LAB_00523c6e
-        ;   XREF to: 00523c6e (CONDITIONAL_JUMP)
+    JZ 0x00523c6e                       ; 00523c12
+        ;   XREF to: 00523c6e (CONDITIONAL_JUMP)  ; LAB_00523c6e
     PUSH 0x2ce                          ; 00523c14
         ;   Label: LAB_00523c14
-    PUSH 0x63909b                       ; 00523c19 | = "..\\core\\mission.cpp" | s_core_mission_cpp_0063909b = ..\core\mission.cpp
+    PUSH 0x63909b                       ; 00523c19 | = "..\\core\\mission.cpp"
     PUSH EBX                            ; 00523c1e
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00523c1f | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00523c1f
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     ADD ESP,0xc                         ; 00523c24
     CMP EBX,ESI                         ; 00523c27
-    JNZ 0x00523c64                      ; 00523c29 | LAB_00523c64
-        ;   XREF to: 00523c64 (CONDITIONAL_JUMP)
+    JNZ 0x00523c64                      ; 00523c29
+        ;   XREF to: 00523c64 (CONDITIONAL_JUMP)  ; LAB_00523c64
     MOV EDX,dword ptr [ESI + 0x150]     ; 00523c2b
         ;   Label: LAB_00523c2b
     TEST EDX,EDX                        ; 00523c31
-    JNZ 0x00523c85                      ; 00523c33 | LAB_00523c85
-        ;   XREF to: 00523c85 (CONDITIONAL_JUMP)
+    JNZ 0x00523c85                      ; 00523c33
+        ;   XREF to: 00523c85 (CONDITIONAL_JUMP)  ; LAB_00523c85
     MOV EBX,dword ptr [ESI + 0x14c]     ; 00523c35
     TEST EBX,EBX                        ; 00523c3b
-    JNZ 0x00523c77                      ; 00523c3d | LAB_00523c77
-        ;   XREF to: 00523c77 (CONDITIONAL_JUMP)
+    JNZ 0x00523c77                      ; 00523c3d
+        ;   XREF to: 00523c77 (CONDITIONAL_JUMP)  ; LAB_00523c77
     MOV dword ptr [EDI + 0x548],EDX     ; 00523c3f
     MOV dword ptr [EDI + 0x54c],EDX     ; 00523c45
     MOV dword ptr [ESI + 0x14c],0x0     ; 00523c4b
@@ -84,12 +84,12 @@ section .text
     MOV EBX,dword ptr [EBX + 0x14c]     ; 00523c64
         ;   Label: LAB_00523c64
     TEST EBX,EBX                        ; 00523c6a
-    JNZ 0x00523c14                      ; 00523c6c | LAB_00523c14
-        ;   XREF to: 00523c14 (CONDITIONAL_JUMP)
+    JNZ 0x00523c14                      ; 00523c6c
+        ;   XREF to: 00523c14 (CONDITIONAL_JUMP)  ; LAB_00523c14
     TEST EBP,EBP                        ; 00523c6e
         ;   Label: LAB_00523c6e
-    JNZ 0x00523c2b                      ; 00523c70 | LAB_00523c2b
-        ;   XREF to: 00523c2b (CONDITIONAL_JUMP)
+    JNZ 0x00523c2b                      ; 00523c70
+        ;   XREF to: 00523c2b (CONDITIONAL_JUMP)  ; LAB_00523c2b
     POP EBP                             ; 00523c72
     POP EDI                             ; 00523c73
     POP ESI                             ; 00523c74
@@ -98,21 +98,21 @@ section .text
     MOV dword ptr [EDI + 0x548],EBX     ; 00523c77
         ;   Label: LAB_00523c77
     MOV dword ptr [EBX + 0x150],EDX     ; 00523c7d
-    JMP 0x00523c4b                      ; 00523c83 | LAB_00523c4b
-        ;   XREF to: 00523c4b (UNCONDITIONAL_JUMP)
+    JMP 0x00523c4b                      ; 00523c83
+        ;   XREF to: 00523c4b (UNCONDITIONAL_JUMP)  ; LAB_00523c4b
     MOV ECX,dword ptr [ESI + 0x14c]     ; 00523c85
         ;   Label: LAB_00523c85
     TEST ECX,ECX                        ; 00523c8b
-    JNZ 0x00523c9d                      ; 00523c8d | LAB_00523c9d
-        ;   XREF to: 00523c9d (CONDITIONAL_JUMP)
+    JNZ 0x00523c9d                      ; 00523c8d
+        ;   XREF to: 00523c9d (CONDITIONAL_JUMP)  ; LAB_00523c9d
     MOV dword ptr [EDI + 0x54c],EDX     ; 00523c8f
     MOV dword ptr [EDX + 0x14c],ECX     ; 00523c95
-    JMP 0x00523c4b                      ; 00523c9b | LAB_00523c4b
-        ;   XREF to: 00523c4b (UNCONDITIONAL_JUMP)
+    JMP 0x00523c4b                      ; 00523c9b
+        ;   XREF to: 00523c4b (UNCONDITIONAL_JUMP)  ; LAB_00523c4b
     MOV dword ptr [EDX + 0x14c],ECX     ; 00523c9d
         ;   Label: LAB_00523c9d
     MOV EBX,dword ptr [ESI + 0x150]     ; 00523ca3
     MOV dword ptr [ECX + 0x150],EBX     ; 00523ca9
-    JMP 0x00523c4b                      ; 00523caf | LAB_00523c4b
-        ;   XREF to: 00523c4b (UNCONDITIONAL_JUMP)
+    JMP 0x00523c4b                      ; 00523caf
+        ;   XREF to: 00523c4b (UNCONDITIONAL_JUMP)  ; LAB_00523c4b
 

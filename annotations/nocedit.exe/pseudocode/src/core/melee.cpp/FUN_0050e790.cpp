@@ -11,8 +11,7 @@ void core_melee_cpp_FUN_0050e790(void)
 {
   CMelee *this_ptr;
   
-  this_ptr = (CMelee *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x6cc,"..\\core\\melee.cpp",0x26);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x6cc,"..\\core\\melee.cpp",0x26);
   if (this_ptr == (CMelee *)0x0) {
     return;
   }

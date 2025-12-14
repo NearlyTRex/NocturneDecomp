@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 28, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 2, 
-    "global_count": 4, 
-    "total_lines": 53, 
-    "assembly_lines": 25, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
-      "addr": "004a9500"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_hotdemon_dfm_0062f357", 
-      "addr": "0062f357", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065fcd0", 
-      "addr": "0065fcd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065fcd4", 
-      "addr": "0065fcd4", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_hotdemon.cpp_FUN_004f6d00_0065fce4", 
-      "addr": "0065fce4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004f6ca0", 
-    "signature": "CHotDemon * core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon * this_ptr)", 
-    "address_range": [
-      [
-        "004f6ca0", 
-        "004f6cfb"
-      ]
-    ], 
-    "name": "core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CHotDemon *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 25,
+    "complexity_score": 28,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 53
+  },
   "cross_references": [
     {
-      "from_addr": "004f6c7a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hotdemon.cpp_FUN_004f6c60", 
-      "addr": "004f6c60"
-    }, 
+      "addr": "004f6c60",
+      "from_addr": "004f6c7a",
+      "name": "core_hotdemon.cpp_FUN_004f6c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c714c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_succubus.cpp_CSuccubus_process_FUN_005c6e90", 
-      "addr": "005c6e90"
+      "addr": "005c6e90",
+      "from_addr": "005c714c",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_005c6e90",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004f6ca0",
+    "address_range": [
+      [
+        "004f6ca0",
+        "004f6cfb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0",
+    "signature": "CHotDemon * core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9500",
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062f357",
+      "name": "s_hotdemon_dfm_0062f357",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065fcd0",
+      "name": "DAT_0065fcd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065fcd4",
+      "name": "DAT_0065fcd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065fce4",
+      "name": "PTR_core_hotdemon.cpp_FUN_004f6d00_0065fce4",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHotDemon *"
+      }
+    ]
+  },
+  "suspects": []
 }

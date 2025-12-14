@@ -21,11 +21,11 @@ engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00437490
           ((v1->projected_vertex).transformed_y + (v2->projected_vertex).transformed_z);
   uVar4 = iVar3 - (v1->projected_vertex).transformed_y;
   if ((int)uVar4 < iVar2) {
-    if (uVar4 == -iVar2 || SBORROW /* signed borrow */4(uVar4,-iVar2) != (int)(uVar4 + iVar2) < 0) {
-      iVar3 = -0x80000000;
+    if (-iVar2 < (int)uVar4) {
+      iVar3 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
     }
     else {
-      iVar3 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar4 >> 1,(uint)((uVar4 & 1) != 0) << 0x1f) / (longlong)iVar2);
+      iVar3 = -0x80000000;
     }
   }
   else {

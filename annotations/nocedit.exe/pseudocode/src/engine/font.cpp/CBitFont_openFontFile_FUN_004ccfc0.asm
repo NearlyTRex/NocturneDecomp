@@ -37,8 +37,8 @@ section .text
     PUSH ESI                            ; 004ccfdd
     MOV EDI,dword ptr [ESP + 0x28]      ; 004ccfde
     PUSH EDI                            ; 004ccfe2
-    CALL engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280 ; 004ccfe3 | void engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280(CBitFont * this_ptr, char * filename, int width, int height, ...)
-        ;   XREF to: 004cd280 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280 ; 004ccfe3
+        ;   XREF to: 004cd280 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x1c                        ; 004ccfe8
     POP EDI                             ; 004ccfeb
     POP ESI                             ; 004ccfec

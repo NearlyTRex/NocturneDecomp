@@ -1,150 +1,150 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 6, 
-    "global_count": 0, 
-    "total_lines": 49, 
-    "assembly_lines": 36, 
-    "suspect_count": 2, 
+    "assembly_lines": 36,
+    "complexity_score": 38,
+    "cross_reference_count": 6,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0", 
-      "addr": "004cdbf0"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
-      "addr": "004cfe80"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)text_string,unaff_EDI);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004cdee0", 
-    "signature": "int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont * this_ptr, int left_x, int right_x, int y_pos, int color_mode, int color_value, char * text_string)", 
-    "address_range": [
-      [
-        "004cdee0", 
-        "004cdf2a"
-      ]
-    ], 
-    "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBitFont *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "left_x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "right_x"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_pos"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "color_mode"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "color_value"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text_string"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
+    ],
+    "total_lines": 49
+  },
   "cross_references": [
     {
-      "from_addr": "00489312", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
-      "addr": "00489120"
-    }, 
+      "addr": "00489120",
+      "from_addr": "00489312",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3b37", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800", 
-      "addr": "004e3800"
-    }, 
+      "addr": "004e3800",
+      "from_addr": "004e3b37",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3c2a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90", 
-      "addr": "004e3b90"
-    }, 
+      "addr": "004e3b90",
+      "from_addr": "004e3c2a",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004daa9a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
-    }, 
+      "addr": "004da100",
+      "from_addr": "004daa9a",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e4217", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
-      "addr": "004e4010"
-    }, 
+      "addr": "004e4010",
+      "from_addr": "004e4217",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cdfda", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf80", 
-      "addr": "004cdf80"
+      "addr": "004cdf80",
+      "from_addr": "004cdfda",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cdee0",
+    "address_range": [
+      [
+        "004cdee0",
+        "004cdf2a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0",
+    "signature": "int engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0(CBitFont * this_ptr, int left_x, int right_x, int y_pos, int color_mode, int color_value, char * text_string)"
+  },
+  "function_calls": [
+    {
+      "addr": "004cdbf0",
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0"
+    },
+    {
+      "addr": "004cfe80",
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "left_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_value",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "text_string",
+        "offset": 28,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EDI",
+      "text": "(int)text_string,unaff_EDI);",
+      "type": "unaffected_reg"
     }
   ]
 }

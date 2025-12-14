@@ -11,8 +11,7 @@ void core_lightgun_cpp_FUN_005058c0(void)
 {
   CLightGun *this_ptr;
   
-  this_ptr = (CLightGun *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x590,"..\\core\\lightgun.cpp",0x3a);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x590,"..\\core\\lightgun.cpp",0x3a);
   if (this_ptr == (CLightGun *)0x0) {
     return;
   }

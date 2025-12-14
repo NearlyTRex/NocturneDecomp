@@ -19,7 +19,7 @@
 
 section .text
 
-    MOV EAX,[0x03f624a4]                ; 005a8a80 | int g_SfxLastSlot
+    MOV EAX,[0x03f624a4]                ; 005a8a80 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80
     SHL EAX,0x4                         ; 005a8a85
     MOV EDX,EAX                         ; 005a8a88

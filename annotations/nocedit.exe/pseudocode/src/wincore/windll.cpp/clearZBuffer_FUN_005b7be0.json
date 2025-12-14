@@ -1,63 +1,63 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 18, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_clearZBuffer*", 
-      "name": "g_APIDLL_clearZBuffer", 
-      "addr": "03f6b8f8", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b7be0", 
-    "signature": "int wincore_windll.cpp_clearZBuffer_FUN_005b7be0(void)", 
-    "address_range": [
-      [
-        "005b7be0", 
-        "005b7bf2"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_clearZBuffer_FUN_005b7be0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "0044c66b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430", 
-      "addr": "0044c430"
-    }, 
+      "addr": "0044c430",
+      "from_addr": "0044c66b",
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045f33f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
-      "addr": "0045f1d0"
+      "addr": "0045f1d0",
+      "from_addr": "0045f33f",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b7be0",
+    "address_range": [
+      [
+        "005b7be0",
+        "005b7bf2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_clearZBuffer_FUN_005b7be0",
+    "signature": "int wincore_windll.cpp_clearZBuffer_FUN_005b7be0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8f8",
+      "name": "g_APIDLL_clearZBuffer",
+      "type": "APIDLL_clearZBuffer*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

@@ -1,261 +1,253 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 198, 
-    "pseudocode_lines": 88, 
-    "cross_reference_count": 0, 
-    "global_count": 18, 
-    "total_lines": 231, 
-    "assembly_lines": 143, 
-    "suspect_count": 9, 
+    "assembly_lines": 143,
+    "complexity_score": 182,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 18,
+    "pseudocode_lines": 87,
+    "suspect_count": 8,
     "suspect_types": [
-      "extra_output", 
-      "sborrow_artifact", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdlib.c_qsort_FUN_005fdf38", 
-      "addr": "005fdf38"
-    }, 
-    {
-      "name": "engine_3d.c_setBlendMode_FUN_00406dd0", 
-      "addr": "00406dd0"
-    }, 
-    {
-      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
-      "addr": "004371b0"
-    }, 
-    {
-      "name": "engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0", 
-      "addr": "005dd8c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentAlphaValue", 
-      "addr": "006793b4", 
-      "value": "0xff"
-    }, 
-    {
-      "type": "SRenderVertex[16]", 
-      "name": "g_RenderVertexBuffer", 
-      "addr": "00688014", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y", 
-      "addr": "00688018", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].w_recip", 
-      "addr": "00688040", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00688044", 
-      "addr": "00688044", 
-      "value": null
-    }, 
-    {
-      "type": "int[24]", 
-      "name": "g_ProcessedVertexIndices", 
-      "addr": "00772a98", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderBufferEnabled", 
-      "addr": "00772af8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderBufferCount", 
-      "addr": "00772afc", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderBufferEntry[256]", 
-      "name": "g_RenderBufferPool", 
-      "addr": "00772b00", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderBufferPool[1].vertex_count", 
-      "addr": "00772c18", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderBufferEntry*[2500]", 
-      "name": "g_RenderBufferSortArray", 
-      "addr": "0081d960", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderBufferSortArray[1]", 
-      "addr": "0081d964", 
-      "value": null
-    }, 
-    {
-      "type": "RenderScanlineFunc*", 
-      "name": "g_ScanlineRenderFunc", 
-      "addr": "02d0257c", 
-      "value": null
-    }, 
-    {
-      "type": "BOOL", 
-      "name": "g_MMXSupported", 
-      "addr": "02d05248", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlendMode", 
-      "addr": "02d05298", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "SMRGLHeaderExtended *in_EAX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SMRGLHeaderExtended *extraout_EAX;"
-    }, 
-    {
-      "line": 31, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar2,iVar6) != iVar2 + iVar3 * -4 < 0);"
-    }, 
-    {
-      "line": 67, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 71, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar6) = iVar3;"
-    }, 
-    {
-      "line": 82, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_8 = (int *)((int)local_8 + 1);"
-    }, 
-    {
-      "line": 88, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "in_EAX = extraout_EAX;"
-    }, 
-    {
-      "line": 88, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EAX = extraout_EAX;"
-    }, 
-    {
-      "line": 90, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "return in_EAX;"
-    }
-  ], 
+      "register_param",
+      "extra_output",
+      "pointer_cast"
+    ],
+    "total_lines": 230
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004070c0", 
-    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0(SMRGLHeaderPrimitive * polygon_info)", 
+    "address": "004070c0",
     "address_range": [
       [
-        "004070c0", 
+        "004070c0",
         "00407280"
       ]
-    ], 
-    "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0",
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0(SMRGLHeaderPrimitive * polygon_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdf38",
+      "name": "crt_stdlib.c_qsort_FUN_005fdf38"
+    },
+    {
+      "addr": "00406dd0",
+      "name": "engine_3d.c_setBlendMode_FUN_00406dd0"
+    },
+    {
+      "addr": "004371b0",
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0"
+    },
+    {
+      "addr": "005dd8c0",
+      "name": "engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "006793b4",
+      "name": "g_CurrentAlphaValue",
+      "type": "int",
+      "value": "0xff"
+    },
+    {
+      "addr": "00688014",
+      "name": "g_RenderVertexBuffer",
+      "type": "SRenderVertex[16]",
+      "value": null
+    },
+    {
+      "addr": "00688018",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688040",
+      "name": "g_RenderVertexBuffer[0].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688044",
+      "name": "DAT_00688044",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772a98",
+      "name": "g_ProcessedVertexIndices",
+      "type": "int[24]",
+      "value": null
+    },
+    {
+      "addr": "00772af8",
+      "name": "g_RenderBufferEnabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772afc",
+      "name": "g_RenderBufferCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772b00",
+      "name": "g_RenderBufferPool",
+      "type": "SRenderBufferEntry[256]",
+      "value": null
+    },
+    {
+      "addr": "00772c18",
+      "name": "g_RenderBufferPool[1].vertex_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0081d960",
+      "name": "g_RenderBufferSortArray",
+      "type": "SRenderBufferEntry*[2500]",
+      "value": null
+    },
+    {
+      "addr": "0081d964",
+      "name": "g_RenderBufferSortArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "RenderScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "BOOL",
+      "value": null
+    },
+    {
+      "addr": "02d05298",
+      "name": "g_BlendMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 20, 
+    "frame_size": 24,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "polygon_info"
+        "is_param": true,
+        "name": "polygon_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_EAX",
+      "text": "SMRGLHeaderExtended *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX",
+      "text": "SMRGLHeaderExtended *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(int *)((int)",
+      "text": "local_8 = (int *)((int)local_8 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 87,
+      "match": "extraout_EAX",
+      "text": "in_EAX = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 87,
+      "match": "in_EAX",
+      "text": "in_EAX = extraout_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 89,
+      "match": "in_EAX",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    }
+  ]
 }

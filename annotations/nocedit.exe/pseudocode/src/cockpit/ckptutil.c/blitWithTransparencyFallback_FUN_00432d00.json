@@ -1,125 +1,125 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 44, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 98, 
-    "assembly_lines": 69, 
-    "suspect_count": 1, 
+    "assembly_lines": 69,
+    "complexity_score": 44,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 29,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 18, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pcVar2 = (char *)((int)src_data + local_18);"
-    }
-  ], 
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00432d00", 
-    "signature": "void cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00(void * src_data, int width, int height, void * background_base, int dest_x, int dest_y)", 
+    "address": "00432d00",
     "address_range": [
       [
-        "00432d00", 
+        "00432d00",
         "00432d8d"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00",
+    "signature": "void cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00(void * src_data, int width, int height, void * background_base, int dest_x, int dest_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    }
+  ],
   "stack_frame": {
-    "local_size": 36, 
+    "frame_size": 60,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "src_data"
-      }, 
+        "is_param": true,
+        "name": "src_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
+        "is_param": true,
+        "name": "width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
+        "is_param": true,
+        "name": "height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "background_base"
-      }, 
+        "is_param": true,
+        "name": "background_base",
+        "offset": 16,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dest_x"
-      }, 
+        "is_param": true,
+        "name": "dest_x",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dest_y"
+        "is_param": true,
+        "name": "dest_y",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 60, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(char *)((int)",
+      "text": "pcVar2 = (char *)((int)src_data + local_18);",
+      "type": "pointer_cast"
+    }
+  ]
 }

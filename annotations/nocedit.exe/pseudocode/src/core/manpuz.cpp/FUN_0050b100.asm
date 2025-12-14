@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2f0cae0                   ; 0050b100 | CDemonActorType g_CMirrorHackClassInfo
+    MOV EAX,0x2f0cae0                   ; 0050b100 | g_CMirrorHackClassInfo
         ;   Label: core_manpuz.cpp_FUN_0050b100
     RET                                 ; 0050b105
 

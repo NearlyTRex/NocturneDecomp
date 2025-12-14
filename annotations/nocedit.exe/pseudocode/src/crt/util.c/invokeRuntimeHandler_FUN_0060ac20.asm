@@ -18,8 +18,8 @@ section .text
         ;   Label: crt_util.c_invokeRuntimeHandler_FUN_0060ac20
     MOV EAX,dword ptr [ESP + 0x8]       ; 0060ac21
     CMP dword ptr [EAX],0x0             ; 0060ac25
-    JZ 0x0060ac2e                       ; 0060ac28 | LAB_0060ac2e
-        ;   XREF to: 0060ac2e (CONDITIONAL_JUMP)
+    JZ 0x0060ac2e                       ; 0060ac28
+        ;   XREF to: 0060ac2e (CONDITIONAL_JUMP)  ; LAB_0060ac2e
     PUSH DS                             ; 0060ac2a
     POP ES                              ; 0060ac2b
     CALL dword ptr [EAX]                ; 0060ac2c

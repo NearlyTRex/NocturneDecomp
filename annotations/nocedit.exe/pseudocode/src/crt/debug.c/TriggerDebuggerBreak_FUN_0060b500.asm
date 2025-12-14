@@ -18,10 +18,10 @@
 
 section .text
 
-    CMP byte ptr [0x00685474],0x0       ; 0060b500 | undefined1 g_DebuggerIsAttached
+    CMP byte ptr [0x00685474],0x0       ; 0060b500 | g_DebuggerIsAttached
         ;   Label: crt_debug.c_TriggerDebuggerBreak_FUN_0060b500
-    JZ 0x0060b528                       ; 0060b507 | LAB_0060b528
-        ;   XREF to: 0060b528 (CONDITIONAL_JUMP)
+    JZ 0x0060b528                       ; 0060b507
+        ;   XREF to: 0060b528 (CONDITIONAL_JUMP)  ; LAB_0060b528
     XOR EAX,EAX                         ; 0060b509
     MOV AX,word ptr [ESP + 0x8]         ; 0060b50b
     PUSH EAX                            ; 0060b510

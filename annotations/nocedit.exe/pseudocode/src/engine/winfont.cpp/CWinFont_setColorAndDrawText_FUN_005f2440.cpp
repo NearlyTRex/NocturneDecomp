@@ -136,7 +136,7 @@ engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440
           if (0 < iVar3) {
             piVar10 = (int *)((int)text_string * 4 + (int)g_ScreenBufferArray[iVar5]);
             do {
-              if ((char *)this_ptr->ppvBits[this_ptr->right * iVar4 + iVar6] !=
+              if (this_ptr->ppvBits[this_ptr->right * iVar4 + iVar6] !=
                   g_LightBufferPool[0xd] + 0x6ef7) {
                 *piVar10 = (int)this_ptr->ppvBits[this_ptr->right * iVar4 + iVar6];
               }

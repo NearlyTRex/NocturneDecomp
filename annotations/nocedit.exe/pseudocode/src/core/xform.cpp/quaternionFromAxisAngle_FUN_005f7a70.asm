@@ -29,7 +29,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2c]      ; 005f7a74
     MOV EDX,ESI                         ; 005f7a78
     FLD float ptr [ESP + 0x28]          ; 005f7a7a
-    FMUL double ptr [0x0065841d]        ; 005f7a7e | double g_QuaternionHalfAngleFactor4
+    FMUL double ptr [0x0065841d]        ; 005f7a7e | g_QuaternionHalfAngleFactor4
     FLD ST0                             ; 005f7a84
     FSIN                                ; 005f7a86
     FXCH                                ; 005f7a88

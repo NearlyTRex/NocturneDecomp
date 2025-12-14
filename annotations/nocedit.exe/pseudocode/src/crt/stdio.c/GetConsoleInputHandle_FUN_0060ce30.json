@@ -1,56 +1,56 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 10, 
-    "assembly_lines": 5, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc", 
-      "addr": "0060cdbc"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "HANDLE", 
-      "name": "g_ConsoleInputHandle", 
-      "addr": "006854fc", 
-      "value": "ffffffff"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "0060ce30", 
-    "signature": "HANDLE crt_stdio.c_GetConsoleInputHandle_FUN_0060ce30(void)", 
-    "address_range": [
-      [
-        "0060ce30", 
-        "0060ce3a"
-      ]
-    ], 
-    "name": "crt_stdio.c_GetConsoleInputHandle_FUN_0060ce30"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 5,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 10
+  },
   "cross_references": [
     {
-      "from_addr": "0060b43b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_DrainConsoleInputAndSetup_FUN_0060b3f8", 
-      "addr": "0060b3f8"
+      "addr": "0060b3f8",
+      "from_addr": "0060b43b",
+      "name": "crt_stdio.c_DrainConsoleInputAndSetup_FUN_0060b3f8",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060ce30",
+    "address_range": [
+      [
+        "0060ce30",
+        "0060ce3a"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_stdio.c_GetConsoleInputHandle_FUN_0060ce30",
+    "signature": "HANDLE crt_stdio.c_GetConsoleInputHandle_FUN_0060ce30(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060cdbc",
+      "name": "crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006854fc",
+      "name": "g_ConsoleInputHandle",
+      "type": "HANDLE",
+      "value": "ffffffff"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

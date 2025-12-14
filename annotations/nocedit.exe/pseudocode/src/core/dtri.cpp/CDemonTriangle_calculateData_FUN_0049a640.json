@@ -1,127 +1,127 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 76, 
-    "pseudocode_lines": 51, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 188, 
-    "assembly_lines": 137, 
-    "suspect_count": 2, 
+    "assembly_lines": 137,
+    "complexity_score": 76,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 51,
+    "suspect_count": 2,
     "suspect_types": [
       "suspect_float"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0049a646", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 49, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "triangle->area = 1.4013e-45;"
-    }, 
-    {
-      "line": 52, 
-      "match": "2.8026e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "triangle->area = 2.8026e-45;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0049a640", 
-    "signature": "void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle * triangle)", 
-    "address_range": [
-      [
-        "0049a640", 
-        "0049a78b"
-      ]
-    ], 
-    "name": "core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640"
-  }, 
-  "stack_frame": {
-    "local_size": 60, 
-    "variables": [
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonTriangle *", 
-        "size": 4, 
-        "name": "triangle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 64, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 188
+  },
   "cross_references": [
     {
-      "from_addr": "0049a7d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790", 
-      "addr": "0049a790"
-    }, 
+      "addr": "0049a790",
+      "from_addr": "0049a7d5",
+      "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049a519", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0", 
-      "addr": "0049a4e0"
+      "addr": "0049a4e0",
+      "from_addr": "0049a519",
+      "name": "core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049a640",
+    "address_range": [
+      [
+        "0049a640",
+        "0049a78b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640",
+    "signature": "void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle * triangle)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "triangle",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonTriangle *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0049a646",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 49,
+      "match": "1.4013e-45",
+      "text": "triangle->area = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 52,
+      "match": "2.8026e-45",
+      "text": "triangle->area = 2.8026e-45;",
+      "type": "suspect_float"
     }
   ]
 }

@@ -19,8 +19,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 006012c0
         ;   Label: crt_heap.c_heapCheckWrapper_FUN_006012c0
     PUSH EDX                            ; 006012c4
-    CALL crt_heap.c_heapCheck_FUN_00601374 ; 006012c5 | int crt_heap.c_heapCheck_FUN_00601374(void * heap_state_ptr)
-        ;   XREF to: 00601374 (UNCONDITIONAL_CALL)
+    CALL crt_heap.c_heapCheck_FUN_00601374 ; 006012c5
+        ;   XREF to: 00601374 (UNCONDITIONAL_CALL)  ; int crt_heap.c_heapCheck_FUN_00601374(void * heap_state_ptr)
     ADD ESP,0x4                         ; 006012ca
     RET                                 ; 006012cd
 

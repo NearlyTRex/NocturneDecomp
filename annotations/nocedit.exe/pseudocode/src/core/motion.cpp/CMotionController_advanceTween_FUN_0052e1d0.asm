@@ -45,8 +45,8 @@ section .text
     MOV ESI,dword ptr [EBX + 0x4a4]     ; 0052e205
     MOV dword ptr [ESP + 0x10],EDX      ; 0052e20b
     TEST ESI,ESI                        ; 0052e20f
-    JLE 0x0052e239                      ; 0052e211 | LAB_0052e239
-        ;   XREF to: 0052e239 (CONDITIONAL_JUMP)
+    JLE 0x0052e239                      ; 0052e211
+        ;   XREF to: 0052e239 (CONDITIONAL_JUMP)  ; LAB_0052e239
     MOV EDX,EBX                         ; 0052e213
     FLD float ptr [EBP + 0x1c]          ; 0052e215
         ;   Label: LAB_0052e215
@@ -55,15 +55,15 @@ section .text
     FCOMP float ptr [ESP + 0xc]         ; 0052e222
     FNSTSW AX                           ; 0052e226
     SAHF                                ; 0052e228
-    JBE 0x0052e269                      ; 0052e229 | LAB_0052e269
-        ;   XREF to: 0052e269 (CONDITIONAL_JUMP)
+    JBE 0x0052e269                      ; 0052e229
+        ;   XREF to: 0052e269 (CONDITIONAL_JUMP)  ; LAB_0052e269
     INC ECX                             ; 0052e22b
         ;   Label: LAB_0052e22b
     MOV EDI,dword ptr [EBX + 0x4a4]     ; 0052e22c
     ADD EDX,0x8                         ; 0052e232
     CMP ECX,EDI                         ; 0052e235
-    JL 0x0052e215                       ; 0052e237 | LAB_0052e215
-        ;   XREF to: 0052e215 (CONDITIONAL_JUMP)
+    JL 0x0052e215                       ; 0052e237
+        ;   XREF to: 0052e215 (CONDITIONAL_JUMP)  ; LAB_0052e215
     FLD float ptr [ESP + 0x8]           ; 0052e239
         ;   Label: LAB_0052e239
     FILD dword ptr [EBX + 0x64]         ; 0052e23d
@@ -71,8 +71,8 @@ section .text
     FCOMP float ptr [ESP + 0x14]        ; 0052e244
     FNSTSW AX                           ; 0052e248
     SAHF                                ; 0052e24a
-    JBE 0x0052e255                      ; 0052e24b | LAB_0052e255
-        ;   XREF to: 0052e255 (CONDITIONAL_JUMP)
+    JBE 0x0052e255                      ; 0052e24b
+        ;   XREF to: 0052e255 (CONDITIONAL_JUMP)  ; LAB_0052e255
     MOV EDX,dword ptr [ESP + 0x14]      ; 0052e24d
     MOV dword ptr [ESP + 0x8],EDX       ; 0052e251
     FLD float ptr [ESP + 0x8]           ; 0052e255
@@ -80,8 +80,8 @@ section .text
     FCOMP float ptr [ESP + 0x10]        ; 0052e259
     FNSTSW AX                           ; 0052e25d
     SAHF                                ; 0052e25f
-    JC 0x0052e291                       ; 0052e260 | LAB_0052e291
-        ;   XREF to: 0052e291 (CONDITIONAL_JUMP)
+    JC 0x0052e291                       ; 0052e260
+        ;   XREF to: 0052e291 (CONDITIONAL_JUMP)  ; LAB_0052e291
     MOV ESP,EBP                         ; 0052e262
     POP EBP                             ; 0052e264
     POP EDI                             ; 0052e265
@@ -90,19 +90,19 @@ section .text
     RET                                 ; 0052e268
     FLD float ptr [ESP + 0x8]           ; 0052e269
         ;   Label: LAB_0052e269
-    FADD double ptr [0x0063ab27]        ; 0052e26d | double DOUBLE_0063ab27
+    FADD double ptr [0x0063ab27]        ; 0052e26d | DOUBLE_0063ab27
     FLD float ptr [ESP + 0xc]           ; 0052e273
     FSTP double ptr [ESP]               ; 0052e277
     FCOMP double ptr [ESP]              ; 0052e27a
     FNSTSW AX                           ; 0052e27d
     SAHF                                ; 0052e27f
-    JC 0x0052e22b                       ; 0052e280 | LAB_0052e22b
-        ;   XREF to: 0052e22b (CONDITIONAL_JUMP)
+    JC 0x0052e22b                       ; 0052e280
+        ;   XREF to: 0052e22b (CONDITIONAL_JUMP)  ; LAB_0052e22b
     FLD double ptr [ESP]                ; 0052e282
-    FADD double ptr [0x0063ab27]        ; 0052e285 | double DOUBLE_0063ab27
+    FADD double ptr [0x0063ab27]        ; 0052e285 | DOUBLE_0063ab27
     FSTP float ptr [ESP + 0x8]          ; 0052e28b
-    JMP 0x0052e22b                      ; 0052e28f | LAB_0052e22b
-        ;   XREF to: 0052e22b (UNCONDITIONAL_JUMP)
+    JMP 0x0052e22b                      ; 0052e28f
+        ;   XREF to: 0052e22b (UNCONDITIONAL_JUMP)  ; LAB_0052e22b
     FLD float ptr [ESP + 0x8]           ; 0052e291
         ;   Label: LAB_0052e291
     FSUB float ptr [EBP + 0x1c]         ; 0052e295

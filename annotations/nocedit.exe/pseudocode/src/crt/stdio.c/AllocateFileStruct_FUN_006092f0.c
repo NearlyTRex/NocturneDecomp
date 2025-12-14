@@ -18,7 +18,7 @@ FILE * __cdecl crt_stdio_c_AllocateFileStruct_FUN_006092f0(int unused_param)
     dest = &g_StaticFilePoolStart;
     do {
       if ((((FILE *)dest)->_flag & 3) == 0) {
-        psVar1 = (streambuf *)crt_memory_c_malloc_FUN_00601bb0(0x1d);
+        psVar1 = crt_memory_c_malloc_FUN_00601bb0(0x1d);
         if (psVar1 == (streambuf *)0x0) goto LAB_00609398;
         uVar2 = 3;
         goto LAB_00609369;
@@ -26,7 +26,7 @@ FILE * __cdecl crt_stdio_c_AllocateFileStruct_FUN_006092f0(int unused_param)
       dest = (FILE **)((int)dest + 0x1a);
     } while (dest < (FILE *)&g_StaticFilePoolEnd);
     uVar2 = 0x4003;
-    psVar1 = (streambuf *)crt_memory_c_malloc_FUN_00601bb0(0x37);
+    psVar1 = crt_memory_c_malloc_FUN_00601bb0(0x37);
     if (psVar1 == (streambuf *)0x0) {
 LAB_00609398:
       crt_errno_c_setErrno_FUN_00602790(SYSTEM_IO_ERROR);
@@ -39,7 +39,7 @@ LAB_00609398:
     dest = (FILE **)g_FreeListHeadPointer->__reserve_base;
     uVar2 = (uint)((ushort)((FILE *)dest)->_flag & 0x4003 | 3);
     psVar1 = g_FreeListHeadPointer;
-    g_FreeListHeadPointer = (streambuf *)g_FreeListHeadPointer->__b_lock;
+    g_FreeListHeadPointer = g_FreeListHeadPointer->__b_lock;
   }
 LAB_00609369:
   crt_memory_c_memset_FUN_005fde40(dest,0,0x1a);

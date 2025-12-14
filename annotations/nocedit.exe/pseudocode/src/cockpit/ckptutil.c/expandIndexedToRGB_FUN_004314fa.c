@@ -16,8 +16,7 @@ cockpit_ckptutil_c_expandIndexedToRGB_FUN_004314fa
   int iVar3;
   
   do {
-                    /* WARNING: Load size is inaccurate */
-    bVar1 = *input_buffer;
+    bVar1 = *(byte *)input_buffer;
     input_buffer = (void *)((int)input_buffer + 1);
     *(uint *)output_buffer = g_Hardware32BitPalette[bVar1];
     output_buffer = (void *)((int)output_buffer + 4);

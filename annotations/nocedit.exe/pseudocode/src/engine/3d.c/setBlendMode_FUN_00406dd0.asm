@@ -21,6 +21,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00406dd0
         ;   Label: engine_3d.c_setBlendMode_FUN_00406dd0
-    MOV [0x02d05298],EAX                ; 00406dd4 | int g_BlendMode
+    MOV [0x02d05298],EAX                ; 00406dd4 | g_BlendMode
     RET                                 ; 00406dd9
 

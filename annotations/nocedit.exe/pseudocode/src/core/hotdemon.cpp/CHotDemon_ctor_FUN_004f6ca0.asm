@@ -28,16 +28,16 @@ section .text
         ;   Label: core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004f6ca1
     PUSH EDX                            ; 004f6ca5
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004f6ca6 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004f6ca6
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004f6cab
-    PUSH 0x62f357                       ; 004f6cae | = "hotdemon.dfm" | s_hotdemon_dfm_0062f357 = hotdemon.dfm
+    PUSH 0x62f357                       ; 004f6cae | = "hotdemon.dfm"
     MOV EBX,EAX                         ; 004f6cb3
     ADD EAX,0x158                       ; 004f6cb5
     PUSH EAX                            ; 004f6cba
-    MOV dword ptr [EAX + -0x4],0x65fce4 ; 004f6cbb | CDemonActor_vtable PTR_core_hotdemon.cpp_FUN_004f6d00_0065fce4
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004f6cc2 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x65fce4 ; 004f6cbb | PTR_core_hotdemon.cpp_FUN_004f6d00_0065fce4
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004f6cc2
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0065fcd0]          ; 004f6cc7 | DAT_0065fcd0
     FLD float ptr [0x0065fcd4]          ; 004f6ccd | DAT_0065fcd4
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 004f6cd3

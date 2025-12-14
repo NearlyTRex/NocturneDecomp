@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x822420                    ; 00412190 | CDemonActorType g_CArmourClassInfo
+    MOV EAX,0x822420                    ; 00412190 | g_CArmourClassInfo
         ;   Label: core_armour.cpp_CArmour_getActorType_FUN_00412190
     RET                                 ; 00412195
 

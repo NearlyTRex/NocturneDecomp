@@ -25,33 +25,33 @@ section .text
         ;   Label: core_baron.cpp_CBaron_serialize_FUN_00413a70
     MOV EBX,dword ptr [ESP + 0x8]       ; 00413a71
     PUSH EBX                            ; 00413a75
-    CALL core_hero.cpp_CHero_serialize_FUN_004f2610 ; 00413a76 | void core_hero.cpp_CHero_serialize_FUN_004f2610(CHero * this_ptr)
-        ;   XREF to: 004f2610 (UNCONDITIONAL_CALL)
-    MOV EDX,dword ptr [0x0066e45c]      ; 00413a7b | undefined4 g_CBaronClassVersion
+    CALL core_hero.cpp_CHero_serialize_FUN_004f2610 ; 00413a76
+        ;   XREF to: 004f2610 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_serialize_FUN_004f2610(CHero * this_ptr)
+    MOV EDX,dword ptr [0x0066e45c]      ; 00413a7b | g_CBaronClassVersion
     ADD ESP,0x4                         ; 00413a81
     CMP EDX,0x2                         ; 00413a84
-    JGE 0x00413a8b                      ; 00413a87 | LAB_00413a8b
-        ;   XREF to: 00413a8b (CONDITIONAL_JUMP)
+    JGE 0x00413a8b                      ; 00413a87
+        ;   XREF to: 00413a8b (CONDITIONAL_JUMP)  ; LAB_00413a8b
     POP EBX                             ; 00413a89
     RET                                 ; 00413a8a
-    PUSH 0x615069                       ; 00413a8b | = "summonEvent" | s_summonEvent_00615069 = summonEvent
+    PUSH 0x615069                       ; 00413a8b | = "summonEvent"
         ;   Label: LAB_00413a8b
     LEA EAX,[EBX + 0x1fbd4]             ; 00413a90
     PUSH EAX                            ; 00413a96
-    CALL core_actor.cpp_serializeString_FUN_0040b5c0 ; 00413a97 | void core_actor.cpp_serializeString_FUN_0040b5c0(char * * string_buffer, char * property_type)
-        ;   XREF to: 0040b5c0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_serializeString_FUN_0040b5c0 ; 00413a97
+        ;   XREF to: 0040b5c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeString_FUN_0040b5c0(char * * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 00413a9c
-    PUSH 0x615075                       ; 00413a9f | = "goAwayEvent" | s_goAwayEvent_00615075 = goAwayEvent
+    PUSH 0x615075                       ; 00413a9f | = "goAwayEvent"
     LEA EAX,[EBX + 0x1fc38]             ; 00413aa4
     PUSH EAX                            ; 00413aaa
-    CALL core_actor.cpp_serializeString_FUN_0040b5c0 ; 00413aab | void core_actor.cpp_serializeString_FUN_0040b5c0(char * * string_buffer, char * property_type)
-        ;   XREF to: 0040b5c0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_serializeString_FUN_0040b5c0 ; 00413aab
+        ;   XREF to: 0040b5c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeString_FUN_0040b5c0(char * * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 00413ab0
-    PUSH 0x615081                       ; 00413ab3 | = "summoned" | s_summoned_00615081 = summoned
+    PUSH 0x615081                       ; 00413ab3 | = "summoned"
     ADD EBX,0x1fccc                     ; 00413ab8
     PUSH EBX                            ; 00413abe
-    CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 00413abf | void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_serializeInteger_FUN_0040b7f0 ; 00413abf
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeInteger_FUN_0040b7f0(int * int_ptr, char * property_name)
     ADD ESP,0x8                         ; 00413ac4
     POP EBX                             ; 00413ac7
     RET                                 ; 00413ac8

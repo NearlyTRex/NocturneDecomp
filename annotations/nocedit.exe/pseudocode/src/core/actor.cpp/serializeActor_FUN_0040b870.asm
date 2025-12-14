@@ -42,19 +42,19 @@ section .text
         ;   Label: core_actor.cpp_serializeActor_FUN_0040b870
     PUSH ESI                            ; 0040b871
     PUSH EBP                            ; 0040b872
-    CMP dword ptr [0x00822038],0x1      ; 0040b873 | int g_ActorReadingMode
-    JNZ 0x0040b8a8                      ; 0040b87a | LAB_0040b8a8
-        ;   XREF to: 0040b8a8 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x00822038],0x1      ; 0040b873 | g_ActorReadingMode
+    JNZ 0x0040b8a8                      ; 0040b87a
+        ;   XREF to: 0040b8a8 (CONDITIONAL_JUMP)  ; LAB_0040b8a8
     MOV EDX,dword ptr [ESP + 0x14]      ; 0040b87c
     PUSH EDX                            ; 0040b880
-    MOV ECX,dword ptr [0x0082203c]      ; 0040b881 | CDemonActor * g_CurrentActorBeingProcessed
+    MOV ECX,dword ptr [0x0082203c]      ; 0040b881 | g_CurrentActorBeingProcessed
     PUSH ECX                            ; 0040b887
-    MOV EBX,dword ptr [0x00822034]      ; 0040b888 | FILE * g_ActorDataFile
+    MOV EBX,dword ptr [0x00822034]      ; 0040b888 | g_ActorDataFile
     PUSH EBX                            ; 0040b88e
-    MOV ESI,dword ptr [0x0067d550]      ; 0040b88f | CDemonMission * g_CDemonMissionPtr
-    PUSH ESI                            ; 0040b895 | CDemonMission g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_loadActor_FUN_00523990 ; 0040b896 | CDemonActor * core_mission.cpp_CDemonMission_loadActor_FUN_00523990(CDemonMission * this_ptr, FILE * file, CDemonActor * current_actor, char * property_description)
-        ;   XREF to: 00523990 (UNCONDITIONAL_CALL)
+    MOV ESI,dword ptr [0x0067d550]      ; 0040b88f | g_CDemonMissionPtr
+    PUSH ESI                            ; 0040b895 | g_CDemonMissionInstance
+    CALL core_mission.cpp_CDemonMission_loadActor_FUN_00523990 ; 0040b896
+        ;   XREF to: 00523990 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_loadActor_FUN_00523990(CDemonMission * this_ptr, FILE * file, CDemonActor * current_actor, char * property_description)
     ADD ESP,0x10                        ; 0040b89b
     MOV EDX,dword ptr [ESP + 0x10]      ; 0040b89e
     MOV dword ptr [EDX],EAX             ; 0040b8a2
@@ -64,26 +64,26 @@ section .text
     RET                                 ; 0040b8a7
     PUSH EDI                            ; 0040b8a8
         ;   Label: LAB_0040b8a8
-    PUSH 0x66e178                       ; 0040b8a9 | char[104] g_PropertyNamePrefix
-    PUSH 0x613f30                       ; 0040b8ae | = "%s" | s_s_00613f30 = %s
-    MOV ECX,dword ptr [0x00822034]      ; 0040b8b3 | FILE * g_ActorDataFile
+    PUSH 0x66e178                       ; 0040b8a9 | g_PropertyNamePrefix
+    PUSH 0x613f30                       ; 0040b8ae | = "%s"
+    MOV ECX,dword ptr [0x00822034]      ; 0040b8b3 | g_ActorDataFile
     PUSH ECX                            ; 0040b8b9
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040b8ba | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0040b8ba
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b8bf
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040b8c2
     PUSH EBX                            ; 0040b8c6
-    MOV ESI,dword ptr [0x0082203c]      ; 0040b8c7 | CDemonActor * g_CurrentActorBeingProcessed
+    MOV ESI,dword ptr [0x0082203c]      ; 0040b8c7 | g_CurrentActorBeingProcessed
     PUSH ESI                            ; 0040b8cd
-    MOV EDI,dword ptr [0x00822034]      ; 0040b8ce | FILE * g_ActorDataFile
+    MOV EDI,dword ptr [0x00822034]      ; 0040b8ce | g_ActorDataFile
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0040b8d4
     PUSH EDI                            ; 0040b8d8
     MOV EBP,dword ptr [EAX]             ; 0040b8d9
     PUSH EBP                            ; 0040b8db
-    MOV EAX,[0x0067d550]                ; 0040b8dc | CDemonMission g_CDemonMissionInstance | CDemonMission * g_CDemonMissionPtr
-    PUSH EAX                            ; 0040b8e1 | CDemonMission g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_saveActor_FUN_00523af0 ; 0040b8e2 | void core_mission.cpp_CDemonMission_saveActor_FUN_00523af0(CDemonMission * this_ptr, CDemonActor * actor_ptr, FILE * file, CDemonActor * current_actor, ...)
-        ;   XREF to: 00523af0 (UNCONDITIONAL_CALL)
+    MOV EAX,[0x0067d550]                ; 0040b8dc | g_CDemonMissionInstance | g_CDemonMissionPtr
+    PUSH EAX                            ; 0040b8e1 | g_CDemonMissionInstance
+    CALL core_mission.cpp_CDemonMission_saveActor_FUN_00523af0 ; 0040b8e2
+        ;   XREF to: 00523af0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_saveActor_FUN_00523af0(CDemonMission * this_ptr, CDemonActor * actor_ptr, FILE * file, CDemonActor * current_actor, ...)
     ADD ESP,0x14                        ; 0040b8e7
     POP EDI                             ; 0040b8ea
     POP EBP                             ; 0040b8eb

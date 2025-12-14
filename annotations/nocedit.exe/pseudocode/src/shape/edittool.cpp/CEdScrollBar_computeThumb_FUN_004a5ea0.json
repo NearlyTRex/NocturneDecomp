@@ -1,88 +1,88 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 48, 
-    "pseudocode_lines": 48, 
-    "cross_reference_count": 2, 
-    "global_count": 4, 
-    "total_lines": 172, 
-    "assembly_lines": 124, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623f5a", 
-      "addr": "00623f5a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CEdScrollBar_computeThum_00623f70", 
-      "addr": "00623f70", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a5ea0", 
-    "signature": "void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(CEdScrollBar * this_ptr)", 
-    "address_range": [
-      [
-        "004a5ea0", 
-        "004a5fa7"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEdScrollBar *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 124,
+    "complexity_score": 48,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 172
+  },
   "cross_references": [
     {
-      "from_addr": "004a608d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0", 
-      "addr": "004a5fc0"
-    }, 
+      "addr": "004a5fc0",
+      "from_addr": "004a608d",
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a5c1d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10", 
-      "addr": "004a5c10"
+      "addr": "004a5c10",
+      "from_addr": "004a5c1d",
+      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a5ea0",
+    "address_range": [
+      [
+        "004a5ea0",
+        "004a5fa7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0",
+    "signature": "void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(CEdScrollBar * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623f5a",
+      "name": "s_shape_edittool_cpp_00623f5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623f70",
+      "name": "s_CEdScrollBar_computeThum_00623f70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdScrollBar *"
+      }
+    ]
+  },
+  "suspects": []
 }

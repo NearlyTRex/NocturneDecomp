@@ -21,11 +21,11 @@ engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
   BADSPACEBASE *in_ESP;
   uint uVar7;
   char *pcVar8;
-  FILE *pFVar9;
-  byte bVar10;
+  byte bVar9;
+  FILE *pFVar10;
   int iVar4;
   
-  bVar10 = 0;
+  bVar9 = 0;
   bVar1 = *name_or_offset;
   uVar5 = 0;
   pbVar6 = (byte *)name_or_offset;
@@ -40,7 +40,7 @@ engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
       if (uVar5 == 0) break;
       uVar5 = uVar5 - 1;
       cVar2 = *pcVar8;
-      pcVar8 = pcVar8 + (uint)bVar10 * -2 + 1;
+      pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
     } while (cVar2 != '\0');
     if (~uVar5 - 1 < uVar7) break;
     uVar5 = uVar7;
@@ -52,12 +52,12 @@ engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (name_or_offset,(char *)0x0,"wb","..\\engine\\fileio.cpp",0xae4)
   ;
-  pFVar9 = file_ptr;
+  uVar5 = 0;
   if (file_ptr != (FILE *)0x0) {
     iVar3 = 0;
     if (0 < file_size) {
       do {
-        pFVar9 = file_ptr;
+        pFVar10 = file_ptr;
         if (((file_ptr->_flag & 0x400) == 0) && (1 < file_ptr->_bufsize - file_ptr->_cnt)) {
           if ((*(int *)(dest_filename + 4) < 1) || (**(byte **)dest_filename - 0xd < 0xfe)) {
             iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)dest_filename);
@@ -90,22 +90,22 @@ engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
             uVar5 = (uint)*pbVar6;
           }
 LAB_004b7e34:
-          crt_stdio_c_fputc_FUN_006007a0(uVar5,pFVar9);
+          crt_stdio_c_fputc_FUN_006007a0(uVar5,pFVar10);
         }
         iVar3 = iVar3 + 1;
       } while (iVar3 < file_size);
     }
-    pFVar9 = (FILE *)(uint)((dest_filename[0xc] & 0x20U) == 0);
+    uVar5 = (uint)((dest_filename[0xc] & 0x20U) == 0);
     if ((file_ptr->_flag & 0x20) != 0) {
-      pFVar9 = (FILE *)0x0;
+      uVar5 = 0;
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0xaf5);
     iVar3 = engine_dosio_c_copyFileTimestamp_FUN_00481910(name_or_offset,(char *)checksum);
     if (iVar3 == 0) {
-      pFVar9 = (FILE *)0x0;
+      uVar5 = 0;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)");
     }
   }
-  return (int)pFVar9;
+  return uVar5;
 }

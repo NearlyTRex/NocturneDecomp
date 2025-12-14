@@ -25,14 +25,14 @@ section .text
     MOV EDX,dword ptr [EBX + 0x1fba8]   ; 004f30f5
     XOR EAX,EAX                         ; 004f30fb
     TEST EDX,EDX                        ; 004f30fd
-    JNZ 0x004f3103                      ; 004f30ff | LAB_004f3103
-        ;   XREF to: 004f3103 (CONDITIONAL_JUMP)
+    JNZ 0x004f3103                      ; 004f30ff
+        ;   XREF to: 004f3103 (CONDITIONAL_JUMP)  ; LAB_004f3103
     POP EBX                             ; 004f3101
     RET                                 ; 004f3102
     PUSH EDX                            ; 004f3103
         ;   Label: LAB_004f3103
-    CALL core_lever.cpp_FUN_00504c90    ; 004f3104 | undefined core_lever.cpp_FUN_00504c90()
-        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)
+    CALL core_lever.cpp_FUN_00504c90    ; 004f3104
+        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504c90()
     MOV EAX,0x1                         ; 004f3109
     ADD ESP,0x4                         ; 004f310e
     MOV dword ptr [EBX + 0x1fba8],0x0   ; 004f3111

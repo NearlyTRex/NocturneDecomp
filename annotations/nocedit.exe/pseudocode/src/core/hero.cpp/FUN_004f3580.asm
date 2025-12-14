@@ -17,8 +17,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004f3581
     MOV EDX,dword ptr [EBX + 0x1fbb0]   ; 004f3585
     TEST EDX,EDX                        ; 004f358b
-    JNZ 0x004f3591                      ; 004f358d | LAB_004f3591
-        ;   XREF to: 004f3591 (CONDITIONAL_JUMP)
+    JNZ 0x004f3591                      ; 004f358d
+        ;   XREF to: 004f3591 (CONDITIONAL_JUMP)  ; LAB_004f3591
     POP EBX                             ; 004f358f
     RET                                 ; 004f3590
     PUSH EBX                            ; 004f3591

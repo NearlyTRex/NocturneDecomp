@@ -22,9 +22,9 @@ section .text
 
     SUB ESP,0x4                         ; 0048c870
         ;   Label: engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870
-    FILD dword ptr [0x006793c0]         ; 0048c873 | int g_ProjectionScale
-    FDIVR double ptr [0x00622075]       ; 0048c879 | double g_ProjectionDivisor
-    FMUL double ptr [0x0062207d]        ; 0048c87f | double g_ProjectionMultiplier
+    FILD dword ptr [0x006793c0]         ; 0048c873 | g_ProjectionScale
+    FDIVR double ptr [0x00622075]       ; 0048c879 | g_ProjectionDivisor
+    FMUL double ptr [0x0062207d]        ; 0048c87f | g_ProjectionMultiplier
     FSTP float ptr [ESP]                ; 0048c885
     MOV EAX,dword ptr [ESP]             ; 0048c888
     ADD ESP,0x4                         ; 0048c88b

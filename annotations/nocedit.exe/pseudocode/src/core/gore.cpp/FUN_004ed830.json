@@ -1,218 +1,218 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 169, 
-    "pseudocode_lines": 84, 
-    "cross_reference_count": 4, 
-    "global_count": 12, 
-    "total_lines": 275, 
-    "assembly_lines": 191, 
-    "suspect_count": 7, 
+    "assembly_lines": 191,
+    "complexity_score": 169,
+    "cross_reference_count": 4,
+    "function_call_count": 5,
+    "global_count": 12,
+    "pseudocode_lines": 84,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
-      "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_gore.cpp_FUN_004ec470", 
-      "addr": "004ec470"
-    }, 
-    {
-      "name": "core_gore.cpp_FUN_004ec500", 
-      "addr": "004ec500"
-    }, 
-    {
-      "name": "core_gore.cpp_FUN_004ecc40", 
-      "addr": "004ecc40"
-    }, 
-    {
-      "name": "core_gore.cpp_FUN_004ecce0", 
-      "addr": "004ecce0"
-    }, 
-    {
-      "name": "core_gore.cpp_FUN_004ed3c0", 
-      "addr": "004ed3c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.blood_flag", 
-      "addr": "02d81ab0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873d8", 
-      "addr": "02d873d8", 
-      "value": null
-    }, 
-    {
-      "type": "CBloodSplat[2000]", 
-      "name": "DAT_02d873dc", 
-      "addr": "02d873dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d87420", 
-      "addr": "02d87420", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8720", 
-      "addr": "02da8720", 
-      "value": null
-    }, 
-    {
-      "type": "CBloodPool[32]", 
-      "name": "DAT_02da8724", 
-      "addr": "02da8724", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da874c", 
-      "addr": "02da874c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8c28", 
-      "addr": "02da8c28", 
-      "value": null
-    }, 
-    {
-      "type": "CFootstep[1000]", 
-      "name": "DAT_02da8c2c", 
-      "addr": "02da8c2c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8c6c", 
-      "addr": "02da8c6c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint extraout_EDX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000008 == 0) {"
-    }, 
-    {
-      "line": 22, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uVar1 = extraout_EDX;"
-    }, 
-    {
-      "line": 24, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar4 = CONCAT44 /* combine 2-byte values */(uVar1,DAT_02d873d8);"
-    }, 
-    {
-      "line": 40, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000008 == 0) {"
-    }, 
-    {
-      "line": 62, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000008 == 0) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ed830", 
-    "signature": "void core_gore.cpp_FUN_004ed830(CGore * this_ptr)", 
-    "address_range": [
-      [
-        "004ed830", 
-        "004ed9de"
-      ]
-    ], 
-    "name": "core_gore.cpp_FUN_004ed830"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGore *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "stack_param",
+      "extra_output",
+      "concat_artifact"
+    ],
+    "total_lines": 275
+  },
   "cross_references": [
     {
-      "from_addr": "0056c5c9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
-    }, 
+      "addr": "0056c1a0",
+      "from_addr": "0056c5c9",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056b724", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
-      "addr": "0056ae50"
-    }, 
+      "addr": "0056ae50",
+      "from_addr": "0056b724",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00571390", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_FUN_00571380", 
-      "addr": "00571380"
-    }, 
+      "addr": "00571380",
+      "from_addr": "00571390",
+      "name": "core_set.cpp_FUN_00571380",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005713eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_FUN_005713c0", 
-      "addr": "005713c0"
+      "addr": "005713c0",
+      "from_addr": "005713eb",
+      "name": "core_set.cpp_FUN_005713c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ed830",
+    "address_range": [
+      [
+        "004ed830",
+        "004ed9de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_FUN_004ed830",
+    "signature": "void core_gore.cpp_FUN_004ed830(CGore * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ec470",
+      "name": "core_gore.cpp_FUN_004ec470"
+    },
+    {
+      "addr": "004ec500",
+      "name": "core_gore.cpp_FUN_004ec500"
+    },
+    {
+      "addr": "004ecc40",
+      "name": "core_gore.cpp_FUN_004ecc40"
+    },
+    {
+      "addr": "004ecce0",
+      "name": "core_gore.cpp_FUN_004ecce0"
+    },
+    {
+      "addr": "004ed3c0",
+      "name": "core_gore.cpp_FUN_004ed3c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ab0",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873d8",
+      "name": "DAT_02d873d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873dc",
+      "name": "DAT_02d873dc",
+      "type": "CBloodSplat[2000]",
+      "value": null
+    },
+    {
+      "addr": "02d87420",
+      "name": "DAT_02d87420",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8720",
+      "name": "DAT_02da8720",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8724",
+      "name": "DAT_02da8724",
+      "type": "CBloodPool[32]",
+      "value": null
+    },
+    {
+      "addr": "02da874c",
+      "name": "DAT_02da874c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8c28",
+      "name": "DAT_02da8c28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8c2c",
+      "name": "DAT_02da8c2c",
+      "type": "CFootstep[1000]",
+      "value": null
+    },
+    {
+      "addr": "02da8c6c",
+      "name": "DAT_02da8c6c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EDX",
+      "text": "uint extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_EDX",
+      "text": "uVar1 = extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 24,
+      "match": "CONCAT44",
+      "text": "uVar4 = CONCAT44 /* combine 2-byte values */(uVar1,DAT_02d873d8);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 == 0) {",
+      "type": "stack_param"
     }
   ]
 }

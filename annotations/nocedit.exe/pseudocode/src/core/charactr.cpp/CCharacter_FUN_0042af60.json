@@ -1,259 +1,259 @@
 {
   "complexity": {
-    "function_call_count": 14, 
-    "complexity_score": 163, 
-    "pseudocode_lines": 48, 
-    "cross_reference_count": 1, 
-    "global_count": 12, 
-    "total_lines": 178, 
-    "assembly_lines": 130, 
-    "suspect_count": 9, 
+    "assembly_lines": 130,
+    "complexity_score": 163,
+    "cross_reference_count": 1,
+    "function_call_count": 14,
+    "global_count": 12,
+    "pseudocode_lines": 48,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40", 
-      "addr": "0059ce40"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40", 
-      "addr": "0059fb40"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800", 
-      "addr": "005a1800"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510", 
-      "addr": "005a1510"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
-      "addr": "005a07a0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340", 
-      "addr": "005a0340"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0", 
-      "addr": "005a00f0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0", 
-      "addr": "005a15e0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250", 
-      "addr": "005a0250"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
-      "addr": "005feb5c"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
-      "addr": "0048ca50"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
-      "addr": "0048ca60"
-    }, 
-    {
-      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
-      "addr": "005dd800"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_0061713a", 
-      "addr": "0061713a", 
-      "value": "8388608"
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "DAT_0066e6b0", 
-      "addr": "0066e6b0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "int", 
-      "name": "INT_00823a90", 
-      "addr": "00823a90", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "INT_00823a94", 
-      "addr": "00823a94", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6d598", 
-      "addr": "02c6d598", 
-      "value": null
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }, 
-    {
-      "type": "CHero*[4]", 
-      "name": "g_HeroActors", 
-      "addr": "02db87c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LocalHeroIndex", 
-      "addr": "02db87d0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_ffffe568", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CBoundingBox3D *in_stack_ffffe568;"
-    }, 
-    {
-      "line": 28, 
-      "match": "&stack0xffffe560", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(this_ptr_00,(SBoneTransformData *)&stack0xffffe560);"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_ffffe568", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe568);"
-    }, 
-    {
-      "line": 39, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar2) = 0xb332;"
-    }, 
-    {
-      "line": 40, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar2) = 0xb332;"
-    }, 
-    {
-      "line": 42, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0xffff;"
-    }, 
-    {
-      "line": 48, 
-      "match": "&stack0xffffe580", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&this_ptr->model,(SBoneTransformData *)&stack0xffffe580);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0042af60", 
-    "signature": "void core_charactr.cpp_CCharacter_FUN_0042af60(CCharacter * this_ptr)", 
-    "address_range": [
-      [
-        "0042af60", 
-        "0042b0df"
-      ]
-    ], 
-    "name": "core_charactr.cpp_CCharacter_FUN_0042af60"
-  }, 
-  "stack_frame": {
-    "local_size": 6832, 
-    "variables": [
-      {
-        "offset": -6828, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1aac"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCharacter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 6836, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 178
+  },
   "cross_references": [
     {
-      "from_addr": "00429ae3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_00429aa0", 
-      "addr": "00429aa0"
+      "addr": "00429aa0",
+      "from_addr": "00429ae3",
+      "name": "core_charactr.cpp_CCharacter_FUN_00429aa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042af60",
+    "address_range": [
+      [
+        "0042af60",
+        "0042b0df"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_FUN_0042af60",
+    "signature": "void core_charactr.cpp_CCharacter_FUN_0042af60(CCharacter * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059ce40",
+      "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40"
+    },
+    {
+      "addr": "0059fb40",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40"
+    },
+    {
+      "addr": "005a1800",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800"
+    },
+    {
+      "addr": "005a1510",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510"
+    },
+    {
+      "addr": "005a07a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005a0340",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340"
+    },
+    {
+      "addr": "005a00f0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0"
+    },
+    {
+      "addr": "005a15e0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0"
+    },
+    {
+      "addr": "005a0250",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005feb5c",
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    },
+    {
+      "addr": "0048ca50",
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "0048ca60",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    },
+    {
+      "addr": "005dd800",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061713a",
+      "name": "FLOAT_0061713a",
+      "type": "float",
+      "value": "8388608"
+    },
+    {
+      "addr": "0066e6b0",
+      "name": "DAT_0066e6b0",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "00823a90",
+      "name": "INT_00823a90",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00823a94",
+      "name": "INT_00823a94",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02c6d598",
+      "name": "DAT_02c6d598",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 6836,
+    "local_size": 6832,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1aac",
+        "offset": -6828,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffe568",
+      "text": "CBoundingBox3D *in_stack_ffffe568;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0xffffe560",
+      "text": "(this_ptr_00,(SBoneTransformData *)&stack0xffffe560);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_ffffe568",
+      "text": "iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe568);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar2) = 0xb332;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar2) = 0xb332;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0xffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 48,
+      "match": "&stack0xffffe580",
+      "text": "(&this_ptr->model,(SBoneTransformData *)&stack0xffffe580);",
+      "type": "stack_ref"
     }
   ]
 }

@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 16, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_sync.c_leave_reentrant_critical_section_FUN_0060a0c4", 
-      "addr": "0060a0c4"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "g_TlsDataBase", 
-      "addr": "03f9b8c0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a128", 
-    "signature": "void crt_tls.c_leave_critical_section_by_index_FUN_0060a128(int sectionIndex)", 
-    "address_range": [
-      [
-        "0060a128", 
-        "0060a140"
-      ]
-    ], 
-    "name": "crt_tls.c_leave_critical_section_by_index_FUN_0060a128"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "sectionIndex"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "0060a3bd", 
-      "type": "DATA", 
-      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4", 
-      "addr": "0060a3b4"
+      "addr": "0060a3b4",
+      "from_addr": "0060a3bd",
+      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060a128",
+    "address_range": [
+      [
+        "0060a128",
+        "0060a140"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_tls.c_leave_critical_section_by_index_FUN_0060a128",
+    "signature": "void crt_tls.c_leave_critical_section_by_index_FUN_0060a128(int sectionIndex)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060a0c4",
+      "name": "crt_sync.c_leave_reentrant_critical_section_FUN_0060a0c4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f9b8c0",
+      "name": "g_TlsDataBase",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sectionIndex",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

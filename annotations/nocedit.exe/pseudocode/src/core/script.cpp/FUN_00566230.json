@@ -1,148 +1,148 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 123, 
-    "pseudocode_lines": 48, 
-    "cross_reference_count": 4, 
-    "global_count": 4, 
-    "total_lines": 102, 
-    "assembly_lines": 54, 
-    "suspect_count": 7, 
+    "assembly_lines": 54,
+    "complexity_score": 123,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 48,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
-      "addr": "004a2f70"
-    }, 
-    {
-      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0", 
-      "addr": "004a6ed0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined1", 
-      "name": "DAT_00643f94", 
-      "addr": "00643f94", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_031101c0", 
-      "addr": "031101c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_031101c1", 
-      "addr": "031101c1", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_031141bf", 
-      "addr": "031141bf", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (-1 < in_stack_00000008) {"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CBitFont *)(in_stack_00000004 + 0x38));"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000008 < iVar2) {"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CStrList *)(in_stack_00000004 + 0x38),in_stack_00000008);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CStrList *)(in_stack_00000004 + 0x38),in_stack_00000008);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00566230", 
-    "signature": "undefined core_script.cpp_FUN_00566230()", 
-    "address_range": [
-      [
-        "00566230", 
-        "0056629d"
-      ]
-    ], 
-    "name": "core_script.cpp_FUN_00566230"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 102
+  },
   "cross_references": [
     {
-      "from_addr": "00565990", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_Unk20_FUN_00565130", 
-      "addr": "00565130"
-    }, 
+      "addr": "00565130",
+      "from_addr": "00565990",
+      "name": "core_script.cpp_CScript_Unk20_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00564f07", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_editorAction_FUN_00564820", 
-      "addr": "00564820"
-    }, 
+      "addr": "00564820",
+      "from_addr": "00564f07",
+      "name": "core_script.cpp_CScript_editorAction_FUN_00564820",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00566342", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_insertAndEditorPutLine_FUN_00566330", 
-      "addr": "00566330"
-    }, 
+      "addr": "00566330",
+      "from_addr": "00566342",
+      "name": "core_script.cpp_CScript_insertAndEditorPutLine_FUN_00566330",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005663d4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00566390", 
-      "addr": "00566390"
+      "addr": "00566390",
+      "from_addr": "005663d4",
+      "name": "core_script.cpp_FUN_00566390",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566230",
+    "address_range": [
+      [
+        "00566230",
+        "0056629d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_FUN_00566230",
+    "signature": "undefined core_script.cpp_FUN_00566230()"
+  },
+  "function_calls": [
+    {
+      "addr": "004a2f70",
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "004a6ed0",
+      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00643f94",
+      "name": "DAT_00643f94",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "031101c0",
+      "name": "DAT_031101c0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "031101c1",
+      "name": "DAT_031101c1",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "031141bf",
+      "name": "DAT_031141bf",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "if (-1 < in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "((CBitFont *)(in_stack_00000004 + 0x38));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 < iVar2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "((CStrList *)(in_stack_00000004 + 0x38),in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000008",
+      "text": "((CStrList *)(in_stack_00000004 + 0x38),in_stack_00000008);",
+      "type": "stack_param"
     }
   ]
 }

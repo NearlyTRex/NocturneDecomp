@@ -12,7 +12,7 @@ crt_memory_c_copyArrayWithFunction_FUN_006020c2
 
 {
   for (; count != 0; count = count + -1) {
-    (*(code *)copy_func)();
+    (*copy_func)();
   }
   return dest;
 }

@@ -13,8 +13,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005e34b0
         ;   Label: core_turret.cpp_CTurret_FUN_005e34b0
     CMP dword ptr [EAX + 0x85c],0x0     ; 005e34b4
-    JZ 0x005e34c0                       ; 005e34bb | LAB_005e34c0
-        ;   XREF to: 005e34c0 (CONDITIONAL_JUMP)
+    JZ 0x005e34c0                       ; 005e34bb
+        ;   XREF to: 005e34c0 (CONDITIONAL_JUMP)  ; LAB_005e34c0
     XOR EAX,EAX                         ; 005e34bd
     RET                                 ; 005e34bf
     MOV EDX,dword ptr [ESP + 0x8]       ; 005e34c0

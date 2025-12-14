@@ -1,98 +1,98 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 65, 
-    "assembly_lines": 40, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_npc.cpp_FUN_005447e0", 
-      "addr": "005447e0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_priest_dfm_0062f55d", 
-      "addr": "0062f55d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_killPriest_0062f568", 
-      "addr": "0062f568", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_illPriest_0062f569", 
-      "addr": "0062f569", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_llPriest_0062f56a", 
-      "addr": "0062f56a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_lPriest_0062f56b", 
-      "addr": "0062f56b", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_npc.cpp_FUN_0065fe94", 
-      "addr": "0065fe94", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004f7b70", 
-    "signature": "CHighPriestOfGardath * core_hpriest.cpp_FUN_004f7b70(CHighPriestOfGardath * this_ptr)", 
-    "address_range": [
-      [
-        "004f7b70", 
-        "004f7bca"
-      ]
-    ], 
-    "name": "core_hpriest.cpp_FUN_004f7b70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CHighPriestOfGardath *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 40,
+    "complexity_score": 25,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
+  },
   "cross_references": [
     {
-      "from_addr": "004f7b4a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hpriest.cpp_FUN_004f7b30", 
-      "addr": "004f7b30"
+      "addr": "004f7b30",
+      "from_addr": "004f7b4a",
+      "name": "core_hpriest.cpp_FUN_004f7b30",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004f7b70",
+    "address_range": [
+      [
+        "004f7b70",
+        "004f7bca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hpriest.cpp_FUN_004f7b70",
+    "signature": "CHighPriestOfGardath * core_hpriest.cpp_FUN_004f7b70(CHighPriestOfGardath * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005447e0",
+      "name": "core_npc.cpp_FUN_005447e0"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062f55d",
+      "name": "s_priest_dfm_0062f55d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062f568",
+      "name": "s_killPriest_0062f568",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062f569",
+      "name": "s_illPriest_0062f569",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062f56a",
+      "name": "s_llPriest_0062f56a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062f56b",
+      "name": "s_lPriest_0062f56b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065fe94",
+      "name": "PTR_core_npc.cpp_FUN_0065fe94",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHighPriestOfGardath *"
+      }
+    ]
+  },
+  "suspects": []
 }

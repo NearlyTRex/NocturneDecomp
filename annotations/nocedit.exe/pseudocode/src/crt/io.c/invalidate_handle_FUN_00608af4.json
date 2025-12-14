@@ -1,88 +1,88 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 4, 
-    "total_lines": 25, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f18", 
-      "addr": "00684f18", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f1c", 
-      "addr": "00684f1c", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "SIOControlBlock*", 
-      "name": "g_IOControlBlock", 
-      "addr": "0068526c", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CurrentHandleCount", 
-      "addr": "00685270", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00608af4", 
-    "signature": "void crt_io.c_invalidate_handle_FUN_00608af4(int handle_index)", 
-    "address_range": [
-      [
-        "00608af4", 
-        "00608b1f"
-      ]
-    ], 
-    "name": "crt_io.c_invalidate_handle_FUN_00608af4"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "handle_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 16,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
   "cross_references": [
     {
-      "from_addr": "0060244d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_invalidate_handle_wrapper_FUN_00602448", 
-      "addr": "00602448"
-    }, 
+      "addr": "00602448",
+      "from_addr": "0060244d",
+      "name": "crt_io.c_invalidate_handle_wrapper_FUN_00602448",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a171", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_invalidate_handle_wrapper_FUN_0060a154", 
-      "addr": "0060a154"
+      "addr": "0060a154",
+      "from_addr": "0060a171",
+      "name": "crt_io.c_invalidate_handle_wrapper_FUN_0060a154",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00608af4",
+    "address_range": [
+      [
+        "00608af4",
+        "00608b1f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_invalidate_handle_FUN_00608af4",
+    "signature": "void crt_io.c_invalidate_handle_FUN_00608af4(int handle_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684f18",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f18",
+      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684f1c",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f1c",
+      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "0068526c",
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
+    },
+    {
+      "addr": "00685270",
+      "name": "g_CurrentHandleCount",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "handle_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

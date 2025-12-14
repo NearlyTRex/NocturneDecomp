@@ -53,8 +53,8 @@ section .text
     PUSH ECX                            ; 00488a76
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00488a77
     PUSH ESI                            ; 00488a7b
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 ; 00488a7c | void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-        ;   XREF to: 004887a0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 ; 00488a7c
+        ;   XREF to: 004887a0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 00488a81
     POP ESI                             ; 00488a84
     POP EBX                             ; 00488a85

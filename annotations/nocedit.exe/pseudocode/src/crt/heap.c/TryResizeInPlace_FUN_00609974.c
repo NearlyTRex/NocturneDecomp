@@ -13,13 +13,13 @@ void * __cdecl crt_heap_c_TryResizeInPlace_FUN_00609974(void *ptr,ulong new_size
   ulong *in_ECX;
   ushort in_DS;
   
-  (*(code *)PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
+  (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
   iVar1 = crt_heap_c_ResizeBlockInPlace_FUN_006097b8
                     (in_DS,(void *)CONCAT22 /* combine 2-byte values */((short)(new_size >> 0x10),in_DS),(ulong)ptr,in_ECX);
   if (iVar1 == 0) {
-    (*(code *)PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
+    (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
     return ptr;
   }
-  (*(code *)PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
+  (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
   return (void *)0x0;
 }

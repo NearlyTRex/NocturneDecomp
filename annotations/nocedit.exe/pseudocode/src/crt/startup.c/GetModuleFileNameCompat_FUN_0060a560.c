@@ -20,6 +20,7 @@ crt_startup_c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule,LPWSTR lpFile
     return DVar1;
   }
   lpFilename_00 = (ulong)crt_memory_c_malloc_FUN_00601bb0(0x208);
+  DVar1 = 0;
   if (lpFilename_00 != 0) {
     DVar1 = (*GetModuleFileNameA)(hModule,(LPSTR)lpFilename_00,0x208);
     if (DVar1 == 0) {
@@ -32,7 +33,7 @@ crt_startup_c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule,LPWSTR lpFile
       return 0;
     }
     lpFilename[nSize - 1] = L'\0';
-    lpFilename_00 = crt_string_c_wcslen_FUN_0060cd30(lpFilename);
+    DVar1 = crt_string_c_wcslen_FUN_0060cd30(lpFilename);
   }
-  return lpFilename_00;
+  return DVar1;
 }

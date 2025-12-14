@@ -14,7 +14,8 @@ sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
   int iVar1;
   int iVar2;
   uint error_code;
-  char *pcVar3;
+  int iVar3;
+  char *pcVar4;
   BADSPACEBASE *in_ESP;
   uint uStack0000000c;
   uint in_stack_00000010;
@@ -29,6 +30,7 @@ sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - invalid handle: %d",iVar1);
   }
   iVar2 = (**(code **)((slot->options).channel_index + 0x40))((CSoundDevice *)slot,slot,-1);
+  iVar3 = 0;
   if (iVar2 != 0) {
     uStack0000000c = 0;
     if (slot->sample == (CSfxSample *)0x0) {
@@ -50,14 +52,14 @@ sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
     error_code = (*g_DirectSoundHardwareSfxBuffers[iVar1]->vtable->Play)
                            (g_DirectSoundHardwareSfxBuffers[iVar1],0,0,in_stack_00000010);
     if (error_code != 0) {
-      pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
+      pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (&stack0xfffffe98,"DirectSux: Unable to %s.  (%s)",
-                 "Play hardware sfx secondary buffer",pcVar3);
+                 "Play hardware sfx secondary buffer",pcVar4);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_164);
       return 0;
     }
-    iVar2 = 1;
+    iVar3 = 1;
   }
-  return iVar2;
+  return iVar3;
 }

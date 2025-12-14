@@ -31,13 +31,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0052a512
     MOV EDX,dword ptr [EBX + 0x58]      ; 0052a516
     TEST EDX,EDX                        ; 0052a519
-    JNZ 0x0052a542                      ; 0052a51b | LAB_0052a542
-        ;   XREF to: 0052a542 (CONDITIONAL_JUMP)
+    JNZ 0x0052a542                      ; 0052a51b
+        ;   XREF to: 0052a542 (CONDITIONAL_JUMP)  ; LAB_0052a542
     MOV ESI,dword ptr [EBX + 0x60]      ; 0052a51d
         ;   Label: LAB_0052a51d
     TEST ESI,ESI                        ; 0052a520
-    JNZ 0x0052a55b                      ; 0052a522 | LAB_0052a55b
-        ;   XREF to: 0052a55b (CONDITIONAL_JUMP)
+    JNZ 0x0052a55b                      ; 0052a522
+        ;   XREF to: 0052a55b (CONDITIONAL_JUMP)  ; LAB_0052a55b
     MOV dword ptr [EBX + 0x5c],0x0      ; 0052a524
         ;   Label: LAB_0052a524
     MOV dword ptr [EBX + 0x64],0x0      ; 0052a52b
@@ -48,22 +48,22 @@ section .text
     RET                                 ; 0052a541
     PUSH 0x5c                           ; 0052a542
         ;   Label: LAB_0052a542
-    PUSH 0x63a0df                       ; 0052a544 | = "..\\core\\morph.cpp" | s_core_morph_cpp_0063a0df = ..\core\morph.cpp
+    PUSH 0x63a0df                       ; 0052a544 | = "..\\core\\morph.cpp"
     PUSH EDX                            ; 0052a549
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0052a54a | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0052a54a
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 0052a54f
     MOV dword ptr [EBX + 0x58],0x0      ; 0052a552
-    JMP 0x0052a51d                      ; 0052a559 | LAB_0052a51d
-        ;   XREF to: 0052a51d (UNCONDITIONAL_JUMP)
+    JMP 0x0052a51d                      ; 0052a559
+        ;   XREF to: 0052a51d (UNCONDITIONAL_JUMP)  ; LAB_0052a51d
     PUSH 0x60                           ; 0052a55b
         ;   Label: LAB_0052a55b
-    PUSH 0x63a0f1                       ; 0052a55d | = "..\\core\\morph.cpp" | s_core_morph_cpp_0063a0f1 = ..\core\morph.cpp
+    PUSH 0x63a0f1                       ; 0052a55d | = "..\\core\\morph.cpp"
     PUSH ESI                            ; 0052a562
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0052a563 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0052a563
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 0052a568
     MOV dword ptr [EBX + 0x60],0x0      ; 0052a56b
-    JMP 0x0052a524                      ; 0052a572 | LAB_0052a524
-        ;   XREF to: 0052a524 (UNCONDITIONAL_JUMP)
+    JMP 0x0052a524                      ; 0052a572
+        ;   XREF to: 0052a524 (UNCONDITIONAL_JUMP)  ; LAB_0052a524
 

@@ -26,21 +26,21 @@ section .text
         ;   Label: core_manpuz.cpp_FUN_0050b110
     MOV EBX,dword ptr [ESP + 0x8]       ; 0050b111
     PUSH EBX                            ; 0050b115
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 0050b116 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 0050b116
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0050b11b
     ADD EAX,0x158                       ; 0050b11e
     PUSH EAX                            ; 0050b123
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 0050b124 | CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 0050b124
+        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0050b129
     LEA EBX,[EAX + 0xfffffea8]          ; 0050b12c
-    PUSH 0x635918                       ; 0050b132 | = "mirrhack.kfm" | s_mirrhack_kfm_00635918 = mirrhack.kfm
+    PUSH 0x635918                       ; 0050b132 | = "mirrhack.kfm"
     LEA EAX,[EBX + 0x158]               ; 0050b137
     PUSH EAX                            ; 0050b13d
-    MOV dword ptr [EBX + 0x154],0x660e94 ; 0050b13e | CDemonActor_vtable PTR_core_manpuz.cpp_FUN_00660e94
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0050b148 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EBX + 0x154],0x660e94 ; 0050b13e | PTR_core_manpuz.cpp_FUN_00660e94
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0050b148
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0050b14d
     MOV EAX,EBX                         ; 0050b150
     MOV dword ptr [EBX + 0x2d4],0x0     ; 0050b152

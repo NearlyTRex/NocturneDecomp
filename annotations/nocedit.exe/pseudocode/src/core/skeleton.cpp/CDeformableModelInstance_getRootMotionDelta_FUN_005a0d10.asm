@@ -55,9 +55,9 @@ section .text
     FCOMP float ptr [ESP + 0x58]        ; 005a0d21
     FNSTSW AX                           ; 005a0d25
     SAHF                                ; 005a0d27
-    JC 0x005a0d4d                       ; 005a0d28 | LAB_005a0d4d
-        ;   XREF to: 005a0d4d (CONDITIONAL_JUMP)
-    MOV EAX,[0x03f87558]                ; 005a0d2a | CVector3f g_ZeroVector
+    JC 0x005a0d4d                       ; 005a0d28
+        ;   XREF to: 005a0d4d (CONDITIONAL_JUMP)  ; LAB_005a0d4d
+    MOV EAX,[0x03f87558]                ; 005a0d2a | g_ZeroVector
     MOV dword ptr [ESI],EAX             ; 005a0d2f
     LEA EAX,[ESI + 0x4]                 ; 005a0d31
     MOV EDX,dword ptr [0x03f8755c]      ; 005a0d34 | g_ZeroVector.y
@@ -72,33 +72,33 @@ section .text
     PUSH EBX                            ; 005a0d4d
         ;   Label: LAB_005a0d4d
     PUSH EDI                            ; 005a0d4e
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a0d4f | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a0d4f
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a0d54
     FLD float ptr [ESP + 0x58]          ; 005a0d57
     SUB ESP,0x8                         ; 005a0d5b
     FSTP double ptr [ESP]               ; 005a0d5e
     MOV EBX,EAX                         ; 005a0d61
-    CALL crt_math.c_floor_FUN_005feb90  ; 005a0d63 | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 005a0d63
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x30],EAX      ; 005a0d68
     MOV dword ptr [ESP + 0x34],EDX      ; 005a0d6c
     FLD double ptr [ESP + 0x30]         ; 005a0d70
     ADD ESP,0x8                         ; 005a0d74
-    CALL crt_math.c_round_FUN_005fe6b0  ; 005a0d77 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 005a0d77
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FLD float ptr [ESP + 0x5c]          ; 005a0d7c
     FXCH                                ; 005a0d80
     FISTP dword ptr [ESP + 0x3c]        ; 005a0d82
     SUB ESP,0x8                         ; 005a0d86
     FSTP double ptr [ESP]               ; 005a0d89
-    CALL crt_math.c_ceil_FUN_006001b2   ; 005a0d8c | double crt_math.c_ceil_FUN_006001b2(double value)
-        ;   XREF to: 006001b2 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_ceil_FUN_006001b2   ; 005a0d8c
+        ;   XREF to: 006001b2 (UNCONDITIONAL_CALL)  ; double crt_math.c_ceil_FUN_006001b2(double value)
     MOV dword ptr [ESP + 0x30],EAX      ; 005a0d91
     MOV dword ptr [ESP + 0x34],EDX      ; 005a0d95
     FLD double ptr [ESP + 0x30]         ; 005a0d99
-    CALL crt_math.c_round_FUN_005fe6b0  ; 005a0d9d | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 005a0d9d
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     ADD ESP,0x8                         ; 005a0da2
     XOR EDX,EDX                         ; 005a0da5
     FISTP dword ptr [ESP + 0x38]        ; 005a0da7
@@ -107,8 +107,8 @@ section .text
     MOV dword ptr [ESP + 0x20],EDX      ; 005a0db3
     MOV dword ptr [ESP + 0x24],EDX      ; 005a0db7
     CMP EAX,dword ptr [ESP + 0x38]      ; 005a0dbb
-    JGE 0x005a0e10                      ; 005a0dbf | LAB_005a0e10
-        ;   XREF to: 005a0e10 (CONDITIONAL_JUMP)
+    JGE 0x005a0e10                      ; 005a0dbf
+        ;   XREF to: 005a0e10 (CONDITIONAL_JUMP)  ; LAB_005a0e10
     MOV EDX,EAX                         ; 005a0dc1
     SHL EAX,0x2                         ; 005a0dc3
     SUB EAX,EDX                         ; 005a0dc6
@@ -132,8 +132,8 @@ section .text
     ADD EAX,0xc                         ; 005a0e04
     FSTP float ptr [ESP + 0x24]         ; 005a0e07
     CMP EAX,ECX                         ; 005a0e0b
-    JL 0x005a0ddb                       ; 005a0e0d | LAB_005a0ddb
-        ;   XREF to: 005a0ddb (CONDITIONAL_JUMP)
+    JL 0x005a0ddb                       ; 005a0e0d
+        ;   XREF to: 005a0ddb (CONDITIONAL_JUMP)  ; LAB_005a0ddb
     NOP                                 ; 005a0e0f
     MOV EAX,dword ptr [ESP + 0x3c]      ; 005a0e10
         ;   Label: LAB_005a0e10

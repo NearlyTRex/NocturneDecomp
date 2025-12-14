@@ -23,14 +23,14 @@ section .text
     PUSH EDX                            ; 004112b6
     MOV ECX,dword ptr [ESP + 0x8]       ; 004112b7
     PUSH ECX                            ; 004112bb
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004112bc | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004112bc
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EDX,dword ptr [EAX + 0x318]     ; 004112c1
     ADD ESP,0x8                         ; 004112c7
     CMP EDX,0x8                         ; 004112ca
-    JA 0x004112e0                       ; 004112cd | caseD_6
-        ;   XREF to: 004112e0 (CONDITIONAL_JUMP)
-    JMP dword ptr [EDX*0x4 + 0x411288]  ; 004112cf | pointer switchdataD_00411288
+    JA 0x004112e0                       ; 004112cd
+        ;   XREF to: 004112e0 (CONDITIONAL_JUMP)  ; caseD_6
+    JMP dword ptr [EDX*0x4 + 0x411288]  ; 004112cf | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
     MOV dword ptr [EAX + 0x318],0x1     ; 004112d6
         ;   Label: caseD_0

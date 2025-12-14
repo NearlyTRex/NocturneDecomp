@@ -1,61 +1,61 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 32, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 11, 
-    "assembly_lines": 4, 
-    "suspect_count": 2, 
+    "assembly_lines": 4,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0xc068) = 0x40400000;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005e4d70", 
-    "signature": "undefined core_tvbat.cpp_FUN_005e4d70()", 
-    "address_range": [
-      [
-        "005e4d70", 
-        "005e4d7e"
-      ]
-    ], 
-    "name": "core_tvbat.cpp_FUN_005e4d70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 11
+  },
   "cross_references": [
     {
-      "from_addr": "005e7373", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_VoicuSummonWavFile_FUN_005e7320", 
-      "addr": "005e7320"
+      "addr": "005e7320",
+      "from_addr": "005e7373",
+      "name": "core_vampboss.cpp_VoicuSummonWavFile_FUN_005e7320",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e4d70",
+    "address_range": [
+      [
+        "005e4d70",
+        "005e4d7e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_tvbat.cpp_FUN_005e4d70",
+    "signature": "undefined core_tvbat.cpp_FUN_005e4d70()"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0xc068) = 0x40400000;",
+      "type": "stack_param"
     }
   ]
 }

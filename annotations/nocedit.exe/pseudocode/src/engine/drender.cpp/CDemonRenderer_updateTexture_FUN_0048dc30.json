@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930", 
-      "addr": "005dd930"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048dc30", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)", 
-    "address_range": [
-      [
-        "0048dc30", 
-        "0048dc42"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLTextureBasic *", 
-        "size": 4, 
-        "name": "texture"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SRGBColorPalette *", 
-        "size": 4, 
-        "name": "palette"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "0044face", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0", 
-      "addr": "0044f3e0"
-    }, 
+      "addr": "0044f3e0",
+      "from_addr": "0044face",
+      "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044f3d2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310", 
-      "addr": "0044f310"
+      "addr": "0044f310",
+      "from_addr": "0044f3d2",
+      "name": "core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0048dc30",
+    "address_range": [
+      [
+        "0048dc30",
+        "0048dc42"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30",
+    "signature": "void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)"
+  },
+  "function_calls": [
+    {
+      "addr": "005dd930",
+      "name": "engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      },
+      {
+        "is_param": true,
+        "name": "palette",
+        "offset": 12,
+        "size": 4,
+        "type": "SRGBColorPalette *"
+      }
+    ]
+  },
+  "suspects": []
 }

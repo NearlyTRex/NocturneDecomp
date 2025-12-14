@@ -21,8 +21,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00601232
         ;   Label: crt_memory.c_constructTypedObjectArray_FUN_00601232
     TEST EAX,EAX                        ; 00601236
-    JNZ 0x0060123b                      ; 00601238 | LAB_0060123b
-        ;   XREF to: 0060123b (CONDITIONAL_JUMP)
+    JNZ 0x0060123b                      ; 00601238
+        ;   XREF to: 0060123b (CONDITIONAL_JUMP)  ; LAB_0060123b
     RET                                 ; 0060123a
     MOV EDX,dword ptr [ESP + 0x8]       ; 0060123b
         ;   Label: LAB_0060123b
@@ -33,8 +33,8 @@ section .text
     PUSH ECX                            ; 0060124a
     ADD EAX,0x4                         ; 0060124b
     PUSH EAX                            ; 0060124e
-    CALL crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200 ; 0060124f | void * crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200(void * array_ptr, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 00601200 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200 ; 0060124f
+        ;   XREF to: 00601200 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200(void * array_ptr, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00601254
     RET                                 ; 00601257
 

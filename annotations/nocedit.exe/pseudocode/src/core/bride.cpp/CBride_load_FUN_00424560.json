@@ -1,130 +1,130 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 86, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 76, 
-    "assembly_lines": 55, 
-    "suspect_count": 6, 
+    "assembly_lines": 55,
+    "complexity_score": 86,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 21,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970", 
-      "addr": "0040b970"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
-      "addr": "0040b9f0"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660", 
-      "addr": "004a9660"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_speed_00616c45", 
-      "addr": "00616c45", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_00616c4b", 
-      "addr": "00616c4b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_guardDistance_00616c55", 
-      "addr": "00616c55", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_state_00616c63", 
-      "addr": "00616c63", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CBrideClassVersion", 
-      "addr": "0066e648", 
-      "value": "0x4"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CEnemy *in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,\"speed\");"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&(in_stack_00000004->base_character).model,\"modelName\");"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&in_stack_00000004->guard_distance,\"guardDistance\");"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&(in_stack_00000004->base_character).model.motion_controller,\"state\");"
-    }
-  ], 
+    ],
+    "total_lines": 76
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00424560", 
-    "signature": "undefined core_bride.cpp_CBride_load_FUN_00424560()", 
+    "address": "00424560",
     "address_range": [
       [
-        "00424560", 
+        "00424560",
         "004245e7"
       ]
-    ], 
-    "name": "core_bride.cpp_CBride_load_FUN_00424560"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_bride.cpp_CBride_load_FUN_00424560",
+    "signature": "undefined core_bride.cpp_CBride_load_FUN_00424560()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b970",
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970"
+    },
+    {
+      "addr": "0040b770",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b9f0",
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0"
+    },
+    {
+      "addr": "004a9660",
+      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616c45",
+      "name": "s_speed_00616c45",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616c4b",
+      "name": "s_modelName_00616c4b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616c55",
+      "name": "s_guardDistance_00616c55",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616c63",
+      "name": "s_state_00616c63",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e648",
+      "name": "g_CBrideClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "CEnemy *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,\"speed\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "(&(in_stack_00000004->base_character).model,\"modelName\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->guard_distance,\"guardDistance\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "(&(in_stack_00000004->base_character).model.motion_controller,\"state\");",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -21,8 +21,8 @@ section .text
     CALL dword ptr [EAX + 0x60]         ; 005d30ce
     ADD ESP,0x8                         ; 005d30d1
     CMP EAX,-0x1                        ; 005d30d4
-    JNZ 0x005d30dd                      ; 005d30d7 | LAB_005d30dd
-        ;   XREF to: 005d30dd (CONDITIONAL_JUMP)
+    JNZ 0x005d30dd                      ; 005d30d7
+        ;   XREF to: 005d30dd (CONDITIONAL_JUMP)  ; LAB_005d30dd
     XOR EAX,EAX                         ; 005d30d9
     POP EBX                             ; 005d30db
     RET                                 ; 005d30dc

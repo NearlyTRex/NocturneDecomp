@@ -33,8 +33,8 @@ section .text
     SUB ESP,0xc                         ; 004efc93
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004efc96
     MOV ESI,ESP                         ; 004efc9a
-    CALL engine_matrix.c_getCameraOrigin_FUN_0050e2c0 ; 004efc9c | void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
-        ;   XREF to: 0050e2c0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_getCameraOrigin_FUN_0050e2c0 ; 004efc9c
+        ;   XREF to: 0050e2c0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 004efca1
     MOV ESI,dword ptr [EBX + 0x1c]      ; 004efca4
     MOV EDX,EAX                         ; 004efca7
@@ -51,33 +51,33 @@ section .text
     MOV EDX,dword ptr [EBX + 0x2c]      ; 004efcc5
     MOV dword ptr [EBX + 0x30],EAX      ; 004efcc8
     TEST EDX,EDX                        ; 004efccb
-    JL 0x004efd10                       ; 004efccd | LAB_004efd10
-        ;   XREF to: 004efd10 (CONDITIONAL_JUMP)
+    JL 0x004efd10                       ; 004efccd
+        ;   XREF to: 004efd10 (CONDITIONAL_JUMP)  ; LAB_004efd10
     MOV ESI,dword ptr [EBX + 0x30]      ; 004efccf
         ;   Label: LAB_004efccf
     TEST ESI,ESI                        ; 004efcd2
-    JL 0x004efd18                       ; 004efcd4 | LAB_004efd18
-        ;   XREF to: 004efd18 (CONDITIONAL_JUMP)
+    JL 0x004efd18                       ; 004efcd4
+        ;   XREF to: 004efd18 (CONDITIONAL_JUMP)  ; LAB_004efd18
     PUSH EBX                            ; 004efcd6
         ;   Label: LAB_004efcd6
-    CALL core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490 ; 004efcd7 | void core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490(CGround * this_ptr)
-        ;   XREF to: 004ef490 (UNCONDITIONAL_CALL)
+    CALL core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490 ; 004efcd7
+        ;   XREF to: 004ef490 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490(CGround * this_ptr)
     ADD ESP,0x4                         ; 004efcdc
     PUSH 0x1                            ; 004efcdf
-    MOV EBP,dword ptr [0x006703ec]      ; 004efce1 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EBP                            ; 004efce7 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 004efce8 | void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)
-        ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)
+    MOV EBP,dword ptr [0x006703ec]      ; 004efce1 | g_CDemonRendererPtr
+    PUSH EBP                            ; 004efce7 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 004efce8
+        ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 004efced
     PUSH EBX                            ; 004efcf0
-    CALL core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70 ; 004efcf1 | void core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70(CGround * this_ptr)
-        ;   XREF to: 004efb70 (UNCONDITIONAL_CALL)
+    CALL core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70 ; 004efcf1
+        ;   XREF to: 004efb70 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70(CGround * this_ptr)
     ADD ESP,0x4                         ; 004efcf6
     PUSH 0x0                            ; 004efcf9
-    MOV EAX,[0x006703ec]                ; 004efcfb | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EAX                            ; 004efd00 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 004efd01 | void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)
-        ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)
+    MOV EAX,[0x006703ec]                ; 004efcfb | g_CDemonRendererInstance | g_CDemonRendererPtr
+    PUSH EAX                            ; 004efd00 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00 ; 004efd01
+        ;   XREF to: 0048ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer * this_ptr, int state_flag)
     ADD ESP,0x8                         ; 004efd06
     ADD ESP,0xc                         ; 004efd09
     POP EBP                             ; 004efd0c
@@ -87,13 +87,13 @@ section .text
     LEA ECX,[EDX + -0x1]                ; 004efd10
         ;   Label: LAB_004efd10
     MOV dword ptr [EBX + 0x2c],ECX      ; 004efd13
-    JMP 0x004efccf                      ; 004efd16 | LAB_004efccf
-        ;   XREF to: 004efccf (UNCONDITIONAL_JUMP)
+    JMP 0x004efccf                      ; 004efd16
+        ;   XREF to: 004efccf (UNCONDITIONAL_JUMP)  ; LAB_004efccf
     PUSH EDI                            ; 004efd18
         ;   Label: LAB_004efd18
     LEA EDI,[ESI + -0x1]                ; 004efd19
     MOV dword ptr [EBX + 0x30],EDI      ; 004efd1c
     POP EDI                             ; 004efd1f
-    JMP 0x004efcd6                      ; 004efd20 | LAB_004efcd6
-        ;   XREF to: 004efcd6 (UNCONDITIONAL_JUMP)
+    JMP 0x004efcd6                      ; 004efd20
+        ;   XREF to: 004efcd6 (UNCONDITIONAL_JUMP)  ; LAB_004efcd6
 

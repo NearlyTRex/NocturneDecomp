@@ -101,7 +101,7 @@ section .text
     SUB ESP,0x120                       ; 00443bc6
     SUB EBP,0x7a                        ; 00443bcc
     XOR EDX,EDX                         ; 00443bcf
-    MOV EAX,[0x006810c8]                ; 00443bd1 | CDemonSet * g_CDemonSetPtr
+    MOV EAX,[0x006810c8]                ; 00443bd1 | g_CDemonSetPtr
     MOV dword ptr [EBP + 0x72],EDX      ; 00443bd6
     MOV dword ptr [EAX + 0x15ac80],0x1  ; 00443bd9 | g_CDemonSetInstance.lighting_quality_mode
     LEA EAX,[EBP + -0x42]               ; 00443be3
@@ -109,16 +109,16 @@ section .text
     PUSH EAX                            ; 00443be9
     MOV dword ptr [EBP + 0x5e],EDX      ; 00443bea
     MOV dword ptr [EBP + 0x66],EDX      ; 00443bed
-    CALL core_slew.cpp_CSlew_init_FUN_005a2060 ; 00443bf0 | void core_slew.cpp_CSlew_init_FUN_005a2060(CSlew * this_ptr)
-        ;   XREF to: 005a2060 (UNCONDITIONAL_CALL)
+    CALL core_slew.cpp_CSlew_init_FUN_005a2060 ; 00443bf0
+        ;   XREF to: 005a2060 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_init_FUN_005a2060(CSlew * this_ptr)
     FLD float ptr [EBP + -0x3a]         ; 00443bf5
-    MOV EDI,dword ptr [0x0067b654]      ; 00443bf8 | CGame * g_CGamePtr
+    MOV EDI,dword ptr [0x0067b654]      ; 00443bf8 | g_CGamePtr
     ADD ESP,0x4                         ; 00443bfe
-    FADD float ptr [0x0061943b]         ; 00443c01 | float FLOAT_0061943b
-    PUSH EDI                            ; 00443c07 | CGame g_CGameInstance
+    FADD float ptr [0x0061943b]         ; 00443c01 | FLOAT_0061943b
+    PUSH EDI                            ; 00443c07 | g_CGameInstance
     FSTP float ptr [EBP + -0x3a]        ; 00443c08
-    CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 00443c0b | void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)
+    CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 00443c0b
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
     ADD ESP,0x4                         ; 00443c10
     XOR EAX,EAX                         ; 00443c13
         ;   Label: LAB_00443c13
@@ -137,14 +137,14 @@ section .text
     FCOMP double ptr [EBP + 0x4e]       ; 00443c39
     FNSTSW AX                           ; 00443c3c
     SAHF                                ; 00443c3e
-    JA 0x00443e62                       ; 00443c3f | LAB_00443e62
-        ;   XREF to: 00443e62 (CONDITIONAL_JUMP)
+    JA 0x00443e62                       ; 00443c3f
+        ;   XREF to: 00443e62 (CONDITIONAL_JUMP)  ; LAB_00443e62
     FLD float ptr [EBP + 0x72]          ; 00443c45
     FDIV float ptr [EBP + 0x6a]         ; 00443c48
     SUB ESP,0x8                         ; 00443c4b
     FSTP double ptr [ESP]               ; 00443c4e
-    CALL crt_math.c_floor_FUN_005feb90  ; 00443c51 | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 00443c51
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [EBP + 0x46],EAX      ; 00443c56
     MOV dword ptr [EBP + 0x4a],EDX      ; 00443c59
     FLD double ptr [EBP + 0x46]         ; 00443c5c
@@ -164,17 +164,17 @@ section .text
     PUSH dword ptr [EBP + 0x6e]         ; 00443c7f
     PUSH EBX                            ; 00443c82
     MOV ESI,dword ptr [EBP + 0x66]      ; 00443c83
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 00443c86 | void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_FUN_00442710 ; 00443c86
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
     ADD ESP,0x10                        ; 00443c8b
     TEST ESI,ESI                        ; 00443c8e
-    JZ 0x00443cca                       ; 00443c90 | LAB_00443cca
-        ;   XREF to: 00443cca (CONDITIONAL_JUMP)
+    JZ 0x00443cca                       ; 00443c90
+        ;   XREF to: 00443cca (CONDITIONAL_JUMP)  ; LAB_00443cca
     LEA EBX,[EBP + -0x42]               ; 00443c92
     LEA EAX,[EBP + 0xa]                 ; 00443c95
     CMP EBX,EAX                         ; 00443c98
-    JZ 0x00443cae                       ; 00443c9a | LAB_00443cae
-        ;   XREF to: 00443cae (CONDITIONAL_JUMP)
+    JZ 0x00443cae                       ; 00443c9a
+        ;   XREF to: 00443cae (CONDITIONAL_JUMP)  ; LAB_00443cae
     MOV EAX,dword ptr [EBP + 0xa]       ; 00443c9c
     MOV dword ptr [EBP + -0x42],EAX     ; 00443c9f
     MOV EAX,dword ptr [EBP + 0xe]       ; 00443ca2
@@ -185,53 +185,53 @@ section .text
         ;   Label: LAB_00443cae
     LEA EAX,[EBP + -0xe]                ; 00443cb1
     CMP EBX,EAX                         ; 00443cb4
-    JZ 0x00443cca                       ; 00443cb6 | LAB_00443cca
-        ;   XREF to: 00443cca (CONDITIONAL_JUMP)
+    JZ 0x00443cca                       ; 00443cb6
+        ;   XREF to: 00443cca (CONDITIONAL_JUMP)  ; LAB_00443cca
     MOV EAX,dword ptr [EBP + -0xe]      ; 00443cb8
     MOV dword ptr [EBP + -0x36],EAX     ; 00443cbb
     MOV EAX,dword ptr [EBP + -0xa]      ; 00443cbe
     MOV dword ptr [EBP + -0x32],EAX     ; 00443cc1
     MOV EAX,dword ptr [EBP + -0x6]      ; 00443cc4
     MOV dword ptr [EBP + -0x2e],EAX     ; 00443cc7
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00443cca | void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00443cca
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_00443cca
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 00443ccf | void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 00443ccf
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
     LEA EAX,[EBP + -0x36]               ; 00443cd4
     PUSH EAX                            ; 00443cd7
-    MOV EDI,dword ptr [0x006703ec]      ; 00443cd8 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDI                            ; 00443cde | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 00443cdf | void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
-        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x006703ec]      ; 00443cd8 | g_CDemonRendererPtr
+    PUSH EDI                            ; 00443cde | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0 ; 00443cdf
+        ;   XREF to: 0048c1d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(CDemonRenderer * this_ptr)
     ADD ESP,0x8                         ; 00443ce4
     LEA EAX,[EBP + -0x42]               ; 00443ce7
     PUSH EAX                            ; 00443cea
-    MOV EAX,[0x006703ec]                ; 00443ceb | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EAX                            ; 00443cf0 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 00443cf1 | void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
-        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)
+    MOV EAX,[0x006703ec]                ; 00443ceb | g_CDemonRendererPtr
+    PUSH EAX                            ; 00443cf0 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 00443cf1
+        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
     MOV EDX,dword ptr [EBP + 0x5e]      ; 00443cf6
     ADD ESP,0x8                         ; 00443cf9
     TEST EDX,EDX                        ; 00443cfc
-    JZ 0x00443ea2                       ; 00443cfe | LAB_00443ea2
-        ;   XREF to: 00443ea2 (CONDITIONAL_JUMP)
+    JZ 0x00443ea2                       ; 00443cfe
+        ;   XREF to: 00443ea2 (CONDITIONAL_JUMP)  ; LAB_00443ea2
     PUSH 0x0                            ; 00443d04
-    MOV EBX,dword ptr [0x006810c8]      ; 00443d06 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
+    MOV EBX,dword ptr [0x006810c8]      ; 00443d06 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH 0x42c80000                     ; 00443d0c
     MOV ECX,0x1                         ; 00443d11
-    PUSH EBX                            ; 00443d16 | CDemonSet g_CDemonSetInstance
-    MOV dword ptr [0x03277d14],ECX      ; 00443d17 | CDemonRaytrace g_CDemonRaytraceInstance
-    CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 ; 00443d1d | void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet * this_ptr, float frustum_param, int render_mode)
-        ;   XREF to: 0056a190 (UNCONDITIONAL_CALL)
+    PUSH EBX                            ; 00443d16 | g_CDemonSetInstance
+    MOV dword ptr [0x03277d14],ECX      ; 00443d17 | g_CDemonRaytraceInstance
+    CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 ; 00443d1d
+        ;   XREF to: 0056a190 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 00443d22
     LEA EAX,[EBP + -0x26]               ; 00443d25
         ;   Label: LAB_00443d25
     PUSH EAX                            ; 00443d28
-    MOV ESI,dword ptr [0x006703ec]      ; 00443d29 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH ESI                            ; 00443d2f | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 00443d30 | void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
-        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)
+    MOV ESI,dword ptr [0x006703ec]      ; 00443d29 | g_CDemonRendererPtr
+    PUSH ESI                            ; 00443d2f | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 00443d30
+        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00443d35
     LEA EAX,[EBP + -0x1a]               ; 00443d38
     PUSH EAX                            ; 00443d3b
@@ -246,19 +246,19 @@ section .text
     FILD dword ptr [EBP + 0x76]         ; 00443d55
     FSTP float ptr [ESP]                ; 00443d58
     PUSH EDI                            ; 00443d5b
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 00443d5c | void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_FUN_00442710 ; 00443d5c
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
     MOV EAX,0xfa                        ; 00443d61
     ADD ESP,0x10                        ; 00443d66
     XOR EDX,EDX                         ; 00443d69
-    MOV [0x02d02570],EAX                ; 00443d6b | int g_ActiveRenderColor
+    MOV [0x02d02570],EAX                ; 00443d6b | g_ActiveRenderColor
     MOV dword ptr [EBP + 0x56],EDX      ; 00443d70
     MOV EAX,dword ptr [EBP + 0x8e]      ; 00443d73
         ;   Label: LAB_00443d73
     MOV ECX,dword ptr [EBP + 0x56]      ; 00443d79
     CMP ECX,dword ptr [EAX]             ; 00443d7c
-    JGE 0x00443edf                      ; 00443d7e | LAB_00443edf
-        ;   XREF to: 00443edf (CONDITIONAL_JUMP)
+    JGE 0x00443edf                      ; 00443d7e
+        ;   XREF to: 00443edf (CONDITIONAL_JUMP)  ; LAB_00443edf
     LEA EAX,[EBP + -0x1a]               ; 00443d84
     PUSH EAX                            ; 00443d87
     LEA EAX,[EBP + 0x22]                ; 00443d88
@@ -270,50 +270,50 @@ section .text
     FSTP float ptr [ESP]                ; 00443d9b
     PUSH ECX                            ; 00443d9e
     LEA EBX,[EBP + 0x2e]                ; 00443d9f
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 00443da2 | void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_FUN_00442710 ; 00443da2
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
     ADD ESP,0x10                        ; 00443da7
     LEA EAX,[EBP + -0x2]                ; 00443daa
-    MOV EDI,dword ptr [0x006703ec]      ; 00443dad | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 00443dad | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 00443db3
-    FMUL float ptr [0x0065c060]         ; 00443db5 | float FLOAT_0065c060
+    FMUL float ptr [0x0065c060]         ; 00443db5 | FLOAT_0065c060
     FISTP dword ptr [EBX]               ; 00443dbb
     FLD float ptr [EAX + 0x4]           ; 00443dbd
-    FMUL float ptr [0x0065c060]         ; 00443dc0 | float FLOAT_0065c060
+    FMUL float ptr [0x0065c060]         ; 00443dc0 | FLOAT_0065c060
     FISTP dword ptr [EBX + 0x4]         ; 00443dc6
     FLD float ptr [EAX + 0x8]           ; 00443dc9
-    FMUL float ptr [0x0065c060]         ; 00443dcc | float FLOAT_0065c060
+    FMUL float ptr [0x0065c060]         ; 00443dcc | FLOAT_0065c060
     FISTP dword ptr [EBX + 0x8]         ; 00443dd2
     LEA EAX,[EBP + 0x2e]                ; 00443dd5
     PUSH EAX                            ; 00443dd8
-    MOV EAX,dword ptr [EDI]             ; 00443dd9 | CDemonRenderer g_CDemonRendererInstance
+    MOV EAX,dword ptr [EDI]             ; 00443dd9 | g_CDemonRendererInstance
     PUSH EAX                            ; 00443ddb
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00443ddc | void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00443ddc
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     LEA EBX,[EBP + 0x16]                ; 00443de1
     ADD ESP,0x8                         ; 00443de4
     LEA EAX,[EBP + 0x22]                ; 00443de7
-    MOV EDI,dword ptr [0x006703ec]      ; 00443dea | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 00443dea | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 00443df0
-    FMUL float ptr [0x0065c060]         ; 00443df2 | float FLOAT_0065c060
+    FMUL float ptr [0x0065c060]         ; 00443df2 | FLOAT_0065c060
     FISTP dword ptr [EBX]               ; 00443df8
     FLD float ptr [EAX + 0x4]           ; 00443dfa
-    FMUL float ptr [0x0065c060]         ; 00443dfd | float FLOAT_0065c060
+    FMUL float ptr [0x0065c060]         ; 00443dfd | FLOAT_0065c060
     FISTP dword ptr [EBX + 0x4]         ; 00443e03
     FLD float ptr [EAX + 0x8]           ; 00443e06
-    FMUL float ptr [0x0065c060]         ; 00443e09 | float FLOAT_0065c060
+    FMUL float ptr [0x0065c060]         ; 00443e09 | FLOAT_0065c060
     FISTP dword ptr [EBX + 0x8]         ; 00443e0f
     LEA EAX,[EBP + 0x16]                ; 00443e12
     PUSH EAX                            ; 00443e15
-    MOV EAX,dword ptr [EDI]             ; 00443e16 | CDemonRenderer g_CDemonRendererInstance
+    MOV EAX,dword ptr [EDI]             ; 00443e16 | g_CDemonRendererInstance
     ADD EAX,0x30                        ; 00443e18
     PUSH EAX                            ; 00443e1b
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00443e1c | void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 00443e1c
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 00443e21
-    MOV EAX,[0x006703ec]                ; 00443e24 | CDemonRenderer * g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 00443e24 | g_CDemonRendererPtr
     SUB ESP,0x30                        ; 00443e29
-    MOV EAX,dword ptr [EAX]             ; 00443e2c | CDemonRenderer g_CDemonRendererInstance
+    MOV EAX,dword ptr [EAX]             ; 00443e2c | g_CDemonRendererInstance
     MOV ECX,0xc                         ; 00443e2e
     MOV EDI,ESP                         ; 00443e33
     LEA ESI,[EAX + 0x30]                ; 00443e35
@@ -324,24 +324,24 @@ section .text
     MOV ESI,EAX                         ; 00443e44
     LEA EBX,[EBP + -0x2]                ; 00443e46
     MOVSD.REP ES:EDI,ESI                ; 00443e49
-    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 00443e4b | void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 00443e4b
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
     LEA EAX,[EBP + 0x22]                ; 00443e50
     ADD ESP,0x60                        ; 00443e53
     CMP EBX,EAX                         ; 00443e56
-    JNZ 0x00443ec5                      ; 00443e58 | LAB_00443ec5
-        ;   XREF to: 00443ec5 (CONDITIONAL_JUMP)
+    JNZ 0x00443ec5                      ; 00443e58
+        ;   XREF to: 00443ec5 (CONDITIONAL_JUMP)  ; LAB_00443ec5
     INC dword ptr [EBP + 0x56]          ; 00443e5a
-    JMP 0x00443d73                      ; 00443e5d | LAB_00443d73
-        ;   XREF to: 00443d73 (UNCONDITIONAL_JUMP)
+    JMP 0x00443d73                      ; 00443e5d
+        ;   XREF to: 00443d73 (UNCONDITIONAL_JUMP)  ; LAB_00443d73
     FLD float ptr [EBP + 0x72]          ; 00443e62
         ;   Label: LAB_00443e62
     FCHS                                ; 00443e65
     FDIV float ptr [EBP + 0x6a]         ; 00443e67
     SUB ESP,0x8                         ; 00443e6a
     FSTP double ptr [ESP]               ; 00443e6d
-    CALL crt_math.c_floor_FUN_005feb90  ; 00443e70 | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 00443e70
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [EBP + 0x46],EAX      ; 00443e75
     MOV dword ptr [EBP + 0x4a],EDX      ; 00443e78
     FLD double ptr [EBP + 0x46]         ; 00443e7b
@@ -353,12 +353,12 @@ section .text
     FCOMPP                              ; 00443e8c
     FNSTSW AX                           ; 00443e8e
     SAHF                                ; 00443e90
-    JBE 0x00443c6b                      ; 00443e91 | LAB_00443c6b
-        ;   XREF to: 00443c6b (CONDITIONAL_JUMP)
+    JBE 0x00443c6b                      ; 00443e91
+        ;   XREF to: 00443c6b (CONDITIONAL_JUMP)  ; LAB_00443c6b
     FLD float ptr [EBP + 0x6e]          ; 00443e97
     FADD float ptr [EBP + 0x6a]         ; 00443e9a
-    JMP 0x00443c68                      ; 00443e9d | LAB_00443c68
-        ;   XREF to: 00443c68 (UNCONDITIONAL_JUMP)
+    JMP 0x00443c68                      ; 00443e9d
+        ;   XREF to: 00443c68 (UNCONDITIONAL_JUMP)  ; LAB_00443c68
     MOV EAX,dword ptr [EBP + -0x26]     ; 00443ea2
         ;   Label: LAB_00443ea2
     MOV dword ptr [EBP + 0x3a],EAX      ; 00443ea5
@@ -368,11 +368,11 @@ section .text
     MOV dword ptr [EBP + 0x42],EAX      ; 00443eb1
     LEA EAX,[EBP + 0x3a]                ; 00443eb4
     PUSH EAX                            ; 00443eb7
-    CALL core_course.cpp_FUN_00443760   ; 00443eb8 | undefined core_course.cpp_FUN_00443760()
-        ;   XREF to: 00443760 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_FUN_00443760   ; 00443eb8
+        ;   XREF to: 00443760 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_FUN_00443760()
     ADD ESP,0x4                         ; 00443ebd
-    JMP 0x00443d25                      ; 00443ec0 | LAB_00443d25
-        ;   XREF to: 00443d25 (UNCONDITIONAL_JUMP)
+    JMP 0x00443d25                      ; 00443ec0
+        ;   XREF to: 00443d25 (UNCONDITIONAL_JUMP)  ; LAB_00443d25
     MOV EAX,dword ptr [EBP + 0x22]      ; 00443ec5
         ;   Label: LAB_00443ec5
     MOV dword ptr [EBP + -0x2],EAX      ; 00443ec8
@@ -381,40 +381,40 @@ section .text
     MOV EAX,dword ptr [EBP + 0x2a]      ; 00443ed1
     MOV dword ptr [EBP + 0x6],EAX       ; 00443ed4
     INC dword ptr [EBP + 0x56]          ; 00443ed7
-    JMP 0x00443d73                      ; 00443eda | LAB_00443d73
-        ;   XREF to: 00443d73 (UNCONDITIONAL_JUMP)
+    JMP 0x00443d73                      ; 00443eda
+        ;   XREF to: 00443d73 (UNCONDITIONAL_JUMP)  ; LAB_00443d73
     MOV EBX,dword ptr [EBP + 0x66]      ; 00443edf
         ;   Label: LAB_00443edf
     TEST EBX,EBX                        ; 00443ee2
-    JNZ 0x00443f2f                      ; 00443ee4 | LAB_00443f2f
-        ;   XREF to: 00443f2f (CONDITIONAL_JUMP)
+    JNZ 0x00443f2f                      ; 00443ee4
+        ;   XREF to: 00443f2f (CONDITIONAL_JUMP)  ; LAB_00443f2f
     LEA EAX,[EBP + 0xa]                 ; 00443ee6
     PUSH EAX                            ; 00443ee9
-    MOV ESI,dword ptr [0x006703ec]      ; 00443eea | CDemonRenderer * g_CDemonRendererPtr
-    PUSH ESI                            ; 00443ef0 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 00443ef1 | void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
-        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)
+    MOV ESI,dword ptr [0x006703ec]      ; 00443eea | g_CDemonRendererPtr
+    PUSH ESI                            ; 00443ef0 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 00443ef1
+        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 00443ef6
     PUSH EBX                            ; 00443ef9
     LEA EAX,[EBP + -0xe]                ; 00443efa
     PUSH EAX                            ; 00443efd
-    MOV EDI,dword ptr [0x006703ec]      ; 00443efe | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDI                            ; 00443f04 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00443f05 | void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x006703ec]      ; 00443efe | g_CDemonRendererPtr
+    PUSH EDI                            ; 00443f04 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00443f05
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     ADD ESP,0xc                         ; 00443f0a
     PUSH -0x1                           ; 00443f0d
     PUSH EBX                            ; 00443f0f
     PUSH EBX                            ; 00443f10
     MOV EAX,dword ptr [EBP + 0x92]      ; 00443f11
     PUSH EAX                            ; 00443f17
-    CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 00443f18 | void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 00443f18
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
     ADD ESP,0x10                        ; 00443f1d
-    MOV EDX,dword ptr [0x006703ec]      ; 00443f20 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDX                            ; 00443f26 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00443f27 | void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006703ec]      ; 00443f20 | g_CDemonRendererPtr
+    PUSH EDX                            ; 00443f26 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 00443f27
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
     SUB ESP,0x8                         ; 00443f2f
         ;   Label: LAB_00443f2f
     FLD float ptr [EBP + -0xa]          ; 00443f32
@@ -437,133 +437,133 @@ section .text
     SUB ESP,0x8                         ; 00443f65
     FLD float ptr [EBP + 0x72]          ; 00443f68
     FSTP double ptr [ESP]               ; 00443f6b
-    PUSH 0x619402                       ; 00443f6e | = "t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH:..." | s_t_7_3f_Pos_7_2f_7_2f_7_2_00619402 = t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f
+    PUSH 0x619402                       ; 00443f6e | = "t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH:..."
     LEA EAX,[EBP + 0xffffff5a]          ; 00443f73
     PUSH EAX                            ; 00443f79
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00443f7a | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00443f7a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x40                        ; 00443f7f
     PUSH 0x0                            ; 00443f82
     PUSH 0x0                            ; 00443f84
     LEA EAX,[EBP + 0xffffff5a]          ; 00443f86
     PUSH EAX                            ; 00443f8c
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00443f8d | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00443f8d
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 00443f92
-    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00443f95 | void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)
-    MOV ECX,dword ptr [0x0067b654]      ; 00443f9a | CGame * g_CGamePtr
-    PUSH ECX                            ; 00443fa0 | CGame g_CGameInstance
-    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 00443fa1 | void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
-        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00443f95
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
+    MOV ECX,dword ptr [0x0067b654]      ; 00443f9a | g_CGamePtr
+    PUSH ECX                            ; 00443fa0 | g_CGameInstance
+    CALL core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90 ; 00443fa1
+        ;   XREF to: 004d7d90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)
     ADD ESP,0x4                         ; 00443fa6
-    MOV EAX,[0x0067b654]                ; 00443fa9 | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 00443fa9 | g_CGamePtr
     PUSH 0x1                            ; 00443fae
     FLD float ptr [EAX + 0x264]         ; 00443fb0 | g_CGameInstance.delta_time_float
-    MOV EAX,[0x0067cf44]                ; 00443fb6 | CKeys * g_CKeysPtr
-    PUSH EAX                            ; 00443fbb | void * g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 00443fbc | void * g_CKeysPtr
+    MOV EAX,[0x0067cf44]                ; 00443fb6 | g_CKeysPtr
+    PUSH EAX                            ; 00443fbb | g_CKeysPtr
+    MOV EBX,dword ptr [EAX]             ; 00443fbc | g_CKeysPtr
     FSTP float ptr [EBP + 0x5a]         ; 00443fbe
     CALL dword ptr [EBX + 0x4]          ; 00443fc1
     ADD ESP,0x8                         ; 00443fc4
     TEST EAX,EAX                        ; 00443fc7
-    JNZ 0x004440a6                      ; 00443fc9 | LAB_004440a6
-        ;   XREF to: 004440a6 (CONDITIONAL_JUMP)
+    JNZ 0x004440a6                      ; 00443fc9
+        ;   XREF to: 004440a6 (CONDITIONAL_JUMP)  ; LAB_004440a6
     PUSH 0x19                           ; 00443fcf
-    MOV EAX,[0x0067cf44]                ; 00443fd1 | CKeys * g_CKeysPtr
-    PUSH EAX                            ; 00443fd6 | void * g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 00443fd7 | void * g_CKeysPtr
+    MOV EAX,[0x0067cf44]                ; 00443fd1 | g_CKeysPtr
+    PUSH EAX                            ; 00443fd6 | g_CKeysPtr
+    MOV EBX,dword ptr [EAX]             ; 00443fd7 | g_CKeysPtr
     CALL dword ptr [EBX + 0x4]          ; 00443fd9
     ADD ESP,0x8                         ; 00443fdc
     TEST EAX,EAX                        ; 00443fdf
-    JZ 0x00443ff2                       ; 00443fe1 | LAB_00443ff2
-        ;   XREF to: 00443ff2 (CONDITIONAL_JUMP)
+    JZ 0x00443ff2                       ; 00443fe1
+        ;   XREF to: 00443ff2 (CONDITIONAL_JUMP)  ; LAB_00443ff2
     CMP dword ptr [EBP + 0x62],0x0      ; 00443fe3
     SETZ AL                             ; 00443fe7
     AND EAX,0xff                        ; 00443fea
     MOV dword ptr [EBP + 0x62],EAX      ; 00443fef
     PUSH 0x13                           ; 00443ff2
         ;   Label: LAB_00443ff2
-    MOV EAX,[0x0067cf44]                ; 00443ff4 | CKeys * g_CKeysPtr
-    PUSH EAX                            ; 00443ff9 | void * g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 00443ffa | void * g_CKeysPtr
+    MOV EAX,[0x0067cf44]                ; 00443ff4 | g_CKeysPtr
+    PUSH EAX                            ; 00443ff9 | g_CKeysPtr
+    MOV EBX,dword ptr [EAX]             ; 00443ffa | g_CKeysPtr
     CALL dword ptr [EBX + 0x4]          ; 00443ffc
     ADD ESP,0x8                         ; 00443fff
     TEST EAX,EAX                        ; 00444002
-    JZ 0x00444015                       ; 00444004 | LAB_00444015
-        ;   XREF to: 00444015 (CONDITIONAL_JUMP)
+    JZ 0x00444015                       ; 00444004
+        ;   XREF to: 00444015 (CONDITIONAL_JUMP)  ; LAB_00444015
     CMP dword ptr [EBP + 0x66],0x0      ; 00444006
     SETZ AL                             ; 0044400a
     AND EAX,0xff                        ; 0044400d
     MOV dword ptr [EBP + 0x66],EAX      ; 00444012
     PUSH 0x1f                           ; 00444015
         ;   Label: LAB_00444015
-    MOV EAX,[0x0067cf44]                ; 00444017 | CKeys * g_CKeysPtr
-    PUSH EAX                            ; 0044401c | void * g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 0044401d | void * g_CKeysPtr
+    MOV EAX,[0x0067cf44]                ; 00444017 | g_CKeysPtr
+    PUSH EAX                            ; 0044401c | g_CKeysPtr
+    MOV EBX,dword ptr [EAX]             ; 0044401d | g_CKeysPtr
     CALL dword ptr [EBX + 0x4]          ; 0044401f
     ADD ESP,0x8                         ; 00444022
     TEST EAX,EAX                        ; 00444025
-    JZ 0x00444038                       ; 00444027 | LAB_00444038
-        ;   XREF to: 00444038 (CONDITIONAL_JUMP)
+    JZ 0x00444038                       ; 00444027
+        ;   XREF to: 00444038 (CONDITIONAL_JUMP)  ; LAB_00444038
     CMP dword ptr [EBP + 0x5e],0x0      ; 00444029
     SETZ AL                             ; 0044402d
     AND EAX,0xff                        ; 00444030
     MOV dword ptr [EBP + 0x5e],EAX      ; 00444035
     PUSH 0x34                           ; 00444038
         ;   Label: LAB_00444038
-    MOV EAX,[0x0067cf44]                ; 0044403a | CKeys * g_CKeysPtr
-    PUSH EAX                            ; 0044403f | void * g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 00444040 | void * g_CKeysPtr
+    MOV EAX,[0x0067cf44]                ; 0044403a | g_CKeysPtr
+    PUSH EAX                            ; 0044403f | g_CKeysPtr
+    MOV EBX,dword ptr [EAX]             ; 00444040 | g_CKeysPtr
     CALL dword ptr [EBX + 0x4]          ; 00444042
     ADD ESP,0x8                         ; 00444045
     TEST EAX,EAX                        ; 00444048
-    JZ 0x00444054                       ; 0044404a | LAB_00444054
-        ;   XREF to: 00444054 (CONDITIONAL_JUMP)
+    JZ 0x00444054                       ; 0044404a
+        ;   XREF to: 00444054 (CONDITIONAL_JUMP)  ; LAB_00444054
     FLD1                                ; 0044404c
     FADD float ptr [EBP + 0x72]         ; 0044404e
     FSTP float ptr [EBP + 0x72]         ; 00444051
     PUSH 0x33                           ; 00444054
         ;   Label: LAB_00444054
-    MOV EAX,[0x0067cf44]                ; 00444056 | CKeys * g_CKeysPtr
-    PUSH EAX                            ; 0044405b | void * g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 0044405c | void * g_CKeysPtr
+    MOV EAX,[0x0067cf44]                ; 00444056 | g_CKeysPtr
+    PUSH EAX                            ; 0044405b | g_CKeysPtr
+    MOV EBX,dword ptr [EAX]             ; 0044405c | g_CKeysPtr
     CALL dword ptr [EBX + 0x4]          ; 0044405e
     ADD ESP,0x8                         ; 00444061
     TEST EAX,EAX                        ; 00444064
-    JZ 0x00444074                       ; 00444066 | LAB_00444074
-        ;   XREF to: 00444074 (CONDITIONAL_JUMP)
+    JZ 0x00444074                       ; 00444066
+        ;   XREF to: 00444074 (CONDITIONAL_JUMP)  ; LAB_00444074
     FLD float ptr [EBP + 0x72]          ; 00444068
-    FADD float ptr [0x0061944b]         ; 0044406b | float FLOAT_0061944b
+    FADD float ptr [0x0061944b]         ; 0044406b | FLOAT_0061944b
     FSTP float ptr [EBP + 0x72]         ; 00444071
     CMP dword ptr [EBP + 0x66],0x0      ; 00444074
         ;   Label: LAB_00444074
-    JZ 0x00444098                       ; 00444078 | LAB_00444098
-        ;   XREF to: 00444098 (CONDITIONAL_JUMP)
+    JZ 0x00444098                       ; 00444078
+        ;   XREF to: 00444098 (CONDITIONAL_JUMP)  ; LAB_00444098
     CMP dword ptr [EBP + 0x62],0x0      ; 0044407a
         ;   Label: LAB_0044407a
-    JNZ 0x00443c13                      ; 0044407e | LAB_00443c13
-        ;   XREF to: 00443c13 (CONDITIONAL_JUMP)
+    JNZ 0x00443c13                      ; 0044407e
+        ;   XREF to: 00443c13 (CONDITIONAL_JUMP)  ; LAB_00443c13
     FLD float ptr [EBP + 0x5a]          ; 00444084
-    FMUL double ptr [0x00619443]        ; 00444087 | double DOUBLE_00619443
+    FMUL double ptr [0x00619443]        ; 00444087 | DOUBLE_00619443
     FADD float ptr [EBP + 0x72]         ; 0044408d
     FSTP float ptr [EBP + 0x72]         ; 00444090
-    JMP 0x00443c13                      ; 00444093 | LAB_00443c13
-        ;   XREF to: 00443c13 (UNCONDITIONAL_JUMP)
+    JMP 0x00443c13                      ; 00444093
+        ;   XREF to: 00443c13 (UNCONDITIONAL_JUMP)  ; LAB_00443c13
     LEA EAX,[EBP + -0x42]               ; 00444098
         ;   Label: LAB_00444098
     PUSH EAX                            ; 0044409b
-    CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0 ; 0044409c | void core_slew.cpp_CSlew_processInput_FUN_005a20b0(CSlew * this_ptr)
-        ;   XREF to: 005a20b0 (UNCONDITIONAL_CALL)
+    CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0 ; 0044409c
+        ;   XREF to: 005a20b0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_processInput_FUN_005a20b0(CSlew * this_ptr)
     ADD ESP,0x4                         ; 004440a1
-    JMP 0x0044407a                      ; 004440a4 | LAB_0044407a
-        ;   XREF to: 0044407a (UNCONDITIONAL_JUMP)
-    CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004440a6 | void engine_2d.c_clearInputAndWait_FUN_00403260()
+    JMP 0x0044407a                      ; 004440a4
+        ;   XREF to: 0044407a (UNCONDITIONAL_JUMP)  ; LAB_0044407a
+    CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004440a6
+        ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
         ;   Label: LAB_004440a6
-        ;   XREF to: 00403260 (UNCONDITIONAL_CALL)
     XOR ESI,ESI                         ; 004440ab
-    MOV EAX,[0x006810c8]                ; 004440ad | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
-    MOV dword ptr [0x03277d14],ESI      ; 004440b2 | CDemonRaytrace g_CDemonRaytraceInstance
+    MOV EAX,[0x006810c8]                ; 004440ad | g_CDemonSetPtr | g_CDemonSetInstance
+    MOV dword ptr [0x03277d14],ESI      ; 004440b2 | g_CDemonRaytraceInstance
     MOV dword ptr [EAX + 0x15ac80],0x0  ; 004440b8 | g_CDemonSetInstance.lighting_quality_mode
     LEA ESP,[EBP + 0x7a]                ; 004440c2
     POP EBP                             ; 004440c5

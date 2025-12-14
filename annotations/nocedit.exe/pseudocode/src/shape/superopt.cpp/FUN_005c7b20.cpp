@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int * shape_superopt_cpp_FUN_005c7b20(void)
+uint shape_superopt_cpp_FUN_005c7b20(void)
 
 {
   int iVar1;
@@ -18,12 +18,9 @@ int * shape_superopt_cpp_FUN_005c7b20(void)
   uint local_10;
   int iVar5;
   
-  if ((*in_stack_00000004 == 0) || (in_stack_00000004[1] == 0)) {
-    piVar2 = (int *)0x0;
-  }
-  else {
+  if ((*in_stack_00000004 != 0) && (in_stack_00000004[1] != 0)) {
     in_stack_00000004[0xb] = *in_stack_00000004 * 3;
-    piVar2 = (int *)crt_memory_c_malloc_FUN_006021da(*in_stack_00000004 * 0x120);
+    piVar2 = crt_memory_c_malloc_FUN_006021da(*in_stack_00000004 * 0x120);
     in_stack_00000008[0xc] = (uint)piVar2;
     if (piVar2 != (int *)0x0) {
       local_10 = 0;
@@ -111,10 +108,10 @@ int * shape_superopt_cpp_FUN_005c7b20(void)
       iVar3 = shape_superopt_cpp_FUN_005c8280();
       if (iVar3 == 0) {
         crt_memory_c_free_FUN_005fe659((void *)in_stack_00000008[0xc]);
-        return (int *)0x0;
+        return 0;
       }
-      return (int *)&DAT_00000001;
+      return 1;
     }
   }
-  return piVar2;
+  return 0;
 }

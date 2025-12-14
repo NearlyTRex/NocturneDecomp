@@ -1,138 +1,138 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 11, 
-    "global_count": 0, 
-    "total_lines": 71, 
-    "assembly_lines": 49, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640", 
-      "addr": "0049a640"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0049a790", 
-    "signature": "void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)", 
-    "address_range": [
-      [
-        "0049a790", 
-        "0049a7f1"
-      ]
-    ], 
-    "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonTriangle *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "vertex1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "vertex2"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "vertex3"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 49,
+    "complexity_score": 22,
+    "cross_reference_count": 11,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
+  },
   "cross_references": [
     {
-      "from_addr": "004783a1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0", 
-      "addr": "004781d0"
-    }, 
+      "addr": "004781d0",
+      "from_addr": "004783a1",
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00478b6f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950", 
-      "addr": "00478950"
-    }, 
+      "addr": "00478950",
+      "from_addr": "00478b6f",
+      "name": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049512a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_addTriangle_FUN_00495100", 
-      "addr": "00495100"
-    }, 
+      "addr": "00495100",
+      "from_addr": "0049512a",
+      "name": "core_dtrace.cpp_CDemonRaytrace_addTriangle_FUN_00495100",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049cb7e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtri.cpp_buildClipTriangleFan_FUN_0049cb5a", 
-      "addr": "0049cb5a"
-    }, 
+      "addr": "0049cb5a",
+      "from_addr": "0049cb7e",
+      "name": "core_dtri.cpp_buildClipTriangleFan_FUN_0049cb5a",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00572003", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0", 
-      "addr": "005716b0"
-    }, 
+      "addr": "005716b0",
+      "from_addr": "00572003",
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00573201", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140", 
-      "addr": "00573140"
-    }, 
+      "addr": "00573140",
+      "from_addr": "00573201",
+      "name": "core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005715ef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0", 
-      "addr": "005715d0"
-    }, 
+      "addr": "005715d0",
+      "from_addr": "005715ef",
+      "name": "core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005730eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_testCylinderQuadCollision_FUN_005730d0", 
-      "addr": "005730d0"
-    }, 
+      "addr": "005730d0",
+      "from_addr": "005730eb",
+      "name": "core_setcolid.cpp_testCylinderQuadCollision_FUN_005730d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0059cd14", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0", 
-      "addr": "0059cba0"
-    }, 
+      "addr": "0059cba0",
+      "from_addr": "0059cd14",
+      "name": "core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ba811", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stairs.cpp_FUN_005ba700", 
-      "addr": "005ba700"
-    }, 
+      "addr": "005ba700",
+      "from_addr": "005ba811",
+      "name": "core_stairs.cpp_FUN_005ba700",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005eb7ee", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740", 
-      "addr": "005eb740"
+      "addr": "005eb740",
+      "from_addr": "005eb7ee",
+      "name": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0049a790",
+    "address_range": [
+      [
+        "0049a790",
+        "0049a7f1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790",
+    "signature": "void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049a640",
+      "name": "core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonTriangle *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex1",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex2",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex3",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
 }

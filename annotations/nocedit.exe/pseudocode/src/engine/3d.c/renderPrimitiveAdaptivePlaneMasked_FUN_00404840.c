@@ -86,8 +86,7 @@ engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840(SMRGLHeaderPrimitive
     iVar2 = 0;
     vertex_count = 0;
     pSVar3 = primitive + 1;
-    for (iVar4 = 0; iVar1 = (primitive->base).count,
-        SBORROW /* signed borrow */4(iVar4,iVar1 * 3) != iVar4 + iVar1 * -3 < 0; iVar4 = iVar4 + 3) {
+    for (iVar4 = 0; iVar4 < (primitive->base).count * 3; iVar4 = iVar4 + 3) {
       iVar1 = (pSVar3->base).type;
       *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;
       g_RenderVertexBuffer[iVar1].u = (float)(pSVar3->base).count;

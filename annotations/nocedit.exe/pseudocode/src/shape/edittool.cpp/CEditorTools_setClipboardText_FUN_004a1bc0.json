@@ -1,195 +1,195 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 70, 
-    "pseudocode_lines": 70, 
-    "cross_reference_count": 7, 
-    "global_count": 11, 
-    "total_lines": 164, 
-    "assembly_lines": 94, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "CloseClipboard", 
-      "addr": "EXTERNAL:00000030"
-    }, 
-    {
-      "name": "GlobalAlloc", 
-      "addr": "EXTERNAL:0000007e"
-    }, 
-    {
-      "name": "GlobalFree", 
-      "addr": "EXTERNAL:0000007f"
-    }, 
-    {
-      "name": "GlobalLock", 
-      "addr": "EXTERNAL:00000080"
-    }, 
-    {
-      "name": "GlobalUnlock", 
-      "addr": "EXTERNAL:00000082"
-    }, 
-    {
-      "name": "OpenClipboard", 
-      "addr": "EXTERNAL:0000003f"
-    }, 
-    {
-      "name": "SetClipboardData", 
-      "addr": "EXTERNAL:00000043"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CloseClipboard*", 
-      "name": "CloseClipboard", 
-      "addr": "00611490", 
-      "value": "00211a68"
-    }, 
-    {
-      "type": "OpenClipboard*", 
-      "name": "OpenClipboard", 
-      "addr": "006114cc", 
-      "value": "00211b60"
-    }, 
-    {
-      "type": "SetClipboardData*", 
-      "name": "SetClipboardData", 
-      "addr": "006114dc", 
-      "value": "00211ba4"
-    }, 
-    {
-      "type": "GlobalAlloc*", 
-      "name": "GlobalAlloc", 
-      "addr": "006115cc", 
-      "value": "00211fd8"
-    }, 
-    {
-      "type": "GlobalFree*", 
-      "name": "GlobalFree", 
-      "addr": "006115d0", 
-      "value": "00211fe6"
-    }, 
-    {
-      "type": "GlobalLock*", 
-      "name": "GlobalLock", 
-      "addr": "006115d4", 
-      "value": "00211ff4"
-    }, 
-    {
-      "type": "GlobalUnlock*", 
-      "name": "GlobalUnlock", 
-      "addr": "006115dc", 
-      "value": "00212018"
-    }, 
-    {
-      "type": "char", 
-      "name": "s_EmptyChar_00623594", 
-      "addr": "00623594", 
-      "value": "\u0000"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623595", 
-      "addr": "00623595", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_ClipboardBackupText", 
-      "addr": "02cf1cd8", 
-      "value": null
-    }, 
-    {
-      "type": "HWND", 
-      "name": "g_MainWindowHandle", 
-      "addr": "03f98468", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a1bc0", 
-    "signature": "void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)", 
-    "address_range": [
-      [
-        "004a1bc0", 
-        "004a1c94"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEditorTools *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text_data"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 94,
+    "complexity_score": 70,
+    "cross_reference_count": 7,
+    "function_call_count": 8,
+    "global_count": 11,
+    "pseudocode_lines": 70,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 164
+  },
   "cross_references": [
     {
-      "from_addr": "0053ae4c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
-    }, 
+      "addr": "005390f0",
+      "from_addr": "0053ae4c",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00564b68", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_editorAction_FUN_00564820", 
-      "addr": "00564820"
-    }, 
+      "addr": "00564820",
+      "from_addr": "00564b68",
+      "name": "core_script.cpp_CScript_editorAction_FUN_00564820",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005986b2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
-    }, 
+      "addr": "005968b0",
+      "from_addr": "005986b2",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058b14c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058afe0", 
-      "addr": "0058afe0"
-    }, 
+      "addr": "0058afe0",
+      "from_addr": "0058b14c",
+      "name": "core_skeledit.cpp_FUN_0058afe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00593839", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00592690", 
-      "addr": "00592690"
-    }, 
+      "addr": "00592690",
+      "from_addr": "00593839",
+      "name": "core_skeledit.cpp_FUN_00592690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049d649", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0049d610", 
-      "addr": "0049d610"
-    }, 
+      "addr": "0049d610",
+      "from_addr": "0049d649",
+      "name": "shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0049d610",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a332e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270", 
-      "addr": "004a3270"
+      "addr": "004a3270",
+      "from_addr": "004a332e",
+      "name": "shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a1bc0",
+    "address_range": [
+      [
+        "004a1bc0",
+        "004a1c94"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0",
+    "signature": "void shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEditorTools * this_ptr, char * text_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000030",
+      "name": "CloseClipboard"
+    },
+    {
+      "addr": "EXTERNAL:0000007e",
+      "name": "GlobalAlloc"
+    },
+    {
+      "addr": "EXTERNAL:0000007f",
+      "name": "GlobalFree"
+    },
+    {
+      "addr": "EXTERNAL:00000080",
+      "name": "GlobalLock"
+    },
+    {
+      "addr": "EXTERNAL:00000082",
+      "name": "GlobalUnlock"
+    },
+    {
+      "addr": "EXTERNAL:0000003f",
+      "name": "OpenClipboard"
+    },
+    {
+      "addr": "EXTERNAL:00000043",
+      "name": "SetClipboardData"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611490",
+      "name": "CloseClipboard",
+      "type": "CloseClipboard*",
+      "value": "00211a68"
+    },
+    {
+      "addr": "006114cc",
+      "name": "OpenClipboard",
+      "type": "OpenClipboard*",
+      "value": "00211b60"
+    },
+    {
+      "addr": "006114dc",
+      "name": "SetClipboardData",
+      "type": "SetClipboardData*",
+      "value": "00211ba4"
+    },
+    {
+      "addr": "006115cc",
+      "name": "GlobalAlloc",
+      "type": "GlobalAlloc*",
+      "value": "00211fd8"
+    },
+    {
+      "addr": "006115d0",
+      "name": "GlobalFree",
+      "type": "GlobalFree*",
+      "value": "00211fe6"
+    },
+    {
+      "addr": "006115d4",
+      "name": "GlobalLock",
+      "type": "GlobalLock*",
+      "value": "00211ff4"
+    },
+    {
+      "addr": "006115dc",
+      "name": "GlobalUnlock",
+      "type": "GlobalUnlock*",
+      "value": "00212018"
+    },
+    {
+      "addr": "00623594",
+      "name": "s_EmptyChar_00623594",
+      "type": "char",
+      "value": "\u0000"
+    },
+    {
+      "addr": "00623595",
+      "name": "s_shape_edittool_cpp_00623595",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd8",
+      "name": "g_ClipboardBackupText",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "03f98468",
+      "name": "g_MainWindowHandle",
+      "type": "HWND",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "text_data",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

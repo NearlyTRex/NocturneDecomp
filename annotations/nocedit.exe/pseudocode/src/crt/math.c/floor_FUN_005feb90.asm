@@ -44,8 +44,8 @@ section .text
     PUSH EDX                            ; 005feb9e
     MOV EBX,dword ptr [EBP + 0x8]       ; 005feb9f
     PUSH EBX                            ; 005feba2
-    CALL crt_math.c_modf_FUN_00602102   ; 005feba3 | double crt_math.c_modf_FUN_00602102(double value, double * integer_part)
-        ;   XREF to: 00602102 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_modf_FUN_00602102   ; 005feba3
+        ;   XREF to: 00602102 (UNCONDITIONAL_CALL)  ; double crt_math.c_modf_FUN_00602102(double value, double * integer_part)
     MOV dword ptr [EBP + -0xc],EAX      ; 005feba8
     MOV dword ptr [EBP + -0x8],EDX      ; 005febab
     ADD ESP,0xc                         ; 005febae
@@ -54,10 +54,10 @@ section .text
     FCOMPP                              ; 005febb6
     FNSTSW AX                           ; 005febb8
     SAHF                                ; 005febba
-    JBE 0x005febc9                      ; 005febbb | LAB_005febc9
-        ;   XREF to: 005febc9 (CONDITIONAL_JUMP)
+    JBE 0x005febc9                      ; 005febbb
+        ;   XREF to: 005febc9 (CONDITIONAL_JUMP)  ; LAB_005febc9
     FLD double ptr [EBP + -0x14]        ; 005febbd
-    FADD double ptr [0x00658aec]        ; 005febc0 | double g_MathDomainAdjustment
+    FADD double ptr [0x00658aec]        ; 005febc0 | g_MathDomainAdjustment
     FSTP double ptr [EBP + -0x14]       ; 005febc6
     MOV EAX,dword ptr [EBP + -0x14]     ; 005febc9
         ;   Label: LAB_005febc9

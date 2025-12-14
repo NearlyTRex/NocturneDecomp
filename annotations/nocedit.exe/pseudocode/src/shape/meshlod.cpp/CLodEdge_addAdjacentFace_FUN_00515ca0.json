@@ -1,134 +1,134 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 43, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 2, 
-    "global_count": 7, 
-    "total_lines": 55, 
-    "assembly_lines": 37, 
-    "suspect_count": 2, 
+    "assembly_lines": 37,
+    "complexity_score": 43,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_adj_faces_00637466", 
-      "addr": "00637466", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_0063747a", 
-      "addr": "0063747a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_adj_faces_0063748f", 
-      "addr": "0063748f", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->adjacent_tri_indices[this_ptr->adjacent_tri_count] = in_stack_00000010;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00515ca0", 
-    "signature": "void shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0(CLodEdge * this_ptr, int tri_index)", 
-    "address_range": [
-      [
-        "00515ca0", 
-        "00515d05"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodEdge *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "tri_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 55
+  },
   "cross_references": [
     {
-      "from_addr": "00515c5d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0", 
-      "addr": "00515ba0"
-    }, 
+      "addr": "00515ba0",
+      "from_addr": "00515c5d",
+      "name": "shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00517fba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630", 
-      "addr": "00517630"
+      "addr": "00517630",
+      "from_addr": "00517fba",
+      "name": "shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00515ca0",
+    "address_range": [
+      [
+        "00515ca0",
+        "00515d05"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0",
+    "signature": "void shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0(CLodEdge * this_ptr, int tri_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00637466",
+      "name": "s_Too_many_adj_faces_00637466",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063747a",
+      "name": "s_shape_meshlod_cpp_0063747a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063748f",
+      "name": "s_Too_many_adj_faces_0063748f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodEdge *"
+      },
+      {
+        "is_param": true,
+        "name": "tri_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "this_ptr->adjacent_tri_indices[this_ptr->adjacent_tri_count] = in_stack_00000010;",
+      "type": "stack_param"
     }
   ]
 }

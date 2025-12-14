@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 37, 
-    "assembly_lines": 24, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310", 
-      "addr": "00522310"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50", 
-      "addr": "0048ab50"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005225a0", 
-    "signature": "void core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)", 
-    "address_range": [
-      [
-        "005225a0", 
-        "005225d2"
-      ]
-    ], 
-    "name": "core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMirror *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "prim"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 24,
+    "complexity_score": 13,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
   "cross_references": [
     {
-      "from_addr": "00570e0c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_00570df0", 
-      "addr": "00570df0"
+      "addr": "00570df0",
+      "from_addr": "00570e0c",
+      "name": "core_set.cpp_CDemonSet_FUN_00570df0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005225a0",
+    "address_range": [
+      [
+        "005225a0",
+        "005225d2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0",
+    "signature": "void core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "00522310",
+      "name": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310"
+    },
+    {
+      "addr": "0048ab50",
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirror *"
+      },
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": []
 }

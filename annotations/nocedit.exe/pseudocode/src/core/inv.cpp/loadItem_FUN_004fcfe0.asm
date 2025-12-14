@@ -27,12 +27,11 @@ section .text
     LEA EAX,[EDX + 0x100]               ; 004fcfeb
     PUSH EAX                            ; 004fcff1
     PUSH EDX                            ; 004fcff2
-    PUSH 0x630399                       ; 004fcff3 | = "\"%[^\"]\", \"%[^\"]\", \"%[^\"]\"\n" | s_anon_00630399 = "%[^"]", "%[^"]", "%[^"]"
-
+    PUSH 0x630399                       ; 004fcff3 | = "\"%[^\"]\", \"%[^\"]\", \"%[^\"]\"\n"
     MOV EDX,dword ptr [ESP + 0x18]      ; 004fcff8
     PUSH EDX                            ; 004fcffc
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004fcffd | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004fcffd
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 004fd002
     CMP EAX,0x3                         ; 004fd005
     SETZ AL                             ; 004fd008

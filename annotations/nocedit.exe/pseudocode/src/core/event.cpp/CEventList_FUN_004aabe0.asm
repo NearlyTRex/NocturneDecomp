@@ -36,9 +36,9 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004aabe6
     XOR EDX,EDX                         ; 004aabea
     PUSH EBX                            ; 004aabec
-    MOV dword ptr [0x02d0a45c],EDX      ; 004aabed | undefined4 DAT_02d0a45c
-    CALL core_event.cpp_CEventList_FUN_004aac00 ; 004aabf3 | int core_event.cpp_CEventList_FUN_004aac00(CEventList * this_ptr)
-        ;   XREF to: 004aac00 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02d0a45c],EDX      ; 004aabed | DAT_02d0a45c
+    CALL core_event.cpp_CEventList_FUN_004aac00 ; 004aabf3
+        ;   XREF to: 004aac00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004aac00(CEventList * this_ptr)
     ADD ESP,0x8                         ; 004aabf8
     POP EBX                             ; 004aabfb
     RET                                 ; 004aabfc

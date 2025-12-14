@@ -35,23 +35,23 @@ section .text
         ;   Label: core_actor.cpp_CDemonActor_setup_FUN_00408bb0
     MOV EBX,dword ptr [ESP + 0x8]       ; 00408bb1
     PUSH 0x23f                          ; 00408bb5
-    PUSH 0x61363c                       ; 00408bba | = "..\\core\\actor.cpp" | s_core_actor_cpp_0061363c = ..\core\actor.cpp
+    PUSH 0x61363c                       ; 00408bba | = "..\\core\\actor.cpp"
     PUSH EBX                            ; 00408bbf
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00408bc0 | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00408bc0
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     ADD ESP,0xc                         ; 00408bc5
     PUSH EBX                            ; 00408bc8
     MOV dword ptr [EBX + 0x114],0x0     ; 00408bc9
-    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00408bd3 | void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00408bd3
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00408bd8
     MOV EAX,dword ptr [EBX + 0x154]     ; 00408bdb
     PUSH EBX                            ; 00408be1
     CALL dword ptr [EAX + 0xbc]         ; 00408be2
     ADD ESP,0x4                         ; 00408be8
     TEST EAX,EAX                        ; 00408beb
-    JNZ 0x00408bf1                      ; 00408bed | LAB_00408bf1
-        ;   XREF to: 00408bf1 (CONDITIONAL_JUMP)
+    JNZ 0x00408bf1                      ; 00408bed
+        ;   XREF to: 00408bf1 (CONDITIONAL_JUMP)  ; LAB_00408bf1
     POP EBX                             ; 00408bef
     RET                                 ; 00408bf0
     PUSH 0x1                            ; 00408bf1
@@ -59,8 +59,8 @@ section .text
     ADD EBX,0x20                        ; 00408bf3
     PUSH EBX                            ; 00408bf6
     PUSH EAX                            ; 00408bf7
-    CALL core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60 ; 00408bf8 | void core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap * this_ptr, CVector3f * source_position, int force_update)
-        ;   XREF to: 00546a60 (UNCONDITIONAL_CALL)
+    CALL core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60 ; 00408bf8
+        ;   XREF to: 00546a60 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap * this_ptr, CVector3f * source_position, int force_update)
     ADD ESP,0xc                         ; 00408bfd
     POP EBX                             ; 00408c00
     RET                                 ; 00408c01

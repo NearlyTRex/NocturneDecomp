@@ -1,55 +1,55 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 60, 
-    "assembly_lines": 38, 
-    "suspect_count": 1, 
+    "assembly_lines": 38,
+    "complexity_score": 37,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar3);"
-    }
-  ], 
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005d3860", 
-    "signature": "void shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860(CObj * this_ptr)", 
+    "address": "005d3860",
     "address_range": [
       [
-        "005d3860", 
+        "005d3860",
         "005d38a8"
       ]
-    ], 
-    "name": "shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860",
+    "signature": "void shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860(CObj * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CObj *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x + iVar3);",
+      "type": "pointer_cast"
+    }
+  ]
 }

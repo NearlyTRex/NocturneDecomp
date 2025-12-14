@@ -1,125 +1,125 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 79, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 55, 
-    "assembly_lines": 31, 
-    "suspect_count": 4, 
+    "assembly_lines": 31,
+    "complexity_score": 79,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
-      "unknown_field", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_wsock32.c_connect", 
-      "addr": "00610f1c"
-    }, 
-    {
-      "name": "support_trisock.cpp_buildSockaddrIn_FUN_005e19d0", 
-      "addr": "005e19d0"
-    }
-  ], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005e1be6", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 18, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_24._0_4_ = auStack_24._16_4_;"
-    }, 
-    {
-      "line": 18, 
-      "match": "._16_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_24._0_4_ = auStack_24._16_4_;"
-    }
-  ], 
+      "register_param",
+      "unknown_field",
+      "badspacebase"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005e1bd0", 
-    "signature": "int support_trisock.cpp_connectSocket_FUN_005e1bd0(SOCKET * socket_handle, SNetworkAddr * dest_addr)", 
+    "address": "005e1bd0",
     "address_range": [
       [
-        "005e1bd0", 
+        "005e1bd0",
         "005e1c12"
       ]
-    ], 
-    "name": "support_trisock.cpp_connectSocket_FUN_005e1bd0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_connectSocket_FUN_005e1bd0",
+    "signature": "int support_trisock.cpp_connectSocket_FUN_005e1bd0(SOCKET * socket_handle, SNetworkAddr * dest_addr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610f1c",
+      "name": "crt_wsock32.c_connect"
+    },
+    {
+      "addr": "005e19d0",
+      "name": "support_trisock.cpp_buildSockaddrIn_FUN_005e19d0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 44, 
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SOCKET *", 
-        "size": 4, 
-        "name": "socket_handle"
-      }, 
+        "is_param": true,
+        "name": "socket_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "SOCKET *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SNetworkAddr *", 
-        "size": 4, 
-        "name": "dest_addr"
+        "is_param": true,
+        "name": "dest_addr",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005e1be6",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 18,
+      "match": "._0_4_",
+      "text": "auStack_24._0_4_ = auStack_24._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 18,
+      "match": "._16_4_",
+      "text": "auStack_24._0_4_ = auStack_24._16_4_;",
+      "type": "unknown_field"
+    }
+  ]
 }

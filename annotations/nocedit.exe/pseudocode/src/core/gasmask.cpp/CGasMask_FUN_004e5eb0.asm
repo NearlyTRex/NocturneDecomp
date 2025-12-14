@@ -21,18 +21,18 @@ section .text
     PUSH EDX                            ; 004e5eb5
     MOV ECX,dword ptr [ESP + 0xc]       ; 004e5eb6
     PUSH ECX                            ; 004e5eba
-    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 004e5ebb | void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
-        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 004e5ebb
+        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 004e5ec0
     MOV EAX,dword ptr [ESP + 0x8]       ; 004e5ec3
     PUSH 0x0                            ; 004e5ec7
     ADD EAX,0x158                       ; 004e5ec9
     PUSH EAX                            ; 004e5ece
-    PUSH 0x62dac5                       ; 004e5ecf | = "Model file (.kfm)" | s_Model_file_kfm_0062dac5 = Model file (.kfm)
+    PUSH 0x62dac5                       ; 004e5ecf | = "Model file (.kfm)"
     MOV EBX,dword ptr [ESP + 0x18]      ; 004e5ed4
     PUSH EBX                            ; 004e5ed8
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 004e5ed9 | void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 004e5ed9
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 004e5ede
     POP EBX                             ; 004e5ee1
     RET                                 ; 004e5ee2

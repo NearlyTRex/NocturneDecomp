@@ -31,16 +31,16 @@ section .text
     PUSH EDX                            ; 0052db9c
     MOV ECX,dword ptr [EAX]             ; 0052db9d
     PUSH ECX                            ; 0052db9f
-    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 0052dba0 | int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 0052dba0
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
     ADD ESP,0xc                         ; 0052dba5
     MOV EBX,dword ptr [ESP + 0x14]      ; 0052dba8
     PUSH EBX                            ; 0052dbac
     PUSH EAX                            ; 0052dbad
     MOV ESI,dword ptr [ESP + 0x14]      ; 0052dbae
     PUSH ESI                            ; 0052dbb2
-    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 0052dbb3 | void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
-        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 0052dbb3
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 0052dbb8
     POP ESI                             ; 0052dbbb
     POP EBX                             ; 0052dbbc

@@ -36,8 +36,8 @@ section .text
     PUSH ESI                            ; 0042e5b0
     ADD ECX,0x158                       ; 0042e5b1
     PUSH ECX                            ; 0042e5b7
-    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 ; 0042e5b8 | void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
-        ;   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 ; 0042e5b8
+        ;   XREF to: 0059eb50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 0042e5bd
     POP ESI                             ; 0042e5c0
     POP EBX                             ; 0042e5c1

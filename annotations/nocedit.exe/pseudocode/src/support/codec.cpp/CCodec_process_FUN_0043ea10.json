@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 110, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 82, 
-    "assembly_lines": 57, 
-    "suspect_count": 6, 
+    "assembly_lines": 57,
+    "complexity_score": 110,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fgetc_outptr_FUN_005ff245", 
-      "addr": "005ff245"
-    }, 
-    {
-      "name": "crt_stdio.c_fputc_FUN_005ff2d7", 
-      "addr": "005ff2d7"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EBP;"
-    }, 
-    {
-      "line": 17, 
-      "match": "&stack0xffffffec", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_fgetc_outptr_FUN_005ff245(input_file,&stack0xffffffec);"
-    }, 
-    {
-      "line": 18, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)&input_file->_handle + *(int *)(input_file->_ptr + 4)) != 0)"
-    }, 
-    {
-      "line": 21, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uVar1 = unaff_EBP & 0xff;"
-    }
-  ], 
+    ],
+    "total_lines": 82
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0043ea10", 
-    "signature": "int support_codec.cpp_CCodec_process_FUN_0043ea10(CCodec * this_ptr, FILE * input_file, int byte_count, FILE * output_file)", 
+    "address": "0043ea10",
     "address_range": [
       [
-        "0043ea10", 
+        "0043ea10",
         "0043ea75"
       ]
-    ], 
-    "name": "support_codec.cpp_CCodec_process_FUN_0043ea10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CCodec_process_FUN_0043ea10",
+    "signature": "int support_codec.cpp_CCodec_process_FUN_0043ea10(CCodec * this_ptr, FILE * input_file, int byte_count, FILE * output_file)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff245",
+      "name": "crt_stdio.c_fgetc_outptr_FUN_005ff245"
+    },
+    {
+      "addr": "005ff2d7",
+      "name": "crt_stdio.c_fputc_FUN_005ff2d7"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 24, 
+    "frame_size": 40,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCodec *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCodec *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "input_file"
-      }, 
+        "is_param": true,
+        "name": "input_file",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "byte_count"
-      }, 
+        "is_param": true,
+        "name": "byte_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "output_file"
+        "is_param": true,
+        "name": "output_file",
+        "offset": 16,
+        "size": 4,
+        "type": "FILE *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "text": "uint unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xffffffec",
+      "text": "crt_stdio_c_fgetc_outptr_FUN_005ff245(input_file,&stack0xffffffec);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)&input_file->_handle + *(int *)(input_file->_ptr + 4)) != 0)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "text": "uVar1 = unaff_EBP & 0xff;",
+      "type": "unaffected_reg"
+    }
+  ]
 }

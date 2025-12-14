@@ -1,199 +1,199 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 87, 
-    "pseudocode_lines": 87, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 371, 
-    "assembly_lines": 284, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "g_IntersectionConstantNegTwo", 
-      "addr": "0061a4ee", 
-      "value": "-2"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_IntersectionConstantFour", 
-      "addr": "0061a4f2", 
-      "value": "4"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_IntersectionConstantTwo", 
-      "addr": "0061a4f6", 
-      "value": "2"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004556b7", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004556b0", 
-    "signature": "int core_dcube.cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder * cylinder)", 
-    "address_range": [
-      [
-        "004556b0", 
-        "00455981"
-      ]
-    ], 
-    "name": "core_dcube.cpp_intersectXZCapsule_FUN_004556b0"
-  }, 
-  "stack_frame": {
-    "local_size": 100, 
-    "variables": [
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SIntersectXZCylinder *", 
-        "size": 4, 
-        "name": "cylinder"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 104, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 284,
+    "complexity_score": 87,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 87,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 371
+  },
   "cross_references": [
     {
-      "from_addr": "00455de4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_intersectTriangleWithXZCapsule_FUN_00455a30", 
-      "addr": "00455a30"
-    }, 
+      "addr": "00455a30",
+      "from_addr": "00455de4",
+      "name": "core_dcube.cpp_intersectTriangleWithXZCapsule_FUN_00455a30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004559b9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990", 
-      "addr": "00455990"
+      "addr": "00455990",
+      "from_addr": "004559b9",
+      "name": "core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004556b0",
+    "address_range": [
+      [
+        "004556b0",
+        "00455981"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_intersectXZCapsule_FUN_004556b0",
+    "signature": "int core_dcube.cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder * cylinder)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0061a4ee",
+      "name": "g_IntersectionConstantNegTwo",
+      "type": "float",
+      "value": "-2"
+    },
+    {
+      "addr": "0061a4f2",
+      "name": "g_IntersectionConstantFour",
+      "type": "float",
+      "value": "4"
+    },
+    {
+      "addr": "0061a4f6",
+      "name": "g_IntersectionConstantTwo",
+      "type": "float",
+      "value": "2"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 100,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "cylinder",
+        "offset": 4,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004556b7",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

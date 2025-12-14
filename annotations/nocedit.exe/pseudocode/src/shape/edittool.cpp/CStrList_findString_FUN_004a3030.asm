@@ -31,26 +31,26 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 004a303b
     XOR EBX,EBX                         ; 004a303d
     TEST EDX,EDX                        ; 004a303f
-    JLE 0x004a3060                      ; 004a3041 | LAB_004a3060
-        ;   XREF to: 004a3060 (CONDITIONAL_JUMP)
+    JLE 0x004a3060                      ; 004a3041
+        ;   XREF to: 004a3060 (CONDITIONAL_JUMP)  ; LAB_004a3060
     PUSH EDI                            ; 004a3043
         ;   Label: LAB_004a3043
     PUSH EBX                            ; 004a3044
     PUSH ESI                            ; 004a3045
-    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004a3046 | char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
-        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004a3046
+        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004a304b
     PUSH EAX                            ; 004a304e
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a304f | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a304f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a3054
     TEST EAX,EAX                        ; 004a3057
-    JZ 0x004a3069                       ; 004a3059 | LAB_004a3069
-        ;   XREF to: 004a3069 (CONDITIONAL_JUMP)
+    JZ 0x004a3069                       ; 004a3059
+        ;   XREF to: 004a3069 (CONDITIONAL_JUMP)  ; LAB_004a3069
     INC EBX                             ; 004a305b
     CMP EBX,dword ptr [ESI]             ; 004a305c
-    JL 0x004a3043                       ; 004a305e | LAB_004a3043
-        ;   XREF to: 004a3043 (CONDITIONAL_JUMP)
+    JL 0x004a3043                       ; 004a305e
+        ;   XREF to: 004a3043 (CONDITIONAL_JUMP)  ; LAB_004a3043
     MOV EAX,0xffffffff                  ; 004a3060
         ;   Label: LAB_004a3060
     POP EDI                             ; 004a3065

@@ -1,128 +1,128 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 40, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 103, 
-    "assembly_lines": 63, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
-      "addr": "00478ce0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
-      "addr": "004a9500"
-    }, 
-    {
-      "name": "core_morph.cpp_FUN_0052b310", 
-      "addr": "0052b310"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_biggs_dfm_00615aba", 
-      "addr": "00615aba", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_question_kfm_00615ac4", 
-      "addr": "00615ac4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_bigAlien_00615ad1", 
-      "addr": "00615ad1", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_igAlien_00615ad2", 
-      "addr": "00615ad2", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_gAlien_00615ad3", 
-      "addr": "00615ad3", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_Alien_00615ad4", 
-      "addr": "00615ad4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065ac08", 
-      "addr": "0065ac08", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "PTR_FUN_0065ac09+3", 
-      "addr": "0065ac0c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CBiggsVTable", 
-      "addr": "0065ac24", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004185c0", 
-    "signature": "CBiggs * core_biggs.cpp_CBiggs_ctor_FUN_004185c0(CBiggs * this_ptr)", 
-    "address_range": [
-      [
-        "004185c0", 
-        "0041867c"
-      ]
-    ], 
-    "name": "core_biggs.cpp_CBiggs_ctor_FUN_004185c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBiggs *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 63,
+    "complexity_score": 40,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 9,
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
+  },
   "cross_references": [
     {
-      "from_addr": "0041859a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_biggs.cpp_constructor_FUN_00418580", 
-      "addr": "00418580"
+      "addr": "00418580",
+      "from_addr": "0041859a",
+      "name": "core_biggs.cpp_constructor_FUN_00418580",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004185c0",
+    "address_range": [
+      [
+        "004185c0",
+        "0041867c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_biggs.cpp_CBiggs_ctor_FUN_004185c0",
+    "signature": "CBiggs * core_biggs.cpp_CBiggs_ctor_FUN_004185c0(CBiggs * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478ce0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "004a9500",
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "0052b310",
+      "name": "core_morph.cpp_FUN_0052b310"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615aba",
+      "name": "s_biggs_dfm_00615aba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615ac4",
+      "name": "s_question_kfm_00615ac4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615ad1",
+      "name": "s_bigAlien_00615ad1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615ad2",
+      "name": "s_igAlien_00615ad2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00615ad3",
+      "name": "s_gAlien_00615ad3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00615ad4",
+      "name": "s_Alien_00615ad4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065ac08",
+      "name": "DAT_0065ac08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065ac0c",
+      "name": "PTR_FUN_0065ac09+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065ac24",
+      "name": "g_CBiggsVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBiggs *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -24,13 +24,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005e3446
     PUSH EBX                            ; 005e344a
     PUSH ESI                            ; 005e344b
-    CALL core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030 ; 005e344c | void core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030(CDemonActor * this_ptr, SInteractionInfo * out_info)
-        ;   XREF to: 0040a030 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030 ; 005e344c
+        ;   XREF to: 0040a030 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030(CDemonActor * this_ptr, SInteractionInfo * out_info)
     MOV EDX,dword ptr [ESI + 0x858]     ; 005e3451
     ADD ESP,0x8                         ; 005e3457
     TEST EDX,EDX                        ; 005e345a
-    JNZ 0x005e3461                      ; 005e345c | LAB_005e3461
-        ;   XREF to: 005e3461 (CONDITIONAL_JUMP)
+    JNZ 0x005e3461                      ; 005e345c
+        ;   XREF to: 005e3461 (CONDITIONAL_JUMP)  ; LAB_005e3461
     POP ESI                             ; 005e345e
     POP EBX                             ; 005e345f
     RET                                 ; 005e3460
@@ -40,9 +40,9 @@ section .text
     MOV dword ptr [EBX + 0x10],0x40c90fdb ; 005e346d
     MOV dword ptr [EBX + 0x14],0xc0c90fdb ; 005e3474
     MOV dword ptr [EBX + 0x4],EAX       ; 005e347b
-    FLD float ptr [0x00664b70]          ; 005e347e | undefined4 DAT_00664b70
+    FLD float ptr [0x00664b70]          ; 005e347e | DAT_00664b70
     FSUB float ptr [ESI + 0x30]         ; 005e3484
-    FLD float ptr [0x00664b6c]          ; 005e3487 | undefined4 DAT_00664b6c
+    FLD float ptr [0x00664b6c]          ; 005e3487 | DAT_00664b6c
     FXCH                                ; 005e348d
     FSTP float ptr [EBX + 0x18]         ; 005e348f
     FSUB float ptr [ESI + 0x30]         ; 005e3492

@@ -28,34 +28,34 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 00538d66
     PUSH ESI                            ; 00538d6a
     PUSH EBX                            ; 00538d6b
-    CALL core_msnedit.cpp_FUN_00538f40  ; 00538d6c | undefined core_msnedit.cpp_FUN_00538f40()
-        ;   XREF to: 00538f40 (UNCONDITIONAL_CALL)
+    CALL core_msnedit.cpp_FUN_00538f40  ; 00538d6c
+        ;   XREF to: 00538f40 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_FUN_00538f40()
     ADD ESP,0x8                         ; 00538d71
     TEST EAX,EAX                        ; 00538d74
-    JGE 0x00538d9d                      ; 00538d76 | LAB_00538d9d
-        ;   XREF to: 00538d9d (CONDITIONAL_JUMP)
+    JGE 0x00538d9d                      ; 00538d76
+        ;   XREF to: 00538d9d (CONDITIONAL_JUMP)  ; LAB_00538d9d
     MOV EDX,dword ptr [EBX + 0x144]     ; 00538d78
     CMP EDX,0x4                         ; 00538d7e
-    JL 0x00538db5                       ; 00538d81 | LAB_00538db5
-        ;   XREF to: 00538db5 (CONDITIONAL_JUMP)
+    JL 0x00538db5                       ; 00538d81
+        ;   XREF to: 00538db5 (CONDITIONAL_JUMP)  ; LAB_00538db5
     PUSH 0x4                            ; 00538d83
     PUSH ESI                            ; 00538d85
-    PUSH 0x63c30c                       ; 00538d86 | = "Can't add %s to set list - too many s..." | s_Can_t_add_s_to_set_list__0063c30c = Can't add %s to set list - too many sets (%d)!
-    MOV EBX,dword ptr [0x00678a60]      ; 00538d8b | CEditorTools * g_CEditorToolsPtr
-    PUSH EBX                            ; 00538d91 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00538d92 | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    PUSH 0x63c30c                       ; 00538d86 | = "Can't add %s to set list - too many s..."
+    MOV EBX,dword ptr [0x00678a60]      ; 00538d8b | g_CEditorToolsPtr
+    PUSH EBX                            ; 00538d91 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00538d92
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00538d97
     POP ESI                             ; 00538d9a
     POP EBX                             ; 00538d9b
     RET                                 ; 00538d9c
     PUSH ESI                            ; 00538d9d
         ;   Label: LAB_00538d9d
-    PUSH 0x63c2c6                       ; 00538d9e | = "I'm not going to add %s into the set ..." | s_I_m_not_going_to_add_s_i_0063c2c6 = I'm not going to add %s into the set list because it's already there!
-    MOV ESI,dword ptr [0x00678a60]      ; 00538da3 | CEditorTools * g_CEditorToolsPtr
-    PUSH ESI                            ; 00538da9 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00538daa | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    PUSH 0x63c2c6                       ; 00538d9e | = "I'm not going to add %s into the set ..."
+    MOV ESI,dword ptr [0x00678a60]      ; 00538da3 | g_CEditorToolsPtr
+    PUSH ESI                            ; 00538da9 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00538daa
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00538daf
     POP ESI                             ; 00538db2
     POP EBX                             ; 00538db3
@@ -71,15 +71,15 @@ section .text
         ;   Label: LAB_00538dc4
     MOV byte ptr [EDI],AL               ; 00538dc6
     CMP AL,0x0                          ; 00538dc8
-    JZ 0x00538ddc                       ; 00538dca | LAB_00538ddc
-        ;   XREF to: 00538ddc (CONDITIONAL_JUMP)
+    JZ 0x00538ddc                       ; 00538dca
+        ;   XREF to: 00538ddc (CONDITIONAL_JUMP)  ; LAB_00538ddc
     MOV AL,byte ptr [ESI + 0x1]         ; 00538dcc
     ADD ESI,0x2                         ; 00538dcf
     MOV byte ptr [EDI + 0x1],AL         ; 00538dd2
     ADD EDI,0x2                         ; 00538dd5
     CMP AL,0x0                          ; 00538dd8
-    JNZ 0x00538dc4                      ; 00538dda | LAB_00538dc4
-        ;   XREF to: 00538dc4 (CONDITIONAL_JUMP)
+    JNZ 0x00538dc4                      ; 00538dda
+        ;   XREF to: 00538dc4 (CONDITIONAL_JUMP)  ; LAB_00538dc4
     POP EDI                             ; 00538ddc
         ;   Label: LAB_00538ddc
     INC dword ptr [EBX + 0x144]         ; 00538ddd

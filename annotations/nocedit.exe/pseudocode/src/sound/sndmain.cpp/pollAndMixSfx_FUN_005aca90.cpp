@@ -54,7 +54,7 @@ sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
         return;
       }
       iVar4 = iVar4 + 4;
-    } while (SBORROW /* signed borrow */4(iVar4,samples_per_sec * 4) != iVar4 + samples_per_sec * -4 < 0);
+    } while (iVar4 < samples_per_sec * 4);
   }
   if (((num_channels == g_AudioBitsPerSample) && (samples_per_sec == g_AudioChannelCount)) &&
      (samples_per_block == g_AudioSampleRate)) {
@@ -136,7 +136,7 @@ sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
           mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff70._12_4_;
           mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff70._16_4_;
           mix_buffer.channel_buffers[6] = in_stack_ffffff88;
-          mix_buffer.channel_buffers[7] = (float *)in_stack_ffffff8c;
+          mix_buffer.channel_buffers[7] = in_stack_ffffff8c;
           mix_buffer.num_output_samples = uVar12;
           mix_buffer.num_channels = (int)pCVar13;
           mix_buffer.output_sample_rate = (int)fVar14;

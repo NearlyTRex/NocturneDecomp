@@ -30,48 +30,48 @@
 
 section .text
 
-    CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 00403260 | void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
+    CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 00403260
+        ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
         ;   Label: engine_2d.c_clearInputAndWait_FUN_00403260
-        ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)
-    CALL wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0 ; 00403265 | void wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0()
-        ;   XREF to: 005f30c0 (UNCONDITIONAL_CALL)
+    CALL wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0 ; 00403265
+        ;   XREF to: 005f30c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0()
     XOR EAX,EAX                         ; 0040326a
     INC EAX                             ; 0040326c
         ;   Label: LAB_0040326c
     XOR DL,DL                           ; 0040326d
-    MOV byte ptr [EAX + 0x2d03e97],DL   ; 0040326f | char[256] g_KeyboardState
+    MOV byte ptr [EAX + 0x2d03e97],DL   ; 0040326f | g_KeyboardState | CHAR_ARRAY_02d03e99
     CMP EAX,0x258                       ; 00403275
-    JL 0x0040326c                       ; 0040327a | LAB_0040326c
-        ;   XREF to: 0040326c (CONDITIONAL_JUMP)
+    JL 0x0040326c                       ; 0040327a
+        ;   XREF to: 0040326c (CONDITIONAL_JUMP)  ; LAB_0040326c
     PUSH EBX                            ; 0040327c
-    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0040327d | int wincore_winrun.cpp_getTime_FUN_005f2dc0()
-        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0040327d
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
     MOV EBX,EAX                         ; 00403282
     SAR EBX,0x10                        ; 00403284
-    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 00403287 | int wincore_winrun.cpp_getTime_FUN_005f2dc0()
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 00403287
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
         ;   Label: LAB_00403287
-        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)
     SAR EAX,0x10                        ; 0040328c
     CMP EBX,EAX                         ; 0040328f
-    JZ 0x004032b1                       ; 00403291 | LAB_004032b1
-        ;   XREF to: 004032b1 (CONDITIONAL_JUMP)
-    CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 00403293 | void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
-        ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)
-    CALL wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0 ; 00403298 | void wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0()
-        ;   XREF to: 005f30c0 (UNCONDITIONAL_CALL)
+    JZ 0x004032b1                       ; 00403291
+        ;   XREF to: 004032b1 (CONDITIONAL_JUMP)  ; LAB_004032b1
+    CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 00403293
+        ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
+    CALL wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0 ; 00403298
+        ;   XREF to: 005f30c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0()
     XOR EAX,EAX                         ; 0040329d
     POP EBX                             ; 0040329f
     INC EAX                             ; 004032a0
         ;   Label: LAB_004032a0
     XOR DH,DH                           ; 004032a1
-    MOV byte ptr [EAX + 0x2d03e97],DH   ; 004032a3 | char[256] g_KeyboardState
+    MOV byte ptr [EAX + 0x2d03e97],DH   ; 004032a3 | g_KeyboardState | CHAR_ARRAY_02d03e99
     CMP EAX,0x258                       ; 004032a9
-    JL 0x004032a0                       ; 004032ae | LAB_004032a0
-        ;   XREF to: 004032a0 (CONDITIONAL_JUMP)
+    JL 0x004032a0                       ; 004032ae
+        ;   XREF to: 004032a0 (CONDITIONAL_JUMP)  ; LAB_004032a0
     RET                                 ; 004032b0
-    CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 004032b1 | void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
+    CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 004032b1
+        ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
         ;   Label: LAB_004032b1
-        ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)
-    JMP 0x00403287                      ; 004032b6 | LAB_00403287
-        ;   XREF to: 00403287 (UNCONDITIONAL_JUMP)
+    JMP 0x00403287                      ; 004032b6
+        ;   XREF to: 00403287 (UNCONDITIONAL_JUMP)  ; LAB_00403287
 

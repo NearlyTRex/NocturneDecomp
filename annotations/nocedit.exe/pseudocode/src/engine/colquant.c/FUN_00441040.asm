@@ -57,11 +57,11 @@ section .text
     FLD ST2                             ; 004410aa
     FMULP ST3                           ; 004410ac
     FXCH ST2                            ; 004410ae
-    FMUL double ptr [0x00618da1]        ; 004410b0 | double DOUBLE_00618da1
+    FMUL double ptr [0x00618da1]        ; 004410b0 | DOUBLE_00618da1
     FLD ST1                             ; 004410b6
     FMULP ST2                           ; 004410b8
     FXCH                                ; 004410ba
-    FMUL double ptr [0x00618da9]        ; 004410bc | double DOUBLE_00618da9
+    FMUL double ptr [0x00618da9]        ; 004410bc | DOUBLE_00618da9
     AND EDX,0xff                        ; 004410c2
     MOV EAX,dword ptr [EAX + 0x400c]    ; 004410c8
     FADDP                               ; 004410ce
@@ -70,12 +70,12 @@ section .text
     FMULP ST2                           ; 004410d5
     SUB EDX,EAX                         ; 004410d7
     FXCH                                ; 004410d9
-    FMUL double ptr [0x00618db1]        ; 004410db | double DOUBLE_00618db1
+    FMUL double ptr [0x00618db1]        ; 004410db | DOUBLE_00618db1
     MOV dword ptr [ESP + 0x2c],EDX      ; 004410e1
     FADDP                               ; 004410e5
     FILD dword ptr [ESP + 0x2c]         ; 004410e7
     FMUL ST0                            ; 004410eb
-    FMUL double ptr [0x00618db9]        ; 004410ed | double DOUBLE_00618db9
+    FMUL double ptr [0x00618db9]        ; 004410ed | DOUBLE_00618db9
     FADDP                               ; 004410f3
     FSTP double ptr [ESP + 0x10]        ; 004410f5
     MOV EAX,dword ptr [ESP + 0x10]      ; 004410f9

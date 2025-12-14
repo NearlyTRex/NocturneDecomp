@@ -1,207 +1,207 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 117, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 5, 
-    "global_count": 1, 
-    "total_lines": 112, 
-    "assembly_lines": 85, 
-    "suspect_count": 7, 
+    "assembly_lines": 85,
+    "complexity_score": 117,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 27,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
-      "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580", 
-      "addr": "005a8580"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0", 
-      "addr": "005a80e0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00", 
-      "addr": "005a5d00"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CSoundDevice*", 
-      "name": "g_CSoundDevicePtr", 
-      "addr": "03f69268", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005a9729", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffffe0;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);"
-    }, 
-    {
-      "line": 23, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),sfx_handle,"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffe0);"
-    }, 
-    {
-      "line": 27, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uStack_14 = SUB84 /* extract 2-byte value */(dVar2,0);"
-    }, 
-    {
-      "line": 29, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "return (double)CONCAT44 /* combine 2-byte values */(uStack_14,local_18);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a9720", 
-    "signature": "double sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle, uint output_format)", 
-    "address_range": [
-      [
-        "005a9720", 
-        "005a97d8"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "sfx_handle"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "output_format"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 56, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "sub_artifact",
+      "stack_param",
+      "pointer_cast",
+      "concat_artifact"
+    ],
+    "total_lines": 112
+  },
   "cross_references": [
     {
-      "from_addr": "004b0df3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_event.cpp_CEventList_FUN_004b0db0", 
-      "addr": "004b0db0"
-    }, 
+      "addr": "004b0db0",
+      "from_addr": "004b0df3",
+      "name": "core_event.cpp_CEventList_FUN_004b0db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053ebc9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053eb40", 
-      "addr": "0053eb40"
-    }, 
+      "addr": "0053eb40",
+      "from_addr": "0053ebc9",
+      "name": "core_msnedit.cpp_FUN_0053eb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005de43f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360", 
-      "addr": "005de360"
-    }, 
+      "addr": "005de360",
+      "from_addr": "005de43f",
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e28bb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_CTurret_process_FUN_005e2430", 
-      "addr": "005e2430"
-    }, 
+      "addr": "005e2430",
+      "from_addr": "005e28bb",
+      "name": "core_turret.cpp_CTurret_process_FUN_005e2430",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ad560", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0", 
-      "addr": "005ad3b0"
+      "addr": "005ad3b0",
+      "from_addr": "005ad560",
+      "name": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a9720",
+    "address_range": [
+      [
+        "005a9720",
+        "005a97d8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720",
+    "signature": "double sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle, uint output_format)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a8580",
+      "name": "sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580"
+    },
+    {
+      "addr": "005a80e0",
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0"
+    },
+    {
+      "addr": "005a5d00",
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f69268",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "output_format",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005a9729",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "uint in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_ffffffe0",
+      "text": "uint in_stack_ffffffe0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(double *)((int)",
+      "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),sfx_handle,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_ffffffe0",
+      "text": "in_stack_ffffffe0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 27,
+      "match": "SUB84",
+      "text": "uStack_14 = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 29,
+      "match": "CONCAT44",
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(uStack_14,local_18);",
+      "type": "concat_artifact"
     }
   ]
 }

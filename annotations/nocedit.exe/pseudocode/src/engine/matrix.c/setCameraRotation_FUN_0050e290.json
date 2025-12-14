@@ -1,120 +1,120 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 25, 
-    "assembly_lines": 14, 
-    "suspect_count": 3, 
+    "assembly_lines": 14,
+    "complexity_score": 46,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_matrix.c_buildRotationMatrix_FUN_0050c920", 
-      "addr": "0050c920"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_CameraRotationPitch", 
-      "addr": "02d052d0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationYaw", 
-      "addr": "02d052d4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationRoll", 
-      "addr": "02d052d8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000006", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "ushort in_stack_00000006;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_0000000a", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "ushort in_stack_0000000a;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_0000000e", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "ushort in_stack_0000000e;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050e290", 
-    "signature": "void engine_matrix.c_setCameraRotation_FUN_0050e290(ushort pitch, ushort yaw, ushort roll)", 
-    "address_range": [
-      [
-        "0050e290", 
-        "0050e2b8"
-      ]
-    ], 
-    "name": "engine_matrix.c_setCameraRotation_FUN_0050e290"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ushort", 
-        "size": 2, 
-        "name": "pitch"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "ushort", 
-        "size": 2, 
-        "name": "yaw"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "ushort", 
-        "size": 2, 
-        "name": "roll"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 14, 
-    "param_offset": 4, 
-    "param_size": 10
-  }, 
+    ],
+    "total_lines": 25
+  },
   "cross_references": [
     {
-      "from_addr": "0048c1c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0", 
-      "addr": "0048c1b0"
-    }, 
+      "addr": "0048c1b0",
+      "from_addr": "0048c1c0",
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045f439", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
-      "addr": "0045f1d0"
+      "addr": "0045f1d0",
+      "from_addr": "0045f439",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050e290",
+    "address_range": [
+      [
+        "0050e290",
+        "0050e2b8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_setCameraRotation_FUN_0050e290",
+    "signature": "void engine_matrix.c_setCameraRotation_FUN_0050e290(ushort pitch, ushort yaw, ushort roll)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050c920",
+      "name": "engine_matrix.c_buildRotationMatrix_FUN_0050c920"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d052d0",
+      "name": "g_CameraRotationPitch",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d4",
+      "name": "g_CameraRotationYaw",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d8",
+      "name": "g_CameraRotationRoll",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 14,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 10,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "pitch",
+        "offset": 4,
+        "size": 2,
+        "type": "ushort"
+      },
+      {
+        "is_param": true,
+        "name": "yaw",
+        "offset": 8,
+        "size": 2,
+        "type": "ushort"
+      },
+      {
+        "is_param": true,
+        "name": "roll",
+        "offset": 12,
+        "size": 2,
+        "type": "ushort"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000006",
+      "text": "ushort in_stack_00000006;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000a",
+      "text": "ushort in_stack_0000000a;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000e",
+      "text": "ushort in_stack_0000000e;",
+      "type": "stack_param"
     }
   ]
 }

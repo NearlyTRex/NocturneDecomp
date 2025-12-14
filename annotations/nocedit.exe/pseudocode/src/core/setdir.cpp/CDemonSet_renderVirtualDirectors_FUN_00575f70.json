@@ -1,404 +1,404 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 377, 
-    "pseudocode_lines": 92, 
-    "cross_reference_count": 1, 
-    "global_count": 12, 
-    "total_lines": 315, 
-    "assembly_lines": 223, 
-    "suspect_count": 26, 
+    "assembly_lines": 223,
+    "complexity_score": 377,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 12,
+    "pseudocode_lines": 92,
+    "suspect_count": 26,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_setdir.cpp_CZThumb_render_FUN_00574f20", 
-      "addr": "00574f20"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_g_00646588", 
-      "addr": "00646588", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "float[250]", 
-      "name": "g_VDCameraScores", 
-      "addr": "03346d20", 
-      "value": null
-    }, 
-    {
-      "type": "CZThumb[1500]", 
-      "name": "g_CZThumbPool", 
-      "addr": "03347108", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0334710c", 
-      "addr": "0334710c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03347130", 
-      "addr": "03347130", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03347158", 
-      "addr": "03347158", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03347180", 
-      "addr": "03347180", 
-      "value": null
-    }, 
-    {
-      "type": "int[250]", 
-      "name": "g_VDCameraSortIndices", 
-      "addr": "033648f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_033648fc", 
-      "addr": "033648fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03364900", 
-      "addr": "03364900", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 15, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 23, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)g_VDCameraSortIndices + iVar5) = iVar2;"
-    }, 
-    {
-      "line": 34, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + local_28)] <"
-    }, 
-    {
-      "line": 35, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + iVar3)]) {"
-    }, 
-    {
-      "line": 36, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar1 = *(uint *)((int)g_VDCameraSortIndices + local_28);"
-    }, 
-    {
-      "line": 37, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_VDCameraSortIndices + local_28) ="
-    }, 
-    {
-      "line": 38, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar3);"
-    }, 
-    {
-      "line": 39, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar3) = uVar1;"
-    }, 
-    {
-      "line": 67, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "core_setdir_cpp_CZThumb_render_FUN_00574f20((CZThumb *)(unaff_EBP + 0x50),iVar5,iVar3);"
-    }, 
-    {
-      "line": 69, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "core_setdir_cpp_CZThumb_render_FUN_00574f20((CZThumb *)(unaff_EDI + 0x28),iVar5,iVar3);"
-    }, 
-    {
-      "line": 74, 
-      "match": "&stack0xffffff78", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffff78,\"%g\",(double)g_VDCameraScores[unaff_EBX]);"
-    }, 
-    {
-      "line": 74, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(&stack0xffffff78,\"%g\",(double)g_VDCameraScores[unaff_EBX]);"
-    }, 
-    {
-      "line": 76, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffff7c,(int)(g_CZThumbPool + iVar2),"
-    }, 
-    {
-      "line": 78, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0((char *)((int)this_ptr * 0x1a4),this_ptr_00,unaff_ESI);"
-    }, 
-    {
-      "line": 78, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0((char *)((int)this_ptr * 0x1a4),this_ptr_00,unaff_ESI);"
-    }, 
-    {
-      "line": 80, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar2 = unaff_ESI;"
-    }, 
-    {
-      "line": 84, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = unaff_EBX + 0x58;"
-    }, 
-    {
-      "line": 84, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = unaff_EBX + 0x58;"
-    }, 
-    {
-      "line": 85, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar2 = unaff_ESI + 0x58;"
-    }, 
-    {
-      "line": 86, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (g_WindowHeight < unaff_ESI) {"
-    }, 
-    {
-      "line": 91, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = iVar2;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00575f70", 
-    "signature": "void core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(CDemonSet * this_ptr)", 
-    "address_range": [
-      [
-        "00575f70", 
-        "005761f9"
-      ]
-    ], 
-    "name": "core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70"
-  }, 
-  "stack_frame": {
-    "local_size": 164, 
-    "variables": [
-      {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_a0"
-      }, 
-      {
-        "offset": -152, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_98"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 168, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 315
+  },
   "cross_references": [
     {
-      "from_addr": "0056c7ae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
+      "addr": "0056c1a0",
+      "from_addr": "0056c7ae",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00575f70",
+    "address_range": [
+      [
+        "00575f70",
+        "005761f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70",
+    "signature": "void core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70(CDemonSet * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00574f20",
+      "name": "core_setdir.cpp_CZThumb_render_FUN_00574f20"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00646588",
+      "name": "s_g_00646588",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "03346d20",
+      "name": "g_VDCameraScores",
+      "type": "float[250]",
+      "value": null
+    },
+    {
+      "addr": "03347108",
+      "name": "g_CZThumbPool",
+      "type": "CZThumb[1500]",
+      "value": null
+    },
+    {
+      "addr": "0334710c",
+      "name": "DAT_0334710c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03347130",
+      "name": "DAT_03347130",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03347158",
+      "name": "DAT_03347158",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03347180",
+      "name": "DAT_03347180",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "033648f8",
+      "name": "g_VDCameraSortIndices",
+      "type": "int[250]",
+      "value": null
+    },
+    {
+      "addr": "033648fc",
+      "name": "DAT_033648fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03364900",
+      "name": "DAT_03364900",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 168,
+    "local_size": 164,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_VDCameraSortIndices + iVar5) = iVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(int *)((int)",
+      "text": "if (g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + local_28)] <",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(int *)((int)",
+      "text": "g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + iVar3)]) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "uVar1 = *(uint *)((int)g_VDCameraSortIndices + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_VDCameraSortIndices + local_28) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_VDCameraSortIndices + iVar3) = uVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 67,
+      "match": "unaff_EBP",
+      "text": "core_setdir_cpp_CZThumb_render_FUN_00574f20((CZThumb *)(unaff_EBP + 0x50),iVar5,iVar3);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EDI",
+      "text": "core_setdir_cpp_CZThumb_render_FUN_00574f20((CZThumb *)(unaff_EDI + 0x28),iVar5,iVar3);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 74,
+      "match": "&stack0xffffff78",
+      "text": "(&stack0xffffff78,\"%g\",(double)g_VDCameraScores[unaff_EBX]);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EBX",
+      "text": "(&stack0xffffff78,\"%g\",(double)g_VDCameraScores[unaff_EBX]);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 76,
+      "match": "&stack0xffffff7c",
+      "text": "(&stack0xffffff7c,(int)(g_CZThumbPool + iVar2),",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 78,
+      "match": "unaff_ESI",
+      "text": "engine_2d_c_drawText_FUN_00401fd0((char *)((int)this_ptr * 0x1a4),this_ptr_00,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(char *)((int)",
+      "text": "engine_2d_c_drawText_FUN_00401fd0((char *)((int)this_ptr * 0x1a4),this_ptr_00,unaff_ESI);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 80,
+      "match": "unaff_ESI",
+      "text": "iVar2 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 84,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = unaff_EBX + 0x58;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 84,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = unaff_EBX + 0x58;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 85,
+      "match": "unaff_ESI",
+      "text": "iVar2 = unaff_ESI + 0x58;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 86,
+      "match": "unaff_ESI",
+      "text": "if (g_WindowHeight < unaff_ESI) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 91,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = iVar2;",
+      "type": "unaffected_reg"
     }
   ]
 }

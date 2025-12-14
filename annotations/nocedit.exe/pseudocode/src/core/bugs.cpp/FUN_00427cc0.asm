@@ -19,13 +19,13 @@
 
 section .text
 
-    PUSH 0x65b750                       ; 00427cc0 | WatcomTypeInfo g_SBugTypeInfo
+    PUSH 0x65b750                       ; 00427cc0 | g_SBugTypeInfo
         ;   Label: core_bugs.cpp_FUN_00427cc0
     PUSH 0x190                          ; 00427cc5
     MOV EDX,dword ptr [ESP + 0xc]       ; 00427cca
     PUSH EDX                            ; 00427cce
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 00427ccf | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 00427ccf
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00427cd4
     RET                                 ; 00427cd7
 

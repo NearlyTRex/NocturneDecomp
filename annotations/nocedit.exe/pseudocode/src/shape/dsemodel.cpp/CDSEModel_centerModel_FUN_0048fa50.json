@@ -1,168 +1,168 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 114, 
-    "pseudocode_lines": 64, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 281, 
-    "assembly_lines": 217, 
-    "suspect_count": 4, 
+    "assembly_lines": 217,
+    "complexity_score": 114,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 64,
+    "suspect_count": 4,
     "suspect_types": [
-      "sub_artifact", 
+      "sub_artifact",
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_CDSECenteringFactor", 
-      "addr": "00622502", 
-      "value": "0.5"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 42, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "local_34 = SUB84 /* extract 2-byte value */(dVar3,0);"
-    }, 
-    {
-      "line": 47, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if (dVar3 < (double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)) {"
-    }, 
-    {
-      "line": 63, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((dVar6 - (double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)) * 0.5 +"
-    }, 
-    {
-      "line": 64, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048fa50", 
-    "signature": "void shape_dsemodel.cpp_CDSEModel_centerModel_FUN_0048fa50(CDSEModel * this_ptr)", 
-    "address_range": [
-      [
-        "0048fa50", 
-        "0048fcb5"
-      ]
-    ], 
-    "name": "shape_dsemodel.cpp_CDSEModel_centerModel_FUN_0048fa50"
-  }, 
-  "stack_frame": {
-    "local_size": 104, 
-    "variables": [
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDSEModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 108, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 281
+  },
   "cross_references": [
     {
-      "from_addr": "0048ffb3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0", 
-      "addr": "0048fed0"
+      "addr": "0048fed0",
+      "from_addr": "0048ffb3",
+      "name": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048fa50",
+    "address_range": [
+      [
+        "0048fa50",
+        "0048fcb5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_dsemodel.cpp_CDSEModel_centerModel_FUN_0048fa50",
+    "signature": "void shape_dsemodel.cpp_CDSEModel_centerModel_FUN_0048fa50(CDSEModel * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00622502",
+      "name": "g_CDSECenteringFactor",
+      "type": "double",
+      "value": "0.5"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 108,
+    "local_size": 104,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDSEModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 42,
+      "match": "SUB84",
+      "text": "local_34 = SUB84 /* extract 2-byte value */(dVar3,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 47,
+      "match": "CONCAT44",
+      "text": "if (dVar3 < (double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 63,
+      "match": "CONCAT44",
+      "text": "((dVar6 - (double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)) * 0.5 +",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 64,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_48,local_4c)));",
+      "type": "concat_artifact"
     }
   ]
 }

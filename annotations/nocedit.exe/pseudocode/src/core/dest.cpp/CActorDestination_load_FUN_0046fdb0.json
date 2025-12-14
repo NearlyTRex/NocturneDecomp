@@ -1,203 +1,203 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 180, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 96, 
-    "assembly_lines": 66, 
-    "suspect_count": 13, 
+    "assembly_lines": 66,
+    "complexity_score": 180,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 30,
+    "suspect_count": 13,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
-      "addr": "0040c1c0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeActor_FUN_0040b870", 
-      "addr": "0040b870"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
-      "addr": "0040b7f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
-      "addr": "0040b5c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_whoGoesHere_0061e3f6", 
-      "addr": "0061e3f6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_whatEvent_0061e402", 
-      "addr": "0061e402", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_destActor_0061e40c", 
-      "addr": "0061e40c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_destClass_0061e416", 
-      "addr": "0061e416", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_persistantEventFlag_0061e420", 
-      "addr": "0061e420", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CActorDestinationClassVersion", 
-      "addr": "0066ef3c", 
-      "value": "0x4"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);"
-    }, 
-    {
-      "line": 13, 
-      "match": "&stack0xffffff00", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff00,\"whoGoesHere\");"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].actor_name[0] = '\\0';"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].actor_name[1] = '\\0';"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].actor_name[2] = '\\0';"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].actor_name[3] = '\\0';"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((char **)&in_stack_00000004[1].orient,\"whatEvent\");"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_serializeActor_FUN_0040b870(in_stack_00000004 + 1,\"destActor\");"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((char **)(in_stack_00000004[1].actor_name + 4),\"destClass\");"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((int *)(in_stack_00000004[1].create_event + 0x1c),\"persistantEventFlag\");"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0046fdb0", 
-    "signature": "undefined core_dest.cpp_CActorDestination_load_FUN_0046fdb0()", 
-    "address_range": [
-      [
-        "0046fdb0", 
-        "0046fe6c"
-      ]
-    ], 
-    "name": "core_dest.cpp_CActorDestination_load_FUN_0046fdb0"
-  }, 
-  "stack_frame": {
-    "local_size": 264, 
-    "variables": [
-      {
-        "offset": -260, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_104"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 264, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 96
+  },
   "cross_references": [
     {
-      "from_addr": "004bede6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_filmreel.cpp_serialize_FUN_004bede0", 
-      "addr": "004bede0"
+      "addr": "004bede0",
+      "from_addr": "004bede6",
+      "name": "core_filmreel.cpp_serialize_FUN_004bede0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046fdb0",
+    "address_range": [
+      [
+        "0046fdb0",
+        "0046fe6c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_dest.cpp_CActorDestination_load_FUN_0046fdb0",
+    "signature": "undefined core_dest.cpp_CActorDestination_load_FUN_0046fdb0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c1c0",
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
+    },
+    {
+      "addr": "0040b870",
+      "name": "core_actor.cpp_serializeActor_FUN_0040b870"
+    },
+    {
+      "addr": "0040b7f0",
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b5c0",
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061e3f6",
+      "name": "s_whoGoesHere_0061e3f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e402",
+      "name": "s_whatEvent_0061e402",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e40c",
+      "name": "s_destActor_0061e40c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e416",
+      "name": "s_destClass_0061e416",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e420",
+      "name": "s_persistantEventFlag_0061e420",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066ef3c",
+      "name": "g_CActorDestinationClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 264,
+    "local_size": 264,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 13,
+      "match": "&stack0xffffff00",
+      "text": "core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff00,\"whoGoesHere\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].actor_name[0] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].actor_name[1] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].actor_name[2] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].actor_name[3] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "((char **)&in_stack_00000004[1].orient,\"whatEvent\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_serializeActor_FUN_0040b870(in_stack_00000004 + 1,\"destActor\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "text": "((char **)(in_stack_00000004[1].actor_name + 4),\"destClass\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000004",
+      "text": "((int *)(in_stack_00000004[1].create_event + 0x1c),\"persistantEventFlag\");",
+      "type": "stack_param"
     }
   ]
 }

@@ -25,16 +25,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005a6401
     MOV EDX,dword ptr [EBX + 0x120]     ; 005a6405
     TEST EDX,EDX                        ; 005a640b
-    JNZ 0x005a6411                      ; 005a640d | LAB_005a6411
-        ;   XREF to: 005a6411 (CONDITIONAL_JUMP)
+    JNZ 0x005a6411                      ; 005a640d
+        ;   XREF to: 005a6411 (CONDITIONAL_JUMP)  ; LAB_005a6411
     POP EBX                             ; 005a640f
     RET                                 ; 005a6410
     PUSH 0x744                          ; 005a6411
         ;   Label: LAB_005a6411
-    PUSH 0x64fd42                       ; 005a6416 | = "..\\sound\\sndmain.cpp" | s_sound_sndmain_cpp_0064fd42 = ..\sound\sndmain.cpp
+    PUSH 0x64fd42                       ; 005a6416 | = "..\\sound\\sndmain.cpp"
     PUSH EDX                            ; 005a641b
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 005a641c | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 005a641c
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 005a6421
     MOV dword ptr [EBX + 0x120],0x0     ; 005a6424
     POP EBX                             ; 005a642e

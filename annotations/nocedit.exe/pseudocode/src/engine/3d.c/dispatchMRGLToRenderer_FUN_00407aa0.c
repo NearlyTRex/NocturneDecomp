@@ -67,7 +67,7 @@ LAB_00407c82:
       }
       else {
         if (bVar3 != 0xd) goto LAB_00407c82;
-        if ((g_RenderFaceCount != 0) && (g_RenderFaceCount != 0)) {
+        if (g_RenderFaceCount != 0) {
           if (g_UseExternalRenderer == 0) {
             iVar4 = 0;
             if (0 < g_RenderFaceCount) {

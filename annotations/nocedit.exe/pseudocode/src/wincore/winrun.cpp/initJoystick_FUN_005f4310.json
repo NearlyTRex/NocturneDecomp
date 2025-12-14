@@ -1,135 +1,135 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 69, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 1, 
-    "global_count": 10, 
-    "total_lines": 68, 
-    "assembly_lines": 44, 
-    "suspect_count": 3, 
+    "assembly_lines": 44,
+    "complexity_score": 69,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 10,
+    "pseudocode_lines": 24,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "joyGetDevCapsA*", 
-      "name": "joyGetDevCapsA", 
-      "addr": "00611404", 
-      "value": "0021181c"
-    }, 
-    {
-      "type": "GetModuleHandleA*", 
-      "name": "GetModuleHandleA", 
-      "addr": "006115b4", 
-      "value": "00211f6e"
-    }, 
-    {
-      "type": "GetProcAddress*", 
-      "name": "GetProcAddress", 
-      "addr": "006115bc", 
-      "value": "00211f8e"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_winmm_dll_006581c7", 
-      "addr": "006581c7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_joyGetPosEx_006581d1", 
-      "addr": "006581d1", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_JoystickNumButtons", 
-      "addr": "006793ac", 
-      "value": "0x4"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_JoystickPresent", 
-      "addr": "02d0520c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_JoystickHasPOV", 
-      "addr": "02d0521c", 
-      "value": null
-    }, 
-    {
-      "type": "FARPROC", 
-      "name": "g_joyGetPosEx", 
-      "addr": "03f994f4", 
-      "value": null
-    }, 
-    {
-      "type": "HMODULE", 
-      "name": "g_WinmmDll", 
-      "addr": "03f994f8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "&stack0xfffffe80", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "MVar1 = (*joyGetDevCapsA)(0,(LPJOYCAPSA)&stack0xfffffe80,0x194);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f4310", 
-    "signature": "void wincore_winrun.cpp_initJoystick_FUN_005f4310(void)", 
-    "address_range": [
-      [
-        "005f4310", 
-        "005f437f"
-      ], 
-      [
-        "005f4381", 
-        "005f439d"
-      ]
-    ], 
-    "name": "wincore_winrun.cpp_initJoystick_FUN_005f4310"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 68
+  },
   "cross_references": [
     {
-      "from_addr": "00507bd5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
+      "addr": "00507a60",
+      "from_addr": "00507bd5",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005f4310",
+    "address_range": [
+      [
+        "005f4310",
+        "005f437f"
+      ],
+      [
+        "005f4381",
+        "005f439d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_initJoystick_FUN_005f4310",
+    "signature": "void wincore_winrun.cpp_initJoystick_FUN_005f4310(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00611404",
+      "name": "joyGetDevCapsA",
+      "type": "joyGetDevCapsA*",
+      "value": "0021181c"
+    },
+    {
+      "addr": "006115b4",
+      "name": "GetModuleHandleA",
+      "type": "GetModuleHandleA*",
+      "value": "00211f6e"
+    },
+    {
+      "addr": "006115bc",
+      "name": "GetProcAddress",
+      "type": "GetProcAddress*",
+      "value": "00211f8e"
+    },
+    {
+      "addr": "006581c7",
+      "name": "s_winmm_dll_006581c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006581d1",
+      "name": "s_joyGetPosEx_006581d1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006793ac",
+      "name": "g_JoystickNumButtons",
+      "type": "int",
+      "value": "0x4"
+    },
+    {
+      "addr": "02d0520c",
+      "name": "g_JoystickPresent",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0521c",
+      "name": "g_JoystickHasPOV",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f994f4",
+      "name": "g_joyGetPosEx",
+      "type": "FARPROC",
+      "value": null
+    },
+    {
+      "addr": "03f994f8",
+      "name": "g_WinmmDll",
+      "type": "HMODULE",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 14,
+      "match": "&stack0xfffffe80",
+      "text": "MVar1 = (*joyGetDevCapsA)(0,(LPJOYCAPSA)&stack0xfffffe80,0x194);",
+      "type": "stack_ref"
     }
   ]
 }

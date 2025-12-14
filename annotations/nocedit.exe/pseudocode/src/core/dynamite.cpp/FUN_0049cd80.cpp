@@ -11,8 +11,7 @@ void core_dynamite_cpp_FUN_0049cd80(void)
 {
   CDynamite *this_ptr;
   
-  this_ptr = (CDynamite *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x58c,"..\\core\\dynamite.cpp",0x21);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x58c,"..\\core\\dynamite.cpp",0x21);
   if (this_ptr == (CDynamite *)0x0) {
     return;
   }

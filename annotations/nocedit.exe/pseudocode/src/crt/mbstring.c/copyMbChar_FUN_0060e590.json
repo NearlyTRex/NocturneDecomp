@@ -1,78 +1,78 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 35, 
-    "assembly_lines": 25, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_MultibyteLocaleActive", 
-      "addr": "03f9c020", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_LeadByteTable", 
-      "addr": "03f9c031", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060e590", 
-    "signature": "void crt_mbstring.c_copyMbChar_FUN_0060e590(char * dest, char * src)", 
-    "address_range": [
-      [
-        "0060e590", 
-        "0060e5c8"
-      ]
-    ], 
-    "name": "crt_mbstring.c_copyMbChar_FUN_0060e590"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "dest"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "src"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 25,
+    "complexity_score": 10,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
+  },
   "cross_references": [
     {
-      "from_addr": "0060c7c4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_compare_mb_chars_ci_FUN_0060c790", 
-      "addr": "0060c790"
-    }, 
+      "addr": "0060c790",
+      "from_addr": "0060c7c4",
+      "name": "crt_string.c_compare_mb_chars_ci_FUN_0060c790",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060e61a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0", 
-      "addr": "0060e5d0"
+      "addr": "0060e5d0",
+      "from_addr": "0060e61a",
+      "name": "crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060e590",
+    "address_range": [
+      [
+        "0060e590",
+        "0060e5c8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_mbstring.c_copyMbChar_FUN_0060e590",
+    "signature": "void crt_mbstring.c_copyMbChar_FUN_0060e590(char * dest, char * src)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f9c020",
+      "name": "g_MultibyteLocaleActive",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9c031",
+      "name": "g_LeadByteTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

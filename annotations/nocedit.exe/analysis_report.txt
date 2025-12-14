@@ -1,43 +1,42 @@
 ================================================================================
 NOCTURNE DECOMPILATION ANALYSIS REPORT
-Generated: 2025-12-08 00:53:08
+Generated: 2025-12-14 11:11:09
 ================================================================================
 
 SUMMARY
 ----------------------------------------
 Total functions: 7154
-Functions with zero suspects: 2962 (41.4%)
-Functions with suspects: 4192 (58.6%)
+Functions with zero suspects: 2965 (41.4%)
+Functions with suspects: 4189 (58.6%)
 
-Total suspect patterns: 61641
-Average suspects per function: 8.00
+Total suspect patterns: 61495
+Average suspects per function: 8.60
 
 Pseudocode lines:
-  Min: 1, Max: 3058, Average: 47.0
+  Min: 1, Max: 3059, Average: 47.9
 
-Average complexity score: 141.0
+Average complexity score: 141.1
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  stack_param               37740
-  pointer_cast              5200
-  stack_ref                 4206
-  unknown_field             3030
+  stack_param               37707
+  pointer_cast              5195
+  stack_ref                 4205
+  unknown_field             3024
   unaffected_reg            2776
-  concat_artifact           1902
+  concat_artifact           1901
   register_param            1835
   badspacebase              1624
-  extra_output              1442
+  extra_output              1440
   suspect_float             932
   negative_offset           416
   sub_artifact              284
   undefined_type            125
-  sborrow_artifact          124
+  sborrow_artifact          26
   undefined_ptr_cast        5
 
 EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)
 ----------------------------------------
-  00453a70: core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70 (1 lines)
   00536bf0: core_msnedit.cpp_FUN_00536bf0 (1 lines)
   00434650: cockpit_ckptutil.c_isLineBlendingDisabled_FUN_00434650 (4 lines)
   004317a0: cockpit_ckptutil.c_get16BitConversionFunction_FUN_004317a0 (4 lines)
@@ -87,7 +86,8 @@ EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)
   005ab270: sound_sndmain.cpp_getAudioChannelCount_FUN_005ab270 (4 lines)
   005ade30: sound_sndmain.cpp_CSfxOptions_dtor_FUN_005ade30 (4 lines)
   005abea0: sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0 (4 lines)
-  ... and 2912 more
+  005ab590: sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590 (4 lines)
+  ... and 2915 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -96,18 +96,18 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004e6600: core_ghoul.cpp_CGhoul_FUN_004e6600 (score: 4671, suspects: 359, lines: 1056)
   004f4bd0: core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 (score: 4432, suspects: 365, lines: 747)
   005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 3936, suspects: 264, lines: 1246)
-  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3918, suspects: 83, lines: 3058)
+  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3919, suspects: 83, lines: 3059)
   004d2ea0: core_gabriela.cpp_FUN_004d2ea0 (score: 3822, suspects: 302, lines: 782)
   00484410: core_dracbrid.cpp_FUN_00484410 (score: 3729, suspects: 285, lines: 849)
-  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 3625, suspects: 214, lines: 1435)
+  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 3622, suspects: 214, lines: 1432)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 3537, suspects: 257, lines: 922)
   00525840: core_mobster.cpp_FUN_00525840 (score: 3469, suspects: 277, lines: 664)
   004aacc0: core_event.cpp_CEventList_FUN_004aacc0 (score: 3256, suspects: 116, lines: 2066)
-  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 3126, suspects: 214, lines: 941)
-  004ae140: core_event.cpp_CEventList_FUN_004ae140 (score: 3091, suspects: 158, lines: 1496)
+  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 3124, suspects: 214, lines: 939)
+  004ae140: core_event.cpp_CEventList_FUN_004ae140 (score: 3092, suspects: 158, lines: 1497)
   0058c190: core_skeledit.cpp_FUN_0058c190 (score: 2928, suspects: 215, lines: 733)
   00562920: core_script.cpp_FUN_00562920 (score: 2784, suspects: 187, lines: 869)
-  0057d660: core_setedit.cpp_UserInputCreate_FUN_0057d660 (score: 2693, suspects: 219, lines: 458)
+  0057d660: core_setedit.cpp_UserInputCreate_FUN_0057d660 (score: 2673, suspects: 218, lines: 453)
   00583170: core_setedit.cpp_CDemonSet_FUN_00583170 (score: 2551, suspects: 172, lines: 791)
   004e1cb0: core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 (score: 2548, suspects: 201, lines: 508)
   0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (score: 2544, suspects: 203, lines: 464)
@@ -115,11 +115,11 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 2411, suspects: 200, lines: 386)
   0043abb0: core_cloth.cpp_FUN_0043abb0 (score: 2403, suspects: 198, lines: 393)
   004f9c30: core_imp.cpp_FUN_004f9c30 (score: 2391, suspects: 184, lines: 526)
-  004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 2385, suspects: 163, lines: 705)
+  004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 2381, suspects: 163, lines: 701)
   00568030: core_sentinel.cpp_FUN_00568030 (score: 2315, suspects: 181, lines: 480)
-  0053e220: core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 (score: 2311, suspects: 199, lines: 286)
+  0053e220: core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220 (score: 2312, suspects: 199, lines: 287)
   004e4a00: core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00 (score: 2291, suspects: 182, lines: 436)
-  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 2260, suspects: 17, lines: 2055)
+  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 2261, suspects: 17, lines: 2056)
   005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (score: 2223, suspects: 186, lines: 338)
 
 FUNCTIONS BY SUSPECT TYPE
@@ -138,7 +138,7 @@ FUNCTIONS BY SUSPECT TYPE
     005d7140: shape_superopt.cpp_COptimize_FUN_005d7140
     ... and 2819 more
 
-  pointer_cast (1050 functions):
+  pointer_cast (1051 functions):
     00609790: crt_heap.c_GetBlockSize_FUN_00609790
     006000f8: crt_stdio.c_string_ungetc_FUN_006000f8
     00473360: core_dlight.cpp_drawGrayscalePixel_FUN_00473360
@@ -149,7 +149,7 @@ FUNCTIONS BY SUSPECT TYPE
     004c9580: core_fire.cpp_CCrater_ctor_FUN_004c9580
     00486d30: core_dracbrid.cpp_ctor_FUN_00486d30
     004ccd20: core_flies.cpp_FUN_004ccd20
-    ... and 1040 more
+    ... and 1041 more
 
   stack_ref (1098 functions):
     0060c260: crt_stack.c_GetStackUsage_FUN_0060c260
@@ -294,18 +294,18 @@ FUNCTIONS BY SUSPECT TYPE
     00606c23: crt_math.c_FUN_00606c23
     ... and 85 more
 
-  sborrow_artifact (93 functions):
-    004017c0: engine_2d.c_project3DPointClipped_FUN_004017c0
+  sborrow_artifact (14 functions):
     00403950: engine_3d.c_isVisiblePlane_FUN_00403950
     00552150: engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
-    00608990: crt_io.c_register_handle_FUN_00608990
-    005747d0: core_setdir.cpp_CZThumb_saveZBufferTable_FUN_005747d0
-    00574830: core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830
-    00403670: engine_2d.c_unmapFrameBuffer_FUN_00403670
-    0050cdc0: engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
-    005464d0: core_path.cpp_CPathMap_dtor_FUN_005464d0
     00552210: engine_prim.c_getTriangleWindingFromIndices_FUN_00552210
-    ... and 83 more
+    00552300: engine_prim.c_getTriangleWindingFromIndices_FUN_00552300
+    005523f0: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
+    0060be80: crt_fpemu.c_staticInit_FUN_0060be80
+    005675a0: core_script.cpp_FUN_005675a0
+    005e9e70: core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
+    00450ac0: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
+    004518f0: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
+    ... and 4 more
 
   undefined_ptr_cast (5 functions):
     00604fb0: crt_stdio.c_store_count_FUN_00604fb0

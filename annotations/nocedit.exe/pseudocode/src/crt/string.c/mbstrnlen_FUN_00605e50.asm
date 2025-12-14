@@ -28,27 +28,27 @@ section .text
     XOR EDI,EDI                         ; 00605e5b
     PUSH EBX                            ; 00605e5d
         ;   Label: LAB_00605e5d
-    CALL crt_string.c_mbstring_termination_check_FUN_0060b630 ; 00605e5e | int crt_string.c_mbstring_termination_check_FUN_0060b630(char * str)
-        ;   XREF to: 0060b630 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_mbstring_termination_check_FUN_0060b630 ; 00605e5e
+        ;   XREF to: 0060b630 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbstring_termination_check_FUN_0060b630(char * str)
     ADD ESP,0x4                         ; 00605e63
     TEST EAX,EAX                        ; 00605e66
-    JNZ 0x00605e82                      ; 00605e68 | LAB_00605e82
-        ;   XREF to: 00605e82 (CONDITIONAL_JUMP)
+    JNZ 0x00605e82                      ; 00605e68
+        ;   XREF to: 00605e82 (CONDITIONAL_JUMP)  ; LAB_00605e82
     TEST ESI,ESI                        ; 00605e6a
-    JBE 0x00605e82                      ; 00605e6c | LAB_00605e82
-        ;   XREF to: 00605e82 (CONDITIONAL_JUMP)
+    JBE 0x00605e82                      ; 00605e6c
+        ;   XREF to: 00605e82 (CONDITIONAL_JUMP)  ; LAB_00605e82
     PUSH EBX                            ; 00605e6e
-    CALL crt_locale.c_mblen_FUN_00605a40 ; 00605e6f | int crt_locale.c_mblen_FUN_00605a40(char * mb_string)
-        ;   XREF to: 00605a40 (UNCONDITIONAL_CALL)
+    CALL crt_locale.c_mblen_FUN_00605a40 ; 00605e6f
+        ;   XREF to: 00605a40 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mblen_FUN_00605a40(char * mb_string)
     ADD ESP,0x4                         ; 00605e74
     CMP ESI,EAX                         ; 00605e77
-    JC 0x00605e82                       ; 00605e79 | LAB_00605e82
-        ;   XREF to: 00605e82 (CONDITIONAL_JUMP)
+    JC 0x00605e82                       ; 00605e79
+        ;   XREF to: 00605e82 (CONDITIONAL_JUMP)  ; LAB_00605e82
     INC EDI                             ; 00605e7b
     SUB ESI,EAX                         ; 00605e7c
     ADD EBX,EAX                         ; 00605e7e
-    JMP 0x00605e5d                      ; 00605e80 | LAB_00605e5d
-        ;   XREF to: 00605e5d (UNCONDITIONAL_JUMP)
+    JMP 0x00605e5d                      ; 00605e80
+        ;   XREF to: 00605e5d (UNCONDITIONAL_JUMP)  ; LAB_00605e5d
     MOV EAX,EDI                         ; 00605e82
         ;   Label: LAB_00605e82
     POP EDI                             ; 00605e84

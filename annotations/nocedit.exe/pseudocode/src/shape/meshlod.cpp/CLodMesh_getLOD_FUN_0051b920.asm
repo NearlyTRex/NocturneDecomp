@@ -59,39 +59,39 @@ section .text
     MOV EBP,dword ptr [ESP + 0x58]      ; 0051b927
     MOV EDI,dword ptr [ESP + 0x60]      ; 0051b92b
     CMP dword ptr [EBP + 0x34],0x0      ; 0051b92f
-    JZ 0x0051b99f                       ; 0051b933 | LAB_0051b99f
-        ;   XREF to: 0051b99f (CONDITIONAL_JUMP)
+    JZ 0x0051b99f                       ; 0051b933
+        ;   XREF to: 0051b99f (CONDITIONAL_JUMP)  ; LAB_0051b99f
     CMP dword ptr [EBP + 0x4c],0x1      ; 0051b935
-    JL 0x0051b99f                       ; 0051b939 | LAB_0051b99f
-        ;   XREF to: 0051b99f (CONDITIONAL_JUMP)
+    JL 0x0051b99f                       ; 0051b939
+        ;   XREF to: 0051b99f (CONDITIONAL_JUMP)  ; LAB_0051b99f
     MOV EAX,dword ptr [EBP + 0x34]      ; 0051b93b
         ;   Label: LAB_0051b93b
     PUSH EAX                            ; 0051b93e
     PUSH EDI                            ; 0051b93f
-    CALL shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 ; 0051b940 | CLodMesh * shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh * this_ptr, CLodMesh * source_mesh)
-        ;   XREF to: 0051a8c0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0 ; 0051b940
+        ;   XREF to: 0051a8c0 (UNCONDITIONAL_CALL)  ; CLodMesh * shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh * this_ptr, CLodMesh * source_mesh)
     ADD ESP,0x8                         ; 0051b945
     PUSH EDI                            ; 0051b948
     XOR ESI,ESI                         ; 0051b949
     XOR EBX,EBX                         ; 0051b94b
-    CALL shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 ; 0051b94d | int shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh * this_ptr)
-        ;   XREF to: 00515ba0 (UNCONDITIONAL_CALL)
-    MOV EAX,[0x02f33330]                ; 0051b952 | int g_LodReplayMode
+    CALL shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0 ; 0051b94d
+        ;   XREF to: 00515ba0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh * this_ptr)
+    MOV EAX,[0x02f33330]                ; 0051b952 | g_LodReplayMode
     ADD ESP,0x4                         ; 0051b957
     MOV EDX,0x1                         ; 0051b95a
     MOV dword ptr [ESP + 0x40],EAX      ; 0051b95f
-    MOV dword ptr [0x02f33330],EDX      ; 0051b963 | int g_LodReplayMode
+    MOV dword ptr [0x02f33330],EDX      ; 0051b963 | g_LodReplayMode
     PUSH EDI                            ; 0051b969
         ;   Label: LAB_0051b969
-    CALL shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0 ; 0051b96a | int shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(CLodMesh * this_ptr)
-        ;   XREF to: 005164d0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0 ; 0051b96a
+        ;   XREF to: 005164d0 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b96f
     CMP EAX,dword ptr [ESP + 0x5c]      ; 0051b972
-    JLE 0x0051b9c7                      ; 0051b976 | LAB_0051b9c7
-        ;   XREF to: 0051b9c7 (CONDITIONAL_JUMP)
+    JLE 0x0051b9c7                      ; 0051b976
+        ;   XREF to: 0051b9c7 (CONDITIONAL_JUMP)  ; LAB_0051b9c7
     CMP ESI,dword ptr [EBP + 0x4c]      ; 0051b978
-    JGE 0x0051b9c7                      ; 0051b97b | LAB_0051b9c7
-        ;   XREF to: 0051b9c7 (CONDITIONAL_JUMP)
+    JGE 0x0051b9c7                      ; 0051b97b
+        ;   XREF to: 0051b9c7 (CONDITIONAL_JUMP)  ; LAB_0051b9c7
     MOV EAX,dword ptr [EBP + 0x50]      ; 0051b97d
     MOV EDX,dword ptr [EBX + EAX*0x1 + 0x4] ; 0051b980
     PUSH dword ptr [EBX + EAX*0x1 + 0x10] ; 0051b984
@@ -101,42 +101,42 @@ section .text
     PUSH EDI                            ; 0051b98d
     ADD EBX,0xf0                        ; 0051b98e
     INC ESI                             ; 0051b994
-    CALL shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 ; 0051b995 | void shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, float collapse_weight)
-        ;   XREF to: 00517630 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 ; 0051b995
+        ;   XREF to: 00517630 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, float collapse_weight)
     ADD ESP,0x10                        ; 0051b99a
-    JMP 0x0051b969                      ; 0051b99d | LAB_0051b969
-        ;   XREF to: 0051b969 (UNCONDITIONAL_JUMP)
-    MOV EBX,0x637d58                    ; 0051b99f | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_00637d58 = ..\shape\meshlod.cpp
+    JMP 0x0051b969                      ; 0051b99d
+        ;   XREF to: 0051b969 (UNCONDITIONAL_JUMP)  ; LAB_0051b969
+    MOV EBX,0x637d58                    ; 0051b99f | = "..\\shape\\meshlod.cpp"
         ;   Label: LAB_0051b99f
     MOV ESI,0x1279                      ; 0051b9a4
-    PUSH 0x637d6d                       ; 0051b9a9 | = "Can't call LodMesh::getLOD until afte..." | s_Can_t_call_LodMesh_getLO_00637d6d = Can't call LodMesh::getLOD until after simplify() has been called!
-    MOV dword ptr [0x02f0ca48],EBX      ; 0051b9ae | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 0051b9b4 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0051b9ba | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x637d6d                       ; 0051b9a9 | = "Can't call LodMesh::getLOD until afte..."
+    MOV dword ptr [0x02f0ca48],EBX      ; 0051b9ae | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 0051b9b4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0051b9ba
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0051b9bf
-    JMP 0x0051b93b                      ; 0051b9c2 | LAB_0051b93b
-        ;   XREF to: 0051b93b (UNCONDITIONAL_JUMP)
+    JMP 0x0051b93b                      ; 0051b9c2
+        ;   XREF to: 0051b93b (UNCONDITIONAL_JUMP)  ; LAB_0051b93b
     MOV EAX,dword ptr [ESP + 0x40]      ; 0051b9c7
         ;   Label: LAB_0051b9c7
     PUSH EDI                            ; 0051b9cb
-    MOV [0x02f33330],EAX                ; 0051b9cc | int g_LodReplayMode
-    CALL shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 ; 0051b9d1 | void shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(CLodMesh * this_ptr)
-        ;   XREF to: 0051b3e0 (UNCONDITIONAL_CALL)
+    MOV [0x02f33330],EAX                ; 0051b9cc | g_LodReplayMode
+    CALL shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 ; 0051b9d1
+        ;   XREF to: 0051b3e0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b9d6
     PUSH EDI                            ; 0051b9d9
-    CALL shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 ; 0051b9da | void shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh * this_ptr)
-        ;   XREF to: 00516a40 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40 ; 0051b9da
+        ;   XREF to: 00516a40 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b9df
     PUSH EDI                            ; 0051b9e2
-    CALL shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 ; 0051b9e3 | void shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(CLodMesh * this_ptr)
-        ;   XREF to: 00516b40 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 ; 0051b9e3
+        ;   XREF to: 00516b40 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051b9e8
     MOV EAX,ESP                         ; 0051b9eb
     PUSH EAX                            ; 0051b9ed
     PUSH EDI                            ; 0051b9ee
-    CALL shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 ; 0051b9ef | CBoundingBox3D * shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(CLodMesh * this_ptr, CBoundingBox3D * out_bbox)
-        ;   XREF to: 00516500 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 ; 0051b9ef
+        ;   XREF to: 00516500 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(CLodMesh * this_ptr, CBoundingBox3D * out_bbox)
     LEA EBX,[EAX + 0xc]                 ; 0051b9f4
     FLD float ptr [EBX]                 ; 0051b9f7
     FSUB float ptr [EAX]                ; 0051b9f9
@@ -156,24 +156,24 @@ section .text
     FMUL float ptr [ESP + 0x20]         ; 0051ba24
     FADDP                               ; 0051ba28
     FSQRT                               ; 0051ba2a
-    FMUL double ptr [0x00637db5]        ; 0051ba2c | double DOUBLE_00637db5
+    FMUL double ptr [0x00637db5]        ; 0051ba2c | DOUBLE_00637db5
     SUB ESP,0x4                         ; 0051ba32
     FSTP float ptr [ESP]                ; 0051ba35
     PUSH EDI                            ; 0051ba38
-    CALL shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 ; 0051ba39 | int shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh * this_ptr, float weld_threshold)
-        ;   XREF to: 0051a150 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150 ; 0051ba39
+        ;   XREF to: 0051a150 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh * this_ptr, float weld_threshold)
     ADD ESP,0x8                         ; 0051ba3e
     PUSH EDI                            ; 0051ba41
-    CALL shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 ; 0051ba42 | void shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(CLodMesh * this_ptr)
-        ;   XREF to: 00516b40 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40 ; 0051ba42
+        ;   XREF to: 00516b40 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051ba47
     PUSH EDI                            ; 0051ba4a
-    CALL shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 ; 0051ba4b | void shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh * this_ptr)
-        ;   XREF to: 0051b570 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 ; 0051ba4b
+        ;   XREF to: 0051b570 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051ba50
     PUSH EDI                            ; 0051ba53
-    CALL shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 ; 0051ba54 | void shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(CLodMesh * this_ptr)
-        ;   XREF to: 0051b3e0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 ; 0051ba54
+        ;   XREF to: 0051b3e0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(CLodMesh * this_ptr)
     FLD float ptr [EBP + 0x70]          ; 0051ba59
     FLD1                                ; 0051ba5c
     FDIVRP                              ; 0051ba5e
@@ -186,8 +186,8 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 0051ba77
     PUSH EAX                            ; 0051ba7b
     PUSH EDI                            ; 0051ba7c
-    CALL shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0 ; 0051ba7d | void shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0(CLodMesh * this_ptr, CVector3f * scale_factors)
-        ;   XREF to: 005165c0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0 ; 0051ba7d
+        ;   XREF to: 005165c0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0(CLodMesh * this_ptr, CVector3f * scale_factors)
     FLD float ptr [EBP + 0x64]          ; 0051ba82
     LEA EAX,[ESP + 0x2c]                ; 0051ba85
     ADD ESP,0x8                         ; 0051ba89
@@ -201,8 +201,8 @@ section .text
     FLD float ptr [EBP + 0x6c]          ; 0051ba9d
     FCHS                                ; 0051baa0
     FSTP float ptr [ESP + 0x34]         ; 0051baa2
-    CALL shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570 ; 0051baa6 | void shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh * this_ptr, CVector3f * offset)
-        ;   XREF to: 00516570 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570 ; 0051baa6
+        ;   XREF to: 00516570 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh * this_ptr, CVector3f * offset)
     ADD ESP,0x8                         ; 0051baab
     ADD ESP,0x44                        ; 0051baae
     POP EBP                             ; 0051bab1

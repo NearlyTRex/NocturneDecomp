@@ -1,173 +1,185 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 19, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 4, 
-    "global_count": 12, 
-    "total_lines": 79, 
-    "assembly_lines": 60, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_gore.cpp_FUN_004eb9d0", 
-      "addr": "004eb9d0"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_0056d380", 
-      "addr": "0056d380"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.blood_flag", 
-      "addr": "02d81ab0", 
-      "value": null
-    }, 
-    {
-      "type": "CBloodParticle[256]", 
-      "name": "DAT_02d833d4", 
-      "addr": "02d833d4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d833ec", 
-      "addr": "02d833ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d83414", 
-      "addr": "02d83414", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d8342c", 
-      "addr": "02d8342c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873d4", 
-      "addr": "02d873d4", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004ed7b5", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ed7b0", 
-    "signature": "void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)", 
-    "address_range": [
-      [
-        "004ed7b0", 
-        "004ed826"
-      ]
-    ], 
-    "name": "core_gore.cpp_CGore_FUN_004ed7b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGore *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 60,
+    "complexity_score": 19,
+    "cross_reference_count": 4,
+    "function_call_count": 3,
+    "global_count": 14,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
+  },
   "cross_references": [
     {
-      "from_addr": "0053a384", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
-    }, 
+      "addr": "005390f0",
+      "from_addr": "0053a384",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056c063", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80", 
-      "addr": "0056be80"
-    }, 
+      "addr": "0056be80",
+      "from_addr": "0056c063",
+      "name": "core_set.cpp_CDemonSet_FUN_0056be80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056c484", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
-    }, 
+      "addr": "0056c1a0",
+      "from_addr": "0056c484",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056cb77", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
-      "addr": "0056c990"
+      "addr": "0056c990",
+      "from_addr": "0056cb77",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004ed7b0",
+    "address_range": [
+      [
+        "004ed7b0",
+        "004ed826"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_FUN_004ed7b0",
+    "signature": "void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004eb9d0",
+      "name": "core_gore.cpp_FUN_004eb9d0"
+    },
+    {
+      "addr": "0056d380",
+      "name": "core_set.cpp_CDemonSet_FUN_0056d380"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ab0",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d833d4",
+      "name": "DAT_02d833d4",
+      "type": "CBloodParticle[256]",
+      "value": null
+    },
+    {
+      "addr": "02d833ec",
+      "name": "DAT_02d833ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83408",
+      "name": "DAT_02d83408",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83414",
+      "name": "DAT_02d83414",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d8342c",
+      "name": "DAT_02d8342c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83448",
+      "name": "DAT_02d83448",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873d4",
+      "name": "DAT_02d873d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ed7b5",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

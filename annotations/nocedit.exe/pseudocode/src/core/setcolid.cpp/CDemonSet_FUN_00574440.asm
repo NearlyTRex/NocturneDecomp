@@ -36,14 +36,14 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 00574459
     ADD ESP,0x8                         ; 0057445d
     CMP EAX,EDX                         ; 00574460
-    JNZ 0x005744ac                      ; 00574462 | LAB_005744ac
-        ;   XREF to: 005744ac (CONDITIONAL_JUMP)
+    JNZ 0x005744ac                      ; 00574462
+        ;   XREF to: 005744ac (CONDITIONAL_JUMP)  ; LAB_005744ac
     LEA EAX,[ESP + 0x24]                ; 00574464
         ;   Label: LAB_00574464
     LEA EDX,[ECX + 0xc]                 ; 00574468
     CMP EAX,EDX                         ; 0057446b
-    JZ 0x00574483                       ; 0057446d | LAB_00574483
-        ;   XREF to: 00574483 (CONDITIONAL_JUMP)
+    JZ 0x00574483                       ; 0057446d
+        ;   XREF to: 00574483 (CONDITIONAL_JUMP)  ; LAB_00574483
     MOV EAX,dword ptr [EDX]             ; 0057446f
     MOV dword ptr [ESP + 0x24],EAX      ; 00574471
     MOV EAX,dword ptr [EDX + 0x4]       ; 00574475
@@ -59,12 +59,12 @@ section .text
     PUSH EAX                            ; 00574490
     ADD EBX,0x20                        ; 00574491
     PUSH EBX                            ; 00574494
-    PUSH 0x3277d14                      ; 00574495 | CDemonRaytrace g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20 ; 0057449a | void core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20(CDemonRaytrace * this_ptr, CVector3f * offset_vector, CVector3f * start_position, CVector3f * end_position, ...)
-        ;   XREF to: 00499c20 (UNCONDITIONAL_CALL)
+    PUSH 0x3277d14                      ; 00574495 | g_CDemonRaytraceInstance
+    CALL core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20 ; 0057449a
+        ;   XREF to: 00499c20 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20(CDemonRaytrace * this_ptr, CVector3f * offset_vector, CVector3f * start_position, CVector3f * end_position, ...)
     ADD ESP,0x14                        ; 0057449f
-    CALL core_path.cpp_GlobalPathmapListCorruption_FUN_00548590 ; 005744a2 | undefined core_path.cpp_GlobalPathmapListCorruption_FUN_00548590()
-        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)
+    CALL core_path.cpp_GlobalPathmapListCorruption_FUN_00548590 ; 005744a2
+        ;   XREF to: 00548590 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_GlobalPathmapListCorruption_FUN_00548590()
     ADD ESP,0x30                        ; 005744a7
     POP EBX                             ; 005744aa
     RET                                 ; 005744ab
@@ -75,6 +75,6 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 005744b5
     MOV EAX,dword ptr [EDX + 0x8]       ; 005744b9
     MOV dword ptr [ESP + 0x20],EAX      ; 005744bc
-    JMP 0x00574464                      ; 005744c0 | LAB_00574464
-        ;   XREF to: 00574464 (UNCONDITIONAL_JUMP)
+    JMP 0x00574464                      ; 005744c0
+        ;   XREF to: 00574464 (UNCONDITIONAL_JUMP)  ; LAB_00574464
 

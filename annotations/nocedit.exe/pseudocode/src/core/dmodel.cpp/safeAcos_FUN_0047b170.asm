@@ -33,14 +33,14 @@ section .text
     FCOMP double ptr [ESP]              ; 0047b184
     FNSTSW AX                           ; 0047b187
     SAHF                                ; 0047b189
-    JBE 0x0047b1b9                      ; 0047b18a | LAB_0047b1b9
-        ;   XREF to: 0047b1b9 (CONDITIONAL_JUMP)
+    JBE 0x0047b1b9                      ; 0047b18a
+        ;   XREF to: 0047b1b9 (CONDITIONAL_JUMP)  ; LAB_0047b1b9
     FLD double ptr [ESP]                ; 0047b18c
-    FCOMP double ptr [0x0062044b]       ; 0047b18f | double DOUBLE_0062044b
+    FCOMP double ptr [0x0062044b]       ; 0047b18f | DOUBLE_0062044b
     FNSTSW AX                           ; 0047b195
     SAHF                                ; 0047b197
-    JA 0x0047b1c5                       ; 0047b198 | LAB_0047b1c5
-        ;   XREF to: 0047b1c5 (CONDITIONAL_JUMP)
+    JA 0x0047b1c5                       ; 0047b198
+        ;   XREF to: 0047b1c5 (CONDITIONAL_JUMP)  ; LAB_0047b1c5
     MOV EDX,0x54411744                  ; 0047b19a
     MOV ECX,0x400921fb                  ; 0047b19f
     MOV dword ptr [ESP + 0x8],EDX       ; 0047b1a4
@@ -56,12 +56,12 @@ section .text
         ;   Label: LAB_0047b1b9
     MOV dword ptr [ESP + 0x8],EBX       ; 0047b1bb
     MOV dword ptr [ESP + 0xc],EBX       ; 0047b1bf
-    JMP 0x0047b1ac                      ; 0047b1c3 | LAB_0047b1ac
-        ;   XREF to: 0047b1ac (UNCONDITIONAL_JUMP)
+    JMP 0x0047b1ac                      ; 0047b1c3
+        ;   XREF to: 0047b1ac (UNCONDITIONAL_JUMP)  ; LAB_0047b1ac
     FLD double ptr [ESP]                ; 0047b1c5
         ;   Label: LAB_0047b1c5
-    CALL crt_math.c_acos_FUN_00600162   ; 0047b1c8 | double crt_math.c_acos_FUN_00600162(double x)
-        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_acos_FUN_00600162   ; 0047b1c8
+        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_00600162(double x)
     FSTP double ptr [ESP + 0x8]         ; 0047b1cd
     MOV EAX,dword ptr [ESP + 0x8]       ; 0047b1d1
     MOV EDX,dword ptr [ESP + 0xc]       ; 0047b1d5

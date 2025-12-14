@@ -1,508 +1,508 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 438, 
-    "pseudocode_lines": 203, 
-    "cross_reference_count": 2, 
-    "global_count": 10, 
-    "total_lines": 635, 
-    "assembly_lines": 432, 
-    "suspect_count": 21, 
+    "assembly_lines": 432,
+    "complexity_score": 438,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 10,
+    "pseudocode_lines": 203,
+    "suspect_count": 21,
     "suspect_types": [
-      "unaffected_reg", 
-      "unknown_field", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0", 
-      "addr": "0044d7d0"
-    }, 
-    {
-      "name": "core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00475fc0", 
-      "addr": "00475fc0"
-    }, 
-    {
-      "name": "core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270", 
-      "addr": "00473270"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_movscrn_raw_0061a0aa", 
-      "addr": "0061a0aa", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dcamera_cpp_0061a0b6", 
-      "addr": "0061a0b6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonCamera_precomputeL_0061a0ca", 
-      "addr": "0061a0ca", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3i[15360]", 
-      "name": "g_PrecomputedWorldPositions", 
-      "addr": "00902f74", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[76800]", 
-      "name": "g_PrecomputedSurfaceNormals", 
-      "addr": "00ac6d74", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightBufferPoolIndex", 
-      "addr": "00c1a204", 
-      "value": null
-    }, 
-    {
-      "type": "char[25][307200]", 
-      "name": "g_LightBufferPool", 
-      "addr": "00c1a208", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightBufferPool[24][0]", 
-      "addr": "01322208", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 2, 
-    "patterns": [
-      {
-        "address": "0044de19", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }, 
-      {
-        "address": "0044e18a", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment", 
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CVector3i *unaff_EBX;"
-    }, 
-    {
-      "line": 15, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint *unaff_ESI;"
-    }, 
-    {
-      "line": 52, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_LightBufferPool[0x18]._0_4_ = rect;"
-    }, 
-    {
-      "line": 91, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar7 = (int *)((int)rect + (uint)bVar10 * -8 + 4);"
-    }, 
-    {
-      "line": 129, 
-      "match": "(CVector3i *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_24 = (CVector3i *)((int)&local_44->x + local_54.z);"
-    }, 
-    {
-      "line": 131, 
-      "match": "(CVector3i *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_1c = (CVector3i *)((int)&local_48->x + local_54.z);"
-    }, 
-    {
-      "line": 134, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar7 = (int *)((int)light_source->corona_depth_buffer + local_40 + local_38);"
-    }, 
-    {
-      "line": 136, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_18 = (int *)((int)light_source->corona_lightmap_indices + local_40 + local_38);"
-    }, 
-    {
-      "line": 161, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&local_54 + (uint)bVar10 * -8) = local_5c[(uint)bVar10 * -2];"
-    }, 
-    {
-      "line": 162, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4) ="
-    }, 
-    {
-      "line": 168, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(light_source,&local_54,(uchar)unaff_ESI,(uchar)local_1c);"
-    }, 
-    {
-      "line": 169, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = puVar5;"
-    }, 
-    {
-      "line": 172, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = 0;"
-    }, 
-    {
-      "line": 181, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((int)local_24 < (int)unaff_EBX) {"
-    }, 
-    {
-      "line": 182, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_24 = unaff_EBX;"
-    }, 
-    {
-      "line": 184, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((int)unaff_EBX < (int)local_20) {"
-    }, 
-    {
-      "line": 185, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_20 = unaff_EBX;"
-    }, 
-    {
-      "line": 193, 
-      "match": "(CVector3i *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar11 = (CVector3i *)((int)&pCVar11->x + 1);"
-    }, 
-    {
-      "line": 202, 
-      "match": "(CVector3i *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_20 = (CVector3i *)((int)&local_20->x + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0044de10", 
-    "signature": "void * core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera * this_ptr, CDemonLight * light_source, CRect * rect)", 
-    "address_range": [
-      [
-        "0044de10", 
-        "0044e356"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10"
-  }, 
-  "stack_frame": {
-    "local_size": 132, 
-    "variables": [
-      {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_80"
-      }, 
-      {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_7c"
-      }, 
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CDemonLight *", 
-        "size": 4, 
-        "name": "light_source"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CRect *", 
-        "size": 4, 
-        "name": "rect"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 144, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "unknown_field"
+    ],
+    "total_lines": 635
+  },
   "cross_references": [
     {
-      "from_addr": "0056a893", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470", 
-      "addr": "0056a470"
-    }, 
+      "addr": "0056a470",
+      "from_addr": "0056a893",
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056b6b1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
-      "addr": "0056ae50"
+      "addr": "0056ae50",
+      "from_addr": "0056b6b1",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044de10",
+    "address_range": [
+      [
+        "0044de10",
+        "0044e356"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10",
+    "signature": "void * core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera * this_ptr, CDemonLight * light_source, CRect * rect)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044d7d0",
+      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0"
+    },
+    {
+      "addr": "00475fc0",
+      "name": "core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00475fc0"
+    },
+    {
+      "addr": "00473270",
+      "name": "core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061a0aa",
+      "name": "s_movscrn_raw_0061a0aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061a0b6",
+      "name": "s_core_dcamera_cpp_0061a0b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061a0ca",
+      "name": "s_CDemonCamera_precomputeL_0061a0ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00902f74",
+      "name": "g_PrecomputedWorldPositions",
+      "type": "CVector3i[15360]",
+      "value": null
+    },
+    {
+      "addr": "00ac6d74",
+      "name": "g_PrecomputedSurfaceNormals",
+      "type": "CVector3f[76800]",
+      "value": null
+    },
+    {
+      "addr": "00c1a204",
+      "name": "g_LightBufferPoolIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00c1a208",
+      "name": "g_LightBufferPool",
+      "type": "char[25][307200]",
+      "value": null
+    },
+    {
+      "addr": "01322208",
+      "name": "g_LightBufferPool[24][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 144,
+    "local_size": 132,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "light_source",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "rect",
+        "offset": 12,
+        "size": 4,
+        "type": "CRect *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0044de19",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "0044e18a",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
+      "text": "CVector3i *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 15,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 52,
+      "match": "._0_4_",
+      "text": "g_LightBufferPool[0x18]._0_4_ = rect;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(int *)((int)",
+      "text": "piVar7 = (int *)((int)rect + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 129,
+      "match": "(CVector3i *)((int)",
+      "text": "local_24 = (CVector3i *)((int)&local_44->x + local_54.z);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(CVector3i *)((int)",
+      "text": "local_1c = (CVector3i *)((int)&local_48->x + local_54.z);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 134,
+      "match": "(int *)((int)",
+      "text": "piVar7 = (int *)((int)light_source->corona_depth_buffer + local_40 + local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(int *)((int)",
+      "text": "local_18 = (int *)((int)light_source->corona_lightmap_indices + local_40 + local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 161,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_54 + (uint)bVar10 * -8) = local_5c[(uint)bVar10 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 162,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 168,
+      "match": "unaff_ESI",
+      "text": "(light_source,&local_54,(uchar)unaff_ESI,(uchar)local_1c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 169,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = puVar5;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 172,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 181,
+      "match": "unaff_EBX",
+      "text": "if ((int)local_24 < (int)unaff_EBX) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 182,
+      "match": "unaff_EBX",
+      "text": "local_24 = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 184,
+      "match": "unaff_EBX",
+      "text": "if ((int)unaff_EBX < (int)local_20) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 185,
+      "match": "unaff_EBX",
+      "text": "local_20 = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 193,
+      "match": "(CVector3i *)((int)",
+      "text": "pCVar11 = (CVector3i *)((int)&pCVar11->x + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 202,
+      "match": "(CVector3i *)((int)",
+      "text": "local_20 = (CVector3i *)((int)&local_20->x + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

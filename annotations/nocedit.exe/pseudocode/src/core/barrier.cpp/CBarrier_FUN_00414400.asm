@@ -28,32 +28,32 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 00414406
     PUSH ESI                            ; 0041440a
     PUSH EBX                            ; 0041440b
-    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 0041440c | void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
-        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 0041440c
+        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 00414411
     PUSH 0x0                            ; 00414414
     LEA EAX,[EBX + 0x158]               ; 00414416
     PUSH EAX                            ; 0041441c
-    PUSH 0x615196                       ; 0041441d | = "size" | s_size_00615196 = size
+    PUSH 0x615196                       ; 0041441d | = "size"
     PUSH ESI                            ; 00414422
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e260 ; 00414423 | void core_actor.cpp_CActorPropertyList_FUN_0040e260(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e260 ; 00414423
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e260(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 00414428
     PUSH 0x0                            ; 0041442b
     PUSH 0xc8                           ; 0041442d
     LEA EAX,[EBX + 0x168]               ; 00414432
     PUSH EAX                            ; 00414438
-    PUSH 0x61519b                       ; 00414439 | = "effectClassNameList" | s_effectClassNameList_0061519b = effectClassNameList
+    PUSH 0x61519b                       ; 00414439 | = "effectClassNameList"
     PUSH ESI                            ; 0041443e
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 0041443f | void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 0041443f
+        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
     ADD ESP,0x14                        ; 00414444
     ADD EBX,0x164                       ; 00414447
     PUSH EBX                            ; 0041444d
-    PUSH 0x6151af                       ; 0041444e | = "addToPathGrid" | s_addToPathGrid_006151af = addToPathGrid
+    PUSH 0x6151af                       ; 0041444e | = "addToPathGrid"
     PUSH ESI                            ; 00414453
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 00414454 | void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 00414454
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 00414459
     POP ESI                             ; 0041445c
     POP EBX                             ; 0041445d

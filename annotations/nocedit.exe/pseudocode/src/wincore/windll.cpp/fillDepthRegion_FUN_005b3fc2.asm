@@ -27,15 +27,15 @@ section .text
     MOV EBP,ESP                         ; 005b3fc3
     PUSH ESI                            ; 005b3fc5
     PUSH EDI                            ; 005b3fc6
-    CMP dword ptr [0x02d03e94],0x0      ; 005b3fc7 | int g_UseExternalRenderer
-    JZ 0x005b3fe9                       ; 005b3fce | LAB_005b3fe9
-        ;   XREF to: 005b3fe9 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x02d03e94],0x0      ; 005b3fc7 | g_UseExternalRenderer
+    JZ 0x005b3fe9                       ; 005b3fce
+        ;   XREF to: 005b3fe9 (CONDITIONAL_JUMP)  ; LAB_005b3fe9
     PUSH dword ptr [EBP + 0x14]         ; 005b3fd0
     PUSH dword ptr [EBP + 0x10]         ; 005b3fd3
     PUSH dword ptr [EBP + 0xc]          ; 005b3fd6
     PUSH dword ptr [EBP + 0x8]          ; 005b3fd9
-    CALL wincore_windll.cpp_clearZBox_FUN_005b7c00 ; 005b3fdc | int wincore_windll.cpp_clearZBox_FUN_005b7c00(int left, int top, int right, int bottom)
-        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_clearZBox_FUN_005b7c00 ; 005b3fdc
+        ;   XREF to: 005b7c00 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_clearZBox_FUN_005b7c00(int left, int top, int right, int bottom)
     POP EAX                             ; 005b3fe1
     POP EAX                             ; 005b3fe2
     POP EAX                             ; 005b3fe3
@@ -56,10 +56,10 @@ section .text
     INC ECX                             ; 005b3ffb
     MOV EDX,dword ptr [EBP + 0x8]       ; 005b3ffc
     SHL EDX,0x2                         ; 005b3fff
-    FLD double ptr [0x0068261c]         ; 005b4002 | double g_SelectedClearColor
+    FLD double ptr [0x0068261c]         ; 005b4002 | g_SelectedClearColor
     PUSH ECX                            ; 005b4008
         ;   Label: LAB_005b4008
-    MOV EDI,dword ptr [EBX*0x4 + 0x2cf7d5c] ; 005b4009 | uint *[1024] g_ZBufferScanlineArray
+    MOV EDI,dword ptr [EBX*0x4 + 0x2cf7d5c] ; 005b4009 | g_ZBufferScanlineArray
     ADD EDI,EDX                         ; 005b4010
     AND EDI,0xfffffff8                  ; 005b4012
     SHR ECX,0x1                         ; 005b4015
@@ -67,14 +67,14 @@ section .text
         ;   Label: LAB_005b4017
     ADD EDI,0x8                         ; 005b4019
     DEC ECX                             ; 005b401c
-    JGE 0x005b4017                      ; 005b401d | LAB_005b4017
-        ;   XREF to: 005b4017 (CONDITIONAL_JUMP)
+    JGE 0x005b4017                      ; 005b401d
+        ;   XREF to: 005b4017 (CONDITIONAL_JUMP)  ; LAB_005b4017
     POP ECX                             ; 005b401f
     INC EBX                             ; 005b4020
     CMP EBX,dword ptr [EBP + 0x14]      ; 005b4021
-    JBE 0x005b4008                      ; 005b4024 | LAB_005b4008
-        ;   XREF to: 005b4008 (CONDITIONAL_JUMP)
-    FSTP double ptr [0x00682624]        ; 005b4026 | double g_ClearColor
+    JBE 0x005b4008                      ; 005b4024
+        ;   XREF to: 005b4008 (CONDITIONAL_JUMP)  ; LAB_005b4008
+    FSTP double ptr [0x00682624]        ; 005b4026 | g_ClearColor
     POPAD                               ; 005b402c
     POP EDI                             ; 005b402d
     POP ESI                             ; 005b402e

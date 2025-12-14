@@ -1,184 +1,184 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 165, 
-    "pseudocode_lines": 120, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 365, 
-    "assembly_lines": 245, 
-    "suspect_count": 4, 
+    "assembly_lines": 245,
+    "complexity_score": 164,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 6,
+    "pseudocode_lines": 119,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_strncpy_FUN_00600f40", 
-      "addr": "00600f40"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
-      "addr": "0050f1b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }, 
-    {
-      "name": "shape_quantize.cpp_CBitmap_ctor_FUN_00556a00", 
-      "addr": "00556a00"
-    }, 
-    {
-      "name": "shape_quantize.cpp_CBitmap_dtor_FUN_00556c20", 
-      "addr": "00556c20"
-    }, 
-    {
-      "name": "shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500", 
-      "addr": "00555500"
-    }, 
-    {
-      "name": "shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0", 
-      "addr": "005556f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_quantize_cpp_00640d9b", 
-      "addr": "00640d9b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Phase_3_00640db1", 
-      "addr": "00640db1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_quantize_cpp_00640db9", 
-      "addr": "00640db9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_quantize_cpp_00640dcf", 
-      "addr": "00640dcf", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 88, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar10 * -2 + 1);"
-    }, 
-    {
-      "line": 89, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);"
-    }, 
-    {
-      "line": 97, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10));"
-    }, 
-    {
-      "line": 105, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00556180", 
-    "signature": "int shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180(CColorQuantizer * this_ptr, CBitmap * * bitmap_ptr)", 
-    "address_range": [
-      [
-        "00556180", 
-        "005563c2"
-      ]
-    ], 
-    "name": "shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CColorQuantizer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CBitmap * *", 
-        "size": 4, 
-        "name": "bitmap_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 364
+  },
   "cross_references": [
     {
-      "from_addr": "00556451", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0", 
-      "addr": "005563d0"
+      "addr": "005563d0",
+      "from_addr": "00556451",
+      "name": "shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00556180",
+    "address_range": [
+      [
+        "00556180",
+        "005563c2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180",
+    "signature": "int shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180(CColorQuantizer * this_ptr, CBitmap * * bitmap_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00600f40",
+      "name": "crt_string.c_strncpy_FUN_00600f40"
+    },
+    {
+      "addr": "0050f1b0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    },
+    {
+      "addr": "00556a00",
+      "name": "shape_quantize.cpp_CBitmap_ctor_FUN_00556a00"
+    },
+    {
+      "addr": "00556c20",
+      "name": "shape_quantize.cpp_CBitmap_dtor_FUN_00556c20"
+    },
+    {
+      "addr": "00555500",
+      "name": "shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500"
+    },
+    {
+      "addr": "005556f0",
+      "name": "shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640d9b",
+      "name": "s_shape_quantize_cpp_00640d9b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640db1",
+      "name": "s_Phase_3_00640db1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640db9",
+      "name": "s_shape_quantize_cpp_00640db9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640dcf",
+      "name": "s_shape_quantize_cpp_00640dcf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CColorQuantizer *"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CBitmap * *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(uint *)((int)",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(uint *)((int)",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(uint *)((int)",
+      "text": "(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(uint *)((int)",
+      "text": "(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10));",
+      "type": "pointer_cast"
     }
   ]
 }

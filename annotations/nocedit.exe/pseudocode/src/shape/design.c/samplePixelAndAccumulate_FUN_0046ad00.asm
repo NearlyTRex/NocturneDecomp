@@ -41,16 +41,16 @@ section .text
     PUSH EAX                            ; 0046ad0f
     MOV EAX,dword ptr [EBP + 0x24]      ; 0046ad10
     PUSH EAX                            ; 0046ad13
-    CALL shape_design.c_wrapCoordinate_FUN_0046acc0 ; 0046ad14 | int shape_design.c_wrapCoordinate_FUN_0046acc0(int coordinate, int dimension)
-        ;   XREF to: 0046acc0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_wrapCoordinate_FUN_0046acc0 ; 0046ad14
+        ;   XREF to: 0046acc0 (UNCONDITIONAL_CALL)  ; int shape_design.c_wrapCoordinate_FUN_0046acc0(int coordinate, int dimension)
     ADD ESP,0x8                         ; 0046ad19
     MOV dword ptr [EBP + 0x24],EAX      ; 0046ad1c
     MOV EAX,dword ptr [EBP + 0x20]      ; 0046ad1f
     PUSH EAX                            ; 0046ad22
     MOV EAX,dword ptr [EBP + 0x28]      ; 0046ad23
     PUSH EAX                            ; 0046ad26
-    CALL shape_design.c_wrapCoordinate_FUN_0046acc0 ; 0046ad27 | int shape_design.c_wrapCoordinate_FUN_0046acc0(int coordinate, int dimension)
-        ;   XREF to: 0046acc0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_wrapCoordinate_FUN_0046acc0 ; 0046ad27
+        ;   XREF to: 0046acc0 (UNCONDITIONAL_CALL)  ; int shape_design.c_wrapCoordinate_FUN_0046acc0(int coordinate, int dimension)
     ADD ESP,0x8                         ; 0046ad2c
     MOV dword ptr [EBP + 0x28],EAX      ; 0046ad2f
     MOV EAX,dword ptr [EBP + 0x28]      ; 0046ad32

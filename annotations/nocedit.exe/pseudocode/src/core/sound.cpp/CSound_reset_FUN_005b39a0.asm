@@ -19,9 +19,9 @@
 
 section .text
 
-    CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130 ; 005b39a0 | int sound_sndmain.cpp_resetSoundDevice_FUN_005ab130()
+    CALL sound_sndmain.cpp_resetSoundDevice_FUN_005ab130 ; 005b39a0
+        ;   XREF to: 005ab130 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_resetSoundDevice_FUN_005ab130()
         ;   Label: core_sound.cpp_CSound_reset_FUN_005b39a0
-        ;   XREF to: 005ab130 (UNCONDITIONAL_CALL)
     JMP 0x005aa660                      ; 005b39a5
         ;   XREF to: 005aa660 (UNCONDITIONAL_CALL)
 

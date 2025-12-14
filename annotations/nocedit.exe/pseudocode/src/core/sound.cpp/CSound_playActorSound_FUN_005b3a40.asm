@@ -37,8 +37,8 @@ section .text
     PUSH EDX                            ; 005b3a54
     MOV ECX,dword ptr [ESP + 0x20]      ; 005b3a55
     PUSH ECX                            ; 005b3a59
-    CALL core_sound.cpp_playSfxInternal_FUN_005b1fd0 ; 005b3a5a | uint core_sound.cpp_playSfxInternal_FUN_005b1fd0(void * user_data, char * sound_name, float x, float y, ...)
-        ;   XREF to: 005b1fd0 (UNCONDITIONAL_CALL)
+    CALL core_sound.cpp_playSfxInternal_FUN_005b1fd0 ; 005b3a5a
+        ;   XREF to: 005b1fd0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_playSfxInternal_FUN_005b1fd0(void * user_data, char * sound_name, float x, float y, ...)
     ADD ESP,0x1c                        ; 005b3a5f
     RET                                 ; 005b3a62
 

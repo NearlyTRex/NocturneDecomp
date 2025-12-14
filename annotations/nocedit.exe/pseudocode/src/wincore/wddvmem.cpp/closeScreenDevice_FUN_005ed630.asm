@@ -41,73 +41,73 @@ section .text
 
     PUSH EBP                            ; 005ed630
         ;   Label: wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630
-    CMP dword ptr [0x03f9593c],0x0      ; 005ed631 | int g_UseSoftwareRendering
-    JNZ 0x005ed6fa                      ; 005ed638 | LAB_005ed6fa
-        ;   XREF to: 005ed6fa (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02d03e94]      ; 005ed63e | int g_UseExternalRenderer
+    CMP dword ptr [0x03f9593c],0x0      ; 005ed631 | g_UseSoftwareRendering
+    JNZ 0x005ed6fa                      ; 005ed638
+        ;   XREF to: 005ed6fa (CONDITIONAL_JUMP)  ; LAB_005ed6fa
+    MOV ECX,dword ptr [0x02d03e94]      ; 005ed63e | g_UseExternalRenderer
     TEST ECX,ECX                        ; 005ed644
-    JNZ 0x005ed6fc                      ; 005ed646 | LAB_005ed6fc
-        ;   XREF to: 005ed6fc (CONDITIONAL_JUMP)
+    JNZ 0x005ed6fc                      ; 005ed646
+        ;   XREF to: 005ed6fc (CONDITIONAL_JUMP)  ; LAB_005ed6fc
     PUSH EDI                            ; 005ed64c
     PUSH ESI                            ; 005ed64d
-    CMP dword ptr [0x00679398],0x0      ; 005ed64e | int g_WindowHeight
-    JLE 0x005ed6b7                      ; 005ed655 | LAB_005ed6b7
-        ;   XREF to: 005ed6b7 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x00679398],0x0      ; 005ed64e | g_WindowHeight
+    JLE 0x005ed6b7                      ; 005ed655
+        ;   XREF to: 005ed6b7 (CONDITIONAL_JUMP)  ; LAB_005ed6b7
     PUSH EBX                            ; 005ed657
-    MOV EAX,[0x0067939c]                ; 005ed658 | int g_BitsPerPixel
+    MOV EAX,[0x0067939c]                ; 005ed658 | g_BitsPerPixel
     MOV EDX,EAX                         ; 005ed65d
     SAR EDX,0x1f                        ; 005ed65f
     SHL EDX,0x3                         ; 005ed662
     SBB EAX,EDX                         ; 005ed665
     SAR EAX,0x3                         ; 005ed667
     MOV EDI,EAX                         ; 005ed66a
-    IMUL EDX,dword ptr [0x00679394],0x0 ; 005ed66c | int g_WindowWidth
-    MOV EBP,dword ptr [0x00679394]      ; 005ed673 | int g_WindowWidth
+    IMUL EDX,dword ptr [0x00679394],0x0 ; 005ed66c | g_WindowWidth
+    MOV EBP,dword ptr [0x00679394]      ; 005ed673 | g_WindowWidth
     SHL EBP,0x2                         ; 005ed679
     XOR EAX,EAX                         ; 005ed67c
-    MOV ESI,dword ptr [0x00679394]      ; 005ed67e | int g_WindowWidth
+    MOV ESI,dword ptr [0x00679394]      ; 005ed67e | g_WindowWidth
         ;   Label: LAB_005ed67e
     IMUL ESI,ECX                        ; 005ed684
     IMUL ESI,EDI                        ; 005ed687
-    MOV EBX,dword ptr [0x00688010]      ; 005ed68a | void * g_BackBuffer
+    MOV EBX,dword ptr [0x00688010]      ; 005ed68a | g_BackBuffer
     ADD EBX,ESI                         ; 005ed690
-    MOV dword ptr [EAX + 0x2cf6a9c],EBX ; 005ed692 | void *[1024] g_ScreenBufferArray
-    MOV EBX,dword ptr [0x0077262c]      ; 005ed698 | void * g_SoftwareZBuffer
+    MOV dword ptr [EAX + 0x2cf6a9c],EBX ; 005ed692 | g_ScreenBufferArray | g_ScreenBufferArray[1]
+    MOV EBX,dword ptr [0x0077262c]      ; 005ed698 | g_SoftwareZBuffer
     ADD EAX,0x4                         ; 005ed69e
     ADD EBX,EDX                         ; 005ed6a1
     INC ECX                             ; 005ed6a3
-    MOV dword ptr [EAX + 0x2cf7d58],EBX ; 005ed6a4 | uint *[1024] g_ZBufferScanlineArray
-    MOV EBX,dword ptr [0x00679398]      ; 005ed6aa | int g_WindowHeight
+    MOV dword ptr [EAX + 0x2cf7d58],EBX ; 005ed6a4 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
+    MOV EBX,dword ptr [0x00679398]      ; 005ed6aa | g_WindowHeight
     ADD EDX,EBP                         ; 005ed6b0
     CMP ECX,EBX                         ; 005ed6b2
-    JL 0x005ed67e                       ; 005ed6b4 | LAB_005ed67e
-        ;   XREF to: 005ed67e (CONDITIONAL_JUMP)
+    JL 0x005ed67e                       ; 005ed6b4
+        ;   XREF to: 005ed67e (CONDITIONAL_JUMP)  ; LAB_005ed67e
     POP EBX                             ; 005ed6b6
     PUSH 0x0                            ; 005ed6b7
         ;   Label: LAB_005ed6b7
-    MOV EAX,[0x03f95928]                ; 005ed6b9 | IDirectDrawSurface * g_SoftwareRenderSurface
+    MOV EAX,[0x03f95928]                ; 005ed6b9 | g_SoftwareRenderSurface
     PUSH EAX                            ; 005ed6be
     MOV EDX,dword ptr [EAX]             ; 005ed6bf
     CALL dword ptr [EDX + 0x80]         ; 005ed6c1
     TEST EAX,EAX                        ; 005ed6c7
-    JZ 0x005ed6ee                       ; 005ed6c9 | LAB_005ed6ee
-        ;   XREF to: 005ed6ee (CONDITIONAL_JUMP)
-    MOV ESI,0x6578e0                    ; 005ed6cb | = "..\\wincore\\wddvmem.cpp" | s_wincore_wddvmem_cpp_006578e0 = ..\wincore\wddvmem.cpp
+    JZ 0x005ed6ee                       ; 005ed6c9
+        ;   XREF to: 005ed6ee (CONDITIONAL_JUMP)  ; LAB_005ed6ee
+    MOV ESI,0x6578e0                    ; 005ed6cb | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x27f                       ; 005ed6d0
-    PUSH 0x6578f7                       ; 005ed6d5 | = "closeScreenDevice - Unable to unlock" | s_closeScreenDevice_Unable_006578f7 = closeScreenDevice - Unable to unlock
-    MOV dword ptr [0x02f0ca48],ESI      ; 005ed6da | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 005ed6e0 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005ed6e6 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6578f7                       ; 005ed6d5 | = "closeScreenDevice - Unable to unlock"
+    MOV dword ptr [0x02f0ca48],ESI      ; 005ed6da | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 005ed6e0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005ed6e6
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005ed6eb
-    MOV dword ptr [0x03f95934],0x1      ; 005ed6ee | int g_RenderingInProgress
+    MOV dword ptr [0x03f95934],0x1      ; 005ed6ee | g_RenderingInProgress
         ;   Label: LAB_005ed6ee
     POP ESI                             ; 005ed6f8
     POP EDI                             ; 005ed6f9
     POP EBP                             ; 005ed6fa
         ;   Label: LAB_005ed6fa
     RET                                 ; 005ed6fb
-    MOV dword ptr [0x03f95934],0x1      ; 005ed6fc | int g_RenderingInProgress
+    MOV dword ptr [0x03f95934],0x1      ; 005ed6fc | g_RenderingInProgress
         ;   Label: LAB_005ed6fc
     POP EBP                             ; 005ed706
     RET                                 ; 005ed707

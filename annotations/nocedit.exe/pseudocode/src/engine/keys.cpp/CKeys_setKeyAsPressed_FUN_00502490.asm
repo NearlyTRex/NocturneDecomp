@@ -19,6 +19,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 00502490
         ;   Label: engine_keys.cpp_CKeys_setKeyAsPressed_FUN_00502490
-    MOV byte ptr [EAX + 0x2d03e98],0x1  ; 00502494 | char[256] g_KeyboardState
+    MOV byte ptr [EAX + 0x2d03e98],0x1  ; 00502494 | g_KeyboardState
     RET                                 ; 0050249b
 

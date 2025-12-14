@@ -1,193 +1,193 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 33, 
-    "cross_reference_count": 7, 
-    "global_count": 1, 
-    "total_lines": 149, 
-    "assembly_lines": 116, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_QuaternionToMatrixScaleFactor", 
-      "addr": "006583dd", 
-      "value": "2"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f7280", 
-    "signature": "void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)", 
-    "address_range": [
-      [
-        "005f7280", 
-        "005f73d4"
-      ]
-    ], 
-    "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280"
-  }, 
-  "stack_frame": {
-    "local_size": 116, 
-    "variables": [
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMatrix3x3f *", 
-        "size": 4, 
-        "name": "matrix_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CQuaternion4f *", 
-        "size": 4, 
-        "name": "quat_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 124, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 116,
+    "complexity_score": 33,
+    "cross_reference_count": 7,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 149
+  },
   "cross_references": [
     {
-      "from_addr": "0059fba8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40", 
-      "addr": "0059fb40"
-    }, 
+      "addr": "0059fb40",
+      "from_addr": "0059fba8",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0059f8f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820", 
-      "addr": "0059f820"
-    }, 
+      "addr": "0059f820",
+      "from_addr": "0059f8f5",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a19c3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950", 
-      "addr": "005a1950"
-    }, 
+      "addr": "005a1950",
+      "from_addr": "005a19c3",
+      "name": "core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f721c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140", 
-      "addr": "005f7140"
-    }, 
+      "addr": "005f7140",
+      "from_addr": "005f721c",
+      "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f7b02", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0", 
-      "addr": "005f7af0"
-    }, 
+      "addr": "005f7af0",
+      "from_addr": "005f7b02",
+      "name": "core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f7ad2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0", 
-      "addr": "005f7ac0"
-    }, 
+      "addr": "005f7ac0",
+      "from_addr": "005f7ad2",
+      "name": "core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f73f1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0", 
-      "addr": "005f73e0"
+      "addr": "005f73e0",
+      "from_addr": "005f73f1",
+      "name": "core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005f7280",
+    "address_range": [
+      [
+        "005f7280",
+        "005f73d4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280",
+    "signature": "void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006583dd",
+      "name": "g_QuaternionToMatrixScaleFactor",
+      "type": "double",
+      "value": "2"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 124,
+    "local_size": 116,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "matrix_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      },
+      {
+        "is_param": true,
+        "name": "quat_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      }
+    ]
+  },
+  "suspects": []
 }

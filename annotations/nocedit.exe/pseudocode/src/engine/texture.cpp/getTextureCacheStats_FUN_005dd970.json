@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 15, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690", 
-      "addr": "005dd690"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CTextureCache*", 
-      "name": "g_TextureCacheInstance", 
-      "addr": "03f87358", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005dd970", 
-    "signature": "void engine_texture.cpp_getTextureCacheStats_FUN_005dd970(char * output_buffer)", 
-    "address_range": [
-      [
-        "005dd970", 
-        "005dd984"
-      ]
-    ], 
-    "name": "engine_texture.cpp_getTextureCacheStats_FUN_005dd970"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "004da839", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
+      "addr": "004da100",
+      "from_addr": "004da839",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005dd970",
+    "address_range": [
+      [
+        "005dd970",
+        "005dd984"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_getTextureCacheStats_FUN_005dd970",
+    "signature": "void engine_texture.cpp_getTextureCacheStats_FUN_005dd970(char * output_buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "005dd690",
+      "name": "engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f87358",
+      "name": "g_TextureCacheInstance",
+      "type": "CTextureCache*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -590,28 +590,27 @@ LAB_004b9590:
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_1318);
         in_stack_ffffdd0c = 0x4b96d7;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)(auStack_1318 + 4),(char *)PTR_s_Skip_00679da0);
+                  ((CStrList *)(auStack_1318 + 4),PTR_s_Skip_00679da0);
         if (*(int *)(unaff_retaddr + iVar3 * 0x39c + 0x370) != 5) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    ((CStrList *)(auStack_1318 + 8),(char *)PTR_s_Copy_00679da4);
+                    ((CStrList *)(auStack_1318 + 8),PTR_s_Copy_00679da4);
         }
         if ((*(int *)(unaff_retaddr + iVar3 * 0x39c + 0x374) == 0) &&
            (*(int *)(unaff_retaddr + iVar3 * 0x39c + 0x370) != 5)) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    ((CStrList *)(auStack_1318 + 0xc),(char *)PTR_s_Copy_Mount_00628453_00679da8);
+                    ((CStrList *)(auStack_1318 + 0xc),PTR_s_Copy_Mount_00628453_00679da8);
         }
         if (*(int *)(unaff_retaddr + iVar3 * 0x39c + 0x370) != 5) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    ((CStrList *)(auStack_1318 + 0xc),(char *)PTR_s_Copy_Extract_00628460_00679dac);
+                    ((CStrList *)(auStack_1318 + 0xc),PTR_s_Copy_Extract_00628460_00679dac);
         }
         if (*(int *)(unaff_retaddr + iVar3 * 0x39c + 0x370) == 5) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    ((CStrList *)(auStack_1318 + 0xc),(char *)PTR_s_Dismount_00679db0);
+                    ((CStrList *)(auStack_1318 + 0xc),PTR_s_Dismount_00679db0);
         }
         if (*(int *)(unaff_retaddr + iVar3 * 0x39c + 0x370) == 5) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    ((CStrList *)(auStack_1318 + 0xc),
-                     (char *)PTR_s_Dismount_Delete_00628478_00679db4);
+                    ((CStrList *)(auStack_1318 + 0xc),PTR_s_Dismount_Delete_00628478_00679db4);
         }
         if (*(int *)(unaff_retaddr + iVar3 * 0x39c + 0x370) != 5) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -621,8 +620,7 @@ LAB_004b9590:
              (CStrList *)
              shape_edittool_cpp_CStrList_findString_FUN_004a3030
                        ((CStrList *)(auStack_1318 + 0xc),
-                        (char *)(&PTR_s_Skip_00679da0)
-                                [*(int *)(unaff_retaddr + iVar3 * 0x39c + 0x378)]);
+                        (&PTR_s_Skip_00679da0)[*(int *)(unaff_retaddr + iVar3 * 0x39c + 0x378)]);
         while( true ) {
           in_stack_ffffdd18 = &stack0xffffdd24;
           in_stack_ffffdd20 = (FILE *)0x0;

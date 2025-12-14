@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 49, 
-    "assembly_lines": 36, 
-    "suspect_count": 2, 
+    "assembly_lines": 36,
+    "complexity_score": 38,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_applyActPalette_FUN_004319b0", 
-      "addr": "004319b0"
-    }, 
-    {
-      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870", 
-      "addr": "00431870"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((char *)bitmap_buffer,bitmap_buffer,palette_index,in_stack_00000014);"
-    }
-  ], 
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00431830", 
-    "signature": "void cockpit_ckptutil.c_applyColorPalette_FUN_004319b0(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)", 
+    "address": "00431830",
     "address_range": [
       [
-        "00431830", 
+        "00431830",
         "0043186e"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_applyColorPalette_FUN_004319b0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_applyColorPalette_FUN_004319b0",
+    "signature": "void cockpit_ckptutil.c_applyColorPalette_FUN_004319b0(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "004319b0",
+      "name": "cockpit_ckptutil.c_applyActPalette_FUN_004319b0"
+    },
+    {
+      "addr": "00431870",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "bitmap_buffer"
-      }, 
+        "is_param": true,
+        "name": "bitmap_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bitmap_size"
-      }, 
+        "is_param": true,
+        "name": "bitmap_size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "palette_index"
+        "is_param": true,
+        "name": "palette_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000014",
+      "text": "(bitmap_buffer,bitmap_buffer,palette_index,in_stack_00000014);",
+      "type": "stack_param"
+    }
+  ]
 }

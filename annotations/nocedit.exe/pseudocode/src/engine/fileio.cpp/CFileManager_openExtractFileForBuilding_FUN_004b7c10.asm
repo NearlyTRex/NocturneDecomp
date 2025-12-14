@@ -31,28 +31,28 @@ section .text
 
     PUSH 0xa8c                          ; 004b7c10
         ;   Label: engine_fileio.cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10
-    PUSH 0x628029                       ; 004b7c15 | = "..\\engine\\fileio.cpp" | s_engine_fileio_cpp_00628029 = ..\engine\fileio.cpp
-    PUSH 0x62803e                       ; 004b7c1a | = "wt" | s_wt_0062803e = wt
+    PUSH 0x628029                       ; 004b7c15 | = "..\\engine\\fileio.cpp"
+    PUSH 0x62803e                       ; 004b7c1a | = "wt"
     PUSH 0x0                            ; 004b7c1f
-    PUSH 0x628041                       ; 004b7c21 | = "level.lst" | s_level_lst_00628041 = level.lst
-    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004b7c26 | FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)
+    PUSH 0x628041                       ; 004b7c21 | = "level.lst"
+    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004b7c26
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 004b7c2b
     MOV EDX,dword ptr [ESP + 0x4]       ; 004b7c2e
     MOV dword ptr [EDX],EAX             ; 004b7c32
     TEST EAX,EAX                        ; 004b7c34
-    JZ 0x004b7c39                       ; 004b7c36 | LAB_004b7c39
-        ;   XREF to: 004b7c39 (CONDITIONAL_JUMP)
+    JZ 0x004b7c39                       ; 004b7c36
+        ;   XREF to: 004b7c39 (CONDITIONAL_JUMP)  ; LAB_004b7c39
     RET                                 ; 004b7c38
     PUSH EBX                            ; 004b7c39
         ;   Label: LAB_004b7c39
-    MOV ECX,0x62804b                    ; 004b7c3a | = "..\\engine\\fileio.cpp" | s_engine_fileio_cpp_0062804b = ..\engine\fileio.cpp
+    MOV ECX,0x62804b                    ; 004b7c3a | = "..\\engine\\fileio.cpp"
     MOV EBX,0xa8e                       ; 004b7c3f
-    PUSH 0x628060                       ; 004b7c44 | = "fileManager::openExtractFile - Unable..." | s_fileManager_openExtractF_00628060 = fileManager::openExtractFile - Unable to open level.lst
-    MOV dword ptr [0x02f0ca48],ECX      ; 004b7c49 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 004b7c4f | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b7c55 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x628060                       ; 004b7c44 | = "fileManager::openExtractFile - Unable..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 004b7c49 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 004b7c4f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b7c55
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004b7c5a
     POP EBX                             ; 004b7c5d
     RET                                 ; 004b7c5e

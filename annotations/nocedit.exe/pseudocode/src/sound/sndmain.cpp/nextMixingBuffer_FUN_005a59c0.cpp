@@ -101,7 +101,7 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
     mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff98._12_4_;
     mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff98._16_4_;
     mix_buffer.channel_buffers[6] = (float *)in_stack_ffffffb0;
-    mix_buffer.channel_buffers[7] = (float *)in_stack_ffffffb4;
+    mix_buffer.channel_buffers[7] = in_stack_ffffffb4;
     mix_buffer.num_output_samples = uVar9;
     mix_buffer.num_channels = (int)pCVar10;
     mix_buffer.output_sample_rate = (int)fVar11;

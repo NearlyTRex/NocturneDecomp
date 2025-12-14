@@ -1,178 +1,178 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 108, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 2, 
-    "global_count": 11, 
-    "total_lines": 82, 
-    "assembly_lines": 54, 
-    "suspect_count": 6, 
+    "assembly_lines": 54,
+    "complexity_score": 108,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 11,
+    "pseudocode_lines": 28,
+    "suspect_count": 6,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
-      "addr": "00408ec0"
-    }, 
-    {
-      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30", 
-      "addr": "00471d30"
-    }, 
-    {
-      "name": "core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0", 
-      "addr": "004765e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_00660a44", 
-      "addr": "00660a44", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonLight", 
-      "name": "g_CDemonLightInstance", 
-      "addr": "02d7eaf0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonLightInstance.base.base.position.x", 
-      "addr": "02d7eaf4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonLightInstance.base.base.position.y", 
-      "addr": "02d7eaf8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonLightInstance.base.base.position.z", 
-      "addr": "02d7eafc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d7eb00", 
-      "addr": "02d7eb00", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonLightInstance.base.base.projection_scale", 
-      "addr": "02d7eb28", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonLightInstance.base.max_distance", 
-      "addr": "02d7ec30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonLightInstance.light_enabled_flag", 
-      "addr": "02d807a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonLightInstance.field17_0x1cbc", 
-      "addr": "02d807ac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonLightInstance.antialiasing_enabled", 
-      "addr": "02d807c0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "&stack0xfffffff8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(param_5,(CVector3f *)&stack0xfffffff8,input_local_point);"
-    }, 
-    {
-      "line": 19, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.position.y) {"
-    }, 
-    {
-      "line": 21, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_CDemonLightInstance.base.base.position.x = unaff_EBX;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00505ac0", 
-    "signature": "undefined core_lightgun.cpp_FUN_00505ac0()", 
-    "address_range": [
-      [
-        "00505ac0", 
-        "00505b6e"
-      ]
-    ], 
-    "name": "core_lightgun.cpp_FUN_00505ac0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "unaffected_reg",
+      "register_param",
+      "stack_ref",
+      "badspacebase"
+    ],
+    "total_lines": 82
+  },
   "cross_references": [
     {
-      "from_addr": "0050655d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450", 
-      "addr": "00506450"
-    }, 
+      "addr": "00506450",
+      "from_addr": "0050655d",
+      "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00505eb8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lightgun.cpp_FUN_00505c70", 
-      "addr": "00505c70"
+      "addr": "00505c70",
+      "from_addr": "00505eb8",
+      "name": "core_lightgun.cpp_FUN_00505c70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00505ac0",
+    "address_range": [
+      [
+        "00505ac0",
+        "00505b6e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_lightgun.cpp_FUN_00505ac0",
+    "signature": "undefined core_lightgun.cpp_FUN_00505ac0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "00471d30",
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    },
+    {
+      "addr": "004765e0",
+      "name": "core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00660a44",
+      "name": "DAT_00660a44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7eaf0",
+      "name": "g_CDemonLightInstance",
+      "type": "CDemonLight",
+      "value": null
+    },
+    {
+      "addr": "02d7eaf4",
+      "name": "g_CDemonLightInstance.base.base.position.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7eaf8",
+      "name": "g_CDemonLightInstance.base.base.position.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7eafc",
+      "name": "g_CDemonLightInstance.base.base.position.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7eb00",
+      "name": "DAT_02d7eb00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7eb28",
+      "name": "g_CDemonLightInstance.base.base.projection_scale",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7ec30",
+      "name": "g_CDemonLightInstance.base.max_distance",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d807a4",
+      "name": "g_CDemonLightInstance.light_enabled_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d807ac",
+      "name": "g_CDemonLightInstance.field17_0x1cbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d807c0",
+      "name": "g_CDemonLightInstance.antialiasing_enabled",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 16,
+      "match": "&stack0xfffffff8",
+      "text": "(param_5,(CVector3f *)&stack0xfffffff8,input_local_point);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0x00000000",
+      "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.position.y) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBX",
+      "text": "g_CDemonLightInstance.base.base.position.x = unaff_EBX;",
+      "type": "unaffected_reg"
     }
   ]
 }

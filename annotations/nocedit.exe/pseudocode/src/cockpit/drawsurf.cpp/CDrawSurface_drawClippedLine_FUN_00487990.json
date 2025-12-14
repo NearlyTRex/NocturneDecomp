@@ -1,128 +1,128 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 76, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 89, 
-    "assembly_lines": 68, 
-    "suspect_count": 4, 
+    "assembly_lines": 68,
+    "complexity_score": 76,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 21,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20", 
-      "addr": "00487e20"
-    }, 
-    {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0", 
-      "addr": "00487ad0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,y1,x2,y2,in_stack_00000018);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00487990", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)", 
-    "address_range": [
-      [
-        "00487990", 
-        "00487a23"
-      ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y1"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x2"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y2"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 89
+  },
   "cross_references": [
     {
-      "from_addr": "004890c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClosedPolyline_FUN_00489090", 
-      "addr": "00489090"
-    }, 
+      "addr": "00489090",
+      "from_addr": "004890c0",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClosedPolyline_FUN_00489090",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00489e16", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30", 
-      "addr": "00489d30"
+      "addr": "00489d30",
+      "from_addr": "00489e16",
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00487990",
+    "address_range": [
+      [
+        "00487990",
+        "00487a23"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00487e20",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20"
+    },
+    {
+      "addr": "00487ad0",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000018",
+      "text": "(this_ptr,y1,x2,y2,in_stack_00000018);",
+      "type": "stack_param"
     }
   ]
 }

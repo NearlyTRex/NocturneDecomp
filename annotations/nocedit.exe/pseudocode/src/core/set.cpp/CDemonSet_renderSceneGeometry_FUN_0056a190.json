@@ -1,397 +1,397 @@
 {
   "complexity": {
-    "function_call_count": 17, 
-    "complexity_score": 240, 
-    "pseudocode_lines": 105, 
-    "cross_reference_count": 14, 
-    "global_count": 13, 
-    "total_lines": 378, 
-    "assembly_lines": 273, 
-    "suspect_count": 11, 
+    "assembly_lines": 273,
+    "complexity_score": 240,
+    "cross_reference_count": 14,
+    "function_call_count": 17,
+    "global_count": 13,
+    "pseudocode_lines": 105,
+    "suspect_count": 11,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param", 
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850", 
-      "addr": "00477850"
-    }, 
-    {
-      "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0", 
-      "addr": "004901f0"
-    }, 
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50", 
-      "addr": "00497e50"
-    }, 
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0", 
-      "addr": "00498fb0"
-    }, 
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50", 
-      "addr": "00498e50"
-    }, 
-    {
-      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0", 
-      "addr": "004e9ca0"
-    }, 
-    {
-      "name": "core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800", 
-      "addr": "00522800"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70", 
-      "addr": "00570b70"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0", 
-      "addr": "005709e0"
-    }, 
-    {
-      "name": "core_set.cpp_FUN_00570af0", 
-      "addr": "00570af0"
-    }, 
-    {
-      "name": "core_terrain.cpp_CTerrain_render_FUN_005e1f50", 
-      "addr": "005e1f50"
-    }, 
-    {
-      "name": "core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70", 
-      "addr": "005e9e70"
-    }, 
-    {
-      "name": "core_water.cpp_CWater_render_FUN_005ea320", 
-      "addr": "005ea320"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
-      "addr": "0048c450"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0", 
-      "addr": "0048c6c0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0048c690", 
-      "addr": "0048c690"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "SMRGLTextureBasic*", 
-      "name": "g_SkyDomeTexturePtr", 
-      "addr": "0067235c", 
-      "value": "02ca0148"
-    }, 
-    {
-      "type": "CVector3i", 
-      "name": "g_GlobalLightDirection", 
-      "addr": "006810cc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderMirrorsFlag", 
-      "addr": "006810d8", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "CTerrain*", 
-      "name": "g_CTerrainPtr", 
-      "addr": "006843f8", 
-      "value": "03f8749c"
-    }, 
-    {
-      "type": "CWater*", 
-      "name": "g_CWaterPtr", 
-      "addr": "006844f0", 
-      "value": "03f875e0"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "g_SkyDomeTextureData", 
-      "addr": "02ca0148", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRaytrace", 
-      "name": "g_CDemonRaytraceInstance", 
-      "addr": "03277d14", 
-      "value": null
-    }, 
-    {
-      "type": "CKeyFramedModel", 
-      "name": "g_CKeyFramedModelInstance", 
-      "addr": "032780a4", 
-      "value": null
-    }, 
-    {
-      "type": "CTerrain", 
-      "name": "g_CTerrainInstance", 
-      "addr": "03f8749c", 
-      "value": null
-    }, 
-    {
-      "type": "CWater", 
-      "name": "g_CWaterInstance", 
-      "addr": "03f875e0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int **unaff_EDI;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000014;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_0000002c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_0000002c;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000030;"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&g_CDemonRaytraceInstance,in_stack_00000014,iVar1);"
-    }, 
-    {
-      "line": 46, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "&this_ptr->cameras[this_ptr->selected_camera_index].pvs_list,unaff_EDI);"
-    }, 
-    {
-      "line": 56, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(g_CDemonRendererPtr,(CVector3f *)&stack0x00000000);"
-    }, 
-    {
-      "line": 84, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&g_CDemonRaytraceInstance,in_stack_00000030,0);"
-    }, 
-    {
-      "line": 101, 
-      "match": "in_stack_0000002c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&g_CDemonRaytraceInstance,in_stack_0000002c,0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0056a190", 
-    "signature": "void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet * this_ptr, float frustum_param, int render_mode)", 
-    "address_range": [
-      [
-        "0056a190", 
-        "0056a464"
-      ]
-    ], 
-    "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "frustum_param"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_mode"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 378
+  },
   "cross_references": [
     {
-      "from_addr": "00443d1d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_FUN_00443bc0", 
-      "addr": "00443bc0"
-    }, 
+      "addr": "00443bc0",
+      "from_addr": "00443d1d",
+      "name": "core_course.cpp_FUN_00443bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053a338", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
-    }, 
+      "addr": "005390f0",
+      "from_addr": "0053a338",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056bfae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80", 
-      "addr": "0056be80"
-    }, 
+      "addr": "0056be80",
+      "from_addr": "0056bfae",
+      "name": "core_set.cpp_CDemonSet_FUN_0056be80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056caf7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
-      "addr": "0056c990"
-    }, 
+      "addr": "0056c990",
+      "from_addr": "0056caf7",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056ab84", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
-      "addr": "0056aa10"
-    }, 
+      "addr": "0056aa10",
+      "from_addr": "0056ab84",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056a78e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470", 
-      "addr": "0056a470"
-    }, 
+      "addr": "0056a470",
+      "from_addr": "0056a78e",
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056b46c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
-      "addr": "0056ae50"
-    }, 
+      "addr": "0056ae50",
+      "from_addr": "0056b46c",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00574a69", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910", 
-      "addr": "00574910"
-    }, 
+      "addr": "00574910",
+      "from_addr": "00574a69",
+      "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00581ca5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0", 
-      "addr": "00581aa0"
-    }, 
+      "addr": "00581aa0",
+      "from_addr": "00581ca5",
+      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00583401", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
-      "addr": "00583170"
-    }, 
+      "addr": "00583170",
+      "from_addr": "00583401",
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057aac9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940", 
-      "addr": "0057a940"
-    }, 
+      "addr": "0057a940",
+      "from_addr": "0057aac9",
+      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005804a6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310", 
-      "addr": "00580310"
-    }, 
+      "addr": "00580310",
+      "from_addr": "005804a6",
+      "name": "core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057dd5b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
-      "addr": "0057d660"
-    }, 
+      "addr": "0057d660",
+      "from_addr": "0057dd5b",
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057d07b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80", 
-      "addr": "0057ce80"
+      "addr": "0057ce80",
+      "from_addr": "0057d07b",
+      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056a190",
+    "address_range": [
+      [
+        "0056a190",
+        "0056a464"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190",
+    "signature": "void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(CDemonSet * this_ptr, float frustum_param, int render_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00477850",
+      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850"
+    },
+    {
+      "addr": "004901f0",
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0"
+    },
+    {
+      "addr": "00497e50",
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50"
+    },
+    {
+      "addr": "00498fb0",
+      "name": "core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0"
+    },
+    {
+      "addr": "00498e50",
+      "name": "core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50"
+    },
+    {
+      "addr": "004e9ca0",
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0"
+    },
+    {
+      "addr": "00522800",
+      "name": "core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800"
+    },
+    {
+      "addr": "00570b70",
+      "name": "core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70"
+    },
+    {
+      "addr": "005709e0",
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0"
+    },
+    {
+      "addr": "00570af0",
+      "name": "core_set.cpp_FUN_00570af0"
+    },
+    {
+      "addr": "005e1f50",
+      "name": "core_terrain.cpp_CTerrain_render_FUN_005e1f50"
+    },
+    {
+      "addr": "005e9e70",
+      "name": "core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70"
+    },
+    {
+      "addr": "005ea320",
+      "name": "core_water.cpp_CWater_render_FUN_005ea320"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048c450",
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048c6c0",
+      "name": "engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0"
+    },
+    {
+      "addr": "0048c690",
+      "name": "engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0048c690"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067235c",
+      "name": "g_SkyDomeTexturePtr",
+      "type": "SMRGLTextureBasic*",
+      "value": "02ca0148"
+    },
+    {
+      "addr": "006810cc",
+      "name": "g_GlobalLightDirection",
+      "type": "CVector3i",
+      "value": null
+    },
+    {
+      "addr": "006810d8",
+      "name": "g_RenderMirrorsFlag",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "006843f8",
+      "name": "g_CTerrainPtr",
+      "type": "CTerrain*",
+      "value": "03f8749c"
+    },
+    {
+      "addr": "006844f0",
+      "name": "g_CWaterPtr",
+      "type": "CWater*",
+      "value": "03f875e0"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02ca0148",
+      "name": "g_SkyDomeTextureData",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03277d14",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    },
+    {
+      "addr": "032780a4",
+      "name": "g_CKeyFramedModelInstance",
+      "type": "CKeyFramedModel",
+      "value": null
+    },
+    {
+      "addr": "03f8749c",
+      "name": "g_CTerrainInstance",
+      "type": "CTerrain",
+      "value": null
+    },
+    {
+      "addr": "03f875e0",
+      "name": "g_CWaterInstance",
+      "type": "CWater",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "frustum_param",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "render_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EDI",
+      "text": "int **unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000014",
+      "text": "float in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000002c",
+      "text": "float in_stack_0000002c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000030",
+      "text": "float in_stack_00000030;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000014",
+      "text": "(&g_CDemonRaytraceInstance,in_stack_00000014,iVar1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_EDI",
+      "text": "&this_ptr->cameras[this_ptr->selected_camera_index].pvs_list,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0x00000000",
+      "text": "(g_CDemonRendererPtr,(CVector3f *)&stack0x00000000);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_00000030",
+      "text": "(&g_CDemonRaytraceInstance,in_stack_00000030,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_0000002c",
+      "text": "(&g_CDemonRaytraceInstance,in_stack_0000002c,0);",
+      "type": "stack_param"
     }
   ]
 }

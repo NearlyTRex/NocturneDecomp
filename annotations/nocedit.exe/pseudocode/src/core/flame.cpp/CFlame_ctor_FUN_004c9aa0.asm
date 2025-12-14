@@ -31,16 +31,16 @@ section .text
     SUB ESP,0x4                         ; 004c9aa1
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c9aa4
     PUSH EDX                            ; 004c9aa8
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004c9aa9 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004c9aa9
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004c9aae
-    MOV dword ptr [EAX + 0x154],0x65e034 ; 004c9ab1 | CDemonActor_vtable PTR_core_flame.cpp_FUN_0065e034
+    MOV dword ptr [EAX + 0x154],0x65e034 ; 004c9ab1 | PTR_core_flame.cpp_FUN_0065e034
     MOV EBX,EAX                         ; 004c9abb
     MOV dword ptr [EAX + 0x158],0x3f800000 ; 004c9abd
     PUSH 0x41000000                     ; 004c9ac7
     MOV dword ptr [EAX + 0x15c],0x40000000 ; 004c9acc
     PUSH 0x0                            ; 004c9ad6
     MOV dword ptr [EAX + 0x160],0x3f800000 ; 004c9ad8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c9ae2 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c9ae2
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

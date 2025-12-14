@@ -37,8 +37,8 @@ section .text
     PUSH EDI                            ; 00453951
     SUB ESP,0xc                         ; 00453952
     MOV ESI,ESP                         ; 00453955
-    CALL engine_matrix.c_getCameraOrigin_FUN_0050e2c0 ; 00453957 | void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
-        ;   XREF to: 0050e2c0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_getCameraOrigin_FUN_0050e2c0 ; 00453957
+        ;   XREF to: 0050e2c0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0045395c
     LEA EAX,[EDX*0x4 + 0x0]             ; 00453960
     SUB EAX,EDX                         ; 00453967
@@ -53,7 +53,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00453983
     MOVSD ES:EDI,ESI                    ; 00453984
     MOVSD ES:EDI,ESI                    ; 00453985
-    MOV EDX,dword ptr [0x02d052e8]      ; 00453986 | CMatrix3x3i g_TransformMatrix
+    MOV EDX,dword ptr [0x02d052e8]      ; 00453986 | g_TransformMatrix
     MOV dword ptr [EAX + 0x124c],EDX    ; 0045398c
     MOV EDX,dword ptr [0x02d052ec]      ; 00453992 | g_TransformMatrix[0][1]
     MOV dword ptr [EAX + 0x126c],EDX    ; 00453998
@@ -71,7 +71,7 @@ section .text
     MOV dword ptr [EAX + 0x132c],EDX    ; 004539e0
     MOV EDX,dword ptr [0x02d05308]      ; 004539e6 | g_TransformMatrix[2][2]
     MOV dword ptr [EAX + 0x134c],EDX    ; 004539ec
-    MOV EDX,dword ptr [0x02f0d364]      ; 004539f2 | CMatrix3x3i g_InverseMatrix
+    MOV EDX,dword ptr [0x02f0d364]      ; 004539f2 | g_InverseMatrix
     MOV dword ptr [EAX + 0x136c],EDX    ; 004539f8
     MOV EDX,dword ptr [0x02f0d368]      ; 004539fe | g_InverseMatrix[0][1]
     MOV dword ptr [EAX + 0x138c],EDX    ; 00453a04

@@ -20,8 +20,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004f3891
     MOV EDX,dword ptr [EBX + 0x1fba0]   ; 004f3895
     TEST EDX,EDX                        ; 004f389b
-    JNZ 0x004f38a1                      ; 004f389d | LAB_004f38a1
-        ;   XREF to: 004f38a1 (CONDITIONAL_JUMP)
+    JNZ 0x004f38a1                      ; 004f389d
+        ;   XREF to: 004f38a1 (CONDITIONAL_JUMP)  ; LAB_004f38a1
     POP EBX                             ; 004f389f
     RET                                 ; 004f38a0
     PUSH ESI                            ; 004f38a1
@@ -31,8 +31,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 004f38a8
     PUSH ESI                            ; 004f38ac
     PUSH EBX                            ; 004f38ad
-    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0 ; 004f38ae | void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter * this_ptr)
-        ;   XREF to: 0042cdb0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0 ; 004f38ae
+        ;   XREF to: 0042cdb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter * this_ptr)
     ADD ESP,0x10                        ; 004f38b3
     MOV dword ptr [EBX + 0x1fba0],0x0   ; 004f38b6
     POP ESI                             ; 004f38c0

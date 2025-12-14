@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 75, 
-    "assembly_lines": 52, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
-      "addr": "005a0820"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0042b110", 
-    "signature": "void core_charactr.cpp_CCharacter_FUN_0042b110(CCharacter * this_ptr)", 
-    "address_range": [
-      [
-        "0042b110", 
-        "0042b18e"
-      ]
-    ], 
-    "name": "core_charactr.cpp_CCharacter_FUN_0042b110"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCharacter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 52,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 75
+  },
   "cross_references": [
     {
-      "from_addr": "0042b100", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b0e0", 
-      "addr": "0042b0e0"
+      "addr": "0042b0e0",
+      "from_addr": "0042b100",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b0e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0042b110",
+    "address_range": [
+      [
+        "0042b110",
+        "0042b18e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_FUN_0042b110",
+    "signature": "void core_charactr.cpp_CCharacter_FUN_0042b110(CCharacter * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a0820",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": []
 }

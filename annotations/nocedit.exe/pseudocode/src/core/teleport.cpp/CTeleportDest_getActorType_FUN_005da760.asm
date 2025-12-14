@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f6cc90                   ; 005da760 | CDemonActorType g_CTeleportDestClassInfo
+    MOV EAX,0x3f6cc90                   ; 005da760 | g_CTeleportDestClassInfo
         ;   Label: core_teleport.cpp_CTeleportDest_getActorType_FUN_005da760
     RET                                 ; 005da765
 

@@ -125,8 +125,8 @@ section .text
     FCOMPP                              ; 0044d59d
     FNSTSW AX                           ; 0044d59f
     SAHF                                ; 0044d5a1
-    JNC 0x0044d5d2                      ; 0044d5a2 | LAB_0044d5d2
-        ;   XREF to: 0044d5d2 (CONDITIONAL_JUMP)
+    JNC 0x0044d5d2                      ; 0044d5a2
+        ;   XREF to: 0044d5d2 (CONDITIONAL_JUMP)  ; LAB_0044d5d2
     MOV EAX,dword ptr [EBP + 0x18]      ; 0044d5a4
     FLD1                                ; 0044d5a7
     FLD float ptr [EAX]                 ; 0044d5a9

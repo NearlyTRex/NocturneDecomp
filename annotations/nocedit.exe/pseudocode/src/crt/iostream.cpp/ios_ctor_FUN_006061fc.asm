@@ -28,6 +28,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 006061fc
         ;   Label: crt_iostream.cpp_ios_ctor_FUN_006061fc
-    MOV dword ptr [EAX + 0x28],0x665df8 ; 00606200 | void * g_IOS_Destructor
+    MOV dword ptr [EAX + 0x28],0x665df8 ; 00606200 | g_IOS_Destructor
     RET                                 ; 00606207
 

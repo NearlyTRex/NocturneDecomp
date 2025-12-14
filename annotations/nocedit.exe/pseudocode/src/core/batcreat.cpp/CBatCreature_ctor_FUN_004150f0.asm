@@ -27,16 +27,16 @@ section .text
         ;   Label: core_batcreat.cpp_CBatCreature_ctor_FUN_004150f0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004150f1
     PUSH EDX                            ; 004150f5
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004150f6 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004150f6
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004150fb
-    PUSH 0x61546b                       ; 004150fe | = "batcreat.dfm" | s_batcreat_dfm_0061546b = batcreat.dfm
+    PUSH 0x61546b                       ; 004150fe | = "batcreat.dfm"
     MOV EBX,EAX                         ; 00415103
     ADD EAX,0x158                       ; 00415105
     PUSH EAX                            ; 0041510a
-    MOV dword ptr [EAX + -0x4],0x65a5c4 ; 0041510b | CDemonActor_vtable g_CBatCreatureVTable
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00415112 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x65a5c4 ; 0041510b | g_CBatCreatureVTable
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00415112
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0065a5b0]          ; 00415117 | DAT_0065a5b0
     FLD float ptr [0x0065a5b4]          ; 0041511d | PTR_FUN_0065a5b1+3
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 00415123

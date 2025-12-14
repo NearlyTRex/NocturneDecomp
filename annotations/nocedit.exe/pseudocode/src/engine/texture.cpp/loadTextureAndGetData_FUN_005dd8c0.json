@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 32, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 16, 
-    "assembly_lines": 9, 
-    "suspect_count": 2, 
+    "assembly_lines": 9,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
-      "addr": "005dd800"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return (SMRGLHeaderExtended *)(in_stack_00000008 + 0x48);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005dd8c0", 
-    "signature": "SMRGLHeaderExtended * engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0(SMRGLTextureBasic * texture_info)", 
-    "address_range": [
-      [
-        "005dd8c0", 
-        "005dd8d4"
-      ]
-    ], 
-    "name": "engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLTextureBasic *", 
-        "size": 4, 
-        "name": "texture_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "004071d0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0", 
-      "addr": "004070c0"
+      "addr": "004070c0",
+      "from_addr": "004071d0",
+      "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005dd8c0",
+    "address_range": [
+      [
+        "005dd8c0",
+        "005dd8d4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0",
+    "signature": "SMRGLHeaderExtended * engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0(SMRGLTextureBasic * texture_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "005dd800",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "return (SMRGLHeaderExtended *)(in_stack_00000008 + 0x48);",
+      "type": "stack_param"
     }
   ]
 }

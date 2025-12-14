@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 22, 
-    "assembly_lines": 15, 
-    "suspect_count": 1, 
+    "assembly_lines": 15,
+    "complexity_score": 22,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "FILE*", 
-      "name": "g_StaticFilePoolStart", 
-      "addr": "00684cc4", 
-      "value": "00000000"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "(FILE *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "return (FILE *)((int)&g_StaticFilePoolStart + fd * 0x1a);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060b7a0", 
-    "signature": "FILE * crt_stdio.c_get_standard_file_handle_FUN_0060b7a0(int fd)", 
-    "address_range": [
-      [
-        "0060b7a0", 
-        "0060b7c1"
-      ]
-    ], 
-    "name": "crt_stdio.c_get_standard_file_handle_FUN_0060b7a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "fd"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 22
+  },
   "cross_references": [
     {
-      "from_addr": "0060e29e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_math.c_print_error_message_FUN_0060e298", 
-      "addr": "0060e298"
-    }, 
+      "addr": "0060e298",
+      "from_addr": "0060e29e",
+      "name": "crt_math.c_print_error_message_FUN_0060e298",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006060a8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_prepare_stream_for_write_FUN_00606055", 
-      "addr": "00606055"
+      "addr": "00606055",
+      "from_addr": "006060a8",
+      "name": "crt_stdio.c_prepare_stream_for_write_FUN_00606055",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060b7a0",
+    "address_range": [
+      [
+        "0060b7a0",
+        "0060b7c1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_get_standard_file_handle_FUN_0060b7a0",
+    "signature": "FILE * crt_stdio.c_get_standard_file_handle_FUN_0060b7a0(int fd)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00684cc4",
+      "name": "g_StaticFilePoolStart",
+      "type": "FILE*",
+      "value": "00000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "fd",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(FILE *)((int)",
+      "text": "return (FILE *)((int)&g_StaticFilePoolStart + fd * 0x1a);",
+      "type": "pointer_cast"
     }
   ]
 }

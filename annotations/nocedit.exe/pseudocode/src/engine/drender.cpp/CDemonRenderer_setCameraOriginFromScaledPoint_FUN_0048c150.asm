@@ -38,7 +38,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
     SUB ESP,0x8                         ; 0048c151
     MOV EAX,dword ptr [ESP + 0x14]      ; 0048c154
-    FLD double ptr [0x00621ff5]         ; 0048c158 | double g_CameraScaleFactor
+    FLD double ptr [0x00621ff5]         ; 0048c158 | g_CameraScaleFactor
     FLD float ptr [EAX + 0x8]           ; 0048c15e
     FMUL ST1                            ; 0048c161
     FLD float ptr [EAX + 0x4]           ; 0048c163
@@ -46,25 +46,25 @@ section .text
     FLD float ptr [EAX]                 ; 0048c168
     FMULP ST3                           ; 0048c16a
     FXCH                                ; 0048c16c
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c16e | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c16e
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 0048c173
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c175 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c175
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 0048c17a
     FISTP dword ptr [ESP]               ; 0048c17c
     FISTP dword ptr [ESP + 0x4]         ; 0048c17f
     MOV EDX,dword ptr [ESP]             ; 0048c183
     MOV ECX,dword ptr [ESP + 0x4]       ; 0048c186
     PUSH EDX                            ; 0048c18a
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c18b | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c18b
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     PUSH ECX                            ; 0048c190
     FISTP dword ptr [ESP + 0xc]         ; 0048c191
     MOV EBX,dword ptr [ESP + 0xc]       ; 0048c195
     PUSH EBX                            ; 0048c199
-    CALL engine_matrix.c_setCameraOrigin_FUN_0050e270 ; 0048c19a | void engine_matrix.c_setCameraOrigin_FUN_0050e270(int x, int y, int z)
-        ;   XREF to: 0050e270 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_setCameraOrigin_FUN_0050e270 ; 0048c19a
+        ;   XREF to: 0050e270 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_setCameraOrigin_FUN_0050e270(int x, int y, int z)
     ADD ESP,0xc                         ; 0048c19f
     ADD ESP,0x8                         ; 0048c1a2
     POP EBX                             ; 0048c1a5

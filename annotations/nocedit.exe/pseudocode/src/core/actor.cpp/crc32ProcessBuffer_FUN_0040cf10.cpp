@@ -12,13 +12,10 @@ core_actor_cpp_crc32ProcessBuffer_FUN_0040cf10(uint *crc_state,byte *buffer,int 
 {
   byte input_byte;
   
-  if (0 < buffer_length) {
-    do {
-      input_byte = *buffer;
-      buffer = buffer + 1;
-      buffer_length = buffer_length + -1;
-      core_actor_cpp_crc32ProcessByte_FUN_0040ce30(crc_state,input_byte);
-    } while (0 < buffer_length);
+  for (; 0 < buffer_length; buffer_length = buffer_length + -1) {
+    input_byte = *buffer;
+    buffer = buffer + 1;
+    core_actor_cpp_crc32ProcessByte_FUN_0040ce30(crc_state,input_byte);
   }
   return;
 }

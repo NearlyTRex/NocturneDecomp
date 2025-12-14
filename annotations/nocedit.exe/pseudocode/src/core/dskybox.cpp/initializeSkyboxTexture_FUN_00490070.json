@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 52, 
-    "assembly_lines": 27, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_NITESKY_RAW_00622532", 
-      "addr": "00622532", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ITESKY.RAW_00622533", 
-      "addr": "00622533", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_TESKY.RAW_00622534", 
-      "addr": "00622534", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ESKY.RAW_00622535", 
-      "addr": "00622535", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00490070", 
-    "signature": "SMRGLTextureBasic * core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic * texture)", 
-    "address_range": [
-      [
-        "00490070", 
-        "004900a3"
-      ]
-    ], 
-    "name": "core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLTextureBasic *", 
-        "size": 4, 
-        "name": "texture"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 27,
+    "complexity_score": 25,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
+  },
   "cross_references": [
     {
-      "from_addr": "00490045", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dskybox.cpp_staticInit_FUN_00490040", 
-      "addr": "00490040"
+      "addr": "00490040",
+      "from_addr": "00490045",
+      "name": "core_dskybox.cpp_staticInit_FUN_00490040",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00490070",
+    "address_range": [
+      [
+        "00490070",
+        "004900a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070",
+    "signature": "SMRGLTextureBasic * core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic * texture)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00622532",
+      "name": "s_NITESKY_RAW_00622532",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622533",
+      "name": "s_ITESKY.RAW_00622533",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622534",
+      "name": "s_TESKY.RAW_00622534",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622535",
+      "name": "s_ESKY.RAW_00622535",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "texture",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLTextureBasic *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1397,8 +1397,9 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
     crt_string_c_memmove_FUN_005fe5e0(local_985 + 1,local_c8,SVar12);
     SVar12 = SVar12 - 1;
   }
-  iVar6 = crt_string_c_strcmp_FUN_005fef20(local_985 + 1,"<");
-  if (iVar6 != 0) {
+  iVar7 = crt_string_c_strcmp_FUN_005fef20(local_985 + 1,"<");
+  iVar6 = 0;
+  if (iVar7 != 0) {
     iVar6 = crt_string_c_strcmp_FUN_005fef20(local_985 + 1,"<=");
     if (iVar6 == 0) {
       iVar6 = 1;

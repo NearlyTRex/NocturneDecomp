@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004a9650
         ;   Label: core_enemy.cpp_CEnemy_FUN_004a9650
     PUSH EDX                            ; 004a9654
-    CALL core_charactr.cpp_CCharacter_FUN_00428140 ; 004a9655 | void core_charactr.cpp_CCharacter_FUN_00428140(CCharacter * this_ptr)
-        ;   XREF to: 00428140 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_00428140 ; 004a9655
+        ;   XREF to: 00428140 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00428140(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004a965a
     RET                                 ; 004a965d
 

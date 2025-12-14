@@ -1,308 +1,308 @@
 {
   "complexity": {
-    "function_call_count": 15, 
-    "complexity_score": 49, 
-    "pseudocode_lines": 49, 
-    "cross_reference_count": 8, 
-    "global_count": 9, 
-    "total_lines": 356, 
-    "assembly_lines": 307, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_disableTextWrap_FUN_00402820", 
-      "addr": "00402820"
-    }, 
-    {
-      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_004025f0", 
-      "addr": "004025f0"
-    }, 
-    {
-      "name": "engine_2d.c_drawTextCenteredColor_FUN_004026c0", 
-      "addr": "004026c0"
-    }, 
-    {
-      "name": "engine_2d.c_drawTextColor_FUN_00402430", 
-      "addr": "00402430"
-    }, 
-    {
-      "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402530", 
-      "addr": "00402530"
-    }, 
-    {
-      "name": "engine_2d.c_getTextColor_FUN_00402830", 
-      "addr": "00402830"
-    }, 
-    {
-      "name": "engine_2d.c_getTextWrapEnabled_FUN_004027f0", 
-      "addr": "004027f0"
-    }, 
-    {
-      "name": "engine_2d.c_setTextColor_FUN_00402840", 
-      "addr": "00402840"
-    }, 
-    {
-      "name": "engine_2d.c_setTextWrapEnabled_FUN_00402800", 
-      "addr": "00402800"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0", 
-      "addr": "004cdde0"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0", 
-      "addr": "004cdee0"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0", 
-      "addr": "004cdbf0"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0", 
-      "addr": "004cdce0"
-    }, 
-    {
-      "name": "engine_font.cpp_getDefaultTextColor_FUN_004ce220", 
-      "addr": "004ce220"
-    }, 
-    {
-      "name": "engine_font.cpp_setDefaultTextColor_FUN_004ce230", 
-      "addr": "004ce230"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_004890d4", 
-      "addr": "004890d4", 
-      "value": "004891dd"
-    }, 
-    {
-      "type": "void*", 
-      "name": "switchdataD_004890f4", 
-      "addr": "004890f4", 
-      "value": "00489336"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDrawColor", 
-      "addr": "02c6d550", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PaletteColorIndex", 
-      "addr": "02c6d554", 
-      "value": null
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_CurrentFont", 
-      "addr": "02c6d558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00489120", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface * this_ptr, int x, int y, int width, int height, char * text, int alignment_mode)", 
-    "address_range": [
-      [
-        "00489120", 
-        "004893e5"
-      ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120"
-  }, 
-  "stack_frame": {
-    "local_size": 52, 
-    "variables": [
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "alignment_mode"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 80, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
+    "assembly_lines": 307,
+    "complexity_score": 49,
+    "cross_reference_count": 8,
+    "function_call_count": 15,
+    "global_count": 9,
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 356
+  },
   "cross_references": [
     {
-      "from_addr": "0048974c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730", 
-      "addr": "00489730"
-    }, 
+      "addr": "00489730",
+      "from_addr": "0048974c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004899e4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_004899c0", 
-      "addr": "004899c0"
-    }, 
+      "addr": "004899c0",
+      "from_addr": "004899e4",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_004899c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00489900", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0", 
-      "addr": "004898e0"
-    }, 
+      "addr": "004898e0",
+      "from_addr": "00489900",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00489820", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800", 
-      "addr": "00489800"
-    }, 
+      "addr": "00489800",
+      "from_addr": "00489820",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004895ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590", 
-      "addr": "00489590"
-    }, 
+      "addr": "00489590",
+      "from_addr": "004895ac",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048967c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660", 
-      "addr": "00489660"
-    }, 
+      "addr": "00489660",
+      "from_addr": "0048967c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004894dc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0", 
-      "addr": "004894c0"
-    }, 
+      "addr": "004894c0",
+      "from_addr": "004894dc",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048940c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0", 
-      "addr": "004893f0"
+      "addr": "004893f0",
+      "from_addr": "0048940c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00489120",
+    "address_range": [
+      [
+        "00489120",
+        "004893e5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface * this_ptr, int x, int y, int width, int height, char * text, int alignment_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00402820",
+      "name": "engine_2d.c_disableTextWrap_FUN_00402820"
+    },
+    {
+      "addr": "004025f0",
+      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_004025f0"
+    },
+    {
+      "addr": "004026c0",
+      "name": "engine_2d.c_drawTextCenteredColor_FUN_004026c0"
+    },
+    {
+      "addr": "00402430",
+      "name": "engine_2d.c_drawTextColor_FUN_00402430"
+    },
+    {
+      "addr": "00402530",
+      "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402530"
+    },
+    {
+      "addr": "00402830",
+      "name": "engine_2d.c_getTextColor_FUN_00402830"
+    },
+    {
+      "addr": "004027f0",
+      "name": "engine_2d.c_getTextWrapEnabled_FUN_004027f0"
+    },
+    {
+      "addr": "00402840",
+      "name": "engine_2d.c_setTextColor_FUN_00402840"
+    },
+    {
+      "addr": "00402800",
+      "name": "engine_2d.c_setTextWrapEnabled_FUN_00402800"
+    },
+    {
+      "addr": "004cdde0",
+      "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0"
+    },
+    {
+      "addr": "004cdee0",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0"
+    },
+    {
+      "addr": "004cdbf0",
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0"
+    },
+    {
+      "addr": "004cdce0",
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0"
+    },
+    {
+      "addr": "004ce220",
+      "name": "engine_font.cpp_getDefaultTextColor_FUN_004ce220"
+    },
+    {
+      "addr": "004ce230",
+      "name": "engine_font.cpp_setDefaultTextColor_FUN_004ce230"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004890d4",
+      "name": "switchdataD_004890d4",
+      "type": "void*",
+      "value": "004891dd"
+    },
+    {
+      "addr": "004890f4",
+      "name": "switchdataD_004890f4",
+      "type": "void*",
+      "value": "00489336"
+    },
+    {
+      "addr": "02c6d550",
+      "name": "g_CurrentDrawColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d554",
+      "name": "g_PaletteColorIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d558",
+      "name": "g_CurrentFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 24,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "alignment_mode",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

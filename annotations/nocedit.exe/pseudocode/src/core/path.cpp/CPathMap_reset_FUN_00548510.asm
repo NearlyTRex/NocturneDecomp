@@ -26,8 +26,8 @@ section .text
     PUSH 0x7f                           ; 0054851a
     LEA EAX,[EBX + 0x9c70]              ; 0054851c
     PUSH EAX                            ; 00548522
-    CALL crt_memory.c_memset_FUN_005fde40 ; 00548523 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 00548523
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     LEA EAX,[EBX + 0x138c0]             ; 00548528
     MOV dword ptr [EBX + 0x138bc],0x0   ; 0054852e
     MOV dword ptr [EAX + 0x8],0x0       ; 00548538
@@ -43,8 +43,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 00548567
     MOV EDX,dword ptr [EAX + 0x4]       ; 0054856a
     MOV dword ptr [EAX],EDX             ; 0054856d
-    CALL crt_stdlib.c_rand_FUN_005feb5c ; 0054856f | int crt_stdlib.c_rand_FUN_005feb5c()
-        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_rand_FUN_005feb5c ; 0054856f
+        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
     AND EAX,0x3fff                      ; 00548574
     MOV dword ptr [EBX + 0x138d8],EAX   ; 00548579
     POP EBX                             ; 0054857f

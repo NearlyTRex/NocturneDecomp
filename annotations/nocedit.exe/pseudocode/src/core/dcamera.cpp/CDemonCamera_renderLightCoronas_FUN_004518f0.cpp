@@ -62,10 +62,10 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
   
   bVar2 = 0;
   if ((g_CGamePtr->halo_mode != 0) || ((p2 == 0 && (*(int *)((int)p1 + 0x20) != 0)))) {
-    g_CurrentGlobe = (CDemonGlobe *)p1;
+    g_CurrentGlobe = p1;
     iVar5 = in_stack_ffffff70;
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-              (this_ptr,(CVector3i *)p1,in_stack_ffffff6c);
+              (this_ptr,p1,in_stack_ffffff6c);
     g_CoronaTargetX = iVar5;
     (&g_CoronaTargetY)[(uint)bVar2 * -2] = *(int *)(&stack0xffffff74 + (uint)bVar2 * -8);
     (&g_CoronaTargetDepth)[(uint)bVar2 * -2 + (uint)bVar2 * -2] =

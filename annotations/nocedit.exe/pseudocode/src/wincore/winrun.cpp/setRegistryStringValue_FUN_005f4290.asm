@@ -40,15 +40,15 @@ section .text
     PUSH 0x0                            ; 005f42a2
     PUSH 0x20006                        ; 005f42a4
     PUSH 0x0                            ; 005f42a9
-    PUSH 0x6581a2                       ; 005f42ab | = "suck" | s_suck_006581a2 = suck
+    PUSH 0x6581a2                       ; 005f42ab | = "suck"
     PUSH 0x0                            ; 005f42b0
     MOV EDX,dword ptr [ESP + 0x2c]      ; 005f42b2
     PUSH EDX                            ; 005f42b6
     PUSH 0x80000002                     ; 005f42b7
-    CALL dword ptr CS:[0x611470]        ; 005f42bc | RegCreateKeyExA * RegCreateKeyExA
+    CALL dword ptr CS:[0x611470]        ; 005f42bc | RegCreateKeyExA
     TEST EAX,EAX                        ; 005f42c3
-    JZ 0x005f42cc                       ; 005f42c5 | LAB_005f42cc
-        ;   XREF to: 005f42cc (CONDITIONAL_JUMP)
+    JZ 0x005f42cc                       ; 005f42c5
+        ;   XREF to: 005f42cc (CONDITIONAL_JUMP)  ; LAB_005f42cc
     ADD ESP,0x8                         ; 005f42c7
     POP EBX                             ; 005f42ca
     RET                                 ; 005f42cb
@@ -71,10 +71,10 @@ section .text
     PUSH ECX                            ; 005f42e5
     MOV EBX,dword ptr [ESP + 0x1c]      ; 005f42e6
     PUSH EBX                            ; 005f42ea
-    CALL dword ptr CS:[0x61147c]        ; 005f42eb | RegSetValueExA * RegSetValueExA
+    CALL dword ptr CS:[0x61147c]        ; 005f42eb | RegSetValueExA
     MOV ESI,dword ptr [ESP + 0x8]       ; 005f42f2
     PUSH ESI                            ; 005f42f6
-    CALL dword ptr CS:[0x61146c]        ; 005f42f7 | RegCloseKey * RegCloseKey
+    CALL dword ptr CS:[0x61146c]        ; 005f42f7 | RegCloseKey
     POP ESI                             ; 005f42fe
     POP EDI                             ; 005f42ff
     ADD ESP,0x8                         ; 005f4300

@@ -26,28 +26,28 @@ section .text
     SUB EAX,EDX                         ; 0053f3ef
     MOV dword ptr [ESP + 0x4],EAX       ; 0053f3f1
     FILD dword ptr [ESP + 0x4]          ; 0053f3f5
-    FMUL double ptr [0x0063d21d]        ; 0053f3f9 | double DOUBLE_0063d21d
+    FMUL double ptr [0x0063d21d]        ; 0053f3f9 | DOUBLE_0063d21d
     FST float ptr [ESP]                 ; 0053f3ff
-    FCOMP double ptr [0x0063d225]       ; 0053f402 | double DOUBLE_0063d225
+    FCOMP double ptr [0x0063d225]       ; 0053f402 | DOUBLE_0063d225
     FNSTSW AX                           ; 0053f408
     SAHF                                ; 0053f40a
-    JC 0x0053f422                       ; 0053f40b | LAB_0053f422
-        ;   XREF to: 0053f422 (CONDITIONAL_JUMP)
+    JC 0x0053f422                       ; 0053f40b
+        ;   XREF to: 0053f422 (CONDITIONAL_JUMP)  ; LAB_0053f422
     FLD float ptr [ESP]                 ; 0053f40d
         ;   Label: LAB_0053f40d
-    FCOMP double ptr [0x0063d22d]       ; 0053f410 | double DOUBLE_0063d22d
+    FCOMP double ptr [0x0063d22d]       ; 0053f410 | DOUBLE_0063d22d
     FNSTSW AX                           ; 0053f416
     SAHF                                ; 0053f418
-    JA 0x0053f42b                       ; 0053f419 | LAB_0053f42b
-        ;   XREF to: 0053f42b (CONDITIONAL_JUMP)
+    JA 0x0053f42b                       ; 0053f419
+        ;   XREF to: 0053f42b (CONDITIONAL_JUMP)  ; LAB_0053f42b
     MOV EAX,dword ptr [ESP]             ; 0053f41b
     MOV ESP,EBP                         ; 0053f41e
     POP EBP                             ; 0053f420
     RET                                 ; 0053f421
     MOV dword ptr [ESP],0xc1f00000      ; 0053f422
         ;   Label: LAB_0053f422
-    JMP 0x0053f40d                      ; 0053f429 | LAB_0053f40d
-        ;   XREF to: 0053f40d (UNCONDITIONAL_JUMP)
+    JMP 0x0053f40d                      ; 0053f429
+        ;   XREF to: 0053f40d (UNCONDITIONAL_JUMP)  ; LAB_0053f40d
     MOV dword ptr [ESP],0x41f00000      ; 0053f42b
         ;   Label: LAB_0053f42b
     MOV EAX,dword ptr [ESP]             ; 0053f432

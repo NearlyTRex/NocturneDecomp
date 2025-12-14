@@ -46,26 +46,26 @@ section .text
     MOV dword ptr [ESP + 0x10],EDI      ; 0054b95e
     LEA EDI,[ESP + 0xc]                 ; 0054b962
     PUSH EDI                            ; 0054b966
-    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0054b967 | SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0054b967
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
     ADD ESP,0x10                        ; 0054b96c
     MOV EDI,dword ptr [ESP + 0x18]      ; 0054b96f
     TEST byte ptr [EDI + 0xc],0x20      ; 0054b973
-    JNZ 0x0054b97f                      ; 0054b977 | LAB_0054b97f
-        ;   XREF to: 0054b97f (CONDITIONAL_JUMP)
+    JNZ 0x0054b97f                      ; 0054b977
+        ;   XREF to: 0054b97f (CONDITIONAL_JUMP)  ; LAB_0054b97f
     ADD ESP,0x8                         ; 0054b979
     POP EDI                             ; 0054b97c
     POP ESI                             ; 0054b97d
     RET                                 ; 0054b97e
     PUSH EBX                            ; 0054b97f
         ;   Label: LAB_0054b97f
-    MOV ECX,0x63f250                    ; 0054b980 | = "..\\cockpit\\pkbitmap.cpp" | s_cockpit_pkbitmap_cpp_0063f250 = ..\cockpit\pkbitmap.cpp
+    MOV ECX,0x63f250                    ; 0054b980 | = "..\\cockpit\\pkbitmap.cpp"
     MOV EBX,0x538                       ; 0054b985
-    PUSH 0x63f268                       ; 0054b98a | = "Error writing PBG header" | s_Error_writing_PBG_header_0063f268 = Error writing PBG header
-    MOV dword ptr [0x02f0ca48],ECX      ; 0054b98f | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 0054b995 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0054b99b | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63f268                       ; 0054b98a | = "Error writing PBG header"
+    MOV dword ptr [0x02f0ca48],ECX      ; 0054b98f | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 0054b995 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0054b99b
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0054b9a0
     POP EBX                             ; 0054b9a3
     ADD ESP,0x8                         ; 0054b9a4

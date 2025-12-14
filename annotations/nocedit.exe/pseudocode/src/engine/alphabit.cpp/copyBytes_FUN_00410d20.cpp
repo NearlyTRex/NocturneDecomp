@@ -15,8 +15,7 @@ void __cdecl engine_alphabit_cpp_copyBytes_FUN_00410d20(void *src,void *dest,int
   uint *puVar4;
   
   uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);
-                    /* WARNING: Load size is inaccurate */
-  puVar3 = *src;
+  puVar3 = *(uint **)src;
   puVar4 = *(uint **)((int)src + 4);
   for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
     *puVar4 = *puVar3;

@@ -40,8 +40,8 @@ section .text
     PUSH EDX                            ; 0060014e
     MOV EBX,dword ptr [ESP + 0x14]      ; 0060014f
     PUSH EBX                            ; 00600153
-    CALL crt_stdio.c_vsscanf_FUN_00600100 ; 00600154 | int crt_stdio.c_vsscanf_FUN_00600100(char * str, char * format, va_list_t args)
-        ;   XREF to: 00600100 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vsscanf_FUN_00600100 ; 00600154
+        ;   XREF to: 00600100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsscanf_FUN_00600100(char * str, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00600159
     ADD ESP,0x4                         ; 0060015c
     POP EBX                             ; 0060015f

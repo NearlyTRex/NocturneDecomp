@@ -1,86 +1,86 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 4, 
-    "global_count": 0, 
-    "total_lines": 29, 
-    "assembly_lines": 20, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_malloc_FUN_00601bb0", 
-      "addr": "00601bb0"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060ca90", 
-    "signature": "void * crt_memory.c_calloc_FUN_0060ca90(ulong count, ulong size)", 
-    "address_range": [
-      [
-        "0060ca90", 
-        "0060cab4"
-      ]
-    ], 
-    "name": "crt_memory.c_calloc_FUN_0060ca90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ulong", 
-        "size": 4, 
-        "name": "count"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "ulong", 
-        "size": 4, 
-        "name": "size"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 20,
+    "complexity_score": 11,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
   "cross_references": [
     {
-      "from_addr": "0060a24e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c", 
-      "addr": "0060a23c"
-    }, 
+      "addr": "0060a23c",
+      "from_addr": "0060a24e",
+      "name": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00609f54", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_sync.c_allocate_critical_section_FUN_00609f24", 
-      "addr": "00609f24"
-    }, 
+      "addr": "00609f24",
+      "from_addr": "00609f54",
+      "name": "crt_sync.c_allocate_critical_section_FUN_00609f24",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060cb57", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8", 
-      "addr": "0060caf8"
-    }, 
+      "addr": "0060caf8",
+      "from_addr": "0060cb57",
+      "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060cbe5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_tls.c_register_thread_data_FUN_0060cbd0", 
-      "addr": "0060cbd0"
+      "addr": "0060cbd0",
+      "from_addr": "0060cbe5",
+      "name": "crt_tls.c_register_thread_data_FUN_0060cbd0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060ca90",
+    "address_range": [
+      [
+        "0060ca90",
+        "0060cab4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_memory.c_calloc_FUN_0060ca90",
+    "signature": "void * crt_memory.c_calloc_FUN_0060ca90(ulong count, ulong size)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601bb0",
+      "name": "crt_memory.c_malloc_FUN_00601bb0"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 4,
+        "size": 4,
+        "type": "ulong"
+      },
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 8,
+        "size": 4,
+        "type": "ulong"
+      }
+    ]
+  },
+  "suspects": []
 }

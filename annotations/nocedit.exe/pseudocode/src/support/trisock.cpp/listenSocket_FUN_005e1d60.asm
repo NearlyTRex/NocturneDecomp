@@ -18,8 +18,8 @@ section .text
     PUSH 0x1                            ; 005e1d64
     MOV EDX,dword ptr [EAX]             ; 005e1d66
     PUSH EDX                            ; 005e1d68
-    CALL crt_wsock32.c_listen           ; 005e1d69 | int crt_wsock32.c_listen(SOCKET s, int backlog)
-        ;   XREF to: 00610ef8 (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_listen           ; 005e1d69
+        ;   XREF to: 00610ef8 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_listen(SOCKET s, int backlog)
     TEST EAX,EAX                        ; 005e1d6e
     SETZ AL                             ; 005e1d70
     AND EAX,0xff                        ; 005e1d73

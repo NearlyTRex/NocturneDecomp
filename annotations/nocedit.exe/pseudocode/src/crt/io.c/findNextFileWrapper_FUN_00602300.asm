@@ -30,30 +30,30 @@ section .text
     PUSH EAX                            ; 00602309
     MOV EDX,dword ptr [ESP + 0x14c]     ; 0060230a
     PUSH EDX                            ; 00602311
-    CALL dword ptr CS:[0x611550]        ; 00602312 | FindNextFileA * PTR_FindNextFileA_00611550
+    CALL dword ptr CS:[0x611550]        ; 00602312 | PTR_FindNextFileA_00611550
     TEST EAX,EAX                        ; 00602319
-    JNZ 0x00602329                      ; 0060231b | LAB_00602329
-        ;   XREF to: 00602329 (CONDITIONAL_JUMP)
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 0060231d | DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)
+    JNZ 0x00602329                      ; 0060231b
+        ;   XREF to: 00602329 (CONDITIONAL_JUMP)  ; LAB_00602329
+    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 0060231d
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
     MOV EAX,0xffffffff                  ; 00602322
-    JMP 0x00602370                      ; 00602327 | LAB_00602370
-        ;   XREF to: 00602370 (UNCONDITIONAL_JUMP)
+    JMP 0x00602370                      ; 00602327
+        ;   XREF to: 00602370 (UNCONDITIONAL_JUMP)  ; LAB_00602370
     MOV EAX,ESP                         ; 00602329
         ;   Label: LAB_00602329
     PUSH EAX                            ; 0060232b
     PUSH 0x37                           ; 0060232c
     MOV EBX,dword ptr [ESP + 0x150]     ; 0060232e
     PUSH EBX                            ; 00602335
-    CALL crt_io.c_findNextWithAttributes_FUN_00609d5c ; 00602336 | int crt_io.c_findNextWithAttributes_FUN_00609d5c(HANDLE hFindFile, DWORD dwAttributeMask, LPWIN32_FIND_DATAA lpFindFileData)
-        ;   XREF to: 00609d5c (UNCONDITIONAL_CALL)
+    CALL crt_io.c_findNextWithAttributes_FUN_00609d5c ; 00602336
+        ;   XREF to: 00609d5c (UNCONDITIONAL_CALL)  ; int crt_io.c_findNextWithAttributes_FUN_00609d5c(HANDLE hFindFile, DWORD dwAttributeMask, LPWIN32_FIND_DATAA lpFindFileData)
     ADD ESP,0xc                         ; 0060233b
     TEST EAX,EAX                        ; 0060233e
-    JNZ 0x00602359                      ; 00602340 | LAB_00602359
-        ;   XREF to: 00602359 (CONDITIONAL_JUMP)
+    JNZ 0x00602359                      ; 00602340
+        ;   XREF to: 00602359 (CONDITIONAL_JUMP)  ; LAB_00602359
     PUSH 0x2                            ; 00602342
-    CALL crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 ; 00602344 | int crt_errno.c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)
-        ;   XREF to: 00608390 (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_convertWindowsErrorToErrno_FUN_00608390 ; 00602344
+        ;   XREF to: 00608390 (UNCONDITIONAL_CALL)  ; int crt_errno.c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)
     MOV EAX,0xffffffff                  ; 00602349
     ADD ESP,0x4                         ; 0060234e
     ADD ESP,0x140                       ; 00602351
@@ -64,8 +64,8 @@ section .text
     PUSH ECX                            ; 00602360
     LEA EAX,[ESP + 0x4]                 ; 00602361
     PUSH EAX                            ; 00602365
-    CALL crt_io.c_convertFileInfo_FUN_00602264 ; 00602366 | void crt_io.c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data, find_t * dos_info)
-        ;   XREF to: 00602264 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_convertFileInfo_FUN_00602264 ; 00602366
+        ;   XREF to: 00602264 (UNCONDITIONAL_CALL)  ; void crt_io.c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data, find_t * dos_info)
     ADD ESP,0x8                         ; 0060236b
     XOR EAX,EAX                         ; 0060236e
     ADD ESP,0x140                       ; 00602370

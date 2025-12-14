@@ -1,180 +1,180 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 169, 
-    "pseudocode_lines": 59, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 189, 
-    "assembly_lines": 130, 
-    "suspect_count": 10, 
+    "assembly_lines": 130,
+    "complexity_score": 169,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 59,
+    "suspect_count": 10,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
-      "addr": "00403950"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
-      "addr": "0048a740"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int[16]", 
-      "name": "g_VertexIndexBuffer", 
-      "addr": "02c6d5ac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VertexIndexBuffer[1]", 
-      "addr": "02c6d5b0", 
-      "value": null
-    }, 
-    {
-      "type": "RenderScanlineFunc*", 
-      "name": "g_ScanlineRenderFunc", 
-      "addr": "02d0257c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_0000000c + 4)) {"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = in_stack_0000000c;"
-    }, 
-    {
-      "line": 23, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar3 < *(int *)(in_stack_0000000c + 4));"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = in_stack_0000000c;"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_0000000c + 4)) {"
-    }, 
-    {
-      "line": 37, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar1 = *(int *)((int)g_VertexIndexBuffer + iVar3);"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar4 < *(int *)(in_stack_0000000c + 4));"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,*(int *)(in_stack_0000000c + 4),g_VertexIndexBuffer);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048ac40", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)", 
-    "address_range": [
-      [
-        "0048ac40", 
-        "0048ad85"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "polygon_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 189
+  },
   "cross_references": [
     {
-      "from_addr": "00597538", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
+      "addr": "005968b0",
+      "from_addr": "00597538",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048ac40",
+    "address_range": [
+      [
+        "0048ac40",
+        "0048ad85"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40",
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "0048a740",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02c6d5ac",
+      "name": "g_VertexIndexBuffer",
+      "type": "int[16]",
+      "value": null
+    },
+    {
+      "addr": "02c6d5b0",
+      "name": "g_VertexIndexBuffer[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "RenderScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "polygon_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "if (0 < *(int *)(in_stack_0000000c + 4)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000000c",
+      "text": "iVar2 = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_0000000c",
+      "text": "} while (iVar3 < *(int *)(in_stack_0000000c + 4));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_0000000c",
+      "text": "iVar2 = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_0000000c",
+      "text": "if (0 < *(int *)(in_stack_0000000c + 4)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)g_VertexIndexBuffer + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_0000000c",
+      "text": "} while (iVar4 < *(int *)(in_stack_0000000c + 4));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr,*(int *)(in_stack_0000000c + 4),g_VertexIndexBuffer);",
+      "type": "stack_param"
     }
   ]
 }

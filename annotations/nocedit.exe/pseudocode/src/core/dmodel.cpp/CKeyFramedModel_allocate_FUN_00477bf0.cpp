@@ -36,21 +36,18 @@ core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
     g_CurrentLineNumber = 0x2c1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many parts!");
   }
-  ppCVar2 = (CVector3i **)
-            shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  ppCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                       (this_ptr->frame_count * this_ptr->vertex_count * 0xc,
                        "..\\core\\dmodel.cpp",0x2c5);
   this_ptr->vertex_list = ppCVar2;
-  ppSVar3 = (SMRGLPrimitiveQuad **)
-            shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  ppSVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                       (this_ptr->poly_count * 0x48,"..\\core\\dmodel.cpp",0x2c6);
   this_ptr->poly_vert_list = ppSVar3;
-  piVar4 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                            (this_ptr->poly_count << 2,"..\\core\\dmodel.cpp",0x2c7);
+  piVar4 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     (this_ptr->poly_count << 2,"..\\core\\dmodel.cpp",0x2c7);
   fVar1 = (float)this_ptr->frame_count;
   this_ptr->poly_texture_index_list = piVar4;
-  pCVar5 = (CVector3f *)
-           shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  pCVar5 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      ((int)fVar1 * 0x18 + 4,"..\\core\\dmodel.cpp",0x2c8);
   pCVar6 = pCVar5;
   if (pCVar5 != (CVector3f *)0x0) {
@@ -73,8 +70,7 @@ core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
   else if (this_ptr->frame_count != 1) {
     return;
   }
-  ppCVar2 = (CVector3i **)
-            shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  ppCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                       (this_ptr->vertex_count * 0xc,"..\\core\\dmodel.cpp",0x2d9);
   this_ptr->vertex_normal_list = ppCVar2;
   if (ppCVar2 != (CVector3i **)0x0) {

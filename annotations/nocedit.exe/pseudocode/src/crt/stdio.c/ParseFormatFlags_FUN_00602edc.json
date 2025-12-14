@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 41, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 103, 
-    "assembly_lines": 62, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00602edc", 
-    "signature": "char * crt_stdio.c_ParseFormatFlags_FUN_00602edc(char * format, FormatSpec * spec_info)", 
-    "address_range": [
-      [
-        "00602edc", 
-        "00602f4b"
-      ]
-    ], 
-    "name": "crt_stdio.c_ParseFormatFlags_FUN_00602edc"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "format"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FormatSpec *", 
-        "size": 4, 
-        "name": "spec_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 62,
+    "complexity_score": 41,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
+  },
   "cross_references": [
     {
-      "from_addr": "00602d8d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_ScanFormatSpec_FUN_00602d78", 
-      "addr": "00602d78"
+      "addr": "00602d78",
+      "from_addr": "00602d8d",
+      "name": "crt_stdio.c_ScanFormatSpec_FUN_00602d78",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00602edc",
+    "address_range": [
+      [
+        "00602edc",
+        "00602f4b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_ParseFormatFlags_FUN_00602edc",
+    "signature": "char * crt_stdio.c_ParseFormatFlags_FUN_00602edc(char * format, FormatSpec * spec_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "spec_info",
+        "offset": 8,
+        "size": 4,
+        "type": "FormatSpec *"
+      }
+    ]
+  },
+  "suspects": []
 }

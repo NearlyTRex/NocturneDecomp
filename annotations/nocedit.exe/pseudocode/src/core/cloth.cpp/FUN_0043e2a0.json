@@ -1,61 +1,61 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 12, 
-    "assembly_lines": 7, 
-    "suspect_count": 2, 
+    "assembly_lines": 7,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_LightAttenuationMax", 
-      "addr": "02d7a7bc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return g_LightAttenuationMax - (in_stack_00000004 >> 1);"
-    }
-  ], 
+    ],
+    "total_lines": 12
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0043e2a0", 
-    "signature": "undefined core_cloth.cpp_FUN_0043e2a0()", 
+    "address": "0043e2a0",
     "address_range": [
       [
-        "0043e2a0", 
+        "0043e2a0",
         "0043e2b0"
       ]
-    ], 
-    "name": "core_cloth.cpp_FUN_0043e2a0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_cloth.cpp_FUN_0043e2a0",
+    "signature": "undefined core_cloth.cpp_FUN_0043e2a0()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d7a7bc",
+      "name": "g_LightAttenuationMax",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "return g_LightAttenuationMax - (in_stack_00000004 >> 1);",
+      "type": "stack_param"
+    }
+  ]
 }

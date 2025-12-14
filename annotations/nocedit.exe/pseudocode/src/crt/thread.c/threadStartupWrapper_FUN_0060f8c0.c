@@ -20,7 +20,7 @@ void __cdecl crt_thread_c_threadStartupWrapper_FUN_0060f8c0(ThreadStartupInfo *i
   ExceptionFrame local_28;
   code *local_20;
   
-  local_20 = (code *)info->thread_proc;
+  local_20 = info->thread_proc;
   if (g_EmergencyExitFlag == 0) {
     iVar1 = -(g_RuntimeBufferSize + 3 & 0xfffffffc);
     *(DWORD *)(&stack0xffffffd4 + iVar1) = g_RuntimeBufferSize;
@@ -39,12 +39,12 @@ void __cdecl crt_thread_c_threadStartupWrapper_FUN_0060f8c0(ThreadStartupInfo *i
     }
   }
   pTVar3 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
-  info->tls_ptr = (ThreadData **)&pTVar3->thread_handle;
+  info->tls_ptr = &pTVar3->thread_handle;
   aiStackY_34[1] = 0x60f933;
   (*PTR_SetEvent_00611624)(info->start_event);
   aiStackY_34[1] = 0x60f93c;
   crt_exception_c_installExceptionHandler_FUN_0060aba8(&local_28);
-  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24)();
+  (*PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24)();
   aiStackY_34[1] = 0x60f949;
   (*local_20)();
   crt_unknown_c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878();

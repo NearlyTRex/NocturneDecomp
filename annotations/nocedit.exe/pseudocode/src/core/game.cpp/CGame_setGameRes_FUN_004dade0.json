@@ -1,164 +1,164 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 6, 
-    "global_count": 10, 
-    "total_lines": 125, 
-    "assembly_lines": 96, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_init_FUN_0044c190", 
-      "addr": "0044c190"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_2d.c_resetGraphicsSystem_FUN_005ed2a0", 
-      "addr": "00402a70"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0", 
-      "addr": "005ecef0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_selectCard_FUN_005b7d90", 
-      "addr": "005b7d90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_game_cpp_0062b5ed", 
-      "addr": "0062b5ed", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CGame_setGameRes_Unable__0062b5fe", 
-      "addr": "0062b5fe", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_SmallEditorFont", 
-      "addr": "020a5724", 
-      "value": null
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_EditorFont", 
-      "addr": "02cf1cd0", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GraphicsCardHandle", 
-      "addr": "02f275f4", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonCamera", 
-      "name": "g_CDemonCameraInstance", 
-      "addr": "032758e4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004dade0", 
-    "signature": "void core_game.cpp_CGame_setGameRes_FUN_004dade0(CGame * this_ptr)", 
-    "address_range": [
-      [
-        "004dade0", 
-        "004daec5"
-      ]
-    ], 
-    "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGame *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 96,
+    "complexity_score": 29,
+    "cross_reference_count": 6,
+    "function_call_count": 5,
+    "global_count": 10,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 125
+  },
   "cross_references": [
     {
-      "from_addr": "004db181", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
-    }, 
+      "addr": "004daf80",
+      "from_addr": "004db181",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053e250", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
-      "addr": "0053e220"
-    }, 
+      "addr": "0053e220",
+      "from_addr": "0053e250",
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00539141", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
-    }, 
+      "addr": "005390f0",
+      "from_addr": "00539141",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00580651", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_BackdropMaybe_FUN_005805a0", 
-      "addr": "005805a0"
-    }, 
+      "addr": "005805a0",
+      "from_addr": "00580651",
+      "name": "core_setedit.cpp_BackdropMaybe_FUN_005805a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058135b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_FUN_00581320", 
-      "addr": "00581320"
-    }, 
+      "addr": "00581320",
+      "from_addr": "0058135b",
+      "name": "core_setedit.cpp_FUN_00581320",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057c5f4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
-      "addr": "0057c5d0"
+      "addr": "0057c5d0",
+      "from_addr": "0057c5f4",
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004dade0",
+    "address_range": [
+      [
+        "004dade0",
+        "004daec5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0",
+    "signature": "void core_game.cpp_CGame_setGameRes_FUN_004dade0(CGame * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044c190",
+      "name": "core_dcamera.cpp_CDemonCamera_init_FUN_0044c190"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00402a70",
+      "name": "engine_2d.c_resetGraphicsSystem_FUN_005ed2a0"
+    },
+    {
+      "addr": "005ecef0",
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0"
+    },
+    {
+      "addr": "005b7d90",
+      "name": "wincore_windll.cpp_selectCard_FUN_005b7d90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062b5ed",
+      "name": "s_core_game_cpp_0062b5ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062b5fe",
+      "name": "s_CGame_setGameRes_Unable__0062b5fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "020a5724",
+      "name": "g_SmallEditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd0",
+      "name": "g_EditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f275f4",
+      "name": "g_GraphicsCardHandle",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "032758e4",
+      "name": "g_CDemonCameraInstance",
+      "type": "CDemonCamera",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,106 +1,106 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 47, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 171, 
-    "assembly_lines": 124, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00486ee0", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0(CDrawSurface * this_ptr, int x, int y, int width, int height, CDrawSurface * parent_surface)", 
-    "address_range": [
-      [
-        "00486ee0", 
-        "00487002"
-      ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "parent_surface"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    "assembly_lines": 124,
+    "complexity_score": 47,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 47,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 171
+  },
   "cross_references": [
     {
-      "from_addr": "00486ec2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0", 
-      "addr": "00486ea0"
-    }, 
+      "addr": "00486ea0",
+      "from_addr": "00486ec2",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00486e8a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dracbrid.cpp_FUN_00486e70", 
-      "addr": "00486e70"
+      "addr": "00486e70",
+      "from_addr": "00486e8a",
+      "name": "core_dracbrid.cpp_FUN_00486e70",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00486ee0",
+    "address_range": [
+      [
+        "00486ee0",
+        "00487002"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0(CDrawSurface * this_ptr, int x, int y, int width, int height, CDrawSurface * parent_surface)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "parent_surface",
+        "offset": 24,
+        "size": 4,
+        "type": "CDrawSurface *"
+      }
+    ]
+  },
+  "suspects": []
 }

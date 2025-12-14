@@ -17,18 +17,18 @@ section .text
         ;   Label: core_door.cpp_CDoor_processInEditor_FUN_00481590
     MOV EBX,dword ptr [ESP + 0x8]       ; 00481591
     PUSH EBX                            ; 00481595
-    CALL core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 ; 00481596 | void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
-        ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 ; 00481596
+        ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
     MOV EDX,dword ptr [EBX + 0x2e0]     ; 0048159b
     ADD ESP,0x4                         ; 004815a1
     TEST EDX,EDX                        ; 004815a4
-    JNZ 0x004815e2                      ; 004815a6 | LAB_004815e2
-        ;   XREF to: 004815e2 (CONDITIONAL_JUMP)
+    JNZ 0x004815e2                      ; 004815a6
+        ;   XREF to: 004815e2 (CONDITIONAL_JUMP)  ; LAB_004815e2
     LEA EAX,[EBX + 0x994]               ; 004815a8
     LEA EDX,[EBX + 0x20]                ; 004815ae
     CMP EAX,EDX                         ; 004815b1
-    JZ 0x004815c5                       ; 004815b3 | LAB_004815c5
-        ;   XREF to: 004815c5 (CONDITIONAL_JUMP)
+    JZ 0x004815c5                       ; 004815b3
+        ;   XREF to: 004815c5 (CONDITIONAL_JUMP)  ; LAB_004815c5
     MOV ECX,dword ptr [EDX]             ; 004815b5
     MOV dword ptr [EAX],ECX             ; 004815b7
     MOV ECX,dword ptr [EDX + 0x4]       ; 004815b9
@@ -39,8 +39,8 @@ section .text
         ;   Label: LAB_004815c5
     LEA EDX,[EBX + 0x30]                ; 004815cb
     CMP EAX,EDX                         ; 004815ce
-    JZ 0x004815e2                       ; 004815d0 | LAB_004815e2
-        ;   XREF to: 004815e2 (CONDITIONAL_JUMP)
+    JZ 0x004815e2                       ; 004815d0
+        ;   XREF to: 004815e2 (CONDITIONAL_JUMP)  ; LAB_004815e2
     MOV ECX,dword ptr [EDX]             ; 004815d2
     MOV dword ptr [EAX],ECX             ; 004815d4
     MOV ECX,dword ptr [EDX + 0x4]       ; 004815d6
@@ -50,11 +50,11 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2e0]     ; 004815e2
         ;   Label: LAB_004815e2
     TEST EAX,EAX                        ; 004815e8
-    JBE 0x004815ff                      ; 004815ea | LAB_004815ff
-        ;   XREF to: 004815ff (CONDITIONAL_JUMP)
+    JBE 0x004815ff                      ; 004815ea
+        ;   XREF to: 004815ff (CONDITIONAL_JUMP)  ; LAB_004815ff
     CMP EAX,0x2                         ; 004815ec
-    JNZ 0x0048160b                      ; 004815ef | LAB_0048160b
-        ;   XREF to: 0048160b (CONDITIONAL_JUMP)
+    JNZ 0x0048160b                      ; 004815ef
+        ;   XREF to: 0048160b (CONDITIONAL_JUMP)  ; LAB_0048160b
     MOV EAX,dword ptr [EBX + 0x9b0]     ; 004815f1
     MOV dword ptr [EBX + 0x9ac],EAX     ; 004815f7
     POP EBX                             ; 004815fd

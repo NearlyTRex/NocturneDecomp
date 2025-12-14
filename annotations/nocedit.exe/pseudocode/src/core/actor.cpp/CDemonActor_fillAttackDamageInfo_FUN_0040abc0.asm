@@ -29,10 +29,10 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 0040abc2
     MOV EBX,dword ptr [ESP + 0x14]      ; 0040abc6
     PUSH 0x6e4                          ; 0040abca
-    PUSH 0x613ab0                       ; 0040abcf | = "..\\core\\actor.cpp" | s_core_actor_cpp_00613ab0 = ..\core\actor.cpp
+    PUSH 0x613ab0                       ; 0040abcf | = "..\\core\\actor.cpp"
     PUSH ESI                            ; 0040abd4
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 0040abd5 | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 0040abd5
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     MOV dword ptr [EBX + 0x4],0x40a00000 ; 0040abda
     MOV dword ptr [EBX + 0x30],0x67     ; 0040abe1
     MOV dword ptr [EBX + 0x2c],0x3e4ccccd ; 0040abe8

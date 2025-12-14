@@ -24,8 +24,8 @@ float10 __fpustack crt_math_c_atan2_FUN_0060c440(float10 y,float10 x)
   uStack_2c = (uint)((unkuint10)x >> 0x20);
   uStack_28 = (ushort)((unkuint10)x >> 0x40);
   if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&
-      (((unkuint10)x & 0x7fff) != 0)) &&
-     (((((unkuint10)y & 0x7fff) != 0 && ((uStack_28 & 0x7fff) != 0x7fff)) &&
+      ((uStack_28 & 0x7fff) != 0)) &&
+     ((((uStack_1c & 0x7fff) != 0 && ((uStack_28 & 0x7fff) != 0x7fff)) &&
       ((uStack_1c & 0x7fff) != 0x7fff)))) {
     uVar2 = (uint)(ABS(y) <= ABS(x));
     crt_math_c_function_dispatch_FUN_00606a77(0xf);
@@ -33,10 +33,9 @@ float10 __fpustack crt_math_c_atan2_FUN_0060c440(float10 y,float10 x)
     uVar1 = (uint)uStack_28 << 0x10;
                     /* WARNING: Could not recover jumptable at 0x0060c599. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    fVar3 = (float10)(*(code *)(&PTR_FUN_006874e4)
-                               [(uVar2 * 2 +
-                                (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10)) * 2 +
-                                (uint)CARRY4(uVar1,uVar1)])((uint)uStack_28 << 0x11);
+    fVar3 = (float10)(*(&PTR_FUN_006874e4)
+                       [(uVar2 * 2 + (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10))
+                        * 2 + (uint)CARRY4(uVar1,uVar1)])((uint)uStack_28 << 0x11);
     return fVar3;
   }
   fVar3 = (float10)fpatan(x,y);

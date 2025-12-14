@@ -37,12 +37,12 @@ section .text
     MOV dword ptr [EBX + 0x44],EAX      ; 004559b0
     MOV EAX,dword ptr [EDI + 0x8]       ; 004559b3
     MOV dword ptr [EBX + 0x48],EAX      ; 004559b6
-    CALL core_dcube.cpp_intersectXZCapsule_FUN_004556b0 ; 004559b9 | int core_dcube.cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder * cylinder)
-        ;   XREF to: 004556b0 (UNCONDITIONAL_CALL)
+    CALL core_dcube.cpp_intersectXZCapsule_FUN_004556b0 ; 004559b9
+        ;   XREF to: 004556b0 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder * cylinder)
     ADD ESP,0x4                         ; 004559be
     TEST EAX,EAX                        ; 004559c1
-    JZ 0x004559e9                       ; 004559c3 | LAB_004559e9
-        ;   XREF to: 004559e9 (CONDITIONAL_JUMP)
+    JZ 0x004559e9                       ; 004559c3
+        ;   XREF to: 004559e9 (CONDITIONAL_JUMP)  ; LAB_004559e9
     FLD float ptr [EDI + 0x4]           ; 004559c5
     FSUB float ptr [ESI + 0x4]          ; 004559c8
     FMUL float ptr [EBX + 0x50]         ; 004559cb
@@ -51,14 +51,14 @@ section .text
     FCOMP float ptr [EBX + 0x28]        ; 004559d4
     FNSTSW AX                           ; 004559d7
     SAHF                                ; 004559d9
-    JBE 0x004559e7                      ; 004559da | LAB_004559e7
-        ;   XREF to: 004559e7 (CONDITIONAL_JUMP)
+    JBE 0x004559e7                      ; 004559da
+        ;   XREF to: 004559e7 (CONDITIONAL_JUMP)  ; LAB_004559e7
     FLD float ptr [ESP]                 ; 004559dc
     FCOMP float ptr [EBX + 0x24]        ; 004559df
     FNSTSW AX                           ; 004559e2
     SAHF                                ; 004559e4
-    JC 0x004559f0                       ; 004559e5 | LAB_004559f0
-        ;   XREF to: 004559f0 (CONDITIONAL_JUMP)
+    JC 0x004559f0                       ; 004559e5
+        ;   XREF to: 004559f0 (CONDITIONAL_JUMP)  ; LAB_004559f0
     XOR EAX,EAX                         ; 004559e7
         ;   Label: LAB_004559e7
     ADD ESP,0x4                         ; 004559e9

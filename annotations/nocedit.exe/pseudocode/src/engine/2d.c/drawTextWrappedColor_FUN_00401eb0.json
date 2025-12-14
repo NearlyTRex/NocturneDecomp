@@ -1,99 +1,99 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 45, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 118, 
-    "assembly_lines": 73, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawCharacter_FUN_00401a10", 
-      "addr": "00401a10"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00401eb0", 
-    "signature": "void engine_2d.c_drawTextWrappedColor_FUN_00401eb0(char * text, int x_start, int y_start, int x_max, int y_max, int color)", 
-    "address_range": [
-      [
-        "00401eb0", 
-        "00401f35"
-      ]
-    ], 
-    "name": "engine_2d.c_drawTextWrappedColor_FUN_00401eb0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_start"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_start"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_max"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_max"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "color"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    "assembly_lines": 73,
+    "complexity_score": 45,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 118
+  },
   "cross_references": [
     {
-      "from_addr": "00402461", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextColor_FUN_00402430", 
-      "addr": "00402430"
+      "addr": "00402430",
+      "from_addr": "00402461",
+      "name": "engine_2d.c_drawTextColor_FUN_00402430",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00401eb0",
+    "address_range": [
+      [
+        "00401eb0",
+        "00401f35"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawTextWrappedColor_FUN_00401eb0",
+    "signature": "void engine_2d.c_drawTextWrappedColor_FUN_00401eb0(char * text, int x_start, int y_start, int x_max, int y_max, int color)"
+  },
+  "function_calls": [
+    {
+      "addr": "00401a10",
+      "name": "engine_2d.c_drawCharacter_FUN_00401a10"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x_start",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_start",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x_max",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_max",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

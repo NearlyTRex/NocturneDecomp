@@ -1,107 +1,107 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 80, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 69, 
-    "assembly_lines": 49, 
-    "suspect_count": 5, 
+    "assembly_lines": 49,
+    "complexity_score": 80,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 20,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_ceil_FUN_006001b2", 
-      "addr": "006001b2"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_005e0b78", 
-      "addr": "005e0b78", 
-      "value": "005e0bba"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_006557cc", 
-      "addr": "006557cc", 
-      "value": "10"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EBX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "switch(*(uint *)(in_stack_00000004 + 0x174)) {"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pfVar1 = (float *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();"
-    }, 
-    {
-      "line": 21, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(float *)(extraout_EBX + 0x158) = (float)dVar2;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005e0ba0", 
-    "signature": "undefined core_trigger.cpp_FUN_005e0ba0()", 
-    "address_range": [
-      [
-        "005e0ba0", 
-        "005e0c29"
-      ]
-    ], 
-    "name": "core_trigger.cpp_FUN_005e0ba0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 69
+  },
   "cross_references": [
     {
-      "from_addr": "005e11fb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_trigger.cpp_CTrigger_FUN_005e1180", 
-      "addr": "005e1180"
-    }, 
+      "addr": "005e1180",
+      "from_addr": "005e11fb",
+      "name": "core_trigger.cpp_CTrigger_FUN_005e1180",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e0917", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_trigger.cpp_CTrigger_serialize_FUN_005e0690", 
-      "addr": "005e0690"
+      "addr": "005e0690",
+      "from_addr": "005e0917",
+      "name": "core_trigger.cpp_CTrigger_serialize_FUN_005e0690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e0ba0",
+    "address_range": [
+      [
+        "005e0ba0",
+        "005e0c29"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_trigger.cpp_FUN_005e0ba0",
+    "signature": "undefined core_trigger.cpp_FUN_005e0ba0()"
+  },
+  "function_calls": [
+    {
+      "addr": "006001b2",
+      "name": "crt_math.c_ceil_FUN_006001b2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e0b78",
+      "name": "switchdataD_005e0b78",
+      "type": "void*",
+      "value": "005e0bba"
+    },
+    {
+      "addr": "006557cc",
+      "name": "DOUBLE_006557cc",
+      "type": "double",
+      "value": "10"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EBX",
+      "text": "int extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "switch(*(uint *)(in_stack_00000004 + 0x174)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "pfVar1 = (float *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 0x158) = (float)dVar2;",
+      "type": "extra_output"
     }
   ]
 }

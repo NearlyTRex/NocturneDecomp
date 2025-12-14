@@ -25,11 +25,11 @@ section .text
     MOV EBX,dword ptr [ESP + 0x50]      ; 005ee744
     LEA EAX,[EBX + 0x158]               ; 005ee748
     CMP dword ptr [EAX + 0x178],0x0     ; 005ee74e
-    JZ 0x005ee760                       ; 005ee755 | LAB_005ee760
-        ;   XREF to: 005ee760 (CONDITIONAL_JUMP)
+    JZ 0x005ee760                       ; 005ee755
+        ;   XREF to: 005ee760 (CONDITIONAL_JUMP)  ; LAB_005ee760
     CMP dword ptr [EBX + 0x68],0x78a123 ; 005ee757 | DAT_0078a123
-    JZ 0x005ee765                       ; 005ee75e | LAB_005ee765
-        ;   XREF to: 005ee765 (CONDITIONAL_JUMP)
+    JZ 0x005ee765                       ; 005ee75e
+        ;   XREF to: 005ee765 (CONDITIONAL_JUMP)  ; LAB_005ee765
     ADD ESP,0x48                        ; 005ee760
         ;   Label: LAB_005ee760
     POP EBX                             ; 005ee763
@@ -48,7 +48,7 @@ section .text
     FADD float ptr [ESP + 0x10]         ; 005ee782
     FXCH                                ; 005ee786
     FST float ptr [ESP + 0x3c]          ; 005ee788
-    FLD float ptr [0x00657b2d]          ; 005ee78c | float FLOAT_00657b2d
+    FLD float ptr [0x00657b2d]          ; 005ee78c | FLOAT_00657b2d
     FXCH                                ; 005ee792
     FMUL ST1                            ; 005ee794
     FXCH ST2                            ; 005ee796
@@ -68,8 +68,8 @@ section .text
     FXCH                                ; 005ee7bd
     FSTP float ptr [ESP + 0x40]         ; 005ee7bf
     FSTP float ptr [ESP + 0x44]         ; 005ee7c3
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005ee7c7 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005ee7c7
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 005ee7cc
     LEA EAX,[ESP + 0x24]                ; 005ee7cf
     FLD float ptr [ESP + 0xc]           ; 005ee7d3
@@ -94,8 +94,8 @@ section .text
     PUSH EAX                            ; 005ee80f
     ADD EBX,0x308                       ; 005ee810
     PUSH EBX                            ; 005ee816
-    CALL core_box.cpp_CBox_setupCorners_FUN_0041dd20 ; 005ee817 | void core_box.cpp_CBox_setupCorners_FUN_0041dd20(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
-        ;   XREF to: 0041dd20 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBox_setupCorners_FUN_0041dd20 ; 005ee817
+        ;   XREF to: 0041dd20 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupCorners_FUN_0041dd20(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
     ADD ESP,0x14                        ; 005ee81c
     ADD ESP,0x48                        ; 005ee81f
     POP EBX                             ; 005ee822

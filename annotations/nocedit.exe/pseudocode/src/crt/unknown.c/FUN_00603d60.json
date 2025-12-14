@@ -1,79 +1,79 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 48, 
-    "assembly_lines": 38, 
-    "suspect_count": 3, 
+    "assembly_lines": 38,
+    "complexity_score": 45,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_unknown.c_CondCallDoNothing_FUN_00603ccc", 
-      "addr": "00603ccc"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((0x1000 < in_stack_00000008) || (in_stack_00000008 < -0x1000)) {"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((0x1000 < in_stack_00000008) || (in_stack_00000008 < -0x1000)) {"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00603d60", 
-    "signature": "undefined crt_unknown.c_FUN_00603d60()", 
-    "address_range": [
-      [
-        "00603d60", 
-        "00603db0"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_00603d60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 48
+  },
   "cross_references": [
     {
-      "from_addr": "00605d09", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_parseFloatString_FUN_00605b9b", 
-      "addr": "00605b9b"
-    }, 
+      "addr": "00605b9b",
+      "from_addr": "00605d09",
+      "name": "crt_string.c_parseFloatString_FUN_00605b9b",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00603fc8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_00603dc8", 
-      "addr": "00603dc8"
+      "addr": "00603dc8",
+      "from_addr": "00603fc8",
+      "name": "crt_unknown.c_FUN_00603dc8",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00603d60",
+    "address_range": [
+      [
+        "00603d60",
+        "00603db0"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00603d60",
+    "signature": "undefined crt_unknown.c_FUN_00603d60()"
+  },
+  "function_calls": [
+    {
+      "addr": "00603ccc",
+      "name": "crt_unknown.c_CondCallDoNothing_FUN_00603ccc"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "if ((0x1000 < in_stack_00000008) || (in_stack_00000008 < -0x1000)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "if ((0x1000 < in_stack_00000008) || (in_stack_00000008 < -0x1000)) {",
+      "type": "stack_param"
     }
   ]
 }

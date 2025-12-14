@@ -31,16 +31,16 @@ section .text
     FCOMPP                              ; 004c630d
     FNSTSW AX                           ; 004c630f
     SAHF                                ; 004c6311
-    JC 0x004c6319                       ; 004c6312 | LAB_004c6319
-        ;   XREF to: 004c6319 (CONDITIONAL_JUMP)
+    JC 0x004c6319                       ; 004c6312
+        ;   XREF to: 004c6319 (CONDITIONAL_JUMP)  ; LAB_004c6319
     ADD ESP,0x10                        ; 004c6314
     POP EBX                             ; 004c6317
     RET                                 ; 004c6318
     PUSH EBX                            ; 004c6319
         ;   Label: LAB_004c6319
-    CALL core_particle.cpp_CParticle_process_FUN_00545760 ; 004c631a | void core_particle.cpp_CParticle_process_FUN_00545760(CParticle * this_ptr)
-        ;   XREF to: 00545760 (UNCONDITIONAL_CALL)
-    MOV EAX,[0x0067b654]                ; 004c631f | CGame * g_CGamePtr
+    CALL core_particle.cpp_CParticle_process_FUN_00545760 ; 004c631a
+        ;   XREF to: 00545760 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00545760(CParticle * this_ptr)
+    MOV EAX,[0x0067b654]                ; 004c631f | g_CGamePtr
     ADD ESP,0x4                         ; 004c6324
     MOV EAX,dword ptr [EAX + 0x264]     ; 004c6327 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0xc],EAX       ; 004c632d

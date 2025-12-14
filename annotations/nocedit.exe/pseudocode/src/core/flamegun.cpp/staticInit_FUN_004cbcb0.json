@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 21, 
-    "assembly_lines": 13, 
-    "suspect_count": 1, 
+    "assembly_lines": 13,
+    "complexity_score": 23,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
     "suspect_types": [
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d7a7b4", 
-      "addr": "02d7a7b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d7a7b8", 
-      "addr": "02d7a7b8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightAttenuationMax", 
-      "addr": "02d7a7bc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "return CONCAT44 /* combine 2-byte values */(0x1fc00000,param_1);"
-    }
-  ], 
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004cbcb0", 
-    "signature": "undefined core_flamegun.cpp_staticInit_FUN_004cbcb0()", 
+    "address": "004cbcb0",
     "address_range": [
       [
-        "004cbcb0", 
+        "004cbcb0",
         "004cbcdf"
       ]
-    ], 
-    "name": "core_flamegun.cpp_staticInit_FUN_004cbcb0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_flamegun.cpp_staticInit_FUN_004cbcb0",
+    "signature": "undefined core_flamegun.cpp_staticInit_FUN_004cbcb0()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d7a7b4",
+      "name": "DAT_02d7a7b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7a7b8",
+      "name": "DAT_02d7a7b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7a7bc",
+      "name": "g_LightAttenuationMax",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 8, 
+    "frame_size": 8,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4"
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 10,
+      "match": "CONCAT44",
+      "text": "return CONCAT44 /* combine 2-byte values */(0x1fc00000,param_1);",
+      "type": "concat_artifact"
+    }
+  ]
 }

@@ -1,231 +1,231 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 216, 
-    "pseudocode_lines": 91, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 346, 
-    "assembly_lines": 255, 
-    "suspect_count": 12, 
+    "assembly_lines": 255,
+    "complexity_score": 216,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 6,
+    "pseudocode_lines": 91,
+    "suspect_count": 12,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250", 
-      "addr": "0052f250"
-    }, 
-    {
-      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170", 
-      "addr": "0052f170"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063adf1", 
-      "addr": "0063adf1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Illegal_Huffman_code_in__0063ae02", 
-      "addr": "0063ae02", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_CurrentMp3Filename", 
-      "addr": "02f68188", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_HuffmanTables[0].table_size", 
-      "addr": "02f68aac", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_00;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_01;"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_02;"
-    }, 
-    {
-      "line": 13, 
-      "match": "extraout_EAX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_03;"
-    }, 
-    {
-      "line": 14, 
-      "match": "extraout_EAX_04", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_04;"
-    }, 
-    {
-      "line": 37, 
-      "match": "extraout_EAX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if (extraout_EAX_03 == 0) {"
-    }, 
-    {
-      "line": 63, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX == 1)) {"
-    }, 
-    {
-      "line": 67, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_00 == 1)) {"
-    }, 
-    {
-      "line": 71, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_01 == 1)) {"
-    }, 
-    {
-      "line": 81, 
-      "match": "extraout_EAX_04", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_04 == 1)) {"
-    }, 
-    {
-      "line": 90, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_02 == 1)) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052f350", 
-    "signature": "int sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350(CMP3Decoder * this_ptr, SHuffmanTable * huffman_table, int * x_out, int * y_out, int * v_out, int * w_out)", 
-    "address_range": [
-      [
-        "0052f350", 
-        "0052f5a7"
-      ]
-    ], 
-    "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMP3Decoder *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SHuffmanTable *", 
-        "size": 4, 
-        "name": "huffman_table"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "x_out"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "y_out"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "v_out"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "w_out"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    ],
+    "total_lines": 346
+  },
   "cross_references": [
     {
-      "from_addr": "00531804", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680", 
-      "addr": "00531680"
+      "addr": "00531680",
+      "from_addr": "00531804",
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052f350",
+    "address_range": [
+      [
+        "0052f350",
+        "0052f5a7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350",
+    "signature": "int sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350(CMP3Decoder * this_ptr, SHuffmanTable * huffman_table, int * x_out, int * y_out, int * v_out, int * w_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0052f250",
+      "name": "sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250"
+    },
+    {
+      "addr": "0052f170",
+      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063adf1",
+      "name": "s_sound_mp3_cpp_0063adf1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ae02",
+      "name": "s_Illegal_Huffman_code_in__0063ae02",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f68188",
+      "name": "g_CurrentMp3Filename",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "02f68aac",
+      "name": "g_HuffmanTables[0].table_size",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "huffman_table",
+        "offset": 8,
+        "size": 4,
+        "type": "SHuffmanTable *"
+      },
+      {
+        "is_param": true,
+        "name": "x_out",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "y_out",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "v_out",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "w_out",
+        "offset": 24,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX_00",
+      "text": "int extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX_01",
+      "text": "int extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX_02",
+      "text": "int extraout_EAX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EAX_03",
+      "text": "int extraout_EAX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX_04",
+      "text": "int extraout_EAX_04;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 37,
+      "match": "extraout_EAX_03",
+      "text": "if (extraout_EAX_03 == 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 63,
+      "match": "extraout_EAX",
+      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX == 1)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 67,
+      "match": "extraout_EAX_00",
+      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_00 == 1)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 71,
+      "match": "extraout_EAX_01",
+      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_01 == 1)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 81,
+      "match": "extraout_EAX_04",
+      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_04 == 1)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 90,
+      "match": "extraout_EAX_02",
+      "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_02 == 1)) {",
+      "type": "extra_output"
     }
   ]
 }

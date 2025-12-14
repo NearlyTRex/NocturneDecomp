@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 25, 
-    "assembly_lines": 17, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_palette_cpp_0063e46c", 
-      "addr": "0063e46c", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 17,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00544f80", 
-    "signature": "CPaletteManager * engine_palette.cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager * this_ptr)", 
+    "address": "00544f80",
     "address_range": [
       [
-        "00544f80", 
+        "00544f80",
         "00544fac"
       ]
-    ], 
-    "name": "engine_palette.cpp_CPaletteManager_dtor_FUN_00544f80"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_palette.cpp_CPaletteManager_dtor_FUN_00544f80",
+    "signature": "CPaletteManager * engine_palette.cpp_CPaletteManager_dtor_FUN_00544f80(CPaletteManager * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063e46c",
+      "name": "s_engine_palette_cpp_0063e46c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPaletteManager *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPaletteManager *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

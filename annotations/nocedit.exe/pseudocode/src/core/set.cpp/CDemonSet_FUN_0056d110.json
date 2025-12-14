@@ -1,113 +1,113 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 6, 
-    "global_count": 1, 
-    "total_lines": 27, 
-    "assembly_lines": 17, 
-    "suspect_count": 3, 
+    "assembly_lines": 17,
+    "complexity_score": 45,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_CoronaGlobeCount", 
-      "addr": "032776c8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((0xff < *(int *)(in_stack_00000008 + 0xc)) && (g_CoronaGlobeCount < 100)) {"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&g_CoronaGlobeCount)[g_CoronaGlobeCount + 1] = in_stack_00000008;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0056d110", 
-    "signature": "void core_set.cpp_CDemonSet_FUN_0056d110(CDemonSet * this_ptr)", 
-    "address_range": [
-      [
-        "0056d110", 
-        "0056d13d"
-      ]
-    ], 
-    "name": "core_set.cpp_CDemonSet_FUN_0056d110"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 27
+  },
   "cross_references": [
     {
-      "from_addr": "00422b74", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_FUN_00422a50", 
-      "addr": "00422a50"
-    }, 
+      "addr": "00422a50",
+      "from_addr": "00422b74",
+      "name": "core_boxactor.cpp_FUN_00422a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a81f9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_emitter.cpp_FUN_004a8070", 
-      "addr": "004a8070"
-    }, 
+      "addr": "004a8070",
+      "from_addr": "004a81f9",
+      "name": "core_emitter.cpp_FUN_004a8070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c0be1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireball_process_FUN_004c0b30", 
-      "addr": "004c0b30"
-    }, 
+      "addr": "004c0b30",
+      "from_addr": "004c0be1",
+      "name": "core_fire.cpp_CFireball_process_FUN_004c0b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c1983", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_FUN_004c1940", 
-      "addr": "004c1940"
-    }, 
+      "addr": "004c1940",
+      "from_addr": "004c1983",
+      "name": "core_fire.cpp_FUN_004c1940",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005017a6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_keyactor.cpp_FUN_00501710", 
-      "addr": "00501710"
-    }, 
+      "addr": "00501710",
+      "from_addr": "005017a6",
+      "name": "core_keyactor.cpp_FUN_00501710",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ee621", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_weapon.cpp_CWeapon_FUN_005ee4a0", 
-      "addr": "005ee4a0"
+      "addr": "005ee4a0",
+      "from_addr": "005ee621",
+      "name": "core_weapon.cpp_CWeapon_FUN_005ee4a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056d110",
+    "address_range": [
+      [
+        "0056d110",
+        "0056d13d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_FUN_0056d110",
+    "signature": "void core_set.cpp_CDemonSet_FUN_0056d110(CDemonSet * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "032776c8",
+      "name": "g_CoronaGlobeCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "if ((0xff < *(int *)(in_stack_00000008 + 0xc)) && (g_CoronaGlobeCount < 100)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "(&g_CoronaGlobeCount)[g_CoronaGlobeCount + 1] = in_stack_00000008;",
+      "type": "stack_param"
     }
   ]
 }

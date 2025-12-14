@@ -1,203 +1,203 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 106, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 2, 
-    "global_count": 7, 
-    "total_lines": 98, 
-    "assembly_lines": 72, 
-    "suspect_count": 6, 
+    "assembly_lines": 72,
+    "complexity_score": 106,
+    "cross_reference_count": 2,
+    "function_call_count": 8,
+    "global_count": 7,
+    "pseudocode_lines": 26,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0", 
-      "addr": "0054b4a0"
-    }, 
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0", 
-      "addr": "0054a8e0"
-    }, 
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690", 
-      "addr": "0054b690"
-    }, 
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990", 
-      "addr": "0054a990"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_dosio.c_getFile_FUN_00481a50", 
-      "addr": "00481a50"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_0063f1fe", 
-      "addr": "0063f1fe", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_0063f201", 
-      "addr": "0063f201", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_open_PBM_file__0063f205", 
-      "addr": "0063f205", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbitmap_cpp_0063f220", 
-      "addr": "0063f220", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbitmap_cpp_0063f238", 
-      "addr": "0063f238", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000028;"
-    }, 
-    {
-      "line": 17, 
-      "match": "&stack0xffffffa0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa0,\"Unable to open PBM file %s\",this_ptr);"
-    }, 
-    {
-      "line": 20, 
-      "match": "&stack0xffffffa4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa4);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000028 == 0) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054b860", 
-    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap * this_ptr, char * filename, int post_load_processing)", 
-    "address_range": [
-      [
-        "0054b860", 
-        "0054b90b"
-      ]
-    ], 
-    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860"
-  }, 
-  "stack_frame": {
-    "local_size": 112, 
-    "variables": [
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "post_load_processing"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 124, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 98
+  },
   "cross_references": [
     {
-      "from_addr": "0054b91b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910", 
-      "addr": "0054b910"
-    }, 
+      "addr": "0054b910",
+      "from_addr": "0054b91b",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054c44c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0", 
-      "addr": "0054c3d0"
+      "addr": "0054c3d0",
+      "from_addr": "0054c44c",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054b860",
+    "address_range": [
+      [
+        "0054b860",
+        "0054b90b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860",
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap * this_ptr, char * filename, int post_load_processing)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054b4a0",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0"
+    },
+    {
+      "addr": "0054a8e0",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0"
+    },
+    {
+      "addr": "0054b690",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690"
+    },
+    {
+      "addr": "0054a990",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00481a50",
+      "name": "engine_dosio.c_getFile_FUN_00481a50"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063f1fe",
+      "name": "s_rb_0063f1fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f201",
+      "name": "s_art_0063f201",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f205",
+      "name": "s_Unable_to_open_PBM_file__0063f205",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f220",
+      "name": "s_cockpit_pkbitmap_cpp_0063f220",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f238",
+      "name": "s_cockpit_pkbitmap_cpp_0063f238",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 124,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "post_load_processing",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000028",
+      "text": "int in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xffffffa0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa0,\"Unable to open PBM file %s\",this_ptr);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffffa4",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000028",
+      "text": "if (in_stack_00000028 == 0) {",
+      "type": "stack_param"
     }
   ]
 }

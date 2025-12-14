@@ -65,14 +65,14 @@ section .text
     FCOMPP                              ; 00480e53
     FNSTSW AX                           ; 00480e55
     SAHF                                ; 00480e57
-    JA 0x00480ee0                       ; 00480e58 | LAB_00480ee0
-        ;   XREF to: 00480ee0 (CONDITIONAL_JUMP)
+    JA 0x00480ee0                       ; 00480e58
+        ;   XREF to: 00480ee0 (CONDITIONAL_JUMP)  ; LAB_00480ee0
     MOV EAX,dword ptr [EDI + 0x2d8]     ; 00480e5e
         ;   Label: LAB_00480e5e
     CMP EAX,0x3                         ; 00480e64
-    JA 0x00480fe3                       ; 00480e67 | default
-        ;   XREF to: 00480fe3 (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x480e0c]  ; 00480e6d | void * switchdataD_00480e0c
+    JA 0x00480fe3                       ; 00480e67
+        ;   XREF to: 00480fe3 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x480e0c]  ; 00480e6d | caseD_1 | caseD_3 | switchdataD_00480e0c
         ;   Label: switchD
     MOV ESI,dword ptr [EBP + 0x20]      ; 00480e74
         ;   Label: caseD_2
@@ -80,23 +80,23 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 00480e78
     PUSH EAX                            ; 00480e7c
     PUSH EDI                            ; 00480e7d
-    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 ; 00480e7e | CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
-        ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 ; 00480e7e
+        ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     FLDZ                                ; 00480e83
     ADD ESP,0xc                         ; 00480e85
     LEA ESI,[EDI + 0x9bc]               ; 00480e88
     FCOMP float ptr [EAX + 0x8]         ; 00480e8e
     FNSTSW AX                           ; 00480e91
     SAHF                                ; 00480e93
-    JNC 0x00480f58                      ; 00480e94 | LAB_00480f58
-        ;   XREF to: 00480f58 (CONDITIONAL_JUMP)
+    JNC 0x00480f58                      ; 00480e94
+        ;   XREF to: 00480f58 (CONDITIONAL_JUMP)  ; LAB_00480f58
     LEA EAX,[ESP + 0xc]                 ; 00480e9a
     PUSH EAX                            ; 00480e9e
     LEA EAX,[ESP + 0x4]                 ; 00480e9f
     PUSH EAX                            ; 00480ea3
     PUSH EDI                            ; 00480ea4
-    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 00480ea5 | CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 00480ea5
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 00480eaa
     FADD float ptr [EAX]                ; 00480eac
     ADD ESP,0xc                         ; 00480eae
@@ -109,8 +109,8 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 00480ec5
     FSTP float ptr [ESP + 0x2c]         ; 00480ec9
     CMP EBX,EAX                         ; 00480ecd
-    JNZ 0x00480f35                      ; 00480ecf | LAB_00480f35
-        ;   XREF to: 00480f35 (CONDITIONAL_JUMP)
+    JNZ 0x00480f35                      ; 00480ecf
+        ;   XREF to: 00480f35 (CONDITIONAL_JUMP)  ; LAB_00480f35
     FLD float ptr [EDI + 0x24]          ; 00480ed1
         ;   Label: LAB_00480ed1
     MOV EAX,EBX                         ; 00480ed4
@@ -139,16 +139,16 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 00480f08
     FSTP float ptr [ESP + 0x30]         ; 00480f0c
     CMP EAX,ESI                         ; 00480f10
-    JZ 0x00480e5e                       ; 00480f12 | LAB_00480e5e
-        ;   XREF to: 00480e5e (CONDITIONAL_JUMP)
+    JZ 0x00480e5e                       ; 00480f12
+        ;   XREF to: 00480e5e (CONDITIONAL_JUMP)  ; LAB_00480e5e
     MOV EAX,dword ptr [ESP + 0x30]      ; 00480f18
     MOV dword ptr [ESP + 0xc],EAX       ; 00480f1c
     MOV EAX,dword ptr [ESP + 0x34]      ; 00480f20
     MOV dword ptr [ESP + 0x10],EAX      ; 00480f24
     MOV EAX,dword ptr [ESP + 0x38]      ; 00480f28
     MOV dword ptr [ESP + 0x14],EAX      ; 00480f2c
-    JMP 0x00480e5e                      ; 00480f30 | LAB_00480e5e
-        ;   XREF to: 00480e5e (UNCONDITIONAL_JUMP)
+    JMP 0x00480e5e                      ; 00480f30
+        ;   XREF to: 00480e5e (UNCONDITIONAL_JUMP)  ; LAB_00480e5e
     MOV EAX,dword ptr [ESP + 0x24]      ; 00480f35
         ;   Label: LAB_00480f35
     MOV dword ptr [EBX],EAX             ; 00480f39
@@ -171,8 +171,8 @@ section .text
     LEA EAX,[ESP + 0x4c]                ; 00480f5d
     PUSH EAX                            ; 00480f61
     PUSH EDI                            ; 00480f62
-    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 00480f63 | CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 00480f63
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 00480f68
     FSUB float ptr [EAX]                ; 00480f6a
     ADD ESP,0xc                         ; 00480f6c
@@ -185,8 +185,8 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 00480f83
     FSTP float ptr [ESP + 0x20]         ; 00480f87
     CMP EBX,EAX                         ; 00480f8b
-    JZ 0x00480ed1                       ; 00480f8d | LAB_00480ed1
-        ;   XREF to: 00480ed1 (CONDITIONAL_JUMP)
+    JZ 0x00480ed1                       ; 00480f8d
+        ;   XREF to: 00480ed1 (CONDITIONAL_JUMP)  ; LAB_00480ed1
     MOV EAX,dword ptr [ESP + 0x18]      ; 00480f93
     MOV dword ptr [EBX],EAX             ; 00480f97
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00480f99
@@ -205,8 +205,8 @@ section .text
     LEA EAX,[EDI + 0x9bc]               ; 00480fb6
         ;   Label: caseD_3
     CMP EBX,EAX                         ; 00480fbc
-    JZ 0x00480ed1                       ; 00480fbe | LAB_00480ed1
-        ;   XREF to: 00480ed1 (CONDITIONAL_JUMP)
+    JZ 0x00480ed1                       ; 00480fbe
+        ;   XREF to: 00480ed1 (CONDITIONAL_JUMP)  ; LAB_00480ed1
     MOV EDX,dword ptr [EAX]             ; 00480fc4
     MOV dword ptr [EBX],EDX             ; 00480fc6
     MOV EDX,dword ptr [EAX + 0x4]       ; 00480fc8
@@ -222,14 +222,14 @@ section .text
     POP ESI                             ; 00480fe0
     POP EBX                             ; 00480fe1
     RET                                 ; 00480fe2
-    MOV EDX,0x6212a9                    ; 00480fe3 | = "..\\core\\door.cpp" | s_core_door_cpp_006212a9 = ..\core\door.cpp
+    MOV EDX,0x6212a9                    ; 00480fe3 | = "..\\core\\door.cpp"
         ;   Label: default
     MOV ECX,0x340                       ; 00480fe8
-    PUSH 0x6212ba                       ; 00480fed | = "CDoor::getOpenStandPos - invalid door..." | s_CDoor_getOpenStandPos_in_006212ba = CDoor::getOpenStandPos - invalid doorType
-    MOV dword ptr [0x02f0ca48],EDX      ; 00480ff2 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 00480ff8 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00480ffe | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6212ba                       ; 00480fed | = "CDoor::getOpenStandPos - invalid door..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 00480ff2 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 00480ff8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00480ffe
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00481003
     FLD float ptr [EDI + 0x24]          ; 00481006
     MOV EAX,EBX                         ; 00481009

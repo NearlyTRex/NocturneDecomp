@@ -1,104 +1,104 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 28, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 111, 
-    "assembly_lines": 83, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_free_FUN_00601cd0", 
-      "addr": "00601cd0"
-    }, 
-    {
-      "name": "crt_memory.c_malloc_FUN_00601bb0", 
-      "addr": "00601bb0"
-    }, 
-    {
-      "name": "crt_string.c_wcslen_FUN_0060cd30", 
-      "addr": "0060cd30"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GetModuleFileNameA*", 
-      "name": "GetModuleFileNameA", 
-      "addr": "006115ac", 
-      "value": "00211f42"
-    }, 
-    {
-      "type": "GetModuleFileNameW*", 
-      "name": "PTR_GetModuleFileNameW_006115b0", 
-      "addr": "006115b0", 
-      "value": "00211f58"
-    }, 
-    {
-      "type": "GetVersion*", 
-      "name": "PTR_GetVersion_006115c8", 
-      "addr": "006115c8", 
-      "value": "00211fca"
-    }, 
-    {
-      "type": "MultiByteToWideChar*", 
-      "name": "PTR_MultiByteToWideChar_006115f4", 
-      "addr": "006115f4", 
-      "value": "00212092"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a560", 
-    "signature": "DWORD crt_startup.c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule, LPWSTR lpFilename, DWORD nSize)", 
-    "address_range": [
-      [
-        "0060a560", 
-        "0060a603"
-      ]
-    ], 
-    "name": "crt_startup.c_GetModuleFileNameCompat_FUN_0060a560"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef HMODULE HINSTANCE", 
-        "size": 4, 
-        "name": "hModule"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "typedef LPWSTR WCHAR *", 
-        "size": 4, 
-        "name": "lpFilename"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "typedef DWORD ulong", 
-        "size": 4, 
-        "name": "nSize"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 83,
+    "complexity_score": 29,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 112
+  },
   "cross_references": [
     {
-      "from_addr": "00602540", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.c_initialize_runtime_FUN_0060245c", 
-      "addr": "0060245c"
+      "addr": "0060245c",
+      "from_addr": "00602540",
+      "name": "crt_startup.c_initialize_runtime_FUN_0060245c",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060a560",
+    "address_range": [
+      [
+        "0060a560",
+        "0060a603"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_startup.c_GetModuleFileNameCompat_FUN_0060a560",
+    "signature": "DWORD crt_startup.c_GetModuleFileNameCompat_FUN_0060a560(HMODULE hModule, LPWSTR lpFilename, DWORD nSize)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601cd0",
+      "name": "crt_memory.c_free_FUN_00601cd0"
+    },
+    {
+      "addr": "00601bb0",
+      "name": "crt_memory.c_malloc_FUN_00601bb0"
+    },
+    {
+      "addr": "0060cd30",
+      "name": "crt_string.c_wcslen_FUN_0060cd30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006115ac",
+      "name": "GetModuleFileNameA",
+      "type": "GetModuleFileNameA*",
+      "value": "00211f42"
+    },
+    {
+      "addr": "006115b0",
+      "name": "PTR_GetModuleFileNameW_006115b0",
+      "type": "GetModuleFileNameW*",
+      "value": "00211f58"
+    },
+    {
+      "addr": "006115c8",
+      "name": "PTR_GetVersion_006115c8",
+      "type": "GetVersion*",
+      "value": "00211fca"
+    },
+    {
+      "addr": "006115f4",
+      "name": "PTR_MultiByteToWideChar_006115f4",
+      "type": "MultiByteToWideChar*",
+      "value": "00212092"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "hModule",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef HMODULE HINSTANCE"
+      },
+      {
+        "is_param": true,
+        "name": "lpFilename",
+        "offset": 8,
+        "size": 4,
+        "type": "typedef LPWSTR WCHAR *"
+      },
+      {
+        "is_param": true,
+        "name": "nSize",
+        "offset": 12,
+        "size": 4,
+        "type": "typedef DWORD ulong"
+      }
+    ]
+  },
+  "suspects": []
 }

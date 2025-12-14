@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 71, 
-    "assembly_lines": 51, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_ctype.c_tolower_FUN_005feb30", 
-      "addr": "005feb30"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060ee18", 
-    "signature": "int crt_stdlib.c_charToDigit_FUN_0060ee18(char ch)", 
-    "address_range": [
-      [
-        "0060ee18", 
-        "0060ee74"
-      ]
-    ], 
-    "name": "crt_stdlib.c_charToDigit_FUN_0060ee18"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char", 
-        "size": 1, 
-        "name": "ch"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 5, 
-    "param_offset": 4, 
-    "param_size": 1
-  }, 
+    "assembly_lines": 51,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
+  },
   "cross_references": [
     {
-      "from_addr": "0060ed2b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdlib.c_strtol_internal_FUN_0060ec70", 
-      "addr": "0060ec70"
+      "addr": "0060ec70",
+      "from_addr": "0060ed2b",
+      "name": "crt_stdlib.c_strtol_internal_FUN_0060ec70",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060ee18",
+    "address_range": [
+      [
+        "0060ee18",
+        "0060ee74"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdlib.c_charToDigit_FUN_0060ee18",
+    "signature": "int crt_stdlib.c_charToDigit_FUN_0060ee18(char ch)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feb30",
+      "name": "crt_ctype.c_tolower_FUN_005feb30"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 5,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 1,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ch",
+        "offset": 4,
+        "size": 1,
+        "type": "char"
+      }
+    ]
+  },
+  "suspects": []
 }

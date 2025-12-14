@@ -25,7 +25,7 @@ void crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(void *pParam)
   crt_memory_c_GetMemoryBounds_FUN_0060a6a0(pStackBound,pHeapBound);
   crt_exception_c_installExceptionHandler_FUN_0060aba8(pExceptionFrame);
   crt_init_c_ProcessInitTermHandlers_FUN_0060ac30(0x21);
-  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24)();
+  (*PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24)();
   crt_init_c_ProcessInitTermHandlers_FUN_0060ac30(0xff);
   return;
 }

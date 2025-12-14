@@ -1,473 +1,485 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 486, 
-    "pseudocode_lines": 146, 
-    "cross_reference_count": 7, 
-    "global_count": 14, 
-    "total_lines": 541, 
-    "assembly_lines": 395, 
-    "suspect_count": 33, 
+    "assembly_lines": 395,
+    "complexity_score": 486,
+    "cross_reference_count": 7,
+    "function_call_count": 9,
+    "global_count": 16,
+    "pseudocode_lines": 146,
+    "suspect_count": 33,
     "suspect_types": [
-      "unaffected_reg", 
+      "unaffected_reg",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0", 
-      "addr": "0056eac0"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770", 
-      "addr": "00570770"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0", 
-      "addr": "0056e7c0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0", 
-      "addr": "0048caa0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
-      "addr": "0048ca60"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00", 
-      "addr": "0048ca00"
-    }, 
-    {
-      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
-      "addr": "005dd800"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0061855a", 
-      "addr": "0061855a", 
-      "value": "65535"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00827500", 
-      "addr": "00827500", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00827504", 
-      "addr": "00827504", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00827518", 
-      "addr": "00827518", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00827520", 
-      "addr": "00827520", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00827524", 
-      "addr": "00827524", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0082752c", 
-      "addr": "0082752c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00827548", 
-      "addr": "00827548", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0082754c", 
-      "addr": "0082754c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00827590", 
-      "addr": "00827590", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 3, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 24, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int **)((int)param_5 + 0x10c));"
-    }, 
-    {
-      "line": 29, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((double)(*(float *)((int)param_5 + 0x3ce88) * (float)65535));"
-    }, 
-    {
-      "line": 37, 
-      "match": "(SMRGLTextureBasic *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "engine_texture_cpp_ensureTextureLoaded_FUN_005dd800((SMRGLTextureBasic *)((int)param_5 + 0x124));"
-    }, 
-    {
-      "line": 38, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)param_5 + 0x3ce84) == 0) {"
-    }, 
-    {
-      "line": 40, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110) / 2,"
-    }, 
-    {
-      "line": 40, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110) / 2,"
-    }, 
-    {
-      "line": 41, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(SInputFace **)((int)param_5 + 0x114),*(int *)((int)param_5 + 0x10c),4,0);"
-    }, 
-    {
-      "line": 42, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if ((param_6 != 0) && (iVar8 = 0, iVar3 = (int)param_5, 0 < *(int *)((int)param_5 + 0x3f028))) {"
-    }, 
-    {
-      "line": 51, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "} while (iVar8 < *(int *)((int)param_5 + 0x3f028));"
-    }, 
-    {
-      "line": 53, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EDI < 63000) {"
-    }, 
-    {
-      "line": 54, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
-    }, 
-    {
-      "line": 59, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
-    }, 
-    {
-      "line": 64, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar3 = *(int *)((int)param_5 + 0x110) / 2;"
-    }, 
-    {
-      "line": 66, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),iVar3,"
-    }, 
-    {
-      "line": 67, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(SInputFace *)(*(int *)((int)param_5 + 0x114) + iVar3 * 0x48),"
-    }, 
-    {
-      "line": 68, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)param_5 + 0x10c),4,0);"
-    }, 
-    {
-      "line": 69, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (62999 < unaff_EBX) {"
-    }, 
-    {
-      "line": 70, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar3 = *(int *)((int)param_5 + 0x110) / 2;"
-    }, 
-    {
-      "line": 72, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar4 = (SMRGLPrimitiveQuad *)(iVar3 * 0x48 + *(int *)((int)param_5 + 0x114));"
-    }, 
-    {
-      "line": 75, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar3 = *(int *)((int)param_5 + 0x110) / 2;"
-    }, 
-    {
-      "line": 76, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar4 = (SMRGLPrimitiveQuad *)(*(int *)((int)param_5 + 0x114) + iVar3 * 0x48);"
-    }, 
-    {
-      "line": 80, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110),"
-    }, 
-    {
-      "line": 80, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110),"
-    }, 
-    {
-      "line": 81, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(SInputFace **)((int)param_5 + 0x114),*(int *)((int)param_5 + 0x10c),4,0);"
-    }, 
-    {
-      "line": 82, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if ((param_6 != 0) && (iVar9 = 0, iVar3 = (int)param_5, 0 < *(int *)((int)param_5 + 0x3f028))) {"
-    }, 
-    {
-      "line": 91, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "} while (iVar9 < *(int *)((int)param_5 + 0x3f028));"
-    }, 
-    {
-      "line": 93, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EDI < 63000) {"
-    }, 
-    {
-      "line": 95, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
-    }, 
-    {
-      "line": 100, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
-    }, 
-    {
-      "line": 104, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
-    }, 
-    {
-      "line": 122, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)(puVar6 + (uint)bVar11 * -8 + 0x1c) + ((uint)bVar11 * -2 + 1) * 4)"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0043bae0", 
-    "signature": "undefined core_cloth.cpp_FUN_0043bae0()", 
-    "address_range": [
-      [
-        "0043bae0", 
-        "0043bf33"
-      ]
-    ], 
-    "name": "core_cloth.cpp_FUN_0043bae0"
-  }, 
-  "stack_frame": {
-    "local_size": 40, 
-    "variables": [
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 541
+  },
   "cross_references": [
     {
-      "from_addr": "0043caf9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880", 
-      "addr": "0043c880"
-    }, 
+      "addr": "0043c880",
+      "from_addr": "0043caf9",
+      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043c376", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320", 
-      "addr": "0043c320"
-    }, 
+      "addr": "0043c320",
+      "from_addr": "0043c376",
+      "name": "core_cloth.cpp_MultipleCallSaveJoinedLight_FUN_0043c320",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d6185", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d6140", 
-      "addr": "004d6140"
-    }, 
+      "addr": "004d6140",
+      "from_addr": "004d6185",
+      "name": "core_gabriela.cpp_FUN_004d6140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00520708", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_CMimic_FUN_005205f0", 
-      "addr": "005205f0"
-    }, 
+      "addr": "005205f0",
+      "from_addr": "00520708",
+      "name": "core_mimic.cpp_CMimic_FUN_005205f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00520918", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_FUN_005208b0", 
-      "addr": "005208b0"
-    }, 
+      "addr": "005208b0",
+      "from_addr": "00520918",
+      "name": "core_mimic.cpp_FUN_005208b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d9d0a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_svetlana.cpp_CSvetlana_FUN_005d9bc0", 
-      "addr": "005d9bc0"
-    }, 
+      "addr": "005d9bc0",
+      "from_addr": "005d9d0a",
+      "name": "core_svetlana.cpp_CSvetlana_FUN_005d9bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e6e2e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0", 
-      "addr": "005e6da0"
+      "addr": "005e6da0",
+      "from_addr": "005e6e2e",
+      "name": "core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043bae0",
+    "address_range": [
+      [
+        "0043bae0",
+        "0043bf33"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_cloth.cpp_FUN_0043bae0",
+    "signature": "undefined core_cloth.cpp_FUN_0043bae0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0056eac0",
+      "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0"
+    },
+    {
+      "addr": "00570770",
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770"
+    },
+    {
+      "addr": "0056e7c0",
+      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048caa0",
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048ca60",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    },
+    {
+      "addr": "0048ca00",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00"
+    },
+    {
+      "addr": "005dd800",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061855a",
+      "name": "DOUBLE_0061855a",
+      "type": "double",
+      "value": "65535"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "00827500",
+      "name": "DAT_00827500",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00827504",
+      "name": "DAT_00827504",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00827518",
+      "name": "DAT_00827518",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0082751c",
+      "name": "DAT_0082751c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00827520",
+      "name": "DAT_00827520",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00827524",
+      "name": "DAT_00827524",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00827528",
+      "name": "DAT_00827528",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0082752c",
+      "name": "DAT_0082752c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00827548",
+      "name": "DAT_00827548",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0082754c",
+      "name": "DAT_0082754c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00827590",
+      "name": "DAT_00827590",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 3,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(int *)((int)",
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int **)((int)param_5 + 0x10c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(float *)((int)",
+      "text": "((double)(*(float *)((int)param_5 + 0x3ce88) * (float)65535));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(SMRGLTextureBasic *)((int)",
+      "text": "engine_texture_cpp_ensureTextureLoaded_FUN_005dd800((SMRGLTextureBasic *)((int)param_5 + 0x124));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)param_5 + 0x3ce84) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)",
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110) / 2,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)",
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110) / 2,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(int *)((int)",
+      "text": "*(SInputFace **)((int)param_5 + 0x114),*(int *)((int)param_5 + 0x10c),4,0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(int *)((int)",
+      "text": "if ((param_6 != 0) && (iVar8 = 0, iVar3 = (int)param_5, 0 < *(int *)((int)param_5 + 0x3f028))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(int *)((int)",
+      "text": "} while (iVar8 < *(int *)((int)param_5 + 0x3f028));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_EDI",
+      "text": "if (unaff_EDI < 63000) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110) / 2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(int *)((int)",
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),iVar3,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(int *)((int)",
+      "text": "(SInputFace *)(*(int *)((int)param_5 + 0x114) + iVar3 * 0x48),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)param_5 + 0x10c),4,0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EBX",
+      "text": "if (62999 < unaff_EBX) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110) / 2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(int *)((int)",
+      "text": "pSVar4 = (SMRGLPrimitiveQuad *)(iVar3 * 0x48 + *(int *)((int)param_5 + 0x114));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110) / 2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(int *)((int)",
+      "text": "pSVar4 = (SMRGLPrimitiveQuad *)(*(int *)((int)param_5 + 0x114) + iVar3 * 0x48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(int *)((int)",
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(int *)((int)",
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(int *)((int)",
+      "text": "*(SInputFace **)((int)param_5 + 0x114),*(int *)((int)param_5 + 0x10c),4,0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(int *)((int)",
+      "text": "if ((param_6 != 0) && (iVar9 = 0, iVar3 = (int)param_5, 0 < *(int *)((int)param_5 + 0x3f028))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(int *)((int)",
+      "text": "} while (iVar9 < *(int *)((int)param_5 + 0x3f028));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 93,
+      "match": "unaff_EDI",
+      "text": "if (unaff_EDI < 63000) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)(puVar6 + (uint)bVar11 * -8 + 0x1c) + ((uint)bVar11 * -2 + 1) * 4)",
+      "type": "pointer_cast"
     }
   ]
 }

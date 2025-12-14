@@ -15,13 +15,13 @@ section .text
         ;   Label: core_platfrm.cpp_FUN_0054e180
     ADD EAX,0x158                       ; 0054e184
     PUSH EAX                            ; 0054e189
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0054e18a | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0054e18a
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     MOV EDX,dword ptr [EAX + 0x5698]    ; 0054e18f
     ADD ESP,0x4                         ; 0054e195
     TEST EDX,EDX                        ; 0054e198
-    JNZ 0x0054e1a6                      ; 0054e19a | LAB_0054e1a6
-        ;   XREF to: 0054e1a6 (CONDITIONAL_JUMP)
+    JNZ 0x0054e1a6                      ; 0054e19a
+        ;   XREF to: 0054e1a6 (CONDITIONAL_JUMP)  ; LAB_0054e1a6
     LEA EAX,[EAX]                       ; 0054e19c
     MOV EAX,dword ptr [ESP + 0x4]       ; 0054e1a6
         ;   Label: LAB_0054e1a6

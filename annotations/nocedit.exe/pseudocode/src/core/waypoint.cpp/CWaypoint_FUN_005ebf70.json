@@ -1,287 +1,287 @@
 {
   "complexity": {
-    "function_call_count": 12, 
-    "complexity_score": 281, 
-    "pseudocode_lines": 106, 
-    "cross_reference_count": 0, 
-    "global_count": 11, 
-    "total_lines": 391, 
-    "assembly_lines": 285, 
-    "suspect_count": 15, 
+    "assembly_lines": 285,
+    "complexity_score": 278,
+    "cross_reference_count": 0,
+    "function_call_count": 12,
+    "global_count": 11,
+    "pseudocode_lines": 103,
+    "suspect_count": 15,
     "suspect_types": [
-      "stack_param", 
-      "unknown_field", 
-      "badspacebase", 
-      "register_param", 
+      "badspacebase",
+      "register_param",
+      "stack_param",
+      "unknown_field",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
-      "addr": "00408ec0"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940", 
-      "addr": "0040d940"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
-      "addr": "00408b40"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
-      "addr": "00408b00"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
-      "addr": "00408f10"
-    }, 
-    {
-      "name": "core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750", 
-      "addr": "00548750"
-    }, 
-    {
-      "name": "core_path.cpp_FUN_00547fc0", 
-      "addr": "00547fc0"
-    }, 
-    {
-      "name": "core_path.cpp_FUN_00548500", 
-      "addr": "00548500"
-    }, 
-    {
-      "name": "engine_3d.c_drawLine2DFromIndices_FUN_00407cf0", 
-      "addr": "00407cf0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_00657583", 
-      "addr": "00657583", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00665460", 
-      "addr": "00665460", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonMission*", 
-      "name": "g_CDemonMissionPtr", 
-      "addr": "0067d550", 
-      "value": "02f33740"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonMission", 
-      "name": "g_CDemonMissionInstance", 
-      "addr": "02f33740", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f33744", 
-      "addr": "02f33744", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f33768", 
-      "addr": "02f33768", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f33780", 
-      "addr": "02f33780", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CWayPointClassInfo.name_hash", 
-      "addr": "03f9591c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CWayPoint *in_stack_00000014;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CWayPoint *in_stack_00000018;"
-    }, 
-    {
-      "line": 46, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_4c._0_4_ = (uint)ROUND(aCStack_40[0].x * _DAT_00665460);"
-    }, 
-    {
-      "line": 47, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_4c._4_4_ = (uint)ROUND(aCStack_40[0].y * _DAT_00665460);"
-    }, 
-    {
-      "line": 48, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_4c._8_4_ = (uint)ROUND(aCStack_40[0].z * _DAT_00665460);"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((this_ptr == in_stack_00000014) || (this_ptr_00 == in_stack_00000014)) {"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((this_ptr == in_stack_00000014) || (this_ptr_00 == in_stack_00000014)) {"
-    }, 
-    {
-      "line": 70, 
-      "match": "&stack0xfffffff0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CDemonActor *)this_ptr_00,(CVector3f *)&stack0xfffffff0,aCStack_40);"
-    }, 
-    {
-      "line": 74, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_4c._8_4_ = pCVar4->x;"
-    }, 
-    {
-      "line": 78, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "CStack_5c.x = (int)ROUND((float)auStack_4c._8_4_ * _DAT_00665460);"
-    }, 
-    {
-      "line": 90, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000018 != (CWayPoint *)0x0) &&"
-    }, 
-    {
-      "line": 92, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((this_ptr != in_stack_00000018) && (*(int *)(g_CDemonMissionPtr->field2_0xc + 0x34) != 2))"
-    }, 
-    {
-      "line": 97, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (this_ptr == in_stack_00000018) {"
-    }
-  ], 
+    ],
+    "total_lines": 388
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ebf70", 
-    "signature": "int core_waypoint.cpp_CWaypoint_FUN_005ebf70(CWayPoint * this_ptr)", 
+    "address": "005ebf70",
     "address_range": [
       [
-        "005ebf70", 
+        "005ebf70",
         "005ec27d"
       ]
-    ], 
-    "name": "core_waypoint.cpp_CWaypoint_FUN_005ebf70"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_waypoint.cpp_CWaypoint_FUN_005ebf70",
+    "signature": "int core_waypoint.cpp_CWaypoint_FUN_005ebf70(CWayPoint * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00408ec0",
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0040d940",
+      "name": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940"
+    },
+    {
+      "addr": "00408b40",
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "00408f10",
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "00548750",
+      "name": "core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750"
+    },
+    {
+      "addr": "00547fc0",
+      "name": "core_path.cpp_FUN_00547fc0"
+    },
+    {
+      "addr": "00548500",
+      "name": "core_path.cpp_FUN_00548500"
+    },
+    {
+      "addr": "00407cf0",
+      "name": "engine_3d.c_drawLine2DFromIndices_FUN_00407cf0"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657583",
+      "name": "FLOAT_00657583",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "00665460",
+      "name": "DAT_00665460",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f33740",
+      "name": "g_CDemonMissionInstance",
+      "type": "CDemonMission",
+      "value": null
+    },
+    {
+      "addr": "02f33744",
+      "name": "DAT_02f33744",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f33768",
+      "name": "DAT_02f33768",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f33780",
+      "name": "DAT_02f33780",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9591c",
+      "name": "g_CWayPointClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 152, 
+    "frame_size": 156,
+    "local_size": 152,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -148, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_94"
-      }, 
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWayPoint *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWayPoint *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 156, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000014",
+      "text": "CWayPoint *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000018",
+      "text": "CWayPoint *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._0_4_",
+      "text": "auStack_4c._0_4_ = (uint)ROUND(aCStack_40[0].x * _DAT_00665460);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 44,
+      "match": "._4_4_",
+      "text": "auStack_4c._4_4_ = (uint)ROUND(aCStack_40[0].y * _DAT_00665460);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 45,
+      "match": "._8_4_",
+      "text": "auStack_4c._8_4_ = (uint)ROUND(aCStack_40[0].z * _DAT_00665460);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000014",
+      "text": "if ((this_ptr == in_stack_00000014) || (this_ptr_00 == in_stack_00000014)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000014",
+      "text": "if ((this_ptr == in_stack_00000014) || (this_ptr_00 == in_stack_00000014)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
+      "match": "&stack0xfffffff0",
+      "text": "((CDemonActor *)this_ptr_00,(CVector3f *)&stack0xfffffff0,aCStack_40);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._8_4_",
+      "text": "auStack_4c._8_4_ = pCVar4->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._8_4_",
+      "text": "CStack_5c.x = (int)ROUND((float)auStack_4c._8_4_ * _DAT_00665460);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_00000018",
+      "text": "if ((in_stack_00000018 != (CWayPoint *)0x0) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_00000018",
+      "text": "if ((this_ptr != in_stack_00000018) && (*(int *)(g_CDemonMissionPtr->field2_0xc + 0x34) != 2))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 94,
+      "match": "in_stack_00000018",
+      "text": "if (this_ptr == in_stack_00000018) {",
+      "type": "stack_param"
+    }
+  ]
 }

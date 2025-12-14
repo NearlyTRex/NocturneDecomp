@@ -39,8 +39,7 @@ core_setdir_cpp_CZThumb_render_FUN_00574f20(CZThumb *this_ptr,int screen_x,int s
       }
     }
     else {
-      local_20 = screen_y + 1;
-      for (iVar4 = 1; iVar4 < this_ptr->height + -1; iVar4 = iVar4 + 1) {
+      for (iVar4 = 1; local_20 = screen_y + 1, iVar4 < this_ptr->height + -1; iVar4 = iVar4 + 1) {
         iVar3 = 1;
         iVar1 = screen_x;
         while( true ) {
@@ -57,7 +56,7 @@ core_setdir_cpp_CZThumb_render_FUN_00574f20(CZThumb *this_ptr,int screen_x,int s
           iVar3 = iVar3 + 1;
           engine_2d_c_plotPixel_FUN_00401140(iVar1,local_20);
         }
-        local_20 = local_20 + 1;
+        screen_y = local_20;
       }
     }
   }

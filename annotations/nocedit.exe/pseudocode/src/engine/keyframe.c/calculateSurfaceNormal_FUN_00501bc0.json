@@ -1,159 +1,159 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 47, 
-    "cross_reference_count": 6, 
-    "global_count": 1, 
-    "total_lines": 180, 
-    "assembly_lines": 133, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_NormalTo16BitScale2", 
-      "addr": "00630ca0", 
-      "value": "65535"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00501bc0", 
-    "signature": "void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SSurfaceNormal * output)", 
-    "address_range": [
-      [
-        "00501bc0", 
-        "00501d34"
-      ]
-    ], 
-    "name": "engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0"
-  }, 
-  "stack_frame": {
-    "local_size": 72, 
-    "variables": [
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "vertex_data"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SSurfaceNormal *", 
-        "size": 4, 
-        "name": "output"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 80, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 133,
+    "complexity_score": 47,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 47,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 180
+  },
   "cross_references": [
     {
-      "from_addr": "0041a43a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bodypart.cpp_FUN_0041a050", 
-      "addr": "0041a050"
-    }, 
+      "addr": "0041a050",
+      "from_addr": "0041a43a",
+      "name": "core_bodypart.cpp_FUN_0041a050",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00477ed5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00477e60", 
-      "addr": "00477e60"
-    }, 
+      "addr": "00477e60",
+      "from_addr": "00477ed5",
+      "name": "core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00477e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00482567", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0", 
-      "addr": "004824f0"
-    }, 
+      "addr": "004824f0",
+      "from_addr": "00482567",
+      "name": "core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005706b6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_FUN_005702b0", 
-      "addr": "005702b0"
-    }, 
+      "addr": "005702b0",
+      "from_addr": "005706b6",
+      "name": "core_set.cpp_FUN_005702b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050228b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30", 
-      "addr": "00501f30"
-    }, 
+      "addr": "00501f30",
+      "from_addr": "0050228b",
+      "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00502381", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320", 
-      "addr": "00502320"
+      "addr": "00502320",
+      "from_addr": "00502381",
+      "name": "engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00501bc0",
+    "address_range": [
+      [
+        "00501bc0",
+        "00501d34"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0",
+    "signature": "void engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0(CVector3i * vertex_data, SSurfaceNormal * output)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00630ca0",
+      "name": "g_NormalTo16BitScale2",
+      "type": "double",
+      "value": "65535"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 72,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_data",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "output",
+        "offset": 8,
+        "size": 4,
+        "type": "SSurfaceNormal *"
+      }
+    ]
+  },
+  "suspects": []
 }

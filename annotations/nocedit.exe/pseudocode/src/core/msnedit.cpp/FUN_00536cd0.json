@@ -1,218 +1,218 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 134, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 2, 
-    "global_count": 7, 
-    "total_lines": 190, 
-    "assembly_lines": 151, 
-    "suspect_count": 9, 
+    "assembly_lines": 151,
+    "complexity_score": 134,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 7,
+    "pseudocode_lines": 39,
+    "suspect_count": 9,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawLine_FUN_004011b0", 
-      "addr": "004011b0"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "engine_2d.c_getStringWidth_FUN_004018a0", 
-      "addr": "004018a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063b6ec", 
-      "addr": "0063b6ec", 
-      "value": "0.300000000000000"
-    }, 
-    {
-      "type": "CEdButton*", 
-      "name": "g_ActiveButton", 
-      "addr": "02cf2b00", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseX", 
-      "addr": "02cf6a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseY", 
-      "addr": "02cf6a90", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseButtonFlags", 
-      "addr": "02cf6a94", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c630", 
-      "addr": "02f7c630", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00536cd9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,char *param_5,"
-    }, 
-    {
-      "line": 15, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 18, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 27, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "engine_2d_c_drawLine_FUN_004011b0(x1,param_7,unaff_EBP,param_7);"
-    }, 
-    {
-      "line": 28, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "engine_2d_c_drawLine_FUN_004011b0(x1,y1,unaff_EDI,y1);"
-    }, 
-    {
-      "line": 30, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "engine_2d_c_drawLine_FUN_004011b0(unaff_EBX,param_7,unaff_EBX,y1);"
-    }, 
-    {
-      "line": 30, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "engine_2d_c_drawLine_FUN_004011b0(unaff_EBX,param_7,unaff_EBX,y1);"
-    }, 
-    {
-      "line": 36, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((unaff_ESI != 0) && (uVar2 != 0)) {"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00536cd0", 
-    "signature": "undefined core_msnedit.cpp_FUN_00536cd0()", 
-    "address_range": [
-      [
-        "00536cd0", 
-        "00536e11"
-      ]
-    ], 
-    "name": "core_msnedit.cpp_FUN_00536cd0"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 190
+  },
   "cross_references": [
     {
-      "from_addr": "00537081", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_00536e20", 
-      "addr": "00536e20"
-    }, 
+      "addr": "00536e20",
+      "from_addr": "00537081",
+      "name": "core_msnedit.cpp_FUN_00536e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005398c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
+      "addr": "005390f0",
+      "from_addr": "005398c0",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00536cd0",
+    "address_range": [
+      [
+        "00536cd0",
+        "00536e11"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_msnedit.cpp_FUN_00536cd0",
+    "signature": "undefined core_msnedit.cpp_FUN_00536cd0()"
+  },
+  "function_calls": [
+    {
+      "addr": "004011b0",
+      "name": "engine_2d.c_drawLine_FUN_004011b0"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "004018a0",
+      "name": "engine_2d.c_getStringWidth_FUN_004018a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063b6ec",
+      "name": "DOUBLE_0063b6ec",
+      "type": "double",
+      "value": "0.300000000000000"
+    },
+    {
+      "addr": "02cf2b00",
+      "name": "g_ActiveButton",
+      "type": "CEdButton*",
+      "value": null
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c630",
+      "name": "DAT_02f7c630",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00536cd9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,char *param_5,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBP",
+      "text": "engine_2d_c_drawLine_FUN_004011b0(x1,param_7,unaff_EBP,param_7);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EDI",
+      "text": "engine_2d_c_drawLine_FUN_004011b0(x1,y1,unaff_EDI,y1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_EBX",
+      "text": "engine_2d_c_drawLine_FUN_004011b0(unaff_EBX,param_7,unaff_EBX,y1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_EBX",
+      "text": "engine_2d_c_drawLine_FUN_004011b0(unaff_EBX,param_7,unaff_EBX,y1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 36,
+      "match": "unaff_ESI",
+      "text": "if ((unaff_ESI != 0) && (uVar2 != 0)) {",
+      "type": "unaffected_reg"
     }
   ]
 }

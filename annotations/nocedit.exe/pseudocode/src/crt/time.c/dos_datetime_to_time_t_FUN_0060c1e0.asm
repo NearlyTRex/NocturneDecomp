@@ -58,8 +58,8 @@ section .text
     PUSH EAX                            ; 0060c23c
     MOV dword ptr [ESP + 0x10],EBX      ; 0060c23d
     MOV dword ptr [ESP + 0x24],EDX      ; 0060c241
-    CALL crt_time.c_mktime_FUN_00600f80 ; 0060c245 | time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
-        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)
+    CALL crt_time.c_mktime_FUN_00600f80 ; 0060c245
+        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
     ADD ESP,0x4                         ; 0060c24a
     ADD ESP,0x24                        ; 0060c24d
     POP EBX                             ; 0060c250

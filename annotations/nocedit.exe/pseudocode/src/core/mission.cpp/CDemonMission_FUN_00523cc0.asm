@@ -21,14 +21,14 @@ section .text
     MOV EAX,dword ptr [EAX + 0x548]     ; 00523cc4
     XOR EDX,EDX                         ; 00523cca
     TEST EAX,EAX                        ; 00523ccc
-    JZ 0x00523ce0                       ; 00523cce | LAB_00523ce0
-        ;   XREF to: 00523ce0 (CONDITIONAL_JUMP)
+    JZ 0x00523ce0                       ; 00523cce
+        ;   XREF to: 00523ce0 (CONDITIONAL_JUMP)  ; LAB_00523ce0
     MOV EAX,dword ptr [EAX + 0x14c]     ; 00523cd0
         ;   Label: LAB_00523cd0
     INC EDX                             ; 00523cd6
     TEST EAX,EAX                        ; 00523cd7
-    JNZ 0x00523cd0                      ; 00523cd9 | LAB_00523cd0
-        ;   XREF to: 00523cd0 (CONDITIONAL_JUMP)
+    JNZ 0x00523cd0                      ; 00523cd9
+        ;   XREF to: 00523cd0 (CONDITIONAL_JUMP)  ; LAB_00523cd0
     LEA EAX,[EAX]                       ; 00523cdb
     MOV ECX,ECX                         ; 00523cde
     MOV EAX,EDX                         ; 00523ce0

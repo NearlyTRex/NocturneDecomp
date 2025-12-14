@@ -1,105 +1,105 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 56, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 31, 
-    "assembly_lines": 20, 
-    "suspect_count": 4, 
+    "assembly_lines": 20,
+    "complexity_score": 56,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 11,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_g_mm_006169d8", 
-      "addr": "006169d8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CLightActorClassInfo.name_hash", 
-      "addr": "00822c84", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000010;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004,g_CLightActorClassInfo.name_hash);"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000010,\"%g mm\",(double)(float)pCVar1[4].field26_0x148);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00423400", 
-    "signature": "undefined core_boxactor.cpp_CLightActor_FUN_00423400()", 
-    "address_range": [
-      [
-        "00423400", 
-        "00423434"
-      ]
-    ], 
-    "name": "core_boxactor.cpp_CLightActor_FUN_00423400"
-  }, 
-  "stack_frame": {
-    "local_size": 16, 
-    "variables": [
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_c"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 31
+  },
   "cross_references": [
     {
-      "from_addr": "00423560", 
-      "type": "DATA", 
-      "name": "core_boxactor.cpp_CLightActor_FUN_004234e0", 
-      "addr": "004234e0"
+      "addr": "004234e0",
+      "from_addr": "00423560",
+      "name": "core_boxactor.cpp_CLightActor_FUN_004234e0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00423400",
+    "address_range": [
+      [
+        "00423400",
+        "00423434"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_boxactor.cpp_CLightActor_FUN_00423400",
+    "signature": "undefined core_boxactor.cpp_CLightActor_FUN_00423400()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006169d8",
+      "name": "s_g_mm_006169d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00822c84",
+      "name": "g_CLightActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 8,
+        "type": "undefined8"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000010",
+      "text": "char *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,g_CLightActorClassInfo.name_hash);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "(in_stack_00000010,\"%g mm\",(double)(float)pCVar1[4].field26_0x148);",
+      "type": "stack_param"
     }
   ]
 }

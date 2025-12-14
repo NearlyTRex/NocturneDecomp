@@ -26,8 +26,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 005cbe2c
     PUSH ECX                            ; 005cbe30
     PUSH EBX                            ; 005cbe31
-    CALL shape_superopt.cpp_FUN_005cbf20 ; 005cbe32 | undefined shape_superopt.cpp_FUN_005cbf20()
-        ;   XREF to: 005cbf20 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_FUN_005cbf20 ; 005cbe32
+        ;   XREF to: 005cbf20 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005cbf20()
     MOV EAX,dword ptr [EBX + 0x8]       ; 005cbe37
     INC EAX                             ; 005cbe3a
     ADD ESP,0xc                         ; 005cbe3b
@@ -35,12 +35,12 @@ section .text
     PUSH EAX                            ; 005cbe41
     MOV ESI,dword ptr [EBX + 0xc]       ; 005cbe42
     PUSH ESI                            ; 005cbe45
-    CALL crt_memory.c_realloc_FUN_00601df0 ; 005cbe46 | void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)
-        ;   XREF to: 00601df0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_realloc_FUN_00601df0 ; 005cbe46
+        ;   XREF to: 00601df0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 005cbe4b
     TEST EAX,EAX                        ; 005cbe4e
-    JNZ 0x005cbe56                      ; 005cbe50 | LAB_005cbe56
-        ;   XREF to: 005cbe56 (CONDITIONAL_JUMP)
+    JNZ 0x005cbe56                      ; 005cbe50
+        ;   XREF to: 005cbe56 (CONDITIONAL_JUMP)  ; LAB_005cbe56
     POP EBP                             ; 005cbe52
         ;   Label: LAB_005cbe52
     POP ESI                             ; 005cbe53
@@ -58,13 +58,13 @@ section .text
     MOV ESI,EAX                         ; 005cbe71
     SHL ESI,0x5                         ; 005cbe73
     PUSH ESI                            ; 005cbe76
-    CALL crt_memory.c_malloc_FUN_006021da ; 005cbe77 | void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)
-        ;   XREF to: 006021da (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_malloc_FUN_006021da ; 005cbe77
+        ;   XREF to: 006021da (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)
     ADD ESP,0x4                         ; 005cbe7c
     MOV dword ptr [EBP + 0x4],EAX       ; 005cbe7f
     TEST EAX,EAX                        ; 005cbe82
-    JZ 0x005cbe52                       ; 005cbe84 | LAB_005cbe52
-        ;   XREF to: 005cbe52 (CONDITIONAL_JUMP)
+    JZ 0x005cbe52                       ; 005cbe84
+        ;   XREF to: 005cbe52 (CONDITIONAL_JUMP)  ; LAB_005cbe52
     PUSH EDI                            ; 005cbe86
     MOV EDI,EAX                         ; 005cbe87
     MOV ECX,ESI                         ; 005cbe89

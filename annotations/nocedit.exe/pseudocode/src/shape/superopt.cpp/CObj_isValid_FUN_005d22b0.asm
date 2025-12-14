@@ -13,11 +13,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005d22b0
         ;   Label: shape_superopt.cpp_CObj_isValid_FUN_005d22b0
     CMP dword ptr [EAX + 0x4],0x0       ; 005d22b4
-    JZ 0x005d22c4                       ; 005d22b8 | LAB_005d22c4
-        ;   XREF to: 005d22c4 (CONDITIONAL_JUMP)
+    JZ 0x005d22c4                       ; 005d22b8
+        ;   XREF to: 005d22c4 (CONDITIONAL_JUMP)  ; LAB_005d22c4
     CMP dword ptr [EAX + 0xc],0x0       ; 005d22ba
-    JZ 0x005d22c4                       ; 005d22be | LAB_005d22c4
-        ;   XREF to: 005d22c4 (CONDITIONAL_JUMP)
+    JZ 0x005d22c4                       ; 005d22be
+        ;   XREF to: 005d22c4 (CONDITIONAL_JUMP)  ; LAB_005d22c4
     MOV EAX,dword ptr [EAX + 0x14]      ; 005d22c0
     RET                                 ; 005d22c3
     XOR EAX,EAX                         ; 005d22c4

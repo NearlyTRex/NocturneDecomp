@@ -34,6 +34,7 @@
 ; Referenced Globals:
 ;   double g_RadiansToDegrees3 = 57.2957795130800
 ;   SVertexData[20000] g_LoadedVertices
+;   undefined4 DAT_01626410
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;   undefined4 DAT_01626418
 ;   undefined4 DAT_0162641c
@@ -55,24 +56,24 @@ section .text
     SUB ESP,0x7c                        ; 00462056
     IMUL ESI,dword ptr [EBP + 0x14],0x14 ; 0046205c
     LEA EDI,[EBP + -0x1c]               ; 00462060
-    LEA ESI,[ESI + 0x162640c]           ; 00462063 | SVertexData[20000] g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00462069 | SVertexData[20000] g_LoadedVertices
+    LEA ESI,[ESI + 0x162640c]           ; 00462063 | g_LoadedVertices
+    MOVSD ES:EDI,ESI                    ; 00462069 | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 0046206a | DAT_01626410
     MOVSD ES:EDI,ESI                    ; 0046206b | g_LoadedVertices[0].vertex.z
     MOVSD ES:EDI,ESI                    ; 0046206c | DAT_01626418
     MOVSD ES:EDI,ESI                    ; 0046206d | DAT_0162641c
     IMUL ESI,dword ptr [EBP + 0x18],0x14 ; 0046206e
     LEA EDI,[EBP + -0x44]               ; 00462072
-    LEA ESI,[ESI + 0x162640c]           ; 00462075 | SVertexData[20000] g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0046207b | SVertexData[20000] g_LoadedVertices
+    LEA ESI,[ESI + 0x162640c]           ; 00462075 | g_LoadedVertices
+    MOVSD ES:EDI,ESI                    ; 0046207b | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 0046207c | DAT_01626410
     MOVSD ES:EDI,ESI                    ; 0046207d | g_LoadedVertices[0].vertex.z
     MOVSD ES:EDI,ESI                    ; 0046207e | DAT_01626418
     MOVSD ES:EDI,ESI                    ; 0046207f | DAT_0162641c
     IMUL ESI,dword ptr [EBP + 0x1c],0x14 ; 00462080
     LEA EDI,[EBP + -0x30]               ; 00462084
-    LEA ESI,[ESI + 0x162640c]           ; 00462087 | SVertexData[20000] g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 0046208d | SVertexData[20000] g_LoadedVertices
+    LEA ESI,[ESI + 0x162640c]           ; 00462087 | g_LoadedVertices
+    MOVSD ES:EDI,ESI                    ; 0046208d | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 0046208e | DAT_01626410
     MOVSD ES:EDI,ESI                    ; 0046208f | g_LoadedVertices[0].vertex.z
     MOVSD ES:EDI,ESI                    ; 00462090 | DAT_01626418
@@ -97,13 +98,13 @@ section .text
     FSTP double ptr [EBP + -0x4c]       ; 004620c5
     LEA ESI,[EBP + -0x74]               ; 004620c8
     PUSH ESI                            ; 004620cb
-    CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 004620cc | void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
-        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 004620cc
+        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)  ; void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
     ADD ESP,0x4                         ; 004620d1
     LEA ESI,[EBP + -0x5c]               ; 004620d4
     PUSH ESI                            ; 004620d7
-    CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 004620d8 | void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
-        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_normalizeVertex_FUN_00461e60 ; 004620d8
+        ;   XREF to: 00461e60 (UNCONDITIONAL_CALL)  ; void shape_design.c_normalizeVertex_FUN_00461e60(CVector3f * vertex)
     ADD ESP,0x4                         ; 004620dd
     FLD double ptr [EBP + -0x6c]        ; 004620e0
     FMUL double ptr [EBP + -0x54]       ; 004620e3
@@ -115,13 +116,13 @@ section .text
     FADDP                               ; 004620f4
     SUB ESP,0x8                         ; 004620f6
     FSTP double ptr [ESP]               ; 004620f9
-    CALL shape_design.c_clampedArccos_FUN_00461c50 ; 004620fc | double shape_design.c_clampedArccos_FUN_00461c50(double dot_product)
-        ;   XREF to: 00461c50 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_clampedArccos_FUN_00461c50 ; 004620fc
+        ;   XREF to: 00461c50 (UNCONDITIONAL_CALL)  ; double shape_design.c_clampedArccos_FUN_00461c50(double dot_product)
     MOV dword ptr [EBP + -0x7c],EAX     ; 00462101
     MOV dword ptr [EBP + -0x78],EDX     ; 00462104
     FLD double ptr [EBP + -0x7c]        ; 00462107
     ADD ESP,0x8                         ; 0046210a
-    FMUL double ptr [0x0061bfc6]        ; 0046210d | double g_RadiansToDegrees3
+    FMUL double ptr [0x0061bfc6]        ; 0046210d | g_RadiansToDegrees3
     FSTP double ptr [EBP + -0x8]        ; 00462113
     MOV EAX,dword ptr [EBP + -0x8]      ; 00462116
     MOV EDX,dword ptr [EBP + -0x4]      ; 00462119

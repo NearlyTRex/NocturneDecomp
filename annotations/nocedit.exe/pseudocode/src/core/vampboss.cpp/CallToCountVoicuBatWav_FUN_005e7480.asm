@@ -18,7 +18,7 @@ section .text
         ;   Label: core_vampboss.cpp_CallToCountVoicuBatWav_FUN_005e7480
     MOV dword ptr [EAX + 0xcdcc0],0x1   ; 005e7484
     MOV dword ptr [EAX + 0xce904],0x1   ; 005e748e
-    PUSH 0x656cdf                       ; 005e7498 | = "voicubat.wav" | s_voicubat_wav_00656cdf = voicubat.wav
+    PUSH 0x656cdf                       ; 005e7498 | = "voicubat.wav"
     MOV EDX,dword ptr [EAX + 0x154]     ; 005e749d
     PUSH EAX                            ; 005e74a3
     MOV dword ptr [EAX + 0xce8f4],0x40000000 ; 005e74a4

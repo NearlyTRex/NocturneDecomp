@@ -28,8 +28,8 @@ section .text
         ;   Label: core_course.cpp_CCourse_dtor_FUN_004424e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004424e1
     PUSH EBX                            ; 004424e5
-    CALL core_course.cpp_CCourse_free_FUN_004426c0 ; 004424e6 | void core_course.cpp_CCourse_free_FUN_004426c0(CCourse * this_ptr)
-        ;   XREF to: 004426c0 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_free_FUN_004426c0 ; 004424e6
+        ;   XREF to: 004426c0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_free_FUN_004426c0(CCourse * this_ptr)
     ADD ESP,0x4                         ; 004424eb
     MOV EAX,EBX                         ; 004424ee
     POP EBX                             ; 004424f0

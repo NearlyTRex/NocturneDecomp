@@ -27,7 +27,7 @@ section .text
     MOV EAX,EBX                         ; 0050c605
     SAR EAX,0x8                         ; 0050c607
     AND EAX,0xff                        ; 0050c60a
-    MOV ECX,dword ptr [EAX*0x4 + 0x2f0cf60] ; 0050c60f | int[257] g_CosTable
+    MOV ECX,dword ptr [EAX*0x4 + 0x2f0cf60] ; 0050c60f | g_CosTable
     MOV EDX,dword ptr [EAX*0x4 + 0x2f0cf64] ; 0050c616 | g_CosTable[1]
     AND EBX,0xff                        ; 0050c61d
     SUB EDX,ECX                         ; 0050c623

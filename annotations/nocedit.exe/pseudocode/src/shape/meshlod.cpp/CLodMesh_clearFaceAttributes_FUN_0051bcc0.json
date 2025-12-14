@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 61, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 66, 
-    "assembly_lines": 40, 
-    "suspect_count": 3, 
+    "assembly_lines": 40,
+    "complexity_score": 61,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)this_ptr->tri_data->attribute_indices + iVar3) = 0xffffffff;"
-    }, 
-    {
-      "line": 18, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)this_ptr->tri_data->uv_coords[0] + iVar1 + iVar3) = 0;"
-    }, 
-    {
-      "line": 20, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)this_ptr->tri_data->uv_coords[0] + iVar3 + iVar1 + 4) = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0051bcc0", 
-    "signature": "void shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0(CLodMesh * this_ptr)", 
-    "address_range": [
-      [
-        "0051bcc0", 
-        "0051bd21"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 66
+  },
   "cross_references": [
     {
-      "from_addr": "0058d09f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058c190", 
-      "addr": "0058c190"
+      "addr": "0058c190",
+      "from_addr": "0058d09f",
+      "name": "core_skeledit.cpp_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051bcc0",
+    "address_range": [
+      [
+        "0051bcc0",
+        "0051bd21"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0",
+    "signature": "void shape_meshlod.cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0(CLodMesh * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->tri_data->attribute_indices + iVar3) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->tri_data->uv_coords[0] + iVar1 + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->tri_data->uv_coords[0] + iVar3 + iVar1 + 4) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

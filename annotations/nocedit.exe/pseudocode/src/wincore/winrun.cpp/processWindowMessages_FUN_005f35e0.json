@@ -1,215 +1,215 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 121, 
-    "pseudocode_lines": 31, 
-    "cross_reference_count": 5, 
-    "global_count": 11, 
-    "total_lines": 99, 
-    "assembly_lines": 68, 
-    "suspect_count": 7, 
+    "assembly_lines": 68,
+    "complexity_score": 121,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 11,
+    "pseudocode_lines": 31,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "DispatchMessageA", 
-      "addr": "EXTERNAL:00000033"
-    }, 
-    {
-      "name": "PeekMessageA", 
-      "addr": "EXTERNAL:00000040"
-    }, 
-    {
-      "name": "Sleep", 
-      "addr": "EXTERNAL:0000009c"
-    }, 
-    {
-      "name": "TranslateMessage", 
-      "addr": "EXTERNAL:0000004a"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "DispatchMessageA*", 
-      "name": "PTR_DispatchMessageA_0061149c", 
-      "addr": "0061149c", 
-      "value": "00211a9e"
-    }, 
-    {
-      "type": "PeekMessageA*", 
-      "name": "PTR_PeekMessageA_006114d0", 
-      "addr": "006114d0", 
-      "value": "00211b70"
-    }, 
-    {
-      "type": "TranslateMessage*", 
-      "name": "PTR_TranslateMessage_006114f8", 
-      "addr": "006114f8", 
-      "value": "00211c14"
-    }, 
-    {
-      "type": "Sleep*", 
-      "name": "Sleep", 
-      "addr": "00611644", 
-      "value": "00212228"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowActive", 
-      "addr": "006849a4", 
-      "value": "-0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ForceMessagePump", 
-      "addr": "006849a8", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_KeyboardState", 
-      "addr": "02d03e98", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d03e99", 
-      "addr": "02d03e99", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_InputDisabled", 
-      "addr": "03f9846c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_MessageFlags[1]", 
-      "addr": "03f9847c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_MessageFlags[2]", 
-      "addr": "03f98480", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)g_MessageFlags + iVar3 + 4) == 1) {"
-    }, 
-    {
-      "line": 18, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_MessageFlags + iVar3 + 4) = 0;"
-    }, 
-    {
-      "line": 23, 
-      "match": "&stack0xffffffd8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "BVar2 = (*PTR_PeekMessageA_006114d0)((LPMSG)&stack0xffffffd8,(HWND)0x0,0,0,1);"
-    }, 
-    {
-      "line": 26, 
-      "match": "&stack0xffffffd8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(*PTR_TranslateMessage_006114f8)((MSG *)&stack0xffffffd8);"
-    }, 
-    {
-      "line": 27, 
-      "match": "&stack0xfffffff8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(*PTR_DispatchMessageA_0061149c)((MSG *)&stack0xfffffff8);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f35e0", 
-    "signature": "void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0(void)", 
-    "address_range": [
-      [
-        "005f35e0", 
-        "005f3670"
-      ]
-    ], 
-    "name": "wincore_winrun.cpp_processWindowMessages_FUN_005f35e0"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_28"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 99
+  },
   "cross_references": [
     {
-      "from_addr": "0047d810", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
-      "addr": "0047cbc0"
-    }, 
+      "addr": "0047cbc0",
+      "from_addr": "0047d810",
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004db679", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
-    }, 
+      "addr": "004daf80",
+      "from_addr": "004db679",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004473f8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160", 
-      "addr": "00446160"
-    }, 
+      "addr": "00446160",
+      "from_addr": "004473f8",
+      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005edc43", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
+      "addr": "005eda20",
+      "from_addr": "005edc43",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f4d0f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_winvideo.cpp_playMovie_FUN_005f4a00", 
-      "addr": "005f4a00"
+      "addr": "005f4a00",
+      "from_addr": "005f4d0f",
+      "name": "wincore_winvideo.cpp_playMovie_FUN_005f4a00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005f35e0",
+    "address_range": [
+      [
+        "005f35e0",
+        "005f3670"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_processWindowMessages_FUN_005f35e0",
+    "signature": "void wincore_winrun.cpp_processWindowMessages_FUN_005f35e0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000033",
+      "name": "DispatchMessageA"
+    },
+    {
+      "addr": "EXTERNAL:00000040",
+      "name": "PeekMessageA"
+    },
+    {
+      "addr": "EXTERNAL:0000009c",
+      "name": "Sleep"
+    },
+    {
+      "addr": "EXTERNAL:0000004a",
+      "name": "TranslateMessage"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061149c",
+      "name": "PTR_DispatchMessageA_0061149c",
+      "type": "DispatchMessageA*",
+      "value": "00211a9e"
+    },
+    {
+      "addr": "006114d0",
+      "name": "PTR_PeekMessageA_006114d0",
+      "type": "PeekMessageA*",
+      "value": "00211b70"
+    },
+    {
+      "addr": "006114f8",
+      "name": "PTR_TranslateMessage_006114f8",
+      "type": "TranslateMessage*",
+      "value": "00211c14"
+    },
+    {
+      "addr": "00611644",
+      "name": "Sleep",
+      "type": "Sleep*",
+      "value": "00212228"
+    },
+    {
+      "addr": "006849a4",
+      "name": "g_WindowActive",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "006849a8",
+      "name": "g_ForceMessagePump",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "02d03e98",
+      "name": "g_KeyboardState",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "02d03e99",
+      "name": "CHAR_ARRAY_02d03e99",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9846c",
+      "name": "g_InputDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9847c",
+      "name": "g_MessageFlags[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f98480",
+      "name": "g_MessageFlags[2]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)g_MessageFlags + iVar3 + 4) == 1) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_MessageFlags + iVar3 + 4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffffd8",
+      "text": "BVar2 = (*PTR_PeekMessageA_006114d0)((LPMSG)&stack0xffffffd8,(HWND)0x0,0,0,1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 26,
+      "match": "&stack0xffffffd8",
+      "text": "(*PTR_TranslateMessage_006114f8)((MSG *)&stack0xffffffd8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xfffffff8",
+      "text": "(*PTR_DispatchMessageA_0061149c)((MSG *)&stack0xfffffff8);",
+      "type": "stack_ref"
     }
   ]
 }

@@ -1,201 +1,201 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 187, 
-    "pseudocode_lines": 162, 
-    "cross_reference_count": 8, 
-    "global_count": 12, 
-    "total_lines": 544, 
-    "assembly_lines": 382, 
-    "suspect_count": 2, 
+    "assembly_lines": 382,
+    "complexity_score": 187,
+    "cross_reference_count": 8,
+    "function_call_count": 4,
+    "global_count": 12,
+    "pseudocode_lines": 162,
+    "suspect_count": 2,
     "suspect_types": [
       "unknown_field"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380", 
-      "addr": "004a6380"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0", 
-      "addr": "004a5ea0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
-      "addr": "005f2dc0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005f30d0", 
-      "addr": "005f30d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_004a5fa8", 
-      "addr": "004a5fa8", 
-      "value": "004a61cc"
-    }, 
-    {
-      "type": "CEdButton*", 
-      "name": "g_ActiveButton", 
-      "addr": "02cf2b00", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ScrollAction", 
-      "addr": "02cf2b04", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ScrollTimer", 
-      "addr": "02cf2b08", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ScrollDelay", 
-      "addr": "02cf2b0c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DragStartMouseX", 
-      "addr": "02cf2b10", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DragStartMouseY", 
-      "addr": "02cf2b14", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DragStartScrollPos", 
-      "addr": "02cf2b18", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DragStartThumbPos", 
-      "addr": "02cf2b1c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseX", 
-      "addr": "02cf6a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseY", 
-      "addr": "02cf6a90", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseButtonFlags", 
-      "addr": "02cf6a94", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 95, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;"
-    }, 
-    {
-      "line": 104, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a5fc0", 
-    "signature": "void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollBar * this_ptr)", 
-    "address_range": [
-      [
-        "004a5fc0", 
-        "004a637b"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEdScrollBar *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 544
+  },
   "cross_references": [
     {
-      "from_addr": "005075e5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
-      "addr": "005073a0"
-    }, 
+      "addr": "005073a0",
+      "from_addr": "005075e5",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005071fa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showLicenseAgreement_FUN_005070f0", 
-      "addr": "005070f0"
-    }, 
+      "addr": "005070f0",
+      "from_addr": "005071fa",
+      "name": "core_main.c_showLicenseAgreement_FUN_005070f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053c5f1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053c4f0", 
-      "addr": "0053c4f0"
-    }, 
+      "addr": "0053c4f0",
+      "from_addr": "0053c5f1",
+      "name": "core_msnedit.cpp_FUN_0053c4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00536b85", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70", 
-      "addr": "00535e70"
-    }, 
+      "addr": "00535e70",
+      "from_addr": "00536b85",
+      "name": "core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00565181", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_Unk20_FUN_00565130", 
-      "addr": "00565130"
-    }, 
+      "addr": "00565130",
+      "from_addr": "00565181",
+      "name": "core_script.cpp_CScript_Unk20_FUN_00565130",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00577bd1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_FUN_00577af0", 
-      "addr": "00577af0"
-    }, 
+      "addr": "00577af0",
+      "from_addr": "00577bd1",
+      "name": "core_setedit.cpp_CDemonSet_FUN_00577af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a6471", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450", 
-      "addr": "004a6450"
-    }, 
+      "addr": "004a6450",
+      "from_addr": "004a6471",
+      "name": "shape_edittool.cpp_CEdScrollBar_updateWithSelection_FUN_004a6450",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a4582", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340", 
-      "addr": "004a4340"
+      "addr": "004a4340",
+      "from_addr": "004a4582",
+      "name": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a5fc0",
+    "address_range": [
+      [
+        "004a5fc0",
+        "004a637b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0",
+    "signature": "void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollBar * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a6380",
+      "name": "shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380"
+    },
+    {
+      "addr": "004a5ea0",
+      "name": "shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0"
+    },
+    {
+      "addr": "005f2dc0",
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    },
+    {
+      "addr": "005f30d0",
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005f30d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004a5fa8",
+      "name": "switchdataD_004a5fa8",
+      "type": "void*",
+      "value": "004a61cc"
+    },
+    {
+      "addr": "02cf2b00",
+      "name": "g_ActiveButton",
+      "type": "CEdButton*",
+      "value": null
+    },
+    {
+      "addr": "02cf2b04",
+      "name": "g_ScrollAction",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf2b08",
+      "name": "g_ScrollTimer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf2b0c",
+      "name": "g_ScrollDelay",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf2b10",
+      "name": "g_DragStartMouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf2b14",
+      "name": "g_DragStartMouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf2b18",
+      "name": "g_DragStartScrollPos",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf2b1c",
+      "name": "g_DragStartThumbPos",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEdScrollBar *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 95,
+      "match": "._0_1_",
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 104,
+      "match": "._0_1_",
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
+      "type": "unknown_field"
     }
   ]
 }

@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 54, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 14, 
-    "assembly_lines": 5, 
-    "suspect_count": 4, 
+    "assembly_lines": 5,
+    "complexity_score": 54,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000008;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x314) = in_stack_00000008;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x314) = in_stack_00000008;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004111b0", 
-    "signature": "undefined core_ammo.cpp_CAmmo_FUN_004111b0()", 
-    "address_range": [
-      [
-        "004111b0", 
-        "004111be"
-      ]
-    ], 
-    "name": "core_ammo.cpp_CAmmo_FUN_004111b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 14
+  },
   "cross_references": [
     {
-      "from_addr": "004117aa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700", 
-      "addr": "00411700"
+      "addr": "00411700",
+      "from_addr": "004117aa",
+      "name": "core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004111b0",
+    "address_range": [
+      [
+        "004111b0",
+        "004111be"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_ammo.cpp_CAmmo_FUN_004111b0",
+    "signature": "undefined core_ammo.cpp_CAmmo_FUN_004111b0()"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "uint in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x314) = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(in_stack_00000004 + 0x314) = in_stack_00000008;",
+      "type": "stack_param"
     }
   ]
 }

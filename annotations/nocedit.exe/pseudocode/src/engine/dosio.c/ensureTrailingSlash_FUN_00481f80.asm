@@ -53,8 +53,8 @@ section .text
     PUSH EDX                            ; 00481fa9
     MOV ECX,dword ptr [ESP + 0x31c]     ; 00481faa
     PUSH ECX                            ; 00481fb1
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 00481fb2 | void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 00481fb2
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00481fb7
     MOV ECX,ESP                         ; 00481fba
     PUSH ECX                            ; 00481fbc
@@ -64,15 +64,15 @@ section .text
     PUSH ECX                            ; 00481fcc
     PUSH 0x0                            ; 00481fcd
     PUSH EBX                            ; 00481fcf
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 00481fd0 | void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_makePath_FUN_00481f50 ; 00481fd0
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00481fd5
     TEST EBX,EBX                        ; 00481fd8
-    JZ 0x00481fe1                       ; 00481fda | LAB_00481fe1
-        ;   XREF to: 00481fe1 (CONDITIONAL_JUMP)
+    JZ 0x00481fe1                       ; 00481fda
+        ;   XREF to: 00481fe1 (CONDITIONAL_JUMP)  ; LAB_00481fe1
     CMP byte ptr [EBX],0x0              ; 00481fdc
-    JNZ 0x00481fea                      ; 00481fdf | LAB_00481fea
-        ;   XREF to: 00481fea (CONDITIONAL_JUMP)
+    JNZ 0x00481fea                      ; 00481fdf
+        ;   XREF to: 00481fea (CONDITIONAL_JUMP)  ; LAB_00481fea
     ADD ESP,0x300                       ; 00481fe1
         ;   Label: LAB_00481fe1
     POP EDI                             ; 00481fe7
@@ -87,10 +87,10 @@ section .text
     NOT ECX                             ; 00481ff3
     DEC ECX                             ; 00481ff5
     CMP byte ptr [ECX + EBX*0x1 + -0x1],0x5c ; 00481ff6
-    JZ 0x00481fe1                       ; 00481ffb | LAB_00481fe1
-        ;   XREF to: 00481fe1 (CONDITIONAL_JUMP)
+    JZ 0x00481fe1                       ; 00481ffb
+        ;   XREF to: 00481fe1 (CONDITIONAL_JUMP)  ; LAB_00481fe1
     PUSH ESI                            ; 00481ffd
-    MOV ESI,0x621654                    ; 00481ffe | = "\\" | s_anon_00621654 = \
+    MOV ESI,0x621654                    ; 00481ffe | = "\\"
     MOV EDI,EBX                         ; 00482003
     PUSH EDI                            ; 00482005
     SUB ECX,ECX                         ; 00482006
@@ -98,19 +98,19 @@ section .text
     MOV AL,0x0                          ; 00482009
     SCASB.REPNE ES:EDI                  ; 0048200b
     DEC EDI                             ; 0048200d
-    MOV AL,byte ptr [ESI]               ; 0048200e | = "\\" | s_anon_00621654 = \ | s_core_dpart_cpp_00621656 = ..\core\dpart.cpp
+    MOV AL,byte ptr [ESI]               ; 0048200e | = "\\" | s_core_dpart_cpp_00621656
         ;   Label: LAB_0048200e
     MOV byte ptr [EDI],AL               ; 00482010
     CMP AL,0x0                          ; 00482012
-    JZ 0x00482026                       ; 00482014 | LAB_00482026
-        ;   XREF to: 00482026 (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 00482016 | DAT_00621655
+    JZ 0x00482026                       ; 00482014
+        ;   XREF to: 00482026 (CONDITIONAL_JUMP)  ; LAB_00482026
+    MOV AL,byte ptr [ESI + 0x1]         ; 00482016 | DAT_00621655 | s_.\core\dpart.cpp_00621657
     ADD ESI,0x2                         ; 00482019
     MOV byte ptr [EDI + 0x1],AL         ; 0048201c
     ADD EDI,0x2                         ; 0048201f
     CMP AL,0x0                          ; 00482022
-    JNZ 0x0048200e                      ; 00482024 | LAB_0048200e
-        ;   XREF to: 0048200e (CONDITIONAL_JUMP)
+    JNZ 0x0048200e                      ; 00482024
+        ;   XREF to: 0048200e (CONDITIONAL_JUMP)  ; LAB_0048200e
     POP EDI                             ; 00482026
         ;   Label: LAB_00482026
     POP ESI                             ; 00482027

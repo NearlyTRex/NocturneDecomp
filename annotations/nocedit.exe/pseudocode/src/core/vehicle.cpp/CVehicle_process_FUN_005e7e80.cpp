@@ -20,7 +20,8 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   int iVar9;
   uint uVar10;
   CMobster *this_ptr_00;
-  CTommyGun *this_ptr_01;
+  CMobster *this_ptr_01;
+  CTommyGun *this_ptr_02;
   CDemonActor *pCVar11;
   BADSPACEBASE *in_ESP;
   int iVar12;
@@ -202,76 +203,72 @@ joined_r0x005e8664:
     iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->field6_0x1034 + 0x40) + 0x154) + 0x120))();
     goto joined_r0x005e8664;
   }
-  this_ptr_00 = (CMobster *)
-                shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"..\\core\\vehicle.cpp",0x15d);
+  this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"..\\core\\vehicle.cpp",0x15d);
+  this_ptr_01 = (CMobster *)0x0;
   if (this_ptr_00 != (CMobster *)0x0) {
-    this_ptr_00 = core_mobster_cpp_CMobster_ctor_FUN_00525200(this_ptr_00);
+    this_ptr_01 = core_mobster_cpp_CMobster_ctor_FUN_00525200(this_ptr_00);
   }
-  this_ptr_01 = (CTommyGun *)
-                shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\vehicle.cpp",0x15e);
-  if (this_ptr_01 != (CTommyGun *)0x0) {
-    this_ptr_01 = (CTommyGun *)core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(this_ptr_01);
+  this_ptr_02 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\vehicle.cpp",0x15e);
+  iVar12 = 0;
+  if (this_ptr_02 != (CTommyGun *)0x0) {
+    iVar12 = core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(this_ptr_02);
   }
-  if ((this_ptr_00 == (CMobster *)0x0) || (this_ptr_01 == (CTommyGun *)0x0)) {
+  if ((this_ptr_01 == (CMobster *)0x0) || (iVar12 == 0)) {
     g_CurrentFilename = "..\\core\\vehicle.cpp";
     g_CurrentLineNumber = 0x161;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMobster::process - Out of memory!");
   }
-  iVar12 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-  if (iVar12 == 0) {
+  iVar13 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+  if (iVar13 == 0) {
     model_name = "mobster4.dfm";
   }
   else {
     model_name = "mobster3.dfm";
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
-            (&(this_ptr_00->base_enemy).base_character.model,model_name);
-  *(CVehicle **)(this_ptr_00->field3_0xbedc + 4) = this_ptr;
+            (&(this_ptr_01->base_enemy).base_character.model,model_name);
+  *(CVehicle **)(this_ptr_01->field3_0xbedc + 4) = this_ptr;
   if (local_14 == 0) {
-    this_ptr_00->side_of_car = 0;
-    *(CMobster **)(this_ptr->field6_0x1034 + 0x3c) = this_ptr_00;
+    this_ptr_01->side_of_car = 0;
+    *(CMobster **)(this_ptr->field6_0x1034 + 0x3c) = this_ptr_01;
   }
   else {
-    this_ptr_00->side_of_car = 1;
-    *(CMobster **)(this_ptr->field6_0x1034 + 0x40) = this_ptr_00;
+    this_ptr_01->side_of_car = 1;
+    *(CMobster **)(this_ptr->field6_0x1034 + 0x40) = this_ptr_01;
   }
   core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
   core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
-  (this_ptr_00->base_enemy).base_character.base_actor.location.position.x =
+  (this_ptr_01->base_enemy).base_character.base_actor.location.position.x =
        (this_ptr->base_actor).location.position.x;
-  (this_ptr_00->base_enemy).base_character.base_actor.location.position.y =
+  (this_ptr_01->base_enemy).base_character.base_actor.location.position.y =
        (this_ptr->base_actor).location.position.y;
-  (this_ptr_00->base_enemy).base_character.base_actor.location.position.z =
+  (this_ptr_01->base_enemy).base_character.base_actor.location.position.z =
        (this_ptr->base_actor).location.position.z;
-  (this_ptr_00->base_enemy).base_character.base_actor.location.area_id =
+  (this_ptr_01->base_enemy).base_character.base_actor.location.area_id =
        (this_ptr->base_actor).location.area_id;
-  pCVar1 = &(this_ptr_00->base_enemy).base_character.base_actor.orient;
+  pCVar1 = &(this_ptr_01->base_enemy).base_character.base_actor.orient;
   pCVar2 = &(this_ptr->base_actor).orient;
   if (pCVar1 != pCVar2) {
     pCVar1->pitch = pCVar2->pitch;
-    (this_ptr_00->base_enemy).base_character.base_actor.orient.bank =
+    (this_ptr_01->base_enemy).base_character.base_actor.orient.bank =
          (this_ptr->base_actor).orient.bank;
-    (this_ptr_00->base_enemy).base_character.base_actor.orient.heading =
+    (this_ptr_01->base_enemy).base_character.base_actor.orient.heading =
          (this_ptr->base_actor).orient.heading;
   }
-  (this_ptr_01->base_weapon).base_actor.location.position.x =
-       (this_ptr->base_actor).location.position.x;
-  (this_ptr_01->base_weapon).base_actor.location.position.y =
-       (this_ptr->base_actor).location.position.y;
-  (this_ptr_01->base_weapon).base_actor.location.position.z =
-       (this_ptr->base_actor).location.position.z;
-  (this_ptr_01->base_weapon).base_actor.location.area_id = (this_ptr->base_actor).location.area_id;
-  pCVar1 = &(this_ptr_01->base_weapon).base_actor.orient;
-  pCVar2 = &(this_ptr->base_actor).orient;
-  if (pCVar1 != pCVar2) {
-    pCVar1->pitch = pCVar2->pitch;
-    (this_ptr_01->base_weapon).base_actor.orient.bank = (this_ptr->base_actor).orient.bank;
-    (this_ptr_01->base_weapon).base_actor.orient.heading = (this_ptr->base_actor).orient.heading;
+  *(float *)(iVar12 + 0x20) = (this_ptr->base_actor).location.position.x;
+  *(float *)(iVar12 + 0x24) = (this_ptr->base_actor).location.position.y;
+  *(float *)(iVar12 + 0x28) = (this_ptr->base_actor).location.position.z;
+  *(int *)(iVar12 + 0x2c) = (this_ptr->base_actor).location.area_id;
+  pCVar1 = &(this_ptr->base_actor).orient;
+  if ((COrientation *)(iVar12 + 0x30) != pCVar1) {
+    *(float *)(iVar12 + 0x30) = pCVar1->pitch;
+    *(float *)(iVar12 + 0x34) = (this_ptr->base_actor).orient.bank;
+    *(float *)(iVar12 + 0x38) = (this_ptr->base_actor).orient.heading;
   }
-  (*((this_ptr_00->base_enemy).base_character.base_actor.vtable)->setup)((CDemonActor *)this_ptr_00)
+  (*((this_ptr_01->base_enemy).base_character.base_actor.vtable)->setup)((CDemonActor *)this_ptr_01)
   ;
-  (*((this_ptr_01->base_weapon).base_actor.vtable)->setup)((CDemonActor *)this_ptr_01);
-  core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0((CCharacter *)this_ptr_00);
+  (*(code *)**(uint **)(iVar12 + 0x154))();
+  core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0((CCharacter *)this_ptr_01);
   core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
   core_mission_cpp_CDemonMission_FUN_00523b70(g_CDemonMissionPtr);
 LAB_005e82f4:

@@ -1,58 +1,58 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 11, 
-    "assembly_lines": 5, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043e510", 
-    "signature": "void support_codec.cpp_resetDictionary_FUN_0043e510(CLZWDictionary * dict)", 
-    "address_range": [
-      [
-        "0043e510", 
-        "0043e521"
-      ]
-    ], 
-    "name": "support_codec.cpp_resetDictionary_FUN_0043e510"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWDictionary *", 
-        "size": 4, 
-        "name": "dict"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 5,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 11
+  },
   "cross_references": [
     {
-      "from_addr": "0043f341", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWCompress_init_FUN_0043f320", 
-      "addr": "0043f320"
-    }, 
+      "addr": "0043f320",
+      "from_addr": "0043f341",
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_0043f320",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043f4f1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDecompress_init_FUN_0043f4d0", 
-      "addr": "0043f4d0"
+      "addr": "0043f4d0",
+      "from_addr": "0043f4f1",
+      "name": "support_codec.cpp_CLZWDecompress_init_FUN_0043f4d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0043e510",
+    "address_range": [
+      [
+        "0043e510",
+        "0043e521"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_resetDictionary_FUN_0043e510",
+    "signature": "void support_codec.cpp_resetDictionary_FUN_0043e510(CLZWDictionary * dict)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dict",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDictionary *"
+      }
+    ]
+  },
+  "suspects": []
 }

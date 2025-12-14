@@ -74,13 +74,13 @@ section .text
     MOV EBX,dword ptr [EBP]             ; 0049741c
         ;   Label: LAB_0049741c
     TEST EBX,EBX                        ; 0049741f
-    JZ 0x004974bf                       ; 00497421 | LAB_004974bf
-        ;   XREF to: 004974bf (CONDITIONAL_JUMP)
+    JZ 0x004974bf                       ; 00497421
+        ;   XREF to: 004974bf (CONDITIONAL_JUMP)  ; LAB_004974bf
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00497427
     LEA EAX,[EBX + EDX*0x1]             ; 0049742b
     CMP byte ptr [EAX],0x0              ; 0049742e
-    JZ 0x004974bf                       ; 00497431 | LAB_004974bf
-        ;   XREF to: 004974bf (CONDITIONAL_JUMP)
+    JZ 0x004974bf                       ; 00497431
+        ;   XREF to: 004974bf (CONDITIONAL_JUMP)  ; LAB_004974bf
     MOV EAX,dword ptr [ESP + 0x20]      ; 00497437
     XOR EBX,EBX                         ; 0049743b
     MOV dword ptr [ESP + 0x28],EAX      ; 0049743d
@@ -91,14 +91,14 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0049744a
     XOR EDX,EDX                         ; 0049744c
     AND EAX,0xff                        ; 0049744e
-    MOV DL,byte ptr [EBX + 0x6789f8]    ; 00497453 | uchar[8] g_VoxelYBitMasks
+    MOV DL,byte ptr [EBX + 0x6789f8]    ; 00497453 | g_VoxelYBitMasks | s_@_006789f9
     TEST EAX,EDX                        ; 00497459
-    JZ 0x004974b9                       ; 0049745b | LAB_004974b9
-        ;   XREF to: 004974b9 (CONDITIONAL_JUMP)
+    JZ 0x004974b9                       ; 0049745b
+        ;   XREF to: 004974b9 (CONDITIONAL_JUMP)  ; LAB_004974b9
     MOV dword ptr [ESP + 0x2c],EBX      ; 0049745d
     FILD dword ptr [ESP + 0x2c]         ; 00497461
     FMUL float ptr [ESI + 0x28]         ; 00497465
-    FLD float ptr [0x00622b82]          ; 00497468 | float g_VoxelSubGridScale
+    FLD float ptr [0x00622b82]          ; 00497468 | g_VoxelSubGridScale
     FXCH                                ; 0049746e
     FMUL ST1                            ; 00497470
     MOV dword ptr [ESP + 0x2c],EDI      ; 00497472
@@ -121,14 +121,14 @@ section .text
     FADD float ptr [ESP + 0xc]          ; 004974a8
     PUSH ESI                            ; 004974ac
     FSTP float ptr [ESP + 0x1c]         ; 004974ad
-    CALL core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70 ; 004974b1 | void core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRaytrace * this_ptr, CVector3f * world_pos)
-        ;   XREF to: 00496e70 (UNCONDITIONAL_CALL)
+    CALL core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70 ; 004974b1
+        ;   XREF to: 00496e70 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70(CDemonRaytrace * this_ptr, CVector3f * world_pos)
     ADD ESP,0x8                         ; 004974b6
     INC EBX                             ; 004974b9
         ;   Label: LAB_004974b9
     CMP EBX,0x8                         ; 004974ba
-    JL 0x00497441                       ; 004974bd | LAB_00497441
-        ;   XREF to: 00497441 (CONDITIONAL_JUMP)
+    JL 0x00497441                       ; 004974bd
+        ;   XREF to: 00497441 (CONDITIONAL_JUMP)  ; LAB_00497441
     MOV EAX,dword ptr [ESP + 0x20]      ; 004974bf
         ;   Label: LAB_004974bf
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004974c3
@@ -138,8 +138,8 @@ section .text
     MOV dword ptr [ESP + 0x20],EAX      ; 004974ca
     MOV dword ptr [ESP + 0x1c],EBX      ; 004974ce
     CMP EDI,0x8                         ; 004974d2
-    JL 0x0049741c                       ; 004974d5 | LAB_0049741c
-        ;   XREF to: 0049741c (CONDITIONAL_JUMP)
+    JL 0x0049741c                       ; 004974d5
+        ;   XREF to: 0049741c (CONDITIONAL_JUMP)  ; LAB_0049741c
     MOV ECX,dword ptr [ESP + 0x24]      ; 004974db
     MOV EDX,dword ptr [ESP + 0x18]      ; 004974df
     INC ECX                             ; 004974e3
@@ -147,8 +147,8 @@ section .text
     MOV dword ptr [ESP + 0x24],ECX      ; 004974e7
     MOV dword ptr [ESP + 0x18],EDX      ; 004974eb
     CMP ECX,0x8                         ; 004974ef
-    JL 0x0049740e                       ; 004974f2 | LAB_0049740e
-        ;   XREF to: 0049740e (CONDITIONAL_JUMP)
+    JL 0x0049740e                       ; 004974f2
+        ;   XREF to: 0049740e (CONDITIONAL_JUMP)  ; LAB_0049740e
     ADD ESP,0x30                        ; 004974f8
     POP EBP                             ; 004974fb
     POP EDI                             ; 004974fc

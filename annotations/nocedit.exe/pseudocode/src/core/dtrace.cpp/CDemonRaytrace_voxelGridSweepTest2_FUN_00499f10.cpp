@@ -43,7 +43,7 @@ core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest2_FUN_00499f10
   int local_14;
   
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)(local_94 + 8),(CVector3f *)light_data);
+            ((CMatrix3x3f *)(local_94 + 8),light_data);
   local_54 = end_position->x - start_position->x;
   local_50._0_4_ = end_position->y - start_position->y;
   local_50._4_4_ = end_position->z - start_position->z;

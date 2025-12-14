@@ -24,7 +24,7 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_005747d0(CZThumb *this
       *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar2) =
            *(uint *)((int)g_ZBufferScanlineArray + iVar2);
       iVar2 = iVar1;
-    } while (SBORROW /* signed borrow */4(iVar1,count * 4) != iVar1 + count * -4 < 0);
+    } while (iVar1 < count * 4);
   }
   return;
 }

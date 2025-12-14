@@ -18,6 +18,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004ce230
         ;   Label: engine_font.cpp_setDefaultTextColor_FUN_004ce230
-    MOV [0x02d7b424],EAX                ; 004ce234 | int g_DefaultTextColor
+    MOV [0x02d7b424],EAX                ; 004ce234 | g_DefaultTextColor
     RET                                 ; 004ce239
 

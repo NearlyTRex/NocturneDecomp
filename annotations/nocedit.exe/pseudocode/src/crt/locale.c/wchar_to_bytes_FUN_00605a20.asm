@@ -22,8 +22,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 00605a21
     MOV EAX,dword ptr [ESP + 0xc]       ; 00605a25
     TEST DH,0xff                        ; 00605a29
-    JZ 0x00605a3a                       ; 00605a2c | LAB_00605a3a
-        ;   XREF to: 00605a3a (CONDITIONAL_JUMP)
+    JZ 0x00605a3a                       ; 00605a2c
+        ;   XREF to: 00605a3a (CONDITIONAL_JUMP)  ; LAB_00605a3a
     MOV EBX,EDX                         ; 00605a2e
     MOV byte ptr [EAX + 0x1],DL         ; 00605a30
     SHR EBX,0x8                         ; 00605a33

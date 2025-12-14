@@ -27,11 +27,11 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 0060d733
     SUB EDX,EBX                         ; 0060d737
     TEST ECX,ECX                        ; 0060d739
-    JNZ 0x0060d749                      ; 0060d73b | LAB_0060d749
-        ;   XREF to: 0060d749 (CONDITIONAL_JUMP)
+    JNZ 0x0060d749                      ; 0060d73b
+        ;   XREF to: 0060d749 (CONDITIONAL_JUMP)  ; LAB_0060d749
     CMP EAX,EDX                         ; 0060d73d
-    JLE 0x0060d746                      ; 0060d73f | LAB_0060d746
-        ;   XREF to: 0060d746 (CONDITIONAL_JUMP)
+    JLE 0x0060d746                      ; 0060d73f
+        ;   XREF to: 0060d746 (CONDITIONAL_JUMP)  ; LAB_0060d746
     MOV EAX,0xffffffff                  ; 0060d741
         ;   Label: LAB_0060d741
     POP EDI                             ; 0060d746
@@ -40,14 +40,14 @@ section .text
     RET                                 ; 0060d748
     CMP ECX,0x2                         ; 0060d749
         ;   Label: LAB_0060d749
-    JNZ 0x0060d761                      ; 0060d74c | LAB_0060d761
-        ;   XREF to: 0060d761 (CONDITIONAL_JUMP)
+    JNZ 0x0060d761                      ; 0060d74c
+        ;   XREF to: 0060d761 (CONDITIONAL_JUMP)  ; LAB_0060d761
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0060d74e
     NEG EAX                             ; 0060d752
     SUB EDX,EBX                         ; 0060d754
     CMP EAX,EDX                         ; 0060d756
-    JG 0x0060d741                       ; 0060d758 | LAB_0060d741
-        ;   XREF to: 0060d741 (CONDITIONAL_JUMP)
+    JG 0x0060d741                       ; 0060d758
+        ;   XREF to: 0060d741 (CONDITIONAL_JUMP)  ; LAB_0060d741
     SUB EDX,EAX                         ; 0060d75a
         ;   Label: LAB_0060d75a
     MOV EAX,EDX                         ; 0060d75c
@@ -57,21 +57,21 @@ section .text
     RET                                 ; 0060d760
     CMP ECX,0x1                         ; 0060d761
         ;   Label: LAB_0060d761
-    JNZ 0x0060d741                      ; 0060d764 | LAB_0060d741
-        ;   XREF to: 0060d741 (CONDITIONAL_JUMP)
+    JNZ 0x0060d741                      ; 0060d764
+        ;   XREF to: 0060d741 (CONDITIONAL_JUMP)  ; LAB_0060d741
     MOV EDX,dword ptr [ESP + 0x18]      ; 0060d766
     MOV ECX,dword ptr [ESP + 0x20]      ; 0060d76a
     MOV EDI,dword ptr [ESP + 0x18]      ; 0060d76e
     SUB EDX,EBX                         ; 0060d772
     SUB ECX,EDI                         ; 0060d774
     TEST EAX,EAX                        ; 0060d776
-    JL 0x0060d785                       ; 0060d778 | LAB_0060d785
-        ;   XREF to: 0060d785 (CONDITIONAL_JUMP)
-    JLE 0x0060d75c                      ; 0060d77a | LAB_0060d75c
-        ;   XREF to: 0060d75c (CONDITIONAL_JUMP)
+    JL 0x0060d785                       ; 0060d778
+        ;   XREF to: 0060d785 (CONDITIONAL_JUMP)  ; LAB_0060d785
+    JLE 0x0060d75c                      ; 0060d77a
+        ;   XREF to: 0060d75c (CONDITIONAL_JUMP)  ; LAB_0060d75c
     CMP EAX,ECX                         ; 0060d77c
-    JG 0x0060d741                       ; 0060d77e | LAB_0060d741
-        ;   XREF to: 0060d741 (CONDITIONAL_JUMP)
+    JG 0x0060d741                       ; 0060d77e
+        ;   XREF to: 0060d741 (CONDITIONAL_JUMP)  ; LAB_0060d741
     ADD EAX,EDX                         ; 0060d780
     POP EDI                             ; 0060d782
     POP EBX                             ; 0060d783
@@ -79,8 +79,8 @@ section .text
     NEG EAX                             ; 0060d785
         ;   Label: LAB_0060d785
     CMP EAX,EDX                         ; 0060d787
-    JLE 0x0060d75a                      ; 0060d789 | LAB_0060d75a
-        ;   XREF to: 0060d75a (CONDITIONAL_JUMP)
-    JMP 0x0060d741                      ; 0060d78b | LAB_0060d741
-        ;   XREF to: 0060d741 (UNCONDITIONAL_JUMP)
+    JLE 0x0060d75a                      ; 0060d789
+        ;   XREF to: 0060d75a (CONDITIONAL_JUMP)  ; LAB_0060d75a
+    JMP 0x0060d741                      ; 0060d78b
+        ;   XREF to: 0060d741 (UNCONDITIONAL_JUMP)  ; LAB_0060d741
 

@@ -1,62 +1,62 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 9, 
-    "assembly_lines": 4, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "timeEndPeriod", 
-      "addr": "EXTERNAL:00000014"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "timeEndPeriod*", 
-      "name": "PTR_timeEndPeriod_00611418", 
-      "addr": "00611418", 
-      "value": "00211874"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "005f2db0", 
-    "signature": "void wincore_winrun.cpp_endPeriod_FUN_005f2db0(void)", 
-    "address_range": [
-      [
-        "005f2db0", 
-        "005f2db9"
-      ]
-    ], 
-    "name": "wincore_winrun.cpp_endPeriod_FUN_005f2db0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 4,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
   "cross_references": [
     {
-      "from_addr": "00507022", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
+      "addr": "00506f10",
+      "from_addr": "00507022",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005087fa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
-      "addr": "00508570"
+      "addr": "00508570",
+      "from_addr": "005087fa",
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005f2db0",
+    "address_range": [
+      [
+        "005f2db0",
+        "005f2db9"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "wincore_winrun.cpp_endPeriod_FUN_005f2db0",
+    "signature": "void wincore_winrun.cpp_endPeriod_FUN_005f2db0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000014",
+      "name": "timeEndPeriod"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611418",
+      "name": "PTR_timeEndPeriod_00611418",
+      "type": "timeEndPeriod*",
+      "value": "00211874"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

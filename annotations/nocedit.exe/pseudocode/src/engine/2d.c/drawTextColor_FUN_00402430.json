@@ -1,172 +1,172 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 13, 
-    "global_count": 4, 
-    "total_lines": 55, 
-    "assembly_lines": 45, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawTextMultilineColor_FUN_00401f40", 
-      "addr": "00401f40"
-    }, 
-    {
-      "name": "engine_2d.c_drawTextWrappedColor_FUN_00401eb0", 
-      "addr": "00401eb0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_TextWrapEnabled", 
-      "addr": "0066df74", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentTextColor", 
-      "addr": "0066df78", 
-      "value": "0xf8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00402430", 
-    "signature": "void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)", 
-    "address_range": [
-      [
-        "00402430", 
-        "00402491"
-      ]
-    ], 
-    "name": "engine_2d.c_drawTextColor_FUN_00402430"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_pos"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_pos"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 45,
+    "complexity_score": 10,
+    "cross_reference_count": 13,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
+  },
   "cross_references": [
     {
-      "from_addr": "00489339", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
-      "addr": "00489120"
-    }, 
+      "addr": "00489120",
+      "from_addr": "00489339",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040261b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_004025f0", 
-      "addr": "004025f0"
-    }, 
+      "addr": "004025f0",
+      "from_addr": "0040261b",
+      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_004025f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004026ef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextCenteredColor_FUN_004026c0", 
-      "addr": "004026c0"
-    }, 
+      "addr": "004026c0",
+      "from_addr": "004026ef",
+      "name": "engine_2d.c_drawTextCenteredColor_FUN_004026c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00402511", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextColorFormatted_FUN_004024c0", 
-      "addr": "004024c0"
-    }, 
+      "addr": "004024c0",
+      "from_addr": "00402511",
+      "name": "engine_2d.c_drawTextColorFormatted_FUN_004024c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004024b0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextColorWrapper_FUN_004024a0", 
-      "addr": "004024a0"
-    }, 
+      "addr": "004024a0",
+      "from_addr": "004024b0",
+      "name": "engine_2d.c_drawTextColorWrapper_FUN_004024a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00402552", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402530", 
-      "addr": "00402530"
-    }, 
+      "addr": "00402530",
+      "from_addr": "00402552",
+      "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402530",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004615fe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_displayPalette_FUN_00461560", 
-      "addr": "00461560"
-    }, 
+      "addr": "00461560",
+      "from_addr": "004615fe",
+      "name": "shape_design.c_displayPalette_FUN_00461560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004665f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_findClosestPolygonToMouse_FUN_00466250", 
-      "addr": "00466250"
-    }, 
+      "addr": "00466250",
+      "from_addr": "004665f5",
+      "name": "shape_design.c_findClosestPolygonToMouse_FUN_00466250",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00464b68", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0", 
-      "addr": "004648e0"
-    }, 
+      "addr": "004648e0",
+      "from_addr": "00464b68",
+      "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004650bb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90", 
-      "addr": "00464c90"
-    }, 
+      "addr": "00464c90",
+      "from_addr": "004650bb",
+      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045c4d2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0", 
-      "addr": "0045c2f0"
-    }, 
+      "addr": "0045c2f0",
+      "from_addr": "0045c4d2",
+      "name": "shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045c2ce", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0", 
-      "addr": "0045bff0"
-    }, 
+      "addr": "0045bff0",
+      "from_addr": "0045c2ce",
+      "name": "shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045f86a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
-      "addr": "0045f1d0"
+      "addr": "0045f1d0",
+      "from_addr": "0045f86a",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00402430",
+    "address_range": [
+      [
+        "00402430",
+        "00402491"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawTextColor_FUN_00402430",
+    "signature": "void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x_pos, int y_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "00401f40",
+      "name": "engine_2d.c_drawTextMultilineColor_FUN_00401f40"
+    },
+    {
+      "addr": "00401eb0",
+      "name": "engine_2d.c_drawTextWrappedColor_FUN_00401eb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0066df74",
+      "name": "g_TextWrapEnabled",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "0066df78",
+      "name": "g_CurrentTextColor",
+      "type": "int",
+      "value": "0xf8"
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -26,16 +26,16 @@ section .text
     PUSH 0x0                            ; 005d6f93
     MOV EDX,dword ptr [ESP + 0x10]      ; 005d6f95
     PUSH EDX                            ; 005d6f99
-    CALL shape_superopt.cpp_CObj_ctor_FUN_005d2230 ; 005d6f9a | CObj * shape_superopt.cpp_CObj_ctor_FUN_005d2230(CObj * this_ptr)
-        ;   XREF to: 005d2230 (UNCONDITIONAL_CALL)
-    MOV dword ptr [EAX + 0x40],0x663c44 ; 005d6f9f | COptimize_vtable g_COptimizeVTable
+    CALL shape_superopt.cpp_CObj_ctor_FUN_005d2230 ; 005d6f9a
+        ;   XREF to: 005d2230 (UNCONDITIONAL_CALL)  ; CObj * shape_superopt.cpp_CObj_ctor_FUN_005d2230(CObj * this_ptr)
+    MOV dword ptr [EAX + 0x40],0x663c44 ; 005d6f9f | g_COptimizeVTable
     ADD ESP,0xc                         ; 005d6fa6
     MOV dword ptr [EAX + 0x3c],0x0      ; 005d6fa9
     PUSH EAX                            ; 005d6fb0
     MOV EBX,EAX                         ; 005d6fb1
     MOV dword ptr [EAX + 0x38],0x0      ; 005d6fb3
-    CALL shape_superopt.cpp_COptimize_FUN_005d7000 ; 005d6fba | void shape_superopt.cpp_COptimize_FUN_005d7000(COptimize * this_ptr)
-        ;   XREF to: 005d7000 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_COptimize_FUN_005d7000 ; 005d6fba
+        ;   XREF to: 005d7000 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_COptimize_FUN_005d7000(COptimize * this_ptr)
     ADD ESP,0x4                         ; 005d6fbf
     MOV EAX,EBX                         ; 005d6fc2
     POP EBX                             ; 005d6fc4

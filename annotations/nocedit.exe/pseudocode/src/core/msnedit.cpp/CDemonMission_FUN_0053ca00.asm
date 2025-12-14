@@ -23,16 +23,16 @@ section .text
     PUSH EBX                            ; 0053ca00
         ;   Label: core_msnedit.cpp_CDemonMission_FUN_0053ca00
     PUSH ESI                            ; 0053ca01
-    MOV EDX,dword ptr [0x02cf6a90]      ; 0053ca02 | int g_MouseY
+    MOV EDX,dword ptr [0x02cf6a90]      ; 0053ca02 | g_MouseY
     PUSH EDX                            ; 0053ca08
-    MOV ECX,dword ptr [0x02cf6a8c]      ; 0053ca09 | int g_MouseX
+    MOV ECX,dword ptr [0x02cf6a8c]      ; 0053ca09 | g_MouseX
     PUSH ECX                            ; 0053ca0f
     MOV EBX,dword ptr [ESP + 0x18]      ; 0053ca10
     PUSH EBX                            ; 0053ca14
     MOV ESI,dword ptr [ESP + 0x18]      ; 0053ca15
     PUSH ESI                            ; 0053ca19
-    CALL core_msnedit.cpp_BeginAndEndScene_FUN_0053c970 ; 0053ca1a | undefined core_msnedit.cpp_BeginAndEndScene_FUN_0053c970()
-        ;   XREF to: 0053c970 (UNCONDITIONAL_CALL)
+    CALL core_msnedit.cpp_BeginAndEndScene_FUN_0053c970 ; 0053ca1a
+        ;   XREF to: 0053c970 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_BeginAndEndScene_FUN_0053c970()
     ADD ESP,0x10                        ; 0053ca1f
     POP ESI                             ; 0053ca22
     POP EBX                             ; 0053ca23

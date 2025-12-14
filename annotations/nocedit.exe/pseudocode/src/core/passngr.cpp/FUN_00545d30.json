@@ -1,291 +1,291 @@
 {
   "complexity": {
-    "function_call_count": 12, 
-    "complexity_score": 348, 
-    "pseudocode_lines": 73, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 231, 
-    "assembly_lines": 158, 
-    "suspect_count": 27, 
+    "assembly_lines": 158,
+    "complexity_score": 348,
+    "cross_reference_count": 0,
+    "function_call_count": 12,
+    "global_count": 2,
+    "pseudocode_lines": 73,
+    "suspect_count": 27,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_createActorByName_FUN_0040c430", 
-      "addr": "0040c430"
-    }, 
-    {
-      "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680", 
-      "addr": "0052b680"
-    }, 
-    {
-      "name": "core_morph.cpp_FUN_0052b430", 
-      "addr": "0052b430"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0", 
-      "addr": "0052dce0"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0", 
-      "addr": "0052dde0"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460", 
-      "addr": "0052d460"
-    }, 
-    {
-      "name": "core_npc.cpp_CNPC_FUN_00544870", 
-      "addr": "00544870"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40", 
-      "addr": "0059fb40"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450", 
-      "addr": "005a0450"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80", 
-      "addr": "0059df80"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000", 
-      "addr": "0059e000"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CWerewolf_0063e7c4", 
-      "addr": "0063e7c4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_transform_0063e7ce", 
-      "addr": "0063e7ce", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CNPC *in_stack_00000004;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_npc_cpp_CNPC_FUN_00544870(in_stack_00000004);"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].base_character.base_actor.scale.x == 0) {"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar5 = in_stack_00000004[1].base_character.base_actor.create_event + 0xc;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].base_character.base_actor.scale.x = (int)pCVar3;"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar4 = in_stack_00000004[1].base_character.base_actor.scale.x;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar4 + 0x20) = (in_stack_00000004->base_character).base_actor.location.position.x;"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar4 + 0x24) = (in_stack_00000004->base_character).base_actor.location.position.y;"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar4 + 0x28) = (in_stack_00000004->base_character).base_actor.location.position.z;"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(iVar4 + 0x2c) = (in_stack_00000004->base_character).base_actor.location.area_id;"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar4 = in_stack_00000004[1].base_character.base_actor.scale.x;"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar1 = &(in_stack_00000004->base_character).base_actor.orient;"
-    }, 
-    {
-      "line": 39, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar4 + 0x34) = (in_stack_00000004->base_character).base_actor.orient.bank;"
-    }, 
-    {
-      "line": 40, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar4 + 0x38) = (in_stack_00000004->base_character).base_actor.orient.heading;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158),"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(char *)&in_stack_00000004[1].base_character.base_actor.health);"
-    }, 
-    {
-      "line": 46, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x261c) ="
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].x;"
-    }, 
-    {
-      "line": 48, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(code *)**(uint **)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x154))();"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CMotionController *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158)"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));"
-    }, 
-    {
-      "line": 62, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));"
-    }, 
-    {
-      "line": 63, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr = &(in_stack_00000004->base_character).model;"
-    }, 
-    {
-      "line": 70, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CMorph *)&in_stack_00000004[1].base_character.base_actor.scale.y);"
-    }, 
-    {
-      "line": 71, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].w = 0.0;"
-    }, 
-    {
-      "line": 75, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));"
-    }
-  ], 
+    ],
+    "total_lines": 231
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00545d30", 
-    "signature": "undefined core_passngr.cpp_FUN_00545d30()", 
+    "address": "00545d30",
     "address_range": [
       [
-        "00545d30", 
+        "00545d30",
         "00545ee7"
       ]
-    ], 
-    "name": "core_passngr.cpp_FUN_00545d30"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_passngr.cpp_FUN_00545d30",
+    "signature": "undefined core_passngr.cpp_FUN_00545d30()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c430",
+      "name": "core_actor.cpp_createActorByName_FUN_0040c430"
+    },
+    {
+      "addr": "0052b680",
+      "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680"
+    },
+    {
+      "addr": "0052b430",
+      "name": "core_morph.cpp_FUN_0052b430"
+    },
+    {
+      "addr": "0052dce0",
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "0052dde0",
+      "name": "core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0"
+    },
+    {
+      "addr": "0052d460",
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460"
+    },
+    {
+      "addr": "00544870",
+      "name": "core_npc.cpp_CNPC_FUN_00544870"
+    },
+    {
+      "addr": "0059fb40",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    },
+    {
+      "addr": "005a0450",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450"
+    },
+    {
+      "addr": "0059df80",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80"
+    },
+    {
+      "addr": "0059e000",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063e7c4",
+      "name": "s_CWerewolf_0063e7c4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063e7ce",
+      "name": "s_transform_0063e7ce",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "CNPC *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "core_npc_cpp_CNPC_FUN_00544870(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].base_character.base_actor.scale.x == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "pcVar5 = in_stack_00000004[1].base_character.base_actor.create_event + 0xc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].base_character.base_actor.scale.x = (int)pCVar3;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000004",
+      "text": "iVar4 = in_stack_00000004[1].base_character.base_actor.scale.x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(iVar4 + 0x20) = (in_stack_00000004->base_character).base_actor.location.position.x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(iVar4 + 0x24) = (in_stack_00000004->base_character).base_actor.location.position.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(iVar4 + 0x28) = (in_stack_00000004->base_character).base_actor.location.position.z;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(iVar4 + 0x2c) = (in_stack_00000004->base_character).base_actor.location.area_id;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "iVar4 = in_stack_00000004[1].base_character.base_actor.scale.x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "text": "pCVar1 = &(in_stack_00000004->base_character).base_actor.orient;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(iVar4 + 0x34) = (in_stack_00000004->base_character).base_actor.orient.bank;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(iVar4 + 0x38) = (in_stack_00000004->base_character).base_actor.orient.heading;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "(char *)&in_stack_00000004[1].base_character.base_actor.health);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x261c) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "text": "(*(code *)**(uint **)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x154))();",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "text": "((CMotionController *)(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000004",
+      "text": "this_ptr = &(in_stack_00000004->base_character).model;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_00000004",
+      "text": "((CMorph *)&in_stack_00000004[1].base_character.base_actor.scale.y);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].w = 0.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004[1].base_character.base_actor.scale.x + 0x158));",
+      "type": "stack_param"
+    }
+  ]
 }

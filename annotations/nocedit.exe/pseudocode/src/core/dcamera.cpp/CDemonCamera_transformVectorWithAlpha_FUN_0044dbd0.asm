@@ -41,10 +41,10 @@ section .text
     PUSH EBP                            ; 0044dbd2
     SUB ESP,0x18                        ; 0044dbd3
     MOV EBP,ESI                         ; 0044dbd6
-    MOV EDI,0x2d052e8                   ; 0044dbd8 | CMatrix3x3i g_TransformMatrix
+    MOV EDI,0x2d052e8                   ; 0044dbd8 | g_TransformMatrix
     MOV ESI,dword ptr [ESP + 0x2c]      ; 0044dbdd
     MOV EAX,dword ptr [ESI]             ; 0044dbe1
-    IMUL dword ptr [EDI]                ; 0044dbe3 | CMatrix3x3i g_TransformMatrix
+    IMUL dword ptr [EDI]                ; 0044dbe3 | g_TransformMatrix
     MOV EBX,EAX                         ; 0044dbe5
     MOV ECX,EDX                         ; 0044dbe7
     MOV EAX,dword ptr [ESI + 0x4]       ; 0044dbe9
@@ -88,15 +88,15 @@ section .text
     ADD EAX,EBX                         ; 0044dc52
     ADC EDX,ECX                         ; 0044dc54
     SHRD EAX,EDX,0x10                   ; 0044dc56
-    MOV EDX,dword ptr [0x006703ec]      ; 0044dc5a | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDX                            ; 0044dc60 | CDemonRenderer g_CDemonRendererInstance
+    MOV EDX,dword ptr [0x006703ec]      ; 0044dc5a | g_CDemonRendererPtr
+    PUSH EDX                            ; 0044dc60 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0xc],EAX       ; 0044dc61
-    CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00 ; 0044dc65 | int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(CDemonRenderer * this_ptr)
-        ;   XREF to: 0048ce00 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00 ; 0044dc65
+        ;   XREF to: 0048ce00 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0044dc6a
     TEST EAX,EAX                        ; 0044dc6d
-    JNZ 0x0044dd17                      ; 0044dc6f | LAB_0044dd17
-        ;   XREF to: 0044dd17 (CONDITIONAL_JUMP)
+    JNZ 0x0044dd17                      ; 0044dc6f
+        ;   XREF to: 0044dd17 (CONDITIONAL_JUMP)  ; LAB_0044dd17
     MOV EDI,dword ptr [ESP + 0x28]      ; 0044dc75
     MOV ESI,ESP                         ; 0044dc79
     ADD EDI,0x19c                       ; 0044dc7b

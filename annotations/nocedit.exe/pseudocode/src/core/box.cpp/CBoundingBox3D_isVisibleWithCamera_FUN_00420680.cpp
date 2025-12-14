@@ -84,7 +84,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
                             0x20) << 0x10) + g_CameraOriginZ;
       iVar6 = iVar6 + 0xc;
     } while (iVar5 != 0x180);
-    iVar6 = (*(code *)((g_CurrentSceneCamera->base).vtable)->isVisible)();
+    iVar6 = (*((g_CurrentSceneCamera->base).vtable)->isVisible)();
     return iVar6;
   }
   return 0;

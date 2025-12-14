@@ -23,8 +23,8 @@ section .text
     PUSH ECX                            ; 004021fa
     MOV EBX,dword ptr [ESP + 0x18]      ; 004021fb
     PUSH EBX                            ; 004021ff
-    CALL engine_2d.c_drawTextRightAligned_FUN_004021c0 ; 00402200 | void engine_2d.c_drawTextRightAligned_FUN_004021c0(char * text, int y_pos, int right_x)
-        ;   XREF to: 004021c0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawTextRightAligned_FUN_004021c0 ; 00402200
+        ;   XREF to: 004021c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAligned_FUN_004021c0(char * text, int y_pos, int right_x)
     ADD ESP,0xc                         ; 00402205
     POP EBX                             ; 00402208
     RET                                 ; 00402209

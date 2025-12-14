@@ -21,8 +21,8 @@ section .text
     PUSH ECX                            ; 006064fc
     SUB EAX,EDX                         ; 006064fd
     PUSH EAX                            ; 006064ff
-    CALL crt_fstream.cpp_fstreambase_dtor_FUN_00606509 ; 00606500 | fstreambase * crt_fstream.cpp_fstreambase_dtor_FUN_00606509(fstreambase * this_ptr, uint d1, uint d2, uint d3)
-        ;   XREF to: 00606509 (UNCONDITIONAL_CALL)
+    CALL crt_fstream.cpp_fstreambase_dtor_FUN_00606509 ; 00606500
+        ;   XREF to: 00606509 (UNCONDITIONAL_CALL)  ; fstreambase * crt_fstream.cpp_fstreambase_dtor_FUN_00606509(fstreambase * this_ptr, uint d1, uint d2, uint d3)
     ADD ESP,0x8                         ; 00606505
     RET                                 ; 00606508
 

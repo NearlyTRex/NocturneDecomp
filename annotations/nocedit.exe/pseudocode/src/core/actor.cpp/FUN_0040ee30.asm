@@ -19,8 +19,8 @@ section .text
         ;   Label: core_actor.cpp_FUN_0040ee30
     ADD EAX,0x4                         ; 0040ee34
     PUSH EAX                            ; 0040ee37
-    CALL engine_2d.c_getStringWidth_FUN_004018a0 ; 0040ee38 | int engine_2d.c_getStringWidth_FUN_004018a0(char * text)
-        ;   XREF to: 004018a0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_getStringWidth_FUN_004018a0 ; 0040ee38
+        ;   XREF to: 004018a0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getStringWidth_FUN_004018a0(char * text)
     ADD ESP,0x4                         ; 0040ee3d
     RET                                 ; 0040ee40
 

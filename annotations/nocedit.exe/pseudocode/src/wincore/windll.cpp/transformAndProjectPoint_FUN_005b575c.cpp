@@ -39,13 +39,13 @@ wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex *outpu
     if ((int)uVar5 < (int)uVar3) {
       uVar6 = GAME_CLIP_RIGHT;
     }
-    if (SBORROW /* signed borrow */4(uVar3,-uVar5) != (int)(uVar3 + uVar5) < 0) {
+    if ((int)uVar3 < (int)-uVar5) {
       uVar6 = uVar6 | GAME_CLIP_LEFT;
     }
     if ((int)uVar5 < (int)uVar4) {
       uVar6 = uVar6 | GAME_CLIP_BOTTOM;
     }
-    if (SBORROW /* signed borrow */4(uVar4,-uVar5) != (int)(uVar4 + uVar5) < 0) {
+    if ((int)uVar4 < (int)-uVar5) {
       uVar6 = uVar6 | GAME_CLIP_TOP;
     }
     if ((int)uVar5 < 1) {

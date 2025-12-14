@@ -22,17 +22,17 @@ section .text
     MOV EAX,dword ptr [EAX + 0x20]      ; 0060bdc5
     TEST EAX,EAX                        ; 0060bdc8
         ;   Label: LAB_0060bdc8
-    JNZ 0x0060bdce                      ; 0060bdca | LAB_0060bdce
-        ;   XREF to: 0060bdce (CONDITIONAL_JUMP)
+    JNZ 0x0060bdce                      ; 0060bdca
+        ;   XREF to: 0060bdce (CONDITIONAL_JUMP)  ; LAB_0060bdce
     POP EBX                             ; 0060bdcc
     RET                                 ; 0060bdcd
     PUSH EAX                            ; 0060bdce
         ;   Label: LAB_0060bdce
     MOV EBX,dword ptr [EAX]             ; 0060bdcf
-    CALL crt_iostream.cpp_freeBuffer_FUN_0060d7a0 ; 0060bdd1 | void crt_iostream.cpp_freeBuffer_FUN_0060d7a0(void * buffer)
-        ;   XREF to: 0060d7a0 (UNCONDITIONAL_CALL)
+    CALL crt_iostream.cpp_freeBuffer_FUN_0060d7a0 ; 0060bdd1
+        ;   XREF to: 0060d7a0 (UNCONDITIONAL_CALL)  ; void crt_iostream.cpp_freeBuffer_FUN_0060d7a0(void * buffer)
     ADD ESP,0x4                         ; 0060bdd6
     MOV EAX,EBX                         ; 0060bdd9
-    JMP 0x0060bdc8                      ; 0060bddb | LAB_0060bdc8
-        ;   XREF to: 0060bdc8 (UNCONDITIONAL_JUMP)
+    JMP 0x0060bdc8                      ; 0060bddb
+        ;   XREF to: 0060bdc8 (UNCONDITIONAL_JUMP)  ; LAB_0060bdc8
 

@@ -31,24 +31,24 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x03f624a4]      ; 005a8cb0 | int g_SfxLastSlot
+    MOV EDX,dword ptr [0x03f624a4]      ; 005a8cb0 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
     DEC EDX                             ; 005a8cb6
-    MOV dword ptr [0x03f624a4],EDX      ; 005a8cb7 | int g_SfxLastSlot
+    MOV dword ptr [0x03f624a4],EDX      ; 005a8cb7 | g_SfxLastSlot
     TEST EDX,EDX                        ; 005a8cbd
-    JL 0x005a8cc2                       ; 005a8cbf | LAB_005a8cc2
-        ;   XREF to: 005a8cc2 (CONDITIONAL_JUMP)
+    JL 0x005a8cc2                       ; 005a8cbf
+        ;   XREF to: 005a8cc2 (CONDITIONAL_JUMP)  ; LAB_005a8cc2
     RET                                 ; 005a8cc1
     PUSH ESI                            ; 005a8cc2
         ;   Label: LAB_005a8cc2
     PUSH EBX                            ; 005a8cc3
-    MOV EBX,0x6508cc                    ; 005a8cc4 | = "..\\sound\\sndmain.cpp" | s_sound_sndmain_cpp_006508cc = ..\sound\sndmain.cpp
+    MOV EBX,0x6508cc                    ; 005a8cc4 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xd2f                       ; 005a8cc9
-    PUSH 0x6508e1                       ; 005a8cce | = "popSfxOptions - stack empty" | s_popSfxOptions_stack_empt_006508e1 = popSfxOptions - stack empty
-    MOV dword ptr [0x02f0ca48],EBX      ; 005a8cd3 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 005a8cd9 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a8cdf | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6508e1                       ; 005a8cce | = "popSfxOptions - stack empty"
+    MOV dword ptr [0x02f0ca48],EBX      ; 005a8cd3 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 005a8cd9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a8cdf
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005a8ce4
     POP EBX                             ; 005a8ce7
     POP ESI                             ; 005a8ce8

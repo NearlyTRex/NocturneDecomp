@@ -1,134 +1,134 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 127, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 87, 
-    "assembly_lines": 55, 
-    "suspect_count": 9, 
+    "assembly_lines": 55,
+    "complexity_score": 127,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 32,
+    "suspect_count": 9,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_006542d2", 
-      "addr": "006542d2", 
-      "value": "1.00000000000000E-7"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005cbf28", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_0000000c;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c != 0) {"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pdVar8 = (double *)(in_stack_00000008 + 0x10);"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar5 = in_stack_0000000c - 1;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar1 = *pdVar8 - *(double *)(in_stack_00000008 + 0x28 + iVar4);"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar3 = pdVar8[1] - *(double *)(in_stack_00000008 + 0x30 + iVar4);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar2 = pdVar8[2] - *(double *)(in_stack_00000008 + 0x38 + iVar4);"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (uVar7 < in_stack_0000000c);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005cbf20", 
-    "signature": "undefined shape_superopt.cpp_FUN_005cbf20()", 
-    "address_range": [
-      [
-        "005cbf20", 
-        "005cbf89"
-      ]
-    ], 
-    "name": "shape_superopt.cpp_FUN_005cbf20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 87
+  },
   "cross_references": [
     {
-      "from_addr": "005cbe32", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20", 
-      "addr": "005cbe20"
+      "addr": "005cbe20",
+      "from_addr": "005cbe32",
+      "name": "shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005cbf20",
+    "address_range": [
+      [
+        "005cbf20",
+        "005cbf89"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_superopt.cpp_FUN_005cbf20",
+    "signature": "undefined shape_superopt.cpp_FUN_005cbf20()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006542d2",
+      "name": "DOUBLE_006542d2",
+      "type": "double",
+      "value": "1.00000000000000E-7"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005cbf28",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "pdVar8 = (double *)(in_stack_00000008 + 0x10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "uVar5 = in_stack_0000000c - 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "dVar1 = *pdVar8 - *(double *)(in_stack_00000008 + 0x28 + iVar4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "text": "dVar3 = pdVar8[1] - *(double *)(in_stack_00000008 + 0x30 + iVar4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000008",
+      "text": "dVar2 = pdVar8[2] - *(double *)(in_stack_00000008 + 0x38 + iVar4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_0000000c",
+      "text": "} while (uVar7 < in_stack_0000000c);",
+      "type": "stack_param"
     }
   ]
 }

@@ -39,8 +39,8 @@ section .text
     ADD EBX,0x64                        ; 0050995d
     MOV dword ptr [EAX + 0x148c],0x0    ; 00509960
     CMP EAX,ESI                         ; 0050996a
-    JNZ 0x00509900                      ; 0050996c | LAB_00509900
-        ;   XREF to: 00509900 (CONDITIONAL_JUMP)
+    JNZ 0x00509900                      ; 0050996c
+        ;   XREF to: 00509900 (CONDITIONAL_JUMP)  ; LAB_00509900
     MOV EAX,dword ptr [ESP + 0x18]      ; 0050996e
     MOV dword ptr [EAX + 0x644],0xff    ; 00509972
     MOV EBX,dword ptr [ESP + 0x18]      ; 0050997c
@@ -88,8 +88,8 @@ section .text
     PUSH ECX                            ; 00509aa9
     ADD EBP,0xb8                        ; 00509aaa
     ADD EDI,0xb8                        ; 00509ab0
-    CALL core_manpuz.cpp_FUN_0050a420   ; 00509ab6 | undefined core_manpuz.cpp_FUN_0050a420()
-        ;   XREF to: 0050a420 (UNCONDITIONAL_CALL)
+    CALL core_manpuz.cpp_FUN_0050a420   ; 00509ab6
+        ;   XREF to: 0050a420 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_0050a420()
     MOV dword ptr [EBX + 0x14],0x0      ; 00509abb
     INC ESI                             ; 00509ac2
     MOV dword ptr [EBX + 0x20],0x0      ; 00509ac3
@@ -102,8 +102,8 @@ section .text
     MOV dword ptr [EBX + 0xc],EAX       ; 00509adc
     FSTP float ptr [EBX + 0x18]         ; 00509adf
     CMP ESI,0xc                         ; 00509ae2
-    JL 0x00509a95                       ; 00509ae5 | LAB_00509a95
-        ;   XREF to: 00509a95 (CONDITIONAL_JUMP)
+    JL 0x00509a95                       ; 00509ae5
+        ;   XREF to: 00509a95 (CONDITIONAL_JUMP)  ; LAB_00509a95
     MOV EAX,dword ptr [ESP + 0x18]      ; 00509ae7
     MOV dword ptr [EAX + 0x139c],0x1    ; 00509aeb
     MOV dword ptr [EAX + 0x13b8],0x0    ; 00509af5

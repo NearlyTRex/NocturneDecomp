@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 84, 
-    "pseudocode_lines": 84, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 230, 
-    "assembly_lines": 146, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }, 
-    {
-      "type": "uint[256]", 
-      "name": "g_Hardware32BitPalette", 
-      "addr": "02d01924", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }, 
-    {
-      "type": "uint[1600]", 
-      "name": "g_ReciprocalLookupTable", 
-      "addr": "02d02580", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00490902", 
-    "signature": "void core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_00490902(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
-    "address_range": [
-      [
-        "00490902", 
-        "00490a57"
-      ]
-    ], 
-    "name": "core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_00490902"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 146,
+    "complexity_score": 84,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 5,
+    "pseudocode_lines": 84,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 230
+  },
   "cross_references": [
     {
-      "from_addr": "0048aa31", 
-      "type": "PARAM", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950", 
-      "addr": "0048a950"
+      "addr": "0048a950",
+      "from_addr": "0048aa31",
+      "name": "engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950",
+      "type": "PARAM"
     }
-  ]
+  ],
+  "function": {
+    "address": "00490902",
+    "address_range": [
+      [
+        "00490902",
+        "00490a57"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_00490902",
+    "signature": "void core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_00490902(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d01924",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02580",
+      "name": "g_ReciprocalLookupTable",
+      "type": "uint[1600]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

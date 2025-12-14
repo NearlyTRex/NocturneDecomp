@@ -11,8 +11,7 @@ void core_werewolf_cpp_FUN_005efbd0(void)
 {
   CWerewolf *this_ptr;
   
-  this_ptr = (CWerewolf *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf04,"..\\core\\werewolf.cpp",0x59);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf04,"..\\core\\werewolf.cpp",0x59);
   if (this_ptr == (CWerewolf *)0x0) {
     return;
   }

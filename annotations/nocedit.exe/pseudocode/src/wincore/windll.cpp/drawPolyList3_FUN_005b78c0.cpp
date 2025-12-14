@@ -28,8 +28,7 @@ wincore_windll_cpp_drawPolyList3_FUN_005b78c0
   iVar1 = 0;
   if (0 < polygon_count) {
     do {
-                    /* WARNING: Load size is inaccurate */
-      local_1c = (void *)((int)vertex_buffer + (uint)*polygons * 0x30);
+      local_1c = (void *)((int)vertex_buffer + (uint)*(ushort *)polygons * 0x30);
       local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);
       local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);
       polygons = (void *)((int)polygons + 6);

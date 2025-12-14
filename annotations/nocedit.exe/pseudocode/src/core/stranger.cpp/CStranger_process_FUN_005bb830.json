@@ -1,107 +1,107 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 43, 
-    "pseudocode_lines": 43, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 124, 
-    "assembly_lines": 81, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_00429870", 
-      "addr": "00429870"
-    }, 
-    {
-      "name": "core_game.cpp_CGame_slamDT_FUN_004e3080", 
-      "addr": "004e3080"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
-      "addr": "0052dab0"
-    }, 
-    {
-      "name": "core_stranger.cpp_CStranger_FUN_005bb960", 
-      "addr": "005bb960"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_005bb7dc", 
-      "addr": "005bb7dc", 
-      "value": "005bb84e"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_006534ac", 
-      "addr": "006534ac", 
-      "value": "0.25"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 81,
+    "complexity_score": 43,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 124
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005bb830", 
-    "signature": "void core_stranger.cpp_CStranger_process_FUN_005bb830(CStranger * this_ptr)", 
+    "address": "005bb830",
     "address_range": [
       [
-        "005bb830", 
+        "005bb830",
         "005bb8ff"
       ]
-    ], 
-    "name": "core_stranger.cpp_CStranger_process_FUN_005bb830"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_stranger.cpp_CStranger_process_FUN_005bb830",
+    "signature": "void core_stranger.cpp_CStranger_process_FUN_005bb830(CStranger * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00429870",
+      "name": "core_charactr.cpp_CCharacter_FUN_00429870"
+    },
+    {
+      "addr": "004e3080",
+      "name": "core_game.cpp_CGame_slamDT_FUN_004e3080"
+    },
+    {
+      "addr": "0052dab0",
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "005bb960",
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bb7dc",
+      "name": "switchdataD_005bb7dc",
+      "type": "void*",
+      "value": "005bb84e"
+    },
+    {
+      "addr": "006534ac",
+      "name": "DOUBLE_006534ac",
+      "type": "double",
+      "value": "0.25"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 16, 
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStranger *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

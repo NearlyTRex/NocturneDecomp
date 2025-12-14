@@ -11,8 +11,7 @@ void core_hostage_cpp_FUN_004f4800(void)
 {
   CHostage *this_ptr;
   
-  this_ptr = (CHostage *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1faf0,"..\\core\\hostage.cpp",0x59);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1faf0,"..\\core\\hostage.cpp",0x59);
   if (this_ptr == (CHostage *)0x0) {
     return;
   }

@@ -1,293 +1,293 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 130, 
-    "pseudocode_lines": 45, 
-    "cross_reference_count": 1, 
-    "global_count": 13, 
-    "total_lines": 154, 
-    "assembly_lines": 109, 
-    "suspect_count": 8, 
+    "assembly_lines": 109,
+    "complexity_score": 130,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 13,
+    "pseudocode_lines": 45,
+    "suspect_count": 8,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "g_SkyDomeUCoordToAngleScale", 
-      "addr": "0062253e", 
-      "value": "0.0625"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_SkyDomePiConstant", 
-      "addr": "00622542", 
-      "value": "3.14159265350000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_SkyDomeVScale1", 
-      "addr": "0062254a", 
-      "value": "2"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_SkyDomeVCoordToAngleScale", 
-      "addr": "00622552", 
-      "value": "0.25"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_SkyDomeVScale2", 
-      "addr": "0062255a", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_SkyDomeWorldRadius", 
-      "addr": "00622562", 
-      "value": "256"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_SkyDomeVertexScale", 
-      "addr": "00672360", 
-      "value": "5"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].light", 
-      "addr": "00688034", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].color", 
-      "addr": "00688038", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].fog", 
-      "addr": "0068803c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].w_recip", 
-      "addr": "00688040", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004900b9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EDX;"
-    }, 
-    {
-      "line": 41, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((SProjectedVertex *)(*extraout_EDX + extraout_EAX * 0x10),input);"
-    }, 
-    {
-      "line": 41, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((SProjectedVertex *)(*extraout_EDX + extraout_EAX * 0x10),input);"
-    }, 
-    {
-      "line": 43, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(&g_RenderVertexBuffer[0].light)[extraout_EAX * 4] = fVar1;"
-    }, 
-    {
-      "line": 44, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(&g_RenderVertexBuffer[0].color)[extraout_EAX * 4] = (int)fVar1;"
-    }, 
-    {
-      "line": 45, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(&g_RenderVertexBuffer[0].fog)[extraout_EAX * 4] = fVar1;"
-    }, 
-    {
-      "line": 46, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(&g_RenderVertexBuffer[0].w_recip)[extraout_EAX * 4] = 0.0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004900b0", 
-    "signature": "void core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0(float * light_color, int u_coord, int v_coord, float * uv_offset)", 
-    "address_range": [
-      [
-        "004900b0", 
-        "004901ea"
-      ]
-    ], 
-    "name": "core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0"
-  }, 
-  "stack_frame": {
-    "local_size": 76, 
-    "variables": [
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "light_color"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "u_coord"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "v_coord"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "uv_offset"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 92, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 154
+  },
   "cross_references": [
     {
-      "from_addr": "0049051c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0", 
-      "addr": "004901f0"
+      "addr": "004901f0",
+      "from_addr": "0049051c",
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004900b0",
+    "address_range": [
+      [
+        "004900b0",
+        "004901ea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0",
+    "signature": "void core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0(float * light_color, int u_coord, int v_coord, float * uv_offset)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062253e",
+      "name": "g_SkyDomeUCoordToAngleScale",
+      "type": "float",
+      "value": "0.0625"
+    },
+    {
+      "addr": "00622542",
+      "name": "g_SkyDomePiConstant",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "0062254a",
+      "name": "g_SkyDomeVScale1",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "00622552",
+      "name": "g_SkyDomeVCoordToAngleScale",
+      "type": "float",
+      "value": "0.25"
+    },
+    {
+      "addr": "0062255a",
+      "name": "g_SkyDomeVScale2",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00622562",
+      "name": "g_SkyDomeWorldRadius",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00672360",
+      "name": "g_SkyDomeVertexScale",
+      "type": "float",
+      "value": "5"
+    },
+    {
+      "addr": "00688034",
+      "name": "g_RenderVertexBuffer[0].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688038",
+      "name": "g_RenderVertexBuffer[0].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068803c",
+      "name": "g_RenderVertexBuffer[0].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688040",
+      "name": "g_RenderVertexBuffer[0].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "light_color",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "u_coord",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "v_coord",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "uv_offset",
+        "offset": 16,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004900b9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EDX",
+      "text": "int *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 41,
+      "match": "extraout_EDX",
+      "text": "((SProjectedVertex *)(*extraout_EDX + extraout_EAX * 0x10),input);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 41,
+      "match": "extraout_EAX",
+      "text": "((SProjectedVertex *)(*extraout_EDX + extraout_EAX * 0x10),input);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 43,
+      "match": "extraout_EAX",
+      "text": "(&g_RenderVertexBuffer[0].light)[extraout_EAX * 4] = fVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 44,
+      "match": "extraout_EAX",
+      "text": "(&g_RenderVertexBuffer[0].color)[extraout_EAX * 4] = (int)fVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 45,
+      "match": "extraout_EAX",
+      "text": "(&g_RenderVertexBuffer[0].fog)[extraout_EAX * 4] = fVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 46,
+      "match": "extraout_EAX",
+      "text": "(&g_RenderVertexBuffer[0].w_recip)[extraout_EAX * 4] = 0.0;",
+      "type": "extra_output"
     }
   ]
 }

@@ -1,84 +1,84 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 49, 
-    "assembly_lines": 31, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_SoftwareEdgeCount", 
-      "addr": "030e5228", 
-      "value": null
-    }, 
-    {
-      "type": "SSoftwareEdge[16]", 
-      "name": "g_SoftwareEdgeBuffer", 
-      "addr": "030e522c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5274", 
-      "addr": "030e5274", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00551f70", 
-    "signature": "SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_00551f70(int y_value, SSoftwareEdge * edge_ptr)", 
-    "address_range": [
-      [
-        "00551f70", 
-        "00551fa5"
-      ]
-    ], 
-    "name": "engine_prim.c_findEdgeInBuffer_FUN_00551f70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_value"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SSoftwareEdge *", 
-        "size": 4, 
-        "name": "edge_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 31,
+    "complexity_score": 18,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
+  },
   "cross_references": [
     {
-      "from_addr": "00552c4b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40", 
-      "addr": "00552a40"
-    }, 
+      "addr": "00552a40",
+      "from_addr": "00552c4b",
+      "name": "engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00552900", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510", 
-      "addr": "00552510"
+      "addr": "00552510",
+      "from_addr": "00552900",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00551f70",
+    "address_range": [
+      [
+        "00551f70",
+        "00551fa5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_prim.c_findEdgeInBuffer_FUN_00551f70",
+    "signature": "SSoftwareEdge * engine_prim.c_findEdgeInBuffer_FUN_00551f70(int y_value, SSoftwareEdge * edge_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "030e5228",
+      "name": "g_SoftwareEdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e522c",
+      "name": "g_SoftwareEdgeBuffer",
+      "type": "SSoftwareEdge[16]",
+      "value": null
+    },
+    {
+      "addr": "030e5274",
+      "name": "DAT_030e5274",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "y_value",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "edge_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "SSoftwareEdge *"
+      }
+    ]
+  },
+  "suspects": []
 }

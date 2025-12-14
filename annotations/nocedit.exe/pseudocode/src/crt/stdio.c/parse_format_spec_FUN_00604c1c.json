@@ -1,66 +1,66 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 55, 
-    "pseudocode_lines": 55, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 187, 
-    "assembly_lines": 132, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00604c1c", 
-    "signature": "char * crt_stdio.c_parse_format_spec_FUN_00604c1c(char * format_ptr, scanf_state_t * state)", 
-    "address_range": [
-      [
-        "00604c1c", 
-        "00604d15"
-      ]
-    ], 
-    "name": "crt_stdio.c_parse_format_spec_FUN_00604c1c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "format_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "scanf_state_t *", 
-        "size": 4, 
-        "name": "state"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 132,
+    "complexity_score": 55,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 55,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 187
+  },
   "cross_references": [
     {
-      "from_addr": "00604be0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_doscan_FUN_00604950", 
-      "addr": "00604950"
+      "addr": "00604950",
+      "from_addr": "00604be0",
+      "name": "crt_stdio.c_doscan_FUN_00604950",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00604c1c",
+    "address_range": [
+      [
+        "00604c1c",
+        "00604d15"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_parse_format_spec_FUN_00604c1c",
+    "signature": "char * crt_stdio.c_parse_format_spec_FUN_00604c1c(char * format_ptr, scanf_state_t * state)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "format_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "state",
+        "offset": 8,
+        "size": 4,
+        "type": "scanf_state_t *"
+      }
+    ]
+  },
+  "suspects": []
 }

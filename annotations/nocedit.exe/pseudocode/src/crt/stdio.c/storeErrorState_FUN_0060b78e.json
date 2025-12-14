@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 10, 
-    "assembly_lines": 5, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060b78e", 
-    "signature": "void crt_stdio.c_storeErrorState_FUN_0060b78e(uint * destination, uint error_state)", 
-    "address_range": [
-      [
-        "0060b78e", 
-        "0060b798"
-      ]
-    ], 
-    "name": "crt_stdio.c_storeErrorState_FUN_0060b78e"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint *", 
-        "size": 4, 
-        "name": "destination"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "error_state"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 5,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 10
+  },
   "cross_references": [
     {
-      "from_addr": "00606048", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
-      "addr": "00606020"
+      "addr": "00606020",
+      "from_addr": "00606048",
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060b78e",
+    "address_range": [
+      [
+        "0060b78e",
+        "0060b798"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_storeErrorState_FUN_0060b78e",
+    "signature": "void crt_stdio.c_storeErrorState_FUN_0060b78e(uint * destination, uint error_state)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "destination",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "error_state",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -46,16 +46,16 @@ section .text
     MOV dword ptr [EBP + -0x18],ECX     ; 00603d09
     MOV dword ptr [EBP + -0x14],EDX     ; 00603d0c
     TEST EBX,EBX                        ; 00603d0f
-    JGE 0x00603d35                      ; 00603d11 | LAB_00603d35
-        ;   XREF to: 00603d35 (CONDITIONAL_JUMP)
+    JGE 0x00603d35                      ; 00603d11
+        ;   XREF to: 00603d35 (CONDITIONAL_JUMP)  ; LAB_00603d35
     MOV EAX,EBX                         ; 00603d13
     NEG EAX                             ; 00603d15
     PUSH EAX                            ; 00603d17
     LEA EAX,[EBP + -0x18]               ; 00603d18
     PUSH EAX                            ; 00603d1b
     MOV EBX,ESI                         ; 00603d1c
-    CALL crt_unknown.c_FUN_00603c74     ; 00603d1e | undefined crt_unknown.c_FUN_00603c74()
-        ;   XREF to: 00603c74 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_FUN_00603c74     ; 00603d1e
+        ;   XREF to: 00603c74 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00603c74()
     ADD ESP,0x8                         ; 00603d23
     LEA EDX,[EBP + -0x18]               ; 00603d26
     MOV EAX,ESI                         ; 00603d29
@@ -63,14 +63,14 @@ section .text
     FLD extended double ptr [EDX]       ; 00603d2d
     FDIVP                               ; 00603d2f
     FSTP extended double ptr [EBX]      ; 00603d31
-    JMP 0x00603d51                      ; 00603d33 | LAB_00603d51
-        ;   XREF to: 00603d51 (UNCONDITIONAL_JUMP)
+    JMP 0x00603d51                      ; 00603d33
+        ;   XREF to: 00603d51 (UNCONDITIONAL_JUMP)  ; LAB_00603d51
     PUSH EBX                            ; 00603d35
         ;   Label: LAB_00603d35
     LEA EAX,[EBP + -0x18]               ; 00603d36
     PUSH EAX                            ; 00603d39
-    CALL crt_unknown.c_FUN_00603c74     ; 00603d3a | undefined crt_unknown.c_FUN_00603c74()
-        ;   XREF to: 00603c74 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_FUN_00603c74     ; 00603d3a
+        ;   XREF to: 00603c74 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00603c74()
     MOV EBX,ESI                         ; 00603d3f
     ADD ESP,0x8                         ; 00603d41
     LEA EDX,[EBP + -0x18]               ; 00603d44

@@ -1,122 +1,122 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 6, 
-    "global_count": 2, 
-    "total_lines": 43, 
-    "assembly_lines": 31, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_ceil_FUN_006001b2", 
-      "addr": "006001b2"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "Sleep", 
-      "addr": "EXTERNAL:0000009c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "Sleep*", 
-      "name": "Sleep", 
-      "addr": "00611644", 
-      "value": "00212228"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_SecondsToMillisecondsMultiplier", 
-      "addr": "00658184", 
-      "value": "1000"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f40e0", 
-    "signature": "void wincore_winrun.cpp_sleep_FUN_005f40e0(double seconds)", 
-    "address_range": [
-      [
-        "005f40e0", 
-        "005f4135"
-      ]
-    ], 
-    "name": "wincore_winrun.cpp_sleep_FUN_005f40e0"
-  }, 
-  "stack_frame": {
-    "local_size": 20, 
-    "variables": [
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_8"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "seconds"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 31,
+    "complexity_score": 12,
+    "cross_reference_count": 6,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
+  },
   "cross_references": [
     {
-      "from_addr": "004b4ca6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
-      "addr": "004b4220"
-    }, 
+      "addr": "004b4220",
+      "from_addr": "004b4ca6",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bbe0a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bbe0a",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005abbdf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_audioThreadProc_FUN_005abba0", 
-      "addr": "005abba0"
-    }, 
+      "addr": "005abba0",
+      "from_addr": "005abbdf",
+      "name": "sound_sndmain.cpp_audioThreadProc_FUN_005abba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005abcd9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_killSoundThread_FUN_005abcb0", 
-      "addr": "005abcb0"
-    }, 
+      "addr": "005abcb0",
+      "from_addr": "005abcd9",
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_005abcb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005abc8c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00", 
-      "addr": "005abc00"
-    }, 
+      "addr": "005abc00",
+      "from_addr": "005abc8c",
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ad5ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0", 
-      "addr": "005ad3b0"
+      "addr": "005ad3b0",
+      "from_addr": "005ad5ac",
+      "name": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005f40e0",
+    "address_range": [
+      [
+        "005f40e0",
+        "005f4135"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winrun.cpp_sleep_FUN_005f40e0",
+    "signature": "void wincore_winrun.cpp_sleep_FUN_005f40e0(double seconds)"
+  },
+  "function_calls": [
+    {
+      "addr": "006001b2",
+      "name": "crt_math.c_ceil_FUN_006001b2"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "EXTERNAL:0000009c",
+      "name": "Sleep"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611644",
+      "name": "Sleep",
+      "type": "Sleep*",
+      "value": "00212228"
+    },
+    {
+      "addr": "00658184",
+      "name": "g_SecondsToMillisecondsMultiplier",
+      "type": "double",
+      "value": "1000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "seconds",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "suspects": []
 }

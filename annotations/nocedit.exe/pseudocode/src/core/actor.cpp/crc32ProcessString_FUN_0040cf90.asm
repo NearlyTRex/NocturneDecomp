@@ -25,21 +25,21 @@ section .text
     MOV AH,byte ptr [EBX]               ; 0040cf96
     MOV ESI,dword ptr [ESP + 0xc]       ; 0040cf98
     TEST AH,AH                          ; 0040cf9c
-    JZ 0x0040cfc0                       ; 0040cf9e | LAB_0040cfc0
-        ;   XREF to: 0040cfc0 (CONDITIONAL_JUMP)
+    JZ 0x0040cfc0                       ; 0040cf9e
+        ;   XREF to: 0040cfc0 (CONDITIONAL_JUMP)  ; LAB_0040cfc0
     XOR EAX,EAX                         ; 0040cfa0
         ;   Label: LAB_0040cfa0
     MOV AL,byte ptr [EBX]               ; 0040cfa2
     PUSH EAX                            ; 0040cfa4
     PUSH ESI                            ; 0040cfa5
     INC EBX                             ; 0040cfa6
-    CALL core_actor.cpp_crc32ProcessByte_FUN_0040ce30 ; 0040cfa7 | void core_actor.cpp_crc32ProcessByte_FUN_0040ce30(uint * crc_state, byte input_byte)
-        ;   XREF to: 0040ce30 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_crc32ProcessByte_FUN_0040ce30 ; 0040cfa7
+        ;   XREF to: 0040ce30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessByte_FUN_0040ce30(uint * crc_state, byte input_byte)
     MOV DL,byte ptr [EBX]               ; 0040cfac
     ADD ESP,0x8                         ; 0040cfae
     TEST DL,DL                          ; 0040cfb1
-    JNZ 0x0040cfa0                      ; 0040cfb3 | LAB_0040cfa0
-        ;   XREF to: 0040cfa0 (CONDITIONAL_JUMP)
+    JNZ 0x0040cfa0                      ; 0040cfb3
+        ;   XREF to: 0040cfa0 (CONDITIONAL_JUMP)  ; LAB_0040cfa0
     LEA EAX,[EAX]                       ; 0040cfb5
     LEA EDX,[EDX]                       ; 0040cfbb
     MOV EBX,EBX                         ; 0040cfbe

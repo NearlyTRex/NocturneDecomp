@@ -1,239 +1,239 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 172, 
-    "pseudocode_lines": 97, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 306, 
-    "assembly_lines": 209, 
-    "suspect_count": 7, 
+    "assembly_lines": 209,
+    "complexity_score": 172,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 8,
+    "pseudocode_lines": 97,
+    "suspect_count": 7,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0", 
-      "addr": "004874d0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_DashAnimationTimeScale", 
-      "addr": "00621d66", 
-      "value": "0.0000152587890625"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DashLength", 
-      "addr": "006703dc", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_DashAnimationThreshold", 
-      "addr": "006703e0", 
-      "value": "0.1000000"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_DashAnimationAccumulator", 
-      "addr": "02c6d2b8", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "g_DashAnimationOffset", 
-      "addr": "02c6d2bc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DashAnimationLastFrame", 
-      "addr": "02c6d2c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GlobalDeltaTimeInt", 
-      "addr": "02cf6a80", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AnimationTimerValue", 
-      "addr": "02cf6a84", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 8, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 39, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar4 = x1 - *(int *)(extraout_ECX + 8);"
-    }, 
-    {
-      "line": 40, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "x = x2 - *(int *)(extraout_ECX + 8);"
-    }, 
-    {
-      "line": 41, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar2 = y1 - *(int *)(extraout_ECX + 0xc);"
-    }, 
-    {
-      "line": 42, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "y = extraout_EDX - *(int *)(extraout_ECX + 0xc);"
-    }, 
-    {
-      "line": 42, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "y = extraout_EDX - *(int *)(extraout_ECX + 0xc);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00487bc0", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)", 
-    "address_range": [
-      [
-        "00487bc0", 
-        "00487dd7"
-      ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0"
-  }, 
-  "stack_frame": {
-    "local_size": 48, 
-    "variables": [
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y1"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x2"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y2"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 68, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 306
+  },
   "cross_references": [
     {
-      "from_addr": "00487ab7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30", 
-      "addr": "00487a30"
+      "addr": "00487a30",
+      "from_addr": "00487ab7",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00487bc0",
+    "address_range": [
+      [
+        "00487bc0",
+        "00487dd7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004874d0",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00621d66",
+      "name": "g_DashAnimationTimeScale",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "006703dc",
+      "name": "g_DashLength",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "006703e0",
+      "name": "g_DashAnimationThreshold",
+      "type": "float",
+      "value": "0.1000000"
+    },
+    {
+      "addr": "02c6d2b8",
+      "name": "g_DashAnimationAccumulator",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "02c6d2bc",
+      "name": "g_DashAnimationOffset",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "02c6d2c0",
+      "name": "g_DashAnimationLastFrame",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a80",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a84",
+      "name": "g_AnimationTimerValue",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 39,
+      "match": "extraout_ECX",
+      "text": "iVar4 = x1 - *(int *)(extraout_ECX + 8);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 40,
+      "match": "extraout_ECX",
+      "text": "x = x2 - *(int *)(extraout_ECX + 8);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 41,
+      "match": "extraout_ECX",
+      "text": "iVar2 = y1 - *(int *)(extraout_ECX + 0xc);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 42,
+      "match": "extraout_EDX",
+      "text": "y = extraout_EDX - *(int *)(extraout_ECX + 0xc);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 42,
+      "match": "extraout_ECX",
+      "text": "y = extraout_EDX - *(int *)(extraout_ECX + 0xc);",
+      "type": "extra_output"
     }
   ]
 }

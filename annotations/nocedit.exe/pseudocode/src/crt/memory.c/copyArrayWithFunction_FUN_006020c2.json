@@ -1,105 +1,105 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 4, 
-    "global_count": 0, 
-    "total_lines": 41, 
-    "assembly_lines": 32, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006020c2", 
-    "signature": "void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, void * copy_func)", 
-    "address_range": [
-      [
-        "006020c2", 
-        "006020fa"
-      ]
-    ], 
-    "name": "crt_memory.c_copyArrayWithFunction_FUN_006020c2"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "dest"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "source"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "count"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "element_size"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "copy_func"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 32,
+    "complexity_score": 9,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
+  },
   "cross_references": [
     {
-      "from_addr": "0051f04a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0", 
-      "addr": "0051efe0"
-    }, 
+      "addr": "0051efe0",
+      "from_addr": "0051f04a",
+      "name": "shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051b6c1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570", 
-      "addr": "0051b570"
-    }, 
+      "addr": "0051b570",
+      "from_addr": "0051b6c1",
+      "name": "shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051bf63", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30", 
-      "addr": "0051bd30"
-    }, 
+      "addr": "0051bd30",
+      "from_addr": "0051bf63",
+      "name": "shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d7b27", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
-      "addr": "005d77a0"
+      "addr": "005d77a0",
+      "from_addr": "005d7b27",
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "006020c2",
+    "address_range": [
+      [
+        "006020c2",
+        "006020fa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_memory.c_copyArrayWithFunction_FUN_006020c2",
+    "signature": "void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, void * copy_func)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "source",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "element_size",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "copy_func",
+        "offset": 20,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": []
 }

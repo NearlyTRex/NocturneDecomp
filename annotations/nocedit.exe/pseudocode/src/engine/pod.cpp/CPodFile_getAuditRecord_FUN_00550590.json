@@ -1,215 +1,215 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 126, 
-    "pseudocode_lines": 41, 
-    "cross_reference_count": 3, 
-    "global_count": 11, 
-    "total_lines": 144, 
-    "assembly_lines": 103, 
-    "suspect_count": 6, 
+    "assembly_lines": 103,
+    "complexity_score": 126,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 11,
+    "pseudocode_lines": 41,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_00640411", 
-      "addr": "00640411", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CPodFile_getAuditRecord__00640423", 
-      "addr": "00640423", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_0064045f", 
-      "addr": "0064045f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_00640471", 
-      "addr": "00640471", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_00640474", 
-      "addr": "00640474", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CPodFile_getAuditRecord__00640486", 
-      "addr": "00640486", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_006404af", 
-      "addr": "006404af", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CPodFile_getAuditRecord__006404c1", 
-      "addr": "006404c1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_006404ed", 
-      "addr": "006404ed", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fseek_FUN_005ffacc(file,in_stack_00000014 * 0x138 + this_ptr->total_file_size,0);"
-    }, 
-    {
-      "line": 30, 
-      "match": "&stack0xfffffecc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_fread_FUN_005fd990(&stack0xfffffecc,0x138,1,file);"
-    }, 
-    {
-      "line": 41, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "output_buffer = (uint *)((int)output_buffer + ((uint)bVar3 * -2 + 1) * 4);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00550590", 
-    "signature": "void engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, void * output_buffer)", 
-    "address_range": [
-      [
-        "00550590", 
-        "005506ba"
-      ]
-    ], 
-    "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590"
-  }, 
-  "stack_frame": {
-    "local_size": 328, 
-    "variables": [
-      {
-        "offset": -324, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_144"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPodFile *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "record_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 336, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 144
+  },
   "cross_references": [
     {
-      "from_addr": "004b5c3e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
-      "addr": "004b5a50"
-    }, 
+      "addr": "004b5a50",
+      "from_addr": "004b5c3e",
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bd40f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190", 
-      "addr": "004bd190"
-    }, 
+      "addr": "004bd190",
+      "from_addr": "004bd40f",
+      "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b8068", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50", 
-      "addr": "004b7f50"
+      "addr": "004b7f50",
+      "from_addr": "004b8068",
+      "name": "engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00550590",
+    "address_range": [
+      [
+        "00550590",
+        "005506ba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590",
+    "signature": "void engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile * this_ptr, int record_index, void * output_buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "005ffacc",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640411",
+      "name": "s_engine_pod_cpp_00640411",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640423",
+      "name": "s_CPodFile_getAuditRecord__00640423",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064045f",
+      "name": "s_engine_pod_cpp_0064045f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640471",
+      "name": "s_rb_00640471",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640474",
+      "name": "s_engine_pod_cpp_00640474",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640486",
+      "name": "s_CPodFile_getAuditRecord__00640486",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006404af",
+      "name": "s_engine_pod_cpp_006404af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006404c1",
+      "name": "s_CPodFile_getAuditRecord__006404c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006404ed",
+      "name": "s_engine_pod_cpp_006404ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 336,
+    "local_size": 328,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPodFile *"
+      },
+      {
+        "is_param": true,
+        "name": "record_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000014",
+      "text": "crt_stdio_c_fseek_FUN_005ffacc(file,in_stack_00000014 * 0x138 + this_ptr->total_file_size,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 30,
+      "match": "&stack0xfffffecc",
+      "text": "crt_stdio_c_fread_FUN_005fd990(&stack0xfffffecc,0x138,1,file);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)",
+      "text": "output_buffer = (uint *)((int)output_buffer + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

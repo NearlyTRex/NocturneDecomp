@@ -30,10 +30,10 @@ section .text
     PUSH EDX                            ; 005f30d4
     MOV ECX,dword ptr [ESP + 0x8]       ; 005f30d5
     PUSH ECX                            ; 005f30d9
-    CALL dword ptr CS:[0x6114e0]        ; 005f30da | SetCursorPos * SetCursorPos
+    CALL dword ptr CS:[0x6114e0]        ; 005f30da | SetCursorPos
     MOV EAX,dword ptr [ESP + 0x4]       ; 005f30e1
-    MOV [0x02cf6a8c],EAX                ; 005f30e5 | int g_MouseX
+    MOV [0x02cf6a8c],EAX                ; 005f30e5 | g_MouseX
     MOV EAX,dword ptr [ESP + 0x8]       ; 005f30ea
-    MOV [0x02cf6a90],EAX                ; 005f30ee | int g_MouseY
+    MOV [0x02cf6a90],EAX                ; 005f30ee | g_MouseY
     RET                                 ; 005f30f3
 

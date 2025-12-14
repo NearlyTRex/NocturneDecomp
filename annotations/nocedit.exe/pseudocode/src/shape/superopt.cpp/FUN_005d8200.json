@@ -1,97 +1,97 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 82, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 24, 
-    "assembly_lines": 17, 
-    "suspect_count": 7, 
+    "assembly_lines": 17,
+    "complexity_score": 82,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "double *in_stack_00000004;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return SQRT(in_stack_00000004[2] * in_stack_00000004[2] +"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return SQRT(in_stack_00000004[2] * in_stack_00000004[2] +"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])"
-    }
-  ], 
+    ],
+    "total_lines": 24
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "005d8200", 
-    "signature": "undefined shape_superopt.cpp_FUN_005d8200()", 
+    "address": "005d8200",
     "address_range": [
       [
-        "005d8200", 
+        "005d8200",
         "005d8228"
       ]
-    ], 
-    "name": "shape_superopt.cpp_FUN_005d8200"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "shape_superopt.cpp_FUN_005d8200",
+    "signature": "undefined shape_superopt.cpp_FUN_005d8200()"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 12, 
+    "frame_size": 12,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_8"
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 8,
+        "type": "undefined8"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "double *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "return SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "return SQRT(in_stack_00000004[2] * in_stack_00000004[2] +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "*in_stack_00000004 * *in_stack_00000004 + in_stack_00000004[1] * in_stack_00000004[1])",
+      "type": "stack_param"
+    }
+  ]
 }

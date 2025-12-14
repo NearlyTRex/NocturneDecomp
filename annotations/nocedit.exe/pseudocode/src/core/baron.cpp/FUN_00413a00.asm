@@ -27,20 +27,20 @@ section .text
         ;   Label: LAB_00413a11
     PUSH EAX                            ; 00413a14
     PUSH ESI                            ; 00413a15
-    CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 00413a16 | int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 00413a16
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
     ADD ESP,0x8                         ; 00413a1b
     CMP EAX,0x64                        ; 00413a1e
-    JNC 0x00413a60                      ; 00413a21 | LAB_00413a60
-        ;   XREF to: 00413a60 (CONDITIONAL_JUMP)
+    JNC 0x00413a60                      ; 00413a21
+        ;   XREF to: 00413a60 (CONDITIONAL_JUMP)  ; LAB_00413a60
     FLD float ptr [EBP + 0x14]          ; 00413a23
         ;   Label: LAB_00413a23
     FLDZ                                ; 00413a26
     FCOMPP                              ; 00413a28
     FNSTSW AX                           ; 00413a2a
     SAHF                                ; 00413a2c
-    JC 0x00413a11                       ; 00413a2d | LAB_00413a11
-        ;   XREF to: 00413a11 (CONDITIONAL_JUMP)
+    JC 0x00413a11                       ; 00413a2d
+        ;   XREF to: 00413a11 (CONDITIONAL_JUMP)  ; LAB_00413a11
     MOV ESP,EBP                         ; 00413a2f
     POP EBP                             ; 00413a31
     POP ESI                             ; 00413a32
@@ -48,23 +48,23 @@ section .text
     RET                                 ; 00413a34
     PUSH EBX                            ; 00413a35
         ;   Label: LAB_00413a35
-    CALL core_baron.cpp_FUN_004136b0    ; 00413a36 | undefined core_baron.cpp_FUN_004136b0()
-        ;   XREF to: 004136b0 (UNCONDITIONAL_CALL)
+    CALL core_baron.cpp_FUN_004136b0    ; 00413a36
+        ;   XREF to: 004136b0 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_004136b0()
     ADD ESP,0x4                         ; 00413a3b
-    JMP 0x00413a23                      ; 00413a3e | LAB_00413a23
-        ;   XREF to: 00413a23 (UNCONDITIONAL_JUMP)
+    JMP 0x00413a23                      ; 00413a3e
+        ;   XREF to: 00413a23 (UNCONDITIONAL_JUMP)  ; LAB_00413a23
     MOV dword ptr [EBX + 0x1fccc],0x0   ; 00413a40
         ;   Label: LAB_00413a40
     MOV dword ptr [EBX + 0x1fcd0],0x0   ; 00413a4a
     MOV dword ptr [EBX + 0x1fcac],0x0   ; 00413a54
-    JMP 0x00413a23                      ; 00413a5e | LAB_00413a23
-        ;   XREF to: 00413a23 (UNCONDITIONAL_JUMP)
-    JBE 0x00413a35                      ; 00413a60 | LAB_00413a35
+    JMP 0x00413a23                      ; 00413a5e
+        ;   XREF to: 00413a23 (UNCONDITIONAL_JUMP)  ; LAB_00413a23
+    JBE 0x00413a35                      ; 00413a60
+        ;   XREF to: 00413a35 (CONDITIONAL_JUMP)  ; LAB_00413a35
         ;   Label: LAB_00413a60
-        ;   XREF to: 00413a35 (CONDITIONAL_JUMP)
     CMP EAX,0x6e                        ; 00413a62
-    JZ 0x00413a40                       ; 00413a65 | LAB_00413a40
-        ;   XREF to: 00413a40 (CONDITIONAL_JUMP)
-    JMP 0x00413a23                      ; 00413a67 | LAB_00413a23
-        ;   XREF to: 00413a23 (UNCONDITIONAL_JUMP)
+    JZ 0x00413a40                       ; 00413a65
+        ;   XREF to: 00413a40 (CONDITIONAL_JUMP)  ; LAB_00413a40
+    JMP 0x00413a23                      ; 00413a67
+        ;   XREF to: 00413a23 (UNCONDITIONAL_JUMP)  ; LAB_00413a23
 

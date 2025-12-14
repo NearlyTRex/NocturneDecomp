@@ -16,6 +16,7 @@
 ;   MessageBoxA* MessageBoxA = 00211b44
 ;   QueryPerformanceCounter* QueryPerformanceCounter = 002120a8
 ;   QueryPerformanceFrequency* QueryPerformanceFrequency = 002120c2
+;   TerminatedCString s_Unable_to_set_timer_00657f14
 ;   double g_RelatedToQPC3 = 4294967296
 ;   TerminatedCString s_Nocturne_Editor_006581b7
 ;   char* g_ApplicationTimerTitle = 006581b7
@@ -26,7 +27,7 @@
 ;   double g_TimerCalibration
 ;   BOOL g_UseMultimediaTimer
 ;   HWND g_MainWindowHandle
-;   int g_InputDisabled
+;   ... and 1 more
 ;
 ; Called Functions:
 ;   MessageBoxA
@@ -46,29 +47,29 @@ section .text
     PUSH EBP                            ; 005f2b83
     MOV EBP,ESP                         ; 005f2b84
     SUB ESP,0x10                        ; 005f2b86
-    PUSH 0x3f96bb0                      ; 005f2b89 | LARGE_INTEGER g_PerformanceFrequency
-    CALL dword ptr CS:[0x6115fc]        ; 005f2b8e | QueryPerformanceFrequency * QueryPerformanceFrequency
+    PUSH 0x3f96bb0                      ; 005f2b89 | g_PerformanceFrequency
+    CALL dword ptr CS:[0x6115fc]        ; 005f2b8e | QueryPerformanceFrequency
     CMP EAX,0x1                         ; 005f2b95
-    JNZ 0x005f2d5a                      ; 005f2b98 | LAB_005f2d5a
-        ;   XREF to: 005f2d5a (CONDITIONAL_JUMP)
+    JNZ 0x005f2d5a                      ; 005f2b98
+        ;   XREF to: 005f2d5a (CONDITIONAL_JUMP)  ; LAB_005f2d5a
     FILD dword ptr [0x03f96bb4]         ; 005f2b9e | g_PerformanceFrequency+4
-    FMUL double ptr [0x00657f2c]        ; 005f2ba4 | double g_RelatedToQPC3
+    FMUL double ptr [0x00657f2c]        ; 005f2ba4 | g_RelatedToQPC3
     XOR EDX,EDX                         ; 005f2baa
-    MOV EAX,[0x03f96bb0]                ; 005f2bac | LARGE_INTEGER g_PerformanceFrequency
+    MOV EAX,[0x03f96bb0]                ; 005f2bac | g_PerformanceFrequency
     MOV dword ptr [EBP + -0xc],EDX      ; 005f2bb1
     MOV dword ptr [EBP + -0x10],EAX     ; 005f2bb4
     FILD qword ptr [EBP + -0x10]        ; 005f2bb7
     FADDP                               ; 005f2bba
-    PUSH 0x3f96ba8                      ; 005f2bbc | LARGE_INTEGER g_PerformanceCounter
-    FSTP double ptr [0x03f96bb8]        ; 005f2bc1 | double g_TimerCalibration
-    CALL dword ptr CS:[0x6115f8]        ; 005f2bc7 | QueryPerformanceCounter * QueryPerformanceCounter
+    PUSH 0x3f96ba8                      ; 005f2bbc | g_PerformanceCounter
+    FSTP double ptr [0x03f96bb8]        ; 005f2bc1 | g_TimerCalibration
+    CALL dword ptr CS:[0x6115f8]        ; 005f2bc7 | QueryPerformanceCounter
     XOR EAX,EAX                         ; 005f2bce
         ;   Label: LAB_005f2bce
     MOV dword ptr [EBP + -0x8],EAX      ; 005f2bd0
     MOV dword ptr [EBP + -0x4],EAX      ; 005f2bd3
-    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 005f2bd6 | int wincore_winrun.cpp_getTime_FUN_005f2dc0()
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 005f2bd6
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
         ;   Label: LAB_005f2bd6
-        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)
     PUSH EAX                            ; 005f2bdb
     MOV EBX,0x0                         ; 005f2bdc
     ADD EBX,0x1                         ; 005f2be1
@@ -172,10 +173,10 @@ section .text
     ADD EBX,0x1                         ; 005f2d04
     ADD EBX,0x1                         ; 005f2d07
     CMP EBX,0x5f5e100                   ; 005f2d0a
-    JC 0x005f2be1                       ; 005f2d10 | LAB_005f2be1
-        ;   XREF to: 005f2be1 (CONDITIONAL_JUMP)
-    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 005f2d16 | int wincore_winrun.cpp_getTime_FUN_005f2dc0()
-        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)
+    JC 0x005f2be1                       ; 005f2d10
+        ;   XREF to: 005f2be1 (CONDITIONAL_JUMP)  ; LAB_005f2be1
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 005f2d16
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
     POP EBX                             ; 005f2d1b
     SUB EAX,EBX                         ; 005f2d1c
     MOV EBX,EAX                         ; 005f2d1e
@@ -187,14 +188,14 @@ section .text
     INC ECX                             ; 005f2d31
     MOV dword ptr [EBP + -0x4],ECX      ; 005f2d32
     CMP ECX,0x5                         ; 005f2d35
-    JL 0x005f2bd6                       ; 005f2d38 | LAB_005f2bd6
-        ;   XREF to: 005f2bd6 (CONDITIONAL_JUMP)
+    JL 0x005f2bd6                       ; 005f2d38
+        ;   XREF to: 005f2bd6 (CONDITIONAL_JUMP)  ; LAB_005f2bd6
     MOV ECX,0x5                         ; 005f2d3e
     MOV EAX,dword ptr [EBP + -0x8]      ; 005f2d43
     MOV EDX,dword ptr [EBP + -0x8]      ; 005f2d46
     SAR EDX,0x1f                        ; 005f2d49
     IDIV ECX                            ; 005f2d4c
-    MOV [0x02d05250],EAX                ; 005f2d4e | int g_CalibratedCPUSpeed
+    MOV [0x02d05250],EAX                ; 005f2d4e | g_CalibratedCPUSpeed
     MOV ESP,EBP                         ; 005f2d53
     POP EBP                             ; 005f2d55
     POP EDI                             ; 005f2d56
@@ -204,22 +205,22 @@ section .text
     MOV ECX,0x1                         ; 005f2d5a
         ;   Label: LAB_005f2d5a
     PUSH ECX                            ; 005f2d5f
-    MOV dword ptr [0x03f96bc4],ECX      ; 005f2d60 | BOOL g_UseMultimediaTimer
-    CALL dword ptr CS:[0x611414]        ; 005f2d66 | timeBeginPeriod * timeBeginPeriod
+    MOV dword ptr [0x03f96bc4],ECX      ; 005f2d60 | g_UseMultimediaTimer
+    CALL dword ptr CS:[0x611414]        ; 005f2d66 | timeBeginPeriod
     TEST EAX,EAX                        ; 005f2d6d
-    JZ 0x005f2bce                       ; 005f2d6f | LAB_005f2bce
-        ;   XREF to: 005f2bce (CONDITIONAL_JUMP)
+    JZ 0x005f2bce                       ; 005f2d6f
+        ;   XREF to: 005f2bce (CONDITIONAL_JUMP)  ; LAB_005f2bce
     PUSH 0x31                           ; 005f2d75
-    MOV EBX,dword ptr [0x006849a0]      ; 005f2d77 | = "Nocturne Editor" | char * g_ApplicationTimerTitle | s_Nocturne_Editor_006581b7 = Nocturne Editor
-    PUSH EBX                            ; 005f2d7d | = "Nocturne Editor" | s_Nocturne_Editor_006581b7 = Nocturne Editor
-    PUSH 0x657f14                       ; 005f2d7e | = "Unable to set timer" | s_Unable_to_set_timer_00657f14 = Unable to set timer
-    MOV ESI,dword ptr [0x03f98468]      ; 005f2d83 | HWND g_MainWindowHandle
+    MOV EBX,dword ptr [0x006849a0]      ; 005f2d77 | = "Nocturne Editor" | g_ApplicationTimerTitle
+    PUSH EBX                            ; 005f2d7d | = "Nocturne Editor"
+    PUSH 0x657f14                       ; 005f2d7e | = "Unable to set timer"
+    MOV ESI,dword ptr [0x03f98468]      ; 005f2d83 | g_MainWindowHandle
     PUSH ESI                            ; 005f2d89
-    CALL dword ptr CS:[0x6114c4]        ; 005f2d8a | MessageBoxA * MessageBoxA
+    CALL dword ptr CS:[0x6114c4]        ; 005f2d8a | MessageBoxA
     CMP EAX,0x2                         ; 005f2d91
-    JNZ 0x005f2bce                      ; 005f2d94 | LAB_005f2bce
-        ;   XREF to: 005f2bce (CONDITIONAL_JUMP)
-    MOV dword ptr [0x03f9846c],0x1      ; 005f2d9a | int g_InputDisabled
-    JMP 0x005f2bce                      ; 005f2da4 | LAB_005f2bce
-        ;   XREF to: 005f2bce (UNCONDITIONAL_JUMP)
+    JNZ 0x005f2bce                      ; 005f2d94
+        ;   XREF to: 005f2bce (CONDITIONAL_JUMP)  ; LAB_005f2bce
+    MOV dword ptr [0x03f9846c],0x1      ; 005f2d9a | g_InputDisabled
+    JMP 0x005f2bce                      ; 005f2da4
+        ;   XREF to: 005f2bce (UNCONDITIONAL_JUMP)  ; LAB_005f2bce
 

@@ -20,8 +20,8 @@ section .text
         ;   Label: core_actor.cpp_copyVector_FUN_00410360
     MOV EDX,dword ptr [ESP + 0x8]       ; 00410364
     CMP EAX,EDX                         ; 00410368
-    JNZ 0x0041036d                      ; 0041036a | LAB_0041036d
-        ;   XREF to: 0041036d (CONDITIONAL_JUMP)
+    JNZ 0x0041036d                      ; 0041036a
+        ;   XREF to: 0041036d (CONDITIONAL_JUMP)  ; LAB_0041036d
     RET                                 ; 0041036c
     MOV ECX,dword ptr [EDX]             ; 0041036d
         ;   Label: LAB_0041036d

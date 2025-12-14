@@ -1,151 +1,151 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 136, 
-    "pseudocode_lines": 91, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 287, 
-    "assembly_lines": 196, 
-    "suspect_count": 4, 
+    "assembly_lines": 196,
+    "complexity_score": 136,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 91,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0", 
-      "addr": "005310f0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 24, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar9 = (int *)((int)granule_info + granule * 0xf8);"
-    }, 
-    {
-      "line": 72, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "} while (piVar2 != (int *)((int)piVar9 + iVar8));"
-    }, 
-    {
-      "line": 90, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)granule_info + iVar8) = *piVar9;"
-    }, 
-    {
-      "line": 92, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)granule_info + (int)frame * 0xf8 + 0x58) = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00531480", 
-    "signature": "void sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder * this_ptr, int * scalefactor_dest, SMpegLayer3Granule * granule_info, int channel, int granule, SMpegFrame * frame)", 
-    "address_range": [
-      [
-        "00531480", 
-        "0053167a"
-      ]
-    ], 
-    "name": "sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMP3Decoder *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "scalefactor_dest"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SMpegLayer3Granule *", 
-        "size": 4, 
-        "name": "granule_info"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "channel"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "granule"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "SMpegFrame *", 
-        "size": 4, 
-        "name": "frame"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 60, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    ],
+    "total_lines": 287
+  },
   "cross_references": [
     {
-      "from_addr": "00535c00", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
-      "addr": "00534d40"
+      "addr": "00534d40",
+      "from_addr": "00535c00",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00531480",
+    "address_range": [
+      [
+        "00531480",
+        "0053167a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480",
+    "signature": "void sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder * this_ptr, int * scalefactor_dest, SMpegLayer3Granule * granule_info, int channel, int granule, SMpegFrame * frame)"
+  },
+  "function_calls": [
+    {
+      "addr": "005310f0",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "scalefactor_dest",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "granule_info",
+        "offset": 12,
+        "size": 4,
+        "type": "SMpegLayer3Granule *"
+      },
+      {
+        "is_param": true,
+        "name": "channel",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "granule",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame",
+        "offset": 24,
+        "size": 4,
+        "type": "SMpegFrame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(int *)((int)",
+      "text": "piVar9 = (int *)((int)granule_info + granule * 0xf8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(int *)((int)",
+      "text": "} while (piVar2 != (int *)((int)piVar9 + iVar8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)granule_info + iVar8) = *piVar9;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)granule_info + (int)frame * 0xf8 + 0x58) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

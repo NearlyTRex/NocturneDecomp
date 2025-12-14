@@ -299,7 +299,7 @@ shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630
       *(uint *)((int)afStack_1b8 + iVar4) =
            *(uint *)((int)this_ptr->vertex_data[vertex_idx_2].adjacent_edge_indices + iVar4);
       iVar4 = iVar9;
-    } while (SBORROW /* signed borrow */4(iVar9,iVar8 * 4) != iVar9 + iVar8 * -4 < 0);
+    } while (iVar9 < iVar8 * 4);
   }
   if (0 < iVar8) {
     local_18 = 0;

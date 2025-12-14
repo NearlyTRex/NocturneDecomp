@@ -39,16 +39,16 @@ section .text
     MOV ESI,dword ptr [ESP + 0x28]      ; 0048d7a7
     MOV EBX,dword ptr [ESP + 0x2c]      ; 0048d7ab
     CMP dword ptr [ESI + 0xc],0x0       ; 0048d7af
-    JZ 0x0048d7cd                       ; 0048d7b3 | LAB_0048d7cd
-        ;   XREF to: 0048d7cd (CONDITIONAL_JUMP)
+    JZ 0x0048d7cd                       ; 0048d7b3
+        ;   XREF to: 0048d7cd (CONDITIONAL_JUMP)  ; LAB_0048d7cd
     LEA EAX,[EBX + 0x8]                 ; 0048d7b5
     PUSH EAX                            ; 0048d7b8
-    CALL engine_3d.c_isVisiblePlane_FUN_00403950 ; 0048d7b9 | int engine_3d.c_isVisiblePlane_FUN_00403950(SClipPlane * plane)
-        ;   XREF to: 00403950 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_isVisiblePlane_FUN_00403950 ; 0048d7b9
+        ;   XREF to: 00403950 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403950(SClipPlane * plane)
     ADD ESP,0x4                         ; 0048d7be
     TEST EAX,EAX                        ; 0048d7c1
-    JNZ 0x0048d7cd                      ; 0048d7c3 | LAB_0048d7cd
-        ;   XREF to: 0048d7cd (CONDITIONAL_JUMP)
+    JNZ 0x0048d7cd                      ; 0048d7c3
+        ;   XREF to: 0048d7cd (CONDITIONAL_JUMP)  ; LAB_0048d7cd
     ADD ESP,0x14                        ; 0048d7c5
         ;   Label: LAB_0048d7c5
     POP EBP                             ; 0048d7c8
@@ -86,13 +86,13 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0048d82e
     PUSH EAX                            ; 0048d832
     PUSH ESI                            ; 0048d833
-    CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0 ; 0048d834 | void engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
-        ;   XREF to: 0048d8a0 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0 ; 0048d834
+        ;   XREF to: 0048d8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
     MOV EDI,dword ptr [EBX + 0x4]       ; 0048d839
     ADD ESP,0xc                         ; 0048d83c
     CMP EDI,0x3                         ; 0048d83f
-    JLE 0x0048d7c5                      ; 0048d842 | LAB_0048d7c5
-        ;   XREF to: 0048d7c5 (CONDITIONAL_JUMP)
+    JLE 0x0048d7c5                      ; 0048d842
+        ;   XREF to: 0048d7c5 (CONDITIONAL_JUMP)  ; LAB_0048d7c5
     MOV AX,word ptr [EBX + 0x30]        ; 0048d844
     MOV word ptr [ESP + 0x2],AX         ; 0048d848
     MOV AX,word ptr [EBX + 0x3c]        ; 0048d84d
@@ -114,8 +114,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0048d887
     PUSH EAX                            ; 0048d88b
     PUSH ESI                            ; 0048d88c
-    CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0 ; 0048d88d | void engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
-        ;   XREF to: 0048d8a0 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0 ; 0048d88d
+        ;   XREF to: 0048d8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
     ADD ESP,0xc                         ; 0048d892
     ADD ESP,0x14                        ; 0048d895
     POP EBP                             ; 0048d898

@@ -35,16 +35,16 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0052a8f5
     PUSH EDX                            ; 0052a8f8
     PUSH EBX                            ; 0052a8f9
-    CALL core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890 ; 0052a8fa | CVector3i * core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(CKeyFramedModel * this_ptr, int frame_index)
-        ;   XREF to: 00477890 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890 ; 0052a8fa
+        ;   XREF to: 00477890 (UNCONDITIONAL_CALL)  ; CVector3i * core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(CKeyFramedModel * this_ptr, int frame_index)
     ADD ESP,0x8                         ; 0052a8ff
     PUSH EAX                            ; 0052a902
     MOV EAX,dword ptr [EBX + 0x104]     ; 0052a903
     PUSH EAX                            ; 0052a909
     MOV ECX,dword ptr [EBP + 0xc]       ; 0052a90a
     PUSH ECX                            ; 0052a90d
-    CALL core_morph.cpp_CMorphModel_addPart_FUN_0052a580 ; 0052a90e | void core_morph.cpp_CMorphModel_addPart_FUN_0052a580(CMorphModel * this_ptr)
-        ;   XREF to: 0052a580 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_addPart_FUN_0052a580 ; 0052a90e
+        ;   XREF to: 0052a580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_addPart_FUN_0052a580(CMorphModel * this_ptr)
     ADD ESP,0x20                        ; 0052a913
     POP EBP                             ; 0052a916
     POP EBX                             ; 0052a917

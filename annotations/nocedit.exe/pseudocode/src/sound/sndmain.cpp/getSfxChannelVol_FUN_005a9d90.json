@@ -1,136 +1,136 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 9, 
-    "global_count": 5, 
-    "total_lines": 37, 
-    "assembly_lines": 27, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_00650a32", 
-      "addr": "00650a32", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_getSfxChannelVol_invalid_00650a47", 
-      "addr": "00650a47", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "float[32]", 
-      "name": "g_SfxChannelVolumes", 
-      "addr": "03f688a8", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a9d90", 
-    "signature": "float sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)", 
-    "address_range": [
-      [
-        "005a9d90", 
-        "005a9dd7"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "channel_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 27,
+    "complexity_score": 10,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
   "cross_references": [
     {
-      "from_addr": "005127e2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
-      "addr": "00511e50"
-    }, 
+      "addr": "00511e50",
+      "from_addr": "005127e2",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b3883", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_configure_FUN_005b3830", 
-      "addr": "005b3830"
-    }, 
+      "addr": "005b3830",
+      "from_addr": "005b3883",
+      "name": "core_sound.cpp_CSound_configure_FUN_005b3830",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b2e7f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0", 
-      "addr": "005b2dd0"
-    }, 
+      "addr": "005b2dd0",
+      "from_addr": "005b2e7f",
+      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b323b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0", 
-      "addr": "005b2fd0"
-    }, 
+      "addr": "005b2fd0",
+      "from_addr": "005b323b",
+      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b2d8f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70", 
-      "addr": "005b2d70"
-    }, 
+      "addr": "005b2d70",
+      "from_addr": "005b2d8f",
+      "name": "core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005af7ea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750", 
-      "addr": "005af750"
-    }, 
+      "addr": "005af750",
+      "from_addr": "005af7ea",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a6f42", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00", 
-      "addr": "005a6f00"
-    }, 
+      "addr": "005a6f00",
+      "from_addr": "005a6f42",
+      "name": "sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ac1ad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_readIni_FUN_005abf20", 
-      "addr": "005abf20"
-    }, 
+      "addr": "005abf20",
+      "from_addr": "005ac1ad",
+      "name": "sound_sndmain.cpp_readIni_FUN_005abf20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ac3ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_writeIni_FUN_005ac220", 
-      "addr": "005ac220"
+      "addr": "005ac220",
+      "from_addr": "005ac3ab",
+      "name": "sound_sndmain.cpp_writeIni_FUN_005ac220",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005a9d90",
+    "address_range": [
+      [
+        "005a9d90",
+        "005a9dd7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90",
+    "signature": "float sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90(int channel_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00650a32",
+      "name": "s_sound_sndmain_cpp_00650a32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650a47",
+      "name": "s_getSfxChannelVol_invalid_00650a47",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f688a8",
+      "name": "g_SfxChannelVolumes",
+      "type": "float[32]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "channel_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

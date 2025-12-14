@@ -11,8 +11,7 @@ void core_minecar_cpp_FUN_00520e50(void)
 {
   CPlatform *pCVar1;
   
-  pCVar1 = (CPlatform *)
-           shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x730,"..\\core\\minecar.cpp",0x39);
+  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x730,"..\\core\\minecar.cpp",0x39);
   if (pCVar1 == (CPlatform *)0x0) {
     return;
   }

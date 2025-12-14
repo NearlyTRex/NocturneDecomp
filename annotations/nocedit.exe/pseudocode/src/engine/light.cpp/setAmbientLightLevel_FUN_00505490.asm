@@ -21,17 +21,17 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00505490
         ;   Label: engine_light.cpp_setAmbientLightLevel_FUN_00505490
     TEST EAX,EAX                        ; 00505494
-    JL 0x005054aa                       ; 00505496 | LAB_005054aa
-        ;   XREF to: 005054aa (CONDITIONAL_JUMP)
+    JL 0x005054aa                       ; 00505496
+        ;   XREF to: 005054aa (CONDITIONAL_JUMP)  ; LAB_005054aa
     CMP EAX,0xffff                      ; 00505498
-    JLE 0x005054a4                      ; 0050549d | LAB_005054a4
-        ;   XREF to: 005054a4 (CONDITIONAL_JUMP)
+    JLE 0x005054a4                      ; 0050549d
+        ;   XREF to: 005054a4 (CONDITIONAL_JUMP)  ; LAB_005054a4
     MOV EAX,0xffff                      ; 0050549f
-    MOV [0x0067cfc8],EAX                ; 005054a4 | int g_AmbientLightLevel
+    MOV [0x0067cfc8],EAX                ; 005054a4 | g_AmbientLightLevel
         ;   Label: LAB_005054a4
     RET                                 ; 005054a9
     XOR EAX,EAX                         ; 005054aa
         ;   Label: LAB_005054aa
-    MOV [0x0067cfc8],EAX                ; 005054ac | int g_AmbientLightLevel
+    MOV [0x0067cfc8],EAX                ; 005054ac | g_AmbientLightLevel
     RET                                 ; 005054b1
 

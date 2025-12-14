@@ -37,36 +37,36 @@ section .text
     SHR EBP,0x8                         ; 005b5572
     MOVZX EAX,byte ptr [ESI]            ; 005b5575
         ;   Label: LAB_005b5575
-    MOVD MM0,dword ptr [EAX*0x4 + 0x2d01924] ; 005b5578 | uint[256] g_Hardware32BitPalette
+    MOVD MM0,dword ptr [EAX*0x4 + 0x2d01924] ; 005b5578 | g_Hardware32BitPalette
     MOVZX EAX,byte ptr [EBX]            ; 005b5580
     IMUL EAX,EBP                        ; 005b5583
-    CMP dword ptr [0x02d05298],0x1      ; 005b5586 | int g_BlendMode
-    JZ 0x005b559d                       ; 005b558d | LAB_005b559d
-        ;   XREF to: 005b559d (CONDITIONAL_JUMP)
+    CMP dword ptr [0x02d05298],0x1      ; 005b5586 | g_BlendMode
+    JZ 0x005b559d                       ; 005b558d
+        ;   XREF to: 005b559d (CONDITIONAL_JUMP)  ; LAB_005b559d
     CMP EAX,0xfde8                      ; 005b558f
-    JGE 0x005b55e7                      ; 005b5594 | LAB_005b55e7
-        ;   XREF to: 005b55e7 (CONDITIONAL_JUMP)
+    JGE 0x005b55e7                      ; 005b5594
+        ;   XREF to: 005b55e7 (CONDITIONAL_JUMP)  ; LAB_005b55e7
     CMP EAX,0xff                        ; 005b5596
-    JLE 0x005b55ea                      ; 005b559b | LAB_005b55ea
-        ;   XREF to: 005b55ea (CONDITIONAL_JUMP)
+    JLE 0x005b55ea                      ; 005b559b
+        ;   XREF to: 005b55ea (CONDITIONAL_JUMP)  ; LAB_005b55ea
     SHR EAX,0x8                         ; 005b559d
         ;   Label: LAB_005b559d
     PUNPCKLBW MM0,MM7                   ; 005b55a0
-    MOVQ MM1,qword ptr [EAX*0x8 + 0x683000] ; 005b55a3 | SAlphaEntry[256] g_AlphaTable
+    MOVQ MM1,qword ptr [EAX*0x8 + 0x683000] ; 005b55a3 | g_AlphaTable
     MOVQ MM2,MM1                        ; 005b55ab
     PXOR MM2,qword ptr [0x006837f8]     ; 005b55ae | g_AlphaTable[255].red
     MOVD MM3,dword ptr [EDI]            ; 005b55b5
     PUNPCKLBW MM3,MM7                   ; 005b55b8
-    CMP dword ptr [0x02d05298],0x1      ; 005b55bb | int g_BlendMode
-    JZ 0x005b55d6                       ; 005b55c2 | LAB_005b55d6
-        ;   XREF to: 005b55d6 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x02d05298],0x1      ; 005b55bb | g_BlendMode
+    JZ 0x005b55d6                       ; 005b55c2
+        ;   XREF to: 005b55d6 (CONDITIONAL_JUMP)  ; LAB_005b55d6
     PMULLW MM0,MM1                      ; 005b55c4
     PMULLW MM3,MM2                      ; 005b55c7
     PADDW MM0,MM3                       ; 005b55ca
     PSRLW MM0,0x8                       ; 005b55cd
     PACKUSWB MM0,MM7                    ; 005b55d1
-    JMP 0x005b55e7                      ; 005b55d4 | LAB_005b55e7
-        ;   XREF to: 005b55e7 (UNCONDITIONAL_JUMP)
+    JMP 0x005b55e7                      ; 005b55d4
+        ;   XREF to: 005b55e7 (UNCONDITIONAL_JUMP)  ; LAB_005b55e7
     PSLLW MM3,0x8                       ; 005b55d6
         ;   Label: LAB_005b55d6
     PMULLW MM0,MM1                      ; 005b55da
@@ -80,8 +80,8 @@ section .text
     INC EBX                             ; 005b55eb
     ADD EDI,0x4                         ; 005b55ec
     DEC ECX                             ; 005b55ef
-    JG 0x005b5575                       ; 005b55f0 | LAB_005b5575
-        ;   XREF to: 005b5575 (CONDITIONAL_JUMP)
+    JG 0x005b5575                       ; 005b55f0
+        ;   XREF to: 005b5575 (CONDITIONAL_JUMP)  ; LAB_005b5575
     POPAD                               ; 005b55f2
     EMMS                                ; 005b55f3
     LEAVE                               ; 005b55f5

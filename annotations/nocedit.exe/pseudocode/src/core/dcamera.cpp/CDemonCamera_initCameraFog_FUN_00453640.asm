@@ -38,25 +38,25 @@ section .text
     MOV EBP,ESP                         ; 00453642
     MOV EBX,dword ptr [EBP + 0x10]      ; 00453644
     MOV EAX,dword ptr [EBX]             ; 00453647
-    MOV [0x0066ed04],EAX                ; 00453649 | int g_FogColorIndexR
+    MOV [0x0066ed04],EAX                ; 00453649 | g_FogColorIndexR
     MOV EAX,dword ptr [EBX + 0x4]       ; 0045364e
-    MOV [0x0066ed08],EAX                ; 00453651 | int g_FogColorIndexG
+    MOV [0x0066ed08],EAX                ; 00453651 | g_FogColorIndexG
     MOV EAX,dword ptr [EBX + 0x8]       ; 00453656
-    MOV [0x0066ed0c],EAX                ; 00453659 | int g_FogColorIndexB
-    MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 0045365e | uint[256] g_LightmapTexturePalette
+    MOV [0x0066ed0c],EAX                ; 00453659 | g_FogColorIndexB
+    MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 0045365e | g_LightmapTexturePalette
     AND EAX,0xff                        ; 00453665
     PUSH EAX                            ; 0045366a
     MOV EAX,dword ptr [EBX + 0x4]       ; 0045366b
-    MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 0045366e | uint[256] g_LightmapTexturePalette
+    MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 0045366e | g_LightmapTexturePalette
     AND EAX,0xff                        ; 00453675
     PUSH EAX                            ; 0045367a
     MOV EAX,dword ptr [EBX]             ; 0045367b
-    MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 0045367d | uint[256] g_LightmapTexturePalette
+    MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 0045367d | g_LightmapTexturePalette
     AND EAX,0xff                        ; 00453684
     PUSH EAX                            ; 00453689
-    CALL wincore_windll.cpp_setFogColor_FUN_005b7b80 ; 0045368a | int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)
-        ;   XREF to: 005b7b80 (UNCONDITIONAL_CALL)
-    FLD double ptr [0x0061a442]         ; 0045368f | double g_CameraFogFixedPointScale16
+    CALL wincore_windll.cpp_setFogColor_FUN_005b7b80 ; 0045368a
+        ;   XREF to: 005b7b80 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)
+    FLD double ptr [0x0061a442]         ; 0045368f | g_CameraFogFixedPointScale16
     FLD float ptr [EBX + 0xc]           ; 00453695
     FMUL ST1                            ; 00453698
     FLD float ptr [EBX + 0x10]          ; 0045369a
@@ -64,25 +64,25 @@ section .text
     FLD float ptr [EBX + 0x14]          ; 0045369f
     FMUL ST3                            ; 004536a2
     FLD float ptr [EBX + 0x18]          ; 004536a4
-    FMUL double ptr [0x0061a44a]        ; 004536a7 | double g_CameraFogFixedPointScale8
+    FMUL double ptr [0x0061a44a]        ; 004536a7 | g_CameraFogFixedPointScale8
     FLD float ptr [EBX + 0x1c]          ; 004536ad
     FMULP ST5                           ; 004536b0
     ADD ESP,0xc                         ; 004536b2
     FXCH ST3                            ; 004536b5
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004536b7 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004536b7
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST2                            ; 004536bc
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004536be | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004536be
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 004536c3
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004536c5 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004536c5
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST3                            ; 004536ca
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004536cc | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004536cc
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST4                            ; 004536d1
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004536d3 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004536d3
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST2                            ; 004536d8
     FISTP dword ptr [0x0151a390]        ; 004536da | g_CameraFogGrid.scroll_vector.x
     FISTP dword ptr [0x0151a394]        ; 004536e0 | g_CameraFogGrid.scroll_vector.y

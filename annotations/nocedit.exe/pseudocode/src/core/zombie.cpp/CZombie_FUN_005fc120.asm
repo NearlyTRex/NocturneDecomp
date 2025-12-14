@@ -41,8 +41,8 @@ section .text
     PUSH 0x3                            ; 005fc12e
     LEA EBX,[ESI + 0x158]               ; 005fc130
     PUSH EBX                            ; 005fc136
-    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20 ; 005fc137 | float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(CMotionController * this_ptr, int desired_state_index)
-        ;   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20 ; 005fc137
+        ;   XREF to: 0052dd20 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x44],EAX      ; 005fc13c
     FLD float ptr [ESP + 0x44]          ; 005fc140
     FLDZ                                ; 005fc144
@@ -50,8 +50,8 @@ section .text
     FCOMPP                              ; 005fc149
     FNSTSW AX                           ; 005fc14b
     SAHF                                ; 005fc14d
-    JC 0x005fc159                       ; 005fc14e | LAB_005fc159
-        ;   XREF to: 005fc159 (CONDITIONAL_JUMP)
+    JC 0x005fc159                       ; 005fc14e
+        ;   XREF to: 005fc159 (CONDITIONAL_JUMP)  ; LAB_005fc159
     XOR EAX,EAX                         ; 005fc150
     ADD ESP,0x40                        ; 005fc152
     POP EDI                             ; 005fc155
@@ -64,16 +64,16 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 005fc160
     PUSH EAX                            ; 005fc164
     PUSH EBX                            ; 005fc165
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 005fc166 | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 005fc166
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 005fc16b
     MOV ECX,dword ptr [ESI + 0xbf54]    ; 005fc16e
     PUSH ECX                            ; 005fc174
     LEA EAX,[ESP + 0x4]                 ; 005fc175
     PUSH EAX                            ; 005fc179
     PUSH EBX                            ; 005fc17a
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 005fc17b | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 005fc17b
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 005fc180
     FLD float ptr [ESP + 0x1c]          ; 005fc183
     FLD float ptr [ESP + 0x18]          ; 005fc187
@@ -102,12 +102,12 @@ section .text
     FXCH                                ; 005fc1cb
     FSTP float ptr [ESP + 0x34]         ; 005fc1cd
     FSTP float ptr [ESP + 0x38]         ; 005fc1d1
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005fc1d5 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005fc1d5
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 005fc1da
     CMP EDI,EAX                         ; 005fc1dd
-    JZ 0x005fc1f1                       ; 005fc1df | LAB_005fc1f1
-        ;   XREF to: 005fc1f1 (CONDITIONAL_JUMP)
+    JZ 0x005fc1f1                       ; 005fc1df
+        ;   XREF to: 005fc1f1 (CONDITIONAL_JUMP)  ; LAB_005fc1f1
     MOV EDX,dword ptr [EAX]             ; 005fc1e1
     MOV dword ptr [EDI],EDX             ; 005fc1e3
     MOV EDX,dword ptr [EAX + 0x4]       ; 005fc1e5

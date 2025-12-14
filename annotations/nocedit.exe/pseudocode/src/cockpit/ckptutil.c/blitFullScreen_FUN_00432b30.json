@@ -1,70 +1,70 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 25, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0", 
-      "addr": "004326a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 19,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00432b30", 
-    "signature": "void cockpit_ckptutil.c_blitFullScreen_FUN_00432b30(void * sprite_data, void * span_data)", 
+    "address": "00432b30",
     "address_range": [
       [
-        "00432b30", 
+        "00432b30",
         "00432b58"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_blitFullScreen_FUN_00432b30"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_blitFullScreen_FUN_00432b30",
+    "signature": "void cockpit_ckptutil.c_blitFullScreen_FUN_00432b30(void * sprite_data, void * span_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "004326a0",
+      "name": "cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "sprite_data"
-      }, 
+        "is_param": true,
+        "name": "sprite_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "span_data"
+        "is_param": true,
+        "name": "span_data",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

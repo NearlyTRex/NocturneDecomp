@@ -1,116 +1,116 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 58, 
-    "pseudocode_lines": 33, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 120, 
-    "assembly_lines": 87, 
-    "suspect_count": 2, 
+    "assembly_lines": 87,
+    "complexity_score": 58,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 33,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dstrender.cpp_memcpyMMX_FUN_00492001", 
-      "addr": "00492001"
-    }, 
-    {
-      "name": "wincore_windll.cpp_restoreZBuffer_FUN_005b7d20", 
-      "addr": "005b7d20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ZBufferScanlineArray[1]", 
-      "addr": "02cf7d60", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 24, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar3);"
-    }, 
-    {
-      "line": 30, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(void *)((int)this_ptr->zbuffer_aligned + (iVar2 + rect_ptr->left) * 4),"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0044c780", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780(CDemonCamera * this_ptr, CRect * rect_ptr)", 
-    "address_range": [
-      [
-        "0044c780", 
-        "0044c855"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CRect *", 
-        "size": 4, 
-        "name": "rect_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 120
+  },
   "cross_references": [
     {
-      "from_addr": "0044caed", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860", 
-      "addr": "0044c860"
+      "addr": "0044c860",
+      "from_addr": "0044caed",
+      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044c780",
+    "address_range": [
+      [
+        "0044c780",
+        "0044c855"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780",
+    "signature": "void core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780(CDemonCamera * this_ptr, CRect * rect_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00492001",
+      "name": "core_dstrender.cpp_memcpyMMX_FUN_00492001"
+    },
+    {
+      "addr": "005b7d20",
+      "name": "wincore_windll.cpp_restoreZBuffer_FUN_005b7d20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d60",
+      "name": "g_ZBufferScanlineArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "rect_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CRect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(void *)((int)",
+      "text": "(void *)((int)this_ptr->zbuffer_aligned + (iVar2 + rect_ptr->left) * 4),",
+      "type": "pointer_cast"
     }
   ]
 }

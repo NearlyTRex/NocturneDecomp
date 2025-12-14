@@ -21,12 +21,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005fe701
     MOV EDX,dword ptr [EBX + 0x8]       ; 005fe705
     PUSH EDX                            ; 005fe708
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005fe709 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 005fe709
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 005fe70e
     MOV EDX,EAX                         ; 005fe711
     CMP EAX,-0x1                        ; 005fe713
-    JNZ 0x005fe71c                      ; 005fe716 | LAB_005fe71c
-        ;   XREF to: 005fe71c (CONDITIONAL_JUMP)
+    JNZ 0x005fe71c                      ; 005fe716
+        ;   XREF to: 005fe71c (CONDITIONAL_JUMP)  ; LAB_005fe71c
     OR byte ptr [EBX + 0x10],0x2        ; 005fe718
 

@@ -11,8 +11,7 @@ void core_biggs_cpp_constructor_FUN_00418580(void)
 {
   CBiggs *this_ptr;
   
-  this_ptr = (CBiggs *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xccd0,"..\\core\\biggs.cpp",0x52);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xccd0,"..\\core\\biggs.cpp",0x52);
   if (this_ptr == (CBiggs *)0x0) {
     return;
   }

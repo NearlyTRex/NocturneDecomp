@@ -15,57 +15,54 @@ void core_event_cpp_FUN_004b1b5c(uint param_1,uint *param_2,uint param_3,uint *p
   uint uVar4;
   
   cVar2 = (char)*param_2;
-  uVar4 = (uint)param_4 & 7;
-  while (uVar4 != 0) {
+  for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {
     *(char *)param_4 = cVar2;
     if (cVar2 == '\0') {
       return;
     }
     cVar2 = *(char *)((int)param_2 + 1);
-    param_4 = (uint *)((int)param_4 + 1);
     param_2 = (uint *)((int)param_2 + 1);
-    uVar4 = (uint)param_4 & 7;
   }
   while( true ) {
     lVar1 = *(longlong *)param_2;
-    uVar4 = *param_2;
-    if ((uVar4 & 0xff) == 0) {
-      *(char *)param_4 = (char)uVar4;
+    uVar3 = *param_2;
+    if ((uVar3 & 0xff) == 0) {
+      *(char *)param_4 = (char)uVar3;
       return;
     }
-    if ((uVar4 & 0xff00) == 0) break;
-    if ((uVar4 & 0xff0000) == 0) {
+    if ((uVar3 & 0xff00) == 0) break;
+    if ((uVar3 & 0xff0000) == 0) {
       *(byte *)((int)param_4 + 2) = 0;
       break;
     }
-    if ((uVar4 & 0xff000000) == 0) {
+    if ((uVar3 & 0xff000000) == 0) {
 LAB_004b1be3:
-      *param_4 = uVar4;
+      *param_4 = uVar3;
       return;
     }
-    uVar3 = param_2[1];
+    uVar4 = param_2[1];
     param_2 = param_2 + 2;
-    if ((uVar3 & 0xff) == 0) {
-      *(char *)(param_4 + 1) = (char)uVar3;
+    if ((uVar4 & 0xff) == 0) {
+      *(char *)(param_4 + 1) = (char)uVar4;
       goto LAB_004b1be3;
     }
-    if ((uVar3 & 0xff00) == 0) {
+    if ((uVar4 & 0xff00) == 0) {
 LAB_004b1bd4:
-      *(short *)(param_4 + 1) = (short)uVar3;
-      *param_4 = uVar4;
+      *(short *)(param_4 + 1) = (short)uVar4;
+      *param_4 = uVar3;
       return;
     }
-    if ((uVar3 & 0xff0000) == 0) {
+    if ((uVar4 & 0xff0000) == 0) {
       *(byte *)((int)param_4 + 6) = 0;
       goto LAB_004b1bd4;
     }
-    if ((uVar3 & 0xff000000) == 0) {
+    if ((uVar4 & 0xff000000) == 0) {
       *(longlong *)param_4 = (longlong)ROUND((float10)lVar1);
       return;
     }
     *(longlong *)param_4 = (longlong)ROUND((float10)lVar1);
     param_4 = param_4 + 2;
   }
-  *(short *)param_4 = (short)uVar4;
+  *(short *)param_4 = (short)uVar3;
   return;
 }

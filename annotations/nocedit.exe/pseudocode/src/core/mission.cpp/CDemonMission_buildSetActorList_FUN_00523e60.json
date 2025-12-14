@@ -1,194 +1,194 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 40, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 11, 
-    "global_count": 9, 
-    "total_lines": 90, 
-    "assembly_lines": 65, 
-    "suspect_count": 1, 
+    "assembly_lines": 65,
+    "complexity_score": 40,
+    "cross_reference_count": 11,
+    "function_call_count": 4,
+    "global_count": 9,
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
-      "addr": "0040ac80"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_00570fc0", 
-      "addr": "00570fc0"
-    }, 
-    {
-      "name": "core_setcolid.cpp_CDemonSet_FUN_005743e0", 
-      "addr": "005743e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_mission_cpp_00639133", 
-      "addr": "00639133", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_mission_cpp_00639147", 
-      "addr": "00639147", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonMission_buildSetAc_0063915b", 
-      "addr": "0063915b", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.actor_list_ptr", 
-      "addr": "032613cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.actor_list_data[0]", 
-      "addr": "032613d0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 22, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar1->actor_list_ptr = (void *)((int)pCVar1->actor_list_ptr + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00523e60", 
-    "signature": "void core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemonMission * this_ptr)", 
-    "address_range": [
-      [
-        "00523e60", 
-        "00523f17"
-      ]
-    ], 
-    "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonMission *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 90
+  },
   "cross_references": [
     {
-      "from_addr": "00523f7f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_FUN_00523f50", 
-      "addr": "00523f50"
-    }, 
+      "addr": "00523f50",
+      "from_addr": "00523f7f",
+      "name": "core_mission.cpp_CDemonMission_FUN_00523f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00523fe1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_FUN_00523fb0", 
-      "addr": "00523fb0"
-    }, 
+      "addr": "00523fb0",
+      "from_addr": "00523fe1",
+      "name": "core_mission.cpp_CDemonMission_FUN_00523fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00524b7b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_createHeros_FUN_00524a80", 
-      "addr": "00524a80"
-    }, 
+      "addr": "00524a80",
+      "from_addr": "00524b7b",
+      "name": "core_mission.cpp_CDemonMission_createHeros_FUN_00524a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053bf42", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80", 
-      "addr": "0053bd80"
-    }, 
+      "addr": "0053bd80",
+      "from_addr": "0053bf42",
+      "name": "core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053bbea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053b9f0", 
-      "addr": "0053b9f0"
-    }, 
+      "addr": "0053b9f0",
+      "from_addr": "0053bbea",
+      "name": "core_msnedit.cpp_FUN_0053b9f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053d814", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053d7b0", 
-      "addr": "0053d7b0"
-    }, 
+      "addr": "0053d7b0",
+      "from_addr": "0053d814",
+      "name": "core_msnedit.cpp_FUN_0053d7b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053dbde", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053d8b0", 
-      "addr": "0053d8b0"
-    }, 
+      "addr": "0053d8b0",
+      "from_addr": "0053dbde",
+      "name": "core_msnedit.cpp_FUN_0053d8b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053e310", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
-      "addr": "0053e220"
-    }, 
+      "addr": "0053e220",
+      "from_addr": "0053e310",
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00539497", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
-    }, 
+      "addr": "005390f0",
+      "from_addr": "00539497",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053bcba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80", 
-      "addr": "0053bc80"
-    }, 
+      "addr": "0053bc80",
+      "from_addr": "0053bcba",
+      "name": "core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ec53a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_waypoint.cpp_FUN_005ec4f0", 
-      "addr": "005ec4f0"
+      "addr": "005ec4f0",
+      "from_addr": "005ec53a",
+      "name": "core_waypoint.cpp_FUN_005ec4f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00523e60",
+    "address_range": [
+      [
+        "00523e60",
+        "00523f17"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60",
+    "signature": "void core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemonMission * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00570fc0",
+      "name": "core_set.cpp_CDemonSet_FUN_00570fc0"
+    },
+    {
+      "addr": "005743e0",
+      "name": "core_setcolid.cpp_CDemonSet_FUN_005743e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00639133",
+      "name": "s_core_mission_cpp_00639133",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639147",
+      "name": "s_core_mission_cpp_00639147",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063915b",
+      "name": "s_CDemonMission_buildSetAc_0063915b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(void *)((int)",
+      "text": "pCVar1->actor_list_ptr = (void *)((int)pCVar1->actor_list_ptr + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

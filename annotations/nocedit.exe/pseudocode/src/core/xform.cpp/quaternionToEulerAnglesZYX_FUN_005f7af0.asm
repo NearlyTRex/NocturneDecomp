@@ -25,14 +25,14 @@ section .text
     PUSH EDX                            ; 005f7afc
     LEA EAX,[ESP + 0x4]                 ; 005f7afd
     PUSH EAX                            ; 005f7b01
-    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005f7b02 | void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005f7b02
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)
     ADD ESP,0x8                         ; 005f7b07
     PUSH EBX                            ; 005f7b0a
     LEA EAX,[ESP + 0x4]                 ; 005f7b0b
     PUSH EAX                            ; 005f7b0f
-    CALL core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 ; 005f7b10 | CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
-        ;   XREF to: 005f5bd0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 ; 005f7b10
+        ;   XREF to: 005f5bd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)
     ADD ESP,0x8                         ; 005f7b15
     MOV EAX,EBX                         ; 005f7b18
     ADD ESP,0x30                        ; 005f7b1a

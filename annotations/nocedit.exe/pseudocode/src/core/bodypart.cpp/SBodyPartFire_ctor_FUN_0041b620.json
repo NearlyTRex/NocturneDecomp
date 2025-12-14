@@ -1,60 +1,60 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 21, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 15, 
-    "assembly_lines": 9, 
-    "suspect_count": 1, 
+    "assembly_lines": 9,
+    "complexity_score": 21,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0", 
-      "addr": "004c9aa0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "pCVar1[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (SBodyPartFire *)(pCVar1[-1].field12_0x290 + 8);"
-    }
-  ], 
+    ],
+    "total_lines": 15
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0041b620", 
-    "signature": "SBodyPartFire * core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620(SBodyPartFire * this_ptr)", 
+    "address": "0041b620",
     "address_range": [
       [
-        "0041b620", 
+        "0041b620",
         "0041b633"
       ]
-    ], 
-    "name": "core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620",
+    "signature": "SBodyPartFire * core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620(SBodyPartFire * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c9aa0",
+      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SBodyPartFire *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SBodyPartFire *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 8,
+      "match": "pCVar1[-1].",
+      "text": "return (SBodyPartFire *)(pCVar1[-1].field12_0x290 + 8);",
+      "type": "negative_offset"
+    }
+  ]
 }

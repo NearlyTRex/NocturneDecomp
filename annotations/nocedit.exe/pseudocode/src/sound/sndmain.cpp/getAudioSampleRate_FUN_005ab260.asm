@@ -18,7 +18,7 @@
 
 section .text
 
-    MOV EAX,[0x00681b1c]                ; 005ab260 | int g_AudioSampleRate
+    MOV EAX,[0x00681b1c]                ; 005ab260 | g_AudioSampleRate
         ;   Label: sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260
     RET                                 ; 005ab265
 

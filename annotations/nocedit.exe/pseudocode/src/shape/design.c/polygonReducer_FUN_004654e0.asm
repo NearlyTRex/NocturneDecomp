@@ -31,23 +31,23 @@ section .text
     PUSH EBP                            ; 004654e3
     MOV EBP,ESP                         ; 004654e4
     SUB ESP,0x54                        ; 004654e6
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004654ec | void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)
-    MOV EAX,0x61c4d9                    ; 004654f1 | = "Enter 1 for full pass or 2 for single..." | s_Enter_1_for_full_pass_or_0061c4d9 = Enter 1 for full pass or 2 for single pass [1] :
-    PUSH EAX                            ; 004654f6 | = "Enter 1 for full pass or 2 for single..." | s_Enter_1_for_full_pass_or_0061c4d9 = Enter 1 for full pass or 2 for single pass [1] :
+    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 004654ec
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    MOV EAX,0x61c4d9                    ; 004654f1 | = "Enter 1 for full pass or 2 for single..."
+    PUSH EAX                            ; 004654f6 | = "Enter 1 for full pass or 2 for single..."
     PUSH 0x0                            ; 004654f7
     PUSH 0x0                            ; 004654f9
     PUSH 0x14                           ; 004654fb
     LEA EAX,[EBP + -0x54]               ; 004654fd
     PUSH EAX                            ; 00465500
-    CALL engine_2d.c_getInputWithPrompt_FUN_004032c0 ; 00465501 | int engine_2d.c_getInputWithPrompt_FUN_004032c0(char * buffer, int max_length, int x, int y, ...)
-        ;   XREF to: 004032c0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_getInputWithPrompt_FUN_004032c0 ; 00465501
+        ;   XREF to: 004032c0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getInputWithPrompt_FUN_004032c0(char * buffer, int max_length, int x, int y, ...)
     ADD ESP,0x14                        ; 00465506
     CMP EAX,0x1b                        ; 00465509
-    JNZ 0x00465510                      ; 0046550c | LAB_00465510
-        ;   XREF to: 00465510 (CONDITIONAL_JUMP)
-    JMP 0x00465559                      ; 0046550e | LAB_00465559
-        ;   XREF to: 00465559 (UNCONDITIONAL_JUMP)
+    JNZ 0x00465510                      ; 0046550c
+        ;   XREF to: 00465510 (CONDITIONAL_JUMP)  ; LAB_00465510
+    JMP 0x00465559                      ; 0046550e
+        ;   XREF to: 00465559 (UNCONDITIONAL_JUMP)  ; LAB_00465559
     MOV dword ptr [EBP + -0x4],0x1      ; 00465510
         ;   Label: LAB_00465510
     LEA EDI,[EBP + -0x54]               ; 00465517
@@ -58,31 +58,31 @@ section .text
     NOT ECX                             ; 00465521
     DEC ECX                             ; 00465523
     TEST ECX,ECX                        ; 00465524
-    JZ 0x00465537                       ; 00465526 | LAB_00465537
-        ;   XREF to: 00465537 (CONDITIONAL_JUMP)
+    JZ 0x00465537                       ; 00465526
+        ;   XREF to: 00465537 (CONDITIONAL_JUMP)  ; LAB_00465537
     LEA EAX,[EBP + -0x54]               ; 00465528
     PUSH EAX                            ; 0046552b
-    CALL crt_stdlib.c_atoi_FUN_005ffef0 ; 0046552c | int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
-        ;   XREF to: 005ffef0 (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_atoi_FUN_005ffef0 ; 0046552c
+        ;   XREF to: 005ffef0 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
     ADD ESP,0x4                         ; 00465531
     MOV dword ptr [EBP + -0x4],EAX      ; 00465534
     CMP dword ptr [EBP + -0x4],0x1      ; 00465537
         ;   Label: LAB_00465537
-    JNZ 0x00465549                      ; 0046553b | LAB_00465549
-        ;   XREF to: 00465549 (CONDITIONAL_JUMP)
+    JNZ 0x00465549                      ; 0046553b
+        ;   XREF to: 00465549 (CONDITIONAL_JUMP)  ; LAB_00465549
     PUSH 0x1                            ; 0046553d
-    CALL shape_design.c_configureFullPassPolygonReduction_FUN_00465810 ; 0046553f | void shape_design.c_configureFullPassPolygonReduction_FUN_00465810(int ui_mode)
-        ;   XREF to: 00465810 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_configureFullPassPolygonReduction_FUN_00465810 ; 0046553f
+        ;   XREF to: 00465810 (UNCONDITIONAL_CALL)  ; void shape_design.c_configureFullPassPolygonReduction_FUN_00465810(int ui_mode)
     ADD ESP,0x4                         ; 00465544
-    JMP 0x00465559                      ; 00465547 | LAB_00465559
-        ;   XREF to: 00465559 (UNCONDITIONAL_JUMP)
+    JMP 0x00465559                      ; 00465547
+        ;   XREF to: 00465559 (UNCONDITIONAL_JUMP)  ; LAB_00465559
     CMP dword ptr [EBP + -0x4],0x2      ; 00465549
         ;   Label: LAB_00465549
-    JNZ 0x00465559                      ; 0046554d | LAB_00465559
-        ;   XREF to: 00465559 (CONDITIONAL_JUMP)
+    JNZ 0x00465559                      ; 0046554d
+        ;   XREF to: 00465559 (CONDITIONAL_JUMP)  ; LAB_00465559
     PUSH 0x1                            ; 0046554f
-    CALL shape_design.c_configureSinglePassPolygonReduction_FUN_00465560 ; 00465551 | void shape_design.c_configureSinglePassPolygonReduction_FUN_00465560(int ui_mode)
-        ;   XREF to: 00465560 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_configureSinglePassPolygonReduction_FUN_00465560 ; 00465551
+        ;   XREF to: 00465560 (UNCONDITIONAL_CALL)  ; void shape_design.c_configureSinglePassPolygonReduction_FUN_00465560(int ui_mode)
     ADD ESP,0x4                         ; 00465556
     MOV ESP,EBP                         ; 00465559
         ;   Label: LAB_00465559

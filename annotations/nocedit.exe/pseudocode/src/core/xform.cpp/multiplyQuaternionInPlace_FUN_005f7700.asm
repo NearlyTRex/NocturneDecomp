@@ -27,8 +27,8 @@ section .text
     PUSH EBX                            ; 005f770f
     LEA ESI,[ESP + 0x8]                 ; 005f7710
     MOV EDI,EBX                         ; 005f7714
-    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 005f7716 | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
-        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 005f7716
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
     LEA ESI,[ESP + 0x8]                 ; 005f771b
     ADD ESP,0x8                         ; 005f771f
     MOV EAX,EBX                         ; 005f7722

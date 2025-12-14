@@ -17,13 +17,13 @@
 
 section .text
 
-    CALL crt_heap.c_CompactHeapBlocks_FUN_0060c920 ; 00609718 | void crt_heap.c_CompactHeapBlocks_FUN_0060c920()
+    CALL crt_heap.c_CompactHeapBlocks_FUN_0060c920 ; 00609718
+        ;   XREF to: 0060c920 (UNCONDITIONAL_CALL)  ; void crt_heap.c_CompactHeapBlocks_FUN_0060c920()
         ;   Label: crt_heap.c_SystemAllocWrapper_FUN_00609718
-        ;   XREF to: 0060c920 (UNCONDITIONAL_CALL)
     MOV EDX,dword ptr [ESP + 0x4]       ; 0060971d
     PUSH EDX                            ; 00609721
-    CALL crt_heap.c_AllocateNewHeapBlock_FUN_00609668 ; 00609722 | int crt_heap.c_AllocateNewHeapBlock_FUN_00609668(uint size)
-        ;   XREF to: 00609668 (UNCONDITIONAL_CALL)
+    CALL crt_heap.c_AllocateNewHeapBlock_FUN_00609668 ; 00609722
+        ;   XREF to: 00609668 (UNCONDITIONAL_CALL)  ; int crt_heap.c_AllocateNewHeapBlock_FUN_00609668(uint size)
     ADD ESP,0x4                         ; 00609727
     RET                                 ; 0060972a
 

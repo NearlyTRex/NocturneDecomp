@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 101, 
-    "assembly_lines": 85, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_matrix_c_00635aba", 
-      "addr": "00635aba", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sqrt_out_of_domain_00635acd", 
-      "addr": "00635acd", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050d890", 
-    "signature": "int engine_matrix.c_integerSquareRoot_FUN_0050d890(int value)", 
-    "address_range": [
-      [
-        "0050d890", 
-        "0050d960"
-      ]
-    ], 
-    "name": "engine_matrix.c_integerSquareRoot_FUN_0050d890"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "value"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 85,
+    "complexity_score": 16,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 101
+  },
   "cross_references": [
     {
-      "from_addr": "0050d992", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_matrix.c_normalizeVector3DFixed_FUN_0050d970", 
-      "addr": "0050d970"
+      "addr": "0050d970",
+      "from_addr": "0050d992",
+      "name": "engine_matrix.c_normalizeVector3DFixed_FUN_0050d970",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0050d890",
+    "address_range": [
+      [
+        "0050d890",
+        "0050d960"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_integerSquareRoot_FUN_0050d890",
+    "signature": "int engine_matrix.c_integerSquareRoot_FUN_0050d890(int value)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635aba",
+      "name": "s_engine_matrix_c_00635aba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635acd",
+      "name": "s_sqrt_out_of_domain_00635acd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

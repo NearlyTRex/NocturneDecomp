@@ -49,13 +49,13 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 00453736
     LEA EAX,[ESP + 0xc]                 ; 0045373a
     FILD dword ptr [EAX]                ; 0045373e
-    FMUL float ptr [0x0065c644]         ; 00453740 | float g_WorldToFloat
+    FMUL float ptr [0x0065c644]         ; 00453740 | g_WorldToFloat
     FSTP float ptr [EBX]                ; 00453746
     FILD dword ptr [EAX + 0x4]          ; 00453748
-    FMUL float ptr [0x0065c644]         ; 0045374b | float g_WorldToFloat
+    FMUL float ptr [0x0065c644]         ; 0045374b | g_WorldToFloat
     FSTP float ptr [EBX + 0x4]          ; 00453751
     FILD dword ptr [EAX + 0x8]          ; 00453754
-    FMUL float ptr [0x0065c644]         ; 00453757 | float g_WorldToFloat
+    FMUL float ptr [0x0065c644]         ; 00453757 | g_WorldToFloat
     FSTP float ptr [EBX + 0x8]          ; 0045375d
     FLD float ptr [ESP + 0x4]           ; 00453760
     FMUL ST0                            ; 00453764
@@ -66,18 +66,18 @@ section .text
     FMUL ST0                            ; 00453771
     FADDP                               ; 00453773
     FSQRT                               ; 00453775
-    FMUL double ptr [0x0061a452]        ; 00453777 | double g_CameraFogIntensityFixedPointScale8
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0045377d | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    FMUL double ptr [0x0061a452]        ; 00453777 | g_CameraFogIntensityFixedPointScale8
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0045377d
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 00453782
     MOV EBP,dword ptr [ESP + 0x18]      ; 00453786
     PUSH EBP                            ; 0045378a
     PUSH ECX                            ; 0045378b
     ADD EDX,0x16c                       ; 0045378c
     PUSH EDX                            ; 00453792
-    PUSH 0x1519384                      ; 00453793 | SFogGrid g_CameraFogGrid
-    CALL core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0 ; 00453798 | uint core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
-        ;   XREF to: 0044bdd0 (UNCONDITIONAL_CALL)
+    PUSH 0x1519384                      ; 00453793 | g_CameraFogGrid
+    CALL core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0 ; 00453798
+        ;   XREF to: 0044bdd0 (UNCONDITIONAL_CALL)  ; uint core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
     MOV EDX,EAX                         ; 0045379d
     SHL EAX,0x4                         ; 0045379f
     ADD EAX,EDX                         ; 004537a2
@@ -87,8 +87,8 @@ section .text
     SHR EAX,0xe                         ; 004537ab
     ADD ESP,0x10                        ; 004537ae
     CMP EAX,0xff                        ; 004537b1
-    JBE 0x004537c4                      ; 004537b6 | LAB_004537c4
-        ;   XREF to: 004537c4 (CONDITIONAL_JUMP)
+    JBE 0x004537c4                      ; 004537b6
+        ;   XREF to: 004537c4 (CONDITIONAL_JUMP)  ; LAB_004537c4
     MOV EAX,0xffff                      ; 004537b8
     ADD ESP,0x1c                        ; 004537bd
     POP EBP                             ; 004537c0

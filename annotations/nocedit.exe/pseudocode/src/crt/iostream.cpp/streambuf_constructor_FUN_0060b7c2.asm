@@ -20,7 +20,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0060b7c2
         ;   Label: crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2
-    MOV dword ptr [EAX + 0x28],0x665f70 ; 0060b7c6 | streambuf_vtable g_StreambufVTable
+    MOV dword ptr [EAX + 0x28],0x665f70 ; 0060b7c6 | g_StreambufVTable
     MOV dword ptr [EAX],0x0             ; 0060b7cd
     MOV dword ptr [EAX + 0x4],0x0       ; 0060b7d3
     MOV dword ptr [EAX + 0x8],0x0       ; 0060b7da

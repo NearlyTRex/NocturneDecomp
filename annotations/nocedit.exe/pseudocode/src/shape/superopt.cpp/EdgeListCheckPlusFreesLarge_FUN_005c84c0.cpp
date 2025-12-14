@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-byte * shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
+uint shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
 
 {
   double dVar1;
@@ -69,20 +69,18 @@ byte * shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
   if (*(int *)(in_stack_00000004 + 0x2c) != 0) {
     iVar3 = shape_superopt_cpp_FUN_005c91e0();
     if (iVar3 == 0) {
-      return (byte *)0x0;
+      return 0;
     }
     if (*(int *)(in_stack_00000004 + 0x2c) != 0) {
-      puVar4 = (uint *)
-               crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
+      puVar4 = crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
       if (puVar4 == (uint *)0x0) {
-        return (byte *)0x0;
+        return 0;
       }
       local_20 = puVar4;
-      local_24 = (uint *)
-                 crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
+      local_24 = crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
       if (local_24 == (uint *)0x0) {
         crt_memory_c_free_FUN_005fe659(puVar4);
-        return (byte *)0x0;
+        return 0;
       }
       local_1c = (double *)(in_stack_00000004 + 0x14);
       while( true ) {
@@ -130,7 +128,7 @@ byte * shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
         if ((local_18 == 0) || (local_14 == 0)) {
           crt_memory_c_free_FUN_005fe659(local_20);
           crt_memory_c_free_FUN_005fe659(local_24);
-          return (byte *)0x0;
+          return 0;
         }
         iVar3 = shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590();
         puVar4 = local_24;
@@ -141,7 +139,7 @@ byte * shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
         if (iVar3 == 0) {
           crt_memory_c_free_FUN_005fe659(local_20);
           crt_memory_c_free_FUN_005fe659(puVar4);
-          return (byte *)0x0;
+          return 0;
         }
         iVar3 = shape_superopt_cpp_FUN_005c91e0();
         if (iVar3 == 0) goto LAB_005c8a6e;
@@ -149,7 +147,7 @@ byte * shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
         if ((local_18 != 0) && (local_14 != 0)) {
           crt_memory_c_free_FUN_005fe659(local_20);
           crt_memory_c_free_FUN_005fe659(local_24);
-          return (byte *)0x0;
+          return 0;
         }
         if (local_18 == 0) {
           puVar4 = local_24;
@@ -186,7 +184,7 @@ byte * shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
       if (iVar3 == 0) {
         crt_memory_c_free_FUN_005fe659(local_20);
         crt_memory_c_free_FUN_005fe659(puVar4);
-        return (byte *)0x0;
+        return 0;
       }
       puVar4 = (uint *)(iVar3 + 0x10);
       puVar8 = local_6c;
@@ -223,7 +221,7 @@ byte * shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
 LAB_005c8a6e:
             crt_memory_c_free_FUN_005fe659(local_20);
             crt_memory_c_free_FUN_005fe659(puVar4);
-            return (byte *)0x0;
+            return 0;
           }
           if ((local_28 == 0) || (local_2c == 0)) goto LAB_005c8a2a;
           puVar4 = local_20;
@@ -243,7 +241,7 @@ LAB_005c8a6e:
           if (iVar3 == 0) {
             crt_memory_c_free_FUN_005fe659(local_20);
             crt_memory_c_free_FUN_005fe659(local_24);
-            return (byte *)0x0;
+            return 0;
           }
           puVar4 = local_24;
           puVar8 = *(uint **)(in_stack_00000004 + 0x30);
@@ -263,19 +261,19 @@ LAB_005c8a6e:
 LAB_005c89e6:
             crt_memory_c_free_FUN_005fe659(local_20);
             crt_memory_c_free_FUN_005fe659(local_24);
-            return &DAT_00000001;
+            return 1;
           }
         }
 LAB_005c8a4c:
         crt_memory_c_free_FUN_005fe659(local_20);
         crt_memory_c_free_FUN_005fe659(local_24);
-        return (byte *)0x0;
+        return 0;
       }
 LAB_005c8a2a:
       crt_memory_c_free_FUN_005fe659(local_20);
       crt_memory_c_free_FUN_005fe659(local_24);
-      return (byte *)0x0;
+      return 0;
     }
   }
-  return &DAT_00000001;
+  return 1;
 }

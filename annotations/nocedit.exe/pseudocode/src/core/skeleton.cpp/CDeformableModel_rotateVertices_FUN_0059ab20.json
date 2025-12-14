@@ -1,84 +1,84 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 27, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0", 
-      "addr": "0056e7c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059ab20", 
-    "signature": "void core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20(CDeformableModel * this_ptr, int lod_index, int * input_vertices)", 
-    "address_range": [
-      [
-        "0059ab20", 
-        "0059ab49"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "lod_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "input_vertices"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 19,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
   "cross_references": [
     {
-      "from_addr": "005a027a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250", 
-      "addr": "005a0250"
+      "addr": "005a0250",
+      "from_addr": "005a027a",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0059ab20",
+    "address_range": [
+      [
+        "0059ab20",
+        "0059ab49"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20",
+    "signature": "void core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20(CDeformableModel * this_ptr, int lod_index, int * input_vertices)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056e7c0",
+      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "input_vertices",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
 }

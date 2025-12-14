@@ -1,145 +1,145 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 99, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 72, 
-    "assembly_lines": 53, 
-    "suspect_count": 6, 
+    "assembly_lines": 53,
+    "complexity_score": 99,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 19,
+    "suspect_count": 6,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0", 
-      "addr": "004a00f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_FOV_mm_for_CLightA_006169de", 
-      "addr": "006169de", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CLightActorClassInfo.name_hash", 
-      "addr": "00822c84", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 4, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "&stack0xfffffec8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Enter FOV (mm) for CLightActor %s\",param_6);"
-    }, 
-    {
-      "line": 16, 
-      "match": "&stack0xfffffff8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(g_CEditorToolsPtr,acStack_134,(float *)&stack0xfffffff8,true,1.0,9999.0,true);"
-    }, 
-    {
-      "line": 20, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pCVar1[4].field26_0x148 = unaff_EBX;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00423440", 
-    "signature": "undefined core_boxactor.cpp_CLightActor_FUN_00423440()", 
-    "address_range": [
-      [
-        "00423440", 
-        "004234da"
-      ]
-    ], 
-    "name": "core_boxactor.cpp_CLightActor_FUN_00423440"
-  }, 
-  "stack_frame": {
-    "local_size": 320, 
-    "variables": [
-      {
-        "offset": -316, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_13c"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 320, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "unaffected_reg",
+      "register_param",
+      "stack_ref",
+      "badspacebase"
+    ],
+    "total_lines": 72
+  },
   "cross_references": [
     {
-      "from_addr": "0042355b", 
-      "type": "DATA", 
-      "name": "core_boxactor.cpp_CLightActor_FUN_004234e0", 
-      "addr": "004234e0"
+      "addr": "004234e0",
+      "from_addr": "0042355b",
+      "name": "core_boxactor.cpp_CLightActor_FUN_004234e0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00423440",
+    "address_range": [
+      [
+        "00423440",
+        "004234da"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_boxactor.cpp_CLightActor_FUN_00423440",
+    "signature": "undefined core_boxactor.cpp_CLightActor_FUN_00423440()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "004a00f0",
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006169de",
+      "name": "s_Enter_FOV_mm_for_CLightA_006169de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "00822c84",
+      "name": "g_CLightActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 320,
+    "local_size": 320,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 4,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 14,
+      "match": "&stack0xfffffec8",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Enter FOV (mm) for CLightActor %s\",param_6);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 16,
+      "match": "&stack0xfffffff8",
+      "text": "(g_CEditorToolsPtr,acStack_134,(float *)&stack0xfffffff8,true,1.0,9999.0,true);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBX",
+      "text": "pCVar1[4].field26_0x148 = unaff_EBX;",
+      "type": "unaffected_reg"
     }
   ]
 }

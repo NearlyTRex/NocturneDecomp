@@ -50,73 +50,73 @@ section .text
     MOV EBP,dword ptr [ESP + 0x120]     ; 004032d1
     MOV EDI,dword ptr [ESP + 0x124]     ; 004032d8
     MOV byte ptr [ESI],0x0              ; 004032df
-    CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004032e2 | void engine_2d.c_clearInputAndWait_FUN_00403260()
-        ;   XREF to: 00403260 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 004032e2
+        ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     XOR EBX,EBX                         ; 004032e7
     PUSH ESI                            ; 004032e9
         ;   Label: LAB_004032e9
     MOV EDX,dword ptr [ESP + 0x12c]     ; 004032ea
     PUSH EDX                            ; 004032f1
-    PUSH 0x61322f                       ; 004032f2 | = "%s%s_    " | s_s_s_0061322f = %s%s_
+    PUSH 0x61322f                       ; 004032f2 | = "%s%s_    "
     LEA EAX,[ESP + 0xc]                 ; 004032f7
     PUSH EAX                            ; 004032fb
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004032fc | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004032fc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00403301
     PUSH EDI                            ; 00403304
     PUSH EBP                            ; 00403305
     LEA EAX,[ESP + 0x8]                 ; 00403306
     PUSH EAX                            ; 0040330a
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040330b | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040330b
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 00403310
-    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00403313 | void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)
-    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 00403318 | int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
-        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00403313
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
+    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 00403318
+        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
     AND EAX,0xff                        ; 0040331d
     MOV dword ptr [ESP + 0x100],EAX     ; 00403322
     CMP EAX,0xd                         ; 00403329
-    JZ 0x0040337b                       ; 0040332c | LAB_0040337b
-        ;   XREF to: 0040337b (CONDITIONAL_JUMP)
+    JZ 0x0040337b                       ; 0040332c
+        ;   XREF to: 0040337b (CONDITIONAL_JUMP)  ; LAB_0040337b
     CMP EAX,0x1b                        ; 0040332e
-    JZ 0x00403378                       ; 00403331 | LAB_00403378
-        ;   XREF to: 00403378 (CONDITIONAL_JUMP)
+    JZ 0x00403378                       ; 00403331
+        ;   XREF to: 00403378 (CONDITIONAL_JUMP)  ; LAB_00403378
     CMP EAX,0x8                         ; 00403333
-    JNZ 0x00403343                      ; 00403336 | LAB_00403343
-        ;   XREF to: 00403343 (CONDITIONAL_JUMP)
+    JNZ 0x00403343                      ; 00403336
+        ;   XREF to: 00403343 (CONDITIONAL_JUMP)  ; LAB_00403343
     TEST EBX,EBX                        ; 00403338
-    JLE 0x00403343                      ; 0040333a | LAB_00403343
-        ;   XREF to: 00403343 (CONDITIONAL_JUMP)
+    JLE 0x00403343                      ; 0040333a
+        ;   XREF to: 00403343 (CONDITIONAL_JUMP)  ; LAB_00403343
     DEC EBX                             ; 0040333c
     LEA EAX,[ESI + EBX*0x1]             ; 0040333d
     MOV byte ptr [EAX],0x0              ; 00403340
     MOV ECX,dword ptr [ESP + 0x100]     ; 00403343
         ;   Label: LAB_00403343
     CMP ECX,0x1f                        ; 0040334a
-    JLE 0x004032e9                      ; 0040334d | LAB_004032e9
-        ;   XREF to: 004032e9 (CONDITIONAL_JUMP)
+    JLE 0x004032e9                      ; 0040334d
+        ;   XREF to: 004032e9 (CONDITIONAL_JUMP)  ; LAB_004032e9
     CMP ECX,0x80                        ; 0040334f
-    JGE 0x004032e9                      ; 00403355 | LAB_004032e9
-        ;   XREF to: 004032e9 (CONDITIONAL_JUMP)
+    JGE 0x004032e9                      ; 00403355
+        ;   XREF to: 004032e9 (CONDITIONAL_JUMP)  ; LAB_004032e9
     CMP EBX,dword ptr [ESP + 0x11c]     ; 00403357
-    JGE 0x004032e9                      ; 0040335e | LAB_004032e9
-        ;   XREF to: 004032e9 (CONDITIONAL_JUMP)
+    JGE 0x004032e9                      ; 0040335e
+        ;   XREF to: 004032e9 (CONDITIONAL_JUMP)  ; LAB_004032e9
     LEA EAX,[ESI + EBX*0x1]             ; 00403360
     MOV DL,byte ptr [ESP + 0x100]       ; 00403363
     INC EBX                             ; 0040336a
     MOV byte ptr [EAX],DL               ; 0040336b
     LEA EAX,[ESI + EBX*0x1]             ; 0040336d
     MOV byte ptr [EAX],0x0              ; 00403370
-    JMP 0x004032e9                      ; 00403373 | LAB_004032e9
-        ;   XREF to: 004032e9 (UNCONDITIONAL_JUMP)
+    JMP 0x004032e9                      ; 00403373
+        ;   XREF to: 004032e9 (UNCONDITIONAL_JUMP)  ; LAB_004032e9
     MOV byte ptr [ESI],0x0              ; 00403378
         ;   Label: LAB_00403378
-    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0040337b | void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0040337b
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
         ;   Label: LAB_0040337b
-        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)
-    CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00403380 | void engine_2d.c_clearInputAndWait_FUN_00403260()
-        ;   XREF to: 00403260 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00403380
+        ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     MOV EAX,dword ptr [ESP + 0x100]     ; 00403385
     ADD ESP,0x104                       ; 0040338c
     POP EBP                             ; 00403392

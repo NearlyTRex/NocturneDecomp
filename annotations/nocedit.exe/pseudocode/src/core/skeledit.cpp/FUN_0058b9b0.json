@@ -1,434 +1,434 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 458, 
-    "pseudocode_lines": 118, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 361, 
-    "assembly_lines": 243, 
-    "suspect_count": 30, 
+    "assembly_lines": 243,
+    "complexity_score": 458,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 3,
+    "pseudocode_lines": 118,
+    "suspect_count": 30,
     "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "suspect_float", 
-      "extra_output", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "sub_artifact",
+      "suspect_float",
+      "extra_output",
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeledit.cpp_FUN_0058ede0", 
-      "addr": "0058ede0"
-    }, 
-    {
-      "name": "crt_math.c_floor_FUN_005feb90", 
-      "addr": "005feb90"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
-      "addr": "005fe840"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_d_f_f_d_f_f_d_f_f_0064a8cf", 
-      "addr": "0064a8cf", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0064a8f2", 
-      "addr": "0064a8f2", 
-      "value": "0.00390625"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0064a8fa", 
-      "addr": "0064a8fa", 
-      "value": "256"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EBX;"
-    }, 
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000010;"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000010);"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_0000000c + 0x54)) {"
-    }, 
-    {
-      "line": 51, 
-      "match": "&stack0xffffffb4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "&stack0xffffffb4,local_30,local_3c,&stack0xffffffb8,auStack_2c,&local_38,"
-    }, 
-    {
-      "line": 51, 
-      "match": "&stack0xffffffb8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "&stack0xffffffb4,local_30,local_3c,&stack0xffffffb8,auStack_2c,&local_38,"
-    }, 
-    {
-      "line": 61, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(float *)((int)local_34 + iVar2 + -4) < local_14) {"
-    }, 
-    {
-      "line": 62, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_14 = *(float *)((int)local_34 + iVar2 + -4);"
-    }, 
-    {
-      "line": 64, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(float *)((int)&local_44 + iVar2) < fVar9) {"
-    }, 
-    {
-      "line": 65, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "fVar9 = *(float *)((int)&local_44 + iVar2);"
-    }, 
-    {
-      "line": 70, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "local_24 = SUB84 /* extract 2-byte value */(dVar8,0);"
-    }, 
-    {
-      "line": 75, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "local_28 = SUB84 /* extract 2-byte value */(dVar8,0);"
-    }, 
-    {
-      "line": 81, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if (*(int *)(extraout_EBX + 0xbc) <= local_20) {"
-    }, 
-    {
-      "line": 84, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "puVar3 = (ushort *)(*(int *)(extraout_EBX + 0x7c) + iVar5);"
-    }, 
-    {
-      "line": 85, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)(*(int *)(extraout_EBX + 0x90) + iVar1) = local_20;"
-    }, 
-    {
-      "line": 88, 
-      "match": "(ushort *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*puVar3 = *(ushort *)((int)local_34 + iVar2);"
-    }, 
-    {
-      "line": 102, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_18 = 9.18341e-41;"
-    }, 
-    {
-      "line": 108, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_c = 9.18341e-41;"
-    }, 
-    {
-      "line": 110, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "puVar3 = (ushort *)(extraout_ECX + 2);"
-    }, 
-    {
-      "line": 111, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(short *)(extraout_ECX + 6) = SUB42 /* extract 2-byte value */(local_18,0);"
-    }, 
-    {
-      "line": 111, 
-      "match": "SUB42", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*(short *)(extraout_ECX + 6) = SUB42 /* extract 2-byte value */(local_18,0);"
-    }, 
-    {
-      "line": 112, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar2 = extraout_EDX + 4;"
-    }, 
-    {
-      "line": 113, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(short *)(extraout_ECX + 0xc) = SUB42 /* extract 2-byte value */(fStack_c,0);"
-    }, 
-    {
-      "line": 113, 
-      "match": "SUB42", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*(short *)(extraout_ECX + 0xc) = SUB42 /* extract 2-byte value */(fStack_c,0);"
-    }, 
-    {
-      "line": 118, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "} while (iVar4 < *(int *)(extraout_EBX + 0x54));"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0058b9b0", 
-    "signature": "undefined core_skeledit.cpp_FUN_0058b9b0()", 
-    "address_range": [
-      [
-        "0058b9b0", 
-        "0058bc30"
-      ]
-    ], 
-    "name": "core_skeledit.cpp_FUN_0058b9b0"
-  }, 
-  "stack_frame": {
-    "local_size": 96, 
-    "variables": [
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 96, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 361
+  },
   "cross_references": [
     {
-      "from_addr": "0058b874", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b660", 
-      "addr": "0058b660"
-    }, 
+      "addr": "0058b660",
+      "from_addr": "0058b874",
+      "name": "core_skeledit.cpp_FUN_0058b660",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058c327", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058c190", 
-      "addr": "0058c190"
+      "addr": "0058c190",
+      "from_addr": "0058c327",
+      "name": "core_skeledit.cpp_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058b9b0",
+    "address_range": [
+      [
+        "0058b9b0",
+        "0058bc30"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_skeledit.cpp_FUN_0058b9b0",
+    "signature": "undefined core_skeledit.cpp_FUN_0058b9b0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0058ede0",
+      "name": "core_skeledit.cpp_FUN_0058ede0"
+    },
+    {
+      "addr": "005feb90",
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "005fe840",
+      "name": "crt_stdio.c_fgetc_FUN_005fe840"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064a8cf",
+      "name": "s_d_d_f_f_d_f_f_d_f_f_0064a8cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a8f2",
+      "name": "DOUBLE_0064a8f2",
+      "type": "double",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "0064a8fa",
+      "name": "DOUBLE_0064a8fa",
+      "type": "double",
+      "value": "256"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 96,
+    "local_size": 96,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EBX",
+      "text": "int extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "text": "FILE *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000010",
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_0000000c",
+      "text": "if (0 < *(int *)(in_stack_0000000c + 0x54)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xffffffb4",
+      "text": "&stack0xffffffb4,local_30,local_3c,&stack0xffffffb8,auStack_2c,&local_38,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xffffffb8",
+      "text": "&stack0xffffffb4,local_30,local_3c,&stack0xffffffb8,auStack_2c,&local_38,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(float *)((int)",
+      "text": "if (*(float *)((int)local_34 + iVar2 + -4) < local_14) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(float *)((int)",
+      "text": "local_14 = *(float *)((int)local_34 + iVar2 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(float *)((int)",
+      "text": "if (*(float *)((int)&local_44 + iVar2) < fVar9) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(float *)((int)",
+      "text": "fVar9 = *(float *)((int)&local_44 + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 70,
+      "match": "SUB84",
+      "text": "local_24 = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 75,
+      "match": "SUB84",
+      "text": "local_28 = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 81,
+      "match": "extraout_EBX",
+      "text": "if (*(int *)(extraout_EBX + 0xbc) <= local_20) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 84,
+      "match": "extraout_EBX",
+      "text": "puVar3 = (ushort *)(*(int *)(extraout_EBX + 0x7c) + iVar5);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 85,
+      "match": "extraout_EBX",
+      "text": "*(int *)(*(int *)(extraout_EBX + 0x90) + iVar1) = local_20;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(ushort *)((int)",
+      "text": "*puVar3 = *(ushort *)((int)local_34 + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 102,
+      "match": "9.18341e-41",
+      "text": "local_18 = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 108,
+      "match": "9.18341e-41",
+      "text": "fStack_c = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 110,
+      "match": "extraout_ECX",
+      "text": "puVar3 = (ushort *)(extraout_ECX + 2);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 111,
+      "match": "extraout_ECX",
+      "text": "*(short *)(extraout_ECX + 6) = SUB42 /* extract 2-byte value */(local_18,0);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 111,
+      "match": "SUB42",
+      "text": "*(short *)(extraout_ECX + 6) = SUB42 /* extract 2-byte value */(local_18,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 112,
+      "match": "extraout_EDX",
+      "text": "iVar2 = extraout_EDX + 4;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 113,
+      "match": "extraout_ECX",
+      "text": "*(short *)(extraout_ECX + 0xc) = SUB42 /* extract 2-byte value */(fStack_c,0);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 113,
+      "match": "SUB42",
+      "text": "*(short *)(extraout_ECX + 0xc) = SUB42 /* extract 2-byte value */(fStack_c,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 118,
+      "match": "extraout_EBX",
+      "text": "} while (iVar4 < *(int *)(extraout_EBX + 0x54));",
+      "type": "extra_output"
     }
   ]
 }

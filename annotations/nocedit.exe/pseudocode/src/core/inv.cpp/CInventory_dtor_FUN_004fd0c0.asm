@@ -20,8 +20,8 @@ section .text
         ;   Label: core_inv.cpp_CInventory_dtor_FUN_004fd0c0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004fd0c1
     PUSH EBX                            ; 004fd0c5
-    CALL core_inv.cpp_CInventory_clear_FUN_004fd0e0 ; 004fd0c6 | void core_inv.cpp_CInventory_clear_FUN_004fd0e0(CInventory * this_ptr)
-        ;   XREF to: 004fd0e0 (UNCONDITIONAL_CALL)
+    CALL core_inv.cpp_CInventory_clear_FUN_004fd0e0 ; 004fd0c6
+        ;   XREF to: 004fd0e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_clear_FUN_004fd0e0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004fd0cb
     MOV EAX,EBX                         ; 004fd0ce
     POP EBX                             ; 004fd0d0

@@ -28,11 +28,11 @@ section .text
     MOV EBP,ESP                         ; 00457ed4
     SUB ESP,0x4                         ; 00457ed6
     PUSH 0x166                          ; 00457edc
-    MOV EAX,0x61a856                    ; 00457ee1 | = "..\\shape\\design.c" | s_shape_design_c_0061a856 = ..\shape\design.c
-    PUSH EAX                            ; 00457ee6 | = "..\\shape\\design.c" | s_shape_design_c_0061a856 = ..\shape\design.c
+    MOV EAX,0x61a856                    ; 00457ee1 | = "..\\shape\\design.c"
+    PUSH EAX                            ; 00457ee6 | = "..\\shape\\design.c"
     PUSH 0x1c                           ; 00457ee7
-    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 00457ee9 | void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
-        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 00457ee9
+        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00457eee
     MOV dword ptr [EBP + -0x4],EAX      ; 00457ef1
     MOV EAX,dword ptr [EBP + -0x4]      ; 00457ef4

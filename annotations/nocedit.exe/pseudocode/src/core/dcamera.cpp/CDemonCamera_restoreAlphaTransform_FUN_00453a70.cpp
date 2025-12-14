@@ -5,4 +5,57 @@
 // Signature: CVector3i * core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70(CDemonCamera * this_ptr, CVector3i * screen_pos, int alpha_index, CVector3i * world_pos)
 
 #include "nocturne.h"
-// Decompilation failed or timed out
+
+CVector3i * __cdecl
+core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70
+          (CDemonCamera *this_ptr,CVector3i *screen_pos,int alpha_index,CVector3i *world_pos)
+
+{
+  int iVar1;
+  int iVar2;
+  longlong lVar3;
+  longlong lVar4;
+  longlong lVar5;
+  longlong lVar6;
+  longlong lVar7;
+  longlong lVar8;
+  longlong lVar9;
+  longlong lVar10;
+  longlong lVar11;
+  int iVar12;
+  int iVar13;
+  
+  iVar1 = screen_pos->z;
+  iVar12 = (int)(((longlong)(screen_pos->x - (this_ptr->saved_viewport_rect).right) *
+                 (longlong)iVar1) / (longlong)(this_ptr->saved_viewport_rect).left);
+  iVar13 = (int)(((longlong)(screen_pos->y - (this_ptr->saved_viewport_rect).bottom) *
+                 (longlong)iVar1) / (longlong)(this_ptr->saved_viewport_rect).top);
+  lVar3 = (longlong)this_ptr->alpha_transform_matrices[9][alpha_index] * (longlong)iVar12;
+  lVar4 = (longlong)this_ptr->alpha_transform_matrices[0xc][alpha_index] * (longlong)iVar13;
+  lVar5 = (longlong)
+          *(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + alpha_index * 4)
+          * (longlong)iVar1;
+  lVar6 = (longlong)this_ptr->alpha_transform_matrices[10][alpha_index] * (longlong)iVar12;
+  lVar7 = (longlong)this_ptr->alpha_transform_matrices[0xd][alpha_index] * (longlong)iVar13;
+  lVar8 = (longlong)
+          *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x58)
+          * (longlong)iVar1;
+  iVar2 = this_ptr->alpha_translations[alpha_index].y;
+  lVar9 = (longlong)this_ptr->alpha_transform_matrices[0xb][alpha_index] * (longlong)iVar12;
+  lVar10 = (longlong)this_ptr->alpha_transform_matrices[0xe][alpha_index] * (longlong)iVar13;
+  lVar11 = (longlong)
+           *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x38
+                   ) * (longlong)iVar1;
+  iVar1 = this_ptr->alpha_translations[alpha_index].z;
+  world_pos->x = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+                 ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
+                 ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
+                 this_ptr->alpha_translations[alpha_index].x;
+  world_pos->y = iVar2 + ((uint)lVar8 >> 0x10 | (int)((ulonglong)lVar8 >> 0x20) << 0x10) +
+                         ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
+                         ((uint)lVar7 >> 0x10 | (int)((ulonglong)lVar7 >> 0x20) << 0x10);
+  world_pos->z = iVar1 + ((uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10) +
+                         ((uint)lVar9 >> 0x10 | (int)((ulonglong)lVar9 >> 0x20) << 0x10) +
+                         ((uint)lVar10 >> 0x10 | (int)((ulonglong)lVar10 >> 0x20) << 0x10);
+  return world_pos;
+}

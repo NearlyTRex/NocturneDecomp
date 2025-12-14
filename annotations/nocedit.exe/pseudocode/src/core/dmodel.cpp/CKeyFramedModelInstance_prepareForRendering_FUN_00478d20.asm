@@ -38,19 +38,19 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00478d27
     FLD float ptr [ESP + 0xc]           ; 00478d2b
     PUSH EDX                            ; 00478d2f
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00478d30 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00478d30
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     PUSH EAX                            ; 00478d35
     FISTP dword ptr [ESP + 0x8]         ; 00478d36
     MOV ECX,dword ptr [ESP + 0x8]       ; 00478d3a
     PUSH ECX                            ; 00478d3e
     PUSH EAX                            ; 00478d3f
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 00478d40 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 00478d40
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00478d45
     PUSH EAX                            ; 00478d48
-    CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 00478d49 | void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 00478d49
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
     ADD ESP,0x10                        ; 00478d4e
     ADD ESP,0x4                         ; 00478d51
     RET                                 ; 00478d54

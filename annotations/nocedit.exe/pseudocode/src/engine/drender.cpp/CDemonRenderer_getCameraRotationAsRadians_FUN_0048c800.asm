@@ -45,14 +45,14 @@ section .text
     AND ESP,0xfffffff8                  ; 0048c808
     MOV EBX,dword ptr [EBP + 0x14]      ; 0048c80b
     MOV ESI,ESP                         ; 0048c80e
-    CALL engine_matrix.c_getCameraRotation_FUN_0050e2f0 ; 0048c810 | void engine_matrix.c_getCameraRotation_FUN_0050e2f0(CVector3i * output)
-        ;   XREF to: 0050e2f0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_getCameraRotation_FUN_0050e2f0 ; 0048c810
+        ;   XREF to: 0050e2f0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraRotation_FUN_0050e2f0(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 0048c815
     MOV dword ptr [ESP + 0xc],EAX       ; 0048c818
-    FLD double ptr [0x00622065]         ; 0048c81c | double g_AngleToRadianScale
+    FLD double ptr [0x00622065]         ; 0048c81c | g_AngleToRadianScale
     FILD dword ptr [ESP + 0xc]          ; 0048c822
     FMUL ST1                            ; 0048c826
-    FLD double ptr [0x0062206d]         ; 0048c828 | double g_PiConstant
+    FLD double ptr [0x0062206d]         ; 0048c828 | g_PiConstant
     FXCH                                ; 0048c82e
     FMUL ST1                            ; 0048c830
     FSTP float ptr [EBX]                ; 0048c832

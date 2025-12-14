@@ -1,119 +1,119 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 45, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 161, 
-    "assembly_lines": 116, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
-      "addr": "005abd30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_MixBufferSize", 
-      "addr": "03f69280", 
-      "value": null
-    }, 
-    {
-      "type": "void*[8]", 
-      "name": "g_ChannelPrimaryBuffers", 
-      "addr": "03f692b0", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005ac999", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
+    "assembly_lines": 116,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 161
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ac990", 
-    "signature": "void sound_sndmain.cpp_getChannelLevels_FUN_005ac990(int channel, float * out_peak, float * out_average)", 
+    "address": "005ac990",
     "address_range": [
       [
-        "005ac990", 
+        "005ac990",
         "005aca8f"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_getChannelLevels_FUN_005ac990"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getChannelLevels_FUN_005ac990",
+    "signature": "void sound_sndmain.cpp_getChannelLevels_FUN_005ac990(int channel, float * out_peak, float * out_average)"
+  },
+  "function_calls": [
+    {
+      "addr": "005abd30",
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f69280",
+      "name": "g_MixBufferSize",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f692b0",
+      "name": "g_ChannelPrimaryBuffers",
+      "type": "void*[8]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 36, 
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "channel"
-      }, 
+        "is_param": true,
+        "name": "channel",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "out_peak"
-      }, 
+        "is_param": true,
+        "name": "out_peak",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "out_average"
+        "is_param": true,
+        "name": "out_average",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005ac999",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

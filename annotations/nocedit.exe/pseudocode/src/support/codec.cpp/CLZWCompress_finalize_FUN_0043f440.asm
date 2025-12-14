@@ -25,15 +25,15 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0043f442
     MOV EDX,dword ptr [EBX + 0x30]      ; 0043f446
     TEST EDX,EDX                        ; 0043f449
-    JGE 0x0043f466                      ; 0043f44b | LAB_0043f466
-        ;   XREF to: 0043f466 (CONDITIONAL_JUMP)
+    JGE 0x0043f466                      ; 0043f44b
+        ;   XREF to: 0043f466 (CONDITIONAL_JUMP)  ; LAB_0043f466
     MOV EDI,dword ptr [ESP + 0x10]      ; 0043f44d
         ;   Label: LAB_0043f44d
     PUSH EDI                            ; 0043f451
     ADD EBX,0x18                        ; 0043f452
     PUSH EBX                            ; 0043f455
-    CALL support_codec.cpp_flushBitBuffer_FUN_0043e7e0 ; 0043f456 | void support_codec.cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer * bit_buffer, FILE * output_stream)
-        ;   XREF to: 0043e7e0 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_flushBitBuffer_FUN_0043e7e0 ; 0043f456
+        ;   XREF to: 0043e7e0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer * bit_buffer, FILE * output_stream)
     MOV EAX,0x1                         ; 0043f45b
     ADD ESP,0x8                         ; 0043f460
     POP EDI                             ; 0043f463
@@ -47,10 +47,10 @@ section .text
     PUSH EDX                            ; 0043f46f
     LEA EAX,[EBX + 0x4]                 ; 0043f470
     PUSH EAX                            ; 0043f473
-    CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 ; 0043f474 | void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, FILE * output_stream)
-        ;   XREF to: 0043f170 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 ; 0043f474
+        ;   XREF to: 0043f170 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary * this_ptr, int code_value, SBitBuffer * bit_buffer, FILE * output_stream)
     ADD ESP,0x10                        ; 0043f479
     MOV dword ptr [EBX + 0x30],0xffffffff ; 0043f47c
-    JMP 0x0043f44d                      ; 0043f483 | LAB_0043f44d
-        ;   XREF to: 0043f44d (UNCONDITIONAL_JUMP)
+    JMP 0x0043f44d                      ; 0043f483
+        ;   XREF to: 0043f44d (UNCONDITIONAL_JUMP)  ; LAB_0043f44d
 

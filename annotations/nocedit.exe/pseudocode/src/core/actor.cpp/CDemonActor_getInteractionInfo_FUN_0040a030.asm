@@ -25,11 +25,11 @@ section .text
         ;   Label: core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030
     MOV EBX,dword ptr [ESP + 0xc]       ; 0040a031
     PUSH 0x58c                          ; 0040a035
-    PUSH 0x6139d1                       ; 0040a03a | = "..\\core\\actor.cpp" | s_core_actor_cpp_006139d1 = ..\core\actor.cpp
+    PUSH 0x6139d1                       ; 0040a03a | = "..\\core\\actor.cpp"
     MOV EDX,dword ptr [ESP + 0x10]      ; 0040a03f
     PUSH EDX                            ; 0040a043
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 0040a044 | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 0040a044
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     MOV dword ptr [EBX],0x0             ; 0040a049
     MOV dword ptr [EBX + 0x4],0x0       ; 0040a04f
     MOV dword ptr [EBX + 0x10],0x0      ; 0040a056

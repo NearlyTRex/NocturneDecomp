@@ -1,112 +1,112 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 0, 
-    "global_count": 7, 
-    "total_lines": 77, 
-    "assembly_lines": 61, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fputc_FUN_006007a0", 
-      "addr": "006007a0"
-    }, 
-    {
-      "name": "engine_dosio.c_getFile_FUN_00481a50", 
-      "addr": "00481a50"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wb_0061e713", 
-      "addr": "0061e713", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_0061e716", 
-      "addr": "0061e716", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dfilter_cpp_0061e71a", 
-      "addr": "0061e71a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonFilter_save_Bad_fi_0061e72e", 
-      "addr": "0061e72e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dfilter_cpp_0061e750", 
-      "addr": "0061e750", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 61,
+    "complexity_score": 16,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 7,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 77
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00470510", 
-    "signature": "void core_dfilter.cpp_CDemonFilter_save_FUN_00470510(CDemonFilter * this_ptr, char * filename)", 
+    "address": "00470510",
     "address_range": [
       [
-        "00470510", 
+        "00470510",
         "0047059a"
       ]
-    ], 
-    "name": "core_dfilter.cpp_CDemonFilter_save_FUN_00470510"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CDemonFilter_save_FUN_00470510",
+    "signature": "void core_dfilter.cpp_CDemonFilter_save_FUN_00470510(CDemonFilter * this_ptr, char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "006007a0",
+      "name": "crt_stdio.c_fputc_FUN_006007a0"
+    },
+    {
+      "addr": "00481a50",
+      "name": "engine_dosio.c_getFile_FUN_00481a50"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061e713",
+      "name": "s_wb_0061e713",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e716",
+      "name": "s_art_0061e716",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e71a",
+      "name": "s_core_dfilter_cpp_0061e71a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e72e",
+      "name": "s_CDemonFilter_save_Bad_fi_0061e72e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e750",
+      "name": "s_core_dfilter_cpp_0061e750",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonFilter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonFilter *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

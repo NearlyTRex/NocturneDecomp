@@ -25,7 +25,7 @@ void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
   if (local_24 < (Heap *)&DAT_00000010) {
     local_24 = (Heap *)&DAT_00000010;
   }
-  (*(code *)PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
+  (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
   pvVar6 = (void *)0x0;
   bVar2 = false;
   while( true ) {
@@ -62,6 +62,6 @@ void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size)
   }
 LAB_00601cb0:
   DAT_03f9b850 = 0;
-  (*(code *)PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
+  (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
   return pvVar6;
 }

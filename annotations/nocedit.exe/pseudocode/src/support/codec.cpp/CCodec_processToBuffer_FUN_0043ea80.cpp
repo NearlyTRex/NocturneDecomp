@@ -20,8 +20,7 @@ support_codec_cpp_CCodec_processToBuffer_FUN_0043ea80
   
   crt_strstream_cpp_ostrstream_ctor_FUN_005ff384
             ((ostrstream *)&stack0xffffff70,0,output_buffer,*output_size,2);
-  iVar1 = (*this_ptr->vtable->process)(this_ptr,(FILE *)context_param,(int)output_buffer,&FStack_44)
-  ;
+  iVar1 = (*this_ptr->vtable->process)(this_ptr,context_param,(int)output_buffer,&FStack_44);
   if ((iVar1 != 0) && (in_stack_00000040 != 0)) {
     iVar1 = (*this_ptr->vtable->finalize)(this_ptr,(FILE *)&stack0xffffffe0);
   }

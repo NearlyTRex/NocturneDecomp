@@ -37,11 +37,11 @@ section .text
     FSQRT                               ; 00461e89
     FSTP double ptr [EBP + -0x8]        ; 00461e8b
     TEST dword ptr [EBP + -0x4],0x7fffffff ; 00461e8e
-    JNZ 0x00461eab                      ; 00461e95 | LAB_00461eab
-        ;   XREF to: 00461eab (CONDITIONAL_JUMP)
+    JNZ 0x00461eab                      ; 00461e95
+        ;   XREF to: 00461eab (CONDITIONAL_JUMP)  ; LAB_00461eab
     CMP dword ptr [EBP + -0x8],0x0      ; 00461e97
-    JNZ 0x00461eab                      ; 00461e9b | LAB_00461eab
-        ;   XREF to: 00461eab (CONDITIONAL_JUMP)
+    JNZ 0x00461eab                      ; 00461e9b
+        ;   XREF to: 00461eab (CONDITIONAL_JUMP)  ; LAB_00461eab
     MOV dword ptr [EBP + -0x8],0x0      ; 00461e9d
     MOV dword ptr [EBP + -0x4],0x3ff00000 ; 00461ea4
     MOV EAX,dword ptr [EBP + 0x14]      ; 00461eab

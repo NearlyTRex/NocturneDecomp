@@ -33,20 +33,20 @@ section .text
         ;   Label: LAB_005d9982
     PUSH EAX                            ; 005d9985
     PUSH ESI                            ; 005d9986
-    CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 005d9987 | int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 005d9987
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
     ADD ESP,0x8                         ; 005d998c
     MOV EDX,EAX                         ; 005d998f
     CMP EAX,0x64                        ; 005d9991
-    JC 0x005d99eb                       ; 005d9994 | LAB_005d99eb
-        ;   XREF to: 005d99eb (CONDITIONAL_JUMP)
-    JA 0x005d99f7                       ; 005d9996 | LAB_005d99f7
-        ;   XREF to: 005d99f7 (CONDITIONAL_JUMP)
-    MOV EDI,dword ptr [0x03f6cbd4]      ; 005d9998 | undefined4 DAT_03f6cbd4
+    JC 0x005d99eb                       ; 005d9994
+        ;   XREF to: 005d99eb (CONDITIONAL_JUMP)  ; LAB_005d99eb
+    JA 0x005d99f7                       ; 005d9996
+        ;   XREF to: 005d99f7 (CONDITIONAL_JUMP)  ; LAB_005d99f7
+    MOV EDI,dword ptr [0x03f6cbd4]      ; 005d9998 | DAT_03f6cbd4
     PUSH EDI                            ; 005d999e
     PUSH EBX                            ; 005d999f
-    CALL core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10 ; 005d99a0 | undefined core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10()
-        ;   XREF to: 005d9a10 (UNCONDITIONAL_CALL)
+    CALL core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10 ; 005d99a0
+        ;   XREF to: 005d9a10 (UNCONDITIONAL_CALL)  ; undefined core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10()
     MOV EDX,dword ptr [EBX + 0x1fbd8]   ; 005d99a5
     ADD ESP,0x8                         ; 005d99ab
     TEST EDX,EDX                        ; 005d99ae
@@ -60,42 +60,42 @@ section .text
     FCOMPP                              ; 005d99c3
     FNSTSW AX                           ; 005d99c5
     SAHF                                ; 005d99c7
-    JC 0x005d9982                       ; 005d99c8 | LAB_005d9982
-        ;   XREF to: 005d9982 (CONDITIONAL_JUMP)
+    JC 0x005d9982                       ; 005d99c8
+        ;   XREF to: 005d9982 (CONDITIONAL_JUMP)  ; LAB_005d9982
     MOV ESP,EBP                         ; 005d99ca
     POP EBP                             ; 005d99cc
     POP EDI                             ; 005d99cd
     POP ESI                             ; 005d99ce
     POP EBX                             ; 005d99cf
     RET                                 ; 005d99d0
-    MOV EDX,dword ptr [0x03f6cbd8]      ; 005d99d1 | undefined4 DAT_03f6cbd8
+    MOV EDX,dword ptr [0x03f6cbd8]      ; 005d99d1 | DAT_03f6cbd8
         ;   Label: LAB_005d99d1
     PUSH EDX                            ; 005d99d7
     PUSH EBX                            ; 005d99d8
-    CALL core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10 ; 005d99d9 | undefined core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10()
-        ;   XREF to: 005d9a10 (UNCONDITIONAL_CALL)
+    CALL core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10 ; 005d99d9
+        ;   XREF to: 005d9a10 (UNCONDITIONAL_CALL)  ; undefined core_svetlana.cpp_AttackWithParentBone_FUN_005d9a10()
     MOV ECX,dword ptr [EBX + 0x1fbd8]   ; 005d99de
     ADD ESP,0x8                         ; 005d99e4
     TEST ECX,ECX                        ; 005d99e7
-    JMP 0x005d99b0                      ; 005d99e9 | LAB_005d99b0
-        ;   XREF to: 005d99b0 (UNCONDITIONAL_JUMP)
+    JMP 0x005d99b0                      ; 005d99e9
+        ;   XREF to: 005d99b0 (UNCONDITIONAL_JUMP)  ; LAB_005d99b0
     PUSH EDX                            ; 005d99eb
         ;   Label: LAB_005d99eb
     PUSH EBX                            ; 005d99ec
-    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 005d99ed | void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 005d99ed
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 005d99f2
-    JMP 0x005d99be                      ; 005d99f5 | LAB_005d99be
-        ;   XREF to: 005d99be (UNCONDITIONAL_JUMP)
+    JMP 0x005d99be                      ; 005d99f5
+        ;   XREF to: 005d99be (UNCONDITIONAL_JUMP)  ; LAB_005d99be
     CMP EAX,0x65                        ; 005d99f7
         ;   Label: LAB_005d99f7
-    JZ 0x005d99d1                       ; 005d99fa | LAB_005d99d1
-        ;   XREF to: 005d99d1 (CONDITIONAL_JUMP)
+    JZ 0x005d99d1                       ; 005d99fa
+        ;   XREF to: 005d99d1 (CONDITIONAL_JUMP)  ; LAB_005d99d1
     PUSH EDX                            ; 005d99fc
     PUSH EBX                            ; 005d99fd
-    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 005d99fe | void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 005d99fe
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 005d9a03
-    JMP 0x005d99be                      ; 005d9a06 | LAB_005d99be
-        ;   XREF to: 005d99be (UNCONDITIONAL_JUMP)
+    JMP 0x005d99be                      ; 005d9a06
+        ;   XREF to: 005d99be (UNCONDITIONAL_JUMP)  ; LAB_005d99be
 

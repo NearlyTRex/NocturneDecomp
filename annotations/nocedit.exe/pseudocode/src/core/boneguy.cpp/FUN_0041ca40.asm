@@ -77,14 +77,14 @@ section .text
     LEA EAX,[EBP + 0x26]                ; 0041ca7b
     PUSH EAX                            ; 0041ca7e
     MOV ECX,0xbf456042                  ; 0041ca7f
-    PUSH 0x3f87558                      ; 0041ca84 | CVector3f g_ZeroVector
+    PUSH 0x3f87558                      ; 0041ca84 | g_ZeroVector
     LEA EAX,[EBP + 0xffffff66]          ; 0041ca89
     MOV EDX,0xc0224dd3                  ; 0041ca8f
     PUSH EAX                            ; 0041ca94
     MOV dword ptr [EBP + 0x26],ECX      ; 0041ca95
     MOV dword ptr [EBP + 0x2a],EDX      ; 0041ca98
-    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 0041ca9b | void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-        ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0 ; 0041ca9b
+        ;   XREF to: 005f54c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 0041caa0
     LEA EAX,[EBP + -0xa]                ; 0041caa3
     PUSH EAX                            ; 0041caa6
@@ -94,8 +94,8 @@ section .text
     ADD ESP,0x8                         ; 0041cab1
     LEA EAX,[EBP + 0x32]                ; 0041cab4
     PUSH EAX                            ; 0041cab7
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 0041cab8 | CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 0041cab8
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
     FLD float ptr [EBP + -0xa]          ; 0041cabd
     FLD float ptr [EBP + -0x6]          ; 0041cac0
     FLD float ptr [EBP + -0x2]          ; 0041cac3
@@ -113,9 +113,9 @@ section .text
     FXCH                                ; 0041cae1
     FSTP float ptr [EBP + 0x36]         ; 0041cae3
     FSTP float ptr [EBP + 0x3a]         ; 0041cae6
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 0041cae9 | CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)
-    FLD float ptr [0x00616165]          ; 0041caee | float FLOAT_00616165
+    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 0041cae9
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
+    FLD float ptr [0x00616165]          ; 0041caee | FLOAT_00616165
     FLD float ptr [EBP + 0x32]          ; 0041caf4
     FMUL ST1                            ; 0041caf7
     FLD float ptr [EBP + 0x36]          ; 0041caf9
@@ -124,15 +124,15 @@ section .text
     LEA EAX,[EBP + 0x56]                ; 0041cb01
     LEA EDX,[EBP + 0x3e]                ; 0041cb04
     ADD ESP,0x4                         ; 0041cb07
-    FADD double ptr [0x0061616d]        ; 0041cb0a | double DOUBLE_0061616d
+    FADD double ptr [0x0061616d]        ; 0041cb0a | DOUBLE_0061616d
     FXCH                                ; 0041cb10
     FSTP float ptr [EBP + 0x56]         ; 0041cb12
     FXCH                                ; 0041cb15
     FSTP float ptr [EBP + 0x5a]         ; 0041cb17
     FSTP float ptr [EBP + 0x5e]         ; 0041cb1a
     CMP EDX,EAX                         ; 0041cb1d
-    JZ 0x0041cb33                       ; 0041cb1f | LAB_0041cb33
-        ;   XREF to: 0041cb33 (CONDITIONAL_JUMP)
+    JZ 0x0041cb33                       ; 0041cb1f
+        ;   XREF to: 0041cb33 (CONDITIONAL_JUMP)  ; LAB_0041cb33
     MOV EAX,dword ptr [EBP + 0x56]      ; 0041cb21
     MOV dword ptr [EBP + 0x3e],EAX      ; 0041cb24
     MOV EAX,dword ptr [EBP + 0x5a]      ; 0041cb27
@@ -156,14 +156,14 @@ section .text
     PUSH EAX                            ; 0041cb65
     MOV dword ptr [EBP + 0x1a],ECX      ; 0041cb66
     MOV dword ptr [EBP + 0x1e],ESI      ; 0041cb69
-    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 0041cb6c | CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 0041cb6c
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     MOV EDX,EAX                         ; 0041cb71
     LEA EAX,[EBP + 0x6e]                ; 0041cb73
     ADD ESP,0xc                         ; 0041cb76
     CMP EAX,EDX                         ; 0041cb79
-    JZ 0x0041cb8e                       ; 0041cb7b | LAB_0041cb8e
-        ;   XREF to: 0041cb8e (CONDITIONAL_JUMP)
+    JZ 0x0041cb8e                       ; 0041cb7b
+        ;   XREF to: 0041cb8e (CONDITIONAL_JUMP)  ; LAB_0041cb8e
     MOV EAX,dword ptr [EDX]             ; 0041cb7d
     MOV dword ptr [EBP + 0x6e],EAX      ; 0041cb7f
     MOV EAX,dword ptr [EDX + 0x4]       ; 0041cb82
@@ -182,8 +182,8 @@ section .text
     PUSH EAX                            ; 0041cbae
     LEA ESI,[EBP + -0x3a]               ; 0041cbaf
     LEA EDI,[EBP + -0x6a]               ; 0041cbb2
-    CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 0041cbb5 | CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
-        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 0041cbb5
+        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
     ADD ESP,0x8                         ; 0041cbba
     LEA EAX,[EBP + -0x6a]               ; 0041cbbd
     MOV ECX,0xc                         ; 0041cbc0
@@ -196,8 +196,8 @@ section .text
     PUSH EAX                            ; 0041cbd2
     LEA ESI,[EBP + -0x6a]               ; 0041cbd3
     MOV EDI,EBX                         ; 0041cbd6
-    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 0041cbd8 | CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 0041cbd8
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     FLD float ptr [EBP + 0x6e]          ; 0041cbdd
     FLD float ptr [EBP + 0x72]          ; 0041cbe0
     FLD float ptr [EBP + 0x76]          ; 0041cbe3

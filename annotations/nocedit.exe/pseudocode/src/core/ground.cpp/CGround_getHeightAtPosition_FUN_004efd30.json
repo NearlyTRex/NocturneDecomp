@@ -1,139 +1,139 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 138, 
-    "pseudocode_lines": 83, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 322, 
-    "assembly_lines": 239, 
-    "suspect_count": 5, 
+    "assembly_lines": 239,
+    "complexity_score": 138,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 83,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 50, 
-      "match": "(short *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar10 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (iVar9 + uVar11) * 4);"
-    }, 
-    {
-      "line": 53, 
-      "match": "(short *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((int)*(short *)((int)pvVar1 + (uVar12 + iVar9) * 4) * this_ptr->height_scale - iVar10);"
-    }, 
-    {
-      "line": 61, 
-      "match": "(short *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar9 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (uVar12 + iVar8) * 4);"
-    }, 
-    {
-      "line": 62, 
-      "match": "(short *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar8 = (int)*(short *)((int)pvVar1 + ((this_ptr->width_minus_1 & uVar11) + iVar8) * 4) *"
-    }, 
-    {
-      "line": 68, 
-      "match": "(short *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(int)*(short *)((int)pvVar1 +"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004efd30", 
-    "signature": "int core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30(CGround * this_ptr, int world_x, int world_z)", 
-    "address_range": [
-      [
-        "004efd30", 
-        "004effaf"
-      ]
-    ], 
-    "name": "core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30"
-  }, 
-  "stack_frame": {
-    "local_size": 40, 
-    "variables": [
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGround *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "world_x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "world_z"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 322
+  },
   "cross_references": [
     {
-      "from_addr": "005e1f96", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_terrain.cpp_CTerrain_render_FUN_005e1f50", 
-      "addr": "005e1f50"
+      "addr": "005e1f50",
+      "from_addr": "005e1f96",
+      "name": "core_terrain.cpp_CTerrain_render_FUN_005e1f50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004efd30",
+    "address_range": [
+      [
+        "004efd30",
+        "004effaf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30",
+    "signature": "int core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30(CGround * this_ptr, int world_x, int world_z)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGround *"
+      },
+      {
+        "is_param": true,
+        "name": "world_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "world_z",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(short *)((int)",
+      "text": "iVar10 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (iVar9 + uVar11) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(short *)((int)",
+      "text": "((int)*(short *)((int)pvVar1 + (uVar12 + iVar9) * 4) * this_ptr->height_scale - iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(short *)((int)",
+      "text": "iVar9 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (uVar12 + iVar8) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(short *)((int)",
+      "text": "iVar8 = (int)*(short *)((int)pvVar1 + ((this_ptr->width_minus_1 & uVar11) + iVar8) * 4) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(short *)((int)",
+      "text": "(int)*(short *)((int)pvVar1 +",
+      "type": "pointer_cast"
     }
   ]
 }

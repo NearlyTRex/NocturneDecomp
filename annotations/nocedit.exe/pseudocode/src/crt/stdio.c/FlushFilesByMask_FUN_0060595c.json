@@ -1,86 +1,86 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 17, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 54, 
-    "assembly_lines": 37, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fflushInternal_FUN_006039d0", 
-      "addr": "006039d0"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ef8", 
-      "addr": "00684ef8", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684efc", 
-      "addr": "00684efc", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "FileListNode*", 
-      "name": "g_AllocatedListHead", 
-      "addr": "03f9b200", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060595c", 
-    "signature": "int crt_stdio.c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask)", 
-    "address_range": [
-      [
-        "0060595c", 
-        "006059a0"
-      ]
-    ], 
-    "name": "crt_stdio.c_FlushFilesByMask_FUN_0060595c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "file_mode_mask"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 37,
+    "complexity_score": 17,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "005fe96c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_FillInputBuffer_FUN_005fe940", 
-      "addr": "005fe940"
-    }, 
+      "addr": "005fe940",
+      "from_addr": "005fe96c",
+      "name": "crt_stdio.c_FillInputBuffer_FUN_005fe940",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00605952", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_00605950", 
-      "addr": "00605950"
+      "addr": "00605950",
+      "from_addr": "00605952",
+      "name": "crt_unknown.c_FUN_00605950",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060595c",
+    "address_range": [
+      [
+        "0060595c",
+        "006059a0"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_FlushFilesByMask_FUN_0060595c",
+    "signature": "int crt_stdio.c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask)"
+  },
+  "function_calls": [
+    {
+      "addr": "006039d0",
+      "name": "crt_stdio.c_fflushInternal_FUN_006039d0"
+    },
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ef8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ef8",
+      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684efc",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684efc",
+      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "03f9b200",
+      "name": "g_AllocatedListHead",
+      "type": "FileListNode*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_mode_mask",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
 }

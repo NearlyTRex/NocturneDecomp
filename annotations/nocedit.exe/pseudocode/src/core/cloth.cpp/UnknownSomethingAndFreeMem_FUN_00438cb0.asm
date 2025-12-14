@@ -25,19 +25,19 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00438cb1
     MOV EDX,dword ptr [EBX + 0x3fe3c]   ; 00438cb5
     TEST EDX,EDX                        ; 00438cbb
-    JNZ 0x00438cc1                      ; 00438cbd | LAB_00438cc1
-        ;   XREF to: 00438cc1 (CONDITIONAL_JUMP)
+    JNZ 0x00438cc1                      ; 00438cbd
+        ;   XREF to: 00438cc1 (CONDITIONAL_JUMP)  ; LAB_00438cc1
     POP EBX                             ; 00438cbf
     RET                                 ; 00438cc0
     PUSH ESI                            ; 00438cc1
         ;   Label: LAB_00438cc1
-    MOV ECX,0x6181aa                    ; 00438cc2 | = "..\\core\\cloth.cpp" | s_core_cloth_cpp_006181aa = ..\core\cloth.cpp
+    MOV ECX,0x6181aa                    ; 00438cc2 | = "..\\core\\cloth.cpp"
     MOV ESI,0x85                        ; 00438cc7
     PUSH EDX                            ; 00438ccc
-    MOV dword ptr [0x0067d20c],ECX      ; 00438ccd | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],ESI      ; 00438cd3 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00438cd9 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],ECX      ; 00438ccd | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ESI      ; 00438cd3 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 00438cd9
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00438cde
     MOV dword ptr [EBX + 0x3fe3c],0x0   ; 00438ce1
     POP ESI                             ; 00438ceb

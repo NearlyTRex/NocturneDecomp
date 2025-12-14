@@ -1,149 +1,149 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 109, 
-    "pseudocode_lines": 49, 
-    "cross_reference_count": 0, 
-    "global_count": 7, 
-    "total_lines": 136, 
-    "assembly_lines": 87, 
-    "suspect_count": 4, 
+    "assembly_lines": 87,
+    "complexity_score": 108,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 7,
+    "pseudocode_lines": 48,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006276c0", 
-      "addr": "006276c0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006276d5", 
-      "addr": "006276d5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_for_pod_au_006276ea", 
-      "addr": "006276ea", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AuditRecordCount", 
-      "addr": "02d12d30", 
-      "value": null
-    }, 
-    {
-      "type": "CPodAuditRecord*", 
-      "name": "g_AuditRecordsArray", 
-      "addr": "02d12d34", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 35, 
-      "match": "(CPodAuditRecord *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar6 = (CPodAuditRecord *)((int)pCVar6 + (uint)bVar8 * -8 + 4);"
-    }, 
-    {
-      "line": 38, 
-      "match": "&stack0x00000038", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar5 = &stack0x00000038;"
-    }
-  ], 
+      "stack_ref",
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 135
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004b5950", 
-    "signature": "void engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950(CFileManager * this_ptr, CPodAuditRecord * audit_data, char * filename_path)", 
+    "address": "004b5950",
     "address_range": [
       [
-        "004b5950", 
+        "004b5950",
         "004b5a44"
       ]
-    ], 
-    "name": "engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950",
+    "signature": "void engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950(CFileManager * this_ptr, CPodAuditRecord * audit_data, char * filename_path)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006276c0",
+      "name": "s_engine_fileio_cpp_006276c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006276d5",
+      "name": "s_engine_fileio_cpp_006276d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006276ea",
+      "name": "s_Out_of_memory_for_pod_au_006276ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d12d30",
+      "name": "g_AuditRecordCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d12d34",
+      "name": "g_AuditRecordsArray",
+      "type": "CPodAuditRecord*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileManager *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileManager *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CPodAuditRecord *", 
-        "size": 4, 
-        "name": "audit_data"
-      }, 
+        "is_param": true,
+        "name": "audit_data",
+        "offset": 8,
+        "size": 4,
+        "type": "CPodAuditRecord *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename_path"
+        "is_param": true,
+        "name": "filename_path",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(CPodAuditRecord *)((int)",
+      "text": "pCVar6 = (CPodAuditRecord *)((int)pCVar6 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 37,
+      "match": "&stack0x00000038",
+      "text": "pcVar5 = &stack0x00000038;",
+      "type": "stack_ref"
+    }
+  ]
 }

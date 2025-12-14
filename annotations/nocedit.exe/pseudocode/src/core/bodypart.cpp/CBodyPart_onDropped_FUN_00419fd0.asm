@@ -25,13 +25,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00419fd4
     PUSH EBX                            ; 00419fd8
     MOV dword ptr [EBX + 0xf28],0x0     ; 00419fd9
-    CALL core_bodypart.cpp_CBodyPart_FUN_0041b070 ; 00419fe3 | void core_bodypart.cpp_CBodyPart_FUN_0041b070(CBodyPart * this_ptr)
-        ;   XREF to: 0041b070 (UNCONDITIONAL_CALL)
+    CALL core_bodypart.cpp_CBodyPart_FUN_0041b070 ; 00419fe3
+        ;   XREF to: 0041b070 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_FUN_0041b070(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00419fe8
     MOV EDX,dword ptr [ESP + 0x18]      ; 00419feb
     TEST EDX,EDX                        ; 00419fef
-    JNZ 0x0041a002                      ; 00419ff1 | LAB_0041a002
-        ;   XREF to: 0041a002 (CONDITIONAL_JUMP)
+    JNZ 0x0041a002                      ; 00419ff1
+        ;   XREF to: 0041a002 (CONDITIONAL_JUMP)  ; LAB_0041a002
     MOV dword ptr [EBX + 0xcbc],0x41200000 ; 00419ff3
     ADD ESP,0xc                         ; 00419ffd
     POP EBX                             ; 0041a000
@@ -48,8 +48,8 @@ section .text
     PUSH EAX                            ; 0041a01a
     MOV dword ptr [ESP + 0x14],ECX      ; 0041a01b
     MOV dword ptr [ESP + 0x10],EDI      ; 0041a01f
-    CALL core_box.cpp_CBox_setupVelocities_FUN_00420180 ; 0041a023 | void core_box.cpp_CBox_setupVelocities_FUN_00420180(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)
-        ;   XREF to: 00420180 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBox_setupVelocities_FUN_00420180 ; 0041a023
+        ;   XREF to: 00420180 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupVelocities_FUN_00420180(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)
     ADD ESP,0xc                         ; 0041a028
     POP EDI                             ; 0041a02b
     MOV dword ptr [EBX + 0xcbc],0x41200000 ; 0041a02c

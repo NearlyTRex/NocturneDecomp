@@ -47,24 +47,24 @@ section .text
     FCOMPP                              ; 0054cac4
     FNSTSW AX                           ; 0054cac6
     SAHF                                ; 0054cac8
-    JA 0x0054cbc1                       ; 0054cac9 | LAB_0054cbc1
-        ;   XREF to: 0054cbc1 (CONDITIONAL_JUMP)
+    JA 0x0054cbc1                       ; 0054cac9
+        ;   XREF to: 0054cbc1 (CONDITIONAL_JUMP)  ; LAB_0054cbc1
     FLD float ptr [ESI + 0x2dc]         ; 0054cacf
         ;   Label: LAB_0054cacf
     FLD1                                ; 0054cad5
     FCOMPP                              ; 0054cad7
     FNSTSW AX                           ; 0054cad9
     SAHF                                ; 0054cadb
-    JNC 0x0054cae8                      ; 0054cadc | LAB_0054cae8
-        ;   XREF to: 0054cae8 (CONDITIONAL_JUMP)
+    JNC 0x0054cae8                      ; 0054cadc
+        ;   XREF to: 0054cae8 (CONDITIONAL_JUMP)  ; LAB_0054cae8
     MOV dword ptr [ESI + 0x2dc],0x3f800000 ; 0054cade
     LEA EDI,[ESI + 0x20]                ; 0054cae8
         ;   Label: LAB_0054cae8
     MOV AH,byte ptr [ESI + 0x2f0]       ; 0054caeb
     LEA EBX,[ESI + 0x30]                ; 0054caf1
     TEST AH,AH                          ; 0054caf4
-    JNZ 0x0054cbd0                      ; 0054caf6 | LAB_0054cbd0
-        ;   XREF to: 0054cbd0 (CONDITIONAL_JUMP)
+    JNZ 0x0054cbd0                      ; 0054caf6
+        ;   XREF to: 0054cbd0 (CONDITIONAL_JUMP)  ; LAB_0054cbd0
     LEA EDX,[ESI + 0x328]               ; 0054cafc
     LEA EAX,[ESI + 0x2dc]               ; 0054cb02
     FLD float ptr [EDX]                 ; 0054cb08
@@ -114,8 +114,8 @@ section .text
     ADD ESI,0x334                       ; 0054cb8a
     PUSH ESI                            ; 0054cb90
     LEA ESI,[EBP + -0x58]               ; 0054cb91
-    CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 0054cb94 | CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
-        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 0054cb94
+        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
     ADD ESP,0xc                         ; 0054cb99
     LEA EAX,[EBP + -0x48]               ; 0054cb9c
     LEA EDI,[EBP + -0x48]               ; 0054cb9f
@@ -127,12 +127,12 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0054cbab
     MOVSD ES:EDI,ESI                    ; 0054cbac
     MOVSD ES:EDI,ESI                    ; 0054cbad
-    CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 0054cbae | CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * euler_out, CQuaternion4f * quat_ptr)
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 0054cbae
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * euler_out, CQuaternion4f * quat_ptr)
     ADD ESP,0x8                         ; 0054cbb3
     CMP EBX,EAX                         ; 0054cbb6
-    JNZ 0x0054cbf7                      ; 0054cbb8 | LAB_0054cbf7
-        ;   XREF to: 0054cbf7 (CONDITIONAL_JUMP)
+    JNZ 0x0054cbf7                      ; 0054cbb8
+        ;   XREF to: 0054cbf7 (CONDITIONAL_JUMP)  ; LAB_0054cbf7
     MOV ESP,EBP                         ; 0054cbba
         ;   Label: LAB_0054cbba
     POP EBP                             ; 0054cbbc
@@ -142,8 +142,8 @@ section .text
     RET                                 ; 0054cbc0
     MOV dword ptr [ESI + 0x2dc],0x0     ; 0054cbc1
         ;   Label: LAB_0054cbc1
-    JMP 0x0054cacf                      ; 0054cbcb | LAB_0054cacf
-        ;   XREF to: 0054cacf (UNCONDITIONAL_JUMP)
+    JMP 0x0054cacf                      ; 0054cbcb
+        ;   XREF to: 0054cacf (UNCONDITIONAL_JUMP)  ; LAB_0054cacf
     LEA EAX,[ESI + 0x310]               ; 0054cbd0
         ;   Label: LAB_0054cbd0
     MOV EDX,dword ptr [EAX]             ; 0054cbd6
@@ -155,11 +155,11 @@ section .text
     SUB ESP,0x4                         ; 0054cbe6
     FSTP float ptr [ESP]                ; 0054cbe9
     PUSH EAX                            ; 0054cbec
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 0054cbed | void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_FUN_00442710 ; 0054cbed
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
     ADD ESP,0x10                        ; 0054cbf2
-    JMP 0x0054cbba                      ; 0054cbf5 | LAB_0054cbba
-        ;   XREF to: 0054cbba (UNCONDITIONAL_JUMP)
+    JMP 0x0054cbba                      ; 0054cbf5
+        ;   XREF to: 0054cbba (UNCONDITIONAL_JUMP)  ; LAB_0054cbba
     MOV EDX,dword ptr [EAX]             ; 0054cbf7
         ;   Label: LAB_0054cbf7
     MOV dword ptr [EBX],EDX             ; 0054cbf9

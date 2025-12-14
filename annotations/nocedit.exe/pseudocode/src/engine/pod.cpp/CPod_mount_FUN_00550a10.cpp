@@ -10,7 +10,8 @@ void __cdecl engine_pod_cpp_CPod_mount_FUN_00550a10(CPod *this_ptr,char *pod_fil
 
 {
   CPodFile *this_ptr_00;
-  int iVar1;
+  CPodFile *pCVar1;
+  int iVar2;
   char *in_stack_00000014;
   uint in_stack_00000018;
   
@@ -19,20 +20,20 @@ void __cdecl engine_pod_cpp_CPod_mount_FUN_00550a10(CPod *this_ptr,char *pod_fil
     g_CurrentLineNumber = 0x39a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many .POD files at once!");
   }
-  this_ptr_00 = (CPodFile *)
-                shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x42c,"..\\engine\\pod.cpp",0x39f);
+  this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x42c,"..\\engine\\pod.cpp",0x39f);
+  pCVar1 = (CPodFile *)0x0;
   if (this_ptr_00 != (CPodFile *)0x0) {
-    this_ptr_00 = engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(this_ptr_00);
+    pCVar1 = engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(this_ptr_00);
   }
-  this_ptr->pod_files[this_ptr->pod_file_count] = this_ptr_00;
+  this_ptr->pod_files[this_ptr->pod_file_count] = pCVar1;
   if (this_ptr->pod_files[this_ptr->pod_file_count] == (CPodFile *)0x0) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 0x3a0;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
-  iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650
+  iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650
                     (this_ptr->pod_files[this_ptr->pod_file_count],in_stack_00000014);
-  if (iVar1 != 0) {
+  if (iVar2 != 0) {
     this_ptr->pod_file_count = this_ptr->pod_file_count + 1;
     return;
   }

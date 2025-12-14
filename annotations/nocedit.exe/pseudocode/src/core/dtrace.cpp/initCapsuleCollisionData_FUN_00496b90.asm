@@ -78,8 +78,8 @@ section .text
     FCOMPP                              ; 00496c1c
     FNSTSW AX                           ; 00496c1e
     SAHF                                ; 00496c20
-    JNC 0x00496c40                      ; 00496c21 | LAB_00496c40
-        ;   XREF to: 00496c40 (CONDITIONAL_JUMP)
+    JNC 0x00496c40                      ; 00496c21
+        ;   XREF to: 00496c40 (CONDITIONAL_JUMP)  ; LAB_00496c40
     FLD1                                ; 00496c23
     FLD float ptr [EBP + 0x14]          ; 00496c25
     FXCH                                ; 00496c28

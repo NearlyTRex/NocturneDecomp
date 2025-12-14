@@ -18,6 +18,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042cfe0(CCharacter *this_ptr)
   float local_8;
   
   if (this_ptr->carry_hands[in_stack_00000008].carry_actor != (CDemonActor *)0x0) {
+    pCVar1 = (CVector3f *)0x0;
     if (in_stack_0000000c != (CVector3f *)0x0) {
       pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base_actor,(CVector3f *)&stack0xffffffe4,in_stack_0000000c);
@@ -25,10 +26,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042cfe0(CCharacter *this_ptr)
         local_c = pCVar1->x;
         local_8 = pCVar1->y;
       }
-      in_stack_0000000c = (CVector3f *)&local_c;
+      pCVar1 = (CVector3f *)&local_c;
     }
     this_ptr_00 = this_ptr->carry_hands[in_stack_00000008].carry_actor;
-    (*this_ptr_00->vtable->onDropped)(this_ptr_00,in_stack_0000000c);
+    (*this_ptr_00->vtable->onDropped)(this_ptr_00,pCVar1);
     this_ptr->carry_hands[in_stack_00000008].carry_actor = (CDemonActor *)0x0;
   }
   return;

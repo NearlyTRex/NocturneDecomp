@@ -33,15 +33,15 @@ section .text
         ;   Label: LAB_004a659e
     MOV byte ptr [EDI],AL               ; 004a65a0
     CMP AL,0x0                          ; 004a65a2
-    JZ 0x004a65b6                       ; 004a65a4 | LAB_004a65b6
-        ;   XREF to: 004a65b6 (CONDITIONAL_JUMP)
+    JZ 0x004a65b6                       ; 004a65a4
+        ;   XREF to: 004a65b6 (CONDITIONAL_JUMP)  ; LAB_004a65b6
     MOV AL,byte ptr [ESI + 0x1]         ; 004a65a6
     ADD ESI,0x2                         ; 004a65a9
     MOV byte ptr [EDI + 0x1],AL         ; 004a65ac
     ADD EDI,0x2                         ; 004a65af
     CMP AL,0x0                          ; 004a65b2
-    JNZ 0x004a659e                      ; 004a65b4 | LAB_004a659e
-        ;   XREF to: 004a659e (CONDITIONAL_JUMP)
+    JNZ 0x004a659e                      ; 004a65b4
+        ;   XREF to: 004a659e (CONDITIONAL_JUMP)  ; LAB_004a659e
     POP EDI                             ; 004a65b6
         ;   Label: LAB_004a65b6
     MOV EDI,dword ptr [ESP + 0x10]      ; 004a65b7

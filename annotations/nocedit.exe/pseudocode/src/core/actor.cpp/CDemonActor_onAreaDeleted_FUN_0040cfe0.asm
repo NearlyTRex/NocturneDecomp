@@ -16,8 +16,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 0040cfe4
     MOV EDX,dword ptr [EAX + 0x2c]      ; 0040cfe8
     CMP EDX,ECX                         ; 0040cfeb
-    JG 0x0040cff0                       ; 0040cfed | LAB_0040cff0
-        ;   XREF to: 0040cff0 (CONDITIONAL_JUMP)
+    JG 0x0040cff0                       ; 0040cfed
+        ;   XREF to: 0040cff0 (CONDITIONAL_JUMP)  ; LAB_0040cff0
     RET                                 ; 0040cfef
     PUSH EBX                            ; 0040cff0
         ;   Label: LAB_0040cff0

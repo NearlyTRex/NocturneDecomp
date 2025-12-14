@@ -1,101 +1,101 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 52, 
-    "assembly_lines": 39, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_plotPixel_FUN_00401140", 
-      "addr": "00401140"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 39,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0049d190", 
-    "signature": "void shape_edittool.cpp_plotPixelWithClipping_FUN_0049d190(int x_coord, int y_coord, int use_clipping)", 
+    "address": "0049d190",
     "address_range": [
       [
-        "0049d190", 
+        "0049d190",
         "0049d1e2"
       ]
-    ], 
-    "name": "shape_edittool.cpp_plotPixelWithClipping_FUN_0049d190"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_plotPixelWithClipping_FUN_0049d190",
+    "signature": "void shape_edittool.cpp_plotPixelWithClipping_FUN_0049d190(int x_coord, int y_coord, int use_clipping)"
+  },
+  "function_calls": [
+    {
+      "addr": "00401140",
+      "name": "engine_2d.c_plotPixel_FUN_00401140"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_coord"
-      }, 
+        "is_param": true,
+        "name": "x_coord",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_coord"
-      }, 
+        "is_param": true,
+        "name": "y_coord",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "use_clipping"
+        "is_param": true,
+        "name": "use_clipping",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

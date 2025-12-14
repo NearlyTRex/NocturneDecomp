@@ -28,28 +28,28 @@ section .text
     MOV EBX,EDX                         ; 005644a0
     MOV ECX,EDX                         ; 005644a2
     MOV EBP,EDX                         ; 005644a4
-    JMP 0x00564535                      ; 005644a6 | LAB_00564535
-        ;   XREF to: 00564535 (UNCONDITIONAL_JUMP)
-    MOV EDX,dword ptr [0x0310fd44]      ; 005644ab | undefined4 DAT_0310fd44
+    JMP 0x00564535                      ; 005644a6
+        ;   XREF to: 00564535 (UNCONDITIONAL_JUMP)  ; LAB_00564535
+    MOV EDX,dword ptr [0x0310fd44]      ; 005644ab | DAT_0310fd44
         ;   Label: LAB_005644ab
     MOV EBX,EDI                         ; 005644b1
     MOV EBP,ESI                         ; 005644b3
-    JMP 0x00564535                      ; 005644b5 | LAB_00564535
-        ;   XREF to: 00564535 (UNCONDITIONAL_JUMP)
-    MOV EBX,dword ptr [0x0310fd44]      ; 005644ba | undefined4 DAT_0310fd44
+    JMP 0x00564535                      ; 005644b5
+        ;   XREF to: 00564535 (UNCONDITIONAL_JUMP)  ; LAB_00564535
+    MOV EBX,dword ptr [0x0310fd44]      ; 005644ba | DAT_0310fd44
         ;   Label: LAB_005644ba
     MOV EBP,ECX                         ; 005644c0
     MOV EDX,EDI                         ; 005644c2
     MOV ECX,ESI                         ; 005644c4
-    JMP 0x00564535                      ; 005644c6 | LAB_00564535
-        ;   XREF to: 00564535 (UNCONDITIONAL_JUMP)
+    JMP 0x00564535                      ; 005644c6
+        ;   XREF to: 00564535 (UNCONDITIONAL_JUMP)  ; LAB_00564535
     MOV EDX,EDI                         ; 005644cb
         ;   Label: LAB_005644cb
     MOV EBX,EAX                         ; 005644cd
-    JMP 0x00564535                      ; 005644cf | LAB_00564535
-        ;   XREF to: 00564535 (UNCONDITIONAL_JUMP)
+    JMP 0x00564535                      ; 005644cf
+        ;   XREF to: 00564535 (UNCONDITIONAL_JUMP)  ; LAB_00564535
     MOV EDX,0xffffffff                  ; 005644e0
         ;   Label: core_script.cpp_FUN_005644e0
-    MOV dword ptr [0x0310fd50],EDX      ; 005644e5 | undefined4 DAT_0310fd50
-    MOV dword ptr [0x0310fd4c],EDX      ; 005644eb | undefined4 DAT_0310fd4c
+    MOV dword ptr [0x0310fd50],EDX      ; 005644e5 | DAT_0310fd50
+    MOV dword ptr [0x0310fd4c],EDX      ; 005644eb | DAT_0310fd4c
 

@@ -39,23 +39,23 @@ section .text
     SUB EAX,EDX                         ; 005f7d67
     MOV EDX,EAX                         ; 005f7d69
     CMP EDX,EBX                         ; 005f7d6b
-    JGE 0x005f7d81                      ; 005f7d6d | LAB_005f7d81
-        ;   XREF to: 005f7d81 (CONDITIONAL_JUMP)
+    JGE 0x005f7d81                      ; 005f7d6d
+        ;   XREF to: 005f7d81 (CONDITIONAL_JUMP)  ; LAB_005f7d81
     NEG EBX                             ; 005f7d6f
     CMP EDX,EBX                         ; 005f7d71
-    JLE 0x005f7d88                      ; 005f7d73 | LAB_005f7d88
-        ;   XREF to: 005f7d88 (CONDITIONAL_JUMP)
+    JLE 0x005f7d88                      ; 005f7d73
+        ;   XREF to: 005f7d88 (CONDITIONAL_JUMP)  ; LAB_005f7d88
     NEG EBX                             ; 005f7d75
     XOR EAX,EAX                         ; 005f7d77
     SAR EDX,0x1                         ; 005f7d79
     RCR EAX,0x1                         ; 005f7d7b
     IDIV EBX                            ; 005f7d7d
-    JMP 0x005f7d8f                      ; 005f7d7f | LAB_005f7d8f
-        ;   XREF to: 005f7d8f (UNCONDITIONAL_JUMP)
+    JMP 0x005f7d8f                      ; 005f7d7f
+        ;   XREF to: 005f7d8f (UNCONDITIONAL_JUMP)  ; LAB_005f7d8f
     MOV EAX,0x7fffffff                  ; 005f7d81
         ;   Label: LAB_005f7d81
-    JMP 0x005f7d8f                      ; 005f7d86 | LAB_005f7d8f
-        ;   XREF to: 005f7d8f (UNCONDITIONAL_JUMP)
+    JMP 0x005f7d8f                      ; 005f7d86
+        ;   XREF to: 005f7d8f (UNCONDITIONAL_JUMP)  ; LAB_005f7d8f
     NEG EBX                             ; 005f7d88
         ;   Label: LAB_005f7d88
     MOV EAX,0x80000000                  ; 005f7d8a
@@ -83,11 +83,11 @@ section .text
     MOV EDX,dword ptr [ECX]             ; 005f7dbc
     ADD EAX,EDX                         ; 005f7dbe
     MOV dword ptr [ESI],EAX             ; 005f7dc0
-    MOV AH,byte ptr [0x02d052a0]        ; 005f7dc2 | int g_RenderStateFlags
+    MOV AH,byte ptr [0x02d052a0]        ; 005f7dc2 | g_RenderStateFlags
     MOV dword ptr [ESI + 0x10],0xffffffff ; 005f7dc8
     TEST AH,0x4                         ; 005f7dcf
-    JNZ 0x005f7dd9                      ; 005f7dd2 | LAB_005f7dd9
-        ;   XREF to: 005f7dd9 (CONDITIONAL_JUMP)
+    JNZ 0x005f7dd9                      ; 005f7dd2
+        ;   XREF to: 005f7dd9 (CONDITIONAL_JUMP)  ; LAB_005f7dd9
     POP EBP                             ; 005f7dd4
     POP EDI                             ; 005f7dd5
     POP ESI                             ; 005f7dd6

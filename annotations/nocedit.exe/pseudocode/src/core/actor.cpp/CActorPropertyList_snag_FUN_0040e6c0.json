@@ -1,262 +1,262 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 87, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 21, 
-    "global_count": 4, 
-    "total_lines": 101, 
-    "assembly_lines": 64, 
-    "suspect_count": 4, 
+    "assembly_lines": 64,
+    "complexity_score": 86,
+    "cross_reference_count": 21,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 36,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_actor_cpp_00614471", 
-      "addr": "00614471", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CActorPropertyList_snag__00614483", 
-      "addr": "00614483", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_00000018;"
-    }, 
-    {
-      "line": 29, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "cVar1 = *(char *)((int)data_ptr + 1);"
-    }, 
-    {
-      "line": 30, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "data_ptr = (void *)((int)data_ptr + 2);"
-    }, 
-    {
-      "line": 38, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar3->validator_or_callback = in_stack_00000018;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040e6c0", 
-    "signature": "int core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList * this_ptr, int property_type, char * property_name, void * data_ptr, void * callback_or_extra)", 
-    "address_range": [
-      [
-        "0040e6c0", 
-        "0040e765"
-      ]
-    ], 
-    "name": "core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CActorPropertyList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "property_type"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "property_name"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "data_ptr"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "callback_or_extra"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 100
+  },
   "cross_references": [
     {
-      "from_addr": "0040e178", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160", 
-      "addr": "0040e160"
-    }, 
+      "addr": "0040e160",
+      "from_addr": "0040e178",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e1b8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1a0", 
-      "addr": "0040e1a0"
-    }, 
+      "addr": "0040e1a0",
+      "from_addr": "0040e1b8",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e1f8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1e0", 
-      "addr": "0040e1e0"
-    }, 
+      "addr": "0040e1e0",
+      "from_addr": "0040e1f8",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e238", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e220", 
-      "addr": "0040e220"
-    }, 
+      "addr": "0040e220",
+      "from_addr": "0040e238",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e278", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e260", 
-      "addr": "0040e260"
-    }, 
+      "addr": "0040e260",
+      "from_addr": "0040e278",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e260",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e2a8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e290", 
-      "addr": "0040e290"
-    }, 
+      "addr": "0040e290",
+      "from_addr": "0040e2a8",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e290",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e2e4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e2d0", 
-      "addr": "0040e2d0"
-    }, 
+      "addr": "0040e2d0",
+      "from_addr": "0040e2e4",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e314", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e300", 
-      "addr": "0040e300"
-    }, 
+      "addr": "0040e300",
+      "from_addr": "0040e314",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e300",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e344", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e330", 
-      "addr": "0040e330"
-    }, 
+      "addr": "0040e330",
+      "from_addr": "0040e344",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e330",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e36d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e350", 
-      "addr": "0040e350"
-    }, 
+      "addr": "0040e350",
+      "from_addr": "0040e36d",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e3c4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3b0", 
-      "addr": "0040e3b0"
-    }, 
+      "addr": "0040e3b0",
+      "from_addr": "0040e3c4",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e3f6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3e0", 
-      "addr": "0040e3e0"
-    }, 
+      "addr": "0040e3e0",
+      "from_addr": "0040e3f6",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e474", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e460", 
-      "addr": "0040e460"
-    }, 
+      "addr": "0040e460",
+      "from_addr": "0040e474",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e460",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e494", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e480", 
-      "addr": "0040e480"
-    }, 
+      "addr": "0040e480",
+      "from_addr": "0040e494",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e480",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e4b4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4a0", 
-      "addr": "0040e4a0"
-    }, 
+      "addr": "0040e4a0",
+      "from_addr": "0040e4b4",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e4e4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4d0", 
-      "addr": "0040e4d0"
-    }, 
+      "addr": "0040e4d0",
+      "from_addr": "0040e4e4",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e569", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e500", 
-      "addr": "0040e500"
-    }, 
+      "addr": "0040e500",
+      "from_addr": "0040e569",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e500",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e605", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e5a0", 
-      "addr": "0040e5a0"
-    }, 
+      "addr": "0040e5a0",
+      "from_addr": "0040e605",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e5a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e654", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e640", 
-      "addr": "0040e640"
-    }, 
+      "addr": "0040e640",
+      "from_addr": "0040e654",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e640",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e680", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e670", 
-      "addr": "0040e670"
-    }, 
+      "addr": "0040e670",
+      "from_addr": "0040e680",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e670",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e6b4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e6a0", 
-      "addr": "0040e6a0"
+      "addr": "0040e6a0",
+      "from_addr": "0040e6b4",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e6a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e6c0",
+    "address_range": [
+      [
+        "0040e6c0",
+        "0040e765"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0",
+    "signature": "int core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList * this_ptr, int property_type, char * property_name, void * data_ptr, void * callback_or_extra)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614471",
+      "name": "s_core_actor_cpp_00614471",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614483",
+      "name": "s_CActorPropertyList_snag__00614483",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CActorPropertyList *"
+      },
+      {
+        "is_param": true,
+        "name": "property_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "data_ptr",
+        "offset": 16,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "callback_or_extra",
+        "offset": 20,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000018",
+      "text": "void *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(char *)((int)",
+      "text": "cVar1 = *(char *)((int)data_ptr + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(void *)((int)",
+      "text": "data_ptr = (void *)((int)data_ptr + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000018",
+      "text": "pCVar3->validator_or_callback = in_stack_00000018;",
+      "type": "stack_param"
     }
   ]
 }

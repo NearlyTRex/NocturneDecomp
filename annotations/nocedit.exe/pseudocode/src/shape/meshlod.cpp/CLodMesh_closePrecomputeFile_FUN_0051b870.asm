@@ -26,16 +26,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0051b871
     MOV EDX,dword ptr [EBX + 0x38]      ; 0051b875
     TEST EDX,EDX                        ; 0051b878
-    JNZ 0x0051b87e                      ; 0051b87a | LAB_0051b87e
-        ;   XREF to: 0051b87e (CONDITIONAL_JUMP)
+    JNZ 0x0051b87e                      ; 0051b87a
+        ;   XREF to: 0051b87e (CONDITIONAL_JUMP)  ; LAB_0051b87e
     POP EBX                             ; 0051b87c
     RET                                 ; 0051b87d
     PUSH 0x123e                         ; 0051b87e
         ;   Label: LAB_0051b87e
-    PUSH 0x637d43                       ; 0051b883 | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_00637d43 = ..\shape\meshlod.cpp
+    PUSH 0x637d43                       ; 0051b883 | = "..\\shape\\meshlod.cpp"
     PUSH EDX                            ; 0051b888
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0051b889 | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0051b889
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0051b88e
     MOV dword ptr [EBX + 0x38],0x0      ; 0051b891
     POP EBX                             ; 0051b898

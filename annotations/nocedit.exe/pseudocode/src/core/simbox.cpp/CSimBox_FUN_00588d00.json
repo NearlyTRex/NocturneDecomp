@@ -1,68 +1,68 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 28, 
-    "assembly_lines": 17, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_simbox.cpp_CSimBox_ctor_FUN_00588d40", 
-      "addr": "00588d40"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
-      "addr": "0050f1b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_simbox_cpp_00649bda", 
-      "addr": "00649bda", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00588d00", 
-    "signature": "void core_simbox.cpp_CSimBox_FUN_00588d00(CSimBox * this_ptr)", 
-    "address_range": [
-      [
-        "00588d00", 
-        "00588d22"
-      ]
-    ], 
-    "name": "core_simbox.cpp_CSimBox_FUN_00588d00"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSimBox *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 17,
+    "complexity_score": 10,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
   "cross_references": [
     {
-      "from_addr": "00588cdc", 
-      "type": "DATA", 
-      "name": "core_simbox.cpp_staticInit_FUN_00588cd0", 
-      "addr": "00588cd0"
+      "addr": "00588cd0",
+      "from_addr": "00588cdc",
+      "name": "core_simbox.cpp_staticInit_FUN_00588cd0",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "00588d00",
+    "address_range": [
+      [
+        "00588d00",
+        "00588d22"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_simbox.cpp_CSimBox_FUN_00588d00",
+    "signature": "void core_simbox.cpp_CSimBox_FUN_00588d00(CSimBox * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00588d40",
+      "name": "core_simbox.cpp_CSimBox_ctor_FUN_00588d40"
+    },
+    {
+      "addr": "0050f1b0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649bda",
+      "name": "s_core_simbox_cpp_00649bda",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimBox *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 36, 
-    "assembly_lines": 20, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
-      "addr": "0040ac80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_actor_cpp_006139d1", 
-      "addr": "006139d1", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040a030", 
-    "signature": "void core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030(CDemonActor * this_ptr, SInteractionInfo * out_info)", 
-    "address_range": [
-      [
-        "0040a030", 
-        "0040a084"
-      ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SInteractionInfo *", 
-        "size": 4, 
-        "name": "out_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 20,
+    "complexity_score": 16,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
   "cross_references": [
     {
-      "from_addr": "0050b2fb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_FUN_0050b2f0", 
-      "addr": "0050b2f0"
-    }, 
+      "addr": "0050b2f0",
+      "from_addr": "0050b2fb",
+      "name": "core_manpuz.cpp_FUN_0050b2f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e344c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_CTurret_FUN_005e3440", 
-      "addr": "005e3440"
+      "addr": "005e3440",
+      "from_addr": "005e344c",
+      "name": "core_turret.cpp_CTurret_FUN_005e3440",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0040a030",
+    "address_range": [
+      [
+        "0040a030",
+        "0040a084"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030",
+    "signature": "void core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030(CDemonActor * this_ptr, SInteractionInfo * out_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006139d1",
+      "name": "s_core_actor_cpp_006139d1",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "out_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SInteractionInfo *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -39,27 +39,27 @@ section .text
     XOR EBX,EBX                         ; 004ffdb9
     FSTP float ptr [ESP]                ; 004ffdbb
     TEST EDX,EDX                        ; 004ffdbe
-    JLE 0x004ffde5                      ; 004ffdc0 | LAB_004ffde5
-        ;   XREF to: 004ffde5 (CONDITIONAL_JUMP)
+    JLE 0x004ffde5                      ; 004ffdc0
+        ;   XREF to: 004ffde5 (CONDITIONAL_JUMP)  ; LAB_004ffde5
     MOV ESI,EDI                         ; 004ffdc2
     MOV EAX,[0x0082285c]                ; 004ffdc4 | g_CBatteryClassInfo.name_hash
         ;   Label: LAB_004ffdc4
     PUSH EAX                            ; 004ffdc9
     MOV EDX,dword ptr [ESI + 0xc]       ; 004ffdca
     PUSH EDX                            ; 004ffdcd
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004ffdce | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004ffdce
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004ffdd3
     TEST EAX,EAX                        ; 004ffdd6
-    JNZ 0x004ffdfb                      ; 004ffdd8 | LAB_004ffdfb
-        ;   XREF to: 004ffdfb (CONDITIONAL_JUMP)
+    JNZ 0x004ffdfb                      ; 004ffdd8
+        ;   XREF to: 004ffdfb (CONDITIONAL_JUMP)  ; LAB_004ffdfb
     INC EBX                             ; 004ffdda
         ;   Label: LAB_004ffdda
     MOV ECX,dword ptr [EDI + 0x8]       ; 004ffddb
     ADD ESI,0x4                         ; 004ffdde
     CMP EBX,ECX                         ; 004ffde1
-    JL 0x004ffdc4                       ; 004ffde3 | LAB_004ffdc4
-        ;   XREF to: 004ffdc4 (CONDITIONAL_JUMP)
+    JL 0x004ffdc4                       ; 004ffde3
+        ;   XREF to: 004ffdc4 (CONDITIONAL_JUMP)  ; LAB_004ffdc4
     FLD float ptr [ESP]                 ; 004ffde5
         ;   Label: LAB_004ffde5
     FLD1                                ; 004ffde8
@@ -78,6 +78,6 @@ section .text
     FDIVRP                              ; 004ffe03
     FADD float ptr [ESP]                ; 004ffe05
     FSTP float ptr [ESP]                ; 004ffe08
-    JMP 0x004ffdda                      ; 004ffe0b | LAB_004ffdda
-        ;   XREF to: 004ffdda (UNCONDITIONAL_JUMP)
+    JMP 0x004ffdda                      ; 004ffe0b
+        ;   XREF to: 004ffdda (UNCONDITIONAL_JUMP)  ; LAB_004ffdda
 

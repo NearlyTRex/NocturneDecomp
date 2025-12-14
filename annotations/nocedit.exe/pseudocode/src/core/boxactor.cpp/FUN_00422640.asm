@@ -28,8 +28,8 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 0042265f
     LEA EAX,[EDI + 0x30]                ; 00422662
     CMP EAX,EBX                         ; 00422665
-    JZ 0x00422679                       ; 00422667 | LAB_00422679
-        ;   XREF to: 00422679 (CONDITIONAL_JUMP)
+    JZ 0x00422679                       ; 00422667
+        ;   XREF to: 00422679 (CONDITIONAL_JUMP)  ; LAB_00422679
     MOV EDX,dword ptr [EBX]             ; 00422669
     MOV dword ptr [EAX],EDX             ; 0042266b
     MOV EDX,dword ptr [EBX + 0x4]       ; 0042266d
@@ -38,13 +38,13 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 00422676
     PUSH EDI                            ; 00422679
         ;   Label: LAB_00422679
-    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 0042267a | void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 0042267a
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     LEA EAX,[EDI + 0x394]               ; 0042267f
     ADD ESP,0x4                         ; 00422685
     CMP EAX,ESI                         ; 00422688
-    JZ 0x0042269c                       ; 0042268a | LAB_0042269c
-        ;   XREF to: 0042269c (CONDITIONAL_JUMP)
+    JZ 0x0042269c                       ; 0042268a
+        ;   XREF to: 0042269c (CONDITIONAL_JUMP)  ; LAB_0042269c
     MOV EDX,dword ptr [ESI]             ; 0042268c
     MOV dword ptr [EAX],EDX             ; 0042268e
     MOV EDX,dword ptr [ESI + 0x4]       ; 00422690
@@ -54,8 +54,8 @@ section .text
     LEA EAX,[EDI + 0x3a0]               ; 0042269c
         ;   Label: LAB_0042269c
     CMP EAX,EBX                         ; 004226a2
-    JZ 0x004226b6                       ; 004226a4 | LAB_004226b6
-        ;   XREF to: 004226b6 (CONDITIONAL_JUMP)
+    JZ 0x004226b6                       ; 004226a4
+        ;   XREF to: 004226b6 (CONDITIONAL_JUMP)  ; LAB_004226b6
     MOV EDX,dword ptr [EBX]             ; 004226a6
     MOV dword ptr [EAX],EDX             ; 004226a8
     MOV EDX,dword ptr [EBX + 0x4]       ; 004226aa
@@ -64,8 +64,8 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 004226b3
     PUSH EDI                            ; 004226b6
         ;   Label: LAB_004226b6
-    CALL core_boxactor.cpp_FUN_004218d0 ; 004226b7 | undefined core_boxactor.cpp_FUN_004218d0()
-        ;   XREF to: 004218d0 (UNCONDITIONAL_CALL)
+    CALL core_boxactor.cpp_FUN_004218d0 ; 004226b7
+        ;   XREF to: 004218d0 (UNCONDITIONAL_CALL)  ; undefined core_boxactor.cpp_FUN_004218d0()
     ADD ESP,0x4                         ; 004226bc
     POP EDI                             ; 004226bf
     POP ESI                             ; 004226c0

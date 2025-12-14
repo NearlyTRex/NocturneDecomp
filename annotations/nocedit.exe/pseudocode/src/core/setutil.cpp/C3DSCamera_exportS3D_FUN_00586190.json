@@ -1,236 +1,236 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 154, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 1, 
-    "global_count": 7, 
-    "total_lines": 139, 
-    "assembly_lines": 100, 
-    "suspect_count": 11, 
+    "assembly_lines": 100,
+    "complexity_score": 154,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 7,
+    "pseudocode_lines": 39,
+    "suspect_count": 11,
     "suspect_types": [
       "sub_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_g_g_g_g_g_g_g_006494eb", 
-      "addr": "006494eb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_g_g_g_00649506", 
-      "addr": "00649506", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_g_g_g_00649510", 
-      "addr": "00649510", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_g_g_g_0064951a", 
-      "addr": "0064951a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_g_g_g_00649524", 
-      "addr": "00649524", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "g_S3DProjectionScale", 
-      "addr": "00649533", 
-      "value": "18"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0064953b", 
-      "addr": "0064953b", 
-      "value": "2"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 20, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),"
-    }, 
-    {
-      "line": 21, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),"
-    }, 
-    {
-      "line": 21, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),"
-    }, 
-    {
-      "line": 27, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),"
-    }, 
-    {
-      "line": 28, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),"
-    }, 
-    {
-      "line": 28, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),"
-    }, 
-    {
-      "line": 33, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),"
-    }, 
-    {
-      "line": 34, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),"
-    }, 
-    {
-      "line": 35, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */((double)(this_ptr->rotation_matrix).m[2].z,0));"
-    }, 
-    {
-      "line": 39, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),"
-    }, 
-    {
-      "line": 40, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00586190", 
-    "signature": "int core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190(C3DSCamera * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "00586190", 
-        "005862ea"
-      ]
-    ], 
-    "name": "core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190"
-  }, 
-  "stack_frame": {
-    "local_size": 68, 
-    "variables": [
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "C3DSCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 76, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 139
+  },
   "cross_references": [
     {
-      "from_addr": "0057a1ed", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0", 
-      "addr": "0057a0c0"
+      "addr": "0057a0c0",
+      "from_addr": "0057a1ed",
+      "name": "core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00586190",
+    "address_range": [
+      [
+        "00586190",
+        "005862ea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190",
+    "signature": "int core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190(C3DSCamera * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006494eb",
+      "name": "s_s_g_g_g_g_g_g_g_006494eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649506",
+      "name": "s_g_g_g_00649506",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649510",
+      "name": "s_g_g_g_00649510",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064951a",
+      "name": "s_g_g_g_0064951a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649524",
+      "name": "s_g_g_g_00649524",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649533",
+      "name": "g_S3DProjectionScale",
+      "type": "double",
+      "value": "18"
+    },
+    {
+      "addr": "0064953b",
+      "name": "DOUBLE_0064953b",
+      "type": "double",
+      "value": "2"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 20,
+      "match": "SUB84",
+      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 21,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 21,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 27,
+      "match": "SUB84",
+      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 28,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 28,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 33,
+      "match": "SUB84",
+      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 34,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 35,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */((double)(this_ptr->rotation_matrix).m[2].z,0));",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 39,
+      "match": "SUB84",
+      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 40,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));",
+      "type": "sub_artifact"
     }
   ]
 }

@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 17, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dpart_cpp_00621781", 
-      "addr": "00621781", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonPart_load_is_no_lo_00621793", 
-      "addr": "00621793", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 10,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00482490", 
-    "signature": "void core_dpart.cpp_CDemonPart_load_FUN_00482490(CDemonPart * this_ptr)", 
+    "address": "00482490",
     "address_range": [
       [
-        "00482490", 
+        "00482490",
         "004824b3"
       ]
-    ], 
-    "name": "core_dpart.cpp_CDemonPart_load_FUN_00482490"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dpart.cpp_CDemonPart_load_FUN_00482490",
+    "signature": "void core_dpart.cpp_CDemonPart_load_FUN_00482490(CDemonPart * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00621781",
+      "name": "s_core_dpart_cpp_00621781",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621793",
+      "name": "s_CDemonPart_load_is_no_lo_00621793",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonPart *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonPart *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

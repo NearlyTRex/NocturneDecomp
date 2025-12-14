@@ -31,18 +31,18 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 004ed0d9
     PUSH 0x3                            ; 004ed0dd
     PUSH 0x0                            ; 004ed0df
-    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 004ed0e1 | int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
-        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 004ed0e1
+        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
     ADD ESP,0x8                         ; 004ed0e6
-    MOV EDX,dword ptr [0x006810c8]      ; 004ed0e9 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
+    MOV EDX,dword ptr [0x006810c8]      ; 004ed0e9 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH 0x0                            ; 004ed0ef
     MOV dword ptr [ESI + 0x14],EAX      ; 004ed0f1
     PUSH EBX                            ; 004ed0f4
     FLD float ptr [EBX]                 ; 004ed0f5
-    PUSH EDX                            ; 004ed0f7 | CDemonSet g_CDemonSetInstance
+    PUSH EDX                            ; 004ed0f7 | g_CDemonSetInstance
     FSTP float ptr [ESI + 0x4]          ; 004ed0f8
-    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 ; 004ed0fb | float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet * this_ptr, CVector3f * position, float radius)
-        ;   XREF to: 005716b0 (UNCONDITIONAL_CALL)
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 ; 004ed0fb
+        ;   XREF to: 005716b0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0xc],EAX       ; 004ed100
     FLD float ptr [ESP + 0xc]           ; 004ed104
     LEA EAX,[ESI + 0x4]                 ; 004ed108
@@ -52,7 +52,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x8]       ; 004ed114
     MOV dword ptr [ESI + 0xc],EDX       ; 004ed117
     MOV dword ptr [ESI + 0x18],0x0      ; 004ed11a
-    FADD float ptr [0x0062e39a]         ; 004ed121 | float FLOAT_0062e39a
+    FADD float ptr [0x0062e39a]         ; 004ed121 | FLOAT_0062e39a
     LEA EBX,[ESI + 0x1c]                ; 004ed127
     FSTP float ptr [ESI + 0x8]          ; 004ed12a
     FLD float ptr [EAX]                 ; 004ed12d

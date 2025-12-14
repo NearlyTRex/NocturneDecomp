@@ -1,68 +1,68 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 30, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_getStringWidth_FUN_004018a0", 
-      "addr": "004018a0"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
-      "addr": "004cfe80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CBitFont*", 
-      "name": "g_CurrentFont", 
-      "addr": "02c6d558", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 19,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00489d00", 
-    "signature": "int cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00(CDrawSurface * this_ptr, char * text)", 
+    "address": "00489d00",
     "address_range": [
       [
-        "00489d00", 
+        "00489d00",
         "00489d23"
       ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00",
+    "signature": "int cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00(CDrawSurface * this_ptr, char * text)"
+  },
+  "function_calls": [
+    {
+      "addr": "004018a0",
+      "name": "engine_2d.c_getStringWidth_FUN_004018a0"
+    },
+    {
+      "addr": "004cfe80",
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02c6d558",
+      "name": "g_CurrentFont",
+      "type": "CBitFont*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
+        "is_param": true,
+        "name": "text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

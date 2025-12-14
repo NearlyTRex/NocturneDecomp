@@ -37,8 +37,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x10]      ; 0051879c
     XOR ESI,ESI                         ; 0051879f
     TEST EDX,EDX                        ; 005187a1
-    JLE 0x005187cc                      ; 005187a3 | LAB_005187cc
-        ;   XREF to: 005187cc (CONDITIONAL_JUMP)
+    JLE 0x005187cc                      ; 005187a3
+        ;   XREF to: 005187cc (CONDITIONAL_JUMP)  ; LAB_005187cc
     XOR EDI,EDI                         ; 005187a5
     MOV EAX,dword ptr [EBX + 0x14]      ; 005187a7
         ;   Label: LAB_005187a7
@@ -46,43 +46,43 @@ section .text
     PUSH EBP                            ; 005187ac
     ADD EAX,0x8                         ; 005187ad
     PUSH EAX                            ; 005187b0
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005187b1 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005187b1
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005187b6
     TEST EAX,EAX                        ; 005187b9
-    JZ 0x0051885d                       ; 005187bb | LAB_0051885d
-        ;   XREF to: 0051885d (CONDITIONAL_JUMP)
+    JZ 0x0051885d                       ; 005187bb
+        ;   XREF to: 0051885d (CONDITIONAL_JUMP)  ; LAB_0051885d
     INC ESI                             ; 005187c1
     MOV ECX,dword ptr [EBX + 0x10]      ; 005187c2
     ADD EDI,0x48                        ; 005187c5
     CMP ESI,ECX                         ; 005187c8
-    JL 0x005187a7                       ; 005187ca | LAB_005187a7
-        ;   XREF to: 005187a7 (CONDITIONAL_JUMP)
+    JL 0x005187a7                       ; 005187ca
+        ;   XREF to: 005187a7 (CONDITIONAL_JUMP)  ; LAB_005187a7
     MOV ESI,dword ptr [EBX + 0x10]      ; 005187cc
         ;   Label: LAB_005187cc
     INC ESI                             ; 005187cf
     LEA EAX,[ESI*0x8 + 0x0]             ; 005187d0
     PUSH 0xb6d                          ; 005187d7
     ADD EAX,ESI                         ; 005187dc
-    PUSH 0x6378dd                       ; 005187de | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_006378dd = ..\shape\meshlod.cpp
+    PUSH 0x6378dd                       ; 005187de | = "..\\shape\\meshlod.cpp"
     SHL EAX,0x3                         ; 005187e3
     PUSH EAX                            ; 005187e6
     MOV ESI,dword ptr [EBX + 0x14]      ; 005187e7
     PUSH ESI                            ; 005187ea
-    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 005187eb | void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
-        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 005187eb
+        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
     ADD ESP,0x10                        ; 005187f0
     MOV dword ptr [EBX + 0x14],EAX      ; 005187f3
     TEST EAX,EAX                        ; 005187f6
-    JNZ 0x0051881c                      ; 005187f8 | LAB_0051881c
-        ;   XREF to: 0051881c (CONDITIONAL_JUMP)
-    MOV EAX,0x6378f2                    ; 005187fa | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_006378f2 = ..\shape\meshlod.cpp
+    JNZ 0x0051881c                      ; 005187f8
+        ;   XREF to: 0051881c (CONDITIONAL_JUMP)  ; LAB_0051881c
+    MOV EAX,0x6378f2                    ; 005187fa | = "..\\shape\\meshlod.cpp"
     MOV EDX,0xb6e                       ; 005187ff
-    PUSH 0x637907                       ; 00518804 | = "Out of memory." | s_Out_of_memory_00637907 = Out of memory.
-    MOV [0x02f0ca48],EAX                ; 00518809 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 0051880e | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00518814 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x637907                       ; 00518804 | = "Out of memory."
+    MOV [0x02f0ca48],EAX                ; 00518809 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 0051880e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00518814
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00518819
     MOV ESI,dword ptr [EBX + 0x10]      ; 0051881c
         ;   Label: LAB_0051881c
@@ -98,15 +98,15 @@ section .text
         ;   Label: LAB_00518836
     MOV byte ptr [EDI],AL               ; 00518838
     CMP AL,0x0                          ; 0051883a
-    JZ 0x0051884e                       ; 0051883c | LAB_0051884e
-        ;   XREF to: 0051884e (CONDITIONAL_JUMP)
+    JZ 0x0051884e                       ; 0051883c
+        ;   XREF to: 0051884e (CONDITIONAL_JUMP)  ; LAB_0051884e
     MOV AL,byte ptr [ESI + 0x1]         ; 0051883e
     ADD ESI,0x2                         ; 00518841
     MOV byte ptr [EDI + 0x1],AL         ; 00518844
     ADD EDI,0x2                         ; 00518847
     CMP AL,0x0                          ; 0051884a
-    JNZ 0x00518836                      ; 0051884c | LAB_00518836
-        ;   XREF to: 00518836 (CONDITIONAL_JUMP)
+    JNZ 0x00518836                      ; 0051884c
+        ;   XREF to: 00518836 (CONDITIONAL_JUMP)  ; LAB_00518836
     POP EDI                             ; 0051884e
         ;   Label: LAB_0051884e
     MOV EAX,dword ptr [EBX + 0x10]      ; 0051884f

@@ -32,7 +32,7 @@ char * __cdecl crt_io_c_getcwd_FUN_00608d20(char *buffer,SIZE_T size)
         uVar2 = size;
       }
       uStack_10c = 0x608d66;
-      buffer = (char *)crt_memory_c_malloc_FUN_00601bb0(uVar2);
+      buffer = crt_memory_c_malloc_FUN_00601bb0(uVar2);
       if (buffer == (char *)0x0) {
         crt_errno_c_setErrno_FUN_00602790(5);
         return (char *)0x0;

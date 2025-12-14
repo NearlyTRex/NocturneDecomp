@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 21, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 60, 
-    "assembly_lines": 39, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930", 
-      "addr": "005ab930"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860", 
-      "addr": "005ab860"
-    }, 
-    {
-      "name": "sound_sndwav.cpp_getWavInDevice_FUN_005b1600", 
-      "addr": "005b1600"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_CurrentRecordingDevice", 
-      "addr": "00681b50", 
-      "value": "-0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundLockCount", 
-      "addr": "03f6940c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundStartTime", 
-      "addr": "03f69410", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectSoundCapture*", 
-      "name": "g_RecordingDeviceInterface", 
-      "addr": "03f69c54", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 39,
+    "complexity_score": 21,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 60
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ab8d0", 
-    "signature": "int sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0(void)", 
+    "address": "005ab8d0",
     "address_range": [
       [
-        "005ab8d0", 
+        "005ab8d0",
         "005ab92b"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0",
+    "signature": "int sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ab930",
+      "name": "sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930"
+    },
+    {
+      "addr": "005ab860",
+      "name": "sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860"
+    },
+    {
+      "addr": "005b1600",
+      "name": "sound_sndwav.cpp_getWavInDevice_FUN_005b1600"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00681b50",
+      "name": "g_CurrentRecordingDevice",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "03f6940c",
+      "name": "g_SoundLockCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69410",
+      "name": "g_SoundStartTime",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69c54",
+      "name": "g_RecordingDeviceInterface",
+      "type": "IDirectSoundCapture*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

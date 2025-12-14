@@ -14,7 +14,7 @@
 
 section .text
 
-    MOV EAX,[0x03f69320]                ; 005ab6d0 | int g_MixBufferCount
+    MOV EAX,[0x03f69320]                ; 005ab6d0 | g_MixBufferCount
         ;   Label: sound_sndmain.cpp_getMixBufferCount_FUN_005ab6d0
     RET                                 ; 005ab6d5
 

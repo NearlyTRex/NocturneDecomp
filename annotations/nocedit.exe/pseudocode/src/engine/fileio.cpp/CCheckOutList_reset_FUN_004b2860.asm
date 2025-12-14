@@ -35,16 +35,16 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4]       ; 004b2865
     MOV dword ptr [EBX],0x0             ; 004b2868
     TEST EDX,EDX                        ; 004b286e
-    JNZ 0x004b2874                      ; 004b2870 | LAB_004b2874
-        ;   XREF to: 004b2874 (CONDITIONAL_JUMP)
+    JNZ 0x004b2874                      ; 004b2870
+        ;   XREF to: 004b2874 (CONDITIONAL_JUMP)  ; LAB_004b2874
     POP EBX                             ; 004b2872
     RET                                 ; 004b2873
     PUSH 0x277                          ; 004b2874
         ;   Label: LAB_004b2874
-    PUSH 0x62627e                       ; 004b2879 | = "..\\engine\\fileio.cpp" | s_engine_fileio_cpp_0062627e = ..\engine\fileio.cpp
+    PUSH 0x62627e                       ; 004b2879 | = "..\\engine\\fileio.cpp"
     PUSH EDX                            ; 004b287e
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 004b287f | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 004b287f
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 004b2884
     MOV dword ptr [EBX + 0x4],0x0       ; 004b2887
     POP EBX                             ; 004b288e

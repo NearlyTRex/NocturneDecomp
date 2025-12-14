@@ -35,19 +35,19 @@ section .text
     MOV EAX,dword ptr [ESI + 0xc]       ; 0052dbcf
     MOV dword ptr [ESP],EAX             ; 0052dbd2
     FLD float ptr [ESP]                 ; 0052dbd5
-    FCOMP float ptr [0x0063aa93]        ; 0052dbd8 | float g_MotionControllerAutoDetermineFrame
+    FCOMP float ptr [0x0063aa93]        ; 0052dbd8 | g_MotionControllerAutoDetermineFrame
     FNSTSW AX                           ; 0052dbde
     SAHF                                ; 0052dbe0
-    JZ 0x0052dc27                       ; 0052dbe1 | LAB_0052dc27
-        ;   XREF to: 0052dc27 (CONDITIONAL_JUMP)
+    JZ 0x0052dc27                       ; 0052dbe1
+        ;   XREF to: 0052dc27 (CONDITIONAL_JUMP)  ; LAB_0052dc27
     FLD float ptr [ESI + 0x10]          ; 0052dbe3
         ;   Label: LAB_0052dbe3
     FLDZ                                ; 0052dbe6
     FCOMPP                              ; 0052dbe8
     FNSTSW AX                           ; 0052dbea
     SAHF                                ; 0052dbec
-    JNC 0x0052dc49                      ; 0052dbed | LAB_0052dc49
-        ;   XREF to: 0052dc49 (CONDITIONAL_JUMP)
+    JNC 0x0052dc49                      ; 0052dbed
+        ;   XREF to: 0052dc49 (CONDITIONAL_JUMP)  ; LAB_0052dc49
     MOV EAX,dword ptr [ESI + 0x8]       ; 0052dbef
     MOV dword ptr [EBX + 0x18],EAX      ; 0052dbf2
     MOV EAX,dword ptr [ESP]             ; 0052dbf5
@@ -82,23 +82,23 @@ section .text
     MOV dword ptr [ESP + 0x4],EAX       ; 0052dc3c
     FILD dword ptr [ESP + 0x4]          ; 0052dc40
     FSTP float ptr [ESP]                ; 0052dc44
-    JMP 0x0052dbe3                      ; 0052dc47 | LAB_0052dbe3
-        ;   XREF to: 0052dbe3 (UNCONDITIONAL_JUMP)
+    JMP 0x0052dbe3                      ; 0052dc47
+        ;   XREF to: 0052dbe3 (UNCONDITIONAL_JUMP)  ; LAB_0052dbe3
     MOV EDI,dword ptr [ESI + 0x8]       ; 0052dc49
         ;   Label: LAB_0052dc49
     PUSH dword ptr [ESP]                ; 0052dc4c
     PUSH EDI                            ; 0052dc4f
     PUSH EBX                            ; 0052dc50
-    CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0 ; 0052dc51 | void core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotionController * this_ptr, int target_motion_index, float target_frame_number)
-        ;   XREF to: 0052dde0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0 ; 0052dc51
+        ;   XREF to: 0052dde0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotionController * this_ptr, int target_motion_index, float target_frame_number)
     MOV EBP,dword ptr [ESI + 0x14]      ; 0052dc56
     ADD ESP,0xc                         ; 0052dc59
     TEST EBP,EBP                        ; 0052dc5c
-    JZ 0x0052dc1f                       ; 0052dc5e | LAB_0052dc1f
-        ;   XREF to: 0052dc1f (CONDITIONAL_JUMP)
+    JZ 0x0052dc1f                       ; 0052dc5e
+        ;   XREF to: 0052dc1f (CONDITIONAL_JUMP)  ; LAB_0052dc1f
     PUSH EBX                            ; 0052dc60
-    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 0052dc61 | SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController * this_ptr)
-        ;   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 0052dc61
+        ;   XREF to: 0052dab0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0052dc66
     ADD ESP,0x4                         ; 0052dc69
     MOV dword ptr [EBX + 0x28],EAX      ; 0052dc6c

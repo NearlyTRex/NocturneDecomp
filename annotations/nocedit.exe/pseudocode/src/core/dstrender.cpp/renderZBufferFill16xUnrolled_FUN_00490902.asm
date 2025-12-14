@@ -25,36 +25,36 @@ section .text
     MOV EAX,dword ptr [ESI + 0x8]       ; 00490905
     MOV ECX,dword ptr [EDI + 0x8]       ; 00490908
     CMP EAX,ECX                         ; 0049090b
-    JBE 0x00490912                      ; 0049090d | LAB_00490912
-        ;   XREF to: 00490912 (CONDITIONAL_JUMP)
+    JBE 0x00490912                      ; 0049090d
+        ;   XREF to: 00490912 (CONDITIONAL_JUMP)  ; LAB_00490912
     XCHG EAX,ECX                        ; 0049090f
     XCHG EDI,ESI                        ; 00490910
     SHR EAX,0x10                        ; 00490912
         ;   Label: LAB_00490912
     SHR ECX,0x10                        ; 00490915
-    MOV EBP,dword ptr [EBX*0x4 + 0x2cf7d5c] ; 00490918 | uint *[1024] g_ZBufferScanlineArray
-    MOV EBX,dword ptr [EBX*0x4 + 0x2cf6a9c] ; 0049091f | void *[1024] g_ScreenBufferArray
+    MOV EBP,dword ptr [EBX*0x4 + 0x2cf7d5c] ; 00490918 | g_ZBufferScanlineArray
+    MOV EBX,dword ptr [EBX*0x4 + 0x2cf6a9c] ; 0049091f | g_ScreenBufferArray
     SUB ECX,EAX                         ; 00490926
-    JLE 0x00490a54                      ; 00490928 | LAB_00490a54
-        ;   XREF to: 00490a54 (CONDITIONAL_JUMP)
+    JLE 0x00490a54                      ; 00490928
+        ;   XREF to: 00490a54 (CONDITIONAL_JUMP)  ; LAB_00490a54
     SHL EAX,0x2                         ; 0049092e
     ADD EBX,EAX                         ; 00490931
     ADD EBP,EAX                         ; 00490933
     INC ECX                             ; 00490935
     MOV EAX,dword ptr [EDI + 0x28]      ; 00490936
     SUB EAX,dword ptr [ESI + 0x28]      ; 00490939
-    IMUL dword ptr [ECX*0x4 + 0x2d02580] ; 0049093c | uint[1600] g_ReciprocalLookupTable
+    IMUL dword ptr [ECX*0x4 + 0x2d02580] ; 0049093c | g_ReciprocalLookupTable
     MOV EDI,EBX                         ; 00490943
     MOV EBX,EBP                         ; 00490945
     DEC ECX                             ; 00490947
     MOV ESI,dword ptr [ESI + 0x28]      ; 00490948
     XOR EAX,EAX                         ; 0049094b
-    MOV AL,[0x02d02570]                 ; 0049094d | int g_ActiveRenderColor
-    MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 00490952 | uint[256] g_Hardware32BitPalette
+    MOV AL,[0x02d02570]                 ; 0049094d | g_ActiveRenderColor
+    MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 00490952 | g_Hardware32BitPalette
     SUB ECX,0x4                         ; 00490959
         ;   Label: LAB_00490959
-    JL 0x00490a2e                       ; 0049095c | LAB_00490a2e
-        ;   XREF to: 00490a2e (CONDITIONAL_JUMP)
+    JL 0x00490a2e                       ; 0049095c
+        ;   XREF to: 00490a2e (CONDITIONAL_JUMP)  ; LAB_00490a2e
     MOV EBP,ESI                         ; 00490962
     SHR EBP,0x8                         ; 00490964
     MOV dword ptr [EBX],EBP             ; 00490967
@@ -74,8 +74,8 @@ section .text
     ADD EBX,0x10                        ; 00490989
     ADD EDI,0x10                        ; 0049098c
     SUB ECX,0x4                         ; 0049098f
-    JL 0x00490a2e                       ; 00490992 | LAB_00490a2e
-        ;   XREF to: 00490a2e (CONDITIONAL_JUMP)
+    JL 0x00490a2e                       ; 00490992
+        ;   XREF to: 00490a2e (CONDITIONAL_JUMP)  ; LAB_00490a2e
     MOV EBP,ESI                         ; 00490998
     SHR EBP,0x8                         ; 0049099a
     MOV dword ptr [EBX],EBP             ; 0049099d
@@ -95,8 +95,8 @@ section .text
     ADD EBX,0x10                        ; 004909bf
     ADD EDI,0x10                        ; 004909c2
     SUB ECX,0x4                         ; 004909c5
-    JL 0x00490a2e                       ; 004909c8 | LAB_00490a2e
-        ;   XREF to: 00490a2e (CONDITIONAL_JUMP)
+    JL 0x00490a2e                       ; 004909c8
+        ;   XREF to: 00490a2e (CONDITIONAL_JUMP)  ; LAB_00490a2e
     MOV EBP,ESI                         ; 004909ca
     SHR EBP,0x8                         ; 004909cc
     MOV dword ptr [EBX],EBP             ; 004909cf
@@ -116,8 +116,8 @@ section .text
     ADD EBX,0x10                        ; 004909f1
     ADD EDI,0x10                        ; 004909f4
     SUB ECX,0x4                         ; 004909f7
-    JL 0x00490a2e                       ; 004909fa | LAB_00490a2e
-        ;   XREF to: 00490a2e (CONDITIONAL_JUMP)
+    JL 0x00490a2e                       ; 004909fa
+        ;   XREF to: 00490a2e (CONDITIONAL_JUMP)  ; LAB_00490a2e
     MOV EBP,ESI                         ; 004909fc
     SHR EBP,0x8                         ; 004909fe
     MOV dword ptr [EBX],EBP             ; 00490a01
@@ -136,26 +136,26 @@ section .text
     ADD ESI,EDX                         ; 00490a21
     ADD EBX,0x10                        ; 00490a23
     ADD EDI,0x10                        ; 00490a26
-    JMP 0x00490959                      ; 00490a29 | LAB_00490959
-        ;   XREF to: 00490959 (UNCONDITIONAL_JUMP)
+    JMP 0x00490959                      ; 00490a29
+        ;   XREF to: 00490959 (UNCONDITIONAL_JUMP)  ; LAB_00490959
     ADD ECX,0x4                         ; 00490a2e
         ;   Label: LAB_00490a2e
-    JLE 0x00490a54                      ; 00490a31 | LAB_00490a54
-        ;   XREF to: 00490a54 (CONDITIONAL_JUMP)
+    JLE 0x00490a54                      ; 00490a31
+        ;   XREF to: 00490a54 (CONDITIONAL_JUMP)  ; LAB_00490a54
     MOV EBP,ESI                         ; 00490a33
     SHR EBP,0x8                         ; 00490a35
     MOV dword ptr [EBX],EBP             ; 00490a38
     ADD ESI,EDX                         ; 00490a3a
     DEC ECX                             ; 00490a3c
-    JLE 0x00490a54                      ; 00490a3d | LAB_00490a54
-        ;   XREF to: 00490a54 (CONDITIONAL_JUMP)
+    JLE 0x00490a54                      ; 00490a3d
+        ;   XREF to: 00490a54 (CONDITIONAL_JUMP)  ; LAB_00490a54
     MOV EBP,ESI                         ; 00490a3f
     SHR EBP,0x8                         ; 00490a41
     MOV dword ptr [EBX + 0x4],EBP       ; 00490a44
     ADD ESI,EDX                         ; 00490a47
     DEC ECX                             ; 00490a49
-    JLE 0x00490a54                      ; 00490a4a | LAB_00490a54
-        ;   XREF to: 00490a54 (CONDITIONAL_JUMP)
+    JLE 0x00490a54                      ; 00490a4a
+        ;   XREF to: 00490a54 (CONDITIONAL_JUMP)  ; LAB_00490a54
     MOV EBP,ESI                         ; 00490a4c
     SHR EBP,0x8                         ; 00490a4e
     MOV dword ptr [EBX + 0x8],EBP       ; 00490a51

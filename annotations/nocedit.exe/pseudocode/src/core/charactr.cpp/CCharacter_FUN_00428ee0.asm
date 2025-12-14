@@ -22,16 +22,16 @@ section .text
     CALL dword ptr [EAX + 0x120]        ; 00428eef
     ADD ESP,0x4                         ; 00428ef5
     TEST EAX,EAX                        ; 00428ef8
-    JLE 0x00428f01                      ; 00428efa | LAB_00428f01
-        ;   XREF to: 00428f01 (CONDITIONAL_JUMP)
+    JLE 0x00428f01                      ; 00428efa
+        ;   XREF to: 00428f01 (CONDITIONAL_JUMP)  ; LAB_00428f01
     ADD ESP,0x3c                        ; 00428efc
     POP EBX                             ; 00428eff
     RET                                 ; 00428f00
     MOV EAX,ESP                         ; 00428f01
         ;   Label: LAB_00428f01
     PUSH EAX                            ; 00428f03
-    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 00428f04 | SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
-        ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 00428f04
+        ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00428f09
     MOV EAX,dword ptr [ESP + 0x48]      ; 00428f0c
     MOV dword ptr [ESP + 0x30],EAX      ; 00428f10

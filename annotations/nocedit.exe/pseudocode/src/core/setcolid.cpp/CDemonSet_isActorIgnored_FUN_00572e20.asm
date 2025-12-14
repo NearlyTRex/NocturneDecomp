@@ -30,25 +30,25 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00572e24
     MOV ESI,dword ptr [ESP + 0x18]      ; 00572e28
     CMP dword ptr [EBX + 0x15f698],0x0  ; 00572e2c
-    JNZ 0x00572e60                      ; 00572e33 | LAB_00572e60
-        ;   XREF to: 00572e60 (CONDITIONAL_JUMP)
+    JNZ 0x00572e60                      ; 00572e33
+        ;   XREF to: 00572e60 (CONDITIONAL_JUMP)  ; LAB_00572e60
     MOV EDI,dword ptr [EBX + 0x15f694]  ; 00572e35
         ;   Label: LAB_00572e35
     XOR EAX,EAX                         ; 00572e3b
     TEST EDI,EDI                        ; 00572e3d
-    JLE 0x00572e59                      ; 00572e3f | LAB_00572e59
-        ;   XREF to: 00572e59 (CONDITIONAL_JUMP)
+    JLE 0x00572e59                      ; 00572e3f
+        ;   XREF to: 00572e59 (CONDITIONAL_JUMP)  ; LAB_00572e59
     MOV EDX,EBX                         ; 00572e41
     CMP ESI,dword ptr [EDX + 0x15f69c]  ; 00572e43
         ;   Label: LAB_00572e43
-    JZ 0x00572e74                       ; 00572e49 | LAB_00572e74
-        ;   XREF to: 00572e74 (CONDITIONAL_JUMP)
+    JZ 0x00572e74                       ; 00572e49
+        ;   XREF to: 00572e74 (CONDITIONAL_JUMP)  ; LAB_00572e74
     INC EAX                             ; 00572e4b
     MOV EBP,dword ptr [EBX + 0x15f694]  ; 00572e4c
     ADD EDX,0x4                         ; 00572e52
     CMP EAX,EBP                         ; 00572e55
-    JL 0x00572e43                       ; 00572e57 | LAB_00572e43
-        ;   XREF to: 00572e43 (CONDITIONAL_JUMP)
+    JL 0x00572e43                       ; 00572e57
+        ;   XREF to: 00572e43 (CONDITIONAL_JUMP)  ; LAB_00572e43
     XOR EAX,EAX                         ; 00572e59
         ;   Label: LAB_00572e59
     POP EBP                             ; 00572e5b
@@ -60,12 +60,12 @@ section .text
         ;   Label: LAB_00572e60
     PUSH ECX                            ; 00572e66
     PUSH ESI                            ; 00572e67
-    CALL core_actor.cpp_isOfClassHash_FUN_0040c760 ; 00572e68 | int core_actor.cpp_isOfClassHash_FUN_0040c760(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c760 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_isOfClassHash_FUN_0040c760 ; 00572e68
+        ;   XREF to: 0040c760 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClassHash_FUN_0040c760(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00572e6d
     TEST EAX,EAX                        ; 00572e70
-    JZ 0x00572e35                       ; 00572e72 | LAB_00572e35
-        ;   XREF to: 00572e35 (CONDITIONAL_JUMP)
+    JZ 0x00572e35                       ; 00572e72
+        ;   XREF to: 00572e35 (CONDITIONAL_JUMP)  ; LAB_00572e35
     MOV EAX,0x1                         ; 00572e74
         ;   Label: LAB_00572e74
     POP EBP                             ; 00572e79

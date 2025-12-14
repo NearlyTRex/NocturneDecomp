@@ -13,6 +13,6 @@
 section .text
 
     JMP 0x005ecd90                      ; 00401130
-        ;   Label: engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
         ;   XREF to: 005ecd90 (UNCONDITIONAL_JUMP)
+        ;   Label: engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
 

@@ -44,43 +44,43 @@ section .text
     SAR EBX,0x10                        ; 00551d75
     SAR EDI,0x10                        ; 00551d78
     CMP EDI,EBX                         ; 00551d7b
-    JZ 0x00551f19                       ; 00551d7d | LAB_00551f19
-        ;   XREF to: 00551f19 (CONDITIONAL_JUMP)
+    JZ 0x00551f19                       ; 00551d7d
+        ;   XREF to: 00551f19 (CONDITIONAL_JUMP)  ; LAB_00551f19
     MOV EDX,dword ptr [EBP + 0x14]      ; 00551d83
     CMP EDX,dword ptr [ESI + 0x14]      ; 00551d86
-    JGE 0x00551d97                      ; 00551d89 | LAB_00551d97
-        ;   XREF to: 00551d97 (CONDITIONAL_JUMP)
+    JGE 0x00551d97                      ; 00551d89
+        ;   XREF to: 00551d97 (CONDITIONAL_JUMP)  ; LAB_00551d97
     MOV EAX,ESI                         ; 00551d8b
     MOV ESI,EBP                         ; 00551d8d
     MOV EBP,EAX                         ; 00551d8f
     MOV EAX,EDI                         ; 00551d91
     MOV EDI,EBX                         ; 00551d93
     MOV EBX,EAX                         ; 00551d95
-    MOV EAX,[0x030e5228]                ; 00551d97 | int g_SoftwareEdgeCount
+    MOV EAX,[0x030e5228]                ; 00551d97 | g_SoftwareEdgeCount
         ;   Label: LAB_00551d97
     LEA ECX,[EAX*0x8 + 0x0]             ; 00551d9c
     ADD ECX,EAX                         ; 00551da3
     SHL ECX,0x3                         ; 00551da5
-    ADD ECX,0x30e522c                   ; 00551da8 | SSoftwareEdge[16] g_SoftwareEdgeBuffer
-    MOV dword ptr [ECX],EDI             ; 00551dae | SSoftwareEdge[16] g_SoftwareEdgeBuffer
-    MOV EAX,[0x030e56ac]                ; 00551db0 | int g_SoftwareMinScanline
+    ADD ECX,0x30e522c                   ; 00551da8 | g_SoftwareEdgeBuffer
+    MOV dword ptr [ECX],EDI             ; 00551dae | g_SoftwareEdgeBuffer
+    MOV EAX,[0x030e56ac]                ; 00551db0 | g_SoftwareMinScanline
     MOV dword ptr [ECX + 0x4],EBX       ; 00551db5 | DAT_030e5230
     CMP EDI,EAX                         ; 00551db8
-    JGE 0x00551dc2                      ; 00551dba | LAB_00551dc2
-        ;   XREF to: 00551dc2 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x030e56ac],EDI      ; 00551dbc | int g_SoftwareMinScanline
-    CMP EBX,dword ptr [0x030e56b0]      ; 00551dc2 | int g_SoftwareMaxScanline
+    JGE 0x00551dc2                      ; 00551dba
+        ;   XREF to: 00551dc2 (CONDITIONAL_JUMP)  ; LAB_00551dc2
+    MOV dword ptr [0x030e56ac],EDI      ; 00551dbc | g_SoftwareMinScanline
+    CMP EBX,dword ptr [0x030e56b0]      ; 00551dc2 | g_SoftwareMaxScanline
         ;   Label: LAB_00551dc2
-    JLE 0x00551dd0                      ; 00551dc8 | LAB_00551dd0
-        ;   XREF to: 00551dd0 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x030e56b0],EBX      ; 00551dca | int g_SoftwareMaxScanline
+    JLE 0x00551dd0                      ; 00551dc8
+        ;   XREF to: 00551dd0 (CONDITIONAL_JUMP)  ; LAB_00551dd0
+    MOV dword ptr [0x030e56b0],EBX      ; 00551dca | g_SoftwareMaxScanline
     MOV EDI,dword ptr [ESI + 0x14]      ; 00551dd0
         ;   Label: LAB_00551dd0
     MOV EBX,dword ptr [EBP + 0x14]      ; 00551dd3
     SUB EBX,EDI                         ; 00551dd6
     CMP EBX,0x10000                     ; 00551dd8
-    JNC 0x00551f21                      ; 00551dde | LAB_00551f21
-        ;   XREF to: 00551f21 (CONDITIONAL_JUMP)
+    JNC 0x00551f21                      ; 00551dde
+        ;   XREF to: 00551f21 (CONDITIONAL_JUMP)  ; LAB_00551f21
     XOR EBX,EBX                         ; 00551de4
     MOV EAX,dword ptr [EBP + 0x10]      ; 00551de6
         ;   Label: LAB_00551de6
@@ -171,12 +171,12 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2c]      ; 00551ecc
     ADD EAX,EDX                         ; 00551ecf
     MOV dword ptr [ECX + 0x30],EAX      ; 00551ed1 | DAT_030e525c
-    CMP dword ptr [0x02d052a4],0x1      ; 00551ed4 | int g_RenderStateFlag2
-    JNZ 0x00551f39                      ; 00551edb | LAB_00551f39
-        ;   XREF to: 00551f39 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x02d0529c],0x0      ; 00551edd | int g_ProcessorType
-    JZ 0x00551f31                       ; 00551ee4 | LAB_00551f31
-        ;   XREF to: 00551f31 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x02d052a4],0x1      ; 00551ed4 | g_RenderStateFlag2
+    JNZ 0x00551f39                      ; 00551edb
+        ;   XREF to: 00551f39 (CONDITIONAL_JUMP)  ; LAB_00551f39
+    CMP dword ptr [0x02d0529c],0x0      ; 00551edd | g_ProcessorType
+    JZ 0x00551f31                       ; 00551ee4
+        ;   XREF to: 00551f31 (CONDITIONAL_JUMP)  ; LAB_00551f31
     MOV EAX,0x7fffffff                  ; 00551ee6
     MOV EDX,dword ptr [ESI + 0x8]       ; 00551eeb
     MOV ESI,EAX                         ; 00551eee
@@ -195,7 +195,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 00551f0a
     ADD ESI,EAX                         ; 00551f0e
     MOV dword ptr [ECX + 0x28],ESI      ; 00551f10 | DAT_030e5254
-    INC dword ptr [0x030e5228]          ; 00551f13 | int g_SoftwareEdgeCount
+    INC dword ptr [0x030e5228]          ; 00551f13 | g_SoftwareEdgeCount
     ADD ESP,0x4                         ; 00551f19
         ;   Label: LAB_00551f19
     POP EBP                             ; 00551f1c
@@ -208,13 +208,13 @@ section .text
     XOR EDX,EDX                         ; 00551f26
     DIV EBX                             ; 00551f28
     MOV EBX,EAX                         ; 00551f2a
-    JMP 0x00551de6                      ; 00551f2c | LAB_00551de6
-        ;   XREF to: 00551de6 (UNCONDITIONAL_JUMP)
+    JMP 0x00551de6                      ; 00551f2c
+        ;   XREF to: 00551de6 (UNCONDITIONAL_JUMP)  ; LAB_00551de6
     MOV EAX,dword ptr [EBP + 0xc]       ; 00551f31
         ;   Label: LAB_00551f31
     MOV ESI,dword ptr [ESI + 0xc]       ; 00551f34
-    JMP 0x00551ef5                      ; 00551f37 | LAB_00551ef5
-        ;   XREF to: 00551ef5 (UNCONDITIONAL_JUMP)
+    JMP 0x00551ef5                      ; 00551f37
+        ;   XREF to: 00551ef5 (UNCONDITIONAL_JUMP)  ; LAB_00551ef5
     MOV EAX,dword ptr [EBP + 0x8]       ; 00551f39
         ;   Label: LAB_00551f39
     MOV EDX,dword ptr [ESI + 0x8]       ; 00551f3c
@@ -232,7 +232,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x8]       ; 00551f5a
     ADD EAX,EDX                         ; 00551f5d
     MOV dword ptr [ECX + 0x28],EAX      ; 00551f5f | DAT_030e5254
-    INC dword ptr [0x030e5228]          ; 00551f62 | int g_SoftwareEdgeCount
+    INC dword ptr [0x030e5228]          ; 00551f62 | g_SoftwareEdgeCount
     ADD ESP,0x4                         ; 00551f68
     POP EBP                             ; 00551f6b
     POP EDI                             ; 00551f6c

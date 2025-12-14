@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 44, 
-    "assembly_lines": 32, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_RelativeX", 
-      "addr": "02d052b8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeY", 
-      "addr": "02d052bc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeZ", 
-      "addr": "02d052c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[0][2]", 
-      "addr": "02d052f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[1][2]", 
-      "addr": "02d052fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[2][2]", 
-      "addr": "02d05308", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 32,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 6,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0050cd10", 
-    "signature": "int engine_matrix.c_calculateTransformedZ_FUN_0050cd10(int * input_coords)", 
+    "address": "0050cd10",
     "address_range": [
       [
-        "0050cd10", 
+        "0050cd10",
         "0050cd67"
       ]
-    ], 
-    "name": "engine_matrix.c_calculateTransformedZ_FUN_0050cd10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_calculateTransformedZ_FUN_0050cd10",
+    "signature": "int engine_matrix.c_calculateTransformedZ_FUN_0050cd10(int * input_coords)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d052b8",
+      "name": "g_RelativeX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052bc",
+      "name": "g_RelativeY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c0",
+      "name": "g_RelativeZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052f0",
+      "name": "g_TransformMatrix[0][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052fc",
+      "name": "g_TransformMatrix[1][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05308",
+      "name": "g_TransformMatrix[2][2]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "input_coords"
+        "is_param": true,
+        "name": "input_coords",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

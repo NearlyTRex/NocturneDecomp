@@ -1,105 +1,105 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 53, 
-    "assembly_lines": 40, 
-    "suspect_count": 2, 
+    "assembly_lines": 40,
+    "complexity_score": 38,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063d235", 
-      "addr": "0063d235", 
-      "value": "0.0000152587890625"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063d23d", 
-      "addr": "0063d23d", 
-      "value": "30"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CurrentGameTime", 
-      "addr": "02f7c8b8", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0053f446", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_10 = (float)(int)(g_CurrentGameTime - in_stack_00000004) * (float)1.52587890625e-05;"
-    }
-  ], 
+    ],
+    "total_lines": 53
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0053f440", 
-    "signature": "undefined core_netgame.cpp_FUN_0053f440()", 
+    "address": "0053f440",
     "address_range": [
       [
-        "0053f440", 
+        "0053f440",
         "0053f496"
       ]
-    ], 
-    "name": "core_netgame.cpp_FUN_0053f440"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_netgame.cpp_FUN_0053f440",
+    "signature": "undefined core_netgame.cpp_FUN_0053f440()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0063d235",
+      "name": "DOUBLE_0063d235",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "0063d23d",
+      "name": "DOUBLE_0063d23d",
+      "type": "double",
+      "value": "30"
+    },
+    {
+      "addr": "02f7c8b8",
+      "name": "g_CurrentGameTime",
+      "type": "uint",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 20, 
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0053f446",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "local_10 = (float)(int)(g_CurrentGameTime - in_stack_00000004) * (float)1.52587890625e-05;",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -23,15 +23,15 @@ section .text
         ;   Label: LAB_00610769
     MOV byte ptr [EAX],CL               ; 0061076b
     CMP CL,0x0                          ; 0061076d
-    JZ 0x00610783                       ; 00610770 | LAB_00610783
-        ;   XREF to: 00610783 (CONDITIONAL_JUMP)
+    JZ 0x00610783                       ; 00610770
+        ;   XREF to: 00610783 (CONDITIONAL_JUMP)  ; LAB_00610783
     MOV CL,byte ptr [EDX + 0x1]         ; 00610772
     ADD EDX,0x2                         ; 00610775
     MOV byte ptr [EAX + 0x1],CL         ; 00610778
     ADD EAX,0x2                         ; 0061077b
     CMP CL,0x0                          ; 0061077e
-    JNZ 0x00610769                      ; 00610781 | LAB_00610769
-        ;   XREF to: 00610769 (CONDITIONAL_JUMP)
+    JNZ 0x00610769                      ; 00610781
+        ;   XREF to: 00610769 (CONDITIONAL_JUMP)  ; LAB_00610769
     POP EAX                             ; 00610783
         ;   Label: LAB_00610783
     RET                                 ; 00610784

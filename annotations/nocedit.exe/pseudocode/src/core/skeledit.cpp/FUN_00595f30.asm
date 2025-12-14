@@ -23,8 +23,8 @@ section .text
 
     PUSH 0x28                           ; 00595f30
         ;   Label: core_skeledit.cpp_FUN_00595f30
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00595f35 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00595f35
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 00595f3a
     PUSH ESI                            ; 00595f3b
     PUSH EDI                            ; 00595f3c
@@ -33,8 +33,8 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 00595f44
     XOR EBX,EBX                         ; 00595f46
     TEST EDX,EDX                        ; 00595f48
-    JLE 0x00595f9b                      ; 00595f4a | LAB_00595f9b
-        ;   XREF to: 00595f9b (CONDITIONAL_JUMP)
+    JLE 0x00595f9b                      ; 00595f4a
+        ;   XREF to: 00595f9b (CONDITIONAL_JUMP)  ; LAB_00595f9b
     MOV EDX,dword ptr [ESP + 0x28]      ; 00595f4c
     LEA ECX,[ESI + 0x28]                ; 00595f50
     ADD EDX,0x2937c                     ; 00595f53
@@ -53,16 +53,16 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 00595f81
     MOV EAX,ESP                         ; 00595f85
     CMP EDX,EAX                         ; 00595f87
-    JNZ 0x00595fa2                      ; 00595f89 | LAB_00595fa2
-        ;   XREF to: 00595fa2 (CONDITIONAL_JUMP)
+    JNZ 0x00595fa2                      ; 00595f89
+        ;   XREF to: 00595fa2 (CONDITIONAL_JUMP)  ; LAB_00595fa2
     ADD EDX,0xc                         ; 00595f8b
         ;   Label: LAB_00595f8b
     INC EBX                             ; 00595f8e
     MOV EDI,dword ptr [ESI]             ; 00595f8f
     ADD ECX,0x84                        ; 00595f91
     CMP EBX,EDI                         ; 00595f97
-    JL 0x00595f59                       ; 00595f99 | LAB_00595f59
-        ;   XREF to: 00595f59 (CONDITIONAL_JUMP)
+    JL 0x00595f59                       ; 00595f99
+        ;   XREF to: 00595f59 (CONDITIONAL_JUMP)  ; LAB_00595f59
     ADD ESP,0x18                        ; 00595f9b
         ;   Label: LAB_00595f9b
     POP EDI                             ; 00595f9e
@@ -76,6 +76,6 @@ section .text
     MOV dword ptr [EDX + 0x4],EAX       ; 00595fac
     MOV EAX,dword ptr [ESP + 0x8]       ; 00595faf
     MOV dword ptr [EDX + 0x8],EAX       ; 00595fb3
-    JMP 0x00595f8b                      ; 00595fb6 | LAB_00595f8b
-        ;   XREF to: 00595f8b (UNCONDITIONAL_JUMP)
+    JMP 0x00595f8b                      ; 00595fb6
+        ;   XREF to: 00595f8b (UNCONDITIONAL_JUMP)  ; LAB_00595f8b
 

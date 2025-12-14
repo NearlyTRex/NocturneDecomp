@@ -41,7 +41,7 @@ engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     g_CurrentLineNumber = 0x1b8;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
-  pbVar5 = (byte *)this_ptr->bitmap_data[bitmap_index];
+  pbVar5 = this_ptr->bitmap_data[bitmap_index];
   iVar2 = 0;
   local_18 = this_ptr->load_flags;
   if (0 < other2 * bitmap_index) {
@@ -60,7 +60,7 @@ engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffe98);
   }
   iVar2 = 0;
-  pbVar5 = (byte *)this_ptr->bitmap_data[bitmap_index];
+  pbVar5 = this_ptr->bitmap_data[bitmap_index];
   local_2c = 0;
   piVar4 = local_38;
   if (0 < height) {

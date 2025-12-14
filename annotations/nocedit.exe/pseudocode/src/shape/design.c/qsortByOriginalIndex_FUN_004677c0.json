@@ -1,110 +1,110 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 75, 
-    "assembly_lines": 53, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061c9ef", 
-      "addr": "0061c9ef", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hell_froze_0061ca01", 
-      "addr": "0061ca01", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004677c0", 
-    "signature": "int shape_design.c_qsortByOriginalIndex_FUN_004677c0(SVertexPair * vertex_pair1, SVertexPair * vertex_pair2)", 
-    "address_range": [
-      [
-        "004677c0", 
-        "00467841"
-      ]
-    ], 
-    "name": "shape_design.c_qsortByOriginalIndex_FUN_004677c0"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SVertexPair *", 
-        "size": 4, 
-        "name": "vertex_pair1"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SVertexPair *", 
-        "size": 4, 
-        "name": "vertex_pair2"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 53,
+    "complexity_score": 22,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 75
+  },
   "cross_references": [
     {
-      "from_addr": "00467cf5", 
-      "type": "DATA", 
-      "name": "shape_design.c_vertexReducer_FUN_00467850", 
-      "addr": "00467850"
+      "addr": "00467850",
+      "from_addr": "00467cf5",
+      "name": "shape_design.c_vertexReducer_FUN_00467850",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "004677c0",
+    "address_range": [
+      [
+        "004677c0",
+        "00467841"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_qsortByOriginalIndex_FUN_004677c0",
+    "signature": "int shape_design.c_qsortByOriginalIndex_FUN_004677c0(SVertexPair * vertex_pair1, SVertexPair * vertex_pair2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061c9ef",
+      "name": "s_shape_design_c_0061c9ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061ca01",
+      "name": "s_Hell_froze_0061ca01",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_pair1",
+        "offset": 4,
+        "size": 4,
+        "type": "SVertexPair *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_pair2",
+        "offset": 8,
+        "size": 4,
+        "type": "SVertexPair *"
+      }
+    ]
+  },
+  "suspects": []
 }

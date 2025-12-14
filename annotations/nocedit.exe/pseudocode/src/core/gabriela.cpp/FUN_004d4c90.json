@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 39, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 47, 
-    "assembly_lines": 33, 
-    "suspect_count": 2, 
+    "assembly_lines": 33,
+    "complexity_score": 39,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "g_CLightActorClassInfo.name_hash", 
-      "addr": "00822c84", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(CDemonActor **)(in_stack_00000004 + 0x24b4),g_CLightActorClassInfo.name_hash"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004d4c90", 
-    "signature": "undefined core_gabriela.cpp_FUN_004d4c90()", 
-    "address_range": [
-      [
-        "004d4c90", 
-        "004d4cdf"
-      ]
-    ], 
-    "name": "core_gabriela.cpp_FUN_004d4c90"
-  }, 
-  "stack_frame": {
-    "local_size": 12, 
-    "variables": [
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 47
+  },
   "cross_references": [
     {
-      "from_addr": "004d32e7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d2ea0", 
-      "addr": "004d2ea0"
-    }, 
+      "addr": "004d2ea0",
+      "from_addr": "004d32e7",
+      "name": "core_gabriela.cpp_FUN_004d2ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d4ea0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d4d80", 
-      "addr": "004d4d80"
+      "addr": "004d4d80",
+      "from_addr": "004d4ea0",
+      "name": "core_gabriela.cpp_FUN_004d4d80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d4c90",
+    "address_range": [
+      [
+        "004d4c90",
+        "004d4cdf"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_gabriela.cpp_FUN_004d4c90",
+    "signature": "undefined core_gabriela.cpp_FUN_004d4c90()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00822c84",
+      "name": "g_CLightActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "(*(CDemonActor **)(in_stack_00000004 + 0x24b4),g_CLightActorClassInfo.name_hash",
+      "type": "stack_param"
     }
   ]
 }

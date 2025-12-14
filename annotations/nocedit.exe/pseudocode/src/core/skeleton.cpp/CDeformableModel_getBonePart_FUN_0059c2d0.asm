@@ -18,8 +18,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0059c2d0
         ;   Label: core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0059c2d0
     CMP dword ptr [EDX + 0x7140],0x2    ; 0059c2d4
-    JGE 0x0059c2e0                      ; 0059c2db | LAB_0059c2e0
-        ;   XREF to: 0059c2e0 (CONDITIONAL_JUMP)
+    JGE 0x0059c2e0                      ; 0059c2db
+        ;   XREF to: 0059c2e0 (CONDITIONAL_JUMP)  ; LAB_0059c2e0
     XOR EAX,EAX                         ; 0059c2dd
     RET                                 ; 0059c2df
     MOV EAX,dword ptr [ESP + 0x8]       ; 0059c2e0

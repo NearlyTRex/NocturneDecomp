@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 66, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 27, 
-    "assembly_lines": 16, 
-    "suspect_count": 5, 
+    "assembly_lines": 16,
+    "complexity_score": 66,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_MouseButtonFlags", 
-      "addr": "02cf6a94", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((g_MouseButtonFlags & in_stack_00000008) != 0) && (*(int *)(in_stack_00000004 + 0x25c) == 0))"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((g_MouseButtonFlags & in_stack_00000008) != 0) && (*(int *)(in_stack_00000004 + 0x25c) == 0))"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x25c) = 1;"
-    }
-  ], 
+    ],
+    "total_lines": 27
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00544510", 
-    "signature": "undefined support_newmsg.cpp_FUN_00544510()", 
+    "address": "00544510",
     "address_range": [
       [
-        "00544510", 
+        "00544510",
         "00544538"
       ]
-    ], 
-    "name": "support_newmsg.cpp_FUN_00544510"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "support_newmsg.cpp_FUN_00544510",
+    "signature": "undefined support_newmsg.cpp_FUN_00544510()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "uint in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "if (((g_MouseButtonFlags & in_stack_00000008) != 0) && (*(int *)(in_stack_00000004 + 0x25c) == 0))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "if (((g_MouseButtonFlags & in_stack_00000008) != 0) && (*(int *)(in_stack_00000004 + 0x25c) == 0))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x25c) = 1;",
+      "type": "stack_param"
+    }
+  ]
 }

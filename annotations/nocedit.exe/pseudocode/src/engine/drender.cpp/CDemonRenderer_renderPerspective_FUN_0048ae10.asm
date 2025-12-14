@@ -43,30 +43,30 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 0048ae18
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0048ae1c
     CMP ESI,-0x1                        ; 0048ae20
-    JNZ 0x0048ae2a                      ; 0048ae23 | LAB_0048ae2a
-        ;   XREF to: 0048ae2a (CONDITIONAL_JUMP)
+    JNZ 0x0048ae2a                      ; 0048ae23
+        ;   XREF to: 0048ae2a (CONDITIONAL_JUMP)  ; LAB_0048ae2a
     MOV ESI,0x2cd                       ; 0048ae25
     CMP dword ptr [EBX + 0xc],0x0       ; 0048ae2a
         ;   Label: LAB_0048ae2a
-    JNZ 0x0048ae65                      ; 0048ae2e | LAB_0048ae65
-        ;   XREF to: 0048ae65 (CONDITIONAL_JUMP)
+    JNZ 0x0048ae65                      ; 0048ae2e
+        ;   XREF to: 0048ae65 (CONDITIONAL_JUMP)  ; LAB_0048ae65
     CMP dword ptr [EBX + 0x4],0x0       ; 0048ae30
         ;   Label: LAB_0048ae30
-    JZ 0x0048ae77                       ; 0048ae34 | LAB_0048ae77
-        ;   XREF to: 0048ae77 (CONDITIONAL_JUMP)
+    JZ 0x0048ae77                       ; 0048ae34
+        ;   XREF to: 0048ae77 (CONDITIONAL_JUMP)  ; LAB_0048ae77
     XOR EBP,EBP                         ; 0048ae36
     MOV ESI,0x49072f                    ; 0048ae38
-    MOV dword ptr [0x02d052a0],EBP      ; 0048ae3d | int g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],EBP      ; 0048ae43 | int g_RenderStateFlag2
-    MOV dword ptr [0x02d0257c],ESI      ; 0048ae49 | RenderScanlineFunc * g_ScanlineRenderFunc
+    MOV dword ptr [0x02d052a0],EBP      ; 0048ae3d | g_RenderStateFlags
+    MOV dword ptr [0x02d052a4],EBP      ; 0048ae43 | g_RenderStateFlag2
+    MOV dword ptr [0x02d0257c],ESI      ; 0048ae49 | g_ScanlineRenderFunc
     LEA EAX,[EDI + 0x18]                ; 0048ae4f
         ;   Label: LAB_0048ae4f
     PUSH EAX                            ; 0048ae52
     MOV EDX,dword ptr [EDI + 0x4]       ; 0048ae53
     PUSH EDX                            ; 0048ae56
     PUSH EBX                            ; 0048ae57
-    CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740 ; 0048ae58 | void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
-        ;   XREF to: 0048a740 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740 ; 0048ae58
+        ;   XREF to: 0048a740 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
     ADD ESP,0xc                         ; 0048ae5d
     POP EBP                             ; 0048ae60
         ;   Label: LAB_0048ae60
@@ -77,27 +77,27 @@ section .text
     LEA EAX,[EDI + 0x8]                 ; 0048ae65
         ;   Label: LAB_0048ae65
     PUSH EAX                            ; 0048ae68
-    CALL engine_3d.c_isVisiblePlane_FUN_00403950 ; 0048ae69 | int engine_3d.c_isVisiblePlane_FUN_00403950(SClipPlane * plane)
-        ;   XREF to: 00403950 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_isVisiblePlane_FUN_00403950 ; 0048ae69
+        ;   XREF to: 00403950 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403950(SClipPlane * plane)
     ADD ESP,0x4                         ; 0048ae6e
     TEST EAX,EAX                        ; 0048ae71
-    JZ 0x0048ae60                       ; 0048ae73 | LAB_0048ae60
-        ;   XREF to: 0048ae60 (CONDITIONAL_JUMP)
-    JMP 0x0048ae30                      ; 0048ae75 | LAB_0048ae30
-        ;   XREF to: 0048ae30 (UNCONDITIONAL_JUMP)
-    CMP dword ptr [0x0067939c],0x20     ; 0048ae77 | int g_BitsPerPixel
+    JZ 0x0048ae60                       ; 0048ae73
+        ;   XREF to: 0048ae60 (CONDITIONAL_JUMP)  ; LAB_0048ae60
+    JMP 0x0048ae30                      ; 0048ae75
+        ;   XREF to: 0048ae30 (UNCONDITIONAL_JUMP)  ; LAB_0048ae30
+    CMP dword ptr [0x0067939c],0x20     ; 0048ae77 | g_BitsPerPixel
         ;   Label: LAB_0048ae77
-    JNZ 0x0048ae9d                      ; 0048ae7e | LAB_0048ae9d
-        ;   XREF to: 0048ae9d (CONDITIONAL_JUMP)
-    MOV dword ptr [0x02d0257c],0x5b4031 ; 0048ae80 | RenderScanlineFunc * g_ScanlineRenderFunc
+    JNZ 0x0048ae9d                      ; 0048ae7e
+        ;   XREF to: 0048ae9d (CONDITIONAL_JUMP)  ; LAB_0048ae9d
+    MOV dword ptr [0x02d0257c],0x5b4031 ; 0048ae80 | g_ScanlineRenderFunc
     MOV ECX,0x6                         ; 0048ae8a
         ;   Label: LAB_0048ae8a
-    MOV dword ptr [0x02d052a0],ESI      ; 0048ae8f | int g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],ECX      ; 0048ae95 | int g_RenderStateFlag2
-    JMP 0x0048ae4f                      ; 0048ae9b | LAB_0048ae4f
-        ;   XREF to: 0048ae4f (UNCONDITIONAL_JUMP)
-    MOV dword ptr [0x02d0257c],0x5b4823 ; 0048ae9d | RenderScanlineFunc * g_ScanlineRenderFunc
+    MOV dword ptr [0x02d052a0],ESI      ; 0048ae8f | g_RenderStateFlags
+    MOV dword ptr [0x02d052a4],ECX      ; 0048ae95 | g_RenderStateFlag2
+    JMP 0x0048ae4f                      ; 0048ae9b
+        ;   XREF to: 0048ae4f (UNCONDITIONAL_JUMP)  ; LAB_0048ae4f
+    MOV dword ptr [0x02d0257c],0x5b4823 ; 0048ae9d | g_ScanlineRenderFunc
         ;   Label: LAB_0048ae9d
-    JMP 0x0048ae8a                      ; 0048aea7 | LAB_0048ae8a
-        ;   XREF to: 0048ae8a (UNCONDITIONAL_JUMP)
+    JMP 0x0048ae8a                      ; 0048aea7
+        ;   XREF to: 0048ae8a (UNCONDITIONAL_JUMP)  ; LAB_0048ae8a
 

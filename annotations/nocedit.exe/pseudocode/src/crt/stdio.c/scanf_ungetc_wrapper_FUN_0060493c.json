@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 6, 
-    "global_count": 0, 
-    "total_lines": 14, 
-    "assembly_lines": 8, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060493c", 
-    "signature": "int crt_stdio.c_scanf_ungetc_wrapper_FUN_0060493c(int character, scanf_state_t * state)", 
-    "address_range": [
-      [
-        "0060493c", 
-        "0060494c"
-      ]
-    ], 
-    "name": "crt_stdio.c_scanf_ungetc_wrapper_FUN_0060493c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "character"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "scanf_state_t *", 
-        "size": 4, 
-        "name": "state"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 8,
+    "complexity_score": 6,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
   "cross_references": [
     {
-      "from_addr": "006049ce", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_doscan_FUN_00604950", 
-      "addr": "00604950"
-    }, 
+      "addr": "00604950",
+      "from_addr": "006049ce",
+      "name": "crt_stdio.c_doscan_FUN_00604950",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006053a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_scanf_float_FUN_00605178", 
-      "addr": "00605178"
-    }, 
+      "addr": "00605178",
+      "from_addr": "006053a5",
+      "name": "crt_stdio.c_scanf_float_FUN_00605178",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00605790", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_scanf_integer_FUN_0060547c", 
-      "addr": "0060547c"
-    }, 
+      "addr": "0060547c",
+      "from_addr": "00605790",
+      "name": "crt_stdio.c_scanf_integer_FUN_0060547c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060513d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_scanf_scanset_FUN_00605064", 
-      "addr": "00605064"
-    }, 
+      "addr": "00605064",
+      "from_addr": "0060513d",
+      "name": "crt_stdio.c_scanf_scanset_FUN_00605064",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00604f80", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_scanf_string_FUN_00604e4c", 
-      "addr": "00604e4c"
-    }, 
+      "addr": "00604e4c",
+      "from_addr": "00604f80",
+      "name": "crt_stdio.c_scanf_string_FUN_00604e4c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00604d47", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_skip_whitespace_FUN_00604d18", 
-      "addr": "00604d18"
+      "addr": "00604d18",
+      "from_addr": "00604d47",
+      "name": "crt_stdio.c_skip_whitespace_FUN_00604d18",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060493c",
+    "address_range": [
+      [
+        "0060493c",
+        "0060494c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_scanf_ungetc_wrapper_FUN_0060493c",
+    "signature": "int crt_stdio.c_scanf_ungetc_wrapper_FUN_0060493c(int character, scanf_state_t * state)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "state",
+        "offset": 8,
+        "size": 4,
+        "type": "scanf_state_t *"
+      }
+    ]
+  },
+  "suspects": []
 }

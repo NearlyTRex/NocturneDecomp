@@ -1,490 +1,490 @@
 {
   "complexity": {
-    "function_call_count": 20, 
-    "complexity_score": 259, 
-    "pseudocode_lines": 84, 
-    "cross_reference_count": 1, 
-    "global_count": 28, 
-    "total_lines": 456, 
-    "assembly_lines": 372, 
-    "suspect_count": 16, 
+    "assembly_lines": 372,
+    "complexity_score": 259,
+    "cross_reference_count": 1,
+    "function_call_count": 20,
+    "global_count": 28,
+    "pseudocode_lines": 84,
+    "suspect_count": 16,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
-      "addr": "00403260"
-    }, 
-    {
-      "name": "engine_2d.c_drawLine_FUN_004011b0", 
-      "addr": "004011b0"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "shape_design.c_doNothing_FUN_0045c4f0", 
-      "addr": "0045c4f0"
-    }, 
-    {
-      "name": "shape_design.c_doNothing_FUN_0045c510", 
-      "addr": "0045c510"
-    }, 
-    {
-      "name": "shape_design.c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0", 
-      "addr": "0045bbc0"
-    }, 
-    {
-      "name": "shape_design.c_handleEditorHotkeys_FUN_0045b990", 
-      "addr": "0045b990"
-    }, 
-    {
-      "name": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0", 
-      "addr": "0045d5d0"
-    }, 
-    {
-      "name": "shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0", 
-      "addr": "0045bff0"
-    }, 
-    {
-      "name": "shape_design.c_selectVertexToDelete_FUN_0045c5b0", 
-      "addr": "0045c5b0"
-    }, 
-    {
-      "name": "shape_design.c_selectVertexToMove_FUN_0045c530", 
-      "addr": "0045c530"
-    }, 
-    {
-      "name": "shape_design.c_setupViewMatrix_FUN_0045ba60", 
-      "addr": "0045ba60"
-    }, 
-    {
-      "name": "shape_design.c_showHelpFile_FUN_00457f00", 
-      "addr": "00457f00"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_clearKeypresses_FUN_005f2e70", 
-      "addr": "005f2e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0", 
-      "addr": "005f30c0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_doNothing_FUN_005f2f80", 
-      "addr": "005f2f80"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0", 
-      "addr": "005f2fd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Insert_at_end_0061b349", 
-      "addr": "0061b349", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Move_point_d_0061b357", 
-      "addr": "0061b357", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_from_f_f_f_0061b367", 
-      "addr": "0061b367", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_c_0061b375", 
-      "addr": "0061b375", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_c_0061b378", 
-      "addr": "0061b378", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_c_0061b37b", 
-      "addr": "0061b37b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_d_d_0061b37e", 
-      "addr": "0061b37e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_point_hlp_0061b387", 
-      "addr": "0061b387", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_PolygonScreenCache[19999].view_mode", 
-      "addr": "01626340", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ZoomLevel", 
-      "addr": "01626344", 
-      "value": null
-    }, 
-    {
-      "type": "SVertexData[20000]", 
-      "name": "g_LoadedVertices", 
-      "addr": "0162640c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01626410", 
-      "addr": "01626410", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LoadedVertices[0].vertex.z", 
-      "addr": "01626414", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PointEditorMode", 
-      "addr": "01e528b0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SelectedPointIndex", 
-      "addr": "01e528b4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseX", 
-      "addr": "02cf6a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseY", 
-      "addr": "02cf6a90", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseButtonFlags", 
-      "addr": "02cf6a94", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d03e99", 
-      "addr": "02d03e99", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d03ea4", 
-      "addr": "02d03ea4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d03ea5", 
-      "addr": "02d03ea5", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d03eaf", 
-      "addr": "02d03eaf", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d03eb8", 
-      "addr": "02d03eb8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d03ebb", 
-      "addr": "02d03ebb", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d03eca", 
-      "addr": "02d03eca", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 37, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"Insert at end\");"
-    }, 
-    {
-      "line": 38, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0xb);"
-    }, 
-    {
-      "line": 41, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"Move point : %d\");"
-    }, 
-    {
-      "line": 42, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0xb);"
-    }, 
-    {
-      "line": 44, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffff7c,\"from %f,%f,%f\","
-    }, 
-    {
-      "line": 46, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0x16);"
-    }, 
-    {
-      "line": 60, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"%c\");"
-    }, 
-    {
-      "line": 61, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,g_WindowWidth / 2 + 2,0);"
-    }, 
-    {
-      "line": 62, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"%c\");"
-    }, 
-    {
-      "line": 63, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,g_WindowWidth + -7,g_WindowHeight / 2 + -0xb)"
-    }, 
-    {
-      "line": 65, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"%c\");"
-    }, 
-    {
-      "line": 66, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0);"
-    }, 
-    {
-      "line": 67, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"%d,%d,%d\");"
-    }, 
-    {
-      "line": 68, 
-      "match": "&stack0xffffff7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,g_WindowHeight + -0xb);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0045c6c0", 
-    "signature": "void shape_design.c_showPointEditor_FUN_0045c6c0(void)", 
-    "address_range": [
-      [
-        "0045c6c0", 
-        "0045c841"
-      ], 
-      [
-        "0045c844", 
-        "0045ca46"
-      ], 
-      [
-        "0045ca49", 
-        "0045ca9e"
-      ]
-    ], 
-    "name": "shape_design.c_showPointEditor_FUN_0045c6c0"
-  }, 
-  "stack_frame": {
-    "local_size": 172, 
-    "variables": [
-      {
-        "offset": -168, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_a8"
-      }, 
-      {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_a0"
-      }, 
-      {
-        "offset": -152, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_98"
-      }, 
-      {
-        "offset": -144, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_90"
-      }, 
-      {
-        "offset": -140, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8c"
-      }, 
-      {
-        "offset": -136, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_88"
-      }, 
-      {
-        "offset": -132, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_84"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 172, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 456
+  },
   "cross_references": [
     {
-      "from_addr": "0046f67d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
-      "addr": "0046f290"
+      "addr": "0046f290",
+      "from_addr": "0046f67d",
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045c6c0",
+    "address_range": [
+      [
+        "0045c6c0",
+        "0045c841"
+      ],
+      [
+        "0045c844",
+        "0045ca46"
+      ],
+      [
+        "0045ca49",
+        "0045ca9e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_showPointEditor_FUN_0045c6c0",
+    "signature": "void shape_design.c_showPointEditor_FUN_0045c6c0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00403260",
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "004011b0",
+      "name": "engine_2d.c_drawLine_FUN_004011b0"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "0045c4f0",
+      "name": "shape_design.c_doNothing_FUN_0045c4f0"
+    },
+    {
+      "addr": "0045c510",
+      "name": "shape_design.c_doNothing_FUN_0045c510"
+    },
+    {
+      "addr": "0045bbc0",
+      "name": "shape_design.c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0"
+    },
+    {
+      "addr": "0045b990",
+      "name": "shape_design.c_handleEditorHotkeys_FUN_0045b990"
+    },
+    {
+      "addr": "0045d5d0",
+      "name": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0"
+    },
+    {
+      "addr": "0045bff0",
+      "name": "shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0"
+    },
+    {
+      "addr": "0045c5b0",
+      "name": "shape_design.c_selectVertexToDelete_FUN_0045c5b0"
+    },
+    {
+      "addr": "0045c530",
+      "name": "shape_design.c_selectVertexToMove_FUN_0045c530"
+    },
+    {
+      "addr": "0045ba60",
+      "name": "shape_design.c_setupViewMatrix_FUN_0045ba60"
+    },
+    {
+      "addr": "00457f00",
+      "name": "shape_design.c_showHelpFile_FUN_00457f00"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    },
+    {
+      "addr": "005f2e70",
+      "name": "wincore_winrun.cpp_clearKeypresses_FUN_005f2e70"
+    },
+    {
+      "addr": "005f30c0",
+      "name": "wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0"
+    },
+    {
+      "addr": "005f2f80",
+      "name": "wincore_winrun.cpp_doNothing_FUN_005f2f80"
+    },
+    {
+      "addr": "005f2fd0",
+      "name": "wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b349",
+      "name": "s_Insert_at_end_0061b349",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b357",
+      "name": "s_Move_point_d_0061b357",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b367",
+      "name": "s_from_f_f_f_0061b367",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b375",
+      "name": "s_c_0061b375",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b378",
+      "name": "s_c_0061b378",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b37b",
+      "name": "s_c_0061b37b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b37e",
+      "name": "s_d_d_d_0061b37e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b387",
+      "name": "s_point_hlp_0061b387",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "01626340",
+      "name": "g_PolygonScreenCache[19999].view_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626344",
+      "name": "g_ZoomLevel",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0162640c",
+      "name": "g_LoadedVertices",
+      "type": "SVertexData[20000]",
+      "value": null
+    },
+    {
+      "addr": "01626410",
+      "name": "DAT_01626410",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626414",
+      "name": "g_LoadedVertices[0].vertex.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e528b0",
+      "name": "g_PointEditorMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e528b4",
+      "name": "g_SelectedPointIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d03e99",
+      "name": "CHAR_ARRAY_02d03e99",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03ea4",
+      "name": "CHAR_ARRAY_02d03ea4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03ea5",
+      "name": "CHAR_ARRAY_02d03ea5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03eaf",
+      "name": "CHAR_ARRAY_02d03eaf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03eb8",
+      "name": "CHAR_ARRAY_02d03eb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03ebb",
+      "name": "CHAR_ARRAY_02d03ebb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03eca",
+      "name": "CHAR_ARRAY_02d03eca",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 172,
+    "local_size": 172,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 7,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 37,
+      "match": "&stack0xffffff7c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"Insert at end\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 38,
+      "match": "&stack0xffffff7c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0xb);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 41,
+      "match": "&stack0xffffff7c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"Move point : %d\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 42,
+      "match": "&stack0xffffff7c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0xb);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0xffffff7c",
+      "text": "(&stack0xffffff7c,\"from %f,%f,%f\",",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 46,
+      "match": "&stack0xffffff7c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0x16);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xffffff7c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"%c\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xffffff7c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,g_WindowWidth / 2 + 2,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 62,
+      "match": "&stack0xffffff7c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"%c\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 63,
+      "match": "&stack0xffffff7c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,g_WindowWidth + -7,g_WindowHeight / 2 + -0xb)",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xffffff7c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"%c\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 66,
+      "match": "&stack0xffffff7c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
+      "match": "&stack0xffffff7c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"%d,%d,%d\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 68,
+      "match": "&stack0xffffff7c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,g_WindowHeight + -0xb);",
+      "type": "stack_ref"
     }
   ]
 }

@@ -1,88 +1,88 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 34, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 22, 
-    "assembly_lines": 13, 
-    "suspect_count": 2, 
+    "assembly_lines": 13,
+    "complexity_score": 34,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0", 
-      "addr": "00489ab0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "char *unaff_EBX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(this_ptr,height,y,unaff_EBX);"
-    }
-  ], 
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00489ad0", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00489ad0(CDrawSurface * this_ptr, int y, int height, char * text)", 
+    "address": "00489ad0",
     "address_range": [
       [
-        "00489ad0", 
+        "00489ad0",
         "00489ae9"
       ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00489ad0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00489ad0",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00489ad0(CDrawSurface * this_ptr, int y, int height, char * text)"
+  },
+  "function_calls": [
+    {
+      "addr": "00489ab0",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y"
-      }, 
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
+        "is_param": true,
+        "name": "height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
+        "is_param": true,
+        "name": "text",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBX",
+      "text": "char *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "(this_ptr,height,y,unaff_EBX);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

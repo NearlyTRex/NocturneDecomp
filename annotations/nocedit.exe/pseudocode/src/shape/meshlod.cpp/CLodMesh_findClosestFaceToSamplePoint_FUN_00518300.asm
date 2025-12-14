@@ -51,16 +51,16 @@ section .text
     MOV EDX,dword ptr [EDI + 0x8]       ; 00518336
     XOR ESI,ESI                         ; 00518339
     TEST EDX,EDX                        ; 0051833b
-    JLE 0x00518368                      ; 0051833d | LAB_00518368
-        ;   XREF to: 00518368 (CONDITIONAL_JUMP)
+    JLE 0x00518368                      ; 0051833d
+        ;   XREF to: 00518368 (CONDITIONAL_JUMP)  ; LAB_00518368
     MOV dword ptr [ESP + 0x10],ESI      ; 0051833f
     MOV EDX,dword ptr [ESP + 0x10]      ; 00518343
         ;   Label: LAB_00518343
     MOV EAX,dword ptr [EDI + 0xc]       ; 00518347
     ADD EAX,EDX                         ; 0051834a
     CMP dword ptr [EAX + 0x40],0x0      ; 0051834c
-    JZ 0x00518375                       ; 00518350 | LAB_00518375
-        ;   XREF to: 00518375 (CONDITIONAL_JUMP)
+    JZ 0x00518375                       ; 00518350
+        ;   XREF to: 00518375 (CONDITIONAL_JUMP)  ; LAB_00518375
     MOV ECX,dword ptr [ESP + 0x10]      ; 00518352
         ;   Label: LAB_00518352
     INC ESI                             ; 00518356
@@ -68,12 +68,12 @@ section .text
     MOV EAX,dword ptr [EDI + 0x8]       ; 0051835d
     MOV dword ptr [ESP + 0x10],ECX      ; 00518360
     CMP ESI,EAX                         ; 00518364
-    JL 0x00518343                       ; 00518366 | LAB_00518343
-        ;   XREF to: 00518343 (CONDITIONAL_JUMP)
+    JL 0x00518343                       ; 00518366
+        ;   XREF to: 00518343 (CONDITIONAL_JUMP)  ; LAB_00518343
     CMP dword ptr [EBX + 0xc],0x0       ; 00518368
         ;   Label: LAB_00518368
-    JL 0x005183a9                       ; 0051836c | LAB_005183a9
-        ;   XREF to: 005183a9 (CONDITIONAL_JUMP)
+    JL 0x005183a9                       ; 0051836c
+        ;   XREF to: 005183a9 (CONDITIONAL_JUMP)  ; LAB_005183a9
     MOV ESP,EBP                         ; 0051836e
     POP EBP                             ; 00518370
     POP EDI                             ; 00518371
@@ -84,8 +84,8 @@ section .text
         ;   Label: LAB_00518375
     PUSH EBX                            ; 00518376
     PUSH EDI                            ; 00518377
-    CALL shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400 ; 00518378 | double shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh * this_ptr, SLodSamplePoint * sample_point, CLodFace * face)
-        ;   XREF to: 0051a400 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400 ; 00518378
+        ;   XREF to: 0051a400 (UNCONDITIONAL_CALL)  ; double shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh * this_ptr, SLodSamplePoint * sample_point, CLodFace * face)
     MOV dword ptr [ESP + 0x14],EAX      ; 0051837d
     MOV dword ptr [ESP + 0x18],EDX      ; 00518381
     FLD double ptr [ESP + 0x14]         ; 00518385
@@ -94,23 +94,23 @@ section .text
     FCOMP double ptr [EBX + 0x10]       ; 0051838f
     FNSTSW AX                           ; 00518392
     SAHF                                ; 00518394
-    JNC 0x00518352                      ; 00518395 | LAB_00518352
-        ;   XREF to: 00518352 (CONDITIONAL_JUMP)
+    JNC 0x00518352                      ; 00518395
+        ;   XREF to: 00518352 (CONDITIONAL_JUMP)  ; LAB_00518352
     MOV EAX,dword ptr [ESP]             ; 00518397
     MOV dword ptr [EBX + 0xc],ESI       ; 0051839a
     MOV dword ptr [EBX + 0x10],EAX      ; 0051839d
     MOV EAX,dword ptr [ESP + 0x4]       ; 005183a0
     MOV dword ptr [EBX + 0x14],EAX      ; 005183a4
-    JMP 0x00518352                      ; 005183a7 | LAB_00518352
-        ;   XREF to: 00518352 (UNCONDITIONAL_JUMP)
-    MOV ECX,0x6378af                    ; 005183a9 | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_006378af = ..\shape\meshlod.cpp
+    JMP 0x00518352                      ; 005183a7
+        ;   XREF to: 00518352 (UNCONDITIONAL_JUMP)  ; LAB_00518352
+    MOV ECX,0x6378af                    ; 005183a9 | = "..\\shape\\meshlod.cpp"
         ;   Label: LAB_005183a9
     MOV EBX,0xa30                       ; 005183ae
-    PUSH 0x6378c4                       ; 005183b3 | = "Can't find closest face!" | s_Can_t_find_closest_face_006378c4 = Can't find closest face!
-    MOV dword ptr [0x02f0ca48],ECX      ; 005183b8 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 005183be | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005183c4 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6378c4                       ; 005183b3 | = "Can't find closest face!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 005183b8 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 005183be | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005183c4
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005183c9
     MOV ESP,EBP                         ; 005183cc
     POP EBP                             ; 005183ce

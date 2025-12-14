@@ -27,14 +27,14 @@ section .text
     NEG EAX                             ; 005ffa0a
     PUSH ESI                            ; 005ffa0c
     PUSH EAX                            ; 005ffa0d
-    CALL dword ptr [0x00684ee4]         ; 005ffa0e | GET_TLS_FUNC * PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
+    CALL dword ptr [0x00684ee4]         ; 005ffa0e | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
     MOV ESI,EAX                         ; 005ffa14
     POP EAX                             ; 005ffa16
     CMP EAX,dword ptr [ESI]             ; 005ffa17
     POP ESI                             ; 005ffa19
     JBE 0x005ffa22                      ; 005ffa1a
         ;   XREF to: 005ffa22 (CONDITIONAL_JUMP)
-    CALL crt_stack.c_ProbeStackSpace_FUN_005ffa2f ; 005ffa1c | void crt_stack.c_ProbeStackSpace_FUN_005ffa2f(uint size)
-        ;   XREF to: 005ffa2f (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_ProbeStackSpace_FUN_005ffa2f ; 005ffa1c
+        ;   XREF to: 005ffa2f (UNCONDITIONAL_CALL)  ; void crt_stack.c_ProbeStackSpace_FUN_005ffa2f(uint size)
     RET                                 ; 005ffa21
 

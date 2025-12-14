@@ -22,7 +22,7 @@ core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
     g_PerspectiveReciprocal = 0.0;
     return;
   }
-  g_PerspectiveReciprocal = (float)(*(code *)((this_ptr->base).vtable)->calculatePerspective)();
+  g_PerspectiveReciprocal = (float)(*((this_ptr->base).vtable)->calculatePerspective)();
   uVar1 = g_LightmapTexturePalette[g_FogColorIndexB] & 0xff;
   if (g_BitsPerPixel == 0x20) {
     uVar2 = (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff) << ((byte)g_RedBitPosition & 0x1f) |

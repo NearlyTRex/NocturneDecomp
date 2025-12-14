@@ -28,16 +28,16 @@ section .text
     PUSH EDX                            ; 00605e9a
     MOV ECX,dword ptr [ESP + 0x14]      ; 00605e9b
     PUSH ECX                            ; 00605e9f
-    CALL crt_string.c_mbstrnbytes_FUN_00605ec0 ; 00605ea0 | int crt_string.c_mbstrnbytes_FUN_00605ec0(char * str, int char_count)
-        ;   XREF to: 00605ec0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_mbstrnbytes_FUN_00605ec0 ; 00605ea0
+        ;   XREF to: 00605ec0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbstrnbytes_FUN_00605ec0(char * str, int char_count)
     ADD ESP,0x8                         ; 00605ea5
     INC EAX                             ; 00605ea8
     PUSH EAX                            ; 00605ea9
     MOV ESI,dword ptr [ESP + 0x14]      ; 00605eaa
     PUSH ESI                            ; 00605eae
     PUSH EBX                            ; 00605eaf
-    CALL crt_unknown.c_FUN_0060b670     ; 00605eb0 | undefined crt_unknown.c_FUN_0060b670()
-        ;   XREF to: 0060b670 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_FUN_0060b670     ; 00605eb0
+        ;   XREF to: 0060b670 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060b670()
     ADD ESP,0xc                         ; 00605eb5
     MOV EAX,EBX                         ; 00605eb8
     POP ESI                             ; 00605eba

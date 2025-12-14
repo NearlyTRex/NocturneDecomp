@@ -11,8 +11,7 @@ void core_health_cpp_FUN_004f1d90(void)
 {
   CHealthItem *this_ptr;
   
-  this_ptr = (CHealthItem *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2dc,"..\\core\\health.cpp",0x22);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2dc,"..\\core\\health.cpp",0x22);
   if (this_ptr == (CHealthItem *)0x0) {
     return;
   }

@@ -13,7 +13,7 @@ void * __cdecl crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(void *pThreadD
   ThreadData *in_stack_00000004;
   
   if (in_stack_00000004 == (ThreadData *)0x0) {
-    in_stack_00000004 = (ThreadData *)crt_memory_c_calloc_FUN_0060ca90(1,g_RuntimeBufferSize);
+    in_stack_00000004 = crt_memory_c_calloc_FUN_0060ca90(1,g_RuntimeBufferSize);
     DVar1 = g_RuntimeBufferSize;
     if (in_stack_00000004 != (ThreadData *)0x0) {
       in_stack_00000004->padding_0x52[0] = '\x01';

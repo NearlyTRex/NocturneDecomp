@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 39, 
-    "assembly_lines": 23, 
-    "suspect_count": 2, 
+    "assembly_lines": 23,
+    "complexity_score": 43,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "undefined_type"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "uint", 
-      "name": "g_CodePage", 
-      "addr": "00685570", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_ShiftJIS_TrailByteTable", 
-      "addr": "0068562d", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MultibyteLocaleActive", 
-      "addr": "03f9c020", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000005", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "undefined3 in_stack_00000005;"
-    }, 
-    {
-      "line": 5, 
-      "match": "undefined3 in_stack_00000005", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 in_stack_00000005;"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00610a70", 
-    "signature": "int crt_locale.c_istrailbyte_FUN_00610a70(uchar byte_value)", 
-    "address_range": [
-      [
-        "00610a70", 
-        "00610aa8"
-      ]
-    ], 
-    "name": "crt_locale.c_istrailbyte_FUN_00610a70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uchar", 
-        "size": 1, 
-        "name": "byte_value"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 5, 
-    "param_offset": 4, 
-    "param_size": 1
-  }, 
+    ],
+    "total_lines": 36
+  },
   "cross_references": [
     {
-      "from_addr": "00610a4e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_locale.c_ismultibyte_FUN_00610a20", 
-      "addr": "00610a20"
+      "addr": "00610a20",
+      "from_addr": "00610a4e",
+      "name": "crt_locale.c_ismultibyte_FUN_00610a20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00610a70",
+    "address_range": [
+      [
+        "00610a70",
+        "00610aa8"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_locale.c_istrailbyte_FUN_00610a70",
+    "signature": "int crt_locale.c_istrailbyte_FUN_00610a70(uchar byte_value)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00685570",
+      "name": "g_CodePage",
+      "type": "uint",
+      "value": "0x1"
+    },
+    {
+      "addr": "0068562d",
+      "name": "g_ShiftJIS_TrailByteTable",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "03f9c020",
+      "name": "g_MultibyteLocaleActive",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 5,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 1,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "byte_value",
+        "offset": 4,
+        "size": 1,
+        "type": "uchar"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000005",
+      "text": "undefined3 in_stack_00000005;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 5,
+      "match": "undefined3 in_stack_00000005",
+      "text": "undefined3 in_stack_00000005;",
+      "type": "undefined_type"
     }
   ]
 }

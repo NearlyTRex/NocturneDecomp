@@ -1,134 +1,134 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 67, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 82, 
-    "assembly_lines": 60, 
-    "suspect_count": 4, 
+    "assembly_lines": 60,
+    "complexity_score": 67,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0", 
-      "addr": "0052dce0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10", 
-      "addr": "005a0d10"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000018;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (fVar1 < in_stack_00000018) {"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000018 = fVar1;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000018 + fVar1);"
-    }
-  ], 
+    ],
+    "total_lines": 82
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a0f50", 
-    "signature": "CDeformableModelInstance * core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_005a0f50(CMotionController * motion_controller, CDeformableModelInstance * deformable_model, int motion_index, float start_frame, float end_frame)", 
+    "address": "005a0f50",
     "address_range": [
       [
-        "005a0f50", 
+        "005a0f50",
         "005a0fda"
       ]
-    ], 
-    "name": "core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_005a0f50"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_005a0f50",
+    "signature": "CDeformableModelInstance * core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_005a0f50(CMotionController * motion_controller, CDeformableModelInstance * deformable_model, int motion_index, float start_frame, float end_frame)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052dce0",
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "005a0d10",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 48,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMotionController *", 
-        "size": 4, 
-        "name": "motion_controller"
-      }, 
+        "is_param": true,
+        "name": "motion_controller",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "deformable_model"
-      }, 
+        "is_param": true,
+        "name": "deformable_model",
+        "offset": 8,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "motion_index"
-      }, 
+        "is_param": true,
+        "name": "motion_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "start_frame"
-      }, 
+        "is_param": true,
+        "name": "start_frame",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "end_frame"
+        "is_param": true,
+        "name": "end_frame",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000018",
+      "text": "float in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000018",
+      "text": "if (fVar1 < in_stack_00000018) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000018",
+      "text": "in_stack_00000018 = fVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000018",
+      "text": "in_stack_00000018 + fVar1);",
+      "type": "stack_param"
+    }
+  ]
 }

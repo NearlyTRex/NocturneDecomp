@@ -23,8 +23,8 @@ section .text
     MOV EDX,dword ptr [ECX + 0x4]       ; 00574e34
     XOR EAX,EAX                         ; 00574e37
     TEST EDX,EDX                        ; 00574e39
-    JLE 0x00574e61                      ; 00574e3b | LAB_00574e61
-        ;   XREF to: 00574e61 (CONDITIONAL_JUMP)
+    JLE 0x00574e61                      ; 00574e3b
+        ;   XREF to: 00574e61 (CONDITIONAL_JUMP)  ; LAB_00574e61
     PUSH ESI                            ; 00574e3d
     PUSH EBX                            ; 00574e3e
     XOR EDX,EDX                         ; 00574e3f
@@ -34,13 +34,13 @@ section .text
     MOV ESI,dword ptr [ECX + 0x24]      ; 00574e46
     SHL EBX,0x2                         ; 00574e49
     ADD EBX,ESI                         ; 00574e4c
-    MOV dword ptr [EDX + 0x2cf7d5c],EBX ; 00574e4e | uint *[1024] g_ZBufferScanlineArray
+    MOV dword ptr [EDX + 0x2cf7d5c],EBX ; 00574e4e | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     INC EAX                             ; 00574e54
     MOV EBX,dword ptr [ECX + 0x4]       ; 00574e55
     ADD EDX,0x4                         ; 00574e58
     CMP EAX,EBX                         ; 00574e5b
-    JL 0x00574e41                       ; 00574e5d | LAB_00574e41
-        ;   XREF to: 00574e41 (CONDITIONAL_JUMP)
+    JL 0x00574e41                       ; 00574e5d
+        ;   XREF to: 00574e41 (CONDITIONAL_JUMP)  ; LAB_00574e41
     POP EBX                             ; 00574e5f
     POP ESI                             ; 00574e60
     RET                                 ; 00574e61

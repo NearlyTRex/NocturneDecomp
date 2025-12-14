@@ -35,9 +35,9 @@ section .text
     MOV EAX,dword ptr [EBX + 0x154]     ; 00544d3c
     CALL dword ptr [EAX + 0xc4]         ; 00544d42
     ADD ESP,0x4                         ; 00544d48
-    CMP EAX,0x2fd8ce0                   ; 00544d4b | CDemonActorType g_CNPCClassInfo
-    JNZ 0x00544da9                      ; 00544d50 | LAB_00544da9
-        ;   XREF to: 00544da9 (CONDITIONAL_JUMP)
+    CMP EAX,0x2fd8ce0                   ; 00544d4b | g_CNPCClassInfo
+    JNZ 0x00544da9                      ; 00544d50
+        ;   XREF to: 00544da9 (CONDITIONAL_JUMP)  ; LAB_00544da9
     FLD float ptr [EDI + 0x4]           ; 00544d52
     FSUBR float ptr [EBX + 0x243c]      ; 00544d55
     LEA ESI,[EBX + 0x158]               ; 00544d5b
@@ -46,39 +46,39 @@ section .text
     FCOMPP                              ; 00544d69
     FNSTSW AX                           ; 00544d6b
     SAHF                                ; 00544d6d
-    JNC 0x00544db7                      ; 00544d6e | LAB_00544db7
-        ;   XREF to: 00544db7 (CONDITIONAL_JUMP)
+    JNC 0x00544db7                      ; 00544d6e
+        ;   XREF to: 00544db7 (CONDITIONAL_JUMP)  ; LAB_00544db7
     FLD float ptr [EDI + 0x4]           ; 00544d70
     FLDZ                                ; 00544d73
     FCOMPP                              ; 00544d75
     FNSTSW AX                           ; 00544d77
     SAHF                                ; 00544d79
-    JNC 0x00544da9                      ; 00544d7a | LAB_00544da9
-        ;   XREF to: 00544da9 (CONDITIONAL_JUMP)
+    JNC 0x00544da9                      ; 00544d7a
+        ;   XREF to: 00544da9 (CONDITIONAL_JUMP)  ; LAB_00544da9
     CMP dword ptr [EBX + 0x2598],0x0    ; 00544d7c
-    JNZ 0x00544da9                      ; 00544d83 | LAB_00544da9
-        ;   XREF to: 00544da9 (CONDITIONAL_JUMP)
-    PUSH 0x63e3bc                       ; 00544d85 | = "HURT" | s_HURT_0063e3bc = HURT
+    JNZ 0x00544da9                      ; 00544d83
+        ;   XREF to: 00544da9 (CONDITIONAL_JUMP)  ; LAB_00544da9
+    PUSH 0x63e3bc                       ; 00544d85 | = "HURT"
     PUSH ESI                            ; 00544d8a
-    CALL core_npc.cpp_FUN_00544c50      ; 00544d8b | undefined core_npc.cpp_FUN_00544c50()
-        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)
+    CALL core_npc.cpp_FUN_00544c50      ; 00544d8b
+        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_00544c50()
     ADD ESP,0x8                         ; 00544d90
     TEST EAX,EAX                        ; 00544d93
-    JNZ 0x00544da9                      ; 00544d95 | LAB_00544da9
-        ;   XREF to: 00544da9 (CONDITIONAL_JUMP)
-    PUSH 0x63e3c1                       ; 00544d97 | = "DAMAGE" | s_DAMAGE_0063e3c1 = DAMAGE
+    JNZ 0x00544da9                      ; 00544d95
+        ;   XREF to: 00544da9 (CONDITIONAL_JUMP)  ; LAB_00544da9
+    PUSH 0x63e3c1                       ; 00544d97 | = "DAMAGE"
     PUSH ESI                            ; 00544d9c
-    CALL core_npc.cpp_FUN_00544c50      ; 00544d9d | undefined core_npc.cpp_FUN_00544c50()
-        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)
+    CALL core_npc.cpp_FUN_00544c50      ; 00544d9d
+        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_00544c50()
     ADD ESP,0x8                         ; 00544da2
     TEST EAX,EAX                        ; 00544da5
-    JZ 0x00544df1                       ; 00544da7 | LAB_00544df1
-        ;   XREF to: 00544df1 (CONDITIONAL_JUMP)
+    JZ 0x00544df1                       ; 00544da7
+        ;   XREF to: 00544df1 (CONDITIONAL_JUMP)  ; LAB_00544df1
     PUSH EDI                            ; 00544da9
         ;   Label: LAB_00544da9
     PUSH EBX                            ; 00544daa
-    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 00544dab | void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
-        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 00544dab
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00544db0
     POP EDI                             ; 00544db3
     POP ESI                             ; 00544db4
@@ -93,26 +93,26 @@ section .text
     CALL dword ptr [EAX + 0xa0]         ; 00544dcf
     ADD ESP,0xc                         ; 00544dd5
     PUSH EBX                            ; 00544dd8
-    CALL core_charactr.cpp_CCharacter_FUN_0042d060 ; 00544dd9 | void core_charactr.cpp_CCharacter_FUN_0042d060(CCharacter * this_ptr)
-        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042d060 ; 00544dd9
+        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d060(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00544dde
-    PUSH 0x63e3b8                       ; 00544de1 | = "DIE" | s_DIE_0063e3b8 = DIE
+    PUSH 0x63e3b8                       ; 00544de1 | = "DIE"
     PUSH ESI                            ; 00544de6
-    CALL core_npc.cpp_FUN_00544c50      ; 00544de7 | undefined core_npc.cpp_FUN_00544c50()
-        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)
+    CALL core_npc.cpp_FUN_00544c50      ; 00544de7
+        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_00544c50()
     ADD ESP,0x8                         ; 00544dec
-    JMP 0x00544da9                      ; 00544def | LAB_00544da9
-        ;   XREF to: 00544da9 (UNCONDITIONAL_JUMP)
-    PUSH 0x63e3c8                       ; 00544df1 | = "SHOT" | s_SHOT_0063e3c8 = SHOT
+    JMP 0x00544da9                      ; 00544def
+        ;   XREF to: 00544da9 (UNCONDITIONAL_JUMP)  ; LAB_00544da9
+    PUSH 0x63e3c8                       ; 00544df1 | = "SHOT"
         ;   Label: LAB_00544df1
     PUSH ESI                            ; 00544df6
-    CALL core_npc.cpp_FUN_00544c50      ; 00544df7 | undefined core_npc.cpp_FUN_00544c50()
-        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)
+    CALL core_npc.cpp_FUN_00544c50      ; 00544df7
+        ;   XREF to: 00544c50 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_00544c50()
     ADD ESP,0x8                         ; 00544dfc
     PUSH EDI                            ; 00544dff
     PUSH EBX                            ; 00544e00
-    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 00544e01 | void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
-        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 00544e01
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00544e06
     POP EDI                             ; 00544e09
     POP ESI                             ; 00544e0a

@@ -27,11 +27,11 @@ section .text
     MOV EDX,dword ptr [EBP + 0x10]      ; 00504c9b
     FLD float ptr [EDX + 0x2dc]         ; 00504c9e
     MOV dword ptr [EDX + 0x418],0x1     ; 00504ca4
-    FCOMP double ptr [0x006310b8]       ; 00504cae | double DOUBLE_006310b8
+    FCOMP double ptr [0x006310b8]       ; 00504cae | DOUBLE_006310b8
     FNSTSW AX                           ; 00504cb4
     SAHF                                ; 00504cb6
-    JNC 0x00504cd6                      ; 00504cb7 | LAB_00504cd6
-        ;   XREF to: 00504cd6 (CONDITIONAL_JUMP)
+    JNC 0x00504cd6                      ; 00504cb7
+        ;   XREF to: 00504cd6 (CONDITIONAL_JUMP)  ; LAB_00504cd6
     XOR ESI,ESI                         ; 00504cb9
     MOV EDI,0x3ff00000                  ; 00504cbb
     MOV dword ptr [ESP],ESI             ; 00504cc0

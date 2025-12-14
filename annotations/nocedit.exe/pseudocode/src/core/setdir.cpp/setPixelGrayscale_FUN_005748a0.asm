@@ -21,7 +21,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 005748a5
     MOV EAX,dword ptr [ESP + 0xc]       ; 005748a9
     SHL EDX,0x2                         ; 005748ad
-    MOV EAX,dword ptr [EAX*0x4 + 0x2cf6a9c] ; 005748b0 | void *[1024] g_ScreenBufferArray
+    MOV EAX,dword ptr [EAX*0x4 + 0x2cf6a9c] ; 005748b0 | g_ScreenBufferArray
     LEA ECX,[EAX + EDX*0x1]             ; 005748b7
     MOV EAX,EBX                         ; 005748ba
     SHL EAX,0x8                         ; 005748bc

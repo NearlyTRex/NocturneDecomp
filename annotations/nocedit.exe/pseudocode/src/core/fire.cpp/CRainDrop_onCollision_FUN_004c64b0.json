@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 8, 
-    "assembly_lines": 3, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c64b0", 
-    "signature": "int core_fire.cpp_CRainDrop_onCollision_FUN_004c64b0(CRainDrop * this_ptr, CVector3f * collision_normal)", 
-    "address_range": [
-      [
-        "004c64b0", 
-        "004c64b2"
-      ]
-    ], 
-    "name": "core_fire.cpp_CRainDrop_onCollision_FUN_004c64b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CRainDrop *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "collision_normal"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 3,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 8
+  },
   "cross_references": [
     {
-      "from_addr": "004c93e5", 
-      "type": "CONDITIONAL_JUMP", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c93d0", 
-      "addr": "004c93d0"
+      "addr": "004c93d0",
+      "from_addr": "004c93e5",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c93d0",
+      "type": "CONDITIONAL_JUMP"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c64b0",
+    "address_range": [
+      [
+        "004c64b0",
+        "004c64b2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CRainDrop_onCollision_FUN_004c64b0",
+    "signature": "int core_fire.cpp_CRainDrop_onCollision_FUN_004c64b0(CRainDrop * this_ptr, CVector3f * collision_normal)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CRainDrop *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_normal",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
 }

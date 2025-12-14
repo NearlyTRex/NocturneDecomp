@@ -18,7 +18,7 @@ void __cdecl wincore_windll_cpp_presentToExternalRenderer_FUN_005b7c30(int skip_
   byte bVar7;
   int local_8;
   
-  puVar4 = (uint *)g_ScreenBufferArray[0];
+  puVar4 = g_ScreenBufferArray[0];
   bVar7 = 0;
   if (g_UseExternalRenderer == 0) {
     return;

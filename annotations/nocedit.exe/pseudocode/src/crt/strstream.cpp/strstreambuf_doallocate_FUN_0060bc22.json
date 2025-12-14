@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 104, 
-    "pseudocode_lines": 104, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 280, 
-    "assembly_lines": 176, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_iostream.cpp_setBuffer_FUN_0060d6a8", 
-      "addr": "0060d6a8"
-    }, 
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "crt_memory.c_malloc_FUN_006021da", 
-      "addr": "006021da"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 176,
+    "complexity_score": 104,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 104,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 280
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__watcallStack", 
-    "address": "0060bc22", 
-    "signature": "int crt_strstream.cpp_strstreambuf_doallocate_FUN_0060bc22(strstreambuf * this_ptr)", 
+    "address": "0060bc22",
     "address_range": [
       [
-        "0060bc22", 
+        "0060bc22",
         "0060bdbf"
       ]
-    ], 
-    "name": "crt_strstream.cpp_strstreambuf_doallocate_FUN_0060bc22"
-  }, 
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_strstream.cpp_strstreambuf_doallocate_FUN_0060bc22",
+    "signature": "int crt_strstream.cpp_strstreambuf_doallocate_FUN_0060bc22(strstreambuf * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060d6a8",
+      "name": "crt_iostream.cpp_setBuffer_FUN_0060d6a8"
+    },
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "006021da",
+      "name": "crt_memory.c_malloc_FUN_006021da"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 44, 
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_start_offset"
-      }, 
+        "is_param": false,
+        "name": "buffer_start_offset",
+        "offset": -40,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "int", 
-        "size": 4, 
-        "name": "read_ptr_offset"
-      }, 
+        "is_param": false,
+        "name": "read_ptr_offset",
+        "offset": -36,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "int", 
-        "size": 4, 
-        "name": "data_end_offset"
-      }, 
+        "is_param": false,
+        "name": "data_end_offset",
+        "offset": -32,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "typedef SIZE_T ULONG_PTR", 
-        "size": 4, 
-        "name": "current_buffer_size"
-      }, 
+        "is_param": false,
+        "name": "current_buffer_size",
+        "offset": -28,
+        "size": 4,
+        "type": "typedef SIZE_T ULONG_PTR"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "typedef SIZE_T ULONG_PTR", 
-        "size": 4, 
-        "name": "new_buffer_size"
-      }, 
+        "is_param": false,
+        "name": "new_buffer_size",
+        "offset": -24,
+        "size": 4,
+        "type": "typedef SIZE_T ULONG_PTR"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "old_buffer_start"
-      }, 
+        "is_param": false,
+        "name": "old_buffer_start",
+        "offset": -20,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "strstreambuf *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "strstreambuf *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

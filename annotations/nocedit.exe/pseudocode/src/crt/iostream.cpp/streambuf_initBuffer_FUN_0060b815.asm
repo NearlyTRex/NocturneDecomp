@@ -31,14 +31,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0060b912
     MOV dword ptr [EAX + 0x20],0x0      ; 0060b916
     TEST EDX,EDX                        ; 0060b91d
-    JZ 0x0060b929                       ; 0060b91f | LAB_0060b929
-        ;   XREF to: 0060b929 (CONDITIONAL_JUMP)
+    JZ 0x0060b929                       ; 0060b91f
+        ;   XREF to: 0060b929 (CONDITIONAL_JUMP)  ; LAB_0060b929
     MOV EDX,dword ptr [ESP + 0x8]       ; 0060b921
         ;   Label: LAB_0060b921
     MOV dword ptr [EAX + 0x4],EDX       ; 0060b925
     RET                                 ; 0060b928
     MOV dword ptr [EAX + 0x10],0x1      ; 0060b929
         ;   Label: LAB_0060b929
-    JMP 0x0060b921                      ; 0060b930 | LAB_0060b921
-        ;   XREF to: 0060b921 (UNCONDITIONAL_JUMP)
+    JMP 0x0060b921                      ; 0060b930
+        ;   XREF to: 0060b921 (UNCONDITIONAL_JUMP)  ; LAB_0060b921
 

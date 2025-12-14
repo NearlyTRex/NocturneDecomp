@@ -22,18 +22,18 @@ section .text
     PUSH EBX                            ; 006008f0
         ;   Label: crt_watcom.c_memavl_FUN_006008f0
     PUSH ESI                            ; 006008f1
-    CALL dword ptr [0x00684f00]         ; 006008f2 | void * PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00
-    MOV ESI,dword ptr [0x00684ed4]      ; 006008f8 | Heap * g_MainHeap
+    CALL dword ptr [0x00684f00]         ; 006008f2 | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00
+    MOV ESI,dword ptr [0x00684ed4]      ; 006008f8 | g_MainHeap
     XOR EBX,EBX                         ; 006008fe
     TEST ESI,ESI                        ; 00600900
-    JZ 0x00600926                       ; 00600902 | LAB_00600926
-        ;   XREF to: 00600926 (CONDITIONAL_JUMP)
+    JZ 0x00600926                       ; 00600902
+        ;   XREF to: 00600926 (CONDITIONAL_JUMP)  ; LAB_00600926
     LEA ECX,[ESI + 0x20]                ; 00600904
         ;   Label: LAB_00600904
     MOV EAX,dword ptr [ESI + 0x28]      ; 00600907
     CMP EAX,ECX                         ; 0060090a
-    JZ 0x0060091f                       ; 0060090c | LAB_0060091f
-        ;   XREF to: 0060091f (CONDITIONAL_JUMP)
+    JZ 0x0060091f                       ; 0060090c
+        ;   XREF to: 0060091f (CONDITIONAL_JUMP)  ; LAB_0060091f
     MOV EDX,dword ptr [EAX]             ; 0060090e
         ;   Label: LAB_0060090e
     SUB EDX,0x4                         ; 00600910
@@ -41,14 +41,14 @@ section .text
     MOV EAX,dword ptr [EAX + 0x8]       ; 00600916
     ADD EBX,EDX                         ; 00600919
     CMP EAX,ECX                         ; 0060091b
-    JNZ 0x0060090e                      ; 0060091d | LAB_0060090e
-        ;   XREF to: 0060090e (CONDITIONAL_JUMP)
+    JNZ 0x0060090e                      ; 0060091d
+        ;   XREF to: 0060090e (CONDITIONAL_JUMP)  ; LAB_0060090e
     MOV ESI,dword ptr [ESI + 0x8]       ; 0060091f
         ;   Label: LAB_0060091f
     TEST ESI,ESI                        ; 00600922
-    JNZ 0x00600904                      ; 00600924 | LAB_00600904
-        ;   XREF to: 00600904 (CONDITIONAL_JUMP)
-    CALL dword ptr [0x00684f08]         ; 00600926 | void * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08
+    JNZ 0x00600904                      ; 00600924
+        ;   XREF to: 00600904 (CONDITIONAL_JUMP)  ; LAB_00600904
+    CALL dword ptr [0x00684f08]         ; 00600926 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08
         ;   Label: LAB_00600926
     MOV EAX,EBX                         ; 0060092c
     POP ESI                             ; 0060092e

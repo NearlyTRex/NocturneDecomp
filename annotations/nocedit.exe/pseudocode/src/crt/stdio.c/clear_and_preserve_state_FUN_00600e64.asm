@@ -26,8 +26,8 @@ section .text
     PUSH EAX                            ; 00600e6e
     MOV EBX,dword ptr [EAX + 0x10]      ; 00600e6f
     MOV dword ptr [EAX + 0x10],0x0      ; 00600e72
-    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 00600e79 | void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
-        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 00600e79
+        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
     ADD ESP,0x8                         ; 00600e7e
     MOV EAX,EBX                         ; 00600e81
     POP EBX                             ; 00600e83

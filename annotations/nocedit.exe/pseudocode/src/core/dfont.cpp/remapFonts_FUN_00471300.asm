@@ -14,11 +14,11 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x020a5718]      ; 00471300 | CBitFont * g_MediumFont
+    MOV EDX,dword ptr [0x020a5718]      ; 00471300 | g_MediumFont
         ;   Label: core_dfont.cpp_remapFonts_FUN_00471300
     PUSH EDX                            ; 00471306
-    CALL engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0 ; 00471307 | void engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0(CBitFont * this_ptr)
-        ;   XREF to: 004d02a0 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0 ; 00471307
+        ;   XREF to: 004d02a0 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 0047130c
     RET                                 ; 0047130f
 

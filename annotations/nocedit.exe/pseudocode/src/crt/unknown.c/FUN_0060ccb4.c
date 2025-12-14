@@ -13,15 +13,13 @@ void crt_unknown_c_FUN_0060ccb4(void)
   ThreadRegistryEntry *ptr;
   
   ptr = g_ThreadDataRegistryList;
-  if (g_ThreadDataRegistryList != (ThreadRegistryEntry *)0x0) {
-    do {
-      pTVar1 = ptr->next;
-      if (ptr->shouldFreeData != 0) {
-        crt_memory_c_free_FUN_00601cd0(ptr->dataBuffer);
-      }
-      crt_memory_c_free_FUN_00601cd0(ptr);
-      ptr = pTVar1;
-    } while (pTVar1 != (ThreadRegistryEntry *)0x0);
+  while (ptr != (ThreadRegistryEntry *)0x0) {
+    pTVar1 = ptr->next;
+    if (ptr->shouldFreeData != 0) {
+      crt_memory_c_free_FUN_00601cd0(ptr->dataBuffer);
+    }
+    crt_memory_c_free_FUN_00601cd0(ptr);
+    ptr = pTVar1;
   }
   return;
 }

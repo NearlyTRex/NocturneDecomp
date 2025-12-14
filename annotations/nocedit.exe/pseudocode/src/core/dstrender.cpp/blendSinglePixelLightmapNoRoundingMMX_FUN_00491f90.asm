@@ -33,22 +33,22 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00491f9c
     MOV EBP,dword ptr [EBP + 0x14]      ; 00491f9f
     PXOR MM7,MM7                        ; 00491fa2
-    MOVD MM5,dword ptr [0x02d052a8]     ; 00491fa5 | int g_SolidColorMode
+    MOVD MM5,dword ptr [0x02d052a8]     ; 00491fa5 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00491fac
     PSLLW MM5,0x6                       ; 00491faf
     MOVZX EDX,byte ptr [EBX]            ; 00491fb3
     MOVD MM0,dword ptr [ESI]            ; 00491fb6
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00491fb9 | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00491fb9 | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00491fc1
     PUNPCKLBW MM0,MM7                   ; 00491fc5
     SHR EDX,0x1                         ; 00491fc8
     PUNPCKLBW MM2,MM7                   ; 00491fca
     ADD EAX,EDX                         ; 00491fcd
     PMULLW MM0,MM2                      ; 00491fcf
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00491fd2 | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00491fd2 | g_LightmapData
     MOVQ MM2,MM3                        ; 00491fda
     MOVQ MM4,MM5                        ; 00491fdd
-    PXOR MM2,qword ptr [0x006781e8]     ; 00491fe0 | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00491fe0 | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 00491fe7
     PMULHW MM4,MM3                      ; 00491fea
     PADDW MM0,MM4                       ; 00491fed

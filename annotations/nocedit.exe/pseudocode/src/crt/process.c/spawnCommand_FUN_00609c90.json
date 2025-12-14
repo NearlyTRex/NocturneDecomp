@@ -1,110 +1,110 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 39, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 22, 
-    "assembly_lines": 13, 
-    "suspect_count": 2, 
+    "assembly_lines": 13,
+    "complexity_score": 39,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_process.c_spawnvp_FUN_0060ca20", 
-      "addr": "0060ca20"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00609c90", 
-    "signature": "int crt_process.c_spawnCommand_FUN_00609c90(int mode, char * cmdPath, char * cmdName, char * args, void * envp, int * result)", 
-    "address_range": [
-      [
-        "00609c90", 
-        "00609ca9"
-      ]
-    ], 
-    "name": "crt_process.c_spawnCommand_FUN_00609c90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "mode"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "cmdPath"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "cmdName"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "args"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "envp"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "result"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 22
+  },
   "cross_references": [
     {
-      "from_addr": "006021a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdlib.c_system_FUN_00602130", 
-      "addr": "00602130"
+      "addr": "00602130",
+      "from_addr": "006021a0",
+      "name": "crt_stdlib.c_system_FUN_00602130",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00609c90",
+    "address_range": [
+      [
+        "00609c90",
+        "00609ca9"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_process.c_spawnCommand_FUN_00609c90",
+    "signature": "int crt_process.c_spawnCommand_FUN_00609c90(int mode, char * cmdPath, char * cmdName, char * args, void * envp, int * result)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060ca20",
+      "name": "crt_process.c_spawnvp_FUN_0060ca20"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "cmdPath",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "cmdName",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "args",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "envp",
+        "offset": 20,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "result",
+        "offset": 24,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

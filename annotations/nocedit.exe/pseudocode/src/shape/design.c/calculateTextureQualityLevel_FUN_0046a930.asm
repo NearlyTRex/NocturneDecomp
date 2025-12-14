@@ -28,17 +28,17 @@ section .text
     PUSH EBP                            ; 0046a933
     MOV EBP,ESP                         ; 0046a934
     SUB ESP,0x8                         ; 0046a936
-    MOV EAX,[0x01eb1488]                ; 0046a93c | int g_TextureQualityLevel
+    MOV EAX,[0x01eb1488]                ; 0046a93c | g_TextureQualityLevel
     SUB EAX,0x5                         ; 0046a941
     MOV dword ptr [EBP + -0x4],EAX      ; 0046a944
     CMP dword ptr [EBP + 0x14],0x9      ; 0046a947
-    JLE 0x0046a951                      ; 0046a94b | LAB_0046a951
-        ;   XREF to: 0046a951 (CONDITIONAL_JUMP)
+    JLE 0x0046a951                      ; 0046a94b
+        ;   XREF to: 0046a951 (CONDITIONAL_JUMP)  ; LAB_0046a951
     ADD dword ptr [EBP + -0x4],-0x1     ; 0046a94d
     CMP dword ptr [EBP + 0x14],0x1      ; 0046a951
         ;   Label: LAB_0046a951
-    JLE 0x0046a95b                      ; 0046a955 | LAB_0046a95b
-        ;   XREF to: 0046a95b (CONDITIONAL_JUMP)
+    JLE 0x0046a95b                      ; 0046a955
+        ;   XREF to: 0046a95b (CONDITIONAL_JUMP)  ; LAB_0046a95b
     ADD dword ptr [EBP + -0x4],-0x1     ; 0046a957
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046a95b
         ;   Label: LAB_0046a95b

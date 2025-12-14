@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 34, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 105, 
-    "assembly_lines": 71, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_console.cpp_CConsole_scrollUp_FUN_00441a80", 
-      "addr": "00441a80"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00441970", 
-    "signature": "void engine_console.cpp_CConsole_writeChar_FUN_00441970(CConsole * this_ptr, char character)", 
-    "address_range": [
-      [
-        "00441970", 
-        "00441a38"
-      ]
-    ], 
-    "name": "engine_console.cpp_CConsole_writeChar_FUN_00441970"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CConsole *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char", 
-        "size": 1, 
-        "name": "character"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 9, 
-    "param_offset": 4, 
-    "param_size": 5
-  }, 
+    "assembly_lines": 71,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 105
+  },
   "cross_references": [
     {
-      "from_addr": "00441903", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
-      "addr": "00441890"
+      "addr": "00441890",
+      "from_addr": "00441903",
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00441970",
+    "address_range": [
+      [
+        "00441970",
+        "00441a38"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_console.cpp_CConsole_writeChar_FUN_00441970",
+    "signature": "void engine_console.cpp_CConsole_writeChar_FUN_00441970(CConsole * this_ptr, char character)"
+  },
+  "function_calls": [
+    {
+      "addr": "00441a80",
+      "name": "engine_console.cpp_CConsole_scrollUp_FUN_00441a80"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 9,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 5,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CConsole *"
+      },
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 8,
+        "size": 1,
+        "type": "char"
+      }
+    ]
+  },
+  "suspects": []
 }

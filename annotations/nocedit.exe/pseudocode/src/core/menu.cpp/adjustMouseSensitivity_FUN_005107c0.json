@@ -1,263 +1,263 @@
 {
   "complexity": {
-    "function_call_count": 10, 
-    "complexity_score": 164, 
-    "pseudocode_lines": 79, 
-    "cross_reference_count": 1, 
-    "global_count": 14, 
-    "total_lines": 319, 
-    "assembly_lines": 240, 
-    "suspect_count": 7, 
+    "assembly_lines": 240,
+    "complexity_score": 164,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 14,
+    "pseudocode_lines": 79,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
-      "addr": "00403260"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectWithBorder_FUN_00403200", 
-      "addr": "00403200"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30", 
-      "addr": "004cdf30"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
-      "addr": "004d01d0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890", 
-      "addr": "004a0890"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
-      "addr": "004a0f80"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0", 
-      "addr": "004a0dd0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005f30d0", 
-      "addr": "005f30d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_4_2f_00636649", 
-      "addr": "00636649", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "g_MouseSensitivityScale", 
-      "addr": "0063664f", 
-      "value": "0.0000152587890625"
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "CKeys*", 
-      "name": "g_CKeysPtr", 
-      "addr": "0067cf44", 
-      "value": "02dcd7d4"
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_EditorFont", 
-      "addr": "02cf1cd0", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseX", 
-      "addr": "02cf6a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseY", 
-      "addr": "02cf6a90", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CKeysPtr", 
-      "addr": "02dcd7d4", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005107c9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 39, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (g_MouseX != unaff_ESI) {"
-    }, 
-    {
-      "line": 46, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = 0x5108bb;"
-    }, 
-    {
-      "line": 64, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000020,4);"
-    }, 
-    {
-      "line": 70, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(g_EditorFont,g_ClipLeft,g_ClipRight,(iVar5 - iVar4) / 2,0,0x636649,SUB84 /* extract 2-byte value */(dVar1,0));"
-    }, 
-    {
-      "line": 72, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000020 = 0x5109b8;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005107c0", 
-    "signature": "void core_menu.cpp_adjustMouseSensitivity_FUN_005107c0(int * sensitivity_value_ptr, char * window_title)", 
-    "address_range": [
-      [
-        "005107c0", 
-        "00510a4f"
-      ]
-    ], 
-    "name": "core_menu.cpp_adjustMouseSensitivity_FUN_005107c0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "sensitivity_value_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "window_title"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "unaffected_reg",
+      "stack_param",
+      "sub_artifact"
+    ],
+    "total_lines": 319
+  },
   "cross_references": [
     {
-      "from_addr": "00511da1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureCustomKeys_FUN_00511890", 
-      "addr": "00511890"
+      "addr": "00511890",
+      "from_addr": "00511da1",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_00511890",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005107c0",
+    "address_range": [
+      [
+        "005107c0",
+        "00510a4f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_adjustMouseSensitivity_FUN_005107c0",
+    "signature": "void core_menu.cpp_adjustMouseSensitivity_FUN_005107c0(int * sensitivity_value_ptr, char * window_title)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403260",
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    },
+    {
+      "addr": "00403200",
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403200"
+    },
+    {
+      "addr": "004cdf30",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30"
+    },
+    {
+      "addr": "004d01d0",
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
+    },
+    {
+      "addr": "004a0890",
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890"
+    },
+    {
+      "addr": "004a0f80",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80"
+    },
+    {
+      "addr": "004a0dd0",
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005f30d0",
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005f30d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00636649",
+      "name": "s_s_4_2f_00636649",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063664f",
+      "name": "g_MouseSensitivityScale",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "02cf1cd0",
+      "name": "g_EditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysPtr",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sensitivity_value_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "window_title",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005107c9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_ESI",
+      "text": "if (g_MouseX != unaff_ESI) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = 0x5108bb;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000020",
+      "text": "in_stack_00000020,4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 70,
+      "match": "SUB84",
+      "text": "(g_EditorFont,g_ClipLeft,g_ClipRight,(iVar5 - iVar4) / 2,0,0x636649,SUB84 /* extract 2-byte value */(dVar1,0));",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_00000020",
+      "text": "in_stack_00000020 = 0x5109b8;",
+      "type": "stack_param"
     }
   ]
 }

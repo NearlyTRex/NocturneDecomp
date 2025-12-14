@@ -34,16 +34,16 @@ section .text
     FCOMPP                              ; 0052baed
     FNSTSW AX                           ; 0052baef
     SAHF                                ; 0052baf1
-    JA 0x0052bb40                       ; 0052baf2 | LAB_0052bb40
-        ;   XREF to: 0052bb40 (CONDITIONAL_JUMP)
+    JA 0x0052bb40                       ; 0052baf2
+        ;   XREF to: 0052bb40 (CONDITIONAL_JUMP)  ; LAB_0052bb40
     FLD float ptr [ESP + 0x14]          ; 0052baf4
         ;   Label: LAB_0052baf4
     FLD1                                ; 0052baf8
     FCOMPP                              ; 0052bafa
     FNSTSW AX                           ; 0052bafc
     SAHF                                ; 0052bafe
-    JNC 0x0052bb09                      ; 0052baff | LAB_0052bb09
-        ;   XREF to: 0052bb09 (CONDITIONAL_JUMP)
+    JNC 0x0052bb09                      ; 0052baff
+        ;   XREF to: 0052bb09 (CONDITIONAL_JUMP)  ; LAB_0052bb09
     MOV dword ptr [ESP + 0x14],0x3f800000 ; 0052bb01
     MOV ESI,dword ptr [EBX + 0x660]     ; 0052bb09
         ;   Label: LAB_0052bb09
@@ -53,16 +53,16 @@ section .text
     SUB ESP,0x4                         ; 0052bb16
     FSTP float ptr [ESP]                ; 0052bb19
     PUSH EBX                            ; 0052bb1c
-    CALL core_morph.cpp_CMorphModel_FUN_0052af30 ; 0052bb1d | void core_morph.cpp_CMorphModel_FUN_0052af30(CMorphModel * this_ptr)
-        ;   XREF to: 0052af30 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_FUN_0052af30 ; 0052bb1d
+        ;   XREF to: 0052af30 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052af30(CMorphModel * this_ptr)
     ADD ESP,0xc                         ; 0052bb22
     MOV EDI,dword ptr [EBX + 0x58]      ; 0052bb25
     PUSH EDI                            ; 0052bb28
     ADD EBX,0x608                       ; 0052bb29
     PUSH dword ptr [ESP + 0x18]         ; 0052bb2f
     PUSH EBX                            ; 0052bb33
-    CALL core_morph.cpp_CMorphModel_FUN_0052af30 ; 0052bb34 | void core_morph.cpp_CMorphModel_FUN_0052af30(CMorphModel * this_ptr)
-        ;   XREF to: 0052af30 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_FUN_0052af30 ; 0052bb34
+        ;   XREF to: 0052af30 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052af30(CMorphModel * this_ptr)
     ADD ESP,0xc                         ; 0052bb39
     POP EDI                             ; 0052bb3c
     POP ESI                             ; 0052bb3d
@@ -71,6 +71,6 @@ section .text
     XOR EDX,EDX                         ; 0052bb40
         ;   Label: LAB_0052bb40
     MOV dword ptr [ESP + 0x14],EDX      ; 0052bb42
-    JMP 0x0052baf4                      ; 0052bb46 | LAB_0052baf4
-        ;   XREF to: 0052baf4 (UNCONDITIONAL_JUMP)
+    JMP 0x0052baf4                      ; 0052bb46
+        ;   XREF to: 0052baf4 (UNCONDITIONAL_JUMP)  ; LAB_0052baf4
 

@@ -44,15 +44,15 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ef94f
     ADD EAX,0x8                         ; 005ef952
     CMP EAX,EDI                         ; 005ef955
-    JNZ 0x005efb2b                      ; 005ef957 | LAB_005efb2b
-        ;   XREF to: 005efb2b (CONDITIONAL_JUMP)
+    JNZ 0x005efb2b                      ; 005ef957
+        ;   XREF to: 005efb2b (CONDITIONAL_JUMP)  ; LAB_005efb2b
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ef95d
         ;   Label: LAB_005ef95d
     MOV EDX,dword ptr [EBP + 0x1c]      ; 005ef960
     ADD EAX,0x14                        ; 005ef963
     CMP EAX,EDX                         ; 005ef966
-    JZ 0x005ef97a                       ; 005ef968 | LAB_005ef97a
-        ;   XREF to: 005ef97a (CONDITIONAL_JUMP)
+    JZ 0x005ef97a                       ; 005ef968
+        ;   XREF to: 005ef97a (CONDITIONAL_JUMP)  ; LAB_005ef97a
     MOV ECX,dword ptr [EDX]             ; 005ef96a
     MOV dword ptr [EAX],ECX             ; 005ef96c
     MOV ECX,dword ptr [EDX + 0x4]       ; 005ef96e
@@ -62,15 +62,15 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005ef97a
         ;   Label: LAB_005ef97a
     CMP dword ptr [EAX],0x0             ; 005ef97d
-    JZ 0x005efb24                       ; 005ef980 | LAB_005efb24
-        ;   XREF to: 005efb24 (CONDITIONAL_JUMP)
-    MOV EBX,0x3f95df8                   ; 005ef986 | CVector3f[200] DAT_03f95df8
+    JZ 0x005efb24                       ; 005ef980
+        ;   XREF to: 005efb24 (CONDITIONAL_JUMP)  ; LAB_005efb24
+    MOV EBX,0x3f95df8                   ; 005ef986 | DAT_03f95df8
     XOR ESI,ESI                         ; 005ef98b
     PUSH 0x42480000                     ; 005ef98d
         ;   Label: LAB_005ef98d
     PUSH 0x40a00000                     ; 005ef992
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005ef997 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005ef997
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     MOV ESP,EBP                         ; 005efb24
         ;   Label: LAB_005efb24
     POP EBP                             ; 005efb26
@@ -85,6 +85,6 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 005efb32
     MOV EDX,dword ptr [EDI + 0x8]       ; 005efb35
     MOV dword ptr [EAX + 0x8],EDX       ; 005efb38
-    JMP 0x005ef95d                      ; 005efb3b | LAB_005ef95d
-        ;   XREF to: 005ef95d (UNCONDITIONAL_JUMP)
+    JMP 0x005ef95d                      ; 005efb3b
+        ;   XREF to: 005ef95d (UNCONDITIONAL_JUMP)  ; LAB_005ef95d
 

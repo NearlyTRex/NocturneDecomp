@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 47, 
-    "assembly_lines": 33, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004c3ac6", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c3ac0", 
-    "signature": "void core_fire.cpp_CExplosion_process_FUN_004c3ac0(CExplosion * this_ptr)", 
-    "address_range": [
-      [
-        "004c3ac0", 
-        "004c3b04"
-      ]
-    ], 
-    "name": "core_fire.cpp_CExplosion_process_FUN_004c3ac0"
-  }, 
-  "stack_frame": {
-    "local_size": 20, 
-    "variables": [
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CExplosion *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 33,
+    "complexity_score": 14,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
+  },
   "cross_references": [
     {
-      "from_addr": "004c704c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0", 
-      "addr": "004c6ec0"
+      "addr": "004c6ec0",
+      "from_addr": "004c704c",
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c3ac0",
+    "address_range": [
+      [
+        "004c3ac0",
+        "004c3b04"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CExplosion_process_FUN_004c3ac0",
+    "signature": "void core_fire.cpp_CExplosion_process_FUN_004c3ac0(CExplosion * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CExplosion *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004c3ac6",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

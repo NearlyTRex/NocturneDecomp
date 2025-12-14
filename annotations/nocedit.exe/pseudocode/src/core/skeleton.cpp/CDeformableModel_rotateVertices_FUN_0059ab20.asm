@@ -33,10 +33,10 @@ section .text
     PUSH EDX                            ; 0059ab33
     MOV EBX,dword ptr [EAX + 0x2c]      ; 0059ab34
     PUSH EBX                            ; 0059ab37
-    MOV ESI,dword ptr [0x006810c8]      ; 0059ab38 | CDemonSet * g_CDemonSetPtr
-    PUSH ESI                            ; 0059ab3e | CDemonSet g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 0059ab3f | void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
-        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)
+    MOV ESI,dword ptr [0x006810c8]      ; 0059ab38 | g_CDemonSetPtr
+    PUSH ESI                            ; 0059ab3e | g_CDemonSetInstance
+    CALL core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0 ; 0059ab3f
+        ;   XREF to: 0056e7c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0(CDemonSet * this_ptr, int vertex_count, int * input_vertices)
     ADD ESP,0xc                         ; 0059ab44
     POP ESI                             ; 0059ab47
     POP EBX                             ; 0059ab48

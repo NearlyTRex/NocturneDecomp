@@ -28,11 +28,11 @@ section .text
     FMUL float ptr [0x02d7b844]         ; 004d2a3f | DAT_02d7b844
     FSTP float ptr [ESP]                ; 004d2a45
     TEST EAX,EAX                        ; 004d2a48
-    JLE 0x004d2a60                      ; 004d2a4a | LAB_004d2a60
-        ;   XREF to: 004d2a60 (CONDITIONAL_JUMP)
+    JLE 0x004d2a60                      ; 004d2a4a
+        ;   XREF to: 004d2a60 (CONDITIONAL_JUMP)  ; LAB_004d2a60
     CMP EAX,0x1                         ; 004d2a4c
-    JNZ 0x004d2a6f                      ; 004d2a4f | LAB_004d2a6f
-        ;   XREF to: 004d2a6f (CONDITIONAL_JUMP)
+    JNZ 0x004d2a6f                      ; 004d2a4f
+        ;   XREF to: 004d2a6f (CONDITIONAL_JUMP)  ; LAB_004d2a6f
     MOV EAX,dword ptr [ESP]             ; 004d2a51
     MOV dword ptr [ESP + 0x4],EAX       ; 004d2a54
     MOV EAX,dword ptr [ESP + 0x4]       ; 004d2a58
@@ -42,10 +42,10 @@ section .text
     RET                                 ; 004d2a5f
     FLD float ptr [ESP]                 ; 004d2a60
         ;   Label: LAB_004d2a60
-    FMUL double ptr [0x0062ac8d]        ; 004d2a63 | double DOUBLE_0062ac8d
+    FMUL double ptr [0x0062ac8d]        ; 004d2a63 | DOUBLE_0062ac8d
     FSTP float ptr [ESP + 0x4]          ; 004d2a69
-    JMP 0x004d2a58                      ; 004d2a6d | LAB_004d2a58
-        ;   XREF to: 004d2a58 (UNCONDITIONAL_JUMP)
+    JMP 0x004d2a58                      ; 004d2a6d
+        ;   XREF to: 004d2a58 (UNCONDITIONAL_JUMP)  ; LAB_004d2a58
     MOV EAX,dword ptr [EBP + 0x10]      ; 004d2a6f
         ;   Label: LAB_004d2a6f
     MOV dword ptr [ESP + 0x4],EAX       ; 004d2a72

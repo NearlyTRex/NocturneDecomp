@@ -53,8 +53,8 @@ section .text
     PUSH ECX                            ; 00488616
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00488617
     PUSH ESI                            ; 0048861b
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0 ; 0048861c | void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0(CDrawSurface * this_ptr, int x, int y, int width, ...)
-        ;   XREF to: 004884d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0 ; 0048861c
+        ;   XREF to: 004884d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 00488621
     POP ESI                             ; 00488624
     POP EBX                             ; 00488625

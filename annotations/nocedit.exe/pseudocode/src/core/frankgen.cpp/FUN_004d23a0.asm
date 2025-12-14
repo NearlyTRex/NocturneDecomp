@@ -23,8 +23,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004d23a4
     LEA EAX,[EBX + 0x184]               ; 004d23a8
     PUSH EAX                            ; 004d23ae
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004d23af | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004d23af
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     FLD float ptr [EBX + 0x15c]         ; 004d23b4
     ADD ESP,0x4                         ; 004d23ba
     MOV EAX,dword ptr [EAX + 0x100]     ; 004d23bd
@@ -43,8 +43,8 @@ section .text
     FCOMPP                              ; 004d23e7
     FNSTSW AX                           ; 004d23e9
     SAHF                                ; 004d23eb
-    JA 0x004d240d                       ; 004d23ec | LAB_004d240d
-        ;   XREF to: 004d240d (CONDITIONAL_JUMP)
+    JA 0x004d240d                       ; 004d23ec
+        ;   XREF to: 004d240d (CONDITIONAL_JUMP)  ; LAB_004d240d
     DEC EDX                             ; 004d23ee
         ;   Label: LAB_004d23ee
     MOV dword ptr [ESP + 0x4],EDX       ; 004d23ef
@@ -54,15 +54,15 @@ section .text
     FCOMP float ptr [ESP]               ; 004d2400
     FNSTSW AX                           ; 004d2403
     SAHF                                ; 004d2405
-    JA 0x004d2419                       ; 004d2406 | LAB_004d2419
-        ;   XREF to: 004d2419 (CONDITIONAL_JUMP)
+    JA 0x004d2419                       ; 004d2406
+        ;   XREF to: 004d2419 (CONDITIONAL_JUMP)  ; LAB_004d2419
     ADD ESP,0x8                         ; 004d2408
     POP EBX                             ; 004d240b
     RET                                 ; 004d240c
     MOV dword ptr [EBX + 0x180],0x0     ; 004d240d
         ;   Label: LAB_004d240d
-    JMP 0x004d23ee                      ; 004d2417 | LAB_004d23ee
-        ;   XREF to: 004d23ee (UNCONDITIONAL_JUMP)
+    JMP 0x004d23ee                      ; 004d2417
+        ;   XREF to: 004d23ee (UNCONDITIONAL_JUMP)  ; LAB_004d23ee
     MOV EAX,dword ptr [ESP]             ; 004d2419
         ;   Label: LAB_004d2419
     MOV dword ptr [EBX + 0x180],EAX     ; 004d241c

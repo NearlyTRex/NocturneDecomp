@@ -30,8 +30,8 @@ section .text
     PUSH EBX                            ; 00402710
     MOV ESI,dword ptr [ESP + 0x24]      ; 00402711
     PUSH ESI                            ; 00402715
-    CALL engine_2d.c_drawTextCenteredColor_FUN_004026c0 ; 00402716 | void engine_2d.c_drawTextCenteredColor_FUN_004026c0(char * text, int left_x, int right_x, int y_pos)
-        ;   XREF to: 004026c0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawTextCenteredColor_FUN_004026c0 ; 00402716
+        ;   XREF to: 004026c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredColor_FUN_004026c0(char * text, int left_x, int right_x, int y_pos)
     ADD ESP,0x10                        ; 0040271b
     POP ESI                             ; 0040271e
     POP EBX                             ; 0040271f

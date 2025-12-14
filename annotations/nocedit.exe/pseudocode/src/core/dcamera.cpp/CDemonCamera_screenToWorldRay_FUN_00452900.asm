@@ -42,8 +42,8 @@ section .text
     PUSH ESI                            ; 00452918
     LEA ESI,[ESP + 0x18]                ; 00452919
     LEA EDI,[ESP + 0x30]                ; 0045291d
-    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0 ; 00452921 | void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y)
-        ;   XREF to: 0044d2a0 (UNCONDITIONAL_CALL)
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0 ; 00452921
+        ;   XREF to: 0044d2a0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y)
     LEA ESI,[ESP + 0x18]                ; 00452926
     ADD ESP,0xc                         ; 0045292a
     LEA EAX,[ESP + 0x24]                ; 0045292d
@@ -54,8 +54,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x48]      ; 00452935
     PUSH EDI                            ; 00452939
     LEA ESI,[ESP + 0x20]                ; 0045293a
-    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370 ; 0045293e | CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)
-        ;   XREF to: 0044d370 (UNCONDITIONAL_CALL)
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370 ; 0045293e
+        ;   XREF to: 0044d370 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)
     LEA EDI,[ESP + 0x8]                 ; 00452943
     LEA ESI,[ESP + 0x20]                ; 00452947
     ADD ESP,0x8                         ; 0045294b
@@ -66,7 +66,7 @@ section .text
     MOV dword ptr [ESP + 0x30],EAX      ; 00452954
     FILD dword ptr [ESP + 0x30]         ; 00452958
     MOV EAX,dword ptr [ESP + 0x4]       ; 0045295c
-    FLD double ptr [0x0061a342]         ; 00452960 | double g_CameraFixedPointToFloatScale
+    FLD double ptr [0x0061a342]         ; 00452960 | g_CameraFixedPointToFloatScale
     FXCH                                ; 00452966
     FMUL ST1                            ; 00452968
     MOV dword ptr [ESP + 0x30],EAX      ; 0045296a

@@ -55,13 +55,13 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00516e1d
     PUSH EAX                            ; 00516e21
     PUSH EBX                            ; 00516e22
-    CALL shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 ; 00516e23 | CBoundingBox3D * shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(CLodMesh * this_ptr, CBoundingBox3D * out_bbox)
-        ;   XREF to: 00516500 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500 ; 00516e23
+        ;   XREF to: 00516500 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(CLodMesh * this_ptr, CBoundingBox3D * out_bbox)
     ADD ESP,0x8                         ; 00516e28
     FLD float ptr [ESP + 0x4]           ; 00516e2b
     FADD float ptr [ESP + 0x10]         ; 00516e2f
     FST float ptr [ESP + 0x40]          ; 00516e33
-    FLD float ptr [0x00637671]          ; 00516e37 | float FLOAT_00637671
+    FLD float ptr [0x00637671]          ; 00516e37 | FLOAT_00637671
     FXCH                                ; 00516e3d
     FMUL ST1                            ; 00516e3f
     FLD float ptr [ESP + 0xc]           ; 00516e41
@@ -96,8 +96,8 @@ section .text
     FSTP float ptr [ESP + 0x50]         ; 00516e98
     FSTP float ptr [ESP + 0x54]         ; 00516e9c
     CMP EDX,EAX                         ; 00516ea0
-    JZ 0x00516eb8                       ; 00516ea2 | LAB_00516eb8
-        ;   XREF to: 00516eb8 (CONDITIONAL_JUMP)
+    JZ 0x00516eb8                       ; 00516ea2
+        ;   XREF to: 00516eb8 (CONDITIONAL_JUMP)  ; LAB_00516eb8
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00516ea4
     MOV dword ptr [EDX],EAX             ; 00516ea8
     MOV EAX,dword ptr [ESP + 0x50]      ; 00516eaa
@@ -108,8 +108,8 @@ section .text
         ;   Label: LAB_00516eb8
     PUSH EAX                            ; 00516ebb
     PUSH EBX                            ; 00516ebc
-    CALL shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570 ; 00516ebd | void shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh * this_ptr, CVector3f * offset)
-        ;   XREF to: 00516570 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570 ; 00516ebd
+        ;   XREF to: 00516570 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570(CLodMesh * this_ptr, CVector3f * offset)
     ADD ESP,0x8                         ; 00516ec2
     FLD float ptr [ESP + 0x10]          ; 00516ec5
     FLD float ptr [ESP + 0x14]          ; 00516ec9
@@ -131,8 +131,8 @@ section .text
     FCOMP float ptr [ESP + 0x1c]        ; 00516efe
     FNSTSW AX                           ; 00516f02
     SAHF                                ; 00516f04
-    JBE 0x00516f0e                      ; 00516f05 | LAB_00516f0e
-        ;   XREF to: 00516f0e (CONDITIONAL_JUMP)
+    JBE 0x00516f0e                      ; 00516f05
+        ;   XREF to: 00516f0e (CONDITIONAL_JUMP)  ; LAB_00516f0e
     MOV EAX,dword ptr [ESP + 0x20]      ; 00516f07
     MOV dword ptr [ESP],EAX             ; 00516f0b
     FLD float ptr [ESP + 0x24]          ; 00516f0e
@@ -140,8 +140,8 @@ section .text
     FCOMP float ptr [ESP]               ; 00516f12
     FNSTSW AX                           ; 00516f15
     SAHF                                ; 00516f17
-    JBE 0x00516f21                      ; 00516f18 | LAB_00516f21
-        ;   XREF to: 00516f21 (CONDITIONAL_JUMP)
+    JBE 0x00516f21                      ; 00516f18
+        ;   XREF to: 00516f21 (CONDITIONAL_JUMP)  ; LAB_00516f21
     MOV EAX,dword ptr [ESP + 0x24]      ; 00516f1a
     MOV dword ptr [ESP],EAX             ; 00516f1e
     FLD float ptr [ESP]                 ; 00516f21
@@ -156,8 +156,8 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 00516f3a
     PUSH EAX                            ; 00516f3e
     PUSH EBX                            ; 00516f3f
-    CALL shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0 ; 00516f40 | void shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0(CLodMesh * this_ptr, CVector3f * scale_factors)
-        ;   XREF to: 005165c0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0 ; 00516f40
+        ;   XREF to: 005165c0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0(CLodMesh * this_ptr, CVector3f * scale_factors)
     ADD ESP,0x8                         ; 00516f45
     MOV ESP,EBP                         ; 00516f48
     POP EBP                             ; 00516f4a

@@ -21,6 +21,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 005cc660
         ;   Label: shape_superopt.cpp_CPoly_dtor_FUN_005cc660
-    MOV dword ptr [EAX + 0x64],0x663ad4 ; 005cc664 | CPoly_vtable g_CPolyVTable
+    MOV dword ptr [EAX + 0x64],0x663ad4 ; 005cc664 | g_CPolyVTable
     RET                                 ; 005cc66b
 

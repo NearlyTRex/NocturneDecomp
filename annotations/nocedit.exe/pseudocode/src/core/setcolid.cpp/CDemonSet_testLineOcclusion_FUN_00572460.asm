@@ -42,13 +42,13 @@ section .text
     PUSH EDX                            ; 0057246f
     MOV ECX,dword ptr [EBP + 0x18]      ; 00572470
     PUSH ECX                            ; 00572473
-    PUSH 0x3277d14                      ; 00572474 | CDemonRaytrace g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220 ; 00572479 | int core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220(CDemonRaytrace * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
-        ;   XREF to: 00496220 (UNCONDITIONAL_CALL)
+    PUSH 0x3277d14                      ; 00572474 | g_CDemonRaytraceInstance
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220 ; 00572479
+        ;   XREF to: 00496220 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220(CDemonRaytrace * this_ptr, CVector3f * start_pos, CVector3f * end_pos)
     ADD ESP,0xc                         ; 0057247e
     TEST EAX,EAX                        ; 00572481
-    JZ 0x00572491                       ; 00572483 | LAB_00572491
-        ;   XREF to: 00572491 (CONDITIONAL_JUMP)
+    JZ 0x00572491                       ; 00572483
+        ;   XREF to: 00572491 (CONDITIONAL_JUMP)  ; LAB_00572491
     MOV EAX,0x1                         ; 00572485
         ;   Label: LAB_00572485
     MOV ESP,EBP                         ; 0057248a
@@ -66,8 +66,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 0057249e
     PUSH 0xbf800000                     ; 005724a1
     PUSH EDI                            ; 005724a6
-    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 ; 005724a7 | float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
-        ;   XREF to: 00572a10 (UNCONDITIONAL_CALL)
+    CALL core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10 ; 005724a7
+        ;   XREF to: 00572a10 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDemonSet * this_ptr, float min_t, CVector3f * ray_origin, CVector3f * ray_target, ...)
     MOV dword ptr [ESP + 0x1c],EAX      ; 005724ac
     FLD float ptr [ESP + 0x1c]          ; 005724b0
     ADD ESP,0x14                        ; 005724b4
@@ -77,14 +77,14 @@ section .text
     FCOMP double ptr [ESP]              ; 005724be
     FNSTSW AX                           ; 005724c1
     SAHF                                ; 005724c3
-    JA 0x005724d0                       ; 005724c4 | LAB_005724d0
-        ;   XREF to: 005724d0 (CONDITIONAL_JUMP)
+    JA 0x005724d0                       ; 005724c4
+        ;   XREF to: 005724d0 (CONDITIONAL_JUMP)  ; LAB_005724d0
     FLD1                                ; 005724c6
     FCOMP double ptr [ESP]              ; 005724c8
     FNSTSW AX                           ; 005724cb
     SAHF                                ; 005724cd
-    JNC 0x00572485                      ; 005724ce | LAB_00572485
-        ;   XREF to: 00572485 (CONDITIONAL_JUMP)
+    JNC 0x00572485                      ; 005724ce
+        ;   XREF to: 00572485 (CONDITIONAL_JUMP)  ; LAB_00572485
     XOR EAX,EAX                         ; 005724d0
         ;   Label: LAB_005724d0
     MOV ESP,EBP                         ; 005724d2

@@ -57,28 +57,28 @@ section .text
     MOV EBP,ESP                         ; 0050c641
     SUB ESP,0x54                        ; 0050c643
     AND ESP,0xfffffff8                  ; 0050c646
-    FILD dword ptr [0x02d052e8]         ; 0050c649 | CMatrix3x3i g_TransformMatrix
-    FMUL double ptr [0x00635a3d]        ; 0050c64f | double g_FixedToFloat
+    FILD dword ptr [0x02d052e8]         ; 0050c649 | g_TransformMatrix
+    FMUL double ptr [0x00635a3d]        ; 0050c64f | g_FixedToFloat
     FILD dword ptr [0x02d052ec]         ; 0050c655 | g_TransformMatrix[0][1]
-    FMUL double ptr [0x00635a3d]        ; 0050c65b | double g_FixedToFloat
+    FMUL double ptr [0x00635a3d]        ; 0050c65b | g_FixedToFloat
     FILD dword ptr [0x02d052f0]         ; 0050c661 | g_TransformMatrix[0][2]
-    FMUL double ptr [0x00635a3d]        ; 0050c667 | double g_FixedToFloat
+    FMUL double ptr [0x00635a3d]        ; 0050c667 | g_FixedToFloat
     FILD dword ptr [0x02d052f4]         ; 0050c66d | g_TransformMatrix[1][0]
-    FMUL double ptr [0x00635a3d]        ; 0050c673 | double g_FixedToFloat
+    FMUL double ptr [0x00635a3d]        ; 0050c673 | g_FixedToFloat
     FILD dword ptr [0x02d052f8]         ; 0050c679 | g_TransformMatrix[1][1]
-    FMUL double ptr [0x00635a3d]        ; 0050c67f | double g_FixedToFloat
+    FMUL double ptr [0x00635a3d]        ; 0050c67f | g_FixedToFloat
     FILD dword ptr [0x02d052fc]         ; 0050c685 | g_TransformMatrix[1][2]
-    FMUL double ptr [0x00635a3d]        ; 0050c68b | double g_FixedToFloat
+    FMUL double ptr [0x00635a3d]        ; 0050c68b | g_FixedToFloat
     FILD dword ptr [0x02d05300]         ; 0050c691 | g_TransformMatrix[2][0]
-    FMUL double ptr [0x00635a3d]        ; 0050c697 | double g_FixedToFloat
+    FMUL double ptr [0x00635a3d]        ; 0050c697 | g_FixedToFloat
     FXCH ST6                            ; 0050c69d
     FSTP float ptr [ESP + 0x48]         ; 0050c69f
     FILD dword ptr [0x02d05304]         ; 0050c6a3 | g_TransformMatrix[2][1]
-    FMUL double ptr [0x00635a3d]        ; 0050c6a9 | double g_FixedToFloat
+    FMUL double ptr [0x00635a3d]        ; 0050c6a9 | g_FixedToFloat
     FXCH ST2                            ; 0050c6af
     FSTP float ptr [ESP + 0x3c]         ; 0050c6b1
     FILD dword ptr [0x02d05308]         ; 0050c6b5 | g_TransformMatrix[2][2]
-    FMUL double ptr [0x00635a3d]        ; 0050c6bb | double g_FixedToFloat
+    FMUL double ptr [0x00635a3d]        ; 0050c6bb | g_FixedToFloat
     FXCH                                ; 0050c6c1
     FSTP float ptr [ESP + 0x34]         ; 0050c6c3
     FLD float ptr [ESP + 0x3c]          ; 0050c6c7
@@ -117,10 +117,10 @@ section .text
     FMUL float ptr [ESP + 0x38]         ; 0050c739
     FXCH                                ; 0050c73d
     FSUBP ST6,ST0                       ; 0050c73f
-    MOV EAX,[0x02d052e8]                ; 0050c741 | CMatrix3x3i g_TransformMatrix
+    MOV EAX,[0x02d052e8]                ; 0050c741 | g_TransformMatrix
     FLD float ptr [ESP + 0x50]          ; 0050c746
     FMUL ST6                            ; 0050c74a
-    MOV [0x02f0d38c],EAX                ; 0050c74c | CMatrix3x3i g_TransformMatrixCopy
+    MOV [0x02f0d38c],EAX                ; 0050c74c | g_TransformMatrixCopy
     FSUBP ST3,ST0                       ; 0050c751
     MOV EAX,[0x02d052ec]                ; 0050c753 | g_TransformMatrix[0][1]
     FLD float ptr [ESP + 0x44]          ; 0050c758
@@ -162,7 +162,7 @@ section .text
     MOV [0x02f0d3ac],EAX                ; 0050c7e2 | g_TransformMatrixCopy[2][2]
     FSTP float ptr [ESP]                ; 0050c7e7
     FLD float ptr [ESP]                 ; 0050c7ea
-    FDIVR double ptr [0x00635a45]       ; 0050c7ed | double g_Fixed16Scale
+    FDIVR double ptr [0x00635a45]       ; 0050c7ed | g_Fixed16Scale
     FLD float ptr [ESP + 0x48]          ; 0050c7f3
     FLD ST0                             ; 0050c7f7
     FMUL float ptr [ESP + 0x40]         ; 0050c7f9
@@ -215,38 +215,38 @@ section .text
     FLD float ptr [ESP + 0x30]          ; 0050c882
     FMUL float ptr [ESP]                ; 0050c886
     FXCH ST6                            ; 0050c889
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c88b | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
-    FISTP dword ptr [0x02f0d364]        ; 0050c890 | CMatrix3x3i g_InverseMatrix
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c88b
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [0x02f0d364]        ; 0050c890 | g_InverseMatrix
     FLD float ptr [ESP + 0x8]           ; 0050c896
     FMUL float ptr [ESP]                ; 0050c89a
     FXCH ST3                            ; 0050c89d
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c89f | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c89f
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [0x02f0d368]        ; 0050c8a4 | g_InverseMatrix[0][1]
     FLD float ptr [ESP + 0x10]          ; 0050c8aa
     FMUL float ptr [ESP]                ; 0050c8ae
     FXCH ST2                            ; 0050c8b1
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8b3 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8b3
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST4                            ; 0050c8b8
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8ba | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8ba
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST5                            ; 0050c8bf
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8c1 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8c1
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 0050c8c6
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8c8 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8c8
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST6                            ; 0050c8cd
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8cf | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8cf
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST3                            ; 0050c8d4
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8d6 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8d6
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST2                            ; 0050c8db
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8dd | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c8dd
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST4                            ; 0050c8e2
     FISTP dword ptr [0x02f0d36c]        ; 0050c8e4 | g_InverseMatrix[0][2]
     FXCH ST4                            ; 0050c8ea

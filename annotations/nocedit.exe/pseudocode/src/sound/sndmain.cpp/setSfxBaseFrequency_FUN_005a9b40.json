@@ -1,108 +1,108 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 43, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 62, 
-    "assembly_lines": 44, 
-    "suspect_count": 2, 
+    "assembly_lines": 44,
+    "complexity_score": 43,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
-      "addr": "005a7100"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00", 
-      "addr": "005a5d00"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CSoundDevice*", 
-      "name": "g_CSoundDevicePtr", 
-      "addr": "03f69268", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_0000000c;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr->options).base_frequency = in_stack_0000000c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a9b40", 
-    "signature": "int sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40(uint sfx_handle, float base_frequency)", 
-    "address_range": [
-      [
-        "005a9b40", 
-        "005a9b94"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "sfx_handle"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "base_frequency"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 62
+  },
   "cross_references": [
     {
-      "from_addr": "00506554", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450", 
-      "addr": "00506450"
-    }, 
+      "addr": "00506450",
+      "from_addr": "00506554",
+      "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e256f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_CTurret_process_FUN_005e2430", 
-      "addr": "005e2430"
-    }, 
+      "addr": "005e2430",
+      "from_addr": "005e256f",
+      "name": "core_turret.cpp_CTurret_process_FUN_005e2430",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e8327", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80", 
-      "addr": "005e7e80"
+      "addr": "005e7e80",
+      "from_addr": "005e8327",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a9b40",
+    "address_range": [
+      [
+        "005a9b40",
+        "005a9b94"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40",
+    "signature": "int sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40(uint sfx_handle, float base_frequency)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a7100",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100"
+    },
+    {
+      "addr": "005a5d00",
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f69268",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "base_frequency",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "float in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr->options).base_frequency = in_stack_0000000c;",
+      "type": "stack_param"
     }
   ]
 }

@@ -1,149 +1,149 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 102, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 81, 
-    "assembly_lines": 64, 
-    "suspect_count": 8, 
+    "assembly_lines": 64,
+    "complexity_score": 102,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 17,
+    "suspect_count": 8,
     "suspect_types": [
       "suspect_float"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270", 
-      "addr": "005dc270"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].u", 
-      "addr": "0068802c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].v", 
-      "addr": "00688030", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00f80000", 
-      "addr": "00f80000", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[1]].u = 2.2775203e-38;"
-    }, 
-    {
-      "line": 11, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 2.2775203e-38;"
-    }, 
-    {
-      "line": 12, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[0]].u = 7.34684e-40;"
-    }, 
-    {
-      "line": 13, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[0]].v = 2.2775203e-38;"
-    }, 
-    {
-      "line": 14, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[3]].u = 7.34684e-40;"
-    }, 
-    {
-      "line": 15, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[3]].v = 7.34684e-40;"
-    }, 
-    {
-      "line": 16, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 2.2775203e-38;"
-    }, 
-    {
-      "line": 17, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[2]].v = 7.34684e-40;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ef880", 
-    "signature": "void core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(CGround * this_ptr, int column, int row)", 
-    "address_range": [
-      [
-        "004ef880", 
-        "004ef967"
-      ]
-    ], 
-    "name": "core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGround *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "column"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "row"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 81
+  },
   "cross_references": [
     {
-      "from_addr": "004efa97", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_renderTerrainQuad_FUN_004ef990", 
-      "addr": "004ef990"
+      "addr": "004ef990",
+      "from_addr": "004efa97",
+      "name": "core_ground.cpp_CGround_renderTerrainQuad_FUN_004ef990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ef880",
+    "address_range": [
+      [
+        "004ef880",
+        "004ef967"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880",
+    "signature": "void core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(CGround * this_ptr, int column, int row)"
+  },
+  "function_calls": [
+    {
+      "addr": "005dc270",
+      "name": "core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0068802c",
+      "name": "g_RenderVertexBuffer[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688030",
+      "name": "g_RenderVertexBuffer[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00f80000",
+      "name": "DAT_00f80000",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGround *"
+      },
+      {
+        "is_param": true,
+        "name": "column",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "row",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 10,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[1]].u = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 11,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[1]].v = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 12,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[0]].u = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 13,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[0]].v = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 14,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[3]].u = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 15,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[3]].v = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 16,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 17,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[2]].v = 7.34684e-40;",
+      "type": "suspect_float"
     }
   ]
 }

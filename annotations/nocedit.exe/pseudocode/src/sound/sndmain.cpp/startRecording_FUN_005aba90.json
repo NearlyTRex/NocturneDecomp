@@ -1,95 +1,95 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 92, 
-    "assembly_lines": 63, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_isRecordingStarted_FUN_005ab980", 
-      "addr": "005ab980"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970", 
-      "addr": "005ab970"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
-      "addr": "005abd30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0", 
-      "addr": "005ab9a0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_RecordingBitsPerSample", 
-      "addr": "00681b54", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RecordingChannelCount", 
-      "addr": "00681b58", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RecordingSampleRate", 
-      "addr": "00681b5c", 
-      "value": "0x2b11"
-    }, 
-    {
-      "type": "IDirectSoundCapture*", 
-      "name": "g_RecordingDeviceInterface", 
-      "addr": "03f69c54", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "isRecordingStarted", 
-      "addr": "03f69c58", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RecordingSamplesSigned", 
-      "addr": "03f69c5c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 63,
+    "complexity_score": 29,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 6,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 92
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005aba90", 
-    "signature": "int sound_sndmain.cpp_startRecording_FUN_005aba90(void)", 
+    "address": "005aba90",
     "address_range": [
       [
-        "005aba90", 
+        "005aba90",
         "005abb0e"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_startRecording_FUN_005aba90"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_startRecording_FUN_005aba90",
+    "signature": "int sound_sndmain.cpp_startRecording_FUN_005aba90(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ab980",
+      "name": "sound_sndmain.cpp_isRecordingStarted_FUN_005ab980"
+    },
+    {
+      "addr": "005ab970",
+      "name": "sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970"
+    },
+    {
+      "addr": "005abd30",
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30"
+    },
+    {
+      "addr": "005ab9a0",
+      "name": "sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00681b54",
+      "name": "g_RecordingBitsPerSample",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00681b58",
+      "name": "g_RecordingChannelCount",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "00681b5c",
+      "name": "g_RecordingSampleRate",
+      "type": "int",
+      "value": "0x2b11"
+    },
+    {
+      "addr": "03f69c54",
+      "name": "g_RecordingDeviceInterface",
+      "type": "IDirectSoundCapture*",
+      "value": null
+    },
+    {
+      "addr": "03f69c58",
+      "name": "isRecordingStarted",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69c5c",
+      "name": "g_RecordingSamplesSigned",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

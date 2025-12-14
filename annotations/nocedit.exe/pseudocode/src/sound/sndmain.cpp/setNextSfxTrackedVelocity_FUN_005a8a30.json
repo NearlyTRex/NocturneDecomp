@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 19, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_SfxLastSlot", 
-      "addr": "03f624a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SfxLastSlot.field_20[44]", 
-      "addr": "03f624e4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SfxLastSlot.field_20[48]", 
-      "addr": "03f624e8", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 10,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a8a30", 
-    "signature": "void sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a30(CVector3d * velocity_source_ptr)", 
+    "address": "005a8a30",
     "address_range": [
       [
-        "005a8a30", 
+        "005a8a30",
         "005a8a53"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a30"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a30",
+    "signature": "void sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a30(CVector3d * velocity_source_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f624a4",
+      "name": "g_SfxLastSlot",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f624e4",
+      "name": "g_SfxLastSlot.field_20[44]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f624e8",
+      "name": "g_SfxLastSlot.field_20[48]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVector3d *", 
-        "size": 4, 
-        "name": "velocity_source_ptr"
+        "is_param": true,
+        "name": "velocity_source_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3d *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

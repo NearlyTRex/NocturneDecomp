@@ -21,8 +21,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004950b1
     PUSH EBX                            ; 004950b5
     MOV dword ptr [EBX + 0x4],0x30d40   ; 004950b6
-    CALL core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600 ; 004950bd | void core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRaytrace * this_ptr)
-        ;   XREF to: 00494600 (UNCONDITIONAL_CALL)
+    CALL core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600 ; 004950bd
+        ;   XREF to: 00494600 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRaytrace * this_ptr)
     MOV dword ptr [EBX + 0x4],0x0       ; 004950c2
     MOV dword ptr [EBX + 0x10],0x47c34ff3 ; 004950c9
     MOV dword ptr [EBX + 0x14],0x47c34ff3 ; 004950d0

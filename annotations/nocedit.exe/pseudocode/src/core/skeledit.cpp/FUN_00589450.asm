@@ -13,8 +13,8 @@ section .text
 
     PUSH 0x1c                           ; 00589450
         ;   Label: core_skeledit.cpp_FUN_00589450
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00589455 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00589455
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058945a
     PUSH ESI                            ; 0058945b
     PUSH EDI                            ; 0058945c
@@ -28,8 +28,8 @@ section .text
     DEC ECX                             ; 0058946c
     MOV EBX,ECX                         ; 0058946d
     TEST ECX,ECX                        ; 0058946f
-    JLE 0x0058948a                      ; 00589471 | LAB_0058948a
-        ;   XREF to: 0058948a (CONDITIONAL_JUMP)
+    JLE 0x0058948a                      ; 00589471
+        ;   XREF to: 0058948a (CONDITIONAL_JUMP)  ; LAB_0058948a
     LEA EAX,[ECX + ESI*0x1]             ; 00589473
     MOV DL,byte ptr [EAX + -0x1]        ; 00589476
         ;   Label: LAB_00589476

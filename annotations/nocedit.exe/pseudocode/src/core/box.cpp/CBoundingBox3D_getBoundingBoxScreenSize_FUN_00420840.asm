@@ -56,7 +56,7 @@ section .text
     FLD float ptr [ESI + 0x4]           ; 00420858
     FADD float ptr [EAX + 0x4]          ; 0042085b
     FXCH                                ; 0042085e
-    FLD float ptr [0x006165eb]          ; 00420860 | float g_BoundingBoxCenterScaleFactor
+    FLD float ptr [0x006165eb]          ; 00420860 | g_BoundingBoxCenterScaleFactor
     FXCH                                ; 00420866
     FMUL ST1                            ; 00420868
     FXCH ST2                            ; 0042086a
@@ -69,7 +69,7 @@ section .text
     FST float ptr [ESP + 0x8]           ; 0042087c
     FMULP ST2                           ; 00420880
     LEA EBX,[ESP + 0xc]                 ; 00420882
-    MOV EDX,dword ptr [0x006703ec]      ; 00420886 | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00420886 | g_CDemonRendererInstance | g_CDemonRendererPtr
     FXCH ST2                            ; 0042088c
     FSTP float ptr [ESP + 0x18]         ; 0042088e
     FXCH                                ; 00420892
@@ -77,37 +77,37 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 00420898
     FSTP float ptr [ESP + 0x20]         ; 0042089c
     FLD float ptr [EAX]                 ; 004208a0
-    FMUL float ptr [0x0065b160]         ; 004208a2 | float g_BoundingBoxWorldToIntegerScale
+    FMUL float ptr [0x0065b160]         ; 004208a2 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX]               ; 004208a8
     FLD float ptr [EAX + 0x4]           ; 004208aa
-    FMUL float ptr [0x0065b160]         ; 004208ad | float g_BoundingBoxWorldToIntegerScale
+    FMUL float ptr [0x0065b160]         ; 004208ad | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x4]         ; 004208b3
     FLD float ptr [EAX + 0x8]           ; 004208b6
-    FMUL float ptr [0x0065b160]         ; 004208b9 | float g_BoundingBoxWorldToIntegerScale
+    FMUL float ptr [0x0065b160]         ; 004208b9 | g_BoundingBoxWorldToIntegerScale
     FISTP dword ptr [EBX + 0x8]         ; 004208bf
     LEA EAX,[ESP + 0xc]                 ; 004208c2
     PUSH EAX                            ; 004208c6
-    MOV EAX,dword ptr [EDX]             ; 004208c7 | CDemonRenderer g_CDemonRendererInstance
+    MOV EAX,dword ptr [EDX]             ; 004208c7 | g_CDemonRendererInstance
     ADD EAX,0xea5d0                     ; 004208c9
     PUSH EAX                            ; 004208ce
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004208cf | void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)
-    MOV EAX,[0x006703ec]                ; 004208d4 | CDemonRenderer * g_CDemonRendererPtr
-    MOV EAX,dword ptr [EAX]             ; 004208d9 | CDemonRenderer g_CDemonRendererInstance
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 004208cf
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
+    MOV EAX,[0x006703ec]                ; 004208d4 | g_CDemonRendererPtr
+    MOV EAX,dword ptr [EAX]             ; 004208d9 | g_CDemonRendererInstance
     MOV EAX,dword ptr [EAX + 0xea5d8]   ; 004208db
     ADD ESP,0x8                         ; 004208e1
     TEST EAX,EAX                        ; 004208e4
-    JLE 0x00420926                      ; 004208e6 | LAB_00420926
-        ;   XREF to: 00420926 (CONDITIONAL_JUMP)
+    JLE 0x00420926                      ; 004208e6
+        ;   XREF to: 00420926 (CONDITIONAL_JUMP)  ; LAB_00420926
     FLD float ptr [ESI + 0x10]          ; 004208e8
     FSUB float ptr [ESI + 0x4]          ; 004208eb
     MOV dword ptr [ESP + 0x2c],EAX      ; 004208ee
     FILD dword ptr [ESP + 0x2c]         ; 004208f2
-    FMUL double ptr [0x006165ef]        ; 004208f6 | double g_BoundingBoxFixedPointScaleFactor
+    FMUL double ptr [0x006165ef]        ; 004208f6 | g_BoundingBoxFixedPointScaleFactor
     FDIVP                               ; 004208fc
-    FILD dword ptr [0x02d0254c]         ; 004208fe | int g_ViewportCenterYFixed
+    FILD dword ptr [0x02d0254c]         ; 004208fe | g_ViewportCenterYFixed
     FMULP                               ; 00420904
-    FILD dword ptr [0x006793c0]         ; 00420906 | int g_ProjectionScale
+    FILD dword ptr [0x006793c0]         ; 00420906 | g_ProjectionScale
     FDIVP                               ; 0042090c
     FABS                                ; 0042090e
     FSTP float ptr [ESP + 0x24]         ; 00420910

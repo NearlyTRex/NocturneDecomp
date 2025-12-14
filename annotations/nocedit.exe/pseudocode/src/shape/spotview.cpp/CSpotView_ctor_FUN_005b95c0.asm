@@ -27,11 +27,11 @@ section .text
     PUSH EBX                            ; 005b95c0
         ;   Label: shape_spotview.cpp_CSpotView_ctor_FUN_005b95c0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005b95c1
-    FLD float ptr [0x00684170]          ; 005b95c5 | float FLOAT_00684170
-    FLD float ptr [0x00684174]          ; 005b95cb | float FLOAT_00684174
-    FLD float ptr [0x03f6ba1c]          ; 005b95d1 | float FLOAT_03f6ba1c
+    FLD float ptr [0x00684170]          ; 005b95c5 | FLOAT_00684170
+    FLD float ptr [0x00684174]          ; 005b95cb | FLOAT_00684174
+    FLD float ptr [0x03f6ba1c]          ; 005b95d1 | FLOAT_03f6ba1c
     LEA EAX,[EBX + 0x18]                ; 005b95d7
-    FLD float ptr [0x03f6ba20]          ; 005b95da | float FLOAT_03f6ba20
+    FLD float ptr [0x03f6ba20]          ; 005b95da | FLOAT_03f6ba20
     MOV dword ptr [EAX + 0x8],0x0       ; 005b95e0
     PUSH 0x1f                           ; 005b95e7
     MOV EDX,dword ptr [EAX + 0x8]       ; 005b95e9
@@ -47,8 +47,8 @@ section .text
     FSTP float ptr [EBX + 0x8]          ; 005b9605
     FSTP float ptr [EBX + 0xc]          ; 005b9608
     MOV dword ptr [EBX + 0x14],0x0      ; 005b960b
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9620 ; 005b9612 | void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)
-        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)
+    CALL shape_spotview.cpp_CSpotView_FUN_005b9620 ; 005b9612
+        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)
     ADD ESP,0x8                         ; 005b9617
     MOV EAX,EBX                         ; 005b961a
     POP EBX                             ; 005b961c

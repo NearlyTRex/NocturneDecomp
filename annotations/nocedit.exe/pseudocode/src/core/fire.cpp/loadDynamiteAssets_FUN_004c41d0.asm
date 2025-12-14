@@ -17,10 +17,10 @@
 
 section .text
 
-    PUSH 0x629e21                       ; 004c41d0 | = "dynamitestick.kfm" | s_dynamitestick_kfm_00629e21 = dynamitestick.kfm
+    PUSH 0x629e21                       ; 004c41d0 | = "dynamitestick.kfm"
         ;   Label: core_fire.cpp_loadDynamiteAssets_FUN_004c41d0
-    CALL core_dmodel.cpp_loadModel_FUN_00478c00 ; 004c41d5 | CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00478c00(char * filename)
-        ;   XREF to: 00478c00 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_loadModel_FUN_00478c00 ; 004c41d5
+        ;   XREF to: 00478c00 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00478c00(char * filename)
     ADD ESP,0x4                         ; 004c41da
     RET                                 ; 004c41dd
 

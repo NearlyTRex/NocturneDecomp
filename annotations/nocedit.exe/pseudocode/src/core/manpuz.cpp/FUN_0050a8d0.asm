@@ -108,12 +108,12 @@ section .text
     MOV ECX,dword ptr [EDI]             ; 0050a90a
     MOV dword ptr [EBP + 0x72],EDX      ; 0050a90c
     TEST ECX,ECX                        ; 0050a90f
-    JZ 0x0050ab32                       ; 0050a911 | LAB_0050ab32
-        ;   XREF to: 0050ab32 (CONDITIONAL_JUMP)
+    JZ 0x0050ab32                       ; 0050a911
+        ;   XREF to: 0050ab32 (CONDITIONAL_JUMP)  ; LAB_0050ab32
     CMP dword ptr [EBP + 0x72],0x0      ; 0050a917
         ;   Label: LAB_0050a917
-    JZ 0x0050ab72                       ; 0050a91b | LAB_0050ab72
-        ;   XREF to: 0050ab72 (CONDITIONAL_JUMP)
+    JZ 0x0050ab72                       ; 0050a91b
+        ;   XREF to: 0050ab72 (CONDITIONAL_JUMP)  ; LAB_0050ab72
     FLD float ptr [EBX + ESI*0x4 + 0x1490] ; 0050a921
     FADD float ptr [EBP + 0x92]         ; 0050a928
     FSTP float ptr [EBX + ESI*0x4 + 0x1490] ; 0050a92e
@@ -126,14 +126,14 @@ section .text
     FCOMP double ptr [EBP + 0x62]       ; 0050a949
     FNSTSW AX                           ; 0050a94c
     SAHF                                ; 0050a94e
-    JNC 0x0050ab84                      ; 0050a94f | LAB_0050ab84
-        ;   XREF to: 0050ab84 (CONDITIONAL_JUMP)
+    JNC 0x0050ab84                      ; 0050a94f
+        ;   XREF to: 0050ab84 (CONDITIONAL_JUMP)  ; LAB_0050ab84
     FLD1                                ; 0050a955
     FCOMP double ptr [EBP + 0x62]       ; 0050a957
     FNSTSW AX                           ; 0050a95a
     SAHF                                ; 0050a95c
-    JNC 0x0050a969                      ; 0050a95d | LAB_0050a969
-        ;   XREF to: 0050a969 (CONDITIONAL_JUMP)
+    JNC 0x0050a969                      ; 0050a95d
+        ;   XREF to: 0050a969 (CONDITIONAL_JUMP)  ; LAB_0050a969
     MOV dword ptr [EDX + 0x1490],0x3f800000 ; 0050a95f
     LEA EAX,[EBX + 0x5e4]               ; 0050a969
         ;   Label: LAB_0050a969
@@ -143,8 +143,8 @@ section .text
     LEA EAX,[EDI + 0x24]                ; 0050a974
     PUSH EAX                            ; 0050a977
     MOV dword ptr [EBP + 0x6a],EAX      ; 0050a978
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 0050a97b | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 0050a97b
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     LEA EDX,[EDI + 0xc]                 ; 0050a980
     FLD float ptr [EDX]                 ; 0050a983
     FADD float ptr [EAX]                ; 0050a985
@@ -161,18 +161,18 @@ section .text
     PUSH EAX                            ; 0050a9a3
     PUSH EBX                            ; 0050a9a4
     FSTP float ptr [EBP + 0x46]         ; 0050a9a5
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0050a9a8 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0050a9a8
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     XOR ECX,ECX                         ; 0050a9ad
     MOV dword ptr [EBP + 0x26],ECX      ; 0050a9af
     FLD float ptr [EBX + 0x5d0]         ; 0050a9b2
     FSUB float ptr [EBX + 0x5e8]        ; 0050a9b8
     FSTP float ptr [EBP + 0x2a]         ; 0050a9be
     FLD float ptr [EBX + 0x150c]        ; 0050a9c1
-    FMUL float ptr [0x006357d5]         ; 0050a9c7 | float FLOAT_006357d5
+    FMUL float ptr [0x006357d5]         ; 0050a9c7 | FLOAT_006357d5
     LEA EAX,[EBP + 0x26]                ; 0050a9cd
     ADD ESP,0xc                         ; 0050a9d0
-    FLD float ptr [0x006357d9]          ; 0050a9d3 | float FLOAT_006357d9
+    FLD float ptr [0x006357d9]          ; 0050a9d3 | FLOAT_006357d9
     FLD float ptr [EBP + 0x2a]          ; 0050a9d9
     FMUL ST1                            ; 0050a9dc
     PUSH EAX                            ; 0050a9de
@@ -188,27 +188,27 @@ section .text
     FXCH                                ; 0050a9f9
     FSTP float ptr [EBP + 0x2a]         ; 0050a9fb
     FSTP float ptr [EBP + 0x2e]         ; 0050a9fe
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 0050aa01 | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 0050aa01
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0050aa06
     LEA EAX,[EBP + 0x56]                ; 0050aa09
     PUSH EAX                            ; 0050aa0c
     LEA EAX,[EBP + 0x32]                ; 0050aa0d
     PUSH EAX                            ; 0050aa10
     PUSH EBX                            ; 0050aa11
-    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 0050aa12 | CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 0050aa12
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0050aa17
-    MOV EDX,dword ptr [0x006810c8]      ; 0050aa1a | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
-    PUSH EDX                            ; 0050aa20 | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 0050aa21 | void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006810c8]      ; 0050aa1a | g_CDemonSetInstance | g_CDemonSetPtr
+    PUSH EDX                            ; 0050aa20 | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 0050aa21
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0050aa26
     LEA EAX,[EBP + 0xffffff72]          ; 0050aa29
     PUSH EAX                            ; 0050aa2f
     MOV EDI,0x3da3d70a                  ; 0050aa30
-    CALL core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0 ; 0050aa35 | SLaserInfo * core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0(SLaserInfo * this_ptr)
-        ;   XREF to: 004c81f0 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0 ; 0050aa35
+        ;   XREF to: 004c81f0 (UNCONDITIONAL_CALL)  ; SLaserInfo * core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0(SLaserInfo * this_ptr)
     MOV ECX,0x2                         ; 0050aa3a
     MOV dword ptr [EBP + 0xffffff76],EDI ; 0050aa3f
     MOV dword ptr [EBP + 0xffffff7a],ECX ; 0050aa45
@@ -271,15 +271,15 @@ section .text
     PUSH EAX                            ; 0050ab08
     LEA EAX,[EBP + 0x4a]                ; 0050ab09
     PUSH EAX                            ; 0050ab0c
-    MOV EAX,[0x0067a3d0]                ; 0050ab0d | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
-    PUSH EAX                            ; 0050ab12 | CFireEffect g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c8230 ; 0050ab13 | void core_fire.cpp_CFireEffect_FUN_004c8230(CFireEffect * this_ptr)
-        ;   XREF to: 004c8230 (UNCONDITIONAL_CALL)
+    MOV EAX,[0x0067a3d0]                ; 0050ab0d | g_CFireEffectInstance | g_CFireEffectPtr
+    PUSH EAX                            ; 0050ab12 | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_FUN_004c8230 ; 0050ab13
+        ;   XREF to: 004c8230 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c8230(CFireEffect * this_ptr)
     ADD ESP,0x14                        ; 0050ab18
-    MOV EDX,dword ptr [0x006810c8]      ; 0050ab1b | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
-    PUSH EDX                            ; 0050ab21 | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 0050ab22 | void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006810c8]      ; 0050ab1b | g_CDemonSetInstance | g_CDemonSetPtr
+    PUSH EDX                            ; 0050ab21 | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 0050ab22
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0050ab27
     LEA ESP,[EBP + 0x76]                ; 0050ab2a
     POP EBP                             ; 0050ab2d
@@ -292,8 +292,8 @@ section .text
     MOV EAX,0x1                         ; 0050ab33
     PUSH EBX                            ; 0050ab38
     MOV dword ptr [EBP + 0x72],EAX      ; 0050ab39
-    CALL core_manpuz.cpp_FUN_0050aef0   ; 0050ab3c | undefined core_manpuz.cpp_FUN_0050aef0()
-        ;   XREF to: 0050aef0 (UNCONDITIONAL_CALL)
+    CALL core_manpuz.cpp_FUN_0050aef0   ; 0050ab3c
+        ;   XREF to: 0050aef0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_0050aef0()
     MOV EDX,EAX                         ; 0050ab41
     SHL EAX,0x2                         ; 0050ab43
     SUB EAX,EDX                         ; 0050ab46
@@ -305,20 +305,20 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 0050ab55
     ADD ESP,0x8                         ; 0050ab57
     TEST ECX,ECX                        ; 0050ab5a
-    JZ 0x0050a917                       ; 0050ab5c | LAB_0050a917
-        ;   XREF to: 0050a917 (CONDITIONAL_JUMP)
+    JZ 0x0050a917                       ; 0050ab5c
+        ;   XREF to: 0050a917 (CONDITIONAL_JUMP)  ; LAB_0050a917
     FLD float ptr [EAX + 0x8]           ; 0050ab62
     FLDZ                                ; 0050ab65
     FCOMPP                              ; 0050ab67
     FNSTSW AX                           ; 0050ab69
     SAHF                                ; 0050ab6b
-    JNC 0x0050a917                      ; 0050ab6c | LAB_0050a917
-        ;   XREF to: 0050a917 (CONDITIONAL_JUMP)
+    JNC 0x0050a917                      ; 0050ab6c
+        ;   XREF to: 0050a917 (CONDITIONAL_JUMP)  ; LAB_0050a917
     FLD float ptr [EBX + ESI*0x4 + 0x1490] ; 0050ab72
         ;   Label: LAB_0050ab72
     FSUB float ptr [EBP + 0x92]         ; 0050ab79
-    JMP 0x0050a92e                      ; 0050ab7f | LAB_0050a92e
-        ;   XREF to: 0050a92e (UNCONDITIONAL_JUMP)
+    JMP 0x0050a92e                      ; 0050ab7f
+        ;   XREF to: 0050a92e (UNCONDITIONAL_JUMP)  ; LAB_0050a92e
     MOV dword ptr [EDX + 0x1490],0x0    ; 0050ab84
         ;   Label: LAB_0050ab84
     LEA ESP,[EBP + 0x76]                ; 0050ab8e

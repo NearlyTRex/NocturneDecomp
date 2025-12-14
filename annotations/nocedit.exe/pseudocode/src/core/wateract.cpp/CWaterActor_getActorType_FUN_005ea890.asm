@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f93968                   ; 005ea890 | CDemonActorType g_CWaterActorClassInfo
+    MOV EAX,0x3f93968                   ; 005ea890 | g_CWaterActorClassInfo
         ;   Label: core_wateract.cpp_CWaterActor_getActorType_FUN_005ea890
     RET                                 ; 005ea895
 

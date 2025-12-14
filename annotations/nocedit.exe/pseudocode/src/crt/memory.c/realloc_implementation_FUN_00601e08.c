@@ -27,14 +27,14 @@ void * __cdecl crt_memory_c_realloc_implementation_FUN_00601e08(void *ptr,ulong 
     return (void *)0x0;
   }
   new_size_00 = crt_heap_c_GetBlockSize_FUN_00609790(ptr);
-  puVar2 = (uint *)crt_heap_c_TryResizeInPlace_FUN_00609974(ptr,new_size);
+  puVar2 = crt_heap_c_TryResizeInPlace_FUN_00609974(ptr,new_size);
   if (puVar2 == (uint *)0x0) {
-    puVar2 = (uint *)crt_heap_c_InternalHeapAlloc_FUN_00601bc0(new_size);
+    puVar2 = crt_heap_c_InternalHeapAlloc_FUN_00601bc0(new_size);
     if (puVar2 == (uint *)0x0) {
       crt_heap_c_TryResizeInPlace_FUN_00609974(ptr,new_size_00);
     }
     else {
-      puVar4 = (uint *)ptr;
+      puVar4 = ptr;
       puVar5 = puVar2;
       for (uVar3 = new_size_00 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
         *puVar5 = *puVar4;

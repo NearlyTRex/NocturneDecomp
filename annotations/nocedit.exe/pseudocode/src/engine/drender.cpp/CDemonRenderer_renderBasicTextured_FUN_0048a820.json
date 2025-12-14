@@ -1,99 +1,99 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 3, 
-    "global_count": 3, 
-    "total_lines": 76, 
-    "assembly_lines": 54, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
-      "addr": "00403950"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
-      "addr": "0048a740"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "RenderScanlineFunc*", 
-      "name": "g_ScanlineRenderFunc", 
-      "addr": "02d0257c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048a820", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)", 
-    "address_range": [
-      [
-        "0048a820", 
-        "0048a89a"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "polygon_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 54,
+    "complexity_score": 22,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
+  },
   "cross_references": [
     {
-      "from_addr": "00522589", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560", 
-      "addr": "00522560"
-    }, 
+      "addr": "00522560",
+      "from_addr": "00522589",
+      "name": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052265c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0", 
-      "addr": "005225e0"
-    }, 
+      "addr": "005225e0",
+      "from_addr": "0052265c",
+      "name": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00570946", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0", 
-      "addr": "005708e0"
+      "addr": "005708e0",
+      "from_addr": "00570946",
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0048a820",
+    "address_range": [
+      [
+        "0048a820",
+        "0048a89a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820",
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "0048a740",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "RenderScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "polygon_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": []
 }

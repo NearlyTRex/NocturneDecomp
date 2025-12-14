@@ -44,8 +44,7 @@ core_dtrace_cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20
   
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)(local_94 + 8),start_position);
-                    /* WARNING: Load size is inaccurate */
-  local_54 = *light_data - end_position->x;
+  local_54 = *(float *)light_data - end_position->x;
   local_50._0_4_ = *(float *)((int)light_data + 4) - end_position->y;
   local_50._4_4_ = *(float *)((int)light_data + 8) - end_position->z;
   fVar5 = (float10)(float)local_50._0_4_ / (float10)(this_ptr->adjusted_size).y;

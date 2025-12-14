@@ -47,7 +47,7 @@ ulonglong crt_unknown_c_FUN_0060b5e8(uint param_1,uint param_2)
     uVar1 = (uint)CARRY4(uVar2,(uint)CARRY4(uVar5,uVar5));
     param_2 = uVar3 + uVar1;
     if (CARRY4(uVar3,uVar1)) {
-      param_2 = param_2 >> 1 | (uint)CARRY4(uVar3,uVar1) << 0x1f;
+      param_2 = param_2 >> 1 | 0x80000000;
     }
   }
   return CONCAT44 /* combine 2-byte values */(param_2,param_1);

@@ -1,122 +1,122 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 42, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 64, 
-    "assembly_lines": 47, 
-    "suspect_count": 2, 
+    "assembly_lines": 47,
+    "complexity_score": 42,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_swap_FUN_004a31f0", 
-      "addr": "004a31f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623e66", 
-      "addr": "00623e66", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CPickList_swap_can_t_do__00623e7c", 
-      "addr": "00623e7c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623ec2", 
-      "addr": "00623ec2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CPickList_swap_can_t_do__00623ed8", 
-      "addr": "00623ed8", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "shape_edittool_cpp_CStrList_swap_FUN_004a31f0(&this_ptr->base_strlist,index2,in_stack_00000010);"
-    }
-  ], 
+    ],
+    "total_lines": 64
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004a5870", 
-    "signature": "void shape_edittool.cpp_CPickList_swap_FUN_004a5870(CPickList * this_ptr, int index1, int index2)", 
+    "address": "004a5870",
     "address_range": [
       [
-        "004a5870", 
+        "004a5870",
         "004a58e8"
       ]
-    ], 
-    "name": "shape_edittool.cpp_CPickList_swap_FUN_004a5870"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CPickList_swap_FUN_004a5870",
+    "signature": "void shape_edittool.cpp_CPickList_swap_FUN_004a5870(CPickList * this_ptr, int index1, int index2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "004a31f0",
+      "name": "shape_edittool.cpp_CStrList_swap_FUN_004a31f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623e66",
+      "name": "s_shape_edittool_cpp_00623e66",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623e7c",
+      "name": "s_CPickList_swap_can_t_do__00623e7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623ec2",
+      "name": "s_shape_edittool_cpp_00623ec2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623ed8",
+      "name": "s_CPickList_swap_can_t_do__00623ed8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPickList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "index1"
-      }, 
+        "is_param": true,
+        "name": "index1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "index2"
+        "is_param": true,
+        "name": "index2",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "shape_edittool_cpp_CStrList_swap_FUN_004a31f0(&this_ptr->base_strlist,index2,in_stack_00000010);",
+      "type": "stack_param"
+    }
+  ]
 }

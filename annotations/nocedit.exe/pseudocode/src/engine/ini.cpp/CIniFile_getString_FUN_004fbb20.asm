@@ -38,12 +38,12 @@ section .text
     PUSH EBP                            ; 004fbb21
     MOV EBX,dword ptr [ESP + 0xc]       ; 004fbb22
     CMP byte ptr [EBX],0x0              ; 004fbb26
-    JZ 0x004fbb57                       ; 004fbb29 | LAB_004fbb57
-        ;   XREF to: 004fbb57 (CONDITIONAL_JUMP)
+    JZ 0x004fbb57                       ; 004fbb29
+        ;   XREF to: 004fbb57 (CONDITIONAL_JUMP)  ; LAB_004fbb57
     CMP byte ptr [EBX + 0x100],0x0      ; 004fbb2b
         ;   Label: LAB_004fbb2b
-    JZ 0x004fbb7c                       ; 004fbb32 | LAB_004fbb7c
-        ;   XREF to: 004fbb7c (CONDITIONAL_JUMP)
+    JZ 0x004fbb7c                       ; 004fbb32
+        ;   XREF to: 004fbb7c (CONDITIONAL_JUMP)  ; LAB_004fbb7c
     PUSH EBX                            ; 004fbb34
         ;   Label: LAB_004fbb34
     MOV EBP,dword ptr [ESP + 0x1c]      ; 004fbb35
@@ -55,36 +55,36 @@ section .text
     PUSH ECX                            ; 004fbb44
     ADD EBX,0x100                       ; 004fbb45
     PUSH EBX                            ; 004fbb4b
-    CALL engine_ini.cpp_getProfileString_FUN_004fb960 ; 004fbb4c | void engine_ini.cpp_getProfileString_FUN_004fb960(char * section, char * key, char * default_value, char * output_buffer, ...)
-        ;   XREF to: 004fb960 (UNCONDITIONAL_CALL)
+    CALL engine_ini.cpp_getProfileString_FUN_004fb960 ; 004fbb4c
+        ;   XREF to: 004fb960 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_getProfileString_FUN_004fb960(char * section, char * key, char * default_value, char * output_buffer, ...)
     ADD ESP,0x18                        ; 004fbb51
     POP EBP                             ; 004fbb54
     POP EBX                             ; 004fbb55
     RET                                 ; 004fbb56
-    MOV EDX,0x62fc91                    ; 004fbb57 | = "..\\engine\\ini.cpp" | s_engine_ini_cpp_0062fc91 = ..\engine\ini.cpp
+    MOV EDX,0x62fc91                    ; 004fbb57 | = "..\\engine\\ini.cpp"
         ;   Label: LAB_004fbb57
     MOV ECX,0x26f                       ; 004fbb5c
-    PUSH 0x62fca3                       ; 004fbb61 | = "CIniFile::getString - filename not wr..." | s_CIniFile_getString_filen_0062fca3 = CIniFile::getString - filename not write!
-    MOV dword ptr [0x02f0ca48],EDX      ; 004fbb66 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 004fbb6c | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004fbb72 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x62fca3                       ; 004fbb61 | = "CIniFile::getString - filename not wr..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 004fbb66 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 004fbb6c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004fbb72
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004fbb77
-    JMP 0x004fbb2b                      ; 004fbb7a | LAB_004fbb2b
-        ;   XREF to: 004fbb2b (UNCONDITIONAL_JUMP)
+    JMP 0x004fbb2b                      ; 004fbb7a
+        ;   XREF to: 004fbb2b (UNCONDITIONAL_JUMP)  ; LAB_004fbb2b
     PUSH EDI                            ; 004fbb7c
         ;   Label: LAB_004fbb7c
     PUSH ESI                            ; 004fbb7d
-    MOV ESI,0x62fccd                    ; 004fbb7e | = "..\\engine\\ini.cpp" | s_engine_ini_cpp_0062fccd = ..\engine\ini.cpp
+    MOV ESI,0x62fccd                    ; 004fbb7e | = "..\\engine\\ini.cpp"
     MOV EDI,0x270                       ; 004fbb83
-    PUSH 0x62fcdf                       ; 004fbb88 | = "CIniFile::getString - section not write!" | s_CIniFile_getString_secti_0062fcdf = CIniFile::getString - section not write!
-    MOV dword ptr [0x02f0ca48],ESI      ; 004fbb8d | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 004fbb93 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004fbb99 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x62fcdf                       ; 004fbb88 | = "CIniFile::getString - section not write!"
+    MOV dword ptr [0x02f0ca48],ESI      ; 004fbb8d | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 004fbb93 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004fbb99
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004fbb9e
     POP ESI                             ; 004fbba1
     POP EDI                             ; 004fbba2
-    JMP 0x004fbb34                      ; 004fbba3 | LAB_004fbb34
-        ;   XREF to: 004fbb34 (UNCONDITIONAL_JUMP)
+    JMP 0x004fbb34                      ; 004fbba3
+        ;   XREF to: 004fbb34 (UNCONDITIONAL_JUMP)  ; LAB_004fbb34
 

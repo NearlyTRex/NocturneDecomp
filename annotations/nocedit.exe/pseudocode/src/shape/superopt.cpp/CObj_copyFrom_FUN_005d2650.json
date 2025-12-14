@@ -1,145 +1,145 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 155, 
-    "pseudocode_lines": 45, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 132, 
-    "assembly_lines": 87, 
-    "suspect_count": 10, 
+    "assembly_lines": 87,
+    "complexity_score": 155,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 45,
+    "suspect_count": 10,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_superopt.cpp_logToFile_FUN_005c7910", 
-      "addr": "005c7910"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_allocate_RAM_f_006543bf", 
-      "addr": "006543bf", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000010;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = (*this_ptr->vtable->init)(this_ptr,in_stack_00000010[2],*in_stack_00000010);"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = (*this_ptr->vtable->init)(this_ptr,in_stack_00000010[2],*in_stack_00000010);"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "puVar4 = *(uint **)(in_stack_0000001c + 4);"
-    }, 
-    {
-      "line": 30, 
-      "match": "(CVert *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar6 * -8 + 4);"
-    }, 
-    {
-      "line": 34, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);"
-    }, 
-    {
-      "line": 35, 
-      "match": "(CVert *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar6 * -2 + 1);"
-    }, 
-    {
-      "line": 44, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 4))();"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->flags = *(int *)(in_stack_0000001c + 0x10);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005d2650", 
-    "signature": "int shape_superopt.cpp_CObj_copyFrom_FUN_005d2650(CObj * this_ptr, CObj * source)", 
-    "address_range": [
-      [
-        "005d2650", 
-        "005d2715"
-      ]
-    ], 
-    "name": "shape_superopt.cpp_CObj_copyFrom_FUN_005d2650"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "source"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 132
+  },
   "cross_references": [
     {
-      "from_addr": "005d71fa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_COptimize_FUN_005d71e0", 
-      "addr": "005d71e0"
+      "addr": "005d71e0",
+      "from_addr": "005d71fa",
+      "name": "shape_superopt.cpp_COptimize_FUN_005d71e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005d2650",
+    "address_range": [
+      [
+        "005d2650",
+        "005d2715"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CObj_copyFrom_FUN_005d2650",
+    "signature": "int shape_superopt.cpp_CObj_copyFrom_FUN_005d2650(CObj * this_ptr, CObj * source)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c7910",
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006543bf",
+      "name": "s_Unable_to_allocate_RAM_f_006543bf",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CObj *"
+      },
+      {
+        "is_param": true,
+        "name": "source",
+        "offset": 8,
+        "size": 4,
+        "type": "CObj *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000010",
+      "text": "int *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "text": "iVar2 = (*this_ptr->vtable->init)(this_ptr,in_stack_00000010[2],*in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "text": "iVar2 = (*this_ptr->vtable->init)(this_ptr,in_stack_00000010[2],*in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_0000001c",
+      "text": "puVar4 = *(uint **)(in_stack_0000001c + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CVert *)((int)",
+      "text": "pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(CVert *)((int)",
+      "text": "pCVar5 = (CVert *)((int)pCVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(int *)((int)",
+      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 4))();",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_0000001c",
+      "text": "this_ptr->flags = *(int *)(in_stack_0000001c + 0x10);",
+      "type": "stack_param"
     }
   ]
 }

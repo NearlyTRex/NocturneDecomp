@@ -36,20 +36,20 @@ section .text
     PUSH EBP                            ; 0040e853
     SUB ESP,0xdc                        ; 0040e854
     MOV EBX,dword ptr [ESP + 0xf0]      ; 0040e85a
-    CALL engine_2d.c_getTextWrapEnabled_FUN_004027f0 ; 0040e861 | int engine_2d.c_getTextWrapEnabled_FUN_004027f0()
-        ;   XREF to: 004027f0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_getTextWrapEnabled_FUN_004027f0 ; 0040e861
+        ;   XREF to: 004027f0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getTextWrapEnabled_FUN_004027f0()
     PUSH 0x0                            ; 0040e866
     MOV dword ptr [ESP + 0xcc],EAX      ; 0040e868
-    CALL engine_2d.c_setTextWrapEnabled_FUN_00402800 ; 0040e86f | void engine_2d.c_setTextWrapEnabled_FUN_00402800(int enabled)
-        ;   XREF to: 00402800 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_setTextWrapEnabled_FUN_00402800 ; 0040e86f
+        ;   XREF to: 00402800 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextWrapEnabled_FUN_00402800(int enabled)
     XOR EBP,EBP                         ; 0040e874
     ADD ESP,0x4                         ; 0040e876
     MOV EDI,dword ptr [EBX + 0x2500]    ; 0040e879
     MOV EDX,dword ptr [EBX + 0x4]       ; 0040e87f
     ADD EDI,0x2                         ; 0040e882
     TEST EDX,EDX                        ; 0040e885
-    JLE 0x0040e995                      ; 0040e887 | LAB_0040e995
-        ;   XREF to: 0040e995 (CONDITIONAL_JUMP)
+    JLE 0x0040e995                      ; 0040e887
+        ;   XREF to: 0040e995 (CONDITIONAL_JUMP)  ; LAB_0040e995
     LEA EAX,[EDI + -0x2]                ; 0040e88d
     MOV dword ptr [ESP + 0xd4],EAX      ; 0040e890
     LEA EAX,[EDI + 0xb]                 ; 0040e897
@@ -62,25 +62,25 @@ section .text
     PUSH ECX                            ; 0040e8a9
     PUSH ESI                            ; 0040e8aa
     MOV dword ptr [ESP + 0xdc],ESI      ; 0040e8ab
-    CALL core_actor.cpp_CActorProperty_FUN_0040ea50 ; 0040e8b2 | undefined core_actor.cpp_CActorProperty_FUN_0040ea50()
-        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorProperty_FUN_0040ea50 ; 0040e8b2
+        ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CActorProperty_FUN_0040ea50()
     ADD ESP,0xc                         ; 0040e8b7
     PUSH ESI                            ; 0040e8ba
-    CALL core_actor.cpp_FUN_0040ee30    ; 0040e8bb | undefined core_actor.cpp_FUN_0040ee30()
-        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_FUN_0040ee30    ; 0040e8bb
+        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ee30()
     MOV EDX,dword ptr [EBX + 0x24f0]    ; 0040e8c0
     ADD ESP,0x4                         ; 0040e8c6
     SUB EDX,EAX                         ; 0040e8c9
     MOV EAX,dword ptr [ESP + 0xf4]      ; 0040e8cb
     MOV dword ptr [ESP + 0xcc],EDX      ; 0040e8d2
     CMP EBP,EAX                         ; 0040e8d9
-    JNZ 0x0040e918                      ; 0040e8db | LAB_0040e918
-        ;   XREF to: 0040e918 (CONDITIONAL_JUMP)
+    JNZ 0x0040e918                      ; 0040e8db
+        ;   XREF to: 0040e918 (CONDITIONAL_JUMP)  ; LAB_0040e918
     MOV EDX,dword ptr [ESI + 0x54]      ; 0040e8dd
     MOV EAX,0xfa                        ; 0040e8e0
     TEST EDX,EDX                        ; 0040e8e5
-    JZ 0x0040e9b0                       ; 0040e8e7 | LAB_0040e9b0
-        ;   XREF to: 0040e9b0 (CONDITIONAL_JUMP)
+    JZ 0x0040e9b0                       ; 0040e8e7
+        ;   XREF to: 0040e9b0 (CONDITIONAL_JUMP)  ; LAB_0040e9b0
     PUSH EAX                            ; 0040e8ed
         ;   Label: LAB_0040e8ed
     PUSH 0x0                            ; 0040e8ee
@@ -94,8 +94,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x24f8]    ; 0040e908
     INC EAX                             ; 0040e90e
     PUSH EAX                            ; 0040e90f
-    CALL engine_2d.c_fillRectWithBorder_FUN_00403200 ; 0040e910 | void engine_2d.c_fillRectWithBorder_FUN_00403200(int x1, int y1, int x2, int y2, ...)
-        ;   XREF to: 00403200 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_fillRectWithBorder_FUN_00403200 ; 0040e910
+        ;   XREF to: 00403200 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectWithBorder_FUN_00403200(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x18                        ; 0040e915
     PUSH EDI                            ; 0040e918
         ;   Label: LAB_0040e918
@@ -104,15 +104,15 @@ section .text
     PUSH ECX                            ; 0040e927
     ADD EAX,0x4                         ; 0040e928
     PUSH EAX                            ; 0040e92b
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040e92c | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040e92c
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0040e931
     PUSH EDI                            ; 0040e934
     MOV EAX,dword ptr [EBX + 0x24f0]    ; 0040e935
     PUSH EAX                            ; 0040e93b
-    PUSH 0x6144bf                       ; 0040e93c | = ": " | s_anon_006144bf = :
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040e941 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    PUSH 0x6144bf                       ; 0040e93c | = ": "
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040e941
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0040e946
     PUSH EDI                            ; 0040e949
     MOV EDX,dword ptr [EBX + 0x24f4]    ; 0040e94a
@@ -122,8 +122,8 @@ section .text
     PUSH EAX                            ; 0040e95b
     INC EBP                             ; 0040e95c
     ADD EDI,0xe                         ; 0040e95d
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040e960 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0040e960
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0040e965
     MOV EDX,dword ptr [EBX + 0x4]       ; 0040e968
     MOV ECX,dword ptr [ESP + 0xd4]      ; 0040e96b
@@ -133,13 +133,13 @@ section .text
     MOV dword ptr [ESP + 0xd4],ECX      ; 0040e97f
     MOV dword ptr [ESP + 0xd8],EAX      ; 0040e986
     CMP EBP,EDX                         ; 0040e98d
-    JL 0x0040e8a4                       ; 0040e98f | LAB_0040e8a4
-        ;   XREF to: 0040e8a4 (CONDITIONAL_JUMP)
+    JL 0x0040e8a4                       ; 0040e98f
+        ;   XREF to: 0040e8a4 (CONDITIONAL_JUMP)  ; LAB_0040e8a4
     MOV EDX,dword ptr [ESP + 0xc8]      ; 0040e995
         ;   Label: LAB_0040e995
     PUSH EDX                            ; 0040e99c
-    CALL engine_2d.c_setTextWrapEnabled_FUN_00402800 ; 0040e99d | void engine_2d.c_setTextWrapEnabled_FUN_00402800(int enabled)
-        ;   XREF to: 00402800 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_setTextWrapEnabled_FUN_00402800 ; 0040e99d
+        ;   XREF to: 00402800 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setTextWrapEnabled_FUN_00402800(int enabled)
     ADD ESP,0x4                         ; 0040e9a2
     ADD ESP,0xdc                        ; 0040e9a5
     POP EBP                             ; 0040e9ab
@@ -149,6 +149,6 @@ section .text
     RET                                 ; 0040e9af
     MOV EAX,0x7                         ; 0040e9b0
         ;   Label: LAB_0040e9b0
-    JMP 0x0040e8ed                      ; 0040e9b5 | LAB_0040e8ed
-        ;   XREF to: 0040e8ed (UNCONDITIONAL_JUMP)
+    JMP 0x0040e8ed                      ; 0040e9b5
+        ;   XREF to: 0040e8ed (UNCONDITIONAL_JUMP)  ; LAB_0040e8ed
 

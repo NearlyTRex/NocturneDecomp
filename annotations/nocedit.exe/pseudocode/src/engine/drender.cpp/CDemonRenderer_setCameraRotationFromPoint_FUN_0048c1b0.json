@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 22, 
-    "assembly_lines": 14, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_matrix.c_setCameraRotation_FUN_0050e290", 
-      "addr": "0050e290"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 14,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0048c1b0", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0(CDemonRenderer * this_ptr, CVector3i * rotation)", 
+    "address": "0048c1b0",
     "address_range": [
       [
-        "0048c1b0", 
+        "0048c1b0",
         "0048c1c9"
       ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0",
+    "signature": "void engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0(CDemonRenderer * this_ptr, CVector3i * rotation)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050e290",
+      "name": "engine_matrix.c_setCameraRotation_FUN_0050e290"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "rotation"
+        "is_param": true,
+        "name": "rotation",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

@@ -1,97 +1,97 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 65, 
-    "assembly_lines": 43, 
-    "suspect_count": 2, 
+    "assembly_lines": 43,
+    "complexity_score": 47,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CFliesClassInfo.name_hash", 
-      "addr": "02d7a7fc", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.actor_list_ptr", 
-      "addr": "032613cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.actor_list_data[0]", 
-      "addr": "032613d0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((pCVar1 != (CDemonActor *)0x0) && (in_stack_00000004 == pCVar1[0x1f].runtime_state)) break;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004cca50", 
-    "signature": "undefined core_flies.cpp_FUN_004cca50()", 
-    "address_range": [
-      [
-        "004cca50", 
-        "004cca9d"
-      ]
-    ], 
-    "name": "core_flies.cpp_FUN_004cca50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 65
+  },
   "cross_references": [
     {
-      "from_addr": "00409e89", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_spawnFlies_FUN_00409e70", 
-      "addr": "00409e70"
+      "addr": "00409e70",
+      "from_addr": "00409e89",
+      "name": "core_actor.cpp_CDemonActor_spawnFlies_FUN_00409e70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cca50",
+    "address_range": [
+      [
+        "004cca50",
+        "004cca9d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flies.cpp_FUN_004cca50",
+    "signature": "undefined core_flies.cpp_FUN_004cca50()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02d7a7fc",
+      "name": "g_CFliesClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "if ((pCVar1 != (CDemonActor *)0x0) && (in_stack_00000004 == pCVar1[0x1f].runtime_state)) break;",
+      "type": "stack_param"
     }
   ]
 }

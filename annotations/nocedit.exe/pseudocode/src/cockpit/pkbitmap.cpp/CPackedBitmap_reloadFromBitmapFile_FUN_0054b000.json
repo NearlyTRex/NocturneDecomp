@@ -1,163 +1,163 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 66, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 82, 
-    "assembly_lines": 61, 
-    "suspect_count": 4, 
+    "assembly_lines": 61,
+    "complexity_score": 66,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 1,
+    "pseudocode_lines": 21,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870", 
-      "addr": "00431870"
-    }, 
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0", 
-      "addr": "0054b4a0"
-    }, 
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0", 
-      "addr": "0054a8e0"
-    }, 
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190", 
-      "addr": "0054b190"
-    }, 
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990", 
-      "addr": "0054a990"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbitmap_cpp_0063ef51", 
-      "addr": "0063ef51", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000002c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000002c;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,bitmap_data,width,apply_palette_flag,in_stack_00000020,(uchar)width);"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_0000002c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000002c == 0) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054b000", 
-    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap * this_ptr, char * filename, int width, int height, int transparency_color, int stride, int apply_palette_flag)", 
-    "address_range": [
-      [
-        "0054b000", 
-        "0054b07a"
-      ]
-    ], 
-    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "transparency_color"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "stride"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "apply_palette_flag"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
+    ],
+    "total_lines": 82
+  },
   "cross_references": [
     {
-      "from_addr": "0054a878", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840", 
-      "addr": "0054a840"
-    }, 
+      "addr": "0054a840",
+      "from_addr": "0054a878",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054bf18", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70", 
-      "addr": "0054be70"
+      "addr": "0054be70",
+      "from_addr": "0054bf18",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054b000",
+    "address_range": [
+      [
+        "0054b000",
+        "0054b07a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000",
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap * this_ptr, char * filename, int width, int height, int transparency_color, int stride, int apply_palette_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00431870",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870"
+    },
+    {
+      "addr": "0054b4a0",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0"
+    },
+    {
+      "addr": "0054a8e0",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0"
+    },
+    {
+      "addr": "0054b190",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190"
+    },
+    {
+      "addr": "0054a990",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ef51",
+      "name": "s_cockpit_pkbitmap_cpp_0063ef51",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "transparency_color",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "stride",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "apply_palette_flag",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000002c",
+      "text": "int in_stack_0000002c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000020",
+      "text": "(this_ptr,bitmap_data,width,apply_palette_flag,in_stack_00000020,(uchar)width);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000002c",
+      "text": "if (in_stack_0000002c == 0) {",
+      "type": "stack_param"
     }
   ]
 }

@@ -16,7 +16,7 @@
 
 section .text
 
-    CMP dword ptr [0x03f69c54],0x0      ; 005ab970 | IDirectSoundCapture * g_RecordingDeviceInterface
+    CMP dword ptr [0x03f69c54],0x0      ; 005ab970 | g_RecordingDeviceInterface
         ;   Label: sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
     SETNZ AL                            ; 005ab977
     AND EAX,0xff                        ; 005ab97a

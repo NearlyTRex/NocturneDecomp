@@ -11,8 +11,7 @@ void core_boxactor_cpp_FUN_00422950(void)
 {
   CLightActor *this_ptr;
   
-  this_ptr = (CLightActor *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x3678,"..\\core\\boxactor.cpp",0x2e3);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x3678,"..\\core\\boxactor.cpp",0x2e3);
   if (this_ptr == (CLightActor *)0x0) {
     return;
   }

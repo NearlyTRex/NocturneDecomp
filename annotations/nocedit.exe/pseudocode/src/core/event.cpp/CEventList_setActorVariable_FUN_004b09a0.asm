@@ -40,35 +40,35 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 004b09ab
     MOV EBP,dword ptr [ESP + 0x24]      ; 004b09af
     TEST EBP,EBP                        ; 004b09b3
-    JZ 0x004b09eb                       ; 004b09b5 | LAB_004b09eb
-        ;   XREF to: 004b09eb (CONDITIONAL_JUMP)
+    JZ 0x004b09eb                       ; 004b09b5
+        ;   XREF to: 004b09eb (CONDITIONAL_JUMP)  ; LAB_004b09eb
     CMP byte ptr [EBP],0x0              ; 004b09b7
-    JNZ 0x004b09eb                      ; 004b09bb | LAB_004b09eb
-        ;   XREF to: 004b09eb (CONDITIONAL_JUMP)
-    MOV EDX,0x625bf9                    ; 004b09bd | = "..\\core\\event.cpp" | s_core_event_cpp_00625bf9 = ..\core\event.cpp
+    JNZ 0x004b09eb                      ; 004b09bb
+        ;   XREF to: 004b09eb (CONDITIONAL_JUMP)  ; LAB_004b09eb
+    MOV EDX,0x625bf9                    ; 004b09bd | = "..\\core\\event.cpp"
     MOV ECX,0xb2b                       ; 004b09c2
     PUSH EBP                            ; 004b09c7
-    MOV dword ptr [0x02f0ca48],EDX      ; 004b09c8 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 004b09ce | int g_CurrentLineNumber
-    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90 ; 004b09d4 | char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor * this_ptr)
-        ;   XREF to: 00408b90 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02f0ca48],EDX      ; 004b09c8 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 004b09ce | g_CurrentLineNumber
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90 ; 004b09d4
+        ;   XREF to: 00408b90 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004b09d9
     PUSH EAX                            ; 004b09dc
     PUSH EDI                            ; 004b09dd
-    PUSH 0x625c0b                       ; 004b09de | = "Tried to assign actor var %s an actor..." | s_Tried_to_assign_actor_va_00625c0b = Tried to assign actor var %s an actor of type %s with no name
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b09e3 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x625c0b                       ; 004b09de | = "Tried to assign actor var %s an actor..."
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b09e3
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0xc                         ; 004b09e8
     PUSH EDI                            ; 004b09eb
         ;   Label: LAB_004b09eb
     PUSH EBX                            ; 004b09ec
-    CALL core_event.cpp_CEventList_FUN_004b0bf0 ; 004b09ed | int core_event.cpp_CEventList_FUN_004b0bf0(CEventList * this_ptr)
-        ;   XREF to: 004b0bf0 (UNCONDITIONAL_CALL)
+    CALL core_event.cpp_CEventList_FUN_004b0bf0 ; 004b09ed
+        ;   XREF to: 004b0bf0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0bf0(CEventList * this_ptr)
     MOV ESI,EAX                         ; 004b09f2
     ADD ESP,0x8                         ; 004b09f4
     TEST EAX,EAX                        ; 004b09f7
-    JL 0x004b0a6f                       ; 004b09f9 | LAB_004b0a6f
-        ;   XREF to: 004b0a6f (CONDITIONAL_JUMP)
+    JL 0x004b0a6f                       ; 004b09f9
+        ;   XREF to: 004b0a6f (CONDITIONAL_JUMP)  ; LAB_004b0a6f
     LEA EAX,[EBX + 0x37da]              ; 004b09fb
     MOV dword ptr [ESP],EAX             ; 004b0a01
     MOV EAX,ESI                         ; 004b0a04
@@ -82,8 +82,8 @@ section .text
     MOV dword ptr [ESP + 0x4],EDX       ; 004b0a1a
     LEA EDX,[ECX + EAX*0x1]             ; 004b0a1e
     TEST EBP,EBP                        ; 004b0a21
-    JZ 0x004b0b19                       ; 004b0a23 | LAB_004b0b19
-        ;   XREF to: 004b0b19 (CONDITIONAL_JUMP)
+    JZ 0x004b0b19                       ; 004b0a23
+        ;   XREF to: 004b0b19 (CONDITIONAL_JUMP)  ; LAB_004b0b19
     MOV ESI,EDI                         ; 004b0a29
     MOV EDI,EDX                         ; 004b0a2b
     PUSH EDI                            ; 004b0a2d
@@ -91,15 +91,15 @@ section .text
         ;   Label: LAB_004b0a2e
     MOV byte ptr [EDI],AL               ; 004b0a30
     CMP AL,0x0                          ; 004b0a32
-    JZ 0x004b0a46                       ; 004b0a34 | LAB_004b0a46
-        ;   XREF to: 004b0a46 (CONDITIONAL_JUMP)
+    JZ 0x004b0a46                       ; 004b0a34
+        ;   XREF to: 004b0a46 (CONDITIONAL_JUMP)  ; LAB_004b0a46
     MOV AL,byte ptr [ESI + 0x1]         ; 004b0a36
     ADD ESI,0x2                         ; 004b0a39
     MOV byte ptr [EDI + 0x1],AL         ; 004b0a3c
     ADD EDI,0x2                         ; 004b0a3f
     CMP AL,0x0                          ; 004b0a42
-    JNZ 0x004b0a2e                      ; 004b0a44 | LAB_004b0a2e
-        ;   XREF to: 004b0a2e (CONDITIONAL_JUMP)
+    JNZ 0x004b0a2e                      ; 004b0a44
+        ;   XREF to: 004b0a2e (CONDITIONAL_JUMP)  ; LAB_004b0a2e
     POP EDI                             ; 004b0a46
         ;   Label: LAB_004b0a46
     MOV EDI,dword ptr [ESP + 0x4]       ; 004b0a47
@@ -109,15 +109,15 @@ section .text
         ;   Label: LAB_004b0a4e
     MOV byte ptr [EDI],AL               ; 004b0a50
     CMP AL,0x0                          ; 004b0a52
-    JZ 0x004b0a66                       ; 004b0a54 | LAB_004b0a66
-        ;   XREF to: 004b0a66 (CONDITIONAL_JUMP)
+    JZ 0x004b0a66                       ; 004b0a54
+        ;   XREF to: 004b0a66 (CONDITIONAL_JUMP)  ; LAB_004b0a66
     MOV AL,byte ptr [ESI + 0x1]         ; 004b0a56
     ADD ESI,0x2                         ; 004b0a59
     MOV byte ptr [EDI + 0x1],AL         ; 004b0a5c
     ADD EDI,0x2                         ; 004b0a5f
     CMP AL,0x0                          ; 004b0a62
-    JNZ 0x004b0a4e                      ; 004b0a64 | LAB_004b0a4e
-        ;   XREF to: 004b0a4e (CONDITIONAL_JUMP)
+    JNZ 0x004b0a4e                      ; 004b0a64
+        ;   XREF to: 004b0a4e (CONDITIONAL_JUMP)  ; LAB_004b0a4e
     POP EDI                             ; 004b0a66
         ;   Label: LAB_004b0a66
     ADD ESP,0x8                         ; 004b0a67
@@ -129,19 +129,19 @@ section .text
     RET                                 ; 004b0a6e
     TEST EBP,EBP                        ; 004b0a6f
         ;   Label: LAB_004b0a6f
-    JZ 0x004b0a67                       ; 004b0a71 | LAB_004b0a67
-        ;   XREF to: 004b0a67 (CONDITIONAL_JUMP)
+    JZ 0x004b0a67                       ; 004b0a71
+        ;   XREF to: 004b0a67 (CONDITIONAL_JUMP)  ; LAB_004b0a67
     CMP dword ptr [EBX + 0x34e8],0x19   ; 004b0a73
-    JL 0x004b0aa1                       ; 004b0a7a | LAB_004b0aa1
-        ;   XREF to: 004b0aa1 (CONDITIONAL_JUMP)
+    JL 0x004b0aa1                       ; 004b0a7a
+        ;   XREF to: 004b0aa1 (CONDITIONAL_JUMP)  ; LAB_004b0aa1
     PUSH 0x19                           ; 004b0a7c
-    MOV ECX,0x625c49                    ; 004b0a7e | = "..\\core\\event.cpp" | s_core_event_cpp_00625c49 = ..\core\event.cpp
+    MOV ECX,0x625c49                    ; 004b0a7e | = "..\\core\\event.cpp"
     MOV ESI,0xb38                       ; 004b0a83
-    PUSH 0x625c5b                       ; 004b0a88 | = "CEventList::setActorVariable - alread..." | s_CEventList_setActorVaria_00625c5b = CEventList::setActorVariable - already too many actor variables.  Max is %d.
-    MOV dword ptr [0x02f0ca48],ECX      ; 004b0a8d | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 004b0a93 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b0a99 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x625c5b                       ; 004b0a88 | = "CEventList::setActorVariable - alread..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 004b0a8d | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 004b0a93 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b0a99
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 004b0a9e
     MOV EAX,dword ptr [EBX + 0x34e8]    ; 004b0aa1
         ;   Label: LAB_004b0aa1
@@ -159,15 +159,15 @@ section .text
         ;   Label: LAB_004b0abf
     MOV byte ptr [EDI],AL               ; 004b0ac1
     CMP AL,0x0                          ; 004b0ac3
-    JZ 0x004b0ad7                       ; 004b0ac5 | LAB_004b0ad7
-        ;   XREF to: 004b0ad7 (CONDITIONAL_JUMP)
+    JZ 0x004b0ad7                       ; 004b0ac5
+        ;   XREF to: 004b0ad7 (CONDITIONAL_JUMP)  ; LAB_004b0ad7
     MOV AL,byte ptr [ESI + 0x1]         ; 004b0ac7
     ADD ESI,0x2                         ; 004b0aca
     MOV byte ptr [EDI + 0x1],AL         ; 004b0acd
     ADD EDI,0x2                         ; 004b0ad0
     CMP AL,0x0                          ; 004b0ad3
-    JNZ 0x004b0abf                      ; 004b0ad5 | LAB_004b0abf
-        ;   XREF to: 004b0abf (CONDITIONAL_JUMP)
+    JNZ 0x004b0abf                      ; 004b0ad5
+        ;   XREF to: 004b0abf (CONDITIONAL_JUMP)  ; LAB_004b0abf
     POP EDI                             ; 004b0ad7
         ;   Label: LAB_004b0ad7
     MOV EAX,dword ptr [EBX + 0x34e8]    ; 004b0ad8
@@ -183,15 +183,15 @@ section .text
         ;   Label: LAB_004b0af2
     MOV byte ptr [EDI],AL               ; 004b0af4
     CMP AL,0x0                          ; 004b0af6
-    JZ 0x004b0b0a                       ; 004b0af8 | LAB_004b0b0a
-        ;   XREF to: 004b0b0a (CONDITIONAL_JUMP)
+    JZ 0x004b0b0a                       ; 004b0af8
+        ;   XREF to: 004b0b0a (CONDITIONAL_JUMP)  ; LAB_004b0b0a
     MOV AL,byte ptr [ESI + 0x1]         ; 004b0afa
     ADD ESI,0x2                         ; 004b0afd
     MOV byte ptr [EDI + 0x1],AL         ; 004b0b00
     ADD EDI,0x2                         ; 004b0b03
     CMP AL,0x0                          ; 004b0b06
-    JNZ 0x004b0af2                      ; 004b0b08 | LAB_004b0af2
-        ;   XREF to: 004b0af2 (CONDITIONAL_JUMP)
+    JNZ 0x004b0af2                      ; 004b0b08
+        ;   XREF to: 004b0af2 (CONDITIONAL_JUMP)  ; LAB_004b0af2
     POP EDI                             ; 004b0b0a
         ;   Label: LAB_004b0b0a
     INC dword ptr [EBX + 0x34e8]        ; 004b0b0b
@@ -221,8 +221,8 @@ section .text
     PUSH ECX                            ; 004b0b42
     PUSH EDX                            ; 004b0b43
     MOV EDI,EAX                         ; 004b0b44
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b0b46 | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b0b46
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     MOV EAX,dword ptr [EBX + 0x34e8]    ; 004b0b4b
     SUB EAX,ESI                         ; 004b0b51
     ADD EAX,EAX                         ; 004b0b53
@@ -236,8 +236,8 @@ section .text
     PUSH EDI                            ; 004b0b65
     MOV EAX,dword ptr [ESP + 0xc]       ; 004b0b66
     PUSH EAX                            ; 004b0b6a
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b0b6b | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b0b6b
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004b0b70
     ADD ESP,0x8                         ; 004b0b73
     POP EBP                             ; 004b0b76

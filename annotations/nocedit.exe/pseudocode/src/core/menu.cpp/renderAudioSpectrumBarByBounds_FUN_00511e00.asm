@@ -26,8 +26,8 @@ section .text
     PUSH EDX                            ; 00511e0f
     MOV EBX,dword ptr [ESP + 0x10]      ; 00511e10
     PUSH EBX                            ; 00511e14
-    CALL core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 ; 00511e15 | void core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center, int y_top, int height_half)
-        ;   XREF to: 0050fe70 (UNCONDITIONAL_CALL)
+    CALL core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 ; 00511e15
+        ;   XREF to: 0050fe70 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center, int y_top, int height_half)
     ADD ESP,0xc                         ; 00511e1a
     POP EBX                             ; 00511e1d
     RET                                 ; 00511e1e

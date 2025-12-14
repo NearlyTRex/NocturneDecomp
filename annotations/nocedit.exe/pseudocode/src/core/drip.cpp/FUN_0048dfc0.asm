@@ -20,19 +20,19 @@ section .text
 
     PUSH 0x32                           ; 0048dfc0
         ;   Label: core_drip.cpp_FUN_0048dfc0
-    PUSH 0x622205                       ; 0048dfc2 | = "..\\core\\drip.cpp" | s_core_drip_cpp_00622205 = ..\core\drip.cpp
+    PUSH 0x622205                       ; 0048dfc2 | = "..\\core\\drip.cpp"
     PUSH 0x33c                          ; 0048dfc7
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0048dfcc | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0048dfcc
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0048dfd1
     TEST EAX,EAX                        ; 0048dfd4
-    JNZ 0x0048dfd9                      ; 0048dfd6 | LAB_0048dfd9
-        ;   XREF to: 0048dfd9 (CONDITIONAL_JUMP)
+    JNZ 0x0048dfd9                      ; 0048dfd6
+        ;   XREF to: 0048dfd9 (CONDITIONAL_JUMP)  ; LAB_0048dfd9
     RET                                 ; 0048dfd8
     PUSH EAX                            ; 0048dfd9
         ;   Label: LAB_0048dfd9
-    CALL core_drip.cpp_ctor_FUN_0048e000 ; 0048dfda | CDrip * core_drip.cpp_ctor_FUN_0048e000(CDrip * this_ptr)
-        ;   XREF to: 0048e000 (UNCONDITIONAL_CALL)
+    CALL core_drip.cpp_ctor_FUN_0048e000 ; 0048dfda
+        ;   XREF to: 0048e000 (UNCONDITIONAL_CALL)  ; CDrip * core_drip.cpp_ctor_FUN_0048e000(CDrip * this_ptr)
     ADD ESP,0x4                         ; 0048dfdf
     RET                                 ; 0048dfe2
 

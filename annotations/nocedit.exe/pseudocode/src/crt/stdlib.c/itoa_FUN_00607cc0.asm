@@ -42,21 +42,21 @@ section .text
     XOR EDX,EDX                         ; 00607ce8
     DIV dword ptr [EBX]                 ; 00607cea
     MOV dword ptr [EBX],EAX             ; 00607cec
-    MOV DL,byte ptr [EDX + 0x6851d8]    ; 00607cee | = "0123456789abcdefghijklmnopqrstuvwxyz" | s_s_0123456789abcdefghijkl_006851d8 = 0123456789abcdefghijklmnopqrstuvwxyz
+    MOV DL,byte ptr [EDX + 0x6851d8]    ; 00607cee | = "0123456789abcdefghijklmnopqrstuvwxyz"
     MOV byte ptr [ECX],DL               ; 00607cf4
     MOV EDX,dword ptr [ESP + 0x24]      ; 00607cf6
     INC ECX                             ; 00607cfa
     TEST EDX,EDX                        ; 00607cfb
-    JNZ 0x00607cde                      ; 00607cfd | LAB_00607cde
-        ;   XREF to: 00607cde (CONDITIONAL_JUMP)
+    JNZ 0x00607cde                      ; 00607cfd
+        ;   XREF to: 00607cde (CONDITIONAL_JUMP)  ; LAB_00607cde
     INC ESI                             ; 00607cff
         ;   Label: LAB_00607cff
     MOV DL,byte ptr [ECX + -0x1]        ; 00607d00
     DEC ECX                             ; 00607d03
     MOV byte ptr [ESI + -0x1],DL        ; 00607d04
     TEST DL,DL                          ; 00607d07
-    JNZ 0x00607cff                      ; 00607d09 | LAB_00607cff
-        ;   XREF to: 00607cff (CONDITIONAL_JUMP)
+    JNZ 0x00607cff                      ; 00607d09
+        ;   XREF to: 00607cff (CONDITIONAL_JUMP)  ; LAB_00607cff
     MOV EAX,EBP                         ; 00607d0b
     ADD ESP,0x28                        ; 00607d0d
     POP EBP                             ; 00607d10

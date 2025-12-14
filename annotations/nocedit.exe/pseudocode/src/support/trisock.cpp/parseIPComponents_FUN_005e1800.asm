@@ -37,15 +37,15 @@ section .text
     PUSH EAX                            ; 005e1812
     LEA EAX,[ESP + 0xc]                 ; 005e1813
     PUSH EAX                            ; 005e1817
-    PUSH 0x6564e8                       ; 005e1818 | = "%d.%d.%d.%d" | s_d_d_d_d_006564e8 = %d.%d.%d.%d
+    PUSH 0x6564e8                       ; 005e1818 | = "%d.%d.%d.%d"
     MOV EDX,dword ptr [ESP + 0x30]      ; 005e181d
     PUSH EDX                            ; 005e1821
-    CALL crt_stdio.c_sscanf_FUN_0060013c ; 005e1822 | int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
-        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sscanf_FUN_0060013c ; 005e1822
+        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
     ADD ESP,0x18                        ; 005e1827
     CMP EAX,0x4                         ; 005e182a
-    JZ 0x005e1836                       ; 005e182d | LAB_005e1836
-        ;   XREF to: 005e1836 (CONDITIONAL_JUMP)
+    JZ 0x005e1836                       ; 005e182d
+        ;   XREF to: 005e1836 (CONDITIONAL_JUMP)  ; LAB_005e1836
     XOR EAX,EAX                         ; 005e182f
     ADD ESP,0x10                        ; 005e1831
     POP EBP                             ; 005e1834
@@ -64,8 +64,8 @@ section .text
     PUSH EDI                            ; 005e184c
     MOV EBP,dword ptr [ESP + 0x34]      ; 005e184d
     PUSH EBP                            ; 005e1851
-    CALL support_trisock.cpp_buildIPAddress_FUN_005e1870 ; 005e1852 | int support_trisock.cpp_buildIPAddress_FUN_005e1870(uint8_t * dest_ip, int octet1, int octet2, int octet3, ...)
-        ;   XREF to: 005e1870 (UNCONDITIONAL_CALL)
+    CALL support_trisock.cpp_buildIPAddress_FUN_005e1870 ; 005e1852
+        ;   XREF to: 005e1870 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_buildIPAddress_FUN_005e1870(uint8_t * dest_ip, int octet1, int octet2, int octet3, ...)
     ADD ESP,0x14                        ; 005e1857
     POP EBX                             ; 005e185a
     POP ESI                             ; 005e185b

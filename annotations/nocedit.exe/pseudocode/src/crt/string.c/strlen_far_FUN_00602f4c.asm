@@ -30,12 +30,12 @@ section .text
     MOV CL,byte ptr ES:[EBX]            ; 00602f62
     INC EDX                             ; 00602f65
     TEST CL,CL                          ; 00602f66
-    JZ 0x00602d72                       ; 00602f68 | LAB_00602d72
-        ;   XREF to: 00602d72 (CONDITIONAL_JUMP)
+    JZ 0x00602d72                       ; 00602f68
+        ;   XREF to: 00602d72 (CONDITIONAL_JUMP)  ; LAB_00602d72
     CMP EAX,ESI                         ; 00602f6e
-    JZ 0x00602d72                       ; 00602f70 | LAB_00602d72
-        ;   XREF to: 00602d72 (CONDITIONAL_JUMP)
+    JZ 0x00602d72                       ; 00602f70
+        ;   XREF to: 00602d72 (CONDITIONAL_JUMP)  ; LAB_00602d72
     INC EAX                             ; 00602f76
-    JMP 0x00602f60                      ; 00602f77 | LAB_00602f60
-        ;   XREF to: 00602f60 (UNCONDITIONAL_JUMP)
+    JMP 0x00602f60                      ; 00602f77
+        ;   XREF to: 00602f60 (UNCONDITIONAL_JUMP)  ; LAB_00602f60
 

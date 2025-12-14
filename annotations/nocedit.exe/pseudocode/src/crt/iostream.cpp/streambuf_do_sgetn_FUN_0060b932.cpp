@@ -37,7 +37,7 @@ crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932
       uVar1 = bytes_to_read;
     }
     pcVar4 = buffer->__get_ptr;
-    pcVar5 = (char *)output_buffer;
+    pcVar5 = output_buffer;
     for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
       *(uint *)pcVar5 = *(uint *)pcVar4;
       pcVar4 = pcVar4 + (uint)bVar6 * -8 + 4;

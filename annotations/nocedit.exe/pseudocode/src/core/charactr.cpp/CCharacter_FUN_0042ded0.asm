@@ -36,21 +36,21 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 0042dee4
     PUSH EAX                            ; 0042dee8
     PUSH EBX                            ; 0042dee9
-    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 0042deea | CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 0042deea
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 0042deef
     LEA EAX,[EBX + 0x241c]              ; 0042def2
     PUSH EAX                            ; 0042def8
     LEA EAX,[ESP + 0x28]                ; 0042def9
     PUSH EAX                            ; 0042defd
     PUSH EBX                            ; 0042defe
-    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 0042deff | CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 0042deff
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     LEA EAX,[EBX + 0x30]                ; 0042df04
     ADD ESP,0xc                         ; 0042df07
     CMP EAX,ESI                         ; 0042df0a
-    JZ 0x0042df1e                       ; 0042df0c | LAB_0042df1e
-        ;   XREF to: 0042df1e (CONDITIONAL_JUMP)
+    JZ 0x0042df1e                       ; 0042df0c
+        ;   XREF to: 0042df1e (CONDITIONAL_JUMP)  ; LAB_0042df1e
     MOV EDX,dword ptr [ESI]             ; 0042df0e
     MOV dword ptr [EAX],EDX             ; 0042df10
     MOV EDX,dword ptr [ESI + 0x4]       ; 0042df12
@@ -59,21 +59,21 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 0042df1b
     PUSH EBX                            ; 0042df1e
         ;   Label: LAB_0042df1e
-    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 0042df1f | void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 0042df1f
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0042df24
     LEA EAX,[ESP + 0x18]                ; 0042df27
     PUSH EAX                            ; 0042df2b
     LEA EAX,[ESP + 0x4]                 ; 0042df2c
     PUSH EAX                            ; 0042df30
     PUSH EBX                            ; 0042df31
-    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 ; 0042df32 | CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
-        ;   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 ; 0042df32
+        ;   XREF to: 00408ea0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     LEA EDX,[EBX + 0x23ac]              ; 0042df37
     ADD ESP,0xc                         ; 0042df3d
     CMP EDX,EAX                         ; 0042df40
-    JZ 0x0042df54                       ; 0042df42 | LAB_0042df54
-        ;   XREF to: 0042df54 (CONDITIONAL_JUMP)
+    JZ 0x0042df54                       ; 0042df42
+        ;   XREF to: 0042df54 (CONDITIONAL_JUMP)  ; LAB_0042df54
     MOV ECX,dword ptr [EAX]             ; 0042df44
     MOV dword ptr [EDX],ECX             ; 0042df46
     MOV ECX,dword ptr [EAX + 0x4]       ; 0042df48
@@ -86,13 +86,13 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0042df59
     PUSH EAX                            ; 0042df5d
     PUSH EBX                            ; 0042df5e
-    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 ; 0042df5f | CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
-        ;   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 ; 0042df5f
+        ;   XREF to: 00408ea0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD EBX,0x241c                      ; 0042df64
     ADD ESP,0xc                         ; 0042df6a
     CMP EBX,EAX                         ; 0042df6d
-    JNZ 0x0042df77                      ; 0042df6f | LAB_0042df77
-        ;   XREF to: 0042df77 (CONDITIONAL_JUMP)
+    JNZ 0x0042df77                      ; 0042df6f
+        ;   XREF to: 0042df77 (CONDITIONAL_JUMP)  ; LAB_0042df77
     ADD ESP,0x30                        ; 0042df71
     POP ESI                             ; 0042df74
     POP EBX                             ; 0042df75

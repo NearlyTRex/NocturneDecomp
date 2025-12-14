@@ -1,376 +1,376 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 341, 
-    "pseudocode_lines": 121, 
-    "cross_reference_count": 3, 
-    "global_count": 5, 
-    "total_lines": 443, 
-    "assembly_lines": 322, 
-    "suspect_count": 20, 
+    "assembly_lines": 322,
+    "complexity_score": 341,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 121,
+    "suspect_count": 20,
     "suspect_types": [
-      "concat_artifact", 
-      "unknown_field", 
-      "extra_output", 
+      "concat_artifact",
+      "extra_output",
+      "unknown_field",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_bugs.cpp_FUN_00427ba0", 
-      "addr": "00427ba0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640c4b", 
-      "addr": "00640c4b", 
-      "value": "0.300000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640c53", 
-      "addr": "00640c53", 
-      "value": "0.590000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640c5b", 
-      "addr": "00640c5b", 
-      "value": "0.110000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640c63", 
-      "addr": "00640c63", 
-      "value": "0.700000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640c6b", 
-      "addr": "00640c6b", 
-      "value": "0.330000000000000"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint extraout_ECX;"
-    }, 
-    {
-      "line": 17, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "float extraout_ECX_00;"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 58, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(float)CONCAT44 /* combine 2-byte values */(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))"
-    }, 
-    {
-      "line": 58, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(float)CONCAT44 /* combine 2-byte values */(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))"
-    }, 
-    {
-      "line": 62, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "this_ptr->boxes[box_index].red_variance = extraout_ECX_00;"
-    }, 
-    {
-      "line": 63, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "this_ptr->boxes[box_index].green_variance = extraout_ECX_00;"
-    }, 
-    {
-      "line": 64, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "this_ptr->boxes[box_index].blue_variance = extraout_ECX_00;"
-    }, 
-    {
-      "line": 65, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "this_ptr->boxes[box_index].intensity_variance = extraout_ECX_00;"
-    }, 
-    {
-      "line": 66, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "this_ptr->boxes[box_index].weighted_variance = extraout_ECX_00;"
-    }, 
-    {
-      "line": 68, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar18)));"
-    }, 
-    {
-      "line": 68, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar18)));"
-    }, 
-    {
-      "line": 70, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "for (iVar18 = this_ptr->boxes[box_index].start_index * 4; iVar18 < extraout_EDX;"
-    }, 
-    {
-      "line": 72, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -"
-    }, 
-    {
-      "line": 75, 
-      "match": "._0_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar10._0_2_ = this_ptr->boxes[box_index].avg_red;"
-    }, 
-    {
-      "line": 76, 
-      "match": "._2_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar10._2_2_ = this_ptr->boxes[box_index].avg_green;"
-    }, 
-    {
-      "line": 79, 
-      "match": "._0_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_green;"
-    }, 
-    {
-      "line": 80, 
-      "match": "._2_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_blue;"
-    }, 
-    {
-      "line": 83, 
-      "match": "._0_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_blue;"
-    }, 
-    {
-      "line": 84, 
-      "match": "._2_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_intensity;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00555090", 
-    "signature": "void shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer * this_ptr, int box_index)", 
-    "address_range": [
-      [
-        "00555090", 
-        "005554f9"
-      ]
-    ], 
-    "name": "shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090"
-  }, 
-  "stack_frame": {
-    "local_size": 92, 
-    "variables": [
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CColorQuantizer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "box_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 100, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 443
+  },
   "cross_references": [
     {
-      "from_addr": "00554cd1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0", 
-      "addr": "00554cc0"
-    }, 
+      "addr": "00554cc0",
+      "from_addr": "00554cd1",
+      "name": "shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00555c44", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40", 
-      "addr": "00555a40"
-    }, 
+      "addr": "00555a40",
+      "from_addr": "00555c44",
+      "name": "shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00554fe0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70", 
-      "addr": "00554e70"
+      "addr": "00554e70",
+      "from_addr": "00554fe0",
+      "name": "shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00555090",
+    "address_range": [
+      [
+        "00555090",
+        "005554f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090",
+    "signature": "void shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090(CColorQuantizer * this_ptr, int box_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00427ba0",
+      "name": "core_bugs.cpp_FUN_00427ba0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640c4b",
+      "name": "DOUBLE_00640c4b",
+      "type": "double",
+      "value": "0.300000000000000"
+    },
+    {
+      "addr": "00640c53",
+      "name": "DOUBLE_00640c53",
+      "type": "double",
+      "value": "0.590000000000000"
+    },
+    {
+      "addr": "00640c5b",
+      "name": "DOUBLE_00640c5b",
+      "type": "double",
+      "value": "0.110000000000000"
+    },
+    {
+      "addr": "00640c63",
+      "name": "DOUBLE_00640c63",
+      "type": "double",
+      "value": "0.700000000000000"
+    },
+    {
+      "addr": "00640c6b",
+      "name": "DOUBLE_00640c6b",
+      "type": "double",
+      "value": "0.330000000000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 100,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CColorQuantizer *"
+      },
+      {
+        "is_param": true,
+        "name": "box_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_ECX",
+      "text": "uint extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_ECX_00",
+      "text": "float extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 58,
+      "match": "extraout_ECX",
+      "text": "(float)CONCAT44 /* combine 2-byte values */(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 58,
+      "match": "CONCAT44",
+      "text": "(float)CONCAT44 /* combine 2-byte values */(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 62,
+      "match": "extraout_ECX_00",
+      "text": "this_ptr->boxes[box_index].red_variance = extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 63,
+      "match": "extraout_ECX_00",
+      "text": "this_ptr->boxes[box_index].green_variance = extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 64,
+      "match": "extraout_ECX_00",
+      "text": "this_ptr->boxes[box_index].blue_variance = extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 65,
+      "match": "extraout_ECX_00",
+      "text": "this_ptr->boxes[box_index].intensity_variance = extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 66,
+      "match": "extraout_ECX_00",
+      "text": "this_ptr->boxes[box_index].weighted_variance = extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 68,
+      "match": "extraout_ECX_00",
+      "text": "((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar18)));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 68,
+      "match": "CONCAT44",
+      "text": "((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar18)));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 70,
+      "match": "extraout_EDX",
+      "text": "for (iVar18 = this_ptr->boxes[box_index].start_index * 4; iVar18 < extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(int *)((int)",
+      "text": "uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._0_2_",
+      "text": "iVar10._0_2_ = this_ptr->boxes[box_index].avg_red;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 76,
+      "match": "._2_2_",
+      "text": "iVar10._2_2_ = this_ptr->boxes[box_index].avg_green;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
+      "match": "._0_2_",
+      "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_green;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._2_2_",
+      "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_blue;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 83,
+      "match": "._0_2_",
+      "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_blue;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 84,
+      "match": "._2_2_",
+      "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_intensity;",
+      "type": "unknown_field"
     }
   ]
 }

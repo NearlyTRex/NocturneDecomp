@@ -35,8 +35,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x20]      ; 00409162
     LEA EAX,[ESP + 0xc]                 ; 00409165
     PUSH EAX                            ; 00409169
-    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0 ; 0040916a | SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo * this_ptr)
-        ;   XREF to: 005743c0 (UNCONDITIONAL_CALL)
+    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0 ; 0040916a
+        ;   XREF to: 005743c0 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 0040916f
     XOR EDX,EDX                         ; 00409172
     MOV dword ptr [ESP + 0xc],EDX       ; 00409174
@@ -49,8 +49,8 @@ section .text
     CALL dword ptr [EAX + 0x34]         ; 0040918a
     ADD ESP,0x8                         ; 0040918d
     CMP EAX,0x2                         ; 00409190
-    JZ 0x0040919e                       ; 00409193 | LAB_0040919e
-        ;   XREF to: 0040919e (CONDITIONAL_JUMP)
+    JZ 0x0040919e                       ; 00409193
+        ;   XREF to: 0040919e (CONDITIONAL_JUMP)  ; LAB_0040919e
     XOR EAX,EAX                         ; 00409195
         ;   Label: LAB_00409195
     MOV ESP,EBP                         ; 00409197
@@ -76,8 +76,8 @@ section .text
     FSUB float ptr [EBX + 0x8]          ; 004091c2
     PUSH EAX                            ; 004091c5
     FSTP float ptr [ESP + 0x70]         ; 004091c6
-    CALL core_actor.cpp_rayCylinderIntersect_FUN_00408340 ; 004091ca | float core_actor.cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
-        ;   XREF to: 00408340 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_rayCylinderIntersect_FUN_00408340 ; 004091ca
+        ;   XREF to: 00408340 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0x74],EAX      ; 004091cf
     FLD float ptr [ESP + 0x74]          ; 004091d3
     ADD ESP,0x10                        ; 004091d7
@@ -88,17 +88,17 @@ section .text
     FCOMP double ptr [ESP]              ; 004091e5
     FNSTSW AX                           ; 004091e8
     SAHF                                ; 004091ea
-    JA 0x00409195                       ; 004091eb | LAB_00409195
-        ;   XREF to: 00409195 (CONDITIONAL_JUMP)
+    JA 0x00409195                       ; 004091eb
+        ;   XREF to: 00409195 (CONDITIONAL_JUMP)  ; LAB_00409195
     FLD1                                ; 004091ed
     FCOMP double ptr [ESP]              ; 004091ef
     FNSTSW AX                           ; 004091f2
     SAHF                                ; 004091f4
-    JC 0x00409195                       ; 004091f5 | LAB_00409195
-        ;   XREF to: 00409195 (CONDITIONAL_JUMP)
+    JC 0x00409195                       ; 004091f5
+        ;   XREF to: 00409195 (CONDITIONAL_JUMP)  ; LAB_00409195
     TEST ESI,ESI                        ; 004091f7
-    JZ 0x0040925b                       ; 004091f9 | LAB_0040925b
-        ;   XREF to: 0040925b (CONDITIONAL_JUMP)
+    JZ 0x0040925b                       ; 004091f9
+        ;   XREF to: 0040925b (CONDITIONAL_JUMP)  ; LAB_0040925b
     FLD float ptr [ESP + 0x8]           ; 004091fb
     FLD float ptr [ESP + 0x58]          ; 004091ff
     FMUL ST1                            ; 00409203
@@ -121,8 +121,8 @@ section .text
     LEA EAX,[ESP + 0x40]                ; 0040923b
     FSTP float ptr [ESP + 0x48]         ; 0040923f
     CMP ESI,EAX                         ; 00409243
-    JZ 0x0040925b                       ; 00409245 | LAB_0040925b
-        ;   XREF to: 0040925b (CONDITIONAL_JUMP)
+    JZ 0x0040925b                       ; 00409245
+        ;   XREF to: 0040925b (CONDITIONAL_JUMP)  ; LAB_0040925b
     MOV EAX,dword ptr [ESP + 0x40]      ; 00409247
     MOV dword ptr [ESI],EAX             ; 0040924b
     MOV EAX,dword ptr [ESP + 0x44]      ; 0040924d

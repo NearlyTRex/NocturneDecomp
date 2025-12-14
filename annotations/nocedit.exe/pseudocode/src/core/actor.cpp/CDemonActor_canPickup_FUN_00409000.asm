@@ -19,11 +19,11 @@ section .text
 
     PUSH 0x330                          ; 00409000
         ;   Label: core_actor.cpp_CDemonActor_canPickup_FUN_00409000
-    PUSH 0x6137d4                       ; 00409005 | = "..\\core\\actor.cpp" | s_core_actor_cpp_006137d4 = ..\core\actor.cpp
+    PUSH 0x6137d4                       ; 00409005 | = "..\\core\\actor.cpp"
     MOV EDX,dword ptr [ESP + 0xc]       ; 0040900a
     PUSH EDX                            ; 0040900e
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 0040900f | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 0040900f
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     ADD ESP,0xc                         ; 00409014
     XOR EAX,EAX                         ; 00409017
     RET                                 ; 00409019

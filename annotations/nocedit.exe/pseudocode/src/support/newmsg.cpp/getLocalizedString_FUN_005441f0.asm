@@ -37,16 +37,16 @@ section .text
         ;   Label: support_newmsg.cpp_getLocalizedString_FUN_005441f0
     PUSH EBP                            ; 005441f1
     MOV EDI,dword ptr [ESP + 0xc]       ; 005441f2
-    CMP dword ptr [0x02fa8cd4],0x0      ; 005441f6 | int g_LocalizationLoaded
-    JZ 0x00544213                       ; 005441fd | LAB_00544213
-        ;   XREF to: 00544213 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x02fa8cd4],0x0      ; 005441f6 | g_LocalizationLoaded
+    JZ 0x00544213                       ; 005441fd
+        ;   XREF to: 00544213 (CONDITIONAL_JUMP)  ; LAB_00544213
     PUSH ESI                            ; 005441ff
     PUSH EBX                            ; 00544200
-    MOV EBX,dword ptr [0x02fa8cd8]      ; 00544201 | int g_LocalizedStringCount
+    MOV EBX,dword ptr [0x02fa8cd8]      ; 00544201 | g_LocalizedStringCount
     DEC EBX                             ; 00544207
     TEST EBX,EBX                        ; 00544208
-    JGE 0x00544218                      ; 0054420a | LAB_00544218
-        ;   XREF to: 00544218 (CONDITIONAL_JUMP)
+    JGE 0x00544218                      ; 0054420a
+        ;   XREF to: 00544218 (CONDITIONAL_JUMP)  ; LAB_00544218
     MOV EAX,EDI                         ; 0054420c
     POP EBX                             ; 0054420e
     POP ESI                             ; 0054420f
@@ -66,18 +66,18 @@ section .text
     SAR EAX,0x1                         ; 00544221
     MOV ESI,EAX                         ; 00544223
     LEA EBP,[EAX*0x4 + 0x0]             ; 00544225
-    MOV ECX,dword ptr [EBP + 0x2fa8cdc] ; 0054422c | char *[500] g_MessageKeys
+    MOV ECX,dword ptr [EBP + 0x2fa8cdc] ; 0054422c | g_MessageKeys
     PUSH ECX                            ; 00544232
     PUSH EDI                            ; 00544233
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 00544234 | int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strcmp_FUN_005fef20 ; 00544234
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 00544239
     TEST EAX,EAX                        ; 0054423c
-    JL 0x0054424d                       ; 0054423e | LAB_0054424d
-        ;   XREF to: 0054424d (CONDITIONAL_JUMP)
-    JG 0x0054425f                       ; 00544240 | LAB_0054425f
-        ;   XREF to: 0054425f (CONDITIONAL_JUMP)
-    MOV EAX,dword ptr [EBP + 0x2fa94ac] ; 00544242 | char *[500] g_MessageTexts
+    JL 0x0054424d                       ; 0054423e
+        ;   XREF to: 0054424d (CONDITIONAL_JUMP)  ; LAB_0054424d
+    JG 0x0054425f                       ; 00544240
+        ;   XREF to: 0054425f (CONDITIONAL_JUMP)  ; LAB_0054425f
+    MOV EAX,dword ptr [EBP + 0x2fa94ac] ; 00544242 | g_MessageTexts
     POP EBX                             ; 00544248
     POP ESI                             ; 00544249
     POP EBP                             ; 0054424a
@@ -88,8 +88,8 @@ section .text
     PUSH ESI                            ; 0054424e
     PUSH 0x0                            ; 0054424f
     PUSH EDI                            ; 00544251
-    CALL support_newmsg.cpp_findLocalizedString_FUN_00544170 ; 00544252 | char * support_newmsg.cpp_findLocalizedString_FUN_00544170(char * key, int lower_bound, int upper_bound)
-        ;   XREF to: 00544170 (UNCONDITIONAL_CALL)
+    CALL support_newmsg.cpp_findLocalizedString_FUN_00544170 ; 00544252
+        ;   XREF to: 00544170 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_findLocalizedString_FUN_00544170(char * key, int lower_bound, int upper_bound)
     ADD ESP,0xc                         ; 00544257
     POP EBX                             ; 0054425a
     POP ESI                             ; 0054425b
@@ -101,8 +101,8 @@ section .text
     INC ESI                             ; 00544260
     PUSH ESI                            ; 00544261
     PUSH EDI                            ; 00544262
-    CALL support_newmsg.cpp_findLocalizedString_FUN_00544170 ; 00544263 | char * support_newmsg.cpp_findLocalizedString_FUN_00544170(char * key, int lower_bound, int upper_bound)
-        ;   XREF to: 00544170 (UNCONDITIONAL_CALL)
+    CALL support_newmsg.cpp_findLocalizedString_FUN_00544170 ; 00544263
+        ;   XREF to: 00544170 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_findLocalizedString_FUN_00544170(char * key, int lower_bound, int upper_bound)
     ADD ESP,0xc                         ; 00544268
     POP EBX                             ; 0054426b
     POP ESI                             ; 0054426c

@@ -1,223 +1,223 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 213, 
-    "pseudocode_lines": 83, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 154, 
-    "assembly_lines": 71, 
-    "suspect_count": 11, 
+    "assembly_lines": 71,
+    "complexity_score": 213,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 5,
+    "pseudocode_lines": 83,
+    "suspect_count": 11,
     "suspect_types": [
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_init.c_ProcessInitTermHandlers_FUN_0060ac30", 
-      "addr": "0060ac30"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_stack.c_GetStackUsage_FUN_0060c260", 
-      "addr": "0060c260"
-    }, 
-    {
-      "name": "crt_stack.c_ProbeStackSpace_FUN_005ffa2f", 
-      "addr": "005ffa2f"
-    }, 
-    {
-      "name": "crt_startup.c_ExitApplication_FUN_0060b534", 
-      "addr": "0060b534"
-    }, 
-    {
-      "name": "crt_startup.c_PlaceholderStub_FUN_0060ca80", 
-      "addr": "0060ca80"
-    }, 
-    {
-      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8", 
-      "addr": "006026a8"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_winMain_FUN_005f3680", 
-      "addr": "005f3680"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GetModuleHandleA*", 
-      "name": "GetModuleHandleA", 
-      "addr": "006115b4", 
-      "value": "00211f6e"
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_WinMainCmdShow", 
-      "addr": "00684fd4", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_StackAllocSize", 
-      "addr": "00684ff8", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CrtStackBuffer", 
-      "addr": "00684ffc", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_RuntimeBufferSize", 
-      "addr": "006854f8", 
-      "value": "0xf4"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "high", 
-    "note": "Function contains stack manipulation that severely impacts decompilation quality.", 
-    "pattern_count": 2, 
-    "patterns": [
-      {
-        "address": "00609e8b", 
-        "impact": "Variable-size stack allocation makes ESP unpredictable. Stack variables may appear as parameters or have incorrect offsets.", 
-        "description": "Dynamic stack allocation (SUB ESP, EAX)", 
-        "pattern_id": "dynamic_alloca", 
-        "instruction": "SUB ESP,EAX"
-      }, 
-      {
-        "address": "00609ede", 
-        "impact": "Variable-size stack allocation makes ESP unpredictable. Stack variables may appear as parameters or have incorrect offsets.", 
-        "description": "Dynamic stack allocation (SUB ESP, EAX)", 
-        "pattern_id": "dynamic_alloca", 
-        "instruction": "SUB ESP,EAX"
-      }
-    ], 
-    "pattern_types": [
-      "dynamic_alloca"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 37, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar2 = (byte *)((int)&uStack_1c + stackBufferOffset);"
-    }, 
-    {
-      "line": 38, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&uStack_1c + stackBufferOffset) = 0x609e9e;"
-    }, 
-    {
-      "line": 44, 
-      "match": "&stack0x000000e4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(DWORD *)(&stack0x000000e4 + stackBufferOffset) = g_RuntimeBufferSize;"
-    }, 
-    {
-      "line": 60, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pRuntimeStack = (uint *)((int)puVar4 + stackBufferOffset + 8);"
-    }, 
-    {
-      "line": 61, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pStackBuffer = (uint *)((int)puVar4 + stackBufferOffset + 8);"
-    }, 
-    {
-      "line": 66, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_CrtStackBuffer = (void *)((int)pStackBuffer + g_StackAllocSize);"
-    }, 
-    {
-      "line": 83, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)pWinMainFrame + 0x10) = exitCode;"
-    }, 
-    {
-      "line": 84, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pWinMainFrame + 0xc) = 0x609f18;"
-    }, 
-    {
-      "line": 85, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "crt_startup_c_ExitApplication_FUN_0060b534(*(int *)((int)pWinMainFrame + 0x10));"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "00609e70", 
-    "signature": "void crt_startup.cpp_WinMainBootstrap_FUN_00609e70(void)", 
-    "address_range": [
-      [
-        "00609e70", 
-        "00609f1f"
-      ]
-    ], 
-    "name": "crt_startup.cpp_WinMainBootstrap_FUN_00609e70"
-  }, 
-  "stack_frame": {
-    "local_size": 20, 
-    "variables": [
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "BYTE[8]", 
-        "size": 8, 
-        "name": "runtimeInitParams"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 154
+  },
   "cross_references": [
     {
-      "from_addr": "0060239a", 
-      "type": "UNCONDITIONAL_JUMP", 
-      "name": "entry", 
-      "addr": "0060239a"
+      "addr": "0060239a",
+      "from_addr": "0060239a",
+      "name": "entry",
+      "type": "UNCONDITIONAL_JUMP"
+    }
+  ],
+  "function": {
+    "address": "00609e70",
+    "address_range": [
+      [
+        "00609e70",
+        "00609f1f"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_startup.cpp_WinMainBootstrap_FUN_00609e70",
+    "signature": "void crt_startup.cpp_WinMainBootstrap_FUN_00609e70(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060ac30",
+      "name": "crt_init.c_ProcessInitTermHandlers_FUN_0060ac30"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "0060c260",
+      "name": "crt_stack.c_GetStackUsage_FUN_0060c260"
+    },
+    {
+      "addr": "005ffa2f",
+      "name": "crt_stack.c_ProbeStackSpace_FUN_005ffa2f"
+    },
+    {
+      "addr": "0060b534",
+      "name": "crt_startup.c_ExitApplication_FUN_0060b534"
+    },
+    {
+      "addr": "0060ca80",
+      "name": "crt_startup.c_PlaceholderStub_FUN_0060ca80"
+    },
+    {
+      "addr": "006026a8",
+      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8"
+    },
+    {
+      "addr": "005f3680",
+      "name": "wincore_winrun.cpp_winMain_FUN_005f3680"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006115b4",
+      "name": "GetModuleHandleA",
+      "type": "GetModuleHandleA*",
+      "value": "00211f6e"
+    },
+    {
+      "addr": "00684fd4",
+      "name": "g_WinMainCmdShow",
+      "type": "DWORD",
+      "value": "0x0"
+    },
+    {
+      "addr": "00684ff8",
+      "name": "g_StackAllocSize",
+      "type": "DWORD",
+      "value": "0x0"
+    },
+    {
+      "addr": "00684ffc",
+      "name": "g_CrtStackBuffer",
+      "type": "void*",
+      "value": "00000000"
+    },
+    {
+      "addr": "006854f8",
+      "name": "g_RuntimeBufferSize",
+      "type": "DWORD",
+      "value": "0xf4"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "runtimeInitParams",
+        "offset": -16,
+        "size": 8,
+        "type": "BYTE[8]"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that severely impacts decompilation quality.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "dynamic_alloca"
+    ],
+    "patterns": [
+      {
+        "address": "00609e8b",
+        "description": "Dynamic stack allocation (SUB ESP, EAX)",
+        "impact": "Variable-size stack allocation makes ESP unpredictable. Stack variables may appear as parameters or have incorrect offsets.",
+        "instruction": "SUB ESP,EAX",
+        "pattern_id": "dynamic_alloca"
+      },
+      {
+        "address": "00609ede",
+        "description": "Dynamic stack allocation (SUB ESP, EAX)",
+        "impact": "Variable-size stack allocation makes ESP unpredictable. Stack variables may appear as parameters or have incorrect offsets.",
+        "instruction": "SUB ESP,EAX",
+        "pattern_id": "dynamic_alloca"
+      }
+    ],
+    "severity": "high"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 12,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(byte *)((int)",
+      "text": "puVar2 = (byte *)((int)&uStack_1c + stackBufferOffset);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&uStack_1c + stackBufferOffset) = 0x609e9e;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0x000000e4",
+      "text": "*(DWORD *)(&stack0x000000e4 + stackBufferOffset) = g_RuntimeBufferSize;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint *)((int)",
+      "text": "pRuntimeStack = (uint *)((int)puVar4 + stackBufferOffset + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(uint *)((int)",
+      "text": "pStackBuffer = (uint *)((int)puVar4 + stackBufferOffset + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(void *)((int)",
+      "text": "g_CrtStackBuffer = (void *)((int)pStackBuffer + g_StackAllocSize);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)pWinMainFrame + 0x10) = exitCode;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pWinMainFrame + 0xc) = 0x609f18;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(int *)((int)",
+      "text": "crt_startup_c_ExitApplication_FUN_0060b534(*(int *)((int)pWinMainFrame + 0x10));",
+      "type": "pointer_cast"
     }
   ]
 }

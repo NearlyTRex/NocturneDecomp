@@ -1,327 +1,327 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 342, 
-    "pseudocode_lines": 77, 
-    "cross_reference_count": 2, 
-    "global_count": 10, 
-    "total_lines": 145, 
-    "assembly_lines": 68, 
-    "suspect_count": 26, 
+    "assembly_lines": 68,
+    "complexity_score": 342,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 10,
+    "pseudocode_lines": 77,
+    "suspect_count": 26,
     "suspect_types": [
       "register_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_GenuineIntel_0067d6c0", 
-      "addr": "0067d6c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s__0067d6cc", 
-      "addr": "0067d6cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_cpuidbasicinfo_2", 
-      "addr": "0067d6d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_cpuidbasicinfo_3", 
-      "addr": "0067d6d4", 
-      "value": null
-    }, 
-    {
-      "type": "byte", 
-      "name": "g_CPUInfoFamily", 
-      "addr": "0067d6d8", 
-      "value": "0x96"
-    }, 
-    {
-      "type": "byte", 
-      "name": "g_CPUInfoModel", 
-      "addr": "0067d6d9", 
-      "value": "0x13"
-    }, 
-    {
-      "type": "byte", 
-      "name": "g_CPUInfoStepping", 
-      "addr": "0067d6da", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "bool", 
-      "name": "g_CPUIDSupported", 
-      "addr": "0067d6db", 
-      "value": "False"
-    }, 
-    {
-      "type": "bool", 
-      "name": "g_CPUInfoIntelCPU", 
-      "addr": "0067d6dc", 
-      "value": "False"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CPUFeatureFlags", 
-      "addr": "0067d6dd", 
-      "value": "0x0"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "low", 
-    "note": "Function contains minor stack patterns that may cause warnings.", 
-    "pattern_count": 3, 
-    "patterns": [
-      {
-        "address": "00524f52", 
-        "impact": "Flags pushed to stack. May indicate interrupt handler or special calling convention.", 
-        "description": "PUSHF instruction", 
-        "pattern_id": "pushf", 
-        "instruction": "PUSHFD"
-      }, 
-      {
-        "address": "00524f5d", 
-        "impact": "Flags pushed to stack. May indicate interrupt handler or special calling convention.", 
-        "description": "PUSHF instruction", 
-        "pattern_id": "pushf", 
-        "instruction": "PUSHFD"
-      }, 
-      {
-        "address": "00524f80", 
-        "impact": "Flags pushed to stack. May indicate interrupt handler or special calling convention.", 
-        "description": "PUSHF instruction", 
-        "pattern_id": "pushf", 
-        "instruction": "PUSHFD"
-      }
-    ], 
-    "pattern_types": [
-      "pushf"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 18, 
-      "match": "in_CF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_CF;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_PF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_PF;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_AF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_AF;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_ZF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_ZF;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_SF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_SF;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_TF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_TF;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_IF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_IF;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_OF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_OF;"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_NT", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_NT;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_AC", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_AC;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_VIF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_VIF;"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_VIP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_VIP;"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_ID", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "byte in_ID;"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_NT", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uVar10 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_OF & 1) * 0x800 | (uint)(in_IF & 1) * 0x200 |"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_OF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uVar10 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_OF & 1) * 0x800 | (uint)(in_IF & 1) * 0x200 |"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_IF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uVar10 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_OF & 1) * 0x800 | (uint)(in_IF & 1) * 0x200 |"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_TF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_TF & 1) * 0x100 | (uint)(in_SF & 1) * 0x80 | (uint)(in_ZF & 1) * 0x40 |"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_SF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_TF & 1) * 0x100 | (uint)(in_SF & 1) * 0x80 | (uint)(in_ZF & 1) * 0x40 |"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_ZF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_TF & 1) * 0x100 | (uint)(in_SF & 1) * 0x80 | (uint)(in_ZF & 1) * 0x40 |"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_AF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_AF & 1) * 0x10 | (uint)(in_PF & 1) * 4 | (uint)(in_CF & 1) |"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_PF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_AF & 1) * 0x10 | (uint)(in_PF & 1) * 4 | (uint)(in_CF & 1) |"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_CF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_AF & 1) * 0x10 | (uint)(in_PF & 1) * 4 | (uint)(in_CF & 1) |"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_ID", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_VIP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |"
-    }, 
-    {
-      "line": 37, 
-      "match": "in_VIF", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;"
-    }, 
-    {
-      "line": 37, 
-      "match": "in_AC", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "00524f4c", 
-    "signature": "void core_mmx.c_detectIntelProcessor_FUN_00524f4c(void)", 
-    "address_range": [
-      [
-        "00524f4c", 
-        "00524ff8"
-      ]
-    ], 
-    "name": "core_mmx.c_detectIntelProcessor_FUN_00524f4c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 145
+  },
   "cross_references": [
     {
-      "from_addr": "00524f11", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mmx.c_detectCPUFeatures_FUN_00524f10", 
-      "addr": "00524f10"
-    }, 
+      "addr": "00524f10",
+      "from_addr": "00524f11",
+      "name": "core_mmx.c_detectCPUFeatures_FUN_00524f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00525020", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mmx.c_getCPUInfo_FUN_0052500f", 
-      "addr": "0052500f"
+      "addr": "0052500f",
+      "from_addr": "00525020",
+      "name": "core_mmx.c_getCPUInfo_FUN_0052500f",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00524f4c",
+    "address_range": [
+      [
+        "00524f4c",
+        "00524ff8"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "core_mmx.c_detectIntelProcessor_FUN_00524f4c",
+    "signature": "void core_mmx.c_detectIntelProcessor_FUN_00524f4c(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067d6c0",
+      "name": "s_GenuineIntel_0067d6c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d6cc",
+      "name": "s__0067d6cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067d6d0",
+      "name": "g_cpuidbasicinfo_2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067d6d4",
+      "name": "g_cpuidbasicinfo_3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067d6d8",
+      "name": "g_CPUInfoFamily",
+      "type": "byte",
+      "value": "0x96"
+    },
+    {
+      "addr": "0067d6d9",
+      "name": "g_CPUInfoModel",
+      "type": "byte",
+      "value": "0x13"
+    },
+    {
+      "addr": "0067d6da",
+      "name": "g_CPUInfoStepping",
+      "type": "byte",
+      "value": "0x0"
+    },
+    {
+      "addr": "0067d6db",
+      "name": "g_CPUIDSupported",
+      "type": "bool",
+      "value": "False"
+    },
+    {
+      "addr": "0067d6dc",
+      "name": "g_CPUInfoIntelCPU",
+      "type": "bool",
+      "value": "False"
+    },
+    {
+      "addr": "0067d6dd",
+      "name": "g_CPUFeatureFlags",
+      "type": "uint",
+      "value": "0x0"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains minor stack patterns that may cause warnings.",
+    "pattern_count": 3,
+    "pattern_types": [
+      "pushf"
+    ],
+    "patterns": [
+      {
+        "address": "00524f52",
+        "description": "PUSHF instruction",
+        "impact": "Flags pushed to stack. May indicate interrupt handler or special calling convention.",
+        "instruction": "PUSHFD",
+        "pattern_id": "pushf"
+      },
+      {
+        "address": "00524f5d",
+        "description": "PUSHF instruction",
+        "impact": "Flags pushed to stack. May indicate interrupt handler or special calling convention.",
+        "instruction": "PUSHFD",
+        "pattern_id": "pushf"
+      },
+      {
+        "address": "00524f80",
+        "description": "PUSHF instruction",
+        "impact": "Flags pushed to stack. May indicate interrupt handler or special calling convention.",
+        "instruction": "PUSHFD",
+        "pattern_id": "pushf"
+      }
+    ],
+    "severity": "low"
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_CF",
+      "text": "byte in_CF;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_PF",
+      "text": "byte in_PF;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 20,
+      "match": "in_AF",
+      "text": "byte in_AF;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 21,
+      "match": "in_ZF",
+      "text": "byte in_ZF;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 22,
+      "match": "in_SF",
+      "text": "byte in_SF;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 23,
+      "match": "in_TF",
+      "text": "byte in_TF;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 24,
+      "match": "in_IF",
+      "text": "byte in_IF;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 25,
+      "match": "in_OF",
+      "text": "byte in_OF;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 26,
+      "match": "in_NT",
+      "text": "byte in_NT;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_AC",
+      "text": "byte in_AC;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 28,
+      "match": "in_VIF",
+      "text": "byte in_VIF;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_VIP",
+      "text": "byte in_VIP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 30,
+      "match": "in_ID",
+      "text": "byte in_ID;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 33,
+      "match": "in_NT",
+      "text": "uVar10 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_OF & 1) * 0x800 | (uint)(in_IF & 1) * 0x200 |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 33,
+      "match": "in_OF",
+      "text": "uVar10 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_OF & 1) * 0x800 | (uint)(in_IF & 1) * 0x200 |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 33,
+      "match": "in_IF",
+      "text": "uVar10 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_OF & 1) * 0x800 | (uint)(in_IF & 1) * 0x200 |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 34,
+      "match": "in_TF",
+      "text": "(uint)(in_TF & 1) * 0x100 | (uint)(in_SF & 1) * 0x80 | (uint)(in_ZF & 1) * 0x40 |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 34,
+      "match": "in_SF",
+      "text": "(uint)(in_TF & 1) * 0x100 | (uint)(in_SF & 1) * 0x80 | (uint)(in_ZF & 1) * 0x40 |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 34,
+      "match": "in_ZF",
+      "text": "(uint)(in_TF & 1) * 0x100 | (uint)(in_SF & 1) * 0x80 | (uint)(in_ZF & 1) * 0x40 |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 35,
+      "match": "in_AF",
+      "text": "(uint)(in_AF & 1) * 0x10 | (uint)(in_PF & 1) * 4 | (uint)(in_CF & 1) |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 35,
+      "match": "in_PF",
+      "text": "(uint)(in_AF & 1) * 0x10 | (uint)(in_PF & 1) * 4 | (uint)(in_CF & 1) |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 35,
+      "match": "in_CF",
+      "text": "(uint)(in_AF & 1) * 0x10 | (uint)(in_PF & 1) * 4 | (uint)(in_CF & 1) |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 36,
+      "match": "in_ID",
+      "text": "(uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 36,
+      "match": "in_VIP",
+      "text": "(uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 37,
+      "match": "in_VIF",
+      "text": "(uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 37,
+      "match": "in_AC",
+      "text": "(uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;",
+      "type": "register_param"
     }
   ]
 }

@@ -35,8 +35,8 @@ section .text
     PUSH EBP                            ; 00586fa3
     MOV EBX,dword ptr [ESP + 0x14]      ; 00586fa4
     CMP dword ptr [EBX + 0x11ec],0x20   ; 00586fa8
-    JGE 0x0058705a                      ; 00586faf | LAB_0058705a
-        ;   XREF to: 0058705a (CONDITIONAL_JUMP)
+    JGE 0x0058705a                      ; 00586faf
+        ;   XREF to: 0058705a (CONDITIONAL_JUMP)  ; LAB_0058705a
     MOV EDX,dword ptr [EBX + 0x11ec]    ; 00586fb5
         ;   Label: LAB_00586fb5
     LEA EAX,[EDX*0x4 + 0x0]             ; 00586fbb
@@ -50,15 +50,15 @@ section .text
         ;   Label: LAB_00586fd5
     MOV byte ptr [EDI],AL               ; 00586fd7
     CMP AL,0x0                          ; 00586fd9
-    JZ 0x00586fed                       ; 00586fdb | LAB_00586fed
-        ;   XREF to: 00586fed (CONDITIONAL_JUMP)
+    JZ 0x00586fed                       ; 00586fdb
+        ;   XREF to: 00586fed (CONDITIONAL_JUMP)  ; LAB_00586fed
     MOV AL,byte ptr [ESI + 0x1]         ; 00586fdd
     ADD ESI,0x2                         ; 00586fe0
     MOV byte ptr [EDI + 0x1],AL         ; 00586fe3
     ADD EDI,0x2                         ; 00586fe6
     CMP AL,0x0                          ; 00586fe9
-    JNZ 0x00586fd5                      ; 00586feb | LAB_00586fd5
-        ;   XREF to: 00586fd5 (CONDITIONAL_JUMP)
+    JNZ 0x00586fd5                      ; 00586feb
+        ;   XREF to: 00586fd5 (CONDITIONAL_JUMP)  ; LAB_00586fd5
     POP EDI                             ; 00586fed
         ;   Label: LAB_00586fed
     MOV EAX,dword ptr [EBX + 0x11ec]    ; 00586fee
@@ -75,10 +75,10 @@ section .text
     PUSH EDI                            ; 00587028
     ADD ECX,EAX                         ; 00587029
     PUSH ECX                            ; 0058702b
-    MOV EBP,dword ptr [0x0066efcc]      ; 0058702c | CFilterCache * g_CFilterCachePtr
-    PUSH EBP                            ; 00587032 | CFilterCache g_CFilterCacheInstance
-    CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 ; 00587033 | CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache * this_ptr, char * filter_name, char * filter_filename, int enable_init)
-        ;   XREF to: 00470060 (UNCONDITIONAL_CALL)
+    MOV EBP,dword ptr [0x0066efcc]      ; 0058702c | g_CFilterCachePtr
+    PUSH EBP                            ; 00587032 | g_CFilterCacheInstance
+    CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 ; 00587033
+        ;   XREF to: 00470060 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060(CFilterCache * this_ptr, char * filter_name, char * filter_filename, int enable_init)
     MOV EDX,dword ptr [EBX + 0x11ec]    ; 00587038
     MOV dword ptr [EBX + EDX*0x4 + 0x1810],EAX ; 0058703e
     MOV EAX,dword ptr [EBX + 0x11ec]    ; 00587045
@@ -92,14 +92,14 @@ section .text
     RET                                 ; 00587059
     PUSH 0x20                           ; 0058705a
         ;   Label: LAB_0058705a
-    MOV ECX,0x649794                    ; 0058705c | = "..\\core\\setutil.cpp" | s_core_setutil_cpp_00649794 = ..\core\setutil.cpp
+    MOV ECX,0x649794                    ; 0058705c | = "..\\core\\setutil.cpp"
     MOV ESI,0x3b6                       ; 00587061
-    PUSH 0x6497a8                       ; 00587066 | = "C3DSLight::addFilter - too many filte..." | s_C3DSLight_addFilter_too__006497a8 = C3DSLight::addFilter - too many filters (max is %d)
-    MOV dword ptr [0x02f0ca48],ECX      ; 0058706b | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 00587071 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00587077 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6497a8                       ; 00587066 | = "C3DSLight::addFilter - too many filte..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 0058706b | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 00587071 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00587077
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 0058707c
-    JMP 0x00586fb5                      ; 0058707f | LAB_00586fb5
-        ;   XREF to: 00586fb5 (UNCONDITIONAL_JUMP)
+    JMP 0x00586fb5                      ; 0058707f
+        ;   XREF to: 00586fb5 (UNCONDITIONAL_JUMP)  ; LAB_00586fb5
 

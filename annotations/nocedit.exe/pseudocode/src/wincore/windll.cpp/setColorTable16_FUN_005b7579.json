@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 38, 
-    "assembly_lines": 24, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0", 
-      "addr": "004f41c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "ushort[256]", 
-      "name": "g_ColorTable16", 
-      "addr": "02d01020", 
-      "value": null
-    }, 
-    {
-      "type": "char[768]", 
-      "name": "g_SourcePaletteData", 
-      "addr": "02d01f48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_setColorTable16*", 
-      "name": "g_APIDLL_setColorTable16", 
-      "addr": "03f6b900", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 24,
+    "complexity_score": 14,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005b7579", 
-    "signature": "int wincore_windll.cpp_setColorTable16_FUN_005b7579(void)", 
+    "address": "005b7579",
     "address_range": [
       [
-        "005b7579", 
+        "005b7579",
         "005b75ae"
       ]
-    ], 
-    "name": "wincore_windll.cpp_setColorTable16_FUN_005b7579"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_setColorTable16_FUN_005b7579",
+    "signature": "int wincore_windll.cpp_setColorTable16_FUN_005b7579(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f41c0",
+      "name": "wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d01020",
+      "name": "g_ColorTable16",
+      "type": "ushort[256]",
+      "value": null
+    },
+    {
+      "addr": "02d01f48",
+      "name": "g_SourcePaletteData",
+      "type": "char[768]",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b900",
+      "name": "g_APIDLL_setColorTable16",
+      "type": "APIDLL_setColorTable16*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

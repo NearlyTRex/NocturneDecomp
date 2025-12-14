@@ -11,8 +11,7 @@ void core_zombie_cpp_FUN_005f8fa0(void)
 {
   CZombie *this_ptr;
   
-  this_ptr = (CZombie *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbfac,"@..\\core\\zombie.cpp" + 1,200);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbfac,"@..\\core\\zombie.cpp" + 1,200);
   if (this_ptr == (CZombie *)0x0) {
     return;
   }

@@ -29,32 +29,32 @@ section .text
     PUSH EBP                            ; 00464873
     MOV EBP,ESP                         ; 00464874
     SUB ESP,0xc                         ; 00464876
-    MOV EAX,[0x02cf6a94]                ; 0046487c | int g_MouseButtonFlags
+    MOV EAX,[0x02cf6a94]                ; 0046487c | g_MouseButtonFlags
     AND EAX,dword ptr [EBP + 0x14]      ; 00464881
     MOV dword ptr [EBP + -0x4],EAX      ; 00464884
     CMP dword ptr [EBP + -0x4],0x0      ; 00464887
-    JZ 0x00464893                       ; 0046488b | LAB_00464893
-        ;   XREF to: 00464893 (CONDITIONAL_JUMP)
-    INC dword ptr [0x015c4840]          ; 0046488d | int g_MouseButtonClickCounter
-    CMP dword ptr [0x015c4840],0x0      ; 00464893 | int g_MouseButtonClickCounter
+    JZ 0x00464893                       ; 0046488b
+        ;   XREF to: 00464893 (CONDITIONAL_JUMP)  ; LAB_00464893
+    INC dword ptr [0x015c4840]          ; 0046488d | g_MouseButtonClickCounter
+    CMP dword ptr [0x015c4840],0x0      ; 00464893 | g_MouseButtonClickCounter
         ;   Label: LAB_00464893
-    JZ 0x004648a2                       ; 0046489a | LAB_004648a2
-        ;   XREF to: 004648a2 (CONDITIONAL_JUMP)
+    JZ 0x004648a2                       ; 0046489a
+        ;   XREF to: 004648a2 (CONDITIONAL_JUMP)  ; LAB_004648a2
     CMP dword ptr [EBP + -0x4],0x0      ; 0046489c
-    JZ 0x004648a4                       ; 004648a0 | LAB_004648a4
-        ;   XREF to: 004648a4 (CONDITIONAL_JUMP)
-    JMP 0x004648ae                      ; 004648a2 | LAB_004648ae
+    JZ 0x004648a4                       ; 004648a0
+        ;   XREF to: 004648a4 (CONDITIONAL_JUMP)  ; LAB_004648a4
+    JMP 0x004648ae                      ; 004648a2
+        ;   XREF to: 004648ae (UNCONDITIONAL_JUMP)  ; LAB_004648ae
         ;   Label: LAB_004648a2
-        ;   XREF to: 004648ae (UNCONDITIONAL_JUMP)
-    MOV dword ptr [0x015c4840],0x0      ; 004648a4 | int g_MouseButtonClickCounter
+    MOV dword ptr [0x015c4840],0x0      ; 004648a4 | g_MouseButtonClickCounter
         ;   Label: LAB_004648a4
-    CMP dword ptr [0x015c4840],0x1      ; 004648ae | int g_MouseButtonClickCounter
+    CMP dword ptr [0x015c4840],0x1      ; 004648ae | g_MouseButtonClickCounter
         ;   Label: LAB_004648ae
-    JNZ 0x004648c0                      ; 004648b5 | LAB_004648c0
-        ;   XREF to: 004648c0 (CONDITIONAL_JUMP)
+    JNZ 0x004648c0                      ; 004648b5
+        ;   XREF to: 004648c0 (CONDITIONAL_JUMP)  ; LAB_004648c0
     MOV dword ptr [EBP + -0xc],0x1      ; 004648b7
-    JMP 0x004648c7                      ; 004648be | LAB_004648c7
-        ;   XREF to: 004648c7 (UNCONDITIONAL_JUMP)
+    JMP 0x004648c7                      ; 004648be
+        ;   XREF to: 004648c7 (UNCONDITIONAL_JUMP)  ; LAB_004648c7
     MOV dword ptr [EBP + -0xc],0x0      ; 004648c0
         ;   Label: LAB_004648c0
     MOV EAX,dword ptr [EBP + -0xc]      ; 004648c7

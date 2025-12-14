@@ -1,125 +1,125 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 48, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 2, 
-    "global_count": 6, 
-    "total_lines": 67, 
-    "assembly_lines": 44, 
-    "suspect_count": 2, 
+    "assembly_lines": 44,
+    "complexity_score": 47,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 6,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_memory.c_constructTypedObjectArray_FUN_00601272", 
-      "addr": "00601272"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
-      "addr": "0050f1f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_00622605", 
-      "addr": "00622605", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_00622618", 
-      "addr": "00622618", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonRaytrace_allocNewC_0062262b", 
-      "addr": "0062262b", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CDemonCubeTypeInfo", 
-      "addr": "0065d290", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "WatcomTypeInfo *unaff_EBX;"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(array_memory,(int)element_count,unaff_EBX);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00494380", 
-    "signature": "void core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(CDemonRaytrace * this_ptr)", 
-    "address_range": [
-      [
-        "00494380", 
-        "004943f7"
-      ]
-    ], 
-    "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRaytrace *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 66
+  },
   "cross_references": [
     {
-      "from_addr": "004953e2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310", 
-      "addr": "00495310"
-    }, 
+      "addr": "00495310",
+      "from_addr": "004953e2",
+      "name": "core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004948c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0", 
-      "addr": "004947a0"
+      "addr": "004947a0",
+      "from_addr": "004948c5",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00494380",
+    "address_range": [
+      [
+        "00494380",
+        "004943f7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380",
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(CDemonRaytrace * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00601272",
+      "name": "crt_memory.c_constructTypedObjectArray_FUN_00601272"
+    },
+    {
+      "addr": "0050f1f0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622605",
+      "name": "s_core_dtrace_cpp_00622605",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622618",
+      "name": "s_core_dtrace_cpp_00622618",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062262b",
+      "name": "s_CDemonRaytrace_allocNewC_0062262b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065d290",
+      "name": "g_CDemonCubeTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBX",
+      "text": "WatcomTypeInfo *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "text": "(array_memory,(int)element_count,unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

@@ -1,104 +1,104 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 66, 
-    "pseudocode_lines": 51, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 164, 
-    "assembly_lines": 113, 
-    "suspect_count": 1, 
+    "assembly_lines": 113,
+    "complexity_score": 66,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 51,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0", 
-      "addr": "00515ca0"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0", 
-      "addr": "00515ec0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar3 + -4) = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00515ba0", 
-    "signature": "int shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh * this_ptr)", 
-    "address_range": [
-      [
-        "00515ba0", 
-        "00515c98"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 164
+  },
   "cross_references": [
     {
-      "from_addr": "0051b94d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920", 
-      "addr": "0051b920"
-    }, 
+      "addr": "0051b920",
+      "from_addr": "0051b94d",
+      "name": "shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00516dc2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50", 
-      "addr": "00516d50"
-    }, 
+      "addr": "00516d50",
+      "from_addr": "00516dc2",
+      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051b8e4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0", 
-      "addr": "0051b8a0"
+      "addr": "0051b8a0",
+      "from_addr": "0051b8e4",
+      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00515ba0",
+    "address_range": [
+      [
+        "00515ba0",
+        "00515c98"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0",
+    "signature": "int shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00515ca0",
+      "name": "shape_meshlod.cpp_CLodEdge_addAdjacentFace_FUN_00515ca0"
+    },
+    {
+      "addr": "00515ec0",
+      "name": "shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar3 + -4) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

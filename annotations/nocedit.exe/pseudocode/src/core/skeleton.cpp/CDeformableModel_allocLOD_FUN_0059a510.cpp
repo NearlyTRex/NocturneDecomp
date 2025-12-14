@@ -46,25 +46,23 @@ core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
   pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      (this_ptr->vertex_count[lod_index] * 0x34 + 4,"..\\core\\skeleton.cpp",
                       0x29c);
-  pSVar2 = (SVert *)crt_memory_c_constructTypedObjectArray_FUN_00601272
-                              (pvVar1,0x662ed0,(WatcomTypeInfo *)lod_index);
+  pSVar2 = crt_memory_c_constructTypedObjectArray_FUN_00601272
+                     (pvVar1,0x662ed0,(WatcomTypeInfo *)lod_index);
   this_ptr->vertex_data_ptr[lod_index] = pSVar2;
-  pSVar3 = (SInputFace *)
-           shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  pSVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      ((this_ptr->cap_tri_count[lod_index] + this_ptr->tri_count[lod_index]) * 0x12,
                       "..\\core\\skeleton.cpp",0x29d);
   this_ptr->tri_data_ptr[lod_index] = pSVar3;
-  piVar4 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                            ((this_ptr->tri_count[lod_index] + this_ptr->cap_tri_count[lod_index]) *
-                             4,"..\\core\\skeleton.cpp",0x29e);
+  piVar4 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     ((this_ptr->tri_count[lod_index] + this_ptr->cap_tri_count[lod_index]) * 4,
+                      "..\\core\\skeleton.cpp",0x29e);
   this_ptr->index_data_ptr[lod_index] = piVar4;
   if (this_ptr->cap_tri_count[lod_index] < 1) {
     this_ptr->cap_index_ptr[lod_index] = (int *)0x0;
   }
   else {
-    piVar4 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                              (this_ptr->cap_tri_count[lod_index] * 4,"..\\core\\skeleton.cpp",
-                               0x2a0);
+    piVar4 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                       (this_ptr->cap_tri_count[lod_index] * 4,"..\\core\\skeleton.cpp",0x2a0);
     this_ptr->cap_index_ptr[lod_index] = piVar4;
   }
   if ((((this_ptr->vertex_data_ptr[lod_index] != (SVert *)0x0) &&

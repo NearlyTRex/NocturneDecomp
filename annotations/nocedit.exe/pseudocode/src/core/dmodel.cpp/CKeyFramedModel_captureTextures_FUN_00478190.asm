@@ -30,23 +30,23 @@ section .text
     MOV EDX,dword ptr [EDI + 0x120]     ; 00478197
     XOR EBX,EBX                         ; 0047819d
     TEST EDX,EDX                        ; 0047819f
-    JLE 0x004781c9                      ; 004781a1 | LAB_004781c9
-        ;   XREF to: 004781c9 (CONDITIONAL_JUMP)
+    JLE 0x004781c9                      ; 004781a1
+        ;   XREF to: 004781c9 (CONDITIONAL_JUMP)  ; LAB_004781c9
     PUSH ESI                            ; 004781a3
     LEA ESI,[EDI + 0x124]               ; 004781a4
     PUSH ESI                            ; 004781aa
         ;   Label: LAB_004781aa
-    MOV ECX,dword ptr [0x006703ec]      ; 004781ab | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
-    PUSH ECX                            ; 004781b1 | CDemonRenderer g_CDemonRendererInstance
+    MOV ECX,dword ptr [0x006703ec]      ; 004781ab | g_CDemonRendererInstance | g_CDemonRendererPtr
+    PUSH ECX                            ; 004781b1 | g_CDemonRendererInstance
     INC EBX                             ; 004781b2
-    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004781b3 | void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-        ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004781b3
+        ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESI,0x48                        ; 004781b8
     MOV EBP,dword ptr [EDI + 0x120]     ; 004781bb
     ADD ESP,0x8                         ; 004781c1
     CMP EBX,EBP                         ; 004781c4
-    JL 0x004781aa                       ; 004781c6 | LAB_004781aa
-        ;   XREF to: 004781aa (CONDITIONAL_JUMP)
+    JL 0x004781aa                       ; 004781c6
+        ;   XREF to: 004781aa (CONDITIONAL_JUMP)  ; LAB_004781aa
     POP ESI                             ; 004781c8
     POP EBP                             ; 004781c9
         ;   Label: LAB_004781c9

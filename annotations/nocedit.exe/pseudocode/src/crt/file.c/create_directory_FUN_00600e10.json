@@ -1,106 +1,106 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 8, 
-    "global_count": 1, 
-    "total_lines": 23, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "CreateDirectoryA", 
-      "addr": "EXTERNAL:0000004d"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CreateDirectoryA*", 
-      "name": "PTR_CreateDirectoryA_00611508", 
-      "addr": "00611508", 
-      "value": "00211c46"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00600e10", 
-    "signature": "int crt_file.c_create_directory_FUN_00600e10(char * path)", 
-    "address_range": [
-      [
-        "00600e10", 
-        "00600e28"
-      ]
-    ], 
-    "name": "crt_file.c_create_directory_FUN_00600e10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "path"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 13,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
+  },
   "cross_references": [
     {
-      "from_addr": "004be59f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_refreshSoundDirectory_FUN_004be590", 
-      "addr": "004be590"
-    }, 
+      "addr": "004be590",
+      "from_addr": "004be59f",
+      "name": "core_fileman.cpp_refreshSoundDirectory_FUN_004be590",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e0d86", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
-      "addr": "004e0cd0"
-    }, 
+      "addr": "004e0cd0",
+      "from_addr": "004e0d86",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00481a9c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_dosio.c_getFile_FUN_00481a50", 
-      "addr": "00481a50"
-    }, 
+      "addr": "00481a50",
+      "from_addr": "00481a9c",
+      "name": "engine_dosio.c_getFile_FUN_00481a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00481ba7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_dosio.c_reopenFileStream_FUN_00481b50", 
-      "addr": "00481b50"
-    }, 
+      "addr": "00481b50",
+      "from_addr": "00481ba7",
+      "name": "engine_dosio.c_reopenFileStream_FUN_00481b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b7dc9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50", 
-      "addr": "004b7d50"
-    }, 
+      "addr": "004b7d50",
+      "from_addr": "004b7dc9",
+      "name": "engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00516d64", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50", 
-      "addr": "00516d50"
-    }, 
+      "addr": "00516d50",
+      "from_addr": "00516d64",
+      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051b8af", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0", 
-      "addr": "0051b8a0"
-    }, 
+      "addr": "0051b8a0",
+      "from_addr": "0051b8af",
+      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00515195", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_initializeLogDirectory_FUN_00515190", 
-      "addr": "00515190"
+      "addr": "00515190",
+      "from_addr": "00515195",
+      "name": "shape_meshlod.cpp_initializeLogDirectory_FUN_00515190",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00600e10",
+    "address_range": [
+      [
+        "00600e10",
+        "00600e28"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_file.c_create_directory_FUN_00600e10",
+    "signature": "int crt_file.c_create_directory_FUN_00600e10(char * path)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000004d",
+      "name": "CreateDirectoryA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611508",
+      "name": "PTR_CreateDirectoryA_00611508",
+      "type": "CreateDirectoryA*",
+      "value": "00211c46"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

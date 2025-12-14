@@ -36,16 +36,14 @@ void * __cdecl crt_string_c_memmove_FUN_005fe5e0(void *dest,void *src,SIZE_T n)
       }
       return dest;
     }
-    puVar4 = (uint *)dest;
-                    /* WARNING: Load size is inaccurate */
+    puVar4 = dest;
     for (uVar1 = n >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *puVar4 = *src;
+      *puVar4 = *(uint *)src;
       src = (uint *)((int)src + 4);
       puVar4 = puVar4 + 1;
     }
-                    /* WARNING: Load size is inaccurate */
     for (uVar1 = n & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *(byte *)puVar4 = *src;
+      *(byte *)puVar4 = *(byte *)src;
       src = (uint *)((int)src + 1);
       puVar4 = (uint *)((int)puVar4 + 1);
     }

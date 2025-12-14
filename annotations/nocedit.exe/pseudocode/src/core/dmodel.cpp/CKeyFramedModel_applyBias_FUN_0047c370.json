@@ -1,151 +1,151 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 78, 
-    "pseudocode_lines": 38, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 121, 
-    "assembly_lines": 83, 
-    "suspect_count": 3, 
+    "assembly_lines": 83,
+    "complexity_score": 78,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 38,
+    "suspect_count": 3,
     "suspect_types": [
-      "sub_artifact", 
+      "sub_artifact",
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010", 
-      "addr": "00478010"
-    }, 
-    {
-      "name": "crt_math.c_floor_FUN_005feb90", 
-      "addr": "005feb90"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062056b", 
-      "addr": "0062056b", 
-      "value": "256"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620573", 
-      "addr": "00620573", 
-      "value": "0.5"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 22, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "iVar7 = SUB84 /* extract 2-byte value */(dVar5,0);"
-    }, 
-    {
-      "line": 29, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "for (iVar2 = extraout_ECX; iVar2 < model_ptr->frame_count * model_ptr->vertex_count;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0047c370", 
-    "signature": "void core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370(CKeyFramedModel * this_ptr, CVector3f * bias_offset)", 
-    "address_range": [
-      [
-        "0047c370", 
-        "0047c46e"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "bias_offset"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 121
+  },
   "cross_references": [
     {
-      "from_addr": "0047c2b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_recenter_FUN_0047c220", 
-      "addr": "0047c220"
-    }, 
+      "addr": "0047c220",
+      "from_addr": "0047c2b5",
+      "name": "core_dmodel.cpp_CKeyFramedModel_recenter_FUN_0047c220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047e11c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
-      "addr": "0047cbc0"
+      "addr": "0047cbc0",
+      "from_addr": "0047e11c",
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047c370",
+    "address_range": [
+      [
+        "0047c370",
+        "0047c46e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370",
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370(CKeyFramedModel * this_ptr, CVector3f * bias_offset)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478010",
+      "name": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010"
+    },
+    {
+      "addr": "005feb90",
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062056b",
+      "name": "DOUBLE_0062056b",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "00620573",
+      "name": "DOUBLE_00620573",
+      "type": "double",
+      "value": "0.5"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "bias_offset",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 22,
+      "match": "SUB84",
+      "text": "iVar7 = SUB84 /* extract 2-byte value */(dVar5,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_ECX",
+      "text": "for (iVar2 = extraout_ECX; iVar2 < model_ptr->frame_count * model_ptr->vertex_count;",
+      "type": "extra_output"
     }
   ]
 }

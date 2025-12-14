@@ -148,7 +148,7 @@ void core_setedit_cpp_WriteActBackdrop_FUN_0057ce80(void)
         *(uint *)((int)g_ZBufferScanlineArray + iVar5) =
              *(uint *)((int)auStack_135c + iVar5);
         iVar5 = iVar2;
-      } while (SBORROW /* signed borrow */4(iVar2,in_stack_00000070 * 4) != iVar2 + in_stack_00000070 * -4 < 0);
+      } while (iVar2 < in_stack_00000070 * 4);
     }
     shape_memdbg_cpp_debugFree_FUN_0050f460(in_stack_00000038,"..\\core\\setedit.cpp",0xbfc);
     shape_memdbg_cpp_debugFree_FUN_0050f460(in_stack_00000038,"..\\core\\setedit.cpp",0xbfd);

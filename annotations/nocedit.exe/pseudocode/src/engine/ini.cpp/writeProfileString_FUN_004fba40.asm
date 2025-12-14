@@ -33,9 +33,9 @@ section .text
     PUSH EBX                            ; 004fba50
     MOV ESI,dword ptr [ESP + 0x18]      ; 004fba51
     PUSH ESI                            ; 004fba55
-    PUSH 0x2db8a60                      ; 004fba56 | CIni g_CIniInstance
-    CALL engine_ini.cpp_CIni_writeProfileString_FUN_004fb660 ; 004fba5b | int engine_ini.cpp_CIni_writeProfileString_FUN_004fb660(CIni * this_ptr, char * section, char * key, char * value, ...)
-        ;   XREF to: 004fb660 (UNCONDITIONAL_CALL)
+    PUSH 0x2db8a60                      ; 004fba56 | g_CIniInstance
+    CALL engine_ini.cpp_CIni_writeProfileString_FUN_004fb660 ; 004fba5b
+        ;   XREF to: 004fb660 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_writeProfileString_FUN_004fb660(CIni * this_ptr, char * section, char * key, char * value, ...)
     ADD ESP,0x14                        ; 004fba60
     POP ESI                             ; 004fba63
     POP EBX                             ; 004fba64

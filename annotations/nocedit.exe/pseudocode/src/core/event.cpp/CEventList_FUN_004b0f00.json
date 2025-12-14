@@ -1,84 +1,84 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 27, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 83, 
-    "assembly_lines": 56, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_event.cpp_CEventList_FUN_004b0db0", 
-      "addr": "004b0db0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
-      "addr": "005a8cb0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
-      "addr": "005a8c30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90", 
-      "addr": "005a8b90"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0", 
-      "addr": "005a8be0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
-      "addr": "005a8e90"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004b0f00", 
-    "signature": "void core_event.cpp_CEventList_FUN_004b0f00(CEventList * this_ptr)", 
-    "address_range": [
-      [
-        "004b0f00", 
-        "004b0f89"
-      ]
-    ], 
-    "name": "core_event.cpp_CEventList_FUN_004b0f00"
-  }, 
-  "stack_frame": {
-    "local_size": 16, 
-    "variables": [
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEventList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 56,
+    "complexity_score": 27,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 0,
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 83
+  },
   "cross_references": [
     {
-      "from_addr": "005b2f40", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0", 
-      "addr": "005b2dd0"
+      "addr": "005b2dd0",
+      "from_addr": "005b2f40",
+      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004b0f00",
+    "address_range": [
+      [
+        "004b0f00",
+        "004b0f89"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_FUN_004b0f00",
+    "signature": "void core_event.cpp_CEventList_FUN_004b0f00(CEventList * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b0db0",
+      "name": "core_event.cpp_CEventList_FUN_004b0db0"
+    },
+    {
+      "addr": "005a8cb0",
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a8b90",
+      "name": "sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90"
+    },
+    {
+      "addr": "005a8be0",
+      "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0"
+    },
+    {
+      "addr": "005a8e90",
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      }
+    ]
+  },
+  "suspects": []
 }

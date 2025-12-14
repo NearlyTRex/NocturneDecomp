@@ -1,102 +1,102 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 68, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 39, 
-    "assembly_lines": 26, 
-    "suspect_count": 5, 
+    "assembly_lines": 26,
+    "complexity_score": 68,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 13,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
-      "addr": "005fe667"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CAlphaBitmapTypeInfo", 
-      "addr": "0065e9f0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((void *)((int)pvVar1 + 0xa0),7,&g_CAlphaBitmapTypeInfo);"
-    }, 
-    {
-      "line": 12, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((void *)((int)pvVar1 + 0x8c),0xf,&g_CAlphaBitmapTypeInfo);"
-    }, 
-    {
-      "line": 13, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pvVar1 + 300) = 0;"
-    }, 
-    {
-      "line": 14, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pvVar1 + 0x130) = 0;"
-    }, 
-    {
-      "line": 15, 
-      "match": "(CMouse *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "return (CMouse *)((int)pvVar1 + -300);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00544380", 
-    "signature": "CMouse * support_newmsg.cpp_CMouse_ctor_FUN_00544380(CMouse * ptr)", 
-    "address_range": [
-      [
-        "00544380", 
-        "005443d7"
-      ]
-    ], 
-    "name": "support_newmsg.cpp_CMouse_ctor_FUN_00544380"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMouse *", 
-        "size": 4, 
-        "name": "ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 39
+  },
   "cross_references": [
     {
-      "from_addr": "00544365", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_newmsg.cpp_staticInit_FUN_00544360", 
-      "addr": "00544360"
+      "addr": "00544360",
+      "from_addr": "00544365",
+      "name": "support_newmsg.cpp_staticInit_FUN_00544360",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00544380",
+    "address_range": [
+      [
+        "00544380",
+        "005443d7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_newmsg.cpp_CMouse_ctor_FUN_00544380",
+    "signature": "CMouse * support_newmsg.cpp_CMouse_ctor_FUN_00544380(CMouse * ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe667",
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065e9f0",
+      "name": "g_CAlphaBitmapTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMouse *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)pvVar1 + 0xa0),7,&g_CAlphaBitmapTypeInfo);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)pvVar1 + 0x8c),0xf,&g_CAlphaBitmapTypeInfo);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pvVar1 + 300) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pvVar1 + 0x130) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(CMouse *)((int)",
+      "text": "return (CMouse *)((int)pvVar1 + -300);",
+      "type": "pointer_cast"
     }
   ]
 }

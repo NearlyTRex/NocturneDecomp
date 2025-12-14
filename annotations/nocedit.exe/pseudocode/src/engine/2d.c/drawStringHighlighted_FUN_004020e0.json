@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 78, 
-    "assembly_lines": 48, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawCharacterHighlighted_FUN_00401b70", 
-      "addr": "00401b70"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 48,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 78
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004020e0", 
-    "signature": "void engine_2d.c_drawStringHighlighted_FUN_004020e0(char * text, int x_pos, int y_pos)", 
+    "address": "004020e0",
     "address_range": [
       [
-        "004020e0", 
+        "004020e0",
         "0040212b"
       ]
-    ], 
-    "name": "engine_2d.c_drawStringHighlighted_FUN_004020e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawStringHighlighted_FUN_004020e0",
+    "signature": "void engine_2d.c_drawStringHighlighted_FUN_004020e0(char * text, int x_pos, int y_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "00401b70",
+      "name": "engine_2d.c_drawCharacterHighlighted_FUN_00401b70"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }, 
+        "is_param": true,
+        "name": "text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_pos"
-      }, 
+        "is_param": true,
+        "name": "x_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_pos"
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

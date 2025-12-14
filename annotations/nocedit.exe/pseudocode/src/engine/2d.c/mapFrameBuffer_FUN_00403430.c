@@ -72,7 +72,7 @@ engine_2d_c_mapFrameBuffer_FUN_00403430
       *(int *)((int)g_ScreenBufferArray + iVar1) = height;
       iVar1 = iVar1 + 4;
       height = height + (int)frame_buffer;
-    } while (SBORROW /* signed borrow */4(iVar1,bits_per_pixel * 4) != iVar1 + bits_per_pixel * -4 < 0);
+    } while (iVar1 < bits_per_pixel * 4);
   }
   return iVar1;
 }

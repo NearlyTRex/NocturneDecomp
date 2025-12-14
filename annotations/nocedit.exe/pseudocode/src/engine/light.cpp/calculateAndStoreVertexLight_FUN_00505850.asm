@@ -30,8 +30,8 @@ section .text
     PUSH ECX                            ; 0050585c
     MOV EBX,dword ptr [EAX]             ; 0050585d
     PUSH EBX                            ; 0050585f
-    CALL engine_light.cpp_calculatePhongLighting_FUN_00505530 ; 00505860 | int engine_light.cpp_calculatePhongLighting_FUN_00505530(int world_x, int world_y, int world_z)
-        ;   XREF to: 00505530 (UNCONDITIONAL_CALL)
+    CALL engine_light.cpp_calculatePhongLighting_FUN_00505530 ; 00505860
+        ;   XREF to: 00505530 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculatePhongLighting_FUN_00505530(int world_x, int world_y, int world_z)
     ADD ESP,0xc                         ; 00505865
     MOV EDX,dword ptr [ESP + 0x8]       ; 00505868
     MOV ECX,EAX                         ; 0050586c

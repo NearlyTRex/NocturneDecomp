@@ -1,84 +1,84 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 25, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_exit.c_ExitHookStub_FUN_0060b530", 
-      "addr": "0060b530"
-    }, 
-    {
-      "name": "crt_exit.c_FinalExitHandler_FUN_0060b560", 
-      "addr": "0060b560"
-    }, 
-    {
-      "name": "crt_exit.c_ProcessExitHandlers_FUN_0060ac88", 
-      "addr": "0060ac88"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "PTR_crt_exit.c_ExitHookStub_FUN_0060b530_00685478", 
-      "addr": "00685478", 
-      "value": "0060b530"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_EmergencyExitFlag", 
-      "addr": "03f9b220", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060b534", 
-    "signature": "void crt_startup.c_ExitApplication_FUN_0060b534(int exit_code)", 
-    "address_range": [
-      [
-        "0060b534", 
-        "0060b55f"
-      ]
-    ], 
-    "name": "crt_startup.c_ExitApplication_FUN_0060b534"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "exit_code"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 16,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
   "cross_references": [
     {
-      "from_addr": "00605b42", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_cpp.c_reportPureVirtualError_FUN_00605b23", 
-      "addr": "00605b23"
-    }, 
+      "addr": "00605b23",
+      "from_addr": "00605b42",
+      "name": "crt_cpp.c_reportPureVirtualError_FUN_00605b23",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00609f13", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.cpp_WinMainBootstrap_FUN_00609e70", 
-      "addr": "00609e70"
+      "addr": "00609e70",
+      "from_addr": "00609f13",
+      "name": "crt_startup.cpp_WinMainBootstrap_FUN_00609e70",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060b534",
+    "address_range": [
+      [
+        "0060b534",
+        "0060b55f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_startup.c_ExitApplication_FUN_0060b534",
+    "signature": "void crt_startup.c_ExitApplication_FUN_0060b534(int exit_code)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060b530",
+      "name": "crt_exit.c_ExitHookStub_FUN_0060b530"
+    },
+    {
+      "addr": "0060b560",
+      "name": "crt_exit.c_FinalExitHandler_FUN_0060b560"
+    },
+    {
+      "addr": "0060ac88",
+      "name": "crt_exit.c_ProcessExitHandlers_FUN_0060ac88"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00685478",
+      "name": "PTR_crt_exit.c_ExitHookStub_FUN_0060b530_00685478",
+      "type": "void*",
+      "value": "0060b530"
+    },
+    {
+      "addr": "03f9b220",
+      "name": "g_EmergencyExitFlag",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "exit_code",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

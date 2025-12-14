@@ -11,8 +11,7 @@ void core_batcreat_cpp_constructor_FUN_004150b0(void)
 {
   CBatCreature *this_ptr;
   
-  this_ptr = (CBatCreature *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf04,"..\\core\\batcreat.cpp",0x4d);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf04,"..\\core\\batcreat.cpp",0x4d);
   if (this_ptr == (CBatCreature *)0x0) {
     return;
   }

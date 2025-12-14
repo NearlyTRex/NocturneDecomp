@@ -1,84 +1,84 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 36, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 34, 
-    "assembly_lines": 23, 
-    "suspect_count": 2, 
+    "assembly_lines": 23,
+    "complexity_score": 36,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "support_codec.cpp_CLZWDictionary_init_FUN_0043ee60", 
-      "addr": "0043ee60"
-    }, 
-    {
-      "name": "support_codec.cpp_resetDictionary_FUN_0043e510", 
-      "addr": "0043e510"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(&this_ptr->lzw_dict,this_ptr->buffer_size,this_ptr->num_bits,unaff_EBX,unaff_retaddr);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043f4d0", 
-    "signature": "void support_codec.cpp_CLZWDecompress_init_FUN_0043f4d0(CLZWDecompress * this_ptr)", 
-    "address_range": [
-      [
-        "0043f4d0", 
-        "0043f508"
-      ]
-    ], 
-    "name": "support_codec.cpp_CLZWDecompress_init_FUN_0043f4d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWDecompress *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 34
+  },
   "cross_references": [
     {
-      "from_addr": "0044f6a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0", 
-      "addr": "0044f3e0"
-    }, 
+      "addr": "0044f3e0",
+      "from_addr": "0044f6a0",
+      "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e15f0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
-      "addr": "004e12b0"
+      "addr": "004e12b0",
+      "from_addr": "004e15f0",
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043f4d0",
+    "address_range": [
+      [
+        "0043f4d0",
+        "0043f508"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDecompress_init_FUN_0043f4d0",
+    "signature": "void support_codec.cpp_CLZWDecompress_init_FUN_0043f4d0(CLZWDecompress * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043ee60",
+      "name": "support_codec.cpp_CLZWDictionary_init_FUN_0043ee60"
+    },
+    {
+      "addr": "0043e510",
+      "name": "support_codec.cpp_resetDictionary_FUN_0043e510"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDecompress *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "text": "(&this_ptr->lzw_dict,this_ptr->buffer_size,this_ptr->num_bits,unaff_EBX,unaff_retaddr);",
+      "type": "unaffected_reg"
     }
   ]
 }

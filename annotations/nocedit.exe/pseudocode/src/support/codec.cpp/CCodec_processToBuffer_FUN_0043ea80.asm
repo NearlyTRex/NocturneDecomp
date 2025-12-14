@@ -39,8 +39,8 @@ section .text
     PUSH 0x0                            ; 0043eaa5
     LEA EAX,[ESP + 0x10]                ; 0043eaa7
     PUSH EAX                            ; 0043eaab
-    CALL crt_strstream.cpp_ostrstream_ctor_FUN_005ff384 ; 0043eaac | ostrstream * crt_strstream.cpp_ostrstream_ctor_FUN_005ff384(ostrstream * this_ptr, int flags, char * buffer, int buffer_size, ...)
-        ;   XREF to: 005ff384 (UNCONDITIONAL_CALL)
+    CALL crt_strstream.cpp_ostrstream_ctor_FUN_005ff384 ; 0043eaac
+        ;   XREF to: 005ff384 (UNCONDITIONAL_CALL)  ; ostrstream * crt_strstream.cpp_ostrstream_ctor_FUN_005ff384(ostrstream * this_ptr, int flags, char * buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0043eab1
     LEA EAX,[ESP + 0x48]                ; 0043eab4
     PUSH EAX                            ; 0043eab8
@@ -54,11 +54,11 @@ section .text
     ADD ESP,0x10                        ; 0043eacf
     MOV EBX,EAX                         ; 0043ead2
     TEST EAX,EAX                        ; 0043ead4
-    JZ 0x0043eaf2                       ; 0043ead6 | LAB_0043eaf2
-        ;   XREF to: 0043eaf2 (CONDITIONAL_JUMP)
+    JZ 0x0043eaf2                       ; 0043ead6
+        ;   XREF to: 0043eaf2 (CONDITIONAL_JUMP)  ; LAB_0043eaf2
     CMP dword ptr [ESP + 0xa8],0x0      ; 0043ead8
-    JZ 0x0043eaf2                       ; 0043eae0 | LAB_0043eaf2
-        ;   XREF to: 0043eaf2 (CONDITIONAL_JUMP)
+    JZ 0x0043eaf2                       ; 0043eae0
+        ;   XREF to: 0043eaf2 (CONDITIONAL_JUMP)  ; LAB_0043eaf2
     LEA EAX,[ESP + 0x48]                ; 0043eae2
     PUSH EAX                            ; 0043eae6
     MOV EBX,dword ptr [ESI]             ; 0043eae7
@@ -69,8 +69,8 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 0043eaf2
         ;   Label: LAB_0043eaf2
     PUSH EAX                            ; 0043eaf6
-    CALL crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d ; 0043eaf7 | int crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d(ostrstream * this_ptr)
-        ;   XREF to: 005ff45d (UNCONDITIONAL_CALL)
+    CALL crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d ; 0043eaf7
+        ;   XREF to: 005ff45d (UNCONDITIONAL_CALL)  ; int crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d(ostrstream * this_ptr)
     ADD ESP,0x4                         ; 0043eafc
     MOV ECX,dword ptr [EDI]             ; 0043eaff
     PUSH 0x0                            ; 0043eb01
@@ -78,8 +78,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0043eb05
     PUSH EAX                            ; 0043eb09
     MOV dword ptr [EDI],ECX             ; 0043eb0a
-    CALL crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a ; 0043eb0c | ostrstream * crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a(ostrstream * this_ptr, int d1)
-        ;   XREF to: 005ff48a (UNCONDITIONAL_CALL)
+    CALL crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a ; 0043eb0c
+        ;   XREF to: 005ff48a (UNCONDITIONAL_CALL)  ; ostrstream * crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a(ostrstream * this_ptr, int d1)
     ADD ESP,0x8                         ; 0043eb11
     MOV EAX,EBX                         ; 0043eb14
     ADD ESP,0x80                        ; 0043eb16

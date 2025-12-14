@@ -25,7 +25,7 @@ cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00433160(void *bitmap_data,int w
     do {
       puVar4 = puVar4 + -iVar2;
       if (iVar2 != 0) {
-        puVar3 = (byte *)bitmap_data;
+        puVar3 = bitmap_data;
         puVar5 = puVar4;
         do {
           uVar1 = *puVar3;

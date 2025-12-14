@@ -30,8 +30,7 @@ shape_meshlod_cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(CLodMesh *this_ptr,char
       iVar5 = iVar5 + 0x48;
     } while (iVar4 < this_ptr->submesh_count);
   }
-  pSVar3 = (SLodSubmesh *)
-           shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pSVar3 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->submesh_data,(this_ptr->submesh_count + 1) * 0x48,
                       "..\\shape\\meshlod.cpp",0xb6d);
   this_ptr->submesh_data = pSVar3;

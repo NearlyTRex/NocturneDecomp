@@ -30,21 +30,21 @@
 
 section .text
 
-    CMP dword ptr [0x02d03e94],0x0      ; 005b7250 | int g_UseExternalRenderer
+    CMP dword ptr [0x02d03e94],0x0      ; 005b7250 | g_UseExternalRenderer
         ;   Label: wincore_windll.cpp_unlockFrame_FUN_005b7250
-    JZ 0x005b7219                       ; 005b7257 | LAB_005b7219
-        ;   XREF to: 005b7219 (CONDITIONAL_JUMP)
-    MOV EAX,[0x03f6b998]                ; 005b7259 | int g_SavedBitsPerPixel
+    JZ 0x005b7219                       ; 005b7257
+        ;   XREF to: 005b7219 (CONDITIONAL_JUMP)  ; LAB_005b7219
+    MOV EAX,[0x03f6b998]                ; 005b7259 | g_SavedBitsPerPixel
     MOV ECX,dword ptr [ESP + 0x4]       ; 005b725e
-    MOV [0x0067939c],EAX                ; 005b7262 | int g_BitsPerPixel
+    MOV [0x0067939c],EAX                ; 005b7262 | g_BitsPerPixel
     TEST ECX,ECX                        ; 005b7267
-    JZ 0x005b7275                       ; 005b7269 | LAB_005b7275
-        ;   XREF to: 005b7275 (CONDITIONAL_JUMP)
+    JZ 0x005b7275                       ; 005b7269
+        ;   XREF to: 005b7275 (CONDITIONAL_JUMP)  ; LAB_005b7275
     PUSH EBX                            ; 005b726b
     XOR EBX,EBX                         ; 005b726c
-    MOV dword ptr [0x03f6b99c],EBX      ; 005b726e | int g_ExternalFrameLocked
+    MOV dword ptr [0x03f6b99c],EBX      ; 005b726e | g_ExternalFrameLocked
     POP EBX                             ; 005b7274
-    CALL dword ptr [0x03f6b8b0]         ; 005b7275 | APIDLL_unlockFrame * g_APIDLL_unlockFrame
+    CALL dword ptr [0x03f6b8b0]         ; 005b7275 | g_APIDLL_unlockFrame
         ;   Label: LAB_005b7275
     RET                                 ; 005b727b
 

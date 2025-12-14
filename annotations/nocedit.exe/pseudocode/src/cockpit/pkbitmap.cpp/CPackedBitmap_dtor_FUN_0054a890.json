@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 16, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0", 
-      "addr": "0054a8e0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054a890", 
-    "signature": "CPackedBitmap * cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890(CPackedBitmap * this_ptr)", 
-    "address_range": [
-      [
-        "0054a890", 
-        "0054a8a1"
-      ]
-    ], 
-    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "0054bb06", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0", 
-      "addr": "0054b9b0"
+      "addr": "0054b9b0",
+      "from_addr": "0054bb06",
+      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0054a890",
+    "address_range": [
+      [
+        "0054a890",
+        "0054a8a1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890",
+    "signature": "CPackedBitmap * cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890(CPackedBitmap * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054a8e0",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      }
+    ]
+  },
+  "suspects": []
 }

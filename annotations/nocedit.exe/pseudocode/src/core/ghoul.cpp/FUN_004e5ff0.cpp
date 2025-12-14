@@ -11,8 +11,7 @@ void core_ghoul_cpp_FUN_004e5ff0(void)
 {
   CGhoul *this_ptr;
   
-  this_ptr = (CGhoul *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf38,"..\\core\\ghoul.cpp",0x9e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf38,"..\\core\\ghoul.cpp",0x9e);
   if (this_ptr == (CGhoul *)0x0) {
     return;
   }

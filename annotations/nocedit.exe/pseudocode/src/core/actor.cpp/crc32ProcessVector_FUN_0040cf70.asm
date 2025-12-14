@@ -23,8 +23,8 @@ section .text
     PUSH EDX                            ; 0040cf76
     MOV ECX,dword ptr [ESP + 0xc]       ; 0040cf77
     PUSH ECX                            ; 0040cf7b
-    CALL core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10 ; 0040cf7c | void core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10(uint * crc_state, byte * buffer, int buffer_length)
-        ;   XREF to: 0040cf10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10 ; 0040cf7c
+        ;   XREF to: 0040cf10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10(uint * crc_state, byte * buffer, int buffer_length)
     ADD ESP,0xc                         ; 0040cf81
     RET                                 ; 0040cf84
 

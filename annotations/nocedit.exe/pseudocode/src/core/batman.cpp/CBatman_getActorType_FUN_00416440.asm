@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x8227e8                    ; 00416440 | CDemonActorType g_CBatmanClassInfo
+    MOV EAX,0x8227e8                    ; 00416440 | g_CBatmanClassInfo
         ;   Label: core_batman.cpp_CBatman_getActorType_FUN_00416440
     RET                                 ; 00416445
 

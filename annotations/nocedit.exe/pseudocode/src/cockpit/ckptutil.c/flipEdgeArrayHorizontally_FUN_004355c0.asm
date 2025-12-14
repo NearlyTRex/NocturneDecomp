@@ -29,8 +29,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x34]      ; 004355c7
     XOR ECX,ECX                         ; 004355cb
     TEST EBP,EBP                        ; 004355cd
-    JLE 0x004356a4                      ; 004355cf | LAB_004356a4
-        ;   XREF to: 004356a4 (CONDITIONAL_JUMP)
+    JLE 0x004356a4                      ; 004355cf
+        ;   XREF to: 004356a4 (CONDITIONAL_JUMP)  ; LAB_004356a4
     MOV EAX,dword ptr [ESP + 0x30]      ; 004355d5
     MOV SI,word ptr [EAX + 0x2]         ; 004355d9
         ;   Label: LAB_004355d9
@@ -61,8 +61,8 @@ section .text
     MOV EDI,dword ptr [ESP]             ; 0043562b
     MOV ESI,dword ptr [ESP + 0x4]       ; 0043562e
     CMP EBX,EDI                         ; 00435632
-    JG 0x004356ac                       ; 00435634 | LAB_004356ac
-        ;   XREF to: 004356ac (CONDITIONAL_JUMP)
+    JG 0x004356ac                       ; 00435634
+        ;   XREF to: 004356ac (CONDITIONAL_JUMP)  ; LAB_004356ac
     MOV DI,word ptr [EAX + 0x2]         ; 00435636
     AND EDX,0xffff0000                  ; 0043563a
     AND EDI,0xffff0000                  ; 00435640
@@ -93,8 +93,8 @@ section .text
     INC ECX                             ; 00435698
     ADD EAX,0x8                         ; 00435699
     CMP ECX,EBP                         ; 0043569c
-    JL 0x004355d9                       ; 0043569e | LAB_004355d9
-        ;   XREF to: 004355d9 (CONDITIONAL_JUMP)
+    JL 0x004355d9                       ; 0043569e
+        ;   XREF to: 004355d9 (CONDITIONAL_JUMP)  ; LAB_004355d9
     ADD ESP,0x1c                        ; 004356a4
         ;   Label: LAB_004356a4
     POP EBP                             ; 004356a7
@@ -133,8 +133,8 @@ section .text
     INC ECX                             ; 0043570d
     ADD EAX,0x8                         ; 0043570e
     CMP ECX,EBP                         ; 00435711
-    JL 0x004355d9                       ; 00435713 | LAB_004355d9
-        ;   XREF to: 004355d9 (CONDITIONAL_JUMP)
+    JL 0x004355d9                       ; 00435713
+        ;   XREF to: 004355d9 (CONDITIONAL_JUMP)  ; LAB_004355d9
     ADD ESP,0x1c                        ; 00435719
     POP EBP                             ; 0043571c
     POP EDI                             ; 0043571d

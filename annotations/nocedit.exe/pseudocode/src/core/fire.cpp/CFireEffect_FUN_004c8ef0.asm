@@ -27,37 +27,37 @@ section .text
     PUSH ESI                            ; 004c8ef1
     PUSH EDI                            ; 004c8ef2
     PUSH EBP                            ; 004c8ef3
-    MOV ESI,dword ptr [0x02d6cf64]      ; 004c8ef4 | CCrater * g_CraterActiveListHead
+    MOV ESI,dword ptr [0x02d6cf64]      ; 004c8ef4 | g_CraterActiveListHead
     MOV EBP,dword ptr [ESP + 0x18]      ; 004c8efa
     MOV EBX,dword ptr [ESP + 0x20]      ; 004c8efe
     MOV EDI,dword ptr [ESP + 0x24]      ; 004c8f02
     TEST EBX,EBX                        ; 004c8f06
-    JLE 0x004c8f3e                      ; 004c8f08 | LAB_004c8f3e
-        ;   XREF to: 004c8f3e (CONDITIONAL_JUMP)
+    JLE 0x004c8f3e                      ; 004c8f08
+        ;   XREF to: 004c8f3e (CONDITIONAL_JUMP)  ; LAB_004c8f3e
     IMUL EAX,ESI,0x24                   ; 004c8f0a
         ;   Label: LAB_004c8f0a
     PUSH EDI                            ; 004c8f0d
     MOV EDX,dword ptr [ESP + 0x20]      ; 004c8f0e
     PUSH EDX                            ; 004c8f12
     PUSH EBP                            ; 004c8f13
-    ADD EAX,0x2d6cf68                   ; 004c8f14 | CGunFlame[500] g_GunFlamePool
-    PUSH EAX                            ; 004c8f19 | CGunFlame[500] g_GunFlamePool
-    MOV dword ptr [0x02d6cf64],ESI      ; 004c8f1a | CCrater * g_CraterActiveListHead
-    CALL core_fire.cpp_CGunFlame_FUN_004c4db0 ; 004c8f20 | void core_fire.cpp_CGunFlame_FUN_004c4db0(CGunFlame * this_ptr)
-        ;   XREF to: 004c4db0 (UNCONDITIONAL_CALL)
-    MOV ESI,dword ptr [0x02d6cf64]      ; 004c8f25 | CCrater * g_CraterActiveListHead
+    ADD EAX,0x2d6cf68                   ; 004c8f14 | g_GunFlamePool
+    PUSH EAX                            ; 004c8f19 | g_GunFlamePool
+    MOV dword ptr [0x02d6cf64],ESI      ; 004c8f1a | g_CraterActiveListHead
+    CALL core_fire.cpp_CGunFlame_FUN_004c4db0 ; 004c8f20
+        ;   XREF to: 004c4db0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_FUN_004c4db0(CGunFlame * this_ptr)
+    MOV ESI,dword ptr [0x02d6cf64]      ; 004c8f25 | g_CraterActiveListHead
     INC ESI                             ; 004c8f2b
     ADD ESP,0x10                        ; 004c8f2c
     CMP ESI,0x1f4                       ; 004c8f2f
-    JL 0x004c8f39                       ; 004c8f35 | LAB_004c8f39
-        ;   XREF to: 004c8f39 (CONDITIONAL_JUMP)
+    JL 0x004c8f39                       ; 004c8f35
+        ;   XREF to: 004c8f39 (CONDITIONAL_JUMP)  ; LAB_004c8f39
     XOR ESI,ESI                         ; 004c8f37
     DEC EBX                             ; 004c8f39
         ;   Label: LAB_004c8f39
     TEST EBX,EBX                        ; 004c8f3a
-    JG 0x004c8f0a                       ; 004c8f3c | LAB_004c8f0a
-        ;   XREF to: 004c8f0a (CONDITIONAL_JUMP)
-    MOV dword ptr [0x02d6cf64],ESI      ; 004c8f3e | CCrater * g_CraterActiveListHead
+    JG 0x004c8f0a                       ; 004c8f3c
+        ;   XREF to: 004c8f0a (CONDITIONAL_JUMP)  ; LAB_004c8f0a
+    MOV dword ptr [0x02d6cf64],ESI      ; 004c8f3e | g_CraterActiveListHead
         ;   Label: LAB_004c8f3e
     POP EBP                             ; 004c8f44
     POP EDI                             ; 004c8f45

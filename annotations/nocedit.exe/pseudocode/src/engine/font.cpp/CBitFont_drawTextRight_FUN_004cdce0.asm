@@ -39,16 +39,16 @@ section .text
     PUSH EAX                            ; 004cdcf6
     MOV ESI,dword ptr [ESP + 0x20]      ; 004cdcf7
     PUSH ESI                            ; 004cdcfb
-    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 004cdcfc | int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)
-        ;   XREF to: 004cfe80 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 004cdcfc
+        ;   XREF to: 004cfe80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004cdd01
     MOV EDX,dword ptr [ESP + 0x20]      ; 004cdd04
     SUB EDX,EAX                         ; 004cdd08
     LEA EAX,[EDX + 0x1]                 ; 004cdd0a
     PUSH EAX                            ; 004cdd0d
     PUSH ESI                            ; 004cdd0e
-    CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0 ; 004cdd0f | int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
-        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0 ; 004cdd0f
+        ;   XREF to: 004cdbf0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
     ADD ESP,0x18                        ; 004cdd14
     POP ESI                             ; 004cdd17
     POP EBX                             ; 004cdd18

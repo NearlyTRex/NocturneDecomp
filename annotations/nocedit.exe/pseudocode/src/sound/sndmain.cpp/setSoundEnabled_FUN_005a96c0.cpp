@@ -14,7 +14,7 @@ int __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(int enable)
   
   g_SoundEnabled = enable;
   if (enable == 0) {
-    return enable;
+    return 0;
   }
   sound_sndmain_cpp_killAllSfx_FUN_005a9cc0();
   if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {

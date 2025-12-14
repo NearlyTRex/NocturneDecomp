@@ -1,314 +1,314 @@
 {
   "complexity": {
-    "function_call_count": 11, 
-    "complexity_score": 238, 
-    "pseudocode_lines": 173, 
-    "cross_reference_count": 1, 
-    "global_count": 25, 
-    "total_lines": 585, 
-    "assembly_lines": 412, 
-    "suspect_count": 6, 
+    "assembly_lines": 412,
+    "complexity_score": 238,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 25,
+    "pseudocode_lines": 173,
+    "suspect_count": 6,
     "suspect_types": [
       "unknown_field"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "DefWindowProcA", 
-      "addr": "EXTERNAL:00000032"
-    }, 
-    {
-      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
-      "addr": "00403260"
-    }, 
-    {
-      "name": "GetCurrentProcess", 
-      "addr": "EXTERNAL:0000006a"
-    }, 
-    {
-      "name": "PostQuitMessage", 
-      "addr": "EXTERNAL:00000041"
-    }, 
-    {
-      "name": "SetCursor", 
-      "addr": "EXTERNAL:00000045"
-    }, 
-    {
-      "name": "SetThreadPriority", 
-      "addr": "EXTERNAL:0000009a"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50", 
-      "addr": "005edc50"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_stubFunction_FUN_005edd80", 
-      "addr": "005edd80"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_videoRestore_FUN_005edc80", 
-      "addr": "005edc80"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_enqueueInput_FUN_005f2f30", 
-      "addr": "005f2f30"
-    }, 
-    {
-      "name": "wincore_winvideo.cpp_closeMovie_FUN_005f46b0", 
-      "addr": "005f46b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "DefWindowProcA*", 
-      "name": "PTR_DefWindowProcA_00611498", 
-      "addr": "00611498", 
-      "value": "00211a8c"
-    }, 
-    {
-      "type": "PostQuitMessage*", 
-      "name": "PTR_PostQuitMessage_006114d4", 
-      "addr": "006114d4", 
-      "value": "00211b80"
-    }, 
-    {
-      "type": "SetCursor*", 
-      "name": "PTR_SetCursor_006114e4", 
-      "addr": "006114e4", 
-      "value": "00211bc8"
-    }, 
-    {
-      "type": "GetCurrentProcess*", 
-      "name": "GetCurrentProcess", 
-      "addr": "0061157c", 
-      "value": "00211e5a"
-    }, 
-    {
-      "type": "SetThreadPriority*", 
-      "name": "SetThreadPriority", 
-      "addr": "0061163c", 
-      "value": "002121f6"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_InputKeyMask", 
-      "addr": "006793a8", 
-      "value": "0x7f"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowActive", 
-      "addr": "006849a4", 
-      "value": "-0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PreviousActiveState", 
-      "addr": "006849ac", 
-      "value": "-0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseX", 
-      "addr": "02cf6a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseY", 
-      "addr": "02cf6a90", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseButtonFlags", 
-      "addr": "02cf6a94", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_KeyboardState", 
-      "addr": "02d03e98", 
-      "value": null
-    }, 
-    {
-      "type": "byte", 
-      "name": "g_LeftMousePressed", 
-      "addr": "02d04098", 
-      "value": null
-    }, 
-    {
-      "type": "byte", 
-      "name": "g_RightMousePressed", 
-      "addr": "02d04099", 
-      "value": null
-    }, 
-    {
-      "type": "byte", 
-      "name": "g_MiddleMousePressed", 
-      "addr": "02d040a4", 
-      "value": null
-    }, 
-    {
-      "type": "HWND", 
-      "name": "g_MainWindowHandle", 
-      "addr": "03f98468", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_InputDisabled", 
-      "addr": "03f9846c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ApplicationActive", 
-      "addr": "03f98470", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_MessageFlags[1]", 
-      "addr": "03f9847c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LeftMouseReleased", 
-      "addr": "03f98c7c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RightMouseReleased", 
-      "addr": "03f98c80", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MiddleMouseReleased", 
-      "addr": "03f98cac", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_NumWindowMessageHandlers", 
-      "addr": "03f98ddc", 
-      "value": null
-    }, 
-    {
-      "type": "WNDPROC[4]", 
-      "name": "g_WindowMessageHandlers", 
-      "addr": "03f98de0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_WindowMessageHandlers[1]", 
-      "addr": "03f98de4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 47, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags | 1;"
-    }, 
-    {
-      "line": 55, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;"
-    }, 
-    {
-      "line": 62, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags | 2;"
-    }, 
-    {
-      "line": 72, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfd;"
-    }, 
-    {
-      "line": 79, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags | 4;"
-    }, 
-    {
-      "line": 88, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfb;"
-    }
-  ], 
-  "function": {
-    "convention": "__stdcall", 
-    "address": "005f3150", 
-    "signature": "LRESULT wincore_winrun.cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)", 
-    "address_range": [
-      [
-        "005f3150", 
-        "005f35d9"
-      ]
-    ], 
-    "name": "wincore_winrun.cpp_mainWindowProc_FUN_005f3150"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef HWND HWND__ *", 
-        "size": 4, 
-        "name": "hWnd"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "typedef UINT uint", 
-        "size": 4, 
-        "name": "message"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "typedef WPARAM UINT_PTR", 
-        "size": 4, 
-        "name": "wParam"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "typedef LPARAM LONG_PTR", 
-        "size": 4, 
-        "name": "lParam"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 585
+  },
   "cross_references": [
     {
-      "from_addr": "005f37eb", 
-      "type": "DATA", 
-      "name": "wincore_winrun.cpp_winMain_FUN_005f3680", 
-      "addr": "005f3680"
+      "addr": "005f3680",
+      "from_addr": "005f37eb",
+      "name": "wincore_winrun.cpp_winMain_FUN_005f3680",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "005f3150",
+    "address_range": [
+      [
+        "005f3150",
+        "005f35d9"
+      ]
+    ],
+    "convention": "__stdcall",
+    "name": "wincore_winrun.cpp_mainWindowProc_FUN_005f3150",
+    "signature": "LRESULT wincore_winrun.cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000032",
+      "name": "DefWindowProcA"
+    },
+    {
+      "addr": "00403260",
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "EXTERNAL:0000006a",
+      "name": "GetCurrentProcess"
+    },
+    {
+      "addr": "EXTERNAL:00000041",
+      "name": "PostQuitMessage"
+    },
+    {
+      "addr": "EXTERNAL:00000045",
+      "name": "SetCursor"
+    },
+    {
+      "addr": "EXTERNAL:0000009a",
+      "name": "SetThreadPriority"
+    },
+    {
+      "addr": "005edc50",
+      "name": "wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50"
+    },
+    {
+      "addr": "005edd80",
+      "name": "wincore_wddvmem.cpp_stubFunction_FUN_005edd80"
+    },
+    {
+      "addr": "005edc80",
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_005edc80"
+    },
+    {
+      "addr": "005f2f30",
+      "name": "wincore_winrun.cpp_enqueueInput_FUN_005f2f30"
+    },
+    {
+      "addr": "005f46b0",
+      "name": "wincore_winvideo.cpp_closeMovie_FUN_005f46b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611498",
+      "name": "PTR_DefWindowProcA_00611498",
+      "type": "DefWindowProcA*",
+      "value": "00211a8c"
+    },
+    {
+      "addr": "006114d4",
+      "name": "PTR_PostQuitMessage_006114d4",
+      "type": "PostQuitMessage*",
+      "value": "00211b80"
+    },
+    {
+      "addr": "006114e4",
+      "name": "PTR_SetCursor_006114e4",
+      "type": "SetCursor*",
+      "value": "00211bc8"
+    },
+    {
+      "addr": "0061157c",
+      "name": "GetCurrentProcess",
+      "type": "GetCurrentProcess*",
+      "value": "00211e5a"
+    },
+    {
+      "addr": "0061163c",
+      "name": "SetThreadPriority",
+      "type": "SetThreadPriority*",
+      "value": "002121f6"
+    },
+    {
+      "addr": "006793a8",
+      "name": "g_InputKeyMask",
+      "type": "int",
+      "value": "0x7f"
+    },
+    {
+      "addr": "006849a4",
+      "name": "g_WindowActive",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "006849ac",
+      "name": "g_PreviousActiveState",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d03e98",
+      "name": "g_KeyboardState",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "02d04098",
+      "name": "g_LeftMousePressed",
+      "type": "byte",
+      "value": null
+    },
+    {
+      "addr": "02d04099",
+      "name": "g_RightMousePressed",
+      "type": "byte",
+      "value": null
+    },
+    {
+      "addr": "02d040a4",
+      "name": "g_MiddleMousePressed",
+      "type": "byte",
+      "value": null
+    },
+    {
+      "addr": "03f98468",
+      "name": "g_MainWindowHandle",
+      "type": "HWND",
+      "value": null
+    },
+    {
+      "addr": "03f9846c",
+      "name": "g_InputDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f98470",
+      "name": "g_ApplicationActive",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9847c",
+      "name": "g_MessageFlags[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f98c7c",
+      "name": "g_LeftMouseReleased",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f98c80",
+      "name": "g_RightMouseReleased",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f98cac",
+      "name": "g_MiddleMouseReleased",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f98ddc",
+      "name": "g_NumWindowMessageHandlers",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f98de0",
+      "name": "g_WindowMessageHandlers",
+      "type": "WNDPROC[4]",
+      "value": null
+    },
+    {
+      "addr": "03f98de4",
+      "name": "g_WindowMessageHandlers[1]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "hWnd",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef HWND HWND__ *"
+      },
+      {
+        "is_param": true,
+        "name": "message",
+        "offset": 8,
+        "size": 4,
+        "type": "typedef UINT uint"
+      },
+      {
+        "is_param": true,
+        "name": "wParam",
+        "offset": 12,
+        "size": 4,
+        "type": "typedef WPARAM UINT_PTR"
+      },
+      {
+        "is_param": true,
+        "name": "lParam",
+        "offset": 16,
+        "size": 4,
+        "type": "typedef LPARAM LONG_PTR"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._0_1_",
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags | 1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._0_1_",
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_1_",
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags | 2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 72,
+      "match": "._0_1_",
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfd;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
+      "match": "._0_1_",
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags | 4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._0_1_",
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfb;",
+      "type": "unknown_field"
     }
   ]
 }

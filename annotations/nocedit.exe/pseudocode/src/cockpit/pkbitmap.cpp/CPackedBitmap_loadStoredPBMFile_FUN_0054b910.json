@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860", 
-      "addr": "0054b860"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054b910", 
-    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910(CPackedBitmap * this_ptr, int post_load_processing)", 
-    "address_range": [
-      [
-        "0054b910", 
-        "0054b923"
-      ]
-    ], 
-    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "post_load_processing"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "0054b503", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0", 
-      "addr": "0054b4b0"
+      "addr": "0054b4b0",
+      "from_addr": "0054b503",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0054b910",
+    "address_range": [
+      [
+        "0054b910",
+        "0054b923"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910",
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910(CPackedBitmap * this_ptr, int post_load_processing)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054b860",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "post_load_processing",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

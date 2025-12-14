@@ -43,39 +43,39 @@ section .text
         ;   Label: LAB_0059b8e4
     MOV byte ptr [EDI],AL               ; 0059b8e6
     CMP AL,0x0                          ; 0059b8e8
-    JZ 0x0059b8fc                       ; 0059b8ea | LAB_0059b8fc
-        ;   XREF to: 0059b8fc (CONDITIONAL_JUMP)
+    JZ 0x0059b8fc                       ; 0059b8ea
+        ;   XREF to: 0059b8fc (CONDITIONAL_JUMP)  ; LAB_0059b8fc
     MOV AL,byte ptr [ESI + 0x1]         ; 0059b8ec
     ADD ESI,0x2                         ; 0059b8ef
     MOV byte ptr [EDI + 0x1],AL         ; 0059b8f2
     ADD EDI,0x2                         ; 0059b8f5
     CMP AL,0x0                          ; 0059b8f8
-    JNZ 0x0059b8e4                      ; 0059b8fa | LAB_0059b8e4
-        ;   XREF to: 0059b8e4 (CONDITIONAL_JUMP)
+    JNZ 0x0059b8e4                      ; 0059b8fa
+        ;   XREF to: 0059b8e4 (CONDITIONAL_JUMP)  ; LAB_0059b8e4
     POP EDI                             ; 0059b8fc
         ;   Label: LAB_0059b8fc
-    PUSH 0x64e860                       ; 0059b8fd | = "rt" | s_rt_0064e860 = rt
+    PUSH 0x64e860                       ; 0059b8fd | = "rt"
     PUSH EBX                            ; 0059b902
-    PUSH 0x64e863                       ; 0059b903 | = "models" | s_models_0064e863 = models
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0059b908 | FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)
+    PUSH 0x64e863                       ; 0059b903 | = "models"
+    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0059b908
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0059b90d
     MOV EDI,EAX                         ; 0059b910
     TEST EAX,EAX                        ; 0059b912
-    JZ 0x0059b93b                       ; 0059b914 | LAB_0059b93b
-        ;   XREF to: 0059b93b (CONDITIONAL_JUMP)
+    JZ 0x0059b93b                       ; 0059b914
+        ;   XREF to: 0059b93b (CONDITIONAL_JUMP)  ; LAB_0059b93b
     PUSH EDI                            ; 0059b916
         ;   Label: LAB_0059b916
     MOV EBX,dword ptr [ESP + 0x14]      ; 0059b917
     PUSH EBX                            ; 0059b91b
-    CALL core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970 ; 0059b91c | void core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970(CDeformableModel * this_ptr, FILE * file_handle)
-        ;   XREF to: 0059b970 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970 ; 0059b91c
+        ;   XREF to: 0059b970 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970(CDeformableModel * this_ptr, FILE * file_handle)
     ADD ESP,0x8                         ; 0059b921
     PUSH 0x4b4                          ; 0059b924
-    PUSH 0x64e8a6                       ; 0059b929 | = "..\\core\\skeleton.cpp" | s_core_skeleton_cpp_0064e8a6 = ..\core\skeleton.cpp
+    PUSH 0x64e8a6                       ; 0059b929 | = "..\\core\\skeleton.cpp"
     PUSH EDI                            ; 0059b92e
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0059b92f | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0059b92f
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0059b934
     POP EDI                             ; 0059b937
     POP ESI                             ; 0059b938
@@ -83,14 +83,14 @@ section .text
     RET                                 ; 0059b93a
     PUSH EBX                            ; 0059b93b
         ;   Label: LAB_0059b93b
-    MOV EDX,0x64e86a                    ; 0059b93c | = "..\\core\\skeleton.cpp" | s_core_skeleton_cpp_0064e86a = ..\core\skeleton.cpp
+    MOV EDX,0x64e86a                    ; 0059b93c | = "..\\core\\skeleton.cpp"
     MOV ECX,0x4b2                       ; 0059b941
-    PUSH 0x64e87f                       ; 0059b946 | = "CDeformableModel::load - Can't open %s" | s_CDeformableModel_load_Ca_0064e87f = CDeformableModel::load - Can't open %s
-    MOV dword ptr [0x02f0ca48],EDX      ; 0059b94b | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0059b951 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0059b957 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64e87f                       ; 0059b946 | = "CDeformableModel::load - Can't open %s"
+    MOV dword ptr [0x02f0ca48],EDX      ; 0059b94b | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0059b951 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0059b957
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 0059b95c
-    JMP 0x0059b916                      ; 0059b95f | LAB_0059b916
-        ;   XREF to: 0059b916 (UNCONDITIONAL_JUMP)
+    JMP 0x0059b916                      ; 0059b95f
+        ;   XREF to: 0059b916 (UNCONDITIONAL_JUMP)  ; LAB_0059b916
 

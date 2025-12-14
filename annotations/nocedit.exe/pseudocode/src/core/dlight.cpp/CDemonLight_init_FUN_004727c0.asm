@@ -43,23 +43,23 @@ section .text
     SUB ESP,0x4                         ; 004727c2
     MOV EBX,dword ptr [ESP + 0x10]      ; 004727c5
     PUSH EBX                            ; 004727c9
-    CALL core_dlight.cpp_CDemonLight_free_FUN_004728b0 ; 004727ca | void core_dlight.cpp_CDemonLight_free_FUN_004728b0(CDemonLight * this_ptr)
-        ;   XREF to: 004728b0 (UNCONDITIONAL_CALL)
+    CALL core_dlight.cpp_CDemonLight_free_FUN_004728b0 ; 004727ca
+        ;   XREF to: 004728b0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_free_FUN_004728b0(CDemonLight * this_ptr)
     MOV EDX,dword ptr [EBX + 0x1cc0]    ; 004727cf
     IMUL EDX,dword ptr [EBX + 0x1cc4]   ; 004727d5
     ADD ESP,0x4                         ; 004727dc
     PUSH 0x6b                           ; 004727df
     ADD EDX,EDX                         ; 004727e1
-    PUSH 0x61ee4b                       ; 004727e3 | = "..\\core\\dlight.cpp" | s_core_dlight_cpp_0061ee4b = ..\core\dlight.cpp
+    PUSH 0x61ee4b                       ; 004727e3 | = "..\\core\\dlight.cpp"
     ADD EDX,0x210                       ; 004727e8
     PUSH EDX                            ; 004727ee
-    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 004727ef | void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
-        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 004727ef
+        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004727f4
     MOV dword ptr [EBX + 0x2f98],EAX    ; 004727f7
     TEST EAX,EAX                        ; 004727fd
-    JZ 0x0047287a                       ; 004727ff | LAB_0047287a
-        ;   XREF to: 0047287a (CONDITIONAL_JUMP)
+    JZ 0x0047287a                       ; 004727ff
+        ;   XREF to: 0047287a (CONDITIONAL_JUMP)  ; LAB_0047287a
     MOV EAX,dword ptr [EBX + 0x2f98]    ; 00472801
         ;   Label: LAB_00472801
     ADD EAX,0x10                        ; 00472807
@@ -74,26 +74,26 @@ section .text
     SBB EAX,EDX                         ; 00472829
     SAR EAX,0x3                         ; 0047282b
     PUSH 0x71                           ; 0047282e
-    PUSH 0x61eea3                       ; 00472830 | = "..\\core\\dlight.cpp" | s_core_dlight_cpp_0061eea3 = ..\core\dlight.cpp
+    PUSH 0x61eea3                       ; 00472830 | = "..\\core\\dlight.cpp"
     PUSH EAX                            ; 00472835
-    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 00472836 | void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
-        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 00472836
+        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
     FLD float ptr [EBX + 0x2fa8]        ; 0047283b
-    FMUL double ptr [0x0061eebb]        ; 00472841 | double DOUBLE_0061eebb
+    FMUL double ptr [0x0061eebb]        ; 00472841 | DOUBLE_0061eebb
     ADD ESP,0xc                         ; 00472847
     MOV dword ptr [EBX + 0x2fa0],EAX    ; 0047284a
     PUSH 0x0                            ; 00472850
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00472852 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00472852
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     PUSH 0x0                            ; 00472857
     FISTP dword ptr [ESP + 0x8]         ; 00472859
     MOV EAX,dword ptr [ESP + 0x8]       ; 0047285d
     PUSH 0x0                            ; 00472861
-    MOV EDX,dword ptr [EAX*0x4 + 0x66ef9c] ; 00472863 | CDemonFilter * g_GlobalFilters
+    MOV EDX,dword ptr [EAX*0x4 + 0x66ef9c] ; 00472863 | g_GlobalFilters
     PUSH EDX                            ; 0047286a
     PUSH EBX                            ; 0047286b
-    CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 ; 0047286c | void core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
-        ;   XREF to: 00474770 (UNCONDITIONAL_CALL)
+    CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 ; 0047286c
+        ;   XREF to: 00474770 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 00472871
     ADD ESP,0x4                         ; 00472874
     POP EBP                             ; 00472877
@@ -101,15 +101,15 @@ section .text
     RET                                 ; 00472879
     PUSH EDI                            ; 0047287a
         ;   Label: LAB_0047287a
-    MOV EDI,0x61ee5e                    ; 0047287b | = "..\\core\\dlight.cpp" | s_core_dlight_cpp_0061ee5e = ..\core\dlight.cpp
+    MOV EDI,0x61ee5e                    ; 0047287b | = "..\\core\\dlight.cpp"
     MOV EBP,0x6c                        ; 00472880
-    PUSH 0x61ee71                       ; 00472885 | = "CDemonCamera::init - Unable to alloc ..." | s_CDemonCamera_init_Unable_0061ee71 = CDemonCamera::init - Unable to alloc frame buffer
-    MOV dword ptr [0x02f0ca48],EDI      ; 0047288a | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 00472890 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00472896 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x61ee71                       ; 00472885 | = "CDemonCamera::init - Unable to alloc ..."
+    MOV dword ptr [0x02f0ca48],EDI      ; 0047288a | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 00472890 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00472896
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0047289b
     POP EDI                             ; 0047289e
-    JMP 0x00472801                      ; 0047289f | LAB_00472801
-        ;   XREF to: 00472801 (UNCONDITIONAL_JUMP)
+    JMP 0x00472801                      ; 0047289f
+        ;   XREF to: 00472801 (UNCONDITIONAL_JUMP)  ; LAB_00472801
 

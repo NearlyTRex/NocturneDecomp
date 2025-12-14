@@ -1,83 +1,83 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 53, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 15, 
-    "assembly_lines": 7, 
-    "suspect_count": 4, 
+    "assembly_lines": 7,
+    "complexity_score": 53,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->field102_0x9bc = in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->field103_0x9c0 = in_stack_0000000c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004d8730", 
-    "signature": "void core_game.cpp_CGame_FUN_004d8730(CGame * this_ptr)", 
-    "address_range": [
-      [
-        "004d8730", 
-        "004d8748"
-      ]
-    ], 
-    "name": "core_game.cpp_CGame_FUN_004d8730"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGame *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "005092d3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_FUN_005091d0", 
-      "addr": "005091d0"
+      "addr": "005091d0",
+      "from_addr": "005092d3",
+      "name": "core_manpuz.cpp_FUN_005091d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d8730",
+    "address_range": [
+      [
+        "004d8730",
+        "004d8748"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_FUN_004d8730",
+    "signature": "void core_game.cpp_CGame_FUN_004d8730(CGame * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->field102_0x9bc = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "this_ptr->field103_0x9c0 = in_stack_0000000c;",
+      "type": "stack_param"
     }
   ]
 }

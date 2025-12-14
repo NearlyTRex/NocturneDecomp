@@ -18,16 +18,16 @@ section .text
         ;   Label: core_health.cpp_FUN_004f1fd0
     MOV ECX,dword ptr [ESP + 0x8]       ; 004f1fd4
     CMP dword ptr [EDX + 0x2d4],0x0     ; 004f1fd8
-    JLE 0x004f200e                      ; 004f1fdf | LAB_004f200e
-        ;   XREF to: 004f200e (CONDITIONAL_JUMP)
+    JLE 0x004f200e                      ; 004f1fdf
+        ;   XREF to: 004f200e (CONDITIONAL_JUMP)  ; LAB_004f200e
     FLD float ptr [EDX + 0x2d8]         ; 004f1fe1
     FADD float ptr [ECX + 0x243c]       ; 004f1fe7
     FST float ptr [ECX + 0x243c]        ; 004f1fed
-    FCOMP double ptr [0x0062ea31]       ; 004f1ff3 | double DOUBLE_0062ea31
+    FCOMP double ptr [0x0062ea31]       ; 004f1ff3 | DOUBLE_0062ea31
     FNSTSW AX                           ; 004f1ff9
     SAHF                                ; 004f1ffb
-    JBE 0x004f2008                      ; 004f1ffc | LAB_004f2008
-        ;   XREF to: 004f2008 (CONDITIONAL_JUMP)
+    JBE 0x004f2008                      ; 004f1ffc
+        ;   XREF to: 004f2008 (CONDITIONAL_JUMP)  ; LAB_004f2008
     MOV dword ptr [ECX + 0x243c],0x42c80000 ; 004f1ffe
     DEC dword ptr [EDX + 0x2d4]         ; 004f2008
         ;   Label: LAB_004f2008

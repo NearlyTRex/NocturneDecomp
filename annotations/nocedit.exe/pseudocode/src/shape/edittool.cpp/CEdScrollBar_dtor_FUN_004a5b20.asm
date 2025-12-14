@@ -23,8 +23,8 @@ section .text
         ;   Label: shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20
     MOV EBX,dword ptr [ESP + 0x8]       ; 004a5b21
     PUSH EBX                            ; 004a5b25
-    CALL shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40 ; 004a5b26 | void shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(CEdScrollBar * this_ptr)
-        ;   XREF to: 004a5b40 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40 ; 004a5b26
+        ;   XREF to: 004a5b40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 004a5b2b
     MOV EAX,EBX                         ; 004a5b2e
     POP EBX                             ; 004a5b30

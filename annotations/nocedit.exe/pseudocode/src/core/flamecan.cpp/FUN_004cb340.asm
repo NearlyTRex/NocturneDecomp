@@ -39,15 +39,15 @@ section .text
     PUSH 0x4000                         ; 004cb365
     PUSH 0x0                            ; 004cb36a
     PUSH ESI                            ; 004cb36c
-    MOV EDX,dword ptr [0x0067a3d0]      ; 004cb36d | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
-    PUSH EDX                            ; 004cb373 | CFireEffect g_CFireEffectInstance
+    MOV EDX,dword ptr [0x0067a3d0]      ; 004cb36d | g_CFireEffectInstance | g_CFireEffectPtr
+    PUSH EDX                            ; 004cb373 | g_CFireEffectInstance
     INC EBX                             ; 004cb374
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004cb375 | void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004cb375
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
     ADD ESP,0x1c                        ; 004cb37a
     CMP EBX,0x5                         ; 004cb37d
-    JL 0x004cb359                       ; 004cb380 | LAB_004cb359
-        ;   XREF to: 004cb359 (CONDITIONAL_JUMP)
+    JL 0x004cb359                       ; 004cb380
+        ;   XREF to: 004cb359 (CONDITIONAL_JUMP)  ; LAB_004cb359
     MOV dword ptr [EDI + 0x4f4],0x1     ; 004cb382
     POP EDI                             ; 004cb38c
     POP ESI                             ; 004cb38d

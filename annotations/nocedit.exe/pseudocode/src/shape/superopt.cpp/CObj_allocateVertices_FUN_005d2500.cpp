@@ -12,7 +12,7 @@ int __cdecl shape_superopt_cpp_CObj_allocateVertices_FUN_005d2500(CObj *this_ptr
   CVert *pCVar1;
   
   this_ptr->vertex_count = vertex_count;
-  pCVar1 = (CVert *)crt_memory_c_malloc_FUN_00601bb0(vertex_count * 0x38);
+  pCVar1 = crt_memory_c_malloc_FUN_00601bb0(vertex_count * 0x38);
   this_ptr->vertex_data = pCVar1;
   if (pCVar1 == (CVert *)0x0) {
     if (this_ptr->poly_array != (CPoly *)0x0) {

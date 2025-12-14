@@ -1,637 +1,637 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 552, 
-    "pseudocode_lines": 222, 
-    "cross_reference_count": 1, 
-    "global_count": 18, 
-    "total_lines": 668, 
-    "assembly_lines": 446, 
-    "suspect_count": 30, 
+    "assembly_lines": 446,
+    "complexity_score": 552,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 18,
+    "pseudocode_lines": 222,
+    "suspect_count": 30,
     "suspect_types": [
-      "suspect_float", 
-      "extra_output", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "suspect_float",
+      "extra_output",
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240", 
-      "addr": "00420240"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030", 
-      "addr": "0051a030"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_00637a5d", 
-      "addr": "00637a5d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_sample_points_00637a72", 
-      "addr": "00637a72", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00637a8d", 
-      "addr": "00637a8d", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00637a95", 
-      "addr": "00637a95", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00637a9d", 
-      "addr": "00637a9d", 
-      "value": "16"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SamplePointCount", 
-      "addr": "02f313ec", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[400]", 
-      "name": "g_SamplePointArray", 
-      "addr": "02f313f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SamplePointArray[0].y", 
-      "addr": "02f313f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SamplePointArray[0].z", 
-      "addr": "02f313f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f313fc", 
-      "addr": "02f313fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f31400", 
-      "addr": "02f31400", 
-      "value": null
-    }, 
-    {
-      "type": "double[400]", 
-      "name": "g_SampleDistances", 
-      "addr": "02f326b0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f326b0+4", 
-      "addr": "02f326b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f326b8", 
-      "addr": "02f326b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f326b8+4", 
-      "addr": "02f326bc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LodGenerationStamp", 
-      "addr": "02f33334", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00519b59", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 8, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_00;"
-    }, 
-    {
-      "line": 9, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_01;"
-    }, 
-    {
-      "line": 10, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_02;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EAX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_03;"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_EAX_04", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_04;"
-    }, 
-    {
-      "line": 15, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 46, 
-      "match": "7.495988e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_98 = 7.495988e-39;"
-    }, 
-    {
-      "line": 49, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xb].z) {"
-    }, 
-    {
-      "line": 54, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[10].z) {"
-    }, 
-    {
-      "line": 64, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_SampleDistances + iVar3) = 0;"
-    }, 
-    {
-      "line": 66, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_SampleDistances + iVar3 + 4) = 0x3ff00000;"
-    }, 
-    {
-      "line": 90, 
-      "match": "7.494835e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_98 = 7.494835e-39;"
-    }, 
-    {
-      "line": 142, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xc].z) {"
-    }, 
-    {
-      "line": 145, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xb].z) {"
-    }, 
-    {
-      "line": 155, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_74 = SQRT((float)*(double *)((int)g_SampleDistances + iVar3));"
-    }, 
-    {
-      "line": 168, 
-      "match": "&stack0xffffff64", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CBoundingBox3D *)&stack0xffffff64,&local_6c);"
-    }, 
-    {
-      "line": 175, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uVar1 = extraout_EAX - (int)local_50.z >> 0x1f;"
-    }, 
-    {
-      "line": 176, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar3 = (extraout_EAX - (int)local_50.z ^ uVar1) - uVar1;"
-    }, 
-    {
-      "line": 184, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uVar1 = extraout_EAX_00 - (int)local_50.y >> 0x1f;"
-    }, 
-    {
-      "line": 185, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar3 = (extraout_EAX_00 - (int)local_50.y ^ uVar1) - uVar1;"
-    }, 
-    {
-      "line": 192, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uVar1 = extraout_EAX_01 - (int)local_50.x >> 0x1f;"
-    }, 
-    {
-      "line": 193, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar3 = (extraout_EAX_01 - (int)local_50.x ^ uVar1) - uVar1;"
-    }, 
-    {
-      "line": 200, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uVar1 = extraout_EAX_02 - local_54 >> 0x1f;"
-    }, 
-    {
-      "line": 201, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar3 = (extraout_EAX_02 - local_54 ^ uVar1) - uVar1;"
-    }, 
-    {
-      "line": 208, 
-      "match": "extraout_EAX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uVar1 = extraout_EAX_03 - local_58 >> 0x1f;"
-    }, 
-    {
-      "line": 209, 
-      "match": "extraout_EAX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar3 = (extraout_EAX_03 - local_58 ^ uVar1) - uVar1;"
-    }, 
-    {
-      "line": 216, 
-      "match": "extraout_EAX_04", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uVar1 = extraout_EAX_04 - local_44 >> 0x1f;"
-    }, 
-    {
-      "line": 217, 
-      "match": "extraout_EAX_04", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar3 = (extraout_EAX_04 - local_44 ^ uVar1) - uVar1;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00519b50", 
-    "signature": "void shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh * this_ptr, double max_search_radius)", 
-    "address_range": [
-      [
-        "00519b50", 
-        "0051a026"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50"
-  }, 
-  "stack_frame": {
-    "local_size": 148, 
-    "variables": [
-      {
-        "offset": -144, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_90"
-      }, 
-      {
-        "offset": -140, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8c"
-      }, 
-      {
-        "offset": -136, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_88"
-      }, 
-      {
-        "offset": -132, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_84"
-      }, 
-      {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_80"
-      }, 
-      {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_7c"
-      }, 
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "max_search_radius"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 160, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 668
+  },
   "cross_references": [
     {
-      "from_addr": "00518f21", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910", 
-      "addr": "00518910"
+      "addr": "00518910",
+      "from_addr": "00518f21",
+      "name": "shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00519b50",
+    "address_range": [
+      [
+        "00519b50",
+        "0051a026"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50",
+    "signature": "void shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh * this_ptr, double max_search_radius)"
+  },
+  "function_calls": [
+    {
+      "addr": "00420240",
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0051a030",
+      "name": "shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00637a5d",
+      "name": "s_shape_meshlod_cpp_00637a5d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00637a72",
+      "name": "s_Too_many_sample_points_00637a72",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00637a8d",
+      "name": "FLOAT_00637a8d",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "00637a95",
+      "name": "DOUBLE_00637a95",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00637a9d",
+      "name": "DOUBLE_00637a9d",
+      "type": "double",
+      "value": "16"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f313ec",
+      "name": "g_SamplePointCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f313f0",
+      "name": "g_SamplePointArray",
+      "type": "CVector3f[400]",
+      "value": null
+    },
+    {
+      "addr": "02f313f4",
+      "name": "g_SamplePointArray[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f313f8",
+      "name": "g_SamplePointArray[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f313fc",
+      "name": "DAT_02f313fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f31400",
+      "name": "DAT_02f31400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f326b0",
+      "name": "g_SampleDistances",
+      "type": "double[400]",
+      "value": null
+    },
+    {
+      "addr": "02f326b4",
+      "name": "DAT_02f326b0+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f326b8",
+      "name": "DAT_02f326b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f326bc",
+      "name": "DAT_02f326b8+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f33334",
+      "name": "g_LodGenerationStamp",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 160,
+    "local_size": 148,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      },
+      {
+        "is_param": true,
+        "name": "max_search_radius",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00519b59",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX_00",
+      "text": "int extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX_01",
+      "text": "int extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX_02",
+      "text": "int extraout_EAX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX_03",
+      "text": "int extraout_EAX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX_04",
+      "text": "int extraout_EAX_04;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 15,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 46,
+      "match": "7.495988e-39",
+      "text": "fStack_98 = 7.495988e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 49,
+      "match": "&stack0x00000000",
+      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xb].z) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0x00000000",
+      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[10].z) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_SampleDistances + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_SampleDistances + iVar3 + 4) = 0x3ff00000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 90,
+      "match": "7.494835e-39",
+      "text": "fStack_98 = 7.494835e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 142,
+      "match": "&stack0x00000000",
+      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xc].z) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 145,
+      "match": "&stack0x00000000",
+      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xb].z) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(double *)((int)",
+      "text": "local_74 = SQRT((float)*(double *)((int)g_SampleDistances + iVar3));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 168,
+      "match": "&stack0xffffff64",
+      "text": "((CBoundingBox3D *)&stack0xffffff64,&local_6c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 175,
+      "match": "extraout_EAX",
+      "text": "uVar1 = extraout_EAX - (int)local_50.z >> 0x1f;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 176,
+      "match": "extraout_EAX",
+      "text": "iVar3 = (extraout_EAX - (int)local_50.z ^ uVar1) - uVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 184,
+      "match": "extraout_EAX_00",
+      "text": "uVar1 = extraout_EAX_00 - (int)local_50.y >> 0x1f;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 185,
+      "match": "extraout_EAX_00",
+      "text": "iVar3 = (extraout_EAX_00 - (int)local_50.y ^ uVar1) - uVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 192,
+      "match": "extraout_EAX_01",
+      "text": "uVar1 = extraout_EAX_01 - (int)local_50.x >> 0x1f;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 193,
+      "match": "extraout_EAX_01",
+      "text": "iVar3 = (extraout_EAX_01 - (int)local_50.x ^ uVar1) - uVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 200,
+      "match": "extraout_EAX_02",
+      "text": "uVar1 = extraout_EAX_02 - local_54 >> 0x1f;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 201,
+      "match": "extraout_EAX_02",
+      "text": "iVar3 = (extraout_EAX_02 - local_54 ^ uVar1) - uVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 208,
+      "match": "extraout_EAX_03",
+      "text": "uVar1 = extraout_EAX_03 - local_58 >> 0x1f;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 209,
+      "match": "extraout_EAX_03",
+      "text": "iVar3 = (extraout_EAX_03 - local_58 ^ uVar1) - uVar1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 216,
+      "match": "extraout_EAX_04",
+      "text": "uVar1 = extraout_EAX_04 - local_44 >> 0x1f;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 217,
+      "match": "extraout_EAX_04",
+      "text": "iVar3 = (extraout_EAX_04 - local_44 ^ uVar1) - uVar1;",
+      "type": "extra_output"
     }
   ]
 }

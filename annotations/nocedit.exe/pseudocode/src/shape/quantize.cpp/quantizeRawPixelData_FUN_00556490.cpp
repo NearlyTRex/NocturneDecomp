@@ -12,10 +12,11 @@ shape_quantize_cpp_quantizeRawPixelData_FUN_00556490
           ,uint bit_depth,int line_number,int show_progress)
 
 {
-  CBitmap *pCVar1;
+  CBitmap *this_ptr;
+  void *pvVar1;
   CColorQuantizer *pCVar2;
   int extraout_EAX;
-  void *pvVar3;
+  CBitmap *pCVar3;
   uint uVar4;
   uint uVar5;
   int iVar6;
@@ -38,12 +39,12 @@ shape_quantize_cpp_quantizeRawPixelData_FUN_00556490
   
   bVar10 = 0;
   g_QuantizeCurrentLineNumber = line_number;
-  pCVar1 = (CBitmap *)
-           shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",0x3ec);
-  if (pCVar1 != (CBitmap *)0x0) {
-    pCVar1 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(pCVar1);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",0x3ec);
+  pCVar3 = (CBitmap *)0x0;
+  if (this_ptr != (CBitmap *)0x0) {
+    pCVar3 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(this_ptr);
   }
-  if (pCVar1 == (CBitmap *)0x0) {
+  if (pCVar3 == (CBitmap *)0x0) {
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,"Unable to allocate %d-bit bitmap for color quantization");
     g_CurrentFilename = "..\\shape\\quantize.cpp";
     g_CurrentLineNumber = 0x3f0;
@@ -81,7 +82,7 @@ LAB_00556829:
   core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff28);
 LAB_00556524:
   uVar4 = bit_depth * line_number * unaff_ESI;
-  puVar8 = (uchar *)*pCVar1->row_table;
+  puVar8 = *pCVar3->row_table;
   for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
     *(uint *)puVar8 = *(uint *)src_pixel_data;
     src_pixel_data = src_pixel_data + (uint)bVar10 * -8 + 4;
@@ -96,9 +97,9 @@ LAB_00556524:
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,"%d-bit color                                                                  ");
     engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff28,0,show_progress * 0xb);
   }
-  pCVar2 = (CColorQuantizer *)
-           shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4b44,"..\\shape\\quantize.cpp",0x417);
-  if (pCVar2 != (CColorQuantizer *)0x0) {
+  pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4b44,"..\\shape\\quantize.cpp",0x417);
+  pCVar2 = (CColorQuantizer *)0x0;
+  if (pvVar1 != (void *)0x0) {
     pCVar2 = shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(in_stack_ffffff30);
   }
   if (pCVar2 == (CColorQuantizer *)0x0) {
@@ -116,7 +117,7 @@ LAB_00556524:
   pCVar2->progress_callback = (CColorQuantizer_ProgressCallback *)0x0;
   shape_quantize_cpp_CColorQuantizer_quantizeBitmap_FUN_00556470
             (pCVar2,(CBitmap **)&stack0x00000000);
-  iVar6 = extraout_EAX;
+  iVar6 = 0;
   if (extraout_EAX != 0) {
     if (in_stack_00000038 != (uint *)0x0) {
       crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff3c,"%d-color palette created                                                       ");
@@ -124,11 +125,11 @@ LAB_00556524:
       engine_2d_c_drawText_FUN_00401fd0("                                    ",0,(in_stack_0000003c + 4) * 0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     }
-    pvVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+    pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        ((int)in_stack_00000038 * in_stack_0000003c,"..\\shape\\quantize.cpp",
                         0x431);
-    *in_stack_00000034 = pvVar3;
-    if (pvVar3 == (void *)0x0) {
+    *in_stack_00000034 = pvVar1;
+    if (pvVar1 == (void *)0x0) {
       g_CurrentFilename = "..\\shape\\quantize.cpp";
       g_CurrentLineNumber = 0x434;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate quantized bitmap!");
@@ -147,9 +148,9 @@ LAB_00556524:
       puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);
       puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);
     }
-    pvVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\shape\\quantize.cpp",0x43a);
-    *in_stack_00000040 = pvVar3;
-    if (pvVar3 == (void *)0x0) {
+    pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\shape\\quantize.cpp",0x43a);
+    *in_stack_00000040 = pvVar1;
+    if (pvVar1 == (void *)0x0) {
       g_CurrentFilename = "..\\shape\\quantize.cpp";
       g_CurrentLineNumber = 0x43d;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate quantized palette!");
@@ -173,8 +174,8 @@ LAB_00556524:
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x444;
     if (in_stack_0000002c != (CBitmap *)0x0) {
-      pCVar1 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(in_stack_0000002c);
-      shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
+      pCVar3 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(in_stack_0000002c);
+      shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar3);
     }
     iVar6 = 1;
   }

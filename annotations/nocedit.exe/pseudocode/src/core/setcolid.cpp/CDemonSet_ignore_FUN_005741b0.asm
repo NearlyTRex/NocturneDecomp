@@ -38,15 +38,15 @@ section .text
     PUSH EBP                            ; 005741b1
     MOV EBX,dword ptr [ESP + 0xc]       ; 005741b2
     CMP dword ptr [ESP + 0x10],0x0      ; 005741b6
-    JZ 0x005741e3                       ; 005741bb | LAB_005741e3
-        ;   XREF to: 005741e3 (CONDITIONAL_JUMP)
+    JZ 0x005741e3                       ; 005741bb
+        ;   XREF to: 005741e3 (CONDITIONAL_JUMP)  ; LAB_005741e3
     MOV ECX,dword ptr [EBX + 0x15f694]  ; 005741bd
     TEST ECX,ECX                        ; 005741c3
-    JL 0x005741e3                       ; 005741c5 | LAB_005741e3
-        ;   XREF to: 005741e3 (CONDITIONAL_JUMP)
+    JL 0x005741e3                       ; 005741c5
+        ;   XREF to: 005741e3 (CONDITIONAL_JUMP)  ; LAB_005741e3
     CMP ECX,0xa                         ; 005741c7
-    JGE 0x005741e6                      ; 005741ca | LAB_005741e6
-        ;   XREF to: 005741e6 (CONDITIONAL_JUMP)
+    JGE 0x005741e6                      ; 005741ca
+        ;   XREF to: 005741e6 (CONDITIONAL_JUMP)  ; LAB_005741e6
     MOV EAX,dword ptr [EBX + 0x15f694]  ; 005741cc
         ;   Label: LAB_005741cc
     MOV EDX,dword ptr [ESP + 0x10]      ; 005741d2
@@ -58,15 +58,15 @@ section .text
     RET                                 ; 005741e5
     PUSH EDI                            ; 005741e6
         ;   Label: LAB_005741e6
-    MOV EDI,0x64637c                    ; 005741e7 | = "..\\core\\setcolid.cpp" | s_core_setcolid_cpp_0064637c = ..\core\setcolid.cpp
+    MOV EDI,0x64637c                    ; 005741e7 | = "..\\core\\setcolid.cpp"
     MOV EBP,0x473                       ; 005741ec
-    PUSH 0x646391                       ; 005741f1 | = "CDemonSet::ignore - ignore list is full" | s_CDemonSet_ignore_ignore__00646391 = CDemonSet::ignore - ignore list is full
-    MOV dword ptr [0x02f0ca48],EDI      ; 005741f6 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 005741fc | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00574202 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x646391                       ; 005741f1 | = "CDemonSet::ignore - ignore list is full"
+    MOV dword ptr [0x02f0ca48],EDI      ; 005741f6 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 005741fc | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00574202
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00574207
     POP EDI                             ; 0057420a
-    JMP 0x005741cc                      ; 0057420b | LAB_005741cc
-        ;   XREF to: 005741cc (UNCONDITIONAL_JUMP)
+    JMP 0x005741cc                      ; 0057420b
+        ;   XREF to: 005741cc (UNCONDITIONAL_JUMP)  ; LAB_005741cc
 

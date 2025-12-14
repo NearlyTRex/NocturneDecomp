@@ -30,13 +30,13 @@ section .text
     MOV ESI,dword ptr [ESP + 0x28]      ; 00432d9e
     MOV EBX,dword ptr [ESP + 0x14]      ; 00432da2
     TEST ESI,ESI                        ; 00432da6
-    JLE 0x00432de8                      ; 00432da8 | LAB_00432de8
-        ;   XREF to: 00432de8 (CONDITIONAL_JUMP)
+    JLE 0x00432de8                      ; 00432da8
+        ;   XREF to: 00432de8 (CONDITIONAL_JUMP)  ; LAB_00432de8
     PUSH EDI                            ; 00432daa
     MOV EDX,ECX                         ; 00432dab
     ADD ECX,ESI                         ; 00432dad
     MOV dword ptr [ESP + 0x4],ECX       ; 00432daf
-    MOV ESI,dword ptr [0x00679394]      ; 00432db3 | int g_WindowWidth
+    MOV ESI,dword ptr [0x00679394]      ; 00432db3 | g_WindowWidth
         ;   Label: LAB_00432db3
     IMUL ESI,EDX                        ; 00432db9
     MOV ECX,dword ptr [ESP + 0x20]      ; 00432dbc
@@ -57,8 +57,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00432ddd
     ADD EBX,EBP                         ; 00432de1
     CMP EDX,EAX                         ; 00432de3
-    JL 0x00432db3                       ; 00432de5 | LAB_00432db3
-        ;   XREF to: 00432db3 (CONDITIONAL_JUMP)
+    JL 0x00432db3                       ; 00432de5
+        ;   XREF to: 00432db3 (CONDITIONAL_JUMP)  ; LAB_00432db3
     POP EDI                             ; 00432de7
     ADD ESP,0x4                         ; 00432de8
         ;   Label: LAB_00432de8

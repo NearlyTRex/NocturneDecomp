@@ -54,29 +54,29 @@ section .text
     SUB ESP,0x63c                       ; 004bd754
     LEA EAX,[ESP + 0x628]               ; 004bd75a
     PUSH EAX                            ; 004bd761
-    CALL shape_edittool.cpp_CStrList_ctor_FUN_004a2a20 ; 004bd762 | CStrList * shape_edittool.cpp_CStrList_ctor_FUN_004a2a20(CStrList * this_ptr)
-        ;   XREF to: 004a2a20 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_ctor_FUN_004a2a20 ; 004bd762
+        ;   XREF to: 004a2a20 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_ctor_FUN_004a2a20(CStrList * this_ptr)
     ADD ESP,0x4                         ; 004bd767
-    PUSH 0x629552                       ; 004bd76a | = "*.mp3" | s_mp3_00629552 = *.mp3
+    PUSH 0x629552                       ; 004bd76a | = "*.mp3"
     MOV EDX,dword ptr [ESP + 0x654]     ; 004bd76f
     PUSH EDX                            ; 004bd776
     LEA EAX,[ESP + 0x630]               ; 004bd777
     PUSH EAX                            ; 004bd77e
-    CALL shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 ; 004bd77f | void shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0(CStrList * this_ptr, char * base_path, char * search_path)
-        ;   XREF to: 004a39e0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0 ; 004bd77f
+        ;   XREF to: 004a39e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0(CStrList * this_ptr, char * base_path, char * search_path)
     ADD ESP,0xc                         ; 004bd784
     MOV ECX,dword ptr [ESP + 0x628]     ; 004bd787
     XOR EBX,EBX                         ; 004bd78e
     TEST ECX,ECX                        ; 004bd790
-    JLE 0x004bd86a                      ; 004bd792 | LAB_004bd86a
-        ;   XREF to: 004bd86a (CONDITIONAL_JUMP)
+    JLE 0x004bd86a                      ; 004bd792
+        ;   XREF to: 004bd86a (CONDITIONAL_JUMP)  ; LAB_004bd86a
     MOV EBP,0x3c                        ; 004bd798
     PUSH EBX                            ; 004bd79d
         ;   Label: LAB_004bd79d
     LEA EAX,[ESP + 0x62c]               ; 004bd79e
     PUSH EAX                            ; 004bd7a5
-    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004bd7a6 | char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
-        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004bd7a6
+        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004bd7ab
     MOV EDI,ESP                         ; 004bd7ae
     MOV ESI,EAX                         ; 004bd7b0
@@ -85,25 +85,25 @@ section .text
         ;   Label: LAB_004bd7b3
     MOV byte ptr [EDI],AL               ; 004bd7b5
     CMP AL,0x0                          ; 004bd7b7
-    JZ 0x004bd7cb                       ; 004bd7b9 | LAB_004bd7cb
-        ;   XREF to: 004bd7cb (CONDITIONAL_JUMP)
+    JZ 0x004bd7cb                       ; 004bd7b9
+        ;   XREF to: 004bd7cb (CONDITIONAL_JUMP)  ; LAB_004bd7cb
     MOV AL,byte ptr [ESI + 0x1]         ; 004bd7bb
     ADD ESI,0x2                         ; 004bd7be
     MOV byte ptr [EDI + 0x1],AL         ; 004bd7c1
     ADD EDI,0x2                         ; 004bd7c4
     CMP AL,0x0                          ; 004bd7c7
-    JNZ 0x004bd7b3                      ; 004bd7c9 | LAB_004bd7b3
-        ;   XREF to: 004bd7b3 (CONDITIONAL_JUMP)
+    JNZ 0x004bd7b3                      ; 004bd7c9
+        ;   XREF to: 004bd7b3 (CONDITIONAL_JUMP)  ; LAB_004bd7b3
     POP EDI                             ; 004bd7cb
         ;   Label: LAB_004bd7cb
     MOV EAX,ESP                         ; 004bd7cc
     PUSH EAX                            ; 004bd7ce
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004bd7cf | int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004bd7cf
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004bd7d4
     TEST EAX,EAX                        ; 004bd7d7
-    JZ 0x004bd887                       ; 004bd7d9 | LAB_004bd887
-        ;   XREF to: 004bd887 (CONDITIONAL_JUMP)
+    JZ 0x004bd887                       ; 004bd7d9
+        ;   XREF to: 004bd887 (CONDITIONAL_JUMP)  ; LAB_004bd887
     PUSH 0x0                            ; 004bd7df
         ;   Label: LAB_004bd7df
     LEA EAX,[ESP + 0x42c]               ; 004bd7e1
@@ -114,10 +114,10 @@ section .text
     PUSH EAX                            ; 004bd7f8
     LEA EAX,[ESP + 0x10]                ; 004bd7f9
     PUSH EAX                            ; 004bd7fd
-    CALL crt_string.c_splitpath_FUN_005ff178 ; 004bd7fe | void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
-        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_splitpath_FUN_005ff178 ; 004bd7fe
+        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 004bd803
-    PUSH 0x62957c                       ; 004bd806 | = "sfx" | s_sfx_0062957c = sfx
+    PUSH 0x62957c                       ; 004bd806 | = "sfx"
     LEA EAX,[ESP + 0x42c]               ; 004bd80b
     PUSH EAX                            ; 004bd812
     LEA EAX,[ESP + 0x530]               ; 004bd813
@@ -126,35 +126,35 @@ section .text
     PUSH EAX                            ; 004bd822
     LEA EAX,[ESP + 0x224]               ; 004bd823
     PUSH EAX                            ; 004bd82a
-    CALL crt_file.c_makepath_FUN_005febfc ; 004bd82b | void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)
+    CALL crt_file.c_makepath_FUN_005febfc ; 004bd82b
+        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004bd830
     LEA EAX,[ESP + 0x214]               ; 004bd833
     PUSH EAX                            ; 004bd83a
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004bd83b | int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004bd83b
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004bd840
     TEST EAX,EAX                        ; 004bd843
-    JZ 0x004bd8ad                       ; 004bd845 | LAB_004bd8ad
-        ;   XREF to: 004bd8ad (CONDITIONAL_JUMP)
+    JZ 0x004bd8ad                       ; 004bd845
+        ;   XREF to: 004bd8ad (CONDITIONAL_JUMP)  ; LAB_004bd8ad
     MOV EAX,dword ptr [ESP + 0x20c]     ; 004bd847
     MOV EDX,dword ptr [ESP + 0x420]     ; 004bd84e
     DEC EAX                             ; 004bd855
     CMP EAX,EDX                         ; 004bd856
-    JA 0x004bd8ad                       ; 004bd858 | LAB_004bd8ad
-        ;   XREF to: 004bd8ad (CONDITIONAL_JUMP)
+    JA 0x004bd8ad                       ; 004bd858
+        ;   XREF to: 004bd8ad (CONDITIONAL_JUMP)  ; LAB_004bd8ad
     MOV ESI,dword ptr [ESP + 0x628]     ; 004bd85a
         ;   Label: LAB_004bd85a
     INC EBX                             ; 004bd861
     CMP EBX,ESI                         ; 004bd862
-    JL 0x004bd79d                       ; 004bd864 | LAB_004bd79d
-        ;   XREF to: 004bd79d (CONDITIONAL_JUMP)
+    JL 0x004bd79d                       ; 004bd864
+        ;   XREF to: 004bd79d (CONDITIONAL_JUMP)  ; LAB_004bd79d
     PUSH 0x0                            ; 004bd86a
         ;   Label: LAB_004bd86a
     LEA EAX,[ESP + 0x62c]               ; 004bd86c
     PUSH EAX                            ; 004bd873
-    CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 004bd874 | CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
-        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_dtor_FUN_004a2a40 ; 004bd874
+        ;   XREF to: 004a2a40 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)
     ADD ESP,0x8                         ; 004bd879
     ADD ESP,0x63c                       ; 004bd87c
     POP EBP                             ; 004bd882
@@ -165,29 +165,29 @@ section .text
     MOV EAX,ESP                         ; 004bd887
         ;   Label: LAB_004bd887
     PUSH EAX                            ; 004bd889
-    MOV EDI,0x629558                    ; 004bd88a | = "..\\core\\fileman.cpp" | s_core_fileman_cpp_00629558 = ..\core\fileman.cpp
-    PUSH 0x62956c                       ; 004bd88f | = "Can't access %s" | s_Can_t_access_s_0062956c = Can't access %s
-    MOV dword ptr [0x02f0ca4c],EBP      ; 004bd894 | int g_CurrentLineNumber
-    MOV dword ptr [0x02f0ca48],EDI      ; 004bd89a | char * g_CurrentFilename
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004bd8a0 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    MOV EDI,0x629558                    ; 004bd88a | = "..\\core\\fileman.cpp"
+    PUSH 0x62956c                       ; 004bd88f | = "Can't access %s"
+    MOV dword ptr [0x02f0ca4c],EBP      ; 004bd894 | g_CurrentLineNumber
+    MOV dword ptr [0x02f0ca48],EDI      ; 004bd89a | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004bd8a0
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 004bd8a5
-    JMP 0x004bd7df                      ; 004bd8a8 | LAB_004bd7df
-        ;   XREF to: 004bd7df (UNCONDITIONAL_JUMP)
+    JMP 0x004bd7df                      ; 004bd8a8
+        ;   XREF to: 004bd7df (UNCONDITIONAL_JUMP)  ; LAB_004bd7df
     MOV EAX,ESP                         ; 004bd8ad
         ;   Label: LAB_004bd8ad
     PUSH EAX                            ; 004bd8af
-    PUSH 0x629580                       ; 004bd8b0 | = "Computing length of %s" | s_Computing_length_of_s_00629580 = Computing length of %s
-    MOV ECX,dword ptr [0x00678a60]      ; 004bd8b5 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
-    PUSH ECX                            ; 004bd8bb | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bd8bc | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x629580                       ; 004bd8b0 | = "Computing length of %s"
+    MOV ECX,dword ptr [0x00678a60]      ; 004bd8b5 | g_CEditorToolsPtr
+    PUSH ECX                            ; 004bd8bb | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 004bd8bc
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 004bd8c1
     MOV EAX,ESP                         ; 004bd8c4
     PUSH EAX                            ; 004bd8c6
-    CALL sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 ; 004bd8c7 | void sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20(char * mp3_filename)
-        ;   XREF to: 005acf20 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 ; 004bd8c7
+        ;   XREF to: 005acf20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20(char * mp3_filename)
     ADD ESP,0x4                         ; 004bd8cc
-    JMP 0x004bd85a                      ; 004bd8cf | LAB_004bd85a
-        ;   XREF to: 004bd85a (UNCONDITIONAL_JUMP)
+    JMP 0x004bd85a                      ; 004bd8cf
+        ;   XREF to: 004bd85a (UNCONDITIONAL_JUMP)  ; LAB_004bd85a
 

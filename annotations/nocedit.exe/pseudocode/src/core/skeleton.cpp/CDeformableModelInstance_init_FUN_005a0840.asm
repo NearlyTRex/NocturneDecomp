@@ -40,25 +40,25 @@ section .text
         ;   Label: LAB_005a0852
     MOV byte ptr [EDI],AL               ; 005a0854
     CMP AL,0x0                          ; 005a0856
-    JZ 0x005a086a                       ; 005a0858 | LAB_005a086a
-        ;   XREF to: 005a086a (CONDITIONAL_JUMP)
+    JZ 0x005a086a                       ; 005a0858
+        ;   XREF to: 005a086a (CONDITIONAL_JUMP)  ; LAB_005a086a
     MOV AL,byte ptr [ESI + 0x1]         ; 005a085a
     ADD ESI,0x2                         ; 005a085d
     MOV byte ptr [EDI + 0x1],AL         ; 005a0860
     ADD EDI,0x2                         ; 005a0863
     CMP AL,0x0                          ; 005a0866
-    JNZ 0x005a0852                      ; 005a0868 | LAB_005a0852
-        ;   XREF to: 005a0852 (CONDITIONAL_JUMP)
+    JNZ 0x005a0852                      ; 005a0868
+        ;   XREF to: 005a0852 (CONDITIONAL_JUMP)  ; LAB_005a0852
     POP EDI                             ; 005a086a
         ;   Label: LAB_005a086a
     PUSH EBX                            ; 005a086b
     MOV dword ptr [EBX + 0x22b0],0x0    ; 005a086c
-    CALL core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410 ; 005a0876 | void core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0410 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410 ; 005a0876
+        ;   XREF to: 005a0410 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_showAllParts_FUN_005a0410(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a087b
     PUSH EBX                            ; 005a087e
-    CALL core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430 ; 005a087f | void core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0430 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430 ; 005a087f
+        ;   XREF to: 005a0430 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a0884
     MOV dword ptr [EBX + 0x2230],0xffffffff ; 005a0887
     POP EDI                             ; 005a0891

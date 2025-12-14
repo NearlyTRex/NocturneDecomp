@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 18, 
-    "assembly_lines": 11, 
-    "suspect_count": 1, 
+    "assembly_lines": 11,
+    "complexity_score": 22,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
-      "addr": "005fe667"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CVectorTypeInfo", 
-      "addr": "006598c0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "(CLodFace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "return (CLodFace *)((int)pvVar1 + -0x54);"
-    }
-  ], 
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0051ef00", 
-    "signature": "CLodFace * shape_meshlod.cpp_CLodFace_ctor_FUN_0051ef00(CLodFace * this_ptr)", 
+    "address": "0051ef00",
     "address_range": [
       [
-        "0051ef00", 
+        "0051ef00",
         "0051ef1a"
       ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodFace_ctor_FUN_0051ef00"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodFace_ctor_FUN_0051ef00",
+    "signature": "CLodFace * shape_meshlod.cpp_CLodFace_ctor_FUN_0051ef00(CLodFace * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe667",
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006598c0",
+      "name": "g_CVectorTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodFace *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodFace *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(CLodFace *)((int)",
+      "text": "return (CLodFace *)((int)pvVar1 + -0x54);",
+      "type": "pointer_cast"
+    }
+  ]
 }

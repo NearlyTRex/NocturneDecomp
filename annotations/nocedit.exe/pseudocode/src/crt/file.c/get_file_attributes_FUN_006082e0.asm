@@ -29,63 +29,63 @@ section .text
     MOV AL,byte ptr [ESI]               ; 006082f3
         ;   Label: LAB_006082f3
     CMP AL,DL                           ; 006082f5
-    JZ 0x0060830b                       ; 006082f7 | LAB_0060830b
-        ;   XREF to: 0060830b (CONDITIONAL_JUMP)
+    JZ 0x0060830b                       ; 006082f7
+        ;   XREF to: 0060830b (CONDITIONAL_JUMP)  ; LAB_0060830b
     CMP AL,0x0                          ; 006082f9
-    JZ 0x00608309                       ; 006082fb | LAB_00608309
-        ;   XREF to: 00608309 (CONDITIONAL_JUMP)
+    JZ 0x00608309                       ; 006082fb
+        ;   XREF to: 00608309 (CONDITIONAL_JUMP)  ; LAB_00608309
     INC ESI                             ; 006082fd
     MOV AL,byte ptr [ESI]               ; 006082fe
     CMP AL,DL                           ; 00608300
-    JZ 0x0060830b                       ; 00608302 | LAB_0060830b
-        ;   XREF to: 0060830b (CONDITIONAL_JUMP)
+    JZ 0x0060830b                       ; 00608302
+        ;   XREF to: 0060830b (CONDITIONAL_JUMP)  ; LAB_0060830b
     INC ESI                             ; 00608304
     CMP AL,0x0                          ; 00608305
-    JNZ 0x006082f3                      ; 00608307 | LAB_006082f3
-        ;   XREF to: 006082f3 (CONDITIONAL_JUMP)
+    JNZ 0x006082f3                      ; 00608307
+        ;   XREF to: 006082f3 (CONDITIONAL_JUMP)  ; LAB_006082f3
     SUB ESI,ESI                         ; 00608309
         ;   Label: LAB_00608309
     TEST ESI,ESI                        ; 0060830b
         ;   Label: LAB_0060830b
-    JNZ 0x0060832f                      ; 0060830d | LAB_0060832f
-        ;   XREF to: 0060832f (CONDITIONAL_JUMP)
+    JNZ 0x0060832f                      ; 0060830d
+        ;   XREF to: 0060832f (CONDITIONAL_JUMP)  ; LAB_0060832f
     MOV DL,0x3f                         ; 0060830f
     MOV ESI,EBX                         ; 00608311
     MOV AL,byte ptr [ESI]               ; 00608313
         ;   Label: LAB_00608313
     CMP AL,DL                           ; 00608315
-    JZ 0x0060832b                       ; 00608317 | LAB_0060832b
-        ;   XREF to: 0060832b (CONDITIONAL_JUMP)
+    JZ 0x0060832b                       ; 00608317
+        ;   XREF to: 0060832b (CONDITIONAL_JUMP)  ; LAB_0060832b
     CMP AL,0x0                          ; 00608319
-    JZ 0x00608329                       ; 0060831b | LAB_00608329
-        ;   XREF to: 00608329 (CONDITIONAL_JUMP)
+    JZ 0x00608329                       ; 0060831b
+        ;   XREF to: 00608329 (CONDITIONAL_JUMP)  ; LAB_00608329
     INC ESI                             ; 0060831d
     MOV AL,byte ptr [ESI]               ; 0060831e
     CMP AL,DL                           ; 00608320
-    JZ 0x0060832b                       ; 00608322 | LAB_0060832b
-        ;   XREF to: 0060832b (CONDITIONAL_JUMP)
+    JZ 0x0060832b                       ; 00608322
+        ;   XREF to: 0060832b (CONDITIONAL_JUMP)  ; LAB_0060832b
     INC ESI                             ; 00608324
     CMP AL,0x0                          ; 00608325
-    JNZ 0x00608313                      ; 00608327 | LAB_00608313
-        ;   XREF to: 00608313 (CONDITIONAL_JUMP)
+    JNZ 0x00608313                      ; 00608327
+        ;   XREF to: 00608313 (CONDITIONAL_JUMP)  ; LAB_00608313
     SUB ESI,ESI                         ; 00608329
         ;   Label: LAB_00608329
     TEST ESI,ESI                        ; 0060832b
         ;   Label: LAB_0060832b
-    JZ 0x00608336                       ; 0060832d | LAB_00608336
-        ;   XREF to: 00608336 (CONDITIONAL_JUMP)
+    JZ 0x00608336                       ; 0060832d
+        ;   XREF to: 00608336 (CONDITIONAL_JUMP)  ; LAB_00608336
     MOV EAX,0xffffffff                  ; 0060832f
         ;   Label: LAB_0060832f
-    JMP 0x00608349                      ; 00608334 | LAB_00608349
-        ;   XREF to: 00608349 (UNCONDITIONAL_JUMP)
+    JMP 0x00608349                      ; 00608334
+        ;   XREF to: 00608349 (UNCONDITIONAL_JUMP)  ; LAB_00608349
     MOV EAX,ESP                         ; 00608336
         ;   Label: LAB_00608336
     PUSH EAX                            ; 00608338
     PUSH EBX                            ; 00608339
-    CALL dword ptr CS:[0x61154c]        ; 0060833a | FindFirstFileA * PTR_FindFirstFileA_0061154c
+    CALL dword ptr CS:[0x61154c]        ; 0060833a | PTR_FindFirstFileA_0061154c
     CMP EAX,-0x1                        ; 00608341
-    JZ 0x00608349                       ; 00608344 | LAB_00608349
-        ;   XREF to: 00608349 (CONDITIONAL_JUMP)
+    JZ 0x00608349                       ; 00608344
+        ;   XREF to: 00608349 (CONDITIONAL_JUMP)  ; LAB_00608349
     MOV EAX,dword ptr [ESP]             ; 00608346
     ADD ESP,0x140                       ; 00608349
         ;   Label: LAB_00608349

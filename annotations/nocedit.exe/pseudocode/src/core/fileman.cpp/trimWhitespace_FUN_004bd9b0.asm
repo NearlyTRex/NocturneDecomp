@@ -30,16 +30,16 @@ section .text
     DEC ECX                             ; 004bd9c2
     MOV EBX,ECX                         ; 004bd9c3
     TEST ECX,ECX                        ; 004bd9c5
-    JLE 0x004bd9e0                      ; 004bd9c7 | LAB_004bd9e0
-        ;   XREF to: 004bd9e0 (CONDITIONAL_JUMP)
+    JLE 0x004bd9e0                      ; 004bd9c7
+        ;   XREF to: 004bd9e0 (CONDITIONAL_JUMP)  ; LAB_004bd9e0
     LEA EAX,[ECX + ESI*0x1]             ; 004bd9c9
     MOV DL,byte ptr [EAX + -0x1]        ; 004bd9cc
         ;   Label: LAB_004bd9cc
     INC DL                              ; 004bd9cf
     AND EDX,0xff                        ; 004bd9d1
-    TEST byte ptr [EDX + 0x6849c4],0x2  ; 004bd9d7 | char[256] g_CharacterClassificationTable
-    JNZ 0x004bd9ff                      ; 004bd9de | LAB_004bd9ff
-        ;   XREF to: 004bd9ff (CONDITIONAL_JUMP)
+    TEST byte ptr [EDX + 0x6849c4],0x2  ; 004bd9d7 | g_CharacterClassificationTable
+    JNZ 0x004bd9ff                      ; 004bd9de
+        ;   XREF to: 004bd9ff (CONDITIONAL_JUMP)  ; LAB_004bd9ff
     LEA EAX,[ESI + EBX*0x1]             ; 004bd9e0
         ;   Label: LAB_004bd9e0
     LEA EDI,[ESI + 0x1]                 ; 004bd9e3
@@ -48,9 +48,9 @@ section .text
         ;   Label: LAB_004bd9e9
     INC AL                              ; 004bd9eb
     AND EAX,0xff                        ; 004bd9ed
-    TEST byte ptr [EAX + 0x6849c4],0x2  ; 004bd9f2 | char[256] g_CharacterClassificationTable
-    JNZ 0x004bda07                      ; 004bd9f9 | LAB_004bda07
-        ;   XREF to: 004bda07 (CONDITIONAL_JUMP)
+    TEST byte ptr [EAX + 0x6849c4],0x2  ; 004bd9f2 | g_CharacterClassificationTable
+    JNZ 0x004bda07                      ; 004bd9f9
+        ;   XREF to: 004bda07 (CONDITIONAL_JUMP)  ; LAB_004bda07
     POP EDI                             ; 004bd9fb
     POP ESI                             ; 004bd9fc
     POP EBX                             ; 004bd9fd
@@ -59,18 +59,18 @@ section .text
         ;   Label: LAB_004bd9ff
     DEC EAX                             ; 004bda00
     TEST EBX,EBX                        ; 004bda01
-    JG 0x004bd9cc                       ; 004bda03 | LAB_004bd9cc
-        ;   XREF to: 004bd9cc (CONDITIONAL_JUMP)
-    JMP 0x004bd9e0                      ; 004bda05 | LAB_004bd9e0
-        ;   XREF to: 004bd9e0 (UNCONDITIONAL_JUMP)
+    JG 0x004bd9cc                       ; 004bda03
+        ;   XREF to: 004bd9cc (CONDITIONAL_JUMP)  ; LAB_004bd9cc
+    JMP 0x004bd9e0                      ; 004bda05
+        ;   XREF to: 004bd9e0 (UNCONDITIONAL_JUMP)  ; LAB_004bd9e0
     PUSH EBX                            ; 004bda07
         ;   Label: LAB_004bda07
     PUSH EDI                            ; 004bda08
     PUSH ESI                            ; 004bda09
     DEC EBX                             ; 004bda0a
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004bda0b | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004bda0b
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004bda10
-    JMP 0x004bd9e9                      ; 004bda13 | LAB_004bd9e9
-        ;   XREF to: 004bd9e9 (UNCONDITIONAL_JUMP)
+    JMP 0x004bd9e9                      ; 004bda13
+        ;   XREF to: 004bd9e9 (UNCONDITIONAL_JUMP)  ; LAB_004bd9e9
 

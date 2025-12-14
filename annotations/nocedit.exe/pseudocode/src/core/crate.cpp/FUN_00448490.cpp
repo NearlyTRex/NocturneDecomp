@@ -11,8 +11,7 @@ void core_crate_cpp_FUN_00448490(void)
 {
   CCrate *this_ptr;
   
-  this_ptr = (CCrate *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fc,"..\\core\\crate.cpp",0x1f);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fc,"..\\core\\crate.cpp",0x1f);
   if (this_ptr == (CCrate *)0x0) {
     return;
   }

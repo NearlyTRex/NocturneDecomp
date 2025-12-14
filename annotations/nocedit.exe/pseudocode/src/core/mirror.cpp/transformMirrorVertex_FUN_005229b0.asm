@@ -42,13 +42,13 @@ section .text
     MOV EBP,ESI                         ; 005229ba
     MOV EBX,ESP                         ; 005229bc
     FILD dword ptr [EAX]                ; 005229be
-    FMUL float ptr [0x006616e8]         ; 005229c0 | float g_MirrorIntToFloat_Coarse
+    FMUL float ptr [0x006616e8]         ; 005229c0 | g_MirrorIntToFloat_Coarse
     FSTP float ptr [EBX]                ; 005229c6
     FILD dword ptr [EAX + 0x4]          ; 005229c8
-    FMUL float ptr [0x006616e8]         ; 005229cb | float g_MirrorIntToFloat_Coarse
+    FMUL float ptr [0x006616e8]         ; 005229cb | g_MirrorIntToFloat_Coarse
     FSTP float ptr [EBX + 0x4]          ; 005229d1
     FILD dword ptr [EAX + 0x8]          ; 005229d4
-    FMUL float ptr [0x006616e8]         ; 005229d7 | float g_MirrorIntToFloat_Coarse
+    FMUL float ptr [0x006616e8]         ; 005229d7 | g_MirrorIntToFloat_Coarse
     FSTP float ptr [EBX + 0x8]          ; 005229dd
     MOV EAX,ESP                         ; 005229e0
     PUSH EAX                            ; 005229e2
@@ -56,14 +56,14 @@ section .text
     PUSH EAX                            ; 005229e7
     MOV EDX,dword ptr [ESP + 0x48]      ; 005229e8
     PUSH EDX                            ; 005229ec
-    CALL core_mirror.cpp_applyMirrorTransform_FUN_005222f0 ; 005229ed | CVector3f * core_mirror.cpp_applyMirrorTransform_FUN_005222f0(SMirrorReflection * reflection, CVector3f * output_buffer, CVector3f * input_vector)
-        ;   XREF to: 005222f0 (UNCONDITIONAL_CALL)
+    CALL core_mirror.cpp_applyMirrorTransform_FUN_005222f0 ; 005229ed
+        ;   XREF to: 005222f0 (UNCONDITIONAL_CALL)  ; CVector3f * core_mirror.cpp_applyMirrorTransform_FUN_005222f0(SMirrorReflection * reflection, CVector3f * output_buffer, CVector3f * input_vector)
     MOV EDX,EAX                         ; 005229f2
     LEA EAX,[ESP + 0x18]                ; 005229f4
     ADD ESP,0xc                         ; 005229f8
     CMP EAX,EDX                         ; 005229fb
-    JZ 0x00522a13                       ; 005229fd | LAB_00522a13
-        ;   XREF to: 00522a13 (CONDITIONAL_JUMP)
+    JZ 0x00522a13                       ; 005229fd
+        ;   XREF to: 00522a13 (CONDITIONAL_JUMP)  ; LAB_00522a13
     MOV EAX,dword ptr [EDX]             ; 005229ff
     MOV dword ptr [ESP + 0xc],EAX       ; 00522a01
     MOV EAX,dword ptr [EDX + 0x4]       ; 00522a05
@@ -76,13 +76,13 @@ section .text
     LEA ESI,[ESP + 0x18]                ; 00522a1b
     MOV EDI,EBP                         ; 00522a1f
     FLD float ptr [EAX]                 ; 00522a21
-    FMUL float ptr [0x006616e0]         ; 00522a23 | float g_MirrorProjectionScale
+    FMUL float ptr [0x006616e0]         ; 00522a23 | g_MirrorProjectionScale
     FISTP dword ptr [EBX]               ; 00522a29
     FLD float ptr [EAX + 0x4]           ; 00522a2b
-    FMUL float ptr [0x006616e0]         ; 00522a2e | float g_MirrorProjectionScale
+    FMUL float ptr [0x006616e0]         ; 00522a2e | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x4]         ; 00522a34
     FLD float ptr [EAX + 0x8]           ; 00522a37
-    FMUL float ptr [0x006616e0]         ; 00522a3a | float g_MirrorProjectionScale
+    FMUL float ptr [0x006616e0]         ; 00522a3a | g_MirrorProjectionScale
     FISTP dword ptr [EBX + 0x8]         ; 00522a40
     MOVSD ES:EDI,ESI                    ; 00522a43
     MOVSD ES:EDI,ESI                    ; 00522a44

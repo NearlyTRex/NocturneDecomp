@@ -1,70 +1,70 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 45, 
-    "assembly_lines": 33, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CTrail_FUN_004c5df0", 
-      "addr": "004c5df0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CLightningBolt*", 
-      "name": "g_LightningBoltActiveListHead", 
-      "addr": "02d71774", 
-      "value": null
-    }, 
-    {
-      "type": "CTrail[100]", 
-      "name": "g_TrailPool", 
-      "addr": "02d71778", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c9060", 
-    "signature": "void core_fire.cpp_CFireEffect_FUN_004c9060(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c9060", 
-        "004c90b6"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c9060"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 33,
+    "complexity_score": 12,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 45
+  },
   "cross_references": [
     {
-      "from_addr": "004c9184", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c90c0", 
-      "addr": "004c90c0"
+      "addr": "004c90c0",
+      "from_addr": "004c9184",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c90c0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c9060",
+    "address_range": [
+      [
+        "004c9060",
+        "004c90b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c9060",
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c9060(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c5df0",
+      "name": "core_fire.cpp_CTrail_FUN_004c5df0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d71774",
+      "name": "g_LightningBoltActiveListHead",
+      "type": "CLightningBolt*",
+      "value": null
+    },
+    {
+      "addr": "02d71778",
+      "name": "g_TrailPool",
+      "type": "CTrail[100]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": []
 }

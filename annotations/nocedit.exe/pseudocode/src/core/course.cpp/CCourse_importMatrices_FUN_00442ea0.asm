@@ -63,12 +63,12 @@ section .text
     PUSH EDX                            ; 00442ead
     PUSH EBP                            ; 00442eae
     XOR EBX,EBX                         ; 00442eaf
-    CALL core_course.cpp_CCourse_allocMemory_FUN_00442500 ; 00442eb1 | void core_course.cpp_CCourse_allocMemory_FUN_00442500(CCourse * this_ptr)
-        ;   XREF to: 00442500 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_allocMemory_FUN_00442500 ; 00442eb1
+        ;   XREF to: 00442500 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_allocMemory_FUN_00442500(CCourse * this_ptr)
     ADD ESP,0x8                         ; 00442eb6
     CMP EBX,dword ptr [EBP]             ; 00442eb9
-    JL 0x00442ec4                       ; 00442ebc | LAB_00442ec4
-        ;   XREF to: 00442ec4 (CONDITIONAL_JUMP)
+    JL 0x00442ec4                       ; 00442ebc
+        ;   XREF to: 00442ec4 (CONDITIONAL_JUMP)  ; LAB_00442ec4
     ADD ESP,0x50                        ; 00442ebe
     POP EBP                             ; 00442ec1
     POP EBX                             ; 00442ec2
@@ -82,11 +82,11 @@ section .text
     FSTP float ptr [ESP]                ; 00442ed0
     FILD dword ptr [ESP + 0x58]         ; 00442ed3
     SUB ESP,0x4                         ; 00442ed7
-    MOV ESI,dword ptr [0x00678a60]      ; 00442eda | CEditorTools * g_CEditorToolsPtr
+    MOV ESI,dword ptr [0x00678a60]      ; 00442eda | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 00442ee0
-    PUSH ESI                            ; 00442ee3 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00442ee4 | void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)
+    PUSH ESI                            ; 00442ee3 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00442ee4
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 00442ee9
     LEA EAX,[ESP + 0x28]                ; 00442eec
     PUSH EAX                            ; 00442ef0
@@ -94,25 +94,24 @@ section .text
     PUSH EAX                            ; 00442ef5
     LEA EAX,[ESP + 0x10]                ; 00442ef6
     PUSH EAX                            ; 00442efa
-    PUSH 0x619123                       ; 00442efb | = "%f,%f,%f\n" | s_f_f_f_00619123 = %f,%f,%f
-
+    PUSH 0x619123                       ; 00442efb | = "%f,%f,%f\n"
     MOV EDI,dword ptr [ESP + 0x78]      ; 00442f00
     PUSH EDI                            ; 00442f04
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f05 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f05
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 00442f0a
     CMP EAX,0x3                         ; 00442f0d
-    JZ 0x00442f35                       ; 00442f10 | LAB_00442f35
-        ;   XREF to: 00442f35 (CONDITIONAL_JUMP)
+    JZ 0x00442f35                       ; 00442f10
+        ;   XREF to: 00442f35 (CONDITIONAL_JUMP)  ; LAB_00442f35
     PUSH EBX                            ; 00442f12
         ;   Label: LAB_00442f12
-    MOV EAX,0x61912d                    ; 00442f13 | = "..\\core\\course.cpp" | s_core_course_cpp_0061912d = ..\core\course.cpp
+    MOV EAX,0x61912d                    ; 00442f13 | = "..\\core\\course.cpp"
     MOV EDX,0x1c2                       ; 00442f18
-    PUSH 0x619140                       ; 00442f1d | = "CCourse::importMatrices - file is cor..." | s_CCourse_importMatrices_f_00619140 = CCourse::importMatrices - file is corrupt on frame %d!
-    MOV [0x02f0ca48],EAX                ; 00442f22 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 00442f27 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00442f2d | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x619140                       ; 00442f1d | = "CCourse::importMatrices - file is cor..."
+    MOV [0x02f0ca48],EAX                ; 00442f22 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 00442f27 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00442f2d
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 00442f32
     LEA EAX,[ESP + 0x2c]                ; 00442f35
         ;   Label: LAB_00442f35
@@ -121,52 +120,49 @@ section .text
     PUSH EAX                            ; 00442f3e
     LEA EAX,[ESP + 0x14]                ; 00442f3f
     PUSH EAX                            ; 00442f43
-    PUSH 0x619177                       ; 00442f44 | = "%f,%f,%f\n" | s_f_f_f_00619177 = %f,%f,%f
-
+    PUSH 0x619177                       ; 00442f44 | = "%f,%f,%f\n"
     MOV ECX,dword ptr [ESP + 0x78]      ; 00442f49
     PUSH ECX                            ; 00442f4d
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f4e | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f4e
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 00442f53
     CMP EAX,0x3                         ; 00442f56
-    JNZ 0x00442f12                      ; 00442f59 | LAB_00442f12
-        ;   XREF to: 00442f12 (CONDITIONAL_JUMP)
+    JNZ 0x00442f12                      ; 00442f59
+        ;   XREF to: 00442f12 (CONDITIONAL_JUMP)  ; LAB_00442f12
     LEA EAX,[ESP + 0x30]                ; 00442f5b
     PUSH EAX                            ; 00442f5f
     LEA EAX,[ESP + 0x24]                ; 00442f60
     PUSH EAX                            ; 00442f64
     LEA EAX,[ESP + 0x18]                ; 00442f65
     PUSH EAX                            ; 00442f69
-    PUSH 0x619181                       ; 00442f6a | = "%f,%f,%f\n" | s_f_f_f_00619181 = %f,%f,%f
-
+    PUSH 0x619181                       ; 00442f6a | = "%f,%f,%f\n"
     MOV ESI,dword ptr [ESP + 0x78]      ; 00442f6f
     PUSH ESI                            ; 00442f73
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f74 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f74
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 00442f79
     CMP EAX,0x3                         ; 00442f7c
-    JNZ 0x00442f12                      ; 00442f7f | LAB_00442f12
-        ;   XREF to: 00442f12 (CONDITIONAL_JUMP)
+    JNZ 0x00442f12                      ; 00442f7f
+        ;   XREF to: 00442f12 (CONDITIONAL_JUMP)  ; LAB_00442f12
     LEA EAX,[ESP + 0x34]                ; 00442f81
     PUSH EAX                            ; 00442f85
     LEA EAX,[ESP + 0x28]                ; 00442f86
     PUSH EAX                            ; 00442f8a
     LEA EAX,[ESP + 0x1c]                ; 00442f8b
     PUSH EAX                            ; 00442f8f
-    PUSH 0x61918b                       ; 00442f90 | = "%f,%f,%f\n" | s_f_f_f_0061918b = %f,%f,%f
-
+    PUSH 0x61918b                       ; 00442f90 | = "%f,%f,%f\n"
     PUSH ESI                            ; 00442f95
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f96 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00442f96
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 00442f9b
     CMP EAX,0x3                         ; 00442f9e
-    JNZ 0x00442f12                      ; 00442fa1 | LAB_00442f12
-        ;   XREF to: 00442f12 (CONDITIONAL_JUMP)
+    JNZ 0x00442f12                      ; 00442fa1
+        ;   XREF to: 00442f12 (CONDITIONAL_JUMP)  ; LAB_00442f12
     PUSH 0x0                            ; 00442fa7
     LEA EAX,[ESP + 0xc]                 ; 00442fa9
     PUSH EAX                            ; 00442fad
-    CALL core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690 ; 00442fae | void core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690(CMatrix3x3f * matrix, int preserve_scale)
-        ;   XREF to: 005f6690 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690 ; 00442fae
+        ;   XREF to: 005f6690 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690(CMatrix3x3f * matrix, int preserve_scale)
     ADD ESP,0x8                         ; 00442fb3
     MOV EAX,dword ptr [ESP + 0x14]      ; 00442fb6
     MOV dword ptr [ESP + 0x48],EAX      ; 00442fba
@@ -182,8 +178,8 @@ section .text
     ADD EDX,EAX                         ; 00442fdf
     LEA EAX,[ESP + 0x48]                ; 00442fe1
     CMP EDX,EAX                         ; 00442fe5
-    JZ 0x00442ffd                       ; 00442fe7 | LAB_00442ffd
-        ;   XREF to: 00442ffd (CONDITIONAL_JUMP)
+    JZ 0x00442ffd                       ; 00442fe7
+        ;   XREF to: 00442ffd (CONDITIONAL_JUMP)  ; LAB_00442ffd
     MOV EAX,dword ptr [ESP + 0x14]      ; 00442fe9
     MOV dword ptr [EDX],EAX             ; 00442fed
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00442fef
@@ -194,8 +190,8 @@ section .text
         ;   Label: LAB_00442ffd
     PUSH EAX                            ; 00443001
     LEA ESI,[ESP + 0x3c]                ; 00443002
-    CALL core_xform.cpp_matrixToQuaternion_FUN_005f7420 ; 00443006 | CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)
-        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_matrixToQuaternion_FUN_005f7420 ; 00443006
+        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)
     LEA EAX,[EBX*0x4 + 0x0]             ; 0044300b
     MOV EDX,EAX                         ; 00443012
     SHL EAX,0x3                         ; 00443014
@@ -212,8 +208,8 @@ section .text
     POP ESI                             ; 0044302c
     POP EDI                             ; 0044302d
     CMP EBX,dword ptr [EBP]             ; 0044302e
-    JL 0x00442ec4                       ; 00443031 | LAB_00442ec4
-        ;   XREF to: 00442ec4 (CONDITIONAL_JUMP)
+    JL 0x00442ec4                       ; 00443031
+        ;   XREF to: 00442ec4 (CONDITIONAL_JUMP)  ; LAB_00442ec4
     ADD ESP,0x50                        ; 00443037
     POP EBP                             ; 0044303a
     POP EBX                             ; 0044303b

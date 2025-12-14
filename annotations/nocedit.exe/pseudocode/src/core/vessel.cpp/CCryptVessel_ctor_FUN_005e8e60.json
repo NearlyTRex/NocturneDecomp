@@ -1,230 +1,230 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 204, 
-    "pseudocode_lines": 69, 
-    "cross_reference_count": 1, 
-    "global_count": 11, 
-    "total_lines": 163, 
-    "assembly_lines": 94, 
-    "suspect_count": 13, 
+    "assembly_lines": 94,
+    "complexity_score": 204,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 11,
+    "pseudocode_lines": 69,
+    "suspect_count": 13,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
-      "addr": "004088b0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
-      "addr": "00478ce0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }, 
-    {
-      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0", 
-      "addr": "004c9aa0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vsslbase_kfm_00657001", 
-      "addr": "00657001", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_none_0065700e", 
-      "addr": "0065700e", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_one_0065700f", 
-      "addr": "0065700f", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ne_00657010", 
-      "addr": "00657010", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_00657011", 
-      "addr": "00657011", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_none_00657013", 
-      "addr": "00657013", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_one_00657014", 
-      "addr": "00657014", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ne_00657015", 
-      "addr": "00657015", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_00657016", 
-      "addr": "00657016", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vsslorb_kfm_00657018", 
-      "addr": "00657018", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CCryptVesselVTable", 
-      "addr": "006651b4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 19, 
-      "match": "pCVar3[-4].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "*(CDemonActor_vtable **)(pCVar3[-4].model_name + 0x60) = &g_CCryptVesselVTable;"
-    }, 
-    {
-      "line": 21, 
-      "match": "pCVar3[-4].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "((CKeyFramedModelInstance *)pCVar3[-4].animation_state,\"vsslbase.kfm\");"
-    }, 
-    {
-      "line": 30, 
-      "match": "pCVar3[-3].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pcVar6 = pCVar3[-3].animation_state + 0xc;"
-    }, 
-    {
-      "line": 44, 
-      "match": "pCVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-2].part_visibility_flags[0xd] = 0;"
-    }, 
-    {
-      "line": 45, 
-      "match": "pCVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-2].part_visibility_flags[0xe] = 0;"
-    }, 
-    {
-      "line": 47, 
-      "match": "pCVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-2].part_visibility_flags[0x12] = 0;"
-    }, 
-    {
-      "line": 48, 
-      "match": "pCVar3[-3].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pcVar6 = pCVar3[-3].animation_state + 0x70;"
-    }, 
-    {
-      "line": 49, 
-      "match": "pCVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-2].part_visibility_flags[0x11] = 0;"
-    }, 
-    {
-      "line": 59, 
-      "match": "pCVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-2].part_visibility_flags[0xf] = 0x41200000;"
-    }, 
-    {
-      "line": 60, 
-      "match": "pCVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-2].part_visibility_flags[0x13] = 1;"
-    }, 
-    {
-      "line": 61, 
-      "match": "pCVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-2].part_visibility_flags[0x10] = 0;"
-    }, 
-    {
-      "line": 62, 
-      "match": "pCVar3[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-1].model_ptr = (CKeyFramedModel *)0x0;"
-    }, 
-    {
-      "line": 71, 
-      "match": "pCVar3[-5].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CCryptVessel *)(pCVar3[-5].animation_state + 0x24);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005e8e60", 
-    "signature": "CCryptVessel * core_vessel.cpp_CCryptVessel_ctor_FUN_005e8e60(CCryptVessel * this_ptr)", 
-    "address_range": [
-      [
-        "005e8e60", 
-        "005e8fb7"
-      ]
-    ], 
-    "name": "core_vessel.cpp_CCryptVessel_ctor_FUN_005e8e60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCryptVessel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 163
+  },
   "cross_references": [
     {
-      "from_addr": "005e8e3a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vessel.cpp_FUN_005e8e20", 
-      "addr": "005e8e20"
+      "addr": "005e8e20",
+      "from_addr": "005e8e3a",
+      "name": "core_vessel.cpp_FUN_005e8e20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e8e60",
+    "address_range": [
+      [
+        "005e8e60",
+        "005e8fb7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vessel.cpp_CCryptVessel_ctor_FUN_005e8e60",
+    "signature": "CCryptVessel * core_vessel.cpp_CCryptVessel_ctor_FUN_005e8e60(CCryptVessel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    },
+    {
+      "addr": "00478ce0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "004c9aa0",
+      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657001",
+      "name": "s_vsslbase_kfm_00657001",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065700e",
+      "name": "s_none_0065700e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065700f",
+      "name": "s_one_0065700f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00657010",
+      "name": "s_ne_00657010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00657011",
+      "name": "s_e_00657011",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00657013",
+      "name": "s_none_00657013",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657014",
+      "name": "s_one_00657014",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00657015",
+      "name": "s_ne_00657015",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00657016",
+      "name": "s_e_00657016",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00657018",
+      "name": "s_vsslorb_kfm_00657018",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006651b4",
+      "name": "g_CCryptVesselVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "pCVar3[-4].",
+      "text": "*(CDemonActor_vtable **)(pCVar3[-4].model_name + 0x60) = &g_CCryptVesselVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar3[-4].",
+      "text": "((CKeyFramedModelInstance *)pCVar3[-4].animation_state,\"vsslbase.kfm\");",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 30,
+      "match": "pCVar3[-3].",
+      "text": "pcVar6 = pCVar3[-3].animation_state + 0xc;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 44,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].part_visibility_flags[0xd] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 45,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].part_visibility_flags[0xe] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 47,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].part_visibility_flags[0x12] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 48,
+      "match": "pCVar3[-3].",
+      "text": "pcVar6 = pCVar3[-3].animation_state + 0x70;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 49,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].part_visibility_flags[0x11] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 59,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].part_visibility_flags[0xf] = 0x41200000;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 60,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].part_visibility_flags[0x13] = 1;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 61,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].part_visibility_flags[0x10] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 62,
+      "match": "pCVar3[-1].",
+      "text": "pCVar3[-1].model_ptr = (CKeyFramedModel *)0x0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 71,
+      "match": "pCVar3[-5].",
+      "text": "return (CCryptVessel *)(pCVar3[-5].animation_state + 0x24);",
+      "type": "negative_offset"
     }
   ]
 }

@@ -1,152 +1,152 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 135, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 74, 
-    "assembly_lines": 49, 
-    "suspect_count": 9, 
+    "assembly_lines": 49,
+    "complexity_score": 135,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 25,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_convertWindowsErrorToErrno_FUN_00608390", 
-      "addr": "00608390"
-    }, 
-    {
-      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
-      "addr": "006083fc"
-    }, 
-    {
-      "name": "crt_io.c_convertFileInfo_FUN_00602264", 
-      "addr": "00602264"
-    }, 
-    {
-      "name": "crt_io.c_findNextWithAttributes_FUN_00609d5c", 
-      "addr": "00609d5c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "FindNextFileA*", 
-      "name": "PTR_FindNextFileA_00611550", 
-      "addr": "00611550", 
-      "value": "00211d96"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "HANDLE in_stack_00000010;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "find_t *in_stack_00000018;"
-    }, 
-    {
-      "line": 12, 
-      "match": "&stack0xfffffebc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "BVar1 = (*PTR_FindNextFileA_00611550)(find_handle,(LPWIN32_FIND_DATAA)&stack0xfffffebc);"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000010,0x37,(LPWIN32_FIND_DATAA)&stack0xfffffec8);"
-    }, 
-    {
-      "line": 19, 
-      "match": "&stack0xfffffec8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(in_stack_00000010,0x37,(LPWIN32_FIND_DATAA)&stack0xfffffec8);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_io_c_convertFileInfo_FUN_00602264((LPWIN32_FIND_DATAA)&stack0xfffffecc,in_stack_00000018);"
-    }, 
-    {
-      "line": 24, 
-      "match": "&stack0xfffffecc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_io_c_convertFileInfo_FUN_00602264((LPWIN32_FIND_DATAA)&stack0xfffffecc,in_stack_00000018);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00602300", 
-    "signature": "int crt_io.c_findNextFileWrapper_FUN_00602300(HANDLE find_handle, LPWIN32_FIND_DATAA find_data)", 
-    "address_range": [
-      [
-        "00602300", 
-        "00602377"
-      ]
-    ], 
-    "name": "crt_io.c_findNextFileWrapper_FUN_00602300"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef HANDLE void *", 
-        "size": 4, 
-        "name": "find_handle"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "typedef LPWIN32_FIND_DATAA _WIN32_FIND_DATAA *", 
-        "size": 4, 
-        "name": "find_data"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 74
+  },
   "cross_references": [
     {
-      "from_addr": "005dc426", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0", 
-      "addr": "005dc2a0"
+      "addr": "005dc2a0",
+      "from_addr": "005dc426",
+      "name": "core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00602300",
+    "address_range": [
+      [
+        "00602300",
+        "00602377"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_findNextFileWrapper_FUN_00602300",
+    "signature": "int crt_io.c_findNextFileWrapper_FUN_00602300(HANDLE find_handle, LPWIN32_FIND_DATAA find_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "00608390",
+      "name": "crt_errno.c_convertWindowsErrorToErrno_FUN_00608390"
+    },
+    {
+      "addr": "006083fc",
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc"
+    },
+    {
+      "addr": "00602264",
+      "name": "crt_io.c_convertFileInfo_FUN_00602264"
+    },
+    {
+      "addr": "00609d5c",
+      "name": "crt_io.c_findNextWithAttributes_FUN_00609d5c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611550",
+      "name": "PTR_FindNextFileA_00611550",
+      "type": "FindNextFileA*",
+      "value": "00211d96"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "find_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef HANDLE void *"
+      },
+      {
+        "is_param": true,
+        "name": "find_data",
+        "offset": 8,
+        "size": 4,
+        "type": "typedef LPWIN32_FIND_DATAA _WIN32_FIND_DATAA *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000010",
+      "text": "HANDLE in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000018",
+      "text": "find_t *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 12,
+      "match": "&stack0xfffffebc",
+      "text": "BVar1 = (*PTR_FindNextFileA_00611550)(find_handle,(LPWIN32_FIND_DATAA)&stack0xfffffebc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "text": "(in_stack_00000010,0x37,(LPWIN32_FIND_DATAA)&stack0xfffffec8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xfffffec8",
+      "text": "(in_stack_00000010,0x37,(LPWIN32_FIND_DATAA)&stack0xfffffec8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000018",
+      "text": "crt_io_c_convertFileInfo_FUN_00602264((LPWIN32_FIND_DATAA)&stack0xfffffecc,in_stack_00000018);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xfffffecc",
+      "text": "crt_io_c_convertFileInfo_FUN_00602264((LPWIN32_FIND_DATAA)&stack0xfffffecc,in_stack_00000018);",
+      "type": "stack_ref"
     }
   ]
 }

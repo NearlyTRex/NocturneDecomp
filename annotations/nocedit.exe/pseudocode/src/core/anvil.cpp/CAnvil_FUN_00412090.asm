@@ -26,30 +26,29 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 00412096
     PUSH ESI                            ; 0041209a
     PUSH EBX                            ; 0041209b
-    CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 0041209c | void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 0041209c
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
     ADD ESP,0x8                         ; 004120a1
     ADD EBX,0x158                       ; 004120a4
     PUSH EBX                            ; 004120aa
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004120ab | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004120ab
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004120b0
     PUSH EAX                            ; 004120b3
-    PUSH 0x614d95                       ; 004120b4 | = "MODELS\\%s\n" | s_MODELS_s_00614d95 = MODELS\%s
-
+    PUSH 0x614d95                       ; 004120b4 | = "MODELS\\%s\n"
     PUSH ESI                            ; 004120b9
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004120ba | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 004120ba
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 004120bf
     PUSH 0x0                            ; 004120c2
     PUSH ESI                            ; 004120c4
     PUSH EBX                            ; 004120c5
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004120c6 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004120c6
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004120cb
     PUSH EAX                            ; 004120ce
-    CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 004120cf | void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 004120cf
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
     ADD ESP,0xc                         ; 004120d4
     POP ESI                             ; 004120d7
     POP EBX                             ; 004120d8

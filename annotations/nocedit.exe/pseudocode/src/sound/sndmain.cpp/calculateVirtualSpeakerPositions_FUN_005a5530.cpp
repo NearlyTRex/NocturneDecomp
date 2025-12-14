@@ -42,7 +42,7 @@ void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530(voi
       *(double *)((int)g_VirtualSpeakerYPositions + iVar4) = dVar2;
       *(double *)((int)g_VirtualSpeakerZPositions + iVar4) = dVar3;
       iVar4 = iVar5;
-    } while (SBORROW /* signed borrow */4(iVar5,g_AudioChannelCount * 8) != iVar5 + g_AudioChannelCount * -8 < 0);
+    } while (iVar5 < g_AudioChannelCount * 8);
   }
   return;
 }

@@ -38,14 +38,14 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 004ba6d7
     PUSH EAX                            ; 004ba6de
     XOR EBX,EBX                         ; 004ba6df
-    CALL engine_dosio.c_getFullPath_FUN_004820c0 ; 004ba6e1 | int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
-        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_getFullPath_FUN_004820c0 ; 004ba6e1
+        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
     ADD ESP,0x8                         ; 004ba6e6
     MOV EAX,dword ptr [ESI]             ; 004ba6e9
         ;   Label: LAB_004ba6e9
     CMP EBX,EAX                         ; 004ba6eb
-    JL 0x004ba700                       ; 004ba6ed | LAB_004ba700
-        ;   XREF to: 004ba700 (CONDITIONAL_JUMP)
+    JL 0x004ba700                       ; 004ba6ed
+        ;   XREF to: 004ba700 (CONDITIONAL_JUMP)  ; LAB_004ba700
     MOV EAX,0xffffffff                  ; 004ba6ef
     ADD ESP,0x208                       ; 004ba6f4
     POP ESI                             ; 004ba6fa
@@ -53,30 +53,30 @@ section .text
     RET                                 ; 004ba6fc
     INC EBX                             ; 004ba6fd
         ;   Label: LAB_004ba6fd
-    JMP 0x004ba6e9                      ; 004ba6fe | LAB_004ba6e9
-        ;   XREF to: 004ba6e9 (UNCONDITIONAL_JUMP)
+    JMP 0x004ba6e9                      ; 004ba6fe
+        ;   XREF to: 004ba6e9 (UNCONDITIONAL_JUMP)  ; LAB_004ba6e9
     PUSH EBX                            ; 004ba700
         ;   Label: LAB_004ba700
     PUSH ESI                            ; 004ba701
-    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004ba702 | char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
-        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004ba702
+        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004ba707
     PUSH EAX                            ; 004ba70a
     LEA EAX,[ESP + 0x4]                 ; 004ba70b
     PUSH EAX                            ; 004ba70f
-    CALL engine_dosio.c_getFullPath_FUN_004820c0 ; 004ba710 | int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
-        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_getFullPath_FUN_004820c0 ; 004ba710
+        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
     ADD ESP,0x8                         ; 004ba715
     MOV EAX,ESP                         ; 004ba718
     PUSH EAX                            ; 004ba71a
     LEA EAX,[ESP + 0x108]               ; 004ba71b
     PUSH EAX                            ; 004ba722
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004ba723 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004ba723
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004ba728
     TEST EAX,EAX                        ; 004ba72b
-    JNZ 0x004ba6fd                      ; 004ba72d | LAB_004ba6fd
-        ;   XREF to: 004ba6fd (CONDITIONAL_JUMP)
+    JNZ 0x004ba6fd                      ; 004ba72d
+        ;   XREF to: 004ba6fd (CONDITIONAL_JUMP)  ; LAB_004ba6fd
     MOV EAX,EBX                         ; 004ba72f
     ADD ESP,0x208                       ; 004ba731
     POP ESI                             ; 004ba737

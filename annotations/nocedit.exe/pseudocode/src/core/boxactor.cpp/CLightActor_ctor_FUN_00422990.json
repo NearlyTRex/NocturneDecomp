@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 69, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 50, 
-    "assembly_lines": 31, 
-    "suspect_count": 4, 
+    "assembly_lines": 31,
+    "complexity_score": 69,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 19,
+    "suspect_count": 4,
     "suspect_types": [
-      "negative_offset", 
-      "suspect_float"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_boxactor.cpp_CBoxActor_ctor_FUN_00421700", 
-      "addr": "00421700"
-    }, 
-    {
-      "name": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0", 
-      "addr": "004726a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_box.cpp_FUN_0065b2a4", 
-      "addr": "0065b2a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar2[-1].saved_screen_buffer_rows[0x36f] = &PTR_core_box_cpp_FUN_0065b2a4;"
-    }, 
-    {
-      "line": 20, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar2[-1].volumetric_intensity = 1.4013e-45;"
-    }, 
-    {
-      "line": 20, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "pCVar2[-1].volumetric_intensity = 1.4013e-45;"
-    }, 
-    {
-      "line": 21, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CLightActor *)(pCVar2[-1].saved_screen_buffer_rows + 0x31a);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00422990", 
-    "signature": "CLightActor * core_boxactor.cpp_CLightActor_ctor_FUN_00422990(CLightActor * this_ptr)", 
-    "address_range": [
-      [
-        "00422990", 
-        "00422a12"
-      ]
-    ], 
-    "name": "core_boxactor.cpp_CLightActor_ctor_FUN_00422990"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLightActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "suspect_float",
+      "negative_offset"
+    ],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "0042296d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_FUN_00422950", 
-      "addr": "00422950"
+      "addr": "00422950",
+      "from_addr": "0042296d",
+      "name": "core_boxactor.cpp_FUN_00422950",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00422990",
+    "address_range": [
+      [
+        "00422990",
+        "00422a12"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CLightActor_ctor_FUN_00422990",
+    "signature": "CLightActor * core_boxactor.cpp_CLightActor_ctor_FUN_00422990(CLightActor * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00421700",
+      "name": "core_boxactor.cpp_CBoxActor_ctor_FUN_00421700"
+    },
+    {
+      "addr": "004726a0",
+      "name": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065b2a4",
+      "name": "PTR_core_box.cpp_FUN_0065b2a4",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].saved_screen_buffer_rows[0x36f] = &PTR_core_box_cpp_FUN_0065b2a4;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].volumetric_intensity = 1.4013e-45;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 20,
+      "match": "1.4013e-45",
+      "text": "pCVar2[-1].volumetric_intensity = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar2[-1].",
+      "text": "return (CLightActor *)(pCVar2[-1].saved_screen_buffer_rows + 0x31a);",
+      "type": "negative_offset"
     }
   ]
 }

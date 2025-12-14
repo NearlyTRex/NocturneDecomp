@@ -36,8 +36,8 @@ section .text
     PUSH ECX                            ; 0050f1fa
     MOV EBX,dword ptr [ESP + 0x10]      ; 0050f1fb
     PUSH EBX                            ; 0050f1ff
-    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 0050f200 | void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
-        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 0050f200
+        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0050f205
     POP EBX                             ; 0050f208
     RET                                 ; 0050f209

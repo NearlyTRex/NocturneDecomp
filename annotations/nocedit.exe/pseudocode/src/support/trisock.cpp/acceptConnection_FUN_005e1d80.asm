@@ -32,16 +32,16 @@ section .text
     MOV dword ptr [ESP + 0x20],EDX      ; 005e1d9b
     MOV ECX,dword ptr [EAX]             ; 005e1d9f
     PUSH ECX                            ; 005e1da1
-    CALL crt_wsock32.c_accept           ; 005e1da2 | SOCKET crt_wsock32.c_accept(SOCKET s, SOCKADDR * addr, int * addrlen)
-        ;   XREF to: 00610ef2 (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_accept           ; 005e1da2
+        ;   XREF to: 00610ef2 (UNCONDITIONAL_CALL)  ; SOCKET crt_wsock32.c_accept(SOCKET s, SOCKADDR * addr, int * addrlen)
     MOV EDX,dword ptr [ESP + 0x28]      ; 005e1da7
     MOV dword ptr [EDX],EAX             ; 005e1dab
     CMP EAX,-0x1                        ; 005e1dad
-    JZ 0x005e1dc0                       ; 005e1db0 | LAB_005e1dc0
-        ;   XREF to: 005e1dc0 (CONDITIONAL_JUMP)
+    JZ 0x005e1dc0                       ; 005e1db0
+        ;   XREF to: 005e1dc0 (CONDITIONAL_JUMP)  ; LAB_005e1dc0
     TEST EDI,EDI                        ; 005e1db2
-    JNZ 0x005e1dc7                      ; 005e1db4 | LAB_005e1dc7
-        ;   XREF to: 005e1dc7 (CONDITIONAL_JUMP)
+    JNZ 0x005e1dc7                      ; 005e1db4
+        ;   XREF to: 005e1dc7 (CONDITIONAL_JUMP)  ; LAB_005e1dc7
     MOV EAX,0x1                         ; 005e1db6
     ADD ESP,0x1c                        ; 005e1dbb
     POP EDI                             ; 005e1dbe
@@ -57,8 +57,8 @@ section .text
     PUSH EAX                            ; 005e1dcc
     LEA EAX,[ESP + 0x18]                ; 005e1dcd
     PUSH EAX                            ; 005e1dd1
-    CALL support_trisock.cpp_convertSockAddr_FUN_005e1960 ; 005e1dd2 | SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN * dest_addr, SOCKADDR * src_addr)
-        ;   XREF to: 005e1960 (UNCONDITIONAL_CALL)
+    CALL support_trisock.cpp_convertSockAddr_FUN_005e1960 ; 005e1dd2
+        ;   XREF to: 005e1960 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN * dest_addr, SOCKADDR * src_addr)
     MOV ESI,EAX                         ; 005e1dd7
     ADD ESP,0x8                         ; 005e1dd9
     MOVSD ES:EDI,ESI                    ; 005e1ddc

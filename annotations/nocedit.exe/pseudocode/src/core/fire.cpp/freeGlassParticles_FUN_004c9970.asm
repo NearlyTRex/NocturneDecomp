@@ -16,13 +16,13 @@
 
 section .text
 
-    PUSH 0x65de50                       ; 004c9970 | WatcomTypeInfo g_CGlassParticleTypeInfo
+    PUSH 0x65de50                       ; 004c9970 | g_CGlassParticleTypeInfo
         ;   Label: core_fire.cpp_freeGlassParticles_FUN_004c9970
     PUSH 0x100                          ; 004c9975
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c997a
     PUSH EDX                            ; 004c997e
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 004c997f | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 004c997f
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004c9984
     RET                                 ; 004c9987
 

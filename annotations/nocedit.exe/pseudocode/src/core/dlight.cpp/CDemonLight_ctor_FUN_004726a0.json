@@ -1,107 +1,107 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 70, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 51, 
-    "assembly_lines": 26, 
-    "suspect_count": 4, 
+    "assembly_lines": 26,
+    "complexity_score": 70,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030", 
-      "addr": "0044c030"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CCameraView_vtable", 
-      "name": "g_CDemonLightVTable", 
-      "addr": "0065c924", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar1->shadow_map_width = in_stack_0000000c;"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar1->shadow_map_height = in_stack_00000010;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004726a0", 
-    "signature": "CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight * this_ptr)", 
-    "address_range": [
-      [
-        "004726a0", 
-        "00472754"
-      ]
-    ], 
-    "name": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonLight *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 51
+  },
   "cross_references": [
     {
-      "from_addr": "004229ad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_CLightActor_ctor_FUN_00422990", 
-      "addr": "00422990"
-    }, 
+      "addr": "00422990",
+      "from_addr": "004229ad",
+      "name": "core_boxactor.cpp_CLightActor_ctor_FUN_00422990",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d76df", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_staticInit_FUN_004d76d0", 
-      "addr": "004d76d0"
-    }, 
+      "addr": "004d76d0",
+      "from_addr": "004d76df",
+      "name": "core_game.cpp_staticInit_FUN_004d76d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00586bcd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setutil.cpp_C3DSLight_create_FUN_00586a90", 
-      "addr": "00586a90"
+      "addr": "00586a90",
+      "from_addr": "00586bcd",
+      "name": "core_setutil.cpp_C3DSLight_create_FUN_00586a90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004726a0",
+    "address_range": [
+      [
+        "004726a0",
+        "00472754"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0",
+    "signature": "CDemonLight * core_dlight.cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044c030",
+      "name": "core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065c924",
+      "name": "g_CDemonLightVTable",
+      "type": "CCameraView_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_0000000c",
+      "text": "pCVar1->shadow_map_width = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000010",
+      "text": "pCVar1->shadow_map_height = in_stack_00000010;",
+      "type": "stack_param"
     }
   ]
 }

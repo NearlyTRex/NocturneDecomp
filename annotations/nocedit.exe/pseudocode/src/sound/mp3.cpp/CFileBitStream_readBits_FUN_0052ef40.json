@@ -1,209 +1,209 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 120, 
-    "pseudocode_lines": 75, 
-    "cross_reference_count": 11, 
-    "global_count": 7, 
-    "total_lines": 254, 
-    "assembly_lines": 179, 
-    "suspect_count": 4, 
+    "assembly_lines": 179,
+    "complexity_score": 120,
+    "cross_reference_count": 11,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 75,
+    "suspect_count": 4,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063ad3e", 
-      "addr": "0063ad3e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Cannot_read_or_write_mor_0063ad4f", 
-      "addr": "0063ad4f", 
-      "value": null
-    }, 
-    {
-      "type": "uint[18]", 
-      "name": "g_MpegBitMaskTableMultiBit", 
-      "addr": "0067e5e0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0067e600", 
-      "addr": "0067e600", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_CurrentMp3Filename", 
-      "addr": "02f68188", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EBP;"
-    }, 
-    {
-      "line": 70, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = unaff_EBP |"
-    }, 
-    {
-      "line": 70, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = unaff_EBP |"
-    }, 
-    {
-      "line": 77, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_EBP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052ef40", 
-    "signature": "uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)", 
-    "address_range": [
-      [
-        "0052ef40", 
-        "0052f0b2"
-      ]
-    ], 
-    "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileBitStream *", 
-        "size": 4, 
-        "name": "bitstream"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "num_bits"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 254
+  },
   "cross_references": [
     {
-      "from_addr": "0052f7e4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0", 
-      "addr": "0052f7a0"
-    }, 
+      "addr": "0052f7a0",
+      "from_addr": "0052f7e4",
+      "name": "sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052f6c8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670", 
-      "addr": "0052f670"
-    }, 
+      "addr": "0052f670",
+      "from_addr": "0052f6c8",
+      "name": "sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052f603", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0", 
-      "addr": "0052f5b0"
-    }, 
+      "addr": "0052f5b0",
+      "from_addr": "0052f603",
+      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052fe42", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50", 
-      "addr": "0052fc50"
-    }, 
+      "addr": "0052fc50",
+      "from_addr": "0052fe42",
+      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052fc24", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50", 
-      "addr": "0052fb50"
-    }, 
+      "addr": "0052fb50",
+      "from_addr": "0052fc24",
+      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052fae6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0", 
-      "addr": "0052f8e0"
-    }, 
+      "addr": "0052f8e0",
+      "from_addr": "0052fae6",
+      "name": "sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052f8b7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850", 
-      "addr": "0052f850"
-    }, 
+      "addr": "0052f850",
+      "from_addr": "0052f8b7",
+      "name": "sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052f104", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_0052f0e0", 
-      "addr": "0052f0e0"
-    }, 
+      "addr": "0052f0e0",
+      "from_addr": "0052f104",
+      "name": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_0052f0e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00535641", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
-      "addr": "00534d40"
-    }, 
+      "addr": "00534d40",
+      "from_addr": "00535641",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005347a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630", 
-      "addr": "00534630"
-    }, 
+      "addr": "00534630",
+      "from_addr": "005347a5",
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00530c41", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0", 
-      "addr": "005307a0"
+      "addr": "005307a0",
+      "from_addr": "00530c41",
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052ef40",
+    "address_range": [
+      [
+        "0052ef40",
+        "0052f0b2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40",
+    "signature": "uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ad3e",
+      "name": "s_sound_mp3_cpp_0063ad3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ad4f",
+      "name": "s_Cannot_read_or_write_mor_0063ad4f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067e5e0",
+      "name": "g_MpegBitMaskTableMultiBit",
+      "type": "uint[18]",
+      "value": null
+    },
+    {
+      "addr": "0067e600",
+      "name": "DAT_0067e600",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f68188",
+      "name": "g_CurrentMp3Filename",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "bitstream",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileBitStream *"
+      },
+      {
+        "is_param": true,
+        "name": "num_bits",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "text": "uint unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBP",
+      "text": "return unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = unaff_EBP |",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = unaff_EBP |",
+      "type": "unaffected_reg"
     }
   ]
 }

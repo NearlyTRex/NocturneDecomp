@@ -35,7 +35,7 @@ int core_hero_cpp_closestHeroToPoint_FUN_004f2170(void)
         local_1c = fVar2;
       }
       iVar5 = iVar5 + 4;
-    } while (SBORROW /* signed borrow */4(iVar5,g_HeroCount * 4) != iVar5 + g_HeroCount * -4 < 0);
+    } while (iVar5 < g_HeroCount * 4);
   }
   if (iVar6 != 0) {
     return iVar6;

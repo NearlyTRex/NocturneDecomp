@@ -1,133 +1,133 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 59, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 63, 
-    "assembly_lines": 39, 
-    "suspect_count": 3, 
+    "assembly_lines": 39,
+    "complexity_score": 59,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 24,
+    "suspect_count": 3,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_fstream.cpp_fstreambase_ctor_FUN_0060658f", 
-      "addr": "0060658f"
-    }, 
-    {
-      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc", 
-      "addr": "006061fc"
-    }, 
-    {
-      "name": "crt_iostream.cpp_ostream_ctor_FUN_006061a2", 
-      "addr": "006061a2"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomVirtualBaseDescriptor", 
-      "name": "g_OFStream_VirtualBaseLayout", 
-      "addr": "00665cc0", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomVirtualBaseDescriptor", 
-      "name": "g_OFStream_OStreamSubobjectLayout", 
-      "addr": "00665cc8", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_OFStream_FStreamBaseDestructor", 
-      "addr": "00665cd4", 
-      "value": "005ff7bc"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_OFStream_OStream", 
-      "addr": "00665cdc", 
-      "value": "005ff78e"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_OFStream_IOS", 
-      "addr": "00665ce4", 
-      "value": "005ff7a4"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "piVar5[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "this_ptr = (ofstream *)&piVar5[-2].__format_flags;"
-    }, 
-    {
-      "line": 20, 
-      "match": "poVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pcVar4 = &poVar3[-2].ios.__fill_character;"
-    }, 
-    {
-      "line": 22, 
-      "match": "poVar3[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "poVar3[-1].ios.cleanup_vtable = &g_OFStream_FStreamBaseDestructor;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ff95c", 
-    "signature": "ofstream * crt_fstream.cpp_ofstream_ctor_FUN_005ff95c(ofstream * this_ptr, int c1)", 
-    "address_range": [
-      [
-        "005ff95c", 
-        "005ff9c7"
-      ]
-    ], 
-    "name": "crt_fstream.cpp_ofstream_ctor_FUN_005ff95c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ofstream *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "c1"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 63
+  },
   "cross_references": [
     {
-      "from_addr": "004e153e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
-      "addr": "004e12b0"
-    }, 
+      "addr": "004e12b0",
+      "from_addr": "004e153e",
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e0f9f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
-      "addr": "004e0cd0"
+      "addr": "004e0cd0",
+      "from_addr": "004e0f9f",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ff95c",
+    "address_range": [
+      [
+        "005ff95c",
+        "005ff9c7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_fstream.cpp_ofstream_ctor_FUN_005ff95c",
+    "signature": "ofstream * crt_fstream.cpp_ofstream_ctor_FUN_005ff95c(ofstream * this_ptr, int c1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060658f",
+      "name": "crt_fstream.cpp_fstreambase_ctor_FUN_0060658f"
+    },
+    {
+      "addr": "006061fc",
+      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc"
+    },
+    {
+      "addr": "006061a2",
+      "name": "crt_iostream.cpp_ostream_ctor_FUN_006061a2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00665cc0",
+      "name": "g_OFStream_VirtualBaseLayout",
+      "type": "WatcomVirtualBaseDescriptor",
+      "value": null
+    },
+    {
+      "addr": "00665cc8",
+      "name": "g_OFStream_OStreamSubobjectLayout",
+      "type": "WatcomVirtualBaseDescriptor",
+      "value": null
+    },
+    {
+      "addr": "00665cd4",
+      "name": "g_OFStream_FStreamBaseDestructor",
+      "type": "void*",
+      "value": "005ff7bc"
+    },
+    {
+      "addr": "00665cdc",
+      "name": "g_OFStream_OStream",
+      "type": "void*",
+      "value": "005ff78e"
+    },
+    {
+      "addr": "00665ce4",
+      "name": "g_OFStream_IOS",
+      "type": "void*",
+      "value": "005ff7a4"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "ofstream *"
+      },
+      {
+        "is_param": true,
+        "name": "c1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "piVar5[-2].",
+      "text": "this_ptr = (ofstream *)&piVar5[-2].__format_flags;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "poVar3[-2].",
+      "text": "pcVar4 = &poVar3[-2].ios.__fill_character;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "poVar3[-1].",
+      "text": "poVar3[-1].ios.cleanup_vtable = &g_OFStream_FStreamBaseDestructor;",
+      "type": "negative_offset"
     }
   ]
 }

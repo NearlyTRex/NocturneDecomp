@@ -59,9 +59,8 @@ cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
       if (((in_stack_ffffffe8 != 0) || (in_stack_ffffffec != 0)) ||
          (((char *)(this_ptr->width + -1) != unaff_EBP || (this_ptr->height + -1 != unaff_EDI))))
       goto LAB_0054b6da;
-      ppvVar3 = (void **)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                                   ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6
-                                   );
+      ppvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                          ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6);
       this_ptr->row_pointers = ppvVar3;
       if (ppvVar3 != (void **)0x0) {
         SVar1 = crt_stdio_c_fread_FUN_005fd990
@@ -82,8 +81,8 @@ cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
             return;
           }
           in_stack_ffffffe0 = 0x4de;
-          buffer = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                                     ((int)size,"..\\cockpit\\pkbitmap.cpp",0x4de);
+          buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                             ((int)size,"..\\cockpit\\pkbitmap.cpp",0x4de);
           this_ptr->packed_data = buffer;
           if (buffer == (char *)0x0) goto LAB_0054b6fd;
           in_stack_ffffffe0 = 1;

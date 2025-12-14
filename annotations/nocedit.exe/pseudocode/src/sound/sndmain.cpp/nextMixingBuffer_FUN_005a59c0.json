@@ -1,326 +1,326 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 405, 
-    "pseudocode_lines": 105, 
-    "cross_reference_count": 0, 
-    "global_count": 13, 
-    "total_lines": 168, 
-    "assembly_lines": 63, 
-    "suspect_count": 27, 
+    "assembly_lines": 63,
+    "complexity_score": 405,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 13,
+    "pseudocode_lines": 105,
+    "suspect_count": 27,
     "suspect_types": [
-      "stack_param", 
-      "unknown_field", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
+      "unknown_field",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_string.c_memmove_FUN_005fe5e0", 
-      "addr": "005fe5e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_0064fb9a", 
-      "addr": "0064fb9a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_SfxSlot_kill_must_be_loc_0064fbaf", 
-      "addr": "0064fbaf", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_0064fbcf", 
-      "addr": "0064fbcf", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_nextMixingBuffer_shouldn_0064fbe4", 
-      "addr": "0064fbe4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AudioChannelCount", 
-      "addr": "00681b18", 
-      "value": "0x2"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MixBufferReadIndex", 
-      "addr": "03f69278", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MixBufferSize", 
-      "addr": "03f69280", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_NumMixBuffers", 
-      "addr": "03f69284", 
-      "value": null
-    }, 
-    {
-      "type": "void*[8]", 
-      "name": "g_ChannelPrimaryBuffers", 
-      "addr": "03f692b0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ChannelPrimaryBuffers[1]", 
-      "addr": "03f692b4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundLockCount", 
-      "addr": "03f6940c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_ffffff98", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "byte in_stack_ffffff98 [20];"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_ffffffac", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffffac;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_ffffffb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_ffffffb0;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_ffffffb4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_ffffffb4;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_ffffffac", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffac = 0x5a5a38;"
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_ffffffb4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffb4 ="
-    }, 
-    {
-      "line": 51, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(void *)(*(int *)((int)g_ChannelPrimaryBuffers + iVar3) +"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_ffffffb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffb0 = 0x5a5a66;"
-    }, 
-    {
-      "line": 56, 
-      "match": "in_stack_ffffffb4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_memory_c_memset_FUN_005fde40(in_stack_ffffffb4,0,count);"
-    }, 
-    {
-      "line": 66, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)auStack_3c + iVar6) ="
-    }, 
-    {
-      "line": 67, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ChannelPrimaryBuffers + iVar6);"
-    }, 
-    {
-      "line": 84, 
-      "match": "&stack0xffffff98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "puVar7 = (uint *)&stack0xffffff98;"
-    }, 
-    {
-      "line": 90, 
-      "match": "in_stack_ffffffac", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "mix_buffer.channel_buffers[5] = (float *)in_stack_ffffffac;"
-    }, 
-    {
-      "line": 91, 
-      "match": "in_stack_ffffff98", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff98._0_4_;"
-    }, 
-    {
-      "line": 91, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff98._0_4_;"
-    }, 
-    {
-      "line": 92, 
-      "match": "in_stack_ffffff98", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff98._4_4_;"
-    }, 
-    {
-      "line": 92, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff98._4_4_;"
-    }, 
-    {
-      "line": 93, 
-      "match": "in_stack_ffffff98", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff98._8_4_;"
-    }, 
-    {
-      "line": 93, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff98._8_4_;"
-    }, 
-    {
-      "line": 94, 
-      "match": "in_stack_ffffff98", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff98._12_4_;"
-    }, 
-    {
-      "line": 94, 
-      "match": "._12_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff98._12_4_;"
-    }, 
-    {
-      "line": 95, 
-      "match": "in_stack_ffffff98", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff98._16_4_;"
-    }, 
-    {
-      "line": 95, 
-      "match": "._16_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff98._16_4_;"
-    }, 
-    {
-      "line": 96, 
-      "match": "in_stack_ffffffb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "mix_buffer.channel_buffers[6] = (float *)in_stack_ffffffb0;"
-    }, 
-    {
-      "line": 97, 
-      "match": "in_stack_ffffffb4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "mix_buffer.channel_buffers[7] = (float *)in_stack_ffffffb4;"
-    }
-  ], 
+    ],
+    "total_lines": 168
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a59c0", 
-    "signature": "undefined sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0()", 
+    "address": "005a59c0",
     "address_range": [
       [
-        "005a59c0", 
+        "005a59c0",
         "005a5a59"
-      ], 
+      ],
       [
-        "005a5b49", 
+        "005a5b49",
         "005a5b70"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0",
+    "signature": "undefined sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe5e0",
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064fb9a",
+      "name": "s_sound_sndmain_cpp_0064fb9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064fbaf",
+      "name": "s_SfxSlot_kill_must_be_loc_0064fbaf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064fbcf",
+      "name": "s_sound_sndmain_cpp_0064fbcf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064fbe4",
+      "name": "s_nextMixingBuffer_shouldn_0064fbe4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00681b18",
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69278",
+      "name": "g_MixBufferReadIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69280",
+      "name": "g_MixBufferSize",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69284",
+      "name": "g_NumMixBuffers",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f692b0",
+      "name": "g_ChannelPrimaryBuffers",
+      "type": "void*[8]",
+      "value": null
+    },
+    {
+      "addr": "03f692b4",
+      "name": "g_ChannelPrimaryBuffers[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6940c",
+      "name": "g_SoundLockCount",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_ffffff98",
+      "text": "byte in_stack_ffffff98 [20];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffffac",
+      "text": "uint in_stack_ffffffac;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_ffffffb0",
+      "text": "uint in_stack_ffffffb0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_ffffffb4",
+      "text": "void *in_stack_ffffffb4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_ffffffac",
+      "text": "in_stack_ffffffac = 0x5a5a38;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_ffffffb4",
+      "text": "in_stack_ffffffb4 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(int *)((int)",
+      "text": "(void *)(*(int *)((int)g_ChannelPrimaryBuffers + iVar3) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_ffffffb0",
+      "text": "in_stack_ffffffb0 = 0x5a5a66;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_ffffffb4",
+      "text": "crt_memory_c_memset_FUN_005fde40(in_stack_ffffffb4,0,count);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)auStack_3c + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ChannelPrimaryBuffers + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 84,
+      "match": "&stack0xffffff98",
+      "text": "puVar7 = (uint *)&stack0xffffff98;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_ffffffac",
+      "text": "mix_buffer.channel_buffers[5] = (float *)in_stack_ffffffac;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_ffffff98",
+      "text": "mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff98._0_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 91,
+      "match": "._0_4_",
+      "text": "mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff98._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 92,
+      "match": "in_stack_ffffff98",
+      "text": "mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff98._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 92,
+      "match": "._4_4_",
+      "text": "mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff98._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_ffffff98",
+      "text": "mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff98._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 93,
+      "match": "._8_4_",
+      "text": "mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff98._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 94,
+      "match": "in_stack_ffffff98",
+      "text": "mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff98._12_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 94,
+      "match": "._12_4_",
+      "text": "mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff98._12_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
+      "match": "in_stack_ffffff98",
+      "text": "mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff98._16_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 95,
+      "match": "._16_4_",
+      "text": "mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff98._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 96,
+      "match": "in_stack_ffffffb0",
+      "text": "mix_buffer.channel_buffers[6] = (float *)in_stack_ffffffb0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 97,
+      "match": "in_stack_ffffffb4",
+      "text": "mix_buffer.channel_buffers[7] = in_stack_ffffffb4;",
+      "type": "stack_param"
+    }
+  ]
 }

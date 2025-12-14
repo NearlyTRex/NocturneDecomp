@@ -28,31 +28,31 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 00412036
     PUSH ESI                            ; 0041203a
     PUSH EBX                            ; 0041203b
-    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 0041203c | void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
-        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 0041203c
+        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 00412041
     PUSH 0x0                            ; 00412044
     LEA EAX,[EBX + 0x158]               ; 00412046
     PUSH EAX                            ; 0041204c
-    PUSH 0x614d6d                       ; 0041204d | = "Model file (.kfm)" | s_Model_file_kfm_00614d6d = Model file (.kfm)
+    PUSH 0x614d6d                       ; 0041204d | = "Model file (.kfm)"
     PUSH ESI                            ; 00412052
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 00412053 | void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 00412053
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 00412058
     LEA EAX,[EBX + 0x2d4]               ; 0041205b
     PUSH EAX                            ; 00412061
-    PUSH 0x614d7f                       ; 00412062 | = "Drop cond" | s_Drop_cond_00614d7f = Drop cond
+    PUSH 0x614d7f                       ; 00412062 | = "Drop cond"
     PUSH ESI                            ; 00412067
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00412068 | void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00412068
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 0041206d
     PUSH 0x0                            ; 00412070
     ADD EBX,0x338                       ; 00412072
     PUSH EBX                            ; 00412078
-    PUSH 0x614d89                       ; 00412079 | = "Drop height" | s_Drop_height_00614d89 = Drop height
+    PUSH 0x614d89                       ; 00412079 | = "Drop height"
     PUSH ESI                            ; 0041207e
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 0041207f | void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 0041207f
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 00412084
     POP ESI                             ; 00412087
     POP EBX                             ; 00412088

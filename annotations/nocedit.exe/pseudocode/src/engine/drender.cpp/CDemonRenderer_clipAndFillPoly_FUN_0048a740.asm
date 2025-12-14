@@ -53,27 +53,27 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 0048a748
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0048a74c
     CMP dword ptr [EDI + 0x8],0x0       ; 0048a750
-    JNZ 0x0048a783                      ; 0048a754 | LAB_0048a783
-        ;   XREF to: 0048a783 (CONDITIONAL_JUMP)
+    JNZ 0x0048a783                      ; 0048a754
+        ;   XREF to: 0048a783 (CONDITIONAL_JUMP)  ; LAB_0048a783
     CMP dword ptr [EDI + 0x10],0x0      ; 0048a756
         ;   Label: LAB_0048a756
-    JNZ 0x0048a7b1                      ; 0048a75a | LAB_0048a7b1
-        ;   XREF to: 0048a7b1 (CONDITIONAL_JUMP)
+    JNZ 0x0048a7b1                      ; 0048a75a
+        ;   XREF to: 0048a7b1 (CONDITIONAL_JUMP)  ; LAB_0048a7b1
     CMP dword ptr [EDI + 0x4],0x0       ; 0048a75c
-    JZ 0x0048a76b                       ; 0048a760 | LAB_0048a76b
-        ;   XREF to: 0048a76b (CONDITIONAL_JUMP)
-    TEST byte ptr [0x02d052a0],0x1      ; 0048a762 | int g_RenderStateFlags
-    JZ 0x0048a774                       ; 0048a769 | LAB_0048a774
-        ;   XREF to: 0048a774 (CONDITIONAL_JUMP)
-    TEST byte ptr [0x02d052a0],0x5      ; 0048a76b | int g_RenderStateFlags
+    JZ 0x0048a76b                       ; 0048a760
+        ;   XREF to: 0048a76b (CONDITIONAL_JUMP)  ; LAB_0048a76b
+    TEST byte ptr [0x02d052a0],0x1      ; 0048a762 | g_RenderStateFlags
+    JZ 0x0048a774                       ; 0048a769
+        ;   XREF to: 0048a774 (CONDITIONAL_JUMP)  ; LAB_0048a774
+    TEST byte ptr [0x02d052a0],0x5      ; 0048a76b | g_RenderStateFlags
         ;   Label: LAB_0048a76b
-    JNZ 0x0048a7a8                      ; 0048a772 | LAB_0048a7a8
-        ;   XREF to: 0048a7a8 (CONDITIONAL_JUMP)
+    JNZ 0x0048a7a8                      ; 0048a772
+        ;   XREF to: 0048a7a8 (CONDITIONAL_JUMP)  ; LAB_0048a7a8
     PUSH EBX                            ; 0048a774
         ;   Label: LAB_0048a774
     PUSH ESI                            ; 0048a775
-    CALL engine_drender.cpp_renderTriangleSimple_FUN_004839f0 ; 0048a776 | void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(int * vertex_indices, int vertex_count)
-        ;   XREF to: 004839f0 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_renderTriangleSimple_FUN_004839f0 ; 0048a776
+        ;   XREF to: 004839f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0048a77b
         ;   Label: LAB_0048a77b
     POP EBP                             ; 0048a77e
@@ -82,42 +82,42 @@ section .text
     POP ESI                             ; 0048a780
     POP EBX                             ; 0048a781
     RET                                 ; 0048a782
-    MOV ECX,0x621f62                    ; 0048a783 | = "..\\engine\\drender.cpp" | s_engine_drender_cpp_00621f62 = ..\engine\drender.cpp
+    MOV ECX,0x621f62                    ; 0048a783 | = "..\\engine\\drender.cpp"
         ;   Label: LAB_0048a783
     MOV EBP,0xad                        ; 0048a788
-    PUSH 0x621f78                       ; 0048a78d | = "CDemonRenderer::clipAndFillPoly - Bad..." | s_CDemonRenderer_clipAndFi_00621f78 = CDemonRenderer::clipAndFillPoly - Bad projection mode
-    MOV dword ptr [0x02f0ca48],ECX      ; 0048a792 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 0048a798 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0048a79e | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x621f78                       ; 0048a78d | = "CDemonRenderer::clipAndFillPoly - Bad..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 0048a792 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 0048a798 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0048a79e
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0048a7a3
-    JMP 0x0048a756                      ; 0048a7a6 | LAB_0048a756
-        ;   XREF to: 0048a756 (UNCONDITIONAL_JUMP)
+    JMP 0x0048a756                      ; 0048a7a6
+        ;   XREF to: 0048a756 (UNCONDITIONAL_JUMP)  ; LAB_0048a756
     PUSH EBX                            ; 0048a7a8
         ;   Label: LAB_0048a7a8
     PUSH ESI                            ; 0048a7a9
-    CALL engine_drender.cpp_renderTriangleTextured_FUN_00483370 ; 0048a7aa | void engine_drender.cpp_renderTriangleTextured_FUN_00483370(int * vertex_indices, int vertex_count)
-        ;   XREF to: 00483370 (UNCONDITIONAL_CALL)
-    JMP 0x0048a77b                      ; 0048a7af | LAB_0048a77b
-        ;   XREF to: 0048a77b (UNCONDITIONAL_JUMP)
+    CALL engine_drender.cpp_renderTriangleTextured_FUN_00483370 ; 0048a7aa
+        ;   XREF to: 00483370 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_renderTriangleTextured_FUN_00483370(int * vertex_indices, int vertex_count)
+    JMP 0x0048a77b                      ; 0048a7af
+        ;   XREF to: 0048a77b (UNCONDITIONAL_JUMP)  ; LAB_0048a77b
     CMP dword ptr [EDI + 0x4],0x0       ; 0048a7b1
         ;   Label: LAB_0048a7b1
-    JZ 0x0048a7c0                       ; 0048a7b5 | LAB_0048a7c0
-        ;   XREF to: 0048a7c0 (CONDITIONAL_JUMP)
-    TEST byte ptr [0x02d052a0],0x1      ; 0048a7b7 | int g_RenderStateFlags
-    JZ 0x0048a7e1                       ; 0048a7be | LAB_0048a7e1
-        ;   XREF to: 0048a7e1 (CONDITIONAL_JUMP)
-    TEST byte ptr [0x02d052a0],0x5      ; 0048a7c0 | int g_RenderStateFlags
+    JZ 0x0048a7c0                       ; 0048a7b5
+        ;   XREF to: 0048a7c0 (CONDITIONAL_JUMP)  ; LAB_0048a7c0
+    TEST byte ptr [0x02d052a0],0x1      ; 0048a7b7 | g_RenderStateFlags
+    JZ 0x0048a7e1                       ; 0048a7be
+        ;   XREF to: 0048a7e1 (CONDITIONAL_JUMP)  ; LAB_0048a7e1
+    TEST byte ptr [0x02d052a0],0x5      ; 0048a7c0 | g_RenderStateFlags
         ;   Label: LAB_0048a7c0
-    JZ 0x0048a7e1                       ; 0048a7c7 | LAB_0048a7e1
-        ;   XREF to: 0048a7e1 (CONDITIONAL_JUMP)
+    JZ 0x0048a7e1                       ; 0048a7c7
+        ;   XREF to: 0048a7e1 (CONDITIONAL_JUMP)  ; LAB_0048a7e1
     TEST byte ptr [0x02d052a1],0x2      ; 0048a7c9 | DAT_02d052a1
-    JZ 0x0048a809                       ; 0048a7d0 | LAB_0048a809
-        ;   XREF to: 0048a809 (CONDITIONAL_JUMP)
+    JZ 0x0048a809                       ; 0048a7d0
+        ;   XREF to: 0048a809 (CONDITIONAL_JUMP)  ; LAB_0048a809
     PUSH ESI                            ; 0048a7d2
     PUSH EBX                            ; 0048a7d3
-    CALL engine_clipper.c_clipPolygonToViewport_FUN_00438420 ; 0048a7d4 | void engine_clipper.c_clipPolygonToViewport_FUN_00438420(int vertex_count, int * vertex_indices)
-        ;   XREF to: 00438420 (UNCONDITIONAL_CALL)
+    CALL engine_clipper.c_clipPolygonToViewport_FUN_00438420 ; 0048a7d4
+        ;   XREF to: 00438420 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipPolygonToViewport_FUN_00438420(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 0048a7d9
     POP EBP                             ; 0048a7dc
     POP EDI                             ; 0048a7dd
@@ -127,17 +127,17 @@ section .text
     PUSH ESI                            ; 0048a7e1
         ;   Label: LAB_0048a7e1
     PUSH EBX                            ; 0048a7e2
-    CALL core_xform.cpp_transformAndClipGeometry_FUN_005f8550 ; 0048a7e3 | SRenderVertex * core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)
-        ;   XREF to: 005f8550 (UNCONDITIONAL_CALL)
-    MOV ECX,dword ptr [0x00824e24]      ; 0048a7e8 | int g_ClippedVertexCount
+    CALL core_xform.cpp_transformAndClipGeometry_FUN_005f8550 ; 0048a7e3
+        ;   XREF to: 005f8550 (UNCONDITIONAL_CALL)  ; SRenderVertex * core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)
+    MOV ECX,dword ptr [0x00824e24]      ; 0048a7e8 | g_ClippedVertexCount
     ADD ESP,0x8                         ; 0048a7ee
     CMP ECX,0x2                         ; 0048a7f1
-    JLE 0x0048a77e                      ; 0048a7f4 | LAB_0048a77e
-        ;   XREF to: 0048a77e (CONDITIONAL_JUMP)
+    JLE 0x0048a77e                      ; 0048a7f4
+        ;   XREF to: 0048a77e (CONDITIONAL_JUMP)  ; LAB_0048a77e
     PUSH ECX                            ; 0048a7f6
-    PUSH 0x824e28                       ; 0048a7f7 | SRenderVertex[16] g_ClippedVertexBuffer
-    CALL engine_3d.c_rasterizeTriangle_FUN_005fcfc0 ; 0048a7fc | void engine_3d.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count, int triangle_count)
-        ;   XREF to: 005fcfc0 (UNCONDITIONAL_CALL)
+    PUSH 0x824e28                       ; 0048a7f7 | g_ClippedVertexBuffer
+    CALL engine_3d.c_rasterizeTriangle_FUN_005fcfc0 ; 0048a7fc
+        ;   XREF to: 005fcfc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count, int triangle_count)
     ADD ESP,0x8                         ; 0048a801
     POP EBP                             ; 0048a804
     POP EDI                             ; 0048a805
@@ -147,8 +147,8 @@ section .text
     PUSH ESI                            ; 0048a809
         ;   Label: LAB_0048a809
     PUSH EBX                            ; 0048a80a
-    CALL engine_clipper.c_clipAndRasterize_FUN_004371b0 ; 0048a80b | void engine_clipper.c_clipAndRasterize_FUN_004371b0(int vertex_count, int * vertex_indices)
-        ;   XREF to: 004371b0 (UNCONDITIONAL_CALL)
+    CALL engine_clipper.c_clipAndRasterize_FUN_004371b0 ; 0048a80b
+        ;   XREF to: 004371b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_004371b0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 0048a810
     POP EBP                             ; 0048a813
     POP EDI                             ; 0048a814

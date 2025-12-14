@@ -41,16 +41,16 @@ section .text
     MOV EDI,dword ptr [ESP + 0x40]      ; 005a1957
     MOV EDX,dword ptr [ESP + 0x44]      ; 005a195b
     PUSH EDX                            ; 005a195f
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a1960 | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a1960
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a1965
     MOV EBX,dword ptr [EAX + 0x28558]   ; 005a1968
     XOR ECX,ECX                         ; 005a196e
     MOV dword ptr [ESP + 0x10],EAX      ; 005a1970
     MOV dword ptr [ESP + 0x28],ECX      ; 005a1974
     TEST EBX,EBX                        ; 005a1978
-    JLE 0x005a1a6d                      ; 005a197a | LAB_005a1a6d
-        ;   XREF to: 005a1a6d (CONDITIONAL_JUMP)
+    JLE 0x005a1a6d                      ; 005a197a
+        ;   XREF to: 005a1a6d (CONDITIONAL_JUMP)  ; LAB_005a1a6d
     LEA EBX,[EDI + 0x7dc]               ; 005a1980
     MOV dword ptr [ESP + 0x1c],EAX      ; 005a1986
     MOV dword ptr [ESP + 0x14],EBX      ; 005a198a
@@ -72,19 +72,19 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 005a19ba
     PUSH ECX                            ; 005a19be
     MOV dword ptr [ESP + 0x20],EAX      ; 005a19bf
-    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005a19c3 | void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005a19c3
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)
     MOV EDX,dword ptr [EBX + 0x64c]     ; 005a19c8
     ADD ESP,0x8                         ; 005a19ce
     CMP EDX,0x3f800000                  ; 005a19d1
-    JNZ 0x005a1a75                      ; 005a19d7 | LAB_005a1a75
-        ;   XREF to: 005a1a75 (CONDITIONAL_JUMP)
+    JNZ 0x005a1a75                      ; 005a19d7
+        ;   XREF to: 005a1a75 (CONDITIONAL_JUMP)  ; LAB_005a1a75
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005a19dd
         ;   Label: LAB_005a19dd
     MOV EAX,dword ptr [EAX + 0x2857c]   ; 005a19e1
     TEST EAX,EAX                        ; 005a19e7
-    JL 0x005a1b32                       ; 005a19e9 | LAB_005a1b32
-        ;   XREF to: 005a1b32 (CONDITIONAL_JUMP)
+    JL 0x005a1b32                       ; 005a19e9
+        ;   XREF to: 005a1b32 (CONDITIONAL_JUMP)  ; LAB_005a1b32
     IMUL EAX,EAX,0x30                   ; 005a19ef
     ADD EAX,dword ptr [ESP + 0x14]      ; 005a19f2
     PUSH EAX                            ; 005a19f6
@@ -93,8 +93,8 @@ section .text
     PUSH EAX                            ; 005a19fd
     LEA EAX,[ESP + 0x8]                 ; 005a19fe
     PUSH EAX                            ; 005a1a02
-    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005a1a03 | CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 005a1a03
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 005a1a08
     MOV EAX,dword ptr [ESP]             ; 005a1a0b
     MOV dword ptr [ESI + 0x7e8],EAX     ; 005a1a0e
@@ -121,8 +121,8 @@ section .text
     MOV ECX,dword ptr [EDX + 0x28558]   ; 005a1a5b
     MOV dword ptr [ESP + 0x28],EAX      ; 005a1a61
     CMP EAX,ECX                         ; 005a1a65
-    JL 0x005a19ae                       ; 005a1a67 | LAB_005a19ae
-        ;   XREF to: 005a19ae (CONDITIONAL_JUMP)
+    JL 0x005a19ae                       ; 005a1a67
+        ;   XREF to: 005a19ae (CONDITIONAL_JUMP)  ; LAB_005a19ae
     ADD ESP,0x2c                        ; 005a1a6d
         ;   Label: LAB_005a1a6d
     POP EBP                             ; 005a1a70
@@ -159,8 +159,8 @@ section .text
     FLD float ptr [EBX + 0x64c]         ; 005a1b19
     FMUL float ptr [EDI + EAX*0x1 + 0x804] ; 005a1b1f
     FSTP float ptr [EDI + EAX*0x1 + 0x804] ; 005a1b26
-    JMP 0x005a19dd                      ; 005a1b2d | LAB_005a19dd
-        ;   XREF to: 005a19dd (UNCONDITIONAL_JUMP)
+    JMP 0x005a19dd                      ; 005a1b2d
+        ;   XREF to: 005a19dd (UNCONDITIONAL_JUMP)  ; LAB_005a19dd
     MOV EAX,dword ptr [ESP + 0x44]      ; 005a1b32
         ;   Label: LAB_005a1b32
     FLD float ptr [EAX + EBP*0x1 + 0x58] ; 005a1b36
@@ -172,6 +172,6 @@ section .text
     FLD float ptr [EAX + EBP*0x1 + 0x60] ; 005a1b4f
     FADD float ptr [EDI + 0x8]          ; 005a1b53
     FSTP float ptr [ESI + 0x808]        ; 005a1b56
-    JMP 0x005a1a28                      ; 005a1b5c | LAB_005a1a28
-        ;   XREF to: 005a1a28 (UNCONDITIONAL_JUMP)
+    JMP 0x005a1a28                      ; 005a1b5c
+        ;   XREF to: 005a1a28 (UNCONDITIONAL_JUMP)  ; LAB_005a1a28
 

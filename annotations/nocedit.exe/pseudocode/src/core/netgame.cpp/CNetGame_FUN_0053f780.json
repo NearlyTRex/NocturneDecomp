@@ -1,156 +1,156 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 70, 
-    "pseudocode_lines": 35, 
-    "cross_reference_count": 1, 
-    "global_count": 11, 
-    "total_lines": 105, 
-    "assembly_lines": 70, 
-    "suspect_count": 3, 
+    "assembly_lines": 70,
+    "complexity_score": 70,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 11,
+    "pseudocode_lines": 35,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_netgame.cpp_CNetGame_FUN_0053fd00", 
-      "addr": "0053fd00"
-    }, 
-    {
-      "name": "crt_env.c_getenv_FUN_006013f0", 
-      "addr": "006013f0"
-    }, 
-    {
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
-      "addr": "005ff9d0"
-    }, 
-    {
-      "name": "support_trisock.cpp_startupWinsock_FUN_005e1ec0", 
-      "addr": "005e1ec0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
-      "addr": "005f2dc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_netlog_txt_0063d2bc", 
-      "addr": "0063d2bc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_USERNAME_0063d2c7", 
-      "addr": "0063d2c7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_COMPUTERNAME_0063d2d0", 
-      "addr": "0063d2d0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_MyComputer_0063d2dd", 
-      "addr": "0063d2dd", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_yComputer_0063d2de", 
-      "addr": "0063d2de", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_Computer_0063d2df", 
-      "addr": "0063d2df", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_omputer_0063d2e0", 
-      "addr": "0063d2e0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LastPingTime", 
-      "addr": "02f7c8b4", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CurrentGameTime", 
-      "addr": "02f7c8b8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ChatHistoryCount", 
-      "addr": "02f7c8cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f98ad0", 
-      "addr": "02f98ad0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CNetGame *in_stack_00000018;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar4 = in_stack_00000018->network_data;"
-    }, 
-    {
-      "line": 37, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000018);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0053f780", 
-    "signature": "undefined core_netgame.cpp_CNetGame_FUN_0053f780()", 
-    "address_range": [
-      [
-        "0053f780", 
-        "0053f821"
-      ]
-    ], 
-    "name": "core_netgame.cpp_CNetGame_FUN_0053f780"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 105
+  },
   "cross_references": [
     {
-      "from_addr": "005081cb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
+      "addr": "00507a60",
+      "from_addr": "005081cb",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053f780",
+    "address_range": [
+      [
+        "0053f780",
+        "0053f821"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_netgame.cpp_CNetGame_FUN_0053f780",
+    "signature": "undefined core_netgame.cpp_CNetGame_FUN_0053f780()"
+  },
+  "function_calls": [
+    {
+      "addr": "0053fd00",
+      "name": "core_netgame.cpp_CNetGame_FUN_0053fd00"
+    },
+    {
+      "addr": "006013f0",
+      "name": "crt_env.c_getenv_FUN_006013f0"
+    },
+    {
+      "addr": "005ff9d0",
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
+    },
+    {
+      "addr": "005e1ec0",
+      "name": "support_trisock.cpp_startupWinsock_FUN_005e1ec0"
+    },
+    {
+      "addr": "005f2dc0",
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063d2bc",
+      "name": "s_netlog_txt_0063d2bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d2c7",
+      "name": "s_USERNAME_0063d2c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d2d0",
+      "name": "s_COMPUTERNAME_0063d2d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d2dd",
+      "name": "s_MyComputer_0063d2dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d2de",
+      "name": "s_yComputer_0063d2de",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063d2df",
+      "name": "s_Computer_0063d2df",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063d2e0",
+      "name": "s_omputer_0063d2e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f7c8b4",
+      "name": "g_LastPingTime",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c8b8",
+      "name": "g_CurrentGameTime",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "02f7c8cc",
+      "name": "g_ChatHistoryCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f98ad0",
+      "name": "DAT_02f98ad0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000018",
+      "text": "CNetGame *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000018",
+      "text": "pcVar4 = in_stack_00000018->network_data;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000018",
+      "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000018);",
+      "type": "stack_param"
     }
   ]
 }

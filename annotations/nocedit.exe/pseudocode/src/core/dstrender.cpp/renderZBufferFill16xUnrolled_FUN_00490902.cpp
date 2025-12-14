@@ -80,7 +80,7 @@ core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902
       puVar6 = puVar6 + 0x10;
       iVar3 = iVar4;
     }
-    if (iVar4 != -4 && SCARRY4(iVar4,4) == iVar4 + 4 < 0) {
+    if (-4 < iVar4) {
       *puVar7 = uVar9 >> 8;
       if (iVar4 != -3 && 0 < iVar4 + 4) {
         puVar7[1] = uVar9 + iVar5 >> 8;

@@ -1,83 +1,83 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 83, 
-    "assembly_lines": 63, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0", 
-      "addr": "0043eef0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043ef90", 
-    "signature": "int support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary * this_ptr, int code, int parent_index)", 
-    "address_range": [
-      [
-        "0043ef90", 
-        "0043f021"
-      ]
-    ], 
-    "name": "support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWDictionary *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "code"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "parent_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 63,
+    "complexity_score": 20,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 83
+  },
   "cross_references": [
     {
-      "from_addr": "0043f402", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWCompress_process_FUN_0043f360", 
-      "addr": "0043f360"
-    }, 
+      "addr": "0043f360",
+      "from_addr": "0043f402",
+      "name": "support_codec.cpp_CLZWCompress_process_FUN_0043f360",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043f613", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0", 
-      "addr": "0043f5d0"
-    }, 
+      "addr": "0043f5d0",
+      "from_addr": "0043f613",
+      "name": "support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043f53c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDecompress_process_FUN_0043f510", 
-      "addr": "0043f510"
+      "addr": "0043f510",
+      "from_addr": "0043f53c",
+      "name": "support_codec.cpp_CLZWDecompress_process_FUN_0043f510",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0043ef90",
+    "address_range": [
+      [
+        "0043ef90",
+        "0043f021"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90",
+    "signature": "int support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary * this_ptr, int code, int parent_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043eef0",
+      "name": "support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDictionary *"
+      },
+      {
+        "is_param": true,
+        "name": "code",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "parent_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

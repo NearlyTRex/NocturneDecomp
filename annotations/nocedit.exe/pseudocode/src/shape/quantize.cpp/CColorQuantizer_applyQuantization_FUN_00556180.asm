@@ -50,12 +50,12 @@ section .text
     AND EAX,0xffff                      ; 00556195
     PUSH EAX                            ; 0055619a
     PUSH EBX                            ; 0055619b
-    CALL shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500 ; 0055619c | int shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500(CColorQuantizer * this_ptr, int num_entries)
-        ;   XREF to: 00555500 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500 ; 0055619c
+        ;   XREF to: 00555500 (UNCONDITIONAL_CALL)  ; int shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500(CColorQuantizer * this_ptr, int num_entries)
     ADD ESP,0x8                         ; 005561a1
     TEST EAX,EAX                        ; 005561a4
-    JNZ 0x005561af                      ; 005561a6 | LAB_005561af
-        ;   XREF to: 005561af (CONDITIONAL_JUMP)
+    JNZ 0x005561af                      ; 005561a6
+        ;   XREF to: 005561af (CONDITIONAL_JUMP)  ; LAB_005561af
     MOV ESP,EBP                         ; 005561a8
     POP EBP                             ; 005561aa
     POP EDI                             ; 005561ab
@@ -64,14 +64,14 @@ section .text
     RET                                 ; 005561ae
     PUSH 0x384                          ; 005561af
         ;   Label: LAB_005561af
-    PUSH 0x640d9b                       ; 005561b4 | = "..\\shape\\quantize.cpp" | s_shape_quantize_cpp_00640d9b = ..\shape\quantize.cpp
+    PUSH 0x640d9b                       ; 005561b4 | = "..\\shape\\quantize.cpp"
     PUSH 0x28                           ; 005561b9
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005561bb | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 005561bb
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005561c0
     TEST EAX,EAX                        ; 005561c3
-    JZ 0x005561ed                       ; 005561c5 | LAB_005561ed
-        ;   XREF to: 005561ed (CONDITIONAL_JUMP)
+    JZ 0x005561ed                       ; 005561c5
+        ;   XREF to: 005561ed (CONDITIONAL_JUMP)  ; LAB_005561ed
     MOV EDX,dword ptr [EBP + 0x18]      ; 005561c7
     MOV EDX,dword ptr [EDX]             ; 005561ca
     PUSH 0x8                            ; 005561cc
@@ -82,8 +82,8 @@ section .text
     AND EDX,0xffff                      ; 005561dd
     PUSH EDX                            ; 005561e3
     PUSH EAX                            ; 005561e4
-    CALL shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 ; 005561e5 | CBitmap * shape_quantize.cpp_CBitmap_ctor_FUN_00556a00(CBitmap * this_ptr)
-        ;   XREF to: 00556a00 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 ; 005561e5
+        ;   XREF to: 00556a00 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_ctor_FUN_00556a00(CBitmap * this_ptr)
     ADD ESP,0x10                        ; 005561ea
     MOV dword ptr [EBP + -0x10],EAX     ; 005561ed
         ;   Label: LAB_005561ed
@@ -100,35 +100,35 @@ section .text
     MOV ESI,dword ptr [EBP + -0x4]      ; 00556209
     AND EAX,0xffff                      ; 0055620c
     CMP EAX,ESI                         ; 00556211
-    JLE 0x00556350                      ; 00556213 | LAB_00556350
-        ;   XREF to: 00556350 (CONDITIONAL_JUMP)
+    JLE 0x00556350                      ; 00556213
+        ;   XREF to: 00556350 (CONDITIONAL_JUMP)  ; LAB_00556350
     CMP dword ptr [EBX],0x0             ; 00556219
-    JZ 0x00556270                       ; 0055621c | LAB_00556270
-        ;   XREF to: 00556270 (CONDITIONAL_JUMP)
+    JZ 0x00556270                       ; 0055621c
+        ;   XREF to: 00556270 (CONDITIONAL_JUMP)  ; LAB_00556270
     PUSH ESI                            ; 00556222
     PUSH EAX                            ; 00556223
-    PUSH 0x640db1                       ; 00556224 | = "Phase 3" | s_Phase_3_00640db1 = Phase 3
+    PUSH 0x640db1                       ; 00556224 | = "Phase 3"
     CALL dword ptr [EBX]                ; 00556229
     ADD ESP,0xc                         ; 0055622b
     TEST EAX,EAX                        ; 0055622e
-    JZ 0x00556270                       ; 00556230 | LAB_00556270
-        ;   XREF to: 00556270 (CONDITIONAL_JUMP)
+    JZ 0x00556270                       ; 00556230
+        ;   XREF to: 00556270 (CONDITIONAL_JUMP)  ; LAB_00556270
     MOV EBX,0x38d                       ; 00556236
-    MOV ECX,0x640db9                    ; 0055623b | = "..\\shape\\quantize.cpp" | s_shape_quantize_cpp_00640db9 = ..\shape\quantize.cpp
+    MOV ECX,0x640db9                    ; 0055623b | = "..\\shape\\quantize.cpp"
     MOV ESI,dword ptr [EBP + -0x10]     ; 00556240
-    MOV dword ptr [0x02f0d944],EBX      ; 00556243 | int g_CurrentDebugLine
-    MOV dword ptr [0x0067d20c],ECX      ; 00556249 | char * g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EBX      ; 00556243 | g_CurrentDebugLine
+    MOV dword ptr [0x0067d20c],ECX      ; 00556249 | g_CurrentDebugFilename
     TEST ESI,ESI                        ; 0055624f
-    JZ 0x00556267                       ; 00556251 | LAB_00556267
-        ;   XREF to: 00556267 (CONDITIONAL_JUMP)
+    JZ 0x00556267                       ; 00556251
+        ;   XREF to: 00556267 (CONDITIONAL_JUMP)  ; LAB_00556267
     PUSH 0x0                            ; 00556253
     PUSH ESI                            ; 00556255
-    CALL shape_quantize.cpp_CBitmap_dtor_FUN_00556c20 ; 00556256 | CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr)
-        ;   XREF to: 00556c20 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CBitmap_dtor_FUN_00556c20 ; 00556256
+        ;   XREF to: 00556c20 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr)
     ADD ESP,0x8                         ; 0055625b
     PUSH EAX                            ; 0055625e
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0055625f | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0055625f
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00556264
     XOR EAX,EAX                         ; 00556267
         ;   Label: LAB_00556267
@@ -164,8 +164,8 @@ section .text
     SAR EDX,0x1f                        ; 005562a8
     IDIV ECX                            ; 005562ab
     TEST EDX,EDX                        ; 005562ad
-    JZ 0x005562db                       ; 005562af | LAB_005562db
-        ;   XREF to: 005562db (CONDITIONAL_JUMP)
+    JZ 0x005562db                       ; 005562af
+        ;   XREF to: 005562db (CONDITIONAL_JUMP)  ; LAB_005562db
     MOV EAX,dword ptr [EBX + 0x4b3e]    ; 005562b1
     SAR EAX,0x10                        ; 005562b7
     PUSH EAX                            ; 005562ba
@@ -180,11 +180,11 @@ section .text
     MOV ESI,dword ptr [EBX + 0xc]       ; 005562cc
     PUSH ESI                            ; 005562cf
     PUSH EBX                            ; 005562d0
-    CALL shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 ; 005562d1 | void shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer * this_ptr, uchar * src_pixels, uchar * dest_indices, short start_x, ...)
-        ;   XREF to: 005556f0 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 ; 005562d1
+        ;   XREF to: 005556f0 (UNCONDITIONAL_CALL)  ; void shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer * this_ptr, uchar * src_pixels, uchar * dest_indices, short start_x, ...)
     ADD ESP,0x18                        ; 005562d6
-    JMP 0x00556304                      ; 005562d9 | LAB_00556304
-        ;   XREF to: 00556304 (UNCONDITIONAL_JUMP)
+    JMP 0x00556304                      ; 005562d9
+        ;   XREF to: 00556304 (UNCONDITIONAL_JUMP)  ; LAB_00556304
     MOV EAX,dword ptr [EBX + 0x4b3e]    ; 005562db
         ;   Label: LAB_005562db
     SAR EAX,0x10                        ; 005562e1
@@ -201,8 +201,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0xc]       ; 005562f7
     PUSH EDX                            ; 005562fa
     PUSH EBX                            ; 005562fb
-    CALL shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 ; 005562fc | void shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer * this_ptr, uchar * src_pixels, uchar * dest_indices, short start_x, ...)
-        ;   XREF to: 005556f0 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 ; 005562fc
+        ;   XREF to: 005556f0 (UNCONDITIONAL_CALL)  ; void shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer * this_ptr, uchar * src_pixels, uchar * dest_indices, short start_x, ...)
     ADD ESP,0x18                        ; 00556301
     MOV EAX,dword ptr [EBP + 0x18]      ; 00556304
         ;   Label: LAB_00556304
@@ -232,16 +232,16 @@ section .text
     ADD EAX,0x4                         ; 00556342
     MOV dword ptr [EBP + -0x4],EDX      ; 00556345
     MOV dword ptr [EBP + -0x8],EAX      ; 00556348
-    JMP 0x00556200                      ; 0055634b | LAB_00556200
-        ;   XREF to: 00556200 (UNCONDITIONAL_JUMP)
+    JMP 0x00556200                      ; 0055634b
+        ;   XREF to: 00556200 (UNCONDITIONAL_JUMP)  ; LAB_00556200
     PUSH 0x14                           ; 00556350
         ;   Label: LAB_00556350
     PUSH EDX                            ; 00556352
     MOV EDI,dword ptr [EBP + -0x10]     ; 00556353
     PUSH EDI                            ; 00556356
     LEA ESI,[EBX + 0x4830]              ; 00556357
-    CALL crt_string.c_strncpy_FUN_00600f40 ; 0055635d | char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
-        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strncpy_FUN_00600f40 ; 0055635d
+        ;   XREF to: 00600f40 (UNCONDITIONAL_CALL)  ; char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
     ADD ESP,0xc                         ; 00556362
     MOV ECX,0x300                       ; 00556365
     MOV EDI,dword ptr [EDI + 0x24]      ; 0055636a
@@ -253,22 +253,22 @@ section .text
     AND CL,0x3                          ; 00556377
     MOVSB.REP ES:EDI,ESI                ; 0055637a
     POP EDI                             ; 0055637c
-    MOV dword ptr [0x0067d20c],0x640dcf ; 0055637d | char * g_CurrentDebugFilename | = "..\\shape\\quantize.cpp" | s_shape_quantize_cpp_00640dcf = ..\shape\quantize.cpp
+    MOV dword ptr [0x0067d20c],0x640dcf ; 0055637d | g_CurrentDebugFilename | = "..\\shape\\quantize.cpp"
     MOV EAX,dword ptr [EBP + 0x18]      ; 00556387
     MOV EDX,0x3a1                       ; 0055638a
     MOV EAX,dword ptr [EAX]             ; 0055638f
-    MOV dword ptr [0x02f0d944],EDX      ; 00556391 | int g_CurrentDebugLine
+    MOV dword ptr [0x02f0d944],EDX      ; 00556391 | g_CurrentDebugLine
     TEST EAX,EAX                        ; 00556397
-    JZ 0x005563af                       ; 00556399 | LAB_005563af
-        ;   XREF to: 005563af (CONDITIONAL_JUMP)
+    JZ 0x005563af                       ; 00556399
+        ;   XREF to: 005563af (CONDITIONAL_JUMP)  ; LAB_005563af
     PUSH 0x0                            ; 0055639b
     PUSH EAX                            ; 0055639d
-    CALL shape_quantize.cpp_CBitmap_dtor_FUN_00556c20 ; 0055639e | CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr)
-        ;   XREF to: 00556c20 (UNCONDITIONAL_CALL)
+    CALL shape_quantize.cpp_CBitmap_dtor_FUN_00556c20 ; 0055639e
+        ;   XREF to: 00556c20 (UNCONDITIONAL_CALL)  ; CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr)
     ADD ESP,0x8                         ; 005563a3
     PUSH EAX                            ; 005563a6
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005563a7 | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005563a7
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005563ac
     MOV EAX,dword ptr [EBP + 0x18]      ; 005563af
         ;   Label: LAB_005563af

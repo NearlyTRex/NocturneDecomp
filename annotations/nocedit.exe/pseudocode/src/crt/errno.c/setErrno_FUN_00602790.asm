@@ -29,7 +29,7 @@
 
 section .text
 
-    CALL dword ptr [0x00684ee4]         ; 00602790 | GET_TLS_FUNC * PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
+    CALL dword ptr [0x00684ee4]         ; 00602790 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
         ;   Label: crt_errno.c_setErrno_FUN_00602790
     MOV EDX,dword ptr [ESP + 0x4]       ; 00602796
     MOV dword ptr [EAX + 0x4],EDX       ; 0060279a

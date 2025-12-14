@@ -1,106 +1,106 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 57, 
-    "assembly_lines": 41, 
-    "suspect_count": 2, 
+    "assembly_lines": 41,
+    "complexity_score": 41,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860", 
-      "addr": "005f2860"
-    }, 
-    {
-      "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440", 
-      "addr": "005f2440"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "draw_flags,in_stack_0000001c);"
-    }
-  ], 
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005f23f0", 
-    "signature": "int engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0(CWinFont * this_ptr, int x_position, int y_position, char * text_string, int text_color, int draw_flags)", 
+    "address": "005f23f0",
     "address_range": [
       [
-        "005f23f0", 
+        "005f23f0",
         "005f2438"
       ]
-    ], 
-    "name": "engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0",
+    "signature": "int engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0(CWinFont * this_ptr, int x_position, int y_position, char * text_string, int text_color, int draw_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f2860",
+      "name": "engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860"
+    },
+    {
+      "addr": "005f2440",
+      "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWinFont *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWinFont *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_position"
-      }, 
+        "is_param": true,
+        "name": "x_position",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_position"
-      }, 
+        "is_param": true,
+        "name": "y_position",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text_string"
-      }, 
+        "is_param": true,
+        "name": "text_string",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "text_color"
-      }, 
+        "is_param": true,
+        "name": "text_color",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "draw_flags"
+        "is_param": true,
+        "name": "draw_flags",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000001c",
+      "text": "draw_flags,in_stack_0000001c);",
+      "type": "stack_param"
+    }
+  ]
 }

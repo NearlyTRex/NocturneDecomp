@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 11, 
-    "suspect_count": 2, 
+    "assembly_lines": 11,
+    "complexity_score": 37,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset", 
+      "negative_offset",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a", 
-      "addr": "005ff48a"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "this_ptr[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "((ostrstream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);"
-    }, 
-    {
-      "line": 7, 
-      "match": "(ostrstream *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((ostrstream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);"
-    }
-  ], 
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ff445", 
-    "signature": "void crt_strstream.cpp_ostrstream_destructor_thunk_from_ios_FUN_005ff445(ios * this_ptr, int dtor_flags)", 
+    "address": "005ff445",
     "address_range": [
       [
-        "005ff445", 
+        "005ff445",
         "005ff45c"
       ]
-    ], 
-    "name": "crt_strstream.cpp_ostrstream_destructor_thunk_from_ios_FUN_005ff445"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "crt_strstream.cpp_ostrstream_destructor_thunk_from_ios_FUN_005ff445",
+    "signature": "void crt_strstream.cpp_ostrstream_destructor_thunk_from_ios_FUN_005ff445(ios * this_ptr, int dtor_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff48a",
+      "name": "crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ios *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "ios *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dtor_flags"
+        "is_param": true,
+        "name": "dtor_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 7,
+      "match": "this_ptr[-1].",
+      "text": "((ostrstream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 7,
+      "match": "(ostrstream *)((int)",
+      "text": "((ostrstream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);",
+      "type": "pointer_cast"
+    }
+  ]
 }

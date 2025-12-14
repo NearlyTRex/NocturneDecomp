@@ -12,6 +12,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   char cVar1;
   int iVar2;
   FILE *pFVar3;
+  CMP3Decoder *this_ptr;
   CMP3Decoder *pCVar4;
   int iVar5;
   CStrList_vtable *pCVar6;
@@ -48,10 +49,10 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
     g_CurrentLineNumber = 5999;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",mp3_filename);
   }
-  pCVar4 = (CMP3Decoder *)
-           shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\sndmain.cpp",0x1773);
-  if (pCVar4 != (CMP3Decoder *)0x0) {
-    pCVar4 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(pCVar4);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\sndmain.cpp",0x1773);
+  pCVar4 = (CMP3Decoder *)0x0;
+  if (this_ptr != (CMP3Decoder *)0x0) {
+    pCVar4 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(this_ptr);
   }
   if (pCVar4 == (CMP3Decoder *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";

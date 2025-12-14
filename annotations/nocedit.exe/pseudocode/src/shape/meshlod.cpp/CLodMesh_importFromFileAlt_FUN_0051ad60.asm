@@ -36,36 +36,36 @@ section .text
     PUSH EBP                            ; 0051ad62
     MOV ESI,dword ptr [ESP + 0x14]      ; 0051ad63
     PUSH ESI                            ; 0051ad67
-    PUSH 0x637c09                       ; 0051ad68 | = "Importing %s" | s_Importing_s_00637c09 = Importing %s
-    MOV EDX,dword ptr [0x00678a60]      ; 0051ad6d | CEditorTools * g_CEditorToolsPtr
-    PUSH EDX                            ; 0051ad73 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0051ad74 | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x637c09                       ; 0051ad68 | = "Importing %s"
+    MOV EDX,dword ptr [0x00678a60]      ; 0051ad6d | g_CEditorToolsPtr
+    PUSH EDX                            ; 0051ad73 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0051ad74
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0051ad79
     PUSH 0x10ce                         ; 0051ad7c
-    PUSH 0x637c16                       ; 0051ad81 | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_00637c16 = ..\shape\meshlod.cpp
-    PUSH 0x637c2b                       ; 0051ad86 | = "rt" | s_rt_00637c2b = rt
+    PUSH 0x637c16                       ; 0051ad81 | = "..\\shape\\meshlod.cpp"
+    PUSH 0x637c2b                       ; 0051ad86 | = "rt"
     PUSH 0x0                            ; 0051ad8b
     PUSH ESI                            ; 0051ad8d
-    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0051ad8e | FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0051ad8e
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0051ad93
     MOV EBX,EAX                         ; 0051ad96
     TEST EAX,EAX                        ; 0051ad98
-    JZ 0x0051adc1                       ; 0051ad9a | LAB_0051adc1
-        ;   XREF to: 0051adc1 (CONDITIONAL_JUMP)
+    JZ 0x0051adc1                       ; 0051ad9a
+        ;   XREF to: 0051adc1 (CONDITIONAL_JUMP)  ; LAB_0051adc1
     PUSH EBX                            ; 0051ad9c
         ;   Label: LAB_0051ad9c
     MOV EBP,dword ptr [ESP + 0x14]      ; 0051ad9d
     PUSH EBP                            ; 0051ada1
-    CALL shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 ; 0051ada2 | void shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0(CLodMesh * this_ptr, FILE * file_handle)
-        ;   XREF to: 0051adf0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0 ; 0051ada2
+        ;   XREF to: 0051adf0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0(CLodMesh * this_ptr, FILE * file_handle)
     ADD ESP,0x8                         ; 0051ada7
     PUSH 0x10d7                         ; 0051adaa
-    PUSH 0x637c51                       ; 0051adaf | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_00637c51 = ..\shape\meshlod.cpp
+    PUSH 0x637c51                       ; 0051adaf | = "..\\shape\\meshlod.cpp"
     PUSH EBX                            ; 0051adb4
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0051adb5 | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0051adb5
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0051adba
     POP EBP                             ; 0051adbd
     POP ESI                             ; 0051adbe
@@ -74,15 +74,15 @@ section .text
     PUSH EDI                            ; 0051adc1
         ;   Label: LAB_0051adc1
     PUSH ESI                            ; 0051adc2
-    MOV ECX,0x637c2e                    ; 0051adc3 | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_00637c2e = ..\shape\meshlod.cpp
+    MOV ECX,0x637c2e                    ; 0051adc3 | = "..\\shape\\meshlod.cpp"
     MOV EDI,0x10cf                      ; 0051adc8
-    PUSH 0x637c43                       ; 0051adcd | = "Can't open %s" | s_Can_t_open_s_00637c43 = Can't open %s
-    MOV dword ptr [0x02f0ca48],ECX      ; 0051add2 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 0051add8 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0051adde | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x637c43                       ; 0051adcd | = "Can't open %s"
+    MOV dword ptr [0x02f0ca48],ECX      ; 0051add2 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 0051add8 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0051adde
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 0051ade3
     POP EDI                             ; 0051ade6
-    JMP 0x0051ad9c                      ; 0051ade7 | LAB_0051ad9c
-        ;   XREF to: 0051ad9c (UNCONDITIONAL_JUMP)
+    JMP 0x0051ad9c                      ; 0051ade7
+        ;   XREF to: 0051ad9c (UNCONDITIONAL_JUMP)  ; LAB_0051ad9c
 

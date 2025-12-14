@@ -33,15 +33,15 @@ section .text
     MOV EBX,0x32                        ; 00548761
     MOV EDI,0x2                         ; 00548766
     MOV EBP,dword ptr [EAX + 0x10]      ; 0054876b
-    MOV dword ptr [0x030c3de8],EDX      ; 0054876e | int g_PathfindingDestZ
+    MOV dword ptr [0x030c3de8],EDX      ; 0054876e | g_PathfindingDestZ
     PUSH EBP                            ; 00548774
-    MOV dword ptr [0x030c3de4],ECX      ; 00548775 | int g_PathfindingDestX
-    MOV dword ptr [0x030c3ddc],EBX      ; 0054877b | int g_PathfindingCurrentX
+    MOV dword ptr [0x030c3de4],ECX      ; 00548775 | g_PathfindingDestX
+    MOV dword ptr [0x030c3ddc],EBX      ; 0054877b | g_PathfindingCurrentX
     PUSH EAX                            ; 00548781
-    MOV dword ptr [0x030c3de0],EBX      ; 00548782 | int g_PathfindingCurrentZ
-    MOV dword ptr [0x030c3ab4],EDI      ; 00548788 | int g_PathfindingMaxClimbHeight
-    CALL core_path.cpp_CPathMap_queuePop_FUN_005487a0 ; 0054878e | uint core_path.cpp_CPathMap_queuePop_FUN_005487a0(CPathMap * this_ptr, int start_height)
-        ;   XREF to: 005487a0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x030c3de0],EBX      ; 00548782 | g_PathfindingCurrentZ
+    MOV dword ptr [0x030c3ab4],EDI      ; 00548788 | g_PathfindingMaxClimbHeight
+    CALL core_path.cpp_CPathMap_queuePop_FUN_005487a0 ; 0054878e
+        ;   XREF to: 005487a0 (UNCONDITIONAL_CALL)  ; uint core_path.cpp_CPathMap_queuePop_FUN_005487a0(CPathMap * this_ptr, int start_height)
     ADD ESP,0x8                         ; 00548793
     POP EBP                             ; 00548796
     POP EDI                             ; 00548797

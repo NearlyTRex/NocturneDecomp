@@ -1,426 +1,426 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 494, 
-    "pseudocode_lines": 109, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 355, 
-    "assembly_lines": 246, 
-    "suspect_count": 36, 
+    "assembly_lines": 246,
+    "complexity_score": 494,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 109,
+    "suspect_count": 36,
     "suspect_types": [
-      "undefined_type", 
-      "stack_param", 
-      "concat_artifact", 
-      "unaffected_reg", 
-      "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_2d.c_computeOutcode_FUN_00402c10", 
-      "addr": "00402c10"
-    }, 
-    {
-      "name": "engine_2d.c_drawLine_FUN_004011b0", 
-      "addr": "004011b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_0061319f", 
-      "addr": "0061319f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_2d_line_clipping_excee_006131ae", 
-      "addr": "006131ae", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "undefined3 extraout_var", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var;"
-    }, 
-    {
-      "line": 13, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int *unaff_EBX;"
-    }, 
-    {
-      "line": 15, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int *unaff_EDI;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000024;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000028;"
-    }, 
-    {
-      "line": 21, 
-      "match": "undefined3 extraout_var_00", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var_00;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((int)y2,x_min,y_min,x_max,y_max,(int)in_stack_00000024);"
-    }, 
-    {
-      "line": 26, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "piVar3 = (int *)CONCAT31 /* combine 2-byte values */(extraout_var,bVar2);"
-    }, 
-    {
-      "line": 28, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "piVar5 = unaff_EDI;"
-    }, 
-    {
-      "line": 47, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((((uint)piVar4 & 8) != 0) && (unaff_EBX = (int *)x_max, iVar6 != 0)) {"
-    }, 
-    {
-      "line": 50, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = (int *)(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "unaff_EBX = in_stack_00000024;"
-    }, 
-    {
-      "line": 55, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = in_stack_00000024;"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(int)(((longlong)((int)in_stack_00000024 - (int)x2) * 0x10000) / (longlong)iVar6"
-    }, 
-    {
-      "line": 60, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = (int *)(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +"
-    }, 
-    {
-      "line": 66, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = (int *)y_max;"
-    }, 
-    {
-      "line": 70, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = (int *)((int)x2 +"
-    }, 
-    {
-      "line": 70, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "unaff_EBX = (int *)((int)x2 +"
-    }, 
-    {
-      "line": 76, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "unaff_EDI = in_stack_00000028;"
-    }, 
-    {
-      "line": 76, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = in_stack_00000028;"
-    }, 
-    {
-      "line": 79, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(int)(((longlong)((int)in_stack_00000028 - (int)y1) * 0x10000) / (longlong)iVar7) *"
-    }, 
-    {
-      "line": 81, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = (int *)((int)x2 +"
-    }, 
-    {
-      "line": 81, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "unaff_EBX = (int *)((int)x2 +"
-    }, 
-    {
-      "line": 87, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,"
-    }, 
-    {
-      "line": 87, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,"
-    }, 
-    {
-      "line": 87, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,"
-    }, 
-    {
-      "line": 88, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(int)in_stack_00000028);"
-    }, 
-    {
-      "line": 89, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "piVar5 = (int *)CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2);"
-    }, 
-    {
-      "line": 90, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "x_min = (int)unaff_EBX;"
-    }, 
-    {
-      "line": 91, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "y_min = (int)unaff_EDI;"
-    }, 
-    {
-      "line": 95, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,"
-    }, 
-    {
-      "line": 95, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,"
-    }, 
-    {
-      "line": 95, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,"
-    }, 
-    {
-      "line": 96, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(int)in_stack_00000028);"
-    }, 
-    {
-      "line": 97, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "y1 = unaff_EDI;"
-    }, 
-    {
-      "line": 98, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "x2 = unaff_EBX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00402ca0", 
-    "signature": "void engine_2d.c_clipAndDrawLine_FUN_00402ca0(int * x1, int * y1, int * x2, int * y2, int x_min, int y_min, int x_max, int y_max)", 
-    "address_range": [
-      [
-        "00402ca0", 
-        "00402ed4"
-      ]
-    ], 
-    "name": "engine_2d.c_clipAndDrawLine_FUN_00402ca0"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "x1"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "y1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "x2"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "y2"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_min"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_min"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_max"
-      }, 
-      {
-        "offset": 32, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_max"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 68, 
-    "param_offset": 4, 
-    "param_size": 32
-  }, 
+      "concat_artifact",
+      "pointer_cast",
+      "undefined_type",
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 355
+  },
   "cross_references": [
     {
-      "from_addr": "00402c84", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_clipLineGlobal_FUN_00402c50", 
-      "addr": "00402c50"
+      "addr": "00402c50",
+      "from_addr": "00402c84",
+      "name": "engine_2d.c_clipLineGlobal_FUN_00402c50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00402ca0",
+    "address_range": [
+      [
+        "00402ca0",
+        "00402ed4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_clipAndDrawLine_FUN_00402ca0",
+    "signature": "void engine_2d.c_clipAndDrawLine_FUN_00402ca0(int * x1, int * y1, int * x2, int * y2, int x_min, int y_min, int x_max, int y_max)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00402c10",
+      "name": "engine_2d.c_computeOutcode_FUN_00402c10"
+    },
+    {
+      "addr": "004011b0",
+      "name": "engine_2d.c_drawLine_FUN_004011b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061319f",
+      "name": "s_engine_2d_c_0061319f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006131ae",
+      "name": "s_s_2d_line_clipping_excee_006131ae",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "x_min",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_min",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x_max",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_max",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved type",
+      "line": 9,
+      "match": "undefined3 extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EBX",
+      "text": "int *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EDI",
+      "text": "int *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000024",
+      "text": "int *in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000028",
+      "text": "int *in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 21,
+      "match": "undefined3 extraout_var_00",
+      "text": "undefined3 extraout_var_00;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000024",
+      "text": "((int)y2,x_min,y_min,x_max,y_max,(int)in_stack_00000024);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 26,
+      "match": "CONCAT31",
+      "text": "piVar3 = (int *)CONCAT31 /* combine 2-byte values */(extraout_var,bVar2);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EDI",
+      "text": "piVar5 = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_EBX",
+      "text": "if ((((uint)piVar4 & 8) != 0) && (unaff_EBX = (int *)x_max, iVar6 != 0)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = (int *)(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000024",
+      "text": "unaff_EBX = in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 55,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = in_stack_00000024;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_00000024",
+      "text": "(int)(((longlong)((int)in_stack_00000024 - (int)x2) * 0x10000) / (longlong)iVar6",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 60,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = (int *)(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 66,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = (int *)y_max;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 70,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = (int *)((int)x2 +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)",
+      "text": "unaff_EBX = (int *)((int)x2 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_00000028",
+      "text": "unaff_EDI = in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = in_stack_00000028;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_00000028",
+      "text": "(int)(((longlong)((int)in_stack_00000028 - (int)y1) * 0x10000) / (longlong)iVar7) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = (int *)((int)x2 +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(int *)((int)",
+      "text": "unaff_EBX = (int *)((int)x2 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_00000024",
+      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
+      "match": "unaff_EBX",
+      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
+      "match": "unaff_EDI",
+      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_00000028",
+      "text": "(int)in_stack_00000028);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 89,
+      "match": "CONCAT31",
+      "text": "piVar5 = (int *)CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EBX",
+      "text": "x_min = (int)unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 91,
+      "match": "unaff_EDI",
+      "text": "y_min = (int)unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
+      "match": "in_stack_00000024",
+      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 95,
+      "match": "unaff_EBX",
+      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 95,
+      "match": "unaff_EDI",
+      "text": "((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 96,
+      "match": "in_stack_00000028",
+      "text": "(int)in_stack_00000028);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 97,
+      "match": "unaff_EDI",
+      "text": "y1 = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 98,
+      "match": "unaff_EBX",
+      "text": "x2 = unaff_EBX;",
+      "type": "unaffected_reg"
     }
   ]
 }

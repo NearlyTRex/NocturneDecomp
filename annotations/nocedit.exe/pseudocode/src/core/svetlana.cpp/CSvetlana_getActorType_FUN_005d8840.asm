@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f6cbdc                   ; 005d8840 | CDemonActorType g_CSvetlanaClassInfo
+    MOV EAX,0x3f6cbdc                   ; 005d8840 | g_CSvetlanaClassInfo
         ;   Label: core_svetlana.cpp_CSvetlana_getActorType_FUN_005d8840
     RET                                 ; 005d8845
 

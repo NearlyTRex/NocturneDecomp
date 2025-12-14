@@ -11,6 +11,6 @@
 void crt_unknown_c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878(void)
 
 {
-  (*(code *)PTR_crt_thread_c_exit_thread_FUN_0060fa58_00685598)();
+  (*PTR_crt_thread_c_exit_thread_FUN_0060fa58_00685598)();
   return;
 }

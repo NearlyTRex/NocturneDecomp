@@ -1,193 +1,193 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 104, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 3, 
-    "global_count": 12, 
-    "total_lines": 63, 
-    "assembly_lines": 44, 
-    "suspect_count": 8, 
+    "assembly_lines": 44,
+    "complexity_score": 104,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 12,
+    "pseudocode_lines": 19,
+    "suspect_count": 8,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_design.c_calculatePolygonNormal_FUN_0045caa0", 
-      "addr": "0045caa0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_EditorColorIndex", 
-      "addr": "01626368", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PolygonCount", 
-      "addr": "016e990c", 
-      "value": null
-    }, 
-    {
-      "type": "SShapeEditorPolygon[20000]", 
-      "name": "g_ModelPolygonData", 
-      "addr": "016e9910", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9914", 
-      "addr": "016e9914", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b4", 
-      "addr": "016e99b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c8", 
-      "addr": "016e99c8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99cc", 
-      "addr": "016e99cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99d0", 
-      "addr": "016e99d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99d4", 
-      "addr": "016e99d4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a88", 
-      "addr": "016e9a88", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a8c", 
-      "addr": "016e9a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentPartIndex", 
-      "addr": "01e6614c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000004;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000008;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_0000000c;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000010;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[0] = in_stack_00000004;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[1] = in_stack_00000008;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[2] = in_stack_0000000c;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[3] = in_stack_00000010;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0045df60", 
-    "signature": "undefined shape_design.c_createQuadPolygon_FUN_0045df60()", 
-    "address_range": [
-      [
-        "0045df60", 
-        "0045e03f"
-      ]
-    ], 
-    "name": "shape_design.c_createQuadPolygon_FUN_0045df60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 63
+  },
   "cross_references": [
     {
-      "from_addr": "0045e8f2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_createBoxPrimitive_FUN_0045e520", 
-      "addr": "0045e520"
-    }, 
+      "addr": "0045e520",
+      "from_addr": "0045e8f2",
+      "name": "shape_design.c_createBoxPrimitive_FUN_0045e520",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045e05c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_createReversedQuadPolygon_FUN_0045e040", 
-      "addr": "0045e040"
-    }, 
+      "addr": "0045e040",
+      "from_addr": "0045e05c",
+      "name": "shape_design.c_createReversedQuadPolygon_FUN_0045e040",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045e500", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_createRotationalSweepGeometry_FUN_0045e070", 
-      "addr": "0045e070"
+      "addr": "0045e070",
+      "from_addr": "0045e500",
+      "name": "shape_design.c_createRotationalSweepGeometry_FUN_0045e070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045df60",
+    "address_range": [
+      [
+        "0045df60",
+        "0045e03f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "shape_design.c_createQuadPolygon_FUN_0045df60",
+    "signature": "undefined shape_design.c_createQuadPolygon_FUN_0045df60()"
+  },
+  "function_calls": [
+    {
+      "addr": "0045caa0",
+      "name": "shape_design.c_calculatePolygonNormal_FUN_0045caa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01626368",
+      "name": "g_EditorColorIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "016e990c",
+      "name": "g_PolygonCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "016e9910",
+      "name": "g_ModelPolygonData",
+      "type": "SShapeEditorPolygon[20000]",
+      "value": null
+    },
+    {
+      "addr": "016e9914",
+      "name": "DAT_016e9914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b4",
+      "name": "DAT_016e99b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c8",
+      "name": "DAT_016e99c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99cc",
+      "name": "DAT_016e99cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99d0",
+      "name": "DAT_016e99d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99d4",
+      "name": "DAT_016e99d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a88",
+      "name": "DAT_016e9a88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a8c",
+      "name": "DAT_016e9a8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e6614c",
+      "name": "g_CurrentPartIndex",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "uint in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "uint in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[0] = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[1] = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000000c",
+      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[2] = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "g_ModelPolygonData[g_PolygonCount].vertex_indices[3] = in_stack_00000010;",
+      "type": "stack_param"
     }
   ]
 }

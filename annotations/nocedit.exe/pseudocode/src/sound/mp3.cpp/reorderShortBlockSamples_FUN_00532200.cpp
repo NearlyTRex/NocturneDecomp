@@ -101,9 +101,9 @@ sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200
     } while (local_4c != iVar14);
   }
   else {
-    local_5c = input_samples->samples;
     local_54 = (float *)output_samples;
     iVar8 = 0;
+    local_5c = (float (*) [18])input_samples;
     do {
       local_5c = local_5c + 1;
       pafVar4 = input_samples->samples + iVar8;

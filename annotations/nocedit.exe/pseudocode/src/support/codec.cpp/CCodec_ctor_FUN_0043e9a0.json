@@ -1,65 +1,65 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 9, 
-    "assembly_lines": 4, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CCodec_vtable", 
-      "name": "g_CCodecVTable", 
-      "addr": "0065bbc4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043e9a0", 
-    "signature": "CCodec * support_codec.cpp_CCodec_ctor_FUN_0043e9a0(CCodec * this_ptr)", 
-    "address_range": [
-      [
-        "0043e9a0", 
-        "0043e9aa"
-      ]
-    ], 
-    "name": "support_codec.cpp_CCodec_ctor_FUN_0043e9a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCodec *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 4,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
   "cross_references": [
     {
-      "from_addr": "0043f2d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0", 
-      "addr": "0043f2d0"
-    }, 
+      "addr": "0043f2d0",
+      "from_addr": "0043f2d5",
+      "name": "support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043f495", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490", 
-      "addr": "0043f490"
+      "addr": "0043f490",
+      "from_addr": "0043f495",
+      "name": "support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0043e9a0",
+    "address_range": [
+      [
+        "0043e9a0",
+        "0043e9aa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CCodec_ctor_FUN_0043e9a0",
+    "signature": "CCodec * support_codec.cpp_CCodec_ctor_FUN_0043e9a0(CCodec * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0065bbc4",
+      "name": "g_CCodecVTable",
+      "type": "CCodec_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCodec *"
+      }
+    ]
+  },
+  "suspects": []
 }

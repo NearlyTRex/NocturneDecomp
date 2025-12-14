@@ -11,8 +11,7 @@ void core_stranger_cpp_FUN_005bb0e0(void)
 {
   CStranger *this_ptr;
   
-  this_ptr = (CStranger *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fe70,"..\\core\\stranger.cpp",0x1d3);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fe70,"..\\core\\stranger.cpp",0x1d3);
   if (this_ptr == (CStranger *)0x0) {
     return;
   }

@@ -17,7 +17,7 @@
 
 section .text
 
-    MOV EAX,[0x00681b28]                ; 005ab590 | int g_HardwareMixingEnabled
+    MOV EAX,[0x00681b28]                ; 005ab590 | g_HardwareMixingEnabled
         ;   Label: sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590
     RET                                 ; 005ab595
 

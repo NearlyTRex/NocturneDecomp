@@ -26,14 +26,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0052b330
         ;   Label: core_morph.cpp_CMorphModel_FUN_0052b330
     PUSH EDX                            ; 0052b334
-    CALL core_morph.cpp_CMorphModel_FUN_0052b350 ; 0052b335 | void core_morph.cpp_CMorphModel_FUN_0052b350(CMorphModel * this_ptr)
-        ;   XREF to: 0052b350 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_FUN_0052b350 ; 0052b335
+        ;   XREF to: 0052b350 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052b350(CMorphModel * this_ptr)
     ADD ESP,0x4                         ; 0052b33a
     PUSH 0x0                            ; 0052b33d
     MOV ECX,dword ptr [ESP + 0x8]       ; 0052b33f
     PUSH ECX                            ; 0052b343
-    CALL core_morph.cpp_freeMorphModels_FUN_0052cd10 ; 0052b344 | void core_morph.cpp_freeMorphModels_FUN_0052cd10(CMorphModel * * array)
-        ;   XREF to: 0052cd10 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_freeMorphModels_FUN_0052cd10 ; 0052b344
+        ;   XREF to: 0052cd10 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_freeMorphModels_FUN_0052cd10(CMorphModel * * array)
     ADD ESP,0x8                         ; 0052b349
     RET                                 ; 0052b34c
 

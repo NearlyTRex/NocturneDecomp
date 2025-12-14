@@ -19,11 +19,11 @@ section .text
 
     PUSH EAX                            ; 00524ff9
         ;   Label: core_mmx.c_detectMMXSupport_FUN_00524ff9
-    MOV EAX,[0x0067d6dd]                ; 00524ffa | uint g_CPUFeatureFlags
+    MOV EAX,[0x0067d6dd]                ; 00524ffa | g_CPUFeatureFlags
     TEST EAX,0x800000                   ; 00524fff | DAT_00800000
-    JZ 0x0052500d                       ; 00525004 | LAB_0052500d
-        ;   XREF to: 0052500d (CONDITIONAL_JUMP)
-    MOV byte ptr [0x0067d6e1],0x1       ; 00525006 | undefined1 g_CPUInfoMMXSupported
+    JZ 0x0052500d                       ; 00525004
+        ;   XREF to: 0052500d (CONDITIONAL_JUMP)  ; LAB_0052500d
+    MOV byte ptr [0x0067d6e1],0x1       ; 00525006 | g_CPUInfoMMXSupported
     POP EAX                             ; 0052500d
         ;   Label: LAB_0052500d
     RET                                 ; 0052500e

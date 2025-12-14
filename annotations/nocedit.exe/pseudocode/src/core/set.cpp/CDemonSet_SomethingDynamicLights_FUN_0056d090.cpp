@@ -20,7 +20,7 @@ void __cdecl core_set_cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(CDemonSe
           return;
         }
         iVar1 = iVar1 + 4;
-      } while (SBORROW /* signed borrow */4(iVar1,g_DynamicLightCount * 4) != iVar1 + g_DynamicLightCount * -4 < 0);
+      } while (iVar1 < g_DynamicLightCount * 4);
     }
     if (3 < g_DynamicLightCount) {
       g_CurrentFilename = "..\\core\\set.cpp";

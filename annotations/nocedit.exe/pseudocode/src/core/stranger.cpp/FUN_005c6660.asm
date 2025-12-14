@@ -19,15 +19,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005c6664
     MOV dword ptr [EDX + 0x1fbd4],EAX   ; 005c6668
     TEST EAX,EAX                        ; 005c666e
-    JNZ 0x005c6680                      ; 005c6670 | LAB_005c6680
-        ;   XREF to: 005c6680 (CONDITIONAL_JUMP)
-    MOV EAX,[0x0067b654]                ; 005c6672 | CGame g_CGameInstance | CGame * g_CGamePtr
+    JNZ 0x005c6680                      ; 005c6670
+        ;   XREF to: 005c6680 (CONDITIONAL_JUMP)  ; LAB_005c6680
+    MOV EAX,[0x0067b654]                ; 005c6672 | g_CGameInstance | g_CGamePtr
     CMP dword ptr [EAX + 0x244],0x0     ; 005c6677 | g_CGameInstance.auto_save_blocked
-    JNZ 0x005c6681                      ; 005c667e | LAB_005c6681
-        ;   XREF to: 005c6681 (CONDITIONAL_JUMP)
+    JNZ 0x005c6681                      ; 005c667e
+        ;   XREF to: 005c6681 (CONDITIONAL_JUMP)  ; LAB_005c6681
     RET                                 ; 005c6680
         ;   Label: LAB_005c6680
-    PUSH 0x653f94                       ; 005c6681 | = "flashlit.wav" | s_flashlit_wav_00653f94 = flashlit.wav
+    PUSH 0x653f94                       ; 005c6681 | = "flashlit.wav"
         ;   Label: LAB_005c6681
     MOV dword ptr [EAX + 0x244],0x0     ; 005c6686 | g_CGameInstance.auto_save_blocked
     PUSH EDX                            ; 005c6690

@@ -28,16 +28,16 @@ section .text
         ;   Label: crt_signal.c_getSignalHandler_FUN_0060ceb4
     MOV EBX,dword ptr [ESP + 0x8]       ; 0060ceb5
     CMP EBX,0x7                         ; 0060ceb9
-    JZ 0x0060cec3                       ; 0060cebc | LAB_0060cec3
-        ;   XREF to: 0060cec3 (CONDITIONAL_JUMP)
+    JZ 0x0060cec3                       ; 0060cebc
+        ;   XREF to: 0060cec3 (CONDITIONAL_JUMP)  ; LAB_0060cec3
     CMP EBX,0x4                         ; 0060cebe
-    JNZ 0x0060cecc                      ; 0060cec1 | LAB_0060cecc
-        ;   XREF to: 0060cecc (CONDITIONAL_JUMP)
-    MOV EAX,dword ptr [EBX*0x8 + 0x685504] ; 0060cec3 | SIGNAL_HANDLER[16] g_GlobalSignalHandlers
+    JNZ 0x0060cecc                      ; 0060cec1
+        ;   XREF to: 0060cecc (CONDITIONAL_JUMP)  ; LAB_0060cecc
+    MOV EAX,dword ptr [EBX*0x8 + 0x685504] ; 0060cec3 | g_GlobalSignalHandlers
         ;   Label: LAB_0060cec3
     POP EBX                             ; 0060ceca
     RET                                 ; 0060cecb
-    CALL dword ptr [0x00684ee4]         ; 0060cecc | GET_TLS_FUNC * PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
+    CALL dword ptr [0x00684ee4]         ; 0060cecc | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
         ;   Label: LAB_0060cecc
     MOV EAX,dword ptr [EAX + EBX*0x8 + 0x58] ; 0060ced2
     POP EBX                             ; 0060ced6

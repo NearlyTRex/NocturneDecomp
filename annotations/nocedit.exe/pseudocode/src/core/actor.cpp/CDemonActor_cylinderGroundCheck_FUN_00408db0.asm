@@ -43,66 +43,66 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00408db7
     MOV EBX,dword ptr [ESP + 0x24]      ; 00408dbb
     PUSH 0x2b6                          ; 00408dbf
-    PUSH 0x6137c2                       ; 00408dc4 | = "..\\core\\actor.cpp" | s_core_actor_cpp_006137c2 = ..\core\actor.cpp
+    PUSH 0x6137c2                       ; 00408dc4 | = "..\\core\\actor.cpp"
     PUSH ESI                            ; 00408dc9
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00408dca | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00408dca
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     ADD ESP,0xc                         ; 00408dcf
-    MOV EDX,dword ptr [0x006810c8]      ; 00408dd2 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
-    PUSH EDX                            ; 00408dd8 | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10 ; 00408dd9 | void core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10(CDemonSet * this_ptr)
-        ;   XREF to: 00573e10 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006810c8]      ; 00408dd2 | g_CDemonSetInstance | g_CDemonSetPtr
+    PUSH EDX                            ; 00408dd8 | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10 ; 00408dd9
+        ;   XREF to: 00573e10 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00408dde
     PUSH ESI                            ; 00408de1
-    MOV ECX,dword ptr [0x006810c8]      ; 00408de2 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
-    PUSH ECX                            ; 00408de8 | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0 ; 00408de9 | void core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0(CDemonSet * this_ptr, CDemonActor * actor)
-        ;   XREF to: 005741b0 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x006810c8]      ; 00408de2 | g_CDemonSetInstance | g_CDemonSetPtr
+    PUSH ECX                            ; 00408de8 | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0 ; 00408de9
+        ;   XREF to: 005741b0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00408dee
-    MOV EDI,dword ptr [0x006810c8]      ; 00408df1 | CDemonSet * g_CDemonSetPtr
-    PUSH EDI                            ; 00408df7 | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_00574220 ; 00408df8 | void core_setcolid.cpp_CDemonSet_FUN_00574220(CDemonSet * this_ptr)
-        ;   XREF to: 00574220 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x006810c8]      ; 00408df1 | g_CDemonSetPtr
+    PUSH EDI                            ; 00408df7 | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_FUN_00574220 ; 00408df8
+        ;   XREF to: 00574220 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_FUN_00574220(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00408dfd
     LEA EAX,[ESI + 0x20]                ; 00408e00
     PUSH dword ptr [ESP + 0x20]         ; 00408e03
     PUSH EAX                            ; 00408e07
-    MOV EBP,dword ptr [0x006810c8]      ; 00408e08 | CDemonSet * g_CDemonSetPtr
-    PUSH EBP                            ; 00408e0e | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 ; 00408e0f | float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet * this_ptr, CVector3f * position, float radius)
-        ;   XREF to: 005716b0 (UNCONDITIONAL_CALL)
+    MOV EBP,dword ptr [0x006810c8]      ; 00408e08 | g_CDemonSetPtr
+    PUSH EBP                            ; 00408e0e | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 ; 00408e0f
+        ;   XREF to: 005716b0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet * this_ptr, CVector3f * position, float radius)
     MOV dword ptr [ESP + 0x10],EAX      ; 00408e14
     FLD float ptr [ESP + 0x10]          ; 00408e18
     ADD ESP,0xc                         ; 00408e1c
     MOV EAX,[0x030d508c]                ; 00408e1f | g_CPlatformClassInfo.name_hash
     PUSH EAX                            ; 00408e24
-    MOV EAX,[0x006810c8]                ; 00408e25 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
+    MOV EAX,[0x006810c8]                ; 00408e25 | g_CDemonSetInstance | g_CDemonSetPtr
     MOV EDX,dword ptr [EAX + 0x14d144]  ; 00408e2a | DAT_032613bc
     PUSH EDX                            ; 00408e30
     FSTP float ptr [ESP + 0x8]          ; 00408e31
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00408e35 | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00408e35
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00408e3a
     MOV dword ptr [ESI + 0xdc],EAX      ; 00408e3d
     TEST EBX,EBX                        ; 00408e43
-    JZ 0x00408e65                       ; 00408e45 | LAB_00408e65
-        ;   XREF to: 00408e65 (CONDITIONAL_JUMP)
-    MOV EAX,[0x006810c8]                ; 00408e47 | CDemonSet * g_CDemonSetPtr
+    JZ 0x00408e65                       ; 00408e45
+        ;   XREF to: 00408e65 (CONDITIONAL_JUMP)  ; LAB_00408e65
+    MOV EAX,[0x006810c8]                ; 00408e47 | g_CDemonSetPtr
     ADD EAX,0x14d128                    ; 00408e4c | DAT_032613a0
     CMP EBX,EAX                         ; 00408e51
-    JZ 0x00408e65                       ; 00408e53 | LAB_00408e65
-        ;   XREF to: 00408e65 (CONDITIONAL_JUMP)
+    JZ 0x00408e65                       ; 00408e53
+        ;   XREF to: 00408e65 (CONDITIONAL_JUMP)  ; LAB_00408e65
     MOV EDX,dword ptr [EAX]             ; 00408e55 | DAT_032613a0
     MOV dword ptr [EBX],EDX             ; 00408e57
     MOV EDX,dword ptr [EAX + 0x4]       ; 00408e59 | DAT_032613a4
     MOV dword ptr [EBX + 0x4],EDX       ; 00408e5c
     MOV EDX,dword ptr [EAX + 0x8]       ; 00408e5f | DAT_032613a8
     MOV dword ptr [EBX + 0x8],EDX       ; 00408e62
-    MOV ECX,dword ptr [0x006810c8]      ; 00408e65 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
+    MOV ECX,dword ptr [0x006810c8]      ; 00408e65 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00408e65
-    PUSH ECX                            ; 00408e6b | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0 ; 00408e6c | void core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet * this_ptr)
-        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)
+    PUSH ECX                            ; 00408e6b | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0 ; 00408e6c
+        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00408e71
     MOV EAX,dword ptr [ESP]             ; 00408e74
     ADD ESP,0x8                         ; 00408e77

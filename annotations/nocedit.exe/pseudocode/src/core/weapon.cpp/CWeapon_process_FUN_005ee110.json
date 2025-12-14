@@ -1,228 +1,228 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 143, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 9, 
-    "global_count": 9, 
-    "total_lines": 170, 
-    "assembly_lines": 117, 
-    "suspect_count": 8, 
+    "assembly_lines": 117,
+    "complexity_score": 143,
+    "cross_reference_count": 9,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 53,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "unknown_field"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10", 
-      "addr": "00408c10"
-    }, 
-    {
-      "name": "core_box.cpp_CBox_process_FUN_0041e2f0", 
-      "addr": "0041e2f0"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090", 
-      "addr": "0056d090"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonLight", 
-      "name": "g_CDemonLightInstance", 
-      "addr": "02d7eaf0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonLightInstance.volumetric_intensity", 
-      "addr": "02d81a98", 
-      "value": null
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.auto_save_blocked", 
-      "addr": "02d81ce0", 
-      "value": null
-    }, 
-    {
-      "type": "CHero*[4]", 
-      "name": "g_HeroActors", 
-      "addr": "02db87c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LocalHeroIndex", 
-      "addr": "02db87d0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000008;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(fVar3 = *(float *)(this_ptr->field7_0x2f4 + 0xc) - in_stack_00000008,"
-    }, 
-    {
-      "line": 21, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar2._0_1_ = this_ptr->carried_by_actor;"
-    }, 
-    {
-      "line": 22, 
-      "match": "._1_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar2._1_1_ = this_ptr->field9_0x305[0];"
-    }, 
-    {
-      "line": 23, 
-      "match": "._2_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar2._2_1_ = this_ptr->field9_0x305[1];"
-    }, 
-    {
-      "line": 24, 
-      "match": "._3_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar2._3_1_ = this_ptr->field9_0x305[2];"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar3 = this_ptr->sim_timer - in_stack_00000008;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)(this_ptr->field9_0x305 + 3),in_stack_00000008);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ee110", 
-    "signature": "void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)", 
-    "address_range": [
-      [
-        "005ee110", 
-        "005ee24a"
-      ]
-    ], 
-    "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWeapon *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 170
+  },
   "cross_references": [
     {
-      "from_addr": "00413dd6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_CBaronWeapon_process_FUN_00413dc0", 
-      "addr": "00413dc0"
-    }, 
+      "addr": "00413dc0",
+      "from_addr": "00413dd6",
+      "name": "core_baron.cpp_CBaronWeapon_process_FUN_00413dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00448d3d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_crossbow.cpp_CCrossbow_process_FUN_00448d30", 
-      "addr": "00448d30"
-    }, 
+      "addr": "00448d30",
+      "from_addr": "00448d3d",
+      "name": "core_crossbow.cpp_CCrossbow_process_FUN_00448d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049cfc2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dynamite.cpp_FUN_0049cfb0", 
-      "addr": "0049cfb0"
-    }, 
+      "addr": "0049cfb0",
+      "from_addr": "0049cfc2",
+      "name": "core_dynamite.cpp_FUN_0049cfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a7091", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_elephant.cpp_FUN_004a7070", 
-      "addr": "004a7070"
-    }, 
+      "addr": "004a7070",
+      "from_addr": "004a7091",
+      "name": "core_elephant.cpp_FUN_004a7070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cb9c2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flamegun.cpp_FUN_004cb9b0", 
-      "addr": "004cb9b0"
-    }, 
+      "addr": "004cb9b0",
+      "from_addr": "004cb9c2",
+      "name": "core_flamegun.cpp_FUN_004cb9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050645e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450", 
-      "addr": "00506450"
-    }, 
+      "addr": "00506450",
+      "from_addr": "0050645e",
+      "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050ec1d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_melee.cpp_FUN_0050ec10", 
-      "addr": "0050ec10"
-    }, 
+      "addr": "0050ec10",
+      "from_addr": "0050ec1d",
+      "name": "core_melee.cpp_FUN_0050ec10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00587f91", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_shotgun.cpp_FUN_00587f70", 
-      "addr": "00587f70"
-    }, 
+      "addr": "00587f70",
+      "from_addr": "00587f91",
+      "name": "core_shotgun.cpp_FUN_00587f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005de376", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360", 
-      "addr": "005de360"
+      "addr": "005de360",
+      "from_addr": "005de376",
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ee110",
+    "address_range": [
+      [
+        "005ee110",
+        "005ee24a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110",
+    "signature": "void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408c10",
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
+    },
+    {
+      "addr": "0041e2f0",
+      "name": "core_box.cpp_CBox_process_FUN_0041e2f0"
+    },
+    {
+      "addr": "0056d090",
+      "name": "core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02d7eaf0",
+      "name": "g_CDemonLightInstance",
+      "type": "CDemonLight",
+      "value": null
+    },
+    {
+      "addr": "02d81a98",
+      "name": "g_CDemonLightInstance.volumetric_intensity",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ce0",
+      "name": "g_CGameInstance.auto_save_blocked",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "(fVar3 = *(float *)(this_ptr->field7_0x2f4 + 0xc) - in_stack_00000008,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 21,
+      "match": "._0_1_",
+      "text": "iVar2._0_1_ = this_ptr->carried_by_actor;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 22,
+      "match": "._1_1_",
+      "text": "iVar2._1_1_ = this_ptr->field9_0x305[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 23,
+      "match": "._2_1_",
+      "text": "iVar2._2_1_ = this_ptr->field9_0x305[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 24,
+      "match": "._3_1_",
+      "text": "iVar2._3_1_ = this_ptr->field9_0x305[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000008",
+      "text": "fVar3 = this_ptr->sim_timer - in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "core_box_cpp_CBox_process_FUN_0041e2f0((CBox *)(this_ptr->field9_0x305 + 3),in_stack_00000008);",
+      "type": "stack_param"
     }
   ]
 }

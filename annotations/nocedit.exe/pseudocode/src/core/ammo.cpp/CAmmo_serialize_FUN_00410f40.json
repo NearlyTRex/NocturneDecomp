@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 44, 
-    "assembly_lines": 33, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
-      "addr": "0040c1c0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
-      "addr": "0040b7f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0", 
-      "addr": "0040b8f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
-      "addr": "0040b5c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_00614944", 
-      "addr": "00614944", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_weaponClassName_0061494e", 
-      "addr": "0061494e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ammoCount_0061495e", 
-      "addr": "0061495e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ammoType_00614968", 
-      "addr": "00614968", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 33,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00410f40", 
-    "signature": "void core_ammo.cpp_CAmmo_serialize_FUN_00410f40(CAmmo * this_ptr)", 
+    "address": "00410f40",
     "address_range": [
       [
-        "00410f40", 
+        "00410f40",
         "00410f9f"
       ]
-    ], 
-    "name": "core_ammo.cpp_CAmmo_serialize_FUN_00410f40"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammo.cpp_CAmmo_serialize_FUN_00410f40",
+    "signature": "void core_ammo.cpp_CAmmo_serialize_FUN_00410f40(CAmmo * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c1c0",
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
+    },
+    {
+      "addr": "0040b7f0",
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b8f0",
+      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040b5c0",
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614944",
+      "name": "s_modelName_00614944",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061494e",
+      "name": "s_weaponClassName_0061494e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061495e",
+      "name": "s_ammoCount_0061495e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614968",
+      "name": "s_ammoType_00614968",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CAmmo *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmo *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

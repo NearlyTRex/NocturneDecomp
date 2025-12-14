@@ -26,7 +26,6 @@ core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494
   local_1c.y = (float)iVar3 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
   local_10 = local_10 - iVar1 * iVar3;
   local_1c.z = (float)local_10 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
-  core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0
-            ((CDemonPart *)callback_data,(FILE *)user_data,&local_1c);
+  core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(callback_data,user_data,&local_1c);
   return;
 }

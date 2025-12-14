@@ -43,28 +43,28 @@ section .text
     MOV EDX,dword ptr [EDI + 0x964]     ; 0052d46c
     XOR EBX,EBX                         ; 0052d472
     TEST EDX,EDX                        ; 0052d474
-    JLE 0x0052d49d                      ; 0052d476 | LAB_0052d49d
-        ;   XREF to: 0052d49d (CONDITIONAL_JUMP)
+    JLE 0x0052d49d                      ; 0052d476
+        ;   XREF to: 0052d49d (CONDITIONAL_JUMP)  ; LAB_0052d49d
     LEA ESI,[EDI + 0x968]               ; 0052d478
     PUSH EBP                            ; 0052d47e
         ;   Label: LAB_0052d47e
     PUSH ESI                            ; 0052d47f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0052d480 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0052d480
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0052d485
     TEST EAX,EAX                        ; 0052d488
-    JZ 0x0052d4ae                       ; 0052d48a | LAB_0052d4ae
-        ;   XREF to: 0052d4ae (CONDITIONAL_JUMP)
+    JZ 0x0052d4ae                       ; 0052d48a
+        ;   XREF to: 0052d4ae (CONDITIONAL_JUMP)  ; LAB_0052d4ae
     INC EBX                             ; 0052d48c
     MOV ECX,dword ptr [EDI + 0x964]     ; 0052d48d
     ADD ESI,0x54c                       ; 0052d493
     CMP EBX,ECX                         ; 0052d499
-    JL 0x0052d47e                       ; 0052d49b | LAB_0052d47e
-        ;   XREF to: 0052d47e (CONDITIONAL_JUMP)
+    JL 0x0052d47e                       ; 0052d49b
+        ;   XREF to: 0052d47e (CONDITIONAL_JUMP)  ; LAB_0052d47e
     CMP dword ptr [ESP + 0x1c],0x0      ; 0052d49d
         ;   Label: LAB_0052d49d
-    JNZ 0x0052d4b5                      ; 0052d4a2 | LAB_0052d4b5
-        ;   XREF to: 0052d4b5 (CONDITIONAL_JUMP)
+    JNZ 0x0052d4b5                      ; 0052d4a2
+        ;   XREF to: 0052d4b5 (CONDITIONAL_JUMP)  ; LAB_0052d4b5
     MOV EAX,0xffffffff                  ; 0052d4a4
     POP EBP                             ; 0052d4a9
     POP EDI                             ; 0052d4aa
@@ -80,13 +80,13 @@ section .text
     RET                                 ; 0052d4b4
     PUSH EBP                            ; 0052d4b5
         ;   Label: LAB_0052d4b5
-    MOV ESI,0x63a8fb                    ; 0052d4b6 | = "..\\core\\motion.cpp" | s_core_motion_cpp_0063a8fb = ..\core\motion.cpp
+    MOV ESI,0x63a8fb                    ; 0052d4b6 | = "..\\core\\motion.cpp"
     MOV EDI,0x100                       ; 0052d4bb
-    PUSH 0x63a90e                       ; 0052d4c0 | = "Can't find motion \"%s\" in motion list" | s_Can_t_find_motion_s_in_m_0063a90e = Can't find motion "%s" in motion list
-    MOV dword ptr [0x02f0ca48],ESI      ; 0052d4c5 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 0052d4cb | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052d4d1 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63a90e                       ; 0052d4c0 | = "Can't find motion \"%s\" in motion list"
+    MOV dword ptr [0x02f0ca48],ESI      ; 0052d4c5 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 0052d4cb | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052d4d1
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 0052d4d6
     MOV EAX,0xffffffff                  ; 0052d4d9
     POP EBP                             ; 0052d4de

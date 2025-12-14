@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 64, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 102, 
-    "assembly_lines": 68, 
-    "suspect_count": 2, 
+    "assembly_lines": 68,
+    "complexity_score": 64,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
-      "addr": "00408ec0"
-    }, 
-    {
-      "name": "core_flame.cpp_FUN_004c9c00", 
-      "addr": "004c9c00"
-    }, 
-    {
-      "name": "core_flame.cpp_FUN_004caa70", 
-      "addr": "004caa70"
-    }, 
-    {
-      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110", 
-      "addr": "005ee110"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 102
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00448d30", 
-    "signature": "void core_crossbow.cpp_CCrossbow_process_FUN_00448d30(CCrossbow * this_ptr)", 
+    "address": "00448d30",
     "address_range": [
       [
-        "00448d30", 
+        "00448d30",
         "00448df3"
       ]
-    ], 
-    "name": "core_crossbow.cpp_CCrossbow_process_FUN_00448d30"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_crossbow.cpp_CCrossbow_process_FUN_00448d30",
+    "signature": "void core_crossbow.cpp_CCrossbow_process_FUN_00448d30(CCrossbow * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "004c9c00",
+      "name": "core_flame.cpp_FUN_004c9c00"
+    },
+    {
+      "addr": "004caa70",
+      "name": "core_flame.cpp_FUN_004caa70"
+    },
+    {
+      "addr": "005ee110",
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 20, 
+    "frame_size": 24,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCrossbow *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrossbow *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    }
+  ]
 }

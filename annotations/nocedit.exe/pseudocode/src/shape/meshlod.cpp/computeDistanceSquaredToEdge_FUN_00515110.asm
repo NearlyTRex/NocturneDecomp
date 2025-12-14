@@ -29,8 +29,8 @@ section .text
     PUSH EBX                            ; 00515122
     LEA EAX,[ESP + 0xc]                 ; 00515123
     PUSH EAX                            ; 00515127
-    CALL shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90 ; 00515128 | CVector3f * shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f * out_closest_point, CVector3f * query_point, CVector3f * edge_vertex_0, CVector3f * edge_vertex_1)
-        ;   XREF to: 00514f90 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90 ; 00515128
+        ;   XREF to: 00514f90 (UNCONDITIONAL_CALL)  ; CVector3f * shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f * out_closest_point, CVector3f * query_point, CVector3f * edge_vertex_0, CVector3f * edge_vertex_1)
     FLD float ptr [EBX]                 ; 0051512d
     ADD ESP,0x10                        ; 0051512f
     FSUB float ptr [EAX]                ; 00515132

@@ -1,58 +1,58 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 31, 
-    "assembly_lines": 22, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "IDirectSoundBuffer*[25]", 
-      "name": "g_DirectSoundSampleBuffers", 
-      "addr": "03f6a9e0", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectSoundBufferMetadata[25]", 
-      "name": "g_DirectSoundBufferMetadata", 
-      "addr": "03f6ab3c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 22,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005af150", 
-    "signature": "int sound_snddx.cpp_isValidSampleBuffer_FUN_005af150(int buffer_id)", 
+    "address": "005af150",
     "address_range": [
       [
-        "005af150", 
+        "005af150",
         "005af182"
       ]
-    ], 
-    "name": "sound_snddx.cpp_isValidSampleBuffer_FUN_005af150"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_isValidSampleBuffer_FUN_005af150",
+    "signature": "int sound_snddx.cpp_isValidSampleBuffer_FUN_005af150(int buffer_id)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f6a9e0",
+      "name": "g_DirectSoundSampleBuffers",
+      "type": "IDirectSoundBuffer*[25]",
+      "value": null
+    },
+    {
+      "addr": "03f6ab3c",
+      "name": "g_DirectSoundBufferMetadata",
+      "type": "IDirectSoundBufferMetadata[25]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_id"
+        "is_param": true,
+        "name": "buffer_id",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

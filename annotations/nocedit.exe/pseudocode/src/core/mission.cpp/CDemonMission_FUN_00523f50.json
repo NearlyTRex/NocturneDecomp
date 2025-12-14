@@ -1,90 +1,90 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 63, 
-    "assembly_lines": 40, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60", 
-      "addr": "00523e60"
-    }, 
-    {
-      "name": "core_mission.cpp_CDemonMission_FUN_00523f20", 
-      "addr": "00523f20"
-    }, 
-    {
-      "name": "core_setcolid.cpp_CDemonSet_FUN_00574560", 
-      "addr": "00574560"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_HeroCount", 
-      "addr": "02db87bc", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00523f50", 
-    "signature": "void core_mission.cpp_CDemonMission_FUN_00523f50(CDemonMission * this_ptr)", 
-    "address_range": [
-      [
-        "00523f50", 
-        "00523fad"
-      ]
-    ], 
-    "name": "core_mission.cpp_CDemonMission_FUN_00523f50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonMission *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 40,
+    "complexity_score": 23,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
+  },
   "cross_references": [
     {
-      "from_addr": "005243dc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_FUN_005243a0", 
-      "addr": "005243a0"
-    }, 
+      "addr": "005243a0",
+      "from_addr": "005243dc",
+      "name": "core_mission.cpp_CDemonMission_FUN_005243a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00522d48", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30", 
-      "addr": "00522d30"
+      "addr": "00522d30",
+      "from_addr": "00522d48",
+      "name": "core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00523f50",
+    "address_range": [
+      [
+        "00523f50",
+        "00523fad"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_FUN_00523f50",
+    "signature": "void core_mission.cpp_CDemonMission_FUN_00523f50(CDemonMission * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00523e60",
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60"
+    },
+    {
+      "addr": "00523f20",
+      "name": "core_mission.cpp_CDemonMission_FUN_00523f20"
+    },
+    {
+      "addr": "00574560",
+      "name": "core_setcolid.cpp_CDemonSet_FUN_00574560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02db87bc",
+      "name": "g_HeroCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": []
 }

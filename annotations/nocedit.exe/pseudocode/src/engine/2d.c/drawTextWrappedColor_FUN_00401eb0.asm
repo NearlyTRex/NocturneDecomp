@@ -42,53 +42,53 @@ section .text
     XOR EBP,EBP                         ; 00401ecf
     MOV dword ptr [ESP],ECX             ; 00401ed1
     TEST ECX,ECX                        ; 00401ed4
-    JLE 0x00401f2e                      ; 00401ed6 | LAB_00401f2e
-        ;   XREF to: 00401f2e (CONDITIONAL_JUMP)
+    JLE 0x00401f2e                      ; 00401ed6
+        ;   XREF to: 00401f2e (CONDITIONAL_JUMP)  ; LAB_00401f2e
     MOV EDI,EDX                         ; 00401ed8
     CMP byte ptr [EDI],0xa              ; 00401eda
         ;   Label: LAB_00401eda
-    JNZ 0x00401eee                      ; 00401edd | LAB_00401eee
-        ;   XREF to: 00401eee (CONDITIONAL_JUMP)
+    JNZ 0x00401eee                      ; 00401edd
+        ;   XREF to: 00401eee (CONDITIONAL_JUMP)  ; LAB_00401eee
     MOV ECX,dword ptr [ESP + 0x28]      ; 00401edf
     ADD EBX,0xb                         ; 00401ee3
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00401ee6
     CMP EBX,ECX                         ; 00401eea
-    JG 0x00401f2e                       ; 00401eec | LAB_00401f2e
-        ;   XREF to: 00401f2e (CONDITIONAL_JUMP)
+    JG 0x00401f2e                       ; 00401eec
+        ;   XREF to: 00401f2e (CONDITIONAL_JUMP)  ; LAB_00401f2e
     XOR EAX,EAX                         ; 00401eee
         ;   Label: LAB_00401eee
     MOV AL,byte ptr [EDI]               ; 00401ef0
     CMP EAX,0x20                        ; 00401ef2
-    JL 0x00401f25                       ; 00401ef5 | LAB_00401f25
-        ;   XREF to: 00401f25 (CONDITIONAL_JUMP)
+    JL 0x00401f25                       ; 00401ef5
+        ;   XREF to: 00401f25 (CONDITIONAL_JUMP)  ; LAB_00401f25
     CMP EAX,0x100                       ; 00401ef7
-    JGE 0x00401f25                      ; 00401efc | LAB_00401f25
-        ;   XREF to: 00401f25 (CONDITIONAL_JUMP)
+    JGE 0x00401f25                      ; 00401efc
+        ;   XREF to: 00401f25 (CONDITIONAL_JUMP)  ; LAB_00401f25
     MOV EDX,dword ptr [ESP + 0x2c]      ; 00401efe
     PUSH EDX                            ; 00401f02
     PUSH EBX                            ; 00401f03
     PUSH ESI                            ; 00401f04
     PUSH EAX                            ; 00401f05
-    CALL engine_2d.c_drawCharacter_FUN_00401a10 ; 00401f06 | int engine_2d.c_drawCharacter_FUN_00401a10(int char_code, int x_pos, int y_pos, int color)
-        ;   XREF to: 00401a10 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawCharacter_FUN_00401a10 ; 00401f06
+        ;   XREF to: 00401a10 (UNCONDITIONAL_CALL)  ; int engine_2d.c_drawCharacter_FUN_00401a10(int char_code, int x_pos, int y_pos, int color)
     ADD ESP,0x10                        ; 00401f0b
     ADD ESI,EAX                         ; 00401f0e
     CMP ESI,dword ptr [ESP + 0x24]      ; 00401f10
-    JLE 0x00401f25                      ; 00401f14 | LAB_00401f25
-        ;   XREF to: 00401f25 (CONDITIONAL_JUMP)
+    JLE 0x00401f25                      ; 00401f14
+        ;   XREF to: 00401f25 (CONDITIONAL_JUMP)  ; LAB_00401f25
     MOV EAX,dword ptr [ESP + 0x28]      ; 00401f16
     ADD EBX,0xb                         ; 00401f1a
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00401f1d
     CMP EBX,EAX                         ; 00401f21
-    JG 0x00401f2e                       ; 00401f23 | LAB_00401f2e
-        ;   XREF to: 00401f2e (CONDITIONAL_JUMP)
+    JG 0x00401f2e                       ; 00401f23
+        ;   XREF to: 00401f2e (CONDITIONAL_JUMP)  ; LAB_00401f2e
     MOV EDX,dword ptr [ESP]             ; 00401f25
         ;   Label: LAB_00401f25
     INC EBP                             ; 00401f28
     INC EDI                             ; 00401f29
     CMP EBP,EDX                         ; 00401f2a
-    JL 0x00401eda                       ; 00401f2c | LAB_00401eda
-        ;   XREF to: 00401eda (CONDITIONAL_JUMP)
+    JL 0x00401eda                       ; 00401f2c
+        ;   XREF to: 00401eda (CONDITIONAL_JUMP)  ; LAB_00401eda
     ADD ESP,0x4                         ; 00401f2e
         ;   Label: LAB_00401f2e
     POP EBP                             ; 00401f31

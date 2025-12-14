@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 15, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_inv.cpp_CInventory_clear_FUN_004fd0e0", 
-      "addr": "004fd0e0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004fd0c0", 
-    "signature": "int core_inv.cpp_CInventory_dtor_FUN_004fd0c0(CInventory * this_ptr)", 
-    "address_range": [
-      [
-        "004fd0c0", 
-        "004fd0d1"
-      ]
-    ], 
-    "name": "core_inv.cpp_CInventory_dtor_FUN_004fd0c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CInventory *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "004f249e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hero.cpp_CHero_dtor_FUN_004f2470", 
-      "addr": "004f2470"
+      "addr": "004f2470",
+      "from_addr": "004f249e",
+      "name": "core_hero.cpp_CHero_dtor_FUN_004f2470",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004fd0c0",
+    "address_range": [
+      [
+        "004fd0c0",
+        "004fd0d1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_dtor_FUN_004fd0c0",
+    "signature": "int core_inv.cpp_CInventory_dtor_FUN_004fd0c0(CInventory * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fd0e0",
+      "name": "core_inv.cpp_CInventory_clear_FUN_004fd0e0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": []
 }

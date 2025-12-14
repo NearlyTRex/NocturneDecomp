@@ -1,174 +1,174 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 138, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 165, 
-    "assembly_lines": 112, 
-    "suspect_count": 8, 
+    "assembly_lines": 112,
+    "complexity_score": 138,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 53,
+    "suspect_count": 8,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_ECX;"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_ECX_00;"
-    }, 
-    {
-      "line": 13, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 28, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*extraout_ECX_00 = (int)ROUND(dVar5);"
-    }, 
-    {
-      "line": 29, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*out_frame2 = *extraout_ECX_00 + 1;"
-    }, 
-    {
-      "line": 30, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*out_blend_weight = (float)(fVar4 - (float10)*extraout_ECX_00);"
-    }, 
-    {
-      "line": 48, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "fVar3 = (float)motion_index - (float)(*(int *)(extraout_EDX + 100) + -1);"
-    }, 
-    {
-      "line": 51, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*extraout_ECX = *out_frame2;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052e4c0", 
-    "signature": "void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, int * out_frame2, float * out_blend_weight)", 
-    "address_range": [
-      [
-        "0052e4c0", 
-        "0052e56f"
-      ], 
-      [
-        "0052e571", 
-        "0052e5c0"
-      ]
-    ], 
-    "name": "core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMotionController *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "motion_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "frame_number"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_frame1"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_frame2"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "out_blend_weight"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    ],
+    "total_lines": 165
+  },
   "cross_references": [
     {
-      "from_addr": "0059eb92", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50", 
-      "addr": "0059eb50"
-    }, 
+      "addr": "0059eb50",
+      "from_addr": "0059eb92",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a0b06", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0", 
-      "addr": "005a0ad0"
-    }, 
+      "addr": "005a0ad0",
+      "from_addr": "005a0b06",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0059e0dd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0", 
-      "addr": "0059e0a0"
+      "addr": "0059e0a0",
+      "from_addr": "0059e0dd",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052e4c0",
+    "address_range": [
+      [
+        "0052e4c0",
+        "0052e56f"
+      ],
+      [
+        "0052e571",
+        "0052e5c0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0",
+    "signature": "void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, int * out_frame2, float * out_blend_weight)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "motion_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame_number",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "out_frame1",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "out_frame2",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "out_blend_weight",
+        "offset": 24,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_ECX",
+      "text": "int *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_ECX_00",
+      "text": "int *extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_ECX_00",
+      "text": "*extraout_ECX_00 = (int)ROUND(dVar5);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_ECX_00",
+      "text": "*out_frame2 = *extraout_ECX_00 + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_ECX_00",
+      "text": "*out_blend_weight = (float)(fVar4 - (float10)*extraout_ECX_00);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 48,
+      "match": "extraout_EDX",
+      "text": "fVar3 = (float)motion_index - (float)(*(int *)(extraout_EDX + 100) + -1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_ECX",
+      "text": "*extraout_ECX = *out_frame2;",
+      "type": "extra_output"
     }
   ]
 }

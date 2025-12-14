@@ -85,18 +85,18 @@ section .text
     SUB ESP,0xb8                        ; 0052b684
     MOV EAX,dword ptr [ESP + 0xcc]      ; 0052b68a
     CMP dword ptr [EAX + 0x54],0x3      ; 0052b691
-    JL 0x0052b74f                       ; 0052b695 | LAB_0052b74f
-        ;   XREF to: 0052b74f (CONDITIONAL_JUMP)
+    JL 0x0052b74f                       ; 0052b695
+        ;   XREF to: 0052b74f (CONDITIONAL_JUMP)  ; LAB_0052b74f
     CMP dword ptr [EAX + 0x65c],0x3     ; 0052b69b
-    JL 0x0052b74f                       ; 0052b6a2 | LAB_0052b74f
-        ;   XREF to: 0052b74f (CONDITIONAL_JUMP)
-    PUSH 0x659900                       ; 0052b6a8 | WatcomTypeInfo g_CBoundingBox3DTypeInfo
+    JL 0x0052b74f                       ; 0052b6a2
+        ;   XREF to: 0052b74f (CONDITIONAL_JUMP)  ; LAB_0052b74f
+    PUSH 0x659900                       ; 0052b6a8 | g_CBoundingBox3DTypeInfo
         ;   Label: LAB_0052b6a8
     PUSH 0x2                            ; 0052b6ad
     LEA EAX,[ESP + 0x8]                 ; 0052b6af
     PUSH EAX                            ; 0052b6b3
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0052b6b4 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0052b6b4
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052b6b9
     MOV EAX,dword ptr [ESP + 0xcc]      ; 0052b6bc
     XOR EDI,EDI                         ; 0052b6c3
@@ -111,8 +111,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xa4]      ; 0052b6e9
     MOV EDX,EAX                         ; 0052b6f0
     CMP EAX,EBX                         ; 0052b6f2
-    JZ 0x0052b706                       ; 0052b6f4 | LAB_0052b706
-        ;   XREF to: 0052b706 (CONDITIONAL_JUMP)
+    JZ 0x0052b706                       ; 0052b6f4
+        ;   XREF to: 0052b706 (CONDITIONAL_JUMP)  ; LAB_0052b706
     MOV ECX,dword ptr [EAX]             ; 0052b6f6
     MOV dword ptr [EBX],ECX             ; 0052b6f8
     MOV ECX,dword ptr [EAX + 0x4]       ; 0052b6fa
@@ -122,8 +122,8 @@ section .text
     LEA EAX,[EBX + 0xc]                 ; 0052b706
         ;   Label: LAB_0052b706
     CMP EAX,EDX                         ; 0052b709
-    JNZ 0x0052bac3                      ; 0052b70b | LAB_0052bac3
-        ;   XREF to: 0052bac3 (CONDITIONAL_JUMP)
+    JNZ 0x0052bac3                      ; 0052b70b
+        ;   XREF to: 0052bac3 (CONDITIONAL_JUMP)  ; LAB_0052bac3
     MOV EDI,dword ptr [ESP + 0xa4]      ; 0052b711
         ;   Label: LAB_0052b711
     MOV EBP,dword ptr [ESP + 0x9c]      ; 0052b718
@@ -133,8 +133,8 @@ section .text
         ;   Label: LAB_0052b729
     ADD EAX,EBP                         ; 0052b730
     CMP ESI,dword ptr [EAX + 0x54]      ; 0052b732
-    JGE 0x0052b777                      ; 0052b735 | LAB_0052b777
-        ;   XREF to: 0052b777 (CONDITIONAL_JUMP)
+    JGE 0x0052b777                      ; 0052b735
+        ;   XREF to: 0052b777 (CONDITIONAL_JUMP)  ; LAB_0052b777
     MOV EAX,dword ptr [EAX + 0x58]      ; 0052b737
     ADD EAX,EBX                         ; 0052b73a
     ADD EAX,0x4                         ; 0052b73c
@@ -142,22 +142,22 @@ section .text
     PUSH EDI                            ; 0052b740
     INC ESI                             ; 0052b741
     ADD EBX,0x10                        ; 0052b742
-    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 0052b745 | void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
-        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 0052b745
+        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0052b74a
-    JMP 0x0052b729                      ; 0052b74d | LAB_0052b729
-        ;   XREF to: 0052b729 (UNCONDITIONAL_JUMP)
-    MOV EBX,0x63a443                    ; 0052b74f | = "..\\core\\morph.cpp" | s_core_morph_cpp_0063a443 = ..\core\morph.cpp
+    JMP 0x0052b729                      ; 0052b74d
+        ;   XREF to: 0052b729 (UNCONDITIONAL_JUMP)  ; LAB_0052b729
+    MOV EBX,0x63a443                    ; 0052b74f | = "..\\core\\morph.cpp"
         ;   Label: LAB_0052b74f
     MOV ESI,0x31f                       ; 0052b754
-    PUSH 0x63a455                       ; 0052b759 | = "CMorph::getReady - can't do this unle..." | s_CMorph_getReady_can_t_do_0063a455 = CMorph::getReady - can't do this unless we have setup both models!
-    MOV dword ptr [0x02f0ca48],EBX      ; 0052b75e | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 0052b764 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052b76a | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63a455                       ; 0052b759 | = "CMorph::getReady - can't do this unle..."
+    MOV dword ptr [0x02f0ca48],EBX      ; 0052b75e | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 0052b764 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052b76a
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0052b76f
-    JMP 0x0052b6a8                      ; 0052b772 | LAB_0052b6a8
-        ;   XREF to: 0052b6a8 (UNCONDITIONAL_JUMP)
+    JMP 0x0052b6a8                      ; 0052b772
+        ;   XREF to: 0052b6a8 (UNCONDITIONAL_JUMP)  ; LAB_0052b6a8
     MOV EBX,dword ptr [ESP + 0x9c]      ; 0052b777
         ;   Label: LAB_0052b777
     MOV ESI,dword ptr [ESP + 0xa4]      ; 0052b77e
@@ -169,8 +169,8 @@ section .text
     MOV dword ptr [ESP + 0xa4],ESI      ; 0052b7a2
     MOV dword ptr [ESP + 0x90],ECX      ; 0052b7a9
     CMP EBX,0xc10                       ; 0052b7b0
-    JNZ 0x0052b6dc                      ; 0052b7b6 | LAB_0052b6dc
-        ;   XREF to: 0052b6dc (CONDITIONAL_JUMP)
+    JNZ 0x0052b6dc                      ; 0052b7b6
+        ;   XREF to: 0052b6dc (CONDITIONAL_JUMP)  ; LAB_0052b6dc
     MOV EAX,ESP                         ; 0052b7bc
     ADD EAX,0xc                         ; 0052b7be
     MOV dword ptr [ESP + 0xa8],EAX      ; 0052b7c1
@@ -273,8 +273,8 @@ section .text
     MOV EBX,dword ptr [EDX + 0x54]      ; 0052b948
     XOR EDI,EDI                         ; 0052b94b
     TEST EBX,EBX                        ; 0052b94d
-    JLE 0x0052ba3b                      ; 0052b94f | LAB_0052ba3b
-        ;   XREF to: 0052ba3b (CONDITIONAL_JUMP)
+    JLE 0x0052ba3b                      ; 0052b94f
+        ;   XREF to: 0052ba3b (CONDITIONAL_JUMP)  ; LAB_0052ba3b
     MOV EBP,EAX                         ; 0052b955
     XOR EBX,EBX                         ; 0052b957
     MOV EDX,dword ptr [ESP + 0xb4]      ; 0052b959
@@ -292,8 +292,8 @@ section .text
     MOV dword ptr [ESP + 0x80],EAX      ; 0052b97d
     MOV EAX,dword ptr [ESP + 0xcc]      ; 0052b984
     CMP dword ptr [EAX + 0xc28],0x0     ; 0052b98b
-    JZ 0x0052ba03                       ; 0052b992 | LAB_0052ba03
-        ;   XREF to: 0052ba03 (CONDITIONAL_JUMP)
+    JZ 0x0052ba03                       ; 0052b992
+        ;   XREF to: 0052ba03 (CONDITIONAL_JUMP)  ; LAB_0052ba03
     FLD float ptr [ESP + 0x78]          ; 0052b994
     FSUB float ptr [EBP]                ; 0052b998
     FST float ptr [ESP + 0x78]          ; 0052b99b
@@ -330,8 +330,8 @@ section .text
     PUSH EAX                            ; 0052ba07
     MOV EAX,dword ptr [ESP + 0xb4]      ; 0052ba08
     PUSH EAX                            ; 0052ba0f
-    CALL core_morph.cpp_FUN_0052b280    ; 0052ba10 | undefined core_morph.cpp_FUN_0052b280()
-        ;   XREF to: 0052b280 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_FUN_0052b280    ; 0052ba10
+        ;   XREF to: 0052b280 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052b280()
     ADD ESP,0x8                         ; 0052ba15
     MOV EDX,dword ptr [ESP + 0xb4]      ; 0052ba18
     MOV EDX,dword ptr [EDX + 0x58]      ; 0052ba1f
@@ -341,8 +341,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x54]      ; 0052ba2d
     ADD EBX,0x10                        ; 0052ba30
     CMP EDI,EDX                         ; 0052ba33
-    JL 0x0052b959                       ; 0052ba35 | LAB_0052b959
-        ;   XREF to: 0052b959 (CONDITIONAL_JUMP)
+    JL 0x0052b959                       ; 0052ba35
+        ;   XREF to: 0052b959 (CONDITIONAL_JUMP)  ; LAB_0052b959
     MOV EBX,dword ptr [ESP + 0xac]      ; 0052ba3b
         ;   Label: LAB_0052ba3b
     MOV ESI,dword ptr [ESP + 0x94]      ; 0052ba42
@@ -360,8 +360,8 @@ section .text
     MOV dword ptr [ESP + 0xa0],EBP      ; 0052ba86
     MOV dword ptr [ESP + 0xa8],ECX      ; 0052ba8d
     CMP EBP,0x2                         ; 0052ba94
-    JL 0x0052b7fe                       ; 0052ba97 | LAB_0052b7fe
-        ;   XREF to: 0052b7fe (CONDITIONAL_JUMP)
+    JL 0x0052b7fe                       ; 0052ba97
+        ;   XREF to: 0052b7fe (CONDITIONAL_JUMP)  ; LAB_0052b7fe
     MOV ECX,dword ptr [ESP + 0xcc]      ; 0052ba9d
     PUSH ECX                            ; 0052baa4
     ADD ESP,0x4                         ; 0052baa5
@@ -382,6 +382,6 @@ section .text
     MOV dword ptr [EAX + 0x4],ECX       ; 0052baca
     MOV ECX,dword ptr [EDX + 0x8]       ; 0052bacd
     MOV dword ptr [EAX + 0x8],ECX       ; 0052bad0
-    JMP 0x0052b711                      ; 0052bad3 | LAB_0052b711
-        ;   XREF to: 0052b711 (UNCONDITIONAL_JUMP)
+    JMP 0x0052b711                      ; 0052bad3
+        ;   XREF to: 0052b711 (UNCONDITIONAL_JUMP)  ; LAB_0052b711
 

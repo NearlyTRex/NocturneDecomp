@@ -1,109 +1,109 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 77, 
-    "pseudocode_lines": 77, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 244, 
-    "assembly_lines": 167, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawHLine_FUN_00402ee0", 
-      "addr": "00402ee0"
-    }, 
-    {
-      "name": "engine_2d.c_drawVLine_FUN_00402ff0", 
-      "addr": "00402ff0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_InsetColor", 
-      "addr": "02cf2aec", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a59a0", 
-    "signature": "void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, int inner_y, int style)", 
-    "address_range": [
-      [
-        "004a59a0", 
-        "004a5ad1"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "left"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "top"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "right"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bottom"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "inner_y"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "style"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    "assembly_lines": 167,
+    "complexity_score": 77,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 77,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 244
+  },
   "cross_references": [
     {
-      "from_addr": "004a5e77", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10", 
-      "addr": "004a5c10"
+      "addr": "004a5c10",
+      "from_addr": "004a5e77",
+      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a59a0",
+    "address_range": [
+      [
+        "004a59a0",
+        "004a5ad1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0",
+    "signature": "void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, int inner_y, int style)"
+  },
+  "function_calls": [
+    {
+      "addr": "00402ee0",
+      "name": "engine_2d.c_drawHLine_FUN_00402ee0"
+    },
+    {
+      "addr": "00402ff0",
+      "name": "engine_2d.c_drawVLine_FUN_00402ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02cf2aec",
+      "name": "g_InsetColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "left",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "top",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bottom",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "inner_y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "style",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

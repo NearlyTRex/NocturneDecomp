@@ -18,6 +18,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00551b90
         ;   Label: engine_prim.c_setCullingMode_FUN_00551b90
-    MOV [0x00772a7c],EAX                ; 00551b94 | int g_CullingMode
+    MOV [0x00772a7c],EAX                ; 00551b94 | g_CullingMode
     RET                                 ; 00551b99
 

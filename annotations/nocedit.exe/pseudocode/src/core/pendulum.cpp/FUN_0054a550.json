@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 82, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 43, 
-    "assembly_lines": 26, 
-    "suspect_count": 6, 
+    "assembly_lines": 26,
+    "complexity_score": 82,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 17,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
-      "addr": "00478d80"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004 + 0x440) == 0) {"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_0000000c + 0x24) = in_stack_00000004 + 0x158;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_0000000c + 0x24) = in_stack_00000004 + 0x158;"
-    }
-  ], 
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0054a550", 
-    "signature": "undefined core_pendulum.cpp_FUN_0054a550()", 
+    "address": "0054a550",
     "address_range": [
       [
-        "0054a550", 
+        "0054a550",
         "0054a58e"
       ]
-    ], 
-    "name": "core_pendulum.cpp_FUN_0054a550"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_pendulum.cpp_FUN_0054a550",
+    "signature": "undefined core_pendulum.cpp_FUN_0054a550()"
+  },
+  "function_calls": [
+    {
+      "addr": "00478d80",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0x440) == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "*(int *)(in_stack_0000000c + 0x24) = in_stack_00000004 + 0x158;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_0000000c + 0x24) = in_stack_00000004 + 0x158;",
+      "type": "stack_param"
+    }
+  ]
 }

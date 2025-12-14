@@ -1,173 +1,173 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 126, 
-    "pseudocode_lines": 31, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 115, 
-    "assembly_lines": 84, 
-    "suspect_count": 8, 
+    "assembly_lines": 84,
+    "complexity_score": 125,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 30,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderedTriangleCount", 
-      "addr": "030e56b8", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_drawPolygon2*", 
-      "name": "g_APIDLL_drawPolygon2", 
-      "addr": "03f6b8cc", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_drawPolyList3*", 
-      "name": "g_APIDLL_drawPolyList3", 
-      "addr": "03f6b8d8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 25, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_1c = (void *)((int)vertex_buffer + (uint)*polygons * 0x30);"
-    }, 
-    {
-      "line": 26, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);"
-    }, 
-    {
-      "line": 26, 
-      "match": "(ushort *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);"
-    }, 
-    {
-      "line": 27, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);"
-    }, 
-    {
-      "line": 27, 
-      "match": "(ushort *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);"
-    }, 
-    {
-      "line": 28, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "polygons = (void *)((int)polygons + 6);"
-    }
-  ], 
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005b78c0", 
-    "signature": "int wincore_windll.cpp_drawPolyList3_FUN_005b78c0(void * vertex_buffer, void * polygons, int polygon_count, int render_flags)", 
+    "address": "005b78c0",
     "address_range": [
       [
-        "005b78c0", 
+        "005b78c0",
         "005b7984"
       ]
-    ], 
-    "name": "wincore_windll.cpp_drawPolyList3_FUN_005b78c0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_drawPolyList3_FUN_005b78c0",
+    "signature": "int wincore_windll.cpp_drawPolyList3_FUN_005b78c0(void * vertex_buffer, void * polygons, int polygon_count, int render_flags)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e56b8",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8cc",
+      "name": "g_APIDLL_drawPolygon2",
+      "type": "APIDLL_drawPolygon2*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8d8",
+      "name": "g_APIDLL_drawPolyList3",
+      "type": "APIDLL_drawPolyList3*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 32, 
+    "frame_size": 48,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "vertex_buffer"
-      }, 
+        "is_param": true,
+        "name": "vertex_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "polygons"
-      }, 
+        "is_param": true,
+        "name": "polygons",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "polygon_count"
-      }, 
+        "is_param": true,
+        "name": "polygon_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_flags"
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 7,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(void *)((int)",
+      "text": "local_1c = (void *)((int)vertex_buffer + (uint)*(ushort *)polygons * 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(void *)((int)",
+      "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(ushort *)((int)",
+      "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(void *)((int)",
+      "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(ushort *)((int)",
+      "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(void *)((int)",
+      "text": "polygons = (void *)((int)polygons + 6);",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -1,129 +1,129 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 61, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 37, 
-    "assembly_lines": 21, 
-    "suspect_count": 4, 
+    "assembly_lines": 21,
+    "complexity_score": 61,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 16,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530", 
-      "addr": "005ab530"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_00650cd9", 
-      "addr": "00650cd9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_enableHwSoundMixing_Can__00650cee", 
-      "addr": "00650cee", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_HardwareMixingEnabled", 
-      "addr": "00681b28", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_HardwareMixingEnabled = in_stack_00000008;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_HardwareMixingEnabled = in_stack_0000000c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ab550", 
-    "signature": "void sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550(int enable)", 
-    "address_range": [
-      [
-        "005ab550", 
-        "005ab58f"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "enable"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 37
+  },
   "cross_references": [
     {
-      "from_addr": "00512d0a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
-      "addr": "00511e50"
-    }, 
+      "addr": "00511e50",
+      "from_addr": "00512d0a",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ac03c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_readIni_FUN_005abf20", 
-      "addr": "005abf20"
+      "addr": "005abf20",
+      "from_addr": "005ac03c",
+      "name": "sound_sndmain.cpp_readIni_FUN_005abf20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ab550",
+    "address_range": [
+      [
+        "005ab550",
+        "005ab58f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550",
+    "signature": "void sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550(int enable)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005ab530",
+      "name": "sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00650cd9",
+      "name": "s_sound_sndmain_cpp_00650cd9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650cee",
+      "name": "s_enableHwSoundMixing_Can__00650cee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00681b28",
+      "name": "g_HardwareMixingEnabled",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "enable",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "g_HardwareMixingEnabled = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000000c",
+      "text": "g_HardwareMixingEnabled = in_stack_0000000c;",
+      "type": "stack_param"
     }
   ]
 }

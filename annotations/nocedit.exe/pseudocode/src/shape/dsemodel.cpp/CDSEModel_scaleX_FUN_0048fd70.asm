@@ -29,8 +29,8 @@ section .text
     MOV dword ptr [EBP + -0x8],0x497423fe ; 0048fd7c
     MOV dword ptr [EBP + -0x4],0xc97423fe ; 0048fd83
     MOV dword ptr [EBP + -0x10],0x0     ; 0048fd8a
-    JMP 0x0048fd99                      ; 0048fd91 | LAB_0048fd99
-        ;   XREF to: 0048fd99 (UNCONDITIONAL_JUMP)
+    JMP 0x0048fd99                      ; 0048fd91
+        ;   XREF to: 0048fd99 (UNCONDITIONAL_JUMP)  ; LAB_0048fd99
     MOV EAX,dword ptr [EBP + -0x10]     ; 0048fd93
         ;   Label: LAB_0048fd93
     INC dword ptr [EBP + -0x10]         ; 0048fd96
@@ -38,8 +38,8 @@ section .text
         ;   Label: LAB_0048fd99
     MOV EDX,dword ptr [EBP + 0x14]      ; 0048fd9c
     CMP EAX,dword ptr [EDX]             ; 0048fd9f
-    JGE 0x0048fdd4                      ; 0048fda1 | LAB_0048fdd4
-        ;   XREF to: 0048fdd4 (CONDITIONAL_JUMP)
+    JGE 0x0048fdd4                      ; 0048fda1
+        ;   XREF to: 0048fdd4 (CONDITIONAL_JUMP)  ; LAB_0048fdd4
     IMUL EAX,dword ptr [EBP + -0x10],0x14 ; 0048fda3
     ADD EAX,dword ptr [EBP + 0x14]      ; 0048fda7
     MOV EAX,dword ptr [EAX + 0x4]       ; 0048fdaa
@@ -48,8 +48,8 @@ section .text
     FCOMP float ptr [EBP + -0x4]        ; 0048fdb3
     FNSTSW AX                           ; 0048fdb6
     SAHF                                ; 0048fdb8
-    JBE 0x0048fdc1                      ; 0048fdb9 | LAB_0048fdc1
-        ;   XREF to: 0048fdc1 (CONDITIONAL_JUMP)
+    JBE 0x0048fdc1                      ; 0048fdb9
+        ;   XREF to: 0048fdc1 (CONDITIONAL_JUMP)  ; LAB_0048fdc1
     MOV EAX,dword ptr [EBP + -0xc]      ; 0048fdbb
     MOV dword ptr [EBP + -0x4],EAX      ; 0048fdbe
     FLD float ptr [EBP + -0xc]          ; 0048fdc1
@@ -57,21 +57,21 @@ section .text
     FCOMP float ptr [EBP + -0x8]        ; 0048fdc4
     FNSTSW AX                           ; 0048fdc7
     SAHF                                ; 0048fdc9
-    JNC 0x0048fdd2                      ; 0048fdca | LAB_0048fdd2
-        ;   XREF to: 0048fdd2 (CONDITIONAL_JUMP)
+    JNC 0x0048fdd2                      ; 0048fdca
+        ;   XREF to: 0048fdd2 (CONDITIONAL_JUMP)  ; LAB_0048fdd2
     MOV EAX,dword ptr [EBP + -0xc]      ; 0048fdcc
     MOV dword ptr [EBP + -0x8],EAX      ; 0048fdcf
-    JMP 0x0048fd93                      ; 0048fdd2 | LAB_0048fd93
+    JMP 0x0048fd93                      ; 0048fdd2
+        ;   XREF to: 0048fd93 (UNCONDITIONAL_JUMP)  ; LAB_0048fd93
         ;   Label: LAB_0048fdd2
-        ;   XREF to: 0048fd93 (UNCONDITIONAL_JUMP)
     FLD float ptr [EBP + -0x4]          ; 0048fdd4
         ;   Label: LAB_0048fdd4
     FSUB float ptr [EBP + -0x8]         ; 0048fdd7
     FDIVR float ptr [EBP + 0x18]        ; 0048fdda
     FSTP float ptr [EBP + 0x18]         ; 0048fddd
     MOV dword ptr [EBP + -0x10],0x0     ; 0048fde0
-    JMP 0x0048fdef                      ; 0048fde7 | LAB_0048fdef
-        ;   XREF to: 0048fdef (UNCONDITIONAL_JUMP)
+    JMP 0x0048fdef                      ; 0048fde7
+        ;   XREF to: 0048fdef (UNCONDITIONAL_JUMP)  ; LAB_0048fdef
     MOV EAX,dword ptr [EBP + -0x10]     ; 0048fde9
         ;   Label: LAB_0048fde9
     INC dword ptr [EBP + -0x10]         ; 0048fdec
@@ -79,8 +79,8 @@ section .text
         ;   Label: LAB_0048fdef
     MOV EDX,dword ptr [EBP + 0x14]      ; 0048fdf2
     CMP EAX,dword ptr [EDX]             ; 0048fdf5
-    JGE 0x0048fe12                      ; 0048fdf7 | LAB_0048fe12
-        ;   XREF to: 0048fe12 (CONDITIONAL_JUMP)
+    JGE 0x0048fe12                      ; 0048fdf7
+        ;   XREF to: 0048fe12 (CONDITIONAL_JUMP)  ; LAB_0048fe12
     IMUL EAX,dword ptr [EBP + -0x10],0x14 ; 0048fdf9
     ADD EAX,dword ptr [EBP + 0x14]      ; 0048fdfd
     FLD float ptr [EAX + 0x4]           ; 0048fe00
@@ -88,8 +88,8 @@ section .text
     IMUL EAX,dword ptr [EBP + -0x10],0x14 ; 0048fe06
     ADD EAX,dword ptr [EBP + 0x14]      ; 0048fe0a
     FSTP float ptr [EAX + 0x4]          ; 0048fe0d
-    JMP 0x0048fde9                      ; 0048fe10 | LAB_0048fde9
-        ;   XREF to: 0048fde9 (UNCONDITIONAL_JUMP)
+    JMP 0x0048fde9                      ; 0048fe10
+        ;   XREF to: 0048fde9 (UNCONDITIONAL_JUMP)  ; LAB_0048fde9
     MOV ESP,EBP                         ; 0048fe12
         ;   Label: LAB_0048fe12
     POP EBP                             ; 0048fe14

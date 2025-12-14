@@ -14,7 +14,7 @@ void __cdecl core_game_cpp_FUN_004dd930(char *p1,int p2)
   CAmmo *pCVar1;
   int in_stack_00000020;
   
-  pCVar1 = (CAmmo *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x31c,"..\\core\\game.cpp",0xa1c);
+  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x31c,"..\\core\\game.cpp",0xa1c);
   if (pCVar1 == (CAmmo *)0x0) {
     return;
   }

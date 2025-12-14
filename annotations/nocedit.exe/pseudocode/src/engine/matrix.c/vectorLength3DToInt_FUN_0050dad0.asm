@@ -27,8 +27,8 @@ section .text
     FMUL ST0                            ; 0050dae5
     FADDP                               ; 0050dae7
     FSQRT                               ; 0050dae9
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050daeb | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050daeb
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 0050daf0
     MOV EAX,dword ptr [ESP + 0x18]      ; 0050daf4
     ADD ESP,0x1c                        ; 0050daf8

@@ -40,63 +40,63 @@ section .text
     PUSH EBP                            ; 004ed9e3
     MOV EBP,ESP                         ; 004ed9e4
     AND ESP,0xfffffff8                  ; 004ed9e6
-    MOV EBX,0x2d833d4                   ; 004ed9e9 | CBloodParticle[256] DAT_02d833d4
-    LEA ESI,[EBX + 0x4000]              ; 004ed9ee | undefined4 DAT_02d873d4
-    FLD float ptr [EBX + 0x18]          ; 004ed9f4 | DAT_02d833ec
+    MOV EBX,0x2d833d4                   ; 004ed9e9 | DAT_02d833d4
+    LEA ESI,[EBX + 0x4000]              ; 004ed9ee | DAT_02d873d4
+    FLD float ptr [EBX + 0x18]          ; 004ed9f4 | DAT_02d833ec | DAT_02d8342c
         ;   Label: LAB_004ed9f4
     FLDZ                                ; 004ed9f7
     FCOMPP                              ; 004ed9f9
     FNSTSW AX                           ; 004ed9fb
     SAHF                                ; 004ed9fd
-    JC 0x004eda87                       ; 004ed9fe | LAB_004eda87
-        ;   XREF to: 004eda87 (CONDITIONAL_JUMP)
+    JC 0x004eda87                       ; 004ed9fe
+        ;   XREF to: 004eda87 (CONDITIONAL_JUMP)  ; LAB_004eda87
     ADD EBX,0x40                        ; 004eda04
         ;   Label: LAB_004eda04
     CMP EBX,ESI                         ; 004eda07
-    JNZ 0x004ed9f4                      ; 004eda09 | LAB_004ed9f4
-        ;   XREF to: 004ed9f4 (CONDITIONAL_JUMP)
-    MOV EDX,dword ptr [0x02d873d8]      ; 004eda0b | undefined4 DAT_02d873d8
+    JNZ 0x004ed9f4                      ; 004eda09
+        ;   XREF to: 004ed9f4 (CONDITIONAL_JUMP)  ; LAB_004ed9f4
+    MOV EDX,dword ptr [0x02d873d8]      ; 004eda0b | DAT_02d873d8
     XOR EBX,ESI                         ; 004eda11
     TEST EDX,EDX                        ; 004eda13
-    JLE 0x004eda40                      ; 004eda15 | LAB_004eda40
-        ;   XREF to: 004eda40 (CONDITIONAL_JUMP)
-    MOV ESI,0x2d873dc                   ; 004eda17 | CBloodSplat[2000] DAT_02d873dc
-    PUSH ESI                            ; 004eda1c | CBloodSplat[2000] DAT_02d873dc
+    JLE 0x004eda40                      ; 004eda15
+        ;   XREF to: 004eda40 (CONDITIONAL_JUMP)  ; LAB_004eda40
+    MOV ESI,0x2d873dc                   ; 004eda17 | DAT_02d873dc
+    PUSH ESI                            ; 004eda1c | DAT_02d873dc | DAT_02d87420
         ;   Label: LAB_004eda1c
-    CALL core_gore.cpp_FUN_004ecad0     ; 004eda1d | undefined core_gore.cpp_FUN_004ecad0()
-        ;   XREF to: 004ecad0 (UNCONDITIONAL_CALL)
+    CALL core_gore.cpp_FUN_004ecad0     ; 004eda1d
+        ;   XREF to: 004ecad0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ecad0()
     INC EBX                             ; 004eda22
-    MOV ECX,dword ptr [0x02d873d8]      ; 004eda23 | undefined4 DAT_02d873d8
+    MOV ECX,dword ptr [0x02d873d8]      ; 004eda23 | DAT_02d873d8
     ADD ESP,0x4                         ; 004eda29
     ADD ESI,0x44                        ; 004eda2c
     CMP EBX,ECX                         ; 004eda2f
-    JL 0x004eda1c                       ; 004eda31 | LAB_004eda1c
-        ;   XREF to: 004eda1c (CONDITIONAL_JUMP)
+    JL 0x004eda1c                       ; 004eda31
+        ;   XREF to: 004eda1c (CONDITIONAL_JUMP)  ; LAB_004eda1c
     LEA EAX,[EAX]                       ; 004eda33
     LEA EDX,[EDX]                       ; 004eda39
     NOP                                 ; 004eda3f
-    PUSH 0x2da8724                      ; 004eda40 | CBloodPool[32] DAT_02da8724
+    PUSH 0x2da8724                      ; 004eda40 | DAT_02da8724
         ;   Label: LAB_004eda40
-    CALL core_gore.cpp_FUN_004ecc40     ; 004eda45 | undefined core_gore.cpp_FUN_004ecc40()
-        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)
+    CALL core_gore.cpp_FUN_004ecc40     ; 004eda45
+        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ecc40()
     XOR ESI,ESI                         ; 004eda4a
-    MOV EBX,dword ptr [0x02da8720]      ; 004eda4c | undefined4 DAT_02da8720
+    MOV EBX,dword ptr [0x02da8720]      ; 004eda4c | DAT_02da8720
     ADD ESP,0x4                         ; 004eda52
     TEST EBX,EBX                        ; 004eda55
-    JLE 0x004eda80                      ; 004eda57 | LAB_004eda80
-        ;   XREF to: 004eda80 (CONDITIONAL_JUMP)
-    MOV EBX,0x2da8724                   ; 004eda59 | CBloodPool[32] DAT_02da8724
-    PUSH EBX                            ; 004eda5e | CBloodPool[32] DAT_02da8724
+    JLE 0x004eda80                      ; 004eda57
+        ;   XREF to: 004eda80 (CONDITIONAL_JUMP)  ; LAB_004eda80
+    MOV EBX,0x2da8724                   ; 004eda59 | DAT_02da8724
+    PUSH EBX                            ; 004eda5e | DAT_02da8724 | DAT_02da874c
         ;   Label: LAB_004eda5e
-    CALL core_gore.cpp_FUN_004ed0a0     ; 004eda5f | undefined core_gore.cpp_FUN_004ed0a0()
-        ;   XREF to: 004ed0a0 (UNCONDITIONAL_CALL)
+    CALL core_gore.cpp_FUN_004ed0a0     ; 004eda5f
+        ;   XREF to: 004ed0a0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004ed0a0()
     INC ESI                             ; 004eda64
-    MOV EDI,dword ptr [0x02da8720]      ; 004eda65 | undefined4 DAT_02da8720
+    MOV EDI,dword ptr [0x02da8720]      ; 004eda65 | DAT_02da8720
     ADD ESP,0x4                         ; 004eda6b
     ADD EBX,0x28                        ; 004eda6e | DAT_02da874c
     CMP ESI,EDI                         ; 004eda71
-    JL 0x004eda5e                       ; 004eda73 | LAB_004eda5e
-        ;   XREF to: 004eda5e (CONDITIONAL_JUMP)
+    JL 0x004eda5e                       ; 004eda73
+        ;   XREF to: 004eda5e (CONDITIONAL_JUMP)  ; LAB_004eda5e
     LEA EAX,[EAX]                       ; 004eda75
     LEA EDX,[EDX]                       ; 004eda7b
     MOV EBX,EBX                         ; 004eda7e
@@ -109,9 +109,9 @@ section .text
     RET                                 ; 004eda86
     PUSH EBX                            ; 004eda87 | DAT_02d83414
         ;   Label: LAB_004eda87
-    MOV EAX,dword ptr [EBX + 0x34]      ; 004eda88 | DAT_02d83408
+    MOV EAX,dword ptr [EBX + 0x34]      ; 004eda88 | DAT_02d83408 | DAT_02d83448
     CALL dword ptr [EAX + 0x4]          ; 004eda8b
     ADD ESP,0x4                         ; 004eda8e
-    JMP 0x004eda04                      ; 004eda91 | LAB_004eda04
-        ;   XREF to: 004eda04 (UNCONDITIONAL_JUMP)
+    JMP 0x004eda04                      ; 004eda91
+        ;   XREF to: 004eda04 (UNCONDITIONAL_JUMP)  ; LAB_004eda04
 

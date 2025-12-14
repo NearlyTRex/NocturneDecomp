@@ -37,12 +37,12 @@ section .text
     PUSH EAX                            ; 00481921
     MOV EDX,dword ptr [ESP + 0x58]      ; 00481922
     PUSH EDX                            ; 00481926
-    CALL crt_io.c_stat_thunk_00600c18   ; 00481927 | int crt_io.c_stat_thunk_00600c18(char * filename, stat * file_info)
-        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_stat_thunk_00600c18   ; 00481927
+        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)  ; int crt_io.c_stat_thunk_00600c18(char * filename, stat * file_info)
     ADD ESP,0x8                         ; 0048192c
     TEST EAX,EAX                        ; 0048192f
-    JNZ 0x0048193b                      ; 00481931 | LAB_0048193b
-        ;   XREF to: 0048193b (CONDITIONAL_JUMP)
+    JNZ 0x0048193b                      ; 00481931
+        ;   XREF to: 0048193b (CONDITIONAL_JUMP)  ; LAB_0048193b
     MOV EAX,dword ptr [ESP + 0x1a]      ; 00481933
     MOV dword ptr [ESP + 0x48],EAX      ; 00481937
     LEA EAX,[ESP + 0x48]                ; 0048193b
@@ -50,8 +50,8 @@ section .text
     PUSH EAX                            ; 0048193f
     MOV ECX,dword ptr [ESP + 0x58]      ; 00481940
     PUSH ECX                            ; 00481944
-    CALL crt_io.c_utime_thunk_00600c1e  ; 00481945 | int crt_io.c_utime_thunk_00600c1e(char * filename, utimbuf * timestamps)
-        ;   XREF to: 00600c1e (UNCONDITIONAL_CALL)
+    CALL crt_io.c_utime_thunk_00600c1e  ; 00481945
+        ;   XREF to: 00600c1e (UNCONDITIONAL_CALL)  ; int crt_io.c_utime_thunk_00600c1e(char * filename, utimbuf * timestamps)
     ADD ESP,0x8                         ; 0048194a
     TEST EAX,EAX                        ; 0048194d
     SETZ AL                             ; 0048194f

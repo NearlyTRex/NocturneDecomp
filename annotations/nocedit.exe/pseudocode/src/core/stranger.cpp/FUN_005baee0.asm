@@ -27,13 +27,13 @@ section .text
         ;   Label: core_stranger.cpp_FUN_005baee0
     MOV EAX,dword ptr [ESP + 0x14]      ; 005baee3
     TEST EAX,EAX                        ; 005baee7
-    JLE 0x005baf04                      ; 005baee9 | LAB_005baf04
-        ;   XREF to: 005baf04 (CONDITIONAL_JUMP)
+    JLE 0x005baf04                      ; 005baee9
+        ;   XREF to: 005baf04 (CONDITIONAL_JUMP)  ; LAB_005baf04
     CMP EAX,0x1                         ; 005baeeb
-    JNZ 0x005baf10                      ; 005baeee | LAB_005baf10
-        ;   XREF to: 005baf10 (CONDITIONAL_JUMP)
+    JNZ 0x005baf10                      ; 005baeee
+        ;   XREF to: 005baf10 (CONDITIONAL_JUMP)  ; LAB_005baf10
     FLD float ptr [ESP + 0x10]          ; 005baef0
-    FMUL double ptr [0x0065319c]        ; 005baef4 | double DAT_0065319c
+    FMUL double ptr [0x0065319c]        ; 005baef4 | DAT_0065319c
     FSTP float ptr [ESP]                ; 005baefa
         ;   Label: LAB_005baefa
     MOV EAX,dword ptr [ESP]             ; 005baefd
@@ -41,9 +41,9 @@ section .text
     RET                                 ; 005baf03
     FLD float ptr [ESP + 0x10]          ; 005baf04
         ;   Label: LAB_005baf04
-    FMUL double ptr [0x006531a4]        ; 005baf08 | double DAT_006531a4
-    JMP 0x005baefa                      ; 005baf0e | LAB_005baefa
-        ;   XREF to: 005baefa (UNCONDITIONAL_JUMP)
+    FMUL double ptr [0x006531a4]        ; 005baf08 | DAT_006531a4
+    JMP 0x005baefa                      ; 005baf0e
+        ;   XREF to: 005baefa (UNCONDITIONAL_JUMP)  ; LAB_005baefa
     MOV EAX,dword ptr [ESP + 0x10]      ; 005baf10
         ;   Label: LAB_005baf10
     MOV dword ptr [ESP],EAX             ; 005baf14

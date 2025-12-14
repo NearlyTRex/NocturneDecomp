@@ -43,11 +43,11 @@ section .text
     AND ESP,0xfffffff8                  ; 0048c788
     MOV EBX,dword ptr [EBP + 0x14]      ; 0048c78b
     MOV ESI,ESP                         ; 0048c78e
-    CALL engine_matrix.c_getCameraOrigin_FUN_0050e2c0 ; 0048c790 | void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
-        ;   XREF to: 0050e2c0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_getCameraOrigin_FUN_0050e2c0 ; 0048c790
+        ;   XREF to: 0050e2c0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 0048c795
     MOV dword ptr [ESP + 0xc],EAX       ; 0048c798
-    FLD double ptr [0x0062205d]         ; 0048c79c | double g_CameraOriginScale
+    FLD double ptr [0x0062205d]         ; 0048c79c | g_CameraOriginScale
     FILD dword ptr [ESP + 0xc]          ; 0048c7a2
     FMUL ST1                            ; 0048c7a6
     FSTP float ptr [EBX]                ; 0048c7a8

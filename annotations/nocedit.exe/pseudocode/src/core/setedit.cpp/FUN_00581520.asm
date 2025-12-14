@@ -23,7 +23,7 @@ section .text
     LEA ESI,[EDX*0x4 + 0x0]             ; 00581528
     SUB ESI,EDX                         ; 0058152f
     SHL ESI,0x2                         ; 00581531
-    MOV ECX,dword ptr [0x00679394]      ; 00581534 | int g_WindowWidth
+    MOV ECX,dword ptr [0x00679394]      ; 00581534 | g_WindowWidth
     SUB ESI,EDX                         ; 0058153a
     MOV EDX,dword ptr [ESP + 0x14]      ; 0058153c
     IMUL EDX,ECX                        ; 00581540
@@ -36,10 +36,10 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24]      ; 0058154e
     PUSH EDI                            ; 00581552
     MOV EBX,EAX                         ; 00581553
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00581555 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00581555
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0058155a
-    MOV EAX,[0x00679394]                ; 0058155d | int g_WindowWidth
+    MOV EAX,[0x00679394]                ; 0058155d | g_WindowWidth
     PUSH ESI                            ; 00581562
     MOV EDX,EAX                         ; 00581563
     MOV ESI,0xa                         ; 00581565
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 00581571
     MOV EBP,dword ptr [ESP + 0x28]      ; 00581572
     PUSH EBP                            ; 00581576
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00581577 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00581577
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0058157c
     POP EBP                             ; 0058157f
     POP EDI                             ; 00581580

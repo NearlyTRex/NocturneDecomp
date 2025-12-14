@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 26, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 3, 
-    "global_count": 2, 
-    "total_lines": 78, 
-    "assembly_lines": 52, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623676", 
-      "addr": "00623676", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_0062368c", 
-      "addr": "0062368c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a2b10", 
-    "signature": "void shape_edittool.cpp_CStrList_clear_FUN_004a2b10(CStrList * this_ptr)", 
-    "address_range": [
-      [
-        "004a2b10", 
-        "004a2b7e"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CStrList_clear_FUN_004a2b10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 52,
+    "complexity_score": 26,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 78
+  },
   "cross_references": [
     {
-      "from_addr": "0055987a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_FreeSomething1_FUN_00559870", 
-      "addr": "00559870"
-    }, 
+      "addr": "00559870",
+      "from_addr": "0055987a",
+      "name": "core_script.cpp_CScript_FreeSomething1_FUN_00559870",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a579f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CPickList_clear_FUN_004a5770", 
-      "addr": "004a5770"
-    }, 
+      "addr": "004a5770",
+      "from_addr": "004a579f",
+      "name": "shape_edittool.cpp_CPickList_clear_FUN_004a5770",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a2a54", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40", 
-      "addr": "004a2a40"
+      "addr": "004a2a40",
+      "from_addr": "004a2a54",
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a2b10",
+    "address_range": [
+      [
+        "004a2b10",
+        "004a2b7e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_clear_FUN_004a2b10",
+    "signature": "void shape_edittool.cpp_CStrList_clear_FUN_004a2b10(CStrList * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623676",
+      "name": "s_shape_edittool_cpp_00623676",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062368c",
+      "name": "s_shape_edittool_cpp_0062368c",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      }
+    ]
+  },
+  "suspects": []
 }

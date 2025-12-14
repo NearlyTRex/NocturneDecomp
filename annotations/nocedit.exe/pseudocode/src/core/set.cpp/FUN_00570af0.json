@@ -1,137 +1,137 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 5, 
-    "global_count": 5, 
-    "total_lines": 53, 
-    "assembly_lines": 40, 
-    "suspect_count": 2, 
+    "assembly_lines": 40,
+    "complexity_score": 38,
+    "cross_reference_count": 5,
+    "function_call_count": 5,
+    "global_count": 5,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10", 
-      "addr": "0048ce10"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0", 
-      "addr": "0048cdf0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150", 
-      "addr": "0048c150"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650", 
-      "addr": "0048c650"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0", 
-      "addr": "0048c1d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_SavedCameraOrigin", 
-      "addr": "033469d0", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_SavedCameraRotation", 
-      "addr": "033469dc", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "g_SavedProjectionFactor", 
-      "addr": "033469e8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000018 + 0x161650) = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00570af0", 
-    "signature": "undefined core_set.cpp_FUN_00570af0()", 
-    "address_range": [
-      [
-        "00570af0", 
-        "00570b63"
-      ]
-    ], 
-    "name": "core_set.cpp_FUN_00570af0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 53
+  },
   "cross_references": [
     {
-      "from_addr": "0056c024", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80", 
-      "addr": "0056be80"
-    }, 
+      "addr": "0056be80",
+      "from_addr": "0056c024",
+      "name": "core_set.cpp_CDemonSet_FUN_0056be80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056c540", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
-    }, 
+      "addr": "0056c1a0",
+      "from_addr": "0056c540",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056cec5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056cd60", 
-      "addr": "0056cd60"
-    }, 
+      "addr": "0056cd60",
+      "from_addr": "0056cec5",
+      "name": "core_set.cpp_CDemonSet_FUN_0056cd60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056d051", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056cf00", 
-      "addr": "0056cf00"
-    }, 
+      "addr": "0056cf00",
+      "from_addr": "0056d051",
+      "name": "core_set.cpp_CDemonSet_FUN_0056cf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056a44d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190", 
-      "addr": "0056a190"
+      "addr": "0056a190",
+      "from_addr": "0056a44d",
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00570af0",
+    "address_range": [
+      [
+        "00570af0",
+        "00570b63"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_set.cpp_FUN_00570af0",
+    "signature": "undefined core_set.cpp_FUN_00570af0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0048ce10",
+      "name": "engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10"
+    },
+    {
+      "addr": "0048cdf0",
+      "name": "engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0"
+    },
+    {
+      "addr": "0048c150",
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150"
+    },
+    {
+      "addr": "0048c650",
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650"
+    },
+    {
+      "addr": "0048c1d0",
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "033469d0",
+      "name": "g_SavedCameraOrigin",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "033469dc",
+      "name": "g_SavedCameraRotation",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "033469e8",
+      "name": "g_SavedProjectionFactor",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000018",
+      "text": "*(uint *)(in_stack_00000018 + 0x161650) = 0;",
+      "type": "stack_param"
     }
   ]
 }

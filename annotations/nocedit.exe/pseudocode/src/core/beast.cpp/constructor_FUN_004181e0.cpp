@@ -11,8 +11,7 @@ void core_beast_cpp_constructor_FUN_004181e0(void)
 {
   CBeast *this_ptr;
   
-  this_ptr = (CBeast *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbebc,"..\\core\\beast.cpp",0x2d);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbebc,"..\\core\\beast.cpp",0x2d);
   if (this_ptr == (CBeast *)0x0) {
     return;
   }

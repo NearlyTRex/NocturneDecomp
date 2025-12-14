@@ -33,7 +33,7 @@ section .text
     PUSH EBP                            ; 005dbb72
     SUB ESP,0xf0                        ; 005dbb73
     MOV EBX,ESI                         ; 005dbb79
-    MOV EBP,dword ptr [0x03f6cd0c]      ; 005dbb7b | undefined4 DAT_03f6cd0c
+    MOV EBP,dword ptr [0x03f6cd0c]      ; 005dbb7b | DAT_03f6cd0c
     LEA EAX,[EBP*0x4 + 0x0]             ; 005dbb81
     SUB EAX,EBP                         ; 005dbb88
     MOV EBP,dword ptr [ESP + 0x100]     ; 005dbb8a
@@ -41,7 +41,7 @@ section .text
     ADD EBP,0xfd8                       ; 005dbb94
     PUSH 0x3f000000                     ; 005dbb9a
     ADD EAX,EBP                         ; 005dbb9f
-    MOV ESI,dword ptr [0x03f6cd08]      ; 005dbba1 | undefined4 DAT_03f6cd08
+    MOV ESI,dword ptr [0x03f6cd08]      ; 005dbba1 | DAT_03f6cd08
     PUSH EAX                            ; 005dbba7
     LEA EAX,[ESI*0x4 + 0x0]             ; 005dbba8
     SUB EAX,ESI                         ; 005dbbaf
@@ -50,19 +50,19 @@ section .text
     PUSH EAX                            ; 005dbbb6
     LEA ESI,[ESP + 0x9c]                ; 005dbbb7
     LEA EDI,[ESP + 0x3c]                ; 005dbbbe
-    CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dbbc2 | void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dbbc2
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)
     MOV ECX,0xc                         ; 005dbbc7
     LEA ESI,[ESP + 0x9c]                ; 005dbbcc
     ADD ESP,0xc                         ; 005dbbd3
     MOVSD.REP ES:EDI,ESI                ; 005dbbd6
-    MOV ESI,dword ptr [0x03f6cd14]      ; 005dbbd8 | undefined4 DAT_03f6cd14
+    MOV ESI,dword ptr [0x03f6cd14]      ; 005dbbd8 | DAT_03f6cd14
     LEA EAX,[ESI*0x4 + 0x0]             ; 005dbbde
     SUB EAX,ESI                         ; 005dbbe5
     SHL EAX,0x4                         ; 005dbbe7
     PUSH 0x3f000000                     ; 005dbbea
     ADD EAX,EBP                         ; 005dbbef
-    MOV ESI,dword ptr [0x03f6cd10]      ; 005dbbf1 | undefined4 DAT_03f6cd10
+    MOV ESI,dword ptr [0x03f6cd10]      ; 005dbbf1 | DAT_03f6cd10
     PUSH EAX                            ; 005dbbf7
     LEA EAX,[ESI*0x4 + 0x0]             ; 005dbbf8
     SUB EAX,ESI                         ; 005dbbff
@@ -71,8 +71,8 @@ section .text
     PUSH EAX                            ; 005dbc06
     LEA ESI,[ESP + 0xc]                 ; 005dbc07
     LEA EDI,[ESP + 0x6c]                ; 005dbc0b
-    CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dbc0f | void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dbc0f
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)
     ADD ESP,0xc                         ; 005dbc14
     MOV ECX,0xc                         ; 005dbc17
     LEA EAX,[ESP + 0x60]                ; 005dbc1c
@@ -84,8 +84,8 @@ section .text
     PUSH EAX                            ; 005dbc30
     LEA ESI,[ESP + 0xcc]                ; 005dbc31
     MOV EDI,EBX                         ; 005dbc38
-    CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dbc3a | void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)
-        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_lerpMatrix3x4_FUN_005f7140 ; 005dbc3a
+        ;   XREF to: 005f7140 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)
     MOV ECX,0xc                         ; 005dbc3f
     LEA ESI,[ESP + 0xcc]                ; 005dbc44
     ADD ESP,0xc                         ; 005dbc4b

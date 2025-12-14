@@ -31,7 +31,7 @@ shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTool
         *(uint *)((int)&uStack_12c0 + iVar4) =
              *(uint *)((int)g_ScreenBufferArray + iVar4);
         iVar4 = iVar1;
-      } while (SBORROW /* signed borrow */4(iVar1,g_WindowHeight * 4) != iVar1 + g_WindowHeight * -4 < 0);
+      } while (iVar1 < g_WindowHeight * 4);
     }
     wincore_windll_cpp_lockFrame_FUN_005b7210();
     iVar4 = g_WindowWidth * g_BitsPerPixel >> 0x1f;

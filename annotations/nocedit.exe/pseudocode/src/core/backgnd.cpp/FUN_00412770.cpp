@@ -11,8 +11,7 @@ void core_backgnd_cpp_FUN_00412770(void)
 {
   CBackgroundActor *this_ptr;
   
-  this_ptr = (CBackgroundActor *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2dc,"..\\core\\backgnd.cpp",0x26);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2dc,"..\\core\\backgnd.cpp",0x26);
   if (this_ptr == (CBackgroundActor *)0x0) {
     return;
   }

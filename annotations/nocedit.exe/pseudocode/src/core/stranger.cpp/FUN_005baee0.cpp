@@ -12,16 +12,11 @@ core_stranger_cpp_FUN_005baee0
           CDeformableModelInstance *instance)
 
 {
-  float fVar1;
+  double dVar1;
   
-  if (hierarchy_distance < 1) {
-    fVar1 = (float)0.40000000000000002;
+  dVar1 = 0.40000000000000002;
+  if ((0 < hierarchy_distance) && (dVar1 = 0.69999999999999996, hierarchy_distance != 1)) {
+    return blend_weight;
   }
-  else {
-    if (hierarchy_distance != 1) {
-      return blend_weight;
-    }
-    fVar1 = (float)0.69999999999999996;
-  }
-  return blend_weight * fVar1;
+  return blend_weight * (float)dVar1;
 }

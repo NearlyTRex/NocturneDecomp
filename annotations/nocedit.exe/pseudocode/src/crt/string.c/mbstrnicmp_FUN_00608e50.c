@@ -11,19 +11,16 @@ int __cdecl crt_string_c_mbstrnicmp_FUN_00608e50(char *str1,char *str2,SIZE_T co
 {
   int iVar1;
   
-  if (count != 0) {
-    do {
-      iVar1 = crt_string_c_mbstring_termination_check_FUN_0060b630(str1);
-      if ((iVar1 != 0) ||
-         (iVar1 = crt_string_c_mbstring_termination_check_FUN_0060b630(str2), iVar1 != 0)) break;
-      iVar1 = crt_string_c_compare_mb_chars_ci_FUN_0060c790(str1,str2);
-      if (iVar1 != 0) {
-        return iVar1;
-      }
-      str1 = crt_string_c_mbtowc_next_FUN_00605a70(str1);
-      count = count - 1;
-      str2 = crt_string_c_mbtowc_next_FUN_00605a70(str2);
-    } while (count != 0);
+  while (((count != 0 &&
+          (iVar1 = crt_string_c_mbstring_termination_check_FUN_0060b630(str1), iVar1 == 0)) &&
+         (iVar1 = crt_string_c_mbstring_termination_check_FUN_0060b630(str2), iVar1 == 0))) {
+    iVar1 = crt_string_c_compare_mb_chars_ci_FUN_0060c790(str1,str2);
+    if (iVar1 != 0) {
+      return iVar1;
+    }
+    str1 = crt_string_c_mbtowc_next_FUN_00605a70(str1);
+    count = count - 1;
+    str2 = crt_string_c_mbtowc_next_FUN_00605a70(str2);
   }
   if ((count != 0) &&
      ((iVar1 = crt_string_c_mbstring_termination_check_FUN_0060b630(str1), iVar1 != 0 ||

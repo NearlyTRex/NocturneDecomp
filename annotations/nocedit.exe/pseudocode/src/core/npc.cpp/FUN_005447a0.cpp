@@ -11,7 +11,7 @@ void core_npc_cpp_FUN_005447a0(void)
 {
   CNPC *this_ptr;
   
-  this_ptr = (CNPC *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f708,"..\\core\\npc.cpp",0x2d);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f708,"..\\core\\npc.cpp",0x2d);
   if (this_ptr == (CNPC *)0x0) {
     return;
   }

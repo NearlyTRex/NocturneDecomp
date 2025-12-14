@@ -52,26 +52,26 @@ section .text
     MOV ESI,dword ptr [ESP + 0x44]      ; 00418e1b
     MOV EDI,dword ptr [ESP + 0x48]      ; 00418e1f
     PUSH 0x31                           ; 00418e23
-    PUSH 0x615b7c                       ; 00418e25 | = "..\\core\\bodypart.cpp" | s_core_bodypart_cpp_00615b7c = ..\core\bodypart.cpp
+    PUSH 0x615b7c                       ; 00418e25 | = "..\\core\\bodypart.cpp"
     PUSH 0xf30                          ; 00418e2a
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00418e2f | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 00418e2f
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00418e34
     TEST EAX,EAX                        ; 00418e37
-    JNZ 0x00418f18                      ; 00418e39 | LAB_00418f18
-        ;   XREF to: 00418f18 (CONDITIONAL_JUMP)
+    JNZ 0x00418f18                      ; 00418e39
+        ;   XREF to: 00418f18 (CONDITIONAL_JUMP)  ; LAB_00418f18
     MOV EBX,EAX                         ; 00418e3f
         ;   Label: LAB_00418e3f
     TEST EAX,EAX                        ; 00418e41
-    JNZ 0x00418e68                      ; 00418e43 | LAB_00418e68
-        ;   XREF to: 00418e68 (CONDITIONAL_JUMP)
-    MOV EDX,0x615b91                    ; 00418e45 | = "..\\core\\bodypart.cpp" | s_core_bodypart_cpp_00615b91 = ..\core\bodypart.cpp
+    JNZ 0x00418e68                      ; 00418e43
+        ;   XREF to: 00418e68 (CONDITIONAL_JUMP)  ; LAB_00418e68
+    MOV EDX,0x615b91                    ; 00418e45 | = "..\\core\\bodypart.cpp"
     MOV ECX,0x32                        ; 00418e4a
-    PUSH 0x615ba6                       ; 00418e4f | = "Can't create body part!" | s_Can_t_create_body_part_00615ba6 = Can't create body part!
-    MOV dword ptr [0x02f0ca48],EDX      ; 00418e54 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 00418e5a | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00418e60 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x615ba6                       ; 00418e4f | = "Can't create body part!"
+    MOV dword ptr [0x02f0ca48],EDX      ; 00418e54 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 00418e5a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00418e60
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00418e65
     MOV EDX,dword ptr [ESP + 0x3c]      ; 00418e68
         ;   Label: LAB_00418e68
@@ -84,8 +84,8 @@ section .text
     MOV dword ptr [EAX + 0x8],ECX       ; 00418e7c
     LEA EAX,[EBX + 0x30]                ; 00418e7f
     CMP EAX,EBP                         ; 00418e82
-    JZ 0x00418e97                       ; 00418e84 | LAB_00418e97
-        ;   XREF to: 00418e97 (CONDITIONAL_JUMP)
+    JZ 0x00418e97                       ; 00418e84
+        ;   XREF to: 00418e97 (CONDITIONAL_JUMP)  ; LAB_00418e97
     MOV EDX,dword ptr [EBP]             ; 00418e86
     MOV dword ptr [EAX],EDX             ; 00418e89
     MOV EDX,dword ptr [EBP + 0x4]       ; 00418e8b
@@ -94,16 +94,16 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 00418e94
     PUSH EBX                            ; 00418e97
         ;   Label: LAB_00418e97
-    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00418e98 | void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00418e98
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00418e9d
     TEST ESI,ESI                        ; 00418ea0
-    JZ 0x00418f26                       ; 00418ea2 | LAB_00418f26
-        ;   XREF to: 00418f26 (CONDITIONAL_JUMP)
+    JZ 0x00418f26                       ; 00418ea2
+        ;   XREF to: 00418f26 (CONDITIONAL_JUMP)  ; LAB_00418f26
     LEA EAX,[EBX + 0x280]               ; 00418ea8
     CMP EAX,ESI                         ; 00418eae
-    JZ 0x00418ec2                       ; 00418eb0 | LAB_00418ec2
-        ;   XREF to: 00418ec2 (CONDITIONAL_JUMP)
+    JZ 0x00418ec2                       ; 00418eb0
+        ;   XREF to: 00418ec2 (CONDITIONAL_JUMP)  ; LAB_00418ec2
     MOV EDX,dword ptr [ESI]             ; 00418eb2
     MOV dword ptr [EAX],EDX             ; 00418eb4
     MOV EDX,dword ptr [ESI + 0x4]       ; 00418eb6
@@ -112,20 +112,20 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 00418ebf
     PUSH EBX                            ; 00418ec2
         ;   Label: LAB_00418ec2
-    MOV ESI,dword ptr [0x0067d550]      ; 00418ec3 | CDemonMission * g_CDemonMissionPtr
-    PUSH ESI                            ; 00418ec9 | CDemonMission g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 00418eca | void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
-        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)
+    MOV ESI,dword ptr [0x0067d550]      ; 00418ec3 | g_CDemonMissionPtr
+    PUSH ESI                            ; 00418ec9 | g_CDemonMissionInstance
+    CALL core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700 ; 00418eca
+        ;   XREF to: 00524700 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)
     ADD ESP,0x8                         ; 00418ecf
     PUSH EBX                            ; 00418ed2
-    MOV EBP,dword ptr [0x0067d550]      ; 00418ed3 | CDemonMission * g_CDemonMissionPtr
-    PUSH EBP                            ; 00418ed9 | CDemonMission g_CDemonMissionInstance
-    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 00418eda | void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
-        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)
+    MOV EBP,dword ptr [0x0067d550]      ; 00418ed3 | g_CDemonMissionPtr
+    PUSH EBP                            ; 00418ed9 | g_CDemonMissionInstance
+    CALL core_mission.cpp_CDemonMission_FUN_00523b70 ; 00418eda
+        ;   XREF to: 00523b70 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523b70(CDemonMission * this_ptr)
     ADD ESP,0x8                         ; 00418edf
     TEST EDI,EDI                        ; 00418ee2
-    JNZ 0x00418fa2                      ; 00418ee4 | LAB_00418fa2
-        ;   XREF to: 00418fa2 (CONDITIONAL_JUMP)
+    JNZ 0x00418fa2                      ; 00418ee4
+        ;   XREF to: 00418fa2 (CONDITIONAL_JUMP)  ; LAB_00418fa2
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00418eea
         ;   Label: LAB_00418eea
     MOV dword ptr [EBX + 0xcb0],EAX     ; 00418eee
@@ -143,16 +143,16 @@ section .text
     RET                                 ; 00418f17
     PUSH EAX                            ; 00418f18
         ;   Label: LAB_00418f18
-    CALL core_bodypart.cpp_CBodyPart_ctor_FUN_00419010 ; 00418f19 | CBodyPart * core_bodypart.cpp_CBodyPart_ctor_FUN_00419010(CBodyPart * this_ptr)
-        ;   XREF to: 00419010 (UNCONDITIONAL_CALL)
+    CALL core_bodypart.cpp_CBodyPart_ctor_FUN_00419010 ; 00418f19
+        ;   XREF to: 00419010 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_CBodyPart_ctor_FUN_00419010(CBodyPart * this_ptr)
     ADD ESP,0x4                         ; 00418f1e
-    JMP 0x00418e3f                      ; 00418f21 | LAB_00418e3f
-        ;   XREF to: 00418e3f (UNCONDITIONAL_JUMP)
+    JMP 0x00418e3f                      ; 00418f21
+        ;   XREF to: 00418e3f (UNCONDITIONAL_JUMP)  ; LAB_00418e3f
     PUSH 0x3fc90fdb                     ; 00418f26
         ;   Label: LAB_00418f26
     PUSH 0x3f490fdb                     ; 00418f2b
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00418f30 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 00418f30
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     MOV EAX,dword ptr [EDI + 0x108]     ; 00418fa2
         ;   Label: LAB_00418fa2
     MOV dword ptr [EBX + 0x108],EAX     ; 00418fa8
@@ -160,6 +160,6 @@ section .text
     MOV dword ptr [EBX + 0x10c],EAX     ; 00418fb4
     MOV EAX,dword ptr [EDI + 0x110]     ; 00418fba
     MOV dword ptr [EBX + 0x110],EAX     ; 00418fc0
-    JMP 0x00418eea                      ; 00418fc6 | LAB_00418eea
-        ;   XREF to: 00418eea (UNCONDITIONAL_JUMP)
+    JMP 0x00418eea                      ; 00418fc6
+        ;   XREF to: 00418eea (UNCONDITIONAL_JUMP)  ; LAB_00418eea
 

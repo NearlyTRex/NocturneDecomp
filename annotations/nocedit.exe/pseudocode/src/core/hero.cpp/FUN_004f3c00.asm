@@ -23,9 +23,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004f3c00
         ;   Label: core_hero.cpp_FUN_004f3c00
     PUSH EDX                            ; 004f3c04
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004f3c05 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
-    MOV dword ptr [EAX + 0x154],0x65f844 ; 004f3c0a | CDemonActor_vtable g_CHeroPlaceholderVTable
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004f3c05
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
+    MOV dword ptr [EAX + 0x154],0x65f844 ; 004f3c0a | g_CHeroPlaceholderVTable
     MOV dword ptr [EAX + 0xfc],0x1      ; 004f3c14
     ADD ESP,0x4                         ; 004f3c1e
     MOV dword ptr [EAX + 0x158],0x0     ; 004f3c21

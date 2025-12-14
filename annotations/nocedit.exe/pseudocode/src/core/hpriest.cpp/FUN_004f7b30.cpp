@@ -11,8 +11,7 @@ void core_hpriest_cpp_FUN_004f7b30(void)
 {
   CHighPriestOfGardath *this_ptr;
   
-  this_ptr = (CHighPriestOfGardath *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f76c,"..\\core\\hpriest.cpp",0x1d);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f76c,"..\\core\\hpriest.cpp",0x1d);
   if (this_ptr == (CHighPriestOfGardath *)0x0) {
     return;
   }

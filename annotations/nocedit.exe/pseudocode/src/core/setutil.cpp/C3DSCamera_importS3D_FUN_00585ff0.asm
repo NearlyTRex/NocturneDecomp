@@ -47,8 +47,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00585ff6
     MOV ESI,dword ptr [ESP + 0x20]      ; 00585ffa
     PUSH EBX                            ; 00585ffe
-    CALL core_setutil.cpp_C3DSCamera_reset_FUN_005853b0 ; 00585fff | void core_setutil.cpp_C3DSCamera_reset_FUN_005853b0(C3DSCamera * this_ptr)
-        ;   XREF to: 005853b0 (UNCONDITIONAL_CALL)
+    CALL core_setutil.cpp_C3DSCamera_reset_FUN_005853b0 ; 00585fff
+        ;   XREF to: 005853b0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_reset_FUN_005853b0(C3DSCamera * this_ptr)
     ADD ESP,0x4                         ; 00586004
     LEA EAX,[EBX + 0x144]               ; 00586007
     PUSH EAX                            ; 0058600d
@@ -65,41 +65,39 @@ section .text
     LEA EAX,[EBX + 0x100]               ; 00586031
     PUSH EAX                            ; 00586037
     PUSH EBX                            ; 00586038
-    PUSH 0x64944f                       ; 00586039 | = "\"%[^\"]\",%f,%f,%f,%f,%f,%f,%f\n" | s_f_f_f_f_f_f_f_0064944f = "%[^"]",%f,%f,%f,%f,%f,%f,%f
-
+    PUSH 0x64944f                       ; 00586039 | = "\"%[^\"]\",%f,%f,%f,%f,%f,%f,%f\n"
     PUSH ESI                            ; 0058603e
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058603f | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058603f
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x28                        ; 00586044
     CMP EAX,0x8                         ; 00586047
-    JZ 0x0058606f                       ; 0058604a | LAB_0058606f
-        ;   XREF to: 0058606f (CONDITIONAL_JUMP)
-    MOV EDX,0x64946d                    ; 0058604c | = "..\\core\\setutil.cpp" | s_core_setutil_cpp_0064946d = ..\core\setutil.cpp
+    JZ 0x0058606f                       ; 0058604a
+        ;   XREF to: 0058606f (CONDITIONAL_JUMP)  ; LAB_0058606f
+    MOV EDX,0x64946d                    ; 0058604c | = "..\\core\\setutil.cpp"
     MOV ECX,0x1d3                       ; 00586051
-    PUSH 0x649481                       ; 00586056 | = "File is corrupt in C3DSCamera::importS3D" | s_File_is_corrupt_in_C3DSC_00649481 = File is corrupt in C3DSCamera::importS3D
-    MOV dword ptr [0x02f0ca48],EDX      ; 0058605b | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 00586061 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00586067 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x649481                       ; 00586056 | = "File is corrupt in C3DSCamera::importS3D"
+    MOV dword ptr [0x02f0ca48],EDX      ; 0058605b | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 00586061 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00586067
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0058606c
     FLD float ptr [EBX + 0x144]         ; 0058606f
         ;   Label: LAB_0058606f
-    FMUL double ptr [0x006494d3]        ; 00586075 | double DOUBLE_006494d3
+    FMUL double ptr [0x006494d3]        ; 00586075 | DOUBLE_006494d3
     FPTAN                               ; 0058607b
     FSTP ST0                            ; 0058607d
-    FDIVR double ptr [0x006494db]       ; 0058607f | double DOUBLE_006494db
+    FDIVR double ptr [0x006494db]       ; 0058607f | DOUBLE_006494db
     LEA EAX,[EBX + 0x130]               ; 00586085
     PUSH EAX                            ; 0058608b
     LEA EAX,[EBX + 0x124]               ; 0058608c
     PUSH EAX                            ; 00586092
     LEA EDI,[EBX + 0x118]               ; 00586093
     PUSH EDI                            ; 00586099
-    PUSH 0x6494aa                       ; 0058609a | = "%f,%f,%f\n" | s_f_f_f_006494aa = %f,%f,%f
-
+    PUSH 0x6494aa                       ; 0058609a | = "%f,%f,%f\n"
     PUSH ESI                            ; 0058609f
     FSTP float ptr [EBX + 0x144]        ; 005860a0
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005860a6 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005860a6
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 005860ab
     LEA EAX,[EBX + 0x134]               ; 005860ae
     PUSH EAX                            ; 005860b4
@@ -107,11 +105,10 @@ section .text
     PUSH EAX                            ; 005860bb
     LEA EAX,[EBX + 0x11c]               ; 005860bc
     PUSH EAX                            ; 005860c2
-    PUSH 0x6494b4                       ; 005860c3 | = "%f,%f,%f\n" | s_f_f_f_006494b4 = %f,%f,%f
-
+    PUSH 0x6494b4                       ; 005860c3 | = "%f,%f,%f\n"
     PUSH ESI                            ; 005860c8
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005860c9 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005860c9
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 005860ce
     LEA EAX,[EBX + 0x138]               ; 005860d1
     PUSH EAX                            ; 005860d7
@@ -119,11 +116,10 @@ section .text
     PUSH EAX                            ; 005860de
     LEA EAX,[EBX + 0x120]               ; 005860df
     PUSH EAX                            ; 005860e5
-    PUSH 0x6494be                       ; 005860e6 | = "%f,%f,%f\n" | s_f_f_f_006494be = %f,%f,%f
-
+    PUSH 0x6494be                       ; 005860e6 | = "%f,%f,%f\n"
     PUSH ESI                            ; 005860eb
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005860ec | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005860ec
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 005860f1
     LEA EAX,[ESP + 0x8]                 ; 005860f4
     PUSH EAX                            ; 005860f8
@@ -131,24 +127,23 @@ section .text
     PUSH EAX                            ; 005860fd
     LEA EAX,[ESP + 0x8]                 ; 005860fe
     PUSH EAX                            ; 00586102
-    PUSH 0x6494c8                       ; 00586103 | = "%f,%f,%f\n" | s_f_f_f_006494c8 = %f,%f,%f
-
+    PUSH 0x6494c8                       ; 00586103 | = "%f,%f,%f\n"
     PUSH ESI                            ; 00586108
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00586109 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00586109
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 0058610e
     LEA EAX,[EBX + 0x10c]               ; 00586111
     PUSH EAX                            ; 00586117
     PUSH EDI                            ; 00586118
-    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 00586119 | void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 00586119
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     FLD float ptr [EBX + 0x144]         ; 0058611e
     ADD ESP,0x8                         ; 00586124
-    FCOMP double ptr [0x006494e3]       ; 00586127 | double DOUBLE_006494e3
+    FCOMP double ptr [0x006494e3]       ; 00586127 | DOUBLE_006494e3
     FNSTSW AX                           ; 0058612d
     SAHF                                ; 0058612f
-    JBE 0x00586139                      ; 00586130 | LAB_00586139
-        ;   XREF to: 00586139 (CONDITIONAL_JUMP)
+    JBE 0x00586139                      ; 00586130
+        ;   XREF to: 00586139 (CONDITIONAL_JUMP)  ; LAB_00586139
     ADD ESP,0xc                         ; 00586132
     POP EDI                             ; 00586135
     POP ESI                             ; 00586136

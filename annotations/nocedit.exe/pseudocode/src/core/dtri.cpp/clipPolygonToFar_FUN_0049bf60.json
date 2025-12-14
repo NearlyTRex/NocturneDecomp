@@ -1,167 +1,167 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 53, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 0, 
-    "global_count": 13, 
-    "total_lines": 194, 
-    "assembly_lines": 141, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtri.cpp_clipLineToPlane_FUN_0049b6c0", 
-      "addr": "0049b6c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_1_0049bf48", 
-      "addr": "0049bf48", 
-      "value": "0049c014"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_0049bf50", 
-      "addr": "0049bf50", 
-      "value": "0049bff9"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBuffer5VertexCount", 
-      "addr": "02cee9a0", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[16]", 
-      "name": "g_ClipBuffer5Vertices", 
-      "addr": "02cee9a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipBuffer5Vertices[0].y", 
-      "addr": "02cee9a8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipBuffer5Vertices[0].z", 
-      "addr": "02cee9ac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02cee9b8", 
-      "addr": "02cee9b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipBuffer5Vertices[2].x", 
-      "addr": "02cee9bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02cee9c4", 
-      "addr": "02cee9c4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipOutputVertexCount", 
-      "addr": "02ceea64", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[16]", 
-      "name": "g_ClipOutputVertices", 
-      "addr": "02ceea68", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02ceea6c", 
-      "addr": "02ceea6c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02ceea70", 
-      "addr": "02ceea70", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0049bf69", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
+    "assembly_lines": 141,
+    "complexity_score": 53,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 13,
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 194
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0049bf60", 
-    "signature": "void core_dtri.cpp_clipPolygonToFar_FUN_0049bf60(float z_far)", 
+    "address": "0049bf60",
     "address_range": [
       [
-        "0049bf60", 
+        "0049bf60",
         "0049c0b0"
       ]
-    ], 
-    "name": "core_dtri.cpp_clipPolygonToFar_FUN_0049bf60"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtri.cpp_clipPolygonToFar_FUN_0049bf60",
+    "signature": "void core_dtri.cpp_clipPolygonToFar_FUN_0049bf60(float z_far)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049b6c0",
+      "name": "core_dtri.cpp_clipLineToPlane_FUN_0049b6c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0049bf48",
+      "name": "PTR_caseD_1_0049bf48",
+      "type": "void*",
+      "value": "0049c014"
+    },
+    {
+      "addr": "0049bf50",
+      "name": "PTR_caseD_3_0049bf50",
+      "type": "void*",
+      "value": "0049bff9"
+    },
+    {
+      "addr": "02cee9a0",
+      "name": "g_ClipBuffer5VertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cee9a4",
+      "name": "g_ClipBuffer5Vertices",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "02cee9a8",
+      "name": "g_ClipBuffer5Vertices[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cee9ac",
+      "name": "g_ClipBuffer5Vertices[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cee9b8",
+      "name": "DAT_02cee9b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cee9bc",
+      "name": "g_ClipBuffer5Vertices[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cee9c4",
+      "name": "DAT_02cee9c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ceea64",
+      "name": "g_ClipOutputVertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02ceea68",
+      "name": "g_ClipOutputVertices",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "02ceea6c",
+      "name": "DAT_02ceea6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ceea70",
+      "name": "DAT_02ceea70",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 36, 
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "z_far"
+        "is_param": true,
+        "name": "z_far",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0049bf69",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

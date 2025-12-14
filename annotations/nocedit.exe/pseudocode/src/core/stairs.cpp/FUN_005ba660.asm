@@ -24,8 +24,8 @@ section .text
         ;   Label: LAB_005ba674
     ADD EAX,EAX                         ; 005ba67a
     CMP EBX,EAX                         ; 005ba67c
-    JL 0x005ba685                       ; 005ba67e | LAB_005ba685
-        ;   XREF to: 005ba685 (CONDITIONAL_JUMP)
+    JL 0x005ba685                       ; 005ba67e
+        ;   XREF to: 005ba685 (CONDITIONAL_JUMP)  ; LAB_005ba685
     POP EBP                             ; 005ba680
     POP EDI                             ; 005ba681
     POP ESI                             ; 005ba682
@@ -35,10 +35,10 @@ section .text
         ;   Label: LAB_005ba685
     PUSH ESI                            ; 005ba686
     INC EBX                             ; 005ba687
-    CALL core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80 ; 005ba688 | void core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
-        ;   XREF to: 0049ad80 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80 ; 005ba688
+        ;   XREF to: 0049ad80 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 005ba68d
     ADD ESI,0x38                        ; 005ba690
-    JMP 0x005ba674                      ; 005ba693 | LAB_005ba674
-        ;   XREF to: 005ba674 (UNCONDITIONAL_JUMP)
+    JMP 0x005ba674                      ; 005ba693
+        ;   XREF to: 005ba674 (UNCONDITIONAL_JUMP)  ; LAB_005ba674
 

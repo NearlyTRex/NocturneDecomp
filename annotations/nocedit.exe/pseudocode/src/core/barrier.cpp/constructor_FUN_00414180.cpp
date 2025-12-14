@@ -11,8 +11,7 @@ void core_barrier_cpp_constructor_FUN_00414180(void)
 {
   CBarrier *this_ptr;
   
-  this_ptr = (CBarrier *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x230,"..\\core\\barrier.cpp",0x26);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x230,"..\\core\\barrier.cpp",0x26);
   if (this_ptr == (CBarrier *)0x0) {
     return;
   }

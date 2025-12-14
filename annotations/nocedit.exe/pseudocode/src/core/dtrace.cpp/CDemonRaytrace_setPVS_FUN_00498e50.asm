@@ -46,26 +46,26 @@ section .text
     MOV EAX,dword ptr [ESP + 0x28]      ; 00498e59
     MOV EBP,dword ptr [ESP + 0x2c]      ; 00498e5d
     XOR EDX,EDX                         ; 00498e61
-    MOV dword ptr [0x02ca03a8],EDX      ; 00498e63 | int g_PVSReadyFlag
+    MOV dword ptr [0x02ca03a8],EDX      ; 00498e63 | g_PVSReadyFlag
     CMP EAX,0x1                         ; 00498e69
-    JL 0x00498f73                       ; 00498e6c | LAB_00498f73
-        ;   XREF to: 00498f73 (CONDITIONAL_JUMP)
+    JL 0x00498f73                       ; 00498e6c
+        ;   XREF to: 00498f73 (CONDITIONAL_JUMP)  ; LAB_00498f73
     TEST EBP,EBP                        ; 00498e72
-    JZ 0x00498f73                       ; 00498e74 | LAB_00498f73
-        ;   XREF to: 00498f73 (CONDITIONAL_JUMP)
+    JZ 0x00498f73                       ; 00498e74
+        ;   XREF to: 00498f73 (CONDITIONAL_JUMP)  ; LAB_00498f73
     PUSH EDI                            ; 00498e7a
     PUSH ESI                            ; 00498e7b
-    MOV [0x02ca03a4],EAX                ; 00498e7c | int g_PVSDrawnCubeCount
+    MOV [0x02ca03a4],EAX                ; 00498e7c | g_PVSDrawnCubeCount
     CMP EAX,0x4e20                      ; 00498e81
-    JG 0x00498f79                       ; 00498e86 | LAB_00498f79
-        ;   XREF to: 00498f79 (CONDITIONAL_JUMP)
-    MOV EAX,[0x02ca03a4]                ; 00498e8c | int g_PVSDrawnCubeCount
+    JG 0x00498f79                       ; 00498e86
+        ;   XREF to: 00498f79 (CONDITIONAL_JUMP)  ; LAB_00498f79
+    MOV EAX,[0x02ca03a4]                ; 00498e8c | g_PVSDrawnCubeCount
         ;   Label: LAB_00498e8c
     XOR EDI,EDI                         ; 00498e91
     TEST EAX,EAX                        ; 00498e93
-    JLE 0x00498f67                      ; 00498e95 | LAB_00498f67
-        ;   XREF to: 00498f67 (CONDITIONAL_JUMP)
-    MOV ESI,0x2cb3c2c                   ; 00498e9b | CVector3f[20000] g_PVSCubePositions
+    JLE 0x00498f67                      ; 00498e95
+        ;   XREF to: 00498f67 (CONDITIONAL_JUMP)  ; LAB_00498f67
+    MOV ESI,0x2cb3c2c                   ; 00498e9b | g_PVSCubePositions
     LEA EAX,[EDI*0x4 + 0x0]             ; 00498ea0
         ;   Label: LAB_00498ea0
     MOV ECX,dword ptr [EBP]             ; 00498ea7
@@ -74,7 +74,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x50]      ; 00498eb1
     ADD EAX,EDX                         ; 00498eb4
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00498eb6
-    MOV dword ptr [EDX + 0x2ca03ac],EAX ; 00498eba | DAT_02ca03b0 | g_PVSCubePointers
+    MOV dword ptr [EDX + 0x2ca03ac],EAX ; 00498eba | g_PVSCubePointers | DAT_02ca03b0
     MOV EDX,ECX                         ; 00498ec0
     MOV EAX,ECX                         ; 00498ec2
     SAR EDX,0x1f                        ; 00498ec4
@@ -116,23 +116,23 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00498f32
     FSTP float ptr [ESP + 0x10]         ; 00498f36
     CMP ESI,EAX                         ; 00498f3a
-    JZ 0x00498f52                       ; 00498f3c | LAB_00498f52
-        ;   XREF to: 00498f52 (CONDITIONAL_JUMP)
+    JZ 0x00498f52                       ; 00498f3c
+        ;   XREF to: 00498f52 (CONDITIONAL_JUMP)  ; LAB_00498f52
     MOV EAX,dword ptr [ESP + 0x8]       ; 00498f3e
-    MOV dword ptr [ESI],EAX             ; 00498f42 | CVector3f[20000] g_PVSCubePositions
+    MOV dword ptr [ESI],EAX             ; 00498f42 | g_PVSCubePositions
     MOV EAX,dword ptr [ESP + 0xc]       ; 00498f44
     MOV dword ptr [ESI + 0x4],EAX       ; 00498f48 | DAT_02cb3c30
     MOV EAX,dword ptr [ESP + 0x10]      ; 00498f4b
     MOV dword ptr [ESI + 0x8],EAX       ; 00498f4f | DAT_02cb3c34
-    MOV EDX,dword ptr [0x02ca03a4]      ; 00498f52 | int g_PVSDrawnCubeCount
+    MOV EDX,dword ptr [0x02ca03a4]      ; 00498f52 | g_PVSDrawnCubeCount
         ;   Label: LAB_00498f52
     ADD ESI,0xc                         ; 00498f58
     INC EDI                             ; 00498f5b
     ADD EBP,0x4                         ; 00498f5c
     CMP EDI,EDX                         ; 00498f5f
-    JL 0x00498ea0                       ; 00498f61 | LAB_00498ea0
-        ;   XREF to: 00498ea0 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x02ca03a8],0x1      ; 00498f67 | int g_PVSReadyFlag
+    JL 0x00498ea0                       ; 00498f61
+        ;   XREF to: 00498ea0 (CONDITIONAL_JUMP)  ; LAB_00498ea0
+    MOV dword ptr [0x02ca03a8],0x1      ; 00498f67 | g_PVSReadyFlag
         ;   Label: LAB_00498f67
     POP ESI                             ; 00498f71
     POP EDI                             ; 00498f72
@@ -141,15 +141,15 @@ section .text
     POP EBP                             ; 00498f76
     POP EBX                             ; 00498f77
     RET                                 ; 00498f78
-    MOV ECX,0x622bf2                    ; 00498f79 | = "..\\core\\dtrace.cpp" | s_core_dtrace_cpp_00622bf2 = ..\core\dtrace.cpp
+    MOV ECX,0x622bf2                    ; 00498f79 | = "..\\core\\dtrace.cpp"
         ;   Label: LAB_00498f79
     MOV ESI,0x8c9                       ; 00498f7e
-    PUSH 0x622c05                       ; 00498f83 | = "CDemonRaytrace::setPVS - Too many dra..." | s_CDemonRaytrace_setPVS_To_00622c05 = CDemonRaytrace::setPVS - Too many drawn cubes in pvs!
-    MOV dword ptr [0x02f0ca48],ECX      ; 00498f88 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 00498f8e | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00498f94 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x622c05                       ; 00498f83 | = "CDemonRaytrace::setPVS - Too many dra..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 00498f88 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 00498f8e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00498f94
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00498f99
-    JMP 0x00498e8c                      ; 00498f9c | LAB_00498e8c
-        ;   XREF to: 00498e8c (UNCONDITIONAL_JUMP)
+    JMP 0x00498e8c                      ; 00498f9c
+        ;   XREF to: 00498e8c (UNCONDITIONAL_JUMP)  ; LAB_00498e8c
 

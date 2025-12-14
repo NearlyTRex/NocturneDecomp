@@ -32,21 +32,21 @@ section .text
     PUSH EDI                            ; 0048e002
     MOV EBX,dword ptr [ESP + 0x10]      ; 0048e003
     PUSH EBX                            ; 0048e007
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 0048e008 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 0048e008
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0048e00d
     ADD EAX,0x158                       ; 0048e010
     PUSH EAX                            ; 0048e015
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 0048e016 | CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 0048e016
+        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0048e01b
     LEA EBX,[EAX + 0xfffffea8]          ; 0048e01e
-    PUSH 0x622216                       ; 0048e024 | = "stalag.kfm" | s_stalag_kfm_00622216 = stalag.kfm
+    PUSH 0x622216                       ; 0048e024 | = "stalag.kfm"
     LEA EAX,[EBX + 0x158]               ; 0048e029
     PUSH EAX                            ; 0048e02f
-    MOV dword ptr [EBX + 0x154],0x65cf84 ; 0048e030 | CDemonActor_vtable PTR_core_drip.cpp_FUN_0065cf84
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0048e03a | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EBX + 0x154],0x65cf84 ; 0048e030 | PTR_core_drip.cpp_FUN_0065cf84
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0048e03a
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2d4],0x2     ; 0048e03f
     LEA EAX,[EBX + 0x304]               ; 0048e049
     MOV dword ptr [EBX + 0x2d8],0x1     ; 0048e04f
@@ -58,26 +58,26 @@ section .text
     MOV dword ptr [EBX + 0x2e0],0x40a00000 ; 0048e06b
     MOV dword ptr [EBX + 0x2e4],0x41200000 ; 0048e075
     MOV dword ptr [EBX + 0x2dc],0x0     ; 0048e07f
-    MOV ESI,0x622221                    ; 0048e089 | = "rock-x.wav" | s_rock_x_wav_00622221 = rock-x.wav
+    MOV ESI,0x622221                    ; 0048e089 | = "rock-x.wav"
     MOV dword ptr [EBX + 0x2e8],0x0     ; 0048e08e
     ADD ESP,0x8                         ; 0048e098
     MOV dword ptr [EBX + 0x310],0x41200000 ; 0048e09b
     LEA EDI,[EBX + 0x314]               ; 0048e0a5
     MOV dword ptr [EBX + 0x338],0x0     ; 0048e0ab
     PUSH EDI                            ; 0048e0b5
-    MOV AL,byte ptr [ESI]               ; 0048e0b6 | = "rock-x.wav" | s_rock_x_wav_00622221 = rock-x.wav
+    MOV AL,byte ptr [ESI]               ; 0048e0b6 | = "rock-x.wav" | s_ck-x.wav_00622223
         ;   Label: LAB_0048e0b6
     MOV byte ptr [EDI],AL               ; 0048e0b8
     CMP AL,0x0                          ; 0048e0ba
-    JZ 0x0048e0ce                       ; 0048e0bc | LAB_0048e0ce
-        ;   XREF to: 0048e0ce (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 0048e0be | s_ock-x.wav_00622222
+    JZ 0x0048e0ce                       ; 0048e0bc
+        ;   XREF to: 0048e0ce (CONDITIONAL_JUMP)  ; LAB_0048e0ce
+    MOV AL,byte ptr [ESI + 0x1]         ; 0048e0be | s_ock-x.wav_00622222 | s_k-x.wav_00622224
     ADD ESI,0x2                         ; 0048e0c1
     MOV byte ptr [EDI + 0x1],AL         ; 0048e0c4
     ADD EDI,0x2                         ; 0048e0c7
     CMP AL,0x0                          ; 0048e0ca
-    JNZ 0x0048e0b6                      ; 0048e0cc | LAB_0048e0b6
-        ;   XREF to: 0048e0b6 (CONDITIONAL_JUMP)
+    JNZ 0x0048e0b6                      ; 0048e0cc
+        ;   XREF to: 0048e0b6 (CONDITIONAL_JUMP)  ; LAB_0048e0b6
     POP EDI                             ; 0048e0ce
         ;   Label: LAB_0048e0ce
     MOV EAX,EBX                         ; 0048e0cf

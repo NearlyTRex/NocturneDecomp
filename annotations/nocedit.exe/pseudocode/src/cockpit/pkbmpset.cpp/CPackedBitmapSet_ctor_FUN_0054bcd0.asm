@@ -27,8 +27,8 @@ section .text
     MOV dword ptr [EAX + 0x14],0x0      ; 0054bce8
     PUSH EAX                            ; 0054bcef
     MOV dword ptr [EAX + 0x18],0x0      ; 0054bcf0
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0054bcf7 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0054bcf7
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0054bcfc
     RET                                 ; 0054bcff
 

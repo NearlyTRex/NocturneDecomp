@@ -46,8 +46,8 @@ section .text
     MOV dword ptr [EBX + 0x40],EAX      ; 0051f019
     LEA EAX,[EBX + 0x44]                ; 0051f01c
     CMP EAX,EDX                         ; 0051f01f
-    JZ 0x0051f033                       ; 0051f021 | LAB_0051f033
-        ;   XREF to: 0051f033 (CONDITIONAL_JUMP)
+    JZ 0x0051f033                       ; 0051f021
+        ;   XREF to: 0051f033 (CONDITIONAL_JUMP)  ; LAB_0051f033
     MOV ECX,dword ptr [EDX]             ; 0051f023
     MOV dword ptr [EAX],ECX             ; 0051f025
     MOV ECX,dword ptr [EDX + 0x4]       ; 0051f027
@@ -64,8 +64,8 @@ section .text
     FLD float ptr [EBP + 0x50]          ; 0051f043
     PUSH EAX                            ; 0051f046
     FSTP float ptr [EBX + 0x50]         ; 0051f047
-    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051f04a | void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
-        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_copyArrayWithFunction_FUN_006020c2 ; 0051f04a
+        ;   XREF to: 006020c2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyArrayWithFunction_FUN_006020c2(void * dest, void * source, int count, int element_size, ...)
     LEA EDI,[EBX + 0x78]                ; 0051f04f
     LEA ESI,[EBP + 0x78]                ; 0051f052
     MOVSD ES:EDI,ESI                    ; 0051f055

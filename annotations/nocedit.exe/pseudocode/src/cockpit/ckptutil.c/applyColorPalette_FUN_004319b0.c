@@ -18,6 +18,6 @@ cockpit_ckptutil_c_applyColorPalette_FUN_004319b0
   }
   cockpit_ckptutil_c_readBitmapFile_FUN_00431870(filename,bitmap_buffer,bitmap_size);
   cockpit_ckptutil_c_applyActPalette_FUN_004319b0
-            ((char *)bitmap_buffer,bitmap_buffer,palette_index,in_stack_00000014);
+            (bitmap_buffer,bitmap_buffer,palette_index,in_stack_00000014);
   return;
 }

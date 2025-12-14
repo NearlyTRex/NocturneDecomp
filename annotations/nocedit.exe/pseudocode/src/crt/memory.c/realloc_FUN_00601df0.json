@@ -1,154 +1,154 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 16, 
-    "global_count": 0, 
-    "total_lines": 17, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_realloc_implementation_FUN_00601e08", 
-      "addr": "00601e08"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00601df0", 
-    "signature": "void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)", 
-    "address_range": [
-      [
-        "00601df0", 
-        "00601e04"
-      ]
-    ], 
-    "name": "crt_memory.c_realloc_FUN_00601df0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "ulong", 
-        "size": 4, 
-        "name": "new_size"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 6,
+    "cross_reference_count": 16,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
   "cross_references": [
     {
-      "from_addr": "0060f182", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_env.c_updateEnvironTable_FUN_0060f04c", 
-      "addr": "0060f04c"
-    }, 
+      "addr": "0060f04c",
+      "from_addr": "0060f182",
+      "name": "crt_env.c_updateEnvironTable_FUN_0060f04c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006089e2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_register_handle_FUN_00608990", 
-      "addr": "00608990"
-    }, 
+      "addr": "00608990",
+      "from_addr": "006089e2",
+      "name": "crt_io.c_register_handle_FUN_00608990",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00609f82", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_sync.c_allocate_critical_section_FUN_00609f24", 
-      "addr": "00609f24"
-    }, 
+      "addr": "00609f24",
+      "from_addr": "00609f82",
+      "name": "crt_sync.c_allocate_critical_section_FUN_00609f24",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060cb2f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8", 
-      "addr": "0060caf8"
-    }, 
+      "addr": "0060caf8",
+      "from_addr": "0060cb2f",
+      "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060e55a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060e4f0", 
-      "addr": "0060e4f0"
-    }, 
+      "addr": "0060e4f0",
+      "from_addr": "0060e55a",
+      "name": "crt_unknown.c_FUN_0060e4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060fe29", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060fcf4", 
-      "addr": "0060fcf4"
-    }, 
+      "addr": "0060fcf4",
+      "from_addr": "0060fe29",
+      "name": "crt_unknown.c_FUN_0060fcf4",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00608a90", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c", 
-      "addr": "00608a1c"
-    }, 
+      "addr": "00608a1c",
+      "from_addr": "00608a90",
+      "name": "crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050f5ec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }, 
+      "addr": "0050f540",
+      "from_addr": "0050f5ec",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d243c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CObj_addPolygons_FUN_005d2410", 
-      "addr": "005d2410"
-    }, 
+      "addr": "005d2410",
+      "from_addr": "005d243c",
+      "name": "shape_superopt.cpp_CObj_addPolygons_FUN_005d2410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d259d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CObj_addVertices_FUN_005d2580", 
-      "addr": "005d2580"
-    }, 
+      "addr": "005d2580",
+      "from_addr": "005d259d",
+      "name": "shape_superopt.cpp_CObj_addVertices_FUN_005d2580",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d2f8d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50", 
-      "addr": "005d2f50"
-    }, 
+      "addr": "005d2f50",
+      "from_addr": "005d2f8d",
+      "name": "shape_superopt.cpp_CObj_removePolygon_FUN_005d2f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d46b4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0", 
-      "addr": "005d44d0"
-    }, 
+      "addr": "005d44d0",
+      "from_addr": "005d46b4",
+      "name": "shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d317f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CObj_removeVertex_FUN_005d3140", 
-      "addr": "005d3140"
-    }, 
+      "addr": "005d3140",
+      "from_addr": "005d317f",
+      "name": "shape_superopt.cpp_CObj_removeVertex_FUN_005d3140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d76f2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_COptimize_FUN_005d76e0", 
-      "addr": "005d76e0"
-    }, 
+      "addr": "005d76e0",
+      "from_addr": "005d76f2",
+      "name": "shape_superopt.cpp_COptimize_FUN_005d76e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005cbe46", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20", 
-      "addr": "005cbe20"
-    }, 
+      "addr": "005cbe20",
+      "from_addr": "005cbe46",
+      "name": "shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c7ae9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_FUN_005c7a90", 
-      "addr": "005c7a90"
+      "addr": "005c7a90",
+      "from_addr": "005c7ae9",
+      "name": "shape_superopt.cpp_FUN_005c7a90",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00601df0",
+    "address_range": [
+      [
+        "00601df0",
+        "00601e04"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_memory.c_realloc_FUN_00601df0",
+    "signature": "void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601e08",
+      "name": "crt_memory.c_realloc_implementation_FUN_00601e08"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "new_size",
+        "offset": 8,
+        "size": 4,
+        "type": "ulong"
+      }
+    ]
+  },
+  "suspects": []
 }

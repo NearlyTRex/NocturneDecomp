@@ -31,8 +31,8 @@ section .text
     PUSH EAX                            ; 004215fd
     MOV EDX,dword ptr [ESP + 0x2c]      ; 004215fe
     PUSH EDX                            ; 00421602
-    CALL core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550 ; 00421603 | CVector3f * core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550(CBoundingBox3D * this_ptr, CVector3f * out_point, CVector3f * in_point)
-        ;   XREF to: 00421550 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550 ; 00421603
+        ;   XREF to: 00421550 (UNCONDITIONAL_CALL)  ; CVector3f * core_box.cpp_CBoundingBox3D_clampPoint_FUN_00421550(CBoundingBox3D * this_ptr, CVector3f * out_point, CVector3f * in_point)
     ADD ESP,0xc                         ; 00421608
     FLD float ptr [ESP]                 ; 0042160b
     FSUB float ptr [EBX]                ; 0042160e

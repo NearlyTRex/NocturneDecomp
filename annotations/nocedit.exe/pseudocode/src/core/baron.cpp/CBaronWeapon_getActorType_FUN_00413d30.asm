@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x822698                    ; 00413d30 | CDemonActorType g_CBaronWeaponClassInfo
+    MOV EAX,0x822698                    ; 00413d30 | g_CBaronWeaponClassInfo
         ;   Label: core_baron.cpp_CBaronWeapon_getActorType_FUN_00413d30
     RET                                 ; 00413d35
 

@@ -35,7 +35,7 @@ void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr)
               break;
             }
             iVar2 = iVar2 + 4;
-          } while (SBORROW /* signed borrow */4(iVar2,g_ActiveLightCount * 4) != iVar2 + g_ActiveLightCount * -4 < 0);
+          } while (iVar2 < g_ActiveLightCount * 4);
         }
         core_setutil_cpp_C3DSLight_process_FUN_00586cb0(this_ptr_00,g_MasterLightList[0],local_18);
         crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,"%son",this_ptr_00->name);

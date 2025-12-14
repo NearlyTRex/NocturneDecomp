@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00601cd0
         ;   Label: crt_memory.c_free_FUN_00601cd0
     PUSH EDX                            ; 00601cd4
-    CALL crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0 ; 00601cd5 | void crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0(void * ptr)
-        ;   XREF to: 00601ce0 (UNCONDITIONAL_CALL)
+    CALL crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0 ; 00601cd5
+        ;   XREF to: 00601ce0 (UNCONDITIONAL_CALL)  ; void crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0(void * ptr)
     ADD ESP,0x4                         ; 00601cda
     RET                                 ; 00601cdd
 

@@ -24,18 +24,18 @@ section .text
     PUSH EBX                            ; 004eead7
     MOV EDX,dword ptr [ESP + 0x14]      ; 004eead8
     PUSH EDX                            ; 004eeadc
-    CALL core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150 ; 004eeadd | void core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor * this_ptr, int * y_pos)
-        ;   XREF to: 0040d150 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150 ; 004eeadd
+        ;   XREF to: 0040d150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor * this_ptr, int * y_pos)
     MOV ECX,dword ptr [EBX]             ; 004eeae2
     ADD ESP,0x8                         ; 004eeae4
     ADD ECX,0xb                         ; 004eeae7
     PUSH ECX                            ; 004eeaea
-    MOV EDI,dword ptr [0x02d02558]      ; 004eeaeb | int g_ClipLeft
+    MOV EDI,dword ptr [0x02d02558]      ; 004eeaeb | g_ClipLeft
     PUSH EDI                            ; 004eeaf1
-    PUSH 0x62e532                       ; 004eeaf2 | = "Hold down CTRL to view grave animatio..." | s_Hold_down_CTRL_to_view_g_0062e532 = Hold down CTRL to view grave animation on the very last frame.
+    PUSH 0x62e532                       ; 004eeaf2 | = "Hold down CTRL to view grave animatio..."
     MOV dword ptr [EBX],ECX             ; 004eeaf7
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 004eeaf9 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 004eeaf9
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     MOV EBP,dword ptr [EBX]             ; 004eeafe
     ADD EBP,0xb                         ; 004eeb00
     ADD ESP,0xc                         ; 004eeb03

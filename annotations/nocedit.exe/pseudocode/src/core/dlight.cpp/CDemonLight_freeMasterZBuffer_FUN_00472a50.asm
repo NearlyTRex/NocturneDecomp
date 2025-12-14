@@ -17,8 +17,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00472a50
         ;   Label: core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50
     CMP dword ptr [EAX + 0x2f9c],0x0    ; 00472a54
-    JNZ 0x00472a5e                      ; 00472a5b | LAB_00472a5e
-        ;   XREF to: 00472a5e (CONDITIONAL_JUMP)
+    JNZ 0x00472a5e                      ; 00472a5b
+        ;   XREF to: 00472a5e (CONDITIONAL_JUMP)  ; LAB_00472a5e
     RET                                 ; 00472a5d
     MOV dword ptr [EAX + 0x164],0x0     ; 00472a5e
         ;   Label: LAB_00472a5e

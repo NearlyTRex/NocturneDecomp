@@ -21,19 +21,19 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_FUN_004c7d60
     PUSH EDI                            ; 004c7d61
     PUSH EBP                            ; 004c7d62
-    MOV EDX,dword ptr [0x02d62d38]      ; 004c7d63 | CGlassParticle * g_CFireEffectGlassParticlesEnd
+    MOV EDX,dword ptr [0x02d62d38]      ; 004c7d63 | g_CFireEffectGlassParticlesEnd
     LEA EAX,[EDX*0x8 + 0x0]             ; 004c7d69
     ADD EAX,EDX                         ; 004c7d70
     SHL EAX,0x2                         ; 004c7d72
     INC EDX                             ; 004c7d75
-    ADD EAX,0x2d62d3c                   ; 004c7d76 | CBulletTrail[10] g_BulletTrailPool
-    MOV dword ptr [0x02d62d38],EDX      ; 004c7d7b | CGlassParticle * g_CFireEffectGlassParticlesEnd
+    ADD EAX,0x2d62d3c                   ; 004c7d76 | g_BulletTrailPool
+    MOV dword ptr [0x02d62d38],EDX      ; 004c7d7b | g_CFireEffectGlassParticlesEnd
     CMP EDX,0xa                         ; 004c7d81
-    JL 0x004c7d90                       ; 004c7d84 | LAB_004c7d90
-        ;   XREF to: 004c7d90 (CONDITIONAL_JUMP)
+    JL 0x004c7d90                       ; 004c7d84
+        ;   XREF to: 004c7d90 (CONDITIONAL_JUMP)  ; LAB_004c7d90
     PUSH EBX                            ; 004c7d86
     XOR EBX,EBX                         ; 004c7d87
-    MOV dword ptr [0x02d62d38],EBX      ; 004c7d89 | CGlassParticle * g_CFireEffectGlassParticlesEnd
+    MOV dword ptr [0x02d62d38],EBX      ; 004c7d89 | g_CFireEffectGlassParticlesEnd
     POP EBX                             ; 004c7d8f
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004c7d90
         ;   Label: LAB_004c7d90
@@ -44,8 +44,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x20]      ; 004c7d9e
     PUSH EBP                            ; 004c7da2
     PUSH EAX                            ; 004c7da3
-    CALL core_fire.cpp_FUN_004c2170     ; 004c7da4 | undefined core_fire.cpp_FUN_004c2170()
-        ;   XREF to: 004c2170 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_FUN_004c2170     ; 004c7da4
+        ;   XREF to: 004c2170 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004c2170()
     ADD ESP,0x14                        ; 004c7da9
     POP EBP                             ; 004c7dac
     POP EDI                             ; 004c7dad

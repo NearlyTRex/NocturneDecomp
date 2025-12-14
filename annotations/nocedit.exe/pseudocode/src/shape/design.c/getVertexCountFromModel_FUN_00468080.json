@@ -1,110 +1,110 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 66, 
-    "assembly_lines": 52, 
-    "suspect_count": 1, 
+    "assembly_lines": 52,
+    "complexity_score": 29,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 14,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_model.c_getMRGLSize_FUN_00528700", 
-      "addr": "00528700"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061cbfc", 
-      "addr": "0061cbfc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_find_vlist_0061cc0e", 
-      "addr": "0061cc0e", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "(SMRGLHeaderExtended *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base).type + iVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00468080", 
-    "signature": "int shape_design.c_getVertexCountFromModel_FUN_00468080(SMRGLHeaderExtended * model_ptr)", 
-    "address_range": [
-      [
-        "00468080", 
-        "004680ef"
-      ]
-    ], 
-    "name": "shape_design.c_getVertexCountFromModel_FUN_00468080"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderExtended *", 
-        "size": 4, 
-        "name": "model_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 66
+  },
   "cross_references": [
     {
-      "from_addr": "0046810f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_applyVertexCentering_FUN_004680f0", 
-      "addr": "004680f0"
+      "addr": "004680f0",
+      "from_addr": "0046810f",
+      "name": "shape_design.c_applyVertexCentering_FUN_004680f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00468080",
+    "address_range": [
+      [
+        "00468080",
+        "004680ef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_getVertexCountFromModel_FUN_00468080",
+    "signature": "int shape_design.c_getVertexCountFromModel_FUN_00468080(SMRGLHeaderExtended * model_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00528700",
+      "name": "engine_model.c_getMRGLSize_FUN_00528700"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061cbfc",
+      "name": "s_shape_design_c_0061cbfc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061cc0e",
+      "name": "s_Can_t_find_vlist_0061cc0e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(SMRGLHeaderExtended *)((int)",
+      "text": "model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base).type + iVar1);",
+      "type": "pointer_cast"
     }
   ]
 }

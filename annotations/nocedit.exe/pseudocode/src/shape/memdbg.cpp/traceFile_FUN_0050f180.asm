@@ -22,17 +22,17 @@
 
 section .text
 
-    CMP dword ptr [0x02f0d930],0x0      ; 0050f180 | BOOL g_TraceFileInitialized
+    CMP dword ptr [0x02f0d930],0x0      ; 0050f180 | g_TraceFileInitialized
         ;   Label: shape_memdbg.cpp_traceFile_FUN_0050f180
-    JZ 0x0050f18a                       ; 0050f187 | LAB_0050f18a
-        ;   XREF to: 0050f18a (CONDITIONAL_JUMP)
+    JZ 0x0050f18a                       ; 0050f187
+        ;   XREF to: 0050f18a (CONDITIONAL_JUMP)  ; LAB_0050f18a
     RET                                 ; 0050f189
-    PUSH 0x67d1f0                       ; 0050f18a | = "memdbg.txt" | s_memdbg_txt_0067d1f0 = memdbg.txt
+    PUSH 0x67d1f0                       ; 0050f18a | = "memdbg.txt"
         ;   Label: LAB_0050f18a
-    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 0050f18f | int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
-        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_deleteFile_FUN_005ff9d0 ; 0050f18f
+        ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_io.c_deleteFile_FUN_005ff9d0(char * filename)
     MOV ECX,0x1                         ; 0050f194
     ADD ESP,0x4                         ; 0050f199
-    MOV dword ptr [0x02f0d930],ECX      ; 0050f19c | BOOL g_TraceFileInitialized
+    MOV dword ptr [0x02f0d930],ECX      ; 0050f19c | g_TraceFileInitialized
     RET                                 ; 0050f1a2
 

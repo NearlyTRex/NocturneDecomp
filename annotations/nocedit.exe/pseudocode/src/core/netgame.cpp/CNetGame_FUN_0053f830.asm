@@ -20,14 +20,14 @@ section .text
         ;   Label: core_netgame.cpp_CNetGame_FUN_0053f830
     MOV EDX,dword ptr [ESP + 0x8]       ; 0053f832
     PUSH EDX                            ; 0053f836
-    CALL core_netgame.cpp_CNetGame_FUN_0053fd00 ; 0053f837 | void core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame * this_ptr)
-        ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)
+    CALL core_netgame.cpp_CNetGame_FUN_0053fd00 ; 0053f837
+        ;   XREF to: 0053fd00 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_FUN_0053fd00(CNetGame * this_ptr)
     ADD ESP,0x8                         ; 0053f83c
     MOV EAX,dword ptr [ESP + 0x4]       ; 0053f83f
     ADD EAX,0x170                       ; 0053f843
     PUSH EAX                            ; 0053f848
-    CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 0053f849 | int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)
-        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)
+    CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 0053f849
+        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)
     ADD ESP,0x4                         ; 0053f84e
     JMP 0x005e1ee0                      ; 0053f851
         ;   XREF to: 005e1ee0 (UNCONDITIONAL_CALL)

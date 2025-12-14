@@ -28,7 +28,7 @@ void shape_superopt_cpp_CondCallDebugMallocUnknownString_FUN_005cbe20(void)
     *(void **)(in_stack_00000004 + 0xc) = pvVar1;
     puVar5 = (uint *)(*(int *)(in_stack_00000004 + 0xc) + *(int *)(in_stack_00000004 + 8) * 8)
     ;
-    puVar2 = (uint *)crt_memory_c_malloc_FUN_006021da((int)in_stack_00000014 * 0x60);
+    puVar2 = crt_memory_c_malloc_FUN_006021da((int)in_stack_00000014 * 0x60);
     puVar5[1] = puVar2;
     if (puVar2 != (uint *)0x0) {
       uVar3 = (uint)((int)in_stack_00000014 * 0x60) >> 2;

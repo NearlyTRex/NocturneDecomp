@@ -12,13 +12,14 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
           int alpha_blend_flags,int special_render_mode)
 
 {
-  SMRGLHeaderExtended *pSVar1;
+  int iVar1;
   SMRGLHeaderExtended *extraout_EAX;
+  SMRGLHeaderExtended *pSVar2;
   SMRGLHeaderExtended *extraout_EAX_00;
   
-  pSVar1 = (SMRGLHeaderExtended *)
-           engine_3d_c_isVisiblePlane_FUN_00403950(&primitive->surface_normal);
-  if (pSVar1 != (SMRGLHeaderExtended *)0x0) {
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&primitive->surface_normal);
+  pSVar2 = (SMRGLHeaderExtended *)0x0;
+  if (iVar1 != 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
         g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
@@ -55,7 +56,7 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
       return extraout_EAX_00;
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0((primitive->base).count,(int *)(primitive + 1));
-    pSVar1 = extraout_EAX;
+    pSVar2 = extraout_EAX;
   }
-  return pSVar1;
+  return pSVar2;
 }

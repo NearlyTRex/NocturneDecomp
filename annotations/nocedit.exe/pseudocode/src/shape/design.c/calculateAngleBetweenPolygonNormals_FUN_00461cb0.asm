@@ -48,13 +48,13 @@ section .text
     FADDP                               ; 00461cf4
     SUB ESP,0x8                         ; 00461cf6
     FSTP double ptr [ESP]               ; 00461cf9
-    CALL shape_design.c_clampedArccos_FUN_00461c50 ; 00461cfc | double shape_design.c_clampedArccos_FUN_00461c50(double dot_product)
-        ;   XREF to: 00461c50 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_clampedArccos_FUN_00461c50 ; 00461cfc
+        ;   XREF to: 00461c50 (UNCONDITIONAL_CALL)  ; double shape_design.c_clampedArccos_FUN_00461c50(double dot_product)
     MOV dword ptr [EBP + -0x10],EAX     ; 00461d01
     MOV dword ptr [EBP + -0xc],EDX      ; 00461d04
     FLD double ptr [EBP + -0x10]        ; 00461d07
     ADD ESP,0x8                         ; 00461d0a
-    FMUL double ptr [0x0061bfb6]        ; 00461d0d | double g_RadiansToDegrees1
+    FMUL double ptr [0x0061bfb6]        ; 00461d0d | g_RadiansToDegrees1
     FSTP double ptr [EBP + -0x8]        ; 00461d13
     MOV EAX,dword ptr [EBP + -0x8]      ; 00461d16
     MOV EDX,dword ptr [EBP + -0x4]      ; 00461d19

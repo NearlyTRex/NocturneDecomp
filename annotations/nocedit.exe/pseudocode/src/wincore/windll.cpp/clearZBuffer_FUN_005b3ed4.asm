@@ -36,19 +36,19 @@ section .text
     CLD                                 ; 005b3ed7
     PUSH DS                             ; 005b3ed8
     POP ES                              ; 005b3ed9
-    MOV EDI,dword ptr [0x02cf7d5c]      ; 005b3eda | uint *[1024] g_ZBufferScanlineArray
-    MOV EAX,[0x02d0255c]                ; 005b3ee0 | int g_ClipTop
-    MOV ECX,dword ptr [0x00679394]      ; 005b3ee5 | int g_WindowWidth
+    MOV EDI,dword ptr [0x02cf7d5c]      ; 005b3eda | g_ZBufferScanlineArray
+    MOV EAX,[0x02d0255c]                ; 005b3ee0 | g_ClipTop
+    MOV ECX,dword ptr [0x00679394]      ; 005b3ee5 | g_WindowWidth
     MUL ECX                             ; 005b3eeb
     SHL EAX,0x2                         ; 005b3eed
     ADD EDI,EAX                         ; 005b3ef0
-    MOV EAX,[0x02d02564]                ; 005b3ef2 | int g_ClipBottom
-    SUB EAX,dword ptr [0x02d0255c]      ; 005b3ef7 | int g_ClipTop
+    MOV EAX,[0x02d02564]                ; 005b3ef2 | g_ClipBottom
+    SUB EAX,dword ptr [0x02d0255c]      ; 005b3ef7 | g_ClipTop
     INC EAX                             ; 005b3efd
-    MOV ECX,dword ptr [0x00679394]      ; 005b3efe | int g_WindowWidth
+    MOV ECX,dword ptr [0x00679394]      ; 005b3efe | g_WindowWidth
     MUL ECX                             ; 005b3f04
     MOV ECX,EAX                         ; 005b3f06
-    FLD double ptr [0x0068261c]         ; 005b3f08 | double g_SelectedClearColor
+    FLD double ptr [0x0068261c]         ; 005b3f08 | g_SelectedClearColor
     FST double ptr [EDI]                ; 005b3f0e
         ;   Label: LAB_005b3f0e
     FST double ptr [EDI + 0x8]          ; 005b3f10
@@ -60,9 +60,9 @@ section .text
     FST double ptr [EDI + 0x38]         ; 005b3f22
     ADD EDI,0x40                        ; 005b3f25
     SUB ECX,0x10                        ; 005b3f28
-    JG 0x005b3f0e                       ; 005b3f2b | LAB_005b3f0e
-        ;   XREF to: 005b3f0e (CONDITIONAL_JUMP)
-    FSTP double ptr [0x00682624]        ; 005b3f2d | double g_ClearColor
+    JG 0x005b3f0e                       ; 005b3f2b
+        ;   XREF to: 005b3f0e (CONDITIONAL_JUMP)  ; LAB_005b3f0e
+    FSTP double ptr [0x00682624]        ; 005b3f2d | g_ClearColor
     POPAD                               ; 005b3f33
     POP EDI                             ; 005b3f34
     POP ESI                             ; 005b3f35

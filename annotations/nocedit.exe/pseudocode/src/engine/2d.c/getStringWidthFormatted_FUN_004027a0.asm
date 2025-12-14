@@ -27,15 +27,15 @@ section .text
     PUSH EDX                            ; 004027c3
     LEA EAX,[ESP + 0x8]                 ; 004027c4
     PUSH EAX                            ; 004027c8
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004027c9 | int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004027c9
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 004027ce
     MOV EAX,ESP                         ; 004027d1
     XOR ECX,ECX                         ; 004027d3
     PUSH EAX                            ; 004027d5
     MOV dword ptr [ESP + 0x1004],ECX    ; 004027d6
-    CALL engine_2d.c_getStringWidth_FUN_004018a0 ; 004027dd | int engine_2d.c_getStringWidth_FUN_004018a0(char * text)
-        ;   XREF to: 004018a0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_getStringWidth_FUN_004018a0 ; 004027dd
+        ;   XREF to: 004018a0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getStringWidth_FUN_004018a0(char * text)
     ADD ESP,0x4                         ; 004027e2
     ADD ESP,0x1004                      ; 004027e5
     RET                                 ; 004027eb

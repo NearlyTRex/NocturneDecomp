@@ -1,119 +1,119 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 57, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 83, 
-    "assembly_lines": 51, 
-    "suspect_count": 2, 
+    "assembly_lines": 51,
+    "complexity_score": 57,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 32,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
-      "addr": "0040cc10"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->alpha_value = in_stack_00000018;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004bf2f0", 
-    "signature": "void core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, int alpha_value)", 
-    "address_range": [
-      [
-        "004bf2f0", 
-        "004bf33e"
-      ], 
-      [
-        "004bf35f", 
-        "004bf382"
-      ]
-    ], 
-    "name": "core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0"
-  }, 
-  "stack_frame": {
-    "local_size": 12, 
-    "variables": [
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSmokeParticle *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "position"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "drag_factor"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "wind_influence"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "alpha_value"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 83
+  },
   "cross_references": [
     {
-      "from_addr": "004c77d4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0", 
-      "addr": "004c76a0"
-    }, 
+      "addr": "004c76a0",
+      "from_addr": "004c77d4",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c7b6c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20", 
-      "addr": "004c7b20"
+      "addr": "004c7b20",
+      "from_addr": "004c7b6c",
+      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bf2f0",
+    "address_range": [
+      [
+        "004bf2f0",
+        "004bf33e"
+      ],
+      [
+        "004bf35f",
+        "004bf382"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0",
+    "signature": "void core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, int alpha_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSmokeParticle *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "drag_factor",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "wind_influence",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_value",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000018",
+      "text": "this_ptr->alpha_value = in_stack_00000018;",
+      "type": "stack_param"
     }
   ]
 }

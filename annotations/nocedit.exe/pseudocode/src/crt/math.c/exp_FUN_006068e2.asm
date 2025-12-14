@@ -27,21 +27,21 @@ section .text
         ;   Label: crt_math.c_exp_FUN_006068e2
     MOV EBP,ESP                         ; 006068e3
     SUB ESP,0x10                        ; 006068e5
-    FCOM double ptr [0x00685064]        ; 006068e8 | double g_ExpUnderflowLimit
+    FCOM double ptr [0x00685064]        ; 006068e8 | g_ExpUnderflowLimit
     FSTSW word ptr [EBP + -0x10]        ; 006068ee
     WAIT                                ; 006068f2
     MOV AH,byte ptr [EBP + -0xf]        ; 006068f3
     SAHF                                ; 006068f6
-    JBE 0x0060691a                      ; 006068f7 | LAB_0060691a
-        ;   XREF to: 0060691a (CONDITIONAL_JUMP)
+    JBE 0x0060691a                      ; 006068f7
+        ;   XREF to: 0060691a (CONDITIONAL_JUMP)  ; LAB_0060691a
     CMP AL,0x7                          ; 006068f9
-    JZ 0x00606914                       ; 006068fb | LAB_00606914
-        ;   XREF to: 00606914 (CONDITIONAL_JUMP)
+    JZ 0x00606914                       ; 006068fb
+        ;   XREF to: 00606914 (CONDITIONAL_JUMP)  ; LAB_00606914
     FSTP double ptr [EBP + -0x10]       ; 006068fd
     MOV dword ptr [EBP + -0x8],EAX      ; 00606900
     MOV dword ptr [EBP + -0x4],EDX      ; 00606903
-    CALL crt_math.c_handle_math_error_FUN_0060c02b ; 00606906 | double crt_math.c_handle_math_error_FUN_0060c02b()
-        ;   XREF to: 0060c02b (UNCONDITIONAL_CALL)
+    CALL crt_math.c_handle_math_error_FUN_0060c02b ; 00606906
+        ;   XREF to: 0060c02b (UNCONDITIONAL_CALL)  ; double crt_math.c_handle_math_error_FUN_0060c02b()
     PUSH EDX                            ; 0060690b
     PUSH EAX                            ; 0060690c
     FLD double ptr [ESP]                ; 0060690d
@@ -52,17 +52,17 @@ section .text
     MOV ESP,EBP                         ; 00606916
     POP EBP                             ; 00606918
     RET                                 ; 00606919
-    FCOM double ptr [0x0068506c]        ; 0060691a | double DOUBLE_0068506c
+    FCOM double ptr [0x0068506c]        ; 0060691a | DOUBLE_0068506c
         ;   Label: LAB_0060691a
     FSTSW word ptr [EBP + -0x10]        ; 00606920
     WAIT                                ; 00606924
     MOV AH,byte ptr [EBP + -0xf]        ; 00606925
     SAHF                                ; 00606928
-    JA 0x0060692f                       ; 00606929 | LAB_0060692f
-        ;   XREF to: 0060692f (CONDITIONAL_JUMP)
+    JA 0x0060692f                       ; 00606929
+        ;   XREF to: 0060692f (CONDITIONAL_JUMP)  ; LAB_0060692f
     FLDZ                                ; 0060692b
-    JMP 0x00606943                      ; 0060692d | LAB_00606943
-        ;   XREF to: 00606943 (UNCONDITIONAL_JUMP)
+    JMP 0x00606943                      ; 0060692d
+        ;   XREF to: 00606943 (UNCONDITIONAL_JUMP)  ; LAB_00606943
     FLDL2E                              ; 0060692f
         ;   Label: LAB_0060692f
     FMULP                               ; 00606931

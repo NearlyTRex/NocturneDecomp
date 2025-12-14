@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 29, 
-    "assembly_lines": 23, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_mbstrnbytes_FUN_00605ec0", 
-      "addr": "00605ec0"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_0060b670", 
-      "addr": "0060b670"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00605e90", 
-    "signature": "char * crt_string.c_mbstrncpy_FUN_00605e90(char * dest, char * src, int char_count)", 
-    "address_range": [
-      [
-        "00605e90", 
-        "00605ebc"
-      ]
-    ], 
-    "name": "crt_string.c_mbstrncpy_FUN_00605e90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "dest"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "src"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "char_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 23,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
   "cross_references": [
     {
-      "from_addr": "00610437", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_file.c_extract_path_component_FUN_00610400", 
-      "addr": "00610400"
-    }, 
+      "addr": "00610400",
+      "from_addr": "00610437",
+      "name": "crt_file.c_extract_path_component_FUN_00610400",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ff15f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_strncpy_safe_FUN_005ff130", 
-      "addr": "005ff130"
+      "addr": "005ff130",
+      "from_addr": "005ff15f",
+      "name": "crt_string.c_strncpy_safe_FUN_005ff130",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00605e90",
+    "address_range": [
+      [
+        "00605e90",
+        "00605ebc"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_string.c_mbstrncpy_FUN_00605e90",
+    "signature": "char * crt_string.c_mbstrncpy_FUN_00605e90(char * dest, char * src, int char_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00605ec0",
+      "name": "crt_string.c_mbstrnbytes_FUN_00605ec0"
+    },
+    {
+      "addr": "0060b670",
+      "name": "crt_unknown.c_FUN_0060b670"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "char_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

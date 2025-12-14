@@ -52,8 +52,8 @@ section .text
     INC EAX                             ; 00410b1a
     MOV EBX,dword ptr [ESP + 0x4c]      ; 00410b1b
     MOV dword ptr [ESP + 0x14],EAX      ; 00410b1f
-    CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 ; 00410b23 | void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap * this_ptr)
-        ;   XREF to: 00410cf0 (UNCONDITIONAL_CALL)
+    CALL engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 ; 00410b23
+        ;   XREF to: 00410cf0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap * this_ptr)
     MOV EDX,dword ptr [EBP + 0xc]       ; 00410b28
     SUB EBX,ESI                         ; 00410b2b
     IMUL ESI,EDX                        ; 00410b2d
@@ -67,14 +67,14 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 00410b40
     LEA EDX,[EBX*0x4 + 0x0]             ; 00410b44
     SHL EAX,0x2                         ; 00410b4b
-    MOV ECX,dword ptr [0x0067939c]      ; 00410b4e | int g_BitsPerPixel
+    MOV ECX,dword ptr [0x0067939c]      ; 00410b4e | g_BitsPerPixel
     ADD EDX,EAX                         ; 00410b54
     CMP ECX,0x20                        ; 00410b56
-    JNZ 0x00410bb8                      ; 00410b59 | LAB_00410bb8
-        ;   XREF to: 00410bb8 (CONDITIONAL_JUMP)
+    JNZ 0x00410bb8                      ; 00410b59
+        ;   XREF to: 00410bb8 (CONDITIONAL_JUMP)  ; LAB_00410bb8
     TEST EBX,EBX                        ; 00410b5b
-    JLE 0x00410bb0                      ; 00410b5d | LAB_00410bb0
-        ;   XREF to: 00410bb0 (CONDITIONAL_JUMP)
+    JLE 0x00410bb0                      ; 00410b5d
+        ;   XREF to: 00410bb0 (CONDITIONAL_JUMP)  ; LAB_00410bb0
     MOV EBX,dword ptr [ESP + 0x34]      ; 00410b5f
     MOV dword ptr [ESP + 0x14],EAX      ; 00410b63
     SHL EBX,0x2                         ; 00410b67
@@ -88,12 +88,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00410b7b
     PUSH ESI                            ; 00410b7f
     MOV EBX,dword ptr [ESP + 0x14]      ; 00410b80
-    MOV EAX,dword ptr [EAX + 0x2cf6a9c] ; 00410b84 | void *[1024] g_ScreenBufferArray
+    MOV EAX,dword ptr [EAX + 0x2cf6a9c] ; 00410b84 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EDI                            ; 00410b8a
     ADD EAX,EBX                         ; 00410b8b
     PUSH EAX                            ; 00410b8d
-    CALL wincore_windll.cpp_renderAlphaRow32_FUN_005b555c ; 00410b8e | void wincore_windll.cpp_renderAlphaRow32_FUN_005b555c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
-        ;   XREF to: 005b555c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_renderAlphaRow32_FUN_005b555c ; 00410b8e
+        ;   XREF to: 005b555c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderAlphaRow32_FUN_005b555c(uint * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 00410b93
     MOV EBX,dword ptr [EBP + 0xc]       ; 00410b96
     MOV EDX,dword ptr [ESP + 0x14]      ; 00410b99
@@ -103,8 +103,8 @@ section .text
     ADD ESI,EBX                         ; 00410ba5
     MOV dword ptr [ESP + 0x14],EDX      ; 00410ba7
     CMP EDX,ECX                         ; 00410bab
-    JL 0x00410b71                       ; 00410bad | LAB_00410b71
-        ;   XREF to: 00410b71 (CONDITIONAL_JUMP)
+    JL 0x00410b71                       ; 00410bad
+        ;   XREF to: 00410b71 (CONDITIONAL_JUMP)  ; LAB_00410b71
     NOP                                 ; 00410baf
     ADD ESP,0x1c                        ; 00410bb0
         ;   Label: LAB_00410bb0
@@ -115,8 +115,8 @@ section .text
     RET                                 ; 00410bb7
     TEST EBX,EBX                        ; 00410bb8
         ;   Label: LAB_00410bb8
-    JLE 0x00410bb0                      ; 00410bba | LAB_00410bb0
-        ;   XREF to: 00410bb0 (CONDITIONAL_JUMP)
+    JLE 0x00410bb0                      ; 00410bba
+        ;   XREF to: 00410bb0 (CONDITIONAL_JUMP)  ; LAB_00410bb0
     MOV EBX,dword ptr [ESP + 0x34]      ; 00410bbc
     MOV dword ptr [ESP + 0x18],EAX      ; 00410bc0
     ADD EBX,EBX                         ; 00410bc4
@@ -130,12 +130,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x20]      ; 00410bd8
     PUSH ESI                            ; 00410bdc
     MOV EBX,dword ptr [ESP + 0x10]      ; 00410bdd
-    MOV EAX,dword ptr [EAX + 0x2cf6a9c] ; 00410be1 | void *[1024] g_ScreenBufferArray
+    MOV EAX,dword ptr [EAX + 0x2cf6a9c] ; 00410be1 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EDI                            ; 00410be7
     ADD EAX,EBX                         ; 00410be8
     PUSH EAX                            ; 00410bea
-    CALL wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7 ; 00410beb | void wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
-        ;   XREF to: 005b55f7 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7 ; 00410beb
+        ;   XREF to: 005b55f7 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7(ushort * destPixels, uchar * srcIndices, uchar * srcAlpha, int globalAlpha, ...)
     ADD ESP,0x14                        ; 00410bf0
     MOV EBX,dword ptr [EBP + 0xc]       ; 00410bf3
     MOV EDX,dword ptr [ESP + 0x18]      ; 00410bf6
@@ -145,8 +145,8 @@ section .text
     ADD ESI,EBX                         ; 00410c03
     MOV dword ptr [ESP + 0x18],EDX      ; 00410c05
     CMP EDX,ECX                         ; 00410c09
-    JL 0x00410bce                       ; 00410c0b | LAB_00410bce
-        ;   XREF to: 00410bce (CONDITIONAL_JUMP)
+    JL 0x00410bce                       ; 00410c0b
+        ;   XREF to: 00410bce (CONDITIONAL_JUMP)  ; LAB_00410bce
     ADD ESP,0x1c                        ; 00410c0d
     POP EBP                             ; 00410c10
     POP EDI                             ; 00410c11

@@ -1,194 +1,194 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 130, 
-    "pseudocode_lines": 35, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 104, 
-    "assembly_lines": 69, 
-    "suspect_count": 8, 
+    "assembly_lines": 69,
+    "complexity_score": 130,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 3,
+    "pseudocode_lines": 35,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
-      "negative_offset", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_fstream.cpp_filebuf_ctor_FUN_0060bddd", 
-      "addr": "0060bddd"
-    }, 
-    {
-      "name": "crt_fstream.cpp_filebuf_open_FUN_00608c15", 
-      "addr": "00608c15"
-    }, 
-    {
-      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc", 
-      "addr": "006061fc"
-    }, 
-    {
-      "name": "crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815", 
-      "addr": "0060b8da"
-    }, 
-    {
-      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
-      "addr": "00606020"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomVirtualBaseDescriptor", 
-      "name": "g_FStreamBase_VirtualBaseLayout", 
-      "addr": "00665ec8", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_FStreamBase_Destructor", 
-      "addr": "00665ed4", 
-      "value": "00606509"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_FStreamBase_IOSDestructor", 
-      "addr": "00665edc", 
-      "value": "006064f1"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 19, 
-      "match": "piVar2[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;"
-    }, 
-    {
-      "line": 22, 
-      "match": "this_ptr_00[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pcVar1 = this_ptr_00[-1].__unbuffered_get_area + 4;"
-    }, 
-    {
-      "line": 29, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00,unaff_EBX,"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr_00,(char *)buffer_size,in_stack_0000001c,in_stack_00000020);"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr_00,(char *)buffer_size,in_stack_0000001c,in_stack_00000020);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00606456", 
-    "signature": "void crt_fstream.cpp_fstreambase_constructor_FUN_00606456(fstreambase * this_ptr, int ctor_flags, int fd, int mode, char * buffer, SIZE_T buffer_size)", 
-    "address_range": [
-      [
-        "00606456", 
-        "006064f0"
-      ]
-    ], 
-    "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "fstreambase *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "ctor_flags"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "fd"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "mode"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "typedef SIZE_T ULONG_PTR", 
-        "size": 4, 
-        "name": "buffer_size"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+      "unaffected_reg",
+      "stack_param",
+      "negative_offset"
+    ],
+    "total_lines": 104
+  },
   "cross_references": [
     {
-      "from_addr": "005ff684", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fstream.cpp_ifstream_constructor_FUN_005ff664", 
-      "addr": "005ff664"
-    }, 
+      "addr": "005ff664",
+      "from_addr": "005ff684",
+      "name": "crt_fstream.cpp_ifstream_constructor_FUN_005ff664",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ff730", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fstream.cpp_ofstream_constructor_FUN_005ff710", 
-      "addr": "005ff710"
+      "addr": "005ff710",
+      "from_addr": "005ff730",
+      "name": "crt_fstream.cpp_ofstream_constructor_FUN_005ff710",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00606456",
+    "address_range": [
+      [
+        "00606456",
+        "006064f0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456",
+    "signature": "void crt_fstream.cpp_fstreambase_constructor_FUN_00606456(fstreambase * this_ptr, int ctor_flags, int fd, int mode, char * buffer, SIZE_T buffer_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060bddd",
+      "name": "crt_fstream.cpp_filebuf_ctor_FUN_0060bddd"
+    },
+    {
+      "addr": "00608c15",
+      "name": "crt_fstream.cpp_filebuf_open_FUN_00608c15"
+    },
+    {
+      "addr": "006061fc",
+      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc"
+    },
+    {
+      "addr": "0060b8da",
+      "name": "crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815"
+    },
+    {
+      "addr": "00606020",
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00665ec8",
+      "name": "g_FStreamBase_VirtualBaseLayout",
+      "type": "WatcomVirtualBaseDescriptor",
+      "value": null
+    },
+    {
+      "addr": "00665ed4",
+      "name": "g_FStreamBase_Destructor",
+      "type": "void*",
+      "value": "00606509"
+    },
+    {
+      "addr": "00665edc",
+      "name": "g_FStreamBase_IOSDestructor",
+      "type": "void*",
+      "value": "006064f1"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "fstreambase *"
+      },
+      {
+        "is_param": true,
+        "name": "ctor_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "fd",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 24,
+        "size": 4,
+        "type": "typedef SIZE_T ULONG_PTR"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "piVar2[-2].",
+      "text": "this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "this_ptr_00[-1].",
+      "text": "pcVar1 = this_ptr_00[-1].__unbuffered_get_area + 4;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBX",
+      "text": "((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00,unaff_EBX,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_0000001c",
+      "text": "(this_ptr_00,(char *)buffer_size,in_stack_0000001c,in_stack_00000020);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000020",
+      "text": "(this_ptr_00,(char *)buffer_size,in_stack_0000001c,in_stack_00000020);",
+      "type": "stack_param"
     }
   ]
 }

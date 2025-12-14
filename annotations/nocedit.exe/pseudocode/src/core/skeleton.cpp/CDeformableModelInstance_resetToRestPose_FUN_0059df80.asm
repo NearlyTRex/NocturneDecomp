@@ -33,14 +33,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 0059df83
     PUSH EDX                            ; 0059df87
     XOR ESI,ESI                         ; 0059df88
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0059df8a | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0059df8a
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0059df8f
     MOV ECX,dword ptr [EAX + 0x28558]   ; 0059df92
     MOV EBP,EAX                         ; 0059df98
     TEST ECX,ECX                        ; 0059df9a
-    JLE 0x0059dfd4                      ; 0059df9c | LAB_0059dfd4
-        ;   XREF to: 0059dfd4 (CONDITIONAL_JUMP)
+    JLE 0x0059dfd4                      ; 0059df9c
+        ;   XREF to: 0059dfd4 (CONDITIONAL_JUMP)  ; LAB_0059dfd4
     PUSH EDI                            ; 0059df9e
     MOV EDI,dword ptr [ESP + 0x14]      ; 0059df9f
     MOV EBX,dword ptr [ESP + 0x14]      ; 0059dfa3
@@ -48,8 +48,8 @@ section .text
     PUSH EDI                            ; 0059dfad
         ;   Label: LAB_0059dfad
     ADD EBX,0x4                         ; 0059dfae
-    CALL core_xform.cpp_setIdentityQuaternion_FUN_005f7620 ; 0059dfb1 | void core_xform.cpp_setIdentityQuaternion_FUN_005f7620(CQuaternion4f * quaternion)
-        ;   XREF to: 005f7620 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_setIdentityQuaternion_FUN_005f7620 ; 0059dfb1
+        ;   XREF to: 005f7620 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityQuaternion_FUN_005f7620(CQuaternion4f * quaternion)
     INC ESI                             ; 0059dfb6
     FLD float ptr [EBX + 0x510]         ; 0059dfb7
     ADD ESP,0x4                         ; 0059dfbd
@@ -57,8 +57,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x28558]   ; 0059dfc6
     ADD EDI,0x10                        ; 0059dfcc
     CMP ESI,EAX                         ; 0059dfcf
-    JL 0x0059dfad                       ; 0059dfd1 | LAB_0059dfad
-        ;   XREF to: 0059dfad (CONDITIONAL_JUMP)
+    JL 0x0059dfad                       ; 0059dfd1
+        ;   XREF to: 0059dfad (CONDITIONAL_JUMP)  ; LAB_0059dfad
     POP EDI                             ; 0059dfd3
     MOV EBX,dword ptr [ESP + 0x10]      ; 0059dfd4
         ;   Label: LAB_0059dfd4

@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 55, 
-    "assembly_lines": 26, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }, 
-    {
-      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
-      "addr": "005ede70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shoveit_kfm_00649b9a", 
-      "addr": "00649b9a", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_00662bd4", 
-      "addr": "00662bd4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00588ba0", 
-    "signature": "CShovel * core_shovel.cpp_CShovel_ctor_FUN_00588ba0(CShovel * this_ptr)", 
-    "address_range": [
-      [
-        "00588ba0", 
-        "00588c1d"
-      ]
-    ], 
-    "name": "core_shovel.cpp_CShovel_ctor_FUN_00588ba0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CShovel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 26,
+    "complexity_score": 29,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
+  },
   "cross_references": [
     {
-      "from_addr": "00588b7a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_shovel.cpp_FUN_00588b60", 
-      "addr": "00588b60"
+      "addr": "00588b60",
+      "from_addr": "00588b7a",
+      "name": "core_shovel.cpp_FUN_00588b60",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00588ba0",
+    "address_range": [
+      [
+        "00588ba0",
+        "00588c1d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shovel.cpp_CShovel_ctor_FUN_00588ba0",
+    "signature": "CShovel * core_shovel.cpp_CShovel_ctor_FUN_00588ba0(CShovel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "005ede70",
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649b9a",
+      "name": "s_shoveit_kfm_00649b9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00662bd4",
+      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_00662bd4",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShovel *"
+      }
+    ]
+  },
+  "suspects": []
 }

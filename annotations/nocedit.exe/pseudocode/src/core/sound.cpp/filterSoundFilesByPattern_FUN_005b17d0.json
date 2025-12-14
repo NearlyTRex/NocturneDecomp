@@ -1,115 +1,115 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 77, 
-    "pseudocode_lines": 42, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 117, 
-    "assembly_lines": 75, 
-    "suspect_count": 3, 
+    "assembly_lines": 75,
+    "complexity_score": 77,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 42,
+    "suspect_count": 3,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
-      "addr": "004a2f70"
-    }, 
-    {
-      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20", 
-      "addr": "004a6e20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CStrList", 
-      "name": "g_SoundFileList", 
-      "addr": "03f6b128", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundMatchCount", 
-      "addr": "03f6b138", 
-      "value": null
-    }, 
-    {
-      "type": "char[40][40]", 
-      "name": "g_SoundMatchedFilenames", 
-      "addr": "03f6b140", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6b141", 
-      "addr": "03f6b141", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6b142", 
-      "addr": "03f6b142", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6b143", 
-      "addr": "03f6b143", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CStrList *unaff_EBP;"
-    }, 
-    {
-      "line": 21, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(wildcard_pattern,pcVar2,(int)unaff_EBP);"
-    }, 
-    {
-      "line": 23, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = &g_SoundFileList;"
-    }
-  ], 
+    ],
+    "total_lines": 117
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005b17d0", 
-    "signature": "void core_sound.cpp_filterSoundFilesByPattern_FUN_005b17d0(char * wildcard_pattern)", 
+    "address": "005b17d0",
     "address_range": [
       [
-        "005b17d0", 
+        "005b17d0",
         "005b1865"
       ]
-    ], 
-    "name": "core_sound.cpp_filterSoundFilesByPattern_FUN_005b17d0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_filterSoundFilesByPattern_FUN_005b17d0",
+    "signature": "void core_sound.cpp_filterSoundFilesByPattern_FUN_005b17d0(char * wildcard_pattern)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a2f70",
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "004a6e20",
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f6b128",
+      "name": "g_SoundFileList",
+      "type": "CStrList",
+      "value": null
+    },
+    {
+      "addr": "03f6b138",
+      "name": "g_SoundMatchCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b140",
+      "name": "g_SoundMatchedFilenames",
+      "type": "char[40][40]",
+      "value": null
+    },
+    {
+      "addr": "03f6b141",
+      "name": "DAT_03f6b141",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6b142",
+      "name": "DAT_03f6b142",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6b143",
+      "name": "DAT_03f6b143",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "wildcard_pattern"
+        "is_param": true,
+        "name": "wildcard_pattern",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "text": "CStrList *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "text": "(wildcard_pattern,pcVar2,(int)unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = &g_SoundFileList;",
+      "type": "unaffected_reg"
+    }
+  ]
 }

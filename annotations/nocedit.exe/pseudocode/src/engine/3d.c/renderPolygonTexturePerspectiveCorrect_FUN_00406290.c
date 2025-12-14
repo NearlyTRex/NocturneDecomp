@@ -42,9 +42,7 @@ engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimi
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
     iVar2 = 0;
-    for (iVar6 = 0;
-        SBORROW /* signed borrow */4(iVar6,*(int *)(in_stack_0000000c + 4) * 3) !=
-        iVar6 + *(int *)(in_stack_0000000c + 4) * -3 < 0; iVar6 = iVar6 + 3) {
+    for (iVar6 = 0; iVar6 < *(int *)(in_stack_0000000c + 4) * 3; iVar6 = iVar6 + 3) {
       *(int *)((int)g_ProcessedVertexIndices + iVar2) = (pSVar4->base).type;
       fVar3 = (float)(pSVar4->base).count;
       fVar5 = (float)(pSVar4->surface_normal).A;

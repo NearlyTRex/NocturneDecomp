@@ -33,22 +33,22 @@ section .text
     MOV EDX,dword ptr [EDI + 0x3ce8c]   ; 0043e0dc
     XOR EBX,EBX                         ; 0043e0e2
     TEST EDX,EDX                        ; 0043e0e4
-    JLE 0x0043e0fc                      ; 0043e0e6 | LAB_0043e0fc
-        ;   XREF to: 0043e0fc (CONDITIONAL_JUMP)
+    JLE 0x0043e0fc                      ; 0043e0e6
+        ;   XREF to: 0043e0fc (CONDITIONAL_JUMP)  ; LAB_0043e0fc
     LEA ESI,[EDI + 0x3ce90]             ; 0043e0e8
     PUSH ESI                            ; 0043e0ee
         ;   Label: LAB_0043e0ee
     PUSH EBP                            ; 0043e0ef
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 0043e0f0 | int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strcmp_FUN_005fef20 ; 0043e0f0
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 0043e0f5
     TEST EAX,EAX                        ; 0043e0f8
-    JNZ 0x0043e12d                      ; 0043e0fa | LAB_0043e12d
-        ;   XREF to: 0043e12d (CONDITIONAL_JUMP)
+    JNZ 0x0043e12d                      ; 0043e0fa
+        ;   XREF to: 0043e12d (CONDITIONAL_JUMP)  ; LAB_0043e12d
     CMP EBX,dword ptr [EDI + 0x3ce8c]   ; 0043e0fc
         ;   Label: LAB_0043e0fc
-    JZ 0x0043e140                       ; 0043e102 | LAB_0043e140
-        ;   XREF to: 0043e140 (CONDITIONAL_JUMP)
+    JZ 0x0043e140                       ; 0043e102
+        ;   XREF to: 0043e140 (CONDITIONAL_JUMP)  ; LAB_0043e140
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0043e104
         ;   Label: LAB_0043e104
     LEA EAX,[ESI*0x8 + 0x0]             ; 0043e108
@@ -67,20 +67,20 @@ section .text
     MOV ECX,dword ptr [EDI + 0x3ce8c]   ; 0043e12e
     ADD ESI,0xac                        ; 0043e134
     CMP EBX,ECX                         ; 0043e13a
-    JL 0x0043e0ee                       ; 0043e13c | LAB_0043e0ee
-        ;   XREF to: 0043e0ee (CONDITIONAL_JUMP)
-    JMP 0x0043e0fc                      ; 0043e13e | LAB_0043e0fc
-        ;   XREF to: 0043e0fc (UNCONDITIONAL_JUMP)
+    JL 0x0043e0ee                       ; 0043e13c
+        ;   XREF to: 0043e0ee (CONDITIONAL_JUMP)  ; LAB_0043e0ee
+    JMP 0x0043e0fc                      ; 0043e13e
+        ;   XREF to: 0043e0fc (UNCONDITIONAL_JUMP)  ; LAB_0043e0fc
     PUSH EBP                            ; 0043e140
         ;   Label: LAB_0043e140
-    MOV EAX,0x618ad4                    ; 0043e141 | = "..\\core\\cloth.cpp" | s_core_cloth_cpp_00618ad4 = ..\core\cloth.cpp
+    MOV EAX,0x618ad4                    ; 0043e141 | = "..\\core\\cloth.cpp"
     MOV EDX,0xaa7                       ; 0043e146
-    PUSH 0x618ae6                       ; 0043e14b | = "CCloth::grabCloth - Can't find bone %s" | s_CCloth_grabCloth_Can_t_f_00618ae6 = CCloth::grabCloth - Can't find bone %s
-    MOV [0x02f0ca48],EAX                ; 0043e150 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 0043e155 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0043e15b | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x618ae6                       ; 0043e14b | = "CCloth::grabCloth - Can't find bone %s"
+    MOV [0x02f0ca48],EAX                ; 0043e150 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 0043e155 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0043e15b
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 0043e160
-    JMP 0x0043e104                      ; 0043e163 | LAB_0043e104
-        ;   XREF to: 0043e104 (UNCONDITIONAL_JUMP)
+    JMP 0x0043e104                      ; 0043e163
+        ;   XREF to: 0043e104 (UNCONDITIONAL_JUMP)  ; LAB_0043e104
 

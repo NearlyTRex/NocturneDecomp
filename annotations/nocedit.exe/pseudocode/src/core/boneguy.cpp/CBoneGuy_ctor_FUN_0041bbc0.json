@@ -1,332 +1,332 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 291, 
-    "pseudocode_lines": 71, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 149, 
-    "assembly_lines": 78, 
-    "suspect_count": 21, 
+    "assembly_lines": 78,
+    "complexity_score": 291,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 9,
+    "pseudocode_lines": 71,
+    "suspect_count": 21,
     "suspect_types": [
-      "extra_output", 
+      "extra_output",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
-      "addr": "0040cc10"
-    }, 
-    {
-      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70", 
-      "addr": "0040cc70"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
-      "addr": "004a9500"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }, 
-    {
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
-      "addr": "005fe667"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_boneguy_dfm_00615f7d", 
-      "addr": "00615f7d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_boneguydie_00615f89", 
-      "addr": "00615f89", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_oneguydie_00615f8a", 
-      "addr": "00615f8a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_neguydie_00615f8b", 
-      "addr": "00615f8b", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_eguydie_00615f8c", 
-      "addr": "00615f8c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065af60", 
-      "addr": "0065af60", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "PTR_FUN_0065af61+3", 
-      "addr": "0065af64", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CBoneGuyVTable", 
-      "addr": "0065af74", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_SBoneGuyBoxTypeInfo", 
-      "addr": "0065b0e0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CBoneGuy *extraout_EAX;"
-    }, 
-    {
-      "line": 30, 
-      "match": "(CDeformableModelInstance *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((CDeformableModelInstance *)((int)dest + -0xbde4),\"boneguy.dfm\");"
-    }, 
-    {
-      "line": 31, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x9160) = 0x3f19999a;"
-    }, 
-    {
-      "line": 32, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x915c) = 0x3f666666;"
-    }, 
-    {
-      "line": 34, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0xbe40) = 1;"
-    }, 
-    {
-      "line": 35, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pcVar8 = (char *)((int)dest + -0x6c);"
-    }, 
-    {
-      "line": 36, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + 0x5a0) = 0;"
-    }, 
-    {
-      "line": 38, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x992c) = 2;"
-    }, 
-    {
-      "line": 40, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -8) = 0x41200000;"
-    }, 
-    {
-      "line": 41, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x9158) = uVar2;"
-    }, 
-    {
-      "line": 42, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x9154) = uVar3;"
-    }, 
-    {
-      "line": 52, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -4) = 0;"
-    }, 
-    {
-      "line": 55, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x7c) = 0;"
-    }, 
-    {
-      "line": 56, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x78) = 0;"
-    }, 
-    {
-      "line": 57, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x74) = 0;"
-    }, 
-    {
-      "line": 58, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x8c) = 0x40c00000;"
-    }, 
-    {
-      "line": 59, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)dest + -0x80) = iVar5;"
-    }, 
-    {
-      "line": 69, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)dest + -0xbe34) = (int)ROUND(dVar10);"
-    }, 
-    {
-      "line": 71, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)dest + -0xbe30) = (int)ROUND(dVar10);"
-    }, 
-    {
-      "line": 73, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)dest + -0xbe2c) = (int)ROUND(dVar10);"
-    }, 
-    {
-      "line": 74, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return extraout_EAX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0041bbc0", 
-    "signature": "CBoneGuy * core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy * this_ptr)", 
-    "address_range": [
-      [
-        "0041bbc0", 
-        "0041bcf1"
-      ]
-    ], 
-    "name": "core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBoneGuy *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 149
+  },
   "cross_references": [
     {
-      "from_addr": "0041b83a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_constructor_FUN_0041b820", 
-      "addr": "0041b820"
+      "addr": "0041b820",
+      "from_addr": "0041b83a",
+      "name": "core_boneguy.cpp_constructor_FUN_0041b820",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041bbc0",
+    "address_range": [
+      [
+        "0041bbc0",
+        "0041bcf1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0",
+    "signature": "CBoneGuy * core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "0040cc70",
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "004a9500",
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    },
+    {
+      "addr": "005fe667",
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615f7d",
+      "name": "s_boneguy_dfm_00615f7d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615f89",
+      "name": "s_boneguydie_00615f89",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615f8a",
+      "name": "s_oneguydie_00615f8a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00615f8b",
+      "name": "s_neguydie_00615f8b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00615f8c",
+      "name": "s_eguydie_00615f8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065af60",
+      "name": "DAT_0065af60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065af64",
+      "name": "PTR_FUN_0065af61+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065af74",
+      "name": "g_CBoneGuyVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    },
+    {
+      "addr": "0065b0e0",
+      "name": "g_SBoneGuyBoxTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneGuy *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "text": "CBoneGuy *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CDeformableModelInstance *)((int)",
+      "text": "((CDeformableModelInstance *)((int)dest + -0xbde4),\"boneguy.dfm\");",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0x9160) = 0x3f19999a;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0x915c) = 0x3f666666;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0xbe40) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(char *)((int)",
+      "text": "pcVar8 = (char *)((int)dest + -0x6c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + 0x5a0) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0x992c) = 2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -8) = 0x41200000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0x9158) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0x9154) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0x7c) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0x78) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0x74) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)dest + -0x8c) = 0x40c00000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)dest + -0x80) = iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)dest + -0xbe34) = (int)ROUND(dVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)dest + -0xbe30) = (int)ROUND(dVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)dest + -0xbe2c) = (int)ROUND(dVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 74,
+      "match": "extraout_EAX",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
     }
   ]
 }

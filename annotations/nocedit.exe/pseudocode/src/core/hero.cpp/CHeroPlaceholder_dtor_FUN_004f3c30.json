@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 59, 
-    "assembly_lines": 41, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30", 
-      "addr": "00408a30"
-    }, 
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
-      "addr": "005fe632"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CHeroPlaceholderVTable", 
-      "addr": "0065f844", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CHeroPlaceholderTypeInfo", 
-      "addr": "0065f930", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 41,
+    "complexity_score": 18,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 59
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004f3c30", 
-    "signature": "CHeroPlaceholder * core_hero.cpp_CHeroPlaceholder_dtor_FUN_004f3c30(CHeroPlaceholder * this_ptr, uint d1, uint d2)", 
+    "address": "004f3c30",
     "address_range": [
       [
-        "004f3c30", 
+        "004f3c30",
         "004f3c87"
       ]
-    ], 
-    "name": "core_hero.cpp_CHeroPlaceholder_dtor_FUN_004f3c30"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHeroPlaceholder_dtor_FUN_004f3c30",
+    "signature": "CHeroPlaceholder * core_hero.cpp_CHeroPlaceholder_dtor_FUN_004f3c30(CHeroPlaceholder * this_ptr, uint d1, uint d2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a30",
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30"
+    },
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "005fe632",
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065f844",
+      "name": "g_CHeroPlaceholderVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    },
+    {
+      "addr": "0065f930",
+      "name": "g_CHeroPlaceholderTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CHeroPlaceholder *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHeroPlaceholder *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d1"
-      }, 
+        "is_param": true,
+        "name": "d1",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d2"
+        "is_param": true,
+        "name": "d2",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

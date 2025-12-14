@@ -1,132 +1,132 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 59, 
-    "pseudocode_lines": 59, 
-    "cross_reference_count": 2, 
-    "global_count": 9, 
-    "total_lines": 213, 
-    "assembly_lines": 154, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
-      "addr": "0040c6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CGun_00630ab2", 
-      "addr": "00630ab2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CShotgun_00630ab7", 
-      "addr": "00630ab7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CCrossbow_00630ac0", 
-      "addr": "00630ac0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CTommyGun_00630aca", 
-      "addr": "00630aca", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CElephantGun_00630ad4", 
-      "addr": "00630ad4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CFlameThrower_00630ae1", 
-      "addr": "00630ae1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CLightGun_00630aef", 
-      "addr": "00630aef", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CMelee_00630af9", 
-      "addr": "00630af9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDynamite_00630b00", 
-      "addr": "00630b00", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ffe70", 
-    "signature": "int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)", 
-    "address_range": [
-      [
-        "004ffe70", 
-        "004fff99"
-      ]
-    ], 
-    "name": "core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CInventory *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "weapon_actor"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "weapon_category"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 154,
+    "complexity_score": 54,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 54,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 208
+  },
   "cross_references": [
     {
-      "from_addr": "00501282", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690", 
-      "addr": "00500690"
-    }, 
+      "addr": "00500690",
+      "from_addr": "00501282",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004febac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10", 
-      "addr": "004feb10"
+      "addr": "004feb10",
+      "from_addr": "004febac",
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004ffe70",
+    "address_range": [
+      [
+        "004ffe70",
+        "004fff99"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70",
+    "signature": "int core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70(CInventory * this_ptr, CDemonActor * weapon_actor, int weapon_category)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c6d0",
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00630ab2",
+      "name": "s_CGun_00630ab2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630ab7",
+      "name": "s_CShotgun_00630ab7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630ac0",
+      "name": "s_CCrossbow_00630ac0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630aca",
+      "name": "s_CTommyGun_00630aca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630ad4",
+      "name": "s_CElephantGun_00630ad4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630ae1",
+      "name": "s_CFlameThrower_00630ae1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630aef",
+      "name": "s_CLightGun_00630aef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630af9",
+      "name": "s_CMelee_00630af9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630b00",
+      "name": "s_CDynamite_00630b00",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "weapon_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "weapon_category",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

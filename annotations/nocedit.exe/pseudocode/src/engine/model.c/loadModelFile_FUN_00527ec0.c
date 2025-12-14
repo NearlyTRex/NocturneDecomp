@@ -54,8 +54,7 @@ LAB_00527ee6:
     g_CurrentFilename = "..\\engine\\model.c";
     core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffbc);
   }
-  pSVar2 = (SMRGLHeaderExtended *)
-           shape_memdbg_cpp_debugMalloc_FUN_0050f250(count,"..\\engine\\model.c",0xf8);
+  pSVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(count,"..\\engine\\model.c",0xf8);
   if (pSVar2 == (SMRGLHeaderExtended *)0x0) {
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffc4,"Out of model memory: %s");
     g_CurrentFilename = "..\\engine\\model.c";

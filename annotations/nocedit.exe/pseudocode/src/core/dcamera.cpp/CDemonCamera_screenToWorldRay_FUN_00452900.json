@@ -1,257 +1,257 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 232, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 95, 
-    "assembly_lines": 58, 
-    "suspect_count": 17, 
+    "assembly_lines": 58,
+    "complexity_score": 232,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 17,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0", 
-      "addr": "0044d2a0"
-    }, 
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370", 
-      "addr": "0044d370"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_CameraFixedPointToFloatScale", 
-      "addr": "0061a342", 
-      "value": "0.00390625"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_ffffffc0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffc0;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_ffffffc4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CVector3i *in_stack_ffffffc4;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_ffffffc0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,screen_coords,depth,in_stack_ffffffc0);"
-    }, 
-    {
-      "line": 24, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&CStack_18 + (uint)bVar2 * -8) ="
-    }, 
-    {
-      "line": 25, 
-      "match": "&stack0xffffffd4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8);"
-    }, 
-    {
-      "line": 26, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&CStack_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4) ="
-    }, 
-    {
-      "line": 27, 
-      "match": "&stack0xffffffd8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_stack_ffffffc4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CDemonCamera *)output_ray,&CStack_18,in_stack_ffffffc4);"
-    }, 
-    {
-      "line": 31, 
-      "match": "&stack0xffffffcc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) ="
-    }, 
-    {
-      "line": 31, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) ="
-    }, 
-    {
-      "line": 32, 
-      "match": "&stack0xffffffe4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8);"
-    }, 
-    {
-      "line": 32, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8);"
-    }, 
-    {
-      "line": 33, 
-      "match": "&stack0xffffffd0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) ="
-    }, 
-    {
-      "line": 33, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) ="
-    }, 
-    {
-      "line": 34, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&CStack_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8);"
-    }
-  ], 
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00452900", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera * this_ptr, CVector3f * output_ray, CVector3i * screen_coords, int depth)", 
+    "address": "00452900",
     "address_range": [
       [
-        "00452900", 
+        "00452900",
         "00452994"
       ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900",
+    "signature": "void core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900(CDemonCamera * this_ptr, CVector3f * output_ray, CVector3i * screen_coords, int depth)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044d2a0",
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0"
+    },
+    {
+      "addr": "0044d370",
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061a342",
+      "name": "g_CameraFixedPointToFloatScale",
+      "type": "double",
+      "value": "0.00390625"
+    }
+  ],
   "stack_frame": {
-    "local_size": 68, 
+    "frame_size": 84,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_34"
-      }, 
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "output_ray"
-      }, 
+        "is_param": true,
+        "name": "output_ray",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "screen_coords"
-      }, 
+        "is_param": true,
+        "name": "screen_coords",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "depth"
+        "is_param": true,
+        "name": "depth",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 84, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_ffffffc0",
+      "text": "int in_stack_ffffffc0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffffc4",
+      "text": "CVector3i *in_stack_ffffffc4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_ffffffc0",
+      "text": "(this_ptr,screen_coords,depth,in_stack_ffffffc0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_18 + (uint)bVar2 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffffd4",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xffffffd8",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_ffffffc4",
+      "text": "((CDemonCamera *)output_ray,&CStack_18,in_stack_ffffffc4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 31,
+      "match": "&stack0xffffffcc",
+      "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xffffffe4",
+      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 33,
+      "match": "&stack0xffffffd0",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "pointer_cast"
+    }
+  ]
 }

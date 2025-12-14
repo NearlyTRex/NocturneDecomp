@@ -17,10 +17,10 @@
 
 section .text
 
-    PUSH 0x3f9b8a0                      ; 0060a0ec | ReentrantCriticalSection g_GlobalSystemCriticalSection
+    PUSH 0x3f9b8a0                      ; 0060a0ec | g_GlobalSystemCriticalSection
         ;   Label: crt_sync.c_enter_global_critical_section_FUN_0060a0ec
-    CALL crt_sync.c_enter_reentrant_critical_section_FUN_0060a060 ; 0060a0f1 | void crt_sync.c_enter_reentrant_critical_section_FUN_0060a060(ReentrantCriticalSection * rcs)
-        ;   XREF to: 0060a060 (UNCONDITIONAL_CALL)
+    CALL crt_sync.c_enter_reentrant_critical_section_FUN_0060a060 ; 0060a0f1
+        ;   XREF to: 0060a060 (UNCONDITIONAL_CALL)  ; void crt_sync.c_enter_reentrant_critical_section_FUN_0060a060(ReentrantCriticalSection * rcs)
     ADD ESP,0x4                         ; 0060a0f6
     RET                                 ; 0060a0f9
 

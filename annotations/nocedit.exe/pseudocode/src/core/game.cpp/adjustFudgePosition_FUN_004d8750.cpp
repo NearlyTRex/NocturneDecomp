@@ -12,6 +12,7 @@ core_game_cpp_adjustFudgePosition_FUN_004d8750
 
 {
   int iVar1;
+  int iVar2;
   uint uStack00000018;
   float in_stack_00000024;
   uint uStack0000002c;
@@ -55,8 +56,9 @@ core_game_cpp_adjustFudgePosition_FUN_004d8750
            *(float *)(this_ptr->field102_0x9bc + 4) - in_stack_00000074;
     }
     uStack00000068 = 0x4d8863;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x10);
-    if (iVar1 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x10);
+    iVar1 = 0;
+    if (iVar2 != 0) {
       iVar1 = this_ptr->field102_0x9bc;
       *(float *)(iVar1 + 4) = *(float *)(iVar1 + 4) + in_stack_00000088;
       return iVar1;

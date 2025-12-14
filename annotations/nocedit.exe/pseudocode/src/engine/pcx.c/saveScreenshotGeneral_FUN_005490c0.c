@@ -39,8 +39,8 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
   sStack_3e = (short)g_WindowWidth;
   sStack_3c = (short)g_WindowHeight;
   if ((g_WindowWidth == 0x280) && (g_WindowHeight == 0xf0)) {
-    sStack_3c = (short)g_WindowHeight * 2;
-    sStack_7a = (short)g_WindowHeight * 2 + -1;
+    sStack_3c = 0x1e0;
+    sStack_7a = 0x1df;
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (filename,(char *)0x0,"wb","..\\engine\\pcx.c",0xec);

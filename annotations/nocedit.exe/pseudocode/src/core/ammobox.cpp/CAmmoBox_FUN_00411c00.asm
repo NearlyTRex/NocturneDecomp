@@ -19,8 +19,8 @@ section .text
     PUSH EDX                            ; 00411c08
     ADD EAX,0x158                       ; 00411c09
     PUSH EAX                            ; 00411c0e
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0 ; 00411c0f | void core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0(CKeyFramedModelInstance * this_ptr, FILE * file_handle)
-        ;   XREF to: 0047edd0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0 ; 00411c0f
+        ;   XREF to: 0047edd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0(CKeyFramedModelInstance * this_ptr, FILE * file_handle)
     ADD ESP,0x8                         ; 00411c14
     RET                                 ; 00411c17
 

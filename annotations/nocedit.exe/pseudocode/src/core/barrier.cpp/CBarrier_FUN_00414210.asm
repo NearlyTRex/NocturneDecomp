@@ -17,6 +17,6 @@ section .text
         ;   Label: core_barrier.cpp_CBarrier_FUN_00414210
     MOV EBX,dword ptr [ESP + 0x8]       ; 00414211
     PUSH EBX                            ; 00414215
-    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 00414216 | void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 00414216
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
 

@@ -43,29 +43,29 @@ section .text
     PUSH ECX                            ; 00518415
     ADD ESI,EAX                         ; 00518416
     PUSH ESI                            ; 00518418
-    CALL shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10 ; 00518419 | void shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10(CLodEdge * this_ptr, int tri_index)
-        ;   XREF to: 00515d10 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10 ; 00518419
+        ;   XREF to: 00515d10 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10(CLodEdge * this_ptr, int tri_index)
     MOV EDX,dword ptr [ESI + 0x24]      ; 0051841e
     ADD ESP,0x8                         ; 00518421
     TEST EDX,EDX                        ; 00518424
-    JZ 0x0051844e                       ; 00518426 | LAB_0051844e
-        ;   XREF to: 0051844e (CONDITIONAL_JUMP)
+    JZ 0x0051844e                       ; 00518426
+        ;   XREF to: 0051844e (CONDITIONAL_JUMP)  ; LAB_0051844e
     MOV EDX,EDI                         ; 00518428
         ;   Label: LAB_00518428
     MOV ECX,dword ptr [EDI + 0x34]      ; 0051842a
     XOR EAX,EAX                         ; 0051842d
     CMP EBX,ECX                         ; 0051842f
-    JZ 0x00518441                       ; 00518431 | LAB_00518441
-        ;   XREF to: 00518441 (CONDITIONAL_JUMP)
+    JZ 0x00518441                       ; 00518431
+        ;   XREF to: 00518441 (CONDITIONAL_JUMP)  ; LAB_00518441
     INC EAX                             ; 00518433
         ;   Label: LAB_00518433
     ADD EDX,0x4                         ; 00518434
     CMP EAX,0x3                         ; 00518437
-    JGE 0x00518441                      ; 0051843a | LAB_00518441
-        ;   XREF to: 00518441 (CONDITIONAL_JUMP)
+    JGE 0x00518441                      ; 0051843a
+        ;   XREF to: 00518441 (CONDITIONAL_JUMP)  ; LAB_00518441
     CMP EBX,dword ptr [EDX + 0x34]      ; 0051843c
-    JNZ 0x00518433                      ; 0051843f | LAB_00518433
-        ;   XREF to: 00518433 (CONDITIONAL_JUMP)
+    JNZ 0x00518433                      ; 0051843f
+        ;   XREF to: 00518433 (CONDITIONAL_JUMP)  ; LAB_00518433
     MOV dword ptr [EDI + EAX*0x4 + 0x34],0xffffffff ; 00518441
         ;   Label: LAB_00518441
     POP EBP                             ; 00518449
@@ -80,17 +80,17 @@ section .text
     PUSH EBX                            ; 0051845e
     ADD EAX,EDX                         ; 0051845f
     PUSH EAX                            ; 00518461
-    CALL shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00 ; 00518462 | void shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00(CLodVert * this_ptr, int edge_index)
-        ;   XREF to: 00515e00 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00 ; 00518462
+        ;   XREF to: 00515e00 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00(CLodVert * this_ptr, int edge_index)
     IMUL EAX,dword ptr [ESI + 0x4],0x4c4 ; 00518467
     ADD ESP,0x8                         ; 0051846e
     MOV EDX,dword ptr [EBP + 0x4]       ; 00518471
     PUSH EBX                            ; 00518474
     ADD EAX,EDX                         ; 00518475
     PUSH EAX                            ; 00518477
-    CALL shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00 ; 00518478 | void shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00(CLodVert * this_ptr, int edge_index)
-        ;   XREF to: 00515e00 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00 ; 00518478
+        ;   XREF to: 00515e00 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00(CLodVert * this_ptr, int edge_index)
     ADD ESP,0x8                         ; 0051847d
-    JMP 0x00518428                      ; 00518480 | LAB_00518428
-        ;   XREF to: 00518428 (UNCONDITIONAL_JUMP)
+    JMP 0x00518428                      ; 00518480
+        ;   XREF to: 00518428 (UNCONDITIONAL_JUMP)  ; LAB_00518428
 

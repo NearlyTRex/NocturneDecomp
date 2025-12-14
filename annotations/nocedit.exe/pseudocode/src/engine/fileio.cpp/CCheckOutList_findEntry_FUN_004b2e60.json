@@ -1,112 +1,112 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 9, 
-    "global_count": 0, 
-    "total_lines": 64, 
-    "assembly_lines": 44, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004b2e60", 
-    "signature": "int engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60(CCheckOutList * this_ptr, char * filename)", 
-    "address_range": [
-      [
-        "004b2e60", 
-        "004b2ea6"
-      ]
-    ], 
-    "name": "engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCheckOutList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 44,
+    "complexity_score": 20,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
   "cross_references": [
     {
-      "from_addr": "004b3986", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920", 
-      "addr": "004b3920"
-    }, 
+      "addr": "004b3920",
+      "from_addr": "004b3986",
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b5227", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030", 
-      "addr": "004b5030"
-    }, 
+      "addr": "004b5030",
+      "from_addr": "004b5227",
+      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b4b8a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
-      "addr": "004b4220"
-    }, 
+      "addr": "004b4220",
+      "from_addr": "004b4b8a",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b37c4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0", 
-      "addr": "004b35a0"
-    }, 
+      "addr": "004b35a0",
+      "from_addr": "004b37c4",
+      "name": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b3fbc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50", 
-      "addr": "004b3f50"
-    }, 
+      "addr": "004b3f50",
+      "from_addr": "004b3fbc",
+      "name": "engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b2c33", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60", 
-      "addr": "004b2a60"
-    }, 
+      "addr": "004b2a60",
+      "from_addr": "004b2c33",
+      "name": "engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bbcf1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bbcf1",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ba835", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
-      "addr": "004ba740"
-    }, 
+      "addr": "004ba740",
+      "from_addr": "004ba835",
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b8b92", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
-      "addr": "004b86b0"
+      "addr": "004b86b0",
+      "from_addr": "004b8b92",
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004b2e60",
+    "address_range": [
+      [
+        "004b2e60",
+        "004b2ea6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60",
+    "signature": "int engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60(CCheckOutList * this_ptr, char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCheckOutList *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

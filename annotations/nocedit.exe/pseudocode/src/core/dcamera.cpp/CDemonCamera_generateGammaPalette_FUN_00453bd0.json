@@ -1,229 +1,229 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 154, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 2, 
-    "global_count": 8, 
-    "total_lines": 98, 
-    "assembly_lines": 64, 
-    "suspect_count": 11, 
+    "assembly_lines": 64,
+    "complexity_score": 154,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 8,
+    "pseudocode_lines": 34,
+    "suspect_count": 11,
     "suspect_types": [
-      "extra_output", 
+      "extra_output",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_pow_FUN_005ffd76", 
-      "addr": "005ffd76"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_setFogColor_FUN_005b7b80", 
-      "addr": "005b7b80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_CameraGammaMultiplier", 
-      "addr": "0061a45a", 
-      "value": "0.0000152587890625"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_CameraNormalizer", 
-      "addr": "0061a462", 
-      "value": "0.00392156862745098"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_CameraOutputScale", 
-      "addr": "0061a46a", 
-      "value": "255"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FogColorIndexR", 
-      "addr": "0066ed04", 
-      "value": "0x40"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FogColorIndexG", 
-      "addr": "0066ed08", 
-      "value": "0x40"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FogColorIndexB", 
-      "addr": "0066ed0c", 
-      "value": "0x40"
-    }, 
-    {
-      "type": "uint[256]", 
-      "name": "g_LightmapTexturePalette", 
-      "addr": "00c19dfc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[64]", 
-      "addr": "00c19efc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 14, 
-      "match": "extraout_ST1", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "float10 extraout_ST1;"
-    }, 
-    {
-      "line": 15, 
-      "match": "extraout_ST2", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "float10 extraout_ST2;"
-    }, 
-    {
-      "line": 16, 
-      "match": "extraout_ST3", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "float10 extraout_ST3;"
-    }, 
-    {
-      "line": 24, 
-      "match": "extraout_ST1", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "fVar3 = extraout_ST1;"
-    }, 
-    {
-      "line": 25, 
-      "match": "extraout_ST2", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "exp = extraout_ST2;"
-    }, 
-    {
-      "line": 26, 
-      "match": "extraout_ST3", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)(fVar4 * extraout_ST3));"
-    }, 
-    {
-      "line": 28, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar2 = extraout_EDX + 1;"
-    }, 
-    {
-      "line": 29, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)((int)g_LightmapTexturePalette + extraout_ECX) ="
-    }, 
-    {
-      "line": 29, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_LightmapTexturePalette + extraout_ECX) ="
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00453bd0", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera * this_ptr, int gamma_value)", 
-    "address_range": [
-      [
-        "00453bd0", 
-        "00453c89"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "gamma_value"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 98
+  },
   "cross_references": [
     {
-      "from_addr": "0044c101", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0", 
-      "addr": "0044c0f0"
-    }, 
+      "addr": "0044c0f0",
+      "from_addr": "0044c101",
+      "name": "core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00570d73", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setGamma_FUN_00570d60", 
-      "addr": "00570d60"
+      "addr": "00570d60",
+      "from_addr": "00570d73",
+      "name": "core_set.cpp_CDemonSet_setGamma_FUN_00570d60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00453bd0",
+    "address_range": [
+      [
+        "00453bd0",
+        "00453c89"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0",
+    "signature": "void core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera * this_ptr, int gamma_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ffd76",
+      "name": "crt_math.c_pow_FUN_005ffd76"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005b7b80",
+      "name": "wincore_windll.cpp_setFogColor_FUN_005b7b80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061a45a",
+      "name": "g_CameraGammaMultiplier",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "0061a462",
+      "name": "g_CameraNormalizer",
+      "type": "double",
+      "value": "0.00392156862745098"
+    },
+    {
+      "addr": "0061a46a",
+      "name": "g_CameraOutputScale",
+      "type": "double",
+      "value": "255"
+    },
+    {
+      "addr": "0066ed04",
+      "name": "g_FogColorIndexR",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "0066ed08",
+      "name": "g_FogColorIndexG",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "0066ed0c",
+      "name": "g_FogColorIndexB",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "00c19dfc",
+      "name": "g_LightmapTexturePalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "00c19efc",
+      "name": "g_LightmapTexturePalette[64]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "gamma_value",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_ST1",
+      "text": "float10 extraout_ST1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_ST2",
+      "text": "float10 extraout_ST2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_ST3",
+      "text": "float10 extraout_ST3;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_ST1",
+      "text": "fVar3 = extraout_ST1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_ST2",
+      "text": "exp = extraout_ST2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_ST3",
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)(fVar4 * extraout_ST3));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_EDX",
+      "text": "iVar2 = extraout_EDX + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_ECX",
+      "text": "*(uint *)((int)g_LightmapTexturePalette + extraout_ECX) =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_LightmapTexturePalette + extraout_ECX) =",
+      "type": "pointer_cast"
     }
   ]
 }

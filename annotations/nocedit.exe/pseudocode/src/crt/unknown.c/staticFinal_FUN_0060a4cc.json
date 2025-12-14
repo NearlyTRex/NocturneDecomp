@@ -1,117 +1,117 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 21, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 0, 
-    "global_count": 9, 
-    "total_lines": 65, 
-    "assembly_lines": 44, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_heap.c_CompactHeapBlocks_FUN_0060c920", 
-      "addr": "0060c920"
-    }, 
-    {
-      "name": "crt_sync.c_criticalSectionStub_FUN_00609f20", 
-      "addr": "00609f20"
-    }, 
-    {
-      "name": "crt_unknown.c_DeleteCritcalSectionsMaybe_FUN_00609ff4", 
-      "addr": "00609ff4"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_00609fc8", 
-      "addr": "00609fc8"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_0060a394", 
-      "addr": "0060a394"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_0060ccb4", 
-      "addr": "0060cd20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "PTR_crt_sync.c_ResetCriticalSection_FUN_006853ec", 
-      "addr": "006853ec", 
-      "value": "00609f20"
-    }, 
-    {
-      "type": "ReentrantCriticalSection", 
-      "name": "g_GlobalSystemCriticalSection", 
-      "addr": "03f9b8a0", 
-      "value": null
-    }, 
-    {
-      "type": "ReentrantCriticalSection", 
-      "name": "g_GlobalThreadCriticalSection", 
-      "addr": "03f9b8b0", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_TlsDataBase", 
-      "addr": "03f9b8c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9b8d0", 
-      "addr": "03f9b8d0", 
-      "value": null
-    }, 
-    {
-      "type": "ReentrantCriticalSection", 
-      "name": "g_GlobalMemoryCriticalSection", 
-      "addr": "03f9b9c0", 
-      "value": null
-    }, 
-    {
-      "type": "LPCRITICAL_SECTION", 
-      "name": "g_GlobalInitLock", 
-      "addr": "03f9bfd0", 
-      "value": null
-    }, 
-    {
-      "type": "ReentrantCriticalSection", 
-      "name": "g_GlobalIoCriticalSection", 
-      "addr": "03f9bfe0", 
-      "value": null
-    }, 
-    {
-      "type": "ReentrantCriticalSection", 
-      "name": "g_GlobalRuntimeCriticalSection", 
-      "addr": "03f9bff0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 44,
+    "complexity_score": 21,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 9,
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0060a4cc", 
-    "signature": "void crt_unknown.c_staticFinal_FUN_0060a4cc(void)", 
+    "address": "0060a4cc",
     "address_range": [
       [
-        "0060a4cc", 
+        "0060a4cc",
         "0060a559"
       ]
-    ], 
-    "name": "crt_unknown.c_staticFinal_FUN_0060a4cc"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c_staticFinal_FUN_0060a4cc",
+    "signature": "void crt_unknown.c_staticFinal_FUN_0060a4cc(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060c920",
+      "name": "crt_heap.c_CompactHeapBlocks_FUN_0060c920"
+    },
+    {
+      "addr": "00609f20",
+      "name": "crt_sync.c_criticalSectionStub_FUN_00609f20"
+    },
+    {
+      "addr": "00609ff4",
+      "name": "crt_unknown.c_DeleteCritcalSectionsMaybe_FUN_00609ff4"
+    },
+    {
+      "addr": "00609fc8",
+      "name": "crt_unknown.c_FUN_00609fc8"
+    },
+    {
+      "addr": "0060a394",
+      "name": "crt_unknown.c_FUN_0060a394"
+    },
+    {
+      "addr": "0060cd20",
+      "name": "crt_unknown.c_FUN_0060ccb4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006853ec",
+      "name": "PTR_crt_sync.c_ResetCriticalSection_FUN_006853ec",
+      "type": "void*",
+      "value": "00609f20"
+    },
+    {
+      "addr": "03f9b8a0",
+      "name": "g_GlobalSystemCriticalSection",
+      "type": "ReentrantCriticalSection",
+      "value": null
+    },
+    {
+      "addr": "03f9b8b0",
+      "name": "g_GlobalThreadCriticalSection",
+      "type": "ReentrantCriticalSection",
+      "value": null
+    },
+    {
+      "addr": "03f9b8c0",
+      "name": "g_TlsDataBase",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "03f9b8d0",
+      "name": "DAT_03f9b8d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9b9c0",
+      "name": "g_GlobalMemoryCriticalSection",
+      "type": "ReentrantCriticalSection",
+      "value": null
+    },
+    {
+      "addr": "03f9bfd0",
+      "name": "g_GlobalInitLock",
+      "type": "LPCRITICAL_SECTION",
+      "value": null
+    },
+    {
+      "addr": "03f9bfe0",
+      "name": "g_GlobalIoCriticalSection",
+      "type": "ReentrantCriticalSection",
+      "value": null
+    },
+    {
+      "addr": "03f9bff0",
+      "name": "g_GlobalRuntimeCriticalSection",
+      "type": "ReentrantCriticalSection",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

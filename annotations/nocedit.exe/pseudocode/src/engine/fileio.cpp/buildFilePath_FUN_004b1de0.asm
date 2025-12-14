@@ -30,8 +30,8 @@ section .text
     PUSH EAX                            ; 004b1df9
     MOV EDX,dword ptr [ESP + 0x118]     ; 004b1dfa
     PUSH EDX                            ; 004b1e01
-    CALL engine_dosio.c_ensureTrailingSlash_FUN_00481f80 ; 004b1e02 | void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
-        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_ensureTrailingSlash_FUN_00481f80 ; 004b1e02
+        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
     ADD ESP,0xc                         ; 004b1e07
     PUSH 0x0                            ; 004b1e0a
     PUSH 0x0                            ; 004b1e0c
@@ -40,8 +40,8 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 004b1e13
     PUSH EAX                            ; 004b1e1a
     PUSH EDI                            ; 004b1e1b
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004b1e1c | void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004b1e1c
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b1e21
     MOV ESI,dword ptr [ESP + 0x114]     ; 004b1e24
     PUSH EDI                            ; 004b1e2b
@@ -54,15 +54,15 @@ section .text
         ;   Label: LAB_004b1e34
     MOV byte ptr [EDI],AL               ; 004b1e36
     CMP AL,0x0                          ; 004b1e38
-    JZ 0x004b1e4c                       ; 004b1e3a | LAB_004b1e4c
-        ;   XREF to: 004b1e4c (CONDITIONAL_JUMP)
+    JZ 0x004b1e4c                       ; 004b1e3a
+        ;   XREF to: 004b1e4c (CONDITIONAL_JUMP)  ; LAB_004b1e4c
     MOV AL,byte ptr [ESI + 0x1]         ; 004b1e3c
     ADD ESI,0x2                         ; 004b1e3f
     MOV byte ptr [EDI + 0x1],AL         ; 004b1e42
     ADD EDI,0x2                         ; 004b1e45
     CMP AL,0x0                          ; 004b1e48
-    JNZ 0x004b1e34                      ; 004b1e4a | LAB_004b1e34
-        ;   XREF to: 004b1e34 (CONDITIONAL_JUMP)
+    JNZ 0x004b1e34                      ; 004b1e4a
+        ;   XREF to: 004b1e34 (CONDITIONAL_JUMP)  ; LAB_004b1e34
     POP EDI                             ; 004b1e4c
         ;   Label: LAB_004b1e4c
     ADD ESP,0x104                       ; 004b1e4d

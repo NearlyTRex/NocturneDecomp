@@ -1,276 +1,276 @@
 {
   "complexity": {
-    "function_call_count": 12, 
-    "complexity_score": 173, 
-    "pseudocode_lines": 43, 
-    "cross_reference_count": 2, 
-    "global_count": 9, 
-    "total_lines": 167, 
-    "assembly_lines": 124, 
-    "suspect_count": 11, 
+    "assembly_lines": 124,
+    "complexity_score": 173,
+    "cross_reference_count": 2,
+    "function_call_count": 12,
+    "global_count": 9,
+    "pseudocode_lines": 43,
+    "suspect_count": 11,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_sound.cpp_CSound_playSound_FUN_005b3a20", 
-      "addr": "005b3a20"
-    }, 
-    {
-      "name": "core_sound.cpp_CSound_shutdown_FUN_005b2f70", 
-      "addr": "005b2f70"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
-      "addr": "00403260"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0", 
-      "addr": "004a0dd0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430", 
-      "addr": "004a0430"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530", 
-      "addr": "004a0530"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0", 
-      "addr": "005aaef0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720", 
-      "addr": "005a9720"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660", 
-      "addr": "005a9660"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_isSoundBusy_FUN_005ab540", 
-      "addr": "005ab540"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_start_sound_output_0063d024", 
-      "addr": "0063d024", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Playing_s_0063d060", 
-      "addr": "0063d060", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Failed_to_play_s_0063d06b", 
-      "addr": "0063d06b", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "CKeys*", 
-      "name": "g_CKeysPtr", 
-      "addr": "0067cf44", 
-      "value": "02dcd7d4"
-    }, 
-    {
-      "type": "CSound*", 
-      "name": "g_CSoundPtr", 
-      "addr": "00681ef8", 
-      "value": "03f6af64"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CKeysPtr", 
-      "addr": "02dcd7d4", 
-      "value": null
-    }, 
-    {
-      "type": "CSound", 
-      "name": "g_CSoundInstance", 
-      "addr": "03f6af64", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0053eb4c", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000008;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_fffffecc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CKeys *in_stack_fffffecc;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,in_stack_00000008);"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CEditorToolsPtr,\"Failed to play \\\"%s\\\"\",in_stack_00000008);"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Playing %s\",in_stack_00000008);"
-    }, 
-    {
-      "line": 30, 
-      "match": "&stack0xfffffec8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Playing %s\",in_stack_00000008);"
-    }, 
-    {
-      "line": 32, 
-      "match": "&stack0xfffffecc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(g_CEditorToolsPtr,&stack0xfffffecc);"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_fffffecc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar2 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_fffffecc);"
-    }, 
-    {
-      "line": 38, 
-      "match": "in_stack_fffffecc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffecc = g_CKeysPtr;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0053eb40", 
-    "signature": "undefined core_msnedit.cpp_FUN_0053eb40()", 
-    "address_range": [
-      [
-        "0053eb40", 
-        "0053ec72"
-      ]
-    ], 
-    "name": "core_msnedit.cpp_FUN_0053eb40"
-  }, 
-  "stack_frame": {
-    "local_size": 332, 
-    "variables": [
-      {
-        "offset": -328, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_148"
-      }, 
-      {
-        "offset": -324, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_144"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 332, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 167
+  },
   "cross_references": [
     {
-      "from_addr": "0053afe4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053af50", 
-      "addr": "0053af50"
-    }, 
+      "addr": "0053af50",
+      "from_addr": "0053afe4",
+      "name": "core_msnedit.cpp_FUN_0053af50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00565e63", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00565d00", 
-      "addr": "00565d00"
+      "addr": "00565d00",
+      "from_addr": "00565e63",
+      "name": "core_script.cpp_FUN_00565d00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053eb40",
+    "address_range": [
+      [
+        "0053eb40",
+        "0053ec72"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_msnedit.cpp_FUN_0053eb40",
+    "signature": "undefined core_msnedit.cpp_FUN_0053eb40()"
+  },
+  "function_calls": [
+    {
+      "addr": "005b3a20",
+      "name": "core_sound.cpp_CSound_playSound_FUN_005b3a20"
+    },
+    {
+      "addr": "005b2f70",
+      "name": "core_sound.cpp_CSound_shutdown_FUN_005b2f70"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00403260",
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "004a0dd0",
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
+    },
+    {
+      "addr": "004a0430",
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "004a0530",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530"
+    },
+    {
+      "addr": "005aaef0",
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0"
+    },
+    {
+      "addr": "005a9720",
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720"
+    },
+    {
+      "addr": "005a9660",
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
+    },
+    {
+      "addr": "005ab540",
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_005ab540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063d024",
+      "name": "s_Can_t_start_sound_output_0063d024",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d060",
+      "name": "s_Playing_s_0063d060",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d06b",
+      "name": "s_Failed_to_play_s_0063d06b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysPtr",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 332,
+    "local_size": 332,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0053eb4c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_fffffecc",
+      "text": "CKeys *in_stack_fffffecc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "text": "(g_CEditorToolsPtr,\"Failed to play \\\"%s\\\"\",in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000008",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Playing %s\",in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 30,
+      "match": "&stack0xfffffec8",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Playing %s\",in_stack_00000008);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xfffffecc",
+      "text": "(g_CEditorToolsPtr,&stack0xfffffecc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_fffffecc",
+      "text": "dVar2 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_fffffecc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_fffffecc",
+      "text": "in_stack_fffffecc = g_CKeysPtr;",
+      "type": "stack_param"
     }
   ]
 }

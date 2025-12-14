@@ -465,10 +465,10 @@ annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_generateFog
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_initCameraFog_FUN_00453640.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_initLookupTable_FUN_0044c0f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0.cpp
+annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_isSphereVisible_FUN_00452730.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_processCorona_FUN_00451130.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_pushRect_FUN_0044c740.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_resetSceneCamera_FUN_0044c410.cpp
-annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_restoreAlphaTransform_FUN_00453a70.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_restoreTransform_FUN_0044f1e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_restoreZBufferScanlines_FUN_004544a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_saveZBufferScanlines_FUN_00454450.cpp
@@ -477,7 +477,6 @@ annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_setSceneCam
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/CDemonCamera_setupPerspectiveAndFog_FUN_004537d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/freeVectors_FUN_00454700.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/getLightmapPaletteValue_FUN_0044bb50.cpp
-annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/processCoronaScanline_FUN_004514b0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/renderCoronaDepthScanline_FUN_00450320.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/renderCoronaScanlineSegment_FUN_00451340.cpp
 annotations/nocedit.exe/pseudocode/src/core/dcamera.cpp/renderFlatColorScanline_FUN_004505e0.cpp
@@ -2052,6 +2051,7 @@ annotations/nocedit.exe/pseudocode/src/engine/2d.c/getTextWrapEnabled_FUN_004027
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/loadPaletteFile_FUN_004015a0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/mapTextureFrameBuffer_FUN_00403650.cpp
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/plotPixel_FUN_00401140.cpp
+annotations/nocedit.exe/pseudocode/src/engine/2d.c/project3DPointClipped_FUN_004017c0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/project3DPointToScreen_FUN_00401770.cpp
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/reinitializeGraphicsSystem_FUN_005ed4b0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/2d.c/resetGraphicsSystem_FUN_005ed2a0.cpp
@@ -2287,6 +2287,7 @@ annotations/nocedit.exe/pseudocode/src/engine/matrix.c/popViewport_FUN_0050e480.
 annotations/nocedit.exe/pseudocode/src/engine/matrix.c/pop_FUN_0050d720.cpp
 annotations/nocedit.exe/pseudocode/src/engine/matrix.c/projectCachedPointUnchecked_FUN_0050ce60.cpp
 annotations/nocedit.exe/pseudocode/src/engine/matrix.c/projectCachedPoint_FUN_0050cda0.cpp
+annotations/nocedit.exe/pseudocode/src/engine/matrix.c/projectTransformedPoint_FUN_0050cdc0.cpp
 annotations/nocedit.exe/pseudocode/src/engine/matrix.c/pushMatrixRelativeOffset_FUN_0050e640.cpp
 annotations/nocedit.exe/pseudocode/src/engine/matrix.c/setCameraOrigin_FUN_0050e270.cpp
 annotations/nocedit.exe/pseudocode/src/engine/matrix.c/transformToCache_FUN_0050cd70.cpp
@@ -2933,6 +2934,8 @@ annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/setVideoModeX_FUN_005b
 annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/shutdownExternalRenderer_FUN_005b5d20.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/sync_FUN_005b7bc0.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/toggleX_FUN_005b7f66.cpp
+annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/transformAndProjectPoint_FUN_005b575c.cpp
+annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/transformPoint_FUN_005b5a25.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/unlockFrameX_FUN_005b7f40.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/unlockFrame_FUN_005b7250.cpp
 annotations/nocedit.exe/pseudocode/src/wincore/windll.cpp/unlockHoldBuffer_FUN_005b7e10.cpp

@@ -1,106 +1,112 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 56, 
-    "pseudocode_lines": 56, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 162, 
-    "assembly_lines": 106, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_env.c_getenv_FUN_006013f0", 
-      "addr": "006013f0"
-    }, 
-    {
-      "name": "crt_io.c_getcwd_FUN_00608d20", 
-      "addr": "00608d20"
-    }, 
-    {
-      "name": "crt_io.c_realpath_FUN_00601140", 
-      "addr": "00601140"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined1", 
-      "name": "DAT_006590a4", 
-      "addr": "006590a4", 
-      "value": null
-    }, 
-    {
-      "type": "char**", 
-      "name": "g_TempEnvVarNames", 
-      "addr": "006852c8", 
-      "value": "006590a4"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_DAT_006852cc", 
-      "addr": "006852cc", 
-      "value": "006590a8"
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_006852db", 
-      "addr": "006852db", 
-      "value": null
-    }, 
-    {
-      "type": "char[260]", 
-      "name": "g_TempDirectoryBuffer", 
-      "addr": "006852dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006852dd", 
-      "addr": "006852dd", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006852de", 
-      "addr": "006852de", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s__006852df", 
-      "addr": "006852df", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00609afc", 
-    "signature": "undefined crt_io.c_getTempDirectory_FUN_00609afc()", 
-    "address_range": [
-      [
-        "00609afc", 
-        "00609bc9"
-      ]
-    ], 
-    "name": "crt_io.c_getTempDirectory_FUN_00609afc"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 106,
+    "complexity_score": 56,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 56,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 162
+  },
   "cross_references": [
     {
-      "from_addr": "00601f32", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_generateTempFilename_FUN_00601f1c", 
-      "addr": "00601f1c"
+      "addr": "00601f1c",
+      "from_addr": "00601f32",
+      "name": "crt_io.c_generateTempFilename_FUN_00601f1c",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00609afc",
+    "address_range": [
+      [
+        "00609afc",
+        "00609bc9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_getTempDirectory_FUN_00609afc",
+    "signature": "undefined crt_io.c_getTempDirectory_FUN_00609afc()"
+  },
+  "function_calls": [
+    {
+      "addr": "006013f0",
+      "name": "crt_env.c_getenv_FUN_006013f0"
+    },
+    {
+      "addr": "00608d20",
+      "name": "crt_io.c_getcwd_FUN_00608d20"
+    },
+    {
+      "addr": "00601140",
+      "name": "crt_io.c_realpath_FUN_00601140"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006590a4",
+      "name": "DAT_006590a4",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "006590a8",
+      "name": "DAT_006590a8",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "006852c8",
+      "name": "g_TempEnvVarNames",
+      "type": "char**",
+      "value": "006590a4"
+    },
+    {
+      "addr": "006852cc",
+      "name": "PTR_DAT_006852cc",
+      "type": "void*",
+      "value": "006590a8"
+    },
+    {
+      "addr": "006852db",
+      "name": "DAT_006852db",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "006852dc",
+      "name": "g_TempDirectoryBuffer",
+      "type": "char[260]",
+      "value": null
+    },
+    {
+      "addr": "006852dd",
+      "name": "DAT_006852dd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006852de",
+      "name": "DAT_006852de",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006852df",
+      "name": "s__006852df",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

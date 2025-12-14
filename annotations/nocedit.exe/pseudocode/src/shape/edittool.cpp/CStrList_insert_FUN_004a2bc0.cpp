@@ -42,8 +42,7 @@ shape_edittool_cpp_CStrList_insert_FUN_004a2bc0
     cVar1 = *in_stack_00000014;
     in_stack_00000014 = in_stack_00000014 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  pcVar3 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (~uVar4,"..\\shape\\edittool.cpp",0xb3f);
+  pcVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(~uVar4,"..\\shape\\edittool.cpp",0xb3f);
   this_ptr->data_array[insert_index] = pcVar3;
   if (this_ptr->data_array[insert_index] == (char *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";

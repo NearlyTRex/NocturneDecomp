@@ -31,13 +31,13 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00609cb7
     PUSH EDX                            ; 00609cbb
     MOV EBX,dword ptr [ESP + 0x20]      ; 00609cbc
-    CALL dword ptr CS:[0x611540]        ; 00609cc0 | FileTimeToLocalFileTime * PTR_FileTimeToLocalFileTime_00611540
+    CALL dword ptr CS:[0x611540]        ; 00609cc0 | PTR_FileTimeToLocalFileTime_00611540
     PUSH EBX                            ; 00609cc7
     MOV ECX,dword ptr [ESP + 0x18]      ; 00609cc8
     PUSH ECX                            ; 00609ccc
     LEA EAX,[ESP + 0x8]                 ; 00609ccd
     PUSH EAX                            ; 00609cd1
-    CALL dword ptr CS:[0x61153c]        ; 00609cd2 | FileTimeToDosDateTime * PTR_FileTimeToDosDateTime_0061153c
+    CALL dword ptr CS:[0x61153c]        ; 00609cd2 | PTR_FileTimeToDosDateTime_0061153c
     ADD ESP,0x8                         ; 00609cd9
     POP EBX                             ; 00609cdc
     RET                                 ; 00609cdd

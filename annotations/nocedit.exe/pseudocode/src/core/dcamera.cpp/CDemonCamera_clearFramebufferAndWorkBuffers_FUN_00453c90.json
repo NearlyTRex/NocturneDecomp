@@ -1,106 +1,106 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 52, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 94, 
-    "assembly_lines": 57, 
-    "suspect_count": 1, 
+    "assembly_lines": 57,
+    "complexity_score": 52,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 6,
+    "pseudocode_lines": 37,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "SFogImagePlane", 
-      "name": "g_CameraPlaneWorkBuffer", 
-      "addr": "013da778", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_013da779", 
-      "addr": "013da779", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_013da8b8", 
-      "addr": "013da8b8", 
-      "value": null
-    }, 
-    {
-      "type": "SFogImagePlane[16]", 
-      "name": "g_CameraImageDecompressBuffer", 
-      "addr": "013ed378", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_013ed379", 
-      "addr": "013ed379", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_013ed4b8", 
-      "addr": "013ed4b8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 18, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->framebuffer_aligned +"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00453c90", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90(CDemonCamera * this_ptr, int clear_color)", 
-    "address_range": [
-      [
-        "00453c90", 
-        "00453d0f"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "clear_color"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 94
+  },
   "cross_references": [
     {
-      "from_addr": "004dfa1c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
-      "addr": "004ddaf0"
+      "addr": "004ddaf0",
+      "from_addr": "004dfa1c",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00453c90",
+    "address_range": [
+      [
+        "00453c90",
+        "00453d0f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90",
+    "signature": "void core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90(CDemonCamera * this_ptr, int clear_color)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "013da778",
+      "name": "g_CameraPlaneWorkBuffer",
+      "type": "SFogImagePlane",
+      "value": null
+    },
+    {
+      "addr": "013da779",
+      "name": "DAT_013da779",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013da8b8",
+      "name": "DAT_013da8b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013ed378",
+      "name": "g_CameraImageDecompressBuffer",
+      "type": "SFogImagePlane[16]",
+      "value": null
+    },
+    {
+      "addr": "013ed379",
+      "name": "DAT_013ed379",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013ed4b8",
+      "name": "DAT_013ed4b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "clear_color",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->framebuffer_aligned +",
+      "type": "pointer_cast"
     }
   ]
 }

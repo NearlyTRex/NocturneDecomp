@@ -25,20 +25,20 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 005a02f2
     MOV EAX,dword ptr [ESP + 0x10]      ; 005a02f6
     CMP EAX,dword ptr [EBX + 0x2230]    ; 005a02fa
-    JNZ 0x005a0325                      ; 005a0300 | LAB_005a0325
-        ;   XREF to: 005a0325 (CONDITIONAL_JUMP)
+    JNZ 0x005a0325                      ; 005a0300
+        ;   XREF to: 005a0325 (CONDITIONAL_JUMP)  ; LAB_005a0325
     MOV ECX,dword ptr [EBX + 0x2234]    ; 005a0302
         ;   Label: LAB_005a0302
     PUSH ECX                            ; 005a0308
     MOV ESI,dword ptr [EBX + 0x2230]    ; 005a0309
     PUSH ESI                            ; 005a030f
     PUSH EBX                            ; 005a0310
-    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005a0311 | CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005a0311
+        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a0316
     PUSH EAX                            ; 005a0319
-    CALL core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90 ; 005a031a | void core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel * this_ptr, int lod_index)
-        ;   XREF to: 0059ab90 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90 ; 005a031a
+        ;   XREF to: 0059ab90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel * this_ptr, int lod_index)
     ADD ESP,0xc                         ; 005a031f
     POP ESI                             ; 005a0322
     POP EBX                             ; 005a0323
@@ -46,9 +46,9 @@ section .text
     PUSH EAX                            ; 005a0325
         ;   Label: LAB_005a0325
     PUSH EBX                            ; 005a0326
-    CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0 ; 005a0327 | void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(CDeformableModelInstance * this_ptr, int lod_index)
-        ;   XREF to: 005a01d0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0 ; 005a0327
+        ;   XREF to: 005a01d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 005a032c
-    JMP 0x005a0302                      ; 005a032f | LAB_005a0302
-        ;   XREF to: 005a0302 (UNCONDITIONAL_JUMP)
+    JMP 0x005a0302                      ; 005a032f
+        ;   XREF to: 005a0302 (UNCONDITIONAL_JUMP)  ; LAB_005a0302
 

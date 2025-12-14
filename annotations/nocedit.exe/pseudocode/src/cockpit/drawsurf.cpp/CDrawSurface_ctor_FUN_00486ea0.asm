@@ -39,8 +39,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x28]      ; 00486ebc
     PUSH EBP                            ; 00486ec0
     PUSH EBX                            ; 00486ec1
-    CALL cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0 ; 00486ec2 | void cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0(CDrawSurface * this_ptr, int x, int y, int width, ...)
-        ;   XREF to: 00486ee0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0 ; 00486ec2
+        ;   XREF to: 00486ee0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x18                        ; 00486ec7
     MOV EAX,EBX                         ; 00486eca
     POP EBP                             ; 00486ecc

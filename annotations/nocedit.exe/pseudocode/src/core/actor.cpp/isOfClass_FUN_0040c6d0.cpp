@@ -13,7 +13,7 @@ int __cdecl core_actor_cpp_isOfClass_FUN_0040c6d0(CDemonActor *actor_ptr,char *c
   int iVar1;
   
   if (actor_ptr == (CDemonActor *)0x0) {
-    return (int)actor_ptr;
+    return 0;
   }
   type_ptr = (*actor_ptr->vtable->getActorType)(actor_ptr);
   iVar1 = core_actor_cpp_matchesClassName_FUN_0040c740(type_ptr,class_name);

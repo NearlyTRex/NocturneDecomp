@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 12, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fputc_FUN_005fea10", 
-      "addr": "005fea10"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "005fe720", 
-    "signature": "int crt_stdio.c_ungetc_helper_FUN_005fe720(int character, scanf_state_t * state)", 
-    "address_range": [
-      [
-        "005fe720", 
-        "005fe737"
-      ]
-    ], 
-    "name": "crt_stdio.c_ungetc_helper_FUN_005fe720"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "character"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "scanf_state_t *", 
-        "size": 4, 
-        "name": "state"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 12,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "005fe785", 
-      "type": "DATA", 
-      "name": "crt_stdio.c_vfscanf_FUN_005fe738", 
-      "addr": "005fe738"
+      "addr": "005fe738",
+      "from_addr": "005fe785",
+      "name": "crt_stdio.c_vfscanf_FUN_005fe738",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "005fe720",
+    "address_range": [
+      [
+        "005fe720",
+        "005fe737"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_ungetc_helper_FUN_005fe720",
+    "signature": "int crt_stdio.c_ungetc_helper_FUN_005fe720(int character, scanf_state_t * state)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fea10",
+      "name": "crt_stdio.c_fputc_FUN_005fea10"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "state",
+        "offset": 8,
+        "size": 4,
+        "type": "scanf_state_t *"
+      }
+    ]
+  },
+  "suspects": []
 }

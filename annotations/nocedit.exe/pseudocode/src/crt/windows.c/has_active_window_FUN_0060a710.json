@@ -1,78 +1,78 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 39, 
-    "assembly_lines": 23, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "GetProcAddress", 
-      "addr": "EXTERNAL:0000007a"
-    }, 
-    {
-      "name": "LoadLibraryA", 
-      "addr": "EXTERNAL:00000085"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GetProcAddress*", 
-      "name": "GetProcAddress", 
-      "addr": "006115bc", 
-      "value": "00211f8e"
-    }, 
-    {
-      "type": "LoadLibraryA*", 
-      "name": "PTR_LoadLibraryA_006115e8", 
-      "addr": "006115e8", 
-      "value": "0021205c"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_USER32_DLL_00659110", 
-      "addr": "00659110", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_GetActiveWindow_0065911c", 
-      "addr": "0065911c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a710", 
-    "signature": "BOOL crt_windows.c_has_active_window_FUN_0060a710(void)", 
-    "address_range": [
-      [
-        "0060a710", 
-        "0060a745"
-      ]
-    ], 
-    "name": "crt_windows.c_has_active_window_FUN_0060a710"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 23,
+    "complexity_score": 16,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
   "cross_references": [
     {
-      "from_addr": "0060a7ba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4", 
-      "addr": "0060a7a4"
+      "addr": "0060a7a4",
+      "from_addr": "0060a7ba",
+      "name": "crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060a710",
+    "address_range": [
+      [
+        "0060a710",
+        "0060a745"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_windows.c_has_active_window_FUN_0060a710",
+    "signature": "BOOL crt_windows.c_has_active_window_FUN_0060a710(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000007a",
+      "name": "GetProcAddress"
+    },
+    {
+      "addr": "EXTERNAL:00000085",
+      "name": "LoadLibraryA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006115bc",
+      "name": "GetProcAddress",
+      "type": "GetProcAddress*",
+      "value": "00211f8e"
+    },
+    {
+      "addr": "006115e8",
+      "name": "PTR_LoadLibraryA_006115e8",
+      "type": "LoadLibraryA*",
+      "value": "0021205c"
+    },
+    {
+      "addr": "00659110",
+      "name": "s_USER32_DLL_00659110",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065911c",
+      "name": "s_GetActiveWindow_0065911c",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

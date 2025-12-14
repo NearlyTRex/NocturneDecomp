@@ -26,16 +26,16 @@ section .text
         ;   Label: core_elephant.cpp_ctor_FUN_004a6fe0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004a6fe1
     PUSH EDX                            ; 004a6fe5
-    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 004a6fe6 | CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
-        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)
+    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 004a6fe6
+        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 004a6feb
-    PUSH 0x623fc4                       ; 004a6fee | = "elephantgun.kfm" | s_elephantgun_kfm_00623fc4 = elephantgun.kfm
+    PUSH 0x623fc4                       ; 004a6fee | = "elephantgun.kfm"
     MOV EBX,EAX                         ; 004a6ff3
     ADD EAX,0x158                       ; 004a6ff5
     PUSH EAX                            ; 004a6ffa
-    MOV dword ptr [EAX + -0x4],0x65d534 ; 004a6ffb | CDemonActor_vtable PTR_core_weapon.cpp_ActorModelSomething_FUN_0065d534
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 004a7002 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x65d534 ; 004a6ffb | PTR_core_weapon.cpp_ActorModelSomething_FUN_0065d534
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 004a7002
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x578],0x41200000 ; 004a7007
     MOV dword ptr [EBX + 0x2d8],0x1     ; 004a7011
     MOV dword ptr [EBX + 0x2dc],0x2     ; 004a701b

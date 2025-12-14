@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 66, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 55, 
-    "assembly_lines": 34, 
-    "suspect_count": 4, 
+    "assembly_lines": 34,
+    "complexity_score": 66,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 21,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&this_ptr->node_table->code + iVar1) = iVar2;"
-    }, 
-    {
-      "line": 15, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->node_table->prefix_code + iVar1) = 0xffffffff;"
-    }, 
-    {
-      "line": 16, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->node_table->suffix_char + iVar1) = 0xffffffff;"
-    }, 
-    {
-      "line": 17, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->node_table->next_link + iVar1) = 0xffffffff;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043eef0", 
-    "signature": "void support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0(CLZWDictionary * this_ptr)", 
-    "address_range": [
-      [
-        "0043eef0", 
-        "0043ef45"
-      ]
-    ], 
-    "name": "support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWDictionary *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 55
+  },
   "cross_references": [
     {
-      "from_addr": "0043f010", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90", 
-      "addr": "0043ef90"
-    }, 
+      "addr": "0043ef90",
+      "from_addr": "0043f010",
+      "name": "support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043eed6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDictionary_init_FUN_0043ee60", 
-      "addr": "0043ee60"
+      "addr": "0043ee60",
+      "from_addr": "0043eed6",
+      "name": "support_codec.cpp_CLZWDictionary_init_FUN_0043ee60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043eef0",
+    "address_range": [
+      [
+        "0043eef0",
+        "0043ef45"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0",
+    "signature": "void support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0(CLZWDictionary * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDictionary *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&this_ptr->node_table->code + iVar1) = iVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->node_table->prefix_code + iVar1) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->node_table->suffix_char + iVar1) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->node_table->next_link + iVar1) = 0xffffffff;",
+      "type": "pointer_cast"
     }
   ]
 }

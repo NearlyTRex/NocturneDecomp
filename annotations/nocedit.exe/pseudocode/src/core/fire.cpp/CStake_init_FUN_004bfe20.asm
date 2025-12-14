@@ -25,13 +25,13 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 004bfe29
     LEA EAX,[EBX + 0x4]                 ; 004bfe2d
     CMP EAX,EDX                         ; 004bfe30
-    JNZ 0x004bfe6d                      ; 004bfe32 | LAB_004bfe6d
-        ;   XREF to: 004bfe6d (CONDITIONAL_JUMP)
+    JNZ 0x004bfe6d                      ; 004bfe32
+        ;   XREF to: 004bfe6d (CONDITIONAL_JUMP)  ; LAB_004bfe6d
     LEA EAX,[EBX + 0x10]                ; 004bfe34
         ;   Label: LAB_004bfe34
     CMP EAX,ECX                         ; 004bfe37
-    JZ 0x004bfe4b                       ; 004bfe39 | LAB_004bfe4b
-        ;   XREF to: 004bfe4b (CONDITIONAL_JUMP)
+    JZ 0x004bfe4b                       ; 004bfe39
+        ;   XREF to: 004bfe4b (CONDITIONAL_JUMP)  ; LAB_004bfe4b
     MOV EDX,dword ptr [ECX]             ; 004bfe3b
     MOV dword ptr [EAX],EDX             ; 004bfe3d
     MOV EDX,dword ptr [ECX + 0x4]       ; 004bfe3f
@@ -43,8 +43,8 @@ section .text
     PUSH EAX                            ; 004bfe4e
     LEA EAX,[EBX + 0x1c]                ; 004bfe4f
     PUSH EAX                            ; 004bfe52
-    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 004bfe53 | void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 004bfe53
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV dword ptr [EBX],0x0             ; 004bfe58
     ADD ESP,0x8                         ; 004bfe5e
     MOV dword ptr [EBX + 0x258],0x0     ; 004bfe61
@@ -59,6 +59,6 @@ section .text
     MOV ESI,dword ptr [EDX + 0x8]       ; 004bfe78
     MOV dword ptr [EAX + 0x8],ESI       ; 004bfe7b
     POP ESI                             ; 004bfe7e
-    JMP 0x004bfe34                      ; 004bfe7f | LAB_004bfe34
-        ;   XREF to: 004bfe34 (UNCONDITIONAL_JUMP)
+    JMP 0x004bfe34                      ; 004bfe7f
+        ;   XREF to: 004bfe34 (UNCONDITIONAL_JUMP)  ; LAB_004bfe34
 

@@ -12,46 +12,42 @@ core_dcamera_cpp_renderCoronaScanlineSegment_FUN_00451340
 
 {
   int iVar1;
-  uint uVar2;
-  CVector3i *pCVar3;
-  char *pcVar4;
-  uint uVar5;
-  uint uVar6;
-  int *local_18;
-  uint *local_14;
+  uint *puVar2;
+  uint uVar3;
+  CVector3i *pCVar4;
+  char *pcVar5;
+  int *piVar6;
+  uint uVar7;
+  uint uVar8;
   
-  pCVar3 = g_PrecomputedWorldPositions + row_index * 0x140 + column_start;
-  pcVar4 = g_CoronaBlurOutputBuffer[row_index] + column_start;
-  local_18 = g_CoronaDepthBuffer[row_index] + column_start;
-  local_14 = g_ZBufferScanlineArray[row_index << ((byte)g_CameraDownscaleIterations & 0x1f)] +
-             (column_start << ((byte)g_CameraDownscaleIterations & 0x1f));
-  if (column_start < column_end) {
-    do {
-      if (((*local_14 < (uint)*local_18) &&
-          (uVar5 = pCVar3->x - (g_CurrentGlobe->color).r,
-          (int)((uVar5 ^ (int)uVar5 >> 0x1f) - ((int)uVar5 >> 0x1f)) <
-          g_CurrentGlobe->linear_radius_scaled)) &&
-         (uVar2 = pCVar3->y - (g_CurrentGlobe->color).g,
-         (int)((uVar2 ^ (int)uVar2 >> 0x1f) - ((int)uVar2 >> 0x1f)) <
-         g_CurrentGlobe->linear_radius_scaled)) {
-        uVar6 = pCVar3->z - (g_CurrentGlobe->color).b;
-        if ((int)((uVar6 ^ (int)uVar6 >> 0x1f) - ((int)uVar6 >> 0x1f)) <
-            g_CurrentGlobe->linear_radius_scaled) {
-          iVar1 = uVar6 * uVar6 + uVar2 * uVar2 + uVar5 * uVar5;
-          if (iVar1 < g_CurrentGlobe->quadratic_radius_scaled) {
-            *pcVar4 = *pcVar4 + (char)((ulonglong)
-                                       ((longlong)
-                                        (g_CurrentGlobe->quadratic_radius_scaled - iVar1 >> 0x10) *
-                                       (longlong)g_CurrentGlobe->falloff_value) >> 0x10);
-          }
-        }
+  pCVar4 = g_PrecomputedWorldPositions + row_index * 0x140 + column_start;
+  pcVar5 = g_CoronaBlurOutputBuffer[row_index] + column_start;
+  piVar6 = g_CoronaDepthBuffer[row_index] + column_start;
+  puVar2 = g_ZBufferScanlineArray[row_index << ((byte)g_CameraDownscaleIterations & 0x1f)] +
+           (column_start << ((byte)g_CameraDownscaleIterations & 0x1f));
+  for (; column_start < column_end; column_start = column_start + 1) {
+    if ((((*puVar2 < (uint)*piVar6) &&
+         (uVar7 = pCVar4->x - (g_CurrentGlobe->color).r,
+         (int)((uVar7 ^ (int)uVar7 >> 0x1f) - ((int)uVar7 >> 0x1f)) <
+         g_CurrentGlobe->linear_radius_scaled)) &&
+        (uVar3 = pCVar4->y - (g_CurrentGlobe->color).g,
+        (int)((uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f)) <
+        g_CurrentGlobe->linear_radius_scaled)) &&
+       (uVar8 = pCVar4->z - (g_CurrentGlobe->color).b,
+       (int)((uVar8 ^ (int)uVar8 >> 0x1f) - ((int)uVar8 >> 0x1f)) <
+       g_CurrentGlobe->linear_radius_scaled)) {
+      iVar1 = uVar8 * uVar8 + uVar3 * uVar3 + uVar7 * uVar7;
+      if (iVar1 < g_CurrentGlobe->quadratic_radius_scaled) {
+        *pcVar5 = *pcVar5 + (char)((ulonglong)
+                                   ((longlong)
+                                    (g_CurrentGlobe->quadratic_radius_scaled - iVar1 >> 0x10) *
+                                   (longlong)g_CurrentGlobe->falloff_value) >> 0x10);
       }
-      pCVar3 = pCVar3 + 1;
-      pcVar4 = pcVar4 + 1;
-      local_18 = local_18 + 1;
-      column_start = column_start + 1;
-      local_14 = local_14 + (1 << ((byte)g_CameraDownscaleIterations & 0x1f));
-    } while (column_start < column_end);
+    }
+    pCVar4 = pCVar4 + 1;
+    pcVar5 = pcVar5 + 1;
+    piVar6 = piVar6 + 1;
+    puVar2 = puVar2 + (1 << ((byte)g_CameraDownscaleIterations & 0x1f));
   }
   return;
 }

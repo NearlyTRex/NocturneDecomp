@@ -1,109 +1,109 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 62, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 108, 
-    "assembly_lines": 71, 
-    "suspect_count": 2, 
+    "assembly_lines": 71,
+    "complexity_score": 62,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawCharacter_FUN_00401610", 
-      "addr": "00401610"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "g_FontTable", 
-      "addr": "00666040", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((*text == 10) && (y_start = y_start + 0xb, x_pos = x_start, in_stack_00000014 < y_start))"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00401cf0", 
-    "signature": "void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int y_max)", 
-    "address_range": [
-      [
-        "00401cf0", 
-        "00401d7a"
-      ]
-    ], 
-    "name": "engine_2d.c_drawTextMultiline_FUN_00401cf0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_start"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_start"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_max"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 108
+  },
   "cross_references": [
     {
-      "from_addr": "00402018", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
+      "addr": "00401fd0",
+      "from_addr": "00402018",
+      "name": "engine_2d.c_drawText_FUN_00401fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00401cf0",
+    "address_range": [
+      [
+        "00401cf0",
+        "00401d7a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawTextMultiline_FUN_00401cf0",
+    "signature": "void engine_2d.c_drawTextMultiline_FUN_00401cf0(char * text, int x_start, int y_start, int y_max)"
+  },
+  "function_calls": [
+    {
+      "addr": "00401610",
+      "name": "engine_2d.c_drawCharacter_FUN_00401610"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00666040",
+      "name": "g_FontTable",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x_start",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_start",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_max",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000014",
+      "text": "if ((*text == 10) && (y_start = y_start + 0xb, x_pos = x_start, in_stack_00000014 < y_start))",
+      "type": "stack_param"
     }
   ]
 }

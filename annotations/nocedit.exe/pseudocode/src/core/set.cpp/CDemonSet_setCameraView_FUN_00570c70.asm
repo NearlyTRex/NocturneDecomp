@@ -24,8 +24,8 @@ section .text
     PUSH EDX                            ; 00570c7c
     PUSH EBX                            ; 00570c7d
     MOV ESI,dword ptr [EBX + 0x15aea8]  ; 00570c7e
-    CALL core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 ; 00570c84 | void core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet * this_ptr, int index)
-        ;   XREF to: 0056ae50 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 ; 00570c84
+        ;   XREF to: 0056ae50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet * this_ptr, int index)
     MOV dword ptr [EBX + 0x15aeac],0x0  ; 00570c89
     ADD ESP,0x8                         ; 00570c93
     MOV dword ptr [EBX + 0x15aea8],ESI  ; 00570c96

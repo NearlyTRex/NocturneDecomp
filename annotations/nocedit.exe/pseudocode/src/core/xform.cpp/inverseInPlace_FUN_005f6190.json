@@ -1,98 +1,98 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 88, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 35, 
-    "assembly_lines": 17, 
-    "suspect_count": 5, 
+    "assembly_lines": 17,
+    "complexity_score": 88,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 18,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_xform.cpp_inverse_FUN_005f6210", 
-      "addr": "005f6210"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CMatrix3x4f *in_stack_ffffffc8;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_xform_cpp_inverse_FUN_005f6210(matrix,in_stack_ffffffc8);"
-    }, 
-    {
-      "line": 18, 
-      "match": "(CMatrix3x4f *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "matrix = (CMatrix3x4f *)((int)matrix + ((uint)bVar3 * -2 + 1) * 4);"
-    }
-  ], 
+      "register_param",
+      "stack_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 35
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005f6190", 
-    "signature": "void core_xform.cpp_inverseInPlace_FUN_005f6190(CMatrix3x4f * matrix)", 
+    "address": "005f6190",
     "address_range": [
       [
-        "005f6190", 
+        "005f6190",
         "005f61b6"
       ]
-    ], 
-    "name": "core_xform.cpp_inverseInPlace_FUN_005f6190"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_inverseInPlace_FUN_005f6190",
+    "signature": "void core_xform.cpp_inverseInPlace_FUN_005f6190(CMatrix3x4f * matrix)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f6210",
+      "name": "core_xform.cpp_inverse_FUN_005f6210"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 60, 
+    "frame_size": 64,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMatrix3x4f *", 
-        "size": 4, 
-        "name": "matrix"
+        "is_param": true,
+        "name": "matrix",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x4f *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 64, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffffc8",
+      "text": "CMatrix3x4f *in_stack_ffffffc8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_ffffffc8",
+      "text": "core_xform_cpp_inverse_FUN_005f6210(matrix,in_stack_ffffffc8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "matrix = (CMatrix3x4f *)((int)matrix + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    }
+  ]
 }

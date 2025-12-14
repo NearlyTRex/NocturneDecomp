@@ -16,6 +16,7 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
   CDeformableModel *model_ptr;
   CSkeleton *pCVar4;
   CDeformableModelInstance *this_ptr_00;
+  CDeformableModelInstance *this_ptr_01;
   int iVar5;
   int iVar6;
   int *piVar7;
@@ -78,23 +79,23 @@ core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0059d460(CDeform
     core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(this_ptr);
     pCVar4 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
     local_1c = (float)pCVar4->bone_count;
-    this_ptr_00 = (CDeformableModelInstance *)
-                  shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+    this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                             (0x22b4,"..\\core\\skeleton.cpp",0x7d2);
+    this_ptr_01 = (CDeformableModelInstance *)0x0;
     if (this_ptr_00 != (CDeformableModelInstance *)0x0) {
-      this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(this_ptr_00);
+      this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(this_ptr_00);
     }
-    if (this_ptr_00 == (CDeformableModelInstance *)0x0) {
+    if (this_ptr_01 == (CDeformableModelInstance *)0x0) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
       g_CurrentLineNumber = 0x7d3;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::computePartDominantBones - out of memory!");
     }
     core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
-              (this_ptr_00,this_ptr);
-    core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
-    core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
+              (this_ptr_01,this_ptr);
+    core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_01);
+    core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_01);
     iVar11 = 0;
-    core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr_00,0);
+    core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr_01,0);
     local_14 = 0;
     pCVar14 = this_ptr;
     if (0 < this_ptr->num_parts) {

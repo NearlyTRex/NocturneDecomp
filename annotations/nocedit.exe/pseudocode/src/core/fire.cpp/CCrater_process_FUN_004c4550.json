@@ -1,133 +1,133 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 67, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 114, 
-    "assembly_lines": 77, 
-    "suspect_count": 2, 
+    "assembly_lines": 77,
+    "complexity_score": 67,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20", 
-      "addr": "004c7b20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_00629e43", 
-      "addr": "00629e43", 
-      "value": "0.200000000000000"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00629e4b", 
-      "addr": "00629e4b", 
-      "value": "-0.2000000"
-    }, 
-    {
-      "type": "CFireEffect*", 
-      "name": "g_CFireEffectPtr", 
-      "addr": "0067a3d0", 
-      "value": "02d12db0"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CFireEffect", 
-      "name": "g_CFireEffectInstance", 
-      "addr": "02d12db0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c4550", 
-    "signature": "void core_fire.cpp_CCrater_process_FUN_004c4550(CCrater * this_ptr)", 
-    "address_range": [
-      [
-        "004c4550", 
-        "004c461c"
-      ]
-    ], 
-    "name": "core_fire.cpp_CCrater_process_FUN_004c4550"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCrater *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 114
+  },
   "cross_references": [
     {
-      "from_addr": "004c7085", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0", 
-      "addr": "004c6ec0"
+      "addr": "004c6ec0",
+      "from_addr": "004c7085",
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c4550",
+    "address_range": [
+      [
+        "004c4550",
+        "004c461c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CCrater_process_FUN_004c4550",
+    "signature": "void core_fire.cpp_CCrater_process_FUN_004c4550(CCrater * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c7b20",
+      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629e43",
+      "name": "DOUBLE_00629e43",
+      "type": "double",
+      "value": "0.200000000000000"
+    },
+    {
+      "addr": "00629e4b",
+      "name": "FLOAT_00629e4b",
+      "type": "float",
+      "value": "-0.2000000"
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrater *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

@@ -27,8 +27,8 @@ section .text
     MOV EDX,0x2                         ; 005e1b8a
     PUSH EAX                            ; 005e1b8f
     MOV word ptr [ESP + 0x4],DX         ; 005e1b90
-    CALL crt_wsock32.c_htons            ; 005e1b95 | ushort crt_wsock32.c_htons(ushort hostshort)
-        ;   XREF to: 00610f2e (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_htons            ; 005e1b95
+        ;   XREF to: 00610f2e (UNCONDITIONAL_CALL)  ; ushort crt_wsock32.c_htons(ushort hostshort)
     PUSH 0x10                           ; 005e1b9a
     MOV word ptr [ESP + 0x6],AX         ; 005e1b9c
     LEA EAX,[ESP + 0x4]                 ; 005e1ba1
@@ -38,8 +38,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EDX       ; 005e1bac
     MOV ECX,dword ptr [EAX]             ; 005e1bb0
     PUSH ECX                            ; 005e1bb2
-    CALL crt_wsock32.c_bind             ; 005e1bb3 | int crt_wsock32.c_bind(SOCKET s, SOCKADDR * addr, int namelen)
-        ;   XREF to: 00610f22 (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_bind             ; 005e1bb3
+        ;   XREF to: 00610f22 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_bind(SOCKET s, SOCKADDR * addr, int namelen)
     TEST EAX,EAX                        ; 005e1bb8
     SETZ AL                             ; 005e1bba
     AND EAX,0xff                        ; 005e1bbd

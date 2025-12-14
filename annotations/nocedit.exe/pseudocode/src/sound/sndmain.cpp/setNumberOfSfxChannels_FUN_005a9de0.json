@@ -1,105 +1,105 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 34, 
-    "assembly_lines": 21, 
-    "suspect_count": 2, 
+    "assembly_lines": 21,
+    "complexity_score": 38,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_00650a74", 
-      "addr": "00650a74", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_setNumberOfSfxChannels_t_00650a89", 
-      "addr": "00650a89", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MaxSoundChannels", 
-      "addr": "00681b10", 
-      "value": "0x20"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_MaxSoundChannels = in_stack_00000008;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a9de0", 
-    "signature": "void sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0(int channel_count)", 
-    "address_range": [
-      [
-        "005a9de0", 
-        "005a9e1f"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "channel_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 34
+  },
   "cross_references": [
     {
-      "from_addr": "005b2ced", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_ctor_FUN_005b2ce0", 
-      "addr": "005b2ce0"
+      "addr": "005b2ce0",
+      "from_addr": "005b2ced",
+      "name": "core_sound.cpp_CSound_ctor_FUN_005b2ce0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a9de0",
+    "address_range": [
+      [
+        "005a9de0",
+        "005a9e1f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0",
+    "signature": "void sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0(int channel_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00650a74",
+      "name": "s_sound_sndmain_cpp_00650a74",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650a89",
+      "name": "s_setNumberOfSfxChannels_t_00650a89",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00681b10",
+      "name": "g_MaxSoundChannels",
+      "type": "int",
+      "value": "0x20"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "channel_count",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "g_MaxSoundChannels = in_stack_00000008;",
+      "type": "stack_param"
     }
   ]
 }

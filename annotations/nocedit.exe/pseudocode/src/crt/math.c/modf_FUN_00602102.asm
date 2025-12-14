@@ -25,8 +25,8 @@ section .text
         ;   Label: crt_math.c_modf_FUN_00602102
     FLD double ptr [ESP + 0x8]          ; 00602103
     FLD ST0                             ; 00602107
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00602109 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00602109
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FSUB ST1,ST0                        ; 0060210e
     MOV EAX,dword ptr [ESP + 0x10]      ; 00602110
     FSTP double ptr [EAX]               ; 00602114

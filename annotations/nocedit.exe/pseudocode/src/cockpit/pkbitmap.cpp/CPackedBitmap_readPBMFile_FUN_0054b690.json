@@ -1,425 +1,425 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 392, 
-    "pseudocode_lines": 107, 
-    "cross_reference_count": 2, 
-    "global_count": 12, 
-    "total_lines": 294, 
-    "assembly_lines": 187, 
-    "suspect_count": 26, 
+    "assembly_lines": 187,
+    "complexity_score": 391,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 12,
+    "pseudocode_lines": 106,
+    "suspect_count": 26,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param", 
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0", 
-      "addr": "0054a8e0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
-      "addr": "0050f1f0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbitmap_cpp_0063f11b", 
-      "addr": "0063f11b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_IO_error_reading_PBM_pos_0063f133", 
-      "addr": "0063f133", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbitmap_cpp_0063f161", 
-      "addr": "0063f161", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Corrupt_data_detected_re_0063f179", 
-      "addr": "0063f179", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbitmap_cpp_0063f19c", 
-      "addr": "0063f19c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_reading_PB_0063f1b4", 
-      "addr": "0063f1b4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbitmap_cpp_0063f1ce", 
-      "addr": "0063f1ce", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbitmap_cpp_0063f1e6", 
-      "addr": "0063f1e6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_00680c9c", 
-      "addr": "00680c9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_BM_PBG_00680c9d", 
-      "addr": "00680c9d", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0054b6c9", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "char *unaff_EBP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffe0;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_ffffffe4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffe4;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffe8;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffec;"
-    }, 
-    {
-      "line": 30, 
-      "match": "&stack0xffffffd8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "SVar1 = crt_stdio_c_fread_FUN_005fd990(&stack0xffffffd8,0x1c,1,file_handle);"
-    }, 
-    {
-      "line": 36, 
-      "match": "&stack0xffffffdc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pbVar5 = &stack0xffffffdc;"
-    }, 
-    {
-      "line": 49, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((iVar2 == 0) && (in_stack_ffffffe0 != 0)) && (in_stack_ffffffe4 != 0)) {"
-    }, 
-    {
-      "line": 49, 
-      "match": "in_stack_ffffffe4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((iVar2 == 0) && (in_stack_ffffffe0 != 0)) && (in_stack_ffffffe4 != 0)) {"
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->width = in_stack_ffffffe0;"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_ffffffe4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->height = in_stack_ffffffe4;"
-    }, 
-    {
-      "line": 52, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((in_stack_ffffffe8 != 0) || (in_stack_ffffffec != 0)) ||"
-    }, 
-    {
-      "line": 52, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((in_stack_ffffffe8 != 0) || (in_stack_ffffffec != 0)) ||"
-    }, 
-    {
-      "line": 53, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(((char *)(this_ptr->width + -1) != unaff_EBP || (this_ptr->height + -1 != unaff_EDI))))"
-    }, 
-    {
-      "line": 53, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(((char *)(this_ptr->width + -1) != unaff_EBP || (this_ptr->height + -1 != unaff_EDI))))"
-    }, 
-    {
-      "line": 73, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000001c != 0) {"
-    }, 
-    {
-      "line": 77, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffe0 = 0x4de;"
-    }, 
-    {
-      "line": 82, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffe0 = 1;"
-    }, 
-    {
-      "line": 91, 
-      "match": "in_stack_ffffffe4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffe4 = 0x54b73e;"
-    }, 
-    {
-      "line": 100, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffe8 = 0x54b6fa;"
-    }, 
-    {
-      "line": 104, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = \"Out of memory reading PBM\";"
-    }, 
-    {
-      "line": 107, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffec = 0x54b71d;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054b690", 
-    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPackedBitmap * this_ptr, FILE * file_handle, int skip_data_load)", 
-    "address_range": [
-      [
-        "0054b690", 
-        "0054b85a"
-      ]
-    ], 
-    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690"
-  }, 
-  "stack_frame": {
-    "local_size": 48, 
-    "variables": [
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "skip_data_load"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 60, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 293
+  },
   "cross_references": [
     {
-      "from_addr": "0054b8d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860", 
-      "addr": "0054b860"
-    }, 
+      "addr": "0054b860",
+      "from_addr": "0054b8d5",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054bad1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0", 
-      "addr": "0054b9b0"
+      "addr": "0054b9b0",
+      "from_addr": "0054bad1",
+      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054b690",
+    "address_range": [
+      [
+        "0054b690",
+        "0054b85a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690",
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPackedBitmap * this_ptr, FILE * file_handle, int skip_data_load)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054a8e0",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "005ffacc",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc"
+    },
+    {
+      "addr": "0050f1f0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063f11b",
+      "name": "s_cockpit_pkbitmap_cpp_0063f11b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f133",
+      "name": "s_IO_error_reading_PBM_pos_0063f133",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f161",
+      "name": "s_cockpit_pkbitmap_cpp_0063f161",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f179",
+      "name": "s_Corrupt_data_detected_re_0063f179",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f19c",
+      "name": "s_cockpit_pkbitmap_cpp_0063f19c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f1b4",
+      "name": "s_Out_of_memory_reading_PB_0063f1b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f1ce",
+      "name": "s_cockpit_pkbitmap_cpp_0063f1ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f1e6",
+      "name": "s_cockpit_pkbitmap_cpp_0063f1e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00680c9c",
+      "name": "s_anon_00680c9c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00680c9d",
+      "name": "s_BM_PBG_00680c9d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "skip_data_load",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0054b6c9",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_ffffffe0",
+      "text": "int in_stack_ffffffe0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_ffffffe4",
+      "text": "int in_stack_ffffffe4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_ffffffe8",
+      "text": "int in_stack_ffffffe8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_ffffffec",
+      "text": "int in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 30,
+      "match": "&stack0xffffffd8",
+      "text": "SVar1 = crt_stdio_c_fread_FUN_005fd990(&stack0xffffffd8,0x1c,1,file_handle);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 36,
+      "match": "&stack0xffffffdc",
+      "text": "pbVar5 = &stack0xffffffdc;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_ffffffe0",
+      "text": "if (((iVar2 == 0) && (in_stack_ffffffe0 != 0)) && (in_stack_ffffffe4 != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_ffffffe4",
+      "text": "if (((iVar2 == 0) && (in_stack_ffffffe0 != 0)) && (in_stack_ffffffe4 != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_ffffffe0",
+      "text": "this_ptr->width = in_stack_ffffffe0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_ffffffe4",
+      "text": "this_ptr->height = in_stack_ffffffe4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_ffffffe8",
+      "text": "if (((in_stack_ffffffe8 != 0) || (in_stack_ffffffec != 0)) ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_ffffffec",
+      "text": "if (((in_stack_ffffffe8 != 0) || (in_stack_ffffffec != 0)) ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_EBP",
+      "text": "(((char *)(this_ptr->width + -1) != unaff_EBP || (this_ptr->height + -1 != unaff_EDI))))",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_EDI",
+      "text": "(((char *)(this_ptr->width + -1) != unaff_EBP || (this_ptr->height + -1 != unaff_EDI))))",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_0000001c",
+      "text": "if (in_stack_0000001c != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_ffffffe0",
+      "text": "in_stack_ffffffe0 = 0x4de;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 81,
+      "match": "in_stack_ffffffe0",
+      "text": "in_stack_ffffffe0 = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_ffffffe4",
+      "text": "in_stack_ffffffe4 = 0x54b73e;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 99,
+      "match": "in_stack_ffffffe8",
+      "text": "in_stack_ffffffe8 = 0x54b6fa;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 103,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = \"Out of memory reading PBM\";",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 106,
+      "match": "in_stack_ffffffec",
+      "text": "in_stack_ffffffec = 0x54b71d;",
+      "type": "stack_param"
     }
   ]
 }

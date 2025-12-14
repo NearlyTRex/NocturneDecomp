@@ -1,137 +1,137 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 88, 
-    "pseudocode_lines": 43, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 96, 
-    "assembly_lines": 53, 
-    "suspect_count": 4, 
+    "assembly_lines": 53,
+    "complexity_score": 88,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 43,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
-      "addr": "004088b0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
-      "addr": "00478ce0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }, 
-    {
-      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0", 
-      "addr": "004c9aa0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_question_kfm_0062a2c7", 
-      "addr": "0062a2c7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_none_0062a2d4", 
-      "addr": "0062a2d4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_one_0062a2d5", 
-      "addr": "0062a2d5", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ne_0062a2d6", 
-      "addr": "0062a2d6", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_0062a2d7", 
-      "addr": "0062a2d7", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_flamecan.cpp_FUN_0065e144", 
-      "addr": "0065e144", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 18, 
-      "match": "pCVar4[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "*(CDemonActor_vtable **)(pCVar4[-1].base_actor.create_event + 0x40) ="
-    }, 
-    {
-      "line": 21, 
-      "match": "pCVar4[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "((CKeyFramedModelInstance *)(pCVar4[-1].base_actor.create_event + 0x44),"
-    }, 
-    {
-      "line": 27, 
-      "match": "pCVar4[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pcVar6 = pCVar4[-1].field7_0x1b8 + 0x88;"
-    }, 
-    {
-      "line": 45, 
-      "match": "pCVar4[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CFlameCan *)(pCVar4[-2].field7_0x1b8 + 0x50);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004cb160", 
-    "signature": "CFlameCan * core_flamecan.cpp_FUN_004cb160(CFlameCan * this_ptr)", 
-    "address_range": [
-      [
-        "004cb160", 
-        "004cb1f8"
-      ]
-    ], 
-    "name": "core_flamecan.cpp_FUN_004cb160"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFlameCan *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 96
+  },
   "cross_references": [
     {
-      "from_addr": "004cb13a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flamecan.cpp_FUN_004cb120", 
-      "addr": "004cb120"
+      "addr": "004cb120",
+      "from_addr": "004cb13a",
+      "name": "core_flamecan.cpp_FUN_004cb120",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cb160",
+    "address_range": [
+      [
+        "004cb160",
+        "004cb1f8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flamecan.cpp_FUN_004cb160",
+    "signature": "CFlameCan * core_flamecan.cpp_FUN_004cb160(CFlameCan * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    },
+    {
+      "addr": "00478ce0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "004c9aa0",
+      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a2c7",
+      "name": "s_question_kfm_0062a2c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062a2d4",
+      "name": "s_none_0062a2d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062a2d5",
+      "name": "s_one_0062a2d5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062a2d6",
+      "name": "s_ne_0062a2d6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062a2d7",
+      "name": "s_e_0062a2d7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065e144",
+      "name": "PTR_core_flamecan.cpp_FUN_0065e144",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlameCan *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar4[-1].",
+      "text": "*(CDemonActor_vtable **)(pCVar4[-1].base_actor.create_event + 0x40) =",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar4[-1].",
+      "text": "((CKeyFramedModelInstance *)(pCVar4[-1].base_actor.create_event + 0x44),",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 27,
+      "match": "pCVar4[-1].",
+      "text": "pcVar6 = pCVar4[-1].field7_0x1b8 + 0x88;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 45,
+      "match": "pCVar4[-2].",
+      "text": "return (CFlameCan *)(pCVar4[-2].field7_0x1b8 + 0x50);",
+      "type": "negative_offset"
     }
   ]
 }

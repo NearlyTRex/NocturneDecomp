@@ -26,8 +26,8 @@ section .text
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0x30] ; 005cd0cc
     AND EAX,EDX                         ; 005cd0d0
     CMP EAX,EDX                         ; 005cd0d2
-    JNZ 0x005cd104                      ; 005cd0d4 | LAB_005cd104
-        ;   XREF to: 005cd104 (CONDITIONAL_JUMP)
+    JNZ 0x005cd104                      ; 005cd0d4
+        ;   XREF to: 005cd104 (CONDITIONAL_JUMP)  ; LAB_005cd104
     MOV EAX,dword ptr [ESI + 0x8]       ; 005cd0d6
     SHL EAX,0x3                         ; 005cd0d9
     MOV ECX,EAX                         ; 005cd0dc
@@ -36,8 +36,8 @@ section .text
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0x30] ; 005cd0e3
     AND EAX,EDX                         ; 005cd0e7
     CMP EAX,EDX                         ; 005cd0e9
-    JNZ 0x005cd104                      ; 005cd0eb | LAB_005cd104
-        ;   XREF to: 005cd104 (CONDITIONAL_JUMP)
+    JNZ 0x005cd104                      ; 005cd0eb
+        ;   XREF to: 005cd104 (CONDITIONAL_JUMP)  ; LAB_005cd104
     MOV EAX,dword ptr [ESI + 0xc]       ; 005cd0ed
     SHL EAX,0x3                         ; 005cd0f0
     MOV ECX,EAX                         ; 005cd0f3
@@ -46,8 +46,8 @@ section .text
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0x30] ; 005cd0fa
     AND EAX,EDX                         ; 005cd0fe
     CMP EAX,EDX                         ; 005cd100
-    JZ 0x005cd109                       ; 005cd102 | LAB_005cd109
-        ;   XREF to: 005cd109 (CONDITIONAL_JUMP)
+    JZ 0x005cd109                       ; 005cd102
+        ;   XREF to: 005cd109 (CONDITIONAL_JUMP)  ; LAB_005cd109
     XOR EAX,EAX                         ; 005cd104
         ;   Label: LAB_005cd104
     POP ESI                             ; 005cd106

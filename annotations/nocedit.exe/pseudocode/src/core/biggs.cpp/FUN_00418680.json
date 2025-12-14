@@ -1,118 +1,118 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 101, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 73, 
-    "assembly_lines": 47, 
-    "suspect_count": 7, 
+    "assembly_lines": 47,
+    "complexity_score": 101,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
-      "addr": "00478d80"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60", 
-      "addr": "00478d60"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9650", 
-      "addr": "004a9650"
-    }, 
-    {
-      "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680", 
-      "addr": "0052b680"
-    }, 
-    {
-      "name": "core_morph.cpp_FUN_0052b430", 
-      "addr": "0052b430"
-    }, 
-    {
-      "name": "core_morph.cpp_FUN_0052b470", 
-      "addr": "0052b470"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450", 
-      "addr": "005a0450"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CEnemy *in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&(in_stack_00000004->base_character).model);"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004[1].base_character.base_actor.actor_name + 8);"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004[1].base_character.model.motion_controller.current_motion_name + 4));"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].base_character.model.motion_controller.in_transition = 0;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar1 = &in_stack_00000004[1].base_character;"
-    }
-  ], 
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00418680", 
-    "signature": "undefined core_biggs.cpp_FUN_00418680()", 
+    "address": "00418680",
     "address_range": [
       [
-        "00418680", 
+        "00418680",
         "004186f7"
       ]
-    ], 
-    "name": "core_biggs.cpp_FUN_00418680"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_biggs.cpp_FUN_00418680",
+    "signature": "undefined core_biggs.cpp_FUN_00418680()"
+  },
+  "function_calls": [
+    {
+      "addr": "00478d80",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
+    },
+    {
+      "addr": "00478d60",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60"
+    },
+    {
+      "addr": "004a9650",
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9650"
+    },
+    {
+      "addr": "0052b680",
+      "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680"
+    },
+    {
+      "addr": "0052b430",
+      "name": "core_morph.cpp_FUN_0052b430"
+    },
+    {
+      "addr": "0052b470",
+      "name": "core_morph.cpp_FUN_0052b470"
+    },
+    {
+      "addr": "005a0450",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "CEnemy *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "(&(in_stack_00000004->base_character).model);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004[1].base_character.base_actor.actor_name + 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004[1].base_character.model.motion_controller.current_motion_name + 4));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].base_character.model.motion_controller.in_transition = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "pCVar1 = &in_stack_00000004[1].base_character;",
+      "type": "stack_param"
+    }
+  ]
 }

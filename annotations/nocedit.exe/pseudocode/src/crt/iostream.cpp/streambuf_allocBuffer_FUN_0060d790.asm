@@ -19,8 +19,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0060d790
         ;   Label: crt_iostream.cpp_streambuf_allocBuffer_FUN_0060d790
     PUSH EDX                            ; 0060d794
-    CALL crt_memory.c_malloc_FUN_00601bb0 ; 0060d795 | void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
-        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_malloc_FUN_00601bb0 ; 0060d795
+        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
     ADD ESP,0x4                         ; 0060d79a
     RET                                 ; 0060d79d
 

@@ -29,8 +29,8 @@ section .text
     CALL dword ptr [EAX + 0x120]        ; 00428e44
     ADD ESP,0x4                         ; 00428e4a
     TEST EAX,EAX                        ; 00428e4d
-    JLE 0x00428e57                      ; 00428e4f | LAB_00428e57
-        ;   XREF to: 00428e57 (CONDITIONAL_JUMP)
+    JLE 0x00428e57                      ; 00428e4f
+        ;   XREF to: 00428e57 (CONDITIONAL_JUMP)  ; LAB_00428e57
     ADD ESP,0x3c                        ; 00428e51
     POP ESI                             ; 00428e54
     POP EBX                             ; 00428e55
@@ -38,25 +38,25 @@ section .text
     MOV EDX,dword ptr [EBX + 0xb7d4]    ; 00428e57
         ;   Label: LAB_00428e57
     PUSH EDX                            ; 00428e5d
-    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 00428e5e | int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
-        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 00428e5e
+        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
     ADD ESP,0x4                         ; 00428e63
     MOV EAX,ESP                         ; 00428e66
     PUSH EAX                            ; 00428e68
-    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 00428e69 | SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
-        ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 00428e69
+        ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
     ADD ESP,0x4                         ; 00428e6e
     MOV ECX,0x461c3c00                  ; 00428e71
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00428e76
     MOV dword ptr [ESP + 0x4],ECX       ; 00428e7a
     MOV dword ptr [ESP + 0x30],EAX      ; 00428e7e
     TEST ESI,ESI                        ; 00428e82
-    JZ 0x00428ea2                       ; 00428e84 | LAB_00428ea2
-        ;   XREF to: 00428ea2 (CONDITIONAL_JUMP)
+    JZ 0x00428ea2                       ; 00428e84
+        ;   XREF to: 00428ea2 (CONDITIONAL_JUMP)  ; LAB_00428ea2
     LEA EAX,[ESP + 0xc]                 ; 00428e86
     CMP EAX,ESI                         ; 00428e8a
-    JZ 0x00428ea2                       ; 00428e8c | LAB_00428ea2
-        ;   XREF to: 00428ea2 (CONDITIONAL_JUMP)
+    JZ 0x00428ea2                       ; 00428e8c
+        ;   XREF to: 00428ea2 (CONDITIONAL_JUMP)  ; LAB_00428ea2
     MOV EAX,dword ptr [ESI]             ; 00428e8e
     MOV dword ptr [ESP + 0xc],EAX       ; 00428e90
     MOV EAX,dword ptr [ESI + 0x4]       ; 00428e94
@@ -69,8 +69,8 @@ section .text
     FCOMPP                              ; 00428ea8
     FNSTSW AX                           ; 00428eaa
     SAHF                                ; 00428eac
-    JA 0x00428eb7                       ; 00428ead | LAB_00428eb7
-        ;   XREF to: 00428eb7 (CONDITIONAL_JUMP)
+    JA 0x00428eb7                       ; 00428ead
+        ;   XREF to: 00428eb7 (CONDITIONAL_JUMP)  ; LAB_00428eb7
     MOV EAX,dword ptr [ESP + 0x54]      ; 00428eaf
     MOV dword ptr [ESP + 0x18],EAX      ; 00428eb3
     MOV ESI,ESP                         ; 00428eb7
@@ -81,8 +81,8 @@ section .text
     CALL dword ptr [EAX + 0x11c]        ; 00428ec1
     ADD ESP,0x8                         ; 00428ec7
     PUSH EBX                            ; 00428eca
-    CALL core_charactr.cpp_CCharacter_FUN_0042d060 ; 00428ecb | void core_charactr.cpp_CCharacter_FUN_0042d060(CCharacter * this_ptr)
-        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042d060 ; 00428ecb
+        ;   XREF to: 0042d060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d060(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00428ed0
     ADD ESP,0x3c                        ; 00428ed3
     POP ESI                             ; 00428ed6

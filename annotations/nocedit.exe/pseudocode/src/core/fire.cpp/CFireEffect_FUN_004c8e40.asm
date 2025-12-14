@@ -25,7 +25,7 @@ section .text
     PUSH ESI                            ; 004c8e41
     PUSH EDI                            ; 004c8e42
     PUSH EBP                            ; 004c8e43
-    MOV EBX,dword ptr [0x02d678cc]      ; 004c8e44 | CExplosion * g_ExplosionActiveListHead
+    MOV EBX,dword ptr [0x02d678cc]      ; 004c8e44 | g_ExplosionActiveListHead
     IMUL EAX,EBX,0x3e4                  ; 004c8e4a
     MOV EDX,dword ptr [ESP + 0x24]      ; 004c8e50
     PUSH dword ptr [ESP + 0x28]         ; 004c8e54
@@ -36,17 +36,17 @@ section .text
     PUSH ESI                            ; 004c8e62
     MOV EDI,dword ptr [ESP + 0x28]      ; 004c8e63
     PUSH EDI                            ; 004c8e67
-    ADD EAX,0x2d678d0                   ; 004c8e68 | CToss[20] g_TossPool
+    ADD EAX,0x2d678d0                   ; 004c8e68 | g_TossPool
     PUSH EAX                            ; 004c8e6d
-    CALL core_fire.cpp_CToss_create_FUN_004c3ee0 ; 004c8e6e | void core_fire.cpp_CToss_create_FUN_004c3ee0(CToss * this_ptr)
-        ;   XREF to: 004c3ee0 (UNCONDITIONAL_CALL)
-    MOV EBP,dword ptr [0x02d678cc]      ; 004c8e73 | CExplosion * g_ExplosionActiveListHead
+    CALL core_fire.cpp_CToss_create_FUN_004c3ee0 ; 004c8e6e
+        ;   XREF to: 004c3ee0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CToss_create_FUN_004c3ee0(CToss * this_ptr)
+    MOV EBP,dword ptr [0x02d678cc]      ; 004c8e73 | g_ExplosionActiveListHead
     INC EBP                             ; 004c8e79
     ADD ESP,0x18                        ; 004c8e7a
-    MOV dword ptr [0x02d678cc],EBP      ; 004c8e7d | CExplosion * g_ExplosionActiveListHead
+    MOV dword ptr [0x02d678cc],EBP      ; 004c8e7d | g_ExplosionActiveListHead
     CMP EBP,0x14                        ; 004c8e83
-    JGE 0x004c8e8f                      ; 004c8e86 | LAB_004c8e8f
-        ;   XREF to: 004c8e8f (CONDITIONAL_JUMP)
+    JGE 0x004c8e8f                      ; 004c8e86
+        ;   XREF to: 004c8e8f (CONDITIONAL_JUMP)  ; LAB_004c8e8f
     MOV EAX,EBX                         ; 004c8e88
     POP EBP                             ; 004c8e8a
     POP EDI                             ; 004c8e8b
@@ -55,7 +55,7 @@ section .text
     RET                                 ; 004c8e8e
     XOR EDX,EDX                         ; 004c8e8f
         ;   Label: LAB_004c8e8f
-    MOV dword ptr [0x02d678cc],EDX      ; 004c8e91 | CExplosion * g_ExplosionActiveListHead
+    MOV dword ptr [0x02d678cc],EDX      ; 004c8e91 | g_ExplosionActiveListHead
     MOV EAX,EBX                         ; 004c8e97
     POP EBP                             ; 004c8e99
     POP EDI                             ; 004c8e9a

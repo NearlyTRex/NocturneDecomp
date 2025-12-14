@@ -32,11 +32,11 @@ section .text
     SHL EAX,0x2                         ; 0050a452
     ADD EAX,EDX                         ; 0050a455
     CMP dword ptr [EAX + 0x5f0],0x0     ; 0050a457
-    JZ 0x0050a46c                       ; 0050a45e | LAB_0050a46c
-        ;   XREF to: 0050a46c (CONDITIONAL_JUMP)
+    JZ 0x0050a46c                       ; 0050a45e
+        ;   XREF to: 0050a46c (CONDITIONAL_JUMP)  ; LAB_0050a46c
     TEST dword ptr [EAX + 0x5f8],0x7fffffff ; 0050a460
-    JZ 0x0050a46f                       ; 0050a46a | LAB_0050a46f
-        ;   XREF to: 0050a46f (CONDITIONAL_JUMP)
+    JZ 0x0050a46f                       ; 0050a46a
+        ;   XREF to: 0050a46f (CONDITIONAL_JUMP)  ; LAB_0050a46f
     POP ESI                             ; 0050a46c
         ;   Label: LAB_0050a46c
     POP EBX                             ; 0050a46d

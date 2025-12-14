@@ -18,14 +18,14 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x02d831ec]      ; 004e0b90 | undefined4 DAT_02d831ec
+    MOV EDX,dword ptr [0x02d831ec]      ; 004e0b90 | DAT_02d831ec
         ;   Label: core_game.cpp_CGame_fadeIn_FUN_004e0b90
     TEST EDX,EDX                        ; 004e0b96
-    JZ 0x004e0b9f                       ; 004e0b98 | LAB_004e0b9f
-        ;   XREF to: 004e0b9f (CONDITIONAL_JUMP)
+    JZ 0x004e0b9f                       ; 004e0b98
+        ;   XREF to: 004e0b9f (CONDITIONAL_JUMP)  ; LAB_004e0b9f
     CMP EDX,0x5                         ; 004e0b9a
-    JNZ 0x004e0ba5                      ; 004e0b9d | LAB_004e0ba5
-        ;   XREF to: 004e0ba5 (CONDITIONAL_JUMP)
+    JNZ 0x004e0ba5                      ; 004e0b9d
+        ;   XREF to: 004e0ba5 (CONDITIONAL_JUMP)  ; LAB_004e0ba5
     MOV EAX,0x1                         ; 004e0b9f
         ;   Label: LAB_004e0b9f
     RET                                 ; 004e0ba4

@@ -32,6 +32,6 @@
 section .text
 
     JMP 0x00607e64                      ; 00600c18
-        ;   Label: crt_io.c_stat_thunk_00600c18
         ;   XREF to: 00607e64 (UNCONDITIONAL_JUMP)
+        ;   Label: crt_io.c_stat_thunk_00600c18
 

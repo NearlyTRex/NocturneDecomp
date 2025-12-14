@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 24, 
-    "assembly_lines": 13, 
-    "suspect_count": 3, 
+    "assembly_lines": 13,
+    "complexity_score": 46,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000008 != *(float *)(this_ptr->field6_0xbe38 + 4)) {"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CDemonActor *)this_ptr,unaff_retaddr,(int)this_ptr,in_stack_00000008);"
-    }
-  ], 
+    ],
+    "total_lines": 24
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004aa0c0", 
-    "signature": "void core_enemy.cpp_CEnemy_FUN_004aa0c0(CEnemy * this_ptr)", 
+    "address": "004aa0c0",
     "address_range": [
       [
-        "004aa0c0", 
+        "004aa0c0",
         "004aa0e1"
       ]
-    ], 
-    "name": "core_enemy.cpp_CEnemy_FUN_004aa0c0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_enemy.cpp_CEnemy_FUN_004aa0c0",
+    "signature": "void core_enemy.cpp_CEnemy_FUN_004aa0c0(CEnemy * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEnemy *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEnemy *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 != *(float *)(this_ptr->field6_0xbe38 + 4)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "((CDemonActor *)this_ptr,unaff_retaddr,(int)this_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    }
+  ]
 }

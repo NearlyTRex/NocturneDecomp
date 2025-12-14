@@ -13,8 +13,8 @@ section .text
 
     PUSH 0x10                           ; 00599480
         ;   Label: core_skeledit.cpp_FUN_00599480
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00599485 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 00599485
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0059948a
     PUSH ESI                            ; 0059948b
     PUSH EDI                            ; 0059948c

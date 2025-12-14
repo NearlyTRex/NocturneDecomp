@@ -1,315 +1,315 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 178, 
-    "pseudocode_lines": 73, 
-    "cross_reference_count": 8, 
-    "global_count": 18, 
-    "total_lines": 269, 
-    "assembly_lines": 196, 
-    "suspect_count": 9, 
+    "assembly_lines": 196,
+    "complexity_score": 177,
+    "cross_reference_count": 8,
+    "function_call_count": 9,
+    "global_count": 18,
+    "pseudocode_lines": 72,
+    "suspect_count": 9,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
-      "addr": "005ff9e0"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_boss.c_modelStructNotSupported_FUN_0041db80", 
-      "addr": "0041db80"
-    }, 
-    {
-      "name": "engine_dosio.c_getFile_FUN_00481a50", 
-      "addr": "00481a50"
-    }, 
-    {
-      "name": "engine_dosio.c_getFileSize_FUN_00481880", 
-      "addr": "00481880"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "s_t_00639a2e", 
-      "addr": "00639a2e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_models_00639aab", 
-      "addr": "00639aab", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_get_file_size__00639ab2", 
-      "addr": "00639ab2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_model_c_00639ace", 
-      "addr": "00639ace", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_00639ae0", 
-      "addr": "00639ae0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_models_00639ae3", 
-      "addr": "00639ae3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_open_model_s_00639aea", 
-      "addr": "00639aea", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_model_c_00639b03", 
-      "addr": "00639b03", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_model_c_00639b15", 
-      "addr": "00639b15", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_model_memory_s_00639b27", 
-      "addr": "00639b27", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_model_c_00639b3f", 
-      "addr": "00639b3f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Model_file_read_error_s_00639b51", 
-      "addr": "00639b51", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_model_c_00639b6b", 
-      "addr": "00639b6b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_model_c_00639b7d", 
-      "addr": "00639b7d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Invalid_model_s_00639b8f", 
-      "addr": "00639b8f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_model_c_00639ba1", 
-      "addr": "00639ba1", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 38, 
-      "match": "&stack0xffffffac", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffac,\"Unable to get file size: %s\",filename);"
-    }, 
-    {
-      "line": 41, 
-      "match": "&stack0xffffffb0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffb0);"
-    }, 
-    {
-      "line": 45, 
-      "match": "&stack0xffffffb8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb8,\"Unable to open model: %s\");"
-    }, 
-    {
-      "line": 48, 
-      "match": "&stack0xffffffbc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffbc);"
-    }, 
-    {
-      "line": 53, 
-      "match": "&stack0xffffffc4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffc4,\"Out of model memory: %s\");"
-    }, 
-    {
-      "line": 56, 
-      "match": "&stack0xffffffc8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffc8);"
-    }, 
-    {
-      "line": 60, 
-      "match": "&stack0xffffffd0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffd0,\"Model file read error: %s\");"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00527ec0", 
-    "signature": "SMRGLHeaderExtended * engine_model.c_loadModelFile_FUN_00527ec0(char * filename)", 
-    "address_range": [
-      [
-        "00527ec0", 
-        "005280a1"
-      ]
-    ], 
-    "name": "engine_model.c_loadModelFile_FUN_00527ec0"
-  }, 
-  "stack_frame": {
-    "local_size": 96, 
-    "variables": [
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 100, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 268
+  },
   "cross_references": [
     {
-      "from_addr": "004b5616", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610", 
-      "addr": "004b5610"
-    }, 
+      "addr": "004b5610",
+      "from_addr": "004b5616",
+      "name": "engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b5594", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0", 
-      "addr": "004b54e0"
-    }, 
+      "addr": "004b54e0",
+      "from_addr": "004b5594",
+      "name": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00501e92", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40", 
-      "addr": "00501d40"
-    }, 
+      "addr": "00501d40",
+      "from_addr": "00501e92",
+      "name": "engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00528554", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_model.c_getMRGLBounds_FUN_00528140", 
-      "addr": "00528140"
-    }, 
+      "addr": "00528140",
+      "from_addr": "00528554",
+      "name": "engine_model.c_getMRGLBounds_FUN_00528140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00545108", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_palette.cpp_CPaletteManager_FUN_00545060", 
-      "addr": "00545060"
-    }, 
+      "addr": "00545060",
+      "from_addr": "00545108",
+      "name": "engine_palette.cpp_CPaletteManager_FUN_00545060",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004681f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_centerKeyframeModels_FUN_004681a0", 
-      "addr": "004681a0"
-    }, 
+      "addr": "004681a0",
+      "from_addr": "004681f5",
+      "name": "shape_design.c_centerKeyframeModels_FUN_004681a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00458886", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadModelBinary_FUN_00458170", 
-      "addr": "00458170"
-    }, 
+      "addr": "00458170",
+      "from_addr": "00458886",
+      "name": "shape_design.c_loadModelBinary_FUN_00458170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048ff24", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0", 
-      "addr": "0048fed0"
+      "addr": "0048fed0",
+      "from_addr": "0048ff24",
+      "name": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00527ec0",
+    "address_range": [
+      [
+        "00527ec0",
+        "005280a1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_model.c_loadModelFile_FUN_00527ec0",
+    "signature": "SMRGLHeaderExtended * engine_model.c_loadModelFile_FUN_00527ec0(char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005ff9e0",
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "0041db80",
+      "name": "engine_boss.c_modelStructNotSupported_FUN_0041db80"
+    },
+    {
+      "addr": "00481a50",
+      "name": "engine_dosio.c_getFile_FUN_00481a50"
+    },
+    {
+      "addr": "00481880",
+      "name": "engine_dosio.c_getFileSize_FUN_00481880"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00639a2e",
+      "name": "s_t_00639a2e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00639aab",
+      "name": "s_models_00639aab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639ab2",
+      "name": "s_Unable_to_get_file_size__00639ab2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639ace",
+      "name": "s_engine_model_c_00639ace",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639ae0",
+      "name": "s_rb_00639ae0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639ae3",
+      "name": "s_models_00639ae3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639aea",
+      "name": "s_Unable_to_open_model_s_00639aea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639b03",
+      "name": "s_engine_model_c_00639b03",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639b15",
+      "name": "s_engine_model_c_00639b15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639b27",
+      "name": "s_Out_of_model_memory_s_00639b27",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639b3f",
+      "name": "s_engine_model_c_00639b3f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639b51",
+      "name": "s_Model_file_read_error_s_00639b51",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639b6b",
+      "name": "s_engine_model_c_00639b6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639b7d",
+      "name": "s_engine_model_c_00639b7d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639b8f",
+      "name": "s_Invalid_model_s_00639b8f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639ba1",
+      "name": "s_engine_model_c_00639ba1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 100,
+    "local_size": 96,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 38,
+      "match": "&stack0xffffffac",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffac,\"Unable to get file size: %s\",filename);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 41,
+      "match": "&stack0xffffffb0",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffb0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 45,
+      "match": "&stack0xffffffb8",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb8,\"Unable to open model: %s\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 48,
+      "match": "&stack0xffffffbc",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffbc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xffffffc4",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffc4,\"Out of model memory: %s\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xffffffc8",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffc8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 59,
+      "match": "&stack0xffffffd0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffd0,\"Model file read error: %s\");",
+      "type": "stack_ref"
     }
   ]
 }

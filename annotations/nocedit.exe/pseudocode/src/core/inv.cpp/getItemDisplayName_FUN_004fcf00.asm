@@ -36,38 +36,38 @@ section .text
     MOV EBP,ESP                         ; 004fcf04
     MOV EDX,dword ptr [EBP + 0x14]      ; 004fcf06
     PUSH EDX                            ; 004fcf09
-    MOV EBX,0x2dbaac8                   ; 004fcf0a | SInventoryItemInfo[100] g_ItemDefinitionArray
+    MOV EBX,0x2dbaac8                   ; 004fcf0a | g_ItemDefinitionArray
     XOR ESI,ESI                         ; 004fcf0f
-    CALL core_inv.cpp_getItemModel_FUN_004fcda0 ; 004fcf11 | CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004fcda0(CDemonActor * actor_ptr)
-        ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)
-    MOV ECX,dword ptr [0x02dbaac0]      ; 004fcf16 | int g_ItemDefinitionCount
+    CALL core_inv.cpp_getItemModel_FUN_004fcda0 ; 004fcf11
+        ;   XREF to: 004fcda0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004fcda0(CDemonActor * actor_ptr)
+    MOV ECX,dword ptr [0x02dbaac0]      ; 004fcf16 | g_ItemDefinitionCount
     ADD ESP,0x4                         ; 004fcf1c
     LEA EDI,[EAX + 0x78]                ; 004fcf1f
     TEST ECX,ECX                        ; 004fcf22
-    JLE 0x004fcf44                      ; 004fcf24 | LAB_004fcf44
-        ;   XREF to: 004fcf44 (CONDITIONAL_JUMP)
-    PUSH EBX                            ; 004fcf26 | SInventoryItemInfo[100] g_ItemDefinitionArray
+    JLE 0x004fcf44                      ; 004fcf24
+        ;   XREF to: 004fcf44 (CONDITIONAL_JUMP)  ; LAB_004fcf44
+    PUSH EBX                            ; 004fcf26 | g_ItemDefinitionArray | DAT_02dbadc8
         ;   Label: LAB_004fcf26
     PUSH EDI                            ; 004fcf27
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004fcf28 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004fcf28
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004fcf2d
     TEST EAX,EAX                        ; 004fcf30
-    JZ 0x004fcf61                       ; 004fcf32 | LAB_004fcf61
-        ;   XREF to: 004fcf61 (CONDITIONAL_JUMP)
-    MOV EAX,[0x02dbaac0]                ; 004fcf34 | int g_ItemDefinitionCount
+    JZ 0x004fcf61                       ; 004fcf32
+        ;   XREF to: 004fcf61 (CONDITIONAL_JUMP)  ; LAB_004fcf61
+    MOV EAX,[0x02dbaac0]                ; 004fcf34 | g_ItemDefinitionCount
     INC ESI                             ; 004fcf39
     ADD EBX,0x300                       ; 004fcf3a
     CMP ESI,EAX                         ; 004fcf40
-    JL 0x004fcf26                       ; 004fcf42 | LAB_004fcf26
-        ;   XREF to: 004fcf26 (CONDITIONAL_JUMP)
+    JL 0x004fcf26                       ; 004fcf42
+        ;   XREF to: 004fcf26 (CONDITIONAL_JUMP)  ; LAB_004fcf26
     PUSH EDI                            ; 004fcf44
         ;   Label: LAB_004fcf44
-    PUSH 0x630379                       ; 004fcf45 | = "Add to dict: %s" | s_Add_to_dict_s_00630379 = Add to dict: %s
-    PUSH 0x2db8a70                      ; 004fcf4a | char[256] g_ErrorMessageBuffer
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fcf4f | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
-    MOV EAX,0x2db8a70                   ; 004fcf54 | char[256] g_ErrorMessageBuffer
+    PUSH 0x630379                       ; 004fcf45 | = "Add to dict: %s"
+    PUSH 0x2db8a70                      ; 004fcf4a | g_ErrorMessageBuffer
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fcf4f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
+    MOV EAX,0x2db8a70                   ; 004fcf54 | g_ErrorMessageBuffer
     ADD ESP,0xc                         ; 004fcf59
     POP EBP                             ; 004fcf5c
     POP EDI                             ; 004fcf5d

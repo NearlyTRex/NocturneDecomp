@@ -29,18 +29,18 @@ section .text
         ;   Label: core_actor.cpp_CDemonActor_spawnFlies_FUN_00409e70
     MOV EBX,dword ptr [ESP + 0x8]       ; 00409e71
     PUSH 0x510                          ; 00409e75
-    PUSH 0x6138f2                       ; 00409e7a | = "..\\core\\actor.cpp" | s_core_actor_cpp_006138f2 = ..\core\actor.cpp
+    PUSH 0x6138f2                       ; 00409e7a | = "..\\core\\actor.cpp"
     PUSH EBX                            ; 00409e7f
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00409e80 | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00409e80
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     ADD ESP,0xc                         ; 00409e85
     PUSH EBX                            ; 00409e88
-    CALL core_flies.cpp_FUN_004cca50    ; 00409e89 | undefined core_flies.cpp_FUN_004cca50()
-        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)
+    CALL core_flies.cpp_FUN_004cca50    ; 00409e89
+        ;   XREF to: 004cca50 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cca50()
     ADD ESP,0x4                         ; 00409e8e
     TEST EAX,EAX                        ; 00409e91
-    JZ 0x00409e97                       ; 00409e93 | LAB_00409e97
-        ;   XREF to: 00409e97 (CONDITIONAL_JUMP)
+    JZ 0x00409e97                       ; 00409e93
+        ;   XREF to: 00409e97 (CONDITIONAL_JUMP)  ; LAB_00409e97
     POP EBX                             ; 00409e95
     RET                                 ; 00409e96
     PUSH EAX                            ; 00409e97
@@ -49,10 +49,10 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 00409e9c
     PUSH EDX                            ; 00409ea0
     PUSH EBX                            ; 00409ea1
-    MOV ECX,dword ptr [0x0067b9a0]      ; 00409ea2 | CGore g_CGoreInstance | CGore * g_CGorePtr
-    PUSH ECX                            ; 00409ea8 | CGore g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee030 ; 00409ea9 | void core_gore.cpp_CGore_FUN_004ee030(CGore * this_ptr, CDemonActor * actor)
-        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x0067b9a0]      ; 00409ea2 | g_CGoreInstance | g_CGorePtr
+    PUSH ECX                            ; 00409ea8 | g_CGoreInstance
+    CALL core_gore.cpp_CGore_FUN_004ee030 ; 00409ea9
+        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ee030(CGore * this_ptr, CDemonActor * actor)
     ADD ESP,0x14                        ; 00409eae
     POP EBX                             ; 00409eb1
     RET                                 ; 00409eb2

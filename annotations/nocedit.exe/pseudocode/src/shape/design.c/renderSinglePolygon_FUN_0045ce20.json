@@ -1,423 +1,423 @@
 {
   "complexity": {
-    "function_call_count": 11, 
-    "complexity_score": 164, 
-    "pseudocode_lines": 109, 
-    "cross_reference_count": 2, 
-    "global_count": 29, 
-    "total_lines": 439, 
-    "assembly_lines": 330, 
-    "suspect_count": 4, 
+    "assembly_lines": 330,
+    "complexity_score": 164,
+    "cross_reference_count": 2,
+    "function_call_count": 11,
+    "global_count": 29,
+    "pseudocode_lines": 109,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_3d.c_processPolygonColor_FUN_00403e30", 
-      "addr": "00403e30"
-    }, 
-    {
-      "name": "engine_3d.c_renderPolygon_FUN_00403ba0", 
-      "addr": "00403ba0"
-    }, 
-    {
-      "name": "engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0", 
-      "addr": "00404ae0"
-    }, 
-    {
-      "name": "engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0", 
-      "addr": "00403ad0"
-    }, 
-    {
-      "name": "engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60", 
-      "addr": "00404c60"
-    }, 
-    {
-      "name": "engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40", 
-      "addr": "00404a40"
-    }, 
-    {
-      "name": "engine_3d.c_renderPolygonTextureWrappedStandard_FUN_00405ce0", 
-      "addr": "00405ce0"
-    }, 
-    {
-      "name": "engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50", 
-      "addr": "00404d50"
-    }, 
-    {
-      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
-      "addr": "005dd800"
-    }, 
-    {
-      "name": "shape_design.c_calculatePolygonNormal_FUN_0045caa0", 
-      "addr": "0045caa0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "g_NormalScaleFactor", 
-      "addr": "0061b3ea", 
-      "value": "65535"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_PolygonPlaneDistanceScale", 
-      "addr": "0061b3ee", 
-      "value": "256"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_UVCoordinateFixedMultiplier", 
-      "addr": "0061b3f6", 
-      "value": "65536"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_EditorColorMode", 
-      "addr": "0066edf8", 
-      "value": "0x5"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ZBufferEnabled", 
-      "addr": "0066ee00", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].u", 
-      "addr": "0068802c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].v", 
-      "addr": "00688030", 
-      "value": null
-    }, 
-    {
-      "type": "SShapeEditorPolygon[20000]", 
-      "name": "g_ModelPolygonData", 
-      "addr": "016e9910", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9914", 
-      "addr": "016e9914", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9915", 
-      "addr": "016e9915", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9916", 
-      "addr": "016e9916", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9917", 
-      "addr": "016e9917", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b4", 
-      "addr": "016e99b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b8", 
-      "addr": "016e99b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99bc", 
-      "addr": "016e99bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c0", 
-      "addr": "016e99c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c4", 
-      "addr": "016e99c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c8", 
-      "addr": "016e99c8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a08", 
-      "addr": "016e9a08", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a48", 
-      "addr": "016e9a48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a88", 
-      "addr": "016e9a88", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a8c", 
-      "addr": "016e9a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SelectionBlinkTimer", 
-      "addr": "01e528ac", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SelectedPolygonIndex", 
-      "addr": "01e528b8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SecondaryPolygonIndex", 
-      "addr": "01e528bc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GouraudShadingEnabled", 
-      "addr": "01e528c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_EditorTextureMode", 
-      "addr": "01e528c8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentPartIndex", 
-      "addr": "01e6614c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WireframeMode", 
-      "addr": "01e66158", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 83, 
-      "match": "&stack0xffffffdc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);"
-    }, 
-    {
-      "line": 102, 
-      "match": "&stack0xffffffdc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0045ce20", 
-    "signature": "void shape_design.c_renderSinglePolygon_FUN_0045ce20(int polygon_index)", 
-    "address_range": [
-      [
-        "0045ce20", 
-        "0045d1ce"
-      ]
-    ], 
-    "name": "shape_design.c_renderSinglePolygon_FUN_0045ce20"
-  }, 
-  "stack_frame": {
-    "local_size": 204, 
-    "variables": [
-      {
-        "offset": -200, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c8"
-      }, 
-      {
-        "offset": -196, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_c4"
-      }, 
-      {
-        "offset": -192, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c0"
-      }, 
-      {
-        "offset": -188, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_bc"
-      }, 
-      {
-        "offset": -184, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b8"
-      }, 
-      {
-        "offset": -180, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b4"
-      }, 
-      {
-        "offset": -176, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b0"
-      }, 
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -99, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_63"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "polygon_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 208, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 439
+  },
   "cross_references": [
     {
-      "from_addr": "0045d908", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0", 
-      "addr": "0045d5d0"
-    }, 
+      "addr": "0045d5d0",
+      "from_addr": "0045d908",
+      "name": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004616dc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_renderPolygonsByPart_FUN_004616a0", 
-      "addr": "004616a0"
+      "addr": "004616a0",
+      "from_addr": "004616dc",
+      "name": "shape_design.c_renderPolygonsByPart_FUN_004616a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0045ce20",
+    "address_range": [
+      [
+        "0045ce20",
+        "0045d1ce"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_renderSinglePolygon_FUN_0045ce20",
+    "signature": "void shape_design.c_renderSinglePolygon_FUN_0045ce20(int polygon_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "00403e30",
+      "name": "engine_3d.c_processPolygonColor_FUN_00403e30"
+    },
+    {
+      "addr": "00403ba0",
+      "name": "engine_3d.c_renderPolygon_FUN_00403ba0"
+    },
+    {
+      "addr": "00404ae0",
+      "name": "engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0"
+    },
+    {
+      "addr": "00403ad0",
+      "name": "engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0"
+    },
+    {
+      "addr": "00404c60",
+      "name": "engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60"
+    },
+    {
+      "addr": "00404a40",
+      "name": "engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40"
+    },
+    {
+      "addr": "00405ce0",
+      "name": "engine_3d.c_renderPolygonTextureWrappedStandard_FUN_00405ce0"
+    },
+    {
+      "addr": "00404d50",
+      "name": "engine_3d.c_renderPolygonUVMappedComplex_FUN_00404d50"
+    },
+    {
+      "addr": "005dd800",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800"
+    },
+    {
+      "addr": "0045caa0",
+      "name": "shape_design.c_calculatePolygonNormal_FUN_0045caa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b3ea",
+      "name": "g_NormalScaleFactor",
+      "type": "float",
+      "value": "65535"
+    },
+    {
+      "addr": "0061b3ee",
+      "name": "g_PolygonPlaneDistanceScale",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0061b3f6",
+      "name": "g_UVCoordinateFixedMultiplier",
+      "type": "double",
+      "value": "65536"
+    },
+    {
+      "addr": "0066edf8",
+      "name": "g_EditorColorMode",
+      "type": "int",
+      "value": "0x5"
+    },
+    {
+      "addr": "0066ee00",
+      "name": "g_ZBufferEnabled",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "0068802c",
+      "name": "g_RenderVertexBuffer[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688030",
+      "name": "g_RenderVertexBuffer[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9910",
+      "name": "g_ModelPolygonData",
+      "type": "SShapeEditorPolygon[20000]",
+      "value": null
+    },
+    {
+      "addr": "016e9914",
+      "name": "DAT_016e9914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9915",
+      "name": "DAT_016e9915",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9916",
+      "name": "DAT_016e9916",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9917",
+      "name": "DAT_016e9917",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b4",
+      "name": "DAT_016e99b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b8",
+      "name": "DAT_016e99b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99bc",
+      "name": "DAT_016e99bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c0",
+      "name": "DAT_016e99c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c4",
+      "name": "DAT_016e99c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c8",
+      "name": "DAT_016e99c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a08",
+      "name": "DAT_016e9a08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a48",
+      "name": "DAT_016e9a48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a88",
+      "name": "DAT_016e9a88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a8c",
+      "name": "DAT_016e9a8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e528ac",
+      "name": "g_SelectionBlinkTimer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e528b8",
+      "name": "g_SelectedPolygonIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e528bc",
+      "name": "g_SecondaryPolygonIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e528c0",
+      "name": "g_GouraudShadingEnabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e528c8",
+      "name": "g_EditorTextureMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e6614c",
+      "name": "g_CurrentPartIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e66158",
+      "name": "g_WireframeMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 208,
+    "local_size": 204,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_63",
+        "offset": -99,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "polygon_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 83,
+      "match": "&stack0xffffffdc",
+      "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 102,
+      "match": "&stack0xffffffdc",
+      "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",
+      "type": "stack_ref"
     }
   ]
 }

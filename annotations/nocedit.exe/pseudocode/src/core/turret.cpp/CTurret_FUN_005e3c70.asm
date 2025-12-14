@@ -18,11 +18,11 @@
 
 section .text
 
-    MOV EAX,[0x0067b654]                ; 005e3c70 | CGame g_CGameInstance | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 005e3c70 | g_CGameInstance | g_CGamePtr
         ;   Label: core_turret.cpp_CTurret_FUN_005e3c70
     CMP dword ptr [EAX + 0x204],0x0     ; 005e3c75 | DAT_02d81ca0
-    JNZ 0x005e3c81                      ; 005e3c7c | LAB_005e3c81
-        ;   XREF to: 005e3c81 (CONDITIONAL_JUMP)
+    JNZ 0x005e3c81                      ; 005e3c7c
+        ;   XREF to: 005e3c81 (CONDITIONAL_JUMP)  ; LAB_005e3c81
     XOR EAX,EAX                         ; 005e3c7e
     RET                                 ; 005e3c80
     PUSH EBX                            ; 005e3c81
@@ -31,8 +31,8 @@ section .text
     PUSH ECX                            ; 005e3c86
     MOV EBX,dword ptr [ESP + 0xc]       ; 005e3c87
     PUSH EBX                            ; 005e3c8b
-    CALL core_weapon.cpp_CWeapon_FUN_005ee340 ; 005e3c8c | int core_weapon.cpp_CWeapon_FUN_005ee340(CWeapon * this_ptr)
-        ;   XREF to: 005ee340 (UNCONDITIONAL_CALL)
+    CALL core_weapon.cpp_CWeapon_FUN_005ee340 ; 005e3c8c
+        ;   XREF to: 005ee340 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_FUN_005ee340(CWeapon * this_ptr)
     ADD ESP,0x8                         ; 005e3c91
     POP EBX                             ; 005e3c94
     RET                                 ; 005e3c95

@@ -9,27 +9,17 @@
 char * __cdecl crt_string_c_strncpy_FUN_00600f40(char *dest,char *src,SIZE_T count)
 
 {
-  char cVar1;
-  char *pcVar2;
-  char *pcVar3;
+  char *pcVar1;
   
-  pcVar3 = dest;
-  pcVar2 = dest;
-  if (count != 0) {
-    do {
-      pcVar3 = pcVar2;
-      if (*src == '\0') break;
-      pcVar3 = pcVar2 + 1;
-      cVar1 = *src;
-      src = src + 1;
-      *pcVar2 = cVar1;
-      count = count - 1;
-      pcVar2 = pcVar3;
-    } while (count != 0);
+  pcVar1 = dest;
+  for (; (count != 0 && (*src != '\0')); src = src + 1) {
+    *pcVar1 = *src;
+    count = count - 1;
+    pcVar1 = pcVar1 + 1;
   }
   for (; count != 0; count = count - 1) {
-    *pcVar3 = '\0';
-    pcVar3 = pcVar3 + 1;
+    *pcVar1 = '\0';
+    pcVar1 = pcVar1 + 1;
   }
   return dest;
 }

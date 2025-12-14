@@ -28,19 +28,19 @@ section .text
     SUB ESP,0x4                         ; 0045b856
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045b85c
     CMP byte ptr [EAX + 0x4],0x0        ; 0045b85f
-    JNZ 0x0045b86e                      ; 0045b863 | LAB_0045b86e
-        ;   XREF to: 0045b86e (CONDITIONAL_JUMP)
+    JNZ 0x0045b86e                      ; 0045b863
+        ;   XREF to: 0045b86e (CONDITIONAL_JUMP)  ; LAB_0045b86e
     MOV dword ptr [EBP + -0x4],0x1      ; 0045b865
-    JMP 0x0045b899                      ; 0045b86c | LAB_0045b899
-        ;   XREF to: 0045b899 (UNCONDITIONAL_JUMP)
+    JMP 0x0045b899                      ; 0045b86c
+        ;   XREF to: 0045b899 (UNCONDITIONAL_JUMP)  ; LAB_0045b899
     MOV EAX,dword ptr [EBP + 0x18]      ; 0045b86e
         ;   Label: LAB_0045b86e
     CMP byte ptr [EAX + 0x4],0x0        ; 0045b871
-    JNZ 0x0045b880                      ; 0045b875 | LAB_0045b880
-        ;   XREF to: 0045b880 (CONDITIONAL_JUMP)
+    JNZ 0x0045b880                      ; 0045b875
+        ;   XREF to: 0045b880 (CONDITIONAL_JUMP)  ; LAB_0045b880
     MOV dword ptr [EBP + -0x4],0xffffffff ; 0045b877
-    JMP 0x0045b899                      ; 0045b87e | LAB_0045b899
-        ;   XREF to: 0045b899 (UNCONDITIONAL_JUMP)
+    JMP 0x0045b899                      ; 0045b87e
+        ;   XREF to: 0045b899 (UNCONDITIONAL_JUMP)  ; LAB_0045b899
     MOV EAX,dword ptr [EBP + 0x18]      ; 0045b880
         ;   Label: LAB_0045b880
     ADD EAX,0x4                         ; 0045b883
@@ -48,8 +48,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045b887
     ADD EAX,0x4                         ; 0045b88a
     PUSH EAX                            ; 0045b88d
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0045b88e | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0045b88e
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0045b893
     MOV dword ptr [EBP + -0x4],EAX      ; 0045b896
     MOV EAX,dword ptr [EBP + -0x4]      ; 0045b899

@@ -39,16 +39,16 @@ section .text
     MOV ESI,dword ptr [ESP + 0x2c]      ; 004eb25b
     PUSH ESI                            ; 004eb25f
     PUSH EBX                            ; 004eb260
-    CALL core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840 ; 004eb261 | void core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor * this_ptr, SSurfaceInfo * surface_info)
-        ;   XREF to: 00409840 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840 ; 004eb261
+        ;   XREF to: 00409840 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor * this_ptr, SSurfaceInfo * surface_info)
     MOV EDX,dword ptr [EBX + 0x1e8]     ; 004eb266
     ADD ESP,0x8                         ; 004eb26c
     TEST EDX,EDX                        ; 004eb26f
-    JZ 0x004eb36b                       ; 004eb271 | LAB_004eb36b
-        ;   XREF to: 004eb36b (CONDITIONAL_JUMP)
+    JZ 0x004eb36b                       ; 004eb271
+        ;   XREF to: 004eb36b (CONDITIONAL_JUMP)  ; LAB_004eb36b
     CMP dword ptr [EBX + 0x180],0x0     ; 004eb277
-    JNZ 0x004eb28f                      ; 004eb27e | LAB_004eb28f
-        ;   XREF to: 004eb28f (CONDITIONAL_JUMP)
+    JNZ 0x004eb28f                      ; 004eb27e
+        ;   XREF to: 004eb28f (CONDITIONAL_JUMP)  ; LAB_004eb28f
     MOV dword ptr [ESI + 0x50],0x3f800000 ; 004eb280
     ADD ESP,0x14                        ; 004eb287
         ;   Label: LAB_004eb287
@@ -66,61 +66,61 @@ section .text
     PUSH EBX                            ; 004eb2a7
     FLD1                                ; 004eb2a8
     FXCH                                ; 004eb2aa
-    FADD double ptr [0x0062e119]        ; 004eb2ac | double DOUBLE_0062e119
-    MOV EBX,dword ptr [0x006703ec]      ; 004eb2b2 | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
+    FADD double ptr [0x0062e119]        ; 004eb2ac | DOUBLE_0062e119
+    MOV EBX,dword ptr [0x006703ec]      ; 004eb2b2 | g_CDemonRendererInstance | g_CDemonRendererPtr
     FSTP float ptr [ESP + 0x8]          ; 004eb2b8
     FSUBRP                              ; 004eb2bc
-    PUSH EBX                            ; 004eb2be | CDemonRenderer g_CDemonRendererInstance
+    PUSH EBX                            ; 004eb2be | g_CDemonRendererInstance
     FSTP float ptr [ESP + 0x10]         ; 004eb2bf
-    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004eb2c3 | void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-        ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 004eb2c3
+        ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004eb2c8
-    FILD dword ptr [0x006793a4]         ; 004eb2cb | int g_CurrentTextureDimension
+    FILD dword ptr [0x006793a4]         ; 004eb2cb | g_CurrentTextureDimension
     FLD float ptr [ESP + 0x4]           ; 004eb2d1
     FMUL ST1                            ; 004eb2d5
     FLD float ptr [ESP + 0x8]           ; 004eb2d7
     FMULP ST2                           ; 004eb2db
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004eb2dd | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004eb2dd
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 004eb2e2
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004eb2e4 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004eb2e4
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 004eb2e9
     FISTP dword ptr [ESP + 0xc]         ; 004eb2eb
     MOV EDI,dword ptr [ESP + 0xc]       ; 004eb2ef
     FISTP dword ptr [ESP + 0x10]        ; 004eb2f3
     TEST EDI,EDI                        ; 004eb2f7
-    JL 0x004eb35b                       ; 004eb2f9 | LAB_004eb35b
-        ;   XREF to: 004eb35b (CONDITIONAL_JUMP)
+    JL 0x004eb35b                       ; 004eb2f9
+        ;   XREF to: 004eb35b (CONDITIONAL_JUMP)  ; LAB_004eb35b
     MOV EAX,dword ptr [ESP + 0xc]       ; 004eb2fb
         ;   Label: LAB_004eb2fb
-    MOV EDX,dword ptr [0x006793a4]      ; 004eb2ff | int g_CurrentTextureDimension
+    MOV EDX,dword ptr [0x006793a4]      ; 004eb2ff | g_CurrentTextureDimension
     CMP EAX,EDX                         ; 004eb305
-    JL 0x004eb310                       ; 004eb307 | LAB_004eb310
-        ;   XREF to: 004eb310 (CONDITIONAL_JUMP)
+    JL 0x004eb310                       ; 004eb307
+        ;   XREF to: 004eb310 (CONDITIONAL_JUMP)  ; LAB_004eb310
     LEA EAX,[EDX + -0x1]                ; 004eb309
     MOV dword ptr [ESP + 0xc],EAX       ; 004eb30c
     CMP dword ptr [ESP + 0x10],0x0      ; 004eb310
         ;   Label: LAB_004eb310
-    JL 0x004eb363                       ; 004eb315 | LAB_004eb363
-        ;   XREF to: 004eb363 (CONDITIONAL_JUMP)
+    JL 0x004eb363                       ; 004eb315
+        ;   XREF to: 004eb363 (CONDITIONAL_JUMP)  ; LAB_004eb363
     MOV EAX,dword ptr [ESP + 0x10]      ; 004eb317
         ;   Label: LAB_004eb317
-    MOV EDI,dword ptr [0x006793a4]      ; 004eb31b | int g_CurrentTextureDimension
+    MOV EDI,dword ptr [0x006793a4]      ; 004eb31b | g_CurrentTextureDimension
     CMP EAX,EDI                         ; 004eb321
-    JL 0x004eb32c                       ; 004eb323 | LAB_004eb32c
-        ;   XREF to: 004eb32c (CONDITIONAL_JUMP)
+    JL 0x004eb32c                       ; 004eb323
+        ;   XREF to: 004eb32c (CONDITIONAL_JUMP)  ; LAB_004eb32c
     LEA EAX,[EDI + -0x1]                ; 004eb325
     MOV dword ptr [ESP + 0x10],EAX      ; 004eb328
     MOV EAX,dword ptr [ESP + 0x10]      ; 004eb32c
         ;   Label: LAB_004eb32c
-    IMUL EAX,dword ptr [0x006793a4]     ; 004eb330 | int g_CurrentTextureDimension
+    IMUL EAX,dword ptr [0x006793a4]     ; 004eb330 | g_CurrentTextureDimension
     MOV EBX,dword ptr [ESP + 0xc]       ; 004eb337
     ADD EBX,EAX                         ; 004eb33b
-    MOV EAX,[0x02d03e80]                ; 004eb33d | void * g_CurrentTextureData
+    MOV EAX,[0x02d03e80]                ; 004eb33d | g_CurrentTextureData
     CMP byte ptr [EBX + EAX*0x1],0x0    ; 004eb342
-    JNZ 0x004eb287                      ; 004eb346 | LAB_004eb287
-        ;   XREF to: 004eb287 (CONDITIONAL_JUMP)
+    JNZ 0x004eb287                      ; 004eb346
+        ;   XREF to: 004eb287 (CONDITIONAL_JUMP)  ; LAB_004eb287
     MOV dword ptr [ESI + 0x50],0x3f800000 ; 004eb34c
     ADD ESP,0x14                        ; 004eb353
     POP EBP                             ; 004eb356
@@ -131,16 +131,16 @@ section .text
     XOR EBP,EBP                         ; 004eb35b
         ;   Label: LAB_004eb35b
     MOV dword ptr [ESP + 0xc],EBP       ; 004eb35d
-    JMP 0x004eb2fb                      ; 004eb361 | LAB_004eb2fb
-        ;   XREF to: 004eb2fb (UNCONDITIONAL_JUMP)
+    JMP 0x004eb2fb                      ; 004eb361
+        ;   XREF to: 004eb2fb (UNCONDITIONAL_JUMP)  ; LAB_004eb2fb
     XOR EBX,EBX                         ; 004eb363
         ;   Label: LAB_004eb363
     MOV dword ptr [ESP + 0x10],EBX      ; 004eb365
-    JMP 0x004eb317                      ; 004eb369 | LAB_004eb317
-        ;   XREF to: 004eb317 (UNCONDITIONAL_JUMP)
+    JMP 0x004eb317                      ; 004eb369
+        ;   XREF to: 004eb317 (UNCONDITIONAL_JUMP)  ; LAB_004eb317
     FILD dword ptr [EBX + 0x17c]        ; 004eb36b
         ;   Label: LAB_004eb36b
-    FMUL double ptr [0x0062e111]        ; 004eb371 | double DOUBLE_0062e111
+    FMUL double ptr [0x0062e111]        ; 004eb371 | DOUBLE_0062e111
     FLD1                                ; 004eb377
     FSUBRP                              ; 004eb379
     FSTP float ptr [ESI + 0x48]         ; 004eb37b

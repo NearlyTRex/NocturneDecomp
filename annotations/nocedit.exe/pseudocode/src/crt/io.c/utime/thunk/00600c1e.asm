@@ -15,6 +15,6 @@
 section .text
 
     JMP 0x00608160                      ; 00600c1e
-        ;   Label: crt_io.c_utime_thunk_00600c1e
         ;   XREF to: 00608160 (UNCONDITIONAL_JUMP)
+        ;   Label: crt_io.c_utime_thunk_00600c1e
 

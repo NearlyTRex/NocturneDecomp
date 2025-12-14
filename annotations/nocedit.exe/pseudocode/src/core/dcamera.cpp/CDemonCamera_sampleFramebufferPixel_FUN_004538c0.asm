@@ -21,8 +21,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004538c1
     MOV EAX,dword ptr [ESP + 0xc]       ; 004538c5
     TEST byte ptr [EAX + 0x13],0x80     ; 004538c9
-    JZ 0x004538e1                       ; 004538cd | LAB_004538e1
-        ;   XREF to: 004538e1 (CONDITIONAL_JUMP)
+    JZ 0x004538e1                       ; 004538cd
+        ;   XREF to: 004538e1 (CONDITIONAL_JUMP)  ; LAB_004538e1
     MOV dword ptr [EAX + 0x28],0x0      ; 004538cf
     MOV EDX,dword ptr [EAX + 0x28]      ; 004538d6
     MOV dword ptr [EAX + 0x24],EDX      ; 004538d9
@@ -40,15 +40,15 @@ section .text
     ADD EDX,ECX                         ; 004538f7
     MOV ECX,dword ptr [EBX + 0x158]     ; 004538f9
     MOV EDX,dword ptr [ECX + EDX*0x4]   ; 004538ff
-    MOV CL,byte ptr [0x02d01f24]        ; 00453902 | int g_RedBitPosition
+    MOV CL,byte ptr [0x02d01f24]        ; 00453902 | g_RedBitPosition
     MOV EBX,EDX                         ; 00453908
     SHR EBX,CL                          ; 0045390a
     MOV ESI,EDX                         ; 0045390c
     AND EBX,0xff                        ; 0045390e
-    MOV CL,byte ptr [0x02d01f30]        ; 00453914 | int g_GreenBitPosition
+    MOV CL,byte ptr [0x02d01f30]        ; 00453914 | g_GreenBitPosition
     SHL EBX,0x8                         ; 0045391a
     SHR ESI,CL                          ; 0045391d
-    MOV CL,byte ptr [0x02d01f3c]        ; 0045391f | int g_BlueBitPosition
+    MOV CL,byte ptr [0x02d01f3c]        ; 0045391f | g_BlueBitPosition
     AND ESI,0xff                        ; 00453925
     MOV dword ptr [EAX + 0x20],EBX      ; 0045392b
     SHR EDX,CL                          ; 0045392e

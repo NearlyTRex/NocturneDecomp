@@ -44,21 +44,21 @@ section .text
     FSTP float ptr [ESP + 0x24]         ; 00425b9f
     FST float ptr [ESP + 0x28]          ; 00425ba3
     FLD float ptr [ESP + 0x24]          ; 00425ba7
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00425bab | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00425bab
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 00425bb0
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00425bb2 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00425bb2
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 00425bb7
     FISTP dword ptr [ESP + 0xc]         ; 00425bb9
     MOV EDX,dword ptr [ESP + 0xc]       ; 00425bbd
     FISTP dword ptr [ESP + 0x8]         ; 00425bc1
     TEST EDX,EDX                        ; 00425bc5
-    JL 0x00425c2b                       ; 00425bc7 | LAB_00425c2b
-        ;   XREF to: 00425c2b (CONDITIONAL_JUMP)
+    JL 0x00425c2b                       ; 00425bc7
+        ;   XREF to: 00425c2b (CONDITIONAL_JUMP)  ; LAB_00425c2b
     CMP EDX,0xb                         ; 00425bc9
-    JGE 0x00425c33                      ; 00425bcc | LAB_00425c33
-        ;   XREF to: 00425c33 (CONDITIONAL_JUMP)
+    JGE 0x00425c33                      ; 00425bcc
+        ;   XREF to: 00425c33 (CONDITIONAL_JUMP)  ; LAB_00425c33
     LEA EBX,[EDX + 0x1]                 ; 00425bce
     MOV EDX,dword ptr [ESP + 0xc]       ; 00425bd1
         ;   Label: LAB_00425bd1
@@ -73,16 +73,16 @@ section .text
     ADD ESI,EAX                         ; 00425bf2
     MOV EAX,dword ptr [ESP + 0x8]       ; 00425bf4
     TEST EAX,EAX                        ; 00425bf8
-    JL 0x00425c3e                       ; 00425bfa | LAB_00425c3e
-        ;   XREF to: 00425c3e (CONDITIONAL_JUMP)
+    JL 0x00425c3e                       ; 00425bfa
+        ;   XREF to: 00425c3e (CONDITIONAL_JUMP)  ; LAB_00425c3e
     CMP EAX,0xb                         ; 00425bfc
-    JL 0x00425c4c                       ; 00425bff | LAB_00425c4c
-        ;   XREF to: 00425c4c (CONDITIONAL_JUMP)
+    JL 0x00425c4c                       ; 00425bff
+        ;   XREF to: 00425c4c (CONDITIONAL_JUMP)  ; LAB_00425c4c
     PUSH dword ptr [ESI + 0x128e4]      ; 00425c01
     PUSH dword ptr [EBX + 0x128e4]      ; 00425c07
-    CALL core_bugs.cpp_FUN_00427ba0     ; 00425c0d | undefined core_bugs.cpp_FUN_00427ba0()
+    CALL core_bugs.cpp_FUN_00427ba0     ; 00425c0d
+        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427ba0()
         ;   Label: LAB_00425c0d
-        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)
     MOV dword ptr [ESP + 0x18],EAX      ; 00425c12
     FLD float ptr [ESP + 0x18]          ; 00425c16
     ADD ESP,0x8                         ; 00425c1a
@@ -95,18 +95,18 @@ section .text
     XOR EBX,EBX                         ; 00425c2b
         ;   Label: LAB_00425c2b
     MOV dword ptr [ESP + 0xc],EBX       ; 00425c2d
-    JMP 0x00425bd1                      ; 00425c31 | LAB_00425bd1
-        ;   XREF to: 00425bd1 (UNCONDITIONAL_JUMP)
+    JMP 0x00425bd1                      ; 00425c31
+        ;   XREF to: 00425bd1 (UNCONDITIONAL_JUMP)  ; LAB_00425bd1
     MOV EBX,0xb                         ; 00425c33
         ;   Label: LAB_00425c33
     MOV dword ptr [ESP + 0xc],EBX       ; 00425c38
-    JMP 0x00425bd1                      ; 00425c3c | LAB_00425bd1
-        ;   XREF to: 00425bd1 (UNCONDITIONAL_JUMP)
+    JMP 0x00425bd1                      ; 00425c3c
+        ;   XREF to: 00425bd1 (UNCONDITIONAL_JUMP)  ; LAB_00425bd1
     PUSH dword ptr [ESI + 0x128b8]      ; 00425c3e
         ;   Label: LAB_00425c3e
     PUSH dword ptr [EBX + 0x128b8]      ; 00425c44
-    JMP 0x00425c0d                      ; 00425c4a | LAB_00425c0d
-        ;   XREF to: 00425c0d (UNCONDITIONAL_JUMP)
+    JMP 0x00425c0d                      ; 00425c4a
+        ;   XREF to: 00425c0d (UNCONDITIONAL_JUMP)  ; LAB_00425c0d
     PUSH EDI                            ; 00425c4c
         ;   Label: LAB_00425c4c
     MOV EDI,EAX                         ; 00425c4d
@@ -114,24 +114,24 @@ section .text
     LEA EDX,[ESI + EAX*0x1]             ; 00425c52
     PUSH dword ptr [EDX + 0x128b8]      ; 00425c55
     PUSH dword ptr [EBX + EAX*0x1 + 0x128b8] ; 00425c5b
-    CALL core_bugs.cpp_FUN_00427ba0     ; 00425c62 | undefined core_bugs.cpp_FUN_00427ba0()
-        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)
+    CALL core_bugs.cpp_FUN_00427ba0     ; 00425c62
+        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427ba0()
     MOV dword ptr [ESP + 0x1c],EAX      ; 00425c67
     FLD float ptr [ESP + 0x1c]          ; 00425c6b
     ADD ESP,0x8                         ; 00425c6f
     PUSH dword ptr [ESI + EDI*0x4 + 0x128bc] ; 00425c72
     PUSH dword ptr [EBX + EDI*0x4 + 0x128bc] ; 00425c79
     FSTP float ptr [ESP + 0xc]          ; 00425c80
-    CALL core_bugs.cpp_FUN_00427ba0     ; 00425c84 | undefined core_bugs.cpp_FUN_00427ba0()
-        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)
+    CALL core_bugs.cpp_FUN_00427ba0     ; 00425c84
+        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427ba0()
     MOV dword ptr [ESP + 0x1c],EAX      ; 00425c89
     FLD float ptr [ESP + 0x1c]          ; 00425c8d
     ADD ESP,0x8                         ; 00425c91
     SUB ESP,0x4                         ; 00425c94
     FSTP float ptr [ESP]                ; 00425c97
     PUSH dword ptr [ESP + 0x8]          ; 00425c9a
-    CALL core_bugs.cpp_FUN_00427ba0     ; 00425c9e | undefined core_bugs.cpp_FUN_00427ba0()
-        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)
+    CALL core_bugs.cpp_FUN_00427ba0     ; 00425c9e
+        ;   XREF to: 00427ba0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00427ba0()
     MOV dword ptr [ESP + 0x1c],EAX      ; 00425ca3
     FLD float ptr [ESP + 0x1c]          ; 00425ca7
     ADD ESP,0x8                         ; 00425cab

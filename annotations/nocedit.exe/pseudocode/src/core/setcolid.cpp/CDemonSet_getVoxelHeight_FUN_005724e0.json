@@ -1,78 +1,78 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 23, 
-    "assembly_lines": 14, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170", 
-      "addr": "00499170"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRaytrace", 
-      "name": "g_CDemonRaytraceInstance", 
-      "addr": "03277d14", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 14,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005724e0", 
-    "signature": "float core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_005724e0(CDemonSet * this_ptr, CVector3f * world_position)", 
+    "address": "005724e0",
     "address_range": [
       [
-        "005724e0", 
+        "005724e0",
         "00572506"
       ]
-    ], 
-    "name": "core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_005724e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_005724e0",
+    "signature": "float core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_005724e0(CDemonSet * this_ptr, CVector3f * world_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "00499170",
+      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03277d14",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 12, 
+    "frame_size": 20,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4"
-      }, 
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "world_position"
+        "is_param": true,
+        "name": "world_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

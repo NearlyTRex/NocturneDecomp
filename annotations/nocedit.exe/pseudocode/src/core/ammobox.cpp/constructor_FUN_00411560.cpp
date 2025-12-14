@@ -11,8 +11,7 @@ void core_ammobox_cpp_constructor_FUN_00411560(void)
 {
   CAmmoBox *this_ptr;
   
-  this_ptr = (CAmmoBox *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x34c,"..\\core\\ammobox.cpp",0x25);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x34c,"..\\core\\ammobox.cpp",0x25);
   if (this_ptr == (CAmmoBox *)0x0) {
     return;
   }

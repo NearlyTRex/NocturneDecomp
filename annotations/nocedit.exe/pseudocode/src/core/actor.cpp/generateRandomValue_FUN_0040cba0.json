@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 4, 
-    "global_count": 1, 
-    "total_lines": 13, 
-    "assembly_lines": 8, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "uint", 
-      "name": "g_RandomSeedValue", 
-      "addr": "00822368", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040cba0", 
-    "signature": "uint core_actor.cpp_generateRandomValue_FUN_0040cba0(void)", 
-    "address_range": [
-      [
-        "0040cba0", 
-        "0040cbbb"
-      ]
-    ], 
-    "name": "core_actor.cpp_generateRandomValue_FUN_0040cba0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 8,
+    "complexity_score": 5,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
   "cross_references": [
     {
-      "from_addr": "0040cbd1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cbc0", 
-      "addr": "0040cbc0"
-    }, 
+      "addr": "0040cbc0",
+      "from_addr": "0040cbd1",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040cc2e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
-      "addr": "0040cc10"
-    }, 
+      "addr": "0040cc10",
+      "from_addr": "0040cc2e",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040ccea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70", 
-      "addr": "0040cc70"
-    }, 
+      "addr": "0040cc70",
+      "from_addr": "0040ccea",
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040cd21", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_randomChance_FUN_0040cd10", 
-      "addr": "0040cd10"
+      "addr": "0040cd10",
+      "from_addr": "0040cd21",
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0040cba0",
+    "address_range": [
+      [
+        "0040cba0",
+        "0040cbbb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_generateRandomValue_FUN_0040cba0",
+    "signature": "uint core_actor.cpp_generateRandomValue_FUN_0040cba0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00822368",
+      "name": "g_RandomSeedValue",
+      "type": "uint",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

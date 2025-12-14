@@ -11,8 +11,7 @@ void core_waypoint_cpp_FUN_005ebe30(void)
 {
   CWayPoint *this_ptr;
   
-  this_ptr = (CWayPoint *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x558,"..\\core\\waypoint.cpp",0x53);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x558,"..\\core\\waypoint.cpp",0x53);
   if (this_ptr == (CWayPoint *)0x0) {
     return;
   }

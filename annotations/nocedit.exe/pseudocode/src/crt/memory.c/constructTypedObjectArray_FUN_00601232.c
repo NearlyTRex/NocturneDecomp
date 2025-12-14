@@ -14,7 +14,7 @@ crt_memory_c_constructTypedObjectArray_FUN_00601232
   void *pvVar1;
   
   if (dest == (void *)0x0) {
-    return dest;
+    return (void *)0x0;
   }
   *(int *)dest = element_count;
   pvVar1 = crt_memory_c_dispatchObjectArrayConstructor_FUN_00601200

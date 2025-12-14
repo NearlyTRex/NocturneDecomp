@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x887980                    ; 00448c60 | CDemonActorType g_CCrossbowClassInfo
+    MOV EAX,0x887980                    ; 00448c60 | g_CCrossbowClassInfo
         ;   Label: core_crossbow.cpp_CCrossbow_getActorType_FUN_00448c60
     RET                                 ; 00448c65
 

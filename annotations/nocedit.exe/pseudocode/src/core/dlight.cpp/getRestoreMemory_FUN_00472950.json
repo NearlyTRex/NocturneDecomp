@@ -1,111 +1,111 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 50, 
-    "assembly_lines": 37, 
-    "suspect_count": 2, 
+    "assembly_lines": 37,
+    "complexity_score": 38,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dlight_cpp_0061eefc", 
-      "addr": "0061eefc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_getRestoreMemory_Need_mo_0061ef0f", 
-      "addr": "0061ef0f", 
-      "value": null
-    }, 
-    {
-      "type": "uchar[6291656]", 
-      "name": "g_ShadowRestoreBuffer", 
-      "addr": "020a5744", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_ShadowRestoreAllocator", 
-      "addr": "026a580c", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_ShadowRestoreAllocator = g_ShadowRestoreAllocator + in_stack_00000008 + 8;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00472950", 
-    "signature": "int core_dlight.cpp_getRestoreMemory_FUN_00472950(int pixel_count)", 
-    "address_range": [
-      [
-        "00472950", 
-        "004729b7"
-      ]
-    ], 
-    "name": "core_dlight.cpp_getRestoreMemory_FUN_00472950"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "pixel_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "004729ed", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0", 
-      "addr": "004729d0"
+      "addr": "004729d0",
+      "from_addr": "004729ed",
+      "name": "core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00472950",
+    "address_range": [
+      [
+        "00472950",
+        "004729b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_getRestoreMemory_FUN_00472950",
+    "signature": "int core_dlight.cpp_getRestoreMemory_FUN_00472950(int pixel_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061eefc",
+      "name": "s_core_dlight_cpp_0061eefc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061ef0f",
+      "name": "s_getRestoreMemory_Need_mo_0061ef0f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "020a5744",
+      "name": "g_ShadowRestoreBuffer",
+      "type": "uchar[6291656]",
+      "value": null
+    },
+    {
+      "addr": "026a580c",
+      "name": "g_ShadowRestoreAllocator",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "pixel_count",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "g_ShadowRestoreAllocator = g_ShadowRestoreAllocator + in_stack_00000008 + 8;",
+      "type": "stack_param"
     }
   ]
 }

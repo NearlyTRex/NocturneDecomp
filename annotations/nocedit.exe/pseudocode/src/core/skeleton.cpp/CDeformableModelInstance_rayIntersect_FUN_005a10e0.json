@@ -1,139 +1,139 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 98, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 88, 
-    "assembly_lines": 60, 
-    "suspect_count": 6, 
+    "assembly_lines": 60,
+    "complexity_score": 98,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 28,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0", 
-      "addr": "0059cba0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
-      "addr": "005a07a0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0", 
-      "addr": "005a01d0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "byte *unaff_EBP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CVector3f *in_stack_00000014;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar1,in_stack_00000010,in_stack_00000014,ray_direction_00,skinned_vertices,"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pCVar1,in_stack_00000010,in_stack_00000014,ray_direction_00,skinned_vertices,"
-    }, 
-    {
-      "line": 29, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a10e0", 
-    "signature": "float core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0(CDeformableModelInstance * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)", 
-    "address_range": [
-      [
-        "005a10e0", 
-        "005a1155"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "ray_origin"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "ray_direction"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 88
+  },
   "cross_references": [
     {
-      "from_addr": "00409787", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470", 
-      "addr": "00409470"
+      "addr": "00409470",
+      "from_addr": "00409787",
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a10e0",
+    "address_range": [
+      [
+        "005a10e0",
+        "005a1155"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0",
+    "signature": "float core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0(CDeformableModelInstance * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059cba0",
+      "name": "core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0"
+    },
+    {
+      "addr": "005a07a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005a01d0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
+      "text": "byte *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000014",
+      "text": "CVector3f *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000010",
+      "text": "(pCVar1,in_stack_00000010,in_stack_00000014,ray_direction_00,skinned_vertices,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000014",
+      "text": "(pCVar1,in_stack_00000010,in_stack_00000014,ray_direction_00,skinned_vertices,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP);",
+      "type": "unaffected_reg"
     }
   ]
 }

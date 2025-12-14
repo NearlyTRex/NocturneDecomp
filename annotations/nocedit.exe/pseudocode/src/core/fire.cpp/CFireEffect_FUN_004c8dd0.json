@@ -1,97 +1,97 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 36, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 54, 
-    "assembly_lines": 43, 
-    "suspect_count": 2, 
+    "assembly_lines": 43,
+    "complexity_score": 36,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8e40", 
-      "addr": "004c8e40"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0", 
-      "addr": "005a98b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062a0b3", 
-      "addr": "0062a0b3", 
-      "value": "0.000100000000000000"
-    }, 
-    {
-      "type": "CToss[20]", 
-      "name": "g_TossPool", 
-      "addr": "02d678d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d67cb0", 
-      "addr": "02d67cb0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_0000001c;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(g_TossPool[iVar1].field0_0x0 + 0x3e0) = in_stack_0000001c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c8dd0", 
-    "signature": "void core_fire.cpp_CFireEffect_FUN_004c8dd0(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c8dd0", 
-        "004c8e3e"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c8dd0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "0049cea8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dynamite.cpp_FUN_0049ce70", 
-      "addr": "0049ce70"
+      "addr": "0049ce70",
+      "from_addr": "0049cea8",
+      "name": "core_dynamite.cpp_FUN_0049ce70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c8dd0",
+    "address_range": [
+      [
+        "004c8dd0",
+        "004c8e3e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c8dd0",
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c8dd0(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8e40",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8e40"
+    },
+    {
+      "addr": "005a98b0",
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a0b3",
+      "name": "DOUBLE_0062a0b3",
+      "type": "double",
+      "value": "0.000100000000000000"
+    },
+    {
+      "addr": "02d678d0",
+      "name": "g_TossPool",
+      "type": "CToss[20]",
+      "value": null
+    },
+    {
+      "addr": "02d67cb0",
+      "name": "DAT_02d67cb0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000001c",
+      "text": "uint in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000001c",
+      "text": "*(uint *)(g_TossPool[iVar1].field0_0x0 + 0x3e0) = in_stack_0000001c;",
+      "type": "stack_param"
     }
   ]
 }

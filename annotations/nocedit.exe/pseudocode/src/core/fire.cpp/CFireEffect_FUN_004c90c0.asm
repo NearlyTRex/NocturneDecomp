@@ -67,12 +67,12 @@ section .text
     FADDP                               ; 004c9120
     MOV dword ptr [ESP + 0xc],EAX       ; 004c9122
     FSQRT                               ; 004c9126
-    FMUL double ptr [0x0062a0bb]        ; 004c9128 | double DOUBLE_0062a0bb
+    FMUL double ptr [0x0062a0bb]        ; 004c9128 | DOUBLE_0062a0bb
     FDIV float ptr [EBP + 0x20]         ; 004c912e
     FLD1                                ; 004c9131
     FADDP                               ; 004c9133
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004c9135 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004c9135
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP]               ; 004c913a
     MOV EAX,dword ptr [ESP]             ; 004c913d
     MOV dword ptr [ESP + 0x20],EAX      ; 004c9140
@@ -92,8 +92,8 @@ section .text
     FSTP float ptr [ESP + 0x14]         ; 004c9168
     FSTP float ptr [ESP + 0x18]         ; 004c916c
     TEST EAX,EAX                        ; 004c9170
-    JLE 0x004c91d0                      ; 004c9172 | LAB_004c91d0
-        ;   XREF to: 004c91d0 (CONDITIONAL_JUMP)
+    JLE 0x004c91d0                      ; 004c9172
+        ;   XREF to: 004c91d0 (CONDITIONAL_JUMP)  ; LAB_004c91d0
     PUSH ESI                            ; 004c9174
         ;   Label: LAB_004c9174
     PUSH dword ptr [EBP + 0x28]         ; 004c9175
@@ -102,8 +102,8 @@ section .text
     PUSH dword ptr [EBP + 0x20]         ; 004c917f
     PUSH EAX                            ; 004c9182
     PUSH EDI                            ; 004c9183
-    CALL core_fire.cpp_CFireEffect_FUN_004c9060 ; 004c9184 | void core_fire.cpp_CFireEffect_FUN_004c9060(CFireEffect * this_ptr)
-        ;   XREF to: 004c9060 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_CFireEffect_FUN_004c9060 ; 004c9184
+        ;   XREF to: 004c9060 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c9060(CFireEffect * this_ptr)
     ADD ESP,0x18                        ; 004c9189
     INC EBX                             ; 004c918c
     FLD float ptr [ESP + 0x4]           ; 004c918d
@@ -122,8 +122,8 @@ section .text
     FSTP float ptr [ESP + 0x8]          ; 004c91b6
     FSTP float ptr [ESP + 0xc]          ; 004c91ba
     CMP EBX,ECX                         ; 004c91be
-    JL 0x004c9174                       ; 004c91c0 | LAB_004c9174
-        ;   XREF to: 004c9174 (CONDITIONAL_JUMP)
+    JL 0x004c9174                       ; 004c91c0
+        ;   XREF to: 004c9174 (CONDITIONAL_JUMP)  ; LAB_004c9174
     LEA EAX,[EAX]                       ; 004c91c2
     LEA EDX,[EDX]                       ; 004c91c8
     MOV EAX,EAX                         ; 004c91ce

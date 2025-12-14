@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 67, 
-    "assembly_lines": 42, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
-      "addr": "005a0820"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 42,
+    "complexity_score": 25,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0059fd60", 
-    "signature": "void core_skeleton.cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0059fd60(CDeformableModelInstance * this_ptr, CVector3f * offset_vector)", 
+    "address": "0059fd60",
     "address_range": [
       [
-        "0059fd60", 
+        "0059fd60",
         "0059fdce"
       ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0059fd60"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0059fd60",
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0059fd60(CDeformableModelInstance * this_ptr, CVector3f * offset_vector)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a0820",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "offset_vector"
+        "is_param": true,
+        "name": "offset_vector",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

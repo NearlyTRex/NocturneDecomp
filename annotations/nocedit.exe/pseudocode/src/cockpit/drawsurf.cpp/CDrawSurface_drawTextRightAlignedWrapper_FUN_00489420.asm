@@ -30,8 +30,8 @@ section .text
     PUSH EBX                            ; 00489430
     MOV ESI,dword ptr [ESP + 0x18]      ; 00489431
     PUSH ESI                            ; 00489435
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0 ; 00489436 | void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(CDrawSurface * this_ptr, int x, int y, char * text)
-        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0 ; 00489436
+        ;   XREF to: 004893f0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(CDrawSurface * this_ptr, int x, int y, char * text)
     ADD ESP,0x10                        ; 0048943b
     POP ESI                             ; 0048943e
     POP EBX                             ; 0048943f

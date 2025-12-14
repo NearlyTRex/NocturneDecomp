@@ -1,385 +1,385 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 315, 
-    "pseudocode_lines": 105, 
-    "cross_reference_count": 23, 
-    "global_count": 0, 
-    "total_lines": 344, 
-    "assembly_lines": 239, 
-    "suspect_count": 18, 
+    "assembly_lines": 239,
+    "complexity_score": 315,
+    "cross_reference_count": 23,
+    "function_call_count": 6,
+    "global_count": 0,
+    "pseudocode_lines": 105,
+    "suspect_count": 18,
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param", 
+      "concat_artifact",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_file.c_normalize_path_separator_FUN_005febe0", 
-      "addr": "005febe0"
-    }, 
-    {
-      "name": "crt_locale.c_mblen_FUN_00605a40", 
-      "addr": "00605a40"
-    }, 
-    {
-      "name": "crt_locale.c_wchar_to_bytes_FUN_00605a20", 
-      "addr": "00605a20"
-    }, 
-    {
-      "name": "crt_string.c_mb_get_last_char_FUN_00605aa0", 
-      "addr": "00605aa0"
-    }, 
-    {
-      "name": "crt_string.c_mbtowc_next_FUN_00605a70", 
-      "addr": "00605a70"
-    }, 
-    {
-      "name": "crt_string.c_mbtowc_peek_FUN_006059e0", 
-      "addr": "006059e0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "wchar_t *unaff_EBP;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000018;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_ffffffcc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "wchar_t *in_stack_ffffffcc;"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_ffffffcc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,in_stack_ffffffcc);"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_ffffffcc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffcc = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);"
-    }, 
-    {
-      "line": 55, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "in_stack_ffffffcc = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);"
-    }, 
-    {
-      "line": 80, 
-      "match": "&stack0xffffffec", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,(wchar_t *)&stack0xffffffec);"
-    }, 
-    {
-      "line": 81, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (((wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_00,wVar2) != unaff_EBP) &&"
-    }, 
-    {
-      "line": 81, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if (((wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_00,wVar2) != unaff_EBP) &&"
-    }, 
-    {
-      "line": 82, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((wchar_t *)(uint)(byte)*path_buffer == unaff_EBP)) {"
-    }, 
-    {
-      "line": 85, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "while (*in_stack_00000018 != '\\0') {"
-    }, 
-    {
-      "line": 86, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(in_stack_00000018);"
-    }, 
-    {
-      "line": 87, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,unaff_EBP);"
-    }, 
-    {
-      "line": 88, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_01,wVar2);"
-    }, 
-    {
-      "line": 88, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "unaff_EBP = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_01,wVar2);"
-    }, 
-    {
-      "line": 93, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_string_c_mbtowc_next_FUN_00605a70(in_stack_00000018);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005febfc", 
-    "signature": "void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, char * extension)", 
-    "address_range": [
-      [
-        "005febfc", 
-        "005fedcf"
-      ]
-    ], 
-    "name": "crt_file.c_makepath_FUN_005febfc"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "path_buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "drive"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "directory"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "extension"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 344
+  },
   "cross_references": [
     {
-      "from_addr": "0040f5ef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0", 
-      "addr": "0040eed0"
-    }, 
+      "addr": "0040eed0",
+      "from_addr": "0040f5ef",
+      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047cac7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50", 
-      "addr": "0047ca50"
-    }, 
+      "addr": "0047ca50",
+      "from_addr": "0047cac7",
+      "name": "core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047976e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
-      "addr": "00479330"
-    }, 
+      "addr": "00479330",
+      "from_addr": "0047976e",
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047db3f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
-      "addr": "0047cbc0"
-    }, 
+      "addr": "0047cbc0",
+      "from_addr": "0047db3f",
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bda9f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20", 
-      "addr": "004bda20"
-    }, 
+      "addr": "004bda20",
+      "from_addr": "004bda9f",
+      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bd82b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_preprocessMusicFiles_FUN_004bd750", 
-      "addr": "004bd750"
-    }, 
+      "addr": "004bd750",
+      "from_addr": "004bd82b",
+      "name": "core_fileman.cpp_preprocessMusicFiles_FUN_004bd750",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005235cf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_FUN_005235b0", 
-      "addr": "005235b0"
-    }, 
+      "addr": "005235b0",
+      "from_addr": "005235cf",
+      "name": "core_mission.cpp_CDemonMission_FUN_005235b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053d1dd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190", 
-      "addr": "0053d190"
-    }, 
+      "addr": "0053d190",
+      "from_addr": "0053d1dd",
+      "name": "core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00563546", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00562920", 
-      "addr": "00562920"
-    }, 
+      "addr": "00562920",
+      "from_addr": "00563546",
+      "name": "core_script.cpp_FUN_00562920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005988df", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
-    }, 
+      "addr": "005968b0",
+      "from_addr": "005988df",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005895d2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589530", 
-      "addr": "00589530"
-    }, 
+      "addr": "00589530",
+      "from_addr": "005895d2",
+      "name": "core_skeledit.cpp_FUN_00589530",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00589724", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_005896b0", 
-      "addr": "005896b0"
-    }, 
+      "addr": "005896b0",
+      "from_addr": "00589724",
+      "name": "core_skeledit.cpp_FUN_005896b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058b983", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b8e0", 
-      "addr": "0058b8e0"
-    }, 
+      "addr": "0058b8e0",
+      "from_addr": "0058b983",
+      "name": "core_skeledit.cpp_FUN_0058b8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058c450", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058c190", 
-      "addr": "0058c190"
-    }, 
+      "addr": "0058c190",
+      "from_addr": "0058c450",
+      "name": "core_skeledit.cpp_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058e182", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058e0b0", 
-      "addr": "0058e0b0"
-    }, 
+      "addr": "0058e0b0",
+      "from_addr": "0058e182",
+      "name": "core_skeledit.cpp_FUN_0058e0b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00592e6c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00592690", 
-      "addr": "00592690"
-    }, 
+      "addr": "00592690",
+      "from_addr": "00592e6c",
+      "name": "core_skeledit.cpp_FUN_00592690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060f617", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
-      "addr": "0060f39c"
-    }, 
+      "addr": "0060f39c",
+      "from_addr": "0060f617",
+      "name": "crt_process.c_spawnvp_FUN_0060f39c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00481f6c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_dosio.c_makePath_FUN_00481f50", 
-      "addr": "00481f50"
-    }, 
+      "addr": "00481f50",
+      "from_addr": "00481f6c",
+      "name": "engine_dosio.c_makePath_FUN_00481f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051b7c7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770", 
-      "addr": "0051b770"
-    }, 
+      "addr": "0051b770",
+      "from_addr": "0051b7c7",
+      "name": "shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051af67", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0", 
-      "addr": "0051adf0"
-    }, 
+      "addr": "0051adf0",
+      "from_addr": "0051af67",
+      "name": "shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051ac50", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60", 
-      "addr": "0051aa60"
-    }, 
+      "addr": "0051aa60",
+      "from_addr": "0051ac50",
+      "name": "shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ad067", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20", 
-      "addr": "005acf20"
-    }, 
+      "addr": "005acf20",
+      "from_addr": "005ad067",
+      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ad970", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0", 
-      "addr": "005ad5c0"
+      "addr": "005ad5c0",
+      "from_addr": "005ad970",
+      "name": "sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005febfc",
+    "address_range": [
+      [
+        "005febfc",
+        "005fedcf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_file.c_makepath_FUN_005febfc",
+    "signature": "void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, char * extension)"
+  },
+  "function_calls": [
+    {
+      "addr": "005febe0",
+      "name": "crt_file.c_normalize_path_separator_FUN_005febe0"
+    },
+    {
+      "addr": "00605a40",
+      "name": "crt_locale.c_mblen_FUN_00605a40"
+    },
+    {
+      "addr": "00605a20",
+      "name": "crt_locale.c_wchar_to_bytes_FUN_00605a20"
+    },
+    {
+      "addr": "00605aa0",
+      "name": "crt_string.c_mb_get_last_char_FUN_00605aa0"
+    },
+    {
+      "addr": "00605a70",
+      "name": "crt_string.c_mbtowc_next_FUN_00605a70"
+    },
+    {
+      "addr": "006059e0",
+      "name": "crt_string.c_mbtowc_peek_FUN_006059e0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "path_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "drive",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "directory",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "extension",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 16,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBP",
+      "text": "wchar_t *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000018",
+      "text": "char *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_ffffffcc",
+      "text": "wchar_t *in_stack_ffffffcc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_ffffffcc",
+      "text": "wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,in_stack_ffffffcc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_ffffffcc",
+      "text": "in_stack_ffffffcc = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 55,
+      "match": "CONCAT22",
+      "text": "in_stack_ffffffcc = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 80,
+      "match": "&stack0xffffffec",
+      "text": "wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,(wchar_t *)&stack0xffffffec);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EBP",
+      "text": "if (((wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_00,wVar2) != unaff_EBP) &&",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 81,
+      "match": "CONCAT22",
+      "text": "if (((wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_00,wVar2) != unaff_EBP) &&",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 82,
+      "match": "unaff_EBP",
+      "text": "((wchar_t *)(uint)(byte)*path_buffer == unaff_EBP)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_00000018",
+      "text": "while (*in_stack_00000018 != '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_00000018",
+      "text": "wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(in_stack_00000018);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
+      "match": "unaff_EBP",
+      "text": "wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 88,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_01,wVar2);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 88,
+      "match": "CONCAT22",
+      "text": "unaff_EBP = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_01,wVar2);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_00000018",
+      "text": "crt_string_c_mbtowc_next_FUN_00605a70(in_stack_00000018);",
+      "type": "stack_param"
     }
   ]
 }

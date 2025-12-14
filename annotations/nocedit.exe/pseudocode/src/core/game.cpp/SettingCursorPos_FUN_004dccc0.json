@@ -1,201 +1,201 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 49, 
-    "pseudocode_lines": 49, 
-    "cross_reference_count": 1, 
-    "global_count": 11, 
-    "total_lines": 222, 
-    "assembly_lines": 173, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0", 
-      "addr": "004dc3e0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005f30d0", 
-      "addr": "005f30d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062b8a5", 
-      "addr": "0062b8a5", 
-      "value": "0.0000152587890625"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062b8ad", 
-      "addr": "0062b8ad", 
-      "value": "0.75"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062b8b5", 
-      "addr": "0062b8b5", 
-      "value": "-1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseX", 
-      "addr": "02cf6a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseY", 
-      "addr": "02cf6a90", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_KeyboardState", 
-      "addr": "02d03e98", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredCameraValue", 
-      "addr": "02d828cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.selected_camera_index", 
-      "addr": "0326f11c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004dccc9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004dccc0", 
-    "signature": "void core_game.cpp_SettingCursorPos_FUN_004dccc0(CGame * game, SPlayerControl * ctrl)", 
-    "address_range": [
-      [
-        "004dccc0", 
-        "004dce6e"
-      ]
-    ], 
-    "name": "core_game.cpp_SettingCursorPos_FUN_004dccc0"
-  }, 
-  "stack_frame": {
-    "local_size": 68, 
-    "variables": [
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGame *", 
-        "size": 4, 
-        "name": "game"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SPlayerControl *", 
-        "size": 4, 
-        "name": "ctrl"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 76, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 173,
+    "complexity_score": 49,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 11,
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 222
+  },
   "cross_references": [
     {
-      "from_addr": "004dbe06", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_playerControls_FUN_004dbd80", 
-      "addr": "004dbd80"
+      "addr": "004dbd80",
+      "from_addr": "004dbe06",
+      "name": "core_game.cpp_CGame_playerControls_FUN_004dbd80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004dccc0",
+    "address_range": [
+      [
+        "004dccc0",
+        "004dce6e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_SettingCursorPos_FUN_004dccc0",
+    "signature": "void core_game.cpp_SettingCursorPos_FUN_004dccc0(CGame * game, SPlayerControl * ctrl)"
+  },
+  "function_calls": [
+    {
+      "addr": "004dc3e0",
+      "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0"
+    },
+    {
+      "addr": "005f30d0",
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005f30d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062b8a5",
+      "name": "DOUBLE_0062b8a5",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "0062b8ad",
+      "name": "DOUBLE_0062b8ad",
+      "type": "double",
+      "value": "0.75"
+    },
+    {
+      "addr": "0062b8b5",
+      "name": "DOUBLE_0062b8b5",
+      "type": "double",
+      "value": "-1"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d03e98",
+      "name": "g_KeyboardState",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "02d828cc",
+      "name": "g_StoredCameraValue",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0326f11c",
+      "name": "g_CDemonSetInstance.selected_camera_index",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "game",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "ctrl",
+        "offset": 8,
+        "size": 4,
+        "type": "SPlayerControl *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004dccc9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

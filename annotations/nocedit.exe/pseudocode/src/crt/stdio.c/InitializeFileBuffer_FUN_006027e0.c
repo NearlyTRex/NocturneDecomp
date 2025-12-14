@@ -27,7 +27,7 @@ void __cdecl crt_stdio_c_InitializeFileBuffer_FUN_006027e0(FILE *file)
       file->_bufsize = 0x86;
     }
   }
-  pcVar2 = (char *)crt_memory_c_malloc_FUN_00601bb0(file->_bufsize);
+  pcVar2 = crt_memory_c_malloc_FUN_00601bb0(file->_bufsize);
   file->_link->__reserve_end = pcVar2;
   if (file->_link->__reserve_end == (char *)0x0) {
     bVar3 = *(byte *)((int)&file->_flag + 1) & 0xf8;

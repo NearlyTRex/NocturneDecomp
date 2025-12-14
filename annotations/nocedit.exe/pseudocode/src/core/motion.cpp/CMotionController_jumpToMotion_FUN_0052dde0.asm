@@ -34,11 +34,11 @@ section .text
     SUB ESP,0x4                         ; 0052dde1
     MOV EBX,dword ptr [ESP + 0xc]       ; 0052dde4
     FLD float ptr [ESP + 0x14]          ; 0052dde8
-    FCOMP float ptr [0x0063aafb]        ; 0052ddec | float g_MotionControllerTargetFrameEnd2
+    FCOMP float ptr [0x0063aafb]        ; 0052ddec | g_MotionControllerTargetFrameEnd2
     FNSTSW AX                           ; 0052ddf2
     SAHF                                ; 0052ddf4
-    JZ 0x0052de1a                       ; 0052ddf5 | LAB_0052de1a
-        ;   XREF to: 0052de1a (CONDITIONAL_JUMP)
+    JZ 0x0052de1a                       ; 0052ddf5
+        ;   XREF to: 0052de1a (CONDITIONAL_JUMP)  ; LAB_0052de1a
     MOV EAX,dword ptr [ESP + 0x10]      ; 0052ddf7
         ;   Label: LAB_0052ddf7
     MOV dword ptr [EBX + 0x2c],0x0      ; 0052ddfb
@@ -46,8 +46,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 0052de05
     PUSH EBX                            ; 0052de09
     MOV dword ptr [EBX + 0x8],EAX       ; 0052de0a
-    CALL core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40 ; 0052de0d | void core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40(CMotionController * this_ptr)
-        ;   XREF to: 0052de40 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40 ; 0052de0d
+        ;   XREF to: 0052de40 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0052de12
     ADD ESP,0x4                         ; 0052de15
     POP EBX                             ; 0052de18
@@ -65,6 +65,6 @@ section .text
     MOV dword ptr [ESP],EAX             ; 0052de30
     FILD dword ptr [ESP]                ; 0052de33
     FSTP float ptr [ESP + 0x14]         ; 0052de36
-    JMP 0x0052ddf7                      ; 0052de3a | LAB_0052ddf7
-        ;   XREF to: 0052ddf7 (UNCONDITIONAL_JUMP)
+    JMP 0x0052ddf7                      ; 0052de3a
+        ;   XREF to: 0052ddf7 (UNCONDITIONAL_JUMP)  ; LAB_0052ddf7
 

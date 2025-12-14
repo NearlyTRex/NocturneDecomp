@@ -29,7 +29,7 @@ BOOL __stdcall crt_signal_c_consoleCtrlHandler_FUN_0060cf20(DWORD dwCtrlType)
     crt_signal_c_processSignal_FUN_0060d128(7);
   }
   if ((pSVar1 != (SIGNAL_HANDLER)&DAT_00000002) && (pSVar1 != (SIGNAL_HANDLER)0x3)) {
-    return (BOOL)&DAT_00000001;
+    return 1;
   }
   return 0;
 }

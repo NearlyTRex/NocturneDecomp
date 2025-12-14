@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 13, 
-    "assembly_lines": 8, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170", 
-      "addr": "0052f170"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052f250", 
-    "signature": "void sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250(CMP3Decoder * this_ptr)", 
-    "address_range": [
-      [
-        "0052f250", 
-        "0052f25f"
-      ]
-    ], 
-    "name": "sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMP3Decoder *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 8,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
   "cross_references": [
     {
-      "from_addr": "0052f563", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350", 
-      "addr": "0052f350"
+      "addr": "0052f350",
+      "from_addr": "0052f563",
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0052f250",
+    "address_range": [
+      [
+        "0052f250",
+        "0052f25f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250",
+    "signature": "void sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250(CMP3Decoder * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052f170",
+      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      }
+    ]
+  },
+  "suspects": []
 }

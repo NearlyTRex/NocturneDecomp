@@ -18,7 +18,6 @@ uint core_curtain_cpp_FUN_0044b060(void)
   int iVar3;
   int *piVar4;
   int *piVar5;
-  int iVar6;
   SMRGLHeaderPrimitive *primitive_array;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
@@ -78,8 +77,8 @@ LAB_0044b1a4:
                (SInputFace *)primitive_array,(int)&in_stack_00000004[0x152].field17_0x104,4,0);
     if ((int)in_stack_00000004[1].location.position.y < 0xfde9) {
       for (iVar3 = 0;
-          iVar6 = in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100,
-          SBORROW /* signed borrow */4(iVar3,iVar6 * 2) != iVar3 + iVar6 * -2 < 0; iVar3 = iVar3 + 1) {
+          iVar3 < in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100 *
+                  2; iVar3 = iVar3 + 1) {
         engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
                   (g_CDemonRendererPtr,primitive_array);
         primitive_array = primitive_array + 3;
@@ -101,8 +100,8 @@ LAB_0044b1a4:
                (SInputFace *)primitive_array_00,(int)&in_stack_00000004[0x152].field17_0x104,4,0);
     if ((int)in_stack_00000004[1].location.position.y < 0xfde9) {
       for (iVar3 = 0;
-          iVar6 = in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100,
-          SBORROW /* signed borrow */4(iVar3,iVar6 * 2) != iVar3 + iVar6 * -2 < 0; iVar3 = iVar3 + 1) {
+          iVar3 < in_stack_00000004[0x152].is_transparent * in_stack_00000004[0x152].field16_0x100 *
+                  2; iVar3 = iVar3 + 1) {
         engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
                   (g_CDemonRendererPtr,&primitive_array_00->base);
         primitive_array_00 = primitive_array_00 + 1;

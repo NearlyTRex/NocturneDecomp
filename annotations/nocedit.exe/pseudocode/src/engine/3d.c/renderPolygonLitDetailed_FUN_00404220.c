@@ -58,9 +58,7 @@ LAB_00404350:
   vertex_count = 0;
   iVar6 = 0;
   g_RenderStateFlag2 = PREPROCESS_NONE;
-  for (iVar2 = 0;
-      SBORROW /* signed borrow */4(iVar2,*(int *)(in_stack_0000000c + 4) * 3) !=
-      iVar2 + *(int *)(in_stack_0000000c + 4) * -3 < 0; iVar2 = iVar2 + 3) {
+  for (iVar2 = 0; iVar2 < *(int *)(in_stack_0000000c + 4) * 3; iVar2 = iVar2 + 3) {
     *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
     fVar3 = (float)(pSVar4->base).count;
     fVar5 = (float)(pSVar4->surface_normal).A;

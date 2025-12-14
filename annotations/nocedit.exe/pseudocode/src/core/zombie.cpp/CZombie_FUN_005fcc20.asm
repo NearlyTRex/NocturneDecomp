@@ -21,16 +21,16 @@ section .text
     PUSH EDX                            ; 005fcc25
     MOV ECX,dword ptr [ESP + 0xc]       ; 005fcc26
     PUSH ECX                            ; 005fcc2a
-    CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 005fcc2b | void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
-        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 005fcc2b
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
     ADD ESP,0x8                         ; 005fcc30
     MOV EBX,dword ptr [ESP + 0xc]       ; 005fcc33
     MOV EAX,dword ptr [ESP + 0x8]       ; 005fcc37
     PUSH EBX                            ; 005fcc3b
     ADD EAX,0x158                       ; 005fcc3c
     PUSH EAX                            ; 005fcc41
-    CALL core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 ; 005fcc42 | undefined core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
-        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)
+    CALL core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 ; 005fcc42
+        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)  ; undefined core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
     ADD ESP,0x8                         ; 005fcc47
     POP EBX                             ; 005fcc4a
     RET                                 ; 005fcc4b

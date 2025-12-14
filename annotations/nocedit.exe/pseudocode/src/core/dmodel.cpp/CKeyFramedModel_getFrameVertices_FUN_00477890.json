@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 6, 
-    "global_count": 0, 
-    "total_lines": 37, 
-    "assembly_lines": 25, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00477890", 
-    "signature": "CVector3i * core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(CKeyFramedModel * this_ptr, int frame_index)", 
-    "address_range": [
-      [
-        "00477890", 
-        "004778ce"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "frame_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 25,
+    "complexity_score": 12,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
   "cross_references": [
     {
-      "from_addr": "00478276", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0", 
-      "addr": "004781d0"
-    }, 
+      "addr": "004781d0",
+      "from_addr": "00478276",
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004778ec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0", 
-      "addr": "004778d0"
-    }, 
+      "addr": "004778d0",
+      "from_addr": "004778ec",
+      "name": "core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d2209", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_frankgen.cpp_LoadModel_FUN_004d2190", 
-      "addr": "004d2190"
-    }, 
+      "addr": "004d2190",
+      "from_addr": "004d2209",
+      "name": "core_frankgen.cpp_LoadModel_FUN_004d2190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052a8fa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_CMorphModel_FUN_0052a8d0", 
-      "addr": "0052a8d0"
-    }, 
+      "addr": "0052a8d0",
+      "from_addr": "0052a8fa",
+      "name": "core_morph.cpp_CMorphModel_FUN_0052a8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052aa95", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_FUN_0052aa80", 
-      "addr": "0052aa80"
-    }, 
+      "addr": "0052aa80",
+      "from_addr": "0052aa95",
+      "name": "core_morph.cpp_FUN_0052aa80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e2285", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_CTurret_FUN_005e2240", 
-      "addr": "005e2240"
+      "addr": "005e2240",
+      "from_addr": "005e2285",
+      "name": "core_turret.cpp_CTurret_FUN_005e2240",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00477890",
+    "address_range": [
+      [
+        "00477890",
+        "004778ce"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890",
+    "signature": "CVector3i * core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(CKeyFramedModel * this_ptr, int frame_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "frame_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

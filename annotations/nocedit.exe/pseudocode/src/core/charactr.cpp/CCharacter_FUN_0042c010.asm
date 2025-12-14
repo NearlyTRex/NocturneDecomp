@@ -40,8 +40,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0xc]       ; 0042c017
     MOV EBX,dword ptr [EBP + 0x10]      ; 0042c01a
     TEST EBX,EBX                        ; 0042c01d
-    JNZ 0x0042c028                      ; 0042c01f | LAB_0042c028
-        ;   XREF to: 0042c028 (CONDITIONAL_JUMP)
+    JNZ 0x0042c028                      ; 0042c01f
+        ;   XREF to: 0042c028 (CONDITIONAL_JUMP)  ; LAB_0042c028
     XOR EAX,EAX                         ; 0042c021
     MOV ESP,EBP                         ; 0042c023
         ;   Label: LAB_0042c023
@@ -56,15 +56,15 @@ section .text
     CALL dword ptr [EDX + 0x128]        ; 0042c033
     ADD ESP,0x8                         ; 0042c039
     TEST EAX,EAX                        ; 0042c03c
-    JZ 0x0042c023                       ; 0042c03e | LAB_0042c023
-        ;   XREF to: 0042c023 (CONDITIONAL_JUMP)
+    JZ 0x0042c023                       ; 0042c03e
+        ;   XREF to: 0042c023 (CONDITIONAL_JUMP)  ; LAB_0042c023
     MOV EDX,dword ptr [EBP + 0x14]      ; 0042c040
     PUSH EDX                            ; 0042c043
     LEA EAX,[EBP + -0x3c]               ; 0042c044
     PUSH EAX                            ; 0042c047
     PUSH EBX                            ; 0042c048
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0042c049 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0042c049
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     FLD float ptr [EBP + -0x14]         ; 0042c04e
     FLD float ptr [EBP + -0x18]         ; 0042c051
     FSUB float ptr [EAX]                ; 0042c054
@@ -84,22 +84,22 @@ section .text
     FST float ptr [EBP + -0x1c]         ; 0042c077
     FMUL float ptr [EBP + -0x1c]        ; 0042c07a
     XOR ECX,ECX                         ; 0042c07d
-    MOV EAX,[0x0067b654]                ; 0042c07f | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 0042c07f | g_CGamePtr
     MOV dword ptr [EBP + -0x20],ECX     ; 0042c084
     FADDP                               ; 0042c087
     FLD float ptr [EAX + 0x264]         ; 0042c089 | g_CGameInstance.delta_time_float
     FXCH                                ; 0042c08f
     FSQRT                               ; 0042c091
     FXCH                                ; 0042c093
-    FMUL double ptr [0x0061718a]        ; 0042c095 | double DOUBLE_0061718a
+    FMUL double ptr [0x0061718a]        ; 0042c095 | DOUBLE_0061718a
     ADD ESP,0xc                         ; 0042c09b
     FSTP float ptr [EBP + -0xc]         ; 0042c09e
     FST float ptr [EBP + -0x8]          ; 0042c0a1
     FCOMP float ptr [EBP + -0xc]        ; 0042c0a4
     FNSTSW AX                           ; 0042c0a7
     SAHF                                ; 0042c0a9
-    JBE 0x0042c0d3                      ; 0042c0aa | LAB_0042c0d3
-        ;   XREF to: 0042c0d3 (CONDITIONAL_JUMP)
+    JBE 0x0042c0d3                      ; 0042c0aa
+        ;   XREF to: 0042c0d3 (CONDITIONAL_JUMP)  ; LAB_0042c0d3
     FLD float ptr [EBP + -0xc]          ; 0042c0ac
     FDIV float ptr [EBP + -0x8]         ; 0042c0af
     FLD float ptr [EBP + -0x24]         ; 0042c0b2

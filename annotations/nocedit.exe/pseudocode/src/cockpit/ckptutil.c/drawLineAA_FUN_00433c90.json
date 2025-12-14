@@ -1,308 +1,308 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 226, 
-    "pseudocode_lines": 96, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 411, 
-    "assembly_lines": 315, 
-    "suspect_count": 12, 
+    "assembly_lines": 315,
+    "complexity_score": 226,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 96,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0", 
-      "addr": "004342f0"
-    }, 
-    {
-      "name": "cockpit_ckptutil.c_putPixel_FUN_004345c0", 
-      "addr": "004345c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_LineClippingDisabled", 
-      "addr": "0066e800", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00433c99", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_ffffffc4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_ffffffc4;"
-    }, 
-    {
-      "line": 44, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_EDI + -1;"
-    }, 
-    {
-      "line": 44, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_EDI + -1;"
-    }, 
-    {
-      "line": 45, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while (unaff_EDI != 0);"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_ffffffc4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(x0,y0,((float)(uVar5 >> 8) + 1.0) * in_stack_ffffffc4,color);"
-    }, 
-    {
-      "line": 60, 
-      "match": "in_stack_ffffffc4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc4 = (float)color;"
-    }, 
-    {
-      "line": 75, 
-      "match": "in_stack_ffffffc4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(x0,y0,((float)(uVar5 >> 8) + 1.0) * in_stack_ffffffc4,color);"
-    }, 
-    {
-      "line": 76, 
-      "match": "in_stack_ffffffc4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc4 = (float)color;"
-    }, 
-    {
-      "line": 89, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_EDI + -1;"
-    }, 
-    {
-      "line": 89, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_EDI + -1;"
-    }, 
-    {
-      "line": 90, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while (unaff_EDI != 0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00433c90", 
-    "signature": "void cockpit_ckptutil.c_drawLineAA_FUN_00433c90(int x0, int y0, int x1, int y1, int color)", 
-    "address_range": [
-      [
-        "00433c90", 
-        "00433f41"
-      ]
-    ], 
-    "name": "cockpit_ckptutil.c_drawLineAA_FUN_00433c90"
-  }, 
-  "stack_frame": {
-    "local_size": 68, 
-    "variables": [
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x0"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y0"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x1"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y1"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "color"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 88, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 411
+  },
   "cross_references": [
     {
-      "from_addr": "00488494", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410", 
-      "addr": "00488410"
-    }, 
+      "addr": "00488410",
+      "from_addr": "00488494",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045d536", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470", 
-      "addr": "0045d470"
+      "addr": "0045d470",
+      "from_addr": "0045d536",
+      "name": "shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00433c90",
+    "address_range": [
+      [
+        "00433c90",
+        "00433f41"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_drawLineAA_FUN_00433c90",
+    "signature": "void cockpit_ckptutil.c_drawLineAA_FUN_00433c90(int x0, int y0, int x1, int y1, int color)"
+  },
+  "function_calls": [
+    {
+      "addr": "004342f0",
+      "name": "cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0"
+    },
+    {
+      "addr": "004345c0",
+      "name": "cockpit_ckptutil.c_putPixel_FUN_004345c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0066e800",
+      "name": "g_LineClippingDisabled",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "x0",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y0",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00433c99",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffffc4",
+      "text": "float in_stack_ffffffc4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EDI",
+      "text": "} while (unaff_EDI != 0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_ffffffc4",
+      "text": "(x0,y0,((float)(uVar5 >> 8) + 1.0) * in_stack_ffffffc4,color);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_ffffffc4",
+      "text": "in_stack_ffffffc4 = (float)color;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_ffffffc4",
+      "text": "(x0,y0,((float)(uVar5 >> 8) + 1.0) * in_stack_ffffffc4,color);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_ffffffc4",
+      "text": "in_stack_ffffffc4 = (float)color;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EDI",
+      "text": "} while (unaff_EDI != 0);",
+      "type": "unaffected_reg"
     }
   ]
 }

@@ -258,8 +258,8 @@ section .text
 
     PUSH 0xa228                         ; 0058f810
         ;   Label: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058f815 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058f815
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058f81a
     PUSH ESI                            ; 0058f81b
     PUSH EDI                            ; 0058f81c
@@ -269,32 +269,32 @@ section .text
     AND ESP,0xfffffff8                  ; 0058f826
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058f829
     CMP dword ptr [EAX],0x1             ; 0058f82c
-    JZ 0x0058f854                       ; 0058f82f | LAB_0058f854
-        ;   XREF to: 0058f854 (CONDITIONAL_JUMP)
-    MOV ECX,0x64b4cb                    ; 0058f831 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b4cb = ..\core\skeledit.cpp
+    JZ 0x0058f854                       ; 0058f82f
+        ;   XREF to: 0058f854 (CONDITIONAL_JUMP)  ; LAB_0058f854
+    MOV ECX,0x64b4cb                    ; 0058f831 | = "..\\core\\skeledit.cpp"
     MOV EBX,0xbc8                       ; 0058f836
-    PUSH 0x64b4e0                       ; 0058f83b | = "CDeformableModel::determinePartsFromS..." | s_CDeformableModel_determi_0064b4e0 = CDeformableModel::determinePartsFromS3D - can't do this before building LODs!
-    MOV dword ptr [0x02f0ca48],ECX      ; 0058f840 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 0058f846 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0058f84c | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64b4e0                       ; 0058f83b | = "CDeformableModel::determinePartsFromS..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 0058f840 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 0058f846 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0058f84c
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0058f851
     MOV EBX,dword ptr [EBP + 0x18]      ; 0058f854
         ;   Label: LAB_0058f854
     ADD EBX,0x200                       ; 0058f857
     PUSH EBX                            ; 0058f85d
-    PUSH 0x64b52e                       ; 0058f85e | = "Opening %s" | s_Opening_s_0064b52e = Opening %s
-    MOV ESI,dword ptr [0x00678a60]      ; 0058f863 | CEditorTools * g_CEditorToolsPtr
-    PUSH ESI                            ; 0058f869 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058f86a | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x64b52e                       ; 0058f85e | = "Opening %s"
+    MOV ESI,dword ptr [0x00678a60]      ; 0058f863 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0058f869 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058f86a
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058f86f
     PUSH 0xbde                          ; 0058f872
     XOR EDI,EDI                         ; 0058f877
-    PUSH 0x64b539                       ; 0058f879 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b539 = ..\core\skeledit.cpp
+    PUSH 0x64b539                       ; 0058f879 | = "..\\core\\skeledit.cpp"
     MOV dword ptr [ESP + 0xa078],EDI    ; 0058f87e
     MOV dword ptr [ESP + 0xa07c],EDI    ; 0058f885
-    PUSH 0x64b54e                       ; 0058f88c | = "rt" | s_rt_0064b54e = rt
+    PUSH 0x64b54e                       ; 0058f88c | = "rt"
     MOV dword ptr [ESP + 0xa084],EDI    ; 0058f891
     MOV dword ptr [ESP + 0xa088],EDI    ; 0058f898
     PUSH EDI                            ; 0058f89f
@@ -303,120 +303,120 @@ section .text
     PUSH EBX                            ; 0058f8ae
     MOV dword ptr [ESP + 0xa09c],EDI    ; 0058f8af
     MOV dword ptr [ESP + 0xa11c],EDI    ; 0058f8b6
-    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0058f8bd | FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0058f8bd
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0058f8c2
     MOV dword ptr [ESP + 0xa10c],EAX    ; 0058f8c5
     TEST EAX,EAX                        ; 0058f8cc
-    JNZ 0x0058fa47                      ; 0058f8ce | LAB_0058fa47
-        ;   XREF to: 0058fa47 (CONDITIONAL_JUMP)
+    JNZ 0x0058fa47                      ; 0058f8ce
+        ;   XREF to: 0058fa47 (CONDITIONAL_JUMP)  ; LAB_0058fa47
     PUSH EBX                            ; 0058f8d4
-    PUSH 0x64b551                       ; 0058f8d5 | = "Can't open %s" | s_Can_t_open_s_0064b551 = Can't open %s
+    PUSH 0x64b551                       ; 0058f8d5 | = "Can't open %s"
     PUSH 0x3670650                      ; 0058f8da | DAT_03670650
         ;   Label: LAB_0058f8da
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058f8df | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058f8df
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058f8e4
     MOV ECX,dword ptr [ESP + 0xa10c]    ; 0058f8e7
         ;   Label: LAB_0058f8e7
     TEST ECX,ECX                        ; 0058f8ee
-    JZ 0x0058f905                       ; 0058f8f0 | LAB_0058f905
-        ;   XREF to: 0058f905 (CONDITIONAL_JUMP)
+    JZ 0x0058f905                       ; 0058f8f0
+        ;   XREF to: 0058f905 (CONDITIONAL_JUMP)  ; LAB_0058f905
     PUSH 0xbe2                          ; 0058f8f2
-    PUSH 0x64b55f                       ; 0058f8f7 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b55f = ..\core\skeledit.cpp
+    PUSH 0x64b55f                       ; 0058f8f7 | = "..\\core\\skeledit.cpp"
     PUSH ECX                            ; 0058f8fc
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0058f8fd | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0058f8fd
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0058f902
     MOV ESI,dword ptr [ESP + 0xa078]    ; 0058f905
         ;   Label: LAB_0058f905
     TEST ESI,ESI                        ; 0058f90c
-    JZ 0x0058f923                       ; 0058f90e | LAB_0058f923
-        ;   XREF to: 0058f923 (CONDITIONAL_JUMP)
+    JZ 0x0058f923                       ; 0058f90e
+        ;   XREF to: 0058f923 (CONDITIONAL_JUMP)  ; LAB_0058f923
     PUSH 0xbe3                          ; 0058f910
-    PUSH 0x64b574                       ; 0058f915 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b574 = ..\core\skeledit.cpp
+    PUSH 0x64b574                       ; 0058f915 | = "..\\core\\skeledit.cpp"
     PUSH ESI                            ; 0058f91a
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0058f91b | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0058f91b
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0058f920
     MOV EDX,0xbe4                       ; 0058f923
         ;   Label: LAB_0058f923
-    MOV EAX,0x64b589                    ; 0058f928 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b589 = ..\core\skeledit.cpp
+    MOV EAX,0x64b589                    ; 0058f928 | = "..\\core\\skeledit.cpp"
     MOV ECX,dword ptr [ESP + 0xa070]    ; 0058f92d
-    MOV dword ptr [0x02f0d944],EDX      ; 0058f934 | int g_CurrentDebugLine
-    MOV [0x0067d20c],EAX                ; 0058f93a | char * g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDX      ; 0058f934 | g_CurrentDebugLine
+    MOV [0x0067d20c],EAX                ; 0058f93a | g_CurrentDebugFilename
     TEST ECX,ECX                        ; 0058f93f
-    JZ 0x0058f94f                       ; 0058f941 | LAB_0058f94f
-        ;   XREF to: 0058f94f (CONDITIONAL_JUMP)
+    JZ 0x0058f94f                       ; 0058f941
+        ;   XREF to: 0058f94f (CONDITIONAL_JUMP)  ; LAB_0058f94f
     LEA EAX,[ECX + -0x4]                ; 0058f943
     PUSH EAX                            ; 0058f946
-    CALL crt_memory.c_free_FUN_005fe659 ; 0058f947 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 0058f947
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0058f94c
-    MOV EBX,0x64b59e                    ; 0058f94f | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b59e = ..\core\skeledit.cpp
+    MOV EBX,0x64b59e                    ; 0058f94f | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_0058f94f
     MOV EDI,dword ptr [ESP + 0xa074]    ; 0058f954
     MOV ESI,0xbe5                       ; 0058f95b
     PUSH EDI                            ; 0058f960
-    MOV dword ptr [0x0067d20c],EBX      ; 0058f961 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],ESI      ; 0058f967 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 0058f96d | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
-    MOV EAX,0x64b5b3                    ; 0058f972 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b5b3 = ..\core\skeledit.cpp
+    MOV dword ptr [0x0067d20c],EBX      ; 0058f961 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ESI      ; 0058f967 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 0058f96d
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
+    MOV EAX,0x64b5b3                    ; 0058f972 | = "..\\core\\skeledit.cpp"
     ADD ESP,0x4                         ; 0058f977
     MOV EDX,0xbe6                       ; 0058f97a
     MOV ECX,dword ptr [ESP + 0xa07c]    ; 0058f97f
-    MOV [0x0067d20c],EAX                ; 0058f986 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EDX      ; 0058f98b | int g_CurrentDebugLine
+    MOV [0x0067d20c],EAX                ; 0058f986 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDX      ; 0058f98b | g_CurrentDebugLine
     TEST ECX,ECX                        ; 0058f991
-    JZ 0x0058f9a1                       ; 0058f993 | LAB_0058f9a1
-        ;   XREF to: 0058f9a1 (CONDITIONAL_JUMP)
+    JZ 0x0058f9a1                       ; 0058f993
+        ;   XREF to: 0058f9a1 (CONDITIONAL_JUMP)  ; LAB_0058f9a1
     LEA EAX,[ECX + -0x4]                ; 0058f995
     PUSH EAX                            ; 0058f998
-    CALL crt_memory.c_free_FUN_005fe659 ; 0058f999 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 0058f999
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0058f99e
     MOV ESI,0xbe7                       ; 0058f9a1
         ;   Label: LAB_0058f9a1
-    MOV EBX,0x64b5c8                    ; 0058f9a6 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b5c8 = ..\core\skeledit.cpp
+    MOV EBX,0x64b5c8                    ; 0058f9a6 | = "..\\core\\skeledit.cpp"
     MOV EDI,dword ptr [ESP + 0xa080]    ; 0058f9ab
-    MOV dword ptr [0x02f0d944],ESI      ; 0058f9b2 | int g_CurrentDebugLine
-    MOV dword ptr [0x0067d20c],EBX      ; 0058f9b8 | char * g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ESI      ; 0058f9b2 | g_CurrentDebugLine
+    MOV dword ptr [0x0067d20c],EBX      ; 0058f9b8 | g_CurrentDebugFilename
     TEST EDI,EDI                        ; 0058f9be
-    JZ 0x0058f9ce                       ; 0058f9c0 | LAB_0058f9ce
-        ;   XREF to: 0058f9ce (CONDITIONAL_JUMP)
+    JZ 0x0058f9ce                       ; 0058f9c0
+        ;   XREF to: 0058f9ce (CONDITIONAL_JUMP)  ; LAB_0058f9ce
     LEA EAX,[EDI + -0x4]                ; 0058f9c2
     PUSH EAX                            ; 0058f9c5
-    CALL crt_memory.c_free_FUN_005fe659 ; 0058f9c6 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 0058f9c6
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0058f9cb
-    MOV EAX,0x64b5dd                    ; 0058f9ce | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b5dd = ..\core\skeledit.cpp
+    MOV EAX,0x64b5dd                    ; 0058f9ce | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_0058f9ce
     MOV ECX,dword ptr [ESP + 0xa084]    ; 0058f9d3
     MOV EDX,0xbe8                       ; 0058f9da
     PUSH ECX                            ; 0058f9df
-    MOV [0x0067d20c],EAX                ; 0058f9e0 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EDX      ; 0058f9e5 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 0058f9eb | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV [0x0067d20c],EAX                ; 0058f9e0 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDX      ; 0058f9e5 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 0058f9eb
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0058f9f0
-    MOV EBX,0x64b5f2                    ; 0058f9f3 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b5f2 = ..\core\skeledit.cpp
+    MOV EBX,0x64b5f2                    ; 0058f9f3 | = "..\\core\\skeledit.cpp"
     MOV EDI,dword ptr [ESP + 0xa088]    ; 0058f9f8
     MOV ESI,0xbe9                       ; 0058f9ff
     PUSH EDI                            ; 0058fa04
-    MOV dword ptr [0x0067d20c],EBX      ; 0058fa05 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],ESI      ; 0058fa0b | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 0058fa11 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],EBX      ; 0058fa05 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ESI      ; 0058fa0b | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 0058fa11
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0058fa16
-    MOV EAX,0x64b607                    ; 0058fa19 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b607 = ..\core\skeledit.cpp
+    MOV EAX,0x64b607                    ; 0058fa19 | = "..\\core\\skeledit.cpp"
     MOV ECX,dword ptr [ESP + 0xa108]    ; 0058fa1e
     MOV EDX,0xbea                       ; 0058fa25
     PUSH ECX                            ; 0058fa2a
-    MOV [0x0067d20c],EAX                ; 0058fa2b | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EDX      ; 0058fa30 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 0058fa36 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV [0x0067d20c],EAX                ; 0058fa2b | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDX      ; 0058fa30 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 0058fa36
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0058fa3b
     XOR EAX,EAX                         ; 0058fa3e
     MOV ESP,EBP                         ; 0058fa40
@@ -427,79 +427,77 @@ section .text
     RET                                 ; 0058fa46
     PUSH 0xbee                          ; 0058fa47
         ;   Label: LAB_0058fa47
-    PUSH 0x64b61c                       ; 0058fa4c | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b61c = ..\core\skeledit.cpp
-    PUSH 0x64b631                       ; 0058fa51 | = "wt" | s_wt_0064b631 = wt
+    PUSH 0x64b61c                       ; 0058fa4c | = "..\\core\\skeledit.cpp"
+    PUSH 0x64b631                       ; 0058fa51 | = "wt"
     PUSH EDI                            ; 0058fa56
-    PUSH 0x64b634                       ; 0058fa57 | = "parts.log" | s_parts_log_0064b634 = parts.log
-    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0058fa5c | FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)
+    PUSH 0x64b634                       ; 0058fa57 | = "parts.log"
+    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0058fa5c
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0058fa61
     MOV dword ptr [ESP + 0xa078],EAX    ; 0058fa64
     TEST EAX,EAX                        ; 0058fa6b
-    JZ 0x00590a20                       ; 0058fa6d | LAB_00590a20
-        ;   XREF to: 00590a20 (CONDITIONAL_JUMP)
+    JZ 0x00590a20                       ; 0058fa6d
+        ;   XREF to: 00590a20 (CONDITIONAL_JUMP)  ; LAB_00590a20
     MOV EAX,dword ptr [EBP + 0x18]      ; 0058fa73
         ;   Label: LAB_0058fa73
     ADD EAX,0x200                       ; 0058fa76
     PUSH EAX                            ; 0058fa7b
-    PUSH 0x64b66a                       ; 0058fa7c | = "Matching skeleton parts for %s\n" | s_Matching_skeleton_parts__0064b66a = Matching skeleton parts for %s
-
+    PUSH 0x64b66a                       ; 0058fa7c | = "Matching skeleton parts for %s\n"
     MOV ESI,dword ptr [ESP + 0xa080]    ; 0058fa81
     PUSH ESI                            ; 0058fa88
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fa89 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fa89
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0058fa8e
     MOV EBX,0x1                         ; 0058fa91
     MOV ESI,dword ptr [ESP + 0xa10c]    ; 0058fa96
     PUSH ESI                            ; 0058fa9d
         ;   Label: LAB_0058fa9d
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058fa9e | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058fa9e
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0058faa3
     TEST EAX,EAX                        ; 0058faa6
-    JL 0x0058fab4                       ; 0058faa8 | LAB_0058fab4
-        ;   XREF to: 0058fab4 (CONDITIONAL_JUMP)
+    JL 0x0058fab4                       ; 0058faa8
+        ;   XREF to: 0058fab4 (CONDITIONAL_JUMP)  ; LAB_0058fab4
     CMP EAX,0xa                         ; 0058faaa
-    JNZ 0x0058fa9d                      ; 0058faad | LAB_0058fa9d
-        ;   XREF to: 0058fa9d (CONDITIONAL_JUMP)
+    JNZ 0x0058fa9d                      ; 0058faad
+        ;   XREF to: 0058fa9d (CONDITIONAL_JUMP)  ; LAB_0058fa9d
     DEC EBX                             ; 0058faaf
     TEST EBX,EBX                        ; 0058fab0
-    JG 0x0058fa9d                       ; 0058fab2 | LAB_0058fa9d
-        ;   XREF to: 0058fa9d (CONDITIONAL_JUMP)
+    JG 0x0058fa9d                       ; 0058fab2
+        ;   XREF to: 0058fa9d (CONDITIONAL_JUMP)  ; LAB_0058fa9d
     LEA EAX,[ESP + 0xa110]              ; 0058fab4
         ;   Label: LAB_0058fab4
     PUSH EAX                            ; 0058fabb
-    PUSH 0x64b68a                       ; 0058fabc | = "%d\n" | s_d_0064b68a = %d
-
+    PUSH 0x64b68a                       ; 0058fabc | = "%d\n"
     MOV EDI,dword ptr [ESP + 0xa114]    ; 0058fac1
     PUSH EDI                            ; 0058fac8
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058fac9 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058fac9
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0058face
     MOV EAX,dword ptr [ESP + 0xa110]    ; 0058fad1
     CMP EAX,0x65                        ; 0058fad8
-    JL 0x00590a48                       ; 0058fadb | LAB_00590a48
-        ;   XREF to: 00590a48 (CONDITIONAL_JUMP)
+    JL 0x00590a48                       ; 0058fadb
+        ;   XREF to: 00590a48 (CONDITIONAL_JUMP)  ; LAB_00590a48
     CMP EAX,0x67                        ; 0058fae1
-    JG 0x00590a48                       ; 0058fae4 | LAB_00590a48
-        ;   XREF to: 00590a48 (CONDITIONAL_JUMP)
+    JG 0x00590a48                       ; 0058fae4
+        ;   XREF to: 00590a48 (CONDITIONAL_JUMP)  ; LAB_00590a48
     MOV EBX,0x1                         ; 0058faea
     MOV ESI,EDI                         ; 0058faef
     PUSH ESI                            ; 0058faf1
         ;   Label: LAB_0058faf1
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058faf2 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058faf2
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0058faf7
     TEST EAX,EAX                        ; 0058fafa
-    JL 0x0058fb08                       ; 0058fafc | LAB_0058fb08
-        ;   XREF to: 0058fb08 (CONDITIONAL_JUMP)
+    JL 0x0058fb08                       ; 0058fafc
+        ;   XREF to: 0058fb08 (CONDITIONAL_JUMP)  ; LAB_0058fb08
     CMP EAX,0xa                         ; 0058fafe
-    JNZ 0x0058faf1                      ; 0058fb01 | LAB_0058faf1
-        ;   XREF to: 0058faf1 (CONDITIONAL_JUMP)
+    JNZ 0x0058faf1                      ; 0058fb01
+        ;   XREF to: 0058faf1 (CONDITIONAL_JUMP)  ; LAB_0058faf1
     DEC EBX                             ; 0058fb03
     TEST EBX,EBX                        ; 0058fb04
-    JG 0x0058faf1                       ; 0058fb06 | LAB_0058faf1
-        ;   XREF to: 0058faf1 (CONDITIONAL_JUMP)
+    JG 0x0058faf1                       ; 0058fb06
+        ;   XREF to: 0058faf1 (CONDITIONAL_JUMP)  ; LAB_0058faf1
     LEA EAX,[ESP + 0xa0c0]              ; 0058fb08
         ;   Label: LAB_0058fb08
     PUSH EAX                            ; 0058fb0f
@@ -515,63 +513,61 @@ section .text
     PUSH EAX                            ; 0058fb37
     LEA EAX,[ESP + 0xa12c]              ; 0058fb38
     PUSH EAX                            ; 0058fb3f
-    PUSH 0x64b6ae                       ; 0058fb40 | = "%d,%d,%d,%d,%d,%d,%d\n" | s_d_d_d_d_d_d_d_0064b6ae = %d,%d,%d,%d,%d,%d,%d
-
+    PUSH 0x64b6ae                       ; 0058fb40 | = "%d,%d,%d,%d,%d,%d,%d\n"
     MOV EBX,dword ptr [ESP + 0xa12c]    ; 0058fb45
     PUSH EBX                            ; 0058fb4c
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058fb4d | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058fb4d
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x24                        ; 0058fb52
     CMP EAX,0x7                         ; 0058fb55
-    JNZ 0x00590a70                      ; 0058fb58 | LAB_00590a70
-        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)
+    JNZ 0x00590a70                      ; 0058fb58
+        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)  ; LAB_00590a70
     MOV EBX,dword ptr [EBP + 0x18]      ; 0058fb5e
     MOV ESI,dword ptr [ESP + 0xa118]    ; 0058fb61
     ADD EBX,0x200                       ; 0058fb68
     CMP ESI,0x1e                        ; 0058fb6e
-    JG 0x00590a83                       ; 0058fb71 | LAB_00590a83
-        ;   XREF to: 00590a83 (CONDITIONAL_JUMP)
+    JG 0x00590a83                       ; 0058fb71
+        ;   XREF to: 00590a83 (CONDITIONAL_JUMP)  ; LAB_00590a83
     PUSH EBX                            ; 0058fb77
-    PUSH 0x64b6e7                       ; 0058fb78 | = "Reading part list from %s" | s_Reading_part_list_from_s_0064b6e7 = Reading part list from %s
-    MOV EDI,dword ptr [0x00678a60]      ; 0058fb7d | CEditorTools * g_CEditorToolsPtr
+    PUSH 0x64b6e7                       ; 0058fb78 | = "Reading part list from %s"
+    MOV EDI,dword ptr [0x00678a60]      ; 0058fb7d | g_CEditorToolsPtr
     MOV EDX,dword ptr [EBP + 0x14]      ; 0058fb83
-    PUSH EDI                            ; 0058fb86 | CEditorTools g_CEditorToolsPtr
+    PUSH EDI                            ; 0058fb86 | g_CEditorToolsPtr
     MOV dword ptr [EDX + 0x7140],ESI    ; 0058fb87
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058fb8d | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058fb8d
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058fb92
     PUSH EBX                            ; 0058fb95
-    PUSH 0x64b701                       ; 0058fb96 | = "Reading part list from %s\n" | s_Reading_part_list_from_s_0064b701 = Reading part list from %s
-
+    PUSH 0x64b701                       ; 0058fb96 | = "Reading part list from %s\n"
     MOV EAX,dword ptr [ESP + 0xa080]    ; 0058fb9b
     PUSH EAX                            ; 0058fba2
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fba3 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fba3
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0058fba8
     MOV EBX,0x1                         ; 0058fbab
     MOV ESI,dword ptr [ESP + 0xa10c]    ; 0058fbb0
     PUSH ESI                            ; 0058fbb7
         ;   Label: LAB_0058fbb7
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058fbb8 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058fbb8
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0058fbbd
     TEST EAX,EAX                        ; 0058fbc0
-    JL 0x0058fbce                       ; 0058fbc2 | LAB_0058fbce
-        ;   XREF to: 0058fbce (CONDITIONAL_JUMP)
+    JL 0x0058fbce                       ; 0058fbc2
+        ;   XREF to: 0058fbce (CONDITIONAL_JUMP)  ; LAB_0058fbce
     CMP EAX,0xa                         ; 0058fbc4
-    JNZ 0x0058fbb7                      ; 0058fbc7 | LAB_0058fbb7
-        ;   XREF to: 0058fbb7 (CONDITIONAL_JUMP)
+    JNZ 0x0058fbb7                      ; 0058fbc7
+        ;   XREF to: 0058fbb7 (CONDITIONAL_JUMP)  ; LAB_0058fbb7
     DEC EBX                             ; 0058fbc9
     TEST EBX,EBX                        ; 0058fbca
-    JG 0x0058fbb7                       ; 0058fbcc | LAB_0058fbb7
-        ;   XREF to: 0058fbb7 (CONDITIONAL_JUMP)
+    JG 0x0058fbb7                       ; 0058fbcc
+        ;   XREF to: 0058fbb7 (CONDITIONAL_JUMP)  ; LAB_0058fbb7
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058fbce
         ;   Label: LAB_0058fbce
     MOV EDX,dword ptr [EAX + 0x7140]    ; 0058fbd1
     XOR EBX,EBX                         ; 0058fbd7
     TEST EDX,EDX                        ; 0058fbd9
-    JLE 0x0058fcd6                      ; 0058fbdb | LAB_0058fcd6
-        ;   XREF to: 0058fcd6 (CONDITIONAL_JUMP)
+    JLE 0x0058fcd6                      ; 0058fbdb
+        ;   XREF to: 0058fcd6 (CONDITIONAL_JUMP)  ; LAB_0058fcd6
     ADD EAX,0x7144                      ; 0058fbe1
     MOV dword ptr [ESP + 0xa0b0],EAX    ; 0058fbe6
     LEA EAX,[ESP + 0x9d80]              ; 0058fbed
@@ -593,16 +589,15 @@ section .text
     PUSH EAX                            ; 0058fc3c
     MOV EDX,dword ptr [ESP + 0xa170]    ; 0058fc3d
     PUSH EDX                            ; 0058fc44
-    PUSH 0x64b71c                       ; 0058fc45 | = "%d,%d,%*d,%d,\"%[^\"]\"\n" | s_d_d_d_d_0064b71c = %d,%d,%*d,%d,"%[^"]"
-
+    PUSH 0x64b71c                       ; 0058fc45 | = "%d,%d,%*d,%d,\"%[^\"]\"\n"
     MOV ECX,dword ptr [ESP + 0xa120]    ; 0058fc4a
     PUSH ECX                            ; 0058fc51
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058fc52 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058fc52
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x18                        ; 0058fc57
     CMP EAX,0x4                         ; 0058fc5a
-    JNZ 0x00590a70                      ; 0058fc5d | LAB_00590a70
-        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)
+    JNZ 0x00590a70                      ; 0058fc5d
+        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)  ; LAB_00590a70
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058fc63
     MOV dword ptr [EDI + EAX*0x1 + 0x718c],0x0 ; 0058fc66
     MOV EAX,dword ptr [ESP + 0xa0b4]    ; 0058fc71
@@ -612,13 +607,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa0c0]    ; 0058fc81
     PUSH EAX                            ; 0058fc88
     PUSH EBX                            ; 0058fc89
-    PUSH 0x64b732                       ; 0058fc8a | = "\t%2d: %s, verts=%d, tris=%d\n" | s_s_2d_s_verts_d_tris_d_0064b732 = 	%2d: %s, verts=%d, tris=%d
-
+    PUSH 0x64b732                       ; 0058fc8a | = "\t%2d: %s, verts=%d, tris=%d\n"
     MOV EDX,dword ptr [ESP + 0xa08c]    ; 0058fc8f
     PUSH EDX                            ; 0058fc96
     ADD ESI,0x60                        ; 0058fc97
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fc9a | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fc9a
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0x18                        ; 0058fc9f
     INC EBX                             ; 0058fca2
     MOV ECX,dword ptr [ESP + 0xa164]    ; 0058fca3
@@ -630,124 +624,121 @@ section .text
     MOV dword ptr [ESP + 0xa164],ECX    ; 0058fcc0
     MOV dword ptr [ESP + 0xa168],EDI    ; 0058fcc7
     CMP EBX,EDX                         ; 0058fcce
-    JL 0x0058fc12                       ; 0058fcd0 | LAB_0058fc12
-        ;   XREF to: 0058fc12 (CONDITIONAL_JUMP)
+    JL 0x0058fc12                       ; 0058fcd0
+        ;   XREF to: 0058fc12 (CONDITIONAL_JUMP)  ; LAB_0058fc12
     MOV EBX,dword ptr [EBP + 0x18]      ; 0058fcd6
         ;   Label: LAB_0058fcd6
     ADD EBX,0x200                       ; 0058fcd9
     PUSH EBX                            ; 0058fcdf
-    PUSH 0x64b74f                       ; 0058fce0 | = "Reading texture list from %s" | s_Reading_texture_list_fro_0064b74f = Reading texture list from %s
-    MOV ECX,dword ptr [0x00678a60]      ; 0058fce5 | CEditorTools * g_CEditorToolsPtr
-    PUSH ECX                            ; 0058fceb | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058fcec | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x64b74f                       ; 0058fce0 | = "Reading texture list from %s"
+    MOV ECX,dword ptr [0x00678a60]      ; 0058fce5 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0058fceb | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058fcec
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058fcf1
     PUSH EBX                            ; 0058fcf4
-    PUSH 0x64b76c                       ; 0058fcf5 | = "Reading texture list from %s\n" | s_Reading_texture_list_fro_0064b76c = Reading texture list from %s
-
+    PUSH 0x64b76c                       ; 0058fcf5 | = "Reading texture list from %s\n"
     MOV EBX,dword ptr [ESP + 0xa080]    ; 0058fcfa
     PUSH EBX                            ; 0058fd01
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fd02 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fd02
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0058fd07
     MOV EBX,0x1                         ; 0058fd0a
     MOV ESI,dword ptr [ESP + 0xa10c]    ; 0058fd0f
     PUSH ESI                            ; 0058fd16
         ;   Label: LAB_0058fd16
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058fd17 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058fd17
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0058fd1c
     TEST EAX,EAX                        ; 0058fd1f
-    JL 0x0058fd2d                       ; 0058fd21 | LAB_0058fd2d
-        ;   XREF to: 0058fd2d (CONDITIONAL_JUMP)
+    JL 0x0058fd2d                       ; 0058fd21
+        ;   XREF to: 0058fd2d (CONDITIONAL_JUMP)  ; LAB_0058fd2d
     CMP EAX,0xa                         ; 0058fd23
-    JNZ 0x0058fd16                      ; 0058fd26 | LAB_0058fd16
-        ;   XREF to: 0058fd16 (CONDITIONAL_JUMP)
+    JNZ 0x0058fd16                      ; 0058fd26
+        ;   XREF to: 0058fd16 (CONDITIONAL_JUMP)  ; LAB_0058fd16
     DEC EBX                             ; 0058fd28
     TEST EBX,EBX                        ; 0058fd29
-    JG 0x0058fd16                       ; 0058fd2b | LAB_0058fd16
-        ;   XREF to: 0058fd16 (CONDITIONAL_JUMP)
+    JG 0x0058fd16                       ; 0058fd2b
+        ;   XREF to: 0058fd16 (CONDITIONAL_JUMP)  ; LAB_0058fd16
     CMP dword ptr [ESP + 0xa114],0x96   ; 0058fd2d
         ;   Label: LAB_0058fd2d
-    JLE 0x0058fd5c                      ; 0058fd38 | LAB_0058fd5c
-        ;   XREF to: 0058fd5c (CONDITIONAL_JUMP)
-    MOV EDI,0x64b78a                    ; 0058fd3a | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b78a = ..\core\skeledit.cpp
+    JLE 0x0058fd5c                      ; 0058fd38
+        ;   XREF to: 0058fd5c (CONDITIONAL_JUMP)  ; LAB_0058fd5c
+    MOV EDI,0x64b78a                    ; 0058fd3a | = "..\\core\\skeledit.cpp"
     MOV EAX,0xc24                       ; 0058fd3f
-    PUSH 0x64b79f                       ; 0058fd44 | = "Too many textures in parts .S3D!" | s_Too_many_textures_in_par_0064b79f = Too many textures in parts .S3D!
-    MOV dword ptr [0x02f0ca48],EDI      ; 0058fd49 | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 0058fd4f | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0058fd54 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64b79f                       ; 0058fd44 | = "Too many textures in parts .S3D!"
+    MOV dword ptr [0x02f0ca48],EDI      ; 0058fd49 | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 0058fd4f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0058fd54
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0058fd59
     MOV EDX,dword ptr [ESP + 0xa114]    ; 0058fd5c
         ;   Label: LAB_0058fd5c
     XOR ESI,ESI                         ; 0058fd63
     TEST EDX,EDX                        ; 0058fd65
-    JLE 0x0058fdbb                      ; 0058fd67 | LAB_0058fdbb
-        ;   XREF to: 0058fdbb (CONDITIONAL_JUMP)
+    JLE 0x0058fdbb                      ; 0058fd67
+        ;   XREF to: 0058fdbb (CONDITIONAL_JUMP)  ; LAB_0058fdbb
     LEA EBX,[ESP + 0xc]                 ; 0058fd69
     XOR EDI,EDI                         ; 0058fd6d
     LEA EAX,[ESP + 0x99b4]              ; 0058fd6f
         ;   Label: LAB_0058fd6f
     PUSH EAX                            ; 0058fd76
-    PUSH 0x64b7c0                       ; 0058fd77 | = "%[^\n]\n" | s_anon_0064b7c0 = %[^
-        ; ]
-
+    PUSH 0x64b7c0                       ; 0058fd77 | = "%[^\n]\n"
     MOV ECX,dword ptr [ESP + 0xa114]    ; 0058fd7c
     PUSH ECX                            ; 0058fd83
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058fd84 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058fd84
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0058fd89
     CMP EAX,0x1                         ; 0058fd8c
-    JNZ 0x00590a70                      ; 0058fd8f | LAB_00590a70
-        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)
+    JNZ 0x00590a70                      ; 0058fd8f
+        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)  ; LAB_00590a70
     PUSH EDI                            ; 0058fd95
     PUSH EBX                            ; 0058fd96
     PUSH EDI                            ; 0058fd97
     PUSH EDI                            ; 0058fd98
     LEA EAX,[ESP + 0x99c4]              ; 0058fd99
     PUSH EAX                            ; 0058fda0
-    CALL crt_string.c_splitpath_FUN_005ff178 ; 0058fda1 | void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
-        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_splitpath_FUN_005ff178 ; 0058fda1
+        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 0058fda6
     INC ESI                             ; 0058fda9
     MOV EAX,dword ptr [ESP + 0xa114]    ; 0058fdaa
     ADD EBX,0x100                       ; 0058fdb1
     CMP ESI,EAX                         ; 0058fdb7
-    JL 0x0058fd6f                       ; 0058fdb9 | LAB_0058fd6f
-        ;   XREF to: 0058fd6f (CONDITIONAL_JUMP)
+    JL 0x0058fd6f                       ; 0058fdb9
+        ;   XREF to: 0058fd6f (CONDITIONAL_JUMP)  ; LAB_0058fd6f
     MOV ECX,0x19                        ; 0058fdbb
         ;   Label: LAB_0058fdbb
     LEA EDI,[ESP + 0x9e70]              ; 0058fdc0
-    MOV ESI,0x681878                    ; 0058fdc7 | = "gore" | s_gore_00681878 = gore
+    MOV ESI,0x681878                    ; 0058fdc7 | = "gore"
     MOV EAX,dword ptr [EBP + 0x18]      ; 0058fdcc
-    MOVSD.REP ES:EDI,ESI                ; 0058fdcf | = "gore" | s_gore_00681878 = gore
+    MOVSD.REP ES:EDI,ESI                ; 0058fdcf | = "gore" | s__0068187c
     CMP dword ptr [EAX + 0x308],0x0     ; 0058fdd1
-    JNZ 0x0058fdfa                      ; 0058fdd8 | LAB_0058fdfa
-        ;   XREF to: 0058fdfa (CONDITIONAL_JUMP)
+    JNZ 0x0058fdfa                      ; 0058fdd8
+        ;   XREF to: 0058fdfa (CONDITIONAL_JUMP)  ; LAB_0058fdfa
     PUSH 0x1                            ; 0058fdda
     PUSH 0x64                           ; 0058fddc
     LEA EAX,[ESP + 0x9e78]              ; 0058fdde
     PUSH EAX                            ; 0058fde5
-    PUSH 0x64b7c7                       ; 0058fde6 | = "Automap cap faces to texture (blank t..." | s_Automap_cap_faces_to_tex_0064b7c7 = Automap cap faces to texture (blank to leave map as-is) NO EXTENSION
-    MOV ECX,dword ptr [0x00678a60]      ; 0058fdeb | CEditorTools * g_CEditorToolsPtr
-    PUSH ECX                            ; 0058fdf1 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0058fdf2 | int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
-        ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)
+    PUSH 0x64b7c7                       ; 0058fde6 | = "Automap cap faces to texture (blank t..."
+    MOV ECX,dword ptr [0x00678a60]      ; 0058fdeb | g_CEditorToolsPtr
+    PUSH ECX                            ; 0058fdf1 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0058fdf2
+        ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0058fdf7
     MOV EBX,0xffffffff                  ; 0058fdfa
         ;   Label: LAB_0058fdfa
     MOV AH,byte ptr [ESP + 0x9e70]      ; 0058fdff
     MOV dword ptr [ESP + 0xa098],EBX    ; 0058fe06
     TEST AH,AH                          ; 0058fe0d
-    JZ 0x0058fed4                       ; 0058fe0f | LAB_0058fed4
-        ;   XREF to: 0058fed4 (CONDITIONAL_JUMP)
+    JZ 0x0058fed4                       ; 0058fe0f
+        ;   XREF to: 0058fed4 (CONDITIONAL_JUMP)  ; LAB_0058fed4
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058fe15
     MOV ESI,dword ptr [EAX + 0xbc]      ; 0058fe18
     XOR EBX,EBX                         ; 0058fe1e
     TEST ESI,ESI                        ; 0058fe20
-    JLE 0x0058fe60                      ; 0058fe22 | LAB_0058fe60
-        ;   XREF to: 0058fe60 (CONDITIONAL_JUMP)
+    JLE 0x0058fe60                      ; 0058fe22
+        ;   XREF to: 0058fe60 (CONDITIONAL_JUMP)  ; LAB_0058fe60
     LEA ESI,[EAX + 0xc8]                ; 0058fe24
     XOR EDI,EDI                         ; 0058fe2a
     PUSH EDI                            ; 0058fe2c
@@ -757,28 +748,28 @@ section .text
     PUSH EDI                            ; 0058fe35
     PUSH EDI                            ; 0058fe36
     PUSH ESI                            ; 0058fe37
-    CALL crt_string.c_splitpath_FUN_005ff178 ; 0058fe38 | void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
-        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_splitpath_FUN_005ff178 ; 0058fe38
+        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 0058fe3d
     LEA EAX,[ESP + 0x9bb8]              ; 0058fe40
     PUSH EAX                            ; 0058fe47
     LEA EAX,[ESP + 0x9e74]              ; 0058fe48
     PUSH EAX                            ; 0058fe4f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0058fe50 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0058fe50
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0058fe55
     TEST EAX,EAX                        ; 0058fe58
-    JNZ 0x00590a8e                      ; 0058fe5a | LAB_00590a8e
-        ;   XREF to: 00590a8e (CONDITIONAL_JUMP)
+    JNZ 0x00590a8e                      ; 0058fe5a
+        ;   XREF to: 00590a8e (CONDITIONAL_JUMP)  ; LAB_00590a8e
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058fe60
         ;   Label: LAB_0058fe60
     MOV ECX,dword ptr [EAX + 0xbc]      ; 0058fe63
     CMP EBX,ECX                         ; 0058fe69
-    JL 0x0058feb8                       ; 0058fe6b | LAB_0058feb8
-        ;   XREF to: 0058feb8 (CONDITIONAL_JUMP)
+    JL 0x0058feb8                       ; 0058fe6b
+        ;   XREF to: 0058feb8 (CONDITIONAL_JUMP)  ; LAB_0058feb8
     CMP ECX,0x50                        ; 0058fe6d
-    JGE 0x00590aa8                      ; 0058fe70 | LAB_00590aa8
-        ;   XREF to: 00590aa8 (CONDITIONAL_JUMP)
+    JGE 0x00590aa8                      ; 0058fe70
+        ;   XREF to: 00590aa8 (CONDITIONAL_JUMP)  ; LAB_00590aa8
     MOV EDX,dword ptr [EBP + 0x14]      ; 0058fe76
     LEA EAX,[ESP + 0x9e70]              ; 0058fe79
     MOV EDX,dword ptr [EDX + 0xbc]      ; 0058fe80
@@ -789,22 +780,21 @@ section .text
     SHL EAX,0x3                         ; 0058fe93
     ADD EDX,0xc0                        ; 0058fe96
     ADD EAX,EDX                         ; 0058fe9c
-    PUSH 0x64b830                       ; 0058fe9e | = "%s.raw" | s_s_raw_0064b830 = %s.raw
+    PUSH 0x64b830                       ; 0058fe9e | = "%s.raw"
     ADD EAX,0x8                         ; 0058fea3
     PUSH EAX                            ; 0058fea6
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058fea7 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058fea7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058feac
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058feaf
     INC dword ptr [EAX + 0xbc]          ; 0058feb2
-    PUSH 0x64b837                       ; 0058feb8 | = "Automap capped faces is active\n" | s_Automap_capped_faces_is__0064b837 = Automap capped faces is active
-
+    PUSH 0x64b837                       ; 0058feb8 | = "Automap capped faces is active\n"
         ;   Label: LAB_0058feb8
     MOV EAX,dword ptr [ESP + 0xa07c]    ; 0058febd
     PUSH EAX                            ; 0058fec4
     MOV dword ptr [ESP + 0xa0a0],EBX    ; 0058fec5
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fecc | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058fecc
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0x8                         ; 0058fed1
     MOV EAX,dword ptr [ESP + 0xa08c]    ; 0058fed4
         ;   Label: LAB_0058fed4
@@ -812,57 +802,56 @@ section .text
     PUSH 0xc4e                          ; 0058fede
     MOV EDX,EAX                         ; 0058fee3
     SHL EAX,0x4                         ; 0058fee5
-    PUSH 0x64b857                       ; 0058fee8 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b857 = ..\core\skeledit.cpp
+    PUSH 0x64b857                       ; 0058fee8 | = "..\\core\\skeledit.cpp"
     SUB EAX,EDX                         ; 0058feed
     PUSH EAX                            ; 0058feef
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0058fef0 | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0058fef0
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0058fef5
     MOV dword ptr [ESP + 0xa074],EAX    ; 0058fef8
     TEST EAX,EAX                        ; 0058feff
-    JZ 0x00590abf                       ; 0058ff01 | LAB_00590abf
-        ;   XREF to: 00590abf (CONDITIONAL_JUMP)
+    JZ 0x00590abf                       ; 0058ff01
+        ;   XREF to: 00590abf (CONDITIONAL_JUMP)  ; LAB_00590abf
     MOV EBX,dword ptr [EBP + 0x18]      ; 0058ff07
         ;   Label: LAB_0058ff07
     ADD EBX,0x200                       ; 0058ff0a
     PUSH EBX                            ; 0058ff10
-    PUSH 0x64b8ba                       ; 0058ff11 | = "Reading faces from %s" | s_Reading_faces_from_s_0064b8ba = Reading faces from %s
-    MOV ESI,dword ptr [0x00678a60]      ; 0058ff16 | CEditorTools * g_CEditorToolsPtr
-    PUSH ESI                            ; 0058ff1c | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058ff1d | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x64b8ba                       ; 0058ff11 | = "Reading faces from %s"
+    MOV ESI,dword ptr [0x00678a60]      ; 0058ff16 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0058ff1c | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0058ff1d
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 0058ff22
     PUSH EBX                            ; 0058ff25
-    PUSH 0x64b8d0                       ; 0058ff26 | = "Reading faces from %s\n" | s_Reading_faces_from_s_0064b8d0 = Reading faces from %s
-
+    PUSH 0x64b8d0                       ; 0058ff26 | = "Reading faces from %s\n"
     MOV EDI,dword ptr [ESP + 0xa080]    ; 0058ff2b
     PUSH EDI                            ; 0058ff32
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058ff33 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0058ff33
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0058ff38
     MOV EBX,0x1                         ; 0058ff3b
     MOV ESI,dword ptr [ESP + 0xa10c]    ; 0058ff40
     PUSH ESI                            ; 0058ff47
         ;   Label: LAB_0058ff47
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058ff48 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058ff48
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0058ff4d
     TEST EAX,EAX                        ; 0058ff50
-    JL 0x0058ff5e                       ; 0058ff52 | LAB_0058ff5e
-        ;   XREF to: 0058ff5e (CONDITIONAL_JUMP)
+    JL 0x0058ff5e                       ; 0058ff52
+        ;   XREF to: 0058ff5e (CONDITIONAL_JUMP)  ; LAB_0058ff5e
     CMP EAX,0xa                         ; 0058ff54
-    JNZ 0x0058ff47                      ; 0058ff57 | LAB_0058ff47
-        ;   XREF to: 0058ff47 (CONDITIONAL_JUMP)
+    JNZ 0x0058ff47                      ; 0058ff57
+        ;   XREF to: 0058ff47 (CONDITIONAL_JUMP)  ; LAB_0058ff47
     DEC EBX                             ; 0058ff59
     TEST EBX,EBX                        ; 0058ff5a
-    JG 0x0058ff47                       ; 0058ff5c | LAB_0058ff47
-        ;   XREF to: 0058ff47 (CONDITIONAL_JUMP)
+    JG 0x0058ff47                       ; 0058ff5c
+        ;   XREF to: 0058ff47 (CONDITIONAL_JUMP)  ; LAB_0058ff47
     MOV EAX,dword ptr [ESP + 0xa08c]    ; 0058ff5e
         ;   Label: LAB_0058ff5e
     XOR ESI,ESI                         ; 0058ff65
     TEST EAX,EAX                        ; 0058ff67
-    JLE 0x0059008b                      ; 0058ff69 | LAB_0059008b
-        ;   XREF to: 0059008b (CONDITIONAL_JUMP)
+    JLE 0x0059008b                      ; 0058ff69
+        ;   XREF to: 0059008b (CONDITIONAL_JUMP)  ; LAB_0059008b
     MOV EBX,dword ptr [ESP + 0xa074]    ; 0058ff6f
     LEA EAX,[ESP + 0xa000]              ; 0058ff76
         ;   Label: LAB_0058ff76
@@ -885,16 +874,15 @@ section .text
     PUSH EAX                            ; 0058ffbd
     LEA EAX,[ESP + 0xa0e0]              ; 0058ffbe
     PUSH EAX                            ; 0058ffc5
-    PUSH 0x64b8e7                       ; 0058ffc6 | = "%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n" | s_d_d_f_f_d_f_f_d_f_f_0064b8e7 = %d,%d,%f,%f,%d,%f,%f,%d,%f,%f
-
+    PUSH 0x64b8e7                       ; 0058ffc6 | = "%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n"
     MOV EDX,dword ptr [ESP + 0xa138]    ; 0058ffcb
     PUSH EDX                            ; 0058ffd2
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058ffd3 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0058ffd3
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x30                        ; 0058ffd8
     CMP EAX,0xa                         ; 0058ffdb
-    JNZ 0x00590a70                      ; 0058ffde | LAB_00590a70
-        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)
+    JNZ 0x00590a70                      ; 0058ffde
+        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)  ; LAB_00590a70
     MOV ECX,EBX                         ; 0058ffe4
     MOV dword ptr [EBX + 0x4],0x3       ; 0058ffe6
     MOV EDI,EBX                         ; 0058ffed
@@ -907,23 +895,23 @@ section .text
     MOV dword ptr [ECX + 0x18],EAX      ; 00590008
     FLD float ptr [ESP + EDX*0x1 + 0xa064] ; 0059000b
     FMUL ST1                            ; 00590012
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00590014 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00590014
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0xa1e0]      ; 00590019
     MOV EAX,dword ptr [ESP + 0xa1e0]    ; 00590020
     MOV dword ptr [ECX + 0x1c],EAX      ; 00590027
     FLD float ptr [ESP + EDX*0x1 + 0x9ff8] ; 0059002a
     FMUL ST1                            ; 00590031
     ADD ECX,0xc                         ; 00590033
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00590036 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00590036
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0xa1e0]      ; 0059003b
     MOV EAX,dword ptr [ESP + 0xa1e0]    ; 00590042
     ADD EDX,0x4                         ; 00590049
     MOV dword ptr [ECX + 0x14],EAX      ; 0059004c
     CMP EDX,0xc                         ; 0059004f
-    JNZ 0x00590001                      ; 00590052 | LAB_00590001
-        ;   XREF to: 00590001 (CONDITIONAL_JUMP)
+    JNZ 0x00590001                      ; 00590052
+        ;   XREF to: 00590001 (CONDITIONAL_JUMP)  ; LAB_00590001
     MOV ECX,dword ptr [EDI + 0x30]      ; 00590054
     PUSH ECX                            ; 00590057
     MOV EAX,dword ptr [EDI + 0x24]      ; 00590058
@@ -931,85 +919,83 @@ section .text
     MOV EDX,dword ptr [EDI + 0x18]      ; 0059005c
     PUSH EDX                            ; 0059005f
     PUSH ESI                            ; 00590060
-    PUSH 0x64b906                       ; 00590061 | = "\t%4d: %4d %4d %4d\n" | s_s_4d_4d_4d_4d_0064b906 = 	%4d: %4d %4d %4d
-
+    PUSH 0x64b906                       ; 00590061 | = "\t%4d: %4d %4d %4d\n"
     MOV ECX,dword ptr [ESP + 0xa08c]    ; 00590066
     PUSH ECX                            ; 0059006d
     FSTP ST0                            ; 0059006e
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590070 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590070
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0x18                        ; 00590075
     INC ESI                             ; 00590078
     MOV EDI,dword ptr [ESP + 0xa08c]    ; 00590079
     ADD EBX,0x3c                        ; 00590080
     CMP ESI,EDI                         ; 00590083
-    JL 0x0058ff76                       ; 00590085 | LAB_0058ff76
-        ;   XREF to: 0058ff76 (CONDITIONAL_JUMP)
+    JL 0x0058ff76                       ; 00590085
+        ;   XREF to: 0058ff76 (CONDITIONAL_JUMP)  ; LAB_0058ff76
     MOV EDX,dword ptr [ESP + 0xa090]    ; 0059008b
         ;   Label: LAB_0059008b
     LEA EAX,[EDX*0x4 + 0x0]             ; 00590092
     SUB EAX,EDX                         ; 00590099
     PUSH 0xc7c                          ; 0059009b
     SHL EAX,0x2                         ; 005900a0
-    PUSH 0x64b919                       ; 005900a3 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b919 = ..\core\skeledit.cpp
+    PUSH 0x64b919                       ; 005900a3 | = "..\\core\\skeledit.cpp"
     ADD EAX,0x4                         ; 005900a8
     PUSH EAX                            ; 005900ab
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 005900ac | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 005900ac
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     MOV EDX,EAX                         ; 005900b1
     ADD ESP,0xc                         ; 005900b3
     TEST EAX,EAX                        ; 005900b6
-    JZ 0x005900c7                       ; 005900b8 | LAB_005900c7
-        ;   XREF to: 005900c7 (CONDITIONAL_JUMP)
+    JZ 0x005900c7                       ; 005900b8
+        ;   XREF to: 005900c7 (CONDITIONAL_JUMP)  ; LAB_005900c7
     ADD EDX,0x4                         ; 005900ba
     MOV EAX,dword ptr [ESP + 0xa090]    ; 005900bd
     MOV dword ptr [EDX + -0x4],EAX      ; 005900c4
     MOV dword ptr [ESP + 0xa070],EDX    ; 005900c7
         ;   Label: LAB_005900c7
     TEST EDX,EDX                        ; 005900ce
-    JZ 0x00590ae7                       ; 005900d0 | LAB_00590ae7
-        ;   XREF to: 00590ae7 (CONDITIONAL_JUMP)
+    JZ 0x00590ae7                       ; 005900d0
+        ;   XREF to: 00590ae7 (CONDITIONAL_JUMP)  ; LAB_00590ae7
     MOV EBX,dword ptr [EBP + 0x18]      ; 005900d6
         ;   Label: LAB_005900d6
     ADD EBX,0x200                       ; 005900d9
     PUSH EBX                            ; 005900df
-    PUSH 0x64b97c                       ; 005900e0 | = "Reading vertices from %s" | s_Reading_vertices_from_s_0064b97c = Reading vertices from %s
-    MOV ECX,dword ptr [0x00678a60]      ; 005900e5 | CEditorTools * g_CEditorToolsPtr
-    PUSH ECX                            ; 005900eb | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005900ec | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x64b97c                       ; 005900e0 | = "Reading vertices from %s"
+    MOV ECX,dword ptr [0x00678a60]      ; 005900e5 | g_CEditorToolsPtr
+    PUSH ECX                            ; 005900eb | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005900ec
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 005900f1
     PUSH EBX                            ; 005900f4
-    PUSH 0x64b995                       ; 005900f5 | = "Reading vertices from %s\n" | s_Reading_vertices_from_s_0064b995 = Reading vertices from %s
-
+    PUSH 0x64b995                       ; 005900f5 | = "Reading vertices from %s\n"
     MOV EBX,dword ptr [ESP + 0xa080]    ; 005900fa
     PUSH EBX                            ; 00590101
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590102 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590102
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 00590107
     MOV EBX,0x1                         ; 0059010a
     MOV ESI,dword ptr [ESP + 0xa10c]    ; 0059010f
     PUSH ESI                            ; 00590116
         ;   Label: LAB_00590116
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00590117 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00590117
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0059011c
     TEST EAX,EAX                        ; 0059011f
-    JL 0x0059012d                       ; 00590121 | LAB_0059012d
-        ;   XREF to: 0059012d (CONDITIONAL_JUMP)
+    JL 0x0059012d                       ; 00590121
+        ;   XREF to: 0059012d (CONDITIONAL_JUMP)  ; LAB_0059012d
     CMP EAX,0xa                         ; 00590123
-    JNZ 0x00590116                      ; 00590126 | LAB_00590116
-        ;   XREF to: 00590116 (CONDITIONAL_JUMP)
+    JNZ 0x00590116                      ; 00590126
+        ;   XREF to: 00590116 (CONDITIONAL_JUMP)  ; LAB_00590116
     DEC EBX                             ; 00590128
     TEST EBX,EBX                        ; 00590129
-    JG 0x00590116                       ; 0059012b | LAB_00590116
-        ;   XREF to: 00590116 (CONDITIONAL_JUMP)
+    JG 0x00590116                       ; 0059012b
+        ;   XREF to: 00590116 (CONDITIONAL_JUMP)  ; LAB_00590116
     MOV ESI,dword ptr [ESP + 0xa090]    ; 0059012d
         ;   Label: LAB_0059012d
     XOR EBX,EBX                         ; 00590134
     TEST ESI,ESI                        ; 00590136
-    JLE 0x005901e1                      ; 00590138 | LAB_005901e1
-        ;   XREF to: 005901e1 (CONDITIONAL_JUMP)
+    JLE 0x005901e1                      ; 00590138
+        ;   XREF to: 005901e1 (CONDITIONAL_JUMP)  ; LAB_005901e1
     MOV EAX,dword ptr [ESP + 0xa070]    ; 0059013e
     MOV EDI,dword ptr [ESP + 0xa070]    ; 00590145
     ADD EAX,0x8                         ; 0059014c
@@ -1023,16 +1009,15 @@ section .text
     PUSH EDI                            ; 0059016b
     ADD ESI,EAX                         ; 0059016c
     PUSH ESI                            ; 0059016e
-    PUSH 0x64b9af                       ; 0059016f | = "%f,%f,%f\n" | s_f_f_f_0064b9af = %f,%f,%f
-
+    PUSH 0x64b9af                       ; 0059016f | = "%f,%f,%f\n"
     MOV ECX,dword ptr [ESP + 0xa11c]    ; 00590174
     PUSH ECX                            ; 0059017b
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0059017c | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 0059017c
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 00590181
     CMP EAX,0x3                         ; 00590184
-    JNZ 0x00590a70                      ; 00590187 | LAB_00590a70
-        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)
+    JNZ 0x00590a70                      ; 00590187
+        ;   XREF to: 00590a70 (CONDITIONAL_JUMP)  ; LAB_00590a70
     SUB ESP,0x8                         ; 0059018d
     FLD float ptr [ESI + 0x8]           ; 00590190
     FSTP double ptr [ESP]               ; 00590193
@@ -1043,12 +1028,11 @@ section .text
     FLD float ptr [ESI]                 ; 005901a2
     FSTP double ptr [ESP]               ; 005901a4
     PUSH EBX                            ; 005901a7
-    PUSH 0x64b9b9                       ; 005901a8 | = "\t%4d: %7.3f %7.3f %7.3f\n" | s_s_4d_7_3f_7_3f_7_3f_0064b9b9 = 	%4d: %7.3f %7.3f %7.3f
-
+    PUSH 0x64b9b9                       ; 005901a8 | = "\t%4d: %7.3f %7.3f %7.3f\n"
     MOV ESI,dword ptr [ESP + 0xa098]    ; 005901ad
     PUSH ESI                            ; 005901b4
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005901b5 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005901b5
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0x24                        ; 005901ba
     ADD EDI,0xc                         ; 005901bd
     MOV EAX,dword ptr [ESP + 0xa16c]    ; 005901c0
@@ -1057,30 +1041,29 @@ section .text
     MOV EDX,dword ptr [ESP + 0xa090]    ; 005901cb
     MOV dword ptr [ESP + 0xa16c],EAX    ; 005901d2
     CMP EBX,EDX                         ; 005901d9
-    JL 0x00590159                       ; 005901db | LAB_00590159
-        ;   XREF to: 00590159 (CONDITIONAL_JUMP)
+    JL 0x00590159                       ; 005901db
+        ;   XREF to: 00590159 (CONDITIONAL_JUMP)  ; LAB_00590159
     PUSH 0xc8c                          ; 005901e1
         ;   Label: LAB_005901e1
-    PUSH 0x64b9d2                       ; 005901e6 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b9d2 = ..\core\skeledit.cpp
+    PUSH 0x64b9d2                       ; 005901e6 | = "..\\core\\skeledit.cpp"
     MOV ECX,dword ptr [ESP + 0xa114]    ; 005901eb
     PUSH ECX                            ; 005901f2
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005901f3 | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 005901f3
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 005901f8
-    PUSH 0x64b9e7                       ; 005901fb | = "Removing duplicate faces\n" | s_Removing_duplicate_faces_0064b9e7 = Removing duplicate faces
-
+    PUSH 0x64b9e7                       ; 005901fb | = "Removing duplicate faces\n"
     MOV ESI,dword ptr [ESP + 0xa07c]    ; 00590200
     XOR EBX,EBX                         ; 00590207
     PUSH ESI                            ; 00590209
     MOV dword ptr [ESP + 0xa114],EBX    ; 0059020a
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590211 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590211
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0x8                         ; 00590216
     MOV EAX,dword ptr [ESP + 0xa08c]    ; 00590219
     MOV dword ptr [ESP + 0xa1d0],EBX    ; 00590220
     TEST EAX,EAX                        ; 00590227
-    JLE 0x005902f7                      ; 00590229 | LAB_005902f7
-        ;   XREF to: 005902f7 (CONDITIONAL_JUMP)
+    JLE 0x005902f7                      ; 00590229
+        ;   XREF to: 005902f7 (CONDITIONAL_JUMP)  ; LAB_005902f7
     MOV EAX,dword ptr [ESP + 0xa074]    ; 0059022f
     MOV dword ptr [ESP + 0xa174],EAX    ; 00590236
     MOV EAX,dword ptr [ESP + 0xa174]    ; 0059023d
@@ -1091,15 +1074,15 @@ section .text
     MOV dword ptr [ESP + 0xa0cc],EDX    ; 00590254
     MOV dword ptr [ESP + 0xa0c4],EAX    ; 0059025b
     TEST EBX,EBX                        ; 00590262
-    JLE 0x005902b0                      ; 00590264 | LAB_005902b0
-        ;   XREF to: 005902b0 (CONDITIONAL_JUMP)
+    JLE 0x005902b0                      ; 00590264
+        ;   XREF to: 005902b0 (CONDITIONAL_JUMP)  ; LAB_005902b0
     MOV EAX,dword ptr [ESP + 0xa074]    ; 00590266
     MOV dword ptr [ESP + 0xa170],EAX    ; 0059026d
     MOV EDI,dword ptr [ESP + 0xa170]    ; 00590274
         ;   Label: LAB_00590274
     CMP dword ptr [EDI + 0x4],0x3       ; 0059027b
-    JZ 0x00590b0e                       ; 0059027f | LAB_00590b0e
-        ;   XREF to: 00590b0e (CONDITIONAL_JUMP)
+    JZ 0x00590b0e                       ; 0059027f
+        ;   XREF to: 00590b0e (CONDITIONAL_JUMP)  ; LAB_00590b0e
     MOV EDX,dword ptr [ESP + 0xa0cc]    ; 00590285
         ;   Label: LAB_00590285
     MOV EAX,dword ptr [ESP + 0xa170]    ; 0059028c
@@ -1109,12 +1092,12 @@ section .text
     MOV dword ptr [ESP + 0xa0cc],EDX    ; 0059029e
     MOV dword ptr [ESP + 0xa170],EAX    ; 005902a5
     CMP EDX,ECX                         ; 005902ac
-    JL 0x00590274                       ; 005902ae | LAB_00590274
-        ;   XREF to: 00590274 (CONDITIONAL_JUMP)
+    JL 0x00590274                       ; 005902ae
+        ;   XREF to: 00590274 (CONDITIONAL_JUMP)  ; LAB_00590274
     CMP dword ptr [ESP + 0xa0c8],0x0    ; 005902b0
         ;   Label: LAB_005902b0
-    JZ 0x005902c8                       ; 005902b8 | LAB_005902c8
-        ;   XREF to: 005902c8 (CONDITIONAL_JUMP)
+    JZ 0x005902c8                       ; 005902b8
+        ;   XREF to: 005902c8 (CONDITIONAL_JUMP)  ; LAB_005902c8
     MOV EAX,dword ptr [ESP + 0xa0c4]    ; 005902ba
         ;   Label: LAB_005902ba
     MOV dword ptr [EAX + 0x4],0x0       ; 005902c1
@@ -1127,23 +1110,23 @@ section .text
     MOV dword ptr [ESP + 0xa1d0],EDI    ; 005902e1
     MOV dword ptr [ESP + 0xa174],ESI    ; 005902e8
     CMP EDI,EDX                         ; 005902ef
-    JL 0x0059023d                       ; 005902f1 | LAB_0059023d
-        ;   XREF to: 0059023d (CONDITIONAL_JUMP)
+    JL 0x0059023d                       ; 005902f1
+        ;   XREF to: 0059023d (CONDITIONAL_JUMP)  ; LAB_0059023d
     MOV EAX,dword ptr [EBP + 0x18]      ; 005902f7
         ;   Label: LAB_005902f7
     ADD EAX,0x200                       ; 005902fa
     PUSH EAX                            ; 005902ff
-    PUSH 0x64ba2b                       ; 00590300 | = "Biasing %s" | s_Biasing_s_0064ba2b = Biasing %s
-    MOV ECX,dword ptr [0x00678a60]      ; 00590305 | CEditorTools * g_CEditorToolsPtr
-    PUSH ECX                            ; 0059030b | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0059030c | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x64ba2b                       ; 00590300 | = "Biasing %s"
+    MOV ECX,dword ptr [0x00678a60]      ; 00590305 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0059030b | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0059030c
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 00590311
     LEA EAX,[ESP + 0x9eec]              ; 00590314
     MOV EDX,dword ptr [ESP + 0xa070]    ; 0059031b
     CMP EAX,EDX                         ; 00590322
-    JZ 0x00590343                       ; 00590324 | LAB_00590343
-        ;   XREF to: 00590343 (CONDITIONAL_JUMP)
+    JZ 0x00590343                       ; 00590324
+        ;   XREF to: 00590343 (CONDITIONAL_JUMP)  ; LAB_00590343
     MOV EAX,dword ptr [EDX]             ; 00590326
     MOV dword ptr [ESP + 0x9eec],EAX    ; 00590328
     MOV EAX,dword ptr [EDX + 0x4]       ; 0059032f
@@ -1153,8 +1136,8 @@ section .text
     LEA EAX,[ESP + 0x9ef8]              ; 00590343
         ;   Label: LAB_00590343
     CMP EAX,EDX                         ; 0059034a
-    JZ 0x0059036b                       ; 0059034c | LAB_0059036b
-        ;   XREF to: 0059036b (CONDITIONAL_JUMP)
+    JZ 0x0059036b                       ; 0059034c
+        ;   XREF to: 0059036b (CONDITIONAL_JUMP)  ; LAB_0059036b
     MOV EAX,dword ptr [EDX]             ; 0059034e
     MOV dword ptr [ESP + 0x9ef8],EAX    ; 00590350
     MOV EAX,dword ptr [EDX + 0x4]       ; 00590357
@@ -1165,23 +1148,23 @@ section .text
         ;   Label: LAB_0059036b
     MOV ESI,0x1                         ; 00590372
     CMP EDI,ESI                         ; 00590377
-    JLE 0x005903b0                      ; 00590379 | LAB_005903b0
-        ;   XREF to: 005903b0 (CONDITIONAL_JUMP)
+    JLE 0x005903b0                      ; 00590379
+        ;   XREF to: 005903b0 (CONDITIONAL_JUMP)  ; LAB_005903b0
     MOV EBX,dword ptr [ESP + 0xa070]    ; 0059037b
     ADD EBX,0xc                         ; 00590382
     PUSH EBX                            ; 00590385
         ;   Label: LAB_00590385
     LEA EAX,[ESP + 0x9ef0]              ; 00590386
     PUSH EAX                            ; 0059038d
-    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 0059038e | void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
-        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 0059038e
+        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 00590393
     INC ESI                             ; 00590396
     MOV EAX,dword ptr [ESP + 0xa090]    ; 00590397
     ADD EBX,0xc                         ; 0059039e
     CMP ESI,EAX                         ; 005903a1
-    JL 0x00590385                       ; 005903a3 | LAB_00590385
-        ;   XREF to: 00590385 (CONDITIONAL_JUMP)
+    JL 0x00590385                       ; 005903a3
+        ;   XREF to: 00590385 (CONDITIONAL_JUMP)  ; LAB_00590385
     LEA EAX,[EAX]                       ; 005903a5
     LEA EDX,[EDX]                       ; 005903ab
     MOV EBX,EBX                         ; 005903ae
@@ -1192,8 +1175,8 @@ section .text
     LEA EAX,[ESP + 0x9ed4]              ; 005903b9
     MOV ECX,EDX                         ; 005903c0
     CMP EAX,EDX                         ; 005903c2
-    JZ 0x005903e3                       ; 005903c4 | LAB_005903e3
-        ;   XREF to: 005903e3 (CONDITIONAL_JUMP)
+    JZ 0x005903e3                       ; 005903c4
+        ;   XREF to: 005903e3 (CONDITIONAL_JUMP)  ; LAB_005903e3
     MOV EAX,dword ptr [EDX]             ; 005903c6
     MOV dword ptr [ESP + 0x9ed4],EAX    ; 005903c8
     MOV EAX,dword ptr [EDX + 0x4]       ; 005903cf
@@ -1203,8 +1186,8 @@ section .text
     LEA EAX,[ESP + 0x9ee0]              ; 005903e3
         ;   Label: LAB_005903e3
     CMP EAX,ECX                         ; 005903ea
-    JZ 0x0059040b                       ; 005903ec | LAB_0059040b
-        ;   XREF to: 0059040b (CONDITIONAL_JUMP)
+    JZ 0x0059040b                       ; 005903ec
+        ;   XREF to: 0059040b (CONDITIONAL_JUMP)  ; LAB_0059040b
     MOV EAX,dword ptr [ECX]             ; 005903ee
     MOV dword ptr [ESP + 0x9ee0],EAX    ; 005903f0
     MOV EAX,dword ptr [ECX + 0x4]       ; 005903f7
@@ -1215,8 +1198,8 @@ section .text
         ;   Label: LAB_0059040b
     MOV ESI,0x1                         ; 0059040e
     CMP ESI,dword ptr [EAX + 0x2c]      ; 00590413
-    JGE 0x00590450                      ; 00590416 | LAB_00590450
-        ;   XREF to: 00590450 (CONDITIONAL_JUMP)
+    JGE 0x00590450                      ; 00590416
+        ;   XREF to: 00590450 (CONDITIONAL_JUMP)  ; LAB_00590450
     MOV EBX,0x34                        ; 00590418
     MOV EAX,dword ptr [EBP + 0x14]      ; 0059041d
         ;   Label: LAB_0059041d
@@ -1226,16 +1209,16 @@ section .text
     PUSH EAX                            ; 00590428
     LEA EAX,[ESP + 0x9ed8]              ; 00590429
     PUSH EAX                            ; 00590430
-    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 00590431 | void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
-        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 00590431
+        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 00590436
     MOV EAX,dword ptr [EBP + 0x14]      ; 00590439
     INC ESI                             ; 0059043c
     MOV ECX,dword ptr [EAX + 0x2c]      ; 0059043d
     ADD EBX,0x34                        ; 00590440
     CMP ESI,ECX                         ; 00590443
-    JL 0x0059041d                       ; 00590445 | LAB_0059041d
-        ;   XREF to: 0059041d (CONDITIONAL_JUMP)
+    JL 0x0059041d                       ; 00590445
+        ;   XREF to: 0059041d (CONDITIONAL_JUMP)  ; LAB_0059041d
     LEA EAX,[EAX]                       ; 00590447
     LEA EDX,[EDX]                       ; 0059044d
     FLD float ptr [ESP + 0x9ef8]        ; 00590450
@@ -1300,8 +1283,8 @@ section .text
     FSTP float ptr [ESP + 0xa024]       ; 005905be
     MOV dword ptr [ESP + 0xa018],EAX    ; 005905c5
     TEST EBX,EBX                        ; 005905cc
-    JLE 0x00590640                      ; 005905ce | LAB_00590640
-        ;   XREF to: 00590640 (CONDITIONAL_JUMP)
+    JLE 0x00590640                      ; 005905ce
+        ;   XREF to: 00590640 (CONDITIONAL_JUMP)  ; LAB_00590640
     MOV EAX,dword ptr [ESP + 0xa070]    ; 005905d0
     FLD float ptr [EAX]                 ; 005905d7
         ;   Label: LAB_005905d7
@@ -1325,8 +1308,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0xa090]    ; 0059062b
     ADD EAX,0xc                         ; 00590632
     CMP EDX,ESI                         ; 00590635
-    JL 0x005905d7                       ; 00590637 | LAB_005905d7
-        ;   XREF to: 005905d7 (CONDITIONAL_JUMP)
+    JL 0x005905d7                       ; 00590637
+        ;   XREF to: 005905d7 (CONDITIONAL_JUMP)  ; LAB_005905d7
     LEA EAX,[EAX]                       ; 00590639
     NOP                                 ; 0059063f
     FLD float ptr [ESP + 0xa024]        ; 00590640
@@ -1339,28 +1322,27 @@ section .text
     FLD float ptr [ESP + 0xa02c]        ; 0059065a
     SUB ESP,0x8                         ; 00590661
     FSTP double ptr [ESP]               ; 00590664
-    PUSH 0x64ba36                       ; 00590667 | = "Scale = %7.3f %7.3f %7.3f\n" | s_Scale_7_3f_7_3f_7_3f_0064ba36 = Scale = %7.3f %7.3f %7.3f
-
+    PUSH 0x64ba36                       ; 00590667 | = "Scale = %7.3f %7.3f %7.3f\n"
     MOV EDI,dword ptr [ESP + 0xa094]    ; 0059066c
     PUSH EDI                            ; 00590673
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590674 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590674
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0x20                        ; 00590679
     MOV EDX,dword ptr [ESP + 0xa08c]    ; 0059067c
     LEA EAX,[EDX*0x4 + 0x0]             ; 00590683
     SUB EAX,EDX                         ; 0059068a
     PUSH 0xd0f                          ; 0059068c
     SHL EAX,0x2                         ; 00590691
-    PUSH 0x64ba51                       ; 00590694 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064ba51 = ..\core\skeledit.cpp
+    PUSH 0x64ba51                       ; 00590694 | = "..\\core\\skeledit.cpp"
     ADD EAX,0x4                         ; 00590699
     PUSH EAX                            ; 0059069c
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0059069d | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0059069d
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     MOV EDX,EAX                         ; 005906a2
     ADD ESP,0xc                         ; 005906a4
     TEST EAX,EAX                        ; 005906a7
-    JZ 0x005906b8                       ; 005906a9 | LAB_005906b8
-        ;   XREF to: 005906b8 (CONDITIONAL_JUMP)
+    JZ 0x005906b8                       ; 005906a9
+        ;   XREF to: 005906b8 (CONDITIONAL_JUMP)  ; LAB_005906b8
     ADD EDX,0x4                         ; 005906ab
     MOV EAX,dword ptr [ESP + 0xa08c]    ; 005906ae
     MOV dword ptr [EDX + -0x4],EAX      ; 005906b5
@@ -1371,60 +1353,60 @@ section .text
     SUB EAX,EBX                         ; 005906c5
     PUSH 0xd10                          ; 005906c7
     SHL EAX,0x2                         ; 005906cc
-    PUSH 0x64ba66                       ; 005906cf | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064ba66 = ..\core\skeledit.cpp
+    PUSH 0x64ba66                       ; 005906cf | = "..\\core\\skeledit.cpp"
     ADD EAX,0x4                         ; 005906d4
     PUSH EAX                            ; 005906d7
     MOV dword ptr [ESP + 0xa088],EDX    ; 005906d8
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 005906df | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 005906df
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005906e4
     TEST EAX,EAX                        ; 005906e7
-    JZ 0x005906f1                       ; 005906e9 | LAB_005906f1
-        ;   XREF to: 005906f1 (CONDITIONAL_JUMP)
+    JZ 0x005906f1                       ; 005906e9
+        ;   XREF to: 005906f1 (CONDITIONAL_JUMP)  ; LAB_005906f1
     ADD EAX,0x4                         ; 005906eb
     MOV dword ptr [EAX + -0x4],EBX      ; 005906ee
     MOV EDX,dword ptr [ESP + 0xa07c]    ; 005906f1
         ;   Label: LAB_005906f1
     MOV dword ptr [ESP + 0xa080],EAX    ; 005906f8
     TEST EDX,EDX                        ; 005906ff
-    JNZ 0x00590c86                      ; 00590701 | LAB_00590c86
-        ;   XREF to: 00590c86 (CONDITIONAL_JUMP)
-    MOV ECX,0x64ba7b                    ; 00590707 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064ba7b = ..\core\skeledit.cpp
+    JNZ 0x00590c86                      ; 00590701
+        ;   XREF to: 00590c86 (CONDITIONAL_JUMP)  ; LAB_00590c86
+    MOV ECX,0x64ba7b                    ; 00590707 | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_00590707
     MOV EBX,0xd11                       ; 0059070c
-    PUSH 0x64ba90                       ; 00590711 | = "Out of memory!" | s_Out_of_memory_0064ba90 = Out of memory!
-    MOV dword ptr [0x02f0ca48],ECX      ; 00590716 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 0059071c | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00590722 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64ba90                       ; 00590711 | = "Out of memory!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 00590716 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 0059071c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00590722
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00590727
     MOV ESI,dword ptr [ESP + 0xa08c]    ; 0059072a
         ;   Label: LAB_0059072a
     XOR EDI,EDI                         ; 00590731
     TEST ESI,ESI                        ; 00590733
-    JLE 0x00590761                      ; 00590735 | LAB_00590761
-        ;   XREF to: 00590761 (CONDITIONAL_JUMP)
+    JLE 0x00590761                      ; 00590735
+        ;   XREF to: 00590761 (CONDITIONAL_JUMP)  ; LAB_00590761
     MOV ECX,dword ptr [ESP + 0xa074]    ; 00590737
     MOV EDX,dword ptr [ESP + 0xa07c]    ; 0059073e
     CMP dword ptr [ECX + 0x4],0x3       ; 00590745
         ;   Label: LAB_00590745
-    JZ 0x00590c93                       ; 00590749 | LAB_00590c93
-        ;   XREF to: 00590c93 (CONDITIONAL_JUMP)
+    JZ 0x00590c93                       ; 00590749
+        ;   XREF to: 00590c93 (CONDITIONAL_JUMP)  ; LAB_00590c93
     MOV ESI,dword ptr [ESP + 0xa08c]    ; 0059074f
         ;   Label: LAB_0059074f
     ADD EDX,0xc                         ; 00590756
     INC EDI                             ; 00590759
     ADD ECX,0x3c                        ; 0059075a
     CMP EDI,ESI                         ; 0059075d
-    JL 0x00590745                       ; 0059075f | LAB_00590745
-        ;   XREF to: 00590745 (CONDITIONAL_JUMP)
+    JL 0x00590745                       ; 0059075f
+        ;   XREF to: 00590745 (CONDITIONAL_JUMP)  ; LAB_00590745
     MOV EAX,dword ptr [EBP + 0x14]      ; 00590761
         ;   Label: LAB_00590761
     MOV EDX,dword ptr [EAX + 0x54]      ; 00590764
     XOR EDI,EDI                         ; 00590767
     TEST EDX,EDX                        ; 00590769
-    JLE 0x0059093e                      ; 0059076b | LAB_0059093e
-        ;   XREF to: 0059093e (CONDITIONAL_JUMP)
+    JLE 0x0059093e                      ; 0059076b
+        ;   XREF to: 0059093e (CONDITIONAL_JUMP)  ; LAB_0059093e
     MOV EDX,dword ptr [ESP + 0xa080]    ; 00590771
     MOV dword ptr [ESP + 0xa178],EDI    ; 00590778
     MOV EBX,dword ptr [EBP + 0x14]      ; 0059077f
@@ -1499,8 +1481,8 @@ section .text
     FCOMPP                              ; 005908ad
     FNSTSW AX                           ; 005908af
     SAHF                                ; 005908b1
-    JNC 0x00590e31                      ; 005908b2 | LAB_00590e31
-        ;   XREF to: 00590e31 (CONDITIONAL_JUMP)
+    JNC 0x00590e31                      ; 005908b2
+        ;   XREF to: 00590e31 (CONDITIONAL_JUMP)  ; LAB_00590e31
     FLD1                                ; 005908b8
     FLD float ptr [ESP + 0x9fbc]        ; 005908ba
     FXCH                                ; 005908c1
@@ -1518,8 +1500,8 @@ section .text
     LEA EAX,[ESP + 0x9fbc]              ; 005908f3
         ;   Label: LAB_005908f3
     CMP EDX,EAX                         ; 005908fa
-    JZ 0x0059091b                       ; 005908fc | LAB_0059091b
-        ;   XREF to: 0059091b (CONDITIONAL_JUMP)
+    JZ 0x0059091b                       ; 005908fc
+        ;   XREF to: 0059091b (CONDITIONAL_JUMP)  ; LAB_0059091b
     MOV EAX,dword ptr [ESP + 0x9fbc]    ; 005908fe
     MOV dword ptr [EDX],EAX             ; 00590905
     MOV EAX,dword ptr [ESP + 0x9fc0]    ; 00590907
@@ -1535,51 +1517,50 @@ section .text
     MOV ECX,dword ptr [EAX + 0x54]      ; 0059092c
     MOV dword ptr [ESP + 0xa178],ESI    ; 0059092f
     CMP EDI,ECX                         ; 00590936
-    JL 0x0059077f                       ; 00590938 | LAB_0059077f
-        ;   XREF to: 0059077f (CONDITIONAL_JUMP)
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0059093e | void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    JL 0x0059077f                       ; 00590938
+        ;   XREF to: 0059077f (CONDITIONAL_JUMP)  ; LAB_0059077f
+    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0059093e
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
         ;   Label: LAB_0059093e
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)
-    PUSH 0x64ba9f                       ; 00590943 | = "Matching faces" | s_Matching_faces_0064ba9f = Matching faces
-    MOV EBX,dword ptr [0x00678a60]      ; 00590948 | CEditorTools * g_CEditorToolsPtr
-    PUSH EBX                            ; 0059094e | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 0059094f | void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
-        ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)
+    PUSH 0x64ba9f                       ; 00590943 | = "Matching faces"
+    MOV EBX,dword ptr [0x00678a60]      ; 00590948 | g_CEditorToolsPtr
+    PUSH EBX                            ; 0059094e | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 0059094f
+        ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 00590954
     MOV EAX,dword ptr [EBP + 0x18]      ; 00590957
     ADD EAX,0x200                       ; 0059095a
     PUSH EAX                            ; 0059095f
-    PUSH 0x64baae                       ; 00590960 | = "Matching faces in %s\n" | s_Matching_faces_in_s_0064baae = Matching faces in %s
-
+    PUSH 0x64baae                       ; 00590960 | = "Matching faces in %s\n"
     MOV ESI,dword ptr [ESP + 0xa080]    ; 00590965
     PUSH ESI                            ; 0059096c
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0059096d | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0059096d
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 00590972
     MOV EDX,dword ptr [EBP + 0x14]      ; 00590975
     MOV EAX,dword ptr [ESP + 0xa08c]    ; 00590978
     MOV EDI,dword ptr [EDX + 0x54]      ; 0059097f
     CMP EAX,EDI                         ; 00590982
-    JL 0x00590e4d                       ; 00590984 | LAB_00590e4d
-        ;   XREF to: 00590e4d (CONDITIONAL_JUMP)
+    JL 0x00590e4d                       ; 00590984
+        ;   XREF to: 00590e4d (CONDITIONAL_JUMP)  ; LAB_00590e4d
     PUSH 0xd42                          ; 0059098a
-    PUSH 0x64bafa                       ; 0059098f | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bafa = ..\core\skeledit.cpp
+    PUSH 0x64bafa                       ; 0059098f | = "..\\core\\skeledit.cpp"
     LEA EAX,[EDI*0x4 + 0x0]             ; 00590994
     PUSH EAX                            ; 0059099b
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0059099c | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 0059099c
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 005909a1
     MOV dword ptr [ESP + 0xa084],EAX    ; 005909a4
     TEST EAX,EAX                        ; 005909ab
-    JNZ 0x005909d1                      ; 005909ad | LAB_005909d1
-        ;   XREF to: 005909d1 (CONDITIONAL_JUMP)
-    MOV EAX,0x64bb0f                    ; 005909af | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bb0f = ..\core\skeledit.cpp
+    JNZ 0x005909d1                      ; 005909ad
+        ;   XREF to: 005909d1 (CONDITIONAL_JUMP)  ; LAB_005909d1
+    MOV EAX,0x64bb0f                    ; 005909af | = "..\\core\\skeledit.cpp"
     MOV EDX,0xd43                       ; 005909b4
-    PUSH 0x64bb24                       ; 005909b9 | = "Out of memory!" | s_Out_of_memory_0064bb24 = Out of memory!
-    MOV [0x02f0ca48],EAX                ; 005909be | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 005909c3 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005909c9 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64bb24                       ; 005909b9 | = "Out of memory!"
+    MOV [0x02f0ca48],EAX                ; 005909be | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 005909c3 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005909c9
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005909ce
     MOV EAX,dword ptr [ESP + 0xa074]    ; 005909d1
         ;   Label: LAB_005909d1
@@ -1588,8 +1569,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x7140]    ; 005909e2
     XOR EBX,EBX                         ; 005909e8
     TEST ECX,ECX                        ; 005909ea
-    JLE 0x00590e90                      ; 005909ec | LAB_00590e90
-        ;   XREF to: 00590e90 (CONDITIONAL_JUMP)
+    JLE 0x00590e90                      ; 005909ec
+        ;   XREF to: 00590e90 (CONDITIONAL_JUMP)  ; LAB_00590e90
     XOR EDI,EDI                         ; 005909f2
     MOV EAX,dword ptr [ESP + 0xa09c]    ; 005909f4
         ;   Label: LAB_005909f4
@@ -1599,96 +1580,96 @@ section .text
         ;   Label: LAB_005909ff
     ADD ECX,ESI                         ; 00590a02
     CMP EDX,dword ptr [ECX + 0x7164]    ; 00590a04
-    JGE 0x00590e64                      ; 00590a0a | LAB_00590e64
-        ;   XREF to: 00590e64 (CONDITIONAL_JUMP)
+    JGE 0x00590e64                      ; 00590a0a
+        ;   XREF to: 00590e64 (CONDITIONAL_JUMP)  ; LAB_00590e64
     ADD EAX,0x3c                        ; 00590a10
     MOV dword ptr [EAX + -0x30],0xffffffff ; 00590a13
     INC EDX                             ; 00590a1a
     MOV dword ptr [EAX + -0x34],EBX     ; 00590a1b
-    JMP 0x005909ff                      ; 00590a1e | LAB_005909ff
-        ;   XREF to: 005909ff (UNCONDITIONAL_JUMP)
-    MOV ECX,0x64b63e                    ; 00590a20 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b63e = ..\core\skeledit.cpp
+    JMP 0x005909ff                      ; 00590a1e
+        ;   XREF to: 005909ff (UNCONDITIONAL_JUMP)  ; LAB_005909ff
+    MOV ECX,0x64b63e                    ; 00590a20 | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_00590a20
     MOV EBX,0xbef                       ; 00590a25
-    PUSH 0x64b653                       ; 00590a2a | = "Can't create log file!" | s_Can_t_create_log_file_0064b653 = Can't create log file!
-    MOV dword ptr [0x02f0ca48],ECX      ; 00590a2f | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 00590a35 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00590a3b | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64b653                       ; 00590a2a | = "Can't create log file!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 00590a2f | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 00590a35 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00590a3b
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00590a40
-    JMP 0x0058fa73                      ; 00590a43 | LAB_0058fa73
-        ;   XREF to: 0058fa73 (UNCONDITIONAL_JUMP)
+    JMP 0x0058fa73                      ; 00590a43
+        ;   XREF to: 0058fa73 (UNCONDITIONAL_JUMP)  ; LAB_0058fa73
     MOV ECX,dword ptr [ESP + 0xa110]    ; 00590a48
         ;   Label: LAB_00590a48
     MOV EAX,dword ptr [EBP + 0x18]      ; 00590a4f
     PUSH ECX                            ; 00590a52
     ADD EAX,0x200                       ; 00590a53
     PUSH EAX                            ; 00590a58
-    PUSH 0x64b68e                       ; 00590a59 | = "%s has incorrect S3D version %d" | s_s_has_incorrect_S3D_vers_0064b68e = %s has incorrect S3D version %d
+    PUSH 0x64b68e                       ; 00590a59 | = "%s has incorrect S3D version %d"
     PUSH 0x3670650                      ; 00590a5e | DAT_03670650
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00590a63 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00590a63
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00590a68
-    JMP 0x0058f8e7                      ; 00590a6b | LAB_0058f8e7
-        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)
+    JMP 0x0058f8e7                      ; 00590a6b
+        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7
     MOV EAX,dword ptr [EBP + 0x18]      ; 00590a70
         ;   Label: LAB_00590a70
     ADD EAX,0x200                       ; 00590a73
     PUSH EAX                            ; 00590a78
-    PUSH 0x64b6c4                       ; 00590a79 | = "%s is corrupt" | s_s_is_corrupt_0064b6c4 = %s is corrupt
-    JMP 0x0058f8da                      ; 00590a7e | LAB_0058f8da
-        ;   XREF to: 0058f8da (UNCONDITIONAL_JUMP)
+    PUSH 0x64b6c4                       ; 00590a79 | = "%s is corrupt"
+    JMP 0x0058f8da                      ; 00590a7e
+        ;   XREF to: 0058f8da (UNCONDITIONAL_JUMP)  ; LAB_0058f8da
     PUSH EBX                            ; 00590a83
         ;   Label: LAB_00590a83
-    PUSH 0x64b6d2                       ; 00590a84 | = "Too many parts in %s" | s_Too_many_parts_in_s_0064b6d2 = Too many parts in %s
-    JMP 0x0058f8da                      ; 00590a89 | LAB_0058f8da
-        ;   XREF to: 0058f8da (UNCONDITIONAL_JUMP)
+    PUSH 0x64b6d2                       ; 00590a84 | = "Too many parts in %s"
+    JMP 0x0058f8da                      ; 00590a89
+        ;   XREF to: 0058f8da (UNCONDITIONAL_JUMP)  ; LAB_0058f8da
     MOV EAX,dword ptr [EBP + 0x14]      ; 00590a8e
         ;   Label: LAB_00590a8e
     INC EBX                             ; 00590a91
     MOV EDX,dword ptr [EAX + 0xbc]      ; 00590a92
     ADD ESI,0x48                        ; 00590a98
     CMP EBX,EDX                         ; 00590a9b
-    JL 0x0058fe2c                       ; 00590a9d | LAB_0058fe2c
-        ;   XREF to: 0058fe2c (CONDITIONAL_JUMP)
-    JMP 0x0058fe60                      ; 00590aa3 | LAB_0058fe60
-        ;   XREF to: 0058fe60 (UNCONDITIONAL_JUMP)
-    PUSH 0x64b80c                       ; 00590aa8 | = "Texture list full determining parts" | s_Texture_list_full_determ_0064b80c = Texture list full determining parts
+    JL 0x0058fe2c                       ; 00590a9d
+        ;   XREF to: 0058fe2c (CONDITIONAL_JUMP)  ; LAB_0058fe2c
+    JMP 0x0058fe60                      ; 00590aa3
+        ;   XREF to: 0058fe60 (UNCONDITIONAL_JUMP)  ; LAB_0058fe60
+    PUSH 0x64b80c                       ; 00590aa8 | = "Texture list full determining parts"
         ;   Label: LAB_00590aa8
     PUSH 0x3670650                      ; 00590aad | DAT_03670650
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00590ab2 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00590ab2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00590ab7
-    JMP 0x0058f8e7                      ; 00590aba | LAB_0058f8e7
-        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)
-    MOV EDX,0x64b86c                    ; 00590abf | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b86c = ..\core\skeledit.cpp
+    JMP 0x0058f8e7                      ; 00590aba
+        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7
+    MOV EDX,0x64b86c                    ; 00590abf | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_00590abf
     MOV ECX,0xc4f                       ; 00590ac4
-    PUSH 0x64b881                       ; 00590ac9 | = "out of memory in CDeformableModel::de..." | s_out_of_memory_in_CDeform_0064b881 = out of memory in CDeformableModel::determinePartsFromS3D
-    MOV dword ptr [0x02f0ca48],EDX      ; 00590ace | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 00590ad4 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00590ada | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64b881                       ; 00590ac9 | = "out of memory in CDeformableModel::de..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 00590ace | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 00590ad4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00590ada
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00590adf
-    JMP 0x0058ff07                      ; 00590ae2 | LAB_0058ff07
-        ;   XREF to: 0058ff07 (UNCONDITIONAL_JUMP)
-    MOV EAX,0x64b92e                    ; 00590ae7 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064b92e = ..\core\skeledit.cpp
+    JMP 0x0058ff07                      ; 00590ae2
+        ;   XREF to: 0058ff07 (UNCONDITIONAL_JUMP)  ; LAB_0058ff07
+    MOV EAX,0x64b92e                    ; 00590ae7 | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_00590ae7
     MOV EDX,0xc7d                       ; 00590aec
-    PUSH 0x64b943                       ; 00590af1 | = "out of memory in CDeformableModel::de..." | s_out_of_memory_in_CDeform_0064b943 = out of memory in CDeformableModel::determinePartsFromS3D
-    MOV [0x02f0ca48],EAX                ; 00590af6 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 00590afb | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00590b01 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64b943                       ; 00590af1 | = "out of memory in CDeformableModel::de..."
+    MOV [0x02f0ca48],EAX                ; 00590af6 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 00590afb | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00590b01
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00590b06
-    JMP 0x005900d6                      ; 00590b09 | LAB_005900d6
-        ;   XREF to: 005900d6 (UNCONDITIONAL_JUMP)
+    JMP 0x005900d6                      ; 00590b09
+        ;   XREF to: 005900d6 (UNCONDITIONAL_JUMP)  ; LAB_005900d6
     MOV EAX,dword ptr [ESP + 0xa0c4]    ; 00590b0e
         ;   Label: LAB_00590b0e
     MOV ECX,dword ptr [EDI + 0x14]      ; 00590b15
     CMP ECX,dword ptr [EAX + 0x14]      ; 00590b18
-    JNZ 0x00590285                      ; 00590b1b | LAB_00590285
-        ;   XREF to: 00590285 (CONDITIONAL_JUMP)
+    JNZ 0x00590285                      ; 00590b1b
+        ;   XREF to: 00590285 (CONDITIONAL_JUMP)  ; LAB_00590285
     XOR EBX,EBX                         ; 00590b21
     MOV dword ptr [ESP + 0xa0d0],EBX    ; 00590b23
     MOV ECX,dword ptr [ESP + 0xa0d0]    ; 00590b2a
@@ -1737,63 +1718,62 @@ section .text
     FCOMP double ptr [0x0064bfda]       ; 00590bf4 | DAT_0064bfda
     FNSTSW AX                           ; 00590bfa
     SAHF                                ; 00590bfc
-    JBE 0x00590c4b                      ; 00590bfd | LAB_00590c4b
-        ;   XREF to: 00590c4b (CONDITIONAL_JUMP)
+    JBE 0x00590c4b                      ; 00590bfd
+        ;   XREF to: 00590c4b (CONDITIONAL_JUMP)  ; LAB_00590c4b
     CMP EBX,0x3                         ; 00590bff
         ;   Label: LAB_00590bff
-    JNZ 0x00590c2e                      ; 00590c02 | LAB_00590c2e
-        ;   XREF to: 00590c2e (CONDITIONAL_JUMP)
+    JNZ 0x00590c2e                      ; 00590c02
+        ;   XREF to: 00590c2e (CONDITIONAL_JUMP)  ; LAB_00590c2e
     MOV EBX,dword ptr [ESP + 0xa0cc]    ; 00590c04
     PUSH EBX                            ; 00590c0b
     MOV ESI,dword ptr [ESP + 0xa1d4]    ; 00590c0c
     PUSH ESI                            ; 00590c13
-    PUSH 0x64ba01                       ; 00590c14 | = "Removing face %d, it is dup with face..." | s_Removing_face_d_it_is_du_0064ba01 = Removing face %d, it is dup with face %d
-
+    PUSH 0x64ba01                       ; 00590c14 | = "Removing face %d, it is dup with face..."
     MOV EDI,dword ptr [ESP + 0xa084]    ; 00590c19
     PUSH EDI                            ; 00590c20
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590c21 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00590c21
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0x10                        ; 00590c26
-    JMP 0x005902ba                      ; 00590c29 | LAB_005902ba
-        ;   XREF to: 005902ba (UNCONDITIONAL_JUMP)
+    JMP 0x005902ba                      ; 00590c29
+        ;   XREF to: 005902ba (UNCONDITIONAL_JUMP)  ; LAB_005902ba
     MOV EDX,dword ptr [ESP + 0xa0d0]    ; 00590c2e
         ;   Label: LAB_00590c2e
     INC EDX                             ; 00590c35
     MOV dword ptr [ESP + 0xa0d0],EDX    ; 00590c36
     CMP EDX,0x3                         ; 00590c3d
-    JL 0x00590b2a                       ; 00590c40 | LAB_00590b2a
-        ;   XREF to: 00590b2a (CONDITIONAL_JUMP)
-    JMP 0x00590285                      ; 00590c46 | LAB_00590285
-        ;   XREF to: 00590285 (UNCONDITIONAL_JUMP)
+    JL 0x00590b2a                       ; 00590c40
+        ;   XREF to: 00590b2a (CONDITIONAL_JUMP)  ; LAB_00590b2a
+    JMP 0x00590285                      ; 00590c46
+        ;   XREF to: 00590285 (UNCONDITIONAL_JUMP)  ; LAB_00590285
     FLD float ptr [ESP + 0x9fd8]        ; 00590c4b
         ;   Label: LAB_00590c4b
     FABS                                ; 00590c52
     FCOMP double ptr [0x0064bfda]       ; 00590c54 | DAT_0064bfda
     FNSTSW AX                           ; 00590c5a
     SAHF                                ; 00590c5c
-    JA 0x00590bff                       ; 00590c5d | LAB_00590bff
-        ;   XREF to: 00590bff (CONDITIONAL_JUMP)
+    JA 0x00590bff                       ; 00590c5d
+        ;   XREF to: 00590bff (CONDITIONAL_JUMP)  ; LAB_00590bff
     FLD float ptr [ESP + 0x9fdc]        ; 00590c5f
     FABS                                ; 00590c66
     FCOMP double ptr [0x0064bfda]       ; 00590c68 | DAT_0064bfda
     FNSTSW AX                           ; 00590c6e
     SAHF                                ; 00590c70
-    JA 0x00590bff                       ; 00590c71 | LAB_00590bff
-        ;   XREF to: 00590bff (CONDITIONAL_JUMP)
+    JA 0x00590bff                       ; 00590c71
+        ;   XREF to: 00590bff (CONDITIONAL_JUMP)  ; LAB_00590bff
     ADD ESI,0xc                         ; 00590c73
     INC EBX                             ; 00590c76
     INC ECX                             ; 00590c77
     CMP EBX,0x3                         ; 00590c78
-    JL 0x00590b3a                       ; 00590c7b | LAB_00590b3a
-        ;   XREF to: 00590b3a (CONDITIONAL_JUMP)
-    JMP 0x00590bff                      ; 00590c81 | LAB_00590bff
-        ;   XREF to: 00590bff (UNCONDITIONAL_JUMP)
+    JL 0x00590b3a                       ; 00590c7b
+        ;   XREF to: 00590b3a (CONDITIONAL_JUMP)  ; LAB_00590b3a
+    JMP 0x00590bff                      ; 00590c81
+        ;   XREF to: 00590bff (UNCONDITIONAL_JUMP)  ; LAB_00590bff
     TEST EAX,EAX                        ; 00590c86
         ;   Label: LAB_00590c86
-    JZ 0x00590707                       ; 00590c88 | LAB_00590707
-        ;   XREF to: 00590707 (CONDITIONAL_JUMP)
-    JMP 0x0059072a                      ; 00590c8e | LAB_0059072a
-        ;   XREF to: 0059072a (UNCONDITIONAL_JUMP)
+    JZ 0x00590707                       ; 00590c88
+        ;   XREF to: 00590707 (CONDITIONAL_JUMP)  ; LAB_00590707
+    JMP 0x0059072a                      ; 00590c8e
+        ;   XREF to: 0059072a (UNCONDITIONAL_JUMP)  ; LAB_0059072a
     IMUL ESI,dword ptr [ECX + 0x18],0xc ; 00590c93
         ;   Label: LAB_00590c93
     MOV EAX,dword ptr [ESP + 0xa070]    ; 00590c97
@@ -1859,8 +1839,8 @@ section .text
     FCOMPP                              ; 00590da4
     FNSTSW AX                           ; 00590da6
     SAHF                                ; 00590da8
-    JNC 0x00590e18                      ; 00590da9 | LAB_00590e18
-        ;   XREF to: 00590e18 (CONDITIONAL_JUMP)
+    JNC 0x00590e18                      ; 00590da9
+        ;   XREF to: 00590e18 (CONDITIONAL_JUMP)  ; LAB_00590e18
     FLD1                                ; 00590dab
     FLD float ptr [ESP + 0xa058]        ; 00590dad
     FXCH                                ; 00590db4
@@ -1878,38 +1858,38 @@ section .text
     LEA EAX,[ESP + 0xa058]              ; 00590de7
         ;   Label: LAB_00590de7
     CMP EDX,EAX                         ; 00590dee
-    JZ 0x0059074f                       ; 00590df0 | LAB_0059074f
-        ;   XREF to: 0059074f (CONDITIONAL_JUMP)
+    JZ 0x0059074f                       ; 00590df0
+        ;   XREF to: 0059074f (CONDITIONAL_JUMP)  ; LAB_0059074f
     MOV EAX,dword ptr [ESP + 0xa058]    ; 00590df6
     MOV dword ptr [EDX],EAX             ; 00590dfd
     MOV EAX,dword ptr [ESP + 0xa05c]    ; 00590dff
     MOV dword ptr [EDX + 0x4],EAX       ; 00590e06
     MOV EAX,dword ptr [ESP + 0xa060]    ; 00590e09
     MOV dword ptr [EDX + 0x8],EAX       ; 00590e10
-    JMP 0x0059074f                      ; 00590e13 | LAB_0059074f
-        ;   XREF to: 0059074f (UNCONDITIONAL_JUMP)
+    JMP 0x0059074f                      ; 00590e13
+        ;   XREF to: 0059074f (UNCONDITIONAL_JUMP)  ; LAB_0059074f
     XOR ESI,ESI                         ; 00590e18
         ;   Label: LAB_00590e18
     MOV dword ptr [ESP + 0xa05c],ESI    ; 00590e1a
     MOV dword ptr [ESP + 0xa058],ESI    ; 00590e21
     MOV dword ptr [ESP + 0xa060],ESI    ; 00590e28
-    JMP 0x00590de7                      ; 00590e2f | LAB_00590de7
-        ;   XREF to: 00590de7 (UNCONDITIONAL_JUMP)
+    JMP 0x00590de7                      ; 00590e2f
+        ;   XREF to: 00590de7 (UNCONDITIONAL_JUMP)  ; LAB_00590de7
     XOR EAX,EAX                         ; 00590e31
         ;   Label: LAB_00590e31
     MOV dword ptr [ESP + 0x9fc0],EAX    ; 00590e33
     MOV dword ptr [ESP + 0x9fbc],EAX    ; 00590e3a
     MOV dword ptr [ESP + 0x9fc4],EAX    ; 00590e41
-    JMP 0x005908f3                      ; 00590e48 | LAB_005908f3
-        ;   XREF to: 005908f3 (UNCONDITIONAL_JUMP)
-    PUSH 0x64bac4                       ; 00590e4d | = "Deformable model has more faces than ..." | s_Deformable_model_has_mor_0064bac4 = Deformable model has more faces than segmented model!
+    JMP 0x005908f3                      ; 00590e48
+        ;   XREF to: 005908f3 (UNCONDITIONAL_JUMP)  ; LAB_005908f3
+    PUSH 0x64bac4                       ; 00590e4d | = "Deformable model has more faces than ..."
         ;   Label: LAB_00590e4d
     PUSH 0x3670650                      ; 00590e52 | DAT_03670650
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00590e57 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00590e57
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00590e5c
-    JMP 0x0058f8e7                      ; 00590e5f | LAB_0058f8e7
-        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)
+    JMP 0x0058f8e7                      ; 00590e5f
+        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7
     IMUL EAX,dword ptr [ECX + 0x7164],0x3c ; 00590e64
         ;   Label: LAB_00590e64
     MOV EDX,dword ptr [ESP + 0xa09c]    ; 00590e6b
@@ -1920,16 +1900,16 @@ section .text
     MOV ECX,dword ptr [EAX + 0x7140]    ; 00590e7b
     MOV dword ptr [ESP + 0xa09c],EDX    ; 00590e81
     CMP EBX,ECX                         ; 00590e88
-    JL 0x005909f4                       ; 00590e8a | LAB_005909f4
-        ;   XREF to: 005909f4 (CONDITIONAL_JUMP)
+    JL 0x005909f4                       ; 00590e8a
+        ;   XREF to: 005909f4 (CONDITIONAL_JUMP)  ; LAB_005909f4
     MOV EAX,dword ptr [EBP + 0x14]      ; 00590e90
         ;   Label: LAB_00590e90
     XOR EBX,EBX                         ; 00590e93
     MOV ESI,dword ptr [EAX + 0x54]      ; 00590e95
     MOV dword ptr [ESP + 0xa1cc],EBX    ; 00590e98
     TEST ESI,ESI                        ; 00590e9f
-    JLE 0x00591166                      ; 00590ea1 | LAB_00591166
-        ;   XREF to: 00591166 (CONDITIONAL_JUMP)
+    JLE 0x00591166                      ; 00590ea1
+        ;   XREF to: 00591166 (CONDITIONAL_JUMP)  ; LAB_00591166
     MOV EAX,dword ptr [EBP + 0x14]      ; 00590ea7
         ;   Label: LAB_00590ea7
     SUB ESP,0x4                         ; 00590eaa
@@ -1939,17 +1919,17 @@ section .text
     FSTP float ptr [ESP]                ; 00590ebe
     FILD dword ptr [ESP + 0xa1e4]       ; 00590ec1
     SUB ESP,0x4                         ; 00590ec8
-    MOV EDI,dword ptr [0x00678a60]      ; 00590ecb | CEditorTools * g_CEditorToolsPtr
+    MOV EDI,dword ptr [0x00678a60]      ; 00590ecb | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 00590ed1
-    PUSH EDI                            ; 00590ed4 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00590ed5 | void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)
+    PUSH EDI                            ; 00590ed4 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00590ed5
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 00590eda
     MOV EAX,dword ptr [ESP + 0xa1cc]    ; 00590edd
     MOV dword ptr [ESP + 0xa0d4],EAX    ; 00590ee4
     TEST EAX,EAX                        ; 00590eeb
-    JL 0x00591149                       ; 00590eed | LAB_00591149
-        ;   XREF to: 00591149 (CONDITIONAL_JUMP)
+    JL 0x00591149                       ; 00590eed
+        ;   XREF to: 00591149 (CONDITIONAL_JUMP)  ; LAB_00591149
     MOV ECX,dword ptr [ESP + 0xa0d4]    ; 00590ef3
         ;   Label: LAB_00590ef3
     IMUL EDX,ECX,0x12                   ; 00590efa
@@ -1967,8 +1947,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xa08c]    ; 00590f30
     MOV dword ptr [ESP + 0xa0e0],EDI    ; 00590f37
     TEST EDX,EDX                        ; 00590f3e
-    JLE 0x00591139                      ; 00590f40 | LAB_00591139
-        ;   XREF to: 00591139 (CONDITIONAL_JUMP)
+    JLE 0x00591139                      ; 00590f40
+        ;   XREF to: 00591139 (CONDITIONAL_JUMP)  ; LAB_00591139
     IMUL EDX,ECX,0xc                    ; 00590f46
     MOV dword ptr [ESP + 0xa100],EAX    ; 00590f49
     MOV dword ptr [ESP + 0xa0fc],EAX    ; 00590f50
@@ -1984,8 +1964,8 @@ section .text
     MOV EBX,dword ptr [EAX + 0x4]       ; 00590f8a
     MOV dword ptr [ESP + 0xa0e4],EAX    ; 00590f8d
     CMP EBX,0x3                         ; 00590f94
-    JNZ 0x005910f9                      ; 00590f97 | LAB_005910f9
-        ;   XREF to: 005910f9 (CONDITIONAL_JUMP)
+    JNZ 0x005910f9                      ; 00590f97
+        ;   XREF to: 005910f9 (CONDITIONAL_JUMP)  ; LAB_005910f9
     MOV EAX,dword ptr [ESP + 0xa0f0]    ; 00590f9d
     FLD float ptr [EAX + 0x4]           ; 00590fa4
     MOV EAX,dword ptr [ESP + 0xa180]    ; 00590fa7
@@ -2057,19 +2037,19 @@ section .text
     FCOMP double ptr [0x0064bfe2]       ; 005910c9 | DAT_0064bfe2
     FNSTSW AX                           ; 005910cf
     SAHF                                ; 005910d1
-    JBE 0x005919c1                      ; 005910d2 | LAB_005919c1
-        ;   XREF to: 005919c1 (CONDITIONAL_JUMP)
+    JBE 0x005919c1                      ; 005910d2
+        ;   XREF to: 005919c1 (CONDITIONAL_JUMP)  ; LAB_005919c1
     CMP ESI,0x3                         ; 005910d8
         ;   Label: LAB_005910d8
-    JGE 0x00591a37                      ; 005910db | LAB_00591a37
-        ;   XREF to: 00591a37 (CONDITIONAL_JUMP)
+    JGE 0x00591a37                      ; 005910db
+        ;   XREF to: 00591a37 (CONDITIONAL_JUMP)  ; LAB_00591a37
     MOV ESI,dword ptr [ESP + 0xa0ec]    ; 005910e1
         ;   Label: LAB_005910e1
     INC ESI                             ; 005910e8
     MOV dword ptr [ESP + 0xa0ec],ESI    ; 005910e9
     CMP ESI,0x3                         ; 005910f0
-    JL 0x00590ff1                       ; 005910f3 | LAB_00590ff1
-        ;   XREF to: 00590ff1 (CONDITIONAL_JUMP)
+    JL 0x00590ff1                       ; 005910f3
+        ;   XREF to: 00590ff1 (CONDITIONAL_JUMP)  ; LAB_00590ff1
     MOV EDX,dword ptr [ESP + 0xa180]    ; 005910f9
         ;   Label: LAB_005910f9
     MOV ECX,dword ptr [ESP + 0xa0e0]    ; 00591100
@@ -2082,13 +2062,13 @@ section .text
     MOV dword ptr [ESP + 0xa0e0],ECX    ; 00591123
     MOV dword ptr [ESP + 0xa17c],EAX    ; 0059112a
     CMP ECX,EBX                         ; 00591131
-    JL 0x00590f83                       ; 00591133 | LAB_00590f83
-        ;   XREF to: 00590f83 (CONDITIONAL_JUMP)
+    JL 0x00590f83                       ; 00591133
+        ;   XREF to: 00590f83 (CONDITIONAL_JUMP)  ; LAB_00590f83
     MOV ESI,dword ptr [ESP + 0xa0dc]    ; 00591139
         ;   Label: LAB_00591139
     CMP ESI,-0x1                        ; 00591140
-    JNZ 0x00591ab1                      ; 00591143 | LAB_00591ab1
-        ;   XREF to: 00591ab1 (CONDITIONAL_JUMP)
+    JNZ 0x00591ab1                      ; 00591143
+        ;   XREF to: 00591ab1 (CONDITIONAL_JUMP)  ; LAB_00591ab1
     MOV EBX,dword ptr [ESP + 0xa1cc]    ; 00591149
         ;   Label: LAB_00591149
     MOV EDX,dword ptr [EBP + 0x14]      ; 00591150
@@ -2096,54 +2076,54 @@ section .text
     MOV ESI,dword ptr [EDX + 0x54]      ; 00591154
     MOV dword ptr [ESP + 0xa1cc],EBX    ; 00591157
     CMP EBX,ESI                         ; 0059115e
-    JL 0x00590ea7                       ; 00591160 | LAB_00590ea7
-        ;   XREF to: 00590ea7 (CONDITIONAL_JUMP)
-    MOV EDI,dword ptr [0x00678a60]      ; 00591166 | CEditorTools * g_CEditorToolsPtr
+    JL 0x00590ea7                       ; 00591160
+        ;   XREF to: 00590ea7 (CONDITIONAL_JUMP)  ; LAB_00590ea7
+    MOV EDI,dword ptr [0x00678a60]      ; 00591166 | g_CEditorToolsPtr
         ;   Label: LAB_00591166
-    PUSH EDI                            ; 0059116c | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 0059116d | void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
-        ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)
-    MOV EAX,0x64bb33                    ; 00591172 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bb33 = ..\core\skeledit.cpp
+    PUSH EDI                            ; 0059116c | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 0059116d
+        ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
+    MOV EAX,0x64bb33                    ; 00591172 | = "..\\core\\skeledit.cpp"
     ADD ESP,0x4                         ; 00591177
     MOV EDX,0xdd1                       ; 0059117a
     MOV ECX,dword ptr [ESP + 0xa07c]    ; 0059117f
-    MOV [0x0067d20c],EAX                ; 00591186 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EDX      ; 0059118b | int g_CurrentDebugLine
+    MOV [0x0067d20c],EAX                ; 00591186 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDX      ; 0059118b | g_CurrentDebugLine
     TEST ECX,ECX                        ; 00591191
-    JZ 0x005911a1                       ; 00591193 | LAB_005911a1
-        ;   XREF to: 005911a1 (CONDITIONAL_JUMP)
+    JZ 0x005911a1                       ; 00591193
+        ;   XREF to: 005911a1 (CONDITIONAL_JUMP)  ; LAB_005911a1
     LEA EAX,[ECX + -0x4]                ; 00591195
     PUSH EAX                            ; 00591198
-    CALL crt_memory.c_free_FUN_005fe659 ; 00591199 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 00591199
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0059119e
-    MOV ESI,0x64bb48                    ; 005911a1 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bb48 = ..\core\skeledit.cpp
+    MOV ESI,0x64bb48                    ; 005911a1 | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_005911a1
     MOV EDI,0xdd2                       ; 005911a6
     MOV EAX,dword ptr [ESP + 0xa080]    ; 005911ab
     XOR EBX,EBX                         ; 005911b2
-    MOV dword ptr [0x0067d20c],ESI      ; 005911b4 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EDI      ; 005911ba | int g_CurrentDebugLine
+    MOV dword ptr [0x0067d20c],ESI      ; 005911b4 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDI      ; 005911ba | g_CurrentDebugLine
     MOV dword ptr [ESP + 0xa07c],EBX    ; 005911c0
     TEST EAX,EAX                        ; 005911c7
-    JZ 0x005911d7                       ; 005911c9 | LAB_005911d7
-        ;   XREF to: 005911d7 (CONDITIONAL_JUMP)
+    JZ 0x005911d7                       ; 005911c9
+        ;   XREF to: 005911d7 (CONDITIONAL_JUMP)  ; LAB_005911d7
     SUB EAX,0x4                         ; 005911cb
     PUSH EAX                            ; 005911ce
-    CALL crt_memory.c_free_FUN_005fe659 ; 005911cf | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 005911cf
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 005911d4
-    MOV ECX,0x64bb5d                    ; 005911d7 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bb5d = ..\core\skeledit.cpp
+    MOV ECX,0x64bb5d                    ; 005911d7 | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_005911d7
     MOV EBX,0xdd3                       ; 005911dc
     XOR EDX,EDX                         ; 005911e1
     MOV ESI,dword ptr [ESP + 0xa084]    ; 005911e3
     MOV dword ptr [ESP + 0xa080],EDX    ; 005911ea
     PUSH ESI                            ; 005911f1
-    MOV dword ptr [0x0067d20c],ECX      ; 005911f2 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EBX      ; 005911f8 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 005911fe | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],ECX      ; 005911f2 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EBX      ; 005911f8 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 005911fe
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00591203
     XOR EDI,EDI                         ; 00591206
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591208
@@ -2152,8 +2132,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x7140]    ; 00591214
     MOV dword ptr [ESP + 0xa0a0],EDI    ; 0059121a
     TEST EDX,EDX                        ; 00591221
-    JLE 0x00591250                      ; 00591223 | LAB_00591250
-        ;   XREF to: 00591250 (CONDITIONAL_JUMP)
+    JLE 0x00591250                      ; 00591223
+        ;   XREF to: 00591250 (CONDITIONAL_JUMP)  ; LAB_00591250
     MOV EDX,dword ptr [EBP + 0x14]      ; 00591225
     XOR EBX,EBX                         ; 00591228
     MOV dword ptr [EAX + 0x7178],EBX    ; 0059122a
@@ -2163,51 +2143,51 @@ section .text
     MOV ESI,dword ptr [EDX + 0x7140]    ; 00591237
     ADD EAX,0x60                        ; 0059123d
     CMP ECX,ESI                         ; 00591240
-    JL 0x0059122a                       ; 00591242 | LAB_0059122a
-        ;   XREF to: 0059122a (CONDITIONAL_JUMP)
+    JL 0x0059122a                       ; 00591242
+        ;   XREF to: 0059122a (CONDITIONAL_JUMP)  ; LAB_0059122a
     LEA EAX,[EAX]                       ; 00591244
     LEA EDX,[EDX]                       ; 0059124a
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591250
         ;   Label: LAB_00591250
     PUSH 0xe56                          ; 00591253
     MOV EAX,dword ptr [EAX + 0x54]      ; 00591258
-    PUSH 0x64bb72                       ; 0059125b | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bb72 = ..\core\skeledit.cpp
+    PUSH 0x64bb72                       ; 0059125b | = "..\\core\\skeledit.cpp"
     SHL EAX,0x2                         ; 00591260
     PUSH EAX                            ; 00591263
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591264 | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591264
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00591269
     MOV EBX,EAX                         ; 0059126c
     MOV dword ptr [ESP + 0xa088],EAX    ; 0059126e
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591275
     PUSH 0xe57                          ; 00591278
     MOV EAX,dword ptr [EAX + 0x54]      ; 0059127d
-    PUSH 0x64bb87                       ; 00591280 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bb87 = ..\core\skeledit.cpp
+    PUSH 0x64bb87                       ; 00591280 | = "..\\core\\skeledit.cpp"
     SHL EAX,0x2                         ; 00591285
     PUSH EAX                            ; 00591288
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591289 | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591289
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059128e
     MOV dword ptr [ESP + 0xa108],EAX    ; 00591291
     TEST EBX,EBX                        ; 00591298
-    JNZ 0x00591adc                      ; 0059129a | LAB_00591adc
-        ;   XREF to: 00591adc (CONDITIONAL_JUMP)
-    MOV EDI,0x64bb9c                    ; 005912a0 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bb9c = ..\core\skeledit.cpp
+    JNZ 0x00591adc                      ; 0059129a
+        ;   XREF to: 00591adc (CONDITIONAL_JUMP)  ; LAB_00591adc
+    MOV EDI,0x64bb9c                    ; 005912a0 | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_005912a0
     MOV EAX,0xe58                       ; 005912a5
-    PUSH 0x64bbb1                       ; 005912aa | = "Out of memory!" | s_Out_of_memory_0064bbb1 = Out of memory!
-    MOV dword ptr [0x02f0ca48],EDI      ; 005912af | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 005912b5 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005912ba | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64bbb1                       ; 005912aa | = "Out of memory!"
+    MOV dword ptr [0x02f0ca48],EDI      ; 005912af | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 005912b5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005912ba
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005912bf
     MOV EAX,dword ptr [EBP + 0x14]      ; 005912c2
         ;   Label: LAB_005912c2
     MOV EDX,dword ptr [EAX + 0x54]      ; 005912c5
     XOR ECX,ECX                         ; 005912c8
     TEST EDX,EDX                        ; 005912ca
-    JLE 0x00591300                      ; 005912cc | LAB_00591300
-        ;   XREF to: 00591300 (CONDITIONAL_JUMP)
+    JLE 0x00591300                      ; 005912cc
+        ;   XREF to: 00591300 (CONDITIONAL_JUMP)  ; LAB_00591300
     MOV EDX,dword ptr [ESP + 0xa108]    ; 005912ce
     MOV EAX,dword ptr [EBP + 0x14]      ; 005912d5
     MOV EBX,dword ptr [ESP + 0xa088]    ; 005912d8
@@ -2219,8 +2199,8 @@ section .text
     MOV ESI,dword ptr [EAX + 0x54]      ; 005912ef
     ADD EBX,0x4                         ; 005912f2
     CMP ECX,ESI                         ; 005912f5
-    JL 0x005912df                       ; 005912f7 | LAB_005912df
-        ;   XREF to: 005912df (CONDITIONAL_JUMP)
+    JL 0x005912df                       ; 005912f7
+        ;   XREF to: 005912df (CONDITIONAL_JUMP)  ; LAB_005912df
     LEA EAX,[EAX]                       ; 005912f9
     NOP                                 ; 005912ff
     MOV EAX,dword ptr [ESP + 0xa08c]    ; 00591300
@@ -2229,29 +2209,29 @@ section .text
     XOR ECX,ECX                         ; 00591309
     MOV dword ptr [ESP + 0xa0a4],EDI    ; 0059130b
     TEST EAX,EAX                        ; 00591312
-    JLE 0x00591336                      ; 00591314 | LAB_00591336
-        ;   XREF to: 00591336 (CONDITIONAL_JUMP)
+    JLE 0x00591336                      ; 00591314
+        ;   XREF to: 00591336 (CONDITIONAL_JUMP)  ; LAB_00591336
     MOV EAX,dword ptr [ESP + 0xa074]    ; 00591316
     CMP dword ptr [EAX + 0x4],0x3       ; 0059131d
         ;   Label: LAB_0059131d
-    JZ 0x00591ae9                       ; 00591321 | LAB_00591ae9
-        ;   XREF to: 00591ae9 (CONDITIONAL_JUMP)
+    JZ 0x00591ae9                       ; 00591321
+        ;   XREF to: 00591ae9 (CONDITIONAL_JUMP)  ; LAB_00591ae9
     MOV EDX,dword ptr [ESP + 0xa08c]    ; 00591327
         ;   Label: LAB_00591327
     INC ECX                             ; 0059132e
     ADD EAX,0x3c                        ; 0059132f
     CMP ECX,EDX                         ; 00591332
-    JL 0x0059131d                       ; 00591334 | LAB_0059131d
-        ;   XREF to: 0059131d (CONDITIONAL_JUMP)
-    MOV ECX,0x64bbf7                    ; 00591336 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bbf7 = ..\core\skeledit.cpp
+    JL 0x0059131d                       ; 00591334
+        ;   XREF to: 0059131d (CONDITIONAL_JUMP)  ; LAB_0059131d
+    MOV ECX,0x64bbf7                    ; 00591336 | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_00591336
     MOV ESI,dword ptr [ESP + 0xa088]    ; 0059133b
     MOV EBX,0xe86                       ; 00591342
     PUSH ESI                            ; 00591347
-    MOV dword ptr [0x0067d20c],ECX      ; 00591348 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EBX      ; 0059134e | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00591354 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],ECX      ; 00591348 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EBX      ; 0059134e | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 00591354
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00591359
     MOV EAX,dword ptr [EBP + 0x14]      ; 0059135c
     MOV EAX,dword ptr [EAX + 0x54]      ; 0059135f
@@ -2260,14 +2240,14 @@ section .text
     MOV dword ptr [ESP + 0xa088],EDI    ; 00591365
     MOV dword ptr [ESP + 0xa1c8],EAX    ; 0059136c
     TEST EAX,EAX                        ; 00591373
-    JL 0x00591492                       ; 00591375 | LAB_00591492
-        ;   XREF to: 00591492 (CONDITIONAL_JUMP)
+    JL 0x00591492                       ; 00591375
+        ;   XREF to: 00591492 (CONDITIONAL_JUMP)  ; LAB_00591492
     MOV EDX,dword ptr [ESP + 0xa1c8]    ; 0059137b
         ;   Label: LAB_0059137b
     XOR EBX,EBX                         ; 00591382
     TEST EDX,EDX                        ; 00591384
-    JLE 0x0059147b                      ; 00591386 | LAB_0059147b
-        ;   XREF to: 0059147b (CONDITIONAL_JUMP)
+    JLE 0x0059147b                      ; 00591386
+        ;   XREF to: 0059147b (CONDITIONAL_JUMP)  ; LAB_0059147b
     MOV ESI,0x12                        ; 0059138c
     MOV EDX,dword ptr [ESP + 0xa108]    ; 00591391
     MOV dword ptr [ESP + 0xa184],EBX    ; 00591398
@@ -2277,8 +2257,8 @@ section .text
     MOV EDI,dword ptr [EDX + 0x4]       ; 005913a8
     LEA EAX,[EBX*0x4 + 0x0]             ; 005913ab
     CMP ECX,EDI                         ; 005913b2
-    JLE 0x00591446                      ; 005913b4 | LAB_00591446
-        ;   XREF to: 00591446 (CONDITIONAL_JUMP)
+    JLE 0x00591446                      ; 005913b4
+        ;   XREF to: 00591446 (CONDITIONAL_JUMP)  ; LAB_00591446
     MOV ECX,dword ptr [EBP + 0x14]      ; 005913ba
     LEA ESI,[EAX + 0x4]                 ; 005913bd
     MOV ECX,dword ptr [ECX + 0x90]      ; 005913c0
@@ -2338,23 +2318,23 @@ section .text
     MOV dword ptr [ESP + 0xa184],EAX    ; 00591465
     MOV dword ptr [ESP + 0xa188],ECX    ; 0059146c
     CMP EBX,ESI                         ; 00591473
-    JL 0x005913a6                       ; 00591475 | LAB_005913a6
-        ;   XREF to: 005913a6 (CONDITIONAL_JUMP)
+    JL 0x005913a6                       ; 00591475
+        ;   XREF to: 005913a6 (CONDITIONAL_JUMP)  ; LAB_005913a6
     MOV EDI,dword ptr [ESP + 0xa1c8]    ; 0059147b
         ;   Label: LAB_0059147b
     DEC EDI                             ; 00591482
     MOV dword ptr [ESP + 0xa1c8],EDI    ; 00591483
     TEST EDI,EDI                        ; 0059148a
-    JGE 0x0059137b                      ; 0059148c | LAB_0059137b
-        ;   XREF to: 0059137b (CONDITIONAL_JUMP)
+    JGE 0x0059137b                      ; 0059148c
+        ;   XREF to: 0059137b (CONDITIONAL_JUMP)  ; LAB_0059137b
     MOV EDX,dword ptr [EBP + 0x14]      ; 00591492
         ;   Label: LAB_00591492
     MOV EAX,dword ptr [ESP + 0xa0a4]    ; 00591495
     MOV ECX,dword ptr [EDX + 0x54]      ; 0059149c
     MOV EBX,0x2                         ; 0059149f
     CMP EAX,ECX                         ; 005914a4
-    JZ 0x00591598                       ; 005914a6 | LAB_00591598
-        ;   XREF to: 00591598 (CONDITIONAL_JUMP)
+    JZ 0x00591598                       ; 005914a6
+        ;   XREF to: 00591598 (CONDITIONAL_JUMP)  ; LAB_00591598
     LEA EAX,[EDX + 0x7144]              ; 005914ac
     MOV dword ptr [ESP + 0xa120],EAX    ; 005914b2
     MOV EAX,dword ptr [EBP + 0x14]      ; 005914b9
@@ -2363,38 +2343,38 @@ section .text
     MOV EAX,dword ptr [EAX + 0x54]      ; 005914c3
     SUB EAX,ESI                         ; 005914c6
     PUSH EAX                            ; 005914c8
-    PUSH 0x64bc0c                       ; 005914c9 | = "There are %d triangles I couldn't match." | s_There_are_d_triangles_I__0064bc0c = There are %d triangles I couldn't match.
+    PUSH 0x64bc0c                       ; 005914c9 | = "There are %d triangles I couldn't match."
     LEA EAX,[ESP + 0x9cc0]              ; 005914ce
     PUSH EAX                            ; 005914d5
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005914d6 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005914d6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005914db
     MOV EAX,dword ptr [EBP + 0x18]      ; 005914de
     CMP dword ptr [EAX + 0x308],0x0     ; 005914e1
-    JNZ 0x00591570                      ; 005914e8 | LAB_00591570
-        ;   XREF to: 00591570 (CONDITIONAL_JUMP)
+    JNZ 0x00591570                      ; 005914e8
+        ;   XREF to: 00591570 (CONDITIONAL_JUMP)  ; LAB_00591570
     LEA EAX,[ESP + 0x960c]              ; 005914ee
     PUSH EAX                            ; 005914f5
-    CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 005914f6 | CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
-        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 005914f6
+        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 005914fb
-    PUSH 0x64bc35                       ; 005914fe | = "Get rid of them them, I never want to..." | s_Get_rid_of_them_them_I_n_0064bc35 = Get rid of them them, I never want to see them again
+    PUSH 0x64bc35                       ; 005914fe | = "Get rid of them them, I never want to..."
     LEA EAX,[ESP + 0x9610]              ; 00591503
     PUSH EAX                            ; 0059150a
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0059150b | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0059150b
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 00591510
-    PUSH 0x64bc6a                       ; 00591513 | = "They are special to me, put them in a..." | s_They_are_special_to_me_p_0064bc6a = They are special to me, put them in a seperate part called "MySpecialTriangles"
+    PUSH 0x64bc6a                       ; 00591513 | = "They are special to me, put them in a..."
     LEA EAX,[ESP + 0x9610]              ; 00591518
     PUSH EAX                            ; 0059151f
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 00591520 | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 00591520
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 00591525
-    PUSH 0x64bcba                       ; 00591528 | = "Try best guess" | s_Try_best_guess_0064bcba = Try best guess
+    PUSH 0x64bcba                       ; 00591528 | = "Try best guess"
     LEA EAX,[ESP + 0x9610]              ; 0059152d
     PUSH EAX                            ; 00591534
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 00591535 | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 00591535
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 0059153a
     PUSH 0x0                            ; 0059153d
         ;   Label: LAB_0059153d
@@ -2403,23 +2383,23 @@ section .text
     PUSH EAX                            ; 00591547
     LEA EAX,[ESP + 0x9618]              ; 00591548
     PUSH EAX                            ; 0059154f
-    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 00591550 | int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 00591550
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
     ADD ESP,0x10                        ; 00591555
     MOV EBX,EAX                         ; 00591558
     TEST EAX,EAX                        ; 0059155a
-    JL 0x0059153d                       ; 0059155c | LAB_0059153d
-        ;   XREF to: 0059153d (CONDITIONAL_JUMP)
+    JL 0x0059153d                       ; 0059155c
+        ;   XREF to: 0059153d (CONDITIONAL_JUMP)  ; LAB_0059153d
     PUSH 0x0                            ; 0059155e
     LEA EAX,[ESP + 0x9610]              ; 00591560
     PUSH EAX                            ; 00591567
-    CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00591568 | CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00591568
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
     ADD ESP,0x8                         ; 0059156d
     TEST EBX,EBX                        ; 00591570
         ;   Label: LAB_00591570
-    JNZ 0x00591b7a                      ; 00591572 | LAB_00591b7a
-        ;   XREF to: 00591b7a (CONDITIONAL_JUMP)
+    JNZ 0x00591b7a                      ; 00591572
+        ;   XREF to: 00591b7a (CONDITIONAL_JUMP)  ; LAB_00591b7a
     MOV EDX,dword ptr [EBP + 0x14]      ; 00591578
     MOV EAX,dword ptr [ESP + 0xa0a4]    ; 0059157b
     MOV dword ptr [EDX + 0x54],EAX      ; 00591582
@@ -2427,28 +2407,28 @@ section .text
         ;   Label: LAB_00591585
     MOV EAX,dword ptr [ESP + 0xa0a4]    ; 00591588
     CMP EAX,dword ptr [EDX + 0x54]      ; 0059158f
-    JNZ 0x005914b9                      ; 00591592 | LAB_005914b9
-        ;   XREF to: 005914b9 (CONDITIONAL_JUMP)
-    MOV EBX,0x64bd00                    ; 00591598 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bd00 = ..\core\skeledit.cpp
+    JNZ 0x005914b9                      ; 00591592
+        ;   XREF to: 005914b9 (CONDITIONAL_JUMP)  ; LAB_005914b9
+    MOV EBX,0x64bd00                    ; 00591598 | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_00591598
     MOV EDI,dword ptr [ESP + 0xa108]    ; 0059159d
     MOV ESI,0xf0c                       ; 005915a4
     PUSH EDI                            ; 005915a9
-    MOV dword ptr [0x0067d20c],EBX      ; 005915aa | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],ESI      ; 005915b0 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 005915b6 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],EBX      ; 005915aa | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ESI      ; 005915b0 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 005915b6
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 005915bb
     XOR EAX,EAX                         ; 005915be
     MOV dword ptr [ESP + 0xa108],EAX    ; 005915c0
     MOV EAX,dword ptr [EBP + 0x18]      ; 005915c7
     ADD EAX,0x200                       ; 005915ca
     PUSH EAX                            ; 005915cf
-    PUSH 0x64bd15                       ; 005915d0 | = "Finding capped faces in %s" | s_Finding_capped_faces_in__0064bd15 = Finding capped faces in %s
-    MOV EDX,dword ptr [0x00678a60]      ; 005915d5 | CEditorTools * g_CEditorToolsPtr
-    PUSH EDX                            ; 005915db | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005915dc | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x64bd15                       ; 005915d0 | = "Finding capped faces in %s"
+    MOV EDX,dword ptr [0x00678a60]      ; 005915d5 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005915db | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005915dc
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 005915e1
     MOV EAX,dword ptr [EBP + 0x14]      ; 005915e4
     MOV ECX,dword ptr [ESP + 0xa0a0]    ; 005915e7
@@ -2457,11 +2437,11 @@ section .text
     LEA EAX,[EDX*0x8 + 0x0]             ; 005915f3
     PUSH 0xf1a                          ; 005915fa
     ADD EAX,EDX                         ; 005915ff
-    PUSH 0x64bd30                       ; 00591601 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bd30 = ..\core\skeledit.cpp
+    PUSH 0x64bd30                       ; 00591601 | = "..\\core\\skeledit.cpp"
     ADD EAX,EAX                         ; 00591606
     PUSH EAX                            ; 00591608
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591609 | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591609
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059160e
     MOV EBX,EAX                         ; 00591611
     MOV dword ptr [ESP + 0xa0a8],EAX    ; 00591613
@@ -2470,24 +2450,24 @@ section .text
     MOV EAX,dword ptr [EAX + 0x54]      ; 00591624
     PUSH 0xf1b                          ; 00591627
     ADD EAX,ESI                         ; 0059162c
-    PUSH 0x64bd45                       ; 0059162e | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bd45 = ..\core\skeledit.cpp
+    PUSH 0x64bd45                       ; 0059162e | = "..\\core\\skeledit.cpp"
     SHL EAX,0x2                         ; 00591633
     PUSH EAX                            ; 00591636
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591637 | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591637
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0059163c
     MOV dword ptr [ESP + 0xa0ac],EAX    ; 0059163f
     TEST EBX,EBX                        ; 00591646
-    JNZ 0x00592001                      ; 00591648 | LAB_00592001
-        ;   XREF to: 00592001 (CONDITIONAL_JUMP)
-    MOV EDI,0x64bd5a                    ; 0059164e | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bd5a = ..\core\skeledit.cpp
+    JNZ 0x00592001                      ; 00591648
+        ;   XREF to: 00592001 (CONDITIONAL_JUMP)  ; LAB_00592001
+    MOV EDI,0x64bd5a                    ; 0059164e | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_0059164e
     MOV EAX,0xf1c                       ; 00591653
-    PUSH 0x64bd6f                       ; 00591658 | = "out of memory in CDeformableModel::de..." | s_out_of_memory_in_CDeform_0064bd6f = out of memory in CDeformableModel::determinePartsFromS3D
-    MOV dword ptr [0x02f0ca48],EDI      ; 0059165d | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 00591663 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00591668 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64bd6f                       ; 00591658 | = "out of memory in CDeformableModel::de..."
+    MOV dword ptr [0x02f0ca48],EDI      ; 0059165d | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 00591663 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00591668
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0059166d
     MOV EDX,dword ptr [EBP + 0x14]      ; 00591670
         ;   Label: LAB_00591670
@@ -2507,14 +2487,14 @@ section .text
     MOVSB.REP ES:EDI,ESI                ; 0059169b
     POP EDI                             ; 0059169d
     MOV EAX,dword ptr [EBP + 0x14]      ; 0059169e
-    MOV EDX,0x64bda8                    ; 005916a1 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bda8 = ..\core\skeledit.cpp
+    MOV EDX,0x64bda8                    ; 005916a1 | = "..\\core\\skeledit.cpp"
     MOV EBX,dword ptr [EAX + 0x7c]      ; 005916a6
     MOV ECX,0xf1f                       ; 005916a9
     PUSH EBX                            ; 005916ae
-    MOV dword ptr [0x0067d20c],EDX      ; 005916af | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],ECX      ; 005916b5 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 005916bb | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],EDX      ; 005916af | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ECX      ; 005916b5 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 005916bb
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 005916c0
     MOV EAX,dword ptr [EBP + 0x14]      ; 005916c3
     MOV ECX,dword ptr [EAX + 0x54]      ; 005916c6
@@ -2531,52 +2511,52 @@ section .text
     MOVSB.REP ES:EDI,ESI                ; 005916e9
     POP EDI                             ; 005916eb
     MOV EAX,dword ptr [EBP + 0x14]      ; 005916ec
-    MOV ESI,0x64bdbd                    ; 005916ef | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bdbd = ..\core\skeledit.cpp
+    MOV ESI,0x64bdbd                    ; 005916ef | = "..\\core\\skeledit.cpp"
     MOV EDX,dword ptr [EAX + 0x90]      ; 005916f4
     MOV EDI,0xf24                       ; 005916fa
     PUSH EDX                            ; 005916ff
-    MOV dword ptr [0x0067d20c],ESI      ; 00591700 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EDI      ; 00591706 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 0059170c | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],ESI      ; 00591700 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDI      ; 00591706 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 0059170c
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00591711
     MOV EBX,0xf28                       ; 00591714
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591719
-    MOV ECX,0x64bdd2                    ; 0059171c | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bdd2 = ..\core\skeledit.cpp
-    MOV dword ptr [0x02f0d944],EBX      ; 00591721 | int g_CurrentDebugLine
+    MOV ECX,0x64bdd2                    ; 0059171c | = "..\\core\\skeledit.cpp"
+    MOV dword ptr [0x02f0d944],EBX      ; 00591721 | g_CurrentDebugLine
     MOV ESI,dword ptr [EAX + 0xa4]      ; 00591727
     MOV EDX,dword ptr [ESP + 0xa0ac]    ; 0059172d
     PUSH ESI                            ; 00591734
-    MOV dword ptr [0x0067d20c],ECX      ; 00591735 | char * g_CurrentDebugFilename
+    MOV dword ptr [0x0067d20c],ECX      ; 00591735 | g_CurrentDebugFilename
     MOV dword ptr [EAX + 0x90],EDX      ; 0059173b
-    CALL crt_memory.c_free_FUN_005fe659 ; 00591741 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 00591741
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00591746
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591749
     MOV EDI,dword ptr [ESP + 0xa0a0]    ; 0059174c
     MOV dword ptr [EAX + 0xa4],0x0      ; 00591753
     TEST EDI,EDI                        ; 0059175d
-    JLE 0x005917ab                      ; 0059175f | LAB_005917ab
-        ;   XREF to: 005917ab (CONDITIONAL_JUMP)
+    JLE 0x005917ab                      ; 0059175f
+        ;   XREF to: 005917ab (CONDITIONAL_JUMP)  ; LAB_005917ab
     PUSH 0xf2b                          ; 00591761
-    PUSH 0x64bde7                       ; 00591766 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bde7 = ..\core\skeledit.cpp
+    PUSH 0x64bde7                       ; 00591766 | = "..\\core\\skeledit.cpp"
     LEA EAX,[EDI*0x4 + 0x0]             ; 0059176b
     PUSH EAX                            ; 00591772
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591773 | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
-        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1f0 ; 00591773
+        ;   XREF to: 0050f1f0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00591778
     MOV EDX,dword ptr [EBP + 0x14]      ; 0059177b
     MOV dword ptr [EDX + 0xa4],EAX      ; 0059177e
     TEST EAX,EAX                        ; 00591784
-    JNZ 0x005917ab                      ; 00591786 | LAB_005917ab
-        ;   XREF to: 005917ab (CONDITIONAL_JUMP)
-    MOV ECX,0x64bdfc                    ; 00591788 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bdfc = ..\core\skeledit.cpp
+    JNZ 0x005917ab                      ; 00591786
+        ;   XREF to: 005917ab (CONDITIONAL_JUMP)  ; LAB_005917ab
+    MOV ECX,0x64bdfc                    ; 00591788 | = "..\\core\\skeledit.cpp"
     MOV EBX,0xf2c                       ; 0059178d
-    PUSH 0x64be11                       ; 00591792 | = "Out of memory." | s_Out_of_memory_0064be11 = Out of memory.
-    MOV dword ptr [0x02f0ca48],ECX      ; 00591797 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 0059179d | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005917a3 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64be11                       ; 00591792 | = "Out of memory."
+    MOV dword ptr [0x02f0ca48],ECX      ; 00591797 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 0059179d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005917a3
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005917a8
     XOR ESI,ESI                         ; 005917ab
         ;   Label: LAB_005917ab
@@ -2585,8 +2565,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x7140]    ; 005917b7
     MOV dword ptr [EAX + 0x68],0x0      ; 005917bd
     TEST EDI,EDI                        ; 005917c4
-    JLE 0x00591891                      ; 005917c6 | LAB_00591891
-        ;   XREF to: 00591891 (CONDITIONAL_JUMP)
+    JLE 0x00591891                      ; 005917c6
+        ;   XREF to: 00591891 (CONDITIONAL_JUMP)  ; LAB_00591891
     ADD EAX,0xc0                        ; 005917cc
     MOV dword ptr [ESP + 0xa154],EAX    ; 005917d1
     MOV dword ptr [ESP + 0xa150],EAX    ; 005917d8
@@ -2595,14 +2575,14 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa1b0]    ; 005917e9
         ;   Label: LAB_005917e9
     CMP dword ptr [EAX + 0x7178],0x1    ; 005917f0
-    JL 0x00591860                       ; 005917f7 | LAB_00591860
-        ;   XREF to: 00591860 (CONDITIONAL_JUMP)
+    JL 0x00591860                       ; 005917f7
+        ;   XREF to: 00591860 (CONDITIONAL_JUMP)  ; LAB_00591860
     XOR ECX,ECX                         ; 005917f9
     MOV EBX,dword ptr [ESP + 0xa08c]    ; 005917fb
     MOV dword ptr [ESP + 0xa140],ECX    ; 00591802
     TEST EBX,EBX                        ; 00591809
-    JLE 0x00591860                      ; 0059180b | LAB_00591860
-        ;   XREF to: 00591860 (CONDITIONAL_JUMP)
+    JLE 0x00591860                      ; 0059180b
+        ;   XREF to: 00591860 (CONDITIONAL_JUMP)  ; LAB_00591860
     MOV EAX,dword ptr [ESP + 0xa074]    ; 0059180d
     MOV dword ptr [ESP + 0xa1ac],EAX    ; 00591814
     MOV EAX,dword ptr [ESP + 0xa1ac]    ; 0059181b
@@ -2610,8 +2590,8 @@ section .text
     MOV ESI,dword ptr [EAX + 0x4]       ; 00591822
     MOV dword ptr [ESP + 0xa144],EAX    ; 00591825
     CMP ESI,0x3                         ; 0059182c
-    JZ 0x0059200e                       ; 0059182f | LAB_0059200e
-        ;   XREF to: 0059200e (CONDITIONAL_JUMP)
+    JZ 0x0059200e                       ; 0059182f
+        ;   XREF to: 0059200e (CONDITIONAL_JUMP)  ; LAB_0059200e
     MOV EBX,dword ptr [ESP + 0xa140]    ; 00591835
         ;   Label: LAB_00591835
     MOV ECX,dword ptr [ESP + 0xa1ac]    ; 0059183c
@@ -2621,8 +2601,8 @@ section .text
     MOV dword ptr [ESP + 0xa140],EBX    ; 0059184e
     MOV dword ptr [ESP + 0xa1ac],ECX    ; 00591855
     CMP EBX,ESI                         ; 0059185c
-    JL 0x0059181b                       ; 0059185e | LAB_0059181b
-        ;   XREF to: 0059181b (CONDITIONAL_JUMP)
+    JL 0x0059181b                       ; 0059185e
+        ;   XREF to: 0059181b (CONDITIONAL_JUMP)  ; LAB_0059181b
     MOV EAX,dword ptr [ESP + 0xa1bc]    ; 00591860
         ;   Label: LAB_00591860
     MOV EDI,dword ptr [ESP + 0xa1b0]    ; 00591867
@@ -2633,38 +2613,38 @@ section .text
     MOV dword ptr [ESP + 0xa1bc],EAX    ; 0059187b
     MOV dword ptr [ESP + 0xa1b0],EDI    ; 00591882
     CMP EAX,ECX                         ; 00591889
-    JL 0x005917e9                       ; 0059188b | LAB_005917e9
-        ;   XREF to: 005917e9 (CONDITIONAL_JUMP)
+    JL 0x005917e9                       ; 0059188b
+        ;   XREF to: 005917e9 (CONDITIONAL_JUMP)  ; LAB_005917e9
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591891
         ;   Label: LAB_00591891
     MOV EBX,dword ptr [ESP + 0xa0a0]    ; 00591894
     CMP EBX,dword ptr [EAX + 0x68]      ; 0059189b
-    JZ 0x005918c3                       ; 0059189e | LAB_005918c3
-        ;   XREF to: 005918c3 (CONDITIONAL_JUMP)
-    MOV ESI,0x64bef4                    ; 005918a0 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bef4 = ..\core\skeledit.cpp
+    JZ 0x005918c3                       ; 0059189e
+        ;   XREF to: 005918c3 (CONDITIONAL_JUMP)  ; LAB_005918c3
+    MOV ESI,0x64bef4                    ; 005918a0 | = "..\\core\\skeledit.cpp"
     MOV EDI,0xfbe                       ; 005918a5
-    PUSH 0x64bf09                       ; 005918aa | = "Hell froze after adding capped triang..." | s_Hell_froze_after_adding__0064bf09 = Hell froze after adding capped triangles.
-    MOV dword ptr [0x02f0ca48],ESI      ; 005918af | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 005918b5 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005918bb | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64bf09                       ; 005918aa | = "Hell froze after adding capped triang..."
+    MOV dword ptr [0x02f0ca48],ESI      ; 005918af | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 005918b5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005918bb
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005918c0
     MOV EAX,dword ptr [EBP + 0x18]      ; 005918c3
         ;   Label: LAB_005918c3
     ADD EAX,0x200                       ; 005918c6
     PUSH EAX                            ; 005918cb
-    PUSH 0x64bf33                       ; 005918cc | = "Determining adjacent parts from %s" | s_Determining_adjacent_par_0064bf33 = Determining adjacent parts from %s
-    MOV EAX,[0x00678a60]                ; 005918d1 | CEditorTools * g_CEditorToolsPtr
-    PUSH EAX                            ; 005918d6 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005918d7 | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x64bf33                       ; 005918cc | = "Determining adjacent parts from %s"
+    MOV EAX,[0x00678a60]                ; 005918d1 | g_CEditorToolsPtr
+    PUSH EAX                            ; 005918d6 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005918d7
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0xc                         ; 005918dc
     MOV EDX,dword ptr [EBP + 0x14]      ; 005918df
     MOV ECX,dword ptr [EDX + 0x7140]    ; 005918e2
     XOR EAX,EAX                         ; 005918e8
     TEST ECX,ECX                        ; 005918ea
-    JLE 0x00591910                      ; 005918ec | LAB_00591910
-        ;   XREF to: 00591910 (CONDITIONAL_JUMP)
+    JLE 0x00591910                      ; 005918ec
+        ;   XREF to: 00591910 (CONDITIONAL_JUMP)  ; LAB_00591910
     MOV ECX,EDX                         ; 005918ee
     MOV EDX,dword ptr [EBP + 0x14]      ; 005918f0
     MOV dword ptr [ECX + 0x718c],0x0    ; 005918f3
@@ -2673,62 +2653,61 @@ section .text
     MOV EBX,dword ptr [EDX + 0x7140]    ; 005918fe
     ADD ECX,0x60                        ; 00591904
     CMP EAX,EBX                         ; 00591907
-    JL 0x005918f3                       ; 00591909 | LAB_005918f3
-        ;   XREF to: 005918f3 (CONDITIONAL_JUMP)
+    JL 0x005918f3                       ; 00591909
+        ;   XREF to: 005918f3 (CONDITIONAL_JUMP)  ; LAB_005918f3
     LEA EAX,[EAX]                       ; 0059190b
     MOV ECX,ECX                         ; 0059190e
     MOV EDI,0xff5                       ; 00591910
         ;   Label: LAB_00591910
-    MOV ESI,0x64bf56                    ; 00591915 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bf56 = ..\core\skeledit.cpp
+    MOV ESI,0x64bf56                    ; 00591915 | = "..\\core\\skeledit.cpp"
     MOV EAX,dword ptr [ESP + 0xa070]    ; 0059191a
-    MOV dword ptr [0x02f0d944],EDI      ; 00591921 | int g_CurrentDebugLine
-    MOV dword ptr [0x0067d20c],ESI      ; 00591927 | char * g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDI      ; 00591921 | g_CurrentDebugLine
+    MOV dword ptr [0x0067d20c],ESI      ; 00591927 | g_CurrentDebugFilename
     TEST EAX,EAX                        ; 0059192d
-    JZ 0x0059193d                       ; 0059192f | LAB_0059193d
-        ;   XREF to: 0059193d (CONDITIONAL_JUMP)
+    JZ 0x0059193d                       ; 0059192f
+        ;   XREF to: 0059193d (CONDITIONAL_JUMP)  ; LAB_0059193d
     SUB EAX,0x4                         ; 00591931
     PUSH EAX                            ; 00591934
-    CALL crt_memory.c_free_FUN_005fe659 ; 00591935 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 00591935
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0059193a
-    MOV EDX,0x64bf6b                    ; 0059193d | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bf6b = ..\core\skeledit.cpp
+    MOV EDX,0x64bf6b                    ; 0059193d | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_0059193d
     MOV EBX,dword ptr [ESP + 0xa074]    ; 00591942
     MOV ECX,0xff6                       ; 00591949
     PUSH EBX                            ; 0059194e
-    MOV dword ptr [0x0067d20c],EDX      ; 0059194f | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],ECX      ; 00591955 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 0059195b | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],EDX      ; 0059194f | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ECX      ; 00591955 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 0059195b
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00591960
     MOV ESI,dword ptr [ESP + 0xa078]    ; 00591963
     TEST ESI,ESI                        ; 0059196a
-    JZ 0x00591998                       ; 0059196c | LAB_00591998
-        ;   XREF to: 00591998 (CONDITIONAL_JUMP)
+    JZ 0x00591998                       ; 0059196c
+        ;   XREF to: 00591998 (CONDITIONAL_JUMP)  ; LAB_00591998
     MOV EAX,dword ptr [EBP + 0x18]      ; 0059196e
     ADD EAX,0x200                       ; 00591971
     PUSH EAX                            ; 00591976
-    PUSH 0x64bf80                       ; 00591977 | = "Determined parts using %s OK!\n" | s_Determined_parts_using_s_0064bf80 = Determined parts using %s OK!
-
+    PUSH 0x64bf80                       ; 00591977 | = "Determined parts using %s OK!\n"
     PUSH ESI                            ; 0059197c
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0059197d | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0059197d
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 00591982
     PUSH 0xffc                          ; 00591985
-    PUSH 0x64bf9f                       ; 0059198a | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bf9f = ..\core\skeledit.cpp
+    PUSH 0x64bf9f                       ; 0059198a | = "..\\core\\skeledit.cpp"
     PUSH ESI                            ; 0059198f
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00591990 | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00591990
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00591995
     MOV EAX,dword ptr [EBP + 0x18]      ; 00591998
         ;   Label: LAB_00591998
     ADD EAX,0x200                       ; 0059199b
     PUSH EAX                            ; 005919a0
-    PUSH 0x64bfb4                       ; 005919a1 | = "Determined parts using %s OK!" | s_Determined_parts_using_s_0064bfb4 = Determined parts using %s OK!
-    MOV EDX,dword ptr [0x00678a60]      ; 005919a6 | CEditorTools * g_CEditorToolsPtr
-    PUSH EDX                            ; 005919ac | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005919ad | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x64bfb4                       ; 005919a1 | = "Determined parts using %s OK!"
+    MOV EDX,dword ptr [0x00678a60]      ; 005919a6 | g_CEditorToolsPtr
+    PUSH EDX                            ; 005919ac | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005919ad
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     MOV EAX,0x1                         ; 005919b2
     ADD ESP,0xc                         ; 005919b7
     MOV ESP,EBP                         ; 005919ba
@@ -2743,15 +2722,15 @@ section .text
     FCOMP double ptr [0x0064bfe2]       ; 005919ca | DAT_0064bfe2
     FNSTSW AX                           ; 005919d0
     SAHF                                ; 005919d2
-    JA 0x005910d8                       ; 005919d3 | LAB_005910d8
-        ;   XREF to: 005910d8 (CONDITIONAL_JUMP)
+    JA 0x005910d8                       ; 005919d3
+        ;   XREF to: 005910d8 (CONDITIONAL_JUMP)  ; LAB_005910d8
     FLD float ptr [ESP + 0x9ff4]        ; 005919d9
     FABS                                ; 005919e0
     FCOMP double ptr [0x0064bfe2]       ; 005919e2 | DAT_0064bfe2
     FNSTSW AX                           ; 005919e8
     SAHF                                ; 005919ea
-    JA 0x005910d8                       ; 005919eb | LAB_005910d8
-        ;   XREF to: 005910d8 (CONDITIONAL_JUMP)
+    JA 0x005910d8                       ; 005919eb
+        ;   XREF to: 005910d8 (CONDITIONAL_JUMP)  ; LAB_005910d8
     FLD float ptr [ESP + 0x9ff0]        ; 005919f1
     FMUL ST0                            ; 005919f8
     FLD float ptr [ESP + 0x9fec]        ; 005919fa
@@ -2769,10 +2748,10 @@ section .text
     INC ESI                             ; 00591a21
     FSTP float ptr [ESP + 0xa0f4]       ; 00591a22
     CMP ESI,0x3                         ; 00591a29
-    JL 0x0059100a                       ; 00591a2c | LAB_0059100a
-        ;   XREF to: 0059100a (CONDITIONAL_JUMP)
-    JMP 0x005910d8                      ; 00591a32 | LAB_005910d8
-        ;   XREF to: 005910d8 (UNCONDITIONAL_JUMP)
+    JL 0x0059100a                       ; 00591a2c
+        ;   XREF to: 0059100a (CONDITIONAL_JUMP)  ; LAB_0059100a
+    JMP 0x005910d8                      ; 00591a32
+        ;   XREF to: 005910d8 (UNCONDITIONAL_JUMP)  ; LAB_005910d8
     FLD float ptr [ESP + 0xa0f4]        ; 00591a37
         ;   Label: LAB_00591a37
     FMUL float ptr [ESP + 0xa0e8]       ; 00591a3e
@@ -2781,13 +2760,13 @@ section .text
     FCOMP float ptr [EAX]               ; 00591a53
     FNSTSW AX                           ; 00591a55
     SAHF                                ; 00591a57
-    JA 0x005910e1                       ; 00591a58 | LAB_005910e1
-        ;   XREF to: 005910e1 (CONDITIONAL_JUMP)
+    JA 0x005910e1                       ; 00591a58
+        ;   XREF to: 005910e1 (CONDITIONAL_JUMP)  ; LAB_005910e1
     MOV EAX,dword ptr [ESP + 0xa0e4]    ; 00591a5e
     MOV ECX,dword ptr [EAX + 0xc]       ; 00591a65
     TEST ECX,ECX                        ; 00591a68
-    JL 0x00591a8e                       ; 00591a6a | LAB_00591a8e
-        ;   XREF to: 00591a8e (CONDITIONAL_JUMP)
+    JL 0x00591a8e                       ; 00591a6a
+        ;   XREF to: 00591a8e (CONDITIONAL_JUMP)  ; LAB_00591a8e
     MOV EBX,dword ptr [ESP + 0xa084]    ; 00591a6c
     LEA EAX,[ECX*0x4 + 0x0]             ; 00591a73
     ADD EAX,EBX                         ; 00591a7a
@@ -2795,16 +2774,16 @@ section .text
     FCOMP float ptr [ESP + 0xa0f4]      ; 00591a7e
     FNSTSW AX                           ; 00591a85
     SAHF                                ; 00591a87
-    JBE 0x005910e1                      ; 00591a88 | LAB_005910e1
-        ;   XREF to: 005910e1 (CONDITIONAL_JUMP)
+    JBE 0x005910e1                      ; 00591a88
+        ;   XREF to: 005910e1 (CONDITIONAL_JUMP)  ; LAB_005910e1
     MOV EAX,dword ptr [ESP + 0xa0e0]    ; 00591a8e
         ;   Label: LAB_00591a8e
     MOV EDX,dword ptr [ESP + 0xa100]    ; 00591a95
     MOV dword ptr [ESP + 0xa0dc],EAX    ; 00591a9c
     MOV EAX,dword ptr [ESP + 0xa0f4]    ; 00591aa3
     MOV dword ptr [EDX],EAX             ; 00591aaa
-    JMP 0x005910e1                      ; 00591aac | LAB_005910e1
-        ;   XREF to: 005910e1 (UNCONDITIONAL_JUMP)
+    JMP 0x005910e1                      ; 00591aac
+        ;   XREF to: 005910e1 (UNCONDITIONAL_JUMP)  ; LAB_005910e1
     IMUL EAX,ESI,0x3c                   ; 00591ab1
         ;   Label: LAB_00591ab1
     ADD EAX,dword ptr [ESP + 0xa074]    ; 00591ab4
@@ -2813,16 +2792,16 @@ section .text
     MOV dword ptr [ESP + 0xa0d4],ECX    ; 00591ac5
     MOV dword ptr [EAX + 0xc],EDX       ; 00591acc
     TEST ECX,ECX                        ; 00591acf
-    JGE 0x00590ef3                      ; 00591ad1 | LAB_00590ef3
-        ;   XREF to: 00590ef3 (CONDITIONAL_JUMP)
-    JMP 0x00591149                      ; 00591ad7 | LAB_00591149
-        ;   XREF to: 00591149 (UNCONDITIONAL_JUMP)
+    JGE 0x00590ef3                      ; 00591ad1
+        ;   XREF to: 00590ef3 (CONDITIONAL_JUMP)  ; LAB_00590ef3
+    JMP 0x00591149                      ; 00591ad7
+        ;   XREF to: 00591149 (UNCONDITIONAL_JUMP)  ; LAB_00591149
     TEST EAX,EAX                        ; 00591adc
         ;   Label: LAB_00591adc
-    JZ 0x005912a0                       ; 00591ade | LAB_005912a0
-        ;   XREF to: 005912a0 (CONDITIONAL_JUMP)
-    JMP 0x005912c2                      ; 00591ae4 | LAB_005912c2
-        ;   XREF to: 005912c2 (UNCONDITIONAL_JUMP)
+    JZ 0x005912a0                       ; 00591ade
+        ;   XREF to: 005912a0 (CONDITIONAL_JUMP)  ; LAB_005912a0
+    JMP 0x005912c2                      ; 00591ae4
+        ;   XREF to: 005912c2 (UNCONDITIONAL_JUMP)  ; LAB_005912c2
     MOV ESI,dword ptr [EAX + 0x8]       ; 00591ae9
         ;   Label: LAB_00591ae9
     IMUL EDX,ESI,0x60                   ; 00591aec
@@ -2830,15 +2809,15 @@ section .text
     MOV EBX,dword ptr [EAX + 0xc]       ; 00591af2
     ADD EDX,EDI                         ; 00591af5
     TEST EBX,EBX                        ; 00591af7
-    JL 0x00591b59                       ; 00591af9 | LAB_00591b59
-        ;   XREF to: 00591b59 (CONDITIONAL_JUMP)
+    JL 0x00591b59                       ; 00591af9
+        ;   XREF to: 00591b59 (CONDITIONAL_JUMP)  ; LAB_00591b59
     MOV EDI,dword ptr [ESP + 0xa088]    ; 00591afb
     SHL EBX,0x2                         ; 00591b02
     ADD EDI,EBX                         ; 00591b05
     MOV dword ptr [ESP + 0xa104],EBX    ; 00591b07
     CMP dword ptr [EDI],0x0             ; 00591b0e
-    JGE 0x00591b46                      ; 00591b11 | LAB_00591b46
-        ;   XREF to: 00591b46 (CONDITIONAL_JUMP)
+    JGE 0x00591b46                      ; 00591b11
+        ;   XREF to: 00591b46 (CONDITIONAL_JUMP)  ; LAB_00591b46
     MOV EBX,dword ptr [ESP + 0xa108]    ; 00591b13
     ADD EBX,dword ptr [ESP + 0xa104]    ; 00591b1a
     MOV dword ptr [EBX],ESI             ; 00591b21
@@ -2849,15 +2828,15 @@ section .text
     INC ESI                             ; 00591b33
     MOV dword ptr [ESP + 0xa0a4],EDI    ; 00591b34
     MOV dword ptr [EDX + 0x7164],ESI    ; 00591b3b
-    JMP 0x00591327                      ; 00591b41 | LAB_00591327
-        ;   XREF to: 00591327 (UNCONDITIONAL_JUMP)
+    JMP 0x00591327                      ; 00591b41
+        ;   XREF to: 00591327 (UNCONDITIONAL_JUMP)  ; LAB_00591327
     MOV EAX,dword ptr [EBP + 0x18]      ; 00591b46
         ;   Label: LAB_00591b46
     ADD EAX,0x200                       ; 00591b49
     PUSH EAX                            ; 00591b4e
-    PUSH 0x64bbc0                       ; 00591b4f | = "Unable to generate one-to-one polygon..." | s_Unable_to_generate_one_t_0064bbc0 = Unable to generate one-to-one polygon matching from %s
-    JMP 0x0058f8da                      ; 00591b54 | LAB_0058f8da
-        ;   XREF to: 0058f8da (UNCONDITIONAL_JUMP)
+    PUSH 0x64bbc0                       ; 00591b4f | = "Unable to generate one-to-one polygon..."
+    JMP 0x0058f8da                      ; 00591b54
+        ;   XREF to: 0058f8da (UNCONDITIONAL_JUMP)  ; LAB_0058f8da
     MOV ESI,dword ptr [ESP + 0xa0a0]    ; 00591b59
         ;   Label: LAB_00591b59
     MOV EBX,dword ptr [EDX + 0x7178]    ; 00591b60
@@ -2865,44 +2844,44 @@ section .text
     INC EBX                             ; 00591b67
     MOV dword ptr [ESP + 0xa0a0],ESI    ; 00591b68
     MOV dword ptr [EDX + 0x7178],EBX    ; 00591b6f
-    JMP 0x00591327                      ; 00591b75 | LAB_00591327
-        ;   XREF to: 00591327 (UNCONDITIONAL_JUMP)
+    JMP 0x00591327                      ; 00591b75
+        ;   XREF to: 00591327 (UNCONDITIONAL_JUMP)  ; LAB_00591327
     CMP EBX,0x1                         ; 00591b7a
         ;   Label: LAB_00591b7a
-    JNZ 0x00591c49                      ; 00591b7d | LAB_00591c49
-        ;   XREF to: 00591c49 (CONDITIONAL_JUMP)
+    JNZ 0x00591c49                      ; 00591b7d
+        ;   XREF to: 00591c49 (CONDITIONAL_JUMP)  ; LAB_00591c49
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591b83
     CMP dword ptr [EAX + 0x7140],0x1e   ; 00591b86
-    JL 0x00591bb1                       ; 00591b8d | LAB_00591bb1
-        ;   XREF to: 00591bb1 (CONDITIONAL_JUMP)
-    MOV EDI,0x64bcc9                    ; 00591b8f | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064bcc9 = ..\core\skeledit.cpp
+    JL 0x00591bb1                       ; 00591b8d
+        ;   XREF to: 00591bb1 (CONDITIONAL_JUMP)  ; LAB_00591bb1
+    MOV EDI,0x64bcc9                    ; 00591b8f | = "..\\core\\skeledit.cpp"
     MOV EAX,0xeaf                       ; 00591b94
-    PUSH 0x64bcde                       ; 00591b99 | = "Too many parts" | s_Too_many_parts_0064bcde = Too many parts
-    MOV dword ptr [0x02f0ca48],EDI      ; 00591b9e | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 00591ba4 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00591ba9 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64bcde                       ; 00591b99 | = "Too many parts"
+    MOV dword ptr [0x02f0ca48],EDI      ; 00591b9e | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 00591ba4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00591ba9
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00591bae
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591bb1
         ;   Label: LAB_00591bb1
     IMUL EDI,dword ptr [EAX + 0x7140],0x60 ; 00591bb4
     MOV ECX,dword ptr [ESP + 0xa120]    ; 00591bbb
-    MOV ESI,0x64bced                    ; 00591bc2 | = "MySpecialTriangles" | s_MySpecialTriangles_0064bced = MySpecialTriangles
+    MOV ESI,0x64bced                    ; 00591bc2 | = "MySpecialTriangles"
     ADD EDI,ECX                         ; 00591bc7
     PUSH EDI                            ; 00591bc9
-    MOV AL,byte ptr [ESI]               ; 00591bca | = "MySpecialTriangles" | s_MySpecialTriangles_0064bced = MySpecialTriangles
+    MOV AL,byte ptr [ESI]               ; 00591bca | = "MySpecialTriangles" | s_SpecialTriangles_0064bcef
         ;   Label: LAB_00591bca
     MOV byte ptr [EDI],AL               ; 00591bcc
     CMP AL,0x0                          ; 00591bce
-    JZ 0x00591be2                       ; 00591bd0 | LAB_00591be2
-        ;   XREF to: 00591be2 (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 00591bd2 | s_ySpecialTriangles_0064bcee
+    JZ 0x00591be2                       ; 00591bd0
+        ;   XREF to: 00591be2 (CONDITIONAL_JUMP)  ; LAB_00591be2
+    MOV AL,byte ptr [ESI + 0x1]         ; 00591bd2 | s_ySpecialTriangles_0064bcee | s_pecialTriangles_0064bcf0
     ADD ESI,0x2                         ; 00591bd5
     MOV byte ptr [EDI + 0x1],AL         ; 00591bd8
     ADD EDI,0x2                         ; 00591bdb
     CMP AL,0x0                          ; 00591bde
-    JNZ 0x00591bca                      ; 00591be0 | LAB_00591bca
-        ;   XREF to: 00591bca (CONDITIONAL_JUMP)
+    JNZ 0x00591bca                      ; 00591be0
+        ;   XREF to: 00591bca (CONDITIONAL_JUMP)  ; LAB_00591bca
     POP EDI                             ; 00591be2
         ;   Label: LAB_00591be2
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591be3
@@ -2925,12 +2904,12 @@ section .text
     INC ESI                             ; 00591c36
     MOV dword ptr [ESP + 0xa0a4],EAX    ; 00591c37
     MOV dword ptr [ECX + 0x7140],ESI    ; 00591c3e
-    JMP 0x00591585                      ; 00591c44 | LAB_00591585
-        ;   XREF to: 00591585 (UNCONDITIONAL_JUMP)
+    JMP 0x00591585                      ; 00591c44
+        ;   XREF to: 00591585 (UNCONDITIONAL_JUMP)  ; LAB_00591585
     CMP EBX,0x2                         ; 00591c49
         ;   Label: LAB_00591c49
-    JNZ 0x00591585                      ; 00591c4c | LAB_00591585
-        ;   XREF to: 00591585 (CONDITIONAL_JUMP)
+    JNZ 0x00591585                      ; 00591c4c
+        ;   XREF to: 00591585 (CONDITIONAL_JUMP)  ; LAB_00591585
     MOV dword ptr [ESP + 0xa124],0x1    ; 00591c52
     MOV EAX,dword ptr [ESP + 0xa0a4]    ; 00591c5d
     MOV dword ptr [ESP + 0xa128],EAX    ; 00591c64
@@ -2939,8 +2918,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x54]      ; 00591c70
     MOV dword ptr [ESP + 0xa12c],EDX    ; 00591c73
     TEST ECX,ECX                        ; 00591c7a
-    JLE 0x00591d62                      ; 00591c7c | LAB_00591d62
-        ;   XREF to: 00591d62 (CONDITIONAL_JUMP)
+    JLE 0x00591d62                      ; 00591c7c
+        ;   XREF to: 00591d62 (CONDITIONAL_JUMP)  ; LAB_00591d62
     MOV EDI,dword ptr [ESP + 0xa0a4]    ; 00591c82
     IMUL EAX,EDI,0x12                   ; 00591c89
     MOV dword ptr [ESP + 0xa1b4],EAX    ; 00591c8c
@@ -2948,8 +2927,8 @@ section .text
     MOV dword ptr [ESP + 0xa1b8],EAX    ; 00591c9a
     CMP dword ptr [ESP + 0xa124],0x0    ; 00591ca1
         ;   Label: LAB_00591ca1
-    JZ 0x00591d62                       ; 00591ca9 | LAB_00591d62
-        ;   XREF to: 00591d62 (CONDITIONAL_JUMP)
+    JZ 0x00591d62                       ; 00591ca9
+        ;   XREF to: 00591d62 (CONDITIONAL_JUMP)  ; LAB_00591d62
     XOR EDX,EDX                         ; 00591caf
     MOV dword ptr [ESP + 0xa124],EDX    ; 00591cb1
     MOV EDX,dword ptr [EBP + 0x14]      ; 00591cb8
@@ -2957,8 +2936,8 @@ section .text
     MOV ECX,dword ptr [EDX + 0x54]      ; 00591cc2
     MOV dword ptr [ESP + 0xa1c4],EAX    ; 00591cc5
     CMP EAX,ECX                         ; 00591ccc
-    JGE 0x00591d45                      ; 00591cce | LAB_00591d45
-        ;   XREF to: 00591d45 (CONDITIONAL_JUMP)
+    JGE 0x00591d45                      ; 00591cce
+        ;   XREF to: 00591d45 (CONDITIONAL_JUMP)  ; LAB_00591d45
     MOV EAX,dword ptr [ESP + 0xa1b4]    ; 00591cd0
     MOV EBX,dword ptr [ESP + 0xa108]    ; 00591cd7
     MOV dword ptr [ESP + 0xa198],EAX    ; 00591cde
@@ -2968,8 +2947,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa19c]    ; 00591cf5
         ;   Label: LAB_00591cf5
     CMP dword ptr [EAX],0xf423f         ; 00591cfc
-    JGE 0x00591e99                      ; 00591d02 | LAB_00591e99
-        ;   XREF to: 00591e99 (CONDITIONAL_JUMP)
+    JGE 0x00591e99                      ; 00591d02
+        ;   XREF to: 00591e99 (CONDITIONAL_JUMP)  ; LAB_00591e99
     MOV EAX,dword ptr [ESP + 0xa19c]    ; 00591d08
         ;   Label: LAB_00591d08
     MOV EDX,dword ptr [ESP + 0xa1c4]    ; 00591d0f
@@ -2984,8 +2963,8 @@ section .text
     MOV ECX,dword ptr [EDX + 0x54]      ; 00591d37
     MOV dword ptr [ESP + 0xa198],EDI    ; 00591d3a
     CMP EAX,ECX                         ; 00591d41
-    JL 0x00591cf5                       ; 00591d43 | LAB_00591cf5
-        ;   XREF to: 00591cf5 (CONDITIONAL_JUMP)
+    JL 0x00591cf5                       ; 00591d43
+        ;   XREF to: 00591cf5 (CONDITIONAL_JUMP)  ; LAB_00591cf5
     MOV EBX,dword ptr [ESP + 0xa12c]    ; 00591d45
         ;   Label: LAB_00591d45
     MOV EDX,dword ptr [EBP + 0x14]      ; 00591d4c
@@ -2993,22 +2972,22 @@ section .text
     MOV ESI,dword ptr [EDX + 0x54]      ; 00591d50
     MOV dword ptr [ESP + 0xa12c],EBX    ; 00591d53
     CMP EBX,ESI                         ; 00591d5a
-    JL 0x00591ca1                       ; 00591d5c | LAB_00591ca1
-        ;   XREF to: 00591ca1 (CONDITIONAL_JUMP)
+    JL 0x00591ca1                       ; 00591d5c
+        ;   XREF to: 00591ca1 (CONDITIONAL_JUMP)  ; LAB_00591ca1
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591d62
         ;   Label: LAB_00591d62
     MOV EAX,dword ptr [EAX + 0x54]      ; 00591d65
     DEC EAX                             ; 00591d68
     MOV dword ptr [ESP + 0xa1c0],EAX    ; 00591d69
     TEST EAX,EAX                        ; 00591d70
-    JL 0x00591e8f                       ; 00591d72 | LAB_00591e8f
-        ;   XREF to: 00591e8f (CONDITIONAL_JUMP)
+    JL 0x00591e8f                       ; 00591d72
+        ;   XREF to: 00591e8f (CONDITIONAL_JUMP)  ; LAB_00591e8f
     MOV EAX,dword ptr [ESP + 0xa1c0]    ; 00591d78
         ;   Label: LAB_00591d78
     XOR EBX,EBX                         ; 00591d7f
     TEST EAX,EAX                        ; 00591d81
-    JLE 0x00591e78                      ; 00591d83 | LAB_00591e78
-        ;   XREF to: 00591e78 (CONDITIONAL_JUMP)
+    JLE 0x00591e78                      ; 00591d83
+        ;   XREF to: 00591e78 (CONDITIONAL_JUMP)  ; LAB_00591e78
     MOV ESI,0x12                        ; 00591d89
     MOV EDX,dword ptr [ESP + 0xa108]    ; 00591d8e
     MOV dword ptr [ESP + 0xa1a0],EBX    ; 00591d95
@@ -3018,8 +2997,8 @@ section .text
     MOV EDI,dword ptr [EDX + 0x4]       ; 00591da5
     LEA ECX,[EBX*0x4 + 0x0]             ; 00591da8
     CMP EAX,EDI                         ; 00591daf
-    JLE 0x00591e43                      ; 00591db1 | LAB_00591e43
-        ;   XREF to: 00591e43 (CONDITIONAL_JUMP)
+    JLE 0x00591e43                      ; 00591db1
+        ;   XREF to: 00591e43 (CONDITIONAL_JUMP)  ; LAB_00591e43
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591db7
     LEA ESI,[ECX + 0x4]                 ; 00591dba
     MOV EAX,dword ptr [EAX + 0x90]      ; 00591dbd
@@ -3079,19 +3058,19 @@ section .text
     MOV dword ptr [ESP + 0xa1a0],EAX    ; 00591e62
     MOV dword ptr [ESP + 0xa1a4],ECX    ; 00591e69
     CMP EBX,ESI                         ; 00591e70
-    JL 0x00591da3                       ; 00591e72 | LAB_00591da3
-        ;   XREF to: 00591da3 (CONDITIONAL_JUMP)
+    JL 0x00591da3                       ; 00591e72
+        ;   XREF to: 00591da3 (CONDITIONAL_JUMP)  ; LAB_00591da3
     MOV EDI,dword ptr [ESP + 0xa1c0]    ; 00591e78
         ;   Label: LAB_00591e78
     DEC EDI                             ; 00591e7f
     MOV dword ptr [ESP + 0xa1c0],EDI    ; 00591e80
     TEST EDI,EDI                        ; 00591e87
-    JGE 0x00591d78                      ; 00591e89 | LAB_00591d78
-        ;   XREF to: 00591d78 (CONDITIONAL_JUMP)
+    JGE 0x00591d78                      ; 00591e89
+        ;   XREF to: 00591d78 (CONDITIONAL_JUMP)  ; LAB_00591d78
     MOV EBX,0x1                         ; 00591e8f
         ;   Label: LAB_00591e8f
-    JMP 0x00591585                      ; 00591e94 | LAB_00591585
-        ;   XREF to: 00591585 (UNCONDITIONAL_JUMP)
+    JMP 0x00591585                      ; 00591e94
+        ;   XREF to: 00591585 (UNCONDITIONAL_JUMP)  ; LAB_00591585
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591e99
         ;   Label: LAB_00591e99
     MOV EDX,dword ptr [ESP + 0xa198]    ; 00591e9c
@@ -3103,16 +3082,16 @@ section .text
     MOV EDX,dword ptr [EAX + 0x54]      ; 00591eb4
     MOV dword ptr [ESP + 0xa134],EDI    ; 00591eb7
     TEST EDX,EDX                        ; 00591ebe
-    JLE 0x00591f9b                      ; 00591ec0 | LAB_00591f9b
-        ;   XREF to: 00591f9b (CONDITIONAL_JUMP)
+    JLE 0x00591f9b                      ; 00591ec0
+        ;   XREF to: 00591f9b (CONDITIONAL_JUMP)  ; LAB_00591f9b
     MOV EAX,dword ptr [ESP + 0xa108]    ; 00591ec6
     MOV dword ptr [ESP + 0xa194],EDI    ; 00591ecd
     MOV dword ptr [ESP + 0xa190],EAX    ; 00591ed4
     MOV EAX,dword ptr [ESP + 0xa190]    ; 00591edb
         ;   Label: LAB_00591edb
     CMP dword ptr [EAX],0xf423f         ; 00591ee2
-    JGE 0x00591fbe                      ; 00591ee8 | LAB_00591fbe
-        ;   XREF to: 00591fbe (CONDITIONAL_JUMP)
+    JGE 0x00591fbe                      ; 00591ee8
+        ;   XREF to: 00591fbe (CONDITIONAL_JUMP)  ; LAB_00591fbe
     MOV EAX,dword ptr [EBP + 0x14]      ; 00591eee
     MOV EDX,dword ptr [ESP + 0xa194]    ; 00591ef1
     MOV EAX,dword ptr [EAX + 0x7c]      ; 00591ef8
@@ -3128,30 +3107,30 @@ section .text
     MOV SI,word ptr [EAX]               ; 00591f25
     XOR EDX,EDX                         ; 00591f28
     CMP SI,word ptr [ECX]               ; 00591f2a
-    JZ 0x00591f47                       ; 00591f2d | LAB_00591f47
-        ;   XREF to: 00591f47 (CONDITIONAL_JUMP)
+    JZ 0x00591f47                       ; 00591f2d
+        ;   XREF to: 00591f47 (CONDITIONAL_JUMP)  ; LAB_00591f47
     INC EDX                             ; 00591f2f
         ;   Label: LAB_00591f2f
     ADD ECX,0x2                         ; 00591f30
     CMP EDX,0x3                         ; 00591f33
-    JGE 0x00591f48                      ; 00591f36 | LAB_00591f48
-        ;   XREF to: 00591f48 (CONDITIONAL_JUMP)
+    JGE 0x00591f48                      ; 00591f36
+        ;   XREF to: 00591f48 (CONDITIONAL_JUMP)  ; LAB_00591f48
     MOV ESI,dword ptr [ESP + 0xa13c]    ; 00591f38
     MOV DI,word ptr [ECX]               ; 00591f3f
     CMP DI,word ptr [ESI]               ; 00591f42
-    JNZ 0x00591f2f                      ; 00591f45 | LAB_00591f2f
-        ;   XREF to: 00591f2f (CONDITIONAL_JUMP)
+    JNZ 0x00591f2f                      ; 00591f45
+        ;   XREF to: 00591f2f (CONDITIONAL_JUMP)  ; LAB_00591f2f
     INC EBX                             ; 00591f47
         ;   Label: LAB_00591f47
     MOV ESI,dword ptr [ESP + 0xa18c]    ; 00591f48
         ;   Label: LAB_00591f48
     ADD EAX,0x2                         ; 00591f4f
     CMP EAX,ESI                         ; 00591f52
-    JNZ 0x00591f17                      ; 00591f54 | LAB_00591f17
-        ;   XREF to: 00591f17 (CONDITIONAL_JUMP)
+    JNZ 0x00591f17                      ; 00591f54
+        ;   XREF to: 00591f17 (CONDITIONAL_JUMP)  ; LAB_00591f17
     CMP EBX,0x2                         ; 00591f56
-    JL 0x00591fbe                       ; 00591f59 | LAB_00591fbe
-        ;   XREF to: 00591fbe (CONDITIONAL_JUMP)
+    JL 0x00591fbe                       ; 00591f59
+        ;   XREF to: 00591fbe (CONDITIONAL_JUMP)  ; LAB_00591fbe
     MOV EDX,dword ptr [ESP + 0xa134]    ; 00591f5b
     MOV EAX,dword ptr [ESP + 0xa108]    ; 00591f62
     SHL EDX,0x2                         ; 00591f69
@@ -3170,11 +3149,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa19c]    ; 00591f9b
         ;   Label: LAB_00591f9b
     CMP dword ptr [EAX],0xf423f         ; 00591fa2
-    JL 0x00591d08                       ; 00591fa8 | LAB_00591d08
-        ;   XREF to: 00591d08 (CONDITIONAL_JUMP)
+    JL 0x00591d08                       ; 00591fa8
+        ;   XREF to: 00591d08 (CONDITIONAL_JUMP)  ; LAB_00591d08
     MOV dword ptr [ESP + 0xa124],0x1    ; 00591fae
-    JMP 0x00591d08                      ; 00591fb9 | LAB_00591d08
-        ;   XREF to: 00591d08 (UNCONDITIONAL_JUMP)
+    JMP 0x00591d08                      ; 00591fb9
+        ;   XREF to: 00591d08 (UNCONDITIONAL_JUMP)  ; LAB_00591d08
     MOV EAX,dword ptr [ESP + 0xa194]    ; 00591fbe
         ;   Label: LAB_00591fbe
     MOV EDX,dword ptr [ESP + 0xa134]    ; 00591fc5
@@ -3189,25 +3168,25 @@ section .text
     MOV ECX,dword ptr [EDX + 0x54]      ; 00591fed
     MOV dword ptr [ESP + 0xa190],EDI    ; 00591ff0
     CMP EAX,ECX                         ; 00591ff7
-    JL 0x00591edb                       ; 00591ff9 | LAB_00591edb
-        ;   XREF to: 00591edb (CONDITIONAL_JUMP)
-    JMP 0x00591f9b                      ; 00591fff | LAB_00591f9b
-        ;   XREF to: 00591f9b (UNCONDITIONAL_JUMP)
+    JL 0x00591edb                       ; 00591ff9
+        ;   XREF to: 00591edb (CONDITIONAL_JUMP)  ; LAB_00591edb
+    JMP 0x00591f9b                      ; 00591fff
+        ;   XREF to: 00591f9b (UNCONDITIONAL_JUMP)  ; LAB_00591f9b
     TEST EAX,EAX                        ; 00592001
         ;   Label: LAB_00592001
-    JZ 0x0059164e                       ; 00592003 | LAB_0059164e
-        ;   XREF to: 0059164e (CONDITIONAL_JUMP)
-    JMP 0x00591670                      ; 00592009 | LAB_00591670
-        ;   XREF to: 00591670 (UNCONDITIONAL_JUMP)
+    JZ 0x0059164e                       ; 00592003
+        ;   XREF to: 0059164e (CONDITIONAL_JUMP)  ; LAB_0059164e
+    JMP 0x00591670                      ; 00592009
+        ;   XREF to: 00591670 (UNCONDITIONAL_JUMP)  ; LAB_00591670
     MOV EDI,dword ptr [ESP + 0xa1bc]    ; 0059200e
         ;   Label: LAB_0059200e
     CMP EDI,dword ptr [EAX + 0x8]       ; 00592015
-    JNZ 0x00591835                      ; 00592018 | LAB_00591835
-        ;   XREF to: 00591835 (CONDITIONAL_JUMP)
+    JNZ 0x00591835                      ; 00592018
+        ;   XREF to: 00591835 (CONDITIONAL_JUMP)  ; LAB_00591835
     MOV EAX,dword ptr [ESP + 0xa1ac]    ; 0059201e
     CMP dword ptr [EAX + 0xc],0x0       ; 00592025
-    JGE 0x00591835                      ; 00592029 | LAB_00591835
-        ;   XREF to: 00591835 (CONDITIONAL_JUMP)
+    JGE 0x00591835                      ; 00592029
+        ;   XREF to: 00591835 (CONDITIONAL_JUMP)  ; LAB_00591835
     MOV EDX,dword ptr [EBP + 0x14]      ; 0059202f
     MOV EAX,dword ptr [EBP + 0x14]      ; 00592032
     MOV ECX,dword ptr [EDX + 0x68]      ; 00592035
@@ -3220,8 +3199,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xa098]    ; 00592048
     MOV dword ptr [ESP + 0xa148],ECX    ; 0059204f
     TEST EBX,EBX                        ; 00592056
-    JL 0x0059226e                       ; 00592058 | LAB_0059226e
-        ;   XREF to: 0059226e (CONDITIONAL_JUMP)
+    JL 0x0059226e                       ; 00592058
+        ;   XREF to: 0059226e (CONDITIONAL_JUMP)  ; LAB_0059226e
     MOV EDX,dword ptr [EBP + 0x14]      ; 0059205e
     SHL EAX,0x2                         ; 00592061
     MOV EDX,dword ptr [EDX + 0x90]      ; 00592064
@@ -3248,8 +3227,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x2c]      ; 005920bc
     XOR EDX,EDX                         ; 005920bf
     TEST ECX,ECX                        ; 005920c1
-    JLE 0x00592154                      ; 005920c3 | LAB_00592154
-        ;   XREF to: 00592154 (CONDITIONAL_JUMP)
+    JLE 0x00592154                      ; 005920c3
+        ;   XREF to: 00592154 (CONDITIONAL_JUMP)  ; LAB_00592154
     MOV EBX,ESI                         ; 005920c9
     XOR ECX,ECX                         ; 005920cb
     MOV EAX,dword ptr [EBP + 0x14]      ; 005920cd
@@ -3275,8 +3254,8 @@ section .text
     FCOMP float ptr [ESP + 0x8]         ; 0059212d
     FNSTSW AX                           ; 00592131
     SAHF                                ; 00592133
-    JNC 0x00592144                      ; 00592134 | LAB_00592144
-        ;   XREF to: 00592144 (CONDITIONAL_JUMP)
+    JNC 0x00592144                      ; 00592134
+        ;   XREF to: 00592144 (CONDITIONAL_JUMP)  ; LAB_00592144
     MOV EAX,dword ptr [ESP + 0xa158]    ; 00592136
     MOV word ptr [EBX],DX               ; 0059213d
     MOV dword ptr [ESP + 0x8],EAX       ; 00592140
@@ -3285,33 +3264,33 @@ section .text
     INC EDX                             ; 00592147
     ADD ECX,0x34                        ; 00592148
     CMP EDX,dword ptr [EAX + 0x2c]      ; 0059214b
-    JL 0x005920cd                       ; 0059214e | LAB_005920cd
-        ;   XREF to: 005920cd (CONDITIONAL_JUMP)
+    JL 0x005920cd                       ; 0059214e
+        ;   XREF to: 005920cd (CONDITIONAL_JUMP)  ; LAB_005920cd
     FLD float ptr [ESP + 0x8]           ; 00592154
         ;   Label: LAB_00592154
     FCOMP double ptr [0x0064bfe2]       ; 00592158 | DAT_0064bfe2
     FNSTSW AX                           ; 0059215e
     SAHF                                ; 00592160
-    JA 0x0059236b                       ; 00592161 | LAB_0059236b
-        ;   XREF to: 0059236b (CONDITIONAL_JUMP)
+    JA 0x0059236b                       ; 00592161
+        ;   XREF to: 0059236b (CONDITIONAL_JUMP)  ; LAB_0059236b
     MOV EAX,dword ptr [EDI + 0x1c]      ; 00592167
     MOV EDX,dword ptr [EDI + 0x20]      ; 0059216a
     SAR EAX,0x8                         ; 0059216d
     SAR EDX,0x8                         ; 00592170
     TEST EAX,EAX                        ; 00592173
-    JL 0x00592382                       ; 00592175 | LAB_00592382
-        ;   XREF to: 00592382 (CONDITIONAL_JUMP)
+    JL 0x00592382                       ; 00592175
+        ;   XREF to: 00592382 (CONDITIONAL_JUMP)  ; LAB_00592382
     CMP EAX,0xffff                      ; 0059217b
-    JLE 0x00592187                      ; 00592180 | LAB_00592187
-        ;   XREF to: 00592187 (CONDITIONAL_JUMP)
+    JLE 0x00592187                      ; 00592180
+        ;   XREF to: 00592187 (CONDITIONAL_JUMP)  ; LAB_00592187
     MOV EAX,0xffff                      ; 00592182
     TEST EDX,EDX                        ; 00592187
         ;   Label: LAB_00592187
-    JL 0x00592389                       ; 00592189 | LAB_00592389
-        ;   XREF to: 00592389 (CONDITIONAL_JUMP)
+    JL 0x00592389                       ; 00592189
+        ;   XREF to: 00592389 (CONDITIONAL_JUMP)  ; LAB_00592389
     CMP EDX,0xffff                      ; 0059218f
-    JLE 0x0059219c                      ; 00592195 | LAB_0059219c
-        ;   XREF to: 0059219c (CONDITIONAL_JUMP)
+    JLE 0x0059219c                      ; 00592195
+        ;   XREF to: 0059219c (CONDITIONAL_JUMP)  ; LAB_0059219c
     MOV EDX,0xffff                      ; 00592197
     ADD ESI,0x2                         ; 0059219c
         ;   Label: LAB_0059219c
@@ -3322,8 +3301,8 @@ section .text
     MOV word ptr [ESI + 0x4],AX         ; 005921ae
     MOV dword ptr [ESP + 0xa1d8],EBX    ; 005921b2
     CMP EBX,0x3                         ; 005921b9
-    JL 0x00592085                       ; 005921bc | LAB_00592085
-        ;   XREF to: 00592085 (CONDITIONAL_JUMP)
+    JL 0x00592085                       ; 005921bc
+        ;   XREF to: 00592085 (CONDITIONAL_JUMP)  ; LAB_00592085
     MOV ECX,0xffffffff                  ; 005921c2
     MOV EDX,0x60ad78ec                  ; 005921c7
     MOV ESI,dword ptr [ESP + 0xa08c]    ; 005921cc
@@ -3332,15 +3311,15 @@ section .text
     MOV dword ptr [ESP + 0xa1d4],EBX    ; 005921dc
     MOV dword ptr [ESP + 0xa1dc],EDX    ; 005921e3
     TEST ESI,ESI                        ; 005921ea
-    JLE 0x00592238                      ; 005921ec | LAB_00592238
-        ;   XREF to: 00592238 (CONDITIONAL_JUMP)
+    JLE 0x00592238                      ; 005921ec
+        ;   XREF to: 00592238 (CONDITIONAL_JUMP)  ; LAB_00592238
     MOV EAX,dword ptr [ESP + 0xa074]    ; 005921ee
     MOV dword ptr [ESP + 0xa1a8],EAX    ; 005921f5
     MOV ESI,dword ptr [ESP + 0xa1a8]    ; 005921fc
         ;   Label: LAB_005921fc
     CMP dword ptr [ESI + 0x4],0x3       ; 00592203
-    JZ 0x00592390                       ; 00592207 | LAB_00592390
-        ;   XREF to: 00592390 (CONDITIONAL_JUMP)
+    JZ 0x00592390                       ; 00592207
+        ;   XREF to: 00592390 (CONDITIONAL_JUMP)  ; LAB_00592390
     MOV ESI,dword ptr [ESP + 0xa1d4]    ; 0059220d
         ;   Label: LAB_0059220d
     MOV EBX,dword ptr [ESP + 0xa1a8]    ; 00592214
@@ -3350,12 +3329,12 @@ section .text
     MOV dword ptr [ESP + 0xa1d4],ESI    ; 00592226
     MOV dword ptr [ESP + 0xa1a8],EBX    ; 0059222d
     CMP ESI,EDI                         ; 00592234
-    JL 0x005921fc                       ; 00592236 | LAB_005921fc
-        ;   XREF to: 005921fc (CONDITIONAL_JUMP)
+    JL 0x005921fc                       ; 00592236
+        ;   XREF to: 005921fc (CONDITIONAL_JUMP)  ; LAB_005921fc
     CMP dword ptr [ESP + 0xa14c],0x0    ; 00592238
         ;   Label: LAB_00592238
-    JL 0x00592509                       ; 00592240 | LAB_00592509
-        ;   XREF to: 00592509 (CONDITIONAL_JUMP)
+    JL 0x00592509                       ; 00592240
+        ;   XREF to: 00592509 (CONDITIONAL_JUMP)  ; LAB_00592509
     MOV EAX,dword ptr [EBP + 0x14]      ; 00592246
     MOV EDX,dword ptr [EBP + 0x14]      ; 00592249
     MOV EAX,dword ptr [EAX + 0x68]      ; 0059224c
@@ -3366,14 +3345,14 @@ section .text
     MOV dword ptr [EAX],EDX             ; 00592261
     MOV EAX,dword ptr [EBP + 0x14]      ; 00592263
     INC dword ptr [EAX + 0x68]          ; 00592266
-    JMP 0x00591835                      ; 00592269 | LAB_00591835
-        ;   XREF to: 00591835 (UNCONDITIONAL_JUMP)
+    JMP 0x00591835                      ; 00592269
+        ;   XREF to: 00591835 (UNCONDITIONAL_JUMP)  ; LAB_00591835
     MOV EAX,dword ptr [ESP + 0xa1ac]    ; 0059226e
         ;   Label: LAB_0059226e
     MOV ESI,dword ptr [EAX + 0x14]      ; 00592275
     TEST ESI,ESI                        ; 00592278
-    JL 0x00591835                       ; 0059227a | LAB_00591835
-        ;   XREF to: 00591835 (CONDITIONAL_JUMP)
+    JL 0x00591835                       ; 0059227a
+        ;   XREF to: 00591835 (CONDITIONAL_JUMP)  ; LAB_00591835
     MOV EAX,ESI                         ; 00592280
     LEA EDI,[ESP + 0xc]                 ; 00592282
     SHL EAX,0x8                         ; 00592286
@@ -3382,8 +3361,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0xbc]      ; 0059228e
     XOR EBX,EBX                         ; 00592294
     TEST EDX,EDX                        ; 00592296
-    JLE 0x005922d4                      ; 00592298 | LAB_005922d4
-        ;   XREF to: 005922d4 (CONDITIONAL_JUMP)
+    JLE 0x005922d4                      ; 00592298
+        ;   XREF to: 005922d4 (CONDITIONAL_JUMP)  ; LAB_005922d4
     MOV ESI,dword ptr [ESP + 0xa150]    ; 0059229a
     ADD ESI,0x8                         ; 005922a1
     PUSH 0x0                            ; 005922a4
@@ -3393,45 +3372,45 @@ section .text
     PUSH 0x0                            ; 005922ae
     PUSH 0x0                            ; 005922b0
     PUSH ESI                            ; 005922b2
-    CALL crt_string.c_splitpath_FUN_005ff178 ; 005922b3 | void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
-        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_splitpath_FUN_005ff178 ; 005922b3
+        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 005922b8
     LEA EAX,[ESP + 0x9ab8]              ; 005922bb
     PUSH EAX                            ; 005922c2
     PUSH EDI                            ; 005922c3
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005922c4 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005922c4
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005922c9
     TEST EAX,EAX                        ; 005922cc
-    JNZ 0x00592351                      ; 005922ce | LAB_00592351
-        ;   XREF to: 00592351 (CONDITIONAL_JUMP)
+    JNZ 0x00592351                      ; 005922ce
+        ;   XREF to: 00592351 (CONDITIONAL_JUMP)  ; LAB_00592351
     MOV EAX,dword ptr [EBP + 0x14]      ; 005922d4
         ;   Label: LAB_005922d4
     MOV ESI,dword ptr [EAX + 0xbc]      ; 005922d7
     CMP EBX,ESI                         ; 005922dd
-    JL 0x00592335                       ; 005922df | LAB_00592335
-        ;   XREF to: 00592335 (CONDITIONAL_JUMP)
+    JL 0x00592335                       ; 005922df
+        ;   XREF to: 00592335 (CONDITIONAL_JUMP)  ; LAB_00592335
     CMP ESI,0x50                        ; 005922e1
-    JL 0x00592309                       ; 005922e4 | LAB_00592309
-        ;   XREF to: 00592309 (CONDITIONAL_JUMP)
-    MOV ECX,0x64be20                    ; 005922e6 | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064be20 = ..\core\skeledit.cpp
+    JL 0x00592309                       ; 005922e4
+        ;   XREF to: 00592309 (CONDITIONAL_JUMP)  ; LAB_00592309
+    MOV ECX,0x64be20                    ; 005922e6 | = "..\\core\\skeledit.cpp"
     MOV ESI,0xf5d                       ; 005922eb
-    PUSH 0x64be35                       ; 005922f0 | = "Too many model textures!" | s_Too_many_model_textures_0064be35 = Too many model textures!
-    MOV dword ptr [0x02f0ca48],ECX      ; 005922f5 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 005922fb | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00592301 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64be35                       ; 005922f0 | = "Too many model textures!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 005922f5 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 005922fb | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00592301
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00592306
     MOV EAX,dword ptr [EBP + 0x14]      ; 00592309
         ;   Label: LAB_00592309
     PUSH EDI                            ; 0059230c
     IMUL EAX,dword ptr [EAX + 0xbc],0x48 ; 0059230d
     ADD EAX,dword ptr [ESP + 0xa158]    ; 00592314
-    PUSH 0x64be4e                       ; 0059231b | = "%s.raw" | s_s_raw_0064be4e = %s.raw
+    PUSH 0x64be4e                       ; 0059231b | = "%s.raw"
     ADD EAX,0x8                         ; 00592320
     PUSH EAX                            ; 00592323
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00592324 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00592324
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00592329
     MOV EAX,dword ptr [EBP + 0x14]      ; 0059232c
     INC dword ptr [EAX + 0xbc]          ; 0059232f
@@ -3443,42 +3422,42 @@ section .text
     MOV EDX,dword ptr [EDX + 0x90]      ; 00592341
     ADD EAX,ESI                         ; 00592347
     MOV dword ptr [EDX + EAX*0x4],EBX   ; 00592349
-    JMP 0x0059206e                      ; 0059234c | LAB_0059206e
-        ;   XREF to: 0059206e (UNCONDITIONAL_JUMP)
+    JMP 0x0059206e                      ; 0059234c
+        ;   XREF to: 0059206e (UNCONDITIONAL_JUMP)  ; LAB_0059206e
     MOV EAX,dword ptr [EBP + 0x14]      ; 00592351
         ;   Label: LAB_00592351
     INC EBX                             ; 00592354
     MOV ECX,dword ptr [EAX + 0xbc]      ; 00592355
     ADD ESI,0x48                        ; 0059235b
     CMP EBX,ECX                         ; 0059235e
-    JL 0x005922a4                       ; 00592360 | LAB_005922a4
-        ;   XREF to: 005922a4 (CONDITIONAL_JUMP)
-    JMP 0x005922d4                      ; 00592366 | LAB_005922d4
-        ;   XREF to: 005922d4 (UNCONDITIONAL_JUMP)
-    PUSH 0x64be55                       ; 0059236b | = "Can't find good match for capped face..." | s_Can_t_find_good_match_fo_0064be55 = Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face
+    JL 0x005922a4                       ; 00592360
+        ;   XREF to: 005922a4 (CONDITIONAL_JUMP)  ; LAB_005922a4
+    JMP 0x005922d4                      ; 00592366
+        ;   XREF to: 005922d4 (UNCONDITIONAL_JUMP)  ; LAB_005922d4
+    PUSH 0x64be55                       ; 0059236b | = "Can't find good match for capped face..."
         ;   Label: LAB_0059236b
     PUSH 0x3670650                      ; 00592370 | DAT_03670650
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00592375 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00592375
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0059237a
-    JMP 0x0058f8e7                      ; 0059237d | LAB_0058f8e7
-        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)
+    JMP 0x0058f8e7                      ; 0059237d
+        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7
     XOR EAX,EAX                         ; 00592382
         ;   Label: LAB_00592382
-    JMP 0x00592187                      ; 00592384 | LAB_00592187
-        ;   XREF to: 00592187 (UNCONDITIONAL_JUMP)
+    JMP 0x00592187                      ; 00592384
+        ;   XREF to: 00592187 (UNCONDITIONAL_JUMP)  ; LAB_00592187
     XOR EDX,EDX                         ; 00592389
         ;   Label: LAB_00592389
-    JMP 0x0059219c                      ; 0059238b | LAB_0059219c
-        ;   XREF to: 0059219c (UNCONDITIONAL_JUMP)
+    JMP 0x0059219c                      ; 0059238b
+        ;   XREF to: 0059219c (UNCONDITIONAL_JUMP)  ; LAB_0059219c
     MOV EDX,dword ptr [ESP + 0xa1bc]    ; 00592390
         ;   Label: LAB_00592390
     CMP EDX,dword ptr [ESI + 0x8]       ; 00592397
-    JZ 0x0059220d                       ; 0059239a | LAB_0059220d
-        ;   XREF to: 0059220d (CONDITIONAL_JUMP)
+    JZ 0x0059220d                       ; 0059239a
+        ;   XREF to: 0059220d (CONDITIONAL_JUMP)  ; LAB_0059220d
     CMP dword ptr [ESI + 0xc],0x0       ; 005923a0
-    JGE 0x0059220d                      ; 005923a4 | LAB_0059220d
-        ;   XREF to: 0059220d (CONDITIONAL_JUMP)
+    JGE 0x0059220d                      ; 005923a4
+        ;   XREF to: 0059220d (CONDITIONAL_JUMP)  ; LAB_0059220d
     XOR EBX,EBX                         ; 005923aa
     MOV EDI,dword ptr [ESP + 0xa144]    ; 005923ac
     MOV dword ptr [ESP + 0xa15c],EBX    ; 005923b3
@@ -3539,14 +3518,14 @@ section .text
     DEC ECX                             ; 005924b6
     FADDP                               ; 005924b7
     CMP EBX,EDI                         ; 005924b9
-    JNZ 0x005923de                      ; 005924bb | LAB_005923de
-        ;   XREF to: 005923de (CONDITIONAL_JUMP)
+    JNZ 0x005923de                      ; 005924bb
+        ;   XREF to: 005923de (CONDITIONAL_JUMP)  ; LAB_005923de
     FST float ptr [ESP + 0xa160]        ; 005924c1
     FCOMP float ptr [ESP + 0xa1dc]      ; 005924c8
     FNSTSW AX                           ; 005924cf
     SAHF                                ; 005924d1
-    JNC 0x005924ec                      ; 005924d2 | LAB_005924ec
-        ;   XREF to: 005924ec (CONDITIONAL_JUMP)
+    JNC 0x005924ec                      ; 005924d2
+        ;   XREF to: 005924ec (CONDITIONAL_JUMP)  ; LAB_005924ec
     MOV EAX,dword ptr [ESI + 0x8]       ; 005924d4
     MOV dword ptr [ESP + 0xa14c],EAX    ; 005924d7
     MOV EAX,dword ptr [ESP + 0xa160]    ; 005924de
@@ -3556,16 +3535,16 @@ section .text
     INC EDX                             ; 005924f3
     MOV dword ptr [ESP + 0xa15c],EDX    ; 005924f4
     CMP EDX,0x3                         ; 005924fb
-    JGE 0x0059220d                      ; 005924fe | LAB_0059220d
-        ;   XREF to: 0059220d (CONDITIONAL_JUMP)
-    JMP 0x005923bd                      ; 00592504 | LAB_005923bd
-        ;   XREF to: 005923bd (UNCONDITIONAL_JUMP)
-    PUSH 0x64beca                       ; 00592509 | = "Can't find opposing part for capped f..." | s_Can_t_find_opposing_part_0064beca = Can't find opposing part for capped face!
+    JGE 0x0059220d                      ; 005924fe
+        ;   XREF to: 0059220d (CONDITIONAL_JUMP)  ; LAB_0059220d
+    JMP 0x005923bd                      ; 00592504
+        ;   XREF to: 005923bd (UNCONDITIONAL_JUMP)  ; LAB_005923bd
+    PUSH 0x64beca                       ; 00592509 | = "Can't find opposing part for capped f..."
         ;   Label: LAB_00592509
     PUSH 0x3670650                      ; 0059250e | DAT_03670650
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00592513 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00592513
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00592518
-    JMP 0x0058f8e7                      ; 0059251b | LAB_0058f8e7
-        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)
+    JMP 0x0058f8e7                      ; 0059251b
+        ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7
 

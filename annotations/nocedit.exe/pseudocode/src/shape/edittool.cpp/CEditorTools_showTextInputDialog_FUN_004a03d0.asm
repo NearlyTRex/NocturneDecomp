@@ -42,8 +42,8 @@ section .text
     PUSH EBX                            ; 004a03e2
     MOV ESI,dword ptr [ESP + 0x20]      ; 004a03e3
     PUSH ESI                            ; 004a03e7
-    CALL shape_edittool.cpp_showTextInputDialog_FUN_0049db10 ; 004a03e8 | int shape_edittool.cpp_showTextInputDialog_FUN_0049db10(int dialog_mode, char * prompt_text, char * input_buffer, int buffer_size, ...)
-        ;   XREF to: 0049db10 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_showTextInputDialog_FUN_0049db10 ; 004a03e8
+        ;   XREF to: 0049db10 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_showTextInputDialog_FUN_0049db10(int dialog_mode, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004a03ed
     POP ESI                             ; 004a03f0
     POP EBX                             ; 004a03f1

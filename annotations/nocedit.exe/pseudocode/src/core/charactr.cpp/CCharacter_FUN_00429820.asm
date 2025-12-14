@@ -49,8 +49,8 @@ section .text
     PUSH ECX                            ; 0042984e
     FSTP float ptr [ESP + 0xc]          ; 0042984f
     MOV dword ptr [ECX + 0x2418],0x0    ; 00429853
-    CALL core_charactr.cpp_CCharacter_FUN_0042ded0 ; 0042985d | void core_charactr.cpp_CCharacter_FUN_0042ded0(CCharacter * this_ptr)
-        ;   XREF to: 0042ded0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042ded0 ; 0042985d
+        ;   XREF to: 0042ded0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ded0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00429862
     ADD ESP,0xc                         ; 00429865
     RET                                 ; 00429868

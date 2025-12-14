@@ -1,192 +1,192 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 134, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 75, 
-    "assembly_lines": 46, 
-    "suspect_count": 9, 
+    "assembly_lines": 46,
+    "complexity_score": 134,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 29,
+    "suspect_count": 9,
     "suspect_types": [
-      "negative_offset", 
-      "extra_output", 
+      "extra_output",
+      "negative_offset",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456", 
-      "addr": "00606456"
-    }, 
-    {
-      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc", 
-      "addr": "006061fc"
-    }, 
-    {
-      "name": "crt_iostream.cpp_istream_ctor_FUN_00606376", 
-      "addr": "00606376"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomVirtualBaseDescriptor", 
-      "name": "g_IFStream_LayoutInfo", 
-      "addr": "00665c54", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomVirtualBaseDescriptor", 
-      "name": "g_IFStream_IStreamSubobjectLayout", 
-      "addr": "00665c5c", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_IFStream_FStreamBaseDestructor", 
-      "addr": "00665c68", 
-      "value": "005ff856"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_IFStream_IStreamDestructor", 
-      "addr": "00665c70", 
-      "value": "005ff6e2"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_IFStream_IOSDestructor", 
-      "addr": "00665c78", 
-      "value": "005ff6f8"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 19, 
-      "match": "piVar4[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "this_ptr = (ifstream *)&piVar4[-2].__tied_stream;"
-    }, 
-    {
-      "line": 23, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "piVar2 = crt_iostream_cpp_istream_ctor_FUN_00606376((istream *)(extraout_EAX + 0x44),1);"
-    }, 
-    {
-      "line": 24, 
-      "match": "piVar2[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "ppvVar3 = &piVar2[-2].ios.__i_lock;"
-    }, 
-    {
-      "line": 25, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);"
-    }, 
-    {
-      "line": 25, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);"
-    }, 
-    {
-      "line": 25, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);"
-    }, 
-    {
-      "line": 26, 
-      "match": "piVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "piVar2[-1].ios.cleanup_vtable = &g_IFStream_FStreamBaseDestructor;"
-    }, 
-    {
-      "line": 30, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(void ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar3) = &g_IFStream_IOSDestructor;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ff664", 
-    "signature": "void crt_fstream.cpp_ifstream_constructor_FUN_005ff664(ifstream * this_ptr, int ctor_flags, int fd, char * buffer, int buffer_len)", 
-    "address_range": [
-      [
-        "005ff664", 
-        "005ff6e1"
-      ]
-    ], 
-    "name": "crt_fstream.cpp_ifstream_constructor_FUN_005ff664"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ifstream *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "ctor_flags"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "fd"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_len"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 75
+  },
   "cross_references": [
     {
-      "from_addr": "0043ec5c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CCodec_processFiles_FUN_0043ec30", 
-      "addr": "0043ec30"
+      "addr": "0043ec30",
+      "from_addr": "0043ec5c",
+      "name": "support_codec.cpp_CCodec_processFiles_FUN_0043ec30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ff664",
+    "address_range": [
+      [
+        "005ff664",
+        "005ff6e1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_fstream.cpp_ifstream_constructor_FUN_005ff664",
+    "signature": "void crt_fstream.cpp_ifstream_constructor_FUN_005ff664(ifstream * this_ptr, int ctor_flags, int fd, char * buffer, int buffer_len)"
+  },
+  "function_calls": [
+    {
+      "addr": "00606456",
+      "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456"
+    },
+    {
+      "addr": "006061fc",
+      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc"
+    },
+    {
+      "addr": "00606376",
+      "name": "crt_iostream.cpp_istream_ctor_FUN_00606376"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00665c54",
+      "name": "g_IFStream_LayoutInfo",
+      "type": "WatcomVirtualBaseDescriptor",
+      "value": null
+    },
+    {
+      "addr": "00665c5c",
+      "name": "g_IFStream_IStreamSubobjectLayout",
+      "type": "WatcomVirtualBaseDescriptor",
+      "value": null
+    },
+    {
+      "addr": "00665c68",
+      "name": "g_IFStream_FStreamBaseDestructor",
+      "type": "void*",
+      "value": "005ff856"
+    },
+    {
+      "addr": "00665c70",
+      "name": "g_IFStream_IStreamDestructor",
+      "type": "void*",
+      "value": "005ff6e2"
+    },
+    {
+      "addr": "00665c78",
+      "name": "g_IFStream_IOSDestructor",
+      "type": "void*",
+      "value": "005ff6f8"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "ifstream *"
+      },
+      {
+        "is_param": true,
+        "name": "ctor_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "fd",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_len",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "piVar4[-2].",
+      "text": "this_ptr = (ifstream *)&piVar4[-2].__tied_stream;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 23,
+      "match": "extraout_EAX",
+      "text": "piVar2 = crt_iostream_cpp_istream_ctor_FUN_00606376((istream *)(extraout_EAX + 0x44),1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 24,
+      "match": "piVar2[-2].",
+      "text": "ppvVar3 = &piVar2[-2].ios.__i_lock;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)ppvVar3 + *(int *)((int)*ppvVar3 + 4) + -4) = *(int *)((int)*ppvVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
+      "match": "piVar2[-1].",
+      "text": "piVar2[-1].ios.cleanup_vtable = &g_IFStream_FStreamBaseDestructor;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(int *)((int)",
+      "text": "*(void ***)(*(int *)((int)pvVar1 + 4) + 0x28 + (int)ppvVar3) = &g_IFStream_IOSDestructor;",
+      "type": "pointer_cast"
     }
   ]
 }

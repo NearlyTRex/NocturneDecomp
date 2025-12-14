@@ -43,9 +43,9 @@ crt_process_c_build_cmdline_FUN_00610258
   }
   uVar6 = iVar5 + 0xf;
   g_HeapFlags = 0x10;
-  pcVar3 = (char *)crt_heap_c_InternalHeapAlloc_FUN_00601bc0(uVar6);
+  pcVar3 = crt_heap_c_InternalHeapAlloc_FUN_00601bc0(uVar6);
   if ((pcVar3 == (char *)0x0) &&
-     (pcVar3 = (char *)crt_memory_c_malloc_FUN_00601bb0(uVar6), pcVar3 == (char *)0x0)) {
+     (pcVar3 = crt_memory_c_malloc_FUN_00601bb0(uVar6), pcVar3 == (char *)0x0)) {
     crt_errno_c_setErrno_FUN_00602790(5);
     crt_errno_c_SetWindowsError_FUN_006027c8(8);
     uVar6 = 0xffffffff;

@@ -1,105 +1,105 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 68, 
-    "assembly_lines": 47, 
-    "suspect_count": 2, 
+    "assembly_lines": 47,
+    "complexity_score": 47,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 2,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_free_FUN_00601cd0", 
-      "addr": "00601cd0"
-    }, 
-    {
-      "name": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c", 
-      "addr": "0060a23c"
-    }, 
-    {
-      "name": "crt_tls.c_register_thread_data_FUN_0060cbd0", 
-      "addr": "0060cbd0"
-    }, 
-    {
-      "name": "TlsSetValue", 
-      "addr": "EXTERNAL:000000a1"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TlsSetValue*", 
-      "name": "PTR_TlsSetValue_00611658", 
-      "addr": "00611658", 
-      "value": "0021226c"
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_TLSIndex", 
-      "addr": "00684ee0", 
-      "value": "0xffffffff"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "void *unaff_ESI;"
-    }, 
-    {
-      "line": 12, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "thread_param = (byte *)crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(unaff_ESI);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a2d8", 
-    "signature": "BOOL crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8(void * init_param)", 
-    "address_range": [
-      [
-        "0060a2d8", 
-        "0060a333"
-      ]
-    ], 
-    "name": "crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "init_param"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 69
+  },
   "cross_references": [
     {
-      "from_addr": "0060f90e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_thread.c_threadStartupWrapper_FUN_0060f8c0", 
-      "addr": "0060f8c0"
-    }, 
+      "addr": "0060f8c0",
+      "from_addr": "0060f90e",
+      "name": "crt_thread.c_threadStartupWrapper_FUN_0060f8c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060cac4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_tls.c_create_thread_local_data_FUN_0060cac0", 
-      "addr": "0060cac0"
+      "addr": "0060cac0",
+      "from_addr": "0060cac4",
+      "name": "crt_tls.c_create_thread_local_data_FUN_0060cac0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060a2d8",
+    "address_range": [
+      [
+        "0060a2d8",
+        "0060a333"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8",
+    "signature": "BOOL crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8(void * init_param)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601cd0",
+      "name": "crt_memory.c_free_FUN_00601cd0"
+    },
+    {
+      "addr": "0060a23c",
+      "name": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c"
+    },
+    {
+      "addr": "0060cbd0",
+      "name": "crt_tls.c_register_thread_data_FUN_0060cbd0"
+    },
+    {
+      "addr": "EXTERNAL:000000a1",
+      "name": "TlsSetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611658",
+      "name": "PTR_TlsSetValue_00611658",
+      "type": "TlsSetValue*",
+      "value": "0021226c"
+    },
+    {
+      "addr": "00684ee0",
+      "name": "g_TLSIndex",
+      "type": "DWORD",
+      "value": "0xffffffff"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "init_param",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "text": "void *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "text": "thread_param = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ]
 }

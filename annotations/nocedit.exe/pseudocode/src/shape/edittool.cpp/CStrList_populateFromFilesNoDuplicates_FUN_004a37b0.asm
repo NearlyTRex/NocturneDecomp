@@ -59,35 +59,35 @@ section .text
     MOV EDI,dword ptr [ESP + 0x84c]     ; 004a37c1
     MOV ESI,dword ptr [ESP + 0x850]     ; 004a37c8
     TEST EDI,EDI                        ; 004a37cf
-    JZ 0x004a397c                       ; 004a37d1 | LAB_004a397c
-        ;   XREF to: 004a397c (CONDITIONAL_JUMP)
+    JZ 0x004a397c                       ; 004a37d1
+        ;   XREF to: 004a397c (CONDITIONAL_JUMP)  ; LAB_004a397c
     CMP byte ptr [EDI],0x0              ; 004a37d7
-    JZ 0x004a397c                       ; 004a37da | LAB_004a397c
-        ;   XREF to: 004a397c (CONDITIONAL_JUMP)
+    JZ 0x004a397c                       ; 004a37da
+        ;   XREF to: 004a397c (CONDITIONAL_JUMP)  ; LAB_004a397c
     PUSH ESI                            ; 004a37e0
     PUSH EDI                            ; 004a37e1
-    PUSH 0x6239e5                       ; 004a37e2 | = "%s\\%s" | s_s_s_006239e5 = %s\%s
+    PUSH 0x6239e5                       ; 004a37e2 | = "%s\\%s"
     LEA EAX,[ESP + 0x740]               ; 004a37e7
     PUSH EAX                            ; 004a37ee
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a37ef | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a37ef
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004a37f4
-    MOV EDX,dword ptr [0x00680cdc]      ; 004a37f7 | CDemonPod g_CDemonPodInstance | CDemonPod * g_CDemonPodPtr
+    MOV EDX,dword ptr [0x00680cdc]      ; 004a37f7 | g_CDemonPodInstance | g_CDemonPodPtr
         ;   Label: LAB_004a37f7
     TEST EDX,EDX                        ; 004a37fd
-    JZ 0x004a38d1                       ; 004a37ff | LAB_004a38d1
-        ;   XREF to: 004a38d1 (CONDITIONAL_JUMP)
+    JZ 0x004a38d1                       ; 004a37ff
+        ;   XREF to: 004a38d1 (CONDITIONAL_JUMP)  ; LAB_004a38d1
     MOV EAX,ESP                         ; 004a3805
     PUSH EAX                            ; 004a3807
     LEA EAX,[ESP + 0x738]               ; 004a3808
     PUSH EAX                            ; 004a380f
-    PUSH EDX                            ; 004a3810 | CDemonPod g_CDemonPodInstance
-    CALL engine_pod.cpp_CPod_initSearch_FUN_00550ea0 ; 004a3811 | void engine_pod.cpp_CPod_initSearch_FUN_00550ea0(CPod * this_ptr, char * search_pattern, CPodSearchContext * search_context)
-        ;   XREF to: 00550ea0 (UNCONDITIONAL_CALL)
+    PUSH EDX                            ; 004a3810 | g_CDemonPodInstance
+    CALL engine_pod.cpp_CPod_initSearch_FUN_00550ea0 ; 004a3811
+        ;   XREF to: 00550ea0 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_initSearch_FUN_00550ea0(CPod * this_ptr, char * search_pattern, CPodSearchContext * search_context)
     ADD ESP,0xc                         ; 004a3816
     CMP byte ptr [ESP],0x0              ; 004a3819
-    JZ 0x004a38d1                       ; 004a381d | LAB_004a38d1
-        ;   XREF to: 004a38d1 (CONDITIONAL_JUMP)
+    JZ 0x004a38d1                       ; 004a381d
+        ;   XREF to: 004a38d1 (CONDITIONAL_JUMP)  ; LAB_004a38d1
     LEA EAX,[ESP + 0x534]               ; 004a3823
         ;   Label: LAB_004a3823
     PUSH EAX                            ; 004a382a
@@ -97,12 +97,12 @@ section .text
     PUSH 0x0                            ; 004a3835
     LEA EAX,[ESP + 0x10]                ; 004a3837
     PUSH EAX                            ; 004a383b
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 004a383c | void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 004a383c
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a3841
     CMP byte ptr [ESP + 0x534],0x2e     ; 004a3844
-    JNZ 0x004a3878                      ; 004a384c | LAB_004a3878
-        ;   XREF to: 004a3878 (CONDITIONAL_JUMP)
+    JNZ 0x004a3878                      ; 004a384c
+        ;   XREF to: 004a3878 (CONDITIONAL_JUMP)  ; LAB_004a3878
     LEA EDI,[ESP + 0x534]               ; 004a384e
     SUB ECX,ECX                         ; 004a3855
     DEC ECX                             ; 004a3857
@@ -115,8 +115,8 @@ section .text
     PUSH EAX                            ; 004a3867
     LEA EAX,[ESP + 0x53c]               ; 004a3868
     PUSH EAX                            ; 004a386f
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004a3870 | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004a3870
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004a3875
     LEA EAX,[ESP + 0x534]               ; 004a3878
         ;   Label: LAB_004a3878
@@ -127,87 +127,87 @@ section .text
     PUSH 0x0                            ; 004a388a
     LEA EAX,[ESP + 0x440]               ; 004a388c
     PUSH EAX                            ; 004a3893
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004a3894 | void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004a3894
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a3899
     LEA EAX,[ESP + 0x430]               ; 004a389c
     PUSH EAX                            ; 004a38a3
     PUSH EBP                            ; 004a38a4
-    CALL shape_edittool.cpp_CStrList_findString_FUN_004a3030 ; 004a38a5 | int shape_edittool.cpp_CStrList_findString_FUN_004a3030(CStrList * this_ptr, char * search_string)
-        ;   XREF to: 004a3030 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_findString_FUN_004a3030 ; 004a38a5
+        ;   XREF to: 004a3030 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CStrList_findString_FUN_004a3030(CStrList * this_ptr, char * search_string)
     ADD ESP,0x8                         ; 004a38aa
     TEST EAX,EAX                        ; 004a38ad
-    JL 0x004a39a2                       ; 004a38af | LAB_004a39a2
-        ;   XREF to: 004a39a2 (CONDITIONAL_JUMP)
+    JL 0x004a39a2                       ; 004a38af
+        ;   XREF to: 004a39a2 (CONDITIONAL_JUMP)  ; LAB_004a39a2
     MOV EAX,ESP                         ; 004a38b5
         ;   Label: LAB_004a38b5
     PUSH EAX                            ; 004a38b7
-    MOV EBX,dword ptr [0x00680cdc]      ; 004a38b8 | CDemonPod g_CDemonPodInstance | CDemonPod * g_CDemonPodPtr
-    PUSH EBX                            ; 004a38be | CDemonPod g_CDemonPodInstance
-    CALL engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0 ; 004a38bf | int engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0(CPod * this_ptr, CPodSearchContext * search_context)
-        ;   XREF to: 00550ef0 (UNCONDITIONAL_CALL)
+    MOV EBX,dword ptr [0x00680cdc]      ; 004a38b8 | g_CDemonPodInstance | g_CDemonPodPtr
+    PUSH EBX                            ; 004a38be | g_CDemonPodInstance
+    CALL engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0 ; 004a38bf
+        ;   XREF to: 00550ef0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0(CPod * this_ptr, CPodSearchContext * search_context)
     ADD ESP,0x8                         ; 004a38c4
     CMP byte ptr [ESP],0x0              ; 004a38c7
-    JNZ 0x004a3823                      ; 004a38cb | LAB_004a3823
-        ;   XREF to: 004a3823 (CONDITIONAL_JUMP)
+    JNZ 0x004a3823                      ; 004a38cb
+        ;   XREF to: 004a3823 (CONDITIONAL_JUMP)  ; LAB_004a3823
     LEA EAX,[ESP + 0x31c]               ; 004a38d1
         ;   Label: LAB_004a38d1
     PUSH EAX                            ; 004a38d8
     MOV ESI,dword ptr [EBP]             ; 004a38d9
-    CALL engine_dosio.c_CFileFinder_ctor_FUN_00481c30 ; 004a38dc | CFileFinder * engine_dosio.c_CFileFinder_ctor_FUN_00481c30(CFileFinder * this_ptr)
-        ;   XREF to: 00481c30 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_CFileFinder_ctor_FUN_00481c30 ; 004a38dc
+        ;   XREF to: 00481c30 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_ctor_FUN_00481c30(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 004a38e1
     LEA EAX,[ESP + 0x734]               ; 004a38e4
     PUSH EAX                            ; 004a38eb
     LEA EAX,[ESP + 0x320]               ; 004a38ec
     PUSH EAX                            ; 004a38f3
-    CALL engine_dosio.c_CFileFinder_openSearch_FUN_00481c70 ; 004a38f4 | int engine_dosio.c_CFileFinder_openSearch_FUN_00481c70(CFileFinder * this_ptr, char * search_pattern)
-        ;   XREF to: 00481c70 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_CFileFinder_openSearch_FUN_00481c70 ; 004a38f4
+        ;   XREF to: 00481c70 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_CFileFinder_openSearch_FUN_00481c70(CFileFinder * this_ptr, char * search_pattern)
     ADD ESP,0x8                         ; 004a38f9
     CMP byte ptr [ESP + 0x31c],0x0      ; 004a38fc
-    JZ 0x004a394f                       ; 004a3904 | LAB_004a394f
-        ;   XREF to: 004a394f (CONDITIONAL_JUMP)
+    JZ 0x004a394f                       ; 004a3904
+        ;   XREF to: 004a394f (CONDITIONAL_JUMP)  ; LAB_004a394f
     XOR EBX,EBX                         ; 004a3906
         ;   Label: LAB_004a3906
     XOR EDI,EDI                         ; 004a3908
     TEST ESI,ESI                        ; 004a390a
-    JLE 0x004a39c1                      ; 004a390c | LAB_004a39c1
-        ;   XREF to: 004a39c1 (CONDITIONAL_JUMP)
+    JLE 0x004a39c1                      ; 004a390c
+        ;   XREF to: 004a39c1 (CONDITIONAL_JUMP)  ; LAB_004a39c1
     LEA EAX,[ESP + 0x31c]               ; 004a3912
         ;   Label: LAB_004a3912
     PUSH EAX                            ; 004a3919
     PUSH EBX                            ; 004a391a
     PUSH EBP                            ; 004a391b
-    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004a391c | char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
-        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004a391c
+        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004a3921
     PUSH EAX                            ; 004a3924
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a3925 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004a3925
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004a392a
     TEST EAX,EAX                        ; 004a392d
-    JNZ 0x004a39b8                      ; 004a392f | LAB_004a39b8
-        ;   XREF to: 004a39b8 (CONDITIONAL_JUMP)
+    JNZ 0x004a39b8                      ; 004a392f
+        ;   XREF to: 004a39b8 (CONDITIONAL_JUMP)  ; LAB_004a39b8
     LEA EAX,[ESP + 0x31c]               ; 004a3935
         ;   Label: LAB_004a3935
     PUSH EAX                            ; 004a393c
-    CALL engine_dosio.c_CFileFinder_findNext_FUN_00481cf0 ; 004a393d | int engine_dosio.c_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)
-        ;   XREF to: 00481cf0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_CFileFinder_findNext_FUN_00481cf0 ; 004a393d
+        ;   XREF to: 00481cf0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 004a3942
     CMP byte ptr [ESP + 0x31c],0x0      ; 004a3945
-    JNZ 0x004a3906                      ; 004a394d | LAB_004a3906
-        ;   XREF to: 004a3906 (CONDITIONAL_JUMP)
+    JNZ 0x004a3906                      ; 004a394d
+        ;   XREF to: 004a3906 (CONDITIONAL_JUMP)  ; LAB_004a3906
     LEA EAX,[ESP + 0x31c]               ; 004a394f
         ;   Label: LAB_004a394f
     PUSH EAX                            ; 004a3956
-    CALL engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70 ; 004a3957 | void engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder * this_ptr)
-        ;   XREF to: 00481d70 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70 ; 004a3957
+        ;   XREF to: 00481d70 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 004a395c
     PUSH 0x0                            ; 004a395f
     LEA EAX,[ESP + 0x320]               ; 004a3961
     PUSH EAX                            ; 004a3968
-    CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 004a3969 | CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint d1)
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 004a3969
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint d1)
     ADD ESP,0x8                         ; 004a396e
     ADD ESP,0x834                       ; 004a3971
     POP EBP                             ; 004a3977
@@ -222,43 +222,43 @@ section .text
         ;   Label: LAB_004a3984
     MOV byte ptr [EDI],AL               ; 004a3986
     CMP AL,0x0                          ; 004a3988
-    JZ 0x004a399c                       ; 004a398a | LAB_004a399c
-        ;   XREF to: 004a399c (CONDITIONAL_JUMP)
+    JZ 0x004a399c                       ; 004a398a
+        ;   XREF to: 004a399c (CONDITIONAL_JUMP)  ; LAB_004a399c
     MOV AL,byte ptr [ESI + 0x1]         ; 004a398c
     ADD ESI,0x2                         ; 004a398f
     MOV byte ptr [EDI + 0x1],AL         ; 004a3992
     ADD EDI,0x2                         ; 004a3995
     CMP AL,0x0                          ; 004a3998
-    JNZ 0x004a3984                      ; 004a399a | LAB_004a3984
-        ;   XREF to: 004a3984 (CONDITIONAL_JUMP)
+    JNZ 0x004a3984                      ; 004a399a
+        ;   XREF to: 004a3984 (CONDITIONAL_JUMP)  ; LAB_004a3984
     POP EDI                             ; 004a399c
         ;   Label: LAB_004a399c
-    JMP 0x004a37f7                      ; 004a399d | LAB_004a37f7
-        ;   XREF to: 004a37f7 (UNCONDITIONAL_JUMP)
+    JMP 0x004a37f7                      ; 004a399d
+        ;   XREF to: 004a37f7 (UNCONDITIONAL_JUMP)  ; LAB_004a37f7
     LEA EAX,[ESP + 0x430]               ; 004a39a2
         ;   Label: LAB_004a39a2
     PUSH EAX                            ; 004a39a9
     PUSH EBP                            ; 004a39aa
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 004a39ab | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 004a39ab
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 004a39b0
-    JMP 0x004a38b5                      ; 004a39b3 | LAB_004a38b5
-        ;   XREF to: 004a38b5 (UNCONDITIONAL_JUMP)
+    JMP 0x004a38b5                      ; 004a39b3
+        ;   XREF to: 004a38b5 (UNCONDITIONAL_JUMP)  ; LAB_004a38b5
     INC EBX                             ; 004a39b8
         ;   Label: LAB_004a39b8
     CMP EBX,ESI                         ; 004a39b9
-    JL 0x004a3912                       ; 004a39bb | LAB_004a3912
-        ;   XREF to: 004a3912 (CONDITIONAL_JUMP)
+    JL 0x004a3912                       ; 004a39bb
+        ;   XREF to: 004a3912 (CONDITIONAL_JUMP)  ; LAB_004a3912
     TEST EDI,EDI                        ; 004a39c1
         ;   Label: LAB_004a39c1
-    JNZ 0x004a3935                      ; 004a39c3 | LAB_004a3935
-        ;   XREF to: 004a3935 (CONDITIONAL_JUMP)
+    JNZ 0x004a3935                      ; 004a39c3
+        ;   XREF to: 004a3935 (CONDITIONAL_JUMP)  ; LAB_004a3935
     LEA EAX,[ESP + 0x31c]               ; 004a39c9
     PUSH EAX                            ; 004a39d0
     PUSH EBP                            ; 004a39d1
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 004a39d2 | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 004a39d2
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 004a39d7
-    JMP 0x004a3935                      ; 004a39da | LAB_004a3935
-        ;   XREF to: 004a3935 (UNCONDITIONAL_JUMP)
+    JMP 0x004a3935                      ; 004a39da
+        ;   XREF to: 004a3935 (UNCONDITIONAL_JUMP)  ; LAB_004a3935
 

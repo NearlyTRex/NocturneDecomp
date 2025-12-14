@@ -21,7 +21,7 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005edc80(void)
       if (g_DirectDrawUnknown != (IUnknown *)0x0) {
         pIVar3 = g_DirectDrawSurface;
         pIVar4 = g_DirectDrawUnknown;
-        iVar1 = (*(code *)g_DirectDrawSurface->vtable->SetPalette)();
+        iVar1 = (*g_DirectDrawSurface->vtable->SetPalette)();
         if (iVar1 != 0) {
           g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
           g_CurrentLineNumber = 999;

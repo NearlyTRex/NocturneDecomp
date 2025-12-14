@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 21, 
-    "assembly_lines": 14, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0", 
-      "addr": "00476cf0"
-    }, 
-    {
-      "name": "core_level.cpp_CLevelLoader_reset_FUN_00503db0", 
-      "addr": "00503db0"
-    }, 
-    {
-      "name": "crt_stdlib.c_atexit_FUN_005ff060", 
-      "addr": "005ff060"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomStaticDestructorNode", 
-      "name": "g_LoadingMoonModelDestructorNode", 
-      "addr": "0067cf70", 
-      "value": null
-    }, 
-    {
-      "type": "CLevelLoader", 
-      "name": "g_CLevelLoaderInstance", 
-      "addr": "02dcd850", 
-      "value": null
-    }, 
-    {
-      "type": "CKeyFramedModel", 
-      "name": "g_LoadingMoonModel", 
-      "addr": "02dcd980", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 14,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 21
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00503d80", 
-    "signature": "void core_level.cpp_staticInit_FUN_00503d80(void)", 
+    "address": "00503d80",
     "address_range": [
       [
-        "00503d80", 
+        "00503d80",
         "00503da7"
       ]
-    ], 
-    "name": "core_level.cpp_staticInit_FUN_00503d80"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_level.cpp_staticInit_FUN_00503d80",
+    "signature": "void core_level.cpp_staticInit_FUN_00503d80(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00476cf0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0"
+    },
+    {
+      "addr": "00503db0",
+      "name": "core_level.cpp_CLevelLoader_reset_FUN_00503db0"
+    },
+    {
+      "addr": "005ff060",
+      "name": "crt_stdlib.c_atexit_FUN_005ff060"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067cf70",
+      "name": "g_LoadingMoonModelDestructorNode",
+      "type": "WatcomStaticDestructorNode",
+      "value": null
+    },
+    {
+      "addr": "02dcd850",
+      "name": "g_CLevelLoaderInstance",
+      "type": "CLevelLoader",
+      "value": null
+    },
+    {
+      "addr": "02dcd980",
+      "name": "g_LoadingMoonModel",
+      "type": "CKeyFramedModel",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

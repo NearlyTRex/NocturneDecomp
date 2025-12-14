@@ -45,12 +45,12 @@ section .text
     SUB ESP,0x10                        ; 004a5c16
     MOV EBX,dword ptr [EBP + 0x14]      ; 004a5c19
     PUSH EBX                            ; 004a5c1c
-    CALL shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0 ; 004a5c1d | void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(CEdScrollBar * this_ptr)
-        ;   XREF to: 004a5ea0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0 ; 004a5c1d
+        ;   XREF to: 004a5ea0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 004a5c22
-    MOV EDX,dword ptr [0x02cf2ae0]      ; 004a5c25 | int g_ShadowHighlightColor
+    MOV EDX,dword ptr [0x02cf2ae0]      ; 004a5c25 | g_ShadowHighlightColor
     PUSH EDX                            ; 004a5c2b
-    MOV ECX,dword ptr [0x02cf2adc]      ; 004a5c2c | int g_ShadowColor
+    MOV ECX,dword ptr [0x02cf2adc]      ; 004a5c2c | g_ShadowColor
     MOV EAX,dword ptr [EBX + 0x20]      ; 004a5c32
     PUSH ECX                            ; 004a5c35
     SUB EAX,0x2                         ; 004a5c36
@@ -64,8 +64,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x14]      ; 004a5c46
     INC EAX                             ; 004a5c49
     PUSH EAX                            ; 004a5c4a
-    CALL engine_2d.c_fillRectWithBorder_FUN_00403200 ; 004a5c4b | void engine_2d.c_fillRectWithBorder_FUN_00403200(int x1, int y1, int x2, int y2, ...)
-        ;   XREF to: 00403200 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_fillRectWithBorder_FUN_00403200 ; 004a5c4b
+        ;   XREF to: 00403200 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectWithBorder_FUN_00403200(int x1, int y1, int x2, int y2, ...)
     MOV EAX,dword ptr [EBX + 0x14]      ; 004a5c50
     ADD ESP,0x18                        ; 004a5c53
     INC EAX                             ; 004a5c56
@@ -79,21 +79,21 @@ section .text
     MOV EAX,dword ptr [EBX + 0x10]      ; 004a5c68
     DEC ESI                             ; 004a5c6b
     TEST EAX,EAX                        ; 004a5c6c
-    JNZ 0x004a5d88                      ; 004a5c6e | LAB_004a5d88
-        ;   XREF to: 004a5d88 (CONDITIONAL_JUMP)
+    JNZ 0x004a5d88                      ; 004a5c6e
+        ;   XREF to: 004a5d88 (CONDITIONAL_JUMP)  ; LAB_004a5d88
     MOV EDX,dword ptr [EBP + -0x4]      ; 004a5c74
     MOV EAX,dword ptr [EBP + -0x8]      ; 004a5c77
     MOV ECX,dword ptr [EBX + 0x30]      ; 004a5c7a
     MOV dword ptr [EBP + -0x10],EDX     ; 004a5c7d
     MOV dword ptr [EBP + -0xc],ECX      ; 004a5c80
     MOV EDX,dword ptr [EBX + 0x2c]      ; 004a5c83
-    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5c86 | CEdButton * g_ActiveButton
+    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5c86 | g_ActiveButton
         ;   Label: LAB_004a5c86
-    JNZ 0x004a5d9b                      ; 004a5c8c | LAB_004a5d9b
-        ;   XREF to: 004a5d9b (CONDITIONAL_JUMP)
-    CMP dword ptr [0x02cf2b04],0x0      ; 004a5c92 | int g_ScrollAction
-    JNZ 0x004a5d9b                      ; 004a5c99 | LAB_004a5d9b
-        ;   XREF to: 004a5d9b (CONDITIONAL_JUMP)
+    JNZ 0x004a5d9b                      ; 004a5c8c
+        ;   XREF to: 004a5d9b (CONDITIONAL_JUMP)  ; LAB_004a5d9b
+    CMP dword ptr [0x02cf2b04],0x0      ; 004a5c92 | g_ScrollAction
+    JNZ 0x004a5d9b                      ; 004a5c99
+        ;   XREF to: 004a5d9b (CONDITIONAL_JUMP)  ; LAB_004a5d9b
     MOV ECX,0x1                         ; 004a5c9f
     PUSH ECX                            ; 004a5ca4
         ;   Label: LAB_004a5ca4
@@ -103,20 +103,20 @@ section .text
     PUSH ECX                            ; 004a5cac
     PUSH EDX                            ; 004a5cad
     PUSH EAX                            ; 004a5cae
-    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5caf | void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
-        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5caf
+        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     MOV EAX,dword ptr [EBX + 0x10]      ; 004a5cb4
     ADD ESP,0x14                        ; 004a5cb7
     TEST EAX,EAX                        ; 004a5cba
-    JZ 0x004a5db8                       ; 004a5cbc | LAB_004a5db8
-        ;   XREF to: 004a5db8 (CONDITIONAL_JUMP)
-    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5cc2 | CEdButton * g_ActiveButton
-    JNZ 0x004a5da2                      ; 004a5cc8 | LAB_004a5da2
-        ;   XREF to: 004a5da2 (CONDITIONAL_JUMP)
-    MOV EDX,dword ptr [0x02cf2b04]      ; 004a5cce | int g_ScrollAction
+    JZ 0x004a5db8                       ; 004a5cbc
+        ;   XREF to: 004a5db8 (CONDITIONAL_JUMP)  ; LAB_004a5db8
+    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5cc2 | g_ActiveButton
+    JNZ 0x004a5da2                      ; 004a5cc8
+        ;   XREF to: 004a5da2 (CONDITIONAL_JUMP)  ; LAB_004a5da2
+    MOV EDX,dword ptr [0x02cf2b04]      ; 004a5cce | g_ScrollAction
     CMP EDX,0x1                         ; 004a5cd4
-    JNZ 0x004a5da2                      ; 004a5cd7 | LAB_004a5da2
-        ;   XREF to: 004a5da2 (CONDITIONAL_JUMP)
+    JNZ 0x004a5da2                      ; 004a5cd7
+        ;   XREF to: 004a5da2 (CONDITIONAL_JUMP)  ; LAB_004a5da2
     MOV EAX,EDX                         ; 004a5cdd
     PUSH EAX                            ; 004a5cdf
         ;   Label: LAB_004a5cdf
@@ -126,18 +126,18 @@ section .text
     PUSH EDI                            ; 004a5ce5
     MOV EAX,dword ptr [EBP + -0x8]      ; 004a5ce6
     PUSH EAX                            ; 004a5ce9
-    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5cea | void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
-        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5cea
+        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     ADD ESP,0x14                        ; 004a5cef
-    MOV EDX,dword ptr [0x02cf2b00]      ; 004a5cf2 | CEdButton * g_ActiveButton
+    MOV EDX,dword ptr [0x02cf2b00]      ; 004a5cf2 | g_ActiveButton
     PUSH 0x2                            ; 004a5cf8
     CMP EBX,EDX                         ; 004a5cfa
-    JNZ 0x004a5da9                      ; 004a5cfc | LAB_004a5da9
-        ;   XREF to: 004a5da9 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02cf2b04]      ; 004a5d02 | int g_ScrollAction
+    JNZ 0x004a5da9                      ; 004a5cfc
+        ;   XREF to: 004a5da9 (CONDITIONAL_JUMP)  ; LAB_004a5da9
+    MOV ECX,dword ptr [0x02cf2b04]      ; 004a5d02 | g_ScrollAction
     CMP ECX,0x1                         ; 004a5d08
-    JNZ 0x004a5da9                      ; 004a5d0b | LAB_004a5da9
-        ;   XREF to: 004a5da9 (CONDITIONAL_JUMP)
+    JNZ 0x004a5da9                      ; 004a5d0b
+        ;   XREF to: 004a5da9 (CONDITIONAL_JUMP)  ; LAB_004a5da9
     MOV EAX,ECX                         ; 004a5d11
     PUSH EAX                            ; 004a5d13
         ;   Label: LAB_004a5d13
@@ -147,16 +147,16 @@ section .text
     PUSH EDI                            ; 004a5d19
     MOV EDX,dword ptr [EBP + -0x8]      ; 004a5d1a
     PUSH EDX                            ; 004a5d1d
-    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5d1e | void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
-        ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)
-    MOV ECX,dword ptr [0x02cf2b00]      ; 004a5d23 | CEdButton * g_ActiveButton
+    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5d1e
+        ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
+    MOV ECX,dword ptr [0x02cf2b00]      ; 004a5d23 | g_ActiveButton
     ADD ESP,0x18                        ; 004a5d29
     CMP EBX,ECX                         ; 004a5d2c
-    JNZ 0x004a5db0                      ; 004a5d2e | LAB_004a5db0
-        ;   XREF to: 004a5db0 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x02cf2b04],0x2      ; 004a5d34 | int g_ScrollAction
-    JNZ 0x004a5db0                      ; 004a5d3b | LAB_004a5db0
-        ;   XREF to: 004a5db0 (CONDITIONAL_JUMP)
+    JNZ 0x004a5db0                      ; 004a5d2e
+        ;   XREF to: 004a5db0 (CONDITIONAL_JUMP)  ; LAB_004a5db0
+    CMP dword ptr [0x02cf2b04],0x2      ; 004a5d34 | g_ScrollAction
+    JNZ 0x004a5db0                      ; 004a5d3b
+        ;   XREF to: 004a5db0 (CONDITIONAL_JUMP)  ; LAB_004a5db0
     MOV EAX,0x1                         ; 004a5d3d
     PUSH EAX                            ; 004a5d42
         ;   Label: LAB_004a5d42
@@ -166,17 +166,17 @@ section .text
     PUSH EDI                            ; 004a5d48
     MOV ECX,dword ptr [EBX + 0x28]      ; 004a5d49
     PUSH ECX                            ; 004a5d4c
-    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5d4d | void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
-        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5d4d
+        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     ADD ESP,0x14                        ; 004a5d52
-    MOV EAX,[0x02cf2b00]                ; 004a5d55 | CEdButton * g_ActiveButton
+    MOV EAX,[0x02cf2b00]                ; 004a5d55 | g_ActiveButton
     PUSH 0x3                            ; 004a5d5a
     CMP EBX,EAX                         ; 004a5d5c
-    JNZ 0x004a5db4                      ; 004a5d5e | LAB_004a5db4
-        ;   XREF to: 004a5db4 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x02cf2b04],0x2      ; 004a5d60 | int g_ScrollAction
-    JNZ 0x004a5db4                      ; 004a5d67 | LAB_004a5db4
-        ;   XREF to: 004a5db4 (CONDITIONAL_JUMP)
+    JNZ 0x004a5db4                      ; 004a5d5e
+        ;   XREF to: 004a5db4 (CONDITIONAL_JUMP)  ; LAB_004a5db4
+    CMP dword ptr [0x02cf2b04],0x2      ; 004a5d60 | g_ScrollAction
+    JNZ 0x004a5db4                      ; 004a5d67
+        ;   XREF to: 004a5db4 (CONDITIONAL_JUMP)  ; LAB_004a5db4
     MOV EAX,0x1                         ; 004a5d69
     PUSH EAX                            ; 004a5d6e
         ;   Label: LAB_004a5d6e
@@ -186,8 +186,8 @@ section .text
     PUSH EDI                            ; 004a5d74
     MOV ESI,dword ptr [EBX + 0x28]      ; 004a5d75
     PUSH ESI                            ; 004a5d78
-    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5d79 | void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
-        ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5d79
+        ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
     ADD ESP,0x18                        ; 004a5d7e
     MOV ESP,EBP                         ; 004a5d81
     POP EBP                             ; 004a5d83
@@ -201,36 +201,36 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2c]      ; 004a5d8e
     MOV dword ptr [EBP + -0x10],EDX     ; 004a5d91
     MOV EDX,EDI                         ; 004a5d94
-    JMP 0x004a5c86                      ; 004a5d96 | LAB_004a5c86
-        ;   XREF to: 004a5c86 (UNCONDITIONAL_JUMP)
+    JMP 0x004a5c86                      ; 004a5d96
+        ;   XREF to: 004a5c86 (UNCONDITIONAL_JUMP)  ; LAB_004a5c86
     XOR ECX,ECX                         ; 004a5d9b
         ;   Label: LAB_004a5d9b
-    JMP 0x004a5ca4                      ; 004a5d9d | LAB_004a5ca4
-        ;   XREF to: 004a5ca4 (UNCONDITIONAL_JUMP)
+    JMP 0x004a5ca4                      ; 004a5d9d
+        ;   XREF to: 004a5ca4 (UNCONDITIONAL_JUMP)  ; LAB_004a5ca4
     XOR EAX,EAX                         ; 004a5da2
         ;   Label: LAB_004a5da2
-    JMP 0x004a5cdf                      ; 004a5da4 | LAB_004a5cdf
-        ;   XREF to: 004a5cdf (UNCONDITIONAL_JUMP)
+    JMP 0x004a5cdf                      ; 004a5da4
+        ;   XREF to: 004a5cdf (UNCONDITIONAL_JUMP)  ; LAB_004a5cdf
     XOR EAX,EAX                         ; 004a5da9
         ;   Label: LAB_004a5da9
-    JMP 0x004a5d13                      ; 004a5dab | LAB_004a5d13
-        ;   XREF to: 004a5d13 (UNCONDITIONAL_JUMP)
+    JMP 0x004a5d13                      ; 004a5dab
+        ;   XREF to: 004a5d13 (UNCONDITIONAL_JUMP)  ; LAB_004a5d13
     XOR EAX,EAX                         ; 004a5db0
         ;   Label: LAB_004a5db0
-    JMP 0x004a5d42                      ; 004a5db2 | LAB_004a5d42
-        ;   XREF to: 004a5d42 (UNCONDITIONAL_JUMP)
+    JMP 0x004a5d42                      ; 004a5db2
+        ;   XREF to: 004a5d42 (UNCONDITIONAL_JUMP)  ; LAB_004a5d42
     XOR EAX,EAX                         ; 004a5db4
         ;   Label: LAB_004a5db4
-    JMP 0x004a5d6e                      ; 004a5db6 | LAB_004a5d6e
-        ;   XREF to: 004a5d6e (UNCONDITIONAL_JUMP)
-    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5db8 | CEdButton * g_ActiveButton
+    JMP 0x004a5d6e                      ; 004a5db6
+        ;   XREF to: 004a5d6e (UNCONDITIONAL_JUMP)  ; LAB_004a5d6e
+    CMP EBX,dword ptr [0x02cf2b00]      ; 004a5db8 | g_ActiveButton
         ;   Label: LAB_004a5db8
-    JNZ 0x004a5e86                      ; 004a5dbe | LAB_004a5e86
-        ;   XREF to: 004a5e86 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02cf2b04]      ; 004a5dc4 | int g_ScrollAction
+    JNZ 0x004a5e86                      ; 004a5dbe
+        ;   XREF to: 004a5e86 (CONDITIONAL_JUMP)  ; LAB_004a5e86
+    MOV ECX,dword ptr [0x02cf2b04]      ; 004a5dc4 | g_ScrollAction
     CMP ECX,0x1                         ; 004a5dca
-    JNZ 0x004a5e86                      ; 004a5dcd | LAB_004a5e86
-        ;   XREF to: 004a5e86 (CONDITIONAL_JUMP)
+    JNZ 0x004a5e86                      ; 004a5dcd
+        ;   XREF to: 004a5e86 (CONDITIONAL_JUMP)  ; LAB_004a5e86
     MOV EAX,ECX                         ; 004a5dd3
     PUSH EAX                            ; 004a5dd5
         ;   Label: LAB_004a5dd5
@@ -241,18 +241,18 @@ section .text
     PUSH EDI                            ; 004a5dde
     MOV ECX,dword ptr [EBP + -0x8]      ; 004a5ddf
     PUSH ECX                            ; 004a5de2
-    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5de3 | void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
-        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5de3
+        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     ADD ESP,0x14                        ; 004a5de8
-    MOV EAX,[0x02cf2b00]                ; 004a5deb | CEdButton * g_ActiveButton
+    MOV EAX,[0x02cf2b00]                ; 004a5deb | g_ActiveButton
     PUSH 0x0                            ; 004a5df0
     CMP EBX,EAX                         ; 004a5df2
-    JNZ 0x004a5e8d                      ; 004a5df4 | LAB_004a5e8d
-        ;   XREF to: 004a5e8d (CONDITIONAL_JUMP)
-    MOV EDX,dword ptr [0x02cf2b04]      ; 004a5dfa | int g_ScrollAction
+    JNZ 0x004a5e8d                      ; 004a5df4
+        ;   XREF to: 004a5e8d (CONDITIONAL_JUMP)  ; LAB_004a5e8d
+    MOV EDX,dword ptr [0x02cf2b04]      ; 004a5dfa | g_ScrollAction
     CMP EDX,0x1                         ; 004a5e00
-    JNZ 0x004a5e8d                      ; 004a5e03 | LAB_004a5e8d
-        ;   XREF to: 004a5e8d (CONDITIONAL_JUMP)
+    JNZ 0x004a5e8d                      ; 004a5e03
+        ;   XREF to: 004a5e8d (CONDITIONAL_JUMP)  ; LAB_004a5e8d
     MOV EAX,EDX                         ; 004a5e09
     PUSH EAX                            ; 004a5e0b
         ;   Label: LAB_004a5e0b
@@ -263,16 +263,16 @@ section .text
     PUSH EDI                            ; 004a5e14
     MOV EDX,dword ptr [EBP + -0x8]      ; 004a5e15
     PUSH EDX                            ; 004a5e18
-    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5e19 | void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
-        ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)
-    MOV ECX,dword ptr [0x02cf2b00]      ; 004a5e1e | CEdButton * g_ActiveButton
+    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5e19
+        ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
+    MOV ECX,dword ptr [0x02cf2b00]      ; 004a5e1e | g_ActiveButton
     ADD ESP,0x18                        ; 004a5e24
     CMP EBX,ECX                         ; 004a5e27
-    JNZ 0x004a5e94                      ; 004a5e29 | LAB_004a5e94
-        ;   XREF to: 004a5e94 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x02cf2b04],0x2      ; 004a5e2b | int g_ScrollAction
-    JNZ 0x004a5e94                      ; 004a5e32 | LAB_004a5e94
-        ;   XREF to: 004a5e94 (CONDITIONAL_JUMP)
+    JNZ 0x004a5e94                      ; 004a5e29
+        ;   XREF to: 004a5e94 (CONDITIONAL_JUMP)  ; LAB_004a5e94
+    CMP dword ptr [0x02cf2b04],0x2      ; 004a5e2b | g_ScrollAction
+    JNZ 0x004a5e94                      ; 004a5e32
+        ;   XREF to: 004a5e94 (CONDITIONAL_JUMP)  ; LAB_004a5e94
     MOV EAX,0x1                         ; 004a5e34
     PUSH EAX                            ; 004a5e39
         ;   Label: LAB_004a5e39
@@ -283,17 +283,17 @@ section .text
     PUSH EDX                            ; 004a5e42
     MOV ECX,dword ptr [EBP + -0x8]      ; 004a5e43
     PUSH ECX                            ; 004a5e46
-    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5e47 | void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
-        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a5e47
+        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     ADD ESP,0x14                        ; 004a5e4c
-    MOV EDI,dword ptr [0x02cf2b00]      ; 004a5e4f | CEdButton * g_ActiveButton
+    MOV EDI,dword ptr [0x02cf2b00]      ; 004a5e4f | g_ActiveButton
     PUSH 0x1                            ; 004a5e55
     CMP EBX,EDI                         ; 004a5e57
-    JNZ 0x004a5e98                      ; 004a5e59 | LAB_004a5e98
-        ;   XREF to: 004a5e98 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x02cf2b04],0x2      ; 004a5e5b | int g_ScrollAction
-    JNZ 0x004a5e98                      ; 004a5e62 | LAB_004a5e98
-        ;   XREF to: 004a5e98 (CONDITIONAL_JUMP)
+    JNZ 0x004a5e98                      ; 004a5e59
+        ;   XREF to: 004a5e98 (CONDITIONAL_JUMP)  ; LAB_004a5e98
+    CMP dword ptr [0x02cf2b04],0x2      ; 004a5e5b | g_ScrollAction
+    JNZ 0x004a5e98                      ; 004a5e62
+        ;   XREF to: 004a5e98 (CONDITIONAL_JUMP)  ; LAB_004a5e98
     MOV EAX,0x1                         ; 004a5e64
     PUSH EAX                            ; 004a5e69
         ;   Label: LAB_004a5e69
@@ -304,8 +304,8 @@ section .text
     PUSH ECX                            ; 004a5e72
     MOV EBX,dword ptr [EBP + -0x8]      ; 004a5e73
     PUSH EBX                            ; 004a5e76
-    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5e77 | void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
-        ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0 ; 004a5e77
+        ;   XREF to: 004a59a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0(int left, int top, int right, int bottom, ...)
     ADD ESP,0x18                        ; 004a5e7c
     MOV ESP,EBP                         ; 004a5e7f
     POP EBP                             ; 004a5e81
@@ -315,18 +315,18 @@ section .text
     RET                                 ; 004a5e85
     XOR EAX,EAX                         ; 004a5e86
         ;   Label: LAB_004a5e86
-    JMP 0x004a5dd5                      ; 004a5e88 | LAB_004a5dd5
-        ;   XREF to: 004a5dd5 (UNCONDITIONAL_JUMP)
+    JMP 0x004a5dd5                      ; 004a5e88
+        ;   XREF to: 004a5dd5 (UNCONDITIONAL_JUMP)  ; LAB_004a5dd5
     XOR EAX,EAX                         ; 004a5e8d
         ;   Label: LAB_004a5e8d
-    JMP 0x004a5e0b                      ; 004a5e8f | LAB_004a5e0b
-        ;   XREF to: 004a5e0b (UNCONDITIONAL_JUMP)
+    JMP 0x004a5e0b                      ; 004a5e8f
+        ;   XREF to: 004a5e0b (UNCONDITIONAL_JUMP)  ; LAB_004a5e0b
     XOR EAX,EAX                         ; 004a5e94
         ;   Label: LAB_004a5e94
-    JMP 0x004a5e39                      ; 004a5e96 | LAB_004a5e39
-        ;   XREF to: 004a5e39 (UNCONDITIONAL_JUMP)
+    JMP 0x004a5e39                      ; 004a5e96
+        ;   XREF to: 004a5e39 (UNCONDITIONAL_JUMP)  ; LAB_004a5e39
     XOR EAX,EAX                         ; 004a5e98
         ;   Label: LAB_004a5e98
-    JMP 0x004a5e69                      ; 004a5e9a | LAB_004a5e69
-        ;   XREF to: 004a5e69 (UNCONDITIONAL_JUMP)
+    JMP 0x004a5e69                      ; 004a5e9a
+        ;   XREF to: 004a5e69 (UNCONDITIONAL_JUMP)  ; LAB_004a5e69
 

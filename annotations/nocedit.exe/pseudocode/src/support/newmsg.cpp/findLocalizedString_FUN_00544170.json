@@ -1,101 +1,101 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 91, 
-    "assembly_lines": 69, 
-    "suspect_count": 2, 
+    "assembly_lines": 69,
+    "complexity_score": 47,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char*[500]", 
-      "name": "g_MessageKeys", 
-      "addr": "02fa8cdc", 
-      "value": null
-    }, 
-    {
-      "type": "char*[500]", 
-      "name": "g_MessageTexts", 
-      "addr": "02fa94ac", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_00544170(key,iVar1 + 1,in_stack_00000010);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00544170", 
-    "signature": "char * support_newmsg.cpp_findLocalizedString_FUN_00544170(char * key, int lower_bound, int upper_bound)", 
-    "address_range": [
-      [
-        "00544170", 
-        "005441e5"
-      ]
-    ], 
-    "name": "support_newmsg.cpp_findLocalizedString_FUN_00544170"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "key"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "lower_bound"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "upper_bound"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 91
+  },
   "cross_references": [
     {
-      "from_addr": "00544263", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
-      "addr": "005441f0"
+      "addr": "005441f0",
+      "from_addr": "00544263",
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00544170",
+    "address_range": [
+      [
+        "00544170",
+        "005441e5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_newmsg.cpp_findLocalizedString_FUN_00544170",
+    "signature": "char * support_newmsg.cpp_findLocalizedString_FUN_00544170(char * key, int lower_bound, int upper_bound)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02fa8cdc",
+      "name": "g_MessageKeys",
+      "type": "char*[500]",
+      "value": null
+    },
+    {
+      "addr": "02fa94ac",
+      "name": "g_MessageTexts",
+      "type": "char*[500]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "key",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "lower_bound",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "upper_bound",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "text": "pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_00544170(key,iVar1 + 1,in_stack_00000010);",
+      "type": "stack_param"
     }
   ]
 }

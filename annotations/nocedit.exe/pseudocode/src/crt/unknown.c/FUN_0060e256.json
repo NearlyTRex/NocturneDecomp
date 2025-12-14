@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 75, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 60, 
-    "assembly_lines": 35, 
-    "suspect_count": 4, 
+    "assembly_lines": 35,
+    "complexity_score": 75,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
     "suspect_types": [
-      "concat_artifact", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 2, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "ulonglong crt_unknown_c_FUN_0060e256(uint param_1,uint param_2,uint unaff_EBX,uint param_4)"
-    }, 
-    {
-      "line": 18, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "bVar2 = param_1 < unaff_EBX;"
-    }, 
-    {
-      "line": 20, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (param_2 == param_4 && param_1 == unaff_EBX) goto LAB_0060e28a;"
-    }, 
-    {
-      "line": 27, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "return CONCAT44 /* combine 2-byte values */(param_2,iVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0060e256", 
-    "signature": "undefined crt_unknown.c_FUN_0060e256()", 
-    "address_range": [
-      [
-        "0060e256", 
-        "0060e28d"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_0060e256"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "unaffected_reg",
+      "concat_artifact"
+    ],
+    "total_lines": 60
+  },
   "cross_references": [
     {
-      "from_addr": "0060bee7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fpemu.c_staticInit_FUN_0060be80", 
-      "addr": "0060be80"
+      "addr": "0060be80",
+      "from_addr": "0060bee7",
+      "name": "crt_fpemu.c_staticInit_FUN_0060be80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060e256",
+    "address_range": [
+      [
+        "0060e256",
+        "0060e28d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0060e256",
+    "signature": "undefined crt_unknown.c_FUN_0060e256()"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 2,
+      "match": "unaff_EBX",
+      "text": "ulonglong crt_unknown_c_FUN_0060e256(uint param_1,uint param_2,uint unaff_EBX,uint param_4)",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "text": "bVar2 = param_1 < unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBX",
+      "text": "if (param_2 == param_4 && param_1 == unaff_EBX) goto LAB_0060e28a;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 27,
+      "match": "CONCAT44",
+      "text": "return CONCAT44 /* combine 2-byte values */(param_2,iVar1);",
+      "type": "concat_artifact"
     }
   ]
 }

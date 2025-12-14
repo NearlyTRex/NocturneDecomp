@@ -20,8 +20,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00602448
         ;   Label: crt_io.c_invalidate_handle_wrapper_FUN_00602448
     PUSH EDX                            ; 0060244c
-    CALL crt_io.c_invalidate_handle_FUN_00608af4 ; 0060244d | void crt_io.c_invalidate_handle_FUN_00608af4(int handle_index)
-        ;   XREF to: 00608af4 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_invalidate_handle_FUN_00608af4 ; 0060244d
+        ;   XREF to: 00608af4 (UNCONDITIONAL_CALL)  ; void crt_io.c_invalidate_handle_FUN_00608af4(int handle_index)
     ADD ESP,0x4                         ; 00602452
     LEA EAX,[EAX]                       ; 00602455
 

@@ -24,7 +24,7 @@
 
 section .text
 
-    MOV EAX,[0x03f624a4]                ; 005a8940 | int g_SfxLastSlot
+    MOV EAX,[0x03f624a4]                ; 005a8940 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
     SHL EAX,0x4                         ; 005a8945
     MOV EDX,EAX                         ; 005a8948

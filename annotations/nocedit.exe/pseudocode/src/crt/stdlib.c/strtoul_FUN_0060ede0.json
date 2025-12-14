@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 20, 
-    "assembly_lines": 14, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdlib.c_strtol_internal_FUN_0060ec70", 
-      "addr": "0060ec70"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 14,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0060ede0", 
-    "signature": "ulong crt_stdlib.c_strtoul_FUN_0060ede0(char * str, char * * endptr, int base)", 
+    "address": "0060ede0",
     "address_range": [
       [
-        "0060ede0", 
+        "0060ede0",
         "0060edfb"
       ]
-    ], 
-    "name": "crt_stdlib.c_strtoul_FUN_0060ede0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdlib.c_strtoul_FUN_0060ede0",
+    "signature": "ulong crt_stdlib.c_strtoul_FUN_0060ede0(char * str, char * * endptr, int base)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060ec70",
+      "name": "crt_stdlib.c_strtol_internal_FUN_0060ec70"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "str"
-      }, 
+        "is_param": true,
+        "name": "str",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char * *", 
-        "size": 4, 
-        "name": "endptr"
-      }, 
+        "is_param": true,
+        "name": "endptr",
+        "offset": 8,
+        "size": 4,
+        "type": "char * *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "base"
+        "is_param": true,
+        "name": "base",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

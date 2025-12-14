@@ -33,8 +33,8 @@ section .text
     ADD ESP,0x8                         ; 0052512e
     LEA EAX,[ESP + 0x24]                ; 00525131
     PUSH EAX                            ; 00525135
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 00525136 | CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 00525136
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 0052513b
     LEA EAX,[ESP + 0x18]                ; 0052513e
     FLD float ptr [ESP]                 ; 00525142
@@ -52,10 +52,10 @@ section .text
     FXCH                                ; 00525166
     FSTP float ptr [ESP + 0x2c]         ; 00525168
     FSTP float ptr [ESP + 0x30]         ; 0052516c
-    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 00525170 | CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
-        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CVector_ctor_FUN_00410340 ; 00525170
+        ;   XREF to: 00410340 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CVector_ctor_FUN_00410340(CVector3f * this_ptr)
     ADD ESP,0x4                         ; 00525175
-    FLD float ptr [0x006396a6]          ; 00525178 | float FLOAT_006396a6
+    FLD float ptr [0x006396a6]          ; 00525178 | FLOAT_006396a6
     FLD float ptr [ESP + 0x24]          ; 0052517e
     FMUL ST1                            ; 00525182
     LEA EAX,[ESP + 0x18]                ; 00525184
@@ -64,15 +64,15 @@ section .text
     PUSH EAX                            ; 0052518e
     FLD float ptr [ESP + 0xc]           ; 0052518f
     PUSH EBX                            ; 00525193
-    FADD double ptr [0x006396ae]        ; 00525194 | double DOUBLE_006396ae
+    FADD double ptr [0x006396ae]        ; 00525194 | DOUBLE_006396ae
     FXCH                                ; 0052519a
     FSTP float ptr [ESP + 0x20]         ; 0052519c
     FXCH                                ; 005251a0
     FSTP float ptr [ESP + 0x24]         ; 005251a2
     PUSH ESI                            ; 005251a6
     FSTP float ptr [ESP + 0x2c]         ; 005251a7
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005251ab | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005251ab
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 005251b0
     MOV EAX,EBX                         ; 005251b3
     MOV ESP,EBP                         ; 005251b5

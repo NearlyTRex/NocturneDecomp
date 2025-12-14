@@ -17,9 +17,9 @@
 
 section .text
 
-    CALL crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc ; 0060ce30 | void crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc()
+    CALL crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc ; 0060ce30
+        ;   XREF to: 0060cdbc (UNCONDITIONAL_CALL)  ; void crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc()
         ;   Label: crt_stdio.c_GetConsoleInputHandle_FUN_0060ce30
-        ;   XREF to: 0060cdbc (UNCONDITIONAL_CALL)
-    MOV EAX,[0x006854fc]                ; 0060ce35 | HANDLE g_ConsoleInputHandle
+    MOV EAX,[0x006854fc]                ; 0060ce35 | g_ConsoleInputHandle
     RET                                 ; 0060ce3a
 

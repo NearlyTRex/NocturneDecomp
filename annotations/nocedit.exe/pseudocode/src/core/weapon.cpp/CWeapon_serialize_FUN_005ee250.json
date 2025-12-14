@@ -1,157 +1,157 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 55, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 2, 
-    "global_count": 8, 
-    "total_lines": 101, 
-    "assembly_lines": 76, 
-    "suspect_count": 2, 
+    "assembly_lines": 76,
+    "complexity_score": 55,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 8,
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
-      "addr": "0040c1c0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeActor_FUN_0040b870", 
-      "addr": "0040b870"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
-      "addr": "0040b7f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0", 
-      "addr": "0040b8f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeLocalizedString_FUN_0040b6e0", 
-      "addr": "0040b6e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_00657ab9", 
-      "addr": "00657ab9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_carriedByActor_00657ac3", 
-      "addr": "00657ac3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_weaponState_00657ad2", 
-      "addr": "00657ad2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ammoCount_00657ade", 
-      "addr": "00657ade", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ammoType_00657ae8", 
-      "addr": "00657ae8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_descriptiveName_00657af1", 
-      "addr": "00657af1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_simTimer_00657b01", 
-      "addr": "00657b01", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CWeaponClassVersion", 
-      "addr": "006848d4", 
-      "value": "0x7"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 5, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ee250", 
-    "signature": "void core_weapon.cpp_CWeapon_serialize_FUN_005ee250(CWeapon * this_ptr)", 
-    "address_range": [
-      [
-        "005ee250", 
-        "005ee32b"
-      ]
-    ], 
-    "name": "core_weapon.cpp_CWeapon_serialize_FUN_005ee250"
-  }, 
-  "stack_frame": {
-    "local_size": 264, 
-    "variables": [
-      {
-        "offset": -260, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_104"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWeapon *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 268, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 101
+  },
   "cross_references": [
     {
-      "from_addr": "0050e926", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_melee.cpp_CMelee_load_FUN_0050e920", 
-      "addr": "0050e920"
-    }, 
+      "addr": "0050e920",
+      "from_addr": "0050e926",
+      "name": "core_melee.cpp_CMelee_load_FUN_0050e920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e2c46", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_CTurret_serialize_FUN_005e2c40", 
-      "addr": "005e2c40"
+      "addr": "005e2c40",
+      "from_addr": "005e2c46",
+      "name": "core_turret.cpp_CTurret_serialize_FUN_005e2c40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ee250",
+    "address_range": [
+      [
+        "005ee250",
+        "005ee32b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_serialize_FUN_005ee250",
+    "signature": "void core_weapon.cpp_CWeapon_serialize_FUN_005ee250(CWeapon * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c1c0",
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
+    },
+    {
+      "addr": "0040b870",
+      "name": "core_actor.cpp_serializeActor_FUN_0040b870"
+    },
+    {
+      "addr": "0040b770",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b7f0",
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b8f0",
+      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040b6e0",
+      "name": "core_actor.cpp_serializeLocalizedString_FUN_0040b6e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657ab9",
+      "name": "s_modelName_00657ab9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657ac3",
+      "name": "s_carriedByActor_00657ac3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657ad2",
+      "name": "s_weaponState_00657ad2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657ade",
+      "name": "s_ammoCount_00657ade",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657ae8",
+      "name": "s_ammoType_00657ae8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657af1",
+      "name": "s_descriptiveName_00657af1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657b01",
+      "name": "s_simTimer_00657b01",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006848d4",
+      "name": "g_CWeaponClassVersion",
+      "type": "int",
+      "value": "0x7"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 268,
+    "local_size": 264,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 5,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

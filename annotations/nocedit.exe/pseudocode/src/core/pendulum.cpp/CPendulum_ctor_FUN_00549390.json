@@ -1,172 +1,172 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 151, 
-    "pseudocode_lines": 81, 
-    "cross_reference_count": 1, 
-    "global_count": 10, 
-    "total_lines": 157, 
-    "assembly_lines": 76, 
-    "suspect_count": 6, 
+    "assembly_lines": 76,
+    "complexity_score": 151,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 10,
+    "pseudocode_lines": 81,
+    "suspect_count": 6,
     "suspect_types": [
-      "negative_offset", 
+      "negative_offset",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
-      "addr": "004088b0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
-      "addr": "00478ce0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pend_kfm_0063ec70", 
-      "addr": "0063ec70", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_true_0063ec79", 
-      "addr": "0063ec79", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_rue_0063ec7a", 
-      "addr": "0063ec7a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ue_0063ec7b", 
-      "addr": "0063ec7b", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_0063ec7c", 
-      "addr": "0063ec7c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_none_0063ec7e", 
-      "addr": "0063ec7e", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_one_0063ec7f", 
-      "addr": "0063ec7f", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ne_0063ec80", 
-      "addr": "0063ec80", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_0063ec81", 
-      "addr": "0063ec81", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_pendulum.cpp_FUN_00662154", 
-      "addr": "00662154", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "this_ptr_00[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_pendulum_cpp_FUN_00662154;"
-    }, 
-    {
-      "line": 26, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;"
-    }, 
-    {
-      "line": 27, 
-      "match": "(CKeyFramedModelInstance *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);"
-    }, 
-    {
-      "line": 37, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;"
-    }, 
-    {
-      "line": 38, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar5 = (int *)((int)piVar5 + 2);"
-    }, 
-    {
-      "line": 83, 
-      "match": "this_ptr_00[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CPendulum *)(this_ptr_00[-1].part_visibility_flags + 9);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00549390", 
-    "signature": "CPendulum * core_pendulum.cpp_CPendulum_ctor_FUN_00549390(CPendulum * this_ptr)", 
-    "address_range": [
-      [
-        "00549390", 
-        "0054949a"
-      ]
-    ], 
-    "name": "core_pendulum.cpp_CPendulum_ctor_FUN_00549390"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPendulum *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 157
+  },
   "cross_references": [
     {
-      "from_addr": "0054936a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_pendulum.cpp_FUN_00549350", 
-      "addr": "00549350"
+      "addr": "00549350",
+      "from_addr": "0054936a",
+      "name": "core_pendulum.cpp_FUN_00549350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00549390",
+    "address_range": [
+      [
+        "00549390",
+        "0054949a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_pendulum.cpp_CPendulum_ctor_FUN_00549390",
+    "signature": "CPendulum * core_pendulum.cpp_CPendulum_ctor_FUN_00549390(CPendulum * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    },
+    {
+      "addr": "00478ce0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ec70",
+      "name": "s_pend_kfm_0063ec70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ec79",
+      "name": "s_true_0063ec79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ec7a",
+      "name": "s_rue_0063ec7a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063ec7b",
+      "name": "s_ue_0063ec7b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063ec7c",
+      "name": "s_e_0063ec7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063ec7e",
+      "name": "s_none_0063ec7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ec7f",
+      "name": "s_one_0063ec7f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063ec80",
+      "name": "s_ne_0063ec80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063ec81",
+      "name": "s_e_0063ec81",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00662154",
+      "name": "PTR_core_pendulum.cpp_FUN_00662154",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPendulum *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "this_ptr_00[-1].",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_pendulum_cpp_FUN_00662154;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(CKeyFramedModelInstance *)((int)",
+      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)",
+      "text": "piVar5 = (int *)((int)piVar5 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 83,
+      "match": "this_ptr_00[-1].",
+      "text": "return (CPendulum *)(this_ptr_00[-1].part_visibility_flags + 9);",
+      "type": "negative_offset"
     }
   ]
 }

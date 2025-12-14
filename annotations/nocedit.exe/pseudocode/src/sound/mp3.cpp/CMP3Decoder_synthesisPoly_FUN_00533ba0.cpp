@@ -27,7 +27,7 @@ sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0
   else {
     iVar1 = 0;
   }
-  sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690((float *)unknown_param2,&local_94,iVar1);
+  sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690(unknown_param2,&local_94,iVar1);
   iVar1 = 0;
   pfVar3 = (float *)((int)unknown_param2 + subband_index * 0x48 + (int)frame_info * 0x900 + 0x7430);
   do {

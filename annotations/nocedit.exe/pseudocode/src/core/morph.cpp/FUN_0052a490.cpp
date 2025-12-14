@@ -16,13 +16,10 @@ int core_morph_cpp_FUN_0052a490(void)
   int in_stack_0000000c;
   
   iVar2 = 0;
-  if (0 < in_stack_00000004) {
-    do {
-      piVar1 = (int *)(in_stack_00000008 + 4);
-      in_stack_00000004 = in_stack_00000004 + -1;
-      in_stack_00000008 = in_stack_00000008 + in_stack_0000000c;
-      iVar2 = iVar2 + *piVar1 + -2;
-    } while (0 < in_stack_00000004);
+  for (; 0 < in_stack_00000004; in_stack_00000004 = in_stack_00000004 + -1) {
+    piVar1 = (int *)(in_stack_00000008 + 4);
+    in_stack_00000008 = in_stack_00000008 + in_stack_0000000c;
+    iVar2 = iVar2 + *piVar1 + -2;
   }
   return iVar2;
 }

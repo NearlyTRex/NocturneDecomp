@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 17, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
-      "addr": "0040ac80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_actor_cpp_006137d4", 
-      "addr": "006137d4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 10,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00409000", 
-    "signature": "int core_actor.cpp_CDemonActor_canPickup_FUN_00409000(CDemonActor * this_ptr, CDemonActor * picker)", 
+    "address": "00409000",
     "address_range": [
       [
-        "00409000", 
+        "00409000",
         "00409019"
       ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_canPickup_FUN_00409000"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_canPickup_FUN_00409000",
+    "signature": "int core_actor.cpp_CDemonActor_canPickup_FUN_00409000(CDemonActor * this_ptr, CDemonActor * picker)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006137d4",
+      "name": "s_core_actor_cpp_006137d4",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "picker"
+        "is_param": true,
+        "name": "picker",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

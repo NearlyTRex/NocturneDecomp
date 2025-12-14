@@ -28,21 +28,21 @@ section .text
     MOV EDI,dword ptr [EBP + 0x8]       ; 00525013
     MOV EAX,0x0                         ; 00525016
     CMP EDI,0x0                         ; 0052501b
-    JZ 0x00525060                       ; 0052501e | LAB_00525060
-        ;   XREF to: 00525060 (CONDITIONAL_JUMP)
-    CALL core_mmx.c_detectIntelProcessor_FUN_00524f4c ; 00525020 | void core_mmx.c_detectIntelProcessor_FUN_00524f4c()
-        ;   XREF to: 00524f4c (UNCONDITIONAL_CALL)
-    CALL core_mmx.c_detectMMXSupport_FUN_00524ff9 ; 00525025 | void core_mmx.c_detectMMXSupport_FUN_00524ff9()
-        ;   XREF to: 00524ff9 (UNCONDITIONAL_CALL)
-    MOVZX EAX,byte ptr [0x0067d6d8]     ; 0052502a | byte g_CPUInfoFamily
+    JZ 0x00525060                       ; 0052501e
+        ;   XREF to: 00525060 (CONDITIONAL_JUMP)  ; LAB_00525060
+    CALL core_mmx.c_detectIntelProcessor_FUN_00524f4c ; 00525020
+        ;   XREF to: 00524f4c (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectIntelProcessor_FUN_00524f4c()
+    CALL core_mmx.c_detectMMXSupport_FUN_00524ff9 ; 00525025
+        ;   XREF to: 00524ff9 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectMMXSupport_FUN_00524ff9()
+    MOVZX EAX,byte ptr [0x0067d6d8]     ; 0052502a | g_CPUInfoFamily
     MOV dword ptr [EDI],EAX             ; 00525031
-    MOVZX EAX,byte ptr [0x0067d6d9]     ; 00525033 | byte g_CPUInfoModel
+    MOVZX EAX,byte ptr [0x0067d6d9]     ; 00525033 | g_CPUInfoModel
     MOV dword ptr [EDI + 0x4],EAX       ; 0052503a
-    MOVZX EAX,byte ptr [0x0067d6da]     ; 0052503d | byte g_CPUInfoStepping
+    MOVZX EAX,byte ptr [0x0067d6da]     ; 0052503d | g_CPUInfoStepping
     MOV dword ptr [EDI + 0x8],EAX       ; 00525044
-    MOVZX EAX,byte ptr [0x0067d6dc]     ; 00525047 | bool g_CPUInfoIntelCPU
+    MOVZX EAX,byte ptr [0x0067d6dc]     ; 00525047 | g_CPUInfoIntelCPU
     MOV dword ptr [EDI + 0xc],EAX       ; 0052504e
-    MOVZX EAX,byte ptr [0x0067d6e1]     ; 00525051 | undefined1 g_CPUInfoMMXSupported
+    MOVZX EAX,byte ptr [0x0067d6e1]     ; 00525051 | g_CPUInfoMMXSupported
     MOV dword ptr [EDI + 0x10],EAX      ; 00525058
     MOV EAX,0x1                         ; 0052505b
     POP EDI                             ; 00525060

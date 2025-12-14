@@ -22,11 +22,11 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x0067cbc8]      ; 005e1f30 | CGround g_CGroundInstance | CGround * g_CGroundPtr
+    MOV EDX,dword ptr [0x0067cbc8]      ; 005e1f30 | g_CGroundInstance | g_CGroundPtr
         ;   Label: core_terrain.cpp_CTerrain_dtor_FUN_005e1f30
-    PUSH EDX                            ; 005e1f36 | CGround g_CGroundInstance
-    CALL core_ground.cpp_CGround_free_FUN_004eefb0 ; 005e1f37 | void core_ground.cpp_CGround_free_FUN_004eefb0(CGround * this_ptr)
-        ;   XREF to: 004eefb0 (UNCONDITIONAL_CALL)
+    PUSH EDX                            ; 005e1f36 | g_CGroundInstance
+    CALL core_ground.cpp_CGround_free_FUN_004eefb0 ; 005e1f37
+        ;   XREF to: 004eefb0 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_free_FUN_004eefb0(CGround * this_ptr)
     XOR ECX,ECX                         ; 005e1f3c
     ADD ESP,0x4                         ; 005e1f3e
     MOV dword ptr [0x03f874a0],ECX      ; 005e1f41 | g_CTerrainInstance.initialized

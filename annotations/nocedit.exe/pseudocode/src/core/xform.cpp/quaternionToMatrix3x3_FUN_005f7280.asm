@@ -56,7 +56,7 @@ section .text
     FADDP ST2,ST0                       ; 005f72b0
     FLD ST0                             ; 005f72b2
     FXCH ST2                            ; 005f72b4
-    FDIVR double ptr [0x006583dd]       ; 005f72b6 | double g_QuaternionToMatrixScaleFactor
+    FDIVR double ptr [0x006583dd]       ; 005f72b6 | g_QuaternionToMatrixScaleFactor
     FXCH ST2                            ; 005f72bc
     FMUL ST2                            ; 005f72be
     FLD float ptr [EAX + 0x8]           ; 005f72c0

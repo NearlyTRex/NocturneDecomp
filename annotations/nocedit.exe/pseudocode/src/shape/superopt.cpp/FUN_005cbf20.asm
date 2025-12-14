@@ -26,8 +26,8 @@ section .text
     LEA EAX,[EBX + -0x1]                ; 005cbf31
     XOR ECX,ECX                         ; 005cbf34
     TEST EBX,EBX                        ; 005cbf36
-    JBE 0x005cbf77                      ; 005cbf38 | LAB_005cbf77
-        ;   XREF to: 005cbf77 (CONDITIONAL_JUMP)
+    JBE 0x005cbf77                      ; 005cbf38
+        ;   XREF to: 005cbf77 (CONDITIONAL_JUMP)  ; LAB_005cbf77
     LEA EDX,[ESI + 0x10]                ; 005cbf3a
     IMUL EAX,EAX,0x60                   ; 005cbf3d
         ;   Label: LAB_005cbf3d
@@ -44,17 +44,17 @@ section .text
     FMUL ST0                            ; 005cbf5c
     FADDP                               ; 005cbf5e
     FSQRT                               ; 005cbf60
-    FCOMP double ptr [0x006542d2]       ; 005cbf62 | double DOUBLE_006542d2
+    FCOMP double ptr [0x006542d2]       ; 005cbf62 | DOUBLE_006542d2
     FNSTSW AX                           ; 005cbf68
     SAHF                                ; 005cbf6a
-    JA 0x005cbf82                       ; 005cbf6b | LAB_005cbf82
-        ;   XREF to: 005cbf82 (CONDITIONAL_JUMP)
+    JA 0x005cbf82                       ; 005cbf6b
+        ;   XREF to: 005cbf82 (CONDITIONAL_JUMP)  ; LAB_005cbf82
     MOV EAX,ECX                         ; 005cbf6d
     INC ECX                             ; 005cbf6f
     ADD EDX,0x60                        ; 005cbf70
     CMP ECX,EBX                         ; 005cbf73
-    JC 0x005cbf3d                       ; 005cbf75 | LAB_005cbf3d
-        ;   XREF to: 005cbf3d (CONDITIONAL_JUMP)
+    JC 0x005cbf3d                       ; 005cbf75
+        ;   XREF to: 005cbf3d (CONDITIONAL_JUMP)  ; LAB_005cbf3d
     MOV EAX,0x1                         ; 005cbf77
         ;   Label: LAB_005cbf77
     MOV ESP,EBP                         ; 005cbf7c

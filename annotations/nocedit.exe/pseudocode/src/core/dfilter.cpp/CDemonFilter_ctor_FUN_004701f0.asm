@@ -24,24 +24,24 @@ section .text
     PUSH EDI                            ; 004701f1
     MOV EDX,dword ptr [ESP + 0xc]       ; 004701f2
     MOV dword ptr [EDX + 0x48],0x0      ; 004701f6
-    MOV ESI,0x61e541                    ; 004701fd | = "unnamed" | s_unnamed_0061e541 = unnamed
+    MOV ESI,0x61e541                    ; 004701fd | = "unnamed"
     MOV dword ptr [EDX],0x40            ; 00470202
     LEA EDI,[EDX + 0x8]                 ; 00470208
     MOV dword ptr [EDX + 0x4],0x40      ; 0047020b
     PUSH EDI                            ; 00470212
-    MOV AL,byte ptr [ESI]               ; 00470213 | = "unnamed" | s_unnamed_0061e541 = unnamed
+    MOV AL,byte ptr [ESI]               ; 00470213 | = "unnamed" | s_named_0061e543
         ;   Label: LAB_00470213
     MOV byte ptr [EDI],AL               ; 00470215
     CMP AL,0x0                          ; 00470217
-    JZ 0x0047022b                       ; 00470219 | LAB_0047022b
-        ;   XREF to: 0047022b (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 0047021b | s_nnamed_0061e542
+    JZ 0x0047022b                       ; 00470219
+        ;   XREF to: 0047022b (CONDITIONAL_JUMP)  ; LAB_0047022b
+    MOV AL,byte ptr [ESI + 0x1]         ; 0047021b | s_nnamed_0061e542 | s_amed_0061e544
     ADD ESI,0x2                         ; 0047021e
     MOV byte ptr [EDI + 0x1],AL         ; 00470221
     ADD EDI,0x2                         ; 00470224
     CMP AL,0x0                          ; 00470227
-    JNZ 0x00470213                      ; 00470229 | LAB_00470213
-        ;   XREF to: 00470213 (CONDITIONAL_JUMP)
+    JNZ 0x00470213                      ; 00470229
+        ;   XREF to: 00470213 (CONDITIONAL_JUMP)  ; LAB_00470213
     POP EDI                             ; 0047022b
         ;   Label: LAB_0047022b
     MOV EAX,EDX                         ; 0047022c

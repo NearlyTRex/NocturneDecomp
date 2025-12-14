@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 93, 
-    "assembly_lines": 56, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060c894", 
-    "signature": "void crt_io.c_ConvertCreationDisposition_FUN_0060c894(DWORD mode_flags, DWORD * creation_disposition)", 
-    "address_range": [
-      [
-        "0060c894", 
-        "0060c8f3"
-      ]
-    ], 
-    "name": "crt_io.c_ConvertCreationDisposition_FUN_0060c894"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef DWORD ulong", 
-        "size": 4, 
-        "name": "mode_flags"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "DWORD *", 
-        "size": 4, 
-        "name": "creation_disposition"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 56,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 93
+  },
   "cross_references": [
     {
-      "from_addr": "006090f3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0", 
-      "addr": "006090a0"
+      "addr": "006090a0",
+      "from_addr": "006090f3",
+      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060c894",
+    "address_range": [
+      [
+        "0060c894",
+        "0060c8f3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_ConvertCreationDisposition_FUN_0060c894",
+    "signature": "void crt_io.c_ConvertCreationDisposition_FUN_0060c894(DWORD mode_flags, DWORD * creation_disposition)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mode_flags",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef DWORD ulong"
+      },
+      {
+        "is_param": true,
+        "name": "creation_disposition",
+        "offset": 8,
+        "size": 4,
+        "type": "DWORD *"
+      }
+    ]
+  },
+  "suspects": []
 }

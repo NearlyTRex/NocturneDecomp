@@ -17,13 +17,11 @@ shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
   float fVar3;
   float fVar4;
   float fVar5;
-  float *pfVar6;
   
   fVar1 = edge_vertex_1->x - edge_vertex_0->x;
   fVar2 = edge_vertex_1->y - edge_vertex_0->y;
   fVar4 = edge_vertex_1->z - edge_vertex_0->z;
   fVar3 = SQRT(fVar4 * fVar4 + fVar1 * fVar1 + fVar2 * fVar2);
-  pfVar6 = &edge_vertex_0->z;
   if (0.0 < fVar3) {
     fVar5 = 1.0 / fVar3;
     fVar1 = fVar1 * fVar5;
@@ -40,13 +38,13 @@ shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
       }
       out_closest_point->x = edge_vertex_1->x;
       out_closest_point->y = edge_vertex_1->y;
-      pfVar6 = &edge_vertex_1->z;
       goto LAB_00515093;
     }
   }
   out_closest_point->x = edge_vertex_0->x;
   out_closest_point->y = edge_vertex_0->y;
+  edge_vertex_1 = edge_vertex_0;
 LAB_00515093:
-  out_closest_point->z = *pfVar6;
+  out_closest_point->z = edge_vertex_1->z;
   return out_closest_point;
 }

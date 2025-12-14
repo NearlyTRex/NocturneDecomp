@@ -52,19 +52,19 @@ section .text
     PUSH EAX                            ; 004d0029
     PUSH 0x0                            ; 004d002a
     PUSH ESI                            ; 004d002c
-    CALL crt_memory.c_memset_FUN_005fde40 ; 004d002d | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 004d002d
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004d0032
     TEST EBP,EBP                        ; 004d0035
-    JZ 0x004d007c                       ; 004d0037 | LAB_004d007c
-        ;   XREF to: 004d007c (CONDITIONAL_JUMP)
+    JZ 0x004d007c                       ; 004d0037
+        ;   XREF to: 004d007c (CONDITIONAL_JUMP)  ; LAB_004d007c
     PUSH EDI                            ; 004d0039
     XOR EDX,EDX                         ; 004d003a
     MOV ECX,dword ptr [ESP + 0x3c]      ; 004d003c
     MOV dword ptr [ESP + 0xc],EDX       ; 004d0040
     TEST ECX,ECX                        ; 004d0044
-    JLE 0x004d0120                      ; 004d0046 | LAB_004d0120
-        ;   XREF to: 004d0120 (CONDITIONAL_JUMP)
+    JLE 0x004d0120                      ; 004d0046
+        ;   XREF to: 004d0120 (CONDITIONAL_JUMP)  ; LAB_004d0120
     LEA EAX,[EBX + -0x1]                ; 004d004c
     MOV dword ptr [ESP + 0x10],EBX      ; 004d004f
     MOV dword ptr [ESP + 0x14],EAX      ; 004d0053
@@ -75,15 +75,15 @@ section .text
         ;   Label: LAB_004d0060
     INC AL                              ; 004d0063
     AND EAX,0xff                        ; 004d0065
-    TEST byte ptr [EAX + 0x6849c4],0x2  ; 004d006a | char[256] g_CharacterClassificationTable
-    JZ 0x004d0085                       ; 004d0071 | LAB_004d0085
-        ;   XREF to: 004d0085 (CONDITIONAL_JUMP)
+    TEST byte ptr [EAX + 0x6849c4],0x2  ; 004d006a | g_CharacterClassificationTable
+    JZ 0x004d0085                       ; 004d0071
+        ;   XREF to: 004d0085 (CONDITIONAL_JUMP)  ; LAB_004d0085
     CMP byte ptr [EBP],0xa              ; 004d0073
-    JZ 0x004d0085                       ; 004d0077 | LAB_004d0085
-        ;   XREF to: 004d0085 (CONDITIONAL_JUMP)
+    JZ 0x004d0085                       ; 004d0077
+        ;   XREF to: 004d0085 (CONDITIONAL_JUMP)  ; LAB_004d0085
     INC EBP                             ; 004d0079
-    JMP 0x004d0060                      ; 004d007a | LAB_004d0060
-        ;   XREF to: 004d0060 (UNCONDITIONAL_JUMP)
+    JMP 0x004d0060                      ; 004d007a
+        ;   XREF to: 004d0060 (UNCONDITIONAL_JUMP)  ; LAB_004d0060
     XOR EAX,EAX                         ; 004d007c
         ;   Label: LAB_004d007c
     ADD ESP,0x1c                        ; 004d007e
@@ -93,8 +93,8 @@ section .text
     RET                                 ; 004d0084
     CMP byte ptr [EBP],0x0              ; 004d0085
         ;   Label: LAB_004d0085
-    JZ 0x004d0120                       ; 004d0089 | LAB_004d0120
-        ;   XREF to: 004d0120 (CONDITIONAL_JUMP)
+    JZ 0x004d0120                       ; 004d0089
+        ;   XREF to: 004d0120 (CONDITIONAL_JUMP)  ; LAB_004d0120
     MOV EAX,dword ptr [ESP + 0x8]       ; 004d008f
     MOV ESI,0xffffffff                  ; 004d0093
     MOV EDI,dword ptr [ESP + 0x8]       ; 004d0098
@@ -113,26 +113,26 @@ section .text
     MOV AL,byte ptr [ESI]               ; 004d00bd
     MOV dword ptr [ESP + 0x1c],EAX      ; 004d00bf
     CMP EAX,0xa                         ; 004d00c3
-    JNZ 0x004d012c                      ; 004d00c6 | LAB_004d012c
-        ;   XREF to: 004d012c (CONDITIONAL_JUMP)
+    JNZ 0x004d012c                      ; 004d00c6
+        ;   XREF to: 004d012c (CONDITIONAL_JUMP)  ; LAB_004d012c
     MOV EDX,EBX                         ; 004d00c8
         ;   Label: LAB_004d00c8
     TEST EBX,EBX                        ; 004d00ca
-    JLE 0x004d00ea                      ; 004d00cc | LAB_004d00ea
-        ;   XREF to: 004d00ea (CONDITIONAL_JUMP)
+    JLE 0x004d00ea                      ; 004d00cc
+        ;   XREF to: 004d00ea (CONDITIONAL_JUMP)  ; LAB_004d00ea
     LEA ESI,[EBX + EBP*0x1]             ; 004d00ce
     MOV AL,byte ptr [ESI + -0x1]        ; 004d00d1
         ;   Label: LAB_004d00d1
     INC AL                              ; 004d00d4
     AND EAX,0xff                        ; 004d00d6
-    TEST byte ptr [EAX + 0x6849c4],0x2  ; 004d00db | char[256] g_CharacterClassificationTable
-    JZ 0x004d00ea                       ; 004d00e2 | LAB_004d00ea
-        ;   XREF to: 004d00ea (CONDITIONAL_JUMP)
+    TEST byte ptr [EAX + 0x6849c4],0x2  ; 004d00db | g_CharacterClassificationTable
+    JZ 0x004d00ea                       ; 004d00e2
+        ;   XREF to: 004d00ea (CONDITIONAL_JUMP)  ; LAB_004d00ea
     DEC EDX                             ; 004d00e4
     DEC ESI                             ; 004d00e5
     TEST EDX,EDX                        ; 004d00e6
-    JG 0x004d00d1                       ; 004d00e8 | LAB_004d00d1
-        ;   XREF to: 004d00d1 (CONDITIONAL_JUMP)
+    JG 0x004d00d1                       ; 004d00e8
+        ;   XREF to: 004d00d1 (CONDITIONAL_JUMP)  ; LAB_004d00d1
     MOV EDI,dword ptr [ESP + 0x4]       ; 004d00ea
         ;   Label: LAB_004d00ea
     MOV ECX,EDX                         ; 004d00ee
@@ -149,15 +149,15 @@ section .text
     LEA EAX,[EBX + EBP*0x1]             ; 004d0104
     MOV byte ptr [EDX],0x0              ; 004d0107
     CMP byte ptr [EAX],0xa              ; 004d010a
-    JNZ 0x004d0110                      ; 004d010d | LAB_004d0110
-        ;   XREF to: 004d0110 (CONDITIONAL_JUMP)
+    JNZ 0x004d0110                      ; 004d010d
+        ;   XREF to: 004d0110 (CONDITIONAL_JUMP)  ; LAB_004d0110
     INC EBX                             ; 004d010f
     MOV EAX,dword ptr [ESP + 0xc]       ; 004d0110
         ;   Label: LAB_004d0110
     ADD EBP,EBX                         ; 004d0114
     CMP EAX,dword ptr [ESP + 0x3c]      ; 004d0116
-    JL 0x004d0060                       ; 004d011a | LAB_004d0060
-        ;   XREF to: 004d0060 (CONDITIONAL_JUMP)
+    JL 0x004d0060                       ; 004d011a
+        ;   XREF to: 004d0060 (CONDITIONAL_JUMP)  ; LAB_004d0060
     MOV EAX,dword ptr [ESP + 0xc]       ; 004d0120
         ;   Label: LAB_004d0120
     POP EDI                             ; 004d0124
@@ -168,49 +168,49 @@ section .text
     RET                                 ; 004d012b
     TEST EAX,EAX                        ; 004d012c
         ;   Label: LAB_004d012c
-    JZ 0x004d00c8                       ; 004d012e | LAB_004d00c8
-        ;   XREF to: 004d00c8 (CONDITIONAL_JUMP)
+    JZ 0x004d00c8                       ; 004d012e
+        ;   XREF to: 004d00c8 (CONDITIONAL_JUMP)  ; LAB_004d00c8
     MOV AL,byte ptr [ESP + 0x1c]        ; 004d0130
     INC AL                              ; 004d0134
     AND EAX,0xff                        ; 004d0136
-    TEST byte ptr [EAX + 0x6849c4],0x2  ; 004d013b | char[256] g_CharacterClassificationTable
-    JZ 0x004d0148                       ; 004d0142 | LAB_004d0148
-        ;   XREF to: 004d0148 (CONDITIONAL_JUMP)
+    TEST byte ptr [EAX + 0x6849c4],0x2  ; 004d013b | g_CharacterClassificationTable
+    JZ 0x004d0148                       ; 004d0142
+        ;   XREF to: 004d0148 (CONDITIONAL_JUMP)  ; LAB_004d0148
     MOV dword ptr [ESP + 0x18],EBX      ; 004d0144
     MOV EAX,dword ptr [ESP + 0x14]      ; 004d0148
         ;   Label: LAB_004d0148
     XOR EDI,EDI                         ; 004d014c
     CMP EBX,EAX                         ; 004d014e
-    JGE 0x004d0177                      ; 004d0150 | LAB_004d0177
-        ;   XREF to: 004d0177 (CONDITIONAL_JUMP)
-    PUSH 0x2d7b010                      ; 004d0152 | char[256] g_TempTextBuffer
+    JGE 0x004d0177                      ; 004d0150
+        ;   XREF to: 004d0177 (CONDITIONAL_JUMP)  ; LAB_004d0177
+    PUSH 0x2d7b010                      ; 004d0152 | g_TempTextBuffer
     MOV EDX,dword ptr [ESP + 0x34]      ; 004d0157
     XOR CH,CH                           ; 004d015b
     PUSH EDX                            ; 004d015d
-    MOV byte ptr [EBX + 0x2d7b010],CH   ; 004d015e | char[256] g_TempTextBuffer
-    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 004d0164 | int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)
-        ;   XREF to: 004cfe80 (UNCONDITIONAL_CALL)
+    MOV byte ptr [EBX + 0x2d7b010],CH   ; 004d015e | g_TempTextBuffer
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 004d0164
+        ;   XREF to: 004cfe80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004d0169
     CMP EAX,dword ptr [ESP + 0x44]      ; 004d016c
-    JG 0x004d0177                       ; 004d0170 | LAB_004d0177
-        ;   XREF to: 004d0177 (CONDITIONAL_JUMP)
+    JG 0x004d0177                       ; 004d0170
+        ;   XREF to: 004d0177 (CONDITIONAL_JUMP)  ; LAB_004d0177
     MOV EDI,0x1                         ; 004d0172
     MOV AL,byte ptr [ESP + 0x1c]        ; 004d0177
         ;   Label: LAB_004d0177
-    MOV byte ptr [EBX + 0x2d7b010],AL   ; 004d017b | char[256] g_TempTextBuffer
+    MOV byte ptr [EBX + 0x2d7b010],AL   ; 004d017b | g_TempTextBuffer
     TEST EDI,EDI                        ; 004d0181
-    JZ 0x004d018c                       ; 004d0183 | LAB_004d018c
-        ;   XREF to: 004d018c (CONDITIONAL_JUMP)
+    JZ 0x004d018c                       ; 004d0183
+        ;   XREF to: 004d018c (CONDITIONAL_JUMP)  ; LAB_004d018c
     INC EBX                             ; 004d0185
     INC ESI                             ; 004d0186
-    JMP 0x004d00bb                      ; 004d0187 | LAB_004d00bb
-        ;   XREF to: 004d00bb (UNCONDITIONAL_JUMP)
+    JMP 0x004d00bb                      ; 004d0187
+        ;   XREF to: 004d00bb (UNCONDITIONAL_JUMP)  ; LAB_004d00bb
     MOV ESI,dword ptr [ESP + 0x18]      ; 004d018c
         ;   Label: LAB_004d018c
     TEST ESI,ESI                        ; 004d0190
-    JL 0x004d00c8                       ; 004d0192 | LAB_004d00c8
-        ;   XREF to: 004d00c8 (CONDITIONAL_JUMP)
+    JL 0x004d00c8                       ; 004d0192
+        ;   XREF to: 004d00c8 (CONDITIONAL_JUMP)  ; LAB_004d00c8
     MOV EBX,ESI                         ; 004d0198
-    JMP 0x004d00c8                      ; 004d019a | LAB_004d00c8
-        ;   XREF to: 004d00c8 (UNCONDITIONAL_JUMP)
+    JMP 0x004d00c8                      ; 004d019a
+        ;   XREF to: 004d00c8 (UNCONDITIONAL_JUMP)  ; LAB_004d00c8
 

@@ -19,8 +19,8 @@ section .text
     MOV EAX,ESP                         ; 005e1ec6
     PUSH EAX                            ; 005e1ec8
     PUSH 0x101                          ; 005e1ec9
-    CALL crt_wsock32.c_WSAStartup       ; 005e1ece | int crt_wsock32.c_WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData)
-        ;   XREF to: 00610eda (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_WSAStartup       ; 005e1ece
+        ;   XREF to: 00610eda (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_WSAStartup(WORD wVersionRequested, LPWSADATA lpWSAData)
     ADD ESP,0x190                       ; 005e1ed3
     RET                                 ; 005e1ed9
 

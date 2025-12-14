@@ -86,7 +86,7 @@ section .text
     MOV dword ptr [ESP + 0x40],ECX      ; 00572851
     MOV dword ptr [ESP + 0x44],EDX      ; 00572855
     MOV dword ptr [ESP + 0x74],EDX      ; 00572859
-    FLD float ptr [0x00646256]          ; 0057285d | float g_RaycastStepOffsetScale
+    FLD float ptr [0x00646256]          ; 0057285d | g_RaycastStepOffsetScale
         ;   Label: LAB_0057285d
     FLD float ptr [ESP + 0x3c]          ; 00572863
     FMUL ST1                            ; 00572867
@@ -94,7 +94,7 @@ section .text
     FMUL ST2                            ; 0057286d
     FLD float ptr [ESP + 0x44]          ; 0057286f
     FMULP ST3                           ; 00572873
-    FLD float ptr [0x0064625a]          ; 00572875 | float g_RaycastStepSize
+    FLD float ptr [0x0064625a]          ; 00572875 | g_RaycastStepSize
     FLD float ptr [ESP + 0x30]          ; 0057287b
     FMUL ST1                            ; 0057287f
     FLD float ptr [ESP + 0x34]          ; 00572881
@@ -146,8 +146,8 @@ section .text
     FSTP float ptr [ESP + 0x6c]         ; 00572914
     PUSH ESI                            ; 00572918
     FSTP float ptr [ESP + 0x74]         ; 00572919
-    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00572530 ; 0057291d | float core_setcolid.cpp_CDemonSet_raycast_FUN_00572530(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
-        ;   XREF to: 00572530 (UNCONDITIONAL_CALL)
+    CALL core_setcolid.cpp_CDemonSet_raycast_FUN_00572530 ; 0057291d
+        ;   XREF to: 00572530 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_raycast_FUN_00572530(CDemonSet * this_ptr, CVector3f * ray_origin, CVector3f * ray_target)
     MOV dword ptr [ESP + 0x7c],EAX      ; 00572922
     FLD float ptr [ESP + 0x7c]          ; 00572926
     ADD ESP,0xc                         ; 0057292a
@@ -158,20 +158,20 @@ section .text
     FCOMP double ptr [ESP]              ; 00572938
     FNSTSW AX                           ; 0057293b
     SAHF                                ; 0057293d
-    JA 0x0057294e                       ; 0057293e | LAB_0057294e
-        ;   XREF to: 0057294e (CONDITIONAL_JUMP)
+    JA 0x0057294e                       ; 0057293e
+        ;   XREF to: 0057294e (CONDITIONAL_JUMP)  ; LAB_0057294e
     FLD1                                ; 00572940
     FCOMP double ptr [ESP]              ; 00572942
     FNSTSW AX                           ; 00572945
     SAHF                                ; 00572947
-    JNC 0x005729f2                      ; 00572948 | LAB_005729f2
-        ;   XREF to: 005729f2 (CONDITIONAL_JUMP)
+    JNC 0x005729f2                      ; 00572948
+        ;   XREF to: 005729f2 (CONDITIONAL_JUMP)  ; LAB_005729f2
     LEA EDX,[ESP + 0x18]                ; 0057294e
         ;   Label: LAB_0057294e
     LEA EAX,[ESP + 0x60]                ; 00572952
     CMP EDX,EAX                         ; 00572956
-    JZ 0x00572972                       ; 00572958 | LAB_00572972
-        ;   XREF to: 00572972 (CONDITIONAL_JUMP)
+    JZ 0x00572972                       ; 00572958
+        ;   XREF to: 00572972 (CONDITIONAL_JUMP)  ; LAB_00572972
     MOV EAX,dword ptr [ESP + 0x60]      ; 0057295a
     MOV dword ptr [ESP + 0x18],EAX      ; 0057295e
     MOV EAX,dword ptr [ESP + 0x64]      ; 00572962
@@ -210,8 +210,8 @@ section .text
     FSTP float ptr [ESP + 0x34]         ; 005729cf
     FSTP float ptr [ESP + 0x38]         ; 005729d3
     CMP EBX,0x64                        ; 005729d7
-    JL 0x0057285d                       ; 005729da | LAB_0057285d
-        ;   XREF to: 0057285d (CONDITIONAL_JUMP)
+    JL 0x0057285d                       ; 005729da
+        ;   XREF to: 0057285d (CONDITIONAL_JUMP)  ; LAB_0057285d
     MOV dword ptr [ESP + 0x6c],0xbf800000 ; 005729e0
     MOV EAX,dword ptr [ESP + 0x6c]      ; 005729e8
     MOV ESP,EBP                         ; 005729ec
@@ -221,7 +221,7 @@ section .text
     RET                                 ; 005729f1
     FLD float ptr [ESP + 0x8]           ; 005729f2
         ;   Label: LAB_005729f2
-    FMUL float ptr [0x0064625a]         ; 005729f6 | float g_RaycastStepSize
+    FMUL float ptr [0x0064625a]         ; 005729f6 | g_RaycastStepSize
     FADD float ptr [ESP + 0x74]         ; 005729fc
     FSTP float ptr [ESP + 0x6c]         ; 00572a00
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00572a04

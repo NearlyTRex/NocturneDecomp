@@ -1,165 +1,165 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 118, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 144, 
-    "assembly_lines": 91, 
-    "suspect_count": 6, 
+    "assembly_lines": 91,
+    "complexity_score": 118,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 9,
+    "pseudocode_lines": 53,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_calloc_FUN_0060ca90", 
-      "addr": "0060ca90"
-    }, 
-    {
-      "name": "crt_memory.c_realloc_FUN_00601df0", 
-      "addr": "00601df0"
-    }, 
-    {
-      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660", 
-      "addr": "00606660"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }, 
-    {
-      "name": "TlsSetValue", 
-      "addr": "EXTERNAL:000000a1"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GetCurrentThreadId*", 
-      "name": "PTR_GetCurrentThreadId_00611584", 
-      "addr": "00611584", 
-      "value": "00211e84"
-    }, 
-    {
-      "type": "TlsSetValue*", 
-      "name": "PTR_TlsSetValue_00611658", 
-      "addr": "00611658", 
-      "value": "0021226c"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_resize_thread__00659648", 
-      "addr": "00659648", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_resize_thread__00659670", 
-      "addr": "00659670", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_TLSIndex", 
-      "addr": "00684ee0", 
-      "value": "0xffffffff"
-    }, 
-    {
-      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f10", 
-      "addr": "00684f10", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f14", 
-      "addr": "00684f14", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_RuntimeBufferSize", 
-      "addr": "006854f8", 
-      "value": "0xf4"
-    }, 
-    {
-      "type": "ThreadRegistryEntry*", 
-      "name": "g_ThreadDataRegistryList", 
-      "addr": "03f9c160", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 27, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar3 = *(uint *)((int)pTVar1->dataBuffer + 0xf0);"
-    }, 
-    {
-      "line": 37, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);"
-    }, 
-    {
-      "line": 38, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);"
-    }, 
-    {
-      "line": 49, 
-      "match": "(DWORD *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(DWORD *)((int)lpTlsValue + 0xf0) = g_RuntimeBufferSize;"
-    }, 
-    {
-      "line": 51, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)lpTlsValue + 0x52) = 1;"
-    }, 
-    {
-      "line": 52, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)lpTlsValue + 0x53) = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "0060caf8", 
-    "signature": "void * crt_tls.c_getThreadLocalData_FUN_0060caf8(void)", 
-    "address_range": [
-      [
-        "0060caf8", 
-        "0060cbcc"
-      ]
-    ], 
-    "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 144
+  },
   "cross_references": [
     {
-      "from_addr": "0060a228", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_tls.c_get_thread_local_data_FUN_0060a1fc", 
-      "addr": "0060a1fc"
+      "addr": "0060a1fc",
+      "from_addr": "0060a228",
+      "name": "crt_tls.c_get_thread_local_data_FUN_0060a1fc",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060caf8",
+    "address_range": [
+      [
+        "0060caf8",
+        "0060cbcc"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8",
+    "signature": "void * crt_tls.c_getThreadLocalData_FUN_0060caf8(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060ca90",
+      "name": "crt_memory.c_calloc_FUN_0060ca90"
+    },
+    {
+      "addr": "00601df0",
+      "name": "crt_memory.c_realloc_FUN_00601df0"
+    },
+    {
+      "addr": "00606660",
+      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660"
+    },
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    },
+    {
+      "addr": "EXTERNAL:000000a1",
+      "name": "TlsSetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611584",
+      "name": "PTR_GetCurrentThreadId_00611584",
+      "type": "GetCurrentThreadId*",
+      "value": "00211e84"
+    },
+    {
+      "addr": "00611658",
+      "name": "PTR_TlsSetValue_00611658",
+      "type": "TlsSetValue*",
+      "value": "0021226c"
+    },
+    {
+      "addr": "00659648",
+      "name": "s_Unable_to_resize_thread__00659648",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00659670",
+      "name": "s_Unable_to_resize_thread__00659670",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00684ee0",
+      "name": "g_TLSIndex",
+      "type": "DWORD",
+      "value": "0xffffffff"
+    },
+    {
+      "addr": "00684f10",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f10",
+      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684f14",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f14",
+      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "006854f8",
+      "name": "g_RuntimeBufferSize",
+      "type": "DWORD",
+      "value": "0xf4"
+    },
+    {
+      "addr": "03f9c160",
+      "name": "g_ThreadDataRegistryList",
+      "type": "ThreadRegistryEntry*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(uint *)((int)",
+      "text": "uVar3 = *(uint *)((int)pTVar1->dataBuffer + 0xf0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(DWORD *)((int)",
+      "text": "*(DWORD *)((int)lpTlsValue + 0xf0) = g_RuntimeBufferSize;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)lpTlsValue + 0x52) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)lpTlsValue + 0x53) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

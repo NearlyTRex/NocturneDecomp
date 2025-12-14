@@ -48,7 +48,6 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
         return -1;
       }
       g_BackupVertices =
-           (SVertexData *)
            shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      ((g_VertexCount + iVar11) * 0x14,"..\\shape\\design.c",0x1a98);
       if (g_BackupVertices == (SVertexData *)0x0) {
@@ -57,7 +56,6 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
         core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to get mem for vertices in mouse wheel polygon reducer!");
       }
       g_BackupPolygons =
-           (SShapeEditorPolygon *)
            shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      ((int)("..\\shape\\design.c" + g_PolygonCount) * 0x184,
                       "..\\shape\\design.c",0x1a9c);

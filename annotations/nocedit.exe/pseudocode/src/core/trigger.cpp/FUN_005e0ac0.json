@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 92, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 6, 
-    "global_count": 0, 
-    "total_lines": 43, 
-    "assembly_lines": 26, 
-    "suspect_count": 7, 
+    "assembly_lines": 26,
+    "complexity_score": 92,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 17,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20", 
-      "addr": "004a6e20"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000008;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000008 != (char *)0x0) && (*(int *)(in_stack_00000004 + 0x174) == 7)) {"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000008 != (char *)0x0) && (*(int *)(in_stack_00000004 + 0x174) == 7)) {"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(char *)(in_stack_00000004 + 0x304) == '\\0') {"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((char *)(in_stack_00000004 + 0x304),in_stack_00000008,0);"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((char *)(in_stack_00000004 + 0x304),in_stack_00000008,0);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005e0ac0", 
-    "signature": "undefined core_trigger.cpp_FUN_005e0ac0()", 
-    "address_range": [
-      [
-        "005e0ac0", 
-        "005e0af8"
-      ]
-    ], 
-    "name": "core_trigger.cpp_FUN_005e0ac0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 43
+  },
   "cross_references": [
     {
-      "from_addr": "0040ab09", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210", 
-      "addr": "0040a210"
-    }, 
+      "addr": "0040a210",
+      "from_addr": "0040ab09",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00449277", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_crossbow.cpp_CCrossbow_FUN_00448f20", 
-      "addr": "00448f20"
-    }, 
+      "addr": "00448f20",
+      "from_addr": "00449277",
+      "name": "core_crossbow.cpp_CCrossbow_FUN_00448f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f0a6c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gun.cpp_FUN_004f0350", 
-      "addr": "004f0350"
-    }, 
+      "addr": "004f0350",
+      "from_addr": "004f0a6c",
+      "name": "core_gun.cpp_FUN_004f0350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00506200", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lightgun.cpp_FUN_00505c70", 
-      "addr": "00505c70"
-    }, 
+      "addr": "00505c70",
+      "from_addr": "00506200",
+      "name": "core_lightgun.cpp_FUN_00505c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005de285", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tommygun.cpp_FUN_005ddb30", 
-      "addr": "005ddb30"
-    }, 
+      "addr": "005ddb30",
+      "from_addr": "005de285",
+      "name": "core_tommygun.cpp_FUN_005ddb30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e3b93", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_FUN_005e3750", 
-      "addr": "005e3750"
+      "addr": "005e3750",
+      "from_addr": "005e3b93",
+      "name": "core_turret.cpp_FUN_005e3750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e0ac0",
+    "address_range": [
+      [
+        "005e0ac0",
+        "005e0af8"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_trigger.cpp_FUN_005e0ac0",
+    "signature": "undefined core_trigger.cpp_FUN_005e0ac0()"
+  },
+  "function_calls": [
+    {
+      "addr": "004a6e20",
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "if ((in_stack_00000008 != (char *)0x0) && (*(int *)(in_stack_00000004 + 0x174) == 7)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000008 != (char *)0x0) && (*(int *)(in_stack_00000004 + 0x174) == 7)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "if (*(char *)(in_stack_00000004 + 0x304) == '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "((char *)(in_stack_00000004 + 0x304),in_stack_00000008,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "((char *)(in_stack_00000004 + 0x304),in_stack_00000008,0);",
+      "type": "stack_param"
     }
   ]
 }

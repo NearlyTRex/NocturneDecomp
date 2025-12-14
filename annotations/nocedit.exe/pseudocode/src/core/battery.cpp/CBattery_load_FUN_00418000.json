@@ -1,107 +1,107 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 69, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 41, 
-    "assembly_lines": 27, 
-    "suspect_count": 5, 
+    "assembly_lines": 27,
+    "complexity_score": 69,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 14,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
-      "addr": "0040c1c0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0", 
-      "addr": "0040b8f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_006159ec", 
-      "addr": "006159ec", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rechargeTime_006159f6", 
-      "addr": "006159f6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_dischargeTime_00615a03", 
-      "addr": "00615a03", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&in_stack_00000004[2].location.position.z,\"rechargeTime\");"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((float *)&in_stack_00000004[2].location.area_id,\"dischargeTime\");"
-    }
-  ], 
+    ],
+    "total_lines": 41
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00418000", 
-    "signature": "undefined core_battery.cpp_CBattery_load_FUN_00418000()", 
+    "address": "00418000",
     "address_range": [
       [
-        "00418000", 
+        "00418000",
         "0041804b"
       ]
-    ], 
-    "name": "core_battery.cpp_CBattery_load_FUN_00418000"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_battery.cpp_CBattery_load_FUN_00418000",
+    "signature": "undefined core_battery.cpp_CBattery_load_FUN_00418000()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c1c0",
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
+    },
+    {
+      "addr": "0040b770",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b8f0",
+      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006159ec",
+      "name": "s_modelName_006159ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006159f6",
+      "name": "s_rechargeTime_006159f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615a03",
+      "name": "s_dischargeTime_00615a03",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004[2].location.position.z,\"rechargeTime\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "((float *)&in_stack_00000004[2].location.area_id,\"dischargeTime\");",
+      "type": "stack_param"
+    }
+  ]
 }

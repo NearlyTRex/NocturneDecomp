@@ -20,18 +20,18 @@ section .text
     PUSH EDX                            ; 00562864
     MOV ECX,dword ptr [ESP + 0x8]       ; 00562865
     PUSH ECX                            ; 00562869
-    CALL core_script.cpp_FUN_005627f0   ; 0056286a | undefined core_script.cpp_FUN_005627f0()
-        ;   XREF to: 005627f0 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_005627f0   ; 0056286a
+        ;   XREF to: 005627f0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_005627f0()
     ADD ESP,0x8                         ; 0056286f
     TEST EAX,EAX                        ; 00562872
-    JNZ 0x00562877                      ; 00562874 | LAB_00562877
-        ;   XREF to: 00562877 (CONDITIONAL_JUMP)
+    JNZ 0x00562877                      ; 00562874
+        ;   XREF to: 00562877 (CONDITIONAL_JUMP)  ; LAB_00562877
     RET                                 ; 00562876
     ADD EAX,0x158                       ; 00562877
         ;   Label: LAB_00562877
     PUSH EAX                            ; 0056287c
-    CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 0056287d | CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
-        ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 0056287d
+        ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00562882
     RET                                 ; 00562885
 

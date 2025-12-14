@@ -1,102 +1,102 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 17, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 63, 
-    "assembly_lines": 46, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_pollAllStreams_FUN_005ace90", 
-      "addr": "005ace90"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_releaseMutex_FUN_005f4050", 
-      "addr": "005f4050"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010", 
-      "addr": "005f4010"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_AudioLatencyMultiplier", 
-      "addr": "00650ecf", 
-      "value": "3"
-    }, 
-    {
-      "type": "CSoundDevice*", 
-      "name": "g_CSoundDevicePtr", 
-      "addr": "03f69268", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "g_AudioLatencySeconds", 
-      "addr": "03f693f8", 
-      "value": null
-    }, 
-    {
-      "type": "HANDLE", 
-      "name": "g_SoundMutex", 
-      "addr": "03f69408", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundLockCount", 
-      "addr": "03f6940c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005abe20", 
-    "signature": "void sound_sndmain.cpp_processAudio_FUN_005abe20(void)", 
-    "address_range": [
-      [
-        "005abe20", 
-        "005abe96"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_processAudio_FUN_005abe20"
-  }, 
-  "stack_frame": {
-    "local_size": 12, 
-    "variables": [
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_8"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 46,
+    "complexity_score": 17,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
+  },
   "cross_references": [
     {
-      "from_addr": "00529edc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0", 
-      "addr": "00529ed0"
-    }, 
+      "addr": "00529ed0",
+      "from_addr": "00529edc",
+      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005abbb8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_audioThreadProc_FUN_005abba0", 
-      "addr": "005abba0"
+      "addr": "005abba0",
+      "from_addr": "005abbb8",
+      "name": "sound_sndmain.cpp_audioThreadProc_FUN_005abba0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005abe20",
+    "address_range": [
+      [
+        "005abe20",
+        "005abe96"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_processAudio_FUN_005abe20",
+    "signature": "void sound_sndmain.cpp_processAudio_FUN_005abe20(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ace90",
+      "name": "sound_sndmain.cpp_pollAllStreams_FUN_005ace90"
+    },
+    {
+      "addr": "005f4050",
+      "name": "wincore_winrun.cpp_releaseMutex_FUN_005f4050"
+    },
+    {
+      "addr": "005f4010",
+      "name": "wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00650ecf",
+      "name": "g_AudioLatencyMultiplier",
+      "type": "double",
+      "value": "3"
+    },
+    {
+      "addr": "03f69268",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
+      "value": null
+    },
+    {
+      "addr": "03f693f8",
+      "name": "g_AudioLatencySeconds",
+      "type": "double",
+      "value": null
+    },
+    {
+      "addr": "03f69408",
+      "name": "g_SoundMutex",
+      "type": "HANDLE",
+      "value": null
+    },
+    {
+      "addr": "03f6940c",
+      "name": "g_SoundLockCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 8,
+        "type": "undefined8"
+      }
+    ]
+  },
+  "suspects": []
 }

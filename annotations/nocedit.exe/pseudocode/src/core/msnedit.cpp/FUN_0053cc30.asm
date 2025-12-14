@@ -32,46 +32,46 @@ section .text
     MOV EBX,dword ptr [EBX + 0x548]     ; 0053cc4a
     MOV dword ptr [ESP],EAX             ; 0053cc50
     TEST EBX,EBX                        ; 0053cc53
-    JZ 0x0053cc95                       ; 0053cc55 | LAB_0053cc95
-        ;   XREF to: 0053cc95 (CONDITIONAL_JUMP)
+    JZ 0x0053cc95                       ; 0053cc55
+        ;   XREF to: 0053cc95 (CONDITIONAL_JUMP)  ; LAB_0053cc95
     TEST ESI,ESI                        ; 0053cc57
         ;   Label: LAB_0053cc57
-    JZ 0x0053cc6e                       ; 0053cc59 | LAB_0053cc6e
-        ;   XREF to: 0053cc6e (CONDITIONAL_JUMP)
+    JZ 0x0053cc6e                       ; 0053cc59
+        ;   XREF to: 0053cc6e (CONDITIONAL_JUMP)  ; LAB_0053cc6e
     CMP byte ptr [ESI],0x0              ; 0053cc5b
-    JZ 0x0053cc6e                       ; 0053cc5e | LAB_0053cc6e
-        ;   XREF to: 0053cc6e (CONDITIONAL_JUMP)
+    JZ 0x0053cc6e                       ; 0053cc5e
+        ;   XREF to: 0053cc6e (CONDITIONAL_JUMP)  ; LAB_0053cc6e
     PUSH ESI                            ; 0053cc60
     PUSH EBX                            ; 0053cc61
-    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 0053cc62 | int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 0053cc62
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0053cc67
     TEST EAX,EAX                        ; 0053cc6a
-    JZ 0x0053cc8b                       ; 0053cc6c | LAB_0053cc8b
-        ;   XREF to: 0053cc8b (CONDITIONAL_JUMP)
+    JZ 0x0053cc8b                       ; 0053cc6c
+        ;   XREF to: 0053cc8b (CONDITIONAL_JUMP)  ; LAB_0053cc8b
     TEST EDI,EDI                        ; 0053cc6e
         ;   Label: LAB_0053cc6e
-    JZ 0x0053cc81                       ; 0053cc70 | LAB_0053cc81
-        ;   XREF to: 0053cc81 (CONDITIONAL_JUMP)
+    JZ 0x0053cc81                       ; 0053cc70
+        ;   XREF to: 0053cc81 (CONDITIONAL_JUMP)  ; LAB_0053cc81
     PUSH EBX                            ; 0053cc72
     MOV EDX,dword ptr [ESP + 0x24]      ; 0053cc73
     PUSH EDX                            ; 0053cc77
     CALL EDI                            ; 0053cc78
     ADD ESP,0x8                         ; 0053cc7a
     TEST EAX,EAX                        ; 0053cc7d
-    JZ 0x0053cc8b                       ; 0053cc7f | LAB_0053cc8b
-        ;   XREF to: 0053cc8b (CONDITIONAL_JUMP)
+    JZ 0x0053cc8b                       ; 0053cc7f
+        ;   XREF to: 0053cc8b (CONDITIONAL_JUMP)  ; LAB_0053cc8b
     PUSH EBX                            ; 0053cc81
         ;   Label: LAB_0053cc81
     PUSH EBP                            ; 0053cc82
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0053cc83 | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 0053cc83
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 0053cc88
     MOV EBX,dword ptr [EBX + 0x14c]     ; 0053cc8b
         ;   Label: LAB_0053cc8b
     TEST EBX,EBX                        ; 0053cc91
-    JNZ 0x0053cc57                      ; 0053cc93 | LAB_0053cc57
-        ;   XREF to: 0053cc57 (CONDITIONAL_JUMP)
+    JNZ 0x0053cc57                      ; 0053cc93
+        ;   XREF to: 0053cc57 (CONDITIONAL_JUMP)  ; LAB_0053cc57
     MOV EAX,dword ptr [EBP]             ; 0053cc95
         ;   Label: LAB_0053cc95
     DEC EAX                             ; 0053cc98

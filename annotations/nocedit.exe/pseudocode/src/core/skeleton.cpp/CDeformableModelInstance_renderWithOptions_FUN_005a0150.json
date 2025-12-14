@@ -1,218 +1,218 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 106, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 11, 
-    "global_count": 0, 
-    "total_lines": 94, 
-    "assembly_lines": 68, 
-    "suspect_count": 7, 
+    "assembly_lines": 68,
+    "complexity_score": 106,
+    "cross_reference_count": 11,
+    "function_call_count": 6,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40", 
-      "addr": "0059ce40"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
-      "addr": "005a07a0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340", 
-      "addr": "005a0340"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0", 
-      "addr": "005a02f0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0", 
-      "addr": "005a02a0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250", 
-      "addr": "005a0250"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CBoundingBox3D *unaff_EDI;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000018;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 15, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "lod_index = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_00,unaff_EDI);"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000001c == 0) {"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((int)in_stack_00000018 < 0) || ((in_stack_00000018 & 0x100) == 0)) {"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((int)in_stack_00000018 < 0) || ((in_stack_00000018 & 0x100) == 0)) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a0150", 
-    "signature": "void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, int render_pass)", 
-    "address_range": [
-      [
-        "005a0150", 
-        "005a01cb"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "lod_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "render_flags"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "lighting_mode"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_pass"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 94
+  },
   "cross_references": [
     {
-      "from_addr": "00413c4c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0", 
-      "addr": "00413ae0"
-    }, 
+      "addr": "00413ae0",
+      "from_addr": "00413c4c",
+      "name": "core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041752e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batman.cpp_CBatman_renderOpaque_FUN_004173b0", 
-      "addr": "004173b0"
-    }, 
+      "addr": "004173b0",
+      "from_addr": "0041752e",
+      "name": "core_batman.cpp_CBatman_renderOpaque_FUN_004173b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00429b15", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_00429aa0", 
-      "addr": "00429aa0"
-    }, 
+      "addr": "00429aa0",
+      "from_addr": "00429b15",
+      "name": "core_charactr.cpp_CCharacter_FUN_00429aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0042aec0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ad00", 
-      "addr": "0042ad00"
-    }, 
+      "addr": "0042ad00",
+      "from_addr": "0042aec0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042ad00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043cae4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880", 
-      "addr": "0043c880"
-    }, 
+      "addr": "0043c880",
+      "from_addr": "0043cae4",
+      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00485d6d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0", 
-      "addr": "00485be0"
-    }, 
+      "addr": "00485be0",
+      "from_addr": "00485d6d",
+      "name": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005206f7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_CMimic_FUN_005205f0", 
-      "addr": "005205f0"
-    }, 
+      "addr": "005205f0",
+      "from_addr": "005206f7",
+      "name": "core_mimic.cpp_CMimic_FUN_005205f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00520907", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_FUN_005208b0", 
-      "addr": "005208b0"
-    }, 
+      "addr": "005208b0",
+      "from_addr": "00520907",
+      "name": "core_mimic.cpp_FUN_005208b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005971ca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
-    }, 
+      "addr": "005968b0",
+      "from_addr": "005971ca",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c760e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590", 
-      "addr": "005c7590"
-    }, 
+      "addr": "005c7590",
+      "from_addr": "005c760e",
+      "name": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e6e14", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0", 
-      "addr": "005e6da0"
+      "addr": "005e6da0",
+      "from_addr": "005e6e14",
+      "name": "core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a0150",
+    "address_range": [
+      [
+        "005a0150",
+        "005a01cb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150",
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, int render_pass)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059ce40",
+      "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40"
+    },
+    {
+      "addr": "005a07a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005a0340",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340"
+    },
+    {
+      "addr": "005a02f0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0"
+    },
+    {
+      "addr": "005a02a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0"
+    },
+    {
+      "addr": "005a0250",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "lighting_mode",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_pass",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EDI",
+      "text": "CBoundingBox3D *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000018",
+      "text": "uint in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EDI",
+      "text": "lod_index = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_00,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000001c",
+      "text": "if (in_stack_0000001c == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000018",
+      "text": "if (((int)in_stack_00000018 < 0) || ((in_stack_00000018 & 0x100) == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000018",
+      "text": "if (((int)in_stack_00000018 < 0) || ((in_stack_00000018 & 0x100) == 0)) {",
+      "type": "stack_param"
     }
   ]
 }

@@ -1,211 +1,211 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 105, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 7, 
-    "global_count": 0, 
-    "total_lines": 157, 
-    "assembly_lines": 117, 
-    "suspect_count": 6, 
+    "assembly_lines": 117,
+    "complexity_score": 105,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 40,
+    "suspect_count": 6,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0052e3a8", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 24, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar4 = *(int *)(extraout_EDX + 0x520 + iVar1 * 4);"
-    }, 
-    {
-      "line": 26, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar3 = *(int *)(extraout_EDX + 100);"
-    }, 
-    {
-      "line": 27, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if (iVar1 < *(int *)(extraout_EDX + 0x520)) {"
-    }, 
-    {
-      "line": 28, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar3 = *(int *)(extraout_EDX + 0x524 + iVar1 * 4);"
-    }, 
-    {
-      "line": 36, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "local_1c = (float)(*(int *)(extraout_EDX + 100) + -1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052e3a0", 
-    "signature": "float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0(CMotionController * this_ptr, int motion_index, float marker_position)", 
-    "address_range": [
-      [
-        "0052e3a0", 
-        "0052e4b7"
-      ]
-    ], 
-    "name": "core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMotionController *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "motion_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "marker_position"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 56, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 157
+  },
   "cross_references": [
     {
-      "from_addr": "004d51e0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d4d80", 
-      "addr": "004d4d80"
-    }, 
+      "addr": "004d4d80",
+      "from_addr": "004d51e0",
+      "name": "core_gabriela.cpp_FUN_004d4d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e68c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ghoul.cpp_CGhoul_FUN_004e6600", 
-      "addr": "004e6600"
-    }, 
+      "addr": "004e6600",
+      "from_addr": "004e68c0",
+      "name": "core_ghoul.cpp_CGhoul_FUN_004e6600",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f5eda", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0", 
-      "addr": "004f4bd0"
-    }, 
+      "addr": "004f4bd0",
+      "from_addr": "004f5eda",
+      "name": "core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00558431", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_scat.cpp_FUN_005582c0", 
-      "addr": "005582c0"
-    }, 
+      "addr": "005582c0",
+      "from_addr": "00558431",
+      "name": "core_scat.cpp_FUN_005582c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bf6cc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005be520", 
-      "addr": "005be520"
-    }, 
+      "addr": "005be520",
+      "from_addr": "005bf6cc",
+      "name": "core_stranger.cpp_CStranger_FUN_005be520",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bfda9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005bfb60", 
-      "addr": "005bfb60"
-    }, 
+      "addr": "005bfb60",
+      "from_addr": "005bfda9",
+      "name": "core_stranger.cpp_CStranger_FUN_005bfb60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c03b3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005c02b0", 
-      "addr": "005c02b0"
+      "addr": "005c02b0",
+      "from_addr": "005c03b3",
+      "name": "core_stranger.cpp_CStranger_FUN_005c02b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052e3a0",
+    "address_range": [
+      [
+        "0052e3a0",
+        "0052e4b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0",
+    "signature": "float core_motion.cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0(CMotionController * this_ptr, int motion_index, float marker_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "motion_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "marker_position",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0052e3a8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_EDX",
+      "text": "iVar4 = *(int *)(extraout_EDX + 0x520 + iVar1 * 4);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_EDX",
+      "text": "iVar3 = *(int *)(extraout_EDX + 100);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_EDX",
+      "text": "if (iVar1 < *(int *)(extraout_EDX + 0x520)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_EDX",
+      "text": "iVar3 = *(int *)(extraout_EDX + 0x524 + iVar1 * 4);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 36,
+      "match": "extraout_EDX",
+      "text": "local_1c = (float)(*(int *)(extraout_EDX + 100) + -1);",
+      "type": "extra_output"
     }
   ]
 }

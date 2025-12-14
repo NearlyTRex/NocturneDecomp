@@ -1,61 +1,61 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 10, 
-    "assembly_lines": 4, 
-    "suspect_count": 2, 
+    "assembly_lines": 4,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return in_stack_00000004 + 0x8fb0;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00567d30", 
-    "signature": "undefined core_script.cpp_FUN_00567d30()", 
-    "address_range": [
-      [
-        "00567d30", 
-        "00567d39"
-      ]
-    ], 
-    "name": "core_script.cpp_FUN_00567d30"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 10
+  },
   "cross_references": [
     {
-      "from_addr": "005597c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00559730", 
-      "addr": "00559730"
+      "addr": "00559730",
+      "from_addr": "005597c0",
+      "name": "core_script.cpp_FUN_00559730",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00567d30",
+    "address_range": [
+      [
+        "00567d30",
+        "00567d39"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_FUN_00567d30",
+    "signature": "undefined core_script.cpp_FUN_00567d30()"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "return in_stack_00000004 + 0x8fb0;",
+      "type": "stack_param"
     }
   ]
 }

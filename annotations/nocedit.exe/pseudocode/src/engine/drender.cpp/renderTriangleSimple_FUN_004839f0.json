@@ -1,426 +1,426 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 410, 
-    "pseudocode_lines": 220, 
-    "cross_reference_count": 4, 
-    "global_count": 22, 
-    "total_lines": 685, 
-    "assembly_lines": 465, 
-    "suspect_count": 17, 
+    "assembly_lines": 465,
+    "complexity_score": 410,
+    "cross_reference_count": 4,
+    "function_call_count": 5,
+    "global_count": 22,
+    "pseudocode_lines": 220,
+    "suspect_count": 17,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00552150", 
-      "addr": "00552150"
-    }, 
-    {
-      "name": "engine_prim.c_prepareDepthBuffer_FUN_00551fb0", 
-      "addr": "00551fb0"
-    }, 
-    {
-      "name": "engine_prim.c_replaceWWithDepth_FUN_00552110", 
-      "addr": "00552110"
-    }, 
-    {
-      "name": "wincore_windll.cpp_drawPolygon2_FUN_005b7610", 
-      "addr": "005b7610"
-    }, 
-    {
-      "name": "wincore_windll.cpp_renderScanline_FUN_005b5710", 
-      "addr": "005b5710"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SRenderVertex[16]", 
-      "name": "g_RenderVertexBuffer", 
-      "addr": "00688014", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_z", 
-      "addr": "0068801c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x", 
-      "addr": "00688024", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_y", 
-      "addr": "00688028", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_TexturesDisabled", 
-      "addr": "00772a74", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CullingMode", 
-      "addr": "00772a7c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderTriangleEdgeCount", 
-      "addr": "02c6cb70", 
-      "value": null
-    }, 
-    {
-      "type": "SEdgeData[16]", 
-      "name": "g_EdgeInterpolationArray", 
-      "addr": "02c6cb74", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6cb78", 
-      "addr": "02c6cb78", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6cb7c", 
-      "addr": "02c6cb7c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6cb80", 
-      "addr": "02c6cb80", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6cb9c", 
-      "addr": "02c6cb9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6cba0", 
-      "addr": "02c6cba0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6cbbc", 
-      "addr": "02c6cbbc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderTriangleMinScanlineY", 
-      "addr": "02c6cff4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderTriangleMaxScanlineY", 
-      "addr": "02c6cff8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RasterizerDepthBias", 
-      "addr": "02c6d03c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderAbortFlag", 
-      "addr": "02c6d5a8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderedTriangleCount", 
-      "addr": "030e56b8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_ffffff90", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "SRenderVertex *in_stack_ffffff90;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_ffffff94", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_ffffff94;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_ffffff98", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffff98;"
-    }, 
-    {
-      "line": 192, 
-      "match": "in_stack_ffffff90", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98);"
-    }, 
-    {
-      "line": 192, 
-      "match": "in_stack_ffffff94", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98);"
-    }, 
-    {
-      "line": 192, 
-      "match": "in_stack_ffffff98", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98);"
-    }, 
-    {
-      "line": 196, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_0000000c + 8) ="
-    }, 
-    {
-      "line": 197, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_0000000c + 8) + *(int *)(in_stack_0000000c + 0xc);"
-    }, 
-    {
-      "line": 197, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_0000000c + 8) + *(int *)(in_stack_0000000c + 0xc);"
-    }, 
-    {
-      "line": 198, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_0000000c + 0x28) ="
-    }, 
-    {
-      "line": 199, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_0000000c + 0x28) + *(int *)(in_stack_0000000c + 0x2c);"
-    }, 
-    {
-      "line": 199, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_0000000c + 0x28) + *(int *)(in_stack_0000000c + 0x2c);"
-    }, 
-    {
-      "line": 216, 
-      "match": "&stack0xffffff8c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(SRenderVertex **)(&stack0xffffff8c + iVar9 * 4) = g_RenderVertexBuffer + iVar4;"
-    }, 
-    {
-      "line": 220, 
-      "match": "&stack0xffffff90", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((SRenderVertex **)&stack0xffffff90,vertex_count,g_RenderStateFlags);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004839f0", 
-    "signature": "void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(int * vertex_indices, int vertex_count)", 
-    "address_range": [
-      [
-        "004839f0", 
-        "00483ee0"
-      ]
-    ], 
-    "name": "engine_drender.cpp_renderTriangleSimple_FUN_004839f0"
-  }, 
-  "stack_frame": {
-    "local_size": 120, 
-    "variables": [
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "vertex_indices"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 128, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 685
+  },
   "cross_references": [
     {
-      "from_addr": "0048a776", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
-      "addr": "0048a740"
-    }, 
+      "addr": "0048a740",
+      "from_addr": "0048a776",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048d352", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170", 
-      "addr": "0048d170"
-    }, 
+      "addr": "0048d170",
+      "from_addr": "0048d352",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048d544", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410", 
-      "addr": "0048d410"
-    }, 
+      "addr": "0048d410",
+      "from_addr": "0048d544",
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048cfad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00", 
-      "addr": "0048cf00"
+      "addr": "0048cf00",
+      "from_addr": "0048cfad",
+      "name": "engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004839f0",
+    "address_range": [
+      [
+        "004839f0",
+        "00483ee0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_renderTriangleSimple_FUN_004839f0",
+    "signature": "void engine_drender.cpp_renderTriangleSimple_FUN_004839f0(int * vertex_indices, int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00552150",
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00552150"
+    },
+    {
+      "addr": "00551fb0",
+      "name": "engine_prim.c_prepareDepthBuffer_FUN_00551fb0"
+    },
+    {
+      "addr": "00552110",
+      "name": "engine_prim.c_replaceWWithDepth_FUN_00552110"
+    },
+    {
+      "addr": "005b7610",
+      "name": "wincore_windll.cpp_drawPolygon2_FUN_005b7610"
+    },
+    {
+      "addr": "005b5710",
+      "name": "wincore_windll.cpp_renderScanline_FUN_005b5710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00688014",
+      "name": "g_RenderVertexBuffer",
+      "type": "SRenderVertex[16]",
+      "value": null
+    },
+    {
+      "addr": "0068801c",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688024",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688028",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772a74",
+      "name": "g_TexturesDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a7c",
+      "name": "g_CullingMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6cb70",
+      "name": "g_RenderTriangleEdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6cb74",
+      "name": "g_EdgeInterpolationArray",
+      "type": "SEdgeData[16]",
+      "value": null
+    },
+    {
+      "addr": "02c6cb78",
+      "name": "DAT_02c6cb78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6cb7c",
+      "name": "DAT_02c6cb7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6cb80",
+      "name": "DAT_02c6cb80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6cb9c",
+      "name": "DAT_02c6cb9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6cba0",
+      "name": "DAT_02c6cba0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6cbbc",
+      "name": "DAT_02c6cbbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6cff4",
+      "name": "g_RenderTriangleMinScanlineY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6cff8",
+      "name": "g_RenderTriangleMaxScanlineY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d03c",
+      "name": "g_RasterizerDepthBias",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d5a8",
+      "name": "g_RenderAbortFlag",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e56b8",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 128,
+    "local_size": 120,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_indices",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 14,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_ffffff90",
+      "text": "SRenderVertex *in_stack_ffffff90;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_ffffff94",
+      "text": "void *in_stack_ffffff94;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffff98",
+      "text": "int in_stack_ffffff98;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 192,
+      "match": "in_stack_ffffff90",
+      "text": "(in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 192,
+      "match": "in_stack_ffffff94",
+      "text": "(in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 192,
+      "match": "in_stack_ffffff98",
+      "text": "(in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_0000000c",
+      "text": "*(int *)(in_stack_0000000c + 8) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 197,
+      "match": "in_stack_0000000c",
+      "text": "*(int *)(in_stack_0000000c + 8) + *(int *)(in_stack_0000000c + 0xc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 197,
+      "match": "in_stack_0000000c",
+      "text": "*(int *)(in_stack_0000000c + 8) + *(int *)(in_stack_0000000c + 0xc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 198,
+      "match": "in_stack_0000000c",
+      "text": "*(int *)(in_stack_0000000c + 0x28) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 199,
+      "match": "in_stack_0000000c",
+      "text": "*(int *)(in_stack_0000000c + 0x28) + *(int *)(in_stack_0000000c + 0x2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 199,
+      "match": "in_stack_0000000c",
+      "text": "*(int *)(in_stack_0000000c + 0x28) + *(int *)(in_stack_0000000c + 0x2c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 216,
+      "match": "&stack0xffffff8c",
+      "text": "*(SRenderVertex **)(&stack0xffffff8c + iVar9 * 4) = g_RenderVertexBuffer + iVar4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 220,
+      "match": "&stack0xffffff90",
+      "text": "((SRenderVertex **)&stack0xffffff90,vertex_count,g_RenderStateFlags);",
+      "type": "stack_ref"
     }
   ]
 }

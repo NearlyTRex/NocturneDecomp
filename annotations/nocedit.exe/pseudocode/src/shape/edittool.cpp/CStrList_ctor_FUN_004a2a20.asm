@@ -31,6 +31,6 @@ section .text
     MOV dword ptr [EAX],0x0             ; 004a2a24
     MOV dword ptr [EAX + 0x8],0x0       ; 004a2a2a
     MOV dword ptr [EAX + 0x4],0x0       ; 004a2a31
-    MOV dword ptr [EAX + 0xc],0x65d474  ; 004a2a38 | CStrList_vtable g_CStrListVTable
+    MOV dword ptr [EAX + 0xc],0x65d474  ; 004a2a38 | g_CStrListVTable
     RET                                 ; 004a2a3f
 

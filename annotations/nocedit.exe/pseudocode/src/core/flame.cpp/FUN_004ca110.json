@@ -1,954 +1,954 @@
 {
   "complexity": {
-    "function_call_count": 17, 
-    "complexity_score": 1120, 
-    "pseudocode_lines": 290, 
-    "cross_reference_count": 4, 
-    "global_count": 39, 
-    "total_lines": 741, 
-    "assembly_lines": 451, 
-    "suspect_count": 80, 
+    "assembly_lines": 451,
+    "complexity_score": 1120,
+    "cross_reference_count": 4,
+    "function_call_count": 17,
+    "global_count": 39,
+    "pseudocode_lines": 290,
+    "suspect_count": 80,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "suspect_float", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
-      "addr": "00408b40"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
-      "addr": "00408b00"
-    }, 
-    {
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
-      "addr": "0040cc10"
-    }, 
-    {
-      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
-      "addr": "004204f0"
-    }, 
-    {
-      "name": "core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0", 
-      "addr": "004715e0"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_0056d140", 
-      "addr": "0056d140"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0", 
-      "addr": "0048c4a0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
-      "addr": "0048c4f0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800", 
-      "addr": "0048c800"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0", 
-      "addr": "0048c7e0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
-      "addr": "0048c640"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0", 
-      "addr": "0048bad0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
-      "addr": "0048ca50"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_0062a126", 
-      "addr": "0062a126", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062a12e", 
-      "addr": "0062a12e", 
-      "value": "2"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062a136", 
-      "addr": "0062a136", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065e010", 
-      "addr": "0065e010", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "DAT_0067b100", 
-      "addr": "0067b100", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonMission*", 
-      "name": "g_CDemonMissionPtr", 
-      "addr": "0067d550", 
-      "value": "02f33740"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].u", 
-      "addr": "0068802c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].v", 
-      "addr": "00688030", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].light", 
-      "addr": "00688034", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].color", 
-      "addr": "00688038", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].fog", 
-      "addr": "0068803c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].w_recip", 
-      "addr": "00688040", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].u", 
-      "addr": "0068805c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].v", 
-      "addr": "00688060", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].light", 
-      "addr": "00688064", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].color", 
-      "addr": "00688068", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].fog", 
-      "addr": "0068806c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[1].w_recip", 
-      "addr": "00688070", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].u", 
-      "addr": "0068808c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].v", 
-      "addr": "00688090", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].light", 
-      "addr": "00688094", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].color", 
-      "addr": "00688098", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].fog", 
-      "addr": "0068809c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[2].w_recip", 
-      "addr": "006880a0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[3].u", 
-      "addr": "006880bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[3].v", 
-      "addr": "006880c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[3].light", 
-      "addr": "006880c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[3].color", 
-      "addr": "006880c8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[3].fog", 
-      "addr": "006880cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[3].w_recip", 
-      "addr": "006880d0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonCamera*", 
-      "name": "g_CurrentSceneCamera", 
-      "addr": "00823a74", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00f80000", 
-      "addr": "00f80000", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "g_PerspectiveReciprocal", 
-      "addr": "02d051f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f33744", 
-      "addr": "02f33744", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f33768", 
-      "addr": "02f33768", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CVector3i *unaff_ESI;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((in_stack_00000004[1].orient_matrix.m[2].z != 0.0) ||"
-    }, 
-    {
-      "line": 62, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004 == *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c))) {"
-    }, 
-    {
-      "line": 67, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);"
-    }, 
-    {
-      "line": 68, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].previous_transform_state.dirty_flags != 0) {"
-    }, 
-    {
-      "line": 69, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);"
-    }, 
-    {
-      "line": 69, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);"
-    }, 
-    {
-      "line": 71, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].previous_transform_state.orientation.y = fVar4;"
-    }, 
-    {
-      "line": 73, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&"
-    }, 
-    {
-      "line": 74, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(1.0 < SQRT(*(float *)(in_stack_00000004[1].actor_name + 8) *"
-    }, 
-    {
-      "line": 75, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000004[1].actor_name + 8) +"
-    }, 
-    {
-      "line": 76, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)in_stack_00000004[1].actor_name *"
-    }, 
-    {
-      "line": 77, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)in_stack_00000004[1].actor_name +"
-    }, 
-    {
-      "line": 78, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000004[1].actor_name + 4) *"
-    }, 
-    {
-      "line": 79, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000004[1].actor_name + 4)) *"
-    }, 
-    {
-      "line": 80, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].orient_matrix.m[2].x)) {"
-    }, 
-    {
-      "line": 83, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&"
-    }, 
-    {
-      "line": 84, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {"
-    }, 
-    {
-      "line": 84, 
-      "match": "4.2039e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "(in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {"
-    }, 
-    {
-      "line": 86, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(g_CDemonRendererPtr,unaff_ESI);"
-    }, 
-    {
-      "line": 88, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) = aiStack_58[(uint)bVar5 * -2];"
-    }, 
-    {
-      "line": 89, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) ="
-    }, 
-    {
-      "line": 99, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(g_CDemonRendererPtr,unaff_ESI);"
-    }, 
-    {
-      "line": 102, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) = aiStack_94[(uint)bVar5 * -2];"
-    }, 
-    {
-      "line": 103, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) ="
-    }, 
-    {
-      "line": 113, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fStack_74 = *(float *)in_stack_00000004[1].actor_name * 0.5f;"
-    }, 
-    {
-      "line": 121, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fStack_70 = *(float *)(in_stack_00000004[1].actor_name + 4);"
-    }, 
-    {
-      "line": 141, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EBP == 3) {"
-    }, 
-    {
-      "line": 144, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 5.60519e-45) {"
-    }, 
-    {
-      "line": 144, 
-      "match": "5.60519e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 5.60519e-45) {"
-    }, 
-    {
-      "line": 147, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) {"
-    }, 
-    {
-      "line": 147, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) {"
-    }, 
-    {
-      "line": 150, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 152, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 153, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 155, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 156, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 158, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 159, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;"
-    }, 
-    {
-      "line": 161, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 162, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].previous_transform_state.orientation.z == 0.0) {"
-    }, 
-    {
-      "line": 163, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;"
-    }, 
-    {
-      "line": 164, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[1].u = 7.34684e-40;"
-    }, 
-    {
-      "line": 165, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;"
-    }, 
-    {
-      "line": 166, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[3].u = 2.2775203e-38;"
-    }, 
-    {
-      "line": 169, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[0].u = 2.2775203e-38;"
-    }, 
-    {
-      "line": 170, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;"
-    }, 
-    {
-      "line": 171, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[2].u = 7.34684e-40;"
-    }, 
-    {
-      "line": 172, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;"
-    }, 
-    {
-      "line": 174, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[3].v = 2.2775203e-38;"
-    }, 
-    {
-      "line": 175, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;"
-    }, 
-    {
-      "line": 176, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[1].v = 7.34684e-40;"
-    }, 
-    {
-      "line": 177, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;"
-    }, 
-    {
-      "line": 182, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double)*(float *)(in_stack_00000004[1].actor_name + 0xc));"
-    }, 
-    {
-      "line": 186, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(int)in_stack_00000004[1].orient_matrix.m[1].z * 8 + (int)ROUND(dVar6) % 8);"
-    }, 
-    {
-      "line": 193, 
-      "match": "2.8026e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_f4.min.x = 2.8026e-45;"
-    }, 
-    {
-      "line": 196, 
-      "match": "4.2039e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_f4.min.y = 4.2039e-45;"
-    }, 
-    {
-      "line": 207, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);"
-    }, 
-    {
-      "line": 208, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) &&"
-    }, 
-    {
-      "line": 208, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "if ((in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) &&"
-    }, 
-    {
-      "line": 209, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(fStack_14 = *(float *)(in_stack_00000004[1].actor_name + 4) * (float)2,"
-    }, 
-    {
-      "line": 210, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[1].previous_transform_state.orientation.y != 0.0)) {"
-    }, 
-    {
-      "line": 213, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CStack_20.y = (int)(*(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.5);"
-    }, 
-    {
-      "line": 263, 
-      "match": "2.29589e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_CDemonRendererPtr->vertex_buffer_ptr->w_recip = 2.29589e-41;"
-    }, 
-    {
-      "line": 264, 
-      "match": "2.29589e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr[1].w_recip = 2.29589e-41;"
-    }, 
-    {
-      "line": 265, 
-      "match": "2.29589e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr[2].w_recip = 2.29589e-41;"
-    }, 
-    {
-      "line": 266, 
-      "match": "2.29589e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr[3].w_recip = 2.29589e-41;"
-    }, 
-    {
-      "line": 267, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr->u = 7.34684e-40;"
-    }, 
-    {
-      "line": 268, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr->v = 2.2775203e-38;"
-    }, 
-    {
-      "line": 269, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr[1].u = 2.2775203e-38;"
-    }, 
-    {
-      "line": 270, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr[1].v = 2.2775203e-38;"
-    }, 
-    {
-      "line": 271, 
-      "match": "2.2775203e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr[2].u = 2.2775203e-38;"
-    }, 
-    {
-      "line": 272, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr[2].v = 7.34684e-40;"
-    }, 
-    {
-      "line": 273, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr[3].u = 7.34684e-40;"
-    }, 
-    {
-      "line": 274, 
-      "match": "7.34684e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr->vertex_buffer_ptr[3].v = 7.34684e-40;"
-    }, 
-    {
-      "line": 291, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return in_stack_00000004[1].previous_transform_state.orientation.y;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004ca110", 
-    "signature": "undefined core_flame.cpp_FUN_004ca110()", 
-    "address_range": [
-      [
-        "004ca110", 
-        "004ca626"
-      ], 
-      [
-        "004ca64e", 
-        "004ca659"
-      ], 
-      [
-        "004ca65d", 
-        "004ca70b"
-      ], 
-      [
-        "004caa15", 
-        "004caa6f"
-      ]
-    ], 
-    "name": "core_flame.cpp_FUN_004ca110"
-  }, 
-  "stack_frame": {
-    "local_size": 248, 
-    "variables": [
-      {
-        "offset": -244, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_f4"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 248, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "suspect_float",
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param"
+    ],
+    "total_lines": 741
+  },
   "cross_references": [
     {
-      "from_addr": "004197dd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740", 
-      "addr": "00419740"
-    }, 
+      "addr": "00419740",
+      "from_addr": "004197dd",
+      "name": "core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00448e96", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_crossbow.cpp_CCrossbow_renderTransparent_FUN_00448e80", 
-      "addr": "00448e80"
-    }, 
+      "addr": "00448e80",
+      "from_addr": "00448e96",
+      "name": "core_crossbow.cpp_CCrossbow_renderTransparent_FUN_00448e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cb56d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flamecan.cpp_FUN_004cb550", 
-      "addr": "004cb550"
-    }, 
+      "addr": "004cb550",
+      "from_addr": "004cb56d",
+      "name": "core_flamecan.cpp_FUN_004cb550",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e9a11", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vessel.cpp_FUN_005e98b0", 
-      "addr": "005e98b0"
+      "addr": "005e98b0",
+      "from_addr": "005e9a11",
+      "name": "core_vessel.cpp_FUN_005e98b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ca110",
+    "address_range": [
+      [
+        "004ca110",
+        "004ca626"
+      ],
+      [
+        "004ca64e",
+        "004ca659"
+      ],
+      [
+        "004ca65d",
+        "004ca70b"
+      ],
+      [
+        "004caa15",
+        "004caa6f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flame.cpp_FUN_004ca110",
+    "signature": "undefined core_flame.cpp_FUN_004ca110()"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40"
+    },
+    {
+      "addr": "00408b00",
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00"
+    },
+    {
+      "addr": "0040cc10",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "004204f0",
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0"
+    },
+    {
+      "addr": "004715e0",
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0"
+    },
+    {
+      "addr": "0056d140",
+      "name": "core_set.cpp_CDemonSet_FUN_0056d140"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048c4a0",
+      "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0"
+    },
+    {
+      "addr": "0048c4f0",
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    },
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048c800",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800"
+    },
+    {
+      "addr": "0048c7e0",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048c640",
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    },
+    {
+      "addr": "0048bad0",
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0"
+    },
+    {
+      "addr": "0048ca50",
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a126",
+      "name": "FLOAT_0062a126",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "0062a12e",
+      "name": "DOUBLE_0062a12e",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "0062a136",
+      "name": "DOUBLE_0062a136",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0065e010",
+      "name": "DAT_0065e010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067b100",
+      "name": "DAT_0067b100",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "0067d550",
+      "name": "g_CDemonMissionPtr",
+      "type": "CDemonMission*",
+      "value": "02f33740"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "0068802c",
+      "name": "g_RenderVertexBuffer[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688030",
+      "name": "g_RenderVertexBuffer[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688034",
+      "name": "g_RenderVertexBuffer[0].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688038",
+      "name": "g_RenderVertexBuffer[0].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068803c",
+      "name": "g_RenderVertexBuffer[0].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688040",
+      "name": "g_RenderVertexBuffer[0].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068805c",
+      "name": "g_RenderVertexBuffer[1].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688060",
+      "name": "g_RenderVertexBuffer[1].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688064",
+      "name": "g_RenderVertexBuffer[1].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688068",
+      "name": "g_RenderVertexBuffer[1].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068806c",
+      "name": "g_RenderVertexBuffer[1].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688070",
+      "name": "g_RenderVertexBuffer[1].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068808c",
+      "name": "g_RenderVertexBuffer[2].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688090",
+      "name": "g_RenderVertexBuffer[2].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688094",
+      "name": "g_RenderVertexBuffer[2].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688098",
+      "name": "g_RenderVertexBuffer[2].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068809c",
+      "name": "g_RenderVertexBuffer[2].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880a0",
+      "name": "g_RenderVertexBuffer[2].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880bc",
+      "name": "g_RenderVertexBuffer[3].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c0",
+      "name": "g_RenderVertexBuffer[3].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c4",
+      "name": "g_RenderVertexBuffer[3].light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880c8",
+      "name": "g_RenderVertexBuffer[3].color",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880cc",
+      "name": "g_RenderVertexBuffer[3].fog",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006880d0",
+      "name": "g_RenderVertexBuffer[3].w_recip",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00823a74",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
+      "value": null
+    },
+    {
+      "addr": "00f80000",
+      "name": "DAT_00f80000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d051f4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "float",
+      "value": null
+    },
+    {
+      "addr": "02f33744",
+      "name": "DAT_02f33744",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f33768",
+      "name": "DAT_02f33768",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 248,
+    "local_size": 248,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_f4",
+        "offset": -244,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 15,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_ESI",
+      "text": "CVector3i *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000004",
+      "text": "if (((in_stack_00000004[1].orient_matrix.m[2].z != 0.0) ||",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004 == *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c))) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].previous_transform_state.dirty_flags != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000004",
+      "text": "this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000004",
+      "text": "this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].previous_transform_state.orientation.y = fVar4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000004",
+      "text": "(1.0 < SQRT(*(float *)(in_stack_00000004[1].actor_name + 8) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004[1].actor_name + 8) +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_00000004",
+      "text": "*(float *)in_stack_00000004[1].actor_name *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 77,
+      "match": "in_stack_00000004",
+      "text": "*(float *)in_stack_00000004[1].actor_name +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004[1].actor_name + 4) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004[1].actor_name + 4)) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].orient_matrix.m[2].x)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 84,
+      "match": "4.2039e-45",
+      "text": "(in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 86,
+      "match": "unaff_ESI",
+      "text": "(g_CDemonRendererPtr,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) = aiStack_58[(uint)bVar5 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 99,
+      "match": "unaff_ESI",
+      "text": "(g_CDemonRendererPtr,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) = aiStack_94[(uint)bVar5 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_00000004",
+      "text": "fStack_74 = *(float *)in_stack_00000004[1].actor_name * 0.5f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 121,
+      "match": "in_stack_00000004",
+      "text": "fStack_70 = *(float *)(in_stack_00000004[1].actor_name + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 141,
+      "match": "unaff_EBP",
+      "text": "if (unaff_EBP == 3) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 144,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 5.60519e-45) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 144,
+      "match": "5.60519e-45",
+      "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 5.60519e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 147,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 147,
+      "match": "1.4013e-45",
+      "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 150,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 152,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 153,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 155,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 156,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 158,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 159,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 161,
+      "match": "9.18341e-41",
+      "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 162,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].previous_transform_state.orientation.z == 0.0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 163,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 164,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[1].u = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 165,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 166,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[3].u = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 169,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[0].u = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 170,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 171,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[2].u = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 172,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 174,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[3].v = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 175,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 176,
+      "match": "7.34684e-40",
+      "text": "g_RenderVertexBuffer[1].v = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 177,
+      "match": "2.2775203e-38",
+      "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 182,
+      "match": "in_stack_00000004",
+      "text": "((double)*(float *)(in_stack_00000004[1].actor_name + 0xc));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 186,
+      "match": "in_stack_00000004",
+      "text": "(int)in_stack_00000004[1].orient_matrix.m[1].z * 8 + (int)ROUND(dVar6) % 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 193,
+      "match": "2.8026e-45",
+      "text": "local_f4.min.x = 2.8026e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 196,
+      "match": "4.2039e-45",
+      "text": "local_f4.min.y = 4.2039e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 207,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 208,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 208,
+      "match": "1.4013e-45",
+      "text": "if ((in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) &&",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 209,
+      "match": "in_stack_00000004",
+      "text": "(fStack_14 = *(float *)(in_stack_00000004[1].actor_name + 4) * (float)2,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 210,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].previous_transform_state.orientation.y != 0.0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 213,
+      "match": "in_stack_00000004",
+      "text": "CStack_20.y = (int)(*(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 263,
+      "match": "2.29589e-41",
+      "text": "g_CDemonRendererPtr->vertex_buffer_ptr->w_recip = 2.29589e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 264,
+      "match": "2.29589e-41",
+      "text": "this_ptr->vertex_buffer_ptr[1].w_recip = 2.29589e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 265,
+      "match": "2.29589e-41",
+      "text": "this_ptr->vertex_buffer_ptr[2].w_recip = 2.29589e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 266,
+      "match": "2.29589e-41",
+      "text": "this_ptr->vertex_buffer_ptr[3].w_recip = 2.29589e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 267,
+      "match": "7.34684e-40",
+      "text": "this_ptr->vertex_buffer_ptr->u = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 268,
+      "match": "2.2775203e-38",
+      "text": "this_ptr->vertex_buffer_ptr->v = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 269,
+      "match": "2.2775203e-38",
+      "text": "this_ptr->vertex_buffer_ptr[1].u = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 270,
+      "match": "2.2775203e-38",
+      "text": "this_ptr->vertex_buffer_ptr[1].v = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 271,
+      "match": "2.2775203e-38",
+      "text": "this_ptr->vertex_buffer_ptr[2].u = 2.2775203e-38;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 272,
+      "match": "7.34684e-40",
+      "text": "this_ptr->vertex_buffer_ptr[2].v = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 273,
+      "match": "7.34684e-40",
+      "text": "this_ptr->vertex_buffer_ptr[3].u = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 274,
+      "match": "7.34684e-40",
+      "text": "this_ptr->vertex_buffer_ptr[3].v = 7.34684e-40;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 291,
+      "match": "in_stack_00000004",
+      "text": "return in_stack_00000004[1].previous_transform_state.orientation.y;",
+      "type": "stack_param"
     }
   ]
 }

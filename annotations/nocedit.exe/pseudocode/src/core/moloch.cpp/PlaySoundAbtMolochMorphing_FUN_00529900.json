@@ -1,102 +1,102 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 79, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 35, 
-    "assembly_lines": 21, 
-    "suspect_count": 6, 
+    "assembly_lines": 21,
+    "complexity_score": 79,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 14,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_moloch_morph_todemon_wav_00639eaf", 
-      "addr": "00639eaf", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_moloch_morph_tohuman_wav_00639ec8", 
-      "addr": "00639ec8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x21e90) = 0;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x21e8c) = 1;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004 + 0x21e88) != 0) {"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00529900", 
-    "signature": "undefined core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900()", 
-    "address_range": [
-      [
-        "00529900", 
-        "00529947"
-      ]
-    ], 
-    "name": "core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 35
+  },
   "cross_references": [
     {
-      "from_addr": "00529104", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moloch.cpp_CMoloch_process_FUN_00528d20", 
-      "addr": "00528d20"
+      "addr": "00528d20",
+      "from_addr": "00529104",
+      "name": "core_moloch.cpp_CMoloch_process_FUN_00528d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00529900",
+    "address_range": [
+      [
+        "00529900",
+        "00529947"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900",
+    "signature": "undefined core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00639eaf",
+      "name": "s_moloch_morph_todemon_wav_00639eaf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639ec8",
+      "name": "s_moloch_morph_tohuman_wav_00639ec8",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x21e90) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x21e8c) = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0x21e88) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();",
+      "type": "stack_param"
     }
   ]
 }

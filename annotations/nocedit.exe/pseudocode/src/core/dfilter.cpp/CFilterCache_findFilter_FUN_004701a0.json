@@ -1,70 +1,70 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 64, 
-    "assembly_lines": 44, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004701a0", 
-    "signature": "CDemonFilter * core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0(CFilterCache * this_ptr, char * filter_name)", 
-    "address_range": [
-      [
-        "004701a0", 
-        "004701e6"
-      ]
-    ], 
-    "name": "core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFilterCache *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filter_name"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 44,
+    "complexity_score": 20,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
   "cross_references": [
     {
-      "from_addr": "0047087b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730", 
-      "addr": "00470730"
-    }, 
+      "addr": "00470730",
+      "from_addr": "0047087b",
+      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004708f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dfilter.cpp_CFilterFX_process_FUN_004708e0", 
-      "addr": "004708e0"
+      "addr": "004708e0",
+      "from_addr": "004708f5",
+      "name": "core_dfilter.cpp_CFilterFX_process_FUN_004708e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004701a0",
+    "address_range": [
+      [
+        "004701a0",
+        "004701e6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0",
+    "signature": "CDemonFilter * core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0(CFilterCache * this_ptr, char * filter_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFilterCache *"
+      },
+      {
+        "is_param": true,
+        "name": "filter_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

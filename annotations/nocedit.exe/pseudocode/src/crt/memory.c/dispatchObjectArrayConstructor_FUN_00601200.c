@@ -12,7 +12,9 @@ crt_memory_c_dispatchObjectArrayConstructor_FUN_00601200
 
 {
   code *pcVar1;
+  void *pvVar2;
   
+  pvVar2 = (void *)0x0;
   if (array_ptr != (void *)0x0) {
     if ((char)type_info->type_flags == '\x04') {
       pcVar1 = crt_memory_c_constructObjectArray_FlaggedCtor_FUN_00608dc8;
@@ -20,7 +22,7 @@ crt_memory_c_dispatchObjectArrayConstructor_FUN_00601200
     else {
       pcVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667;
     }
-    array_ptr = (void *)(*pcVar1)();
+    pvVar2 = (void *)(*pcVar1)();
   }
-  return array_ptr;
+  return pvVar2;
 }

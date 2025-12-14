@@ -30,17 +30,17 @@ section .text
     MOV ESI,dword ptr [ESP + 0x28]      ; 005028c9
     LEA EAX,[EBX + 0x158]               ; 005028cd
     PUSH EAX                            ; 005028d3
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 005028d4 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 005028d4
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     MOV EDX,dword ptr [EAX + 0x110]     ; 005028d9
     ADD ESP,0x4                         ; 005028df
     CMP EDX,0x1                         ; 005028e2
-    JGE 0x0050296f                      ; 005028e5 | LAB_0050296f
-        ;   XREF to: 0050296f (CONDITIONAL_JUMP)
+    JGE 0x0050296f                      ; 005028e5
+        ;   XREF to: 0050296f (CONDITIONAL_JUMP)  ; LAB_0050296f
     FLD float ptr [EBX + 0x2d4]         ; 005028eb
     MOV ECX,0xbdcccccd                  ; 005028f1
     FCHS                                ; 005028f6
-    FLD double ptr [0x00630e28]         ; 005028f8 | double DOUBLE_00630e28
+    FLD double ptr [0x00630e28]         ; 005028f8 | DOUBLE_00630e28
     FXCH                                ; 005028fe
     FMUL ST1                            ; 00502900
     MOV dword ptr [ESP + 0x4],ECX       ; 00502902
@@ -53,7 +53,7 @@ section .text
     FMUL ST1                            ; 0050291d
     FSTP float ptr [ESP + 0xc]          ; 0050291f
     FLD float ptr [EBX + 0x2d8]         ; 00502923
-    FADD double ptr [0x00630e30]        ; 00502929 | double DOUBLE_00630e30
+    FADD double ptr [0x00630e30]        ; 00502929 | DOUBLE_00630e30
     FSTP float ptr [ESP + 0x10]         ; 0050292f
     FMUL float ptr [EBX + 0x2dc]        ; 00502933
     MOV EAX,dword ptr [ESP]             ; 00502939
@@ -78,8 +78,8 @@ section .text
     ADD EBX,0x158                       ; 0050296f
         ;   Label: LAB_0050296f
     PUSH EBX                            ; 00502975
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 00502976 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 00502976
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     MOV EDX,dword ptr [EAX + 0x5678]    ; 0050297b
     ADD EAX,0x5678                      ; 00502981
     MOV dword ptr [ESI],EDX             ; 00502986

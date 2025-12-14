@@ -62,7 +62,7 @@ sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
   if (iVar6 != g_ChannelFFTTimestamps[channel]) {
     pfVar13 = g_ChannelSecondaryBuffersA[channel];
     pfVar16 = g_ChannelSecondaryBuffersB[channel];
-    pfVar9 = (float *)g_ChannelPrimaryBuffers[channel];
+    pfVar9 = g_ChannelPrimaryBuffers[channel];
     for (local_28 = 1; 1 << ((byte)local_28 & 0x1f) < g_MixBufferSize; local_28 = local_28 + 1) {
     }
     uVar18 = 0;

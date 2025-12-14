@@ -1,86 +1,86 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 24, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 52, 
-    "assembly_lines": 43, 
-    "suspect_count": 1, 
+    "assembly_lines": 43,
+    "complexity_score": 24,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CLaserBeam_FUN_004c2420", 
-      "addr": "004c2420"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CRock*", 
-      "name": "g_CFireEffectRocksEnd", 
-      "addr": "02d667ac", 
-      "value": null
-    }, 
-    {
-      "type": "CLaserBeam[64]", 
-      "name": "g_LaserBeamPool", 
-      "addr": "02d667b0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "(CRock *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksEnd->base).position.x + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c7eb0", 
-    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7eb0(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c7eb0", 
-        "004c7f11"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c7eb0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 52
+  },
   "cross_references": [
     {
-      "from_addr": "004c8127", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c7f80", 
-      "addr": "004c7f80"
-    }, 
+      "addr": "004c7f80",
+      "from_addr": "004c8127",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c8b13", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8230", 
-      "addr": "004c8230"
+      "addr": "004c8230",
+      "from_addr": "004c8b13",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8230",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c7eb0",
+    "address_range": [
+      [
+        "004c7eb0",
+        "004c7f11"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c7eb0",
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7eb0(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c2420",
+      "name": "core_fire.cpp_CLaserBeam_FUN_004c2420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d667ac",
+      "name": "g_CFireEffectRocksEnd",
+      "type": "CRock*",
+      "value": null
+    },
+    {
+      "addr": "02d667b0",
+      "name": "g_LaserBeamPool",
+      "type": "CLaserBeam[64]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(CRock *)((int)",
+      "text": "g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksEnd->base).position.x + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -32,8 +32,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 00570cd4
     MOV EAX,dword ptr [ESP + 0x18]      ; 00570cd8
     TEST EAX,EAX                        ; 00570cdc
-    JNZ 0x00570ceb                      ; 00570cde | LAB_00570ceb
-        ;   XREF to: 00570ceb (CONDITIONAL_JUMP)
+    JNZ 0x00570ceb                      ; 00570cde
+        ;   XREF to: 00570ceb (CONDITIONAL_JUMP)  ; LAB_00570ceb
     MOV dword ptr [ESI + 0x161658],EAX  ; 00570ce0
     ADD ESP,0xc                         ; 00570ce6
     POP ESI                             ; 00570ce9
@@ -42,13 +42,13 @@ section .text
         ;   Label: LAB_00570ceb
     LEA EBX,[ESP + 0x4]                 ; 00570cec
     FLD float ptr [EAX]                 ; 00570cf0
-    FMUL float ptr [0x00662850]         ; 00570cf2 | float FLOAT_00662850
+    FMUL float ptr [0x00662850]         ; 00570cf2 | FLOAT_00662850
     FISTP dword ptr [EBX]               ; 00570cf8
     FLD float ptr [EAX + 0x4]           ; 00570cfa
-    FMUL float ptr [0x00662850]         ; 00570cfd | float FLOAT_00662850
+    FMUL float ptr [0x00662850]         ; 00570cfd | FLOAT_00662850
     FISTP dword ptr [EBX + 0x4]         ; 00570d03
     FLD float ptr [EAX + 0x8]           ; 00570d06
-    FMUL float ptr [0x00662850]         ; 00570d09 | float FLOAT_00662850
+    FMUL float ptr [0x00662850]         ; 00570d09 | FLOAT_00662850
     FISTP dword ptr [EBX + 0x8]         ; 00570d0f
     PUSH 0x0                            ; 00570d12
     PUSH 0x0                            ; 00570d14
@@ -56,8 +56,8 @@ section .text
     LEA EBX,[ESP + 0x10]                ; 00570d18
     PUSH EBX                            ; 00570d1c
     PUSH ESI                            ; 00570d1d
-    CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 ; 00570d1e | void core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
-        ;   XREF to: 0056ddb0 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 ; 00570d1e
+        ;   XREF to: 0056ddb0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     MOV EBX,dword ptr [0x00688034]      ; 00570d23 | g_RenderVertexBuffer[0].light
     MOV dword ptr [ESI + 0x161658],0x1  ; 00570d29
     MOV EAX,[0x0068803c]                ; 00570d33 | g_RenderVertexBuffer[0].fog

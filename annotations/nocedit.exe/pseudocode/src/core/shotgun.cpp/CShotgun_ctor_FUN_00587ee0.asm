@@ -26,16 +26,16 @@ section .text
         ;   Label: core_shotgun.cpp_CShotgun_ctor_FUN_00587ee0
     MOV EDX,dword ptr [ESP + 0x8]       ; 00587ee1
     PUSH EDX                            ; 00587ee5
-    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 00587ee6 | CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
-        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)
+    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 00587ee6
+        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 00587eeb
-    PUSH 0x649afc                       ; 00587eee | = "shotgun.kfm" | s_shotgun_kfm_00649afc = shotgun.kfm
+    PUSH 0x649afc                       ; 00587eee | = "shotgun.kfm"
     MOV EBX,EAX                         ; 00587ef3
     ADD EAX,0x158                       ; 00587ef5
     PUSH EAX                            ; 00587efa
-    MOV dword ptr [EAX + -0x4],0x662a84 ; 00587efb | CDemonActor_vtable PTR_core_weapon.cpp_ActorModelSomething_FUN_00662a84
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00587f02 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x662a84 ; 00587efb | PTR_core_weapon.cpp_ActorModelSomething_FUN_00662a84
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00587f02
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x578],0x41200000 ; 00587f07
     MOV dword ptr [EBX + 0x2d8],0x1     ; 00587f11
     MOV dword ptr [EBX + 0x2dc],0x2     ; 00587f1b

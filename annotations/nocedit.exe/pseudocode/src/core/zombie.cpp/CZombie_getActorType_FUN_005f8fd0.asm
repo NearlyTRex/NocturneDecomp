@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f9ad20                   ; 005f8fd0 | CDemonActorType g_CZombieClassInfo
+    MOV EAX,0x3f9ad20                   ; 005f8fd0 | g_CZombieClassInfo
         ;   Label: core_zombie.cpp_CZombie_getActorType_FUN_005f8fd0
     RET                                 ; 005f8fd5
 

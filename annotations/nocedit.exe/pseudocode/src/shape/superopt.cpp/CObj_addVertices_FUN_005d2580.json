@@ -1,72 +1,72 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 70, 
-    "assembly_lines": 55, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_memory.c_realloc_FUN_00601df0", 
-      "addr": "00601df0"
-    }, 
-    {
-      "name": "shape_superopt.cpp_logToFile_FUN_005c7910", 
-      "addr": "005c7910"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_add_verts_to_o_006543a1", 
-      "addr": "006543a1", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 55,
+    "complexity_score": 15,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 70
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005d2580", 
-    "signature": "int shape_superopt.cpp_CObj_addVertices_FUN_005d2580(CObj * this_ptr, int add_count)", 
+    "address": "005d2580",
     "address_range": [
       [
-        "005d2580", 
+        "005d2580",
         "005d25f8"
       ]
-    ], 
-    "name": "shape_superopt.cpp_CObj_addVertices_FUN_005d2580"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CObj_addVertices_FUN_005d2580",
+    "signature": "int shape_superopt.cpp_CObj_addVertices_FUN_005d2580(CObj * this_ptr, int add_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "00601df0",
+      "name": "crt_memory.c_realloc_FUN_00601df0"
+    },
+    {
+      "addr": "005c7910",
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006543a1",
+      "name": "s_Unable_to_add_verts_to_o_006543a1",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CObj *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "add_count"
+        "is_param": true,
+        "name": "add_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

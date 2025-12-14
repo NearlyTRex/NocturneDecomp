@@ -38,8 +38,8 @@ section .text
     MOV EDI,dword ptr [EAX + 0x3f8]     ; 005172f8
     MOV dword ptr [ESP + 0x8],EAX       ; 005172fe
     TEST EDI,EDI                        ; 00517302
-    JLE 0x00517386                      ; 00517304 | LAB_00517386
-        ;   XREF to: 00517386 (CONDITIONAL_JUMP)
+    JLE 0x00517386                      ; 00517304
+        ;   XREF to: 00517386 (CONDITIONAL_JUMP)  ; LAB_00517386
     MOV dword ptr [ESP + 0xc],EAX       ; 0051730a
     MOV EAX,dword ptr [ESP + 0xc]       ; 0051730e
         ;   Label: LAB_0051730e
@@ -50,8 +50,8 @@ section .text
     MOV ECX,dword ptr [EDI + 0x24]      ; 00517325
     XOR EBX,EBX                         ; 00517328
     TEST ECX,ECX                        ; 0051732a
-    JLE 0x00517364                      ; 0051732c | LAB_00517364
-        ;   XREF to: 00517364 (CONDITIONAL_JUMP)
+    JLE 0x00517364                      ; 0051732c
+        ;   XREF to: 00517364 (CONDITIONAL_JUMP)  ; LAB_00517364
     MOV ECX,EDI                         ; 0051732e
     IMUL EAX,dword ptr [ECX + 0x28],0x8c ; 00517330
         ;   Label: LAB_00517330
@@ -70,8 +70,8 @@ section .text
     MOV ESI,dword ptr [EDI + 0x24]      ; 0051735a
     ADD ECX,0x4                         ; 0051735d
     CMP EBX,ESI                         ; 00517360
-    JL 0x00517330                       ; 00517362 | LAB_00517330
-        ;   XREF to: 00517330 (CONDITIONAL_JUMP)
+    JL 0x00517330                       ; 00517362
+        ;   XREF to: 00517330 (CONDITIONAL_JUMP)  ; LAB_00517330
     MOV EAX,dword ptr [ESP + 0xc]       ; 00517364
         ;   Label: LAB_00517364
     MOV ECX,dword ptr [ESP + 0x10]      ; 00517368
@@ -82,8 +82,8 @@ section .text
     MOV EAX,ECX                         ; 00517378
     MOV ECX,dword ptr [ESP + 0x8]       ; 0051737a
     CMP EAX,dword ptr [ECX + 0x3f8]     ; 0051737e
-    JL 0x0051730e                       ; 00517384 | LAB_0051730e
-        ;   XREF to: 0051730e (CONDITIONAL_JUMP)
+    JL 0x0051730e                       ; 00517384
+        ;   XREF to: 0051730e (CONDITIONAL_JUMP)  ; LAB_0051730e
     FLD float ptr [EDX + 0x4]           ; 00517386
         ;   Label: LAB_00517386
     FMUL ST0                            ; 00517389
@@ -99,8 +99,8 @@ section .text
     FCOMPP                              ; 0051739f
     FNSTSW AX                           ; 005173a1
     SAHF                                ; 005173a3
-    JNC 0x005173d0                      ; 005173a4 | LAB_005173d0
-        ;   XREF to: 005173d0 (CONDITIONAL_JUMP)
+    JNC 0x005173d0                      ; 005173a4
+        ;   XREF to: 005173d0 (CONDITIONAL_JUMP)  ; LAB_005173d0
     FLD1                                ; 005173a6
     FLD float ptr [EDX]                 ; 005173a8
     FXCH                                ; 005173aa

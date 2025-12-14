@@ -1,96 +1,96 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 19, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 93, 
-    "assembly_lines": 74, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_watcom.c_heapchk_FUN_00600ad0", 
-      "addr": "00600ad0"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_0046e7d8", 
-      "addr": "0046e7d8", 
-      "value": "0046e779"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_OK_heap_is_good_0061ded0", 
-      "addr": "0061ded0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_OK_heap_is_empty_0061dee2", 
-      "addr": "0061dee2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ERROR_heap_is_damaged_0061def5", 
-      "addr": "0061def5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ERROR_bad_node_in_heap_0061df0d", 
-      "addr": "0061df0d", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 74,
+    "complexity_score": 19,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 93
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0046e760", 
-    "signature": "void shape_design.c_displayHeapStatus_FUN_0046e760(int line_number)", 
+    "address": "0046e760",
     "address_range": [
       [
-        "0046e760", 
+        "0046e760",
         "0046e7d6"
-      ], 
+      ],
       [
-        "0046e7e8", 
+        "0046e7e8",
         "0046e800"
       ]
-    ], 
-    "name": "shape_design.c_displayHeapStatus_FUN_0046e760"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_displayHeapStatus_FUN_0046e760",
+    "signature": "void shape_design.c_displayHeapStatus_FUN_0046e760(int line_number)"
+  },
+  "function_calls": [
+    {
+      "addr": "00600ad0",
+      "name": "crt_watcom.c_heapchk_FUN_00600ad0"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0046e7d8",
+      "name": "switchdataD_0046e7d8",
+      "type": "void*",
+      "value": "0046e779"
+    },
+    {
+      "addr": "0061ded0",
+      "name": "s_OK_heap_is_good_0061ded0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dee2",
+      "name": "s_OK_heap_is_empty_0061dee2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061def5",
+      "name": "s_ERROR_heap_is_damaged_0061def5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061df0d",
+      "name": "s_ERROR_bad_node_in_heap_0061df0d",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 24, 
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "line_number"
+        "is_param": true,
+        "name": "line_number",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

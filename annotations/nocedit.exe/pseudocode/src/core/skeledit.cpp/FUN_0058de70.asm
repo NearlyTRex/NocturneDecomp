@@ -39,28 +39,28 @@ section .text
 
     PUSH 0xb0                           ; 0058de70
         ;   Label: core_skeledit.cpp_FUN_0058de70
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058de75 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058de75
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058de7a
     PUSH ESI                            ; 0058de7b
     PUSH EDI                            ; 0058de7c
     PUSH EBP                            ; 0058de7d
     SUB ESP,0x88                        ; 0058de7e
     PUSH 0x1                            ; 0058de84
-    CALL shape_design.c_initializeTextureManager_FUN_0046a880 ; 0058de86 | void shape_design.c_initializeTextureManager_FUN_0046a880(int initialization_mode)
-        ;   XREF to: 0046a880 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_initializeTextureManager_FUN_0046a880 ; 0058de86
+        ;   XREF to: 0046a880 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeTextureManager_FUN_0046a880(int initialization_mode)
     ADD ESP,0x4                         ; 0058de8b
     PUSH 0x40                           ; 0058de8e
-    CALL shape_design.c_setTextureQualityParameter_FUN_0046a8e0 ; 0058de90 | void shape_design.c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param)
-        ;   XREF to: 0046a8e0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_setTextureQualityParameter_FUN_0046a8e0 ; 0058de90
+        ;   XREF to: 0046a8e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param)
     ADD ESP,0x4                         ; 0058de95
     MOV EAX,dword ptr [ESP + 0x9c]      ; 0058de98
     XOR EDX,EDX                         ; 0058de9f
     MOV ECX,dword ptr [EAX + 0xbc]      ; 0058dea1
     MOV dword ptr [ESP + 0x78],EDX      ; 0058dea7
     TEST ECX,ECX                        ; 0058deab
-    JLE 0x0058e018                      ; 0058dead | LAB_0058e018
-        ;   XREF to: 0058e018 (CONDITIONAL_JUMP)
+    JLE 0x0058e018                      ; 0058dead
+        ;   XREF to: 0058e018 (CONDITIONAL_JUMP)  ; LAB_0058e018
     MOV EDX,dword ptr [ESP + 0xac]      ; 0058deb3
     LEA EAX,[EDX*0x4 + 0x0]             ; 0058deba
     SUB EAX,EDX                         ; 0058dec1
@@ -91,8 +91,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x7c]      ; 0058df1a
     ADD EAX,EBP                         ; 0058df1e
     CMP EAX,EDX                         ; 0058df20
-    JLE 0x0058dfcb                      ; 0058df22 | LAB_0058dfcb
-        ;   XREF to: 0058dfcb (CONDITIONAL_JUMP)
+    JLE 0x0058dfcb                      ; 0058df22
+        ;   XREF to: 0058dfcb (CONDITIONAL_JUMP)  ; LAB_0058dfcb
     MOV EBP,dword ptr [ESP + 0x9c]      ; 0058df28
     MOV EAX,dword ptr [ESP + 0x80]      ; 0058df2f
     MOV EBP,dword ptr [EBP + 0x7c]      ; 0058df36
@@ -103,8 +103,8 @@ section .text
     ADD EAX,EDX                         ; 0058df4f
     MOV EDX,dword ptr [ESP + 0x78]      ; 0058df51
     CMP EDX,dword ptr [EAX]             ; 0058df55
-    JZ 0x0058df8d                       ; 0058df57 | LAB_0058df8d
-        ;   XREF to: 0058df8d (CONDITIONAL_JUMP)
+    JZ 0x0058df8d                       ; 0058df57
+        ;   XREF to: 0058df8d (CONDITIONAL_JUMP)  ; LAB_0058df8d
     MOV EAX,dword ptr [ESP + 0x80]      ; 0058df5d
         ;   Label: LAB_0058df5d
     MOV EDX,dword ptr [ESP + 0x7c]      ; 0058df64
@@ -115,8 +115,8 @@ section .text
     MOV dword ptr [ESP + 0x80],EAX      ; 0058df76
     MOV dword ptr [ESP + 0x7c],EDX      ; 0058df7d
     MOV dword ptr [ESP + 0x84],EBP      ; 0058df81
-    JMP 0x0058df06                      ; 0058df88 | LAB_0058df06
-        ;   XREF to: 0058df06 (UNCONDITIONAL_JUMP)
+    JMP 0x0058df06                      ; 0058df88
+        ;   XREF to: 0058df06 (UNCONDITIONAL_JUMP)  ; LAB_0058df06
     MOV EAX,EBP                         ; 0058df8d
         ;   Label: LAB_0058df8d
     ADD EBP,0x6                         ; 0058df8f
@@ -124,41 +124,41 @@ section .text
         ;   Label: LAB_0058df92
     MOV DX,word ptr [EAX + 0x6]         ; 0058df94
     CMP EDX,ECX                         ; 0058df98
-    JGE 0x0058df9e                      ; 0058df9a | LAB_0058df9e
-        ;   XREF to: 0058df9e (CONDITIONAL_JUMP)
+    JGE 0x0058df9e                      ; 0058df9a
+        ;   XREF to: 0058df9e (CONDITIONAL_JUMP)  ; LAB_0058df9e
     MOV ECX,EDX                         ; 0058df9c
     XOR EDX,EDX                         ; 0058df9e
         ;   Label: LAB_0058df9e
     MOV DX,word ptr [EAX + 0x6]         ; 0058dfa0
     CMP EDX,EBX                         ; 0058dfa4
-    JLE 0x0058dfaa                      ; 0058dfa6 | LAB_0058dfaa
-        ;   XREF to: 0058dfaa (CONDITIONAL_JUMP)
+    JLE 0x0058dfaa                      ; 0058dfa6
+        ;   XREF to: 0058dfaa (CONDITIONAL_JUMP)  ; LAB_0058dfaa
     MOV EBX,EDX                         ; 0058dfa8
     XOR EDX,EDX                         ; 0058dfaa
         ;   Label: LAB_0058dfaa
     MOV DX,word ptr [EAX + 0xc]         ; 0058dfac
     CMP EDX,ESI                         ; 0058dfb0
-    JGE 0x0058dfb6                      ; 0058dfb2 | LAB_0058dfb6
-        ;   XREF to: 0058dfb6 (CONDITIONAL_JUMP)
+    JGE 0x0058dfb6                      ; 0058dfb2
+        ;   XREF to: 0058dfb6 (CONDITIONAL_JUMP)  ; LAB_0058dfb6
     MOV ESI,EDX                         ; 0058dfb4
     XOR EDX,EDX                         ; 0058dfb6
         ;   Label: LAB_0058dfb6
     MOV DX,word ptr [EAX + 0xc]         ; 0058dfb8
     CMP EDX,EDI                         ; 0058dfbc
-    JLE 0x0058dfc2                      ; 0058dfbe | LAB_0058dfc2
-        ;   XREF to: 0058dfc2 (CONDITIONAL_JUMP)
+    JLE 0x0058dfc2                      ; 0058dfbe
+        ;   XREF to: 0058dfc2 (CONDITIONAL_JUMP)  ; LAB_0058dfc2
     MOV EDI,EDX                         ; 0058dfc0
     ADD EAX,0x2                         ; 0058dfc2
         ;   Label: LAB_0058dfc2
     CMP EAX,EBP                         ; 0058dfc5
-    JZ 0x0058df5d                       ; 0058dfc7 | LAB_0058df5d
-        ;   XREF to: 0058df5d (CONDITIONAL_JUMP)
-    JMP 0x0058df92                      ; 0058dfc9 | LAB_0058df92
-        ;   XREF to: 0058df92 (UNCONDITIONAL_JUMP)
+    JZ 0x0058df5d                       ; 0058dfc7
+        ;   XREF to: 0058df5d (CONDITIONAL_JUMP)  ; LAB_0058df5d
+    JMP 0x0058df92                      ; 0058dfc9
+        ;   XREF to: 0058df92 (UNCONDITIONAL_JUMP)  ; LAB_0058df92
     CMP ECX,EBX                         ; 0058dfcb
         ;   Label: LAB_0058dfcb
-    JG 0x0058dfef                       ; 0058dfcd | LAB_0058dfef
-        ;   XREF to: 0058dfef (CONDITIONAL_JUMP)
+    JG 0x0058dfef                       ; 0058dfcd
+        ;   XREF to: 0058dfef (CONDITIONAL_JUMP)  ; LAB_0058dfef
     SHL EDI,0x8                         ; 0058dfcf
     PUSH EDI                            ; 0058dfd2
     SHL EBX,0x8                         ; 0058dfd3
@@ -169,8 +169,8 @@ section .text
     PUSH ECX                            ; 0058dfde
     MOV ECX,dword ptr [ESP + 0x84]      ; 0058dfdf
     PUSH ECX                            ; 0058dfe6
-    CALL shape_design.c_cramTextures_FUN_0046a970 ; 0058dfe7 | void shape_design.c_cramTextures_FUN_0046a970(char * texture_filename, int min_u, int min_v, int max_u, ...)
-        ;   XREF to: 0046a970 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_cramTextures_FUN_0046a970 ; 0058dfe7
+        ;   XREF to: 0046a970 (UNCONDITIONAL_CALL)  ; void shape_design.c_cramTextures_FUN_0046a970(char * texture_filename, int min_u, int min_v, int max_u, ...)
     ADD ESP,0x14                        ; 0058dfec
     MOV EBX,dword ptr [ESP + 0x74]      ; 0058dfef
         ;   Label: LAB_0058dfef
@@ -182,14 +182,14 @@ section .text
     MOV dword ptr [ESP + 0x74],EBX      ; 0058e008
     MOV dword ptr [ESP + 0x78],ESI      ; 0058e00c
     CMP ESI,EDI                         ; 0058e010
-    JL 0x0058dee4                       ; 0058e012 | LAB_0058dee4
-        ;   XREF to: 0058dee4 (CONDITIONAL_JUMP)
+    JL 0x0058dee4                       ; 0058e012
+        ;   XREF to: 0058dee4 (CONDITIONAL_JUMP)  ; LAB_0058dee4
     MOV EAX,ESP                         ; 0058e018
         ;   Label: LAB_0058e018
     PUSH EAX                            ; 0058e01a
     LEA EDI,[ESP + 0x4]                 ; 0058e01b
-    CALL shape_design.c_initializeCramConfig_FUN_0046b6e0 ; 0058e01f | void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
-        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_initializeCramConfig_FUN_0046b6e0 ; 0058e01f
+        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
     ADD ESP,0x4                         ; 0058e024
     MOV EBX,0x1                         ; 0058e027
     MOV ESI,dword ptr [ESP + 0xa0]      ; 0058e02c
@@ -199,15 +199,15 @@ section .text
         ;   Label: LAB_0058e039
     MOV byte ptr [EDI],AL               ; 0058e03b
     CMP AL,0x0                          ; 0058e03d
-    JZ 0x0058e051                       ; 0058e03f | LAB_0058e051
-        ;   XREF to: 0058e051 (CONDITIONAL_JUMP)
+    JZ 0x0058e051                       ; 0058e03f
+        ;   XREF to: 0058e051 (CONDITIONAL_JUMP)  ; LAB_0058e051
     MOV AL,byte ptr [ESI + 0x1]         ; 0058e041
     ADD ESI,0x2                         ; 0058e044
     MOV byte ptr [EDI + 0x1],AL         ; 0058e047
     ADD EDI,0x2                         ; 0058e04a
     CMP AL,0x0                          ; 0058e04d
-    JNZ 0x0058e039                      ; 0058e04f | LAB_0058e039
-        ;   XREF to: 0058e039 (CONDITIONAL_JUMP)
+    JNZ 0x0058e039                      ; 0058e04f
+        ;   XREF to: 0058e039 (CONDITIONAL_JUMP)  ; LAB_0058e039
     POP EDI                             ; 0058e051
         ;   Label: LAB_0058e051
     MOV EAX,dword ptr [ESP + 0xa8]      ; 0058e052
@@ -225,11 +225,11 @@ section .text
     PUSH EAX                            ; 0058e08a
     MOV dword ptr [ESP + 0x6c],EBX      ; 0058e08b
     MOV dword ptr [ESP + 0x58],ESI      ; 0058e08f
-    CALL shape_design.c_cramTextureList_FUN_0046bb80 ; 0058e093 | int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)
-        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_cramTextureList_FUN_0046bb80 ; 0058e093
+        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)  ; int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)
     ADD ESP,0x4                         ; 0058e098
-    CALL engine_texture.cpp_clearTextureCache_FUN_005dd8e0 ; 0058e09b | void engine_texture.cpp_clearTextureCache_FUN_005dd8e0()
-        ;   XREF to: 005dd8e0 (UNCONDITIONAL_CALL)
+    CALL engine_texture.cpp_clearTextureCache_FUN_005dd8e0 ; 0058e09b
+        ;   XREF to: 005dd8e0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_005dd8e0()
     ADD ESP,0x88                        ; 0058e0a0
     POP EBP                             ; 0058e0a6
     POP EDI                             ; 0058e0a7

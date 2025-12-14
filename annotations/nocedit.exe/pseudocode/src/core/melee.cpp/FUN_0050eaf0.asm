@@ -23,8 +23,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0050eb03
     PUSH ECX                            ; 0050eb07
     PUSH EBX                            ; 0050eb08
-    CALL core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0 ; 0050eb09 | void core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim)
-        ;   XREF to: 0040abc0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0 ; 0050eb09
+        ;   XREF to: 0040abc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim)
     ADD ESP,0x10                        ; 0050eb0e
     MOV EAX,dword ptr [EBX + 0x154]     ; 0050eb11
     PUSH EBX                            ; 0050eb17

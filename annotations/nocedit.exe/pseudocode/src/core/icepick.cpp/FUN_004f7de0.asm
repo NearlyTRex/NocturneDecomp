@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2db89b8                   ; 004f7de0 | CDemonActorType g_CIcePickClassInfo
+    MOV EAX,0x2db89b8                   ; 004f7de0 | g_CIcePickClassInfo
         ;   Label: core_icepick.cpp_FUN_004f7de0
     RET                                 ; 004f7de5
 

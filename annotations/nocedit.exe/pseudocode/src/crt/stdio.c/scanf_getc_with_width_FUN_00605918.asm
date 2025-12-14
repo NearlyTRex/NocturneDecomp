@@ -25,16 +25,16 @@ section .text
     LEA EDX,[EAX + -0x1]                ; 00605920
     MOV dword ptr [EBX + 0xc],EDX       ; 00605923
     TEST EAX,EAX                        ; 00605926
-    JZ 0x0060593b                       ; 00605928 | LAB_0060593b
-        ;   XREF to: 0060593b (CONDITIONAL_JUMP)
+    JZ 0x0060593b                       ; 00605928
+        ;   XREF to: 0060593b (CONDITIONAL_JUMP)  ; LAB_0060593b
     PUSH EBX                            ; 0060592a
-    CALL crt_stdio.c_scanf_getc_wrapper_FUN_00604930 ; 0060592b | int crt_stdio.c_scanf_getc_wrapper_FUN_00604930(scanf_state_t * state)
-        ;   XREF to: 00604930 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_scanf_getc_wrapper_FUN_00604930 ; 0060592b
+        ;   XREF to: 00604930 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_scanf_getc_wrapper_FUN_00604930(scanf_state_t * state)
     MOV DL,byte ptr [EBX + 0x10]        ; 00605930
     ADD ESP,0x4                         ; 00605933
     TEST DL,0x2                         ; 00605936
-    JZ 0x00605940                       ; 00605939 | LAB_00605940
-        ;   XREF to: 00605940 (CONDITIONAL_JUMP)
+    JZ 0x00605940                       ; 00605939
+        ;   XREF to: 00605940 (CONDITIONAL_JUMP)  ; LAB_00605940
     MOV EAX,0xffffffff                  ; 0060593b
         ;   Label: LAB_0060593b
     POP EBX                             ; 00605940

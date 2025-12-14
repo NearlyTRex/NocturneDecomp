@@ -39,8 +39,8 @@ section .text
     PUSH ESI                            ; 004d7d91
     PUSH EDI                            ; 004d7d92
     MOV EBX,dword ptr [ESP + 0x10]      ; 004d7d93
-    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004d7d97 | int wincore_winrun.cpp_getTime_FUN_005f2dc0()
-        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004d7d97
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005f2dc0()
     MOV EDX,dword ptr [EBX + 0x25c]     ; 004d7d9c
     MOV ESI,EAX                         ; 004d7da2
     SUB EAX,EDX                         ; 004d7da4
@@ -50,28 +50,28 @@ section .text
     IDIV ECX                            ; 004d7db0
     MOV dword ptr [EBX + 0x260],EAX     ; 004d7db2
     TEST EAX,EAX                        ; 004d7db8
-    JL 0x004d7e10                       ; 004d7dba | LAB_004d7e10
-        ;   XREF to: 004d7e10 (CONDITIONAL_JUMP)
+    JL 0x004d7e10                       ; 004d7dba
+        ;   XREF to: 004d7e10 (CONDITIONAL_JUMP)  ; LAB_004d7e10
     MOV dword ptr [EBX + 0x25c],ESI     ; 004d7dbc
         ;   Label: LAB_004d7dbc
     CMP dword ptr [EBX + 0x260],0x4000  ; 004d7dc2
-    JG 0x004d7e1c                       ; 004d7dcc | LAB_004d7e1c
-        ;   XREF to: 004d7e1c (CONDITIONAL_JUMP)
+    JG 0x004d7e1c                       ; 004d7dcc
+        ;   XREF to: 004d7e1c (CONDITIONAL_JUMP)  ; LAB_004d7e1c
     FILD dword ptr [EBX + 0x260]        ; 004d7dce
         ;   Label: LAB_004d7dce
     FMUL float ptr [EBX + 0x1ec]        ; 004d7dd4
-    MOV EDI,dword ptr [0x02d831b4]      ; 004d7dda | int g_DebugRecording
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004d7de0 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x02d831b4]      ; 004d7dda | g_DebugRecording
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004d7de0
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EBX + 0x260]       ; 004d7de5
     TEST EDI,EDI                        ; 004d7deb
-    JNZ 0x004d7e28                      ; 004d7ded | LAB_004d7e28
-        ;   XREF to: 004d7e28 (CONDITIONAL_JUMP)
+    JNZ 0x004d7e28                      ; 004d7ded
+        ;   XREF to: 004d7e28 (CONDITIONAL_JUMP)  ; LAB_004d7e28
     FILD dword ptr [EBX + 0x260]        ; 004d7def
         ;   Label: LAB_004d7def
     MOV EAX,dword ptr [EBX + 0x260]     ; 004d7df5
-    FMUL double ptr [0x0062b24d]        ; 004d7dfb | double g_DeltaTimeToSeconds
-    MOV [0x02cf6a80],EAX                ; 004d7e01 | int g_GlobalDeltaTimeInt
+    FMUL double ptr [0x0062b24d]        ; 004d7dfb | g_DeltaTimeToSeconds
+    MOV [0x02cf6a80],EAX                ; 004d7e01 | g_GlobalDeltaTimeInt
     FSTP float ptr [EBX + 0x264]        ; 004d7e06
     POP EDI                             ; 004d7e0c
     POP ESI                             ; 004d7e0d
@@ -79,19 +79,19 @@ section .text
     RET                                 ; 004d7e0f
     MOV dword ptr [EBX + 0x260],0x0     ; 004d7e10
         ;   Label: LAB_004d7e10
-    JMP 0x004d7dbc                      ; 004d7e1a | LAB_004d7dbc
-        ;   XREF to: 004d7dbc (UNCONDITIONAL_JUMP)
+    JMP 0x004d7dbc                      ; 004d7e1a
+        ;   XREF to: 004d7dbc (UNCONDITIONAL_JUMP)  ; LAB_004d7dbc
     MOV dword ptr [EBX + 0x260],0x4000  ; 004d7e1c
         ;   Label: LAB_004d7e1c
-    JMP 0x004d7dce                      ; 004d7e26 | LAB_004d7dce
-        ;   XREF to: 004d7dce (UNCONDITIONAL_JUMP)
-    FLD float ptr [0x0062b249]          ; 004d7e28 | float g_MovieRecordingFrameBase
+    JMP 0x004d7dce                      ; 004d7e26
+        ;   XREF to: 004d7dce (UNCONDITIONAL_JUMP)  ; LAB_004d7dce
+    FLD float ptr [0x0062b249]          ; 004d7e28 | g_MovieRecordingFrameBase
         ;   Label: LAB_004d7e28
-    FDIV float ptr [0x0067b660]         ; 004d7e2e | float g_MovieRecordingTargetFPS
+    FDIV float ptr [0x0067b660]         ; 004d7e2e | g_MovieRecordingTargetFPS
     FMUL float ptr [EBX + 0x1ec]        ; 004d7e34
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004d7e3a | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004d7e3a
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EBX + 0x260]       ; 004d7e3f
-    JMP 0x004d7def                      ; 004d7e45 | LAB_004d7def
-        ;   XREF to: 004d7def (UNCONDITIONAL_JUMP)
+    JMP 0x004d7def                      ; 004d7e45
+        ;   XREF to: 004d7def (UNCONDITIONAL_JUMP)  ; LAB_004d7def
 

@@ -48,10 +48,10 @@ uint core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
   core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,0);
   pvVar2 = PTR_DAT_00681ab8;
   in_stack_00000004->actor_list_ptr = (void *)0x0;
-  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)pvVar2);
+  core_slew_cpp_CSlew_init_FUN_005a2060(pvVar2);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffe8c);
   pvVar2 = PTR_DAT_00681ab8;
-  if ((uint *)PTR_DAT_00681ab8 != (uint *)(in_stack_00000008 + 0x104)) {
+  if (PTR_DAT_00681ab8 != (uint *)(in_stack_00000008 + 0x104)) {
     *(uint *)PTR_DAT_00681ab8 = *(uint *)(in_stack_00000008 + 0x104);
     *(uint *)((int)pvVar2 + 4) = *(uint *)(in_stack_00000008 + 0x108);
     *(uint *)((int)pvVar2 + 8) = *(uint *)(in_stack_00000008 + 0x10c);
@@ -82,11 +82,10 @@ LAB_0057af67:
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
   }
   (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,in_stack_fffffe94);
-  core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)PTR_DAT_00681ab8);
+  core_slew_cpp_CSlew_processInput_FUN_005a20b0(PTR_DAT_00681ab8);
   if (in_stack_0000001c != 0) {
-    if ((CVector3i *)PTR_DAT_00681ab8 != &g_CDemonLightInstance.base.base.position) {
-                    /* WARNING: Load size is inaccurate */
-      g_CDemonLightInstance.base.base.position.x = *PTR_DAT_00681ab8;
+    if (PTR_DAT_00681ab8 != &g_CDemonLightInstance.base.base.position) {
+      g_CDemonLightInstance.base.base.position.x = *(int *)PTR_DAT_00681ab8;
       g_CDemonLightInstance.base.base.position.z = *(int *)((int)PTR_DAT_00681ab8 + 8);
       g_CDemonLightInstance.base.base.position.y = *(int *)((int)PTR_DAT_00681ab8 + 4);
     }
@@ -129,9 +128,8 @@ LAB_0057af67:
   crt_stdio_c_sprintf_FUN_005fdbd0
             (&stack0xfffffef8,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
   engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffefc,0,g_WindowHeight + -0xb);
-                    /* WARNING: Load size is inaccurate */
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_100,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*PTR_DAT_00681ab8,
+            (acStack_100,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
              (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
              180 * (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902,
@@ -182,9 +180,8 @@ LAB_0057af67:
   }
   goto LAB_0057af67;
 LAB_0057b341:
-  if ((uint *)(in_stack_00000008 + 0x104) != (uint *)PTR_DAT_00681ab8) {
-                    /* WARNING: Load size is inaccurate */
-    *(uint *)(in_stack_00000008 + 0x104) = *PTR_DAT_00681ab8;
+  if ((uint *)(in_stack_00000008 + 0x104) != PTR_DAT_00681ab8) {
+    *(uint *)(in_stack_00000008 + 0x104) = *(uint *)PTR_DAT_00681ab8;
     *(uint *)(in_stack_00000008 + 0x108) = *(uint *)((int)pvVar2 + 4);
     *(uint *)(in_stack_00000008 + 0x10c) = *(uint *)((int)pvVar2 + 8);
   }

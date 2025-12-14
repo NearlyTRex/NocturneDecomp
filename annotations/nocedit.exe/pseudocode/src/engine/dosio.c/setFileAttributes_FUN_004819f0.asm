@@ -26,15 +26,15 @@ section .text
         ;   Label: engine_dosio.c_setFileAttributes_FUN_004819f0
     MOV EAX,0x180                       ; 004819f4
     TEST DL,0x8                         ; 004819f9
-    JZ 0x00481a03                       ; 004819fc | LAB_00481a03
-        ;   XREF to: 00481a03 (CONDITIONAL_JUMP)
+    JZ 0x00481a03                       ; 004819fc
+        ;   XREF to: 00481a03 (CONDITIONAL_JUMP)  ; LAB_00481a03
     MOV EAX,0x100                       ; 004819fe
     PUSH EAX                            ; 00481a03
         ;   Label: LAB_00481a03
     MOV EDX,dword ptr [ESP + 0x8]       ; 00481a04
     PUSH EDX                            ; 00481a08
-    CALL crt_file.c_setReadonlyAttribute_FUN_00600c30 ; 00481a09 | DWORD crt_file.c_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
-        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)
+    CALL crt_file.c_setReadonlyAttribute_FUN_00600c30 ; 00481a09
+        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD crt_file.c_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
     ADD ESP,0x8                         ; 00481a0e
     TEST EAX,EAX                        ; 00481a11
     SETZ AL                             ; 00481a13

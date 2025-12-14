@@ -21,13 +21,13 @@ section .text
         ;   Label: core_gabriela.cpp_FUN_004d29f0
     MOV EAX,dword ptr [ESP + 0x14]      ; 004d29f3
     TEST EAX,EAX                        ; 004d29f7
-    JLE 0x004d2a14                      ; 004d29f9 | LAB_004d2a14
-        ;   XREF to: 004d2a14 (CONDITIONAL_JUMP)
+    JLE 0x004d2a14                      ; 004d29f9
+        ;   XREF to: 004d2a14 (CONDITIONAL_JUMP)  ; LAB_004d2a14
     CMP EAX,0x1                         ; 004d29fb
-    JNZ 0x004d2a20                      ; 004d29fe | LAB_004d2a20
-        ;   XREF to: 004d2a20 (CONDITIONAL_JUMP)
+    JNZ 0x004d2a20                      ; 004d29fe
+        ;   XREF to: 004d2a20 (CONDITIONAL_JUMP)  ; LAB_004d2a20
     FLD float ptr [ESP + 0x10]          ; 004d2a00
-    FMUL double ptr [0x0062ac7d]        ; 004d2a04 | double DOUBLE_0062ac7d
+    FMUL double ptr [0x0062ac7d]        ; 004d2a04 | DOUBLE_0062ac7d
     FSTP float ptr [ESP]                ; 004d2a0a
         ;   Label: LAB_004d2a0a
     MOV EAX,dword ptr [ESP]             ; 004d2a0d
@@ -35,9 +35,9 @@ section .text
     RET                                 ; 004d2a13
     FLD float ptr [ESP + 0x10]          ; 004d2a14
         ;   Label: LAB_004d2a14
-    FMUL double ptr [0x0062ac85]        ; 004d2a18 | double DOUBLE_0062ac85
-    JMP 0x004d2a0a                      ; 004d2a1e | LAB_004d2a0a
-        ;   XREF to: 004d2a0a (UNCONDITIONAL_JUMP)
+    FMUL double ptr [0x0062ac85]        ; 004d2a18 | DOUBLE_0062ac85
+    JMP 0x004d2a0a                      ; 004d2a1e
+        ;   XREF to: 004d2a0a (UNCONDITIONAL_JUMP)  ; LAB_004d2a0a
     MOV EAX,dword ptr [ESP + 0x10]      ; 004d2a20
         ;   Label: LAB_004d2a20
     MOV dword ptr [ESP],EAX             ; 004d2a24

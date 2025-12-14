@@ -1,218 +1,218 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 49, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 1, 
-    "global_count": 21, 
-    "total_lines": 128, 
-    "assembly_lines": 94, 
-    "suspect_count": 1, 
+    "assembly_lines": 94,
+    "complexity_score": 49,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 21,
+    "pseudocode_lines": 34,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402930", 
-      "addr": "00402930"
-    }, 
-    {
-      "name": "engine_2d.c_loadPaletteFile_FUN_004015a0", 
-      "addr": "004015a0"
-    }, 
-    {
-      "name": "engine_dosio.c_getFile_FUN_00481a50", 
-      "addr": "00481a50"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10", 
-      "addr": "005ecc10"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0", 
-      "addr": "005ecef0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0", 
-      "addr": "005ed8f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_00613004", 
-      "addr": "00613004", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_No_room_for_frame_buffer_00613013", 
-      "addr": "00613013", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vga_act_0061303f", 
-      "addr": "0061303f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vga_lte_00613047", 
-      "addr": "00613047", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vga_map_0061304f", 
-      "addr": "0061304f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vga_act_00613057", 
-      "addr": "00613057", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_0061305f", 
-      "addr": "0061305f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_default_act_00613062", 
-      "addr": "00613062", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_0061306e", 
-      "addr": "0061306e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_00613072", 
-      "addr": "00613072", 
-      "value": null
-    }, 
-    {
-      "type": "SResolutionEntry[9]", 
-      "name": "g_ResolutionTable", 
-      "addr": "0066df2c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0066df30", 
-      "addr": "0066df30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderingMode", 
-      "addr": "00772628", 
-      "value": null
-    }, 
-    {
-      "type": "uchar[768]", 
-      "name": "g_DefaultPalette", 
-      "addr": "02d02248", 
-      "value": null
-    }, 
-    {
-      "type": "uint[1600]", 
-      "name": "g_ReciprocalLookupTable", 
-      "addr": "02d02580", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d02584", 
-      "addr": "02d02584", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d02588", 
-      "addr": "02d02588", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 27, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)g_ReciprocalLookupTable + iVar2) = (int)(0xffffffff / uVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00401010", 
-    "signature": "void engine_2d.c_initGraphicsSystem_FUN_00401010(void)", 
-    "address_range": [
-      [
-        "00401010", 
-        "00401122"
-      ]
-    ], 
-    "name": "engine_2d.c_initGraphicsSystem_FUN_00401010"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 128
+  },
   "cross_references": [
     {
-      "from_addr": "00507bcb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
+      "addr": "00507a60",
+      "from_addr": "00507bcb",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00401010",
+    "address_range": [
+      [
+        "00401010",
+        "00401122"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+    "signature": "void engine_2d.c_initGraphicsSystem_FUN_00401010(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "00402930",
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402930"
+    },
+    {
+      "addr": "004015a0",
+      "name": "engine_2d.c_loadPaletteFile_FUN_004015a0"
+    },
+    {
+      "addr": "00481a50",
+      "name": "engine_dosio.c_getFile_FUN_00481a50"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "005ecc10",
+      "name": "wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10"
+    },
+    {
+      "addr": "005ecef0",
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0"
+    },
+    {
+      "addr": "005ed8f0",
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00613004",
+      "name": "s_engine_2d_c_00613004",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613013",
+      "name": "s_No_room_for_frame_buffer_00613013",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061303f",
+      "name": "s_vga_act_0061303f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613047",
+      "name": "s_vga_lte_00613047",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061304f",
+      "name": "s_vga_map_0061304f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613057",
+      "name": "s_vga_act_00613057",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061305f",
+      "name": "s_rb_0061305f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613062",
+      "name": "s_default_act_00613062",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061306e",
+      "name": "s_art_0061306e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613072",
+      "name": "s_engine_2d_c_00613072",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066df2c",
+      "name": "g_ResolutionTable",
+      "type": "SResolutionEntry[9]",
+      "value": null
+    },
+    {
+      "addr": "0066df30",
+      "name": "DAT_0066df30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "00772628",
+      "name": "g_RenderingMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02248",
+      "name": "g_DefaultPalette",
+      "type": "uchar[768]",
+      "value": null
+    },
+    {
+      "addr": "02d02580",
+      "name": "g_ReciprocalLookupTable",
+      "type": "uint[1600]",
+      "value": null
+    },
+    {
+      "addr": "02d02584",
+      "name": "DAT_02d02584",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d02588",
+      "name": "DAT_02d02588",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_ReciprocalLookupTable + iVar2) = (int)(0xffffffff / uVar1);",
+      "type": "pointer_cast"
     }
   ]
 }

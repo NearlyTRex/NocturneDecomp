@@ -55,20 +55,20 @@ section .text
     PUSH EDI                            ; 004f89b3
     MOV dword ptr [ESP + 0x2c],ESI      ; 004f89b4
     XOR ESI,ESI                         ; 004f89b8
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 004f89ba | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 004f89ba
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004f89bf
     XOR EDI,EDI                         ; 004f89c2
-    MOV EAX,[0x006810c8]                ; 004f89c4 | CDemonSet * g_CDemonSetPtr
+    MOV EAX,[0x006810c8]                ; 004f89c4 | g_CDemonSetPtr
         ;   Label: LAB_004f89c4
     CMP ESI,dword ptr [EAX + 0x14d154]  ; 004f89c9 | g_CDemonSetInstance.actor_list_ptr
-    JL 0x004f89eb                       ; 004f89cf | LAB_004f89eb
-        ;   XREF to: 004f89eb (CONDITIONAL_JUMP)
+    JL 0x004f89eb                       ; 004f89cf
+        ;   XREF to: 004f89eb (CONDITIONAL_JUMP)  ; LAB_004f89eb
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f89d1
     MOV ECX,dword ptr [EAX + 0x1fbf8]   ; 004f89d4
     TEST ECX,ECX                        ; 004f89da
-    JNZ 0x004f8a80                      ; 004f89dc | LAB_004f8a80
-        ;   XREF to: 004f8a80 (CONDITIONAL_JUMP)
+    JNZ 0x004f8a80                      ; 004f89dc
+        ;   XREF to: 004f8a80 (CONDITIONAL_JUMP)  ; LAB_004f8a80
     XOR EAX,EAX                         ; 004f89e2
     MOV ESP,EBP                         ; 004f89e4
     POP EBP                             ; 004f89e6
@@ -83,17 +83,17 @@ section .text
     CALL dword ptr [EAX + 0x8c]         ; 004f89f9
     ADD ESP,0x4                         ; 004f89ff
     TEST EAX,EAX                        ; 004f8a02
-    JNZ 0x004f8a77                      ; 004f8a04 | LAB_004f8a77
-        ;   XREF to: 004f8a77 (CONDITIONAL_JUMP)
+    JNZ 0x004f8a77                      ; 004f8a04
+        ;   XREF to: 004f8a77 (CONDITIONAL_JUMP)  ; LAB_004f8a77
     MOV EAX,[0x03f873dc]                ; 004f8a06 | g_CTommyGunClassInfo.name_hash
     PUSH EAX                            ; 004f8a0b
     PUSH EBX                            ; 004f8a0c
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004f8a0d | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004f8a0d
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004f8a12
     TEST EAX,EAX                        ; 004f8a15
-    JZ 0x004f8a77                       ; 004f8a17 | LAB_004f8a77
-        ;   XREF to: 004f8a77 (CONDITIONAL_JUMP)
+    JZ 0x004f8a77                       ; 004f8a17
+        ;   XREF to: 004f8a77 (CONDITIONAL_JUMP)  ; LAB_004f8a77
     LEA EAX,[EBX + 0x20]                ; 004f8a19
     FLD float ptr [EAX]                 ; 004f8a1c
     FSUB float ptr [ESP + 0xc]          ; 004f8a1e
@@ -107,11 +107,11 @@ section .text
     FXCH                                ; 004f8a37
     FSUB float ptr [ESP + 0x14]         ; 004f8a39
     FSTP float ptr [ESP + 0x8]          ; 004f8a3d
-    FCOMP double ptr [0x0062f753]       ; 004f8a41 | double DOUBLE_0062f753
+    FCOMP double ptr [0x0062f753]       ; 004f8a41 | DOUBLE_0062f753
     FNSTSW AX                           ; 004f8a47
     SAHF                                ; 004f8a49
-    JA 0x004f8a77                       ; 004f8a4a | LAB_004f8a77
-        ;   XREF to: 004f8a77 (CONDITIONAL_JUMP)
+    JA 0x004f8a77                       ; 004f8a4a
+        ;   XREF to: 004f8a77 (CONDITIONAL_JUMP)  ; LAB_004f8a77
     FLD float ptr [ESP + 0x8]           ; 004f8a4c
     FMUL ST0                            ; 004f8a50
     FLD float ptr [ESP]                 ; 004f8a52
@@ -121,8 +121,8 @@ section .text
     FCOMP float ptr [ESP + 0x24]        ; 004f8a5d
     FNSTSW AX                           ; 004f8a61
     SAHF                                ; 004f8a63
-    JA 0x004f8a77                       ; 004f8a64 | LAB_004f8a77
-        ;   XREF to: 004f8a77 (CONDITIONAL_JUMP)
+    JA 0x004f8a77                       ; 004f8a64
+        ;   XREF to: 004f8a77 (CONDITIONAL_JUMP)  ; LAB_004f8a77
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f8a66
     MOV dword ptr [EAX + 0x1fbf8],EBX   ; 004f8a69
     MOV EAX,dword ptr [ESP + 0x28]      ; 004f8a6f
@@ -130,8 +130,8 @@ section .text
     INC ESI                             ; 004f8a77
         ;   Label: LAB_004f8a77
     ADD EDI,0x4                         ; 004f8a78
-    JMP 0x004f89c4                      ; 004f8a7b | LAB_004f89c4
-        ;   XREF to: 004f89c4 (UNCONDITIONAL_JUMP)
+    JMP 0x004f89c4                      ; 004f8a7b
+        ;   XREF to: 004f89c4 (UNCONDITIONAL_JUMP)  ; LAB_004f89c4
     FLD float ptr [ECX + 0x20]          ; 004f8a80
         ;   Label: LAB_004f8a80
     FSUB float ptr [ESP + 0xc]          ; 004f8a83
@@ -147,8 +147,8 @@ section .text
     FADD float ptr [EAX + 0xfffffed0]   ; 004f8aa6
     PUSH EAX                            ; 004f8aac
     FSTP float ptr [EAX + 0xfffffed0]   ; 004f8aad
-    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004f8ab3 | void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
-        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004f8ab3
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV EAX,0x1                         ; 004f8ab8
     ADD ESP,0xc                         ; 004f8abd
     MOV ESP,EBP                         ; 004f8ac0

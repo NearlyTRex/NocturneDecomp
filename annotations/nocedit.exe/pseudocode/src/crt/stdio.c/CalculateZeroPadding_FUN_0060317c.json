@@ -1,62 +1,62 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 50, 
-    "assembly_lines": 36, 
-    "suspect_count": 1, 
+    "assembly_lines": 36,
+    "complexity_score": 29,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 14,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar1 = (((((spec_info->width - *(int *)((int)&spec_info->flags + 2)) -"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060317c", 
-    "signature": "void crt_stdio.c_CalculateZeroPadding_FUN_0060317c(FormatSpec * spec_info)", 
-    "address_range": [
-      [
-        "0060317c", 
-        "006031be"
-      ]
-    ], 
-    "name": "crt_stdio.c_CalculateZeroPadding_FUN_0060317c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FormatSpec *", 
-        "size": 4, 
-        "name": "spec_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "006036eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238", 
-      "addr": "00603238"
+      "addr": "00603238",
+      "from_addr": "006036eb",
+      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060317c",
+    "address_range": [
+      [
+        "0060317c",
+        "006031be"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_CalculateZeroPadding_FUN_0060317c",
+    "signature": "void crt_stdio.c_CalculateZeroPadding_FUN_0060317c(FormatSpec * spec_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "spec_info",
+        "offset": 4,
+        "size": 4,
+        "type": "FormatSpec *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(int *)((int)",
+      "text": "iVar1 = (((((spec_info->width - *(int *)((int)&spec_info->flags + 2)) -",
+      "type": "pointer_cast"
     }
   ]
 }

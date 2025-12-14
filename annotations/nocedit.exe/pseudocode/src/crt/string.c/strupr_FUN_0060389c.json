@@ -1,88 +1,88 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 58, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 35, 
-    "assembly_lines": 22, 
-    "suspect_count": 4, 
+    "assembly_lines": 22,
+    "complexity_score": 58,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
     "suspect_types": [
       "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
-      "addr": "005ff9e0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "char *in_EAX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EAX = (char *)crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*string);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "*string = (byte)in_EAX;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "return in_EAX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060389c", 
-    "signature": "char * crt_string.c_strupr_FUN_0060389c(char * string)", 
-    "address_range": [
-      [
-        "0060389c", 
-        "006038be"
-      ]
-    ], 
-    "name": "crt_string.c_strupr_FUN_0060389c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "string"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 35
+  },
   "cross_references": [
     {
-      "from_addr": "0060376d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238", 
-      "addr": "00603238"
+      "addr": "00603238",
+      "from_addr": "0060376d",
+      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060389c",
+    "address_range": [
+      [
+        "0060389c",
+        "006038be"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c_strupr_FUN_0060389c",
+    "signature": "char * crt_string.c_strupr_FUN_0060389c(char * string)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9e0",
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "string",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EAX",
+      "text": "char *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_EAX",
+      "text": "in_EAX = (char *)crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)*string);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_EAX",
+      "text": "*string = (byte)in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_EAX",
+      "text": "return in_EAX;",
+      "type": "register_param"
     }
   ]
 }

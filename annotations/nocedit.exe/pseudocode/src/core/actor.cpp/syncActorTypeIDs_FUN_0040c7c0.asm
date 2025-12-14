@@ -22,14 +22,14 @@ section .text
 
     PUSH ESI                            ; 0040c7c0
         ;   Label: core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0
-    MOV ESI,dword ptr [0x00822044]      ; 0040c7c1 | int g_NumActorClassTypes
+    MOV ESI,dword ptr [0x00822044]      ; 0040c7c1 | g_NumActorClassTypes
     XOR EAX,EAX                         ; 0040c7c7
     TEST ESI,ESI                        ; 0040c7c9
-    JLE 0x0040c7e7                      ; 0040c7cb | LAB_0040c7e7
-        ;   XREF to: 0040c7e7 (CONDITIONAL_JUMP)
+    JLE 0x0040c7e7                      ; 0040c7cb
+        ;   XREF to: 0040c7e7 (CONDITIONAL_JUMP)  ; LAB_0040c7e7
     PUSH EBX                            ; 0040c7cd
     XOR EDX,EDX                         ; 0040c7ce
-    MOV ECX,dword ptr [EDX + 0x822048]  ; 0040c7d0 | CDemonActorType *[200] g_ActorClassRegistrations
+    MOV ECX,dword ptr [EDX + 0x822048]  ; 0040c7d0 | g_ActorClassRegistrations | g_ActorClassRegistrations[1]
         ;   Label: LAB_0040c7d0
     ADD EDX,0x4                         ; 0040c7d6
     MOV EBX,dword ptr [ECX + 0x30]      ; 0040c7d9
@@ -37,10 +37,10 @@ section .text
     INC EAX                             ; 0040c7df
     MOV dword ptr [EBX],ECX             ; 0040c7e0
     CMP EAX,ESI                         ; 0040c7e2
-    JL 0x0040c7d0                       ; 0040c7e4 | LAB_0040c7d0
-        ;   XREF to: 0040c7d0 (CONDITIONAL_JUMP)
+    JL 0x0040c7d0                       ; 0040c7e4
+        ;   XREF to: 0040c7d0 (CONDITIONAL_JUMP)  ; LAB_0040c7d0
     POP EBX                             ; 0040c7e6
-    MOV dword ptr [0x00822044],ESI      ; 0040c7e7 | int g_NumActorClassTypes
+    MOV dword ptr [0x00822044],ESI      ; 0040c7e7 | g_NumActorClassTypes
         ;   Label: LAB_0040c7e7
     POP ESI                             ; 0040c7ed
     RET                                 ; 0040c7ee

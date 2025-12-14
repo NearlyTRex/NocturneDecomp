@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 22, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_ctype.c_tolower_FUN_005feb30", 
-      "addr": "005feb30"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 16,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0040c260", 
-    "signature": "uint core_actor.cpp_updateClassNameHash_FUN_0040c260(uint current_hash, int character)", 
+    "address": "0040c260",
     "address_range": [
       [
-        "0040c260", 
+        "0040c260",
         "0040c286"
       ]
-    ], 
-    "name": "core_actor.cpp_updateClassNameHash_FUN_0040c260"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_updateClassNameHash_FUN_0040c260",
+    "signature": "uint core_actor.cpp_updateClassNameHash_FUN_0040c260(uint current_hash, int character)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feb30",
+      "name": "crt_ctype.c_tolower_FUN_005feb30"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "current_hash"
-      }, 
+        "is_param": true,
+        "name": "current_hash",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "character"
+        "is_param": true,
+        "name": "character",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

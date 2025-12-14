@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 46, 
-    "assembly_lines": 31, 
-    "suspect_count": 1, 
+    "assembly_lines": 31,
+    "complexity_score": 30,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 4,
+    "pseudocode_lines": 15,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_tls.c_create_thread_local_data_FUN_0060cac0", 
-      "addr": "0060cac0"
-    }, 
-    {
-      "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8", 
-      "addr": "0060caf8"
-    }, 
-    {
-      "name": "GetLastError", 
-      "addr": "EXTERNAL:00000074"
-    }, 
-    {
-      "name": "SetLastError", 
-      "addr": "EXTERNAL:00000098"
-    }, 
-    {
-      "name": "TlsGetValue", 
-      "addr": "EXTERNAL:000000a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GetLastError*", 
-      "name": "GetLastError", 
-      "addr": "006115a4", 
-      "value": "00211f22"
-    }, 
-    {
-      "type": "SetLastError*", 
-      "name": "PTR_SetLastError_00611634", 
-      "addr": "00611634", 
-      "value": "002121d6"
-    }, 
-    {
-      "type": "TlsGetValue*", 
-      "name": "PTR_TlsGetValue_00611654", 
-      "addr": "00611654", 
-      "value": "0021225e"
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_TLSIndex", 
-      "addr": "00684ee0", 
-      "value": "0xffffffff"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "else if (*(char *)((int)pvVar1 + 0x53) != '\\0') {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a1fc", 
-    "signature": "LPVOID crt_tls.c_get_thread_local_data_FUN_0060a1fc(void)", 
-    "address_range": [
-      [
-        "0060a1fc", 
-        "0060a23b"
-      ]
-    ], 
-    "name": "crt_tls.c_get_thread_local_data_FUN_0060a1fc"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 46
+  },
   "cross_references": [
     {
-      "from_addr": "0060a4b5", 
-      "type": "DATA", 
-      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4", 
-      "addr": "0060a3b4"
+      "addr": "0060a3b4",
+      "from_addr": "0060a4b5",
+      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0060a1fc",
+    "address_range": [
+      [
+        "0060a1fc",
+        "0060a23b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_tls.c_get_thread_local_data_FUN_0060a1fc",
+    "signature": "LPVOID crt_tls.c_get_thread_local_data_FUN_0060a1fc(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060cac0",
+      "name": "crt_tls.c_create_thread_local_data_FUN_0060cac0"
+    },
+    {
+      "addr": "0060caf8",
+      "name": "crt_tls.c_getThreadLocalData_FUN_0060caf8"
+    },
+    {
+      "addr": "EXTERNAL:00000074",
+      "name": "GetLastError"
+    },
+    {
+      "addr": "EXTERNAL:00000098",
+      "name": "SetLastError"
+    },
+    {
+      "addr": "EXTERNAL:000000a0",
+      "name": "TlsGetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006115a4",
+      "name": "GetLastError",
+      "type": "GetLastError*",
+      "value": "00211f22"
+    },
+    {
+      "addr": "00611634",
+      "name": "PTR_SetLastError_00611634",
+      "type": "SetLastError*",
+      "value": "002121d6"
+    },
+    {
+      "addr": "00611654",
+      "name": "PTR_TlsGetValue_00611654",
+      "type": "TlsGetValue*",
+      "value": "0021225e"
+    },
+    {
+      "addr": "00684ee0",
+      "name": "g_TLSIndex",
+      "type": "DWORD",
+      "value": "0xffffffff"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(char *)((int)",
+      "text": "else if (*(char *)((int)pvVar1 + 0x53) != '\\0') {",
+      "type": "pointer_cast"
     }
   ]
 }

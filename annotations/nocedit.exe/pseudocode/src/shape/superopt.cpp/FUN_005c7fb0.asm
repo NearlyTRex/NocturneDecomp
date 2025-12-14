@@ -55,8 +55,8 @@ section .text
     FCOMP double ptr [EDX]              ; 005c7fcd
     FNSTSW AX                           ; 005c7fcf
     SAHF                                ; 005c7fd1
-    JZ 0x005c7ff0                       ; 005c7fd2 | LAB_005c7ff0
-        ;   XREF to: 005c7ff0 (CONDITIONAL_JUMP)
+    JZ 0x005c7ff0                       ; 005c7fd2
+        ;   XREF to: 005c7ff0 (CONDITIONAL_JUMP)  ; LAB_005c7ff0
     LEA EDX,[ESI + 0x10]                ; 005c7fd4
         ;   Label: LAB_005c7fd4
     LEA ECX,[EBX + 0x28]                ; 005c7fd7
@@ -64,8 +64,8 @@ section .text
     FCOMP double ptr [ECX]              ; 005c7fdc
     FNSTSW AX                           ; 005c7fde
     SAHF                                ; 005c7fe0
-    JZ 0x005c811b                       ; 005c7fe1 | LAB_005c811b
-        ;   XREF to: 005c811b (CONDITIONAL_JUMP)
+    JZ 0x005c811b                       ; 005c7fe1
+        ;   XREF to: 005c811b (CONDITIONAL_JUMP)  ; LAB_005c811b
     XOR EAX,EAX                         ; 005c7fe7
         ;   Label: LAB_005c7fe7
     MOV ESP,EBP                         ; 005c7fe9
@@ -79,14 +79,14 @@ section .text
     FCOMP double ptr [EDX + 0x8]        ; 005c7ff3
     FNSTSW AX                           ; 005c7ff6
     SAHF                                ; 005c7ff8
-    JNZ 0x005c7fd4                      ; 005c7ff9 | LAB_005c7fd4
-        ;   XREF to: 005c7fd4 (CONDITIONAL_JUMP)
+    JNZ 0x005c7fd4                      ; 005c7ff9
+        ;   XREF to: 005c7fd4 (CONDITIONAL_JUMP)  ; LAB_005c7fd4
     FLD double ptr [ECX + 0x10]         ; 005c7ffb
     FCOMP double ptr [EDX + 0x10]       ; 005c7ffe
     FNSTSW AX                           ; 005c8001
     SAHF                                ; 005c8003
-    JNZ 0x005c7fd4                      ; 005c8004 | LAB_005c7fd4
-        ;   XREF to: 005c7fd4 (CONDITIONAL_JUMP)
+    JNZ 0x005c7fd4                      ; 005c8004
+        ;   XREF to: 005c7fd4 (CONDITIONAL_JUMP)  ; LAB_005c7fd4
     LEA EDX,[ESI + 0x28]                ; 005c8006
         ;   Label: LAB_005c8006
     MOV ECX,0x6                         ; 005c8009
@@ -164,8 +164,8 @@ section .text
     FCOMPP                              ; 005c810b
     FNSTSW AX                           ; 005c810d
     SAHF                                ; 005c810f
-    JBE 0x005c813e                      ; 005c8110 | LAB_005c813e
-        ;   XREF to: 005c813e (CONDITIONAL_JUMP)
+    JBE 0x005c813e                      ; 005c8110
+        ;   XREF to: 005c813e (CONDITIONAL_JUMP)  ; LAB_005c813e
     XOR EAX,EAX                         ; 005c8112
     MOV ESP,EBP                         ; 005c8114
     POP EBP                             ; 005c8116
@@ -178,23 +178,23 @@ section .text
     FCOMP double ptr [ECX + 0x8]        ; 005c811e
     FNSTSW AX                           ; 005c8121
     SAHF                                ; 005c8123
-    JNZ 0x005c7fe7                      ; 005c8124 | LAB_005c7fe7
-        ;   XREF to: 005c7fe7 (CONDITIONAL_JUMP)
+    JNZ 0x005c7fe7                      ; 005c8124
+        ;   XREF to: 005c7fe7 (CONDITIONAL_JUMP)  ; LAB_005c7fe7
     FLD double ptr [EDX + 0x10]         ; 005c812a
     FCOMP double ptr [ECX + 0x10]       ; 005c812d
     FNSTSW AX                           ; 005c8130
     SAHF                                ; 005c8132
-    JNZ 0x005c7fe7                      ; 005c8133 | LAB_005c7fe7
-        ;   XREF to: 005c7fe7 (CONDITIONAL_JUMP)
-    JMP 0x005c8006                      ; 005c8139 | LAB_005c8006
-        ;   XREF to: 005c8006 (UNCONDITIONAL_JUMP)
+    JNZ 0x005c7fe7                      ; 005c8133
+        ;   XREF to: 005c7fe7 (CONDITIONAL_JUMP)  ; LAB_005c7fe7
+    JMP 0x005c8006                      ; 005c8139
+        ;   XREF to: 005c8006 (UNCONDITIONAL_JUMP)  ; LAB_005c8006
     MOV EAX,ESP                         ; 005c813e
         ;   Label: LAB_005c813e
     PUSH EAX                            ; 005c8140
     LEA EAX,[ESP + 0x64]                ; 005c8141
     PUSH EAX                            ; 005c8145
-    CALL shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0 ; 005c8146 | int shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0(CVector3d * vec1, CVector3d * vec2)
-        ;   XREF to: 005d66e0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0 ; 005c8146
+        ;   XREF to: 005d66e0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0(CVector3d * vec1, CVector3d * vec2)
     ADD ESP,0x8                         ; 005c814b
     MOV ESP,EBP                         ; 005c814e
     POP EBP                             ; 005c8150

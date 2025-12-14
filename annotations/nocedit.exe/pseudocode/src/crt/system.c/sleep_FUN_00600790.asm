@@ -22,6 +22,6 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00600790
         ;   Label: crt_system.c_sleep_FUN_00600790
     PUSH EDX                            ; 00600794
-    CALL dword ptr CS:[0x611644]        ; 00600795 | Sleep * Sleep
+    CALL dword ptr CS:[0x611644]        ; 00600795 | Sleep
     RET                                 ; 0060079c
 

@@ -51,7 +51,7 @@ core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_
     local_48[1] = 0xf00;
     do {
       local_28 = 1;
-      local_24 = (char *)g_ScreenBufferArray[local_38 * this_ptr->scale_factor];
+      local_24 = g_ScreenBufferArray[local_38 * this_ptr->scale_factor];
       if (1 < this_ptr->display_width) {
         local_30 = local_48[1] + 0xc;
         local_2c = local_48[2] + 4;

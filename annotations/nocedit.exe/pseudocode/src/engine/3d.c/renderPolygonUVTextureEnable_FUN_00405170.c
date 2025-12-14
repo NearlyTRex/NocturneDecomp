@@ -38,8 +38,7 @@ engine_3d_c_renderPolygonUVTextureEnable_FUN_00405170(SMRGLHeaderPrimitive *poly
     vertex_count = 0;
     iVar2 = 0;
     pSVar3 = polygon_info + 1;
-    for (iVar4 = 0; iVar1 = (polygon_info->base).count,
-        SBORROW /* signed borrow */4(iVar4,iVar1 * 3) != iVar4 + iVar1 * -3 < 0; iVar4 = iVar4 + 3) {
+    for (iVar4 = 0; iVar4 < (polygon_info->base).count * 3; iVar4 = iVar4 + 3) {
       iVar1 = (pSVar3->base).type;
       *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;
       g_RenderVertexBuffer[iVar1].u = (float)(pSVar3->base).count;

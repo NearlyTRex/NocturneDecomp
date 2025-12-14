@@ -37,13 +37,13 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 0049a79a
     MOV EBX,dword ptr [ESP + 0x18]      ; 0049a79e
     CMP EAX,EDX                         ; 0049a7a2
-    JNZ 0x0049a7e0                      ; 0049a7a4 | LAB_0049a7e0
-        ;   XREF to: 0049a7e0 (CONDITIONAL_JUMP)
+    JNZ 0x0049a7e0                      ; 0049a7a4
+        ;   XREF to: 0049a7e0 (CONDITIONAL_JUMP)  ; LAB_0049a7e0
     LEA EDX,[EAX + 0xc]                 ; 0049a7a6
         ;   Label: LAB_0049a7a6
     CMP EDX,ECX                         ; 0049a7a9
-    JZ 0x0049a7bd                       ; 0049a7ab | LAB_0049a7bd
-        ;   XREF to: 0049a7bd (CONDITIONAL_JUMP)
+    JZ 0x0049a7bd                       ; 0049a7ab
+        ;   XREF to: 0049a7bd (CONDITIONAL_JUMP)  ; LAB_0049a7bd
     MOV ESI,dword ptr [ECX]             ; 0049a7ad
     MOV dword ptr [EDX],ESI             ; 0049a7af
     MOV ESI,dword ptr [ECX + 0x4]       ; 0049a7b1
@@ -53,8 +53,8 @@ section .text
     LEA EDX,[EAX + 0x18]                ; 0049a7bd
         ;   Label: LAB_0049a7bd
     CMP EDX,EBX                         ; 0049a7c0
-    JZ 0x0049a7d4                       ; 0049a7c2 | LAB_0049a7d4
-        ;   XREF to: 0049a7d4 (CONDITIONAL_JUMP)
+    JZ 0x0049a7d4                       ; 0049a7c2
+        ;   XREF to: 0049a7d4 (CONDITIONAL_JUMP)  ; LAB_0049a7d4
     MOV ECX,dword ptr [EBX]             ; 0049a7c4
     MOV dword ptr [EDX],ECX             ; 0049a7c6
     MOV ECX,dword ptr [EBX + 0x4]       ; 0049a7c8
@@ -63,8 +63,8 @@ section .text
     MOV dword ptr [EDX + 0x8],ECX       ; 0049a7d1
     PUSH EAX                            ; 0049a7d4
         ;   Label: LAB_0049a7d4
-    CALL core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640 ; 0049a7d5 | void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle * triangle)
-        ;   XREF to: 0049a640 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640 ; 0049a7d5
+        ;   XREF to: 0049a640 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTriangle * triangle)
     ADD ESP,0x4                         ; 0049a7da
     POP ESI                             ; 0049a7dd
     POP EBX                             ; 0049a7de
@@ -76,6 +76,6 @@ section .text
     MOV dword ptr [EAX + 0x4],ESI       ; 0049a7e7
     MOV ESI,dword ptr [EDX + 0x8]       ; 0049a7ea
     MOV dword ptr [EAX + 0x8],ESI       ; 0049a7ed
-    JMP 0x0049a7a6                      ; 0049a7f0 | LAB_0049a7a6
-        ;   XREF to: 0049a7a6 (UNCONDITIONAL_JUMP)
+    JMP 0x0049a7a6                      ; 0049a7f0
+        ;   XREF to: 0049a7a6 (UNCONDITIONAL_JUMP)  ; LAB_0049a7a6
 

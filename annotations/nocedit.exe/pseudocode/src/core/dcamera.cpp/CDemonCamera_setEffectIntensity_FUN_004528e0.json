@@ -1,112 +1,112 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 36, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 5, 
-    "global_count": 1, 
-    "total_lines": 19, 
-    "assembly_lines": 8, 
-    "suspect_count": 2, 
+    "assembly_lines": 8,
+    "complexity_score": 36,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_CameraEffectIntensityScaleFactor", 
-      "addr": "0061a33a", 
-      "value": "65535"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)(extraout_EAX + 0x11e8) = (int)ROUND(dVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004528e0", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera * this_ptr, float intensity)", 
-    "address_range": [
-      [
-        "004528e0", 
-        "004528f9"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "intensity"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 19
+  },
   "cross_references": [
     {
-      "from_addr": "004dfae4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
-      "addr": "004ddaf0"
-    }, 
+      "addr": "004ddaf0",
+      "from_addr": "004dfae4",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00570e4d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_00570e20", 
-      "addr": "00570e20"
-    }, 
+      "addr": "00570e20",
+      "from_addr": "00570e4d",
+      "name": "core_set.cpp_CDemonSet_FUN_00570e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056aad9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
-      "addr": "0056aa10"
-    }, 
+      "addr": "0056aa10",
+      "from_addr": "0056aad9",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005858e5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setutil.cpp_C3DSCamera_apply_FUN_00585870", 
-      "addr": "00585870"
-    }, 
+      "addr": "00585870",
+      "from_addr": "005858e5",
+      "name": "core_setutil.cpp_C3DSCamera_apply_FUN_00585870",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005eed5c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0", 
-      "addr": "005eeaf0"
+      "addr": "005eeaf0",
+      "from_addr": "005eed5c",
+      "name": "core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004528e0",
+    "address_range": [
+      [
+        "004528e0",
+        "004528f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0",
+    "signature": "void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera * this_ptr, float intensity)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061a33a",
+      "name": "g_CameraEffectIntensityScaleFactor",
+      "type": "double",
+      "value": "65535"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "intensity",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX",
+      "text": "*(int *)(extraout_EAX + 0x11e8) = (int)ROUND(dVar1);",
+      "type": "extra_output"
     }
   ]
 }

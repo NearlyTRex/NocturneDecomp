@@ -29,15 +29,15 @@ section .text
     PUSH EDI                            ; 0041dbe1
     SUB ESP,0x34                        ; 0041dbe2
     MOV EBX,ESI                         ; 0041dbe5
-    MOV EDX,0x616419                    ; 0041dbe7 | = "..\\engine\\boss.c" | s_engine_boss_c_00616419 = ..\engine\boss.c
+    MOV EDX,0x616419                    ; 0041dbe7 | = "..\\engine\\boss.c"
     MOV ECX,0x44                        ; 0041dbec
-    PUSH 0x61642a                       ; 0041dbf1 | = "modelStruct not supported" | s_modelStruct_not_supported_0061642a = modelStruct not supported
+    PUSH 0x61642a                       ; 0041dbf1 | = "modelStruct not supported"
     MOV EDI,ESI                         ; 0041dbf6
     LEA ESI,[ESP + 0x4]                 ; 0041dbf8
-    MOV dword ptr [0x02f0ca48],EDX      ; 0041dbfc | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0041dc02 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0041dc08 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02f0ca48],EDX      ; 0041dbfc | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0041dc02 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0041dc08
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     MOV ECX,0xd                         ; 0041dc0d
     ADD ESP,0x4                         ; 0041dc12
     MOVSD.REP ES:EDI,ESI                ; 0041dc15

@@ -40,8 +40,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x2c]      ; 004ce075
     PUSH EDI                            ; 004ce079
     XOR EBP,EBP                         ; 004ce07a
-    CALL engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090 ; 004ce07c | int engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090(CBitFont * this_ptr, int y_pos, int color_mode, int color_value, ...)
-        ;   XREF to: 004ce090 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090 ; 004ce07c
+        ;   XREF to: 004ce090 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInClipF_FUN_004ce090(CBitFont * this_ptr, int y_pos, int color_mode, int color_value, ...)
     ADD ESP,0x18                        ; 004ce081
     MOV dword ptr [ESP],EBP             ; 004ce084
     ADD ESP,0x4                         ; 004ce087

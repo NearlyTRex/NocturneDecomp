@@ -23,15 +23,15 @@ section .text
     LEA EAX,[EBX + 0x4]                 ; 0043bf4c
     PUSH EAX                            ; 0043bf4f
     MOV dword ptr [EBX],0x0             ; 0043bf50
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0043bf56 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0043bf56
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0043bf5b
     PUSH 0x28                           ; 0043bf5e
     PUSH 0x0                            ; 0043bf60
     LEA EAX,[EBX + 0x194]               ; 0043bf62
     PUSH EAX                            ; 0043bf68
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0043bf69 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0043bf69
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0043bf6e
     MOV EAX,EBX                         ; 0043bf71
     POP EBX                             ; 0043bf73

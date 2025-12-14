@@ -1,136 +1,136 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 7, 
-    "global_count": 4, 
-    "total_lines": 74, 
-    "assembly_lines": 45, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770", 
-      "addr": "00474770"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_VolumetricFilterScaleLowRes", 
-      "addr": "0061f2cb", 
-      "value": "7"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_VolumetricFilterScaleHighRes", 
-      "addr": "0061f2d3", 
-      "value": "3"
-    }, 
-    {
-      "type": "CDemonFilter*", 
-      "name": "g_GlobalFilters", 
-      "addr": "0066ef9c", 
-      "value": "020a4878"
-    }, 
-    {
-      "type": "CDemonFilter*", 
-      "name": "g_PlayerFilters", 
-      "addr": "0066efbc", 
-      "value": "020a4878"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004765e0", 
-    "signature": "void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)", 
-    "address_range": [
-      [
-        "004765e0", 
-        "00476666"
-      ]
-    ], 
-    "name": "core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0"
-  }, 
-  "stack_frame": {
-    "local_size": 8, 
-    "variables": [
-      {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonLight *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "intensity"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 45,
+    "complexity_score": 29,
+    "cross_reference_count": 7,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 74
+  },
   "cross_references": [
     {
-      "from_addr": "004a7130", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_elephant.cpp_FUN_004a7070", 
-      "addr": "004a7070"
-    }, 
+      "addr": "004a7070",
+      "from_addr": "004a7130",
+      "name": "core_elephant.cpp_FUN_004a7070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00505b61", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lightgun.cpp_FUN_00505ac0", 
-      "addr": "00505ac0"
-    }, 
+      "addr": "00505ac0",
+      "from_addr": "00505b61",
+      "name": "core_lightgun.cpp_FUN_00505ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056ca95", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
-      "addr": "0056c990"
-    }, 
+      "addr": "0056c990",
+      "from_addr": "0056ca95",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057b00f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
-      "addr": "0057ae50"
-    }, 
+      "addr": "0057ae50",
+      "from_addr": "0057b00f",
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00586c56", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setutil.cpp_C3DSLight_apply_FUN_00586bf0", 
-      "addr": "00586bf0"
-    }, 
+      "addr": "00586bf0",
+      "from_addr": "00586c56",
+      "name": "core_setutil.cpp_C3DSLight_apply_FUN_00586bf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00588030", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_shotgun.cpp_FUN_00587f70", 
-      "addr": "00587f70"
-    }, 
+      "addr": "00587f70",
+      "from_addr": "00588030",
+      "name": "core_shotgun.cpp_FUN_00587f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ee5b7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_weapon.cpp_CWeapon_FUN_005ee4a0", 
-      "addr": "005ee4a0"
+      "addr": "005ee4a0",
+      "from_addr": "005ee5b7",
+      "name": "core_weapon.cpp_CWeapon_FUN_005ee4a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004765e0",
+    "address_range": [
+      [
+        "004765e0",
+        "00476666"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0",
+    "signature": "void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)"
+  },
+  "function_calls": [
+    {
+      "addr": "00474770",
+      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061f2cb",
+      "name": "g_VolumetricFilterScaleLowRes",
+      "type": "double",
+      "value": "7"
+    },
+    {
+      "addr": "0061f2d3",
+      "name": "g_VolumetricFilterScaleHighRes",
+      "type": "double",
+      "value": "3"
+    },
+    {
+      "addr": "0066ef9c",
+      "name": "g_GlobalFilters",
+      "type": "CDemonFilter*",
+      "value": "020a4878"
+    },
+    {
+      "addr": "0066efbc",
+      "name": "g_PlayerFilters",
+      "type": "CDemonFilter*",
+      "value": "020a4878"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "intensity",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -15,7 +15,7 @@
 
 section .text
 
-    MOV EAX,[0x02d7b424]                ; 004ce220 | int g_DefaultTextColor
+    MOV EAX,[0x02d7b424]                ; 004ce220 | g_DefaultTextColor
         ;   Label: engine_font.cpp_getDefaultTextColor_FUN_004ce220
     RET                                 ; 004ce225
 

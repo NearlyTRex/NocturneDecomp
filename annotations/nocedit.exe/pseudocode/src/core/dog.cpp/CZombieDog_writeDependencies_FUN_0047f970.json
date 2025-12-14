@@ -1,61 +1,61 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 26, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0", 
-      "addr": "0040cfd0"
-    }, 
-    {
-      "name": "core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260", 
-      "addr": "0058a260"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 19,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0047f970", 
-    "signature": "void core_dog.cpp_CZombieDog_writeDependencies_FUN_0047f970(CZombieDog * this_ptr, FILE * file_handle)", 
+    "address": "0047f970",
     "address_range": [
       [
-        "0047f970", 
+        "0047f970",
         "0047f99b"
       ]
-    ], 
-    "name": "core_dog.cpp_CZombieDog_writeDependencies_FUN_0047f970"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dog.cpp_CZombieDog_writeDependencies_FUN_0047f970",
+    "signature": "void core_dog.cpp_CZombieDog_writeDependencies_FUN_0047f970(CZombieDog * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cfd0",
+      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0"
+    },
+    {
+      "addr": "0058a260",
+      "name": "core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CZombieDog *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombieDog *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

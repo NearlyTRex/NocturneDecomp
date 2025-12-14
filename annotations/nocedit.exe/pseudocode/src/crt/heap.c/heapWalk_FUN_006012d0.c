@@ -16,7 +16,7 @@ int __cdecl crt_heap_c_heapWalk_FUN_006012d0(HeapState *heap_state_ptr,Heap *hea
   if (heap_ptr == (Heap *)0x0) {
     return 1;
   }
-  pHVar1 = (Heap *)heap_state_ptr->current_block_ptr;
+  pHVar1 = heap_state_ptr->current_block_ptr;
   if (pHVar1 == (Heap *)0x0) {
     pHVar2 = (Heap *)&heap_ptr[3].next_heap_block;
   }

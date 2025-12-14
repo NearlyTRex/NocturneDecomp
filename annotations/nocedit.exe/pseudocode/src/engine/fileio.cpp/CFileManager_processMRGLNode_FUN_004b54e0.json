@@ -1,101 +1,101 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 59, 
-    "pseudocode_lines": 59, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 200, 
-    "assembly_lines": 141, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }, 
-    {
-      "name": "engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0", 
-      "addr": "004b53e0"
-    }, 
-    {
-      "name": "engine_model.c_freeMRGLData_FUN_005280b0", 
-      "addr": "005280b0"
-    }, 
-    {
-      "name": "engine_model.c_getMRGLSize_FUN_00528700", 
-      "addr": "00528700"
-    }, 
-    {
-      "name": "engine_model.c_loadModelFile_FUN_00527ec0", 
-      "addr": "00527ec0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_MODELS_s_00627628", 
-      "addr": "00627628", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004b54e0", 
-    "signature": "void engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0(CFileManager * this_ptr, SMRGLHeaderExtended * mrgl_node)", 
-    "address_range": [
-      [
-        "004b54e0", 
-        "004b5603"
-      ]
-    ], 
-    "name": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileManager *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLHeaderExtended *", 
-        "size": 4, 
-        "name": "mrgl_node"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 141,
+    "complexity_score": 59,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 1,
+    "pseudocode_lines": 59,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 200
+  },
   "cross_references": [
     {
-      "from_addr": "004b5626", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610", 
-      "addr": "004b5610"
+      "addr": "004b5610",
+      "from_addr": "004b5626",
+      "name": "engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004b54e0",
+    "address_range": [
+      [
+        "004b54e0",
+        "004b5603"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0",
+    "signature": "void engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0(CFileManager * this_ptr, SMRGLHeaderExtended * mrgl_node)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    },
+    {
+      "addr": "004b53e0",
+      "name": "engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0"
+    },
+    {
+      "addr": "005280b0",
+      "name": "engine_model.c_freeMRGLData_FUN_005280b0"
+    },
+    {
+      "addr": "00528700",
+      "name": "engine_model.c_getMRGLSize_FUN_00528700"
+    },
+    {
+      "addr": "00527ec0",
+      "name": "engine_model.c_loadModelFile_FUN_00527ec0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00627628",
+      "name": "s_MODELS_s_00627628",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileManager *"
+      },
+      {
+        "is_param": true,
+        "name": "mrgl_node",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "suspects": []
 }

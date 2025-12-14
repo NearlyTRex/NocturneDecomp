@@ -17,8 +17,8 @@ section .text
         ;   Label: engine_fileio.cpp_CCheckOutList_dtor_FUN_004bd730
     MOV EBX,dword ptr [ESP + 0x8]       ; 004bd731
     PUSH EBX                            ; 004bd735
-    CALL engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860 ; 004bd736 | void engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860(CCheckOutList * this_ptr)
-        ;   XREF to: 004b2860 (UNCONDITIONAL_CALL)
+    CALL engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860 ; 004bd736
+        ;   XREF to: 004b2860 (UNCONDITIONAL_CALL)  ; void engine_fileio.cpp_CCheckOutList_reset_FUN_004b2860(CCheckOutList * this_ptr)
     ADD ESP,0x4                         ; 004bd73b
     MOV EAX,EBX                         ; 004bd73e
     POP EBX                             ; 004bd740

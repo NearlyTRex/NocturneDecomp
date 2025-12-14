@@ -1,215 +1,215 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 133, 
-    "pseudocode_lines": 68, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 258, 
-    "assembly_lines": 190, 
-    "suspect_count": 5, 
+    "assembly_lines": 190,
+    "complexity_score": 133,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 8,
+    "pseudocode_lines": 68,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
-      "addr": "0060013c"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0", 
-      "addr": "004032c0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
-      "addr": "005f2e90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_X_distance_in_feet_0061c842", 
-      "addr": "0061c842", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_d_d_0061c889", 
-      "addr": "0061c889", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Need_distance_and_two_po_0061c892", 
-      "addr": "0061c892", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Invalid_point_0061c8b0", 
-      "addr": "0061c8b0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_VertexCount", 
-      "addr": "01626408", 
-      "value": null
-    }, 
-    {
-      "type": "SVertexData[20000]", 
-      "name": "g_LoadedVertices", 
-      "addr": "0162640c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01626410", 
-      "addr": "01626410", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LoadedVertices[0].vertex.z", 
-      "addr": "01626414", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 23, 
-      "match": "&stack0xffffff84", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffff84,0x14,0,0x16,\"Enter X distance in feet (,min,max for user-defined min/max points) : \");"
-    }, 
-    {
-      "line": 25, 
-      "match": "&stack0xffffff84", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar4 = &stack0xffffff84;"
-    }, 
-    {
-      "line": 35, 
-      "match": "&stack0xffffff84", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff84,\"%f,%d,%d\",local_20);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00466e40", 
-    "signature": "void shape_design.c_sizeModelToXFeet_FUN_00466e40(void)", 
-    "address_range": [
-      [
-        "00466e40", 
-        "00467000"
-      ]
-    ], 
-    "name": "shape_design.c_sizeModelToXFeet_FUN_00466e40"
-  }, 
-  "stack_frame": {
-    "local_size": 128, 
-    "variables": [
-      {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_7c"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 128, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 258
+  },
   "cross_references": [
     {
-      "from_addr": "0046f74a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
-      "addr": "0046f290"
+      "addr": "0046f290",
+      "from_addr": "0046f74a",
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00466e40",
+    "address_range": [
+      [
+        "00466e40",
+        "00467000"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_sizeModelToXFeet_FUN_00466e40",
+    "signature": "void shape_design.c_sizeModelToXFeet_FUN_00466e40(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060013c",
+      "name": "crt_stdio.c_sscanf_FUN_0060013c"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "004032c0",
+      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    },
+    {
+      "addr": "005f2e90",
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061c842",
+      "name": "s_Enter_X_distance_in_feet_0061c842",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061c889",
+      "name": "s_f_d_d_0061c889",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061c892",
+      "name": "s_Need_distance_and_two_po_0061c892",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061c8b0",
+      "name": "s_Invalid_point_0061c8b0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01626408",
+      "name": "g_VertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0162640c",
+      "name": "g_LoadedVertices",
+      "type": "SVertexData[20000]",
+      "value": null
+    },
+    {
+      "addr": "01626410",
+      "name": "DAT_01626410",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626414",
+      "name": "g_LoadedVertices[0].vertex.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 128,
+    "local_size": 128,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffff84",
+      "text": "(&stack0xffffff84,0x14,0,0x16,\"Enter X distance in feet (,min,max for user-defined min/max points) : \");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffff84",
+      "text": "pcVar4 = &stack0xffffff84;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xffffff84",
+      "text": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff84,\"%f,%d,%d\",local_20);",
+      "type": "stack_ref"
     }
   ]
 }

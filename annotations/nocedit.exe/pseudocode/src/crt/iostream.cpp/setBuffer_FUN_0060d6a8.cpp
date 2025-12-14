@@ -19,7 +19,7 @@ crt_iostream_cpp_setBuffer_FUN_0060d6a8
     crt_iostream_cpp_freeBuffer_FUN_0060d7a0(this_ptr->__reserve_base);
   }
   if ((buffer_end != (void *)0x0) && (buffer_end < (uint)ownership_flag)) {
-    this_ptr->__reserve_base = (char *)buffer_end;
+    this_ptr->__reserve_base = buffer_end;
     this_ptr->__reserve_end = (char *)ownership_flag;
     puVar1 = &this_ptr->__flags;
     *(byte *)puVar1 = (byte)*puVar1 & 0xfd;

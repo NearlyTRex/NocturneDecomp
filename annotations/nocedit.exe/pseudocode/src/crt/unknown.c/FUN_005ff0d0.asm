@@ -28,8 +28,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005ff0dd
     PUSH EDX                            ; 005ff0e1
     PUSH 0x684cde                       ; 005ff0e2 | DAT_00684cde
-    CALL crt_stdio.c_vfprintf_FUN_00604850 ; 005ff0e7 | int crt_stdio.c_vfprintf_FUN_00604850(FILE * file, char * format, va_list_t args)
-        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vfprintf_FUN_00604850 ; 005ff0e7
+        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vfprintf_FUN_00604850(FILE * file, char * format, va_list_t args)
     ADD ESP,0xc                         ; 005ff0ec
     ADD ESP,0x4                         ; 005ff0ef
     RET                                 ; 005ff0f2

@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 70, 
-    "pseudocode_lines": 45, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 177, 
-    "assembly_lines": 132, 
-    "suspect_count": 2, 
+    "assembly_lines": 132,
+    "complexity_score": 70,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 45,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250", 
-      "addr": "00455250"
-    }, 
-    {
-      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
-      "addr": "005fdc00"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 17, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "ptr = (void *)((int)&this_ptr->vertex_buffer->x + iVar2);"
-    }, 
-    {
-      "line": 29, 
-      "match": "(CDemonCubeTriangle *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar2),"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00457430", 
-    "signature": "void core_dcube.cpp_CDemonCube_save_FUN_00457430(CDemonCube * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "00457430", 
-        "00457521"
-      ]
-    ], 
-    "name": "core_dcube.cpp_CDemonCube_save_FUN_00457430"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCube *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 177
+  },
   "cross_references": [
     {
-      "from_addr": "00494ffc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50", 
-      "addr": "00494f50"
+      "addr": "00494f50",
+      "from_addr": "00494ffc",
+      "name": "core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00457430",
+    "address_range": [
+      [
+        "00457430",
+        "00457521"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_CDemonCube_save_FUN_00457430",
+    "signature": "void core_dcube.cpp_CDemonCube_save_FUN_00457430(CDemonCube * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00455250",
+      "name": "core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00455250"
+    },
+    {
+      "addr": "005fdc00",
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCube *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)",
+      "text": "ptr = (void *)((int)&this_ptr->vertex_buffer->x + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(CDemonCubeTriangle *)((int)",
+      "text": "((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar2),",
+      "type": "pointer_cast"
     }
   ]
 }

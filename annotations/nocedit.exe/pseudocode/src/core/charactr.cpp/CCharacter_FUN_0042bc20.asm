@@ -29,8 +29,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0042bc22
     MOV ESI,dword ptr [ESP + 0x10]      ; 0042bc26
     CMP dword ptr [ESI],0x2             ; 0042bc2a
-    JNZ 0x0042bc34                      ; 0042bc2d | LAB_0042bc34
-        ;   XREF to: 0042bc34 (CONDITIONAL_JUMP)
+    JNZ 0x0042bc34                      ; 0042bc2d
+        ;   XREF to: 0042bc34 (CONDITIONAL_JUMP)  ; LAB_0042bc34
     XOR EAX,EAX                         ; 0042bc2f
         ;   Label: LAB_0042bc2f
     POP ESI                             ; 0042bc31
@@ -42,15 +42,15 @@ section .text
     CALL dword ptr [EAX + 0x120]        ; 0042bc3b
     ADD ESP,0x4                         ; 0042bc41
     CMP EAX,0x1                         ; 0042bc44
-    JG 0x0042bc2f                       ; 0042bc47 | LAB_0042bc2f
-        ;   XREF to: 0042bc2f (CONDITIONAL_JUMP)
+    JG 0x0042bc2f                       ; 0042bc47
+        ;   XREF to: 0042bc2f (CONDITIONAL_JUMP)  ; LAB_0042bc2f
     MOV ECX,dword ptr [ESI]             ; 0042bc49
     CMP ECX,0x1                         ; 0042bc4b
-    JZ 0x0042bca0                       ; 0042bc4e | LAB_0042bca0
-        ;   XREF to: 0042bca0 (CONDITIONAL_JUMP)
+    JZ 0x0042bca0                       ; 0042bc4e
+        ;   XREF to: 0042bca0 (CONDITIONAL_JUMP)  ; LAB_0042bca0
     CMP ECX,0x3                         ; 0042bc50
-    JZ 0x0042bca0                       ; 0042bc53 | LAB_0042bca0
-        ;   XREF to: 0042bca0 (CONDITIONAL_JUMP)
+    JZ 0x0042bca0                       ; 0042bc53
+        ;   XREF to: 0042bca0 (CONDITIONAL_JUMP)  ; LAB_0042bca0
     FLD float ptr [EBX + 0x2df0]        ; 0042bc55
     FMUL float ptr [EBX + 0x261c]       ; 0042bc5b
     FSTP float ptr [ESI + 0x18]         ; 0042bc61
@@ -62,8 +62,8 @@ section .text
     FCOMP float ptr [ESI + 0x14]        ; 0042bc78
     FNSTSW AX                           ; 0042bc7b
     SAHF                                ; 0042bc7d
-    JNC 0x0042bc89                      ; 0042bc7e | LAB_0042bc89
-        ;   XREF to: 0042bc89 (CONDITIONAL_JUMP)
+    JNC 0x0042bc89                      ; 0042bc7e
+        ;   XREF to: 0042bc89 (CONDITIONAL_JUMP)  ; LAB_0042bc89
     MOV EAX,dword ptr [EBX + 0x23a0]    ; 0042bc80
     MOV dword ptr [ESI + 0x18],EAX      ; 0042bc86
     FLD float ptr [EBX + 0x2de0]        ; 0042bc89

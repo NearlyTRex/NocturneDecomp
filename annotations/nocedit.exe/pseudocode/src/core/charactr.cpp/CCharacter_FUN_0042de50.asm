@@ -29,13 +29,13 @@ section .text
     CALL dword ptr [EAX + 0x120]        ; 0042de60
     ADD ESP,0x4                         ; 0042de66
     CMP EAX,0x1                         ; 0042de69
-    JG 0x0042de89                       ; 0042de6c | LAB_0042de89
-        ;   XREF to: 0042de89 (CONDITIONAL_JUMP)
+    JG 0x0042de89                       ; 0042de6c
+        ;   XREF to: 0042de89 (CONDITIONAL_JUMP)  ; LAB_0042de89
     MOV AH,byte ptr [ESI + 0x23b8]      ; 0042de6e
     LEA EBX,[ESI + 0x158]               ; 0042de74
     TEST AH,AH                          ; 0042de7a
-    JNZ 0x0042de8d                      ; 0042de7c | LAB_0042de8d
-        ;   XREF to: 0042de8d (CONDITIONAL_JUMP)
+    JNZ 0x0042de8d                      ; 0042de7c
+        ;   XREF to: 0042de8d (CONDITIONAL_JUMP)  ; LAB_0042de8d
     MOV EAX,0x1                         ; 0042de7e
         ;   Label: LAB_0042de7e
     ADD ESP,0x4                         ; 0042de83
@@ -45,34 +45,34 @@ section .text
     RET                                 ; 0042de88
     XOR EAX,EAX                         ; 0042de89
         ;   Label: LAB_0042de89
-    JMP 0x0042de83                      ; 0042de8b | LAB_0042de83
-        ;   XREF to: 0042de83 (UNCONDITIONAL_JUMP)
+    JMP 0x0042de83                      ; 0042de8b
+        ;   XREF to: 0042de83 (UNCONDITIONAL_JUMP)  ; LAB_0042de83
     PUSH 0x0                            ; 0042de8d
         ;   Label: LAB_0042de8d
-    PUSH 0x6174c3                       ; 0042de8f | = "STAND" | s_STAND_006174c3 = STAND
+    PUSH 0x6174c3                       ; 0042de8f | = "STAND"
     PUSH EBX                            ; 0042de94
-    CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 0042de95 | CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
-        ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 0042de95
+        ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0042de9a
     PUSH EAX                            ; 0042de9d
-    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 0042de9e | int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
-        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0 ; 0042de9e
+        ;   XREF to: 0052d4f0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0(CMotionList * this_ptr)
     ADD ESP,0xc                         ; 0042dea3
     TEST EAX,EAX                        ; 0042dea6
-    JL 0x0042de7e                       ; 0042dea8 | LAB_0042de7e
-        ;   XREF to: 0042de7e (CONDITIONAL_JUMP)
+    JL 0x0042de7e                       ; 0042dea8
+        ;   XREF to: 0042de7e (CONDITIONAL_JUMP)  ; LAB_0042de7e
     PUSH EAX                            ; 0042deaa
     PUSH EBX                            ; 0042deab
-    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20 ; 0042deac | float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(CMotionController * this_ptr, int desired_state_index)
-        ;   XREF to: 0052dd20 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20 ; 0042deac
+        ;   XREF to: 0052dd20 (UNCONDITIONAL_CALL)  ; float core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(CMotionController * this_ptr, int desired_state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 0042deb1
     FLD float ptr [ESP + 0x8]           ; 0042deb5
     ADD ESP,0x8                         ; 0042deb9
-    FCOMP double ptr [0x006174ca]       ; 0042debc | double DOUBLE_006174ca
+    FCOMP double ptr [0x006174ca]       ; 0042debc | DOUBLE_006174ca
     FNSTSW AX                           ; 0042dec2
     SAHF                                ; 0042dec4
-    JBE 0x0042de7e                      ; 0042dec5 | LAB_0042de7e
-        ;   XREF to: 0042de7e (CONDITIONAL_JUMP)
+    JBE 0x0042de7e                      ; 0042dec5
+        ;   XREF to: 0042de7e (CONDITIONAL_JUMP)  ; LAB_0042de7e
     XOR EAX,EAX                         ; 0042dec7
     ADD ESP,0x4                         ; 0042dec9
     POP ESI                             ; 0042decc

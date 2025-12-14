@@ -25,6 +25,6 @@
 
 section .text
 
-    JMP dword ptr [0x02d0257c]          ; 005b5710 | RenderScanlineFunc * g_ScanlineRenderFunc
+    JMP dword ptr [0x02d0257c]          ; 005b5710 | g_ScanlineRenderFunc
         ;   Label: wincore_windll.cpp_renderScanline_FUN_005b5710
 

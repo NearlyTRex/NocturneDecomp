@@ -1,142 +1,142 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 104, 
-    "pseudocode_lines": 49, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 106, 
-    "assembly_lines": 57, 
-    "suspect_count": 4, 
+    "assembly_lines": 57,
+    "complexity_score": 104,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 49,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fgets_FUN_005fefd0", 
-      "addr": "005fefd0"
-    }
-  ], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 3, 
-    "patterns": [
-      {
-        "address": "005852b2", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }, 
-      {
-        "address": "005852c8", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }, 
-      {
-        "address": "005852ca", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 39, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "acStack_106[in_stack_00000010 + 2] = '\\0';"
-    }
-  ], 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 106
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00585290", 
-    "signature": "void core_setutil.cpp_readAndParseLine_FUN_00585290(FILE * file_handle, char * output_buffer, int max_length)", 
+    "address": "00585290",
     "address_range": [
       [
-        "00585290", 
+        "00585290",
         "0058530b"
       ]
-    ], 
-    "name": "core_setutil.cpp_readAndParseLine_FUN_00585290"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_readAndParseLine_FUN_00585290",
+    "signature": "void core_setutil.cpp_readAndParseLine_FUN_00585290(FILE * file_handle, char * output_buffer, int max_length)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fefd0",
+      "name": "crt_stdio.c_fgets_FUN_005fefd0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 268, 
+    "frame_size": 280,
+    "local_size": 268,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -264, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_108"
-      }, 
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -263, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_107"
-      }, 
+        "is_param": false,
+        "name": "local_107",
+        "offset": -263,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }, 
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }, 
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "max_length"
+        "is_param": true,
+        "name": "max_length",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 280, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 3,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005852b2",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005852c8",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "005852ca",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000010",
+      "text": "acStack_106[in_stack_00000010 + 2] = '\\0';",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -30,15 +30,15 @@ section .text
     PUSH EDX                            ; 005f73eb
     LEA EAX,[ESP + 0x4]                 ; 005f73ec
     PUSH EAX                            ; 005f73f0
-    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005f73f1 | void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005f73f1
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_ptr, CQuaternion4f * quat_ptr)
     ADD ESP,0x8                         ; 005f73f6
     MOV EAX,ESP                         ; 005f73f9
     PUSH EAX                            ; 005f73fb
     MOV EDI,ESI                         ; 005f73fc
     LEA ESI,[ESP + 0x4]                 ; 005f73fe
-    CALL core_xform.cpp_clearTranslation_FUN_005f5370 ; 005f7402 | void core_xform.cpp_clearTranslation_FUN_005f5370(CMatrix3x4f * matrix)
-        ;   XREF to: 005f5370 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_clearTranslation_FUN_005f5370 ; 005f7402
+        ;   XREF to: 005f5370 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clearTranslation_FUN_005f5370(CMatrix3x4f * matrix)
     MOV ECX,0xc                         ; 005f7407
     ADD ESP,0x4                         ; 005f740c
     MOVSD.REP ES:EDI,ESI                ; 005f740f

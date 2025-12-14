@@ -1,197 +1,203 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 114, 
-    "pseudocode_lines": 74, 
-    "cross_reference_count": 4, 
-    "global_count": 13, 
-    "total_lines": 206, 
-    "assembly_lines": 132, 
-    "suspect_count": 3, 
+    "assembly_lines": 132,
+    "complexity_score": 114,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 14,
+    "pseudocode_lines": 74,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0", 
-      "addr": "005523f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_drender_cpp_0062217e", 
-      "addr": "0062217e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDR_captureFace_too_many_00622194", 
-      "addr": "00622194", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CaptureFaceCount", 
-      "addr": "02c6d5ec", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CaptureTextureCount", 
-      "addr": "02c6d5f0", 
-      "value": null
-    }, 
-    {
-      "type": "SFace[5000]", 
-      "name": "g_CapturedFaces", 
-      "addr": "02c6d5f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CapturedFaces[0].render_flags", 
-      "addr": "02c6d5f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CapturedFaces[0].depth", 
-      "addr": "02c6d5fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CapturedFaces[0].indices.vertex_index_0", 
-      "addr": "02c6d600", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6d608", 
-      "addr": "02c6d608", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6d60c", 
-      "addr": "02c6d60c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6d610", 
-      "addr": "02c6d610", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 20, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 47, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar9 = (uint *)((int)triangle_indices + (uint)bVar13 * -8 + 4);"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_CapturedFaces[iVar6].render_flags = in_stack_00000014;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048d8a0", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)", 
-    "address_range": [
-      [
-        "0048d8a0", 
-        "0048da11"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "STrianglePackedIndices *", 
-        "size": 4, 
-        "name": "triangle_indices"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_flags"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 206
+  },
   "cross_references": [
     {
-      "from_addr": "0048d88d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0", 
-      "addr": "0048d7a0"
-    }, 
+      "addr": "0048d7a0",
+      "from_addr": "0048d88d",
+      "name": "engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048d792", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d700", 
-      "addr": "0048d700"
-    }, 
+      "addr": "0048d700",
+      "from_addr": "0048d792",
+      "name": "engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d700",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048d19e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170", 
-      "addr": "0048d170"
-    }, 
+      "addr": "0048d170",
+      "from_addr": "0048d19e",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048b0b6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030", 
-      "addr": "0048b030"
+      "addr": "0048b030",
+      "from_addr": "0048b0b6",
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048d8a0",
+    "address_range": [
+      [
+        "0048d8a0",
+        "0048da11"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0",
+    "signature": "void engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005523f0",
+      "name": "engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062217e",
+      "name": "s_engine_drender_cpp_0062217e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622194",
+      "name": "s_CDR_captureFace_too_many_00622194",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02c6d5ec",
+      "name": "g_CaptureFaceCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d5f0",
+      "name": "g_CaptureTextureCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d5f4",
+      "name": "g_CapturedFaces",
+      "type": "SFace[5000]",
+      "value": null
+    },
+    {
+      "addr": "02c6d5f8",
+      "name": "g_CapturedFaces[0].render_flags",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d5fc",
+      "name": "g_CapturedFaces[0].depth",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d600",
+      "name": "g_CapturedFaces[0].indices.vertex_index_0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d604",
+      "name": "DAT_02c6d604",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d608",
+      "name": "DAT_02c6d608",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d60c",
+      "name": "DAT_02c6d60c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d610",
+      "name": "DAT_02c6d610",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_indices",
+        "offset": 8,
+        "size": 4,
+        "type": "STrianglePackedIndices *"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)",
+      "text": "puVar9 = (uint *)((int)triangle_indices + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000014",
+      "text": "g_CapturedFaces[iVar6].render_flags = in_stack_00000014;",
+      "type": "stack_param"
     }
   ]
 }

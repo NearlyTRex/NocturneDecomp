@@ -20,8 +20,8 @@ section .text
         ;   Label: core_script.cpp_CScript_ctor_FUN_005597f0
     ADD EAX,0x38                        ; 005597f4
     PUSH EAX                            ; 005597f7
-    CALL shape_edittool.cpp_CStrList_ctor_FUN_004a2a20 ; 005597f8 | CStrList * shape_edittool.cpp_CStrList_ctor_FUN_004a2a20(CStrList * this_ptr)
-        ;   XREF to: 004a2a20 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_ctor_FUN_004a2a20 ; 005597f8
+        ;   XREF to: 004a2a20 (UNCONDITIONAL_CALL)  ; CStrList * shape_edittool.cpp_CStrList_ctor_FUN_004a2a20(CStrList * this_ptr)
     MOV dword ptr [EAX + -0x8],0x0      ; 005597fd
     MOV dword ptr [EAX + -0x4],0x0      ; 00559804
     MOV dword ptr [EAX + -0x1c],0x0     ; 0055980b

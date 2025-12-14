@@ -31,15 +31,15 @@ section .text
     MOV EBP,ESP                         ; 004d2b22
     MOV EBX,dword ptr [EBP + 0xc]       ; 004d2b24
     PUSH EBX                            ; 004d2b27
-    CALL core_hero.cpp_FUN_004f2340     ; 004d2b28 | undefined core_hero.cpp_FUN_004f2340()
-        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)
+    CALL core_hero.cpp_FUN_004f2340     ; 004d2b28
+        ;   XREF to: 004f2340 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2340()
     ADD ESP,0x4                         ; 004d2b2d
     ADD EAX,0x1fc14                     ; 004d2b30
     PUSH EAX                            ; 004d2b35
-    CALL core_cloth.cpp_FUN_00438ba0    ; 004d2b36 | undefined core_cloth.cpp_FUN_00438ba0()
-        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_00438ba0    ; 004d2b36
+        ;   XREF to: 00438ba0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00438ba0()
     LEA EBX,[EAX + 0xfffe03ec]          ; 004d2b3b
-    MOV dword ptr [EBX + 0x154],0x65e804 ; 004d2b41 | CDemonActor_vtable PTR_core_gabriela.cpp_FUN_0065e804
+    MOV dword ptr [EBX + 0x154],0x65e804 ; 004d2b41 | PTR_core_gabriela.cpp_FUN_0065e804
     MOV dword ptr [EBX + 0x1fbd4],0x0   ; 004d2b4b
     MOV dword ptr [EBX + 0x1fbd8],0x0   ; 004d2b55
     MOV dword ptr [EBX + 0x1fbdc],0x0   ; 004d2b5f
@@ -56,7 +56,7 @@ section .text
     ADD ESP,0x4                         ; 004d2bc9
     FSTP float ptr [EBX + 0x5fa84]      ; 004d2bcc
     MOV dword ptr [EBX + 0x1fbf0],0x0   ; 004d2bd2
-    PUSH 0x62acca                       ; 004d2bdc | = "gabriela.dfm" | s_gabriela_dfm_0062acca = gabriela.dfm
+    PUSH 0x62acca                       ; 004d2bdc | = "gabriela.dfm"
     MOV dword ptr [EBX + 0x1fbf4],0x0   ; 004d2be1
     LEA EAX,[EBX + 0x158]               ; 004d2beb
     FLD float ptr [EBX + 0x1fc04]       ; 004d2bf1
@@ -65,16 +65,16 @@ section .text
     FXCH                                ; 004d2bfe
     FSTP float ptr [EBX + 0x1fc08]      ; 004d2c00
     FSTP float ptr [EBX + 0x1fc00]      ; 004d2c06
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004d2c0c | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004d2c0c
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x1f738]             ; 004d2c11
     ADD ESP,0x8                         ; 004d2c17
     MOV EAX,dword ptr [EAX + 0x330]     ; 004d2c1a
-    PUSH 0x62acd7                       ; 004d2c20 | = "gabgun.kfm" | s_gabgun_kfm_0062acd7 = gabgun.kfm
+    PUSH 0x62acd7                       ; 004d2c20 | = "gabgun.kfm"
     ADD EAX,0x158                       ; 004d2c25
     PUSH EAX                            ; 004d2c2a
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 004d2c2b | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 004d2c2b
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004d2c30
     MOV EAX,EBX                         ; 004d2c33
     POP EBP                             ; 004d2c35

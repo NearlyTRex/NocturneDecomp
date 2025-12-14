@@ -34,17 +34,17 @@ section .text
     PUSH EDX                            ; 004f3f25
     MOV ECX,dword ptr [ESP + 0xc]       ; 004f3f26
     PUSH ECX                            ; 004f3f2a
-    CALL core_charactr.cpp_CCharacter_FUN_0042f730 ; 004f3f2b | void core_charactr.cpp_CCharacter_FUN_0042f730(CCharacter * this_ptr)
-        ;   XREF to: 0042f730 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042f730 ; 004f3f2b
+        ;   XREF to: 0042f730 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042f730(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 004f3f30
     MOV EAX,dword ptr [ESP + 0x8]       ; 004f3f33
     ADD EAX,0x158                       ; 004f3f37
     PUSH EAX                            ; 004f3f3c
-    PUSH 0x62edb8                       ; 004f3f3d | = "State" | s_State_0062edb8 = State
+    PUSH 0x62edb8                       ; 004f3f3d | = "State"
     MOV EBX,dword ptr [ESP + 0x14]      ; 004f3f42
     PUSH EBX                            ; 004f3f46
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 004f3f47 | void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 004f3f47
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 004f3f4c
     POP EBX                             ; 004f3f4f
     RET                                 ; 004f3f50

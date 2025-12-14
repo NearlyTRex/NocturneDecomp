@@ -18,8 +18,8 @@ section .text
     PUSH EDX                            ; 005ec4d4
     MOV ECX,dword ptr [ESP + 0x8]       ; 005ec4d5
     PUSH ECX                            ; 005ec4d9
-    CALL core_trigger.cpp_CTrigger_FUN_005e0f70 ; 005ec4da | void core_trigger.cpp_CTrigger_FUN_005e0f70(CTrigger * this_ptr)
-        ;   XREF to: 005e0f70 (UNCONDITIONAL_CALL)
+    CALL core_trigger.cpp_CTrigger_FUN_005e0f70 ; 005ec4da
+        ;   XREF to: 005e0f70 (UNCONDITIONAL_CALL)  ; void core_trigger.cpp_CTrigger_FUN_005e0f70(CTrigger * this_ptr)
     ADD ESP,0x8                         ; 005ec4df
     RET                                 ; 005ec4e2
 

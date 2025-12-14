@@ -35,7 +35,7 @@ section .text
     SUB ESP,0x30                        ; 005f6ee1
     MOV EAX,ESI                         ; 005f6ee4
     FLD float ptr [ESP + 0x38]          ; 005f6ee6
-    FMUL double ptr [0x006583c5]        ; 005f6eea | double g_XFlipMatrixScaleFactor
+    FMUL double ptr [0x006583c5]        ; 005f6eea | g_XFlipMatrixScaleFactor
     MOV EDX,0xbf800000                  ; 005f6ef0
     MOV EDI,0x3f800000                  ; 005f6ef5
     XOR ECX,ECX                         ; 005f6efa

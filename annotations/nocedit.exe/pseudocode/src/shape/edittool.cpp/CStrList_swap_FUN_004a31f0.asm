@@ -33,24 +33,24 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 004a31f8
     MOV ESI,dword ptr [ESP + 0x1c]      ; 004a31fc
     TEST EDI,EDI                        ; 004a3200
-    JL 0x004a320a                       ; 004a3202 | LAB_004a320a
-        ;   XREF to: 004a320a (CONDITIONAL_JUMP)
+    JL 0x004a320a                       ; 004a3202
+        ;   XREF to: 004a320a (CONDITIONAL_JUMP)  ; LAB_004a320a
     MOV EDX,dword ptr [EBX]             ; 004a3204
     CMP EDI,EDX                         ; 004a3206
-    JL 0x004a3235                       ; 004a3208 | LAB_004a3235
-        ;   XREF to: 004a3235 (CONDITIONAL_JUMP)
-    MOV EBP,0x6238f1                    ; 004a320a | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_006238f1 = ..\shape\edittool.cpp
+    JL 0x004a3235                       ; 004a3208
+        ;   XREF to: 004a3235 (CONDITIONAL_JUMP)  ; LAB_004a3235
+    MOV EBP,0x6238f1                    ; 004a320a | = "..\\shape\\edittool.cpp"
         ;   Label: LAB_004a320a
     MOV EAX,0xc2e                       ; 004a320f
-    PUSH 0x623907                       ; 004a3214 | = "CStrList::swap - invalid indices" | s_CStrList_swap_invalid_in_00623907 = CStrList::swap - invalid indices
-    MOV dword ptr [0x02f0ca48],EBP      ; 004a3219 | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 004a321f | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a3224 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x623907                       ; 004a3214 | = "CStrList::swap - invalid indices"
+    MOV dword ptr [0x02f0ca48],EBP      ; 004a3219 | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 004a321f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a3224
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004a3229
     CMP EDI,ESI                         ; 004a322c
-    JNZ 0x004a3246                      ; 004a322e | LAB_004a3246
-        ;   XREF to: 004a3246 (CONDITIONAL_JUMP)
+    JNZ 0x004a3246                      ; 004a322e
+        ;   XREF to: 004a3246 (CONDITIONAL_JUMP)  ; LAB_004a3246
     POP EBP                             ; 004a3230
     POP EDI                             ; 004a3231
     POP ESI                             ; 004a3232
@@ -58,14 +58,14 @@ section .text
     RET                                 ; 004a3234
     TEST ESI,ESI                        ; 004a3235
         ;   Label: LAB_004a3235
-    JL 0x004a320a                       ; 004a3237 | LAB_004a320a
-        ;   XREF to: 004a320a (CONDITIONAL_JUMP)
+    JL 0x004a320a                       ; 004a3237
+        ;   XREF to: 004a320a (CONDITIONAL_JUMP)  ; LAB_004a320a
     CMP ESI,EDX                         ; 004a3239
-    JGE 0x004a320a                      ; 004a323b | LAB_004a320a
-        ;   XREF to: 004a320a (CONDITIONAL_JUMP)
+    JGE 0x004a320a                      ; 004a323b
+        ;   XREF to: 004a320a (CONDITIONAL_JUMP)  ; LAB_004a320a
     CMP EDI,ESI                         ; 004a323d
-    JNZ 0x004a3246                      ; 004a323f | LAB_004a3246
-        ;   XREF to: 004a3246 (CONDITIONAL_JUMP)
+    JNZ 0x004a3246                      ; 004a323f
+        ;   XREF to: 004a3246 (CONDITIONAL_JUMP)  ; LAB_004a3246
     POP EBP                             ; 004a3241
     POP EDI                             ; 004a3242
     POP ESI                             ; 004a3243

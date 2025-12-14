@@ -25,10 +25,10 @@ section .text
         ;   Label: core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004ef970
     MOV EDX,dword ptr [ESP + 0xc]       ; 004ef975
     PUSH EDX                            ; 004ef979
-    MOV ECX,dword ptr [0x006703ec]      ; 004ef97a | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
-    PUSH ECX                            ; 004ef980 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 004ef981 | void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
-        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x006703ec]      ; 004ef97a | g_CDemonRendererInstance | g_CDemonRendererPtr
+    PUSH ECX                            ; 004ef980 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10 ; 004ef981
+        ;   XREF to: 0048ae10 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info, int render_flags)
     ADD ESP,0xc                         ; 004ef986
     RET                                 ; 004ef989
 

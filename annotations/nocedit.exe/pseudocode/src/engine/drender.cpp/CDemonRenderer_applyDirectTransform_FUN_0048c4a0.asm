@@ -32,8 +32,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 0048c4a3
     MOV EDX,dword ptr [ESP + 0x18]      ; 0048c4a7
     TEST EDX,EDX                        ; 0048c4ab
-    JNZ 0x0048c4c9                      ; 0048c4ad | LAB_0048c4c9
-        ;   XREF to: 0048c4c9 (CONDITIONAL_JUMP)
+    JNZ 0x0048c4c9                      ; 0048c4ad
+        ;   XREF to: 0048c4c9 (CONDITIONAL_JUMP)  ; LAB_0048c4c9
     PUSH EDX                            ; 0048c4af
     PUSH EDX                            ; 0048c4b0
     PUSH EDX                            ; 0048c4b1
@@ -43,8 +43,8 @@ section .text
     PUSH EBX                            ; 0048c4b9
     MOV ESI,dword ptr [EAX]             ; 0048c4ba
     PUSH ESI                            ; 0048c4bc
-    CALL engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 ; 0048c4bd | void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, ...)
-        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 ; 0048c4bd
+        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, ...)
     ADD ESP,0x18                        ; 0048c4c2
     POP EBP                             ; 0048c4c5
     POP ESI                             ; 0048c4c6
@@ -64,8 +64,8 @@ section .text
     PUSH EBP                            ; 0048c4dc
     MOV EDX,dword ptr [EAX]             ; 0048c4dd
     PUSH EDX                            ; 0048c4df
-    CALL engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 ; 0048c4e0 | void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, ...)
-        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 ; 0048c4e0
+        ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(ushort rotX, ushort rotY, ushort rotZ, int translateX, ...)
     ADD ESP,0x18                        ; 0048c4e5
     POP EDI                             ; 0048c4e8
     POP EBP                             ; 0048c4e9

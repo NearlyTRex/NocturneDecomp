@@ -61,61 +61,61 @@ section .text
     MOV EDX,dword ptr [EBP + 0x24]      ; 004339d8
     MOV dword ptr [ESP],0x3b800000      ; 004339db
     CMP ESI,EAX                         ; 004339e2
-    JG 0x00433a60                       ; 004339e4 | LAB_00433a60
-        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x00824e20],0x0      ; 004339ea | int g_LineBlendingDisabled
-    JNZ 0x00433a2f                      ; 004339f1 | LAB_00433a2f
-        ;   XREF to: 00433a2f (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02d02558]      ; 004339f3 | int g_ClipLeft
+    JG 0x00433a60                       ; 004339e4
+        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)  ; LAB_00433a60
+    CMP dword ptr [0x00824e20],0x0      ; 004339ea | g_LineBlendingDisabled
+    JNZ 0x00433a2f                      ; 004339f1
+        ;   XREF to: 00433a2f (CONDITIONAL_JUMP)  ; LAB_00433a2f
+    MOV ECX,dword ptr [0x02d02558]      ; 004339f3 | g_ClipLeft
     CMP EDI,ECX                         ; 004339f9
-    JGE 0x00433a05                      ; 004339fb | LAB_00433a05
-        ;   XREF to: 00433a05 (CONDITIONAL_JUMP)
+    JGE 0x00433a05                      ; 004339fb
+        ;   XREF to: 00433a05 (CONDITIONAL_JUMP)  ; LAB_00433a05
     CMP EBX,ECX                         ; 004339fd
-    JL 0x00433a60                       ; 004339ff | LAB_00433a60
-        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02d02560]      ; 00433a05 | int g_ClipRight
+    JL 0x00433a60                       ; 004339ff
+        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)  ; LAB_00433a60
+    MOV ECX,dword ptr [0x02d02560]      ; 00433a05 | g_ClipRight
         ;   Label: LAB_00433a05
     CMP EDI,ECX                         ; 00433a0b
-    JLE 0x00433a13                      ; 00433a0d | LAB_00433a13
-        ;   XREF to: 00433a13 (CONDITIONAL_JUMP)
+    JLE 0x00433a13                      ; 00433a0d
+        ;   XREF to: 00433a13 (CONDITIONAL_JUMP)  ; LAB_00433a13
     CMP EBX,ECX                         ; 00433a0f
-    JG 0x00433a60                       ; 00433a11 | LAB_00433a60
-        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02d0255c]      ; 00433a13 | int g_ClipTop
+    JG 0x00433a60                       ; 00433a11
+        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)  ; LAB_00433a60
+    MOV ECX,dword ptr [0x02d0255c]      ; 00433a13 | g_ClipTop
         ;   Label: LAB_00433a13
     CMP ESI,ECX                         ; 00433a19
-    JGE 0x00433a21                      ; 00433a1b | LAB_00433a21
-        ;   XREF to: 00433a21 (CONDITIONAL_JUMP)
+    JGE 0x00433a21                      ; 00433a1b
+        ;   XREF to: 00433a21 (CONDITIONAL_JUMP)  ; LAB_00433a21
     CMP EAX,ECX                         ; 00433a1d
-    JL 0x00433a60                       ; 00433a1f | LAB_00433a60
-        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02d02564]      ; 00433a21 | int g_ClipBottom
+    JL 0x00433a60                       ; 00433a1f
+        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)  ; LAB_00433a60
+    MOV ECX,dword ptr [0x02d02564]      ; 00433a21 | g_ClipBottom
         ;   Label: LAB_00433a21
     CMP ESI,ECX                         ; 00433a27
-    JLE 0x00433a2f                      ; 00433a29 | LAB_00433a2f
-        ;   XREF to: 00433a2f (CONDITIONAL_JUMP)
+    JLE 0x00433a2f                      ; 00433a29
+        ;   XREF to: 00433a2f (CONDITIONAL_JUMP)  ; LAB_00433a2f
     CMP EAX,ECX                         ; 00433a2b
-    JG 0x00433a60                       ; 00433a2d | LAB_00433a60
-        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)
+    JG 0x00433a60                       ; 00433a2d
+        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)  ; LAB_00433a60
     SUB EBX,EDI                         ; 00433a2f
         ;   Label: LAB_00433a2f
     MOV dword ptr [ESP + 0x2c],EBX      ; 00433a31
     TEST EBX,EBX                        ; 00433a35
-    JL 0x00433a67                       ; 00433a37 | LAB_00433a67
-        ;   XREF to: 00433a67 (CONDITIONAL_JUMP)
+    JL 0x00433a67                       ; 00433a37
+        ;   XREF to: 00433a67 (CONDITIONAL_JUMP)  ; LAB_00433a67
     MOV dword ptr [ESP + 0x24],0x1      ; 00433a39
     SUB EAX,ESI                         ; 00433a41
         ;   Label: LAB_00433a41
     MOV dword ptr [ESP + 0x28],EAX      ; 00433a43
-    JNZ 0x00433a8d                      ; 00433a47 | LAB_00433a8d
-        ;   XREF to: 00433a8d (CONDITIONAL_JUMP)
+    JNZ 0x00433a8d                      ; 00433a47
+        ;   XREF to: 00433a8d (CONDITIONAL_JUMP)  ; LAB_00433a8d
     MOV BL,DL                           ; 00433a49
     MOV EDX,dword ptr [ESP + 0x2c]      ; 00433a4b
         ;   Label: LAB_00433a4b
     DEC EDX                             ; 00433a4f
     MOV dword ptr [ESP + 0x2c],EDX      ; 00433a50
-    JNZ 0x00433a78                      ; 00433a54 | LAB_00433a78
-        ;   XREF to: 00433a78 (CONDITIONAL_JUMP)
+    JNZ 0x00433a78                      ; 00433a54
+        ;   XREF to: 00433a78 (CONDITIONAL_JUMP)  ; LAB_00433a78
     LEA EAX,[EAX]                       ; 00433a56
     LEA EDX,[EDX]                       ; 00433a5c
     MOV ESP,EBP                         ; 00433a60
@@ -130,8 +130,8 @@ section .text
     MOV ECX,0xffffffff                  ; 00433a69
     MOV dword ptr [ESP + 0x2c],EBX      ; 00433a6e
     MOV dword ptr [ESP + 0x24],ECX      ; 00433a72
-    JMP 0x00433a41                      ; 00433a76 | LAB_00433a41
-        ;   XREF to: 00433a41 (UNCONDITIONAL_JUMP)
+    JMP 0x00433a41                      ; 00433a76
+        ;   XREF to: 00433a41 (UNCONDITIONAL_JUMP)  ; LAB_00433a41
     ADD EDI,dword ptr [ESP + 0x24]      ; 00433a78
         ;   Label: LAB_00433a78
     XOR EAX,EAX                         ; 00433a7c
@@ -139,16 +139,16 @@ section .text
     PUSH EAX                            ; 00433a80
     PUSH ESI                            ; 00433a81
     PUSH EDI                            ; 00433a82
-    CALL cockpit_ckptutil.c_putPixel_FUN_004345c0 ; 00433a83 | void cockpit_ckptutil.c_putPixel_FUN_004345c0(int x, int y, int color)
-        ;   XREF to: 004345c0 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_putPixel_FUN_004345c0 ; 00433a83
+        ;   XREF to: 004345c0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_putPixel_FUN_004345c0(int x, int y, int color)
     ADD ESP,0xc                         ; 00433a88
-    JMP 0x00433a4b                      ; 00433a8b | LAB_00433a4b
-        ;   XREF to: 00433a4b (UNCONDITIONAL_JUMP)
+    JMP 0x00433a4b                      ; 00433a8b
+        ;   XREF to: 00433a4b (UNCONDITIONAL_JUMP)  ; LAB_00433a4b
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00433a8d
         ;   Label: LAB_00433a8d
     TEST EAX,EAX                        ; 00433a91
-    JNZ 0x00433abc                      ; 00433a93 | LAB_00433abc
-        ;   XREF to: 00433abc (CONDITIONAL_JUMP)
+    JNZ 0x00433abc                      ; 00433a93
+        ;   XREF to: 00433abc (CONDITIONAL_JUMP)  ; LAB_00433abc
     MOV BL,DL                           ; 00433a95
     XOR EAX,EAX                         ; 00433a97
         ;   Label: LAB_00433a97
@@ -157,15 +157,15 @@ section .text
     INC ESI                             ; 00433a9c
     PUSH ESI                            ; 00433a9d
     PUSH EDI                            ; 00433a9e
-    CALL cockpit_ckptutil.c_putPixel_FUN_004345c0 ; 00433a9f | void cockpit_ckptutil.c_putPixel_FUN_004345c0(int x, int y, int color)
-        ;   XREF to: 004345c0 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_putPixel_FUN_004345c0 ; 00433a9f
+        ;   XREF to: 004345c0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_putPixel_FUN_004345c0(int x, int y, int color)
     ADD ESP,0xc                         ; 00433aa4
     MOV ECX,dword ptr [ESP + 0x28]      ; 00433aa7
     DEC ECX                             ; 00433aab
     MOV dword ptr [ESP + 0x28],ECX      ; 00433aac
     CMP ECX,0x1                         ; 00433ab0
-    JNZ 0x00433a97                      ; 00433ab3 | LAB_00433a97
-        ;   XREF to: 00433a97 (CONDITIONAL_JUMP)
+    JNZ 0x00433a97                      ; 00433ab3
+        ;   XREF to: 00433a97 (CONDITIONAL_JUMP)  ; LAB_00433a97
     MOV ESP,EBP                         ; 00433ab5
     POP EBP                             ; 00433ab7
     POP EDI                             ; 00433ab8
@@ -176,11 +176,11 @@ section .text
         ;   Label: LAB_00433abc
     XOR EBX,EBX                         ; 00433ac0
     CMP EAX,ECX                         ; 00433ac2
-    JLE 0x00433b8a                      ; 00433ac4 | LAB_00433b8a
-        ;   XREF to: 00433b8a (CONDITIONAL_JUMP)
+    JLE 0x00433b8a                      ; 00433ac4
+        ;   XREF to: 00433b8a (CONDITIONAL_JUMP)  ; LAB_00433b8a
     CMP dword ptr [EBP + 0x2c],0x0      ; 00433aca
-    JNZ 0x00433b4d                      ; 00433ace | LAB_00433b4d
-        ;   XREF to: 00433b4d (CONDITIONAL_JUMP)
+    JNZ 0x00433b4d                      ; 00433ace
+        ;   XREF to: 00433b4d (CONDITIONAL_JUMP)  ; LAB_00433b4d
     MOV byte ptr [ESP + 0x38],DL        ; 00433ad4
     MOV EAX,dword ptr [ESP + 0x28]      ; 00433ad8
         ;   Label: LAB_00433ad8
@@ -193,15 +193,15 @@ section .text
         ;   Label: LAB_00433aeb
     DEC ECX                             ; 00433aef
     MOV dword ptr [ESP + 0x2c],ECX      ; 00433af0
-    JZ 0x00433a60                       ; 00433af4 | LAB_00433a60
-        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)
+    JZ 0x00433a60                       ; 00433af4
+        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)  ; LAB_00433a60
     MOV EDX,dword ptr [ESP + 0x20]      ; 00433afa
     MOV EAX,EBX                         ; 00433afe
     ADD EBX,EDX                         ; 00433b00
     AND EBX,0xffff                      ; 00433b02
     CMP EBX,EAX                         ; 00433b08
-    JA 0x00433b0d                       ; 00433b0a | LAB_00433b0d
-        ;   XREF to: 00433b0d (CONDITIONAL_JUMP)
+    JA 0x00433b0d                       ; 00433b0a
+        ;   XREF to: 00433b0d (CONDITIONAL_JUMP)  ; LAB_00433b0d
     INC ESI                             ; 00433b0c
     MOV ECX,dword ptr [ESP + 0x24]      ; 00433b0d
         ;   Label: LAB_00433b0d
@@ -210,8 +210,8 @@ section .text
     SHR EAX,0x8                         ; 00433b16
     ADD EDI,ECX                         ; 00433b19
     TEST EDX,EDX                        ; 00433b1b
-    JNZ 0x00433b56                      ; 00433b1d | LAB_00433b56
-        ;   XREF to: 00433b56 (CONDITIONAL_JUMP)
+    JNZ 0x00433b56                      ; 00433b1d
+        ;   XREF to: 00433b56 (CONDITIONAL_JUMP)  ; LAB_00433b56
     MOV dword ptr [ESP + 0x8],EDX       ; 00433b1f
     MOV dword ptr [ESP + 0x4],EAX       ; 00433b23
     FILD qword ptr [ESP + 0x4]          ; 00433b27
@@ -225,16 +225,16 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 00433b3d
     PUSH ESI                            ; 00433b41
     PUSH EDI                            ; 00433b42
-    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 ; 00433b43 | void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)
-        ;   XREF to: 00433f50 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 ; 00433b43
+        ;   XREF to: 00433f50 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)
     ADD ESP,0x10                        ; 00433b48
-    JMP 0x00433aeb                      ; 00433b4b | LAB_00433aeb
-        ;   XREF to: 00433aeb (UNCONDITIONAL_JUMP)
+    JMP 0x00433aeb                      ; 00433b4b
+        ;   XREF to: 00433aeb (UNCONDITIONAL_JUMP)  ; LAB_00433aeb
     MOV AL,byte ptr [EBP + 0x28]        ; 00433b4d
         ;   Label: LAB_00433b4d
     MOV byte ptr [ESP + 0x38],AL        ; 00433b50
-    JMP 0x00433ad8                      ; 00433b54 | LAB_00433ad8
-        ;   XREF to: 00433ad8 (UNCONDITIONAL_JUMP)
+    JMP 0x00433ad8                      ; 00433b54
+        ;   XREF to: 00433ad8 (UNCONDITIONAL_JUMP)  ; LAB_00433ad8
     XOR ECX,ECX                         ; 00433b56
         ;   Label: LAB_00433b56
     XOR AL,0xff                         ; 00433b58
@@ -250,25 +250,25 @@ section .text
     PUSH dword ptr [ESP + 0x34]         ; 00433b77
     PUSH EAX                            ; 00433b7b
     PUSH EDI                            ; 00433b7c
-    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 ; 00433b7d | void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)
-        ;   XREF to: 00433f50 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 ; 00433b7d
+        ;   XREF to: 00433f50 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)
     ADD ESP,0x10                        ; 00433b82
-    JMP 0x00433aeb                      ; 00433b85 | LAB_00433aeb
-        ;   XREF to: 00433aeb (UNCONDITIONAL_JUMP)
+    JMP 0x00433aeb                      ; 00433b85
+        ;   XREF to: 00433aeb (UNCONDITIONAL_JUMP)  ; LAB_00433aeb
     CMP dword ptr [EBP + 0x2c],0x0      ; 00433b8a
         ;   Label: LAB_00433b8a
-    JNZ 0x00433c2a                      ; 00433b8e | LAB_00433c2a
-        ;   XREF to: 00433c2a (CONDITIONAL_JUMP)
+    JNZ 0x00433c2a                      ; 00433b8e
+        ;   XREF to: 00433c2a (CONDITIONAL_JUMP)  ; LAB_00433c2a
     CMP dword ptr [ESP + 0x24],0x1      ; 00433b94
-    JNZ 0x00433c2a                      ; 00433b99 | LAB_00433c2a
-        ;   XREF to: 00433c2a (CONDITIONAL_JUMP)
+    JNZ 0x00433c2a                      ; 00433b99
+        ;   XREF to: 00433c2a (CONDITIONAL_JUMP)  ; LAB_00433c2a
     MOV EAX,0x1                         ; 00433b9f
         ;   Label: LAB_00433b9f
     MOV dword ptr [ESP + 0x18],EAX      ; 00433ba4
         ;   Label: LAB_00433ba4
     TEST EAX,EAX                        ; 00433ba8
-    JZ 0x00433c42                       ; 00433baa | LAB_00433c42
-        ;   XREF to: 00433c42 (CONDITIONAL_JUMP)
+    JZ 0x00433c42                       ; 00433baa
+        ;   XREF to: 00433c42 (CONDITIONAL_JUMP)  ; LAB_00433c42
     MOV byte ptr [ESP + 0x34],DL        ; 00433bb0
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00433bb4
         ;   Label: LAB_00433bb4
@@ -281,15 +281,15 @@ section .text
         ;   Label: LAB_00433bc7
     DEC EAX                             ; 00433bcb
     MOV dword ptr [ESP + 0x28],EAX      ; 00433bcc
-    JZ 0x00433a60                       ; 00433bd0 | LAB_00433a60
-        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)
+    JZ 0x00433a60                       ; 00433bd0
+        ;   XREF to: 00433a60 (CONDITIONAL_JUMP)  ; LAB_00433a60
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00433bd6
     MOV EAX,EBX                         ; 00433bda
     ADD EBX,ECX                         ; 00433bdc
     AND EBX,0xffff                      ; 00433bde
     CMP EBX,EAX                         ; 00433be4
-    JA 0x00433bec                       ; 00433be6 | LAB_00433bec
-        ;   XREF to: 00433bec (CONDITIONAL_JUMP)
+    JA 0x00433bec                       ; 00433be6
+        ;   XREF to: 00433bec (CONDITIONAL_JUMP)  ; LAB_00433bec
     ADD EDI,dword ptr [ESP + 0x24]      ; 00433be8
     MOV EDX,dword ptr [ESP + 0x18]      ; 00433bec
         ;   Label: LAB_00433bec
@@ -297,8 +297,8 @@ section .text
     INC ESI                             ; 00433bf2
     SHR EAX,0x8                         ; 00433bf3
     TEST EDX,EDX                        ; 00433bf6
-    JZ 0x00433c4e                       ; 00433bf8 | LAB_00433c4e
-        ;   XREF to: 00433c4e (CONDITIONAL_JUMP)
+    JZ 0x00433c4e                       ; 00433bf8
+        ;   XREF to: 00433c4e (CONDITIONAL_JUMP)  ; LAB_00433c4e
     XOR EDX,EDX                         ; 00433bfa
     MOV dword ptr [ESP + 0x4],EAX       ; 00433bfc
     MOV dword ptr [ESP + 0x8],EDX       ; 00433c00
@@ -313,27 +313,27 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 00433c1a
     PUSH ESI                            ; 00433c1e
     PUSH EDI                            ; 00433c1f
-    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 ; 00433c20 | void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)
-        ;   XREF to: 00433f50 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 ; 00433c20
+        ;   XREF to: 00433f50 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)
     ADD ESP,0x10                        ; 00433c25
-    JMP 0x00433bc7                      ; 00433c28 | LAB_00433bc7
-        ;   XREF to: 00433bc7 (UNCONDITIONAL_JUMP)
+    JMP 0x00433bc7                      ; 00433c28
+        ;   XREF to: 00433bc7 (UNCONDITIONAL_JUMP)  ; LAB_00433bc7
     CMP dword ptr [EBP + 0x2c],0x1      ; 00433c2a
         ;   Label: LAB_00433c2a
-    JNZ 0x00433c3b                      ; 00433c2e | LAB_00433c3b
-        ;   XREF to: 00433c3b (CONDITIONAL_JUMP)
+    JNZ 0x00433c3b                      ; 00433c2e
+        ;   XREF to: 00433c3b (CONDITIONAL_JUMP)  ; LAB_00433c3b
     CMP dword ptr [ESP + 0x24],-0x1     ; 00433c30
-    JZ 0x00433b9f                       ; 00433c35 | LAB_00433b9f
-        ;   XREF to: 00433b9f (CONDITIONAL_JUMP)
+    JZ 0x00433b9f                       ; 00433c35
+        ;   XREF to: 00433b9f (CONDITIONAL_JUMP)  ; LAB_00433b9f
     XOR EAX,EAX                         ; 00433c3b
         ;   Label: LAB_00433c3b
-    JMP 0x00433ba4                      ; 00433c3d | LAB_00433ba4
-        ;   XREF to: 00433ba4 (UNCONDITIONAL_JUMP)
+    JMP 0x00433ba4                      ; 00433c3d
+        ;   XREF to: 00433ba4 (UNCONDITIONAL_JUMP)  ; LAB_00433ba4
     MOV AL,byte ptr [EBP + 0x28]        ; 00433c42
         ;   Label: LAB_00433c42
     MOV byte ptr [ESP + 0x34],AL        ; 00433c45
-    JMP 0x00433bb4                      ; 00433c49 | LAB_00433bb4
-        ;   XREF to: 00433bb4 (UNCONDITIONAL_JUMP)
+    JMP 0x00433bb4                      ; 00433c49
+        ;   XREF to: 00433bb4 (UNCONDITIONAL_JUMP)  ; LAB_00433bb4
     XOR AL,0xff                         ; 00433c4e
         ;   Label: LAB_00433c4e
     MOV dword ptr [ESP + 0x8],EDX       ; 00433c50
@@ -349,9 +349,9 @@ section .text
     PUSH ESI                            ; 00433c72
     ADD EAX,EDI                         ; 00433c73
     PUSH EAX                            ; 00433c75
-    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 ; 00433c76 | void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)
-        ;   XREF to: 00433f50 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 ; 00433c76
+        ;   XREF to: 00433f50 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)
     ADD ESP,0x10                        ; 00433c7b
-    JMP 0x00433bc7                      ; 00433c7e | LAB_00433bc7
-        ;   XREF to: 00433bc7 (UNCONDITIONAL_JUMP)
+    JMP 0x00433bc7                      ; 00433c7e
+        ;   XREF to: 00433bc7 (UNCONDITIONAL_JUMP)  ; LAB_00433bc7
 

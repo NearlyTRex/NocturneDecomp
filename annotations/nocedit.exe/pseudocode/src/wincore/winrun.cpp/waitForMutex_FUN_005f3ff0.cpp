@@ -12,7 +12,7 @@ int __cdecl wincore_winrun_cpp_waitForMutex_FUN_005f3ff0(HANDLE mutex_handle)
   DWORD DVar1;
   
   if (mutex_handle == (HANDLE)0x0) {
-    return (int)mutex_handle;
+    return 0;
   }
   DVar1 = (*WaitForSingleObject)(mutex_handle,0xffffffff);
   return (uint)(DVar1 == 0);

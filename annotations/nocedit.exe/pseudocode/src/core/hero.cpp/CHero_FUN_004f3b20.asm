@@ -30,8 +30,8 @@ section .text
     MOV dword ptr [EBX + 0x1fbb4],0x0   ; 004f3b69
     PUSH EAX                            ; 004f3b73
     MOV dword ptr [EBX + 0x2598],0x0    ; 004f3b74
-    CALL core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0 ; 004f3b7e | void core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory * this_ptr, uint key_mask)
-        ;   XREF to: 005014a0 (UNCONDITIONAL_CALL)
+    CALL core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0 ; 004f3b7e
+        ;   XREF to: 005014a0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory * this_ptr, uint key_mask)
     ADD ESP,0x8                         ; 004f3b83
     PUSH 0x0                            ; 004f3b86
     MOV EAX,dword ptr [EBX + 0x154]     ; 004f3b88
@@ -44,8 +44,8 @@ section .text
         ;   Label: LAB_004f3ba0
     MOV dword ptr [EAX + 0x2470],0x0    ; 004f3ba3
     CMP EAX,EDX                         ; 004f3bad
-    JNZ 0x004f3ba0                      ; 004f3baf | LAB_004f3ba0
-        ;   XREF to: 004f3ba0 (CONDITIONAL_JUMP)
+    JNZ 0x004f3ba0                      ; 004f3baf
+        ;   XREF to: 004f3ba0 (CONDITIONAL_JUMP)  ; LAB_004f3ba0
     POP EBX                             ; 004f3bb1
     RET                                 ; 004f3bb2
 

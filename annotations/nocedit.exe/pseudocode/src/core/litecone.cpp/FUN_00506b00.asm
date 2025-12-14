@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2dd30f4                   ; 00506b00 | CDemonActorType g_CLightConeClassInfo
+    MOV EAX,0x2dd30f4                   ; 00506b00 | g_CLightConeClassInfo
         ;   Label: core_litecone.cpp_FUN_00506b00
     RET                                 ; 00506b05
 

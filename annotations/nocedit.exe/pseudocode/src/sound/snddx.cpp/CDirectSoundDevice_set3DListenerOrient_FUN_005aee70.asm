@@ -26,11 +26,11 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x03f6a9bc]      ; 005aee70 | IDirectSound3DListener * g_DirectSound3DListener
+    MOV EDX,dword ptr [0x03f6a9bc]      ; 005aee70 | g_DirectSound3DListener
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70
     TEST EDX,EDX                        ; 005aee76
-    JNZ 0x005aee7b                      ; 005aee78 | LAB_005aee7b
-        ;   XREF to: 005aee7b (CONDITIONAL_JUMP)
+    JNZ 0x005aee7b                      ; 005aee78
+        ;   XREF to: 005aee7b (CONDITIONAL_JUMP)  ; LAB_005aee7b
     RET                                 ; 005aee7a
     PUSH 0x0                            ; 005aee7b
         ;   Label: LAB_005aee7b

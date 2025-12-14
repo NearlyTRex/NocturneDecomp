@@ -21,8 +21,8 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 004a2ba9
     PUSH ECX                            ; 004a2bab
     PUSH EAX                            ; 004a2bac
-    CALL shape_edittool.cpp_CStrList_insertRange_FUN_004a2d80 ; 004a2bad | void shape_edittool.cpp_CStrList_insertRange_FUN_004a2d80(CStrList * this_ptr, int insertion_index, CStrList * source_list)
-        ;   XREF to: 004a2d80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_insertRange_FUN_004a2d80 ; 004a2bad
+        ;   XREF to: 004a2d80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_insertRange_FUN_004a2d80(CStrList * this_ptr, int insertion_index, CStrList * source_list)
     ADD ESP,0xc                         ; 004a2bb2
     RET                                 ; 004a2bb5
 

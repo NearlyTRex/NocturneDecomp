@@ -1,149 +1,149 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 0, 
-    "global_count": 13, 
-    "total_lines": 113, 
-    "assembly_lines": 88, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_serializeActor_FUN_0040b870", 
-      "addr": "0040b870"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
-      "addr": "0040b7f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeOrientation_FUN_0040b3e0", 
-      "addr": "0040b3e0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
-      "addr": "0040b5c0"
-    }, 
-    {
-      "name": "core_weapon.cpp_CWeapon_serialize_FUN_005ee250", 
-      "addr": "005ee250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_homeOrient_006566c0", 
-      "addr": "006566c0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_state_006566cb", 
-      "addr": "006566cb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_activateEvent_006566d1", 
-      "addr": "006566d1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_chargeTime_006566df", 
-      "addr": "006566df", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_patrolTime_006566ea", 
-      "addr": "006566ea", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_powerDownTime_006566f5", 
-      "addr": "006566f5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_fireDelayTime_00656703", 
-      "addr": "00656703", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_timer_00656711", 
-      "addr": "00656711", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_guardZoneTriggerPtr_00656717", 
-      "addr": "00656717", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_allowedVictimTypes_0065672b", 
-      "addr": "0065672b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rotateDegPerSec_0065673e", 
-      "addr": "0065673e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_canManualAim_0065674e", 
-      "addr": "0065674e", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CTurretClassVersion", 
-      "addr": "0068443c", 
-      "value": "0x2"
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 88,
+    "complexity_score": 25,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 13,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 113
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005e2c40", 
-    "signature": "void core_turret.cpp_CTurret_serialize_FUN_005e2c40(CTurret * this_ptr)", 
+    "address": "005e2c40",
     "address_range": [
       [
-        "005e2c40", 
+        "005e2c40",
         "005e2d4c"
       ]
-    ], 
-    "name": "core_turret.cpp_CTurret_serialize_FUN_005e2c40"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_turret.cpp_CTurret_serialize_FUN_005e2c40",
+    "signature": "void core_turret.cpp_CTurret_serialize_FUN_005e2c40(CTurret * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b870",
+      "name": "core_actor.cpp_serializeActor_FUN_0040b870"
+    },
+    {
+      "addr": "0040b770",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b7f0",
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b3e0",
+      "name": "core_actor.cpp_serializeOrientation_FUN_0040b3e0"
+    },
+    {
+      "addr": "0040b5c0",
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+    },
+    {
+      "addr": "005ee250",
+      "name": "core_weapon.cpp_CWeapon_serialize_FUN_005ee250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006566c0",
+      "name": "s_homeOrient_006566c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006566cb",
+      "name": "s_state_006566cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006566d1",
+      "name": "s_activateEvent_006566d1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006566df",
+      "name": "s_chargeTime_006566df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006566ea",
+      "name": "s_patrolTime_006566ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006566f5",
+      "name": "s_powerDownTime_006566f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656703",
+      "name": "s_fireDelayTime_00656703",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656711",
+      "name": "s_timer_00656711",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656717",
+      "name": "s_guardZoneTriggerPtr_00656717",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065672b",
+      "name": "s_allowedVictimTypes_0065672b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065673e",
+      "name": "s_rotateDegPerSec_0065673e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065674e",
+      "name": "s_canManualAim_0065674e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0068443c",
+      "name": "g_CTurretClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CTurret *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

@@ -23,9 +23,9 @@ int __watcallStack crt_stdio_c_fflushInternal_FUN_006039d0(FILE *file_handle)
     if ((file_handle->_link->__reserve_end != (char *)0x0) &&
        (*(byte *)&file_handle->_flag = (byte)file_handle->_flag & 0xef,
        (file_handle->_flag & 0x2000) == 0)) {
-      iVar5 = file_handle->_cnt;
-      if (iVar5 != 0) {
-        iVar5 = crt_stdio_c_lseek_FUN_00606690(file_handle->_handle,-iVar5,1);
+      iVar5 = 0;
+      if (file_handle->_cnt != 0) {
+        iVar5 = crt_stdio_c_lseek_FUN_00606690(file_handle->_handle,-file_handle->_cnt,1);
       }
       if (iVar5 == -1) {
         *(byte *)&file_handle->_flag = (byte)file_handle->_flag | 0x20;

@@ -1,101 +1,101 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 89, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 61, 
-    "assembly_lines": 37, 
-    "suspect_count": 6, 
+    "assembly_lines": 37,
+    "complexity_score": 89,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 24,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_00685030", 
-      "addr": "00685030", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "byte *in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_00000008;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pbVar3 = in_stack_00000004 + 1;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000008,0,0x20);"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar2 = (uint)*in_stack_00000004;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pbVar1 = (byte *)(((int)uVar2 >> 3) + (int)in_stack_00000008);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0060501c", 
-    "signature": "undefined crt_unknown.c_FUN_0060501c()", 
-    "address_range": [
-      [
-        "0060501c", 
-        "00605060"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_0060501c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 61
+  },
   "cross_references": [
     {
-      "from_addr": "00605098", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_scanf_scanset_FUN_00605064", 
-      "addr": "00605064"
+      "addr": "00605064",
+      "from_addr": "00605098",
+      "name": "crt_stdio.c_scanf_scanset_FUN_00605064",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060501c",
+    "address_range": [
+      [
+        "0060501c",
+        "00605060"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0060501c",
+    "signature": "undefined crt_unknown.c_FUN_0060501c()"
+  },
+  "function_calls": [
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00685030",
+      "name": "DAT_00685030",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "byte *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "void *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "pbVar3 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000008,0,0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "uVar2 = (uint)*in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "pbVar1 = (byte *)(((int)uVar2 >> 3) + (int)in_stack_00000008);",
+      "type": "stack_param"
     }
   ]
 }

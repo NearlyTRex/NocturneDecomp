@@ -1,145 +1,145 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 17, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 2, 
-    "global_count": 11, 
-    "total_lines": 68, 
-    "assembly_lines": 51, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fileman.cpp_preprocessMusicFiles_FUN_004bd750", 
-      "addr": "004bd750"
-    }, 
-    {
-      "name": "crt_file.c_create_directory_FUN_00600e10", 
-      "addr": "00600e10"
-    }, 
-    {
-      "name": "engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650", 
-      "addr": "004bc650"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_00629a53", 
-      "addr": "00629a53", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_00629a59", 
-      "addr": "00629a59", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wav_00629a5f", 
-      "addr": "00629a5f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_00629a65", 
-      "addr": "00629a65", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mp3_00629a6b", 
-      "addr": "00629a6b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_00629a71", 
-      "addr": "00629a71", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_klp_00629a77", 
-      "addr": "00629a77", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_00629a7d", 
-      "addr": "00629a7d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vol_00629a83", 
-      "addr": "00629a83", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_00629a89", 
-      "addr": "00629a89", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sfx_00629a8f", 
-      "addr": "00629a8f", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004be590", 
-    "signature": "void core_fileman.cpp_refreshSoundDirectory_FUN_004be590(FILE * file_list_output, char * source_directory)", 
-    "address_range": [
-      [
-        "004be590", 
-        "004be616"
-      ]
-    ], 
-    "name": "core_fileman.cpp_refreshSoundDirectory_FUN_004be590"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_list_output"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "source_directory"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 51,
+    "complexity_score": 17,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 11,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
+  },
   "cross_references": [
     {
-      "from_addr": "004bdd37", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20", 
-      "addr": "004bda20"
-    }, 
+      "addr": "004bda20",
+      "from_addr": "004bdd37",
+      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004be538", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270", 
-      "addr": "004be270"
+      "addr": "004be270",
+      "from_addr": "004be538",
+      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004be590",
+    "address_range": [
+      [
+        "004be590",
+        "004be616"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fileman.cpp_refreshSoundDirectory_FUN_004be590",
+    "signature": "void core_fileman.cpp_refreshSoundDirectory_FUN_004be590(FILE * file_list_output, char * source_directory)"
+  },
+  "function_calls": [
+    {
+      "addr": "004bd750",
+      "name": "core_fileman.cpp_preprocessMusicFiles_FUN_004bd750"
+    },
+    {
+      "addr": "00600e10",
+      "name": "crt_file.c_create_directory_FUN_00600e10"
+    },
+    {
+      "addr": "004bc650",
+      "name": "engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629a53",
+      "name": "s_sound_00629a53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a59",
+      "name": "s_sound_00629a59",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a5f",
+      "name": "s_wav_00629a5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a65",
+      "name": "s_sound_00629a65",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a6b",
+      "name": "s_mp3_00629a6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a71",
+      "name": "s_sound_00629a71",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a77",
+      "name": "s_klp_00629a77",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a7d",
+      "name": "s_sound_00629a7d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a83",
+      "name": "s_vol_00629a83",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a89",
+      "name": "s_sound_00629a89",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629a8f",
+      "name": "s_sfx_00629a8f",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_list_output",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "source_directory",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

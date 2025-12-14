@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 22, 
-    "assembly_lines": 17, 
-    "suspect_count": 1, 
+    "assembly_lines": 17,
+    "complexity_score": 20,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_value * 0x10101;"
-    }
-  ], 
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005748a0", 
-    "signature": "void core_setdir.cpp_setPixelGrayscale_FUN_005748a0(int x, int y, int grayscale_value)", 
+    "address": "005748a0",
     "address_range": [
       [
-        "005748a0", 
+        "005748a0",
         "005748cc"
       ]
-    ], 
-    "name": "core_setdir.cpp_setPixelGrayscale_FUN_005748a0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_setPixelGrayscale_FUN_005748a0",
+    "signature": "void core_setdir.cpp_setPixelGrayscale_FUN_005748a0(int x, int y, int grayscale_value)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x"
-      }, 
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y"
-      }, 
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "grayscale_value"
+        "is_param": true,
+        "name": "grayscale_value",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 5,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_value * 0x10101;",
+      "type": "pointer_cast"
+    }
+  ]
 }

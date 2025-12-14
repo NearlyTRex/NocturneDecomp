@@ -21,13 +21,14 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70
                int param_50,CEdScrollBar *param_51,int param_52,int param_53,int param_54,
                int param_55,int param_56,int param_57,int param_58,int param_59,int param_60,
                int param_61,int param_62,int param_63,int param_64,int param_65,int param_66,
-               int param_67,int param_68,char *param_69,int param_70,int param_71,
+               int param_67,int param_68,char *param_69,uint param_70,int param_71,
                uint param_72,int param_73,int param_74)
 
 {
   CDemonActor *this_ptr;
   int right_pos;
-  int iVar1;
+  uint uVar1;
+  int iVar2;
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
   int unaff_EDI;
@@ -40,7 +41,7 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70
   int in_stack_00000168;
   int in_stack_00000174;
   int in_stack_0000017c;
-  int in_stack_00000188;
+  uint in_stack_00000188;
   int in_stack_0000018c;
   int in_stack_00000190;
   
@@ -172,10 +173,10 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70
     unaff_ESI = 0x53692d;
     engine_2d_c_drawText_FUN_00401fd0("Syntax check",unaff_retaddr,(int)param_69);
     this_ptr = *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c);
-    iVar1 = param_70 + 0x16;
+    uVar1 = param_70 + 0x16;
     if (this_ptr != (CDemonActor *)0x0) {
       param_70 = param_70 + 0x21;
-      if ((-1 < param_70) && (param_70 <= g_ClipBottom)) {
+      if ((param_70 < 0x80000000) && ((int)param_70 <= g_ClipBottom)) {
         g_ActiveRenderColor = 0xff;
         unaff_ESI = 0x53698e;
         unaff_EBX = (char *)g_ClipLeft;
@@ -195,11 +196,11 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70
       param_8 = 0x536a00;
       param_9 = this_ptr;
       (*this_ptr->vtable->showEditorHelp)(this_ptr,param_10);
-      iVar1 = param_70;
+      uVar1 = param_70;
     }
-    param_70 = iVar1;
+    param_70 = uVar1;
     right_pos = g_ClipBottom;
-    iVar1 = g_ClipRight;
+    iVar2 = g_ClipRight;
     param_15 = g_ClipBottom;
     param_14 = g_ClipRight;
     in_stack_0000012c = in_stack_0000012c + 0xb;
@@ -208,7 +209,7 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70
     param_12 = (CEdScrollBar *)&param_67;
     param_11 = 0x536a42;
     shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
-              (param_12,param_13,iVar1,right_pos,param_16 + 0xb);
+              (param_12,param_13,iVar2,right_pos,param_16 + 0xb);
     param_69 = (char *)(in_stack_00000134 + param_68);
     param_70 = (g_ClipBottom - g_ClipTop) + -1;
     param_16 = 0x536a7c;
@@ -221,47 +222,47 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70
     param_21 = 1;
     param_20 = g_CKeysPtr;
     param_19 = 0x536ab1;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
-    if (iVar1 != 0) break;
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    if (iVar2 != 0) break;
     param_26 = 0x50;
     param_25 = g_CKeysPtr;
     param_24 = 0x536ac9;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x50);
-    if (iVar1 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x50);
+    if (iVar2 != 0) {
       in_stack_00000138 = in_stack_00000138 + 0xb;
     }
     param_31 = 0x48;
     param_30 = g_CKeysPtr;
     param_29 = 0x536ae4;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x48);
-    if (iVar1 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x48);
+    if (iVar2 != 0) {
       in_stack_0000014c = in_stack_0000014c + -0xb;
     }
     param_36 = 0x51;
     param_35 = g_CKeysPtr;
     param_34 = 0x536b00;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x51);
-    if (iVar1 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x51);
+    if (iVar2 != 0) {
       in_stack_00000160 = in_stack_00000160 + in_stack_00000168;
     }
     param_41 = 0x49;
     param_40 = g_CKeysPtr;
     param_39 = 0x536b22;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x49);
-    if (iVar1 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x49);
+    if (iVar2 != 0) {
       in_stack_00000174 = in_stack_00000174 - in_stack_0000017c;
     }
     param_46 = 0x47;
     param_45 = g_CKeysPtr;
     param_44 = 0x536b44;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x47);
-    if (iVar1 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x47);
+    if (iVar2 != 0) {
       in_stack_00000188 = 0;
     }
-    if (in_stack_0000018c - in_stack_00000190 < in_stack_00000188) {
+    if (in_stack_0000018c - in_stack_00000190 < (int)in_stack_00000188) {
       in_stack_00000188 = in_stack_0000018c - in_stack_00000190;
     }
-    if (in_stack_00000188 < 0) {
+    if (0x7fffffff < in_stack_00000188) {
       in_stack_00000188 = 0;
     }
     param_51 = (CEdScrollBar *)&stack0x00000188;

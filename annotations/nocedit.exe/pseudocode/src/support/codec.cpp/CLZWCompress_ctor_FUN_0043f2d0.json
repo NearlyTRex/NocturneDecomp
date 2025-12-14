@@ -1,113 +1,113 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 81, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 45, 
-    "assembly_lines": 24, 
-    "suspect_count": 5, 
+    "assembly_lines": 24,
+    "complexity_score": 81,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 21,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "support_codec.cpp_CCodec_ctor_FUN_0043e9a0", 
-      "addr": "0043e9a0"
-    }, 
-    {
-      "name": "support_codec.cpp_CLZWDictionary_ctor_FUN_0043edd0", 
-      "addr": "0043edd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CCodec_vtable", 
-      "name": "g_CLZWCompressVTable", 
-      "addr": "0065bbf4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 15, 
-      "match": "pCVar3[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "piVar4 = &pCVar3[-1].bit_state.accumulated_bits;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar3[1].dict_size = in_stack_00000010;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar3[1].num_bits = in_stack_00000014;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043f2d0", 
-    "signature": "CLZWCompress * support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress * this_ptr)", 
-    "address_range": [
-      [
-        "0043f2d0", 
-        "0043f312"
-      ]
-    ], 
-    "name": "support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWCompress *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 45
+  },
   "cross_references": [
     {
-      "from_addr": "00452b56", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
-      "addr": "004529b0"
-    }, 
+      "addr": "004529b0",
+      "from_addr": "00452b56",
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e1054", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
-      "addr": "004e0cd0"
+      "addr": "004e0cd0",
+      "from_addr": "004e1054",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043f2d0",
+    "address_range": [
+      [
+        "0043f2d0",
+        "0043f312"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0",
+    "signature": "CLZWCompress * support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0(CLZWCompress * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043e9a0",
+      "name": "support_codec.cpp_CCodec_ctor_FUN_0043e9a0"
+    },
+    {
+      "addr": "0043edd0",
+      "name": "support_codec.cpp_CLZWDictionary_ctor_FUN_0043edd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065bbf4",
+      "name": "g_CLZWCompressVTable",
+      "type": "CCodec_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWCompress *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "pCVar3[-1].",
+      "text": "piVar4 = &pCVar3[-1].bit_state.accumulated_bits;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000010",
+      "text": "pCVar3[1].dict_size = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000014",
+      "text": "pCVar3[1].num_bits = in_stack_00000014;",
+      "type": "stack_param"
     }
   ]
 }

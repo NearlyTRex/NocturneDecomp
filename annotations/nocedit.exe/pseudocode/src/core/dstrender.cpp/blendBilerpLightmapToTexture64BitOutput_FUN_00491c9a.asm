@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00491ca9
     MOV EBP,dword ptr [EBP + 0x14]      ; 00491cac
     PXOR MM7,MM7                        ; 00491caf
-    MOVD MM5,dword ptr [0x02d052a8]     ; 00491cb2 | int g_SolidColorMode
+    MOVD MM5,dword ptr [0x02d052a8]     ; 00491cb2 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00491cb9
     PSLLW MM5,0x6                       ; 00491cbc
     MOV EAX,dword ptr [ESI]             ; 00491cc0
@@ -130,8 +130,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x220]     ; 00491ebd
     MOV EAX,dword ptr [EBX + 0x240]     ; 00491ec3
     MOV EAX,dword ptr [EBX + 0x260]     ; 00491ec9
-    JMP 0x00491ee0                      ; 00491ecf | LAB_00491ee0
-        ;   XREF to: 00491ee0 (UNCONDITIONAL_JUMP)
+    JMP 0x00491ee0                      ; 00491ecf
+        ;   XREF to: 00491ee0 (UNCONDITIONAL_JUMP)  ; LAB_00491ee0
     MOVZX EDX,byte ptr [EBX]            ; 00491ee0
         ;   Label: LAB_00491ee0
     MOVZX EAX,byte ptr [EBX + 0x140]    ; 00491ee3
@@ -139,14 +139,14 @@ section .text
     MOVQ MM0,qword ptr [ESI]            ; 00491eec
     SHR EDX,0x1                         ; 00491eef
     MOVZX EAX,byte ptr [EBX + 0x141]    ; 00491ef1
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00491ef8 | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00491ef8 | g_LightmapTexturePalette
     MOVZX EDX,byte ptr [EBX + 0x1]      ; 00491f00
     MOVQ MM1,MM0                        ; 00491f04
     ADD EDX,EAX                         ; 00491f07
     MOVZX EAX,byte ptr [EBP]            ; 00491f09
     SHR EDX,0x1                         ; 00491f0d
     PUNPCKLBW MM0,MM7                   ; 00491f0f
-    MOVD MM6,dword ptr [EDX*0x4 + 0xc19dfc] ; 00491f12 | uint[256] g_LightmapTexturePalette
+    MOVD MM6,dword ptr [EDX*0x4 + 0xc19dfc] ; 00491f12 | g_LightmapTexturePalette
     PSRLQ MM1,0x20                      ; 00491f1a
     SHR EDX,0x1                         ; 00491f1e
     PUNPCKLBW MM6,MM7                   ; 00491f20
@@ -156,18 +156,18 @@ section .text
     PUNPCKLBW MM1,MM7                   ; 00491f2b
     PMULLW MM0,MM2                      ; 00491f2e
     PSRLW MM6,0x1                       ; 00491f31
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00491f35 | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00491f35 | g_LightmapData
     PMULLW MM1,MM6                      ; 00491f3d
     MOVQ MM2,MM3                        ; 00491f40
     MOVQ MM4,MM5                        ; 00491f43
-    PXOR MM2,qword ptr [0x006781e8]     ; 00491f46 | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00491f46 | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 00491f4d
     PMULHW MM1,MM2                      ; 00491f50
     PMULHW MM4,MM3                      ; 00491f53
     PADDW MM0,MM4                       ; 00491f56
     PADDW MM1,MM4                       ; 00491f59
-    PADDW MM0,qword ptr [0x00676488]    ; 00491f5c | ulonglong g_AmbientLightMMX1
-    PADDW MM1,qword ptr [0x00676490]    ; 00491f63 | ulonglong g_AmbientLightMMX2
+    PADDW MM0,qword ptr [0x00676488]    ; 00491f5c | g_AmbientLightMMX1
+    PADDW MM1,qword ptr [0x00676490]    ; 00491f63 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 00491f6a
     PSRLW MM1,0x4                       ; 00491f6e
     PACKUSWB MM0,MM1                    ; 00491f72
@@ -177,8 +177,8 @@ section .text
     MOVQ qword ptr [EDI],MM0            ; 00491f7a
     ADD EDI,0x8                         ; 00491f7d
     SUB ECX,0x2                         ; 00491f80
-    JG 0x00491ee0                       ; 00491f83 | LAB_00491ee0
-        ;   XREF to: 00491ee0 (CONDITIONAL_JUMP)
+    JG 0x00491ee0                       ; 00491f83
+        ;   XREF to: 00491ee0 (CONDITIONAL_JUMP)  ; LAB_00491ee0
     POP EBP                             ; 00491f89
     EMMS                                ; 00491f8a
     POP EDI                             ; 00491f8c

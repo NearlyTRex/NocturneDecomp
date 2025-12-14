@@ -1,70 +1,70 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 12, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fopenWithFlags_FUN_00601a20", 
-      "addr": "00601a20"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00601a7c", 
-    "signature": "FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)", 
-    "address_range": [
-      [
-        "00601a7c", 
-        "00601a92"
-      ]
-    ], 
-    "name": "crt_stdio.c_fopen_FUN_00601a7c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "mode"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 12,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "0050fcd1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0", 
-      "addr": "0050fbc0"
-    }, 
+      "addr": "0050fbc0",
+      "from_addr": "0050fcd1",
+      "name": "shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050f7e7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
+      "addr": "0050f7a0",
+      "from_addr": "0050f7e7",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00601a7c",
+    "address_range": [
+      [
+        "00601a7c",
+        "00601a92"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_fopen_FUN_00601a7c",
+    "signature": "FILE * crt_stdio.c_fopen_FUN_00601a7c(char * filename, char * mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601a20",
+      "name": "crt_stdio.c_fopenWithFlags_FUN_00601a20"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

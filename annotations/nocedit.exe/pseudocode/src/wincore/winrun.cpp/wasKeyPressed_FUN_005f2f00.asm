@@ -25,9 +25,9 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x03f96c1c]      ; 005f2f00 | int g_InputWriteIndex
+    MOV EDX,dword ptr [0x03f96c1c]      ; 005f2f00 | g_InputWriteIndex
         ;   Label: wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00
-    MOV EAX,[0x03f96c18]                ; 005f2f06 | int g_InputReadIndex
+    MOV EAX,[0x03f96c18]                ; 005f2f06 | g_InputReadIndex
     CMP EAX,EDX                         ; 005f2f0b
     SETNZ AL                            ; 005f2f0d
     AND EAX,0xff                        ; 005f2f10

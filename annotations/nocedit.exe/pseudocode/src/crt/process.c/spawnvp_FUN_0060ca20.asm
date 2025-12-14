@@ -24,7 +24,7 @@ section .text
     PUSH EBX                            ; 0060ca20
         ;   Label: crt_process.c_spawnvp_FUN_0060ca20
     PUSH ESI                            ; 0060ca21
-    MOV EDX,dword ptr [0x03f9b864]      ; 0060ca22 | char * * g_EnvironmentBlock
+    MOV EDX,dword ptr [0x03f9b864]      ; 0060ca22 | g_EnvironmentBlock
     PUSH EDX                            ; 0060ca28
     MOV EBX,dword ptr [ESP + 0x18]      ; 0060ca29
     PUSH EBX                            ; 0060ca2d
@@ -32,8 +32,8 @@ section .text
     PUSH ECX                            ; 0060ca32
     MOV ESI,dword ptr [ESP + 0x18]      ; 0060ca33
     PUSH ESI                            ; 0060ca37
-    CALL crt_process.c_spawnvp_with_path_search_FUN_0060e6a0 ; 0060ca38 | int crt_process.c_spawnvp_with_path_search_FUN_0060e6a0(int mode, char * program, char * * argv)
-        ;   XREF to: 0060e6a0 (UNCONDITIONAL_CALL)
+    CALL crt_process.c_spawnvp_with_path_search_FUN_0060e6a0 ; 0060ca38
+        ;   XREF to: 0060e6a0 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_with_path_search_FUN_0060e6a0(int mode, char * program, char * * argv)
     ADD ESP,0x10                        ; 0060ca3d
     POP ESI                             ; 0060ca40
     POP EBX                             ; 0060ca41

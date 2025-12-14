@@ -68,34 +68,34 @@ section .text
     PUSH EBP                            ; 0045e073
     MOV EBP,ESP                         ; 0045e074
     SUB ESP,0xb4                        ; 0045e076
-    CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0045e07c | void engine_2d.c_clearInputAndWait_FUN_00403260()
-        ;   XREF to: 00403260 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0045e07c
+        ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     PUSH 0x0                            ; 0045e081
     PUSH 0x0                            ; 0045e083
-    MOV EAX,0x61b4af                    ; 0045e085 | = "Sweep around X) Y) Z) axis : " | s_Sweep_around_X_Y_Z_axis_0061b4af = Sweep around X) Y) Z) axis :
-    PUSH EAX                            ; 0045e08a | = "Sweep around X) Y) Z) axis : " | s_Sweep_around_X_Y_Z_axis_0061b4af = Sweep around X) Y) Z) axis :
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045e08b | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    MOV EAX,0x61b4af                    ; 0045e085 | = "Sweep around X) Y) Z) axis : "
+    PUSH EAX                            ; 0045e08a | = "Sweep around X) Y) Z) axis : "
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045e08b
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0045e090
-    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045e093 | void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)
-    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0045e098 | int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
-        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045e093
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
+    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0045e098
+        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
     AND EAX,0xff                        ; 0045e09d
     PUSH EAX                            ; 0045e0a2
-    CALL crt_ctype.c_toupper_FUN_005ff9e0 ; 0045e0a3 | int crt_ctype.c_toupper_FUN_005ff9e0(int c)
-        ;   XREF to: 005ff9e0 (UNCONDITIONAL_CALL)
+    CALL crt_ctype.c_toupper_FUN_005ff9e0 ; 0045e0a3
+        ;   XREF to: 005ff9e0 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005ff9e0(int c)
     ADD ESP,0x4                         ; 0045e0a8
     MOV dword ptr [EBP + -0x44],EAX     ; 0045e0ab
-    MOV EAX,0x61b4cd                    ; 0045e0ae | = "Enter in point list : " | s_Enter_in_point_list_0061b4cd = Enter in point list :
-    PUSH EAX                            ; 0045e0b3 | = "Enter in point list : " | s_Enter_in_point_list_0061b4cd = Enter in point list :
+    MOV EAX,0x61b4cd                    ; 0045e0ae | = "Enter in point list : "
+    PUSH EAX                            ; 0045e0b3 | = "Enter in point list : "
     PUSH 0xb                            ; 0045e0b4
     PUSH 0x0                            ; 0045e0b6
     PUSH 0x4f                           ; 0045e0b8
     LEA EAX,[EBP + 0xffffff4c]          ; 0045e0ba
     PUSH EAX                            ; 0045e0c0
-    CALL engine_2d.c_getInputWithPrompt_FUN_004032c0 ; 0045e0c1 | int engine_2d.c_getInputWithPrompt_FUN_004032c0(char * buffer, int max_length, int x, int y, ...)
-        ;   XREF to: 004032c0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_getInputWithPrompt_FUN_004032c0 ; 0045e0c1
+        ;   XREF to: 004032c0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getInputWithPrompt_FUN_004032c0(char * buffer, int max_length, int x, int y, ...)
     ADD ESP,0x14                        ; 0045e0c6
     LEA EAX,[EBP + -0x48]               ; 0045e0c9
     PUSH EAX                            ; 0045e0cc
@@ -113,106 +113,106 @@ section .text
     PUSH EAX                            ; 0045e0e4
     LEA EAX,[EBP + -0x64]               ; 0045e0e5
     PUSH EAX                            ; 0045e0e8
-    MOV EAX,0x61b4e4                    ; 0045e0e9 | = "%d,%d,%d,%d,%d,%d,%d,%d" | s_d_d_d_d_d_d_d_d_0061b4e4 = %d,%d,%d,%d,%d,%d,%d,%d
-    PUSH EAX                            ; 0045e0ee | = "%d,%d,%d,%d,%d,%d,%d,%d" | s_d_d_d_d_d_d_d_d_0061b4e4 = %d,%d,%d,%d,%d,%d,%d,%d
+    MOV EAX,0x61b4e4                    ; 0045e0e9 | = "%d,%d,%d,%d,%d,%d,%d,%d"
+    PUSH EAX                            ; 0045e0ee | = "%d,%d,%d,%d,%d,%d,%d,%d"
     LEA EAX,[EBP + 0xffffff4c]          ; 0045e0ef
     PUSH EAX                            ; 0045e0f5
-    CALL crt_stdio.c_sscanf_FUN_0060013c ; 0045e0f6 | int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
-        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sscanf_FUN_0060013c ; 0045e0f6
+        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
     ADD ESP,0x28                        ; 0045e0fb
     MOV dword ptr [EBP + -0x40],EAX     ; 0045e0fe
-    MOV EAX,0x61b4fc                    ; 0045e101 | = "Enter in # of sections : " | s_Enter_in_of_sections_0061b4fc = Enter in # of sections :
-    PUSH EAX                            ; 0045e106 | = "Enter in # of sections : " | s_Enter_in_of_sections_0061b4fc = Enter in # of sections :
+    MOV EAX,0x61b4fc                    ; 0045e101 | = "Enter in # of sections : "
+    PUSH EAX                            ; 0045e106 | = "Enter in # of sections : "
     PUSH 0x16                           ; 0045e107
     PUSH 0x0                            ; 0045e109
     PUSH 0xa                            ; 0045e10b
     LEA EAX,[EBP + 0xffffff4c]          ; 0045e10d
     PUSH EAX                            ; 0045e113
-    CALL engine_2d.c_getInputWithPrompt_FUN_004032c0 ; 0045e114 | int engine_2d.c_getInputWithPrompt_FUN_004032c0(char * buffer, int max_length, int x, int y, ...)
-        ;   XREF to: 004032c0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_getInputWithPrompt_FUN_004032c0 ; 0045e114
+        ;   XREF to: 004032c0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getInputWithPrompt_FUN_004032c0(char * buffer, int max_length, int x, int y, ...)
     ADD ESP,0x14                        ; 0045e119
     LEA EAX,[EBP + 0xffffff4c]          ; 0045e11c
     PUSH EAX                            ; 0045e122
-    CALL crt_stdlib.c_atoi_FUN_005ffef0 ; 0045e123 | int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
-        ;   XREF to: 005ffef0 (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_atoi_FUN_005ffef0 ; 0045e123
+        ;   XREF to: 005ffef0 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
     ADD ESP,0x4                         ; 0045e128
     MOV dword ptr [EBP + -0x3c],EAX     ; 0045e12b
     PUSH 0x21                           ; 0045e12e
     PUSH 0x0                            ; 0045e130
-    MOV EAX,0x61b516                    ; 0045e132 | = "I)nside, O)utside, B)oth ?" | s_I_nside_O_utside_B_oth_0061b516 = I)nside, O)utside, B)oth ?
-    PUSH EAX                            ; 0045e137 | = "I)nside, O)utside, B)oth ?" | s_I_nside_O_utside_B_oth_0061b516 = I)nside, O)utside, B)oth ?
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045e138 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    MOV EAX,0x61b516                    ; 0045e132 | = "I)nside, O)utside, B)oth ?"
+    PUSH EAX                            ; 0045e137 | = "I)nside, O)utside, B)oth ?"
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045e138
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0045e13d
-    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045e140 | void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)
-    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0045e145 | int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
-        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045e140
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
+    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0045e145
+        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
     AND EAX,0xff                        ; 0045e14a
     PUSH EAX                            ; 0045e14f
-    CALL crt_ctype.c_toupper_FUN_005ff9e0 ; 0045e150 | int crt_ctype.c_toupper_FUN_005ff9e0(int c)
-        ;   XREF to: 005ff9e0 (UNCONDITIONAL_CALL)
+    CALL crt_ctype.c_toupper_FUN_005ff9e0 ; 0045e150
+        ;   XREF to: 005ff9e0 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005ff9e0(int c)
     ADD ESP,0x4                         ; 0045e155
     MOV dword ptr [EBP + -0x4],EAX      ; 0045e158
     CMP dword ptr [EBP + -0x40],0x0     ; 0045e15b
-    JLE 0x0045e167                      ; 0045e15f | LAB_0045e167
-        ;   XREF to: 0045e167 (CONDITIONAL_JUMP)
+    JLE 0x0045e167                      ; 0045e15f
+        ;   XREF to: 0045e167 (CONDITIONAL_JUMP)  ; LAB_0045e167
     CMP dword ptr [EBP + -0x40],0x7     ; 0045e161
-    JL 0x0045e169                       ; 0045e165 | LAB_0045e169
-        ;   XREF to: 0045e169 (CONDITIONAL_JUMP)
-    JMP 0x0045e16f                      ; 0045e167 | LAB_0045e16f
+    JL 0x0045e169                       ; 0045e165
+        ;   XREF to: 0045e169 (CONDITIONAL_JUMP)  ; LAB_0045e169
+    JMP 0x0045e16f                      ; 0045e167
+        ;   XREF to: 0045e16f (UNCONDITIONAL_JUMP)  ; LAB_0045e16f
         ;   Label: LAB_0045e167
-        ;   XREF to: 0045e16f (UNCONDITIONAL_JUMP)
     CMP dword ptr [EBP + -0x3c],0x0     ; 0045e169
         ;   Label: LAB_0045e169
-    JG 0x0045e174                       ; 0045e16d | LAB_0045e174
-        ;   XREF to: 0045e174 (CONDITIONAL_JUMP)
-    JMP 0x0045e50c                      ; 0045e16f | LAB_0045e50c
+    JG 0x0045e174                       ; 0045e16d
+        ;   XREF to: 0045e174 (CONDITIONAL_JUMP)  ; LAB_0045e174
+    JMP 0x0045e50c                      ; 0045e16f
+        ;   XREF to: 0045e50c (UNCONDITIONAL_JUMP)  ; LAB_0045e50c
         ;   Label: LAB_0045e16f
-        ;   XREF to: 0045e50c (UNCONDITIONAL_JUMP)
     FILD dword ptr [EBP + -0x3c]        ; 0045e174
         ;   Label: LAB_0045e174
-    FDIVR double ptr [0x0061b536]       ; 0045e177 | double g_DegreesInCircle
+    FDIVR double ptr [0x0061b536]       ; 0045e177 | g_DegreesInCircle
     FSTP float ptr [EBP + -0x38]        ; 0045e17d
     MOV EAX,dword ptr [EBP + -0x38]     ; 0045e180
     MOV dword ptr [EBP + -0x34],EAX     ; 0045e183
-    MOV EAX,[0x01626408]                ; 0045e186 | int g_VertexCount
+    MOV EAX,[0x01626408]                ; 0045e186 | g_VertexCount
     MOV dword ptr [EBP + -0x28],EAX     ; 0045e18b
     MOV dword ptr [EBP + -0x30],0x0     ; 0045e18e
-    JMP 0x0045e19d                      ; 0045e195 | LAB_0045e19d
-        ;   XREF to: 0045e19d (UNCONDITIONAL_JUMP)
+    JMP 0x0045e19d                      ; 0045e195
+        ;   XREF to: 0045e19d (UNCONDITIONAL_JUMP)  ; LAB_0045e19d
     MOV EAX,dword ptr [EBP + -0x30]     ; 0045e197
         ;   Label: LAB_0045e197
     INC dword ptr [EBP + -0x30]         ; 0045e19a
     MOV EAX,dword ptr [EBP + -0x30]     ; 0045e19d
         ;   Label: LAB_0045e19d
     CMP EAX,dword ptr [EBP + -0x3c]     ; 0045e1a0
-    JG 0x0045e3ee                       ; 0045e1a3 | LAB_0045e3ee
-        ;   XREF to: 0045e3ee (CONDITIONAL_JUMP)
+    JG 0x0045e3ee                       ; 0045e1a3
+        ;   XREF to: 0045e3ee (CONDITIONAL_JUMP)  ; LAB_0045e3ee
     FLD float ptr [EBP + -0x34]         ; 0045e1a9
-    FMUL double ptr [0x0061b53e]        ; 0045e1ac | double g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061b546]        ; 0045e1b2 | double g_PiConstant
+    FMUL double ptr [0x0061b53e]        ; 0045e1ac | g_DegreesToRadiansFactor
+    FMUL double ptr [0x0061b546]        ; 0045e1b2 | g_PiConstant
     FSIN                                ; 0045e1b8
     FSTP float ptr [EBP + -0x24]        ; 0045e1ba
     FLD float ptr [EBP + -0x34]         ; 0045e1bd
-    FMUL double ptr [0x0061b53e]        ; 0045e1c0 | double g_DegreesToRadiansFactor
-    FMUL double ptr [0x0061b546]        ; 0045e1c6 | double g_PiConstant
+    FMUL double ptr [0x0061b53e]        ; 0045e1c0 | g_DegreesToRadiansFactor
+    FMUL double ptr [0x0061b546]        ; 0045e1c6 | g_PiConstant
     FCOS                                ; 0045e1cc
     FSTP float ptr [EBP + -0x20]        ; 0045e1ce
     MOV dword ptr [EBP + -0x2c],0x1     ; 0045e1d1
-    JMP 0x0045e1e0                      ; 0045e1d8 | LAB_0045e1e0
-        ;   XREF to: 0045e1e0 (UNCONDITIONAL_JUMP)
+    JMP 0x0045e1e0                      ; 0045e1d8
+        ;   XREF to: 0045e1e0 (UNCONDITIONAL_JUMP)  ; LAB_0045e1e0
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e1da
         ;   Label: LAB_0045e1da
     INC dword ptr [EBP + -0x2c]         ; 0045e1dd
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e1e0
         ;   Label: LAB_0045e1e0
     CMP EAX,dword ptr [EBP + -0x40]     ; 0045e1e3
-    JGE 0x0045e3e0                      ; 0045e1e6 | LAB_0045e3e0
-        ;   XREF to: 0045e3e0 (CONDITIONAL_JUMP)
+    JGE 0x0045e3e0                      ; 0045e1e6
+        ;   XREF to: 0045e3e0 (CONDITIONAL_JUMP)  ; LAB_0045e3e0
     CMP dword ptr [EBP + -0x44],0x58    ; 0045e1ec
-    JNZ 0x0045e284                      ; 0045e1f0 | LAB_0045e284
-        ;   XREF to: 0045e284 (CONDITIONAL_JUMP)
+    JNZ 0x0045e284                      ; 0045e1f0
+        ;   XREF to: 0045e284 (CONDITIONAL_JUMP)  ; LAB_0045e284
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e1f6
     SHL EAX,0x2                         ; 0045e1f9
     IMUL EDX,dword ptr [EAX + EBP*0x1 + -0x64],0x14 ; 0045e1fc
@@ -237,7 +237,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e245
     SHL EAX,0x2                         ; 0045e248
     IMUL EAX,dword ptr [EAX + EBP*0x1 + -0x64],0x14 ; 0045e24b
-    MOV EAX,dword ptr [EAX + 0x162640c] ; 0045e250 | SVertexData[20000] g_LoadedVertices
+    MOV EAX,dword ptr [EAX + 0x162640c] ; 0045e250 | g_LoadedVertices
     MOV dword ptr [EBP + -0x1c],EAX     ; 0045e256
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e259
     FLD float ptr [EBP + -0x24]         ; 0045e25d
@@ -249,18 +249,18 @@ section .text
     FMUL float ptr [EBP + -0x8]         ; 0045e273
     FADD float ptr [EAX + 0x1626414]    ; 0045e276 | g_LoadedVertices[0].vertex.z
     FSTP float ptr [EBP + -0x14]        ; 0045e27c
-    JMP 0x0045e3a5                      ; 0045e27f | LAB_0045e3a5
-        ;   XREF to: 0045e3a5 (UNCONDITIONAL_JUMP)
+    JMP 0x0045e3a5                      ; 0045e27f
+        ;   XREF to: 0045e3a5 (UNCONDITIONAL_JUMP)  ; LAB_0045e3a5
     CMP dword ptr [EBP + -0x44],0x59    ; 0045e284
         ;   Label: LAB_0045e284
-    JNZ 0x0045e31c                      ; 0045e288 | LAB_0045e31c
-        ;   XREF to: 0045e31c (CONDITIONAL_JUMP)
+    JNZ 0x0045e31c                      ; 0045e288
+        ;   XREF to: 0045e31c (CONDITIONAL_JUMP)  ; LAB_0045e31c
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e28e
     SHL EAX,0x2                         ; 0045e291
     IMUL EDX,dword ptr [EAX + EBP*0x1 + -0x64],0x14 ; 0045e294
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e299
-    FLD float ptr [EDX + 0x162640c]     ; 0045e29d | SVertexData[20000] g_LoadedVertices
-    FSUB float ptr [EAX + 0x162640c]    ; 0045e2a3 | SVertexData[20000] g_LoadedVertices
+    FLD float ptr [EDX + 0x162640c]     ; 0045e29d | g_LoadedVertices
+    FSUB float ptr [EAX + 0x162640c]    ; 0045e2a3 | g_LoadedVertices
     FSTP float ptr [EBP + -0x10]        ; 0045e2a9
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e2ac
     SHL EAX,0x2                         ; 0045e2af
@@ -279,7 +279,7 @@ section .text
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e2dd
     FLD float ptr [EBP + -0x20]         ; 0045e2e1
     FMUL float ptr [EBP + -0x8]         ; 0045e2e4
-    FADD float ptr [EAX + 0x162640c]    ; 0045e2e7 | SVertexData[20000] g_LoadedVertices
+    FADD float ptr [EAX + 0x162640c]    ; 0045e2e7 | g_LoadedVertices
     FSTP float ptr [EBP + -0x1c]        ; 0045e2ed
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e2f0
     SHL EAX,0x2                         ; 0045e2f3
@@ -291,15 +291,15 @@ section .text
     FMUL float ptr [EBP + -0x8]         ; 0045e30b
     FADD float ptr [EAX + 0x1626414]    ; 0045e30e | g_LoadedVertices[0].vertex.z
     FSTP float ptr [EBP + -0x14]        ; 0045e314
-    JMP 0x0045e3a5                      ; 0045e317 | LAB_0045e3a5
-        ;   XREF to: 0045e3a5 (UNCONDITIONAL_JUMP)
+    JMP 0x0045e3a5                      ; 0045e317
+        ;   XREF to: 0045e3a5 (UNCONDITIONAL_JUMP)  ; LAB_0045e3a5
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e31c
         ;   Label: LAB_0045e31c
     SHL EAX,0x2                         ; 0045e31f
     IMUL EDX,dword ptr [EAX + EBP*0x1 + -0x64],0x14 ; 0045e322
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e327
-    FLD float ptr [EDX + 0x162640c]     ; 0045e32b | SVertexData[20000] g_LoadedVertices
-    FSUB float ptr [EAX + 0x162640c]    ; 0045e331 | SVertexData[20000] g_LoadedVertices
+    FLD float ptr [EDX + 0x162640c]     ; 0045e32b | g_LoadedVertices
+    FSUB float ptr [EAX + 0x162640c]    ; 0045e331 | g_LoadedVertices
     FSTP float ptr [EBP + -0x10]        ; 0045e337
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e33a
     SHL EAX,0x2                         ; 0045e33d
@@ -318,7 +318,7 @@ section .text
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e36b
     FLD float ptr [EBP + -0x20]         ; 0045e36f
     FMUL float ptr [EBP + -0x8]         ; 0045e372
-    FADD float ptr [EAX + 0x162640c]    ; 0045e375 | SVertexData[20000] g_LoadedVertices
+    FADD float ptr [EAX + 0x162640c]    ; 0045e375 | g_LoadedVertices
     FSTP float ptr [EBP + -0x1c]        ; 0045e37b
     IMUL EAX,dword ptr [EBP + -0x64],0x14 ; 0045e37e
     FLD float ptr [EBP + -0x24]         ; 0045e382
@@ -330,47 +330,47 @@ section .text
     IMUL EAX,dword ptr [EAX + EBP*0x1 + -0x64],0x14 ; 0045e397
     MOV EAX,dword ptr [EAX + 0x1626414] ; 0045e39c | g_LoadedVertices[0].vertex.z
     MOV dword ptr [EBP + -0x14],EAX     ; 0045e3a2
-    IMUL EDX,dword ptr [0x01626408],0x14 ; 0045e3a5 | int g_VertexCount
+    IMUL EDX,dword ptr [0x01626408],0x14 ; 0045e3a5 | g_VertexCount
         ;   Label: LAB_0045e3a5
     MOV EAX,dword ptr [EBP + -0x1c]     ; 0045e3ac
-    MOV dword ptr [EDX + 0x162640c],EAX ; 0045e3af | SVertexData[20000] g_LoadedVertices
-    IMUL EDX,dword ptr [0x01626408],0x14 ; 0045e3b5 | int g_VertexCount
+    MOV dword ptr [EDX + 0x162640c],EAX ; 0045e3af | g_LoadedVertices
+    IMUL EDX,dword ptr [0x01626408],0x14 ; 0045e3b5 | g_VertexCount
     MOV EAX,dword ptr [EBP + -0x18]     ; 0045e3bc
     MOV dword ptr [EDX + 0x1626410],EAX ; 0045e3bf | DAT_01626410
-    IMUL EDX,dword ptr [0x01626408],0x14 ; 0045e3c5 | int g_VertexCount
+    IMUL EDX,dword ptr [0x01626408],0x14 ; 0045e3c5 | g_VertexCount
     MOV EAX,dword ptr [EBP + -0x14]     ; 0045e3cc
     MOV dword ptr [EDX + 0x1626414],EAX ; 0045e3cf | g_LoadedVertices[0].vertex.z
-    INC dword ptr [0x01626408]          ; 0045e3d5 | int g_VertexCount
-    JMP 0x0045e1da                      ; 0045e3db | LAB_0045e1da
-        ;   XREF to: 0045e1da (UNCONDITIONAL_JUMP)
+    INC dword ptr [0x01626408]          ; 0045e3d5 | g_VertexCount
+    JMP 0x0045e1da                      ; 0045e3db
+        ;   XREF to: 0045e1da (UNCONDITIONAL_JUMP)  ; LAB_0045e1da
     FLD float ptr [EBP + -0x34]         ; 0045e3e0
         ;   Label: LAB_0045e3e0
     FADD float ptr [EBP + -0x38]        ; 0045e3e3
     FSTP float ptr [EBP + -0x34]        ; 0045e3e6
-    JMP 0x0045e197                      ; 0045e3e9 | LAB_0045e197
-        ;   XREF to: 0045e197 (UNCONDITIONAL_JUMP)
+    JMP 0x0045e197                      ; 0045e3e9
+        ;   XREF to: 0045e197 (UNCONDITIONAL_JUMP)  ; LAB_0045e197
     CMP dword ptr [EBP + -0x4],0x42     ; 0045e3ee
         ;   Label: LAB_0045e3ee
-    JZ 0x0045e3fe                       ; 0045e3f2 | LAB_0045e3fe
-        ;   XREF to: 0045e3fe (CONDITIONAL_JUMP)
+    JZ 0x0045e3fe                       ; 0045e3f2
+        ;   XREF to: 0045e3fe (CONDITIONAL_JUMP)  ; LAB_0045e3fe
     CMP dword ptr [EBP + -0x4],0x49     ; 0045e3f4
-    JNZ 0x0045e47d                      ; 0045e3f8 | LAB_0045e47d
-        ;   XREF to: 0045e47d (CONDITIONAL_JUMP)
+    JNZ 0x0045e47d                      ; 0045e3f8
+        ;   XREF to: 0045e47d (CONDITIONAL_JUMP)  ; LAB_0045e47d
     MOV dword ptr [EBP + -0x30],0x0     ; 0045e3fe
         ;   Label: LAB_0045e3fe
-    JMP 0x0045e40d                      ; 0045e405 | LAB_0045e40d
-        ;   XREF to: 0045e40d (UNCONDITIONAL_JUMP)
+    JMP 0x0045e40d                      ; 0045e405
+        ;   XREF to: 0045e40d (UNCONDITIONAL_JUMP)  ; LAB_0045e40d
     MOV EAX,dword ptr [EBP + -0x30]     ; 0045e407
         ;   Label: LAB_0045e407
     INC dword ptr [EBP + -0x30]         ; 0045e40a
     MOV EAX,dword ptr [EBP + -0x30]     ; 0045e40d
         ;   Label: LAB_0045e40d
     CMP EAX,dword ptr [EBP + -0x3c]     ; 0045e410
-    JGE 0x0045e47d                      ; 0045e413 | LAB_0045e47d
-        ;   XREF to: 0045e47d (CONDITIONAL_JUMP)
+    JGE 0x0045e47d                      ; 0045e413
+        ;   XREF to: 0045e47d (CONDITIONAL_JUMP)  ; LAB_0045e47d
     MOV dword ptr [EBP + -0x2c],0x1     ; 0045e415
-    JMP 0x0045e424                      ; 0045e41c | LAB_0045e424
-        ;   XREF to: 0045e424 (UNCONDITIONAL_JUMP)
+    JMP 0x0045e424                      ; 0045e41c
+        ;   XREF to: 0045e424 (UNCONDITIONAL_JUMP)  ; LAB_0045e424
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e41e
         ;   Label: LAB_0045e41e
     INC dword ptr [EBP + -0x2c]         ; 0045e421
@@ -378,8 +378,8 @@ section .text
         ;   Label: LAB_0045e424
     DEC EAX                             ; 0045e427
     CMP EAX,dword ptr [EBP + -0x2c]     ; 0045e428
-    JLE 0x0045e47b                      ; 0045e42b | LAB_0045e47b
-        ;   XREF to: 0045e47b (CONDITIONAL_JUMP)
+    JLE 0x0045e47b                      ; 0045e42b
+        ;   XREF to: 0045e47b (CONDITIONAL_JUMP)  ; LAB_0045e47b
     MOV EAX,dword ptr [EBP + -0x40]     ; 0045e42d
     DEC EAX                             ; 0045e430
     MOV EDX,dword ptr [EBP + -0x30]     ; 0045e431
@@ -410,36 +410,36 @@ section .text
     ADD EAX,dword ptr [EBP + -0x2c]     ; 0045e46c
     DEC EAX                             ; 0045e46f
     PUSH EAX                            ; 0045e470
-    CALL shape_design.c_createReversedQuadPolygon_FUN_0045e040 ; 0045e471 | undefined shape_design.c_createReversedQuadPolygon_FUN_0045e040()
-        ;   XREF to: 0045e040 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_createReversedQuadPolygon_FUN_0045e040 ; 0045e471
+        ;   XREF to: 0045e040 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createReversedQuadPolygon_FUN_0045e040()
     ADD ESP,0x10                        ; 0045e476
-    JMP 0x0045e41e                      ; 0045e479 | LAB_0045e41e
-        ;   XREF to: 0045e41e (UNCONDITIONAL_JUMP)
-    JMP 0x0045e407                      ; 0045e47b | LAB_0045e407
+    JMP 0x0045e41e                      ; 0045e479
+        ;   XREF to: 0045e41e (UNCONDITIONAL_JUMP)  ; LAB_0045e41e
+    JMP 0x0045e407                      ; 0045e47b
+        ;   XREF to: 0045e407 (UNCONDITIONAL_JUMP)  ; LAB_0045e407
         ;   Label: LAB_0045e47b
-        ;   XREF to: 0045e407 (UNCONDITIONAL_JUMP)
     CMP dword ptr [EBP + -0x4],0x42     ; 0045e47d
         ;   Label: LAB_0045e47d
-    JZ 0x0045e48d                       ; 0045e481 | LAB_0045e48d
-        ;   XREF to: 0045e48d (CONDITIONAL_JUMP)
+    JZ 0x0045e48d                       ; 0045e481
+        ;   XREF to: 0045e48d (CONDITIONAL_JUMP)  ; LAB_0045e48d
     CMP dword ptr [EBP + -0x4],0x4f     ; 0045e483
-    JNZ 0x0045e50c                      ; 0045e487 | LAB_0045e50c
-        ;   XREF to: 0045e50c (CONDITIONAL_JUMP)
+    JNZ 0x0045e50c                      ; 0045e487
+        ;   XREF to: 0045e50c (CONDITIONAL_JUMP)  ; LAB_0045e50c
     MOV dword ptr [EBP + -0x30],0x0     ; 0045e48d
         ;   Label: LAB_0045e48d
-    JMP 0x0045e49c                      ; 0045e494 | LAB_0045e49c
-        ;   XREF to: 0045e49c (UNCONDITIONAL_JUMP)
+    JMP 0x0045e49c                      ; 0045e494
+        ;   XREF to: 0045e49c (UNCONDITIONAL_JUMP)  ; LAB_0045e49c
     MOV EAX,dword ptr [EBP + -0x30]     ; 0045e496
         ;   Label: LAB_0045e496
     INC dword ptr [EBP + -0x30]         ; 0045e499
     MOV EAX,dword ptr [EBP + -0x30]     ; 0045e49c
         ;   Label: LAB_0045e49c
     CMP EAX,dword ptr [EBP + -0x3c]     ; 0045e49f
-    JGE 0x0045e50c                      ; 0045e4a2 | LAB_0045e50c
-        ;   XREF to: 0045e50c (CONDITIONAL_JUMP)
+    JGE 0x0045e50c                      ; 0045e4a2
+        ;   XREF to: 0045e50c (CONDITIONAL_JUMP)  ; LAB_0045e50c
     MOV dword ptr [EBP + -0x2c],0x1     ; 0045e4a4
-    JMP 0x0045e4b3                      ; 0045e4ab | LAB_0045e4b3
-        ;   XREF to: 0045e4b3 (UNCONDITIONAL_JUMP)
+    JMP 0x0045e4b3                      ; 0045e4ab
+        ;   XREF to: 0045e4b3 (UNCONDITIONAL_JUMP)  ; LAB_0045e4b3
     MOV EAX,dword ptr [EBP + -0x2c]     ; 0045e4ad
         ;   Label: LAB_0045e4ad
     INC dword ptr [EBP + -0x2c]         ; 0045e4b0
@@ -447,8 +447,8 @@ section .text
         ;   Label: LAB_0045e4b3
     DEC EAX                             ; 0045e4b6
     CMP EAX,dword ptr [EBP + -0x2c]     ; 0045e4b7
-    JLE 0x0045e50a                      ; 0045e4ba | LAB_0045e50a
-        ;   XREF to: 0045e50a (CONDITIONAL_JUMP)
+    JLE 0x0045e50a                      ; 0045e4ba
+        ;   XREF to: 0045e50a (CONDITIONAL_JUMP)  ; LAB_0045e50a
     MOV EAX,dword ptr [EBP + -0x40]     ; 0045e4bc
     DEC EAX                             ; 0045e4bf
     MOV EDX,dword ptr [EBP + -0x30]     ; 0045e4c0
@@ -479,14 +479,14 @@ section .text
     ADD EAX,dword ptr [EBP + -0x2c]     ; 0045e4fb
     DEC EAX                             ; 0045e4fe
     PUSH EAX                            ; 0045e4ff
-    CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e500 | undefined shape_design.c_createQuadPolygon_FUN_0045df60()
-        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_createQuadPolygon_FUN_0045df60 ; 0045e500
+        ;   XREF to: 0045df60 (UNCONDITIONAL_CALL)  ; undefined shape_design.c_createQuadPolygon_FUN_0045df60()
     ADD ESP,0x10                        ; 0045e505
-    JMP 0x0045e4ad                      ; 0045e508 | LAB_0045e4ad
-        ;   XREF to: 0045e4ad (UNCONDITIONAL_JUMP)
-    JMP 0x0045e496                      ; 0045e50a | LAB_0045e496
+    JMP 0x0045e4ad                      ; 0045e508
+        ;   XREF to: 0045e4ad (UNCONDITIONAL_JUMP)  ; LAB_0045e4ad
+    JMP 0x0045e496                      ; 0045e50a
+        ;   XREF to: 0045e496 (UNCONDITIONAL_JUMP)  ; LAB_0045e496
         ;   Label: LAB_0045e50a
-        ;   XREF to: 0045e496 (UNCONDITIONAL_JUMP)
     MOV ESP,EBP                         ; 0045e50c
         ;   Label: LAB_0045e50c
     POP EBP                             ; 0045e50e

@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 110, 
-    "assembly_lines": 80, 
-    "suspect_count": 1, 
+    "assembly_lines": 80,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 30,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 19, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar1 = (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar3 + 4) +"
-    }
-  ], 
+    ],
+    "total_lines": 110
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005d4070", 
-    "signature": "int shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070(CObj * this_ptr)", 
+    "address": "005d4070",
     "address_range": [
       [
-        "005d4070", 
+        "005d4070",
         "005d4101"
       ]
-    ], 
-    "name": "shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070",
+    "signature": "int shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070(CObj * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 32, 
+    "frame_size": 36,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CObj *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(int *)((int)",
+      "text": "iVar1 = (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar3 + 4) +",
+      "type": "pointer_cast"
+    }
+  ]
 }

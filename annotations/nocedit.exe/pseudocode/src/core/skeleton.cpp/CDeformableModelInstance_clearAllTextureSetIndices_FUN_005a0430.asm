@@ -23,7 +23,7 @@ section .text
         ;   Label: LAB_005a0439
     MOV dword ptr [EAX + 0x21b4],0x0    ; 005a043c
     CMP EAX,EDX                         ; 005a0446
-    JNZ 0x005a0439                      ; 005a0448 | LAB_005a0439
-        ;   XREF to: 005a0439 (CONDITIONAL_JUMP)
+    JNZ 0x005a0439                      ; 005a0448
+        ;   XREF to: 005a0439 (CONDITIONAL_JUMP)  ; LAB_005a0439
     RET                                 ; 005a044a
 

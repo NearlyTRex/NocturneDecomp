@@ -1,345 +1,345 @@
 {
   "complexity": {
-    "function_call_count": 12, 
-    "complexity_score": 209, 
-    "pseudocode_lines": 144, 
-    "cross_reference_count": 1, 
-    "global_count": 26, 
-    "total_lines": 480, 
-    "assembly_lines": 336, 
-    "suspect_count": 6, 
+    "assembly_lines": 336,
+    "complexity_score": 209,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 26,
+    "pseudocode_lines": 144,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0", 
-      "addr": "00453db0"
-    }, 
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00453d10", 
-      "addr": "00453d10"
-    }, 
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0", 
-      "addr": "004509b0"
-    }, 
-    {
-      "name": "core_dcamera.cpp_updateFogScrollOffset_FUN_0044bfb0", 
-      "addr": "0044bfb0"
-    }, 
-    {
-      "name": "core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc", 
-      "addr": "004917bc"
-    }, 
-    {
-      "name": "core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a", 
-      "addr": "00491c9a"
-    }, 
-    {
-      "name": "core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450", 
-      "addr": "00493450"
-    }, 
-    {
-      "name": "core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1", 
-      "addr": "004926e1"
-    }, 
-    {
-      "name": "core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5", 
-      "addr": "00492bd5"
-    }, 
-    {
-      "name": "core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4", 
-      "addr": "00493dc4"
-    }, 
-    {
-      "name": "core_dstrender.cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03", 
-      "addr": "00492f03"
-    }, 
-    {
-      "name": "core_dstrender.cpp_blendTextureWithLightmapMMX_FUN_00493860", 
-      "addr": "00493860"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_FogColorIndexR", 
-      "addr": "0066ed04", 
-      "value": "0x40"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FogColorIndexG", 
-      "addr": "0066ed08", 
-      "value": "0x40"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FogColorIndexB", 
-      "addr": "0066ed0c", 
-      "value": "0x40"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "char[241][320]", 
-      "name": "g_CoronaBlurWorkBuffer", 
-      "addr": "00bbb9b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[64]", 
-      "addr": "00c19efc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraDownscaleIterations", 
-      "addr": "013bc260", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraEdgeCount", 
-      "addr": "013bc264", 
-      "value": null
-    }, 
-    {
-      "type": "int[10000]", 
-      "name": "g_CameraEdgeDetectionResults", 
-      "addr": "013bc268", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_013bc26c", 
-      "addr": "013bc26c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_013bc270", 
-      "addr": "013bc270", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_013bc274", 
-      "addr": "013bc274", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_013bc278", 
-      "addr": "013bc278", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_013bc27c", 
-      "addr": "013bc27c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakeOffsetX", 
-      "addr": "013da770", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakeOffsetY", 
-      "addr": "013da774", 
-      "value": null
-    }, 
-    {
-      "type": "SFogImagePlane", 
-      "name": "g_CameraPlaneWorkBuffer", 
-      "addr": "013da778", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ImageProcessingState1", 
-      "addr": "01519378", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ImageProcessingState2", 
-      "addr": "0151937c", 
-      "value": null
-    }, 
-    {
-      "type": "SFogGrid", 
-      "name": "g_CameraFogGrid", 
-      "addr": "01519384", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GlobalDeltaTimeInt", 
-      "addr": "02cf6a80", 
-      "value": null
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitPosition", 
-      "addr": "02d01f24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitPosition", 
-      "addr": "02d01f30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitPosition", 
-      "addr": "02d01f3c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SolidColorMode", 
-      "addr": "02d052a8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 77, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar2 = *(uint *)((int)g_CameraEdgeDetectionResults + iVar4 + 8);"
-    }, 
-    {
-      "line": 79, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_CameraEdgeDetectionResults + iVar4);"
-    }, 
-    {
-      "line": 84, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar3),uVar2,*piVar1);"
-    }, 
-    {
-      "line": 129, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar2 = *(uint *)((int)g_CameraEdgeDetectionResults + iVar4 + 8);"
-    }, 
-    {
-      "line": 131, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_CameraEdgeDetectionResults + iVar4);"
-    }, 
-    {
-      "line": 136, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar3),uVar2,*piVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00453270", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(CDemonCamera * this_ptr)", 
-    "address_range": [
-      [
-        "00453270", 
-        "00453632"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 480
+  },
   "cross_references": [
     {
-      "from_addr": "004511d8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0", 
-      "addr": "004511c0"
+      "addr": "004511c0",
+      "from_addr": "004511d8",
+      "name": "core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00453270",
+    "address_range": [
+      [
+        "00453270",
+        "00453632"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270",
+    "signature": "void core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(CDemonCamera * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00453db0",
+      "name": "core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0"
+    },
+    {
+      "addr": "00453d10",
+      "name": "core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00453d10"
+    },
+    {
+      "addr": "004509b0",
+      "name": "core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0"
+    },
+    {
+      "addr": "0044bfb0",
+      "name": "core_dcamera.cpp_updateFogScrollOffset_FUN_0044bfb0"
+    },
+    {
+      "addr": "004917bc",
+      "name": "core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc"
+    },
+    {
+      "addr": "00491c9a",
+      "name": "core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a"
+    },
+    {
+      "addr": "00493450",
+      "name": "core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450"
+    },
+    {
+      "addr": "004926e1",
+      "name": "core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1"
+    },
+    {
+      "addr": "00492bd5",
+      "name": "core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5"
+    },
+    {
+      "addr": "00493dc4",
+      "name": "core_dstrender.cpp_blendLightmapToTextureMMX_FUN_00493dc4"
+    },
+    {
+      "addr": "00492f03",
+      "name": "core_dstrender.cpp_blendLightmapToTextureMMX_Variant2_FUN_00492f03"
+    },
+    {
+      "addr": "00493860",
+      "name": "core_dstrender.cpp_blendTextureWithLightmapMMX_FUN_00493860"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0066ed04",
+      "name": "g_FogColorIndexR",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "0066ed08",
+      "name": "g_FogColorIndexG",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "0066ed0c",
+      "name": "g_FogColorIndexB",
+      "type": "int",
+      "value": "0x40"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00bbb9b8",
+      "name": "g_CoronaBlurWorkBuffer",
+      "type": "char[241][320]",
+      "value": null
+    },
+    {
+      "addr": "00c19efc",
+      "name": "g_LightmapTexturePalette[64]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bc260",
+      "name": "g_CameraDownscaleIterations",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013bc264",
+      "name": "g_CameraEdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013bc268",
+      "name": "g_CameraEdgeDetectionResults",
+      "type": "int[10000]",
+      "value": null
+    },
+    {
+      "addr": "013bc26c",
+      "name": "DAT_013bc26c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bc270",
+      "name": "DAT_013bc270",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bc274",
+      "name": "DAT_013bc274",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bc278",
+      "name": "DAT_013bc278",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bc27c",
+      "name": "DAT_013bc27c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013da770",
+      "name": "g_CameraShakeOffsetX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013da774",
+      "name": "g_CameraShakeOffsetY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013da778",
+      "name": "g_CameraPlaneWorkBuffer",
+      "type": "SFogImagePlane",
+      "value": null
+    },
+    {
+      "addr": "01519378",
+      "name": "g_ImageProcessingState1",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151937c",
+      "name": "g_ImageProcessingState2",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01519384",
+      "name": "g_CameraFogGrid",
+      "type": "SFogGrid",
+      "value": null
+    },
+    {
+      "addr": "02cf6a80",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a8",
+      "name": "g_SolidColorMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(uint *)((int)",
+      "text": "uVar2 = *(uint *)((int)g_CameraEdgeDetectionResults + iVar4 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_CameraEdgeDetectionResults + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(int *)((int)",
+      "text": "(this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar3),uVar2,*piVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 129,
+      "match": "(uint *)((int)",
+      "text": "uVar2 = *(uint *)((int)g_CameraEdgeDetectionResults + iVar4 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_CameraEdgeDetectionResults + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(int *)((int)",
+      "text": "(this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar3),uVar2,*piVar1);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -20,25 +20,25 @@ section .text
     PUSH EBX                            ; 005b2ca0
         ;   Label: core_sound.cpp_stopTrainSounds_FUN_005b2ca0
     XOR EBX,EBX                         ; 005b2ca1
-    MOV EDX,dword ptr [EBX + 0x3f6b7c8] ; 005b2ca3 | DAT_03f6b7c8
+    MOV EDX,dword ptr [EBX + 0x3f6b7c8] ; 005b2ca3 | DAT_03f6b7c8 | DAT_03f6b7d8
         ;   Label: LAB_005b2ca3
     PUSH EDX                            ; 005b2ca9
     ADD EBX,0x10                        ; 005b2caa
-    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b2cad | int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
-        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b2cad
+        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
     ADD ESP,0x4                         ; 005b2cb2
     CMP EBX,0xa0                        ; 005b2cb5
-    JNZ 0x005b2ca3                      ; 005b2cbb | LAB_005b2ca3
-        ;   XREF to: 005b2ca3 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x03f6b870]      ; 005b2cbd | uint g_TrainRailNoiseHandle
+    JNZ 0x005b2ca3                      ; 005b2cbb
+        ;   XREF to: 005b2ca3 (CONDITIONAL_JUMP)  ; LAB_005b2ca3
+    MOV ECX,dword ptr [0x03f6b870]      ; 005b2cbd | g_TrainRailNoiseHandle
     PUSH ECX                            ; 005b2cc3
-    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b2cc4 | int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
-        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b2cc4
+        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
     ADD ESP,0x4                         ; 005b2cc9
-    MOV EBX,dword ptr [0x03f6b874]      ; 005b2ccc | uint g_TrainExteriorAmbientHandle
+    MOV EBX,dword ptr [0x03f6b874]      ; 005b2ccc | g_TrainExteriorAmbientHandle
     PUSH EBX                            ; 005b2cd2
-    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b2cd3 | int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
-        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005b2cd3
+        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
     ADD ESP,0x4                         ; 005b2cd8
     POP EBX                             ; 005b2cdb
     RET                                 ; 005b2cdc

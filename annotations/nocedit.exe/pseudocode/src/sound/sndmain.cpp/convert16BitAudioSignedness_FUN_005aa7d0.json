@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 31, 
-    "assembly_lines": 19, 
-    "suspect_count": 2, 
+    "assembly_lines": 19,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)buffer + 1) = *(byte *)((int)buffer + 1) ^ 0x80;"
-    }, 
-    {
-      "line": 9, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)buffer + 1) = *(byte *)((int)buffer + 1) ^ 0x80;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005aa7d0", 
-    "signature": "void sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0(short * buffer, int num_samples)", 
-    "address_range": [
-      [
-        "005aa7d0", 
-        "005aa7ef"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "short *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "num_samples"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 28
+  },
   "cross_references": [
     {
-      "from_addr": "005aaded", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0", 
-      "addr": "005aa7f0"
+      "addr": "005aa7f0",
+      "from_addr": "005aaded",
+      "name": "sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005aa7d0",
+    "address_range": [
+      [
+        "005aa7d0",
+        "005aa7ef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0",
+    "signature": "void sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0(short * buffer, int num_samples)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "short *"
+      },
+      {
+        "is_param": true,
+        "name": "num_samples",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 7,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)buffer + 1) = *(byte *)((int)buffer + 1) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 7,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)buffer + 1) = *(byte *)((int)buffer + 1) ^ 0x80;",
+      "type": "pointer_cast"
     }
   ]
 }

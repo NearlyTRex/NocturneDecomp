@@ -21,9 +21,9 @@ section .text
     PUSH EBX                            ; 00432b30
         ;   Label: cockpit_ckptutil.c_blitFullScreen_FUN_00432b30
     PUSH ESI                            ; 00432b31
-    MOV EDX,dword ptr [0x00679398]      ; 00432b32 | int g_WindowHeight
+    MOV EDX,dword ptr [0x00679398]      ; 00432b32 | g_WindowHeight
     PUSH EDX                            ; 00432b38
-    MOV ECX,dword ptr [0x00679394]      ; 00432b39 | int g_WindowWidth
+    MOV ECX,dword ptr [0x00679394]      ; 00432b39 | g_WindowWidth
     PUSH ECX                            ; 00432b3f
     PUSH 0x0                            ; 00432b40
     PUSH 0x0                            ; 00432b42
@@ -31,8 +31,8 @@ section .text
     PUSH EBX                            ; 00432b48
     MOV ESI,dword ptr [ESP + 0x20]      ; 00432b49
     PUSH ESI                            ; 00432b4d
-    CALL cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0 ; 00432b4e | void cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0(void * sprite_data, void * span_data, int dest_x, int dest_y, ...)
-        ;   XREF to: 004326a0 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0 ; 00432b4e
+        ;   XREF to: 004326a0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0(void * sprite_data, void * span_data, int dest_x, int dest_y, ...)
     ADD ESP,0x18                        ; 00432b53
     POP ESI                             ; 00432b56
     POP EBX                             ; 00432b57

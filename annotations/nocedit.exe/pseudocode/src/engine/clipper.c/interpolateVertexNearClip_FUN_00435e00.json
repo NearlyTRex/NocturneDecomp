@@ -1,97 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 87, 
-    "pseudocode_lines": 57, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 174, 
-    "assembly_lines": 117, 
-    "suspect_count": 2, 
+    "assembly_lines": 117,
+    "complexity_score": 72,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 57,
+    "suspect_count": 1,
     "suspect_types": [
-      "concat_artifact", 
-      "sborrow_artifact"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_NearPlaneDistance", 
-      "addr": "0066e804", 
-      "value": "0x7fffffff"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "if (uVar3 == -iVar4 || SBORROW /* signed borrow */4(uVar3,-iVar4) != (int)(uVar3 + iVar4) < 0) {"
-    }, 
-    {
-      "line": 19, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "iVar4 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00435e00", 
-    "signature": "void engine_clipper.c_interpolateVertexNearClip_FUN_00435e00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)", 
-    "address_range": [
-      [
-        "00435e00", 
-        "00435f01"
-      ]
-    ], 
-    "name": "engine_clipper.c_interpolateVertexNearClip_FUN_00435e00"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SRenderVertex *", 
-        "size": 4, 
-        "name": "v1"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SRenderVertex *", 
-        "size": 4, 
-        "name": "v2"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SRenderVertex *", 
-        "size": 4, 
-        "name": "output"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "concat_artifact"
+    ],
+    "total_lines": 174
+  },
   "cross_references": [
     {
-      "from_addr": "0043658f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_clipper.c_clipPolygonNearPlane_FUN_00436420", 
-      "addr": "00436420"
-    }, 
+      "addr": "00436420",
+      "from_addr": "0043658f",
+      "name": "engine_clipper.c_clipPolygonNearPlane_FUN_00436420",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004370ec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0", 
-      "addr": "004366e0"
+      "addr": "004366e0",
+      "from_addr": "004370ec",
+      "name": "engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00435e00",
+    "address_range": [
+      [
+        "00435e00",
+        "00435f01"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_clipper.c_interpolateVertexNearClip_FUN_00435e00",
+    "signature": "void engine_clipper.c_interpolateVertexNearClip_FUN_00435e00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0066e804",
+      "name": "g_NearPlaneDistance",
+      "type": "int",
+      "value": "0x7fffffff"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "v1",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "v2",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "output",
+        "offset": 12,
+        "size": 4,
+        "type": "SRenderVertex *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 16,
+      "match": "CONCAT44",
+      "text": "iVar4 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);",
+      "type": "concat_artifact"
     }
   ]
 }

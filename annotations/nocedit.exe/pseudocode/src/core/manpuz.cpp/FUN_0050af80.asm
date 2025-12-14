@@ -71,8 +71,8 @@ section .text
     FSTP float ptr [ESP + 0x10]         ; 0050b010
     FSTP float ptr [ESP + 0x14]         ; 0050b014
     CMP EDX,EAX                         ; 0050b018
-    JNZ 0x0050b020                      ; 0050b01a | LAB_0050b020
-        ;   XREF to: 0050b020 (CONDITIONAL_JUMP)
+    JNZ 0x0050b020                      ; 0050b01a
+        ;   XREF to: 0050b020 (CONDITIONAL_JUMP)  ; LAB_0050b020
     ADD ESP,0x28                        ; 0050b01c
     RET                                 ; 0050b01f
     MOV EAX,dword ptr [ESP + 0xc]       ; 0050b020

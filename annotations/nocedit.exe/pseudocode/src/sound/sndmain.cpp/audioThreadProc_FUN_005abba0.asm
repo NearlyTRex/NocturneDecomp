@@ -28,20 +28,20 @@ section .text
     PUSH ESI                            ; 005abba1
     PUSH EDI                            ; 005abba2
     MOV EDX,0x1                         ; 005abba3
-    MOV ECX,dword ptr [0x03f69404]      ; 005abba8 | int g_AudioThreadShutdownFlag
-    MOV dword ptr [0x03f69400],EDX      ; 005abbae | int g_AudioThreadRunning
+    MOV ECX,dword ptr [0x03f69404]      ; 005abba8 | g_AudioThreadShutdownFlag
+    MOV dword ptr [0x03f69400],EDX      ; 005abbae | g_AudioThreadRunning
     TEST ECX,ECX                        ; 005abbb4
-    JNZ 0x005abbc6                      ; 005abbb6 | LAB_005abbc6
+    JNZ 0x005abbc6                      ; 005abbb6
+        ;   XREF to: 005abbc6 (CONDITIONAL_JUMP)  ; LAB_005abbc6
         ;   Label: LAB_005abbb6
-        ;   XREF to: 005abbc6 (CONDITIONAL_JUMP)
-    CALL sound_sndmain.cpp_processAudio_FUN_005abe20 ; 005abbb8 | void sound_sndmain.cpp_processAudio_FUN_005abe20()
-        ;   XREF to: 005abe20 (UNCONDITIONAL_CALL)
-    CMP dword ptr [0x03f69404],0x0      ; 005abbbd | int g_AudioThreadShutdownFlag
-    JZ 0x005abbd1                       ; 005abbc4 | LAB_005abbd1
-        ;   XREF to: 005abbd1 (CONDITIONAL_JUMP)
+    CALL sound_sndmain.cpp_processAudio_FUN_005abe20 ; 005abbb8
+        ;   XREF to: 005abe20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_processAudio_FUN_005abe20()
+    CMP dword ptr [0x03f69404],0x0      ; 005abbbd | g_AudioThreadShutdownFlag
+    JZ 0x005abbd1                       ; 005abbc4
+        ;   XREF to: 005abbd1 (CONDITIONAL_JUMP)  ; LAB_005abbd1
     XOR EAX,EAX                         ; 005abbc6
         ;   Label: LAB_005abbc6
-    MOV [0x03f69400],EAX                ; 005abbc8 | int g_AudioThreadRunning
+    MOV [0x03f69400],EAX                ; 005abbc8 | g_AudioThreadRunning
     POP EDI                             ; 005abbcd
     POP ESI                             ; 005abbce
     POP EBX                             ; 005abbcf
@@ -49,13 +49,13 @@ section .text
     MOV EBX,dword ptr [0x03f693fc]      ; 005abbd1 | g_AudioLatencySeconds+4
         ;   Label: LAB_005abbd1
     PUSH EBX                            ; 005abbd7
-    MOV ESI,dword ptr [0x03f693f8]      ; 005abbd8 | double g_AudioLatencySeconds
+    MOV ESI,dword ptr [0x03f693f8]      ; 005abbd8 | g_AudioLatencySeconds
     PUSH ESI                            ; 005abbde
-    CALL wincore_winrun.cpp_sleep_FUN_005f40e0 ; 005abbdf | void wincore_winrun.cpp_sleep_FUN_005f40e0(double seconds)
-        ;   XREF to: 005f40e0 (UNCONDITIONAL_CALL)
-    MOV EDI,dword ptr [0x03f69404]      ; 005abbe4 | int g_AudioThreadShutdownFlag
+    CALL wincore_winrun.cpp_sleep_FUN_005f40e0 ; 005abbdf
+        ;   XREF to: 005f40e0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_sleep_FUN_005f40e0(double seconds)
+    MOV EDI,dword ptr [0x03f69404]      ; 005abbe4 | g_AudioThreadShutdownFlag
     ADD ESP,0x8                         ; 005abbea
     TEST EDI,EDI                        ; 005abbed
-    JMP 0x005abbb6                      ; 005abbef | LAB_005abbb6
-        ;   XREF to: 005abbb6 (UNCONDITIONAL_JUMP)
+    JMP 0x005abbb6                      ; 005abbef
+        ;   XREF to: 005abbb6 (UNCONDITIONAL_JUMP)  ; LAB_005abbb6
 

@@ -21,6 +21,6 @@ section .text
         ;   Label: engine_fileio.cpp_CFileManager_ctor_FUN_004b53a0
     MOV dword ptr [EAX + 0x138808],0x1  ; 004b53a4
     MOV dword ptr [EAX + 0x13880c],0x0  ; 004b53ae
-    MOV dword ptr [EAX + 0x138810],0x65d984 ; 004b53b8 | CFileManager_vtable g_CFileManagerVTable
+    MOV dword ptr [EAX + 0x138810],0x65d984 ; 004b53b8 | g_CFileManagerVTable
     RET                                 ; 004b53c2
 

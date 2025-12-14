@@ -21,21 +21,21 @@ section .text
     PUSH 0x0                            ; 00534d16
     PUSH ESI                            ; 00534d18
     XOR EBX,EBX                         ; 00534d19
-    CALL sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0 ; 00534d1b | int sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder * this_ptr, int sample_offset)
-        ;   XREF to: 00534ba0 (UNCONDITIONAL_CALL)
+    CALL sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0 ; 00534d1b
+        ;   XREF to: 00534ba0 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder * this_ptr, int sample_offset)
     ADD ESP,0x8                         ; 00534d20
     PUSH 0x0                            ; 00534d23
         ;   Label: LAB_00534d23
     PUSH ESI                            ; 00534d25
-    CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 ; 00534d26 | int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)
-        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)
+    CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 ; 00534d26
+        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)
     ADD ESP,0x8                         ; 00534d2b
     TEST EAX,EAX                        ; 00534d2e
-    JLE 0x00534d36                      ; 00534d30 | LAB_00534d36
-        ;   XREF to: 00534d36 (CONDITIONAL_JUMP)
+    JLE 0x00534d36                      ; 00534d30
+        ;   XREF to: 00534d36 (CONDITIONAL_JUMP)  ; LAB_00534d36
     ADD EBX,EAX                         ; 00534d32
-    JMP 0x00534d23                      ; 00534d34 | LAB_00534d23
-        ;   XREF to: 00534d23 (UNCONDITIONAL_JUMP)
+    JMP 0x00534d23                      ; 00534d34
+        ;   XREF to: 00534d23 (UNCONDITIONAL_JUMP)  ; LAB_00534d23
     MOV EAX,EBX                         ; 00534d36
         ;   Label: LAB_00534d36
     POP ESI                             ; 00534d38

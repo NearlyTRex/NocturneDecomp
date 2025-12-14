@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 51, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 32, 
-    "assembly_lines": 21, 
-    "suspect_count": 3, 
+    "assembly_lines": 21,
+    "complexity_score": 51,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_memdbg_cpp_00635e2f", 
-      "addr": "00635e2f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_headFromPtr_NULL_ptr_00635e43", 
-      "addr": "00635e43", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "(SMemHead *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "return (SMemHead *)((int)user_ptr + -0x28);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return (SMemHead *)(in_stack_00000008 + -0x28);"
-    }
-  ], 
+    ],
+    "total_lines": 32
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0050efa0", 
-    "signature": "SMemHead * shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void * user_ptr)", 
+    "address": "0050efa0",
     "address_range": [
       [
-        "0050efa0", 
+        "0050efa0",
         "0050efdb"
       ]
-    ], 
-    "name": "shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0",
+    "signature": "SMemHead * shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void * user_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635e2f",
+      "name": "s_shape_memdbg_cpp_00635e2f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635e43",
+      "name": "s_headFromPtr_NULL_ptr_00635e43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "user_ptr"
+        "is_param": true,
+        "name": "user_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(SMemHead *)((int)",
+      "text": "return (SMemHead *)((int)user_ptr + -0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "return (SMemHead *)(in_stack_00000008 + -0x28);",
+      "type": "stack_param"
+    }
+  ]
 }

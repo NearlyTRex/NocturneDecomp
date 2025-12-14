@@ -35,15 +35,15 @@ section .text
     PUSH EDX                            ; 0052ddbb
     MOV ECX,dword ptr [EAX]             ; 0052ddbc
     PUSH ECX                            ; 0052ddbe
-    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0052ddbf | int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0052ddbf
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
     ADD ESP,0xc                         ; 0052ddc4
     PUSH dword ptr [ESP + 0x10]         ; 0052ddc7
     PUSH EAX                            ; 0052ddcb
     MOV EBX,dword ptr [ESP + 0x10]      ; 0052ddcc
     PUSH EBX                            ; 0052ddd0
-    CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0 ; 0052ddd1 | void core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotionController * this_ptr, int target_motion_index, float target_frame_number)
-        ;   XREF to: 0052dde0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0 ; 0052ddd1
+        ;   XREF to: 0052dde0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotionController * this_ptr, int target_motion_index, float target_frame_number)
     ADD ESP,0xc                         ; 0052ddd6
     POP EBX                             ; 0052ddd9
     RET                                 ; 0052ddda

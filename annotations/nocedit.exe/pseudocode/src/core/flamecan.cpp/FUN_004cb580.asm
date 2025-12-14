@@ -29,7 +29,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 004cb5a7
     FADD float ptr [EDX + 0x4]          ; 004cb5aa
     FXCH                                ; 004cb5ad
-    FLD float ptr [0x0062a2ec]          ; 004cb5af | float FLOAT_0062a2ec
+    FLD float ptr [0x0062a2ec]          ; 004cb5af | FLOAT_0062a2ec
     FXCH                                ; 004cb5b5
     FMUL ST1                            ; 004cb5b7
     FXCH ST2                            ; 004cb5b9
@@ -48,8 +48,8 @@ section .text
     FSTP float ptr [ESP + 0x28]         ; 004cb5dd
     FSTP float ptr [ESP + 0x2c]         ; 004cb5e1
     CMP EBX,EAX                         ; 004cb5e5
-    JNZ 0x004cb5f3                      ; 004cb5e7 | LAB_004cb5f3
-        ;   XREF to: 004cb5f3 (CONDITIONAL_JUMP)
+    JNZ 0x004cb5f3                      ; 004cb5e7
+        ;   XREF to: 004cb5f3 (CONDITIONAL_JUMP)  ; LAB_004cb5f3
     MOV EAX,0x1                         ; 004cb5e9
     ADD ESP,0x30                        ; 004cb5ee
     POP EBX                             ; 004cb5f1

@@ -58,8 +58,8 @@ section .text
     FCOMPP                              ; 0049a82e
     FNSTSW AX                           ; 0049a830
     SAHF                                ; 0049a832
-    JNC 0x0049a989                      ; 0049a833 | LAB_0049a989
-        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)
+    JNC 0x0049a989                      ; 0049a833
+        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)  ; LAB_0049a989
     FLD float ptr [EDX + 0x24]          ; 0049a839
     FMUL float ptr [EBX]                ; 0049a83c
     FADD float ptr [EDX + 0x30]         ; 0049a83e
@@ -75,14 +75,14 @@ section .text
     FCOMPP                              ; 0049a859
     FNSTSW AX                           ; 0049a85b
     SAHF                                ; 0049a85d
-    JA 0x0049a989                       ; 0049a85e | LAB_0049a989
-        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)
+    JA 0x0049a989                       ; 0049a85e
+        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)  ; LAB_0049a989
     FLD float ptr [ESP + 0xc]           ; 0049a864
     FCOMP float ptr [ESP + 0x8]         ; 0049a868
     FNSTSW AX                           ; 0049a86c
     SAHF                                ; 0049a86e
-    JA 0x0049a989                       ; 0049a86f | LAB_0049a989
-        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)
+    JA 0x0049a989                       ; 0049a86f
+        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)  ; LAB_0049a989
     FLD float ptr [ESP + 0xc]           ; 0049a875
     FDIV float ptr [ESP + 0x8]          ; 0049a879
     FST float ptr [ESP + 0xc]           ; 0049a87d
@@ -101,11 +101,11 @@ section .text
     FSTP float ptr [ESP + 0x18]         ; 0049a8a5
     MOV ECX,dword ptr [EDX + 0x34]      ; 0049a8a9
     CMP ECX,0x1                         ; 0049a8ac
-    JNC 0x0049a9f3                      ; 0049a8af | LAB_0049a9f3
-        ;   XREF to: 0049a9f3 (CONDITIONAL_JUMP)
+    JNC 0x0049a9f3                      ; 0049a8af
+        ;   XREF to: 0049a9f3 (CONDITIONAL_JUMP)  ; LAB_0049a9f3
     TEST ECX,ECX                        ; 0049a8b5
-    JNZ 0x0049a90b                      ; 0049a8b7 | LAB_0049a90b
-        ;   XREF to: 0049a90b (CONDITIONAL_JUMP)
+    JNZ 0x0049a90b                      ; 0049a8b7
+        ;   XREF to: 0049a90b (CONDITIONAL_JUMP)  ; LAB_0049a90b
     FLD float ptr [ESP + 0x14]          ; 0049a8b9
     FLD float ptr [ESP + 0x18]          ; 0049a8bd
     FLD float ptr [EDX + 0x10]          ; 0049a8c1
@@ -157,8 +157,8 @@ section .text
     FCOMPP                              ; 0049a93e
     FNSTSW AX                           ; 0049a940
     SAHF                                ; 0049a942
-    JA 0x0049a989                       ; 0049a943 | LAB_0049a989
-        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)
+    JA 0x0049a989                       ; 0049a943
+        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)  ; LAB_0049a989
     FLD float ptr [ESP + 0x24]          ; 0049a945
     FMUL float ptr [ESP + 0x1c]         ; 0049a949
     FLD float ptr [ESP + 0x2c]          ; 0049a94d
@@ -170,16 +170,16 @@ section .text
     FCOMPP                              ; 0049a961
     FNSTSW AX                           ; 0049a963
     SAHF                                ; 0049a965
-    JA 0x0049a989                       ; 0049a966 | LAB_0049a989
-        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)
+    JA 0x0049a989                       ; 0049a966
+        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)  ; LAB_0049a989
     FLD float ptr [ESP]                 ; 0049a968
     FADD float ptr [ESP + 0x4]          ; 0049a96b
     FLD1                                ; 0049a96f
     FCOMPP                              ; 0049a971
     FNSTSW AX                           ; 0049a973
     SAHF                                ; 0049a975
-    JC 0x0049a989                       ; 0049a976 | LAB_0049a989
-        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)
+    JC 0x0049a989                       ; 0049a976
+        ;   XREF to: 0049a989 (CONDITIONAL_JUMP)  ; LAB_0049a989
     MOV EDX,dword ptr [ESP + 0xc]       ; 0049a978
     MOV dword ptr [ESP + 0x30],EDX      ; 0049a97c
     MOV EAX,dword ptr [ESP + 0x30]      ; 0049a980
@@ -207,8 +207,8 @@ section .text
     FSUB float ptr [EDX]                ; 0049a9b4
     FXCH ST2                            ; 0049a9b6
     FSUB float ptr [EDX]                ; 0049a9b8
-    JMP 0x0049a8dc                      ; 0049a9ba | LAB_0049a8dc
-        ;   XREF to: 0049a8dc (UNCONDITIONAL_JUMP)
+    JMP 0x0049a8dc                      ; 0049a9ba
+        ;   XREF to: 0049a8dc (UNCONDITIONAL_JUMP)  ; LAB_0049a8dc
     FLD float ptr [ESP + 0x10]          ; 0049a9bf
         ;   Label: LAB_0049a9bf
     FLD float ptr [ESP + 0x14]          ; 0049a9c3
@@ -228,14 +228,14 @@ section .text
     FSUB float ptr [EDX + 0x4]          ; 0049a9e6
     FXCH ST5                            ; 0049a9e9
     FSUB float ptr [EDX + 0x4]          ; 0049a9eb
-    JMP 0x0049a8eb                      ; 0049a9ee | LAB_0049a8eb
-        ;   XREF to: 0049a8eb (UNCONDITIONAL_JUMP)
-    JBE 0x0049a99a                      ; 0049a9f3 | LAB_0049a99a
+    JMP 0x0049a8eb                      ; 0049a9ee
+        ;   XREF to: 0049a8eb (UNCONDITIONAL_JUMP)  ; LAB_0049a8eb
+    JBE 0x0049a99a                      ; 0049a9f3
+        ;   XREF to: 0049a99a (CONDITIONAL_JUMP)  ; LAB_0049a99a
         ;   Label: LAB_0049a9f3
-        ;   XREF to: 0049a99a (CONDITIONAL_JUMP)
     CMP ECX,0x2                         ; 0049a9f5
-    JZ 0x0049a9bf                       ; 0049a9f8 | LAB_0049a9bf
-        ;   XREF to: 0049a9bf (CONDITIONAL_JUMP)
-    JMP 0x0049a90b                      ; 0049a9fa | LAB_0049a90b
-        ;   XREF to: 0049a90b (UNCONDITIONAL_JUMP)
+    JZ 0x0049a9bf                       ; 0049a9f8
+        ;   XREF to: 0049a9bf (CONDITIONAL_JUMP)  ; LAB_0049a9bf
+    JMP 0x0049a90b                      ; 0049a9fa
+        ;   XREF to: 0049a90b (UNCONDITIONAL_JUMP)  ; LAB_0049a90b
 

@@ -31,8 +31,8 @@ section .text
     PUSH EDX                            ; 0060bf04
     MOV ECX,dword ptr [EBP + 0x8]       ; 0060bf05
     PUSH ECX                            ; 0060bf08
-    CALL crt_math.c_process_math_error_FUN_0060bf2d ; 0060bf09 | double crt_math.c_process_math_error_FUN_0060bf2d(int errorFlags, double * value1, double * value2)
-        ;   XREF to: 0060bf2d (UNCONDITIONAL_CALL)
+    CALL crt_math.c_process_math_error_FUN_0060bf2d ; 0060bf09
+        ;   XREF to: 0060bf2d (UNCONDITIONAL_CALL)  ; double crt_math.c_process_math_error_FUN_0060bf2d(int errorFlags, double * value1, double * value2)
     MOV dword ptr [EBP + -0x10],EAX     ; 0060bf0e
     MOV dword ptr [EBP + -0xc],EDX      ; 0060bf11
     ADD ESP,0xc                         ; 0060bf14

@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 18, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_support_trisock_cpp_00656532", 
-      "addr": "00656532", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Should_never_be_called_00656549", 
-      "addr": "00656549", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 11,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005e1a80", 
-    "signature": "int support_trisock.cpp_shouldNeverBeCalled_FUN_005e1a80(int unknown1, int unknown2)", 
+    "address": "005e1a80",
     "address_range": [
       [
-        "005e1a80", 
+        "005e1a80",
         "005e1aa7"
       ]
-    ], 
-    "name": "support_trisock.cpp_shouldNeverBeCalled_FUN_005e1a80"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_shouldNeverBeCalled_FUN_005e1a80",
+    "signature": "int support_trisock.cpp_shouldNeverBeCalled_FUN_005e1a80(int unknown1, int unknown2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00656532",
+      "name": "s_support_trisock_cpp_00656532",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656549",
+      "name": "s_Should_never_be_called_00656549",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "unknown1"
-      }, 
+        "is_param": true,
+        "name": "unknown1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "unknown2"
+        "is_param": true,
+        "name": "unknown2",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

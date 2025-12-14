@@ -23,12 +23,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005e5058
     FLD float ptr [EAX + 0xbebc]        ; 005e505c
     ADD EAX,0xbec0                      ; 005e5062
-    CALL crt_math.c_round_FUN_005fe6b0  ; 005e5067 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 005e5067
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     PUSH EAX                            ; 005e506c
     FISTP dword ptr [ESP + 0x4]         ; 005e506d
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 005e5071 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 005e5071
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005e5076
     MOV ECX,dword ptr [ESP]             ; 005e5079
     MOV EDX,EAX                         ; 005e507c

@@ -17,8 +17,8 @@ section .text
         ;   Label: core_ground.cpp_CGround_dtor_FUN_004eeee0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004eeee1
     PUSH EBX                            ; 004eeee5
-    CALL core_ground.cpp_CGround_free_FUN_004eefb0 ; 004eeee6 | void core_ground.cpp_CGround_free_FUN_004eefb0(CGround * this_ptr)
-        ;   XREF to: 004eefb0 (UNCONDITIONAL_CALL)
+    CALL core_ground.cpp_CGround_free_FUN_004eefb0 ; 004eeee6
+        ;   XREF to: 004eefb0 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_free_FUN_004eefb0(CGround * this_ptr)
     ADD ESP,0x4                         ; 004eeeeb
     MOV EAX,EBX                         ; 004eeeee
     POP EBX                             ; 004eeef0

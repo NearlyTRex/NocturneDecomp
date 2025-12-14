@@ -1,90 +1,90 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 41, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 111, 
-    "assembly_lines": 70, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_signal.c_getSignalHandler_FUN_0060ceb4", 
-      "addr": "0060ceb4"
-    }, 
-    {
-      "name": "crt_signal.c_raiseFPE_FUN_0060d028", 
-      "addr": "0060d028"
-    }, 
-    {
-      "name": "crt_signal.c_setSignalHandler_FUN_0060ce60", 
-      "addr": "0060ce60"
-    }, 
-    {
-      "name": "crt_signal.c_unregisterConsoleHandler_FUN_0060cfe4", 
-      "addr": "0060cfe4"
-    }, 
-    {
-      "name": "crt_startup.c_reportAbnormalTermination_FUN_00601628", 
-      "addr": "00601628"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_0060cf80", 
-      "addr": "0060cf80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_0060d0f8", 
-      "addr": "0060d0f8", 
-      "value": "0060d15b"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060d128", 
-    "signature": "int crt_signal.c_processSignal_FUN_0060d128(int signal_number)", 
-    "address_range": [
-      [
-        "0060d128", 
-        "0060d1a4"
-      ]
-    ], 
-    "name": "crt_signal.c_processSignal_FUN_0060d128"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "signal_number"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 70,
+    "complexity_score": 41,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 1,
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 111
+  },
   "cross_references": [
     {
-      "from_addr": "0060cf42", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_signal.c_consoleCtrlHandler_FUN_0060cf20", 
-      "addr": "0060cf20"
-    }, 
+      "addr": "0060cf20",
+      "from_addr": "0060cf42",
+      "name": "crt_signal.c_consoleCtrlHandler_FUN_0060cf20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060d1d6", 
-      "type": "DATA", 
-      "name": "crt_unknown.c_FUN_0060d1a8", 
-      "addr": "0060d1a8"
+      "addr": "0060d1a8",
+      "from_addr": "0060d1d6",
+      "name": "crt_unknown.c_FUN_0060d1a8",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060d128",
+    "address_range": [
+      [
+        "0060d128",
+        "0060d1a4"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_signal.c_processSignal_FUN_0060d128",
+    "signature": "int crt_signal.c_processSignal_FUN_0060d128(int signal_number)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060ceb4",
+      "name": "crt_signal.c_getSignalHandler_FUN_0060ceb4"
+    },
+    {
+      "addr": "0060d028",
+      "name": "crt_signal.c_raiseFPE_FUN_0060d028"
+    },
+    {
+      "addr": "0060ce60",
+      "name": "crt_signal.c_setSignalHandler_FUN_0060ce60"
+    },
+    {
+      "addr": "0060cfe4",
+      "name": "crt_signal.c_unregisterConsoleHandler_FUN_0060cfe4"
+    },
+    {
+      "addr": "00601628",
+      "name": "crt_startup.c_reportAbnormalTermination_FUN_00601628"
+    },
+    {
+      "addr": "0060cf80",
+      "name": "crt_unknown.c_FUN_0060cf80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060d0f8",
+      "name": "switchdataD_0060d0f8",
+      "type": "void*",
+      "value": "0060d15b"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "signal_number",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

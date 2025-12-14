@@ -1,197 +1,197 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 119, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 1, 
-    "global_count": 12, 
-    "total_lines": 108, 
-    "assembly_lines": 74, 
-    "suspect_count": 8, 
+    "assembly_lines": 74,
+    "complexity_score": 119,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 12,
+    "pseudocode_lines": 34,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "GlobalFree", 
-      "addr": "EXTERNAL:0000007f"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
-    }, 
-    {
-      "name": "waveOutClose", 
-      "addr": "EXTERNAL:0000001e"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "waveOutClose*", 
-      "name": "waveOutClose", 
-      "addr": "00611440", 
-      "value": "0021191e"
-    }, 
-    {
-      "type": "GlobalFree*", 
-      "name": "GlobalFree", 
-      "addr": "006115d0", 
-      "value": "00211fe6"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_waveOutClose_failed_00652370", 
-      "addr": "00652370", 
-      "value": null
-    }, 
-    {
-      "type": "HWAVEOUT", 
-      "name": "g_WaveOutHandle", 
-      "addr": "03f6ad34", 
-      "value": null
-    }, 
-    {
-      "type": "HGLOBAL[8]", 
-      "name": "g_WaveOutHeaderHandles", 
-      "addr": "03f6ad38", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6ad3c", 
-      "addr": "03f6ad3c", 
-      "value": null
-    }, 
-    {
-      "type": "LPWAVEHDR[8]", 
-      "name": "g_WaveOutHeaders", 
-      "addr": "03f6ad58", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6ad5c", 
-      "addr": "03f6ad5c", 
-      "value": null
-    }, 
-    {
-      "type": "HGLOBAL[8]", 
-      "name": "g_WaveOutBufferHandles", 
-      "addr": "03f6ad78", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6ad7c", 
-      "addr": "03f6ad7c", 
-      "value": null
-    }, 
-    {
-      "type": "LPVOID[8]", 
-      "name": "g_WaveOutBuffers", 
-      "addr": "03f6ad98", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6ad9c", 
-      "addr": "03f6ad9c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "(HGLOBAL *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar1) != (HGLOBAL)0x0) {"
-    }, 
-    {
-      "line": 15, 
-      "match": "(HGLOBAL *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(*GlobalFree)(*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar1));"
-    }, 
-    {
-      "line": 16, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_WaveOutBufferHandles + iVar1) = 0;"
-    }, 
-    {
-      "line": 18, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_WaveOutBuffers + iVar1) = 0;"
-    }, 
-    {
-      "line": 19, 
-      "match": "(HGLOBAL *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar1) != (HGLOBAL)0x0) {"
-    }, 
-    {
-      "line": 20, 
-      "match": "(HGLOBAL *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(*GlobalFree)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar1));"
-    }, 
-    {
-      "line": 21, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_WaveOutHeaderHandles + iVar1) = 0;"
-    }, 
-    {
-      "line": 24, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_WaveOutHeaders + iVar1) = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b0840", 
-    "signature": "int sound_sndwav.cpp_CWavOutDevice_close_FUN_005b0840(CWavOutDevice * this_ptr)", 
-    "address_range": [
-      [
-        "005b0840", 
-        "005b08e0"
-      ]
-    ], 
-    "name": "sound_sndwav.cpp_CWavOutDevice_close_FUN_005b0840"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWavOutDevice *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 108
+  },
   "cross_references": [
     {
-      "from_addr": "005b1518", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndwav.cpp_getWavOutDevice_FUN_005b1510", 
-      "addr": "005b1510"
+      "addr": "005b1510",
+      "from_addr": "005b1518",
+      "name": "sound_sndwav.cpp_getWavOutDevice_FUN_005b1510",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b0840",
+    "address_range": [
+      [
+        "005b0840",
+        "005b08e0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndwav.cpp_CWavOutDevice_close_FUN_005b0840",
+    "signature": "int sound_sndwav.cpp_CWavOutDevice_close_FUN_005b0840(CWavOutDevice * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000007f",
+      "name": "GlobalFree"
+    },
+    {
+      "addr": "005adba0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
+    },
+    {
+      "addr": "EXTERNAL:0000001e",
+      "name": "waveOutClose"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611440",
+      "name": "waveOutClose",
+      "type": "waveOutClose*",
+      "value": "0021191e"
+    },
+    {
+      "addr": "006115d0",
+      "name": "GlobalFree",
+      "type": "GlobalFree*",
+      "value": "00211fe6"
+    },
+    {
+      "addr": "00652370",
+      "name": "s_waveOutClose_failed_00652370",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "03f6ad34",
+      "name": "g_WaveOutHandle",
+      "type": "HWAVEOUT",
+      "value": null
+    },
+    {
+      "addr": "03f6ad38",
+      "name": "g_WaveOutHeaderHandles",
+      "type": "HGLOBAL[8]",
+      "value": null
+    },
+    {
+      "addr": "03f6ad3c",
+      "name": "DAT_03f6ad3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6ad58",
+      "name": "g_WaveOutHeaders",
+      "type": "LPWAVEHDR[8]",
+      "value": null
+    },
+    {
+      "addr": "03f6ad5c",
+      "name": "DAT_03f6ad5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6ad78",
+      "name": "g_WaveOutBufferHandles",
+      "type": "HGLOBAL[8]",
+      "value": null
+    },
+    {
+      "addr": "03f6ad7c",
+      "name": "DAT_03f6ad7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6ad98",
+      "name": "g_WaveOutBuffers",
+      "type": "LPVOID[8]",
+      "value": null
+    },
+    {
+      "addr": "03f6ad9c",
+      "name": "DAT_03f6ad9c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWavOutDevice *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(HGLOBAL *)((int)",
+      "text": "if (*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar1) != (HGLOBAL)0x0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(HGLOBAL *)((int)",
+      "text": "(*GlobalFree)(*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar1));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_WaveOutBufferHandles + iVar1) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_WaveOutBuffers + iVar1) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(HGLOBAL *)((int)",
+      "text": "if (*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar1) != (HGLOBAL)0x0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(HGLOBAL *)((int)",
+      "text": "(*GlobalFree)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar1));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_WaveOutHeaderHandles + iVar1) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_WaveOutHeaders + iVar1) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

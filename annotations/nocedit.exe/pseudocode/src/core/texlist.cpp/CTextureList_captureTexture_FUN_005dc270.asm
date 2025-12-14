@@ -31,10 +31,10 @@ section .text
     ADD EDX,0x4                         ; 005dc28a
     ADD EAX,EDX                         ; 005dc28d
     PUSH EAX                            ; 005dc28f
-    MOV EDX,dword ptr [0x006703ec]      ; 005dc290 | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDX                            ; 005dc296 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005dc297 | void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
-        ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006703ec]      ; 005dc290 | g_CDemonRendererInstance | g_CDemonRendererPtr
+    PUSH EDX                            ; 005dc296 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 ; 005dc297
+        ;   XREF to: 0048db80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 005dc29c
     RET                                 ; 005dc29f
 

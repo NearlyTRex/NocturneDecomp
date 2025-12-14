@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x38]      ; 004093f4
     MOV EAX,ESP                         ; 004093f8
     PUSH EAX                            ; 004093fa
-    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0 ; 004093fb | SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo * this_ptr)
-        ;   XREF to: 005743c0 (UNCONDITIONAL_CALL)
+    CALL core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0 ; 004093fb
+        ;   XREF to: 005743c0 (UNCONDITIONAL_CALL)  ; SCollisionInfo * core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo * this_ptr)
     ADD ESP,0x4                         ; 00409400
     MOV EAX,dword ptr [ESP + 0x48]      ; 00409403
     MOV dword ptr [ESP],EAX             ; 00409407
@@ -38,8 +38,8 @@ section .text
     CALL dword ptr [EDX + 0x34]         ; 00409414
     ADD ESP,0x8                         ; 00409417
     TEST EAX,EAX                        ; 0040941a
-    JNZ 0x0040942f                      ; 0040941c | LAB_0040942f
-        ;   XREF to: 0040942f (CONDITIONAL_JUMP)
+    JNZ 0x0040942f                      ; 0040941c
+        ;   XREF to: 0040942f (CONDITIONAL_JUMP)  ; LAB_0040942f
     MOV dword ptr [ESP + 0x28],0x40000000 ; 0040941e
     MOV EAX,dword ptr [ESP + 0x28]      ; 00409426
     ADD ESP,0x30                        ; 0040942a
@@ -60,8 +60,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x58]      ; 00409446
     PUSH EDI                            ; 0040944a
     PUSH EBX                            ; 0040944b
-    CALL core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 ; 0040944c | float core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_hit_normal, ...)
-        ;   XREF to: 00409470 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 ; 0040944c
+        ;   XREF to: 00409470 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_hit_normal, ...)
     MOV dword ptr [ESP + 0x50],EAX      ; 00409451
     FLD float ptr [ESP + 0x50]          ; 00409455
     ADD ESP,0x1c                        ; 00409459

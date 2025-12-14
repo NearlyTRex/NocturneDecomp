@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 51, 
-    "assembly_lines": 33, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_console.cpp_CConsole_reset_FUN_00441a40", 
-      "addr": "00441a40"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00441810", 
-    "signature": "CConsole * engine_console.cpp_CConsole_ctor_FUN_00441810(CConsole * this_ptr, int width, int height, int screen_x, int screen_y)", 
-    "address_range": [
-      [
-        "00441810", 
-        "00441879"
-      ]
-    ], 
-    "name": "engine_console.cpp_CConsole_ctor_FUN_00441810"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CConsole *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "screen_x"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "screen_y"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 33,
+    "complexity_score": 18,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
+  },
   "cross_references": [
     {
-      "from_addr": "004417ed", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_console.cpp_staticInit_FUN_004417e0", 
-      "addr": "004417e0"
+      "addr": "004417e0",
+      "from_addr": "004417ed",
+      "name": "engine_console.cpp_staticInit_FUN_004417e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00441810",
+    "address_range": [
+      [
+        "00441810",
+        "00441879"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_console.cpp_CConsole_ctor_FUN_00441810",
+    "signature": "CConsole * engine_console.cpp_CConsole_ctor_FUN_00441810(CConsole * this_ptr, int width, int height, int screen_x, int screen_y)"
+  },
+  "function_calls": [
+    {
+      "addr": "00441a40",
+      "name": "engine_console.cpp_CConsole_reset_FUN_00441a40"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CConsole *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "screen_x",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "screen_y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -429,8 +429,8 @@ LAB_0057911a:
     pCVar11->set_scale_factor = 1.0;
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (this_ptr,"Reading vertices");
-    pcVar16 = (char *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                                (param_14 * 0xc + 4,"..\\core\\setedit.cpp",0x547);
+    pcVar16 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                        (param_14 * 0xc + 4,"..\\core\\setedit.cpp",0x547);
     param_21 = pcVar16;
     if (pcVar16 != (char *)0x0) {
       param_21 = pcVar16 + 4;

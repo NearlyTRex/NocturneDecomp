@@ -1,103 +1,103 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 40, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 2, 
-    "global_count": 4, 
-    "total_lines": 131, 
-    "assembly_lines": 91, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_morph_cpp_0063a3a7", 
-      "addr": "0063a3a7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CMorphModel_findOrAddTex_0063a3b9", 
-      "addr": "0063a3b9", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052ae60", 
-    "signature": "int core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel * this_ptr, char * filename)", 
-    "address_range": [
-      [
-        "0052ae60", 
-        "0052af22"
-      ]
-    ], 
-    "name": "core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMorphModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 91,
+    "complexity_score": 40,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 131
+  },
   "cross_references": [
     {
-      "from_addr": "0052ad69", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_CMorphModel_FUN_0052aca0", 
-      "addr": "0052aca0"
-    }, 
+      "addr": "0052aca0",
+      "from_addr": "0052ad69",
+      "name": "core_morph.cpp_CMorphModel_FUN_0052aca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052ab77", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_CMorphModel_setFaceList_FUN_0052aac0", 
-      "addr": "0052aac0"
+      "addr": "0052aac0",
+      "from_addr": "0052ab77",
+      "name": "core_morph.cpp_CMorphModel_setFaceList_FUN_0052aac0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0052ae60",
+    "address_range": [
+      [
+        "0052ae60",
+        "0052af22"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60",
+    "signature": "int core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60(CMorphModel * this_ptr, char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063a3a7",
+      "name": "s_core_morph_cpp_0063a3a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063a3b9",
+      "name": "s_CMorphModel_findOrAddTex_0063a3b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMorphModel *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

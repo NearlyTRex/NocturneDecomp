@@ -54,8 +54,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x20]      ; 004a5b90
     SUB EDX,EBX                         ; 004a5b93
     CMP ECX,EDX                         ; 004a5b95
-    JG 0x004a5bcd                       ; 004a5b97 | LAB_004a5bcd
-        ;   XREF to: 004a5bcd (CONDITIONAL_JUMP)
+    JG 0x004a5bcd                       ; 004a5b97
+        ;   XREF to: 004a5bcd (CONDITIONAL_JUMP)  ; LAB_004a5bcd
     MOV EBX,dword ptr [EAX + 0x18]      ; 004a5b99
     ADD EBX,ECX                         ; 004a5b9c
     DEC EBX                             ; 004a5b9e
@@ -67,17 +67,17 @@ section .text
         ;   Label: LAB_004a5bae
     MOV dword ptr [EAX + 0x28],EBX      ; 004a5baf
     CMP ECX,0x4                         ; 004a5bb2
-    JL 0x004a5be4                       ; 004a5bb5 | LAB_004a5be4
-        ;   XREF to: 004a5be4 (CONDITIONAL_JUMP)
+    JL 0x004a5be4                       ; 004a5bb5
+        ;   XREF to: 004a5be4 (CONDITIONAL_JUMP)  ; LAB_004a5be4
     CMP EDX,0x4                         ; 004a5bb7
-    JL 0x004a5be4                       ; 004a5bba | LAB_004a5be4
-        ;   XREF to: 004a5be4 (CONDITIONAL_JUMP)
+    JL 0x004a5be4                       ; 004a5bba
+        ;   XREF to: 004a5be4 (CONDITIONAL_JUMP)  ; LAB_004a5be4
     MOV ESI,dword ptr [EAX + 0x24]      ; 004a5bbc
     MOV EDX,dword ptr [EAX + 0x28]      ; 004a5bbf
     SUB EDX,ESI                         ; 004a5bc2
     CMP EDX,0x4                         ; 004a5bc4
-    JL 0x004a5be4                       ; 004a5bc7 | LAB_004a5be4
-        ;   XREF to: 004a5be4 (CONDITIONAL_JUMP)
+    JL 0x004a5be4                       ; 004a5bc7
+        ;   XREF to: 004a5be4 (CONDITIONAL_JUMP)  ; LAB_004a5be4
     POP EBP                             ; 004a5bc9
     POP ESI                             ; 004a5bca
     POP EBX                             ; 004a5bcb
@@ -90,17 +90,17 @@ section .text
     MOV EBX,dword ptr [EAX + 0x1c]      ; 004a5bd6
     SUB EBX,EDX                         ; 004a5bd9
     MOV dword ptr [EAX + 0x10],0x1      ; 004a5bdb
-    JMP 0x004a5bae                      ; 004a5be2 | LAB_004a5bae
-        ;   XREF to: 004a5bae (UNCONDITIONAL_JUMP)
+    JMP 0x004a5bae                      ; 004a5be2
+        ;   XREF to: 004a5bae (UNCONDITIONAL_JUMP)  ; LAB_004a5bae
     PUSH EDI                            ; 004a5be4
         ;   Label: LAB_004a5be4
-    MOV EDI,0x623f14                    ; 004a5be5 | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_00623f14 = ..\shape\edittool.cpp
+    MOV EDI,0x623f14                    ; 004a5be5 | = "..\\shape\\edittool.cpp"
     MOV EBP,0x110b                      ; 004a5bea
-    PUSH 0x623f2a                       ; 004a5bef | = "CEdScrollBar::setPosition - invalid d..." | s_CEdScrollBar_setPosition_00623f2a = CEdScrollBar::setPosition - invalid dimensions.
-    MOV dword ptr [0x02f0ca48],EDI      ; 004a5bf4 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 004a5bfa | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a5c00 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x623f2a                       ; 004a5bef | = "CEdScrollBar::setPosition - invalid d..."
+    MOV dword ptr [0x02f0ca48],EDI      ; 004a5bf4 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 004a5bfa | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a5c00
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004a5c05
     POP EDI                             ; 004a5c08
     POP EBP                             ; 004a5c09

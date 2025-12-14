@@ -24,27 +24,27 @@ section .text
     PUSH ESI                            ; 005da2f1
     MOV EBX,dword ptr [ESP + 0xc]       ; 005da2f2
     PUSH EBX                            ; 005da2f6
-    CALL core_npc.cpp_CNPC_FUN_00544870 ; 005da2f7 | void core_npc.cpp_CNPC_FUN_00544870(CNPC * this_ptr)
-        ;   XREF to: 00544870 (UNCONDITIONAL_CALL)
+    CALL core_npc.cpp_CNPC_FUN_00544870 ; 005da2f7
+        ;   XREF to: 00544870 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_FUN_00544870(CNPC * this_ptr)
     ADD ESP,0x4                         ; 005da2fc
     LEA EAX,[EBX + 0x158]               ; 005da2ff
     PUSH EAX                            ; 005da305
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005da306 | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005da306
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005da30b
     PUSH 0x1                            ; 005da30e
-    PUSH 0x654bf9                       ; 005da310 | = "Bip01 L Hand" | s_Bip01_L_Hand_00654bf9 = Bip01 L Hand
+    PUSH 0x654bf9                       ; 005da310 | = "Bip01 L Hand"
     PUSH EAX                            ; 005da315
     MOV ESI,EAX                         ; 005da316
-    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 005da318 | int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 005da318
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
     ADD ESP,0xc                         ; 005da31d
     PUSH 0x1                            ; 005da320
-    PUSH 0x654c06                       ; 005da322 | = "Bip01 R Hand" | s_Bip01_R_Hand_00654c06 = Bip01 R Hand
+    PUSH 0x654c06                       ; 005da322 | = "Bip01 R Hand"
     PUSH ESI                            ; 005da327
     MOV dword ptr [EBX + 0x1f708],EAX   ; 005da328
-    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 005da32e | int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
-        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0 ; 005da32e
+        ;   XREF to: 00599fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0(CSkeleton * this_ptr, char * bone_name)
     MOV dword ptr [EBX + 0x24b0],0x0    ; 005da333
     MOV dword ptr [EBX + 0x24f4],0x0    ; 005da33d
     MOV dword ptr [EBX + 0x1f70c],EAX   ; 005da347

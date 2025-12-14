@@ -11,8 +11,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00418400
         ;   Label: core_beast.cpp_FUN_00418400
     CMP dword ptr [EAX],0x1             ; 00418404
-    JZ 0x0041840c                       ; 00418407 | LAB_0041840c
-        ;   XREF to: 0041840c (CONDITIONAL_JUMP)
+    JZ 0x0041840c                       ; 00418407
+        ;   XREF to: 0041840c (CONDITIONAL_JUMP)  ; LAB_0041840c
     XOR EAX,EAX                         ; 00418409
     RET                                 ; 0041840b
     MOV EDX,dword ptr [ESP + 0x4]       ; 0041840c

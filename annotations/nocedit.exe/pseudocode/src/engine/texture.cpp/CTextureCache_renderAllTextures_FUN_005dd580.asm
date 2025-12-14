@@ -55,16 +55,16 @@ section .text
     MOV EDX,dword ptr [ESI + 0x14008]   ; 005dd590
     XOR EBX,EBX                         ; 005dd596
     TEST EDX,EDX                        ; 005dd598
-    JLE 0x005dd67b                      ; 005dd59a | LAB_005dd67b
-        ;   XREF to: 005dd67b (CONDITIONAL_JUMP)
+    JLE 0x005dd67b                      ; 005dd59a
+        ;   XREF to: 005dd67b (CONDITIONAL_JUMP)  ; LAB_005dd67b
     PUSH EDI                            ; 005dd5a0
     MOV EBP,0x5fffa                     ; 005dd5a1
     XOR EDI,EDI                         ; 005dd5a6
     PUSH EBX                            ; 005dd5a8
         ;   Label: LAB_005dd5a8
     PUSH ESI                            ; 005dd5a9
-    CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 ; 005dd5aa | void engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache * cache, int texture_index)
-        ;   XREF to: 005dd200 (UNCONDITIONAL_CALL)
+    CALL engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 ; 005dd5aa
+        ;   XREF to: 005dd200 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache * cache, int texture_index)
     INC EBX                             ; 005dd5af
     ADD ESP,0x8                         ; 005dd5b0
     MOV ECX,0x3e8                       ; 005dd5b3
@@ -106,13 +106,13 @@ section .text
     MOV dword ptr [ESP + 0x24],ECX      ; 005dd655
     MOV dword ptr [ESP + 0x54],ECX      ; 005dd659
     MOV dword ptr [ESP + 0xb0],ECX      ; 005dd65d
-    CALL wincore_windll.cpp_drawPolygon_FUN_005b75e0 ; 005dd664 | int wincore_windll.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
-        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_drawPolygon_FUN_005b75e0 ; 005dd664
+        ;   XREF to: 005b75e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)
     MOV EAX,dword ptr [ESI + 0x14008]   ; 005dd669
     ADD ESP,0xc                         ; 005dd66f
     CMP EBX,EAX                         ; 005dd672
-    JL 0x005dd5a8                       ; 005dd674 | LAB_005dd5a8
-        ;   XREF to: 005dd5a8 (CONDITIONAL_JUMP)
+    JL 0x005dd5a8                       ; 005dd674
+        ;   XREF to: 005dd5a8 (CONDITIONAL_JUMP)  ; LAB_005dd5a8
     POP EDI                             ; 005dd67a
     ADD ESP,0xc0                        ; 005dd67b
         ;   Label: LAB_005dd67b

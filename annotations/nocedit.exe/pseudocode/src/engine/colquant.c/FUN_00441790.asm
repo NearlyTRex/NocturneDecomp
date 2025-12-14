@@ -25,8 +25,8 @@ section .text
     FCOMP double ptr [EBP + 0x10]       ; 0044179c
     FNSTSW AX                           ; 0044179f
     SAHF                                ; 004417a1
-    JBE 0x004417cc                      ; 004417a2 | LAB_004417cc
-        ;   XREF to: 004417cc (CONDITIONAL_JUMP)
+    JBE 0x004417cc                      ; 004417a2
+        ;   XREF to: 004417cc (CONDITIONAL_JUMP)  ; LAB_004417cc
     MOV EAX,dword ptr [EBP + 0x8]       ; 004417a4
     MOV dword ptr [ESP],EAX             ; 004417a7
     MOV EAX,dword ptr [EBP + 0xc]       ; 004417aa
@@ -45,6 +45,6 @@ section .text
         ;   Label: LAB_004417cc
     MOV dword ptr [ESP],EAX             ; 004417cf
     MOV EAX,dword ptr [EBP + 0x14]      ; 004417d2
-    JMP 0x004417ad                      ; 004417d5 | LAB_004417ad
-        ;   XREF to: 004417ad (UNCONDITIONAL_JUMP)
+    JMP 0x004417ad                      ; 004417d5
+        ;   XREF to: 004417ad (UNCONDITIONAL_JUMP)  ; LAB_004417ad
 

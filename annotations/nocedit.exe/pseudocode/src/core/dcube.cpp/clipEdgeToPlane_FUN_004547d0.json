@@ -1,260 +1,260 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 170, 
-    "pseudocode_lines": 45, 
-    "cross_reference_count": 6, 
-    "global_count": 4, 
-    "total_lines": 221, 
-    "assembly_lines": 176, 
-    "suspect_count": 11, 
+    "assembly_lines": 176,
+    "complexity_score": 170,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 45,
+    "suspect_count": 11,
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
+      "sub_artifact",
+      "concat_artifact",
       "unknown_field"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dcube_cpp_0061a4d2", 
-      "addr": "0061a4d2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bad_clip_0061a4e4", 
-      "addr": "0061a4e4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004547d9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 17, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "local_28 = SUB84 /* extract 2-byte value */(dVar1,0);"
-    }, 
-    {
-      "line": 26, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(uStack_20,uStack_24);"
-    }, 
-    {
-      "line": 30, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((((((ulonglong)plane_nx & 0x7fffffff00000000) != 0) || (plane_nx._0_4_ != 0)) &&"
-    }, 
-    {
-      "line": 32, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(((plane_ny._0_4_ == 0 && (((ulonglong)plane_nz & 0x7fffffff00000000) == 0)) &&"
-    }, 
-    {
-      "line": 33, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(plane_nz._0_4_ == 0)))) {"
-    }, 
-    {
-      "line": 36, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&"
-    }, 
-    {
-      "line": 37, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(((((ulonglong)plane_ny & 0x7fffffff00000000) != 0 || (plane_ny._0_4_ != 0)) &&"
-    }, 
-    {
-      "line": 38, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) == 0 && (plane_nz._0_4_ == 0)))))) {"
-    }, 
-    {
-      "line": 41, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (((((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&"
-    }, 
-    {
-      "line": 42, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) && (plane_ny._0_4_ == 0)) &&"
-    }, 
-    {
-      "line": 43, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) != 0 || (plane_nz._0_4_ != 0)))) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004547d0", 
-    "signature": "void core_dcube.cpp_clipEdgeToPlane_FUN_004547d0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, double plane_ny, double plane_nz, double plane_d)", 
-    "address_range": [
-      [
-        "004547d0", 
-        "0045495e"
-      ]
-    ], 
-    "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004547d0"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "vertex1"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "vertex2"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "output_vertex"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "plane_nx"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "plane_ny"
-      }, 
-      {
-        "offset": 32, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "plane_nz"
-      }, 
-      {
-        "offset": 40, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "plane_d"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 88, 
-    "param_offset": 4, 
-    "param_size": 44
-  }, 
+    ],
+    "total_lines": 221
+  },
   "cross_references": [
     {
-      "from_addr": "00454d78", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40", 
-      "addr": "00454c40"
-    }, 
+      "addr": "00454c40",
+      "from_addr": "00454d78",
+      "name": "core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00454aaa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970", 
-      "addr": "00454970"
-    }, 
+      "addr": "00454970",
+      "from_addr": "00454aaa",
+      "name": "core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004551ae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070", 
-      "addr": "00455070"
-    }, 
+      "addr": "00455070",
+      "from_addr": "004551ae",
+      "name": "core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00454e80", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_clipPolygonAgainstMinX_FUN_00454da0", 
-      "addr": "00454da0"
-    }, 
+      "addr": "00454da0",
+      "from_addr": "00454e80",
+      "name": "core_dcube.cpp_clipPolygonAgainstMinX_FUN_00454da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00454c0e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0", 
-      "addr": "00454ad0"
-    }, 
+      "addr": "00454ad0",
+      "from_addr": "00454c0e",
+      "name": "core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00454fe2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00", 
-      "addr": "00454f00"
+      "addr": "00454f00",
+      "from_addr": "00454fe2",
+      "name": "core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004547d0",
+    "address_range": [
+      [
+        "004547d0",
+        "0045495e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004547d0",
+    "signature": "void core_dcube.cpp_clipEdgeToPlane_FUN_004547d0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, double plane_ny, double plane_nz, double plane_d)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061a4d2",
+      "name": "s_core_dcube_cpp_0061a4d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061a4e4",
+      "name": "s_Bad_clip_0061a4e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 44,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "vertex1",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex2",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "output_vertex",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "plane_nx",
+        "offset": 16,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "plane_ny",
+        "offset": 24,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "plane_nz",
+        "offset": 32,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "plane_d",
+        "offset": 40,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004547d9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 17,
+      "match": "SUB84",
+      "text": "local_28 = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 26,
+      "match": "CONCAT44",
+      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(uStack_20,uStack_24);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._0_4_",
+      "text": "if ((((((ulonglong)plane_nx & 0x7fffffff00000000) != 0) || (plane_nx._0_4_ != 0)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_4_",
+      "text": "(((plane_ny._0_4_ == 0 && (((ulonglong)plane_nz & 0x7fffffff00000000) == 0)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 33,
+      "match": "._0_4_",
+      "text": "(plane_nz._0_4_ == 0)))) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._0_4_",
+      "text": "if (((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 37,
+      "match": "._0_4_",
+      "text": "(((((ulonglong)plane_ny & 0x7fffffff00000000) != 0 || (plane_ny._0_4_ != 0)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 38,
+      "match": "._0_4_",
+      "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) == 0 && (plane_nz._0_4_ == 0)))))) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 41,
+      "match": "._0_4_",
+      "text": "if (((((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 42,
+      "match": "._0_4_",
+      "text": "(((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) && (plane_ny._0_4_ == 0)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._0_4_",
+      "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) != 0 || (plane_nz._0_4_ != 0)))) {",
+      "type": "unknown_field"
     }
   ]
 }

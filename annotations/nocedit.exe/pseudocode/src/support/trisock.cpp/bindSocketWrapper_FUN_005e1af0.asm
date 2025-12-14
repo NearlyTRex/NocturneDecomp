@@ -20,8 +20,8 @@ section .text
         ;   Label: support_trisock.cpp_bindSocketWrapper_FUN_005e1af0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005e1af1
     PUSH EBX                            ; 005e1af5
-    CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 005e1af6 | int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)
-        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)
+    CALL support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20 ; 005e1af6
+        ;   XREF to: 005e1d20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)
     ADD ESP,0x4                         ; 005e1afb
     MOV EAX,EBX                         ; 005e1afe
     POP EBX                             ; 005e1b00

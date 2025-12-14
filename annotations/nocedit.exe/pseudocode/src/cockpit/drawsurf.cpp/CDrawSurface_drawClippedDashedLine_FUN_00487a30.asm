@@ -57,12 +57,12 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 00487a8b
     PUSH EAX                            ; 00487a8f
     PUSH EBX                            ; 00487a90
-    CALL cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20 ; 00487a91 | int cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface * this_ptr, int * x1, int * y1, int * x2, ...)
-        ;   XREF to: 00487e20 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20 ; 00487a91
+        ;   XREF to: 00487e20 (UNCONDITIONAL_CALL)  ; int cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface * this_ptr, int * x1, int * y1, int * x2, ...)
     ADD ESP,0x24                        ; 00487a96
     TEST EAX,EAX                        ; 00487a99
-    JNZ 0x00487aa2                      ; 00487a9b | LAB_00487aa2
-        ;   XREF to: 00487aa2 (CONDITIONAL_JUMP)
+    JNZ 0x00487aa2                      ; 00487a9b
+        ;   XREF to: 00487aa2 (CONDITIONAL_JUMP)  ; LAB_00487aa2
     POP EBP                             ; 00487a9d
     POP EDI                             ; 00487a9e
     POP ESI                             ; 00487a9f
@@ -78,8 +78,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x24]      ; 00487ab1
     PUSH EAX                            ; 00487ab5
     PUSH EBX                            ; 00487ab6
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0 ; 00487ab7 | void cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-        ;   XREF to: 00487bc0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0 ; 00487ab7
+        ;   XREF to: 00487bc0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 00487abc
     POP EBP                             ; 00487abf
     POP EDI                             ; 00487ac0

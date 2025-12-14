@@ -42,24 +42,24 @@ section .text
     MOV EAX,dword ptr [EBP + 0x10]      ; 00453bd7
     MOV dword ptr [EBP + -0x4],EAX      ; 00453bda
     FILD dword ptr [EBP + -0x4]         ; 00453bdd
-    FMUL double ptr [0x0061a45a]        ; 00453be0 | double g_CameraGammaMultiplier
+    FMUL double ptr [0x0061a45a]        ; 00453be0 | g_CameraGammaMultiplier
     XOR EDX,EDX                         ; 00453be6
     XOR ECX,ECX                         ; 00453be8
     FSTP float ptr [EBP + -0x8]         ; 00453bea
-    FLD double ptr [0x0061a46a]         ; 00453bed | double g_CameraOutputScale
+    FLD double ptr [0x0061a46a]         ; 00453bed | g_CameraOutputScale
     FLD float ptr [EBP + -0x8]          ; 00453bf3
-    FLD double ptr [0x0061a462]         ; 00453bf6 | double g_CameraNormalizer
+    FLD double ptr [0x0061a462]         ; 00453bf6 | g_CameraNormalizer
     MOV dword ptr [EBP + -0x4],EDX      ; 00453bfc
         ;   Label: LAB_00453bfc
     FILD dword ptr [EBP + -0x4]         ; 00453bff
     FMUL ST1                            ; 00453c02
     FLD ST2                             ; 00453c04
     FXCH                                ; 00453c06
-    CALL crt_math.c_pow_FUN_005ffd76    ; 00453c08 | float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
-        ;   XREF to: 005ffd76 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_pow_FUN_005ffd76    ; 00453c08
+        ;   XREF to: 005ffd76 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
     FMUL ST3                            ; 00453c0d
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00453c0f | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00453c0f
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EBP + -0xc]        ; 00453c14
     MOV EAX,dword ptr [EBP + -0xc]      ; 00453c17
     MOV EBX,dword ptr [EBP + -0xc]      ; 00453c1a
@@ -72,27 +72,27 @@ section .text
     ADD ECX,0x4                         ; 00453c2d
     OR EAX,EBX                          ; 00453c30
     INC EDX                             ; 00453c32
-    MOV dword ptr [ECX + 0xc19df8],EAX  ; 00453c33 | uint[256] g_LightmapTexturePalette
+    MOV dword ptr [ECX + 0xc19df8],EAX  ; 00453c33 | g_LightmapTexturePalette
     CMP EDX,0x100                       ; 00453c39
-    JL 0x00453bfc                       ; 00453c3f | LAB_00453bfc
-        ;   XREF to: 00453bfc (CONDITIONAL_JUMP)
-    MOV EAX,[0x0066ed0c]                ; 00453c41 | int g_FogColorIndexB
+    JL 0x00453bfc                       ; 00453c3f
+        ;   XREF to: 00453bfc (CONDITIONAL_JUMP)  ; LAB_00453bfc
+    MOV EAX,[0x0066ed0c]                ; 00453c41 | g_FogColorIndexB
     MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 00453c46 | g_LightmapTexturePalette[64]
     AND EAX,0xff                        ; 00453c4d
     PUSH EAX                            ; 00453c52
-    MOV EAX,[0x0066ed08]                ; 00453c53 | int g_FogColorIndexG
+    MOV EAX,[0x0066ed08]                ; 00453c53 | g_FogColorIndexG
     MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 00453c58 | g_LightmapTexturePalette[64]
     AND EAX,0xff                        ; 00453c5f
     PUSH EAX                            ; 00453c64
-    MOV EAX,[0x0066ed04]                ; 00453c65 | int g_FogColorIndexR
+    MOV EAX,[0x0066ed04]                ; 00453c65 | g_FogColorIndexR
     MOV EAX,dword ptr [EAX*0x4 + 0xc19dfc] ; 00453c6a | g_LightmapTexturePalette[64]
     FSTP ST0                            ; 00453c71
     AND EAX,0xff                        ; 00453c73
     FSTP ST0                            ; 00453c78
     PUSH EAX                            ; 00453c7a
     FSTP ST0                            ; 00453c7b
-    CALL wincore_windll.cpp_setFogColor_FUN_005b7b80 ; 00453c7d | int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)
-        ;   XREF to: 005b7b80 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_setFogColor_FUN_005b7b80 ; 00453c7d
+        ;   XREF to: 005b7b80 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)
     ADD ESP,0xc                         ; 00453c82
     MOV ESP,EBP                         ; 00453c85
     POP EBP                             ; 00453c87

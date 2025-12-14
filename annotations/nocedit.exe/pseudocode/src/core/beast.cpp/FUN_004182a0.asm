@@ -27,12 +27,12 @@ section .text
     MOV ESI,dword ptr [EBP + 0x10]      ; 004182ab
     PUSH dword ptr [EBP + 0x14]         ; 004182ae
     PUSH ESI                            ; 004182b1
-    CALL core_charactr.cpp_CCharacter_FUN_00429870 ; 004182b2 | int core_charactr.cpp_CCharacter_FUN_00429870(CCharacter * this_ptr)
-        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_00429870 ; 004182b2
+        ;   XREF to: 00429870 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_00429870(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 004182b7
     TEST EAX,EAX                        ; 004182ba
-    JZ 0x00418320                       ; 004182bc | LAB_00418320
-        ;   XREF to: 00418320 (CONDITIONAL_JUMP)
+    JZ 0x00418320                       ; 004182bc
+        ;   XREF to: 00418320 (CONDITIONAL_JUMP)  ; LAB_00418320
     LEA EAX,[ESI + 0x23ac]              ; 004182be
     MOV dword ptr [EAX + 0x8],0x0       ; 004182c4
     FLD float ptr [EBP + 0x14]          ; 004182cb
@@ -49,29 +49,29 @@ section .text
     FCOMPP                              ; 004182ed
     FNSTSW AX                           ; 004182ef
     SAHF                                ; 004182f1
-    JNC 0x00418302                      ; 004182f2 | LAB_00418302
-        ;   XREF to: 00418302 (CONDITIONAL_JUMP)
+    JNC 0x00418302                      ; 004182f2
+        ;   XREF to: 00418302 (CONDITIONAL_JUMP)  ; LAB_00418302
     MOV EAX,ESP                         ; 004182f4
     PUSH EAX                            ; 004182f6
     PUSH EBX                            ; 004182f7
-    CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 004182f8 | int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 004182f8
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
     ADD ESP,0x8                         ; 004182fd
-    JMP 0x004182e8                      ; 00418300 | LAB_004182e8
-        ;   XREF to: 004182e8 (UNCONDITIONAL_JUMP)
+    JMP 0x004182e8                      ; 00418300
+        ;   XREF to: 004182e8 (UNCONDITIONAL_JUMP)  ; LAB_004182e8
     PUSH ESI                            ; 00418302
         ;   Label: LAB_00418302
-    CALL core_charactr.cpp_CCharacter_FUN_00429820 ; 00418303 | void core_charactr.cpp_CCharacter_FUN_00429820(CCharacter * this_ptr)
-        ;   XREF to: 00429820 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_00429820 ; 00418303
+        ;   XREF to: 00429820 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_00429820(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00418308
     PUSH EBX                            ; 0041830b
-    CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 0041830c | void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 0041830c
+        ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00418311
     PUSH dword ptr [EBP + 0x14]         ; 00418314
     PUSH ESI                            ; 00418317
-    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 00418318 | void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
-        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0 ; 00418318
+        ;   XREF to: 0042dfc0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 0041831d
     MOV ESP,EBP                         ; 00418320
         ;   Label: LAB_00418320

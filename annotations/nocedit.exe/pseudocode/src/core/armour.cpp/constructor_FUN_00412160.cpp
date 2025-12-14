@@ -11,8 +11,7 @@ void core_armour_cpp_constructor_FUN_00412160(void)
 {
   CArmour *this_ptr;
   
-  this_ptr = (CArmour *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf20,"..\\core\\armour.cpp",0x2f);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf20,"..\\core\\armour.cpp",0x2f);
   if (this_ptr == (CArmour *)0x0) {
     return;
   }

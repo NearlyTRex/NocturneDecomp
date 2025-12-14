@@ -17,13 +17,13 @@ section .text
         ;   Label: core_door.cpp_CDoor_hasCollision_FUN_00480d90
     ADD EAX,0x158                       ; 00480d94
     PUSH EAX                            ; 00480d99
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 00480d9a | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 00480d9a
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     MOV EDX,dword ptr [EAX + 0x5698]    ; 00480d9f
     ADD ESP,0x4                         ; 00480da5
     TEST EDX,EDX                        ; 00480da8
-    JNZ 0x00480db2                      ; 00480daa | LAB_00480db2
-        ;   XREF to: 00480db2 (CONDITIONAL_JUMP)
+    JNZ 0x00480db2                      ; 00480daa
+        ;   XREF to: 00480db2 (CONDITIONAL_JUMP)  ; LAB_00480db2
     MOV EAX,0x1                         ; 00480dac
     RET                                 ; 00480db1
     MOV EAX,dword ptr [ESP + 0x4]       ; 00480db2

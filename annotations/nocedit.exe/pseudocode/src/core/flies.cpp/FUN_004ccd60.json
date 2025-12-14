@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 15, 
-    "assembly_lines": 9, 
-    "suspect_count": 2, 
+    "assembly_lines": 9,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_freeTypeArray_FUN_005feee9", 
-      "addr": "005feee9"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_SFlyTypeInfo", 
-      "addr": "0065e610", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void **in_stack_00000004;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,200,&g_SFlyTypeInfo);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004ccd60", 
-    "signature": "undefined core_flies.cpp_FUN_004ccd60()", 
-    "address_range": [
-      [
-        "004ccd60", 
-        "004ccd77"
-      ]
-    ], 
-    "name": "core_flies.cpp_FUN_004ccd60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "004cccc5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flies.cpp_FUN_004cccb0", 
-      "addr": "004cccb0"
+      "addr": "004cccb0",
+      "from_addr": "004cccc5",
+      "name": "core_flies.cpp_FUN_004cccb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ccd60",
+    "address_range": [
+      [
+        "004ccd60",
+        "004ccd77"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flies.cpp_FUN_004ccd60",
+    "signature": "undefined core_flies.cpp_FUN_004ccd60()"
+  },
+  "function_calls": [
+    {
+      "addr": "005feee9",
+      "name": "crt_memory.c_freeTypeArray_FUN_005feee9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065e610",
+      "name": "g_SFlyTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "void **in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,200,&g_SFlyTypeInfo);",
+      "type": "stack_param"
     }
   ]
 }

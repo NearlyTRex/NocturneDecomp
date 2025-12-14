@@ -24,15 +24,15 @@ section .text
     MOV EDX,dword ptr [EBX + 0xbed8]    ; 005f11e5
     PUSH EDX                            ; 005f11eb
     MOV dword ptr [EBX + 0xbedc],0x41200000 ; 005f11ec
-    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 ; 005f11f6 | int sound_sndmain.cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
-        ;   XREF to: 005a9660 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 ; 005f11f6
+        ;   XREF to: 005a9660 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
     ADD ESP,0x4                         ; 005f11fb
     TEST EAX,EAX                        ; 005f11fe
-    JZ 0x005f1204                       ; 005f1200 | LAB_005f1204
-        ;   XREF to: 005f1204 (CONDITIONAL_JUMP)
+    JZ 0x005f1204                       ; 005f1200
+        ;   XREF to: 005f1204 (CONDITIONAL_JUMP)  ; LAB_005f1204
     POP EBX                             ; 005f1202
     RET                                 ; 005f1203
-    PUSH 0x657da4                       ; 005f1204 | = "were?.wav" | s_were_wav_00657da4 = were?.wav
+    PUSH 0x657da4                       ; 005f1204 | = "were?.wav"
         ;   Label: LAB_005f1204
     MOV EAX,dword ptr [EBX + 0x154]     ; 005f1209
     PUSH EBX                            ; 005f120f

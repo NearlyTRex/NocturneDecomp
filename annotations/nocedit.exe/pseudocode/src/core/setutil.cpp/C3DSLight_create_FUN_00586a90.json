@@ -1,214 +1,214 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 191, 
-    "pseudocode_lines": 66, 
-    "cross_reference_count": 1, 
-    "global_count": 7, 
-    "total_lines": 199, 
-    "assembly_lines": 133, 
-    "suspect_count": 12, 
+    "assembly_lines": 133,
+    "complexity_score": 192,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 7,
+    "pseudocode_lines": 67,
+    "suspect_count": 12,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060", 
-      "addr": "00470060"
-    }, 
-    {
-      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30", 
-      "addr": "00471d30"
-    }, 
-    {
-      "name": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0", 
-      "addr": "004726a0"
-    }, 
-    {
-      "name": "core_dlight.cpp_CDemonLight_init_FUN_004727c0", 
-      "addr": "004727c0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
-      "addr": "0050f1b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setutil_cpp_0064961f", 
-      "addr": "0064961f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setutil_cpp_00649633", 
-      "addr": "00649633", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_C3DSLight_create_Out_of__00649647", 
-      "addr": "00649647", 
-      "value": null
-    }, 
-    {
-      "type": "CFilterCache*", 
-      "name": "g_CFilterCachePtr", 
-      "addr": "0066efcc", 
-      "value": "020a4c08"
-    }, 
-    {
-      "type": "CFilterCache", 
-      "name": "g_CFilterCacheInstance", 
-      "addr": "020a4c08", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CDemonLight *unaff_EBX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 33, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if ((CVector3f *)(unaff_ESI + 4) != &this_ptr->pos) {"
-    }, 
-    {
-      "line": 34, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*(float *)(unaff_ESI + 4) = (this_ptr->pos).x;"
-    }, 
-    {
-      "line": 35, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*(float *)(unaff_ESI + 8) = (this_ptr->pos).y;"
-    }, 
-    {
-      "line": 36, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*(float *)(unaff_ESI + 0xc) = (this_ptr->pos).z;"
-    }, 
-    {
-      "line": 39, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((CMatrix3x3f *)(unaff_ESI + 0x10),&this_ptr->orient);"
-    }, 
-    {
-      "line": 40, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(unaff_EBX->base).base.projection_scale = this_ptr->fov;"
-    }, 
-    {
-      "line": 49, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)unaff_EBX);"
-    }, 
-    {
-      "line": 56, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pcVar6 = (unaff_EBX->base).camera_name;"
-    }, 
-    {
-      "line": 61, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_EBX;"
-    }, 
-    {
-      "line": 68, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_EBX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00586a90", 
-    "signature": "CDemonLight * core_setutil.cpp_C3DSLight_create_FUN_00586a90(C3DSLight * this_ptr)", 
-    "address_range": [
-      [
-        "00586a90", 
-        "00586be8"
-      ]
-    ], 
-    "name": "core_setutil.cpp_C3DSLight_create_FUN_00586a90"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "C3DSLight *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 200
+  },
   "cross_references": [
     {
-      "from_addr": "0056ac42", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
-      "addr": "0056aa10"
+      "addr": "0056aa10",
+      "from_addr": "0056ac42",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00586a90",
+    "address_range": [
+      [
+        "00586a90",
+        "00586be8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_C3DSLight_create_FUN_00586a90",
+    "signature": "CDemonLight * core_setutil.cpp_C3DSLight_create_FUN_00586a90(C3DSLight * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00470060",
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060"
+    },
+    {
+      "addr": "00471d30",
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    },
+    {
+      "addr": "004726a0",
+      "name": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0"
+    },
+    {
+      "addr": "004727c0",
+      "name": "core_dlight.cpp_CDemonLight_init_FUN_004727c0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f1b0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064961f",
+      "name": "s_core_setutil_cpp_0064961f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649633",
+      "name": "s_core_setutil_cpp_00649633",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649647",
+      "name": "s_C3DSLight_create_Out_of__00649647",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066efcc",
+      "name": "g_CFilterCachePtr",
+      "type": "CFilterCache*",
+      "value": "020a4c08"
+    },
+    {
+      "addr": "020a4c08",
+      "name": "g_CFilterCacheInstance",
+      "type": "CFilterCache",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSLight *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "text": "CDemonLight *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_ESI",
+      "text": "if ((CVector3f *)(unaff_ESI + 4) != &this_ptr->pos) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_ESI",
+      "text": "*(float *)(unaff_ESI + 4) = (this_ptr->pos).x;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 36,
+      "match": "unaff_ESI",
+      "text": "*(float *)(unaff_ESI + 8) = (this_ptr->pos).y;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 37,
+      "match": "unaff_ESI",
+      "text": "*(float *)(unaff_ESI + 0xc) = (this_ptr->pos).z;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_ESI",
+      "text": "((CMatrix3x3f *)(unaff_ESI + 0x10),&this_ptr->orient);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_EBX",
+      "text": "(unaff_EBX->base).base.projection_scale = this_ptr->fov;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EBX",
+      "text": "(int)unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_EBX",
+      "text": "pcVar6 = (unaff_EBX->base).camera_name;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_EBX",
+      "text": "return unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EBX",
+      "text": "return unaff_EBX;",
+      "type": "unaffected_reg"
     }
   ]
 }

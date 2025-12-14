@@ -34,20 +34,20 @@ section .text
     MOV ESI,dword ptr [ESP + 0x88]      ; 0054be7b
     MOV EBP,dword ptr [ESP + 0x8c]      ; 0054be82
     PUSH EDI                            ; 0054be89
-    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60 ; 0054be8a | void cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60(CPackedBitmapSet * this_ptr)
-        ;   XREF to: 0054bd60 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60 ; 0054be8a
+        ;   XREF to: 0054bd60 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60(CPackedBitmapSet * this_ptr)
     ADD ESP,0x4                         ; 0054be8f
     PUSH EDI                            ; 0054be92
-    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0 ; 0054be93 | void cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitmapSet * this_ptr)
-        ;   XREF to: 0054bcd0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0 ; 0054be93
+        ;   XREF to: 0054bcd0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(CPackedBitmapSet * this_ptr)
     MOV EAX,EBP                         ; 0054be98
     SUB EAX,ESI                         ; 0054be9a
     ADD ESP,0x4                         ; 0054be9c
     INC EAX                             ; 0054be9f
     PUSH EAX                            ; 0054bea0
     PUSH EDI                            ; 0054bea1
-    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0 ; 0054bea2 | void cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0(CPackedBitmapSet * this_ptr, int bitmap_count)
-        ;   XREF to: 0054bdb0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0 ; 0054bea2
+        ;   XREF to: 0054bdb0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0(CPackedBitmapSet * this_ptr, int bitmap_count)
     ADD ESP,0x8                         ; 0054bea7
     MOV EAX,dword ptr [ESP + 0x84]      ; 0054beaa
     MOV dword ptr [EDI + 0x20],EAX      ; 0054beb1
@@ -55,8 +55,8 @@ section .text
     MOV EBX,ESI                         ; 0054bebb
     MOV dword ptr [EDI + 0x1c],EAX      ; 0054bebd
     CMP ESI,EBP                         ; 0054bec0
-    JG 0x0054bf30                       ; 0054bec2 | LAB_0054bf30
-        ;   XREF to: 0054bf30 (CONDITIONAL_JUMP)
+    JG 0x0054bf30                       ; 0054bec2
+        ;   XREF to: 0054bf30 (CONDITIONAL_JUMP)  ; LAB_0054bf30
     LEA EAX,[ESI*0x8 + 0x0]             ; 0054bec4
     ADD EAX,ESI                         ; 0054becb
     SHL EAX,0x2                         ; 0054becd
@@ -69,8 +69,8 @@ section .text
     PUSH EDX                            ; 0054bede
     LEA EAX,[ESP + 0x8]                 ; 0054bedf
     PUSH EAX                            ; 0054bee3
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054bee4 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054bee4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054bee9
     MOV ECX,dword ptr [ESP + 0x94]      ; 0054beec
     PUSH ECX                            ; 0054bef3
@@ -86,13 +86,13 @@ section .text
     ADD EAX,ESI                         ; 0054bf14
     PUSH EAX                            ; 0054bf16
     INC EBX                             ; 0054bf17
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000 ; 0054bf18 | void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
-        ;   XREF to: 0054b000 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000 ; 0054bf18
+        ;   XREF to: 0054b000 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
     ADD ESI,0x24                        ; 0054bf1d
     ADD ESP,0x18                        ; 0054bf20
     CMP EBX,EBP                         ; 0054bf23
-    JLE 0x0054bed6                      ; 0054bf25 | LAB_0054bed6
-        ;   XREF to: 0054bed6 (CONDITIONAL_JUMP)
+    JLE 0x0054bed6                      ; 0054bf25
+        ;   XREF to: 0054bed6 (CONDITIONAL_JUMP)  ; LAB_0054bed6
     LEA EAX,[EAX]                       ; 0054bf27
     LEA EDX,[EDX]                       ; 0054bf2d
     ADD ESP,0x64                        ; 0054bf30

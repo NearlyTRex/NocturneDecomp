@@ -1,93 +1,93 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 58, 
-    "assembly_lines": 36, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_0064fc6b", 
-      "addr": "0064fc6b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_generateSilence_invalid__0064fc80", 
-      "addr": "0064fc80", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 36,
+    "complexity_score": 22,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 58
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a5db0", 
-    "signature": "void sound_sndmain.cpp_generateSilence_FUN_005a5db0(void * buffer, uint bits_per_sample, uint num_samples)", 
+    "address": "005a5db0",
     "address_range": [
       [
-        "005a5db0", 
+        "005a5db0",
         "005a5e03"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_generateSilence_FUN_005a5db0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_generateSilence_FUN_005a5db0",
+    "signature": "void sound_sndmain.cpp_generateSilence_FUN_005a5db0(void * buffer, uint bits_per_sample, uint num_samples)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064fc6b",
+      "name": "s_sound_sndmain_cpp_0064fc6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064fc80",
+      "name": "s_generateSilence_invalid__0064fc80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "bits_per_sample"
-      }, 
+        "is_param": true,
+        "name": "bits_per_sample",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "num_samples"
+        "is_param": true,
+        "name": "num_samples",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

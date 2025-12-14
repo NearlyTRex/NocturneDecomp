@@ -19,8 +19,8 @@ section .text
     PUSH EBX                            ; 005eb915
     MOV EDX,dword ptr [ESP + 0xc]       ; 005eb916
     PUSH EDX                            ; 005eb91a
-    CALL core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840 ; 005eb91b | void core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor * this_ptr, SSurfaceInfo * surface_info)
-        ;   XREF to: 00409840 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840 ; 005eb91b
+        ;   XREF to: 00409840 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor * this_ptr, SSurfaceInfo * surface_info)
     MOV dword ptr [EBX + 0x50],0x3e99999a ; 005eb920
     ADD ESP,0x8                         ; 005eb927
     MOV dword ptr [EBX + 0x48],0x3f4ccccd ; 005eb92a

@@ -10,7 +10,7 @@ int __cdecl shape_superopt_cpp_FUN_005c7a90(void)
 
 {
   int iVar1;
-  byte *puVar2;
+  void *pvVar2;
   int *in_stack_00000004;
   int *in_stack_00000008;
   
@@ -27,15 +27,13 @@ int __cdecl shape_superopt_cpp_FUN_005c7a90(void)
     in_stack_00000004[10] = in_stack_00000008[0x15];
     in_stack_00000004[4] = in_stack_00000008[0x17];
   }
-  puVar2 = (byte *)
-           crt_memory_c_realloc_FUN_00601df0
+  pvVar2 = crt_memory_c_realloc_FUN_00601df0
                      ((void *)in_stack_00000004[1],(*in_stack_00000004 + 1) * 4);
-  if (puVar2 != (byte *)0x0) {
-    in_stack_00000004[1] = (int)puVar2;
+  if (pvVar2 != (void *)0x0) {
+    in_stack_00000004[1] = (int)pvVar2;
     iVar1 = *in_stack_00000004;
     *in_stack_00000004 = iVar1 + 1;
     *(int **)(iVar1 * 4 + in_stack_00000004[1]) = in_stack_00000008;
-    puVar2 = &DAT_00000001;
   }
-  return (int)puVar2;
+  return (uint)(pvVar2 != (void *)0x0);
 }

@@ -11,15 +11,13 @@ void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00403670(void)
 {
   int iVar1;
   int iVar2;
-  int iVar3;
-  void *pvVar4;
+  void *pvVar3;
   
   if (g_StoredWindowWidth == 0) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x9ea;
     core_main_c_displayErrorAndQuit_FUN_00506f10("unmapFrameBuffer - frame buffer was not mapped!");
   }
-  iVar2 = g_StoredWindowHeight;
   g_WindowWidth = g_StoredWindowWidth;
   g_WindowHeight = g_StoredWindowHeight;
   g_ClipLeft = g_StoredClipLeft;
@@ -29,13 +27,13 @@ void __cdecl engine_2d_c_unmapFrameBuffer_FUN_00403670(void)
   g_BitsPerPixel = g_StoredBitsPerPixel;
   if (0 < g_StoredWindowHeight) {
     iVar1 = g_StoredWindowHeight * 4;
-    iVar3 = 0;
-    pvVar4 = g_StoredMappedFrameBuffer;
+    iVar2 = 0;
+    pvVar3 = g_StoredMappedFrameBuffer;
     do {
-      *(void **)((int)g_ScreenBufferArray + iVar3) = pvVar4;
-      iVar3 = iVar3 + 4;
-      pvVar4 = (void *)((int)pvVar4 + g_ScreenBufferStride);
-    } while (SBORROW /* signed borrow */4(iVar3,iVar1) != iVar3 + iVar2 * -4 < 0);
+      *(void **)((int)g_ScreenBufferArray + iVar2) = pvVar3;
+      iVar2 = iVar2 + 4;
+      pvVar3 = (void *)((int)pvVar3 + g_ScreenBufferStride);
+    } while (iVar2 < iVar1);
   }
   g_StoredWindowWidth = 0;
   return;

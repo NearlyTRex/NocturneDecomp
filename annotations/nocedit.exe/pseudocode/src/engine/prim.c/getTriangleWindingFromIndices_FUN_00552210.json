@@ -1,129 +1,129 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 65, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 125, 
-    "assembly_lines": 85, 
-    "suspect_count": 2, 
+    "assembly_lines": 85,
+    "complexity_score": 65,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 40,
+    "suspect_count": 2,
     "suspect_types": [
       "sborrow_artifact"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "SRenderVertex[16]", 
-      "name": "g_RenderVertexBuffer", 
-      "addr": "00688014", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x", 
-      "addr": "00688024", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_y", 
-      "addr": "00688028", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CullingMode", 
-      "addr": "00772a7c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 42, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed borrow */4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);"
-    }, 
-    {
-      "line": 42, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed borrow */4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00552210", 
-    "signature": "int engine_prim.c_getTriangleWindingFromIndices_FUN_00552210(STriangleIndices * triangle)", 
-    "address_range": [
-      [
-        "00552210", 
-        "005522fb"
-      ]
-    ], 
-    "name": "engine_prim.c_getTriangleWindingFromIndices_FUN_00552210"
-  }, 
-  "stack_frame": {
-    "local_size": 40, 
-    "variables": [
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "STriangleIndices *", 
-        "size": 4, 
-        "name": "triangle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 125
+  },
   "cross_references": [
     {
-      "from_addr": "0048d0de", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00", 
-      "addr": "0048cf00"
+      "addr": "0048cf00",
+      "from_addr": "0048d0de",
+      "name": "engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00552210",
+    "address_range": [
+      [
+        "00552210",
+        "005522fb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_prim.c_getTriangleWindingFromIndices_FUN_00552210",
+    "signature": "int engine_prim.c_getTriangleWindingFromIndices_FUN_00552210(STriangleIndices * triangle)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00688014",
+      "name": "g_RenderVertexBuffer",
+      "type": "SRenderVertex[16]",
+      "value": null
+    },
+    {
+      "addr": "00688024",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688028",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772a7c",
+      "name": "g_CullingMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "triangle",
+        "offset": 4,
+        "size": 4,
+        "type": "STriangleIndices *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler signed borrow artifact",
+      "line": 42,
+      "match": "SBORROW",
+      "text": "return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed borrow */4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);",
+      "type": "sborrow_artifact"
+    },
+    {
+      "description": "Decompiler signed borrow artifact",
+      "line": 42,
+      "match": "SBORROW",
+      "text": "return (uint)((SBORROW /* signed borrow */4(iVar4,iVar3) != SBORROW /* signed borrow */4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);",
+      "type": "sborrow_artifact"
     }
   ]
 }

@@ -33,7 +33,7 @@ LAB_004030ee:
           core_main_c_displayErrorAndQuit_FUN_00506f10("vLine - invalid bitsPerPixel");
           return;
         }
-        for (; iVar5 == iVar2 || SBORROW /* signed borrow */4(iVar5,iVar2) != iVar5 + y2 * -4 < 0; iVar5 = iVar5 + 4) {
+        for (; iVar5 <= iVar2; iVar5 = iVar5 + 4) {
           *(byte *)(*(int *)((int)g_ScreenBufferArray + iVar5) + x) =
                (byte)g_ActiveRenderColor;
         }
@@ -45,7 +45,7 @@ LAB_004030ee:
             piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);
             iVar5 = iVar5 + 4;
             *(ushort *)(*piVar1 + x * 2) = uVar3;
-          } while (iVar5 == iVar2 || SBORROW /* signed borrow */4(iVar5,iVar2) != iVar5 + y2 * -4 < 0);
+          } while (iVar5 <= iVar2);
         }
       }
       else {
@@ -56,7 +56,7 @@ LAB_004030ee:
             piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);
             iVar5 = iVar5 + 4;
             *(uint *)(*piVar1 + x * 4) = uVar4;
-          } while (iVar5 == iVar2 || SBORROW /* signed borrow */4(iVar5,iVar2) != iVar5 + y2 * -4 < 0);
+          } while (iVar5 <= iVar2);
           return;
         }
       }

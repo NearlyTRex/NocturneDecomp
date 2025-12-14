@@ -9,5 +9,5 @@
 ThreadData * __cdecl crt_thread_c_GetTLS_FUN_0060242c(void)
 
 {
-  return (ThreadData *)g_CurrentThreadTlsBlock;
+  return g_CurrentThreadTlsBlock;
 }

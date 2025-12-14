@@ -36,37 +36,37 @@ section .text
     MOV EAX,ESP                         ; 00608d37
     PUSH EAX                            ; 00608d39
     PUSH 0x104                          ; 00608d3a
-    CALL dword ptr CS:[0x611578]        ; 00608d3f | GetCurrentDirectoryA * GetCurrentDirectoryA
+    CALL dword ptr CS:[0x611578]        ; 00608d3f | GetCurrentDirectoryA
     MOV EDI,EAX                         ; 00608d46
     TEST EAX,EAX                        ; 00608d48
-    JNZ 0x00608d55                      ; 00608d4a | LAB_00608d55
-        ;   XREF to: 00608d55 (CONDITIONAL_JUMP)
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00608d4c | DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)
+    JNZ 0x00608d55                      ; 00608d4a
+        ;   XREF to: 00608d55 (CONDITIONAL_JUMP)  ; LAB_00608d55
+    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 00608d4c
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
     XOR EAX,EAX                         ; 00608d51
-    JMP 0x00608dbe                      ; 00608d53 | LAB_00608dbe
-        ;   XREF to: 00608dbe (UNCONDITIONAL_JUMP)
+    JMP 0x00608dbe                      ; 00608d53
+        ;   XREF to: 00608dbe (UNCONDITIONAL_JUMP)  ; LAB_00608dbe
     TEST EBX,EBX                        ; 00608d55
         ;   Label: LAB_00608d55
-    JNZ 0x00608d85                      ; 00608d57 | LAB_00608d85
-        ;   XREF to: 00608d85 (CONDITIONAL_JUMP)
+    JNZ 0x00608d85                      ; 00608d57
+        ;   XREF to: 00608d85 (CONDITIONAL_JUMP)  ; LAB_00608d85
     INC EAX                             ; 00608d59
     CMP ESI,EAX                         ; 00608d5a
-    JBE 0x00608d60                      ; 00608d5c | LAB_00608d60
-        ;   XREF to: 00608d60 (CONDITIONAL_JUMP)
+    JBE 0x00608d60                      ; 00608d5c
+        ;   XREF to: 00608d60 (CONDITIONAL_JUMP)  ; LAB_00608d60
     MOV EAX,ESI                         ; 00608d5e
     PUSH EAX                            ; 00608d60
         ;   Label: LAB_00608d60
-    CALL crt_memory.c_malloc_FUN_00601bb0 ; 00608d61 | void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
-        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_malloc_FUN_00601bb0 ; 00608d61
+        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
     ADD ESP,0x4                         ; 00608d66
     MOV EBX,EAX                         ; 00608d69
     TEST EAX,EAX                        ; 00608d6b
-    JNZ 0x00608d9f                      ; 00608d6d | LAB_00608d9f
-        ;   XREF to: 00608d9f (CONDITIONAL_JUMP)
+    JNZ 0x00608d9f                      ; 00608d6d
+        ;   XREF to: 00608d9f (CONDITIONAL_JUMP)  ; LAB_00608d9f
     PUSH 0x5                            ; 00608d6f
-    CALL crt_errno.c_setErrno_FUN_00602790 ; 00608d71 | void crt_errno.c_setErrno_FUN_00602790(int error_code)
-        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_setErrno_FUN_00602790 ; 00608d71
+        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00602790(int error_code)
     ADD ESP,0x4                         ; 00608d76
     XOR EAX,EAX                         ; 00608d79
     ADD ESP,0x104                       ; 00608d7b
@@ -76,11 +76,11 @@ section .text
     RET                                 ; 00608d84
     CMP EAX,ESI                         ; 00608d85
         ;   Label: LAB_00608d85
-    JBE 0x00608d9f                      ; 00608d87 | LAB_00608d9f
-        ;   XREF to: 00608d9f (CONDITIONAL_JUMP)
+    JBE 0x00608d9f                      ; 00608d87
+        ;   XREF to: 00608d9f (CONDITIONAL_JUMP)  ; LAB_00608d9f
     PUSH 0xe                            ; 00608d89
-    CALL crt_errno.c_setErrno_FUN_00602790 ; 00608d8b | void crt_errno.c_setErrno_FUN_00602790(int error_code)
-        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_setErrno_FUN_00602790 ; 00608d8b
+        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00602790(int error_code)
     ADD ESP,0x4                         ; 00608d90
     XOR EAX,EAX                         ; 00608d93
     ADD ESP,0x104                       ; 00608d95

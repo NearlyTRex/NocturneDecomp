@@ -24,7 +24,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x0067939c]      ; 00431760 | int g_BitsPerPixel
+    MOV EDX,dword ptr [0x0067939c]      ; 00431760 | g_BitsPerPixel
         ;   Label: cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760
     CMP EDX,0x8                         ; 00431766
     JZ 0x00431780                       ; 00431769

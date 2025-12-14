@@ -11,8 +11,7 @@ void core_gabriela_cpp_FUN_004d2ae0(void)
 {
   CGabriella *this_ptr;
   
-  this_ptr = (CGabriella *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x5fa88,"..\\core\\gabriela.cpp",0xf0);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x5fa88,"..\\core\\gabriela.cpp",0xf0);
   if (this_ptr == (CGabriella *)0x0) {
     return;
   }

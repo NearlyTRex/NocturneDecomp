@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 15, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0", 
-      "addr": "005349e0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00534530", 
-    "signature": "CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder * this_ptr)", 
-    "address_range": [
-      [
-        "00534530", 
-        "00534541"
-      ]
-    ], 
-    "name": "sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMP3Decoder *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 5,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "0053440b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210", 
-      "addr": "00534210"
-    }, 
+      "addr": "00534210",
+      "from_addr": "0053440b",
+      "name": "sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a6312", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0", 
-      "addr": "005a62c0"
-    }, 
+      "addr": "005a62c0",
+      "from_addr": "005a6312",
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ad00e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20", 
-      "addr": "005acf20"
+      "addr": "005acf20",
+      "from_addr": "005ad00e",
+      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00534530",
+    "address_range": [
+      [
+        "00534530",
+        "00534541"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530",
+    "signature": "CMP3Decoder * sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530(CMP3Decoder * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005349e0",
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      }
+    ]
+  },
+  "suspects": []
 }

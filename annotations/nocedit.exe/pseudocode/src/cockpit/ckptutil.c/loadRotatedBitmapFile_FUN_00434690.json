@@ -1,362 +1,362 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 299, 
-    "pseudocode_lines": 69, 
-    "cross_reference_count": 0, 
-    "global_count": 13, 
-    "total_lines": 249, 
-    "assembly_lines": 180, 
-    "suspect_count": 21, 
+    "assembly_lines": 180,
+    "complexity_score": 299,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 13,
+    "pseudocode_lines": 69,
+    "suspect_count": 21,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_applyActPalette_FUN_004319b0", 
-      "addr": "004319b0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
-      "addr": "005fe840"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_dosio.c_getFile_FUN_00481a50", 
-      "addr": "00481a50"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_ckptutil_c_00617e1e", 
-      "addr": "00617e1e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_allocate_u_byt_00617e34", 
-      "addr": "00617e34", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_ckptutil_c_00617e6e", 
-      "addr": "00617e6e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_00617e84", 
-      "addr": "00617e84", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_00617e87", 
-      "addr": "00617e87", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_open_bitmap_fi_00617e8b", 
-      "addr": "00617e8b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_ckptutil_c_00617eac", 
-      "addr": "00617eac", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_read_bitmap_fi_00617ec2", 
-      "addr": "00617ec2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_ckptutil_c_00617ee3", 
-      "addr": "00617ee3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_ckptutil_c_00617ef9", 
-      "addr": "00617ef9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_ckptutil_c_00617f0f", 
-      "addr": "00617f0f", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000020;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000024;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000028;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000030;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000034;"
-    }, 
-    {
-      "line": 29, 
-      "match": "&stack0xffffff98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffff98,\"Unable to allocate %u bytes for rotated bitmap file (%s).\",local_18,0);"
-    }, 
-    {
-      "line": 32, 
-      "match": "&stack0xffffff9c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff9c);"
-    }, 
-    {
-      "line": 37, 
-      "match": "&stack0xffffffa4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa4,\"Unable to open bitmap file (%s).\");"
-    }, 
-    {
-      "line": 40, 
-      "match": "&stack0xffffffa8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa8);"
-    }, 
-    {
-      "line": 46, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar4 = in_stack_00000020 + (height - bitmap_size) + -1;"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000024 != (char *)0x0) {"
-    }, 
-    {
-      "line": 51, 
-      "match": "&stack0xffffffb0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,\"Unable to read bitmap file (%s).\");"
-    }, 
-    {
-      "line": 60, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (pcVar3 < in_stack_00000024);"
-    }, 
-    {
-      "line": 66, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000030 == 0) {"
-    }, 
-    {
-      "line": 67, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return in_stack_00000024;"
-    }, 
-    {
-      "line": 70, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000020,in_stack_00000024,bitmap_size,in_stack_00000034);"
-    }, 
-    {
-      "line": 70, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000020,in_stack_00000024,bitmap_size,in_stack_00000034);"
-    }, 
-    {
-      "line": 70, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000020,in_stack_00000024,bitmap_size,in_stack_00000034);"
-    }, 
-    {
-      "line": 71, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return in_stack_00000028;"
-    }
-  ], 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 249
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00434690", 
-    "signature": "char * cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690(char * filename, char * buffer, int width, int height, void * optional_param)", 
+    "address": "00434690",
     "address_range": [
       [
-        "00434690", 
+        "00434690",
         "0043486c"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690",
+    "signature": "char * cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690(char * filename, char * buffer, int width, int height, void * optional_param)"
+  },
+  "function_calls": [
+    {
+      "addr": "004319b0",
+      "name": "cockpit_ckptutil.c_applyActPalette_FUN_004319b0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe840",
+      "name": "crt_stdio.c_fgetc_FUN_005fe840"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00481a50",
+      "name": "engine_dosio.c_getFile_FUN_00481a50"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00617e1e",
+      "name": "s_cockpit_ckptutil_c_00617e1e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617e34",
+      "name": "s_Unable_to_allocate_u_byt_00617e34",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617e6e",
+      "name": "s_cockpit_ckptutil_c_00617e6e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617e84",
+      "name": "s_rb_00617e84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617e87",
+      "name": "s_art_00617e87",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617e8b",
+      "name": "s_Unable_to_open_bitmap_fi_00617e8b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617eac",
+      "name": "s_cockpit_ckptutil_c_00617eac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617ec2",
+      "name": "s_Unable_to_read_bitmap_fi_00617ec2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617ee3",
+      "name": "s_cockpit_ckptutil_c_00617ee3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617ef9",
+      "name": "s_cockpit_ckptutil_c_00617ef9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617f0f",
+      "name": "s_cockpit_ckptutil_c_00617f0f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 112, 
+    "frame_size": 132,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_6c"
-      }, 
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
+        "is_param": true,
+        "name": "width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
+        "is_param": true,
+        "name": "height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "optional_param"
+        "is_param": true,
+        "name": "optional_param",
+        "offset": 20,
+        "size": 4,
+        "type": "void *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 132, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000020",
+      "text": "char *in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000024",
+      "text": "char *in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000028",
+      "text": "char *in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000030",
+      "text": "int in_stack_00000030;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000034",
+      "text": "int in_stack_00000034;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0xffffff98",
+      "text": "(&stack0xffffff98,\"Unable to allocate %u bytes for rotated bitmap file (%s).\",local_18,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xffffff9c",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff9c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 37,
+      "match": "&stack0xffffffa4",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa4,\"Unable to open bitmap file (%s).\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 40,
+      "match": "&stack0xffffffa8",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000020",
+      "text": "pcVar4 = in_stack_00000020 + (height - bitmap_size) + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000024",
+      "text": "if (in_stack_00000024 != (char *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xffffffb0",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,\"Unable to read bitmap file (%s).\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000024",
+      "text": "} while (pcVar3 < in_stack_00000024);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000030",
+      "text": "if (in_stack_00000030 == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000024",
+      "text": "return in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_00000020",
+      "text": "(in_stack_00000020,in_stack_00000024,bitmap_size,in_stack_00000034);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_00000024",
+      "text": "(in_stack_00000020,in_stack_00000024,bitmap_size,in_stack_00000034);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_00000034",
+      "text": "(in_stack_00000020,in_stack_00000024,bitmap_size,in_stack_00000034);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_00000028",
+      "text": "return in_stack_00000028;",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -1,211 +1,211 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 163, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 0, 
-    "global_count": 12, 
-    "total_lines": 197, 
-    "assembly_lines": 144, 
-    "suspect_count": 9, 
+    "assembly_lines": 144,
+    "complexity_score": 165,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 12,
+    "pseudocode_lines": 55,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70", 
-      "addr": "005ade70"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DirectSux_Unable_to_s_s_00651a6c", 
-      "addr": "00651a6c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_snddx_cpp_00652121", 
-      "addr": "00652121", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DirectSoundDevice_startS_00652134", 
-      "addr": "00652134", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_snddx_cpp_00652165", 
-      "addr": "00652165", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DirectSoundDevice_startS_00652178", 
-      "addr": "00652178", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_snddx_cpp_006521a2", 
-      "addr": "006521a2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DirectSoundDevice_startS_006521b5", 
-      "addr": "006521b5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Play_hardware_sfx_second_0065220f", 
-      "addr": "0065220f", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectSoundBuffer*[31]", 
-      "name": "g_DirectSoundHardwareSfxBuffers", 
-      "addr": "03f6aa44", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectSound3DBuffer*[31]", 
-      "name": "g_DirectSound3DBufferInterfaces", 
-      "addr": "03f6aac0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000010;"
-    }, 
-    {
-      "line": 38, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 | 1;"
-    }, 
-    {
-      "line": 38, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 | 1;"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 | 1;"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 | 1;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_DirectSoundHardwareSfxBuffers[iVar1],0,0,in_stack_00000010);"
-    }, 
-    {
-      "line": 48, 
-      "match": "&stack0xfffffe98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xfffffe98,\"DirectSux: Unable to %s.  (%s)\","
-    }
-  ], 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 199
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005afe80", 
-    "signature": "int sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoundDevice * this_ptr, CSfxSlot * slot)", 
+    "address": "005afe80",
     "address_range": [
       [
-        "005afe80", 
+        "005afe80",
         "005b0028"
       ]
-    ], 
-    "name": "sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80",
+    "signature": "int sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80(CDirectSoundDevice * this_ptr, CSfxSlot * slot)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005ade70",
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70"
+    },
+    {
+      "addr": "005adba0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00651a6c",
+      "name": "s_DirectSux_Unable_to_s_s_00651a6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00652121",
+      "name": "s_sound_snddx_cpp_00652121",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00652134",
+      "name": "s_DirectSoundDevice_startS_00652134",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00652165",
+      "name": "s_sound_snddx_cpp_00652165",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00652178",
+      "name": "s_DirectSoundDevice_startS_00652178",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006521a2",
+      "name": "s_sound_snddx_cpp_006521a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006521b5",
+      "name": "s_DirectSoundDevice_startS_006521b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065220f",
+      "name": "s_Play_hardware_sfx_second_0065220f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6aa44",
+      "name": "g_DirectSoundHardwareSfxBuffers",
+      "type": "IDirectSoundBuffer*[31]",
+      "value": null
+    },
+    {
+      "addr": "03f6aac0",
+      "name": "g_DirectSound3DBufferInterfaces",
+      "type": "IDirectSound3DBuffer*[31]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDirectSoundDevice *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CSfxSlot *", 
-        "size": 4, 
-        "name": "slot"
+        "is_param": true,
+        "name": "slot",
+        "offset": 8,
+        "size": 4,
+        "type": "CSfxSlot *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 12,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 | 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 | 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 | 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 | 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000010",
+      "text": "(g_DirectSoundHardwareSfxBuffers[iVar1],0,0,in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 50,
+      "match": "&stack0xfffffe98",
+      "text": "(&stack0xfffffe98,\"DirectSux: Unable to %s.  (%s)\",",
+      "type": "stack_ref"
+    }
+  ]
 }

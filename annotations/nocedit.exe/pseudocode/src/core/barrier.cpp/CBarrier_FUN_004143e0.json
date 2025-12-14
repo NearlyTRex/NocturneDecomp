@@ -1,63 +1,63 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 22, 
-    "assembly_lines": 14, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_setcolid.cpp_CDemonSet_FUN_00574440", 
-      "addr": "00574440"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 14,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004143e0", 
-    "signature": "void core_barrier.cpp_CBarrier_FUN_004143e0(CBarrier * this_ptr)", 
+    "address": "004143e0",
     "address_range": [
       [
-        "004143e0", 
+        "004143e0",
         "004143fe"
       ]
-    ], 
-    "name": "core_barrier.cpp_CBarrier_FUN_004143e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_barrier.cpp_CBarrier_FUN_004143e0",
+    "signature": "void core_barrier.cpp_CBarrier_FUN_004143e0(CBarrier * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00574440",
+      "name": "core_setcolid.cpp_CDemonSet_FUN_00574440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBarrier *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBarrier *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

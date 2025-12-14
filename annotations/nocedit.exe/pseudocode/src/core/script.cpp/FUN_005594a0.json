@@ -1,72 +1,72 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 41, 
-    "assembly_lines": 30, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_event.cpp_CEventList_FUN_004add00", 
-      "addr": "004add00"
-    }, 
-    {
-      "name": "core_script.cpp_FUN_005593f0", 
-      "addr": "005593f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CEventList*", 
-      "name": "g_CEventListPtr", 
-      "addr": "006793d0", 
-      "value": "02d05310"
-    }, 
-    {
-      "type": "CEventList", 
-      "name": "g_CEventListInstance", 
-      "addr": "02d05310", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0310ec9c", 
-      "addr": "0310ec9c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005594a0", 
-    "signature": "undefined core_script.cpp_FUN_005594a0()", 
-    "address_range": [
-      [
-        "005594a0", 
-        "005594da"
-      ]
-    ], 
-    "name": "core_script.cpp_FUN_005594a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 30,
+    "complexity_score": 11,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
+  },
   "cross_references": [
     {
-      "from_addr": "0055be43", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
+      "addr": "0055a810",
+      "from_addr": "0055be43",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005594a0",
+    "address_range": [
+      [
+        "005594a0",
+        "005594da"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_FUN_005594a0",
+    "signature": "undefined core_script.cpp_FUN_005594a0()"
+  },
+  "function_calls": [
+    {
+      "addr": "004add00",
+      "name": "core_event.cpp_CEventList_FUN_004add00"
+    },
+    {
+      "addr": "005593f0",
+      "name": "core_script.cpp_FUN_005593f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    },
+    {
+      "addr": "0310ec9c",
+      "name": "DAT_0310ec9c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

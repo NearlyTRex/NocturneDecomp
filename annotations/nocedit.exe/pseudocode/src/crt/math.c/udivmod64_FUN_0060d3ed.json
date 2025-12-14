@@ -1,96 +1,96 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 169, 
-    "pseudocode_lines": 94, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 201, 
-    "assembly_lines": 107, 
-    "suspect_count": 7, 
+    "assembly_lines": 107,
+    "complexity_score": 169,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 94,
+    "suspect_count": 7,
     "suspect_types": [
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 31, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dividend = CONCAT44 /* combine 2-byte values */(uVar2,(int)(CONCAT44 /* combine 2-byte values */(uVar5,(uint)dividend) / (divisor & 0xffffffff)));"
-    }, 
-    {
-      "line": 31, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dividend = CONCAT44 /* combine 2-byte values */(uVar2,(int)(CONCAT44 /* combine 2-byte values */(uVar5,(uint)dividend) / (divisor & 0xffffffff)));"
-    }, 
-    {
-      "line": 50, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "divisor = CONCAT44 /* combine 2-byte values */(uVar4,uVar9);"
-    }, 
-    {
-      "line": 53, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "} while (CONCAT44 /* combine 2-byte values */(uVar4,uVar9) <= dividend);"
-    }, 
-    {
-      "line": 73, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dividend = CONCAT44 /* combine 2-byte values */(uVar7,uVar3);"
-    }, 
-    {
-      "line": 92, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dividend = CONCAT44 /* combine 2-byte values */(uVar7,uVar3);"
-    }, 
-    {
-      "line": 97, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "return CONCAT44 /* combine 2-byte values */(uVar5,uVar11);"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "0060d3ed", 
-    "signature": "ulonglong crt_math.c_udivmod64_FUN_0060d3ed(ulonglong dividend, ulonglong divisor)", 
-    "address_range": [
-      [
-        "0060d3ed", 
-        "0060d47a"
-      ]
-    ], 
-    "name": "crt_math.c_udivmod64_FUN_0060d3ed"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 201
+  },
   "cross_references": [
     {
-      "from_addr": "0060ad8f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdlib.c_i64toa_FUN_0060ad40", 
-      "addr": "0060ad40"
+      "addr": "0060ad40",
+      "from_addr": "0060ad8f",
+      "name": "crt_stdlib.c_i64toa_FUN_0060ad40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060d3ed",
+    "address_range": [
+      [
+        "0060d3ed",
+        "0060d47a"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_math.c_udivmod64_FUN_0060d3ed",
+    "signature": "ulonglong crt_math.c_udivmod64_FUN_0060d3ed(ulonglong dividend, ulonglong divisor)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 31,
+      "match": "CONCAT44",
+      "text": "dividend = CONCAT44 /* combine 2-byte values */(uVar1,(int)(CONCAT44 /* combine 2-byte values */(uVar5,(uint)dividend) / (divisor & 0xffffffff)));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 31,
+      "match": "CONCAT44",
+      "text": "dividend = CONCAT44 /* combine 2-byte values */(uVar1,(int)(CONCAT44 /* combine 2-byte values */(uVar5,(uint)dividend) / (divisor & 0xffffffff)));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 49,
+      "match": "CONCAT44",
+      "text": "divisor = CONCAT44 /* combine 2-byte values */(uVar4,uVar9);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 53,
+      "match": "CONCAT44",
+      "text": "} while (CONCAT44 /* combine 2-byte values */(uVar4,uVar9) <= dividend);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 73,
+      "match": "CONCAT44",
+      "text": "dividend = CONCAT44 /* combine 2-byte values */(uVar7,uVar2);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 92,
+      "match": "CONCAT44",
+      "text": "dividend = CONCAT44 /* combine 2-byte values */(uVar7,uVar2);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 97,
+      "match": "CONCAT44",
+      "text": "return CONCAT44 /* combine 2-byte values */(uVar5,uVar11);",
+      "type": "concat_artifact"
     }
   ]
 }

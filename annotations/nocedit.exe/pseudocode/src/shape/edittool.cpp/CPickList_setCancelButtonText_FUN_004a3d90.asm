@@ -30,8 +30,8 @@ section .text
         ;   Label: shape_edittool.cpp_CPickList_setCancelButtonText_FUN_004a3d90
     MOV ESI,dword ptr [ESP + 0xc]       ; 004a3d91
     TEST ESI,ESI                        ; 004a3d95
-    JNZ 0x004a3da6                      ; 004a3d97 | LAB_004a3da6
-        ;   XREF to: 004a3da6 (CONDITIONAL_JUMP)
+    JNZ 0x004a3da6                      ; 004a3d97
+        ;   XREF to: 004a3da6 (CONDITIONAL_JUMP)  ; LAB_004a3da6
     MOV ECX,dword ptr [ESP + 0x8]       ; 004a3d99
     MOV byte ptr [ECX + 0xa8],0x0       ; 004a3d9d
     POP ESI                             ; 004a3da4
@@ -46,15 +46,15 @@ section .text
     NOT ECX                             ; 004a3db0
     DEC ECX                             ; 004a3db2
     CMP ECX,0x64                        ; 004a3db3
-    JC 0x004a3ddb                       ; 004a3db6 | LAB_004a3ddb
-        ;   XREF to: 004a3ddb (CONDITIONAL_JUMP)
-    MOV EDX,0x623a32                    ; 004a3db8 | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_00623a32 = ..\shape\edittool.cpp
+    JC 0x004a3ddb                       ; 004a3db6
+        ;   XREF to: 004a3ddb (CONDITIONAL_JUMP)  ; LAB_004a3ddb
+    MOV EDX,0x623a32                    ; 004a3db8 | = "..\\shape\\edittool.cpp"
     MOV ECX,0xd87                       ; 004a3dbd
-    PUSH 0x623a48                       ; 004a3dc2 | = "CPickList::setCancelButtonText - too ..." | s_CPickList_setCancelButto_00623a48 = CPickList::setCancelButtonText - too long!
-    MOV dword ptr [0x02f0ca48],EDX      ; 004a3dc7 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 004a3dcd | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a3dd3 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x623a48                       ; 004a3dc2 | = "CPickList::setCancelButtonText - too ..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 004a3dc7 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 004a3dcd | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a3dd3
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004a3dd8
     MOV EDI,dword ptr [ESP + 0xc]       ; 004a3ddb
         ;   Label: LAB_004a3ddb
@@ -64,15 +64,15 @@ section .text
         ;   Label: LAB_004a3de6
     MOV byte ptr [EDI],AL               ; 004a3de8
     CMP AL,0x0                          ; 004a3dea
-    JZ 0x004a3dfe                       ; 004a3dec | LAB_004a3dfe
-        ;   XREF to: 004a3dfe (CONDITIONAL_JUMP)
+    JZ 0x004a3dfe                       ; 004a3dec
+        ;   XREF to: 004a3dfe (CONDITIONAL_JUMP)  ; LAB_004a3dfe
     MOV AL,byte ptr [ESI + 0x1]         ; 004a3dee
     ADD ESI,0x2                         ; 004a3df1
     MOV byte ptr [EDI + 0x1],AL         ; 004a3df4
     ADD EDI,0x2                         ; 004a3df7
     CMP AL,0x0                          ; 004a3dfa
-    JNZ 0x004a3de6                      ; 004a3dfc | LAB_004a3de6
-        ;   XREF to: 004a3de6 (CONDITIONAL_JUMP)
+    JNZ 0x004a3de6                      ; 004a3dfc
+        ;   XREF to: 004a3de6 (CONDITIONAL_JUMP)  ; LAB_004a3de6
     POP EDI                             ; 004a3dfe
         ;   Label: LAB_004a3dfe
     POP EDI                             ; 004a3dff

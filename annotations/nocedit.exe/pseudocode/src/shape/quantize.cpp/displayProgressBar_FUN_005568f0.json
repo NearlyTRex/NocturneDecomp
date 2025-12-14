@@ -1,216 +1,216 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 171, 
-    "pseudocode_lines": 51, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 159, 
-    "assembly_lines": 108, 
-    "suspect_count": 10, 
+    "assembly_lines": 108,
+    "complexity_score": 171,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 4,
+    "pseudocode_lines": 51,
+    "suspect_count": 10,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_00641092", 
-      "addr": "00641092", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_006410ae", 
-      "addr": "006410ae", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_006410cb", 
-      "addr": "006410cb", 
-      "value": "20"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_QuantizeCurrentLineNumber", 
-      "addr": "03106158", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 23, 
-      "match": "&stack0xffffff88", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar1 = &stack0xffffff88;"
-    }, 
-    {
-      "line": 24, 
-      "match": "&stack0xffffff88", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar2 = &stack0xffffff88;"
-    }, 
-    {
-      "line": 41, 
-      "match": "&stack0xffffff8c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff8c,0,(g_QuantizeCurrentLineNumber + 4) * 0xb);"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000014 + -1 != in_stack_00000018) {"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000014 + -1 != in_stack_00000018) {"
-    }, 
-    {
-      "line": 46, 
-      "match": "&stack0xffffff94", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff94,\"%s [....................]\\n\");"
-    }
-  ], 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 159
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005568f0", 
-    "signature": "int shape_quantize.cpp_displayProgressBar_FUN_005568f0(char * label, int total_count, int current_index)", 
+    "address": "005568f0",
     "address_range": [
       [
-        "005568f0", 
+        "005568f0",
         "005569fb"
       ]
-    ], 
-    "name": "shape_quantize.cpp_displayProgressBar_FUN_005568f0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_quantize.cpp_displayProgressBar_FUN_005568f0",
+    "signature": "int shape_quantize.cpp_displayProgressBar_FUN_005568f0(char * label, int total_count, int current_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00641092",
+      "name": "s_s_00641092",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006410ae",
+      "name": "s_s_006410ae",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006410cb",
+      "name": "DOUBLE_006410cb",
+      "type": "double",
+      "value": "20"
+    },
+    {
+      "addr": "03106158",
+      "name": "g_QuantizeCurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 124, 
+    "frame_size": 136,
+    "local_size": 124,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_78"
-      }, 
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -119, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_77"
-      }, 
+        "is_param": false,
+        "name": "local_77",
+        "offset": -119,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "label"
-      }, 
+        "is_param": true,
+        "name": "label",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "total_count"
-      }, 
+        "is_param": true,
+        "name": "total_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "current_index"
+        "is_param": true,
+        "name": "current_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 136, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffff88",
+      "text": "pcVar1 = &stack0xffffff88;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xffffff88",
+      "text": "pcVar2 = &stack0xffffff88;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 41,
+      "match": "&stack0xffffff8c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff8c,0,(g_QuantizeCurrentLineNumber + 4) * 0xb);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000014",
+      "text": "if (in_stack_00000014 + -1 != in_stack_00000018) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000018",
+      "text": "if (in_stack_00000014 + -1 != in_stack_00000018) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 46,
+      "match": "&stack0xffffff94",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff94,\"%s [....................]\\n\");",
+      "type": "stack_ref"
+    }
+  ]
 }

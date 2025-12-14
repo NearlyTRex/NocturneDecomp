@@ -40,12 +40,12 @@ section .text
     PUSHFD                              ; 00524f5d
     POP EAX                             ; 00524f5e
     XOR EAX,ECX                         ; 00524f5f
-    MOV byte ptr [0x0067d6d8],0x3       ; 00524f61 | byte g_CPUInfoFamily
-    JZ 0x00524ff2                       ; 00524f68 | LAB_00524ff2
-        ;   XREF to: 00524ff2 (CONDITIONAL_JUMP)
+    MOV byte ptr [0x0067d6d8],0x3       ; 00524f61 | g_CPUInfoFamily
+    JZ 0x00524ff2                       ; 00524f68
+        ;   XREF to: 00524ff2 (CONDITIONAL_JUMP)  ; LAB_00524ff2
     PUSH ECX                            ; 00524f6e
     POPFD                               ; 00524f6f
-    MOV byte ptr [0x0067d6d8],0x4       ; 00524f70 | byte g_CPUInfoFamily
+    MOV byte ptr [0x0067d6d8],0x4       ; 00524f70 | g_CPUInfoFamily
     MOV EAX,ECX                         ; 00524f77
     XOR EAX,0x200000                    ; 00524f79
     PUSH EAX                            ; 00524f7e
@@ -53,37 +53,37 @@ section .text
     PUSHFD                              ; 00524f80
     POP EAX                             ; 00524f81
     XOR EAX,ECX                         ; 00524f82
-    JZ 0x00524ff2                       ; 00524f84 | LAB_00524ff2
-        ;   XREF to: 00524ff2 (CONDITIONAL_JUMP)
-    MOV byte ptr [0x0067d6db],0x1       ; 00524f86 | bool g_CPUIDSupported
+    JZ 0x00524ff2                       ; 00524f84
+        ;   XREF to: 00524ff2 (CONDITIONAL_JUMP)  ; LAB_00524ff2
+    MOV byte ptr [0x0067d6db],0x1       ; 00524f86 | g_CPUIDSupported
     XOR EAX,EAX                         ; 00524f8d
     CPUID                               ; 00524f8f
     MOV dword ptr [0x0067d6cc],EBX      ; 00524f91 | s__0067d6cc
     MOV dword ptr [0x0067d6d0],EDX      ; 00524f97 | g_cpuidbasicinfo_2
     MOV dword ptr [0x0067d6d4],ECX      ; 00524f9d | g_cpuidbasicinfo_3
     MOV ESI,0x67d6cc                    ; 00524fa3 | s__0067d6cc
-    MOV EDI,0x67d6c0                    ; 00524fa8 | = "GenuineIntel" | s_GenuineIntel_0067d6c0 = GenuineIntel
+    MOV EDI,0x67d6c0                    ; 00524fa8 | = "GenuineIntel"
     MOV ECX,0x1                         ; 00524fad
-    CMPSB.REPE ES:EDI,ESI               ; 00524fb2 | = "GenuineIntel" | s__0067d6cc | s_GenuineIntel_0067d6c0 = GenuineIntel
+    CMPSB.REPE ES:EDI,ESI               ; 00524fb2 | = "GenuineIntel" | s__0067d6cc
     OR ECX,ECX                          ; 00524fb4
-    JNZ 0x00524ff2                      ; 00524fb6 | LAB_00524ff2
-        ;   XREF to: 00524ff2 (CONDITIONAL_JUMP)
-    MOV byte ptr [0x0067d6dc],0x1       ; 00524fb8 | bool g_CPUInfoIntelCPU
+    JNZ 0x00524ff2                      ; 00524fb6
+        ;   XREF to: 00524ff2 (CONDITIONAL_JUMP)  ; LAB_00524ff2
+    MOV byte ptr [0x0067d6dc],0x1       ; 00524fb8 | g_CPUInfoIntelCPU
     CMP EAX,0x1                         ; 00524fbf
-    JL 0x00524ff2                       ; 00524fc2 | LAB_00524ff2
-        ;   XREF to: 00524ff2 (CONDITIONAL_JUMP)
+    JL 0x00524ff2                       ; 00524fc2
+        ;   XREF to: 00524ff2 (CONDITIONAL_JUMP)  ; LAB_00524ff2
     XOR EAX,EAX                         ; 00524fc4
     INC EAX                             ; 00524fc6
     CPUID                               ; 00524fc7
-    MOV [0x0067d6da],AL                 ; 00524fc9 | byte g_CPUInfoStepping
-    AND byte ptr [0x0067d6da],0xf       ; 00524fce | byte g_CPUInfoStepping
+    MOV [0x0067d6da],AL                 ; 00524fc9 | g_CPUInfoStepping
+    AND byte ptr [0x0067d6da],0xf       ; 00524fce | g_CPUInfoStepping
     AND AL,0xf0                         ; 00524fd5
     SHR AL,0x4                          ; 00524fd7
-    MOV [0x0067d6d9],AL                 ; 00524fda | byte g_CPUInfoModel
+    MOV [0x0067d6d9],AL                 ; 00524fda | g_CPUInfoModel
     AND EAX,0xf00                       ; 00524fdf
     SHR EAX,0x8                         ; 00524fe4
-    MOV [0x0067d6d8],AL                 ; 00524fe7 | byte g_CPUInfoFamily
-    MOV dword ptr [0x0067d6dd],EDX      ; 00524fec | uint g_CPUFeatureFlags
+    MOV [0x0067d6d8],AL                 ; 00524fe7 | g_CPUInfoFamily
+    MOV dword ptr [0x0067d6dd],EDX      ; 00524fec | g_CPUFeatureFlags
     POP EDX                             ; 00524ff2
         ;   Label: LAB_00524ff2
     POP ECX                             ; 00524ff3

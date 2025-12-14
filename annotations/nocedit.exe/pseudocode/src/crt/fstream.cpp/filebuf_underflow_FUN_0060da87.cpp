@@ -26,7 +26,7 @@ int __watcallStack crt_fstream_cpp_filebuf_underflow_FUN_0060da87(filebuf *this_
   pcVar3 = (this_ptr->streambuf).__reserve_base;
   (this_ptr->streambuf).__put_end = (char *)0x0;
   if (pcVar3 == (char *)0x0) {
-    if (((pcVar3 == (char *)0x0) && (((this_ptr->streambuf).__flags & 1) == 0)) &&
+    if ((((this_ptr->streambuf).__flags & 1) == 0) &&
        (iVar4 = (*this_ptr->__vtable->doallocate)(&this_ptr->streambuf), iVar4 == -1)) {
       return -1;
     }

@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 69, 
-    "assembly_lines": 46, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40", 
-      "addr": "0059df40"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
-      "addr": "005a07a0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
-      "addr": "0050f1f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064ed3e", 
-      "addr": "0064ed3e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064ed53", 
-      "addr": "0064ed53", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDeformableModelInstance_0064ed68", 
-      "addr": "0064ed68", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059deb0", 
-    "signature": "void core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0(CDeformableModelInstance * this_ptr)", 
-    "address_range": [
-      [
-        "0059deb0", 
-        "0059df33"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 46,
+    "complexity_score": 22,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
+  },
   "cross_references": [
     {
-      "from_addr": "005a0583", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480", 
-      "addr": "005a0480"
+      "addr": "005a0480",
+      "from_addr": "005a0583",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0059deb0",
+    "address_range": [
+      [
+        "0059deb0",
+        "0059df33"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0",
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0(CDeformableModelInstance * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0059df40",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_free_FUN_0059df40"
+    },
+    {
+      "addr": "005a07a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "0050f1f0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064ed3e",
+      "name": "s_core_skeleton_cpp_0064ed3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ed53",
+      "name": "s_core_skeleton_cpp_0064ed53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ed68",
+      "name": "s_CDeformableModelInstance_0064ed68",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": []
 }

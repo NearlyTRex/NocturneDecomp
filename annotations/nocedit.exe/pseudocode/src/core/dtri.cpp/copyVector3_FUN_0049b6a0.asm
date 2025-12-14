@@ -15,8 +15,8 @@ section .text
         ;   Label: core_dtri.cpp_copyVector3_FUN_0049b6a0
     MOV EDX,dword ptr [ESP + 0x8]       ; 0049b6a4
     CMP EAX,EDX                         ; 0049b6a8
-    JNZ 0x0049b6ad                      ; 0049b6aa | LAB_0049b6ad
-        ;   XREF to: 0049b6ad (CONDITIONAL_JUMP)
+    JNZ 0x0049b6ad                      ; 0049b6aa
+        ;   XREF to: 0049b6ad (CONDITIONAL_JUMP)  ; LAB_0049b6ad
     RET                                 ; 0049b6ac
     MOV ECX,dword ptr [EDX]             ; 0049b6ad
         ;   Label: LAB_0049b6ad

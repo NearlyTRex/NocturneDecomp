@@ -1,108 +1,108 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 29, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_CameraRotationPitch", 
-      "addr": "02d052d0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationYaw", 
-      "addr": "02d052d4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationRoll", 
-      "addr": "02d052d8", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0050e311", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050e2f0", 
-    "signature": "void engine_matrix.c_getCameraRotation_FUN_0050e2f0(CVector3i * output)", 
-    "address_range": [
-      [
-        "0050e2f0", 
-        "0050e31e"
-      ]
-    ], 
-    "name": "engine_matrix.c_getCameraRotation_FUN_0050e2f0"
-  }, 
-  "stack_frame": {
-    "local_size": 20, 
-    "variables": [
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 18,
+    "complexity_score": 11,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
   "cross_references": [
     {
-      "from_addr": "0048c810", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800", 
-      "addr": "0048c800"
-    }, 
+      "addr": "0048c800",
+      "from_addr": "0048c810",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c7eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0", 
-      "addr": "0048c7e0"
+      "addr": "0048c7e0",
+      "from_addr": "0048c7eb",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0050e2f0",
+    "address_range": [
+      [
+        "0050e2f0",
+        "0050e31e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_getCameraRotation_FUN_0050e2f0",
+    "signature": "void engine_matrix.c_getCameraRotation_FUN_0050e2f0(CVector3i * output)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d052d0",
+      "name": "g_CameraRotationPitch",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d4",
+      "name": "g_CameraRotationYaw",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d8",
+      "name": "g_CameraRotationRoll",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0050e311",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

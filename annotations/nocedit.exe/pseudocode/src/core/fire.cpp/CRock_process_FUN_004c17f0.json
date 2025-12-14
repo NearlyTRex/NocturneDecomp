@@ -1,91 +1,91 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 52, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 73, 
-    "assembly_lines": 46, 
-    "suspect_count": 2, 
+    "assembly_lines": 46,
+    "complexity_score": 52,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 27,
+    "suspect_count": 2,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_particle.cpp_CParticle_process_FUN_00545760", 
-      "addr": "00545760"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_00629ccb", 
-      "addr": "00629ccb", 
-      "value": "32767.7000000000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GlobalDeltaTimeInt", 
-      "addr": "02cf6a80", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 21, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "lVar4 = (longlong)extraout_EAX * (longlong)(int)ROUND(dVar6);"
-    }
-  ], 
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004c17f0", 
-    "signature": "void core_fire.cpp_CRock_process_FUN_004c17f0(CRock * this_ptr)", 
+    "address": "004c17f0",
     "address_range": [
       [
-        "004c17f0", 
+        "004c17f0",
         "004c1867"
       ]
-    ], 
-    "name": "core_fire.cpp_CRock_process_FUN_004c17f0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CRock_process_FUN_004c17f0",
+    "signature": "void core_fire.cpp_CRock_process_FUN_004c17f0(CRock * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00545760",
+      "name": "core_particle.cpp_CParticle_process_FUN_00545760"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629ccb",
+      "name": "DOUBLE_00629ccb",
+      "type": "double",
+      "value": "32767.7000000000"
+    },
+    {
+      "addr": "02cf6a80",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 12, 
+    "frame_size": 16,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CRock *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CRock *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_EAX",
+      "text": "lVar4 = (longlong)extraout_EAX * (longlong)(int)ROUND(dVar6);",
+      "type": "extra_output"
+    }
+  ]
 }

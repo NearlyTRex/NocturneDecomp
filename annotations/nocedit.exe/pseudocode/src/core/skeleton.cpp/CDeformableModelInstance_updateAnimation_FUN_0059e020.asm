@@ -38,15 +38,15 @@ section .text
     PUSH dword ptr [EBX + 0x8]          ; 0059e02a
     PUSH EDX                            ; 0059e02d
     PUSH EBX                            ; 0059e02e
-    CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 ; 0059e02f | void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
-        ;   XREF to: 0059e0a0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 ; 0059e02f
+        ;   XREF to: 0059e0a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
     FLD float ptr [EBX + 0x14]          ; 0059e034
     ADD ESP,0x10                        ; 0059e037
-    FCOMP double ptr [0x0064edc8]       ; 0059e03a | double g_DeformableModelTweenThreshold
+    FCOMP double ptr [0x0064edc8]       ; 0059e03a | g_DeformableModelTweenThreshold
     FNSTSW AX                           ; 0059e040
     SAHF                                ; 0059e042
-    JA 0x0059e047                       ; 0059e043 | LAB_0059e047
-        ;   XREF to: 0059e047 (CONDITIONAL_JUMP)
+    JA 0x0059e047                       ; 0059e043
+        ;   XREF to: 0059e047 (CONDITIONAL_JUMP)  ; LAB_0059e047
     POP EBX                             ; 0059e045
     RET                                 ; 0059e046
     PUSH 0x59ddb0                       ; 0059e047
@@ -57,8 +57,8 @@ section .text
     PUSH dword ptr [EBX + 0x1c]         ; 0059e054
     PUSH ECX                            ; 0059e057
     PUSH EBX                            ; 0059e058
-    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 ; 0059e059 | void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
-        ;   XREF to: 0059eb50 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 ; 0059e059
+        ;   XREF to: 0059eb50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50(CDeformableModelInstance * this_ptr, int target_motion_index, float target_frame_number, float blend_weight, ...)
     ADD ESP,0x18                        ; 0059e05e
     POP EBX                             ; 0059e061
     RET                                 ; 0059e062

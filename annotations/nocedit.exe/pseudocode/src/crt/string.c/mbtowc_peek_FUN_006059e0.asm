@@ -24,16 +24,16 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 006059e0
         ;   Label: crt_string.c_mbtowc_peek_FUN_006059e0
-    CMP dword ptr [0x03f9c020],0x0      ; 006059e4 | int g_MultibyteLocaleActive
-    JZ 0x00605a14                       ; 006059eb | LAB_00605a14
-        ;   XREF to: 00605a14 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x03f9c020],0x0      ; 006059e4 | g_MultibyteLocaleActive
+    JZ 0x00605a14                       ; 006059eb
+        ;   XREF to: 00605a14 (CONDITIONAL_JUMP)  ; LAB_00605a14
     XOR EDX,EDX                         ; 006059ed
     MOV DL,byte ptr [EAX]               ; 006059ef
-    MOV DL,byte ptr [EDX + 0x3f9c031]   ; 006059f1 | char[256] g_LeadByteTable
+    MOV DL,byte ptr [EDX + 0x3f9c031]   ; 006059f1 | g_LeadByteTable
     AND DL,0x1                          ; 006059f7
     AND EDX,0xff                        ; 006059fa
-    JZ 0x00605a14                       ; 00605a00 | LAB_00605a14
-        ;   XREF to: 00605a14 (CONDITIONAL_JUMP)
+    JZ 0x00605a14                       ; 00605a00
+        ;   XREF to: 00605a14 (CONDITIONAL_JUMP)  ; LAB_00605a14
     XOR EDX,EDX                         ; 00605a02
     MOV DL,byte ptr [EAX]               ; 00605a04
     SHL EDX,0x8                         ; 00605a06

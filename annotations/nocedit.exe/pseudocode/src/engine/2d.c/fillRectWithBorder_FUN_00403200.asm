@@ -46,12 +46,12 @@ section .text
     PUSH ESI                            ; 00403216
     MOV EDI,dword ptr [ESP + 0x20]      ; 00403217
     PUSH EDI                            ; 0040321b
-    CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0040321c | void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
-        ;   XREF to: 00403170 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0040321c
+        ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 00403221
     MOV EAX,dword ptr [ESP + 0x24]      ; 00403224
-    MOV EBX,dword ptr [0x02d02570]      ; 00403228 | int g_ActiveRenderColor
-    MOV [0x02d02570],EAX                ; 0040322e | int g_ActiveRenderColor
+    MOV EBX,dword ptr [0x02d02570]      ; 00403228 | g_ActiveRenderColor
+    MOV [0x02d02570],EAX                ; 0040322e | g_ActiveRenderColor
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00403233
     INC EAX                             ; 00403237
     PUSH EAX                            ; 00403238
@@ -62,10 +62,10 @@ section .text
     PUSH EAX                            ; 00403242
     LEA EAX,[EDI + -0x1]                ; 00403243
     PUSH EAX                            ; 00403246
-    CALL engine_2d.c_drawRect_FUN_00403120 ; 00403247 | void engine_2d.c_drawRect_FUN_00403120(int x1, int y1, int x2, int y2)
-        ;   XREF to: 00403120 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawRect_FUN_00403120 ; 00403247
+        ;   XREF to: 00403120 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawRect_FUN_00403120(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0040324c
-    MOV dword ptr [0x02d02570],EBX      ; 0040324f | int g_ActiveRenderColor
+    MOV dword ptr [0x02d02570],EBX      ; 0040324f | g_ActiveRenderColor
     POP EDI                             ; 00403255
     POP ESI                             ; 00403256
     POP EBX                             ; 00403257

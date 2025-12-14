@@ -11,8 +11,7 @@ void core_stairs_cpp_FUN_005b9b30(void)
 {
   CStairs *this_ptr;
   
-  this_ptr = (CStairs *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xa34,"..\\core\\stairs.cpp",0x6f);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xa34,"..\\core\\stairs.cpp",0x6f);
   if (this_ptr == (CStairs *)0x0) {
     return;
   }

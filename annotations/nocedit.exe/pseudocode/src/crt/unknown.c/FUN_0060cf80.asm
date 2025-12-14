@@ -19,27 +19,27 @@ section .text
     PUSH EBX                            ; 0060cf80
         ;   Label: crt_unknown.c_FUN_0060cf80
     PUSH 0x4                            ; 0060cf81
-    CALL crt_signal.c_getSignalHandler_FUN_0060ceb4 ; 0060cf83 | SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
-        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)
+    CALL crt_signal.c_getSignalHandler_FUN_0060ceb4 ; 0060cf83
+        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
     ADD ESP,0x4                         ; 0060cf88
     PUSH 0x7                            ; 0060cf8b
     MOV EBX,EAX                         ; 0060cf8d
-    CALL crt_signal.c_getSignalHandler_FUN_0060ceb4 ; 0060cf8f | SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
-        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)
+    CALL crt_signal.c_getSignalHandler_FUN_0060ceb4 ; 0060cf8f
+        ;   XREF to: 0060ceb4 (UNCONDITIONAL_CALL)  ; SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)
     ADD ESP,0x4                         ; 0060cf94
     CMP EBX,0x2                         ; 0060cf97
-    JZ 0x0060cfa1                       ; 0060cf9a | LAB_0060cfa1
-        ;   XREF to: 0060cfa1 (CONDITIONAL_JUMP)
+    JZ 0x0060cfa1                       ; 0060cf9a
+        ;   XREF to: 0060cfa1 (CONDITIONAL_JUMP)  ; LAB_0060cfa1
     CMP EBX,0x3                         ; 0060cf9c
-    JNZ 0x0060cfab                      ; 0060cf9f | LAB_0060cfab
-        ;   XREF to: 0060cfab (CONDITIONAL_JUMP)
+    JNZ 0x0060cfab                      ; 0060cf9f
+        ;   XREF to: 0060cfab (CONDITIONAL_JUMP)  ; LAB_0060cfab
     CMP EAX,0x2                         ; 0060cfa1
         ;   Label: LAB_0060cfa1
-    JZ 0x0060cfb2                       ; 0060cfa4 | LAB_0060cfb2
-        ;   XREF to: 0060cfb2 (CONDITIONAL_JUMP)
+    JZ 0x0060cfb2                       ; 0060cfa4
+        ;   XREF to: 0060cfb2 (CONDITIONAL_JUMP)  ; LAB_0060cfb2
     CMP EAX,0x3                         ; 0060cfa6
-    JZ 0x0060cfb2                       ; 0060cfa9 | LAB_0060cfb2
-        ;   XREF to: 0060cfb2 (CONDITIONAL_JUMP)
+    JZ 0x0060cfb2                       ; 0060cfa9
+        ;   XREF to: 0060cfb2 (CONDITIONAL_JUMP)  ; LAB_0060cfb2
     MOV EAX,0x1                         ; 0060cfab
         ;   Label: LAB_0060cfab
     POP EBX                             ; 0060cfb0

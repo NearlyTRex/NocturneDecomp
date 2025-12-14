@@ -38,8 +38,8 @@ section .text
     PUSH 0x0                            ; 005ff0f9
     MOV EDX,dword ptr [EBP + 0x8]       ; 005ff0fb
     PUSH EDX                            ; 005ff0fe
-    CALL crt_string.c_strtod_main_FUN_00605d5d ; 005ff0ff | double crt_string.c_strtod_main_FUN_00605d5d(char * str, char * * endptr)
-        ;   XREF to: 00605d5d (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strtod_main_FUN_00605d5d ; 005ff0ff
+        ;   XREF to: 00605d5d (UNCONDITIONAL_CALL)  ; double crt_string.c_strtod_main_FUN_00605d5d(char * str, char * * endptr)
     MOV dword ptr [EBP + -0x10],EAX     ; 005ff104
     MOV dword ptr [EBP + -0xc],EDX      ; 005ff107
     ADD ESP,0x8                         ; 005ff10a

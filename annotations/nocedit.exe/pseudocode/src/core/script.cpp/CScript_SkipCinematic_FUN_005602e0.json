@@ -1,203 +1,203 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 138, 
-    "pseudocode_lines": 33, 
-    "cross_reference_count": 1, 
-    "global_count": 10, 
-    "total_lines": 121, 
-    "assembly_lines": 88, 
-    "suspect_count": 10, 
+    "assembly_lines": 85,
+    "complexity_score": 138,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 10,
+    "pseudocode_lines": 33,
+    "suspect_count": 10,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
-    }, 
-    {
-      "name": "core_script.cpp_FUN_005602b0", 
-      "addr": "005602b0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Error_processing_script__006431fd", 
-      "addr": "006431fd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_script_cpp_0064324c", 
-      "addr": "0064324c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Infinite_loop_detected_t_0064325f", 
-      "addr": "0064325f", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81cc4", 
-      "addr": "02d81cc4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_0310eca0", 
-      "addr": "0310eca0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[0x116] < 0) {"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[0x12] = in_stack_00000004[0x116];"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[0x12] = in_stack_00000004[0x116];"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "while ((g_CGamePtr->letterbox_mode != 0 && (*in_stack_00000004 == 0))) {"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = in_stack_00000004[0x12];"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004[0xd] + iVar1 * 8),"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004[0xd] + 4 + iVar1 * 8),&DAT_0310eca0);"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004[0xd] + in_stack_00000004[0x12] * 8));"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004[0xd] + in_stack_00000004[0x12] * 8));"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005602e0", 
-    "signature": "undefined core_script.cpp_CScript_SkipCinematic_FUN_005602e0()", 
-    "address_range": [
-      [
-        "005602e0", 
-        "005603b3"
-      ]
-    ], 
-    "name": "core_script.cpp_CScript_SkipCinematic_FUN_005602e0"
-  }, 
-  "stack_frame": {
-    "local_size": 16, 
-    "variables": [
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 118
+  },
   "cross_references": [
     {
-      "from_addr": "004db94b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
+      "addr": "004daf80",
+      "from_addr": "004db94b",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005602e0",
+    "address_range": [
+      [
+        "005602e0",
+        "005603b3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_CScript_SkipCinematic_FUN_005602e0",
+    "signature": "undefined core_script.cpp_CScript_SkipCinematic_FUN_005602e0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0055a810",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810"
+    },
+    {
+      "addr": "005602b0",
+      "name": "core_script.cpp_FUN_005602b0"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006431fd",
+      "name": "s_Error_processing_script__006431fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064324c",
+      "name": "s_core_script_cpp_0064324c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064325f",
+      "name": "s_Infinite_loop_detected_t_0064325f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d81cc4",
+      "name": "DAT_02d81cc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0310eca0",
+      "name": "DAT_0310eca0",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "int *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[0x116] < 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x12] = in_stack_00000004[0x116];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x12] = in_stack_00000004[0x116];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "while ((g_CGamePtr->letterbox_mode != 0 && (*in_stack_00000004 == 0))) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = in_stack_00000004[0x12];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004[0xd] + iVar1 * 8),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004[0xd] + 4 + iVar1 * 8),&DAT_0310eca0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004[0xd] + in_stack_00000004[0x12] * 8));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004[0xd] + in_stack_00000004[0x12] * 8));",
+      "type": "stack_param"
     }
   ]
 }

@@ -1,334 +1,334 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 402, 
-    "pseudocode_lines": 147, 
-    "cross_reference_count": 0, 
-    "global_count": 11, 
-    "total_lines": 483, 
-    "assembly_lines": 336, 
-    "suspect_count": 24, 
+    "assembly_lines": 336,
+    "complexity_score": 402,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 11,
+    "pseudocode_lines": 147,
+    "suspect_count": 24,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
+      "unaffected_reg",
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0", 
-      "addr": "004478c0"
-    }, 
-    {
-      "name": "shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10", 
-      "addr": "00447a10"
-    }, 
-    {
-      "name": "shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930", 
-      "addr": "00447930"
-    }, 
-    {
-      "name": "shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0", 
-      "addr": "004479a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SCramWorkingEntry[1]", 
-      "name": "g_CramSortedTextureEntries", 
-      "addr": "0083c1dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c20c", 
-      "addr": "0083c20c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c210", 
-      "addr": "0083c210", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c214", 
-      "addr": "0083c214", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c218", 
-      "addr": "0083c218", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c228", 
-      "addr": "0083c228", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c260", 
-      "addr": "0083c260", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c264", 
-      "addr": "0083c264", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CramTextureCount", 
-      "addr": "0084a854", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramCurrentAcceptableSize", 
-      "addr": "0084a884", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramFillGaps", 
-      "addr": "0084a898", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "SCramWorkingEntry *in_stack_ffffffe8;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_fffffff0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "SCramWorkingEntry *in_stack_fffffff0;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "SCramWorkingEntry *in_stack_fffffff4;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffff4 = g_CramSortedTextureEntries;"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar8 = in_stack_fffffff4;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(iVar2 = shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(in_stack_ffffffe8),"
-    }, 
-    {
-      "line": 38, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(iVar2 = shape_cramtex_cpp_findLeftmostOverlappingX_FUN_00447a10(in_stack_ffffffe8),"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffff4 = in_stack_fffffff4 + 1;"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffff4 = in_stack_fffffff4 + 1;"
-    }, 
-    {
-      "line": 49, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar8 = in_stack_fffffff4;"
-    }, 
-    {
-      "line": 60, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "shape_cramtex_cpp_findRightmostOverlappingX_FUN_004479a0(in_stack_ffffffe8);"
-    }, 
-    {
-      "line": 68, 
-      "match": "in_stack_fffffff0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = shape_cramtex_cpp_findHighestOverlappingY_FUN_004478c0(in_stack_fffffff0);"
-    }, 
-    {
-      "line": 69, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffff4 = (SCramWorkingEntry *)(iVar5 - pSVar3->final_top);"
-    }, 
-    {
-      "line": 70, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffe8 = (SCramWorkingEntry *)0x4476b9;"
-    }, 
-    {
-      "line": 72, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(in_stack_fffffff4);"
-    }, 
-    {
-      "line": 73, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar5 = (unaff_EBP + (iVar5 - pSVar3->final_bottom)) / 2;"
-    }, 
-    {
-      "line": 83, 
-      "match": "(SCramWorkingEntry *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "} while ((bVar6) && (pSVar8 = (SCramWorkingEntry *)((int)&pSVar8->width + 1), (int)pSVar8 < 10))"
-    }, 
-    {
-      "line": 99, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = shape_cramtex_cpp_findRightmostOverlappingX_FUN_004479a0(in_stack_ffffffe8);"
-    }, 
-    {
-      "line": 108, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffe8 = (SCramWorkingEntry *)0x447785;"
-    }, 
-    {
-      "line": 109, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(in_stack_fffffff4);"
-    }, 
-    {
-      "line": 114, 
-      "match": "(SCramWorkingEntry *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar3 = (SCramWorkingEntry *)((int)&pSVar3->width + 1);"
-    }, 
-    {
-      "line": 121, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = shape_cramtex_cpp_findHighestOverlappingY_FUN_004478c0(in_stack_ffffffe8);"
-    }, 
-    {
-      "line": 139, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = shape_cramtex_cpp_findLeftmostOverlappingX_FUN_00447a10(in_stack_ffffffe8);"
-    }
-  ], 
+    ],
+    "total_lines": 483
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00447590", 
-    "signature": "uint shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590(void)", 
+    "address": "00447590",
     "address_range": [
       [
-        "00447590", 
+        "00447590",
         "004478b1"
       ]
-    ], 
-    "name": "shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590",
+    "signature": "uint shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "004478c0",
+      "name": "shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0"
+    },
+    {
+      "addr": "00447a10",
+      "name": "shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10"
+    },
+    {
+      "addr": "00447930",
+      "name": "shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930"
+    },
+    {
+      "addr": "004479a0",
+      "name": "shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0083c1dc",
+      "name": "g_CramSortedTextureEntries",
+      "type": "SCramWorkingEntry[1]",
+      "value": null
+    },
+    {
+      "addr": "0083c20c",
+      "name": "DAT_0083c20c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c210",
+      "name": "DAT_0083c210",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c214",
+      "name": "DAT_0083c214",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c218",
+      "name": "DAT_0083c218",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c228",
+      "name": "DAT_0083c228",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c260",
+      "name": "DAT_0083c260",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c264",
+      "name": "DAT_0083c264",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0084a854",
+      "name": "g_CramTextureCount",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "0084a884",
+      "name": "g_CramCurrentAcceptableSize",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a898",
+      "name": "g_CramFillGaps",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 40, 
+    "frame_size": 40,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_ffffffe8",
+      "text": "SCramWorkingEntry *in_stack_ffffffe8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_fffffff0",
+      "text": "SCramWorkingEntry *in_stack_fffffff0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_fffffff4",
+      "text": "SCramWorkingEntry *in_stack_fffffff4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_fffffff4",
+      "text": "in_stack_fffffff4 = g_CramSortedTextureEntries;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_fffffff4",
+      "text": "pSVar8 = in_stack_fffffff4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_ffffffe8",
+      "text": "(iVar2 = shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(in_stack_ffffffe8),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_ffffffe8",
+      "text": "(iVar2 = shape_cramtex_cpp_findLeftmostOverlappingX_FUN_00447a10(in_stack_ffffffe8),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_fffffff4",
+      "text": "in_stack_fffffff4 = in_stack_fffffff4 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_fffffff4",
+      "text": "in_stack_fffffff4 = in_stack_fffffff4 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_fffffff4",
+      "text": "pSVar8 = in_stack_fffffff4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_ffffffe8",
+      "text": "shape_cramtex_cpp_findRightmostOverlappingX_FUN_004479a0(in_stack_ffffffe8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_fffffff0",
+      "text": "iVar5 = shape_cramtex_cpp_findHighestOverlappingY_FUN_004478c0(in_stack_fffffff0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_fffffff4",
+      "text": "in_stack_fffffff4 = (SCramWorkingEntry *)(iVar5 - pSVar3->final_top);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_ffffffe8",
+      "text": "in_stack_ffffffe8 = (SCramWorkingEntry *)0x4476b9;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_fffffff4",
+      "text": "iVar5 = shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(in_stack_fffffff4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 73,
+      "match": "unaff_EBP",
+      "text": "iVar5 = (unaff_EBP + (iVar5 - pSVar3->final_bottom)) / 2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(SCramWorkingEntry *)((int)",
+      "text": "} while ((bVar6) && (pSVar8 = (SCramWorkingEntry *)((int)&pSVar8->width + 1), (int)pSVar8 < 10))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 99,
+      "match": "in_stack_ffffffe8",
+      "text": "iVar5 = shape_cramtex_cpp_findRightmostOverlappingX_FUN_004479a0(in_stack_ffffffe8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 108,
+      "match": "in_stack_ffffffe8",
+      "text": "in_stack_ffffffe8 = (SCramWorkingEntry *)0x447785;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 109,
+      "match": "in_stack_fffffff4",
+      "text": "iVar5 = shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(in_stack_fffffff4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 114,
+      "match": "(SCramWorkingEntry *)((int)",
+      "text": "pSVar3 = (SCramWorkingEntry *)((int)&pSVar3->width + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 121,
+      "match": "in_stack_ffffffe8",
+      "text": "iVar5 = shape_cramtex_cpp_findHighestOverlappingY_FUN_004478c0(in_stack_ffffffe8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 139,
+      "match": "in_stack_ffffffe8",
+      "text": "iVar5 = shape_cramtex_cpp_findLeftmostOverlappingX_FUN_00447a10(in_stack_ffffffe8);",
+      "type": "stack_param"
+    }
+  ]
 }

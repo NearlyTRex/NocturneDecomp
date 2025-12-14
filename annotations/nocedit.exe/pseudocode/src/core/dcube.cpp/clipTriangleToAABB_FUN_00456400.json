@@ -1,256 +1,256 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 112, 
-    "pseudocode_lines": 112, 
-    "cross_reference_count": 1, 
-    "global_count": 25, 
-    "total_lines": 404, 
-    "assembly_lines": 292, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40", 
-      "addr": "00454c40"
-    }, 
-    {
-      "name": "core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970", 
-      "addr": "00454970"
-    }, 
-    {
-      "name": "core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070", 
-      "addr": "00455070"
-    }, 
-    {
-      "name": "core_dcube.cpp_clipPolygonAgainstMinX_FUN_00454da0", 
-      "addr": "00454da0"
-    }, 
-    {
-      "name": "core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0", 
-      "addr": "00454ad0"
-    }, 
-    {
-      "name": "core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00", 
-      "addr": "00454f00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "uint", 
-      "name": "g_CubeInputTriangleCount", 
-      "addr": "015c42a4", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[16]", 
-      "name": "g_CubeInputTriangleBuffer", 
-      "addr": "015c42a8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeInputTriangleBuffer[0].y", 
-      "addr": "015c42ac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeInputTriangleBuffer[0].z", 
-      "addr": "015c42b0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeInputTriangleBuffer[1].x", 
-      "addr": "015c42b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeInputTriangleBuffer[1].y", 
-      "addr": "015c42b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeInputTriangleBuffer[1].z", 
-      "addr": "015c42bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeInputTriangleBuffer[2].x", 
-      "addr": "015c42c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeInputTriangleBuffer[2].y", 
-      "addr": "015c42c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeInputTriangleBuffer[2].z", 
-      "addr": "015c42c8", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClipStage1Count", 
-      "addr": "015c4368", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClipStage2Count", 
-      "addr": "015c442c", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClipStage3Count", 
-      "addr": "015c44f0", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClipStage4Count", 
-      "addr": "015c45b4", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClipStage5Count", 
-      "addr": "015c4678", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClippedTriangleCount", 
-      "addr": "015c473c", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[16]", 
-      "name": "g_CubeClippedTriangleBuffer", 
-      "addr": "015c4740", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeClippedTriangleBuffer[0].y", 
-      "addr": "015c4744", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeClippedTriangleBuffer[0].z", 
-      "addr": "015c4748", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeClippedTriangleBuffer[1].x", 
-      "addr": "015c474c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeClippedTriangleBuffer[1].y", 
-      "addr": "015c4750", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeClippedTriangleBuffer[1].z", 
-      "addr": "015c4754", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeClippedTriangleBuffer[2].x", 
-      "addr": "015c4758", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeClippedTriangleBuffer[2].y", 
-      "addr": "015c475c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CubeClippedTriangleBuffer[2].z", 
-      "addr": "015c4760", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00456400", 
-    "signature": "uint core_dcube.cpp_clipTriangleToAABB_FUN_00456400(CVector3f * * triangle_vertices, CVector3f * aabb_min, CVector3f * aabb_max)", 
-    "address_range": [
-      [
-        "00456400", 
-        "004566d0"
-      ]
-    ], 
-    "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVector3f * *", 
-        "size": 4, 
-        "name": "triangle_vertices"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "aabb_min"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "aabb_max"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 292,
+    "complexity_score": 112,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 25,
+    "pseudocode_lines": 112,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 404
+  },
   "cross_references": [
     {
-      "from_addr": "00457cc3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_CDemonCube_testAABBIntersection_FUN_00457ca0", 
-      "addr": "00457ca0"
+      "addr": "00457ca0",
+      "from_addr": "00457cc3",
+      "name": "core_dcube.cpp_CDemonCube_testAABBIntersection_FUN_00457ca0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00456400",
+    "address_range": [
+      [
+        "00456400",
+        "004566d0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400",
+    "signature": "uint core_dcube.cpp_clipTriangleToAABB_FUN_00456400(CVector3f * * triangle_vertices, CVector3f * aabb_min, CVector3f * aabb_max)"
+  },
+  "function_calls": [
+    {
+      "addr": "00454c40",
+      "name": "core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40"
+    },
+    {
+      "addr": "00454970",
+      "name": "core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970"
+    },
+    {
+      "addr": "00455070",
+      "name": "core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070"
+    },
+    {
+      "addr": "00454da0",
+      "name": "core_dcube.cpp_clipPolygonAgainstMinX_FUN_00454da0"
+    },
+    {
+      "addr": "00454ad0",
+      "name": "core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0"
+    },
+    {
+      "addr": "00454f00",
+      "name": "core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "015c42a4",
+      "name": "g_CubeInputTriangleCount",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c42a8",
+      "name": "g_CubeInputTriangleBuffer",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "015c42ac",
+      "name": "g_CubeInputTriangleBuffer[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c42b0",
+      "name": "g_CubeInputTriangleBuffer[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c42b4",
+      "name": "g_CubeInputTriangleBuffer[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c42b8",
+      "name": "g_CubeInputTriangleBuffer[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c42bc",
+      "name": "g_CubeInputTriangleBuffer[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c42c0",
+      "name": "g_CubeInputTriangleBuffer[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c42c4",
+      "name": "g_CubeInputTriangleBuffer[2].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c42c8",
+      "name": "g_CubeInputTriangleBuffer[2].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4368",
+      "name": "g_CubeClipStage1Count",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c442c",
+      "name": "g_CubeClipStage2Count",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c44f0",
+      "name": "g_CubeClipStage3Count",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c45b4",
+      "name": "g_CubeClipStage4Count",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c4678",
+      "name": "g_CubeClipStage5Count",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c473c",
+      "name": "g_CubeClippedTriangleCount",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c4740",
+      "name": "g_CubeClippedTriangleBuffer",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "015c4744",
+      "name": "g_CubeClippedTriangleBuffer[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4748",
+      "name": "g_CubeClippedTriangleBuffer[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c474c",
+      "name": "g_CubeClippedTriangleBuffer[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4750",
+      "name": "g_CubeClippedTriangleBuffer[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4754",
+      "name": "g_CubeClippedTriangleBuffer[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4758",
+      "name": "g_CubeClippedTriangleBuffer[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c475c",
+      "name": "g_CubeClippedTriangleBuffer[2].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4760",
+      "name": "g_CubeClippedTriangleBuffer[2].z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f * *"
+      },
+      {
+        "is_param": true,
+        "name": "aabb_min",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "aabb_max",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -29,21 +29,21 @@ section .text
     MOV ECX,dword ptr [EDI + 0x4]       ; 0051649e
     ADD ECX,ESI                         ; 005164a1
     CMP EAX,dword ptr [ECX + 0x3f8]     ; 005164a3
-    JGE 0x00516469                      ; 005164a9 | LAB_00516469
-        ;   XREF to: 00516469 (CONDITIONAL_JUMP)
+    JGE 0x00516469                      ; 005164a9
+        ;   XREF to: 00516469 (CONDITIONAL_JUMP)  ; LAB_00516469
     IMUL ECX,dword ptr [ECX + EDX*0x1 + 0x3fc],0xf0 ; 005164ab
     MOV ESI,dword ptr [EDI + 0x48]      ; 005164b6
     CMP dword ptr [ECX + ESI*0x1 + 0x18],0x1 ; 005164b9
-    JG 0x005164c6                       ; 005164be | LAB_005164c6
-        ;   XREF to: 005164c6 (CONDITIONAL_JUMP)
+    JG 0x005164c6                       ; 005164be
+        ;   XREF to: 005164c6 (CONDITIONAL_JUMP)  ; LAB_005164c6
     INC EAX                             ; 005164c0
     ADD EDX,0x4                         ; 005164c1
-    JMP 0x0051649b                      ; 005164c4 | LAB_0051649b
-        ;   XREF to: 0051649b (UNCONDITIONAL_JUMP)
+    JMP 0x0051649b                      ; 005164c4
+        ;   XREF to: 0051649b (UNCONDITIONAL_JUMP)  ; LAB_0051649b
     INC EBX                             ; 005164c6
         ;   Label: LAB_005164c6
     INC EAX                             ; 005164c7
     ADD EDX,0x4                         ; 005164c8
-    JMP 0x0051649b                      ; 005164cb | LAB_0051649b
-        ;   XREF to: 0051649b (UNCONDITIONAL_JUMP)
+    JMP 0x0051649b                      ; 005164cb
+        ;   XREF to: 0051649b (UNCONDITIONAL_JUMP)  ; LAB_0051649b
 

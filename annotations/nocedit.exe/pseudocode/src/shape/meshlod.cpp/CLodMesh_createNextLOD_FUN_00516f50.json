@@ -1,191 +1,191 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 111, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 2, 
-    "global_count": 8, 
-    "total_lines": 98, 
-    "assembly_lines": 72, 
-    "suspect_count": 8, 
+    "assembly_lines": 72,
+    "complexity_score": 112,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 8,
+    "pseudocode_lines": 27,
+    "suspect_count": 8,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
-      "addr": "0050f1b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0", 
-      "addr": "0051a8c0"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_ctor_FUN_00515840", 
-      "addr": "00515840"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950", 
-      "addr": "00515950"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_00637675", 
-      "addr": "00637675", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_0063768a", 
-      "addr": "0063768a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_0063769f", 
-      "addr": "0063769f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_006376b4", 
-      "addr": "006376b4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CLodMesh *in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004->next_lod != (CLodMesh *)0x0) {"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar1 = shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(in_stack_00000004->next_lod);"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->next_lod = pCVar1;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00516f50", 
-    "signature": "void shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50(CLodMesh * this_ptr)", 
-    "address_range": [
-      [
-        "00516f50", 
-        "00516ff5"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 99
+  },
   "cross_references": [
     {
-      "from_addr": "00516d9d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50", 
-      "addr": "00516d50"
-    }, 
+      "addr": "00516d50",
+      "from_addr": "00516d9d",
+      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051b8ce", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0", 
-      "addr": "0051b8a0"
+      "addr": "0051b8a0",
+      "from_addr": "0051b8ce",
+      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00516f50",
+    "address_range": [
+      [
+        "00516f50",
+        "00516ff5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50",
+    "signature": "void shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50(CLodMesh * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f1b0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    },
+    {
+      "addr": "0051a8c0",
+      "name": "shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0"
+    },
+    {
+      "addr": "00515840",
+      "name": "shape_meshlod.cpp_CLodMesh_ctor_FUN_00515840"
+    },
+    {
+      "addr": "00515950",
+      "name": "shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00637675",
+      "name": "s_shape_meshlod_cpp_00637675",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063768a",
+      "name": "s_shape_meshlod_cpp_0063768a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063769f",
+      "name": "s_shape_meshlod_cpp_0063769f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006376b4",
+      "name": "s_Out_of_memory_006376b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CLodMesh *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "CLodMesh *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004->next_lod != (CLodMesh *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "pCVar1 = shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(in_stack_00000004->next_lod);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->next_lod = pCVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);",
+      "type": "stack_param"
     }
   ]
 }

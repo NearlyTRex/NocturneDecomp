@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x2db8810                   ; 004f3bf0 | CDemonActorType g_CHeroPlaceholderClassInfo
+    MOV EAX,0x2db8810                   ; 004f3bf0 | g_CHeroPlaceholderClassInfo
         ;   Label: core_hero.cpp_CHeroPlaceholder_getActorType_FUN_004f3bf0
     RET                                 ; 004f3bf5
 

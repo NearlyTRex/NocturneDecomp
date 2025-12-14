@@ -1,102 +1,102 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 79, 
-    "assembly_lines": 61, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_dsemodel_cpp_00622462", 
-      "addr": "00622462", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDSEModel_logVertex_Rich_00622478", 
-      "addr": "00622478", 
-      "value": null
-    }, 
-    {
-      "type": "int[5000]", 
-      "name": "g_VertexIdRegistry", 
-      "addr": "02c9b328", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048f660", 
-    "signature": "void shape_dsemodel.cpp_CDSEModel_logVertex_FUN_0048f660(CDSEModel * this_ptr, int vertex_id)", 
-    "address_range": [
-      [
-        "0048f660", 
-        "0048f6ed"
-      ]
-    ], 
-    "name": "shape_dsemodel.cpp_CDSEModel_logVertex_FUN_0048f660"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDSEModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_id"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 61,
+    "complexity_score": 18,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
+  },
   "cross_references": [
     {
-      "from_addr": "0048f884", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770", 
-      "addr": "0048f770"
+      "addr": "0048f770",
+      "from_addr": "0048f884",
+      "name": "shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0048f660",
+    "address_range": [
+      [
+        "0048f660",
+        "0048f6ed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_dsemodel.cpp_CDSEModel_logVertex_FUN_0048f660",
+    "signature": "void shape_dsemodel.cpp_CDSEModel_logVertex_FUN_0048f660(CDSEModel * this_ptr, int vertex_id)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622462",
+      "name": "s_shape_dsemodel_cpp_00622462",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622478",
+      "name": "s_CDSEModel_logVertex_Rich_00622478",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02c9b328",
+      "name": "g_VertexIdRegistry",
+      "type": "int[5000]",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDSEModel *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_id",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

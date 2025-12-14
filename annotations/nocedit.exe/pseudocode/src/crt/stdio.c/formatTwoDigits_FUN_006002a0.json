@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 29, 
-    "assembly_lines": 22, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006002a0", 
-    "signature": "void crt_stdio.c_formatTwoDigits_FUN_006002a0(char * buffer, int value)", 
-    "address_range": [
-      [
-        "006002a0", 
-        "006002d2"
-      ]
-    ], 
-    "name": "crt_stdio.c_formatTwoDigits_FUN_006002a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "value"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 22,
+    "complexity_score": 7,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
   "cross_references": [
     {
-      "from_addr": "006005e2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_time.c_strftime_FUN_006002d4", 
-      "addr": "006002d4"
+      "addr": "006002d4",
+      "from_addr": "006005e2",
+      "name": "crt_time.c_strftime_FUN_006002d4",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "006002a0",
+    "address_range": [
+      [
+        "006002a0",
+        "006002d2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_formatTwoDigits_FUN_006002a0",
+    "signature": "void crt_stdio.c_formatTwoDigits_FUN_006002a0(char * buffer, int value)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -37,8 +37,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004135e9
     MOV EDX,dword ptr [EBX + 0x1fcac]   ; 004135ec
     TEST EDX,EDX                        ; 004135f2
-    JNZ 0x004135fd                      ; 004135f4 | LAB_004135fd
-        ;   XREF to: 004135fd (CONDITIONAL_JUMP)
+    JNZ 0x004135fd                      ; 004135f4
+        ;   XREF to: 004135fd (CONDITIONAL_JUMP)  ; LAB_004135fd
     MOV ESP,EBP                         ; 004135f6
         ;   Label: LAB_004135f6
     POP EBP                             ; 004135f8
@@ -61,8 +61,8 @@ section .text
     PUSH EAX                            ; 0041361e
     MOV EDX,dword ptr [EBX + 0x1fcac]   ; 0041361f
     PUSH EDX                            ; 00413625
-    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 00413626 | CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 00413626
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,dword ptr [EBX + 0x1fcac]   ; 0041362b
     FLD float ptr [EDX + 0x20]          ; 00413631
     FADD float ptr [EAX]                ; 00413634
@@ -83,24 +83,24 @@ section .text
     PUSH ECX                            ; 0041365f
     MOV ESI,dword ptr [EBX + 0x1fcac]   ; 00413660
     PUSH ESI                            ; 00413666
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00413667 | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00413667
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0041366c
     TEST EAX,EAX                        ; 0041366f
-    JZ 0x004135f6                       ; 00413671 | LAB_004135f6
-        ;   XREF to: 004135f6 (CONDITIONAL_JUMP)
+    JZ 0x004135f6                       ; 00413671
+        ;   XREF to: 004135f6 (CONDITIONAL_JUMP)  ; LAB_004135f6
     PUSH EAX                            ; 00413673
     MOV EDX,dword ptr [EAX + 0x154]     ; 00413674
     CALL dword ptr [EDX + 0x120]        ; 0041367a
     ADD ESP,0x4                         ; 00413680
     CMP EAX,0x2                         ; 00413683
-    JNZ 0x004135f6                      ; 00413686 | LAB_004135f6
-        ;   XREF to: 004135f6 (CONDITIONAL_JUMP)
+    JNZ 0x004135f6                      ; 00413686
+        ;   XREF to: 004135f6 (CONDITIONAL_JUMP)  ; LAB_004135f6
     MOV EDI,dword ptr [EBX + 0x1fcac]   ; 0041368c
     PUSH EDI                            ; 00413692
     PUSH EBX                            ; 00413693
-    CALL core_baron.cpp_FUN_004135a0    ; 00413694 | undefined core_baron.cpp_FUN_004135a0()
-        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)
+    CALL core_baron.cpp_FUN_004135a0    ; 00413694
+        ;   XREF to: 004135a0 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_004135a0()
     ADD ESP,0x8                         ; 00413699
     MOV ESP,EBP                         ; 0041369c
     POP EBP                             ; 0041369e

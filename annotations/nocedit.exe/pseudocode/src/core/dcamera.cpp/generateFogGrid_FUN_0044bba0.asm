@@ -45,8 +45,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x58]      ; 0044bbae
     PUSH EDX                            ; 0044bbb2
     XOR EBP,EBP                         ; 0044bbb3
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0044bbb5 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0044bbb5
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0044bbba
     MOV ECX,0x1000                      ; 0044bbbd
     MOV EAX,dword ptr [ESP + 0x50]      ; 0044bbc2
@@ -68,23 +68,23 @@ section .text
     ADD ESI,EAX                         ; 0044bbf0
     ADD EBX,0x100                       ; 0044bbf2
         ;   Label: LAB_0044bbf2
-    CALL crt_stdlib.c_rand_FUN_005feb5c ; 0044bbf8 | int crt_stdlib.c_rand_FUN_005feb5c()
-        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_rand_FUN_005feb5c ; 0044bbf8
+        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
     MOV byte ptr [EBX + 0xffffff00],AL  ; 0044bbfd
     CMP EBX,ESI                         ; 0044bc03
-    JNZ 0x0044bbf2                      ; 0044bc05 | LAB_0044bbf2
-        ;   XREF to: 0044bbf2 (CONDITIONAL_JUMP)
+    JNZ 0x0044bbf2                      ; 0044bc05
+        ;   XREF to: 0044bbf2 (CONDITIONAL_JUMP)  ; LAB_0044bbf2
     INC EDI                             ; 0044bc07
     CMP EDI,0x10                        ; 0044bc08
-    JL 0x0044bbd8                       ; 0044bc0b | LAB_0044bbd8
-        ;   XREF to: 0044bbd8 (CONDITIONAL_JUMP)
+    JL 0x0044bbd8                       ; 0044bc0b
+        ;   XREF to: 0044bbd8 (CONDITIONAL_JUMP)  ; LAB_0044bbd8
     MOV ECX,dword ptr [ESP + 0x10]      ; 0044bc0d
     INC ECX                             ; 0044bc11
     INC EBP                             ; 0044bc12
     MOV dword ptr [ESP + 0x10],ECX      ; 0044bc13
     CMP EBP,0x10                        ; 0044bc17
-    JL 0x0044bbce                       ; 0044bc1a | LAB_0044bbce
-        ;   XREF to: 0044bbce (CONDITIONAL_JUMP)
+    JL 0x0044bbce                       ; 0044bc1a
+        ;   XREF to: 0044bbce (CONDITIONAL_JUMP)  ; LAB_0044bbce
     XOR EBX,ESI                         ; 0044bc1c
     MOV ESI,0xffffffff                  ; 0044bc1e
     MOV dword ptr [ESP + 0x38],EBX      ; 0044bc23
@@ -195,8 +195,8 @@ section .text
     MOV dword ptr [ESP + 0x4],EDX       ; 0044bd63
     MOV dword ptr [ESP],EAX             ; 0044bd67
     CMP ESI,0x10                        ; 0044bd6a
-    JL 0x0044bcb4                       ; 0044bd6d | LAB_0044bcb4
-        ;   XREF to: 0044bcb4 (CONDITIONAL_JUMP)
+    JL 0x0044bcb4                       ; 0044bd6d
+        ;   XREF to: 0044bcb4 (CONDITIONAL_JUMP)  ; LAB_0044bcb4
     MOV EBX,dword ptr [ESP + 0x30]      ; 0044bd73
     MOV ESI,dword ptr [ESP + 0x2c]      ; 0044bd77
     MOV ECX,dword ptr [ESP + 0x28]      ; 0044bd7b
@@ -207,8 +207,8 @@ section .text
     MOV dword ptr [ESP + 0x2c],ESI      ; 0044bd88
     MOV dword ptr [ESP + 0x28],ECX      ; 0044bd8c
     CMP ESI,0x10                        ; 0044bd90
-    JL 0x0044bc55                       ; 0044bd93 | LAB_0044bc55
-        ;   XREF to: 0044bc55 (CONDITIONAL_JUMP)
+    JL 0x0044bc55                       ; 0044bd93
+        ;   XREF to: 0044bc55 (CONDITIONAL_JUMP)  ; LAB_0044bc55
     MOV EAX,dword ptr [ESP + 0x38]      ; 0044bd99
     MOV EBP,dword ptr [ESP + 0x1c]      ; 0044bd9d
     INC EAX                             ; 0044bda1
@@ -216,12 +216,12 @@ section .text
     MOV dword ptr [ESP + 0x38],EAX      ; 0044bda3
     MOV dword ptr [ESP + 0x1c],EBP      ; 0044bda7
     CMP EAX,0x10                        ; 0044bdab
-    JL 0x0044bc2b                       ; 0044bdae | LAB_0044bc2b
-        ;   XREF to: 0044bc2b (CONDITIONAL_JUMP)
+    JL 0x0044bc2b                       ; 0044bdae
+        ;   XREF to: 0044bc2b (CONDITIONAL_JUMP)  ; LAB_0044bc2b
     MOV ECX,dword ptr [ESP + 0x50]      ; 0044bdb4
     PUSH ECX                            ; 0044bdb8
-    CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70 ; 0044bdb9 | void core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70(SFogGrid * fog)
-        ;   XREF to: 0044bb70 (UNCONDITIONAL_CALL)
+    CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70 ; 0044bdb9
+        ;   XREF to: 0044bb70 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70(SFogGrid * fog)
     ADD ESP,0x4                         ; 0044bdbe
     ADD ESP,0x3c                        ; 0044bdc1
     POP EBP                             ; 0044bdc4

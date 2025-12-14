@@ -1,156 +1,156 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 145, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 133, 
-    "assembly_lines": 93, 
-    "suspect_count": 10, 
+    "assembly_lines": 93,
+    "complexity_score": 146,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 41,
+    "suspect_count": 10,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180", 
-      "addr": "00556180"
-    }, 
-    {
-      "name": "shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50", 
-      "addr": "00554a50"
-    }, 
-    {
-      "name": "shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0", 
-      "addr": "00554cc0"
-    }, 
-    {
-      "name": "shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40", 
-      "addr": "00554d40"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint *in_stack_00000010;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CBitmap **in_stack_00000014;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((((CBitmap *)*in_stack_00000010)->bit_depth == '\\x18') &&"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,(CBitmap *)*in_stack_00000010), iVar1 == 0)) {"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((*in_stack_00000014)->bit_depth == '\\x18') &&"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,in_stack_00000014), iVar1 == 0)) {"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000014 = in_stack_00000014 + 1;"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000014 = in_stack_00000014 + 1;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005563d0", 
-    "signature": "int shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0(CColorQuantizer * this_ptr, int bitmap_count, CBitmap * * bitmap_array)", 
-    "address_range": [
-      [
-        "005563d0", 
-        "00556461"
-      ]
-    ], 
-    "name": "shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CColorQuantizer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bitmap_count"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CBitmap * *", 
-        "size": 4, 
-        "name": "bitmap_array"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 134
+  },
   "cross_references": [
     {
-      "from_addr": "0055647c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_CColorQuantizer_quantizeBitmap_FUN_00556470", 
-      "addr": "00556470"
+      "addr": "00556470",
+      "from_addr": "0055647c",
+      "name": "shape_quantize.cpp_CColorQuantizer_quantizeBitmap_FUN_00556470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005563d0",
+    "address_range": [
+      [
+        "005563d0",
+        "00556461"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0",
+    "signature": "int shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0(CColorQuantizer * this_ptr, int bitmap_count, CBitmap * * bitmap_array)"
+  },
+  "function_calls": [
+    {
+      "addr": "00556180",
+      "name": "shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180"
+    },
+    {
+      "addr": "00554a50",
+      "name": "shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50"
+    },
+    {
+      "addr": "00554cc0",
+      "name": "shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0"
+    },
+    {
+      "addr": "00554d40",
+      "name": "shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CColorQuantizer *"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_array",
+        "offset": 12,
+        "size": 4,
+        "type": "CBitmap * *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000010",
+      "text": "uint *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000014",
+      "text": "CBitmap **in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000010",
+      "text": "if ((((CBitmap *)*in_stack_00000010)->bit_depth == '\\x18') &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "(this_ptr,(CBitmap *)*in_stack_00000010), iVar1 == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000014",
+      "text": "if (((*in_stack_00000014)->bit_depth == '\\x18') &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000014",
+      "text": "(this_ptr,in_stack_00000014), iVar1 == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014 = in_stack_00000014 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014 = in_stack_00000014 + 1;",
+      "type": "stack_param"
     }
   ]
 }

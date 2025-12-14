@@ -1,127 +1,127 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 42, 
-    "pseudocode_lines": 42, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 145, 
-    "assembly_lines": 103, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_matrix.c_buildRotationMatrix_FUN_0050c920", 
-      "addr": "0050c920"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "g_PolygonScreenCache[19999].view_mode", 
-      "addr": "01626340", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ZoomLevel", 
-      "addr": "01626344", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeX", 
-      "addr": "02d052b8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeY", 
-      "addr": "02d052bc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeZ", 
-      "addr": "02d052c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[0][2]", 
-      "addr": "02d052f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[1][2]", 
-      "addr": "02d052fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[2][2]", 
-      "addr": "02d05308", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0045ba60", 
-    "signature": "void shape_design.c_setupViewMatrix_FUN_0045ba60(void)", 
-    "address_range": [
-      [
-        "0045ba60", 
-        "0045bbb3"
-      ]
-    ], 
-    "name": "shape_design.c_setupViewMatrix_FUN_0045ba60"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 103,
+    "complexity_score": 42,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 8,
+    "pseudocode_lines": 42,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 145
+  },
   "cross_references": [
     {
-      "from_addr": "0045c6f4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showPointEditor_FUN_0045c6c0", 
-      "addr": "0045c6c0"
+      "addr": "0045c6c0",
+      "from_addr": "0045c6f4",
+      "name": "shape_design.c_showPointEditor_FUN_0045c6c0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0045ba60",
+    "address_range": [
+      [
+        "0045ba60",
+        "0045bbb3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_setupViewMatrix_FUN_0045ba60",
+    "signature": "void shape_design.c_setupViewMatrix_FUN_0045ba60(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050c920",
+      "name": "engine_matrix.c_buildRotationMatrix_FUN_0050c920"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01626340",
+      "name": "g_PolygonScreenCache[19999].view_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626344",
+      "name": "g_ZoomLevel",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052b8",
+      "name": "g_RelativeX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052bc",
+      "name": "g_RelativeY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c0",
+      "name": "g_RelativeZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052f0",
+      "name": "g_TransformMatrix[0][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052fc",
+      "name": "g_TransformMatrix[1][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05308",
+      "name": "g_TransformMatrix[2][2]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": []
 }

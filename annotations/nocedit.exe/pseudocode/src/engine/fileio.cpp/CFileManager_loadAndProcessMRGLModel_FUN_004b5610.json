@@ -1,65 +1,65 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 30, 
-    "assembly_lines": 20, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0", 
-      "addr": "004b54e0"
-    }, 
-    {
-      "name": "engine_model.c_freeMRGLData_FUN_005280b0", 
-      "addr": "005280b0"
-    }, 
-    {
-      "name": "engine_model.c_loadModelFile_FUN_00527ec0", 
-      "addr": "00527ec0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 20,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004b5610", 
-    "signature": "void engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610(CFileManager * this_ptr, char * filename)", 
+    "address": "004b5610",
     "address_range": [
       [
-        "004b5610", 
+        "004b5610",
         "004b5638"
       ]
-    ], 
-    "name": "engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610",
+    "signature": "void engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610(CFileManager * this_ptr, char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b54e0",
+      "name": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0"
+    },
+    {
+      "addr": "005280b0",
+      "name": "engine_model.c_freeMRGLData_FUN_005280b0"
+    },
+    {
+      "addr": "00527ec0",
+      "name": "engine_model.c_loadModelFile_FUN_00527ec0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileManager *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileManager *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

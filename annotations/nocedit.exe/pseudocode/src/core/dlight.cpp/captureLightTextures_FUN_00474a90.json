@@ -1,86 +1,86 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 37, 
-    "assembly_lines": 25, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_0066fef0", 
-      "addr": "0066fef0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0066ff08", 
-      "addr": "0066ff08", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0066ff38", 
-      "addr": "0066ff38", 
-      "value": null
-    }, 
-    {
-      "type": "SMRGLTextureBasic*", 
-      "name": "g_LightTexturesEnd", 
-      "addr": "006700b8", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00474a90", 
-    "signature": "void core_dlight.cpp_captureLightTextures_FUN_00474a90(void)", 
-    "address_range": [
-      [
-        "00474a90", 
-        "00474aca"
-      ]
-    ], 
-    "name": "core_dlight.cpp_captureLightTextures_FUN_00474a90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 25,
+    "complexity_score": 12,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
   "cross_references": [
     {
-      "from_addr": "0056fb80", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056fb80", 
-      "addr": "0056fb80"
+      "addr": "0056fb80",
+      "from_addr": "0056fb80",
+      "name": "core_set.cpp_CDemonSet_FUN_0056fb80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00474a90",
+    "address_range": [
+      [
+        "00474a90",
+        "00474aca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_captureLightTextures_FUN_00474a90",
+    "signature": "void core_dlight.cpp_captureLightTextures_FUN_00474a90(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0066fef0",
+      "name": "DAT_0066fef0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066ff08",
+      "name": "DAT_0066ff08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066ff38",
+      "name": "DAT_0066ff38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006700b8",
+      "name": "g_LightTexturesEnd",
+      "type": "SMRGLTextureBasic*",
+      "value": "00000000"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

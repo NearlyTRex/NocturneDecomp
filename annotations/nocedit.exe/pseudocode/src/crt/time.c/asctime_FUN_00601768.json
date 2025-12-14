@@ -1,80 +1,80 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 18, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }, 
-    {
-      "name": "crt_time.c_asctimeFormat_FUN_00601678", 
-      "addr": "00601678"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00601768", 
-    "signature": "char * crt_time.c_asctime_FUN_00601768(tm * timeptr)", 
-    "address_range": [
-      [
-        "00601768", 
-        "0060177f"
-      ]
-    ], 
-    "name": "crt_time.c_asctime_FUN_00601768"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "tm *", 
-        "size": 4, 
-        "name": "timeptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 8,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "00507094", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
+      "addr": "00506f10",
+      "from_addr": "00507094",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b24f2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0", 
-      "addr": "005b1fd0"
-    }, 
+      "addr": "005b1fd0",
+      "from_addr": "005b24f2",
+      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005adc62", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
+      "addr": "005adba0",
+      "from_addr": "005adc62",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00601768",
+    "address_range": [
+      [
+        "00601768",
+        "0060177f"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_time.c_asctime_FUN_00601768",
+    "signature": "char * crt_time.c_asctime_FUN_00601768(tm * timeptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    },
+    {
+      "addr": "00601678",
+      "name": "crt_time.c_asctimeFormat_FUN_00601678"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "timeptr",
+        "offset": 4,
+        "size": 4,
+        "type": "tm *"
+      }
+    ]
+  },
+  "suspects": []
 }

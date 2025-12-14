@@ -19,9 +19,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004c96e0
         ;   Label: core_fire.cpp_CFireball_ctor_FUN_004c96e0
     PUSH EDX                            ; 004c96e4
-    CALL core_particle.cpp_CParticle_ctor_FUN_00545650 ; 004c96e5 | CParticle * core_particle.cpp_CParticle_ctor_FUN_00545650(CParticle * this_ptr)
-        ;   XREF to: 00545650 (UNCONDITIONAL_CALL)
+    CALL core_particle.cpp_CParticle_ctor_FUN_00545650 ; 004c96e5
+        ;   XREF to: 00545650 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_ctor_FUN_00545650(CParticle * this_ptr)
     ADD ESP,0x4                         ; 004c96ea
-    MOV dword ptr [EAX + 0x34],0x65dd74 ; 004c96ed | CParticle_vtable g_CFireballVTable
+    MOV dword ptr [EAX + 0x34],0x65dd74 ; 004c96ed | g_CFireballVTable
     RET                                 ; 004c96f4
 

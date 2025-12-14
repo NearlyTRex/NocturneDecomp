@@ -18,7 +18,7 @@
 
 section .text
 
-    CMP dword ptr [0x03f69268],0x0      ; 005ab530 | CSoundDevice * g_CSoundDevicePtr
+    CMP dword ptr [0x03f69268],0x0      ; 005ab530 | g_CSoundDevicePtr
         ;   Label: sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530
     SETNZ AL                            ; 005ab537
     AND EAX,0xff                        ; 005ab53a

@@ -1,203 +1,203 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 94, 
-    "pseudocode_lines": 59, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 189, 
-    "assembly_lines": 130, 
-    "suspect_count": 3, 
+    "assembly_lines": 130,
+    "complexity_score": 94,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 59,
+    "suspect_count": 3,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_randomChance_FUN_0040cd10", 
-      "addr": "0040cd10"
-    }, 
-    {
-      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20", 
-      "addr": "004c7b20"
-    }, 
-    {
-      "name": "core_fire.cpp_CGunFlame_FUN_004c4c00", 
-      "addr": "004c4c00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_00629f43", 
-      "addr": "00629f43", 
-      "value": "0.9700000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00629f4b", 
-      "addr": "00629f4b", 
-      "value": "0.200000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00629f53", 
-      "addr": "00629f53", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00629f5b", 
-      "addr": "00629f5b", 
-      "value": "-20"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065dcc8", 
-      "addr": "0065dcc8", 
-      "value": null
-    }, 
-    {
-      "type": "CFireEffect*", 
-      "name": "g_CFireEffectPtr", 
-      "addr": "0067a3d0", 
-      "value": "02d12db0"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CFireEffect", 
-      "name": "g_CFireEffectInstance", 
-      "addr": "02d12db0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004c4f68", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "float unaff_ESI;"
-    }, 
-    {
-      "line": 43, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(unaff_ESI), iVar6 != 0)) {"
-    }, 
-    {
-      "line": 47, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI * _DAT_0065dcc8 + *(float *)(this_ptr->field0_0x0 + 0x1c);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c4f60", 
-    "signature": "void core_fire.cpp_CGunFlame_process_FUN_004c4f60(CGunFlame * this_ptr)", 
-    "address_range": [
-      [
-        "004c4f60", 
-        "004c50a9"
-      ]
-    ], 
-    "name": "core_fire.cpp_CGunFlame_process_FUN_004c4f60"
-  }, 
-  "stack_frame": {
-    "local_size": 56, 
-    "variables": [
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGunFlame *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 60, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 189
+  },
   "cross_references": [
     {
-      "from_addr": "004c70b8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0", 
-      "addr": "004c6ec0"
+      "addr": "004c6ec0",
+      "from_addr": "004c70b8",
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c4f60",
+    "address_range": [
+      [
+        "004c4f60",
+        "004c50a9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CGunFlame_process_FUN_004c4f60",
+    "signature": "void core_fire.cpp_CGunFlame_process_FUN_004c4f60(CGunFlame * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd10",
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10"
+    },
+    {
+      "addr": "004c7b20",
+      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20"
+    },
+    {
+      "addr": "004c4c00",
+      "name": "core_fire.cpp_CGunFlame_FUN_004c4c00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629f43",
+      "name": "FLOAT_00629f43",
+      "type": "float",
+      "value": "0.9700000"
+    },
+    {
+      "addr": "00629f4b",
+      "name": "DOUBLE_00629f4b",
+      "type": "double",
+      "value": "0.200000000000000"
+    },
+    {
+      "addr": "00629f53",
+      "name": "DOUBLE_00629f53",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00629f5b",
+      "name": "FLOAT_00629f5b",
+      "type": "float",
+      "value": "-20"
+    },
+    {
+      "addr": "0065dcc8",
+      "name": "DAT_0065dcc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGunFlame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004c4f68",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "text": "float unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_ESI",
+      "text": "(iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(unaff_ESI), iVar6 != 0)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI * _DAT_0065dcc8 + *(float *)(this_ptr->field0_0x0 + 0x1c);",
+      "type": "unaffected_reg"
     }
   ]
 }

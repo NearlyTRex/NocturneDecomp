@@ -1,109 +1,109 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 95, 
-    "pseudocode_lines": 50, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 84, 
-    "assembly_lines": 34, 
-    "suspect_count": 4, 
+    "assembly_lines": 34,
+    "complexity_score": 95,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 50,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }, 
-    {
-      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0", 
-      "addr": "004c9aa0"
-    }, 
-    {
-      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
-      "addr": "005ede70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_crossbow_kfm_00619b79", 
-      "addr": "00619b79", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_0065c394", 
-      "addr": "0065c394", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "pCVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-2].base_actor.field22_0x120 = (int)&PTR_core_weapon_cpp_ActorModelSomething_FUN_0065c394;"
-    }, 
-    {
-      "line": 13, 
-      "match": "pCVar3[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "((CKeyFramedModelInstance *)&pCVar3[-2].base_actor.field23_0x124,\"crossbow.kfm\""
-    }, 
-    {
-      "line": 15, 
-      "match": "pCVar3[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar3[-1].base_actor.location.position.z = 0.0;"
-    }, 
-    {
-      "line": 52, 
-      "match": "pCVar3[-3].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CCrossbow *)(pCVar3[-3].field7_0x1b8 + 0xb8);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00448c70", 
-    "signature": "CCrossbow * core_crossbow.cpp_FUN_00448c70(CCrossbow * this_ptr)", 
-    "address_range": [
-      [
-        "00448c70", 
-        "00448d21"
-      ]
-    ], 
-    "name": "core_crossbow.cpp_FUN_00448c70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCrossbow *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 84
+  },
   "cross_references": [
     {
-      "from_addr": "00448c4a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_crossbow.cpp_FUN_00448c30", 
-      "addr": "00448c30"
+      "addr": "00448c30",
+      "from_addr": "00448c4a",
+      "name": "core_crossbow.cpp_FUN_00448c30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00448c70",
+    "address_range": [
+      [
+        "00448c70",
+        "00448d21"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_crossbow.cpp_FUN_00448c70",
+    "signature": "CCrossbow * core_crossbow.cpp_FUN_00448c70(CCrossbow * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "004c9aa0",
+      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0"
+    },
+    {
+      "addr": "005ede70",
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00619b79",
+      "name": "s_crossbow_kfm_00619b79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065c394",
+      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_0065c394",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrossbow *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar3[-2].",
+      "text": "pCVar3[-2].base_actor.field22_0x120 = (int)&PTR_core_weapon_cpp_ActorModelSomething_FUN_0065c394;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "pCVar3[-2].",
+      "text": "((CKeyFramedModelInstance *)&pCVar3[-2].base_actor.field23_0x124,\"crossbow.kfm\"",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "pCVar3[-1].",
+      "text": "pCVar3[-1].base_actor.location.position.z = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 52,
+      "match": "pCVar3[-3].",
+      "text": "return (CCrossbow *)(pCVar3[-3].field7_0x1b8 + 0xb8);",
+      "type": "negative_offset"
     }
   ]
 }

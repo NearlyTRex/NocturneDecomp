@@ -20,8 +20,8 @@ section .text
         ;   Label: cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0054a890
     MOV EBX,dword ptr [ESP + 0x8]       ; 0054a891
     PUSH EBX                            ; 0054a895
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0 ; 0054a896 | void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0(CPackedBitmap * this_ptr)
-        ;   XREF to: 0054a8e0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0 ; 0054a896
+        ;   XREF to: 0054a8e0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 0054a89b
     MOV EAX,EBX                         ; 0054a89e
     POP EBX                             ; 0054a8a0

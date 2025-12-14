@@ -1,208 +1,208 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 67, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 5, 
-    "global_count": 10, 
-    "total_lines": 126, 
-    "assembly_lines": 89, 
-    "suspect_count": 2, 
+    "assembly_lines": 89,
+    "complexity_score": 67,
+    "cross_reference_count": 5,
+    "function_call_count": 6,
+    "global_count": 10,
+    "pseudocode_lines": 37,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_mirror.cpp_setupMirrorReflection_FUN_005214c0", 
-      "addr": "005214c0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870", 
-      "addr": "0048c870"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10", 
-      "addr": "0048ce10"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780", 
-      "addr": "0048c780"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800", 
-      "addr": "0048c800"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0", 
-      "addr": "0048cdf0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonCamera*", 
-      "name": "g_CurrentSceneCamera", 
-      "addr": "00823a74", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_SavedCameraOrigin", 
-      "addr": "033469d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SavedCameraOrigin.y", 
-      "addr": "033469d4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SavedCameraOrigin.z", 
-      "addr": "033469d8", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_SavedCameraRotation", 
-      "addr": "033469dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SavedCameraRotation.y", 
-      "addr": "033469e0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SavedCameraRotation.z", 
-      "addr": "033469e4", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "g_SavedProjectionFactor", 
-      "addr": "033469e8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005709e0", 
-    "signature": "void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet * this_ptr, int mirror_index, int enable_flag)", 
-    "address_range": [
-      [
-        "005709e0", 
-        "00570aea"
-      ]
-    ], 
-    "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "mirror_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "enable_flag"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 126
+  },
   "cross_references": [
     {
-      "from_addr": "0056c007", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80", 
-      "addr": "0056be80"
-    }, 
+      "addr": "0056be80",
+      "from_addr": "0056c007",
+      "name": "core_set.cpp_CDemonSet_FUN_0056be80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056c365", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
-    }, 
+      "addr": "0056c1a0",
+      "from_addr": "0056c365",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056ce92", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056cd60", 
-      "addr": "0056cd60"
-    }, 
+      "addr": "0056cd60",
+      "from_addr": "0056ce92",
+      "name": "core_set.cpp_CDemonSet_FUN_0056cd60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056d01e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056cf00", 
-      "addr": "0056cf00"
-    }, 
+      "addr": "0056cf00",
+      "from_addr": "0056d01e",
+      "name": "core_set.cpp_CDemonSet_FUN_0056cf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056a42d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190", 
-      "addr": "0056a190"
+      "addr": "0056a190",
+      "from_addr": "0056a42d",
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005709e0",
+    "address_range": [
+      [
+        "005709e0",
+        "00570aea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0",
+    "signature": "void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet * this_ptr, int mirror_index, int enable_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "005214c0",
+      "name": "core_mirror.cpp_setupMirrorReflection_FUN_005214c0"
+    },
+    {
+      "addr": "0048c870",
+      "name": "engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870"
+    },
+    {
+      "addr": "0048ce10",
+      "name": "engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10"
+    },
+    {
+      "addr": "0048c780",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780"
+    },
+    {
+      "addr": "0048c800",
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800"
+    },
+    {
+      "addr": "0048cdf0",
+      "name": "engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00823a74",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "033469d0",
+      "name": "g_SavedCameraOrigin",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "033469d4",
+      "name": "g_SavedCameraOrigin.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "033469d8",
+      "name": "g_SavedCameraOrigin.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "033469dc",
+      "name": "g_SavedCameraRotation",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "033469e0",
+      "name": "g_SavedCameraRotation.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "033469e4",
+      "name": "g_SavedCameraRotation.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "033469e8",
+      "name": "g_SavedProjectionFactor",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "mirror_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "enable_flag",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

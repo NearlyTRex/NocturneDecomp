@@ -1,148 +1,148 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 80, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 83, 
-    "assembly_lines": 68, 
-    "suspect_count": 6, 
+    "assembly_lines": 68,
+    "complexity_score": 80,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 15,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_gore.cpp_FUN_004edbb0", 
-      "addr": "004edbb0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062439a", 
-      "addr": "0062439a", 
-      "value": "1.20000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_006243a2", 
-      "addr": "006243a2", 
-      "value": "0.25"
-    }, 
-    {
-      "type": "CGore*", 
-      "name": "g_CGorePtr", 
-      "addr": "0067b9a0", 
-      "value": "02d83364"
-    }, 
-    {
-      "type": "CGore", 
-      "name": "g_CGoreInstance", 
-      "addr": "02d83364", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004a9939", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004 + 0xbe3c) != 0) {"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x118))();"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0.0 < (double)*(float *)(in_stack_00000010 + 4)) {"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double)*(float *)(in_stack_00000010 + 4) * 1.2 * 0.25);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004a9930", 
-    "signature": "undefined core_enemy.cpp_FUN_004a9930()", 
-    "address_range": [
-      [
-        "004a9930", 
-        "004a99c7"
-      ]
-    ], 
-    "name": "core_enemy.cpp_FUN_004a9930"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_20"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 83
+  },
   "cross_references": [
     {
-      "from_addr": "0041c803", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_FUN_0041bf90", 
-      "addr": "0041bf90"
+      "addr": "0041bf90",
+      "from_addr": "0041c803",
+      "name": "core_boneguy.cpp_FUN_0041bf90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9930",
+    "address_range": [
+      [
+        "004a9930",
+        "004a99c7"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_enemy.cpp_FUN_004a9930",
+    "signature": "undefined core_enemy.cpp_FUN_004a9930()"
+  },
+  "function_calls": [
+    {
+      "addr": "004edbb0",
+      "name": "core_gore.cpp_FUN_004edbb0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062439a",
+      "name": "DOUBLE_0062439a",
+      "type": "double",
+      "value": "1.20000000000000"
+    },
+    {
+      "addr": "006243a2",
+      "name": "DOUBLE_006243a2",
+      "type": "double",
+      "value": "0.25"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a9939",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0xbe3c) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x118))();",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "if (0.0 < (double)*(float *)(in_stack_00000010 + 4)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "((double)*(float *)(in_stack_00000010 + 4) * 1.2 * 0.25);",
+      "type": "stack_param"
     }
   ]
 }

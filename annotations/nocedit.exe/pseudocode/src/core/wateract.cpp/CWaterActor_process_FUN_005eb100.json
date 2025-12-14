@@ -1,179 +1,179 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 143, 
-    "pseudocode_lines": 63, 
-    "cross_reference_count": 0, 
-    "global_count": 10, 
-    "total_lines": 177, 
-    "assembly_lines": 114, 
-    "suspect_count": 7, 
+    "assembly_lines": 114,
+    "complexity_score": 143,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 10,
+    "pseudocode_lines": 63,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0", 
-      "addr": "004adca0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_1_005eb0f0", 
-      "addr": "005eb0f0", 
-      "value": "005eb1ce"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_005eb0f8", 
-      "addr": "005eb0f8", 
-      "value": "005eb203"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_wateract_cpp_006572b7", 
-      "addr": "006572b7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CWaterActor_process_Bad__006572cc", 
-      "addr": "006572cc", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_006572ef", 
-      "addr": "006572ef", 
-      "value": "65536"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_006572f7", 
-      "addr": "006572f7", 
-      "value": "8"
-    }, 
-    {
-      "type": "CEventList*", 
-      "name": "g_CEventListPtr", 
-      "addr": "006793d0", 
-      "value": "02d05310"
-    }, 
-    {
-      "type": "CEventList", 
-      "name": "g_CEventListInstance", 
-      "addr": "02d05310", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000008;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_0000000c;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double)(in_stack_00000008 * (float)65536 * (float)8));"
-    }, 
-    {
-      "line": 16, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar2 = extraout_EDX + (int)ROUND(dVar4);"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = in_stack_0000000c / this_ptr->time_to_move + this_ptr->param;"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = this_ptr->param - in_stack_0000000c / this_ptr->time_to_move_down;"
-    }
-  ], 
+    ],
+    "total_lines": 177
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005eb100", 
-    "signature": "void core_wateract.cpp_CWaterActor_process_FUN_005eb100(CWaterActor * this_ptr)", 
+    "address": "005eb100",
     "address_range": [
       [
-        "005eb100", 
+        "005eb100",
         "005eb276"
       ]
-    ], 
-    "name": "core_wateract.cpp_CWaterActor_process_FUN_005eb100"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_wateract.cpp_CWaterActor_process_FUN_005eb100",
+    "signature": "void core_wateract.cpp_CWaterActor_process_FUN_005eb100(CWaterActor * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004adca0",
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eb0f0",
+      "name": "PTR_caseD_1_005eb0f0",
+      "type": "void*",
+      "value": "005eb1ce"
+    },
+    {
+      "addr": "005eb0f8",
+      "name": "PTR_caseD_3_005eb0f8",
+      "type": "void*",
+      "value": "005eb203"
+    },
+    {
+      "addr": "006572b7",
+      "name": "s_core_wateract_cpp_006572b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006572cc",
+      "name": "s_CWaterActor_process_Bad__006572cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006572ef",
+      "name": "DOUBLE_006572ef",
+      "type": "double",
+      "value": "65536"
+    },
+    {
+      "addr": "006572f7",
+      "name": "DOUBLE_006572f7",
+      "type": "double",
+      "value": "8"
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 20, 
+    "frame_size": 24,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWaterActor *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWaterActor *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "text": "float in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "((double)(in_stack_00000008 * (float)65536 * (float)8));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EDX",
+      "text": "iVar2 = extraout_EDX + (int)ROUND(dVar4);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_0000000c",
+      "text": "fVar1 = in_stack_0000000c / this_ptr->time_to_move + this_ptr->param;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_0000000c",
+      "text": "fVar1 = this_ptr->param - in_stack_0000000c / this_ptr->time_to_move_down;",
+      "type": "stack_param"
+    }
+  ]
 }

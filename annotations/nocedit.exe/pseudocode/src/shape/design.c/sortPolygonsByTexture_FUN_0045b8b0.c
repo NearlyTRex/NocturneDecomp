@@ -20,7 +20,8 @@ void __cdecl shape_design_c_sortPolygonsByTexture_FUN_0045b8b0(void)
   int local_14;
   
   bVar5 = 0;
-  for (local_18 = g_PolygonCount + -1; -1 < local_18; local_18 = local_18 + -1) {
+  local_18 = g_PolygonCount;
+  while (local_18 = local_18 + -1, -1 < local_18) {
     for (local_14 = 0; local_14 < local_18; local_14 = local_14 + 1) {
       iVar1 = shape_design_c_polygonTextureNameComparator_FUN_0045b850
                         (g_ModelPolygonData + local_14,g_ModelPolygonData + local_14 + 1);

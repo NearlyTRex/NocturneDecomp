@@ -13,6 +13,7 @@ engine_model_c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended *mrgl_data,int 
   uint uVar1;
   int iVar2;
   
+joined_r0x00527e4d:
   if (data_size < 1) {
     return;
   }
@@ -86,12 +87,7 @@ engine_model_c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended *mrgl_data,int 
     case 0x20:
     case 0x26:
     case 0x40:
-      data_size = data_size - uVar1;
-      mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);
-      if (data_size < 1) {
-        return;
-      }
-      break;
+      goto switchD_00527e66_caseD_40;
     default:
       g_CurrentFilename = "..\\engine\\model.c";
       g_CurrentLineNumber = 0xce;
@@ -103,4 +99,8 @@ engine_model_c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended *mrgl_data,int 
       }
     }
   } while( true );
+switchD_00527e66_caseD_40:
+  data_size = data_size - uVar1;
+  mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);
+  goto joined_r0x00527e4d;
 }

@@ -34,8 +34,8 @@ section .text
     MOV ESI,dword ptr [EBP]             ; 0051a8d4
     PUSH ESI                            ; 0051a8d7
     PUSH EBX                            ; 0051a8d8
-    CALL shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0 ; 0051a8d9 | void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int submesh_count)
-        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0 ; 0051a8d9
+        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh * this_ptr, int vertex_count, int tri_count, int submesh_count)
     IMUL ECX,dword ptr [EBX],0x4c4      ; 0051a8de
     ADD ESP,0x10                        ; 0051a8e4
     MOV ESI,dword ptr [EBP + 0x4]       ; 0051a8e7

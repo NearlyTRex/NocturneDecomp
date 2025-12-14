@@ -32,8 +32,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x2c]      ; 0050972a
     LEA EAX,[ESI + 0x158]               ; 0050972e
     PUSH EAX                            ; 00509734
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 00509735 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 00509735
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     LEA EBX,[EAX + 0x5678]              ; 0050973a
     ADD ESP,0x4                         ; 00509740
     MOV EAX,dword ptr [EBX]             ; 00509743
@@ -58,12 +58,12 @@ section .text
     ADD ESI,0x4b0                       ; 0050977e
     CMP dword ptr [EBX],0x0             ; 00509784
         ;   Label: LAB_00509784
-    JNZ 0x00509797                      ; 00509787 | LAB_00509797
-        ;   XREF to: 00509797 (CONDITIONAL_JUMP)
+    JNZ 0x00509797                      ; 00509787
+        ;   XREF to: 00509797 (CONDITIONAL_JUMP)  ; LAB_00509797
     ADD EBX,0x64                        ; 00509789
     CMP EBX,ESI                         ; 0050978c
-    JNZ 0x00509784                      ; 0050978e | LAB_00509784
-        ;   XREF to: 00509784 (CONDITIONAL_JUMP)
+    JNZ 0x00509784                      ; 0050978e
+        ;   XREF to: 00509784 (CONDITIONAL_JUMP)  ; LAB_00509784
     ADD ESP,0x18                        ; 00509790
     POP EDI                             ; 00509793
     POP ESI                             ; 00509794
@@ -77,15 +77,15 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0050979f
     PUSH EAX                            ; 005097a3
     PUSH EDI                            ; 005097a4
-    MOV ECX,dword ptr [0x006810c8]      ; 005097a5 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
-    PUSH ECX                            ; 005097ab | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 ; 005097ac | int core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet * this_ptr, CBoundingBox3D * bounding_box, CMatrix3x3f * orientation_matrix, SIntersectXZCylinder * cylinder1, ...)
-        ;   XREF to: 00573140 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x006810c8]      ; 005097a5 | g_CDemonSetInstance | g_CDemonSetPtr
+    PUSH ECX                            ; 005097ab | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 ; 005097ac
+        ;   XREF to: 00573140 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet * this_ptr, CBoundingBox3D * bounding_box, CMatrix3x3f * orientation_matrix, SIntersectXZCylinder * cylinder1, ...)
     ADD ESP,0x14                        ; 005097b1
     ADD EBX,0x64                        ; 005097b4
     CMP EBX,ESI                         ; 005097b7
-    JNZ 0x00509784                      ; 005097b9 | LAB_00509784
-        ;   XREF to: 00509784 (CONDITIONAL_JUMP)
+    JNZ 0x00509784                      ; 005097b9
+        ;   XREF to: 00509784 (CONDITIONAL_JUMP)  ; LAB_00509784
     ADD ESP,0x18                        ; 005097bb
     POP EDI                             ; 005097be
     POP ESI                             ; 005097bf

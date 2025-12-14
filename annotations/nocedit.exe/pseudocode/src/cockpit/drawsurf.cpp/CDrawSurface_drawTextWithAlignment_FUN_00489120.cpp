@@ -34,7 +34,7 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120
     if ((uint)alignment_mode < 8) {
                     /* WARNING: Could not recover jumptable at 0x004893e0. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      (*(code *)(&switchD_004893e0::switchdataD_004890f4)[alignment_mode])();
+      (*(&switchD_004893e0::switchdataD_004890f4)[alignment_mode])();
       return;
     }
     engine_2d_c_setTextColor_FUN_00402840(color);
@@ -46,7 +46,7 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120
     if ((uint)alignment_mode < 8) {
                     /* WARNING: Could not recover jumptable at 0x004891d7. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      (*(code *)(&switchD_004891d7::switchdataD_004890d4)[alignment_mode])();
+      (*(&switchD_004891d7::switchdataD_004890d4)[alignment_mode])();
       return;
     }
     engine_font_cpp_setDefaultTextColor_FUN_004ce230(iVar5);

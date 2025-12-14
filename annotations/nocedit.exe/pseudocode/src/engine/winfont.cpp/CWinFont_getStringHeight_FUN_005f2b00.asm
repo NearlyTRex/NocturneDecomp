@@ -29,12 +29,12 @@ section .text
     PUSH -0x1                           ; 005f2b0d
     PUSH -0x1                           ; 005f2b0f
     PUSH EBX                            ; 005f2b11
-    CALL engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860 ; 005f2b12 | int engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860(CWinFont * this_ptr, int width, int height)
-        ;   XREF to: 005f2860 (UNCONDITIONAL_CALL)
+    CALL engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860 ; 005f2b12
+        ;   XREF to: 005f2860 (UNCONDITIONAL_CALL)  ; int engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860(CWinFont * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 005f2b17
     TEST EAX,EAX                        ; 005f2b1a
-    JNZ 0x005f2b24                      ; 005f2b1c | LAB_005f2b24
-        ;   XREF to: 005f2b24 (CONDITIONAL_JUMP)
+    JNZ 0x005f2b24                      ; 005f2b1c
+        ;   XREF to: 005f2b24 (CONDITIONAL_JUMP)  ; LAB_005f2b24
     ADD ESP,0x8                         ; 005f2b1e
     POP ESI                             ; 005f2b21
     POP EBX                             ; 005f2b22
@@ -54,10 +54,10 @@ section .text
     PUSH ESI                            ; 005f2b37
     MOV EDX,dword ptr [EBX + 0x4]       ; 005f2b38
     PUSH EDX                            ; 005f2b3b
-    CALL dword ptr CS:[0x6113e4]        ; 005f2b3c | GetTextExtentPoint32A * GetTextExtentPoint32A
+    CALL dword ptr CS:[0x6113e4]        ; 005f2b3c | GetTextExtentPoint32A
     TEST EAX,EAX                        ; 005f2b43
-    JNZ 0x005f2b4b                      ; 005f2b45 | LAB_005f2b4b
-        ;   XREF to: 005f2b4b (CONDITIONAL_JUMP)
+    JNZ 0x005f2b4b                      ; 005f2b45
+        ;   XREF to: 005f2b4b (CONDITIONAL_JUMP)  ; LAB_005f2b4b
     MOV dword ptr [ESP + 0x8],EAX       ; 005f2b47
     MOV EAX,dword ptr [ESP + 0x8]       ; 005f2b4b
         ;   Label: LAB_005f2b4b

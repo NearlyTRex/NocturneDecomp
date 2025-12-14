@@ -15,8 +15,8 @@ section .text
         ;   Label: shape_superopt.cpp_CObj_getVertex_FUN_005d3320
     MOV EDX,dword ptr [ESP + 0x8]       ; 005d3324
     CMP EDX,dword ptr [ECX]             ; 005d3328
-    JBE 0x005d332f                      ; 005d332a | LAB_005d332f
-        ;   XREF to: 005d332f (CONDITIONAL_JUMP)
+    JBE 0x005d332f                      ; 005d332a
+        ;   XREF to: 005d332f (CONDITIONAL_JUMP)  ; LAB_005d332f
     XOR EAX,EAX                         ; 005d332c
         ;   Label: LAB_005d332c
     RET                                 ; 005d332e

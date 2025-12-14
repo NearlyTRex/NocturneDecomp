@@ -39,6 +39,6 @@ section .text
     MOV dword ptr [EAX + 0x88c],0x0     ; 00522cf8
     XOR DL,DL                           ; 00522d02
     MOV dword ptr [EAX + 0x8],0xffffffff ; 00522d04
-    MOV byte ptr [0x02f35f10],DL        ; 00522d0b | undefined1 DAT_02f35f10
+    MOV byte ptr [0x02f35f10],DL        ; 00522d0b | DAT_02f35f10
     RET                                 ; 00522d11
 

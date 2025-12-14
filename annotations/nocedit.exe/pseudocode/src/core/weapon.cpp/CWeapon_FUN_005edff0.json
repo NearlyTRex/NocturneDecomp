@@ -1,63 +1,63 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 14, 
-    "assembly_lines": 6, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0", 
-      "addr": "00408bb0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005edff0", 
-    "signature": "void core_weapon.cpp_CWeapon_FUN_005edff0(CWeapon * this_ptr)", 
-    "address_range": [
-      [
-        "005edff0", 
-        "005edffa"
-      ]
-    ], 
-    "name": "core_weapon.cpp_CWeapon_FUN_005edff0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWeapon *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 6,
+    "complexity_score": 8,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
   "cross_references": [
     {
-      "from_addr": "00413da5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_CBaronWeapon_FUN_00413da0", 
-      "addr": "00413da0"
-    }, 
+      "addr": "00413da0",
+      "from_addr": "00413da5",
+      "name": "core_baron.cpp_CBaronWeapon_FUN_00413da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e225b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_CTurret_FUN_005e2240", 
-      "addr": "005e2240"
+      "addr": "005e2240",
+      "from_addr": "005e225b",
+      "name": "core_turret.cpp_CTurret_FUN_005e2240",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005edff0",
+    "address_range": [
+      [
+        "005edff0",
+        "005edffa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_FUN_005edff0",
+    "signature": "void core_weapon.cpp_CWeapon_FUN_005edff0(CWeapon * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408bb0",
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": []
 }

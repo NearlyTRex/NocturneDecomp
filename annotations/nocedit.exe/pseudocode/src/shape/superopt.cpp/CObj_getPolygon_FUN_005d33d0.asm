@@ -15,8 +15,8 @@ section .text
         ;   Label: shape_superopt.cpp_CObj_getPolygon_FUN_005d33d0
     MOV EDX,dword ptr [ESP + 0x8]       ; 005d33d4
     CMP EDX,dword ptr [ECX + 0x8]       ; 005d33d8
-    JBE 0x005d33e0                      ; 005d33db | LAB_005d33e0
-        ;   XREF to: 005d33e0 (CONDITIONAL_JUMP)
+    JBE 0x005d33e0                      ; 005d33db
+        ;   XREF to: 005d33e0 (CONDITIONAL_JUMP)  ; LAB_005d33e0
     XOR EAX,EAX                         ; 005d33dd
         ;   Label: LAB_005d33dd
     RET                                 ; 005d33df

@@ -1,88 +1,88 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 81, 
-    "assembly_lines": 61, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0", 
-      "addr": "005542b0"
-    }, 
-    {
-      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
-      "addr": "00403260"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
-      "addr": "005f2e90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Procedural_texture_menu_00640a38", 
-      "addr": "00640a38", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_1_Water_00640a50", 
-      "addr": "00640a50", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Well_what_s_it_gonna_be_00640a59", 
-      "addr": "00640a59", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00554880", 
-    "signature": "undefined core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880()", 
-    "address_range": [
-      [
-        "00554880", 
-        "005548f9"
-      ]
-    ], 
-    "name": "core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 61,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 3,
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 81
+  },
   "cross_references": [
     {
-      "from_addr": "00507a26", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
-      "addr": "005073a0"
+      "addr": "005073a0",
+      "from_addr": "00507a26",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00554880",
+    "address_range": [
+      [
+        "00554880",
+        "005548f9"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880",
+    "signature": "undefined core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880()"
+  },
+  "function_calls": [
+    {
+      "addr": "005542b0",
+      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0"
+    },
+    {
+      "addr": "00403260",
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    },
+    {
+      "addr": "005f2e90",
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640a38",
+      "name": "s_Procedural_texture_menu_00640a38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640a50",
+      "name": "s_s_1_Water_00640a50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640a59",
+      "name": "s_Well_what_s_it_gonna_be_00640a59",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

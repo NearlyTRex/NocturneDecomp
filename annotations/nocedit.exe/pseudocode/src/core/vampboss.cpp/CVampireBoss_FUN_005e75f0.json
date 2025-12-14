@@ -1,103 +1,103 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 99, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 67, 
-    "assembly_lines": 48, 
-    "suspect_count": 7, 
+    "assembly_lines": 48,
+    "complexity_score": 99,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 19,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042bc20", 
-      "addr": "0042bc20"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "SCollisionInfo *unaff_ESI;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*in_stack_00000008 != 2) {"
-    }, 
-    {
-      "line": 11, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((CDemonActor *)this_ptr,unaff_ESI);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((*in_stack_00000008 == 1) || (*in_stack_00000008 == 3)) && (this_ptr->form == 2)) {"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((*in_stack_00000008 == 1) || (*in_stack_00000008 == 3)) && (this_ptr->form == 2)) {"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[8] = (int)(this_ptr->field1_0xbeb4 + 8);"
-    }
-  ], 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 67
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005e75f0", 
-    "signature": "int core_vampboss.cpp_CVampireBoss_FUN_005e75f0(CVampireBoss * this_ptr)", 
+    "address": "005e75f0",
     "address_range": [
       [
-        "005e75f0", 
+        "005e75f0",
         "005e764b"
       ]
-    ], 
-    "name": "core_vampboss.cpp_CVampireBoss_FUN_005e75f0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_vampboss.cpp_CVampireBoss_FUN_005e75f0",
+    "signature": "int core_vampboss.cpp_CVampireBoss_FUN_005e75f0(CVampireBoss * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042bc20",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bc20"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVampireBoss *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_ESI",
+      "text": "SCollisionInfo *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "if (*in_stack_00000008 != 2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "text": "((CDemonActor *)this_ptr,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "if (((*in_stack_00000008 == 1) || (*in_stack_00000008 == 3)) && (this_ptr->form == 2)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "if (((*in_stack_00000008 == 1) || (*in_stack_00000008 == 3)) && (this_ptr->form == 2)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[8] = (int)(this_ptr->field1_0xbeb4 + 8);",
+      "type": "stack_param"
+    }
+  ]
 }

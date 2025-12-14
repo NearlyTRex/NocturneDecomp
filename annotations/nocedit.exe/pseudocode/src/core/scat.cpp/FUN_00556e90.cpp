@@ -11,8 +11,7 @@ void core_scat_cpp_FUN_00556e90(void)
 {
   CScat *this_ptr;
   
-  this_ptr = (CScat *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
-                                (0x1fc00,"..\\core\\scat.cpp",0x87);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fc00,"..\\core\\scat.cpp",0x87);
   if (this_ptr == (CScat *)0x0) {
     return;
   }

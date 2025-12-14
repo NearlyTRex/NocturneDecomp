@@ -25,9 +25,9 @@ section .text
     MOV EBX,dword ptr [ESP + 0x34]      ; 005e0ba4
     MOV EAX,dword ptr [EBX + 0x174]     ; 005e0ba8
     CMP EAX,0x9                         ; 005e0bae
-    JA 0x005e0c25                       ; 005e0bb1 | caseD_8
-        ;   XREF to: 005e0c25 (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x5e0b78]  ; 005e0bb3 | void * switchdataD_005e0b78
+    JA 0x005e0c25                       ; 005e0bb1
+        ;   XREF to: 005e0c25 (CONDITIONAL_JUMP)  ; caseD_8
+    JMP dword ptr [EAX*0x4 + 0x5e0b78]  ; 005e0bb3 | caseD_0 | caseD_8 | switchdataD_005e0b78
         ;   Label: switchD
     MOV EDX,ESP                         ; 005e0bba
         ;   Label: caseD_1
@@ -54,11 +54,11 @@ section .text
     FMUL float ptr [ESP + 0x20]         ; 005e0bf7
     FADDP                               ; 005e0bfb
     FSQRT                               ; 005e0bfd
-    FADD double ptr [0x006557cc]        ; 005e0bff | double DOUBLE_006557cc
+    FADD double ptr [0x006557cc]        ; 005e0bff | DOUBLE_006557cc
     SUB ESP,0x8                         ; 005e0c05
     FSTP double ptr [ESP]               ; 005e0c08
-    CALL crt_math.c_ceil_FUN_006001b2   ; 005e0c0b | double crt_math.c_ceil_FUN_006001b2(double value)
-        ;   XREF to: 006001b2 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_ceil_FUN_006001b2   ; 005e0c0b
+        ;   XREF to: 006001b2 (UNCONDITIONAL_CALL)  ; double crt_math.c_ceil_FUN_006001b2(double value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 005e0c10
     MOV dword ptr [ESP + 0x30],EDX      ; 005e0c14
     FLD double ptr [ESP + 0x2c]         ; 005e0c18

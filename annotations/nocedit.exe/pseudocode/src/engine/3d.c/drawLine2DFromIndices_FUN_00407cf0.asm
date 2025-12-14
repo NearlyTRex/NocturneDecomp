@@ -34,16 +34,16 @@ section .text
     MOV ECX,0xc                         ; 00407d02
     SHL EAX,0x4                         ; 00407d07
     MOV EDI,ESP                         ; 00407d0a
-    LEA ESI,[EAX + 0x688014]            ; 00407d0c | SRenderVertex[16] g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 00407d12 | SRenderVertex[16] g_RenderVertexBuffer
+    LEA ESI,[EAX + 0x688014]            ; 00407d0c | g_RenderVertexBuffer
+    MOVSD.REP ES:EDI,ESI                ; 00407d12 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     MOV EDI,dword ptr [ESP + 0x70]      ; 00407d14
     LEA EAX,[EDI*0x4 + 0x0]             ; 00407d18
     SUB EAX,EDI                         ; 00407d1f
     MOV ECX,0xc                         ; 00407d21
     SHL EAX,0x4                         ; 00407d26
     LEA EDI,[ESP + 0x30]                ; 00407d29
-    LEA ESI,[EAX + 0x688014]            ; 00407d2d | SRenderVertex[16] g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 00407d33 | SRenderVertex[16] g_RenderVertexBuffer
+    LEA ESI,[EAX + 0x688014]            ; 00407d2d | g_RenderVertexBuffer
+    MOVSD.REP ES:EDI,ESI                ; 00407d33 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     MOV ECX,0xc                         ; 00407d35
     SUB ESP,0x30                        ; 00407d3a
     LEA ESI,[ESP + 0x60]                ; 00407d3d
@@ -54,8 +54,8 @@ section .text
     LEA ESI,[ESP + 0x60]                ; 00407d4d
     MOV EDI,ESP                         ; 00407d51
     MOVSD.REP ES:EDI,ESI                ; 00407d53
-    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 00407d55 | void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 00407d55
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
     ADD ESP,0x60                        ; 00407d5a
     ADD ESP,0x60                        ; 00407d5d
     POP EDI                             ; 00407d60

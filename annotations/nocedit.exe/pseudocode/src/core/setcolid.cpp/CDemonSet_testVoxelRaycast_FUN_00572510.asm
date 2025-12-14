@@ -27,9 +27,9 @@ section .text
     PUSH EDX                            ; 00572514
     MOV ECX,dword ptr [ESP + 0xc]       ; 00572515
     PUSH ECX                            ; 00572519
-    PUSH 0x3277d14                      ; 0057251a | CDemonRaytrace g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330 ; 0057251f | int core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRaytrace * this_ptr, CVector3f * start_position, CVector3f * end_position)
-        ;   XREF to: 00499330 (UNCONDITIONAL_CALL)
+    PUSH 0x3277d14                      ; 0057251a | g_CDemonRaytraceInstance
+    CALL core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330 ; 0057251f
+        ;   XREF to: 00499330 (UNCONDITIONAL_CALL)  ; int core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330(CDemonRaytrace * this_ptr, CVector3f * start_position, CVector3f * end_position)
     ADD ESP,0xc                         ; 00572524
     RET                                 ; 00572527
 

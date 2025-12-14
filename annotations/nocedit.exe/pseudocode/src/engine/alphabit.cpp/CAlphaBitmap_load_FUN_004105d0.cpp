@@ -36,25 +36,23 @@ engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(this_ptr);
   this_ptr->width = height;
   this_ptr->height = (int)in_stack_00000014;
-  pcVar1 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (height * (int)in_stack_00000014,"..\\engine\\alphabit.cpp",0x52);
+  pcVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                     (height * (int)in_stack_00000014,"..\\engine\\alphabit.cpp",0x52);
   this_ptr->ptrRaw = pcVar1;
   if (pcVar1 == (char *)0x0) {
     g_CurrentFilename = "..\\engine\\alphabit.cpp";
     g_CurrentLineNumber = 0x53;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CAlphaBitmap::load - Out of memory");
   }
-  pcVar1 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (in_stack_00000018 * in_stack_0000001c,"..\\engine\\alphabit.cpp",
-                              0x55);
+  pcVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                     (in_stack_00000018 * in_stack_0000001c,"..\\engine\\alphabit.cpp",0x55);
   this_ptr->ptrOpa = pcVar1;
   if (pcVar1 == (char *)0x0) {
     g_CurrentFilename = "..\\engine\\alphabit.cpp";
     g_CurrentLineNumber = 0x56;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CAlphaBitmap::load - Out of memory");
   }
-  puVar2 = (uint *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (0x400,"..\\engine\\alphabit.cpp",0x58);
+  puVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x400,"..\\engine\\alphabit.cpp",0x58);
   this_ptr->ptrAct = puVar2;
   if (puVar2 == (uint *)0x0) {
     g_CurrentFilename = "..\\engine\\alphabit.cpp";

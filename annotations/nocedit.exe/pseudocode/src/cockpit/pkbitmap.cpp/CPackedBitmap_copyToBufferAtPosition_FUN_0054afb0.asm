@@ -23,8 +23,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 0054afb4
     MOV EDX,dword ptr [ESP + 0x10]      ; 0054afb8
     TEST ECX,ECX                        ; 0054afbc
-    JNZ 0x0054afc1                      ; 0054afbe | LAB_0054afc1
-        ;   XREF to: 0054afc1 (CONDITIONAL_JUMP)
+    JNZ 0x0054afc1                      ; 0054afbe
+        ;   XREF to: 0054afc1 (CONDITIONAL_JUMP)  ; LAB_0054afc1
     RET                                 ; 0054afc0
     PUSH EDI                            ; 0054afc1
         ;   Label: LAB_0054afc1
@@ -46,8 +46,8 @@ section .text
     PUSH EAX                            ; 0054afe5
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0054afe6
     PUSH EDI                            ; 0054afea
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70 ; 0054afeb | void cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedBitmap * this_ptr, uchar * dest_buffer, int bits_per_pixel, int row_stride)
-        ;   XREF to: 0054ae70 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70 ; 0054afeb
+        ;   XREF to: 0054ae70 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedBitmap * this_ptr, uchar * dest_buffer, int bits_per_pixel, int row_stride)
     ADD ESP,0x10                        ; 0054aff0
     POP EBX                             ; 0054aff3
     POP ESI                             ; 0054aff4

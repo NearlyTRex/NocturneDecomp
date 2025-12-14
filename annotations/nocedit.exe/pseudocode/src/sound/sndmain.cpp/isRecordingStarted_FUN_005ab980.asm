@@ -19,13 +19,13 @@
 
 section .text
 
-    CALL sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970 ; 005ab980 | int sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970()
+    CALL sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970 ; 005ab980
+        ;   XREF to: 005ab970 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970()
         ;   Label: sound_sndmain.cpp_isRecordingStarted_FUN_005ab980
-        ;   XREF to: 005ab970 (UNCONDITIONAL_CALL)
     TEST EAX,EAX                        ; 005ab985
-    JZ 0x005ab98e                       ; 005ab987 | LAB_005ab98e
-        ;   XREF to: 005ab98e (CONDITIONAL_JUMP)
-    MOV EAX,[0x03f69c58]                ; 005ab989 | int isRecordingStarted
+    JZ 0x005ab98e                       ; 005ab987
+        ;   XREF to: 005ab98e (CONDITIONAL_JUMP)  ; LAB_005ab98e
+    MOV EAX,[0x03f69c58]                ; 005ab989 | isRecordingStarted
     RET                                 ; 005ab98e
         ;   Label: LAB_005ab98e
 

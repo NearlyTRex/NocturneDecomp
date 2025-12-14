@@ -1,95 +1,95 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 53, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 77, 
-    "assembly_lines": 49, 
-    "suspect_count": 2, 
+    "assembly_lines": 49,
+    "complexity_score": 53,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pbVar6 = (byte *)((int)*this_ptr->row_pointers + (int)pcVar1);"
-    }, 
-    {
-      "line": 17, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "while (pbVar6 < (byte *)((int)pvVar2 + (int)pcVar1)) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054b440", 
-    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(CPackedBitmap * this_ptr, uchar * palette_buffer)", 
-    "address_range": [
-      [
-        "0054b440", 
-        "0054b49a"
-      ]
-    ], 
-    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440"
-  }, 
-  "stack_frame": {
-    "local_size": 20, 
-    "variables": [
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uchar *", 
-        "size": 4, 
-        "name": "palette_buffer"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 77
+  },
   "cross_references": [
     {
-      "from_addr": "0054b414", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0", 
-      "addr": "0054b3f0"
-    }, 
+      "addr": "0054b3f0",
+      "from_addr": "0054b414",
+      "name": "cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054bc81", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40", 
-      "addr": "0054bb40"
-    }, 
+      "addr": "0054bb40",
+      "from_addr": "0054bc81",
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054c63e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620", 
-      "addr": "0054c620"
+      "addr": "0054c620",
+      "from_addr": "0054c63e",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054b440",
+    "address_range": [
+      [
+        "0054b440",
+        "0054b49a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440",
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(CPackedBitmap * this_ptr, uchar * palette_buffer)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "palette_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "uchar *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(byte *)((int)",
+      "text": "pbVar6 = (byte *)((int)*this_ptr->row_pointers + (int)pcVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(byte *)((int)",
+      "text": "while (pbVar6 < (byte *)((int)pvVar2 + (int)pcVar1)) {",
+      "type": "pointer_cast"
     }
   ]
 }

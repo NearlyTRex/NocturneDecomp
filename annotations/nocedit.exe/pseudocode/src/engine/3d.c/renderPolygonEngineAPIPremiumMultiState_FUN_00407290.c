@@ -45,8 +45,8 @@ engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrim
     g_RenderStateFlags = RENDER_ENGINE_PREMIUM_QUALITY;
     g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
     pSVar3 = polygon_info + 1;
-    for (iVar2 = 0; uVar1 = g_ProcessedVertexOffset, iVar12 = (polygon_info->base).count,
-        SBORROW /* signed borrow */4(iVar2,iVar12 * 3) != iVar2 + iVar12 * -3 < 0; iVar2 = iVar2 + 3) {
+    for (iVar2 = 0; uVar1 = g_ProcessedVertexOffset, iVar2 < (polygon_info->base).count * 3;
+        iVar2 = iVar2 + 3) {
       *piVar6 = (pSVar3->base).type + g_ProcessedVertexOffset;
       g_RenderVertexBuffer[(pSVar3->base).type + uVar1].u = (float)(pSVar3->base).count;
       piVar6 = piVar6 + 1;

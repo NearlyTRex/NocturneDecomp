@@ -29,18 +29,16 @@ cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00431622
     uVar6 = uVar5 & 3;
     if (uVar6 != 0) {
       uVar5 = uVar5 - uVar6;
-                    /* WARNING: Load size is inaccurate */
       for (; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(byte *)dest_buffer = *src_buffer;
+        *(byte *)dest_buffer = *(byte *)src_buffer;
         src_buffer = (uint *)((int)src_buffer + 1);
         dest_buffer = (uint *)((int)dest_buffer + 1);
       }
     }
     uVar5 = uVar5 >> 2;
     if (uVar5 != 0) {
-                    /* WARNING: Load size is inaccurate */
       for (; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(uint *)dest_buffer = *src_buffer;
+        *(uint *)dest_buffer = *(uint *)src_buffer;
         src_buffer = (uint *)((int)src_buffer + 4);
         dest_buffer = (uint *)((int)dest_buffer + 4);
       }
@@ -79,17 +77,15 @@ cockpit_ckptutil_c_mmxOptimizedMemcpy_FUN_00431622
     uVar6 = (uint)byte_count >> 2;
     uVar5 = uVar6;
     if (uVar6 != 0) {
-                    /* WARNING: Load size is inaccurate */
       for (; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(uint *)dest_buffer = *src_buffer;
+        *(uint *)dest_buffer = *(uint *)src_buffer;
         src_buffer = (uint *)((int)src_buffer + 4);
         dest_buffer = (uint *)((int)dest_buffer + 4);
       }
       byte_count = byte_count + uVar6 * -4;
     }
-                    /* WARNING: Load size is inaccurate */
     for (; byte_count != 0; byte_count = byte_count - 1) {
-      *(byte *)dest_buffer = *src_buffer;
+      *(byte *)dest_buffer = *(byte *)src_buffer;
       src_buffer = (uint *)((int)src_buffer + 1);
       dest_buffer = (uint *)((int)dest_buffer + 1);
     }

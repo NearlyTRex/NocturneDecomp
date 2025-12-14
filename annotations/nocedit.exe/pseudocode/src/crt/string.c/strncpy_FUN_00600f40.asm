@@ -33,30 +33,30 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00600f4a
     MOV ESI,EAX                         ; 00600f4e
     TEST EDX,EDX                        ; 00600f50
-    JZ 0x00600f63                       ; 00600f52 | LAB_00600f63
-        ;   XREF to: 00600f63 (CONDITIONAL_JUMP)
+    JZ 0x00600f63                       ; 00600f52
+        ;   XREF to: 00600f63 (CONDITIONAL_JUMP)  ; LAB_00600f63
     CMP byte ptr [EBX],0x0              ; 00600f54
         ;   Label: LAB_00600f54
-    JZ 0x00600f63                       ; 00600f57 | LAB_00600f63
-        ;   XREF to: 00600f63 (CONDITIONAL_JUMP)
+    JZ 0x00600f63                       ; 00600f57
+        ;   XREF to: 00600f63 (CONDITIONAL_JUMP)  ; LAB_00600f63
     INC EAX                             ; 00600f59
     MOV CL,byte ptr [EBX]               ; 00600f5a
     INC EBX                             ; 00600f5c
     MOV byte ptr [EAX + -0x1],CL        ; 00600f5d
     DEC EDX                             ; 00600f60
-    JNZ 0x00600f54                      ; 00600f61 | LAB_00600f54
-        ;   XREF to: 00600f54 (CONDITIONAL_JUMP)
+    JNZ 0x00600f54                      ; 00600f61
+        ;   XREF to: 00600f54 (CONDITIONAL_JUMP)  ; LAB_00600f54
     XOR EBX,EBX                         ; 00600f63
         ;   Label: LAB_00600f63
     TEST EDX,EDX                        ; 00600f65
         ;   Label: LAB_00600f65
-    JZ 0x00600f70                       ; 00600f67 | LAB_00600f70
-        ;   XREF to: 00600f70 (CONDITIONAL_JUMP)
+    JZ 0x00600f70                       ; 00600f67
+        ;   XREF to: 00600f70 (CONDITIONAL_JUMP)  ; LAB_00600f70
     INC EAX                             ; 00600f69
     DEC EDX                             ; 00600f6a
     MOV byte ptr [EAX + -0x1],BL        ; 00600f6b
-    JMP 0x00600f65                      ; 00600f6e | LAB_00600f65
-        ;   XREF to: 00600f65 (UNCONDITIONAL_JUMP)
+    JMP 0x00600f65                      ; 00600f6e
+        ;   XREF to: 00600f65 (UNCONDITIONAL_JUMP)  ; LAB_00600f65
     MOV EAX,ESI                         ; 00600f70
         ;   Label: LAB_00600f70
     POP ESI                             ; 00600f72

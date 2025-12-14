@@ -1,344 +1,344 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 258, 
-    "pseudocode_lines": 93, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 271, 
-    "assembly_lines": 178, 
-    "suspect_count": 14, 
+    "assembly_lines": 178,
+    "complexity_score": 258,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 1,
+    "pseudocode_lines": 93,
+    "suspect_count": 14,
     "suspect_types": [
-      "stack_param", 
-      "extra_output", 
-      "badspacebase", 
-      "register_param", 
+      "extra_output",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0", 
-      "addr": "00408ea0"
-    }, 
-    {
-      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70", 
-      "addr": "0040cc70"
-    }, 
-    {
-      "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390", 
-      "addr": "005f5390"
-    }, 
-    {
-      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0", 
-      "addr": "005f54c0"
-    }, 
-    {
-      "name": "core_xform.cpp_getTranslation_FUN_005f6110", 
-      "addr": "005f6110"
-    }, 
-    {
-      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690", 
-      "addr": "005f5690"
-    }, 
-    {
-      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10", 
-      "addr": "005f4f10"
-    }, 
-    {
-      "name": "crt_math.c_atan2_FUN_006013b1", 
-      "addr": "006013b1"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "g_BulletHoleNormalOffset", 
-      "addr": "00629c4f", 
-      "value": "0.1000000"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "float *extraout_EAX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_fffffef8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CMatrix3x4f *in_stack_fffffef8;"
-    }, 
-    {
-      "line": 59, 
-      "match": "&stack0xfffffef0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CMatrix3x4f *)&stack0xfffffef0,&this_ptr->position,&this_ptr->euler_angles);"
-    }, 
-    {
-      "line": 64, 
-      "match": "in_stack_fffffef8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CMatrix3x4f *)&stack0xfffffef8,(CMatrix3x4f *)(local_dc + 4),in_stack_fffffef8);"
-    }, 
-    {
-      "line": 64, 
-      "match": "&stack0xfffffef8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CMatrix3x4f *)&stack0xfffffef8,(CMatrix3x4f *)(local_dc + 4),in_stack_fffffef8);"
-    }, 
-    {
-      "line": 73, 
-      "match": "&stack0xffffffc8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CVector3f *)auStack_a4,(CMatrix3x4f *)&stack0xffffffc8);"
-    }, 
-    {
-      "line": 74, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if (&this_ptr->transformed_pos != (CVector3f *)extraout_EAX) {"
-    }, 
-    {
-      "line": 75, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(this_ptr->transformed_pos).x = *extraout_EAX;"
-    }, 
-    {
-      "line": 76, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(this_ptr->transformed_pos).y = extraout_EAX[1];"
-    }, 
-    {
-      "line": 77, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(this_ptr->transformed_pos).z = extraout_EAX[2];"
-    }, 
-    {
-      "line": 80, 
-      "match": "&stack0xfffffff0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CVector3f *)(auStack_a4 + 4),(CMatrix3x3f *)&stack0xfffffff0);"
-    }, 
-    {
-      "line": 87, 
-      "match": "&stack0xffffffe8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(this_ptr->actor_ptr,(CVector3f *)&stack0xffffffe8,surface_normal);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004bf7f0", 
-    "signature": "void core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0(CBulletHole * this_ptr, CVector3f * hit_position, CVector3f * surface_normal, CDemonActor * hit_actor)", 
-    "address_range": [
-      [
-        "004bf7f0", 
-        "004bf9f4"
-      ]
-    ], 
-    "name": "core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0"
-  }, 
-  "stack_frame": {
-    "local_size": 280, 
-    "variables": [
-      {
-        "offset": -276, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_114"
-      }, 
-      {
-        "offset": -268, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_10c"
-      }, 
-      {
-        "offset": -228, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_e4"
-      }, 
-      {
-        "offset": -220, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_dc"
-      }, 
-      {
-        "offset": -180, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_b4"
-      }, 
-      {
-        "offset": -172, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_ac"
-      }, 
-      {
-        "offset": -132, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_84"
-      }, 
-      {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_7c"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBulletHole *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "hit_position"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "surface_normal"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "hit_actor"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 296, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 271
+  },
   "cross_references": [
     {
-      "from_addr": "004c7861", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0", 
-      "addr": "004c76a0"
+      "addr": "004c76a0",
+      "from_addr": "004c7861",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bf7f0",
+    "address_range": [
+      [
+        "004bf7f0",
+        "004bf9f4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0",
+    "signature": "void core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0(CBulletHole * this_ptr, CVector3f * hit_position, CVector3f * surface_normal, CDemonActor * hit_actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ea0",
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
+    },
+    {
+      "addr": "0040cc70",
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "005f5390",
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390"
+    },
+    {
+      "addr": "005f54c0",
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0"
+    },
+    {
+      "addr": "005f6110",
+      "name": "core_xform.cpp_getTranslation_FUN_005f6110"
+    },
+    {
+      "addr": "005f5690",
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690"
+    },
+    {
+      "addr": "005f4f10",
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10"
+    },
+    {
+      "addr": "006013b1",
+      "name": "crt_math.c_atan2_FUN_006013b1"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629c4f",
+      "name": "g_BulletHoleNormalOffset",
+      "type": "float",
+      "value": "0.1000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 296,
+    "local_size": 280,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBulletHole *"
+      },
+      {
+        "is_param": true,
+        "name": "hit_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "surface_normal",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "hit_actor",
+        "offset": 16,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "text": "float *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_fffffef8",
+      "text": "CMatrix3x4f *in_stack_fffffef8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 59,
+      "match": "&stack0xfffffef0",
+      "text": "((CMatrix3x4f *)&stack0xfffffef0,&this_ptr->position,&this_ptr->euler_angles);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_fffffef8",
+      "text": "((CMatrix3x4f *)&stack0xfffffef8,(CMatrix3x4f *)(local_dc + 4),in_stack_fffffef8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 64,
+      "match": "&stack0xfffffef8",
+      "text": "((CMatrix3x4f *)&stack0xfffffef8,(CMatrix3x4f *)(local_dc + 4),in_stack_fffffef8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 73,
+      "match": "&stack0xffffffc8",
+      "text": "((CVector3f *)auStack_a4,(CMatrix3x4f *)&stack0xffffffc8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 74,
+      "match": "extraout_EAX",
+      "text": "if (&this_ptr->transformed_pos != (CVector3f *)extraout_EAX) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 75,
+      "match": "extraout_EAX",
+      "text": "(this_ptr->transformed_pos).x = *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 76,
+      "match": "extraout_EAX",
+      "text": "(this_ptr->transformed_pos).y = extraout_EAX[1];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 77,
+      "match": "extraout_EAX",
+      "text": "(this_ptr->transformed_pos).z = extraout_EAX[2];",
+      "type": "extra_output"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 80,
+      "match": "&stack0xfffffff0",
+      "text": "((CVector3f *)(auStack_a4 + 4),(CMatrix3x3f *)&stack0xfffffff0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 87,
+      "match": "&stack0xffffffe8",
+      "text": "(this_ptr->actor_ptr,(CVector3f *)&stack0xffffffe8,surface_normal);",
+      "type": "stack_ref"
     }
   ]
 }

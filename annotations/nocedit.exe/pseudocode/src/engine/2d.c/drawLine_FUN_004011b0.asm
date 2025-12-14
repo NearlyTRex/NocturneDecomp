@@ -46,8 +46,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x30]      ; 004011c3
     MOV dword ptr [ESP],0x1             ; 004011c7
     CMP EDI,ESI                         ; 004011ce
-    JLE 0x004011de                      ; 004011d0 | LAB_004011de
-        ;   XREF to: 004011de (CONDITIONAL_JUMP)
+    JLE 0x004011de                      ; 004011d0
+        ;   XREF to: 004011de (CONDITIONAL_JUMP)  ; LAB_004011de
     MOV EBX,EAX                         ; 004011d2
     MOV EAX,EBP                         ; 004011d4
     MOV EBP,EBX                         ; 004011d6
@@ -59,31 +59,31 @@ section .text
     SUB EBP,EAX                         ; 004011e0
     MOV dword ptr [ESP + 0xc],ESI       ; 004011e2
     TEST EBP,EBP                        ; 004011e6
-    JL 0x00401235                       ; 004011e8 | LAB_00401235
-        ;   XREF to: 00401235 (CONDITIONAL_JUMP)
+    JL 0x00401235                       ; 004011e8
+        ;   XREF to: 00401235 (CONDITIONAL_JUMP)  ; LAB_00401235
     MOV EBX,EDI                         ; 004011ea
         ;   Label: LAB_004011ea
     MOV EDI,dword ptr [ESP + 0xc]       ; 004011ec
     MOV ESI,EAX                         ; 004011f0
     CMP EBP,EDI                         ; 004011f2
-    JLE 0x00401241                      ; 004011f4 | LAB_00401241
-        ;   XREF to: 00401241 (CONDITIONAL_JUMP)
+    JLE 0x00401241                      ; 004011f4
+        ;   XREF to: 00401241 (CONDITIONAL_JUMP)  ; LAB_00401241
     XOR EAX,EAX                         ; 004011f6
     ADD EDI,EDI                         ; 004011f8
     MOV dword ptr [ESP + 0x8],EAX       ; 004011fa
     SUB EDI,EBP                         ; 004011fe
     TEST EBP,EBP                        ; 00401200
-    JL 0x0040122d                       ; 00401202 | LAB_0040122d
-        ;   XREF to: 0040122d (CONDITIONAL_JUMP)
+    JL 0x0040122d                       ; 00401202
+        ;   XREF to: 0040122d (CONDITIONAL_JUMP)  ; LAB_0040122d
     PUSH EBX                            ; 00401204
         ;   Label: LAB_00401204
     PUSH ESI                            ; 00401205
-    CALL engine_2d.c_plotPixel_FUN_00401140 ; 00401206 | void engine_2d.c_plotPixel_FUN_00401140(int x, int y)
-        ;   XREF to: 00401140 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_plotPixel_FUN_00401140 ; 00401206
+        ;   XREF to: 00401140 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401140(int x, int y)
     ADD ESP,0x8                         ; 0040120b
     TEST EDI,EDI                        ; 0040120e
-    JLE 0x00401215                      ; 00401210 | LAB_00401215
-        ;   XREF to: 00401215 (CONDITIONAL_JUMP)
+    JLE 0x00401215                      ; 00401210
+        ;   XREF to: 00401215 (CONDITIONAL_JUMP)  ; LAB_00401215
     INC EBX                             ; 00401212
     SUB EDI,EBP                         ; 00401213
     MOV ECX,dword ptr [ESP]             ; 00401215
@@ -95,8 +95,8 @@ section .text
     ADD EDI,EAX                         ; 00401223
     MOV dword ptr [ESP + 0x8],EDX       ; 00401225
     CMP EBP,EDX                         ; 00401229
-    JGE 0x00401204                      ; 0040122b | LAB_00401204
-        ;   XREF to: 00401204 (CONDITIONAL_JUMP)
+    JGE 0x00401204                      ; 0040122b
+        ;   XREF to: 00401204 (CONDITIONAL_JUMP)  ; LAB_00401204
     ADD ESP,0x10                        ; 0040122d
         ;   Label: LAB_0040122d
     POP EBP                             ; 00401230
@@ -108,8 +108,8 @@ section .text
         ;   Label: LAB_00401235
     NEG EBP                             ; 0040123a
     MOV dword ptr [ESP],ECX             ; 0040123c
-    JMP 0x004011ea                      ; 0040123f | LAB_004011ea
-        ;   XREF to: 004011ea (UNCONDITIONAL_JUMP)
+    JMP 0x004011ea                      ; 0040123f
+        ;   XREF to: 004011ea (UNCONDITIONAL_JUMP)  ; LAB_004011ea
     MOV EAX,dword ptr [ESP + 0xc]       ; 00401241
         ;   Label: LAB_00401241
     XOR EDX,EDX                         ; 00401245
@@ -117,17 +117,17 @@ section .text
     MOV dword ptr [ESP + 0x4],EDX       ; 0040124b
     SUB EDI,EAX                         ; 0040124f
     TEST EAX,EAX                        ; 00401251
-    JL 0x0040122d                       ; 00401253 | LAB_0040122d
-        ;   XREF to: 0040122d (CONDITIONAL_JUMP)
+    JL 0x0040122d                       ; 00401253
+        ;   XREF to: 0040122d (CONDITIONAL_JUMP)  ; LAB_0040122d
     PUSH EBX                            ; 00401255
         ;   Label: LAB_00401255
     PUSH ESI                            ; 00401256
-    CALL engine_2d.c_plotPixel_FUN_00401140 ; 00401257 | void engine_2d.c_plotPixel_FUN_00401140(int x, int y)
-        ;   XREF to: 00401140 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_plotPixel_FUN_00401140 ; 00401257
+        ;   XREF to: 00401140 (UNCONDITIONAL_CALL)  ; void engine_2d.c_plotPixel_FUN_00401140(int x, int y)
     ADD ESP,0x8                         ; 0040125c
     TEST EDI,EDI                        ; 0040125f
-    JLE 0x0040126e                      ; 00401261 | LAB_0040126e
-        ;   XREF to: 0040126e (CONDITIONAL_JUMP)
+    JLE 0x0040126e                      ; 00401261
+        ;   XREF to: 0040126e (CONDITIONAL_JUMP)  ; LAB_0040126e
     MOV EDX,dword ptr [ESP + 0xc]       ; 00401263
     MOV EAX,dword ptr [ESP]             ; 00401267
     SUB EDI,EDX                         ; 0040126a
@@ -140,8 +140,8 @@ section .text
     ADD EDI,EBP                         ; 00401278
     MOV dword ptr [ESP + 0x4],EDX       ; 0040127a
     CMP EDX,ECX                         ; 0040127e
-    JG 0x0040122d                       ; 00401280 | LAB_0040122d
-        ;   XREF to: 0040122d (CONDITIONAL_JUMP)
-    JMP 0x00401255                      ; 00401282 | LAB_00401255
-        ;   XREF to: 00401255 (UNCONDITIONAL_JUMP)
+    JG 0x0040122d                       ; 00401280
+        ;   XREF to: 0040122d (CONDITIONAL_JUMP)  ; LAB_0040122d
+    JMP 0x00401255                      ; 00401282
+        ;   XREF to: 00401255 (UNCONDITIONAL_JUMP)  ; LAB_00401255
 

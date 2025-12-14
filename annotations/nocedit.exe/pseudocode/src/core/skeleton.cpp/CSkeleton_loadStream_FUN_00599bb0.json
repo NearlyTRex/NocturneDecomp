@@ -1,595 +1,595 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 636, 
-    "pseudocode_lines": 121, 
-    "cross_reference_count": 1, 
-    "global_count": 20, 
-    "total_lines": 530, 
-    "assembly_lines": 409, 
-    "suspect_count": 50, 
+    "assembly_lines": 409,
+    "complexity_score": 636,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 20,
+    "pseudocode_lines": 121,
+    "suspect_count": 50,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
+      "unaffected_reg",
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionList_load_FUN_0052cd70", 
-      "addr": "0052cd70"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910", 
-      "addr": "00599910"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CSkeleton_free_FUN_00599a50", 
-      "addr": "00599a50"
-    }, 
-    {
-      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
-      "addr": "005fe840"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_0064e2f0", 
-      "addr": "0064e2f0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e2f4", 
-      "addr": "0064e2f4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Invalid_skeleton_version_0064e309", 
-      "addr": "0064e309", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e322", 
-      "addr": "0064e322", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Old_skeleton_version_d_n_0064e337", 
-      "addr": "0064e337", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e35d", 
-      "addr": "0064e35d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Skeleton_version_d_is_ne_0064e372", 
-      "addr": "0064e372", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_d_0064e3c2", 
-      "addr": "0064e3c2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_0064e3c9", 
-      "addr": "0064e3c9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_f_0064e3d5", 
-      "addr": "0064e3d5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0064e3e2", 
-      "addr": "0064e3e2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0064e3ec", 
-      "addr": "0064e3ec", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e3f6", 
-      "addr": "0064e3f6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CSkeleton_loadStream_err_0064e40b", 
-      "addr": "0064e40b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0064e437", 
-      "addr": "0064e437", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e441", 
-      "addr": "0064e441", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CSkeleton_loadStream_err_0064e456", 
-      "addr": "0064e456", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CSkeletonVersion", 
-      "addr": "00681860", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 8, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_0000000c;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000010;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000018;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CSkeleton *in_stack_0000001c;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CMotionList *in_stack_00000020;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000024;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000028;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffe8;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffec;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_0000000c);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%d\\n\");"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_ffffffe8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_ffffffe8 < 1) {"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_ffffffec < 2) {"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (g_CSkeletonVersion < in_stack_ffffffec) {"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000018);"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)in_stack_0000001c,\"%d,%d\\n\");"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(in_stack_0000001c,unaff_ESI,unaff_EBX);"
-    }, 
-    {
-      "line": 45, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(in_stack_0000001c,unaff_ESI,unaff_EBX);"
-    }, 
-    {
-      "line": 45, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(in_stack_0000001c,unaff_ESI,unaff_EBX);"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < (int)in_stack_00000024[0x170c]._link) {"
-    }, 
-    {
-      "line": 53, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"\\\"%[^\\\"]\\\",%d\\n\");"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar1 < *(int *)(in_stack_00000020[1].state_names[2] + 0x10));"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);"
-    }, 
-    {
-      "line": 61, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < (int)in_stack_00000024[0x178d]._ptr) {"
-    }, 
-    {
-      "line": 64, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_00000020[1].state_names[2] + 0x10)) {"
-    }, 
-    {
-      "line": 67, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"%f,%f,%f,%f\\n\");"
-    }, 
-    {
-      "line": 68, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar1 < *(int *)(in_stack_00000020[1].state_names[2] + 0x10));"
-    }, 
-    {
-      "line": 70, 
-      "match": "(CSkeleton *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "this_ptr = (CSkeleton *)((int)&(this_ptr->motion_list).state_count + 1);"
-    }, 
-    {
-      "line": 71, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while ((int)this_ptr < in_stack_00000020[1].motions[0].signals[10].value);"
-    }, 
-    {
-      "line": 74, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);"
-    }, 
-    {
-      "line": 78, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < (int)in_stack_00000024[0x178d]._ptr) {"
-    }, 
-    {
-      "line": 80, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"%f,%f,%f\\n\");"
-    }, 
-    {
-      "line": 82, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar1 < in_stack_00000020[1].motions[0].signals[10].value);"
-    }, 
-    {
-      "line": 85, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);"
-    }, 
-    {
-      "line": 89, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < (int)in_stack_00000024[0x178d]._ptr) {"
-    }, 
-    {
-      "line": 91, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"%f,%f,%f\\n\");"
-    }, 
-    {
-      "line": 93, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar1 < in_stack_00000020[1].motions[0].signals[10].value);"
-    }, 
-    {
-      "line": 95, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000024->_flag & 0x20) != 0) {"
-    }, 
-    {
-      "line": 100, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_motion_cpp_CMotionList_load_FUN_0052cd70(in_stack_00000020,in_stack_00000024);"
-    }, 
-    {
-      "line": 100, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_motion_cpp_CMotionList_load_FUN_0052cd70(in_stack_00000020,in_stack_00000024);"
-    }, 
-    {
-      "line": 101, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EBX < 3) {"
-    }, 
-    {
-      "line": 102, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000024[0x178d]._handle = -0x383cb080;"
-    }, 
-    {
-      "line": 106, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000028);"
-    }, 
-    {
-      "line": 110, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < (int)in_stack_00000024[0x170c]._link) {"
-    }, 
-    {
-      "line": 112, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000028,\"%f,%f,%f\\n\");"
-    }, 
-    {
-      "line": 114, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar1 < (int)in_stack_00000024[0x170c]._link);"
-    }, 
-    {
-      "line": 117, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000028->_flag & 0x20) != 0) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00599bb0", 
-    "signature": "void core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "00599bb0", 
-        "00599fb6"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0"
-  }, 
-  "stack_frame": {
-    "local_size": 40, 
-    "variables": [
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSkeleton *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 530
+  },
   "cross_references": [
     {
-      "from_addr": "00599b5c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CSkeleton_load_FUN_00599b10", 
-      "addr": "00599b10"
+      "addr": "00599b10",
+      "from_addr": "00599b5c",
+      "name": "core_skeleton.cpp_CSkeleton_load_FUN_00599b10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00599bb0",
+    "address_range": [
+      [
+        "00599bb0",
+        "00599fb6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0",
+    "signature": "void core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0052cd70",
+      "name": "core_motion.cpp_CMotionList_load_FUN_0052cd70"
+    },
+    {
+      "addr": "00599910",
+      "name": "core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910"
+    },
+    {
+      "addr": "00599a50",
+      "name": "core_skeleton.cpp_CSkeleton_free_FUN_00599a50"
+    },
+    {
+      "addr": "005fe840",
+      "name": "crt_stdio.c_fgetc_FUN_005fe840"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064e2f0",
+      "name": "s_d_0064e2f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e2f4",
+      "name": "s_core_skeleton_cpp_0064e2f4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e309",
+      "name": "s_Invalid_skeleton_version_0064e309",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e322",
+      "name": "s_core_skeleton_cpp_0064e322",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e337",
+      "name": "s_Old_skeleton_version_d_n_0064e337",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e35d",
+      "name": "s_core_skeleton_cpp_0064e35d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e372",
+      "name": "s_Skeleton_version_d_is_ne_0064e372",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e3c2",
+      "name": "s_d_d_0064e3c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e3c9",
+      "name": "s_d_0064e3c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e3d5",
+      "name": "s_f_f_f_f_0064e3d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e3e2",
+      "name": "s_f_f_f_0064e3e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e3ec",
+      "name": "s_f_f_f_0064e3ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e3f6",
+      "name": "s_core_skeleton_cpp_0064e3f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e40b",
+      "name": "s_CSkeleton_loadStream_err_0064e40b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e437",
+      "name": "s_f_f_f_0064e437",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e441",
+      "name": "s_core_skeleton_cpp_0064e441",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e456",
+      "name": "s_CSkeleton_loadStream_err_0064e456",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00681860",
+      "name": "g_CSkeletonVersion",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSkeleton *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "FILE *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "FILE *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000018",
+      "text": "FILE *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000001c",
+      "text": "CSkeleton *in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000020",
+      "text": "CMotionList *in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000024",
+      "text": "FILE *in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000028",
+      "text": "FILE *in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_ffffffe8",
+      "text": "int in_stack_ffffffe8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffffec",
+      "text": "int in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000000c",
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%d\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_ffffffe8",
+      "text": "if (in_stack_ffffffe8 < 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_ffffffec",
+      "text": "if (in_stack_ffffffec < 2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_ffffffec",
+      "text": "if (g_CSkeletonVersion < in_stack_ffffffec) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000018",
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000018);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_0000001c",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)in_stack_0000001c,\"%d,%d\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_0000001c",
+      "text": "core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(in_stack_0000001c,unaff_ESI,unaff_EBX);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_ESI",
+      "text": "core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(in_stack_0000001c,unaff_ESI,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EBX",
+      "text": "core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(in_stack_0000001c,unaff_ESI,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000024",
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000024",
+      "text": "if (0 < (int)in_stack_00000024[0x170c]._link) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000024",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"\\\"%[^\\\"]\\\",%d\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000020",
+      "text": "} while (iVar1 < *(int *)(in_stack_00000020[1].state_names[2] + 0x10));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_00000024",
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000024",
+      "text": "if (0 < (int)in_stack_00000024[0x178d]._ptr) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000020",
+      "text": "if (0 < *(int *)(in_stack_00000020[1].state_names[2] + 0x10)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000024",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"%f,%f,%f,%f\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000020",
+      "text": "} while (iVar1 < *(int *)(in_stack_00000020[1].state_names[2] + 0x10));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(CSkeleton *)((int)",
+      "text": "this_ptr = (CSkeleton *)((int)&(this_ptr->motion_list).state_count + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_00000020",
+      "text": "} while ((int)this_ptr < in_stack_00000020[1].motions[0].signals[10].value);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000024",
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000024",
+      "text": "if (0 < (int)in_stack_00000024[0x178d]._ptr) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_00000024",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"%f,%f,%f\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000020",
+      "text": "} while (iVar1 < in_stack_00000020[1].motions[0].signals[10].value);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_00000024",
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_00000024",
+      "text": "if (0 < (int)in_stack_00000024[0x178d]._ptr) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_00000024",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"%f,%f,%f\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_00000020",
+      "text": "} while (iVar1 < in_stack_00000020[1].motions[0].signals[10].value);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
+      "match": "in_stack_00000024",
+      "text": "if ((in_stack_00000024->_flag & 0x20) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 100,
+      "match": "in_stack_00000020",
+      "text": "core_motion_cpp_CMotionList_load_FUN_0052cd70(in_stack_00000020,in_stack_00000024);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 100,
+      "match": "in_stack_00000024",
+      "text": "core_motion_cpp_CMotionList_load_FUN_0052cd70(in_stack_00000020,in_stack_00000024);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 101,
+      "match": "unaff_EBX",
+      "text": "if (unaff_EBX < 3) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 102,
+      "match": "in_stack_00000024",
+      "text": "in_stack_00000024[0x178d]._handle = -0x383cb080;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 106,
+      "match": "in_stack_00000028",
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000028);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
+      "match": "in_stack_00000024",
+      "text": "if (0 < (int)in_stack_00000024[0x170c]._link) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_00000028",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000028,\"%f,%f,%f\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 114,
+      "match": "in_stack_00000024",
+      "text": "} while (iVar1 < (int)in_stack_00000024[0x170c]._link);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 117,
+      "match": "in_stack_00000028",
+      "text": "if ((in_stack_00000028->_flag & 0x20) != 0) {",
+      "type": "stack_param"
     }
   ]
 }

@@ -1,127 +1,127 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 77, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 35, 
-    "assembly_lines": 18, 
-    "suspect_count": 5, 
+    "assembly_lines": 18,
+    "complexity_score": 77,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 17,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "support_codec.cpp_CCodec_ctor_FUN_0043e9a0", 
-      "addr": "0043e9a0"
-    }, 
-    {
-      "name": "support_codec.cpp_CLZWDictionary_ctor_FUN_0043edd0", 
-      "addr": "0043edd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CCodec_vtable", 
-      "name": "g_CLZWDecompressVTable", 
-      "addr": "0065bc24", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 15, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "piVar3 = &pCVar2[-1].bit_state.accumulated_bits;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar2[1].dict_size = in_stack_00000010;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar2[1].num_bits = in_stack_00000014;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043f490", 
-    "signature": "CLZWDecompress * support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490(CLZWDecompress * this_ptr, int buffer_size, int initial_bits)", 
-    "address_range": [
-      [
-        "0043f490", 
-        "0043f4c0"
-      ]
-    ], 
-    "name": "support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWDecompress *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_size"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "initial_bits"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 35
+  },
   "cross_references": [
     {
-      "from_addr": "0044bb33", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_staticInit_FUN_0044bb10", 
-      "addr": "0044bb10"
-    }, 
+      "addr": "0044bb10",
+      "from_addr": "0044bb33",
+      "name": "core_dcamera.cpp_staticInit_FUN_0044bb10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e15e0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
-      "addr": "004e12b0"
+      "addr": "004e12b0",
+      "from_addr": "004e15e0",
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043f490",
+    "address_range": [
+      [
+        "0043f490",
+        "0043f4c0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490",
+    "signature": "CLZWDecompress * support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490(CLZWDecompress * this_ptr, int buffer_size, int initial_bits)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043e9a0",
+      "name": "support_codec.cpp_CCodec_ctor_FUN_0043e9a0"
+    },
+    {
+      "addr": "0043edd0",
+      "name": "support_codec.cpp_CLZWDictionary_ctor_FUN_0043edd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065bc24",
+      "name": "g_CLZWDecompressVTable",
+      "type": "CCodec_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDecompress *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "initial_bits",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "pCVar2[-1].",
+      "text": "piVar3 = &pCVar2[-1].bit_state.accumulated_bits;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000010",
+      "text": "pCVar2[1].dict_size = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000014",
+      "text": "pCVar2[1].num_bits = in_stack_00000014;",
+      "type": "stack_param"
     }
   ]
 }

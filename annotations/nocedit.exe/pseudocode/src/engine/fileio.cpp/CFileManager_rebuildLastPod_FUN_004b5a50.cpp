@@ -219,7 +219,6 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
               puVar15 = puVar15 + (uint)bVar18 * -2 + 1;
             }
             g_AuditRecordsArray =
-                 (CPodAuditRecord *)
                  shape_memdbg_cpp_debugRealloc_FUN_0050f540
                            (g_AuditRecordsArray,g_AuditRecordCount * 0x138,
                             "..\\engine\\fileio.cpp",0x7a1);
@@ -312,7 +311,6 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
               }
               g_AuditRecordCount = g_AuditRecordCount + 1;
               g_AuditRecordsArray =
-                   (CPodAuditRecord *)
                    shape_memdbg_cpp_debugRealloc_FUN_0050f540
                              (g_AuditRecordsArray,g_AuditRecordCount * 0x138,
                               "..\\engine\\fileio.cpp",0x7a1);
@@ -524,7 +522,6 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                 }
                 g_AuditRecordCount = iVar8;
                 g_AuditRecordsArray =
-                     (CPodAuditRecord *)
                      shape_memdbg_cpp_debugRealloc_FUN_0050f540
                                (g_AuditRecordsArray,iVar8 * 0x138,"..\\engine\\fileio.cpp",0x7a1
                                );
@@ -567,7 +564,6 @@ engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                 }
                 g_AuditRecordCount = iVar8;
                 g_AuditRecordsArray =
-                     (CPodAuditRecord *)
                      shape_memdbg_cpp_debugRealloc_FUN_0050f540
                                (g_AuditRecordsArray,iVar8 * 0x138,"..\\engine\\fileio.cpp",0x7a1
                                );

@@ -1,320 +1,320 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 40, 
-    "global_count": 4, 
-    "total_lines": 101, 
-    "assembly_lines": 76, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }, 
-    {
-      "name": "support_newmsg.cpp_findLocalizedString_FUN_00544170", 
-      "addr": "00544170"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_LocalizationLoaded", 
-      "addr": "02fa8cd4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LocalizedStringCount", 
-      "addr": "02fa8cd8", 
-      "value": null
-    }, 
-    {
-      "type": "char*[500]", 
-      "name": "g_MessageKeys", 
-      "addr": "02fa8cdc", 
-      "value": null
-    }, 
-    {
-      "type": "char*[500]", 
-      "name": "g_MessageTexts", 
-      "addr": "02fa94ac", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005441f0", 
-    "signature": "char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)", 
-    "address_range": [
-      [
-        "005441f0", 
-        "0054426f"
-      ]
-    ], 
-    "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "key"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 76,
+    "complexity_score": 25,
+    "cross_reference_count": 40,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 101
+  },
   "cross_references": [
     {
-      "from_addr": "00481098", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_door.cpp_CDoor_getMoveType_FUN_00481070", 
-      "addr": "00481070"
-    }, 
+      "addr": "00481070",
+      "from_addr": "00481098",
+      "name": "core_door.cpp_CDoor_getMoveType_FUN_00481070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3795", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_FUN_004e36f0", 
-      "addr": "004e36f0"
-    }, 
+      "addr": "004e36f0",
+      "from_addr": "004e3795",
+      "name": "core_game.cpp_CGame_FUN_004e36f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3a20", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800", 
-      "addr": "004e3800"
-    }, 
+      "addr": "004e3800",
+      "from_addr": "004e3a20",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3da6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90", 
-      "addr": "004e3b90"
-    }, 
+      "addr": "004e3b90",
+      "from_addr": "004e3da6",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e17e6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
-      "addr": "004e12b0"
-    }, 
+      "addr": "004e12b0",
+      "from_addr": "004e17e6",
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004deb60", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
-      "addr": "004ddaf0"
-    }, 
+      "addr": "004ddaf0",
+      "from_addr": "004deb60",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004daa3f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
-    }, 
+      "addr": "004da100",
+      "from_addr": "004daa3f",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004db7e4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
-    }, 
+      "addr": "004daf80",
+      "from_addr": "004db7e4",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e120b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
-      "addr": "004e0cd0"
-    }, 
+      "addr": "004e0cd0",
+      "from_addr": "004e120b",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e22a1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0", 
-      "addr": "004e1cb0"
-    }, 
+      "addr": "004e1cb0",
+      "from_addr": "004e22a1",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d8e60", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0", 
-      "addr": "004d89d0"
-    }, 
+      "addr": "004d89d0",
+      "from_addr": "004d8e60",
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004dd607", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_SaveRelated_FUN_004dcee0", 
-      "addr": "004dcee0"
-    }, 
+      "addr": "004dcee0",
+      "from_addr": "004dd607",
+      "name": "core_game.cpp_SaveRelated_FUN_004dcee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004fdcc1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
-      "addr": "004fd600"
-    }, 
+      "addr": "004fd600",
+      "from_addr": "004fdcc1",
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00501422", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0", 
-      "addr": "005013d0"
-    }, 
+      "addr": "005013d0",
+      "from_addr": "00501422",
+      "name": "core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005012fe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690", 
-      "addr": "00500690"
-    }, 
+      "addr": "00500690",
+      "from_addr": "005012fe",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ff990", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_select_FUN_004ff800", 
-      "addr": "004ff800"
-    }, 
+      "addr": "004ff800",
+      "from_addr": "004ff990",
+      "name": "core_inv.cpp_CInventory_select_FUN_004ff800",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050873c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
-      "addr": "00508570"
-    }, 
+      "addr": "00508570",
+      "from_addr": "0050873c",
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00507d24", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
-    }, 
+      "addr": "00507a60",
+      "from_addr": "00507d24",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005084ca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showPromoScreen_FUN_00508340", 
-      "addr": "00508340"
-    }, 
+      "addr": "00508340",
+      "from_addr": "005084ca",
+      "name": "core_main.c_showPromoScreen_FUN_00508340",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005104fc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0", 
-      "addr": "005104d0"
-    }, 
+      "addr": "005104d0",
+      "from_addr": "005104fc",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00514d40", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0", 
-      "addr": "005138e0"
-    }, 
+      "addr": "005138e0",
+      "from_addr": "00514d40",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00511a00", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureCustomKeys_FUN_00511890", 
-      "addr": "00511890"
-    }, 
+      "addr": "00511890",
+      "from_addr": "00511a00",
+      "name": "core_menu.cpp_configureCustomKeys_FUN_00511890",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00510f41", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80", 
-      "addr": "00510c80"
-    }, 
+      "addr": "00510c80",
+      "from_addr": "00510f41",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00512684", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
-      "addr": "00511e50"
-    }, 
+      "addr": "00511e50",
+      "from_addr": "00512684",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005136a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_getKeyDisplayName_FUN_005134e0", 
-      "addr": "005134e0"
-    }, 
+      "addr": "005134e0",
+      "from_addr": "005136a0",
+      "name": "core_menu.cpp_getKeyDisplayName_FUN_005134e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00510a82", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_00510a50", 
-      "addr": "00510a50"
-    }, 
+      "addr": "00510a50",
+      "from_addr": "00510a82",
+      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_00510a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00510be8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_showCalibrationTest_FUN_00510ba0", 
-      "addr": "00510ba0"
-    }, 
+      "addr": "00510ba0",
+      "from_addr": "00510be8",
+      "name": "core_menu.cpp_showCalibrationTest_FUN_00510ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005130ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40", 
-      "addr": "00512f40"
-    }, 
+      "addr": "00512f40",
+      "from_addr": "005130ab",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00512de3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30", 
-      "addr": "00512d30"
-    }, 
+      "addr": "00512d30",
+      "from_addr": "00512de3",
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00523dc6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_FUN_00523cf0", 
-      "addr": "00523cf0"
-    }, 
+      "addr": "00523cf0",
+      "from_addr": "00523dc6",
+      "name": "core_mission.cpp_CDemonMission_FUN_00523cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005247f1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_FUN_00524760", 
-      "addr": "00524760"
-    }, 
+      "addr": "00524760",
+      "from_addr": "005247f1",
+      "name": "core_mission.cpp_CDemonMission_FUN_00524760",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00522db7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90", 
-      "addr": "00522d90"
-    }, 
+      "addr": "00522d90",
+      "from_addr": "00522db7",
+      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005245a4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_run_FUN_00524420", 
-      "addr": "00524420"
-    }, 
+      "addr": "00524420",
+      "from_addr": "005245a4",
+      "name": "core_mission.cpp_CDemonMission_run_FUN_00524420",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056aa22", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
-      "addr": "0056aa10"
-    }, 
+      "addr": "0056aa10",
+      "from_addr": "0056aa22",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00569caa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
-      "addr": "00569410"
-    }, 
+      "addr": "00569410",
+      "from_addr": "00569caa",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049f3dc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270", 
-      "addr": "0049f270"
-    }, 
+      "addr": "0049f270",
+      "from_addr": "0049f3dc",
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049fc87", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70", 
-      "addr": "0049fb70"
-    }, 
+      "addr": "0049fb70",
+      "from_addr": "0049fc87",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a3c42", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90", 
-      "addr": "004a3b90"
-    }, 
+      "addr": "004a3b90",
+      "from_addr": "004a3c42",
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b159a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560", 
-      "addr": "005b1560"
-    }, 
+      "addr": "005b1560",
+      "from_addr": "005b159a",
+      "name": "sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b14b6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470", 
-      "addr": "005b1470"
+      "addr": "005b1470",
+      "from_addr": "005b14b6",
+      "name": "sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005441f0",
+    "address_range": [
+      [
+        "005441f0",
+        "0054426f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0",
+    "signature": "char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    },
+    {
+      "addr": "00544170",
+      "name": "support_newmsg.cpp_findLocalizedString_FUN_00544170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02fa8cd4",
+      "name": "g_LocalizationLoaded",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02fa8cd8",
+      "name": "g_LocalizedStringCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02fa8cdc",
+      "name": "g_MessageKeys",
+      "type": "char*[500]",
+      "value": null
+    },
+    {
+      "addr": "02fa94ac",
+      "name": "g_MessageTexts",
+      "type": "char*[500]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "key",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

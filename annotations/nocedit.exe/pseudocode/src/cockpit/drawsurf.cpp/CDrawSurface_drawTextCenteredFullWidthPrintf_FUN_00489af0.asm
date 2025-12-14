@@ -32,8 +32,8 @@ section .text
     PUSH EDX                            ; 00489b15
     LEA EAX,[ESP + 0x8]                 ; 00489b16
     PUSH EAX                            ; 00489b1a
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 00489b1b | int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 00489b1b
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 00489b20
     MOV EBX,dword ptr [ESP + 0x1014]    ; 00489b23
     PUSH EBX                            ; 00489b2a
@@ -43,8 +43,8 @@ section .text
     XOR ECX,ECX                         ; 00489b37
     PUSH ESI                            ; 00489b39
     MOV dword ptr [ESP + 0x100c],ECX    ; 00489b3a
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 ; 00489b41 | void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0(CDrawSurface * this_ptr, int y, int height, char * text)
-        ;   XREF to: 00489ab0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 ; 00489b41
+        ;   XREF to: 00489ab0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0(CDrawSurface * this_ptr, int y, int height, char * text)
     ADD ESP,0xc                         ; 00489b46
     ADD ESP,0x1004                      ; 00489b49
     POP ESI                             ; 00489b4f

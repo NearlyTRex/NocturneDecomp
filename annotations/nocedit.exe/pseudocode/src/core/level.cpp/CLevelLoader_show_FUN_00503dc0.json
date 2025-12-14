@@ -1,242 +1,242 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 175, 
-    "pseudocode_lines": 105, 
-    "cross_reference_count": 3, 
-    "global_count": 9, 
-    "total_lines": 329, 
-    "assembly_lines": 224, 
-    "suspect_count": 5, 
+    "assembly_lines": 224,
+    "complexity_score": 175,
+    "cross_reference_count": 3,
+    "function_call_count": 8,
+    "global_count": 9,
+    "pseudocode_lines": 105,
+    "suspect_count": 5,
     "suspect_types": [
-      "unknown_field", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0", 
-      "addr": "00476db0"
-    }, 
-    {
-      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
-      "addr": "005feb5c"
-    }, 
-    {
-      "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520", 
-      "addr": "00410520"
-    }, 
-    {
-      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950", 
-      "addr": "00410950"
-    }, 
-    {
-      "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540", 
-      "addr": "00410540"
-    }, 
-    {
-      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0", 
-      "addr": "004105d0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_moon_kfm_00631017", 
-      "addr": "00631017", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_load1_00631020", 
-      "addr": "00631020", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_load2_00631026", 
-      "addr": "00631026", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_load3_0063102c", 
-      "addr": "0063102c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_load4_00631032", 
-      "addr": "00631032", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "g_LoadingMoonGlowTexture", 
-      "addr": "0067cf84", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CKeyFramedModel", 
-      "name": "g_LoadingMoonModel", 
-      "addr": "02dcd980", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 93, 
-      "match": "&stack0xffffffb8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)&stack0xffffffb8);"
-    }, 
-    {
-      "line": 95, 
-      "match": "&stack0xffffffbc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CAlphaBitmap *)&stack0xffffffbc,\"load4\",0x280,0x1e0);"
-    }, 
-    {
-      "line": 103, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_40._0_4_ = (uint *)0x0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00503dc0", 
-    "signature": "void core_level.cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)", 
-    "address_range": [
-      [
-        "00503dc0", 
-        "00504154"
-      ]
-    ], 
-    "name": "core_level.cpp_CLevelLoader_show_FUN_00503dc0"
-  }, 
-  "stack_frame": {
-    "local_size": 92, 
-    "variables": [
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLevelLoader *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "total_frames"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "use_custom_viewport"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "image_variant"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 108, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "stack_ref",
+      "register_param",
+      "unknown_field",
+      "badspacebase"
+    ],
+    "total_lines": 329
+  },
   "cross_references": [
     {
-      "from_addr": "004e140d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
-      "addr": "004e12b0"
-    }, 
+      "addr": "004e12b0",
+      "from_addr": "004e140d",
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e200d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0", 
-      "addr": "004e1cb0"
-    }, 
+      "addr": "004e1cb0",
+      "from_addr": "004e200d",
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052455c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_run_FUN_00524420", 
-      "addr": "00524420"
+      "addr": "00524420",
+      "from_addr": "0052455c",
+      "name": "core_mission.cpp_CDemonMission_run_FUN_00524420",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00503dc0",
+    "address_range": [
+      [
+        "00503dc0",
+        "00504154"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_level.cpp_CLevelLoader_show_FUN_00503dc0",
+    "signature": "void core_level.cpp_CLevelLoader_show_FUN_00503dc0(CLevelLoader * this_ptr, int total_frames, int use_custom_viewport, int image_variant)"
+  },
+  "function_calls": [
+    {
+      "addr": "00476db0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0"
+    },
+    {
+      "addr": "005feb5c",
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    },
+    {
+      "addr": "00410520",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520"
+    },
+    {
+      "addr": "00410950",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950"
+    },
+    {
+      "addr": "00410540",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540"
+    },
+    {
+      "addr": "004105d0",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0"
+    },
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00631017",
+      "name": "s_moon_kfm_00631017",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631020",
+      "name": "s_load1_00631020",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631026",
+      "name": "s_load2_00631026",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063102c",
+      "name": "s_load3_0063102c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00631032",
+      "name": "s_load4_00631032",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067cf84",
+      "name": "g_LoadingMoonGlowTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02dcd980",
+      "name": "g_LoadingMoonModel",
+      "type": "CKeyFramedModel",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 108,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLevelLoader *"
+      },
+      {
+        "is_param": true,
+        "name": "total_frames",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "use_custom_viewport",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "image_variant",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 93,
+      "match": "&stack0xffffffb8",
+      "text": "engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)&stack0xffffffb8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 95,
+      "match": "&stack0xffffffbc",
+      "text": "((CAlphaBitmap *)&stack0xffffffbc,\"load4\",0x280,0x1e0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 103,
+      "match": "._0_4_",
+      "text": "auStack_40._0_4_ = (uint *)0x0;",
+      "type": "unknown_field"
     }
   ]
 }

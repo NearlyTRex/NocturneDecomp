@@ -37,32 +37,32 @@ section .text
     FTST                                ; 0060016c
     FNSTSW AX                           ; 0060016e
     SAHF                                ; 00600170
-    JNZ 0x00600182                      ; 00600171 | LAB_00600182
-        ;   XREF to: 00600182 (CONDITIONAL_JUMP)
+    JNZ 0x00600182                      ; 00600171
+        ;   XREF to: 00600182 (CONDITIONAL_JUMP)  ; LAB_00600182
     FCOMPP                              ; 00600173
     FNSTSW AX                           ; 00600175
     SAHF                                ; 00600177
-    JA 0x0060017e                       ; 00600178 | LAB_0060017e
-        ;   XREF to: 0060017e (CONDITIONAL_JUMP)
+    JA 0x0060017e                       ; 00600178
+        ;   XREF to: 0060017e (CONDITIONAL_JUMP)  ; LAB_0060017e
     FLDZ                                ; 0060017a
-    JMP 0x00600180                      ; 0060017c | LAB_00600180
-        ;   XREF to: 00600180 (UNCONDITIONAL_JUMP)
+    JMP 0x00600180                      ; 0060017c
+        ;   XREF to: 00600180 (UNCONDITIONAL_JUMP)  ; LAB_00600180
     FLDPI                               ; 0060017e
         ;   Label: LAB_0060017e
-    JMP 0x0060019c                      ; 00600180 | LAB_0060019c
+    JMP 0x0060019c                      ; 00600180
+        ;   XREF to: 0060019c (UNCONDITIONAL_JUMP)  ; LAB_0060019c
         ;   Label: LAB_00600180
-        ;   XREF to: 0060019c (UNCONDITIONAL_JUMP)
     MOV AL,0x1                          ; 00600182
         ;   Label: LAB_00600182
-    CALL crt_math.c_sqrt_FUN_0060710c   ; 00600184 | double crt_math.c_sqrt_FUN_0060710c(double value)
-        ;   XREF to: 0060710c (UNCONDITIONAL_CALL)
+    CALL crt_math.c_sqrt_FUN_0060710c   ; 00600184
+        ;   XREF to: 0060710c (UNCONDITIONAL_CALL)  ; double crt_math.c_sqrt_FUN_0060710c(double value)
     CMP AL,0x0                          ; 00600189
-    JNZ 0x0060019c                      ; 0060018b | LAB_0060019c
-        ;   XREF to: 0060019c (CONDITIONAL_JUMP)
+    JNZ 0x0060019c                      ; 0060018b
+        ;   XREF to: 0060019c (CONDITIONAL_JUMP)  ; LAB_0060019c
     FXCH                                ; 0060018d
-    CALL crt_math.c_atan2_FUN_006013b1  ; 0060018f | float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
-        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)
-    FLD extended double ptr [0x00684b38] ; 00600194 | float10 g_PiOver2
+    CALL crt_math.c_atan2_FUN_006013b1  ; 0060018f
+        ;   XREF to: 006013b1 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_atan2_FUN_006013b1(float10 y, float10 x)
+    FLD extended double ptr [0x00684b38] ; 00600194 | g_PiOver2
     FSUBRP                              ; 0060019a
     POP AX                              ; 0060019c
         ;   Label: LAB_0060019c

@@ -1,110 +1,110 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 28, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 7, 
-    "global_count": 2, 
-    "total_lines": 101, 
-    "assembly_lines": 73, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_boss.c_modelStructNotSupported_FUN_0041dbb0", 
-      "addr": "0041dbb0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_model_c_00639bb3", 
-      "addr": "00639bb3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_model_c_00639bc5", 
-      "addr": "00639bc5", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005280b0", 
-    "signature": "void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)", 
-    "address_range": [
-      [
-        "005280b0", 
-        "0052813d"
-      ]
-    ], 
-    "name": "engine_model.c_freeMRGLData_FUN_005280b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderExtended *", 
-        "size": 4, 
-        "name": "modelStruct"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 73,
+    "complexity_score": 28,
+    "cross_reference_count": 7,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 101
+  },
   "cross_references": [
     {
-      "from_addr": "004b562f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610", 
-      "addr": "004b5610"
-    }, 
+      "addr": "004b5610",
+      "from_addr": "004b562f",
+      "name": "engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b55ba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0", 
-      "addr": "004b54e0"
-    }, 
+      "addr": "004b54e0",
+      "from_addr": "004b55ba",
+      "name": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00528584", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_model.c_getMRGLBounds_FUN_00528140", 
-      "addr": "00528140"
-    }, 
+      "addr": "00528140",
+      "from_addr": "00528584",
+      "name": "engine_model.c_getMRGLBounds_FUN_00528140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054511d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_palette.cpp_CPaletteManager_FUN_00545060", 
-      "addr": "00545060"
-    }, 
+      "addr": "00545060",
+      "from_addr": "0054511d",
+      "name": "engine_palette.cpp_CPaletteManager_FUN_00545060",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046830f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_centerKeyframeModels_FUN_004681a0", 
-      "addr": "004681a0"
-    }, 
+      "addr": "004681a0",
+      "from_addr": "0046830f",
+      "name": "shape_design.c_centerKeyframeModels_FUN_004681a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004588f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadModelBinary_FUN_00458170", 
-      "addr": "00458170"
-    }, 
+      "addr": "00458170",
+      "from_addr": "004588f5",
+      "name": "shape_design.c_loadModelBinary_FUN_00458170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048fffe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0", 
-      "addr": "0048fed0"
+      "addr": "0048fed0",
+      "from_addr": "0048fffe",
+      "name": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005280b0",
+    "address_range": [
+      [
+        "005280b0",
+        "0052813d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_model.c_freeMRGLData_FUN_005280b0",
+    "signature": "void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041dbb0",
+      "name": "engine_boss.c_modelStructNotSupported_FUN_0041dbb0"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00639bb3",
+      "name": "s_engine_model_c_00639bb3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639bc5",
+      "name": "s_engine_model_c_00639bc5",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "modelStruct",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "suspects": []
 }

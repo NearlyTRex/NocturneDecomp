@@ -19,13 +19,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 004103d1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004103d5
     FLD float ptr [EAX]                 ; 004103d9
-    FMUL float ptr [0x006597b0]         ; 004103db | float FLOAT_006597b0
+    FMUL float ptr [0x006597b0]         ; 004103db | FLOAT_006597b0
     FISTP dword ptr [EBX]               ; 004103e1
     FLD float ptr [EAX + 0x4]           ; 004103e3
-    FMUL float ptr [0x006597b0]         ; 004103e6 | float FLOAT_006597b0
+    FMUL float ptr [0x006597b0]         ; 004103e6 | FLOAT_006597b0
     FISTP dword ptr [EBX + 0x4]         ; 004103ec
     FLD float ptr [EAX + 0x8]           ; 004103ef
-    FMUL float ptr [0x006597b0]         ; 004103f2 | float FLOAT_006597b0
+    FMUL float ptr [0x006597b0]         ; 004103f2 | FLOAT_006597b0
     FISTP dword ptr [EBX + 0x8]         ; 004103f8
     POP EBX                             ; 004103fb
     RET                                 ; 004103fc

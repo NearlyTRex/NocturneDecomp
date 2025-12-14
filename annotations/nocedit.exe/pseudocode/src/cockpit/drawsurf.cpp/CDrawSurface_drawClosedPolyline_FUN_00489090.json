@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 62, 
-    "assembly_lines": 39, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990", 
-      "addr": "00487990"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 39,
+    "complexity_score": 23,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 62
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00489090", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawClosedPolyline_FUN_00489090(CDrawSurface * this_ptr, int point_count, CVector2i * points)", 
+    "address": "00489090",
     "address_range": [
       [
-        "00489090", 
+        "00489090",
         "004890d3"
       ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClosedPolyline_FUN_00489090"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClosedPolyline_FUN_00489090",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawClosedPolyline_FUN_00489090(CDrawSurface * this_ptr, int point_count, CVector2i * points)"
+  },
+  "function_calls": [
+    {
+      "addr": "00487990",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "point_count"
-      }, 
+        "is_param": true,
+        "name": "point_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector2i *", 
-        "size": 4, 
-        "name": "points"
+        "is_param": true,
+        "name": "points",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector2i *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

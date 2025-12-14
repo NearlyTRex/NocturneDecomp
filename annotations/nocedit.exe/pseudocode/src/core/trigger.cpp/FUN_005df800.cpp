@@ -11,8 +11,7 @@ void core_trigger_cpp_FUN_005df800(void)
 {
   CTrigger *this_ptr;
   
-  this_ptr = (CTrigger *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x370,"..\\core\\trigger.cpp",0x35);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x370,"..\\core\\trigger.cpp",0x35);
   if (this_ptr == (CTrigger *)0x0) {
     return;
   }

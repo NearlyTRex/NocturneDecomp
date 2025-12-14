@@ -1,257 +1,257 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 134, 
-    "pseudocode_lines": 69, 
-    "cross_reference_count": 0, 
-    "global_count": 12, 
-    "total_lines": 236, 
-    "assembly_lines": 167, 
-    "suspect_count": 5, 
+    "assembly_lines": 167,
+    "complexity_score": 130,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 12,
+    "pseudocode_lines": 65,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0", 
-      "addr": "0044d7d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CVector3i[320]", 
-      "name": "g_TempWorldPositionRow", 
-      "addr": "009e4e74", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[76800]", 
-      "name": "g_PrecomputedSurfaceNormals", 
-      "addr": "00ac6d74", 
-      "value": null
-    }, 
-    {
-      "type": "char[241][320]", 
-      "name": "g_CoronaBlurOutputBuffer", 
-      "addr": "00ba8c78", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CoronaMaxDepth", 
-      "addr": "00c1a1fc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CoronaDepthShift", 
-      "addr": "00c1a200", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonLight*", 
-      "name": "g_CurrentLightForCorona", 
-      "addr": "013bc234", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CoronaCameraRotationMatrix.m[0].z", 
-      "addr": "013bc240", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CoronaCameraRotationMatrix.m[1].z", 
-      "addr": "013bc24c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CoronaCameraRotationMatrix.m[2].z", 
-      "addr": "013bc258", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraDownscaleIterations", 
-      "addr": "013bc260", 
-      "value": null
-    }, 
-    {
-      "type": "int[240][320]", 
-      "name": "g_CoronaDepthBuffer", 
-      "addr": "01577728", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004507a9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_ffffffc0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CVector3i *in_stack_ffffffc0;"
-    }, 
-    {
-      "line": 38, 
-      "match": "in_stack_ffffffc0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&g_CurrentLightForCorona->base,apCStack_2c[2],in_stack_ffffffc0);"
-    }, 
-    {
-      "line": 39, 
-      "match": "in_stack_ffffffc0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc0 = pCStack_30;"
-    }
-  ], 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 232
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004507a0", 
-    "signature": "void core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(int scanline_y, int x_start, int x_end)", 
+    "address": "004507a0",
     "address_range": [
       [
-        "004507a0", 
+        "004507a0",
         "004509a2"
       ]
-    ], 
-    "name": "core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0",
+    "signature": "void core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0(int scanline_y, int x_start, int x_end)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044d7d0",
+      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "009e4e74",
+      "name": "g_TempWorldPositionRow",
+      "type": "CVector3i[320]",
+      "value": null
+    },
+    {
+      "addr": "00ac6d74",
+      "name": "g_PrecomputedSurfaceNormals",
+      "type": "CVector3f[76800]",
+      "value": null
+    },
+    {
+      "addr": "00ba8c78",
+      "name": "g_CoronaBlurOutputBuffer",
+      "type": "char[241][320]",
+      "value": null
+    },
+    {
+      "addr": "00c1a1fc",
+      "name": "g_CoronaMaxDepth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00c1a200",
+      "name": "g_CoronaDepthShift",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013bc234",
+      "name": "g_CurrentLightForCorona",
+      "type": "CDemonLight*",
+      "value": null
+    },
+    {
+      "addr": "013bc240",
+      "name": "g_CoronaCameraRotationMatrix.m[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bc24c",
+      "name": "g_CoronaCameraRotationMatrix.m[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bc258",
+      "name": "g_CoronaCameraRotationMatrix.m[2].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bc260",
+      "name": "g_CameraDownscaleIterations",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01577728",
+      "name": "g_CoronaDepthBuffer",
+      "type": "int[240][320]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 68, 
+    "frame_size": 80,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_34"
-      }, 
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "scanline_y"
-      }, 
+        "is_param": true,
+        "name": "scanline_y",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_start"
-      }, 
+        "is_param": true,
+        "name": "x_start",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_end"
+        "is_param": true,
+        "name": "x_end",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 80, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004507a9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_ffffffc0",
+      "text": "CVector3i *in_stack_ffffffc0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_ffffffc0",
+      "text": "(&g_CurrentLightForCorona->base,apCStack_2c[2],in_stack_ffffffc0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_ffffffc0",
+      "text": "in_stack_ffffffc0 = pCStack_30;",
+      "type": "stack_param"
+    }
+  ]
 }

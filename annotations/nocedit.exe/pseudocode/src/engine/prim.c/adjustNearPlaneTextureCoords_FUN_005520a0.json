@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 27, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 4, 
-    "global_count": 0, 
-    "total_lines": 77, 
-    "assembly_lines": 50, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005520a0", 
-    "signature": "void engine_prim.c_adjustNearPlaneTextureCoords_FUN_005520a0(SRenderVertex * vertices, int vertex_count)", 
-    "address_range": [
-      [
-        "005520a0", 
-        "00552106"
-      ]
-    ], 
-    "name": "engine_prim.c_adjustNearPlaneTextureCoords_FUN_005520a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SRenderVertex *", 
-        "size": 4, 
-        "name": "vertices"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 50,
+    "complexity_score": 27,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 77
+  },
   "cross_references": [
     {
-      "from_addr": "005fd799", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_rasterizePolygon_FUN_005fd4e0", 
-      "addr": "005fd4e0"
-    }, 
+      "addr": "005fd4e0",
+      "from_addr": "005fd799",
+      "name": "engine_3d.c_rasterizePolygon_FUN_005fd4e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00553cee", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10", 
-      "addr": "00553b10"
-    }, 
+      "addr": "00553b10",
+      "from_addr": "00553cee",
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00552746", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510", 
-      "addr": "00552510"
-    }, 
+      "addr": "00552510",
+      "from_addr": "00552746",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005537a1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_prim.c_renderScanlinePolygon_FUN_00553470", 
-      "addr": "00553470"
+      "addr": "00553470",
+      "from_addr": "005537a1",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_00553470",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005520a0",
+    "address_range": [
+      [
+        "005520a0",
+        "00552106"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_prim.c_adjustNearPlaneTextureCoords_FUN_005520a0",
+    "signature": "void engine_prim.c_adjustNearPlaneTextureCoords_FUN_005520a0(SRenderVertex * vertices, int vertex_count)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

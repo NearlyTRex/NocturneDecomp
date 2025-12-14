@@ -1,218 +1,218 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 174, 
-    "pseudocode_lines": 44, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 149, 
-    "assembly_lines": 105, 
-    "suspect_count": 12, 
+    "assembly_lines": 105,
+    "complexity_score": 174,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 5,
+    "pseudocode_lines": 44,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0", 
-      "addr": "0048caa0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80", 
-      "addr": "0048da80"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0", 
-      "addr": "0048aeb0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
-      "addr": "0048ca60"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00", 
-      "addr": "0048ca00"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0", 
-      "addr": "0048d6c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063a437", 
-      "addr": "0063a437", 
-      "value": "65535"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_0063a43f", 
-      "addr": "0063a43f", 
-      "value": "2"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "g_PerspectiveReciprocal", 
-      "addr": "02d051f4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000010;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double)(in_stack_00000010 * (float)65535 *"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(2f - in_stack_00000010)));"
-    }, 
-    {
-      "line": 22, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x10 |"
-    }, 
-    {
-      "line": 23, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x20) <<"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_00000004 + 0x5c)) {"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = in_stack_00000004 + 0x68;"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = *(int *)(iVar2 + *(int *)(in_stack_00000004 + 0x60));"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x60) + iVar2);"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x5c));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052b160", 
-    "signature": "void core_morph.cpp_FUN_0052b160(void)", 
-    "address_range": [
-      [
-        "0052b160", 
-        "0052b270"
-      ]
-    ], 
-    "name": "core_morph.cpp_FUN_0052b160"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 149
+  },
   "cross_references": [
     {
-      "from_addr": "0052af60", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_CMorphModel_FUN_0052af30", 
-      "addr": "0052af30"
+      "addr": "0052af30",
+      "from_addr": "0052af60",
+      "name": "core_morph.cpp_CMorphModel_FUN_0052af30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052b160",
+    "address_range": [
+      [
+        "0052b160",
+        "0052b270"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_morph.cpp_FUN_0052b160",
+    "signature": "void core_morph.cpp_FUN_0052b160(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048caa0",
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0"
+    },
+    {
+      "addr": "0048da80",
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80"
+    },
+    {
+      "addr": "0048aeb0",
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0"
+    },
+    {
+      "addr": "0048ca60",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
+    },
+    {
+      "addr": "0048ca00",
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00"
+    },
+    {
+      "addr": "0048d6c0",
+      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063a437",
+      "name": "DOUBLE_0063a437",
+      "type": "double",
+      "value": "65535"
+    },
+    {
+      "addr": "0063a43f",
+      "name": "FLOAT_0063a43f",
+      "type": "float",
+      "value": "2"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d051f4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "float in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "((double)(in_stack_00000010 * (float)65535 *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "text": "(2f - in_stack_00000010)));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_EAX",
+      "text": "(uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x10 |",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 23,
+      "match": "extraout_EAX",
+      "text": "(int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x20) <<",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x5c)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "text": "iVar5 = in_stack_00000004 + 0x68;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = *(int *)(iVar2 + *(int *)(in_stack_00000004 + 0x60));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "text": "polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x60) + iVar2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x5c));",
+      "type": "stack_param"
     }
   ]
 }

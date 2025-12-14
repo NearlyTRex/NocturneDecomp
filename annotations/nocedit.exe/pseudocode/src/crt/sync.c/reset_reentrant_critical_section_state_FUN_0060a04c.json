@@ -1,58 +1,58 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 12, 
-    "assembly_lines": 5, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a04c", 
-    "signature": "void crt_sync.c_reset_reentrant_critical_section_state_FUN_0060a04c(ReentrantCriticalSection * rcs)", 
-    "address_range": [
-      [
-        "0060a04c", 
-        "0060a05e"
-      ]
-    ], 
-    "name": "crt_sync.c_reset_reentrant_critical_section_state_FUN_0060a04c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ReentrantCriticalSection *", 
-        "size": 4, 
-        "name": "rcs"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 5,
+    "complexity_score": 7,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
   "cross_references": [
     {
-      "from_addr": "0060a164", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_invalidate_handle_wrapper_FUN_0060a154", 
-      "addr": "0060a154"
-    }, 
+      "addr": "0060a154",
+      "from_addr": "0060a164",
+      "name": "crt_io.c_invalidate_handle_wrapper_FUN_0060a154",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a413", 
-      "type": "DATA", 
-      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4", 
-      "addr": "0060a3b4"
+      "addr": "0060a3b4",
+      "from_addr": "0060a413",
+      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060a04c",
+    "address_range": [
+      [
+        "0060a04c",
+        "0060a05e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_sync.c_reset_reentrant_critical_section_state_FUN_0060a04c",
+    "signature": "void crt_sync.c_reset_reentrant_critical_section_state_FUN_0060a04c(ReentrantCriticalSection * rcs)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "rcs",
+        "offset": 4,
+        "size": 4,
+        "type": "ReentrantCriticalSection *"
+      }
+    ]
+  },
+  "suspects": []
 }

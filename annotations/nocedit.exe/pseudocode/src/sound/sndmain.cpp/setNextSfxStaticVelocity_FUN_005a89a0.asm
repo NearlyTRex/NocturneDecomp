@@ -23,7 +23,7 @@
 
 section .text
 
-    MOV EAX,[0x03f624a4]                ; 005a89a0 | int g_SfxLastSlot
+    MOV EAX,[0x03f624a4]                ; 005a89a0 | g_SfxLastSlot
         ;   Label: sound_sndmain.cpp_setNextSfxStaticVelocity_FUN_005a89a0
     SHL EAX,0x4                         ; 005a89a5
     MOV EDX,EAX                         ; 005a89a8

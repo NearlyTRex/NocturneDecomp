@@ -1,121 +1,121 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 21, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 2, 
-    "global_count": 8, 
-    "total_lines": 78, 
-    "assembly_lines": 57, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "uint[256]", 
-      "name": "g_Hardware32BitPalette", 
-      "addr": "02d01924", 
-      "value": null
-    }, 
-    {
-      "type": "ushort[256]", 
-      "name": "g_Hardware16BitPalette", 
-      "addr": "02d01d24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004345c0", 
-    "signature": "void cockpit_ckptutil.c_putPixel_FUN_004345c0(int x, int y, int color)", 
-    "address_range": [
-      [
-        "004345c0", 
-        "00434641"
-      ]
-    ], 
-    "name": "cockpit_ckptutil.c_putPixel_FUN_004345c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "color"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 57,
+    "complexity_score": 21,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 8,
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 78
+  },
   "cross_references": [
     {
-      "from_addr": "00433a83", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0", 
-      "addr": "004339c0"
-    }, 
+      "addr": "004339c0",
+      "from_addr": "00433a83",
+      "name": "cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00433da3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_ckptutil.c_drawLineAA_FUN_00433c90", 
-      "addr": "00433c90"
+      "addr": "00433c90",
+      "from_addr": "00433da3",
+      "name": "cockpit_ckptutil.c_drawLineAA_FUN_00433c90",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004345c0",
+    "address_range": [
+      [
+        "004345c0",
+        "00434641"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_putPixel_FUN_004345c0",
+    "signature": "void cockpit_ckptutil.c_putPixel_FUN_004345c0(int x, int y, int color)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d01924",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "02d01d24",
+      "name": "g_Hardware16BitPalette",
+      "type": "ushort[256]",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -9,8 +9,8 @@
 void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0
                (uint param_1,uint param_2,int unaff_EBX,uint param_4,
                CDemonSet *param_5,int param_6,uint param_7,int param_8,uint param_9,
-               double param_10,int param_11,char *param_12,uint param_13,int param_14,uint param_15,
-               uint param_16,int param_17,uint param_18,int param_19,int param_20,
+               double param_10,int param_11,char *param_12,char *param_13,int param_14,uint param_15
+               ,uint param_16,int param_17,uint param_18,int param_19,int param_20,
                char *param_21,int param_22,uint param_23,int param_24,int param_25,
                int param_26)
 
@@ -140,8 +140,8 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0
     iVar5 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
     switch(iVar5) {
     case 0x41:
-      uVar9 = (ulonglong)param_13;
       pcVar8 = "Enter on time";
+      pcVar2 = param_13;
       goto LAB_0057c050;
     case 0x42:
       max_value = 0.0;
@@ -280,9 +280,10 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0
       }
       break;
     case 0x4a:
-      uVar9 = ZEXT48(param_12);
       pcVar8 = "Enter light aspect ratio (Y/X)";
+      pcVar2 = param_12;
 LAB_0057c050:
+      uVar9 = ZEXT48(pcVar2);
       max_value = 0.0;
       goto LAB_0057c056;
     case 0x4b:

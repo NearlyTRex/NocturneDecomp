@@ -31,12 +31,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00524e6b
     MOV EBX,dword ptr [EBX + 0x548]     ; 00524e6f
     TEST EBX,EBX                        ; 00524e75
-    JZ 0x00524e98                       ; 00524e77 | LAB_00524e98
-        ;   XREF to: 00524e98 (CONDITIONAL_JUMP)
+    JZ 0x00524e98                       ; 00524e77
+        ;   XREF to: 00524e98 (CONDITIONAL_JUMP)  ; LAB_00524e98
     TEST EDI,EDI                        ; 00524e79
         ;   Label: LAB_00524e79
-    JZ 0x00524e9c                       ; 00524e7b | LAB_00524e9c
-        ;   XREF to: 00524e9c (CONDITIONAL_JUMP)
+    JZ 0x00524e9c                       ; 00524e7b
+        ;   XREF to: 00524e9c (CONDITIONAL_JUMP)  ; LAB_00524e9c
     PUSH ESI                            ; 00524e7d
         ;   Label: LAB_00524e7d
     MOV EAX,dword ptr [EBX + 0x154]     ; 00524e7e
@@ -46,46 +46,46 @@ section .text
     MOV EBX,dword ptr [EBX + 0x14c]     ; 00524e8e
         ;   Label: LAB_00524e8e
     TEST EBX,EBX                        ; 00524e94
-    JNZ 0x00524e79                      ; 00524e96 | LAB_00524e79
-        ;   XREF to: 00524e79 (CONDITIONAL_JUMP)
+    JNZ 0x00524e79                      ; 00524e96
+        ;   XREF to: 00524e79 (CONDITIONAL_JUMP)  ; LAB_00524e79
     POP EDI                             ; 00524e98
         ;   Label: LAB_00524e98
     POP ESI                             ; 00524e99
     POP EBX                             ; 00524e9a
     RET                                 ; 00524e9b
-    PUSH 0x63966c                       ; 00524e9c | = "CHero" | s_CHero_0063966c = CHero
+    PUSH 0x63966c                       ; 00524e9c | = "CHero"
         ;   Label: LAB_00524e9c
     PUSH EBX                            ; 00524ea1
-    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00524ea2 | int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00524ea2
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00524ea7
     TEST EAX,EAX                        ; 00524eaa
-    JNZ 0x00524e8e                      ; 00524eac | LAB_00524e8e
-        ;   XREF to: 00524e8e (CONDITIONAL_JUMP)
-    PUSH 0x639672                       ; 00524eae | = "CEnemy" | s_CEnemy_00639672 = CEnemy
+    JNZ 0x00524e8e                      ; 00524eac
+        ;   XREF to: 00524e8e (CONDITIONAL_JUMP)  ; LAB_00524e8e
+    PUSH 0x639672                       ; 00524eae | = "CEnemy"
     PUSH EBX                            ; 00524eb3
-    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00524eb4 | int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00524eb4
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00524eb9
     TEST EAX,EAX                        ; 00524ebc
-    JNZ 0x00524e8e                      ; 00524ebe | LAB_00524e8e
-        ;   XREF to: 00524e8e (CONDITIONAL_JUMP)
-    PUSH 0x639679                       ; 00524ec0 | = "CNPC" | s_CNPC_00639679 = CNPC
+    JNZ 0x00524e8e                      ; 00524ebe
+        ;   XREF to: 00524e8e (CONDITIONAL_JUMP)  ; LAB_00524e8e
+    PUSH 0x639679                       ; 00524ec0 | = "CNPC"
     PUSH EBX                            ; 00524ec5
-    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00524ec6 | int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00524ec6
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00524ecb
     TEST EAX,EAX                        ; 00524ece
-    JNZ 0x00524e8e                      ; 00524ed0 | LAB_00524e8e
-        ;   XREF to: 00524e8e (CONDITIONAL_JUMP)
-    PUSH 0x63967e                       ; 00524ed2 | = "CWeapon" | s_CWeapon_0063967e = CWeapon
+    JNZ 0x00524e8e                      ; 00524ed0
+        ;   XREF to: 00524e8e (CONDITIONAL_JUMP)  ; LAB_00524e8e
+    PUSH 0x63967e                       ; 00524ed2 | = "CWeapon"
     PUSH EBX                            ; 00524ed7
-    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00524ed8 | int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00524ed8
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00524edd
     TEST EAX,EAX                        ; 00524ee0
-    JNZ 0x00524e8e                      ; 00524ee2 | LAB_00524e8e
-        ;   XREF to: 00524e8e (CONDITIONAL_JUMP)
-    JMP 0x00524e7d                      ; 00524ee4 | LAB_00524e7d
-        ;   XREF to: 00524e7d (UNCONDITIONAL_JUMP)
+    JNZ 0x00524e8e                      ; 00524ee2
+        ;   XREF to: 00524e8e (CONDITIONAL_JUMP)  ; LAB_00524e8e
+    JMP 0x00524e7d                      ; 00524ee4
+        ;   XREF to: 00524e7d (UNCONDITIONAL_JUMP)  ; LAB_00524e7d
 

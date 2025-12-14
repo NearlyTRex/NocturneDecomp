@@ -98,7 +98,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
             (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_44);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr,&g_FireEffectRainDropTexture);
-  (*(code *)((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
   iStack_14 = 0xffff - (int)g_PerspectiveReciprocal;
   g_RenderVertexBuffer[1].u = 1.9101783e-38;
   g_RenderVertexBuffer[0].u = 1.1754944e-38;

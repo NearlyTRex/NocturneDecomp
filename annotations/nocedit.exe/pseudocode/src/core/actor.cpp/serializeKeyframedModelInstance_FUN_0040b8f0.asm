@@ -40,20 +40,20 @@ section .text
     SUB ESP,0xc8                        ; 0040b8f2
     MOV EDI,dword ptr [ESP + 0xd4]      ; 0040b8f8
     MOV EDX,dword ptr [ESP + 0xd8]      ; 0040b8ff
-    CMP dword ptr [0x00822038],0x1      ; 0040b906 | int g_ActorReadingMode
-    JNZ 0x0040b932                      ; 0040b90d | LAB_0040b932
-        ;   XREF to: 0040b932 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x00822038],0x1      ; 0040b906 | g_ActorReadingMode
+    JNZ 0x0040b932                      ; 0040b90d
+        ;   XREF to: 0040b932 (CONDITIONAL_JUMP)  ; LAB_0040b932
     PUSH EDX                            ; 0040b90f
     LEA ESI,[ESP + 0x4]                 ; 0040b910
     PUSH ESI                            ; 0040b914
-    CALL core_actor.cpp_serializeString_FUN_0040b5c0 ; 0040b915 | void core_actor.cpp_serializeString_FUN_0040b5c0(char * * string_buffer, char * property_type)
-        ;   XREF to: 0040b5c0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_serializeString_FUN_0040b5c0 ; 0040b915
+        ;   XREF to: 0040b5c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeString_FUN_0040b5c0(char * * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0040b91a
     MOV ESI,ESP                         ; 0040b91d
     PUSH ESI                            ; 0040b91f
     PUSH EDI                            ; 0040b920
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0040b921 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0040b921
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040b926
     ADD ESP,0xc8                        ; 0040b929
     POP EDI                             ; 0040b92f
@@ -67,22 +67,22 @@ section .text
         ;   Label: LAB_0040b938
     MOV byte ptr [EDI],AL               ; 0040b93a
     CMP AL,0x0                          ; 0040b93c
-    JZ 0x0040b950                       ; 0040b93e | LAB_0040b950
-        ;   XREF to: 0040b950 (CONDITIONAL_JUMP)
+    JZ 0x0040b950                       ; 0040b93e
+        ;   XREF to: 0040b950 (CONDITIONAL_JUMP)  ; LAB_0040b950
     MOV AL,byte ptr [ESI + 0x1]         ; 0040b940
     ADD ESI,0x2                         ; 0040b943
     MOV byte ptr [EDI + 0x1],AL         ; 0040b946
     ADD EDI,0x2                         ; 0040b949
     CMP AL,0x0                          ; 0040b94c
-    JNZ 0x0040b938                      ; 0040b94e | LAB_0040b938
-        ;   XREF to: 0040b938 (CONDITIONAL_JUMP)
+    JNZ 0x0040b938                      ; 0040b94e
+        ;   XREF to: 0040b938 (CONDITIONAL_JUMP)  ; LAB_0040b938
     POP EDI                             ; 0040b950
         ;   Label: LAB_0040b950
     PUSH EDX                            ; 0040b951
     LEA ESI,[ESP + 0x4]                 ; 0040b952
     PUSH ESI                            ; 0040b956
-    CALL core_actor.cpp_serializeString_FUN_0040b5c0 ; 0040b957 | void core_actor.cpp_serializeString_FUN_0040b5c0(char * * string_buffer, char * property_type)
-        ;   XREF to: 0040b5c0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_serializeString_FUN_0040b5c0 ; 0040b957
+        ;   XREF to: 0040b5c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeString_FUN_0040b5c0(char * * string_buffer, char * property_type)
     ADD ESP,0x8                         ; 0040b95c
     ADD ESP,0xc8                        ; 0040b95f
     POP EDI                             ; 0040b965

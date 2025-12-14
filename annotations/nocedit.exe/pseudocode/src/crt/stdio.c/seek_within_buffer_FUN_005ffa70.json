@@ -1,52 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 17, 
-    "assembly_lines": 8, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ffab4", 
-    "signature": "int crt_stdio.c_seek_within_buffer_FUN_005ffa70(FILE * file)", 
-    "address_range": [
-      [
-        "005ffab4", 
-        "005ffacb"
-      ]
-    ], 
-    "name": "crt_stdio.c_seek_within_buffer_FUN_005ffa70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 36,
+    "complexity_score": 10,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 46
+  },
   "cross_references": [
     {
-      "from_addr": "005ffbdf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
+      "addr": "005ffacc",
+      "from_addr": "005ffba2",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005ffa70",
+    "address_range": [
+      [
+        "005ffa70",
+        "005ffab3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_seek_within_buffer_FUN_005ffa70",
+    "signature": "int crt_stdio.c_seek_within_buffer_FUN_005ffa70(int offset, FILE * file)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "offset",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": []
 }

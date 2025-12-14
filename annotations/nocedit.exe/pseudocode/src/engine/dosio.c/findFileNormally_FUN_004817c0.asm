@@ -38,11 +38,11 @@ section .text
     SUB ESP,0x148                       ; 004817c1
     MOV EBX,dword ptr [ESP + 0x150]     ; 004817c7
     TEST EBX,EBX                        ; 004817ce
-    JZ 0x004817d7                       ; 004817d0 | LAB_004817d7
-        ;   XREF to: 004817d7 (CONDITIONAL_JUMP)
+    JZ 0x004817d7                       ; 004817d0
+        ;   XREF to: 004817d7 (CONDITIONAL_JUMP)  ; LAB_004817d7
     CMP byte ptr [EBX],0x0              ; 004817d2
-    JNZ 0x004817e1                      ; 004817d5 | LAB_004817e1
-        ;   XREF to: 004817e1 (CONDITIONAL_JUMP)
+    JNZ 0x004817e1                      ; 004817d5
+        ;   XREF to: 004817e1 (CONDITIONAL_JUMP)  ; LAB_004817e1
     XOR EAX,EAX                         ; 004817d7
         ;   Label: LAB_004817d7
     ADD ESP,0x148                       ; 004817d9
@@ -53,22 +53,22 @@ section .text
         ;   Label: LAB_004817e1
     LEA EAX,[ESP + 0x4]                 ; 004817e2
     PUSH EAX                            ; 004817e6
-    CALL engine_dosio.c_getFullPath_FUN_004820c0 ; 004817e7 | int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
-        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_getFullPath_FUN_004820c0 ; 004817e7
+        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
     ADD ESP,0x8                         ; 004817ec
     TEST EAX,EAX                        ; 004817ef
-    JZ 0x004817d9                       ; 004817f1 | LAB_004817d9
-        ;   XREF to: 004817d9 (CONDITIONAL_JUMP)
+    JZ 0x004817d9                       ; 004817f1
+        ;   XREF to: 004817d9 (CONDITIONAL_JUMP)  ; LAB_004817d9
     LEA EAX,[ESP + 0x100]               ; 004817f3
     PUSH EAX                            ; 004817fa
     LEA EAX,[ESP + 0x4]                 ; 004817fb
     PUSH EAX                            ; 004817ff
-    CALL crt_io.c_stat_thunk_00600c18   ; 00481800 | int crt_io.c_stat_thunk_00600c18(char * filename, stat * file_info)
-        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_stat_thunk_00600c18   ; 00481800
+        ;   XREF to: 00600c18 (UNCONDITIONAL_CALL)  ; int crt_io.c_stat_thunk_00600c18(char * filename, stat * file_info)
     ADD ESP,0x8                         ; 00481805
     TEST EAX,EAX                        ; 00481808
-    JNZ 0x004817d7                      ; 0048180a | LAB_004817d7
-        ;   XREF to: 004817d7 (CONDITIONAL_JUMP)
+    JNZ 0x004817d7                      ; 0048180a
+        ;   XREF to: 004817d7 (CONDITIONAL_JUMP)  ; LAB_004817d7
     PUSH EDI                            ; 0048180c
     PUSH ESI                            ; 0048180d
     MOV EAX,dword ptr [ESP + 0x11e]     ; 0048180e
@@ -84,15 +84,15 @@ section .text
         ;   Label: LAB_00481843
     MOV byte ptr [EDI],AL               ; 00481845
     CMP AL,0x0                          ; 00481847
-    JZ 0x0048185b                       ; 00481849 | LAB_0048185b
-        ;   XREF to: 0048185b (CONDITIONAL_JUMP)
+    JZ 0x0048185b                       ; 00481849
+        ;   XREF to: 0048185b (CONDITIONAL_JUMP)  ; LAB_0048185b
     MOV AL,byte ptr [ESI + 0x1]         ; 0048184b
     ADD ESI,0x2                         ; 0048184e
     MOV byte ptr [EDI + 0x1],AL         ; 00481851
     ADD EDI,0x2                         ; 00481854
     CMP AL,0x0                          ; 00481857
-    JNZ 0x00481843                      ; 00481859 | LAB_00481843
-        ;   XREF to: 00481843 (CONDITIONAL_JUMP)
+    JNZ 0x00481843                      ; 00481859
+        ;   XREF to: 00481843 (CONDITIONAL_JUMP)  ; LAB_00481843
     POP EDI                             ; 0048185b
         ;   Label: LAB_0048185b
     MOV EAX,0x1                         ; 0048185c

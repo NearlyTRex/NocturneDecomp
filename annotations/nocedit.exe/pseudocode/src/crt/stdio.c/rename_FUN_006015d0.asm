@@ -29,12 +29,12 @@ section .text
     PUSH EDX                            ; 006015d5
     MOV EBX,dword ptr [ESP + 0xc]       ; 006015d6
     PUSH EBX                            ; 006015da
-    CALL dword ptr CS:[0x6115f0]        ; 006015db | MoveFileA * PTR_MoveFileA_006115f0
+    CALL dword ptr CS:[0x6115f0]        ; 006015db | PTR_MoveFileA_006115f0
     TEST EAX,EAX                        ; 006015e2
-    JNZ 0x006015ed                      ; 006015e4 | LAB_006015ed
-        ;   XREF to: 006015ed (CONDITIONAL_JUMP)
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006015e6 | DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)
+    JNZ 0x006015ed                      ; 006015e4
+        ;   XREF to: 006015ed (CONDITIONAL_JUMP)  ; LAB_006015ed
+    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006015e6
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
     POP EBX                             ; 006015eb
     RET                                 ; 006015ec
     XOR EAX,EAX                         ; 006015ed

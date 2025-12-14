@@ -32,32 +32,32 @@ section .text
     SUB ESP,0x3c                        ; 004e5934
     MOV ESI,dword ptr [ESP + 0x50]      ; 004e5937
     MOV EDI,dword ptr [ESP + 0x54]      ; 004e593b
-    MOV EDX,dword ptr [0x02d83200]      ; 004e593f | undefined4 DAT_02d83200
+    MOV EDX,dword ptr [0x02d83200]      ; 004e593f | DAT_02d83200
     PUSH EDX                            ; 004e5945
     LEA EAX,[ESP + 0x4]                 ; 004e5946
     PUSH EAX                            ; 004e594a
     LEA EAX,[ESI + 0x158]               ; 004e594b
     PUSH EAX                            ; 004e5951
     MOV EBX,0x1                         ; 004e5952
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e5957 | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e5957
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004e595c
     CMP EDI,EAX                         ; 004e595f
-    JNZ 0x004e5a70                      ; 004e5961 | LAB_004e5a70
-        ;   XREF to: 004e5a70 (CONDITIONAL_JUMP)
+    JNZ 0x004e5a70                      ; 004e5961
+        ;   XREF to: 004e5a70 (CONDITIONAL_JUMP)  ; LAB_004e5a70
     MOV EAX,dword ptr [ESI + 0xbebc]    ; 004e5967
         ;   Label: LAB_004e5967
     CMP dword ptr [ESI + EAX*0x4 + 0x2298],0x0 ; 004e596d
-    JZ 0x004e59b7                       ; 004e5975 | LAB_004e59b7
-        ;   XREF to: 004e59b7 (CONDITIONAL_JUMP)
-    MOV EBP,dword ptr [0x02d83214]      ; 004e5977 | undefined4 DAT_02d83214
+    JZ 0x004e59b7                       ; 004e5975
+        ;   XREF to: 004e59b7 (CONDITIONAL_JUMP)  ; LAB_004e59b7
+    MOV EBP,dword ptr [0x02d83214]      ; 004e5977 | DAT_02d83214
     PUSH EBP                            ; 004e597d
     LEA EAX,[ESP + 0x10]                ; 004e597e
     PUSH EAX                            ; 004e5982
     LEA EAX,[ESI + 0x158]               ; 004e5983
     PUSH EAX                            ; 004e5989
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e598a | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e598a
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV EDX,EAX                         ; 004e598f
     LEA EAX,[EBX*0x4 + 0x0]             ; 004e5991
     SUB EAX,EBX                         ; 004e5998
@@ -65,8 +65,8 @@ section .text
     ADD EAX,EDI                         ; 004e599d
     ADD ESP,0xc                         ; 004e599f
     CMP EAX,EDX                         ; 004e59a2
-    JZ 0x004e59b6                       ; 004e59a4 | LAB_004e59b6
-        ;   XREF to: 004e59b6 (CONDITIONAL_JUMP)
+    JZ 0x004e59b6                       ; 004e59a4
+        ;   XREF to: 004e59b6 (CONDITIONAL_JUMP)  ; LAB_004e59b6
     MOV ECX,dword ptr [EDX]             ; 004e59a6
     MOV dword ptr [EAX],ECX             ; 004e59a8
     MOV ECX,dword ptr [EDX + 0x4]       ; 004e59aa
@@ -78,16 +78,16 @@ section .text
     MOV EAX,dword ptr [ESI + 0xbec4]    ; 004e59b7
         ;   Label: LAB_004e59b7
     CMP dword ptr [ESI + EAX*0x4 + 0x2298],0x0 ; 004e59bd
-    JZ 0x004e5a07                       ; 004e59c5 | LAB_004e5a07
-        ;   XREF to: 004e5a07 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02d83218]      ; 004e59c7 | undefined4 DAT_02d83218
+    JZ 0x004e5a07                       ; 004e59c5
+        ;   XREF to: 004e5a07 (CONDITIONAL_JUMP)  ; LAB_004e5a07
+    MOV ECX,dword ptr [0x02d83218]      ; 004e59c7 | DAT_02d83218
     PUSH ECX                            ; 004e59cd
     LEA EAX,[ESP + 0x1c]                ; 004e59ce
     PUSH EAX                            ; 004e59d2
     LEA EAX,[ESI + 0x158]               ; 004e59d3
     PUSH EAX                            ; 004e59d9
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e59da | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e59da
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV EDX,EAX                         ; 004e59df
     LEA EAX,[EBX*0x4 + 0x0]             ; 004e59e1
     SUB EAX,EBX                         ; 004e59e8
@@ -95,8 +95,8 @@ section .text
     ADD EAX,EDI                         ; 004e59ed
     ADD ESP,0xc                         ; 004e59ef
     CMP EAX,EDX                         ; 004e59f2
-    JZ 0x004e5a06                       ; 004e59f4 | LAB_004e5a06
-        ;   XREF to: 004e5a06 (CONDITIONAL_JUMP)
+    JZ 0x004e5a06                       ; 004e59f4
+        ;   XREF to: 004e5a06 (CONDITIONAL_JUMP)  ; LAB_004e5a06
     MOV ECX,dword ptr [EDX]             ; 004e59f6
     MOV dword ptr [EAX],ECX             ; 004e59f8
     MOV ECX,dword ptr [EDX + 0x4]       ; 004e59fa
@@ -108,16 +108,16 @@ section .text
     MOV EAX,dword ptr [ESI + 0xbedc]    ; 004e5a07
         ;   Label: LAB_004e5a07
     CMP dword ptr [ESI + EAX*0x4 + 0x2298],0x0 ; 004e5a0d
-    JZ 0x004e5a56                       ; 004e5a15 | LAB_004e5a56
-        ;   XREF to: 004e5a56 (CONDITIONAL_JUMP)
-    MOV EAX,[0x02d83224]                ; 004e5a17 | undefined4 DAT_02d83224
+    JZ 0x004e5a56                       ; 004e5a15
+        ;   XREF to: 004e5a56 (CONDITIONAL_JUMP)  ; LAB_004e5a56
+    MOV EAX,[0x02d83224]                ; 004e5a17 | DAT_02d83224
     PUSH EAX                            ; 004e5a1c
     LEA EAX,[ESP + 0x34]                ; 004e5a1d
     PUSH EAX                            ; 004e5a21
     LEA EAX,[ESI + 0x158]               ; 004e5a22
     PUSH EAX                            ; 004e5a28
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e5a29 | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e5a29
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV EDX,EAX                         ; 004e5a2e
     LEA EAX,[EBX*0x4 + 0x0]             ; 004e5a30
     SUB EAX,EBX                         ; 004e5a37
@@ -125,8 +125,8 @@ section .text
     ADD EAX,EDI                         ; 004e5a3c
     ADD ESP,0xc                         ; 004e5a3e
     CMP EAX,EDX                         ; 004e5a41
-    JZ 0x004e5a55                       ; 004e5a43 | LAB_004e5a55
-        ;   XREF to: 004e5a55 (CONDITIONAL_JUMP)
+    JZ 0x004e5a55                       ; 004e5a43
+        ;   XREF to: 004e5a55 (CONDITIONAL_JUMP)  ; LAB_004e5a55
     MOV ECX,dword ptr [EDX]             ; 004e5a45
     MOV dword ptr [EAX],ECX             ; 004e5a47
     MOV ECX,dword ptr [EDX + 0x4]       ; 004e5a49
@@ -138,8 +138,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0xbee0]    ; 004e5a56
         ;   Label: LAB_004e5a56
     CMP dword ptr [ESI + EAX*0x4 + 0x2298],0x0 ; 004e5a5c
-    JNZ 0x004e5a85                      ; 004e5a64 | LAB_004e5a85
-        ;   XREF to: 004e5a85 (CONDITIONAL_JUMP)
+    JNZ 0x004e5a85                      ; 004e5a64
+        ;   XREF to: 004e5a85 (CONDITIONAL_JUMP)  ; LAB_004e5a85
     MOV EAX,EBX                         ; 004e5a66
     ADD ESP,0x3c                        ; 004e5a68
     POP EBP                             ; 004e5a6b
@@ -154,17 +154,17 @@ section .text
     MOV dword ptr [EDI + 0x4],EDX       ; 004e5a77
     MOV EDX,dword ptr [EAX + 0x8]       ; 004e5a7a
     MOV dword ptr [EDI + 0x8],EDX       ; 004e5a7d
-    JMP 0x004e5967                      ; 004e5a80 | LAB_004e5967
-        ;   XREF to: 004e5967 (UNCONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02d8322c]      ; 004e5a85 | undefined4 DAT_02d8322c
+    JMP 0x004e5967                      ; 004e5a80
+        ;   XREF to: 004e5967 (UNCONDITIONAL_JUMP)  ; LAB_004e5967
+    MOV ECX,dword ptr [0x02d8322c]      ; 004e5a85 | DAT_02d8322c
         ;   Label: LAB_004e5a85
     PUSH ECX                            ; 004e5a8b
     LEA EAX,[ESP + 0x28]                ; 004e5a8c
     PUSH EAX                            ; 004e5a90
     ADD ESI,0x158                       ; 004e5a91
     PUSH ESI                            ; 004e5a97
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e5a98 | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004e5a98
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     MOV ESI,EAX                         ; 004e5a9d
     LEA EAX,[EBX*0x4 + 0x0]             ; 004e5a9f
     SUB EAX,EBX                         ; 004e5aa6
@@ -172,8 +172,8 @@ section .text
     ADD EDI,EAX                         ; 004e5aab
     ADD ESP,0xc                         ; 004e5aad
     CMP EDI,ESI                         ; 004e5ab0
-    JZ 0x004e5ac4                       ; 004e5ab2 | LAB_004e5ac4
-        ;   XREF to: 004e5ac4 (CONDITIONAL_JUMP)
+    JZ 0x004e5ac4                       ; 004e5ab2
+        ;   XREF to: 004e5ac4 (CONDITIONAL_JUMP)  ; LAB_004e5ac4
     MOV EAX,dword ptr [ESI]             ; 004e5ab4
     MOV dword ptr [EDI],EAX             ; 004e5ab6
     MOV EAX,dword ptr [ESI + 0x4]       ; 004e5ab8

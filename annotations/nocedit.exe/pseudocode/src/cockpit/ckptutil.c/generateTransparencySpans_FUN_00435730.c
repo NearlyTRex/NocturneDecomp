@@ -44,7 +44,7 @@ cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730
     local_24 = transparent_color_index;
     local_1c = (byte *)width;
     local_20 = 0;
-    local_14 = (int *)span_data_buffer;
+    local_14 = span_data_buffer;
     do {
       bVar1 = false;
       iVar3 = 0;

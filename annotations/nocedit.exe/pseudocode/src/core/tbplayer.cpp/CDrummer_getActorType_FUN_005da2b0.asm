@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f6cc54                   ; 005da2b0 | CDemonActorType g_CDrummerClassInfo
+    MOV EAX,0x3f6cc54                   ; 005da2b0 | g_CDrummerClassInfo
         ;   Label: core_tbplayer.cpp_CDrummer_getActorType_FUN_005da2b0
     RET                                 ; 005da2b5
 

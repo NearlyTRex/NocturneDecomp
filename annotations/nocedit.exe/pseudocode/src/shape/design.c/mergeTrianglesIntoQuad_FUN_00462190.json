@@ -1,566 +1,566 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 392, 
-    "pseudocode_lines": 222, 
-    "cross_reference_count": 2, 
-    "global_count": 23, 
-    "total_lines": 946, 
-    "assembly_lines": 724, 
-    "suspect_count": 14, 
+    "assembly_lines": 724,
+    "complexity_score": 392,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 23,
+    "pseudocode_lines": 222,
+    "suspect_count": 14,
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "concat_artifact",
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_design.c_calculatePolygonAngularArea_FUN_00461ee0", 
-      "addr": "00461ee0"
-    }, 
-    {
-      "name": "shape_design.c_calculatePolygonNormal_FUN_0045caa0", 
-      "addr": "0045caa0"
-    }, 
-    {
-      "name": "shape_design.c_calculateVertexAngle_FUN_00462050", 
-      "addr": "00462050"
-    }, 
-    {
-      "name": "shape_design.c_swapDWords_FUN_00462130", 
-      "addr": "00462130"
-    }, 
-    {
-      "name": "shape_design.c_swapFloats_FUN_00462160", 
-      "addr": "00462160"
-    }, 
-    {
-      "name": "shape_design.c_validatePolygonNormals_FUN_00461d80", 
-      "addr": "00461d80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_MinPolygonAreaThreshold", 
-      "addr": "0061bfce", 
-      "value": "359.5"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_FirstAngleThreshold", 
-      "addr": "0061bfd6", 
-      "value": "170"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_AngleForCosineCalc", 
-      "addr": "0061bfde", 
-      "value": "0.523598775600000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0061bfe6", 
-      "addr": "0061bfe6", 
-      "value": "170"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PolygonCount", 
-      "addr": "016e990c", 
-      "value": null
-    }, 
-    {
-      "type": "SShapeEditorPolygon[20000]", 
-      "name": "g_ModelPolygonData", 
-      "addr": "016e9910", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9914", 
-      "addr": "016e9914", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b4", 
-      "addr": "016e99b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b8", 
-      "addr": "016e99b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99bc", 
-      "addr": "016e99bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c0", 
-      "addr": "016e99c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c8", 
-      "addr": "016e99c8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99cc", 
-      "addr": "016e99cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99d0", 
-      "addr": "016e99d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99d4", 
-      "addr": "016e99d4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a08", 
-      "addr": "016e9a08", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a0c", 
-      "addr": "016e9a0c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a10", 
-      "addr": "016e9a10", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a14", 
-      "addr": "016e9a14", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a48", 
-      "addr": "016e9a48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a4c", 
-      "addr": "016e9a4c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a50", 
-      "addr": "016e9a50", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a54", 
-      "addr": "016e9a54", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_fffffe24", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_fffffe24;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_fffffe34", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_fffffe34;"
-    }, 
-    {
-      "line": 66, 
-      "match": "&stack0xfffffe18", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((SShapeEditorPolygon *)&stack0xfffffe18);"
-    }, 
-    {
-      "line": 67, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar4 = CONCAT22 /* combine 2-byte values */((short)((ulonglong)dVar9 >> 0x10),"
-    }, 
-    {
-      "line": 83, 
-      "match": "&stack0xfffffe18", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "shape_design_c_calculatePolygonNormal_FUN_0045caa0((SShapeEditorPolygon *)&stack0xfffffe18);"
-    }, 
-    {
-      "line": 104, 
-      "match": "&stack0xfffffe18", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((SShapeEditorPolygon *)&stack0xfffffe18);"
-    }, 
-    {
-      "line": 108, 
-      "match": "in_stack_fffffe24", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(local_130[1],local_130[2],in_stack_fffffe24);"
-    }, 
-    {
-      "line": 116, 
-      "match": "&stack0xfffffe18", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((SShapeEditorPolygon *)&stack0xfffffe18);"
-    }, 
-    {
-      "line": 136, 
-      "match": "&stack0xfffffe18", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((SShapeEditorPolygon *)&stack0xfffffe18,"
-    }, 
-    {
-      "line": 171, 
-      "match": "in_stack_fffffe34", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffe34);"
-    }, 
-    {
-      "line": 206, 
-      "match": "(SShapeEditorPolygon *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 207, 
-      "match": "(SShapeEditorPolygon *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00462190", 
-    "signature": "uint shape_design.c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygon_index, int second_polygon_index)", 
-    "address_range": [
-      [
-        "00462190", 
-        "00462b67"
-      ]
-    ], 
-    "name": "shape_design.c_mergeTrianglesIntoQuad_FUN_00462190"
-  }, 
-  "stack_frame": {
-    "local_size": 512, 
-    "variables": [
-      {
-        "offset": -508, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_1fc"
-      }, 
-      {
-        "offset": -500, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1f4"
-      }, 
-      {
-        "offset": -496, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_1f0"
-      }, 
-      {
-        "offset": -488, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1e8"
-      }, 
-      {
-        "offset": -324, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_144"
-      }, 
-      {
-        "offset": -320, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_140"
-      }, 
-      {
-        "offset": -316, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_13c"
-      }, 
-      {
-        "offset": -312, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_138"
-      }, 
-      {
-        "offset": -304, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_130"
-      }, 
-      {
-        "offset": -300, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_12c"
-      }, 
-      {
-        "offset": -296, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_128"
-      }, 
-      {
-        "offset": -292, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_124"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "first_polygon_index"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "second_polygon_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 520, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 946
+  },
   "cross_references": [
     {
-      "from_addr": "00465767", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560", 
-      "addr": "00465560"
-    }, 
+      "addr": "00465560",
+      "from_addr": "00465767",
+      "name": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00465a82", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_optimizePolygonMesh_FUN_004658e0", 
-      "addr": "004658e0"
+      "addr": "004658e0",
+      "from_addr": "00465a82",
+      "name": "shape_design.c_optimizePolygonMesh_FUN_004658e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00462190",
+    "address_range": [
+      [
+        "00462190",
+        "00462b67"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_mergeTrianglesIntoQuad_FUN_00462190",
+    "signature": "uint shape_design.c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygon_index, int second_polygon_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00461ee0",
+      "name": "shape_design.c_calculatePolygonAngularArea_FUN_00461ee0"
+    },
+    {
+      "addr": "0045caa0",
+      "name": "shape_design.c_calculatePolygonNormal_FUN_0045caa0"
+    },
+    {
+      "addr": "00462050",
+      "name": "shape_design.c_calculateVertexAngle_FUN_00462050"
+    },
+    {
+      "addr": "00462130",
+      "name": "shape_design.c_swapDWords_FUN_00462130"
+    },
+    {
+      "addr": "00462160",
+      "name": "shape_design.c_swapFloats_FUN_00462160"
+    },
+    {
+      "addr": "00461d80",
+      "name": "shape_design.c_validatePolygonNormals_FUN_00461d80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061bfce",
+      "name": "g_MinPolygonAreaThreshold",
+      "type": "double",
+      "value": "359.5"
+    },
+    {
+      "addr": "0061bfd6",
+      "name": "g_FirstAngleThreshold",
+      "type": "double",
+      "value": "170"
+    },
+    {
+      "addr": "0061bfde",
+      "name": "g_AngleForCosineCalc",
+      "type": "double",
+      "value": "0.523598775600000"
+    },
+    {
+      "addr": "0061bfe6",
+      "name": "DOUBLE_0061bfe6",
+      "type": "double",
+      "value": "170"
+    },
+    {
+      "addr": "016e990c",
+      "name": "g_PolygonCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "016e9910",
+      "name": "g_ModelPolygonData",
+      "type": "SShapeEditorPolygon[20000]",
+      "value": null
+    },
+    {
+      "addr": "016e9914",
+      "name": "DAT_016e9914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b4",
+      "name": "DAT_016e99b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b8",
+      "name": "DAT_016e99b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99bc",
+      "name": "DAT_016e99bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c0",
+      "name": "DAT_016e99c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c8",
+      "name": "DAT_016e99c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99cc",
+      "name": "DAT_016e99cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99d0",
+      "name": "DAT_016e99d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99d4",
+      "name": "DAT_016e99d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a08",
+      "name": "DAT_016e9a08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a0c",
+      "name": "DAT_016e9a0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a10",
+      "name": "DAT_016e9a10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a14",
+      "name": "DAT_016e9a14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a48",
+      "name": "DAT_016e9a48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a4c",
+      "name": "DAT_016e9a4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a50",
+      "name": "DAT_016e9a50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a54",
+      "name": "DAT_016e9a54",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 520,
+    "local_size": 512,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1fc",
+        "offset": -508,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1f4",
+        "offset": -500,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1f0",
+        "offset": -496,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1e8",
+        "offset": -488,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_140",
+        "offset": -320,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_138",
+        "offset": -312,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_130",
+        "offset": -304,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_12c",
+        "offset": -300,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_128",
+        "offset": -296,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "first_polygon_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "second_polygon_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_fffffe24",
+      "text": "int in_stack_fffffe24;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_fffffe34",
+      "text": "int in_stack_fffffe34;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 66,
+      "match": "&stack0xfffffe18",
+      "text": "((SShapeEditorPolygon *)&stack0xfffffe18);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 67,
+      "match": "CONCAT22",
+      "text": "uVar4 = CONCAT22 /* combine 2-byte values */((short)((ulonglong)dVar9 >> 0x10),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 83,
+      "match": "&stack0xfffffe18",
+      "text": "shape_design_c_calculatePolygonNormal_FUN_0045caa0((SShapeEditorPolygon *)&stack0xfffffe18);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 104,
+      "match": "&stack0xfffffe18",
+      "text": "((SShapeEditorPolygon *)&stack0xfffffe18);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 108,
+      "match": "in_stack_fffffe24",
+      "text": "(local_130[1],local_130[2],in_stack_fffffe24);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 116,
+      "match": "&stack0xfffffe18",
+      "text": "((SShapeEditorPolygon *)&stack0xfffffe18);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 136,
+      "match": "&stack0xfffffe18",
+      "text": "((SShapeEditorPolygon *)&stack0xfffffe18,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 171,
+      "match": "in_stack_fffffe34",
+      "text": "in_stack_fffffe34);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 206,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 207,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,115 +1,115 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 32, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 1, 
-    "global_count": 7, 
-    "total_lines": 104, 
-    "assembly_lines": 72, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_00649263", 
-      "addr": "00649263", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setutil_cpp_00649267", 
-      "addr": "00649267", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setutil_cpp_0064927b", 
-      "addr": "0064927b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_for_pvsLis_0064928f", 
-      "addr": "0064928f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_006492ae", 
-      "addr": "006492ae", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005857b0", 
-    "signature": "void core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "005857b0", 
-        "00585864"
-      ]
-    ], 
-    "name": "core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "C3DSCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 72,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 7,
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
+  },
   "cross_references": [
     {
-      "from_addr": "00569c73", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
-      "addr": "00569410"
+      "addr": "00569410",
+      "from_addr": "00569c73",
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005857b0",
+    "address_range": [
+      [
+        "005857b0",
+        "00585864"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0",
+    "signature": "void core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0(C3DSCamera * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649263",
+      "name": "s_d_00649263",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649267",
+      "name": "s_core_setutil_cpp_00649267",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064927b",
+      "name": "s_core_setutil_cpp_0064927b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064928f",
+      "name": "s_Out_of_memory_for_pvsLis_0064928f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006492ae",
+      "name": "s_d_006492ae",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": []
 }

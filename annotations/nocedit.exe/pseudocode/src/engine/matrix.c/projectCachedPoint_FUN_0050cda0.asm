@@ -25,10 +25,10 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0050cda4
     SUB EAX,EDX                         ; 0050cdab
     SHL EAX,0x4                         ; 0050cdad
-    ADD EAX,0x688014                    ; 0050cdb0 | SRenderVertex[16] g_RenderVertexBuffer
+    ADD EAX,0x688014                    ; 0050cdb0 | g_RenderVertexBuffer
     PUSH EAX                            ; 0050cdb5
-    CALL engine_matrix.c_projectTransformedPoint_FUN_0050cdc0 ; 0050cdb6 | void engine_matrix.c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex * point)
-        ;   XREF to: 0050cdc0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_projectTransformedPoint_FUN_0050cdc0 ; 0050cdb6
+        ;   XREF to: 0050cdc0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex * point)
     ADD ESP,0x4                         ; 0050cdbb
     RET                                 ; 0050cdbe
 

@@ -23,8 +23,8 @@ section .text
     LEA EAX,[EDX + 0x8]                 ; 0054c714
     PUSH EAX                            ; 0054c717
     PUSH EDX                            ; 0054c718
-    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_0054c5d0 ; 0054c719 | void cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_0054c5d0(CPackedBitmapSet * this_ptr, char * act_filename)
-        ;   XREF to: 0054c5d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_0054c5d0 ; 0054c719
+        ;   XREF to: 0054c5d0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_0054c5d0(CPackedBitmapSet * this_ptr, char * act_filename)
     ADD ESP,0x8                         ; 0054c71e
     RET                                 ; 0054c721
 

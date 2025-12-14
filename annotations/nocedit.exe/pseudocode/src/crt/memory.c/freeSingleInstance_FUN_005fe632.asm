@@ -31,8 +31,8 @@ section .text
         ;   Label: crt_memory.c_freeSingleInstance_FUN_005fe632
     MOV EAX,dword ptr [ESP + 0x8]       ; 005fe633
     TEST EAX,EAX                        ; 005fe637
-    JNZ 0x005fe641                      ; 005fe639 | LAB_005fe641
-        ;   XREF to: 005fe641 (CONDITIONAL_JUMP)
+    JNZ 0x005fe641                      ; 005fe639
+        ;   XREF to: 005fe641 (CONDITIONAL_JUMP)  ; LAB_005fe641
     XOR EBX,EBX                         ; 005fe63b
     MOV EAX,EBX                         ; 005fe63d
     POP EBX                             ; 005fe63f
@@ -44,8 +44,8 @@ section .text
     MOV ECX,dword ptr [EBX]             ; 005fe649
     PUSH ECX                            ; 005fe64b
     PUSH EAX                            ; 005fe64c
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 005fe64d | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 005fe64d
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005fe652
     MOV EAX,EBX                         ; 005fe655
     POP EBX                             ; 005fe657

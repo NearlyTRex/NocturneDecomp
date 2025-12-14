@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 57, 
-    "assembly_lines": 41, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0045b850", 
-    "signature": "int shape_design.c_polygonTextureNameComparator_FUN_0045b850(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2)", 
-    "address_range": [
-      [
-        "0045b850", 
-        "0045b8a2"
-      ]
-    ], 
-    "name": "shape_design.c_polygonTextureNameComparator_FUN_0045b850"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SShapeEditorPolygon *", 
-        "size": 4, 
-        "name": "polygon1"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SShapeEditorPolygon *", 
-        "size": 4, 
-        "name": "polygon2"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 41,
+    "complexity_score": 16,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 57
+  },
   "cross_references": [
     {
-      "from_addr": "0045b90e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_sortPolygonsByTexture_FUN_0045b8b0", 
-      "addr": "0045b8b0"
+      "addr": "0045b8b0",
+      "from_addr": "0045b90e",
+      "name": "shape_design.c_sortPolygonsByTexture_FUN_0045b8b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0045b850",
+    "address_range": [
+      [
+        "0045b850",
+        "0045b8a2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_polygonTextureNameComparator_FUN_0045b850",
+    "signature": "int shape_design.c_polygonTextureNameComparator_FUN_0045b850(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "polygon1",
+        "offset": 4,
+        "size": 4,
+        "type": "SShapeEditorPolygon *"
+      },
+      {
+        "is_param": true,
+        "name": "polygon2",
+        "offset": 8,
+        "size": 4,
+        "type": "SShapeEditorPolygon *"
+      }
+    ]
+  },
+  "suspects": []
 }

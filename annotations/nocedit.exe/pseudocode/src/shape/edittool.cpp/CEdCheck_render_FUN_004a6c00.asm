@@ -41,8 +41,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1c]      ; 004a6c0f
     MOV EBP,dword ptr [EBX + 0x10]      ; 004a6c12
     ADD ESI,ECX                         ; 004a6c15
-    CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0 ; 004a6c17 | int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0(CEdCheck * this_ptr)
-        ;   XREF to: 004a6bb0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0 ; 004a6c17
+        ;   XREF to: 004a6bb0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0(CEdCheck * this_ptr)
     MOV EDX,ESI                         ; 004a6c1c
     SUB EDX,EAX                         ; 004a6c1e
     MOV EAX,EDX                         ; 004a6c20
@@ -52,24 +52,24 @@ section .text
     ADD ESP,0x4                         ; 004a6c29
     PUSH EBX                            ; 004a6c2c
     MOV ESI,EAX                         ; 004a6c2d
-    CALL shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70 ; 004a6c2f | int shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70(CEdCheck * this_ptr)
-        ;   XREF to: 004a6b70 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70 ; 004a6c2f
+        ;   XREF to: 004a6b70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70(CEdCheck * this_ptr)
     ADD ESP,0x4                         ; 004a6c34
     PUSH EBX                            ; 004a6c37
     LEA EDI,[EAX + EBP*0x1]             ; 004a6c38
-    CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0 ; 004a6c3b | int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0(CEdCheck * this_ptr)
-        ;   XREF to: 004a6bb0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0 ; 004a6c3b
+        ;   XREF to: 004a6bb0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0(CEdCheck * this_ptr)
     MOV EDX,ESI                         ; 004a6c40
     ADD ESP,0x4                         ; 004a6c42
     ADD EDX,EAX                         ; 004a6c45
     LEA EAX,[EBX + 0x24]                ; 004a6c47
     PUSH EAX                            ; 004a6c4a
     MOV dword ptr [ESP + 0x8],EDX       ; 004a6c4b
-    MOV EDX,dword ptr [0x02cf1cd0]      ; 004a6c4f | CBitFont * g_EditorFont
+    MOV EDX,dword ptr [0x02cf1cd0]      ; 004a6c4f | g_EditorFont
     PUSH EDX                            ; 004a6c55
     MOV dword ptr [ESP + 0x8],EAX       ; 004a6c56
-    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40 ; 004a6c5a | int engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40(CBitFont * this_ptr, char * text_string)
-        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40 ; 004a6c5a
+        ;   XREF to: 004cff40 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 004a6c5f
     PUSH -0x1                           ; 004a6c62
     MOV ECX,dword ptr [EBX + 0xc]       ; 004a6c64
@@ -83,17 +83,17 @@ section .text
     SAR EAX,0x1                         ; 004a6c77
     PUSH EAX                            ; 004a6c79
     PUSH EBX                            ; 004a6c7a
-    CALL shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004a6be0 ; 004a6c7b | int shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004a6be0(CEdCheck * this_ptr)
-        ;   XREF to: 004a6be0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004a6be0 ; 004a6c7b
+        ;   XREF to: 004a6be0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004a6be0(CEdCheck * this_ptr)
     ADD ESP,0x4                         ; 004a6c80
     ADD EAX,EDI                         ; 004a6c83
     PUSH EAX                            ; 004a6c85
     MOV EAX,dword ptr [ESP + 0x10]      ; 004a6c86
     PUSH EAX                            ; 004a6c8a
-    MOV EDX,dword ptr [0x02cf1cd0]      ; 004a6c8b | CBitFont * g_EditorFont
+    MOV EDX,dword ptr [0x02cf1cd0]      ; 004a6c8b | g_EditorFont
     PUSH EDX                            ; 004a6c91
-    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004a6c92 | int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
-        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80 ; 004a6c92
+        ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, ...)
     ADD ESP,0x18                        ; 004a6c97
     MOV ECX,dword ptr [EBX + 0x20]      ; 004a6c9a
     PUSH ECX                            ; 004a6c9d
@@ -102,19 +102,19 @@ section .text
     PUSH EDI                            ; 004a6ca3
     PUSH ESI                            ; 004a6ca4
     PUSH EBP                            ; 004a6ca5
-    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a6ca6 | void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
-        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_draw3DBorder_FUN_004a58f0 ; 004a6ca6
+        ;   XREF to: 004a58f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, ...)
     MOV EDX,dword ptr [EBX + 0x20]      ; 004a6cab
     ADD ESP,0x14                        ; 004a6cae
     TEST EDX,EDX                        ; 004a6cb1
-    JZ 0x004a6cc7                       ; 004a6cb3 | LAB_004a6cc7
-        ;   XREF to: 004a6cc7 (CONDITIONAL_JUMP)
+    JZ 0x004a6cc7                       ; 004a6cb3
+        ;   XREF to: 004a6cc7 (CONDITIONAL_JUMP)  ; LAB_004a6cc7
     INC ESI                             ; 004a6cb5
     INC EBP                             ; 004a6cb6
     MOV EAX,dword ptr [EBX + 0x4]       ; 004a6cb7
     CMP EAX,0x1                         ; 004a6cba
-    JZ 0x004a6ce1                       ; 004a6cbd | LAB_004a6ce1
-        ;   XREF to: 004a6ce1 (CONDITIONAL_JUMP)
+    JZ 0x004a6ce1                       ; 004a6cbd
+        ;   XREF to: 004a6ce1 (CONDITIONAL_JUMP)  ; LAB_004a6ce1
     ADD ESP,0x8                         ; 004a6cbf
     POP EBP                             ; 004a6cc2
     POP EDI                             ; 004a6cc3
@@ -128,8 +128,8 @@ section .text
     MOV dword ptr [ESP + 0x4],ECX       ; 004a6ccd
     MOV EAX,dword ptr [EBX + 0x4]       ; 004a6cd1
     CMP EAX,0x1                         ; 004a6cd4
-    JZ 0x004a6ce1                       ; 004a6cd7 | LAB_004a6ce1
-        ;   XREF to: 004a6ce1 (CONDITIONAL_JUMP)
+    JZ 0x004a6ce1                       ; 004a6cd7
+        ;   XREF to: 004a6ce1 (CONDITIONAL_JUMP)  ; LAB_004a6ce1
     ADD ESP,0x8                         ; 004a6cd9
     POP EBP                             ; 004a6cdc
     POP EDI                             ; 004a6cdd
@@ -147,16 +147,16 @@ section .text
     ADD EBP,EAX                         ; 004a6cf0
     XOR EDX,EDX                         ; 004a6cf2
     PUSH EBP                            ; 004a6cf4
-    MOV dword ptr [0x02d02570],EDX      ; 004a6cf5 | int g_ActiveRenderColor
-    CALL engine_2d.c_clipLineGlobal_FUN_00402c50 ; 004a6cfb | void engine_2d.c_clipLineGlobal_FUN_00402c50(int * x1, int * y1, int * x2, int * y2)
-        ;   XREF to: 00402c50 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02d02570],EDX      ; 004a6cf5 | g_ActiveRenderColor
+    CALL engine_2d.c_clipLineGlobal_FUN_00402c50 ; 004a6cfb
+        ;   XREF to: 00402c50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipLineGlobal_FUN_00402c50(int * x1, int * y1, int * x2, int * y2)
     ADD ESP,0x10                        ; 004a6d00
     PUSH EBX                            ; 004a6d03
     PUSH EBP                            ; 004a6d04
     PUSH ESI                            ; 004a6d05
     PUSH EDI                            ; 004a6d06
-    CALL engine_2d.c_clipLineGlobal_FUN_00402c50 ; 004a6d07 | void engine_2d.c_clipLineGlobal_FUN_00402c50(int * x1, int * y1, int * x2, int * y2)
-        ;   XREF to: 00402c50 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_clipLineGlobal_FUN_00402c50 ; 004a6d07
+        ;   XREF to: 00402c50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipLineGlobal_FUN_00402c50(int * x1, int * y1, int * x2, int * y2)
     ADD ESP,0x10                        ; 004a6d0c
     ADD ESP,0x8                         ; 004a6d0f
     POP EBP                             ; 004a6d12

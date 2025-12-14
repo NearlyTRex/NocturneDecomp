@@ -1,116 +1,116 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 82, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 32, 
-    "assembly_lines": 20, 
-    "suspect_count": 6, 
+    "assembly_lines": 20,
+    "complexity_score": 82,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "sub_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_strtod_main_FUN_00605d5d", 
-      "addr": "00605d5d"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint *in_stack_00000008;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char **in_stack_fffffff4;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_fffffff4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar1 = crt_string_c_strtod_main_FUN_00605d5d((char *)0x0,in_stack_fffffff4);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = SUB84 /* extract 2-byte value */(dVar1,0);"
-    }, 
-    {
-      "line": 11, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*in_stack_00000008 = SUB84 /* extract 2-byte value */(dVar1,0);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008[1] = local_8;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00603bc9", 
-    "signature": "undefined crt_unknown.c_FUN_00603bc9()", 
-    "address_range": [
-      [
-        "00603bc9", 
-        "00603bf4"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_00603bc9"
-  }, 
-  "stack_frame": {
-    "local_size": 16, 
-    "variables": [
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "sub_artifact",
+      "stack_param"
+    ],
+    "total_lines": 32
+  },
   "cross_references": [
     {
-      "from_addr": "005fde62", 
-      "type": "DATA", 
-      "name": "crt_fltused.c_staticInit_FUN_005fde60", 
-      "addr": "005fde60"
-    }, 
+      "addr": "005fde60",
+      "from_addr": "005fde62",
+      "name": "crt_fltused.c_staticInit_FUN_005fde60",
+      "type": "DATA"
+    },
     {
-      "from_addr": "00603bb6", 
-      "type": "DATA", 
-      "name": "crt_strtod.c_staticInit_FUN_00603bb0", 
-      "addr": "00603bb0"
+      "addr": "00603bb0",
+      "from_addr": "00603bb6",
+      "name": "crt_strtod.c_staticInit_FUN_00603bb0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00603bc9",
+    "address_range": [
+      [
+        "00603bc9",
+        "00603bf4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00603bc9",
+    "signature": "undefined crt_unknown.c_FUN_00603bc9()"
+  },
+  "function_calls": [
+    {
+      "addr": "00605d5d",
+      "name": "crt_string.c_strtod_main_FUN_00605d5d"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "uint *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_fffffff4",
+      "text": "char **in_stack_fffffff4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_fffffff4",
+      "text": "dVar1 = crt_string_c_strtod_main_FUN_00605d5d((char *)0x0,in_stack_fffffff4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 11,
+      "match": "SUB84",
+      "text": "*in_stack_00000008 = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008[1] = local_8;",
+      "type": "stack_param"
     }
   ]
 }

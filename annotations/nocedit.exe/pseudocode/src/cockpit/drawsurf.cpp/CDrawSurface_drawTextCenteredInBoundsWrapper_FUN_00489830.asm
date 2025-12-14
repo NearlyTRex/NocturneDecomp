@@ -35,8 +35,8 @@ section .text
     PUSH ESI                            ; 00489846
     MOV EDI,dword ptr [ESP + 0x20]      ; 00489847
     PUSH EDI                            ; 0048984b
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 ; 0048984c | void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800(CDrawSurface * this_ptr, int x, int y, int width, ...)
-        ;   XREF to: 00489800 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 ; 0048984c
+        ;   XREF to: 00489800 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 00489851
     POP EDI                             ; 00489854
     POP ESI                             ; 00489855

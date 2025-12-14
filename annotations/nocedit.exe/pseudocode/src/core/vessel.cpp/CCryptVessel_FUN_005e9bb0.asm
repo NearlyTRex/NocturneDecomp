@@ -19,8 +19,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005e9bb5
     ADD EAX,0x158                       ; 005e9bb9
     PUSH EAX                            ; 005e9bbe
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 005e9bbf | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 005e9bbf
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EAX + 0x5690]    ; 005e9bc4
     MOV EDX,dword ptr [EAX]             ; 005e9bca
     LEA ECX,[EAX + 0x4]                 ; 005e9bcc

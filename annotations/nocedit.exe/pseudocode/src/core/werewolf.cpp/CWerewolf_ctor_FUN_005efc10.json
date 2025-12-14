@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 46, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 80, 
-    "assembly_lines": 34, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
-      "addr": "004a9500"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wolfbrn_dfm_00657c53", 
-      "addr": "00657c53", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00665760", 
-      "addr": "00665760", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "PTR_FUN_00665761+3", 
-      "addr": "00665764", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00665768", 
-      "addr": "00665768", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_werewolf.cpp_FUN_00665784", 
-      "addr": "00665784", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005efc10", 
-    "signature": "CWerewolf * core_werewolf.cpp_CWerewolf_ctor_FUN_005efc10(CWerewolf * this_ptr)", 
-    "address_range": [
-      [
-        "005efc10", 
-        "005efcbd"
-      ]
-    ], 
-    "name": "core_werewolf.cpp_CWerewolf_ctor_FUN_005efc10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWerewolf *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 34,
+    "complexity_score": 46,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 46,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 80
+  },
   "cross_references": [
     {
-      "from_addr": "005efbea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_werewolf.cpp_FUN_005efbd0", 
-      "addr": "005efbd0"
+      "addr": "005efbd0",
+      "from_addr": "005efbea",
+      "name": "core_werewolf.cpp_FUN_005efbd0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005efc10",
+    "address_range": [
+      [
+        "005efc10",
+        "005efcbd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_werewolf.cpp_CWerewolf_ctor_FUN_005efc10",
+    "signature": "CWerewolf * core_werewolf.cpp_CWerewolf_ctor_FUN_005efc10(CWerewolf * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9500",
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657c53",
+      "name": "s_wolfbrn_dfm_00657c53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00665760",
+      "name": "DAT_00665760",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00665764",
+      "name": "PTR_FUN_00665761+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00665768",
+      "name": "DAT_00665768",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00665784",
+      "name": "PTR_core_werewolf.cpp_FUN_00665784",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWerewolf *"
+      }
+    ]
+  },
+  "suspects": []
 }

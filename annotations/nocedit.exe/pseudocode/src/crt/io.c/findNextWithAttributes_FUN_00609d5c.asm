@@ -28,13 +28,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 00609d67
     CMP dword ptr [EBX],0x0             ; 00609d6b
         ;   Label: LAB_00609d6b
-    JNZ 0x00609d76                      ; 00609d6e | LAB_00609d76
-        ;   XREF to: 00609d76 (CONDITIONAL_JUMP)
+    JNZ 0x00609d76                      ; 00609d6e
+        ;   XREF to: 00609d76 (CONDITIONAL_JUMP)  ; LAB_00609d76
     MOV dword ptr [EBX],0x80            ; 00609d70
     TEST dword ptr [EBX],ESI            ; 00609d76
         ;   Label: LAB_00609d76
-    JZ 0x00609d83                       ; 00609d78 | LAB_00609d83
-        ;   XREF to: 00609d83 (CONDITIONAL_JUMP)
+    JZ 0x00609d83                       ; 00609d78
+        ;   XREF to: 00609d83 (CONDITIONAL_JUMP)  ; LAB_00609d83
     MOV EAX,0x1                         ; 00609d7a
     POP EDI                             ; 00609d7f
     POP ESI                             ; 00609d80
@@ -43,10 +43,10 @@ section .text
     PUSH EBX                            ; 00609d83
         ;   Label: LAB_00609d83
     PUSH EDI                            ; 00609d84
-    CALL dword ptr CS:[0x611550]        ; 00609d85 | FindNextFileA * PTR_FindNextFileA_00611550
+    CALL dword ptr CS:[0x611550]        ; 00609d85 | PTR_FindNextFileA_00611550
     TEST EAX,EAX                        ; 00609d8c
-    JNZ 0x00609d6b                      ; 00609d8e | LAB_00609d6b
-        ;   XREF to: 00609d6b (CONDITIONAL_JUMP)
+    JNZ 0x00609d6b                      ; 00609d8e
+        ;   XREF to: 00609d6b (CONDITIONAL_JUMP)  ; LAB_00609d6b
     POP EDI                             ; 00609d90
     POP ESI                             ; 00609d91
     POP EBX                             ; 00609d92

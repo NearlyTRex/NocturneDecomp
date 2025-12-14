@@ -1,318 +1,318 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 277, 
-    "pseudocode_lines": 87, 
-    "cross_reference_count": 4, 
-    "global_count": 0, 
-    "total_lines": 208, 
-    "assembly_lines": 121, 
-    "suspect_count": 16, 
+    "assembly_lines": 121,
+    "complexity_score": 277,
+    "cross_reference_count": 4,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 87,
+    "suspect_count": 16,
     "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "unaffected_reg", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_xform.cpp_matrixToQuaternion_FUN_005f7420", 
-      "addr": "005f7420"
-    }, 
-    {
-      "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280", 
-      "addr": "005f7280"
-    }, 
-    {
-      "name": "core_xform.cpp_slerpQuaternion_FUN_005f77e0", 
-      "addr": "005f77e0"
-    }
-  ], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005f714b", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "float *unaff_ESI;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_ffffff30", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_ffffff30;"
-    }, 
-    {
-      "line": 41, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_a->m,SUB84 /* extract 2-byte value */(dVar7,0));"
-    }, 
-    {
-      "line": 44, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar5 = (uint *)((int)&CStack_68 + (uint)bVar6 * -8 + (uint)bVar6 * -8);"
-    }, 
-    {
-      "line": 51, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar5 = (uint *)((int)&CStack_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);"
-    }, 
-    {
-      "line": 52, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&CStack_38 + (uint)bVar6 * -8) = auStack_54[(uint)bVar6 * -2];"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_stack_ffffff30", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&CStack_68,&CStack_38,(CQuaternion4f *)t,in_stack_ffffff30);"
-    }, 
-    {
-      "line": 59, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&CStack_24 + (uint)bVar6 * -8) = local_40[(uint)bVar6 * -2];"
-    }, 
-    {
-      "line": 80, 
-      "match": "(CMatrix3x4f *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 81, 
-      "match": "(CQuaternion4f *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar4 = (CQuaternion4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 85, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = pCVar4->w;"
-    }, 
-    {
-      "line": 86, 
-      "match": "(CQuaternion4f *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar4 = (CQuaternion4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 87, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;"
-    }, 
-    {
-      "line": 87, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f7140", 
-    "signature": "void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)", 
-    "address_range": [
-      [
-        "005f7140", 
-        "005f727d"
-      ]
-    ], 
-    "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140"
-  }, 
-  "stack_frame": {
-    "local_size": 220, 
-    "variables": [
-      {
-        "offset": -216, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_d8"
-      }, 
-      {
-        "offset": -208, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_d0"
-      }, 
-      {
-        "offset": -196, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c4"
-      }, 
-      {
-        "offset": -180, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b4"
-      }, 
-      {
-        "offset": -164, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a4"
-      }, 
-      {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_a0"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMatrix3x4f *", 
-        "size": 4, 
-        "name": "matrix_a"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CMatrix3x4f *", 
-        "size": 4, 
-        "name": "matrix_b"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "t"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 232, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "sub_artifact",
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param"
+    ],
+    "total_lines": 208
+  },
   "cross_references": [
     {
-      "from_addr": "0042d2ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042d090", 
-      "addr": "0042d090"
-    }, 
+      "addr": "0042d090",
+      "from_addr": "0042d2ac",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d090",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c0b63", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005c07b0", 
-      "addr": "005c07b0"
-    }, 
+      "addr": "005c07b0",
+      "from_addr": "005c0b63",
+      "name": "core_stranger.cpp_CStranger_FUN_005c07b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005dba11", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tentacle.cpp_FUN_005db9d0", 
-      "addr": "005db9d0"
-    }, 
+      "addr": "005db9d0",
+      "from_addr": "005dba11",
+      "name": "core_tentacle.cpp_FUN_005db9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005dbbc2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tentacle.cpp_FUN_005dbb70", 
-      "addr": "005dbb70"
+      "addr": "005dbb70",
+      "from_addr": "005dbbc2",
+      "name": "core_tentacle.cpp_FUN_005dbb70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005f7140",
+    "address_range": [
+      [
+        "005f7140",
+        "005f727d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
+    "signature": "void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f7420",
+      "name": "core_xform.cpp_matrixToQuaternion_FUN_005f7420"
+    },
+    {
+      "addr": "005f7280",
+      "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280"
+    },
+    {
+      "addr": "005f77e0",
+      "name": "core_xform.cpp_slerpQuaternion_FUN_005f77e0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 232,
+    "local_size": 220,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "matrix_a",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x4f *"
+      },
+      {
+        "is_param": true,
+        "name": "matrix_b",
+        "offset": 8,
+        "size": 4,
+        "type": "CMatrix3x4f *"
+      },
+      {
+        "is_param": true,
+        "name": "t",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005f714b",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffff30",
+      "text": "float in_stack_ffffff30;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 41,
+      "match": "SUB84",
+      "text": "core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_a->m,SUB84 /* extract 2-byte value */(dVar7,0));",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)&CStack_68 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)&CStack_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_38 + (uint)bVar6 * -8) = auStack_54[(uint)bVar6 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_ffffff30",
+      "text": "(&CStack_68,&CStack_38,(CQuaternion4f *)t,in_stack_ffffff30);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&CStack_24 + (uint)bVar6 * -8) = local_40[(uint)bVar6 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(CQuaternion4f *)((int)",
+      "text": "pCVar4 = (CQuaternion4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 85,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = pCVar4->w;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(CQuaternion4f *)((int)",
+      "text": "pCVar4 = (CQuaternion4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
+      "type": "unaffected_reg"
     }
   ]
 }

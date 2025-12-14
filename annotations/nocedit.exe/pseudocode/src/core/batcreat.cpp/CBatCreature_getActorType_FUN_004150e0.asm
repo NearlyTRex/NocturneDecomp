@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x82277c                    ; 004150e0 | CDemonActorType g_CBatCreatureClassInfo
+    MOV EAX,0x82277c                    ; 004150e0 | g_CBatCreatureClassInfo
         ;   Label: core_batcreat.cpp_CBatCreature_getActorType_FUN_004150e0
     RET                                 ; 004150e5
 

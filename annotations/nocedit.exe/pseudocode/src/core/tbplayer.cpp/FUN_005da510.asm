@@ -18,7 +18,7 @@ section .text
     FCOMPP                              ; 005da529
     FNSTSW AX                           ; 005da52b
     SAHF                                ; 005da52d
-    JNC 0x005da261                      ; 005da52e | LAB_005da261
-        ;   XREF to: 005da261 (CONDITIONAL_JUMP)
+    JNC 0x005da261                      ; 005da52e
+        ;   XREF to: 005da261 (CONDITIONAL_JUMP)  ; LAB_005da261
     RET                                 ; 005da534
 

@@ -14,22 +14,22 @@ section .text
     PUSH EBX                            ; 0060b26c
         ;   Label: crt_math.c_doubleToFloat_FUN_0060b26c
     TEST EDX,0x7ff00000                 ; 0060b26d
-    JZ 0x0060b2b4                       ; 0060b273 | LAB_0060b2b4
-        ;   XREF to: 0060b2b4 (CONDITIONAL_JUMP)
+    JZ 0x0060b2b4                       ; 0060b273
+        ;   XREF to: 0060b2b4 (CONDITIONAL_JUMP)  ; LAB_0060b2b4
     SUB EBX,EBX                         ; 0060b275
     ADD EAX,EAX                         ; 0060b277
     ADC EDX,EDX                         ; 0060b279
     RCR EBX,0x1                         ; 0060b27b
     ADD EAX,0x20000000                  ; 0060b27d
     ADC EDX,0x0                         ; 0060b282
-    JZ 0x0060b2ab                       ; 0060b285 | LAB_0060b2ab
-        ;   XREF to: 0060b2ab (CONDITIONAL_JUMP)
+    JZ 0x0060b2ab                       ; 0060b285
+        ;   XREF to: 0060b2ab (CONDITIONAL_JUMP)  ; LAB_0060b2ab
     CMP EDX,0x8fe00000                  ; 0060b287
-    JNC 0x0060b2ab                      ; 0060b28d | LAB_0060b2ab
-        ;   XREF to: 0060b2ab (CONDITIONAL_JUMP)
+    JNC 0x0060b2ab                      ; 0060b28d
+        ;   XREF to: 0060b2ab (CONDITIONAL_JUMP)  ; LAB_0060b2ab
     CMP EDX,0x70200000                  ; 0060b28f
-    JC 0x0060b2b4                       ; 0060b295 | LAB_0060b2b4
-        ;   XREF to: 0060b2b4 (CONDITIONAL_JUMP)
+    JC 0x0060b2b4                       ; 0060b295
+        ;   XREF to: 0060b2b4 (CONDITIONAL_JUMP)  ; LAB_0060b2b4
     SUB EDX,0x70000000                  ; 0060b297
     ADD EAX,EAX                         ; 0060b29d
     ADC EDX,EDX                         ; 0060b29f

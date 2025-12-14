@@ -73,8 +73,7 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
       return;
     }
     g_CDemonSetPtr->per_pixel_lighting_enabled = 1;
-    g_FlatShadingLightLevel =
-         (*(code *)((g_CurrentSceneCamera->base).vtable)->calculatePerspective)();
+    g_FlatShadingLightLevel = (*((g_CurrentSceneCamera->base).vtable)->calculatePerspective)();
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),0.0,-1);
     g_CDemonSetPtr->per_pixel_lighting_enabled = 0;

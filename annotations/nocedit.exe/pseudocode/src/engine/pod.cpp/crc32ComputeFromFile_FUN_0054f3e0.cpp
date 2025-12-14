@@ -15,19 +15,16 @@ uint __cdecl engine_pod_cpp_crc32ComputeFromFile_FUN_0054f3e0(FILE *file_stream,
   char *pcVar3;
   
   current_crc = 0xffffffff;
-  if (0xffff < (int)total_bytes) {
+  for (; 0xffff < (int)total_bytes; total_bytes = total_bytes - 0x10000) {
+    pcVar3 = g_FileIOBuffer;
+    uVar2 = 0;
+    crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,0x10000,1,file_stream);
     do {
-      pcVar3 = g_FileIOBuffer;
-      uVar2 = 0;
-      crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,0x10000,1,file_stream);
-      do {
-        uVar1 = *pcVar3;
-        pcVar3 = (char *)((uchar *)pcVar3 + 1);
-        uVar2 = uVar2 + 1;
-        current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,uVar1);
-      } while (uVar2 < 0x10000);
-      total_bytes = total_bytes - 0x10000;
-    } while (0xffff < (int)total_bytes);
+      uVar1 = *pcVar3;
+      pcVar3 = (char *)((uchar *)pcVar3 + 1);
+      uVar2 = uVar2 + 1;
+      current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,uVar1);
+    } while (uVar2 < 0x10000);
   }
   pcVar3 = g_FileIOBuffer;
   uVar2 = 0;

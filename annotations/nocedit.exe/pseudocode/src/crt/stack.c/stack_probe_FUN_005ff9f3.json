@@ -1,632 +1,632 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 94, 
-    "global_count": 0, 
-    "total_lines": 14, 
-    "assembly_lines": 6, 
-    "suspect_count": 2, 
+    "assembly_lines": 6,
+    "complexity_score": 33,
+    "cross_reference_count": 94,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_check_stack_target_FUN_005ffa03", 
-      "addr": "005ffa03"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000008;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return in_stack_00000008;"
-    }
-  ], 
-  "function": {
-    "convention": "__stdcall", 
-    "address": "005ff9f3", 
-    "signature": "uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)", 
-    "address_range": [
-      [
-        "005ff9f3", 
-        "005ffa02"
-      ]
-    ], 
-    "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "stack_size"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 14
+  },
   "cross_references": [
     {
-      "from_addr": "0058adb5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0", 
-      "addr": "0058adb0"
-    }, 
-    {
-      "from_addr": "0058a3d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0", 
-      "addr": "0058a3d0"
-    }, 
-    {
-      "from_addr": "0058aa15", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10", 
-      "addr": "0058aa10"
-    }, 
-    {
-      "from_addr": "0058a4a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0", 
-      "addr": "0058a4a0"
-    }, 
-    {
-      "from_addr": "0058abb5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0", 
-      "addr": "0058abb0"
-    }, 
-    {
-      "from_addr": "00598ee5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0", 
-      "addr": "00598ee0"
-    }, 
-    {
-      "from_addr": "005968b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
-    }, 
-    {
-      "from_addr": "0058e695", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690", 
-      "addr": "0058e690"
-    }, 
-    {
-      "from_addr": "0058f815", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810", 
-      "addr": "0058f810"
-    }, 
-    {
-      "from_addr": "00595fc5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0", 
-      "addr": "00595fc0"
-    }, 
-    {
-      "from_addr": "0058ec65", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60", 
-      "addr": "0058ec60"
-    }, 
-    {
-      "from_addr": "0058f125", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120", 
-      "addr": "0058f120"
-    }, 
-    {
-      "from_addr": "0058f045", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModel_save_FUN_0058f040", 
-      "addr": "0058f040"
-    }, 
-    {
-      "from_addr": "0058e4e5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0", 
-      "addr": "0058e4e0"
-    }, 
-    {
-      "from_addr": "0058b3a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0", 
-      "addr": "0058b3a0"
-    }, 
-    {
-      "from_addr": "0058b2c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0", 
-      "addr": "0058b2c0"
-    }, 
-    {
-      "from_addr": "00589455", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589450", 
-      "addr": "00589450"
-    }, 
-    {
-      "from_addr": "005894c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_005894c0", 
-      "addr": "005894c0"
-    }, 
-    {
-      "from_addr": "00589505", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589500", 
-      "addr": "00589500"
-    }, 
-    {
-      "from_addr": "00589535", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589530", 
-      "addr": "00589530"
-    }, 
-    {
-      "from_addr": "005896b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_005896b0", 
-      "addr": "005896b0"
-    }, 
-    {
-      "from_addr": "00589745", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589740", 
-      "addr": "00589740"
-    }, 
-    {
-      "from_addr": "005897b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_005897b0", 
-      "addr": "005897b0"
-    }, 
-    {
-      "from_addr": "00589a45", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589a40", 
-      "addr": "00589a40"
-    }, 
-    {
-      "from_addr": "00589b15", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589b10", 
-      "addr": "00589b10"
-    }, 
-    {
-      "from_addr": "00589bb5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589bb0", 
-      "addr": "00589bb0"
-    }, 
-    {
-      "from_addr": "00589c25", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589c20", 
-      "addr": "00589c20"
-    }, 
-    {
-      "from_addr": "00589f45", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589f40", 
-      "addr": "00589f40"
-    }, 
-    {
-      "from_addr": "00589fa5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589fa0", 
-      "addr": "00589fa0"
-    }, 
-    {
-      "from_addr": "00589fc5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589fc0", 
-      "addr": "00589fc0"
-    }, 
-    {
-      "from_addr": "00589fe5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589fe0", 
-      "addr": "00589fe0"
-    }, 
-    {
-      "from_addr": "0058a0f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058a0f0", 
-      "addr": "0058a0f0"
-    }, 
-    {
-      "from_addr": "0058a1b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058a1b0", 
-      "addr": "0058a1b0"
-    }, 
-    {
-      "from_addr": "0058a2b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058a2b0", 
-      "addr": "0058a2b0"
-    }, 
-    {
-      "from_addr": "0058ac35", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058ac30", 
-      "addr": "0058ac30"
-    }, 
-    {
-      "from_addr": "0058ac85", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058ac80", 
-      "addr": "0058ac80"
-    }, 
-    {
-      "from_addr": "0058ad35", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058ad30", 
-      "addr": "0058ad30"
-    }, 
-    {
-      "from_addr": "0058aeb5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058aeb0", 
-      "addr": "0058aeb0"
-    }, 
-    {
-      "from_addr": "0058af45", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058af40", 
-      "addr": "0058af40"
-    }, 
-    {
-      "from_addr": "0058afe5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058afe0", 
-      "addr": "0058afe0"
-    }, 
-    {
-      "from_addr": "0058b165", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b160", 
-      "addr": "0058b160"
-    }, 
-    {
-      "from_addr": "0058b205", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b200", 
-      "addr": "0058b200"
-    }, 
-    {
-      "from_addr": "0058b265", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b260", 
-      "addr": "0058b260"
-    }, 
-    {
-      "from_addr": "0058b665", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b660", 
-      "addr": "0058b660"
-    }, 
-    {
-      "from_addr": "0058b8e5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b8e0", 
-      "addr": "0058b8e0"
-    }, 
-    {
-      "from_addr": "0058b9b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b9b0", 
-      "addr": "0058b9b0"
-    }, 
-    {
-      "from_addr": "0058bc45", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058bc40", 
-      "addr": "0058bc40"
-    }, 
-    {
-      "from_addr": "0058bd05", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058bd00", 
-      "addr": "0058bd00"
-    }, 
-    {
-      "from_addr": "0058c195", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058c190", 
-      "addr": "0058c190"
-    }, 
-    {
-      "from_addr": "0058d795", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058d790", 
-      "addr": "0058d790"
-    }, 
-    {
-      "from_addr": "0058dde5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058dde0", 
-      "addr": "0058dde0"
-    }, 
-    {
-      "from_addr": "0058de75", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058de70", 
-      "addr": "0058de70"
-    }, 
-    {
-      "from_addr": "0058e0b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058e0b0", 
-      "addr": "0058e0b0"
-    }, 
-    {
-      "from_addr": "0058e245", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058e240", 
-      "addr": "0058e240"
-    }, 
-    {
-      "from_addr": "0058e3e5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058e3e0", 
-      "addr": "0058e3e0"
-    }, 
-    {
-      "from_addr": "0058e605", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058e600", 
-      "addr": "0058e600"
-    }, 
-    {
-      "from_addr": "0058eaa5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058eaa0", 
-      "addr": "0058eaa0"
-    }, 
-    {
-      "from_addr": "0058ede5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058ede0", 
-      "addr": "0058ede0"
-    }, 
-    {
-      "from_addr": "0058f795", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058f790", 
-      "addr": "0058f790"
-    }, 
-    {
-      "from_addr": "00592525", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00592520", 
-      "addr": "00592520"
-    }, 
-    {
-      "from_addr": "005925c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_005925c0", 
-      "addr": "005925c0"
-    }, 
-    {
-      "from_addr": "00592695", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00592690", 
-      "addr": "00592690"
-    }, 
-    {
-      "from_addr": "00595f35", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00595f30", 
-      "addr": "00595f30"
-    }, 
-    {
-      "from_addr": "00596865", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00596860", 
-      "addr": "00596860"
-    }, 
-    {
-      "from_addr": "00598f15", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00598f10", 
-      "addr": "00598f10"
-    }, 
-    {
-      "from_addr": "00599485", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00599480", 
-      "addr": "00599480"
-    }, 
-    {
-      "from_addr": "005995d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_005995d0", 
-      "addr": "005995d0"
-    }, 
-    {
-      "from_addr": "00599635", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00599630", 
-      "addr": "00599630"
-    }, 
-    {
-      "from_addr": "00599655", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00599650", 
-      "addr": "00599650"
-    }, 
-    {
-      "from_addr": "0058a265", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260", 
-      "addr": "0058a260"
-    }, 
-    {
-      "from_addr": "00599555", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_LodVert_copy_FUN_00599550", 
-      "addr": "00599550"
-    }, 
-    {
-      "from_addr": "005995c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_LodVert_dtor_FUN_005995c0", 
-      "addr": "005995c0"
-    }, 
-    {
-      "from_addr": "005895f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_readNonEmptyLine_FUN_005895f0", 
-      "addr": "005895f0"
-    }, 
-    {
-      "from_addr": "00598fc5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0", 
-      "addr": "00598fc0"
-    }, 
-    {
-      "from_addr": "00599885", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CSkeleton_ctor_FUN_00599880", 
-      "addr": "00599880"
-    }, 
-    {
-      "from_addr": "005998e5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0", 
-      "addr": "005998e0"
-    }, 
-    {
-      "from_addr": "0060f3a1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
-      "addr": "0060f39c"
-    }, 
-    {
-      "from_addr": "0060e6a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0", 
-      "addr": "0060e6a0"
-    }, 
-    {
-      "from_addr": "00446105", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_addTextureEntry_FUN_00446100", 
-      "addr": "00446100"
-    }, 
-    {
-      "from_addr": "00447e85", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80", 
-      "addr": "00447e80"
-    }, 
-    {
-      "from_addr": "004478c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0", 
-      "addr": "004478c0"
-    }, 
-    {
-      "from_addr": "00447a15", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10", 
-      "addr": "00447a10"
-    }, 
-    {
-      "from_addr": "00447935", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930", 
-      "addr": "00447930"
-    }, 
-    {
-      "from_addr": "004479a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0", 
-      "addr": "004479a0"
-    }, 
-    {
-      "from_addr": "00447a85", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80", 
-      "addr": "00447a80"
-    }, 
-    {
-      "from_addr": "00448445", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_maxInt_FUN_00448440", 
-      "addr": "00448440"
-    }, 
-    {
-      "from_addr": "00447595", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590", 
-      "addr": "00447590"
-    }, 
-    {
-      "from_addr": "004481d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0", 
-      "addr": "004481d0"
-    }, 
-    {
-      "from_addr": "00446145", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140", 
-      "addr": "00446140"
-    }, 
-    {
-      "from_addr": "00447ab5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0", 
-      "addr": "00447ab0"
-    }, 
-    {
-      "from_addr": "00447c25", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20", 
-      "addr": "00447c20"
-    }, 
-    {
-      "from_addr": "00446165", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160", 
-      "addr": "00446160"
-    }, 
-    {
-      "from_addr": "00447f25", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20", 
-      "addr": "00447f20"
-    }, 
-    {
-      "from_addr": "00554905", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_CColorQuantizer_ctor_FUN_00554900", 
-      "addr": "00554900"
+      "addr": "0058adb0",
+      "from_addr": "0058adb5",
+      "name": "core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a3d0",
+      "from_addr": "0058a3d5",
+      "name": "core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058aa10",
+      "from_addr": "0058aa15",
+      "name": "core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a4a0",
+      "from_addr": "0058a4a5",
+      "name": "core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058abb0",
+      "from_addr": "0058abb5",
+      "name": "core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598ee0",
+      "from_addr": "00598ee5",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005968b0",
+      "from_addr": "005968b5",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e690",
+      "from_addr": "0058e695",
+      "name": "core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058f810",
+      "from_addr": "0058f815",
+      "name": "core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595fc0",
+      "from_addr": "00595fc5",
+      "name": "core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058ec60",
+      "from_addr": "0058ec65",
+      "name": "core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058f120",
+      "from_addr": "0058f125",
+      "name": "core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058f040",
+      "from_addr": "0058f045",
+      "name": "core_skeledit.cpp_CDeformableModel_save_FUN_0058f040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e4e0",
+      "from_addr": "0058e4e5",
+      "name": "core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058b3a0",
+      "from_addr": "0058b3a5",
+      "name": "core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058b2c0",
+      "from_addr": "0058b2c5",
+      "name": "core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589450",
+      "from_addr": "00589455",
+      "name": "core_skeledit.cpp_FUN_00589450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005894c0",
+      "from_addr": "005894c5",
+      "name": "core_skeledit.cpp_FUN_005894c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589500",
+      "from_addr": "00589505",
+      "name": "core_skeledit.cpp_FUN_00589500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589530",
+      "from_addr": "00589535",
+      "name": "core_skeledit.cpp_FUN_00589530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005896b0",
+      "from_addr": "005896b5",
+      "name": "core_skeledit.cpp_FUN_005896b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589740",
+      "from_addr": "00589745",
+      "name": "core_skeledit.cpp_FUN_00589740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005897b0",
+      "from_addr": "005897b5",
+      "name": "core_skeledit.cpp_FUN_005897b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589a40",
+      "from_addr": "00589a45",
+      "name": "core_skeledit.cpp_FUN_00589a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589b10",
+      "from_addr": "00589b15",
+      "name": "core_skeledit.cpp_FUN_00589b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589bb0",
+      "from_addr": "00589bb5",
+      "name": "core_skeledit.cpp_FUN_00589bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589c20",
+      "from_addr": "00589c25",
+      "name": "core_skeledit.cpp_FUN_00589c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589f40",
+      "from_addr": "00589f45",
+      "name": "core_skeledit.cpp_FUN_00589f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589fa0",
+      "from_addr": "00589fa5",
+      "name": "core_skeledit.cpp_FUN_00589fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589fc0",
+      "from_addr": "00589fc5",
+      "name": "core_skeledit.cpp_FUN_00589fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589fe0",
+      "from_addr": "00589fe5",
+      "name": "core_skeledit.cpp_FUN_00589fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a0f0",
+      "from_addr": "0058a0f5",
+      "name": "core_skeledit.cpp_FUN_0058a0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a1b0",
+      "from_addr": "0058a1b5",
+      "name": "core_skeledit.cpp_FUN_0058a1b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a2b0",
+      "from_addr": "0058a2b5",
+      "name": "core_skeledit.cpp_FUN_0058a2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058ac30",
+      "from_addr": "0058ac35",
+      "name": "core_skeledit.cpp_FUN_0058ac30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058ac80",
+      "from_addr": "0058ac85",
+      "name": "core_skeledit.cpp_FUN_0058ac80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058ad30",
+      "from_addr": "0058ad35",
+      "name": "core_skeledit.cpp_FUN_0058ad30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058aeb0",
+      "from_addr": "0058aeb5",
+      "name": "core_skeledit.cpp_FUN_0058aeb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058af40",
+      "from_addr": "0058af45",
+      "name": "core_skeledit.cpp_FUN_0058af40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058afe0",
+      "from_addr": "0058afe5",
+      "name": "core_skeledit.cpp_FUN_0058afe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058b160",
+      "from_addr": "0058b165",
+      "name": "core_skeledit.cpp_FUN_0058b160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058b200",
+      "from_addr": "0058b205",
+      "name": "core_skeledit.cpp_FUN_0058b200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058b260",
+      "from_addr": "0058b265",
+      "name": "core_skeledit.cpp_FUN_0058b260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058b660",
+      "from_addr": "0058b665",
+      "name": "core_skeledit.cpp_FUN_0058b660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058b8e0",
+      "from_addr": "0058b8e5",
+      "name": "core_skeledit.cpp_FUN_0058b8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058b9b0",
+      "from_addr": "0058b9b5",
+      "name": "core_skeledit.cpp_FUN_0058b9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058bc40",
+      "from_addr": "0058bc45",
+      "name": "core_skeledit.cpp_FUN_0058bc40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058bd00",
+      "from_addr": "0058bd05",
+      "name": "core_skeledit.cpp_FUN_0058bd00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058c190",
+      "from_addr": "0058c195",
+      "name": "core_skeledit.cpp_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058d790",
+      "from_addr": "0058d795",
+      "name": "core_skeledit.cpp_FUN_0058d790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058dde0",
+      "from_addr": "0058dde5",
+      "name": "core_skeledit.cpp_FUN_0058dde0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058de70",
+      "from_addr": "0058de75",
+      "name": "core_skeledit.cpp_FUN_0058de70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e0b0",
+      "from_addr": "0058e0b5",
+      "name": "core_skeledit.cpp_FUN_0058e0b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e240",
+      "from_addr": "0058e245",
+      "name": "core_skeledit.cpp_FUN_0058e240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e3e0",
+      "from_addr": "0058e3e5",
+      "name": "core_skeledit.cpp_FUN_0058e3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e600",
+      "from_addr": "0058e605",
+      "name": "core_skeledit.cpp_FUN_0058e600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058eaa0",
+      "from_addr": "0058eaa5",
+      "name": "core_skeledit.cpp_FUN_0058eaa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058ede0",
+      "from_addr": "0058ede5",
+      "name": "core_skeledit.cpp_FUN_0058ede0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058f790",
+      "from_addr": "0058f795",
+      "name": "core_skeledit.cpp_FUN_0058f790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00592520",
+      "from_addr": "00592525",
+      "name": "core_skeledit.cpp_FUN_00592520",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005925c0",
+      "from_addr": "005925c5",
+      "name": "core_skeledit.cpp_FUN_005925c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00592690",
+      "from_addr": "00592695",
+      "name": "core_skeledit.cpp_FUN_00592690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595f30",
+      "from_addr": "00595f35",
+      "name": "core_skeledit.cpp_FUN_00595f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00596860",
+      "from_addr": "00596865",
+      "name": "core_skeledit.cpp_FUN_00596860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598f10",
+      "from_addr": "00598f15",
+      "name": "core_skeledit.cpp_FUN_00598f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599480",
+      "from_addr": "00599485",
+      "name": "core_skeledit.cpp_FUN_00599480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005995d0",
+      "from_addr": "005995d5",
+      "name": "core_skeledit.cpp_FUN_005995d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599630",
+      "from_addr": "00599635",
+      "name": "core_skeledit.cpp_FUN_00599630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599650",
+      "from_addr": "00599655",
+      "name": "core_skeledit.cpp_FUN_00599650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a260",
+      "from_addr": "0058a265",
+      "name": "core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599550",
+      "from_addr": "00599555",
+      "name": "core_skeledit.cpp_LodVert_copy_FUN_00599550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005995c0",
+      "from_addr": "005995c5",
+      "name": "core_skeledit.cpp_LodVert_dtor_FUN_005995c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005895f0",
+      "from_addr": "005895f5",
+      "name": "core_skeledit.cpp_readNonEmptyLine_FUN_005895f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598fc0",
+      "from_addr": "00598fc5",
+      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599880",
+      "from_addr": "00599885",
+      "name": "core_skeleton.cpp_CSkeleton_ctor_FUN_00599880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005998e0",
+      "from_addr": "005998e5",
+      "name": "core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0060f39c",
+      "from_addr": "0060f3a1",
+      "name": "crt_process.c_spawnvp_FUN_0060f39c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0060e6a0",
+      "from_addr": "0060e6a5",
+      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00446100",
+      "from_addr": "00446105",
+      "name": "shape_cramtex.cpp_addTextureEntry_FUN_00446100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447e80",
+      "from_addr": "00447e85",
+      "name": "shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004478c0",
+      "from_addr": "004478c5",
+      "name": "shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447a10",
+      "from_addr": "00447a15",
+      "name": "shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447930",
+      "from_addr": "00447935",
+      "name": "shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004479a0",
+      "from_addr": "004479a5",
+      "name": "shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447a80",
+      "from_addr": "00447a85",
+      "name": "shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00448440",
+      "from_addr": "00448445",
+      "name": "shape_cramtex.cpp_maxInt_FUN_00448440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447590",
+      "from_addr": "00447595",
+      "name": "shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004481d0",
+      "from_addr": "004481d5",
+      "name": "shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00446140",
+      "from_addr": "00446145",
+      "name": "shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447ab0",
+      "from_addr": "00447ab5",
+      "name": "shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447c20",
+      "from_addr": "00447c25",
+      "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00446160",
+      "from_addr": "00446165",
+      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447f20",
+      "from_addr": "00447f25",
+      "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00554900",
+      "from_addr": "00554905",
+      "name": "shape_quantize.cpp_CColorQuantizer_ctor_FUN_00554900",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ff9f3",
+    "address_range": [
+      [
+        "005ff9f3",
+        "005ffa02"
+      ]
+    ],
+    "convention": "__stdcall",
+    "name": "crt_stack.c_stack_probe_FUN_005ff9f3",
+    "signature": "uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ffa03",
+      "name": "crt_stack.c_check_stack_target_FUN_005ffa03"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stack_size",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "uint in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "return in_stack_00000008;",
+      "type": "stack_param"
     }
   ]
 }

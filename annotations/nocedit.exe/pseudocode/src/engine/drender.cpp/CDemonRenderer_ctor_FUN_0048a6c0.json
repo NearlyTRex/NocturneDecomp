@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 23, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "SRenderVertex[16]", 
-      "name": "g_RenderVertexBuffer", 
-      "addr": "00688014", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048a6c0", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer * this_ptr)", 
-    "address_range": [
-      [
-        "0048a6c0", 
-        "0048a6fb"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_ctor_FUN_0048a6c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 12,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
+  },
   "cross_references": [
     {
-      "from_addr": "0048a6b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_staticInit_FUN_0048a6b0", 
-      "addr": "0048a6b0"
+      "addr": "0048a6b0",
+      "from_addr": "0048a6b5",
+      "name": "engine_drender.cpp_staticInit_FUN_0048a6b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0048a6c0",
+    "address_range": [
+      [
+        "0048a6c0",
+        "0048a6fb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_ctor_FUN_0048a6c0",
+    "signature": "void engine_drender.cpp_CDemonRenderer_ctor_FUN_0048a6c0(CDemonRenderer * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00688014",
+      "name": "g_RenderVertexBuffer",
+      "type": "SRenderVertex[16]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      }
+    ]
+  },
+  "suspects": []
 }

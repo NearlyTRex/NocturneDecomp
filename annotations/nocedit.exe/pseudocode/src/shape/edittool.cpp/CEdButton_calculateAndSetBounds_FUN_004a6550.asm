@@ -28,15 +28,15 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 004a6552
     PUSH EBX                            ; 004a6556
     PUSH EBX                            ; 004a6557
-    CALL shape_edittool.cpp_calculateButtonHeight_FUN_004a6970 ; 004a6558 | int shape_edittool.cpp_calculateButtonHeight_FUN_004a6970(char * button_text)
-        ;   XREF to: 004a6970 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_calculateButtonHeight_FUN_004a6970 ; 004a6558
+        ;   XREF to: 004a6970 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonHeight_FUN_004a6970(char * button_text)
     ADD ESP,0x4                         ; 004a655d
     ADD EAX,dword ptr [ESP + 0x18]      ; 004a6560
     DEC EAX                             ; 004a6564
     PUSH EAX                            ; 004a6565
     PUSH EBX                            ; 004a6566
-    CALL shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0 ; 004a6567 | int shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0(char * button_text)
-        ;   XREF to: 004a68e0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0 ; 004a6567
+        ;   XREF to: 004a68e0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0(char * button_text)
     ADD ESP,0x4                         ; 004a656c
     MOV ECX,dword ptr [ESP + 0x18]      ; 004a656f
     ADD EAX,ECX                         ; 004a6573
@@ -47,8 +47,8 @@ section .text
     PUSH ECX                            ; 004a657c
     MOV EDI,dword ptr [ESP + 0x20]      ; 004a657d
     PUSH EDI                            ; 004a6581
-    CALL shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004a6590 ; 004a6582 | void shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004a6590(CEdButton * this_ptr, int left, int top, int right, ...)
-        ;   XREF to: 004a6590 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004a6590 ; 004a6582
+        ;   XREF to: 004a6590 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004a6590(CEdButton * this_ptr, int left, int top, int right, ...)
     ADD ESP,0x18                        ; 004a6587
     POP EDI                             ; 004a658a
     POP EBX                             ; 004a658b

@@ -32,15 +32,15 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 0043e6cf
     MOV EDI,dword ptr [ESP + 0x24]      ; 0043e6d1
     CMP EDX,0x8                         ; 0043e6d5
-    JL 0x0043e700                       ; 0043e6d8 | LAB_0043e700
-        ;   XREF to: 0043e700 (CONDITIONAL_JUMP)
+    JL 0x0043e700                       ; 0043e6d8
+        ;   XREF to: 0043e700 (CONDITIONAL_JUMP)  ; LAB_0043e700
     XOR EAX,EAX                         ; 0043e6da
         ;   Label: LAB_0043e6da
     MOV AL,byte ptr [EBX + 0x4]         ; 0043e6dc
     PUSH EAX                            ; 0043e6df
     PUSH EDI                            ; 0043e6e0
-    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e6e1 | int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e6e1
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
     MOV ECX,dword ptr [EBX + 0x4]       ; 0043e6e6
     MOV EBP,dword ptr [EBX]             ; 0043e6e9
     SHR ECX,0x8                         ; 0043e6eb
@@ -49,22 +49,22 @@ section .text
     ADD ESP,0x8                         ; 0043e6f4
     MOV dword ptr [EBX],EBP             ; 0043e6f7
     CMP EBP,0x8                         ; 0043e6f9
-    JGE 0x0043e6da                      ; 0043e6fc | LAB_0043e6da
-        ;   XREF to: 0043e6da (CONDITIONAL_JUMP)
+    JGE 0x0043e6da                      ; 0043e6fc
+        ;   XREF to: 0043e6da (CONDITIONAL_JUMP)  ; LAB_0043e6da
     MOV EAX,EAX                         ; 0043e6fe
     MOV EDX,dword ptr [EBX]             ; 0043e700
         ;   Label: LAB_0043e700
     TEST EDX,EDX                        ; 0043e702
-    JLE 0x0043e753                      ; 0043e704 | LAB_0043e753
-        ;   XREF to: 0043e753 (CONDITIONAL_JUMP)
+    JLE 0x0043e753                      ; 0043e704
+        ;   XREF to: 0043e753 (CONDITIONAL_JUMP)  ; LAB_0043e753
     MOV EAX,0x8                         ; 0043e706
     SUB EAX,EDX                         ; 0043e70b
     MOV dword ptr [ESP],EAX             ; 0043e70d
     CMP ESI,EAX                         ; 0043e710
-    JL 0x0043e778                       ; 0043e712 | LAB_0043e778
-        ;   XREF to: 0043e778 (CONDITIONAL_JUMP)
-    JZ 0x0043e796                       ; 0043e714 | LAB_0043e796
-        ;   XREF to: 0043e796 (CONDITIONAL_JUMP)
+    JL 0x0043e778                       ; 0043e712
+        ;   XREF to: 0043e778 (CONDITIONAL_JUMP)  ; LAB_0043e778
+    JZ 0x0043e796                       ; 0043e714
+        ;   XREF to: 0043e796 (CONDITIONAL_JUMP)  ; LAB_0043e796
     MOV AL,byte ptr [ESP + 0x20]        ; 0043e71a
     MOV CL,byte ptr [EBX]               ; 0043e71e
     SHL AL,CL                           ; 0043e720
@@ -72,8 +72,8 @@ section .text
     AND EAX,0xff                        ; 0043e725
     PUSH EAX                            ; 0043e72a
     PUSH EDI                            ; 0043e72b
-    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e72c | int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e72c
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
     ADD ESP,0x8                         ; 0043e731
     MOV dword ptr [EBX],0x0             ; 0043e734
     MOV CL,byte ptr [ESP]               ; 0043e73a
@@ -85,21 +85,21 @@ section .text
     SUB ESI,ECX                         ; 0043e751
     CMP ESI,0x8                         ; 0043e753
         ;   Label: LAB_0043e753
-    JL 0x0043e7c4                       ; 0043e756 | LAB_0043e7c4
-        ;   XREF to: 0043e7c4 (CONDITIONAL_JUMP)
+    JL 0x0043e7c4                       ; 0043e756
+        ;   XREF to: 0043e7c4 (CONDITIONAL_JUMP)  ; LAB_0043e7c4
     XOR EAX,EAX                         ; 0043e758
     MOV AL,byte ptr [ESP + 0x20]        ; 0043e75a
     PUSH EAX                            ; 0043e75e
     PUSH EDI                            ; 0043e75f
-    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e760 | int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e760
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
     ADD ESP,0x8                         ; 0043e765
     MOV EAX,dword ptr [ESP + 0x20]      ; 0043e768
     SHR EAX,0x8                         ; 0043e76c
     SUB ESI,0x8                         ; 0043e76f
     MOV dword ptr [ESP + 0x20],EAX      ; 0043e772
-    JMP 0x0043e753                      ; 0043e776 | LAB_0043e753
-        ;   XREF to: 0043e753 (UNCONDITIONAL_JUMP)
+    JMP 0x0043e753                      ; 0043e776
+        ;   XREF to: 0043e753 (UNCONDITIONAL_JUMP)  ; LAB_0043e753
     MOV EAX,dword ptr [ESP + 0x20]      ; 0043e778
         ;   Label: LAB_0043e778
     MOV CL,byte ptr [EBX]               ; 0043e77c
@@ -128,13 +128,13 @@ section .text
     MOV AL,byte ptr [EBX + 0x4]         ; 0043e7a8
     PUSH EAX                            ; 0043e7ab
     PUSH EDI                            ; 0043e7ac
-    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e7ad | int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
-        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fputc_FUN_005ff2d7 ; 0043e7ad
+        ;   XREF to: 005ff2d7 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)
     MOV dword ptr [EBX],0x0             ; 0043e7b2
     ADD ESP,0x8                         ; 0043e7b8
     MOV dword ptr [EBX + 0x4],0x0       ; 0043e7bb
-    JMP 0x0043e78e                      ; 0043e7c2 | LAB_0043e78e
-        ;   XREF to: 0043e78e (UNCONDITIONAL_JUMP)
+    JMP 0x0043e78e                      ; 0043e7c2
+        ;   XREF to: 0043e78e (UNCONDITIONAL_JUMP)  ; LAB_0043e78e
     MOV EAX,dword ptr [ESP + 0x20]      ; 0043e7c4
         ;   Label: LAB_0043e7c4
     MOV dword ptr [EBX],ESI             ; 0043e7c8

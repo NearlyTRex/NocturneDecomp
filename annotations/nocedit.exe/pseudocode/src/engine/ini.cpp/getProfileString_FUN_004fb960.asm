@@ -41,9 +41,9 @@ section .text
     PUSH EDI                            ; 004fb97c
     MOV EBP,dword ptr [ESP + 0x28]      ; 004fb97d
     PUSH EBP                            ; 004fb981
-    PUSH 0x2db8a60                      ; 004fb982 | CIni g_CIniInstance
-    CALL engine_ini.cpp_CIni_getProfileString_FUN_004fb250 ; 004fb987 | int engine_ini.cpp_CIni_getProfileString_FUN_004fb250(CIni * this_ptr, char * section, char * key, char * default_value, ...)
-        ;   XREF to: 004fb250 (UNCONDITIONAL_CALL)
+    PUSH 0x2db8a60                      ; 004fb982 | g_CIniInstance
+    CALL engine_ini.cpp_CIni_getProfileString_FUN_004fb250 ; 004fb987
+        ;   XREF to: 004fb250 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_getProfileString_FUN_004fb250(CIni * this_ptr, char * section, char * key, char * default_value, ...)
     ADD ESP,0x1c                        ; 004fb98c
     POP EBP                             ; 004fb98f
     POP EDI                             ; 004fb990

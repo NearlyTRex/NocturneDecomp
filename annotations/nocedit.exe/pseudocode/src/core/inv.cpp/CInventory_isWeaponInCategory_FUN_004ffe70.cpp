@@ -16,11 +16,9 @@ core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
   if (weapon_category == 5) {
     return 1;
   }
-  if (weapon_category == 0) {
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(weapon_actor,"CGun");
-    if (iVar1 != 0) {
-      return 1;
-    }
+  if ((weapon_category == 0) &&
+     (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(weapon_actor,"CGun"), iVar1 != 0)) {
+    return 1;
   }
   if (weapon_category == 1) {
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(weapon_actor,"CShotgun");
@@ -51,19 +49,16 @@ core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
         return 1;
       }
     }
-    if (weapon_category == 3) {
-      iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(weapon_actor,"CMelee");
-      if (iVar1 != 0) {
-        return 1;
-      }
+    if ((weapon_category == 3) &&
+       (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(weapon_actor,"CMelee"), iVar1 != 0))
+    {
+      return 1;
     }
-    if (weapon_category == 4) {
-      iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(weapon_actor,"CDynamite");
-      if (iVar1 != 0) {
-        return 1;
-      }
+    if ((weapon_category == 4) &&
+       (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(weapon_actor,"CDynamite"), iVar1 != 0
+       )) {
+      return 1;
     }
-    iVar1 = 0;
   }
-  return iVar1;
+  return 0;
 }

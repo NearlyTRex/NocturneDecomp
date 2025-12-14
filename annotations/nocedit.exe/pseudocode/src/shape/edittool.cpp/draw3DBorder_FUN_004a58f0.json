@@ -1,182 +1,182 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 98, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 3, 
-    "global_count": 4, 
-    "total_lines": 103, 
-    "assembly_lines": 80, 
-    "suspect_count": 7, 
+    "assembly_lines": 80,
+    "complexity_score": 98,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 23,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawHLine_FUN_00402ee0", 
-      "addr": "00402ee0"
-    }, 
-    {
-      "name": "engine_2d.c_drawVLine_FUN_00402ff0", 
-      "addr": "00402ff0"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_ButtonFaceColor", 
-      "addr": "02cf2ae4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_HighlightColor", 
-      "addr": "02cf2af0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BackgroundColor2", 
-      "addr": "02cf2af4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_2d_c_drawHLine_FUN_00402ee0(left,in_stack_00000018 + -1,border_style_flag + -1);"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_2d_c_drawVLine_FUN_00402ff0(border_style_flag + -1,top,in_stack_00000018 + -1);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(left + 1,top + 1,in_stack_0000001c + -2,in_stack_00000020 + -2,g_ButtonFaceColor);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(left + 1,top + 1,in_stack_0000001c + -2,in_stack_00000020 + -2,g_ButtonFaceColor);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a58f0", 
-    "signature": "void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, int border_style_flag)", 
-    "address_range": [
-      [
-        "004a58f0", 
-        "004a599e"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_draw3DBorder_FUN_004a58f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "left"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "top"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "border_style_flag"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 103
+  },
   "cross_references": [
     {
-      "from_addr": "004a6610", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdButton_paint_FUN_004a65e0", 
-      "addr": "004a65e0"
-    }, 
+      "addr": "004a65e0",
+      "from_addr": "004a6610",
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_004a65e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a6ca6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdCheck_render_FUN_004a6c00", 
-      "addr": "004a6c00"
-    }, 
+      "addr": "004a6c00",
+      "from_addr": "004a6ca6",
+      "name": "shape_edittool.cpp_CEdCheck_render_FUN_004a6c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a5de3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10", 
-      "addr": "004a5c10"
+      "addr": "004a5c10",
+      "from_addr": "004a5de3",
+      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a58f0",
+    "address_range": [
+      [
+        "004a58f0",
+        "004a599e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_draw3DBorder_FUN_004a58f0",
+    "signature": "void shape_edittool.cpp_draw3DBorder_FUN_004a58f0(int left, int top, int width, int height, int border_style_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00402ee0",
+      "name": "engine_2d.c_drawHLine_FUN_00402ee0"
+    },
+    {
+      "addr": "00402ff0",
+      "name": "engine_2d.c_drawVLine_FUN_00402ff0"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02cf2ae4",
+      "name": "g_ButtonFaceColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf2af0",
+      "name": "g_HighlightColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf2af4",
+      "name": "g_BackgroundColor2",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "left",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "top",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "border_style_flag",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000018",
+      "text": "engine_2d_c_drawHLine_FUN_00402ee0(left,in_stack_00000018 + -1,border_style_flag + -1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000018",
+      "text": "engine_2d_c_drawVLine_FUN_00402ff0(border_style_flag + -1,top,in_stack_00000018 + -1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000001c",
+      "text": "(left + 1,top + 1,in_stack_0000001c + -2,in_stack_00000020 + -2,g_ButtonFaceColor);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000020",
+      "text": "(left + 1,top + 1,in_stack_0000001c + -2,in_stack_00000020 + -2,g_ButtonFaceColor);",
+      "type": "stack_param"
     }
   ]
 }

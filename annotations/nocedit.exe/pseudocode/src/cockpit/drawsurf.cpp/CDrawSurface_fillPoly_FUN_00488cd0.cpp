@@ -175,7 +175,7 @@ cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0
                                      x_fixed_point >> 0x10) - this_ptr->x,local_14 - this_ptr->y,
                            (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar6)].x_fixed_point >>
                            0x10) - this_ptr->x);
-              } while (SBORROW /* signed borrow */4(iVar4,iVar7 * 4) != iVar4 + iVar7 * -4 < 0);
+              } while (iVar4 < iVar7 * 4);
             }
             iVar4 = 0;
             local_14 = local_14 + 1;

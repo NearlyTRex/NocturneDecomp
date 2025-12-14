@@ -38,22 +38,22 @@ section .text
     SUB ESP,0x8                         ; 00534a64
     MOV EBX,dword ptr [ESP + 0x24]      ; 00534a67
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00534a6b
-    MOV EDI,0x2f68188                   ; 00534a6f | char[256] g_CurrentMp3Filename
+    MOV EDI,0x2f68188                   ; 00534a6f | g_CurrentMp3Filename
     MOV EBP,dword ptr [ESP + 0x20]      ; 00534a74
-    PUSH EDI                            ; 00534a78 | char[256] g_CurrentMp3Filename
+    PUSH EDI                            ; 00534a78 | g_CurrentMp3Filename
     MOV AL,byte ptr [ESI]               ; 00534a79
         ;   Label: LAB_00534a79
-    MOV byte ptr [EDI],AL               ; 00534a7b | char[256] g_CurrentMp3Filename
+    MOV byte ptr [EDI],AL               ; 00534a7b | g_CurrentMp3Filename | DAT_02f6818a
     CMP AL,0x0                          ; 00534a7d
-    JZ 0x00534a91                       ; 00534a7f | LAB_00534a91
-        ;   XREF to: 00534a91 (CONDITIONAL_JUMP)
+    JZ 0x00534a91                       ; 00534a7f
+        ;   XREF to: 00534a91 (CONDITIONAL_JUMP)  ; LAB_00534a91
     MOV AL,byte ptr [ESI + 0x1]         ; 00534a81
     ADD ESI,0x2                         ; 00534a84
-    MOV byte ptr [EDI + 0x1],AL         ; 00534a87 | DAT_02f68189
+    MOV byte ptr [EDI + 0x1],AL         ; 00534a87 | DAT_02f68189 | DAT_02f6818b
     ADD EDI,0x2                         ; 00534a8a
     CMP AL,0x0                          ; 00534a8d
-    JNZ 0x00534a79                      ; 00534a8f | LAB_00534a79
-        ;   XREF to: 00534a79 (CONDITIONAL_JUMP)
+    JNZ 0x00534a79                      ; 00534a8f
+        ;   XREF to: 00534a79 (CONDITIONAL_JUMP)  ; LAB_00534a79
     POP EDI                             ; 00534a91
         ;   Label: LAB_00534a91
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00534a92
@@ -65,12 +65,12 @@ section .text
         ;   Label: LAB_00534aa4
     MOV ECX,dword ptr [EAX + 0x108]     ; 00534aa8
     TEST ECX,ECX                        ; 00534aae
-    JLE 0x00534b25                      ; 00534ab0 | LAB_00534b25
-        ;   XREF to: 00534b25 (CONDITIONAL_JUMP)
+    JLE 0x00534b25                      ; 00534ab0
+        ;   XREF to: 00534b25 (CONDITIONAL_JUMP)  ; LAB_00534b25
     MOV EDX,ECX                         ; 00534ab2
     CMP ECX,EBX                         ; 00534ab4
-    JLE 0x00534aba                      ; 00534ab6 | LAB_00534aba
-        ;   XREF to: 00534aba (CONDITIONAL_JUMP)
+    JLE 0x00534aba                      ; 00534ab6
+        ;   XREF to: 00534aba (CONDITIONAL_JUMP)  ; LAB_00534aba
     MOV EDX,EBX                         ; 00534ab8
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00534aba
         ;   Label: LAB_00534aba
@@ -107,11 +107,11 @@ section .text
     ADD EBP,EAX                         ; 00534b23
     CMP EBX,0x480                       ; 00534b25
         ;   Label: LAB_00534b25
-    JGE 0x00534b3e                      ; 00534b2b | LAB_00534b3e
-        ;   XREF to: 00534b3e (CONDITIONAL_JUMP)
+    JGE 0x00534b3e                      ; 00534b2b
+        ;   XREF to: 00534b3e (CONDITIONAL_JUMP)  ; LAB_00534b3e
     CMP EBX,0x1                         ; 00534b2d
-    JGE 0x00534b6f                      ; 00534b30 | LAB_00534b6f
-        ;   XREF to: 00534b6f (CONDITIONAL_JUMP)
+    JGE 0x00534b6f                      ; 00534b30
+        ;   XREF to: 00534b6f (CONDITIONAL_JUMP)  ; LAB_00534b6f
     MOV EAX,dword ptr [ESP + 0x4]       ; 00534b32
         ;   Label: LAB_00534b32
     ADD ESP,0x8                         ; 00534b36
@@ -124,12 +124,12 @@ section .text
         ;   Label: LAB_00534b3e
     MOV ECX,dword ptr [ESP + 0x20]      ; 00534b3f
     PUSH ECX                            ; 00534b43
-    CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 ; 00534b44 | int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)
-        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)
+    CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 ; 00534b44
+        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)
     ADD ESP,0x8                         ; 00534b49
     TEST EAX,EAX                        ; 00534b4c
-    JLE 0x00534b32                      ; 00534b4e | LAB_00534b32
-        ;   XREF to: 00534b32 (CONDITIONAL_JUMP)
+    JLE 0x00534b32                      ; 00534b4e
+        ;   XREF to: 00534b32 (CONDITIONAL_JUMP)  ; LAB_00534b32
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00534b50
     MOV EDX,dword ptr [EDX + 0x104]     ; 00534b54
     IMUL EDX,EAX                        ; 00534b5a
@@ -139,22 +139,22 @@ section .text
     ADD EDX,EDX                         ; 00534b65
     MOV dword ptr [ESP + 0x4],ESI       ; 00534b67
     ADD EBP,EDX                         ; 00534b6b
-    JMP 0x00534b25                      ; 00534b6d | LAB_00534b25
-        ;   XREF to: 00534b25 (UNCONDITIONAL_JUMP)
+    JMP 0x00534b25                      ; 00534b6d
+        ;   XREF to: 00534b25 (UNCONDITIONAL_JUMP)  ; LAB_00534b25
     MOV EDI,dword ptr [ESP]             ; 00534b6f
         ;   Label: LAB_00534b6f
     PUSH EDI                            ; 00534b72
     MOV EAX,dword ptr [ESP + 0x20]      ; 00534b73
     PUSH EAX                            ; 00534b77
-    CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 ; 00534b78 | int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)
-        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)
+    CALL sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 ; 00534b78
+        ;   XREF to: 00534d40 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)
     ADD ESP,0x8                         ; 00534b7d
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00534b80
     MOV dword ptr [EDX + 0x108],EAX     ; 00534b84
     TEST EAX,EAX                        ; 00534b8a
-    JLE 0x00534b32                      ; 00534b8c | LAB_00534b32
-        ;   XREF to: 00534b32 (CONDITIONAL_JUMP)
+    JLE 0x00534b32                      ; 00534b8c
+        ;   XREF to: 00534b32 (CONDITIONAL_JUMP)  ; LAB_00534b32
     MOV dword ptr [EDX + 0x10c],EDI     ; 00534b8e
-    JMP 0x00534aa4                      ; 00534b94 | LAB_00534aa4
-        ;   XREF to: 00534aa4 (UNCONDITIONAL_JUMP)
+    JMP 0x00534aa4                      ; 00534b94
+        ;   XREF to: 00534aa4 (UNCONDITIONAL_JUMP)  ; LAB_00534aa4
 

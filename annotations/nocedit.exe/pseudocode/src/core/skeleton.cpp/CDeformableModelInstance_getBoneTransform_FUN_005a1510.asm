@@ -34,8 +34,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x20]      ; 005a1519
     LEA EAX,[EDI + 0x6a4]               ; 005a151d
     CMP EBP,EAX                         ; 005a1523
-    JZ 0x005a1538                       ; 005a1525 | LAB_005a1538
-        ;   XREF to: 005a1538 (CONDITIONAL_JUMP)
+    JZ 0x005a1538                       ; 005a1525
+        ;   XREF to: 005a1538 (CONDITIONAL_JUMP)  ; LAB_005a1538
     MOV EDX,dword ptr [EAX]             ; 005a1527
     MOV dword ptr [EBP],EDX             ; 005a1529
     MOV EDX,dword ptr [EAX + 0x4]       ; 005a152c
@@ -44,15 +44,15 @@ section .text
     MOV dword ptr [EBP + 0x8],EDX       ; 005a1535
     PUSH EDI                            ; 005a1538
         ;   Label: LAB_005a1538
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a1539 | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a1539
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a153e
     MOV EAX,dword ptr [EAX + 0x28558]   ; 005a1541
     XOR EDX,EDX                         ; 005a1547
     MOV dword ptr [ESP],EAX             ; 005a1549
     TEST EAX,EAX                        ; 005a154c
-    JLE 0x005a15d3                      ; 005a154e | LAB_005a15d3
-        ;   XREF to: 005a15d3 (CONDITIONAL_JUMP)
+    JLE 0x005a15d3                      ; 005a154e
+        ;   XREF to: 005a15d3 (CONDITIONAL_JUMP)  ; LAB_005a15d3
     PUSH ESI                            ; 005a1554
     PUSH EBX                            ; 005a1555
     MOV dword ptr [ESP + 0x10],EDI      ; 005a1556
@@ -91,8 +91,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x8]       ; 005a15c5
     MOV dword ptr [ESP + 0xc],ECX       ; 005a15c9
     CMP EDX,ESI                         ; 005a15cd
-    JL 0x005a1566                       ; 005a15cf | LAB_005a1566
-        ;   XREF to: 005a1566 (CONDITIONAL_JUMP)
+    JL 0x005a1566                       ; 005a15cf
+        ;   XREF to: 005a1566 (CONDITIONAL_JUMP)  ; LAB_005a1566
     POP EBX                             ; 005a15d1
     POP ESI                             ; 005a15d2
     ADD ESP,0x10                        ; 005a15d3

@@ -27,14 +27,14 @@ section .text
     PUSH 0x988                          ; 0049df85
     XOR EDX,EDX                         ; 0049df8a
     PUSH EDX                            ; 0049df8c
-    PUSH 0x2cf1ce0                      ; 0049df8d | SWindow[5] g_WindowStack
-    MOV dword ptr [0x02cf1cdc],EDX      ; 0049df92 | int g_WindowStackCount
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0049df98 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    PUSH 0x2cf1ce0                      ; 0049df8d | g_WindowStack
+    MOV dword ptr [0x02cf1cdc],EDX      ; 0049df92 | g_WindowStackCount
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0049df98
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0049df9d
     PUSH EBX                            ; 0049dfa0
-    CALL shape_edittool.cpp_CEditorTools_init_FUN_0049e020 ; 0049dfa1 | void shape_edittool.cpp_CEditorTools_init_FUN_0049e020(CEditorTools * this_ptr)
-        ;   XREF to: 0049e020 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEditorTools_init_FUN_0049e020 ; 0049dfa1
+        ;   XREF to: 0049e020 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_init_FUN_0049e020(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0049dfa6
     MOV EAX,EBX                         ; 0049dfa9
     POP EBX                             ; 0049dfab

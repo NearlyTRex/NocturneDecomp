@@ -11,8 +11,7 @@ void __cdecl core_simbox_cpp_CSimBox_FUN_00588d00(CSimBox *this_ptr)
 {
   CSimBox *this_ptr_00;
   
-  this_ptr_00 = (CSimBox *)
-                shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x5cc,"..\\core\\simbox.cpp",0x22);
+  this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x5cc,"..\\core\\simbox.cpp",0x22);
   if (this_ptr_00 == (CSimBox *)0x0) {
     return;
   }

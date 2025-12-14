@@ -1,258 +1,258 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 113, 
-    "pseudocode_lines": 68, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 246, 
-    "assembly_lines": 178, 
-    "suspect_count": 4, 
+    "assembly_lines": 178,
+    "complexity_score": 113,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 3,
+    "pseudocode_lines": 68,
+    "suspect_count": 4,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
-      "addr": "005a0820"
-    }, 
-    {
-      "name": "crt_math.c_ceil_FUN_006001b2", 
-      "addr": "006001b2"
-    }, 
-    {
-      "name": "crt_math.c_floor_FUN_005feb90", 
-      "addr": "005feb90"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CVector3f", 
-      "name": "g_ZeroVector", 
-      "addr": "03f87558", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ZeroVector.y", 
-      "addr": "03f8755c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ZeroVector.z", 
-      "addr": "03f87560", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 20, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EBX;"
-    }, 
-    {
-      "line": 46, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar8 = *(int *)(extraout_EBX + 0x29378);"
-    }, 
-    {
-      "line": 55, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar9 = *(int *)(extraout_EBX + 0x29378);"
-    }, 
-    {
-      "line": 60, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar1 = *(int *)(extraout_EBX + 0x29378);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a0d10", 
-    "signature": "CVector3f * core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance * this_ptr, CVector3f * output_buffer, float start_frame, float end_frame)", 
-    "address_range": [
-      [
-        "005a0d10", 
-        "005a0f46"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10"
-  }, 
-  "stack_frame": {
-    "local_size": 88, 
-    "variables": [
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "start_frame"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "end_frame"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 104, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 246
+  },
   "cross_references": [
     {
-      "from_addr": "005a0ca5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90", 
-      "addr": "005a0c90"
-    }, 
+      "addr": "005a0c90",
+      "from_addr": "005a0ca5",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a0fc1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_005a0f50", 
-      "addr": "005a0f50"
+      "addr": "005a0f50",
+      "from_addr": "005a0fc1",
+      "name": "core_skeleton.cpp_getRootMotionDeltaForMotion_FUN_005a0f50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a0d10",
+    "address_range": [
+      [
+        "005a0d10",
+        "005a0f46"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10",
+    "signature": "CVector3f * core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance * this_ptr, CVector3f * output_buffer, float start_frame, float end_frame)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a0820",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    },
+    {
+      "addr": "006001b2",
+      "name": "crt_math.c_ceil_FUN_006001b2"
+    },
+    {
+      "addr": "005feb90",
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "03f8755c",
+      "name": "g_ZeroVector.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f87560",
+      "name": "g_ZeroVector.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 88,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "start_frame",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "end_frame",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_EBX",
+      "text": "int extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 46,
+      "match": "extraout_EBX",
+      "text": "iVar8 = *(int *)(extraout_EBX + 0x29378);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 55,
+      "match": "extraout_EBX",
+      "text": "iVar9 = *(int *)(extraout_EBX + 0x29378);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 60,
+      "match": "extraout_EBX",
+      "text": "iVar1 = *(int *)(extraout_EBX + 0x29378);",
+      "type": "extra_output"
     }
   ]
 }

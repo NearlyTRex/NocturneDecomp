@@ -31,37 +31,37 @@ section .text
         ;   Label: crt_io.c_getFileTypeFlags_FUN_006088b0
     PUSH ESI                            ; 006088b1
     MOV EBX,dword ptr [ESP + 0xc]       ; 006088b2
-    CMP EBX,dword ptr [0x00685214]      ; 006088b6 | uint g_MaxHandleCount
-    JC 0x006088c3                       ; 006088bc | LAB_006088c3
-        ;   XREF to: 006088c3 (CONDITIONAL_JUMP)
+    CMP EBX,dword ptr [0x00685214]      ; 006088b6 | g_MaxHandleCount
+    JC 0x006088c3                       ; 006088bc
+        ;   XREF to: 006088c3 (CONDITIONAL_JUMP)  ; LAB_006088c3
     XOR EAX,EAX                         ; 006088be
     POP ESI                             ; 006088c0
     POP EBX                             ; 006088c1
     RET                                 ; 006088c2
     CMP EBX,0x3                         ; 006088c3
         ;   Label: LAB_006088c3
-    JGE 0x006088fd                      ; 006088c6 | LAB_006088fd
-        ;   XREF to: 006088fd (CONDITIONAL_JUMP)
-    MOV EAX,[0x00685268]                ; 006088c8 | FileDescriptor * PTR_g_FileDescriptorTable_00685268
+    JGE 0x006088fd                      ; 006088c6
+        ;   XREF to: 006088fd (CONDITIONAL_JUMP)  ; LAB_006088fd
+    MOV EAX,[0x00685268]                ; 006088c8 | PTR_g_FileDescriptorTable_00685268
     LEA ESI,[EBX*0x4 + 0x0]             ; 006088cd
     ADD EAX,ESI                         ; 006088d4
     MOV DL,byte ptr [EAX + 0x1]         ; 006088d6 | DAT_00685219
     TEST DL,0x40                        ; 006088d9
-    JNZ 0x006088fd                      ; 006088dc | LAB_006088fd
-        ;   XREF to: 006088fd (CONDITIONAL_JUMP)
+    JNZ 0x006088fd                      ; 006088dc
+        ;   XREF to: 006088fd (CONDITIONAL_JUMP)  ; LAB_006088fd
     MOV DH,DL                           ; 006088de
     OR DH,0x40                          ; 006088e0
     PUSH EBX                            ; 006088e3
     MOV byte ptr [EAX + 0x1],DH         ; 006088e4 | DAT_00685219
-    CALL crt_io.c_IsSpecialDevice_FUN_0060c270 ; 006088e7 | int crt_io.c_IsSpecialDevice_FUN_0060c270(int handle_index)
-        ;   XREF to: 0060c270 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_IsSpecialDevice_FUN_0060c270 ; 006088e7
+        ;   XREF to: 0060c270 (UNCONDITIONAL_CALL)  ; int crt_io.c_IsSpecialDevice_FUN_0060c270(int handle_index)
     ADD ESP,0x4                         ; 006088ec
     TEST EAX,EAX                        ; 006088ef
-    JZ 0x006088fd                       ; 006088f1 | LAB_006088fd
-        ;   XREF to: 006088fd (CONDITIONAL_JUMP)
-    MOV EAX,[0x00685268]                ; 006088f3 | FileDescriptor * PTR_g_FileDescriptorTable_00685268
+    JZ 0x006088fd                       ; 006088f1
+        ;   XREF to: 006088fd (CONDITIONAL_JUMP)  ; LAB_006088fd
+    MOV EAX,[0x00685268]                ; 006088f3 | PTR_g_FileDescriptorTable_00685268
     OR byte ptr [ESI + EAX*0x1 + 0x1],0x20 ; 006088f8 | DAT_00685219
-    MOV EAX,[0x00685268]                ; 006088fd | FileDescriptor * PTR_g_FileDescriptorTable_00685268
+    MOV EAX,[0x00685268]                ; 006088fd | PTR_g_FileDescriptorTable_00685268
         ;   Label: LAB_006088fd
     MOV EAX,dword ptr [EAX + EBX*0x4]   ; 00608902 | g_FileDescriptorTable
     POP ESI                             ; 00608905

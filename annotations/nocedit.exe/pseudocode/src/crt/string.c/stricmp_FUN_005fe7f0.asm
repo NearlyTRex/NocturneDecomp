@@ -15,6 +15,6 @@
 section .text
 
     JMP 0x005fe7f0                      ; 006020fc
-        ;   Label: crt_string.c_stricmp_FUN_005fe7f0
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_JUMP)
+        ;   Label: crt_string.c_stricmp_FUN_005fe7f0
 

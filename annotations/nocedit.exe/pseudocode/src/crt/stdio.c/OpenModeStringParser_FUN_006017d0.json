@@ -1,90 +1,90 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 103, 
-    "pseudocode_lines": 103, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 288, 
-    "assembly_lines": 185, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_setErrno_FUN_00602790", 
-      "addr": "00602790"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_00684ed0", 
-      "addr": "00684ed0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00685280", 
-      "addr": "00685280", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006017d0", 
-    "signature": "int crt_stdio.c_OpenModeStringParser_FUN_006017d0(char * mode_string, char * output_flags)", 
-    "address_range": [
-      [
-        "006017d0", 
-        "0060190b"
-      ]
-    ], 
-    "name": "crt_stdio.c_OpenModeStringParser_FUN_006017d0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "mode_string"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "output_flags"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 185,
+    "complexity_score": 103,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 103,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 288
+  },
   "cross_references": [
     {
-      "from_addr": "00601b27", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fopenThreadSafe_FUN_00601b14", 
-      "addr": "00601b14"
-    }, 
+      "addr": "00601b14",
+      "from_addr": "00601b27",
+      "name": "crt_stdio.c_fopenThreadSafe_FUN_00601b14",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00601a2e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fopenWithFlags_FUN_00601a20", 
-      "addr": "00601a20"
+      "addr": "00601a20",
+      "from_addr": "00601a2e",
+      "name": "crt_stdio.c_fopenWithFlags_FUN_00601a20",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "006017d0",
+    "address_range": [
+      [
+        "006017d0",
+        "0060190b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_OpenModeStringParser_FUN_006017d0",
+    "signature": "int crt_stdio.c_OpenModeStringParser_FUN_006017d0(char * mode_string, char * output_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "00602790",
+      "name": "crt_errno.c_setErrno_FUN_00602790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ed0",
+      "name": "DAT_00684ed0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00685280",
+      "name": "DAT_00685280",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "mode_string",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,228 +1,228 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 264, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 91, 
-    "assembly_lines": 62, 
-    "suspect_count": 23, 
+    "assembly_lines": 62,
+    "complexity_score": 264,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 29,
+    "suspect_count": 23,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_KeyboardState", 
-      "addr": "02d03e98", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float *in_stack_0000000c;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000010;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000014;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (g_KeyboardState[in_stack_00000004] == '\\0') {"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((g_KeyboardState[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((g_KeyboardState[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((g_KeyboardState[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "&& (fVar1 = (g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010 +"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "&& (fVar1 = (g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010 +"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = in_stack_00000014;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = in_stack_00000014;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = -in_stack_00000014;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((fVar1 < *in_stack_0000000c) &&"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(fVar2 = *in_stack_0000000c -"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010,"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010,"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = fVar2, fVar2 < fVar1)) {"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = fVar1;"
-    }
-  ], 
+    ],
+    "total_lines": 91
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004dc2d0", 
-    "signature": "undefined core_game.cpp_FUN_004dc2d0()", 
+    "address": "004dc2d0",
     "address_range": [
       [
-        "004dc2d0", 
+        "004dc2d0",
         "004dc364"
       ]
-    ], 
-    "name": "core_game.cpp_FUN_004dc2d0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004dc2d0",
+    "signature": "undefined core_game.cpp_FUN_004dc2d0()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d03e98",
+      "name": "g_KeyboardState",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 8, 
+    "frame_size": 8,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4"
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "float *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "float in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000014",
+      "text": "float in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "if (g_KeyboardState[in_stack_00000004] == '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "if (((g_KeyboardState[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000000c",
+      "text": "if (((g_KeyboardState[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000014",
+      "text": "if (((g_KeyboardState[in_stack_00000008] != '\\0') && (*in_stack_0000000c < in_stack_00000014))",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000014",
+      "text": "&& (fVar1 = (g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000010",
+      "text": "&& (fVar1 = (g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000014",
+      "text": "*in_stack_0000000c, *in_stack_0000000c = fVar1, in_stack_00000014 < fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000014",
+      "text": "*in_stack_0000000c = in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000014",
+      "text": "fVar1 = -in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_0000000c",
+      "text": "if ((fVar1 < *in_stack_0000000c) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "text": "(fVar2 = *in_stack_0000000c -",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000014",
+      "text": "(g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000010",
+      "text": "(g_CGamePtr->delta_time_float * in_stack_00000014) / in_stack_00000010,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = fVar2, fVar2 < fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = fVar1;",
+      "type": "stack_param"
+    }
+  ]
 }

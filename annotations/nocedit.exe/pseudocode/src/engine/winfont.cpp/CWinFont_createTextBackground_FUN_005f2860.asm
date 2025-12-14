@@ -52,12 +52,12 @@ section .text
     MOV EDI,dword ptr [ESP + 0x50]      ; 005f286b
     MOV ESI,dword ptr [ESP + 0x54]      ; 005f286f
     TEST EDI,EDI                        ; 005f2873
-    JLE 0x005f28c8                      ; 005f2875 | LAB_005f28c8
-        ;   XREF to: 005f28c8 (CONDITIONAL_JUMP)
+    JLE 0x005f28c8                      ; 005f2875
+        ;   XREF to: 005f28c8 (CONDITIONAL_JUMP)  ; LAB_005f28c8
     TEST ESI,ESI                        ; 005f2877
         ;   Label: LAB_005f2877
-    JLE 0x005f28d0                      ; 005f2879 | LAB_005f28d0
-        ;   XREF to: 005f28d0 (CONDITIONAL_JUMP)
+    JLE 0x005f28d0                      ; 005f2879
+        ;   XREF to: 005f28d0 (CONDITIONAL_JUMP)  ; LAB_005f28d0
     CMP dword ptr [EBX + 0x4],0x0       ; 005f287b
         ;   Label: LAB_005f287b
     SETZ AL                             ; 005f287f
@@ -72,12 +72,12 @@ section .text
     MOVZX EBP,DL                        ; 005f28a0
     MOV ECX,dword ptr [EBX + 0x128]     ; 005f28a3
     OR EAX,EBP                          ; 005f28a9
-    CMP ECX,dword ptr [0x0067939c]      ; 005f28ab | int g_BitsPerPixel
+    CMP ECX,dword ptr [0x0067939c]      ; 005f28ab | g_BitsPerPixel
     SETNZ DL                            ; 005f28b1
     MOVZX EBP,DL                        ; 005f28b4
     OR EAX,EBP                          ; 005f28b7
-    JNZ 0x005f28d7                      ; 005f28b9 | LAB_005f28d7
-        ;   XREF to: 005f28d7 (CONDITIONAL_JUMP)
+    JNZ 0x005f28d7                      ; 005f28b9
+        ;   XREF to: 005f28d7 (CONDITIONAL_JUMP)  ; LAB_005f28d7
     MOV EAX,0x1                         ; 005f28bb
     ADD ESP,0x38                        ; 005f28c0
         ;   Label: LAB_005f28c0
@@ -86,29 +86,29 @@ section .text
     POP ESI                             ; 005f28c5
     POP EBX                             ; 005f28c6
     RET                                 ; 005f28c7
-    MOV EDI,dword ptr [0x00679394]      ; 005f28c8 | int g_WindowWidth
+    MOV EDI,dword ptr [0x00679394]      ; 005f28c8 | g_WindowWidth
         ;   Label: LAB_005f28c8
-    JMP 0x005f2877                      ; 005f28ce | LAB_005f2877
-        ;   XREF to: 005f2877 (UNCONDITIONAL_JUMP)
+    JMP 0x005f2877                      ; 005f28ce
+        ;   XREF to: 005f2877 (UNCONDITIONAL_JUMP)  ; LAB_005f2877
     MOV ESI,0x64                        ; 005f28d0
         ;   Label: LAB_005f28d0
-    JMP 0x005f287b                      ; 005f28d5 | LAB_005f287b
-        ;   XREF to: 005f287b (UNCONDITIONAL_JUMP)
+    JMP 0x005f287b                      ; 005f28d5
+        ;   XREF to: 005f287b (UNCONDITIONAL_JUMP)  ; LAB_005f287b
     PUSH EBX                            ; 005f28d7
         ;   Label: LAB_005f28d7
-    CALL engine_winfont.cpp_CWinFont_reset_FUN_005f2a30 ; 005f28d8 | void engine_winfont.cpp_CWinFont_reset_FUN_005f2a30(CWinFont * this_ptr)
-        ;   XREF to: 005f2a30 (UNCONDITIONAL_CALL)
+    CALL engine_winfont.cpp_CWinFont_reset_FUN_005f2a30 ; 005f28d8
+        ;   XREF to: 005f2a30 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_reset_FUN_005f2a30(CWinFont * this_ptr)
     ADD ESP,0x4                         ; 005f28dd
     PUSH 0x0                            ; 005f28e0
-    CALL dword ptr CS:[0x6113cc]        ; 005f28e2 | CreateCompatibleDC * CreateCompatibleDC
+    CALL dword ptr CS:[0x6113cc]        ; 005f28e2 | CreateCompatibleDC
     PUSH 0x2c                           ; 005f28e9
     PUSH 0x0                            ; 005f28eb
     MOV dword ptr [EBX + 0x4],EAX       ; 005f28ed
     LEA EAX,[ESP + 0x8]                 ; 005f28f0
     PUSH EAX                            ; 005f28f4
     MOV EBP,0x28                        ; 005f28f5
-    CALL crt_memory.c_memset_FUN_005fde40 ; 005f28fa | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 005f28fa
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV EDX,0x1                         ; 005f28ff
     ADD ESP,0xc                         ; 005f2904
     MOV ECX,ESI                         ; 005f2907
@@ -120,7 +120,7 @@ section .text
     MOV dword ptr [ESP + 0x4],EDI       ; 005f291b
     MOV dword ptr [ESP + 0x8],ESI       ; 005f291f
     NEG ECX                             ; 005f2923
-    MOV AX,[0x0067939c]                 ; 005f2925 | int g_BitsPerPixel
+    MOV AX,[0x0067939c]                 ; 005f2925 | g_BitsPerPixel
     XOR EBP,EBP                         ; 005f292b
     MOV dword ptr [ESP + 0x8],ECX       ; 005f292d
     PUSH EBP                            ; 005f2931
@@ -138,23 +138,23 @@ section .text
     PUSH EAX                            ; 005f2953
     MOV EBP,dword ptr [EBX + 0x4]       ; 005f2954
     PUSH EBP                            ; 005f2957
-    CALL dword ptr CS:[0x6113d0]        ; 005f2958 | CreateDIBSection * CreateDIBSection
+    CALL dword ptr CS:[0x6113d0]        ; 005f2958 | CreateDIBSection
     MOV dword ptr [EBX + 0x8],EAX       ; 005f295f
     TEST EAX,EAX                        ; 005f2962
-    JZ 0x005f28c0                       ; 005f2964 | LAB_005f28c0
-        ;   XREF to: 005f28c0 (CONDITIONAL_JUMP)
+    JZ 0x005f28c0                       ; 005f2964
+        ;   XREF to: 005f28c0 (CONDITIONAL_JUMP)  ; LAB_005f28c0
     PUSH EAX                            ; 005f296a
     MOV ECX,dword ptr [EBX + 0x4]       ; 005f296b
     PUSH ECX                            ; 005f296e
-    CALL dword ptr CS:[0x6113ec]        ; 005f296f | SelectObject * SelectObject
+    CALL dword ptr CS:[0x6113ec]        ; 005f296f | SelectObject
     PUSH 0x2                            ; 005f2976
     MOV EBP,dword ptr [EBX + 0x4]       ; 005f2978
     PUSH EBP                            ; 005f297b
-    CALL dword ptr CS:[0x6113f4]        ; 005f297c | SetBkMode * SetBkMode
+    CALL dword ptr CS:[0x6113f4]        ; 005f297c | SetBkMode
     PUSH 0xff00ff                       ; 005f2983 | g_ColorMagenta
     MOV EAX,dword ptr [EBX + 0x4]       ; 005f2988
     PUSH EAX                            ; 005f298b
-    CALL dword ptr CS:[0x6113f0]        ; 005f298c | SetBkColor * SetBkColor
+    CALL dword ptr CS:[0x6113f0]        ; 005f298c | SetBkColor
     MOV ECX,0xff00ff                    ; 005f2993
     XOR EDX,EDX                         ; 005f2998
     LEA EAX,[ESP + 0x2c]                ; 005f299a
@@ -162,12 +162,12 @@ section .text
     PUSH EAX                            ; 005f29a2
     MOV dword ptr [ESP + 0x34],ECX      ; 005f29a3 | g_ColorMagenta
     MOV dword ptr [ESP + 0x38],EDX      ; 005f29a7
-    CALL dword ptr CS:[0x6113c8]        ; 005f29ab | CreateBrushIndirect * CreateBrushIndirect
+    CALL dword ptr CS:[0x6113c8]        ; 005f29ab | CreateBrushIndirect
     PUSH EAX                            ; 005f29b2
     MOV EBP,EAX                         ; 005f29b3
     MOV EAX,dword ptr [EBX + 0x4]       ; 005f29b5
     PUSH EAX                            ; 005f29b8
-    CALL dword ptr CS:[0x6113ec]        ; 005f29b9 | SelectObject * SelectObject
+    CALL dword ptr CS:[0x6113ec]        ; 005f29b9 | SelectObject
     PUSH 0x0                            ; 005f29c0
     MOV EDX,dword ptr [EBX + 0x120]     ; 005f29c2
     MOV EAX,dword ptr [EBX + 0x124]     ; 005f29c8
@@ -177,18 +177,18 @@ section .text
     PUSH 0x0                            ; 005f29d2
     MOV ECX,dword ptr [EBX + 0x4]       ; 005f29d4
     PUSH ECX                            ; 005f29d7
-    CALL dword ptr CS:[0x6113e8]        ; 005f29d8 | Rectangle * Rectangle
+    CALL dword ptr CS:[0x6113e8]        ; 005f29d8 | Rectangle
     PUSH EBP                            ; 005f29df
-    CALL dword ptr CS:[0x6113dc]        ; 005f29e0 | DeleteObject * DeleteObject
+    CALL dword ptr CS:[0x6113dc]        ; 005f29e0 | DeleteObject
     MOV EBP,dword ptr [EBX + 0xc]       ; 005f29e7
     PUSH EBP                            ; 005f29ea
     MOV EAX,dword ptr [EBX + 0x4]       ; 005f29eb
     PUSH EAX                            ; 005f29ee
-    CALL dword ptr CS:[0x6113ec]        ; 005f29ef | SelectObject * SelectObject
+    CALL dword ptr CS:[0x6113ec]        ; 005f29ef | SelectObject
     MOV dword ptr [EBX + 0x10],EAX      ; 005f29f6
     MOV dword ptr [EBX + 0x120],EDI     ; 005f29f9
     MOV dword ptr [EBX + 0x124],ESI     ; 005f29ff
-    MOV EAX,[0x0067939c]                ; 005f2a05 | int g_BitsPerPixel
+    MOV EAX,[0x0067939c]                ; 005f2a05 | g_BitsPerPixel
     MOV EDX,dword ptr [EBX + 0x4]       ; 005f2a0a
     MOV dword ptr [EBX + 0x128],EAX     ; 005f2a0d
     TEST EDX,EDX                        ; 005f2a13

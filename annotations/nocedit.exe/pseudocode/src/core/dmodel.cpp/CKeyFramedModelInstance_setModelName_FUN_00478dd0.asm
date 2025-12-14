@@ -38,21 +38,21 @@ section .text
         ;   Label: LAB_00478dde
     MOV byte ptr [EDI],AL               ; 00478de0
     CMP AL,0x0                          ; 00478de2
-    JZ 0x00478df6                       ; 00478de4 | LAB_00478df6
-        ;   XREF to: 00478df6 (CONDITIONAL_JUMP)
+    JZ 0x00478df6                       ; 00478de4
+        ;   XREF to: 00478df6 (CONDITIONAL_JUMP)  ; LAB_00478df6
     MOV AL,byte ptr [ESI + 0x1]         ; 00478de6
     ADD ESI,0x2                         ; 00478de9
     MOV byte ptr [EDI + 0x1],AL         ; 00478dec
     ADD EDI,0x2                         ; 00478def
     CMP AL,0x0                          ; 00478df2
-    JNZ 0x00478dde                      ; 00478df4 | LAB_00478dde
-        ;   XREF to: 00478dde (CONDITIONAL_JUMP)
+    JNZ 0x00478dde                      ; 00478df4
+        ;   XREF to: 00478dde (CONDITIONAL_JUMP)  ; LAB_00478dde
     POP EDI                             ; 00478df6
         ;   Label: LAB_00478df6
     PUSH EDX                            ; 00478df7
     MOV dword ptr [EDX + 0x178],0x0     ; 00478df8
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00 ; 00478e02 | CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d00 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00 ; 00478e02
+        ;   XREF to: 00478d00 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00478e07
     POP EDI                             ; 00478e0a
     POP ESI                             ; 00478e0b

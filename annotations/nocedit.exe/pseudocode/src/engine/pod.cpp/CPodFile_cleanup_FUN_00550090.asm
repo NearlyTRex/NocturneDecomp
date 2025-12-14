@@ -29,15 +29,15 @@ section .text
     MOV EDX,dword ptr [EBX + 0x414]     ; 00550096
     MOV dword ptr [EBX + 0x410],0x0     ; 0055009c
     TEST EDX,EDX                        ; 005500a6
-    JNZ 0x005500fe                      ; 005500a8 | LAB_005500fe
-        ;   XREF to: 005500fe (CONDITIONAL_JUMP)
+    JNZ 0x005500fe                      ; 005500a8
+        ;   XREF to: 005500fe (CONDITIONAL_JUMP)  ; LAB_005500fe
     MOV dword ptr [EBX + 0x424],0x0     ; 005500aa
         ;   Label: LAB_005500aa
     MOV ESI,dword ptr [EBX + 0x418]     ; 005500b4
     MOV dword ptr [EBX + 0x41c],0x0     ; 005500ba
     TEST ESI,ESI                        ; 005500c4
-    JNZ 0x0055011d                      ; 005500c6 | LAB_0055011d
-        ;   XREF to: 0055011d (CONDITIONAL_JUMP)
+    JNZ 0x0055011d                      ; 005500c6
+        ;   XREF to: 0055011d (CONDITIONAL_JUMP)  ; LAB_0055011d
     MOV dword ptr [EBX],0x0             ; 005500c8
         ;   Label: LAB_005500c8
     MOV byte ptr [EBX + 0x108],0x0      ; 005500ce
@@ -51,22 +51,22 @@ section .text
     RET                                 ; 005500fd
     PUSH 0x268                          ; 005500fe
         ;   Label: LAB_005500fe
-    PUSH 0x640339                       ; 00550103 | = "..\\engine\\pod.cpp" | s_engine_pod_cpp_00640339 = ..\engine\pod.cpp
+    PUSH 0x640339                       ; 00550103 | = "..\\engine\\pod.cpp"
     PUSH EDX                            ; 00550108
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00550109 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00550109
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 0055010e
     MOV dword ptr [EBX + 0x414],0x0     ; 00550111
-    JMP 0x005500aa                      ; 0055011b | LAB_005500aa
-        ;   XREF to: 005500aa (UNCONDITIONAL_JUMP)
+    JMP 0x005500aa                      ; 0055011b
+        ;   XREF to: 005500aa (UNCONDITIONAL_JUMP)  ; LAB_005500aa
     PUSH 0x277                          ; 0055011d
         ;   Label: LAB_0055011d
-    PUSH 0x64034b                       ; 00550122 | = "..\\engine\\pod.cpp" | s_engine_pod_cpp_0064034b = ..\engine\pod.cpp
+    PUSH 0x64034b                       ; 00550122 | = "..\\engine\\pod.cpp"
     PUSH ESI                            ; 00550127
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00550128 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00550128
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 0055012d
     MOV dword ptr [EBX + 0x418],0x0     ; 00550130
-    JMP 0x005500c8                      ; 0055013a | LAB_005500c8
-        ;   XREF to: 005500c8 (UNCONDITIONAL_JUMP)
+    JMP 0x005500c8                      ; 0055013a
+        ;   XREF to: 005500c8 (UNCONDITIONAL_JUMP)  ; LAB_005500c8
 

@@ -28,20 +28,20 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 0050b043
     MOV EBX,dword ptr [ESP + 0x14]      ; 0050b047
     TEST EBX,EBX                        ; 0050b04b
-    JL 0x0050b054                       ; 0050b04d | LAB_0050b054
-        ;   XREF to: 0050b054 (CONDITIONAL_JUMP)
+    JL 0x0050b054                       ; 0050b04d
+        ;   XREF to: 0050b054 (CONDITIONAL_JUMP)  ; LAB_0050b054
     CMP EBX,0xc                         ; 0050b04f
-    JL 0x0050b078                       ; 0050b052 | LAB_0050b078
-        ;   XREF to: 0050b078 (CONDITIONAL_JUMP)
+    JL 0x0050b078                       ; 0050b052
+        ;   XREF to: 0050b078 (CONDITIONAL_JUMP)  ; LAB_0050b078
     PUSH EBX                            ; 0050b054
         ;   Label: LAB_0050b054
-    MOV EDX,0x6358ba                    ; 0050b055 | = "..\\core\\manpuz.cpp" | s_core_manpuz_cpp_006358ba = ..\core\manpuz.cpp
+    MOV EDX,0x6358ba                    ; 0050b055 | = "..\\core\\manpuz.cpp"
     MOV ECX,0x5e6                       ; 0050b05a
-    PUSH 0x6358cd                       ; 0050b05f | = "CMansionPuzzleCircle::panelOccupied -..." | s_CMansionPuzzleCircle_pan_006358cd = CMansionPuzzleCircle::panelOccupied - invalid index: %d
-    MOV dword ptr [0x02f0ca48],EDX      ; 0050b064 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0050b06a | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050b070 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6358cd                       ; 0050b05f | = "CMansionPuzzleCircle::panelOccupied -..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 0050b064 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0050b06a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050b070
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 0050b075
     LEA EAX,[EBX*0x4 + 0x0]             ; 0050b078
         ;   Label: LAB_0050b078
@@ -49,8 +49,8 @@ section .text
     SHL EAX,0x3                         ; 0050b081
     ADD EAX,EBX                         ; 0050b084
     CMP dword ptr [ESI + EAX*0x4 + 0x5f0],0x0 ; 0050b086
-    JZ 0x0050b099                       ; 0050b08e | LAB_0050b099
-        ;   XREF to: 0050b099 (CONDITIONAL_JUMP)
+    JZ 0x0050b099                       ; 0050b08e
+        ;   XREF to: 0050b099 (CONDITIONAL_JUMP)  ; LAB_0050b099
     MOV EAX,0x1                         ; 0050b090
         ;   Label: LAB_0050b090
     POP EBP                             ; 0050b095
@@ -60,8 +60,8 @@ section .text
     PUSH EBX                            ; 0050b099
         ;   Label: LAB_0050b099
     PUSH ESI                            ; 0050b09a
-    CALL core_manpuz.cpp_FUN_0050aef0   ; 0050b09b | undefined core_manpuz.cpp_FUN_0050aef0()
-        ;   XREF to: 0050aef0 (UNCONDITIONAL_CALL)
+    CALL core_manpuz.cpp_FUN_0050aef0   ; 0050b09b
+        ;   XREF to: 0050aef0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_0050aef0()
     MOV EDX,EAX                         ; 0050b0a0
     SHL EAX,0x2                         ; 0050b0a2
     SUB EAX,EDX                         ; 0050b0a5
@@ -72,11 +72,11 @@ section .text
     MOV EBP,dword ptr [EAX + 0x5f0]     ; 0050b0b1
     ADD ESP,0x8                         ; 0050b0b7
     TEST EBP,EBP                        ; 0050b0ba
-    JZ 0x0050b0ca                       ; 0050b0bc | LAB_0050b0ca
-        ;   XREF to: 0050b0ca (CONDITIONAL_JUMP)
+    JZ 0x0050b0ca                       ; 0050b0bc
+        ;   XREF to: 0050b0ca (CONDITIONAL_JUMP)  ; LAB_0050b0ca
     TEST dword ptr [EAX + 0x5f8],0x7fffffff ; 0050b0be
-    JNZ 0x0050b090                      ; 0050b0c8 | LAB_0050b090
-        ;   XREF to: 0050b090 (CONDITIONAL_JUMP)
+    JNZ 0x0050b090                      ; 0050b0c8
+        ;   XREF to: 0050b090 (CONDITIONAL_JUMP)  ; LAB_0050b090
     XOR EAX,EAX                         ; 0050b0ca
         ;   Label: LAB_0050b0ca
     POP EBP                             ; 0050b0cc

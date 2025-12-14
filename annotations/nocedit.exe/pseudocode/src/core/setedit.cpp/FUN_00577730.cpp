@@ -25,8 +25,6 @@ uint core_setedit_cpp_FUN_00577730(void)
   int in_stack_0000000c;
   int in_stack_00000010;
   int local_64;
-  int local_58;
-  int local_54;
   int local_38;
   int local_34;
   int local_30;
@@ -37,95 +35,90 @@ uint core_setedit_cpp_FUN_00577730(void)
   int local_1c;
   ushort *local_14;
   
-  local_58 = in_stack_00000004;
-  local_54 = in_stack_0000000c;
-  iVar5 = in_stack_0000000c + in_stack_00000008 * 0x40;
-  if (in_stack_0000000c < iVar5) {
-    do {
-      if ((((-1 < local_54) && (-1 < in_stack_00000010)) && (local_54 + 0x40 <= g_WindowWidth)) &&
-         (in_stack_00000010 + 0x30 <= g_WindowHeight)) {
-        local_24 = local_58 * 0x3000;
-        iVar1 = local_24 + 0x3000;
-        local_64 = in_stack_00000010 * 4;
-        local_34 = local_24 + 0x100;
-        local_38 = local_64;
-        local_30 = local_34;
-        local_1c = local_24;
-        if (g_BitsPerPixel == 8) {
+  for (iVar5 = in_stack_0000000c; iVar5 < in_stack_0000000c + in_stack_00000008 * 0x40;
+      iVar5 = iVar5 + 0x40) {
+    if ((((-1 < iVar5) && (-1 < in_stack_00000010)) && (iVar5 + 0x40 <= g_WindowWidth)) &&
+       (in_stack_00000010 + 0x30 <= g_WindowHeight)) {
+      local_24 = in_stack_00000004 * 0x3000;
+      iVar1 = local_24 + 0x3000;
+      local_64 = in_stack_00000010 * 4;
+      local_34 = local_24 + 0x100;
+      local_38 = local_64;
+      local_30 = local_34;
+      local_1c = local_24;
+      if (g_BitsPerPixel == 8) {
+        do {
+          puVar2 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_38) + iVar5);
+          iVar6 = local_1c;
           do {
-            puVar2 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_38) + local_54);
-            iVar6 = local_1c;
-            do {
-              puVar2 = puVar2 + 1;
-              uVar7 = *(uint *)(&DAT_03365cc0 + iVar6);
-              iVar6 = iVar6 + 4;
-              *puVar2 = g_ColorCubeLookup
-                        [((uVar7 & 0xff) >> 3) * 0x400 + ((uVar7 >> 8 & 0xff) >> 3) * 0x20 +
-                         ((uVar7 >> 0x10 & 0xff) >> 3)];
-            } while (iVar6 != local_30);
-            local_38 = local_38 + 4;
-            local_1c = local_1c + 0x100;
-            local_30 = local_30 + 0x100;
-          } while (local_1c != iVar1);
-        }
-        else if (g_BitsPerPixel == 0x10) {
-          local_2c = local_34;
-          do {
-            local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_64) + local_54 * 2);
-            iVar6 = local_24;
-            do {
-              local_14 = local_14 + 1;
-              uVar7 = *(uint *)(&DAT_03365cc0 + iVar6);
-              *local_14 = (ushort)((uVar7 >> 0x10 & 0xff) / (uint)g_BlueScaleFactor <<
-                                  ((byte)g_BlueBitPosition & 0x1f)) |
-                          (ushort)((uVar7 & 0xff) / (uint)g_RedScaleFactor <<
-                                  ((byte)g_RedBitPosition & 0x1f)) |
-                          (ushort)((uVar7 >> 8 & 0xff) / (uint)g_GreenScaleFactor <<
-                                  ((byte)g_GreenBitPosition & 0x1f));
-              iVar6 = iVar6 + 4;
-            } while (iVar6 != local_2c);
-            local_64 = local_64 + 4;
-            local_24 = local_24 + 0x100;
-            local_2c = local_2c + 0x100;
-          } while (local_24 != iVar1);
-        }
-        else if (g_BitsPerPixel == 0x20) {
-          local_28 = local_64;
-          local_20 = local_24;
-          do {
-            puVar3 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + local_54 * 4);
-            iVar6 = local_20;
-            do {
-              puVar3 = puVar3 + 1;
-              uVar7 = *(uint *)(&DAT_03365cc0 + iVar6);
-              uVar8 = uVar7 >> 8 & 0xff;
-              uVar4 = uVar7 >> 0x10 & 0xff;
-              if (g_BitsPerPixel == 0x20) {
-                uVar7 = (uVar7 & 0xff) << ((byte)g_RedBitPosition & 0x1f) |
-                        uVar8 << ((byte)g_GreenBitPosition & 0x1f);
-                uVar4 = uVar4 << ((byte)g_BlueBitPosition & 0x1f);
-              }
-              else {
-                uVar7 = (uVar7 & 0xff) << 0x10 | uVar8 << 8;
-              }
-              iVar6 = iVar6 + 4;
-              *puVar3 = uVar7 | uVar4;
-            } while (iVar6 != local_34);
-            local_28 = local_28 + 4;
-            local_20 = local_20 + 0x100;
-            local_34 = local_34 + 0x100;
-          } while (local_20 != iVar1);
-        }
+            puVar2 = puVar2 + 1;
+            uVar7 = *(uint *)(&DAT_03365cc0 + iVar6);
+            iVar6 = iVar6 + 4;
+            *puVar2 = g_ColorCubeLookup
+                      [((uVar7 & 0xff) >> 3) * 0x400 + ((uVar7 >> 8 & 0xff) >> 3) * 0x20 +
+                       ((uVar7 >> 0x10 & 0xff) >> 3)];
+          } while (iVar6 != local_30);
+          local_38 = local_38 + 4;
+          local_1c = local_1c + 0x100;
+          local_30 = local_30 + 0x100;
+        } while (local_1c != iVar1);
       }
-      local_58 = local_58 + 1;
-      local_54 = local_54 + 0x40;
-    } while (local_54 < iVar5);
+      else if (g_BitsPerPixel == 0x10) {
+        local_2c = local_34;
+        do {
+          local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_64) + iVar5 * 2);
+          iVar6 = local_24;
+          do {
+            local_14 = local_14 + 1;
+            uVar7 = *(uint *)(&DAT_03365cc0 + iVar6);
+            *local_14 = (ushort)((uVar7 >> 0x10 & 0xff) / (uint)g_BlueScaleFactor <<
+                                ((byte)g_BlueBitPosition & 0x1f)) |
+                        (ushort)((uVar7 & 0xff) / (uint)g_RedScaleFactor <<
+                                ((byte)g_RedBitPosition & 0x1f)) |
+                        (ushort)((uVar7 >> 8 & 0xff) / (uint)g_GreenScaleFactor <<
+                                ((byte)g_GreenBitPosition & 0x1f));
+            iVar6 = iVar6 + 4;
+          } while (iVar6 != local_2c);
+          local_64 = local_64 + 4;
+          local_24 = local_24 + 0x100;
+          local_2c = local_2c + 0x100;
+        } while (local_24 != iVar1);
+      }
+      else if (g_BitsPerPixel == 0x20) {
+        local_28 = local_64;
+        local_20 = local_24;
+        do {
+          puVar3 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + iVar5 * 4);
+          iVar6 = local_20;
+          do {
+            puVar3 = puVar3 + 1;
+            uVar7 = *(uint *)(&DAT_03365cc0 + iVar6);
+            uVar8 = uVar7 >> 8 & 0xff;
+            uVar4 = uVar7 >> 0x10 & 0xff;
+            if (g_BitsPerPixel == 0x20) {
+              uVar7 = (uVar7 & 0xff) << ((byte)g_RedBitPosition & 0x1f) |
+                      uVar8 << ((byte)g_GreenBitPosition & 0x1f);
+              uVar4 = uVar4 << ((byte)g_BlueBitPosition & 0x1f);
+            }
+            else {
+              uVar7 = (uVar7 & 0xff) << 0x10 | uVar8 << 8;
+            }
+            iVar6 = iVar6 + 4;
+            *puVar3 = uVar7 | uVar4;
+          } while (iVar6 != local_34);
+          local_28 = local_28 + 4;
+          local_20 = local_20 + 0x100;
+          local_34 = local_34 + 0x100;
+        } while (local_20 != iVar1);
+      }
+    }
+    in_stack_00000004 = in_stack_00000004 + 1;
   }
   iVar5 = in_stack_00000008 * 0x40 + in_stack_0000000c;
   engine_2d_c_drawRect_FUN_00403120
             (in_stack_0000000c,in_stack_00000010,iVar5 + -1,in_stack_00000010 + 0x2f);
   if (((in_stack_0000000c <= g_MouseX) && (g_MouseX < iVar5)) &&
-     ((in_stack_00000010 <= g_MouseY && (g_MouseY < local_58)))) {
+     ((in_stack_00000010 <= g_MouseY && (g_MouseY < in_stack_00000004)))) {
     return 1;
   }
   return 0;

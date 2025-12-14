@@ -30,7 +30,7 @@ int __cdecl crt_io_c_write_FUN_006084ec(int fd,void *buffer,SIZE_T count)
     count = 0xffffffff;
   }
   else {
-    hFile = (byte *)g_IOControlBlock->standard_handles[fd];
+    hFile = g_IOControlBlock->standard_handles[fd];
     uVar1 = crt_io_c_getFileTypeFlags_FUN_006088b0(fd);
     if (uVar1 == 0) {
       crt_errno_c_setErrno_FUN_00602790(4);

@@ -11,8 +11,7 @@ void core_bride_cpp_FUN_00423760(void)
 {
   CBride *this_ptr;
   
-  this_ptr = (CBride *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbeec,"..\\core\\bride.cpp",0x53);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbeec,"..\\core\\bride.cpp",0x53);
   if (this_ptr == (CBride *)0x0) {
     return;
   }

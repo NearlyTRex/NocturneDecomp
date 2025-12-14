@@ -46,8 +46,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0xc]       ; 004a7e8a
     ADD EBX,0x20                        ; 004a7e8d
     PUSH EBX                            ; 004a7e90
-    CALL core_hero.cpp_closestHeroToPoint_FUN_004f2170 ; 004a7e91 | undefined core_hero.cpp_closestHeroToPoint_FUN_004f2170()
-        ;   XREF to: 004f2170 (UNCONDITIONAL_CALL)
+    CALL core_hero.cpp_closestHeroToPoint_FUN_004f2170 ; 004a7e91
+        ;   XREF to: 004f2170 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_closestHeroToPoint_FUN_004f2170()
     FLD float ptr [EAX + 0x20]          ; 004a7e96
     FSUB float ptr [EBX]                ; 004a7e99
     ADD ESP,0x4                         ; 004a7e9b
@@ -61,8 +61,8 @@ section .text
     LEA EBX,[ESP + 0x10]                ; 004a7eb6
     FSTP float ptr [ESP + 0x18]         ; 004a7eba
     CMP EAX,EBX                         ; 004a7ebe
-    JZ 0x004a7eda                       ; 004a7ec0 | LAB_004a7eda
-        ;   XREF to: 004a7eda (CONDITIONAL_JUMP)
+    JZ 0x004a7eda                       ; 004a7ec0
+        ;   XREF to: 004a7eda (CONDITIONAL_JUMP)  ; LAB_004a7eda
     MOV EAX,dword ptr [ESP + 0x10]      ; 004a7ec2
     MOV dword ptr [ESP + 0x4],EAX       ; 004a7ec6
     MOV EAX,dword ptr [ESP + 0x14]      ; 004a7eca
@@ -72,9 +72,9 @@ section .text
     FLD float ptr [ESP + 0x8]           ; 004a7eda
         ;   Label: LAB_004a7eda
     PUSH 0x41000000                     ; 004a7ede
-    FADD float ptr [0x0062407e]         ; 004a7ee3 | float FLOAT_0062407e
+    FADD float ptr [0x0062407e]         ; 004a7ee3 | FLOAT_0062407e
     PUSH 0xc1000000                     ; 004a7ee9
     FSTP float ptr [ESP + 0x10]         ; 004a7eee
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a7ef2 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a7ef2
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

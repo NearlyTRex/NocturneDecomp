@@ -32,32 +32,32 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043e9b1
     MOV EAX,dword ptr [ESP + 0xc]       ; 0043e9b5
     TEST AL,0x4                         ; 0043e9b9
-    JNZ 0x0043e9d1                      ; 0043e9bb | LAB_0043e9d1
-        ;   XREF to: 0043e9d1 (CONDITIONAL_JUMP)
-    MOV dword ptr [EBX],0x65bbc4        ; 0043e9bd | CCodec_vtable g_CCodecVTable
+    JNZ 0x0043e9d1                      ; 0043e9bb
+        ;   XREF to: 0043e9d1 (CONDITIONAL_JUMP)  ; LAB_0043e9d1
+    MOV dword ptr [EBX],0x65bbc4        ; 0043e9bd | g_CCodecVTable
     TEST AL,0x2                         ; 0043e9c3
-    JNZ 0x0043e9ec                      ; 0043e9c5 | LAB_0043e9ec
-        ;   XREF to: 0043e9ec (CONDITIONAL_JUMP)
+    JNZ 0x0043e9ec                      ; 0043e9c5
+        ;   XREF to: 0043e9ec (CONDITIONAL_JUMP)  ; LAB_0043e9ec
     MOV EAX,EBX                         ; 0043e9c7
     POP EBX                             ; 0043e9c9
     LEA EAX,[EAX]                       ; 0043e9ca
-    PUSH 0x65bc50                       ; 0043e9d1 | WatcomTypeInfo g_CCodecTypeInfo
+    PUSH 0x65bc50                       ; 0043e9d1 | g_CCodecTypeInfo
         ;   Label: LAB_0043e9d1
     PUSH EBX                            ; 0043e9d6
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0043e9d7 | void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0043e9d7
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0043e9dc
     PUSH EAX                            ; 0043e9df
-    CALL crt_memory.c_free_FUN_005fe659 ; 0043e9e0 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 0043e9e0
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0043e9e5
     MOV EAX,EBX                         ; 0043e9e8
     POP EBX                             ; 0043e9ea
     RET                                 ; 0043e9eb
     PUSH EBX                            ; 0043e9ec
         ;   Label: LAB_0043e9ec
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0043e9ed | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 0043e9ed
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 0043e9f2
     MOV EAX,EBX                         ; 0043e9f5
     POP EBX                             ; 0043e9f7

@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 44, 
-    "assembly_lines": 30, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_crc32ProcessByte_FUN_0040ce30", 
-      "addr": "0040ce30"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040cf10", 
-    "signature": "void core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10(uint * crc_state, byte * buffer, int buffer_length)", 
-    "address_range": [
-      [
-        "0040cf10", 
-        "0040cf43"
-      ]
-    ], 
-    "name": "core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint *", 
-        "size": 4, 
-        "name": "crc_state"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_length"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 30,
+    "complexity_score": 11,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
+  },
   "cross_references": [
     {
-      "from_addr": "0040cf5c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_crc32ProcessInt_FUN_0040cf50", 
-      "addr": "0040cf50"
-    }, 
+      "addr": "0040cf50",
+      "from_addr": "0040cf5c",
+      "name": "core_actor.cpp_crc32ProcessInt_FUN_0040cf50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040cf7c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_crc32ProcessVector_FUN_0040cf70", 
-      "addr": "0040cf70"
+      "addr": "0040cf70",
+      "from_addr": "0040cf7c",
+      "name": "core_actor.cpp_crc32ProcessVector_FUN_0040cf70",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0040cf10",
+    "address_range": [
+      [
+        "0040cf10",
+        "0040cf43"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10",
+    "signature": "void core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10(uint * crc_state, byte * buffer, int buffer_length)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce30",
+      "name": "core_actor.cpp_crc32ProcessByte_FUN_0040ce30"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "crc_state",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_length",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

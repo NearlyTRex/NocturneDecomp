@@ -11,8 +11,7 @@ void core_emitter_cpp_FUN_004a7c60(void)
 {
   CEmitter *this_ptr;
   
-  this_ptr = (CEmitter *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x494,"..\\core\\emitter.cpp",0x3a);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x494,"..\\core\\emitter.cpp",0x3a);
   if (this_ptr == (CEmitter *)0x0) {
     return;
   }

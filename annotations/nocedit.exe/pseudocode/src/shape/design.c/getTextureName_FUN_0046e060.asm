@@ -30,7 +30,7 @@ section .text
     MOV EBP,ESP                         ; 0046e064
     SUB ESP,0x4                         ; 0046e066
     IMUL EAX,dword ptr [EBP + 0x14],0x50 ; 0046e06c
-    MOV EDX,0x1eb1490                   ; 0046e070 | char[9][80] g_TextureNameArray
+    MOV EDX,0x1eb1490                   ; 0046e070 | g_TextureNameArray
     ADD EDX,EAX                         ; 0046e075
     MOV dword ptr [EBP + -0x4],EDX      ; 0046e077
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046e07a

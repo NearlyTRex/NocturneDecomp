@@ -85,16 +85,16 @@ section .text
     LEA ESI,[EBX + 0x20]                ; 005ded02
     PUSH 0x42c80000                     ; 005ded05
     PUSH ESI                            ; 005ded0a
-    CALL core_hero.cpp_FUN_004f2220     ; 005ded0b | undefined core_hero.cpp_FUN_004f2220()
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)
+    CALL core_hero.cpp_FUN_004f2220     ; 005ded0b
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2220()
     ADD ESP,0x8                         ; 005ded10
     TEST EAX,EAX                        ; 005ded13
-    JZ 0x005df505                       ; 005ded15 | LAB_005df505
-        ;   XREF to: 005df505 (CONDITIONAL_JUMP)
+    JZ 0x005df505                       ; 005ded15
+        ;   XREF to: 005df505 (CONDITIONAL_JUMP)  ; LAB_005df505
     PUSH 0x3d4ccccd                     ; 005ded1b
     PUSH 0xbd4ccccd                     ; 005ded20
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005ded25 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005ded25
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     MOV ESP,EBP                         ; 005df4fe
         ;   Label: LAB_005df4fe
     POP EBP                             ; 005df500
@@ -106,12 +106,12 @@ section .text
         ;   Label: LAB_005df505
     PUSH 0x42c80000                     ; 005df50b
     PUSH EBX                            ; 005df510
-    CALL core_hero.cpp_FUN_004f2220     ; 005df511 | undefined core_hero.cpp_FUN_004f2220()
-        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)
+    CALL core_hero.cpp_FUN_004f2220     ; 005df511
+        ;   XREF to: 004f2220 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004f2220()
     ADD ESP,0x8                         ; 005df516
     TEST EAX,EAX                        ; 005df519
-    JNZ 0x005df4fe                      ; 005df51b | LAB_005df4fe
-        ;   XREF to: 005df4fe (CONDITIONAL_JUMP)
+    JNZ 0x005df4fe                      ; 005df51b
+        ;   XREF to: 005df4fe (CONDITIONAL_JUMP)  ; LAB_005df4fe
     MOV EAX,dword ptr [EBX]             ; 005df51d
     MOV dword ptr [ESI],EAX             ; 005df51f
     MOV EAX,dword ptr [EBX + 0x4]       ; 005df521

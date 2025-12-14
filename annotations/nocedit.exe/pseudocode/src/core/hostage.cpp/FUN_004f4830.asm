@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2db888c                   ; 004f4830 | CDemonActorType g_CHostageClassInfo
+    MOV EAX,0x2db888c                   ; 004f4830 | g_CHostageClassInfo
         ;   Label: core_hostage.cpp_FUN_004f4830
     RET                                 ; 004f4835
 

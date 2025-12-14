@@ -1,54 +1,54 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 59, 
-    "assembly_lines": 37, 
-    "suspect_count": 1, 
+    "assembly_lines": 37,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
       "sub_artifact"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uVar4 = SUB84 /* extract 2-byte value */(val,0);"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "0060b26c", 
-    "signature": "float crt_math.c_doubleToFloat_FUN_0060b26c(double val)", 
-    "address_range": [
-      [
-        "0060b26c", 
-        "0060b2b7"
-      ]
-    ], 
-    "name": "crt_math.c_doubleToFloat_FUN_0060b26c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 59
+  },
   "cross_references": [
     {
-      "from_addr": "00605468", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_scanf_float_FUN_00605178", 
-      "addr": "00605178"
+      "addr": "00605178",
+      "from_addr": "00605468",
+      "name": "crt_stdio.c_scanf_float_FUN_00605178",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060b26c",
+    "address_range": [
+      [
+        "0060b26c",
+        "0060b2b7"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_math.c_doubleToFloat_FUN_0060b26c",
+    "signature": "float crt_math.c_doubleToFloat_FUN_0060b26c(double val)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 11,
+      "match": "SUB84",
+      "text": "uVar4 = SUB84 /* extract 2-byte value */(val,0);",
+      "type": "sub_artifact"
     }
   ]
 }

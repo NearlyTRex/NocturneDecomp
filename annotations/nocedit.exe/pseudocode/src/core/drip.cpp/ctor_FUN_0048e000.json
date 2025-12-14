@@ -1,134 +1,134 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 88, 
-    "pseudocode_lines": 38, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 98, 
-    "assembly_lines": 60, 
-    "suspect_count": 4, 
+    "assembly_lines": 60,
+    "complexity_score": 88,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 6,
+    "pseudocode_lines": 38,
+    "suspect_count": 4,
     "suspect_types": [
-      "negative_offset", 
+      "negative_offset",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
-      "addr": "004088b0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
-      "addr": "00478ce0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_stalag_kfm_00622216", 
-      "addr": "00622216", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rock_x_wav_00622221", 
-      "addr": "00622221", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ock-x.wav_00622222", 
-      "addr": "00622222", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ck-x.wav_00622223", 
-      "addr": "00622223", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_k-x.wav_00622224", 
-      "addr": "00622224", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_drip.cpp_FUN_0065cf84", 
-      "addr": "0065cf84", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "this_ptr_00[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_drip_cpp_FUN_0065cf84;"
-    }, 
-    {
-      "line": 36, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)piVar4 + 1) = cVar1;"
-    }, 
-    {
-      "line": 37, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar4 = (int *)((int)piVar4 + 2);"
-    }, 
-    {
-      "line": 40, 
-      "match": "this_ptr_00[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CDrip *)(this_ptr_00[-1].part_visibility_flags + 9);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048e000", 
-    "signature": "CDrip * core_drip.cpp_ctor_FUN_0048e000(CDrip * this_ptr)", 
-    "address_range": [
-      [
-        "0048e000", 
-        "0048e0de"
-      ]
-    ], 
-    "name": "core_drip.cpp_ctor_FUN_0048e000"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrip *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 98
+  },
   "cross_references": [
     {
-      "from_addr": "0048dfda", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_drip.cpp_FUN_0048dfc0", 
-      "addr": "0048dfc0"
+      "addr": "0048dfc0",
+      "from_addr": "0048dfda",
+      "name": "core_drip.cpp_FUN_0048dfc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048e000",
+    "address_range": [
+      [
+        "0048e000",
+        "0048e0de"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_drip.cpp_ctor_FUN_0048e000",
+    "signature": "CDrip * core_drip.cpp_ctor_FUN_0048e000(CDrip * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    },
+    {
+      "addr": "00478ce0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622216",
+      "name": "s_stalag_kfm_00622216",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622221",
+      "name": "s_rock_x_wav_00622221",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622222",
+      "name": "s_ock-x.wav_00622222",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622223",
+      "name": "s_ck-x.wav_00622223",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622224",
+      "name": "s_k-x.wav_00622224",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065cf84",
+      "name": "PTR_core_drip.cpp_FUN_0065cf84",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrip *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 14,
+      "match": "this_ptr_00[-1].",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_drip_cpp_FUN_0065cf84;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)piVar4 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)",
+      "text": "piVar4 = (int *)((int)piVar4 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 40,
+      "match": "this_ptr_00[-1].",
+      "text": "return (CDrip *)(this_ptr_00[-1].part_visibility_flags + 9);",
+      "type": "negative_offset"
     }
   ]
 }

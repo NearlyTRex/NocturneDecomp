@@ -29,23 +29,23 @@ section .text
     PUSH ESI                            ; 00566231
     PUSH EDI                            ; 00566232
     MOV EDI,dword ptr [ESP + 0x14]      ; 00566233
-    MOV ESI,0x643f94                    ; 00566237 | undefined1 DAT_00643f94
+    MOV ESI,0x643f94                    ; 00566237 | DAT_00643f94
     TEST EDI,EDI                        ; 0056623c
-    JL 0x00566260                       ; 0056623e | LAB_00566260
-        ;   XREF to: 00566260 (CONDITIONAL_JUMP)
+    JL 0x00566260                       ; 0056623e
+        ;   XREF to: 00566260 (CONDITIONAL_JUMP)  ; LAB_00566260
     MOV EBX,dword ptr [ESP + 0x10]      ; 00566240
     ADD EBX,0x38                        ; 00566244
     PUSH EBX                            ; 00566247
-    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 00566248 | int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
-        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0 ; 00566248
+        ;   XREF to: 004a6ed0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0(CBitFont * font_ptr)
     ADD ESP,0x4                         ; 0056624d
     CMP EDI,EAX                         ; 00566250
-    JGE 0x00566260                      ; 00566252 | LAB_00566260
-        ;   XREF to: 00566260 (CONDITIONAL_JUMP)
+    JGE 0x00566260                      ; 00566252
+        ;   XREF to: 00566260 (CONDITIONAL_JUMP)  ; LAB_00566260
     PUSH EDI                            ; 00566254
     PUSH EBX                            ; 00566255
-    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 00566256 | char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
-        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 00566256
+        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     MOV ESI,EAX                         ; 0056625b
     ADD ESP,0x8                         ; 0056625d
     MOV EDI,ESI                         ; 00566260
@@ -53,27 +53,27 @@ section .text
     SUB ECX,ECX                         ; 00566262
     DEC ECX                             ; 00566264
     XOR EAX,EAX                         ; 00566265
-    SCASB.REPNE ES:EDI                  ; 00566267 | undefined1 DAT_00643f94
+    SCASB.REPNE ES:EDI                  ; 00566267 | DAT_00643f94
     NOT ECX                             ; 00566269
     DEC ECX                             ; 0056626b
     MOV EDX,ECX                         ; 0056626c
     CMP ECX,0x3fff                      ; 0056626e
-    JBE 0x0056627b                      ; 00566274 | LAB_0056627b
-        ;   XREF to: 0056627b (CONDITIONAL_JUMP)
+    JBE 0x0056627b                      ; 00566274
+        ;   XREF to: 0056627b (CONDITIONAL_JUMP)  ; LAB_0056627b
     MOV EDX,0x3fff                      ; 00566276
-    MOV EDI,0x31101c0                   ; 0056627b | undefined1 DAT_031101c0
+    MOV EDI,0x31101c0                   ; 0056627b | DAT_031101c0
         ;   Label: LAB_0056627b
     MOV ECX,EDX                         ; 00566280
-    PUSH EDI                            ; 00566282 | undefined1 DAT_031101c0
+    PUSH EDI                            ; 00566282 | DAT_031101c0
     MOV EAX,ECX                         ; 00566283
     SHR ECX,0x2                         ; 00566285
-    MOVSD.REP ES:EDI,ESI                ; 00566288 | undefined1 DAT_031101c0
+    MOVSD.REP ES:EDI,ESI                ; 00566288 | DAT_031101c0
     MOV CL,AL                           ; 0056628a
     AND CL,0x3                          ; 0056628c
-    MOVSB.REP ES:EDI,ESI                ; 0056628f | undefined1 DAT_031101c0 | DAT_031101c1
+    MOVSB.REP ES:EDI,ESI                ; 0056628f | DAT_031101c0 | DAT_031101c1
     POP EDI                             ; 00566291
     XOR AH,AH                           ; 00566292
-    MOV byte ptr [EDX + 0x31101c0],AH   ; 00566294 | DAT_031141bf | DAT_031101c0
+    MOV byte ptr [EDX + 0x31101c0],AH   ; 00566294 | DAT_031101c0 | DAT_031141bf
     POP EDI                             ; 0056629a
     POP ESI                             ; 0056629b
     POP EBX                             ; 0056629c

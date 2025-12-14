@@ -19,8 +19,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x24b4]    ; 004d6054
     MOV dword ptr [EAX + 0x1fba0],0x0   ; 004d605a
     TEST EDX,EDX                        ; 004d6064
-    JNZ 0x004d606b                      ; 004d6066 | LAB_004d606b
-        ;   XREF to: 004d606b (CONDITIONAL_JUMP)
+    JNZ 0x004d606b                      ; 004d6066
+        ;   XREF to: 004d606b (CONDITIONAL_JUMP)  ; LAB_004d606b
     XOR EAX,EAX                         ; 004d6068
     RET                                 ; 004d606a
     PUSH 0x1                            ; 004d606b
@@ -28,8 +28,8 @@ section .text
     PUSH 0x5                            ; 004d606d
     ADD EAX,0x158                       ; 004d606f
     PUSH EAX                            ; 004d6074
-    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004d6075 | void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
-        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 004d6075
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     MOV EAX,0x1                         ; 004d607a
     ADD ESP,0xc                         ; 004d607f
     RET                                 ; 004d6082

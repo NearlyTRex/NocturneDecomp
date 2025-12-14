@@ -34,13 +34,13 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 004925d4
     MOV EBP,dword ptr [EBP + 0x14]      ; 004925d7
     PXOR MM7,MM7                        ; 004925da
-    MOVD MM5,dword ptr [0x02d052a8]     ; 004925dd | int g_SolidColorMode
+    MOVD MM5,dword ptr [0x02d052a8]     ; 004925dd | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 004925e4
     PSLLW MM5,0x6                       ; 004925e7
     MOVZX EDX,byte ptr [EBX]            ; 004925eb
         ;   Label: LAB_004925eb
     MOVQ MM0,qword ptr [ESI]            ; 004925ee
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 004925f1 | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 004925f1 | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 004925f9
     MOVQ MM1,MM0                        ; 004925fd
     PUNPCKLBW MM0,MM7                   ; 00492600
@@ -50,18 +50,18 @@ section .text
     ADD EAX,EDX                         ; 0049260c
     PUNPCKLBW MM1,MM7                   ; 0049260e
     PMULLW MM0,MM2                      ; 00492611
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492614 | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492614 | g_LightmapData
     PMULLW MM1,MM2                      ; 0049261c
     MOVQ MM2,MM3                        ; 0049261f
     MOVQ MM4,MM5                        ; 00492622
-    PXOR MM2,qword ptr [0x006781e8]     ; 00492625 | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00492625 | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 0049262c
     PMULHW MM1,MM2                      ; 0049262f
     PMULHW MM4,MM3                      ; 00492632
     PADDW MM0,MM4                       ; 00492635
     PADDW MM1,MM4                       ; 00492638
-    PADDW MM0,qword ptr [0x00676488]    ; 0049263b | ulonglong g_AmbientLightMMX1
-    PADDW MM1,qword ptr [0x00676490]    ; 00492642 | ulonglong g_AmbientLightMMX2
+    PADDW MM0,qword ptr [0x00676488]    ; 0049263b | g_AmbientLightMMX1
+    PADDW MM1,qword ptr [0x00676490]    ; 00492642 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 00492649
     PSRLW MM1,0x4                       ; 0049264d
     PACKUSWB MM0,MM1                    ; 00492651
@@ -70,7 +70,7 @@ section .text
     ADD EDI,0x8                         ; 0049265a
     MOVZX EDX,byte ptr [EBX]            ; 0049265d
     MOVQ MM0,qword ptr [ESI]            ; 00492660
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492663 | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492663 | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 0049266b
     MOVQ MM1,MM0                        ; 0049266f
     PUNPCKLBW MM0,MM7                   ; 00492672
@@ -80,18 +80,18 @@ section .text
     ADD EAX,EDX                         ; 0049267e
     PUNPCKLBW MM1,MM7                   ; 00492680
     PMULLW MM0,MM2                      ; 00492683
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492686 | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492686 | g_LightmapData
     PMULLW MM1,MM2                      ; 0049268e
     MOVQ MM2,MM3                        ; 00492691
     MOVQ MM4,MM5                        ; 00492694
-    PXOR MM2,qword ptr [0x006781e8]     ; 00492697 | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00492697 | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 0049269e
     PMULHW MM1,MM2                      ; 004926a1
     PMULHW MM4,MM3                      ; 004926a4
     PADDW MM0,MM4                       ; 004926a7
     PADDW MM1,MM4                       ; 004926aa
-    PADDW MM0,qword ptr [0x00676488]    ; 004926ad | ulonglong g_AmbientLightMMX1
-    PADDW MM1,qword ptr [0x00676490]    ; 004926b4 | ulonglong g_AmbientLightMMX2
+    PADDW MM0,qword ptr [0x00676488]    ; 004926ad | g_AmbientLightMMX1
+    PADDW MM1,qword ptr [0x00676490]    ; 004926b4 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 004926bb
     PSRLW MM1,0x4                       ; 004926bf
     PACKUSWB MM0,MM1                    ; 004926c3
@@ -101,8 +101,8 @@ section .text
     INC EBX                             ; 004926cf
     INC EBP                             ; 004926d0
     SUB ECX,0x4                         ; 004926d1
-    JG 0x004925eb                       ; 004926d4 | LAB_004925eb
-        ;   XREF to: 004925eb (CONDITIONAL_JUMP)
+    JG 0x004925eb                       ; 004926d4
+        ;   XREF to: 004925eb (CONDITIONAL_JUMP)  ; LAB_004925eb
     POP EBP                             ; 004926da
     EMMS                                ; 004926db
     POP EDI                             ; 004926dd

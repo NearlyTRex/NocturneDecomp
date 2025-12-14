@@ -11,8 +11,7 @@ void core_frankgen_cpp_FUN_004d16e0(void)
 {
   CFrankenstienMachine *this_ptr;
   
-  this_ptr = (CFrankenstienMachine *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x49c,"..\\core\\frankgen.cpp",0x75);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x49c,"..\\core\\frankgen.cpp",0x75);
   if (this_ptr == (CFrankenstienMachine *)0x0) {
     return;
   }

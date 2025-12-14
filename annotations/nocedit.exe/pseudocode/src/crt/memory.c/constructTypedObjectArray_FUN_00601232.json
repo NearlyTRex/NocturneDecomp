@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 28, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 32, 
-    "assembly_lines": 19, 
-    "suspect_count": 1, 
+    "assembly_lines": 19,
+    "complexity_score": 28,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200", 
-      "addr": "00601200"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((void *)((int)dest + 4),element_count,type_info);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00601232", 
-    "signature": "void * crt_memory.c_constructTypedObjectArray_FUN_00601232(void * dest, int element_count, WatcomTypeInfo * type_info)", 
-    "address_range": [
-      [
-        "00601232", 
-        "00601257"
-      ]
-    ], 
-    "name": "crt_memory.c_constructTypedObjectArray_FUN_00601232"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "dest"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "element_count"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "WatcomTypeInfo *", 
-        "size": 4, 
-        "name": "type_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 32
+  },
   "cross_references": [
     {
-      "from_addr": "00601282", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_memory.c_constructTypedObjectArray_FUN_00601272", 
-      "addr": "00601272"
+      "addr": "00601272",
+      "from_addr": "00601282",
+      "name": "crt_memory.c_constructTypedObjectArray_FUN_00601272",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00601232",
+    "address_range": [
+      [
+        "00601232",
+        "00601257"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_memory.c_constructTypedObjectArray_FUN_00601232",
+    "signature": "void * crt_memory.c_constructTypedObjectArray_FUN_00601232(void * dest, int element_count, WatcomTypeInfo * type_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601200",
+      "name": "crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "element_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "type_info",
+        "offset": 12,
+        "size": 4,
+        "type": "WatcomTypeInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)dest + 4),element_count,type_info);",
+      "type": "pointer_cast"
     }
   ]
 }

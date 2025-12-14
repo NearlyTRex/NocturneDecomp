@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 74, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 59, 
-    "assembly_lines": 35, 
-    "suspect_count": 4, 
+    "assembly_lines": 35,
+    "complexity_score": 74,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_npc.cpp_CNPC_FUN_00544b70", 
-      "addr": "00544b70"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ScatDazzle_0062f0f2", 
-      "addr": "0062f0f2", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,SCollisionInfo *unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 13, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((CDemonActor *)param_5,unaff_EBX);"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000020 != 0) {"
-    }
-  ], 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 59
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004f6120", 
-    "signature": "undefined core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120()", 
+    "address": "004f6120",
     "address_range": [
       [
-        "004f6120", 
+        "004f6120",
         "004f616e"
       ]
-    ], 
-    "name": "core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120",
+    "signature": "undefined core_hostage.cpp_RelatedToScatDazzle_FUN_004f6120()"
+  },
+  "function_calls": [
+    {
+      "addr": "00544b70",
+      "name": "core_npc.cpp_CNPC_FUN_00544b70"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062f0f2",
+      "name": "s_ScatDazzle_0062f0f2",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,SCollisionInfo *unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EBX",
+      "text": "((CDemonActor *)param_5,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000020",
+      "text": "if (in_stack_00000020 != 0) {",
+      "type": "stack_param"
+    }
+  ]
 }

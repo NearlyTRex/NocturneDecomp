@@ -96,39 +96,36 @@ engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410
     g_RenderStateFlag2 = PREPROCESS_NONE;
     g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     puVar5 = (ushort *)vertex_indices;
-    if (0 < face_count) {
-      do {
-        if ((g_CullingMode == 0) ||
-           (pSVar4 = (SRenderVertex *)((uint)puVar5[1] * 0x30 + *vertex_indices),
-           iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
-                             ((SRenderVertex *)(*vertex_indices + (uint)*puVar5 * 0x30),pSVar4,
-                              pSVar4), iVar3 != 0)) {
-          iVar3 = 0;
-          if (0 < vertices_per_face) {
-            puVar1 = puVar5;
-            iVar2 = 0;
-            do {
-              if (*puVar1 == 0xffff) break;
-              iVar3 = iVar3 + 1;
-              *(uint *)(&stack0xffffff9c + iVar2) = (uint)*puVar1;
-              puVar1 = puVar1 + 1;
-              iVar2 = iVar2 + 4;
-            } while (iVar3 < vertices_per_face);
-          }
-          if (vertex_indices[4] == 0) {
-            engine_drender_cpp_renderTriangleSimple_FUN_004839f0((int *)&stack0xffffff9c,iVar3);
-          }
-          else {
-            core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff9c);
-            if (2 < g_ClippedVertexCount) {
-              engine_3d_c_rasterizeTriangle_FUN_005fcfc0
-                        (g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffffa0);
-            }
+    for (; 0 < face_count; face_count = face_count + -1) {
+      if ((g_CullingMode == 0) ||
+         (pSVar4 = (SRenderVertex *)((uint)puVar5[1] * 0x30 + *vertex_indices),
+         iVar3 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
+                           ((SRenderVertex *)(*vertex_indices + (uint)*puVar5 * 0x30),pSVar4,pSVar4)
+         , iVar3 != 0)) {
+        iVar3 = 0;
+        if (0 < vertices_per_face) {
+          puVar1 = puVar5;
+          iVar2 = 0;
+          do {
+            if (*puVar1 == 0xffff) break;
+            iVar3 = iVar3 + 1;
+            *(uint *)(&stack0xffffff9c + iVar2) = (uint)*puVar1;
+            puVar1 = puVar1 + 1;
+            iVar2 = iVar2 + 4;
+          } while (iVar3 < vertices_per_face);
+        }
+        if (vertex_indices[4] == 0) {
+          engine_drender_cpp_renderTriangleSimple_FUN_004839f0((int *)&stack0xffffff9c,iVar3);
+        }
+        else {
+          core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff9c);
+          if (2 < g_ClippedVertexCount) {
+            engine_3d_c_rasterizeTriangle_FUN_005fcfc0
+                      (g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffffa0);
           }
         }
-        face_count = face_count + -1;
-        puVar5 = (ushort *)((int)puVar5 + unaff_EBP);
-      } while (0 < face_count);
+      }
+      puVar5 = (ushort *)((int)puVar5 + unaff_EBP);
     }
   }
   return;

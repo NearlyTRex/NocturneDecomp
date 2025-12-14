@@ -55,7 +55,7 @@ section .text
     MOV dword ptr [EDX],ECX             ; 0051ef6a
     ADD EDX,0x4                         ; 0051ef6c
     MOV EAX,dword ptr [EAX + 0x8]       ; 0051ef6f
-    PUSH 0x6598c0                       ; 0051ef72 | WatcomTypeInfo g_CVectorTypeInfo
+    PUSH 0x6598c0                       ; 0051ef72 | g_CVectorTypeInfo
     MOV dword ptr [EDX],EAX             ; 0051ef77
     LEA EAX,[EDX + -0x4c]               ; 0051ef79
     PUSH 0x3                            ; 0051ef7c
@@ -65,8 +65,8 @@ section .text
     FLD float ptr [EBX + 0x50]          ; 0051ef85
     PUSH EAX                            ; 0051ef88
     FSTP float ptr [EAX + -0x4]         ; 0051ef89
-    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0051ef8c | void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
-        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0051ef8c
+        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
     LEA EDI,[EAX + 0x24]                ; 0051ef91
     LEA ESI,[EBX + 0x78]                ; 0051ef94
     MOVSD ES:EDI,ESI                    ; 0051ef97

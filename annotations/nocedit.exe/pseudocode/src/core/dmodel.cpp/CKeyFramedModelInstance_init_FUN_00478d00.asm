@@ -22,7 +22,7 @@ section .text
         ;   Label: LAB_00478d09
     ADD EAX,0x4                         ; 00478d0f
     CMP EAX,EDX                         ; 00478d12
-    JNZ 0x00478d09                      ; 00478d14 | LAB_00478d09
-        ;   XREF to: 00478d09 (CONDITIONAL_JUMP)
+    JNZ 0x00478d09                      ; 00478d14
+        ;   XREF to: 00478d09 (CONDITIONAL_JUMP)  ; LAB_00478d09
     RET                                 ; 00478d16
 

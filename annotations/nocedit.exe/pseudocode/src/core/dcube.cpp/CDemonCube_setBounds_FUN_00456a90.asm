@@ -25,17 +25,17 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00456a98
     ADD EAX,0x8                         ; 00456a9c
     CMP EAX,EDX                         ; 00456a9f
-    JNZ 0x00456abd                      ; 00456aa1 | LAB_00456abd
-        ;   XREF to: 00456abd (CONDITIONAL_JUMP)
+    JNZ 0x00456abd                      ; 00456aa1
+        ;   XREF to: 00456abd (CONDITIONAL_JUMP)  ; LAB_00456abd
     MOV EAX,dword ptr [ESP + 0x4]       ; 00456aa3
         ;   Label: LAB_00456aa3
     ADD EAX,0x14                        ; 00456aa7
     CMP EAX,ECX                         ; 00456aaa
-    JNZ 0x00456ad1                      ; 00456aac | LAB_00456ad1
-        ;   XREF to: 00456ad1 (CONDITIONAL_JUMP)
+    JNZ 0x00456ad1                      ; 00456aac
+        ;   XREF to: 00456ad1 (CONDITIONAL_JUMP)  ; LAB_00456ad1
     XOR EDX,EDX                         ; 00456aae
-    MOV dword ptr [0x016e990c],EDX      ; 00456ab0 | int g_PolygonCount
-    MOV dword ptr [0x01626408],EDX      ; 00456ab6 | int g_VertexCount
+    MOV dword ptr [0x016e990c],EDX      ; 00456ab0 | g_PolygonCount
+    MOV dword ptr [0x01626408],EDX      ; 00456ab6 | g_VertexCount
     RET                                 ; 00456abc
     PUSH EBX                            ; 00456abd
         ;   Label: LAB_00456abd
@@ -46,8 +46,8 @@ section .text
     MOV EBX,dword ptr [EDX + 0x8]       ; 00456ac8
     MOV dword ptr [EAX + 0x8],EBX       ; 00456acb
     POP EBX                             ; 00456ace
-    JMP 0x00456aa3                      ; 00456acf | LAB_00456aa3
-        ;   XREF to: 00456aa3 (UNCONDITIONAL_JUMP)
+    JMP 0x00456aa3                      ; 00456acf
+        ;   XREF to: 00456aa3 (UNCONDITIONAL_JUMP)  ; LAB_00456aa3
     MOV EDX,dword ptr [ECX]             ; 00456ad1
         ;   Label: LAB_00456ad1
     MOV dword ptr [EAX],EDX             ; 00456ad3
@@ -56,7 +56,7 @@ section .text
     MOV EDX,dword ptr [ECX + 0x8]       ; 00456adb
     MOV dword ptr [EAX + 0x8],EDX       ; 00456ade
     XOR EDX,EDX                         ; 00456ae1
-    MOV dword ptr [0x016e990c],EDX      ; 00456ae3 | int g_PolygonCount
-    MOV dword ptr [0x01626408],EDX      ; 00456ae9 | int g_VertexCount
+    MOV dword ptr [0x016e990c],EDX      ; 00456ae3 | g_PolygonCount
+    MOV dword ptr [0x01626408],EDX      ; 00456ae9 | g_VertexCount
     RET                                 ; 00456aef
 

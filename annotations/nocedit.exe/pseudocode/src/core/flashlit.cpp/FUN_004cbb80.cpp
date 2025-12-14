@@ -11,8 +11,7 @@ void core_flashlit_cpp_FUN_004cbb80(void)
 {
   CFlashlight *this_ptr;
   
-  this_ptr = (CFlashlight *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\flashlit.cpp",0x2b);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\flashlit.cpp",0x2b);
   if (this_ptr == (CFlashlight *)0x0) {
     return;
   }

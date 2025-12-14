@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 24, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 70, 
-    "assembly_lines": 46, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "mciSendStringA*", 
-      "name": "mciSendStringA", 
-      "addr": "00611410", 
-      "value": "00211850"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_play_mov_fullscreen_noti_00658250", 
-      "addr": "00658250", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_play_mov_window_notify_0065826b", 
-      "addr": "0065826b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pause_mov_00658282", 
-      "addr": "00658282", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_MovieHandle", 
-      "addr": "03f99500", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FullscreenMovie", 
-      "addr": "03f9950c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 46,
+    "complexity_score": 24,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 6,
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 70
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005f4990", 
-    "signature": "void wincore_winvideo.cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_window, int play_state)", 
+    "address": "005f4990",
     "address_range": [
       [
-        "005f4990", 
+        "005f4990",
         "005f49f8"
       ]
-    ], 
-    "name": "wincore_winvideo.cpp_toggleMoviePlayback_FUN_005f4990"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winvideo.cpp_toggleMoviePlayback_FUN_005f4990",
+    "signature": "void wincore_winvideo.cpp_toggleMoviePlayback_FUN_005f4990(HWND notify_window, int play_state)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00611410",
+      "name": "mciSendStringA",
+      "type": "mciSendStringA*",
+      "value": "00211850"
+    },
+    {
+      "addr": "00658250",
+      "name": "s_play_mov_fullscreen_noti_00658250",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065826b",
+      "name": "s_play_mov_window_notify_0065826b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00658282",
+      "name": "s_pause_mov_00658282",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "03f99500",
+      "name": "g_MovieHandle",
+      "type": "DWORD",
+      "value": null
+    },
+    {
+      "addr": "03f9950c",
+      "name": "g_FullscreenMovie",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef HWND HWND__ *", 
-        "size": 4, 
-        "name": "notify_window"
-      }, 
+        "is_param": true,
+        "name": "notify_window",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef HWND HWND__ *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "play_state"
+        "is_param": true,
+        "name": "play_state",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

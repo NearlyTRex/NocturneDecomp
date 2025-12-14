@@ -1,58 +1,58 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 19, 
-    "assembly_lines": 12, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060ac20", 
-    "signature": "void crt_util.c_invokeRuntimeHandler_FUN_0060ac20(RUNTIME_HANDLER_FUNC * * ppHandler)", 
-    "address_range": [
-      [
-        "0060ac20", 
-        "0060ac2f"
-      ]
-    ], 
-    "name": "crt_util.c_invokeRuntimeHandler_FUN_0060ac20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "RUNTIME_HANDLER_FUNC * *", 
-        "size": 4, 
-        "name": "ppHandler"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 12,
+    "complexity_score": 7,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
   "cross_references": [
     {
-      "from_addr": "0060acd7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_exit.c_ProcessExitHandlers_FUN_0060ac88", 
-      "addr": "0060ac88"
-    }, 
+      "addr": "0060ac88",
+      "from_addr": "0060acd7",
+      "name": "crt_exit.c_ProcessExitHandlers_FUN_0060ac88",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060ac72", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_init.c_ProcessInitTermHandlers_FUN_0060ac30", 
-      "addr": "0060ac30"
+      "addr": "0060ac30",
+      "from_addr": "0060ac72",
+      "name": "crt_init.c_ProcessInitTermHandlers_FUN_0060ac30",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060ac20",
+    "address_range": [
+      [
+        "0060ac20",
+        "0060ac2f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_util.c_invokeRuntimeHandler_FUN_0060ac20",
+    "signature": "void crt_util.c_invokeRuntimeHandler_FUN_0060ac20(RUNTIME_HANDLER_FUNC * * ppHandler)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ppHandler",
+        "offset": 4,
+        "size": 4,
+        "type": "RUNTIME_HANDLER_FUNC * *"
+      }
+    ]
+  },
+  "suspects": []
 }

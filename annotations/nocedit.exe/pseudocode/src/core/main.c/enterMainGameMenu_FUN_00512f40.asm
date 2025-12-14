@@ -16,6 +16,6 @@
 section .text
 
     JMP 0x00512f40                      ; 00507a50
-        ;   Label: core_main.c_enterMainGameMenu_FUN_00512f40
         ;   XREF to: 00512f40 (UNCONDITIONAL_JUMP)
+        ;   Label: core_main.c_enterMainGameMenu_FUN_00512f40
 

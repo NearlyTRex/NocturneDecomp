@@ -1,135 +1,135 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 90, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 49, 
-    "assembly_lines": 34, 
-    "suspect_count": 7, 
+    "assembly_lines": 34,
+    "complexity_score": 90,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 15,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150", 
-      "addr": "0040d150"
-    }, 
-    {
-      "name": "core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0", 
-      "addr": "0040d1e0"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_With_CTRL_held_down_use__00654d43", 
-      "addr": "00654d43", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Select_my_CTeleportDest__00654d73", 
-      "addr": "00654d73", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_T_00654d92", 
-      "addr": "00654d92", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base_actor,in_stack_00000008);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = *in_stack_00000008;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = iVar1 + 0xb;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = *in_stack_00000008 + 0x16;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = *in_stack_00000008 + 0x16;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008,\"T\",\"Select my CTeleportDest actor.\");"
-    }
-  ], 
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005dadc0", 
-    "signature": "void core_teleport.cpp_CTeleport_FUN_005dadc0(CTeleport * this_ptr)", 
+    "address": "005dadc0",
     "address_range": [
       [
-        "005dadc0", 
+        "005dadc0",
         "005dae0e"
       ]
-    ], 
-    "name": "core_teleport.cpp_CTeleport_FUN_005dadc0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_teleport.cpp_CTeleport_FUN_005dadc0",
+    "signature": "void core_teleport.cpp_CTeleport_FUN_005dadc0(CTeleport * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d150",
+      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150"
+    },
+    {
+      "addr": "0040d1e0",
+      "name": "core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654d43",
+      "name": "s_With_CTRL_held_down_use__00654d43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654d73",
+      "name": "s_Select_my_CTeleportDest__00654d73",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654d92",
+      "name": "s_T_00654d92",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CTeleport *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTeleport *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base_actor,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = iVar1 + 0xb;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0x16;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0x16;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"T\",\"Select my CTeleportDest actor.\");",
+      "type": "stack_param"
+    }
+  ]
 }

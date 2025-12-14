@@ -1,79 +1,79 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 55, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 47, 
-    "assembly_lines": 27, 
-    "suspect_count": 3, 
+    "assembly_lines": 27,
+    "complexity_score": 55,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 20,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
-      "addr": "0052dab0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "caseD_f", 
-      "addr": "00485bcd", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "switchdataD_004862f0", 
-      "addr": "004862f0", 
-      "value": "0048632f"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004 + 0x70) == 2) {"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CMotionController *)(in_stack_00000004 + 0x158));"
-    }
-  ], 
+    ],
+    "total_lines": 47
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00486320", 
-    "signature": "undefined core_dracbrid.cpp_FUN_00486320()", 
+    "address": "00486320",
     "address_range": [
       [
-        "00486320", 
+        "00486320",
         "0048635e"
       ]
-    ], 
-    "name": "core_dracbrid.cpp_FUN_00486320"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_dracbrid.cpp_FUN_00486320",
+    "signature": "undefined core_dracbrid.cpp_FUN_00486320()"
+  },
+  "function_calls": [
+    {
+      "addr": "0052dab0",
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00485bcd",
+      "name": "caseD_f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "004862f0",
+      "name": "switchdataD_004862f0",
+      "type": "void*",
+      "value": "0048632f"
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0x70) == 2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "((CMotionController *)(in_stack_00000004 + 0x158));",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x3f6ba24                   ; 005b9b60 | CDemonActorType g_CStairsClassInfo
+    MOV EAX,0x3f6ba24                   ; 005b9b60 | g_CStairsClassInfo
         ;   Label: core_stairs.cpp_ClassStart_FUN_005b9b60
     RET                                 ; 005b9b65
 

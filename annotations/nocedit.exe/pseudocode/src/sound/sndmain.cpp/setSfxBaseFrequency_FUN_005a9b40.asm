@@ -29,13 +29,13 @@ section .text
     PUSH 0x1                            ; 005a9b41
     MOV EDX,dword ptr [ESP + 0xc]       ; 005a9b43
     PUSH EDX                            ; 005a9b47
-    CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00 ; 005a9b48 | CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle, int check_hardware_playback)
-        ;   XREF to: 005a5d00 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00 ; 005a9b48
+        ;   XREF to: 005a5d00 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle, int check_hardware_playback)
     MOV EBX,EAX                         ; 005a9b4d
     ADD ESP,0x8                         ; 005a9b4f
     TEST EAX,EAX                        ; 005a9b52
-    JNZ 0x005a9b58                      ; 005a9b54 | LAB_005a9b58
-        ;   XREF to: 005a9b58 (CONDITIONAL_JUMP)
+    JNZ 0x005a9b58                      ; 005a9b54
+        ;   XREF to: 005a9b58 (CONDITIONAL_JUMP)  ; LAB_005a9b58
     POP EBX                             ; 005a9b56
     RET                                 ; 005a9b57
     PUSH ESI                            ; 005a9b58
@@ -44,26 +44,26 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a9b5b
     PUSH EBX                            ; 005a9b5f
     MOV dword ptr [EBX + 0x48],EAX      ; 005a9b60
-    CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100 ; 005a9b63 | int sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot * this_ptr, float delta_time)
-        ;   XREF to: 005a7100 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100 ; 005a9b63
+        ;   XREF to: 005a7100 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot * this_ptr, float delta_time)
     MOV ECX,dword ptr [EBX + 0x70]      ; 005a9b68
     ADD ESP,0x8                         ; 005a9b6b
     TEST ECX,ECX                        ; 005a9b6e
-    JZ 0x005a9b88                       ; 005a9b70 | LAB_005a9b88
-        ;   XREF to: 005a9b88 (CONDITIONAL_JUMP)
-    MOV ESI,dword ptr [0x03f69268]      ; 005a9b72 | CSoundDevice * g_CSoundDevicePtr
+    JZ 0x005a9b88                       ; 005a9b70
+        ;   XREF to: 005a9b88 (CONDITIONAL_JUMP)  ; LAB_005a9b88
+    MOV ESI,dword ptr [0x03f69268]      ; 005a9b72 | g_CSoundDevicePtr
     TEST ESI,ESI                        ; 005a9b78
-    JZ 0x005a9b88                       ; 005a9b7a | LAB_005a9b88
-        ;   XREF to: 005a9b88 (CONDITIONAL_JUMP)
+    JZ 0x005a9b88                       ; 005a9b7a
+        ;   XREF to: 005a9b88 (CONDITIONAL_JUMP)  ; LAB_005a9b88
     PUSH 0x10                           ; 005a9b7c
     PUSH EBX                            ; 005a9b7e
     MOV EDX,dword ptr [ESI]             ; 005a9b7f
     PUSH ESI                            ; 005a9b81
     CALL dword ptr [EDX + 0x40]         ; 005a9b82
     ADD ESP,0xc                         ; 005a9b85
-    CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0 ; 005a9b88 | void sound_sndmain.cpp_unlockSound_FUN_005abdc0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0 ; 005a9b88
+        ;   XREF to: 005abdc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_005abdc0()
         ;   Label: LAB_005a9b88
-        ;   XREF to: 005abdc0 (UNCONDITIONAL_CALL)
     MOV EAX,0x1                         ; 005a9b8d
     POP ESI                             ; 005a9b92
     POP EBX                             ; 005a9b93

@@ -1,111 +1,111 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 0, 
-    "global_count": 10, 
-    "total_lines": 44, 
-    "assembly_lines": 30, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_registerActorClass_FUN_0040c2e0", 
-      "addr": "0040c2e0"
-    }, 
-    {
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
-      "addr": "005fe667"
-    }, 
-    {
-      "name": "crt_stdlib.c_atexit_FUN_005ff060", 
-      "addr": "005ff060"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CBoxActor_006165ff", 
-      "addr": "006165ff", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CLightActor_00616609", 
-      "addr": "00616609", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CDemonFilterTypeInfo", 
-      "addr": "0065b390", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomStaticDestructorNode", 
-      "name": "DAT_0066e5cc", 
-      "addr": "0066e5cc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CBoxActorClassVersion", 
-      "addr": "0066e604", 
-      "value": "0xf"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CLightActorClassVersion", 
-      "addr": "0066e608", 
-      "value": "0x2"
-    }, 
-    {
-      "type": "CDemonActorType", 
-      "name": "g_CDemonActorClassInfo", 
-      "addr": "00821ff8", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActorType", 
-      "name": "g_CBoxActorClassInfo", 
-      "addr": "008229b0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonFilter[8]", 
-      "name": "CDemonFilter_ARRAY_008229ec", 
-      "addr": "008229ec", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActorType", 
-      "name": "g_CLightActorClassInfo", 
-      "addr": "00822c4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 30,
+    "complexity_score": 14,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 10,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 44
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00421650", 
-    "signature": "CDemonActorType * core_boxactor.cpp_staticInit_FUN_00421650(void)", 
+    "address": "00421650",
     "address_range": [
       [
-        "00421650", 
+        "00421650",
         "004216b7"
       ]
-    ], 
-    "name": "core_boxactor.cpp_staticInit_FUN_00421650"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_staticInit_FUN_00421650",
+    "signature": "CDemonActorType * core_boxactor.cpp_staticInit_FUN_00421650(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c2e0",
+      "name": "core_actor.cpp_registerActorClass_FUN_0040c2e0"
+    },
+    {
+      "addr": "005fe667",
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+    },
+    {
+      "addr": "005ff060",
+      "name": "crt_stdlib.c_atexit_FUN_005ff060"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006165ff",
+      "name": "s_CBoxActor_006165ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616609",
+      "name": "s_CLightActor_00616609",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065b390",
+      "name": "g_CDemonFilterTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "0066e5cc",
+      "name": "DAT_0066e5cc",
+      "type": "WatcomStaticDestructorNode",
+      "value": null
+    },
+    {
+      "addr": "0066e604",
+      "name": "g_CBoxActorClassVersion",
+      "type": "int",
+      "value": "0xf"
+    },
+    {
+      "addr": "0066e608",
+      "name": "g_CLightActorClassVersion",
+      "type": "int",
+      "value": "0x2"
+    },
+    {
+      "addr": "00821ff8",
+      "name": "g_CDemonActorClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    },
+    {
+      "addr": "008229b0",
+      "name": "g_CBoxActorClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    },
+    {
+      "addr": "008229ec",
+      "name": "CDemonFilter_ARRAY_008229ec",
+      "type": "CDemonFilter[8]",
+      "value": null
+    },
+    {
+      "addr": "00822c4c",
+      "name": "g_CLightActorClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

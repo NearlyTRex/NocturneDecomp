@@ -17,12 +17,12 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x00822368]      ; 0040cba0 | uint g_RandomSeedValue
+    MOV EDX,dword ptr [0x00822368]      ; 0040cba0 | g_RandomSeedValue
         ;   Label: core_actor.cpp_generateRandomValue_FUN_0040cba0
     IMUL EDX,EDX,0x2ff0bd               ; 0040cba6
     INC EDX                             ; 0040cbac
     AND EDX,0xffffff                    ; 0040cbad
-    MOV dword ptr [0x00822368],EDX      ; 0040cbb3 | uint g_RandomSeedValue
+    MOV dword ptr [0x00822368],EDX      ; 0040cbb3 | g_RandomSeedValue
     MOV EAX,EDX                         ; 0040cbb9
     RET                                 ; 0040cbbb
 

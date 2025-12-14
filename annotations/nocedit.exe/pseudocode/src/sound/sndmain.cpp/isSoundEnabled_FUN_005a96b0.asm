@@ -21,7 +21,7 @@
 
 section .text
 
-    MOV EAX,[0x03f69274]                ; 005a96b0 | int g_SoundEnabled
+    MOV EAX,[0x03f69274]                ; 005a96b0 | g_SoundEnabled
         ;   Label: sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0
     RET                                 ; 005a96b5
 

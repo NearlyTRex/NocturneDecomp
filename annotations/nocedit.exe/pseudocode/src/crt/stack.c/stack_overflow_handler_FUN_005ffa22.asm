@@ -23,8 +23,7 @@ section .text
     POP EAX                             ; 005ffa22
         ;   Label: crt_stack.c_stack_overflow_handler_FUN_005ffa22
     PUSH 0x1                            ; 005ffa23
-    PUSH 0x684b24                       ; 005ffa25 | = "Stack Overflow!\r\n" | s_Stack_Overflow_00684b24 = Stack Overflow!
-
-    CALL crt_startup.c_HandleRuntimeError_FUN_00606660 ; 005ffa2a | void crt_startup.c_HandleRuntimeError_FUN_00606660(char * error_message, int error_level)
-        ;   XREF to: 00606660 (UNCONDITIONAL_CALL)
+    PUSH 0x684b24                       ; 005ffa25 | = "Stack Overflow!\r\n"
+    CALL crt_startup.c_HandleRuntimeError_FUN_00606660 ; 005ffa2a
+        ;   XREF to: 00606660 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_00606660(char * error_message, int error_level)
 

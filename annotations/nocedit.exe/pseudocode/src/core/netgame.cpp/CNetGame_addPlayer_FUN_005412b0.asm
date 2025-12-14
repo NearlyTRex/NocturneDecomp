@@ -33,8 +33,8 @@ section .text
     PUSH EBP                            ; 005412b3
     MOV ESI,dword ptr [ESP + 0x14]      ; 005412b4
     CMP dword ptr [ESI + 0x1c],0x2      ; 005412b8
-    JGE 0x00541368                      ; 005412bc | LAB_00541368
-        ;   XREF to: 00541368 (CONDITIONAL_JUMP)
+    JGE 0x00541368                      ; 005412bc
+        ;   XREF to: 00541368 (CONDITIONAL_JUMP)  ; LAB_00541368
     MOV EBP,dword ptr [ESI + 0x1c]      ; 005412c2
         ;   Label: LAB_005412c2
     LEA EBX,[EBP*0x8 + 0x0]             ; 005412c5
@@ -49,8 +49,8 @@ section .text
     LEA EDX,[EBP + 0x1]                 ; 005412de
     PUSH EBX                            ; 005412e1
     MOV dword ptr [ESI + 0x1c],EDX      ; 005412e2
-    CALL crt_memory.c_memset_FUN_005fde40 ; 005412e5 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 005412e5
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 005412ea
     MOV EDI,EBX                         ; 005412ed
     MOV ESI,dword ptr [ESP + 0x1c]      ; 005412ef
@@ -59,15 +59,15 @@ section .text
         ;   Label: LAB_005412f4
     MOV byte ptr [EDI],AL               ; 005412f6
     CMP AL,0x0                          ; 005412f8
-    JZ 0x0054130c                       ; 005412fa | LAB_0054130c
-        ;   XREF to: 0054130c (CONDITIONAL_JUMP)
+    JZ 0x0054130c                       ; 005412fa
+        ;   XREF to: 0054130c (CONDITIONAL_JUMP)  ; LAB_0054130c
     MOV AL,byte ptr [ESI + 0x1]         ; 005412fc
     ADD ESI,0x2                         ; 005412ff
     MOV byte ptr [EDI + 0x1],AL         ; 00541302
     ADD EDI,0x2                         ; 00541305
     CMP AL,0x0                          ; 00541308
-    JNZ 0x005412f4                      ; 0054130a | LAB_005412f4
-        ;   XREF to: 005412f4 (CONDITIONAL_JUMP)
+    JNZ 0x005412f4                      ; 0054130a
+        ;   XREF to: 005412f4 (CONDITIONAL_JUMP)  ; LAB_005412f4
     POP EDI                             ; 0054130c
         ;   Label: LAB_0054130c
     MOV ESI,dword ptr [ESP + 0x18]      ; 0054130d
@@ -82,13 +82,13 @@ section .text
     MOV dword ptr [EBX + 0x14],EAX      ; 00541336
     MOV EAX,dword ptr [ESP + 0x24]      ; 00541339
     MOV dword ptr [EBX + 0x18],EAX      ; 0054133d
-    MOV EAX,[0x02f7c8b8]                ; 00541340 | uint g_CurrentGameTime
+    MOV EAX,[0x02f7c8b8]                ; 00541340 | g_CurrentGameTime
     MOV dword ptr [EBX + 0x24],EAX      ; 00541345
     SUB EAX,0x1e0000                    ; 00541348
     MOV dword ptr [EBX + 0x2c],EAX      ; 0054134d
     MOV EDX,EAX                         ; 00541350
     MOV dword ptr [EBX + 0x30],EAX      ; 00541352
-    MOV EAX,[0x02f7c8c4]                ; 00541355 | undefined4 DAT_02f7c8c4
+    MOV EAX,[0x02f7c8c4]                ; 00541355 | DAT_02f7c8c4
     MOV dword ptr [EBX + 0x38],EDX      ; 0054135a
     DEC EAX                             ; 0054135d
     MOV dword ptr [EBX + 0x34],EAX      ; 0054135e
@@ -98,15 +98,15 @@ section .text
     POP ESI                             ; 00541365
     POP EBX                             ; 00541366
     RET                                 ; 00541367
-    MOV ECX,0x63d947                    ; 00541368 | = "..\\core\\netgame.cpp" | s_core_netgame_cpp_0063d947 = ..\core\netgame.cpp
+    MOV ECX,0x63d947                    ; 00541368 | = "..\\core\\netgame.cpp"
         ;   Label: LAB_00541368
     MOV EBX,0x5ff                       ; 0054136d
-    PUSH 0x63d95b                       ; 00541372 | = "CNetGame::addPlayer - too many players!" | s_CNetGame_addPlayer_too_m_0063d95b = CNetGame::addPlayer - too many players!
-    MOV dword ptr [0x02f0ca48],ECX      ; 00541377 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 0054137d | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00541383 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63d95b                       ; 00541372 | = "CNetGame::addPlayer - too many players!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 00541377 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 0054137d | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00541383
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00541388
-    JMP 0x005412c2                      ; 0054138b | LAB_005412c2
-        ;   XREF to: 005412c2 (UNCONDITIONAL_JUMP)
+    JMP 0x005412c2                      ; 0054138b
+        ;   XREF to: 005412c2 (UNCONDITIONAL_JUMP)  ; LAB_005412c2
 

@@ -27,22 +27,22 @@ section .text
     MOV EDX,dword ptr [EDI + 0x30]      ; 0056016c
     XOR EBX,EBX                         ; 0056016f
     TEST EDX,EDX                        ; 00560171
-    JLE 0x0056018e                      ; 00560173 | LAB_0056018e
-        ;   XREF to: 0056018e (CONDITIONAL_JUMP)
+    JLE 0x0056018e                      ; 00560173
+        ;   XREF to: 0056018e (CONDITIONAL_JUMP)  ; LAB_0056018e
     XOR ESI,ESI                         ; 00560175
     MOV EAX,dword ptr [EDI + 0x34]      ; 00560177
         ;   Label: LAB_00560177
     MOV EAX,dword ptr [ESI + EAX*0x1 + 0x4] ; 0056017a
     CMP byte ptr [EAX],0x3a             ; 0056017e
-    JZ 0x00560198                       ; 00560181 | LAB_00560198
-        ;   XREF to: 00560198 (CONDITIONAL_JUMP)
+    JZ 0x00560198                       ; 00560181
+        ;   XREF to: 00560198 (CONDITIONAL_JUMP)  ; LAB_00560198
     INC EBX                             ; 00560183
         ;   Label: LAB_00560183
     MOV ECX,dword ptr [EDI + 0x30]      ; 00560184
     ADD ESI,0x8                         ; 00560187
     CMP EBX,ECX                         ; 0056018a
-    JL 0x00560177                       ; 0056018c | LAB_00560177
-        ;   XREF to: 00560177 (CONDITIONAL_JUMP)
+    JL 0x00560177                       ; 0056018c
+        ;   XREF to: 00560177 (CONDITIONAL_JUMP)  ; LAB_00560177
     MOV EAX,0xffffffff                  ; 0056018e
         ;   Label: LAB_0056018e
     POP EBP                             ; 00560193
@@ -54,16 +54,16 @@ section .text
         ;   Label: LAB_00560198
     INC EAX                             ; 00560199
     PUSH EAX                            ; 0056019a
-    CALL core_script.cpp_FUN_005593d0   ; 0056019b | undefined core_script.cpp_FUN_005593d0()
-        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_005593d0   ; 0056019b
+        ;   XREF to: 005593d0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_005593d0()
     ADD ESP,0x4                         ; 005601a0
     PUSH EAX                            ; 005601a3
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005601a4 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 005601a4
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005601a9
     TEST EAX,EAX                        ; 005601ac
-    JNZ 0x00560183                      ; 005601ae | LAB_00560183
-        ;   XREF to: 00560183 (CONDITIONAL_JUMP)
+    JNZ 0x00560183                      ; 005601ae
+        ;   XREF to: 00560183 (CONDITIONAL_JUMP)  ; LAB_00560183
     MOV EAX,EBX                         ; 005601b0
     POP EBP                             ; 005601b2
     POP EDI                             ; 005601b3

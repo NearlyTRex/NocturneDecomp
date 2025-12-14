@@ -405,7 +405,7 @@ engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int vertex_count,
               iVar11 = iVar11 + 1;
             }
             iVar10 = iVar10 + 4;
-          } while (SBORROW /* signed borrow */4(iVar10,iVar8) != iVar10 + (vertex_count + -2) * -4 < 0);
+          } while (iVar10 < iVar8);
         }
         if (iVar11 == local_28) {
           return 1;

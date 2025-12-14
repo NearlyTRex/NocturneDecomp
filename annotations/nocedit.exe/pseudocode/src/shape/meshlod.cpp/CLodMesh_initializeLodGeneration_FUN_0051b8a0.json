@@ -1,115 +1,115 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 70, 
-    "assembly_lines": 54, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_file.c_create_directory_FUN_00600e10", 
-      "addr": "00600e10"
-    }, 
-    {
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
-      "addr": "005ff9d0"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0", 
-      "addr": "00515ba0"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50", 
-      "addr": "00516f50"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000", 
-      "addr": "00517000"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0", 
-      "addr": "0051cdf0"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0", 
-      "addr": "0051d2d0"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180", 
-      "addr": "0051d180"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10", 
-      "addr": "00516e10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_meshlod_00637339", 
-      "addr": "00637339", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_meshlod_simplify_log_0067d4a0", 
-      "addr": "0067d4a0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0051b8a0", 
-    "signature": "int shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "0051b8a0", 
-        "0051b91c"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 54,
+    "complexity_score": 16,
+    "cross_reference_count": 2,
+    "function_call_count": 9,
+    "global_count": 2,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 70
+  },
   "cross_references": [
     {
-      "from_addr": "00589dc5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589c20", 
-      "addr": "00589c20"
-    }, 
+      "addr": "00589c20",
+      "from_addr": "00589dc5",
+      "name": "core_skeledit.cpp_FUN_00589c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051b73f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_loadPrecomputedLodData_FUN_0051b720", 
-      "addr": "0051b720"
+      "addr": "0051b720",
+      "from_addr": "0051b73f",
+      "name": "shape_meshlod.cpp_CLodMesh_loadPrecomputedLodData_FUN_0051b720",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0051b8a0",
+    "address_range": [
+      [
+        "0051b8a0",
+        "0051b91c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0",
+    "signature": "int shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0(CLodMesh * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00600e10",
+      "name": "crt_file.c_create_directory_FUN_00600e10"
+    },
+    {
+      "addr": "005ff9d0",
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
+    },
+    {
+      "addr": "00515ba0",
+      "name": "shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0"
+    },
+    {
+      "addr": "00516f50",
+      "name": "shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50"
+    },
+    {
+      "addr": "00517000",
+      "name": "shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000"
+    },
+    {
+      "addr": "0051cdf0",
+      "name": "shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0"
+    },
+    {
+      "addr": "0051d2d0",
+      "name": "shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0"
+    },
+    {
+      "addr": "0051d180",
+      "name": "shape_meshlod.cpp_CLodMesh_loadReplayData_FUN_0051d180"
+    },
+    {
+      "addr": "00516e10",
+      "name": "shape_meshlod.cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00637339",
+      "name": "s_meshlod_00637339",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d4a0",
+      "name": "s_meshlod_simplify_log_0067d4a0",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": []
 }

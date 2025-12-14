@@ -28,11 +28,11 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 005676e3
     MOV EBX,dword ptr [ESP + 0x14]      ; 005676e7
     TEST EBX,EBX                        ; 005676eb
-    JL 0x00567745                       ; 005676ed | LAB_00567745
-        ;   XREF to: 00567745 (CONDITIONAL_JUMP)
+    JL 0x00567745                       ; 005676ed
+        ;   XREF to: 00567745 (CONDITIONAL_JUMP)  ; LAB_00567745
     CMP EBX,dword ptr [ESI + 0x28]      ; 005676ef
-    JGE 0x00567745                      ; 005676f2 | LAB_00567745
-        ;   XREF to: 00567745 (CONDITIONAL_JUMP)
+    JGE 0x00567745                      ; 005676f2
+        ;   XREF to: 00567745 (CONDITIONAL_JUMP)  ; LAB_00567745
     MOV EBP,dword ptr [ESI + 0x28]      ; 005676f4
         ;   Label: LAB_005676f4
     DEC EBP                             ; 005676f7
@@ -64,8 +64,8 @@ section .text
     ADD EAX,EDX                         ; 00567733
     PUSH EAX                            ; 00567735
     MOV dword ptr [ESI + 0x28],EBP      ; 00567736
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 00567739 | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 00567739
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 0056773e
     POP EBP                             ; 00567741
     POP ESI                             ; 00567742
@@ -73,15 +73,15 @@ section .text
     RET                                 ; 00567744
     PUSH EDI                            ; 00567745
         ;   Label: LAB_00567745
-    MOV ECX,0x64408b                    ; 00567746 | = "..\\core\\script.cpp" | s_core_script_cpp_0064408b = ..\core\script.cpp
+    MOV ECX,0x64408b                    ; 00567746 | = "..\\core\\script.cpp"
     MOV EDI,0x1d77                      ; 0056774b
-    PUSH 0x64409e                       ; 00567750 | = "CDemonMission::removeEventXRef - inva..." | s_CDemonMission_removeEven_0064409e = CDemonMission::removeEventXRef - invalid index
-    MOV dword ptr [0x02f0ca48],ECX      ; 00567755 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 0056775b | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00567761 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64409e                       ; 00567750 | = "CDemonMission::removeEventXRef - inva..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 00567755 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 0056775b | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00567761
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00567766
     POP EDI                             ; 00567769
-    JMP 0x005676f4                      ; 0056776a | LAB_005676f4
-        ;   XREF to: 005676f4 (UNCONDITIONAL_JUMP)
+    JMP 0x005676f4                      ; 0056776a
+        ;   XREF to: 005676f4 (UNCONDITIONAL_JUMP)  ; LAB_005676f4
 

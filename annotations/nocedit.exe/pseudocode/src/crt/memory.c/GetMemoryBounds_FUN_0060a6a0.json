@@ -1,143 +1,143 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 90, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 73, 
-    "assembly_lines": 48, 
-    "suspect_count": 5, 
+    "assembly_lines": 48,
+    "complexity_score": 90,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 25,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "VirtualQuery", 
-      "addr": "EXTERNAL:000000a5"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "VirtualQuery*", 
-      "name": "PTR_VirtualQuery_00611668", 
-      "addr": "00611668", 
-      "value": "002122b4"
-    }, 
-    {
-      "type": "BYTE", 
-      "name": "g_WindowsMinorVersion", 
-      "addr": "00685017", 
-      "value": "\u0000"
-    }, 
-    {
-      "type": "WORD", 
-      "name": "g_WindowsPlatformVersion", 
-      "addr": "00685019", 
-      "value": "0x0"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000018;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000018 != (int *)0x0) {"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000018 = local_28.State + local_c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a6a0", 
-    "signature": "void crt_memory.c_GetMemoryBounds_FUN_0060a6a0(ThreadData * pStackBound, uint * pHeapBound)", 
-    "address_range": [
-      [
-        "0060a6a0", 
-        "0060a708"
-      ]
-    ], 
-    "name": "crt_memory.c_GetMemoryBounds_FUN_0060a6a0"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ThreadData *", 
-        "size": 4, 
-        "name": "pStackBound"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint *", 
-        "size": 4, 
-        "name": "pHeapBound"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 73
+  },
   "cross_references": [
     {
-      "from_addr": "006026ce", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8", 
-      "addr": "006026a8"
-    }, 
+      "addr": "006026a8",
+      "from_addr": "006026ce",
+      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060cd03", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_thread.c_InitializeThreadContext_FUN_0060ccf0", 
-      "addr": "0060ccf0"
+      "addr": "0060ccf0",
+      "from_addr": "0060cd03",
+      "name": "crt_thread.c_InitializeThreadContext_FUN_0060ccf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060a6a0",
+    "address_range": [
+      [
+        "0060a6a0",
+        "0060a708"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_memory.c_GetMemoryBounds_FUN_0060a6a0",
+    "signature": "void crt_memory.c_GetMemoryBounds_FUN_0060a6a0(ThreadData * pStackBound, uint * pHeapBound)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:000000a5",
+      "name": "VirtualQuery"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611668",
+      "name": "PTR_VirtualQuery_00611668",
+      "type": "VirtualQuery*",
+      "value": "002122b4"
+    },
+    {
+      "addr": "00685017",
+      "name": "g_WindowsMinorVersion",
+      "type": "BYTE",
+      "value": "\u0000"
+    },
+    {
+      "addr": "00685019",
+      "name": "g_WindowsPlatformVersion",
+      "type": "WORD",
+      "value": "0x0"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "pStackBound",
+        "offset": 4,
+        "size": 4,
+        "type": "ThreadData *"
+      },
+      {
+        "is_param": true,
+        "name": "pHeapBound",
+        "offset": 8,
+        "size": 4,
+        "type": "uint *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000018",
+      "text": "int *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000018",
+      "text": "if (in_stack_00000018 != (int *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000018",
+      "text": "*in_stack_00000018 = local_28.State + local_c;",
+      "type": "stack_param"
     }
   ]
 }

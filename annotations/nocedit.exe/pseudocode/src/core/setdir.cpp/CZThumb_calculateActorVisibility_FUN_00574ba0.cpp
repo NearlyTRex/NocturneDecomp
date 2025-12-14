@@ -90,7 +90,7 @@ core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
       iVar3 = engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
                         (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)*puVar2);
       iVar4 = iVar4 + iVar3;
-    } while (SBORROW /* signed borrow */4(iVar5,(int)this_ptr * 4) != iVar5 + (int)this_ptr * -4 < 0);
+    } while (iVar5 < (int)this_ptr * 4);
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);

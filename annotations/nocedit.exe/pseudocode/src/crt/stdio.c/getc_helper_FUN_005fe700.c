@@ -11,7 +11,7 @@ int __cdecl crt_stdio_c_getc_helper_FUN_005fe700(scanf_state_t *state)
 {
   int iVar1;
   
-  iVar1 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)state->input_ptr);
+  iVar1 = crt_stdio_c_fgetc_FUN_005fe840(state->input_ptr);
   if (iVar1 == -1) {
     state->flags = state->flags | 2;
   }

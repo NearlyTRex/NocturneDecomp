@@ -57,13 +57,13 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 004900c2
     MOV dword ptr [ESP + 0x30],EDX      ; 004900c5
     FILD dword ptr [ESP + 0x30]         ; 004900c9
-    FMUL float ptr [0x0062253e]         ; 004900cd | float g_SkyDomeUCoordToAngleScale
-    FMUL double ptr [0x00622542]        ; 004900d3 | double g_SkyDomePiConstant
-    FMUL double ptr [0x0062254a]        ; 004900d9 | double g_SkyDomeVScale1
+    FMUL float ptr [0x0062253e]         ; 004900cd | g_SkyDomeUCoordToAngleScale
+    FMUL double ptr [0x00622542]        ; 004900d3 | g_SkyDomePiConstant
+    FMUL double ptr [0x0062254a]        ; 004900d9 | g_SkyDomeVScale1
     FSTP float ptr [ESP + 0x2c]         ; 004900df
     TEST EAX,EAX                        ; 004900e3
-    JNZ 0x004901c9                      ; 004900e5 | LAB_004901c9
-        ;   XREF to: 004901c9 (CONDITIONAL_JUMP)
+    JNZ 0x004901c9                      ; 004900e5
+        ;   XREF to: 004901c9 (CONDITIONAL_JUMP)  ; LAB_004901c9
     MOV dword ptr [ESP],0x3ca0d97c      ; 004900eb
     FLD float ptr [ESP]                 ; 004900f2
         ;   Label: LAB_004900f2
@@ -77,7 +77,7 @@ section .text
     FCOS                                ; 00490106
     FXCH                                ; 00490108
     FCOS                                ; 0049010a
-    FLD float ptr [0x00672360]          ; 0049010c | float g_SkyDomeVertexScale
+    FLD float ptr [0x00672360]          ; 0049010c | g_SkyDomeVertexScale
     FXCH ST4                            ; 00490112
     FMUL ST4                            ; 00490114
     FXCH ST2                            ; 00490116
@@ -94,7 +94,7 @@ section .text
     FLD ST2                             ; 00490138
     FMUL double ptr [ESP + 0x18]        ; 0049013a
     FXCH ST4                            ; 0049013e
-    FLD double ptr [0x00622562]         ; 00490140 | double g_SkyDomeWorldRadius
+    FLD double ptr [0x00622562]         ; 00490140 | g_SkyDomeWorldRadius
     FXCH                                ; 00490146
     FMUL ST1                            ; 00490148
     FXCH ST2                            ; 0049014a
@@ -107,30 +107,30 @@ section .text
     FMULP                               ; 00490158
     MOV ESI,dword ptr [EBP + 0x20]      ; 0049015a
     LEA EAX,[ESP + 0x4]                 ; 0049015d
-    MOV EDX,dword ptr [0x006703ec]      ; 00490161 | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00490161 | g_CDemonRendererInstance | g_CDemonRendererPtr
     PUSH EAX                            ; 00490167
     FXCH                                ; 00490168
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0049016a | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0049016a
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     LEA EAX,[ESI*0x4 + 0x0]             ; 0049016f
     FISTP dword ptr [ESP + 0xc]         ; 00490176
     SUB EAX,ESI                         ; 0049017a
     FXCH                                ; 0049017c
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0049017e | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0049017e
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 00490183
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00490185 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00490185
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 0049018a
     FISTP dword ptr [ESP + 0x8]         ; 0049018c
     MOV ESI,EAX                         ; 00490190
     FISTP dword ptr [ESP + 0x10]        ; 00490192
     SHL ESI,0x4                         ; 00490196
-    MOV EAX,dword ptr [EDX]             ; 00490199 | CDemonRenderer g_CDemonRendererInstance
+    MOV EAX,dword ptr [EDX]             ; 00490199 | g_CDemonRendererInstance
     ADD EAX,ESI                         ; 0049019b
     PUSH EAX                            ; 0049019d
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0049019e | void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0049019e
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,dword ptr [EDI]             ; 004901a3
     MOV dword ptr [ESI + 0x688034],EAX  ; 004901a5 | g_RenderVertexBuffer[0].light
     MOV dword ptr [ESI + 0x688038],EAX  ; 004901ab | g_RenderVertexBuffer[0].color
@@ -147,10 +147,10 @@ section .text
     MOV dword ptr [ESP + 0x30],EAX      ; 004901c9
         ;   Label: LAB_004901c9
     FILD dword ptr [ESP + 0x30]         ; 004901cd
-    FMUL float ptr [0x00622552]         ; 004901d1 | float g_SkyDomeVCoordToAngleScale
-    FMUL double ptr [0x00622542]        ; 004901d7 | double g_SkyDomePiConstant
-    FMUL double ptr [0x0062255a]        ; 004901dd | double g_SkyDomeVScale2
+    FMUL float ptr [0x00622552]         ; 004901d1 | g_SkyDomeVCoordToAngleScale
+    FMUL double ptr [0x00622542]        ; 004901d7 | g_SkyDomePiConstant
+    FMUL double ptr [0x0062255a]        ; 004901dd | g_SkyDomeVScale2
     FSTP float ptr [ESP]                ; 004901e3
-    JMP 0x004900f2                      ; 004901e6 | LAB_004900f2
-        ;   XREF to: 004900f2 (UNCONDITIONAL_JUMP)
+    JMP 0x004900f2                      ; 004901e6
+        ;   XREF to: 004900f2 (UNCONDITIONAL_JUMP)  ; LAB_004900f2
 

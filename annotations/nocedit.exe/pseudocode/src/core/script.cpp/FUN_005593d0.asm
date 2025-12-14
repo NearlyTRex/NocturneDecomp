@@ -22,10 +22,10 @@ section .text
         ;   Label: LAB_005593d4
     INC DL                              ; 005593d6
     AND EDX,0xff                        ; 005593d8
-    TEST byte ptr [EDX + 0x6849c4],0x2  ; 005593de | char[256] g_CharacterClassificationTable
-    JZ 0x005593ae                       ; 005593e5 | LAB_005593ae
-        ;   XREF to: 005593ae (CONDITIONAL_JUMP)
+    TEST byte ptr [EDX + 0x6849c4],0x2  ; 005593de | g_CharacterClassificationTable
+    JZ 0x005593ae                       ; 005593e5
+        ;   XREF to: 005593ae (CONDITIONAL_JUMP)  ; LAB_005593ae
     INC EAX                             ; 005593e7
-    JMP 0x005593d4                      ; 005593e8 | LAB_005593d4
-        ;   XREF to: 005593d4 (UNCONDITIONAL_JUMP)
+    JMP 0x005593d4                      ; 005593e8
+        ;   XREF to: 005593d4 (UNCONDITIONAL_JUMP)  ; LAB_005593d4
 

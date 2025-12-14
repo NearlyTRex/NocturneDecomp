@@ -29,6 +29,6 @@ section .text
         ;   Label: wincore_winrun.cpp_createMutex_FUN_005f3fe0
     PUSH 0x0                            ; 005f3fe2
     PUSH 0x0                            ; 005f3fe4
-    CALL dword ptr CS:[0x611514]        ; 005f3fe6 | CreateMutexA * CreateMutexA
+    CALL dword ptr CS:[0x611514]        ; 005f3fe6 | CreateMutexA
     RET                                 ; 005f3fed
 

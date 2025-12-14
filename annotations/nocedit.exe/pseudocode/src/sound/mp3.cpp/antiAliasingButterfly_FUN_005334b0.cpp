@@ -78,9 +78,9 @@ sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0
     if (local_14 != 0) {
       local_2c = output_samples + 0x1a;
       local_28 = output_samples;
-      local_20 = input_samples + 0x12;
       local_30 = input_samples;
       do {
+        local_20 = input_samples + 0x12;
         pfVar12 = local_28 + 0x11;
         pfVar6 = local_30 + 0x11;
         iVar11 = 0;
@@ -103,9 +103,9 @@ sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0
         } while (pfVar10 != local_2c);
         local_2c = local_2c + 0x12;
         local_28 = local_28 + 0x12;
-        local_20 = local_20 + 0x12;
         local_30 = local_30 + 0x12;
         local_1c = local_1c + 1;
+        input_samples = local_20;
       } while (local_1c < local_14);
     }
   }

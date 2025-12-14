@@ -117,15 +117,15 @@ section .text
     FSQRT                               ; 00501c9a
     FSTP float ptr [EBP + -0x10]        ; 00501c9c
     TEST dword ptr [EBP + -0x10],0x7fffffff ; 00501c9f
-    JNZ 0x00501caf                      ; 00501ca6 | LAB_00501caf
-        ;   XREF to: 00501caf (CONDITIONAL_JUMP)
+    JNZ 0x00501caf                      ; 00501ca6
+        ;   XREF to: 00501caf (CONDITIONAL_JUMP)  ; LAB_00501caf
     MOV dword ptr [EBP + -0x10],0x477fff00 ; 00501ca8
     FLD1                                ; 00501caf
         ;   Label: LAB_00501caf
     FDIV float ptr [EBP + -0x10]        ; 00501cb1
     FLD float ptr [EBP + -0x1c]         ; 00501cb4
     FMUL ST1                            ; 00501cb7
-    FLD double ptr [0x00630ca0]         ; 00501cb9 | double g_NormalTo16BitScale2
+    FLD double ptr [0x00630ca0]         ; 00501cb9 | g_NormalTo16BitScale2
     FXCH                                ; 00501cbf
     FMUL ST1                            ; 00501cc1
     FSTP float ptr [EBP + -0x1c]        ; 00501cc3

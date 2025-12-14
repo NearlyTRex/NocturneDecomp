@@ -33,7 +33,7 @@ int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_0060d881(filebuf *this_p
   }
   pcVar4 = (this_ptr->streambuf).__reserve_base;
   if (pcVar4 == (char *)0x0) {
-    if (((pcVar4 == (char *)0x0) && (((this_ptr->streambuf).__flags & 1) == 0)) &&
+    if ((((this_ptr->streambuf).__flags & 1) == 0) &&
        (iVar3 = (*this_ptr->__vtable->doallocate)(&this_ptr->streambuf), iVar3 == -1)) {
       return -1;
     }

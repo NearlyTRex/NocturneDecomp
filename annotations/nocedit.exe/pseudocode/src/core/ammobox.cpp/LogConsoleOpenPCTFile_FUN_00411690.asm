@@ -30,22 +30,21 @@ section .text
     MOV dword ptr [EBX + 0x31c],EAX     ; 0041169d
     SUB ESP,0x8                         ; 004116a3
     FSTP double ptr [ESP]               ; 004116a6
-    PUSH 0x614bd1                       ; 004116a9 | = "Open pct : %f\n" | s_Open_pct_f_00614bd1 = Open pct : %f
-
-    MOV EDX,dword ptr [0x0066e8e0]      ; 004116ae | CConsole g_ConsolePtr | CConsole * g_CConsolePtr
-    PUSH EDX                            ; 004116b4 | CConsole g_ConsolePtr
-    CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004116b5 | void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
-        ;   XREF to: 00441890 (UNCONDITIONAL_CALL)
+    PUSH 0x614bd1                       ; 004116a9 | = "Open pct : %f\n"
+    MOV EDX,dword ptr [0x0066e8e0]      ; 004116ae | g_ConsolePtr | g_CConsolePtr
+    PUSH EDX                            ; 004116b4 | g_ConsolePtr
+    CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004116b5
+        ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     MOV ECX,dword ptr [EBX + 0x348]     ; 004116ba
     ADD ESP,0x10                        ; 004116c0
     TEST ECX,ECX                        ; 004116c3
-    JNZ 0x004116db                      ; 004116c5 | LAB_004116db
-        ;   XREF to: 004116db (CONDITIONAL_JUMP)
+    JNZ 0x004116db                      ; 004116c5
+        ;   XREF to: 004116db (CONDITIONAL_JUMP)  ; LAB_004116db
     MOV AH,byte ptr [EBX + 0x328]       ; 004116c7
     MOV dword ptr [EBX + 0x348],0x1     ; 004116cd
     TEST AH,AH                          ; 004116d7
-    JNZ 0x004116dd                      ; 004116d9 | LAB_004116dd
-        ;   XREF to: 004116dd (CONDITIONAL_JUMP)
+    JNZ 0x004116dd                      ; 004116d9
+        ;   XREF to: 004116dd (CONDITIONAL_JUMP)  ; LAB_004116dd
     POP EBX                             ; 004116db
         ;   Label: LAB_004116db
     RET                                 ; 004116dc

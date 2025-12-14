@@ -11,8 +11,7 @@ CZombieDog * __cdecl core_dog_cpp_factoryFunc_FUN_0047f010(void)
 {
   CZombieDog *pCVar1;
   
-  pCVar1 = (CZombieDog *)
-           shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbec8,"..\\core\\dog.cpp",0x37);
+  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbec8,"..\\core\\dog.cpp",0x37);
   if (pCVar1 == (CZombieDog *)0x0) {
     return (CZombieDog *)0x0;
   }

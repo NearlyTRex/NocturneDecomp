@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-int core_lightgun_cpp_FUN_00505a20(void)
+uint core_lightgun_cpp_FUN_00505a20(void)
 
 {
   int iVar1;
@@ -35,8 +35,5 @@ int core_lightgun_cpp_FUN_00505a20(void)
       return 1;
     }
   }
-  else {
-    iVar1 = 0;
-  }
-  return iVar1;
+  return 0;
 }

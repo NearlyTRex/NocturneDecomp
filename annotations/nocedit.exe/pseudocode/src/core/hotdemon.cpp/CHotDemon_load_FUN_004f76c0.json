@@ -1,104 +1,104 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 58, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 43, 
-    "assembly_lines": 30, 
-    "suspect_count": 4, 
+    "assembly_lines": 30,
+    "complexity_score": 58,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970", 
-      "addr": "0040b970"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
-      "addr": "0040b9f0"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660", 
-      "addr": "004a9660"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_speed_0062f4d8", 
-      "addr": "0062f4d8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_0062f4de", 
-      "addr": "0062f4de", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_motion_state_0062f4e8", 
-      "addr": "0062f4e8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CEnemy *in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,\"speed\");"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "model_ptr = &(in_stack_00000004->base_character).model;"
-    }
-  ], 
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004f76c0", 
-    "signature": "undefined core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0()", 
+    "address": "004f76c0",
     "address_range": [
       [
-        "004f76c0", 
+        "004f76c0",
         "004f7710"
       ]
-    ], 
-    "name": "core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0",
+    "signature": "undefined core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b970",
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970"
+    },
+    {
+      "addr": "0040b770",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b9f0",
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0"
+    },
+    {
+      "addr": "004a9660",
+      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062f4d8",
+      "name": "s_speed_0062f4d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062f4de",
+      "name": "s_modelName_0062f4de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062f4e8",
+      "name": "s_motion_state_0062f4e8",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CEnemy *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,\"speed\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "model_ptr = &(in_stack_00000004->base_character).model;",
+      "type": "stack_param"
+    }
+  ]
 }

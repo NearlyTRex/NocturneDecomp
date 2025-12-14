@@ -1,128 +1,128 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 10, 
-    "total_lines": 71, 
-    "assembly_lines": 49, 
-    "suspect_count": 1, 
+    "assembly_lines": 49,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 10,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_006501e7", 
-      "addr": "006501e7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_SfxSlot_autoCalcDelayRem_006501fc", 
-      "addr": "006501fc", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00663140", 
-      "addr": "00663140", 
-      "value": "1116.40000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00681b30", 
-      "addr": "00681b30", 
-      "value": "1"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3d", 
-      "name": "g_Cached3DListenerPos", 
-      "addr": "03f68830", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.y", 
-      "addr": "03f68838", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.z", 
-      "addr": "03f68840", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundLockCount", 
-      "addr": "03f6940c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->options).delay_remaining + 4) = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a7070", 
-    "signature": "void sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070(CSfxSlot * this_ptr)", 
-    "address_range": [
-      [
-        "005a7070", 
-        "005a70fd"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSfxSlot *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 71
+  },
   "cross_references": [
     {
-      "from_addr": "005a741d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
-      "addr": "005a7100"
+      "addr": "005a7100",
+      "from_addr": "005a741d",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a7070",
+    "address_range": [
+      [
+        "005a7070",
+        "005a70fd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070",
+    "signature": "void sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070(CSfxSlot * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006501e7",
+      "name": "s_sound_sndmain_cpp_006501e7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006501fc",
+      "name": "s_SfxSlot_autoCalcDelayRem_006501fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00663140",
+      "name": "DOUBLE_00663140",
+      "type": "double",
+      "value": "1116.40000000000"
+    },
+    {
+      "addr": "00681b30",
+      "name": "DOUBLE_00681b30",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f68830",
+      "name": "g_Cached3DListenerPos",
+      "type": "CVector3d",
+      "value": null
+    },
+    {
+      "addr": "03f68838",
+      "name": "g_Cached3DListenerPos.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68840",
+      "name": "g_Cached3DListenerPos.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6940c",
+      "name": "g_SoundLockCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(this_ptr->options).delay_remaining + 4) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

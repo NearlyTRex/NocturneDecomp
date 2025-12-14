@@ -1,186 +1,186 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 102, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 4, 
-    "global_count": 1, 
-    "total_lines": 119, 
-    "assembly_lines": 87, 
-    "suspect_count": 6, 
+    "assembly_lines": 87,
+    "complexity_score": 102,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 32,
+    "suspect_count": 6,
     "suspect_types": [
-      "sub_artifact", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_NormalizationScale", 
-      "addr": "00635ae5", 
-      "value": "65535"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CVector3i *unaff_ESI;"
-    }, 
-    {
-      "line": 19, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "local_38 = SUB84 /* extract 2-byte value */(dVar4,0);"
-    }, 
-    {
-      "line": 31, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->x = (int)ROUND(local_30);"
-    }, 
-    {
-      "line": 32, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->y = (int)ROUND(local_28);"
-    }, 
-    {
-      "line": 33, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->z = (int)ROUND(local_20);"
-    }, 
-    {
-      "line": 34, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_ESI;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050d9f0", 
-    "signature": "CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)", 
-    "address_range": [
-      [
-        "0050d9f0", 
-        "0050dac0"
-      ]
-    ], 
-    "name": "engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0"
-  }, 
-  "stack_frame": {
-    "local_size": 84, 
-    "variables": [
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "inputVector"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 88, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "unaffected_reg",
+      "sub_artifact"
+    ],
+    "total_lines": 119
+  },
   "cross_references": [
     {
-      "from_addr": "004f00b1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0", 
-      "addr": "004effb0"
-    }, 
+      "addr": "004effb0",
+      "from_addr": "004f00b1",
+      "name": "core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052a374", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0", 
-      "addr": "0052a2c0"
-    }, 
+      "addr": "0052a2c0",
+      "from_addr": "0052a374",
+      "name": "core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005704b8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_FUN_005702b0", 
-      "addr": "005702b0"
-    }, 
+      "addr": "005702b0",
+      "from_addr": "005704b8",
+      "name": "core_set.cpp_FUN_005702b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050564f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_light.cpp_calculatePhongLighting_FUN_00505530", 
-      "addr": "00505530"
+      "addr": "00505530",
+      "from_addr": "0050564f",
+      "name": "engine_light.cpp_calculatePhongLighting_FUN_00505530",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050d9f0",
+    "address_range": [
+      [
+        "0050d9f0",
+        "0050dac0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0",
+    "signature": "CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00635ae5",
+      "name": "g_NormalizationScale",
+      "type": "double",
+      "value": "65535"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "inputVector",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "text": "CVector3i *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 19,
+      "match": "SUB84",
+      "text": "local_38 = SUB84 /* extract 2-byte value */(dVar4,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->x = (int)ROUND(local_30);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->y = (int)ROUND(local_28);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->z = (int)ROUND(local_20);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_ESI",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
     }
   ]
 }

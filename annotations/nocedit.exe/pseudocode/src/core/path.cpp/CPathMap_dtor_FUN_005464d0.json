@@ -1,149 +1,141 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 64, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 8, 
-    "global_count": 4, 
-    "total_lines": 80, 
-    "assembly_lines": 56, 
-    "suspect_count": 3, 
+    "assembly_lines": 56,
+    "complexity_score": 49,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
     "suspect_types": [
-      "sborrow_artifact", 
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_memmove_FUN_005fe5e0", 
-      "addr": "005fe5e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_PathMapCount", 
-      "addr": "030c3ab8", 
-      "value": null
-    }, 
-    {
-      "type": "CPathMap*[200]", 
-      "name": "g_PathMapList", 
-      "addr": "030c3abc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030c3ac0", 
-      "addr": "030c3ac0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030c3ac4", 
-      "addr": "030c3ac4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 17, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((void *)((int)g_PathMapList + iVar2),(void *)((int)g_PathMapList + iVar2 + 4),"
-    }, 
-    {
-      "line": 17, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((void *)((int)g_PathMapList + iVar2),(void *)((int)g_PathMapList + iVar2 + 4),"
-    }, 
-    {
-      "line": 24, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar1,g_PathMapCount * 4) != iVar1 + g_PathMapCount * -4 < 0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005464d0", 
-    "signature": "CPathMap * core_path.cpp_CPathMap_dtor_FUN_005464d0(CPathMap * this_ptr)", 
-    "address_range": [
-      [
-        "005464d0", 
-        "00546551"
-      ]
-    ], 
-    "name": "core_path.cpp_CPathMap_dtor_FUN_005464d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPathMap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 80
+  },
   "cross_references": [
     {
-      "from_addr": "004f24ae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hero.cpp_CHero_dtor_FUN_004f2470", 
-      "addr": "004f2470"
-    }, 
+      "addr": "004f2470",
+      "from_addr": "004f24ae",
+      "name": "core_hero.cpp_CHero_dtor_FUN_004f2470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f4473", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hiram.cpp_FUN_004f4450", 
-      "addr": "004f4450"
-    }, 
+      "addr": "004f4450",
+      "from_addr": "004f4473",
+      "name": "core_hiram.cpp_FUN_004f4450",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f6b79", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_FUN_004f6b60", 
-      "addr": "004f6b60"
-    }, 
+      "addr": "004f6b60",
+      "from_addr": "004f6b79",
+      "name": "core_hostage.cpp_FUN_004f6b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f7cc9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hpriest.cpp_FUN_004f7cb0", 
-      "addr": "004f7cb0"
-    }, 
+      "addr": "004f7cb0",
+      "from_addr": "004f7cc9",
+      "name": "core_hpriest.cpp_FUN_004f7cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f4719", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_npc.cpp_CNPC_dtor_FUN_004f4700", 
-      "addr": "004f4700"
-    }, 
+      "addr": "004f4700",
+      "from_addr": "004f4719",
+      "name": "core_npc.cpp_CNPC_dtor_FUN_004f4700",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00545c7a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_passngr.cpp_CPassenger_dtor_FUN_00545c10", 
-      "addr": "00545c10"
-    }, 
+      "addr": "00545c10",
+      "from_addr": "00545c7a",
+      "name": "core_passngr.cpp_CPassenger_dtor_FUN_00545c10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005da629", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tbplayer.cpp_CBassPlayer_dtor_FUN_005da610", 
-      "addr": "005da610"
-    }, 
+      "addr": "005da610",
+      "from_addr": "005da629",
+      "name": "core_tbplayer.cpp_CBassPlayer_dtor_FUN_005da610",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005da559", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tbplayer.cpp_CDrummer_dtor_FUN_005da540", 
-      "addr": "005da540"
+      "addr": "005da540",
+      "from_addr": "005da559",
+      "name": "core_tbplayer.cpp_CDrummer_dtor_FUN_005da540",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005464d0",
+    "address_range": [
+      [
+        "005464d0",
+        "00546551"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_CPathMap_dtor_FUN_005464d0",
+    "signature": "CPathMap * core_path.cpp_CPathMap_dtor_FUN_005464d0(CPathMap * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe5e0",
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "030c3ab8",
+      "name": "g_PathMapCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3abc",
+      "name": "g_PathMapList",
+      "type": "CPathMap*[200]",
+      "value": null
+    },
+    {
+      "addr": "030c3ac0",
+      "name": "DAT_030c3ac0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3ac4",
+      "name": "DAT_030c3ac4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPathMap *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)g_PathMapList + iVar2),(void *)((int)g_PathMapList + iVar2 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)g_PathMapList + iVar2),(void *)((int)g_PathMapList + iVar2 + 4),",
+      "type": "pointer_cast"
     }
   ]
 }

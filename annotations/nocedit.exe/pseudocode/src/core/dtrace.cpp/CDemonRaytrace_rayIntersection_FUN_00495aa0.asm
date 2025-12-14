@@ -46,8 +46,8 @@ section .text
     PUSH EDI                            ; 00495aba
     MOV EDX,dword ptr [EBP + 0x14]      ; 00495abb
     PUSH EDX                            ; 00495abe
-    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70 ; 00495abf | float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
-        ;   XREF to: 00495b70 (UNCONDITIONAL_CALL)
+    CALL core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70 ; 00495abf
+        ;   XREF to: 00495b70 (UNCONDITIONAL_CALL)  ; float core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70(CDemonRaytrace * this_ptr, CVector3f * ray_start, CVector3f * ray_end, CVector3f * out_intersection_point, ...)
     MOV dword ptr [ESP + 0x38],EAX      ; 00495ac4
     FLD float ptr [ESP + 0x38]          ; 00495ac8
     ADD ESP,0x14                        ; 00495acc
@@ -58,14 +58,14 @@ section .text
     FCOMP double ptr [ESP]              ; 00495ada
     FNSTSW AX                           ; 00495add
     SAHF                                ; 00495adf
-    JA 0x00495b51                       ; 00495ae0 | LAB_00495b51
-        ;   XREF to: 00495b51 (CONDITIONAL_JUMP)
+    JA 0x00495b51                       ; 00495ae0
+        ;   XREF to: 00495b51 (CONDITIONAL_JUMP)  ; LAB_00495b51
     FLD1                                ; 00495ae2
     FCOMP double ptr [ESP]              ; 00495ae4
     FNSTSW AX                           ; 00495ae7
     SAHF                                ; 00495ae9
-    JBE 0x00495b51                      ; 00495aea | LAB_00495b51
-        ;   XREF to: 00495b51 (CONDITIONAL_JUMP)
+    JBE 0x00495b51                      ; 00495aea
+        ;   XREF to: 00495b51 (CONDITIONAL_JUMP)  ; LAB_00495b51
     FLD float ptr [EBX]                 ; 00495aec
     FSUB float ptr [EDI]                ; 00495aee
     FST float ptr [ESP + 0x18]          ; 00495af0

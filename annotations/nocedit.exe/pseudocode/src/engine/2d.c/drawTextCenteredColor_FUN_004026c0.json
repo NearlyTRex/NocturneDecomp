@@ -1,111 +1,111 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 34, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 37, 
-    "assembly_lines": 28, 
-    "suspect_count": 2, 
+    "assembly_lines": 28,
+    "complexity_score": 34,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawTextColor_FUN_00402430", 
-      "addr": "00402430"
-    }, 
-    {
-      "name": "engine_2d.c_getStringWidth_FUN_004018a0", 
-      "addr": "004018a0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 10, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(text,(((left_x + right_x) - iVar1) + 2) / 2,unaff_ESI);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004026c0", 
-    "signature": "void engine_2d.c_drawTextCenteredColor_FUN_004026c0(char * text, int left_x, int right_x, int y_pos)", 
-    "address_range": [
-      [
-        "004026c0", 
-        "004026f9"
-      ]
-    ], 
-    "name": "engine_2d.c_drawTextCenteredColor_FUN_004026c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "left_x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "right_x"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_pos"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 37
+  },
   "cross_references": [
     {
-      "from_addr": "004893a1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
-      "addr": "00489120"
-    }, 
+      "addr": "00489120",
+      "from_addr": "004893a1",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040278a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730", 
-      "addr": "00402730"
-    }, 
+      "addr": "00402730",
+      "from_addr": "0040278a",
+      "name": "engine_2d.c_drawTextCenteredColorFormatted_FUN_00402730",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00402716", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextCenteredXYColor_FUN_00402700", 
-      "addr": "00402700"
+      "addr": "00402700",
+      "from_addr": "00402716",
+      "name": "engine_2d.c_drawTextCenteredXYColor_FUN_00402700",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004026c0",
+    "address_range": [
+      [
+        "004026c0",
+        "004026f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawTextCenteredColor_FUN_004026c0",
+    "signature": "void engine_2d.c_drawTextCenteredColor_FUN_004026c0(char * text, int left_x, int right_x, int y_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "00402430",
+      "name": "engine_2d.c_drawTextColor_FUN_00402430"
+    },
+    {
+      "addr": "004018a0",
+      "name": "engine_2d.c_getStringWidth_FUN_004018a0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "left_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_ESI",
+      "text": "engine_2d_c_drawTextColor_FUN_00402430(text,(((left_x + right_x) - iVar1) + 2) / 2,unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ]
 }

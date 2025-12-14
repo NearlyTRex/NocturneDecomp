@@ -1,197 +1,197 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 69, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 9, 
-    "global_count": 1, 
-    "total_lines": 40, 
-    "assembly_lines": 26, 
-    "suspect_count": 5, 
+    "assembly_lines": 26,
+    "complexity_score": 69,
+    "cross_reference_count": 9,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 14,
+    "suspect_count": 5,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_QuaternionHalfAngleFactor2", 
-      "addr": "0065840d", 
-      "value": "0.5"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005f7a0c", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "float *unaff_ESI;"
-    }, 
-    {
-      "line": 12, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = (float)fVar1;"
-    }, 
-    {
-      "line": 13, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[1] = 0.0;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[2] = (float)fVar2;"
-    }, 
-    {
-      "line": 15, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[3] = 0.0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f79f0", 
-    "signature": "void core_xform.cpp_quaternionFromAngleY_FUN_005f79f0(CQuaternion4f * quat_ptr, float angle_radians)", 
-    "address_range": [
-      [
-        "005f79f0", 
-        "005f7a29"
-      ]
-    ], 
-    "name": "core_xform.cpp_quaternionFromAngleY_FUN_005f79f0"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CQuaternion4f *", 
-        "size": 4, 
-        "name": "quat_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "angle_radians"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 40
+  },
   "cross_references": [
     {
-      "from_addr": "0042dd2b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0", 
-      "addr": "0042dcd0"
-    }, 
+      "addr": "0042dcd0",
+      "from_addr": "0042dd2b",
+      "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d5250", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d4d80", 
-      "addr": "004d4d80"
-    }, 
+      "addr": "004d4d80",
+      "from_addr": "004d5250",
+      "name": "core_gabriela.cpp_FUN_004d4d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00526a4b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0", 
-      "addr": "005267a0"
-    }, 
+      "addr": "005267a0",
+      "from_addr": "00526a4b",
+      "name": "core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00558562", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_scat.cpp_FUN_005584a0", 
-      "addr": "005584a0"
-    }, 
+      "addr": "005584a0",
+      "from_addr": "00558562",
+      "name": "core_scat.cpp_FUN_005584a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0059fe94", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0", 
-      "addr": "0059fdd0"
-    }, 
+      "addr": "0059fdd0",
+      "from_addr": "0059fe94",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005be760", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005be520", 
-      "addr": "005be520"
-    }, 
+      "addr": "005be520",
+      "from_addr": "005be760",
+      "name": "core_stranger.cpp_CStranger_FUN_005be520",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bf7ad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005bf720", 
-      "addr": "005bf720"
-    }, 
+      "addr": "005bf720",
+      "from_addr": "005bf7ad",
+      "name": "core_stranger.cpp_CStranger_FUN_005bf720",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c0131", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005bfb60", 
-      "addr": "005bfb60"
-    }, 
+      "addr": "005bfb60",
+      "from_addr": "005c0131",
+      "name": "core_stranger.cpp_CStranger_FUN_005bfb60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c0407", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005c02b0", 
-      "addr": "005c02b0"
+      "addr": "005c02b0",
+      "from_addr": "005c0407",
+      "name": "core_stranger.cpp_CStranger_FUN_005c02b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005f79f0",
+    "address_range": [
+      [
+        "005f79f0",
+        "005f7a29"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_quaternionFromAngleY_FUN_005f79f0",
+    "signature": "void core_xform.cpp_quaternionFromAngleY_FUN_005f79f0(CQuaternion4f * quat_ptr, float angle_radians)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0065840d",
+      "name": "g_QuaternionHalfAngleFactor2",
+      "type": "double",
+      "value": "0.5"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "quat_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "angle_radians",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005f7a0c",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_ESI",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = (float)fVar1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[1] = 0.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[2] = (float)fVar2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[3] = 0.0;",
+      "type": "unaffected_reg"
     }
   ]
 }

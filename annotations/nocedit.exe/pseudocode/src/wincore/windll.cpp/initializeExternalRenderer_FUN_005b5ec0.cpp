@@ -59,7 +59,7 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
   g_APIDLL_setVideoMode =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                  (g_RendererDLLHandle,"APIDLLsetVideoMode");
-  if ((FARPROC)g_APIDLL_setVideoMode == (FARPROC)0x0) {
+  if (g_APIDLL_setVideoMode == (FARPROC)0x0) {
     g_DLLFunctionsMissing = 1;
   }
   g_APIDLL_setVideoMode2 =
@@ -230,13 +230,13 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
   g_APIDLL_GetDisplayContext =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                  (g_RendererDLLHandle,"APIDLLGetDisplayContext");
-  if ((FARPROC)g_APIDLL_GetDisplayContext == (FARPROC)0x0) {
+  if (g_APIDLL_GetDisplayContext == (FARPROC)0x0) {
     g_DLLFunctionsMissing = 1;
   }
   g_APIDLL_ReleaseDisplayContext =
        wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                  (g_RendererDLLHandle,"APIDLLReleaseDisplayContext");
-  if ((FARPROC)g_APIDLL_ReleaseDisplayContext == (FARPROC)0x0) {
+  if (g_APIDLL_ReleaseDisplayContext == (FARPROC)0x0) {
     g_DLLFunctionsMissing = 1;
   }
   g_APIDLL_masterZBuffer =

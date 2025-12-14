@@ -15,8 +15,8 @@ cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
   int in_stack_00000014;
   
   raw_bitmap_data =
-       (uchar *)cockpit_ckptutil_c_readBitmapFile_FUN_00431870
-                          (this_ptr->filename,(void *)0x0,this_ptr->width * this_ptr->height);
+       cockpit_ckptutil_c_readBitmapFile_FUN_00431870
+                 (this_ptr->filename,(void *)0x0,this_ptr->width * this_ptr->height);
   if (raw_bitmap_data != (uchar *)0x0) {
     cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0
               (this_ptr,raw_bitmap_data,this_ptr->width);

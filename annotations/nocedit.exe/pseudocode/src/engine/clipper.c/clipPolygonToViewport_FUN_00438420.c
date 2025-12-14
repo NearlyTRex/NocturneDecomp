@@ -94,7 +94,7 @@ engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_count,int *vertex
                     piVar12 = (int *)((int)piVar12 + 1);
                   }
                   iVar10 = iVar10 + 4;
-                } while (SBORROW /* signed borrow */4(iVar10,iVar4) != iVar10 + (vertex_count + -2) * -4 < 0);
+                } while (iVar10 < iVar4);
               }
               if (piVar12 == vertex_indices) {
                 return;

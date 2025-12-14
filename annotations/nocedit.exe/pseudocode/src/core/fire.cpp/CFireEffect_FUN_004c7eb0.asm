@@ -23,10 +23,10 @@ section .text
 
     PUSH EBP                            ; 004c7eb0
         ;   Label: core_fire.cpp_CFireEffect_FUN_004c7eb0
-    MOV EDX,dword ptr [0x02d667ac]      ; 004c7eb1 | CRock * g_CFireEffectRocksEnd
+    MOV EDX,dword ptr [0x02d667ac]      ; 004c7eb1 | g_CFireEffectRocksEnd
     CMP EDX,0x40                        ; 004c7eb7
-    JL 0x004c7ebe                       ; 004c7eba | LAB_004c7ebe
-        ;   XREF to: 004c7ebe (CONDITIONAL_JUMP)
+    JL 0x004c7ebe                       ; 004c7eba
+        ;   XREF to: 004c7ebe (CONDITIONAL_JUMP)  ; LAB_004c7ebe
     POP EBP                             ; 004c7ebc
     RET                                 ; 004c7ebd
     PUSH EDI                            ; 004c7ebe
@@ -51,14 +51,14 @@ section .text
     PUSH EAX                            ; 004c7eec
     MOV EAX,EDX                         ; 004c7eed
     SHL EAX,0x6                         ; 004c7eef
-    ADD EAX,0x2d667b0                   ; 004c7ef2 | CLaserBeam[64] g_LaserBeamPool
+    ADD EAX,0x2d667b0                   ; 004c7ef2 | g_LaserBeamPool
     PUSH EAX                            ; 004c7ef7
-    CALL core_fire.cpp_CLaserBeam_FUN_004c2420 ; 004c7ef8 | void core_fire.cpp_CLaserBeam_FUN_004c2420(CLaserBeam * this_ptr)
-        ;   XREF to: 004c2420 (UNCONDITIONAL_CALL)
-    MOV EDX,dword ptr [0x02d667ac]      ; 004c7efd | CRock * g_CFireEffectRocksEnd
+    CALL core_fire.cpp_CLaserBeam_FUN_004c2420 ; 004c7ef8
+        ;   XREF to: 004c2420 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLaserBeam_FUN_004c2420(CLaserBeam * this_ptr)
+    MOV EDX,dword ptr [0x02d667ac]      ; 004c7efd | g_CFireEffectRocksEnd
     INC EDX                             ; 004c7f03
     ADD ESP,0x2c                        ; 004c7f04
-    MOV dword ptr [0x02d667ac],EDX      ; 004c7f07 | CRock * g_CFireEffectRocksEnd
+    MOV dword ptr [0x02d667ac],EDX      ; 004c7f07 | g_CFireEffectRocksEnd
     POP EBX                             ; 004c7f0d
     POP ESI                             ; 004c7f0e
     POP EDI                             ; 004c7f0f

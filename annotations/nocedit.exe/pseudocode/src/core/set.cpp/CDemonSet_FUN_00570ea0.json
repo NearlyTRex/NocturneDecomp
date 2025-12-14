@@ -1,89 +1,89 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 52, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 13, 
-    "assembly_lines": 6, 
-    "suspect_count": 4, 
+    "assembly_lines": 6,
+    "complexity_score": 52,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->cameras[in_stack_00000008].field17_0x1a0 = in_stack_0000000c;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->cameras[in_stack_00000008].field17_0x1a0 = in_stack_0000000c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00570ea0", 
-    "signature": "void core_set.cpp_CDemonSet_FUN_00570ea0(CDemonSet * this_ptr)", 
-    "address_range": [
-      [
-        "00570ea0", 
-        "00570eb6"
-      ]
-    ], 
-    "name": "core_set.cpp_CDemonSet_FUN_00570ea0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 13
+  },
   "cross_references": [
     {
-      "from_addr": "0055cc94", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
-    }, 
+      "addr": "0055a810",
+      "from_addr": "0055cc94",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00570ef7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_00570ec0", 
-      "addr": "00570ec0"
+      "addr": "00570ec0",
+      "from_addr": "00570ef7",
+      "name": "core_set.cpp_CDemonSet_FUN_00570ec0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00570ea0",
+    "address_range": [
+      [
+        "00570ea0",
+        "00570eb6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_FUN_00570ea0",
+    "signature": "void core_set.cpp_CDemonSet_FUN_00570ea0(CDemonSet * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "this_ptr->cameras[in_stack_00000008].field17_0x1a0 = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "this_ptr->cameras[in_stack_00000008].field17_0x1a0 = in_stack_0000000c;",
+      "type": "stack_param"
     }
   ]
 }

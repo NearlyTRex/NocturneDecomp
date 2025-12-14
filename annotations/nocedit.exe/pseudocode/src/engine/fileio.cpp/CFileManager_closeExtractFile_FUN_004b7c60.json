@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 28, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00628098", 
-      "addr": "00628098", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004b7c60", 
-    "signature": "void engine_fileio.cpp_CFileManager_closeExtractFile_FUN_004b7c60(CFileManager * this_ptr)", 
-    "address_range": [
-      [
-        "004b7c60", 
-        "004b7c87"
-      ]
-    ], 
-    "name": "engine_fileio.cpp_CFileManager_closeExtractFile_FUN_004b7c60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileManager *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 19,
+    "complexity_score": 9,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
   "cross_references": [
     {
-      "from_addr": "004be041", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20", 
-      "addr": "004bda20"
-    }, 
+      "addr": "004bda20",
+      "from_addr": "004be041",
+      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bd985", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930", 
-      "addr": "004bd930"
-    }, 
+      "addr": "004bd930",
+      "from_addr": "004bd985",
+      "name": "core_fileman.cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004be541", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270", 
-      "addr": "004be270"
+      "addr": "004be270",
+      "from_addr": "004be541",
+      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004b7c60",
+    "address_range": [
+      [
+        "004b7c60",
+        "004b7c87"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CFileManager_closeExtractFile_FUN_004b7c60",
+    "signature": "void engine_fileio.cpp_CFileManager_closeExtractFile_FUN_004b7c60(CFileManager * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00628098",
+      "name": "s_engine_fileio_cpp_00628098",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileManager *"
+      }
+    ]
+  },
+  "suspects": []
 }

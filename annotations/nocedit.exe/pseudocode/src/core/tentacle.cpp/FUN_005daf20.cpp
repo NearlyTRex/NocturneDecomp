@@ -11,8 +11,7 @@ void core_tentacle_cpp_FUN_005daf20(void)
 {
   CTentacle *this_ptr;
   
-  this_ptr = (CTentacle *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf2c,"..\\core\\tentacle.cpp",0x67);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf2c,"..\\core\\tentacle.cpp",0x67);
   if (this_ptr == (CTentacle *)0x0) {
     return;
   }

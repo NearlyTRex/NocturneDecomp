@@ -31,15 +31,12 @@ int __cdecl core_waypoint_cpp_CWaypoint_FUN_005ebf70(CWayPoint *this_ptr)
   float fStack_18;
   float local_14;
   
-  if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
-     (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
-     iVar1 == 0)) {
-    pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                       (*(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c),
-                        g_CWayPointClassInfo.name_hash);
-    if (pCVar2 == (CDemonActor *)0x0) {
-      return 0;
-    }
+  if (((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
+      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
+      iVar1 == 0)) &&
+     (pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
+                         (*(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c),
+                          g_CWayPointClassInfo.name_hash), pCVar2 != (CDemonActor *)0x0)) {
     core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940((CDemonActor *)this_ptr,3);
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     pCVar3 = (*((this_ptr->base_trigger).base_actor.vtable)->getBoundingBox)

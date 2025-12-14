@@ -1,147 +1,147 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 139, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 53, 
-    "assembly_lines": 34, 
-    "suspect_count": 11, 
+    "assembly_lines": 34,
+    "complexity_score": 139,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 19,
+    "suspect_count": 11,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0", 
-      "addr": "005741b0"
-    }, 
-    {
-      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180", 
-      "addr": "00574180"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = (**(code **)(*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x +"
-    }, 
-    {
-      "line": 11, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar1 = (**(code **)(*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x +"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x + 0x2dc) == 1)) {"
-    }, 
-    {
-      "line": 14, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x + 0x2dc) == 1)) {"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[0x17a].actor_name[0x1c] = '\\0';"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[0x17a].actor_name[0x1d] = '\\0';"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[0x17a].actor_name[0x1e] = -0x80;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[0x17a].actor_name[0x1f] = '?';"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004[0x179].vtable = (CDemonActor_vtable *)0x0;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004d5fe0", 
-    "signature": "undefined core_gabriela.cpp_FUN_004d5fe0()", 
-    "address_range": [
-      [
-        "004d5fe0", 
-        "004d604a"
-      ]
-    ], 
-    "name": "core_gabriela.cpp_FUN_004d5fe0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 53
+  },
   "cross_references": [
     {
-      "from_addr": "004d366c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d2ea0", 
-      "addr": "004d2ea0"
+      "addr": "004d2ea0",
+      "from_addr": "004d366c",
+      "name": "core_gabriela.cpp_FUN_004d2ea0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d5fe0",
+    "address_range": [
+      [
+        "004d5fe0",
+        "004d604a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_gabriela.cpp_FUN_004d5fe0",
+    "signature": "undefined core_gabriela.cpp_FUN_004d5fe0()"
+  },
+  "function_calls": [
+    {
+      "addr": "005741b0",
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0"
+    },
+    {
+      "addr": "00574180",
+      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = (**(code **)(*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(int *)((int)",
+      "text": "iVar1 = (**(code **)(*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "(*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x + 0x2dc) == 1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)",
+      "text": "(*(int *)((int)in_stack_00000004[0x178].previous_transform_state.position.x + 0x2dc) == 1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x17a].actor_name[0x1c] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x17a].actor_name[0x1d] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x17a].actor_name[0x1e] = -0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x17a].actor_name[0x1f] = '?';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0x179].vtable = (CDemonActor_vtable *)0x0;",
+      "type": "stack_param"
     }
   ]
 }

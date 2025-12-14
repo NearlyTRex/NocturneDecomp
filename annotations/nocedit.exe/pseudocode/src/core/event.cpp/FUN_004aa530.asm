@@ -47,16 +47,16 @@ section .text
     PUSH EBX                            ; 004aa55b
     MOV ECX,dword ptr [ESI]             ; 004aa55c
     MOV EAX,dword ptr [ESP + 0x8c]      ; 004aa55e
-    PUSH 0x6244f4                       ; 004aa565 | = " { %f, %f, %f }%n" | s_f_f_f_n_006244f4 =  { %f, %f, %f }%n
+    PUSH 0x6244f4                       ; 004aa565 | = " { %f, %f, %f }%n"
     ADD EAX,ECX                         ; 004aa56a
     PUSH EAX                            ; 004aa56c
-    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004aa56d | int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
-        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004aa56d
+        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
     ADD ESP,0x18                        ; 004aa572
     MOV EDI,dword ptr [ESP + 0x64]      ; 004aa575
     CMP EDI,0x7                         ; 004aa579
-    JL 0x004aa593                       ; 004aa57c | LAB_004aa593
-        ;   XREF to: 004aa593 (CONDITIONAL_JUMP)
+    JL 0x004aa593                       ; 004aa57c
+        ;   XREF to: 004aa593 (CONDITIONAL_JUMP)  ; LAB_004aa593
     MOV EAX,EDI                         ; 004aa57e
     MOV EDI,dword ptr [ESI]             ; 004aa580
     ADD EDI,EAX                         ; 004aa582
@@ -75,36 +75,36 @@ section .text
     PUSH EAX                            ; 004aa59c
     MOV EBP,dword ptr [ESI]             ; 004aa59d
     MOV EAX,dword ptr [ESP + 0x84]      ; 004aa59f
-    PUSH 0x624506                       ; 004aa5a6 | = " %[^ ,(){}]%n" | s_n_00624506 =  %[^ ,(){}]%n
+    PUSH 0x624506                       ; 004aa5a6 | = " %[^ ,(){}]%n"
     ADD EAX,EBP                         ; 004aa5ab
     PUSH EAX                            ; 004aa5ad
-    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004aa5ae | int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
-        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004aa5ae
+        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
     ADD ESP,0x10                        ; 004aa5b3
     CMP dword ptr [ESP + 0x64],0x0      ; 004aa5b6
-    JL 0x004aa60e                       ; 004aa5bb | LAB_004aa60e
-        ;   XREF to: 004aa60e (CONDITIONAL_JUMP)
-    PUSH 0x821ff8                       ; 004aa5bd | CDemonActorType g_CDemonActorClassInfo
+    JL 0x004aa60e                       ; 004aa5bb
+        ;   XREF to: 004aa60e (CONDITIONAL_JUMP)  ; LAB_004aa60e
+    PUSH 0x821ff8                       ; 004aa5bd | g_CDemonActorClassInfo
     MOV EDX,dword ptr [0x00822030]      ; 004aa5c2 | g_CDemonActorClassInfo.name_hash
     PUSH EDX                            ; 004aa5c8
     LEA EAX,[ESP + 0x8]                 ; 004aa5c9
     PUSH EAX                            ; 004aa5cd
-    CALL core_event.cpp_FUN_004aa400    ; 004aa5ce | undefined core_event.cpp_FUN_004aa400()
-        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)
+    CALL core_event.cpp_FUN_004aa400    ; 004aa5ce
+        ;   XREF to: 004aa400 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004aa400()
     MOV EDX,EAX                         ; 004aa5d3
     ADD ESP,0xc                         ; 004aa5d5
     TEST EAX,EAX                        ; 004aa5d8
-    JZ 0x004aa62d                       ; 004aa5da | LAB_004aa62d
-        ;   XREF to: 004aa62d (CONDITIONAL_JUMP)
+    JZ 0x004aa62d                       ; 004aa5da
+        ;   XREF to: 004aa62d (CONDITIONAL_JUMP)  ; LAB_004aa62d
     MOV EAX,dword ptr [ESP + 0x64]      ; 004aa5dc
     ADD dword ptr [ESI],EAX             ; 004aa5e0
-    CMP EDX,dword ptr [0x0065d95c]      ; 004aa5e2 | undefined4 DAT_0065d95c
-    JZ 0x004aa63a                       ; 004aa5e8 | LAB_004aa63a
-        ;   XREF to: 004aa63a (CONDITIONAL_JUMP)
+    CMP EDX,dword ptr [0x0065d95c]      ; 004aa5e2 | DAT_0065d95c
+    JZ 0x004aa63a                       ; 004aa5e8
+        ;   XREF to: 004aa63a (CONDITIONAL_JUMP)  ; LAB_004aa63a
     ADD EDX,0x20                        ; 004aa5ea
     CMP EBX,EDX                         ; 004aa5ed
-    JZ 0x004aa601                       ; 004aa5ef | LAB_004aa601
-        ;   XREF to: 004aa601 (CONDITIONAL_JUMP)
+    JZ 0x004aa601                       ; 004aa5ef
+        ;   XREF to: 004aa601 (CONDITIONAL_JUMP)  ; LAB_004aa601
     MOV EAX,dword ptr [EDX]             ; 004aa5f1
     MOV dword ptr [EBX],EAX             ; 004aa5f3
     MOV EAX,dword ptr [EDX + 0x4]       ; 004aa5f5
@@ -119,11 +119,11 @@ section .text
     POP ESI                             ; 004aa60b
     POP EBX                             ; 004aa60c
     RET                                 ; 004aa60d
-    PUSH 0x624514                       ; 004aa60e | = "Error parsing vector location" | s_Error_parsing_vector_loc_00624514 = Error parsing vector location
+    PUSH 0x624514                       ; 004aa60e | = "Error parsing vector location"
         ;   Label: LAB_004aa60e
-    PUSH 0x2d0a460                      ; 004aa613 | undefined1 DAT_02d0a460
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004aa618 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    PUSH 0x2d0a460                      ; 004aa613 | DAT_02d0a460
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004aa618
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004aa61d
     ADD ESP,0x8                         ; 004aa622
     ADD ESP,0x68                        ; 004aa625

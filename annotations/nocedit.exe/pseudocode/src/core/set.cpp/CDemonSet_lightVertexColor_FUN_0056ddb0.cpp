@@ -20,9 +20,9 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
   uint uVar6;
   uint uVar7;
   int iVar8;
-  int iVar9;
   int unaff_EBP;
-  uint uVar10;
+  uint uVar9;
+  int iVar10;
   int in_stack_00000018;
   uint local_14;
   
@@ -35,24 +35,23 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
     lVar1 = (longlong)(this_ptr->light_direction).x * (longlong)surface_normal->x;
     lVar2 = (longlong)(this_ptr->light_direction).y * (longlong)surface_normal->y;
     lVar3 = (longlong)(this_ptr->light_direction).z * (longlong)surface_normal->z;
-    iVar8 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-    iVar9 = -iVar8;
-    if (0 < iVar8) {
-      iVar9 = 0;
+    iVar8 = -(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
+             ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10));
+    if (iVar8 < 0) {
+      iVar8 = 0;
     }
-    iVar9 = iVar9 + this_ptr->ambient_base_quick;
-    if (0xffff < iVar9) {
-      iVar9 = 0xffff;
+    iVar8 = iVar8 + this_ptr->ambient_base_quick;
+    if (0xffff < iVar8) {
+      iVar8 = 0xffff;
     }
-    lVar1 = (longlong)this_ptr->light_scale_factor * (longlong)iVar9;
+    lVar1 = (longlong)this_ptr->light_scale_factor * (longlong)iVar8;
     g_RenderVertexBuffer[skip_lighting_calculation].light =
          (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    lVar1 = (longlong)this_ptr->color_scale_factor * (longlong)iVar9;
+    lVar1 = (longlong)this_ptr->color_scale_factor * (longlong)iVar8;
     g_RenderVertexBuffer[skip_lighting_calculation].color =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)this_ptr->fog_scale_factor * (longlong)iVar9;
+    lVar1 = (longlong)this_ptr->fog_scale_factor * (longlong)iVar8;
     g_RenderVertexBuffer[skip_lighting_calculation].fog =
          (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     g_RenderVertexBuffer[skip_lighting_calculation].w_recip = g_PerspectiveReciprocal;
@@ -63,27 +62,27 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                       (this_ptr,world_position,surface_normal);
     unaff_EBP = g_CDemonCameraInstance.corona_blend_factor;
     if ((0 < g_CDemonCameraInstance.corona_blend_factor) && (surface_normal != (CVector3i *)0x0)) {
-      iVar9 = g_CDemonCameraInstance.corona_blend_factor;
+      iVar10 = g_CDemonCameraInstance.corona_blend_factor;
       if (0x1000 < g_CDemonCameraInstance.corona_blend_factor) {
-        iVar9 = 0x1000;
+        iVar10 = 0x1000;
       }
       if (g_CameraOriginX < 0) {
-        lVar1 = (longlong)iVar9 * (longlong)surface_normal->x;
+        lVar1 = (longlong)iVar10 * (longlong)surface_normal->x;
         uVar4 = -((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }
       else {
-        lVar1 = (longlong)iVar9 * (longlong)surface_normal->x;
+        lVar1 = (longlong)iVar10 * (longlong)surface_normal->x;
         uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       }
       if (g_CameraOriginZ < 0) {
-        lVar1 = (longlong)iVar9 * (longlong)surface_normal->z;
+        lVar1 = (longlong)iVar10 * (longlong)surface_normal->z;
         iVar8 = (iVar8 + uVar4) - ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         if (iVar8 < 0) {
           iVar8 = 0;
         }
       }
       else {
-        lVar1 = (longlong)iVar9 * (longlong)surface_normal->z;
+        lVar1 = (longlong)iVar10 * (longlong)surface_normal->z;
         iVar8 = iVar8 + uVar4 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         if (iVar8 < 0) {
           iVar8 = 0;
@@ -100,7 +99,7 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
     local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)iVar8 * (longlong)this_ptr->color_scale_factor;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    iVar9 = this_ptr->fog_scale_factor;
+    iVar10 = this_ptr->fog_scale_factor;
   }
   else {
     lVar1 = (longlong)
@@ -113,38 +112,38 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                   (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionColorMultiplier) >>
                        0x20) << 0x10) + unaff_EBP) * (longlong)this_ptr->color_scale_factor;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    iVar9 = this_ptr->fog_scale_factor;
+    iVar10 = this_ptr->fog_scale_factor;
     iVar8 = ((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x10 |
             (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x20)
             << 0x10) + unaff_EBP;
   }
-  uVar5 = (uint)((longlong)iVar8 * (longlong)iVar9) >> 0x10 |
-          (int)((ulonglong)((longlong)iVar8 * (longlong)iVar9) >> 0x20) << 0x10;
+  uVar5 = (uint)((longlong)iVar8 * (longlong)iVar10) >> 0x10 |
+          (int)((ulonglong)((longlong)iVar8 * (longlong)iVar10) >> 0x20) << 0x10;
   if ((this_ptr->rendering_flags_ptr != (int *)0x0) && (in_stack_00000018 == 0)) {
     iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
                       (this_ptr,surface_normal,(CVector3i *)0x0);
-    uVar10 = unaff_EBP + iVar8;
-    if (0 < (int)uVar10) {
+    uVar9 = unaff_EBP + iVar8;
+    if (0 < (int)uVar9) {
       uVar6 = local_14 ^ (int)local_14 >> 0x1f;
-      uVar7 = uVar6 / uVar10;
+      uVar7 = uVar6 / uVar9;
       if (0x7ffe < uVar7) {
         uVar7 = 0x7fff;
       }
-      local_14 = ((uint)(((ulonglong)uVar6 % (ulonglong)uVar10 << 0x20) / (ulonglong)uVar10) >> 0x10
-                 | uVar7 << 0x10) ^ (int)local_14 >> 0x1f;
+      local_14 = ((uint)(((ulonglong)uVar6 % (ulonglong)uVar9 << 0x20) / (ulonglong)uVar9) >> 0x10 |
+                 uVar7 << 0x10) ^ (int)local_14 >> 0x1f;
       uVar6 = uVar4 ^ (int)uVar4 >> 0x1f;
-      uVar7 = uVar6 / uVar10;
+      uVar7 = uVar6 / uVar9;
       if (0x7ffe < uVar7) {
         uVar7 = 0x7fff;
       }
-      uVar4 = ((uint)(((ulonglong)uVar6 % (ulonglong)uVar10 << 0x20) / (ulonglong)uVar10) >> 0x10 |
+      uVar4 = ((uint)(((ulonglong)uVar6 % (ulonglong)uVar9 << 0x20) / (ulonglong)uVar9) >> 0x10 |
               uVar7 << 0x10) ^ (int)uVar4 >> 0x1f;
       uVar6 = uVar5 ^ (int)uVar5 >> 0x1f;
-      uVar7 = uVar6 / uVar10;
+      uVar7 = uVar6 / uVar9;
       if (0x7ffe < uVar7) {
         uVar7 = 0x7fff;
       }
-      uVar5 = ((uint)(((ulonglong)uVar6 % (ulonglong)uVar10 << 0x20) / (ulonglong)uVar10) >> 0x10 |
+      uVar5 = ((uint)(((ulonglong)uVar6 % (ulonglong)uVar9 << 0x20) / (ulonglong)uVar9) >> 0x10 |
               uVar7 << 0x10) ^ (int)uVar5 >> 0x1f;
     }
   }

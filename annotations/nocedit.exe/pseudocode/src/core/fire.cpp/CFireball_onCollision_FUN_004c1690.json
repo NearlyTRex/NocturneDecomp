@@ -1,147 +1,147 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 40, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 168, 
-    "assembly_lines": 128, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0", 
-      "addr": "004c79d0"
-    }, 
-    {
-      "name": "core_fire.cpp_CFireEffect_FUN_004c7db0", 
-      "addr": "004c7db0"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_00570fa0", 
-      "addr": "00570fa0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
-      "addr": "005a9c40"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
-      "addr": "005a8cb0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
-      "addr": "005a8c30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0", 
-      "addr": "005a88e0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60", 
-      "addr": "005a8a60"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
-      "addr": "005a8e90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rock_x_wav_00629cb3", 
-      "addr": "00629cb3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rock_x_wav_00629cbe", 
-      "addr": "00629cbe", 
-      "value": null
-    }, 
-    {
-      "type": "CFireEffect*", 
-      "name": "g_CFireEffectPtr", 
-      "addr": "0067a3d0", 
-      "value": "02d12db0"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CFireEffect", 
-      "name": "g_CFireEffectInstance", 
-      "addr": "02d12db0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 128,
+    "complexity_score": 40,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 6,
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 168
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004c1690", 
-    "signature": "int core_fire.cpp_CFireball_onCollision_FUN_004c1690(CFireball * this_ptr, CVector3f * collision_normal)", 
+    "address": "004c1690",
     "address_range": [
       [
-        "004c1690", 
+        "004c1690",
         "004c17bb"
       ]
-    ], 
-    "name": "core_fire.cpp_CFireball_onCollision_FUN_004c1690"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireball_onCollision_FUN_004c1690",
+    "signature": "int core_fire.cpp_CFireball_onCollision_FUN_004c1690(CFireball * this_ptr, CVector3f * collision_normal)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c79d0",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0"
+    },
+    {
+      "addr": "004c7db0",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7db0"
+    },
+    {
+      "addr": "00570fa0",
+      "name": "core_set.cpp_CDemonSet_FUN_00570fa0"
+    },
+    {
+      "addr": "005a9c40",
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    },
+    {
+      "addr": "005a8cb0",
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a88e0",
+      "name": "sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0"
+    },
+    {
+      "addr": "005a8a60",
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60"
+    },
+    {
+      "addr": "005a8e90",
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629cb3",
+      "name": "s_rock_x_wav_00629cb3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629cbe",
+      "name": "s_rock_x_wav_00629cbe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 44, 
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireball *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireball *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "collision_normal"
+        "is_param": true,
+        "name": "collision_normal",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

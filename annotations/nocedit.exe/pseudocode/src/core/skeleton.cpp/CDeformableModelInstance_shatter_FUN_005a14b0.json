@@ -1,117 +1,117 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 71, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 70, 
-    "assembly_lines": 44, 
-    "suspect_count": 4, 
+    "assembly_lines": 44,
+    "complexity_score": 71,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 4,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0", 
-      "addr": "0059cec0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
-      "addr": "005a07a0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0", 
-      "addr": "005a01d0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 10, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int *unaff_EDI;"
-    }, 
-    {
-      "line": 27, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "skinned_vertices,part_visibility_flags,unaff_EDI,unaff_ESI);"
-    }, 
-    {
-      "line": 27, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "skinned_vertices,part_visibility_flags,unaff_EDI,unaff_ESI);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a14b0", 
-    "signature": "void core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0(CDeformableModelInstance * this_ptr, CVector3f * center_position, CVector3f * orientation_vector, int desired_lod_index)", 
-    "address_range": [
-      [
-        "005a14b0", 
-        "005a150c"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "center_position"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "orientation_vector"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "desired_lod_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 70
+  },
   "cross_references": [
     {
-      "from_addr": "0042b91d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b8e0", 
-      "addr": "0042b8e0"
+      "addr": "0042b8e0",
+      "from_addr": "0042b91d",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b8e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a14b0",
+    "address_range": [
+      [
+        "005a14b0",
+        "005a150c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0",
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0(CDeformableModelInstance * this_ptr, CVector3f * center_position, CVector3f * orientation_vector, int desired_lod_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059cec0",
+      "name": "core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0"
+    },
+    {
+      "addr": "005a07a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005a01d0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "center_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "orientation_vector",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "desired_lod_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EDI",
+      "text": "int *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EDI",
+      "text": "skinned_vertices,part_visibility_flags,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_ESI",
+      "text": "skinned_vertices,part_visibility_flags,unaff_EDI,unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ]
 }

@@ -26,17 +26,17 @@ section .text
         ;   Label: LAB_00518753
     ADD ECX,EDI                         ; 00518756
     CMP EAX,dword ptr [ECX + 0x3f8]     ; 00518758
-    JGE 0x00518784                      ; 0051875e | LAB_00518784
-        ;   XREF to: 00518784 (CONDITIONAL_JUMP)
+    JGE 0x00518784                      ; 0051875e
+        ;   XREF to: 00518784 (CONDITIONAL_JUMP)  ; LAB_00518784
     IMUL ECX,dword ptr [ECX + EDX*0x1 + 0x3fc],0xf0 ; 00518760
     MOV EBX,dword ptr [ESI + 0x48]      ; 0051876b
     CMP dword ptr [ECX + EBX*0x1 + 0x24],0x2 ; 0051876e
-    JL 0x0051877b                       ; 00518773 | LAB_0051877b
-        ;   XREF to: 0051877b (CONDITIONAL_JUMP)
+    JL 0x0051877b                       ; 00518773
+        ;   XREF to: 0051877b (CONDITIONAL_JUMP)  ; LAB_0051877b
     INC EAX                             ; 00518775
     ADD EDX,0x4                         ; 00518776
-    JMP 0x00518753                      ; 00518779 | LAB_00518753
-        ;   XREF to: 00518753 (UNCONDITIONAL_JUMP)
+    JMP 0x00518753                      ; 00518779
+        ;   XREF to: 00518753 (UNCONDITIONAL_JUMP)  ; LAB_00518753
     MOV EAX,0x1                         ; 0051877b
         ;   Label: LAB_0051877b
     POP EDI                             ; 00518780

@@ -26,8 +26,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00548500
         ;   Label: core_path.cpp_FUN_00548500
     PUSH EDX                            ; 00548504
-    CALL core_path.cpp_FUN_00548390     ; 00548505 | undefined core_path.cpp_FUN_00548390()
-        ;   XREF to: 00548390 (UNCONDITIONAL_CALL)
+    CALL core_path.cpp_FUN_00548390     ; 00548505
+        ;   XREF to: 00548390 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00548390()
     ADD ESP,0x4                         ; 0054850a
     RET                                 ; 0054850d
 

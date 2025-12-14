@@ -30,28 +30,28 @@ section .text
     XOR ESI,ESI                         ; 004b220c
     PUSH 0x153                          ; 004b220e
         ;   Label: LAB_004b220e
-    PUSH 0x626129                       ; 004b2213 | = "..\\engine\\fileio.cpp" | s_engine_fileio_cpp_00626129 = ..\engine\fileio.cpp
+    PUSH 0x626129                       ; 004b2213 | = "..\\engine\\fileio.cpp"
     PUSH EDI                            ; 004b2218
     PUSH 0x0                            ; 004b2219
     PUSH EBP                            ; 004b221b
-    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004b221c | FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 004b221c
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 004b2221
     ADD ESP,0x14                        ; 004b2223
     TEST EAX,EAX                        ; 004b2226
-    JNZ 0x004b224d                      ; 004b2228 | LAB_004b224d
-        ;   XREF to: 004b224d (CONDITIONAL_JUMP)
-    CALL crt_errno.c_errno_FUN_00601450 ; 004b222a | undefined crt_errno.c_errno_FUN_00601450()
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)
+    JNZ 0x004b224d                      ; 004b2228
+        ;   XREF to: 004b224d (CONDITIONAL_JUMP)  ; LAB_004b224d
+    CALL crt_errno.c_errno_FUN_00601450 ; 004b222a
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c_errno_FUN_00601450()
     CMP dword ptr [EAX],0x6             ; 004b222f
-    JNZ 0x004b2246                      ; 004b2232 | LAB_004b2246
-        ;   XREF to: 004b2246 (CONDITIONAL_JUMP)
+    JNZ 0x004b2246                      ; 004b2232
+        ;   XREF to: 004b2246 (CONDITIONAL_JUMP)  ; LAB_004b2246
     PUSH 0x1f4                          ; 004b2234
     INC ESI                             ; 004b2239
-    CALL dword ptr CS:[0x611644]        ; 004b223a | Sleep * Sleep
+    CALL dword ptr CS:[0x611644]        ; 004b223a | Sleep
     CMP ESI,0xa                         ; 004b2241
-    JL 0x004b220e                       ; 004b2244 | LAB_004b220e
-        ;   XREF to: 004b220e (CONDITIONAL_JUMP)
+    JL 0x004b220e                       ; 004b2244
+        ;   XREF to: 004b220e (CONDITIONAL_JUMP)  ; LAB_004b220e
     XOR EAX,EAX                         ; 004b2246
         ;   Label: LAB_004b2246
     POP EBP                             ; 004b2248
@@ -64,8 +64,8 @@ section .text
     PUSH 0x0                            ; 004b2252
     PUSH 0x0                            ; 004b2254
     PUSH EAX                            ; 004b2256
-    CALL crt_stdio.c_setvbuf_FUN_00601490 ; 004b2257 | int crt_stdio.c_setvbuf_FUN_00601490(FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
-        ;   XREF to: 00601490 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_setvbuf_FUN_00601490 ; 004b2257
+        ;   XREF to: 00601490 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_setvbuf_FUN_00601490(FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)
     ADD ESP,0x10                        ; 004b225c
     MOV EAX,EBX                         ; 004b225f
     POP EBP                             ; 004b2261

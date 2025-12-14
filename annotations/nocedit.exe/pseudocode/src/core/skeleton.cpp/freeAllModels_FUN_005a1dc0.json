@@ -1,104 +1,104 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 6, 
-    "global_count": 4, 
-    "total_lines": 30, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0", 
-      "addr": "0059a2b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_DeformableModelCount", 
-      "addr": "0368c89c", 
-      "value": null
-    }, 
-    {
-      "type": "CDeformableModel[64]", 
-      "name": "g_DeformableModelPool", 
-      "addr": "0368c8a0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_036958a0", 
-      "addr": "036958a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SkeletonPoolCount", 
-      "addr": "038cc8a0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a1dc0", 
-    "signature": "void core_skeleton.cpp_freeAllModels_FUN_005a1dc0(void)", 
-    "address_range": [
-      [
-        "005a1dc0", 
-        "005a1dea"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_freeAllModels_FUN_005a1dc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 19,
+    "complexity_score": 11,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
   "cross_references": [
     {
-      "from_addr": "004be3db", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270", 
-      "addr": "004be270"
-    }, 
+      "addr": "004be270",
+      "from_addr": "004be3db",
+      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005087eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
-      "addr": "00508570"
-    }, 
+      "addr": "00508570",
+      "from_addr": "005087eb",
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005248fc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_FUN_005248e0", 
-      "addr": "005248e0"
-    }, 
+      "addr": "005248e0",
+      "from_addr": "005248fc",
+      "name": "core_mission.cpp_FUN_005248e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005968ce", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
-    }, 
+      "addr": "005968b0",
+      "from_addr": "005968ce",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00599172", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0", 
-      "addr": "00598fc0"
-    }, 
+      "addr": "00598fc0",
+      "from_addr": "00599172",
+      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a1ea7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0", 
-      "addr": "005a1ea0"
+      "addr": "005a1ea0",
+      "from_addr": "005a1ea7",
+      "name": "core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005a1dc0",
+    "address_range": [
+      [
+        "005a1dc0",
+        "005a1dea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_freeAllModels_FUN_005a1dc0",
+    "signature": "void core_skeleton.cpp_freeAllModels_FUN_005a1dc0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059a2b0",
+      "name": "core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0368c89c",
+      "name": "g_DeformableModelCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0368c8a0",
+      "name": "g_DeformableModelPool",
+      "type": "CDeformableModel[64]",
+      "value": null
+    },
+    {
+      "addr": "036958a0",
+      "name": "DAT_036958a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "038cc8a0",
+      "name": "g_SkeletonPoolCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

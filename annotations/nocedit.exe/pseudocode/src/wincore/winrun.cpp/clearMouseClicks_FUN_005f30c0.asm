@@ -17,6 +17,6 @@ section .text
 
     XOR EDX,EDX                         ; 005f30c0
         ;   Label: wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0
-    MOV dword ptr [0x02cf6a94],EDX      ; 005f30c2 | int g_MouseButtonFlags
+    MOV dword ptr [0x02cf6a94],EDX      ; 005f30c2 | g_MouseButtonFlags
     RET                                 ; 005f30c8
 

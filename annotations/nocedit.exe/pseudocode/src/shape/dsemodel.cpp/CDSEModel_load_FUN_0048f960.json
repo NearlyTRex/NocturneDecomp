@@ -1,166 +1,172 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 68, 
-    "pseudocode_lines": 43, 
-    "cross_reference_count": 1, 
-    "global_count": 14, 
-    "total_lines": 133, 
-    "assembly_lines": 90, 
-    "suspect_count": 2, 
+    "assembly_lines": 90,
+    "complexity_score": 68,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 15,
+    "pseudocode_lines": 43,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_design.c_calculateVertexNormals_FUN_0045be40", 
-      "addr": "0045be40"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_VertexCount", 
-      "addr": "01626408", 
-      "value": null
-    }, 
-    {
-      "type": "SVertexData[20000]", 
-      "name": "g_LoadedVertices", 
-      "addr": "0162640c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LoadedVertices[0].vertex.z", 
-      "addr": "01626414", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01626418", 
-      "addr": "01626418", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0162641c", 
-      "addr": "0162641c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PolygonCount", 
-      "addr": "016e990c", 
-      "value": null
-    }, 
-    {
-      "type": "SShapeEditorPolygon[20000]", 
-      "name": "g_ModelPolygonData", 
-      "addr": "016e9910", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9914", 
-      "addr": "016e9914", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a88", 
-      "addr": "016e9a88", 
-      "value": null
-    }, 
-    {
-      "type": "SModelPartName[500]", 
-      "name": "g_ModelPartNames", 
-      "addr": "01e50190", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e50191", 
-      "addr": "01e50191", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e50192", 
-      "addr": "01e50192", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e50193", 
-      "addr": "01e50193", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PartsCount", 
-      "addr": "01e528a0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 22, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;"
-    }, 
-    {
-      "line": 23, 
-      "match": "(SModelPartName *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar5 = (SModelPartName *)((int)pSVar5 + 2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048f960", 
-    "signature": "void shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960(CDSEModel * this_ptr)", 
-    "address_range": [
-      [
-        "0048f960", 
-        "0048fa4a"
-      ]
-    ], 
-    "name": "shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDSEModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 133
+  },
   "cross_references": [
     {
-      "from_addr": "0053f20f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70", 
-      "addr": "0053ee70"
+      "addr": "0053ee70",
+      "from_addr": "0053f20f",
+      "name": "shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048f960",
+    "address_range": [
+      [
+        "0048f960",
+        "0048fa4a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960",
+    "signature": "void shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960(CDSEModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045be40",
+      "name": "shape_design.c_calculateVertexNormals_FUN_0045be40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01626408",
+      "name": "g_VertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0162640c",
+      "name": "g_LoadedVertices",
+      "type": "SVertexData[20000]",
+      "value": null
+    },
+    {
+      "addr": "01626410",
+      "name": "DAT_01626410",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626414",
+      "name": "g_LoadedVertices[0].vertex.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626418",
+      "name": "DAT_01626418",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0162641c",
+      "name": "DAT_0162641c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e990c",
+      "name": "g_PolygonCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "016e9910",
+      "name": "g_ModelPolygonData",
+      "type": "SShapeEditorPolygon[20000]",
+      "value": null
+    },
+    {
+      "addr": "016e9914",
+      "name": "DAT_016e9914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a88",
+      "name": "DAT_016e9a88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e50190",
+      "name": "g_ModelPartNames",
+      "type": "SModelPartName[500]",
+      "value": null
+    },
+    {
+      "addr": "01e50191",
+      "name": "DAT_01e50191",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e50192",
+      "name": "DAT_01e50192",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e50193",
+      "name": "DAT_01e50193",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e528a0",
+      "name": "g_PartsCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDSEModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(SModelPartName *)((int)",
+      "text": "pSVar5 = (SModelPartName *)((int)pSVar5 + 2);",
+      "type": "pointer_cast"
     }
   ]
 }

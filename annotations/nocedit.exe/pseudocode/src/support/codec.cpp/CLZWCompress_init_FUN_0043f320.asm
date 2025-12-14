@@ -29,13 +29,13 @@ section .text
     PUSH ECX                            ; 0043f330
     LEA EAX,[EBX + 0x4]                 ; 0043f331
     PUSH EAX                            ; 0043f334
-    CALL support_codec.cpp_CLZWDictionary_init_FUN_0043ee60 ; 0043f335 | void support_codec.cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary * this_ptr, int new_dict_size, int new_num_bits, int normal_code_width, ...)
-        ;   XREF to: 0043ee60 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_init_FUN_0043ee60 ; 0043f335
+        ;   XREF to: 0043ee60 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary * this_ptr, int new_dict_size, int new_num_bits, int normal_code_width, ...)
     ADD ESP,0xc                         ; 0043f33a
     LEA EAX,[EBX + 0x18]                ; 0043f33d
     PUSH EAX                            ; 0043f340
-    CALL support_codec.cpp_resetDictionary_FUN_0043e510 ; 0043f341 | void support_codec.cpp_resetDictionary_FUN_0043e510(CLZWDictionary * dict)
-        ;   XREF to: 0043e510 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_resetDictionary_FUN_0043e510 ; 0043f341
+        ;   XREF to: 0043e510 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_resetDictionary_FUN_0043e510(CLZWDictionary * dict)
     MOV dword ptr [EBX + 0x30],0xffffffff ; 0043f346
     ADD ESP,0x4                         ; 0043f34d
     MOV dword ptr [EBX + 0x34],0xffffffff ; 0043f350

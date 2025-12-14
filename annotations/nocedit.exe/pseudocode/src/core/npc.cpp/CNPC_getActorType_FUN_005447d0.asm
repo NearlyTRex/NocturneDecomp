@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x2fd8ce0                   ; 005447d0 | CDemonActorType g_CNPCClassInfo
+    MOV EAX,0x2fd8ce0                   ; 005447d0 | g_CNPCClassInfo
         ;   Label: core_npc.cpp_CNPC_getActorType_FUN_005447d0
     RET                                 ; 005447d5
 

@@ -24,8 +24,8 @@ section .text
     PUSH 0x0                            ; 004886ad
     PUSH 0x0                            ; 004886af
     PUSH EDX                            ; 004886b1
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630 ; 004886b2 | void cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
-        ;   XREF to: 00488630 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630 ; 004886b2
+        ;   XREF to: 00488630 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 004886b7
     RET                                 ; 004886ba
 

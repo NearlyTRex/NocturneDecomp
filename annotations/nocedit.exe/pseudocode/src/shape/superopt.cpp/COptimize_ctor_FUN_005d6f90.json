@@ -1,68 +1,68 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 30, 
-    "assembly_lines": 20, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_superopt.cpp_CObj_ctor_FUN_005d2230", 
-      "addr": "005d2230"
-    }, 
-    {
-      "name": "shape_superopt.cpp_COptimize_FUN_005d7000", 
-      "addr": "005d7000"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "COptimize_vtable", 
-      "name": "g_COptimizeVTable", 
-      "addr": "00663c44", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005d6f90", 
-    "signature": "COptimize * shape_superopt.cpp_COptimize_ctor_FUN_005d6f90(COptimize * this_ptr)", 
-    "address_range": [
-      [
-        "005d6f90", 
-        "005d6fc5"
-      ]
-    ], 
-    "name": "shape_superopt.cpp_COptimize_ctor_FUN_005d6f90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "COptimize *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 20,
+    "complexity_score": 10,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
   "cross_references": [
     {
-      "from_addr": "005d7c38", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
-      "addr": "005d77a0"
+      "addr": "005d77a0",
+      "from_addr": "005d7c38",
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005d6f90",
+    "address_range": [
+      [
+        "005d6f90",
+        "005d6fc5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_COptimize_ctor_FUN_005d6f90",
+    "signature": "COptimize * shape_superopt.cpp_COptimize_ctor_FUN_005d6f90(COptimize * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005d2230",
+      "name": "shape_superopt.cpp_CObj_ctor_FUN_005d2230"
+    },
+    {
+      "addr": "005d7000",
+      "name": "shape_superopt.cpp_COptimize_FUN_005d7000"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00663c44",
+      "name": "g_COptimizeVTable",
+      "type": "COptimize_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COptimize *"
+      }
+    ]
+  },
+  "suspects": []
 }

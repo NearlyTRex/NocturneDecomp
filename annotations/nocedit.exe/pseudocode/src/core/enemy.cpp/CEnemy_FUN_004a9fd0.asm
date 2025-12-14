@@ -38,25 +38,25 @@ section .text
     PUSH EBX                            ; 004a9fd0
         ;   Label: core_enemy.cpp_CEnemy_FUN_004a9fd0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004a9fd1
-    MOV EAX,[0x0067b654]                ; 004a9fd5 | CGame g_CGameInstance | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 004a9fd5 | g_CGameInstance | g_CGamePtr
     CMP dword ptr [EAX + 0x1d4],0x0     ; 004a9fda | DAT_02d81c70
-    JNZ 0x004a9ffb                      ; 004a9fe1 | LAB_004a9ffb
-        ;   XREF to: 004a9ffb (CONDITIONAL_JUMP)
-    PUSH 0x6243da                       ; 004a9fe3 | = "Capture" | s_Capture_006243da = Capture
-    MOV ECX,dword ptr [0x006793d0]      ; 004a9fe8 | CEventList g_CEventListInstance | CEventList * g_CEventListPtr
-    PUSH ECX                            ; 004a9fee | CEventList g_CEventListInstance
-    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004a9fef | int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
-        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)
+    JNZ 0x004a9ffb                      ; 004a9fe1
+        ;   XREF to: 004a9ffb (CONDITIONAL_JUMP)  ; LAB_004a9ffb
+    PUSH 0x6243da                       ; 004a9fe3 | = "Capture"
+    MOV ECX,dword ptr [0x006793d0]      ; 004a9fe8 | g_CEventListInstance | g_CEventListPtr
+    PUSH ECX                            ; 004a9fee | g_CEventListInstance
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004a9fef
+        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004a9ff4
     TEST EAX,EAX                        ; 004a9ff7
-    JZ 0x004aa00c                       ; 004a9ff9 | LAB_004aa00c
-        ;   XREF to: 004aa00c (CONDITIONAL_JUMP)
+    JZ 0x004aa00c                       ; 004a9ff9
+        ;   XREF to: 004aa00c (CONDITIONAL_JUMP)  ; LAB_004aa00c
     PUSH 0x0                            ; 004a9ffb
         ;   Label: LAB_004a9ffb
     PUSH dword ptr [ESP + 0x10]         ; 004a9ffd
     PUSH EBX                            ; 004aa001
-    CALL core_charactr.cpp_CCharacter_FUN_0042e050 ; 004aa002 | int core_charactr.cpp_CCharacter_FUN_0042e050(CCharacter * this_ptr)
-        ;   XREF to: 0042e050 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042e050 ; 004aa002
+        ;   XREF to: 0042e050 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042e050(CCharacter * this_ptr)
     ADD ESP,0xc                         ; 004aa007
     POP EBX                             ; 004aa00a
     RET                                 ; 004aa00b
@@ -65,8 +65,8 @@ section .text
     PUSH EAX                            ; 004aa012
     PUSH dword ptr [ESP + 0x10]         ; 004aa013
     PUSH EBX                            ; 004aa017
-    CALL core_charactr.cpp_CCharacter_FUN_0042e050 ; 004aa018 | int core_charactr.cpp_CCharacter_FUN_0042e050(CCharacter * this_ptr)
-        ;   XREF to: 0042e050 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042e050 ; 004aa018
+        ;   XREF to: 0042e050 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042e050(CCharacter * this_ptr)
     ADD ESP,0xc                         ; 004aa01d
     POP EBX                             ; 004aa020
     RET                                 ; 004aa021

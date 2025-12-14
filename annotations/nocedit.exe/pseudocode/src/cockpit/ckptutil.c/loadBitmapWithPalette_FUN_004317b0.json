@@ -1,156 +1,156 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 102, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 94, 
-    "assembly_lines": 67, 
-    "suspect_count": 7, 
+    "assembly_lines": 67,
+    "complexity_score": 102,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 27,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_applyActPalette_FUN_004319b0", 
-      "addr": "004319b0"
-    }, 
-    {
-      "name": "cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730", 
-      "addr": "00435730"
-    }, 
-    {
-      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870", 
-      "addr": "00431870"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_ckptutil_c_0061796b", 
-      "addr": "0061796b", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000024;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,pvVar1,size,in_stack_00000020);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000001c != 0) {"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(pvVar1,filename,in_stack_0000001c,(int)buffer,(void *)transparent_color_index,"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000024);"
-    }
-  ], 
+    ],
+    "total_lines": 94
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004317b0", 
-    "signature": "void * cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0(char * filename, int width, int height, void * span_data_buffer, void * buffer, int transparent_color_index)", 
+    "address": "004317b0",
     "address_range": [
       [
-        "004317b0", 
+        "004317b0",
         "0043182d"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0",
+    "signature": "void * cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0(char * filename, int width, int height, void * span_data_buffer, void * buffer, int transparent_color_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "004319b0",
+      "name": "cockpit_ckptutil.c_applyActPalette_FUN_004319b0"
+    },
+    {
+      "addr": "00435730",
+      "name": "cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730"
+    },
+    {
+      "addr": "00431870",
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061796b",
+      "name": "s_cockpit_ckptutil_c_0061796b",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
+        "is_param": true,
+        "name": "width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
+        "is_param": true,
+        "name": "height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "span_data_buffer"
-      }, 
+        "is_param": true,
+        "name": "span_data_buffer",
+        "offset": 16,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
+        "is_param": true,
+        "name": "buffer",
+        "offset": 20,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "transparent_color_index"
+        "is_param": true,
+        "name": "transparent_color_index",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000024",
+      "text": "int in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000020",
+      "text": "cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,pvVar1,size,in_stack_00000020);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000001c",
+      "text": "if (in_stack_0000001c != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_0000001c",
+      "text": "(pvVar1,filename,in_stack_0000001c,(int)buffer,(void *)transparent_color_index,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000024",
+      "text": "in_stack_00000024);",
+      "type": "stack_param"
+    }
+  ]
 }

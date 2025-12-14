@@ -1,224 +1,224 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 274, 
-    "pseudocode_lines": 94, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 291, 
-    "assembly_lines": 197, 
-    "suspect_count": 16, 
+    "assembly_lines": 197,
+    "complexity_score": 275,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 2,
+    "pseudocode_lines": 95,
+    "suspect_count": 16,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_env.c_findEnvVar_FUN_0060f1f0", 
-      "addr": "0060f1f0"
-    }, 
-    {
-      "name": "crt_memory.c_malloc_FUN_00601bb0", 
-      "addr": "00601bb0"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_memory.c_realloc_FUN_00601df0", 
-      "addr": "00601df0"
-    }, 
-    {
-      "name": "crt_string.c_memmove_FUN_005fe5e0", 
-      "addr": "005fe5e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char**", 
-      "name": "g_EnvironStringArea", 
-      "addr": "03f9b860", 
-      "value": null
-    }, 
-    {
-      "type": "char**", 
-      "name": "g_EnvironmentBlock", 
-      "addr": "03f9b864", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "char *in_EAX;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000010;"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EAX = envstr + 1;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "cVar2 = *in_EAX;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "for (; (cVar2 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "for (; (cVar2 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "for (; (cVar2 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "cVar2 = in_EAX[1];"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "if (*in_EAX == '\\0') {"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "bVar8 = in_EAX[1] == '\\0';"
-    }, 
-    {
-      "line": 75, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_EnvironStringArea = (char **)(unaff_EDI + (int)ptr);"
-    }, 
-    {
-      "line": 84, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((char **)(unaff_EDI + (int)ptr),g_EnvironStringArea,(SIZE_T)n);"
-    }, 
-    {
-      "line": 85, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_EnvironStringArea = (char **)(unaff_EDI + (int)ptr);"
-    }, 
-    {
-      "line": 94, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "ptr[(int)n] = in_stack_00000010;"
-    }, 
-    {
-      "line": 95, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)g_EnvironStringArea + (int)n) = '\\0';"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060f04c", 
-    "signature": "int crt_env.c_updateEnvironTable_FUN_0060f04c(char * envstr)", 
-    "address_range": [
-      [
-        "0060f04c", 
-        "0060f1ee"
-      ]
-    ], 
-    "name": "crt_env.c_updateEnvironTable_FUN_0060f04c"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "envstr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "unaffected_reg",
+      "register_param",
+      "stack_param",
+      "pointer_cast"
+    ],
+    "total_lines": 292
+  },
   "cross_references": [
     {
-      "from_addr": "0060efb6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_env.c_putenv_internal_FUN_0060ee80", 
-      "addr": "0060ee80"
-    }, 
+      "addr": "0060ee80",
+      "from_addr": "0060efb6",
+      "name": "crt_env.c_putenv_internal_FUN_0060ee80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060fce1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060fb40", 
-      "addr": "0060fb40"
+      "addr": "0060fb40",
+      "from_addr": "0060fce1",
+      "name": "crt_unknown.c_FUN_0060fb40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060f04c",
+    "address_range": [
+      [
+        "0060f04c",
+        "0060f1ee"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_env.c_updateEnvironTable_FUN_0060f04c",
+    "signature": "int crt_env.c_updateEnvironTable_FUN_0060f04c(char * envstr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060f1f0",
+      "name": "crt_env.c_findEnvVar_FUN_0060f1f0"
+    },
+    {
+      "addr": "00601bb0",
+      "name": "crt_memory.c_malloc_FUN_00601bb0"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "00601df0",
+      "name": "crt_memory.c_realloc_FUN_00601df0"
+    },
+    {
+      "addr": "005fe5e0",
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f9b860",
+      "name": "g_EnvironStringArea",
+      "type": "char**",
+      "value": null
+    },
+    {
+      "addr": "03f9b864",
+      "name": "g_EnvironmentBlock",
+      "type": "char**",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "envstr",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_EAX",
+      "text": "char *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "text": "char *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_EAX",
+      "text": "in_EAX = envstr + 1;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 28,
+      "match": "in_EAX",
+      "text": "cVar1 = *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_EAX",
+      "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_EAX",
+      "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_EAX",
+      "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 30,
+      "match": "in_EAX",
+      "text": "cVar1 = in_EAX[1];",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 33,
+      "match": "in_EAX",
+      "text": "if (*in_EAX == '\\0') {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 36,
+      "match": "in_EAX",
+      "text": "bVar7 = in_EAX[1] == '\\0';",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_EDI",
+      "text": "g_EnvironStringArea = (char **)(unaff_EDI + (int)ptr);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 85,
+      "match": "unaff_EDI",
+      "text": "crt_string_c_memmove_FUN_005fe5e0((char **)(unaff_EDI + (int)ptr),g_EnvironStringArea,n);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 86,
+      "match": "unaff_EDI",
+      "text": "g_EnvironStringArea = (char **)(unaff_EDI + (int)ptr);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
+      "match": "in_stack_00000010",
+      "text": "ptr[n] = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)g_EnvironStringArea + n) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

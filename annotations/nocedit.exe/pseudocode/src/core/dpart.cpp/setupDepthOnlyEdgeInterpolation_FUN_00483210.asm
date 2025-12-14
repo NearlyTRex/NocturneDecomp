@@ -34,45 +34,45 @@ section .text
     SAR EDX,0x10                        ; 00483221
     SAR EAX,0x10                        ; 00483224
     CMP EAX,EDX                         ; 00483227
-    JZ 0x0048330e                       ; 00483229 | LAB_0048330e
-        ;   XREF to: 0048330e (CONDITIONAL_JUMP)
+    JZ 0x0048330e                       ; 00483229
+        ;   XREF to: 0048330e (CONDITIONAL_JUMP)  ; LAB_0048330e
     PUSH ESI                            ; 0048322f
     MOV ESI,dword ptr [EDI + 0x14]      ; 00483230
     CMP ESI,dword ptr [EBX + 0x14]      ; 00483233
-    JGE 0x00483244                      ; 00483236 | LAB_00483244
-        ;   XREF to: 00483244 (CONDITIONAL_JUMP)
+    JGE 0x00483244                      ; 00483236
+        ;   XREF to: 00483244 (CONDITIONAL_JUMP)  ; LAB_00483244
     MOV ECX,EBX                         ; 00483238
     MOV EBX,EDI                         ; 0048323a
     MOV EDI,ECX                         ; 0048323c
     MOV ECX,EAX                         ; 0048323e
     MOV EAX,EDX                         ; 00483240
     MOV EDX,ECX                         ; 00483242
-    MOV ESI,dword ptr [0x02c6cb70]      ; 00483244 | int g_RenderTriangleEdgeCount
+    MOV ESI,dword ptr [0x02c6cb70]      ; 00483244 | g_RenderTriangleEdgeCount
         ;   Label: LAB_00483244
     LEA ECX,[ESI*0x8 + 0x0]             ; 0048324a
     ADD ECX,ESI                         ; 00483251
-    MOV ESI,0x2c6cb74                   ; 00483253 | SEdgeData[16] g_EdgeInterpolationArray
+    MOV ESI,0x2c6cb74                   ; 00483253 | g_EdgeInterpolationArray
     SHL ECX,0x3                         ; 00483258
     ADD ESI,ECX                         ; 0048325b
-    MOV dword ptr [ESI],EAX             ; 0048325d | SEdgeData[16] g_EdgeInterpolationArray
-    MOV EBP,dword ptr [0x02c6cff4]      ; 0048325f | int g_RenderTriangleMinScanlineY
+    MOV dword ptr [ESI],EAX             ; 0048325d | g_EdgeInterpolationArray
+    MOV EBP,dword ptr [0x02c6cff4]      ; 0048325f | g_RenderTriangleMinScanlineY
     MOV dword ptr [ESI + 0x4],EDX       ; 00483265 | DAT_02c6cb78
     CMP EAX,EBP                         ; 00483268
-    JGE 0x00483271                      ; 0048326a | LAB_00483271
-        ;   XREF to: 00483271 (CONDITIONAL_JUMP)
-    MOV [0x02c6cff4],EAX                ; 0048326c | int g_RenderTriangleMinScanlineY
-    CMP EDX,dword ptr [0x02c6cff8]      ; 00483271 | int g_RenderTriangleMaxScanlineY
+    JGE 0x00483271                      ; 0048326a
+        ;   XREF to: 00483271 (CONDITIONAL_JUMP)  ; LAB_00483271
+    MOV [0x02c6cff4],EAX                ; 0048326c | g_RenderTriangleMinScanlineY
+    CMP EDX,dword ptr [0x02c6cff8]      ; 00483271 | g_RenderTriangleMaxScanlineY
         ;   Label: LAB_00483271
-    JLE 0x0048327f                      ; 00483277 | LAB_0048327f
-        ;   XREF to: 0048327f (CONDITIONAL_JUMP)
-    MOV dword ptr [0x02c6cff8],EDX      ; 00483279 | int g_RenderTriangleMaxScanlineY
+    JLE 0x0048327f                      ; 00483277
+        ;   XREF to: 0048327f (CONDITIONAL_JUMP)  ; LAB_0048327f
+    MOV dword ptr [0x02c6cff8],EDX      ; 00483279 | g_RenderTriangleMaxScanlineY
     MOV EDX,dword ptr [EBX + 0x14]      ; 0048327f
         ;   Label: LAB_0048327f
     MOV ECX,dword ptr [EDI + 0x14]      ; 00483282
     SUB ECX,EDX                         ; 00483285
     CMP ECX,0x10000                     ; 00483287
-    JNC 0x00483312                      ; 0048328d | LAB_00483312
-        ;   XREF to: 00483312 (CONDITIONAL_JUMP)
+    JNC 0x00483312                      ; 0048328d
+        ;   XREF to: 00483312 (CONDITIONAL_JUMP)  ; LAB_00483312
     XOR ECX,ECX                         ; 00483293
     MOV EDX,dword ptr [EDI + 0x10]      ; 00483295
         ;   Label: LAB_00483295
@@ -100,7 +100,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004832d4
     MOV EDX,EAX                         ; 004832d8
     MOV EAX,dword ptr [EBX + 0x10]      ; 004832da
-    MOV EDI,dword ptr [0x02c6d03c]      ; 004832dd | int g_RasterizerDepthBias
+    MOV EDI,dword ptr [0x02c6d03c]      ; 004832dd | g_RasterizerDepthBias
     ADD EAX,EDX                         ; 004832e3
     MOV EDX,dword ptr [ESI + 0x2c]      ; 004832e5 | DAT_02c6cba0
     MOV dword ptr [ESI + 0x8],EAX       ; 004832e8 | DAT_02c6cb7c
@@ -109,11 +109,11 @@ section .text
     IMUL EDX                            ; 004832f0
     SHRD EAX,EDX,0x10                   ; 004832f2
     SHL EBX,0x8                         ; 004832f6
-    MOV EBP,dword ptr [0x02c6cb70]      ; 004832f9 | int g_RenderTriangleEdgeCount
+    MOV EBP,dword ptr [0x02c6cb70]      ; 004832f9 | g_RenderTriangleEdgeCount
     SUB EBX,EDI                         ; 004832ff
     INC EBP                             ; 00483301
     ADD EBX,EAX                         ; 00483302
-    MOV dword ptr [0x02c6cb70],EBP      ; 00483304 | int g_RenderTriangleEdgeCount
+    MOV dword ptr [0x02c6cb70],EBP      ; 00483304 | g_RenderTriangleEdgeCount
     MOV dword ptr [ESI + 0x28],EBX      ; 0048330a | DAT_02c6cb9c
     POP ESI                             ; 0048330d
     POP EBP                             ; 0048330e
@@ -126,6 +126,6 @@ section .text
     XOR EDX,EDX                         ; 00483317
     DIV ECX                             ; 00483319
     MOV ECX,EAX                         ; 0048331b
-    JMP 0x00483295                      ; 0048331d | LAB_00483295
-        ;   XREF to: 00483295 (UNCONDITIONAL_JUMP)
+    JMP 0x00483295                      ; 0048331d
+        ;   XREF to: 00483295 (UNCONDITIONAL_JUMP)  ; LAB_00483295
 

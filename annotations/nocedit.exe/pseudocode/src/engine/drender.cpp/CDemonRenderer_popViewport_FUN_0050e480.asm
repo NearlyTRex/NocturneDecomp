@@ -21,6 +21,6 @@
 section .text
 
     JMP 0x0050e480                      ; 0048c8c0
-        ;   Label: engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
         ;   XREF to: 0050e480 (UNCONDITIONAL_JUMP)
+        ;   Label: engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
 

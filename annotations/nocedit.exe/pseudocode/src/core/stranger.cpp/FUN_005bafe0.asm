@@ -11,8 +11,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 005bafe0
         ;   Label: core_stranger.cpp_FUN_005bafe0
     TEST EDX,EDX                        ; 005bafe4
-    JNZ 0x005bafeb                      ; 005bafe6 | LAB_005bafeb
-        ;   XREF to: 005bafeb (CONDITIONAL_JUMP)
+    JNZ 0x005bafeb                      ; 005bafe6
+        ;   XREF to: 005bafeb (CONDITIONAL_JUMP)  ; LAB_005bafeb
     XOR EAX,EAX                         ; 005bafe8
     RET                                 ; 005bafea
     MOV ECX,dword ptr [ESP + 0x4]       ; 005bafeb

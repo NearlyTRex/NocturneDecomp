@@ -1,159 +1,159 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 95, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 91, 
-    "assembly_lines": 71, 
-    "suspect_count": 6, 
+    "assembly_lines": 71,
+    "complexity_score": 95,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 4,
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
-      "addr": "005f2e90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ERROR_Too_many_vertices__0061b96b", 
-      "addr": "0061b96b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vertexList_in_2d_c_only__0061b997", 
-      "addr": "0061b997", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_You_won_t_be_able_to_vie_0061b9c6", 
-      "addr": "0061b9c6", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_VertexCount", 
-      "addr": "01626408", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "&stack0xffffff98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffff98,\"ERROR: Too many vertices! (npoints:%d > %d)\",g_VertexCount);"
-    }, 
-    {
-      "line": 14, 
-      "match": "&stack0xffffff98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff98,0,0);"
-    }, 
-    {
-      "line": 15, 
-      "match": "&stack0xffffff98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff98,\"vertexList[] in 2d.c only supports %d vertices\");"
-    }, 
-    {
-      "line": 16, 
-      "match": "&stack0xffffff98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff98,0,0x16);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00460a10", 
-    "signature": "int shape_design.c_checkVertexCountLimit_FUN_00460a10(void)", 
-    "address_range": [
-      [
-        "00460a10", 
-        "00460abd"
-      ]
-    ], 
-    "name": "shape_design.c_checkVertexCountLimit_FUN_00460a10"
-  }, 
-  "stack_frame": {
-    "local_size": 108, 
-    "variables": [
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 108, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 91
+  },
   "cross_references": [
     {
-      "from_addr": "0045f279", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
-      "addr": "0045f1d0"
+      "addr": "0045f1d0",
+      "from_addr": "0045f279",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00460a10",
+    "address_range": [
+      [
+        "00460a10",
+        "00460abd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_checkVertexCountLimit_FUN_00460a10",
+    "signature": "int shape_design.c_checkVertexCountLimit_FUN_00460a10(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    },
+    {
+      "addr": "005f2e90",
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b96b",
+      "name": "s_ERROR_Too_many_vertices__0061b96b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b997",
+      "name": "s_vertexList_in_2d_c_only__0061b997",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b9c6",
+      "name": "s_You_won_t_be_able_to_vie_0061b9c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01626408",
+      "name": "g_VertexCount",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 108,
+    "local_size": 108,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 13,
+      "match": "&stack0xffffff98",
+      "text": "(&stack0xffffff98,\"ERROR: Too many vertices! (npoints:%d > %d)\",g_VertexCount);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 14,
+      "match": "&stack0xffffff98",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff98,0,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xffffff98",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff98,\"vertexList[] in 2d.c only supports %d vertices\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 16,
+      "match": "&stack0xffffff98",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff98,0,0x16);",
+      "type": "stack_ref"
     }
   ]
 }

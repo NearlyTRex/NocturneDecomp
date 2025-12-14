@@ -1,103 +1,103 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 72, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 42, 
-    "assembly_lines": 25, 
-    "suspect_count": 5, 
+    "assembly_lines": 25,
+    "complexity_score": 72,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 17,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_MasterLightCount", 
-      "addr": "03276dac", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonLight*[96]", 
-      "name": "g_MasterLightList", 
-      "addr": "03276db0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = g_MasterLightCount;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = in_stack_00000008 + 1;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = in_stack_00000008 + 1;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = (*ppCVar1)->light_enabled_flag;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00571170", 
-    "signature": "int core_set.cpp_CDemonSet_FUN_00571170(CDemonSet * this_ptr)", 
-    "address_range": [
-      [
-        "00571170", 
-        "005711a7"
-      ]
-    ], 
-    "name": "core_set.cpp_CDemonSet_FUN_00571170"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 42
+  },
   "cross_references": [
     {
-      "from_addr": "004e0e99", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
-      "addr": "004e0cd0"
+      "addr": "004e0cd0",
+      "from_addr": "004e0e99",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00571170",
+    "address_range": [
+      [
+        "00571170",
+        "005711a7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_FUN_00571170",
+    "signature": "int core_set.cpp_CDemonSet_FUN_00571170(CDemonSet * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03276dac",
+      "name": "g_MasterLightCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03276db0",
+      "name": "g_MasterLightList",
+      "type": "CDemonLight*[96]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = g_MasterLightCount;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = (*ppCVar1)->light_enabled_flag;",
+      "type": "stack_param"
     }
   ]
 }

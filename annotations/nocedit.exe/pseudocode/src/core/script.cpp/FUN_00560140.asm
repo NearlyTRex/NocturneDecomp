@@ -17,8 +17,8 @@ section .text
         ;   Label: core_script.cpp_FUN_00560140
     MOV EDX,dword ptr [ESP + 0x8]       ; 00560144
     CMP EDX,dword ptr [EAX + 0x4]       ; 00560148
-    JZ 0x0056014e                       ; 0056014b | LAB_0056014e
-        ;   XREF to: 0056014e (CONDITIONAL_JUMP)
+    JZ 0x0056014e                       ; 0056014b
+        ;   XREF to: 0056014e (CONDITIONAL_JUMP)  ; LAB_0056014e
     RET                                 ; 0056014d
     MOV dword ptr [EAX + 0x4],0x0       ; 0056014e
         ;   Label: LAB_0056014e

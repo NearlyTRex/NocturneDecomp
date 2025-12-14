@@ -1,306 +1,306 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 251, 
-    "pseudocode_lines": 81, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 275, 
-    "assembly_lines": 194, 
-    "suspect_count": 16, 
+    "assembly_lines": 194,
+    "complexity_score": 251,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 8,
+    "pseudocode_lines": 81,
+    "suspect_count": 16,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_00640a0c", 
-      "addr": "00640a0c", 
-      "value": "-32"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00640a10", 
-      "addr": "00640a10", 
-      "value": "0.03125"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640a18", 
-      "addr": "00640a18", 
-      "value": "3.14159000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640a20", 
-      "addr": "00640a20", 
-      "value": "16"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640a28", 
-      "addr": "00640a28", 
-      "value": "0.0078125"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640a30", 
-      "addr": "00640a30", 
-      "value": "128"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030f6158", 
-      "addr": "030f6158", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_030f6159", 
-      "addr": "030f6159", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00554679", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX_00;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX_00;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000008;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_0000000c;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000010;"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((fVar1 <= local_28) && (in_stack_00000010 <= fVar1)) {"
-    }, 
-    {
-      "line": 43, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(&DAT_030f6158)[extraout_ECX_00] = local_14;"
-    }, 
-    {
-      "line": 44, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar4 = extraout_EDX_00;"
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_2c = in_stack_00000004;"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)((float)iVar4 - in_stack_00000008));"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)(fVar6 - (float10)in_stack_0000000c));"
-    }, 
-    {
-      "line": 77, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar4 = extraout_EDX + 1;"
-    }, 
-    {
-      "line": 78, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(char *)(extraout_ECX + 8) = (char)uVar3;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00554670", 
-    "signature": "undefined core_procedur.cpp_FUN_00554670()", 
-    "address_range": [
-      [
-        "00554670", 
-        "0055487b"
-      ]
-    ], 
-    "name": "core_procedur.cpp_FUN_00554670"
-  }, 
-  "stack_frame": {
-    "local_size": 68, 
-    "variables": [
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 68, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 275
+  },
   "cross_references": [
     {
-      "from_addr": "00554411", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0", 
-      "addr": "005542b0"
+      "addr": "005542b0",
+      "from_addr": "00554411",
+      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00554670",
+    "address_range": [
+      [
+        "00554670",
+        "0055487b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_procedur.cpp_FUN_00554670",
+    "signature": "undefined core_procedur.cpp_FUN_00554670()"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640a0c",
+      "name": "FLOAT_00640a0c",
+      "type": "float",
+      "value": "-32"
+    },
+    {
+      "addr": "00640a10",
+      "name": "FLOAT_00640a10",
+      "type": "float",
+      "value": "0.03125"
+    },
+    {
+      "addr": "00640a18",
+      "name": "DOUBLE_00640a18",
+      "type": "double",
+      "value": "3.14159000000000"
+    },
+    {
+      "addr": "00640a20",
+      "name": "DOUBLE_00640a20",
+      "type": "double",
+      "value": "16"
+    },
+    {
+      "addr": "00640a28",
+      "name": "DOUBLE_00640a28",
+      "type": "double",
+      "value": "0.0078125"
+    },
+    {
+      "addr": "00640a30",
+      "name": "DOUBLE_00640a30",
+      "type": "double",
+      "value": "128"
+    },
+    {
+      "addr": "030f6158",
+      "name": "DAT_030f6158",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030f6159",
+      "name": "DAT_030f6159",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00554679",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_ECX_00",
+      "text": "int extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EDX_00",
+      "text": "int extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "float in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "text": "float in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000010",
+      "text": "if ((fVar1 <= local_28) && (in_stack_00000010 <= fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 43,
+      "match": "extraout_ECX_00",
+      "text": "(&DAT_030f6158)[extraout_ECX_00] = local_14;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 44,
+      "match": "extraout_EDX_00",
+      "text": "iVar4 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000004",
+      "text": "local_2c = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000008",
+      "text": "crt_math_c_round_FUN_005fe6b0((double)((float)iVar4 - in_stack_00000008));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_0000000c",
+      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)(fVar6 - (float10)in_stack_0000000c));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 77,
+      "match": "extraout_EDX",
+      "text": "iVar4 = extraout_EDX + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 78,
+      "match": "extraout_ECX",
+      "text": "*(char *)(extraout_ECX + 8) = (char)uVar3;",
+      "type": "extra_output"
     }
   ]
 }

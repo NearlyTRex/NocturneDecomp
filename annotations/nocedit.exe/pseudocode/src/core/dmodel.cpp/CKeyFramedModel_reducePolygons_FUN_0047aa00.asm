@@ -23,14 +23,14 @@ section .text
         ;   Label: core_dmodel.cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00
     PUSH dword ptr [ESP + 0x8]          ; 0047aa04
     PUSH EDX                            ; 0047aa08
-    CALL core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 ; 0047aa09 | void core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0(CKeyFramedModel * this_ptr, float weld_tolerance)
-        ;   XREF to: 0047ada0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0 ; 0047aa09
+        ;   XREF to: 0047ada0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0(CKeyFramedModel * this_ptr, float weld_tolerance)
     ADD ESP,0x8                         ; 0047aa0e
     MOV ECX,dword ptr [ESP + 0x4]       ; 0047aa11
     PUSH dword ptr [ESP + 0xc]          ; 0047aa15
     PUSH ECX                            ; 0047aa19
-    CALL core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 ; 0047aa1a | void core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(CKeyFramedModel * this_ptr, float angle_threshold_radians)
-        ;   XREF to: 0047b1e0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 ; 0047aa1a
+        ;   XREF to: 0047b1e0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(CKeyFramedModel * this_ptr, float angle_threshold_radians)
     ADD ESP,0x8                         ; 0047aa1f
     RET                                 ; 0047aa22
 

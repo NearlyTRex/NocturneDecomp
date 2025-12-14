@@ -20,6 +20,6 @@ section .text
         ;   Label: core_camview.cpp_CCameraView_ctor_FUN_00427ce0
     MOV dword ptr [EAX + 0x38],0x41e00000 ; 00427ce4
     MOV dword ptr [EAX],0x43800000      ; 00427ceb
-    MOV dword ptr [EAX + 0x3c],0x65b7d4 ; 00427cf1 | CCameraView_vtable g_CCameraViewVTable
+    MOV dword ptr [EAX + 0x3c],0x65b7d4 ; 00427cf1 | g_CCameraViewVTable
     RET                                 ; 00427cf8
 

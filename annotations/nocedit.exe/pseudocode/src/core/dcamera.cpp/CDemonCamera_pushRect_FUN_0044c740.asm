@@ -23,8 +23,8 @@ section .text
         ;   Label: core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044c740
     MOV EDX,dword ptr [EAX + 0x1d0]     ; 0044c744
     CMP EDX,0x100                       ; 0044c74a
-    JL 0x0044c759                       ; 0044c750 | LAB_0044c759
-        ;   XREF to: 0044c759 (CONDITIONAL_JUMP)
+    JL 0x0044c759                       ; 0044c750
+        ;   XREF to: 0044c759 (CONDITIONAL_JUMP)  ; LAB_0044c759
     INC dword ptr [EAX + 0x1d0]         ; 0044c752
     RET                                 ; 0044c758
     PUSH EDI                            ; 0044c759

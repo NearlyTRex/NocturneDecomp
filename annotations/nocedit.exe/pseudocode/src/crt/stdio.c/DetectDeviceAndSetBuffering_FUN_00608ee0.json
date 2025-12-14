@@ -1,93 +1,93 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 51, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 42, 
-    "assembly_lines": 26, 
-    "suspect_count": 3, 
+    "assembly_lines": 26,
+    "complexity_score": 51,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_io.c_IsSpecialDevice_FUN_0060c270", 
-      "addr": "0060c270"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);"
-    }, 
-    {
-      "line": 12, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x20;"
-    }, 
-    {
-      "line": 14, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x22;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00608ee0", 
-    "signature": "void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE * file)", 
-    "address_range": [
-      [
-        "00608ee0", 
-        "00608f12"
-      ]
-    ], 
-    "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 42
+  },
   "cross_references": [
     {
-      "from_addr": "006027e7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0", 
-      "addr": "006027e0"
-    }, 
+      "addr": "006027e0",
+      "from_addr": "006027e7",
+      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00601a0f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_OpenFileAndInitialize_FUN_0060190c", 
-      "addr": "0060190c"
-    }, 
+      "addr": "0060190c",
+      "from_addr": "00601a0f",
+      "name": "crt_stdio.c_OpenFileAndInitialize_FUN_0060190c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006014fa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_setvbuf_FUN_00601490", 
-      "addr": "00601490"
+      "addr": "00601490",
+      "from_addr": "006014fa",
+      "name": "crt_stdio.c_setvbuf_FUN_00601490",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00608ee0",
+    "address_range": [
+      [
+        "00608ee0",
+        "00608f12"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0",
+    "signature": "void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE * file)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060c270",
+      "name": "crt_io.c_IsSpecialDevice_FUN_0060c270"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(byte *)((int)",
+      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x20;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x22;",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,105 +1,105 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 64, 
-    "pseudocode_lines": 64, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 208, 
-    "assembly_lines": 144, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_mirror.cpp_computePlaneIntersection_FUN_00521160", 
-      "addr": "00521160"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_1_00521278", 
-      "addr": "00521278", 
-      "value": "00521365"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_00521280", 
-      "addr": "00521280", 
-      "value": "00521347"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00521290", 
-    "signature": "void core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, int * output_count)", 
-    "address_range": [
-      [
-        "00521290", 
-        "005213b8"
-      ]
-    ], 
-    "name": "core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SClipPlane *", 
-        "size": 4, 
-        "name": "clip_plane"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "input_vertices"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "input_count"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "output_vertices"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "output_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 144,
+    "complexity_score": 64,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 64,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 208
+  },
   "cross_references": [
     {
-      "from_addr": "00522441", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310", 
-      "addr": "00522310"
+      "addr": "00522310",
+      "from_addr": "00522441",
+      "name": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00521290",
+    "address_range": [
+      [
+        "00521290",
+        "005213b8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290",
+    "signature": "void core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290(SClipPlane * clip_plane, CVector3f * input_vertices, int input_count, CVector3f * output_vertices, int * output_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00521160",
+      "name": "core_mirror.cpp_computePlaneIntersection_FUN_00521160"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00521278",
+      "name": "PTR_caseD_1_00521278",
+      "type": "void*",
+      "value": "00521365"
+    },
+    {
+      "addr": "00521280",
+      "name": "PTR_caseD_3_00521280",
+      "type": "void*",
+      "value": "00521347"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "clip_plane",
+        "offset": 4,
+        "size": 4,
+        "type": "SClipPlane *"
+      },
+      {
+        "is_param": true,
+        "name": "input_vertices",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "input_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "output_vertices",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "output_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
 }

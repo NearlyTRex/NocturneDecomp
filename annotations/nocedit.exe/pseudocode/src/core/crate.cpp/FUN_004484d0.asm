@@ -26,21 +26,21 @@ section .text
         ;   Label: core_crate.cpp_FUN_004484d0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004484d1
     PUSH EBX                            ; 004484d5
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004484d6 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004484d6
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004484db
     ADD EAX,0x158                       ; 004484de
     PUSH EAX                            ; 004484e3
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 004484e4 | CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 004484e4
+        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004484e9
     LEA EBX,[EAX + 0xfffffea8]          ; 004484ec
-    PUSH 0x619af3                       ; 004484f2 | = "question.kfm" | s_question_kfm_00619af3 = question.kfm
+    PUSH 0x619af3                       ; 004484f2 | = "question.kfm"
     LEA EAX,[EBX + 0x158]               ; 004484f7
     PUSH EAX                            ; 004484fd
-    MOV dword ptr [EBX + 0x154],0x65c264 ; 004484fe | CDemonActor_vtable PTR_core_crate.cpp_FUN_0065c264
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00448508 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EBX + 0x154],0x65c264 ; 004484fe | PTR_core_crate.cpp_FUN_0065c264
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00448508
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0044850d
     MOV dword ptr [EBX + 0x2dc],0x0     ; 00448510
     MOV EAX,EBX                         ; 0044851a

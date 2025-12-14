@@ -1,119 +1,119 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 43, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 134, 
-    "assembly_lines": 106, 
-    "suspect_count": 1, 
+    "assembly_lines": 106,
+    "complexity_score": 43,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 28,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcube.cpp_CDemonCube_save_FUN_00457430", 
-      "addr": "00457430"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
-      "addr": "005fdc00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_00622a03", 
-      "addr": "00622a03", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonRaytrace_saveBinar_00622a16", 
-      "addr": "00622a16", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GeoFileFormatVersion", 
-      "addr": "006789f0", 
-      "value": "0x4"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 21, 
-      "match": "(CDemonCube *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar1),file_handle);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00494f50", 
-    "signature": "void core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "00494f50", 
-        "00495030"
-      ]
-    ], 
-    "name": "core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRaytrace *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 134
+  },
   "cross_references": [
     {
-      "from_addr": "00494f00", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0", 
-      "addr": "00494de0"
-    }, 
+      "addr": "00494de0",
+      "from_addr": "00494f00",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00495065", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_save_FUN_00495040", 
-      "addr": "00495040"
+      "addr": "00495040",
+      "from_addr": "00495065",
+      "name": "core_dtrace.cpp_CDemonRaytrace_save_FUN_00495040",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00494f50",
+    "address_range": [
+      [
+        "00494f50",
+        "00495030"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50",
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50(CDemonRaytrace * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00457430",
+      "name": "core_dcube.cpp_CDemonCube_save_FUN_00457430"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fdc00",
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622a03",
+      "name": "s_core_dtrace_cpp_00622a03",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622a16",
+      "name": "s_CDemonRaytrace_saveBinar_00622a16",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006789f0",
+      "name": "g_GeoFileFormatVersion",
+      "type": "int",
+      "value": "0x4"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(CDemonCube *)((int)",
+      "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar1),file_handle);",
+      "type": "pointer_cast"
     }
   ]
 }

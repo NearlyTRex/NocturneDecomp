@@ -1,901 +1,901 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 423, 
-    "pseudocode_lines": 108, 
-    "cross_reference_count": 1, 
-    "global_count": 100, 
-    "total_lines": 377, 
-    "assembly_lines": 269, 
-    "suspect_count": 31, 
+    "assembly_lines": 269,
+    "complexity_score": 423,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 100,
+    "pseudocode_lines": 108,
+    "suspect_count": 31,
     "suspect_types": [
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "ulonglong", 
-      "name": "g_LightmapBlendBias1", 
-      "addr": "00676478", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_LightmapBlendBias2", 
-      "addr": "00676480", 
-      "value": "0x8000800080008"
-    }, 
-    {
-      "type": "ushort[384]", 
-      "name": "g_LightmapData", 
-      "addr": "006779f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[16]", 
-      "addr": "00677a10", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[32]", 
-      "addr": "00677a30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[48]", 
-      "addr": "00677a50", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[64]", 
-      "addr": "00677a70", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[80]", 
-      "addr": "00677a90", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[96]", 
-      "addr": "00677ab0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[112]", 
-      "addr": "00677ad0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[128]", 
-      "addr": "00677af0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[144]", 
-      "addr": "00677b10", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[160]", 
-      "addr": "00677b30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[176]", 
-      "addr": "00677b50", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[192]", 
-      "addr": "00677b70", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[208]", 
-      "addr": "00677b90", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[224]", 
-      "addr": "00677bb0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[240]", 
-      "addr": "00677bd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[256]", 
-      "addr": "00677bf0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[272]", 
-      "addr": "00677c10", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[288]", 
-      "addr": "00677c30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[304]", 
-      "addr": "00677c50", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[320]", 
-      "addr": "00677c70", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[336]", 
-      "addr": "00677c90", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[352]", 
-      "addr": "00677cb0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapData[368]", 
-      "addr": "00677cd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677cf0", 
-      "addr": "00677cf0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677d10", 
-      "addr": "00677d10", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677d30", 
-      "addr": "00677d30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677d50", 
-      "addr": "00677d50", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677d70", 
-      "addr": "00677d70", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677d90", 
-      "addr": "00677d90", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677db0", 
-      "addr": "00677db0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677dd0", 
-      "addr": "00677dd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677df0", 
-      "addr": "00677df0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677e10", 
-      "addr": "00677e10", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677e30", 
-      "addr": "00677e30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677e50", 
-      "addr": "00677e50", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677e70", 
-      "addr": "00677e70", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677e90", 
-      "addr": "00677e90", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677eb0", 
-      "addr": "00677eb0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677ed0", 
-      "addr": "00677ed0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677ef0", 
-      "addr": "00677ef0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677f10", 
-      "addr": "00677f10", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677f30", 
-      "addr": "00677f30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677f50", 
-      "addr": "00677f50", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677f70", 
-      "addr": "00677f70", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677f90", 
-      "addr": "00677f90", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677fb0", 
-      "addr": "00677fb0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677fd0", 
-      "addr": "00677fd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00677ff0", 
-      "addr": "00677ff0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678010", 
-      "addr": "00678010", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678030", 
-      "addr": "00678030", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678050", 
-      "addr": "00678050", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678070", 
-      "addr": "00678070", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678090", 
-      "addr": "00678090", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006780b0", 
-      "addr": "006780b0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006780d0", 
-      "addr": "006780d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006780f0", 
-      "addr": "006780f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678110", 
-      "addr": "00678110", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678130", 
-      "addr": "00678130", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678150", 
-      "addr": "00678150", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678170", 
-      "addr": "00678170", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00678190", 
-      "addr": "00678190", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006781b0", 
-      "addr": "006781b0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006781d0", 
-      "addr": "006781d0", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "g_LightmapXorMask", 
-      "addr": "006781e8", 
-      "value": "0.126945525291829"
-    }, 
-    {
-      "type": "uint[256]", 
-      "name": "g_LightmapTexturePalette", 
-      "addr": "00c19dfc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[8]", 
-      "addr": "00c19e1c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[16]", 
-      "addr": "00c19e3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[24]", 
-      "addr": "00c19e5c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[32]", 
-      "addr": "00c19e7c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[40]", 
-      "addr": "00c19e9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[48]", 
-      "addr": "00c19ebc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[56]", 
-      "addr": "00c19edc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[64]", 
-      "addr": "00c19efc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[72]", 
-      "addr": "00c19f1c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[80]", 
-      "addr": "00c19f3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[88]", 
-      "addr": "00c19f5c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[96]", 
-      "addr": "00c19f7c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[104]", 
-      "addr": "00c19f9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[112]", 
-      "addr": "00c19fbc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[120]", 
-      "addr": "00c19fdc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[128]", 
-      "addr": "00c19ffc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[136]", 
-      "addr": "00c1a01c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[144]", 
-      "addr": "00c1a03c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[152]", 
-      "addr": "00c1a05c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[160]", 
-      "addr": "00c1a07c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[168]", 
-      "addr": "00c1a09c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[176]", 
-      "addr": "00c1a0bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[184]", 
-      "addr": "00c1a0dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[192]", 
-      "addr": "00c1a0fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[200]", 
-      "addr": "00c1a11c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[208]", 
-      "addr": "00c1a13c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[216]", 
-      "addr": "00c1a15c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[224]", 
-      "addr": "00c1a17c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[232]", 
-      "addr": "00c1a19c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[240]", 
-      "addr": "00c1a1bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LightmapTexturePalette[248]", 
-      "addr": "00c1a1dc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SolidColorMode", 
-      "addr": "02d052a8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 25, 
-      "match": "CONCAT52", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)"
-    }, 
-    {
-      "line": 25, 
-      "match": "CONCAT41", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)"
-    }, 
-    {
-      "line": 25, 
-      "match": "CONCAT21", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)"
-    }, 
-    {
-      "line": 33, 
-      "match": "CONCAT34", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),"
-    }, 
-    {
-      "line": 33, 
-      "match": "CONCAT25", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),"
-    }, 
-    {
-      "line": 34, 
-      "match": "CONCAT14", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)"
-    }, 
-    {
-      "line": 37, 
-      "match": "CONCAT34", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar5 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),"
-    }, 
-    {
-      "line": 37, 
-      "match": "CONCAT25", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar5 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),"
-    }, 
-    {
-      "line": 38, 
-      "match": "CONCAT14", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)"
-    }, 
-    {
-      "line": 41, 
-      "match": "CONCAT26", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar8 = pmulhw(CONCAT26 /* combine 2-byte values */((short)(uVar10 >> 0x18) * (short)(uVar13 >> 0x18),"
-    }, 
-    {
-      "line": 42, 
-      "match": "CONCAT24", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT24 /* combine 2-byte values */((short)(uVar10 >> 8) * (short)(uVar13 >> 8),"
-    }, 
-    {
-      "line": 43, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),"
-    }, 
-    {
-      "line": 43, 
-      "match": "CONCAT43", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),"
-    }, 
-    {
-      "line": 43, 
-      "match": "CONCAT12", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),"
-    }, 
-    {
-      "line": 46, 
-      "match": "CONCAT41", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((ushort)CONCAT41 /* combine 2-byte values */(uVar5,(char)(uVar2 >> 8)) & 0xff),"
-    }, 
-    {
-      "line": 62, 
-      "match": "CONCAT13", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT13 /* combine 2-byte values */((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),"
-    }, 
-    {
-      "line": 63, 
-      "match": "CONCAT12", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT12 /* combine 2-byte values */((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),"
-    }, 
-    {
-      "line": 64, 
-      "match": "CONCAT11", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT11 /* combine 2-byte values */((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),"
-    }, 
-    {
-      "line": 69, 
-      "match": "CONCAT34", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),"
-    }, 
-    {
-      "line": 69, 
-      "match": "CONCAT25", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),"
-    }, 
-    {
-      "line": 70, 
-      "match": "CONCAT14", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)"
-    }, 
-    {
-      "line": 74, 
-      "match": "CONCAT26", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar8 = pmulhw(CONCAT26 /* combine 2-byte values */((short)(uVar10 >> 0x18) * (uVar7 >> 8),"
-    }, 
-    {
-      "line": 75, 
-      "match": "CONCAT24", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT24 /* combine 2-byte values */((short)(uVar10 >> 8) *"
-    }, 
-    {
-      "line": 76, 
-      "match": "CONCAT25", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(short)(CONCAT25 /* combine 2-byte values */(uVar7,CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2))"
-    }, 
-    {
-      "line": 76, 
-      "match": "CONCAT14", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(short)(CONCAT25 /* combine 2-byte values */(uVar7,CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2))"
-    }, 
-    {
-      "line": 78, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),"
-    }, 
-    {
-      "line": 78, 
-      "match": "CONCAT43", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),"
-    }, 
-    {
-      "line": 78, 
-      "match": "CONCAT12", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),"
-    }, 
-    {
-      "line": 97, 
-      "match": "CONCAT13", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT13 /* combine 2-byte values */((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),"
-    }, 
-    {
-      "line": 98, 
-      "match": "CONCAT12", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT12 /* combine 2-byte values */((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),"
-    }, 
-    {
-      "line": 99, 
-      "match": "CONCAT11", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT11 /* combine 2-byte values */((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004926e1", 
-    "signature": "void core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1(uint * output_buffer, uint * texture_buffer, byte * texture_indices, byte * lightmap_indices, int pixel_count)", 
-    "address_range": [
-      [
-        "004926e1", 
-        "00492bd4"
-      ]
-    ], 
-    "name": "core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint *", 
-        "size": 4, 
-        "name": "texture_buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "texture_indices"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "lightmap_indices"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "pixel_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 377
+  },
   "cross_references": [
     {
-      "from_addr": "00453563", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270", 
-      "addr": "00453270"
+      "addr": "00453270",
+      "from_addr": "00453563",
+      "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004926e1",
+    "address_range": [
+      [
+        "004926e1",
+        "00492bd4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1",
+    "signature": "void core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1(uint * output_buffer, uint * texture_buffer, byte * texture_indices, byte * lightmap_indices, int pixel_count)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00676478",
+      "name": "g_LightmapBlendBias1",
+      "type": "ulonglong",
+      "value": "0x0"
+    },
+    {
+      "addr": "00676480",
+      "name": "g_LightmapBlendBias2",
+      "type": "ulonglong",
+      "value": "0x8000800080008"
+    },
+    {
+      "addr": "006779f0",
+      "name": "g_LightmapData",
+      "type": "ushort[384]",
+      "value": null
+    },
+    {
+      "addr": "00677a10",
+      "name": "g_LightmapData[16]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677a30",
+      "name": "g_LightmapData[32]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677a50",
+      "name": "g_LightmapData[48]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677a70",
+      "name": "g_LightmapData[64]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677a90",
+      "name": "g_LightmapData[80]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ab0",
+      "name": "g_LightmapData[96]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ad0",
+      "name": "g_LightmapData[112]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677af0",
+      "name": "g_LightmapData[128]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b10",
+      "name": "g_LightmapData[144]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b30",
+      "name": "g_LightmapData[160]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b50",
+      "name": "g_LightmapData[176]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b70",
+      "name": "g_LightmapData[192]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b90",
+      "name": "g_LightmapData[208]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677bb0",
+      "name": "g_LightmapData[224]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677bd0",
+      "name": "g_LightmapData[240]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677bf0",
+      "name": "g_LightmapData[256]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c10",
+      "name": "g_LightmapData[272]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c30",
+      "name": "g_LightmapData[288]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c50",
+      "name": "g_LightmapData[304]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c70",
+      "name": "g_LightmapData[320]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c90",
+      "name": "g_LightmapData[336]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677cb0",
+      "name": "g_LightmapData[352]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677cd0",
+      "name": "g_LightmapData[368]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677cf0",
+      "name": "DAT_00677cf0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677d10",
+      "name": "DAT_00677d10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677d30",
+      "name": "DAT_00677d30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677d50",
+      "name": "DAT_00677d50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677d70",
+      "name": "DAT_00677d70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677d90",
+      "name": "DAT_00677d90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677db0",
+      "name": "DAT_00677db0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677dd0",
+      "name": "DAT_00677dd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677df0",
+      "name": "DAT_00677df0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e10",
+      "name": "DAT_00677e10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e30",
+      "name": "DAT_00677e30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e50",
+      "name": "DAT_00677e50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e70",
+      "name": "DAT_00677e70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e90",
+      "name": "DAT_00677e90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677eb0",
+      "name": "DAT_00677eb0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ed0",
+      "name": "DAT_00677ed0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ef0",
+      "name": "DAT_00677ef0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f10",
+      "name": "DAT_00677f10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f30",
+      "name": "DAT_00677f30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f50",
+      "name": "DAT_00677f50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f70",
+      "name": "DAT_00677f70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f90",
+      "name": "DAT_00677f90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677fb0",
+      "name": "DAT_00677fb0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677fd0",
+      "name": "DAT_00677fd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ff0",
+      "name": "DAT_00677ff0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678010",
+      "name": "DAT_00678010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678030",
+      "name": "DAT_00678030",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678050",
+      "name": "DAT_00678050",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678070",
+      "name": "DAT_00678070",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678090",
+      "name": "DAT_00678090",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006780b0",
+      "name": "DAT_006780b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006780d0",
+      "name": "DAT_006780d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006780f0",
+      "name": "DAT_006780f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678110",
+      "name": "DAT_00678110",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678130",
+      "name": "DAT_00678130",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678150",
+      "name": "DAT_00678150",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678170",
+      "name": "DAT_00678170",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678190",
+      "name": "DAT_00678190",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006781b0",
+      "name": "DAT_006781b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006781d0",
+      "name": "DAT_006781d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006781e8",
+      "name": "g_LightmapXorMask",
+      "type": "double",
+      "value": "0.126945525291829"
+    },
+    {
+      "addr": "00c19dfc",
+      "name": "g_LightmapTexturePalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "00c19e1c",
+      "name": "g_LightmapTexturePalette[8]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19e3c",
+      "name": "g_LightmapTexturePalette[16]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19e5c",
+      "name": "g_LightmapTexturePalette[24]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19e7c",
+      "name": "g_LightmapTexturePalette[32]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19e9c",
+      "name": "g_LightmapTexturePalette[40]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19ebc",
+      "name": "g_LightmapTexturePalette[48]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19edc",
+      "name": "g_LightmapTexturePalette[56]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19efc",
+      "name": "g_LightmapTexturePalette[64]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f1c",
+      "name": "g_LightmapTexturePalette[72]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f3c",
+      "name": "g_LightmapTexturePalette[80]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f5c",
+      "name": "g_LightmapTexturePalette[88]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f7c",
+      "name": "g_LightmapTexturePalette[96]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f9c",
+      "name": "g_LightmapTexturePalette[104]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19fbc",
+      "name": "g_LightmapTexturePalette[112]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19fdc",
+      "name": "g_LightmapTexturePalette[120]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19ffc",
+      "name": "g_LightmapTexturePalette[128]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a01c",
+      "name": "g_LightmapTexturePalette[136]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a03c",
+      "name": "g_LightmapTexturePalette[144]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a05c",
+      "name": "g_LightmapTexturePalette[152]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a07c",
+      "name": "g_LightmapTexturePalette[160]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a09c",
+      "name": "g_LightmapTexturePalette[168]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a0bc",
+      "name": "g_LightmapTexturePalette[176]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a0dc",
+      "name": "g_LightmapTexturePalette[184]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a0fc",
+      "name": "g_LightmapTexturePalette[192]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a11c",
+      "name": "g_LightmapTexturePalette[200]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a13c",
+      "name": "g_LightmapTexturePalette[208]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a15c",
+      "name": "g_LightmapTexturePalette[216]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a17c",
+      "name": "g_LightmapTexturePalette[224]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a19c",
+      "name": "g_LightmapTexturePalette[232]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a1bc",
+      "name": "g_LightmapTexturePalette[240]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a1dc",
+      "name": "g_LightmapTexturePalette[248]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052a8",
+      "name": "g_SolidColorMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_indices",
+        "offset": 12,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "lightmap_indices",
+        "offset": 16,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 25,
+      "match": "CONCAT52",
+      "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 25,
+      "match": "CONCAT41",
+      "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 25,
+      "match": "CONCAT21",
+      "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 33,
+      "match": "CONCAT34",
+      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 33,
+      "match": "CONCAT25",
+      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 34,
+      "match": "CONCAT14",
+      "text": "CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 37,
+      "match": "CONCAT34",
+      "text": "uVar5 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 37,
+      "match": "CONCAT25",
+      "text": "uVar5 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 38,
+      "match": "CONCAT14",
+      "text": "CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 41,
+      "match": "CONCAT26",
+      "text": "uVar8 = pmulhw(CONCAT26 /* combine 2-byte values */((short)(uVar10 >> 0x18) * (short)(uVar13 >> 0x18),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 42,
+      "match": "CONCAT24",
+      "text": "CONCAT24 /* combine 2-byte values */((short)(uVar10 >> 8) * (short)(uVar13 >> 8),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 43,
+      "match": "CONCAT22",
+      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 43,
+      "match": "CONCAT43",
+      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 43,
+      "match": "CONCAT12",
+      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 46,
+      "match": "CONCAT41",
+      "text": "((ushort)CONCAT41 /* combine 2-byte values */(uVar5,(char)(uVar2 >> 8)) & 0xff),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 62,
+      "match": "CONCAT13",
+      "text": "CONCAT13 /* combine 2-byte values */((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 63,
+      "match": "CONCAT12",
+      "text": "CONCAT12 /* combine 2-byte values */((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 64,
+      "match": "CONCAT11",
+      "text": "CONCAT11 /* combine 2-byte values */((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 69,
+      "match": "CONCAT34",
+      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 69,
+      "match": "CONCAT25",
+      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 70,
+      "match": "CONCAT14",
+      "text": "CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 74,
+      "match": "CONCAT26",
+      "text": "uVar8 = pmulhw(CONCAT26 /* combine 2-byte values */((short)(uVar10 >> 0x18) * (uVar7 >> 8),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 75,
+      "match": "CONCAT24",
+      "text": "CONCAT24 /* combine 2-byte values */((short)(uVar10 >> 8) *",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 76,
+      "match": "CONCAT25",
+      "text": "(short)(CONCAT25 /* combine 2-byte values */(uVar7,CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2))",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 76,
+      "match": "CONCAT14",
+      "text": "(short)(CONCAT25 /* combine 2-byte values */(uVar7,CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2))",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 78,
+      "match": "CONCAT22",
+      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 78,
+      "match": "CONCAT43",
+      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 78,
+      "match": "CONCAT12",
+      "text": "CONCAT22 /* combine 2-byte values */(((ushort)(CONCAT43 /* combine 2-byte values */(uVar4,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 97,
+      "match": "CONCAT13",
+      "text": "CONCAT13 /* combine 2-byte values */((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 98,
+      "match": "CONCAT12",
+      "text": "CONCAT12 /* combine 2-byte values */((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 99,
+      "match": "CONCAT11",
+      "text": "CONCAT11 /* combine 2-byte values */((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),",
+      "type": "concat_artifact"
     }
   ]
 }

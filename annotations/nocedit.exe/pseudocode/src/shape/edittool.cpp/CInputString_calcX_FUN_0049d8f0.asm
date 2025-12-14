@@ -36,43 +36,43 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 0049d8f5
     MOV EBX,dword ptr [ESP + 0x14]      ; 0049d8f9
     TEST EBX,EBX                        ; 0049d8fd
-    JL 0x0049d978                       ; 0049d8ff | LAB_0049d978
-        ;   XREF to: 0049d978 (CONDITIONAL_JUMP)
+    JL 0x0049d978                       ; 0049d8ff
+        ;   XREF to: 0049d978 (CONDITIONAL_JUMP)  ; LAB_0049d978
     MOV EDX,dword ptr [EAX + 0x130]     ; 0049d905
     CMP EBX,EDX                         ; 0049d90b
-    JLE 0x0049d911                      ; 0049d90d | LAB_0049d911
-        ;   XREF to: 0049d911 (CONDITIONAL_JUMP)
+    JLE 0x0049d911                      ; 0049d90d
+        ;   XREF to: 0049d911 (CONDITIONAL_JUMP)  ; LAB_0049d911
     MOV EBX,EDX                         ; 0049d90f
     PUSH EDI                            ; 0049d911
         ;   Label: LAB_0049d911
     CMP dword ptr [EAX + 0x13c],0x0     ; 0049d912
-    JZ 0x0049d97c                       ; 0049d919 | LAB_0049d97c
-        ;   XREF to: 0049d97c (CONDITIONAL_JUMP)
+    JZ 0x0049d97c                       ; 0049d919
+        ;   XREF to: 0049d97c (CONDITIONAL_JUMP)  ; LAB_0049d97c
     CMP EBX,0x400                       ; 0049d91b
-    JC 0x0049d946                       ; 0049d921 | LAB_0049d946
-        ;   XREF to: 0049d946 (CONDITIONAL_JUMP)
-    MOV EDI,0x622eec                    ; 0049d923 | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_00622eec = ..\shape\edittool.cpp
+    JC 0x0049d946                       ; 0049d921
+        ;   XREF to: 0049d946 (CONDITIONAL_JUMP)  ; LAB_0049d946
+    MOV EDI,0x622eec                    ; 0049d923 | = "..\\shape\\edittool.cpp"
     MOV EBP,0x1be                       ; 0049d928
-    PUSH 0x622f02                       ; 0049d92d | = "CInputString::calcX - string too big ..." | s_CInputString_calcX_strin_00622f02 = CInputString::calcX - string too big for hidden text!
-    MOV dword ptr [0x02f0ca48],EDI      ; 0049d932 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 0049d938 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0049d93e | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x622f02                       ; 0049d92d | = "CInputString::calcX - string too big ..."
+    MOV dword ptr [0x02f0ca48],EDI      ; 0049d932 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 0049d938 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0049d93e
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0049d943
     PUSH EBX                            ; 0049d946
         ;   Label: LAB_0049d946
     PUSH 0x2a                           ; 0049d947
-    PUSH 0x2cf2678                      ; 0049d949 | char[1024] g_TempStringBuffer
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0049d94e | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    PUSH 0x2cf2678                      ; 0049d949 | g_TempStringBuffer
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0049d94e
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0049d953
     XOR AH,AH                           ; 0049d956
-    PUSH 0x2cf2678                      ; 0049d958 | char[1024] g_TempStringBuffer
-    MOV byte ptr [EBX + 0x2cf2678],AH   ; 0049d95d | char[1024] g_TempStringBuffer
-    MOV EAX,[0x02cf1cd0]                ; 0049d963 | CBitFont * g_EditorFont
+    PUSH 0x2cf2678                      ; 0049d958 | g_TempStringBuffer
+    MOV byte ptr [EBX + 0x2cf2678],AH   ; 0049d95d | g_TempStringBuffer
+    MOV EAX,[0x02cf1cd0]                ; 0049d963 | g_EditorFont
     PUSH EAX                            ; 0049d968
-    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 0049d969 | int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)
-        ;   XREF to: 004cfe80 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 0049d969
+        ;   XREF to: 004cfe80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0049d96e
     POP EDI                             ; 0049d971
     ADD ESP,0x4                         ; 0049d972
@@ -82,20 +82,20 @@ section .text
     RET                                 ; 0049d977
     XOR EAX,EAX                         ; 0049d978
         ;   Label: LAB_0049d978
-    JMP 0x0049d972                      ; 0049d97a | LAB_0049d972
-        ;   XREF to: 0049d972 (UNCONDITIONAL_JUMP)
+    JMP 0x0049d972                      ; 0049d97a
+        ;   XREF to: 0049d972 (UNCONDITIONAL_JUMP)  ; LAB_0049d972
     PUSH ESI                            ; 0049d97c
         ;   Label: LAB_0049d97c
     PUSH EAX                            ; 0049d97d
     ADD EBX,EAX                         ; 0049d97e
     XOR EDX,EDX                         ; 0049d980
-    MOV ESI,dword ptr [0x02cf1cd0]      ; 0049d982 | CBitFont * g_EditorFont
+    MOV ESI,dword ptr [0x02cf1cd0]      ; 0049d982 | g_EditorFont
     MOV DL,byte ptr [EBX]               ; 0049d988
     PUSH ESI                            ; 0049d98a
     MOV dword ptr [ESP + 0x10],EDX      ; 0049d98b
     MOV byte ptr [EBX],0x0              ; 0049d98f
-    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 0049d992 | int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)
-        ;   XREF to: 004cfe80 (UNCONDITIONAL_CALL)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 0049d992
+        ;   XREF to: 004cfe80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0049d997
     MOV DL,byte ptr [ESP + 0x8]         ; 0049d99a
     MOV byte ptr [EBX],DL               ; 0049d99e

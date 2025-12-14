@@ -50,12 +50,12 @@ section .text
     FXCH                                ; 005a889d
     FSTP double ptr [EBX + 0x4]         ; 005a889f
     FSTP double ptr [EBX + 0x24]        ; 005a88a2
-    CALL crt_memory.c_memset_FUN_005fde40 ; 005a88a5 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 005a88a5
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0x60],0x0      ; 005a88aa
     MOV dword ptr [EBX + 0x64],0x0      ; 005a88b1
     MOV dword ptr [EBX + 0x68],0x0      ; 005a88b8
-    FLD double ptr [0x00663138]         ; 005a88bf | double DOUBLE_00663138
+    FLD double ptr [0x00663138]         ; 005a88bf | DOUBLE_00663138
     MOV dword ptr [EBX + 0x6c],0x0      ; 005a88c5
     ADD ESP,0xc                         ; 005a88cc
     FSTP double ptr [EBX + 0x4c]        ; 005a88cf

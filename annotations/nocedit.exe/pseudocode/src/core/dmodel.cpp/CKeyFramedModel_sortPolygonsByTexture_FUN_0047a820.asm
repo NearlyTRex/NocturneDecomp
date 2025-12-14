@@ -45,8 +45,8 @@ section .text
     SUB ESP,0x6c                        ; 0047a824
     MOV EDX,dword ptr [ESP + 0x80]      ; 0047a827
     PUSH EDX                            ; 0047a82e
-    CALL core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 ; 0047a82f | void core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyFramedModel * this_ptr)
-        ;   XREF to: 0047bf40 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 ; 0047a82f
+        ;   XREF to: 0047bf40 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0047a834
     XOR ECX,ECX                         ; 0047a837
     MOV EAX,dword ptr [ESP + 0x80]      ; 0047a839
@@ -54,8 +54,8 @@ section .text
     MOV ESI,dword ptr [EAX + 0x5584]    ; 0047a844
     MOV dword ptr [ESP + 0x54],ECX      ; 0047a84a
     TEST ESI,ESI                        ; 0047a84e
-    JLE 0x0047a9e3                      ; 0047a850 | LAB_0047a9e3
-        ;   XREF to: 0047a9e3 (CONDITIONAL_JUMP)
+    JLE 0x0047a9e3                      ; 0047a850
+        ;   XREF to: 0047a9e3 (CONDITIONAL_JUMP)  ; LAB_0047a9e3
     MOV dword ptr [ESP + 0x50],EAX      ; 0047a856
     MOV EDX,dword ptr [ESP + 0x50]      ; 0047a85a
         ;   Label: LAB_0047a85a
@@ -67,14 +67,14 @@ section .text
     MOV ESI,dword ptr [ESP + 0x58]      ; 0047a86f
     MOV dword ptr [ESP + 0x5c],EAX      ; 0047a873
     CMP EAX,ESI                         ; 0047a877
-    JLE 0x0047a9b2                      ; 0047a879 | LAB_0047a9b2
-        ;   XREF to: 0047a9b2 (CONDITIONAL_JUMP)
+    JLE 0x0047a9b2                      ; 0047a879
+        ;   XREF to: 0047a9b2 (CONDITIONAL_JUMP)  ; LAB_0047a9b2
     MOV EDX,dword ptr [ESP + 0x5c]      ; 0047a87f
         ;   Label: LAB_0047a87f
     MOV EBP,dword ptr [ESP + 0x58]      ; 0047a883
     CMP EBP,EDX                         ; 0047a887
-    JGE 0x0047a99d                      ; 0047a889 | LAB_0047a99d
-        ;   XREF to: 0047a99d (CONDITIONAL_JUMP)
+    JGE 0x0047a99d                      ; 0047a889
+        ;   XREF to: 0047a99d (CONDITIONAL_JUMP)  ; LAB_0047a99d
     LEA EBX,[EBP*0x4 + 0x0]             ; 0047a88f
     IMUL EAX,EBP,0x48                   ; 0047a896
     MOV dword ptr [ESP + 0x68],EAX      ; 0047a899
@@ -85,8 +85,8 @@ section .text
     MOV EDI,dword ptr [EDI + 0x118]     ; 0047a8ab
     MOV EAX,dword ptr [EDI + EBX*0x1]   ; 0047a8b1
     CMP EAX,EAX                         ; 0047a8b4
-    JLE 0x0047a977                      ; 0047a8b6 | LAB_0047a977
-        ;   XREF to: 0047a977 (CONDITIONAL_JUMP)
+    JLE 0x0047a977                      ; 0047a8b6
+        ;   XREF to: 0047a977 (CONDITIONAL_JUMP)  ; LAB_0047a977
     LEA EAX,[EBP + 0x1]                 ; 0047a8bc
     MOV EDI,dword ptr [ESP + 0x80]      ; 0047a8bf
     MOV dword ptr [ESP + 0x60],EAX      ; 0047a8c6
@@ -106,7 +106,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0047a8f6
     MOV EAX,dword ptr [EDI + 0x10]      ; 0047a8fa
     MOV dword ptr [ESP + 0x10],EAX      ; 0047a8fd
-    PUSH 0x65c9f0                       ; 0047a901 | WatcomTypeInfo g_RA4HQPointTypeInfo
+    PUSH 0x65c9f0                       ; 0047a901 | g_RA4HQPointTypeInfo
     MOV EAX,dword ptr [EDI + 0x14]      ; 0047a906
     PUSH 0x4                            ; 0047a909
     MOV dword ptr [ESP + 0x1c],EAX      ; 0047a90b
@@ -114,8 +114,8 @@ section .text
     PUSH EAX                            ; 0047a912
     LEA EAX,[ESP + 0x24]                ; 0047a913
     PUSH EAX                            ; 0047a917
-    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0047a918 | void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
-        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0047a918
+        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
     ADD ESP,0x10                        ; 0047a91d
     MOV ECX,0x12                        ; 0047a920
     MOV ESI,dword ptr [ESP + 0x48]      ; 0047a925
@@ -134,8 +134,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x80]      ; 0047a954
     MOV EDI,dword ptr [EAX + 0x11c]     ; 0047a95b
     TEST EDI,EDI                        ; 0047a961
-    JZ 0x0047a977                       ; 0047a963 | LAB_0047a977
-        ;   XREF to: 0047a977 (CONDITIONAL_JUMP)
+    JZ 0x0047a977                       ; 0047a963
+        ;   XREF to: 0047a977 (CONDITIONAL_JUMP)  ; LAB_0047a977
     MOV EAX,EDI                         ; 0047a965
     MOV EDI,dword ptr [ESP + 0x60]      ; 0047a967
     MOV DH,byte ptr [EAX + EBP*0x1]     ; 0047a96b
@@ -153,16 +153,16 @@ section .text
     MOV dword ptr [ESP + 0x68],ECX      ; 0047a98d
     MOV dword ptr [ESP + 0x64],ESI      ; 0047a991
     CMP EBP,EDI                         ; 0047a995
-    JL 0x0047a8a4                       ; 0047a997 | LAB_0047a8a4
-        ;   XREF to: 0047a8a4 (CONDITIONAL_JUMP)
+    JL 0x0047a8a4                       ; 0047a997
+        ;   XREF to: 0047a8a4 (CONDITIONAL_JUMP)  ; LAB_0047a8a4
     MOV EDI,dword ptr [ESP + 0x5c]      ; 0047a99d
         ;   Label: LAB_0047a99d
     DEC EDI                             ; 0047a9a1
     MOV EBP,dword ptr [ESP + 0x58]      ; 0047a9a2
     MOV dword ptr [ESP + 0x5c],EDI      ; 0047a9a6
     CMP EDI,EBP                         ; 0047a9aa
-    JG 0x0047a87f                       ; 0047a9ac | LAB_0047a87f
-        ;   XREF to: 0047a87f (CONDITIONAL_JUMP)
+    JG 0x0047a87f                       ; 0047a9ac
+        ;   XREF to: 0047a87f (CONDITIONAL_JUMP)  ; LAB_0047a87f
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0047a9b2
         ;   Label: LAB_0047a9b2
     MOV EDI,dword ptr [ESP + 0x50]      ; 0047a9b6
@@ -175,13 +175,13 @@ section .text
     MOV dword ptr [ESP + 0x50],EDI      ; 0047a9d3
     MOV dword ptr [ESP + 0x54],EBP      ; 0047a9d7
     CMP EBP,ECX                         ; 0047a9db
-    JL 0x0047a85a                       ; 0047a9dd | LAB_0047a85a
-        ;   XREF to: 0047a85a (CONDITIONAL_JUMP)
+    JL 0x0047a85a                       ; 0047a9dd
+        ;   XREF to: 0047a85a (CONDITIONAL_JUMP)  ; LAB_0047a85a
     MOV EBP,dword ptr [ESP + 0x80]      ; 0047a9e3
         ;   Label: LAB_0047a9e3
     PUSH EBP                            ; 0047a9ea
-    CALL core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 ; 0047a9eb | void core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyFramedModel * this_ptr)
-        ;   XREF to: 0047bf40 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 ; 0047a9eb
+        ;   XREF to: 0047bf40 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0047a9f0
     ADD ESP,0x6c                        ; 0047a9f3
     POP EBP                             ; 0047a9f6

@@ -24,7 +24,7 @@
 
 section .text
 
-    MOV EAX,[0x03f9b22c]                ; 0060242c | void * g_CurrentThreadTlsBlock
+    MOV EAX,[0x03f9b22c]                ; 0060242c | g_CurrentThreadTlsBlock
         ;   Label: crt_thread.c_GetTLS_FUN_0060242c
     LEA EAX,[EAX]                       ; 00602431
 

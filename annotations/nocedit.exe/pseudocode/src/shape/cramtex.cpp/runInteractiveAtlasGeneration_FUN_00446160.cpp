@@ -65,12 +65,12 @@ shape_cramtex_cpp_runInteractiveAtlasGeneration_FUN_00446160
   int local_18;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0xdc);
-  pSVar10 = (SCramWorkingEntry *)g_CramAlgorithmState;
+  pSVar10 = g_CramAlgorithmState;
   num = 0;
   iVar25 = 0;
   if (0 < g_CramRectangleCount) {
     pSVar20 = g_CramRectangles;
-    puVar22 = (uint *)g_CramAlgorithmState;
+    puVar22 = g_CramAlgorithmState;
     do {
       pSVar20->active_flag = 0;
       iVar18 = g_CramBestSolutionMetric1;
@@ -119,7 +119,7 @@ LAB_004461b1:
       pSVar20 = pSVar20 + 1;
     } while (iVar25 < g_CramRectangleCount);
   }
-  puVar26 = (byte *)g_CramAlgorithmState;
+  puVar26 = g_CramAlgorithmState;
   if (0 < (int)num) {
     g_CramPlacedTextureCount = g_CramPlacedTextureCount + 1;
     pvVar15 = (void *)((int)g_CramAlgorithmState + num * 4);

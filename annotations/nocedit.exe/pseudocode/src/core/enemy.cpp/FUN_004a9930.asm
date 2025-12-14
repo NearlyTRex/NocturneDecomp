@@ -34,8 +34,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004a993c
     MOV EDX,dword ptr [EAX + 0xbe3c]    ; 004a993f
     TEST EDX,EDX                        ; 004a9945
-    JNZ 0x004a9952                      ; 004a9947 | LAB_004a9952
-        ;   XREF to: 004a9952 (CONDITIONAL_JUMP)
+    JNZ 0x004a9952                      ; 004a9947
+        ;   XREF to: 004a9952 (CONDITIONAL_JUMP)  ; LAB_004a9952
     XOR EAX,EAX                         ; 004a9949
         ;   Label: LAB_004a9949
     MOV ESP,EBP                         ; 004a994b
@@ -65,24 +65,24 @@ section .text
     FCOMP double ptr [ESP]              ; 004a9980
     FNSTSW AX                           ; 004a9983
     SAHF                                ; 004a9985
-    JNC 0x004a9949                      ; 004a9986 | LAB_004a9949
-        ;   XREF to: 004a9949 (CONDITIONAL_JUMP)
+    JNC 0x004a9949                      ; 004a9986
+        ;   XREF to: 004a9949 (CONDITIONAL_JUMP)  ; LAB_004a9949
     FLD double ptr [ESP]                ; 004a9988
-    FMUL double ptr [0x0062439a]        ; 004a998b | double DOUBLE_0062439a
-    FMUL double ptr [0x006243a2]        ; 004a9991 | double DOUBLE_006243a2
+    FMUL double ptr [0x0062439a]        ; 004a998b | DOUBLE_0062439a
+    FMUL double ptr [0x006243a2]        ; 004a9991 | DOUBLE_006243a2
     PUSH 0x0                            ; 004a9997
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004a9999 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004a9999
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x18]        ; 004a999e
     MOV EDI,dword ptr [ESP + 0x18]      ; 004a99a2
     PUSH EDI                            ; 004a99a6
     PUSH 0x0                            ; 004a99a7
     LEA EAX,[ESP + 0x14]                ; 004a99a9
     PUSH EAX                            ; 004a99ad
-    MOV EAX,[0x0067b9a0]                ; 004a99ae | CGore g_CGoreInstance | CGore * g_CGorePtr
-    PUSH EAX                            ; 004a99b3 | CGore g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edbb0     ; 004a99b4 | undefined core_gore.cpp_FUN_004edbb0()
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)
+    MOV EAX,[0x0067b9a0]                ; 004a99ae | g_CGorePtr | g_CGoreInstance
+    PUSH EAX                            ; 004a99b3 | g_CGoreInstance
+    CALL core_gore.cpp_FUN_004edbb0     ; 004a99b4
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
     MOV EAX,0x1                         ; 004a99b9
     ADD ESP,0x14                        ; 004a99be
     MOV ESP,EBP                         ; 004a99c1

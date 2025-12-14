@@ -1,132 +1,132 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 53, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 2, 
-    "global_count": 6, 
-    "total_lines": 106, 
-    "assembly_lines": 78, 
-    "suspect_count": 2, 
+    "assembly_lines": 78,
+    "complexity_score": 53,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 6,
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "CloseHandle", 
-      "addr": "EXTERNAL:0000004c"
-    }, 
-    {
-      "name": "crt_errno.c_setErrno_FUN_00602790", 
-      "addr": "00602790"
-    }, 
-    {
-      "name": "crt_io.c_setFileDescriptorFlags_FUN_00608908", 
-      "addr": "00608908"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CloseHandle*", 
-      "name": "CloseHandle", 
-      "addr": "00611504", 
-      "value": "00211c38"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_MaxHandleCount", 
-      "addr": "00685214", 
-      "value": "0x14"
-    }, 
-    {
-      "type": "SIOControlBlock*", 
-      "name": "g_IOControlBlock", 
-      "addr": "0068526c", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "IS_SPECIAL_DEVICE_FUNC*", 
-      "name": "g_IsSpecialDeviceFuncPtr", 
-      "addr": "00685284", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "SPECIAL_DEVICE_CLEANUP_FUNC*", 
-      "name": "g_SpecialDeviceCleanupFunc", 
-      "addr": "00685288", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "SPECIAL_DEVICE_CLOSE_FUNC*", 
-      "name": "g_SpecialDeviceCloseFunc", 
-      "addr": "00685290", 
-      "value": "00000000"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "HANDLE in_stack_00000010;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "BVar2 = (*CloseHandle)(in_stack_00000010);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00609bd0", 
-    "signature": "int crt_io.c_close_FUN_00609bd0(int fd)", 
-    "address_range": [
-      [
-        "00609bd0", 
-        "00609c73"
-      ]
-    ], 
-    "name": "crt_io.c_close_FUN_00609bd0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "fd"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 106
+  },
   "cross_references": [
     {
-      "from_addr": "0060c30f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_close_handle_safe_FUN_0060c2e0", 
-      "addr": "0060c2e0"
-    }, 
+      "addr": "0060c2e0",
+      "from_addr": "0060c30f",
+      "name": "crt_io.c_close_handle_safe_FUN_0060c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060203e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fclose_force_FUN_00601fd0", 
-      "addr": "00601fd0"
+      "addr": "00601fd0",
+      "from_addr": "0060203e",
+      "name": "crt_stdio.c_fclose_force_FUN_00601fd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00609bd0",
+    "address_range": [
+      [
+        "00609bd0",
+        "00609c73"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_close_FUN_00609bd0",
+    "signature": "int crt_io.c_close_FUN_00609bd0(int fd)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000004c",
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "00602790",
+      "name": "crt_errno.c_setErrno_FUN_00602790"
+    },
+    {
+      "addr": "00608908",
+      "name": "crt_io.c_setFileDescriptorFlags_FUN_00608908"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611504",
+      "name": "CloseHandle",
+      "type": "CloseHandle*",
+      "value": "00211c38"
+    },
+    {
+      "addr": "00685214",
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
+    },
+    {
+      "addr": "0068526c",
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
+    },
+    {
+      "addr": "00685284",
+      "name": "g_IsSpecialDeviceFuncPtr",
+      "type": "IS_SPECIAL_DEVICE_FUNC*",
+      "value": "00000000"
+    },
+    {
+      "addr": "00685288",
+      "name": "g_SpecialDeviceCleanupFunc",
+      "type": "SPECIAL_DEVICE_CLEANUP_FUNC*",
+      "value": "00000000"
+    },
+    {
+      "addr": "00685290",
+      "name": "g_SpecialDeviceCloseFunc",
+      "type": "SPECIAL_DEVICE_CLOSE_FUNC*",
+      "value": "00000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "fd",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000010",
+      "text": "HANDLE in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "BVar2 = (*CloseHandle)(in_stack_00000010);",
+      "type": "stack_param"
     }
   ]
 }

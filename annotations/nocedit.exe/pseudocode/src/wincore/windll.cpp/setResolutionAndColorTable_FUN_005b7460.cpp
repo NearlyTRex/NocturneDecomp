@@ -44,20 +44,16 @@ wincore_windll_cpp_setResolutionAndColorTable_FUN_005b7460(int width,int height,
   wincore_windll_cpp_lockFrame_FUN_005b7210();
   pvVar3 = g_ScreenBufferArray[0];
   if (g_BitsPerPixel == 0x10) {
-                    /* WARNING: Load size is inaccurate */
-    uVar1 = *g_ScreenBufferArray[0];
+    uVar1 = *(ushort *)g_ScreenBufferArray[0];
     *(ushort *)g_ScreenBufferArray[0] = 0xabcd;
-                    /* WARNING: Load size is inaccurate */
-    bVar5 = *pvVar3 != -0x5433;
+    bVar5 = *(short *)pvVar3 != -0x5433;
     *(ushort *)pvVar3 = uVar1;
   }
   else {
     if (g_BitsPerPixel != 0x20) goto LAB_005b7536;
-                    /* WARNING: Load size is inaccurate */
-    uVar2 = *g_ScreenBufferArray[0];
+    uVar2 = *(uint *)g_ScreenBufferArray[0];
     *(uint *)g_ScreenBufferArray[0] = 0xaabbccdd;
-                    /* WARNING: Load size is inaccurate */
-    bVar5 = *pvVar3 != -0x55443323;
+    bVar5 = *(int *)pvVar3 != -0x55443323;
     *(uint *)pvVar3 = uVar2;
   }
   g_FrameBufferTestResult = (int)bVar5;

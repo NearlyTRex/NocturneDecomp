@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f87458                   ; 005df830 | CDemonActorType g_CTriggerClassInfo
+    MOV EAX,0x3f87458                   ; 005df830 | g_CTriggerClassInfo
         ;   Label: core_trigger.cpp_CTrigger_getActorType_FUN_005df830
     RET                                 ; 005df835
 

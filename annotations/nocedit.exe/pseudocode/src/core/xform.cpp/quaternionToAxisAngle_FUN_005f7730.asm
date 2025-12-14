@@ -35,12 +35,12 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 005f773d
     MOV EDX,dword ptr [EBP + 0x14]      ; 005f7740
     TEST EBX,EBX                        ; 005f7743
-    JNZ 0x005f777b                      ; 005f7745 | LAB_005f777b
-        ;   XREF to: 005f777b (CONDITIONAL_JUMP)
+    JNZ 0x005f777b                      ; 005f7745
+        ;   XREF to: 005f777b (CONDITIONAL_JUMP)  ; LAB_005f777b
     TEST EDX,EDX                        ; 005f7747
         ;   Label: LAB_005f7747
-    JZ 0x005f7776                       ; 005f7749 | LAB_005f7776
-        ;   XREF to: 005f7776 (CONDITIONAL_JUMP)
+    JZ 0x005f7776                       ; 005f7749
+        ;   XREF to: 005f7776 (CONDITIONAL_JUMP)  ; LAB_005f7776
     FLD float ptr [ECX]                 ; 005f774b
     FMUL ST0                            ; 005f774d
     FLD1                                ; 005f774f
@@ -51,8 +51,8 @@ section .text
     FCOMP double ptr [ESP + 0x8]        ; 005f775b
     FNSTSW AX                           ; 005f775f
     SAHF                                ; 005f7761
-    JC 0x005f77b7                       ; 005f7762 | LAB_005f77b7
-        ;   XREF to: 005f77b7 (CONDITIONAL_JUMP)
+    JC 0x005f77b7                       ; 005f7762
+        ;   XREF to: 005f77b7 (CONDITIONAL_JUMP)  ; LAB_005f77b7
     MOV dword ptr [EDX + 0x8],0x0       ; 005f7764
     MOV EAX,dword ptr [EDX + 0x8]       ; 005f776b
     MOV dword ptr [EDX + 0x4],EAX       ; 005f776e
@@ -66,32 +66,32 @@ section .text
     FLD float ptr [ECX]                 ; 005f777b
         ;   Label: LAB_005f777b
     FST double ptr [ESP]                ; 005f777d
-    FCOMP double ptr [0x006583ed]       ; 005f7780 | double g_QuaternionAxisAngleNegativeOne
+    FCOMP double ptr [0x006583ed]       ; 005f7780 | g_QuaternionAxisAngleNegativeOne
     FNSTSW AX                           ; 005f7786
     SAHF                                ; 005f7788
-    JA 0x005f7793                       ; 005f7789 | LAB_005f7793
-        ;   XREF to: 005f7793 (CONDITIONAL_JUMP)
+    JA 0x005f7793                       ; 005f7789
+        ;   XREF to: 005f7793 (CONDITIONAL_JUMP)  ; LAB_005f7793
     MOV dword ptr [EBX],0x40c90fdb      ; 005f778b
-    JMP 0x005f7747                      ; 005f7791 | LAB_005f7747
-        ;   XREF to: 005f7747 (UNCONDITIONAL_JUMP)
+    JMP 0x005f7747                      ; 005f7791
+        ;   XREF to: 005f7747 (UNCONDITIONAL_JUMP)  ; LAB_005f7747
     FLD1                                ; 005f7793
         ;   Label: LAB_005f7793
     FCOMP double ptr [ESP]              ; 005f7795
     FNSTSW AX                           ; 005f7798
     SAHF                                ; 005f779a
-    JA 0x005f77a5                       ; 005f779b | LAB_005f77a5
-        ;   XREF to: 005f77a5 (CONDITIONAL_JUMP)
+    JA 0x005f77a5                       ; 005f779b
+        ;   XREF to: 005f77a5 (CONDITIONAL_JUMP)  ; LAB_005f77a5
     MOV dword ptr [EBX],0x0             ; 005f779d
-    JMP 0x005f7747                      ; 005f77a3 | LAB_005f7747
-        ;   XREF to: 005f7747 (UNCONDITIONAL_JUMP)
+    JMP 0x005f7747                      ; 005f77a3
+        ;   XREF to: 005f7747 (UNCONDITIONAL_JUMP)  ; LAB_005f7747
     FLD double ptr [ESP]                ; 005f77a5
         ;   Label: LAB_005f77a5
-    CALL crt_math.c_acos_FUN_00600162   ; 005f77a8 | double crt_math.c_acos_FUN_00600162(double x)
-        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)
-    FMUL double ptr [0x006583f5]        ; 005f77ad | double g_QuaternionAxisAngleDoubler
+    CALL crt_math.c_acos_FUN_00600162   ; 005f77a8
+        ;   XREF to: 00600162 (UNCONDITIONAL_CALL)  ; double crt_math.c_acos_FUN_00600162(double x)
+    FMUL double ptr [0x006583f5]        ; 005f77ad | g_QuaternionAxisAngleDoubler
     FSTP float ptr [EBX]                ; 005f77b3
-    JMP 0x005f7747                      ; 005f77b5 | LAB_005f7747
-        ;   XREF to: 005f7747 (UNCONDITIONAL_JUMP)
+    JMP 0x005f7747                      ; 005f77b5
+        ;   XREF to: 005f7747 (UNCONDITIONAL_JUMP)  ; LAB_005f7747
     FLD double ptr [ESP + 0x8]          ; 005f77b7
         ;   Label: LAB_005f77b7
     FSQRT                               ; 005f77bb

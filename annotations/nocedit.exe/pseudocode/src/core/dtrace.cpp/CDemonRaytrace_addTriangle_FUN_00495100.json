@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 99, 
-    "pseudocode_lines": 74, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 292, 
-    "assembly_lines": 218, 
-    "suspect_count": 2, 
+    "assembly_lines": 218,
+    "complexity_score": 99,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 74,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790", 
-      "addr": "0049a790"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_00622a9f", 
-      "addr": "00622a9f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonRaytrace_addTriang_00622ab2", 
-      "addr": "00622ab2", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uchar in_stack_00000018;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->triangle_flags[this_ptr->triangle_count] = in_stack_00000018;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00495100", 
-    "signature": "void core_dtrace.cpp_CDemonRaytrace_addTriangle_FUN_00495100(CDemonRaytrace * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, uchar triangle_flags)", 
-    "address_range": [
-      [
-        "00495100", 
-        "004952ae"
-      ]
-    ], 
-    "name": "core_dtrace.cpp_CDemonRaytrace_addTriangle_FUN_00495100"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRaytrace *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "vertex1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "vertex2"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "vertex3"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "uchar", 
-        "size": 1, 
-        "name": "triangle_flags"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 21, 
-    "param_offset": 4, 
-    "param_size": 17
-  }, 
+    ],
+    "total_lines": 292
+  },
   "cross_references": [
     {
-      "from_addr": "0057934a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80", 
-      "addr": "00578d80"
+      "addr": "00578d80",
+      "from_addr": "0057934a",
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00495100",
+    "address_range": [
+      [
+        "00495100",
+        "004952ae"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_addTriangle_FUN_00495100",
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_addTriangle_FUN_00495100(CDemonRaytrace * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3, uchar triangle_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049a790",
+      "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622a9f",
+      "name": "s_core_dtrace_cpp_00622a9f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622ab2",
+      "name": "s_CDemonRaytrace_addTriang_00622ab2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 21,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 17,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex1",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex2",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex3",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_flags",
+        "offset": 20,
+        "size": 1,
+        "type": "uchar"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000018",
+      "text": "uchar in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000018",
+      "text": "this_ptr->triangle_flags[this_ptr->triangle_count] = in_stack_00000018;",
+      "type": "stack_param"
     }
   ]
 }

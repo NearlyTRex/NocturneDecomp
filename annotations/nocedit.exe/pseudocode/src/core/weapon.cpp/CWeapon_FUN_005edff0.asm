@@ -21,6 +21,6 @@ section .text
         ;   Label: core_weapon.cpp_CWeapon_FUN_005edff0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005edff1
     PUSH EBX                            ; 005edff5
-    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 005edff6 | void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 005edff6
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
 

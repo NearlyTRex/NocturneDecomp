@@ -33,8 +33,8 @@ section .text
     LEA EAX,[EBP + 0x4]                 ; 00586bfc
     LEA EDX,[EBX + 0x104]               ; 00586bff
     CMP EAX,EDX                         ; 00586c05
-    JZ 0x00586c19                       ; 00586c07 | LAB_00586c19
-        ;   XREF to: 00586c19 (CONDITIONAL_JUMP)
+    JZ 0x00586c19                       ; 00586c07
+        ;   XREF to: 00586c19 (CONDITIONAL_JUMP)  ; LAB_00586c19
     MOV ECX,dword ptr [EDX]             ; 00586c09
     MOV dword ptr [EAX],ECX             ; 00586c0b
     MOV ECX,dword ptr [EDX + 0x4]       ; 00586c0d
@@ -46,21 +46,21 @@ section .text
     PUSH EAX                            ; 00586c1f
     LEA EAX,[EBP + 0x10]                ; 00586c20
     PUSH EAX                            ; 00586c23
-    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 00586c24 | void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 00586c24
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBX + 0x11c]     ; 00586c29
     MOV dword ptr [EBP + 0x38],EAX      ; 00586c2f
     FLD float ptr [EBX + 0x120]         ; 00586c32
-    FMUL double ptr [0x0064966b]        ; 00586c38 | double g_AspectScaleConstant
+    FMUL double ptr [0x0064966b]        ; 00586c38 | g_AspectScaleConstant
     ADD ESP,0x8                         ; 00586c3e
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00586c41 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00586c41
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EBP + 0x2fa4]      ; 00586c46
     PUSH dword ptr [EBX + 0x124]        ; 00586c4c
     PUSH EBP                            ; 00586c52
     LEA ESI,[EBX + 0x4]                 ; 00586c53
-    CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0 ; 00586c56 | void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)
-        ;   XREF to: 004765e0 (UNCONDITIONAL_CALL)
+    CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0 ; 00586c56
+        ;   XREF to: 004765e0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)
     ADD ESP,0x8                         ; 00586c5b
     MOV dword ptr [EBX + 0x11e8],0x0    ; 00586c5e
     LEA EDI,[EBP + 0x40]                ; 00586c68
@@ -70,20 +70,20 @@ section .text
         ;   Label: LAB_00586c76
     MOV byte ptr [EDI],AL               ; 00586c78
     CMP AL,0x0                          ; 00586c7a
-    JZ 0x00586c8e                       ; 00586c7c | LAB_00586c8e
-        ;   XREF to: 00586c8e (CONDITIONAL_JUMP)
+    JZ 0x00586c8e                       ; 00586c7c
+        ;   XREF to: 00586c8e (CONDITIONAL_JUMP)  ; LAB_00586c8e
     MOV AL,byte ptr [ESI + 0x1]         ; 00586c7e
     ADD ESI,0x2                         ; 00586c81
     MOV byte ptr [EDI + 0x1],AL         ; 00586c84
     ADD EDI,0x2                         ; 00586c87
     CMP AL,0x0                          ; 00586c8a
-    JNZ 0x00586c76                      ; 00586c8c | LAB_00586c76
-        ;   XREF to: 00586c76 (CONDITIONAL_JUMP)
+    JNZ 0x00586c76                      ; 00586c8c
+        ;   XREF to: 00586c76 (CONDITIONAL_JUMP)  ; LAB_00586c76
     POP EDI                             ; 00586c8e
         ;   Label: LAB_00586c8e
     CMP dword ptr [EBX + 0x17f4],0x0    ; 00586c8f
-    JNZ 0x00586ca1                      ; 00586c96 | LAB_00586ca1
-        ;   XREF to: 00586ca1 (CONDITIONAL_JUMP)
+    JNZ 0x00586ca1                      ; 00586c96
+        ;   XREF to: 00586ca1 (CONDITIONAL_JUMP)  ; LAB_00586ca1
     POP EBP                             ; 00586c98
     POP EDI                             ; 00586c99
     POP ESI                             ; 00586c9a
@@ -91,8 +91,8 @@ section .text
     LEA EAX,[EAX]                       ; 00586c9c
     PUSH EBP                            ; 00586ca1
         ;   Label: LAB_00586ca1
-    CALL core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720 ; 00586ca2 | void core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720(CDemonLight * this_ptr)
-        ;   XREF to: 00474720 (UNCONDITIONAL_CALL)
+    CALL core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720 ; 00586ca2
+        ;   XREF to: 00474720 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 00586ca7
     POP EBP                             ; 00586caa
     POP EDI                             ; 00586cab

@@ -27,8 +27,8 @@ section .text
     LEA EBX,[ECX + EAX*0x1]             ; 004f38e3
     MOV EAX,dword ptr [EBX + 0x24b4]    ; 004f38e6
     TEST EAX,EAX                        ; 004f38ec
-    JNZ 0x004f38f2                      ; 004f38ee | LAB_004f38f2
-        ;   XREF to: 004f38f2 (CONDITIONAL_JUMP)
+    JNZ 0x004f38f2                      ; 004f38ee
+        ;   XREF to: 004f38f2 (CONDITIONAL_JUMP)  ; LAB_004f38f2
     POP EBX                             ; 004f38f0
     RET                                 ; 004f38f1
     PUSH 0x1                            ; 004f38f2
@@ -36,8 +36,8 @@ section .text
     PUSH EAX                            ; 004f38f4
     LEA EAX,[ECX + 0x1f738]             ; 004f38f5
     PUSH EAX                            ; 004f38fb
-    CALL core_inv.cpp_CInventory_addItem_FUN_004fd600 ; 004f38fc | int core_inv.cpp_CInventory_addItem_FUN_004fd600(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
-        ;   XREF to: 004fd600 (UNCONDITIONAL_CALL)
+    CALL core_inv.cpp_CInventory_addItem_FUN_004fd600 ; 004f38fc
+        ;   XREF to: 004fd600 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_addItem_FUN_004fd600(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)
     ADD ESP,0xc                         ; 004f3901
     MOV dword ptr [EBX + 0x24b4],0x0    ; 004f3904
     POP EBX                             ; 004f390e

@@ -1048,11 +1048,12 @@ LAB_0055cd52:
                                                   if (iVar8 == 0) goto joined_r0x0055c026;
                                                   iVar14 = crt_string_c_stricmp_FUN_005fe7f0
                                                                      (local_1f4c,"false");
+                                                  uVar9 = 0;
                                                   if (iVar14 != 0) {
                                                     iVar14 = crt_string_c_stricmp_FUN_005fe7f0
                                                                        (local_1f4c,"true");
                                                     if (iVar14 == 0) {
-                                                      iVar14 = 1;
+                                                      uVar9 = 1;
                                                     }
                                                     else {
                                                       iVar14 = crt_string_c_stricmp_FUN_005fe7f0
@@ -1065,11 +1066,11 @@ LAB_0055cd52:
                                                   "Invalid health bar mode '%s'",local_1f4c);
                                                   return -1;
                                                   }
-                                                  iVar14 = 2;
+                                                  uVar9 = 2;
                                                   }
                                                   }
                                                   if (DAT_0310ec9c == 0) {
-                                                    *(int *)(iVar8 + 0x2444) = iVar14;
+                                                    *(uint *)(iVar8 + 0x2444) = uVar9;
                                                   }
                                                   }
                                                   else {

@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 65, 
-    "assembly_lines": 43, 
-    "suspect_count": 2, 
+    "assembly_lines": 43,
+    "complexity_score": 47,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "support_trisock.cpp_formatIPAddress_FUN_005e17c0", 
-      "addr": "005e17c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_0065652e", 
-      "addr": "0065652e", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "(SNetworkAddr *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "buffer = (SNetworkAddr *)((int)&network_addr->ip_address + 1);"
-    }, 
-    {
-      "line": 18, 
-      "match": "(SNetworkAddr *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "network_addr = (SNetworkAddr *)((int)&network_addr->ip_address + 2);"
-    }
-  ], 
+    ],
+    "total_lines": 65
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005e1a30", 
-    "signature": "void support_trisock.cpp_formatSocketAddress_FUN_005e1a30(char * output_buffer, SNetworkAddr * network_addr)", 
+    "address": "005e1a30",
     "address_range": [
       [
-        "005e1a30", 
+        "005e1a30",
         "005e1a7b"
       ]
-    ], 
-    "name": "support_trisock.cpp_formatSocketAddress_FUN_005e1a30"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_formatSocketAddress_FUN_005e1a30",
+    "signature": "void support_trisock.cpp_formatSocketAddress_FUN_005e1a30(char * output_buffer, SNetworkAddr * network_addr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005e17c0",
+      "name": "support_trisock.cpp_formatIPAddress_FUN_005e17c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065652e",
+      "name": "s_d_0065652e",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }, 
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SNetworkAddr *", 
-        "size": 4, 
-        "name": "network_addr"
+        "is_param": true,
+        "name": "network_addr",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(SNetworkAddr *)((int)",
+      "text": "buffer = (SNetworkAddr *)((int)&network_addr->ip_address + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(SNetworkAddr *)((int)",
+      "text": "network_addr = (SNetworkAddr *)((int)&network_addr->ip_address + 2);",
+      "type": "pointer_cast"
+    }
+  ]
 }

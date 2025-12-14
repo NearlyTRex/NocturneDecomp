@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f6cc18                   ; 005da050 | CDemonActorType g_CBassPlayerClassInfo
+    MOV EAX,0x3f6cc18                   ; 005da050 | g_CBassPlayerClassInfo
         ;   Label: core_tbplayer.cpp_CBassPlayer_getActorType_FUN_005da050
     RET                                 ; 005da055
 

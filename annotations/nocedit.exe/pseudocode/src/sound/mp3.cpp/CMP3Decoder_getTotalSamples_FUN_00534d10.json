@@ -1,54 +1,54 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 40, 
-    "assembly_lines": 27, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
-      "addr": "00534d40"
-    }, 
-    {
-      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0", 
-      "addr": "00534ba0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 27,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00534d10", 
-    "signature": "int sound_mp3.cpp_CMP3Decoder_getTotalSamples_FUN_00534d10(CMP3Decoder * this_ptr)", 
+    "address": "00534d10",
     "address_range": [
       [
-        "00534d10", 
+        "00534d10",
         "00534d3a"
       ]
-    ], 
-    "name": "sound_mp3.cpp_CMP3Decoder_getTotalSamples_FUN_00534d10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_getTotalSamples_FUN_00534d10",
+    "signature": "int sound_mp3.cpp_CMP3Decoder_getTotalSamples_FUN_00534d10(CMP3Decoder * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00534d40",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40"
+    },
+    {
+      "addr": "00534ba0",
+      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMP3Decoder *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

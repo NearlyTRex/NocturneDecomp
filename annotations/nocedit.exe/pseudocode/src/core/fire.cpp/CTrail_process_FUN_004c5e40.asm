@@ -24,9 +24,9 @@ section .text
     FCOMPP                              ; 004c5e49
     FNSTSW AX                           ; 004c5e4b
     SAHF                                ; 004c5e4d
-    JNC 0x004c5e76                      ; 004c5e4e | LAB_004c5e76
-        ;   XREF to: 004c5e76 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x0067b654]      ; 004c5e50 | CGame * g_CGamePtr
+    JNC 0x004c5e76                      ; 004c5e4e
+        ;   XREF to: 004c5e76 (CONDITIONAL_JUMP)  ; LAB_004c5e76
+    MOV ECX,dword ptr [0x0067b654]      ; 004c5e50 | g_CGamePtr
     LEA EAX,[EDX + 0x10]                ; 004c5e56
     FLD float ptr [ECX + 0x264]         ; 004c5e59 | g_CGameInstance.delta_time_float
     FSUBR float ptr [EAX]               ; 004c5e5f
@@ -36,8 +36,8 @@ section .text
     FCOMPP                              ; 004c5e68
     FNSTSW AX                           ; 004c5e6a
     SAHF                                ; 004c5e6c
-    JBE 0x004c5e77                      ; 004c5e6d | LAB_004c5e77
-        ;   XREF to: 004c5e77 (CONDITIONAL_JUMP)
+    JBE 0x004c5e77                      ; 004c5e6d
+        ;   XREF to: 004c5e77 (CONDITIONAL_JUMP)  ; LAB_004c5e77
     MOV dword ptr [EDX + 0x10],0x0      ; 004c5e6f
     RET                                 ; 004c5e76
         ;   Label: LAB_004c5e76

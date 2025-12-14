@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 31, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "streambuf_vtable", 
-      "name": "g_StreambufVTable", 
-      "addr": "00665f70", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060b7c2", 
-    "signature": "streambuf * crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2(streambuf * this_ptr)", 
-    "address_range": [
-      [
-        "0060b7c2", 
-        "0060b814"
-      ]
-    ], 
-    "name": "crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "streambuf *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 16,
+    "complexity_score": 15,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
   "cross_references": [
     {
-      "from_addr": "0060bde2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fstream.cpp_filebuf_ctor_FUN_0060bddd", 
-      "addr": "0060bddd"
-    }, 
+      "addr": "0060bddd",
+      "from_addr": "0060bde2",
+      "name": "crt_fstream.cpp_filebuf_ctor_FUN_0060bddd",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060610f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_strstream.cpp_strstreambase_constructor_FUN_006060fe", 
-      "addr": "006060fe"
-    }, 
+      "addr": "006060fe",
+      "from_addr": "0060610f",
+      "name": "crt_strstream.cpp_strstreambase_constructor_FUN_006060fe",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060bbfe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_strstream.cpp_strstreambuf_ctor_FUN_0060bbf8", 
-      "addr": "0060bbf8"
+      "addr": "0060bbf8",
+      "from_addr": "0060bbfe",
+      "name": "crt_strstream.cpp_strstreambuf_ctor_FUN_0060bbf8",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060b7c2",
+    "address_range": [
+      [
+        "0060b7c2",
+        "0060b814"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2",
+    "signature": "streambuf * crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2(streambuf * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00665f70",
+      "name": "g_StreambufVTable",
+      "type": "streambuf_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "streambuf *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -10,10 +10,12 @@ int __cdecl core_ammo_cpp_CAmmo_canPickup_FUN_004111c0(CAmmo *this_ptr,CDemonAct
 
 {
   int iVar1;
+  int iVar2;
   
   iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(picker,"CHero");
+  iVar2 = 0;
   if (iVar1 != 0) {
-    iVar1 = 2;
+    iVar2 = 2;
   }
-  return iVar1;
+  return iVar2;
 }

@@ -1,174 +1,174 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 66, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 11, 
-    "global_count": 0, 
-    "total_lines": 50, 
-    "assembly_lines": 34, 
-    "suspect_count": 4, 
+    "assembly_lines": 34,
+    "complexity_score": 66,
+    "cross_reference_count": 11,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0", 
-      "addr": "004778d0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980", 
-      "addr": "00477980"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CKeyFramedModelInstance *unaff_EDI;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,render_flags,in_stack_00000014,unaff_EDI);"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(this_ptr,render_flags,in_stack_00000014,unaff_EDI);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00477850", 
-    "signature": "void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)", 
-    "address_range": [
-      [
-        "00477850", 
-        "0047788e"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CKeyFramedModelInstance *", 
-        "size": 4, 
-        "name": "instance"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "frame_index"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_flags"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "00443f18", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_FUN_00443bc0", 
-      "addr": "00443bc0"
-    }, 
+      "addr": "00443bc0",
+      "from_addr": "00443f18",
+      "name": "core_course.cpp_FUN_00443bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00478d49", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
-      "addr": "00478d20"
-    }, 
+      "addr": "00478d20",
+      "from_addr": "00478d49",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047cddb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
-      "addr": "0047cbc0"
-    }, 
+      "addr": "0047cbc0",
+      "from_addr": "0047cddb",
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c23ed", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CBulletTrail_render_FUN_004c21f0", 
-      "addr": "004c21f0"
-    }, 
+      "addr": "004c21f0",
+      "from_addr": "004c23ed",
+      "name": "core_fire.cpp_CBulletTrail_render_FUN_004c21f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c192b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CRock_render_FUN_004c1870", 
-      "addr": "004c1870"
-    }, 
+      "addr": "004c1870",
+      "from_addr": "004c192b",
+      "name": "core_fire.cpp_CRock_render_FUN_004c1870",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c62dd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CShell_render_FUN_004c6200", 
-      "addr": "004c6200"
-    }, 
+      "addr": "004c6200",
+      "from_addr": "004c62dd",
+      "name": "core_fire.cpp_CShell_render_FUN_004c6200",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00504580", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
-      "addr": "00504160"
-    }, 
+      "addr": "00504160",
+      "from_addr": "00504580",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052a3c2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0", 
-      "addr": "0052a2c0"
-    }, 
+      "addr": "0052a2c0",
+      "from_addr": "0052a3c2",
+      "name": "core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00529fbf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0", 
-      "addr": "00529ed0"
-    }, 
+      "addr": "00529ed0",
+      "from_addr": "00529fbf",
+      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056a29f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190", 
-      "addr": "0056a190"
-    }, 
+      "addr": "0056a190",
+      "from_addr": "0056a29f",
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0059795b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
+      "addr": "005968b0",
+      "from_addr": "0059795b",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00477850",
+    "address_range": [
+      [
+        "00477850",
+        "0047788e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850",
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "004778d0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0"
+    },
+    {
+      "addr": "00477980",
+      "name": "core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "instance",
+        "offset": 8,
+        "size": 4,
+        "type": "CKeyFramedModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "frame_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "text": "CKeyFramedModelInstance *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000014",
+      "text": "(this_ptr,render_flags,in_stack_00000014,unaff_EDI);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EDI",
+      "text": "(this_ptr,render_flags,in_stack_00000014,unaff_EDI);",
+      "type": "unaffected_reg"
     }
   ]
 }

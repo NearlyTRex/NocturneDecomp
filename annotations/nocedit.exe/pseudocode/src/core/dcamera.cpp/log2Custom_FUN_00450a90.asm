@@ -19,7 +19,7 @@ section .text
     FLDLG2                              ; 00450a97
     FXCH                                ; 00450a99
     FYL2X                               ; 00450a9b
-    FMUL double ptr [0x0061a2ba]        ; 00450a9d | double g_Log2CustomMultiplier
+    FMUL double ptr [0x0061a2ba]        ; 00450a9d | g_Log2CustomMultiplier
     FSTP double ptr [ESP]               ; 00450aa3
     MOV EAX,dword ptr [ESP]             ; 00450aa6
     MOV EDX,dword ptr [ESP + 0x4]       ; 00450aa9

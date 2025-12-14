@@ -107,7 +107,7 @@ engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *ver
               pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
               iVar15 = iVar15 + -8;
             }
-            if (iVar15 != 0 && SCARRY4(iVar15 + -8,8) == iVar15 < 0) {
+            if (iVar15 != 0 && -9 < iVar15 + -8) {
               (pSVar19->projected_vertex).transformed_x = (pSVar17->projected_vertex).transformed_x;
               if (4 < iVar15) {
                 *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =
@@ -138,11 +138,11 @@ engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *ver
           bVar21 = iVar8 == 0;
         }
         else {
-          iVar8 = vertex_count + -2;
+          local_20 = vertex_count + -2;
           iVar15 = 0;
+          iVar8 = local_20 * 4;
           iVar16 = 0;
-          local_20 = iVar8;
-          if (0 < iVar8 * 4) {
+          if (0 < iVar8) {
             do {
               iVar9 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
                                 (g_ClipperCullingPointers[0],
@@ -152,7 +152,7 @@ engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *ver
                 iVar16 = iVar16 + 1;
               }
               iVar15 = iVar15 + 4;
-            } while (SBORROW /* signed borrow */4(iVar15,iVar8 * 4) != iVar15 + iVar8 * -4 < 0);
+            } while (iVar15 < iVar8);
           }
           bVar21 = iVar16 == local_20;
         }
@@ -408,7 +408,7 @@ engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *ver
                   pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
                   iVar16 = iVar16 + -8;
                 }
-                if (iVar16 != 0 && SCARRY4(iVar16 + -8,8) == iVar16 < 0) {
+                if (iVar16 != 0 && -9 < iVar16 + -8) {
                   (pSVar19->projected_vertex).transformed_x = (int)*plVar18;
                   if (4 < iVar16) {
                     *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =
@@ -448,7 +448,7 @@ engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *ver
                     plVar20 = plVar20 + 1;
                     iVar8 = iVar8 + -8;
                   }
-                  if (iVar8 != 0 && SCARRY4(iVar8 + -8,8) == iVar8 < 0) {
+                  if (iVar8 != 0 && -9 < iVar8 + -8) {
                     *(int *)plVar20 = (int)*plVar18;
                     if (4 < iVar8) {
                       *(uint *)((int)plVar20 + (uint)bVar22 * -8 + 4) =
@@ -484,7 +484,7 @@ engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *ver
                         pSVar17 = (SRenderVertex *)&(pSVar17->projected_vertex).transformed_z;
                         iVar8 = iVar8 + -8;
                       }
-                      if (iVar8 != 0 && SCARRY4(iVar8 + -8,8) == iVar8 < 0) {
+                      if (iVar8 != 0 && -9 < iVar8 + -8) {
                         (pSVar17->projected_vertex).transformed_x =
                              (pSVar19->projected_vertex).transformed_x;
                         if (4 < iVar8) {
@@ -515,7 +515,7 @@ engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *ver
                         pSVar17 = (SRenderVertex *)&(pSVar17->projected_vertex).transformed_z;
                         iVar8 = iVar8 + -8;
                       }
-                      if (iVar8 != 0 && SCARRY4(iVar8 + -8,8) == iVar8 < 0) {
+                      if (iVar8 != 0 && -9 < iVar8 + -8) {
                         (pSVar17->projected_vertex).transformed_x =
                              (pSVar19->projected_vertex).transformed_x;
                         if (4 < iVar8) {

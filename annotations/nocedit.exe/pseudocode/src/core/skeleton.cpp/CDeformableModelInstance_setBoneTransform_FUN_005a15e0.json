@@ -1,134 +1,134 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 101, 
-    "pseudocode_lines": 66, 
-    "cross_reference_count": 4, 
-    "global_count": 0, 
-    "total_lines": 144, 
-    "assembly_lines": 78, 
-    "suspect_count": 3, 
+    "assembly_lines": 78,
+    "complexity_score": 101,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 66,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
-      "addr": "005a0820"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 42, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar11 = (uint *)((int)pSVar7 + (uint)bVar14 * -8 + 0x6b4);"
-    }, 
-    {
-      "line": 43, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar8 = (uint *)((int)local_10 + (uint)bVar14 * -8 + 0x10);"
-    }, 
-    {
-      "line": 57, 
-      "match": "(CMatrix3x4f *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar14 * -8 + 4);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a15e0", 
-    "signature": "void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)", 
-    "address_range": [
-      [
-        "005a15e0", 
-        "005a16bc"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SBoneTransformData *", 
-        "size": 4, 
-        "name": "bone_transform"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 144
+  },
   "cross_references": [
     {
-      "from_addr": "0042b0bd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042af60", 
-      "addr": "0042af60"
-    }, 
+      "addr": "0042af60",
+      "from_addr": "0042b0bd",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042af60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d7035", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d6f80", 
-      "addr": "004d6f80"
-    }, 
+      "addr": "004d6f80",
+      "from_addr": "004d7035",
+      "name": "core_gabriela.cpp_FUN_004d6f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005972fc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
-    }, 
+      "addr": "005968b0",
+      "from_addr": "005972fc",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bf7ed", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005bf720", 
-      "addr": "005bf720"
+      "addr": "005bf720",
+      "from_addr": "005bf7ed",
+      "name": "core_stranger.cpp_CStranger_FUN_005bf720",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a15e0",
+    "address_range": [
+      [
+        "005a15e0",
+        "005a16bc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0",
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance * this_ptr, SBoneTransformData * bone_transform)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a0820",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_transform",
+        "offset": 8,
+        "size": 4,
+        "type": "SBoneTransformData *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)",
+      "text": "puVar11 = (uint *)((int)pSVar7 + (uint)bVar14 * -8 + 0x6b4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(uint *)((int)",
+      "text": "puVar8 = (uint *)((int)local_10 + (uint)bVar14 * -8 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar14 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

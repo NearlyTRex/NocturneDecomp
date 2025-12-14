@@ -1,58 +1,58 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 25, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0", 
-      "addr": "004942d0"
-    }, 
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_freeNewCubeList_FUN_00494400", 
-      "addr": "00494400"
-    }, 
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690", 
-      "addr": "00494690"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 18,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00494240", 
-    "signature": "CDemonRaytrace * core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240(CDemonRaytrace * this_ptr)", 
+    "address": "00494240",
     "address_range": [
       [
-        "00494240", 
+        "00494240",
         "00494263"
       ]
-    ], 
-    "name": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240",
+    "signature": "CDemonRaytrace * core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240(CDemonRaytrace * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004942d0",
+      "name": "core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0"
+    },
+    {
+      "addr": "00494400",
+      "name": "core_dtrace.cpp_CDemonRaytrace_freeNewCubeList_FUN_00494400"
+    },
+    {
+      "addr": "00494690",
+      "name": "core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRaytrace *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

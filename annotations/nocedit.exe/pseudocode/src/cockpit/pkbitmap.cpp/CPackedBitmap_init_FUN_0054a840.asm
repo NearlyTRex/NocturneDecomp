@@ -28,14 +28,14 @@ section .text
     PUSH EBP                            ; 0054a843
     MOV EBX,dword ptr [ESP + 0x14]      ; 0054a844
     PUSH EBX                            ; 0054a848
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0 ; 0054a849 | void cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0(CPackedBitmap * this_ptr)
-        ;   XREF to: 0054a8b0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0 ; 0054a849
+        ;   XREF to: 0054a8b0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 0054a84e
     PUSH 0x14                           ; 0054a851
     PUSH 0x0                            ; 0054a853
     PUSH EBX                            ; 0054a855
-    CALL crt_memory.c_memset_FUN_005fde40 ; 0054a856 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 0054a856
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0054a85b
     MOV EDX,dword ptr [ESP + 0x28]      ; 0054a85e
     PUSH EDX                            ; 0054a862
@@ -48,8 +48,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x28]      ; 0054a872
     PUSH EBP                            ; 0054a876
     PUSH EBX                            ; 0054a877
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000 ; 0054a878 | void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
-        ;   XREF to: 0054b000 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000 ; 0054a878
+        ;   XREF to: 0054b000 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000(CPackedBitmap * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x18                        ; 0054a87d
     MOV EAX,EBX                         ; 0054a880
     POP EBP                             ; 0054a882

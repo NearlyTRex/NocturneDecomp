@@ -35,11 +35,11 @@ section .text
     MOV AL,byte ptr [EAX]               ; 005e17d6
     AND EAX,0xff                        ; 005e17d8
     PUSH EAX                            ; 005e17dd
-    PUSH 0x6564dc                       ; 005e17de | = "%d.%d.%d.%d" | s_d_d_d_d_006564dc = %d.%d.%d.%d
+    PUSH 0x6564dc                       ; 005e17de | = "%d.%d.%d.%d"
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005e17e3
     PUSH EDX                            ; 005e17e7
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005e17e8 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005e17e8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 005e17ed
     RET                                 ; 005e17f0
 

@@ -1,61 +1,61 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 32, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 11, 
-    "assembly_lines": 4, 
-    "suspect_count": 2, 
+    "assembly_lines": 4,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x290) = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004caa70", 
-    "signature": "undefined core_flame.cpp_FUN_004caa70()", 
-    "address_range": [
-      [
-        "004caa70", 
-        "004caa7e"
-      ]
-    ], 
-    "name": "core_flame.cpp_FUN_004caa70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 11
+  },
   "cross_references": [
     {
-      "from_addr": "00448de0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_crossbow.cpp_CCrossbow_process_FUN_00448d30", 
-      "addr": "00448d30"
+      "addr": "00448d30",
+      "from_addr": "00448de0",
+      "name": "core_crossbow.cpp_CCrossbow_process_FUN_00448d30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004caa70",
+    "address_range": [
+      [
+        "004caa70",
+        "004caa7e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flame.cpp_FUN_004caa70",
+    "signature": "undefined core_flame.cpp_FUN_004caa70()"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x290) = 0;",
+      "type": "stack_param"
     }
   ]
 }

@@ -21,8 +21,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0052dcf0
         ;   Label: core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
     PUSH EDX                            ; 0052dcf4
-    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 0052dcf5 | SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController * this_ptr)
-        ;   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 0052dcf5
+        ;   XREF to: 0052dab0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController * this_ptr)
     MOV EAX,dword ptr [EAX + 0x24]      ; 0052dcfa
     ADD EAX,EAX                         ; 0052dcfd
     MOV EDX,EAX                         ; 0052dcff

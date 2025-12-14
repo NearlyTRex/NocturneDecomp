@@ -30,47 +30,47 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 004c8f55
     PUSH dword ptr [ESP + 0x14]         ; 004c8f59
     PUSH EDX                            ; 004c8f5d
-    MOV EDX,dword ptr [0x02d715b8]      ; 004c8f5e | CGunFlame * g_GunFlameActiveListHead
+    MOV EDX,dword ptr [0x02d715b8]      ; 004c8f5e | g_GunFlameActiveListHead
     LEA EAX,[EDX*0x4 + 0x0]             ; 004c8f64
     SUB EAX,EDX                         ; 004c8f6b
     SHL EAX,0x2                         ; 004c8f6d
     SUB EAX,EDX                         ; 004c8f70
     SHL EAX,0x2                         ; 004c8f72
-    ADD EAX,0x2d715bc                   ; 004c8f75 | CLightningBolt[10] g_LightningBoltPool
+    ADD EAX,0x2d715bc                   ; 004c8f75 | g_LightningBoltPool
     PUSH EAX                            ; 004c8f7a
-    CALL core_fire.cpp_CLightningBolt_FUN_004c5640 ; 004c8f7b | void core_fire.cpp_CLightningBolt_FUN_004c5640(CLightningBolt * this_ptr)
-        ;   XREF to: 004c5640 (UNCONDITIONAL_CALL)
-    MOV ECX,dword ptr [0x02d715b8]      ; 004c8f80 | CGunFlame * g_GunFlameActiveListHead
+    CALL core_fire.cpp_CLightningBolt_FUN_004c5640 ; 004c8f7b
+        ;   XREF to: 004c5640 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_FUN_004c5640(CLightningBolt * this_ptr)
+    MOV ECX,dword ptr [0x02d715b8]      ; 004c8f80 | g_GunFlameActiveListHead
     INC ECX                             ; 004c8f86
     ADD ESP,0x10                        ; 004c8f87
-    MOV dword ptr [0x02d715b8],ECX      ; 004c8f8a | CGunFlame * g_GunFlameActiveListHead
+    MOV dword ptr [0x02d715b8],ECX      ; 004c8f8a | g_GunFlameActiveListHead
     CMP ECX,0xa                         ; 004c8f90
-    JGE 0x004c8f9e                      ; 004c8f93 | LAB_004c8f9e
-        ;   XREF to: 004c8f9e (CONDITIONAL_JUMP)
+    JGE 0x004c8f9e                      ; 004c8f93
+        ;   XREF to: 004c8f9e (CONDITIONAL_JUMP)  ; LAB_004c8f9e
     CMP dword ptr [ESP + 0x14],0x0      ; 004c8f95
-    JNZ 0x004c8fb1                      ; 004c8f9a | LAB_004c8fb1
-        ;   XREF to: 004c8fb1 (CONDITIONAL_JUMP)
+    JNZ 0x004c8fb1                      ; 004c8f9a
+        ;   XREF to: 004c8fb1 (CONDITIONAL_JUMP)  ; LAB_004c8fb1
     POP EBP                             ; 004c8f9c
     RET                                 ; 004c8f9d
     PUSH ESI                            ; 004c8f9e
         ;   Label: LAB_004c8f9e
     XOR ESI,ESI                         ; 004c8f9f
-    MOV dword ptr [0x02d715b8],ESI      ; 004c8fa1 | CGunFlame * g_GunFlameActiveListHead
+    MOV dword ptr [0x02d715b8],ESI      ; 004c8fa1 | g_GunFlameActiveListHead
     POP ESI                             ; 004c8fa7
     CMP dword ptr [ESP + 0x14],0x0      ; 004c8fa8
-    JNZ 0x004c8fb1                      ; 004c8fad | LAB_004c8fb1
-        ;   XREF to: 004c8fb1 (CONDITIONAL_JUMP)
+    JNZ 0x004c8fb1                      ; 004c8fad
+        ;   XREF to: 004c8fb1 (CONDITIONAL_JUMP)  ; LAB_004c8fb1
     POP EBP                             ; 004c8faf
     RET                                 ; 004c8fb0
     PUSH 0x3f800000                     ; 004c8fb1
         ;   Label: LAB_004c8fb1
     PUSH 0x0                            ; 004c8fb6
     PUSH 0x0                            ; 004c8fb8
-    MOV EBP,dword ptr [0x006810c8]      ; 004c8fba | CDemonSet * g_CDemonSetPtr
+    MOV EBP,dword ptr [0x006810c8]      ; 004c8fba | g_CDemonSetPtr
     PUSH 0x42c80000                     ; 004c8fc0
-    PUSH EBP                            ; 004c8fc5 | CDemonSet g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_FUN_00570fa0 ; 004c8fc6 | void core_set.cpp_CDemonSet_FUN_00570fa0(CDemonSet * this_ptr)
-        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)
+    PUSH EBP                            ; 004c8fc5 | g_CDemonSetInstance
+    CALL core_set.cpp_CDemonSet_FUN_00570fa0 ; 004c8fc6
+        ;   XREF to: 00570fa0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570fa0(CDemonSet * this_ptr)
     ADD ESP,0x14                        ; 004c8fcb
     POP EBP                             ; 004c8fce
     RET                                 ; 004c8fcf

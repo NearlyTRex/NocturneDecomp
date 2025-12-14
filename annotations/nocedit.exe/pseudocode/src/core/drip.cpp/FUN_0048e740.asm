@@ -37,8 +37,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x2d4]     ; 0048e763
     LEA EBP,[EBX + 0x14]                ; 0048e769
     CMP EDX,0x2                         ; 0048e76c
-    JZ 0x0048e7cf                       ; 0048e76f | LAB_0048e7cf
-        ;   XREF to: 0048e7cf (CONDITIONAL_JUMP)
+    JZ 0x0048e7cf                       ; 0048e76f
+        ;   XREF to: 0048e7cf (CONDITIONAL_JUMP)  ; LAB_0048e7cf
     MOV ECX,0xbf000000                  ; 0048e771
     XOR EAX,EAX                         ; 0048e776
     MOV dword ptr [ESP + 0x8],ECX       ; 0048e778
@@ -73,8 +73,8 @@ section .text
     ADD EAX,0x158                       ; 0048e7cf
         ;   Label: LAB_0048e7cf
     PUSH EAX                            ; 0048e7d4
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0048e7d5 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0048e7d5
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EAX + 0x5690]    ; 0048e7da
     MOV EDX,dword ptr [EAX]             ; 0048e7e0
     MOV dword ptr [EBX],EDX             ; 0048e7e2

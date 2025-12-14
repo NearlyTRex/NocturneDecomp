@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 39, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 68, 
-    "assembly_lines": 44, 
-    "suspect_count": 1, 
+    "assembly_lines": 44,
+    "complexity_score": 39,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_RedBitPosition", 
-      "addr": "02d01f24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitPosition", 
-      "addr": "02d01f30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitPosition", 
-      "addr": "02d01f3c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 18, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +"
-    }
-  ], 
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004538c0", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(CDemonCamera * this_ptr, SRenderVertex * vertex)", 
+    "address": "004538c0",
     "address_range": [
       [
-        "004538c0", 
+        "004538c0",
         "00453944"
       ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0",
+    "signature": "void core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0(CDemonCamera * this_ptr, SRenderVertex * vertex)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SRenderVertex *", 
-        "size": 4, 
-        "name": "vertex"
+        "is_param": true,
+        "name": "vertex",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderVertex *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)",
+      "text": "uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +",
+      "type": "pointer_cast"
+    }
+  ]
 }

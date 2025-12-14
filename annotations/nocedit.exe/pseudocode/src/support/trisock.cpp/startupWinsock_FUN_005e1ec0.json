@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 17, 
-    "assembly_lines": 9, 
-    "suspect_count": 2, 
+    "assembly_lines": 9,
+    "complexity_score": 38,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_wsock32.c_WSAStartup", 
-      "addr": "00610eda"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005e1ec0", 
-    "signature": "int support_trisock.cpp_startupWinsock_FUN_005e1ec0(void)", 
-    "address_range": [
-      [
-        "005e1ec0", 
-        "005e1ed9"
-      ]
-    ], 
-    "name": "support_trisock.cpp_startupWinsock_FUN_005e1ec0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 17
+  },
   "cross_references": [
     {
-      "from_addr": "0053f7b0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_CNetGame_FUN_0053f780", 
-      "addr": "0053f780"
+      "addr": "0053f780",
+      "from_addr": "0053f7b0",
+      "name": "core_netgame.cpp_CNetGame_FUN_0053f780",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e1ec0",
+    "address_range": [
+      [
+        "005e1ec0",
+        "005e1ed9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_startupWinsock_FUN_005e1ec0",
+    "signature": "int support_trisock.cpp_startupWinsock_FUN_005e1ec0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610eda",
+      "name": "crt_wsock32.c_WSAStartup"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

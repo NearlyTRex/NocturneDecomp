@@ -1,135 +1,135 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 28, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 3, 
-    "global_count": 9, 
-    "total_lines": 100, 
-    "assembly_lines": 72, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623726", 
-      "addr": "00623726", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CStrList_allocate_Can_t__0062373c", 
-      "addr": "0062373c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623764", 
-      "addr": "00623764", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CStrList_allocate_invali_0062377a", 
-      "addr": "0062377a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_006237a1", 
-      "addr": "006237a1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_006237b7", 
-      "addr": "006237b7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CStrList_insert_out_of_m_006237cd", 
-      "addr": "006237cd", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a2cc0", 
-    "signature": "void shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0(CStrList * this_ptr, int new_capacity)", 
-    "address_range": [
-      [
-        "004a2cc0", 
-        "004a2d76"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "new_capacity"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 72,
+    "complexity_score": 27,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 9,
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 99
+  },
   "cross_references": [
     {
-      "from_addr": "004a2ae5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0", 
-      "addr": "004a2ac0"
-    }, 
+      "addr": "004a2ac0",
+      "from_addr": "004a2ae5",
+      "name": "shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a2d94", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_insertRange_FUN_004a2d80", 
-      "addr": "004a2d80"
-    }, 
+      "addr": "004a2d80",
+      "from_addr": "004a2d94",
+      "name": "shape_edittool.cpp_CStrList_insertRange_FUN_004a2d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a2c08", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_insert_FUN_004a2bc0", 
-      "addr": "004a2bc0"
+      "addr": "004a2bc0",
+      "from_addr": "004a2c08",
+      "name": "shape_edittool.cpp_CStrList_insert_FUN_004a2bc0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a2cc0",
+    "address_range": [
+      [
+        "004a2cc0",
+        "004a2d76"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0",
+    "signature": "void shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0(CStrList * this_ptr, int new_capacity)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623726",
+      "name": "s_shape_edittool_cpp_00623726",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062373c",
+      "name": "s_CStrList_allocate_Can_t__0062373c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623764",
+      "name": "s_shape_edittool_cpp_00623764",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062377a",
+      "name": "s_CStrList_allocate_invali_0062377a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006237a1",
+      "name": "s_shape_edittool_cpp_006237a1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006237b7",
+      "name": "s_shape_edittool_cpp_006237b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006237cd",
+      "name": "s_CStrList_insert_out_of_m_006237cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "new_capacity",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

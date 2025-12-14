@@ -27,8 +27,8 @@ section .text
 
     PUSH 0xb0                           ; 0058ac80
         ;   Label: core_skeledit.cpp_FUN_0058ac80
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058ac85 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058ac85
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058ac8a
     PUSH ESI                            ; 0058ac8b
     PUSH EDI                            ; 0058ac8c
@@ -38,15 +38,15 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 0058ac9b
     XOR EBP,EBP                         ; 0058ac9d
     TEST EDX,EDX                        ; 0058ac9f
-    JLE 0x0058acd5                      ; 0058aca1 | LAB_0058acd5
-        ;   XREF to: 0058acd5 (CONDITIONAL_JUMP)
+    JLE 0x0058acd5                      ; 0058aca1
+        ;   XREF to: 0058acd5 (CONDITIONAL_JUMP)  ; LAB_0058acd5
     ADD EBX,0x4                         ; 0058aca3
     MOV dword ptr [ESP + 0x90],EBX      ; 0058aca6
     MOV ESI,dword ptr [EBX + 0x20]      ; 0058acad
         ;   Label: LAB_0058acad
     TEST ESI,ESI                        ; 0058acb0
-    JGE 0x0058ace0                      ; 0058acb2 | LAB_0058ace0
-        ;   XREF to: 0058ace0 (CONDITIONAL_JUMP)
+    JGE 0x0058ace0                      ; 0058acb2
+        ;   XREF to: 0058ace0 (CONDITIONAL_JUMP)  ; LAB_0058ace0
     MOV ECX,0xc                         ; 0058acb4
     LEA EDI,[EBX + 0x24]                ; 0058acb9
     LEA ESI,[EBX + 0x54]                ; 0058acbc
@@ -57,8 +57,8 @@ section .text
     MOV ECX,dword ptr [ESI]             ; 0058acc9
     ADD EBX,0x84                        ; 0058accb
     CMP EBP,ECX                         ; 0058acd1
-    JL 0x0058acad                       ; 0058acd3 | LAB_0058acad
-        ;   XREF to: 0058acad (CONDITIONAL_JUMP)
+    JL 0x0058acad                       ; 0058acd3
+        ;   XREF to: 0058acad (CONDITIONAL_JUMP)  ; LAB_0058acad
     ADD ESP,0x94                        ; 0058acd5
         ;   Label: LAB_0058acd5
     POP EBP                             ; 0058acdb
@@ -73,8 +73,8 @@ section .text
     PUSH ESI                            ; 0058acf0
     LEA ESI,[ESP + 0x64]                ; 0058acf1
     LEA EDI,[ESP + 0x34]                ; 0058acf5
-    CALL core_xform.cpp_inverse_FUN_005f6210 ; 0058acf9 | CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
-        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_inverse_FUN_005f6210 ; 0058acf9
+        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
     MOV ECX,0xc                         ; 0058acfe
     LEA ESI,[ESP + 0x64]                ; 0058ad03
     ADD ESP,0x4                         ; 0058ad07
@@ -84,12 +84,12 @@ section .text
     LEA ESI,[EBX + 0x54]                ; 0058ad11
     PUSH ESI                            ; 0058ad14
     LEA ESI,[ESP + 0x8]                 ; 0058ad15
-    CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 0058ad19 | CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
-        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 ; 0058ad19
+        ;   XREF to: 005f4f10 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix3x4f * output_matrix, CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b)
     MOV ECX,0xc                         ; 0058ad1e
     LEA ESI,[ESP + 0x8]                 ; 0058ad23
     LEA EDI,[EBX + 0x24]                ; 0058ad27
     ADD ESP,0x8                         ; 0058ad2a
-    JMP 0x0058acbf                      ; 0058ad2d | LAB_0058acbf
-        ;   XREF to: 0058acbf (UNCONDITIONAL_JUMP)
+    JMP 0x0058acbf                      ; 0058ad2d
+        ;   XREF to: 0058acbf (UNCONDITIONAL_JUMP)  ; LAB_0058acbf
 

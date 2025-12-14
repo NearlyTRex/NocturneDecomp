@@ -24,19 +24,19 @@ section .text
     PUSH EDX                            ; 005be43e
     MOV ECX,dword ptr [EAX + 0x24b4]    ; 005be43f
     PUSH ECX                            ; 005be445
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005be446 | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005be446
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005be44b
     TEST EAX,EAX                        ; 005be44e
-    JZ 0x005be471                       ; 005be450 | LAB_005be471
-        ;   XREF to: 005be471 (CONDITIONAL_JUMP)
+    JZ 0x005be471                       ; 005be450
+        ;   XREF to: 005be471 (CONDITIONAL_JUMP)  ; LAB_005be471
     MOV EBX,dword ptr [EAX + 0x66c]     ; 005be452
     CMP EBX,0x2                         ; 005be458
-    JZ 0x005be462                       ; 005be45b | LAB_005be462
-        ;   XREF to: 005be462 (CONDITIONAL_JUMP)
+    JZ 0x005be462                       ; 005be45b
+        ;   XREF to: 005be462 (CONDITIONAL_JUMP)  ; LAB_005be462
     CMP EBX,0x3                         ; 005be45d
-    JNZ 0x005be471                      ; 005be460 | LAB_005be471
-        ;   XREF to: 005be471 (CONDITIONAL_JUMP)
+    JNZ 0x005be471                      ; 005be460
+        ;   XREF to: 005be471 (CONDITIONAL_JUMP)  ; LAB_005be471
     MOV dword ptr [ESP],0xbf860a92      ; 005be462
         ;   Label: LAB_005be462
     MOV EAX,dword ptr [ESP]             ; 005be469

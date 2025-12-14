@@ -1,218 +1,224 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 130, 
-    "pseudocode_lines": 85, 
-    "cross_reference_count": 1, 
-    "global_count": 15, 
-    "total_lines": 273, 
-    "assembly_lines": 188, 
-    "suspect_count": 3, 
+    "assembly_lines": 188,
+    "complexity_score": 130,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 16,
+    "pseudocode_lines": 85,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_dsound.c_DirectSoundCreate", 
-      "addr": "00610f40"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70", 
-      "addr": "005ade70"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DirectSux_Unable_to_s_s_00651a6c", 
-      "addr": "00651a6c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_create_DirectSound_objec_00652271", 
-      "addr": "00652271", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Querry_DirectSound_capab_0065228b", 
-      "addr": "0065228b", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DirectSoundDeviceCount", 
-      "addr": "00681e00", 
-      "value": "-0x1"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f69b44", 
-      "addr": "03f69b44", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f69b48", 
-      "addr": "03f69b48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f69b50", 
-      "addr": "03f69b50", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f69b54", 
-      "addr": "03f69b54", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f69b58", 
-      "addr": "03f69b58", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f69b59", 
-      "addr": "03f69b59", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RecordingDevices[7].device_name[14]", 
-      "addr": "03f69b5a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RecordingDevices[7].device_name[15]", 
-      "addr": "03f69b5b", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "isRecordingStarted", 
-      "addr": "03f69c58", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RecordingSamplesSigned", 
-      "addr": "03f69c5c", 
-      "value": null
-    }, 
-    {
-      "type": "SDirectSoundDeviceInfo[8]", 
-      "name": "g_DirectSoundDevices", 
-      "addr": "03f69c60", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 62, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar5 = (uint *)((int)device_guid + (uint)bVar10 * -8 + 4);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b0120", 
-    "signature": "int sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid, LPCSTR description, LPCSTR module, LPVOID context)", 
-    "address_range": [
-      [
-        "005b0120", 
-        "005b033e"
-      ]
-    ], 
-    "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120"
-  }, 
-  "stack_frame": {
-    "local_size": 20, 
-    "variables": [
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef LPGUID _GUID *", 
-        "size": 4, 
-        "name": "device_guid"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "typedef LPCSTR CHAR *", 
-        "size": 4, 
-        "name": "description"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "typedef LPCSTR CHAR *", 
-        "size": 4, 
-        "name": "module"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "typedef LPVOID void *", 
-        "size": 4, 
-        "name": "context"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 273
+  },
   "cross_references": [
     {
-      "from_addr": "005b03b7", 
-      "type": "DATA", 
-      "name": "sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390", 
-      "addr": "005b0390"
+      "addr": "005b0390",
+      "from_addr": "005b03b7",
+      "name": "sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "005b0120",
+    "address_range": [
+      [
+        "005b0120",
+        "005b033e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120",
+    "signature": "int sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid, LPCSTR description, LPCSTR module, LPVOID context)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610f40",
+      "name": "crt_dsound.c_DirectSoundCreate"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005ade70",
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70"
+    },
+    {
+      "addr": "005adba0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00651a6c",
+      "name": "s_DirectSux_Unable_to_s_s_00651a6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00652271",
+      "name": "s_create_DirectSound_objec_00652271",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065228b",
+      "name": "s_Querry_DirectSound_capab_0065228b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00681e00",
+      "name": "g_DirectSoundDeviceCount",
+      "type": "int",
+      "value": "-0x1"
+    },
+    {
+      "addr": "03f69b44",
+      "name": "DAT_03f69b44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69b48",
+      "name": "DAT_03f69b48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69b4c",
+      "name": "DAT_03f69b4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69b50",
+      "name": "DAT_03f69b50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69b54",
+      "name": "DAT_03f69b54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69b58",
+      "name": "DAT_03f69b58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69b59",
+      "name": "DAT_03f69b59",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69b5a",
+      "name": "g_RecordingDevices[7].device_name[14]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69b5b",
+      "name": "g_RecordingDevices[7].device_name[15]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69c58",
+      "name": "isRecordingStarted",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69c5c",
+      "name": "g_RecordingSamplesSigned",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69c60",
+      "name": "g_DirectSoundDevices",
+      "type": "SDirectSoundDeviceInfo[8]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "device_guid",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef LPGUID _GUID *"
+      },
+      {
+        "is_param": true,
+        "name": "description",
+        "offset": 8,
+        "size": 4,
+        "type": "typedef LPCSTR CHAR *"
+      },
+      {
+        "is_param": true,
+        "name": "module",
+        "offset": 12,
+        "size": 4,
+        "type": "typedef LPCSTR CHAR *"
+      },
+      {
+        "is_param": true,
+        "name": "context",
+        "offset": 16,
+        "size": 4,
+        "type": "typedef LPVOID void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)device_guid + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

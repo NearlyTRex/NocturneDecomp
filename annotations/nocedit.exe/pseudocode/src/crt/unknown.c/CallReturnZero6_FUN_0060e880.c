@@ -11,6 +11,6 @@
 void crt_unknown_c_CallReturnZero6_FUN_0060e880(void)
 
 {
-  (*(code *)PTR_unk_ReturnZero6_FUN_0060e850_0068559c)();
+  (*PTR_unk_ReturnZero6_FUN_0060e850_0068559c)();
   return;
 }

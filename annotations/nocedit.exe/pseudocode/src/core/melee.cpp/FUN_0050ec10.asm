@@ -27,13 +27,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 0050ec14
     PUSH dword ptr [ESP + 0x2c]         ; 0050ec18
     PUSH EBX                            ; 0050ec1c
-    CALL core_weapon.cpp_CWeapon_process_FUN_005ee110 ; 0050ec1d | void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
-        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)
+    CALL core_weapon.cpp_CWeapon_process_FUN_005ee110 ; 0050ec1d
+        ;   XREF to: 005ee110 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_process_FUN_005ee110(CWeapon * this_ptr)
     MOV EDX,dword ptr [EBX + 0x590]     ; 0050ec22
     ADD ESP,0x8                         ; 0050ec28
     TEST EDX,EDX                        ; 0050ec2b
-    JLE 0x0050ec48                      ; 0050ec2d | LAB_0050ec48
-        ;   XREF to: 0050ec48 (CONDITIONAL_JUMP)
+    JLE 0x0050ec48                      ; 0050ec2d
+        ;   XREF to: 0050ec48 (CONDITIONAL_JUMP)  ; LAB_0050ec48
     FLD float ptr [EBX + 0x594]         ; 0050ec2f
     FSUB float ptr [ESP + 0x2c]         ; 0050ec35
     FST float ptr [EBX + 0x594]         ; 0050ec39
@@ -41,8 +41,8 @@ section .text
     FCOMPP                              ; 0050ec41
     FNSTSW AX                           ; 0050ec43
     SAHF                                ; 0050ec45
-    JNC 0x0050ec4d                      ; 0050ec46 | LAB_0050ec4d
-        ;   XREF to: 0050ec4d (CONDITIONAL_JUMP)
+    JNC 0x0050ec4d                      ; 0050ec46
+        ;   XREF to: 0050ec4d (CONDITIONAL_JUMP)  ; LAB_0050ec4d
     ADD ESP,0x20                        ; 0050ec48
         ;   Label: LAB_0050ec48
     POP EBX                             ; 0050ec4b
@@ -52,7 +52,7 @@ section .text
     PUSH ESI                            ; 0050ec4e
     FLD float ptr [EBX + 0x598]         ; 0050ec4f
     FLD ST0                             ; 0050ec55
-    FMUL double ptr [0x00635ce5]        ; 0050ec57 | double DOUBLE_00635ce5
+    FMUL double ptr [0x00635ce5]        ; 0050ec57 | DOUBLE_00635ce5
     LEA EDX,[ESP + 0x8]                 ; 0050ec5d
     MOV ECX,dword ptr [EBX + 0x590]     ; 0050ec61
     PUSH EDX                            ; 0050ec67
@@ -69,18 +69,18 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 0050ec8e
     PUSH EAX                            ; 0050ec92
     PUSH EBX                            ; 0050ec93
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0050ec94 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0050ec94
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 0050ec99
     MOV ESI,dword ptr [EBX + 0x58c]     ; 0050ec9c
     PUSH ESI                            ; 0050eca2
-    PUSH 0x3f87558                      ; 0050eca3 | CVector3f g_ZeroVector
+    PUSH 0x3f87558                      ; 0050eca3 | g_ZeroVector
     LEA EAX,[ESP + 0x1c]                ; 0050eca8
     PUSH EAX                            ; 0050ecac
-    MOV EDI,dword ptr [0x0067b9a0]      ; 0050ecad | CGore * g_CGorePtr
-    PUSH EDI                            ; 0050ecb3 | CGore g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edaa0     ; 0050ecb4 | undefined core_gore.cpp_FUN_004edaa0()
-        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x0067b9a0]      ; 0050ecad | g_CGorePtr
+    PUSH EDI                            ; 0050ecb3 | g_CGoreInstance
+    CALL core_gore.cpp_FUN_004edaa0     ; 0050ecb4
+        ;   XREF to: 004edaa0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edaa0()
     ADD ESP,0x10                        ; 0050ecb9
     POP ESI                             ; 0050ecbc
     POP EDI                             ; 0050ecbd

@@ -1,98 +1,98 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 68, 
-    "pseudocode_lines": 68, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 131, 
-    "assembly_lines": 63, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_npc.cpp_FUN_005447e0", 
-      "addr": "005447e0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_hickdad_dfm_0062ee2f", 
-      "addr": "0062ee2f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_true_0062ee3b", 
-      "addr": "0062ee3b", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_rue_0062ee3c", 
-      "addr": "0062ee3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ue_0062ee3d", 
-      "addr": "0062ee3d", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_0062ee3e", 
-      "addr": "0062ee3e", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_hostage.cpp_NPCSFromZombieTown_FUN_0065fb34", 
-      "addr": "0065fb34", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004f4840", 
-    "signature": "CHostage * core_hostage.cpp_FUN_004f4840(CHostage * this_ptr)", 
-    "address_range": [
-      [
-        "004f4840", 
-        "004f4962"
-      ]
-    ], 
-    "name": "core_hostage.cpp_FUN_004f4840"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CHostage *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 63,
+    "complexity_score": 68,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 68,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 131
+  },
   "cross_references": [
     {
-      "from_addr": "004f481a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_FUN_004f4800", 
-      "addr": "004f4800"
+      "addr": "004f4800",
+      "from_addr": "004f481a",
+      "name": "core_hostage.cpp_FUN_004f4800",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004f4840",
+    "address_range": [
+      [
+        "004f4840",
+        "004f4962"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hostage.cpp_FUN_004f4840",
+    "signature": "CHostage * core_hostage.cpp_FUN_004f4840(CHostage * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005447e0",
+      "name": "core_npc.cpp_FUN_005447e0"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062ee2f",
+      "name": "s_hickdad_dfm_0062ee2f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ee3b",
+      "name": "s_true_0062ee3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ee3c",
+      "name": "s_rue_0062ee3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062ee3d",
+      "name": "s_ue_0062ee3d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062ee3e",
+      "name": "s_e_0062ee3e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065fb34",
+      "name": "PTR_core_hostage.cpp_NPCSFromZombieTown_FUN_0065fb34",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHostage *"
+      }
+    ]
+  },
+  "suspects": []
 }

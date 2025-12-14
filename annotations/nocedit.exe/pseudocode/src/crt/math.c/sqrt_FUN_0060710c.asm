@@ -29,26 +29,26 @@ section .text
     WAIT                                ; 00607118
     XCHG word ptr [EBP + -0x8],AX       ; 00607119
     SAHF                                ; 0060711d
-    JNC 0x00607142                      ; 0060711e | LAB_00607142
-        ;   XREF to: 00607142 (CONDITIONAL_JUMP)
+    JNC 0x00607142                      ; 0060711e
+        ;   XREF to: 00607142 (CONDITIONAL_JUMP)  ; LAB_00607142
     FSTP double ptr [EBP + -0x10]       ; 00607120
     MOV EAX,dword ptr [EBP + -0x8]      ; 00607123
     CMP AL,0x3                          ; 00607126
-    JZ 0x0060712d                       ; 00607128 | LAB_0060712d
-        ;   XREF to: 0060712d (CONDITIONAL_JUMP)
+    JZ 0x0060712d                       ; 00607128
+        ;   XREF to: 0060712d (CONDITIONAL_JUMP)  ; LAB_0060712d
     FSTP double ptr [EBP + -0x10]       ; 0060712a
     MOV dword ptr [EBP + -0x4],EDX      ; 0060712d
         ;   Label: LAB_0060712d
-    CALL crt_math.c_handle_math_error_FUN_0060c02b ; 00607130 | double crt_math.c_handle_math_error_FUN_0060c02b()
-        ;   XREF to: 0060c02b (UNCONDITIONAL_CALL)
+    CALL crt_math.c_handle_math_error_FUN_0060c02b ; 00607130
+        ;   XREF to: 0060c02b (UNCONDITIONAL_CALL)  ; double crt_math.c_handle_math_error_FUN_0060c02b()
     PUSH EDX                            ; 00607135
     PUSH EAX                            ; 00607136
     FLD double ptr [ESP]                ; 00607137
     MOV EDX,dword ptr [EBP + -0x4]      ; 0060713a
     WAIT                                ; 0060713d
     MOV AL,0x1                          ; 0060713e
-    JMP 0x00607146                      ; 00607140 | LAB_00607146
-        ;   XREF to: 00607146 (UNCONDITIONAL_JUMP)
+    JMP 0x00607146                      ; 00607140
+        ;   XREF to: 00607146 (UNCONDITIONAL_JUMP)  ; LAB_00607146
     FSQRT                               ; 00607142
         ;   Label: LAB_00607142
     MOV AL,0x0                          ; 00607144

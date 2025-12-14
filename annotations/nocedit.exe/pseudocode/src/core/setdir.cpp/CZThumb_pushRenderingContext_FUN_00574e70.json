@@ -1,112 +1,112 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 2, 
-    "global_count": 6, 
-    "total_lines": 64, 
-    "assembly_lines": 49, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890", 
-      "addr": "0048c890"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150", 
-      "addr": "0048c150"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670", 
-      "addr": "0048c670"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0", 
-      "addr": "0048c1d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SavedWindowWidth", 
-      "addr": "033648ec", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SavedWindowHeight", 
-      "addr": "033648f0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00574e70", 
-    "signature": "void core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70(CZThumb * this_ptr)", 
-    "address_range": [
-      [
-        "00574e70", 
-        "00574eee"
-      ]
-    ], 
-    "name": "core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CZThumb *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 49,
+    "complexity_score": 15,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
   "cross_references": [
     {
-      "from_addr": "00574bb0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0", 
-      "addr": "00574ba0"
-    }, 
+      "addr": "00574ba0",
+      "from_addr": "00574bb0",
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00574a3a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910", 
-      "addr": "00574910"
+      "addr": "00574910",
+      "from_addr": "00574a3a",
+      "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00574e70",
+    "address_range": [
+      [
+        "00574e70",
+        "00574eee"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70",
+    "signature": "void core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70(CZThumb * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048c890",
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890"
+    },
+    {
+      "addr": "0048c150",
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150"
+    },
+    {
+      "addr": "0048c670",
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670"
+    },
+    {
+      "addr": "0048c1d0",
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "033648ec",
+      "name": "g_SavedWindowWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "033648f0",
+      "name": "g_SavedWindowHeight",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZThumb *"
+      }
+    ]
+  },
+  "suspects": []
 }

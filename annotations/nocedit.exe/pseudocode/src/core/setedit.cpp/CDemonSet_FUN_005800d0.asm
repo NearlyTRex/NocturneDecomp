@@ -40,21 +40,21 @@ section .text
     MOV EBX,dword ptr [ESP + 0x48]      ; 005800db
     MOV ESI,dword ptr [ESP + 0x4c]      ; 005800df
     CMP EBX,0x1                         ; 005800e3
-    JL 0x00580101                       ; 005800e6 | LAB_00580101
-        ;   XREF to: 00580101 (CONDITIONAL_JUMP)
+    JL 0x00580101                       ; 005800e6
+        ;   XREF to: 00580101 (CONDITIONAL_JUMP)  ; LAB_00580101
     CMP ESI,0x1                         ; 005800e8
-    JL 0x00580101                       ; 005800eb | LAB_00580101
-        ;   XREF to: 00580101 (CONDITIONAL_JUMP)
+    JL 0x00580101                       ; 005800eb
+        ;   XREF to: 00580101 (CONDITIONAL_JUMP)  ; LAB_00580101
     MOV EAX,[0x03275a28]                ; 005800ed | g_ScreenHeightForFonts
     DEC EAX                             ; 005800f2
     CMP EBX,EAX                         ; 005800f3
-    JG 0x00580101                       ; 005800f5 | LAB_00580101
-        ;   XREF to: 00580101 (CONDITIONAL_JUMP)
+    JG 0x00580101                       ; 005800f5
+        ;   XREF to: 00580101 (CONDITIONAL_JUMP)  ; LAB_00580101
     MOV EAX,[0x03275a2c]                ; 005800f7 | g_CDemonCameraInstance.framebuffer_height
     DEC EAX                             ; 005800fc
     CMP ESI,EAX                         ; 005800fd
-    JLE 0x0058010b                      ; 005800ff | LAB_0058010b
-        ;   XREF to: 0058010b (CONDITIONAL_JUMP)
+    JLE 0x0058010b                      ; 005800ff
+        ;   XREF to: 0058010b (CONDITIONAL_JUMP)  ; LAB_0058010b
     XOR EAX,EAX                         ; 00580101
         ;   Label: LAB_00580101
     ADD ESP,0x30                        ; 00580103
@@ -66,26 +66,26 @@ section .text
     PUSH ESI                            ; 0058010b
         ;   Label: LAB_0058010b
     PUSH EBX                            ; 0058010c
-    PUSH 0x32758e4                      ; 0058010d | CDemonCamera g_CDemonCameraInstance
+    PUSH 0x32758e4                      ; 0058010d | g_CDemonCameraInstance
     LEA ESI,[ESP + 0x24]                ; 00580112
     LEA EDI,[ESP + 0x30]                ; 00580116
-    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0 ; 0058011a | void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y)
-        ;   XREF to: 0044d2a0 (UNCONDITIONAL_CALL)
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0 ; 0058011a
+        ;   XREF to: 0044d2a0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y)
     LEA ESI,[ESP + 0x24]                ; 0058011f
     ADD ESP,0xc                         ; 00580123
     MOVSD ES:EDI,ESI                    ; 00580126
     MOVSD ES:EDI,ESI                    ; 00580127
     MOVSD ES:EDI,ESI                    ; 00580128
     CMP dword ptr [ESP + 0x2c],0x3fffffff ; 00580129
-    JG 0x00580101                       ; 00580131 | LAB_00580101
-        ;   XREF to: 00580101 (CONDITIONAL_JUMP)
+    JG 0x00580101                       ; 00580131
+        ;   XREF to: 00580101 (CONDITIONAL_JUMP)  ; LAB_00580101
     LEA EAX,[ESP + 0x24]                ; 00580133
     PUSH EAX                            ; 00580137
-    PUSH 0x32758e4                      ; 00580138 | CDemonCamera g_CDemonCameraInstance
+    PUSH 0x32758e4                      ; 00580138 | g_CDemonCameraInstance
     LEA ESI,[ESP + 0x8]                 ; 0058013d
     LEA EDI,[ESP + 0x14]                ; 00580141
-    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370 ; 00580145 | CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)
-        ;   XREF to: 0044d370 (UNCONDITIONAL_CALL)
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370 ; 00580145
+        ;   XREF to: 0044d370 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)
     LEA ESI,[ESP + 0x8]                 ; 0058014a
     ADD ESP,0x8                         ; 0058014e
     MOVSD ES:EDI,ESI                    ; 00580151
@@ -95,18 +95,18 @@ section .text
     MOV ECX,dword ptr [EBP]             ; 00580156
     XOR EDI,EDI                         ; 00580159
     TEST ECX,ECX                        ; 0058015b
-    JLE 0x0058016f                      ; 0058015d | LAB_0058016f
-        ;   XREF to: 0058016f (CONDITIONAL_JUMP)
+    JLE 0x0058016f                      ; 0058015d
+        ;   XREF to: 0058016f (CONDITIONAL_JUMP)  ; LAB_0058016f
     MOV ESI,dword ptr [ESP + 0x50]      ; 0058015f
     CMP EBX,dword ptr [ESP + 0x54]      ; 00580163
         ;   Label: LAB_00580163
-    JNZ 0x00580179                      ; 00580167 | LAB_00580179
-        ;   XREF to: 00580179 (CONDITIONAL_JUMP)
+    JNZ 0x00580179                      ; 00580167
+        ;   XREF to: 00580179 (CONDITIONAL_JUMP)  ; LAB_00580179
     INC EBX                             ; 00580169
         ;   Label: LAB_00580169
     CMP EBX,dword ptr [EBP]             ; 0058016a
-    JL 0x00580163                       ; 0058016d | LAB_00580163
-        ;   XREF to: 00580163 (CONDITIONAL_JUMP)
+    JL 0x00580163                       ; 0058016d
+        ;   XREF to: 00580163 (CONDITIONAL_JUMP)  ; LAB_00580163
     MOV EAX,EDI                         ; 0058016f
         ;   Label: LAB_0058016f
     ADD ESP,0x30                        ; 00580171
@@ -120,19 +120,19 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0058017a
     PUSH EAX                            ; 0058017e
     PUSH EBP                            ; 0058017f
-    CALL core_setedit.cpp_FUN_005801b0  ; 00580180 | undefined core_setedit.cpp_FUN_005801b0()
-        ;   XREF to: 005801b0 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_FUN_005801b0  ; 00580180
+        ;   XREF to: 005801b0 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_FUN_005801b0()
     ADD ESP,0xc                         ; 00580185
     TEST EAX,EAX                        ; 00580188
-    JZ 0x00580169                       ; 0058018a | LAB_00580169
-        ;   XREF to: 00580169 (CONDITIONAL_JUMP)
+    JZ 0x00580169                       ; 0058018a
+        ;   XREF to: 00580169 (CONDITIONAL_JUMP)  ; LAB_00580169
     ADD ESI,0x4                         ; 0058018c
     INC EDI                             ; 0058018f
     MOV dword ptr [ESI + -0x4],EBX      ; 00580190
     INC EBX                             ; 00580193
     CMP EBX,dword ptr [EBP]             ; 00580194
-    JL 0x00580163                       ; 00580197 | LAB_00580163
-        ;   XREF to: 00580163 (CONDITIONAL_JUMP)
+    JL 0x00580163                       ; 00580197
+        ;   XREF to: 00580163 (CONDITIONAL_JUMP)  ; LAB_00580163
     MOV EAX,EDI                         ; 00580199
     ADD ESP,0x30                        ; 0058019b
     POP EBP                             ; 0058019e

@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 32, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 16, 
-    "assembly_lines": 9, 
-    "suspect_count": 2, 
+    "assembly_lines": 9,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_freeTypeArray_FUN_005feee9", 
-      "addr": "005feee9"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CTireTypeInfo", 
-      "addr": "00665150", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void **in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,4,&g_CTireTypeInfo);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005e8dd0", 
-    "signature": "undefined core_vehicle.cpp_FUN_005e8dd0()", 
-    "address_range": [
-      [
-        "005e8dd0", 
-        "005e8de4"
-      ]
-    ], 
-    "name": "core_vehicle.cpp_FUN_005e8dd0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "005e8d45", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vehicle.cpp_CVehicle_dtor_FUN_005e8d20", 
-      "addr": "005e8d20"
+      "addr": "005e8d20",
+      "from_addr": "005e8d45",
+      "name": "core_vehicle.cpp_CVehicle_dtor_FUN_005e8d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005e8dd0",
+    "address_range": [
+      [
+        "005e8dd0",
+        "005e8de4"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_vehicle.cpp_FUN_005e8dd0",
+    "signature": "undefined core_vehicle.cpp_FUN_005e8dd0()"
+  },
+  "function_calls": [
+    {
+      "addr": "005feee9",
+      "name": "crt_memory.c_freeTypeArray_FUN_005feee9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00665150",
+      "name": "g_CTireTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "void **in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,4,&g_CTireTypeInfo);",
+      "type": "stack_param"
     }
   ]
 }

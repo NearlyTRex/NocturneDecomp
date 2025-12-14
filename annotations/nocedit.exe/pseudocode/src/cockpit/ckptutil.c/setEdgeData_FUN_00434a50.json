@@ -1,104 +1,104 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 71, 
-    "assembly_lines": 51, 
-    "suspect_count": 2, 
+    "assembly_lines": 51,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 19, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;"
-    }, 
-    {
-      "line": 19, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;"
-    }
-  ], 
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00434a50", 
-    "signature": "void cockpit_ckptutil.c_setEdgeData_FUN_00434a50(SEdge * edge_array, int edge_index, int x1, int y1, int x2, int y2, int flag_bit)", 
+    "address": "00434a50",
     "address_range": [
       [
-        "00434a50", 
+        "00434a50",
         "00434aea"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_setEdgeData_FUN_00434a50"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_setEdgeData_FUN_00434a50",
+    "signature": "void cockpit_ckptutil.c_setEdgeData_FUN_00434a50(SEdge * edge_array, int edge_index, int x1, int y1, int x2, int y2, int flag_bit)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SEdge *", 
-        "size": 4, 
-        "name": "edge_array"
-      }, 
+        "is_param": true,
+        "name": "edge_array",
+        "offset": 4,
+        "size": 4,
+        "type": "SEdge *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "edge_index"
-      }, 
+        "is_param": true,
+        "name": "edge_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x1"
-      }, 
+        "is_param": true,
+        "name": "x1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y1"
-      }, 
+        "is_param": true,
+        "name": "y1",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x2"
-      }, 
+        "is_param": true,
+        "name": "x2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y2"
-      }, 
+        "is_param": true,
+        "name": "y2",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "flag_bit"
+        "is_param": true,
+        "name": "flag_bit",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -1,147 +1,147 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 153, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 59, 
-    "assembly_lines": 36, 
-    "suspect_count": 11, 
+    "assembly_lines": 36,
+    "complexity_score": 153,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 23,
+    "suspect_count": 11,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10", 
-      "addr": "005f4f10"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 7, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint *unaff_ESI;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CMatrix3x4f *in_stack_ffffffc8;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CMatrix3x4f *)this_ptr->carry_hands[in_stack_00000008].field2_0xc,"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0,in_stack_ffffffc8);"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0,in_stack_ffffffc8);"
-    }, 
-    {
-      "line": 21, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = *puVar2;"
-    }, 
-    {
-      "line": 23, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;"
-    }, 
-    {
-      "line": 23, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0042d300", 
-    "signature": "void core_charactr.cpp_CCharacter_FUN_0042d300(CCharacter * this_ptr)", 
-    "address_range": [
-      [
-        "0042d300", 
-        "0042d35e"
-      ]
-    ], 
-    "name": "core_charactr.cpp_CCharacter_FUN_0042d300"
-  }, 
-  "stack_frame": {
-    "local_size": 60, 
-    "variables": [
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCharacter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 64, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "unaffected_reg",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 59
+  },
   "cross_references": [
     {
-      "from_addr": "004f69a3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_CHostage_FUN_004f6550", 
-      "addr": "004f6550"
+      "addr": "004f6550",
+      "from_addr": "004f69a3",
+      "name": "core_hostage.cpp_CHostage_FUN_004f6550",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042d300",
+    "address_range": [
+      [
+        "0042d300",
+        "0042d35e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_FUN_0042d300",
+    "signature": "void core_charactr.cpp_CCharacter_FUN_0042d300(CCharacter * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f4f10",
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_ffffffc8",
+      "text": "CMatrix3x4f *in_stack_ffffffc8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "((CMatrix3x4f *)this_ptr->carry_hands[in_stack_00000008].field2_0xc,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "*(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0,in_stack_ffffffc8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_ffffffc8",
+      "text": "*(int *)this_ptr->carry_hands[in_stack_00000008].field0_0x0,in_stack_ffffffc8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = *puVar2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
+      "type": "unaffected_reg"
     }
   ]
 }

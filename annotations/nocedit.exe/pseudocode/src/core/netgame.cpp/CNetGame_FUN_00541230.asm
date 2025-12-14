@@ -29,8 +29,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00541243
     ADD EAX,0x170                       ; 00541247
     PUSH EAX                            ; 0054124c
-    CALL support_trisock.cpp_performSocketOperation_FUN_005e1ca0 ; 0054124d | int support_trisock.cpp_performSocketOperation_FUN_005e1ca0(SSocketContext * socket_ctx, char * buffer, int length, SNetworkAddr * dest_addr)
-        ;   XREF to: 005e1ca0 (UNCONDITIONAL_CALL)
+    CALL support_trisock.cpp_performSocketOperation_FUN_005e1ca0 ; 0054124d
+        ;   XREF to: 005e1ca0 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_performSocketOperation_FUN_005e1ca0(SSocketContext * socket_ctx, char * buffer, int length, SNetworkAddr * dest_addr)
     ADD ESP,0x10                        ; 00541252
     RET                                 ; 00541255
 

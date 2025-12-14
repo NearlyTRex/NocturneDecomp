@@ -36,8 +36,8 @@ section .text
     PUSH 0x0                            ; 0043ebbc
     LEA EBX,[ESP + 0xc]                 ; 0043ebbe
     PUSH EBX                            ; 0043ebc2
-    CALL crt_strstream.cpp_istrstream_constructor_FUN_005ff524 ; 0043ebc3 | istrstream * crt_strstream.cpp_istrstream_constructor_FUN_005ff524(istrstream * this_ptr, int ctor_flags, char * buffer, int size)
-        ;   XREF to: 005ff524 (UNCONDITIONAL_CALL)
+    CALL crt_strstream.cpp_istrstream_constructor_FUN_005ff524 ; 0043ebc3
+        ;   XREF to: 005ff524 (UNCONDITIONAL_CALL)  ; istrstream * crt_strstream.cpp_istrstream_constructor_FUN_005ff524(istrstream * this_ptr, int ctor_flags, char * buffer, int size)
     ADD ESP,0x10                        ; 0043ebc8
     MOV EBX,dword ptr [ESP + 0xac]      ; 0043ebcb
     PUSH EBX                            ; 0043ebd2
@@ -59,8 +59,8 @@ section .text
     MOV EBX,EAX                         ; 0043ec09
     LEA EAX,[ESP + 0x4]                 ; 0043ec0b
     PUSH EAX                            ; 0043ec0f
-    CALL crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca ; 0043ec10 | istrstream * crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca(istrstream * this_ptr, int d1)
-        ;   XREF to: 005ff5ca (UNCONDITIONAL_CALL)
+    CALL crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca ; 0043ec10
+        ;   XREF to: 005ff5ca (UNCONDITIONAL_CALL)  ; istrstream * crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca(istrstream * this_ptr, int d1)
     ADD ESP,0x8                         ; 0043ec15
     MOV EAX,EBX                         ; 0043ec18
     ADD ESP,0x84                        ; 0043ec1a

@@ -44,21 +44,21 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 0050f029
     MOV ESI,dword ptr [EBP + 0x1c]      ; 0050f02c
     CMP dword ptr [EBX + 0x24],0xdeadbeef ; 0050f02f
-    JNZ 0x0050f0ed                      ; 0050f036 | LAB_0050f0ed
-        ;   XREF to: 0050f0ed (CONDITIONAL_JUMP)
+    JNZ 0x0050f0ed                      ; 0050f036
+        ;   XREF to: 0050f0ed (CONDITIONAL_JUMP)  ; LAB_0050f0ed
     LEA EAX,[EBX + 0x28]                ; 0050f03c
         ;   Label: LAB_0050f03c
     MOV EDX,dword ptr [EBX + 0x8]       ; 0050f03f
     CMP dword ptr [EDX + EAX*0x1],0xbeefdead ; 0050f042
-    JZ 0x0050f08a                       ; 0050f049 | LAB_0050f08a
-        ;   XREF to: 0050f08a (CONDITIONAL_JUMP)
-    MOV dword ptr [0x02f0ca48],0x635ef8 ; 0050f04b | char * g_CurrentFilename | = "..\\shape\\memdbg.cpp" | s_shape_memdbg_cpp_00635ef8 = ..\shape\memdbg.cpp
-    MOV EDX,dword ptr [0x02f0d940]      ; 0050f055 | void * g_DebugContext
+    JZ 0x0050f08a                       ; 0050f049
+        ;   XREF to: 0050f08a (CONDITIONAL_JUMP)  ; LAB_0050f08a
+    MOV dword ptr [0x02f0ca48],0x635ef8 ; 0050f04b | g_CurrentFilename | = "..\\shape\\memdbg.cpp"
+    MOV EDX,dword ptr [0x02f0d940]      ; 0050f055 | g_DebugContext
     MOV ECX,0xb2                        ; 0050f05b
     PUSH EDX                            ; 0050f060
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0050f061 | int g_CurrentLineNumber
-    MOV ECX,dword ptr [0x0067d1fc]      ; 0050f067 | void * PTR_s_none_00636540_0067d1fc
-    PUSH ECX                            ; 0050f06d | = "(none)" | s_none_00636540 = (none)
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0050f061 | g_CurrentLineNumber
+    MOV ECX,dword ptr [0x0067d1fc]      ; 0050f067 | PTR_s_none_00636540_0067d1fc
+    PUSH ECX                            ; 0050f06d | = "(none)"
     PUSH ESI                            ; 0050f06e
     PUSH EDI                            ; 0050f06f
     MOV EDX,dword ptr [EBX + 0x20]      ; 0050f070
@@ -68,30 +68,29 @@ section .text
     PUSH EAX                            ; 0050f078
     MOV ECX,dword ptr [EBX + 0x8]       ; 0050f079
     PUSH ECX                            ; 0050f07c
-    PUSH 0x635f0c                       ; 0050f07d | = "Tail memory corruption detected in %d..." | s_Tail_memory_corruption_d_00635f0c = Tail memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d
-        ; (Last ok check was at %s line %d)
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050f082 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x635f0c                       ; 0050f07d | = "Tail memory corruption detected in %d..."
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050f082
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x24                        ; 0050f087
     MOV EAX,dword ptr [EBX]             ; 0050f08a
         ;   Label: LAB_0050f08a
     TEST EAX,EAX                        ; 0050f08c
-    JNZ 0x0050f138                      ; 0050f08e | LAB_0050f138
-        ;   XREF to: 0050f138 (CONDITIONAL_JUMP)
-    CMP EBX,dword ptr [0x02f0d938]      ; 0050f094 | SMemHead * g_MemoryListHead
-    JZ 0x0050f0dd                       ; 0050f09a | LAB_0050f0dd
-        ;   XREF to: 0050f0dd (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02f0d940]      ; 0050f09c | void * g_DebugContext
+    JNZ 0x0050f138                      ; 0050f08e
+        ;   XREF to: 0050f138 (CONDITIONAL_JUMP)  ; LAB_0050f138
+    CMP EBX,dword ptr [0x02f0d938]      ; 0050f094 | g_MemoryListHead
+    JZ 0x0050f0dd                       ; 0050f09a
+        ;   XREF to: 0050f0dd (CONDITIONAL_JUMP)  ; LAB_0050f0dd
+    MOV ECX,dword ptr [0x02f0d940]      ; 0050f09c | g_DebugContext
         ;   Label: LAB_0050f09c
-    MOV EAX,0x635f95                    ; 0050f0a2 | = "..\\shape\\memdbg.cpp" | s_shape_memdbg_cpp_00635f95 = ..\shape\memdbg.cpp
+    MOV EAX,0x635f95                    ; 0050f0a2 | = "..\\shape\\memdbg.cpp"
     PUSH ECX                            ; 0050f0a7
-    MOV [0x02f0ca48],EAX                ; 0050f0a8 | char * g_CurrentFilename
-    MOV EAX,[0x0067d1fc]                ; 0050f0ad | void * PTR_s_none_00636540_0067d1fc
-    PUSH EAX                            ; 0050f0b2 | = "(none)" | s_none_00636540 = (none)
+    MOV [0x02f0ca48],EAX                ; 0050f0a8 | g_CurrentFilename
+    MOV EAX,[0x0067d1fc]                ; 0050f0ad | PTR_s_none_00636540_0067d1fc
+    PUSH EAX                            ; 0050f0b2 | = "(none)"
     PUSH ESI                            ; 0050f0b3
     MOV EDX,0xb8                        ; 0050f0b4
     PUSH EDI                            ; 0050f0b9
-    MOV dword ptr [0x02f0ca4c],EDX      ; 0050f0ba | int g_CurrentLineNumber
+    MOV dword ptr [0x02f0ca4c],EDX      ; 0050f0ba | g_CurrentLineNumber
     MOV EDX,dword ptr [EBX + 0x20]      ; 0050f0c0
     PUSH EDX                            ; 0050f0c3
     LEA EAX,[EBX + 0xc]                 ; 0050f0c4
@@ -100,36 +99,35 @@ section .text
     PUSH EAX                            ; 0050f0cb
     MOV ECX,dword ptr [EBX + 0x8]       ; 0050f0cc
     PUSH ECX                            ; 0050f0cf
-    PUSH 0x635fa9                       ; 0050f0d0 | = "List memory corruption detected in %d..." | s_List_memory_corruption_d_00635fa9 = List memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d
-        ; (Last ok check was at %s line %d)
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050f0d5 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x635fa9                       ; 0050f0d0 | = "List memory corruption detected in %d..."
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050f0d5
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x24                        ; 0050f0da
     MOV EAX,dword ptr [EBX + 0x4]       ; 0050f0dd
         ;   Label: LAB_0050f0dd
     TEST EAX,EAX                        ; 0050f0e0
-    JZ 0x0050f0e8                       ; 0050f0e2 | LAB_0050f0e8
-        ;   XREF to: 0050f0e8 (CONDITIONAL_JUMP)
+    JZ 0x0050f0e8                       ; 0050f0e2
+        ;   XREF to: 0050f0e8 (CONDITIONAL_JUMP)  ; LAB_0050f0e8
     CMP EBX,dword ptr [EAX]             ; 0050f0e4
-    JNZ 0x0050f09c                      ; 0050f0e6 | LAB_0050f09c
-        ;   XREF to: 0050f09c (CONDITIONAL_JUMP)
+    JNZ 0x0050f09c                      ; 0050f0e6
+        ;   XREF to: 0050f09c (CONDITIONAL_JUMP)  ; LAB_0050f09c
     POP EBP                             ; 0050f0e8
         ;   Label: LAB_0050f0e8
     POP EDI                             ; 0050f0e9
     POP ESI                             ; 0050f0ea
     POP EBX                             ; 0050f0eb
     RET                                 ; 0050f0ec
-    MOV EDX,dword ptr [0x02f0d940]      ; 0050f0ed | void * g_DebugContext
+    MOV EDX,dword ptr [0x02f0d940]      ; 0050f0ed | g_DebugContext
         ;   Label: LAB_0050f0ed
-    MOV ECX,0x635e5a                    ; 0050f0f3 | = "..\\shape\\memdbg.cpp" | s_shape_memdbg_cpp_00635e5a = ..\shape\memdbg.cpp
+    MOV ECX,0x635e5a                    ; 0050f0f3 | = "..\\shape\\memdbg.cpp"
     PUSH EDX                            ; 0050f0f8
-    MOV dword ptr [0x02f0ca48],ECX      ; 0050f0f9 | char * g_CurrentFilename
-    MOV ECX,dword ptr [0x0067d1fc]      ; 0050f0ff | = "(none)" | void * PTR_s_none_00636540_0067d1fc
-    PUSH ECX                            ; 0050f105 | = "(none)" | s_none_00636540 = (none)
+    MOV dword ptr [0x02f0ca48],ECX      ; 0050f0f9 | g_CurrentFilename
+    MOV ECX,dword ptr [0x0067d1fc]      ; 0050f0ff | = "(none)" | PTR_s_none_00636540_0067d1fc
+    PUSH ECX                            ; 0050f105 | = "(none)"
     PUSH ESI                            ; 0050f106
     MOV EAX,0xaf                        ; 0050f107
     PUSH EDI                            ; 0050f10c
-    MOV [0x02f0ca4c],EAX                ; 0050f10d | int g_CurrentLineNumber
+    MOV [0x02f0ca4c],EAX                ; 0050f10d | g_CurrentLineNumber
     MOV EAX,dword ptr [EBX + 0x20]      ; 0050f112
     PUSH EAX                            ; 0050f115
     LEA EAX,[EBX + 0xc]                 ; 0050f116
@@ -138,18 +136,17 @@ section .text
     PUSH EAX                            ; 0050f11d
     MOV EDX,dword ptr [EBX + 0x8]       ; 0050f11e
     PUSH EDX                            ; 0050f121
-    PUSH 0x635e6e                       ; 0050f122 | = "Head memory corruption detected in %d..." | s_Head_memory_corruption_d_00635e6e = Head memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d.
-        ; (Last ok check was at %s line %d)
+    PUSH 0x635e6e                       ; 0050f122 | = "Head memory corruption detected in %d..."
     MOV byte ptr [EBX + 0x1f],0x0       ; 0050f127
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050f12b | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050f12b
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x24                        ; 0050f130
-    JMP 0x0050f03c                      ; 0050f133 | LAB_0050f03c
-        ;   XREF to: 0050f03c (UNCONDITIONAL_JUMP)
+    JMP 0x0050f03c                      ; 0050f133
+        ;   XREF to: 0050f03c (UNCONDITIONAL_JUMP)  ; LAB_0050f03c
     CMP EBX,dword ptr [EAX + 0x4]       ; 0050f138
         ;   Label: LAB_0050f138
-    JNZ 0x0050f09c                      ; 0050f13b | LAB_0050f09c
-        ;   XREF to: 0050f09c (CONDITIONAL_JUMP)
-    JMP 0x0050f0dd                      ; 0050f141 | LAB_0050f0dd
-        ;   XREF to: 0050f0dd (UNCONDITIONAL_JUMP)
+    JNZ 0x0050f09c                      ; 0050f13b
+        ;   XREF to: 0050f09c (CONDITIONAL_JUMP)  ; LAB_0050f09c
+    JMP 0x0050f0dd                      ; 0050f141
+        ;   XREF to: 0050f0dd (UNCONDITIONAL_JUMP)  ; LAB_0050f0dd
 

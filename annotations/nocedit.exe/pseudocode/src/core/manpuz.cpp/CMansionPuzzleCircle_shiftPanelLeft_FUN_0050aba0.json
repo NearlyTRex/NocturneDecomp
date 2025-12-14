@@ -1,150 +1,150 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 114, 
-    "pseudocode_lines": 59, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 211, 
-    "assembly_lines": 152, 
-    "suspect_count": 5, 
+    "assembly_lines": 152,
+    "complexity_score": 114,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 5,
+    "pseudocode_lines": 59,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_manpuz.cpp_FUN_00509b20", 
-      "addr": "00509b20"
-    }, 
-    {
-      "name": "core_manpuz.cpp_FUN_0050aef0", 
-      "addr": "0050aef0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
-      "addr": "005a8cb0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
-      "addr": "005a8c30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940", 
-      "addr": "005a8940"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
-      "addr": "005a8e90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_manpuz_cpp_006357dd", 
-      "addr": "006357dd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CMansionPuzzleCircle_shi_006357f0", 
-      "addr": "006357f0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_manpuz_doorslide_wav_00635820", 
-      "addr": "00635820", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "piVar1 = (int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100);"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "piVar1 = (int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100);"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "piVar3 = (int *)(in_stack_00000004 + 0x5f0 + iVar2 * 100);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0050aba0", 
-    "signature": "undefined core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0()", 
-    "address_range": [
-      [
-        "0050aba0", 
-        "0050ad37"
-      ]
-    ], 
-    "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 211
+  },
   "cross_references": [
     {
-      "from_addr": "0050a8b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_FUN_0050a610", 
-      "addr": "0050a610"
+      "addr": "0050a610",
+      "from_addr": "0050a8b5",
+      "name": "core_manpuz.cpp_FUN_0050a610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050aba0",
+    "address_range": [
+      [
+        "0050aba0",
+        "0050ad37"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0",
+    "signature": "undefined core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00509b20",
+      "name": "core_manpuz.cpp_FUN_00509b20"
+    },
+    {
+      "addr": "0050aef0",
+      "name": "core_manpuz.cpp_FUN_0050aef0"
+    },
+    {
+      "addr": "005a8cb0",
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a8940",
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940"
+    },
+    {
+      "addr": "005a8e90",
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006357dd",
+      "name": "s_core_manpuz_cpp_006357dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006357f0",
+      "name": "s_CMansionPuzzleCircle_shi_006357f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635820",
+      "name": "s_manpuz_doorslide_wav_00635820",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "piVar1 = (int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "piVar1 = (int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "piVar3 = (int *)(in_stack_00000004 + 0x5f0 + iVar2 * 100);",
+      "type": "stack_param"
     }
   ]
 }

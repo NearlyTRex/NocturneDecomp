@@ -26,8 +26,8 @@ section .text
         ;   Label: engine_matrix.c_integerSquareRoot_FUN_0050d890
     MOV EBX,dword ptr [ESP + 0x8]       ; 0050d891
     CMP EBX,0x1                         ; 0050d895
-    JL 0x0050d939                       ; 0050d898 | LAB_0050d939
-        ;   XREF to: 0050d939 (CONDITIONAL_JUMP)
+    JL 0x0050d939                       ; 0050d898
+        ;   XREF to: 0050d939 (CONDITIONAL_JUMP)  ; LAB_0050d939
     MOV ECX,0xc8                        ; 0050d89e
         ;   Label: LAB_0050d89e
     MOV EDX,EBX                         ; 0050d8a3
@@ -96,15 +96,15 @@ section .text
     SAR EAX,0x1                         ; 0050d935
     POP EBX                             ; 0050d937
     RET                                 ; 0050d938
-    MOV EDX,0x635aba                    ; 0050d939 | = "..\\engine\\matrix.c" | s_engine_matrix_c_00635aba = ..\engine\matrix.c
+    MOV EDX,0x635aba                    ; 0050d939 | = "..\\engine\\matrix.c"
         ;   Label: LAB_0050d939
     MOV ECX,0x391                       ; 0050d93e
-    PUSH 0x635acd                       ; 0050d943 | = "sqrt out of domain!" | s_sqrt_out_of_domain_00635acd = sqrt out of domain!
-    MOV dword ptr [0x02f0ca48],EDX      ; 0050d948 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0050d94e | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050d954 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x635acd                       ; 0050d943 | = "sqrt out of domain!"
+    MOV dword ptr [0x02f0ca48],EDX      ; 0050d948 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0050d94e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050d954
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0050d959
-    JMP 0x0050d89e                      ; 0050d95c | LAB_0050d89e
-        ;   XREF to: 0050d89e (UNCONDITIONAL_JUMP)
+    JMP 0x0050d89e                      ; 0050d95c
+        ;   XREF to: 0050d89e (UNCONDITIONAL_JUMP)  ; LAB_0050d89e
 

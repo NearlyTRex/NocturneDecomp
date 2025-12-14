@@ -27,9 +27,7 @@ float core_stairs_cpp_FUN_005ba590(void)
   
   local_18 = 1.01;
   triangle = (CDemonTriangle *)(in_stack_00000004 + 0x170);
-  for (iVar2 = 0;
-      SBORROW /* signed borrow */4(iVar2,*(int *)(in_stack_00000004 + 0x16c) * 2) !=
-      iVar2 + *(int *)(in_stack_00000004 + 0x16c) * -2 < 0; iVar2 = iVar2 + 1) {
+  for (iVar2 = 0; iVar2 < *(int *)(in_stack_00000004 + 0x16c) * 2; iVar2 = iVar2 + 1) {
     fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
                       (triangle,in_stack_00000008,in_stack_0000000c);
     if (((0.0 <= fVar1) && (fVar1 < local_14)) && (fVar1 <= 1.0)) {

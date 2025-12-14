@@ -41,20 +41,20 @@ section .text
     SAR EDX,0x1f                        ; 0050ce80
     IDIV EBX                            ; 0050ce83
     MOV dword ptr [ECX + 0x688020],EAX  ; 0050ce85 | g_RenderVertexBuffer[0].projected_vertex.inv_z
-    MOV EDX,dword ptr [0x02d02548]      ; 0050ce8b | int g_ViewportCenterXFixed
+    MOV EDX,dword ptr [0x02d02548]      ; 0050ce8b | g_ViewportCenterXFixed
     MOV EBX,dword ptr [ECX + 0x68801c]  ; 0050ce91 | g_RenderVertexBuffer[0].projected_vertex.transformed_z
-    MOV EAX,dword ptr [ECX + 0x688014]  ; 0050ce97 | SRenderVertex[16] g_RenderVertexBuffer
+    MOV EAX,dword ptr [ECX + 0x688014]  ; 0050ce97 | g_RenderVertexBuffer
     IMUL EDX                            ; 0050ce9d
     IDIV EBX                            ; 0050ce9f
-    MOV ESI,dword ptr [0x02d02550]      ; 0050cea1 | int g_ViewportRightFixed
+    MOV ESI,dword ptr [0x02d02550]      ; 0050cea1 | g_ViewportRightFixed
     ADD EAX,ESI                         ; 0050cea7
     MOV dword ptr [ECX + 0x688024],EAX  ; 0050cea9 | g_RenderVertexBuffer[0].projected_vertex.screen_x
-    MOV EDX,dword ptr [0x02d0254c]      ; 0050ceaf | int g_ViewportCenterYFixed
+    MOV EDX,dword ptr [0x02d0254c]      ; 0050ceaf | g_ViewportCenterYFixed
     MOV EBX,dword ptr [ECX + 0x68801c]  ; 0050ceb5 | g_RenderVertexBuffer[0].projected_vertex.transformed_z
     MOV EAX,dword ptr [ECX + 0x688018]  ; 0050cebb | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     IMUL EDX                            ; 0050cec1
     IDIV EBX                            ; 0050cec3
-    MOV EDI,dword ptr [0x02d02554]      ; 0050cec5 | int g_ViewportBottomFixed
+    MOV EDI,dword ptr [0x02d02554]      ; 0050cec5 | g_ViewportBottomFixed
     ADD EAX,EDI                         ; 0050cecb
     MOV dword ptr [ECX + 0x688028],EAX  ; 0050cecd | g_RenderVertexBuffer[0].projected_vertex.screen_y
     POP EDI                             ; 0050ced3

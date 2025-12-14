@@ -1,164 +1,164 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 76, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 9, 
-    "global_count": 1, 
-    "total_lines": 59, 
-    "assembly_lines": 38, 
-    "suspect_count": 5, 
+    "assembly_lines": 38,
+    "complexity_score": 76,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 21,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40", 
-      "addr": "0052de40"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "g_MotionControllerTargetFrameEnd2", 
-      "addr": "0063aafb", 
-      "value": "-1"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_0000002c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000002c;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000030;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000030 = (float)iVar1;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_0000002c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->current_motion_index = in_stack_0000002c;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->current_frame_number = in_stack_00000030;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052dde0", 
-    "signature": "void core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotionController * this_ptr, int target_motion_index, float target_frame_number)", 
-    "address_range": [
-      [
-        "0052dde0", 
-        "0052de3b"
-      ]
-    ], 
-    "name": "core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMotionController *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "target_motion_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "target_frame_number"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 59
+  },
   "cross_references": [
     {
-      "from_addr": "0040fb45", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0", 
-      "addr": "0040eed0"
-    }, 
+      "addr": "0040eed0",
+      "from_addr": "0040fb45",
+      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041bffb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_FUN_0041bf90", 
-      "addr": "0041bf90"
-    }, 
+      "addr": "0041bf90",
+      "from_addr": "0041bffb",
+      "name": "core_boneguy.cpp_FUN_0041bf90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043c913", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880", 
-      "addr": "0043c880"
-    }, 
+      "addr": "0043c880",
+      "from_addr": "0043c913",
+      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ad5c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
-      "addr": "004aacc0"
-    }, 
+      "addr": "004aacc0",
+      "from_addr": "004ad5c0",
+      "name": "core_event.cpp_CEventList_FUN_004aacc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00524a17", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920", 
-      "addr": "00524920"
-    }, 
+      "addr": "00524920",
+      "from_addr": "00524a17",
+      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052d9d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950", 
-      "addr": "0052d950"
-    }, 
+      "addr": "0052d950",
+      "from_addr": "0052d9d5",
+      "name": "core_motion.cpp_CMotionController_findAndStartTransition_FUN_0052d950",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052ddd1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0", 
-      "addr": "0052ddb0"
-    }, 
+      "addr": "0052ddb0",
+      "from_addr": "0052ddd1",
+      "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052dc51", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0", 
-      "addr": "0052dbc0"
-    }, 
+      "addr": "0052dbc0",
+      "from_addr": "0052dc51",
+      "name": "core_motion.cpp_CMotionController_startTransition_FUN_0052dbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00545edb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_passngr.cpp_FUN_00545d30", 
-      "addr": "00545d30"
+      "addr": "00545d30",
+      "from_addr": "00545edb",
+      "name": "core_passngr.cpp_FUN_00545d30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052dde0",
+    "address_range": [
+      [
+        "0052dde0",
+        "0052de3b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0",
+    "signature": "void core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotionController * this_ptr, int target_motion_index, float target_frame_number)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052de40",
+      "name": "core_motion.cpp_CMotionController_clearTweenState_FUN_0052de40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063aafb",
+      "name": "g_MotionControllerTargetFrameEnd2",
+      "type": "float",
+      "value": "-1"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "target_motion_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "target_frame_number",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000002c",
+      "text": "int in_stack_0000002c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000030",
+      "text": "float in_stack_00000030;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000030",
+      "text": "in_stack_00000030 = (float)iVar1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000002c",
+      "text": "this_ptr->current_motion_index = in_stack_0000002c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000030",
+      "text": "this_ptr->current_frame_number = in_stack_00000030;",
+      "type": "stack_param"
     }
   ]
 }

@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 14, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_freeTypeArray_FUN_005feee9", 
-      "addr": "005feee9"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CDeformableModelTypeInfo", 
-      "addr": "00662ef0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 9,
+    "complexity_score": 5,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a1fd0", 
-    "signature": "void core_skeleton.cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel * * array)", 
+    "address": "005a1fd0",
     "address_range": [
       [
-        "005a1fd0", 
+        "005a1fd0",
         "005a1fe4"
       ]
-    ], 
-    "name": "core_skeleton.cpp_freeDeformableModels_FUN_005a1fd0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_freeDeformableModels_FUN_005a1fd0",
+    "signature": "void core_skeleton.cpp_freeDeformableModels_FUN_005a1fd0(CDeformableModel * * array)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feee9",
+      "name": "crt_memory.c_freeTypeArray_FUN_005feee9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00662ef0",
+      "name": "g_CDeformableModelTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel * *", 
-        "size": 4, 
-        "name": "array"
+        "is_param": true,
+        "name": "array",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel * *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

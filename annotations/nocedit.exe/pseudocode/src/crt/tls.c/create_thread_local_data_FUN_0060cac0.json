@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 41, 
-    "assembly_lines": 27, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660", 
-      "addr": "00606660"
-    }, 
-    {
-      "name": "crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8", 
-      "addr": "0060a2d8"
-    }, 
-    {
-      "name": "TlsGetValue", 
-      "addr": "EXTERNAL:000000a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TlsGetValue*", 
-      "name": "PTR_TlsGetValue_00611654", 
-      "addr": "00611654", 
-      "value": "0021225e"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Thread_has_no_thread_spe_00659620", 
-      "addr": "00659620", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_TLSIndex", 
-      "addr": "00684ee0", 
-      "value": "0xffffffff"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "0060cac0", 
-    "signature": "LPVOID crt_tls.c_create_thread_local_data_FUN_0060cac0(void)", 
-    "address_range": [
-      [
-        "0060cac0", 
-        "0060caf6"
-      ]
-    ], 
-    "name": "crt_tls.c_create_thread_local_data_FUN_0060cac0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 27,
+    "complexity_score": 14,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
+  },
   "cross_references": [
     {
-      "from_addr": "0060a21b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_tls.c_get_thread_local_data_FUN_0060a1fc", 
-      "addr": "0060a1fc"
+      "addr": "0060a1fc",
+      "from_addr": "0060a21b",
+      "name": "crt_tls.c_get_thread_local_data_FUN_0060a1fc",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060cac0",
+    "address_range": [
+      [
+        "0060cac0",
+        "0060caf6"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_tls.c_create_thread_local_data_FUN_0060cac0",
+    "signature": "LPVOID crt_tls.c_create_thread_local_data_FUN_0060cac0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00606660",
+      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660"
+    },
+    {
+      "addr": "0060a2d8",
+      "name": "crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8"
+    },
+    {
+      "addr": "EXTERNAL:000000a0",
+      "name": "TlsGetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611654",
+      "name": "PTR_TlsGetValue_00611654",
+      "type": "TlsGetValue*",
+      "value": "0021225e"
+    },
+    {
+      "addr": "00659620",
+      "name": "s_Thread_has_no_thread_spe_00659620",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00684ee0",
+      "name": "g_TLSIndex",
+      "type": "DWORD",
+      "value": "0xffffffff"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

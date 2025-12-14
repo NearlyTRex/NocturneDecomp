@@ -23,16 +23,16 @@ section .text
         ;   Label: crt_mbstring.c_copyMbChar_FUN_0060e590
     MOV EBX,dword ptr [ESP + 0x8]       ; 0060e591
     MOV EAX,dword ptr [ESP + 0xc]       ; 0060e595
-    CMP dword ptr [0x03f9c020],0x0      ; 0060e599 | int g_MultibyteLocaleActive
-    JZ 0x0060e5c3                       ; 0060e5a0 | LAB_0060e5c3
-        ;   XREF to: 0060e5c3 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x03f9c020],0x0      ; 0060e599 | g_MultibyteLocaleActive
+    JZ 0x0060e5c3                       ; 0060e5a0
+        ;   XREF to: 0060e5c3 (CONDITIONAL_JUMP)  ; LAB_0060e5c3
     XOR EDX,EDX                         ; 0060e5a2
     MOV DL,byte ptr [EAX]               ; 0060e5a4
-    MOV DL,byte ptr [EDX + 0x3f9c031]   ; 0060e5a6 | char[256] g_LeadByteTable
+    MOV DL,byte ptr [EDX + 0x3f9c031]   ; 0060e5a6 | g_LeadByteTable
     AND DL,0x1                          ; 0060e5ac
     AND EDX,0xff                        ; 0060e5af
-    JZ 0x0060e5c3                       ; 0060e5b5 | LAB_0060e5c3
-        ;   XREF to: 0060e5c3 (CONDITIONAL_JUMP)
+    JZ 0x0060e5c3                       ; 0060e5b5
+        ;   XREF to: 0060e5c3 (CONDITIONAL_JUMP)  ; LAB_0060e5c3
     MOV DL,byte ptr [EAX]               ; 0060e5b7
     MOV byte ptr [EBX],DL               ; 0060e5b9
     MOV AL,byte ptr [EAX + 0x1]         ; 0060e5bb

@@ -31,16 +31,16 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 004bf2fc
     LEA EAX,[EBX + 0x4]                 ; 004bf300
     CMP EAX,ECX                         ; 004bf303
-    JNZ 0x004bf35f                      ; 004bf305 | LAB_004bf35f
-        ;   XREF to: 004bf35f (CONDITIONAL_JUMP)
+    JNZ 0x004bf35f                      ; 004bf305
+        ;   XREF to: 004bf35f (CONDITIONAL_JUMP)  ; LAB_004bf35f
     LEA EAX,[EBX + 0x1c]                ; 004bf307
         ;   Label: LAB_004bf307
     TEST EDX,EDX                        ; 004bf30a
-    JZ 0x004bf373                       ; 004bf30c | LAB_004bf373
-        ;   XREF to: 004bf373 (CONDITIONAL_JUMP)
+    JZ 0x004bf373                       ; 004bf30c
+        ;   XREF to: 004bf373 (CONDITIONAL_JUMP)  ; LAB_004bf373
     CMP EAX,EDX                         ; 004bf30e
-    JZ 0x004bf322                       ; 004bf310 | LAB_004bf322
-        ;   XREF to: 004bf322 (CONDITIONAL_JUMP)
+    JZ 0x004bf322                       ; 004bf310
+        ;   XREF to: 004bf322 (CONDITIONAL_JUMP)  ; LAB_004bf322
     MOV ECX,dword ptr [EDX]             ; 004bf312
     MOV dword ptr [EAX],ECX             ; 004bf314
     MOV ECX,dword ptr [EDX + 0x4]       ; 004bf316
@@ -53,8 +53,8 @@ section .text
     MOV dword ptr [EBX + 0x18],0x0      ; 004bf32b
     PUSH 0x3f733333                     ; 004bf332
     MOV dword ptr [EBX + 0x14],EAX      ; 004bf337
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004bf33a | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004bf33a
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     PUSH ESI                            ; 004bf35f
         ;   Label: LAB_004bf35f
     MOV ESI,dword ptr [ECX]             ; 004bf360
@@ -64,14 +64,14 @@ section .text
     MOV ESI,dword ptr [ECX + 0x8]       ; 004bf36a
     MOV dword ptr [EAX + 0x8],ESI       ; 004bf36d
     POP ESI                             ; 004bf370
-    JMP 0x004bf307                      ; 004bf371 | LAB_004bf307
-        ;   XREF to: 004bf307 (UNCONDITIONAL_JUMP)
+    JMP 0x004bf307                      ; 004bf371
+        ;   XREF to: 004bf307 (UNCONDITIONAL_JUMP)  ; LAB_004bf307
     MOV dword ptr [EAX + 0x8],EDX       ; 004bf373
         ;   Label: LAB_004bf373
     MOV EDX,dword ptr [EAX + 0x8]       ; 004bf376
     MOV dword ptr [EAX + 0x4],EDX       ; 004bf379
     MOV EDX,dword ptr [EAX + 0x4]       ; 004bf37c
     MOV dword ptr [EAX],EDX             ; 004bf37f
-    JMP 0x004bf322                      ; 004bf381 | LAB_004bf322
-        ;   XREF to: 004bf322 (UNCONDITIONAL_JUMP)
+    JMP 0x004bf322                      ; 004bf381
+        ;   XREF to: 004bf322 (UNCONDITIONAL_JUMP)  ; LAB_004bf322
 

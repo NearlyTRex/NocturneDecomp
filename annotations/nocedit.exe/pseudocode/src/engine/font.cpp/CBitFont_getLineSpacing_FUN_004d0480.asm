@@ -14,12 +14,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 004d0480
         ;   Label: engine_font.cpp_CBitFont_getLineSpacing_FUN_004d0480
     CMP dword ptr [EAX + 0x3190],0x0    ; 004d0484
-    JZ 0x004d0497                       ; 004d048b | LAB_004d0497
-        ;   XREF to: 004d0497 (CONDITIONAL_JUMP)
+    JZ 0x004d0497                       ; 004d048b
+        ;   XREF to: 004d0497 (CONDITIONAL_JUMP)  ; LAB_004d0497
     MOV EAX,dword ptr [EAX + 0x3194]    ; 004d048d
     TEST EAX,EAX                        ; 004d0493
-    JNZ 0x004d049a                      ; 004d0495 | LAB_004d049a
-        ;   XREF to: 004d049a (CONDITIONAL_JUMP)
+    JNZ 0x004d049a                      ; 004d0495
+        ;   XREF to: 004d049a (CONDITIONAL_JUMP)  ; LAB_004d049a
     XOR EAX,EAX                         ; 004d0497
         ;   Label: LAB_004d0497
     RET                                 ; 004d0499

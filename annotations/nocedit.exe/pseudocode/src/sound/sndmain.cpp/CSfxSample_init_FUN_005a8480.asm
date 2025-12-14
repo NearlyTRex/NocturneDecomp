@@ -33,14 +33,14 @@ section .text
     PUSH 0x150                          ; 005a8485
     PUSH 0x0                            ; 005a848a
     PUSH EBX                            ; 005a848c
-    CALL crt_memory.c_memset_FUN_005fde40 ; 005a848d | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
-    FLD double ptr [0x00681b38]         ; 005a8492 | double DOUBLE_00681b38
-    FLD float ptr [0x0066315c]          ; 005a8498 | float g_SoundReferenceDistanceConstant
+    CALL crt_memory.c_memset_FUN_005fde40 ; 005a848d
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
+    FLD double ptr [0x00681b38]         ; 005a8492 | DOUBLE_00681b38
+    FLD float ptr [0x0066315c]          ; 005a8498 | g_SoundReferenceDistanceConstant
     FMUL ST1                            ; 005a849e
-    FLD float ptr [0x03f5daa0]          ; 005a84a0 | float g_SoundReferenceVolumeDistance
+    FLD float ptr [0x03f5daa0]          ; 005a84a0 | g_SoundReferenceVolumeDistance
     FMUL ST2                            ; 005a84a6
-    FLD float ptr [0x00663160]          ; 005a84a8 | float FLOAT_00663160
+    FLD float ptr [0x00663160]          ; 005a84a8 | FLOAT_00663160
     FMULP ST3                           ; 005a84ae
     ADD ESP,0xc                         ; 005a84b0
     MOV EAX,EBX                         ; 005a84b3

@@ -57,8 +57,8 @@ section .text
     ADD EBX,0x4                         ; 00492ef0
     ADD EDI,0x4                         ; 00492ef3
     SUB ECX,0x4                         ; 00492ef6
-    JG 0x00492ec6                       ; 00492ef9 | LAB_00492ec6
-        ;   XREF to: 00492ec6 (CONDITIONAL_JUMP)
+    JG 0x00492ec6                       ; 00492ef9
+        ;   XREF to: 00492ec6 (CONDITIONAL_JUMP)  ; LAB_00492ec6
     POP ECX                             ; 00492efb
     POP EBX                             ; 00492efc
     EMMS                                ; 00492efd

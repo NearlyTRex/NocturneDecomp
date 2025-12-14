@@ -36,8 +36,8 @@ section .text
     SUB ESP,0x30                        ; 00525653
     MOV EBX,dword ptr [ESP + 0x40]      ; 00525656
     CMP dword ptr [EBX + 0xbee4],0x0    ; 0052565a
-    JZ 0x005256d9                       ; 00525661 | LAB_005256d9
-        ;   XREF to: 005256d9 (CONDITIONAL_JUMP)
+    JZ 0x005256d9                       ; 00525661
+        ;   XREF to: 005256d9 (CONDITIONAL_JUMP)  ; LAB_005256d9
     MOV ESI,0xc0166666                  ; 00525663
     MOV EDI,0xbfcccccd                  ; 00525668
     MOV ECX,0xc00ccccd                  ; 0052566d
@@ -47,15 +47,15 @@ section .text
     MOV dword ptr [ESP + 0x2c],EDI      ; 0052567e
     MOV dword ptr [ESP + 0x24],ECX      ; 00525682
     CMP EAX,EDX                         ; 00525686
-    JZ 0x00525696                       ; 00525688 | LAB_00525696
-        ;   XREF to: 00525696 (CONDITIONAL_JUMP)
+    JZ 0x00525696                       ; 00525688
+        ;   XREF to: 00525696 (CONDITIONAL_JUMP)  ; LAB_00525696
     MOV dword ptr [ESP + 0x1c],ESI      ; 0052568a
     MOV dword ptr [ESP + 0x20],EDI      ; 0052568e
     MOV dword ptr [ESP + 0x18],ECX      ; 00525692
     MOV EAX,dword ptr [EBX + 0xbee0]    ; 00525696
         ;   Label: LAB_00525696
     FLD float ptr [EAX + 0x34]          ; 0052569c
-    FADD double ptr [0x0063982e]        ; 0052569f | double DOUBLE_0063982e
+    FADD double ptr [0x0063982e]        ; 0052569f | DOUBLE_0063982e
     FSTP float ptr [EBX + 0x34]         ; 005256a5
         ;   Label: LAB_005256a5
     LEA EAX,[ESP + 0x18]                ; 005256a8
@@ -64,8 +64,8 @@ section .text
     PUSH EAX                            ; 005256b1
     MOV ECX,dword ptr [EBX + 0xbee0]    ; 005256b2
     PUSH ECX                            ; 005256b8
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005256b9 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005256b9
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     FLD float ptr [EAX]                 ; 005256be
     ADD ESP,0xc                         ; 005256c0
     FSTP float ptr [EBX + 0x20]         ; 005256c3
@@ -88,15 +88,15 @@ section .text
     MOV dword ptr [ESP + 0x8],EDI       ; 005256f2
     MOV dword ptr [ESP],ECX             ; 005256f6
     CMP EDX,EAX                         ; 005256f9
-    JZ 0x00525709                       ; 005256fb | LAB_00525709
-        ;   XREF to: 00525709 (CONDITIONAL_JUMP)
+    JZ 0x00525709                       ; 005256fb
+        ;   XREF to: 00525709 (CONDITIONAL_JUMP)  ; LAB_00525709
     MOV dword ptr [ESP + 0x1c],ESI      ; 005256fd
     MOV dword ptr [ESP + 0x20],EDI      ; 00525701
     MOV dword ptr [ESP + 0x18],ECX      ; 00525705
     MOV EAX,dword ptr [EBX + 0xbee0]    ; 00525709
         ;   Label: LAB_00525709
     FLD float ptr [EAX + 0x34]          ; 0052570f
-    FADD double ptr [0x00639826]        ; 00525712 | double DOUBLE_00639826
-    JMP 0x005256a5                      ; 00525718 | LAB_005256a5
-        ;   XREF to: 005256a5 (UNCONDITIONAL_JUMP)
+    FADD double ptr [0x00639826]        ; 00525712 | DOUBLE_00639826
+    JMP 0x005256a5                      ; 00525718
+        ;   XREF to: 005256a5 (UNCONDITIONAL_JUMP)  ; LAB_005256a5
 

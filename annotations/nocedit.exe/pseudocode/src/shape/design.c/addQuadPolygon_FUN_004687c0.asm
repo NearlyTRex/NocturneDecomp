@@ -46,20 +46,20 @@ section .text
     PUSH EBP                            ; 004687c3
     MOV EBP,ESP                         ; 004687c4
     SUB ESP,0x8                         ; 004687c6
-    IMUL EAX,dword ptr [0x016e990c],0x184 ; 004687cc | int g_PolygonCount
-    MOV EDX,0x16e9910                   ; 004687d6 | SShapeEditorPolygon[20000] g_ModelPolygonData
+    IMUL EAX,dword ptr [0x016e990c],0x184 ; 004687cc | g_PolygonCount
+    MOV EDX,0x16e9910                   ; 004687d6 | g_ModelPolygonData
     ADD EDX,EAX                         ; 004687db
     MOV dword ptr [EBP + -0x4],EDX      ; 004687dd
-    INC dword ptr [0x016e990c]          ; 004687e0 | int g_PolygonCount
+    INC dword ptr [0x016e990c]          ; 004687e0 | g_PolygonCount
     MOV EAX,dword ptr [EBP + -0x4]      ; 004687e6
-    MOV dword ptr [EAX],0x2             ; 004687e9 | SShapeEditorPolygon[20000] g_ModelPolygonData
-    MOV EAX,0x61cdde                    ; 004687ef | = "rustplat.raw" | s_rustplat_raw_0061cdde = rustplat.raw
-    PUSH EAX                            ; 004687f4 | = "rustplat.raw" | s_rustplat_raw_0061cdde = rustplat.raw
+    MOV dword ptr [EAX],0x2             ; 004687e9 | g_ModelPolygonData
+    MOV EAX,0x61cdde                    ; 004687ef | = "rustplat.raw"
+    PUSH EAX                            ; 004687f4 | = "rustplat.raw"
     MOV EAX,dword ptr [EBP + -0x4]      ; 004687f5
     ADD EAX,0x4                         ; 004687f8
     PUSH EAX                            ; 004687fb
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004687fc | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004687fc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00468801
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468804
     MOV dword ptr [EAX + 0xa4],0x4      ; 00468807 | DAT_016e99b4
@@ -77,42 +77,42 @@ section .text
     MOV dword ptr [EDX + 0xc4],EAX      ; 0046883b | DAT_016e99d4
     IMUL EAX,dword ptr [EBP + 0x14],0x14 ; 00468841
     FLD float ptr [EAX + 0x1626418]     ; 00468845 | DAT_01626418
-    FMUL double ptr [0x0061cdee]        ; 0046884b | double g_TextureScale
+    FMUL double ptr [0x0061cdee]        ; 0046884b | g_TextureScale
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468851
     FSTP float ptr [EAX + 0xf8]         ; 00468854 | DAT_016e9a08
     IMUL EAX,dword ptr [EBP + 0x14],0x14 ; 0046885a
     FLD float ptr [EAX + 0x162641c]     ; 0046885e | DAT_0162641c
-    FMUL double ptr [0x0061cdee]        ; 00468864 | double g_TextureScale
+    FMUL double ptr [0x0061cdee]        ; 00468864 | g_TextureScale
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046886a
     FSTP float ptr [EAX + 0x138]        ; 0046886d | DAT_016e9a48
     IMUL EAX,dword ptr [EBP + 0x18],0x14 ; 00468873
     FLD float ptr [EAX + 0x1626418]     ; 00468877 | DAT_01626418
-    FMUL double ptr [0x0061cdee]        ; 0046887d | double g_TextureScale
+    FMUL double ptr [0x0061cdee]        ; 0046887d | g_TextureScale
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468883
     FSTP float ptr [EAX + 0xfc]         ; 00468886 | DAT_016e9a0c
     IMUL EAX,dword ptr [EBP + 0x18],0x14 ; 0046888c
     FLD float ptr [EAX + 0x162641c]     ; 00468890 | DAT_0162641c
-    FMUL double ptr [0x0061cdee]        ; 00468896 | double g_TextureScale
+    FMUL double ptr [0x0061cdee]        ; 00468896 | g_TextureScale
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046889c
     FSTP float ptr [EAX + 0x13c]        ; 0046889f | DAT_016e9a4c
     IMUL EAX,dword ptr [EBP + 0x1c],0x14 ; 004688a5
     FLD float ptr [EAX + 0x1626418]     ; 004688a9 | DAT_01626418
-    FMUL double ptr [0x0061cdee]        ; 004688af | double g_TextureScale
+    FMUL double ptr [0x0061cdee]        ; 004688af | g_TextureScale
     MOV EAX,dword ptr [EBP + -0x4]      ; 004688b5
     FSTP float ptr [EAX + 0x100]        ; 004688b8 | DAT_016e9a10
     IMUL EAX,dword ptr [EBP + 0x1c],0x14 ; 004688be
     FLD float ptr [EAX + 0x162641c]     ; 004688c2 | DAT_0162641c
-    FMUL double ptr [0x0061cdee]        ; 004688c8 | double g_TextureScale
+    FMUL double ptr [0x0061cdee]        ; 004688c8 | g_TextureScale
     MOV EAX,dword ptr [EBP + -0x4]      ; 004688ce
     FSTP float ptr [EAX + 0x140]        ; 004688d1 | DAT_016e9a50
     IMUL EAX,dword ptr [EBP + 0x20],0x14 ; 004688d7
     FLD float ptr [EAX + 0x1626418]     ; 004688db | DAT_01626418
-    FMUL double ptr [0x0061cdee]        ; 004688e1 | double g_TextureScale
+    FMUL double ptr [0x0061cdee]        ; 004688e1 | g_TextureScale
     MOV EAX,dword ptr [EBP + -0x4]      ; 004688e7
     FSTP float ptr [EAX + 0x104]        ; 004688ea | DAT_016e9a14
     IMUL EAX,dword ptr [EBP + 0x20],0x14 ; 004688f0
     FLD float ptr [EAX + 0x162641c]     ; 004688f4 | DAT_0162641c
-    FMUL double ptr [0x0061cdee]        ; 004688fa | double g_TextureScale
+    FMUL double ptr [0x0061cdee]        ; 004688fa | g_TextureScale
     MOV EAX,dword ptr [EBP + -0x4]      ; 00468900
     FSTP float ptr [EAX + 0x144]        ; 00468903 | DAT_016e9a54
     MOV ESP,EBP                         ; 00468909

@@ -1,146 +1,146 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 51, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 100, 
-    "assembly_lines": 74, 
-    "suspect_count": 2, 
+    "assembly_lines": 74,
+    "complexity_score": 51,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0", 
-      "addr": "0044bdd0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_CameraFogIntensityFixedPointScale8", 
-      "addr": "0061a452", 
-      "value": "256"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_WorldToFloat", 
-      "addr": "0065c644", 
-      "value": "0.00390625"
-    }, 
-    {
-      "type": "SFogGrid", 
-      "name": "g_CameraFogGrid", 
-      "addr": "01519384", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 22, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(&g_CameraFogGrid,(CVector3i *)(extraout_EDX + 0x16c),end_pos,(int)ROUND(dVar5))"
-    }
-  ], 
+    ],
+    "total_lines": 100
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00453700", 
-    "signature": "int core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera * this_ptr, CVector3i * world_position)", 
+    "address": "00453700",
     "address_range": [
       [
-        "00453700", 
+        "00453700",
         "004537cd"
       ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700",
+    "signature": "int core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_00453700(CDemonCamera * this_ptr, CVector3i * world_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044bdd0",
+      "name": "core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061a452",
+      "name": "g_CameraFogIntensityFixedPointScale8",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "0065c644",
+      "name": "g_WorldToFloat",
+      "type": "float",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "01519384",
+      "name": "g_CameraFogGrid",
+      "type": "SFogGrid",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 44, 
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "world_position"
+        "is_param": true,
+        "name": "world_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_EDX",
+      "text": "(&g_CameraFogGrid,(CVector3i *)(extraout_EDX + 0x16c),end_pos,(int)ROUND(dVar5))",
+      "type": "extra_output"
+    }
+  ]
 }

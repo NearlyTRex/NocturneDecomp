@@ -1,188 +1,188 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 164, 
-    "pseudocode_lines": 59, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 205, 
-    "assembly_lines": 146, 
-    "suspect_count": 9, 
+    "assembly_lines": 146,
+    "complexity_score": 164,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 59,
+    "suspect_count": 9,
     "suspect_types": [
-      "unknown_field", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70", 
-      "addr": "005ade70"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DirectSux_Unable_to_s_s_00651a6c", 
-      "addr": "00651a6c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Create_temp_secondary_bu_00651b5a", 
-      "addr": "00651b5a", 
-      "value": null
-    }, 
-    {
-      "type": "GUID", 
-      "name": "g_IID_IKsPropertySet", 
-      "addr": "00681dd0", 
-      "value": null
-    }, 
-    {
-      "type": "GUID", 
-      "name": "g_IID_IDirectSound3DBuffer", 
-      "addr": "00686d68", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectSound*", 
-      "name": "g_DirectSound", 
-      "addr": "03f6a9b0", 
-      "value": null
-    }, 
-    {
-      "type": "IKsPropertySet*", 
-      "name": "g_DirectSoundPropertySet", 
-      "addr": "03f6a9c0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 25, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_2c._0_4_ = (int *)0x10001;"
-    }, 
-    {
-      "line": 26, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_2c._4_4_ = 0x5622;"
-    }, 
-    {
-      "line": 28, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_2c._8_4_ = (int *)0xac44;"
-    }, 
-    {
-      "line": 39, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((int *)local_2c._8_4_ != (int *)0x0) {"
-    }, 
-    {
-      "line": 40, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))();"
-    }, 
-    {
-      "line": 49, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((int *)local_2c._0_4_ != (int *)0x0) {"
-    }, 
-    {
-      "line": 50, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))();"
-    }
-  ], 
+      "register_param",
+      "unknown_field",
+      "badspacebase"
+    ],
+    "total_lines": 205
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ae660", 
-    "signature": "void sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevice * this_ptr)", 
+    "address": "005ae660",
     "address_range": [
       [
-        "005ae660", 
+        "005ae660",
         "005ae820"
       ]
-    ], 
-    "name": "sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660",
+    "signature": "void sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevice * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005ade70",
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70"
+    },
+    {
+      "addr": "005adba0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00651a6c",
+      "name": "s_DirectSux_Unable_to_s_s_00651a6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00651b5a",
+      "name": "s_Create_temp_secondary_bu_00651b5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00681dd0",
+      "name": "g_IID_IKsPropertySet",
+      "type": "GUID",
+      "value": null
+    },
+    {
+      "addr": "00686d68",
+      "name": "g_IID_IDirectSound3DBuffer",
+      "type": "GUID",
+      "value": null
+    },
+    {
+      "addr": "03f6a9b0",
+      "name": "g_DirectSound",
+      "type": "IDirectSound*",
+      "value": null
+    },
+    {
+      "addr": "03f6a9c0",
+      "name": "g_DirectSoundPropertySet",
+      "type": "IKsPropertySet*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 48, 
+    "frame_size": 52,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_2c"
-      }, 
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDirectSoundDevice *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 25,
+      "match": "._0_4_",
+      "text": "local_2c._0_4_ = (int *)0x10001;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 26,
+      "match": "._4_4_",
+      "text": "local_2c._4_4_ = 0x5622;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
+      "match": "._8_4_",
+      "text": "local_2c._8_4_ = (int *)0xac44;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 39,
+      "match": "._8_4_",
+      "text": "if ((int *)local_2c._8_4_ != (int *)0x0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._8_4_",
+      "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))();",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 49,
+      "match": "._0_4_",
+      "text": "if ((int *)local_2c._0_4_ != (int *)0x0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._0_4_",
+      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))();",
+      "type": "unknown_field"
+    }
+  ]
 }

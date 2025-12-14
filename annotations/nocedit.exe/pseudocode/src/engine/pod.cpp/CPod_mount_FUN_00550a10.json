@@ -1,155 +1,155 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 79, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 0, 
-    "global_count": 9, 
-    "total_lines": 117, 
-    "assembly_lines": 83, 
-    "suspect_count": 4, 
+    "assembly_lines": 83,
+    "complexity_score": 80,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 9,
+    "pseudocode_lines": 35,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0", 
-      "addr": "0054f5a0"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650", 
-      "addr": "0054f650"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
-      "addr": "0050f1b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_0064069f", 
-      "addr": "0064069f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_POD_files_at_on_006406b1", 
-      "addr": "006406b1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_006406ce", 
-      "addr": "006406ce", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_006406e0", 
-      "addr": "006406e0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_006406f2", 
-      "addr": "006406f2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_pod_cpp_00640701", 
-      "addr": "00640701", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_mount_s_00640713", 
-      "addr": "00640713", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000014;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000018;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr->pod_files[this_ptr->pod_file_count],in_stack_00000014);"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't mount %s\",in_stack_00000018);"
-    }
-  ], 
+    ],
+    "total_lines": 118
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00550a10", 
-    "signature": "void engine_pod.cpp_CPod_mount_FUN_00550a10(CPod * this_ptr, char * pod_filename)", 
+    "address": "00550a10",
     "address_range": [
       [
-        "00550a10", 
+        "00550a10",
         "00550aea"
       ]
-    ], 
-    "name": "engine_pod.cpp_CPod_mount_FUN_00550a10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPod_mount_FUN_00550a10",
+    "signature": "void engine_pod.cpp_CPod_mount_FUN_00550a10(CPod * this_ptr, char * pod_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0054f5a0",
+      "name": "engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0"
+    },
+    {
+      "addr": "0054f650",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650"
+    },
+    {
+      "addr": "0050f1b0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064069f",
+      "name": "s_engine_pod_cpp_0064069f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006406b1",
+      "name": "s_Too_many_POD_files_at_on_006406b1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006406ce",
+      "name": "s_engine_pod_cpp_006406ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006406e0",
+      "name": "s_engine_pod_cpp_006406e0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006406f2",
+      "name": "s_Out_of_memory_006406f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640701",
+      "name": "s_engine_pod_cpp_00640701",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00640713",
+      "name": "s_Can_t_mount_s_00640713",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPod *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPod *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "pod_filename"
+        "is_param": true,
+        "name": "pod_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000014",
+      "text": "char *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000018",
+      "text": "uint in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000014",
+      "text": "(this_ptr->pod_files[this_ptr->pod_file_count],in_stack_00000014);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000018",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't mount %s\",in_stack_00000018);",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -44,8 +44,8 @@ section .text
     FCOMPP                              ; 0052e4ee
     FNSTSW AX                           ; 0052e4f0
     SAHF                                ; 0052e4f2
-    JNC 0x0052e571                      ; 0052e4f3 | LAB_0052e571
-        ;   XREF to: 0052e571 (CONDITIONAL_JUMP)
+    JNC 0x0052e571                      ; 0052e4f3
+        ;   XREF to: 0052e571 (CONDITIONAL_JUMP)  ; LAB_0052e571
     MOV EAX,dword ptr [EDX + 0x64]      ; 0052e4f9
     DEC EAX                             ; 0052e4fc
     MOV dword ptr [ESP + 0x4],EAX       ; 0052e4fd
@@ -53,8 +53,8 @@ section .text
     FCOMP float ptr [ESP + 0x24]        ; 0052e505
     FNSTSW AX                           ; 0052e509
     SAHF                                ; 0052e50b
-    JA 0x0052e59e                       ; 0052e50c | LAB_0052e59e
-        ;   XREF to: 0052e59e (CONDITIONAL_JUMP)
+    JA 0x0052e59e                       ; 0052e50c
+        ;   XREF to: 0052e59e (CONDITIONAL_JUMP)  ; LAB_0052e59e
     MOV EBP,dword ptr [EDX + 0x64]      ; 0052e512
     MOV EAX,dword ptr [EDX + 0x60]      ; 0052e515
     ADD EAX,EBP                         ; 0052e518
@@ -64,17 +64,17 @@ section .text
     MOV EBP,dword ptr [EDX + 0x28]      ; 0052e520
     DEC EAX                             ; 0052e523
     CMP EAX,EBP                         ; 0052e524
-    JG 0x0052e58c                       ; 0052e526 | LAB_0052e58c
-        ;   XREF to: 0052e58c (CONDITIONAL_JUMP)
+    JG 0x0052e58c                       ; 0052e526
+        ;   XREF to: 0052e58c (CONDITIONAL_JUMP)  ; LAB_0052e58c
     CMP dword ptr [EDX + 0x30],0x1      ; 0052e528
-    JNZ 0x0052e58c                      ; 0052e52c | LAB_0052e58c
-        ;   XREF to: 0052e58c (CONDITIONAL_JUMP)
+    JNZ 0x0052e58c                      ; 0052e52c
+        ;   XREF to: 0052e58c (CONDITIONAL_JUMP)  ; LAB_0052e58c
     IMUL EAX,dword ptr [EDX + 0x34],0x54c ; 0052e52e
     MOV EDI,dword ptr [EDI]             ; 0052e535
     FILD dword ptr [EDI + EAX*0x1 + 0x9c8] ; 0052e537
     FADD float ptr [EDX + 0x38]         ; 0052e53e
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0052e541 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0052e541
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESI]               ; 0052e546
     MOV EAX,dword ptr [EDX + 0x64]      ; 0052e548
     DEC EAX                             ; 0052e54b
@@ -86,8 +86,8 @@ section .text
     FCOMPP                              ; 0052e55c
     FNSTSW AX                           ; 0052e55e
     SAHF                                ; 0052e560
-    JBE 0x0052e580                      ; 0052e561 | LAB_0052e580
-        ;   XREF to: 0052e580 (CONDITIONAL_JUMP)
+    JBE 0x0052e580                      ; 0052e561
+        ;   XREF to: 0052e580 (CONDITIONAL_JUMP)  ; LAB_0052e580
     ADD ESP,0x8                         ; 0052e563
         ;   Label: LAB_0052e563
     POP EBP                             ; 0052e566
@@ -100,14 +100,14 @@ section .text
     MOV dword ptr [ECX],EAX             ; 0052e574
     MOV dword ptr [ESI],EAX             ; 0052e576
     MOV dword ptr [EBX],0x0             ; 0052e578
-    JMP 0x0052e563                      ; 0052e57e | LAB_0052e563
-        ;   XREF to: 0052e563 (UNCONDITIONAL_JUMP)
+    JMP 0x0052e563                      ; 0052e57e
+        ;   XREF to: 0052e563 (UNCONDITIONAL_JUMP)  ; LAB_0052e563
     MOV EAX,dword ptr [ESI]             ; 0052e580
         ;   Label: LAB_0052e580
     MOV dword ptr [ECX],EAX             ; 0052e582
     MOV dword ptr [EBX],0x0             ; 0052e584
-    JMP 0x0052e563                      ; 0052e58a | LAB_0052e563
-        ;   XREF to: 0052e563 (UNCONDITIONAL_JUMP)
+    JMP 0x0052e563                      ; 0052e58a
+        ;   XREF to: 0052e563 (UNCONDITIONAL_JUMP)  ; LAB_0052e563
     MOV EAX,dword ptr [ECX]             ; 0052e58c
         ;   Label: LAB_0052e58c
     MOV dword ptr [ESI],EAX             ; 0052e58e
@@ -122,8 +122,8 @@ section .text
         ;   Label: LAB_0052e59e
     FADD float ptr [ESP + 0x24]         ; 0052e5a1
     FLD ST0                             ; 0052e5a5
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0052e5a7 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0052e5a7
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ECX]               ; 0052e5ac
     MOV EDX,dword ptr [ECX]             ; 0052e5ae
     INC EDX                             ; 0052e5b0

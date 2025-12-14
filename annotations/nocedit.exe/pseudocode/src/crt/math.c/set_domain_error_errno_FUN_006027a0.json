@@ -1,49 +1,49 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 11, 
-    "assembly_lines": 6, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_setErrno_FUN_00602790", 
-      "addr": "00602790"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006027a0", 
-    "signature": "void crt_math.c_set_domain_error_errno_FUN_006027a0(void)", 
-    "address_range": [
-      [
-        "006027a0", 
-        "006027aa"
-      ]
-    ], 
-    "name": "crt_math.c_set_domain_error_errno_FUN_006027a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 6,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 11
+  },
   "cross_references": [
     {
-      "from_addr": "0060e314", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_math.c_report_math_error_FUN_0060e2e5", 
-      "addr": "0060e2e5"
+      "addr": "0060e2e5",
+      "from_addr": "0060e314",
+      "name": "crt_math.c_report_math_error_FUN_0060e2e5",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "006027a0",
+    "address_range": [
+      [
+        "006027a0",
+        "006027aa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_math.c_set_domain_error_errno_FUN_006027a0",
+    "signature": "void crt_math.c_set_domain_error_errno_FUN_006027a0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00602790",
+      "name": "crt_errno.c_setErrno_FUN_00602790"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

@@ -1,90 +1,90 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 44, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 44, 
-    "assembly_lines": 25, 
-    "suspect_count": 2, 
+    "assembly_lines": 25,
+    "complexity_score": 43,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "ushort[256]", 
-      "name": "g_Hardware16BitPalette", 
-      "addr": "02d01d24", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "input_buffer = (void *)((int)input_buffer + 1);"
-    }, 
-    {
-      "line": 18, 
-      "match": "(ushort *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "output_buffer = (ushort *)((int)output_buffer + 2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00431730", 
-    "signature": "void cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00431730(void * output_buffer, void * input_buffer, int pixel_count)", 
-    "address_range": [
-      [
-        "00431730", 
-        "0043175f"
-      ]
-    ], 
-    "name": "cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00431730"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "input_buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "pixel_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 43
+  },
   "cross_references": [
     {
-      "from_addr": "004317a0", 
-      "type": "DATA", 
-      "name": "cockpit_ckptutil.c_get16BitConversionFunction_FUN_004317a0", 
-      "addr": "004317a0"
+      "addr": "004317a0",
+      "from_addr": "004317a0",
+      "name": "cockpit_ckptutil.c_get16BitConversionFunction_FUN_004317a0",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00431730",
+    "address_range": [
+      [
+        "00431730",
+        "0043175f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00431730",
+    "signature": "void cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00431730(void * output_buffer, void * input_buffer, int pixel_count)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d01d24",
+      "name": "g_Hardware16BitPalette",
+      "type": "ushort[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "input_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(void *)((int)",
+      "text": "input_buffer = (void *)((int)input_buffer + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(ushort *)((int)",
+      "text": "output_buffer = (ushort *)((int)output_buffer + 2);",
+      "type": "pointer_cast"
     }
   ]
 }

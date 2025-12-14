@@ -595,7 +595,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
           *(int *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = this_ptr->mirror_render_param4
           ;
           fVar11 = fVar10;
-        } while (SBORROW /* signed borrow */4((int)fVar10,iVar16) != (int)fVar10 + vertex_count * -0x30 < 0);
+        } while ((int)fVar10 < iVar16);
         return fVar10;
       }
     }
@@ -630,7 +630,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               ;
               *(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar11) = 0;
               fVar11 = fVar10;
-            } while (SBORROW /* signed borrow */4((int)fVar10,iVar16) != (int)fVar10 + vertex_count * -0x30 < 0);
+            } while ((int)fVar10 < iVar16);
             g_PerspectiveReciprocal = 0.0;
             return fVar10;
           }
@@ -644,7 +644,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
             *(uint *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = 0xffff;
             *(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar11) = 0;
             fVar11 = fVar10;
-          } while (SBORROW /* signed borrow */4((int)fVar10,iVar16) != (int)fVar10 + vertex_count * -0x30 < 0);
+          } while ((int)fVar10 < iVar16);
           g_PerspectiveReciprocal = 0.0;
           return fVar10;
         }
@@ -676,7 +676,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
           pCVar8[0x97].field8_0x21e[0x89c] = '\0';
           pCVar8[0x97].field8_0x21e[0x89d] = '\0';
           pCVar9 = this_ptr;
-        } while (SBORROW /* signed borrow */4((int)this_ptr,iVar16) != (int)this_ptr + vertex_count * -0x30 < 0);
+        } while ((int)this_ptr < iVar16);
       }
       g_PerspectiveReciprocal = 0.0;
       pCVar9 = this_ptr;

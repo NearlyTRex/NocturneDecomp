@@ -11,18 +11,18 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimit
 
 {
   int iVar1;
-  SMRGLHeaderExtended *pSVar2;
+  int iVar2;
   SMRGLHeaderPrimitive *pSVar3;
   SMRGLHeaderExtended *extraout_EAX;
+  SMRGLHeaderExtended *pSVar4;
   SMRGLHeaderExtended *extraout_EAX_00;
-  int iVar4;
   int iVar5;
   uint in_stack_00000008;
   int in_stack_00000014;
   
-  pSVar2 = (SMRGLHeaderExtended *)
-           engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
-  if (pSVar2 != (SMRGLHeaderExtended *)0x0) {
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
+  pSVar4 = (SMRGLHeaderExtended *)0x0;
+  if (iVar2 != 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
         g_ScanlineRenderFunc = wincore_windll_cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec;
@@ -53,7 +53,7 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimit
     else {
       g_RenderStateFlag2 = PREPROCESS_TEXTURE_NORMALIZE_ALT;
     }
-    iVar4 = 0;
+    iVar2 = 0;
     if (0 < (polygon_info->base).count) {
       iVar5 = 0;
       pSVar3 = polygon_info;
@@ -63,9 +63,9 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimit
         g_RenderVertexBuffer[iVar1].u = (float)pSVar3[1].base.count;
         iVar5 = iVar5 + 4;
         g_RenderVertexBuffer[iVar1].v = (float)pSVar3[1].surface_normal.A;
-        iVar4 = iVar4 + 1;
+        iVar2 = iVar2 + 1;
         pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
-      } while (iVar4 < (polygon_info->base).count);
+      } while (iVar2 < (polygon_info->base).count);
     }
     if (g_AdvancedClippingEnabled == 0) {
       engine_clipper_c_clipPolygonToViewport_FUN_00438420
@@ -74,7 +74,7 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimit
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0
               ((polygon_info->base).count,g_ProcessedVertexIndices);
-    pSVar2 = extraout_EAX;
+    pSVar4 = extraout_EAX;
   }
-  return pSVar2;
+  return pSVar4;
 }

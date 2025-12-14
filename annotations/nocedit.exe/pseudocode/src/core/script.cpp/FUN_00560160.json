@@ -1,111 +1,111 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 96, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 79, 
-    "assembly_lines": 53, 
-    "suspect_count": 6, 
+    "assembly_lines": 53,
+    "complexity_score": 96,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 26,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_script.cpp_FUN_005593d0", 
-      "addr": "005593d0"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "char *unaff_EBP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_00000004 + 0x30)) {"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (**(char **)(iVar3 + 4 + *(int *)(in_stack_00000004 + 0x34)) == ':') {"
-    }, 
-    {
-      "line": 20, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,unaff_EBP);"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0x30));"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00560160", 
-    "signature": "undefined core_script.cpp_FUN_00560160()", 
-    "address_range": [
-      [
-        "00560160", 
-        "005601b6"
-      ]
-    ], 
-    "name": "core_script.cpp_FUN_00560160"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 79
+  },
   "cross_references": [
     {
-      "from_addr": "0055a702", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_checkInitSection_FUN_0055a6c0", 
-      "addr": "0055a6c0"
-    }, 
+      "addr": "0055a6c0",
+      "from_addr": "0055a702",
+      "name": "core_script.cpp_CScript_checkInitSection_FUN_0055a6c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0055a9b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
-    }, 
+      "addr": "0055a810",
+      "from_addr": "0055a9b5",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00565deb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00565d00", 
-      "addr": "00565d00"
+      "addr": "00565d00",
+      "from_addr": "00565deb",
+      "name": "core_script.cpp_FUN_00565d00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00560160",
+    "address_range": [
+      [
+        "00560160",
+        "005601b6"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_FUN_00560160",
+    "signature": "undefined core_script.cpp_FUN_00560160()"
+  },
+  "function_calls": [
+    {
+      "addr": "005593d0",
+      "name": "core_script.cpp_FUN_005593d0"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x30)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "if (**(char **)(iVar3 + 4 + *(int *)(in_stack_00000004 + 0x34)) == ':') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBP",
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0x30));",
+      "type": "stack_param"
     }
   ]
 }

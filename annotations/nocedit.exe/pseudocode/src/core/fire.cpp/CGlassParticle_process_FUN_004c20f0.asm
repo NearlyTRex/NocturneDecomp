@@ -24,7 +24,7 @@ section .text
         ;   Label: core_fire.cpp_CGlassParticle_process_FUN_004c20f0
     SUB ESP,0x4                         ; 004c20f1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004c20f4
-    MOV EAX,[0x0067b654]                ; 004c20f8 | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 004c20f8 | g_CGamePtr
     FLD float ptr [EBX + 0x54]          ; 004c20fd
     MOV EAX,dword ptr [EAX + 0x264]     ; 004c2100 | g_CGameInstance.delta_time_float
     FLD float ptr [EBX + 0x58]          ; 004c2106
@@ -37,9 +37,9 @@ section .text
     FXCH                                ; 004c2119
     FSTP float ptr [EBX + 0x54]         ; 004c211b
     FSTP float ptr [EBX + 0x58]         ; 004c211e
-    CALL core_particle.cpp_CParticle_process_FUN_00545760 ; 004c2121 | void core_particle.cpp_CParticle_process_FUN_00545760(CParticle * this_ptr)
-        ;   XREF to: 00545760 (UNCONDITIONAL_CALL)
-    MOV EAX,[0x02cf6a80]                ; 004c2126 | int g_GlobalDeltaTimeInt
+    CALL core_particle.cpp_CParticle_process_FUN_00545760 ; 004c2121
+        ;   XREF to: 00545760 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_process_FUN_00545760(CParticle * this_ptr)
+    MOV EAX,[0x02cf6a80]                ; 004c2126 | g_GlobalDeltaTimeInt
     MOV EDX,EAX                         ; 004c212b
     MOV ECX,0x6                         ; 004c212d
     SAR EDX,0x1f                        ; 004c2132
@@ -49,8 +49,8 @@ section .text
     ADD ESP,0x4                         ; 004c213c
     MOV dword ptr [EBX + 0x38],EDX      ; 004c213f
     TEST EDX,EDX                        ; 004c2142
-    JL 0x004c214b                       ; 004c2144 | LAB_004c214b
-        ;   XREF to: 004c214b (CONDITIONAL_JUMP)
+    JL 0x004c214b                       ; 004c2144
+        ;   XREF to: 004c214b (CONDITIONAL_JUMP)  ; LAB_004c214b
     ADD ESP,0x4                         ; 004c2146
     POP EBX                             ; 004c2149
     RET                                 ; 004c214a

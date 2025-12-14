@@ -31,13 +31,13 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,i
                  (g_PrimaryMixBuffer,num_buffers * iVar4 * g_AudioChannelCount,
                   "..\\sound\\sndmain.cpp",0x4a2);
   g_SecondaryMixBuffer =
-       (float *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                          (g_SecondaryMixBuffer,g_AudioChannelCount * iVar4 * 2,
-                           "..\\sound\\sndmain.cpp",0x4a3);
+       shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                 (g_SecondaryMixBuffer,g_AudioChannelCount * iVar4 * 2,"..\\sound\\sndmain.cpp",
+                  0x4a3);
   g_TertiaryMixBuffer =
-       (float *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                          (g_TertiaryMixBuffer,iVar4 * g_AudioChannelCount,
-                           "..\\sound\\sndmain.cpp",0x4a4);
+       shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                 (g_TertiaryMixBuffer,iVar4 * g_AudioChannelCount,"..\\sound\\sndmain.cpp",0x4a4
+                 );
   if (((g_PrimaryMixBuffer == (void *)0x0) || (g_SecondaryMixBuffer == (float *)0x0)) ||
      (g_TertiaryMixBuffer == (float *)0x0)) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";

@@ -30,15 +30,15 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00505780
         ;   Label: engine_light.cpp_calculateLighting_FUN_00505780
-    MOV EDX,dword ptr [0x02d052dc]      ; 00505784 | int g_LightDirectionX
+    MOV EDX,dword ptr [0x02d052dc]      ; 00505784 | g_LightDirectionX
     IMUL EDX                            ; 0050578a
     SHRD EAX,EDX,0x10                   ; 0050578c
-    MOV EDX,dword ptr [0x02d052e0]      ; 00505790 | int g_LightDirectionY
+    MOV EDX,dword ptr [0x02d052e0]      ; 00505790 | g_LightDirectionY
     MOV ECX,EAX                         ; 00505796
     MOV EAX,dword ptr [ESP + 0x8]       ; 00505798
     IMUL EDX                            ; 0050579c
     SHRD EAX,EDX,0x10                   ; 0050579e
-    MOV EDX,dword ptr [0x02d052e4]      ; 005057a2 | int g_LightDirectionZ
+    MOV EDX,dword ptr [0x02d052e4]      ; 005057a2 | g_LightDirectionZ
     ADD ECX,EAX                         ; 005057a8
     MOV EAX,dword ptr [ESP + 0xc]       ; 005057aa
     IMUL EDX                            ; 005057ae
@@ -46,27 +46,27 @@ section .text
     LEA EDX,[ECX + EAX*0x1]             ; 005057b4
     NEG EDX                             ; 005057b7
     TEST EDX,EDX                        ; 005057b9
-    JL 0x0050580b                       ; 005057bb | LAB_0050580b
-        ;   XREF to: 0050580b (CONDITIONAL_JUMP)
+    JL 0x0050580b                       ; 005057bb
+        ;   XREF to: 0050580b (CONDITIONAL_JUMP)  ; LAB_0050580b
     CMP EDX,0xffff                      ; 005057bd
-    JLE 0x005057ca                      ; 005057c3 | LAB_005057ca
-        ;   XREF to: 005057ca (CONDITIONAL_JUMP)
+    JLE 0x005057ca                      ; 005057c3
+        ;   XREF to: 005057ca (CONDITIONAL_JUMP)  ; LAB_005057ca
     MOV EDX,0xffff                      ; 005057c5
     MOV ECX,0xffff                      ; 005057ca
         ;   Label: LAB_005057ca
-    SUB ECX,dword ptr [0x0067cfc8]      ; 005057cf | int g_AmbientLightLevel
+    SUB ECX,dword ptr [0x0067cfc8]      ; 005057cf | g_AmbientLightLevel
     MOV EAX,EDX                         ; 005057d5
     MOV EDX,ECX                         ; 005057d7
     IMUL EDX                            ; 005057d9
     SHRD EAX,EDX,0x10                   ; 005057db
-    MOV EDX,dword ptr [0x0067cfc8]      ; 005057df | int g_AmbientLightLevel
+    MOV EDX,dword ptr [0x0067cfc8]      ; 005057df | g_AmbientLightLevel
     ADD EDX,EAX                         ; 005057e5
     TEST EDX,EDX                        ; 005057e7
-    JL 0x0050580f                       ; 005057e9 | LAB_0050580f
-        ;   XREF to: 0050580f (CONDITIONAL_JUMP)
+    JL 0x0050580f                       ; 005057e9
+        ;   XREF to: 0050580f (CONDITIONAL_JUMP)  ; LAB_0050580f
     CMP EDX,0xffff                      ; 005057eb
-    JLE 0x005057f8                      ; 005057f1 | LAB_005057f8
-        ;   XREF to: 005057f8 (CONDITIONAL_JUMP)
+    JLE 0x005057f8                      ; 005057f1
+        ;   XREF to: 005057f8 (CONDITIONAL_JUMP)  ; LAB_005057f8
     MOV EDX,0xffff                      ; 005057f3
     MOV EAX,EDX                         ; 005057f8
         ;   Label: LAB_005057f8
@@ -78,8 +78,8 @@ section .text
     RET                                 ; 0050580a
     XOR EDX,EDX                         ; 0050580b
         ;   Label: LAB_0050580b
-    JMP 0x005057ca                      ; 0050580d | LAB_005057ca
-        ;   XREF to: 005057ca (UNCONDITIONAL_JUMP)
+    JMP 0x005057ca                      ; 0050580d
+        ;   XREF to: 005057ca (UNCONDITIONAL_JUMP)  ; LAB_005057ca
     XOR EDX,EDX                         ; 0050580f
         ;   Label: LAB_0050580f
     MOV EAX,EDX                         ; 00505811

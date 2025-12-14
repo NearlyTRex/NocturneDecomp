@@ -1,56 +1,56 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 9, 
-    "assembly_lines": 3, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_startup.c_reportAbnormalTermination_FUN_00601628", 
-      "addr": "00601628"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "VOID_FUNC*", 
-      "name": "PTR_crt_startup.c_reportAbnormalTermination_FUN_00684c84", 
-      "addr": "00684c84", 
-      "value": "00601628"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "00601620", 
-    "signature": "void crt_startup.c_notifyAbnormalTermination_FUN_00601620(void)", 
-    "address_range": [
-      [
-        "00601620", 
-        "00601627"
-      ]
-    ], 
-    "name": "crt_startup.c_notifyAbnormalTermination_FUN_00601620"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 3,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
   "cross_references": [
     {
-      "from_addr": "00506fe1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
+      "addr": "00506f10",
+      "from_addr": "00506fe1",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00601620",
+    "address_range": [
+      [
+        "00601620",
+        "00601627"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_startup.c_notifyAbnormalTermination_FUN_00601620",
+    "signature": "void crt_startup.c_notifyAbnormalTermination_FUN_00601620(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601628",
+      "name": "crt_startup.c_reportAbnormalTermination_FUN_00601628"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684c84",
+      "name": "PTR_crt_startup.c_reportAbnormalTermination_FUN_00684c84",
+      "type": "VOID_FUNC*",
+      "value": "00601628"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

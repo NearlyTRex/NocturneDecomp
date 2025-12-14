@@ -32,28 +32,28 @@ section .text
     MOV EBP,ESP                         ; 004616f4
     SUB ESP,0x10                        ; 004616f6
     CMP dword ptr [EBP + 0x14],0x0      ; 004616fc
-    JZ 0x004617b7                       ; 00461700 | LAB_004617b7
-        ;   XREF to: 004617b7 (CONDITIONAL_JUMP)
+    JZ 0x004617b7                       ; 00461700
+        ;   XREF to: 004617b7 (CONDITIONAL_JUMP)  ; LAB_004617b7
     MOV EAX,dword ptr [EBP + 0x14]      ; 00461706
     CMP dword ptr [EAX + 0x8],0x0       ; 00461709
-    JNZ 0x00461722                      ; 0046170d | LAB_00461722
-        ;   XREF to: 00461722 (CONDITIONAL_JUMP)
+    JNZ 0x00461722                      ; 0046170d
+        ;   XREF to: 00461722 (CONDITIONAL_JUMP)  ; LAB_00461722
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046170f
     PUSH dword ptr [EAX + 0xc]          ; 00461712
-    CALL shape_design.c_renderPolygonsByPart_FUN_004616a0 ; 00461715 | void shape_design.c_renderPolygonsByPart_FUN_004616a0(int part_id)
-        ;   XREF to: 004616a0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_renderPolygonsByPart_FUN_004616a0 ; 00461715
+        ;   XREF to: 004616a0 (UNCONDITIONAL_CALL)  ; void shape_design.c_renderPolygonsByPart_FUN_004616a0(int part_id)
     ADD ESP,0x4                         ; 0046171a
-    JMP 0x004617b7                      ; 0046171d | LAB_004617b7
-        ;   XREF to: 004617b7 (UNCONDITIONAL_JUMP)
-    FILD dword ptr [0x02d052b8]         ; 00461722 | int g_RelativeX
+    JMP 0x004617b7                      ; 0046171d
+        ;   XREF to: 004617b7 (UNCONDITIONAL_JUMP)  ; LAB_004617b7
+    FILD dword ptr [0x02d052b8]         ; 00461722 | g_RelativeX
         ;   Label: LAB_00461722
-    FMUL double ptr [0x0061befe]        ; 00461728 | double g_SpatialTreeScale
+    FMUL double ptr [0x0061befe]        ; 00461728 | g_SpatialTreeScale
     FSTP float ptr [EBP + -0x10]        ; 0046172e
-    FILD dword ptr [0x02d052bc]         ; 00461731 | int g_RelativeY
-    FMUL double ptr [0x0061befe]        ; 00461737 | double g_SpatialTreeScale
+    FILD dword ptr [0x02d052bc]         ; 00461731 | g_RelativeY
+    FMUL double ptr [0x0061befe]        ; 00461737 | g_SpatialTreeScale
     FSTP float ptr [EBP + -0xc]         ; 0046173d
-    FILD dword ptr [0x02d052c0]         ; 00461740 | int g_RelativeZ
-    FMUL double ptr [0x0061befe]        ; 00461746 | double g_SpatialTreeScale
+    FILD dword ptr [0x02d052c0]         ; 00461740 | g_RelativeZ
+    FMUL double ptr [0x0061befe]        ; 00461746 | g_SpatialTreeScale
     FSTP float ptr [EBP + -0x8]         ; 0046174c
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046174f
     FLD float ptr [EBP + -0x10]         ; 00461752
@@ -72,30 +72,30 @@ section .text
     FCOMP float ptr [EAX + 0x18]        ; 00461777
     FNSTSW AX                           ; 0046177a
     SAHF                                ; 0046177c
-    JBE 0x0046179c                      ; 0046177d | LAB_0046179c
-        ;   XREF to: 0046179c (CONDITIONAL_JUMP)
+    JBE 0x0046179c                      ; 0046177d
+        ;   XREF to: 0046179c (CONDITIONAL_JUMP)  ; LAB_0046179c
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046177f
     PUSH dword ptr [EAX]                ; 00461782
-    CALL shape_design.c_traverseSpatialTree_FUN_004616f0 ; 00461784 | void shape_design.c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode * tree_node)
-        ;   XREF to: 004616f0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_traverseSpatialTree_FUN_004616f0 ; 00461784
+        ;   XREF to: 004616f0 (UNCONDITIONAL_CALL)  ; void shape_design.c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode * tree_node)
     ADD ESP,0x4                         ; 00461789
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046178c
     PUSH dword ptr [EAX + 0x4]          ; 0046178f
-    CALL shape_design.c_traverseSpatialTree_FUN_004616f0 ; 00461792 | void shape_design.c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode * tree_node)
-        ;   XREF to: 004616f0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_traverseSpatialTree_FUN_004616f0 ; 00461792
+        ;   XREF to: 004616f0 (UNCONDITIONAL_CALL)  ; void shape_design.c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode * tree_node)
     ADD ESP,0x4                         ; 00461797
-    JMP 0x004617b7                      ; 0046179a | LAB_004617b7
-        ;   XREF to: 004617b7 (UNCONDITIONAL_JUMP)
+    JMP 0x004617b7                      ; 0046179a
+        ;   XREF to: 004617b7 (UNCONDITIONAL_JUMP)  ; LAB_004617b7
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046179c
         ;   Label: LAB_0046179c
     PUSH dword ptr [EAX + 0x4]          ; 0046179f
-    CALL shape_design.c_traverseSpatialTree_FUN_004616f0 ; 004617a2 | void shape_design.c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode * tree_node)
-        ;   XREF to: 004616f0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_traverseSpatialTree_FUN_004616f0 ; 004617a2
+        ;   XREF to: 004616f0 (UNCONDITIONAL_CALL)  ; void shape_design.c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode * tree_node)
     ADD ESP,0x4                         ; 004617a7
     MOV EAX,dword ptr [EBP + 0x14]      ; 004617aa
     PUSH dword ptr [EAX]                ; 004617ad
-    CALL shape_design.c_traverseSpatialTree_FUN_004616f0 ; 004617af | void shape_design.c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode * tree_node)
-        ;   XREF to: 004616f0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_traverseSpatialTree_FUN_004616f0 ; 004617af
+        ;   XREF to: 004616f0 (UNCONDITIONAL_CALL)  ; void shape_design.c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode * tree_node)
     ADD ESP,0x4                         ; 004617b4
     MOV ESP,EBP                         ; 004617b7
         ;   Label: LAB_004617b7

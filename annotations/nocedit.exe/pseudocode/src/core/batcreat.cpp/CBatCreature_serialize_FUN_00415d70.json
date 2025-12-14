@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 39, 
-    "assembly_lines": 28, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970", 
-      "addr": "0040b970"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
-      "addr": "0040b9f0"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660", 
-      "addr": "004a9660"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_speed_00615661", 
-      "addr": "00615661", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_00615667", 
-      "addr": "00615667", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_motion_state_00615671", 
-      "addr": "00615671", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 28,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00415d70", 
-    "signature": "void core_batcreat.cpp_CBatCreature_serialize_FUN_00415d70(CBatCreature * this_ptr)", 
+    "address": "00415d70",
     "address_range": [
       [
-        "00415d70", 
+        "00415d70",
         "00415db7"
       ]
-    ], 
-    "name": "core_batcreat.cpp_CBatCreature_serialize_FUN_00415d70"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_batcreat.cpp_CBatCreature_serialize_FUN_00415d70",
+    "signature": "void core_batcreat.cpp_CBatCreature_serialize_FUN_00415d70(CBatCreature * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b970",
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970"
+    },
+    {
+      "addr": "0040b770",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b9f0",
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0"
+    },
+    {
+      "addr": "004a9660",
+      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00615661",
+      "name": "s_speed_00615661",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615667",
+      "name": "s_modelName_00615667",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00615671",
+      "name": "s_motion_state_00615671",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBatCreature *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBatCreature *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

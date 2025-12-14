@@ -36,11 +36,11 @@ section .text
     PUSH EBP                            ; 005240a1
     MOV EBX,dword ptr [ESP + 0xc]       ; 005240a2
     PUSH 0x403                          ; 005240a6
-    PUSH 0x63919e                       ; 005240ab | = "..\\core\\mission.cpp" | s_core_mission_cpp_0063919e = ..\core\mission.cpp
+    PUSH 0x63919e                       ; 005240ab | = "..\\core\\mission.cpp"
     MOV EDX,dword ptr [ESP + 0x18]      ; 005240b0
     PUSH EDX                            ; 005240b4
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 005240b5 | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 005240b5
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     ADD ESP,0xc                         ; 005240ba
     MOV EAX,dword ptr [EBX + 0x560]     ; 005240bd
     MOV EDX,dword ptr [ESP + 0x10]      ; 005240c3
@@ -52,20 +52,20 @@ section .text
     INC ECX                             ; 005240e5
     MOV dword ptr [EBX + 0x560],ECX     ; 005240e6
     CMP ECX,0x64                        ; 005240ec
-    JGE 0x005240f4                      ; 005240ef | LAB_005240f4
-        ;   XREF to: 005240f4 (CONDITIONAL_JUMP)
+    JGE 0x005240f4                      ; 005240ef
+        ;   XREF to: 005240f4 (CONDITIONAL_JUMP)  ; LAB_005240f4
     POP EBP                             ; 005240f1
     POP EBX                             ; 005240f2
     RET                                 ; 005240f3
     PUSH EDI                            ; 005240f4
         ;   Label: LAB_005240f4
-    MOV EDI,0x6391b2                    ; 005240f5 | = "..\\core\\mission.cpp" | s_core_mission_cpp_006391b2 = ..\core\mission.cpp
+    MOV EDI,0x6391b2                    ; 005240f5 | = "..\\core\\mission.cpp"
     MOV EBP,0x408                       ; 005240fa
-    PUSH 0x6391c6                       ; 005240ff | = "CDemonMission::markActorToDelete - To..." | s_CDemonMission_markActorT_006391c6 = CDemonMission::markActorToDelete - Too many of them!
-    MOV dword ptr [0x02f0ca48],EDI      ; 00524104 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 0052410a | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00524110 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6391c6                       ; 005240ff | = "CDemonMission::markActorToDelete - To..."
+    MOV dword ptr [0x02f0ca48],EDI      ; 00524104 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 0052410a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00524110
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00524115
     POP EDI                             ; 00524118
     POP EBP                             ; 00524119

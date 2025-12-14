@@ -19,18 +19,16 @@ core_dcube_cpp_intersectXZCapsuleWithHeight_FUN_00455990
   cylinder->edge_x2 = segment_end->x;
   cylinder->edge_z2 = segment_end->z;
   iVar2 = core_dcube_cpp_intersectXZCapsule_FUN_004556b0(cylinder);
-  if (iVar2 != 0) {
-    fVar1 = (segment_end->y - segment_start->y) * cylinder->param_clamped + segment_start->y;
-    if ((cylinder->top_y < fVar1) && (fVar1 < cylinder->bottom_y)) {
-      cylinder->flags = 0;
-      cylinder->max_distance = cylinder->param_t;
-      cylinder->push_x =
-           (cylinder->normal_z * cylinder->param_t + cylinder->center_z) - cylinder->intersect_z;
-      cylinder->push_z =
-           (cylinder->normal_x * cylinder->param_t + cylinder->center_x) - cylinder->intersect_x;
-      return 1;
-    }
-    iVar2 = 0;
+  if (((iVar2 != 0) &&
+      (fVar1 = (segment_end->y - segment_start->y) * cylinder->param_clamped + segment_start->y,
+      cylinder->top_y < fVar1)) && (fVar1 < cylinder->bottom_y)) {
+    cylinder->flags = 0;
+    cylinder->max_distance = cylinder->param_t;
+    cylinder->push_x =
+         (cylinder->normal_z * cylinder->param_t + cylinder->center_z) - cylinder->intersect_z;
+    cylinder->push_z =
+         (cylinder->normal_x * cylinder->param_t + cylinder->center_x) - cylinder->intersect_x;
+    return 1;
   }
-  return iVar2;
+  return 0;
 }

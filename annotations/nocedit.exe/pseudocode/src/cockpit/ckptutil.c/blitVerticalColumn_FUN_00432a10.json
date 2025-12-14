@@ -1,155 +1,155 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 74, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 138, 
-    "assembly_lines": 99, 
-    "suspect_count": 3, 
+    "assembly_lines": 99,
+    "complexity_score": 74,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 39,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760", 
-      "addr": "00431760"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 20, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);"
-    }, 
-    {
-      "line": 23, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(*pCVar2)((void *)(*piVar1 + start_x),(void *)((int)unused_param + iVar3 + start_x),"
-    }, 
-    {
-      "line": 32, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);"
-    }
-  ], 
+    ],
+    "total_lines": 138
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00432a10", 
-    "signature": "void cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10(void * sprite_data, void * unused_param, int start_x, int start_y, int end_x, int end_y)", 
+    "address": "00432a10",
     "address_range": [
       [
-        "00432a10", 
+        "00432a10",
         "00432ae7"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10",
+    "signature": "void cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10(void * sprite_data, void * unused_param, int start_x, int start_y, int end_x, int end_y)"
+  },
+  "function_calls": [
+    {
+      "addr": "00431760",
+      "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 32, 
+    "frame_size": 56,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "sprite_data"
-      }, 
+        "is_param": true,
+        "name": "sprite_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "unused_param"
-      }, 
+        "is_param": true,
+        "name": "unused_param",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "start_x"
-      }, 
+        "is_param": true,
+        "name": "start_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "start_y"
-      }, 
+        "is_param": true,
+        "name": "start_y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "end_x"
-      }, 
+        "is_param": true,
+        "name": "end_x",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "end_y"
+        "is_param": true,
+        "name": "end_y",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 56, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(void *)((int)",
+      "text": "(*pCVar2)((void *)(*piVar1 + start_x),(void *)((int)unused_param + iVar3 + start_x),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -1,144 +1,144 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 62, 
-    "pseudocode_lines": 62, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 177, 
-    "assembly_lines": 115, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
-      "addr": "0040ac80"
-    }, 
-    {
-      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120", 
-      "addr": "00524120"
-    }, 
-    {
-      "name": "core_mission.cpp_CDemonMission_FUN_00523f20", 
-      "addr": "00523f20"
-    }, 
-    {
-      "name": "core_mission.cpp_CDemonMission_FUN_00523fb0", 
-      "addr": "00523fb0"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0", 
-      "addr": "0056d2d0"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
-      "addr": "0056aa10"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_mission_cpp_00639271", 
-      "addr": "00639271", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Changing_sets_00639285", 
-      "addr": "00639285", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Insert_wipe_here_00639296", 
-      "addr": "00639296", 
-      "value": null
-    }, 
-    {
-      "type": "CScript*", 
-      "name": "g_CScriptPtr", 
-      "addr": "00680d50", 
-      "value": "0310f858"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CHero*[4]", 
-      "name": "g_HeroActors", 
-      "addr": "02db87c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LocalHeroIndex", 
-      "addr": "02db87d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0310f868", 
-      "addr": "0310f868", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00524250", 
-    "signature": "void core_mission.cpp_CDemonMission_process_FUN_00524250(CDemonMission * this_ptr)", 
-    "address_range": [
-      [
-        "00524250", 
-        "0052439c"
-      ]
-    ], 
-    "name": "core_mission.cpp_CDemonMission_process_FUN_00524250"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonMission *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 115,
+    "complexity_score": 62,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 9,
+    "pseudocode_lines": 62,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 177
+  },
   "cross_references": [
     {
-      "from_addr": "004e359e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_process_FUN_004e3190", 
-      "addr": "004e3190"
+      "addr": "004e3190",
+      "from_addr": "004e359e",
+      "name": "core_game.cpp_CGame_process_FUN_004e3190",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00524250",
+    "address_range": [
+      [
+        "00524250",
+        "0052439c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_process_FUN_00524250",
+    "signature": "void core_mission.cpp_CDemonMission_process_FUN_00524250(CDemonMission * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    },
+    {
+      "addr": "00524120",
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120"
+    },
+    {
+      "addr": "00523f20",
+      "name": "core_mission.cpp_CDemonMission_FUN_00523f20"
+    },
+    {
+      "addr": "00523fb0",
+      "name": "core_mission.cpp_CDemonMission_FUN_00523fb0"
+    },
+    {
+      "addr": "0056d2d0",
+      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
+    },
+    {
+      "addr": "0056aa10",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00639271",
+      "name": "s_core_mission_cpp_00639271",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639285",
+      "name": "s_Changing_sets_00639285",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00639296",
+      "name": "s_Insert_wipe_here_00639296",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00680d50",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "0310f858"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0310f868",
+      "name": "DAT_0310f868",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": []
 }

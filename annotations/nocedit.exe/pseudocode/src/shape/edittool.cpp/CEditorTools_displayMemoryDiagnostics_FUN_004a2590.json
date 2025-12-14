@@ -1,239 +1,239 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 98, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 4, 
-    "global_count": 10, 
-    "total_lines": 154, 
-    "assembly_lines": 101, 
-    "suspect_count": 3, 
+    "assembly_lines": 101,
+    "complexity_score": 98,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 10,
+    "pseudocode_lines": 53,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_heap.c_heapCheckWrapper_FUN_006012c0", 
-      "addr": "006012c0"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_004a257c", 
-      "addr": "004a257c", 
-      "value": "004a25cc"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Blocks_d_Total_1fk_Max_1_006235d2", 
-      "addr": "006235d2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Heap_is_empty_006235f5", 
-      "addr": "006235f5", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_eap_is_empty._006235f6", 
-      "addr": "006235f6", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ap_is_empty._006235f7", 
-      "addr": "006235f7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Memory_corruption_detect_00623604", 
-      "addr": "00623604", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_emory_corruption_detected!_00623605", 
-      "addr": "00623605", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_mory_corruption_detected!_00623606", 
-      "addr": "00623606", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ory_corruption_detected!_00623607", 
-      "addr": "00623607", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "g_BytesToKilobytesScale", 
-      "addr": "00623626", 
-      "value": "0.0009765625"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004a2599", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 20, 
-      "match": "&stack0xffffffd8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "while (iVar2 = crt_heap_c_heapCheckWrapper_FUN_006012c0(&stack0xffffffd8), iVar2 == 0) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a2590", 
-    "signature": "void shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools * this_ptr, char * output_buffer)", 
-    "address_range": [
-      [
-        "004a2590", 
-        "004a2659"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590"
-  }, 
-  "stack_frame": {
-    "local_size": 60, 
-    "variables": [
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined2", 
-        "size": 2, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -34, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_22"
-      }, 
-      {
-        "offset": -30, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1e"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEditorTools *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 68, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 154
+  },
   "cross_references": [
     {
-      "from_addr": "004da9f7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
-    }, 
+      "addr": "004da100",
+      "from_addr": "004da9f7",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004db020", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
-    }, 
+      "addr": "004daf80",
+      "from_addr": "004db020",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00507918", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
-      "addr": "005073a0"
-    }, 
+      "addr": "005073a0",
+      "from_addr": "00507918",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00538a65", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
-      "addr": "005381e0"
+      "addr": "005381e0",
+      "from_addr": "00538a65",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a2590",
+    "address_range": [
+      [
+        "004a2590",
+        "004a2659"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590",
+    "signature": "void shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools * this_ptr, char * output_buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "006012c0",
+      "name": "crt_heap.c_heapCheckWrapper_FUN_006012c0"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004a257c",
+      "name": "switchdataD_004a257c",
+      "type": "void*",
+      "value": "004a25cc"
+    },
+    {
+      "addr": "006235d2",
+      "name": "s_Blocks_d_Total_1fk_Max_1_006235d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006235f5",
+      "name": "s_Heap_is_empty_006235f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006235f6",
+      "name": "s_eap_is_empty._006235f6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006235f7",
+      "name": "s_ap_is_empty._006235f7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623604",
+      "name": "s_Memory_corruption_detect_00623604",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623605",
+      "name": "s_emory_corruption_detected!_00623605",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623606",
+      "name": "s_mory_corruption_detected!_00623606",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623607",
+      "name": "s_ory_corruption_detected!_00623607",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623626",
+      "name": "g_BytesToKilobytesScale",
+      "type": "double",
+      "value": "0.0009765625"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_22",
+        "offset": -34,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1e",
+        "offset": -30,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a2599",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffffd8",
+      "text": "while (iVar2 = crt_heap_c_heapCheckWrapper_FUN_006012c0(&stack0xffffffd8), iVar2 == 0) {",
+      "type": "stack_ref"
     }
   ]
 }

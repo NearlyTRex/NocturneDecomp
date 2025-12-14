@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 34, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 113, 
-    "assembly_lines": 79, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
-      "addr": "005f2dc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CKeys*", 
-      "name": "g_CKeysPtr", 
-      "addr": "0067cf44", 
-      "value": "02dcd7d4"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GlobalDeltaTimeInt", 
-      "addr": "02cf6a80", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CKeysPtr", 
-      "addr": "02dcd7d4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 79,
+    "complexity_score": 34,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 113
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005082a0", 
-    "signature": "void core_main.c_waitWithSkip_FUN_005082a0(int duration_ms)", 
+    "address": "005082a0",
     "address_range": [
       [
-        "005082a0", 
+        "005082a0",
         "00508339"
       ]
-    ], 
-    "name": "core_main.c_waitWithSkip_FUN_005082a0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_main.c_waitWithSkip_FUN_005082a0",
+    "signature": "void core_main.c_waitWithSkip_FUN_005082a0(int duration_ms)"
+  },
+  "function_calls": [
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005f2dc0",
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "02cf6a80",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysPtr",
+      "type": "void*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "duration_ms"
+        "is_param": true,
+        "name": "duration_ms",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

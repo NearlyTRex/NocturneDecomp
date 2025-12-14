@@ -31,21 +31,21 @@ section .text
     MOV EDI,dword ptr [ESP + 0x213c]    ; 00567499
     XOR EBX,EBX                         ; 005674a0
     XOR ESI,ESI                         ; 005674a2
-    MOV EDX,dword ptr [EBX + 0x681008]  ; 005674a4 | = "cmp(<counterUsed> <relOp> <counterUsed>)" | void * PTR_s_cmp_counterUsed_relOp_co_0064546c_00681008 | s_exists_actor_00645495 = exists(<actor>)
+    MOV EDX,dword ptr [EBX + 0x681008]  ; 005674a4 | = "cmp(<counterUsed> <relOp> <counterUsed>)" | s_exists_actor_00645495 | PTR_s_cmp_counterUsed_relOp_co_0064546c_00681008
         ;   Label: LAB_005674a4
-    PUSH EDX                            ; 005674aa | = "cmp(<counterUsed> <relOp> <counterUsed>)" | s_cmp_counterUsed_relOp_co_0064546c = cmp(<counterUsed> <relOp> <counterUsed>) | s_exists_actor_00645495 = exists(<actor>)
+    PUSH EDX                            ; 005674aa | = "cmp(<counterUsed> <relOp> <counterUsed>)" | s_exists_actor_00645495
     PUSH EDI                            ; 005674ab
     LEA EAX,[ESP + 0x8]                 ; 005674ac
     PUSH EAX                            ; 005674b0
-    CALL core_script.cpp_SCmdParse_parse_FUN_00561fd0 ; 005674b1 | undefined core_script.cpp_SCmdParse_parse_FUN_00561fd0()
-        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_SCmdParse_parse_FUN_00561fd0 ; 005674b1
+        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_SCmdParse_parse_FUN_00561fd0()
     ADD ESP,0xc                         ; 005674b6
     CMP EAX,0x3                         ; 005674b9
-    JNZ 0x005674cd                      ; 005674bc | LAB_005674cd
-        ;   XREF to: 005674cd (CONDITIONAL_JUMP)
+    JNZ 0x005674cd                      ; 005674bc
+        ;   XREF to: 005674cd (CONDITIONAL_JUMP)  ; LAB_005674cd
     CMP ESI,0x78                        ; 005674be
-    JL 0x005674e5                       ; 005674c1 | LAB_005674e5
-        ;   XREF to: 005674e5 (CONDITIONAL_JUMP)
+    JL 0x005674e5                       ; 005674c1
+        ;   XREF to: 005674e5 (CONDITIONAL_JUMP)  ; LAB_005674e5
     ADD ESP,0x2128                      ; 005674c3
     POP EDI                             ; 005674c9
     POP ESI                             ; 005674ca
@@ -55,11 +55,11 @@ section .text
         ;   Label: LAB_005674cd
     INC ESI                             ; 005674d0
     CMP EBX,0x54                        ; 005674d1
-    JL 0x005674a4                       ; 005674d4 | LAB_005674a4
-        ;   XREF to: 005674a4 (CONDITIONAL_JUMP)
+    JL 0x005674a4                       ; 005674d4
+        ;   XREF to: 005674a4 (CONDITIONAL_JUMP)  ; LAB_005674a4
     CMP ESI,0x78                        ; 005674d6
-    JL 0x005674e5                       ; 005674d9 | LAB_005674e5
-        ;   XREF to: 005674e5 (CONDITIONAL_JUMP)
+    JL 0x005674e5                       ; 005674d9
+        ;   XREF to: 005674e5 (CONDITIONAL_JUMP)  ; LAB_005674e5
     ADD ESP,0x2128                      ; 005674db
     POP EDI                             ; 005674e1
     POP ESI                             ; 005674e2
@@ -70,8 +70,8 @@ section .text
     PUSH ECX                            ; 005674ec
     LEA EAX,[ESP + 0x4]                 ; 005674ed
     PUSH EAX                            ; 005674f1
-    CALL core_script.cpp_FUN_00564090   ; 005674f2 | undefined core_script.cpp_FUN_00564090()
-        ;   XREF to: 00564090 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_00564090   ; 005674f2
+        ;   XREF to: 00564090 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00564090()
     ADD ESP,0x8                         ; 005674f7
     ADD ESP,0x2128                      ; 005674fa
     POP EDI                             ; 00567500

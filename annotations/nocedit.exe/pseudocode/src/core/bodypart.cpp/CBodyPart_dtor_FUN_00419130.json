@@ -1,143 +1,143 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 42, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 93, 
-    "assembly_lines": 66, 
-    "suspect_count": 1, 
+    "assembly_lines": 66,
+    "complexity_score": 42,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 2,
+    "pseudocode_lines": 27,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30", 
-      "addr": "00408a30"
-    }, 
-    {
-      "name": "core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0", 
-      "addr": "004191d0"
-    }, 
-    {
-      "name": "core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0", 
-      "addr": "0041b6b0"
-    }, 
-    {
-      "name": "core_bodypart.cpp_freeBodyPartModels_FUN_0041b690", 
-      "addr": "0041b690"
-    }, 
-    {
-      "name": "core_box.cpp_CBox_dtor_FUN_0041dd00", 
-      "addr": "0041dd00"
-    }, 
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
-      "addr": "005fe632"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CBodyPartVTable", 
-      "addr": "0065add4", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CBodyPartTypeInfo", 
-      "addr": "0065af00", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 21, 
-      "match": "pCVar1[-3].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "((SBodyPartFire **)&pCVar1[-3].scrape_points[4].local_position.z);"
-    }
-  ], 
+    ],
+    "total_lines": 93
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00419130", 
-    "signature": "CBodyPart * core_bodypart.cpp_CBodyPart_dtor_FUN_00419130(CBodyPart * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6)", 
+    "address": "00419130",
     "address_range": [
       [
-        "00419130", 
+        "00419130",
         "004191cb"
       ]
-    ], 
-    "name": "core_bodypart.cpp_CBodyPart_dtor_FUN_00419130"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_CBodyPart_dtor_FUN_00419130",
+    "signature": "CBodyPart * core_bodypart.cpp_CBodyPart_dtor_FUN_00419130(CBodyPart * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a30",
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30"
+    },
+    {
+      "addr": "004191d0",
+      "name": "core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0"
+    },
+    {
+      "addr": "0041b6b0",
+      "name": "core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0"
+    },
+    {
+      "addr": "0041b690",
+      "name": "core_bodypart.cpp_freeBodyPartModels_FUN_0041b690"
+    },
+    {
+      "addr": "0041dd00",
+      "name": "core_box.cpp_CBox_dtor_FUN_0041dd00"
+    },
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "005fe632",
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065add4",
+      "name": "g_CBodyPartVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    },
+    {
+      "addr": "0065af00",
+      "name": "g_CBodyPartTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBodyPart *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d1"
-      }, 
+        "is_param": true,
+        "name": "d1",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d2"
-      }, 
+        "is_param": true,
+        "name": "d2",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d3"
-      }, 
+        "is_param": true,
+        "name": "d3",
+        "offset": 16,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d4"
-      }, 
+        "is_param": true,
+        "name": "d4",
+        "offset": 20,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d5"
-      }, 
+        "is_param": true,
+        "name": "d5",
+        "offset": 24,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d6"
+        "is_param": true,
+        "name": "d6",
+        "offset": 28,
+        "size": 4,
+        "type": "uint"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar1[-3].",
+      "text": "((SBodyPartFire **)&pCVar1[-3].scrape_points[4].local_position.z);",
+      "type": "negative_offset"
+    }
+  ]
 }

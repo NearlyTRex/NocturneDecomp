@@ -38,25 +38,25 @@ section .text
     SUB ESP,0x10                        ; 0048c450
         ;   Label: engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
     MOV EAX,dword ptr [ESP + 0x18]      ; 0048c453
-    FLD double ptr [0x00622015]         ; 0048c457 | double g_WorldToCameraScale
+    FLD double ptr [0x00622015]         ; 0048c457 | g_WorldToCameraScale
     FLD float ptr [EAX]                 ; 0048c45d
     FMUL ST1                            ; 0048c45f
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c461 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c461
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x4]         ; 0048c466
     FLD float ptr [EAX + 0x4]           ; 0048c46a
     FMUL ST1                            ; 0048c46d
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c46f | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c46f
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0048c474
     FMUL float ptr [EAX + 0x8]          ; 0048c478
     MOV EAX,ESP                         ; 0048c47b
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c47d | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c47d
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     PUSH EAX                            ; 0048c482
     FISTP dword ptr [ESP + 0x10]        ; 0048c483
-    CALL engine_3d.c_processCameraRelativePoint_FUN_004037e0 ; 0048c487 | SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f * input_point)
-        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_processCameraRelativePoint_FUN_004037e0 ; 0048c487
+        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f * input_point)
     ADD ESP,0x4                         ; 0048c48c
     ADD ESP,0x10                        ; 0048c48f
     RET                                 ; 0048c492

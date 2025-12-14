@@ -38,15 +38,15 @@ section .text
     PUSH ESI                            ; 005f7b8a
     MOV dword ptr [EBP + -0x8],ECX      ; 005f7b8b
     MOV dword ptr [EBP + -0x4],ECX      ; 005f7b8e
-    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390 ; 005f7b91 | void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
-        ;   XREF to: 005f5390 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390 ; 005f7b91
+        ;   XREF to: 005f5390 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(CMatrix3x4f * output_matrix, CVector3f * position, CVector3f * euler_angles)
     ADD ESP,0xc                         ; 005f7b96
     LEA ESI,[EBP + -0x4c]               ; 005f7b99
     PUSH ESI                            ; 005f7b9c
     LEA ESI,[EBP + -0x1c]               ; 005f7b9d
     MOV EDI,EBX                         ; 005f7ba0
-    CALL core_xform.cpp_matrixToQuaternion_FUN_005f7420 ; 005f7ba2 | CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)
-        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_matrixToQuaternion_FUN_005f7420 ; 005f7ba2
+        ;   XREF to: 005f7420 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)
     LEA ESI,[EBP + -0x1c]               ; 005f7ba7
     ADD ESP,0x4                         ; 005f7baa
     MOVSD ES:EDI,ESI                    ; 005f7bad

@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005ff060
         ;   Label: crt_stdlib.c_atexit_FUN_005ff060
     PUSH EDX                            ; 005ff064
-    CALL crt_stdlib.c_atexitRegisterNode_FUN_00605b89 ; 005ff065 | void crt_stdlib.c_atexitRegisterNode_FUN_00605b89(WatcomStaticDestructorNode * node_ptr)
-        ;   XREF to: 00605b89 (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_atexitRegisterNode_FUN_00605b89 ; 005ff065
+        ;   XREF to: 00605b89 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexitRegisterNode_FUN_00605b89(WatcomStaticDestructorNode * node_ptr)
     ADD ESP,0x4                         ; 005ff06a
     RET                                 ; 005ff06d
 

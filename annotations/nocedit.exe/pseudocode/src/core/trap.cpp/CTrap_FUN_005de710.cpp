@@ -12,14 +12,10 @@ int __cdecl core_trap_cpp_CTrap_FUN_005de710(CTrap *this_ptr)
   int iVar1;
   CDemonActor *in_stack_00000008;
   
-  if (this_ptr->wolf_in_trap == 0) {
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"CHero");
-    if (iVar1 != 0) {
-      return 2;
-    }
+  if ((this_ptr->wolf_in_trap == 0) &&
+     (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"CHero"), iVar1 != 0)
+     ) {
+    return 2;
   }
-  else {
-    iVar1 = 0;
-  }
-  return iVar1;
+  return 0;
 }

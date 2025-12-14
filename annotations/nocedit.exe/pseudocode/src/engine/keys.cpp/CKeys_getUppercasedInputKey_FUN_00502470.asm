@@ -27,13 +27,13 @@
 
 section .text
 
-    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 00502470 | int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
+    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 00502470
+        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
         ;   Label: engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
-        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)
     AND EAX,0xff                        ; 00502475
     PUSH EAX                            ; 0050247a
-    CALL crt_ctype.c_toupper_FUN_005ff9e0 ; 0050247b | int crt_ctype.c_toupper_FUN_005ff9e0(int c)
-        ;   XREF to: 005ff9e0 (UNCONDITIONAL_CALL)
+    CALL crt_ctype.c_toupper_FUN_005ff9e0 ; 0050247b
+        ;   XREF to: 005ff9e0 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005ff9e0(int c)
     ADD ESP,0x4                         ; 00502480
     RET                                 ; 00502483
 

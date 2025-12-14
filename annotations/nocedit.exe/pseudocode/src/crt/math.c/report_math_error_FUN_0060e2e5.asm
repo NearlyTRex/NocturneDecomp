@@ -34,29 +34,29 @@ section .text
     SUB ESP,0x8                         ; 0060e2ea
     MOV EBX,dword ptr [EBP + 0x8]       ; 0060e2ed
     PUSH EBX                            ; 0060e2f0
-    CALL dword ptr [0x00685590]         ; 0060e2f1 | MATH_CHECK_REPORTING_FUNC * PTR_crt_math.c_check_error_context_FUN_0060fa8b_00685590
+    CALL dword ptr [0x00685590]         ; 0060e2f1 | PTR_crt_math.c_check_error_context_FUN_0060fa8b_00685590
     ADD ESP,0x4                         ; 0060e2f7
     TEST EAX,EAX                        ; 0060e2fa
-    JNZ 0x0060e320                      ; 0060e2fc | LAB_0060e320
-        ;   XREF to: 0060e320 (CONDITIONAL_JUMP)
+    JNZ 0x0060e320                      ; 0060e2fc
+        ;   XREF to: 0060e320 (CONDITIONAL_JUMP)  ; LAB_0060e320
     MOV EDX,dword ptr [EBX + 0x4]       ; 0060e2fe
     PUSH EDX                            ; 0060e301
     MOV ECX,dword ptr [EBX]             ; 0060e302
     PUSH ECX                            ; 0060e304
-    CALL crt_math.c_print_error_message_FUN_0060e298 ; 0060e305 | void crt_math.c_print_error_message_FUN_0060e298(int errorType, char * errorData)
-        ;   XREF to: 0060e298 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_print_error_message_FUN_0060e298 ; 0060e305
+        ;   XREF to: 0060e298 (UNCONDITIONAL_CALL)  ; void crt_math.c_print_error_message_FUN_0060e298(int errorType, char * errorData)
     MOV ESI,dword ptr [EBX]             ; 0060e30a
     ADD ESP,0x8                         ; 0060e30c
     CMP ESI,0x1                         ; 0060e30f
-    JNZ 0x0060e31b                      ; 0060e312 | LAB_0060e31b
-        ;   XREF to: 0060e31b (CONDITIONAL_JUMP)
-    CALL crt_math.c_set_domain_error_errno_FUN_006027a0 ; 0060e314 | void crt_math.c_set_domain_error_errno_FUN_006027a0()
-        ;   XREF to: 006027a0 (UNCONDITIONAL_CALL)
-    JMP 0x0060e320                      ; 0060e319 | LAB_0060e320
-        ;   XREF to: 0060e320 (UNCONDITIONAL_JUMP)
-    CALL crt_math.c_set_range_error_errno_FUN_006027ac ; 0060e31b | void crt_math.c_set_range_error_errno_FUN_006027ac()
+    JNZ 0x0060e31b                      ; 0060e312
+        ;   XREF to: 0060e31b (CONDITIONAL_JUMP)  ; LAB_0060e31b
+    CALL crt_math.c_set_domain_error_errno_FUN_006027a0 ; 0060e314
+        ;   XREF to: 006027a0 (UNCONDITIONAL_CALL)  ; void crt_math.c_set_domain_error_errno_FUN_006027a0()
+    JMP 0x0060e320                      ; 0060e319
+        ;   XREF to: 0060e320 (UNCONDITIONAL_JUMP)  ; LAB_0060e320
+    CALL crt_math.c_set_range_error_errno_FUN_006027ac ; 0060e31b
+        ;   XREF to: 006027ac (UNCONDITIONAL_CALL)  ; void crt_math.c_set_range_error_errno_FUN_006027ac()
         ;   Label: LAB_0060e31b
-        ;   XREF to: 006027ac (UNCONDITIONAL_CALL)
     MOV EAX,dword ptr [EBX + 0x18]      ; 0060e320
         ;   Label: LAB_0060e320
     MOV dword ptr [EBP + -0x10],EAX     ; 0060e323

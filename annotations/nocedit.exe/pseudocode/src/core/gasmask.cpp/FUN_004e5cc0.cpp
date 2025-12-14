@@ -11,8 +11,7 @@ void core_gasmask_cpp_FUN_004e5cc0(void)
 {
   CGasMask *this_ptr;
   
-  this_ptr = (CGasMask *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\gasmask.cpp",0x1e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\gasmask.cpp",0x1e);
   if (this_ptr == (CGasMask *)0x0) {
     return;
   }

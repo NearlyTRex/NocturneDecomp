@@ -1,233 +1,233 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 203, 
-    "pseudocode_lines": 73, 
-    "cross_reference_count": 0, 
-    "global_count": 11, 
-    "total_lines": 256, 
-    "assembly_lines": 183, 
-    "suspect_count": 12, 
+    "assembly_lines": 183,
+    "complexity_score": 203,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 11,
+    "pseudocode_lines": 73,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_006508fd", 
-      "addr": "006508fd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_channel_d_s_00650900", 
-      "addr": "00650900", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pos_lg_lg_lg_0065090e", 
-      "addr": "0065090e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_posPtrFloat_p_0065091f", 
-      "addr": "0065091f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_posPtrDouble_p_0065092f", 
-      "addr": "0065092f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vel_lg_lg_lg_00650940", 
-      "addr": "00650940", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_velPtrFloat_p_00650951", 
-      "addr": "00650951", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_velPtrDouble_p_00650961", 
-      "addr": "00650961", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_vol_g_00650972", 
-      "addr": "00650972", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_freq_g_0065097a", 
-      "addr": "0065097a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_delay_lg_00650983", 
-      "addr": "00650983", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "byte in_stack_00000014;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000014 & 1) != 0) {"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000014 & 2) != 0) {"
-    }, 
-    {
-      "line": 25, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": ",*(uint *)((int)&(options->position).x + 4),"
-    }, 
-    {
-      "line": 27, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(options->position).y + 4),"
-    }, 
-    {
-      "line": 40, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000014 & 4) != 0) {"
-    }, 
-    {
-      "line": 44, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": ",*(uint *)((int)&(options->velocity).x + 4),"
-    }, 
-    {
-      "line": 46, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(options->velocity).y + 4),"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000014 & 8) != 0) {"
-    }, 
-    {
-      "line": 64, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000014 & 0x10) != 0) {"
-    }, 
-    {
-      "line": 69, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000014 & 0x20) == 0) {"
-    }, 
-    {
-      "line": 74, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&options->delay_remaining + 4));"
-    }
-  ], 
+    ],
+    "total_lines": 256
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a8d00", 
-    "signature": "void sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00(char * output_buffer, char * prefix_string, CSfxOptions * options, uint format_flags)", 
+    "address": "005a8d00",
     "address_range": [
       [
-        "005a8d00", 
+        "005a8d00",
         "005a8e86"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00",
+    "signature": "void sound_sndmain.cpp_formatSfxOptionsToString_FUN_005a8d00(char * output_buffer, char * prefix_string, CSfxOptions * options, uint format_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006508fd",
+      "name": "s_s_006508fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650900",
+      "name": "s_channel_d_s_00650900",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065090e",
+      "name": "s_pos_lg_lg_lg_0065090e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065091f",
+      "name": "s_posPtrFloat_p_0065091f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065092f",
+      "name": "s_posPtrDouble_p_0065092f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650940",
+      "name": "s_vel_lg_lg_lg_00650940",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650951",
+      "name": "s_velPtrFloat_p_00650951",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650961",
+      "name": "s_velPtrDouble_p_00650961",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650972",
+      "name": "s_vol_g_00650972",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065097a",
+      "name": "s_freq_g_0065097a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650983",
+      "name": "s_delay_lg_00650983",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 44,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }, 
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "prefix_string"
-      }, 
+        "is_param": true,
+        "name": "prefix_string",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CSfxOptions *", 
-        "size": 4, 
-        "name": "options"
-      }, 
+        "is_param": true,
+        "name": "options",
+        "offset": 12,
+        "size": 4,
+        "type": "CSfxOptions *"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "format_flags"
+        "is_param": true,
+        "name": "format_flags",
+        "offset": 16,
+        "size": 4,
+        "type": "uint"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000014",
+      "text": "byte in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000014",
+      "text": "if ((in_stack_00000014 & 1) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000014",
+      "text": "if ((in_stack_00000014 & 2) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(uint *)((int)",
+      "text": ",*(uint *)((int)&(options->position).x + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(options->position).y + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000014",
+      "text": "if ((in_stack_00000014 & 4) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)",
+      "text": ",*(uint *)((int)&(options->velocity).x + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(options->velocity).y + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000014",
+      "text": "if ((in_stack_00000014 & 8) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000014",
+      "text": "if ((in_stack_00000014 & 0x10) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000014",
+      "text": "if ((in_stack_00000014 & 0x20) == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&options->delay_remaining + 4));",
+      "type": "pointer_cast"
+    }
+  ]
 }

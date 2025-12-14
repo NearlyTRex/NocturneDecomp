@@ -36,23 +36,23 @@ section .text
     SUB EBX,EDX                         ; 00435b1f
     MOV EDX,ECX                         ; 00435b21
     CMP EDX,EBX                         ; 00435b23
-    JGE 0x00435b39                      ; 00435b25 | LAB_00435b39
-        ;   XREF to: 00435b39 (CONDITIONAL_JUMP)
+    JGE 0x00435b39                      ; 00435b25
+        ;   XREF to: 00435b39 (CONDITIONAL_JUMP)  ; LAB_00435b39
     NEG EBX                             ; 00435b27
     CMP EDX,EBX                         ; 00435b29
-    JLE 0x00435b40                      ; 00435b2b | LAB_00435b40
-        ;   XREF to: 00435b40 (CONDITIONAL_JUMP)
+    JLE 0x00435b40                      ; 00435b2b
+        ;   XREF to: 00435b40 (CONDITIONAL_JUMP)  ; LAB_00435b40
     NEG EBX                             ; 00435b2d
     XOR EAX,EAX                         ; 00435b2f
     SAR EDX,0x1                         ; 00435b31
     RCR EAX,0x1                         ; 00435b33
     IDIV EBX                            ; 00435b35
-    JMP 0x00435b47                      ; 00435b37 | LAB_00435b47
-        ;   XREF to: 00435b47 (UNCONDITIONAL_JUMP)
+    JMP 0x00435b47                      ; 00435b37
+        ;   XREF to: 00435b47 (UNCONDITIONAL_JUMP)  ; LAB_00435b47
     MOV EAX,0x7fffffff                  ; 00435b39
         ;   Label: LAB_00435b39
-    JMP 0x00435b47                      ; 00435b3e | LAB_00435b47
-        ;   XREF to: 00435b47 (UNCONDITIONAL_JUMP)
+    JMP 0x00435b47                      ; 00435b3e
+        ;   XREF to: 00435b47 (UNCONDITIONAL_JUMP)  ; LAB_00435b47
     NEG EBX                             ; 00435b40
         ;   Label: LAB_00435b40
     MOV EAX,0x80000000                  ; 00435b42

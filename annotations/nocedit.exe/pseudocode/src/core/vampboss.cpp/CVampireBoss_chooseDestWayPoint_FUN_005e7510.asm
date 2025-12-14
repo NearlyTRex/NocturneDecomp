@@ -40,11 +40,11 @@ section .text
     MOV dword ptr [ESP + 0x14],EDX      ; 005e7531
     CMP dword ptr [ESI + 0xce90c],0x0   ; 005e7535
         ;   Label: LAB_005e7535
-    JZ 0x005e75c5                       ; 005e753c | LAB_005e75c5
-        ;   XREF to: 005e75c5 (CONDITIONAL_JUMP)
-    MOV EAX,[0x02db87d0]                ; 005e7542 | int g_LocalHeroIndex
+    JZ 0x005e75c5                       ; 005e753c
+        ;   XREF to: 005e75c5 (CONDITIONAL_JUMP)  ; LAB_005e75c5
+    MOV EAX,[0x02db87d0]                ; 005e7542 | g_LocalHeroIndex
         ;   Label: LAB_005e7542
-    MOV EDX,dword ptr [EAX*0x4 + 0x2db87c0] ; 005e7547 | CHero *[4] g_HeroActors
+    MOV EDX,dword ptr [EAX*0x4 + 0x2db87c0] ; 005e7547 | g_HeroActors
     MOV EAX,dword ptr [ESI + 0xce90c]   ; 005e754e
     FLD float ptr [EAX + 0x20]          ; 005e7554
     FSUB float ptr [EDX + 0x20]         ; 005e7557
@@ -77,8 +77,8 @@ section .text
     FCOMP float ptr [ESP + 0x14]        ; 005e7599
     FNSTSW AX                           ; 005e759d
     SAHF                                ; 005e759f
-    JBE 0x005e75b0                      ; 005e75a0 | LAB_005e75b0
-        ;   XREF to: 005e75b0 (CONDITIONAL_JUMP)
+    JBE 0x005e75b0                      ; 005e75a0
+        ;   XREF to: 005e75b0 (CONDITIONAL_JUMP)  ; LAB_005e75b0
     MOV EAX,dword ptr [ESP + 0x18]      ; 005e75a2
     MOV dword ptr [EBP + 0xce908],EBX   ; 005e75a6
     MOV dword ptr [ESP + 0x14],EAX      ; 005e75ac
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_005e75b0
     ADD ESI,0x4                         ; 005e75b1
     CMP EBX,0x4                         ; 005e75b4
-    JL 0x005e7535                       ; 005e75b7 | LAB_005e7535
-        ;   XREF to: 005e7535 (CONDITIONAL_JUMP)
+    JL 0x005e7535                       ; 005e75b7
+        ;   XREF to: 005e7535 (CONDITIONAL_JUMP)  ; LAB_005e7535
     ADD ESP,0x24                        ; 005e75bd
     POP EBP                             ; 005e75c0
     POP EDI                             ; 005e75c1
@@ -96,14 +96,14 @@ section .text
     RET                                 ; 005e75c4
     PUSH EBX                            ; 005e75c5
         ;   Label: LAB_005e75c5
-    MOV EAX,0x656d01                    ; 005e75c6 | = "..\\core\\vampboss.cpp" | s_core_vampboss_cpp_00656d01 = ..\core\vampboss.cpp
+    MOV EAX,0x656d01                    ; 005e75c6 | = "..\\core\\vampboss.cpp"
     MOV EDX,0x423                       ; 005e75cb
-    PUSH 0x656d16                       ; 005e75d0 | = "CVampireBoss::chooseDestWayPoint - wa..." | s_CVampireBoss_chooseDestW_00656d16 = CVampireBoss::chooseDestWayPoint - wayPoint[%d] == NULL
-    MOV [0x02f0ca48],EAX                ; 005e75d5 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 005e75da | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005e75e0 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x656d16                       ; 005e75d0 | = "CVampireBoss::chooseDestWayPoint - wa..."
+    MOV [0x02f0ca48],EAX                ; 005e75d5 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 005e75da | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005e75e0
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 005e75e5
-    JMP 0x005e7542                      ; 005e75e8 | LAB_005e7542
-        ;   XREF to: 005e7542 (UNCONDITIONAL_JUMP)
+    JMP 0x005e7542                      ; 005e75e8
+        ;   XREF to: 005e7542 (UNCONDITIONAL_JUMP)  ; LAB_005e7542
 

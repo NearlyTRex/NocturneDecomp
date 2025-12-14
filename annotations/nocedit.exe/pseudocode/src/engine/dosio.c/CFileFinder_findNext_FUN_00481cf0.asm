@@ -40,16 +40,16 @@ section .text
     SUB ESP,0x140                       ; 00481cf2
     MOV EBX,dword ptr [ESP + 0x14c]     ; 00481cf8
     CMP dword ptr [EBX + 0x10c],0x0     ; 00481cff
-    JNZ 0x00481d2d                      ; 00481d06 | LAB_00481d2d
-        ;   XREF to: 00481d2d (CONDITIONAL_JUMP)
+    JNZ 0x00481d2d                      ; 00481d06
+        ;   XREF to: 00481d2d (CONDITIONAL_JUMP)  ; LAB_00481d2d
     PUSH ESI                            ; 00481d08
-    MOV ECX,0x6215de                    ; 00481d09 | = "..\\engine\\dosio.c" | s_engine_dosio_c_006215de = ..\engine\dosio.c
+    MOV ECX,0x6215de                    ; 00481d09 | = "..\\engine\\dosio.c"
     MOV ESI,0x244                       ; 00481d0e
-    PUSH 0x6215f0                       ; 00481d13 | = "CFileFinder::open - search not opened!" | s_CFileFinder_open_search__006215f0 = CFileFinder::open - search not opened!
-    MOV dword ptr [0x02f0ca48],ECX      ; 00481d18 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 00481d1e | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00481d24 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6215f0                       ; 00481d13 | = "CFileFinder::open - search not opened!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 00481d18 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 00481d1e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00481d24
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00481d29
     POP ESI                             ; 00481d2c
     MOV EAX,ESP                         ; 00481d2d
@@ -57,15 +57,15 @@ section .text
     PUSH EAX                            ; 00481d2f
     MOV EDI,dword ptr [EBX + 0x110]     ; 00481d30
     PUSH EDI                            ; 00481d36
-    CALL dword ptr CS:[0x611550]        ; 00481d37 | FindNextFileA * PTR_FindNextFileA_00611550
+    CALL dword ptr CS:[0x611550]        ; 00481d37 | PTR_FindNextFileA_00611550
     TEST EAX,EAX                        ; 00481d3e
-    JZ 0x00481d5c                       ; 00481d40 | LAB_00481d5c
-        ;   XREF to: 00481d5c (CONDITIONAL_JUMP)
+    JZ 0x00481d5c                       ; 00481d40
+        ;   XREF to: 00481d5c (CONDITIONAL_JUMP)  ; LAB_00481d5c
     MOV EAX,ESP                         ; 00481d42
     PUSH EAX                            ; 00481d44
     PUSH EBX                            ; 00481d45
-    CALL engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0 ; 00481d46 | void engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder * finder, LPWIN32_FIND_DATAA find_data)
-        ;   XREF to: 00481dc0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0 ; 00481d46
+        ;   XREF to: 00481dc0 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder * finder, LPWIN32_FIND_DATAA find_data)
     MOV EAX,0x1                         ; 00481d4b
     ADD ESP,0x8                         ; 00481d50
     ADD ESP,0x140                       ; 00481d53
@@ -74,8 +74,8 @@ section .text
     RET                                 ; 00481d5b
     PUSH EBX                            ; 00481d5c
         ;   Label: LAB_00481d5c
-    CALL engine_dosio.c_CFileFinder_reset_FUN_00481db0 ; 00481d5d | void engine_dosio.c_CFileFinder_reset_FUN_00481db0(CFileFinder * this_ptr)
-        ;   XREF to: 00481db0 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_CFileFinder_reset_FUN_00481db0 ; 00481d5d
+        ;   XREF to: 00481db0 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_CFileFinder_reset_FUN_00481db0(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00481d62
     XOR EAX,EAX                         ; 00481d65
     ADD ESP,0x140                       ; 00481d67

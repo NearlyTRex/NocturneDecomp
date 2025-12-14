@@ -31,15 +31,15 @@ section .text
         ;   Label: LAB_00550eb1
     MOV byte ptr [EDI],AL               ; 00550eb3
     CMP AL,0x0                          ; 00550eb5
-    JZ 0x00550ec9                       ; 00550eb7 | LAB_00550ec9
-        ;   XREF to: 00550ec9 (CONDITIONAL_JUMP)
+    JZ 0x00550ec9                       ; 00550eb7
+        ;   XREF to: 00550ec9 (CONDITIONAL_JUMP)  ; LAB_00550ec9
     MOV AL,byte ptr [ESI + 0x1]         ; 00550eb9
     ADD ESI,0x2                         ; 00550ebc
     MOV byte ptr [EDI + 0x1],AL         ; 00550ebf
     ADD EDI,0x2                         ; 00550ec2
     CMP AL,0x0                          ; 00550ec5
-    JNZ 0x00550eb1                      ; 00550ec7 | LAB_00550eb1
-        ;   XREF to: 00550eb1 (CONDITIONAL_JUMP)
+    JNZ 0x00550eb1                      ; 00550ec7
+        ;   XREF to: 00550eb1 (CONDITIONAL_JUMP)  ; LAB_00550eb1
     POP EDI                             ; 00550ec9
         ;   Label: LAB_00550ec9
     MOV dword ptr [EDX + 0x314],0x0     ; 00550eca
@@ -47,8 +47,8 @@ section .text
     MOV dword ptr [EDX + 0x318],0x0     ; 00550ed5
     MOV EDX,dword ptr [ESP + 0x10]      ; 00550edf
     PUSH EDX                            ; 00550ee3
-    CALL engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0 ; 00550ee4 | int engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0(CPod * this_ptr, CPodSearchContext * search_context)
-        ;   XREF to: 00550ef0 (UNCONDITIONAL_CALL)
+    CALL engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0 ; 00550ee4
+        ;   XREF to: 00550ef0 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0(CPod * this_ptr, CPodSearchContext * search_context)
     ADD ESP,0x8                         ; 00550ee9
     POP EDI                             ; 00550eec
     POP ESI                             ; 00550eed

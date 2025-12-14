@@ -1,256 +1,256 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 152, 
-    "pseudocode_lines": 67, 
-    "cross_reference_count": 0, 
-    "global_count": 9, 
-    "total_lines": 229, 
-    "assembly_lines": 162, 
-    "suspect_count": 8, 
+    "assembly_lines": 162,
+    "complexity_score": 152,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 67,
+    "suspect_count": 8,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0", 
-      "addr": "0048bba0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_0063ea28", 
-      "addr": "0063ea28", 
-      "value": "256"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063ea30", 
-      "addr": "0063ea30", 
-      "value": "256"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "SMRGLHeaderPrimitive", 
-      "name": "DAT_030d4fd0", 
-      "addr": "030d4fd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonRaytraceInstance.bbox_min.y", 
-      "addr": "03277d28", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonRaytraceInstance.adjusted_size.x", 
-      "addr": "03277d48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonRaytraceInstance.adjusted_size.y", 
-      "addr": "03277d4c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonRaytraceInstance.adjusted_size.z", 
-      "addr": "03277d50", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint *extraout_EAX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EDX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EDX_00;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_EDX_01;"
-    }, 
-    {
-      "line": 34, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((SProjectedVertex *)*extraout_EAX,pCVar10);"
-    }, 
-    {
-      "line": 38, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar10);"
-    }, 
-    {
-      "line": 42, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar10);"
-    }, 
-    {
-      "line": 49, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar10);"
-    }
-  ], 
+    ],
+    "total_lines": 229
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00547dd0", 
-    "signature": "void core_path.cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x, int grid_y, int grid_z, int color, int fog, float w_recip)", 
+    "address": "00547dd0",
     "address_range": [
       [
-        "00547dd0", 
+        "00547dd0",
         "00547fb9"
       ]
-    ], 
-    "name": "core_path.cpp_debugRenderGridQuad_FUN_00547dd0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_debugRenderGridQuad_FUN_00547dd0",
+    "signature": "void core_path.cpp_debugRenderGridQuad_FUN_00547dd0(int grid_x, int grid_y, int grid_z, int color, int fog, float w_recip)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0048bba0",
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ea28",
+      "name": "FLOAT_0063ea28",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "0063ea30",
+      "name": "DOUBLE_0063ea30",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "030d4fd0",
+      "name": "DAT_030d4fd0",
+      "type": "SMRGLHeaderPrimitive",
+      "value": null
+    },
+    {
+      "addr": "03277d28",
+      "name": "g_CDemonRaytraceInstance.bbox_min.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03277d48",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03277d4c",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03277d50",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 52, 
+    "frame_size": 76,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "grid_x"
-      }, 
+        "is_param": true,
+        "name": "grid_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "grid_y"
-      }, 
+        "is_param": true,
+        "name": "grid_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "grid_z"
-      }, 
+        "is_param": true,
+        "name": "grid_z",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "color"
-      }, 
+        "is_param": true,
+        "name": "color",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "fog"
-      }, 
+        "is_param": true,
+        "name": "fog",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "w_recip"
+        "is_param": true,
+        "name": "w_recip",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 76, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "uint *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EDX",
+      "text": "int *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EDX_00",
+      "text": "int *extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EDX_01",
+      "text": "int *extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 34,
+      "match": "extraout_EAX",
+      "text": "((SProjectedVertex *)*extraout_EAX,pCVar10);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 38,
+      "match": "extraout_EDX",
+      "text": "((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar10);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 42,
+      "match": "extraout_EDX_00",
+      "text": "((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar10);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 49,
+      "match": "extraout_EDX_01",
+      "text": "((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar10);",
+      "type": "extra_output"
+    }
+  ]
 }

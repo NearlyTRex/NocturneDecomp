@@ -1,210 +1,210 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 144, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 105, 
-    "assembly_lines": 66, 
-    "suspect_count": 8, 
+    "assembly_lines": 66,
+    "complexity_score": 144,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 39,
+    "suspect_count": 8,
     "suspect_types": [
-      "concat_artifact", 
-      "unaffected_reg", 
-      "unknown_field", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_udivmod64_FUN_0060d3ed", 
-      "addr": "0060d3ed"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char[36]", 
-      "name": "g_AlphaNumericCharacters1", 
-      "addr": "00685414", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "char *unaff_EBP;"
-    }, 
-    {
-      "line": 28, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44 /* combine 2-byte values */(local_24,local_28));"
-    }, 
-    {
-      "line": 33, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "} while (local_20._4_4_ != 0);"
-    }, 
-    {
-      "line": 38, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_EBP = cVar1;"
-    }, 
-    {
-      "line": 39, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = unaff_EBP + 1;"
-    }, 
-    {
-      "line": 39, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = unaff_EBP + 1;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060ad40", 
-    "signature": "char * crt_stdlib.c_i64toa_FUN_0060ad40(longlong * value, char * buffer, int base)", 
-    "address_range": [
-      [
-        "0060ad40", 
-        "0060addc"
-      ]
-    ], 
-    "name": "crt_stdlib.c_i64toa_FUN_0060ad40"
-  }, 
-  "stack_frame": {
-    "local_size": 88, 
-    "variables": [
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -83, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_53"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "longlong *", 
-        "size": 4, 
-        "name": "value"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "base"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 100, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "concat_artifact",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "unknown_field"
+    ],
+    "total_lines": 105
+  },
   "cross_references": [
     {
-      "from_addr": "00603668", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238", 
-      "addr": "00603238"
-    }, 
+      "addr": "00603238",
+      "from_addr": "00603668",
+      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060ae3c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060ade0", 
-      "addr": "0060ade0"
+      "addr": "0060ade0",
+      "from_addr": "0060ae3c",
+      "name": "crt_unknown.c_FUN_0060ade0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060ad40",
+    "address_range": [
+      [
+        "0060ad40",
+        "0060addc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdlib.c_i64toa_FUN_0060ad40",
+    "signature": "char * crt_stdlib.c_i64toa_FUN_0060ad40(longlong * value, char * buffer, int base)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060d3ed",
+      "name": "crt_math.c_udivmod64_FUN_0060d3ed"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00685414",
+      "name": "g_AlphaNumericCharacters1",
+      "type": "char[36]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 100,
+    "local_size": 88,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_53",
+        "offset": -83,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 4,
+        "size": 4,
+        "type": "longlong *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "base",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 28,
+      "match": "CONCAT44",
+      "text": "local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44 /* combine 2-byte values */(local_24,local_28));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 33,
+      "match": "._4_4_",
+      "text": "} while (local_20._4_4_ != 0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EBP",
+      "text": "*unaff_EBP = cVar1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
     }
   ]
 }

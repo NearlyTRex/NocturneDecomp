@@ -36,12 +36,12 @@ section .text
     SHL EAX,0x2                         ; 0050a2af
     ADD EBX,EAX                         ; 0050a2b2
     CMP dword ptr [EBX],0x0             ; 0050a2b4
-    JNZ 0x0050a2c6                      ; 0050a2b7 | LAB_0050a2c6
-        ;   XREF to: 0050a2c6 (CONDITIONAL_JUMP)
+    JNZ 0x0050a2c6                      ; 0050a2b7
+        ;   XREF to: 0050a2c6 (CONDITIONAL_JUMP)  ; LAB_0050a2c6
     CMP dword ptr [EBX],0x0             ; 0050a2b9
         ;   Label: LAB_0050a2b9
-    JZ 0x0050a40b                       ; 0050a2bc | LAB_0050a40b
-        ;   XREF to: 0050a40b (CONDITIONAL_JUMP)
+    JZ 0x0050a40b                       ; 0050a2bc
+        ;   XREF to: 0050a40b (CONDITIONAL_JUMP)  ; LAB_0050a40b
     POP EBP                             ; 0050a2c2
     POP ESI                             ; 0050a2c3
     POP EBX                             ; 0050a2c4
@@ -56,8 +56,8 @@ section .text
     FCOMPP                              ; 0050a2db
     FNSTSW AX                           ; 0050a2dd
     SAHF                                ; 0050a2df
-    JBE 0x0050a2f0                      ; 0050a2e0 | LAB_0050a2f0
-        ;   XREF to: 0050a2f0 (CONDITIONAL_JUMP)
+    JBE 0x0050a2f0                      ; 0050a2e0
+        ;   XREF to: 0050a2f0 (CONDITIONAL_JUMP)  ; LAB_0050a2f0
     MOV dword ptr [EBX + 0x8],0x0       ; 0050a2e2
     MOV dword ptr [EBX + 0x4],0x0       ; 0050a2e9
     FLD float ptr [EBX + 0x4]           ; 0050a2f0
@@ -66,13 +66,13 @@ section .text
     FCOMPP                              ; 0050a2f5
     FNSTSW AX                           ; 0050a2f7
     SAHF                                ; 0050a2f9
-    JA 0x0050a2b9                       ; 0050a2fa | LAB_0050a2b9
-        ;   XREF to: 0050a2b9 (CONDITIONAL_JUMP)
+    JA 0x0050a2b9                       ; 0050a2fa
+        ;   XREF to: 0050a2b9 (CONDITIONAL_JUMP)  ; LAB_0050a2b9
     PUSH EDI                            ; 0050a2fc
     PUSH ECX                            ; 0050a2fd
     PUSH ESI                            ; 0050a2fe
-    CALL core_manpuz.cpp_FUN_0050aee0   ; 0050a2ff | undefined core_manpuz.cpp_FUN_0050aee0()
-        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)
+    CALL core_manpuz.cpp_FUN_0050aee0   ; 0050a2ff
+        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_0050aee0()
     MOV EDX,EAX                         ; 0050a304
     SHL EAX,0x2                         ; 0050a306
     SUB EAX,EDX                         ; 0050a309
@@ -84,15 +84,15 @@ section .text
     MOV EDI,dword ptr [ESI]             ; 0050a31b
     ADD ESP,0x8                         ; 0050a31d
     TEST EDI,EDI                        ; 0050a320
-    JZ 0x0050a346                       ; 0050a322 | LAB_0050a346
-        ;   XREF to: 0050a346 (CONDITIONAL_JUMP)
-    MOV EBP,0x63571d                    ; 0050a324 | = "..\\core\\manpuz.cpp" | s_core_manpuz_cpp_0063571d = ..\core\manpuz.cpp
+    JZ 0x0050a346                       ; 0050a322
+        ;   XREF to: 0050a346 (CONDITIONAL_JUMP)  ; LAB_0050a346
+    MOV EBP,0x63571d                    ; 0050a324 | = "..\\core\\manpuz.cpp"
     MOV EAX,0x45d                       ; 0050a329
-    PUSH 0x635730                       ; 0050a32e | = "CMansionPuzzleCircle::processPanel - ..." | s_CMansionPuzzleCircle_pro_00635730 = CMansionPuzzleCircle::processPanel - Panel collision!
-    MOV dword ptr [0x02f0ca48],EBP      ; 0050a333 | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 0050a339 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050a33e | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x635730                       ; 0050a32e | = "CMansionPuzzleCircle::processPanel - ..."
+    MOV dword ptr [0x02f0ca48],EBP      ; 0050a333 | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 0050a339 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050a33e
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0050a343
     MOV EAX,ESI                         ; 0050a346
         ;   Label: LAB_0050a346
@@ -106,8 +106,8 @@ section .text
     MOV EBP,dword ptr [EBX + 0x8]       ; 0050a35a
     MOV dword ptr [ESI + 0x8],EBP       ; 0050a35d
     CMP ECX,EDI                         ; 0050a360
-    JZ 0x0050a374                       ; 0050a362 | LAB_0050a374
-        ;   XREF to: 0050a374 (CONDITIONAL_JUMP)
+    JZ 0x0050a374                       ; 0050a362
+        ;   XREF to: 0050a374 (CONDITIONAL_JUMP)  ; LAB_0050a374
     MOV EBP,dword ptr [EDI]             ; 0050a364
     MOV dword ptr [ECX],EBP             ; 0050a366
     MOV EBP,dword ptr [EDI + 0x4]       ; 0050a368
@@ -118,8 +118,8 @@ section .text
         ;   Label: LAB_0050a374
     LEA EDI,[EAX + 0x18]                ; 0050a377
     CMP EDI,ECX                         ; 0050a37a
-    JZ 0x0050a38e                       ; 0050a37c | LAB_0050a38e
-        ;   XREF to: 0050a38e (CONDITIONAL_JUMP)
+    JZ 0x0050a38e                       ; 0050a37c
+        ;   XREF to: 0050a38e (CONDITIONAL_JUMP)  ; LAB_0050a38e
     MOV EBP,dword ptr [ECX]             ; 0050a37e
     MOV dword ptr [EDI],EBP             ; 0050a380
     MOV EBP,dword ptr [ECX + 0x4]       ; 0050a382
@@ -156,8 +156,8 @@ section .text
     ADD EDX,0x58                        ; 0050a3dc
     MOV dword ptr [EAX + -0x4],ECX      ; 0050a3df
     CMP EAX,EDX                         ; 0050a3e2
-    JZ 0x0050a3f6                       ; 0050a3e4 | LAB_0050a3f6
-        ;   XREF to: 0050a3f6 (CONDITIONAL_JUMP)
+    JZ 0x0050a3f6                       ; 0050a3e4
+        ;   XREF to: 0050a3f6 (CONDITIONAL_JUMP)  ; LAB_0050a3f6
     MOV ECX,dword ptr [EDX]             ; 0050a3e6
     MOV dword ptr [EAX],ECX             ; 0050a3e8
     MOV ECX,dword ptr [EDX + 0x4]       ; 0050a3ea

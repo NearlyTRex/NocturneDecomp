@@ -29,15 +29,15 @@ section .text
 
     FXCH                                ; 006013b1
         ;   Label: crt_math.c_atan2_FUN_006013b1
-    TEST byte ptr [0x00685060],0x1      ; 006013b3 | int g_UseSoftwareMath
-    JNZ 0x006013c0                      ; 006013ba | LAB_006013c0
-        ;   XREF to: 006013c0 (CONDITIONAL_JUMP)
+    TEST byte ptr [0x00685060],0x1      ; 006013b3 | g_UseSoftwareMath
+    JNZ 0x006013c0                      ; 006013ba
+        ;   XREF to: 006013c0 (CONDITIONAL_JUMP)  ; LAB_006013c0
     FPATAN                              ; 006013bc
-    JMP 0x006013c5                      ; 006013be | LAB_006013c5
-        ;   XREF to: 006013c5 (UNCONDITIONAL_JUMP)
-    CALL crt_unknown.c_FUN_00608e14     ; 006013c0 | undefined crt_unknown.c_FUN_00608e14()
+    JMP 0x006013c5                      ; 006013be
+        ;   XREF to: 006013c5 (UNCONDITIONAL_JUMP)  ; LAB_006013c5
+    CALL crt_unknown.c_FUN_00608e14     ; 006013c0
+        ;   XREF to: 00608e14 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00608e14()
         ;   Label: LAB_006013c0
-        ;   XREF to: 00608e14 (UNCONDITIONAL_CALL)
     RET                                 ; 006013c5
         ;   Label: LAB_006013c5
 

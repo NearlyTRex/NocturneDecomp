@@ -26,7 +26,7 @@ section .text
     MOV dword ptr [EAX + 0x4],ECX       ; 0047ef1f
     MOV ECX,dword ptr [EDX + 0x8]       ; 0047ef22
     MOV dword ptr [EAX + 0x8],ECX       ; 0047ef25
-    PUSH 0x65c9f0                       ; 0047ef28 | WatcomTypeInfo g_RA4HQPointTypeInfo
+    PUSH 0x65c9f0                       ; 0047ef28 | g_RA4HQPointTypeInfo
     MOV ECX,dword ptr [EDX + 0xc]       ; 0047ef2d
     ADD EDX,0x18                        ; 0047ef30
     MOV dword ptr [EAX + 0xc],ECX       ; 0047ef33
@@ -38,8 +38,8 @@ section .text
     MOV ECX,dword ptr [EDX + -0x4]      ; 0047ef42
     PUSH EAX                            ; 0047ef45
     MOV dword ptr [EAX + -0x4],ECX      ; 0047ef46
-    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0047ef49 | void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
-        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_copyObjectArray_FUN_00600bc2 ; 0047ef49
+        ;   XREF to: 00600bc2 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)
     ADD ESP,0x10                        ; 0047ef4e
     SUB EAX,0x18                        ; 0047ef51
     RET                                 ; 0047ef54

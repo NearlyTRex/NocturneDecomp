@@ -34,34 +34,34 @@ section .text
         ;   Label: wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
     PUSH EDI                            ; 005f2e91
     PUSH EBP                            ; 005f2e92
-    MOV EAX,[0x03f96c18]                ; 005f2e93 | int g_InputReadIndex
-    MOV EDX,dword ptr [0x03f96c1c]      ; 005f2e98 | int g_InputWriteIndex
+    MOV EAX,[0x03f96c18]                ; 005f2e93 | g_InputReadIndex
+    MOV EDX,dword ptr [0x03f96c1c]      ; 005f2e98 | g_InputWriteIndex
     XOR EBX,EBX                         ; 005f2e9e
     CMP EAX,EDX                         ; 005f2ea0
-    JNZ 0x005f2ebf                      ; 005f2ea2 | LAB_005f2ebf
-        ;   XREF to: 005f2ebf (CONDITIONAL_JUMP)
-    CMP dword ptr [0x03f9846c],0x0      ; 005f2ea4 | int g_InputDisabled
+    JNZ 0x005f2ebf                      ; 005f2ea2
+        ;   XREF to: 005f2ebf (CONDITIONAL_JUMP)  ; LAB_005f2ebf
+    CMP dword ptr [0x03f9846c],0x0      ; 005f2ea4 | g_InputDisabled
         ;   Label: LAB_005f2ea4
-    JNZ 0x005f2ebf                      ; 005f2eab | LAB_005f2ebf
-        ;   XREF to: 005f2ebf (CONDITIONAL_JUMP)
-    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005f2ead | void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)
-    MOV EAX,[0x03f96c18]                ; 005f2eb2 | int g_InputReadIndex
-    CMP EAX,dword ptr [0x03f96c1c]      ; 005f2eb7 | int g_InputWriteIndex
-    JZ 0x005f2ea4                       ; 005f2ebd | LAB_005f2ea4
-        ;   XREF to: 005f2ea4 (CONDITIONAL_JUMP)
-    MOV EDI,dword ptr [0x03f96c1c]      ; 005f2ebf | int g_InputWriteIndex
+    JNZ 0x005f2ebf                      ; 005f2eab
+        ;   XREF to: 005f2ebf (CONDITIONAL_JUMP)  ; LAB_005f2ebf
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005f2ead
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
+    MOV EAX,[0x03f96c18]                ; 005f2eb2 | g_InputReadIndex
+    CMP EAX,dword ptr [0x03f96c1c]      ; 005f2eb7 | g_InputWriteIndex
+    JZ 0x005f2ea4                       ; 005f2ebd
+        ;   XREF to: 005f2ea4 (CONDITIONAL_JUMP)  ; LAB_005f2ea4
+    MOV EDI,dword ptr [0x03f96c1c]      ; 005f2ebf | g_InputWriteIndex
         ;   Label: LAB_005f2ebf
-    MOV EAX,[0x03f96c18]                ; 005f2ec5 | int g_InputReadIndex
+    MOV EAX,[0x03f96c18]                ; 005f2ec5 | g_InputReadIndex
     CMP EAX,EDI                         ; 005f2eca
-    JZ 0x005f2ee3                       ; 005f2ecc | LAB_005f2ee3
-        ;   XREF to: 005f2ee3 (CONDITIONAL_JUMP)
+    JZ 0x005f2ee3                       ; 005f2ecc
+        ;   XREF to: 005f2ee3 (CONDITIONAL_JUMP)  ; LAB_005f2ee3
     LEA EBP,[EAX + 0x1]                 ; 005f2ece
-    MOV EBX,dword ptr [EAX*0x4 + 0x3f96bc8] ; 005f2ed1 | int[20] g_InputBuffer
-    MOV dword ptr [0x03f96c18],EBP      ; 005f2ed8 | int g_InputReadIndex
+    MOV EBX,dword ptr [EAX*0x4 + 0x3f96bc8] ; 005f2ed1 | g_InputBuffer
+    MOV dword ptr [0x03f96c18],EBP      ; 005f2ed8 | g_InputReadIndex
     CMP EBP,0x14                        ; 005f2ede
-    JGE 0x005f2ee9                      ; 005f2ee1 | LAB_005f2ee9
-        ;   XREF to: 005f2ee9 (CONDITIONAL_JUMP)
+    JGE 0x005f2ee9                      ; 005f2ee1
+        ;   XREF to: 005f2ee9 (CONDITIONAL_JUMP)  ; LAB_005f2ee9
     MOV AL,BL                           ; 005f2ee3
         ;   Label: LAB_005f2ee3
     POP EBP                             ; 005f2ee5
@@ -70,7 +70,7 @@ section .text
     RET                                 ; 005f2ee8
     XOR EDX,EDX                         ; 005f2ee9
         ;   Label: LAB_005f2ee9
-    MOV dword ptr [0x03f96c18],EDX      ; 005f2eeb | int g_InputReadIndex
+    MOV dword ptr [0x03f96c18],EDX      ; 005f2eeb | g_InputReadIndex
     MOV AL,BL                           ; 005f2ef1
     POP EBP                             ; 005f2ef3
     POP EDI                             ; 005f2ef4

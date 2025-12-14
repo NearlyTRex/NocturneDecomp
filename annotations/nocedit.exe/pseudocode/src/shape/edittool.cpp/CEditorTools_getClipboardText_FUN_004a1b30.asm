@@ -32,29 +32,29 @@ section .text
 
     PUSH EBX                            ; 004a1b30
         ;   Label: shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30
-    MOV EDX,dword ptr [0x03f98468]      ; 004a1b31 | HWND g_MainWindowHandle
+    MOV EDX,dword ptr [0x03f98468]      ; 004a1b31 | g_MainWindowHandle
     PUSH EDX                            ; 004a1b37
-    CALL dword ptr CS:[0x6114cc]        ; 004a1b38 | OpenClipboard * OpenClipboard
+    CALL dword ptr CS:[0x6114cc]        ; 004a1b38 | OpenClipboard
     TEST EAX,EAX                        ; 004a1b3f
-    JNZ 0x004a1b54                      ; 004a1b41 | LAB_004a1b54
-        ;   XREF to: 004a1b54 (CONDITIONAL_JUMP)
-    MOV EBX,dword ptr [0x02cf1cd8]      ; 004a1b43 | char * g_ClipboardBackupText
+    JNZ 0x004a1b54                      ; 004a1b41
+        ;   XREF to: 004a1b54 (CONDITIONAL_JUMP)  ; LAB_004a1b54
+    MOV EBX,dword ptr [0x02cf1cd8]      ; 004a1b43 | g_ClipboardBackupText
         ;   Label: LAB_004a1b43
     TEST EBX,EBX                        ; 004a1b49
-    JNZ 0x004a1bb6                      ; 004a1b4b | LAB_004a1bb6
-        ;   XREF to: 004a1bb6 (CONDITIONAL_JUMP)
-    MOV EAX,0x623593                    ; 004a1b4d | char s_EmptyChar_00623593
+    JNZ 0x004a1bb6                      ; 004a1b4b
+        ;   XREF to: 004a1bb6 (CONDITIONAL_JUMP)  ; LAB_004a1bb6
+    MOV EAX,0x623593                    ; 004a1b4d | s_EmptyChar_00623593
     POP EBX                             ; 004a1b52
     RET                                 ; 004a1b53
     PUSH EDI                            ; 004a1b54
         ;   Label: LAB_004a1b54
     PUSH ESI                            ; 004a1b55
     PUSH 0x1                            ; 004a1b56
-    CALL dword ptr CS:[0x6114a8]        ; 004a1b58 | GetClipboardData * GetClipboardData
+    CALL dword ptr CS:[0x6114a8]        ; 004a1b58 | GetClipboardData
     MOV ESI,EAX                         ; 004a1b5f
     TEST EAX,EAX                        ; 004a1b61
-    JZ 0x004a1bab                       ; 004a1b63 | LAB_004a1bab
-        ;   XREF to: 004a1bab (CONDITIONAL_JUMP)
+    JZ 0x004a1bab                       ; 004a1b63
+        ;   XREF to: 004a1bab (CONDITIONAL_JUMP)  ; LAB_004a1bab
     MOV EDI,EAX                         ; 004a1b65
     SUB ECX,ECX                         ; 004a1b67
     DEC ECX                             ; 004a1b69
@@ -63,18 +63,18 @@ section .text
     NOT ECX                             ; 004a1b6e
     DEC ECX                             ; 004a1b70
     PUSH 0x94e                          ; 004a1b71
-    PUSH 0x62357d                       ; 004a1b76 | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_0062357d = ..\shape\edittool.cpp
+    PUSH 0x62357d                       ; 004a1b76 | = "..\\shape\\edittool.cpp"
     LEA EBX,[ECX + 0x1]                 ; 004a1b7b
     PUSH EBX                            ; 004a1b7e
-    MOV ECX,dword ptr [0x02cf1cd8]      ; 004a1b7f | char * g_ClipboardBackupText
+    MOV ECX,dword ptr [0x02cf1cd8]      ; 004a1b7f | g_ClipboardBackupText
     PUSH ECX                            ; 004a1b85
-    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004a1b86 | void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
-        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004a1b86
+        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
     ADD ESP,0x10                        ; 004a1b8b
-    MOV [0x02cf1cd8],EAX                ; 004a1b8e | char * g_ClipboardBackupText
+    MOV [0x02cf1cd8],EAX                ; 004a1b8e | g_ClipboardBackupText
     TEST EAX,EAX                        ; 004a1b93
-    JZ 0x004a1bab                       ; 004a1b95 | LAB_004a1bab
-        ;   XREF to: 004a1bab (CONDITIONAL_JUMP)
+    JZ 0x004a1bab                       ; 004a1b95
+        ;   XREF to: 004a1bab (CONDITIONAL_JUMP)  ; LAB_004a1bab
     MOV ECX,EBX                         ; 004a1b97
     MOV EDI,EAX                         ; 004a1b99
     PUSH EDI                            ; 004a1b9b
@@ -85,12 +85,12 @@ section .text
     AND CL,0x3                          ; 004a1ba5
     MOVSB.REP ES:EDI,ESI                ; 004a1ba8
     POP EDI                             ; 004a1baa
-    CALL dword ptr CS:[0x611490]        ; 004a1bab | CloseClipboard * CloseClipboard
+    CALL dword ptr CS:[0x611490]        ; 004a1bab | CloseClipboard
         ;   Label: LAB_004a1bab
     POP ESI                             ; 004a1bb2
     POP EDI                             ; 004a1bb3
-    JMP 0x004a1b43                      ; 004a1bb4 | LAB_004a1b43
-        ;   XREF to: 004a1b43 (UNCONDITIONAL_JUMP)
+    JMP 0x004a1b43                      ; 004a1bb4
+        ;   XREF to: 004a1b43 (UNCONDITIONAL_JUMP)  ; LAB_004a1b43
     MOV EAX,EBX                         ; 004a1bb6
         ;   Label: LAB_004a1bb6
     POP EBX                             ; 004a1bb8

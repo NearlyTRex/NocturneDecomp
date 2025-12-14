@@ -11,8 +11,7 @@ void core_flamecan_cpp_FUN_004cb120(void)
 {
   CFlameCan *this_ptr;
   
-  this_ptr = (CFlameCan *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x5e8,"..\\core\\flamecan.cpp",0x22);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x5e8,"..\\core\\flamecan.cpp",0x22);
   if (this_ptr == (CFlameCan *)0x0) {
     return;
   }

@@ -1,72 +1,72 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 16, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ef380", 
-    "signature": "int core_ground.cpp_CGround_getVertexIndex_FUN_004ef380(CGround * this_ptr, int column, int row)", 
-    "address_range": [
-      [
-        "004ef380", 
-        "004ef39c"
-      ]
-    ], 
-    "name": "core_ground.cpp_CGround_getVertexIndex_FUN_004ef380"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGround *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "column"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "row"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "004efa05", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_renderTerrainQuad_FUN_004ef990", 
-      "addr": "004ef990"
-    }, 
+      "addr": "004ef990",
+      "from_addr": "004efa05",
+      "name": "core_ground.cpp_CGround_renderTerrainQuad_FUN_004ef990",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ef3ce", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0", 
-      "addr": "004ef3a0"
+      "addr": "004ef3a0",
+      "from_addr": "004ef3ce",
+      "name": "core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004ef380",
+    "address_range": [
+      [
+        "004ef380",
+        "004ef39c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_CGround_getVertexIndex_FUN_004ef380",
+    "signature": "int core_ground.cpp_CGround_getVertexIndex_FUN_004ef380(CGround * this_ptr, int column, int row)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGround *"
+      },
+      {
+        "is_param": true,
+        "name": "column",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "row",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

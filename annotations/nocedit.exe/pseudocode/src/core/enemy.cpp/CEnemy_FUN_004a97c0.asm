@@ -34,10 +34,10 @@ section .text
     FXCH                                ; 004a97eb
     FADD float ptr [ESP + 0xc]          ; 004a97ed
     FXCH                                ; 004a97f1
-    FMUL double ptr [0x00624382]        ; 004a97f3 | double DOUBLE_00624382
+    FMUL double ptr [0x00624382]        ; 004a97f3 | DOUBLE_00624382
     FXCH                                ; 004a97f9
     FST float ptr [ESP + 0x24]          ; 004a97fb
-    FLD float ptr [0x0062437e]          ; 004a97ff | float FLOAT_0062437e
+    FLD float ptr [0x0062437e]          ; 004a97ff | FLOAT_0062437e
     FXCH                                ; 004a9805
     FMUL ST1                            ; 004a9807
     FLD float ptr [ESP + 0x8]           ; 004a9809
@@ -61,8 +61,8 @@ section .text
     FSTP ST1                            ; 004a983f
     FSTP float ptr [ESP + 0x1c]         ; 004a9841
     CMP EBX,EAX                         ; 004a9845
-    JNZ 0x004a9853                      ; 004a9847 | LAB_004a9853
-        ;   XREF to: 004a9853 (CONDITIONAL_JUMP)
+    JNZ 0x004a9853                      ; 004a9847
+        ;   XREF to: 004a9853 (CONDITIONAL_JUMP)  ; LAB_004a9853
     MOV EAX,0x1                         ; 004a9849
     MOV ESP,EBP                         ; 004a984e
     POP EBP                             ; 004a9850

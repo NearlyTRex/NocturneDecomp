@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 50, 
-    "assembly_lines": 32, 
-    "suspect_count": 1, 
+    "assembly_lines": 32,
+    "complexity_score": 33,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
       "unknown_field"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_pentiumFdivpWorkaround_FUN_00606f13", 
-      "addr": "00606f13"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {"
-    }
-  ], 
-  "function": {
-    "convention": "__fpustack", 
-    "address": "00606f98", 
-    "signature": "float10 crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0, double param1)", 
-    "address_range": [
-      [
-        "00606f98", 
-        "00606fe3"
-      ]
-    ], 
-    "name": "crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98"
-  }, 
-  "stack_frame": {
-    "local_size": 16, 
-    "variables": [
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined1[10]", 
-        "size": 10, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "param1"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 0, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "0060dd29", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060dcf6", 
-      "addr": "0060dcf6"
+      "addr": "0060dcf6",
+      "from_addr": "0060dd29",
+      "name": "crt_unknown.c_FUN_0060dcf6",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00606f98",
+    "address_range": [
+      [
+        "00606f98",
+        "00606fe3"
+      ]
+    ],
+    "convention": "__fpustack",
+    "name": "crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98",
+    "signature": "float10 crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0, double param1)"
+  },
+  "function_calls": [
+    {
+      "addr": "00606f13",
+      "name": "crt_math.c_pentiumFdivpWorkaround_FUN_00606f13"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 16,
+    "param_offset": 0,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 10,
+        "type": "undefined1[10]"
+      },
+      {
+        "is_param": true,
+        "name": "param1",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 12,
+      "match": "._4_4_",
+      "text": "if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {",
+      "type": "unknown_field"
     }
   ]
 }

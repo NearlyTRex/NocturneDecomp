@@ -23,13 +23,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 004338f5
     MOV EAX,dword ptr [EAX + 0x18]      ; 004338f9
     TEST EAX,EAX                        ; 004338fc
-    JZ 0x004339b1                       ; 004338fe | LAB_004339b1
-        ;   XREF to: 004339b1 (CONDITIONAL_JUMP)
+    JZ 0x004339b1                       ; 004338fe
+        ;   XREF to: 004339b1 (CONDITIONAL_JUMP)  ; LAB_004339b1
     MOV EDX,dword ptr [ESP + 0x20]      ; 00433904
     XOR ESI,ESI                         ; 00433908
     TEST EDX,EDX                        ; 0043390a
-    JLE 0x004339b1                      ; 0043390c | LAB_004339b1
-        ;   XREF to: 004339b1 (CONDITIONAL_JUMP)
+    JLE 0x004339b1                      ; 0043390c
+        ;   XREF to: 004339b1 (CONDITIONAL_JUMP)  ; LAB_004339b1
     PUSH EDI                            ; 00433912
     PUSH EBX                            ; 00433913
     MOV EBX,dword ptr [ESP + 0x24]      ; 00433914
@@ -50,8 +50,8 @@ section .text
     CWDE                                ; 0043393d
     PUSH ECX                            ; 0043393e
     MOV dword ptr [ESP + 0x18],EAX      ; 0043393f
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0 ; 00433943 | int cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0(CPackedBitmap * this_ptr, int x_coordinate, int row_index)
-        ;   XREF to: 0054a9b0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0 ; 00433943
+        ;   XREF to: 0054a9b0 (UNCONDITIONAL_CALL)  ; int cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0(CPackedBitmap * this_ptr, int x_coordinate, int row_index)
     MOV dword ptr [ESP + 0x1c],EAX      ; 00433948
     ADD ESP,0xc                         ; 0043394c
     MOV EAX,dword ptr [ESP + 0xc]       ; 0043394f
@@ -60,8 +60,8 @@ section .text
     PUSH EDX                            ; 00433958
     MOV ECX,dword ptr [ESP + 0x28]      ; 00433959
     PUSH ECX                            ; 0043395d
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0 ; 0043395e | int cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0(CPackedBitmap * this_ptr, int x_coordinate, int row_index)
-        ;   XREF to: 0054a9b0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0 ; 0043395e
+        ;   XREF to: 0054a9b0 (UNCONDITIONAL_CALL)  ; int cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0(CPackedBitmap * this_ptr, int x_coordinate, int row_index)
     MOV DX,word ptr [EBX + 0x6]         ; 00433963
     ADD ESP,0xc                         ; 00433967
     SHR DX,0xf                          ; 0043396a
@@ -82,15 +82,15 @@ section .text
     PUSH EDI                            ; 00433993
     ADD EBP,ECX                         ; 00433994
     PUSH EBP                            ; 00433996
-    CALL cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0 ; 00433997 | void cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0(int x0, int y0, int x1, int y1, ...)
-        ;   XREF to: 004339c0 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0 ; 00433997
+        ;   XREF to: 004339c0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0(int x0, int y0, int x1, int y1, ...)
     ADD ESP,0x1c                        ; 0043399c
     INC ESI                             ; 0043399f
     MOV ECX,dword ptr [ESP + 0x28]      ; 004339a0
     ADD EBX,0x8                         ; 004339a4
     CMP ESI,ECX                         ; 004339a7
-    JL 0x00433918                       ; 004339a9 | LAB_00433918
-        ;   XREF to: 00433918 (CONDITIONAL_JUMP)
+    JL 0x00433918                       ; 004339a9
+        ;   XREF to: 00433918 (CONDITIONAL_JUMP)  ; LAB_00433918
     POP EBX                             ; 004339af
     POP EDI                             ; 004339b0
     ADD ESP,0xc                         ; 004339b1

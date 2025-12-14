@@ -1,122 +1,122 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 132, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 36, 
-    "assembly_lines": 19, 
-    "suspect_count": 11, 
+    "assembly_lines": 19,
+    "complexity_score": 132,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 17,
+    "suspect_count": 11,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030", 
-      "addr": "0040a030"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "SInteractionInfo *in_stack_00000008;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(in_stack_00000004,in_stack_00000008);"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(in_stack_00000004,in_stack_00000008);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008->can_interact = 1;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = in_stack_00000008[0x16].yaw_max;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008->yaw_min = 6.2831855;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008->yaw_max = -6.2831855;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008->distance_min = -1.0;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008->distance_max = 0.0;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008->reference_data = (int)fVar1;"
-    }
-  ], 
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0050b2f0", 
-    "signature": "undefined core_manpuz.cpp_FUN_0050b2f0()", 
+    "address": "0050b2f0",
     "address_range": [
       [
-        "0050b2f0", 
+        "0050b2f0",
         "0050b333"
       ]
-    ], 
-    "name": "core_manpuz.cpp_FUN_0050b2f0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_manpuz.cpp_FUN_0050b2f0",
+    "signature": "undefined core_manpuz.cpp_FUN_0050b2f0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040a030",
+      "name": "core_actor.cpp_CDemonActor_getInteractionInfo_FUN_0040a030"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "SInteractionInfo *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008->can_interact = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "fVar1 = in_stack_00000008[0x16].yaw_max;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008->yaw_min = 6.2831855;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008->yaw_max = -6.2831855;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008->distance_min = -1.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008->distance_max = 0.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008->reference_data = (int)fVar1;",
+      "type": "stack_param"
+    }
+  ]
 }

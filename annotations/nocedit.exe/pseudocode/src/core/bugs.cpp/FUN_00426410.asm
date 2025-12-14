@@ -17,8 +17,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00426410
         ;   Label: core_bugs.cpp_FUN_00426410
     PUSH EDX                            ; 00426414
-    CALL core_bugs.cpp_FUN_004272f0     ; 00426415 | undefined core_bugs.cpp_FUN_004272f0()
-        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)
+    CALL core_bugs.cpp_FUN_004272f0     ; 00426415
+        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004272f0()
     ADD ESP,0x4                         ; 0042641a
     RET                                 ; 0042641d
 

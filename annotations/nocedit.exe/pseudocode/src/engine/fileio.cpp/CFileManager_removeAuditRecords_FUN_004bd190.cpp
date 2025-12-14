@@ -127,7 +127,6 @@ LAB_004bd3c3:
           }
           g_AuditRecordCount = g_AuditRecordCount + 1;
           g_AuditRecordsArray =
-               (CPodAuditRecord *)
                shape_memdbg_cpp_debugRealloc_FUN_0050f540
                          (g_AuditRecordsArray,g_AuditRecordCount * 0x138,
                           "..\\engine\\fileio.cpp",0x7a1);

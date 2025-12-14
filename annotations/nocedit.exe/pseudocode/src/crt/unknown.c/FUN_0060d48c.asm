@@ -42,14 +42,14 @@ section .text
     FLD double ptr [EAX]                ; 0060d4a7
     FSTP extended double ptr [EDX]      ; 0060d4a9
     CMP dword ptr [EBP + 0x1c],0x46     ; 0060d4ab
-    JNZ 0x0060d4c0                      ; 0060d4af | LAB_0060d4c0
-        ;   XREF to: 0060d4c0 (CONDITIONAL_JUMP)
+    JNZ 0x0060d4c0                      ; 0060d4af
+        ;   XREF to: 0060d4c0 (CONDITIONAL_JUMP)  ; LAB_0060d4c0
     MOV ESI,0xa                         ; 0060d4b1
     XOR EDI,EDI                         ; 0060d4b6
     MOV dword ptr [EBP + -0x44],ESI     ; 0060d4b8
     MOV dword ptr [EBP + -0x48],EDI     ; 0060d4bb
-    JMP 0x0060d4d0                      ; 0060d4be | LAB_0060d4d0
-        ;   XREF to: 0060d4d0 (UNCONDITIONAL_JUMP)
+    JMP 0x0060d4d0                      ; 0060d4be
+        ;   XREF to: 0060d4d0 (UNCONDITIONAL_JUMP)  ; LAB_0060d4d0
     MOV EBX,0xc                         ; 0060d4c0
         ;   Label: LAB_0060d4c0
     MOV ECX,0x1                         ; 0060d4c5
@@ -68,8 +68,8 @@ section .text
     PUSH EAX                            ; 0060d4e8
     LEA EAX,[EBP + -0x20]               ; 0060d4e9
     PUSH EAX                            ; 0060d4ec
-    CALL crt_unknown.c_FUN_00603dc8     ; 0060d4ed | undefined crt_unknown.c_FUN_00603dc8()
-        ;   XREF to: 00603dc8 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_FUN_00603dc8     ; 0060d4ed
+        ;   XREF to: 00603dc8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00603dc8()
     MOV EDX,dword ptr [EBP + 0x14]      ; 0060d4f2
     MOV EAX,dword ptr [EBP + -0x34]     ; 0060d4f5
     MOV dword ptr [EDX],EAX             ; 0060d4f8

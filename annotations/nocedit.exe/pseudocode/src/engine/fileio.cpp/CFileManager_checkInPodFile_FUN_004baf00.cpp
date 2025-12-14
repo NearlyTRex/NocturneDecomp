@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Removing unreachable block (ram,0x004bbc51) */
+
 int __cdecl
 engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
           (CFileManager *this_ptr,char *checkout_item_name,char *timestamp_file,char *pod_filename)
@@ -462,9 +464,6 @@ LAB_004bb83f:
       pFVar4 = (FILE *)0x0;
 LAB_004bbc40:
       if (pFVar4 == (FILE *)0x0) {
-        if (pFVar4 != (FILE *)0x0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)0x0,"..\\engine\\fileio.cpp",0xc4);
-        }
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't access %s.  Get Fletch.");
         engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&local_18.items);

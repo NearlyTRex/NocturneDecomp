@@ -33,17 +33,17 @@ section .text
     PUSH EDI                            ; 004121a2
     MOV EDX,dword ptr [ESP + 0x10]      ; 004121a3
     PUSH EDX                            ; 004121a7
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004121a8 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004121a8
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004121ad
-    PUSH 0x614dbb                       ; 004121b0 | = "armour.dfm" | s_armour_dfm_00614dbb = armour.dfm
+    PUSH 0x614dbb                       ; 004121b0 | = "armour.dfm"
     MOV EBX,EAX                         ; 004121b5
     LEA EDI,[EAX + 0x158]               ; 004121b7
     PUSH EDI                            ; 004121bd
-    MOV ESI,0x614dc6                    ; 004121be | = "none" | s_none_00614dc6 = none
-    MOV dword ptr [EAX + 0x154],0x659d34 ; 004121c3 | CDemonActor_vtable g_CArmourVTable
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004121cd | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV ESI,0x614dc6                    ; 004121be | = "none"
+    MOV dword ptr [EAX + 0x154],0x659d34 ; 004121c3 | g_CArmourVTable
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004121cd
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x00659d28]          ; 004121d2 | DAT_00659d28
     FLD float ptr [0x00659d2c]          ; 004121d8 | PTR_FUN_00659d29+3
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 004121de
@@ -54,19 +54,19 @@ section .text
     FSTP float ptr [EBX + 0x2de4]       ; 004121fd
     FSTP float ptr [EBX + 0x2de8]       ; 00412203
     PUSH EDI                            ; 00412209
-    MOV AL,byte ptr [ESI]               ; 0041220a | = "none" | s_none_00614dc6 = none
+    MOV AL,byte ptr [ESI]               ; 0041220a | = "none" | s_ne_00614dc8
         ;   Label: LAB_0041220a
     MOV byte ptr [EDI],AL               ; 0041220c
     CMP AL,0x0                          ; 0041220e
-    JZ 0x00412222                       ; 00412210 | LAB_00412222
-        ;   XREF to: 00412222 (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 00412212 | s_one_00614dc7
+    JZ 0x00412222                       ; 00412210
+        ;   XREF to: 00412222 (CONDITIONAL_JUMP)  ; LAB_00412222
+    MOV AL,byte ptr [ESI + 0x1]         ; 00412212 | s_one_00614dc7 | s_e_00614dc9
     ADD ESI,0x2                         ; 00412215
     MOV byte ptr [EDI + 0x1],AL         ; 00412218
     ADD EDI,0x2                         ; 0041221b
     CMP AL,0x0                          ; 0041221e
-    JNZ 0x0041220a                      ; 00412220 | LAB_0041220a
-        ;   XREF to: 0041220a (CONDITIONAL_JUMP)
+    JNZ 0x0041220a                      ; 00412220
+        ;   XREF to: 0041220a (CONDITIONAL_JUMP)  ; LAB_0041220a
     POP EDI                             ; 00412222
         ;   Label: LAB_00412222
     MOV EAX,EBX                         ; 00412223

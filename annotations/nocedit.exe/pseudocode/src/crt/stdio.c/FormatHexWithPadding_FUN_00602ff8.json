@@ -1,95 +1,95 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 75, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 100, 
-    "assembly_lines": 60, 
-    "suspect_count": 3, 
+    "assembly_lines": 60,
+    "complexity_score": 75,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 40,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_IntegerToString_FUN_00607d18", 
-      "addr": "00607d18"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar3 = in_stack_00000010 + -1;"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "buffer[in_stack_00000010] = '\\0';"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00602ff8", 
-    "signature": "void crt_stdio.c_FormatHexWithPadding_FUN_00602ff8(int value, char * buffer, int width)", 
-    "address_range": [
-      [
-        "00602ff8", 
-        "0060305a"
-      ]
-    ], 
-    "name": "crt_stdio.c_FormatHexWithPadding_FUN_00602ff8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "value"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 100
+  },
   "cross_references": [
     {
-      "from_addr": "00603745", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238", 
-      "addr": "00603238"
+      "addr": "00603238",
+      "from_addr": "00603745",
+      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00602ff8",
+    "address_range": [
+      [
+        "00602ff8",
+        "0060305a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_FormatHexWithPadding_FUN_00602ff8",
+    "signature": "void crt_stdio.c_FormatHexWithPadding_FUN_00602ff8(int value, char * buffer, int width)"
+  },
+  "function_calls": [
+    {
+      "addr": "00607d18",
+      "name": "crt_stdio.c_IntegerToString_FUN_00607d18"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000010",
+      "text": "iVar3 = in_stack_00000010 + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000010",
+      "text": "buffer[in_stack_00000010] = '\\0';",
+      "type": "stack_param"
     }
   ]
 }

@@ -12,72 +12,72 @@ shape_meshlod_cpp_crc32UpdateBuffer_FUN_0051c350(uint *crc_ptr,uchar *data_ptr,i
 {
   uint uVar1;
   
-  if (0 < byte_count) {
-    do {
-      while( true ) {
-        uVar1 = *crc_ptr ^ (uint)*data_ptr << 0x18;
-        *crc_ptr = uVar1;
-        if ((*crc_ptr & 0x80000000) == 0) {
-          uVar1 = uVar1 * 2;
-        }
-        else {
-          uVar1 = uVar1 * 2 ^ 0x4c11db7;
-        }
-        *crc_ptr = uVar1;
-        if ((*crc_ptr & 0x80000000) == 0) {
-          uVar1 = *crc_ptr * 2;
-        }
-        else {
-          uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
-        }
-        *crc_ptr = uVar1;
-        if ((*crc_ptr & 0x80000000) == 0) {
-          uVar1 = *crc_ptr * 2;
-        }
-        else {
-          uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
-        }
-        *crc_ptr = uVar1;
-        if ((*crc_ptr & 0x80000000) == 0) {
-          uVar1 = *crc_ptr * 2;
-        }
-        else {
-          uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
-        }
-        *crc_ptr = uVar1;
-        if ((*crc_ptr & 0x80000000) == 0) {
-          uVar1 = *crc_ptr * 2;
-        }
-        else {
-          uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
-        }
-        *crc_ptr = uVar1;
-        if ((*crc_ptr & 0x80000000) == 0) {
-          uVar1 = *crc_ptr * 2;
-        }
-        else {
-          uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
-        }
-        *crc_ptr = uVar1;
-        if ((*crc_ptr & 0x80000000) == 0) {
-          uVar1 = *crc_ptr * 2;
-        }
-        else {
-          uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
-        }
-        *crc_ptr = uVar1;
-        if ((*crc_ptr & 0x80000000) != 0) break;
-        data_ptr = data_ptr + 1;
-        byte_count = byte_count + -1;
-        *crc_ptr = *crc_ptr * 2;
-        if (byte_count < 1) {
-          return;
-        }
+  do {
+    if (byte_count < 1) {
+      return;
+    }
+    while( true ) {
+      uVar1 = *crc_ptr ^ (uint)*data_ptr << 0x18;
+      *crc_ptr = uVar1;
+      if ((*crc_ptr & 0x80000000) == 0) {
+        uVar1 = uVar1 * 2;
       }
+      else {
+        uVar1 = uVar1 * 2 ^ 0x4c11db7;
+      }
+      *crc_ptr = uVar1;
+      if ((*crc_ptr & 0x80000000) == 0) {
+        uVar1 = *crc_ptr * 2;
+      }
+      else {
+        uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
+      }
+      *crc_ptr = uVar1;
+      if ((*crc_ptr & 0x80000000) == 0) {
+        uVar1 = *crc_ptr * 2;
+      }
+      else {
+        uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
+      }
+      *crc_ptr = uVar1;
+      if ((*crc_ptr & 0x80000000) == 0) {
+        uVar1 = *crc_ptr * 2;
+      }
+      else {
+        uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
+      }
+      *crc_ptr = uVar1;
+      if ((*crc_ptr & 0x80000000) == 0) {
+        uVar1 = *crc_ptr * 2;
+      }
+      else {
+        uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
+      }
+      *crc_ptr = uVar1;
+      if ((*crc_ptr & 0x80000000) == 0) {
+        uVar1 = *crc_ptr * 2;
+      }
+      else {
+        uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
+      }
+      *crc_ptr = uVar1;
+      if ((*crc_ptr & 0x80000000) == 0) {
+        uVar1 = *crc_ptr * 2;
+      }
+      else {
+        uVar1 = *crc_ptr * 2 ^ 0x4c11db7;
+      }
+      *crc_ptr = uVar1;
+      if ((*crc_ptr & 0x80000000) != 0) break;
       data_ptr = data_ptr + 1;
       byte_count = byte_count + -1;
-      *crc_ptr = *crc_ptr * 2 ^ 0x4c11db7;
-    } while (0 < byte_count);
-  }
-  return;
+      *crc_ptr = *crc_ptr * 2;
+      if (byte_count < 1) {
+        return;
+      }
+    }
+    data_ptr = data_ptr + 1;
+    byte_count = byte_count + -1;
+    *crc_ptr = *crc_ptr * 2 ^ 0x4c11db7;
+  } while( true );
 }

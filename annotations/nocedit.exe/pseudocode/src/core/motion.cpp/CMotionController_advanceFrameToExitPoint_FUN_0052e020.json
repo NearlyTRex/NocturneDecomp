@@ -1,176 +1,176 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 79, 
-    "pseudocode_lines": 64, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 220, 
-    "assembly_lines": 156, 
-    "suspect_count": 1, 
+    "assembly_lines": 156,
+    "complexity_score": 79,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 64,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063ab17", 
-      "addr": "0063ab17", 
-      "value": "-0.000100000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063ab1f", 
-      "addr": "0063ab1f", 
-      "value": "0.00100000000000000"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0052e029", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 56, 
-      "match": "(SMotionTransition *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052e020", 
-    "signature": "int core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020(CMotionController * this_ptr, int motion_index, float current_frame, float * inout_delta_time, SMotionTransition * out_transition)", 
-    "address_range": [
-      [
-        "0052e020", 
-        "0052e1cc"
-      ]
-    ], 
-    "name": "core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020"
-  }, 
-  "stack_frame": {
-    "local_size": 64, 
-    "variables": [
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMotionController *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "motion_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "current_frame"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "inout_delta_time"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "SMotionTransition *", 
-        "size": 4, 
-        "name": "out_transition"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 84, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 220
+  },
   "cross_references": [
     {
-      "from_addr": "0052d91c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610", 
-      "addr": "0052d610"
+      "addr": "0052d610",
+      "from_addr": "0052d91c",
+      "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052e020",
+    "address_range": [
+      [
+        "0052e020",
+        "0052e1cc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020",
+    "signature": "int core_motion.cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020(CMotionController * this_ptr, int motion_index, float current_frame, float * inout_delta_time, SMotionTransition * out_transition)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0063ab17",
+      "name": "DOUBLE_0063ab17",
+      "type": "double",
+      "value": "-0.000100000000000000"
+    },
+    {
+      "addr": "0063ab1f",
+      "name": "DOUBLE_0063ab1f",
+      "type": "double",
+      "value": "0.00100000000000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionController *"
+      },
+      {
+        "is_param": true,
+        "name": "motion_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "current_frame",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "inout_delta_time",
+        "offset": 16,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "out_transition",
+        "offset": 20,
+        "size": 4,
+        "type": "SMotionTransition *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0052e029",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(SMotionTransition *)((int)",
+      "text": "pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

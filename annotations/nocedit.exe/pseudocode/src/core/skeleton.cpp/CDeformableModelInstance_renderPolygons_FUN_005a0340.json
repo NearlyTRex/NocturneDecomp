@@ -1,148 +1,148 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 93, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 3, 
-    "global_count": 4, 
-    "total_lines": 67, 
-    "assembly_lines": 44, 
-    "suspect_count": 6, 
+    "assembly_lines": 44,
+    "complexity_score": 93,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 23,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0", 
-      "addr": "0059abf0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
-      "addr": "005a07a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064ee38", 
-      "addr": "0064ee38", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDeformableModelInstance_0064ee4d", 
-      "addr": "0064ee4d", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_0000000c;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr_00,(int)lod_index,(byte *)part_visibility_flags,in_stack_0000000c,"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010,unaff_EDI);"
-    }, 
-    {
-      "line": 24, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "in_stack_00000010,unaff_EDI);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a0340", 
-    "signature": "void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr)", 
-    "address_range": [
-      [
-        "005a0340", 
-        "005a03ab"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 67
+  },
   "cross_references": [
     {
-      "from_addr": "0042b0a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042af60", 
-      "addr": "0042af60"
-    }, 
+      "addr": "0042af60",
+      "from_addr": "0042b0a5",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042af60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052c8ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_FUN_0052bcb0", 
-      "addr": "0052bcb0"
-    }, 
+      "addr": "0052bcb0",
+      "from_addr": "0052c8ab",
+      "name": "core_morph.cpp_FUN_0052bcb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a018b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150", 
-      "addr": "005a0150"
+      "addr": "005a0150",
+      "from_addr": "005a018b",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a0340",
+    "address_range": [
+      [
+        "005a0340",
+        "005a03ab"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340",
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0059abf0",
+      "name": "core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0"
+    },
+    {
+      "addr": "005a07a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064ee38",
+      "name": "s_core_skeleton_cpp_0064ee38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064ee4d",
+      "name": "s_CDeformableModelInstance_0064ee4d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "int *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr_00,(int)lod_index,(byte *)part_visibility_flags,in_stack_0000000c,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010,unaff_EDI);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EDI",
+      "text": "in_stack_00000010,unaff_EDI);",
+      "type": "unaffected_reg"
     }
   ]
 }

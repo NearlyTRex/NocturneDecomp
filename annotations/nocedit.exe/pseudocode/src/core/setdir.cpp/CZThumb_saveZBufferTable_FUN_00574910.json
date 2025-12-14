@@ -1,313 +1,298 @@
 {
   "complexity": {
-    "function_call_count": 12, 
-    "complexity_score": 186, 
-    "pseudocode_lines": 81, 
-    "cross_reference_count": 0, 
-    "global_count": 18, 
-    "total_lines": 278, 
-    "assembly_lines": 197, 
-    "suspect_count": 9, 
+    "assembly_lines": 197,
+    "complexity_score": 161,
+    "cross_reference_count": 0,
+    "function_call_count": 12,
+    "global_count": 18,
+    "pseudocode_lines": 81,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
-      "sborrow_artifact", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190", 
-      "addr": "0056a190"
-    }, 
-    {
-      "name": "core_setdir.cpp_CZThumb_free_FUN_00574b50", 
-      "addr": "00574b50"
-    }, 
-    {
-      "name": "core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0", 
-      "addr": "00574ef0"
-    }, 
-    {
-      "name": "core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70", 
-      "addr": "00574e70"
-    }, 
-    {
-      "name": "core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30", 
-      "addr": "00574e30"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420", 
-      "addr": "0048c420"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0", 
-      "addr": "0048cac0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4", 
-      "addr": "005b3ed4"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setdir_cpp_006463fe", 
-      "addr": "006463fe", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_saveZBufferTable_already_00646411", 
-      "addr": "00646411", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setdir_cpp_00646433", 
-      "addr": "00646433", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_saveZBufferTable_not_sav_00646446", 
-      "addr": "00646446", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setdir_cpp_00646464", 
-      "addr": "00646464", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setdir_cpp_00646477", 
-      "addr": "00646477", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_0064648a", 
-      "addr": "0064648a", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ZBufferScanlineArray[1]", 
-      "addr": "02cf7d60", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_VDTempVector", 
-      "addr": "03346d14", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArrayBackup", 
-      "addr": "0336362c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03363630", 
-      "addr": "03363630", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000028;"
-    }, 
-    {
-      "line": 37, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000028 != (FILE *)0x0) {"
-    }, 
-    {
-      "line": 39, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,in_stack_00000028);"
-    }, 
-    {
-      "line": 54, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4) ="
-    }, 
-    {
-      "line": 55, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar4);"
-    }, 
-    {
-      "line": 57, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar3,iVar1 * 4) != iVar3 + iVar1 * -4 < 0);"
-    }, 
-    {
-      "line": 76, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar4) ="
-    }, 
-    {
-      "line": 77, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4);"
-    }, 
-    {
-      "line": 79, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar3,iVar1 * 4) != iVar3 + iVar1 * -4 < 0);"
-    }
-  ], 
+    ],
+    "total_lines": 278
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00574910", 
-    "signature": "void core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb * this_ptr, CVector3f * camera_pos, CVector3f * look_at_pos, int width, int height, float unknown_scale, FILE * file_handle)", 
+    "address": "00574910",
     "address_range": [
       [
-        "00574910", 
+        "00574910",
         "00574b1c"
       ]
-    ], 
-    "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910",
+    "signature": "void core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910(CZThumb * this_ptr, CVector3f * camera_pos, CVector3f * look_at_pos, int width, int height, float unknown_scale, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0056a190",
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190"
+    },
+    {
+      "addr": "00574b50",
+      "name": "core_setdir.cpp_CZThumb_free_FUN_00574b50"
+    },
+    {
+      "addr": "00574ef0",
+      "name": "core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0"
+    },
+    {
+      "addr": "00574e70",
+      "name": "core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70"
+    },
+    {
+      "addr": "00574e30",
+      "name": "core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "0048c420",
+      "name": "engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    },
+    {
+      "addr": "0048cac0",
+      "name": "engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    },
+    {
+      "addr": "005b3ed4",
+      "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006463fe",
+      "name": "s_core_setdir_cpp_006463fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646411",
+      "name": "s_saveZBufferTable_already_00646411",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646433",
+      "name": "s_core_setdir_cpp_00646433",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646446",
+      "name": "s_saveZBufferTable_not_sav_00646446",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646464",
+      "name": "s_core_setdir_cpp_00646464",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646477",
+      "name": "s_core_setdir_cpp_00646477",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064648a",
+      "name": "s_Out_of_memory_0064648a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d60",
+      "name": "g_ZBufferScanlineArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "03346d14",
+      "name": "g_VDTempVector",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "0336362c",
+      "name": "g_ZBufferScanlineArrayBackup",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "03363630",
+      "name": "DAT_03363630",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CZThumb *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZThumb *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "camera_pos"
-      }, 
+        "is_param": true,
+        "name": "camera_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "look_at_pos"
-      }, 
+        "is_param": true,
+        "name": "look_at_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
+        "is_param": true,
+        "name": "height",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "unknown_scale"
-      }, 
+        "is_param": true,
+        "name": "unknown_scale",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
+      },
       {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 28,
+        "size": 4,
+        "type": "FILE *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000028",
+      "text": "FILE *in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000028",
+      "text": "if (in_stack_00000028 != (FILE *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000028",
+      "text": "(this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,in_stack_00000028);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4);",
+      "type": "pointer_cast"
+    }
+  ]
 }

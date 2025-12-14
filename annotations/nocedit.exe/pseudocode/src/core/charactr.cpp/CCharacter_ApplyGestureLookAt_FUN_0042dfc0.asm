@@ -35,38 +35,38 @@ section .text
         ;   Label: core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0
     MOV EBX,dword ptr [ESP + 0x8]       ; 0042dfc1
     PUSH EBX                            ; 0042dfc5
-    CALL core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0 ; 0042dfc6 | void core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter * this_ptr)
-        ;   XREF to: 0042d3d0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0 ; 0042dfc6
+        ;   XREF to: 0042d3d0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042dfcb
     PUSH EBX                            ; 0042dfce
-    CALL core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0 ; 0042dfcf | void core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter * this_ptr)
-        ;   XREF to: 0042dcd0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0 ; 0042dfcf
+        ;   XREF to: 0042dcd0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042dfd4
     LEA EAX,[EBX + 0x158]               ; 0042dfd7
     PUSH EAX                            ; 0042dfdd
-    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 ; 0042dfde | void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 ; 0042dfde
+        ;   XREF to: 0059fb40 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042dfe3
     PUSH EBX                            ; 0042dfe6
-    CALL core_charactr.cpp_CCharacter_FUN_0042d530 ; 0042dfe7 | void core_charactr.cpp_CCharacter_FUN_0042d530(CCharacter * this_ptr)
-        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042d530 ; 0042dfe7
+        ;   XREF to: 0042d530 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d530(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042dfec
     PUSH dword ptr [ESP + 0xc]          ; 0042dfef
     PUSH EBX                            ; 0042dff3
-    CALL core_charactr.cpp_CCharacter_FUN_0042d090 ; 0042dff4 | void core_charactr.cpp_CCharacter_FUN_0042d090(CCharacter * this_ptr)
-        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042d090 ; 0042dff4
+        ;   XREF to: 0042d090 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042d090(CCharacter * this_ptr)
     MOV EDX,dword ptr [EBX + 0x2620]    ; 0042dff9
     ADD ESP,0x8                         ; 0042dfff
     TEST EDX,EDX                        ; 0042e002
-    JNZ 0x0042e01d                      ; 0042e004 | LAB_0042e01d
-        ;   XREF to: 0042e01d (CONDITIONAL_JUMP)
+    JNZ 0x0042e01d                      ; 0042e004
+        ;   XREF to: 0042e01d (CONDITIONAL_JUMP)  ; LAB_0042e01d
     PUSH EBX                            ; 0042e006
     MOV EAX,dword ptr [EBX + 0x154]     ; 0042e007
     CALL dword ptr [EAX + 0x120]        ; 0042e00d
     ADD ESP,0x4                         ; 0042e013
     CMP EAX,0x1                         ; 0042e016
-    JZ 0x0042e01d                       ; 0042e019 | LAB_0042e01d
-        ;   XREF to: 0042e01d (CONDITIONAL_JUMP)
+    JZ 0x0042e01d                       ; 0042e019
+        ;   XREF to: 0042e01d (CONDITIONAL_JUMP)  ; LAB_0042e01d
     POP EBX                             ; 0042e01b
     RET                                 ; 0042e01c
     LEA EAX,[EBX + 0x158]               ; 0042e01d
@@ -80,8 +80,8 @@ section .text
     PUSH EAX                            ; 0042e035
     ADD EBX,0x2a94                      ; 0042e036
     PUSH EBX                            ; 0042e03c
-    CALL core_cloth.cpp_FUN_0043c2d0    ; 0042e03d | undefined core_cloth.cpp_FUN_0043c2d0()
-        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043c2d0    ; 0042e03d
+        ;   XREF to: 0043c2d0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c2d0()
     ADD ESP,0x18                        ; 0042e042
     POP EBX                             ; 0042e045
     RET                                 ; 0042e046

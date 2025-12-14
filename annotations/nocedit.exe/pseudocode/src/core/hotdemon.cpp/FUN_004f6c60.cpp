@@ -11,8 +11,7 @@ void core_hotdemon_cpp_FUN_004f6c60(void)
 {
   CHotDemon *this_ptr;
   
-  this_ptr = (CHotDemon *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbef0,"..\\core\\hotdemon.cpp",0x54);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbef0,"..\\core\\hotdemon.cpp",0x54);
   if (this_ptr == (CHotDemon *)0x0) {
     return;
   }

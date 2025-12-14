@@ -1,72 +1,72 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 41, 
-    "assembly_lines": 21, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_closeSoundDevice_FUN_005ab660", 
-      "addr": "005ab660"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_freeAllSamples_FUN_005aa660", 
-      "addr": "005aa660"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930", 
-      "addr": "005ab930"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005ab130", 
-      "addr": "005ab130"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60", 
-      "addr": "005abb60"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_ShutdownInProgress", 
-      "addr": "03f5d87c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005aaeb0", 
-    "signature": "void sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0(void)", 
-    "address_range": [
-      [
-        "005aaeb0", 
-        "005aaee3"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 21,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 1,
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
+  },
   "cross_references": [
     {
-      "from_addr": "005b2d60", 
-      "type": "UNCONDITIONAL_JUMP", 
-      "name": "core_sound.cpp_CSound_dtor_FUN_005aaeb0", 
-      "addr": "005b2d60"
+      "addr": "005b2d60",
+      "from_addr": "005b2d60",
+      "name": "core_sound.cpp_CSound_dtor_FUN_005aaeb0",
+      "type": "UNCONDITIONAL_JUMP"
     }
-  ]
+  ],
+  "function": {
+    "address": "005aaeb0",
+    "address_range": [
+      [
+        "005aaeb0",
+        "005aaee3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0",
+    "signature": "void sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ab660",
+      "name": "sound_sndmain.cpp_closeSoundDevice_FUN_005ab660"
+    },
+    {
+      "addr": "005aa660",
+      "name": "sound_sndmain.cpp_freeAllSamples_FUN_005aa660"
+    },
+    {
+      "addr": "005ab930",
+      "name": "sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930"
+    },
+    {
+      "addr": "005ab130",
+      "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005ab130"
+    },
+    {
+      "addr": "005abb60",
+      "name": "sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f5d87c",
+      "name": "g_ShutdownInProgress",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

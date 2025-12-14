@@ -14,11 +14,11 @@ section .text
         ;   Label: core_vessel.cpp_CCryptVessel_FUN_005e9b90
     MOV EDX,dword ptr [EAX + 0x70]      ; 005e9b94
     CMP EDX,0x1                         ; 005e9b97
-    JNZ 0x005e9ba5                      ; 005e9b9a | LAB_005e9ba5
-        ;   XREF to: 005e9ba5 (CONDITIONAL_JUMP)
+    JNZ 0x005e9ba5                      ; 005e9b9a
+        ;   XREF to: 005e9ba5 (CONDITIONAL_JUMP)  ; LAB_005e9ba5
     CMP dword ptr [EAX + 0x2d4],0x0     ; 005e9b9c
-    JZ 0x005e9ba8                       ; 005e9ba3 | LAB_005e9ba8
-        ;   XREF to: 005e9ba8 (CONDITIONAL_JUMP)
+    JZ 0x005e9ba8                       ; 005e9ba3
+        ;   XREF to: 005e9ba8 (CONDITIONAL_JUMP)  ; LAB_005e9ba8
     XOR EAX,EAX                         ; 005e9ba5
         ;   Label: LAB_005e9ba5
     RET                                 ; 005e9ba7

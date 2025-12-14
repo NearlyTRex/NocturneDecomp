@@ -19,14 +19,14 @@ section .text
     PUSH 0x0                            ; 004c9664
     ADD EAX,0x78                        ; 004c9666
     PUSH EAX                            ; 004c9669
-    CALL core_cloth.cpp_freeVectors_FUN_0043e460 ; 004c966a | int core_cloth.cpp_freeVectors_FUN_0043e460(CVector3f * * array)
-        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_freeVectors_FUN_0043e460 ; 004c966a
+        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_freeVectors_FUN_0043e460(CVector3f * * array)
     ADD ESP,0x8                         ; 004c966f
     PUSH 0x1                            ; 004c9672
     SUB EAX,0x78                        ; 004c9674
     PUSH EAX                            ; 004c9677
-    CALL core_particle.cpp_CParticle_dtor_FUN_00545670 ; 004c9678 | CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr)
-        ;   XREF to: 00545670 (UNCONDITIONAL_CALL)
+    CALL core_particle.cpp_CParticle_dtor_FUN_00545670 ; 004c9678
+        ;   XREF to: 00545670 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr)
     ADD ESP,0x8                         ; 004c967d
     RET                                 ; 004c9680
 

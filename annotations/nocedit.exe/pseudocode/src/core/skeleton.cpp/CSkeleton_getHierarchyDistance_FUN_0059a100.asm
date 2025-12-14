@@ -28,26 +28,26 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 0059a109
     XOR EDX,EDX                         ; 0059a10d
     CMP EAX,ECX                         ; 0059a10f
-    JZ 0x0059a126                       ; 0059a111 | LAB_0059a126
-        ;   XREF to: 0059a126 (CONDITIONAL_JUMP)
+    JZ 0x0059a126                       ; 0059a111
+        ;   XREF to: 0059a126 (CONDITIONAL_JUMP)  ; LAB_0059a126
     IMUL EAX,EAX,0x24                   ; 0059a113
         ;   Label: LAB_0059a113
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0x2857c] ; 0059a116
     INC EDX                             ; 0059a11d
     TEST EAX,EAX                        ; 0059a11e
-    JL 0x0059a12a                       ; 0059a120 | LAB_0059a12a
-        ;   XREF to: 0059a12a (CONDITIONAL_JUMP)
+    JL 0x0059a12a                       ; 0059a120
+        ;   XREF to: 0059a12a (CONDITIONAL_JUMP)  ; LAB_0059a12a
     CMP EAX,ECX                         ; 0059a122
-    JNZ 0x0059a113                      ; 0059a124 | LAB_0059a113
-        ;   XREF to: 0059a113 (CONDITIONAL_JUMP)
+    JNZ 0x0059a113                      ; 0059a124
+        ;   XREF to: 0059a113 (CONDITIONAL_JUMP)  ; LAB_0059a113
     MOV EAX,EDX                         ; 0059a126
         ;   Label: LAB_0059a126
     POP EBX                             ; 0059a128
     RET                                 ; 0059a129
     TEST ECX,ECX                        ; 0059a12a
         ;   Label: LAB_0059a12a
-    JL 0x0059a126                       ; 0059a12c | LAB_0059a126
-        ;   XREF to: 0059a126 (CONDITIONAL_JUMP)
+    JL 0x0059a126                       ; 0059a12c
+        ;   XREF to: 0059a126 (CONDITIONAL_JUMP)  ; LAB_0059a126
     MOV EDX,0xffffffff                  ; 0059a12e
     MOV EAX,EDX                         ; 0059a133
     POP EBX                             ; 0059a135

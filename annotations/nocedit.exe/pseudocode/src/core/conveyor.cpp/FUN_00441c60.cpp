@@ -11,8 +11,7 @@ void core_conveyor_cpp_FUN_00441c60(void)
 {
   CConveyor *this_ptr;
   
-  this_ptr = (CConveyor *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x860,"..\\core\\conveyor.cpp",0x23);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x860,"..\\core\\conveyor.cpp",0x23);
   if (this_ptr == (CConveyor *)0x0) {
     return;
   }

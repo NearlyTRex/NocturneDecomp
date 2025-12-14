@@ -30,13 +30,13 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0059e000
         ;   Label: core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
     PUSH EDX                            ; 0059e004
-    CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 0059e005 | void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 0059e005
+        ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0059e00a
     MOV ECX,dword ptr [ESP + 0x4]       ; 0059e00d
     PUSH ECX                            ; 0059e011
-    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 ; 0059e012 | void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 ; 0059e012
+        ;   XREF to: 0059fb40 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0059e017
     RET                                 ; 0059e01a
 

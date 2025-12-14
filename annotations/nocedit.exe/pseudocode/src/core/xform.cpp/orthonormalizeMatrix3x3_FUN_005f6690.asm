@@ -103,15 +103,15 @@ section .text
     FCOMP double ptr [ESP + 0x40]       ; 005f672c
     FNSTSW AX                           ; 005f6730
     SAHF                                ; 005f6732
-    JNC 0x005f6b2e                      ; 005f6733 | LAB_005f6b2e
-        ;   XREF to: 005f6b2e (CONDITIONAL_JUMP)
+    JNC 0x005f6b2e                      ; 005f6733
+        ;   XREF to: 005f6b2e (CONDITIONAL_JUMP)  ; LAB_005f6b2e
     FLDZ                                ; 005f6739
         ;   Label: LAB_005f6739
     FCOMP double ptr [ESP + 0x70]       ; 005f673b
     FNSTSW AX                           ; 005f673f
     SAHF                                ; 005f6741
-    JC 0x005f6753                       ; 005f6742 | LAB_005f6753
-        ;   XREF to: 005f6753 (CONDITIONAL_JUMP)
+    JC 0x005f6753                       ; 005f6742
+        ;   XREF to: 005f6753 (CONDITIONAL_JUMP)  ; LAB_005f6753
     XOR ESI,ESI                         ; 005f6744
     MOV EDI,0x3ff00000                  ; 005f6746
     MOV dword ptr [ESP + 0x70],ESI      ; 005f674b
@@ -121,8 +121,8 @@ section .text
     FCOMP double ptr [ESP + 0x68]       ; 005f6755
     FNSTSW AX                           ; 005f6759
     SAHF                                ; 005f675b
-    JNC 0x005f6b42                      ; 005f675c | LAB_005f6b42
-        ;   XREF to: 005f6b42 (CONDITIONAL_JUMP)
+    JNC 0x005f6b42                      ; 005f675c
+        ;   XREF to: 005f6b42 (CONDITIONAL_JUMP)  ; LAB_005f6b42
     FLD1                                ; 005f6762
         ;   Label: LAB_005f6762
     FDIV double ptr [ESP + 0x40]        ; 005f6764
@@ -188,7 +188,7 @@ section .text
     FXCH ST2                            ; 005f6842
     FSUBP ST5,ST0                       ; 005f6844
     FSUBP ST3,ST0                       ; 005f6846
-    FLD double ptr [0x006583bd]         ; 005f6848 | double g_GramSchmidtBlendFactor
+    FLD double ptr [0x006583bd]         ; 005f6848 | g_GramSchmidtBlendFactor
     FLD double ptr [ESP]                ; 005f684e
     FMUL ST1                            ; 005f6851
     FLD double ptr [ESP + 0x60]         ; 005f6853
@@ -347,8 +347,8 @@ section .text
     FSTP double ptr [ESP + 0x18]        ; 005f6a7d
     FSTP double ptr [ESP + 0x20]        ; 005f6a81
     CMP EDX,0xa                         ; 005f6a85
-    JL 0x005f6812                       ; 005f6a88 | LAB_005f6812
-        ;   XREF to: 005f6812 (CONDITIONAL_JUMP)
+    JL 0x005f6812                       ; 005f6a88
+        ;   XREF to: 005f6812 (CONDITIONAL_JUMP)  ; LAB_005f6812
     FLD double ptr [ESP + 0x20]         ; 005f6a8e
     FLD double ptr [ESP + 0x10]         ; 005f6a92
     FMUL ST1                            ; 005f6a96
@@ -377,8 +377,8 @@ section .text
     FSTP double ptr [ESP + 0x58]        ; 005f6ad3
     FSTP double ptr [ESP + 0x48]        ; 005f6ad7
     TEST EBX,EBX                        ; 005f6adb
-    JNZ 0x005f6b56                      ; 005f6add | LAB_005f6b56
-        ;   XREF to: 005f6b56 (CONDITIONAL_JUMP)
+    JNZ 0x005f6b56                      ; 005f6add
+        ;   XREF to: 005f6b56 (CONDITIONAL_JUMP)  ; LAB_005f6b56
     FLD double ptr [ESP + 0x48]         ; 005f6adf
         ;   Label: LAB_005f6adf
     FLD double ptr [ESP + 0x50]         ; 005f6ae3
@@ -414,15 +414,15 @@ section .text
     MOV EBX,0x3ff00000                  ; 005f6b30
     MOV dword ptr [ESP + 0x40],EDX      ; 005f6b35
     MOV dword ptr [ESP + 0x44],EBX      ; 005f6b39
-    JMP 0x005f6739                      ; 005f6b3d | LAB_005f6739
-        ;   XREF to: 005f6739 (UNCONDITIONAL_JUMP)
+    JMP 0x005f6739                      ; 005f6b3d
+        ;   XREF to: 005f6739 (UNCONDITIONAL_JUMP)  ; LAB_005f6739
     XOR EAX,EAX                         ; 005f6b42
         ;   Label: LAB_005f6b42
     MOV EDX,0x3ff00000                  ; 005f6b44
     MOV dword ptr [ESP + 0x68],EAX      ; 005f6b49
     MOV dword ptr [ESP + 0x6c],EDX      ; 005f6b4d
-    JMP 0x005f6762                      ; 005f6b51 | LAB_005f6762
-        ;   XREF to: 005f6762 (UNCONDITIONAL_JUMP)
+    JMP 0x005f6762                      ; 005f6b51
+        ;   XREF to: 005f6762 (UNCONDITIONAL_JUMP)  ; LAB_005f6762
     FLD double ptr [ESP + 0x40]         ; 005f6b56
         ;   Label: LAB_005f6b56
     FLD double ptr [ESP + 0x48]         ; 005f6b5a
@@ -460,6 +460,6 @@ section .text
     FXCH                                ; 005f6bc2
     FSTP double ptr [ESP + 0x20]        ; 005f6bc4
     FSTP double ptr [ESP + 0x48]        ; 005f6bc8
-    JMP 0x005f6adf                      ; 005f6bcc | LAB_005f6adf
-        ;   XREF to: 005f6adf (UNCONDITIONAL_JUMP)
+    JMP 0x005f6adf                      ; 005f6bcc
+        ;   XREF to: 005f6adf (UNCONDITIONAL_JUMP)  ; LAB_005f6adf
 

@@ -30,8 +30,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x30]      ; 005cd373
     AND ECX,EDX                         ; 005cd376
     CMP ECX,EDX                         ; 005cd378
-    JZ 0x005cd3b3                       ; 005cd37a | LAB_005cd3b3
-        ;   XREF to: 005cd3b3 (CONDITIONAL_JUMP)
+    JZ 0x005cd3b3                       ; 005cd37a
+        ;   XREF to: 005cd3b3 (CONDITIONAL_JUMP)  ; LAB_005cd3b3
     MOV EAX,dword ptr [ESI + 0x8]       ; 005cd37c
         ;   Label: LAB_005cd37c
     SHL EAX,0x3                         ; 005cd37f
@@ -42,8 +42,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x30]      ; 005cd38b
     AND ECX,EDX                         ; 005cd38e
     CMP ECX,EDX                         ; 005cd390
-    JNZ 0x005cd397                      ; 005cd392 | LAB_005cd397
-        ;   XREF to: 005cd397 (CONDITIONAL_JUMP)
+    JNZ 0x005cd397                      ; 005cd392
+        ;   XREF to: 005cd397 (CONDITIONAL_JUMP)  ; LAB_005cd397
     OR dword ptr [EAX + 0x34],EDI       ; 005cd394
     MOV EAX,dword ptr [ESI + 0xc]       ; 005cd397
         ;   Label: LAB_005cd397
@@ -55,16 +55,16 @@ section .text
     MOV EAX,dword ptr [EBX + 0x30]      ; 005cd3a6
     AND EAX,EDX                         ; 005cd3a9
     CMP EAX,EDX                         ; 005cd3ab
-    JZ 0x005cd3b8                       ; 005cd3ad | LAB_005cd3b8
-        ;   XREF to: 005cd3b8 (CONDITIONAL_JUMP)
+    JZ 0x005cd3b8                       ; 005cd3ad
+        ;   XREF to: 005cd3b8 (CONDITIONAL_JUMP)  ; LAB_005cd3b8
     POP EDI                             ; 005cd3af
     POP ESI                             ; 005cd3b0
     POP EBX                             ; 005cd3b1
     RET                                 ; 005cd3b2
     OR dword ptr [EAX + 0x34],EDI       ; 005cd3b3
         ;   Label: LAB_005cd3b3
-    JMP 0x005cd37c                      ; 005cd3b6 | LAB_005cd37c
-        ;   XREF to: 005cd37c (UNCONDITIONAL_JUMP)
+    JMP 0x005cd37c                      ; 005cd3b6
+        ;   XREF to: 005cd37c (UNCONDITIONAL_JUMP)  ; LAB_005cd37c
     OR dword ptr [EBX + 0x34],EDI       ; 005cd3b8
         ;   Label: LAB_005cd3b8
     POP EDI                             ; 005cd3bb

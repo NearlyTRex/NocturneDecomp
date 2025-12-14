@@ -18,8 +18,8 @@ section .text
     PUSH 0x0                            ; 004c9764
     ADD EAX,0x4                         ; 004c9766
     PUSH EAX                            ; 004c9769
-    CALL core_box.cpp_CBox_dtor_FUN_0041dd00 ; 004c976a | CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr)
-        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBox_dtor_FUN_0041dd00 ; 004c976a
+        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr)
     ADD ESP,0x8                         ; 004c976f
     SUB EAX,0x4                         ; 004c9772
     RET                                 ; 004c9775

@@ -29,7 +29,7 @@ section .text
     PUSH EBP                            ; 005aa1c0
         ;   Label: sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
     MOV EAX,dword ptr [ESP + 0x8]       ; 005aa1c1
-    MOV [0x03f68848],EAX                ; 005aa1c5 | CVector3d g_Cached3DListenerVelocity
+    MOV [0x03f68848],EAX                ; 005aa1c5 | g_Cached3DListenerVelocity
     MOV EAX,dword ptr [ESP + 0xc]       ; 005aa1ca
     MOV [0x03f6884c],EAX                ; 005aa1ce | g_Cached3DListenerVelocity.x+4
     MOV EAX,dword ptr [ESP + 0x10]      ; 005aa1d3
@@ -39,11 +39,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 005aa1e5
     MOV [0x03f68858],EAX                ; 005aa1e9 | g_Cached3DListenerVelocity.z
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005aa1ee
-    MOV EDX,dword ptr [0x03f69268]      ; 005aa1f2 | CSoundDevice * g_CSoundDevicePtr
+    MOV EDX,dword ptr [0x03f69268]      ; 005aa1f2 | g_CSoundDevicePtr
     MOV [0x03f6885c],EAX                ; 005aa1f8 | g_Cached3DListenerVelocity.z+4
     TEST EDX,EDX                        ; 005aa1fd
-    JNZ 0x005aa203                      ; 005aa1ff | LAB_005aa203
-        ;   XREF to: 005aa203 (CONDITIONAL_JUMP)
+    JNZ 0x005aa203                      ; 005aa1ff
+        ;   XREF to: 005aa203 (CONDITIONAL_JUMP)  ; LAB_005aa203
     POP EBP                             ; 005aa201
     RET                                 ; 005aa202
     PUSH EDI                            ; 005aa203

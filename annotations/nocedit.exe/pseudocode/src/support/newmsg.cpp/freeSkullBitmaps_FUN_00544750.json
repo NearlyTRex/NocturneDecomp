@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 14, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_freeTypeArray_FUN_005feee9", 
-      "addr": "005feee9"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CAlphaBitmapTypeInfo", 
-      "addr": "0065e9f0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00544750", 
-    "signature": "void support_newmsg.cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap * bitmap)", 
-    "address_range": [
-      [
-        "00544750", 
-        "00544764"
-      ]
-    ], 
-    "name": "support_newmsg.cpp_freeSkullBitmaps_FUN_00544750"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CAlphaBitmap *", 
-        "size": 4, 
-        "name": "bitmap"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
   "cross_references": [
     {
-      "from_addr": "005443ec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_newmsg.cpp_CMouse_dtor_FUN_005443e0", 
-      "addr": "005443e0"
+      "addr": "005443e0",
+      "from_addr": "005443ec",
+      "name": "support_newmsg.cpp_CMouse_dtor_FUN_005443e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00544750",
+    "address_range": [
+      [
+        "00544750",
+        "00544764"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_newmsg.cpp_freeSkullBitmaps_FUN_00544750",
+    "signature": "void support_newmsg.cpp_freeSkullBitmaps_FUN_00544750(CAlphaBitmap * bitmap)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feee9",
+      "name": "crt_memory.c_freeTypeArray_FUN_005feee9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065e9f0",
+      "name": "g_CAlphaBitmapTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "bitmap",
+        "offset": 4,
+        "size": 4,
+        "type": "CAlphaBitmap *"
+      }
+    ]
+  },
+  "suspects": []
 }

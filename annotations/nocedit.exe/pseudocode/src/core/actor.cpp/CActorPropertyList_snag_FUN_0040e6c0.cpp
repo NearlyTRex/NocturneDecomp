@@ -29,8 +29,7 @@ core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
   pcVar4 = pCVar3->name;
   pCVar3->type = (int)property_name;
   do {
-                    /* WARNING: Load size is inaccurate */
-    cVar1 = *data_ptr;
+    cVar1 = *(char *)data_ptr;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = *(char *)((int)data_ptr + 1);

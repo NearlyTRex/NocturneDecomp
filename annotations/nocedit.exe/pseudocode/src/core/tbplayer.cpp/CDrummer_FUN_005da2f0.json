@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 27, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 64, 
-    "assembly_lines": 37, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_npc.cpp_CNPC_FUN_00544870", 
-      "addr": "00544870"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
-      "addr": "005a0820"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0", 
-      "addr": "00599fc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bip01_L_Hand_00654bf9", 
-      "addr": "00654bf9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bip01_R_Hand_00654c06", 
-      "addr": "00654c06", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 37,
+    "complexity_score": 27,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005da2f0", 
-    "signature": "void core_tbplayer.cpp_CDrummer_FUN_005da2f0(CDrummer * this_ptr)", 
+    "address": "005da2f0",
     "address_range": [
       [
-        "005da2f0", 
+        "005da2f0",
         "005da36a"
       ]
-    ], 
-    "name": "core_tbplayer.cpp_CDrummer_FUN_005da2f0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_tbplayer.cpp_CDrummer_FUN_005da2f0",
+    "signature": "void core_tbplayer.cpp_CDrummer_FUN_005da2f0(CDrummer * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00544870",
+      "name": "core_npc.cpp_CNPC_FUN_00544870"
+    },
+    {
+      "addr": "005a0820",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    },
+    {
+      "addr": "00599fc0",
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654bf9",
+      "name": "s_Bip01_L_Hand_00654bf9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654c06",
+      "name": "s_Bip01_R_Hand_00654c06",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrummer *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrummer *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

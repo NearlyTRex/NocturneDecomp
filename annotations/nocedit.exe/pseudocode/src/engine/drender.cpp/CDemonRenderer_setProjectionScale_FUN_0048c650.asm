@@ -34,10 +34,10 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 0048c650
         ;   Label: engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
-    FDIVR double ptr [0x00622035]       ; 0048c654 | double g_ProjectionDivisor
-    FMUL double ptr [0x0062203d]        ; 0048c65a | double g_ProjectionMultiplier
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c660 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
-    FISTP dword ptr [0x006793c0]        ; 0048c665 | int g_ProjectionScale
+    FDIVR double ptr [0x00622035]       ; 0048c654 | g_ProjectionDivisor
+    FMUL double ptr [0x0062203d]        ; 0048c65a | g_ProjectionMultiplier
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0048c660
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
+    FISTP dword ptr [0x006793c0]        ; 0048c665 | g_ProjectionScale
     RET                                 ; 0048c66b
 

@@ -33,18 +33,18 @@ section .text
     PUSH EDI                            ; 00416452
     MOV EDX,dword ptr [ESP + 0x10]      ; 00416453
     PUSH EDX                            ; 00416457
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 00416458 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 00416458
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 0041645d
     MOV EBX,EAX                         ; 00416460
-    PUSH 0x6156e0                       ; 00416462 | = "batman.dfm" | s_batman_dfm_006156e0 = batman.dfm
+    PUSH 0x6156e0                       ; 00416462 | = "batman.dfm"
     ADD EAX,0x158                       ; 00416467
-    MOV ESI,0x6156eb                    ; 0041646c | = "none" | s_none_006156eb = none
+    MOV ESI,0x6156eb                    ; 0041646c | = "none"
     PUSH EAX                            ; 00416471
-    MOV dword ptr [EAX + -0x4],0x65a784 ; 00416472 | CDemonActor_vtable g_CBatmanVTable
+    MOV dword ptr [EAX + -0x4],0x65a784 ; 00416472 | g_CBatmanVTable
     LEA EDI,[EBX + 0xbebc]              ; 00416479
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 0041647f | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 0041647f
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0065a770]          ; 00416484 | DAT_0065a770
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 0041648a
     FLD float ptr [0x0065a774]          ; 00416494 | PTR_FUN_0065a771+3
@@ -54,19 +54,19 @@ section .text
     FSTP float ptr [EBX + 0x2de4]       ; 004164a9
     FSTP float ptr [EBX + 0x2de8]       ; 004164af
     PUSH EDI                            ; 004164b5
-    MOV AL,byte ptr [ESI]               ; 004164b6 | = "none" | s_none_006156eb = none
+    MOV AL,byte ptr [ESI]               ; 004164b6 | = "none" | s_ne_006156ed
         ;   Label: LAB_004164b6
     MOV byte ptr [EDI],AL               ; 004164b8
     CMP AL,0x0                          ; 004164ba
-    JZ 0x004164ce                       ; 004164bc | LAB_004164ce
-        ;   XREF to: 004164ce (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 004164be | s_one_006156ec
+    JZ 0x004164ce                       ; 004164bc
+        ;   XREF to: 004164ce (CONDITIONAL_JUMP)  ; LAB_004164ce
+    MOV AL,byte ptr [ESI + 0x1]         ; 004164be | s_one_006156ec | s_e_006156ee
     ADD ESI,0x2                         ; 004164c1
     MOV byte ptr [EDI + 0x1],AL         ; 004164c4
     ADD EDI,0x2                         ; 004164c7
     CMP AL,0x0                          ; 004164ca
-    JNZ 0x004164b6                      ; 004164cc | LAB_004164b6
-        ;   XREF to: 004164b6 (CONDITIONAL_JUMP)
+    JNZ 0x004164b6                      ; 004164cc
+        ;   XREF to: 004164b6 (CONDITIONAL_JUMP)  ; LAB_004164b6
     POP EDI                             ; 004164ce
         ;   Label: LAB_004164ce
     MOV dword ptr [EBX + 0xbf58],0x0    ; 004164cf

@@ -1,214 +1,214 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 145, 
-    "pseudocode_lines": 60, 
-    "cross_reference_count": 1, 
-    "global_count": 10, 
-    "total_lines": 228, 
-    "assembly_lines": 168, 
-    "suspect_count": 8, 
+    "assembly_lines": 168,
+    "complexity_score": 145,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 10,
+    "pseudocode_lines": 60,
+    "suspect_count": 8,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_script.cpp_FUN_00564560", 
-      "addr": "00564560"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0", 
-      "addr": "004ce7a0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
-      "addr": "004a2f70"
-    }, 
-    {
-      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0", 
-      "addr": "004a6ed0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0310fcd8", 
-      "addr": "0310fcd8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0310fd0c", 
-      "addr": "0310fd0c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_031141e0", 
-      "addr": "031141e0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_031141e4", 
-      "addr": "031141e4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_031141e8", 
-      "addr": "031141e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_031141ec", 
-      "addr": "031141ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03114200", 
-      "addr": "03114200", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03114204", 
-      "addr": "03114204", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03114208", 
-      "addr": "03114208", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,int param_5,"
-    }, 
-    {
-      "line": 15, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 26, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (iVar2 < unaff_EDI) {"
-    }, 
-    {
-      "line": 28, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((iVar2 - DAT_0310fd0c) * DAT_03114204 + DAT_031141e0,unaff_ESI,"
-    }, 
-    {
-      "line": 29, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(unaff_EDI - DAT_0310fd0c) * DAT_03114204 + DAT_031141e0 + -1,"
-    }, 
-    {
-      "line": 30, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI + DAT_03114208 + -1,4);"
-    }, 
-    {
-      "line": 50, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(DAT_03114200,character_code,iVar2,unaff_EBX,color_mode,-1);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "005664d0", 
-    "signature": "undefined core_script.cpp_FUN_005664d0()", 
-    "address_range": [
-      [
-        "005664d0", 
-        "00566650"
-      ]
-    ], 
-    "name": "core_script.cpp_FUN_005664d0"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 228
+  },
   "cross_references": [
     {
-      "from_addr": "005647ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_005645d0", 
-      "addr": "005645d0"
+      "addr": "005645d0",
+      "from_addr": "005647ab",
+      "name": "core_script.cpp_FUN_005645d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005664d0",
+    "address_range": [
+      [
+        "005664d0",
+        "00566650"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_FUN_005664d0",
+    "signature": "undefined core_script.cpp_FUN_005664d0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00564560",
+      "name": "core_script.cpp_FUN_00564560"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    },
+    {
+      "addr": "004ce7a0",
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0"
+    },
+    {
+      "addr": "004a2f70",
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    },
+    {
+      "addr": "004a6ed0",
+      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "0310fcd8",
+      "name": "DAT_0310fcd8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310fd0c",
+      "name": "DAT_0310fd0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141e0",
+      "name": "DAT_031141e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141e4",
+      "name": "DAT_031141e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141e8",
+      "name": "DAT_031141e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "031141ec",
+      "name": "DAT_031141ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114200",
+      "name": "DAT_03114200",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114204",
+      "name": "DAT_03114204",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03114208",
+      "name": "DAT_03114208",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,int param_5,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EDI",
+      "text": "if (iVar2 < unaff_EDI) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_ESI",
+      "text": "((iVar2 - DAT_0310fd0c) * DAT_03114204 + DAT_031141e0,unaff_ESI,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EDI",
+      "text": "(unaff_EDI - DAT_0310fd0c) * DAT_03114204 + DAT_031141e0 + -1,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI + DAT_03114208 + -1,4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EBX",
+      "text": "(DAT_03114200,character_code,iVar2,unaff_EBX,color_mode,-1);",
+      "type": "unaffected_reg"
     }
   ]
 }

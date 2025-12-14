@@ -1,237 +1,237 @@
 {
   "complexity": {
-    "function_call_count": 12, 
-    "complexity_score": 133, 
-    "pseudocode_lines": 78, 
-    "cross_reference_count": 1, 
-    "global_count": 10, 
-    "total_lines": 250, 
-    "assembly_lines": 172, 
-    "suspect_count": 4, 
+    "assembly_lines": 172,
+    "complexity_score": 133,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 10,
+    "pseudocode_lines": 78,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "CloseHandle", 
-      "addr": "EXTERNAL:0000004c"
-    }, 
-    {
-      "name": "CreateProcessA", 
-      "addr": "EXTERNAL:00000051"
-    }, 
-    {
-      "name": "crt_errno.c_convertWindowsErrorToErrno_FUN_00608390", 
-      "addr": "00608390"
-    }, 
-    {
-      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
-      "addr": "006083fc"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_process.c_build_command_line_FUN_006103a4", 
-      "addr": "006103a4"
-    }, 
-    {
-      "name": "DuplicateHandle", 
-      "addr": "EXTERNAL:00000056"
-    }, 
-    {
-      "name": "GetCurrentProcess", 
-      "addr": "EXTERNAL:0000006a"
-    }, 
-    {
-      "name": "GetExitCodeProcess", 
-      "addr": "EXTERNAL:0000006f"
-    }, 
-    {
-      "name": "GetLastError", 
-      "addr": "EXTERNAL:00000074"
-    }, 
-    {
-      "name": "Sleep", 
-      "addr": "EXTERNAL:0000009c"
-    }, 
-    {
-      "name": "WaitForSingleObject", 
-      "addr": "EXTERNAL:000000a6"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CloseHandle*", 
-      "name": "CloseHandle", 
-      "addr": "00611504", 
-      "value": "00211c38"
-    }, 
-    {
-      "type": "CreateProcessA*", 
-      "name": "PTR_CreateProcessA_00611518", 
-      "addr": "00611518", 
-      "value": "00211c88"
-    }, 
-    {
-      "type": "DuplicateHandle*", 
-      "name": "PTR_DuplicateHandle_0061152c", 
-      "addr": "0061152c", 
-      "value": "00211ce8"
-    }, 
-    {
-      "type": "GetCurrentProcess*", 
-      "name": "GetCurrentProcess", 
-      "addr": "0061157c", 
-      "value": "00211e5a"
-    }, 
-    {
-      "type": "GetExitCodeProcess*", 
-      "name": "PTR_GetExitCodeProcess_00611590", 
-      "addr": "00611590", 
-      "value": "00211ec6"
-    }, 
-    {
-      "type": "GetLastError*", 
-      "name": "GetLastError", 
-      "addr": "006115a4", 
-      "value": "00211f22"
-    }, 
-    {
-      "type": "Sleep*", 
-      "name": "Sleep", 
-      "addr": "00611644", 
-      "value": "00212228"
-    }, 
-    {
-      "type": "WaitForSingleObject*", 
-      "name": "WaitForSingleObject", 
-      "addr": "0061166c", 
-      "value": "002122c4"
-    }, 
-    {
-      "type": "BYTE", 
-      "name": "g_WindowsMinorVersion", 
-      "addr": "00685017", 
-      "value": "\u0000"
-    }, 
-    {
-      "type": "WORD", 
-      "name": "g_WindowsPlatformVersion", 
-      "addr": "00685019", 
-      "value": "0x0"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char **in_stack_00000014;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_process_c_build_command_line_FUN_006103a4(cmdline,in_stack_00000014,envblock,0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006105a0", 
-    "signature": "int crt_process.c_spawn_FUN_006105a0(int mode, char * cmdline, char * envblock, void * reserved)", 
-    "address_range": [
-      [
-        "006105a0", 
-        "00610752"
-      ]
-    ], 
-    "name": "crt_process.c_spawn_FUN_006105a0"
-  }, 
-  "stack_frame": {
-    "local_size": 112, 
-    "variables": [
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined2", 
-        "size": 2, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "mode"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "cmdline"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "envblock"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "reserved"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 128, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 250
+  },
   "cross_references": [
     {
-      "from_addr": "0060f74f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
-      "addr": "0060f39c"
+      "addr": "0060f39c",
+      "from_addr": "0060f74f",
+      "name": "crt_process.c_spawnvp_FUN_0060f39c",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "006105a0",
+    "address_range": [
+      [
+        "006105a0",
+        "00610752"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_process.c_spawn_FUN_006105a0",
+    "signature": "int crt_process.c_spawn_FUN_006105a0(int mode, char * cmdline, char * envblock, void * reserved)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000004c",
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "EXTERNAL:00000051",
+      "name": "CreateProcessA"
+    },
+    {
+      "addr": "00608390",
+      "name": "crt_errno.c_convertWindowsErrorToErrno_FUN_00608390"
+    },
+    {
+      "addr": "006083fc",
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "006103a4",
+      "name": "crt_process.c_build_command_line_FUN_006103a4"
+    },
+    {
+      "addr": "EXTERNAL:00000056",
+      "name": "DuplicateHandle"
+    },
+    {
+      "addr": "EXTERNAL:0000006a",
+      "name": "GetCurrentProcess"
+    },
+    {
+      "addr": "EXTERNAL:0000006f",
+      "name": "GetExitCodeProcess"
+    },
+    {
+      "addr": "EXTERNAL:00000074",
+      "name": "GetLastError"
+    },
+    {
+      "addr": "EXTERNAL:0000009c",
+      "name": "Sleep"
+    },
+    {
+      "addr": "EXTERNAL:000000a6",
+      "name": "WaitForSingleObject"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611504",
+      "name": "CloseHandle",
+      "type": "CloseHandle*",
+      "value": "00211c38"
+    },
+    {
+      "addr": "00611518",
+      "name": "PTR_CreateProcessA_00611518",
+      "type": "CreateProcessA*",
+      "value": "00211c88"
+    },
+    {
+      "addr": "0061152c",
+      "name": "PTR_DuplicateHandle_0061152c",
+      "type": "DuplicateHandle*",
+      "value": "00211ce8"
+    },
+    {
+      "addr": "0061157c",
+      "name": "GetCurrentProcess",
+      "type": "GetCurrentProcess*",
+      "value": "00211e5a"
+    },
+    {
+      "addr": "00611590",
+      "name": "PTR_GetExitCodeProcess_00611590",
+      "type": "GetExitCodeProcess*",
+      "value": "00211ec6"
+    },
+    {
+      "addr": "006115a4",
+      "name": "GetLastError",
+      "type": "GetLastError*",
+      "value": "00211f22"
+    },
+    {
+      "addr": "00611644",
+      "name": "Sleep",
+      "type": "Sleep*",
+      "value": "00212228"
+    },
+    {
+      "addr": "0061166c",
+      "name": "WaitForSingleObject",
+      "type": "WaitForSingleObject*",
+      "value": "002122c4"
+    },
+    {
+      "addr": "00685017",
+      "name": "g_WindowsMinorVersion",
+      "type": "BYTE",
+      "value": "\u0000"
+    },
+    {
+      "addr": "00685019",
+      "name": "g_WindowsPlatformVersion",
+      "type": "WORD",
+      "value": "0x0"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 128,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "cmdline",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "envblock",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "reserved",
+        "offset": 16,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000014",
+      "text": "char **in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000014",
+      "text": "crt_process_c_build_command_line_FUN_006103a4(cmdline,in_stack_00000014,envblock,0);",
+      "type": "stack_param"
     }
   ]
 }

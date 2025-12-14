@@ -1,133 +1,133 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 92, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 63, 
-    "assembly_lines": 46, 
-    "suspect_count": 7, 
+    "assembly_lines": 42,
+    "complexity_score": 92,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 17,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPod_locateFile_FUN_005512f0", 
-      "addr": "005512f0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0", 
-      "addr": "0049e6a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_s_already_exists_in_a__0064a0c6", 
-      "addr": "0064a0c6", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "CDemonPod*", 
-      "name": "g_CDemonPodPtr", 
-      "addr": "00680cdc", 
-      "value": "030e5090"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonPod", 
-      "name": "g_CDemonPodInstance", 
-      "addr": "030e5090", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_0000000c;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000010;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000014;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPod *)g_CDemonPodPtr,in_stack_0000000c,in_stack_00000010,(int *)0x0);"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CPod *)g_CDemonPodPtr,in_stack_0000000c,in_stack_00000010,(int *)0x0);"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CEditorToolsPtr,\"%s\\\\%s already exists in a mounted pod file:\\n%s\\nI'm still saving it to the local file,\\nbut just thought you would want to know about the\\none in the pod.\",in_stack_00000010,"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000014,pCVar1->filename);"
-    }
-  ], 
+    ],
+    "total_lines": 59
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00589f40", 
-    "signature": "undefined core_skeledit.cpp_FUN_00589f40()", 
+    "address": "00589f40",
     "address_range": [
       [
-        "00589f40", 
+        "00589f40",
         "00589f96"
       ]
-    ], 
-    "name": "core_skeledit.cpp_FUN_00589f40"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_skeledit.cpp_FUN_00589f40",
+    "signature": "undefined core_skeledit.cpp_FUN_00589f40()"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "005512f0",
+      "name": "engine_pod.cpp_CPod_locateFile_FUN_005512f0"
+    },
+    {
+      "addr": "0049e6a0",
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064a0c6",
+      "name": "s_s_s_already_exists_in_a__0064a0c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "00680cdc",
+      "name": "g_CDemonPodPtr",
+      "type": "CDemonPod*",
+      "value": "030e5090"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "030e5090",
+      "name": "g_CDemonPodInstance",
+      "type": "CDemonPod",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000010",
+      "text": "char *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000014",
+      "text": "uint in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "text": "((CPod *)g_CDemonPodPtr,in_stack_0000000c,in_stack_00000010,(int *)0x0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "((CPod *)g_CDemonPodPtr,in_stack_0000000c,in_stack_00000010,(int *)0x0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000010",
+      "text": "(g_CEditorToolsPtr,\"%s\\\\%s already exists in a mounted pod file:\\n%s\\nI'm still saving it to the local file,\\nbut just thought you would want to know about the\\none in the pod.\",in_stack_00000010,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014,pCVar1->filename);",
+      "type": "stack_param"
+    }
+  ]
 }

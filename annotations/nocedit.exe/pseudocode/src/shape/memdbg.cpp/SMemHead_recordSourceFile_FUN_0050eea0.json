@@ -1,101 +1,101 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 3, 
-    "global_count": 4, 
-    "total_lines": 65, 
-    "assembly_lines": 40, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_splitpath_FUN_005ff178", 
-      "addr": "005ff178"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_unknown_00635ded", 
-      "addr": "00635ded", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_unknown)_00635dee", 
-      "addr": "00635dee", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_nknown)_00635def", 
-      "addr": "00635def", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_known)_00635df0", 
-      "addr": "00635df0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050eea0", 
-    "signature": "void shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead * header, char * source_filename)", 
-    "address_range": [
-      [
-        "0050eea0", 
-        "0050eee4"
-      ]
-    ], 
-    "name": "shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMemHead *", 
-        "size": 4, 
-        "name": "header"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "source_filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 40,
+    "complexity_score": 25,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
+  },
   "cross_references": [
     {
-      "from_addr": "0050f404", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350", 
-      "addr": "0050f350"
-    }, 
+      "addr": "0050f350",
+      "from_addr": "0050f404",
+      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050f2fc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }, 
+      "addr": "0050f250",
+      "from_addr": "0050f2fc",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050f665", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
+      "addr": "0050f540",
+      "from_addr": "0050f665",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0050eea0",
+    "address_range": [
+      [
+        "0050eea0",
+        "0050eee4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0",
+    "signature": "void shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead * header, char * source_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff178",
+      "name": "crt_string.c_splitpath_FUN_005ff178"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635ded",
+      "name": "s_unknown_00635ded",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635dee",
+      "name": "s_unknown)_00635dee",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635def",
+      "name": "s_nknown)_00635def",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635df0",
+      "name": "s_known)_00635df0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "header",
+        "offset": 4,
+        "size": 4,
+        "type": "SMemHead *"
+      },
+      {
+        "is_param": true,
+        "name": "source_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

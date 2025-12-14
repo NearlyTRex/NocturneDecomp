@@ -1,79 +1,79 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 52, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 34, 
-    "assembly_lines": 22, 
-    "suspect_count": 3, 
+    "assembly_lines": 22,
+    "complexity_score": 52,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_iostream.cpp_setBuffer_FUN_0060d6a8", 
-      "addr": "0060d6a8"
-    }, 
-    {
-      "name": "crt_iostream.cpp_streambuf_allocBuffer_FUN_0060d790", 
-      "addr": "0060d790"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "streambuf *in_stack_00000008;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008,new_buffer,(void *)((int)new_buffer + 0x204),1);"
-    }, 
-    {
-      "line": 13, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(in_stack_00000008,new_buffer,(void *)((int)new_buffer + 0x204),1);"
-    }
-  ], 
+    ],
+    "total_lines": 34
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__watcallStack", 
-    "address": "0060d677", 
-    "signature": "int crt_iostream.cpp_doallocate_FUN_0060d677(streambuf * this_ptr)", 
+    "address": "0060d677",
     "address_range": [
       [
-        "0060d677", 
+        "0060d677",
         "0060d6a7"
       ]
-    ], 
-    "name": "crt_iostream.cpp_doallocate_FUN_0060d677"
-  }, 
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_iostream.cpp_doallocate_FUN_0060d677",
+    "signature": "int crt_iostream.cpp_doallocate_FUN_0060d677(streambuf * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060d6a8",
+      "name": "crt_iostream.cpp_setBuffer_FUN_0060d6a8"
+    },
+    {
+      "addr": "0060d790",
+      "name": "crt_iostream.cpp_streambuf_allocBuffer_FUN_0060d790"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "streambuf *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "streambuf *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "streambuf *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,new_buffer,(void *)((int)new_buffer + 0x204),1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(void *)((int)",
+      "text": "(in_stack_00000008,new_buffer,(void *)((int)new_buffer + 0x204),1);",
+      "type": "pointer_cast"
+    }
+  ]
 }

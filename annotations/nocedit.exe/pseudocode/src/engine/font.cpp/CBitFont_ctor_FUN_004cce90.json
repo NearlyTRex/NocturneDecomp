@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 15, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_font.cpp_CBitFont_reset_FUN_004cced0", 
-      "addr": "004cced0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004cce90", 
-    "signature": "CBitFont * engine_font.cpp_CBitFont_ctor_FUN_004cce90(CBitFont * this_ptr)", 
-    "address_range": [
-      [
-        "004cce90", 
-        "004ccea1"
-      ]
-    ], 
-    "name": "engine_font.cpp_CBitFont_ctor_FUN_004cce90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBitFont *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "00470be5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dfont.cpp_initFonts_FUN_004709a0", 
-      "addr": "004709a0"
+      "addr": "004709a0",
+      "from_addr": "00470be5",
+      "name": "core_dfont.cpp_initFonts_FUN_004709a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004cce90",
+    "address_range": [
+      [
+        "004cce90",
+        "004ccea1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_ctor_FUN_004cce90",
+    "signature": "CBitFont * engine_font.cpp_CBitFont_ctor_FUN_004cce90(CBitFont * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004cced0",
+      "name": "engine_font.cpp_CBitFont_reset_FUN_004cced0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      }
+    ]
+  },
+  "suspects": []
 }

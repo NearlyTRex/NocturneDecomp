@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 16, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
-      "addr": "0040ac80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_actor_cpp_006135b7", 
-      "addr": "006135b7", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 9,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00408ae0", 
-    "signature": "void core_actor.cpp_CDemonActor_renderBackground_FUN_00408ae0(CDemonActor * this_ptr, int layer_flag)", 
+    "address": "00408ae0",
     "address_range": [
       [
-        "00408ae0", 
+        "00408ae0",
         "00408af7"
       ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_renderBackground_FUN_00408ae0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_renderBackground_FUN_00408ae0",
+    "signature": "void core_actor.cpp_CDemonActor_renderBackground_FUN_00408ae0(CDemonActor * this_ptr, int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006135b7",
+      "name": "s_core_actor_cpp_006135b7",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "layer_flag"
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

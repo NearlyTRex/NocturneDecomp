@@ -18,8 +18,8 @@ section .text
     FCOMPP                              ; 0049cf7c
     FNSTSW AX                           ; 0049cf7e
     SAHF                                ; 0049cf80
-    JNC 0x0049cf89                      ; 0049cf81 | LAB_0049cf89
-        ;   XREF to: 0049cf89 (CONDITIONAL_JUMP)
+    JNC 0x0049cf89                      ; 0049cf81
+        ;   XREF to: 0049cf89 (CONDITIONAL_JUMP)  ; LAB_0049cf89
     MOV EAX,0x1                         ; 0049cf83
     RET                                 ; 0049cf88
     XOR EAX,EAX                         ; 0049cf89

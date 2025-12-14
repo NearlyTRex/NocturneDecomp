@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 28, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_game.cpp_CGame_resetKeyState_FUN_004dbe60", 
-      "addr": "004dbe60"
-    }, 
-    {
-      "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0", 
-      "addr": "004dc3e0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004dc230", 
-    "signature": "void core_game.cpp_CallToJoystickStuff_FUN_004dc230(CGame * this_ptr, int unk1, SPlayerControl * unk)", 
-    "address_range": [
-      [
-        "004dc230", 
-        "004dc260"
-      ]
-    ], 
-    "name": "core_game.cpp_CallToJoystickStuff_FUN_004dc230"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGame *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "unk1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SPlayerControl *", 
-        "size": 4, 
-        "name": "unk"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 19,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
   "cross_references": [
     {
-      "from_addr": "004dbdfd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_playerControls_FUN_004dbd80", 
-      "addr": "004dbd80"
+      "addr": "004dbd80",
+      "from_addr": "004dbdfd",
+      "name": "core_game.cpp_CGame_playerControls_FUN_004dbd80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004dc230",
+    "address_range": [
+      [
+        "004dc230",
+        "004dc260"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CallToJoystickStuff_FUN_004dc230",
+    "signature": "void core_game.cpp_CallToJoystickStuff_FUN_004dc230(CGame * this_ptr, int unk1, SPlayerControl * unk)"
+  },
+  "function_calls": [
+    {
+      "addr": "004dbe60",
+      "name": "core_game.cpp_CGame_resetKeyState_FUN_004dbe60"
+    },
+    {
+      "addr": "004dc3e0",
+      "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      },
+      {
+        "is_param": true,
+        "name": "unk1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "unk",
+        "offset": 12,
+        "size": 4,
+        "type": "SPlayerControl *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,120 +1,120 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 69, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 127, 
-    "assembly_lines": 93, 
-    "suspect_count": 3, 
+    "assembly_lines": 93,
+    "complexity_score": 69,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 34,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0", 
-      "addr": "0042c3c0"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042d060", 
-      "addr": "0042d060"
-    }, 
-    {
-      "name": "core_npc.cpp_FUN_00544c50", 
-      "addr": "00544c50"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DIE_0063e3b8", 
-      "addr": "0063e3b8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_HURT_0063e3bc", 
-      "addr": "0063e3bc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DAMAGE_0063e3c1", 
-      "addr": "0063e3c1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_SHOT_0063e3c8", 
-      "addr": "0063e3c8", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActorType", 
-      "name": "g_CNPCClassInfo", 
-      "addr": "02fd8ce0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar2 = (this_ptr->base_character).hit_points - *(float *)(in_stack_00000008 + 4);"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "else if ((0.0 < *(float *)(in_stack_00000008 + 4)) &&"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00544d30", 
-    "signature": "void core_npc.cpp_CNPC_FUN_00544d30(CNPC * this_ptr)", 
-    "address_range": [
-      [
-        "00544d30", 
-        "00544e0c"
-      ]
-    ], 
-    "name": "core_npc.cpp_CNPC_FUN_00544d30"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CNPC *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 127
+  },
   "cross_references": [
     {
-      "from_addr": "004f6544", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_CHostage_FUN_004f6450", 
-      "addr": "004f6450"
+      "addr": "004f6450",
+      "from_addr": "004f6544",
+      "name": "core_hostage.cpp_CHostage_FUN_004f6450",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00544d30",
+    "address_range": [
+      [
+        "00544d30",
+        "00544e0c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_FUN_00544d30",
+    "signature": "void core_npc.cpp_CNPC_FUN_00544d30(CNPC * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042c3c0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0"
+    },
+    {
+      "addr": "0042d060",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d060"
+    },
+    {
+      "addr": "00544c50",
+      "name": "core_npc.cpp_FUN_00544c50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063e3b8",
+      "name": "s_DIE_0063e3b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063e3bc",
+      "name": "s_HURT_0063e3bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063e3c1",
+      "name": "s_DAMAGE_0063e3c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063e3c8",
+      "name": "s_SHOT_0063e3c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02fd8ce0",
+      "name": "g_CNPCClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "fVar2 = (this_ptr->base_character).hit_points - *(float *)(in_stack_00000008 + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "else if ((0.0 < *(float *)(in_stack_00000008 + 4)) &&",
+      "type": "stack_param"
     }
   ]
 }

@@ -18,8 +18,8 @@ section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 004a6530
         ;   Label: shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530
-    CMP EDX,dword ptr [0x02cf2b00]      ; 004a6534 | CEdButton * g_ActiveButton
-    JZ 0x004a5b4d                       ; 004a653a | LAB_004a5b4d
-        ;   XREF to: 004a5b4d (CONDITIONAL_JUMP)
+    CMP EDX,dword ptr [0x02cf2b00]      ; 004a6534 | g_ActiveButton
+    JZ 0x004a5b4d                       ; 004a653a
+        ;   XREF to: 004a5b4d (CONDITIONAL_JUMP)  ; LAB_004a5b4d
     RET                                 ; 004a6540
 

@@ -1,200 +1,200 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 136, 
-    "pseudocode_lines": 81, 
-    "cross_reference_count": 1, 
-    "global_count": 7, 
-    "total_lines": 240, 
-    "assembly_lines": 159, 
-    "suspect_count": 5, 
+    "assembly_lines": 159,
+    "complexity_score": 136,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 7,
+    "pseudocode_lines": 81,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600", 
-      "addr": "00494600"
-    }, 
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690", 
-      "addr": "00494690"
-    }, 
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0", 
-      "addr": "004a0dd0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430", 
-      "addr": "004a0430"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530", 
-      "addr": "004a0530"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Consolidating_raytrace_g_00622670", 
-      "addr": "00622670", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_0062269a", 
-      "addr": "0062269a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_006226ad", 
-      "addr": "006226ad", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 31, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "this_ptr->triangle_count + *(int *)((int)this_ptr->cube_list->voxel_data + iVar1);"
-    }, 
-    {
-      "line": 37, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)this_ptr->cube_list->voxel_data + local_14 + -0x14);"
-    }, 
-    {
-      "line": 44, 
-      "match": "(CDemonTriangle *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -8 + 4);"
-    }, 
-    {
-      "line": 48, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pfVar7 = (float *)((int)pfVar7 + (uint)bVar11 * -2 + 1);"
-    }, 
-    {
-      "line": 49, 
-      "match": "(CDemonTriangle *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -2 + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00494450", 
-    "signature": "void core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450(CDemonRaytrace * this_ptr)", 
-    "address_range": [
-      [
-        "00494450", 
-        "004945f8"
-      ]
-    ], 
-    "name": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRaytrace *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 240
+  },
   "cross_references": [
     {
-      "from_addr": "00494ac8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0", 
-      "addr": "004947a0"
+      "addr": "004947a0",
+      "from_addr": "00494ac8",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00494450",
+    "address_range": [
+      [
+        "00494450",
+        "004945f8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450",
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450(CDemonRaytrace * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00494600",
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600"
+    },
+    {
+      "addr": "00494690",
+      "name": "core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690"
+    },
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "004a0dd0",
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
+    },
+    {
+      "addr": "004a0430",
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430"
+    },
+    {
+      "addr": "004a0530",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622670",
+      "name": "s_Consolidating_raytrace_g_00622670",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062269a",
+      "name": "s_core_dtrace_cpp_0062269a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006226ad",
+      "name": "s_core_dtrace_cpp_006226ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)",
+      "text": "this_ptr->triangle_count + *(int *)((int)this_ptr->cube_list->voxel_data + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)this_ptr->cube_list->voxel_data + local_14 + -0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(CDemonTriangle *)((int)",
+      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(float *)((int)",
+      "text": "pfVar7 = (float *)((int)pfVar7 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(CDemonTriangle *)((int)",
+      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,210 +1,210 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 194, 
-    "pseudocode_lines": 44, 
-    "cross_reference_count": 2, 
-    "global_count": 8, 
-    "total_lines": 112, 
-    "assembly_lines": 68, 
-    "suspect_count": 14, 
+    "assembly_lines": 68,
+    "complexity_score": 194,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 8,
+    "pseudocode_lines": 44,
+    "suspect_count": 14,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_game.cpp_CGame_slamDT_FUN_004e3080", 
-      "addr": "004e3080"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_netgame_cpp_0063df6d", 
-      "addr": "0063df6d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CNetGame_applySimFrameHi_0063df81", 
-      "addr": "0063df81", 
-      "value": null
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "CHero*[4]", 
-      "name": "g_HeroActors", 
-      "addr": "02db87c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02db87c4", 
-      "addr": "02db87c4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000010;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004 + 0x114) < 0) {"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x16c) = *(uint *)(in_stack_0000000c + 4);"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x16c) = *(uint *)(in_stack_0000000c + 4);"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,*(float *)(in_stack_0000000c + 8));"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_00000004 + 0x1c)) {"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "piVar1 = in_stack_00000010;"
-    }, 
-    {
-      "line": 32, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar6 = (int *)((int)g_HeroActors + iVar4);"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x1c));"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(*(int *)(in_stack_00000004 + 0x114) * 0x78 + 0x68 + in_stack_00000004) ="
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(*(int *)(in_stack_00000004 + 0x114) * 0x78 + 0x68 + in_stack_00000004) ="
-    }, 
-    {
-      "line": 46, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000010 + 1;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00543800", 
-    "signature": "undefined core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800()", 
-    "address_range": [
-      [
-        "00543800", 
-        "005438b7"
-      ]
-    ], 
-    "name": "core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 112
+  },
   "cross_references": [
     {
-      "from_addr": "00543640", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0", 
-      "addr": "005435a0"
-    }, 
+      "addr": "005435a0",
+      "from_addr": "00543640",
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00543348", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150", 
-      "addr": "00543150"
+      "addr": "00543150",
+      "from_addr": "00543348",
+      "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00543800",
+    "address_range": [
+      [
+        "00543800",
+        "005438b7"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800",
+    "signature": "undefined core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800()"
+  },
+  "function_calls": [
+    {
+      "addr": "004e3080",
+      "name": "core_game.cpp_CGame_slamDT_FUN_004e3080"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063df6d",
+      "name": "s_core_netgame_cpp_0063df6d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063df81",
+      "name": "s_CNetGame_applySimFrameHi_0063df81",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87c4",
+      "name": "DAT_02db87c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000010",
+      "text": "int *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0x114) < 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x16c) = *(uint *)(in_stack_0000000c + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_0000000c",
+      "text": "*(uint *)(in_stack_00000004 + 0x16c) = *(uint *)(in_stack_0000000c + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_0000000c",
+      "text": "core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,*(float *)(in_stack_0000000c + 8));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x1c)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000010",
+      "text": "piVar1 = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)",
+      "text": "piVar6 = (int *)((int)g_HeroActors + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x1c));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(*(int *)(in_stack_00000004 + 0x114) * 0x78 + 0x68 + in_stack_00000004) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(*(int *)(in_stack_00000004 + 0x114) * 0x78 + 0x68 + in_stack_00000004) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000010",
+      "text": "*in_stack_00000010 + 1;",
+      "type": "stack_param"
     }
   ]
 }

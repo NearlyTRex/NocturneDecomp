@@ -25,8 +25,8 @@ section .text
         ;   Label: engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540
     MOV EBX,dword ptr [ESP + 0x8]       ; 00410541
     PUSH EBX                            ; 00410545
-    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560 ; 00410546 | void engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560(CAlphaBitmap * this_ptr)
-        ;   XREF to: 00410560 (UNCONDITIONAL_CALL)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560 ; 00410546
+        ;   XREF to: 00410560 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_00410560(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 0041054b
     MOV EAX,EBX                         ; 0041054e
     POP EBX                             ; 00410550

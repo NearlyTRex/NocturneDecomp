@@ -64,7 +64,7 @@ int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **arg
       pcVar5 = *ppcVar1;
     }
     size = (iVar8 + 1) * 4;
-    ppcVar3 = (char **)crt_memory_c_malloc_FUN_00601bb0(size);
+    ppcVar3 = crt_memory_c_malloc_FUN_00601bb0(size);
     if (ppcVar3 == (char **)0x0) {
       crt_memory_c_free_FUN_00601cd0(local_1c);
     }
@@ -98,7 +98,7 @@ int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **arg
   }
   iVar4 = crt_string_c_strlen_FUN_0060f870(cmdname);
   local_24 = iVar4 + 0x10e;
-  pcVar5 = (char *)crt_heap_c_InternalHeapAlloc_FUN_00601bc0(local_24);
+  pcVar5 = crt_heap_c_InternalHeapAlloc_FUN_00601bc0(local_24);
   local_30 = pcVar5;
   if (pcVar5 == (char *)0x0) {
     size_00 = local_24 + 3 & 0xfffffffc;
@@ -125,7 +125,7 @@ int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **arg
              (char *)&local_54,(char *)&local_58);
   (*PTR_crt_thread_c_EnterCriticalSection_FUN_0060b180_00685464)
             ((LPCRITICAL_SECTION)&stack0xffffff3c);
-  local_2c = (char *)crt_heap_c_InternalHeapAlloc_FUN_00601bc0((ulong)local_44);
+  local_2c = crt_heap_c_InternalHeapAlloc_FUN_00601bc0((ulong)local_44);
   local_18 = local_2c;
   if (local_2c == (char *)0x0) {
     local_34 = (uint)(local_44 + 3) & 0xfffffffc;

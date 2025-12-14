@@ -1,88 +1,88 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 3, 
-    "global_count": 3, 
-    "total_lines": 70, 
-    "assembly_lines": 52, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dpart_cpp_00621741", 
-      "addr": "00621741", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dpart_cpp_00621753", 
-      "addr": "00621753", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dpart_cpp_00621765", 
-      "addr": "00621765", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004822b0", 
-    "signature": "void core_dpart.cpp_CDemonPart_free_FUN_004822b0(CDemonPart * this_ptr)", 
-    "address_range": [
-      [
-        "004822b0", 
-        "00482323"
-      ]
-    ], 
-    "name": "core_dpart.cpp_CDemonPart_free_FUN_004822b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonPart *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 52,
+    "complexity_score": 18,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 70
+  },
   "cross_references": [
     {
-      "from_addr": "00482191", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dpart.cpp_CDemonPart_alloc_FUN_00482180", 
-      "addr": "00482180"
-    }, 
+      "addr": "00482180",
+      "from_addr": "00482191",
+      "name": "core_dpart.cpp_CDemonPart_alloc_FUN_00482180",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00482166", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dpart.cpp_CDemonPart_dtor_FUN_00482160", 
-      "addr": "00482160"
-    }, 
+      "addr": "00482160",
+      "from_addr": "00482166",
+      "name": "core_dpart.cpp_CDemonPart_dtor_FUN_00482160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00482e79", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40", 
-      "addr": "00482e40"
+      "addr": "00482e40",
+      "from_addr": "00482e79",
+      "name": "core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004822b0",
+    "address_range": [
+      [
+        "004822b0",
+        "00482323"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dpart.cpp_CDemonPart_free_FUN_004822b0",
+    "signature": "void core_dpart.cpp_CDemonPart_free_FUN_004822b0(CDemonPart * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00621741",
+      "name": "s_core_dpart_cpp_00621741",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621753",
+      "name": "s_core_dpart_cpp_00621753",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621765",
+      "name": "s_core_dpart_cpp_00621765",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonPart *"
+      }
+    ]
+  },
+  "suspects": []
 }

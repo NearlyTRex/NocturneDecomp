@@ -1,116 +1,116 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 80, 
-    "pseudocode_lines": 35, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 104, 
-    "assembly_lines": 69, 
-    "suspect_count": 4, 
+    "assembly_lines": 69,
+    "complexity_score": 80,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 35,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080", 
-      "addr": "0054b080"
-    }, 
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910", 
-      "addr": "0054b910"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_raw_0063f07f", 
-      "addr": "0063f07f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pbm_0063f084", 
-      "addr": "0063f084", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr,in_stack_0000000c);"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910(this_ptr,in_stack_00000010);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054b4b0", 
-    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0(CPackedBitmap * this_ptr, int processing_flags)", 
-    "address_range": [
-      [
-        "0054b4b0", 
-        "0054b51e"
-      ]
-    ], 
-    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "processing_flags"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 104
+  },
   "cross_references": [
     {
-      "from_addr": "0054c52c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500", 
-      "addr": "0054c500"
+      "addr": "0054c500",
+      "from_addr": "0054c52c",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054b4b0",
+    "address_range": [
+      [
+        "0054b4b0",
+        "0054b51e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0",
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0(CPackedBitmap * this_ptr, int processing_flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054b080",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080"
+    },
+    {
+      "addr": "0054b910",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063f07f",
+      "name": "s_raw_0063f07f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f084",
+      "name": "s_pbm_0063f084",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "processing_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000010",
+      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910(this_ptr,in_stack_00000010);",
+      "type": "stack_param"
     }
   ]
 }

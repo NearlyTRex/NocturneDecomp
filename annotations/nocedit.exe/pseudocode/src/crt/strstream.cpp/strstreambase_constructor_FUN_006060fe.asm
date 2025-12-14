@@ -35,13 +35,13 @@ section .text
     PUSH ESI                            ; 006060ff
     MOV EBX,dword ptr [ESP + 0xc]       ; 00606100
     TEST byte ptr [ESP + 0x10],0x1      ; 00606104
-    JZ 0x00606173                       ; 00606109 | LAB_00606173
-        ;   XREF to: 00606173 (CONDITIONAL_JUMP)
+    JZ 0x00606173                       ; 00606109
+        ;   XREF to: 00606173 (CONDITIONAL_JUMP)  ; LAB_00606173
     ADD EBX,0x4                         ; 0060610b
         ;   Label: LAB_0060610b
     PUSH EBX                            ; 0060610e
-    CALL crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2 ; 0060610f | streambuf * crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2(streambuf * this_ptr)
-        ;   XREF to: 0060b7c2 (UNCONDITIONAL_CALL)
+    CALL crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2 ; 0060610f
+        ;   XREF to: 0060b7c2 (UNCONDITIONAL_CALL)  ; streambuf * crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2(streambuf * this_ptr)
     ADD ESP,0x4                         ; 00606114
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00606117
     PUSH EDX                            ; 0060611b
@@ -52,39 +52,39 @@ section .text
     MOV EBX,EAX                         ; 00606126
     PUSH EAX                            ; 00606128
     SUB EBX,0x4                         ; 00606129
-    MOV dword ptr [EAX + 0x28],0x665d34 ; 0060612c | strstreambuf_vtable g_StrstreambufVTable
-    CALL crt_strstream.cpp_strstreambuf_init_FUN_0060b815 ; 00606133 | void crt_strstream.cpp_strstreambuf_init_FUN_0060b815(strstreambuf * this_ptr, char * buffer_ptr, int buffer_size, char * put_start)
-        ;   XREF to: 0060b815 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + 0x28],0x665d34 ; 0060612c | g_StrstreambufVTable
+    CALL crt_strstream.cpp_strstreambuf_init_FUN_0060b815 ; 00606133
+        ;   XREF to: 0060b815 (UNCONDITIONAL_CALL)  ; void crt_strstream.cpp_strstreambuf_init_FUN_0060b815(strstreambuf * this_ptr, char * buffer_ptr, int buffer_size, char * put_start)
     MOV EAX,dword ptr [EBX]             ; 00606138
     MOV EAX,dword ptr [EAX + 0x4]       ; 0060613a
     LEA EDX,[EBX + EAX*0x1]             ; 0060613d
     MOV dword ptr [EDX + -0x4],EAX      ; 00606140
     MOV EAX,dword ptr [EBX]             ; 00606143
-    MOV dword ptr [EBX + 0x44],0x665d6c ; 00606145 | void * g_StrStreamBase_Destructor
+    MOV dword ptr [EBX + 0x44],0x665d6c ; 00606145 | g_StrStreamBase_Destructor
     MOV EAX,dword ptr [EAX + 0x4]       ; 0060614c
     ADD ESP,0x10                        ; 0060614f
-    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x665d74 ; 00606152 | void * g_StrStreamBase_IOSDestructor
+    MOV dword ptr [EBX + EAX*0x1 + 0x28],0x665d74 ; 00606152 | g_StrStreamBase_IOSDestructor
     LEA EAX,[EBX + 0x4]                 ; 0060615a
     PUSH EAX                            ; 0060615d
     MOV EAX,dword ptr [EBX]             ; 0060615e
     MOV EAX,dword ptr [EAX + 0x4]       ; 00606160
     ADD EAX,EBX                         ; 00606163
     PUSH EAX                            ; 00606165
-    CALL crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815 ; 00606166 | void crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815(streambuf * this_ptr, char * buffer_ptr, int buffer_size, char * put_start)
-        ;   XREF to: 0060b8da (UNCONDITIONAL_CALL)
+    CALL crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815 ; 00606166
+        ;   XREF to: 0060b8da (UNCONDITIONAL_CALL)  ; void crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815(streambuf * this_ptr, char * buffer_ptr, int buffer_size, char * put_start)
     ADD ESP,0x8                         ; 0060616b
     MOV EAX,EBX                         ; 0060616e
     POP ESI                             ; 00606170
     POP EBX                             ; 00606171
     RET                                 ; 00606172
-    MOV dword ptr [EBX],0x665d60        ; 00606173 | WatcomVirtualBaseDescriptor DAT_00665d60
+    MOV dword ptr [EBX],0x665d60        ; 00606173 | DAT_00665d60
         ;   Label: LAB_00606173
     ADD EBX,0x4c                        ; 00606179
     PUSH EBX                            ; 0060617c
-    CALL crt_iostream.cpp_ios_ctor_FUN_006061fc ; 0060617d | ios * crt_iostream.cpp_ios_ctor_FUN_006061fc(ios * this_ptr)
-        ;   XREF to: 006061fc (UNCONDITIONAL_CALL)
+    CALL crt_iostream.cpp_ios_ctor_FUN_006061fc ; 0060617d
+        ;   XREF to: 006061fc (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_ctor_FUN_006061fc(ios * this_ptr)
     ADD ESP,0x4                         ; 00606182
     LEA EBX,[EAX + -0x4c]               ; 00606185
-    JMP 0x0060610b                      ; 00606188 | LAB_0060610b
-        ;   XREF to: 0060610b (UNCONDITIONAL_JUMP)
+    JMP 0x0060610b                      ; 00606188
+        ;   XREF to: 0060610b (UNCONDITIONAL_JUMP)  ; LAB_0060610b
 

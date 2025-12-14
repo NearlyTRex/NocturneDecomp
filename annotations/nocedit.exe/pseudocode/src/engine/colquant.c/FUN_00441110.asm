@@ -38,16 +38,16 @@ section .text
     ADD EBX,EDI                         ; 00441132
     DEC EBX                             ; 00441134
     CMP EDI,EBX                         ; 00441135
-    JGE 0x004411fc                      ; 00441137 | LAB_004411fc
-        ;   XREF to: 004411fc (CONDITIONAL_JUMP)
+    JGE 0x004411fc                      ; 00441137
+        ;   XREF to: 004411fc (CONDITIONAL_JUMP)  ; LAB_004411fc
     LEA EAX,[EDI*0x4 + 0x0]             ; 0044113d
     MOV dword ptr [ESP + 0x14],EAX      ; 00441144
     PUSH EDI                            ; 00441148
         ;   Label: LAB_00441148
     PUSH EBP                            ; 00441149
     PUSH ESI                            ; 0044114a
-    CALL engine_colquant.c_FUN_00441040 ; 0044114b | undefined engine_colquant.c_FUN_00441040()
-        ;   XREF to: 00441040 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441040 ; 0044114b
+        ;   XREF to: 00441040 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441040()
     MOV dword ptr [ESP + 0x14],EAX      ; 00441150
     MOV dword ptr [ESP + 0x18],EDX      ; 00441154
     ADD ESP,0xc                         ; 00441158
@@ -55,8 +55,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x38]      ; 0044115c
     PUSH ECX                            ; 00441160
     PUSH ESI                            ; 00441161
-    CALL engine_colquant.c_FUN_00441040 ; 00441162 | undefined engine_colquant.c_FUN_00441040()
-        ;   XREF to: 00441040 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441040 ; 00441162
+        ;   XREF to: 00441040 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441040()
     MOV dword ptr [ESP + 0xc],EAX       ; 00441167
     MOV dword ptr [ESP + 0x10],EDX      ; 0044116b
     FLD double ptr [ESP + 0xc]          ; 0044116f
@@ -64,17 +64,17 @@ section .text
     FCOMP double ptr [ESP + 0x8]        ; 00441176
     FNSTSW AX                           ; 0044117a
     SAHF                                ; 0044117c
-    JNC 0x004411e8                      ; 0044117d | LAB_004411e8
-        ;   XREF to: 004411e8 (CONDITIONAL_JUMP)
+    JNC 0x004411e8                      ; 0044117d
+        ;   XREF to: 004411e8 (CONDITIONAL_JUMP)  ; LAB_004411e8
     CMP EDI,EBX                         ; 0044117f
         ;   Label: LAB_0044117f
-    JGE 0x004411bc                      ; 00441181 | LAB_004411bc
-        ;   XREF to: 004411bc (CONDITIONAL_JUMP)
+    JGE 0x004411bc                      ; 00441181
+        ;   XREF to: 004411bc (CONDITIONAL_JUMP)  ; LAB_004411bc
     PUSH EBX                            ; 00441183
     PUSH EBP                            ; 00441184
     PUSH ESI                            ; 00441185
-    CALL engine_colquant.c_FUN_00441040 ; 00441186 | undefined engine_colquant.c_FUN_00441040()
-        ;   XREF to: 00441040 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441040 ; 00441186
+        ;   XREF to: 00441040 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441040()
     MOV dword ptr [ESP + 0xc],EAX       ; 0044118b
     MOV dword ptr [ESP + 0x10],EDX      ; 0044118f
     ADD ESP,0xc                         ; 00441193
@@ -82,8 +82,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x38]      ; 00441197
     PUSH EAX                            ; 0044119b
     PUSH ESI                            ; 0044119c
-    CALL engine_colquant.c_FUN_00441040 ; 0044119d | undefined engine_colquant.c_FUN_00441040()
-        ;   XREF to: 00441040 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441040 ; 0044119d
+        ;   XREF to: 00441040 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441040()
     MOV dword ptr [ESP + 0x14],EAX      ; 004411a2
     MOV dword ptr [ESP + 0x18],EDX      ; 004411a6
     FLD double ptr [ESP + 0x14]         ; 004411aa
@@ -91,11 +91,11 @@ section .text
     FCOMP double ptr [ESP]              ; 004411b1
     FNSTSW AX                           ; 004411b4
     SAHF                                ; 004411b6
-    JNC 0x004411bc                      ; 004411b7 | LAB_004411bc
-        ;   XREF to: 004411bc (CONDITIONAL_JUMP)
+    JNC 0x004411bc                      ; 004411b7
+        ;   XREF to: 004411bc (CONDITIONAL_JUMP)  ; LAB_004411bc
     DEC EBX                             ; 004411b9
-    JMP 0x0044117f                      ; 004411ba | LAB_0044117f
-        ;   XREF to: 0044117f (UNCONDITIONAL_JUMP)
+    JMP 0x0044117f                      ; 004411ba
+        ;   XREF to: 0044117f (UNCONDITIONAL_JUMP)  ; LAB_0044117f
     MOV ECX,dword ptr [ESP + 0x14]      ; 004411bc
         ;   Label: LAB_004411bc
     MOV EDX,dword ptr [ESI + 0x2004]    ; 004411c0
@@ -115,8 +115,8 @@ section .text
     INC EDI                             ; 004411ef
     MOV dword ptr [ESP + 0x14],EDX      ; 004411f0
     CMP EDI,EBX                         ; 004411f4
-    JL 0x00441148                       ; 004411f6 | LAB_00441148
-        ;   XREF to: 00441148 (CONDITIONAL_JUMP)
+    JL 0x00441148                       ; 004411f6
+        ;   XREF to: 00441148 (CONDITIONAL_JUMP)  ; LAB_00441148
     MOV EDX,dword ptr [ESP + 0x34]      ; 004411fc
         ;   Label: LAB_004411fc
     MOV EAX,EBP                         ; 00441200
@@ -133,14 +133,14 @@ section .text
     SUB EBX,EDI                         ; 00441230
     PUSH ESI                            ; 00441232
     MOV dword ptr [ESI + EAX*0x1 + 0x4044],EBX ; 00441233
-    CALL engine_colquant.c_FUN_00441260 ; 0044123a | undefined engine_colquant.c_FUN_00441260()
-        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441260 ; 0044123a
+        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441260()
     ADD ESP,0x8                         ; 0044123f
     MOV EBP,dword ptr [ESP + 0x34]      ; 00441242
     PUSH EBP                            ; 00441246
     PUSH ESI                            ; 00441247
-    CALL engine_colquant.c_FUN_00441260 ; 00441248 | undefined engine_colquant.c_FUN_00441260()
-        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441260 ; 00441248
+        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441260()
     ADD ESP,0x8                         ; 0044124d
     ADD ESP,0x18                        ; 00441250
     POP EBP                             ; 00441253

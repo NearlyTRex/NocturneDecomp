@@ -23,8 +23,8 @@ section .text
     MOV EDX,dword ptr [EDX]             ; 0052cc2a
     ADD EAX,EDX                         ; 0052cc2c
     PUSH EAX                            ; 0052cc2e
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0052cc2f | void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0052cc2f
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0052cc34
     POP EBX                             ; 0052cc37
     RET                                 ; 0052cc38

@@ -25,20 +25,20 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 00431739
     XOR EAX,EAX                         ; 0043173d
     TEST ESI,ESI                        ; 0043173f
-    JBE 0x0043175e                      ; 00431741 | LAB_0043175e
-        ;   XREF to: 0043175e (CONDITIONAL_JUMP)
+    JBE 0x0043175e                      ; 00431741
+        ;   XREF to: 0043175e (CONDITIONAL_JUMP)  ; LAB_0043175e
     PUSH EBX                            ; 00431743
     XOR EBX,EBX                         ; 00431744
         ;   Label: LAB_00431744
     MOV BL,byte ptr [EDX]               ; 00431746
     INC EDX                             ; 00431748
     ADD ECX,0x2                         ; 00431749
-    MOV BX,word ptr [EBX*0x2 + 0x2d01d24] ; 0043174c | ushort[256] g_Hardware16BitPalette
+    MOV BX,word ptr [EBX*0x2 + 0x2d01d24] ; 0043174c | g_Hardware16BitPalette
     INC EAX                             ; 00431754
     MOV word ptr [ECX + -0x2],BX        ; 00431755
     CMP EAX,ESI                         ; 00431759
-    JC 0x00431744                       ; 0043175b | LAB_00431744
-        ;   XREF to: 00431744 (CONDITIONAL_JUMP)
+    JC 0x00431744                       ; 0043175b
+        ;   XREF to: 00431744 (CONDITIONAL_JUMP)  ; LAB_00431744
     POP EBX                             ; 0043175d
     POP ESI                             ; 0043175e
         ;   Label: LAB_0043175e

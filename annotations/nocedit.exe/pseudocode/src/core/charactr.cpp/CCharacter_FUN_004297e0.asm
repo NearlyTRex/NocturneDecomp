@@ -26,27 +26,27 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004297e0
         ;   Label: core_charactr.cpp_CCharacter_FUN_004297e0
     CMP dword ptr [EDX + 0xdc],0x0      ; 004297e4
-    JNZ 0x004297fb                      ; 004297eb | LAB_004297fb
-        ;   XREF to: 004297fb (CONDITIONAL_JUMP)
+    JNZ 0x004297fb                      ; 004297eb
+        ;   XREF to: 004297fb (CONDITIONAL_JUMP)  ; LAB_004297fb
     FLD float ptr [EDX + 0x24]          ; 004297ed
     FCOMP float ptr [EDX + 0x2414]      ; 004297f0
     FNSTSW AX                           ; 004297f6
     SAHF                                ; 004297f8
-    JZ 0x00429801                       ; 004297f9 | LAB_00429801
-        ;   XREF to: 00429801 (CONDITIONAL_JUMP)
+    JZ 0x00429801                       ; 004297f9
+        ;   XREF to: 00429801 (CONDITIONAL_JUMP)  ; LAB_00429801
     MOV EAX,0x1                         ; 004297fb
         ;   Label: LAB_004297fb
     RET                                 ; 00429800
     CMP dword ptr [EDX + 0x2410],0x0    ; 00429801
         ;   Label: LAB_00429801
-    JZ 0x004297fb                       ; 00429808 | LAB_004297fb
-        ;   XREF to: 004297fb (CONDITIONAL_JUMP)
+    JZ 0x004297fb                       ; 00429808
+        ;   XREF to: 004297fb (CONDITIONAL_JUMP)  ; LAB_004297fb
     PUSH EDX                            ; 0042980a
     MOV EAX,dword ptr [EDX + 0x154]     ; 0042980b
     CALL dword ptr [EAX + 0x54]         ; 00429811
     ADD ESP,0x4                         ; 00429814
     TEST EAX,EAX                        ; 00429817
-    JNZ 0x004297fb                      ; 00429819 | LAB_004297fb
-        ;   XREF to: 004297fb (CONDITIONAL_JUMP)
+    JNZ 0x004297fb                      ; 00429819
+        ;   XREF to: 004297fb (CONDITIONAL_JUMP)  ; LAB_004297fb
     RET                                 ; 0042981b
 

@@ -44,8 +44,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x7c]      ; 0059fa2f
     LEA ESI,[EDI + 0x6a4]               ; 0059fa33
     TEST EDX,EDX                        ; 0059fa39
-    JGE 0x0059fa5f                      ; 0059fa3b | LAB_0059fa5f
-        ;   XREF to: 0059fa5f (CONDITIONAL_JUMP)
+    JGE 0x0059fa5f                      ; 0059fa3b
+        ;   XREF to: 0059fa5f (CONDITIONAL_JUMP)  ; LAB_0059fa5f
     MOV EAX,dword ptr [ESI]             ; 0059fa3d
     LEA EDX,[ESI + 0x4]                 ; 0059fa3f
     MOV dword ptr [EBX],EAX             ; 0059fa42
@@ -65,8 +65,8 @@ section .text
     RET                                 ; 0059fa5e
     PUSH EDI                            ; 0059fa5f
         ;   Label: LAB_0059fa5f
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0059fa60 | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0059fa60
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0059fa65
     MOV EDX,dword ptr [ESP + 0x7c]      ; 0059fa68
     MOV EBP,EAX                         ; 0059fa6c
@@ -82,8 +82,8 @@ section .text
     MOV EDX,dword ptr [EDX + 0x2857c]   ; 0059fa90
     LEA EBP,[ECX + EAX*0x1]             ; 0059fa96
     TEST EDX,EDX                        ; 0059fa99
-    JGE 0x0059fac0                      ; 0059fa9b | LAB_0059fac0
-        ;   XREF to: 0059fac0 (CONDITIONAL_JUMP)
+    JGE 0x0059fac0                      ; 0059fa9b
+        ;   XREF to: 0059fac0 (CONDITIONAL_JUMP)  ; LAB_0059fac0
     FLD float ptr [EBP]                 ; 0059fa9d
     FADD float ptr [ESI]                ; 0059faa0
     FSTP float ptr [EBX]                ; 0059faa2
@@ -104,8 +104,8 @@ section .text
         ;   Label: LAB_0059fac0
     PUSH EDI                            ; 0059fac1
     LEA ESI,[ESP + 0x38]                ; 0059fac2
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 ; 0059fac6 | void core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
-        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 ; 0059fac6
+        ;   XREF to: 0059f820 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820(CDeformableModelInstance * this_ptr, int bone_index, CMatrix3x4f * out_matrix)
     ADD ESP,0x8                         ; 0059facb
     MOV EAX,ESP                         ; 0059face
     PUSH EAX                            ; 0059fad0
@@ -115,8 +115,8 @@ section .text
     LEA ESI,[ESP + 0x38]                ; 0059fadb
     PUSH EBX                            ; 0059fadf
     MOVSD.REP ES:EDI,ESI                ; 0059fae0
-    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 0059fae2 | CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 0059fae2
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 0059fae7
     MOV EAX,EBX                         ; 0059faea
     ADD ESP,0x60                        ; 0059faec

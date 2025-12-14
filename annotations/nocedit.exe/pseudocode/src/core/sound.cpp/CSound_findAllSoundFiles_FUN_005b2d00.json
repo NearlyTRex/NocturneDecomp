@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 17, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 51, 
-    "assembly_lines": 34, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0", 
-      "addr": "004a37b0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0", 
-      "addr": "005ab5a0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0", 
-      "addr": "005ab5b0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170", 
-      "addr": "005ab170"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wav_006524ee", 
-      "addr": "006524ee", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_006524f4", 
-      "addr": "006524f4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mp3_006524fa", 
-      "addr": "006524fa", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_00652500", 
-      "addr": "00652500", 
-      "value": null
-    }, 
-    {
-      "type": "CStrList", 
-      "name": "g_SoundFileList", 
-      "addr": "03f6b128", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b2d00", 
-    "signature": "void core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00(CSound * this_ptr)", 
-    "address_range": [
-      [
-        "005b2d00", 
-        "005b2d57"
-      ]
-    ], 
-    "name": "core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSound *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 34,
+    "complexity_score": 17,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
+  },
   "cross_references": [
     {
-      "from_addr": "0050810c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
+      "addr": "00507a60",
+      "from_addr": "0050810c",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b2d00",
+    "address_range": [
+      [
+        "005b2d00",
+        "005b2d57"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00",
+    "signature": "void core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00(CSound * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a37b0",
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0"
+    },
+    {
+      "addr": "005ab5a0",
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0"
+    },
+    {
+      "addr": "005ab5b0",
+      "name": "sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0"
+    },
+    {
+      "addr": "005ab170",
+      "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006524ee",
+      "name": "s_wav_006524ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006524f4",
+      "name": "s_sound_006524f4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006524fa",
+      "name": "s_mp3_006524fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00652500",
+      "name": "s_sound_00652500",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "03f6b128",
+      "name": "g_SoundFileList",
+      "type": "CStrList",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      }
+    ]
+  },
+  "suspects": []
 }

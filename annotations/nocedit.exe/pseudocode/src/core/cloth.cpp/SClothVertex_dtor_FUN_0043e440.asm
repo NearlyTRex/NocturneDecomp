@@ -18,8 +18,8 @@ section .text
     PUSH 0x0                            ; 0043e444
     ADD EAX,0xec                        ; 0043e446
     PUSH EAX                            ; 0043e44b
-    CALL core_cloth.cpp_freeVectors_FUN_0043e460 ; 0043e44c | int core_cloth.cpp_freeVectors_FUN_0043e460(CVector3f * * array)
-        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_freeVectors_FUN_0043e460 ; 0043e44c
+        ;   XREF to: 0043e460 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_freeVectors_FUN_0043e460(CVector3f * * array)
     ADD ESP,0x8                         ; 0043e451
     SUB EAX,0xec                        ; 0043e454
     RET                                 ; 0043e459

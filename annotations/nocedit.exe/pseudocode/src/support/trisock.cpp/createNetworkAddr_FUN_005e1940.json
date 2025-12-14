@@ -1,78 +1,78 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 16, 
-    "assembly_lines": 8, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005e1940", 
-    "signature": "void support_trisock.cpp_createNetworkAddr_FUN_005e1940(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)", 
-    "address_range": [
-      [
-        "005e1940", 
-        "005e1954"
-      ]
-    ], 
-    "name": "support_trisock.cpp_createNetworkAddr_FUN_005e1940"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SNetworkAddr *", 
-        "size": 4, 
-        "name": "dest_addr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint32_t *", 
-        "size": 4, 
-        "name": "ip_address_ptr"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "typedef uint16_t ushort", 
-        "size": 2, 
-        "name": "port"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 14, 
-    "param_offset": 4, 
-    "param_size": 10
-  }, 
+    "assembly_lines": 8,
+    "complexity_score": 8,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "00540f66", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0", 
-      "addr": "005406a0"
-    }, 
+      "addr": "005406a0",
+      "from_addr": "00540f66",
+      "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053f8b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_initializeNetworkToHost_FUN_0053f860", 
-      "addr": "0053f860"
-    }, 
+      "addr": "0053f860",
+      "from_addr": "0053f8b5",
+      "name": "core_netgame.cpp_initializeNetworkToHost_FUN_0053f860",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053f947", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900", 
-      "addr": "0053f900"
+      "addr": "0053f900",
+      "from_addr": "0053f947",
+      "name": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005e1940",
+    "address_range": [
+      [
+        "005e1940",
+        "005e1954"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_createNetworkAddr_FUN_005e1940",
+    "signature": "void support_trisock.cpp_createNetworkAddr_FUN_005e1940(SNetworkAddr * dest_addr, uint32_t * ip_address_ptr, uint16_t port)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 14,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 10,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest_addr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      },
+      {
+        "is_param": true,
+        "name": "ip_address_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "uint32_t *"
+      },
+      {
+        "is_param": true,
+        "name": "port",
+        "offset": 12,
+        "size": 2,
+        "type": "typedef uint16_t ushort"
+      }
+    ]
+  },
+  "suspects": []
 }

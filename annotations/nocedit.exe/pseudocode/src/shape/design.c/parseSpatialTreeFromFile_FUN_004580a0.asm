@@ -50,43 +50,41 @@ section .text
     PUSH EAX                            ; 004580bf
     LEA EAX,[EBP + -0x1c]               ; 004580c0
     PUSH EAX                            ; 004580c3
-    MOV EAX,0x61a89f                    ; 004580c4 | = "%d,%d,%f,%f,%f,%f\n" | s_d_d_f_f_f_f_0061a89f = %d,%d,%f,%f,%f,%f
-
-    PUSH EAX                            ; 004580c9 | = "%d,%d,%f,%f,%f,%f\n" | s_d_d_f_f_f_f_0061a89f = %d,%d,%f,%f,%f,%f
-
+    MOV EAX,0x61a89f                    ; 004580c4 | = "%d,%d,%f,%f,%f,%f\n"
+    PUSH EAX                            ; 004580c9 | = "%d,%d,%f,%f,%f,%f\n"
     MOV EAX,dword ptr [EBP + 0x14]      ; 004580ca
     PUSH EAX                            ; 004580cd
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004580ce | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004580ce
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x20                        ; 004580d3
     MOV dword ptr [EBP + -0x14],EAX     ; 004580d6
     CMP dword ptr [EBP + -0x14],0x0     ; 004580d9
-    JZ 0x004580e5                       ; 004580dd | LAB_004580e5
-        ;   XREF to: 004580e5 (CONDITIONAL_JUMP)
+    JZ 0x004580e5                       ; 004580dd
+        ;   XREF to: 004580e5 (CONDITIONAL_JUMP)  ; LAB_004580e5
     CMP dword ptr [EBP + -0x14],-0x1    ; 004580df
-    JNZ 0x004580ee                      ; 004580e3 | LAB_004580ee
-        ;   XREF to: 004580ee (CONDITIONAL_JUMP)
+    JNZ 0x004580ee                      ; 004580e3
+        ;   XREF to: 004580ee (CONDITIONAL_JUMP)  ; LAB_004580ee
     MOV dword ptr [EBP + -0x24],0x0     ; 004580e5
         ;   Label: LAB_004580e5
-    JMP 0x00458162                      ; 004580ec | LAB_00458162
-        ;   XREF to: 00458162 (UNCONDITIONAL_JUMP)
-    CALL shape_design.c_allocateSpatialTreeNode_FUN_00457ed0 ; 004580ee | STreeNode * shape_design.c_allocateSpatialTreeNode_FUN_00457ed0()
+    JMP 0x00458162                      ; 004580ec
+        ;   XREF to: 00458162 (UNCONDITIONAL_JUMP)  ; LAB_00458162
+    CALL shape_design.c_allocateSpatialTreeNode_FUN_00457ed0 ; 004580ee
+        ;   XREF to: 00457ed0 (UNCONDITIONAL_CALL)  ; STreeNode * shape_design.c_allocateSpatialTreeNode_FUN_00457ed0()
         ;   Label: LAB_004580ee
-        ;   XREF to: 00457ed0 (UNCONDITIONAL_CALL)
     MOV dword ptr [EBP + -0x20],EAX     ; 004580f3
     MOV EAX,dword ptr [EBP + -0x18]     ; 004580f6
     MOV EDX,dword ptr [EBP + -0x20]     ; 004580f9
     MOV dword ptr [EDX + 0x8],EAX       ; 004580fc
     CMP dword ptr [EBP + -0x14],0x3     ; 004580ff
-    JNZ 0x00458115                      ; 00458103 | LAB_00458115
-        ;   XREF to: 00458115 (CONDITIONAL_JUMP)
+    JNZ 0x00458115                      ; 00458103
+        ;   XREF to: 00458115 (CONDITIONAL_JUMP)  ; LAB_00458115
     MOV EAX,dword ptr [EBP + -0x20]     ; 00458105
     FLD float ptr [EBP + -0x10]         ; 00458108
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0045810b | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0045810b
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EAX + 0xc]         ; 00458110
-    JMP 0x0045815c                      ; 00458113 | LAB_0045815c
-        ;   XREF to: 0045815c (UNCONDITIONAL_JUMP)
+    JMP 0x0045815c                      ; 00458113
+        ;   XREF to: 0045815c (UNCONDITIONAL_JUMP)  ; LAB_0045815c
     MOV EAX,dword ptr [EBP + -0x10]     ; 00458115
         ;   Label: LAB_00458115
     MOV EDX,dword ptr [EBP + -0x20]     ; 00458118
@@ -102,15 +100,15 @@ section .text
     MOV dword ptr [EDX + 0x18],EAX      ; 00458136
     MOV EAX,dword ptr [EBP + 0x14]      ; 00458139
     PUSH EAX                            ; 0045813c
-    CALL shape_design.c_parseSpatialTreeFromFile_FUN_004580a0 ; 0045813d | STreeNode * shape_design.c_parseSpatialTreeFromFile_FUN_004580a0(FILE * file)
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_parseSpatialTreeFromFile_FUN_004580a0 ; 0045813d
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; STreeNode * shape_design.c_parseSpatialTreeFromFile_FUN_004580a0(FILE * file)
     ADD ESP,0x4                         ; 00458142
     MOV EDX,dword ptr [EBP + -0x20]     ; 00458145
     MOV dword ptr [EDX],EAX             ; 00458148
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045814a
     PUSH EAX                            ; 0045814d
-    CALL shape_design.c_parseSpatialTreeFromFile_FUN_004580a0 ; 0045814e | STreeNode * shape_design.c_parseSpatialTreeFromFile_FUN_004580a0(FILE * file)
-        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_parseSpatialTreeFromFile_FUN_004580a0 ; 0045814e
+        ;   XREF to: 004580a0 (UNCONDITIONAL_CALL)  ; STreeNode * shape_design.c_parseSpatialTreeFromFile_FUN_004580a0(FILE * file)
     ADD ESP,0x4                         ; 00458153
     MOV EDX,dword ptr [EBP + -0x20]     ; 00458156
     MOV dword ptr [EDX + 0x4],EAX       ; 00458159

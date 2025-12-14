@@ -1,1688 +1,1694 @@
 {
   "complexity": {
-    "function_call_count": 34, 
-    "complexity_score": 1102, 
-    "pseudocode_lines": 1047, 
-    "cross_reference_count": 3, 
-    "global_count": 171, 
-    "total_lines": 4324, 
-    "assembly_lines": 3277, 
-    "suspect_count": 4, 
+    "assembly_lines": 3277,
+    "complexity_score": 1102,
+    "cross_reference_count": 3,
+    "function_call_count": 34,
+    "global_count": 172,
+    "pseudocode_lines": 1047,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
-      "addr": "005ff9e0"
-    }, 
-    {
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
-      "addr": "005ff9d0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_stdio.c_fputc_FUN_006007a0", 
-      "addr": "006007a0"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
-    }, 
-    {
-      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
-      "addr": "005fdc00"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "crt_stdlib.c_atoi_FUN_005ffef0", 
-      "addr": "005ffef0"
-    }, 
-    {
-      "name": "crt_string.c_strupr_FUN_00600770", 
-      "addr": "00600770"
-    }, 
-    {
-      "name": "crt_system.c_sleep_FUN_00600790", 
-      "addr": "00600790"
-    }, 
-    {
-      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
-      "addr": "00403260"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0", 
-      "addr": "004032c0"
-    }, 
-    {
-      "name": "engine_dosio.c_getFile_FUN_00481a50", 
-      "addr": "00481a50"
-    }, 
-    {
-      "name": "engine_texture.cpp_clearTextureCache_FUN_005dd8e0", 
-      "addr": "005dd8e0"
-    }, 
-    {
-      "name": "shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90", 
-      "addr": "00444d90"
-    }, 
-    {
-      "name": "shape_design.c_calculateTextureQualityLevel_FUN_0046a930", 
-      "addr": "0046a930"
-    }, 
-    {
-      "name": "shape_design.c_checkNonFFBytes_FUN_0046ac70", 
-      "addr": "0046ac70"
-    }, 
-    {
-      "name": "shape_design.c_clearAllTextureNames_FUN_0046e6b0", 
-      "addr": "0046e6b0"
-    }, 
-    {
-      "name": "shape_design.c_embedCopyrightWatermark_FUN_0046b9a0", 
-      "addr": "0046b9a0"
-    }, 
-    {
-      "name": "shape_design.c_loadTextureData_FUN_0046b060", 
-      "addr": "0046b060"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350", 
-      "addr": "0050f350"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }, 
-    {
-      "name": "shape_quantize.cpp_quantizeRawPixelData_FUN_00556490", 
-      "addr": "00556490"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
-      "addr": "005f2e90"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
-      "addr": "005f2dc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d470", 
-      "addr": "0061d470", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_cramTextureList_be_0061d482", 
-      "addr": "0061d482", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_0061d4b1", 
-      "addr": "0061d4b1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_0061d4b4", 
-      "addr": "0061d4b4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d4b8", 
-      "addr": "0061d4b8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_0061d4ca", 
-      "addr": "0061d4ca", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_open_s_0061d4cd", 
-      "addr": "0061d4cd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d4db", 
-      "addr": "0061d4db", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_read_file_s_0061d4ed", 
-      "addr": "0061d4ed", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d507", 
-      "addr": "0061d507", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d519", 
-      "addr": "0061d519", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_read_file_s_0061d52b", 
-      "addr": "0061d52b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d545", 
-      "addr": "0061d545", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d557", 
-      "addr": "0061d557", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_read_file_s_0061d569", 
-      "addr": "0061d569", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d583", 
-      "addr": "0061d583", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d595", 
-      "addr": "0061d595", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ERROR_Not_a_24_or_32_bit_0061d5a7", 
-      "addr": "0061d5a7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d5d2", 
-      "addr": "0061d5d2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d5e4", 
-      "addr": "0061d5e4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061d5f6", 
-      "addr": "0061d5f6", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "g_UVCoordinateNormalizationFactor", 
-      "addr": "0061d60e", 
-      "value": "5.96046447753906E-8"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_number_of_maps_1_0061d616", 
-      "addr": "0061d616", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Naming_convention_not_es_0061d632", 
-      "addr": "0061d632", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Number_of_maps_must_be_a_0061d667", 
-      "addr": "0061d667", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hit_a_key_0061d691", 
-      "addr": "0061d691", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_padding_size_5_0061d69e", 
-      "addr": "0061d69e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Fill_gaps_y_0061d6b8", 
-      "addr": "0061d6b8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_output_texture_map_0061d6ca", 
-      "addr": "0061d6ca", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Texture_map_width_must_b_0061d6f2", 
-      "addr": "0061d6f2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hit_a_key_0061d726", 
-      "addr": "0061d726", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_passed_texture_map_0061d733", 
-      "addr": "0061d733", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Passed_texture_map_width_0061d75a", 
-      "addr": "0061d75a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hit_a_key_0061d795", 
-      "addr": "0061d795", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_acceptable_coverag_0061d7a2", 
-      "addr": "0061d7a2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_acceptable_size_1_0061d7c4", 
-      "addr": "0061d7c4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_maps_d_d_0061d7e1", 
-      "addr": "0061d7e1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Naming_convention_not_es_0061d7fa", 
-      "addr": "0061d7fa", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Number_of_maps_must_be_a_0061d82f", 
-      "addr": "0061d82f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_in_progress_0061d862", 
-      "addr": "0061d862", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_done_ld_seconds_0061d874", 
-      "addr": "0061d874", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Minimum_area_0061d88c", 
-      "addr": "0061d88c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_map_d_d_x_d_0061d899", 
-      "addr": "0061d899", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Display_texture_informat_0061d8ac", 
-      "addr": "0061d8ac", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Texture_sizes_0061d8d0", 
-      "addr": "0061d8d0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_02d_04d_x_04d_xp_04d_y_0061d908", 
-      "addr": "0061d908", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hit_a_key_to_continue_0061d949", 
-      "addr": "0061d949", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hit_a_key_to_continue_0061d962", 
-      "addr": "0061d962", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_done_ld_seconds_0061d97b", 
-      "addr": "0061d97b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Minimum_area_0061d993", 
-      "addr": "0061d993", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_map_d_d_x_d_0061d9a0", 
-      "addr": "0061d9a0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unused_area_including_pa_0061d9b3", 
-      "addr": "0061d9b3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_map_d_4_1lf_0061d9d3", 
-      "addr": "0061d9d3", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0061d9ee", 
-      "addr": "0061d9ee", 
-      "value": "100"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Is_this_map_acceptable_y_0061d9f6", 
-      "addr": "0061d9f6", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_s_this_map_acceptable?_[y]_:_0061d9f7", 
-      "addr": "0061d9f7", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_this_map_acceptable?_[y]_:_0061d9f8", 
-      "addr": "0061d9f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_this_map_acceptable?_[y]_:_0061d9f9", 
-      "addr": "0061d9f9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Are_these_maps_acceptabl_0061da15", 
-      "addr": "0061da15", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_re_these_maps_acceptable?_[y]_:_0061da16", 
-      "addr": "0061da16", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_these_maps_acceptable?_[y]_:_0061da17", 
-      "addr": "0061da17", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_these_maps_acceptable?_[y]_:_0061da18", 
-      "addr": "0061da18", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_0061da37", 
-      "addr": "0061da37", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061da38", 
-      "addr": "0061da38", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Map_s_not_created_Hit_a__0061da39", 
-      "addr": "0061da39", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_0061da5a", 
-      "addr": "0061da5a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061da5b", 
-      "addr": "0061da5b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Map_s_created_Hit_a_key_0061da5c", 
-      "addr": "0061da5c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_output_RAW_name_s_0061da79", 
-      "addr": "0061da79", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_File_name_must_be_no_mor_0061da98", 
-      "addr": "0061da98", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hit_a_key_0061dac5", 
-      "addr": "0061dac5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Paint_around_borders_y_0061dad2", 
-      "addr": "0061dad2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_RAW_0061daef", 
-      "addr": "0061daef", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061daf0", 
-      "addr": "0061daf0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061daf1", 
-      "addr": "0061daf1", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061daf2", 
-      "addr": "0061daf2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_RAW_0061daf4", 
-      "addr": "0061daf4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061daf5", 
-      "addr": "0061daf5", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061daf6", 
-      "addr": "0061daf6", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061daf7", 
-      "addr": "0061daf7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_X_RAW_0061daf9", 
-      "addr": "0061daf9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_X_RAW_0061db03", 
-      "addr": "0061db03", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_X_RAW_0061db0c", 
-      "addr": "0061db0c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061db13", 
-      "addr": "0061db13", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061db25", 
-      "addr": "0061db25", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061db37", 
-      "addr": "0061db37", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_get_bitmap_0061db49", 
-      "addr": "0061db49", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Map_d_of_d_0061db5f", 
-      "addr": "0061db5f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Sampling_down_s_0061db6e", 
-      "addr": "0061db6e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061db94", 
-      "addr": "0061db94", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bitmap_color_quantizatio_0061dba6", 
-      "addr": "0061dba6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wb_0061dbc8", 
-      "addr": "0061dbc8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_0061dbcb", 
-      "addr": "0061dbcb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061dbcf", 
-      "addr": "0061dbcf", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_open_output_fo_0061dbe1", 
-      "addr": "0061dbe1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061dc0c", 
-      "addr": "0061dc0c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Saved_s_0061dc1e", 
-      "addr": "0061dc1e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ACT_0061dc3b", 
-      "addr": "0061dc3b", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061dc3c", 
-      "addr": "0061dc3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061dc3d", 
-      "addr": "0061dc3d", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061dc3e", 
-      "addr": "0061dc3e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wb_0061dc40", 
-      "addr": "0061dc40", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_0061dc43", 
-      "addr": "0061dc43", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061dc47", 
-      "addr": "0061dc47", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_open_output_fo_0061dc59", 
-      "addr": "0061dc59", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061dc7e", 
-      "addr": "0061dc7e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Saved_s_0061dc90", 
-      "addr": "0061dc90", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_OPA_0061dcad", 
-      "addr": "0061dcad", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061dcae", 
-      "addr": "0061dcae", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061dcaf", 
-      "addr": "0061dcaf", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0061dcb0", 
-      "addr": "0061dcb0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wb_0061dcb2", 
-      "addr": "0061dcb2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_0061dcb5", 
-      "addr": "0061dcb5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061dcb9", 
-      "addr": "0061dcb9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_unable_to_create_OPA_fil_0061dccb", 
-      "addr": "0061dccb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061dce7", 
-      "addr": "0061dce7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Saved_s_0061dcf9", 
-      "addr": "0061dcf9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_s_0061dd16", 
-      "addr": "0061dd16", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_All_pixels_completely_op_0061dd1d", 
-      "addr": "0061dd1d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wb_0061dd53", 
-      "addr": "0061dd53", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_tmp24_raw_0061dd56", 
-      "addr": "0061dd56", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_0061dd60", 
-      "addr": "0061dd60", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061dd64", 
-      "addr": "0061dd64", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_open_output_fo_0061dd76", 
-      "addr": "0061dd76", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061dda2", 
-      "addr": "0061dda2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061ddb4", 
-      "addr": "0061ddb4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061ddc6", 
-      "addr": "0061ddc6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061ddd8", 
-      "addr": "0061ddd8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061ddea", 
-      "addr": "0061ddea", 
-      "value": null
-    }, 
-    {
-      "type": "char[80]", 
-      "name": "g_LoadedModelName", 
-      "addr": "0066eda8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s__0066eda9", 
-      "addr": "0066eda9", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s__0066edaa", 
-      "addr": "0066edaa", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0066edab", 
-      "addr": "0066edab", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CramTex_II_0066ef30", 
-      "addr": "0066ef30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_II_0066ef38", 
-      "addr": "0066ef38", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s__0066ef3a", 
-      "addr": "0066ef3a", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_TextureProcessedCount", 
-      "addr": "01e8d260", 
-      "value": null
-    }, 
-    {
-      "type": "STextureAtlasEntry[250]", 
-      "name": "g_TextureAtlasEntries", 
-      "addr": "01e8d264", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d464", 
-      "addr": "01e8d464", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d468", 
-      "addr": "01e8d468", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d46c", 
-      "addr": "01e8d46c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d470", 
-      "addr": "01e8d470", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d474", 
-      "addr": "01e8d474", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d478", 
-      "addr": "01e8d478", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d47c", 
-      "addr": "01e8d47c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d480", 
-      "addr": "01e8d480", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d484", 
-      "addr": "01e8d484", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d488", 
-      "addr": "01e8d488", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d48c", 
-      "addr": "01e8d48c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d490", 
-      "addr": "01e8d490", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d494", 
-      "addr": "01e8d494", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d498", 
-      "addr": "01e8d498", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d49c", 
-      "addr": "01e8d49c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d4a0", 
-      "addr": "01e8d4a0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d4a4", 
-      "addr": "01e8d4a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d4a8", 
-      "addr": "01e8d4a8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d4ac", 
-      "addr": "01e8d4ac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e8d4b0", 
-      "addr": "01e8d4b0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_TextureManagerMode", 
-      "addr": "01eb1484", 
-      "value": null
-    }, 
-    {
-      "type": "char[9][80]", 
-      "name": "g_TextureNameArray", 
-      "addr": "01eb1490", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01eb1491", 
-      "addr": "01eb1491", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01eb1492", 
-      "addr": "01eb1492", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01eb1493", 
-      "addr": "01eb1493", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_TextureAtlasDimension", 
-      "addr": "01eb1760", 
-      "value": null
-    }, 
-    {
-      "type": "char[80]", 
-      "name": "g_CurrentModelFilename", 
-      "addr": "01eb1768", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01eb1769", 
-      "addr": "01eb1769", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01eb176a", 
-      "addr": "01eb176a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01eb176b", 
-      "addr": "01eb176b", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LastTextureProcessIndex", 
-      "addr": "01eb17b8", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 997, 
-      "match": "&stack0xfffff4a8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffff4a8,\"art\\\\%s\");"
-    }, 
-    {
-      "line": 998, 
-      "match": "&stack0xfffff4a8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_io_c_deleteFile_FUN_005ff9d0(&stack0xfffff4a8);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0046bb80", 
-    "signature": "int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)", 
-    "address_range": [
-      [
-        "0046bb80", 
-        "0046dfb1"
-      ]
-    ], 
-    "name": "shape_design.c_cramTextureList_FUN_0046bb80"
-  }, 
-  "stack_frame": {
-    "local_size": 2916, 
-    "variables": [
-      {
-        "offset": -2912, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_b60"
-      }, 
-      {
-        "offset": -2904, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_b58"
-      }, 
-      {
-        "offset": -2644, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a54"
-      }, 
-      {
-        "offset": -2640, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a50"
-      }, 
-      {
-        "offset": -2636, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a4c"
-      }, 
-      {
-        "offset": -2632, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a48"
-      }, 
-      {
-        "offset": -2628, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a44"
-      }, 
-      {
-        "offset": -2624, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a40"
-      }, 
-      {
-        "offset": -2620, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a3c"
-      }, 
-      {
-        "offset": -2616, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a38"
-      }, 
-      {
-        "offset": -2612, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a34"
-      }, 
-      {
-        "offset": -2608, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a30"
-      }, 
-      {
-        "offset": -2604, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a2c"
-      }, 
-      {
-        "offset": -2600, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a28"
-      }, 
-      {
-        "offset": -2596, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_a24"
-      }, 
-      {
-        "offset": -2595, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_a23"
-      }, 
-      {
-        "offset": -2516, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_9d4"
-      }, 
-      {
-        "offset": -2512, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_9d0"
-      }, 
-      {
-        "offset": -2432, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_980"
-      }, 
-      {
-        "offset": -2428, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_97c"
-      }, 
-      {
-        "offset": -2128, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_850"
-      }, 
-      {
-        "offset": -2124, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_84c"
-      }, 
-      {
-        "offset": -1120, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_460"
-      }, 
-      {
-        "offset": -1119, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_45f"
-      }, 
-      {
-        "offset": -1117, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_45d"
-      }, 
-      {
-        "offset": -860, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_35c"
-      }, 
-      {
-        "offset": -859, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_35b"
-      }, 
-      {
-        "offset": -857, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_359"
-      }, 
-      {
-        "offset": -600, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_258"
-      }, 
-      {
-        "offset": -599, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_257"
-      }, 
-      {
-        "offset": -597, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_255"
-      }, 
-      {
-        "offset": -340, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_154"
-      }, 
-      {
-        "offset": -140, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_8c"
-      }, 
-      {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_80"
-      }, 
-      {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_7c"
-      }, 
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SCramConfig *", 
-        "size": 4, 
-        "name": "cram_config"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 2920, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 4324
+  },
   "cross_references": [
     {
-      "from_addr": "0047a5bc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0", 
-      "addr": "0047a3e0"
-    }, 
+      "addr": "0047a3e0",
+      "from_addr": "0047a5bc",
+      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058e093", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058de70", 
-      "addr": "0058de70"
-    }, 
+      "addr": "0058de70",
+      "from_addr": "0058e093",
+      "name": "core_skeledit.cpp_FUN_0058de70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046a498", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_tileTextureMaps_FUN_0046a180", 
-      "addr": "0046a180"
+      "addr": "0046a180",
+      "from_addr": "0046a498",
+      "name": "shape_design.c_tileTextureMaps_FUN_0046a180",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046bb80",
+    "address_range": [
+      [
+        "0046bb80",
+        "0046dfb1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_cramTextureList_FUN_0046bb80",
+    "signature": "int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005ff9e0",
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0"
+    },
+    {
+      "addr": "005ff9d0",
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "006007a0",
+      "name": "crt_stdio.c_fputc_FUN_006007a0"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "005ffacc",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc"
+    },
+    {
+      "addr": "005fdc00",
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "005ffef0",
+      "name": "crt_stdlib.c_atoi_FUN_005ffef0"
+    },
+    {
+      "addr": "00600770",
+      "name": "crt_string.c_strupr_FUN_00600770"
+    },
+    {
+      "addr": "00600790",
+      "name": "crt_system.c_sleep_FUN_00600790"
+    },
+    {
+      "addr": "00403260",
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "004032c0",
+      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0"
+    },
+    {
+      "addr": "00481a50",
+      "name": "engine_dosio.c_getFile_FUN_00481a50"
+    },
+    {
+      "addr": "005dd8e0",
+      "name": "engine_texture.cpp_clearTextureCache_FUN_005dd8e0"
+    },
+    {
+      "addr": "00444d90",
+      "name": "shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90"
+    },
+    {
+      "addr": "0046a930",
+      "name": "shape_design.c_calculateTextureQualityLevel_FUN_0046a930"
+    },
+    {
+      "addr": "0046ac70",
+      "name": "shape_design.c_checkNonFFBytes_FUN_0046ac70"
+    },
+    {
+      "addr": "0046e6b0",
+      "name": "shape_design.c_clearAllTextureNames_FUN_0046e6b0"
+    },
+    {
+      "addr": "0046b9a0",
+      "name": "shape_design.c_embedCopyrightWatermark_FUN_0046b9a0"
+    },
+    {
+      "addr": "0046b060",
+      "name": "shape_design.c_loadTextureData_FUN_0046b060"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f350",
+      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    },
+    {
+      "addr": "00556490",
+      "name": "shape_quantize.cpp_quantizeRawPixelData_FUN_00556490"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    },
+    {
+      "addr": "005f2e90",
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
+    },
+    {
+      "addr": "005f2dc0",
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061d470",
+      "name": "s_shape_design_c_0061d470",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d482",
+      "name": "s_Can_t_cramTextureList_be_0061d482",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d4b1",
+      "name": "s_rb_0061d4b1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d4b4",
+      "name": "s_art_0061d4b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d4b8",
+      "name": "s_shape_design_c_0061d4b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d4ca",
+      "name": "s_rb_0061d4ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d4cd",
+      "name": "s_Can_t_open_s_0061d4cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d4db",
+      "name": "s_shape_design_c_0061d4db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d4ed",
+      "name": "s_Unable_to_read_file_s_0061d4ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d507",
+      "name": "s_shape_design_c_0061d507",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d519",
+      "name": "s_shape_design_c_0061d519",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d52b",
+      "name": "s_Unable_to_read_file_s_0061d52b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d545",
+      "name": "s_shape_design_c_0061d545",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d557",
+      "name": "s_shape_design_c_0061d557",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d569",
+      "name": "s_Unable_to_read_file_s_0061d569",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d583",
+      "name": "s_shape_design_c_0061d583",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d595",
+      "name": "s_shape_design_c_0061d595",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d5a7",
+      "name": "s_ERROR_Not_a_24_or_32_bit_0061d5a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d5d2",
+      "name": "s_shape_design_c_0061d5d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d5e4",
+      "name": "s_shape_design_c_0061d5e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d5f6",
+      "name": "s_shape_design_c_0061d5f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d60e",
+      "name": "g_UVCoordinateNormalizationFactor",
+      "type": "double",
+      "value": "5.96046447753906E-8"
+    },
+    {
+      "addr": "0061d616",
+      "name": "s_Enter_number_of_maps_1_0061d616",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d632",
+      "name": "s_Naming_convention_not_es_0061d632",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d667",
+      "name": "s_Number_of_maps_must_be_a_0061d667",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d691",
+      "name": "s_Hit_a_key_0061d691",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d69e",
+      "name": "s_Enter_padding_size_5_0061d69e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d6b8",
+      "name": "s_Fill_gaps_y_0061d6b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d6ca",
+      "name": "s_Enter_output_texture_map_0061d6ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d6f2",
+      "name": "s_Texture_map_width_must_b_0061d6f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d726",
+      "name": "s_Hit_a_key_0061d726",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d733",
+      "name": "s_Enter_passed_texture_map_0061d733",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d75a",
+      "name": "s_Passed_texture_map_width_0061d75a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d795",
+      "name": "s_Hit_a_key_0061d795",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d7a2",
+      "name": "s_Enter_acceptable_coverag_0061d7a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d7c4",
+      "name": "s_Enter_acceptable_size_1_0061d7c4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d7e1",
+      "name": "s_Too_many_maps_d_d_0061d7e1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d7fa",
+      "name": "s_Naming_convention_not_es_0061d7fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d82f",
+      "name": "s_Number_of_maps_must_be_a_0061d82f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d862",
+      "name": "s_s_in_progress_0061d862",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d874",
+      "name": "s_s_done_ld_seconds_0061d874",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d88c",
+      "name": "s_Minimum_area_0061d88c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d899",
+      "name": "s_map_d_d_x_d_0061d899",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d8ac",
+      "name": "s_Display_texture_informat_0061d8ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d8d0",
+      "name": "s_Texture_sizes_0061d8d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d908",
+      "name": "s_s_02d_04d_x_04d_xp_04d_y_0061d908",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d949",
+      "name": "s_Hit_a_key_to_continue_0061d949",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d962",
+      "name": "s_Hit_a_key_to_continue_0061d962",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d97b",
+      "name": "s_s_done_ld_seconds_0061d97b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d993",
+      "name": "s_Minimum_area_0061d993",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d9a0",
+      "name": "s_map_d_d_x_d_0061d9a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d9b3",
+      "name": "s_Unused_area_including_pa_0061d9b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d9d3",
+      "name": "s_map_d_4_1lf_0061d9d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d9ee",
+      "name": "DOUBLE_0061d9ee",
+      "type": "double",
+      "value": "100"
+    },
+    {
+      "addr": "0061d9f6",
+      "name": "s_Is_this_map_acceptable_y_0061d9f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061d9f7",
+      "name": "s_s_this_map_acceptable?_[y]_:_0061d9f7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d9f8",
+      "name": "s_this_map_acceptable?_[y]_:_0061d9f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d9f9",
+      "name": "s_this_map_acceptable?_[y]_:_0061d9f9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061da15",
+      "name": "s_Are_these_maps_acceptabl_0061da15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061da16",
+      "name": "s_re_these_maps_acceptable?_[y]_:_0061da16",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061da17",
+      "name": "s_e_these_maps_acceptable?_[y]_:_0061da17",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061da18",
+      "name": "s_these_maps_acceptable?_[y]_:_0061da18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061da37",
+      "name": "s_s_0061da37",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061da38",
+      "name": "DAT_0061da38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061da39",
+      "name": "s_Map_s_not_created_Hit_a__0061da39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061da5a",
+      "name": "s_s_0061da5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061da5b",
+      "name": "DAT_0061da5b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061da5c",
+      "name": "s_Map_s_created_Hit_a_key_0061da5c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061da79",
+      "name": "s_Enter_output_RAW_name_s_0061da79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061da98",
+      "name": "s_File_name_must_be_no_mor_0061da98",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dac5",
+      "name": "s_Hit_a_key_0061dac5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dad2",
+      "name": "s_Paint_around_borders_y_0061dad2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061daef",
+      "name": "s_RAW_0061daef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061daf0",
+      "name": "DAT_0061daf0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061daf1",
+      "name": "DAT_0061daf1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061daf2",
+      "name": "DAT_0061daf2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061daf4",
+      "name": "s_RAW_0061daf4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061daf5",
+      "name": "DAT_0061daf5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061daf6",
+      "name": "DAT_0061daf6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061daf7",
+      "name": "DAT_0061daf7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061daf9",
+      "name": "s_s_X_RAW_0061daf9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061db03",
+      "name": "s_s_X_RAW_0061db03",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061db0c",
+      "name": "s_X_RAW_0061db0c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061db13",
+      "name": "s_shape_design_c_0061db13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061db25",
+      "name": "s_shape_design_c_0061db25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061db37",
+      "name": "s_shape_design_c_0061db37",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061db49",
+      "name": "s_Unable_to_get_bitmap_0061db49",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061db5f",
+      "name": "s_Map_d_of_d_0061db5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061db6e",
+      "name": "s_Sampling_down_s_0061db6e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061db94",
+      "name": "s_shape_design_c_0061db94",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dba6",
+      "name": "s_Bitmap_color_quantizatio_0061dba6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dbc8",
+      "name": "s_wb_0061dbc8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dbcb",
+      "name": "s_art_0061dbcb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dbcf",
+      "name": "s_shape_design_c_0061dbcf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dbe1",
+      "name": "s_Unable_to_open_output_fo_0061dbe1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc0c",
+      "name": "s_shape_design_c_0061dc0c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc1e",
+      "name": "s_Saved_s_0061dc1e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc3b",
+      "name": "s_ACT_0061dc3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc3c",
+      "name": "DAT_0061dc3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061dc3d",
+      "name": "DAT_0061dc3d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061dc3e",
+      "name": "DAT_0061dc3e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061dc40",
+      "name": "s_wb_0061dc40",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc43",
+      "name": "s_art_0061dc43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc47",
+      "name": "s_shape_design_c_0061dc47",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc59",
+      "name": "s_Unable_to_open_output_fo_0061dc59",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc7e",
+      "name": "s_shape_design_c_0061dc7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dc90",
+      "name": "s_Saved_s_0061dc90",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dcad",
+      "name": "s_OPA_0061dcad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dcae",
+      "name": "DAT_0061dcae",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061dcaf",
+      "name": "DAT_0061dcaf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061dcb0",
+      "name": "DAT_0061dcb0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061dcb2",
+      "name": "s_wb_0061dcb2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dcb5",
+      "name": "s_art_0061dcb5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dcb9",
+      "name": "s_shape_design_c_0061dcb9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dccb",
+      "name": "s_unable_to_create_OPA_fil_0061dccb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dce7",
+      "name": "s_shape_design_c_0061dce7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dcf9",
+      "name": "s_Saved_s_0061dcf9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dd16",
+      "name": "s_art_s_0061dd16",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dd1d",
+      "name": "s_All_pixels_completely_op_0061dd1d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dd53",
+      "name": "s_wb_0061dd53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dd56",
+      "name": "s_tmp24_raw_0061dd56",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dd60",
+      "name": "s_art_0061dd60",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dd64",
+      "name": "s_shape_design_c_0061dd64",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dd76",
+      "name": "s_Unable_to_open_output_fo_0061dd76",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061dda2",
+      "name": "s_shape_design_c_0061dda2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061ddb4",
+      "name": "s_shape_design_c_0061ddb4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061ddc6",
+      "name": "s_shape_design_c_0061ddc6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061ddd8",
+      "name": "s_shape_design_c_0061ddd8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061ddea",
+      "name": "s_shape_design_c_0061ddea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066eda8",
+      "name": "g_LoadedModelName",
+      "type": "char[80]",
+      "value": null
+    },
+    {
+      "addr": "0066eda9",
+      "name": "s__0066eda9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066edaa",
+      "name": "s__0066edaa",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066edab",
+      "name": "DAT_0066edab",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066ef30",
+      "name": "s_CramTex_II_0066ef30",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066ef34",
+      "name": "s_Tex_II_0066ef34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066ef38",
+      "name": "s_II_0066ef38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066ef3a",
+      "name": "s__0066ef3a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d260",
+      "name": "g_TextureProcessedCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e8d264",
+      "name": "g_TextureAtlasEntries",
+      "type": "STextureAtlasEntry[250]",
+      "value": null
+    },
+    {
+      "addr": "01e8d464",
+      "name": "DAT_01e8d464",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d468",
+      "name": "DAT_01e8d468",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d46c",
+      "name": "DAT_01e8d46c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d470",
+      "name": "DAT_01e8d470",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d474",
+      "name": "DAT_01e8d474",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d478",
+      "name": "DAT_01e8d478",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d47c",
+      "name": "DAT_01e8d47c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d480",
+      "name": "DAT_01e8d480",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d484",
+      "name": "DAT_01e8d484",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d488",
+      "name": "DAT_01e8d488",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d48c",
+      "name": "DAT_01e8d48c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d490",
+      "name": "DAT_01e8d490",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d494",
+      "name": "DAT_01e8d494",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d498",
+      "name": "DAT_01e8d498",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d49c",
+      "name": "DAT_01e8d49c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d4a0",
+      "name": "DAT_01e8d4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d4a4",
+      "name": "DAT_01e8d4a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d4a8",
+      "name": "DAT_01e8d4a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d4ac",
+      "name": "DAT_01e8d4ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e8d4b0",
+      "name": "DAT_01e8d4b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01eb1484",
+      "name": "g_TextureManagerMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01eb1490",
+      "name": "g_TextureNameArray",
+      "type": "char[9][80]",
+      "value": null
+    },
+    {
+      "addr": "01eb1491",
+      "name": "DAT_01eb1491",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01eb1492",
+      "name": "DAT_01eb1492",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01eb1493",
+      "name": "DAT_01eb1493",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01eb1760",
+      "name": "g_TextureAtlasDimension",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01eb1768",
+      "name": "g_CurrentModelFilename",
+      "type": "char[80]",
+      "value": null
+    },
+    {
+      "addr": "01eb1769",
+      "name": "DAT_01eb1769",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01eb176a",
+      "name": "DAT_01eb176a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01eb176b",
+      "name": "DAT_01eb176b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01eb17b8",
+      "name": "g_LastTextureProcessIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 2920,
+    "local_size": 2916,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_b60",
+        "offset": -2912,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_b58",
+        "offset": -2904,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a54",
+        "offset": -2644,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a50",
+        "offset": -2640,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4c",
+        "offset": -2636,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a48",
+        "offset": -2632,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a44",
+        "offset": -2628,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a40",
+        "offset": -2624,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a3c",
+        "offset": -2620,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a38",
+        "offset": -2616,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a34",
+        "offset": -2612,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a30",
+        "offset": -2608,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a2c",
+        "offset": -2604,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a28",
+        "offset": -2600,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a24",
+        "offset": -2596,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a23",
+        "offset": -2595,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_9d4",
+        "offset": -2516,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9d0",
+        "offset": -2512,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_980",
+        "offset": -2432,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_97c",
+        "offset": -2428,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_850",
+        "offset": -2128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84c",
+        "offset": -2124,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_460",
+        "offset": -1120,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_45f",
+        "offset": -1119,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_45d",
+        "offset": -1117,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_35c",
+        "offset": -860,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_35b",
+        "offset": -859,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_359",
+        "offset": -857,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_258",
+        "offset": -600,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_257",
+        "offset": -599,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_255",
+        "offset": -597,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_154",
+        "offset": -340,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "cram_config",
+        "offset": 4,
+        "size": 4,
+        "type": "SCramConfig *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 997,
+      "match": "&stack0xfffff4a8",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffff4a8,\"art\\\\%s\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 998,
+      "match": "&stack0xfffff4a8",
+      "text": "crt_io_c_deleteFile_FUN_005ff9d0(&stack0xfffff4a8);",
+      "type": "stack_ref"
     }
   ]
 }

@@ -1,139 +1,139 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 77, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 90, 
-    "assembly_lines": 58, 
-    "suspect_count": 3, 
+    "assembly_lines": 58,
+    "complexity_score": 77,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 32,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690", 
-      "addr": "00533690"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 25, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pfVar3 = (float *)((int)unknown_param2 + subband_index * 0x48 + (int)frame_info * 0x900 + 0x7430);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00533ba0", 
-    "signature": "void sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder * this_ptr, void * unknown_param2, float * output_buffer, int subband_index, int channel, SMpegFrame * frame_info, void * unknown_param7)", 
-    "address_range": [
-      [
-        "00533ba0", 
-        "00533c4a"
-      ]
-    ], 
-    "name": "sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0"
-  }, 
-  "stack_frame": {
-    "local_size": 152, 
-    "variables": [
-      {
-        "offset": -148, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_94"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMP3Decoder *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "unknown_param2"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "subband_index"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "channel"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "SMpegFrame *", 
-        "size": 4, 
-        "name": "frame_info"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "unknown_param7"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 180, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 90
+  },
   "cross_references": [
     {
-      "from_addr": "005359c7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
-      "addr": "00534d40"
+      "addr": "00534d40",
+      "from_addr": "005359c7",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00533ba0",
+    "address_range": [
+      [
+        "00533ba0",
+        "00533c4a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0",
+    "signature": "void sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder * this_ptr, void * unknown_param2, float * output_buffer, int subband_index, int channel, SMpegFrame * frame_info, void * unknown_param7)"
+  },
+  "function_calls": [
+    {
+      "addr": "00533690",
+      "name": "sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 180,
+    "local_size": 152,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "unknown_param2",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "subband_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "channel",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame_info",
+        "offset": 24,
+        "size": 4,
+        "type": "SMpegFrame *"
+      },
+      {
+        "is_param": true,
+        "name": "unknown_param7",
+        "offset": 28,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(float *)((int)",
+      "text": "pfVar3 = (float *)((int)unknown_param2 + subband_index * 0x48 + (int)frame_info * 0x900 + 0x7430);",
+      "type": "pointer_cast"
     }
   ]
 }

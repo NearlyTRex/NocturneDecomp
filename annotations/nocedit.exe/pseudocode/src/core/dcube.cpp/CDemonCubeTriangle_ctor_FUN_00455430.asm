@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 00455441
     PUSH EAX                            ; 00455445
     MOV dword ptr [EAX + 0x8],EDX       ; 00455446
-    CALL core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0 ; 00455449 | void core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0(CDemonCubeTriangle * this_ptr)
-        ;   XREF to: 004552c0 (UNCONDITIONAL_CALL)
+    CALL core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0 ; 00455449
+        ;   XREF to: 004552c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0(CDemonCubeTriangle * this_ptr)
     ADD ESP,0x4                         ; 0045544e
     RET                                 ; 00455451
 

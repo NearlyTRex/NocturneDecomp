@@ -35,11 +35,11 @@ section .text
     SUB ESP,0x64                        ; 004fbc91
     MOV EDX,dword ptr [ESP + 0x74]      ; 004fbc94
     PUSH EDX                            ; 004fbc98
-    PUSH 0x62fd85                       ; 004fbc99 | = "%d" | s_d_0062fd85 = %d
+    PUSH 0x62fd85                       ; 004fbc99 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004fbc9e
     PUSH EAX                            ; 004fbca2
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fbca3 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fbca3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fbca8
     MOV EAX,ESP                         ; 004fbcab
     PUSH EAX                            ; 004fbcad
@@ -47,8 +47,8 @@ section .text
     PUSH ECX                            ; 004fbcb2
     MOV EBX,dword ptr [ESP + 0x74]      ; 004fbcb3
     PUSH EBX                            ; 004fbcb7
-    CALL engine_ini.cpp_CIniFile_setString_FUN_004fbbb0 ; 004fbcb8 | void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this, char * key, char * value)
-        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)
+    CALL engine_ini.cpp_CIniFile_setString_FUN_004fbbb0 ; 004fbcb8
+        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this, char * key, char * value)
     ADD ESP,0xc                         ; 004fbcbd
     ADD ESP,0x64                        ; 004fbcc0
     POP EBX                             ; 004fbcc3

@@ -1,170 +1,170 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 117, 
-    "pseudocode_lines": 82, 
-    "cross_reference_count": 1, 
-    "global_count": 14, 
-    "total_lines": 175, 
-    "assembly_lines": 93, 
-    "suspect_count": 3, 
+    "assembly_lines": 93,
+    "complexity_score": 117,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 14,
+    "pseudocode_lines": 82,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }, 
-    {
-      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
-      "addr": "005ede70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_melee_kfm_00635bd6", 
-      "addr": "00635bd6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shovel_wav_00635be0", 
-      "addr": "00635be0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_hovel?.wav_00635be1", 
-      "addr": "00635be1", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ovel?.wav_00635be2", 
-      "addr": "00635be2", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_vel?.wav_00635be3", 
-      "addr": "00635be3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shvl_f_wav_00635bec", 
-      "addr": "00635bec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_hvl-f?.wav_00635bed", 
-      "addr": "00635bed", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_vl-f?.wav_00635bee", 
-      "addr": "00635bee", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_l-f?.wav_00635bef", 
-      "addr": "00635bef", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shvl_s_wav_00635bf8", 
-      "addr": "00635bf8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_hvl-s?.wav_00635bf9", 
-      "addr": "00635bf9", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_vl-s?.wav_00635bfa", 
-      "addr": "00635bfa", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_l-s?.wav_00635bfb", 
-      "addr": "00635bfb", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_00661174", 
-      "addr": "00661174", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 57, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)ppcVar4 + 1) = cVar1;"
-    }, 
-    {
-      "line": 68, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)ppcVar4 + 1) = cVar1;"
-    }, 
-    {
-      "line": 81, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)ppcVar4 + 1) = cVar1;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050e7d0", 
-    "signature": "CMelee * core_melee.cpp_FUN_0050e7d0(CMelee * this_ptr)", 
-    "address_range": [
-      [
-        "0050e7d0", 
-        "0050e91e"
-      ]
-    ], 
-    "name": "core_melee.cpp_FUN_0050e7d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMelee *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 175
+  },
   "cross_references": [
     {
-      "from_addr": "0050e7aa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_melee.cpp_FUN_0050e790", 
-      "addr": "0050e790"
+      "addr": "0050e790",
+      "from_addr": "0050e7aa",
+      "name": "core_melee.cpp_FUN_0050e790",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050e7d0",
+    "address_range": [
+      [
+        "0050e7d0",
+        "0050e91e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_melee.cpp_FUN_0050e7d0",
+    "signature": "CMelee * core_melee.cpp_FUN_0050e7d0(CMelee * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "005ede70",
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635bd6",
+      "name": "s_melee_kfm_00635bd6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635be0",
+      "name": "s_shovel_wav_00635be0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635be1",
+      "name": "s_hovel?.wav_00635be1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635be2",
+      "name": "s_ovel?.wav_00635be2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635be3",
+      "name": "s_vel?.wav_00635be3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635bec",
+      "name": "s_shvl_f_wav_00635bec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635bed",
+      "name": "s_hvl-f?.wav_00635bed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635bee",
+      "name": "s_vl-f?.wav_00635bee",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635bef",
+      "name": "s_l-f?.wav_00635bef",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635bf8",
+      "name": "s_shvl_s_wav_00635bf8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635bf9",
+      "name": "s_hvl-s?.wav_00635bf9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635bfa",
+      "name": "s_vl-s?.wav_00635bfa",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00635bfb",
+      "name": "s_l-s?.wav_00635bfb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00661174",
+      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_00661174",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMelee *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)ppcVar4 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)ppcVar4 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)ppcVar4 + 1) = cVar1;",
+      "type": "pointer_cast"
     }
   ]
 }

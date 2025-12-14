@@ -50,8 +50,8 @@ section .text
     IMUL EDX,dword ptr [EAX + 0xbc],0x14 ; 0045caaf
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cab6
     IMUL EAX,dword ptr [EAX + 0xb8],0x14 ; 0045cab9
-    FLD float ptr [EDX + 0x162640c]     ; 0045cac0 | SVertexData[20000] g_LoadedVertices
-    FSUB float ptr [EAX + 0x162640c]    ; 0045cac6 | SVertexData[20000] g_LoadedVertices
+    FLD float ptr [EDX + 0x162640c]     ; 0045cac0 | g_LoadedVertices
+    FSUB float ptr [EAX + 0x162640c]    ; 0045cac6 | g_LoadedVertices
     FSTP double ptr [EBP + -0x48]       ; 0045cacc
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cacf
     IMUL EDX,dword ptr [EAX + 0xbc],0x14 ; 0045cad2
@@ -71,8 +71,8 @@ section .text
     IMUL EDX,dword ptr [EAX + 0xc0],0x14 ; 0045cb18
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cb1f
     IMUL EAX,dword ptr [EAX + 0xbc],0x14 ; 0045cb22
-    FLD float ptr [EDX + 0x162640c]     ; 0045cb29 | SVertexData[20000] g_LoadedVertices
-    FSUB float ptr [EAX + 0x162640c]    ; 0045cb2f | SVertexData[20000] g_LoadedVertices
+    FLD float ptr [EDX + 0x162640c]     ; 0045cb29 | g_LoadedVertices
+    FSUB float ptr [EAX + 0x162640c]    ; 0045cb2f | g_LoadedVertices
     FSTP double ptr [EBP + -0x30]       ; 0045cb35
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cb38
     IMUL EDX,dword ptr [EAX + 0xc0],0x14 ; 0045cb3b
@@ -117,11 +117,11 @@ section .text
     FSQRT                               ; 0045cbc7
     FSTP double ptr [EBP + -0x18]       ; 0045cbc9
     TEST dword ptr [EBP + -0x14],0x7fffffff ; 0045cbcc
-    JNZ 0x0045cbe9                      ; 0045cbd3 | LAB_0045cbe9
-        ;   XREF to: 0045cbe9 (CONDITIONAL_JUMP)
+    JNZ 0x0045cbe9                      ; 0045cbd3
+        ;   XREF to: 0045cbe9 (CONDITIONAL_JUMP)  ; LAB_0045cbe9
     CMP dword ptr [EBP + -0x18],0x0     ; 0045cbd5
-    JNZ 0x0045cbe9                      ; 0045cbd9 | LAB_0045cbe9
-        ;   XREF to: 0045cbe9 (CONDITIONAL_JUMP)
+    JNZ 0x0045cbe9                      ; 0045cbd9
+        ;   XREF to: 0045cbe9 (CONDITIONAL_JUMP)  ; LAB_0045cbe9
     MOV dword ptr [EBP + -0x18],0x0     ; 0045cbdb
     MOV dword ptr [EBP + -0x14],0x3ff00000 ; 0045cbe2
     FLD double ptr [EBP + -0x10]        ; 0045cbe9
@@ -140,7 +140,7 @@ section .text
     FMUL double ptr [EBP + -0x8]        ; 0045cc14
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cc17
     IMUL EAX,dword ptr [EAX + 0xb8],0x14 ; 0045cc1a
-    FLD float ptr [EAX + 0x162640c]     ; 0045cc21 | SVertexData[20000] g_LoadedVertices
+    FLD float ptr [EAX + 0x162640c]     ; 0045cc21 | g_LoadedVertices
     FMUL double ptr [EBP + -0x10]       ; 0045cc27
     FADDP                               ; 0045cc2a
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045cc2c

@@ -16,13 +16,13 @@
 
 section .text
 
-    PUSH 0x662f10                       ; 005a1fb0 | WatcomTypeInfo g_CSkeletonTypeInfo
+    PUSH 0x662f10                       ; 005a1fb0 | g_CSkeletonTypeInfo
         ;   Label: core_skeleton.cpp_freeSkeletons_FUN_005a1fb0
     PUSH 0x28                           ; 005a1fb5
     MOV EDX,dword ptr [ESP + 0xc]       ; 005a1fb7
     PUSH EDX                            ; 005a1fbb
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 005a1fbc | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 005a1fbc
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005a1fc1
     RET                                 ; 005a1fc4
 

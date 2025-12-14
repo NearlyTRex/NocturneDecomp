@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 24, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0", 
-      "addr": "005b3ae0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CSound*", 
-      "name": "g_CSoundPtr", 
-      "addr": "00681ef8", 
-      "value": "03f6af64"
-    }, 
-    {
-      "type": "CSound", 
-      "name": "g_CSoundInstance", 
-      "addr": "03f6af64", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 16,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00408fa0", 
-    "signature": "void core_actor.cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0(CDemonActor * this_ptr, char * sound_name, float volume)", 
+    "address": "00408fa0",
     "address_range": [
       [
-        "00408fa0", 
+        "00408fa0",
         "00408fc3"
       ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0",
+    "signature": "void core_actor.cpp_CDemonActor_playSoundWithVolume_FUN_00408fa0(CDemonActor * this_ptr, char * sound_name, float volume)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b3ae0",
+      "name": "core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "sound_name"
-      }, 
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "volume"
+        "is_param": true,
+        "name": "volume",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

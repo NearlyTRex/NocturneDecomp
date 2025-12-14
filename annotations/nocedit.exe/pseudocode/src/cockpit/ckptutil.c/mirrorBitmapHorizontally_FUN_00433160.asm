@@ -36,8 +36,8 @@ section .text
     XOR EBP,EBP                         ; 00433185
     MOV dword ptr [ESP + 0x4],EAX       ; 00433187
     TEST EAX,EAX                        ; 0043318b
-    JBE 0x004331e8                      ; 0043318d | LAB_004331e8
-        ;   XREF to: 004331e8 (CONDITIONAL_JUMP)
+    JBE 0x004331e8                      ; 0043318d
+        ;   XREF to: 004331e8 (CONDITIONAL_JUMP)  ; LAB_004331e8
     MOV EAX,dword ptr [ESP + 0xc]       ; 0043318f
     MOV EDX,EAX                         ; 00433193
     MOV dword ptr [ESP + 0x8],EAX       ; 00433195
@@ -55,8 +55,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 004331b7
         ;   Label: LAB_004331b7
     TEST ECX,ECX                        ; 004331bb
-    JBE 0x004331d4                      ; 004331bd | LAB_004331d4
-        ;   XREF to: 004331d4 (CONDITIONAL_JUMP)
+    JBE 0x004331d4                      ; 004331bd
+        ;   XREF to: 004331d4 (CONDITIONAL_JUMP)  ; LAB_004331d4
     MOV EAX,ESI                         ; 004331bf
     MOV EDX,EDI                         ; 004331c1
     ADD ECX,ESI                         ; 004331c3
@@ -68,8 +68,8 @@ section .text
     INC EAX                             ; 004331cc
     MOV byte ptr [EDX + -0x1],BH        ; 004331cd
     CMP EAX,ECX                         ; 004331d0
-    JC 0x004331c5                       ; 004331d2 | LAB_004331c5
-        ;   XREF to: 004331c5 (CONDITIONAL_JUMP)
+    JC 0x004331c5                       ; 004331d2
+        ;   XREF to: 004331c5 (CONDITIONAL_JUMP)  ; LAB_004331c5
     MOV EAX,dword ptr [ESP + 0x8]       ; 004331d4
         ;   Label: LAB_004331d4
     MOV EDX,dword ptr [ESP]             ; 004331d8
@@ -78,8 +78,8 @@ section .text
     ADD EDI,EAX                         ; 004331e0
     ADD ESI,EDX                         ; 004331e2
     CMP EBP,ECX                         ; 004331e4
-    JC 0x004331b7                       ; 004331e6 | LAB_004331b7
-        ;   XREF to: 004331b7 (CONDITIONAL_JUMP)
+    JC 0x004331b7                       ; 004331e6
+        ;   XREF to: 004331b7 (CONDITIONAL_JUMP)  ; LAB_004331b7
     ADD ESP,0x10                        ; 004331e8
         ;   Label: LAB_004331e8
     POP EBP                             ; 004331eb

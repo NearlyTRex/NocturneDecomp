@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,[0x006703e0]                ; 00488aa0 | float g_DashAnimationThreshold
+    MOV EAX,[0x006703e0]                ; 00488aa0 | g_DashAnimationThreshold
         ;   Label: cockpit_drawsurf.cpp_getDashAnimationThreshold_FUN_00488aa0
     RET                                 ; 00488aa5
 

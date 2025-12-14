@@ -1,218 +1,218 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 80, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 14, 
-    "global_count": 4, 
-    "total_lines": 85, 
-    "assembly_lines": 70, 
-    "suspect_count": 6, 
+    "assembly_lines": 70,
+    "complexity_score": 80,
+    "cross_reference_count": 14,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 15,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_gore.cpp_FUN_004edbb0", 
-      "addr": "004edbb0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062438a", 
-      "addr": "0062438a", 
-      "value": "1.20000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00624392", 
-      "addr": "00624392", 
-      "value": "0.25"
-    }, 
-    {
-      "type": "CGore*", 
-      "name": "g_CGorePtr", 
-      "addr": "0067b9a0", 
-      "value": "02d83364"
-    }, 
-    {
-      "type": "CGore", 
-      "name": "g_CGoreInstance", 
-      "addr": "02d83364", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004a9888", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004 + 0xbe3c) != 0) {"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x114))();"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0.0 < (double)*(float *)(in_stack_00000010 + 4)) {"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double)*(float *)(in_stack_00000010 + 4) * 1.2 * 0.25);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004a9880", 
-    "signature": "undefined core_enemy.cpp_FUN_004a9880()", 
-    "address_range": [
-      [
-        "004a9880", 
-        "004a9927"
-      ]
-    ], 
-    "name": "core_enemy.cpp_FUN_004a9880"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 85
+  },
   "cross_references": [
     {
-      "from_addr": "004157b4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batcreat.cpp_CBatCreature_process_FUN_00415470", 
-      "addr": "00415470"
-    }, 
+      "addr": "00415470",
+      "from_addr": "004157b4",
+      "name": "core_batcreat.cpp_CBatCreature_process_FUN_00415470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00416fb6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batman.cpp_CBatman_process_FUN_00416870", 
-      "addr": "00416870"
-    }, 
+      "addr": "00416870",
+      "from_addr": "00416fb6",
+      "name": "core_batman.cpp_CBatman_process_FUN_00416870",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041c696", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_FUN_0041bf90", 
-      "addr": "0041bf90"
-    }, 
+      "addr": "0041bf90",
+      "from_addr": "0041c696",
+      "name": "core_boneguy.cpp_FUN_0041bf90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044461d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cow.cpp_FUN_00444310", 
-      "addr": "00444310"
-    }, 
+      "addr": "00444310",
+      "from_addr": "0044461d",
+      "name": "core_cow.cpp_FUN_00444310",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047f468", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dog.cpp_CZombieDog_process_FUN_0047f140", 
-      "addr": "0047f140"
-    }, 
+      "addr": "0047f140",
+      "from_addr": "0047f468",
+      "name": "core_dog.cpp_CZombieDog_process_FUN_0047f140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00484dc8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dracbrid.cpp_FUN_00484410", 
-      "addr": "00484410"
-    }, 
+      "addr": "00484410",
+      "from_addr": "00484dc8",
+      "name": "core_dracbrid.cpp_FUN_00484410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048f014", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_drone.cpp_FUN_0048ec70", 
-      "addr": "0048ec70"
-    }, 
+      "addr": "0048ec70",
+      "from_addr": "0048f014",
+      "name": "core_drone.cpp_FUN_0048ec70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e4dd2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00", 
-      "addr": "004e4a00"
-    }, 
+      "addr": "004e4a00",
+      "from_addr": "004e4dd2",
+      "name": "core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e7d55", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ghoul.cpp_CGhoul_FUN_004e6600", 
-      "addr": "004e6600"
-    }, 
+      "addr": "004e6600",
+      "from_addr": "004e7d55",
+      "name": "core_ghoul.cpp_CGhoul_FUN_004e6600",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f725a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hotdemon.cpp_FUN_004f6f20", 
-      "addr": "004f6f20"
-    }, 
+      "addr": "004f6f20",
+      "from_addr": "004f725a",
+      "name": "core_hotdemon.cpp_FUN_004f6f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004fa2b7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_imp.cpp_FUN_004f9c30", 
-      "addr": "004f9c30"
-    }, 
+      "addr": "004f9c30",
+      "from_addr": "004fa2b7",
+      "name": "core_imp.cpp_FUN_004f9c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00525e4c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_FUN_00525840", 
-      "addr": "00525840"
-    }, 
+      "addr": "00525840",
+      "from_addr": "00525e4c",
+      "name": "core_mobster.cpp_FUN_00525840",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00568607", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sentinel.cpp_FUN_00568030", 
-      "addr": "00568030"
-    }, 
+      "addr": "00568030",
+      "from_addr": "00568607",
+      "name": "core_sentinel.cpp_FUN_00568030",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a2c46", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_smiley.cpp_FUN_005a2800", 
-      "addr": "005a2800"
+      "addr": "005a2800",
+      "from_addr": "005a2c46",
+      "name": "core_smiley.cpp_FUN_005a2800",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9880",
+    "address_range": [
+      [
+        "004a9880",
+        "004a9927"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_enemy.cpp_FUN_004a9880",
+    "signature": "undefined core_enemy.cpp_FUN_004a9880()"
+  },
+  "function_calls": [
+    {
+      "addr": "004edbb0",
+      "name": "core_gore.cpp_FUN_004edbb0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062438a",
+      "name": "DOUBLE_0062438a",
+      "type": "double",
+      "value": "1.20000000000000"
+    },
+    {
+      "addr": "00624392",
+      "name": "DOUBLE_00624392",
+      "type": "double",
+      "value": "0.25"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a9888",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0xbe3c) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x154) + 0x114))();",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "if (0.0 < (double)*(float *)(in_stack_00000010 + 4)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "((double)*(float *)(in_stack_00000010 + 4) * 1.2 * 0.25);",
+      "type": "stack_param"
     }
   ]
 }

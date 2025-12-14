@@ -40,8 +40,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x38]      ; 0041df57
     MOV EBX,dword ptr [ESP + 0x44]      ; 0041df5b
     CMP EBX,0x8                         ; 0041df5f
-    JG 0x0041e0b0                       ; 0041df62 | LAB_0041e0b0
-        ;   XREF to: 0041e0b0 (CONDITIONAL_JUMP)
+    JG 0x0041e0b0                       ; 0041df62
+        ;   XREF to: 0041e0b0 (CONDITIONAL_JUMP)  ; LAB_0041e0b0
     MOV EDI,0x4479c000                  ; 0041df68
         ;   Label: LAB_0041df68
     MOV EDX,0xc479c000                  ; 0041df6d
@@ -54,18 +54,18 @@ section .text
     MOV dword ptr [ESP + 0x18],EDI      ; 0041df88
     XOR ECX,EDX                         ; 0041df8c
     TEST EBX,EBX                        ; 0041df8e
-    JLE 0x0041e010                      ; 0041df90 | LAB_0041e010
-        ;   XREF to: 0041e010 (CONDITIONAL_JUMP)
+    JLE 0x0041e010                      ; 0041df90
+        ;   XREF to: 0041e010 (CONDITIONAL_JUMP)  ; LAB_0041e010
     MOV EDX,dword ptr [ESP + 0x48]      ; 0041df96
-    MOV EDX,0x616477                    ; 0041e0b0 | = "..\\core\\box.cpp" | s_core_box_cpp_00616477 = ..\core\box.cpp
+    MOV EDX,0x616477                    ; 0041e0b0 | = "..\\core\\box.cpp"
         ;   Label: LAB_0041e0b0
     MOV ECX,0x80                        ; 0041e0b5
-    PUSH 0x616487                       ; 0041e0ba | = "CBox::setupN - Too many scrape points" | s_CBox_setupN_Too_many_scr_00616487 = CBox::setupN - Too many scrape points
-    MOV dword ptr [0x02f0ca48],EDX      ; 0041e0bf | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0041e0c5 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0041e0cb | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x616487                       ; 0041e0ba | = "CBox::setupN - Too many scrape points"
+    MOV dword ptr [0x02f0ca48],EDX      ; 0041e0bf | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0041e0c5 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0041e0cb
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0041e0d0
-    JMP 0x0041df68                      ; 0041e0d3 | LAB_0041df68
-        ;   XREF to: 0041df68 (UNCONDITIONAL_JUMP)
+    JMP 0x0041df68                      ; 0041e0d3
+        ;   XREF to: 0041df68 (UNCONDITIONAL_JUMP)  ; LAB_0041df68
 

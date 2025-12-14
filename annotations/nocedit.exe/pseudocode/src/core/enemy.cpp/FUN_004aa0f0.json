@@ -1,117 +1,117 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 82, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 88, 
-    "assembly_lines": 56, 
-    "suspect_count": 4, 
+    "assembly_lines": 56,
+    "complexity_score": 82,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 32,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
-      "addr": "00408b90"
-    }, 
-    {
-      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
-      "addr": "0040c6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CHero*[4]", 
-      "name": "g_HeroActors", 
-      "addr": "02db87c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LocalHeroIndex", 
-      "addr": "02db87d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.field19_0x14f0a0[7996]", 
-      "addr": "03265254", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03265258", 
-      "addr": "03265258", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "SCollisionInfo *unaff_EDI;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_00000004);"
-    }, 
-    {
-      "line": 25, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar1 = (*actor_ptr->vtable[1].hasCollision)(actor_ptr,unaff_EDI);"
-    }
-  ], 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 88
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004aa0f0", 
-    "signature": "undefined core_enemy.cpp_FUN_004aa0f0()", 
+    "address": "004aa0f0",
     "address_range": [
       [
-        "004aa0f0", 
+        "004aa0f0",
         "004aa16b"
       ]
-    ], 
-    "name": "core_enemy.cpp_FUN_004aa0f0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_enemy.cpp_FUN_004aa0f0",
+    "signature": "undefined core_enemy.cpp_FUN_004aa0f0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b90",
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90"
+    },
+    {
+      "addr": "0040c6d0",
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03265254",
+      "name": "g_CDemonSetInstance.field19_0x14f0a0[7996]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03265258",
+      "name": "DAT_03265258",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 24, 
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EDI",
+      "text": "SCollisionInfo *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EDI",
+      "text": "iVar1 = (*actor_ptr->vtable[1].hasCollision)(actor_ptr,unaff_EDI);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

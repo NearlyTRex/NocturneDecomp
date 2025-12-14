@@ -37,8 +37,8 @@ section .text
     PUSH EAX                            ; 00431a3b
     MOV EDX,dword ptr [ESP + 0x314]     ; 00431a3c
     PUSH EDX                            ; 00431a43
-    CALL cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 ; 00431a44 | void cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0(char * base_filename, char * output_buffer)
-        ;   XREF to: 00431ac0 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 ; 00431a44
+        ;   XREF to: 00431ac0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0(char * base_filename, char * output_buffer)
     ADD ESP,0x8                         ; 00431a49
     MOV ECX,ESP                         ; 00431a4c
     MOV EBX,dword ptr [ESP + 0x314]     ; 00431a4e
@@ -70,12 +70,12 @@ section .text
     SBB EAX,EDX                         ; 00431a95
     SAR EAX,0x3                         ; 00431a97
     INC EBX                             ; 00431a9a
-    MOV AL,byte ptr [ESI + EAX*0x1 + 0x2cf9020] ; 00431a9b | uchar[32768] g_ColorCubeLookup
+    MOV AL,byte ptr [ESI + EAX*0x1 + 0x2cf9020] ; 00431a9b | g_ColorCubeLookup
     ADD ECX,0x3                         ; 00431aa2
     MOV byte ptr [EBX + -0x1],AL        ; 00431aa5
     CMP ECX,EDI                         ; 00431aa8
-    JNZ 0x00431a5b                      ; 00431aaa | LAB_00431a5b
-        ;   XREF to: 00431a5b (CONDITIONAL_JUMP)
+    JNZ 0x00431a5b                      ; 00431aaa
+        ;   XREF to: 00431a5b (CONDITIONAL_JUMP)  ; LAB_00431a5b
     ADD ESP,0x300                       ; 00431aac
     POP EDI                             ; 00431ab2
     POP ESI                             ; 00431ab3

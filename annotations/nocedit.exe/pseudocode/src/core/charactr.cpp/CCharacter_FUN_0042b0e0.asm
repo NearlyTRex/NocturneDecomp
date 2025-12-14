@@ -23,19 +23,19 @@ section .text
         ;   Label: core_charactr.cpp_CCharacter_FUN_0042b0e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 0042b0e1
     CMP dword ptr [EBX + 0x2f10],0x0    ; 0042b0e5
-    JLE 0x0042b0f7                      ; 0042b0ec | LAB_0042b0f7
-        ;   XREF to: 0042b0f7 (CONDITIONAL_JUMP)
+    JLE 0x0042b0f7                      ; 0042b0ec
+        ;   XREF to: 0042b0f7 (CONDITIONAL_JUMP)  ; LAB_0042b0f7
     CMP dword ptr [EBX + 0x2620],0x0    ; 0042b0ee
-    JNZ 0x0042b0ff                      ; 0042b0f5 | LAB_0042b0ff
-        ;   XREF to: 0042b0ff (CONDITIONAL_JUMP)
+    JNZ 0x0042b0ff                      ; 0042b0f5
+        ;   XREF to: 0042b0ff (CONDITIONAL_JUMP)  ; LAB_0042b0ff
     MOV EAX,dword ptr [EBX + 0x2620]    ; 0042b0f7
         ;   Label: LAB_0042b0f7
     POP EBX                             ; 0042b0fd
     RET                                 ; 0042b0fe
     PUSH EBX                            ; 0042b0ff
         ;   Label: LAB_0042b0ff
-    CALL core_charactr.cpp_CCharacter_FUN_0042b110 ; 0042b100 | void core_charactr.cpp_CCharacter_FUN_0042b110(CCharacter * this_ptr)
-        ;   XREF to: 0042b110 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042b110 ; 0042b100
+        ;   XREF to: 0042b110 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b110(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042b105
     MOV EAX,dword ptr [EBX + 0x2620]    ; 0042b108
     POP EBX                             ; 0042b10e

@@ -1,124 +1,124 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 88, 
-    "pseudocode_lines": 53, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 164, 
-    "assembly_lines": 111, 
-    "suspect_count": 3, 
+    "assembly_lines": 111,
+    "complexity_score": 88,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 53,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 26, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) == 0) {"
-    }, 
-    {
-      "line": 34, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)pCVar1->attribute_indices + (iVar2 % 3) * 4 + local_20 + 0x10))"
-    }, 
-    {
-      "line": 41, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) = 1;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00516a40", 
-    "signature": "void shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh * this_ptr)", 
-    "address_range": [
-      [
-        "00516a40", 
-        "00516b37"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 164
+  },
   "cross_references": [
     {
-      "from_addr": "0051b9da", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920", 
-      "addr": "0051b920"
-    }, 
+      "addr": "0051b920",
+      "from_addr": "0051b9da",
+      "name": "shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051b398", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_postprocessMesh_FUN_0051b330", 
-      "addr": "0051b330"
+      "addr": "0051b330",
+      "from_addr": "0051b398",
+      "name": "shape_meshlod.cpp_CLodMesh_postprocessMesh_FUN_0051b330",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00516a40",
+    "address_range": [
+      [
+        "00516a40",
+        "00516b37"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40",
+    "signature": "void shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)pCVar1->attribute_indices + (iVar2 % 3) * 4 + local_20 + 0x10))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCVar1->edge_perpendiculars + local_20 + -0x14) = 1;",
+      "type": "pointer_cast"
     }
   ]
 }

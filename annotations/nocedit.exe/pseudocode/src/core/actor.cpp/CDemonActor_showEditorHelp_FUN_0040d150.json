@@ -1,219 +1,219 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 17, 
-    "global_count": 9, 
-    "total_lines": 68, 
-    "assembly_lines": 52, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_drawTextLine_FUN_0040d240", 
-      "addr": "0040d240"
-    }, 
-    {
-      "name": "core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0", 
-      "addr": "0040d1e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Use_standard_slew_keys_t_00614340", 
-      "addr": "00614340", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Arrow_keys_move_around_00614360", 
-      "addr": "00614360", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Q_A_move_up_down_00614379", 
-      "addr": "00614379", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_End_PgDn_rotate_hozontal_0061438c", 
-      "addr": "0061438c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_F5_F8_Pitch_006143b3", 
-      "addr": "006143b3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Home_PgUp_bank_006143c1", 
-      "addr": "006143c1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Use_right_mouse_button_t_006143d2", 
-      "addr": "006143d2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Position_to_ground_00614406", 
-      "addr": "00614406", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_G_0061441a", 
-      "addr": "0061441a", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040d150", 
-    "signature": "void core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor * this_ptr, int * y_pos)", 
-    "address_range": [
-      [
-        "0040d150", 
-        "0040d1d9"
-      ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "y_pos"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 52,
+    "complexity_score": 16,
+    "cross_reference_count": 17,
+    "function_call_count": 2,
+    "global_count": 9,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
+  },
   "cross_references": [
     {
-      "from_addr": "0041461c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_barrier.cpp_CBarrier_FUN_00414610", 
-      "addr": "00414610"
-    }, 
+      "addr": "00414610",
+      "from_addr": "0041461c",
+      "name": "core_barrier.cpp_CBarrier_FUN_00414610",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00414fbb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bat.cpp_CBat_FUN_00414fb0", 
-      "addr": "00414fb0"
-    }, 
+      "addr": "00414fb0",
+      "from_addr": "00414fbb",
+      "name": "core_bat.cpp_CBat_FUN_00414fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044b8dd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_curtain.cpp_FUN_0044b8d0", 
-      "addr": "0044b8d0"
-    }, 
+      "addr": "0044b8d0",
+      "from_addr": "0044b8dd",
+      "name": "core_curtain.cpp_FUN_0044b8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a935d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_emitter.cpp_FUN_004a9350", 
-      "addr": "004a9350"
-    }, 
+      "addr": "004a9350",
+      "from_addr": "004a935d",
+      "name": "core_emitter.cpp_FUN_004a9350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cb0ad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flame.cpp_FUN_004cb0a0", 
-      "addr": "004cb0a0"
-    }, 
+      "addr": "004cb0a0",
+      "from_addr": "004cb0ad",
+      "name": "core_flame.cpp_FUN_004cb0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ccc7d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flies.cpp_FUN_004ccc70", 
-      "addr": "004ccc70"
-    }, 
+      "addr": "004ccc70",
+      "from_addr": "004ccc7d",
+      "name": "core_flies.cpp_FUN_004ccc70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d274b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_frankgen.cpp_FUN_004d2740", 
-      "addr": "004d2740"
-    }, 
+      "addr": "004d2740",
+      "from_addr": "004d274b",
+      "name": "core_frankgen.cpp_FUN_004d2740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004eb60d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_glass.cpp_CGlass_showEditorHelp_FUN_004eb600", 
-      "addr": "004eb600"
-    }, 
+      "addr": "004eb600",
+      "from_addr": "004eb60d",
+      "name": "core_glass.cpp_CGlass_showEditorHelp_FUN_004eb600",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004eeadd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_grave.cpp_FUN_004eead0", 
-      "addr": "004eead0"
-    }, 
+      "addr": "004eead0",
+      "from_addr": "004eeadd",
+      "name": "core_grave.cpp_FUN_004eead0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00502e5d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ladder.cpp_FUN_00502e50", 
-      "addr": "00502e50"
-    }, 
+      "addr": "00502e50",
+      "from_addr": "00502e5d",
+      "name": "core_ladder.cpp_FUN_00502e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050539d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_lever.cpp_FUN_00505390", 
-      "addr": "00505390"
-    }, 
+      "addr": "00505390",
+      "from_addr": "0050539d",
+      "name": "core_lever.cpp_FUN_00505390",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bab9b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stairs.cpp_FUN_005bab90", 
-      "addr": "005bab90"
-    }, 
+      "addr": "005bab90",
+      "from_addr": "005bab9b",
+      "name": "core_stairs.cpp_FUN_005bab90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005da97b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_teleport.cpp_CTeleportDest_FUN_005da970", 
-      "addr": "005da970"
-    }, 
+      "addr": "005da970",
+      "from_addr": "005da97b",
+      "name": "core_teleport.cpp_CTeleportDest_FUN_005da970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005dadcd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_teleport.cpp_CTeleport_FUN_005dadc0", 
-      "addr": "005dadc0"
-    }, 
+      "addr": "005dadc0",
+      "from_addr": "005dadcd",
+      "name": "core_teleport.cpp_CTeleport_FUN_005dadc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e135e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_trigger.cpp_CTrigger_FUN_005e1350", 
-      "addr": "005e1350"
-    }, 
+      "addr": "005e1350",
+      "from_addr": "005e135e",
+      "name": "core_trigger.cpp_CTrigger_FUN_005e1350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e540d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tvbat.cpp_CTVBat_FUN_005e5400", 
-      "addr": "005e5400"
-    }, 
+      "addr": "005e5400",
+      "from_addr": "005e540d",
+      "name": "core_tvbat.cpp_CTVBat_FUN_005e5400",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ebc1d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_wateract.cpp_CWaterActor_FUN_005ebc10", 
-      "addr": "005ebc10"
+      "addr": "005ebc10",
+      "from_addr": "005ebc1d",
+      "name": "core_wateract.cpp_CWaterActor_FUN_005ebc10",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0040d150",
+    "address_range": [
+      [
+        "0040d150",
+        "0040d1d9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150",
+    "signature": "void core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor * this_ptr, int * y_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d240",
+      "name": "core_actor.cpp_drawTextLine_FUN_0040d240"
+    },
+    {
+      "addr": "0040d1e0",
+      "name": "core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614340",
+      "name": "s_Use_standard_slew_keys_t_00614340",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614360",
+      "name": "s_Arrow_keys_move_around_00614360",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614379",
+      "name": "s_Q_A_move_up_down_00614379",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061438c",
+      "name": "s_End_PgDn_rotate_hozontal_0061438c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006143b3",
+      "name": "s_F5_F8_Pitch_006143b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006143c1",
+      "name": "s_Home_PgUp_bank_006143c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006143d2",
+      "name": "s_Use_right_mouse_button_t_006143d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614406",
+      "name": "s_Position_to_ground_00614406",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061441a",
+      "name": "s_G_0061441a",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
 }

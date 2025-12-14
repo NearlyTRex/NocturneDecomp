@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 35, 
-    "assembly_lines": 12, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
-      "addr": "004088b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CTeleportVTable", 
-      "addr": "00664324", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005da9e0", 
-    "signature": "CTeleport * core_teleport.cpp_CTeleport_ctor_FUN_005da9e0(CTeleport * this_ptr)", 
-    "address_range": [
-      [
-        "005da9e0", 
-        "005daa1f"
-      ]
-    ], 
-    "name": "core_teleport.cpp_CTeleport_ctor_FUN_005da9e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CTeleport *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 12,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
+  },
   "cross_references": [
     {
-      "from_addr": "005da9bd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_teleport.cpp_FUN_005da9a0", 
-      "addr": "005da9a0"
+      "addr": "005da9a0",
+      "from_addr": "005da9bd",
+      "name": "core_teleport.cpp_FUN_005da9a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005da9e0",
+    "address_range": [
+      [
+        "005da9e0",
+        "005daa1f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_teleport.cpp_CTeleport_ctor_FUN_005da9e0",
+    "signature": "CTeleport * core_teleport.cpp_CTeleport_ctor_FUN_005da9e0(CTeleport * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00664324",
+      "name": "g_CTeleportVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTeleport *"
+      }
+    ]
+  },
+  "suspects": []
 }

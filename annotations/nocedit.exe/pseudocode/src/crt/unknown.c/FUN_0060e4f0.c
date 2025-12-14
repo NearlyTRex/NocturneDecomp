@@ -23,10 +23,10 @@ uint crt_unknown_c_FUN_0060e4f0(void)
       }
     }
     if (g_EnvironStringArea == (char **)0x0) {
-      ppcVar1 = (char **)crt_memory_c_malloc_FUN_00601bb0(5);
+      ppcVar1 = crt_memory_c_malloc_FUN_00601bb0(5);
     }
     else {
-      ppcVar1 = (char **)crt_memory_c_realloc_FUN_00601df0(g_EnvironmentBlock,5);
+      ppcVar1 = crt_memory_c_realloc_FUN_00601df0(g_EnvironmentBlock,5);
     }
     if (ppcVar1 == (char **)0x0) {
       return 0xffffffff;

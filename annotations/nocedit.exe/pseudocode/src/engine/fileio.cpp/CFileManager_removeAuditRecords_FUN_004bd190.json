@@ -1,688 +1,688 @@
 {
   "complexity": {
-    "function_call_count": 21, 
-    "complexity_score": 562, 
-    "pseudocode_lines": 237, 
-    "cross_reference_count": 0, 
-    "global_count": 28, 
-    "total_lines": 721, 
-    "assembly_lines": 484, 
-    "suspect_count": 28, 
+    "assembly_lines": 484,
+    "complexity_score": 561,
+    "cross_reference_count": 0,
+    "function_call_count": 21,
+    "global_count": 28,
+    "pseudocode_lines": 236,
+    "suspect_count": 28,
     "suspect_types": [
-      "undefined_type", 
-      "stack_param", 
-      "concat_artifact", 
-      "unaffected_reg", 
-      "unknown_field", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "concat_artifact",
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "undefined_type",
+      "register_param",
+      "stack_param",
+      "unknown_field",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_stdio.c_fflush_FUN_00601540", 
-      "addr": "00601540"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
-    }, 
-    {
-      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
-      "addr": "005fdc00"
-    }, 
-    {
-      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
-      "addr": "0060013c"
-    }, 
-    {
-      "name": "crt_time.c_mktime_FUN_00600f80", 
-      "addr": "00600f80"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000", 
-      "addr": "00551000"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0", 
-      "addr": "0054f5a0"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPodFile_dtor_FUN_0054f610", 
-      "addr": "0054f610"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590", 
-      "addr": "00550590"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650", 
-      "addr": "0054f650"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420", 
-      "addr": "0049f420"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0", 
-      "addr": "0049e6a0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
-      "addr": "004a03d0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006276ab", 
-      "addr": "006276ab", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006276c0", 
-      "addr": "006276c0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006276d5", 
-      "addr": "006276d5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_for_pod_au_006276ea", 
-      "addr": "006276ea", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pod_006293c5", 
-      "addr": "006293c5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Select_POD_file_to_remov_006293cb", 
-      "addr": "006293cb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_mount_s_006293f3", 
-      "addr": "006293f3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_remove_audit_recor_00629403", 
-      "addr": "00629403", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Remove_audit_records_ear_00629436", 
-      "addr": "00629436", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_c_d_c_d_0062946f", 
-      "addr": "0062946f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Please_enter_a_valid_dat_00629480", 
-      "addr": "00629480", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_No_audit_records_removed_0062949a", 
-      "addr": "0062949a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006294b3", 
-      "addr": "006294b3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_006294c8", 
-      "addr": "006294c8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_r_b_006294dd", 
-      "addr": "006294dd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_open_s_to_remove_a_006294e1", 
-      "addr": "006294e1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Error_accessing_s_The_PO_00629507", 
-      "addr": "00629507", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_0062953d", 
-      "addr": "0062953d", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "char[100]", 
-      "name": "g_DefaultAuditRecordPath", 
-      "addr": "0067a260", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s__0067a264", 
-      "addr": "0067a264", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonPod*", 
-      "name": "g_CDemonPodPtr", 
-      "addr": "00680cdc", 
-      "value": "030e5090"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AuditRecordCount", 
-      "addr": "02d12d30", 
-      "value": null
-    }, 
-    {
-      "type": "CPodAuditRecord*", 
-      "name": "g_AuditRecordsArray", 
-      "addr": "02d12d34", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonPod", 
-      "name": "g_CDemonPodInstance", 
-      "addr": "030e5090", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "undefined3 extraout_var", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 16, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000010;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_stack_fffff634", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_fffff634;"
-    }, 
-    {
-      "line": 60, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {"
-    }, 
-    {
-      "line": 76, 
-      "match": "&stack0xfffff62c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffff62c);"
-    }, 
-    {
-      "line": 78, 
-      "match": "&stack0xfffff630", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CPodFile *)&stack0xfffff630,acStack_1fc);"
-    }, 
-    {
-      "line": 82, 
-      "match": "&stack0xfffff638", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff638);"
-    }, 
-    {
-      "line": 85, 
-      "match": "in_stack_fffff634", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_fffff634 != 200) {"
-    }, 
-    {
-      "line": 89, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000001c != 0) {"
-    }, 
-    {
-      "line": 102, 
-      "match": "&stack0xfffff638", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CPodFile *)&stack0xfffff638,record_index,auStack_32c);"
-    }, 
-    {
-      "line": 110, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (uStack_588 < in_stack_00000010) {"
-    }, 
-    {
-      "line": 138, 
-      "match": "(CPodAuditRecord *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar13 * -8 + 4);"
-    }, 
-    {
-      "line": 185, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_9c4._0_4_ = 0;"
-    }, 
-    {
-      "line": 216, 
-      "match": "&stack0xfffff634", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff634);"
-    }, 
-    {
-      "line": 219, 
-      "match": "&stack0xfffffff0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(acStack_f8,\"%d %*c %d %*c %d\",&stack0xfffffff0);"
-    }, 
-    {
-      "line": 221, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EBX < 0x32) {"
-    }, 
-    {
-      "line": 222, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = unaff_EBX + 2000;"
-    }, 
-    {
-      "line": 222, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = unaff_EBX + 2000;"
-    }, 
-    {
-      "line": 224, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if (unaff_EBX < 100) {"
-    }, 
-    {
-      "line": 225, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = unaff_EBX + 0x76c;"
-    }, 
-    {
-      "line": 225, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = unaff_EBX + 0x76c;"
-    }, 
-    {
-      "line": 228, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_1c = unaff_ESI + -1;"
-    }, 
-    {
-      "line": 233, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_20 = unaff_EBX;"
-    }
-  ], 
+    ],
+    "total_lines": 720
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004bd190", 
-    "signature": "void engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager * this_ptr, char * pod_file_path)", 
+    "address": "004bd190",
     "address_range": [
       [
-        "004bd190", 
+        "004bd190",
         "004bd70b"
       ]
-    ], 
-    "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190",
+    "signature": "void engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager * this_ptr, char * pod_file_path)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "00601540",
+      "name": "crt_stdio.c_fflush_FUN_00601540"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "005ffacc",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc"
+    },
+    {
+      "addr": "005fdc00",
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00"
+    },
+    {
+      "addr": "0060013c",
+      "name": "crt_stdio.c_sscanf_FUN_0060013c"
+    },
+    {
+      "addr": "00600f80",
+      "name": "crt_time.c_mktime_FUN_00600f80"
+    },
+    {
+      "addr": "00551000",
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000"
+    },
+    {
+      "addr": "0054f5a0",
+      "name": "engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0"
+    },
+    {
+      "addr": "0054f610",
+      "name": "engine_pod.cpp_CPodFile_dtor_FUN_0054f610"
+    },
+    {
+      "addr": "00550590",
+      "name": "engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590"
+    },
+    {
+      "addr": "0054f650",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650"
+    },
+    {
+      "addr": "0049f420",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "0049e6a0",
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    },
+    {
+      "addr": "004a03d0",
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006276ab",
+      "name": "s_engine_fileio_cpp_006276ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006276c0",
+      "name": "s_engine_fileio_cpp_006276c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006276d5",
+      "name": "s_engine_fileio_cpp_006276d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006276ea",
+      "name": "s_Out_of_memory_for_pod_au_006276ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006293c5",
+      "name": "s_pod_006293c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006293cb",
+      "name": "s_Select_POD_file_to_remov_006293cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006293f3",
+      "name": "s_Can_t_mount_s_006293f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629403",
+      "name": "s_Can_t_remove_audit_recor_00629403",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629436",
+      "name": "s_Remove_audit_records_ear_00629436",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062946f",
+      "name": "s_d_c_d_c_d_0062946f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629480",
+      "name": "s_Please_enter_a_valid_dat_00629480",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062949a",
+      "name": "s_No_audit_records_removed_0062949a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006294b3",
+      "name": "s_engine_fileio_cpp_006294b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006294c8",
+      "name": "s_engine_fileio_cpp_006294c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006294dd",
+      "name": "s_r_b_006294dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006294e1",
+      "name": "s_Can_t_open_s_to_remove_a_006294e1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629507",
+      "name": "s_Error_accessing_s_The_PO_00629507",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062953d",
+      "name": "s_engine_fileio_cpp_0062953d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067a260",
+      "name": "g_DefaultAuditRecordPath",
+      "type": "char[100]",
+      "value": null
+    },
+    {
+      "addr": "0067a264",
+      "name": "s__0067a264",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00680cdc",
+      "name": "g_CDemonPodPtr",
+      "type": "CDemonPod*",
+      "value": "030e5090"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d12d30",
+      "name": "g_AuditRecordCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d12d34",
+      "name": "g_AuditRecordsArray",
+      "type": "CPodAuditRecord*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e5090",
+      "name": "g_CDemonPodInstance",
+      "type": "CDemonPod",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 2524, 
+    "frame_size": 2532,
+    "local_size": 2524,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -2520, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_9d8"
-      }, 
+        "is_param": false,
+        "name": "local_9d8",
+        "offset": -2520,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -2516, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_9d4"
-      }, 
+        "is_param": false,
+        "name": "local_9d4",
+        "offset": -2516,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -1468, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5bc"
-      }, 
+        "is_param": false,
+        "name": "local_5bc",
+        "offset": -1468,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -1464, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5b8"
-      }, 
+        "is_param": false,
+        "name": "local_5b8",
+        "offset": -1464,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -1452, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_5ac"
-      }, 
+        "is_param": false,
+        "name": "local_5ac",
+        "offset": -1452,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -1420, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58c"
-      }, 
+        "is_param": false,
+        "name": "local_58c",
+        "offset": -1420,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -1140, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_474"
-      }, 
+        "is_param": false,
+        "name": "local_474",
+        "offset": -1140,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -1100, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_44c"
-      }, 
+        "is_param": false,
+        "name": "local_44c",
+        "offset": -1100,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -1099, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_44b"
-      }, 
+        "is_param": false,
+        "name": "local_44b",
+        "offset": -1099,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -828, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_33c"
-      }, 
+        "is_param": false,
+        "name": "local_33c",
+        "offset": -828,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -516, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_204"
-      }, 
+        "is_param": false,
+        "name": "local_204",
+        "offset": -516,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -515, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_203"
-      }, 
+        "is_param": false,
+        "name": "local_203",
+        "offset": -515,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -260, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_104"
-      }, 
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_a0"
-      }, 
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileManager *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileManager *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "pod_file_path"
+        "is_param": true,
+        "name": "pod_file_path",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 2532, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved type",
+      "line": 9,
+      "match": "undefined3 extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 16,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_fffff634",
+      "text": "int in_stack_fffff634;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 60,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 76,
+      "match": "&stack0xfffff62c",
+      "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffff62c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 78,
+      "match": "&stack0xfffff630",
+      "text": "((CPodFile *)&stack0xfffff630,acStack_1fc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 82,
+      "match": "&stack0xfffff638",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff638);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_fffff634",
+      "text": "if (in_stack_fffff634 != 200) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_0000001c",
+      "text": "if (in_stack_0000001c != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 102,
+      "match": "&stack0xfffff638",
+      "text": "((CPodFile *)&stack0xfffff638,record_index,auStack_32c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 110,
+      "match": "in_stack_00000010",
+      "text": "if (uStack_588 < in_stack_00000010) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(CPodAuditRecord *)((int)",
+      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 184,
+      "match": "._0_4_",
+      "text": "auStack_9c4._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 215,
+      "match": "&stack0xfffff634",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff634);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 218,
+      "match": "&stack0xfffffff0",
+      "text": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(acStack_f8,\"%d %*c %d %*c %d\",&stack0xfffffff0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 220,
+      "match": "unaff_EBX",
+      "text": "if (unaff_EBX < 0x32) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 221,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = unaff_EBX + 2000;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 221,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = unaff_EBX + 2000;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 223,
+      "match": "unaff_EBX",
+      "text": "else if (unaff_EBX < 100) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 224,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = unaff_EBX + 0x76c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 224,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = unaff_EBX + 0x76c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 227,
+      "match": "unaff_ESI",
+      "text": "local_1c = unaff_ESI + -1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 232,
+      "match": "unaff_EBX",
+      "text": "local_20 = unaff_EBX;",
+      "type": "unaffected_reg"
+    }
+  ]
 }

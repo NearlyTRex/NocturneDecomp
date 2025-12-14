@@ -29,7 +29,7 @@ core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
   uchar *local_34;
   int local_30;
   
-  this_ptr->precomputed_lighting_textures = (uchar *)filter_ptr->data_buffer;
+  this_ptr->precomputed_lighting_textures = filter_ptr->data_buffer;
   this_ptr->texture_width = filter_ptr->size;
   this_ptr->texture_height = filter_ptr->count;
   iVar3 = this_ptr->texture_width;

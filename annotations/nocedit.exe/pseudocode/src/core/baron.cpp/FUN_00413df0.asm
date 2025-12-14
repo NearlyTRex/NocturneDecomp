@@ -17,13 +17,13 @@ section .text
         ;   Label: core_baron.cpp_FUN_00413df0
     MOV EBX,dword ptr [ESP + 0x8]       ; 00413df1
     PUSH EBX                            ; 00413df5
-    CALL core_baron.cpp_FUN_00413f20    ; 00413df6 | undefined core_baron.cpp_FUN_00413f20()
-        ;   XREF to: 00413f20 (UNCONDITIONAL_CALL)
+    CALL core_baron.cpp_FUN_00413f20    ; 00413df6
+        ;   XREF to: 00413f20 (UNCONDITIONAL_CALL)  ; undefined core_baron.cpp_FUN_00413f20()
     MOV EDX,dword ptr [EBX + 0x578]     ; 00413dfb
     ADD ESP,0x4                         ; 00413e01
     TEST EDX,EDX                        ; 00413e04
-    JNZ 0x00413e0c                      ; 00413e06 | LAB_00413e0c
-        ;   XREF to: 00413e0c (CONDITIONAL_JUMP)
+    JNZ 0x00413e0c                      ; 00413e06
+        ;   XREF to: 00413e0c (CONDITIONAL_JUMP)  ; LAB_00413e0c
     XOR EAX,EAX                         ; 00413e08
     POP EBX                             ; 00413e0a
     RET                                 ; 00413e0b

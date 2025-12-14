@@ -17,8 +17,7 @@ cockpit_ckptutil_c_basicIndexedTo16Bit_FUN_00431730
   uVar2 = 0;
   if (pixel_count != 0) {
     do {
-                    /* WARNING: Load size is inaccurate */
-      bVar1 = *input_buffer;
+      bVar1 = *(byte *)input_buffer;
       input_buffer = (void *)((int)input_buffer + 1);
       uVar2 = uVar2 + 1;
       *(ushort *)output_buffer = g_Hardware16BitPalette[bVar1];

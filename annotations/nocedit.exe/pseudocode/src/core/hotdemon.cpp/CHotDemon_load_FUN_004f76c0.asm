@@ -24,25 +24,25 @@ section .text
     PUSH ESI                            ; 004f76c1
     MOV ESI,dword ptr [ESP + 0xc]       ; 004f76c2
     PUSH ESI                            ; 004f76c6
-    CALL core_enemy.cpp_CEnemy_serialize_FUN_004a9660 ; 004f76c7 | void core_enemy.cpp_CEnemy_serialize_FUN_004a9660(CEnemy * this_ptr)
-        ;   XREF to: 004a9660 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_serialize_FUN_004a9660 ; 004f76c7
+        ;   XREF to: 004a9660 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_serialize_FUN_004a9660(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004f76cc
-    PUSH 0x62f4d8                       ; 004f76cf | = "speed" | s_speed_0062f4d8 = speed
+    PUSH 0x62f4d8                       ; 004f76cf | = "speed"
     LEA EBX,[ESI + 0xbe24]              ; 004f76d4
     PUSH EBX                            ; 004f76da
-    CALL core_actor.cpp_serializeFloat_FUN_0040b770 ; 004f76db | void core_actor.cpp_serializeFloat_FUN_0040b770(float * float_ptr, char * property_name)
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_serializeFloat_FUN_0040b770 ; 004f76db
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeFloat_FUN_0040b770(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f76e0
-    PUSH 0x62f4de                       ; 004f76e3 | = "modelName" | s_modelName_0062f4de = modelName
+    PUSH 0x62f4de                       ; 004f76e3 | = "modelName"
     LEA EBX,[ESI + 0x158]               ; 004f76e8
     PUSH EBX                            ; 004f76ee
-    CALL core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970 ; 004f76ef | void core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970(CDeformableModelInstance * model_ptr, char * property_name)
-        ;   XREF to: 0040b970 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970 ; 004f76ef
+        ;   XREF to: 0040b970 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004f76f4
-    PUSH 0x62f4e8                       ; 004f76f7 | = "motion state" | s_motion_state_0062f4e8 = motion state
+    PUSH 0x62f4e8                       ; 004f76f7 | = "motion state"
     PUSH EBX                            ; 004f76fc
-    CALL core_actor.cpp_serializeMotionState_FUN_0040b9f0 ; 004f76fd | void core_actor.cpp_serializeMotionState_FUN_0040b9f0(CMotionController * motion_controller, char * property_name)
-        ;   XREF to: 0040b9f0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_serializeMotionState_FUN_0040b9f0 ; 004f76fd
+        ;   XREF to: 0040b9f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_serializeMotionState_FUN_0040b9f0(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 004f7702
     POP ESI                             ; 004f7705
     POP EBX                             ; 004f7706

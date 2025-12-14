@@ -1,138 +1,130 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 84, 
-    "pseudocode_lines": 44, 
-    "cross_reference_count": 0, 
-    "global_count": 9, 
-    "total_lines": 132, 
-    "assembly_lines": 88, 
-    "suspect_count": 3, 
+    "assembly_lines": 88,
+    "complexity_score": 68,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 43,
+    "suspect_count": 2,
     "suspect_types": [
-      "sborrow_artifact", 
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_3d.c_calculatePolygonLighting_FUN_00403a00", 
-      "addr": "00403a00"
-    }, 
-    {
-      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
-      "addr": "00403950"
-    }, 
-    {
-      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
-      "addr": "004371b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].u", 
-      "addr": "0068802c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].v", 
-      "addr": "00688030", 
-      "value": null
-    }, 
-    {
-      "type": "int[24]", 
-      "name": "g_ProcessedVertexIndices", 
-      "addr": "00772a98", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00772a9c", 
-      "addr": "00772a9c", 
-      "value": null
-    }, 
-    {
-      "type": "RenderScanlineFunc*", 
-      "name": "g_ScanlineRenderFunc", 
-      "addr": "02d0257c", 
-      "value": null
-    }, 
-    {
-      "type": "BOOL", 
-      "name": "g_MMXSupported", 
-      "addr": "02d05248", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 35, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "SBORROW /* signed borrow */4(iVar4,iVar1 * 3) != iVar4 + iVar1 * -3 < 0; iVar4 = iVar4 + 3) {"
-    }, 
-    {
-      "line": 37, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;"
-    }, 
-    {
-      "line": 46, 
-      "match": "(SMRGLHeaderExtended *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);"
-    }
-  ], 
+    ],
+    "total_lines": 131
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00403f20", 
-    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureNormalized_FUN_00403f20(SMRGLHeaderPrimitive * polygon_info)", 
+    "address": "00403f20",
     "address_range": [
       [
-        "00403f20", 
+        "00403f20",
         "00404016"
       ]
-    ], 
-    "name": "engine_3d.c_renderPolygonTextureNormalized_FUN_00403f20"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPolygonTextureNormalized_FUN_00403f20",
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureNormalized_FUN_00403f20(SMRGLHeaderPrimitive * polygon_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403a00",
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_00403a00"
+    },
+    {
+      "addr": "00403950",
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "004371b0",
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "0068802c",
+      "name": "g_RenderVertexBuffer[0].u",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688030",
+      "name": "g_RenderVertexBuffer[0].v",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772a98",
+      "name": "g_ProcessedVertexIndices",
+      "type": "int[24]",
+      "value": null
+    },
+    {
+      "addr": "00772a9c",
+      "name": "DAT_00772a9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "RenderScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "BOOL",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "polygon_info"
+        "is_param": true,
+        "name": "polygon_info",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(SMRGLHeaderExtended *)((int)",
+      "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
+      "type": "pointer_cast"
+    }
+  ]
 }

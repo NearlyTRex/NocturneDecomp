@@ -1,143 +1,155 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 33, 
-    "cross_reference_count": 3, 
-    "global_count": 13, 
-    "total_lines": 83, 
-    "assembly_lines": 50, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_004eeca0", 
-      "addr": "004eeca0", 
-      "value": "004eecf1"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_dt_0062e5cd", 
-      "addr": "0062e5cd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_dt_0062e5d0", 
-      "addr": "0062e5d0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mt_0062e5d3", 
-      "addr": "0062e5d3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wt_0062e5d6", 
-      "addr": "0062e5d6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wd_0062e5d9", 
-      "addr": "0062e5d9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mb_0062e5dc", 
-      "addr": "0062e5dc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_md_0062e5df", 
-      "addr": "0062e5df", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cp_0062e5e2", 
-      "addr": "0062e5e2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_bd_0062e5e5", 
-      "addr": "0062e5e5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_gl_0062e5e8", 
-      "addr": "0062e5e8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_gr_0062e5eb", 
-      "addr": "0062e5eb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_df_0062e5ee", 
-      "addr": "0062e5ee", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004eece0", 
-    "signature": "char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)", 
-    "address_range": [
-      [
-        "004eece0", 
-        "004eed44"
-      ]
-    ], 
-    "name": "core_ground.cpp_getGroundTypeCode_FUN_004eece0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "type"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 50,
+    "complexity_score": 33,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 15,
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 83
+  },
   "cross_references": [
     {
-      "from_addr": "0040cb15", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10", 
-      "addr": "0040ca10"
-    }, 
+      "addr": "0040ca10",
+      "from_addr": "0040cb15",
+      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c78af", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0", 
-      "addr": "004c76a0"
-    }, 
+      "addr": "004c76a0",
+      "from_addr": "004c78af",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057854d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_ImportingGroundTextures_FUN_00578420", 
-      "addr": "00578420"
+      "addr": "00578420",
+      "from_addr": "0057854d",
+      "name": "core_setedit.cpp_ImportingGroundTextures_FUN_00578420",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004eece0",
+    "address_range": [
+      [
+        "004eece0",
+        "004eed44"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_getGroundTypeCode_FUN_004eece0",
+    "signature": "char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "004eeca0",
+      "name": "switchdataD_004eeca0",
+      "type": "void*",
+      "value": "004eecf1"
+    },
+    {
+      "addr": "0062e5c7",
+      "name": "s_no_0062e5c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5ca",
+      "name": "s_ct_0062e5ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5cd",
+      "name": "s_dt_0062e5cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5d0",
+      "name": "s_dt_0062e5d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5d3",
+      "name": "s_mt_0062e5d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5d6",
+      "name": "s_wt_0062e5d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5d9",
+      "name": "s_wd_0062e5d9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5dc",
+      "name": "s_mb_0062e5dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5df",
+      "name": "s_md_0062e5df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5e2",
+      "name": "s_cp_0062e5e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5e5",
+      "name": "s_bd_0062e5e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5e8",
+      "name": "s_gl_0062e5e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5eb",
+      "name": "s_gr_0062e5eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e5ee",
+      "name": "s_df_0062e5ee",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "type",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

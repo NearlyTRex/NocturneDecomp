@@ -1,128 +1,128 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 80, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 48, 
-    "assembly_lines": 33, 
-    "suspect_count": 6, 
+    "assembly_lines": 33,
+    "complexity_score": 80,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 4,
+    "pseudocode_lines": 15,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
-      "addr": "0040c1c0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
-      "addr": "0040b7f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0", 
-      "addr": "0040b8f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
-      "addr": "0040b5c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_0062a2f0", 
-      "addr": "0062a2f0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_onFire_0062a2fa", 
-      "addr": "0062a2fa", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_timeToExplode_0062a301", 
-      "addr": "0062a301", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_onFireCondition_0062a30f", 
-      "addr": "0062a30f", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((int *)&in_stack_00000004[2].location.position.y,\"onFire\");"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&in_stack_00000004[2].location.position.z,\"timeToExplode\");"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((char **)&in_stack_00000004[2].location.area_id,\"onFireCondition\");"
-    }
-  ], 
+    ],
+    "total_lines": 48
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004cb620", 
-    "signature": "undefined core_flamecan.cpp_CFlameCan_load_FUN_004cb620()", 
+    "address": "004cb620",
     "address_range": [
       [
-        "004cb620", 
+        "004cb620",
         "004cb67f"
       ]
-    ], 
-    "name": "core_flamecan.cpp_CFlameCan_load_FUN_004cb620"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_flamecan.cpp_CFlameCan_load_FUN_004cb620",
+    "signature": "undefined core_flamecan.cpp_CFlameCan_load_FUN_004cb620()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c1c0",
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
+    },
+    {
+      "addr": "0040b770",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b7f0",
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b8f0",
+      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040b5c0",
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062a2f0",
+      "name": "s_modelName_0062a2f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062a2fa",
+      "name": "s_onFire_0062a2fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062a301",
+      "name": "s_timeToExplode_0062a301",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062a30f",
+      "name": "s_onFireCondition_0062a30f",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "((int *)&in_stack_00000004[2].location.position.y,\"onFire\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004[2].location.position.z,\"timeToExplode\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "((char **)&in_stack_00000004[2].location.area_id,\"onFireCondition\");",
+      "type": "stack_param"
+    }
+  ]
 }

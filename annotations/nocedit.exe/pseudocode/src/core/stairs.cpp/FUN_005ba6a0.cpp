@@ -23,9 +23,7 @@ uint core_stairs_cpp_FUN_005ba6a0(void)
   
   triangle = (CDemonTriangle *)(in_stack_00000004 + 0x170);
   uVar3 = 0;
-  for (iVar2 = 0;
-      SBORROW /* signed borrow */4(iVar2,*(int *)(in_stack_00000004 + 0x16c) * 2) !=
-      iVar2 + *(int *)(in_stack_00000004 + 0x16c) * -2 < 0; iVar2 = iVar2 + 1) {
+  for (iVar2 = 0; iVar2 < *(int *)(in_stack_00000004 + 0x16c) * 2; iVar2 = iVar2 + 1) {
     iVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
                       (triangle,in_stack_00000008,in_stack_0000000c,in_stack_00000010);
     if (iVar1 != 0) {

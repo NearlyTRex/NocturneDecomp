@@ -24,8 +24,8 @@ section .text
     PUSH ECX                            ; 00489ada
     MOV EBX,dword ptr [ESP + 0x10]      ; 00489adb
     PUSH EBX                            ; 00489adf
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 ; 00489ae0 | void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0(CDrawSurface * this_ptr, int y, int height, char * text)
-        ;   XREF to: 00489ab0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 ; 00489ae0
+        ;   XREF to: 00489ab0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0(CDrawSurface * this_ptr, int y, int height, char * text)
     ADD ESP,0xc                         ; 00489ae5
     POP EBX                             ; 00489ae8
     RET                                 ; 00489ae9

@@ -1,66 +1,66 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 48, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 45, 
-    "assembly_lines": 32, 
-    "suspect_count": 3, 
+    "assembly_lines": 32,
+    "complexity_score": 48,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_cloth.cpp_FUN_0043e1a0", 
-      "addr": "0043e1a0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *in_stack_00000004) {"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar1 < *in_stack_00000004);"
-    }
-  ], 
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0043c3a0", 
-    "signature": "undefined core_cloth.cpp_FUN_0043c3a0()", 
+    "address": "0043c3a0",
     "address_range": [
       [
-        "0043c3a0", 
+        "0043c3a0",
         "0043c3d4"
       ]
-    ], 
-    "name": "core_cloth.cpp_FUN_0043c3a0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_cloth.cpp_FUN_0043c3a0",
+    "signature": "undefined core_cloth.cpp_FUN_0043c3a0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0043e1a0",
+      "name": "core_cloth.cpp_FUN_0043e1a0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000004",
+      "text": "int *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *in_stack_00000004) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar1 < *in_stack_00000004);",
+      "type": "stack_param"
+    }
+  ]
 }

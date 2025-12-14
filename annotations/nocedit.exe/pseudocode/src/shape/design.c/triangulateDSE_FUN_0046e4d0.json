@@ -1,236 +1,236 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 148, 
-    "pseudocode_lines": 58, 
-    "cross_reference_count": 0, 
-    "global_count": 15, 
-    "total_lines": 211, 
-    "assembly_lines": 153, 
-    "suspect_count": 8, 
+    "assembly_lines": 153,
+    "complexity_score": 148,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 15,
+    "pseudocode_lines": 58,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061de76", 
-      "addr": "0061de76", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_triangulateDSE_too_many__0061de88", 
-      "addr": "0061de88", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PolygonCount", 
-      "addr": "016e990c", 
-      "value": null
-    }, 
-    {
-      "type": "SShapeEditorPolygon[20000]", 
-      "name": "g_ModelPolygonData", 
-      "addr": "016e9910", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9914", 
-      "addr": "016e9914", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b4", 
-      "addr": "016e99b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99cc", 
-      "addr": "016e99cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99d0", 
-      "addr": "016e99d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99d4", 
-      "addr": "016e99d4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a0c", 
-      "addr": "016e9a0c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a10", 
-      "addr": "016e9a10", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a4c", 
-      "addr": "016e9a4c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a50", 
-      "addr": "016e9a50", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000004;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((int)in_stack_00000004 < (int)g_ModelPolygonData[local_14].vertex_indices_count) {"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_1c = in_stack_00000004 - 1;"
-    }, 
-    {
-      "line": 39, 
-      "match": "(SShapeEditorPolygon *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 40, 
-      "match": "(SShapeEditorPolygon *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar7 = (SShapeEditorPolygon *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((int)in_stack_00000004 < (int)g_ModelPolygonData[iVar2].vertex_indices_count) {"
-    }, 
-    {
-      "line": 48, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_ModelPolygonData[iVar2].vertex_indices_count = in_stack_00000004;"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_ModelPolygonData[local_14].vertex_indices_count = in_stack_00000004;"
-    }
-  ], 
+    ],
+    "total_lines": 211
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0046e4d0", 
-    "signature": "undefined shape_design.c_triangulateDSE_FUN_0046e4d0()", 
+    "address": "0046e4d0",
     "address_range": [
       [
-        "0046e4d0", 
+        "0046e4d0",
         "0046e6a4"
       ]
-    ], 
-    "name": "shape_design.c_triangulateDSE_FUN_0046e4d0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "shape_design.c_triangulateDSE_FUN_0046e4d0",
+    "signature": "undefined shape_design.c_triangulateDSE_FUN_0046e4d0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061de76",
+      "name": "s_shape_design_c_0061de76",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061de88",
+      "name": "s_triangulateDSE_too_many__0061de88",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "016e990c",
+      "name": "g_PolygonCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "016e9910",
+      "name": "g_ModelPolygonData",
+      "type": "SShapeEditorPolygon[20000]",
+      "value": null
+    },
+    {
+      "addr": "016e9914",
+      "name": "DAT_016e9914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b4",
+      "name": "DAT_016e99b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99cc",
+      "name": "DAT_016e99cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99d0",
+      "name": "DAT_016e99d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99d4",
+      "name": "DAT_016e99d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a0c",
+      "name": "DAT_016e9a0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a10",
+      "name": "DAT_016e9a10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a4c",
+      "name": "DAT_016e9a4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a50",
+      "name": "DAT_016e9a50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 44, 
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "uint in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "if ((int)in_stack_00000004 < (int)g_ModelPolygonData[local_14].vertex_indices_count) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "local_1c = in_stack_00000004 - 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar7 = (SShapeEditorPolygon *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "text": "if ((int)in_stack_00000004 < (int)g_ModelPolygonData[iVar2].vertex_indices_count) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "text": "g_ModelPolygonData[iVar2].vertex_indices_count = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_00000004",
+      "text": "g_ModelPolygonData[local_14].vertex_indices_count = in_stack_00000004;",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -41,38 +41,38 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0060114b
     MOV EDI,dword ptr [ESP + 0x20]      ; 0060114f
     TEST EBX,EBX                        ; 00601153
-    JNZ 0x0060117e                      ; 00601155 | LAB_0060117e
-        ;   XREF to: 0060117e (CONDITIONAL_JUMP)
+    JNZ 0x0060117e                      ; 00601155
+        ;   XREF to: 0060117e (CONDITIONAL_JUMP)  ; LAB_0060117e
     MOV EDI,0x104                       ; 00601157
     PUSH EDI                            ; 0060115c
-    CALL crt_memory.c_malloc_FUN_00601bb0 ; 0060115d | void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
-        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_malloc_FUN_00601bb0 ; 0060115d
+        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
     ADD ESP,0x4                         ; 00601162
     MOV EBP,EAX                         ; 00601165
     TEST EAX,EAX                        ; 00601167
-    JNZ 0x0060117c                      ; 00601169 | LAB_0060117c
-        ;   XREF to: 0060117c (CONDITIONAL_JUMP)
+    JNZ 0x0060117c                      ; 00601169
+        ;   XREF to: 0060117c (CONDITIONAL_JUMP)  ; LAB_0060117c
     PUSH 0x5                            ; 0060116b
-    CALL crt_errno.c_setErrno_FUN_00602790 ; 0060116d | void crt_errno.c_setErrno_FUN_00602790(int error_code)
-        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_setErrno_FUN_00602790 ; 0060116d
+        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00602790(int error_code)
     ADD ESP,0x4                         ; 00601172
     XOR EAX,EAX                         ; 00601175
-    JMP 0x006011f8                      ; 00601177 | LAB_006011f8
-        ;   XREF to: 006011f8 (UNCONDITIONAL_JUMP)
+    JMP 0x006011f8                      ; 00601177
+        ;   XREF to: 006011f8 (UNCONDITIONAL_JUMP)  ; LAB_006011f8
     MOV EBX,EAX                         ; 0060117c
         ;   Label: LAB_0060117c
     TEST ESI,ESI                        ; 0060117e
         ;   Label: LAB_0060117e
-    JZ 0x00601187                       ; 00601180 | LAB_00601187
-        ;   XREF to: 00601187 (CONDITIONAL_JUMP)
+    JZ 0x00601187                       ; 00601180
+        ;   XREF to: 00601187 (CONDITIONAL_JUMP)  ; LAB_00601187
     CMP byte ptr [ESI],0x0              ; 00601182
-    JNZ 0x00601199                      ; 00601185 | LAB_00601199
-        ;   XREF to: 00601199 (CONDITIONAL_JUMP)
+    JNZ 0x00601199                      ; 00601185
+        ;   XREF to: 00601199 (CONDITIONAL_JUMP)  ; LAB_00601199
     PUSH EDI                            ; 00601187
         ;   Label: LAB_00601187
     PUSH EBX                            ; 00601188
-    CALL crt_io.c_getcwd_FUN_00608d20   ; 00601189 | char * crt_io.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)
-        ;   XREF to: 00608d20 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_getcwd_FUN_00608d20   ; 00601189
+        ;   XREF to: 00608d20 (UNCONDITIONAL_CALL)  ; char * crt_io.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 0060118e
     ADD ESP,0x4                         ; 00601191
     POP EBP                             ; 00601194
@@ -80,25 +80,25 @@ section .text
     POP ESI                             ; 00601196
     POP EBX                             ; 00601197
     RET                                 ; 00601198
-    PUSH 0x658c2c                       ; 00601199 | = "con" | s_con_00658c2c = con
+    PUSH 0x658c2c                       ; 00601199 | = "con"
         ;   Label: LAB_00601199
     PUSH ESI                            ; 0060119e
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0060119f | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0060119f
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 006011a4
     TEST EAX,EAX                        ; 006011a7
-    JNZ 0x006011d6                      ; 006011a9 | LAB_006011d6
-        ;   XREF to: 006011d6 (CONDITIONAL_JUMP)
+    JNZ 0x006011d6                      ; 006011a9
+        ;   XREF to: 006011d6 (CONDITIONAL_JUMP)  ; LAB_006011d6
     CMP EDI,0x4                         ; 006011ab
-    JNC 0x006011cd                      ; 006011ae | LAB_006011cd
-        ;   XREF to: 006011cd (CONDITIONAL_JUMP)
+    JNC 0x006011cd                      ; 006011ae
+        ;   XREF to: 006011cd (CONDITIONAL_JUMP)  ; LAB_006011cd
     PUSH EBP                            ; 006011b0
-    CALL crt_memory.c_free_FUN_00601cd0 ; 006011b1 | void crt_memory.c_free_FUN_00601cd0(void * ptr)
-        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_00601cd0 ; 006011b1
+        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_00601cd0(void * ptr)
     ADD ESP,0x4                         ; 006011b6
     PUSH 0xe                            ; 006011b9
-    CALL crt_errno.c_setErrno_FUN_00602790 ; 006011bb | void crt_errno.c_setErrno_FUN_00602790(int error_code)
-        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_setErrno_FUN_00602790 ; 006011bb
+        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00602790(int error_code)
     ADD ESP,0x4                         ; 006011c0
     XOR EAX,EAX                         ; 006011c3
     ADD ESP,0x4                         ; 006011c5
@@ -107,23 +107,23 @@ section .text
     POP ESI                             ; 006011ca
     POP EBX                             ; 006011cb
     RET                                 ; 006011cc
-    MOV EAX,[0x00658c2c]                ; 006011cd | = "con" | s_con_00658c2c = con
+    MOV EAX,[0x00658c2c]                ; 006011cd | = "con"
         ;   Label: LAB_006011cd
     MOV dword ptr [EBX],EAX             ; 006011d2 | DAT_006e6f63
-    JMP 0x006011f6                      ; 006011d4 | LAB_006011f6
-        ;   XREF to: 006011f6 (UNCONDITIONAL_JUMP)
+    JMP 0x006011f6                      ; 006011d4
+        ;   XREF to: 006011f6 (UNCONDITIONAL_JUMP)  ; LAB_006011f6
     MOV EAX,ESP                         ; 006011d6
         ;   Label: LAB_006011d6
     PUSH EAX                            ; 006011d8
     PUSH EBX                            ; 006011d9
     PUSH EDI                            ; 006011da
     PUSH ESI                            ; 006011db
-    CALL dword ptr CS:[0x6115a0]        ; 006011dc | GetFullPathNameA * PTR_GetFullPathNameA_006115a0
+    CALL dword ptr CS:[0x6115a0]        ; 006011dc | PTR_GetFullPathNameA_006115a0
     TEST EAX,EAX                        ; 006011e3
-    JNZ 0x006011f6                      ; 006011e5 | LAB_006011f6
-        ;   XREF to: 006011f6 (CONDITIONAL_JUMP)
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006011e7 | DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)
+    JNZ 0x006011f6                      ; 006011e5
+        ;   XREF to: 006011f6 (CONDITIONAL_JUMP)  ; LAB_006011f6
+    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006011e7
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
     XOR EAX,EAX                         ; 006011ec
     ADD ESP,0x4                         ; 006011ee
     POP EBP                             ; 006011f1

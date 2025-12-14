@@ -24,28 +24,29 @@ sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0
   float *pfVar11;
   uint uVar12;
   float *pfVar13;
-  float *pfVar14;
-  uint uVar15;
-  int iVar16;
-  float10 fVar17;
+  float fVar14;
+  float *pfVar15;
+  uint uVar16;
+  int iVar17;
   float10 fVar18;
   float10 fVar19;
   float10 fVar20;
   float10 fVar21;
   float10 fVar22;
   float10 fVar23;
+  float10 fVar24;
   int local_24;
   int local_20;
   int local_1c;
   
   for (local_20 = 1; 1 << ((byte)local_20 & 0x1f) < size; local_20 = local_20 + 1) {
   }
-  uVar15 = 0;
+  uVar16 = 0;
   if (0 < size) {
     do {
       iVar10 = 0;
       uVar8 = 0;
-      uVar12 = uVar15;
+      uVar12 = uVar16;
       if (0 < local_20) {
         do {
           iVar10 = iVar10 + 1;
@@ -54,61 +55,61 @@ sound_sndmain_cpp_computeComplexFFT_FUN_005a39a0
         } while (iVar10 < local_20);
       }
       output_real[uVar8] = *input_real;
-      pfVar9 = input_imag;
+      fVar14 = 0.0;
       if (input_imag != (float *)0x0) {
-        pfVar9 = (float *)input_imag[uVar15];
+        fVar14 = input_imag[uVar16];
       }
-      output_imag[uVar8] = (float)pfVar9;
-      uVar15 = uVar15 + 1;
+      output_imag[uVar8] = fVar14;
+      uVar16 = uVar16 + 1;
       input_real = input_real + 1;
-    } while ((int)uVar15 < size);
+    } while ((int)uVar16 < size);
   }
   local_24 = 2;
   if (1 < size) {
     do {
       iVar10 = local_24 / 2;
-      fVar17 = (float10)3.1415926535000001 / (float10)iVar10;
-      fVar3 = (float10)fcos(fVar17);
-      fVar18 = (float10)fsin(fVar17);
-      fVar19 = (float10)2;
-      fVar17 = fVar17 * fVar19;
-      fVar20 = (float10)fsin(fVar17);
-      fVar17 = (float10)fcos(fVar17);
+      fVar18 = (float10)3.1415926535000001 / (float10)iVar10;
+      fVar3 = (float10)fcos(fVar18);
+      fVar19 = (float10)fsin(fVar18);
+      fVar20 = (float10)2;
+      fVar18 = fVar18 * fVar20;
+      fVar21 = (float10)fsin(fVar18);
+      fVar18 = (float10)fcos(fVar18);
       local_1c = 0;
       if (0 < size) {
         do {
-          iVar16 = 0;
+          iVar17 = 0;
           if (0 < iVar10) {
-            fVar21 = (float10)(double)((float10)(double)fVar3 * fVar19);
+            fVar22 = (float10)(double)((float10)(double)fVar3 * fVar20);
             pfVar9 = output_real + local_1c;
             pfVar11 = output_imag + iVar10 + local_1c;
             pfVar13 = output_imag + local_1c;
-            pfVar14 = output_real + iVar10 + local_1c;
+            pfVar15 = output_real + iVar10 + local_1c;
             dVar1 = (double)fVar3;
-            dVar5 = (double)fVar17;
-            dVar2 = (double)fVar18;
-            dVar7 = (double)fVar20;
+            dVar5 = (double)fVar18;
+            dVar2 = (double)fVar19;
+            dVar7 = (double)fVar21;
             do {
               dVar6 = dVar2;
               dVar4 = dVar1;
-              fVar22 = fVar21 * (float10)dVar4 - (float10)dVar5;
-              dVar1 = (double)fVar22;
-              fVar23 = fVar21 * (float10)dVar6 - (float10)dVar7;
-              dVar2 = (double)fVar23;
-              iVar16 = iVar16 + 1;
-              fVar23 = fVar22 * (float10)*pfVar14 - fVar23 * (float10)*pfVar11;
-              fVar22 = (float10)dVar2 * (float10)*pfVar14 + (float10)dVar1 * (float10)*pfVar11;
-              *pfVar14 = (float)((float10)*pfVar9 - fVar23);
-              *pfVar11 = (float)((float10)*pfVar13 - fVar22);
-              *pfVar9 = (float)((float10)*pfVar9 + fVar23);
-              *pfVar13 = (float)(fVar22 + (float10)*pfVar13);
+              fVar23 = fVar22 * (float10)dVar4 - (float10)dVar5;
+              dVar1 = (double)fVar23;
+              fVar24 = fVar22 * (float10)dVar6 - (float10)dVar7;
+              dVar2 = (double)fVar24;
+              iVar17 = iVar17 + 1;
+              fVar24 = fVar23 * (float10)*pfVar15 - fVar24 * (float10)*pfVar11;
+              fVar23 = (float10)dVar2 * (float10)*pfVar15 + (float10)dVar1 * (float10)*pfVar11;
+              *pfVar15 = (float)((float10)*pfVar9 - fVar24);
+              *pfVar11 = (float)((float10)*pfVar13 - fVar23);
+              *pfVar9 = (float)((float10)*pfVar9 + fVar24);
+              *pfVar13 = (float)(fVar23 + (float10)*pfVar13);
               pfVar9 = pfVar9 + 1;
               pfVar11 = pfVar11 + 1;
               pfVar13 = pfVar13 + 1;
-              pfVar14 = pfVar14 + 1;
+              pfVar15 = pfVar15 + 1;
               dVar5 = dVar4;
               dVar7 = dVar6;
-            } while (iVar16 < iVar10);
+            } while (iVar17 < iVar10);
           }
           local_1c = local_1c + local_24;
         } while (local_1c < size);

@@ -90,7 +90,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
           pSVar20 = (SRenderVertex *)&(pSVar20->projected_vertex).transformed_z;
           iVar18 = iVar18 + -8;
         }
-        if (iVar18 != 0 && SCARRY4(iVar18 + -8,8) == iVar18 < 0) {
+        if (iVar18 != 0 && -9 < iVar18 + -8) {
           (pSVar20->projected_vertex).transformed_x = (pSVar19->projected_vertex).transformed_x;
           if (4 < iVar18) {
             (pSVar20->projected_vertex).transformed_y = (pSVar19->projected_vertex).transformed_y;
@@ -127,7 +127,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
           pSVar20 = (SRenderVertex *)&(pSVar20->projected_vertex).transformed_z;
           iVar14 = iVar14 + -8;
         }
-        if (iVar14 != 0 && SCARRY4(iVar14 + -8,8) == iVar14 < 0) {
+        if (iVar14 != 0 && -9 < iVar14 + -8) {
           (pSVar20->projected_vertex).transformed_x = (pSVar19->projected_vertex).transformed_x;
           if (4 < iVar14) {
             (pSVar20->projected_vertex).transformed_y = (pSVar19->projected_vertex).transformed_y;
@@ -169,7 +169,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
             pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
             iVar18 = iVar18 + -8;
           }
-          if (iVar18 != 0 && SCARRY4(iVar18 + -8,8) == iVar18 < 0) {
+          if (iVar18 != 0 && -9 < iVar18 + -8) {
             (pSVar19->projected_vertex).transformed_x = (pSVar20->projected_vertex).transformed_x;
             if (4 < iVar18) {
               *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =
@@ -198,7 +198,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
             pSVar21 = (SRenderVertex *)&(pSVar21->projected_vertex).transformed_z;
             iVar18 = iVar18 + -8;
           }
-          if (iVar18 != 0 && SCARRY4(iVar18 + -8,8) == iVar18 < 0) {
+          if (iVar18 != 0 && -9 < iVar18 + -8) {
             (pSVar21->projected_vertex).transformed_x = (pSVar19->projected_vertex).transformed_x;
             if (4 < iVar18) {
               *(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =
@@ -248,7 +248,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
               pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
               iVar18 = iVar18 + -8;
             }
-            if (iVar18 != 0 && SCARRY4(iVar18 + -8,8) == iVar18 < 0) {
+            if (iVar18 != 0 && -9 < iVar18 + -8) {
               (pSVar19->projected_vertex).transformed_x = (pSVar20->projected_vertex).transformed_x;
               if (4 < iVar18) {
                 *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =
@@ -277,7 +277,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
               pSVar21 = (SRenderVertex *)&(pSVar21->projected_vertex).transformed_z;
               iVar18 = iVar18 + -8;
             }
-            if (iVar18 != 0 && SCARRY4(iVar18 + -8,8) == iVar18 < 0) {
+            if (iVar18 != 0 && -9 < iVar18 + -8) {
               (pSVar21->projected_vertex).transformed_x = (pSVar19->projected_vertex).transformed_x;
               if (4 < iVar18) {
                 *(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =
@@ -325,7 +325,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
                 pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
                 iVar18 = iVar18 + -8;
               }
-              if (iVar18 != 0 && SCARRY4(iVar18 + -8,8) == iVar18 < 0) {
+              if (iVar18 != 0 && -9 < iVar18 + -8) {
                 (pSVar19->projected_vertex).transformed_x =
                      (pSVar20->projected_vertex).transformed_x;
                 if (4 < iVar18) {
@@ -356,7 +356,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
                 pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
                 iVar18 = iVar18 + -8;
               }
-              if (iVar18 != 0 && SCARRY4(iVar18 + -8,8) == iVar18 < 0) {
+              if (iVar18 != 0 && -9 < iVar18 + -8) {
                 (pSVar19->projected_vertex).transformed_x =
                      (pSVar20->projected_vertex).transformed_x;
                 if (4 < iVar18) {
@@ -406,7 +406,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
                   pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
                   iVar18 = iVar18 + -8;
                 }
-                if (iVar18 != 0 && SCARRY4(iVar18 + -8,8) == iVar18 < 0) {
+                if (iVar18 != 0 && -9 < iVar18 + -8) {
                   (pSVar19->projected_vertex).transformed_x =
                        (pSVar20->projected_vertex).transformed_x;
                   if (4 < iVar18) {
@@ -437,7 +437,7 @@ core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count,int *verte
                   pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
                   iVar18 = iVar18 + -8;
                 }
-                if (iVar18 != 0 && SCARRY4(iVar18 + -8,8) == iVar18 < 0) {
+                if (iVar18 != 0 && -9 < iVar18 + -8) {
                   (pSVar19->projected_vertex).transformed_x =
                        (pSVar20->projected_vertex).transformed_x;
                   if (4 < iVar18) {

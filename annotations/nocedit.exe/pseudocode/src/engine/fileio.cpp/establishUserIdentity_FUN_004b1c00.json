@@ -1,225 +1,225 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 141, 
-    "pseudocode_lines": 61, 
-    "cross_reference_count": 6, 
-    "global_count": 11, 
-    "total_lines": 192, 
-    "assembly_lines": 131, 
-    "suspect_count": 6, 
+    "assembly_lines": 131,
+    "complexity_score": 140,
+    "cross_reference_count": 6,
+    "function_call_count": 5,
+    "global_count": 11,
+    "pseudocode_lines": 60,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_env.c_getenv_FUN_006013f0", 
-      "addr": "006013f0"
-    }, 
-    {
-      "name": "crt_string.c_strncpy_FUN_00600f40", 
-      "addr": "00600f40"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
-      "addr": "004a03d0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140", 
-      "addr": "005f4140"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_USERNAME_00625ff5", 
-      "addr": "00625ff5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_user_name_00625ffe", 
-      "addr": "00625ffe", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_You_must_enter_a_user_na_0062600e", 
-      "addr": "0062600e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Name_contains_invalid_ch_0062602a", 
-      "addr": "0062602a", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "SVersionControlSession", 
-      "name": "g_VersionControlSession", 
-      "addr": "02d12bd0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d12bd1", 
-      "addr": "02d12bd1", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d12bd2", 
-      "addr": "02d12bd2", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d12bd3", 
-      "addr": "02d12bd3", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_fffffe00", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char in_stack_fffffe00;"
-    }, 
-    {
-      "line": 13, 
-      "match": "&stack0xfffffdfc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(&stack0xfffffdfc);"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_fffffe00", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_fffffe00 != '\\0') {"
-    }, 
-    {
-      "line": 15, 
-      "match": "&stack0xfffffe00", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar2 = &stack0xfffffe00;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004b1c00", 
-    "signature": "int engine_fileio.cpp_establishUserIdentity_FUN_004b1c00(void)", 
-    "address_range": [
-      [
-        "004b1c00", 
-        "004b1d3f"
-      ]
-    ], 
-    "name": "engine_fileio.cpp_establishUserIdentity_FUN_004b1c00"
-  }, 
-  "stack_frame": {
-    "local_size": 520, 
-    "variables": [
-      {
-        "offset": -516, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_204"
-      }, 
-      {
-        "offset": -515, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_203"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 520, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 191
+  },
   "cross_references": [
     {
-      "from_addr": "004b393a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920", 
-      "addr": "004b3920"
-    }, 
+      "addr": "004b3920",
+      "from_addr": "004b393a",
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b5048", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030", 
-      "addr": "004b5030"
-    }, 
+      "addr": "004b5030",
+      "from_addr": "004b5048",
+      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b3f6f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50", 
-      "addr": "004b3f50"
-    }, 
+      "addr": "004b3f50",
+      "from_addr": "004b3f6f",
+      "name": "engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ba77b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
-      "addr": "004ba740"
-    }, 
+      "addr": "004ba740",
+      "from_addr": "004ba77b",
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b8784", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
-      "addr": "004b86b0"
-    }, 
+      "addr": "004b86b0",
+      "from_addr": "004b8784",
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b5bb3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
-      "addr": "004b5a50"
+      "addr": "004b5a50",
+      "from_addr": "004b5bb3",
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b1c00",
+    "address_range": [
+      [
+        "004b1c00",
+        "004b1d3f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_establishUserIdentity_FUN_004b1c00",
+    "signature": "int engine_fileio.cpp_establishUserIdentity_FUN_004b1c00(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "006013f0",
+      "name": "crt_env.c_getenv_FUN_006013f0"
+    },
+    {
+      "addr": "00600f40",
+      "name": "crt_string.c_strncpy_FUN_00600f40"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "004a03d0",
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "005f4140",
+      "name": "wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00625ff5",
+      "name": "s_USERNAME_00625ff5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00625ffe",
+      "name": "s_Enter_user_name_00625ffe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062600e",
+      "name": "s_You_must_enter_a_user_na_0062600e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062602a",
+      "name": "s_Name_contains_invalid_ch_0062602a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d12bd0",
+      "name": "g_VersionControlSession",
+      "type": "SVersionControlSession",
+      "value": null
+    },
+    {
+      "addr": "02d12bd1",
+      "name": "DAT_02d12bd1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12bd2",
+      "name": "DAT_02d12bd2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d12bd3",
+      "name": "DAT_02d12bd3",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 520,
+    "local_size": 520,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_204",
+        "offset": -516,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_203",
+        "offset": -515,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_fffffe00",
+      "text": "char in_stack_fffffe00;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xfffffdfc",
+      "text": "wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(&stack0xfffffdfc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_fffffe00",
+      "text": "if (in_stack_fffffe00 != '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xfffffe00",
+      "text": "pcVar2 = &stack0xfffffe00;",
+      "type": "stack_ref"
     }
   ]
 }

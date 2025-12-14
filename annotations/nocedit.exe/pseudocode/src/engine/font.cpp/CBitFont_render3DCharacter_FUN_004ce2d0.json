@@ -1,621 +1,621 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 393, 
-    "pseudocode_lines": 153, 
-    "cross_reference_count": 1, 
-    "global_count": 38, 
-    "total_lines": 506, 
-    "assembly_lines": 353, 
-    "suspect_count": 21, 
+    "assembly_lines": 353,
+    "complexity_score": 393,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 38,
+    "pseudocode_lines": 153,
+    "suspect_count": 21,
     "suspect_types": [
-      "unaffected_reg", 
-      "suspect_float", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "suspect_float",
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620", 
-      "addr": "00407620"
-    }, 
-    {
-      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80", 
-      "addr": "00406d80"
-    }, 
-    {
-      "name": "engine_matrix.c_projectCachedPoint_FUN_0050cda0", 
-      "addr": "0050cda0"
-    }, 
-    {
-      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
-      "addr": "005dd800"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "g_FontTextureInfo", 
-      "addr": "0067b550", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TempFilenameBuffer", 
-      "addr": "0067b558", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0067b559", 
-      "addr": "0067b559", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0067b55a", 
-      "addr": "0067b55a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0067b55b", 
-      "addr": "0067b55b", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex", 
-      "name": "g_QuadVertex0", 
-      "addr": "00772554", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_QuadVertex0_Y", 
-      "addr": "00772558", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_QuadVertex0_U", 
-      "addr": "0077255c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_QuadVertex0_V", 
-      "addr": "00772560", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0077256c", 
-      "addr": "0077256c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00772570", 
-      "addr": "00772570", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CurrentRenderColorRed", 
-      "addr": "00772574", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CurrentRenderColorGreen", 
-      "addr": "00772578", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CurrentRenderColorBlue", 
-      "addr": "0077257c", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex", 
-      "name": "g_QuadVertex1", 
-      "addr": "00772584", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_QuadVertex1_Y", 
-      "addr": "00772588", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0077259c", 
-      "addr": "0077259c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_007725a0", 
-      "addr": "007725a0", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex", 
-      "name": "g_QuadVertex2", 
-      "addr": "007725b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_QuadVertex2_Y", 
-      "addr": "007725b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TempTextureU", 
-      "addr": "007725cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TempTextureV", 
-      "addr": "007725d0", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex", 
-      "name": "g_QuadVertex3", 
-      "addr": "007725e4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_QuadVertex3_Y", 
-      "addr": "007725e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_007725fc", 
-      "addr": "007725fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00772600", 
-      "addr": "00772600", 
-      "value": null
-    }, 
-    {
-      "type": "char[768]", 
-      "name": "g_SourcePaletteData", 
-      "addr": "02d01f48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f49", 
-      "addr": "02d01f49", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4a", 
-      "addr": "02d01f4a", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterXFixed", 
-      "addr": "02d02548", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterYFixed", 
-      "addr": "02d0254c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportRightFixed", 
-      "addr": "02d02550", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportBottomFixed", 
-      "addr": "02d02554", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CurrentTextureOpacityData", 
-      "addr": "02d03e84", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ShadowColorRed", 
-      "addr": "02d7b418", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ShadowColorGreen", 
-      "addr": "02d7b41c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ShadowColorBlue", 
-      "addr": "02d7b420", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 17, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 18, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 23, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 51, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_QuadVertex0.fog = 9.18341e-41;"
-    }, 
-    {
-      "line": 52, 
-      "match": "9.18341e-41", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "g_QuadVertex0.light = 9.18341e-41;"
-    }, 
-    {
-      "line": 70, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar18 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 71, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + ((uint)bVar18 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 77, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar18 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 78, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + ((uint)bVar18 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 84, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar18 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 85, 
-      "match": "(SRenderVertex *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + ((uint)bVar18 * -2 + 1) * 4);"
-    }, 
-    {
-      "line": 122, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "engine_matrix_c_projectCachedPoint_FUN_0050cda0(unaff_EDI);"
-    }, 
-    {
-      "line": 124, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "engine_matrix_c_projectCachedPoint_FUN_0050cda0(unaff_EDI);"
-    }, 
-    {
-      "line": 131, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_QuadVertex2.u = (float)(((int)fVar1 + iVar11) - unaff_EDI);"
-    }, 
-    {
-      "line": 137, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_RenderVertexBuffer[unaff_EBX].u = fVar1;"
-    }, 
-    {
-      "line": 138, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_RenderVertexBuffer[unaff_EBX].v = fVar2;"
-    }, 
-    {
-      "line": 142, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_RenderVertexBuffer[unaff_ESI].u = fVar1;"
-    }, 
-    {
-      "line": 144, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_RenderVertexBuffer[unaff_ESI].v = fVar12;"
-    }, 
-    {
-      "line": 154, 
-      "match": "&stack0xffffffc4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((SMRGLHeaderPrimitive *)&stack0xffffffc4,iVar15,0,iVar8,iVar7);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ce2d0", 
-    "signature": "void engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont * this_ptr, int character_code, int x_pos, int y_pos, int z_pos, int width, int height, int color_mode)", 
-    "address_range": [
-      [
-        "004ce2d0", 
-        "004ce79b"
-      ]
-    ], 
-    "name": "engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0"
-  }, 
-  "stack_frame": {
-    "local_size": 88, 
-    "variables": [
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBitFont *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "character_code"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_pos"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_pos"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "z_pos"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
-      {
-        "offset": 32, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "color_mode"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 120, 
-    "param_offset": 4, 
-    "param_size": 32
-  }, 
+    ],
+    "total_lines": 506
+  },
   "cross_references": [
     {
-      "from_addr": "004cea64", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0", 
-      "addr": "004ce7a0"
+      "addr": "004ce7a0",
+      "from_addr": "004cea64",
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ce2d0",
+    "address_range": [
+      [
+        "004ce2d0",
+        "004ce79b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0",
+    "signature": "void engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0(CBitFont * this_ptr, int character_code, int x_pos, int y_pos, int z_pos, int width, int height, int color_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00407620",
+      "name": "engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620"
+    },
+    {
+      "addr": "00406d80",
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
+    },
+    {
+      "addr": "0050cda0",
+      "name": "engine_matrix.c_projectCachedPoint_FUN_0050cda0"
+    },
+    {
+      "addr": "005dd800",
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b550",
+      "name": "g_FontTextureInfo",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "0067b558",
+      "name": "g_TempFilenameBuffer",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067b559",
+      "name": "DAT_0067b559",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067b55a",
+      "name": "DAT_0067b55a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067b55b",
+      "name": "DAT_0067b55b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772554",
+      "name": "g_QuadVertex0",
+      "type": "SRenderVertex",
+      "value": null
+    },
+    {
+      "addr": "00772558",
+      "name": "g_QuadVertex0_Y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0077255c",
+      "name": "g_QuadVertex0_U",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772560",
+      "name": "g_QuadVertex0_V",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0077256c",
+      "name": "DAT_0077256c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772570",
+      "name": "DAT_00772570",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772574",
+      "name": "g_CurrentRenderColorRed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772578",
+      "name": "g_CurrentRenderColorGreen",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0077257c",
+      "name": "g_CurrentRenderColorBlue",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772584",
+      "name": "g_QuadVertex1",
+      "type": "SRenderVertex",
+      "value": null
+    },
+    {
+      "addr": "00772588",
+      "name": "g_QuadVertex1_Y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0077259c",
+      "name": "DAT_0077259c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007725a0",
+      "name": "DAT_007725a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007725b4",
+      "name": "g_QuadVertex2",
+      "type": "SRenderVertex",
+      "value": null
+    },
+    {
+      "addr": "007725b8",
+      "name": "g_QuadVertex2_Y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007725cc",
+      "name": "g_TempTextureU",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007725d0",
+      "name": "g_TempTextureV",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007725e4",
+      "name": "g_QuadVertex3",
+      "type": "SRenderVertex",
+      "value": null
+    },
+    {
+      "addr": "007725e8",
+      "name": "g_QuadVertex3_Y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007725fc",
+      "name": "DAT_007725fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00772600",
+      "name": "DAT_00772600",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f48",
+      "name": "g_SourcePaletteData",
+      "type": "char[768]",
+      "value": null
+    },
+    {
+      "addr": "02d01f49",
+      "name": "CHAR_ARRAY_02d01f49",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4a",
+      "name": "CHAR_ARRAY_02d01f4a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d02548",
+      "name": "g_ViewportCenterXFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_ViewportCenterYFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02550",
+      "name": "g_ViewportRightFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02554",
+      "name": "g_ViewportBottomFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d03e84",
+      "name": "g_CurrentTextureOpacityData",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d7b418",
+      "name": "g_ShadowColorRed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d7b41c",
+      "name": "g_ShadowColorGreen",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d7b420",
+      "name": "g_ShadowColorBlue",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 88,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "character_code",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "z_pos",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color_mode",
+        "offset": 32,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 17,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 51,
+      "match": "9.18341e-41",
+      "text": "g_QuadVertex0.fog = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 52,
+      "match": "9.18341e-41",
+      "text": "g_QuadVertex0.light = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar18 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + ((uint)bVar18 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar18 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + ((uint)bVar18 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar18 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + ((uint)bVar18 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 122,
+      "match": "unaff_EDI",
+      "text": "engine_matrix_c_projectCachedPoint_FUN_0050cda0(unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 124,
+      "match": "unaff_EDI",
+      "text": "engine_matrix_c_projectCachedPoint_FUN_0050cda0(unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 131,
+      "match": "unaff_EDI",
+      "text": "g_QuadVertex2.u = (float)(((int)fVar1 + iVar11) - unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 137,
+      "match": "unaff_EBX",
+      "text": "g_RenderVertexBuffer[unaff_EBX].u = fVar1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 138,
+      "match": "unaff_EBX",
+      "text": "g_RenderVertexBuffer[unaff_EBX].v = fVar2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 142,
+      "match": "unaff_ESI",
+      "text": "g_RenderVertexBuffer[unaff_ESI].u = fVar1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 144,
+      "match": "unaff_ESI",
+      "text": "g_RenderVertexBuffer[unaff_ESI].v = fVar12;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 154,
+      "match": "&stack0xffffffc4",
+      "text": "((SMRGLHeaderPrimitive *)&stack0xffffffc4,iVar15,0,iVar8,iVar7);",
+      "type": "stack_ref"
     }
   ]
 }

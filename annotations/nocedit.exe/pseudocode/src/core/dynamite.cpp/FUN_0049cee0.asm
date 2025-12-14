@@ -18,6 +18,6 @@ section .text
         ;   Label: core_dynamite.cpp_FUN_0049cee0
     PUSH 0x43fa0000                     ; 0049cee3
     PUSH 0x43c80000                     ; 0049cee8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0049ceed | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0049ceed
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

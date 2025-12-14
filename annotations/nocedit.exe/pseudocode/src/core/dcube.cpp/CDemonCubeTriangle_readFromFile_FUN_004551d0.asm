@@ -32,10 +32,10 @@ section .text
     PUSH EDX                            ; 004551de
     PUSH 0x4                            ; 004551df
     PUSH 0x3                            ; 004551e1
-    PUSH 0x15c4824                      ; 004551e3 | uint[3] g_TempTriangleIndices
-    CALL crt_stdio.c_fread_FUN_005fd990 ; 004551e8 | SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)
-    MOV EDX,dword ptr [0x015c4824]      ; 004551ed | uint[3] g_TempTriangleIndices
+    PUSH 0x15c4824                      ; 004551e3 | g_TempTriangleIndices
+    CALL crt_stdio.c_fread_FUN_005fd990 ; 004551e8
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
+    MOV EDX,dword ptr [0x015c4824]      ; 004551ed | g_TempTriangleIndices
     LEA EAX,[EDX*0x4 + 0x0]             ; 004551f3
     SUB EAX,EDX                         ; 004551fa
     SHL EAX,0x2                         ; 004551fc
@@ -60,8 +60,8 @@ section .text
     ADD ESI,EAX                         ; 0045523d
     PUSH EBX                            ; 0045523f
     MOV dword ptr [EBX + -0x4],ESI      ; 00455240
-    CALL crt_stdio.c_fread_FUN_005fd990 ; 00455243 | SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fread_FUN_005fd990 ; 00455243
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
     ADD ESP,0x10                        ; 00455248
     POP ESI                             ; 0045524b
     POP EBX                             ; 0045524c

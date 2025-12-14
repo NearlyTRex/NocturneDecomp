@@ -1,140 +1,140 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 13, 
-    "global_count": 1, 
-    "total_lines": 18, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }, 
-    {
-      "name": "crt_time.c_localtime_r_FUN_00600230", 
-      "addr": "00600230"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00600288", 
-    "signature": "tm * crt_time.c_localtime_FUN_00600288(time_t * timer)", 
-    "address_range": [
-      [
-        "00600288", 
-        "0060029f"
-      ]
-    ], 
-    "name": "crt_time.c_localtime_FUN_00600288"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "time_t *", 
-        "size": 4, 
-        "name": "timer"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 8,
+    "cross_reference_count": 13,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "0050708b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
+      "addr": "00506f10",
+      "from_addr": "0050708b",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b24e9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0", 
-      "addr": "005b1fd0"
-    }, 
+      "addr": "005b1fd0",
+      "from_addr": "005b24e9",
+      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006081e4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_utime_FUN_00608160", 
-      "addr": "00608160"
-    }, 
+      "addr": "00608160",
+      "from_addr": "006081e4",
+      "name": "crt_io.c_utime_FUN_00608160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b4e76", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
-      "addr": "004b4220"
-    }, 
+      "addr": "004b4220",
+      "from_addr": "004b4e76",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b7530", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460", 
-      "addr": "004b7460"
-    }, 
+      "addr": "004b7460",
+      "from_addr": "004b7530",
+      "name": "engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bbf4b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bbf4b",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b78d1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0", 
-      "addr": "004b76d0"
-    }, 
+      "addr": "004b76d0",
+      "from_addr": "004b78d1",
+      "name": "engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b6eb6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10", 
-      "addr": "004b6e10"
-    }, 
+      "addr": "004b6e10",
+      "from_addr": "004b6eb6",
+      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b8086", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50", 
-      "addr": "004b7f50"
-    }, 
+      "addr": "004b7f50",
+      "from_addr": "004b8086",
+      "name": "engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046bb04", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_embedCopyrightWatermark_FUN_0046b9a0", 
-      "addr": "0046b9a0"
-    }, 
+      "addr": "0046b9a0",
+      "from_addr": "0046bb04",
+      "name": "shape_design.c_embedCopyrightWatermark_FUN_0046b9a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049f831", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420", 
-      "addr": "0049f420"
-    }, 
+      "addr": "0049f420",
+      "from_addr": "0049f831",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a3449", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360", 
-      "addr": "004a3360"
-    }, 
+      "addr": "004a3360",
+      "from_addr": "004a3449",
+      "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005adc59", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
+      "addr": "005adba0",
+      "from_addr": "005adc59",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00600288",
+    "address_range": [
+      [
+        "00600288",
+        "0060029f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c_localtime_FUN_00600288",
+    "signature": "tm * crt_time.c_localtime_FUN_00600288(time_t * timer)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    },
+    {
+      "addr": "00600230",
+      "name": "crt_time.c_localtime_r_FUN_00600230"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "timer",
+        "offset": 4,
+        "size": 4,
+        "type": "time_t *"
+      }
+    ]
+  },
+  "suspects": []
 }

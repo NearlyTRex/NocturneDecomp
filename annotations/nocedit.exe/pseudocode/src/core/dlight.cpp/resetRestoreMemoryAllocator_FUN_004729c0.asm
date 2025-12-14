@@ -18,6 +18,6 @@ section .text
 
     XOR EDX,EDX                         ; 004729c0
         ;   Label: core_dlight.cpp_resetRestoreMemoryAllocator_FUN_004729c0
-    MOV dword ptr [0x026a580c],EDX      ; 004729c2 | uint g_ShadowRestoreAllocator
+    MOV dword ptr [0x026a580c],EDX      ; 004729c2 | g_ShadowRestoreAllocator
     RET                                 ; 004729c8
 

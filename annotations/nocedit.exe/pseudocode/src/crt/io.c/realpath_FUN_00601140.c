@@ -17,7 +17,7 @@ char * __cdecl crt_io_c_realpath_FUN_00601140(char *buffer,char *path,SIZE_T buf
   
   if (buffer == (char *)0x0) {
     buffer_size = 0x104;
-    buffer = (char *)crt_memory_c_malloc_FUN_00601bb0(0x104);
+    buffer = crt_memory_c_malloc_FUN_00601bb0(0x104);
     unaff_EBP = (char (*) [4])buffer;
     if ((char (*) [4])buffer == (char (*) [4])0x0) {
       crt_errno_c_setErrno_FUN_00602790(5);

@@ -24,8 +24,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0041addb
     MOV ESI,dword ptr [EDX + 0x28c]     ; 0041addf
     CMP ESI,0x3                         ; 0041ade5
-    JGE 0x0041ae36                      ; 0041ade8 | LAB_0041ae36
-        ;   XREF to: 0041ae36 (CONDITIONAL_JUMP)
+    JGE 0x0041ae36                      ; 0041ade8
+        ;   XREF to: 0041ae36 (CONDITIONAL_JUMP)  ; LAB_0041ae36
     MOV EBP,ESI                         ; 0041adea
     IMUL ESI,ESI,0x194                  ; 0041adec
     LEA EAX,[EDX + 0x290]               ; 0041adf2
@@ -33,13 +33,13 @@ section .text
     ADD EAX,ESI                         ; 0041adf9
     MOV dword ptr [EDX + 0x28c],EBP     ; 0041adfb
     CMP EAX,ECX                         ; 0041ae01
-    JNZ 0x0041ae3a                      ; 0041ae03 | LAB_0041ae3a
-        ;   XREF to: 0041ae3a (CONDITIONAL_JUMP)
+    JNZ 0x0041ae3a                      ; 0041ae03
+        ;   XREF to: 0041ae3a (CONDITIONAL_JUMP)  ; LAB_0041ae3a
     LEA EDX,[EAX + 0xc]                 ; 0041ae05
         ;   Label: LAB_0041ae05
     CMP EDX,EBX                         ; 0041ae08
-    JZ 0x0041ae1c                       ; 0041ae0a | LAB_0041ae1c
-        ;   XREF to: 0041ae1c (CONDITIONAL_JUMP)
+    JZ 0x0041ae1c                       ; 0041ae0a
+        ;   XREF to: 0041ae1c (CONDITIONAL_JUMP)  ; LAB_0041ae1c
     MOV ECX,dword ptr [EBX]             ; 0041ae0c
     MOV dword ptr [EDX],ECX             ; 0041ae0e
     MOV ECX,dword ptr [EBX + 0x4]       ; 0041ae10
@@ -51,12 +51,12 @@ section .text
     PUSH EDX                            ; 0041ae20
     LEA EBX,[EAX + 0x18]                ; 0041ae21
     PUSH EBX                            ; 0041ae24
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0041ae25 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 0041ae25
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0041ae2a
     PUSH EBX                            ; 0041ae2d
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 0041ae2e | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 0041ae2e
+        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0041ae33
     POP EBP                             ; 0041ae36
         ;   Label: LAB_0041ae36
@@ -70,6 +70,6 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 0041ae41
     MOV EDX,dword ptr [ECX + 0x8]       ; 0041ae44
     MOV dword ptr [EAX + 0x8],EDX       ; 0041ae47
-    JMP 0x0041ae05                      ; 0041ae4a | LAB_0041ae05
-        ;   XREF to: 0041ae05 (UNCONDITIONAL_JUMP)
+    JMP 0x0041ae05                      ; 0041ae4a
+        ;   XREF to: 0041ae05 (UNCONDITIONAL_JUMP)  ; LAB_0041ae05
 

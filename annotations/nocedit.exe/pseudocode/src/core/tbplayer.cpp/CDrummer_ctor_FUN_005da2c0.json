@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 27, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_npc.cpp_FUN_005447e0", 
-      "addr": "005447e0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_drummer_dfm_00654bed", 
-      "addr": "00654bed", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CDrummerVTable", 
-      "addr": "00664074", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005da2c0", 
-    "signature": "CDrummer * core_tbplayer.cpp_CDrummer_ctor_FUN_005da2c0(CDrummer * this_ptr)", 
-    "address_range": [
-      [
-        "005da2c0", 
-        "005da2ed"
-      ]
-    ], 
-    "name": "core_tbplayer.cpp_CDrummer_ctor_FUN_005da2c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrummer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 18,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
   "cross_references": [
     {
-      "from_addr": "005da29a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tbplayer.cpp_FUN_005da280", 
-      "addr": "005da280"
+      "addr": "005da280",
+      "from_addr": "005da29a",
+      "name": "core_tbplayer.cpp_FUN_005da280",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005da2c0",
+    "address_range": [
+      [
+        "005da2c0",
+        "005da2ed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_tbplayer.cpp_CDrummer_ctor_FUN_005da2c0",
+    "signature": "CDrummer * core_tbplayer.cpp_CDrummer_ctor_FUN_005da2c0(CDrummer * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005447e0",
+      "name": "core_npc.cpp_FUN_005447e0"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654bed",
+      "name": "s_drummer_dfm_00654bed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00664074",
+      "name": "g_CDrummerVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrummer *"
+      }
+    ]
+  },
+  "suspects": []
 }

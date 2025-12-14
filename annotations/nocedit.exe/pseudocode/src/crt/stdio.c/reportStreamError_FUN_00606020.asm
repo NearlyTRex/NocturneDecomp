@@ -40,8 +40,8 @@ section .text
     MOV EDX,ECX                         ; 00606034
     MOV dword ptr [EAX + 0x10],ECX      ; 00606036
     AND EDX,EBX                         ; 00606039
-    JNZ 0x00606042                      ; 0060603b | LAB_00606042
-        ;   XREF to: 00606042 (CONDITIONAL_JUMP)
+    JNZ 0x00606042                      ; 0060603b
+        ;   XREF to: 00606042 (CONDITIONAL_JUMP)  ; LAB_00606042
     ADD ESP,0x4                         ; 0060603d
     POP EBX                             ; 00606040
     RET                                 ; 00606041
@@ -49,8 +49,8 @@ section .text
         ;   Label: LAB_00606042
     LEA EAX,[ESP + 0x4]                 ; 00606043
     PUSH EAX                            ; 00606047
-    CALL crt_stdio.c_storeErrorState_FUN_0060b78e ; 00606048 | void crt_stdio.c_storeErrorState_FUN_0060b78e(uint * destination, uint error_state)
-        ;   XREF to: 0060b78e (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_storeErrorState_FUN_0060b78e ; 00606048
+        ;   XREF to: 0060b78e (UNCONDITIONAL_CALL)  ; void crt_stdio.c_storeErrorState_FUN_0060b78e(uint * destination, uint error_state)
     ADD ESP,0x8                         ; 0060604d
     ADD ESP,0x4                         ; 00606050
     POP EBX                             ; 00606053

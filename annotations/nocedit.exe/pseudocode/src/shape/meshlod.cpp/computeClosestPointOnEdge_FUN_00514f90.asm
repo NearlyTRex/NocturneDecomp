@@ -71,8 +71,8 @@ section .text
     FCOMP double ptr [ESP]              ; 00514ff2
     FNSTSW AX                           ; 00514ff5
     SAHF                                ; 00514ff7
-    JNC 0x005150a0                      ; 00514ff8 | LAB_005150a0
-        ;   XREF to: 005150a0 (CONDITIONAL_JUMP)
+    JNC 0x005150a0                      ; 00514ff8
+        ;   XREF to: 005150a0 (CONDITIONAL_JUMP)  ; LAB_005150a0
     FLD double ptr [ESP]                ; 00514ffe
     FLD1                                ; 00515001
     FLD float ptr [ESP + 0x1c]          ; 00515003
@@ -115,14 +115,14 @@ section .text
     FCOMP double ptr [ESP + 0x8]        ; 00515070
     FNSTSW AX                           ; 00515074
     SAHF                                ; 00515076
-    JNC 0x005150a0                      ; 00515077 | LAB_005150a0
-        ;   XREF to: 005150a0 (CONDITIONAL_JUMP)
+    JNC 0x005150a0                      ; 00515077
+        ;   XREF to: 005150a0 (CONDITIONAL_JUMP)  ; LAB_005150a0
     FLD double ptr [ESP + 0x8]          ; 00515079
     FCOMP double ptr [ESP]              ; 0051507d
     FNSTSW AX                           ; 00515080
     SAHF                                ; 00515082
-    JC 0x005150b2                       ; 00515083 | LAB_005150b2
-        ;   XREF to: 005150b2 (CONDITIONAL_JUMP)
+    JC 0x005150b2                       ; 00515083
+        ;   XREF to: 005150b2 (CONDITIONAL_JUMP)  ; LAB_005150b2
     MOV EDX,dword ptr [EBX]             ; 00515085
     MOV dword ptr [ECX],EDX             ; 00515087
     LEA EDX,[EBX + 0x4]                 ; 00515089
@@ -146,8 +146,8 @@ section .text
     MOV EDX,dword ptr [EDX]             ; 005150a8
     MOV dword ptr [ESI],EDX             ; 005150aa
     MOV EDX,dword ptr [ESP + 0x34]      ; 005150ac
-    JMP 0x00515093                      ; 005150b0 | LAB_00515093
-        ;   XREF to: 00515093 (UNCONDITIONAL_JUMP)
+    JMP 0x00515093                      ; 005150b0
+        ;   XREF to: 00515093 (UNCONDITIONAL_JUMP)  ; LAB_00515093
     FLD float ptr [ESP + 0x1c]          ; 005150b2
         ;   Label: LAB_005150b2
     FLD double ptr [ESP + 0x8]          ; 005150b6

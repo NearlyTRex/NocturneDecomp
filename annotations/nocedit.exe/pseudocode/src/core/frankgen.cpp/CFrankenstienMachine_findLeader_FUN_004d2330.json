@@ -1,132 +1,132 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 24, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 4, 
-    "global_count": 10, 
-    "total_lines": 65, 
-    "assembly_lines": 41, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_frankgen_cpp_0062ab4f", 
-      "addr": "0062ab4f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CFrankenstienMachine_fin_0062ab64", 
-      "addr": "0062ab64", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CFrankenstienMachineClassInfo.name_hash", 
-      "addr": "02d7b7ec", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.actor_list_ptr", 
-      "addr": "032613cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.actor_list_data[0]", 
-      "addr": "032613d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_032613d4", 
-      "addr": "032613d4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004d2330", 
-    "signature": "undefined core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()", 
-    "address_range": [
-      [
-        "004d2330", 
-        "004d2393"
-      ]
-    ], 
-    "name": "core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 41,
+    "complexity_score": 24,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 10,
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
+  },
   "cross_references": [
     {
-      "from_addr": "004d1f8a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_frankgen.cpp_FUN_004d1f70", 
-      "addr": "004d1f70"
-    }, 
+      "addr": "004d1f70",
+      "from_addr": "004d1f8a",
+      "name": "core_frankgen.cpp_FUN_004d1f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d2536", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_frankgen.cpp_FUN_004d2500", 
-      "addr": "004d2500"
-    }, 
+      "addr": "004d2500",
+      "from_addr": "004d2536",
+      "name": "core_frankgen.cpp_FUN_004d2500",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d2653", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_frankgen.cpp_FUN_004d25f0", 
-      "addr": "004d25f0"
-    }, 
+      "addr": "004d25f0",
+      "from_addr": "004d2653",
+      "name": "core_frankgen.cpp_FUN_004d25f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d1a57", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_frankgen.cpp_PlaySounds_FUN_004d1a40", 
-      "addr": "004d1a40"
+      "addr": "004d1a40",
+      "from_addr": "004d1a57",
+      "name": "core_frankgen.cpp_PlaySounds_FUN_004d1a40",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004d2330",
+    "address_range": [
+      [
+        "004d2330",
+        "004d2393"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330",
+    "signature": "undefined core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062ab4f",
+      "name": "s_core_frankgen_cpp_0062ab4f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ab64",
+      "name": "s_CFrankenstienMachine_fin_0062ab64",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02d7b7ec",
+      "name": "g_CFrankenstienMachineClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032613cc",
+      "name": "g_CDemonSetInstance.actor_list_ptr",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d0",
+      "name": "g_CDemonSetInstance.actor_list_data[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032613d4",
+      "name": "DAT_032613d4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

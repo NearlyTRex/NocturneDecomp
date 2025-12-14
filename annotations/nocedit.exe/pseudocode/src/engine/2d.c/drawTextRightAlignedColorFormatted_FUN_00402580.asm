@@ -34,8 +34,8 @@ section .text
     PUSH EDX                            ; 004025a5
     LEA EAX,[ESP + 0x8]                 ; 004025a6
     PUSH EAX                            ; 004025aa
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004025ab | int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004025ab
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 004025b0
     MOV EBX,dword ptr [ESP + 0x1014]    ; 004025b3
     PUSH EBX                            ; 004025ba
@@ -45,8 +45,8 @@ section .text
     XOR ECX,ECX                         ; 004025c7
     PUSH EAX                            ; 004025c9
     MOV dword ptr [ESP + 0x100c],ECX    ; 004025ca
-    CALL engine_2d.c_drawTextRightAlignedColor_FUN_00402530 ; 004025d1 | void engine_2d.c_drawTextRightAlignedColor_FUN_00402530(char * text, int y_pos, int right_x)
-        ;   XREF to: 00402530 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawTextRightAlignedColor_FUN_00402530 ; 004025d1
+        ;   XREF to: 00402530 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextRightAlignedColor_FUN_00402530(char * text, int y_pos, int right_x)
     ADD ESP,0xc                         ; 004025d6
     ADD ESP,0x1004                      ; 004025d9
     POP ESI                             ; 004025df

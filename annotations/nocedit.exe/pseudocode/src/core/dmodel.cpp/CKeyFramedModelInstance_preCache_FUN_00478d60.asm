@@ -30,8 +30,8 @@ section .text
         ;   Label: core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
     ADD EAX,0x78                        ; 00478d64
     PUSH EAX                            ; 00478d67
-    CALL core_dmodel.cpp_loadModel_FUN_00478c00 ; 00478d68 | CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00478c00(char * filename)
-        ;   XREF to: 00478c00 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_loadModel_FUN_00478c00 ; 00478d68
+        ;   XREF to: 00478c00 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00478c00(char * filename)
     ADD ESP,0x4                         ; 00478d6d
     MOV EDX,dword ptr [ESP + 0x4]       ; 00478d70
     MOV dword ptr [EDX + 0x178],EAX     ; 00478d74

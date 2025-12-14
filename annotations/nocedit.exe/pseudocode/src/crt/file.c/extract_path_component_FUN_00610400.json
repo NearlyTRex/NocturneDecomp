@@ -1,86 +1,86 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 71, 
-    "assembly_lines": 49, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_mbstrnbytes_FUN_00605ec0", 
-      "addr": "00605ec0"
-    }, 
-    {
-      "name": "crt_string.c_mbstrncpy_FUN_00605e90", 
-      "addr": "00605e90"
-    }, 
-    {
-      "name": "crt_string.c_mbstrnlen_FUN_00605e50", 
-      "addr": "00605e50"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00610400", 
-    "signature": "char * crt_file.c_extract_path_component_FUN_00610400(char * * component_ptr, char * buffer, char * source, char * buffer_end)", 
-    "address_range": [
-      [
-        "00610400", 
-        "0061045f"
-      ]
-    ], 
-    "name": "crt_file.c_extract_path_component_FUN_00610400"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char * *", 
-        "size": 4, 
-        "name": "component_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "source"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer_end"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 49,
+    "complexity_score": 22,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
+  },
   "cross_references": [
     {
-      "from_addr": "00610588", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_file.c_splitpath_s_FUN_00610460", 
-      "addr": "00610460"
+      "addr": "00610460",
+      "from_addr": "00610588",
+      "name": "crt_file.c_splitpath_s_FUN_00610460",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00610400",
+    "address_range": [
+      [
+        "00610400",
+        "0061045f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_file.c_extract_path_component_FUN_00610400",
+    "signature": "char * crt_file.c_extract_path_component_FUN_00610400(char * * component_ptr, char * buffer, char * source, char * buffer_end)"
+  },
+  "function_calls": [
+    {
+      "addr": "00605ec0",
+      "name": "crt_string.c_mbstrnbytes_FUN_00605ec0"
+    },
+    {
+      "addr": "00605e90",
+      "name": "crt_string.c_mbstrncpy_FUN_00605e90"
+    },
+    {
+      "addr": "00605e50",
+      "name": "crt_string.c_mbstrnlen_FUN_00605e50"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "component_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "source",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_end",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

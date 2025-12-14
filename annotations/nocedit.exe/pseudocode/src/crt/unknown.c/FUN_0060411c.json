@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 100, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 199, 
-    "assembly_lines": 184, 
-    "suspect_count": 8, 
+    "assembly_lines": 184,
+    "complexity_score": 100,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 8,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_unknown.c_FUN_0060403f", 
-      "addr": "0060403f"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_00604267", 
-      "addr": "00604267"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_00604478", 
-      "addr": "00604478"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,byte *unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 10, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_EBX = 0;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*(byte **)(unaff_EBP + -0x1c) = unaff_EBX;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*(byte **)(unaff_EBP + -0x1c) = unaff_EBX;"
-    }, 
-    {
-      "line": 15, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar1 = *(int *)(unaff_EBP + -0x24) + 8;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*(int *)(unaff_EBP + -0x24) = iVar1;"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "crt_unknown_c_FUN_0060403f(iVar1,unaff_retaddr,unaff_EBX,param_5);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0060411c", 
-    "signature": "undefined crt_unknown.c_FUN_0060411c()", 
-    "address_range": [
-      [
-        "0060411c", 
-        "00604266"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_0060411c"
-  }, 
-  "stack_frame": {
-    "local_size": 8, 
-    "variables": [
-      {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined2", 
-        "size": 2, 
-        "name": "local_4"
-      }, 
-      {
-        "offset": 0, 
-        "is_param": true, 
-        "type": "undefined2", 
-        "size": 2, 
-        "name": "local_res0"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 199
+  },
   "cross_references": [
     {
-      "from_addr": "006040d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060403f", 
-      "addr": "0060403f"
+      "addr": "0060403f",
+      "from_addr": "006040d5",
+      "name": "crt_unknown.c_FUN_0060403f",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060411c",
+    "address_range": [
+      [
+        "0060411c",
+        "00604266"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0060411c",
+    "signature": "undefined crt_unknown.c_FUN_0060411c()"
+  },
+  "function_calls": [
+    {
+      "addr": "0060403f",
+      "name": "crt_unknown.c_FUN_0060403f"
+    },
+    {
+      "addr": "00604267",
+      "name": "crt_unknown.c_FUN_00604267"
+    },
+    {
+      "addr": "00604478",
+      "name": "crt_unknown.c_FUN_00604478"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": true,
+        "name": "local_res0",
+        "offset": 0,
+        "size": 2,
+        "type": "undefined2"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,byte *unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EBX",
+      "text": "*unaff_EBX = 0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "text": "*(byte **)(unaff_EBP + -0x1c) = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
+      "text": "*(byte **)(unaff_EBP + -0x1c) = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBP",
+      "text": "iVar1 = *(int *)(unaff_EBP + -0x24) + 8;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "text": "*(int *)(unaff_EBP + -0x24) = iVar1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBX",
+      "text": "crt_unknown_c_FUN_0060403f(iVar1,unaff_retaddr,unaff_EBX,param_5);",
+      "type": "unaffected_reg"
     }
   ]
 }

@@ -1,155 +1,155 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 107, 
-    "assembly_lines": 77, 
-    "suspect_count": 1, 
+    "assembly_lines": 77,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 1,
+    "pseudocode_lines": 30,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30", 
-      "addr": "00408a30"
-    }, 
-    {
-      "name": "core_backgnd.cpp_cleanupVector_FUN_004126e0", 
-      "addr": "004126e0"
-    }, 
-    {
-      "name": "core_backgnd.cpp_freeFires_FUN_00412700", 
-      "addr": "00412700"
-    }, 
-    {
-      "name": "core_backgnd.cpp_freeFlames_FUN_00412720", 
-      "addr": "00412720"
-    }, 
-    {
-      "name": "core_cloth.cpp_FUN_0043bf80", 
-      "addr": "0043bf80"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40", 
-      "addr": "0059de40"
-    }, 
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
-      "addr": "005fe632"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CMobsterTypeInfo", 
-      "addr": "00661900", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 27, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);"
-    }
-  ], 
+    ],
+    "total_lines": 107
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00527c70", 
-    "signature": "CMobster * core_mobster.cpp_CMobster_dtor_FUN_00527c70(CMobster * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)", 
+    "address": "00527c70",
     "address_range": [
       [
-        "00527c70", 
+        "00527c70",
         "00527d28"
       ]
-    ], 
-    "name": "core_mobster.cpp_CMobster_dtor_FUN_00527c70"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_mobster.cpp_CMobster_dtor_FUN_00527c70",
+    "signature": "CMobster * core_mobster.cpp_CMobster_dtor_FUN_00527c70(CMobster * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a30",
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30"
+    },
+    {
+      "addr": "004126e0",
+      "name": "core_backgnd.cpp_cleanupVector_FUN_004126e0"
+    },
+    {
+      "addr": "00412700",
+      "name": "core_backgnd.cpp_freeFires_FUN_00412700"
+    },
+    {
+      "addr": "00412720",
+      "name": "core_backgnd.cpp_freeFlames_FUN_00412720"
+    },
+    {
+      "addr": "0043bf80",
+      "name": "core_cloth.cpp_FUN_0043bf80"
+    },
+    {
+      "addr": "0059de40",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40"
+    },
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "005fe632",
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00661900",
+      "name": "g_CMobsterTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 40,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 36,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMobster *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMobster *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d1"
-      }, 
+        "is_param": true,
+        "name": "d1",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d2"
-      }, 
+        "is_param": true,
+        "name": "d2",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d3"
-      }, 
+        "is_param": true,
+        "name": "d3",
+        "offset": 16,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d4"
-      }, 
+        "is_param": true,
+        "name": "d4",
+        "offset": 20,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d5"
-      }, 
+        "is_param": true,
+        "name": "d5",
+        "offset": 24,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d6"
-      }, 
+        "is_param": true,
+        "name": "d6",
+        "offset": 28,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 32, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d7"
-      }, 
+        "is_param": true,
+        "name": "d7",
+        "offset": 32,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 36, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d8"
+        "is_param": true,
+        "name": "d8",
+        "offset": 36,
+        "size": 4,
+        "type": "uint"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 36
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 27,
+      "match": "pCVar2[-1].",
+      "text": "((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);",
+      "type": "negative_offset"
+    }
+  ]
 }

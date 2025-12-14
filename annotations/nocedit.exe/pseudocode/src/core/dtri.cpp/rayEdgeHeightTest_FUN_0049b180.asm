@@ -58,14 +58,14 @@ section .text
     FCOMP double ptr [ESP + 0x40]       ; 0049b1be
     FNSTSW AX                           ; 0049b1c2
     SAHF                                ; 0049b1c4
-    JNC 0x0049b2e5                      ; 0049b1c5 | LAB_0049b2e5
-        ;   XREF to: 0049b2e5 (CONDITIONAL_JUMP)
+    JNC 0x0049b2e5                      ; 0049b1c5
+        ;   XREF to: 0049b2e5 (CONDITIONAL_JUMP)  ; LAB_0049b2e5
     FLD float ptr [EDX + 0x8]           ; 0049b1cb
     FMUL double ptr [ESP + 0x18]        ; 0049b1ce
     FLD float ptr [EDX + 0x8]           ; 0049b1d2
     FMUL ST0                            ; 0049b1d5
     FLD double ptr [ESP + 0x40]         ; 0049b1d7
-    FMUL double ptr [0x00622e12]        ; 0049b1db | double g_QuadraticQuarter
+    FMUL double ptr [0x00622e12]        ; 0049b1db | g_QuadraticQuarter
     FLD float ptr [EDX]                 ; 0049b1e1
     FMUL ST0                            ; 0049b1e3
     FLD float ptr [EDX]                 ; 0049b1e5
@@ -76,7 +76,7 @@ section .text
     FLD float ptr [EBP + 0x18]          ; 0049b1f1
     FMUL ST0                            ; 0049b1f4
     FXCH ST3                            ; 0049b1f6
-    FMUL double ptr [0x00622e0a]        ; 0049b1f8 | double g_QuadraticDouble
+    FMUL double ptr [0x00622e0a]        ; 0049b1f8 | g_QuadraticDouble
     FXCH ST3                            ; 0049b1fe
     FSUBP ST2,ST0                       ; 0049b200
     FMULP                               ; 0049b202
@@ -90,15 +90,15 @@ section .text
     FCOMP double ptr [ESP + 0x8]        ; 0049b218
     FNSTSW AX                           ; 0049b21c
     SAHF                                ; 0049b21e
-    JA 0x0049b2e5                       ; 0049b21f | LAB_0049b2e5
-        ;   XREF to: 0049b2e5 (CONDITIONAL_JUMP)
+    JA 0x0049b2e5                       ; 0049b21f
+        ;   XREF to: 0049b2e5 (CONDITIONAL_JUMP)  ; LAB_0049b2e5
     FLD double ptr [ESP + 0x38]         ; 0049b225
     FCHS                                ; 0049b229
     FLD double ptr [ESP + 0x8]          ; 0049b22b
     FSQRT                               ; 0049b22f
     FSUBP                               ; 0049b231
     FLD double ptr [ESP + 0x40]         ; 0049b233
-    FMUL double ptr [0x00622e0a]        ; 0049b237 | double g_QuadraticDouble
+    FMUL double ptr [0x00622e0a]        ; 0049b237 | g_QuadraticDouble
     FDIVP                               ; 0049b23d
     FLDZ                                ; 0049b23f
     XOR ECX,ECX                         ; 0049b241
@@ -107,14 +107,14 @@ section .text
     FCOMP double ptr [ESP + 0x10]       ; 0049b249
     FNSTSW AX                           ; 0049b24d
     SAHF                                ; 0049b24f
-    JA 0x0049b286                       ; 0049b250 | LAB_0049b286
-        ;   XREF to: 0049b286 (CONDITIONAL_JUMP)
+    JA 0x0049b286                       ; 0049b250
+        ;   XREF to: 0049b286 (CONDITIONAL_JUMP)  ; LAB_0049b286
     FLD1                                ; 0049b252
     FCOMP double ptr [ESP + 0x10]       ; 0049b254
     FNSTSW AX                           ; 0049b258
     SAHF                                ; 0049b25a
-    JC 0x0049b286                       ; 0049b25b | LAB_0049b286
-        ;   XREF to: 0049b286 (CONDITIONAL_JUMP)
+    JC 0x0049b286                       ; 0049b25b
+        ;   XREF to: 0049b286 (CONDITIONAL_JUMP)  ; LAB_0049b286
     FLD float ptr [ESI + 0x4]           ; 0049b25d
     FSUB float ptr [EDX + 0x4]          ; 0049b260
     FMUL double ptr [ESP + 0x10]        ; 0049b263
@@ -125,8 +125,8 @@ section .text
     FCOMP double ptr [ESP + 0x20]       ; 0049b272
     FNSTSW AX                           ; 0049b276
     SAHF                                ; 0049b278
-    JNC 0x0049b286                      ; 0049b279 | LAB_0049b286
-        ;   XREF to: 0049b286 (CONDITIONAL_JUMP)
+    JNC 0x0049b286                      ; 0049b279
+        ;   XREF to: 0049b286 (CONDITIONAL_JUMP)  ; LAB_0049b286
     FLD double ptr [ESP + 0x20]         ; 0049b27b
     MOV ECX,0x1                         ; 0049b27f
     FSTP float ptr [EBX]                ; 0049b284
@@ -135,7 +135,7 @@ section .text
     FSQRT                               ; 0049b28a
     FSUB double ptr [ESP + 0x38]        ; 0049b28c
     FLD double ptr [ESP + 0x40]         ; 0049b290
-    FMUL double ptr [0x00622e0a]        ; 0049b294 | double g_QuadraticDouble
+    FMUL double ptr [0x00622e0a]        ; 0049b294 | g_QuadraticDouble
     FDIVP                               ; 0049b29a
     FLDZ                                ; 0049b29c
     FXCH                                ; 0049b29e
@@ -143,14 +143,14 @@ section .text
     FCOMP double ptr [ESP]              ; 0049b2a3
     FNSTSW AX                           ; 0049b2a6
     SAHF                                ; 0049b2a8
-    JA 0x0049b2dd                       ; 0049b2a9 | LAB_0049b2dd
-        ;   XREF to: 0049b2dd (CONDITIONAL_JUMP)
+    JA 0x0049b2dd                       ; 0049b2a9
+        ;   XREF to: 0049b2dd (CONDITIONAL_JUMP)  ; LAB_0049b2dd
     FLD1                                ; 0049b2ab
     FCOMP double ptr [ESP]              ; 0049b2ad
     FNSTSW AX                           ; 0049b2b0
     SAHF                                ; 0049b2b2
-    JC 0x0049b2dd                       ; 0049b2b3 | LAB_0049b2dd
-        ;   XREF to: 0049b2dd (CONDITIONAL_JUMP)
+    JC 0x0049b2dd                       ; 0049b2b3
+        ;   XREF to: 0049b2dd (CONDITIONAL_JUMP)  ; LAB_0049b2dd
     FLD float ptr [ESI + 0x4]           ; 0049b2b5
     FSUB float ptr [EDX + 0x4]          ; 0049b2b8
     FMUL double ptr [ESP]               ; 0049b2bb
@@ -161,8 +161,8 @@ section .text
     FCOMP double ptr [ESP + 0x28]       ; 0049b2c9
     FNSTSW AX                           ; 0049b2cd
     SAHF                                ; 0049b2cf
-    JNC 0x0049b2dd                      ; 0049b2d0 | LAB_0049b2dd
-        ;   XREF to: 0049b2dd (CONDITIONAL_JUMP)
+    JNC 0x0049b2dd                      ; 0049b2d0
+        ;   XREF to: 0049b2dd (CONDITIONAL_JUMP)  ; LAB_0049b2dd
     FLD double ptr [ESP + 0x28]         ; 0049b2d2
     MOV ECX,0x1                         ; 0049b2d6
     FSTP float ptr [EBX]                ; 0049b2db

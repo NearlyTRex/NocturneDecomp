@@ -15,8 +15,8 @@ section .text
     FCOMPP                              ; 004b198c
     FNSTSW AX                           ; 004b198e
     SAHF                                ; 004b1990
-    JNC 0x004b1999                      ; 004b1991 | LAB_004b1999
-        ;   XREF to: 004b1999 (CONDITIONAL_JUMP)
+    JNC 0x004b1999                      ; 004b1991
+        ;   XREF to: 004b1999 (CONDITIONAL_JUMP)  ; LAB_004b1999
     MOV EAX,0x1                         ; 004b1993
     RET                                 ; 004b1998
     XOR EAX,EAX                         ; 004b1999

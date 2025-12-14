@@ -1,158 +1,158 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 198, 
-    "pseudocode_lines": 153, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 542, 
-    "assembly_lines": 389, 
-    "suspect_count": 4, 
+    "assembly_lines": 389,
+    "complexity_score": 198,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 153,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1d0", 
-      "addr": "0050f1d0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }
-  ], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005d3969", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 61, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar13 = (uint *)((int)(pCVar12->uv_coords + 4) + iStack_60 + 8);"
-    }, 
-    {
-      "line": 62, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pdStack_18 = (double *)((int)&((CVector3d *)(pCVar12->uv_coords + 3))->x + iStack_60);"
-    }, 
-    {
-      "line": 63, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar15 = (int *)((int)pCVar12->uv_coords + iStack_60 + -0xc);"
-    }, 
-    {
-      "line": 146, 
-      "match": "(CVector3d *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_5c = (CVector3d *)((int)(local_5c + 4) + 8);"
-    }
-  ], 
+    ],
+    "total_lines": 542
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005d3960", 
-    "signature": "void shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj * this_ptr, int update_adjacency)", 
+    "address": "005d3960",
     "address_range": [
       [
-        "005d3960", 
+        "005d3960",
         "005d3da1"
       ]
-    ], 
-    "name": "shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960",
+    "signature": "void shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj * this_ptr, int update_adjacency)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f1d0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1d0"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 116, 
+    "frame_size": 124,
+    "local_size": 116,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CObj *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "update_adjacency"
+        "is_param": true,
+        "name": "update_adjacency",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 124, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005d3969",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(uint *)((int)",
+      "text": "puVar13 = (uint *)((int)(pCVar12->uv_coords + 4) + iStack_60 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(double *)((int)",
+      "text": "pdStack_18 = (double *)((int)&((CVector3d *)(pCVar12->uv_coords + 3))->x + iStack_60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(int *)((int)",
+      "text": "piVar15 = (int *)((int)pCVar12->uv_coords + iStack_60 + -0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(CVector3d *)((int)",
+      "text": "local_5c = (CVector3d *)((int)(local_5c + 4) + 8);",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -24,27 +24,27 @@ section .text
     AND ESP,0xfffffff8                  ; 005039d6
     FLD float ptr [EBP + 0x8]           ; 005039d9
     FST double ptr [ESP]                ; 005039dc
-    FCOMP double ptr [0x00630fcb]       ; 005039df | double DOUBLE_00630fcb
+    FCOMP double ptr [0x00630fcb]       ; 005039df | DOUBLE_00630fcb
     FNSTSW AX                           ; 005039e5
     SAHF                                ; 005039e7
-    JC 0x00503a01                       ; 005039e8 | LAB_00503a01
-        ;   XREF to: 00503a01 (CONDITIONAL_JUMP)
+    JC 0x00503a01                       ; 005039e8
+        ;   XREF to: 00503a01 (CONDITIONAL_JUMP)  ; LAB_00503a01
     FLD double ptr [ESP]                ; 005039ea
-    FCOMP double ptr [0x00630fd3]       ; 005039ed | double DOUBLE_00630fd3
+    FCOMP double ptr [0x00630fd3]       ; 005039ed | DOUBLE_00630fd3
     FNSTSW AX                           ; 005039f3
     SAHF                                ; 005039f5
-    JNC 0x00503a0a                      ; 005039f6 | LAB_00503a0a
-        ;   XREF to: 00503a0a (CONDITIONAL_JUMP)
-    MOV EAX,0x630fc2                    ; 005039f8 | = "med" | s_med_00630fc2 = med
+    JNC 0x00503a0a                      ; 005039f6
+        ;   XREF to: 00503a0a (CONDITIONAL_JUMP)  ; LAB_00503a0a
+    MOV EAX,0x630fc2                    ; 005039f8 | = "med"
     MOV ESP,EBP                         ; 005039fd
     POP EBP                             ; 005039ff
     RET                                 ; 00503a00
-    MOV EAX,0x630fbe                    ; 00503a01 | = "sml" | s_sml_00630fbe = sml
+    MOV EAX,0x630fbe                    ; 00503a01 | = "sml"
         ;   Label: LAB_00503a01
     MOV ESP,EBP                         ; 00503a06
     POP EBP                             ; 00503a08
     RET                                 ; 00503a09
-    MOV EAX,0x630fc6                    ; 00503a0a | = "big" | s_big_00630fc6 = big
+    MOV EAX,0x630fc6                    ; 00503a0a | = "big"
         ;   Label: LAB_00503a0a
     MOV ESP,EBP                         ; 00503a0f
     POP EBP                             ; 00503a11

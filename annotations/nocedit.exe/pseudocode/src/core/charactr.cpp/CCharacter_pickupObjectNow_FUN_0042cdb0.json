@@ -1,212 +1,212 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 123, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 9, 
-    "global_count": 6, 
-    "total_lines": 111, 
-    "assembly_lines": 83, 
-    "suspect_count": 9, 
+    "assembly_lines": 83,
+    "complexity_score": 123,
+    "cross_reference_count": 9,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 28,
+    "suspect_count": 9,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80", 
-      "addr": "0042ce80"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_charactr_cpp_006172a2", 
-      "addr": "006172a2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CCharacter_pickupObjectN_006172b7", 
-      "addr": "006172b7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_charactr_cpp_006172e8", 
-      "addr": "006172e8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CCharacter_pickupObjectN_006172fd", 
-      "addr": "006172fd", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_0000000c;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000008 < 0) || (1 < in_stack_00000008)) {"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000008 < 0) || (1 < in_stack_00000008)) {"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c != (CDemonActor *)0x0) {"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar1 = this_ptr->carry_hands + in_stack_00000008;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*in_stack_0000000c->vtable->pickup)(in_stack_0000000c,&this_ptr->base_actor);"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*in_stack_0000000c->vtable->pickup)(in_stack_0000000c,&this_ptr->base_actor);"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar1->carry_actor = in_stack_0000000c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0042cdb0", 
-    "signature": "void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter * this_ptr)", 
-    "address_range": [
-      [
-        "0042cdb0", 
-        "0042ce78"
-      ]
-    ], 
-    "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCharacter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 111
+  },
   "cross_references": [
     {
-      "from_addr": "0041c355", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_FUN_0041bf90", 
-      "addr": "0041bf90"
-    }, 
+      "addr": "0041bf90",
+      "from_addr": "0041c355",
+      "name": "core_boneguy.cpp_FUN_0041bf90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0042f6cf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042f3e0", 
-      "addr": "0042f3e0"
-    }, 
+      "addr": "0042f3e0",
+      "from_addr": "0042f6cf",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f38ae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hero.cpp_FUN_004f3890", 
-      "addr": "004f3890"
-    }, 
+      "addr": "004f3890",
+      "from_addr": "004f38ae",
+      "name": "core_hero.cpp_FUN_004f3890",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f945c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_icepick.cpp_FUN_004f93a0", 
-      "addr": "004f93a0"
-    }, 
+      "addr": "004f93a0",
+      "from_addr": "004f945c",
+      "name": "core_icepick.cpp_FUN_004f93a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00525afe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_FUN_00525840", 
-      "addr": "00525840"
-    }, 
+      "addr": "00525840",
+      "from_addr": "00525afe",
+      "name": "core_mobster.cpp_FUN_00525840",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c5481", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005c5270", 
-      "addr": "005c5270"
-    }, 
+      "addr": "005c5270",
+      "from_addr": "005c5481",
+      "name": "core_stranger.cpp_CStranger_FUN_005c5270",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e720f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_FUN_005e7030", 
-      "addr": "005e7030"
-    }, 
+      "addr": "005e7030",
+      "from_addr": "005e720f",
+      "name": "core_vampboss.cpp_FUN_005e7030",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e857c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80", 
-      "addr": "005e7e80"
-    }, 
+      "addr": "005e7e80",
+      "from_addr": "005e857c",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f9947", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470", 
-      "addr": "005f9470"
+      "addr": "005f9470",
+      "from_addr": "005f9947",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042cdb0",
+    "address_range": [
+      [
+        "0042cdb0",
+        "0042ce78"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0",
+    "signature": "void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(CCharacter * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042ce80",
+      "name": "core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006172a2",
+      "name": "s_core_charactr_cpp_006172a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006172b7",
+      "name": "s_CCharacter_pickupObjectN_006172b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006172e8",
+      "name": "s_core_charactr_cpp_006172e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006172fd",
+      "name": "s_CCharacter_pickupObjectN_006172fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "CDemonActor *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "if ((in_stack_00000008 < 0) || (1 < in_stack_00000008)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "if ((in_stack_00000008 < 0) || (1 < in_stack_00000008)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c != (CDemonActor *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "pSVar1 = this_ptr->carry_hands + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "text": "(*in_stack_0000000c->vtable->pickup)(in_stack_0000000c,&this_ptr->base_actor);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "text": "(*in_stack_0000000c->vtable->pickup)(in_stack_0000000c,&this_ptr->base_actor);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_0000000c",
+      "text": "pSVar1->carry_actor = in_stack_0000000c;",
+      "type": "stack_param"
     }
   ]
 }

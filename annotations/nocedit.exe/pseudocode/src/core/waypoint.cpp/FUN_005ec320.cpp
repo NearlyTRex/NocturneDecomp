@@ -61,7 +61,7 @@ int core_waypoint_cpp_FUN_005ec320(void)
                   if (iVar1 == *(int *)((int)&DAT_03f939a4 + iVar4)) break;
                   iVar4 = iVar4 + 4;
                   iVar5 = iVar5 + 1;
-                } while (SBORROW /* signed borrow */4(iVar4,iVar3 * 4) != iVar4 + iVar3 * -4 < 0);
+                } while (iVar4 < iVar3 * 4);
               }
               if (iVar5 == iVar3) {
                 SVar6 = n + 4;

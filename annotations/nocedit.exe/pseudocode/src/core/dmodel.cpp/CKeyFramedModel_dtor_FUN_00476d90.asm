@@ -24,8 +24,8 @@ section .text
         ;   Label: core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90
     MOV EBX,dword ptr [ESP + 0x8]       ; 00476d91
     PUSH EBX                            ; 00476d95
-    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 ; 00476d96 | void core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel * this_ptr)
-        ;   XREF to: 00477690 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 ; 00476d96
+        ;   XREF to: 00477690 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00476d9b
     MOV EAX,EBX                         ; 00476d9e
     POP EBX                             ; 00476da0

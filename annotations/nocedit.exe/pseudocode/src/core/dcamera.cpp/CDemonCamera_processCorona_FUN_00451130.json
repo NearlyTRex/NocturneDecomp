@@ -1,114 +1,114 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 76, 
-    "assembly_lines": 54, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453160", 
-      "addr": "00453160"
-    }, 
-    {
-      "name": "core_event.cpp_FUN_004b19d0", 
-      "addr": "004b19d0"
-    }, 
-    {
-      "name": "core_event.cpp_FUN_004b1a78", 
-      "addr": "004b1a78"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char[241][320]", 
-      "name": "g_CoronaBlurOutputBuffer", 
-      "addr": "00ba8c78", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00c199f8", 
-      "addr": "00c199f8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BackdropSaveActive", 
-      "addr": "013bbe2c", 
-      "value": null
-    }, 
-    {
-      "type": "SFogImagePlane", 
-      "name": "g_CameraPlaneWorkBuffer", 
-      "addr": "013da778", 
-      "value": null
-    }, 
-    {
-      "type": "SFogImagePlane[16]", 
-      "name": "g_CameraImageDecompressBuffer", 
-      "addr": "013ed378", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ImageProcessingState1", 
-      "addr": "01519378", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ImageProcessingState2", 
-      "addr": "0151937c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ImageBytesPerPixel", 
-      "addr": "01519380", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00451130", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130(CDemonCamera * this_ptr)", 
-    "address_range": [
-      [
-        "00451130", 
-        "004511bf"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 54,
+    "complexity_score": 22,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 8,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
+  },
   "cross_references": [
     {
-      "from_addr": "0056c245", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
+      "addr": "0056c1a0",
+      "from_addr": "0056c245",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00451130",
+    "address_range": [
+      [
+        "00451130",
+        "004511bf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130",
+    "signature": "void core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130(CDemonCamera * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00453160",
+      "name": "core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453160"
+    },
+    {
+      "addr": "004b19d0",
+      "name": "core_event.cpp_FUN_004b19d0"
+    },
+    {
+      "addr": "004b1a78",
+      "name": "core_event.cpp_FUN_004b1a78"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00ba8c78",
+      "name": "g_CoronaBlurOutputBuffer",
+      "type": "char[241][320]",
+      "value": null
+    },
+    {
+      "addr": "00c199f8",
+      "name": "DAT_00c199f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013bbe2c",
+      "name": "g_BackdropSaveActive",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013da778",
+      "name": "g_CameraPlaneWorkBuffer",
+      "type": "SFogImagePlane",
+      "value": null
+    },
+    {
+      "addr": "013ed378",
+      "name": "g_CameraImageDecompressBuffer",
+      "type": "SFogImagePlane[16]",
+      "value": null
+    },
+    {
+      "addr": "01519378",
+      "name": "g_ImageProcessingState1",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151937c",
+      "name": "g_ImageProcessingState2",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01519380",
+      "name": "g_ImageBytesPerPixel",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      }
+    ]
+  },
+  "suspects": []
 }

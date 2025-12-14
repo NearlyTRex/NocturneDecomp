@@ -33,14 +33,14 @@ section .text
     SHL EAX,0x3                         ; 0052b447
     ADD EBX,EAX                         ; 0052b44a
     PUSH EBX                            ; 0052b44c
-    CALL core_morph.cpp_CMorphModel_free_FUN_0052a510 ; 0052b44d | void core_morph.cpp_CMorphModel_free_FUN_0052a510(CMorphModel * this_ptr)
-        ;   XREF to: 0052a510 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_free_FUN_0052a510 ; 0052b44d
+        ;   XREF to: 0052a510 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_free_FUN_0052a510(CMorphModel * this_ptr)
     ADD ESP,0x4                         ; 0052b452
     MOV EDX,dword ptr [ESP + 0x10]      ; 0052b455
     PUSH EDX                            ; 0052b459
     PUSH EBX                            ; 0052b45a
-    CALL core_morph.cpp_CMorphModel_FUN_0052a870 ; 0052b45b | void core_morph.cpp_CMorphModel_FUN_0052a870(CMorphModel * this_ptr)
-        ;   XREF to: 0052a870 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_FUN_0052a870 ; 0052b45b
+        ;   XREF to: 0052a870 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052a870(CMorphModel * this_ptr)
     ADD ESP,0x8                         ; 0052b460
     POP EBX                             ; 0052b463
     RET                                 ; 0052b464

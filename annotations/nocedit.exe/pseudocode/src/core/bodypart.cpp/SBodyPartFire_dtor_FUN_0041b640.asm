@@ -18,8 +18,8 @@ section .text
     PUSH 0x1                            ; 0041b644
     ADD EAX,0xc                         ; 0041b646
     PUSH EAX                            ; 0041b649
-    CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0041b64a | CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0041b64a
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
     ADD ESP,0x8                         ; 0041b64f
     SUB EAX,0xc                         ; 0041b652
     RET                                 ; 0041b655

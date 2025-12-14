@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 24, 
-    "assembly_lines": 13, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "undefined1", 
-      "name": "g_DebuggerIsAttached", 
-      "addr": "00685474", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060b500", 
-    "signature": "int crt_debug.c_TriggerDebuggerBreak_FUN_0060b500(char * error_message, ushort flags)", 
-    "address_range": [
-      [
-        "0060b500", 
-        "0060b516"
-      ], 
-      [
-        "0060b528", 
-        "0060b52a"
-      ]
-    ], 
-    "name": "crt_debug.c_TriggerDebuggerBreak_FUN_0060b500"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "error_message"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "ushort", 
-        "size": 2, 
-        "name": "flags"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 10, 
-    "param_offset": 4, 
-    "param_size": 6
-  }, 
+    "assembly_lines": 13,
+    "complexity_score": 11,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
   "cross_references": [
     {
-      "from_addr": "00605b31", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_cpp.c_reportPureVirtualError_FUN_00605b23", 
-      "addr": "00605b23"
-    }, 
+      "addr": "00605b23",
+      "from_addr": "00605b31",
+      "name": "crt_cpp.c_reportPureVirtualError_FUN_00605b23",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060666e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660", 
-      "addr": "00606660"
+      "addr": "00606660",
+      "from_addr": "0060666e",
+      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060b500",
+    "address_range": [
+      [
+        "0060b500",
+        "0060b516"
+      ],
+      [
+        "0060b528",
+        "0060b52a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_debug.c_TriggerDebuggerBreak_FUN_0060b500",
+    "signature": "int crt_debug.c_TriggerDebuggerBreak_FUN_0060b500(char * error_message, ushort flags)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00685474",
+      "name": "g_DebuggerIsAttached",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 10,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 6,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "error_message",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 2,
+        "type": "ushort"
+      }
+    ]
+  },
+  "suspects": []
 }

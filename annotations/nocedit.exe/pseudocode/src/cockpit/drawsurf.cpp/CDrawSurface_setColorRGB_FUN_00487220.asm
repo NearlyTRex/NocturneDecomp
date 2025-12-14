@@ -71,52 +71,52 @@ section .text
     SAR EDI,0x3                         ; 00487258
     ADD EDI,ECX                         ; 0048725b
     XOR ECX,ECX                         ; 0048725d
-    MOV CL,byte ptr [EDI + 0x2cf9020]   ; 0048725f | uchar[32768] g_ColorCubeLookup
+    MOV CL,byte ptr [EDI + 0x2cf9020]   ; 0048725f | g_ColorCubeLookup
     XOR EDX,EDX                         ; 00487265
-    MOV dword ptr [0x02c6d554],ECX      ; 00487267 | int g_PaletteColorIndex
-    MOV ECX,dword ptr [0x0067939c]      ; 0048726d | int g_BitsPerPixel
-    MOV dword ptr [0x02c6d55c],EDX      ; 00487273 | int g_UseRGBConversion
+    MOV dword ptr [0x02c6d554],ECX      ; 00487267 | g_PaletteColorIndex
+    MOV ECX,dword ptr [0x0067939c]      ; 0048726d | g_BitsPerPixel
+    MOV dword ptr [0x02c6d55c],EDX      ; 00487273 | g_UseRGBConversion
     CMP ECX,0x10                        ; 00487279
-    JNC 0x0048734b                      ; 0048727c | LAB_0048734b
-        ;   XREF to: 0048734b (CONDITIONAL_JUMP)
+    JNC 0x0048734b                      ; 0048727c
+        ;   XREF to: 0048734b (CONDITIONAL_JUMP)  ; LAB_0048734b
     CMP ECX,0x8                         ; 00487282
-    JNZ 0x00487356                      ; 00487285 | LAB_00487356
-        ;   XREF to: 00487356 (CONDITIONAL_JUMP)
+    JNZ 0x00487356                      ; 00487285
+        ;   XREF to: 00487356 (CONDITIONAL_JUMP)  ; LAB_00487356
     XOR EAX,EAX                         ; 0048728b
-    MOV AL,byte ptr [EDI + 0x2cf9020]   ; 0048728d | uchar[32768] g_ColorCubeLookup
-    MOV [0x02c6d550],EAX                ; 00487293 | int g_CurrentDrawColor
+    MOV AL,byte ptr [EDI + 0x2cf9020]   ; 0048728d | g_ColorCubeLookup
+    MOV [0x02c6d550],EAX                ; 00487293 | g_CurrentDrawColor
     ADD ESP,0x8                         ; 00487298
     POP EBP                             ; 0048729b
     POP EDI                             ; 0048729c
     POP ESI                             ; 0048729d
     POP EBX                             ; 0048729e
     RET                                 ; 0048729f
-    DIV dword ptr [0x02d01f28]          ; 004872a0 | int g_RedScaleFactor
+    DIV dword ptr [0x02d01f28]          ; 004872a0 | g_RedScaleFactor
         ;   Label: LAB_004872a0
     MOV dword ptr [ESP],ESI             ; 004872a6
     MOV EDI,EAX                         ; 004872a9
     XOR EDX,EDX                         ; 004872ab
     MOV EAX,ESI                         ; 004872ad
-    DIV dword ptr [0x02d01f34]          ; 004872af | int g_GreenScaleFactor
-    MOV EBP,dword ptr [0x02d01f40]      ; 004872b5 | int g_BlueScaleFactor
+    DIV dword ptr [0x02d01f34]          ; 004872af | g_GreenScaleFactor
+    MOV EBP,dword ptr [0x02d01f40]      ; 004872b5 | g_BlueScaleFactor
     MOV dword ptr [ESP],EAX             ; 004872bb
     XOR EDX,EDX                         ; 004872be
     MOV EAX,EBX                         ; 004872c0
     DIV EBP                             ; 004872c2
-    MOV CL,byte ptr [0x02d01f24]        ; 004872c4 | int g_RedBitPosition
+    MOV CL,byte ptr [0x02d01f24]        ; 004872c4 | g_RedBitPosition
     MOV dword ptr [ESP + 0x4],EBX       ; 004872ca
     SHL EDI,CL                          ; 004872ce
-    MOV CL,byte ptr [0x02d01f30]        ; 004872d0 | int g_GreenBitPosition
+    MOV CL,byte ptr [0x02d01f30]        ; 004872d0 | g_GreenBitPosition
     MOV dword ptr [ESP + 0x4],EAX       ; 004872d6
     MOV EAX,dword ptr [ESP]             ; 004872da
     SHL EAX,CL                          ; 004872dd
-    MOV CL,byte ptr [0x02d01f3c]        ; 004872df | int g_BlueBitPosition
+    MOV CL,byte ptr [0x02d01f3c]        ; 004872df | g_BlueBitPosition
     OR EDI,EAX                          ; 004872e5
     MOV EAX,dword ptr [ESP + 0x4]       ; 004872e7
     SHL EAX,CL                          ; 004872eb
     OR EAX,EDI                          ; 004872ed
     AND EAX,0xffff                      ; 004872ef
-    MOV [0x02c6d550],EAX                ; 004872f4 | int g_CurrentDrawColor
+    MOV [0x02c6d550],EAX                ; 004872f4 | g_CurrentDrawColor
     ADD ESP,0x8                         ; 004872f9
     POP EBP                             ; 004872fc
     POP EDI                             ; 004872fd
@@ -125,18 +125,18 @@ section .text
     RET                                 ; 00487300
     CMP ECX,ECX                         ; 00487301
         ;   Label: LAB_00487301
-    JNZ 0x00487331                      ; 00487303 | LAB_00487331
-        ;   XREF to: 00487331 (CONDITIONAL_JUMP)
-    MOV CL,byte ptr [0x02d01f24]        ; 00487305 | int g_RedBitPosition
+    JNZ 0x00487331                      ; 00487303
+        ;   XREF to: 00487331 (CONDITIONAL_JUMP)  ; LAB_00487331
+    MOV CL,byte ptr [0x02d01f24]        ; 00487305 | g_RedBitPosition
     SHL EAX,CL                          ; 0048730b
-    MOV CL,byte ptr [0x02d01f30]        ; 0048730d | int g_GreenBitPosition
+    MOV CL,byte ptr [0x02d01f30]        ; 0048730d | g_GreenBitPosition
     SHL ESI,CL                          ; 00487313
-    MOV CL,byte ptr [0x02d01f3c]        ; 00487315 | int g_BlueBitPosition
+    MOV CL,byte ptr [0x02d01f3c]        ; 00487315 | g_BlueBitPosition
     SHL EBX,CL                          ; 0048731b
     OR EAX,ESI                          ; 0048731d
     MOV ECX,EBX                         ; 0048731f
     OR ECX,EAX                          ; 00487321
-    MOV dword ptr [0x02c6d550],ECX      ; 00487323 | int g_CurrentDrawColor
+    MOV dword ptr [0x02c6d550],ECX      ; 00487323 | g_CurrentDrawColor
     ADD ESP,0x8                         ; 00487329
     POP EBP                             ; 0048732c
     POP EDI                             ; 0048732d
@@ -149,27 +149,27 @@ section .text
     SHL ECX,0x10                        ; 00487336
     OR ECX,ESI                          ; 00487339
     OR ECX,EBX                          ; 0048733b
-    MOV dword ptr [0x02c6d550],ECX      ; 0048733d | int g_CurrentDrawColor
+    MOV dword ptr [0x02c6d550],ECX      ; 0048733d | g_CurrentDrawColor
     ADD ESP,0x8                         ; 00487343
     POP EBP                             ; 00487346
     POP EDI                             ; 00487347
     POP ESI                             ; 00487348
     POP EBX                             ; 00487349
     RET                                 ; 0048734a
-    JBE 0x004872a0                      ; 0048734b | LAB_004872a0
+    JBE 0x004872a0                      ; 0048734b
+        ;   XREF to: 004872a0 (CONDITIONAL_JUMP)  ; LAB_004872a0
         ;   Label: LAB_0048734b
-        ;   XREF to: 004872a0 (CONDITIONAL_JUMP)
     CMP ECX,0x20                        ; 00487351
-    JZ 0x00487301                       ; 00487354 | LAB_00487301
-        ;   XREF to: 00487301 (CONDITIONAL_JUMP)
-    MOV EAX,0x621cbd                    ; 00487356 | = "..\\cockpit\\drawsurf.cpp" | s_cockpit_drawsurf_cpp_00621cbd = ..\cockpit\drawsurf.cpp
+    JZ 0x00487301                       ; 00487354
+        ;   XREF to: 00487301 (CONDITIONAL_JUMP)  ; LAB_00487301
+    MOV EAX,0x621cbd                    ; 00487356 | = "..\\cockpit\\drawsurf.cpp"
         ;   Label: LAB_00487356
     MOV EDX,0x11d                       ; 0048735b
-    PUSH 0x621cd5                       ; 00487360 | = "Invalid bitsPerPixel in CDrawSurface:..." | s_Invalid_bitsPerPixel_in__00621cd5 = Invalid bitsPerPixel in CDrawSurface::setColor
-    MOV [0x02f0ca48],EAX                ; 00487365 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 0048736a | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00487370 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x621cd5                       ; 00487360 | = "Invalid bitsPerPixel in CDrawSurface:..."
+    MOV [0x02f0ca48],EAX                ; 00487365 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 0048736a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00487370
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00487375
     ADD ESP,0x8                         ; 00487378
     POP EBP                             ; 0048737b

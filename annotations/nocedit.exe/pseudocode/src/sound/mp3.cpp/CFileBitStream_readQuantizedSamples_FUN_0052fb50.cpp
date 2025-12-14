@@ -16,7 +16,7 @@ sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50
   uint uVar2;
   uint *puVar3;
   int iVar4;
-  uint *puVar5;
+  int *piVar5;
   int iVar6;
   int *local_18;
   int local_14;
@@ -28,17 +28,17 @@ sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50
     do {
       iVar6 = 0;
       if (0 < iVar1) {
-        puVar5 = (uint *)((int)allocation->granules + local_14);
+        piVar5 = (int *)((int)allocation->granules + local_14);
         puVar3 = (uint *)((int)quantized_samples->codes[0] + local_14);
         do {
-          uVar2 = *puVar5;
-          if (uVar2 != 0) {
-            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,uVar2 + 1);
+          uVar2 = 0;
+          if (*piVar5 != 0) {
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*piVar5 + 1);
           }
           *puVar3 = uVar2;
           puVar3 = puVar3 + 0x60;
           iVar6 = iVar6 + 1;
-          puVar5 = puVar5 + 0x20;
+          piVar5 = piVar5 + 0x20;
         } while (iVar6 < iVar1);
       }
       local_14 = local_14 + 4;
@@ -48,9 +48,9 @@ sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50
     iVar6 = iVar4 * 4;
     local_18 = allocation->granules + iVar4;
     do {
-      uVar2 = *local_18;
-      if (uVar2 != 0) {
-        uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,uVar2 + 1);
+      uVar2 = 0;
+      if (*local_18 != 0) {
+        uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*local_18 + 1);
       }
       iVar4 = 0;
       if (0 < iVar1) {

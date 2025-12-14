@@ -15,8 +15,8 @@ section .text
         ;   Label: core_dcube.cpp_copyVector3_FUN_004547b0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004547b4
     CMP EAX,EDX                         ; 004547b8
-    JNZ 0x004547bd                      ; 004547ba | LAB_004547bd
-        ;   XREF to: 004547bd (CONDITIONAL_JUMP)
+    JNZ 0x004547bd                      ; 004547ba
+        ;   XREF to: 004547bd (CONDITIONAL_JUMP)  ; LAB_004547bd
     RET                                 ; 004547bc
     MOV ECX,dword ptr [EDX]             ; 004547bd
         ;   Label: LAB_004547bd

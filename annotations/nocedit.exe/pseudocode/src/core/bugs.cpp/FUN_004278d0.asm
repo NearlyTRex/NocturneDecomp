@@ -49,8 +49,8 @@ section .text
     MOV EAX,dword ptr [ESI]             ; 004278f2
     PUSH EDI                            ; 004278f4
     MOV dword ptr [EBP + -0x14],EAX     ; 004278f5
-    CALL core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800 ; 004278f8 | void core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800(CCharacter * this_ptr)
-        ;   XREF to: 0042f800 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800 ; 004278f8
+        ;   XREF to: 0042f800 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800(CCharacter * this_ptr)
     LEA EAX,[EDI + 0x30]                ; 004278fd
     ADD ESP,0x4                         ; 00427900
     MOV dword ptr [EAX + 0x8],0x0       ; 00427903
@@ -59,8 +59,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 0042790e
     MOV EDX,dword ptr [EAX + 0x4]       ; 00427911
     MOV dword ptr [EAX],EDX             ; 00427914
-    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00427916 | void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00427916
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     MOV EAX,dword ptr [EBX]             ; 0042791b
     MOV dword ptr [EBP + -0x10],EAX     ; 0042791d
     MOV EAX,dword ptr [EBP + -0x4]      ; 00427920
@@ -78,42 +78,42 @@ section .text
     LEA EAX,[EBP + -0x10]               ; 00427941
     PUSH EAX                            ; 00427944
     PUSH EDI                            ; 00427945
-    CALL core_bugs.cpp_FUN_004276c0     ; 00427946 | undefined core_bugs.cpp_FUN_004276c0()
-        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)
+    CALL core_bugs.cpp_FUN_004276c0     ; 00427946
+        ;   XREF to: 004276c0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004276c0()
     ADD ESP,0x8                         ; 0042794b
     PUSH EDI                            ; 0042794e
     XOR ESI,ESI                         ; 0042794f
-    CALL core_bugs.cpp_FUN_004257f0     ; 00427951 | undefined core_bugs.cpp_FUN_004257f0()
-        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)
+    CALL core_bugs.cpp_FUN_004257f0     ; 00427951
+        ;   XREF to: 004257f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004257f0()
     MOV EDX,dword ptr [EDI + 0xbec0]    ; 00427956
     ADD ESP,0x4                         ; 0042795c
     TEST EDX,EDX                        ; 0042795f
-    JLE 0x004279a0                      ; 00427961 | LAB_004279a0
-        ;   XREF to: 004279a0 (CONDITIONAL_JUMP)
+    JLE 0x004279a0                      ; 00427961
+        ;   XREF to: 004279a0 (CONDITIONAL_JUMP)  ; LAB_004279a0
     LEA EBX,[EDI + 0xbec4]              ; 00427963
     PUSH 0x0                            ; 00427969
         ;   Label: LAB_00427969
-    MOV EAX,[0x0067b654]                ; 0042796b | CGame g_CGameInstance | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 0042796b | g_CGameInstance | g_CGamePtr
     SUB ESP,0x4                         ; 00427970
     MOV EDX,dword ptr [EAX + 0x264]     ; 00427973 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EDX             ; 00427979
     PUSH EBX                            ; 0042797c
     PUSH EDI                            ; 0042797d
     INC ESI                             ; 0042797e
-    CALL core_bugs.cpp_FUN_00426420     ; 0042797f | undefined core_bugs.cpp_FUN_00426420()
-        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)
+    CALL core_bugs.cpp_FUN_00426420     ; 0042797f
+        ;   XREF to: 00426420 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_00426420()
     ADD EBX,0x40                        ; 00427984
     MOV ECX,dword ptr [EDI + 0xbec0]    ; 00427987
     ADD ESP,0x10                        ; 0042798d
     CMP ESI,ECX                         ; 00427990
-    JL 0x00427969                       ; 00427992 | LAB_00427969
-        ;   XREF to: 00427969 (CONDITIONAL_JUMP)
+    JL 0x00427969                       ; 00427992
+        ;   XREF to: 00427969 (CONDITIONAL_JUMP)  ; LAB_00427969
     LEA EAX,[EAX]                       ; 00427994
     LEA EDX,[EDX]                       ; 0042799a
     PUSH EDI                            ; 004279a0
         ;   Label: LAB_004279a0
-    CALL core_bugs.cpp_FUN_004272f0     ; 004279a1 | undefined core_bugs.cpp_FUN_004272f0()
-        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)
+    CALL core_bugs.cpp_FUN_004272f0     ; 004279a1
+        ;   XREF to: 004272f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004272f0()
     ADD ESP,0x4                         ; 004279a6
     MOV ESP,EBP                         ; 004279a9
     POP EBP                             ; 004279ab

@@ -78,7 +78,7 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 0043c88f
     MOV EDX,0x1                         ; 0043c892
     PUSH 0x1f                           ; 0043c897
-    MOV EDI,dword ptr [0x0068416c]      ; 0043c899 | CSpotView * g_CSpotViewPtr
+    MOV EDI,dword ptr [0x0068416c]      ; 0043c899 | g_CSpotViewPtr
     XOR EAX,EAX                         ; 0043c89f
     MOV dword ptr [ESP + 0x530],EDX     ; 0043c8a1
     MOV dword ptr [ESP + 0x51c],EDX     ; 0043c8a8
@@ -93,37 +93,37 @@ section .text
     MOV [0x00838e40],EAX                ; 0043c8de | DAT_00838e40
     MOV [0x00838e54],EAX                ; 0043c8e3 | DAT_00838e54
     MOV [0x00838e50],EAX                ; 0043c8e8 | DAT_00838e50
-    PUSH EDI                            ; 0043c8ed | CSpotView g_CSpotViewInstance
+    PUSH EDI                            ; 0043c8ed | g_CSpotViewInstance
     MOV [0x00838e4c],EAX                ; 0043c8ee | DAT_00838e4c
     XOR EBX,EDX                         ; 0043c8f3
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9620 ; 0043c8f5 | void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)
-        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)
+    CALL shape_spotview.cpp_CSpotView_FUN_005b9620 ; 0043c8f5
+        ;   XREF to: 005b9620 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)
     ADD ESP,0x8                         ; 0043c8fa
-    MOV EAX,[0x0067b654]                ; 0043c8fd | CGame * g_CGamePtr
-    PUSH EAX                            ; 0043c902 | CGame g_CGameInstance
-    CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0043c903 | void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
-        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)
+    MOV EAX,[0x0067b654]                ; 0043c8fd | g_CGamePtr
+    PUSH EAX                            ; 0043c902 | g_CGameInstance
+    CALL core_game.cpp_CGame_saveClockTime_FUN_004d7d80 ; 0043c903
+        ;   XREF to: 004d7d80 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_saveClockTime_FUN_004d7d80(CGame * n1, CGame * n2)
     ADD ESP,0x4                         ; 0043c908
     PUSH 0x0                            ; 0043c90b
     PUSH EBX                            ; 0043c90d
-    PUSH 0x838e58                       ; 0043c90e | CDeformableModelInstance g_CDeformableModelInstanceInstance
-    CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0 ; 0043c913 | void core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotionController * this_ptr, int target_motion_index, float target_frame_number)
-        ;   XREF to: 0052dde0 (UNCONDITIONAL_CALL)
+    PUSH 0x838e58                       ; 0043c90e | g_CDeformableModelInstanceInstance
+    CALL core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0 ; 0043c913
+        ;   XREF to: 0052dde0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0(CMotionController * this_ptr, int target_motion_index, float target_frame_number)
     ADD ESP,0xc                         ; 0043c918
-    PUSH 0x838e58                       ; 0043c91b | CDeformableModelInstance g_CDeformableModelInstanceInstance
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0043c920 | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    PUSH 0x838e58                       ; 0043c91b | g_CDeformableModelInstanceInstance
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0043c920
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0043c925
-    PUSH 0x838e58                       ; 0043c928 | CDeformableModelInstance g_CDeformableModelInstanceInstance
+    PUSH 0x838e58                       ; 0043c928 | g_CDeformableModelInstanceInstance
     PUSH 0x838e4c                       ; 0043c92d | DAT_00838e4c
     MOV EBX,EAX                         ; 0043c932
     PUSH 0x838e40                       ; 0043c934 | DAT_00838e40
     MOV dword ptr [ESP + 0x530],EAX     ; 0043c939
-    MOV EAX,[0x006810c8]                ; 0043c940 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
+    MOV EAX,[0x006810c8]                ; 0043c940 | g_CDemonSetPtr | g_CDemonSetInstance
     PUSH ESI                            ; 0043c945
     MOV dword ptr [EAX + 0x15ac80],0x1  ; 0043c946 | g_CDemonSetInstance.lighting_quality_mode
-    CALL core_cloth.cpp_FUN_00439710    ; 0043c950 | undefined core_cloth.cpp_FUN_00439710()
-        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_00439710    ; 0043c950
+        ;   XREF to: 00439710 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00439710()
     ADD ESP,0x10                        ; 0043c955
     LEA EAX,[ESI + 0x3ce90]             ; 0043c958
     MOV dword ptr [ESP + 0x514],EAX     ; 0043c95e
@@ -134,32 +134,32 @@ section .text
     LEA EAX,[ESI + 0x3fe48]             ; 0043c97f
     MOV dword ptr [ESP + 0x4f4],EBX     ; 0043c985
     MOV dword ptr [ESP + 0x51c],EAX     ; 0043c98c
-    MOV EAX,[0x0067b654]                ; 0043c993 | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 0043c993 | g_CGamePtr
         ;   Label: LAB_0043c993
     MOV EAX,dword ptr [EAX + 0x264]     ; 0043c998 | g_CGameInstance.delta_time_float
-    PUSH 0x838e58                       ; 0043c99e | CDeformableModelInstance g_CDeformableModelInstanceInstance
+    PUSH 0x838e58                       ; 0043c99e | g_CDeformableModelInstanceInstance
     MOV dword ptr [ESP + 0x504],EAX     ; 0043c9a3
     MOV dword ptr [ESP + 0x4],EAX       ; 0043c9aa
-    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 0043c9ae | SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController * this_ptr)
-        ;   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 0043c9ae
+        ;   XREF to: 0052dab0 (UNCONDITIONAL_CALL)  ; SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0043c9b3
     MOV EDX,dword ptr [ESP + 0x50c]     ; 0043c9b6
     MOV dword ptr [ESP + 0x534],EAX     ; 0043c9bd
     TEST EDX,EDX                        ; 0043c9c4
-    JZ 0x0043d413                       ; 0043c9c6 | LAB_0043d413
-        ;   XREF to: 0043d413 (CONDITIONAL_JUMP)
+    JZ 0x0043d413                       ; 0043c9c6
+        ;   XREF to: 0043d413 (CONDITIONAL_JUMP)  ; LAB_0043d413
     CMP dword ptr [ESP + 0x518],0x0     ; 0043c9cc
         ;   Label: LAB_0043c9cc
-    JZ 0x0043d48d                       ; 0043c9d4 | LAB_0043d48d
-        ;   XREF to: 0043d48d (CONDITIONAL_JUMP)
-    PUSH 0x838e58                       ; 0043c9da | CDeformableModelInstance g_CDeformableModelInstanceInstance
-    CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80 ; 0043c9df | void core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 0059df80 (UNCONDITIONAL_CALL)
+    JZ 0x0043d48d                       ; 0043c9d4
+        ;   XREF to: 0043d48d (CONDITIONAL_JUMP)  ; LAB_0043d48d
+    PUSH 0x838e58                       ; 0043c9da | g_CDeformableModelInstanceInstance
+    CALL core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80 ; 0043c9df
+        ;   XREF to: 0059df80 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0043c9e4
         ;   Label: LAB_0043c9e4
-    PUSH 0x838e58                       ; 0043c9e7 | CDeformableModelInstance g_CDeformableModelInstanceInstance
-    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 ; 0043c9ec | void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 0059fb40 (UNCONDITIONAL_CALL)
+    PUSH 0x838e58                       ; 0043c9e7 | g_CDeformableModelInstanceInstance
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 ; 0043c9ec
+        ;   XREF to: 0059fb40 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0043c9f1
     MOV EAX,dword ptr [ESP + 0x51c]     ; 0043c9f4
     FLD float ptr [0x0083b0ac]          ; 0043c9fb | g_CDeformableModelInstanceInstance.accumulated_root_motion.x
@@ -177,123 +177,123 @@ section .text
     MOV dword ptr [0x0083b0b0],EDI      ; 0043ca2c | g_CDeformableModelInstanceInstance.accumulated_root_motion.y
     MOV dword ptr [0x0083b0ac],EDI      ; 0043ca32 | g_CDeformableModelInstanceInstance.accumulated_root_motion.x
     TEST ECX,ECX                        ; 0043ca38
-    JNZ 0x0043d49c                      ; 0043ca3a | LAB_0043d49c
-        ;   XREF to: 0043d49c (CONDITIONAL_JUMP)
-    PUSH 0x838e58                       ; 0043ca40 | CDeformableModelInstance g_CDeformableModelInstanceInstance
+    JNZ 0x0043d49c                      ; 0043ca3a
+        ;   XREF to: 0043d49c (CONDITIONAL_JUMP)  ; LAB_0043d49c
+    PUSH 0x838e58                       ; 0043ca40 | g_CDeformableModelInstanceInstance
     PUSH 0x0                            ; 0043ca45
     PUSH dword ptr [ESP + 0x8]          ; 0043ca47
     PUSH 0x838e4c                       ; 0043ca4b | DAT_00838e4c
     PUSH 0x838e40                       ; 0043ca50 | DAT_00838e40
     PUSH ESI                            ; 0043ca55
-    CALL core_cloth.cpp_FUN_0043ab80    ; 0043ca56 | undefined core_cloth.cpp_FUN_0043ab80()
-        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043ab80    ; 0043ca56
+        ;   XREF to: 0043ab80 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043ab80()
     ADD ESP,0x18                        ; 0043ca5b
-    MOV EAX,[0x0067cf44]                ; 0043ca5e | CKeys * g_CKeysPtr
+    MOV EAX,[0x0067cf44]                ; 0043ca5e | g_CKeysPtr
         ;   Label: LAB_0043ca5e
-    PUSH EAX                            ; 0043ca63 | void * g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0043ca64 | void * g_CKeysPtr
+    PUSH EAX                            ; 0043ca63 | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 0043ca64 | g_CKeysPtr
     CALL dword ptr [EDX + 0x8]          ; 0043ca66
     ADD ESP,0x4                         ; 0043ca69
-    MOV EBX,dword ptr [0x0068416c]      ; 0043ca6c | CSpotView g_CSpotViewInstance | CSpotView * g_CSpotViewPtr
-    PUSH EBX                            ; 0043ca72 | CSpotView g_CSpotViewInstance
-    CALL shape_spotview.cpp_CSpotView_FUN_005b9a20 ; 0043ca73 | void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
-        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)
+    MOV EBX,dword ptr [0x0068416c]      ; 0043ca6c | g_CSpotViewPtr | g_CSpotViewInstance
+    PUSH EBX                            ; 0043ca72 | g_CSpotViewInstance
+    CALL shape_spotview.cpp_CSpotView_FUN_005b9a20 ; 0043ca73
+        ;   XREF to: 005b9a20 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_FUN_005b9a20(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 0043ca78
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0043ca7b | void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)
-    MOV EAX,[0x00679398]                ; 0043ca80 | int g_WindowHeight
+    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0043ca7b
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
+    MOV EAX,[0x00679398]                ; 0043ca80 | g_WindowHeight
     PUSH 0xf8                           ; 0043ca85
     DEC EAX                             ; 0043ca8a
     PUSH EAX                            ; 0043ca8b
-    MOV EAX,[0x00679394]                ; 0043ca8c | int g_WindowWidth
+    MOV EAX,[0x00679394]                ; 0043ca8c | g_WindowWidth
     DEC EAX                             ; 0043ca91
     PUSH EAX                            ; 0043ca92
     PUSH 0x0                            ; 0043ca93
     PUSH 0x0                            ; 0043ca95
-    CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0043ca97 | void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
-        ;   XREF to: 00403170 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_fillRectColor_FUN_00403170 ; 0043ca97
+        ;   XREF to: 00403170 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 0043ca9c
-    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0043ca9f | void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
-        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_clearZBuffer_FUN_005b3ed4 ; 0043ca9f
+        ;   XREF to: 005b3ed4 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearZBuffer_FUN_005b3ed4()
     PUSH 0x838e40                       ; 0043caa4 | DAT_00838e40
-    MOV EDI,dword ptr [0x006703ec]      ; 0043caa9 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDI                            ; 0043caaf | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0043cab0 | void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
-        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x006703ec]      ; 0043caa9 | g_CDemonRendererPtr
+    PUSH EDI                            ; 0043caaf | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 0043cab0
+        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0043cab5
     PUSH 0x0                            ; 0043cab8
     PUSH 0x838e4c                       ; 0043caba | DAT_00838e4c
-    MOV EAX,[0x006703ec]                ; 0043cabf | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EAX                            ; 0043cac4 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0043cac5 | void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)
+    MOV EAX,[0x006703ec]                ; 0043cabf | g_CDemonRendererPtr
+    PUSH EAX                            ; 0043cac4 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0043cac5
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     ADD ESP,0xc                         ; 0043caca
     CMP dword ptr [ESP + 0x508],0x0     ; 0043cacd
-    JZ 0x0043caec                       ; 0043cad5 | LAB_0043caec
-        ;   XREF to: 0043caec (CONDITIONAL_JUMP)
+    JZ 0x0043caec                       ; 0043cad5
+        ;   XREF to: 0043caec (CONDITIONAL_JUMP)  ; LAB_0043caec
     PUSH 0x0                            ; 0043cad7
     PUSH 0x1                            ; 0043cad9
     PUSH -0x1                           ; 0043cadb
     PUSH -0x1                           ; 0043cadd
-    PUSH 0x838e58                       ; 0043cadf | CDeformableModelInstance g_CDeformableModelInstanceInstance
-    CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 ; 0043cae4 | void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
-        ;   XREF to: 005a0150 (UNCONDITIONAL_CALL)
+    PUSH 0x838e58                       ; 0043cadf | g_CDeformableModelInstanceInstance
+    CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150 ; 0043cae4
+        ;   XREF to: 005a0150 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 0043cae9
     CMP dword ptr [ESP + 0x504],0x0     ; 0043caec
         ;   Label: LAB_0043caec
-    JZ 0x0043cb01                       ; 0043caf4 | LAB_0043cb01
-        ;   XREF to: 0043cb01 (CONDITIONAL_JUMP)
+    JZ 0x0043cb01                       ; 0043caf4
+        ;   XREF to: 0043cb01 (CONDITIONAL_JUMP)  ; LAB_0043cb01
     PUSH 0x0                            ; 0043caf6
     PUSH ESI                            ; 0043caf8
-    CALL core_cloth.cpp_FUN_0043bae0    ; 0043caf9 | undefined core_cloth.cpp_FUN_0043bae0()
-        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043bae0    ; 0043caf9
+        ;   XREF to: 0043bae0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043bae0()
     ADD ESP,0x8                         ; 0043cafe
     PUSH 0x3e                           ; 0043cb01
         ;   Label: LAB_0043cb01
-    MOV EAX,[0x0067cf44]                ; 0043cb03 | CKeys * g_CKeysPtr
-    PUSH EAX                            ; 0043cb08 | void * g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0043cb09 | void * g_CKeysPtr
+    MOV EAX,[0x0067cf44]                ; 0043cb03 | g_CKeysPtr
+    PUSH EAX                            ; 0043cb08 | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 0043cb09 | g_CKeysPtr
     CALL dword ptr [EDX + 0x4]          ; 0043cb0b
     ADD ESP,0x8                         ; 0043cb0e
     TEST EAX,EAX                        ; 0043cb11
-    JZ 0x0043cb42                       ; 0043cb13 | LAB_0043cb42
-        ;   XREF to: 0043cb42 (CONDITIONAL_JUMP)
-    MOV EBX,dword ptr [0x0083b10c]      ; 0043cb15 | undefined4 DAT_0083b10c
+    JZ 0x0043cb42                       ; 0043cb13
+        ;   XREF to: 0043cb42 (CONDITIONAL_JUMP)  ; LAB_0043cb42
+    MOV EBX,dword ptr [0x0083b10c]      ; 0043cb15 | DAT_0083b10c
     INC EBX                             ; 0043cb1b
     PUSH EBX                            ; 0043cb1c
-    PUSH 0x618693                       ; 0043cb1d | = "noc%d.pcx" | s_noc_d_pcx_00618693 = noc%d.pcx
+    PUSH 0x618693                       ; 0043cb1d | = "noc%d.pcx"
     PUSH 0x83b110                       ; 0043cb22 | DAT_0083b110
-    MOV dword ptr [0x0083b10c],EBX      ; 0043cb27 | undefined4 DAT_0083b10c
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0043cb2d | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0083b10c],EBX      ; 0043cb27 | DAT_0083b10c
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0043cb2d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0043cb32
     PUSH 0x83b110                       ; 0043cb35 | DAT_0083b110
-    CALL engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 ; 0043cb3a | void engine_pcx.c_saveScreenshotGeneral_FUN_005490c0(char * filename)
-        ;   XREF to: 005490c0 (UNCONDITIONAL_CALL)
+    CALL engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 ; 0043cb3a
+        ;   XREF to: 005490c0 (UNCONDITIONAL_CALL)  ; void engine_pcx.c_saveScreenshotGeneral_FUN_005490c0(char * filename)
     ADD ESP,0x4                         ; 0043cb3f
     CMP dword ptr [ESP + 0x510],0x0     ; 0043cb42
         ;   Label: LAB_0043cb42
-    JZ 0x0043cc04                       ; 0043cb4a | LAB_0043cc04
-        ;   XREF to: 0043cc04 (CONDITIONAL_JUMP)
-    MOV EDX,dword ptr [0x00678a60]      ; 0043cb50 | CEditorTools * g_CEditorToolsPtr
-    PUSH EDX                            ; 0043cb56 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043cb57 | uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)
+    JZ 0x0043cc04                       ; 0043cb4a
+        ;   XREF to: 0043cc04 (CONDITIONAL_JUMP)  ; LAB_0043cc04
+    MOV EDX,dword ptr [0x00678a60]      ; 0043cb50 | g_CEditorToolsPtr
+    PUSH EDX                            ; 0043cb56 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043cb57
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043cb5c
-    MOV [0x02d02570],EAX                ; 0043cb5f | int g_ActiveRenderColor
+    MOV [0x02d02570],EAX                ; 0043cb5f | g_ActiveRenderColor
     XOR ECX,ECX                         ; 0043cb64
     MOV EBX,dword ptr [ESI + 0x3f028]   ; 0043cb66
     MOV dword ptr [ESP + 0x53c],ECX     ; 0043cb6c
     TEST EBX,EBX                        ; 0043cb73
-    JLE 0x0043cc04                      ; 0043cb75 | LAB_0043cc04
-        ;   XREF to: 0043cc04 (CONDITIONAL_JUMP)
+    JLE 0x0043cc04                      ; 0043cb75
+        ;   XREF to: 0043cc04 (CONDITIONAL_JUMP)  ; LAB_0043cc04
     MOV EDI,ESI                         ; 0043cb7b
     IMUL EAX,dword ptr [EDI + 0x3f02c],0x11c ; 0043cb7d
         ;   Label: LAB_0043cb7d
     MOV ECX,dword ptr [ESP + 0x520]     ; 0043cb87
     LEA EBX,[ESP + 0x4e0]               ; 0043cb8e
     ADD EAX,ECX                         ; 0043cb95
-    MOV EDX,dword ptr [0x006703ec]      ; 0043cb97 | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0043cb97 | g_CDemonRendererPtr
     FLD float ptr [EAX]                 ; 0043cb9d
     FMUL float ptr [0x0065bb3c]         ; 0043cb9f | DAT_0065bb3c
     FISTP dword ptr [EBX]               ; 0043cba5
@@ -305,15 +305,15 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 0043cbbc
     LEA EAX,[ESP + 0x4e0]               ; 0043cbbf
     PUSH EAX                            ; 0043cbc6
-    MOV EAX,dword ptr [EDX]             ; 0043cbc7 | CDemonRenderer g_CDemonRendererInstance
+    MOV EAX,dword ptr [EDX]             ; 0043cbc7 | g_CDemonRendererInstance
     ADD EAX,0xea5d0                     ; 0043cbc9
     PUSH EAX                            ; 0043cbce
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0043cbcf | void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0043cbcf
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0043cbd4
     PUSH 0x4e1f                         ; 0043cbd7
-    CALL core_cloth.cpp_FUN_0043c6e0    ; 0043cbdc | undefined core_cloth.cpp_FUN_0043c6e0()
-        ;   XREF to: 0043c6e0 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043c6e0    ; 0043cbdc
+        ;   XREF to: 0043c6e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c6e0()
     ADD ESP,0x4                         ; 0043cbe1
     MOV EBX,dword ptr [ESP + 0x53c]     ; 0043cbe4
     ADD EDI,0x4                         ; 0043cbeb
@@ -321,51 +321,51 @@ section .text
     MOV EDX,dword ptr [ESI + 0x3f028]   ; 0043cbef
     MOV dword ptr [ESP + 0x53c],EBX     ; 0043cbf5
     CMP EBX,EDX                         ; 0043cbfc
-    JL 0x0043cb7d                       ; 0043cbfe | LAB_0043cb7d
-        ;   XREF to: 0043cb7d (CONDITIONAL_JUMP)
+    JL 0x0043cb7d                       ; 0043cbfe
+        ;   XREF to: 0043cb7d (CONDITIONAL_JUMP)  ; LAB_0043cb7d
     CMP dword ptr [ESP + 0x52c],0x0     ; 0043cc04
         ;   Label: LAB_0043cc04
-    JLE 0x0043cc68                      ; 0043cc0c | LAB_0043cc68
-        ;   XREF to: 0043cc68 (CONDITIONAL_JUMP)
+    JLE 0x0043cc68                      ; 0043cc0c
+        ;   XREF to: 0043cc68 (CONDITIONAL_JUMP)  ; LAB_0043cc68
     MOV EDI,dword ptr [ESI + 0x3ce8c]   ; 0043cc0e
     XOR EBX,EBX                         ; 0043cc14
     TEST EDI,EDI                        ; 0043cc16
-    JLE 0x0043cc68                      ; 0043cc18 | LAB_0043cc68
-        ;   XREF to: 0043cc68 (CONDITIONAL_JUMP)
+    JLE 0x0043cc68                      ; 0043cc18
+        ;   XREF to: 0043cc68 (CONDITIONAL_JUMP)  ; LAB_0043cc68
     CMP dword ptr [ESP + 0x52c],0x2     ; 0043cc1a
         ;   Label: LAB_0043cc1a
-    JNZ 0x0043d526                      ; 0043cc22 | LAB_0043d526
-        ;   XREF to: 0043d526 (CONDITIONAL_JUMP)
+    JNZ 0x0043d526                      ; 0043cc22
+        ;   XREF to: 0043d526 (CONDITIONAL_JUMP)  ; LAB_0043d526
     CMP EBX,dword ptr [ESP + 0x530]     ; 0043cc28
-    JNZ 0x0043d526                      ; 0043cc2f | LAB_0043d526
-        ;   XREF to: 0043d526 (CONDITIONAL_JUMP)
-    MOV EAX,[0x00678a60]                ; 0043cc35 | CEditorTools * g_CEditorToolsPtr
-    PUSH EAX                            ; 0043cc3a | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043cc3b | uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
-        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)
+    JNZ 0x0043d526                      ; 0043cc2f
+        ;   XREF to: 0043d526 (CONDITIONAL_JUMP)  ; LAB_0043d526
+    MOV EAX,[0x00678a60]                ; 0043cc35 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0043cc3a | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 0043cc3b
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043cc40
     PUSH EAX                            ; 0043cc43
-    MOV EDX,dword ptr [0x006703ec]      ; 0043cc44 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDX                            ; 0043cc4a | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 0043cc4b | void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer * this_ptr, int color)
-        ;   XREF to: 0048c960 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006703ec]      ; 0043cc44 | g_CDemonRendererPtr
+    PUSH EDX                            ; 0043cc4a | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 0043cc4b
+        ;   XREF to: 0048c960 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer * this_ptr, int color)
     ADD ESP,0x8                         ; 0043cc50
     PUSH 0x1                            ; 0043cc53
     PUSH EBX                            ; 0043cc55
         ;   Label: LAB_0043cc55
     PUSH ESI                            ; 0043cc56
-    CALL core_cloth.cpp_FUN_0043b7e0    ; 0043cc57 | undefined core_cloth.cpp_FUN_0043b7e0()
-        ;   XREF to: 0043b7e0 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043b7e0    ; 0043cc57
+        ;   XREF to: 0043b7e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043b7e0()
     ADD ESP,0xc                         ; 0043cc5c
     INC EBX                             ; 0043cc5f
     CMP EBX,dword ptr [ESI + 0x3ce8c]   ; 0043cc60
-    JL 0x0043cc1a                       ; 0043cc66 | LAB_0043cc1a
-        ;   XREF to: 0043cc1a (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x006703ec]      ; 0043cc68 | CDemonRenderer * g_CDemonRendererPtr
+    JL 0x0043cc1a                       ; 0043cc66
+        ;   XREF to: 0043cc1a (CONDITIONAL_JUMP)  ; LAB_0043cc1a
+    MOV ECX,dword ptr [0x006703ec]      ; 0043cc68 | g_CDemonRendererPtr
         ;   Label: LAB_0043cc68
-    PUSH ECX                            ; 0043cc6e | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0043cc6f | void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)
+    PUSH ECX                            ; 0043cc6e | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 0043cc6f
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
     FLD float ptr [ESP + 0x500]         ; 0043d413
         ;   Label: LAB_0043d413
     MOV EDX,dword ptr [0x00838e60]      ; 0043d41a | g_CDeformableModelInstanceInstance.motion_controller.current_frame_number
@@ -381,34 +381,34 @@ section .text
     FCOMP float ptr [ESP + 0x538]       ; 0043d450
     FNSTSW AX                           ; 0043d457
     SAHF                                ; 0043d459
-    JBE 0x0043d46c                      ; 0043d45a | LAB_0043d46c
-        ;   XREF to: 0043d46c (CONDITIONAL_JUMP)
+    JBE 0x0043d46c                      ; 0043d45a
+        ;   XREF to: 0043d46c (CONDITIONAL_JUMP)  ; LAB_0043d46c
     FLD float ptr [ESP + 0x540]         ; 0043d45c
     FSUB float ptr [ESP + 0x538]        ; 0043d463
-    JMP 0x0043d431                      ; 0043d46a | LAB_0043d431
-        ;   XREF to: 0043d431 (UNCONDITIONAL_JUMP)
+    JMP 0x0043d431                      ; 0043d46a
+        ;   XREF to: 0043d431 (UNCONDITIONAL_JUMP)  ; LAB_0043d431
     MOV ECX,dword ptr [ESP + 0x534]     ; 0043d46c
         ;   Label: LAB_0043d46c
     PUSH dword ptr [ESP + 0x540]        ; 0043d473
     PUSH ECX                            ; 0043d47a
-    PUSH 0x838e58                       ; 0043d47b | CDeformableModelInstance g_CDeformableModelInstanceInstance
-    CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0 ; 0043d480 | void core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0(CMotionController * this_ptr, char * motion_name, float frame_number)
-        ;   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)
+    PUSH 0x838e58                       ; 0043d47b | g_CDeformableModelInstanceInstance
+    CALL core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0 ; 0043d480
+        ;   XREF to: 0052ddb0 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0(CMotionController * this_ptr, char * motion_name, float frame_number)
     ADD ESP,0xc                         ; 0043d485
-    JMP 0x0043c9cc                      ; 0043d488 | LAB_0043c9cc
-        ;   XREF to: 0043c9cc (UNCONDITIONAL_JUMP)
-    PUSH 0x838e58                       ; 0043d48d | CDeformableModelInstance g_CDeformableModelInstanceInstance
+    JMP 0x0043c9cc                      ; 0043d488
+        ;   XREF to: 0043c9cc (UNCONDITIONAL_JUMP)  ; LAB_0043c9cc
+    PUSH 0x838e58                       ; 0043d48d | g_CDeformableModelInstanceInstance
         ;   Label: LAB_0043d48d
-    CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 0043d492 | void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)
-    JMP 0x0043c9e4                      ; 0043d497 | LAB_0043c9e4
-        ;   XREF to: 0043c9e4 (UNCONDITIONAL_JUMP)
+    CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 ; 0043d492
+        ;   XREF to: 0059e020 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(CDeformableModelInstance * this_ptr)
+    JMP 0x0043c9e4                      ; 0043d497
+        ;   XREF to: 0043c9e4 (UNCONDITIONAL_JUMP)  ; LAB_0043c9e4
     MOV EBX,dword ptr [ESI + 0x104]     ; 0043d49c
         ;   Label: LAB_0043d49c
     XOR EDX,EDX                         ; 0043d4a2
     TEST EBX,EBX                        ; 0043d4a4
-    JLE 0x0043d4f7                      ; 0043d4a6 | LAB_0043d4f7
-        ;   XREF to: 0043d4f7 (CONDITIONAL_JUMP)
+    JLE 0x0043d4f7                      ; 0043d4a6
+        ;   XREF to: 0043d4f7 (CONDITIONAL_JUMP)  ; LAB_0043d4f7
     MOV EDI,dword ptr [ESP + 0x4f8]     ; 0043d4a8
     XOR ECX,ECX                         ; 0043d4af
     ADD EDI,0xc0                        ; 0043d4b1
@@ -430,36 +430,36 @@ section .text
     MOV EAX,dword ptr [ESI + 0x104]     ; 0043d4ea
     ADD ECX,0xc                         ; 0043d4f0
     CMP EDX,EAX                         ; 0043d4f3
-    JL 0x0043d4b7                       ; 0043d4f5 | LAB_0043d4b7
-        ;   XREF to: 0043d4b7 (CONDITIONAL_JUMP)
+    JL 0x0043d4b7                       ; 0043d4f5
+        ;   XREF to: 0043d4b7 (CONDITIONAL_JUMP)  ; LAB_0043d4b7
     MOV EDX,dword ptr [ESI + 0x3ce8c]   ; 0043d4f7
         ;   Label: LAB_0043d4f7
     XOR EBX,EBX                         ; 0043d4fd
     TEST EDX,EDX                        ; 0043d4ff
-    JLE 0x0043ca5e                      ; 0043d501 | LAB_0043ca5e
-        ;   XREF to: 0043ca5e (CONDITIONAL_JUMP)
-    PUSH 0x838e58                       ; 0043d507 | CDeformableModelInstance g_CDeformableModelInstanceInstance
+    JLE 0x0043ca5e                      ; 0043d501
+        ;   XREF to: 0043ca5e (CONDITIONAL_JUMP)  ; LAB_0043ca5e
+    PUSH 0x838e58                       ; 0043d507 | g_CDeformableModelInstanceInstance
         ;   Label: LAB_0043d507
     PUSH EBX                            ; 0043d50c
     PUSH ESI                            ; 0043d50d
-    CALL core_cloth.cpp_FUN_0043a2b0    ; 0043d50e | undefined core_cloth.cpp_FUN_0043a2b0()
-        ;   XREF to: 0043a2b0 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043a2b0    ; 0043d50e
+        ;   XREF to: 0043a2b0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043a2b0()
     INC EBX                             ; 0043d513
     MOV ECX,dword ptr [ESI + 0x3ce8c]   ; 0043d514
     ADD ESP,0xc                         ; 0043d51a
     CMP EBX,ECX                         ; 0043d51d
-    JL 0x0043d507                       ; 0043d51f | LAB_0043d507
-        ;   XREF to: 0043d507 (CONDITIONAL_JUMP)
-    JMP 0x0043ca5e                      ; 0043d521 | LAB_0043ca5e
-        ;   XREF to: 0043ca5e (UNCONDITIONAL_JUMP)
+    JL 0x0043d507                       ; 0043d51f
+        ;   XREF to: 0043d507 (CONDITIONAL_JUMP)  ; LAB_0043d507
+    JMP 0x0043ca5e                      ; 0043d521
+        ;   XREF to: 0043ca5e (UNCONDITIONAL_JUMP)  ; LAB_0043ca5e
     PUSH 0xff                           ; 0043d526
         ;   Label: LAB_0043d526
-    MOV EDI,dword ptr [0x006703ec]      ; 0043d52b | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDI                            ; 0043d531 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 0043d532 | void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer * this_ptr, int color)
-        ;   XREF to: 0048c960 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x006703ec]      ; 0043d52b | g_CDemonRendererPtr
+    PUSH EDI                            ; 0043d531 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960 ; 0043d532
+        ;   XREF to: 0048c960 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer * this_ptr, int color)
     ADD ESP,0x8                         ; 0043d537
     PUSH 0x0                            ; 0043d53a
-    JMP 0x0043cc55                      ; 0043d53c | LAB_0043cc55
-        ;   XREF to: 0043cc55 (UNCONDITIONAL_JUMP)
+    JMP 0x0043cc55                      ; 0043d53c
+        ;   XREF to: 0043cc55 (UNCONDITIONAL_JUMP)  ; LAB_0043cc55
 

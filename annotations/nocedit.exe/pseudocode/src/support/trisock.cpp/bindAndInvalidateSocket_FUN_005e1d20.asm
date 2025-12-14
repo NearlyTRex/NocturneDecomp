@@ -25,20 +25,20 @@ section .text
         ;   Label: support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20
     MOV EBX,dword ptr [ESP + 0x8]       ; 005e1d21
     PUSH EBX                            ; 005e1d25
-    CALL support_trisock.cpp_isSocketValid_FUN_005e1b70 ; 005e1d26 | int support_trisock.cpp_isSocketValid_FUN_005e1b70(SSocketContext * socket_ctx)
-        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)
+    CALL support_trisock.cpp_isSocketValid_FUN_005e1b70 ; 005e1d26
+        ;   XREF to: 005e1b70 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_isSocketValid_FUN_005e1b70(SSocketContext * socket_ctx)
     ADD ESP,0x4                         ; 005e1d2b
     TEST EAX,EAX                        ; 005e1d2e
-    JNZ 0x005e1d39                      ; 005e1d30 | LAB_005e1d39
-        ;   XREF to: 005e1d39 (CONDITIONAL_JUMP)
+    JNZ 0x005e1d39                      ; 005e1d30
+        ;   XREF to: 005e1d39 (CONDITIONAL_JUMP)  ; LAB_005e1d39
     MOV EAX,0x1                         ; 005e1d32
     POP EBX                             ; 005e1d37
     RET                                 ; 005e1d38
     MOV EDX,dword ptr [EBX]             ; 005e1d39
         ;   Label: LAB_005e1d39
     PUSH EDX                            ; 005e1d3b
-    CALL crt_wsock32.c_closesocket      ; 005e1d3c | int crt_wsock32.c_closesocket(SOCKET s)
-        ;   XREF to: 00610efe (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_closesocket      ; 005e1d3c
+        ;   XREF to: 00610efe (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_closesocket(SOCKET s)
     TEST EAX,EAX                        ; 005e1d41
     SETZ AL                             ; 005e1d43
     AND EAX,0xff                        ; 005e1d46

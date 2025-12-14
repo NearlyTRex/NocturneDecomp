@@ -1,165 +1,165 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 102, 
-    "pseudocode_lines": 42, 
-    "cross_reference_count": 1, 
-    "global_count": 10, 
-    "total_lines": 109, 
-    "assembly_lines": 67, 
-    "suspect_count": 5, 
+    "assembly_lines": 67,
+    "complexity_score": 102,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 10,
+    "pseudocode_lines": 42,
+    "suspect_count": 5,
     "suspect_types": [
-      "negative_offset", 
+      "negative_offset",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dest.cpp_FUN_0046f900", 
-      "addr": "0046f900"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
-      "addr": "00478ce0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_filmreel_kfm_00629b3c", 
-      "addr": "00629b3c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CFilmReel_00629b49", 
-      "addr": "00629b49", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_FilmReel_00629b4a", 
-      "addr": "00629b4a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ilmReel_00629b4b", 
-      "addr": "00629b4b", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_lmReel_00629b4c", 
-      "addr": "00629b4c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_none_00629b53", 
-      "addr": "00629b53", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_one_00629b54", 
-      "addr": "00629b54", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ne_00629b55", 
-      "addr": "00629b55", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_00629b56", 
-      "addr": "00629b56", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_filmreel.cpp_FUN_0065db04", 
-      "addr": "0065db04", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "this_ptr_00[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "*(CDemonActor_vtable **)this_ptr_00[-1].animation_state = &PTR_core_filmreel_cpp_FUN_0065db04;"
-    }, 
-    {
-      "line": 19, 
-      "match": "this_ptr_00[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pcVar4 = this_ptr_00[-1].animation_state + 8;"
-    }, 
-    {
-      "line": 40, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)piVar5 + 1) = cVar1;"
-    }, 
-    {
-      "line": 41, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar5 = (int *)((int)piVar5 + 2);"
-    }, 
-    {
-      "line": 44, 
-      "match": "this_ptr_00[-2].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CFilmProjector *)(this_ptr_00[-2].animation_state + 0x28);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004bea40", 
-    "signature": "CFilmProjector * core_filmreel.cpp_ctor_FUN_004bea40(CFilmProjector * this_ptr)", 
-    "address_range": [
-      [
-        "004bea40", 
-        "004beaf9"
-      ]
-    ], 
-    "name": "core_filmreel.cpp_ctor_FUN_004bea40"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFilmProjector *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 109
+  },
   "cross_references": [
     {
-      "from_addr": "004bea1d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_filmreel.cpp_FUN_004bea00", 
-      "addr": "004bea00"
+      "addr": "004bea00",
+      "from_addr": "004bea1d",
+      "name": "core_filmreel.cpp_FUN_004bea00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bea40",
+    "address_range": [
+      [
+        "004bea40",
+        "004beaf9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_filmreel.cpp_ctor_FUN_004bea40",
+    "signature": "CFilmProjector * core_filmreel.cpp_ctor_FUN_004bea40(CFilmProjector * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0046f900",
+      "name": "core_dest.cpp_FUN_0046f900"
+    },
+    {
+      "addr": "00478ce0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629b3c",
+      "name": "s_filmreel_kfm_00629b3c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629b49",
+      "name": "s_CFilmReel_00629b49",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629b4a",
+      "name": "s_FilmReel_00629b4a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629b4b",
+      "name": "s_ilmReel_00629b4b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629b4c",
+      "name": "s_lmReel_00629b4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629b53",
+      "name": "s_none_00629b53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629b54",
+      "name": "s_one_00629b54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629b55",
+      "name": "s_ne_00629b55",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629b56",
+      "name": "s_e_00629b56",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065db04",
+      "name": "PTR_core_filmreel.cpp_FUN_0065db04",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFilmProjector *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "this_ptr_00[-1].",
+      "text": "*(CDemonActor_vtable **)this_ptr_00[-1].animation_state = &PTR_core_filmreel_cpp_FUN_0065db04;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "this_ptr_00[-1].",
+      "text": "pcVar4 = this_ptr_00[-1].animation_state + 8;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(int *)((int)",
+      "text": "piVar5 = (int *)((int)piVar5 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 44,
+      "match": "this_ptr_00[-2].",
+      "text": "return (CFilmProjector *)(this_ptr_00[-2].animation_state + 0x28);",
+      "type": "negative_offset"
     }
   ]
 }

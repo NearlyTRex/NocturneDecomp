@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 59, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 42, 
-    "assembly_lines": 28, 
-    "suspect_count": 4, 
+    "assembly_lines": 28,
+    "complexity_score": 59,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
-      "addr": "0040c1c0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0", 
-      "addr": "0040b8f0"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
-      "addr": "0040b5c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_00629aeb", 
-      "addr": "00629aeb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_movieName_00629af5", 
-      "addr": "00629af5", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CFilmReelClassVersion", 
-      "addr": "0067a2f8", 
-      "value": "0x2"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((char **)&in_stack_00000004[2].location.position.z,\"movieName\");"
-    }
-  ], 
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004be8a0", 
-    "signature": "undefined core_filmreel.cpp_FUN_004be8a0()", 
+    "address": "004be8a0",
     "address_range": [
       [
-        "004be8a0", 
+        "004be8a0",
         "004be8e4"
       ]
-    ], 
-    "name": "core_filmreel.cpp_FUN_004be8a0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_filmreel.cpp_FUN_004be8a0",
+    "signature": "undefined core_filmreel.cpp_FUN_004be8a0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c1c0",
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0"
+    },
+    {
+      "addr": "0040b8f0",
+      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0"
+    },
+    {
+      "addr": "0040b5c0",
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629aeb",
+      "name": "s_modelName_00629aeb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00629af5",
+      "name": "s_movieName_00629af5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067a2f8",
+      "name": "g_CFilmReelClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "((char **)&in_stack_00000004[2].location.position.z,\"movieName\");",
+      "type": "stack_param"
+    }
+  ]
 }

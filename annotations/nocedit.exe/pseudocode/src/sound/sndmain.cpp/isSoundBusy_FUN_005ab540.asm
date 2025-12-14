@@ -24,13 +24,13 @@
 
 section .text
 
-    CALL sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530 ; 005ab540 | uint sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530()
+    CALL sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530 ; 005ab540
+        ;   XREF to: 005ab530 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530()
         ;   Label: sound_sndmain.cpp_isSoundBusy_FUN_005ab540
-        ;   XREF to: 005ab530 (UNCONDITIONAL_CALL)
     TEST EAX,EAX                        ; 005ab545
-    JZ 0x005ab54e                       ; 005ab547 | LAB_005ab54e
-        ;   XREF to: 005ab54e (CONDITIONAL_JUMP)
-    MOV EAX,[0x03f6926c]                ; 005ab549 | int g_SoundBusyFlag
+    JZ 0x005ab54e                       ; 005ab547
+        ;   XREF to: 005ab54e (CONDITIONAL_JUMP)  ; LAB_005ab54e
+    MOV EAX,[0x03f6926c]                ; 005ab549 | g_SoundBusyFlag
     RET                                 ; 005ab54e
         ;   Label: LAB_005ab54e
 

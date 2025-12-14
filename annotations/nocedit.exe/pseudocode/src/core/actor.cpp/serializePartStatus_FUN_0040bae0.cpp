@@ -49,8 +49,7 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
     }
   } while (iVar2 != 10);
   crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%d",&stack0xffffffec);
-  core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410
-            ((CDeformableModelInstance *)part);
+  core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410(part);
   iVar2 = 0;
   if (0 < unaff_EDI) {
     do {
@@ -63,8 +62,7 @@ void __cdecl core_actor_cpp_serializePartStatus_FUN_0040bae0(void *part,char *pr
     } while (iVar2 < unaff_EDI);
   }
   crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile," ");
-  core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430
-            ((CDeformableModelInstance *)part);
+  core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_005a0430(part);
   iVar2 = 0;
   if (0 < unaff_EBX) {
     do {

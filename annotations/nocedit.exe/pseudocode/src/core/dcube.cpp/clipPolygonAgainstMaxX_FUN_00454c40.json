@@ -1,167 +1,167 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 55, 
-    "pseudocode_lines": 55, 
-    "cross_reference_count": 2, 
-    "global_count": 12, 
-    "total_lines": 196, 
-    "assembly_lines": 141, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004547d0", 
-      "addr": "004547d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_1_00454c28", 
-      "addr": "00454c28", 
-      "value": "00454cea"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_00454c30", 
-      "addr": "00454c30", 
-      "value": "00454ccf"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClipStage2Count", 
-      "addr": "015c442c", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[16]", 
-      "name": "g_ClipStageMinYBuffer", 
-      "addr": "015c4430", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c4434", 
-      "addr": "015c4434", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c4438", 
-      "addr": "015c4438", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c443c", 
-      "addr": "015c443c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c4448", 
-      "addr": "015c4448", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CubeClipStage3Count", 
-      "addr": "015c44f0", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f[16]", 
-      "name": "g_ClipStageMaxXBuffer", 
-      "addr": "015c44f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c44f8", 
-      "addr": "015c44f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c44fc", 
-      "addr": "015c44fc", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00454c49", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00454c40", 
-    "signature": "void core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40(float max_x_plane)", 
-    "address_range": [
-      [
-        "00454c40", 
-        "00454d8a"
-      ]
-    ], 
-    "name": "core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "max_x_plane"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 141,
+    "complexity_score": 55,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 12,
+    "pseudocode_lines": 55,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 196
+  },
   "cross_references": [
     {
-      "from_addr": "00456d21", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0", 
-      "addr": "00456af0"
-    }, 
+      "addr": "00456af0",
+      "from_addr": "00456d21",
+      "name": "core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00456649", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400", 
-      "addr": "00456400"
+      "addr": "00456400",
+      "from_addr": "00456649",
+      "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00454c40",
+    "address_range": [
+      [
+        "00454c40",
+        "00454d8a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40",
+    "signature": "void core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40(float max_x_plane)"
+  },
+  "function_calls": [
+    {
+      "addr": "004547d0",
+      "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004547d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00454c28",
+      "name": "PTR_caseD_1_00454c28",
+      "type": "void*",
+      "value": "00454cea"
+    },
+    {
+      "addr": "00454c30",
+      "name": "PTR_caseD_3_00454c30",
+      "type": "void*",
+      "value": "00454ccf"
+    },
+    {
+      "addr": "015c442c",
+      "name": "g_CubeClipStage2Count",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c4430",
+      "name": "g_ClipStageMinYBuffer",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "015c4434",
+      "name": "DAT_015c4434",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4438",
+      "name": "DAT_015c4438",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c443c",
+      "name": "DAT_015c443c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4448",
+      "name": "DAT_015c4448",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c44f0",
+      "name": "g_CubeClipStage3Count",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "015c44f4",
+      "name": "g_ClipStageMaxXBuffer",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "015c44f8",
+      "name": "DAT_015c44f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c44fc",
+      "name": "DAT_015c44fc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "max_x_plane",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00454c49",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

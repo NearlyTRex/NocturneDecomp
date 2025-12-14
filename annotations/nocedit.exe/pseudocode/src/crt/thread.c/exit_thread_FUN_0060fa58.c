@@ -9,7 +9,7 @@
 void __cdecl crt_thread_c_exit_thread_FUN_0060fa58(void)
 
 {
-  (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f28)();
+  (*PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f28)();
   crt_exception_c_RemoveExceptionHandler_FUN_0060abf4();
   if (g_EmergencyExitFlag == 0) {
     crt_tls_c_cleanup_thread_tls_data_FUN_0060a334(1);

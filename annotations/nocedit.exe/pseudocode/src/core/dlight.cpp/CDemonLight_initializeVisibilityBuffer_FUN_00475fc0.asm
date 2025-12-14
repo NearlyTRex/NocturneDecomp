@@ -30,8 +30,8 @@ section .text
     PUSH EAX                            ; 00475fe1
     MOV ECX,dword ptr [ECX + 0x2fa0]    ; 00475fe2
     XOR EDX,EDX                         ; 00475fe8
-    CALL core_event.cpp_FUN_004b19d0    ; 00475fea | void core_event.cpp_FUN_004b19d0()
-        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)
+    CALL core_event.cpp_FUN_004b19d0    ; 00475fea
+        ;   XREF to: 004b19d0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b19d0()
     POP EBX                             ; 00475fef
     RET                                 ; 00475ff0
 

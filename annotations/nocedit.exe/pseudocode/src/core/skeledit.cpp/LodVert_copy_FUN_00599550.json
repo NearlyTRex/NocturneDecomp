@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 31, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 65, 
-    "assembly_lines": 34, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 34,
+    "complexity_score": 31,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00599550", 
-    "signature": "CLodVert * core_skeledit.cpp_LodVert_copy_FUN_00599550(void * n1, void * n2, CLodVert * other2, CLodVert * other3)", 
+    "address": "00599550",
     "address_range": [
       [
-        "00599550", 
+        "00599550",
         "005995ba"
       ]
-    ], 
-    "name": "core_skeledit.cpp_LodVert_copy_FUN_00599550"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_LodVert_copy_FUN_00599550",
+    "signature": "CLodVert * core_skeledit.cpp_LodVert_copy_FUN_00599550(void * n1, void * n2, CLodVert * other2, CLodVert * other3)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "n1"
-      }, 
+        "is_param": true,
+        "name": "n1",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "n2"
-      }, 
+        "is_param": true,
+        "name": "n2",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CLodVert *", 
-        "size": 4, 
-        "name": "other2"
-      }, 
+        "is_param": true,
+        "name": "other2",
+        "offset": 12,
+        "size": 4,
+        "type": "CLodVert *"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CLodVert *", 
-        "size": 4, 
-        "name": "other3"
+        "is_param": true,
+        "name": "other3",
+        "offset": 16,
+        "size": 4,
+        "type": "CLodVert *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

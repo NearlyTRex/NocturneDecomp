@@ -21,6 +21,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00402800
         ;   Label: engine_2d.c_setTextWrapEnabled_FUN_00402800
-    MOV [0x0066df74],EAX                ; 00402804 | int g_TextWrapEnabled
+    MOV [0x0066df74],EAX                ; 00402804 | g_TextWrapEnabled
     RET                                 ; 00402809
 

@@ -17,9 +17,9 @@ section .text
         ;   Label: core_ground.cpp_getGroundTypeColor_FUN_004eee20
     DEC EAX                             ; 004eee24
     CMP EAX,0xc                         ; 004eee25
-    JA 0x004eee73                       ; 004eee28 | default
-        ;   XREF to: 004eee73 (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x4eede0]  ; 004eee2a | void * switchdataD_004eede0
+    JA 0x004eee73                       ; 004eee28
+        ;   XREF to: 004eee73 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x4eede0]  ; 004eee2a | caseD_1 | caseD_2 | caseD_3
         ;   Label: switchD
     MOV EAX,0x5                         ; 004eee31
         ;   Label: caseD_1

@@ -1,109 +1,109 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 3, 
-    "global_count": 5, 
-    "total_lines": 35, 
-    "assembly_lines": 23, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_setFogColor*", 
-      "name": "g_APIDLL_setFogColor", 
-      "addr": "03f6b8f0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FogColorRed", 
-      "addr": "03f6b980", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FogColorGreen", 
-      "addr": "03f6b984", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FogColorBlue", 
-      "addr": "03f6b988", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b7b80", 
-    "signature": "int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)", 
-    "address_range": [
-      [
-        "005b7b80", 
-        "005b7bb9"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_setFogColor_FUN_005b7b80"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "red"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "green"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "blue"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 23,
+    "complexity_score": 12,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 5,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
+  },
   "cross_references": [
     {
-      "from_addr": "00453c7d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0", 
-      "addr": "00453bd0"
-    }, 
+      "addr": "00453bd0",
+      "from_addr": "00453c7d",
+      "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045368a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_00453640", 
-      "addr": "00453640"
-    }, 
+      "addr": "00453640",
+      "from_addr": "0045368a",
+      "name": "core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_00453640",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00403418", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_setSolidColor_FUN_004033a0", 
-      "addr": "004033a0"
+      "addr": "004033a0",
+      "from_addr": "00403418",
+      "name": "engine_2d.c_setSolidColor_FUN_004033a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b7b80",
+    "address_range": [
+      [
+        "005b7b80",
+        "005b7bb9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_setFogColor_FUN_005b7b80",
+    "signature": "int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8f0",
+      "name": "g_APIDLL_setFogColor",
+      "type": "APIDLL_setFogColor*",
+      "value": null
+    },
+    {
+      "addr": "03f6b980",
+      "name": "g_FogColorRed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b984",
+      "name": "g_FogColorGreen",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b988",
+      "name": "g_FogColorBlue",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

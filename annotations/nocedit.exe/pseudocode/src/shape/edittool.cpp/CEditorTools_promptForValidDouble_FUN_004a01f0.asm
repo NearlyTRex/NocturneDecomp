@@ -53,8 +53,8 @@ section .text
     MOV EDI,dword ptr [EBP + 0x20]      ; 004a021a
     MOV dword ptr [ESP + 0x14],EAX      ; 004a021d
     TEST byte ptr [EBP + 0x34],0x1      ; 004a0221
-    JNZ 0x004a024b                      ; 004a0225 | LAB_004a024b
-        ;   XREF to: 004a024b (CONDITIONAL_JUMP)
+    JNZ 0x004a024b                      ; 004a0225
+        ;   XREF to: 004a024b (CONDITIONAL_JUMP)  ; LAB_004a024b
     XOR DL,DL                           ; 004a0227
     MOV byte ptr [ESP + 0x18],DL        ; 004a0229
     PUSH 0x1                            ; 004a022d
@@ -64,12 +64,12 @@ section .text
     PUSH EAX                            ; 004a0235
     PUSH ESI                            ; 004a0236
     PUSH EBX                            ; 004a0237
-    CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004a0238 | int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
-        ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004a0238
+        ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004a023d
     TEST EAX,EAX                        ; 004a0240
-    JNZ 0x004a0269                      ; 004a0242 | LAB_004a0269
-        ;   XREF to: 004a0269 (CONDITIONAL_JUMP)
+    JNZ 0x004a0269                      ; 004a0242
+        ;   XREF to: 004a0269 (CONDITIONAL_JUMP)  ; LAB_004a0269
     MOV ESP,EBP                         ; 004a0244
     POP EBP                             ; 004a0246
     POP EDI                             ; 004a0247
@@ -82,41 +82,41 @@ section .text
     PUSH EDX                            ; 004a0251
     MOV ECX,dword ptr [EAX]             ; 004a0252
     PUSH ECX                            ; 004a0254
-    PUSH 0x623258                       ; 004a0255 | = "%.15g" | s_s_15g_00623258 = %.15g
+    PUSH 0x623258                       ; 004a0255 | = "%.15g"
     LEA EAX,[ESP + 0x24]                ; 004a025a
     PUSH EAX                            ; 004a025e
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a025f | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a025f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004a0264
-    JMP 0x004a022d                      ; 004a0267 | LAB_004a022d
-        ;   XREF to: 004a022d (UNCONDITIONAL_JUMP)
+    JMP 0x004a022d                      ; 004a0267
+        ;   XREF to: 004a022d (UNCONDITIONAL_JUMP)  ; LAB_004a022d
     MOV EAX,ESP                         ; 004a0269
         ;   Label: LAB_004a0269
     PUSH EAX                            ; 004a026b
-    PUSH 0x62325e                       ; 004a026c | = "%lf" | s_lf_0062325e = %lf
+    PUSH 0x62325e                       ; 004a026c | = "%lf"
     LEA EAX,[ESP + 0x20]                ; 004a0271
     PUSH EAX                            ; 004a0275
-    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004a0276 | int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
-        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004a0276
+        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
     ADD ESP,0xc                         ; 004a027b
     CMP EAX,0x1                         ; 004a027e
-    JNZ 0x004a02ba                      ; 004a0281 | LAB_004a02ba
-        ;   XREF to: 004a02ba (CONDITIONAL_JUMP)
+    JNZ 0x004a02ba                      ; 004a0281
+        ;   XREF to: 004a02ba (CONDITIONAL_JUMP)  ; LAB_004a02ba
     TEST EDI,EDI                        ; 004a0283
-    JZ 0x004a029f                       ; 004a0285 | LAB_004a029f
-        ;   XREF to: 004a029f (CONDITIONAL_JUMP)
+    JZ 0x004a029f                       ; 004a0285
+        ;   XREF to: 004a029f (CONDITIONAL_JUMP)  ; LAB_004a029f
     FLD double ptr [ESP]                ; 004a0287
     FCOMP double ptr [ESP + 0x8]        ; 004a028a
     FNSTSW AX                           ; 004a028e
     SAHF                                ; 004a0290
-    JC 0x004a02cd                       ; 004a0291 | LAB_004a02cd
-        ;   XREF to: 004a02cd (CONDITIONAL_JUMP)
+    JC 0x004a02cd                       ; 004a0291
+        ;   XREF to: 004a02cd (CONDITIONAL_JUMP)  ; LAB_004a02cd
     FLD double ptr [ESP]                ; 004a0293
     FCOMP double ptr [ESP + 0x10]       ; 004a0296
     FNSTSW AX                           ; 004a029a
     SAHF                                ; 004a029c
-    JA 0x004a02cd                       ; 004a029d | LAB_004a02cd
-        ;   XREF to: 004a02cd (CONDITIONAL_JUMP)
+    JA 0x004a02cd                       ; 004a029d
+        ;   XREF to: 004a02cd (CONDITIONAL_JUMP)  ; LAB_004a02cd
     MOV EBX,dword ptr [EBP + 0x1c]      ; 004a029f
         ;   Label: LAB_004a029f
     MOV EAX,dword ptr [ESP]             ; 004a02a2
@@ -130,14 +130,14 @@ section .text
     POP ESI                             ; 004a02b7
     POP EBX                             ; 004a02b8
     RET                                 ; 004a02b9
-    PUSH 0x623262                       ; 004a02ba | = "Please enter a valid number." | s_Please_enter_a_valid_num_00623262 = Please enter a valid number.
+    PUSH 0x623262                       ; 004a02ba | = "Please enter a valid number."
         ;   Label: LAB_004a02ba
     PUSH EBX                            ; 004a02bf
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004a02c0 | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004a02c0
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004a02c5
-    JMP 0x004a022d                      ; 004a02c8 | LAB_004a022d
-        ;   XREF to: 004a022d (UNCONDITIONAL_JUMP)
+    JMP 0x004a022d                      ; 004a02c8
+        ;   XREF to: 004a022d (UNCONDITIONAL_JUMP)  ; LAB_004a022d
     MOV EAX,dword ptr [ESP + 0x14]      ; 004a02cd
         ;   Label: LAB_004a02cd
     PUSH EAX                            ; 004a02d1
@@ -147,11 +147,11 @@ section .text
     PUSH ECX                            ; 004a02db
     MOV EAX,dword ptr [ESP + 0x14]      ; 004a02dc
     PUSH EAX                            ; 004a02e0
-    PUSH 0x62327f                       ; 004a02e1 | = "Please enter a valid integer between ..." | s_Please_enter_a_valid_int_0062327f = Please enter a valid integer between %.15g and %.15g.
+    PUSH 0x62327f                       ; 004a02e1 | = "Please enter a valid integer between ..."
     PUSH EBX                            ; 004a02e6
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004a02e7 | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 004a02e7
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 004a02ec
-    JMP 0x004a022d                      ; 004a02ef | LAB_004a022d
-        ;   XREF to: 004a022d (UNCONDITIONAL_JUMP)
+    JMP 0x004a022d                      ; 004a02ef
+        ;   XREF to: 004a022d (UNCONDITIONAL_JUMP)  ; LAB_004a022d
 

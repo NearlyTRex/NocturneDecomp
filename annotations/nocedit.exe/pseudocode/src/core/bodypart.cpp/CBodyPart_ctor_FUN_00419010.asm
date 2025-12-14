@@ -27,29 +27,29 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00419010
         ;   Label: core_bodypart.cpp_CBodyPart_ctor_FUN_00419010
     PUSH EAX                            ; 00419014
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 00419015 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 00419015
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0041901a
-    PUSH 0x65aec0                       ; 0041901d | WatcomTypeInfo g_SBodyPartModelTypeInfo
+    PUSH 0x65aec0                       ; 0041901d | g_SBodyPartModelTypeInfo
     PUSH 0x3                            ; 00419022
     ADD EAX,0x290                       ; 00419024
     PUSH EAX                            ; 00419029
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0041902a | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0041902a
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0041902f
-    PUSH 0x65aee0                       ; 00419032 | WatcomTypeInfo g_SBodyPartFireTypeInfo
+    PUSH 0x65aee0                       ; 00419032 | g_SBodyPartFireTypeInfo
     PUSH 0x2                            ; 00419037
     ADD EAX,0x4c0                       ; 00419039
     PUSH EAX                            ; 0041903e
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0041903f | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0041903f
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00419044
     ADD EAX,0x57c                       ; 00419047
     PUSH EAX                            ; 0041904c
-    CALL core_box.cpp_CBox_ctor_FUN_0041dc50 ; 0041904d | CBox * core_box.cpp_CBox_ctor_FUN_0041dc50(CBox * this_ptr)
-        ;   XREF to: 0041dc50 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBox_ctor_FUN_0041dc50 ; 0041904d
+        ;   XREF to: 0041dc50 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_ctor_FUN_0041dc50(CBox * this_ptr)
     SUB EAX,0xccc                       ; 00419052
-    MOV dword ptr [EAX + 0x154],0x65add4 ; 00419057 | CDemonActor_vtable g_CBodyPartVTable
+    MOV dword ptr [EAX + 0x154],0x65add4 ; 00419057 | g_CBodyPartVTable
     MOV dword ptr [EAX + 0xf28],0x0     ; 00419061
     MOV dword ptr [EAX + 0x174],0x0     ; 0041906b
     MOV dword ptr [EAX + 0x178],0x0     ; 00419075

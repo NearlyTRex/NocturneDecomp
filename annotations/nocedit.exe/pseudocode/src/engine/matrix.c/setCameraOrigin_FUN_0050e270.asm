@@ -24,10 +24,10 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0050e270
         ;   Label: engine_matrix.c_setCameraOrigin_FUN_0050e270
-    MOV [0x02d052c4],EAX                ; 0050e274 | int g_CameraOriginX
+    MOV [0x02d052c4],EAX                ; 0050e274 | g_CameraOriginX
     MOV EAX,dword ptr [ESP + 0x8]       ; 0050e279
-    MOV [0x02d052c8],EAX                ; 0050e27d | int g_CameraOriginY
+    MOV [0x02d052c8],EAX                ; 0050e27d | g_CameraOriginY
     MOV EAX,dword ptr [ESP + 0xc]       ; 0050e282
-    MOV [0x02d052cc],EAX                ; 0050e286 | int g_CameraOriginZ
+    MOV [0x02d052cc],EAX                ; 0050e286 | g_CameraOriginZ
     RET                                 ; 0050e28b
 

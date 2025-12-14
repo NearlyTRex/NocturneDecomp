@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 66, 
-    "assembly_lines": 51, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fputc_FUN_005ff2d7", 
-      "addr": "005ff2d7"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043f200", 
-    "signature": "int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, FILE * output_file)", 
-    "address_range": [
-      [
-        "0043f200", 
-        "0043f260"
-      ]
-    ], 
-    "name": "support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWDictionary *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "code"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "output_file"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 51,
+    "complexity_score": 15,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 66
+  },
   "cross_references": [
     {
-      "from_addr": "0043f5ad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDecompress_finalize_FUN_0043f590", 
-      "addr": "0043f590"
-    }, 
+      "addr": "0043f590",
+      "from_addr": "0043f5ad",
+      "name": "support_codec.cpp_CLZWDecompress_finalize_FUN_0043f590",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043f52a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDecompress_process_FUN_0043f510", 
-      "addr": "0043f510"
+      "addr": "0043f510",
+      "from_addr": "0043f52a",
+      "name": "support_codec.cpp_CLZWDecompress_process_FUN_0043f510",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0043f200",
+    "address_range": [
+      [
+        "0043f200",
+        "0043f260"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200",
+    "signature": "int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, FILE * output_file)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff2d7",
+      "name": "crt_stdio.c_fputc_FUN_005ff2d7"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDictionary *"
+      },
+      {
+        "is_param": true,
+        "name": "code",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "output_file",
+        "offset": 12,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": []
 }

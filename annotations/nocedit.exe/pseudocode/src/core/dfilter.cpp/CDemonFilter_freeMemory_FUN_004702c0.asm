@@ -25,16 +25,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004702c1
     MOV EDX,dword ptr [EBX + 0x48]      ; 004702c5
     TEST EDX,EDX                        ; 004702c8
-    JNZ 0x004702ce                      ; 004702ca | LAB_004702ce
-        ;   XREF to: 004702ce (CONDITIONAL_JUMP)
+    JNZ 0x004702ce                      ; 004702ca
+        ;   XREF to: 004702ce (CONDITIONAL_JUMP)  ; LAB_004702ce
     POP EBX                             ; 004702cc
     RET                                 ; 004702cd
     PUSH 0x98                           ; 004702ce
         ;   Label: LAB_004702ce
-    PUSH 0x61e59b                       ; 004702d3 | = "..\\core\\dfilter.cpp" | s_core_dfilter_cpp_0061e59b = ..\core\dfilter.cpp
+    PUSH 0x61e59b                       ; 004702d3 | = "..\\core\\dfilter.cpp"
     PUSH EDX                            ; 004702d8
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 004702d9 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 004702d9
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 004702de
     MOV dword ptr [EBX + 0x48],0x0      ; 004702e1
     POP EBX                             ; 004702e8

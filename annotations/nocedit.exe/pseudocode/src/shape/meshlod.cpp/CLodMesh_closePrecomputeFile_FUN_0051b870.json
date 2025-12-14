@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 29, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_00637d43", 
-      "addr": "00637d43", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0051b870", 
-    "signature": "void shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(CLodMesh * this_ptr)", 
-    "address_range": [
-      [
-        "0051b870", 
-        "0051b899"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 19,
+    "complexity_score": 10,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
   "cross_references": [
     {
-      "from_addr": "00589dd2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589c20", 
-      "addr": "00589c20"
-    }, 
+      "addr": "00589c20",
+      "from_addr": "00589dd2",
+      "name": "core_skeledit.cpp_FUN_00589c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00515979", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_free_FUN_00515970", 
-      "addr": "00515970"
-    }, 
+      "addr": "00515970",
+      "from_addr": "00515979",
+      "name": "shape_meshlod.cpp_CLodMesh_free_FUN_00515970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00516d38", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0", 
-      "addr": "00516ba0"
+      "addr": "00516ba0",
+      "from_addr": "00516d38",
+      "name": "shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0051b870",
+    "address_range": [
+      [
+        "0051b870",
+        "0051b899"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870",
+    "signature": "void shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(CLodMesh * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00637d43",
+      "name": "s_shape_meshlod_cpp_00637d43",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -25,7 +25,7 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004c6200(CShell *this_ptr)
     if (iVar1 != 0) {
       iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
       if (iVar1 == 0) {
-        (*(code *)((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+        (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
       }
       core_set_cpp_CDemonSet_FUN_0056d380(g_CDemonSetPtr);
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450

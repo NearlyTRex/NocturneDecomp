@@ -1,61 +1,61 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 36, 
-    "assembly_lines": 22, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0", 
-      "addr": "0052dce0"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460", 
-      "addr": "0052d460"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0042d390", 
-    "signature": "int core_charactr.cpp_CCharacter_FUN_0042d390(CCharacter * this_ptr)", 
-    "address_range": [
-      [
-        "0042d390", 
-        "0042d3cf"
-      ]
-    ], 
-    "name": "core_charactr.cpp_CCharacter_FUN_0042d390"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCharacter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 22,
+    "complexity_score": 14,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
   "cross_references": [
     {
-      "from_addr": "0055d17b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
+      "addr": "0055a810",
+      "from_addr": "0055d17b",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0042d390",
+    "address_range": [
+      [
+        "0042d390",
+        "0042d3cf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_FUN_0042d390",
+    "signature": "int core_charactr.cpp_CCharacter_FUN_0042d390(CCharacter * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052dce0",
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "0052d460",
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": []
 }

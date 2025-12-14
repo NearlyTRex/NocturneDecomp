@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f8741c                   ; 005deb60 | CDemonActorType g_CTrashClassInfo
+    MOV EAX,0x3f8741c                   ; 005deb60 | g_CTrashClassInfo
         ;   Label: core_trash.cpp_CTrash_getActorType_FUN_005deb60
     RET                                 ; 005deb65
 

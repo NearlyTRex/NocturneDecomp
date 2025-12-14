@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005ff9d0
         ;   Label: crt_io.c_deleteFile_FUN_005ff9d0
     PUSH EDX                            ; 005ff9d4
-    CALL crt_stdio.c_remove_FUN_00606600 ; 005ff9d5 | int crt_stdio.c_remove_FUN_00606600(char * filename)
-        ;   XREF to: 00606600 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_remove_FUN_00606600 ; 005ff9d5
+        ;   XREF to: 00606600 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_00606600(char * filename)
     ADD ESP,0x4                         ; 005ff9da
     RET                                 ; 005ff9dd
 

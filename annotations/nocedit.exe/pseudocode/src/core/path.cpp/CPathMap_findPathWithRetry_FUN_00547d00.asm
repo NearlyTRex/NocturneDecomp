@@ -45,35 +45,35 @@ section .text
     FCOMP float ptr [ESI]               ; 00547d18
     FNSTSW AX                           ; 00547d1a
     SAHF                                ; 00547d1c
-    JZ 0x00547d6a                       ; 00547d1d | LAB_00547d6a
-        ;   XREF to: 00547d6a (CONDITIONAL_JUMP)
+    JZ 0x00547d6a                       ; 00547d1d
+        ;   XREF to: 00547d6a (CONDITIONAL_JUMP)  ; LAB_00547d6a
     LEA EAX,[EBX + 0x138c0]             ; 00547d1f
         ;   Label: LAB_00547d1f
     CMP EAX,ESI                         ; 00547d25
-    JNZ 0x00547d82                      ; 00547d27 | LAB_00547d82
-        ;   XREF to: 00547d82 (CONDITIONAL_JUMP)
+    JNZ 0x00547d82                      ; 00547d27
+        ;   XREF to: 00547d82 (CONDITIONAL_JUMP)  ; LAB_00547d82
     MOV EDX,0x1                         ; 00547d29
         ;   Label: LAB_00547d29
     LEA EDI,[EBX + 0x138cc]             ; 00547d2e
-    MOV dword ptr [0x030c3ab4],EDX      ; 00547d34 | int g_PathfindingMaxClimbHeight
+    MOV dword ptr [0x030c3ab4],EDX      ; 00547d34 | g_PathfindingMaxClimbHeight
     PUSH EBP                            ; 00547d3a
         ;   Label: LAB_00547d3a
     PUSH EDI                            ; 00547d3b
     PUSH ESI                            ; 00547d3c
     PUSH EBX                            ; 00547d3d
-    CALL core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 ; 00547d3e | int core_path.cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
-        ;   XREF to: 00547320 (UNCONDITIONAL_CALL)
+    CALL core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 ; 00547d3e
+        ;   XREF to: 00547320 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap * this_ptr, CVector3f * dest_position, CVector3f * out_euler_angles, int direction_hint)
     ADD ESP,0x10                        ; 00547d43
     MOV dword ptr [EBX + 0x138bc],EAX   ; 00547d46
     CMP EAX,0x1                         ; 00547d4c
-    JNZ 0x00547d94                      ; 00547d4f | LAB_00547d94
-        ;   XREF to: 00547d94 (CONDITIONAL_JUMP)
+    JNZ 0x00547d94                      ; 00547d4f
+        ;   XREF to: 00547d94 (CONDITIONAL_JUMP)  ; LAB_00547d94
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00547d51
         ;   Label: LAB_00547d51
     LEA EAX,[EBX + 0x138cc]             ; 00547d55
     CMP EAX,ECX                         ; 00547d5b
-    JNZ 0x00547da6                      ; 00547d5d | LAB_00547da6
-        ;   XREF to: 00547da6 (CONDITIONAL_JUMP)
+    JNZ 0x00547da6                      ; 00547d5d
+        ;   XREF to: 00547da6 (CONDITIONAL_JUMP)  ; LAB_00547da6
     MOV EAX,dword ptr [EBX + 0x138bc]   ; 00547d5f
     POP EBP                             ; 00547d65
     POP EDI                             ; 00547d66
@@ -85,16 +85,16 @@ section .text
     FCOMP float ptr [ESI + 0x4]         ; 00547d6d
     FNSTSW AX                           ; 00547d70
     SAHF                                ; 00547d72
-    JNZ 0x00547d1f                      ; 00547d73 | LAB_00547d1f
-        ;   XREF to: 00547d1f (CONDITIONAL_JUMP)
+    JNZ 0x00547d1f                      ; 00547d73
+        ;   XREF to: 00547d1f (CONDITIONAL_JUMP)  ; LAB_00547d1f
     FLD float ptr [EDI + 0x8]           ; 00547d75
     FCOMP float ptr [ESI + 0x8]         ; 00547d78
     FNSTSW AX                           ; 00547d7b
     SAHF                                ; 00547d7d
-    JZ 0x00547d51                       ; 00547d7e | LAB_00547d51
-        ;   XREF to: 00547d51 (CONDITIONAL_JUMP)
-    JMP 0x00547d1f                      ; 00547d80 | LAB_00547d1f
-        ;   XREF to: 00547d1f (UNCONDITIONAL_JUMP)
+    JZ 0x00547d51                       ; 00547d7e
+        ;   XREF to: 00547d51 (CONDITIONAL_JUMP)  ; LAB_00547d51
+    JMP 0x00547d1f                      ; 00547d80
+        ;   XREF to: 00547d1f (UNCONDITIONAL_JUMP)  ; LAB_00547d1f
     MOV EDX,dword ptr [ESI]             ; 00547d82
         ;   Label: LAB_00547d82
     MOV dword ptr [EAX],EDX             ; 00547d84
@@ -102,17 +102,17 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 00547d89
     MOV EDX,dword ptr [ESI + 0x8]       ; 00547d8c
     MOV dword ptr [EAX + 0x8],EDX       ; 00547d8f
-    JMP 0x00547d29                      ; 00547d92 | LAB_00547d29
-        ;   XREF to: 00547d29 (UNCONDITIONAL_JUMP)
-    MOV EAX,[0x030c3ab4]                ; 00547d94 | int g_PathfindingMaxClimbHeight
+    JMP 0x00547d29                      ; 00547d92
+        ;   XREF to: 00547d29 (UNCONDITIONAL_JUMP)  ; LAB_00547d29
+    MOV EAX,[0x030c3ab4]                ; 00547d94 | g_PathfindingMaxClimbHeight
         ;   Label: LAB_00547d94
     INC EAX                             ; 00547d99
-    MOV [0x030c3ab4],EAX                ; 00547d9a | int g_PathfindingMaxClimbHeight
+    MOV [0x030c3ab4],EAX                ; 00547d9a | g_PathfindingMaxClimbHeight
     CMP EAX,0x3                         ; 00547d9f
-    JLE 0x00547d3a                      ; 00547da2 | LAB_00547d3a
-        ;   XREF to: 00547d3a (CONDITIONAL_JUMP)
-    JMP 0x00547d51                      ; 00547da4 | LAB_00547d51
-        ;   XREF to: 00547d51 (UNCONDITIONAL_JUMP)
+    JLE 0x00547d3a                      ; 00547da2
+        ;   XREF to: 00547d3a (CONDITIONAL_JUMP)  ; LAB_00547d3a
+    JMP 0x00547d51                      ; 00547da4
+        ;   XREF to: 00547d51 (UNCONDITIONAL_JUMP)  ; LAB_00547d51
     MOV EDX,dword ptr [EAX]             ; 00547da6
         ;   Label: LAB_00547da6
     MOV dword ptr [ECX],EDX             ; 00547da8

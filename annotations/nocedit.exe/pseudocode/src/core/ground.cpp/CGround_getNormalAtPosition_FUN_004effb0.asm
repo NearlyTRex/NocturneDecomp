@@ -77,12 +77,12 @@ section .text
     MOV dword ptr [ESP + 0x44],EDX      ; 004f0027
     LEA EDX,[EDI + 0x1]                 ; 004f002b
     CMP EBX,dword ptr [ESP + 0x44]      ; 004f002e
-    JNZ 0x004f015a                      ; 004f0032 | LAB_004f015a
-        ;   XREF to: 004f015a (CONDITIONAL_JUMP)
+    JNZ 0x004f015a                      ; 004f0032
+        ;   XREF to: 004f015a (CONDITIONAL_JUMP)  ; LAB_004f015a
     MOV EBX,dword ptr [ESP + 0x4c]      ; 004f0038
     CMP EBX,dword ptr [ESP + 0x50]      ; 004f003c
-    JLE 0x004f00d2                      ; 004f0040 | LAB_004f00d2
-        ;   XREF to: 004f00d2 (CONDITIONAL_JUMP)
+    JLE 0x004f00d2                      ; 004f0040
+        ;   XREF to: 004f00d2 (CONDITIONAL_JUMP)  ; LAB_004f00d2
     MOV EBX,dword ptr [ESI]             ; 004f0046
     IMUL EBX,EAX                        ; 004f0048
     MOV EAX,dword ptr [ESI + 0x24]      ; 004f004b
@@ -117,8 +117,8 @@ section .text
     PUSH EAX                            ; 004f00a8
     LEA ESI,[ESP + 0x10]                ; 004f00a9
     MOV dword ptr [ESP + 0x30],EBX      ; 004f00ad
-    CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 004f00b1 | CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
-        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 004f00b1
+        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
     LEA ESI,[ESP + 0x10]                ; 004f00b6
     ADD ESP,0x4                         ; 004f00ba
         ;   Label: LAB_004f00ba
@@ -178,17 +178,17 @@ section .text
     PUSH EAX                            ; 004f0143
     LEA ESI,[ESP + 0x34]                ; 004f0144
     LEA EDI,[ESP + 0x28]                ; 004f0148
-    CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 004f014c | CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
-        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 004f014c
+        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
     LEA ESI,[ESP + 0x34]                ; 004f0151
-    JMP 0x004f00ba                      ; 004f0155 | LAB_004f00ba
-        ;   XREF to: 004f00ba (UNCONDITIONAL_JUMP)
+    JMP 0x004f00ba                      ; 004f0155
+        ;   XREF to: 004f00ba (UNCONDITIONAL_JUMP)  ; LAB_004f00ba
     MOV EBX,0x10000                     ; 004f015a
         ;   Label: LAB_004f015a
     SUB EBX,dword ptr [ESP + 0x4c]      ; 004f015f
     CMP EBX,dword ptr [ESP + 0x50]      ; 004f0163
-    JLE 0x004f0200                      ; 004f0167 | LAB_004f0200
-        ;   XREF to: 004f0200 (CONDITIONAL_JUMP)
+    JLE 0x004f0200                      ; 004f0167
+        ;   XREF to: 004f0200 (CONDITIONAL_JUMP)  ; LAB_004f0200
     MOV EBX,dword ptr [ESI]             ; 004f016d
     IMUL EBX,EAX                        ; 004f016f
     MOV dword ptr [ESP + 0x44],EBX      ; 004f0172
@@ -233,11 +233,11 @@ section .text
     PUSH EAX                            ; 004f01e9
     LEA ESI,[ESP + 0x4]                 ; 004f01ea
     MOV dword ptr [ESP + 0x30],EBX      ; 004f01ee
-    CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 004f01f2 | CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
-        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 004f01f2
+        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
     LEA ESI,[ESP + 0x4]                 ; 004f01f7
-    JMP 0x004f00ba                      ; 004f01fb | LAB_004f00ba
-        ;   XREF to: 004f00ba (UNCONDITIONAL_JUMP)
+    JMP 0x004f00ba                      ; 004f01fb
+        ;   XREF to: 004f00ba (UNCONDITIONAL_JUMP)  ; LAB_004f00ba
     MOV EBX,dword ptr [ESI + 0x8]       ; 004f0200
         ;   Label: LAB_004f0200
     AND EBX,EDX                         ; 004f0203
@@ -274,9 +274,9 @@ section .text
     PUSH EAX                            ; 004f0269
     LEA ESI,[ESP + 0x1c]                ; 004f026a
     LEA EDI,[ESP + 0x28]                ; 004f026e
-    CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 004f0272 | CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
-        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0 ; 004f0272
+        ;   XREF to: 0050d9f0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i * inputVector)
     LEA ESI,[ESP + 0x1c]                ; 004f0277
-    JMP 0x004f00ba                      ; 004f027b | LAB_004f00ba
-        ;   XREF to: 004f00ba (UNCONDITIONAL_JUMP)
+    JMP 0x004f00ba                      ; 004f027b
+        ;   XREF to: 004f00ba (UNCONDITIONAL_JUMP)  ; LAB_004f00ba
 

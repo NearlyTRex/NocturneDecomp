@@ -44,24 +44,24 @@ section .text
     SUB ESP,0xc                         ; 00601bc9
     MOV EBP,dword ptr [ESP + 0x2c]      ; 00601bcc
     TEST EBP,EBP                        ; 00601bd0
-    JZ 0x00601bd9                       ; 00601bd2 | LAB_00601bd9
-        ;   XREF to: 00601bd9 (CONDITIONAL_JUMP)
+    JZ 0x00601bd9                       ; 00601bd2
+        ;   XREF to: 00601bd9 (CONDITIONAL_JUMP)  ; LAB_00601bd9
     CMP EBP,-0x2c                       ; 00601bd4
-    JBE 0x00601be0                      ; 00601bd7 | LAB_00601be0
-        ;   XREF to: 00601be0 (CONDITIONAL_JUMP)
+    JBE 0x00601be0                      ; 00601bd7
+        ;   XREF to: 00601be0 (CONDITIONAL_JUMP)  ; LAB_00601be0
     XOR EAX,EAX                         ; 00601bd9
         ;   Label: LAB_00601bd9
-    JMP 0x00601cc1                      ; 00601bdb | LAB_00601cc1
-        ;   XREF to: 00601cc1 (UNCONDITIONAL_JUMP)
+    JMP 0x00601cc1                      ; 00601bdb
+        ;   XREF to: 00601cc1 (UNCONDITIONAL_JUMP)  ; LAB_00601cc1
     LEA EAX,[EBP + 0xb]                 ; 00601be0
         ;   Label: LAB_00601be0
     AND AL,0xf8                         ; 00601be3
     MOV dword ptr [ESP + 0x4],EAX       ; 00601be5
     CMP EAX,0x10                        ; 00601be9
-    JNC 0x00601bf6                      ; 00601bec | LAB_00601bf6
-        ;   XREF to: 00601bf6 (CONDITIONAL_JUMP)
+    JNC 0x00601bf6                      ; 00601bec
+        ;   XREF to: 00601bf6 (CONDITIONAL_JUMP)  ; LAB_00601bf6
     MOV dword ptr [ESP + 0x4],0x10      ; 00601bee
-    CALL dword ptr [0x00684f00]         ; 00601bf6 | void * PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00
+    CALL dword ptr [0x00684f00]         ; 00601bf6 | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00
         ;   Label: LAB_00601bf6
     XOR ECX,ECX                         ; 00601bfc
     XOR AH,AH                           ; 00601bfe
@@ -69,81 +69,81 @@ section .text
     MOV byte ptr [ESP + 0x8],AH         ; 00601c03
     MOV EAX,dword ptr [ESP + 0x4]       ; 00601c07
         ;   Label: LAB_00601c07
-    CMP EAX,dword ptr [0x00684edc]      ; 00601c0b | undefined4 DAT_00684edc
-    JBE 0x00601c2b                      ; 00601c11 | LAB_00601c2b
-        ;   XREF to: 00601c2b (CONDITIONAL_JUMP)
-    MOV ESI,dword ptr [0x00684ed8]      ; 00601c13 | Heap * g_SecondaryHeap
+    CMP EAX,dword ptr [0x00684edc]      ; 00601c0b | DAT_00684edc
+    JBE 0x00601c2b                      ; 00601c11
+        ;   XREF to: 00601c2b (CONDITIONAL_JUMP)  ; LAB_00601c2b
+    MOV ESI,dword ptr [0x00684ed8]      ; 00601c13 | g_SecondaryHeap
     TEST ESI,ESI                        ; 00601c19
-    JNZ 0x00601c39                      ; 00601c1b | LAB_00601c39
-        ;   XREF to: 00601c39 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x00684edc],ESI      ; 00601c1d | undefined4 DAT_00684edc
-    MOV ESI,dword ptr [0x00684ed4]      ; 00601c23 | Heap * g_MainHeap
-    JMP 0x00601c39                      ; 00601c29 | LAB_00601c39
-        ;   XREF to: 00601c39 (UNCONDITIONAL_JUMP)
+    JNZ 0x00601c39                      ; 00601c1b
+        ;   XREF to: 00601c39 (CONDITIONAL_JUMP)  ; LAB_00601c39
+    MOV dword ptr [0x00684edc],ESI      ; 00601c1d | DAT_00684edc
+    MOV ESI,dword ptr [0x00684ed4]      ; 00601c23 | g_MainHeap
+    JMP 0x00601c39                      ; 00601c29
+        ;   XREF to: 00601c39 (UNCONDITIONAL_JUMP)  ; LAB_00601c39
     XOR EDI,EDI                         ; 00601c2b
         ;   Label: LAB_00601c2b
-    MOV ESI,dword ptr [0x00684ed4]      ; 00601c2d | Heap * g_MainHeap
-    MOV dword ptr [0x00684edc],EDI      ; 00601c33 | undefined4 DAT_00684edc
+    MOV ESI,dword ptr [0x00684ed4]      ; 00601c2d | g_MainHeap
+    MOV dword ptr [0x00684edc],EDI      ; 00601c33 | DAT_00684edc
     TEST ESI,ESI                        ; 00601c39
         ;   Label: LAB_00601c39
-    JZ 0x00601c7a                       ; 00601c3b | LAB_00601c7a
-        ;   XREF to: 00601c7a (CONDITIONAL_JUMP)
+    JZ 0x00601c7a                       ; 00601c3b
+        ;   XREF to: 00601c7a (CONDITIONAL_JUMP)  ; LAB_00601c7a
     MOV EDI,dword ptr [ESI + 0x14]      ; 00601c3d
-    MOV dword ptr [0x00684ed8],ESI      ; 00601c40 | Heap * g_SecondaryHeap
+    MOV dword ptr [0x00684ed8],ESI      ; 00601c40 | g_SecondaryHeap
     CMP EDI,EBP                         ; 00601c46
-    JC 0x00601c67                       ; 00601c48 | LAB_00601c67
-        ;   XREF to: 00601c67 (CONDITIONAL_JUMP)
-    MOV EAX,0x684ed4                    ; 00601c4a | Heap * g_MainHeap
+    JC 0x00601c67                       ; 00601c48
+        ;   XREF to: 00601c67 (CONDITIONAL_JUMP)  ; LAB_00601c67
+    MOV EAX,0x684ed4                    ; 00601c4a | g_MainHeap
     MOV DX,DS                           ; 00601c4f
     AND EDX,0xffff                      ; 00601c51
     MOV EBX,ESI                         ; 00601c57
     MOV EAX,EBP                         ; 00601c59
-    CALL crt_heap.c_AllocateFromFreeList_FUN_00609410 ; 00601c5b | void * crt_heap.c_AllocateFromFreeList_FUN_00609410(ulong size, HeapBlock * free_block, ushort ds_segment)
-        ;   XREF to: 00609410 (UNCONDITIONAL_CALL)
+    CALL crt_heap.c_AllocateFromFreeList_FUN_00609410 ; 00601c5b
+        ;   XREF to: 00609410 (UNCONDITIONAL_CALL)  ; void * crt_heap.c_AllocateFromFreeList_FUN_00609410(ulong size, HeapBlock * free_block, ushort ds_segment)
     MOV dword ptr [ESP],EAX             ; 00601c60
     TEST EAX,EAX                        ; 00601c63
-    JNZ 0x00601cb0                      ; 00601c65 | LAB_00601cb0
-        ;   XREF to: 00601cb0 (CONDITIONAL_JUMP)
-    CMP EDI,dword ptr [0x00684edc]      ; 00601c67 | undefined4 DAT_00684edc
+    JNZ 0x00601cb0                      ; 00601c65
+        ;   XREF to: 00601cb0 (CONDITIONAL_JUMP)  ; LAB_00601cb0
+    CMP EDI,dword ptr [0x00684edc]      ; 00601c67 | DAT_00684edc
         ;   Label: LAB_00601c67
-    JBE 0x00601c75                      ; 00601c6d | LAB_00601c75
-        ;   XREF to: 00601c75 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x00684edc],EDI      ; 00601c6f | undefined4 DAT_00684edc
+    JBE 0x00601c75                      ; 00601c6d
+        ;   XREF to: 00601c75 (CONDITIONAL_JUMP)  ; LAB_00601c75
+    MOV dword ptr [0x00684edc],EDI      ; 00601c6f | DAT_00684edc
     MOV ESI,dword ptr [ESI + 0x8]       ; 00601c75
         ;   Label: LAB_00601c75
-    JMP 0x00601c39                      ; 00601c78 | LAB_00601c39
-        ;   XREF to: 00601c39 (UNCONDITIONAL_JUMP)
+    JMP 0x00601c39                      ; 00601c78
+        ;   XREF to: 00601c39 (UNCONDITIONAL_JUMP)  ; LAB_00601c39
     CMP byte ptr [ESP + 0x8],0x0        ; 00601c7a
         ;   Label: LAB_00601c7a
-    JNZ 0x00601c8e                      ; 00601c7f | LAB_00601c8e
-        ;   XREF to: 00601c8e (CONDITIONAL_JUMP)
+    JNZ 0x00601c8e                      ; 00601c7f
+        ;   XREF to: 00601c8e (CONDITIONAL_JUMP)  ; LAB_00601c8e
     PUSH EBP                            ; 00601c81
-    CALL crt_heap.c_SystemAllocWrapper_FUN_00609718 ; 00601c82 | void * crt_heap.c_SystemAllocWrapper_FUN_00609718(ulong size)
-        ;   XREF to: 00609718 (UNCONDITIONAL_CALL)
+    CALL crt_heap.c_SystemAllocWrapper_FUN_00609718 ; 00601c82
+        ;   XREF to: 00609718 (UNCONDITIONAL_CALL)  ; void * crt_heap.c_SystemAllocWrapper_FUN_00609718(ulong size)
     ADD ESP,0x4                         ; 00601c87
     TEST EAX,EAX                        ; 00601c8a
-    JNZ 0x00601ca6                      ; 00601c8c | LAB_00601ca6
-        ;   XREF to: 00601ca6 (CONDITIONAL_JUMP)
+    JNZ 0x00601ca6                      ; 00601c8c
+        ;   XREF to: 00601ca6 (CONDITIONAL_JUMP)  ; LAB_00601ca6
     PUSH EBP                            ; 00601c8e
         ;   Label: LAB_00601c8e
-    CALL crt_heap.c_AllocatorFallbackStub_FUN_00609780 ; 00601c8f | int crt_heap.c_AllocatorFallbackStub_FUN_00609780(uint size)
-        ;   XREF to: 00609780 (UNCONDITIONAL_CALL)
+    CALL crt_heap.c_AllocatorFallbackStub_FUN_00609780 ; 00601c8f
+        ;   XREF to: 00609780 (UNCONDITIONAL_CALL)  ; int crt_heap.c_AllocatorFallbackStub_FUN_00609780(uint size)
     ADD ESP,0x4                         ; 00601c94
     TEST EAX,EAX                        ; 00601c97
-    JZ 0x00601cb0                       ; 00601c99 | LAB_00601cb0
-        ;   XREF to: 00601cb0 (CONDITIONAL_JUMP)
+    JZ 0x00601cb0                       ; 00601c99
+        ;   XREF to: 00601cb0 (CONDITIONAL_JUMP)  ; LAB_00601cb0
     XOR BL,BL                           ; 00601c9b
     MOV byte ptr [ESP + 0x8],BL         ; 00601c9d
-    JMP 0x00601c07                      ; 00601ca1 | LAB_00601c07
-        ;   XREF to: 00601c07 (UNCONDITIONAL_JUMP)
+    JMP 0x00601c07                      ; 00601ca1
+        ;   XREF to: 00601c07 (UNCONDITIONAL_JUMP)  ; LAB_00601c07
     MOV byte ptr [ESP + 0x8],0x1        ; 00601ca6
         ;   Label: LAB_00601ca6
-    JMP 0x00601c07                      ; 00601cab | LAB_00601c07
-        ;   XREF to: 00601c07 (UNCONDITIONAL_JUMP)
+    JMP 0x00601c07                      ; 00601cab
+        ;   XREF to: 00601c07 (UNCONDITIONAL_JUMP)  ; LAB_00601c07
     XOR BH,BH                           ; 00601cb0
         ;   Label: LAB_00601cb0
-    MOV byte ptr [0x03f9b850],BH        ; 00601cb2 | undefined1 DAT_03f9b850
-    CALL dword ptr [0x00684f08]         ; 00601cb8 | void * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08
+    MOV byte ptr [0x03f9b850],BH        ; 00601cb2 | DAT_03f9b850
+    CALL dword ptr [0x00684f08]         ; 00601cb8 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08
     MOV EAX,dword ptr [ESP]             ; 00601cbe
     ADD ESP,0xc                         ; 00601cc1
         ;   Label: LAB_00601cc1

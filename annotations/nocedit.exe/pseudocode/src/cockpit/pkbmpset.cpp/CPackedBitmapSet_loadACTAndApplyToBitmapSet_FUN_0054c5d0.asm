@@ -24,15 +24,15 @@ section .text
     PUSH EAX                            ; 0054c5d8
     MOV EDX,dword ptr [ESP + 0x10c]     ; 0054c5d9
     PUSH EDX                            ; 0054c5e0
-    CALL cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 ; 0054c5e1 | void cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30(char * filename, char * output_palette)
-        ;   XREF to: 00431a30 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 ; 0054c5e1
+        ;   XREF to: 00431a30 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30(char * filename, char * output_palette)
     ADD ESP,0x8                         ; 0054c5e6
     MOV EAX,ESP                         ; 0054c5e9
     PUSH EAX                            ; 0054c5eb
     MOV ECX,dword ptr [ESP + 0x108]     ; 0054c5ec
     PUSH ECX                            ; 0054c5f3
-    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620 ; 0054c5f4 | void cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620(CPackedBitmapSet * this_ptr, char * palette_data)
-        ;   XREF to: 0054c620 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620 ; 0054c5f4
+        ;   XREF to: 0054c620 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620(CPackedBitmapSet * this_ptr, char * palette_data)
     ADD ESP,0x8                         ; 0054c5f9
     ADD ESP,0x100                       ; 0054c5fc
     LEA EAX,[EAX]                       ; 0054c602

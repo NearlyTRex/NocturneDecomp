@@ -33,7 +33,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x18]      ; 0055230c
     LEA EAX,[EDX*0x4 + 0x0]             ; 0055230f
     SUB EAX,EDX                         ; 00552316
-    MOV ECX,0x688014                    ; 00552318 | SRenderVertex[16] g_RenderVertexBuffer
+    MOV ECX,0x688014                    ; 00552318 | g_RenderVertexBuffer
     SHL EAX,0x4                         ; 0055231d
     MOV EDX,dword ptr [EBX + 0x24]      ; 00552320
     ADD ECX,EAX                         ; 00552323
@@ -43,13 +43,13 @@ section .text
     LEA EDX,[EBX*0x4 + 0x0]             ; 00552331
     SHL EAX,0x4                         ; 00552338
     SUB EDX,EBX                         ; 0055233b
-    ADD EAX,0x688014                    ; 0055233d | SRenderVertex[16] g_RenderVertexBuffer
+    ADD EAX,0x688014                    ; 0055233d | g_RenderVertexBuffer
     SHL EDX,0x4                         ; 00552342
-    MOV EBX,dword ptr [0x00772a7c]      ; 00552345 | int g_CullingMode
-    ADD EDX,0x688014                    ; 0055234b | SRenderVertex[16] g_RenderVertexBuffer
+    MOV EBX,dword ptr [0x00772a7c]      ; 00552345 | g_CullingMode
+    ADD EDX,0x688014                    ; 0055234b | g_RenderVertexBuffer
     CMP EBX,0x1                         ; 00552351
-    JNZ 0x005523be                      ; 00552354 | LAB_005523be
-        ;   XREF to: 005523be (CONDITIONAL_JUMP)
+    JNZ 0x005523be                      ; 00552354
+        ;   XREF to: 005523be (CONDITIONAL_JUMP)  ; LAB_005523be
     MOV EDI,dword ptr [ECX + 0x10]      ; 00552356 | g_RenderVertexBuffer[0].projected_vertex.screen_x
     MOV EBX,dword ptr [EAX + 0x10]      ; 00552359 | g_RenderVertexBuffer[0].projected_vertex.screen_x
     SUB EBX,EDI                         ; 0055235c
@@ -76,8 +76,8 @@ section .text
     SUB EAX,EBX                         ; 0055239e
     SBB EDX,ECX                         ; 005523a0
     MOV EAX,0x0                         ; 005523a2
-    JGE 0x005523ae                      ; 005523a7 | LAB_005523ae
-        ;   XREF to: 005523ae (CONDITIONAL_JUMP)
+    JGE 0x005523ae                      ; 005523a7
+        ;   XREF to: 005523ae (CONDITIONAL_JUMP)  ; LAB_005523ae
     MOV EAX,0x1                         ; 005523a9
     MOV dword ptr [EBP + 0xfffffffc],EAX ; 005523ae
         ;   Label: LAB_005523ae
@@ -105,6 +105,6 @@ section .text
     MOV ESI,dword ptr [EAX + 0x14]      ; 005523e2 | g_RenderVertexBuffer[0].projected_vertex.screen_y
     SUB EDX,ESI                         ; 005523e5
     MOV dword ptr [EBP + -0x10],EDX     ; 005523e7
-    JMP 0x00552382                      ; 005523ea | LAB_00552382
-        ;   XREF to: 00552382 (UNCONDITIONAL_JUMP)
+    JMP 0x00552382                      ; 005523ea
+        ;   XREF to: 00552382 (UNCONDITIONAL_JUMP)  ; LAB_00552382
 

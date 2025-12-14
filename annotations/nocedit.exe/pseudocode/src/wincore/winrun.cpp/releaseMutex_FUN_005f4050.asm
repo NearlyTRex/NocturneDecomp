@@ -31,11 +31,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005f4050
         ;   Label: wincore_winrun.cpp_releaseMutex_FUN_005f4050
     TEST EAX,EAX                        ; 005f4054
-    JNZ 0x005f4059                      ; 005f4056 | LAB_005f4059
-        ;   XREF to: 005f4059 (CONDITIONAL_JUMP)
+    JNZ 0x005f4059                      ; 005f4056
+        ;   XREF to: 005f4059 (CONDITIONAL_JUMP)  ; LAB_005f4059
     RET                                 ; 005f4058
     PUSH EAX                            ; 005f4059
         ;   Label: LAB_005f4059
-    CALL dword ptr CS:[0x611608]        ; 005f405a | ReleaseMutex * ReleaseMutex
+    CALL dword ptr CS:[0x611608]        ; 005f405a | ReleaseMutex
     RET                                 ; 005f4061
 

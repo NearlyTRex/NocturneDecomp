@@ -38,34 +38,34 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046800c
         ;   Label: LAB_0046800c
     CMP byte ptr [EAX],0x2              ; 0046800f
-    JZ 0x0046801c                       ; 00468012 | LAB_0046801c
-        ;   XREF to: 0046801c (CONDITIONAL_JUMP)
+    JZ 0x0046801c                       ; 00468012
+        ;   XREF to: 0046801c (CONDITIONAL_JUMP)  ; LAB_0046801c
     MOV EAX,dword ptr [EBP + 0x14]      ; 00468014
     CMP byte ptr [EAX],0x0              ; 00468017
-    JNZ 0x0046801e                      ; 0046801a | LAB_0046801e
-        ;   XREF to: 0046801e (CONDITIONAL_JUMP)
-    JMP 0x0046802f                      ; 0046801c | LAB_0046802f
+    JNZ 0x0046801e                      ; 0046801a
+        ;   XREF to: 0046801e (CONDITIONAL_JUMP)  ; LAB_0046801e
+    JMP 0x0046802f                      ; 0046801c
+        ;   XREF to: 0046802f (UNCONDITIONAL_JUMP)  ; LAB_0046802f
         ;   Label: LAB_0046801c
-        ;   XREF to: 0046802f (UNCONDITIONAL_JUMP)
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046801e
         ;   Label: LAB_0046801e
     PUSH EAX                            ; 00468021
-    CALL engine_model.c_getMRGLSize_FUN_00528700 ; 00468022 | int engine_model.c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended * header)
-        ;   XREF to: 00528700 (UNCONDITIONAL_CALL)
+    CALL engine_model.c_getMRGLSize_FUN_00528700 ; 00468022
+        ;   XREF to: 00528700 (UNCONDITIONAL_CALL)  ; int engine_model.c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended * header)
     ADD ESP,0x4                         ; 00468027
     ADD dword ptr [EBP + 0x14],EAX      ; 0046802a
-    JMP 0x0046800c                      ; 0046802d | LAB_0046800c
-        ;   XREF to: 0046800c (UNCONDITIONAL_JUMP)
+    JMP 0x0046800c                      ; 0046802d
+        ;   XREF to: 0046800c (UNCONDITIONAL_JUMP)  ; LAB_0046800c
     CMP dword ptr [EBP + 0x14],0x0      ; 0046802f
         ;   Label: LAB_0046802f
-    JNZ 0x00468057                      ; 00468033 | LAB_00468057
-        ;   XREF to: 00468057 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x02f0ca48],0x61cbd9 ; 00468035 | char * g_CurrentFilename | = "..\\shape\\design.c" | s_shape_design_c_0061cbd9 = ..\shape\design.c
-    MOV dword ptr [0x02f0ca4c],0x21ce   ; 0046803f | int g_CurrentLineNumber
-    MOV EAX,0x61cbeb                    ; 00468049 | = "Can't find vlist" | s_Can_t_find_vlist_0061cbeb = Can't find vlist
-    PUSH EAX                            ; 0046804e | = "Can't find vlist" | s_Can_t_find_vlist_0061cbeb = Can't find vlist
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0046804f | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    JNZ 0x00468057                      ; 00468033
+        ;   XREF to: 00468057 (CONDITIONAL_JUMP)  ; LAB_00468057
+    MOV dword ptr [0x02f0ca48],0x61cbd9 ; 00468035 | g_CurrentFilename | = "..\\shape\\design.c"
+    MOV dword ptr [0x02f0ca4c],0x21ce   ; 0046803f | g_CurrentLineNumber
+    MOV EAX,0x61cbeb                    ; 00468049 | = "Can't find vlist"
+    PUSH EAX                            ; 0046804e | = "Can't find vlist"
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0046804f
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00468054
     MOV EAX,dword ptr [EBP + 0x14]      ; 00468057
         ;   Label: LAB_00468057

@@ -1,313 +1,313 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 317, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 9, 
-    "global_count": 1, 
-    "total_lines": 91, 
-    "assembly_lines": 54, 
-    "suspect_count": 27, 
+    "assembly_lines": 54,
+    "complexity_score": 317,
+    "cross_reference_count": 9,
+    "function_call_count": 5,
+    "global_count": 1,
+    "pseudocode_lines": 37,
+    "suspect_count": 27,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_ctor_FUN_00427e20", 
-      "addr": "00427e20"
-    }, 
-    {
-      "name": "core_hero.cpp_CHero_FUN_004f2a30", 
-      "addr": "004f2a30"
-    }, 
-    {
-      "name": "core_inv.cpp_CInventory_ctor_FUN_004fd020", 
-      "addr": "004fd020"
-    }, 
-    {
-      "name": "core_path.cpp_CPathMap_ctor_FUN_00546450", 
-      "addr": "00546450"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CHeroVTable", 
-      "addr": "0065f6d4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CCharacter *in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00427e20(in_stack_00000004);"
-    }, 
-    {
-      "line": 14, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "this_ptr = (CHero *)(extraout_EAX + -0x1f738);"
-    }, 
-    {
-      "line": 15, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(CHero **)(extraout_EAX + 4) = this_ptr;"
-    }, 
-    {
-      "line": 16, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(CDemonActor_vtable **)(extraout_EAX + -0x1f5e4) = &g_CHeroVTable;"
-    }, 
-    {
-      "line": 17, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "crt_memory_c_memset_FUN_005fde40((void *)(extraout_EAX + -0x1390c),0,0x2c);"
-    }, 
-    {
-      "line": 18, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x13914) = 0;"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x1c95c) = 0x3f19999a;"
-    }, 
-    {
-      "line": 20, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x1c958) = 0x3f666666;"
-    }, 
-    {
-      "line": 21, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x1c954) = 0x49742400;"
-    }, 
-    {
-      "line": 22, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x1c950) = 0x49742400;"
-    }, 
-    {
-      "line": 23, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x1c94c) = 0x3fcccccd;"
-    }, 
-    {
-      "line": 24, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x1c948) = 0x40c00000;"
-    }, 
-    {
-      "line": 25, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x13910) = 2;"
-    }, 
-    {
-      "line": 26, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -4) = 0;"
-    }, 
-    {
-      "line": 27, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + 0x464) = 0;"
-    }, 
-    {
-      "line": 28, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + 0x468) = 0;"
-    }, 
-    {
-      "line": 29, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + 0x46c) = 0;"
-    }, 
-    {
-      "line": 30, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + 0x470) = 0;"
-    }, 
-    {
-      "line": 31, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + 0x474) = 0;"
-    }, 
-    {
-      "line": 32, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + 0x478) = 0;"
-    }, 
-    {
-      "line": 33, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + 0x47c) = 0;"
-    }, 
-    {
-      "line": 34, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + 0x460) = 0;"
-    }, 
-    {
-      "line": 36, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + 0x498) = 2;"
-    }, 
-    {
-      "line": 37, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x1d114) = 0;"
-    }, 
-    {
-      "line": 38, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x1d2f4) = 1;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004f2340", 
-    "signature": "undefined core_hero.cpp_FUN_004f2340()", 
-    "address_range": [
-      [
-        "004f2340", 
-        "004f2467"
-      ]
-    ], 
-    "name": "core_hero.cpp_FUN_004f2340"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 91
+  },
   "cross_references": [
     {
-      "from_addr": "00412bc8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_CBaron_ctor_FUN_00412bc0", 
-      "addr": "00412bc0"
-    }, 
+      "addr": "00412bc0",
+      "from_addr": "00412bc8",
+      "name": "core_baron.cpp_CBaron_ctor_FUN_00412bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043f7e6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_colonel.cpp_CColonel_ctor_FUN_0043f7e0", 
-      "addr": "0043f7e0"
-    }, 
+      "addr": "0043f7e0",
+      "from_addr": "0043f7e6",
+      "name": "core_colonel.cpp_CColonel_ctor_FUN_0043f7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d2b28", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_constructorMaybe_FUN_004d2b20", 
-      "addr": "004d2b20"
-    }, 
+      "addr": "004d2b20",
+      "from_addr": "004d2b28",
+      "name": "core_gabriela.cpp_constructorMaybe_FUN_004d2b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f0c16", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_haystack.cpp_FUN_004f0c10", 
-      "addr": "004f0c10"
-    }, 
+      "addr": "004f0c10",
+      "from_addr": "004f0c16",
+      "name": "core_haystack.cpp_FUN_004f0c10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f7df6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_icepick.cpp_FUN_004f7df0", 
-      "addr": "004f7df0"
-    }, 
+      "addr": "004f7df0",
+      "from_addr": "004f7df6",
+      "name": "core_icepick.cpp_FUN_004f7df0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00528b38", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moloch.cpp_CMoloch_ctor_FUN_00528b30", 
-      "addr": "00528b30"
-    }, 
+      "addr": "00528b30",
+      "from_addr": "00528b38",
+      "name": "core_moloch.cpp_CMoloch_ctor_FUN_00528b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00556ed6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_scat.cpp_CScat_ctor_FUN_00556ed0", 
-      "addr": "00556ed0"
-    }, 
+      "addr": "00556ed0",
+      "from_addr": "00556ed6",
+      "name": "core_scat.cpp_CScat_ctor_FUN_00556ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005bb128", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_ctor_FUN_005bb120", 
-      "addr": "005bb120"
-    }, 
+      "addr": "005bb120",
+      "from_addr": "005bb128",
+      "name": "core_stranger.cpp_CStranger_ctor_FUN_005bb120",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d8856", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_svetlana.cpp_CSvetlana_ctor_FUN_005d8850", 
-      "addr": "005d8850"
+      "addr": "005d8850",
+      "from_addr": "005d8856",
+      "name": "core_svetlana.cpp_CSvetlana_ctor_FUN_005d8850",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f2340",
+    "address_range": [
+      [
+        "004f2340",
+        "004f2467"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_hero.cpp_FUN_004f2340",
+    "signature": "undefined core_hero.cpp_FUN_004f2340()"
+  },
+  "function_calls": [
+    {
+      "addr": "00427e20",
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_00427e20"
+    },
+    {
+      "addr": "004f2a30",
+      "name": "core_hero.cpp_CHero_FUN_004f2a30"
+    },
+    {
+      "addr": "004fd020",
+      "name": "core_inv.cpp_CInventory_ctor_FUN_004fd020"
+    },
+    {
+      "addr": "00546450",
+      "name": "core_path.cpp_CPathMap_ctor_FUN_00546450"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065f6d4",
+      "name": "g_CHeroVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "CCharacter *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_00427e20(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "text": "this_ptr = (CHero *)(extraout_EAX + -0x1f738);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EAX",
+      "text": "*(CHero **)(extraout_EAX + 4) = this_ptr;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EAX",
+      "text": "*(CDemonActor_vtable **)(extraout_EAX + -0x1f5e4) = &g_CHeroVTable;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EAX",
+      "text": "crt_memory_c_memset_FUN_005fde40((void *)(extraout_EAX + -0x1390c),0,0x2c);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x13914) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x1c95c) = 0x3f19999a;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x1c958) = 0x3f666666;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x1c954) = 0x49742400;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x1c950) = 0x49742400;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 23,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x1c94c) = 0x3fcccccd;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x1c948) = 0x40c00000;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x13910) = 2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -4) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0x464) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0x468) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0x46c) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0x470) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0x474) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 32,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0x478) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 33,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0x47c) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 34,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0x460) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 36,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + 0x498) = 2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 37,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x1d114) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 38,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x1d2f4) = 1;",
+      "type": "extra_output"
     }
   ]
 }

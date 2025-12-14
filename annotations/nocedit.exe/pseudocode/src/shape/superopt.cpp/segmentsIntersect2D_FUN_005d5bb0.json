@@ -1,151 +1,151 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 50, 
-    "pseudocode_lines": 50, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 312, 
-    "assembly_lines": 262, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0065453a", 
-      "addr": "0065453a", 
-      "value": "1.00000000000000E-10"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00654542", 
-      "addr": "00654542", 
-      "value": "0.999999999900000"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005d5bb8", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005d5bb0", 
-    "signature": "int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)", 
-    "address_range": [
-      [
-        "005d5bb0", 
-        "005d5ddc"
-      ]
-    ], 
-    "name": "shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0"
-  }, 
-  "stack_frame": {
-    "local_size": 76, 
-    "variables": [
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVector2d *", 
-        "size": 4, 
-        "name": "point_a"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector2d *", 
-        "size": 4, 
-        "name": "point_b"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector2d *", 
-        "size": 4, 
-        "name": "point_c"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector2d *", 
-        "size": 4, 
-        "name": "point_d"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 92, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 262,
+    "complexity_score": 50,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 50,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 312
+  },
   "cross_references": [
     {
-      "from_addr": "005d17a1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390", 
-      "addr": "005d1390"
-    }, 
+      "addr": "005d1390",
+      "from_addr": "005d17a1",
+      "name": "shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d5e34", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0", 
-      "addr": "005d5de0"
+      "addr": "005d5de0",
+      "from_addr": "005d5e34",
+      "name": "shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005d5bb0",
+    "address_range": [
+      [
+        "005d5bb0",
+        "005d5ddc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0",
+    "signature": "int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0065453a",
+      "name": "DOUBLE_0065453a",
+      "type": "double",
+      "value": "1.00000000000000E-10"
+    },
+    {
+      "addr": "00654542",
+      "name": "DOUBLE_00654542",
+      "type": "double",
+      "value": "0.999999999900000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "point_a",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": true,
+        "name": "point_b",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": true,
+        "name": "point_c",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": true,
+        "name": "point_d",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector2d *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005d5bb8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

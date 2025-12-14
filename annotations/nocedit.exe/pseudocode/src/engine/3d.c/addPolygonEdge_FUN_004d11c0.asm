@@ -36,37 +36,37 @@ section .text
     SAR EAX,0x10                        ; 004d11d2
     SAR EBX,0x10                        ; 004d11d5
     CMP EBX,EAX                         ; 004d11d8
-    JZ 0x004d12e0                       ; 004d11da | LAB_004d12e0
-        ;   XREF to: 004d12e0 (CONDITIONAL_JUMP)
+    JZ 0x004d12e0                       ; 004d11da
+        ;   XREF to: 004d12e0 (CONDITIONAL_JUMP)  ; LAB_004d12e0
     MOV ECX,dword ptr [EDI + 0x14]      ; 004d11e0
     CMP ECX,dword ptr [ESI + 0x14]      ; 004d11e3
-    JGE 0x004d11f4                      ; 004d11e6 | LAB_004d11f4
-        ;   XREF to: 004d11f4 (CONDITIONAL_JUMP)
+    JGE 0x004d11f4                      ; 004d11e6
+        ;   XREF to: 004d11f4 (CONDITIONAL_JUMP)  ; LAB_004d11f4
     MOV EDX,ESI                         ; 004d11e8
     MOV ESI,EDI                         ; 004d11ea
     MOV EDI,EDX                         ; 004d11ec
     MOV EDX,EBX                         ; 004d11ee
     MOV EBX,EAX                         ; 004d11f0
     MOV EAX,EDX                         ; 004d11f2
-    MOV ECX,dword ptr [0x02d7b428]      ; 004d11f4 | int g_EdgeCount
+    MOV ECX,dword ptr [0x02d7b428]      ; 004d11f4 | g_EdgeCount
         ;   Label: LAB_004d11f4
     SHL ECX,0x3                         ; 004d11fa
     MOV EDX,ECX                         ; 004d11fd
     SHL ECX,0x3                         ; 004d11ff
     SUB ECX,EDX                         ; 004d1202
-    ADD ECX,0x2d7b42c                   ; 004d1204 | SHardwareEdge[16] g_HardwareEdgeTable
-    MOV dword ptr [ECX],EBX             ; 004d120a | SHardwareEdge[16] g_HardwareEdgeTable
-    MOV EBP,dword ptr [0x02d7b7ac]      ; 004d120c | int g_EdgeListMinY
+    ADD ECX,0x2d7b42c                   ; 004d1204 | g_HardwareEdgeTable
+    MOV dword ptr [ECX],EBX             ; 004d120a | g_HardwareEdgeTable
+    MOV EBP,dword ptr [0x02d7b7ac]      ; 004d120c | g_EdgeListMinY
     MOV dword ptr [ECX + 0x4],EAX       ; 004d1212 | DAT_02d7b430
     CMP EBX,EBP                         ; 004d1215
-    JGE 0x004d121f                      ; 004d1217 | LAB_004d121f
-        ;   XREF to: 004d121f (CONDITIONAL_JUMP)
-    MOV dword ptr [0x02d7b7ac],EBX      ; 004d1219 | int g_EdgeListMinY
-    CMP EAX,dword ptr [0x02d7b7b0]      ; 004d121f | int g_EdgeListMaxY
+    JGE 0x004d121f                      ; 004d1217
+        ;   XREF to: 004d121f (CONDITIONAL_JUMP)  ; LAB_004d121f
+    MOV dword ptr [0x02d7b7ac],EBX      ; 004d1219 | g_EdgeListMinY
+    CMP EAX,dword ptr [0x02d7b7b0]      ; 004d121f | g_EdgeListMaxY
         ;   Label: LAB_004d121f
-    JLE 0x004d122c                      ; 004d1225 | LAB_004d122c
-        ;   XREF to: 004d122c (CONDITIONAL_JUMP)
-    MOV [0x02d7b7b0],EAX                ; 004d1227 | int g_EdgeListMaxY
+    JLE 0x004d122c                      ; 004d1225
+        ;   XREF to: 004d122c (CONDITIONAL_JUMP)  ; LAB_004d122c
+    MOV [0x02d7b7b0],EAX                ; 004d1227 | g_EdgeListMaxY
     MOV EAX,dword ptr [ESI + 0x10]      ; 004d122c
         ;   Label: LAB_004d122c
     MOV dword ptr [ECX + 0x8],EAX       ; 004d122f | DAT_02d7b434
@@ -77,8 +77,8 @@ section .text
     MOV EBX,dword ptr [EDI + 0x14]      ; 004d123e
     SUB EBX,dword ptr [ESI + 0x14]      ; 004d1241
     CMP EBX,0x10000                     ; 004d1244
-    JNC 0x004d12e5                      ; 004d124a | LAB_004d12e5
-        ;   XREF to: 004d12e5 (CONDITIONAL_JUMP)
+    JNC 0x004d12e5                      ; 004d124a
+        ;   XREF to: 004d12e5 (CONDITIONAL_JUMP)  ; LAB_004d12e5
     XOR EBX,EBX                         ; 004d1250
     MOV EAX,dword ptr [EDI + 0x10]      ; 004d1252
         ;   Label: LAB_004d1252
@@ -127,10 +127,10 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004d12c9
     MOV EBP,dword ptr [ECX + 0x20]      ; 004d12cd | DAT_02d7b44c
     ADD EBP,EAX                         ; 004d12d0
-    MOV EAX,[0x02d7b428]                ; 004d12d2 | int g_EdgeCount
+    MOV EAX,[0x02d7b428]                ; 004d12d2 | g_EdgeCount
     INC EAX                             ; 004d12d7
     MOV dword ptr [ECX + 0x20],EBP      ; 004d12d8 | DAT_02d7b44c
-    MOV [0x02d7b428],EAX                ; 004d12db | int g_EdgeCount
+    MOV [0x02d7b428],EAX                ; 004d12db | g_EdgeCount
     POP EBP                             ; 004d12e0
         ;   Label: LAB_004d12e0
     POP EDI                             ; 004d12e1
@@ -142,6 +142,6 @@ section .text
     XOR EDX,EDX                         ; 004d12ea
     DIV EBX                             ; 004d12ec
     MOV EBX,EAX                         ; 004d12ee
-    JMP 0x004d1252                      ; 004d12f0 | LAB_004d1252
-        ;   XREF to: 004d1252 (UNCONDITIONAL_JUMP)
+    JMP 0x004d1252                      ; 004d12f0
+        ;   XREF to: 004d1252 (UNCONDITIONAL_JUMP)  ; LAB_004d1252
 

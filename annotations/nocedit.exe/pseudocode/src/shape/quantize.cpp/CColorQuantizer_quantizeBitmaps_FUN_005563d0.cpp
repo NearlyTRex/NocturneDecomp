@@ -29,8 +29,9 @@ shape_quantize_cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0
       in_stack_00000010 = in_stack_00000010 + 1;
     } while (iVar2 < bitmap_count);
   }
-  iVar2 = shape_quantize_cpp_CColorQuantizer_quantize_FUN_00554cc0(this_ptr);
-  if (iVar2 != 0) {
+  iVar1 = shape_quantize_cpp_CColorQuantizer_quantize_FUN_00554cc0(this_ptr);
+  iVar2 = 0;
+  if (iVar1 != 0) {
     iVar2 = 0;
     if (0 < bitmap_count) {
       do {

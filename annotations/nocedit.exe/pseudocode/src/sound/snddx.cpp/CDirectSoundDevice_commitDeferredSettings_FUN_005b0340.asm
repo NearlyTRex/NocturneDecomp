@@ -21,10 +21,10 @@ section .text
 
     SUB ESP,0x10                        ; 005b0340
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340
-    MOV EDX,dword ptr [0x03f6a9c0]      ; 005b0343 | IKsPropertySet * g_DirectSoundPropertySet
+    MOV EDX,dword ptr [0x03f6a9c0]      ; 005b0343 | g_DirectSoundPropertySet
     TEST EDX,EDX                        ; 005b0349
-    JNZ 0x005b0351                      ; 005b034b | LAB_005b0351
-        ;   XREF to: 005b0351 (CONDITIONAL_JUMP)
+    JNZ 0x005b0351                      ; 005b034b
+        ;   XREF to: 005b0351 (CONDITIONAL_JUMP)  ; LAB_005b0351
     ADD ESP,0x10                        ; 005b034d
     RET                                 ; 005b0350
     MOV EAX,dword ptr [ESP + 0x18]      ; 005b0351
@@ -44,7 +44,7 @@ section .text
     PUSH 0x0                            ; 005b037a
     PUSH 0x0                            ; 005b037c
     PUSH 0x0                            ; 005b037e
-    PUSH 0x681df0                       ; 005b0380 | GUID DAT_00681df0
+    PUSH 0x681df0                       ; 005b0380 | DAT_00681df0
     PUSH EAX                            ; 005b0385
     CALL dword ptr [ECX + 0x10]         ; 005b0386
     ADD ESP,0x10                        ; 005b0389

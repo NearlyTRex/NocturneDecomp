@@ -45,22 +45,22 @@ section .text
     PUSH EBP                            ; 0047c933
     MOV EBP,dword ptr [ESP + 0x18]      ; 0047c934
     PUSH 0xb7c                          ; 0047c938
-    PUSH 0x6205bb                       ; 0047c93d | = "..\\core\\dmodel.cpp" | s_core_dmodel_cpp_006205bb = ..\core\dmodel.cpp
-    PUSH 0x6205ce                       ; 0047c942 | = "rb" | s_rb_006205ce = rb
+    PUSH 0x6205bb                       ; 0047c93d | = "..\\core\\dmodel.cpp"
+    PUSH 0x6205ce                       ; 0047c942 | = "rb"
     PUSH 0x0                            ; 0047c947
     MOV EDX,dword ptr [ESP + 0x24]      ; 0047c949
     PUSH EDX                            ; 0047c94d
-    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0047c94e | FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0047c94e
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EDI,EAX                         ; 0047c953
     ADD ESP,0x14                        ; 0047c955
     MOV ESI,EAX                         ; 0047c958
     TEST EAX,EAX                        ; 0047c95a
-    JNZ 0x0047c98f                      ; 0047c95c | LAB_0047c98f
-        ;   XREF to: 0047c98f (CONDITIONAL_JUMP)
+    JNZ 0x0047c98f                      ; 0047c95c
+        ;   XREF to: 0047c98f (CONDITIONAL_JUMP)  ; LAB_0047c98f
     CMP dword ptr [ESP + 0x1c],0x0      ; 0047c95e
-    JNZ 0x0047c96f                      ; 0047c963 | LAB_0047c96f
-        ;   XREF to: 0047c96f (CONDITIONAL_JUMP)
+    JNZ 0x0047c96f                      ; 0047c963
+        ;   XREF to: 0047c96f (CONDITIONAL_JUMP)  ; LAB_0047c96f
     MOV EAX,0x1                         ; 0047c965
     POP EBP                             ; 0047c96a
     POP EDI                             ; 0047c96b
@@ -70,11 +70,11 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0047c96f
         ;   Label: LAB_0047c96f
     PUSH EDX                            ; 0047c973
-    PUSH 0x6205d1                       ; 0047c974 | = "Can't open %s" | s_Can_t_open_s_006205d1 = Can't open %s
-    MOV ECX,dword ptr [0x00678a60]      ; 0047c979 | CEditorTools * g_CEditorToolsPtr
-    PUSH ECX                            ; 0047c97f | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047c980 | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    PUSH 0x6205d1                       ; 0047c974 | = "Can't open %s"
+    MOV ECX,dword ptr [0x00678a60]      ; 0047c979 | g_CEditorToolsPtr
+    PUSH ECX                            ; 0047c97f | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047c980
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0047c985
     XOR EAX,EAX                         ; 0047c988
     POP EBP                             ; 0047c98a
@@ -84,54 +84,54 @@ section .text
     RET                                 ; 0047c98e
     PUSH 0xb83                          ; 0047c98f
         ;   Label: LAB_0047c98f
-    PUSH 0x6205df                       ; 0047c994 | = "..\\core\\dmodel.cpp" | s_core_dmodel_cpp_006205df = ..\core\dmodel.cpp
-    PUSH 0x6205f2                       ; 0047c999 | = "wb" | s_wb_006205f2 = wb
+    PUSH 0x6205df                       ; 0047c994 | = "..\\core\\dmodel.cpp"
+    PUSH 0x6205f2                       ; 0047c999 | = "wb"
     PUSH 0x0                            ; 0047c99e
     PUSH EBP                            ; 0047c9a0
-    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0047c9a1 | FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
-        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 0047c9a1
+        ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0047c9a6
     MOV EBX,EAX                         ; 0047c9a9
     TEST EAX,EAX                        ; 0047c9ab
-    JZ 0x0047c9e2                       ; 0047c9ad | LAB_0047c9e2
-        ;   XREF to: 0047c9e2 (CONDITIONAL_JUMP)
+    JZ 0x0047c9e2                       ; 0047c9ad
+        ;   XREF to: 0047c9e2 (CONDITIONAL_JUMP)  ; LAB_0047c9e2
     PUSH EBP                            ; 0047c9af
     MOV ECX,dword ptr [ESP + 0x18]      ; 0047c9b0
     PUSH ECX                            ; 0047c9b4
-    PUSH 0x620618                       ; 0047c9b5 | = "Copying %s -> %s" | s_Copying_s_s_00620618 = Copying %s -> %s
-    MOV EDI,dword ptr [0x00678a60]      ; 0047c9ba | CEditorTools * g_CEditorToolsPtr
-    PUSH EDI                            ; 0047c9c0 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0047c9c1 | void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
-        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)
+    PUSH 0x620618                       ; 0047c9b5 | = "Copying %s -> %s"
+    MOV EDI,dword ptr [0x00678a60]      ; 0047c9ba | g_CEditorToolsPtr
+    PUSH EDI                            ; 0047c9c0 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 0047c9c1
+        ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * message)
     ADD ESP,0x10                        ; 0047c9c6
     PUSH ESI                            ; 0047c9c9
         ;   Label: LAB_0047c9c9
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0047c9ca | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0047c9ca
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0047c9cf
     TEST EAX,EAX                        ; 0047c9d2
-    JL 0x0047ca11                       ; 0047c9d4 | LAB_0047ca11
-        ;   XREF to: 0047ca11 (CONDITIONAL_JUMP)
+    JL 0x0047ca11                       ; 0047c9d4
+        ;   XREF to: 0047ca11 (CONDITIONAL_JUMP)  ; LAB_0047ca11
     PUSH EBX                            ; 0047c9d6
     PUSH EAX                            ; 0047c9d7
-    CALL crt_stdio.c_fputc_FUN_006007a0 ; 0047c9d8 | int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
-        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fputc_FUN_006007a0 ; 0047c9d8
+        ;   XREF to: 006007a0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
     ADD ESP,0x8                         ; 0047c9dd
-    JMP 0x0047c9c9                      ; 0047c9e0 | LAB_0047c9c9
-        ;   XREF to: 0047c9c9 (UNCONDITIONAL_JUMP)
+    JMP 0x0047c9c9                      ; 0047c9e0
+        ;   XREF to: 0047c9c9 (UNCONDITIONAL_JUMP)  ; LAB_0047c9c9
     PUSH 0xb85                          ; 0047c9e2
         ;   Label: LAB_0047c9e2
-    PUSH 0x6205f5                       ; 0047c9e7 | = "..\\core\\dmodel.cpp" | s_core_dmodel_cpp_006205f5 = ..\core\dmodel.cpp
+    PUSH 0x6205f5                       ; 0047c9e7 | = "..\\core\\dmodel.cpp"
     PUSH EDI                            ; 0047c9ec
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0047c9ed | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0047c9ed
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0047c9f2
     PUSH EBP                            ; 0047c9f5
-    PUSH 0x620608                       ; 0047c9f6 | = "Can't create %s" | s_Can_t_create_s_00620608 = Can't create %s
-    MOV EBP,dword ptr [0x00678a60]      ; 0047c9fb | CEditorTools * g_CEditorToolsPtr
-    PUSH EBP                            ; 0047ca01 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047ca02 | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    PUSH 0x620608                       ; 0047c9f6 | = "Can't create %s"
+    MOV EBP,dword ptr [0x00678a60]      ; 0047c9fb | g_CEditorToolsPtr
+    PUSH EBP                            ; 0047ca01 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0047ca02
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0047ca07
     XOR EAX,EAX                         ; 0047ca0a
     POP EBP                             ; 0047ca0c
@@ -141,16 +141,16 @@ section .text
     RET                                 ; 0047ca10
     PUSH 0xb92                          ; 0047ca11
         ;   Label: LAB_0047ca11
-    PUSH 0x620629                       ; 0047ca16 | = "..\\core\\dmodel.cpp" | s_core_dmodel_cpp_00620629 = ..\core\dmodel.cpp
+    PUSH 0x620629                       ; 0047ca16 | = "..\\core\\dmodel.cpp"
     PUSH ESI                            ; 0047ca1b
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0047ca1c | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0047ca1c
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 0047ca21
     PUSH 0xb93                          ; 0047ca24
-    PUSH 0x62063c                       ; 0047ca29 | = "..\\core\\dmodel.cpp" | s_core_dmodel_cpp_0062063c = ..\core\dmodel.cpp
+    PUSH 0x62063c                       ; 0047ca29 | = "..\\core\\dmodel.cpp"
     PUSH EBX                            ; 0047ca2e
-    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0047ca2f | int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
-        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 0047ca2f
+        ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(FILE * file_ptr, char * source_file, int line_number)
     MOV EAX,0x1                         ; 0047ca34
     ADD ESP,0xc                         ; 0047ca39
     POP EBP                             ; 0047ca3c

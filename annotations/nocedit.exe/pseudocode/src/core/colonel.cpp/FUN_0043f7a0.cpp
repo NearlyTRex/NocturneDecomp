@@ -11,8 +11,7 @@ void core_colonel_cpp_FUN_0043f7a0(void)
 {
   CColonel *this_ptr;
   
-  this_ptr = (CColonel *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fbec,"..\\core\\colonel.cpp",0x7e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fbec,"..\\core\\colonel.cpp",0x7e);
   if (this_ptr == (CColonel *)0x0) {
     return;
   }

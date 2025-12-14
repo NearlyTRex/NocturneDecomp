@@ -28,12 +28,12 @@ section .text
     MOV ECX,dword ptr [EAX]             ; 0043ef9a
     MOV EDX,dword ptr [EAX + 0xc]       ; 0043ef9c
     CMP EDX,ECX                         ; 0043ef9f
-    JGE 0x0043f00f                      ; 0043efa1 | LAB_0043f00f
-        ;   XREF to: 0043f00f (CONDITIONAL_JUMP)
+    JGE 0x0043f00f                      ; 0043efa1
+        ;   XREF to: 0043f00f (CONDITIONAL_JUMP)  ; LAB_0043f00f
     DEC EDX                             ; 0043efa3
     TEST dword ptr [EAX + 0xc],EDX      ; 0043efa4
-    JNZ 0x0043efac                      ; 0043efa7 | LAB_0043efac
-        ;   XREF to: 0043efac (CONDITIONAL_JUMP)
+    JNZ 0x0043efac                      ; 0043efa7
+        ;   XREF to: 0043efac (CONDITIONAL_JUMP)  ; LAB_0043efac
     INC dword ptr [EAX + 0x8]           ; 0043efa9
     PUSH ESI                            ; 0043efac
         ;   Label: LAB_0043efac
@@ -75,8 +75,8 @@ section .text
     RET                                 ; 0043f00e
     PUSH EAX                            ; 0043f00f
         ;   Label: LAB_0043f00f
-    CALL support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0 ; 0043f010 | void support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0(CLZWDictionary * this_ptr)
-        ;   XREF to: 0043eef0 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0 ; 0043f010
+        ;   XREF to: 0043eef0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0(CLZWDictionary * this_ptr)
     MOV EDX,0x1                         ; 0043f015
     ADD ESP,0x4                         ; 0043f01a
     MOV EAX,EDX                         ; 0043f01d

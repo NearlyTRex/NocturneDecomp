@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 5, 
-    "global_count": 0, 
-    "total_lines": 16, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690", 
-      "addr": "00477690"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00476d90", 
-    "signature": "CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr)", 
-    "address_range": [
-      [
-        "00476d90", 
-        "00476da1"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 6,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "00438c38", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00", 
-      "addr": "00438c00"
-    }, 
+      "addr": "00438c00",
+      "from_addr": "00438c38",
+      "name": "core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047eeda", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_writeModelDependencies_FUN_0047ee30", 
-      "addr": "0047ee30"
-    }, 
+      "addr": "0047ee30",
+      "from_addr": "0047eeda",
+      "name": "core_dmodel.cpp_writeModelDependencies_FUN_0047ee30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050781c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
-      "addr": "005073a0"
-    }, 
+      "addr": "005073a0",
+      "from_addr": "0050781c",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00529ac4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moon.cpp_CMoon_dtor_FUN_00529ab0", 
-      "addr": "00529ab0"
-    }, 
+      "addr": "00529ab0",
+      "from_addr": "00529ac4",
+      "name": "core_moon.cpp_CMoon_dtor_FUN_00529ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057dba7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
-      "addr": "0057d660"
+      "addr": "0057d660",
+      "from_addr": "0057dba7",
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00476d90",
+    "address_range": [
+      [
+        "00476d90",
+        "00476da1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90",
+    "signature": "CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90(CKeyFramedModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00477690",
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      }
+    ]
+  },
+  "suspects": []
 }

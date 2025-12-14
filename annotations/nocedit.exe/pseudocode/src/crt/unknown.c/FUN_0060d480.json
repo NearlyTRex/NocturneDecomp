@@ -1,72 +1,72 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 21, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 10, 
-    "assembly_lines": 4, 
-    "suspect_count": 1, 
+    "assembly_lines": 4,
+    "complexity_score": 21,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "return (byte *)((int)&pTVar1->signal_handlers[0xd].flags + 2);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0060d480", 
-    "signature": "undefined crt_unknown.c_FUN_0060d480()", 
-    "address_range": [
-      [
-        "0060d480", 
-        "0060d48b"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_0060d480"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 10
+  },
   "cross_references": [
     {
-      "from_addr": "0060b10c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060b106", 
-      "addr": "0060b106"
-    }, 
+      "addr": "0060b106",
+      "from_addr": "0060b10c",
+      "name": "crt_unknown.c_FUN_0060b106",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060b14b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060b142", 
-      "addr": "0060b142"
+      "addr": "0060b142",
+      "from_addr": "0060b14b",
+      "name": "crt_unknown.c_FUN_0060b142",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060d480",
+    "address_range": [
+      [
+        "0060d480",
+        "0060d48b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0060d480",
+    "signature": "undefined crt_unknown.c_FUN_0060d480()"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(byte *)((int)",
+      "text": "return (byte *)((int)&pTVar1->signal_handlers[0xd].flags + 2);",
+      "type": "pointer_cast"
     }
   ]
 }

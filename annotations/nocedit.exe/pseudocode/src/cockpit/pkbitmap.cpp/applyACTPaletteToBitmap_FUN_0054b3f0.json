@@ -1,94 +1,94 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 55, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 31, 
-    "assembly_lines": 21, 
-    "suspect_count": 3, 
+    "assembly_lines": 21,
+    "complexity_score": 55,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30", 
-      "addr": "00431a30"
-    }, 
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440", 
-      "addr": "0054b440"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "&stack0xffffff00", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(bitmap_ptr->filename,&stack0xffffff00);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054b3f0", 
-    "signature": "void cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0(char * act_filename, CPackedBitmap * bitmap_ptr)", 
-    "address_range": [
-      [
-        "0054b3f0", 
-        "0054b430"
-      ]
-    ], 
-    "name": "cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "act_filename"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CPackedBitmap *", 
-        "size": 4, 
-        "name": "bitmap_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 31
+  },
   "cross_references": [
     {
-      "from_addr": "0054b4a6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0", 
-      "addr": "0054b4a0"
+      "addr": "0054b4a0",
+      "from_addr": "0054b4a6",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054b3f0",
+    "address_range": [
+      [
+        "0054b3f0",
+        "0054b430"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0",
+    "signature": "void cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0(char * act_filename, CPackedBitmap * bitmap_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00431a30",
+      "name": "cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30"
+    },
+    {
+      "addr": "0054b440",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "act_filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 7,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 10,
+      "match": "&stack0xffffff00",
+      "text": "cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(bitmap_ptr->filename,&stack0xffffff00);",
+      "type": "stack_ref"
     }
   ]
 }

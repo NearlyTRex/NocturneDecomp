@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 15, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dfilter.cpp_CDemonFilter_freeMemory_FUN_004702c0", 
-      "addr": "004702c0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00470240", 
-    "signature": "CDemonFilter * core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240(CDemonFilter * this_ptr)", 
-    "address_range": [
-      [
-        "00470240", 
-        "00470251"
-      ]
-    ], 
-    "name": "core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonFilter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 10,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "00470049", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dfilter.cpp_CFilterCache_free_FUN_00470000", 
-      "addr": "00470000"
+      "addr": "00470000",
+      "from_addr": "00470049",
+      "name": "core_dfilter.cpp_CFilterCache_free_FUN_00470000",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00470240",
+    "address_range": [
+      [
+        "00470240",
+        "00470251"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240",
+    "signature": "CDemonFilter * core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240(CDemonFilter * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004702c0",
+      "name": "core_dfilter.cpp_CDemonFilter_freeMemory_FUN_004702c0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonFilter *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,216 +1,216 @@
 {
   "complexity": {
-    "function_call_count": 11, 
-    "complexity_score": 53, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 1, 
-    "global_count": 14, 
-    "total_lines": 178, 
-    "assembly_lines": 150, 
-    "suspect_count": 2, 
+    "assembly_lines": 150,
+    "complexity_score": 53,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 14,
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_game.cpp_CGame_saveClockTime_FUN_004d7d80", 
-      "addr": "004d7d80"
-    }, 
-    {
-      "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90", 
-      "addr": "004d7d90"
-    }, 
-    {
-      "name": "core_morph.cpp_CMorphModel_FUN_0052bae0", 
-      "addr": "0052bae0"
-    }, 
-    {
-      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
-      "addr": "00403260"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
-      "addr": "0048c450"
-    }, 
-    {
-      "name": "shape_spotview.cpp_CSpotView_FUN_005b9620", 
-      "addr": "005b9620"
-    }, 
-    {
-      "name": "shape_spotview.cpp_CSpotView_FUN_005b9670", 
-      "addr": "005b9670"
-    }, 
-    {
-      "name": "shape_spotview.cpp_CSpotView_FUN_005b9a20", 
-      "addr": "005b9a20"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4", 
-      "addr": "005b3ed4"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063a537", 
-      "addr": "0063a537", 
-      "value": "2"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063a53f", 
-      "addr": "0063a53f", 
-      "value": "0.333333333333333"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CKeys*", 
-      "name": "g_CKeysPtr", 
-      "addr": "0067cf44", 
-      "value": "02dcd7d4"
-    }, 
-    {
-      "type": "CSpotView*", 
-      "name": "g_CSpotViewPtr", 
-      "addr": "0068416c", 
-      "value": "03f6b9e0"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CKeysPtr", 
-      "addr": "02dcd7d4", 
-      "value": null
-    }, 
-    {
-      "type": "CSpotView", 
-      "name": "g_CSpotViewInstance", 
-      "addr": "03f6b9e0", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_ZeroVector", 
-      "addr": "03f87558", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0052ca99", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CMorphModel *in_stack_00000004;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_morph_cpp_CMorphModel_FUN_0052bae0(in_stack_00000004);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0052ca90", 
-    "signature": "undefined core_morph.cpp_FUN_0052ca90()", 
-    "address_range": [
-      [
-        "0052ca90", 
-        "0052cc08"
-      ]
-    ], 
-    "name": "core_morph.cpp_FUN_0052ca90"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 178
+  },
   "cross_references": [
     {
-      "from_addr": "0052c4c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_FUN_0052bcb0", 
-      "addr": "0052bcb0"
+      "addr": "0052bcb0",
+      "from_addr": "0052c4c0",
+      "name": "core_morph.cpp_FUN_0052bcb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052ca90",
+    "address_range": [
+      [
+        "0052ca90",
+        "0052cc08"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_morph.cpp_FUN_0052ca90",
+    "signature": "undefined core_morph.cpp_FUN_0052ca90()"
+  },
+  "function_calls": [
+    {
+      "addr": "004d7d80",
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004d7d80"
+    },
+    {
+      "addr": "004d7d90",
+      "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90"
+    },
+    {
+      "addr": "0052bae0",
+      "name": "core_morph.cpp_CMorphModel_FUN_0052bae0"
+    },
+    {
+      "addr": "00403260",
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    },
+    {
+      "addr": "0048c450",
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "005b9620",
+      "name": "shape_spotview.cpp_CSpotView_FUN_005b9620"
+    },
+    {
+      "addr": "005b9670",
+      "name": "shape_spotview.cpp_CSpotView_FUN_005b9670"
+    },
+    {
+      "addr": "005b9a20",
+      "name": "shape_spotview.cpp_CSpotView_FUN_005b9a20"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3ed4",
+      "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063a537",
+      "name": "DOUBLE_0063a537",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "0063a53f",
+      "name": "DOUBLE_0063a53f",
+      "type": "double",
+      "value": "0.333333333333333"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "0068416c",
+      "name": "g_CSpotViewPtr",
+      "type": "CSpotView*",
+      "value": "03f6b9e0"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysPtr",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "03f6b9e0",
+      "name": "g_CSpotViewInstance",
+      "type": "CSpotView",
+      "value": null
+    },
+    {
+      "addr": "03f87558",
+      "name": "g_ZeroVector",
+      "type": "CVector3f",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0052ca99",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CMorphModel *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "core_morph_cpp_CMorphModel_FUN_0052bae0(in_stack_00000004);",
+      "type": "stack_param"
     }
   ]
 }

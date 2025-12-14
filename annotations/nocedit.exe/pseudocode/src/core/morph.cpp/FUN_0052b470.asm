@@ -26,16 +26,16 @@ section .text
     SHL EAX,0x3                         ; 0052b487
     ADD EBX,EAX                         ; 0052b48a
     PUSH EBX                            ; 0052b48c
-    CALL core_morph.cpp_CMorphModel_free_FUN_0052a510 ; 0052b48d | void core_morph.cpp_CMorphModel_free_FUN_0052a510(CMorphModel * this_ptr)
-        ;   XREF to: 0052a510 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_free_FUN_0052a510 ; 0052b48d
+        ;   XREF to: 0052a510 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_free_FUN_0052a510(CMorphModel * this_ptr)
     ADD ESP,0x4                         ; 0052b492
     MOV EDX,dword ptr [ESP + 0x14]      ; 0052b495
     PUSH EDX                            ; 0052b499
     MOV ECX,dword ptr [ESP + 0x14]      ; 0052b49a
     PUSH ECX                            ; 0052b49e
     PUSH EBX                            ; 0052b49f
-    CALL core_morph.cpp_CMorphModel_FUN_0052a8d0 ; 0052b4a0 | void core_morph.cpp_CMorphModel_FUN_0052a8d0(CMorphModel * this_ptr)
-        ;   XREF to: 0052a8d0 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_FUN_0052a8d0 ; 0052b4a0
+        ;   XREF to: 0052a8d0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_FUN_0052a8d0(CMorphModel * this_ptr)
     ADD ESP,0xc                         ; 0052b4a5
     POP EBX                             ; 0052b4a8
     RET                                 ; 0052b4a9

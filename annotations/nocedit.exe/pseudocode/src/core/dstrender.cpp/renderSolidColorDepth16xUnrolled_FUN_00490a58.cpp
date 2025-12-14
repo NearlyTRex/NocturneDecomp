@@ -149,7 +149,7 @@ core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58
       piVar6 = piVar6 + 0x10;
       iVar3 = iVar4;
     }
-    if (iVar4 != -4 && SCARRY4(iVar4,4) == iVar4 + 4 < 0) {
+    if (-4 < iVar4) {
       if ((int)*puVar8 <= (int)(uVar11 >> 8)) {
         *puVar8 = uVar11 >> 8;
         *piVar12 = iVar1;

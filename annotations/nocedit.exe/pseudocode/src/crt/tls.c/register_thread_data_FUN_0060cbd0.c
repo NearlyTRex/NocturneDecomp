@@ -15,7 +15,7 @@ BOOL __cdecl crt_tls_c_register_thread_data_FUN_0060cbd0(void *tls_data,void *th
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f10)();
   BVar2 = 1;
-  ptr = (ThreadRegistryEntry *)crt_memory_c_calloc_FUN_0060ca90(1,0x10);
+  ptr = crt_memory_c_calloc_FUN_0060ca90(1,0x10);
   if (ptr == (ThreadRegistryEntry *)0x0) {
     BVar2 = 0;
   }

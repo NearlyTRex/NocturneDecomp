@@ -1,239 +1,239 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 138, 
-    "pseudocode_lines": 63, 
-    "cross_reference_count": 4, 
-    "global_count": 12, 
-    "total_lines": 216, 
-    "assembly_lines": 153, 
-    "suspect_count": 7, 
+    "assembly_lines": 153,
+    "complexity_score": 138,
+    "cross_reference_count": 4,
+    "function_call_count": 9,
+    "global_count": 12,
+    "pseudocode_lines": 63,
+    "suspect_count": 7,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0", 
-      "addr": "0044c3e0"
-    }, 
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0", 
-      "addr": "0044d1c0"
-    }, 
-    {
-      "name": "core_event.cpp_FUN_004b19d0", 
-      "addr": "004b19d0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890", 
-      "addr": "0048c890"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150", 
-      "addr": "0048c150"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0", 
-      "addr": "0048cac0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650", 
-      "addr": "0048c650"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200", 
-      "addr": "0048c200"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dlight_cpp_0061ef84", 
-      "addr": "0061ef84", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonLight_beginScene_S_0061ef97", 
-      "addr": "0061ef97", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RasterizerDepthBias", 
-      "addr": "02c6d03c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[0][1]", 
-      "addr": "02d052ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[1][1]", 
-      "addr": "02d052f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[2][1]", 
-      "addr": "02d05304", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000028;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0(&this_ptr->base,in_stack_0000000c);"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr->base).skip_clear_buffer_flag = in_stack_0000000c;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c == 0) {"
-    }, 
-    {
-      "line": 60, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000028 == 0) {"
-    }, 
-    {
-      "line": 61, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_RasterizerDepthBias = in_stack_00000028;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00472a80", 
-    "signature": "void core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight * this_ptr, int skip_clear_buffers)", 
-    "address_range": [
-      [
-        "00472a80", 
-        "00472c68"
-      ]
-    ], 
-    "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonLight *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "skip_clear_buffers"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 216
+  },
   "cross_references": [
     {
-      "from_addr": "0056bf82", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80", 
-      "addr": "0056be80"
-    }, 
+      "addr": "0056be80",
+      "from_addr": "0056bf82",
+      "name": "core_set.cpp_CDemonSet_FUN_0056be80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056cad7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
-      "addr": "0056c990"
-    }, 
+      "addr": "0056c990",
+      "from_addr": "0056cad7",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056ab6b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
-      "addr": "0056aa10"
-    }, 
+      "addr": "0056aa10",
+      "from_addr": "0056ab6b",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056b5e5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
-      "addr": "0056ae50"
+      "addr": "0056ae50",
+      "from_addr": "0056b5e5",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00472a80",
+    "address_range": [
+      [
+        "00472a80",
+        "00472c68"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80",
+    "signature": "void core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight * this_ptr, int skip_clear_buffers)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044c3e0",
+      "name": "core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0"
+    },
+    {
+      "addr": "0044d1c0",
+      "name": "core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0"
+    },
+    {
+      "addr": "004b19d0",
+      "name": "core_event.cpp_FUN_004b19d0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0048c890",
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890"
+    },
+    {
+      "addr": "0048c150",
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150"
+    },
+    {
+      "addr": "0048cac0",
+      "name": "engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0"
+    },
+    {
+      "addr": "0048c650",
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650"
+    },
+    {
+      "addr": "0048c200",
+      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061ef84",
+      "name": "s_core_dlight_cpp_0061ef84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061ef97",
+      "name": "s_CDemonLight_beginScene_S_0061ef97",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d03c",
+      "name": "g_RasterizerDepthBias",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052ec",
+      "name": "g_TransformMatrix[0][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f8",
+      "name": "g_TransformMatrix[1][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05304",
+      "name": "g_TransformMatrix[2][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "skip_clear_buffers",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000028",
+      "text": "int in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "text": "core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0(&this_ptr->base,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr->base).skip_clear_buffer_flag = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000028",
+      "text": "if (in_stack_00000028 == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000028",
+      "text": "g_RasterizerDepthBias = in_stack_00000028;",
+      "type": "stack_param"
     }
   ]
 }

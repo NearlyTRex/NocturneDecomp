@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 54, 
-    "assembly_lines": 39, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0046b6e0", 
-    "signature": "void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)", 
-    "address_range": [
-      [
-        "0046b6e0", 
-        "0046b760"
-      ]
-    ], 
-    "name": "shape_design.c_initializeCramConfig_FUN_0046b6e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SCramConfig *", 
-        "size": 4, 
-        "name": "cram_config"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 39,
+    "complexity_score": 15,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "0047a559", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0", 
-      "addr": "0047a3e0"
-    }, 
+      "addr": "0047a3e0",
+      "from_addr": "0047a559",
+      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058e01f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058de70", 
-      "addr": "0058de70"
-    }, 
+      "addr": "0058de70",
+      "from_addr": "0058e01f",
+      "name": "core_skeledit.cpp_FUN_0058de70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046a8fe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_setTextureQualityParameter_FUN_0046a8e0", 
-      "addr": "0046a8e0"
+      "addr": "0046a8e0",
+      "from_addr": "0046a8fe",
+      "name": "shape_design.c_setTextureQualityParameter_FUN_0046a8e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0046b6e0",
+    "address_range": [
+      [
+        "0046b6e0",
+        "0046b760"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_initializeCramConfig_FUN_0046b6e0",
+    "signature": "void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cram_config",
+        "offset": 4,
+        "size": 4,
+        "type": "SCramConfig *"
+      }
+    ]
+  },
+  "suspects": []
 }

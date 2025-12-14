@@ -1,108 +1,108 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 59, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 93, 
-    "assembly_lines": 64, 
-    "suspect_count": 2, 
+    "assembly_lines": 64,
+    "complexity_score": 59,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030", 
-      "addr": "00472030"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00420180", 
-    "signature": "void core_box.cpp_CBox_setupVelocities_FUN_00420180(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)", 
-    "address_range": [
-      [
-        "00420180", 
-        "004201fe"
-      ]
-    ], 
-    "name": "core_box.cpp_CBox_setupVelocities_FUN_00420180"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBox *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "linear_velocity"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "angular_velocity"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 93
+  },
   "cross_references": [
     {
-      "from_addr": "0041a023", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0", 
-      "addr": "00419fd0"
-    }, 
+      "addr": "00419fd0",
+      "from_addr": "0041a023",
+      "name": "core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00422539", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_FUN_004224f0", 
-      "addr": "004224f0"
-    }, 
+      "addr": "004224f0",
+      "from_addr": "00422539",
+      "name": "core_boxactor.cpp_FUN_004224f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c3fd1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CToss_create_FUN_004c3ee0", 
-      "addr": "004c3ee0"
+      "addr": "004c3ee0",
+      "from_addr": "004c3fd1",
+      "name": "core_fire.cpp_CToss_create_FUN_004c3ee0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00420180",
+    "address_range": [
+      [
+        "00420180",
+        "004201fe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_box.cpp_CBox_setupVelocities_FUN_00420180",
+    "signature": "void core_box.cpp_CBox_setupVelocities_FUN_00420180(CBox * this_ptr, CVector3f * linear_velocity, CVector3f * angular_velocity)"
+  },
+  "function_calls": [
+    {
+      "addr": "00472030",
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBox *"
+      },
+      {
+        "is_param": true,
+        "name": "linear_velocity",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "angular_velocity",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

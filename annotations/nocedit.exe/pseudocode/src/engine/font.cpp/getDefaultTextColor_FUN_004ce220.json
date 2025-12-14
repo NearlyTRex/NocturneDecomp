@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 4, 
-    "pseudocode_lines": 4, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 7, 
-    "assembly_lines": 3, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_DefaultTextColor", 
-      "addr": "02d7b424", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ce220", 
-    "signature": "int engine_font.cpp_getDefaultTextColor_FUN_004ce220(void)", 
-    "address_range": [
-      [
-        "004ce220", 
-        "004ce225"
-      ]
-    ], 
-    "name": "engine_font.cpp_getDefaultTextColor_FUN_004ce220"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 3,
+    "complexity_score": 4,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 7
+  },
   "cross_references": [
     {
-      "from_addr": "004891b4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
-      "addr": "00489120"
-    }, 
+      "addr": "00489120",
+      "from_addr": "004891b4",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f2669", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440", 
-      "addr": "005f2440"
+      "addr": "005f2440",
+      "from_addr": "005f2669",
+      "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004ce220",
+    "address_range": [
+      [
+        "004ce220",
+        "004ce225"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_getDefaultTextColor_FUN_004ce220",
+    "signature": "int engine_font.cpp_getDefaultTextColor_FUN_004ce220(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d7b424",
+      "name": "g_DefaultTextColor",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

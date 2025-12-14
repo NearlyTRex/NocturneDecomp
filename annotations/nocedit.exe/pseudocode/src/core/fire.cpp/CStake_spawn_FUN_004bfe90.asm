@@ -73,8 +73,8 @@ section .text
     PUSH EDX                            ; 004bfea7
     LEA EAX,[ESP + 0x4]                 ; 004bfea8
     PUSH EAX                            ; 004bfeac
-    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 004bfead | void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 004bfead
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004bfeb2
     LEA EAX,[ESP + 0x7c]                ; 004bfeb5
     MOV EDI,0x41200000                  ; 004bfeb9
@@ -87,8 +87,8 @@ section .text
     PUSH EAX                            ; 004bfed1
     MOV dword ptr [ESP + 0x8c],ECX      ; 004bfed2
     MOV dword ptr [ESP + 0x90],EDI      ; 004bfed9
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 004bfee0 | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 004bfee0
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 004bfee5
     FLD float ptr [EBX + 0x4]           ; 004bfee8
     FMUL float ptr [ESP + 0x74]         ; 004bfeeb
@@ -98,7 +98,7 @@ section .text
     FLD float ptr [EBX + 0x8]           ; 004bfef7
     FMUL float ptr [ESP + 0x78]         ; 004bfefa
     FADDP                               ; 004bfefe
-    FMUL float ptr [0x00629c5f]         ; 004bff00 | float FLOAT_00629c5f
+    FMUL float ptr [0x00629c5f]         ; 004bff00 | FLOAT_00629c5f
     FLD float ptr [EBX]                 ; 004bff06
     FXCH                                ; 004bff08
     FSTP float ptr [ESP + 0xa0]         ; 004bff0a
@@ -124,8 +124,8 @@ section .text
     FSTP float ptr [ESP + 0x98]         ; 004bff64
     FSTP float ptr [ESP + 0x9c]         ; 004bff6b
     CMP EDX,EAX                         ; 004bff72
-    JNZ 0x004c0111                      ; 004bff74 | LAB_004c0111
-        ;   XREF to: 004c0111 (CONDITIONAL_JUMP)
+    JNZ 0x004c0111                      ; 004bff74
+        ;   XREF to: 004c0111 (CONDITIONAL_JUMP)  ; LAB_004c0111
     FLD float ptr [ESP + 0x70]          ; 004bff7a
         ;   Label: LAB_004bff7a
     FLD float ptr [ESP + 0x74]          ; 004bff7e
@@ -144,8 +144,8 @@ section .text
     FSTP float ptr [ESP + 0x6c]         ; 004bffa2
     FSTP float ptr [ESP + 0x64]         ; 004bffa6
     CMP EDX,EAX                         ; 004bffaa
-    JZ 0x004bffc6                       ; 004bffac | LAB_004bffc6
-        ;   XREF to: 004bffc6 (CONDITIONAL_JUMP)
+    JZ 0x004bffc6                       ; 004bffac
+        ;   XREF to: 004bffc6 (CONDITIONAL_JUMP)  ; LAB_004bffc6
     MOV EAX,dword ptr [ESP + 0x64]      ; 004bffae
     MOV dword ptr [ESP + 0x70],EAX      ; 004bffb2
     MOV EAX,dword ptr [ESP + 0x68]      ; 004bffb6
@@ -154,10 +154,10 @@ section .text
     MOV dword ptr [ESP + 0x78],EAX      ; 004bffc2
     MOV EAX,dword ptr [ESP + 0xb8]      ; 004bffc6
         ;   Label: LAB_004bffc6
-    PUSH 0x2d12df4                      ; 004bffcd | CKeyFramedModelInstance g_FireEffectFlamingStakeModel
+    PUSH 0x2d12df4                      ; 004bffcd | g_FireEffectFlamingStakeModel
     MOV dword ptr [EAX],0x0             ; 004bffd2
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004bffd8 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004bffd8
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     LEA EDX,[EAX + 0x5678]              ; 004bffdd
     ADD ESP,0x4                         ; 004bffe3
     MOV EAX,dword ptr [EDX]             ; 004bffe6
@@ -190,8 +190,8 @@ section .text
     LEA EAX,[ESP + 0x88]                ; 004c0046
     FSTP float ptr [ESP + 0x90]         ; 004c004d
     CMP EDX,EAX                         ; 004c0054
-    JZ 0x004c0079                       ; 004c0056 | LAB_004c0079
-        ;   XREF to: 004c0079 (CONDITIONAL_JUMP)
+    JZ 0x004c0079                       ; 004c0056
+        ;   XREF to: 004c0079 (CONDITIONAL_JUMP)  ; LAB_004c0079
     MOV EAX,dword ptr [ESP + 0x88]      ; 004c0058
     MOV dword ptr [ESP + 0x40],EAX      ; 004c005f
     MOV EAX,dword ptr [ESP + 0x8c]      ; 004c0063
@@ -209,13 +209,13 @@ section .text
     PUSH EAX                            ; 004c0099
     ADD EBX,0x4                         ; 004c009a
     PUSH EBX                            ; 004c009d
-    CALL core_box.cpp_CBox_setupCorners_FUN_0041dd20 ; 004c009e | void core_box.cpp_CBox_setupCorners_FUN_0041dd20(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
-        ;   XREF to: 0041dd20 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBox_setupCorners_FUN_0041dd20 ; 004c009e
+        ;   XREF to: 0041dd20 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_setupCorners_FUN_0041dd20(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, ...)
     ADD ESP,0x14                        ; 004c00a3
     PUSH 0x4116cbe4                     ; 004c00a6
     PUSH 0xc116cbe4                     ; 004c00ab
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c00b0 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c00b0
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     MOV EAX,dword ptr [ESP + 0x94]      ; 004c0111
         ;   Label: LAB_004c0111
     MOV dword ptr [ESP + 0x70],EAX      ; 004c0118
@@ -223,6 +223,6 @@ section .text
     MOV dword ptr [ESP + 0x74],EAX      ; 004c0123
     MOV EAX,dword ptr [ESP + 0x9c]      ; 004c0127
     MOV dword ptr [ESP + 0x78],EAX      ; 004c012e
-    JMP 0x004bff7a                      ; 004c0132 | LAB_004bff7a
-        ;   XREF to: 004bff7a (UNCONDITIONAL_JUMP)
+    JMP 0x004bff7a                      ; 004c0132
+        ;   XREF to: 004bff7a (UNCONDITIONAL_JUMP)  ; LAB_004bff7a
 

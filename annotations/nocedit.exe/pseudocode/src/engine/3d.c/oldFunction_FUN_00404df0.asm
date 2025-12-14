@@ -29,21 +29,21 @@ section .text
     MOV EAX,dword ptr [ESP + 0x58]      ; 00404df4
     MOV EDX,dword ptr [EAX]             ; 00404df8
     PUSH EDX                            ; 00404dfa
-    PUSH 0x613396                       ; 00404dfb | = "Old func : %d" | s_Old_func_d_00613396 = Old func : %d
+    PUSH 0x613396                       ; 00404dfb | = "Old func : %d"
     LEA EAX,[ESP + 0x8]                 ; 00404e00
     PUSH EAX                            ; 00404e04
     MOV EBX,0xda                        ; 00404e05
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00404e0a | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00404e0a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00404e0f
     MOV EAX,ESP                         ; 00404e12
-    MOV ECX,0x6133a4                    ; 00404e14 | = "..\\engine\\3d.c" | s_engine_3d_c_006133a4 = ..\engine\3d.c
+    MOV ECX,0x6133a4                    ; 00404e14 | = "..\\engine\\3d.c"
     PUSH EAX                            ; 00404e19
-    MOV dword ptr [0x02f0ca4c],EBX      ; 00404e1a | int g_CurrentLineNumber
-    MOV dword ptr [0x02f0ca48],ECX      ; 00404e20 | char * g_CurrentFilename
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00404e26 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
-    MOV EAX,0x772a84                    ; 00404e2b | int g_RenderResult
+    MOV dword ptr [0x02f0ca4c],EBX      ; 00404e1a | g_CurrentLineNumber
+    MOV dword ptr [0x02f0ca48],ECX      ; 00404e20 | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00404e26
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
+    MOV EAX,0x772a84                    ; 00404e2b | g_RenderResult
     ADD ESP,0x4                         ; 00404e30
     ADD ESP,0x50                        ; 00404e33
     POP EBX                             ; 00404e36

@@ -31,8 +31,8 @@ section .text
     PUSH 0x8004667e                     ; 005e1e6a
     MOV ECX,dword ptr [EAX]             ; 005e1e6f
     PUSH ECX                            ; 005e1e71
-    CALL crt_wsock32.c_ioctlsocket      ; 005e1e72 | int crt_wsock32.c_ioctlsocket(SOCKET s, long cmd, ulong * argp)
-        ;   XREF to: 00610ee6 (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_ioctlsocket      ; 005e1e72
+        ;   XREF to: 00610ee6 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_ioctlsocket(SOCKET s, long cmd, ulong * argp)
     TEST EAX,EAX                        ; 005e1e77
     SETZ AL                             ; 005e1e79
     AND EAX,0xff                        ; 005e1e7c

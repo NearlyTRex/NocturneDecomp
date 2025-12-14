@@ -26,8 +26,8 @@ int __cdecl shape_superopt_cpp_CObj_removeVertex_FUN_005d3140(CObj *this_ptr,uin
                (uVar5 - index) * 0x38);
   }
   if (this_ptr->vertex_count != 0) {
-    pCVar3 = (CVert *)crt_memory_c_realloc_FUN_00601df0
-                                (this_ptr->vertex_data,this_ptr->vertex_count * 0x38);
+    pCVar3 = crt_memory_c_realloc_FUN_00601df0(this_ptr->vertex_data,this_ptr->vertex_count * 0x38);
+    iVar4 = 0;
     if (pCVar3 != (CVert *)0x0) {
       uVar5 = 0;
       this_ptr->vertex_data = pCVar3;
@@ -51,9 +51,9 @@ int __cdecl shape_superopt_cpp_CObj_removeVertex_FUN_005d3140(CObj *this_ptr,uin
           iVar4 = iVar4 + 0x68;
         } while (uVar5 < (uint)this_ptr->poly_count);
       }
-      pCVar3 = (CVert *)&DAT_00000001;
+      iVar4 = 1;
     }
-    return (int)pCVar3;
+    return iVar4;
   }
   crt_memory_c_free_FUN_00601cd0(this_ptr->vertex_data);
   this_ptr->vertex_data = (CVert *)0x0;

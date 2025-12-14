@@ -27,11 +27,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 004d01d0
         ;   Label: engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0
     TEST EAX,EAX                        ; 004d01d4
-    JL 0x004d01df                       ; 004d01d6 | LAB_004d01df
-        ;   XREF to: 004d01df (CONDITIONAL_JUMP)
+    JL 0x004d01df                       ; 004d01d6
+        ;   XREF to: 004d01df (CONDITIONAL_JUMP)  ; LAB_004d01df
     CMP EAX,0x100                       ; 004d01d8
-    JL 0x004d01e2                       ; 004d01dd | LAB_004d01e2
-        ;   XREF to: 004d01e2 (CONDITIONAL_JUMP)
+    JL 0x004d01e2                       ; 004d01dd
+        ;   XREF to: 004d01e2 (CONDITIONAL_JUMP)  ; LAB_004d01e2
     XOR EAX,EAX                         ; 004d01df
         ;   Label: LAB_004d01df
     RET                                 ; 004d01e1

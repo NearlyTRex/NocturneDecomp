@@ -1,130 +1,130 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 2, 
-    "global_count": 11, 
-    "total_lines": 74, 
-    "assembly_lines": 51, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SCramWorkingEntry[1]", 
-      "name": "g_CramSortedTextureEntries", 
-      "addr": "0083c1dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CramSortedTextureEntries[0].assigned_map_number", 
-      "addr": "0083c1ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c20c", 
-      "addr": "0083c20c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c210", 
-      "addr": "0083c210", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c218", 
-      "addr": "0083c218", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c238", 
-      "addr": "0083c238", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c258", 
-      "addr": "0083c258", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c25c", 
-      "addr": "0083c25c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c264", 
-      "addr": "0083c264", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CramTextureCount", 
-      "addr": "0084a854", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramCurrentAcceptableSize", 
-      "addr": "0084a884", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00447a10", 
-    "signature": "int shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10(SCramWorkingEntry * bounds_entry)", 
-    "address_range": [
-      [
-        "00447a10", 
-        "00447a74"
-      ]
-    ], 
-    "name": "shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SCramWorkingEntry *", 
-        "size": 4, 
-        "name": "bounds_entry"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 51,
+    "complexity_score": 23,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 11,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 74
+  },
   "cross_references": [
     {
-      "from_addr": "004475eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590", 
-      "addr": "00447590"
-    }, 
+      "addr": "00447590",
+      "from_addr": "004475eb",
+      "name": "shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004466af", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160", 
-      "addr": "00446160"
+      "addr": "00446160",
+      "from_addr": "004466af",
+      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00447a10",
+    "address_range": [
+      [
+        "00447a10",
+        "00447a74"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10",
+    "signature": "int shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10(SCramWorkingEntry * bounds_entry)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0083c1dc",
+      "name": "g_CramSortedTextureEntries",
+      "type": "SCramWorkingEntry[1]",
+      "value": null
+    },
+    {
+      "addr": "0083c1ec",
+      "name": "g_CramSortedTextureEntries[0].assigned_map_number",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c20c",
+      "name": "DAT_0083c20c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c210",
+      "name": "DAT_0083c210",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c218",
+      "name": "DAT_0083c218",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c238",
+      "name": "DAT_0083c238",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c258",
+      "name": "DAT_0083c258",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c25c",
+      "name": "DAT_0083c25c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c264",
+      "name": "DAT_0083c264",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0084a854",
+      "name": "g_CramTextureCount",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "0084a884",
+      "name": "g_CramCurrentAcceptableSize",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "bounds_entry",
+        "offset": 12,
+        "size": 4,
+        "type": "SCramWorkingEntry *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 73, 
-    "assembly_lines": 51, 
-    "suspect_count": 1, 
+    "assembly_lines": 51,
+    "complexity_score": 37,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_iostream.cpp_setBuffer_FUN_0060d6a8", 
-      "addr": "0060d6a8"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 21, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "buffer_end = (void *)((int)buffer_start + buffer_size);"
-    }
-  ], 
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__watcallStack", 
-    "address": "0060d5ff", 
-    "signature": "streambuf * crt_iostream.cpp_streambuf_setbuf_FUN_0060d5ff(streambuf * this_ptr, void * buffer_start, int buffer_size)", 
+    "address": "0060d5ff",
     "address_range": [
       [
-        "0060d5ff", 
+        "0060d5ff",
         "0060d64e"
       ]
-    ], 
-    "name": "crt_iostream.cpp_streambuf_setbuf_FUN_0060d5ff"
-  }, 
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_iostream.cpp_streambuf_setbuf_FUN_0060d5ff",
+    "signature": "streambuf * crt_iostream.cpp_streambuf_setbuf_FUN_0060d5ff(streambuf * this_ptr, void * buffer_start, int buffer_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060d6a8",
+      "name": "crt_iostream.cpp_setBuffer_FUN_0060d6a8"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "streambuf *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "streambuf *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "buffer_start"
-      }, 
+        "is_param": true,
+        "name": "buffer_start",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_size"
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(void *)((int)",
+      "text": "buffer_end = (void *)((int)buffer_start + buffer_size);",
+      "type": "pointer_cast"
+    }
+  ]
 }

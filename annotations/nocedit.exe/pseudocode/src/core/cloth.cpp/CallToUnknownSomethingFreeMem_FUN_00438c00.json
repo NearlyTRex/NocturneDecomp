@@ -1,135 +1,135 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 61, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 8, 
-    "global_count": 0, 
-    "total_lines": 38, 
-    "assembly_lines": 27, 
-    "suspect_count": 4, 
+    "assembly_lines": 27,
+    "complexity_score": 61,
+    "cross_reference_count": 8,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 11,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_cloth.cpp_freeClothBones_FUN_0043e4a0", 
-      "addr": "0043e4a0"
-    }, 
-    {
-      "name": "core_cloth.cpp_freeClothVertices_FUN_0043e480", 
-      "addr": "0043e480"
-    }, 
-    {
-      "name": "core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0", 
-      "addr": "00438cb0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90", 
-      "addr": "00476d90"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_cloth_cpp_freeClothBones_FUN_0043e4a0((SClothBone **)(in_stack_00000004 + 0x3ce90));"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar1 = core_cloth_cpp_freeClothVertices_FUN_0043e480((SClothVertex **)(extraout_EAX + -0x377b8));"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00438c00", 
-    "signature": "undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()", 
-    "address_range": [
-      [
-        "00438c00", 
-        "00438c41"
-      ]
-    ], 
-    "name": "core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 38
+  },
   "cross_references": [
     {
-      "from_addr": "0043c059", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_CClothList_load_FUN_0043bfa0", 
-      "addr": "0043bfa0"
-    }, 
+      "addr": "0043bfa0",
+      "from_addr": "0043c059",
+      "name": "core_cloth.cpp_CClothList_load_FUN_0043bfa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043c1d7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_CClothList_remove_FUN_0043c170", 
-      "addr": "0043c170"
-    }, 
+      "addr": "0043c170",
+      "from_addr": "0043c1d7",
+      "name": "core_cloth.cpp_CClothList_remove_FUN_0043c170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043c0a4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_FUN_0043c070", 
-      "addr": "0043c070"
-    }, 
+      "addr": "0043c070",
+      "from_addr": "0043c0a4",
+      "name": "core_cloth.cpp_FUN_0043c070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004be214", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150", 
-      "addr": "004be150"
-    }, 
+      "addr": "004be150",
+      "from_addr": "004be214",
+      "name": "core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d7675", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_freeMaybe_FUN_004d7660", 
-      "addr": "004d7660"
-    }, 
+      "addr": "004d7660",
+      "from_addr": "004d7675",
+      "name": "core_gabriela.cpp_freeMaybe_FUN_004d7660",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051f32f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_FUN_0051f2c0", 
-      "addr": "0051f2c0"
-    }, 
+      "addr": "0051f2c0",
+      "from_addr": "0051f32f",
+      "name": "core_mimic.cpp_FUN_0051f2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d9f65", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50", 
-      "addr": "005d9f50"
-    }, 
+      "addr": "005d9f50",
+      "from_addr": "005d9f65",
+      "name": "core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e7729", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700", 
-      "addr": "005e7700"
+      "addr": "005e7700",
+      "from_addr": "005e7729",
+      "name": "core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00438c00",
+    "address_range": [
+      [
+        "00438c00",
+        "00438c41"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00",
+    "signature": "undefined core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00()"
+  },
+  "function_calls": [
+    {
+      "addr": "0043e4a0",
+      "name": "core_cloth.cpp_freeClothBones_FUN_0043e4a0"
+    },
+    {
+      "addr": "0043e480",
+      "name": "core_cloth.cpp_freeClothVertices_FUN_0043e480"
+    },
+    {
+      "addr": "00438cb0",
+      "name": "core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0"
+    },
+    {
+      "addr": "00476d90",
+      "name": "core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00476d90"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "core_cloth_cpp_freeClothBones_FUN_0043e4a0((SClothBone **)(in_stack_00000004 + 0x3ce90));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "text": "iVar1 = core_cloth_cpp_freeClothVertices_FUN_0043e480((SClothVertex **)(extraout_EAX + -0x377b8));",
+      "type": "extra_output"
     }
   ]
 }

@@ -24,8 +24,8 @@ section .text
         ;   Label: support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043edf1
     PUSH EBX                            ; 0043edf5
-    CALL support_codec.cpp_CLZWDictionary_free_FUN_0043ee10 ; 0043edf6 | void support_codec.cpp_CLZWDictionary_free_FUN_0043ee10(CLZWDictionary * this_ptr)
-        ;   XREF to: 0043ee10 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_free_FUN_0043ee10 ; 0043edf6
+        ;   XREF to: 0043ee10 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_free_FUN_0043ee10(CLZWDictionary * this_ptr)
     ADD ESP,0x4                         ; 0043edfb
     MOV EAX,EBX                         ; 0043edfe
     POP EBX                             ; 0043ee00

@@ -16,8 +16,7 @@ engine_fileio_cpp_CCheckOutList_add_FUN_004b2d00(CCheckOutList *this_ptr,CCheckO
   uint *in_stack_0000000c;
   
   bVar3 = 0;
-  pCVar1 = (CCheckOutItem *)
-           shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pCVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->items,(this_ptr->count + 1) * 0x168,"..\\engine\\fileio.cpp",
                       0x2e7);
   this_ptr->items = pCVar1;

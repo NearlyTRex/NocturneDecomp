@@ -20,19 +20,19 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005fbda5
     PUSH EDX                            ; 005fbda9
     PUSH EBX                            ; 005fbdaa
-    CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005fbdab | undefined core_zombie.cpp_CZombie_FUN_005fbd00()
-        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)
+    CALL core_zombie.cpp_CZombie_FUN_005fbd00 ; 005fbdab
+        ;   XREF to: 005fbd00 (UNCONDITIONAL_CALL)  ; undefined core_zombie.cpp_CZombie_FUN_005fbd00()
     ADD ESP,0x8                         ; 005fbdb0
     TEST EAX,EAX                        ; 005fbdb3
-    JL 0x005fbdd2                       ; 005fbdb5 | LAB_005fbdd2
-        ;   XREF to: 005fbdd2 (CONDITIONAL_JUMP)
+    JL 0x005fbdd2                       ; 005fbdb5
+        ;   XREF to: 005fbdd2 (CONDITIONAL_JUMP)  ; LAB_005fbdd2
     MOV EDX,EAX                         ; 005fbdb7
     SHL EAX,0x4                         ; 005fbdb9
     ADD EAX,EDX                         ; 005fbdbc
     MOV EAX,dword ptr [EBX + EAX*0x4 + 0x24b0] ; 005fbdbe
     TEST EAX,EAX                        ; 005fbdc5
-    JL 0x005fbdd2                       ; 005fbdc7 | LAB_005fbdd2
-        ;   XREF to: 005fbdd2 (CONDITIONAL_JUMP)
+    JL 0x005fbdd2                       ; 005fbdc7
+        ;   XREF to: 005fbdd2 (CONDITIONAL_JUMP)  ; LAB_005fbdd2
     MOV EAX,dword ptr [EBX + EAX*0x4 + 0x2298] ; 005fbdc9
     POP EBX                             ; 005fbdd0
     RET                                 ; 005fbdd1

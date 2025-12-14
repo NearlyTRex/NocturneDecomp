@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 116, 
-    "assembly_lines": 79, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_lseek_FUN_00606690", 
-      "addr": "00606690"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060dc5e", 
-    "signature": "int crt_fstream.cpp_filebuf_sync_FUN_0060dc5e(filebuf * this_ptr)", 
-    "address_range": [
-      [
-        "0060dc5e", 
-        "0060dcf4"
-      ]
-    ], 
-    "name": "crt_fstream.cpp_filebuf_sync_FUN_0060dc5e"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "filebuf *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 79,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 116
+  },
   "cross_references": [
     {
-      "from_addr": "0060be1d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9", 
-      "addr": "0060bdf9"
+      "addr": "0060bdf9",
+      "from_addr": "0060be1d",
+      "name": "crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060dc5e",
+    "address_range": [
+      [
+        "0060dc5e",
+        "0060dcf4"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_fstream.cpp_filebuf_sync_FUN_0060dc5e",
+    "signature": "int crt_fstream.cpp_filebuf_sync_FUN_0060dc5e(filebuf * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00606690",
+      "name": "crt_stdio.c_lseek_FUN_00606690"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "filebuf *"
+      }
+    ]
+  },
+  "suspects": []
 }

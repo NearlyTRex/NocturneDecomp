@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2db88f8                   ; 004f6c90 | CDemonActorType g_CHotDemonClassInfo
+    MOV EAX,0x2db88f8                   ; 004f6c90 | g_CHotDemonClassInfo
         ;   Label: core_hotdemon.cpp_FUN_004f6c90
     RET                                 ; 004f6c95
 

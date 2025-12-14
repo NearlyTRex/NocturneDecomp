@@ -29,8 +29,8 @@ section .text
     PUSH EDI                            ; 0043c0f2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0043c0f3
     CMP dword ptr [EBX],0xa             ; 0043c0f7
-    JGE 0x0043c140                      ; 0043c0fa | LAB_0043c140
-        ;   XREF to: 0043c140 (CONDITIONAL_JUMP)
+    JGE 0x0043c140                      ; 0043c0fa
+        ;   XREF to: 0043c140 (CONDITIONAL_JUMP)  ; LAB_0043c140
     MOV EDX,dword ptr [EBX]             ; 0043c0fc
         ;   Label: LAB_0043c0fc
     LEA EAX,[EDX*0x4 + 0x0]             ; 0043c0fe
@@ -44,15 +44,15 @@ section .text
         ;   Label: LAB_0043c114
     MOV byte ptr [EDI],AL               ; 0043c116
     CMP AL,0x0                          ; 0043c118
-    JZ 0x0043c12c                       ; 0043c11a | LAB_0043c12c
-        ;   XREF to: 0043c12c (CONDITIONAL_JUMP)
+    JZ 0x0043c12c                       ; 0043c11a
+        ;   XREF to: 0043c12c (CONDITIONAL_JUMP)  ; LAB_0043c12c
     MOV AL,byte ptr [ESI + 0x1]         ; 0043c11c
     ADD ESI,0x2                         ; 0043c11f
     MOV byte ptr [EDI + 0x1],AL         ; 0043c122
     ADD EDI,0x2                         ; 0043c125
     CMP AL,0x0                          ; 0043c128
-    JNZ 0x0043c114                      ; 0043c12a | LAB_0043c114
-        ;   XREF to: 0043c114 (CONDITIONAL_JUMP)
+    JNZ 0x0043c114                      ; 0043c12a
+        ;   XREF to: 0043c114 (CONDITIONAL_JUMP)  ; LAB_0043c114
     POP EDI                             ; 0043c12c
         ;   Label: LAB_0043c12c
     MOV EAX,dword ptr [EBX]             ; 0043c12d
@@ -62,15 +62,15 @@ section .text
     POP ESI                             ; 0043c13d
     POP EBX                             ; 0043c13e
     RET                                 ; 0043c13f
-    MOV ECX,0x6185de                    ; 0043c140 | = "..\\core\\cloth.cpp" | s_core_cloth_cpp_006185de = ..\core\cloth.cpp
+    MOV ECX,0x6185de                    ; 0043c140 | = "..\\core\\cloth.cpp"
         ;   Label: LAB_0043c140
     MOV ESI,0x5d1                       ; 0043c145
-    PUSH 0x6185f0                       ; 0043c14a | = "CClothList::add - list is full" | s_CClothList_add_list_is_f_006185f0 = CClothList::add - list is full
-    MOV dword ptr [0x02f0ca48],ECX      ; 0043c14f | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 0043c155 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0043c15b | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6185f0                       ; 0043c14a | = "CClothList::add - list is full"
+    MOV dword ptr [0x02f0ca48],ECX      ; 0043c14f | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 0043c155 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0043c15b
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0043c160
-    JMP 0x0043c0fc                      ; 0043c163 | LAB_0043c0fc
-        ;   XREF to: 0043c0fc (UNCONDITIONAL_JUMP)
+    JMP 0x0043c0fc                      ; 0043c163
+        ;   XREF to: 0043c0fc (UNCONDITIONAL_JUMP)  ; LAB_0043c0fc
 

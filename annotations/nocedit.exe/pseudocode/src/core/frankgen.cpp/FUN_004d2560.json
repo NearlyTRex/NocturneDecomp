@@ -1,144 +1,144 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 146, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 69, 
-    "assembly_lines": 48, 
-    "suspect_count": 12, 
+    "assembly_lines": 48,
+    "complexity_score": 146,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 21,
+    "suspect_count": 12,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0", 
-      "addr": "0040cfd0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0", 
-      "addr": "0047edd0"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_data_s_0062abf5", 
-      "addr": "0062abf5", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000008;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,in_stack_00000008);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,in_stack_00000008);"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[1].actor_name[8] != '\\0') {"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008,\"data\\\\%s\\n\",in_stack_00000004[1].actor_name + 8);"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008,\"data\\\\%s\\n\",in_stack_00000004[1].actor_name + 8);"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004[2].create_event[0x5c] == '\\0') {"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,in_stack_00000008"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,in_stack_00000008"
-    }
-  ], 
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004d2560", 
-    "signature": "undefined core_frankgen.cpp_FUN_004d2560()", 
+    "address": "004d2560",
     "address_range": [
       [
-        "004d2560", 
+        "004d2560",
         "004d25c4"
       ]
-    ], 
-    "name": "core_frankgen.cpp_FUN_004d2560"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_frankgen.cpp_FUN_004d2560",
+    "signature": "undefined core_frankgen.cpp_FUN_004d2560()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cfd0",
+      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0"
+    },
+    {
+      "addr": "0047edd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062abf5",
+      "name": "s_data_s_0062abf5",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "FILE *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[1].actor_name[8] != '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"data\\\\%s\\n\",in_stack_00000004[1].actor_name + 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000008,\"data\\\\%s\\n\",in_stack_00000004[1].actor_name + 8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[2].create_event[0x5c] == '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,in_stack_00000008",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,in_stack_00000008",
+      "type": "stack_param"
+    }
+  ]
 }

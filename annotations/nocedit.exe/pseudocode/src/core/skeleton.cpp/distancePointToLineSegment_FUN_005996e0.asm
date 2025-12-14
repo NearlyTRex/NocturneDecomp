@@ -59,8 +59,8 @@ section .text
     FCOMP double ptr [ESP + 0x8]        ; 0059972d
     FNSTSW AX                           ; 00599731
     SAHF                                ; 00599733
-    JNC 0x005997e8                      ; 00599734 | LAB_005997e8
-        ;   XREF to: 005997e8 (CONDITIONAL_JUMP)
+    JNC 0x005997e8                      ; 00599734
+        ;   XREF to: 005997e8 (CONDITIONAL_JUMP)  ; LAB_005997e8
     FLD double ptr [ESP + 0x8]          ; 0059973a
     FLD1                                ; 0059973e
     FLD float ptr [ESP + 0x10]          ; 00599740
@@ -102,14 +102,14 @@ section .text
     FCOMP double ptr [ESP]              ; 005997a9
     FNSTSW AX                           ; 005997ac
     SAHF                                ; 005997ae
-    JNC 0x005997e8                      ; 005997af | LAB_005997e8
-        ;   XREF to: 005997e8 (CONDITIONAL_JUMP)
+    JNC 0x005997e8                      ; 005997af
+        ;   XREF to: 005997e8 (CONDITIONAL_JUMP)  ; LAB_005997e8
     FLD double ptr [ESP]                ; 005997b1
     FCOMP double ptr [ESP + 0x8]        ; 005997b4
     FNSTSW AX                           ; 005997b8
     SAHF                                ; 005997ba
-    JC 0x00599802                       ; 005997bb | LAB_00599802
-        ;   XREF to: 00599802 (CONDITIONAL_JUMP)
+    JC 0x00599802                       ; 005997bb
+        ;   XREF to: 00599802 (CONDITIONAL_JUMP)  ; LAB_00599802
     FLD float ptr [EDX]                 ; 005997bd
     FSUB float ptr [EBX]                ; 005997bf
     FMUL ST0                            ; 005997c1
@@ -141,8 +141,8 @@ section .text
     FXCH                                ; 005997f9
     FADDP ST2,ST0                       ; 005997fb
     FSUB float ptr [ECX + 0x8]          ; 005997fd
-    JMP 0x005997d5                      ; 00599800 | LAB_005997d5
-        ;   XREF to: 005997d5 (UNCONDITIONAL_JUMP)
+    JMP 0x005997d5                      ; 00599800
+        ;   XREF to: 005997d5 (UNCONDITIONAL_JUMP)  ; LAB_005997d5
     FLD float ptr [ESP + 0x10]          ; 00599802
         ;   Label: LAB_00599802
     FLD double ptr [ESP]                ; 00599806

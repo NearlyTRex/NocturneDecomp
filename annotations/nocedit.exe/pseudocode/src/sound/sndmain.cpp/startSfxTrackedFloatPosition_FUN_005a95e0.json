@@ -1,97 +1,97 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 48, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 37, 
-    "assembly_lines": 24, 
-    "suspect_count": 3, 
+    "assembly_lines": 24,
+    "complexity_score": 48,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0", 
-      "addr": "005a8bb0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
-      "addr": "005a8cb0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
-      "addr": "005a8c30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940", 
-      "addr": "005a8940"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
-      "addr": "005a8e90"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CVector3f *in_stack_00000010;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(in_stack_00000010);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar1 = sound_sndmain_cpp_startSfx_FUN_005a8e90((char *)in_stack_00000010);"
-    }
-  ], 
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a95e0", 
-    "signature": "uint sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0(char * filename, CVector3f * position_source_ptr)", 
+    "address": "005a95e0",
     "address_range": [
       [
-        "005a95e0", 
+        "005a95e0",
         "005a9614"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0",
+    "signature": "uint sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0(char * filename, CVector3f * position_source_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a8bb0",
+      "name": "sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0"
+    },
+    {
+      "addr": "005a8cb0",
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a8940",
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940"
+    },
+    {
+      "addr": "005a8e90",
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "position_source_ptr"
+        "is_param": true,
+        "name": "position_source_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000010",
+      "text": "CVector3f *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000010",
+      "text": "uVar1 = sound_sndmain_cpp_startSfx_FUN_005a8e90((char *)in_stack_00000010);",
+      "type": "stack_param"
+    }
+  ]
 }

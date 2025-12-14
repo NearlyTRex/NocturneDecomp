@@ -6,15 +6,17 @@
 
 #include "nocturne.h"
 
-int core_filmreel_cpp_FUN_004be7b0(void)
+uint core_filmreel_cpp_FUN_004be7b0(void)
 
 {
   int iVar1;
+  uint uVar2;
   CDemonActor *in_stack_00000008;
   
   iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"CHero");
+  uVar2 = 0;
   if (iVar1 != 0) {
-    iVar1 = 2;
+    uVar2 = 2;
   }
-  return iVar1;
+  return uVar2;
 }

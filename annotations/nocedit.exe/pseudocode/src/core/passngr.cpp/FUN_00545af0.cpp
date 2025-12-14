@@ -11,8 +11,7 @@ void core_passngr_cpp_FUN_00545af0(void)
 {
   CPassenger *this_ptr;
   
-  this_ptr = (CPassenger *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x20448,"..\\core\\passngr.cpp",0x43);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x20448,"..\\core\\passngr.cpp",0x43);
   if (this_ptr == (CPassenger *)0x0) {
     return;
   }

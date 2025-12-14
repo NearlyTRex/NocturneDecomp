@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [EDX]             ; 005165ca
     XOR ECX,ECX                         ; 005165cc
     TEST EBX,EBX                        ; 005165ce
-    JLE 0x00516609                      ; 005165d0 | LAB_00516609
-        ;   XREF to: 00516609 (CONDITIONAL_JUMP)
+    JLE 0x00516609                      ; 005165d0
+        ;   XREF to: 00516609 (CONDITIONAL_JUMP)  ; LAB_00516609
     PUSH EDI                            ; 005165d2
     XOR EAX,EAX                         ; 005165d3
     MOV EBX,dword ptr [EDX + 0x4]       ; 005165d5
@@ -47,13 +47,13 @@ section .text
     MOV EDI,dword ptr [EDX]             ; 005165fd
     ADD EAX,0x4c4                       ; 005165ff
     CMP ECX,EDI                         ; 00516604
-    JL 0x005165d5                       ; 00516606 | LAB_005165d5
-        ;   XREF to: 005165d5 (CONDITIONAL_JUMP)
+    JL 0x005165d5                       ; 00516606
+        ;   XREF to: 005165d5 (CONDITIONAL_JUMP)  ; LAB_005165d5
     POP EDI                             ; 00516608
     PUSH EDX                            ; 00516609
         ;   Label: LAB_00516609
-    CALL shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0 ; 0051660a | void shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh * this_ptr)
-        ;   XREF to: 005197c0 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0 ; 0051660a
+        ;   XREF to: 005197c0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh * this_ptr)
     ADD ESP,0x4                         ; 0051660f
     POP ESI                             ; 00516612
     POP EBX                             ; 00516613

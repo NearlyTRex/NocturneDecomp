@@ -29,6 +29,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 0048c960
         ;   Label: engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-    MOV [0x00772a5c],EAX                ; 0048c964 | int g_CurrentPolygonColor
+    MOV [0x00772a5c],EAX                ; 0048c964 | g_CurrentPolygonColor
     RET                                 ; 0048c969
 

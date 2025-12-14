@@ -1,166 +1,166 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 61, 
-    "pseudocode_lines": 46, 
-    "cross_reference_count": 3, 
-    "global_count": 11, 
-    "total_lines": 186, 
-    "assembly_lines": 140, 
-    "suspect_count": 1, 
+    "assembly_lines": 140,
+    "complexity_score": 61,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 11,
+    "pseudocode_lines": 46,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870", 
-      "addr": "0051b870"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950", 
-      "addr": "00515950"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_init_FUN_00515880", 
-      "addr": "00515880"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_0063734d", 
-      "addr": "0063734d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_00637362", 
-      "addr": "00637362", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_00637377", 
-      "addr": "00637377", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_0063738c", 
-      "addr": "0063738c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006373a1", 
-      "addr": "006373a1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006373b6", 
-      "addr": "006373b6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006373cb", 
-      "addr": "006373cb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006373e0", 
-      "addr": "006373e0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006373f5", 
-      "addr": "006373f5", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 37, 
-      "match": "sample_points_ptr[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "crt_memory_c_free_FUN_005fe659(&this_ptr->sample_points_ptr[-1].weight);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00515970", 
-    "signature": "void shape_meshlod.cpp_CLodMesh_free_FUN_00515970(CLodMesh * this_ptr)", 
-    "address_range": [
-      [
-        "00515970", 
-        "00515ab4"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_free_FUN_00515970"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 186
+  },
   "cross_references": [
     {
-      "from_addr": "00515ac9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0", 
-      "addr": "00515ac0"
-    }, 
+      "addr": "00515ac0",
+      "from_addr": "00515ac9",
+      "name": "shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00515956", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950", 
-      "addr": "00515950"
-    }, 
+      "addr": "00515950",
+      "from_addr": "00515956",
+      "name": "shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051b090", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080", 
-      "addr": "0051b080"
+      "addr": "0051b080",
+      "from_addr": "0051b090",
+      "name": "shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00515970",
+    "address_range": [
+      [
+        "00515970",
+        "00515ab4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_free_FUN_00515970",
+    "signature": "void shape_meshlod.cpp_CLodMesh_free_FUN_00515970(CLodMesh * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    },
+    {
+      "addr": "0051b870",
+      "name": "shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870"
+    },
+    {
+      "addr": "00515950",
+      "name": "shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950"
+    },
+    {
+      "addr": "00515880",
+      "name": "shape_meshlod.cpp_CLodMesh_init_FUN_00515880"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063734d",
+      "name": "s_shape_meshlod_cpp_0063734d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00637362",
+      "name": "s_shape_meshlod_cpp_00637362",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00637377",
+      "name": "s_shape_meshlod_cpp_00637377",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063738c",
+      "name": "s_shape_meshlod_cpp_0063738c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006373a1",
+      "name": "s_shape_meshlod_cpp_006373a1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006373b6",
+      "name": "s_shape_meshlod_cpp_006373b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006373cb",
+      "name": "s_shape_meshlod_cpp_006373cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006373e0",
+      "name": "s_shape_meshlod_cpp_006373e0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006373f5",
+      "name": "s_shape_meshlod_cpp_006373f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 37,
+      "match": "sample_points_ptr[-1].",
+      "text": "crt_memory_c_free_FUN_005fe659(&this_ptr->sample_points_ptr[-1].weight);",
+      "type": "negative_offset"
     }
   ]
 }

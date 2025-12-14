@@ -1,94 +1,94 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 5, 
-    "global_count": 2, 
-    "total_lines": 27, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }, 
-    {
-      "type": "SIGNAL_HANDLER[16]", 
-      "name": "g_GlobalSignalHandlers", 
-      "addr": "00685504", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "0060ceb4", 
-    "signature": "SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)", 
-    "address_range": [
-      [
-        "0060ceb4", 
-        "0060ced7"
-      ]
-    ], 
-    "name": "crt_signal.c_getSignalHandler_FUN_0060ceb4"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "signal_number"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 18,
+    "complexity_score": 9,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
   "cross_references": [
     {
-      "from_addr": "0060cf4e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_signal.c_consoleCtrlHandler_FUN_0060cf20", 
-      "addr": "0060cf20"
-    }, 
+      "addr": "0060cf20",
+      "from_addr": "0060cf4e",
+      "name": "crt_signal.c_consoleCtrlHandler_FUN_0060cf20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060d12f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_signal.c_processSignal_FUN_0060d128", 
-      "addr": "0060d128"
-    }, 
+      "addr": "0060d128",
+      "from_addr": "0060d12f",
+      "name": "crt_signal.c_processSignal_FUN_0060d128",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060d02b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_signal.c_raiseFPE_FUN_0060d028", 
-      "addr": "0060d028"
-    }, 
+      "addr": "0060d028",
+      "from_addr": "0060d02b",
+      "name": "crt_signal.c_raiseFPE_FUN_0060d028",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060d0c6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068", 
-      "addr": "0060d068"
-    }, 
+      "addr": "0060d068",
+      "from_addr": "0060d0c6",
+      "name": "crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060cf83", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060cf80", 
-      "addr": "0060cf80"
+      "addr": "0060cf80",
+      "from_addr": "0060cf83",
+      "name": "crt_unknown.c_FUN_0060cf80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060ceb4",
+    "address_range": [
+      [
+        "0060ceb4",
+        "0060ced7"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_signal.c_getSignalHandler_FUN_0060ceb4",
+    "signature": "SIGNAL_HANDLER crt_signal.c_getSignalHandler_FUN_0060ceb4(int signal_number)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    },
+    {
+      "addr": "00685504",
+      "name": "g_GlobalSignalHandlers",
+      "type": "SIGNAL_HANDLER[16]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "signal_number",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

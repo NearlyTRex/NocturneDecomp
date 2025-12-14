@@ -1,253 +1,253 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 29, 
-    "global_count": 0, 
-    "total_lines": 28, 
-    "assembly_lines": 21, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_file.c_makepath_FUN_005febfc", 
-      "addr": "005febfc"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00481f50", 
-    "signature": "void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, char * extension)", 
-    "address_range": [
-      [
-        "00481f50", 
-        "00481f77"
-      ]
-    ], 
-    "name": "engine_dosio.c_makePath_FUN_00481f50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "full_path"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "drive"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "directory"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "extension"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 21,
+    "complexity_score": 7,
+    "cross_reference_count": 29,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
   "cross_references": [
     {
-      "from_addr": "0053801a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60", 
-      "addr": "00537f60"
-    }, 
+      "addr": "00537f60",
+      "from_addr": "0053801a",
+      "name": "core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057a104", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0", 
-      "addr": "0057a0c0"
-    }, 
+      "addr": "0057a0c0",
+      "from_addr": "0057a104",
+      "name": "core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00578b81", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20", 
-      "addr": "00578a20"
-    }, 
+      "addr": "00578a20",
+      "from_addr": "00578b81",
+      "name": "core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005796dd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80", 
-      "addr": "00578d80"
-    }, 
+      "addr": "00578d80",
+      "from_addr": "005796dd",
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00584cf9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940", 
-      "addr": "00584940"
-    }, 
+      "addr": "00584940",
+      "from_addr": "00584cf9",
+      "name": "core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004820a3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_dosio.c_changeFileExtension_FUN_00482050", 
-      "addr": "00482050"
-    }, 
+      "addr": "00482050",
+      "from_addr": "004820a3",
+      "name": "engine_dosio.c_changeFileExtension_FUN_00482050",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00481fd0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_dosio.c_ensureTrailingSlash_FUN_00481f80", 
-      "addr": "00481f80"
-    }, 
+      "addr": "00481f80",
+      "from_addr": "00481fd0",
+      "name": "engine_dosio.c_ensureTrailingSlash_FUN_00481f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b3a43", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920", 
-      "addr": "004b3920"
-    }, 
+      "addr": "004b3920",
+      "from_addr": "004b3a43",
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b50c4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030", 
-      "addr": "004b5030"
-    }, 
+      "addr": "004b5030",
+      "from_addr": "004b50c4",
+      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b42d7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
-      "addr": "004b4220"
-    }, 
+      "addr": "004b4220",
+      "from_addr": "004b42d7",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b364b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0", 
-      "addr": "004b35a0"
-    }, 
+      "addr": "004b35a0",
+      "from_addr": "004b364b",
+      "name": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b28f2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutList_load_FUN_004b2890", 
-      "addr": "004b2890"
-    }, 
+      "addr": "004b2890",
+      "from_addr": "004b28f2",
+      "name": "engine_fileio.cpp_CCheckOutList_load_FUN_004b2890",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bb0e4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bb0e4",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ba986", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
-      "addr": "004ba740"
-    }, 
+      "addr": "004ba740",
+      "from_addr": "004ba986",
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b8975", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
-      "addr": "004b86b0"
-    }, 
+      "addr": "004b86b0",
+      "from_addr": "004b8975",
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b586e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640", 
-      "addr": "004b5640"
-    }, 
+      "addr": "004b5640",
+      "from_addr": "004b586e",
+      "name": "engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b1ea2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_buildCheckoutFilePath_FUN_004b1e60", 
-      "addr": "004b1e60"
-    }, 
+      "addr": "004b1e60",
+      "from_addr": "004b1ea2",
+      "name": "engine_fileio.cpp_buildCheckoutFilePath_FUN_004b1e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b1e1c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_buildFilePath_FUN_004b1de0", 
-      "addr": "004b1de0"
-    }, 
+      "addr": "004b1de0",
+      "from_addr": "004b1e1c",
+      "name": "engine_fileio.cpp_buildFilePath_FUN_004b1de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b1f81", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_buildHistoryFilePath_FUN_004b1f10", 
-      "addr": "004b1f10"
-    }, 
+      "addr": "004b1f10",
+      "from_addr": "004b1f81",
+      "name": "engine_fileio.cpp_buildHistoryFilePath_FUN_004b1f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b326a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220", 
-      "addr": "004b3220"
-    }, 
+      "addr": "004b3220",
+      "from_addr": "004b326a",
+      "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bc6fd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650", 
-      "addr": "004bc650"
-    }, 
+      "addr": "004bc650",
+      "from_addr": "004bc6fd",
+      "name": "engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cd167", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0", 
-      "addr": "004ccff0"
-    }, 
+      "addr": "004ccff0",
+      "from_addr": "004cd167",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049f780", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420", 
-      "addr": "0049f420"
-    }, 
+      "addr": "0049f420",
+      "from_addr": "0049f780",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049f324", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270", 
-      "addr": "0049f270"
-    }, 
+      "addr": "0049f270",
+      "from_addr": "0049f324",
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a34c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360", 
-      "addr": "004a3360"
-    }, 
+      "addr": "004a3360",
+      "from_addr": "004a34c0",
+      "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a3694", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0", 
-      "addr": "004a35b0"
-    }, 
+      "addr": "004a35b0",
+      "from_addr": "004a3694",
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a3894", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0", 
-      "addr": "004a37b0"
-    }, 
+      "addr": "004a37b0",
+      "from_addr": "004a3894",
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a3a40", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0", 
-      "addr": "004a39e0"
-    }, 
+      "addr": "004a39e0",
+      "from_addr": "004a3a40",
+      "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a4657", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0", 
-      "addr": "005a45c0"
+      "addr": "005a45c0",
+      "from_addr": "005a4657",
+      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00481f50",
+    "address_range": [
+      [
+        "00481f50",
+        "00481f77"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.c_makePath_FUN_00481f50",
+    "signature": "void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, char * extension)"
+  },
+  "function_calls": [
+    {
+      "addr": "005febfc",
+      "name": "crt_file.c_makepath_FUN_005febfc"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "full_path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "drive",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "directory",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "extension",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

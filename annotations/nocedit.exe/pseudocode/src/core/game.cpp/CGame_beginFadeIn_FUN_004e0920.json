@@ -1,136 +1,136 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 10, 
-    "total_lines": 133, 
-    "assembly_lines": 124, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
-      "addr": "00408ec0"
-    }, 
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0", 
-      "addr": "0044d7d0"
-    }, 
-    {
-      "name": "core_game.cpp_FUN_004e09a0", 
-      "addr": "004e09a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_0062c92d", 
-      "addr": "0062c92d", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_0065e9b4", 
-      "addr": "0065e9b4", 
-      "value": "256"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "CScript*", 
-      "name": "g_CScriptPtr", 
-      "addr": "00680d50", 
-      "value": "0310f858"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d831ec", 
-      "addr": "02d831ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d831f0", 
-      "addr": "02d831f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d831f4", 
-      "addr": "02d831f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d831f8", 
-      "addr": "02d831f8", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonCamera", 
-      "name": "g_CDemonCameraInstance", 
-      "addr": "032758e4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004e0920", 
-    "signature": "void core_game.cpp_CGame_beginFadeIn_FUN_004e0920(CGame * this_ptr)", 
-    "address_range": [
-      [
-        "004e07d5", 
-        "004e091b"
-      ], 
-      [
-        "004e0920", 
-        "004e095b"
-      ]
-    ], 
-    "name": "core_game.cpp_CGame_beginFadeIn_FUN_004e0920"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGame *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 124,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 10,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 133
+  },
   "cross_references": [
     {
-      "from_addr": "004db29e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
-    }, 
+      "addr": "004daf80",
+      "from_addr": "004db29e",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0055c0a6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
+      "addr": "0055a810",
+      "from_addr": "0055c0a6",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004e0920",
+    "address_range": [
+      [
+        "004e07d5",
+        "004e091b"
+      ],
+      [
+        "004e0920",
+        "004e095b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_beginFadeIn_FUN_004e0920",
+    "signature": "void core_game.cpp_CGame_beginFadeIn_FUN_004e0920(CGame * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0044d7d0",
+      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0"
+    },
+    {
+      "addr": "004e09a0",
+      "name": "core_game.cpp_FUN_004e09a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062c92d",
+      "name": "FLOAT_0062c92d",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "0065e9b4",
+      "name": "FLOAT_0065e9b4",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "00680d50",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "0310f858"
+    },
+    {
+      "addr": "02d831ec",
+      "name": "DAT_02d831ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d831f0",
+      "name": "DAT_02d831f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d831f4",
+      "name": "DAT_02d831f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d831f8",
+      "name": "DAT_02d831f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032758e4",
+      "name": "g_CDemonCameraInstance",
+      "type": "CDemonCamera",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
 }

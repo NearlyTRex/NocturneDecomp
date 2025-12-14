@@ -27,23 +27,23 @@ section .text
     ADD EAX,EBX                         ; 00600e33
     MOV EDX,dword ptr [EAX + 0x4]       ; 00600e35
     TEST EDX,EDX                        ; 00600e38
-    JZ 0x00600e4b                       ; 00600e3a | LAB_00600e4b
-        ;   XREF to: 00600e4b (CONDITIONAL_JUMP)
+    JZ 0x00600e4b                       ; 00600e3a
+        ;   XREF to: 00600e4b (CONDITIONAL_JUMP)  ; LAB_00600e4b
     PUSH EDX                            ; 00600e3c
-    CALL crt_fstream.cpp_filebuf_close_FUN_00608bcc ; 00600e3d | filebuf * crt_fstream.cpp_filebuf_close_FUN_00608bcc(filebuf * this_ptr)
-        ;   XREF to: 00608bcc (UNCONDITIONAL_CALL)
+    CALL crt_fstream.cpp_filebuf_close_FUN_00608bcc ; 00600e3d
+        ;   XREF to: 00608bcc (UNCONDITIONAL_CALL)  ; filebuf * crt_fstream.cpp_filebuf_close_FUN_00608bcc(filebuf * this_ptr)
     ADD ESP,0x4                         ; 00600e42
     TEST EAX,EAX                        ; 00600e45
-    JZ 0x00600e58                       ; 00600e47 | LAB_00600e58
-        ;   XREF to: 00600e58 (CONDITIONAL_JUMP)
+    JZ 0x00600e58                       ; 00600e47
+        ;   XREF to: 00600e58 (CONDITIONAL_JUMP)  ; LAB_00600e58
     POP EBX                             ; 00600e49
     RET                                 ; 00600e4a
     PUSH 0x2                            ; 00600e4b
         ;   Label: LAB_00600e4b
     PUSH EAX                            ; 00600e4d
-    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 00600e4e | void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
+    CALL crt_stdio.c_reportStreamError_FUN_00606020 ; 00600e4e
+        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)
         ;   Label: LAB_00600e4e
-        ;   XREF to: 00606020 (UNCONDITIONAL_CALL)
     ADD ESP,0x8                         ; 00600e53
     POP EBX                             ; 00600e56
     RET                                 ; 00600e57
@@ -53,6 +53,6 @@ section .text
     PUSH 0x2                            ; 00600e5d
     ADD EBX,EDX                         ; 00600e5f
     PUSH EBX                            ; 00600e61
-    JMP 0x00600e4e                      ; 00600e62 | LAB_00600e4e
-        ;   XREF to: 00600e4e (UNCONDITIONAL_JUMP)
+    JMP 0x00600e4e                      ; 00600e62
+        ;   XREF to: 00600e4e (UNCONDITIONAL_JUMP)  ; LAB_00600e4e
 

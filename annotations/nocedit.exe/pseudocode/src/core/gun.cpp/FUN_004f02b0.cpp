@@ -11,7 +11,7 @@ void core_gun_cpp_FUN_004f02b0(void)
 {
   CGun *this_ptr;
   
-  this_ptr = (CGun *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\gun.cpp",0x29);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\gun.cpp",0x29);
   if (this_ptr == (CGun *)0x0) {
     return;
   }

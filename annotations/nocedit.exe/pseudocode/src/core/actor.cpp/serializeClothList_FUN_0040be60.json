@@ -1,187 +1,187 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 64, 
-    "pseudocode_lines": 64, 
-    "cross_reference_count": 4, 
-    "global_count": 14, 
-    "total_lines": 240, 
-    "assembly_lines": 176, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040aee0", 
-      "addr": "0040aee0"
-    }, 
-    {
-      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b210", 
-      "addr": "0040b210"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeDescription_FUN_0040b290", 
-      "addr": "0040b290"
-    }, 
-    {
-      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
-      "addr": "005fe840"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Cloth_list_opening_brace_00614080", 
-      "addr": "00614080", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_00614099", 
-      "addr": "00614099", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cloth_count_0061409c", 
-      "addr": "0061409c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_clothCount_006140a8", 
-      "addr": "006140a8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_006140b3", 
-      "addr": "006140b3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cloth_filename_entry_006140bd", 
-      "addr": "006140bd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Cloth_list_closing_brace_006140d2", 
-      "addr": "006140d2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_s_006140eb", 
-      "addr": "006140eb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_d_clothCount_006140f6", 
-      "addr": "006140f6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_s_0061410a", 
-      "addr": "0061410a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_00614112", 
-      "addr": "00614112", 
-      "value": null
-    }, 
-    {
-      "type": "char[104]", 
-      "name": "g_PropertyNamePrefix", 
-      "addr": "0066e178", 
-      "value": null
-    }, 
-    {
-      "type": "FILE*", 
-      "name": "g_ActorDataFile", 
-      "addr": "00822034", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActorReadingMode", 
-      "addr": "00822038", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040be60", 
-    "signature": "void core_actor.cpp_serializeClothList_FUN_0040be60(CClothList * cloth_list, char * property_name)", 
-    "address_range": [
-      [
-        "0040be60", 
-        "0040bff7"
-      ]
-    ], 
-    "name": "core_actor.cpp_serializeClothList_FUN_0040be60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CClothList *", 
-        "size": 4, 
-        "name": "cloth_list"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "property_name"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 176,
+    "complexity_score": 64,
+    "cross_reference_count": 4,
+    "function_call_count": 6,
+    "global_count": 14,
+    "pseudocode_lines": 64,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 240
+  },
   "cross_references": [
     {
-      "from_addr": "004284aa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_serialize_FUN_004283a0", 
-      "addr": "004283a0"
-    }, 
+      "addr": "004283a0",
+      "from_addr": "004284aa",
+      "name": "core_charactr.cpp_CCharacter_serialize_FUN_004283a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f6222", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_CHostage_load_FUN_004f6170", 
-      "addr": "004f6170"
-    }, 
+      "addr": "004f6170",
+      "from_addr": "004f6222",
+      "name": "core_hostage.cpp_CHostage_load_FUN_004f6170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005272a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_CMobster_load_FUN_00527230", 
-      "addr": "00527230"
-    }, 
+      "addr": "00527230",
+      "from_addr": "005272a0",
+      "name": "core_mobster.cpp_CMobster_load_FUN_00527230",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005fc0d1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_CZombie_serialize_FUN_005fbfd0", 
-      "addr": "005fbfd0"
+      "addr": "005fbfd0",
+      "from_addr": "005fc0d1",
+      "name": "core_zombie.cpp_CZombie_serialize_FUN_005fbfd0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0040be60",
+    "address_range": [
+      [
+        "0040be60",
+        "0040bff7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_serializeClothList_FUN_0040be60",
+    "signature": "void core_actor.cpp_serializeClothList_FUN_0040be60(CClothList * cloth_list, char * property_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040aee0",
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040aee0"
+    },
+    {
+      "addr": "0040b210",
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b210"
+    },
+    {
+      "addr": "0040b290",
+      "name": "core_actor.cpp_serializeDescription_FUN_0040b290"
+    },
+    {
+      "addr": "005fe840",
+      "name": "crt_stdio.c_fgetc_FUN_005fe840"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614080",
+      "name": "s_Cloth_list_opening_brace_00614080",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614099",
+      "name": "s_d_00614099",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061409c",
+      "name": "s_cloth_count_0061409c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006140a8",
+      "name": "s_clothCount_006140a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006140b3",
+      "name": "s_anon_006140b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006140bd",
+      "name": "s_cloth_filename_entry_006140bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006140d2",
+      "name": "s_Cloth_list_closing_brace_006140d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006140eb",
+      "name": "s_s_s_006140eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006140f6",
+      "name": "s_s_d_clothCount_006140f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061410a",
+      "name": "s_s_s_0061410a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614112",
+      "name": "s_s_00614112",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e178",
+      "name": "g_PropertyNamePrefix",
+      "type": "char[104]",
+      "value": null
+    },
+    {
+      "addr": "00822034",
+      "name": "g_ActorDataFile",
+      "type": "FILE*",
+      "value": null
+    },
+    {
+      "addr": "00822038",
+      "name": "g_ActorReadingMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cloth_list",
+        "offset": 4,
+        "size": 4,
+        "type": "CClothList *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

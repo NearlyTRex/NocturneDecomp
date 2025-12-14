@@ -1,103 +1,103 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 75, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 31, 
-    "assembly_lines": 21, 
-    "suspect_count": 6, 
+    "assembly_lines": 21,
+    "complexity_score": 75,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 6,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_menu.cpp_freeBitmaps_FUN_00514f50", 
-      "addr": "00514f50"
-    }, 
-    {
-      "name": "support_newmsg.cpp_freeBitmap_FUN_00544730", 
-      "addr": "00544730"
-    }, 
-    {
-      "name": "support_newmsg.cpp_freeSkullBitmaps_FUN_00544750", 
-      "addr": "00544750"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 6, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_00;"
-    }, 
-    {
-      "line": 7, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CMouse *extraout_EAX_01;"
-    }, 
-    {
-      "line": 10, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "support_newmsg_cpp_freeBitmap_FUN_00544730((CAlphaBitmap **)(extraout_EAX + -0x8c));"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "core_menu_cpp_freeBitmaps_FUN_00514f50((CAlphaBitmap **)(extraout_EAX_00 + -0xa0));"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return extraout_EAX_01;"
-    }
-  ], 
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005443e0", 
-    "signature": "CMouse * support_newmsg.cpp_CMouse_dtor_FUN_005443e0(CMouse * this_ptr)", 
+    "address": "005443e0",
     "address_range": [
       [
-        "005443e0", 
+        "005443e0",
         "00544414"
       ]
-    ], 
-    "name": "support_newmsg.cpp_CMouse_dtor_FUN_005443e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "support_newmsg.cpp_CMouse_dtor_FUN_005443e0",
+    "signature": "CMouse * support_newmsg.cpp_CMouse_dtor_FUN_005443e0(CMouse * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00514f50",
+      "name": "core_menu.cpp_freeBitmaps_FUN_00514f50"
+    },
+    {
+      "addr": "00544730",
+      "name": "support_newmsg.cpp_freeBitmap_FUN_00544730"
+    },
+    {
+      "addr": "00544750",
+      "name": "support_newmsg.cpp_freeSkullBitmaps_FUN_00544750"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMouse *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMouse *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX_00",
+      "text": "int extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX_01",
+      "text": "CMouse *extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX",
+      "text": "support_newmsg_cpp_freeBitmap_FUN_00544730((CAlphaBitmap **)(extraout_EAX + -0x8c));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX_00",
+      "text": "core_menu_cpp_freeBitmaps_FUN_00514f50((CAlphaBitmap **)(extraout_EAX_00 + -0xa0));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX_01",
+      "text": "return extraout_EAX_01;",
+      "type": "extra_output"
+    }
+  ]
 }

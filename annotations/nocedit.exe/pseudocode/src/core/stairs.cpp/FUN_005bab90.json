@@ -1,144 +1,144 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 119, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 48, 
-    "assembly_lines": 34, 
-    "suspect_count": 10, 
+    "assembly_lines": 34,
+    "complexity_score": 119,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 14,
+    "suspect_count": 10,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150", 
-      "addr": "0040d150"
-    }, 
-    {
-      "name": "core_actor.cpp_drawTextLine_FUN_0040d240", 
-      "addr": "0040d240"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_With_CTRL_held_down_006530e2", 
-      "addr": "006530e2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Left_right_adjusts_width_006530f7", 
-      "addr": "006530f7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Q_A_adjusts_rise_00653112", 
-      "addr": "00653112", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Up_Down_adjusts_run_00653125", 
-      "addr": "00653125", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000008;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"With CTRL held down:\");"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"  Left/right adjusts width\");"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"  Q/A adjusts rise\");"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"  Up/Down adjusts run\");"
-    }
-  ], 
+    ],
+    "total_lines": 48
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "005bab90", 
-    "signature": "undefined core_stairs.cpp_FUN_005bab90()", 
+    "address": "005bab90",
     "address_range": [
       [
-        "005bab90", 
+        "005bab90",
         "005babe3"
       ]
-    ], 
-    "name": "core_stairs.cpp_FUN_005bab90"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_stairs.cpp_FUN_005bab90",
+    "signature": "undefined core_stairs.cpp_FUN_005bab90()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d150",
+      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150"
+    },
+    {
+      "addr": "0040d240",
+      "name": "core_actor.cpp_drawTextLine_FUN_0040d240"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006530e2",
+      "name": "s_With_CTRL_held_down_006530e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006530f7",
+      "name": "s_Left_right_adjusts_width_006530f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653112",
+      "name": "s_Q_A_adjusts_rise_00653112",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653125",
+      "name": "s_Up_Down_adjusts_run_00653125",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"With CTRL held down:\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"  Left/right adjusts width\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"  Q/A adjusts rise\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"  Up/Down adjusts run\");",
+      "type": "stack_param"
+    }
+  ]
 }

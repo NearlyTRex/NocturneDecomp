@@ -1,163 +1,163 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 54, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 10, 
-    "global_count": 2, 
-    "total_lines": 129, 
-    "assembly_lines": 90, 
-    "suspect_count": 1, 
+    "assembly_lines": 90,
+    "complexity_score": 54,
+    "cross_reference_count": 10,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 39,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0", 
-      "addr": "00608ee0"
-    }, 
-    {
-      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0", 
-      "addr": "006027e0"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
-      "addr": "00684ee8", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
-      "addr": "00684eec", 
-      "value": "00602434"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 33, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pbVar1 = (byte *)((int)&stream_ptr->_flag + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00601490", 
-    "signature": "int crt_stdio.c_setvbuf_FUN_00601490(FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)", 
-    "address_range": [
-      [
-        "00601490", 
-        "0060153d"
-      ]
-    ], 
-    "name": "crt_stdio.c_setvbuf_FUN_00601490"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "stream_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer_ptr"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_mode"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "typedef SIZE_T ULONG_PTR", 
-        "size": 4, 
-        "name": "buffer_size"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 129
+  },
   "cross_references": [
     {
-      "from_addr": "004b3abe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920", 
-      "addr": "004b3920"
-    }, 
+      "addr": "004b3920",
+      "from_addr": "004b3abe",
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b4acf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
-      "addr": "004b4220"
-    }, 
+      "addr": "004b4220",
+      "from_addr": "004b4acf",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b36ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0", 
-      "addr": "004b35a0"
-    }, 
+      "addr": "004b35a0",
+      "from_addr": "004b36ac",
+      "name": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b2953", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutList_load_FUN_004b2890", 
-      "addr": "004b2890"
-    }, 
+      "addr": "004b2890",
+      "from_addr": "004b2953",
+      "name": "engine_fileio.cpp_CCheckOutList_load_FUN_004b2890",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bbb3d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bbb3d",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004baa01", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
-      "addr": "004ba740"
-    }, 
+      "addr": "004ba740",
+      "from_addr": "004baa01",
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b9b4f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
-      "addr": "004b86b0"
-    }, 
+      "addr": "004b86b0",
+      "from_addr": "004b9b4f",
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b274a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640", 
-      "addr": "004b2640"
-    }, 
+      "addr": "004b2640",
+      "from_addr": "004b274a",
+      "name": "engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b334c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220", 
-      "addr": "004b3220"
-    }, 
+      "addr": "004b3220",
+      "from_addr": "004b334c",
+      "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b2257", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_openFileWithRetry_FUN_004b2200", 
-      "addr": "004b2200"
+      "addr": "004b2200",
+      "from_addr": "004b2257",
+      "name": "engine_fileio.cpp_openFileWithRetry_FUN_004b2200",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00601490",
+    "address_range": [
+      [
+        "00601490",
+        "0060153d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_setvbuf_FUN_00601490",
+    "signature": "int crt_stdio.c_setvbuf_FUN_00601490(FILE * stream_ptr, char * buffer_ptr, int buffer_mode, SIZE_T buffer_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "00608ee0",
+      "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0"
+    },
+    {
+      "addr": "006027e0",
+      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0"
+    },
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684eec",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec",
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 16,
+        "size": 4,
+        "type": "typedef SIZE_T ULONG_PTR"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(byte *)((int)",
+      "text": "pbVar1 = (byte *)((int)&stream_ptr->_flag + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

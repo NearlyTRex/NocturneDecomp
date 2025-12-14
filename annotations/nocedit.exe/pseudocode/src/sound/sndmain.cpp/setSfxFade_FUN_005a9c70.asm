@@ -28,12 +28,12 @@ section .text
     PUSH 0x1                            ; 005a9c73
     MOV EDX,dword ptr [ESP + 0xc]       ; 005a9c75
     PUSH EDX                            ; 005a9c79
-    CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00 ; 005a9c7a | CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle, int check_hardware_playback)
-        ;   XREF to: 005a5d00 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00 ; 005a9c7a
+        ;   XREF to: 005a5d00 (UNCONDITIONAL_CALL)  ; CSfxSlot * sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle, int check_hardware_playback)
     ADD ESP,0x8                         ; 005a9c7f
     TEST EAX,EAX                        ; 005a9c82
-    JNZ 0x005a9c8a                      ; 005a9c84 | LAB_005a9c8a
-        ;   XREF to: 005a9c8a (CONDITIONAL_JUMP)
+    JNZ 0x005a9c8a                      ; 005a9c84
+        ;   XREF to: 005a9c8a (CONDITIONAL_JUMP)  ; LAB_005a9c8a
     ADD ESP,0x4                         ; 005a9c86
     RET                                 ; 005a9c89
     MOV EDX,dword ptr [ESP + 0xc]       ; 005a9c8a
@@ -45,8 +45,8 @@ section .text
     MOV dword ptr [ESP],EDX             ; 005a9ca2
     FILD dword ptr [ESP]                ; 005a9ca5
     FSTP float ptr [EAX + 0x114]        ; 005a9ca8
-    CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0 ; 005a9cae | void sound_sndmain.cpp_unlockSound_FUN_005abdc0()
-        ;   XREF to: 005abdc0 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0 ; 005a9cae
+        ;   XREF to: 005abdc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_005abdc0()
     MOV EAX,0x1                         ; 005a9cb3
     ADD ESP,0x4                         ; 005a9cb8
     RET                                 ; 005a9cbb

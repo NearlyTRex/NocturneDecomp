@@ -31,8 +31,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0xbf38]    ; 0041d8ad
     MOV dword ptr [ESP + 0x10],EDX      ; 0041d8b3
     TEST ECX,ECX                        ; 0041d8b7
-    JLE 0x0041d938                      ; 0041d8b9 | LAB_0041d938
-        ;   XREF to: 0041d938 (CONDITIONAL_JUMP)
+    JLE 0x0041d938                      ; 0041d8b9
+        ;   XREF to: 0041d938 (CONDITIONAL_JUMP)  ; LAB_0041d938
     LEA EBP,[EAX + 0xbf74]              ; 0041d8bf
     MOV EBX,EAX                         ; 0041d8c5
     MOV EAX,dword ptr [EBX + 0xbf80]    ; 0041d8c7
@@ -40,8 +40,8 @@ section .text
     ADD EAX,0x30                        ; 0041d8cd
     PUSH EAX                            ; 0041d8d0
     LEA ESI,[ESP + 0x4]                 ; 0041d8d1
-    CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 0041d8d5 | CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)
-        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_eulerToQuaternion_FUN_005f7b20 ; 0041d8d5
+        ;   XREF to: 005f7b20 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)
     LEA ESI,[ESP + 0x4]                 ; 0041d8da
     LEA EDI,[EBX + 0xbf54]              ; 0041d8de
     ADD ESP,0x4                         ; 0041d8e4
@@ -54,8 +54,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0xbf80]    ; 0041d8fb
     ADD EAX,0x20                        ; 0041d901
     CMP EBP,EAX                         ; 0041d904
-    JZ 0x0041d919                       ; 0041d906 | LAB_0041d919
-        ;   XREF to: 0041d919 (CONDITIONAL_JUMP)
+    JZ 0x0041d919                       ; 0041d906
+        ;   XREF to: 0041d919 (CONDITIONAL_JUMP)  ; LAB_0041d919
     MOV EDX,dword ptr [EAX]             ; 0041d908
     MOV dword ptr [EBP],EDX             ; 0041d90a
     MOV EDX,dword ptr [EAX + 0x4]       ; 0041d90d
@@ -72,11 +72,11 @@ section .text
     MOV EDI,dword ptr [ESI + 0xbf38]    ; 0041d92b
     ADD EBX,0x48                        ; 0041d931
     CMP EAX,EDI                         ; 0041d934
-    JL 0x0041d8c7                       ; 0041d936 | LAB_0041d8c7
-        ;   XREF to: 0041d8c7 (CONDITIONAL_JUMP)
+    JL 0x0041d8c7                       ; 0041d936
+        ;   XREF to: 0041d8c7 (CONDITIONAL_JUMP)  ; LAB_0041d8c7
     MOV EAX,dword ptr [ESP + 0x28]      ; 0041d938
         ;   Label: LAB_0041d938
-    PUSH 0x616358                       ; 0041d93c | = "boneguy-comeback.wav" | s_boneguy_comeback_wav_00616358 = boneguy-comeback.wav
+    PUSH 0x616358                       ; 0041d93c | = "boneguy-comeback.wav"
     MOV dword ptr [EAX + 0xc4dc],0x2    ; 0041d941
     MOV EBP,dword ptr [ESP + 0x2c]      ; 0041d94b
     MOV dword ptr [EAX + 0xc4e0],0x0    ; 0041d94f

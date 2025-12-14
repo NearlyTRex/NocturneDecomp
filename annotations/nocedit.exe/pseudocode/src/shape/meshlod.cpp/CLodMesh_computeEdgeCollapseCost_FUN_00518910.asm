@@ -125,7 +125,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x48]      ; 00518931
     ADD EAX,EDX                         ; 00518934
     MOV EDX,dword ptr [EAX + 0x4]       ; 00518936
-    FLD double ptr [0x00661388]         ; 00518939 | double g_InfiniteCollapseCost
+    FLD double ptr [0x00661388]         ; 00518939 | g_InfiniteCollapseCost
     PUSH EDX                            ; 0051893f
     MOV ECX,dword ptr [EAX]             ; 00518940
     MOV EBX,dword ptr [EBP + 0x14]      ; 00518942
@@ -134,13 +134,13 @@ section .text
     PUSH EBX                            ; 00518949
     MOV dword ptr [ESP + 0xdc],EAX      ; 0051894a
     MOV dword ptr [EAX + 0x20],0x0      ; 00518951
-    CALL shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 ; 00518958 | int shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, int vertex_idx_3)
-        ;   XREF to: 00518490 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 ; 00518958
+        ;   XREF to: 00518490 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, int vertex_idx_3)
     ADD ESP,0xc                         ; 0051895d
     MOV ESI,dword ptr [EBP + 0x18]      ; 00518960
     CMP EAX,ESI                         ; 00518963
-    JZ 0x0051896e                       ; 00518965 | LAB_0051896e
-        ;   XREF to: 0051896e (CONDITIONAL_JUMP)
+    JZ 0x0051896e                       ; 00518965
+        ;   XREF to: 0051896e (CONDITIONAL_JUMP)  ; LAB_0051896e
     MOV ESP,EBP                         ; 00518967
         ;   Label: LAB_00518967
     POP EBP                             ; 00518969
@@ -154,8 +154,8 @@ section .text
     PUSH EDI                            ; 00518977
     PUSH ESI                            ; 00518978
     PUSH EBX                            ; 00518979
-    CALL shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480 ; 0051897a | int shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480(CLodMesh * this_ptr, int edge_idx, int vertex_idx)
-        ;   XREF to: 00519480 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480 ; 0051897a
+        ;   XREF to: 00519480 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480(CLodMesh * this_ptr, int edge_idx, int vertex_idx)
     ADD ESP,0xc                         ; 0051897f
     MOV EBX,EAX                         ; 00518982
     MOV dword ptr [ESP + 0xa4],EAX      ; 00518984
@@ -165,33 +165,33 @@ section .text
     PUSH ESI                            ; 00518996
     MOV EDI,dword ptr [EBP + 0x14]      ; 00518997
     PUSH EDI                            ; 0051899a
-    CALL shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480 ; 0051899b | int shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480(CLodMesh * this_ptr, int edge_idx, int vertex_idx)
-        ;   XREF to: 00519480 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480 ; 0051899b
+        ;   XREF to: 00519480 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480(CLodMesh * this_ptr, int edge_idx, int vertex_idx)
     ADD ESP,0xc                         ; 005189a0
     MOV dword ptr [ESP + 0xa8],EAX      ; 005189a3
     TEST EBX,EBX                        ; 005189aa
-    JZ 0x005189b2                       ; 005189ac | LAB_005189b2
-        ;   XREF to: 005189b2 (CONDITIONAL_JUMP)
+    JZ 0x005189b2                       ; 005189ac
+        ;   XREF to: 005189b2 (CONDITIONAL_JUMP)  ; LAB_005189b2
     TEST EAX,EAX                        ; 005189ae
-    JNZ 0x00518967                      ; 005189b0 | LAB_00518967
-        ;   XREF to: 00518967 (CONDITIONAL_JUMP)
+    JNZ 0x00518967                      ; 005189b0
+        ;   XREF to: 00518967 (CONDITIONAL_JUMP)  ; LAB_00518967
     XOR EAX,EAX                         ; 005189b2
         ;   Label: LAB_005189b2
     MOV dword ptr [ESP + 0xec],EAX      ; 005189b4
-    MOV AH,byte ptr [0x02f31230]        ; 005189bb | uchar g_TempFacesInitGuard
+    MOV AH,byte ptr [0x02f31230]        ; 005189bb | g_TempFacesInitGuard
     XOR EDI,EDI                         ; 005189c1
     TEST AH,0x1                         ; 005189c3
-    JZ 0x00518ac8                       ; 005189c6 | LAB_00518ac8
-        ;   XREF to: 00518ac8 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x02f33334]      ; 005189cc | int g_LodGenerationStamp
+    JZ 0x00518ac8                       ; 005189c6
+        ;   XREF to: 00518ac8 (CONDITIONAL_JUMP)  ; LAB_00518ac8
+    MOV ECX,dword ptr [0x02f33334]      ; 005189cc | g_LodGenerationStamp
         ;   Label: LAB_005189cc
-    MOV EBX,dword ptr [0x02f33338]      ; 005189d2 | int g_LodTempFaceStamp
+    MOV EBX,dword ptr [0x02f33338]      ; 005189d2 | g_LodTempFaceStamp
     XOR EDX,EDX                         ; 005189d8
     INC ECX                             ; 005189da
     INC EBX                             ; 005189db
     MOV dword ptr [ESP + 0xbc],EDX      ; 005189dc
-    MOV dword ptr [0x02f33334],ECX      ; 005189e3 | int g_LodGenerationStamp
-    MOV dword ptr [0x02f33338],EBX      ; 005189e9 | int g_LodTempFaceStamp
+    MOV dword ptr [0x02f33334],ECX      ; 005189e3 | g_LodGenerationStamp
+    MOV dword ptr [0x02f33338],EBX      ; 005189e9 | g_LodTempFaceStamp
     MOV EAX,dword ptr [ESP + 0xd0]      ; 005189ef
         ;   Label: LAB_005189ef
     MOV EAX,dword ptr [EAX]             ; 005189f6
@@ -201,8 +201,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0xbc]      ; 00518a09
     MOV dword ptr [ESP + 0x100],EAX     ; 00518a10
     CMP ESI,0x1                         ; 00518a17
-    JZ 0x00518fc2                       ; 00518a1a | LAB_00518fc2
-        ;   XREF to: 00518fc2 (CONDITIONAL_JUMP)
+    JZ 0x00518fc2                       ; 00518a1a
+        ;   XREF to: 00518fc2 (CONDITIONAL_JUMP)  ; LAB_00518fc2
     XOR EAX,EAX                         ; 00518a20
         ;   Label: LAB_00518a20
     MOV EDX,dword ptr [ESP + 0x10c]     ; 00518a22
@@ -221,8 +221,8 @@ section .text
     ADD EAX,EDX                         ; 00518a64
     MOV ECX,dword ptr [ESP + 0xd8]      ; 00518a66
     CMP ECX,dword ptr [EAX + 0x3f8]     ; 00518a6d
-    JGE 0x00518afc                      ; 00518a73 | LAB_00518afc
-        ;   XREF to: 00518afc (CONDITIONAL_JUMP)
+    JGE 0x00518afc                      ; 00518a73
+        ;   XREF to: 00518afc (CONDITIONAL_JUMP)  ; LAB_00518afc
     ADD EAX,dword ptr [ESP + 0xe0]      ; 00518a79
     MOV EAX,dword ptr [EAX + 0x3fc]     ; 00518a80
     IMUL EDX,EAX,0xf0                   ; 00518a86
@@ -232,8 +232,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 00518a94
     MOV dword ptr [ESP + 0xf8],ECX      ; 00518a97
     CMP EAX,EDX                         ; 00518a9e
-    JNZ 0x00518fe3                      ; 00518aa0 | LAB_00518fe3
-        ;   XREF to: 00518fe3 (CONDITIONAL_JUMP)
+    JNZ 0x00518fe3                      ; 00518aa0
+        ;   XREF to: 00518fe3 (CONDITIONAL_JUMP)  ; LAB_00518fe3
     MOV EAX,dword ptr [ESP + 0xd8]      ; 00518aa6
         ;   Label: LAB_00518aa6
     MOV ESI,dword ptr [ESP + 0xe0]      ; 00518aad
@@ -241,31 +241,31 @@ section .text
     ADD ESI,0x4                         ; 00518ab5
     MOV dword ptr [ESP + 0xd8],EAX      ; 00518ab8
     MOV dword ptr [ESP + 0xe0],ESI      ; 00518abf
-    JMP 0x00518a57                      ; 00518ac6 | LAB_00518a57
-        ;   XREF to: 00518a57 (UNCONDITIONAL_JUMP)
-    PUSH 0x661390                       ; 00518ac8 | WatcomTypeInfo g_LodFaceTypeInfo
+    JMP 0x00518a57                      ; 00518ac6
+        ;   XREF to: 00518a57 (UNCONDITIONAL_JUMP)  ; LAB_00518a57
+    PUSH 0x661390                       ; 00518ac8 | g_LodFaceTypeInfo
         ;   Label: LAB_00518ac8
     MOV DL,AH                           ; 00518acd
     PUSH 0xc8                           ; 00518acf
     OR DL,0x1                           ; 00518ad4
-    PUSH 0x2f2a4d0                      ; 00518ad7 | CLodFace[200] g_TempNeighborFaces
-    MOV byte ptr [0x02f31230],DL        ; 00518adc | uchar g_TempFacesInitGuard
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00518ae2 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    PUSH 0x2f2a4d0                      ; 00518ad7 | g_TempNeighborFaces
+    MOV byte ptr [0x02f31230],DL        ; 00518adc | g_TempFacesInitGuard
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00518ae2
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00518ae7
-    PUSH 0x67d380                       ; 00518aea | WatcomStaticDestructorNode g_TempNeighborFacesDestructorNode
-    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 00518aef | void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
-        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)
+    PUSH 0x67d380                       ; 00518aea | g_TempNeighborFacesDestructorNode
+    CALL crt_stdlib.c_atexit_FUN_005ff060 ; 00518aef
+        ;   XREF to: 005ff060 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_atexit_FUN_005ff060(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00518af4
-    JMP 0x005189cc                      ; 00518af7 | LAB_005189cc
-        ;   XREF to: 005189cc (UNCONDITIONAL_JUMP)
+    JMP 0x005189cc                      ; 00518af7
+        ;   XREF to: 005189cc (UNCONDITIONAL_JUMP)  ; LAB_005189cc
     MOV ESI,dword ptr [ESP + 0xbc]      ; 00518afc
         ;   Label: LAB_00518afc
     INC ESI                             ; 00518b03
     MOV dword ptr [ESP + 0xbc],ESI      ; 00518b04
     CMP ESI,0x2                         ; 00518b0b
-    JL 0x005189ef                       ; 00518b0e | LAB_005189ef
-        ;   XREF to: 005189ef (CONDITIONAL_JUMP)
+    JL 0x005189ef                       ; 00518b0e
+        ;   XREF to: 005189ef (CONDITIONAL_JUMP)  ; LAB_005189ef
     MOV EAX,dword ptr [ESP + 0xd0]      ; 00518b14
     IMUL EAX,dword ptr [EAX],0x4c4      ; 00518b1b
     ADD EDX,EAX                         ; 00518b21
@@ -280,25 +280,25 @@ section .text
     MOV EAX,dword ptr [ESP + 0xec]      ; 00518b44
     SHL EAX,0x2                         ; 00518b4b
     MOV dword ptr [ESP + 0xb4],EAX      ; 00518b4e
-    MOV EAX,0x2f2a4d0                   ; 00518b55 | CLodFace[200] g_TempNeighborFaces
+    MOV EAX,0x2f2a4d0                   ; 00518b55 | g_TempNeighborFaces
     ADD EAX,0x44                        ; 00518b5a
     MOV dword ptr [ESP + 0xac],EAX      ; 00518b5d | DAT_02f2a514
-    MOV EAX,0x2f313f0                   ; 00518b64 | CVector3f[400] g_SamplePointArray
+    MOV EAX,0x2f313f0                   ; 00518b64 | g_SamplePointArray
     XOR EBX,EBX                         ; 00518b69
     ADD EAX,0xc                         ; 00518b6b
     MOV dword ptr [ESP + 0xc4],EBX      ; 00518b6e
     MOV dword ptr [ESP + 0xb0],EAX      ; 00518b75 | DAT_02f313fc
-    CMP dword ptr [0x02f33330],0x0      ; 00518b7c | int g_LodReplayMode
+    CMP dword ptr [0x02f33330],0x0      ; 00518b7c | g_LodReplayMode
         ;   Label: LAB_00518b7c
-    JZ 0x00519207                       ; 00518b83 | LAB_00519207
-        ;   XREF to: 00519207 (CONDITIONAL_JUMP)
+    JZ 0x00519207                       ; 00518b83
+        ;   XREF to: 00519207 (CONDITIONAL_JUMP)  ; LAB_00519207
     MOV EAX,dword ptr [ESP + 0xc4]      ; 00518b89
         ;   Label: LAB_00518b89
     MOV dword ptr [ESP + 0x110],EAX     ; 00518b90
     MOV EAX,dword ptr [ESP + 0xd0]      ; 00518b97
     IMUL EAX,dword ptr [EAX + 0x4],0x4c4 ; 00518b9e
     FILD dword ptr [ESP + 0x110]        ; 00518ba5
-    FMUL float ptr [0x006379d5]         ; 00518bac | float FLOAT_006379d5
+    FMUL float ptr [0x006379d5]         ; 00518bac | FLOAT_006379d5
     FLD1                                ; 00518bb2
     FLD float ptr [ESP + 0x84]          ; 00518bb4
     FXCH ST2                            ; 00518bbb
@@ -350,7 +350,7 @@ section .text
     ADD EDX,EAX                         ; 00518c84
     MOV EAX,dword ptr [ESP + 0x30]      ; 00518c86
     MOV dword ptr [EDX],EAX             ; 00518c8a
-    FLD float ptr [0x0067d398]          ; 00518c8c | float g_SamplePointWeight
+    FLD float ptr [0x0067d398]          ; 00518c8c | g_SamplePointWeight
     MOV EAX,dword ptr [ESP + 0x34]      ; 00518c92
     FLDZ                                ; 00518c96
     MOV dword ptr [EDX + 0x4],EAX       ; 00518c98
@@ -364,33 +364,33 @@ section .text
     FCOMPP                              ; 00518cb5
     FNSTSW AX                           ; 00518cb7
     SAHF                                ; 00518cb9
-    JNC 0x00519240                      ; 00518cba | LAB_00519240
-        ;   XREF to: 00519240 (CONDITIONAL_JUMP)
+    JNC 0x00519240                      ; 00518cba
+        ;   XREF to: 00519240 (CONDITIONAL_JUMP)  ; LAB_00519240
     MOV EAX,dword ptr [ESP + 0xd0]      ; 00518cc0
     IMUL EDX,dword ptr [EAX],0x4c4      ; 00518cc7
     MOV EAX,dword ptr [EBP + 0x14]      ; 00518ccd
-    MOV dword ptr [0x02f313ec],EBX      ; 00518cd0 | int g_SamplePointCount
+    MOV dword ptr [0x02f313ec],EBX      ; 00518cd0 | g_SamplePointCount
     MOV EAX,dword ptr [EAX + 0x4]       ; 00518cd6
     MOV EBX,0x1                         ; 00518cd9
     ADD EAX,EDX                         ; 00518cde
-    MOV dword ptr [0x02f313ec],EBX      ; 00518ce0 | int g_SamplePointCount
-    CMP EAX,0x2f313f0                   ; 00518ce6 | CVector3f[400] g_SamplePointArray
-    JZ 0x00518d07                       ; 00518ceb | LAB_00518d07
-        ;   XREF to: 00518d07 (CONDITIONAL_JUMP)
+    MOV dword ptr [0x02f313ec],EBX      ; 00518ce0 | g_SamplePointCount
+    CMP EAX,0x2f313f0                   ; 00518ce6 | g_SamplePointArray
+    JZ 0x00518d07                       ; 00518ceb
+        ;   XREF to: 00518d07 (CONDITIONAL_JUMP)  ; LAB_00518d07
     FLD float ptr [EAX]                 ; 00518ced
     FLD float ptr [EAX + 0x8]           ; 00518cef
     MOV EDX,dword ptr [EAX + 0x4]       ; 00518cf2
     MOV dword ptr [0x02f313f4],EDX      ; 00518cf5 | g_SamplePointArray[0].y
     FSTP float ptr [0x02f313f8]         ; 00518cfb | g_SamplePointArray[0].z
-    FSTP float ptr [0x02f313f0]         ; 00518d01 | CVector3f[400] g_SamplePointArray
+    FSTP float ptr [0x02f313f0]         ; 00518d01 | g_SamplePointArray
     CMP dword ptr [ESP + 0xec],0x0      ; 00518d07
         ;   Label: LAB_00518d07
-    JLE 0x00518dc8                      ; 00518d0f | LAB_00518dc8
-        ;   XREF to: 00518dc8 (CONDITIONAL_JUMP)
+    JLE 0x00518dc8                      ; 00518d0f
+        ;   XREF to: 00518dc8 (CONDITIONAL_JUMP)  ; LAB_00518dc8
     MOV EAX,dword ptr [ESP + 0xb4]      ; 00518d15
     XOR ESI,ESI                         ; 00518d1c
     MOV dword ptr [ESP + 0xcc],EAX      ; 00518d1e
-    IMUL EBX,dword ptr [ESI + 0x2f2a1b0],0x4c4 ; 00518d25 | int[200] g_MaxNeighborVerts
+    IMUL EBX,dword ptr [ESI + 0x2f2a1b0],0x4c4 ; 00518d25 | g_MaxNeighborVerts | DAT_02f2a1b4
         ;   Label: LAB_00518d25
     MOV EDX,dword ptr [ESP + 0xd0]      ; 00518d2f
     IMUL EDX,dword ptr [EDX],0x4c4      ; 00518d36
@@ -401,15 +401,15 @@ section .text
     FLD float ptr [EAX]                 ; 00518d46
     FADD float ptr [EBX]                ; 00518d48
     FST float ptr [ESP + 0x48]          ; 00518d4a
-    FDIV float ptr [0x006379dd]         ; 00518d4e | float FLOAT_006379dd
+    FDIV float ptr [0x006379dd]         ; 00518d4e | FLOAT_006379dd
     FLD float ptr [EAX + 0x4]           ; 00518d54
     FADD float ptr [EBX + 0x4]          ; 00518d57
     FSTP float ptr [ESP + 0x4c]         ; 00518d5a
     FLD float ptr [EAX + 0x8]           ; 00518d5e
-    MOV EAX,[0x02f313ec]                ; 00518d61 | int g_SamplePointCount
+    MOV EAX,[0x02f313ec]                ; 00518d61 | g_SamplePointCount
     FADD float ptr [EBX + 0x8]          ; 00518d66
     IMUL EBX,EAX,0xc                    ; 00518d69
-    FLD float ptr [0x006379d9]          ; 00518d6c | float FLOAT_006379d9
+    FLD float ptr [0x006379d9]          ; 00518d6c | FLOAT_006379d9
     FLD float ptr [ESP + 0x4c]          ; 00518d72
     FMUL ST1                            ; 00518d76
     FXCH ST2                            ; 00518d78
@@ -419,13 +419,13 @@ section .text
     FSTP float ptr [ESP + 0x58]         ; 00518d82
     FSTP float ptr [ESP + 0x5c]         ; 00518d86
     INC EAX                             ; 00518d8a
-    ADD EBX,0x2f313f0                   ; 00518d8b | DAT_02f313fc | CVector3f[400] g_SamplePointArray
-    MOV [0x02f313ec],EAX                ; 00518d91 | int g_SamplePointCount
+    ADD EBX,0x2f313f0                   ; 00518d8b | DAT_02f313fc | g_SamplePointArray
+    MOV [0x02f313ec],EAX                ; 00518d91 | g_SamplePointCount
     LEA EAX,[ESP + 0x54]                ; 00518d96
     FSTP float ptr [ESP + 0x54]         ; 00518d9a
     CMP EBX,EAX                         ; 00518d9e
-    JZ 0x00518db6                       ; 00518da0 | LAB_00518db6
-        ;   XREF to: 00518db6 (CONDITIONAL_JUMP)
+    JZ 0x00518db6                       ; 00518da0
+        ;   XREF to: 00518db6 (CONDITIONAL_JUMP)  ; LAB_00518db6
     MOV EAX,dword ptr [ESP + 0x54]      ; 00518da2
     MOV dword ptr [EBX],EAX             ; 00518da6 | DAT_02f313fc
     MOV EAX,dword ptr [ESP + 0x58]      ; 00518da8
@@ -436,32 +436,32 @@ section .text
         ;   Label: LAB_00518db6
     ADD ESI,0x4                         ; 00518dbd
     CMP ESI,EAX                         ; 00518dc0
-    JL 0x00518d25                       ; 00518dc2 | LAB_00518d25
-        ;   XREF to: 00518d25 (CONDITIONAL_JUMP)
+    JL 0x00518d25                       ; 00518dc2
+        ;   XREF to: 00518d25 (CONDITIONAL_JUMP)  ; LAB_00518d25
     XOR EDX,EDX                         ; 00518dc8
         ;   Label: LAB_00518dc8
     MOV dword ptr [ESP + 0xe4],EDX      ; 00518dca
     TEST EDI,EDI                        ; 00518dd1
-    JLE 0x00518e32                      ; 00518dd3 | LAB_00518e32
-        ;   XREF to: 00518e32 (CONDITIONAL_JUMP)
-    MOV ESI,0x2f2a4d0                   ; 00518dd5 | CLodFace[200] g_TempNeighborFaces
-    PUSH ESI                            ; 00518dda | CLodFace[200] g_TempNeighborFaces
+    JLE 0x00518e32                      ; 00518dd3
+        ;   XREF to: 00518e32 (CONDITIONAL_JUMP)  ; LAB_00518e32
+    MOV ESI,0x2f2a4d0                   ; 00518dd5 | g_TempNeighborFaces
+    PUSH ESI                            ; 00518dda | g_TempNeighborFaces | DAT_02f2a55c
         ;   Label: LAB_00518dda
     LEA EAX,[ESP + 0x94]                ; 00518ddb
     PUSH EAX                            ; 00518de2
     MOV EDX,dword ptr [EBP + 0x14]      ; 00518de3
     PUSH EDX                            ; 00518de6
-    CALL shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870 ; 00518de7 | CVector3f * shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870(CLodMesh * this_ptr, CVector3f * out_centroid, CLodFace * face)
-        ;   XREF to: 00518870 (UNCONDITIONAL_CALL)
-    MOV EDX,dword ptr [0x02f313ec]      ; 00518dec | int g_SamplePointCount
+    CALL shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870 ; 00518de7
+        ;   XREF to: 00518870 (UNCONDITIONAL_CALL)  ; CVector3f * shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870(CLodMesh * this_ptr, CVector3f * out_centroid, CLodFace * face)
+    MOV EDX,dword ptr [0x02f313ec]      ; 00518dec | g_SamplePointCount
     IMUL EBX,EDX,0xc                    ; 00518df2
     ADD ESP,0xc                         ; 00518df5
     INC EDX                             ; 00518df8
-    ADD EBX,0x2f313f0                   ; 00518df9 | DAT_02f31408 | CVector3f[400] g_SamplePointArray
-    MOV dword ptr [0x02f313ec],EDX      ; 00518dff | int g_SamplePointCount
+    ADD EBX,0x2f313f0                   ; 00518df9 | DAT_02f31408 | g_SamplePointArray
+    MOV dword ptr [0x02f313ec],EDX      ; 00518dff | g_SamplePointCount
     CMP EBX,EAX                         ; 00518e05
-    JZ 0x00518e19                       ; 00518e07 | LAB_00518e19
-        ;   XREF to: 00518e19 (CONDITIONAL_JUMP)
+    JZ 0x00518e19                       ; 00518e07
+        ;   XREF to: 00518e19 (CONDITIONAL_JUMP)  ; LAB_00518e19
     MOV EDX,dword ptr [EAX]             ; 00518e09
     MOV dword ptr [EBX],EDX             ; 00518e0b | DAT_02f31408
     MOV EDX,dword ptr [EAX + 0x4]       ; 00518e0d
@@ -474,34 +474,34 @@ section .text
     ADD ESI,0x8c                        ; 00518e21
     MOV dword ptr [ESP + 0xe4],ECX      ; 00518e27
     CMP EDI,ECX                         ; 00518e2e
-    JG 0x00518dda                       ; 00518e30 | LAB_00518dda
-        ;   XREF to: 00518dda (CONDITIONAL_JUMP)
-    CMP dword ptr [0x0067d394],0x0      ; 00518e32 | int g_EnableMidpointSampling
+    JG 0x00518dda                       ; 00518e30
+        ;   XREF to: 00518dda (CONDITIONAL_JUMP)  ; LAB_00518dda
+    CMP dword ptr [0x0067d394],0x0      ; 00518e32 | g_EnableMidpointSampling
         ;   Label: LAB_00518e32
-    JZ 0x00518f04                       ; 00518e39 | LAB_00518f04
-        ;   XREF to: 00518f04 (CONDITIONAL_JUMP)
-    MOV EAX,[0x02f313ec]                ; 00518e3f | int g_SamplePointCount
+    JZ 0x00518f04                       ; 00518e39
+        ;   XREF to: 00518f04 (CONDITIONAL_JUMP)  ; LAB_00518f04
+    MOV EAX,[0x02f313ec]                ; 00518e3f | g_SamplePointCount
     MOV EDX,0x1                         ; 00518e44
     MOV dword ptr [ESP + 0xd4],EAX      ; 00518e49
     CMP EAX,EDX                         ; 00518e50
-    JLE 0x00518ef8                      ; 00518e52 | LAB_00518ef8
-        ;   XREF to: 00518ef8 (CONDITIONAL_JUMP)
+    JLE 0x00518ef8                      ; 00518e52
+        ;   XREF to: 00518ef8 (CONDITIONAL_JUMP)  ; LAB_00518ef8
     MOV EBX,dword ptr [ESP + 0xb0]      ; 00518e58
     IMUL ECX,EAX,0xc                    ; 00518e5f
-    FLD float ptr [0x02f313f0]          ; 00518e62 | CVector3f[400] g_SamplePointArray
+    FLD float ptr [0x02f313f0]          ; 00518e62 | g_SamplePointArray
         ;   Label: LAB_00518e62
-    FADD float ptr [EBX]                ; 00518e68 | DAT_02f313fc
+    FADD float ptr [EBX]                ; 00518e68 | DAT_02f313fc | DAT_02f31408
     FST float ptr [ESP + 0x60]          ; 00518e6a
-    FDIV float ptr [0x006379dd]         ; 00518e6e | float FLOAT_006379dd
+    FDIV float ptr [0x006379dd]         ; 00518e6e | FLOAT_006379dd
     FLD float ptr [0x02f313f4]          ; 00518e74 | g_SamplePointArray[0].y
-    FADD float ptr [EBX + 0x4]          ; 00518e7a | DAT_02f31400
+    FADD float ptr [EBX + 0x4]          ; 00518e7a | DAT_02f31400 | DAT_02f3140c
     FLD float ptr [0x02f313f8]          ; 00518e7d | g_SamplePointArray[0].z
     FXCH                                ; 00518e83
     FST float ptr [ESP + 0x64]          ; 00518e85
     FXCH                                ; 00518e89
-    FADD float ptr [EBX + 0x8]          ; 00518e8b | DAT_02f31404
+    FADD float ptr [EBX + 0x8]          ; 00518e8b | DAT_02f31404 | DAT_02f31410
     FXCH                                ; 00518e8e
-    FLD float ptr [0x006379d9]          ; 00518e90 | float FLOAT_006379d9
+    FLD float ptr [0x006379d9]          ; 00518e90 | FLOAT_006379d9
     FXCH                                ; 00518e96
     FMUL ST1                            ; 00518e98
     FXCH ST2                            ; 00518e9a
@@ -511,7 +511,7 @@ section .text
     MOV ESI,ECX                         ; 00518ea9
     ADD ECX,0xc                         ; 00518eab
     INC EAX                             ; 00518eae
-    ADD ESI,0x2f313f0                   ; 00518eaf | CVector3f[400] g_SamplePointArray
+    ADD ESI,0x2f313f0                   ; 00518eaf | g_SamplePointArray
     MOV dword ptr [ESP + 0xd4],EAX      ; 00518eb5
     LEA EAX,[ESP + 0x6c]                ; 00518ebc
     FXCH                                ; 00518ec0
@@ -519,52 +519,52 @@ section .text
     FSTP float ptr [ESP + 0x74]         ; 00518ec6
     FSTP float ptr [ESP + 0x6c]         ; 00518eca
     CMP ESI,EAX                         ; 00518ece
-    JZ 0x00518ee6                       ; 00518ed0 | LAB_00518ee6
-        ;   XREF to: 00518ee6 (CONDITIONAL_JUMP)
+    JZ 0x00518ee6                       ; 00518ed0
+        ;   XREF to: 00518ee6 (CONDITIONAL_JUMP)  ; LAB_00518ee6
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00518ed2
     MOV dword ptr [ESI],EAX             ; 00518ed6 | DAT_02f31408
     MOV EAX,dword ptr [ESP + 0x70]      ; 00518ed8
     MOV dword ptr [ESI + 0x4],EAX       ; 00518edc | DAT_02f3140c
     MOV EAX,dword ptr [ESP + 0x74]      ; 00518edf
     MOV dword ptr [ESI + 0x8],EAX       ; 00518ee3 | DAT_02f31410
-    MOV ESI,dword ptr [0x02f313ec]      ; 00518ee6 | int g_SamplePointCount
+    MOV ESI,dword ptr [0x02f313ec]      ; 00518ee6 | g_SamplePointCount
         ;   Label: LAB_00518ee6
     INC EDX                             ; 00518eec
     ADD EBX,0xc                         ; 00518eed | DAT_02f31408
     CMP EDX,ESI                         ; 00518ef0
-    JL 0x00518e62                       ; 00518ef2 | LAB_00518e62
-        ;   XREF to: 00518e62 (CONDITIONAL_JUMP)
+    JL 0x00518e62                       ; 00518ef2
+        ;   XREF to: 00518e62 (CONDITIONAL_JUMP)  ; LAB_00518e62
     MOV EAX,dword ptr [ESP + 0xd4]      ; 00518ef8
         ;   Label: LAB_00518ef8
-    MOV [0x02f313ec],EAX                ; 00518eff | int g_SamplePointCount
-    FLD float ptr [0x0067d398]          ; 00518f04 | float g_SamplePointWeight
+    MOV [0x02f313ec],EAX                ; 00518eff | g_SamplePointCount
+    FLD float ptr [0x0067d398]          ; 00518f04 | g_SamplePointWeight
         ;   Label: LAB_00518f04
     FMUL float ptr [ESP + 0x2c]         ; 00518f0a
-    FILD dword ptr [0x02f313ec]         ; 00518f0e | int g_SamplePointCount
+    FILD dword ptr [0x02f313ec]         ; 00518f0e | g_SamplePointCount
     FDIVP                               ; 00518f14
     MOV EAX,dword ptr [EBP + 0x14]      ; 00518f16
     MOV EDX,dword ptr [EAX + 0x34]      ; 00518f19
     PUSH EDX                            ; 00518f1c
     FSTP double ptr [ESP + 0x4]         ; 00518f1d
-    CALL shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 ; 00518f21 | void shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh * this_ptr, double max_search_radius)
-        ;   XREF to: 00519b50 (UNCONDITIONAL_CALL)
-    MOV ECX,dword ptr [0x02f313ec]      ; 00518f26 | int g_SamplePointCount
+    CALL shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 ; 00518f21
+        ;   XREF to: 00519b50 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh * this_ptr, double max_search_radius)
+    MOV ECX,dword ptr [0x02f313ec]      ; 00518f26 | g_SamplePointCount
     ADD ESP,0x4                         ; 00518f2c
     TEST ECX,ECX                        ; 00518f2f
-    JLE 0x00518f5a                      ; 00518f31 | LAB_00518f5a
-        ;   XREF to: 00518f5a (CONDITIONAL_JUMP)
+    JLE 0x00518f5a                      ; 00518f31
+        ;   XREF to: 00518f5a (CONDITIONAL_JUMP)  ; LAB_00518f5a
     FLD double ptr [ESP + 0x18]         ; 00518f33
     FLD double ptr [ESP]                ; 00518f37
     LEA EDX,[ECX*0x8 + 0x0]             ; 00518f3a
     XOR EAX,EAX                         ; 00518f41
-    FLD double ptr [EAX + 0x2f326b0]    ; 00518f43 | double[400] g_SampleDistances
+    FLD double ptr [EAX + 0x2f326b0]    ; 00518f43 | g_SampleDistances | DAT_02f326b8
         ;   Label: LAB_00518f43
     FMUL ST1                            ; 00518f49
     ADD EAX,0x8                         ; 00518f4b
     FADDP ST2,ST0                       ; 00518f4e
     CMP EAX,EDX                         ; 00518f50
-    JL 0x00518f43                       ; 00518f52 | LAB_00518f43
-        ;   XREF to: 00518f43 (CONDITIONAL_JUMP)
+    JL 0x00518f43                       ; 00518f52
+        ;   XREF to: 00518f43 (CONDITIONAL_JUMP)  ; LAB_00518f43
     FSTP ST0                            ; 00518f54
     FSTP double ptr [ESP + 0x18]        ; 00518f56
     MOV EAX,dword ptr [ESP + 0xd0]      ; 00518f5a
@@ -573,15 +573,15 @@ section .text
     FCOMP double ptr [EAX + 0x8]        ; 00518f65
     FNSTSW AX                           ; 00518f68
     SAHF                                ; 00518f6a
-    JBE 0x00519240                      ; 00518f6b | LAB_00519240
-        ;   XREF to: 00519240 (CONDITIONAL_JUMP)
+    JBE 0x00519240                      ; 00518f6b
+        ;   XREF to: 00519240 (CONDITIONAL_JUMP)  ; LAB_00519240
     MOV EBX,dword ptr [ESP + 0xc4]      ; 00518f71
         ;   Label: LAB_00518f71
     INC EBX                             ; 00518f78
     MOV dword ptr [ESP + 0xc4],EBX      ; 00518f79
     CMP EBX,0x4                         ; 00518f80
-    JLE 0x00518b7c                      ; 00518f83 | LAB_00518b7c
-        ;   XREF to: 00518b7c (CONDITIONAL_JUMP)
+    JLE 0x00518b7c                      ; 00518f83
+        ;   XREF to: 00518b7c (CONDITIONAL_JUMP)  ; LAB_00518b7c
     MOV EAX,dword ptr [ESP + 0xd0]      ; 00518f89
     IMUL EDX,dword ptr [EAX],0x4c4      ; 00518f90
     MOV EAX,dword ptr [EBP + 0x14]      ; 00518f96
@@ -604,36 +604,36 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10c]     ; 00518fc9
     MOV dword ptr [ESP + 0x10c],EDX     ; 00518fd0
     MOV dword ptr [ESP + 0x100],EAX     ; 00518fd7
-    JMP 0x00518a20                      ; 00518fde | LAB_00518a20
-        ;   XREF to: 00518a20 (UNCONDITIONAL_JUMP)
+    JMP 0x00518a20                      ; 00518fde
+        ;   XREF to: 00518a20 (UNCONDITIONAL_JUMP)  ; LAB_00518a20
     CMP dword ptr [ESP + 0xec],0xc8     ; 00518fe3
         ;   Label: LAB_00518fe3
-    JL 0x00519026                       ; 00518fee | LAB_00519026
-        ;   XREF to: 00519026 (CONDITIONAL_JUMP)
-    PUSH 0x637921                       ; 00518ff0 | = "Too many neighboring edges!" | s_Too_many_neighboring_edg_00637921 = Too many neighboring edges!
-    MOV EBX,dword ptr [0x00678a60]      ; 00518ff5 | CEditorTools * g_CEditorToolsPtr
-    PUSH EBX                            ; 00518ffb | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00518ffc | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    JL 0x00519026                       ; 00518fee
+        ;   XREF to: 00519026 (CONDITIONAL_JUMP)  ; LAB_00519026
+    PUSH 0x637921                       ; 00518ff0 | = "Too many neighboring edges!"
+    MOV EBX,dword ptr [0x00678a60]      ; 00518ff5 | g_CEditorToolsPtr
+    PUSH EBX                            ; 00518ffb | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 00518ffc
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00519001
-    MOV ESI,0x63793d                    ; 00519004 | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_0063793d = ..\shape\meshlod.cpp
+    MOV ESI,0x63793d                    ; 00519004 | = "..\\shape\\meshlod.cpp"
     MOV EAX,0xbca                       ; 00519009
-    PUSH 0x637952                       ; 0051900e | = "Too many neighboring edges!" | s_Too_many_neighboring_edg_00637952 = Too many neighboring edges!
-    MOV dword ptr [0x02f0ca48],ESI      ; 00519013 | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 00519019 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0051901e | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x637952                       ; 0051900e | = "Too many neighboring edges!"
+    MOV dword ptr [0x02f0ca48],ESI      ; 00519013 | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 00519019 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0051901e
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00519023
     MOV EAX,dword ptr [ESP + 0xf8]      ; 00519026
         ;   Label: LAB_00519026
     MOV EDX,dword ptr [ESP + 0x10c]     ; 0051902d
     CMP EDX,dword ptr [EAX]             ; 00519034
-    JNZ 0x005190fc                      ; 00519036 | LAB_005190fc
-        ;   XREF to: 005190fc (CONDITIONAL_JUMP)
+    JNZ 0x005190fc                      ; 00519036
+        ;   XREF to: 005190fc (CONDITIONAL_JUMP)  ; LAB_005190fc
     MOV EAX,dword ptr [ESP + 0xf8]      ; 0051903c
     MOV EDX,dword ptr [ESP + 0xf0]      ; 00519043
     MOV EAX,dword ptr [EAX + 0x4]       ; 0051904a
-    MOV dword ptr [EDX + 0x2f2a1b0],EAX ; 0051904d | int[200] g_MaxNeighborVerts
+    MOV dword ptr [EDX + 0x2f2a1b0],EAX ; 0051904d | g_MaxNeighborVerts
         ;   Label: LAB_0051904d
     MOV EBX,dword ptr [ESP + 0xf0]      ; 00519053
     MOV ESI,dword ptr [ESP + 0xec]      ; 0051905a
@@ -646,8 +646,8 @@ section .text
     MOV dword ptr [ESP + 0xf0],EBX      ; 00519078
     MOV dword ptr [ESP + 0xec],ESI      ; 0051907f
     TEST EDX,EDX                        ; 00519086
-    JLE 0x00518aa6                      ; 00519088 | LAB_00518aa6
-        ;   XREF to: 00518aa6 (CONDITIONAL_JUMP)
+    JLE 0x00518aa6                      ; 00519088
+        ;   XREF to: 00518aa6 (CONDITIONAL_JUMP)  ; LAB_00518aa6
     MOV dword ptr [ESP + 0x104],EAX     ; 0051908e
     IMUL ESI,EDI,0x8c                   ; 00519095
     MOV EAX,dword ptr [ESP + 0x104]     ; 0051909b
@@ -658,10 +658,10 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 005190b2
     MOV EBX,dword ptr [EBX + 0xc]       ; 005190b5
     ADD EBX,EAX                         ; 005190b8
-    MOV EDX,dword ptr [0x02f33334]      ; 005190ba | int g_LodGenerationStamp
+    MOV EDX,dword ptr [0x02f33334]      ; 005190ba | g_LodGenerationStamp
     CMP EDX,dword ptr [EBX + 0x84]      ; 005190c0
-    JNZ 0x00519111                      ; 005190c6 | LAB_00519111
-        ;   XREF to: 00519111 (CONDITIONAL_JUMP)
+    JNZ 0x00519111                      ; 005190c6
+        ;   XREF to: 00519111 (CONDITIONAL_JUMP)  ; LAB_00519111
     MOV ECX,dword ptr [ESP + 0x104]     ; 005190c8
         ;   Label: LAB_005190c8
     MOV EBX,dword ptr [ESP + 0x108]     ; 005190cf
@@ -672,55 +672,55 @@ section .text
     MOV ECX,dword ptr [EDX + 0x24]      ; 005190e8
     MOV dword ptr [ESP + 0x108],EBX     ; 005190eb
     CMP EBX,ECX                         ; 005190f2
-    JGE 0x00518aa6                      ; 005190f4 | LAB_00518aa6
-        ;   XREF to: 00518aa6 (CONDITIONAL_JUMP)
-    JMP 0x0051909b                      ; 005190fa | LAB_0051909b
-        ;   XREF to: 0051909b (UNCONDITIONAL_JUMP)
+    JGE 0x00518aa6                      ; 005190f4
+        ;   XREF to: 00518aa6 (CONDITIONAL_JUMP)  ; LAB_00518aa6
+    JMP 0x0051909b                      ; 005190fa
+        ;   XREF to: 0051909b (UNCONDITIONAL_JUMP)  ; LAB_0051909b
     MOV EAX,dword ptr [ESP + 0xf8]      ; 005190fc
         ;   Label: LAB_005190fc
     MOV EDX,dword ptr [ESP + 0xf0]      ; 00519103
     MOV EAX,dword ptr [EAX]             ; 0051910a
-    JMP 0x0051904d                      ; 0051910c | LAB_0051904d
-        ;   XREF to: 0051904d (UNCONDITIONAL_JUMP)
-    MOV EAX,[0x02f33338]                ; 00519111 | int g_LodTempFaceStamp
+    JMP 0x0051904d                      ; 0051910c
+        ;   XREF to: 0051904d (UNCONDITIONAL_JUMP)  ; LAB_0051904d
+    MOV EAX,[0x02f33338]                ; 00519111 | g_LodTempFaceStamp
         ;   Label: LAB_00519111
     MOV dword ptr [EBX + 0x88],EAX      ; 00519116
     MOV ECX,dword ptr [ESP + 0x100]     ; 0051911c
     MOV EAX,dword ptr [EBX + 0x10]      ; 00519123
     MOV dword ptr [EBX + 0x84],EDX      ; 00519126
     CMP EAX,ECX                         ; 0051912c
-    JZ 0x005190c8                       ; 0051912e | LAB_005190c8
-        ;   XREF to: 005190c8 (CONDITIONAL_JUMP)
+    JZ 0x005190c8                       ; 0051912e
+        ;   XREF to: 005190c8 (CONDITIONAL_JUMP)  ; LAB_005190c8
     CMP ECX,dword ptr [EBX + 0x14]      ; 00519130
-    JZ 0x005190c8                       ; 00519133 | LAB_005190c8
-        ;   XREF to: 005190c8 (CONDITIONAL_JUMP)
+    JZ 0x005190c8                       ; 00519133
+        ;   XREF to: 005190c8 (CONDITIONAL_JUMP)  ; LAB_005190c8
     CMP ECX,dword ptr [EBX + 0x18]      ; 00519135
-    JZ 0x005190c8                       ; 00519138 | LAB_005190c8
-        ;   XREF to: 005190c8 (CONDITIONAL_JUMP)
+    JZ 0x005190c8                       ; 00519138
+        ;   XREF to: 005190c8 (CONDITIONAL_JUMP)  ; LAB_005190c8
     CMP EDI,0xc8                        ; 0051913a
-    JL 0x00519178                       ; 00519140 | LAB_00519178
-        ;   XREF to: 00519178 (CONDITIONAL_JUMP)
-    PUSH 0x63796e                       ; 00519142 | = "Too many neighboring faces!" | s_Too_many_neighboring_fac_0063796e = Too many neighboring faces!
-    MOV EAX,[0x00678a60]                ; 00519147 | CEditorTools * g_CEditorToolsPtr
-    PUSH EAX                            ; 0051914c | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0051914d | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    JL 0x00519178                       ; 00519140
+        ;   XREF to: 00519178 (CONDITIONAL_JUMP)  ; LAB_00519178
+    PUSH 0x63796e                       ; 00519142 | = "Too many neighboring faces!"
+    MOV EAX,[0x00678a60]                ; 00519147 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0051914c | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0051914d
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00519152
-    MOV EDX,0x63798a                    ; 00519155 | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_0063798a = ..\shape\meshlod.cpp
+    MOV EDX,0x63798a                    ; 00519155 | = "..\\shape\\meshlod.cpp"
     MOV ECX,0xbf4                       ; 0051915a
-    PUSH 0x63799f                       ; 0051915f | = "Too many neighboring faces!" | s_Too_many_neighboring_fac_0063799f = Too many neighboring faces!
-    MOV dword ptr [0x02f0ca48],EDX      ; 00519164 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0051916a | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00519170 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63799f                       ; 0051915f | = "Too many neighboring faces!"
+    MOV dword ptr [0x02f0ca48],EDX      ; 00519164 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0051916a | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00519170
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00519175
     MOV EAX,dword ptr [ESP + 0x10c]     ; 00519178
         ;   Label: LAB_00519178
     MOV dword ptr [ESI + 0x2f2a4e0],EAX ; 0051917f | DAT_02f2a4e0
     MOV EDX,dword ptr [ESP + 0x10c]     ; 00519185
     CMP EDX,dword ptr [EBX + 0x10]      ; 0051918c
-    JNZ 0x005191bc                      ; 0051918f | LAB_005191bc
-        ;   XREF to: 005191bc (CONDITIONAL_JUMP)
+    JNZ 0x005191bc                      ; 0051918f
+        ;   XREF to: 005191bc (CONDITIONAL_JUMP)  ; LAB_005191bc
     MOV EAX,dword ptr [EBX + 0x14]      ; 00519191
     MOV dword ptr [ESI + 0x2f2a4e4],EAX ; 00519194 | DAT_02f2a4e4
     MOV EAX,dword ptr [EBX + 0x18]      ; 0051919a
@@ -731,69 +731,69 @@ section .text
     MOV EAX,dword ptr [ESP + 0xfc]      ; 005191a9
     INC EDI                             ; 005191b0
     MOV dword ptr [ESI + 0x2f2a4c8],EAX ; 005191b1 | DAT_02f2a554
-    JMP 0x005190c8                      ; 005191b7 | LAB_005190c8
-        ;   XREF to: 005190c8 (UNCONDITIONAL_JUMP)
+    JMP 0x005190c8                      ; 005191b7
+        ;   XREF to: 005190c8 (UNCONDITIONAL_JUMP)  ; LAB_005190c8
     CMP EDX,dword ptr [EBX + 0x14]      ; 005191bc
         ;   Label: LAB_005191bc
-    JNZ 0x005191cf                      ; 005191bf | LAB_005191cf
-        ;   XREF to: 005191cf (CONDITIONAL_JUMP)
+    JNZ 0x005191cf                      ; 005191bf
+        ;   XREF to: 005191cf (CONDITIONAL_JUMP)  ; LAB_005191cf
     MOV EAX,dword ptr [EBX + 0x18]      ; 005191c1
     MOV dword ptr [ESI + 0x2f2a4e4],EAX ; 005191c4 | DAT_02f2a4e4
     MOV EAX,dword ptr [EBX + 0x10]      ; 005191ca
-    JMP 0x0051919d                      ; 005191cd | LAB_0051919d
-        ;   XREF to: 0051919d (UNCONDITIONAL_JUMP)
+    JMP 0x0051919d                      ; 005191cd
+        ;   XREF to: 0051919d (UNCONDITIONAL_JUMP)  ; LAB_0051919d
     CMP EDX,dword ptr [EBX + 0x18]      ; 005191cf
         ;   Label: LAB_005191cf
-    JNZ 0x005191e2                      ; 005191d2 | LAB_005191e2
-        ;   XREF to: 005191e2 (CONDITIONAL_JUMP)
+    JNZ 0x005191e2                      ; 005191d2
+        ;   XREF to: 005191e2 (CONDITIONAL_JUMP)  ; LAB_005191e2
     MOV EAX,dword ptr [EBX + 0x10]      ; 005191d4
     MOV dword ptr [ESI + 0x2f2a4e4],EAX ; 005191d7 | DAT_02f2a4e4
     MOV EAX,dword ptr [EBX + 0x14]      ; 005191dd
-    JMP 0x0051919d                      ; 005191e0 | LAB_0051919d
-        ;   XREF to: 0051919d (UNCONDITIONAL_JUMP)
-    MOV ECX,0x6379bb                    ; 005191e2 | = "..\\shape\\meshlod.cpp" | s_shape_meshlod_cpp_006379bb = ..\shape\meshlod.cpp
+    JMP 0x0051919d                      ; 005191e0
+        ;   XREF to: 0051919d (UNCONDITIONAL_JUMP)  ; LAB_0051919d
+    MOV ECX,0x6379bb                    ; 005191e2 | = "..\\shape\\meshlod.cpp"
         ;   Label: LAB_005191e2
     MOV EBX,0xc06                       ; 005191e7
-    PUSH 0x6379d0                       ; 005191ec | = "Bug!" | s_Bug_006379d0 = Bug!
-    MOV dword ptr [0x02f0ca48],ECX      ; 005191f1 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 005191f7 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005191fd | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6379d0                       ; 005191ec | = "Bug!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 005191f1 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 005191f7 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005191fd
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00519202
-    JMP 0x005191a3                      ; 00519205 | LAB_005191a3
-        ;   XREF to: 005191a3 (UNCONDITIONAL_JUMP)
+    JMP 0x005191a3                      ; 00519205
+        ;   XREF to: 005191a3 (UNCONDITIONAL_JUMP)  ; LAB_005191a3
     CMP dword ptr [ESP + 0xc4],0x0      ; 00519207
         ;   Label: LAB_00519207
-    JZ 0x0051921f                       ; 0051920f | LAB_0051921f
-        ;   XREF to: 0051921f (CONDITIONAL_JUMP)
+    JZ 0x0051921f                       ; 0051920f
+        ;   XREF to: 0051921f (CONDITIONAL_JUMP)  ; LAB_0051921f
     CMP dword ptr [ESP + 0xa4],0x0      ; 00519211
-    JNZ 0x00518f71                      ; 00519219 | LAB_00518f71
-        ;   XREF to: 00518f71 (CONDITIONAL_JUMP)
+    JNZ 0x00518f71                      ; 00519219
+        ;   XREF to: 00518f71 (CONDITIONAL_JUMP)  ; LAB_00518f71
     CMP dword ptr [ESP + 0xc4],0x4      ; 0051921f
         ;   Label: LAB_0051921f
-    JZ 0x00518b89                       ; 00519227 | LAB_00518b89
-        ;   XREF to: 00518b89 (CONDITIONAL_JUMP)
+    JZ 0x00518b89                       ; 00519227
+        ;   XREF to: 00518b89 (CONDITIONAL_JUMP)  ; LAB_00518b89
     CMP dword ptr [ESP + 0xa8],0x0      ; 0051922d
-    JNZ 0x00518f71                      ; 00519235 | LAB_00518f71
-        ;   XREF to: 00518f71 (CONDITIONAL_JUMP)
-    JMP 0x00518b89                      ; 0051923b | LAB_00518b89
-        ;   XREF to: 00518b89 (UNCONDITIONAL_JUMP)
+    JNZ 0x00518f71                      ; 00519235
+        ;   XREF to: 00518f71 (CONDITIONAL_JUMP)  ; LAB_00518f71
+    JMP 0x00518b89                      ; 0051923b
+        ;   XREF to: 00518b89 (UNCONDITIONAL_JUMP)  ; LAB_00518b89
     XOR ESI,ESI                         ; 00519240
         ;   Label: LAB_00519240
     TEST EDI,EDI                        ; 00519242
-    JLE 0x005192af                      ; 00519244 | LAB_005192af
-        ;   XREF to: 005192af (CONDITIONAL_JUMP)
+    JLE 0x005192af                      ; 00519244
+        ;   XREF to: 005192af (CONDITIONAL_JUMP)  ; LAB_005192af
     MOV EBX,dword ptr [ESP + 0xac]      ; 00519246 | DAT_02f2a514
     IMUL EAX,ESI,0x8c                   ; 0051924d
         ;   Label: LAB_0051924d
     MOV dword ptr [ESP + 0x110],EAX     ; 00519253
-    MOV EAX,0x2f2a4d0                   ; 0051925a | CLodFace[200] g_TempNeighborFaces
+    MOV EAX,0x2f2a4d0                   ; 0051925a | g_TempNeighborFaces
     ADD EAX,dword ptr [ESP + 0x110]     ; 0051925f | DAT_02f2a55c
     PUSH EAX                            ; 00519266 | DAT_02f2a55c
     MOV ECX,dword ptr [EBP + 0x14]      ; 00519267
     PUSH ECX                            ; 0051926a
-    CALL shape_meshlod.cpp_CLodMesh_validateFace_FUN_00519830 ; 0051926b | int shape_meshlod.cpp_CLodMesh_validateFace_FUN_00519830(CLodMesh * this_ptr, CLodFace * face)
-        ;   XREF to: 00519830 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_validateFace_FUN_00519830 ; 0051926b
+        ;   XREF to: 00519830 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_validateFace_FUN_00519830(CLodMesh * this_ptr, CLodFace * face)
     ADD ESP,0x8                         ; 00519270
     MOV EAX,dword ptr [ESP + 0x110]     ; 00519273
     IMUL EAX,dword ptr [EAX + 0x2f2a554],0x8c ; 0051927a | DAT_02f2a554
@@ -811,23 +811,23 @@ section .text
     FCOMPP                              ; 005192a4
     FNSTSW AX                           ; 005192a6
     SAHF                                ; 005192a8
-    JBE 0x005193ca                      ; 005192a9 | LAB_005193ca
-        ;   XREF to: 005193ca (CONDITIONAL_JUMP)
+    JBE 0x005193ca                      ; 005192a9
+        ;   XREF to: 005193ca (CONDITIONAL_JUMP)  ; LAB_005193ca
     CMP ESI,EDI                         ; 005192af
         ;   Label: LAB_005192af
-    JL 0x00518f71                       ; 005192b1 | LAB_00518f71
-        ;   XREF to: 00518f71 (CONDITIONAL_JUMP)
+    JL 0x00518f71                       ; 005192b1
+        ;   XREF to: 00518f71 (CONDITIONAL_JUMP)  ; LAB_00518f71
     MOV EAX,dword ptr [EBP + 0x14]      ; 005192b7
     CMP dword ptr [EAX + 0x5c],0x0      ; 005192ba
-    JLE 0x0051938f                      ; 005192be | LAB_0051938f
-        ;   XREF to: 0051938f (CONDITIONAL_JUMP)
-    FLD float ptr [0x0067d398]          ; 005192c4 | float g_SamplePointWeight
+    JLE 0x0051938f                      ; 005192be
+        ;   XREF to: 0051938f (CONDITIONAL_JUMP)  ; LAB_0051938f
+    FLD float ptr [0x0067d398]          ; 005192c4 | g_SamplePointWeight
     FLD1                                ; 005192ca
     FCOMPP                              ; 005192cc
     FNSTSW AX                           ; 005192ce
     SAHF                                ; 005192d0
-    JBE 0x0051938f                      ; 005192d1 | LAB_0051938f
-        ;   XREF to: 0051938f (CONDITIONAL_JUMP)
+    JBE 0x0051938f                      ; 005192d1
+        ;   XREF to: 0051938f (CONDITIONAL_JUMP)  ; LAB_0051938f
     XOR EBX,EBX                         ; 005192d7
     MOV EAX,dword ptr [EBP + 0x14]      ; 005192d9
     MOV dword ptr [ESP + 0x28],EBX      ; 005192dc
@@ -836,8 +836,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x5c]      ; 005192eb
     MOV dword ptr [ESP + 0xc],EBX       ; 005192ee
     TEST ECX,ECX                        ; 005192f2
-    JLE 0x0051935d                      ; 005192f4 | LAB_0051935d
-        ;   XREF to: 0051935d (CONDITIONAL_JUMP)
+    JLE 0x0051935d                      ; 005192f4
+        ;   XREF to: 0051935d (CONDITIONAL_JUMP)  ; LAB_0051935d
     MOV dword ptr [ESP + 0xdc],EBX      ; 005192f6
     MOV EAX,dword ptr [EBP + 0x14]      ; 005192fd
         ;   Label: LAB_005192fd
@@ -848,10 +848,10 @@ section .text
     IMUL EAX,dword ptr [EDX + 0xc],0x8c ; 00519313
     MOV EDX,dword ptr [EBP + 0x14]      ; 0051931a
     MOV EDX,dword ptr [EDX + 0xc]       ; 0051931d
-    MOV ECX,dword ptr [0x02f33338]      ; 00519320 | int g_LodTempFaceStamp
+    MOV ECX,dword ptr [0x02f33338]      ; 00519320 | g_LodTempFaceStamp
     CMP ECX,dword ptr [EDX + EAX*0x1 + 0x88] ; 00519326
-    JZ 0x005193de                       ; 0051932d | LAB_005193de
-        ;   XREF to: 005193de (CONDITIONAL_JUMP)
+    JZ 0x005193de                       ; 0051932d
+        ;   XREF to: 005193de (CONDITIONAL_JUMP)  ; LAB_005193de
     MOV EBX,dword ptr [ESP + 0xdc]      ; 00519333
         ;   Label: LAB_00519333
     MOV ESI,dword ptr [ESP + 0xe8]      ; 0051933a
@@ -862,14 +862,14 @@ section .text
     MOV dword ptr [ESP + 0xdc],EBX      ; 0051934b
     MOV dword ptr [ESP + 0xe8],ESI      ; 00519352
     CMP ESI,ECX                         ; 00519359
-    JL 0x005192fd                       ; 0051935b | LAB_005192fd
-        ;   XREF to: 005192fd (CONDITIONAL_JUMP)
+    JL 0x005192fd                       ; 0051935b
+        ;   XREF to: 005192fd (CONDITIONAL_JUMP)  ; LAB_005192fd
     MOV EBX,dword ptr [ESP + 0x28]      ; 0051935d
         ;   Label: LAB_0051935d
     TEST EBX,EBX                        ; 00519361
-    JLE 0x0051938f                      ; 00519363 | LAB_0051938f
-        ;   XREF to: 0051938f (CONDITIONAL_JUMP)
-    FLD float ptr [0x0067d398]          ; 00519365 | float g_SamplePointWeight
+    JLE 0x0051938f                      ; 00519363
+        ;   XREF to: 0051938f (CONDITIONAL_JUMP)  ; LAB_0051938f
+    FLD float ptr [0x0067d398]          ; 00519365 | g_SamplePointWeight
     FLD1                                ; 0051936b
     FSUBRP                              ; 0051936d
     FMUL double ptr [ESP + 0x8]         ; 0051936f
@@ -885,8 +885,8 @@ section .text
     FCOMP double ptr [EAX + 0x8]        ; 0051939a
     FNSTSW AX                           ; 0051939d
     SAHF                                ; 0051939f
-    JNC 0x00518f71                      ; 005193a0 | LAB_00518f71
-        ;   XREF to: 00518f71 (CONDITIONAL_JUMP)
+    JNC 0x00518f71                      ; 005193a0
+        ;   XREF to: 00518f71 (CONDITIONAL_JUMP)  ; LAB_00518f71
     MOV EDX,dword ptr [ESP + 0xd0]      ; 005193a6
     MOV EAX,dword ptr [ESP + 0x18]      ; 005193ad
     MOV dword ptr [EDX + 0x8],EAX       ; 005193b1
@@ -894,16 +894,16 @@ section .text
     MOV dword ptr [EDX + 0xc],EAX       ; 005193b8
     MOV EAX,dword ptr [ESP + 0xc0]      ; 005193bb
     MOV dword ptr [EDX + 0x10],EAX      ; 005193c2
-    JMP 0x00518f71                      ; 005193c5 | LAB_00518f71
-        ;   XREF to: 00518f71 (UNCONDITIONAL_JUMP)
+    JMP 0x00518f71                      ; 005193c5
+        ;   XREF to: 00518f71 (UNCONDITIONAL_JUMP)  ; LAB_00518f71
     INC ESI                             ; 005193ca
         ;   Label: LAB_005193ca
     ADD EBX,0x8c                        ; 005193cb | DAT_02f2a5a0
     CMP ESI,EDI                         ; 005193d1
-    JL 0x0051924d                       ; 005193d3 | LAB_0051924d
-        ;   XREF to: 0051924d (CONDITIONAL_JUMP)
-    JMP 0x005192af                      ; 005193d9 | LAB_005192af
-        ;   XREF to: 005192af (UNCONDITIONAL_JUMP)
+    JL 0x0051924d                       ; 005193d3
+        ;   XREF to: 0051924d (CONDITIONAL_JUMP)  ; LAB_0051924d
+    JMP 0x005192af                      ; 005193d9
+        ;   XREF to: 005192af (UNCONDITIONAL_JUMP)  ; LAB_005192af
     MOV EBX,0x39a08ce9                  ; 005193de
         ;   Label: LAB_005193de
     MOV ESI,0x46293e59                  ; 005193e3
@@ -911,17 +911,17 @@ section .text
     MOV dword ptr [ESP + 0x14],ESI      ; 005193ec
     XOR EBX,EBX                         ; 005193f0
     TEST EDI,EDI                        ; 005193f2
-    JLE 0x0051944d                      ; 005193f4 | LAB_0051944d
-        ;   XREF to: 0051944d (CONDITIONAL_JUMP)
-    MOV ESI,0x2f2a4d0                   ; 005193f6 | CLodFace[200] g_TempNeighborFaces
-    PUSH ESI                            ; 005193fb | CLodFace[200] g_TempNeighborFaces
+    JLE 0x0051944d                      ; 005193f4
+        ;   XREF to: 0051944d (CONDITIONAL_JUMP)  ; LAB_0051944d
+    MOV ESI,0x2f2a4d0                   ; 005193f6 | g_TempNeighborFaces
+    PUSH ESI                            ; 005193fb | g_TempNeighborFaces | DAT_02f2a55c
         ;   Label: LAB_005193fb
     MOV EDX,dword ptr [ESP + 0xf8]      ; 005193fc
     PUSH EDX                            ; 00519403
     MOV ECX,dword ptr [EBP + 0x14]      ; 00519404
     PUSH ECX                            ; 00519407
-    CALL shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400 ; 00519408 | double shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh * this_ptr, SLodSamplePoint * sample_point, CLodFace * face)
-        ;   XREF to: 0051a400 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400 ; 00519408
+        ;   XREF to: 0051a400 (UNCONDITIONAL_CALL)  ; double shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh * this_ptr, SLodSamplePoint * sample_point, CLodFace * face)
     MOV dword ptr [ESP + 0xa8],EAX      ; 0051940d
     MOV dword ptr [ESP + 0xac],EDX      ; 00519414
     FLD double ptr [ESP + 0xa8]         ; 0051941b
@@ -930,8 +930,8 @@ section .text
     FCOMP double ptr [ESP + 0x10]       ; 00519429
     FNSTSW AX                           ; 0051942d
     SAHF                                ; 0051942f
-    JNC 0x00519442                      ; 00519430 | LAB_00519442
-        ;   XREF to: 00519442 (CONDITIONAL_JUMP)
+    JNC 0x00519442                      ; 00519430
+        ;   XREF to: 00519442 (CONDITIONAL_JUMP)  ; LAB_00519442
     MOV EAX,dword ptr [ESP + 0x20]      ; 00519432
     MOV dword ptr [ESP + 0x10],EAX      ; 00519436
     MOV EAX,dword ptr [ESP + 0x24]      ; 0051943a
@@ -940,8 +940,8 @@ section .text
         ;   Label: LAB_00519442
     ADD ESI,0x8c                        ; 00519443
     CMP EBX,EDI                         ; 00519449
-    JL 0x005193fb                       ; 0051944b | LAB_005193fb
-        ;   XREF to: 005193fb (CONDITIONAL_JUMP)
+    JL 0x005193fb                       ; 0051944b
+        ;   XREF to: 005193fb (CONDITIONAL_JUMP)  ; LAB_005193fb
     MOV EAX,dword ptr [ESP + 0xf4]      ; 0051944d
         ;   Label: LAB_0051944d
     FLD float ptr [EAX + 0x18]          ; 00519454
@@ -951,6 +951,6 @@ section .text
     FADD double ptr [ESP + 0x8]         ; 00519460
     MOV dword ptr [ESP + 0x28],EAX      ; 00519464
     FSTP double ptr [ESP + 0x8]         ; 00519468
-    JMP 0x00519333                      ; 0051946c | LAB_00519333
-        ;   XREF to: 00519333 (UNCONDITIONAL_JUMP)
+    JMP 0x00519333                      ; 0051946c
+        ;   XREF to: 00519333 (UNCONDITIONAL_JUMP)  ; LAB_00519333
 

@@ -17,8 +17,8 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00505510
         ;   Label: engine_light.cpp_setLightingMultipliers_FUN_00505510
-    MOV [0x0067cfd0],EAX                ; 00505514 | int g_DiffuseLightMultiplier
+    MOV [0x0067cfd0],EAX                ; 00505514 | g_DiffuseLightMultiplier
     MOV EAX,dword ptr [ESP + 0x8]       ; 00505519
-    MOV [0x0067cfd4],EAX                ; 0050551d | int g_SpecularLightMultiplier
+    MOV [0x0067cfd4],EAX                ; 0050551d | g_SpecularLightMultiplier
     RET                                 ; 00505522
 

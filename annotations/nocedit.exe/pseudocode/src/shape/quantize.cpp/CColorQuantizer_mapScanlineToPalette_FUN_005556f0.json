@@ -1,290 +1,290 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 154, 
-    "pseudocode_lines": 119, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 413, 
-    "assembly_lines": 294, 
-    "suspect_count": 3, 
+    "assembly_lines": 294,
+    "complexity_score": 154,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 119,
+    "suspect_count": 3,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_quantize.cpp_getAbsoluteValue_FUN_00556df0", 
-      "addr": "00556df0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640d53", 
-      "addr": "00640d53", 
-      "value": "0.300000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640d5b", 
-      "addr": "00640d5b", 
-      "value": "0.590000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640d63", 
-      "addr": "00640d63", 
-      "value": "0.110000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640d6b", 
-      "addr": "00640d6b", 
-      "value": "0.150000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00640d73", 
-      "addr": "00640d73", 
-      "value": "255"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005556f9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 92, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = iVar7;"
-    }, 
-    {
-      "line": 100, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "dest_indices[local_2c] = (uchar)unaff_EBX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005556f0", 
-    "signature": "void shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer * this_ptr, uchar * src_pixels, uchar * dest_indices, short start_x, short end_x, short num_palette_entries)", 
-    "address_range": [
-      [
-        "005556f0", 
-        "00555a36"
-      ]
-    ], 
-    "name": "shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0"
-  }, 
-  "stack_frame": {
-    "local_size": 124, 
-    "variables": [
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CColorQuantizer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uchar *", 
-        "size": 4, 
-        "name": "src_pixels"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uchar *", 
-        "size": 4, 
-        "name": "dest_indices"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "short", 
-        "size": 2, 
-        "name": "start_x"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "short", 
-        "size": 2, 
-        "name": "end_x"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "short", 
-        "size": 2, 
-        "name": "num_palette_entries"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 146, 
-    "param_offset": 4, 
-    "param_size": 22
-  }, 
+    ],
+    "total_lines": 413
+  },
   "cross_references": [
     {
-      "from_addr": "005562d1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180", 
-      "addr": "00556180"
+      "addr": "00556180",
+      "from_addr": "005562d1",
+      "name": "shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005556f0",
+    "address_range": [
+      [
+        "005556f0",
+        "00555a36"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0",
+    "signature": "void shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer * this_ptr, uchar * src_pixels, uchar * dest_indices, short start_x, short end_x, short num_palette_entries)"
+  },
+  "function_calls": [
+    {
+      "addr": "00556df0",
+      "name": "shape_quantize.cpp_getAbsoluteValue_FUN_00556df0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00640d53",
+      "name": "DOUBLE_00640d53",
+      "type": "double",
+      "value": "0.300000000000000"
+    },
+    {
+      "addr": "00640d5b",
+      "name": "DOUBLE_00640d5b",
+      "type": "double",
+      "value": "0.590000000000000"
+    },
+    {
+      "addr": "00640d63",
+      "name": "DOUBLE_00640d63",
+      "type": "double",
+      "value": "0.110000000000000"
+    },
+    {
+      "addr": "00640d6b",
+      "name": "DOUBLE_00640d6b",
+      "type": "double",
+      "value": "0.150000000000000"
+    },
+    {
+      "addr": "00640d73",
+      "name": "DOUBLE_00640d73",
+      "type": "double",
+      "value": "255"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 146,
+    "local_size": 124,
+    "param_offset": 4,
+    "param_size": 22,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CColorQuantizer *"
+      },
+      {
+        "is_param": true,
+        "name": "src_pixels",
+        "offset": 8,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "dest_indices",
+        "offset": 12,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "start_x",
+        "offset": 16,
+        "size": 2,
+        "type": "short"
+      },
+      {
+        "is_param": true,
+        "name": "end_x",
+        "offset": 20,
+        "size": 2,
+        "type": "short"
+      },
+      {
+        "is_param": true,
+        "name": "num_palette_entries",
+        "offset": 24,
+        "size": 2,
+        "type": "short"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005556f9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 92,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = iVar7;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 100,
+      "match": "unaff_EBX",
+      "text": "dest_indices[local_2c] = (uchar)unaff_EBX;",
+      "type": "unaffected_reg"
     }
   ]
 }

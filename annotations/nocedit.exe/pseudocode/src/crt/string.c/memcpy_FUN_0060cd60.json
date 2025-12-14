@@ -1,114 +1,114 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 54, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 5, 
-    "global_count": 0, 
-    "total_lines": 41, 
-    "assembly_lines": 22, 
-    "suspect_count": 3, 
+    "assembly_lines": 22,
+    "complexity_score": 52,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 17,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "src = (uint *)((int)src + 4);"
-    }, 
-    {
-      "line": 18, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "src = (uint *)((int)src + 1);"
-    }, 
-    {
-      "line": 19, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar2 = (uint *)((int)puVar2 + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060cd60", 
-    "signature": "void * crt_string.c_memcpy_FUN_0060cd60(void * dest, void * src, SIZE_T count)", 
-    "address_range": [
-      [
-        "0060cd60", 
-        "0060cd88"
-      ]
-    ], 
-    "name": "crt_string.c_memcpy_FUN_0060cd60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "dest"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "src"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "typedef SIZE_T ULONG_PTR", 
-        "size": 4, 
-        "name": "count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 39
+  },
   "cross_references": [
     {
-      "from_addr": "0060f411", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
-      "addr": "0060f39c"
-    }, 
+      "addr": "0060f39c",
+      "from_addr": "0060f411",
+      "name": "crt_process.c_spawnvp_FUN_0060f39c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060e7c1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0", 
-      "addr": "0060e6a0"
-    }, 
+      "addr": "0060e6a0",
+      "from_addr": "0060e7c1",
+      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a68d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_wcsdup_FUN_0060a660", 
-      "addr": "0060a660"
-    }, 
+      "addr": "0060a660",
+      "from_addr": "0060a68d",
+      "name": "crt_string.c_wcsdup_FUN_0060a660",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060fbb2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060fb40", 
-      "addr": "0060fb40"
-    }, 
+      "addr": "0060fb40",
+      "from_addr": "0060fbb2",
+      "name": "crt_unknown.c_FUN_0060fb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060fe05", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060fcf4", 
-      "addr": "0060fcf4"
+      "addr": "0060fcf4",
+      "from_addr": "0060fe05",
+      "name": "crt_unknown.c_FUN_0060fcf4",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060cd60",
+    "address_range": [
+      [
+        "0060cd60",
+        "0060cd88"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c_memcpy_FUN_0060cd60",
+    "signature": "void * crt_string.c_memcpy_FUN_0060cd60(void * dest, void * src, SIZE_T count)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "typedef SIZE_T ULONG_PTR"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(uint *)((int)",
+      "text": "src = (uint *)((int)src + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)",
+      "text": "src = (uint *)((int)src + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)",
+      "text": "puVar2 = (uint *)((int)puVar2 + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

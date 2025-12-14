@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 4, 
-    "global_count": 1, 
-    "total_lines": 12, 
-    "assembly_lines": 5, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006027c8", 
-    "signature": "void crt_errno.c_SetWindowsError_FUN_006027c8(DWORD windows_error_code)", 
-    "address_range": [
-      [
-        "006027c8", 
-        "006027d5"
-      ]
-    ], 
-    "name": "crt_errno.c_SetWindowsError_FUN_006027c8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef DWORD ulong", 
-        "size": 4, 
-        "name": "windows_error_code"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 5,
+    "complexity_score": 7,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
   "cross_references": [
     {
-      "from_addr": "00608396", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_errno.c_convertWindowsErrorToErrno_FUN_00608390", 
-      "addr": "00608390"
-    }, 
+      "addr": "00608390",
+      "from_addr": "00608396",
+      "name": "crt_errno.c_convertWindowsErrorToErrno_FUN_00608390",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006102ed", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_build_cmdline_FUN_00610258", 
-      "addr": "00610258"
-    }, 
+      "addr": "00610258",
+      "from_addr": "006102ed",
+      "name": "crt_process.c_build_cmdline_FUN_00610258",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060f5f6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
-      "addr": "0060f39c"
-    }, 
+      "addr": "0060f39c",
+      "from_addr": "0060f5f6",
+      "name": "crt_process.c_spawnvp_FUN_0060f39c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060e7a2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0", 
-      "addr": "0060e6a0"
+      "addr": "0060e6a0",
+      "from_addr": "0060e7a2",
+      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "006027c8",
+    "address_range": [
+      [
+        "006027c8",
+        "006027d5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_errno.c_SetWindowsError_FUN_006027c8",
+    "signature": "void crt_errno.c_SetWindowsError_FUN_006027c8(DWORD windows_error_code)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "windows_error_code",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef DWORD ulong"
+      }
+    ]
+  },
+  "suspects": []
 }

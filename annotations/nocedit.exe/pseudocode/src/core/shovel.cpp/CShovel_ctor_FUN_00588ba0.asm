@@ -25,16 +25,16 @@ section .text
         ;   Label: core_shovel.cpp_CShovel_ctor_FUN_00588ba0
     MOV EDX,dword ptr [ESP + 0x8]       ; 00588ba1
     PUSH EDX                            ; 00588ba5
-    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 00588ba6 | CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
-        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)
+    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 00588ba6
+        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 00588bab
-    PUSH 0x649b9a                       ; 00588bae | = "shoveit.kfm" | s_shoveit_kfm_00649b9a = shoveit.kfm
+    PUSH 0x649b9a                       ; 00588bae | = "shoveit.kfm"
     MOV EBX,EAX                         ; 00588bb3
     ADD EAX,0x158                       ; 00588bb5
     PUSH EAX                            ; 00588bba
-    MOV dword ptr [EAX + -0x4],0x662bd4 ; 00588bbb | CDemonActor_vtable PTR_core_weapon.cpp_ActorModelSomething_FUN_00662bd4
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00588bc2 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x662bd4 ; 00588bbb | PTR_core_weapon.cpp_ActorModelSomething_FUN_00662bd4
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00588bc2
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x2e0],0x7     ; 00588bc7
     MOV dword ptr [EBX + 0x56c],0xffffffff ; 00588bd1
     MOV dword ptr [EBX + 0x568],0x0     ; 00588bdb

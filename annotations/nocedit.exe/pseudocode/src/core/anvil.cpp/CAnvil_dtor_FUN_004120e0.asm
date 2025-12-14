@@ -25,38 +25,38 @@ section .text
         ;   Label: core_anvil.cpp_CAnvil_dtor_FUN_004120e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004120e1
     TEST byte ptr [ESP + 0xc],0x4       ; 004120e5
-    JNZ 0x00412106                      ; 004120ea | LAB_00412106
-        ;   XREF to: 00412106 (CONDITIONAL_JUMP)
+    JNZ 0x00412106                      ; 004120ea
+        ;   XREF to: 00412106 (CONDITIONAL_JUMP)  ; LAB_00412106
     PUSH 0x1                            ; 004120ec
     PUSH EBX                            ; 004120ee
-    CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004120ef | CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 004120ef
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
     ADD ESP,0x8                         ; 004120f4
     MOV DL,byte ptr [ESP + 0xc]         ; 004120f7
     MOV EBX,EAX                         ; 004120fb
     TEST DL,0x2                         ; 004120fd
-    JNZ 0x00412121                      ; 00412100 | LAB_00412121
-        ;   XREF to: 00412121 (CONDITIONAL_JUMP)
+    JNZ 0x00412121                      ; 00412100
+        ;   XREF to: 00412121 (CONDITIONAL_JUMP)  ; LAB_00412121
     MOV EAX,EBX                         ; 00412102
     POP EBX                             ; 00412104
     RET                                 ; 00412105
-    PUSH 0x659cf0                       ; 00412106 | WatcomTypeInfo g_CAnvilTypeInfo
+    PUSH 0x659cf0                       ; 00412106 | g_CAnvilTypeInfo
         ;   Label: LAB_00412106
     PUSH EBX                            ; 0041210b
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0041210c | void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 0041210c
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00412111
     PUSH EAX                            ; 00412114
-    CALL crt_memory.c_free_FUN_005fe659 ; 00412115 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 00412115
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0041211a
     MOV EAX,EBX                         ; 0041211d
     POP EBX                             ; 0041211f
     RET                                 ; 00412120
     PUSH EAX                            ; 00412121
         ;   Label: LAB_00412121
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00412122 | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00412122
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00412127
     MOV EAX,EBX                         ; 0041212a
     POP EBX                             ; 0041212c

@@ -27,8 +27,8 @@ section .text
     PUSH EDI                            ; 00404602
     PUSH EBP                            ; 00404603
     SUB ESP,0x60                        ; 00404604
-    CALL engine_3d.c_setActiveRenderColor_FUN_00404540 ; 00404607 | void engine_3d.c_setActiveRenderColor_FUN_00404540()
-        ;   XREF to: 00404540 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_setActiveRenderColor_FUN_00404540 ; 00404607
+        ;   XREF to: 00404540 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setActiveRenderColor_FUN_00404540()
     MOV EBX,dword ptr [ESP + 0x74]      ; 0040460c
     XOR EBP,EBP                         ; 00404610
     ADD EBX,0x8                         ; 00404612
@@ -37,8 +37,8 @@ section .text
     MOV ESI,dword ptr [EAX + 0x4]       ; 00404619
     DEC ESI                             ; 0040461c
     CMP EBP,ESI                         ; 0040461d
-    JL 0x00404638                       ; 0040461f | LAB_00404638
-        ;   XREF to: 00404638 (CONDITIONAL_JUMP)
+    JL 0x00404638                       ; 0040461f
+        ;   XREF to: 00404638 (CONDITIONAL_JUMP)  ; LAB_00404638
     MOV EBX,dword ptr [ESP + 0x74]      ; 00404621
     MOV EAX,dword ptr [EAX + 0x4]       ; 00404625
     ADD EBX,0x8                         ; 00404628
@@ -54,13 +54,13 @@ section .text
         ;   Label: LAB_00404638
     MOV ECX,0xc                         ; 0040463b
     LEA EDI,[ESP + 0x30]                ; 00404640
-    LEA ESI,[ESI + 0x688014]            ; 00404644 | SRenderVertex[16] g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 0040464a | SRenderVertex[16] g_RenderVertexBuffer
+    LEA ESI,[ESI + 0x688014]            ; 00404644 | g_RenderVertexBuffer
+    MOVSD.REP ES:EDI,ESI                ; 0040464a | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     IMUL ESI,dword ptr [EBX + 0x4],0x30 ; 0040464c
     MOV EDI,ESP                         ; 00404650
     MOV ECX,0xc                         ; 00404652
-    LEA ESI,[ESI + 0x688014]            ; 00404657 | SRenderVertex[16] g_RenderVertexBuffer
-    MOVSD.REP ES:EDI,ESI                ; 0040465d | SRenderVertex[16] g_RenderVertexBuffer
+    LEA ESI,[ESI + 0x688014]            ; 00404657 | g_RenderVertexBuffer
+    MOVSD.REP ES:EDI,ESI                ; 0040465d | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
     MOV ECX,0xc                         ; 0040465f
     SUB ESP,0x30                        ; 00404664
     LEA ESI,[ESP + 0x30]                ; 00404667
@@ -73,9 +73,9 @@ section .text
     ADD EBX,0x4                         ; 00404680
     INC EBP                             ; 00404683
     MOVSD.REP ES:EDI,ESI                ; 00404684
-    CALL engine_3d.c_clipAndDrawLine3D_FUN_00408070 ; 00404686 | void engine_3d.c_clipAndDrawLine3D_FUN_00408070(SRenderVertex * vertex1, SRenderVertex * vertex2)
-        ;   XREF to: 00408070 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_clipAndDrawLine3D_FUN_00408070 ; 00404686
+        ;   XREF to: 00408070 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine3D_FUN_00408070(SRenderVertex * vertex1, SRenderVertex * vertex2)
     ADD ESP,0x60                        ; 0040468b
-    JMP 0x00404615                      ; 0040468e | LAB_00404615
-        ;   XREF to: 00404615 (UNCONDITIONAL_JUMP)
+    JMP 0x00404615                      ; 0040468e
+        ;   XREF to: 00404615 (UNCONDITIONAL_JUMP)  ; LAB_00404615
 

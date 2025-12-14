@@ -43,29 +43,29 @@ section .text
     SUB ESP,0x1c                        ; 00450446
     MOV EDI,dword ptr [EBP + 0x18]      ; 00450449
     MOV EDX,dword ptr [EBP + 0x14]      ; 0045044c
-    SUB EDX,dword ptr [0x02d0255c]      ; 0045044f | int g_ClipTop
-    MOV ECX,dword ptr [0x013bc260]      ; 00450455 | int g_CameraDownscaleIterations
+    SUB EDX,dword ptr [0x02d0255c]      ; 0045044f | g_ClipTop
+    MOV ECX,dword ptr [0x013bc260]      ; 00450455 | g_CameraDownscaleIterations
     MOV dword ptr [EBP + 0x14],EDX      ; 0045045b
     CMP ECX,0x1                         ; 0045045e
-    JNZ 0x0045046d                      ; 00450461 | LAB_0045046d
-        ;   XREF to: 0045046d (CONDITIONAL_JUMP)
+    JNZ 0x0045046d                      ; 00450461
+        ;   XREF to: 0045046d (CONDITIONAL_JUMP)  ; LAB_0045046d
     TEST byte ptr [EBP + 0x14],0x1      ; 00450463
-    JNZ 0x004505d6                      ; 00450467 | LAB_004505d6
-        ;   XREF to: 004505d6 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x013bc260],0x2      ; 0045046d | int g_CameraDownscaleIterations
+    JNZ 0x004505d6                      ; 00450467
+        ;   XREF to: 004505d6 (CONDITIONAL_JUMP)  ; LAB_004505d6
+    CMP dword ptr [0x013bc260],0x2      ; 0045046d | g_CameraDownscaleIterations
         ;   Label: LAB_0045046d
-    JNZ 0x00450480                      ; 00450474 | LAB_00450480
-        ;   XREF to: 00450480 (CONDITIONAL_JUMP)
+    JNZ 0x00450480                      ; 00450474
+        ;   XREF to: 00450480 (CONDITIONAL_JUMP)  ; LAB_00450480
     TEST byte ptr [EBP + 0x14],0x3      ; 00450476
-    JNZ 0x004505d6                      ; 0045047a | LAB_004505d6
-        ;   XREF to: 004505d6 (CONDITIONAL_JUMP)
+    JNZ 0x004505d6                      ; 0045047a
+        ;   XREF to: 004505d6 (CONDITIONAL_JUMP)  ; LAB_004505d6
     MOV ESI,dword ptr [EBP + 0x14]      ; 00450480
         ;   Label: LAB_00450480
-    MOV CL,byte ptr [0x013bc260]        ; 00450483 | int g_CameraDownscaleIterations
+    MOV CL,byte ptr [0x013bc260]        ; 00450483 | g_CameraDownscaleIterations
     SAR ESI,CL                          ; 00450489
     MOV dword ptr [EBP + 0x14],ESI      ; 0045048b
     MOV ESI,dword ptr [EBP + 0x1c]      ; 0045048e
-    MOV EAX,[0x02d02558]                ; 00450491 | int g_ClipLeft
+    MOV EAX,[0x02d02558]                ; 00450491 | g_ClipLeft
     MOV EBX,dword ptr [EDI + 0x8]       ; 00450496
     MOV ESI,dword ptr [ESI + 0x8]       ; 00450499
     SAR EBX,0x10                        ; 0045049c
@@ -75,8 +75,8 @@ section .text
     SAR EBX,CL                          ; 004504a6
     SAR ESI,CL                          ; 004504a8
     CMP EBX,ESI                         ; 004504aa
-    JLE 0x004504bc                      ; 004504ac | LAB_004504bc
-        ;   XREF to: 004504bc (CONDITIONAL_JUMP)
+    JLE 0x004504bc                      ; 004504ac
+        ;   XREF to: 004504bc (CONDITIONAL_JUMP)  ; LAB_004504bc
     MOV EAX,EBX                         ; 004504ae
     MOV EBX,ESI                         ; 004504b0
     MOV ESI,EAX                         ; 004504b2
@@ -124,20 +124,20 @@ section .text
     SAR EDX,0x1f                        ; 0045051b
     IDIV ECX                            ; 0045051e
     MOV dword ptr [EBP + -0x10],EAX     ; 00450520
-    MOV CL,byte ptr [0x013bc260]        ; 00450523 | int g_CameraDownscaleIterations
+    MOV CL,byte ptr [0x013bc260]        ; 00450523 | g_CameraDownscaleIterations
     MOV EDX,EBX                         ; 00450529
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045052b
     SHL EDX,CL                          ; 0045052e
     SHL EAX,CL                          ; 00450530
     SHL EDX,0x2                         ; 00450532
-    MOV EAX,dword ptr [EAX*0x4 + 0x2cf7d5c] ; 00450535 | uint *[1024] g_ZBufferScanlineArray
+    MOV EAX,dword ptr [EAX*0x4 + 0x2cf7d5c] ; 00450535 | g_ZBufferScanlineArray
     ADD EAX,EDX                         ; 0045053c
     MOV dword ptr [EBP + -0xc],EAX      ; 0045053e
     MOV EDX,dword ptr [EBP + 0x14]      ; 00450541
     LEA EAX,[EDX*0x4 + 0x0]             ; 00450544
     ADD EAX,EDX                         ; 0045054b
     SHL EAX,0x6                         ; 0045054d
-    ADD EAX,0x13da778                   ; 00450550 | SFogImagePlane g_CameraPlaneWorkBuffer
+    ADD EAX,0x13da778                   ; 00450550 | g_CameraPlaneWorkBuffer
     ADD EAX,EBX                         ; 00450555
     MOV dword ptr [EBP + -0x8],EAX      ; 00450557
     SUB ESI,EBX                         ; 0045055a
@@ -145,25 +145,25 @@ section .text
     MOV ECX,dword ptr [EBP + 0xfffffffc] ; 0045055f
     SHL ECX,0x2                         ; 00450565
     MOV ESI,dword ptr [EBP + 0xfffffff8] ; 00450568
-    MOV EDI,dword ptr [0x013bbe30]      ; 0045056e | int g_DitherPatternOffset
+    MOV EDI,dword ptr [0x013bbe30]      ; 0045056e | g_DitherPatternOffset
     MOV EBX,dword ptr [EBP + 0xffffffe4] ; 00450574
     MOV EDX,dword ptr [EBP + 0xffffffec] ; 0045057a
     MOV EAX,ECX                         ; 00450580
         ;   Label: LAB_00450580
     ADD EAX,dword ptr [EBP + 0xfffffff4] ; 00450582
     CMP EBX,dword ptr [EAX]             ; 00450588
-    JLE 0x004505b4                      ; 0045058a | LAB_004505b4
-        ;   XREF to: 004505b4 (CONDITIONAL_JUMP)
+    JLE 0x004505b4                      ; 0045058a
+        ;   XREF to: 004505b4 (CONDITIONAL_JUMP)  ; LAB_004505b4
     MOVZX EAX,byte ptr [ESI]            ; 0045058c
     SHL EAX,0x8                         ; 0045058f
     ADD EAX,EDX                         ; 00450592
-    ADD EAX,dword ptr [EDI + 0x13bbe34] ; 00450594 | int[256] g_DitherPatternTable
+    ADD EAX,dword ptr [EDI + 0x13bbe34] ; 00450594 | g_DitherPatternTable | g_DitherPatternTable[1]
     ADD EDI,0x4                         ; 0045059a
     AND EDI,0x3fc                       ; 0045059d
     SHR EAX,0x8                         ; 004505a3
     CMP EAX,0xff                        ; 004505a6
-    JC 0x004505b2                       ; 004505ab | LAB_004505b2
-        ;   XREF to: 004505b2 (CONDITIONAL_JUMP)
+    JC 0x004505b2                       ; 004505ab
+        ;   XREF to: 004505b2 (CONDITIONAL_JUMP)  ; LAB_004505b2
     MOV EAX,0xff                        ; 004505ad
     MOV byte ptr [ESI],AL               ; 004505b2
         ;   Label: LAB_004505b2
@@ -172,10 +172,10 @@ section .text
     ADD EBX,dword ptr [EBP + 0xffffffe8] ; 004505ba
     INC ESI                             ; 004505c0
     SUB ECX,0x4                         ; 004505c1
-    JG 0x00450580                       ; 004505c4 | LAB_00450580
-        ;   XREF to: 00450580 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x013bbe30],EDI      ; 004505c6 | int g_DitherPatternOffset
-    MOV dword ptr [0x013bbe2c],0x1      ; 004505cc | int g_BackdropSaveActive
+    JG 0x00450580                       ; 004505c4
+        ;   XREF to: 00450580 (CONDITIONAL_JUMP)  ; LAB_00450580
+    MOV dword ptr [0x013bbe30],EDI      ; 004505c6 | g_DitherPatternOffset
+    MOV dword ptr [0x013bbe2c],0x1      ; 004505cc | g_BackdropSaveActive
     MOV ESP,EBP                         ; 004505d6
         ;   Label: LAB_004505d6
     POP EBP                             ; 004505d8

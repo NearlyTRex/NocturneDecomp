@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 16, 
-    "assembly_lines": 10, 
-    "suspect_count": 2, 
+    "assembly_lines": 10,
+    "complexity_score": 31,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80", 
-      "addr": "00406d80"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return (SMRGLHeaderExtended *)(in_stack_00000008 + 8);"
-    }
-  ], 
+    ],
+    "total_lines": 16
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00406d60", 
-    "signature": "SMRGLHeaderExtended * engine_3d.c_setRenderAlpha_FUN_00406d60(SMRGLHeaderExtended * block)", 
+    "address": "00406d60",
     "address_range": [
       [
-        "00406d60", 
+        "00406d60",
         "00406d77"
       ]
-    ], 
-    "name": "engine_3d.c_setRenderAlpha_FUN_00406d60"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_setRenderAlpha_FUN_00406d60",
+    "signature": "SMRGLHeaderExtended * engine_3d.c_setRenderAlpha_FUN_00406d60(SMRGLHeaderExtended * block)"
+  },
+  "function_calls": [
+    {
+      "addr": "00406d80",
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderExtended *", 
-        "size": 4, 
-        "name": "block"
+        "is_param": true,
+        "name": "block",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "return (SMRGLHeaderExtended *)(in_stack_00000008 + 8);",
+      "type": "stack_param"
+    }
+  ]
 }

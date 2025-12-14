@@ -11,12 +11,11 @@ engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitiv
 
 {
   int iVar1;
-  int iVar2;
-  SMRGLHeaderPrimitive *pSVar3;
-  int *piVar4;
+  SMRGLHeaderPrimitive *pSVar2;
+  int *piVar3;
   
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
-  if (iVar2 != 0) {
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
+  if (iVar1 != 0) {
     if (g_TexturesDisabled == 0) {
       if (DAT_00772a70 == 0) {
         if (g_MMXSupported == 0) {
@@ -103,17 +102,16 @@ engine_3d_c_renderPolygonTextureAdaptiveWrapped_FUN_00406430(SMRGLHeaderPrimitiv
       g_RenderStateFlags = 0;
       g_RenderStateFlag2 = PREPROCESS_NONE;
     }
-    piVar4 = g_ProcessedVertexIndices;
-    pSVar3 = polygon_info + 1;
-    for (iVar2 = 0; iVar1 = (polygon_info->base).count,
-        SBORROW /* signed borrow */4(iVar2,iVar1 * 3) != iVar2 + iVar1 * -3 < 0; iVar2 = iVar2 + 3) {
-      *piVar4 = (pSVar3->base).type + g_ProcessedVertexOffset;
-      g_RenderVertexBuffer[(pSVar3->base).type + g_ProcessedVertexOffset].u =
-           (float)(pSVar3->base).count;
-      piVar4 = piVar4 + 1;
-      g_RenderVertexBuffer[(pSVar3->base).type + g_ProcessedVertexOffset].v =
-           (float)(pSVar3->surface_normal).A;
-      pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
+    piVar3 = g_ProcessedVertexIndices;
+    pSVar2 = polygon_info + 1;
+    for (iVar1 = 0; iVar1 < (polygon_info->base).count * 3; iVar1 = iVar1 + 3) {
+      *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
+      g_RenderVertexBuffer[(pSVar2->base).type + g_ProcessedVertexOffset].u =
+           (float)(pSVar2->base).count;
+      piVar3 = piVar3 + 1;
+      g_RenderVertexBuffer[(pSVar2->base).type + g_ProcessedVertexOffset].v =
+           (float)(pSVar2->surface_normal).A;
+      pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0
               ((polygon_info->base).count,g_ProcessedVertexIndices);

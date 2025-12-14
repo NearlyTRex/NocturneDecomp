@@ -11,8 +11,7 @@ void core_mobster_cpp_FUN_005251c0(void)
 {
   CMobster *this_ptr;
   
-  this_ptr = (CMobster *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"..\\core\\mobster.cpp",0x85);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf94,"..\\core\\mobster.cpp",0x85);
   if (this_ptr == (CMobster *)0x0) {
     return;
   }

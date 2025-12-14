@@ -11,8 +11,7 @@ void core_hero_cpp_FUN_004f3bc0(void)
 {
   CHeroPlaceholder *this_ptr;
   
-  this_ptr = (CHeroPlaceholder *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x15c,"..\\core\\hero.cpp",0x527);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x15c,"..\\core\\hero.cpp",0x527);
   if (this_ptr == (CHeroPlaceholder *)0x0) {
     return;
   }

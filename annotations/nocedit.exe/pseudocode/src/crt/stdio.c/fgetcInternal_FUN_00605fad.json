@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 53, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 83, 
-    "assembly_lines": 55, 
-    "suspect_count": 2, 
+    "assembly_lines": 55,
+    "complexity_score": 53,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
-      "addr": "00606020"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));"
-    }, 
-    {
-      "line": 28, 
-      "match": "(FileEmbeddedData *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),6);"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00605fad", 
-    "signature": "FILE * crt_stdio.c_fgetcInternal_FUN_00605fad(FILE * stream, byte * output_byte)", 
-    "address_range": [
-      [
-        "00605fad", 
-        "0060601f"
-      ]
-    ], 
-    "name": "crt_stdio.c_fgetcInternal_FUN_00605fad"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "stream"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "output_byte"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 83
+  },
   "cross_references": [
     {
-      "from_addr": "005ff2c8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fgetc_outptr_FUN_005ff245", 
-      "addr": "005ff245"
+      "addr": "005ff245",
+      "from_addr": "005ff2c8",
+      "name": "crt_stdio.c_fgetc_outptr_FUN_005ff245",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00605fad",
+    "address_range": [
+      [
+        "00605fad",
+        "0060601f"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_fgetcInternal_FUN_00605fad",
+    "signature": "FILE * crt_stdio.c_fgetcInternal_FUN_00605fad(FILE * stream, byte * output_byte)"
+  },
+  "function_calls": [
+    {
+      "addr": "00606020",
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "output_byte",
+        "offset": 8,
+        "size": 4,
+        "type": "byte *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(FileEmbeddedData *)((int)",
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),6);",
+      "type": "pointer_cast"
     }
   ]
 }

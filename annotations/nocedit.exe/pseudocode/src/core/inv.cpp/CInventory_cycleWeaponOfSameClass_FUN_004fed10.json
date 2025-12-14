@@ -1,133 +1,133 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 121, 
-    "pseudocode_lines": 61, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 184, 
-    "assembly_lines": 123, 
-    "suspect_count": 5, 
+    "assembly_lines": 123,
+    "complexity_score": 121,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 1,
+    "pseudocode_lines": 61,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }, 
-    {
-      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
-      "addr": "00408b90"
-    }, 
-    {
-      "name": "core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0", 
-      "addr": "004fffa0"
-    }, 
-    {
-      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10", 
-      "addr": "004ffe10"
-    }, 
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "g_CWeaponClassInfo.name_hash", 
-      "addr": "03f95d78", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "char *unaff_ESI;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CWeapon *in_stack_0000000c;"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar2 = (in_stack_0000000c->base_actor).actor_name + (int)pcVar2;"
-    }, 
-    {
-      "line": 46, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar1 = crt_string_c_strcmp_FUN_005fef20(str1,unaff_ESI);"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->selected_weapon = in_stack_0000000c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004fed10", 
-    "signature": "void core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory * this_ptr, int direction)", 
-    "address_range": [
-      [
-        "004fed10", 
-        "004fedfe"
-      ]
-    ], 
-    "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CInventory *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "direction"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 184
+  },
   "cross_references": [
     {
-      "from_addr": "004dc793", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0", 
-      "addr": "004dc3e0"
+      "addr": "004dc3e0",
+      "from_addr": "004dc793",
+      "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fed10",
+    "address_range": [
+      [
+        "004fed10",
+        "004fedfe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10",
+    "signature": "void core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory * this_ptr, int direction)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "00408b90",
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90"
+    },
+    {
+      "addr": "004fffa0",
+      "name": "core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0"
+    },
+    {
+      "addr": "004ffe10",
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10"
+    },
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f95d78",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "text": "char *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000000c",
+      "text": "CWeapon *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_0000000c",
+      "text": "pcVar2 = (in_stack_0000000c->base_actor).actor_name + (int)pcVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_ESI",
+      "text": "iVar1 = crt_string_c_strcmp_FUN_005fef20(str1,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_0000000c",
+      "text": "this_ptr->selected_weapon = in_stack_0000000c;",
+      "type": "stack_param"
     }
   ]
 }

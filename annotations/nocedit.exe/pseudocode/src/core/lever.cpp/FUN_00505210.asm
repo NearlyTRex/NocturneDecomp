@@ -23,12 +23,12 @@ section .text
     PUSH EDX                            ; 00505216
     MOV ECX,dword ptr [ESP + 0x8]       ; 00505217
     PUSH ECX                            ; 0050521b
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 0050521c | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 0050521c
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00505221
     PUSH EAX                            ; 00505224
-    CALL core_lever.cpp_FUN_00504c90    ; 00505225 | undefined core_lever.cpp_FUN_00504c90()
-        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)
+    CALL core_lever.cpp_FUN_00504c90    ; 00505225
+        ;   XREF to: 00504c90 (UNCONDITIONAL_CALL)  ; undefined core_lever.cpp_FUN_00504c90()
     MOV EAX,0x1                         ; 0050522a
     ADD ESP,0x4                         ; 0050522f
     RET                                 ; 00505232

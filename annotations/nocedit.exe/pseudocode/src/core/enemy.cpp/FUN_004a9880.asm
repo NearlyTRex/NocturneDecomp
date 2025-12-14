@@ -42,8 +42,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 004a988e
     MOV EDX,dword ptr [EAX + 0xbe3c]    ; 004a9891
     TEST EDX,EDX                        ; 004a9897
-    JNZ 0x004a98a3                      ; 004a9899 | LAB_004a98a3
-        ;   XREF to: 004a98a3 (CONDITIONAL_JUMP)
+    JNZ 0x004a98a3                      ; 004a9899
+        ;   XREF to: 004a98a3 (CONDITIONAL_JUMP)  ; LAB_004a98a3
     XOR EAX,EAX                         ; 004a989b
         ;   Label: LAB_004a989b
     MOV ESP,EBP                         ; 004a989d
@@ -68,18 +68,18 @@ section .text
     FCOMP double ptr [ESP]              ; 004a98c8
     FNSTSW AX                           ; 004a98cb
     SAHF                                ; 004a98cd
-    JNC 0x004a989b                      ; 004a98ce | LAB_004a989b
-        ;   XREF to: 004a989b (CONDITIONAL_JUMP)
+    JNC 0x004a989b                      ; 004a98ce
+        ;   XREF to: 004a989b (CONDITIONAL_JUMP)  ; LAB_004a989b
     FLD double ptr [ESP]                ; 004a98d0
-    FMUL double ptr [0x0062438a]        ; 004a98d3 | double DOUBLE_0062438a
+    FMUL double ptr [0x0062438a]        ; 004a98d3 | DOUBLE_0062438a
     MOV EAX,dword ptr [EBX]             ; 004a98d9
-    FMUL double ptr [0x00624392]        ; 004a98db | double DOUBLE_00624392
+    FMUL double ptr [0x00624392]        ; 004a98db | DOUBLE_00624392
     MOV dword ptr [ESP + 0x8],EAX       ; 004a98e1
     LEA EAX,[EBX + 0x4]                 ; 004a98e5
     PUSH 0x0                            ; 004a98e8
     MOV EAX,dword ptr [EAX]             ; 004a98ea
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004a98ec | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004a98ec
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     MOV dword ptr [ESP + 0x10],EAX      ; 004a98f1
     LEA EAX,[EBX + 0x8]                 ; 004a98f5
     FISTP dword ptr [ESP + 0x18]        ; 004a98f8
@@ -90,10 +90,10 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 004a9905
     LEA EAX,[ESP + 0x14]                ; 004a9909
     PUSH EAX                            ; 004a990d
-    MOV ESI,dword ptr [0x0067b9a0]      ; 004a990e | CGore * g_CGorePtr
-    PUSH ESI                            ; 004a9914 | CGore g_CGoreInstance
-    CALL core_gore.cpp_FUN_004edbb0     ; 004a9915 | undefined core_gore.cpp_FUN_004edbb0()
-        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)
+    MOV ESI,dword ptr [0x0067b9a0]      ; 004a990e | g_CGorePtr
+    PUSH ESI                            ; 004a9914 | g_CGoreInstance
+    CALL core_gore.cpp_FUN_004edbb0     ; 004a9915
+        ;   XREF to: 004edbb0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004edbb0()
     MOV EAX,0x1                         ; 004a991a
     ADD ESP,0x14                        ; 004a991f
     MOV ESP,EBP                         ; 004a9922

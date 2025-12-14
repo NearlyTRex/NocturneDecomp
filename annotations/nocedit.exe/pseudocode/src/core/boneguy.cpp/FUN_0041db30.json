@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 15, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_freeTypeArray_FUN_005feee9", 
-      "addr": "005feee9"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_SBoneGuyBoxTypeInfo", 
-      "addr": "0065b0e0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0041db30", 
-    "signature": "int core_boneguy.cpp_FUN_0041db30(SBoneGuyBox * * objs)", 
-    "address_range": [
-      [
-        "0041db30", 
-        "0041db44"
-      ]
-    ], 
-    "name": "core_boneguy.cpp_FUN_0041db30"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SBoneGuyBox * *", 
-        "size": 4, 
-        "name": "objs"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "0041da59", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_CBoneGuy_dtor_FUN_0041da40", 
-      "addr": "0041da40"
+      "addr": "0041da40",
+      "from_addr": "0041da59",
+      "name": "core_boneguy.cpp_CBoneGuy_dtor_FUN_0041da40",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0041db30",
+    "address_range": [
+      [
+        "0041db30",
+        "0041db44"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boneguy.cpp_FUN_0041db30",
+    "signature": "int core_boneguy.cpp_FUN_0041db30(SBoneGuyBox * * objs)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feee9",
+      "name": "crt_memory.c_freeTypeArray_FUN_005feee9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065b0e0",
+      "name": "g_SBoneGuyBoxTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "objs",
+        "offset": 4,
+        "size": 4,
+        "type": "SBoneGuyBox * *"
+      }
+    ]
+  },
+  "suspects": []
 }

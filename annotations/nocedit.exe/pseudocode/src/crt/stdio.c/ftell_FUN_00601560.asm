@@ -39,46 +39,46 @@ section .text
     PUSH EBP                            ; 00601563
     MOV EBX,dword ptr [ESP + 0x14]      ; 00601564
     TEST byte ptr [EBX + 0xc],0x80      ; 00601568
-    JZ 0x0060157d                       ; 0060156c | LAB_0060157d
-        ;   XREF to: 0060157d (CONDITIONAL_JUMP)
+    JZ 0x0060157d                       ; 0060156c
+        ;   XREF to: 0060157d (CONDITIONAL_JUMP)  ; LAB_0060157d
     TEST byte ptr [EBX + 0xd],0x10      ; 0060156e
-    JZ 0x0060157d                       ; 00601572 | LAB_0060157d
-        ;   XREF to: 0060157d (CONDITIONAL_JUMP)
+    JZ 0x0060157d                       ; 00601572
+        ;   XREF to: 0060157d (CONDITIONAL_JUMP)  ; LAB_0060157d
     PUSH EBX                            ; 00601574
-    CALL crt_stdio.c_fflush_FUN_00601540 ; 00601575 | int crt_stdio.c_fflush_FUN_00601540(FILE * stream)
-        ;   XREF to: 00601540 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fflush_FUN_00601540 ; 00601575
+        ;   XREF to: 00601540 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00601540(FILE * stream)
     ADD ESP,0x4                         ; 0060157a
     MOV EDX,dword ptr [EBX + 0x10]      ; 0060157d
         ;   Label: LAB_0060157d
     PUSH EDX                            ; 00601580
-    CALL crt_io.c_tell_FUN_00606720     ; 00601581 | long crt_io.c_tell_FUN_00606720(int file_handle_index)
-        ;   XREF to: 00606720 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_tell_FUN_00606720     ; 00601581
+        ;   XREF to: 00606720 (UNCONDITIONAL_CALL)  ; long crt_io.c_tell_FUN_00606720(int file_handle_index)
     MOV ESI,EAX                         ; 00601586
     ADD ESP,0x4                         ; 00601588
     MOV EDI,EAX                         ; 0060158b
     CMP EAX,-0x1                        ; 0060158d
-    JZ 0x006015c0                       ; 00601590 | LAB_006015c0
-        ;   XREF to: 006015c0 (CONDITIONAL_JUMP)
+    JZ 0x006015c0                       ; 00601590
+        ;   XREF to: 006015c0 (CONDITIONAL_JUMP)  ; LAB_006015c0
     MOV ECX,dword ptr [EBX + 0x10]      ; 00601592
     PUSH ECX                            ; 00601595
-    CALL dword ptr [0x00684ee8]         ; 00601596 | ENTER_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
+    CALL dword ptr [0x00684ee8]         ; 00601596 | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
     MOV EBP,dword ptr [EBX + 0x4]       ; 0060159c
     ADD ESP,0x4                         ; 0060159f
     TEST EBP,EBP                        ; 006015a2
-    JZ 0x006015b3                       ; 006015a4 | LAB_006015b3
-        ;   XREF to: 006015b3 (CONDITIONAL_JUMP)
+    JZ 0x006015b3                       ; 006015a4
+        ;   XREF to: 006015b3 (CONDITIONAL_JUMP)  ; LAB_006015b3
     TEST byte ptr [EBX + 0xd],0x10      ; 006015a6
-    JZ 0x006015b1                       ; 006015aa | LAB_006015b1
-        ;   XREF to: 006015b1 (CONDITIONAL_JUMP)
+    JZ 0x006015b1                       ; 006015aa
+        ;   XREF to: 006015b1 (CONDITIONAL_JUMP)  ; LAB_006015b1
     LEA EDI,[ESI + EBP*0x1]             ; 006015ac
-    JMP 0x006015b3                      ; 006015af | LAB_006015b3
-        ;   XREF to: 006015b3 (UNCONDITIONAL_JUMP)
+    JMP 0x006015b3                      ; 006015af
+        ;   XREF to: 006015b3 (UNCONDITIONAL_JUMP)  ; LAB_006015b3
     SUB EDI,EBP                         ; 006015b1
         ;   Label: LAB_006015b1
     MOV EDX,dword ptr [EBX + 0x10]      ; 006015b3
         ;   Label: LAB_006015b3
     PUSH EDX                            ; 006015b6
-    CALL dword ptr [0x00684eec]         ; 006015b7 | EXIT_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
+    CALL dword ptr [0x00684eec]         ; 006015b7 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 006015bd
     MOV EAX,EDI                         ; 006015c0
         ;   Label: LAB_006015c0

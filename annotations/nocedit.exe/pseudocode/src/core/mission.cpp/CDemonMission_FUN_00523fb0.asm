@@ -38,8 +38,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 00523fb2
     MOV EAX,dword ptr [ESP + 0x10]      ; 00523fb6
     CMP EAX,dword ptr [EBX]             ; 00523fba
-    JNZ 0x00523fc1                      ; 00523fbc | LAB_00523fc1
-        ;   XREF to: 00523fc1 (CONDITIONAL_JUMP)
+    JNZ 0x00523fc1                      ; 00523fbc
+        ;   XREF to: 00523fc1 (CONDITIONAL_JUMP)  ; LAB_00523fc1
     POP ESI                             ; 00523fbe
         ;   Label: LAB_00523fbe
     POP EBX                             ; 00523fbf
@@ -51,41 +51,41 @@ section .text
     LEA EAX,[EBX + 0x148]               ; 00523fc8
     ADD EAX,EDX                         ; 00523fce
     PUSH EAX                            ; 00523fd0
-    MOV ECX,dword ptr [0x006810c8]      ; 00523fd1 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
-    PUSH ECX                            ; 00523fd7 | CDemonSet g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_load_FUN_00569410 ; 00523fd8 | void core_set.cpp_CDemonSet_load_FUN_00569410(CDemonSet * this_ptr, char * filename)
-        ;   XREF to: 00569410 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x006810c8]      ; 00523fd1 | g_CDemonSetInstance | g_CDemonSetPtr
+    PUSH ECX                            ; 00523fd7 | g_CDemonSetInstance
+    CALL core_set.cpp_CDemonSet_load_FUN_00569410 ; 00523fd8
+        ;   XREF to: 00569410 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_load_FUN_00569410(CDemonSet * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00523fdd
     PUSH EBX                            ; 00523fe0
-    CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60 ; 00523fe1 | void core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemonMission * this_ptr)
-        ;   XREF to: 00523e60 (UNCONDITIONAL_CALL)
+    CALL core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60 ; 00523fe1
+        ;   XREF to: 00523e60 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60(CDemonMission * this_ptr)
     MOV ESI,dword ptr [EBX + 0x884]     ; 00523fe6
     ADD ESP,0x4                         ; 00523fec
     TEST ESI,ESI                        ; 00523fef
-    JZ 0x0052401e                       ; 00523ff1 | LAB_0052401e
-        ;   XREF to: 0052401e (CONDITIONAL_JUMP)
+    JZ 0x0052401e                       ; 00523ff1
+        ;   XREF to: 0052401e (CONDITIONAL_JUMP)  ; LAB_0052401e
     XOR ESI,ESI                         ; 00523ff3
         ;   Label: LAB_00523ff3
     XOR EBX,EBX                         ; 00523ff5
-    MOV EAX,[0x006810c8]                ; 00523ff7 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
+    MOV EAX,[0x006810c8]                ; 00523ff7 | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_00523ff7
     CMP EBX,dword ptr [EAX + 0x14d154]  ; 00523ffc | g_CDemonSetInstance.actor_list_ptr
-    JGE 0x00523fbe                      ; 00524002 | LAB_00523fbe
-        ;   XREF to: 00523fbe (CONDITIONAL_JUMP)
-    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00524004 | g_CDemonSetInstance.actor_list_data[0]
+    JGE 0x00523fbe                      ; 00524002
+        ;   XREF to: 00523fbe (CONDITIONAL_JUMP)  ; LAB_00523fbe
+    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d158] ; 00524004 | g_CDemonSetInstance.actor_list_data[0] | DAT_032613d4
     PUSH EAX                            ; 0052400b
     MOV EDX,dword ptr [EAX + 0x154]     ; 0052400c
     ADD ESI,0x4                         ; 00524012
     INC EBX                             ; 00524015
     CALL dword ptr [EDX + 0x48]         ; 00524016
     ADD ESP,0x4                         ; 00524019
-    JMP 0x00523ff7                      ; 0052401c | LAB_00523ff7
-        ;   XREF to: 00523ff7 (UNCONDITIONAL_JUMP)
+    JMP 0x00523ff7                      ; 0052401c
+        ;   XREF to: 00523ff7 (UNCONDITIONAL_JUMP)  ; LAB_00523ff7
     PUSH EBX                            ; 0052401e
         ;   Label: LAB_0052401e
-    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 0052401f | void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
-        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)
+    CALL core_mission.cpp_CDemonMission_FUN_00523cf0 ; 0052401f
+        ;   XREF to: 00523cf0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_FUN_00523cf0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 00524024
-    JMP 0x00523ff3                      ; 00524027 | LAB_00523ff3
-        ;   XREF to: 00523ff3 (UNCONDITIONAL_JUMP)
+    JMP 0x00523ff3                      ; 00524027
+        ;   XREF to: 00523ff3 (UNCONDITIONAL_JUMP)  ; LAB_00523ff3
 

@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 33, 
-    "assembly_lines": 20, 
-    "suspect_count": 2, 
+    "assembly_lines": 20,
+    "complexity_score": 38,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720", 
-      "addr": "0040c720"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
-      "addr": "0052dab0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000008;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720(in_stack_00000008);"
-    }
-  ], 
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005fc9e0", 
-    "signature": "int core_zombie.cpp_CZombie_FUN_005fc9e0(CZombie * this_ptr)", 
+    "address": "005fc9e0",
     "address_range": [
       [
-        "005fc9e0", 
+        "005fc9e0",
         "005fca0d"
       ]
-    ], 
-    "name": "core_zombie.cpp_CZombie_FUN_005fc9e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_zombie.cpp_CZombie_FUN_005fc9e0",
+    "signature": "int core_zombie.cpp_CZombie_FUN_005fc9e0(CZombie * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c720",
+      "name": "core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720"
+    },
+    {
+      "addr": "0052dab0",
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CZombie *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "CDemonActor *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720(in_stack_00000008);",
+      "type": "stack_param"
+    }
+  ]
 }

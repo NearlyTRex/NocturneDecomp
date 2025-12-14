@@ -1,145 +1,145 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 108, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 60, 
-    "assembly_lines": 37, 
-    "suspect_count": 6, 
+    "assembly_lines": 37,
+    "complexity_score": 108,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "pseudocode_lines": 23,
+    "suspect_count": 6,
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
-      "unaffected_reg", 
-      "unknown_field", 
-      "sborrow_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_dadd_FUN_0060defc", 
-      "addr": "0060defc"
-    }, 
-    {
-      "name": "crt_math.c_dmul_FUN_0060e0b9", 
-      "addr": "0060e0b9"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_0060dcf6", 
-      "addr": "0060dcf6"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_0060e256", 
-      "addr": "0060e256"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined1", 
-      "name": "DAT_00684acd", 
-      "addr": "00684acd", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseSoftwareMath", 
-      "addr": "00685060", 
-      "value": "0x0"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EBX;"
-    }, 
-    {
-      "line": 12, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\\x03');"
-    }, 
-    {
-      "line": 18, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "dVar4 = crt_math_c_dadd_FUN_0060defc((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX),dVar4);"
-    }, 
-    {
-      "line": 18, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar4 = crt_math_c_dadd_FUN_0060defc((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX),dVar4);"
-    }, 
-    {
-      "line": 19, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "crt_unknown_c_FUN_0060e256(SUB84 /* extract 2-byte value */(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),0xe2308c3a,0x3e45798e)"
-    }, 
-    {
-      "line": 22, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_UseSoftwareMath._0_1_ = (byte)g_UseSoftwareMath | 1;"
-    }
-  ], 
+      "sborrow_artifact",
+      "sub_artifact",
+      "concat_artifact",
+      "unaffected_reg",
+      "unknown_field"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0060be80", 
-    "signature": "void crt_fpemu.c_staticInit_FUN_0060be80(void)", 
+    "address": "0060be80",
     "address_range": [
       [
-        "0060be80", 
+        "0060be80",
         "0060bef9"
       ]
-    ], 
-    "name": "crt_fpemu.c_staticInit_FUN_0060be80"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "crt_fpemu.c_staticInit_FUN_0060be80",
+    "signature": "void crt_fpemu.c_staticInit_FUN_0060be80(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060defc",
+      "name": "crt_math.c_dadd_FUN_0060defc"
+    },
+    {
+      "addr": "0060e0b9",
+      "name": "crt_math.c_dmul_FUN_0060e0b9"
+    },
+    {
+      "addr": "0060dcf6",
+      "name": "crt_unknown.c_FUN_0060dcf6"
+    },
+    {
+      "addr": "0060e256",
+      "name": "crt_unknown.c_FUN_0060e256"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684acd",
+      "name": "DAT_00684acd",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "00685060",
+      "name": "g_UseSoftwareMath",
+      "type": "int",
+      "value": "0x0"
+    }
+  ],
   "stack_frame": {
-    "local_size": 24, 
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler signed borrow artifact",
+      "line": 12,
+      "match": "SBORROW",
+      "text": "cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\\x03');",
+      "type": "sborrow_artifact"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "text": "dVar4 = crt_math_c_dadd_FUN_0060defc((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX),dVar4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 18,
+      "match": "CONCAT44",
+      "text": "dVar4 = crt_math_c_dadd_FUN_0060defc((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX),dVar4);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 19,
+      "match": "SUB84",
+      "text": "crt_unknown_c_FUN_0060e256(SUB84 /* extract 2-byte value */(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),0xe2308c3a,0x3e45798e)",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 22,
+      "match": "._0_1_",
+      "text": "g_UseSoftwareMath._0_1_ = (byte)g_UseSoftwareMath | 1;",
+      "type": "unknown_field"
+    }
+  ]
 }

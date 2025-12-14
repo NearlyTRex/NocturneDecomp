@@ -27,22 +27,22 @@ section .text
     MOV EDX,dword ptr [ESI + 0x15b410]  ; 0057687b
     XOR EBX,EBX                         ; 00576881
     TEST EDX,EDX                        ; 00576883
-    JLE 0x0057689f                      ; 00576885 | LAB_0057689f
-        ;   XREF to: 0057689f (CONDITIONAL_JUMP)
+    JLE 0x0057689f                      ; 00576885
+        ;   XREF to: 0057689f (CONDITIONAL_JUMP)  ; LAB_0057689f
     PUSH EDI                            ; 00576887
         ;   Label: LAB_00576887
     PUSH EBX                            ; 00576888
     PUSH ESI                            ; 00576889
-    CALL core_setdir.cpp_CDemonSet_FUN_005762a0 ; 0057688a | int core_setdir.cpp_CDemonSet_FUN_005762a0(CDemonSet * this_ptr)
-        ;   XREF to: 005762a0 (UNCONDITIONAL_CALL)
+    CALL core_setdir.cpp_CDemonSet_FUN_005762a0 ; 0057688a
+        ;   XREF to: 005762a0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_005762a0(CDemonSet * this_ptr)
     ADD ESP,0xc                         ; 0057688f
     TEST EAX,EAX                        ; 00576892
-    JNZ 0x005768a8                      ; 00576894 | LAB_005768a8
-        ;   XREF to: 005768a8 (CONDITIONAL_JUMP)
+    JNZ 0x005768a8                      ; 00576894
+        ;   XREF to: 005768a8 (CONDITIONAL_JUMP)  ; LAB_005768a8
     INC EBX                             ; 00576896
     CMP EBX,dword ptr [ESI + 0x15b410]  ; 00576897
-    JL 0x00576887                       ; 0057689d | LAB_00576887
-        ;   XREF to: 00576887 (CONDITIONAL_JUMP)
+    JL 0x00576887                       ; 0057689d
+        ;   XREF to: 00576887 (CONDITIONAL_JUMP)  ; LAB_00576887
     MOV EAX,0xffffffff                  ; 0057689f
         ;   Label: LAB_0057689f
     POP EDI                             ; 005768a4
@@ -52,8 +52,8 @@ section .text
     PUSH EBX                            ; 005768a8
         ;   Label: LAB_005768a8
     PUSH ESI                            ; 005768a9
-    CALL core_setdir.cpp_CDemonSet_FUN_00576820 ; 005768aa | int core_setdir.cpp_CDemonSet_FUN_00576820(CDemonSet * this_ptr)
-        ;   XREF to: 00576820 (UNCONDITIONAL_CALL)
+    CALL core_setdir.cpp_CDemonSet_FUN_00576820 ; 005768aa
+        ;   XREF to: 00576820 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_FUN_00576820(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 005768af
     POP EDI                             ; 005768b2
     POP ESI                             ; 005768b3

@@ -34,17 +34,17 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 004816c6
     MOV ESI,dword ptr [ESP + 0x14]      ; 004816ca
     TEST EAX,EAX                        ; 004816ce
-    JZ 0x004816ea                       ; 004816d0 | LAB_004816ea
-        ;   XREF to: 004816ea (CONDITIONAL_JUMP)
+    JZ 0x004816ea                       ; 004816d0
+        ;   XREF to: 004816ea (CONDITIONAL_JUMP)  ; LAB_004816ea
     CMP byte ptr [EAX],0x0              ; 004816d2
-    JZ 0x004816ea                       ; 004816d5 | LAB_004816ea
-        ;   XREF to: 004816ea (CONDITIONAL_JUMP)
+    JZ 0x004816ea                       ; 004816d5
+        ;   XREF to: 004816ea (CONDITIONAL_JUMP)  ; LAB_004816ea
     PUSH ESI                            ; 004816d7
     PUSH EAX                            ; 004816d8
-    PUSH 0x621571                       ; 004816d9 | = "%s\\%s" | s_s_s_00621571 = %s\%s
+    PUSH 0x621571                       ; 004816d9 | = "%s\\%s"
     PUSH EDI                            ; 004816de
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004816df | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004816df
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004816e4
     POP EDI                             ; 004816e7
     POP ESI                             ; 004816e8
@@ -55,15 +55,15 @@ section .text
         ;   Label: LAB_004816eb
     MOV byte ptr [EDI],AL               ; 004816ed
     CMP AL,0x0                          ; 004816ef
-    JZ 0x00481703                       ; 004816f1 | LAB_00481703
-        ;   XREF to: 00481703 (CONDITIONAL_JUMP)
+    JZ 0x00481703                       ; 004816f1
+        ;   XREF to: 00481703 (CONDITIONAL_JUMP)  ; LAB_00481703
     MOV AL,byte ptr [ESI + 0x1]         ; 004816f3
     ADD ESI,0x2                         ; 004816f6
     MOV byte ptr [EDI + 0x1],AL         ; 004816f9
     ADD EDI,0x2                         ; 004816fc
     CMP AL,0x0                          ; 004816ff
-    JNZ 0x004816eb                      ; 00481701 | LAB_004816eb
-        ;   XREF to: 004816eb (CONDITIONAL_JUMP)
+    JNZ 0x004816eb                      ; 00481701
+        ;   XREF to: 004816eb (CONDITIONAL_JUMP)  ; LAB_004816eb
     POP EDI                             ; 00481703
         ;   Label: LAB_00481703
     POP EDI                             ; 00481704

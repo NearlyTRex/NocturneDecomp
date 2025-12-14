@@ -17,8 +17,8 @@ section .text
         ;   Label: cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_0054a970
     MOV EDX,dword ptr [EAX + 0x20]      ; 0054a974
     TEST EDX,EDX                        ; 0054a977
-    JNZ 0x0054a97e                      ; 0054a979 | LAB_0054a97e
-        ;   XREF to: 0054a97e (CONDITIONAL_JUMP)
+    JNZ 0x0054a97e                      ; 0054a979
+        ;   XREF to: 0054a97e (CONDITIONAL_JUMP)  ; LAB_0054a97e
     XOR EAX,EAX                         ; 0054a97b
     RET                                 ; 0054a97d
     PUSH EBX                            ; 0054a97e

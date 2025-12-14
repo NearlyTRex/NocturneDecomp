@@ -32,8 +32,8 @@ section .text
         ;   Label: LAB_0049200e
     ADD ESI,0x20                        ; 00492010
     SUB ECX,0x20                        ; 00492013
-    JG 0x0049200e                       ; 00492016 | LAB_0049200e
-        ;   XREF to: 0049200e (CONDITIONAL_JUMP)
+    JG 0x0049200e                       ; 00492016
+        ;   XREF to: 0049200e (CONDITIONAL_JUMP)  ; LAB_0049200e
     MOV ESI,dword ptr [EBP + 0xc]       ; 00492018
     AND ESI,0xfffffff8                  ; 0049201b
     MOV EDI,dword ptr [EBP + 0x8]       ; 0049201e
@@ -47,8 +47,8 @@ section .text
     ADD ESI,0x8                         ; 00492031
     ADD EDI,0x8                         ; 00492034
     DEC ECX                             ; 00492037
-    JGE 0x0049202b                      ; 00492038 | LAB_0049202b
-        ;   XREF to: 0049202b (CONDITIONAL_JUMP)
+    JGE 0x0049202b                      ; 00492038
+        ;   XREF to: 0049202b (CONDITIONAL_JUMP)  ; LAB_0049202b
     POP ECX                             ; 0049203a
     POP EAX                             ; 0049203b
     EMMS                                ; 0049203c

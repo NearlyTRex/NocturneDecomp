@@ -1,249 +1,249 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 151, 
-    "pseudocode_lines": 56, 
-    "cross_reference_count": 0, 
-    "global_count": 11, 
-    "total_lines": 194, 
-    "assembly_lines": 138, 
-    "suspect_count": 7, 
+    "assembly_lines": 138,
+    "complexity_score": 151,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 11,
+    "pseudocode_lines": 56,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param", 
-      "extra_output", 
-      "badspacebase", 
-      "register_param", 
+      "extra_output",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_gore.cpp_CGore_FUN_004ee070", 
-      "addr": "004ee070"
-    }, 
-    {
-      "name": "core_gore.cpp_CGore_FUN_004ee0f0", 
-      "addr": "004ee0f0"
-    }, 
-    {
-      "name": "core_ground.cpp_getGroundTypeCode_FUN_004eece0", 
-      "addr": "004eece0"
-    }, 
-    {
-      "name": "core_setcolid.cpp_CDemonSet_FUN_00574580", 
-      "addr": "00574580"
-    }, 
-    {
-      "name": "core_sound.cpp_CSound_playActorSound_FUN_005b3a40", 
-      "addr": "005b3a40"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_footstep_s_s_wav_f_006142c8", 
-      "addr": "006142c8", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_006142e4", 
-      "addr": "006142e4", 
-      "value": "10000"
-    }, 
-    {
-      "type": "CGore*", 
-      "name": "g_CGorePtr", 
-      "addr": "0067b9a0", 
-      "value": "02d83364"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CSound*", 
-      "name": "g_CSoundPtr", 
-      "addr": "00681ef8", 
-      "value": "03f6af64"
-    }, 
-    {
-      "type": "CGore", 
-      "name": "g_CGoreInstance", 
-      "addr": "02d83364", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_032758e8", 
-      "addr": "032758e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonCameraInstance.base.position.y", 
-      "addr": "032758ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonCameraInstance.base.position.z", 
-      "addr": "032758f0", 
-      "value": null
-    }, 
-    {
-      "type": "CSound", 
-      "name": "g_CSoundInstance", 
-      "addr": "03f6af64", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_0000001c;"
-    }, 
-    {
-      "line": 53, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar6 = (uint)((ulonglong)(double)in_stack_0000001c >> 0x20);"
-    }, 
-    {
-      "line": 56, 
-      "match": "&stack0xffffff84", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffff84,\"footstep-%s-!-%s-?.wav @ %f\",&this_ptr->field21_0x11c,pcVar5,uVar6);"
-    }, 
-    {
-      "line": 58, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return extraout_EAX;"
-    }
-  ], 
+    ],
+    "total_lines": 194
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0040ca10", 
-    "signature": "int core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor * this_ptr, CVector3f * position, int surface_type, float unknown)", 
+    "address": "0040ca10",
     "address_range": [
       [
-        "0040ca10", 
+        "0040ca10",
         "0040cb82"
       ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10",
+    "signature": "int core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor * this_ptr, CVector3f * position, int surface_type, float unknown)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ee070",
+      "name": "core_gore.cpp_CGore_FUN_004ee070"
+    },
+    {
+      "addr": "004ee0f0",
+      "name": "core_gore.cpp_CGore_FUN_004ee0f0"
+    },
+    {
+      "addr": "004eece0",
+      "name": "core_ground.cpp_getGroundTypeCode_FUN_004eece0"
+    },
+    {
+      "addr": "00574580",
+      "name": "core_setcolid.cpp_CDemonSet_FUN_00574580"
+    },
+    {
+      "addr": "005b3a40",
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005b3a40"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006142c8",
+      "name": "s_footstep_s_s_wav_f_006142c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006142e4",
+      "name": "FLOAT_006142e4",
+      "type": "float",
+      "value": "10000"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "00681ef8",
+      "name": "g_CSoundPtr",
+      "type": "CSound*",
+      "value": "03f6af64"
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "032758e8",
+      "name": "DAT_032758e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032758ec",
+      "name": "g_CDemonCameraInstance.base.position.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "032758f0",
+      "name": "g_CDemonCameraInstance.base.position.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6af64",
+      "name": "g_CSoundInstance",
+      "type": "CSound",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 152, 
+    "frame_size": 168,
+    "local_size": 152,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -148, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_94"
-      }, 
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -140, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_8c"
-      }, 
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "position"
-      }, 
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "surface_type"
-      }, 
+        "is_param": true,
+        "name": "surface_type",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "unknown"
+        "is_param": true,
+        "name": "unknown",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 168, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000001c",
+      "text": "float in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_0000001c",
+      "text": "uVar6 = (uint)((ulonglong)(double)in_stack_0000001c >> 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xffffff84",
+      "text": "(&stack0xffffff84,\"footstep-%s-!-%s-?.wav @ %f\",&this_ptr->field21_0x11c,pcVar5,uVar6);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 58,
+      "match": "extraout_EAX",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
+    }
+  ]
 }

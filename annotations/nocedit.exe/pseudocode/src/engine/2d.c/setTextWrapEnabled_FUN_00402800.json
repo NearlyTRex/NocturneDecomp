@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 4, 
-    "global_count": 1, 
-    "total_lines": 9, 
-    "assembly_lines": 4, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_TextWrapEnabled", 
-      "addr": "0066df74", 
-      "value": "0x1"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00402800", 
-    "signature": "void engine_2d.c_setTextWrapEnabled_FUN_00402800(int enabled)", 
-    "address_range": [
-      [
-        "00402800", 
-        "00402809"
-      ]
-    ], 
-    "name": "engine_2d.c_setTextWrapEnabled_FUN_00402800"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "enabled"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 4,
+    "complexity_score": 5,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
   "cross_references": [
     {
-      "from_addr": "00489353", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
-      "addr": "00489120"
-    }, 
+      "addr": "00489120",
+      "from_addr": "00489353",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040e86f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e850", 
-      "addr": "0040e850"
-    }, 
+      "addr": "0040e850",
+      "from_addr": "0040e86f",
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e850",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00402822", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_disableTextWrap_FUN_00402820", 
-      "addr": "00402820"
-    }, 
+      "addr": "00402820",
+      "from_addr": "00402822",
+      "name": "engine_2d.c_disableTextWrap_FUN_00402820",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00402812", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_enableTextWrap_FUN_00402810", 
-      "addr": "00402810"
+      "addr": "00402810",
+      "from_addr": "00402812",
+      "name": "engine_2d.c_enableTextWrap_FUN_00402810",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00402800",
+    "address_range": [
+      [
+        "00402800",
+        "00402809"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_setTextWrapEnabled_FUN_00402800",
+    "signature": "void engine_2d.c_setTextWrapEnabled_FUN_00402800(int enabled)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0066df74",
+      "name": "g_TextWrapEnabled",
+      "type": "int",
+      "value": "0x1"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "enabled",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

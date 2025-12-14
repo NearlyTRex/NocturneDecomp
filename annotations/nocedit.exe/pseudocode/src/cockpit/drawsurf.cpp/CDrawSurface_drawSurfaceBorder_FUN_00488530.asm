@@ -28,8 +28,8 @@ section .text
     PUSH 0x0                            ; 0048853d
     PUSH 0x0                            ; 0048853f
     PUSH EDX                            ; 00488541
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0 ; 00488542 | void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0(CDrawSurface * this_ptr, int x, int y, int width, ...)
-        ;   XREF to: 004884d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0 ; 00488542
+        ;   XREF to: 004884d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0(CDrawSurface * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 00488547
     RET                                 ; 0048854a
 

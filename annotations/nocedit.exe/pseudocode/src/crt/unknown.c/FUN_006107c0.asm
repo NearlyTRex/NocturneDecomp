@@ -19,20 +19,20 @@ section .text
     MOV CX,word ptr [EAX]               ; 006107ca
     MOV EBX,EDX                         ; 006107cd
     CMP DX,CX                           ; 006107cf
-    JZ 0x006107ea                       ; 006107d2 | LAB_006107ea
-        ;   XREF to: 006107ea (CONDITIONAL_JUMP)
+    JZ 0x006107ea                       ; 006107d2
+        ;   XREF to: 006107ea (CONDITIONAL_JUMP)  ; LAB_006107ea
     MOV EDX,EAX                         ; 006107d4
         ;   Label: LAB_006107d4
     MOV DI,word ptr [EDX]               ; 006107d6
     ADD EAX,0x2                         ; 006107d9
     TEST DI,DI                          ; 006107dc
-    JZ 0x006107e8                       ; 006107df | LAB_006107e8
-        ;   XREF to: 006107e8 (CONDITIONAL_JUMP)
+    JZ 0x006107e8                       ; 006107df
+        ;   XREF to: 006107e8 (CONDITIONAL_JUMP)  ; LAB_006107e8
     CMP BX,word ptr [EAX]               ; 006107e1
-    JZ 0x006107ea                       ; 006107e4 | LAB_006107ea
-        ;   XREF to: 006107ea (CONDITIONAL_JUMP)
-    JMP 0x006107d4                      ; 006107e6 | LAB_006107d4
-        ;   XREF to: 006107d4 (UNCONDITIONAL_JUMP)
+    JZ 0x006107ea                       ; 006107e4
+        ;   XREF to: 006107ea (CONDITIONAL_JUMP)  ; LAB_006107ea
+    JMP 0x006107d4                      ; 006107e6
+        ;   XREF to: 006107d4 (UNCONDITIONAL_JUMP)  ; LAB_006107d4
     XOR EAX,EAX                         ; 006107e8
         ;   Label: LAB_006107e8
     POP EDI                             ; 006107ea

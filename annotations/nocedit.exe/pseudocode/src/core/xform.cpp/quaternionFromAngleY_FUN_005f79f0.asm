@@ -35,7 +35,7 @@ section .text
     SUB ESP,0x18                        ; 005f79f1
     MOV EDX,ESI                         ; 005f79f4
     FLD float ptr [ESP + 0x20]          ; 005f79f6
-    FMUL double ptr [0x0065840d]        ; 005f79fa | double g_QuaternionHalfAngleFactor2
+    FMUL double ptr [0x0065840d]        ; 005f79fa | g_QuaternionHalfAngleFactor2
     FLD ST0                             ; 005f7a00
     FCOS                                ; 005f7a02
     FXCH                                ; 005f7a04

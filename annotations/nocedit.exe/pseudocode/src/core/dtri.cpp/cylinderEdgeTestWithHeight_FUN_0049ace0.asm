@@ -37,12 +37,12 @@ section .text
     MOV dword ptr [EBX + 0x44],EAX      ; 0049ad00
     MOV EAX,dword ptr [EDI + 0x8]       ; 0049ad03
     MOV dword ptr [EBX + 0x48],EAX      ; 0049ad06
-    CALL core_dtri.cpp_cylinderEdgeIntersection_FUN_0049aa00 ; 0049ad09 | int core_dtri.cpp_cylinderEdgeIntersection_FUN_0049aa00(SIntersectXZCylinder * cylinder)
-        ;   XREF to: 0049aa00 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_cylinderEdgeIntersection_FUN_0049aa00 ; 0049ad09
+        ;   XREF to: 0049aa00 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_cylinderEdgeIntersection_FUN_0049aa00(SIntersectXZCylinder * cylinder)
     ADD ESP,0x4                         ; 0049ad0e
     TEST EAX,EAX                        ; 0049ad11
-    JZ 0x0049ad37                       ; 0049ad13 | LAB_0049ad37
-        ;   XREF to: 0049ad37 (CONDITIONAL_JUMP)
+    JZ 0x0049ad37                       ; 0049ad13
+        ;   XREF to: 0049ad37 (CONDITIONAL_JUMP)  ; LAB_0049ad37
     FLD float ptr [EDI + 0x4]           ; 0049ad15
     FSUB float ptr [ESI + 0x4]          ; 0049ad18
     FMUL float ptr [EBX + 0x50]         ; 0049ad1b
@@ -51,14 +51,14 @@ section .text
     FCOMP float ptr [EBX + 0x28]        ; 0049ad24
     FNSTSW AX                           ; 0049ad27
     SAHF                                ; 0049ad29
-    JBE 0x0049ad37                      ; 0049ad2a | LAB_0049ad37
-        ;   XREF to: 0049ad37 (CONDITIONAL_JUMP)
+    JBE 0x0049ad37                      ; 0049ad2a
+        ;   XREF to: 0049ad37 (CONDITIONAL_JUMP)  ; LAB_0049ad37
     FLD float ptr [ESP]                 ; 0049ad2c
     FCOMP float ptr [EBX + 0x24]        ; 0049ad2f
     FNSTSW AX                           ; 0049ad32
     SAHF                                ; 0049ad34
-    JC 0x0049ad3e                       ; 0049ad35 | LAB_0049ad3e
-        ;   XREF to: 0049ad3e (CONDITIONAL_JUMP)
+    JC 0x0049ad3e                       ; 0049ad35
+        ;   XREF to: 0049ad3e (CONDITIONAL_JUMP)  ; LAB_0049ad3e
     ADD ESP,0x4                         ; 0049ad37
         ;   Label: LAB_0049ad37
     POP EDI                             ; 0049ad3a

@@ -58,17 +58,17 @@ section .text
     PUSH EBP                            ; 0045ee73
     MOV EBP,ESP                         ; 0045ee74
     SUB ESP,0x4c                        ; 0045ee76
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045ee7c | void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0045ee7c
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 0045ee81
     PUSH 0x0                            ; 0045ee83
-    MOV EAX,0x61b6be                    ; 0045ee85 | = "Realign object" | s_Realign_object_0061b6be = Realign object
-    PUSH EAX                            ; 0045ee8a | = "Realign object" | s_Realign_object_0061b6be = Realign object
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045ee8b | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    MOV EAX,0x61b6be                    ; 0045ee85 | = "Realign object"
+    PUSH EAX                            ; 0045ee8a | = "Realign object"
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045ee8b
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0045ee90
-    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045ee93 | void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0045ee93
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EAX,dword ptr [EBP + 0x14]      ; 0045ee98
     ADD EAX,0x2000                      ; 0045ee9b
     AND EAX,0xc000                      ; 0045eea0
@@ -82,33 +82,33 @@ section .text
     AND EAX,0xc000                      ; 0045eec0
     MOV dword ptr [EBP + 0x1c],EAX      ; 0045eec5
     FILD dword ptr [EBP + 0x14]         ; 0045eec8
-    FMUL double ptr [0x0061b6ce]        ; 0045eecb | double g_AngleConversionFactor1
-    FMUL double ptr [0x0061b6d6]        ; 0045eed1 | double g_AngleConversionFactor2
+    FMUL double ptr [0x0061b6ce]        ; 0045eecb | g_AngleConversionFactor1
+    FMUL double ptr [0x0061b6d6]        ; 0045eed1 | g_AngleConversionFactor2
     FSIN                                ; 0045eed7
     FSTP float ptr [EBP + -0x38]        ; 0045eed9
     FILD dword ptr [EBP + 0x14]         ; 0045eedc
-    FMUL double ptr [0x0061b6ce]        ; 0045eedf | double g_AngleConversionFactor1
-    FMUL double ptr [0x0061b6d6]        ; 0045eee5 | double g_AngleConversionFactor2
+    FMUL double ptr [0x0061b6ce]        ; 0045eedf | g_AngleConversionFactor1
+    FMUL double ptr [0x0061b6d6]        ; 0045eee5 | g_AngleConversionFactor2
     FCOS                                ; 0045eeeb
     FSTP float ptr [EBP + -0x34]        ; 0045eeed
     FILD dword ptr [EBP + 0x18]         ; 0045eef0
-    FMUL double ptr [0x0061b6ce]        ; 0045eef3 | double g_AngleConversionFactor1
-    FMUL double ptr [0x0061b6d6]        ; 0045eef9 | double g_AngleConversionFactor2
+    FMUL double ptr [0x0061b6ce]        ; 0045eef3 | g_AngleConversionFactor1
+    FMUL double ptr [0x0061b6d6]        ; 0045eef9 | g_AngleConversionFactor2
     FSIN                                ; 0045eeff
     FSTP float ptr [EBP + -0x44]        ; 0045ef01
     FILD dword ptr [EBP + 0x18]         ; 0045ef04
-    FMUL double ptr [0x0061b6ce]        ; 0045ef07 | double g_AngleConversionFactor1
-    FMUL double ptr [0x0061b6d6]        ; 0045ef0d | double g_AngleConversionFactor2
+    FMUL double ptr [0x0061b6ce]        ; 0045ef07 | g_AngleConversionFactor1
+    FMUL double ptr [0x0061b6d6]        ; 0045ef0d | g_AngleConversionFactor2
     FCOS                                ; 0045ef13
     FSTP float ptr [EBP + -0x30]        ; 0045ef15
     FILD dword ptr [EBP + 0x1c]         ; 0045ef18
-    FMUL double ptr [0x0061b6ce]        ; 0045ef1b | double g_AngleConversionFactor1
-    FMUL double ptr [0x0061b6d6]        ; 0045ef21 | double g_AngleConversionFactor2
+    FMUL double ptr [0x0061b6ce]        ; 0045ef1b | g_AngleConversionFactor1
+    FMUL double ptr [0x0061b6d6]        ; 0045ef21 | g_AngleConversionFactor2
     FSIN                                ; 0045ef27
     FSTP float ptr [EBP + -0x2c]        ; 0045ef29
     FILD dword ptr [EBP + 0x1c]         ; 0045ef2c
-    FMUL double ptr [0x0061b6ce]        ; 0045ef2f | double g_AngleConversionFactor1
-    FMUL double ptr [0x0061b6d6]        ; 0045ef35 | double g_AngleConversionFactor2
+    FMUL double ptr [0x0061b6ce]        ; 0045ef2f | g_AngleConversionFactor1
+    FMUL double ptr [0x0061b6d6]        ; 0045ef35 | g_AngleConversionFactor2
     FCOS                                ; 0045ef3b
     FSTP float ptr [EBP + -0x28]        ; 0045ef3d
     FLD float ptr [EBP + -0x2c]         ; 0045ef40
@@ -157,18 +157,18 @@ section .text
     FMUL float ptr [EBP + -0x34]        ; 0045efba
     FSTP float ptr [EBP + -0xc]         ; 0045efbd
     MOV dword ptr [EBP + -0x3c],0x0     ; 0045efc0
-    JMP 0x0045efcf                      ; 0045efc7 | LAB_0045efcf
-        ;   XREF to: 0045efcf (UNCONDITIONAL_JUMP)
+    JMP 0x0045efcf                      ; 0045efc7
+        ;   XREF to: 0045efcf (UNCONDITIONAL_JUMP)  ; LAB_0045efcf
     MOV EAX,dword ptr [EBP + -0x3c]     ; 0045efc9
         ;   Label: LAB_0045efc9
     INC dword ptr [EBP + -0x3c]         ; 0045efcc
     MOV EAX,dword ptr [EBP + -0x3c]     ; 0045efcf
         ;   Label: LAB_0045efcf
-    CMP EAX,dword ptr [0x01626408]      ; 0045efd2 | int g_VertexCount
-    JGE 0x0045f06a                      ; 0045efd8 | LAB_0045f06a
-        ;   XREF to: 0045f06a (CONDITIONAL_JUMP)
+    CMP EAX,dword ptr [0x01626408]      ; 0045efd2 | g_VertexCount
+    JGE 0x0045f06a                      ; 0045efd8
+        ;   XREF to: 0045f06a (CONDITIONAL_JUMP)  ; LAB_0045f06a
     IMUL EAX,dword ptr [EBP + -0x3c],0x14 ; 0045efde
-    MOV EAX,dword ptr [EAX + 0x162640c] ; 0045efe2 | SVertexData[20000] g_LoadedVertices
+    MOV EAX,dword ptr [EAX + 0x162640c] ; 0045efe2 | g_LoadedVertices
     MOV dword ptr [EBP + -0x8],EAX      ; 0045efe8
     IMUL EAX,dword ptr [EBP + -0x3c],0x14 ; 0045efeb
     MOV EAX,dword ptr [EAX + 0x1626410] ; 0045efef | DAT_01626410
@@ -185,7 +185,7 @@ section .text
     FMUL float ptr [EBP + -0x20]        ; 0045f016
     FADDP                               ; 0045f019
     IMUL EAX,dword ptr [EBP + -0x3c],0x14 ; 0045f01b
-    FSTP float ptr [EAX + 0x162640c]    ; 0045f01f | SVertexData[20000] g_LoadedVertices
+    FSTP float ptr [EAX + 0x162640c]    ; 0045f01f | g_LoadedVertices
     FLD float ptr [EBP + -0x8]          ; 0045f025
     FMUL float ptr [EBP + -0x1c]        ; 0045f028
     FLD float ptr [EBP + -0x4]          ; 0045f02b
@@ -206,14 +206,14 @@ section .text
     FADDP                               ; 0045f059
     IMUL EAX,dword ptr [EBP + -0x3c],0x14 ; 0045f05b
     FSTP float ptr [EAX + 0x1626414]    ; 0045f05f | g_LoadedVertices[0].vertex.z
-    JMP 0x0045efc9                      ; 0045f065 | LAB_0045efc9
-        ;   XREF to: 0045efc9 (UNCONDITIONAL_JUMP)
-    CMP dword ptr [0x01e528c0],0x0      ; 0045f06a | int g_GouraudShadingEnabled
+    JMP 0x0045efc9                      ; 0045f065
+        ;   XREF to: 0045efc9 (UNCONDITIONAL_JUMP)  ; LAB_0045efc9
+    CMP dword ptr [0x01e528c0],0x0      ; 0045f06a | g_GouraudShadingEnabled
         ;   Label: LAB_0045f06a
-    JZ 0x0045f078                       ; 0045f071 | LAB_0045f078
-        ;   XREF to: 0045f078 (CONDITIONAL_JUMP)
-    CALL shape_design.c_calculateVertexNormals_FUN_0045be40 ; 0045f073 | void shape_design.c_calculateVertexNormals_FUN_0045be40()
-        ;   XREF to: 0045be40 (UNCONDITIONAL_CALL)
+    JZ 0x0045f078                       ; 0045f071
+        ;   XREF to: 0045f078 (CONDITIONAL_JUMP)  ; LAB_0045f078
+    CALL shape_design.c_calculateVertexNormals_FUN_0045be40 ; 0045f073
+        ;   XREF to: 0045be40 (UNCONDITIONAL_CALL)  ; void shape_design.c_calculateVertexNormals_FUN_0045be40()
     MOV ESP,EBP                         ; 0045f078
         ;   Label: LAB_0045f078
     POP EBP                             ; 0045f07a

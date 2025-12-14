@@ -28,7 +28,7 @@ section .text
         ;   XREF to: 0040c730 (CONDITIONAL_JUMP)
     MOV EAX,dword ptr [EAX + 0x28]      ; 0040c713
     TEST EAX,EAX                        ; 0040c716
-    JNZ 0x0040c70e                      ; 0040c718 | LAB_0040c70e
-        ;   XREF to: 0040c70e (CONDITIONAL_JUMP)
+    JNZ 0x0040c70e                      ; 0040c718
+        ;   XREF to: 0040c70e (CONDITIONAL_JUMP)  ; LAB_0040c70e
     LEA EAX,[EAX]                       ; 0040c71a
 

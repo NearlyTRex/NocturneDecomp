@@ -27,25 +27,25 @@ section .text
     MOV EDX,dword ptr [EDI]             ; 004b1898
     XOR EBX,EBX                         ; 004b189a
     TEST EDX,EDX                        ; 004b189c
-    JLE 0x004b18c1                      ; 004b189e | LAB_004b18c1
-        ;   XREF to: 004b18c1 (CONDITIONAL_JUMP)
+    JLE 0x004b18c1                      ; 004b189e
+        ;   XREF to: 004b18c1 (CONDITIONAL_JUMP)  ; LAB_004b18c1
     LEA ESI,[EDI + 0x4]                 ; 004b18a0
     PUSH ESI                            ; 004b18a3
         ;   Label: LAB_004b18a3
-    MOV EBP,dword ptr [0x006793d0]      ; 004b18a4 | CEventList * g_CEventListPtr
-    PUSH EBP                            ; 004b18aa | CEventList g_CEventListInstance
-    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004b18ab | int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
-        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)
+    MOV EBP,dword ptr [0x006793d0]      ; 004b18a4 | g_CEventListPtr
+    PUSH EBP                            ; 004b18aa | g_CEventListInstance
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004b18ab
+        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004b18b0
     TEST EAX,EAX                        ; 004b18b3
-    JNZ 0x004b18cb                      ; 004b18b5 | LAB_004b18cb
-        ;   XREF to: 004b18cb (CONDITIONAL_JUMP)
+    JNZ 0x004b18cb                      ; 004b18b5
+        ;   XREF to: 004b18cb (CONDITIONAL_JUMP)  ; LAB_004b18cb
     INC EBX                             ; 004b18b7
     MOV ECX,dword ptr [EDI]             ; 004b18b8
     ADD ESI,0x64                        ; 004b18ba
     CMP EBX,ECX                         ; 004b18bd
-    JL 0x004b18a3                       ; 004b18bf | LAB_004b18a3
-        ;   XREF to: 004b18a3 (CONDITIONAL_JUMP)
+    JL 0x004b18a3                       ; 004b18bf
+        ;   XREF to: 004b18a3 (CONDITIONAL_JUMP)  ; LAB_004b18a3
     MOV EAX,0xffffffff                  ; 004b18c1
         ;   Label: LAB_004b18c1
     POP EBP                             ; 004b18c6

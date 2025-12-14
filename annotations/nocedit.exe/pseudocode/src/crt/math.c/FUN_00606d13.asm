@@ -17,8 +17,8 @@ section .text
         ;   Label: crt_math.c_FUN_00606d13
     FXCH ST3                            ; 00606d17
     FSTP extended double ptr [ESP]      ; 00606d19
-    CALL crt_math.c_fdiv_FUN_00606960   ; 00606d1c | float10 crt_math.c_fdiv_FUN_00606960(float10 dividend, float10 divisor)
-        ;   XREF to: 00606960 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_fdiv_FUN_00606960   ; 00606d1c
+        ;   XREF to: 00606960 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_fdiv_FUN_00606960(float10 dividend, float10 divisor)
     FXCH ST3                            ; 00606d21
     ADD ESP,0x2c                        ; 00606d23
     RET                                 ; 00606d26

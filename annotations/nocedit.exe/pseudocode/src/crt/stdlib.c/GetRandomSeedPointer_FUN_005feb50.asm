@@ -18,7 +18,7 @@
 
 section .text
 
-    CALL dword ptr [0x00684ee4]         ; 005feb50 | GET_TLS_FUNC * PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
+    CALL dword ptr [0x00684ee4]         ; 005feb50 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
         ;   Label: crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50
     ADD EAX,0xc                         ; 005feb56
     RET                                 ; 005feb59

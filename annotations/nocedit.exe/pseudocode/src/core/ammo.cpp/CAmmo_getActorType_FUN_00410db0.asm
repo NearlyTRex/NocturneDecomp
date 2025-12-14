@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x82236c                    ; 00410db0 | CDemonActorType g_CAmmoClassInfo
+    MOV EAX,0x82236c                    ; 00410db0 | g_CAmmoClassInfo
         ;   Label: core_ammo.cpp_CAmmo_getActorType_FUN_00410db0
     RET                                 ; 00410db5
 

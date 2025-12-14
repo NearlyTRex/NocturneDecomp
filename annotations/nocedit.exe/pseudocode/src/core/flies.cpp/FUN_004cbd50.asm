@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2d7a7c4                   ; 004cbd50 | CDemonActorType g_CFliesClassInfo
+    MOV EAX,0x2d7a7c4                   ; 004cbd50 | g_CFliesClassInfo
         ;   Label: core_flies.cpp_FUN_004cbd50
     RET                                 ; 004cbd55
 

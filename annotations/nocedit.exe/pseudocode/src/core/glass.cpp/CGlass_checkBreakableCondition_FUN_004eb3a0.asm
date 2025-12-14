@@ -29,10 +29,10 @@ section .text
         ;   Label: core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0
     ADD EAX,0x30c                       ; 004eb3a4
     PUSH EAX                            ; 004eb3a9
-    MOV EDX,dword ptr [0x006793d0]      ; 004eb3aa | CEventList g_CEventListInstance | CEventList * g_CEventListPtr
-    PUSH EDX                            ; 004eb3b0 | CEventList g_CEventListInstance
-    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004eb3b1 | int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
-        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006793d0]      ; 004eb3aa | g_CEventListInstance | g_CEventListPtr
+    PUSH EDX                            ; 004eb3b0 | g_CEventListInstance
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004eb3b1
+        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004eb3b6
     RET                                 ; 004eb3b9
 

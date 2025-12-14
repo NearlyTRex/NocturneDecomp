@@ -33,12 +33,12 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 004b0b88
     PUSH EDX                            ; 004b0b8c
     PUSH EDI                            ; 004b0b8d
-    CALL core_event.cpp_CEventList_FUN_004b0bf0 ; 004b0b8e | int core_event.cpp_CEventList_FUN_004b0bf0(CEventList * this_ptr)
-        ;   XREF to: 004b0bf0 (UNCONDITIONAL_CALL)
+    CALL core_event.cpp_CEventList_FUN_004b0bf0 ; 004b0b8e
+        ;   XREF to: 004b0bf0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0bf0(CEventList * this_ptr)
     ADD ESP,0x8                         ; 004b0b93
     TEST EAX,EAX                        ; 004b0b96
-    JL 0x004b0bbc                       ; 004b0b98 | LAB_004b0bbc
-        ;   XREF to: 004b0bbc (CONDITIONAL_JUMP)
+    JL 0x004b0bbc                       ; 004b0b98
+        ;   XREF to: 004b0bbc (CONDITIONAL_JUMP)  ; LAB_004b0bbc
     ADD EAX,EAX                         ; 004b0b9a
     MOV EBX,EAX                         ; 004b0b9c
     SHL EAX,0x4                         ; 004b0b9e
@@ -47,11 +47,11 @@ section .text
     XOR ESI,ESI                         ; 004b0ba9
     ADD EDI,EAX                         ; 004b0bab
     XOR EBX,EBX                         ; 004b0bad
-    MOV EAX,[0x006810c8]                ; 004b0baf | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
+    MOV EAX,[0x006810c8]                ; 004b0baf | g_CDemonSetInstance | g_CDemonSetPtr
         ;   Label: LAB_004b0baf
     CMP ESI,dword ptr [EAX + 0x14d154]  ; 004b0bb4 | g_CDemonSetInstance.actor_list_ptr
-    JL 0x004b0bc9                       ; 004b0bba | LAB_004b0bc9
-        ;   XREF to: 004b0bc9 (CONDITIONAL_JUMP)
+    JL 0x004b0bc9                       ; 004b0bba
+        ;   XREF to: 004b0bc9 (CONDITIONAL_JUMP)  ; LAB_004b0bc9
     XOR EAX,EAX                         ; 004b0bbc
         ;   Label: LAB_004b0bbc
     POP EBP                             ; 004b0bbe
@@ -62,19 +62,19 @@ section .text
     INC ESI                             ; 004b0bc3
         ;   Label: LAB_004b0bc3
     ADD EBX,0x4                         ; 004b0bc4
-    JMP 0x004b0baf                      ; 004b0bc7 | LAB_004b0baf
-        ;   XREF to: 004b0baf (UNCONDITIONAL_JUMP)
+    JMP 0x004b0baf                      ; 004b0bc7
+        ;   XREF to: 004b0baf (UNCONDITIONAL_JUMP)  ; LAB_004b0baf
     PUSH EDI                            ; 004b0bc9
         ;   Label: LAB_004b0bc9
     MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004b0bca | g_CDemonSetInstance.actor_list_data[0]
     PUSH EBP                            ; 004b0bd1
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b0bd2 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004b0bd2
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004b0bd7
     TEST EAX,EAX                        ; 004b0bda
-    JNZ 0x004b0bc3                      ; 004b0bdc | LAB_004b0bc3
-        ;   XREF to: 004b0bc3 (CONDITIONAL_JUMP)
-    MOV EAX,[0x006810c8]                ; 004b0bde | CDemonSet * g_CDemonSetPtr
+    JNZ 0x004b0bc3                      ; 004b0bdc
+        ;   XREF to: 004b0bc3 (CONDITIONAL_JUMP)  ; LAB_004b0bc3
+    MOV EAX,[0x006810c8]                ; 004b0bde | g_CDemonSetPtr
     MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004b0be3 | g_CDemonSetInstance.actor_list_data[0]
     POP EBP                             ; 004b0bea
     POP EDI                             ; 004b0beb

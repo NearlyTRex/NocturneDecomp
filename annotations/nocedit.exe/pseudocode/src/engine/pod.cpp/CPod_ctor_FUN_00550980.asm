@@ -21,14 +21,14 @@ section .text
         ;   Label: engine_pod.cpp_CPod_ctor_FUN_00550980
     MOV dword ptr [ECX],0x0             ; 00550984
     MOV EAX,ECX                         ; 0055098a
-    MOV dword ptr [ECX + 0x194],0x6623b4 ; 0055098c | CPod_vtable g_CPodVTable
+    MOV dword ptr [ECX + 0x194],0x6623b4 ; 0055098c | g_CPodVTable
     LEA EDX,[ECX + 0x190]               ; 00550996
     ADD EAX,0x4                         ; 0055099c
         ;   Label: LAB_0055099c
     MOV dword ptr [EAX],0x0             ; 0055099f
     CMP EAX,EDX                         ; 005509a5
-    JNZ 0x0055099c                      ; 005509a7 | LAB_0055099c
-        ;   XREF to: 0055099c (CONDITIONAL_JUMP)
+    JNZ 0x0055099c                      ; 005509a7
+        ;   XREF to: 0055099c (CONDITIONAL_JUMP)  ; LAB_0055099c
     MOV EAX,ECX                         ; 005509a9
     RET                                 ; 005509ab
 

@@ -22,6 +22,6 @@
 section .text
 
     JMP 0x0050d720                      ; 0048c640
-        ;   Label: engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
         ;   XREF to: 0050d720 (UNCONDITIONAL_JUMP)
+        ;   Label: engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
 

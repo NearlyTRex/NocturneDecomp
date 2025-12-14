@@ -11,8 +11,7 @@ void core_lever_cpp_FUN_00504790(void)
 {
   CLever *this_ptr;
   
-  this_ptr = (CLever *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x814,"..\\core\\lever.cpp",0x29);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x814,"..\\core\\lever.cpp",0x29);
   if (this_ptr == (CLever *)0x0) {
     return;
   }

@@ -9,86 +9,73 @@
 float10 __fpustack crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
 
 {
-  int iVar1;
-  double dVar2;
-  ulonglong uVar3;
-  ulonglong uVar4;
+  double dVar1;
   uchar error_type;
   char extraout_AL;
-  byte bVar5;
-  float10 fVar6;
-  float10 fVar7;
-  float10 extraout_ST0;
-  double dVar8;
-  uint uVar9;
-  undefined6 uVar10;
+  byte bVar2;
   ushort exponent;
-  uint local_c;
+  float10 fVar3;
+  float10 fVar4;
+  float10 extraout_ST0;
+  double dVar5;
+  uint uVar6;
+  undefined6 uVar7;
   short sStack_a;
-  uint uStack_8;
+  short sStack_8;
+  ushort uStack_6;
   
-  fVar6 = (float10)0;
-  dVar8 = (double)base;
-  uVar9 = (uint)((ulonglong)dVar8 >> 0x20);
-  if ((base == fVar6) == 0) {
-    fVar7 = ROUND(exp);
-    _local_c = (ulonglong)
-               (ushort)((ushort)(base < fVar6) << 8 | (ushort)(NAN(base) || NAN(fVar6)) << 10 |
-                       (ushort)(base == fVar6) << 0xe);
-    if (base < fVar6) {
+  fVar3 = (float10)0;
+  exponent = (ushort)(base < fVar3) << 8 | (ushort)(NAN(base) || NAN(fVar3)) << 10 |
+             (ushort)(base == fVar3) << 0xe;
+  dVar5 = (double)base;
+  uVar6 = (uint)((ulonglong)dVar5 >> 0x20);
+  if ((base == fVar3) == 0) {
+    fVar4 = ROUND(exp);
+    if (base < fVar3) {
       error_type = '\x01';
-      if (fVar7 != exp) goto LAB_005ffd8d;
-      bVar5 = 0;
-      if ((!NAN(fVar7) && !NAN(exp)) &&
-         (bVar5 = 0, exp - (exp / (float10)2) * (float10)2 != (float10)0)) {
-        bVar5 = 1;
+      if (fVar4 != exp) goto LAB_005ffd8d;
+      bVar2 = 0;
+      if ((!NAN(fVar4) && !NAN(exp)) &&
+         (bVar2 = 0, exp - (exp / (float10)2) * (float10)2 != (float10)0)) {
+        bVar2 = 1;
       }
-      _local_c = (ulonglong)bVar5 << 8;
+      exponent = (ushort)bVar2 << 8;
 LAB_005ffe01:
-      uVar3 = _local_c;
-      uVar10 = SUB86 /* extract 2-byte value */((double)exp,0);
-      uVar4 = _local_c;
+      uVar7 = SUB86 /* extract 2-byte value */((double)exp,0);
       if (0xff < (ushort)(((ushort)((ulonglong)(double)exp >> 0x30) & 0x7ff0) + 0xc010))
       goto LAB_005ffe88;
-      iVar1 = (int)ROUND(exp);
-      _local_c = CONCAT44 /* combine 2-byte values */(iVar1,local_c);
-      uVar4 = _local_c;
-      uStack_8._2_2_ = (ushort)((uint)iVar1 >> 0x10);
-      exponent = (ushort)uVar3;
-      if (uStack_8._2_2_ == 0) {
-        fVar6 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar10,uVar9),exponent);
-        fVar7 = exp;
+      uStack_6 = (ushort)((uint)(int)ROUND(exp) >> 0x10);
+      if (uStack_6 == 0) {
+        fVar3 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar7,uVar6),exponent);
+        fVar4 = exp;
       }
       else {
-        if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))
+        if ((uStack_6 != -1) || (sStack_8 = (short)(int)ROUND(exp), sStack_8 == 0))
         goto LAB_005ffe88;
-        fVar7 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar10,uVar9),exponent);
+        fVar4 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar7,uVar6),exponent);
         if (((byte)g_UseSoftwareMath & 1) == 0) {
-          fVar6 = (float10)1 / fVar7;
-          fVar7 = exp;
+          fVar3 = (float10)1 / fVar4;
+          fVar4 = exp;
         }
         else {
           crt_math_c_function_dispatch_FUN_00606a77(0xf);
-          fVar6 = extraout_ST0;
+          fVar3 = extraout_ST0;
         }
       }
-      dVar2 = (double)fVar6;
-      exponent = SUB82 /* extract 2-byte value */(dVar2,0);
-      sStack_a = (short)((ulonglong)dVar2 >> 0x10);
-      uStack_8._0_2_ = (short)((ulonglong)dVar2 >> 0x20);
-      if (((exponent != 0 || sStack_a != 0) || (short)uStack_8 != 0) ||
-         (uStack_8._2_2_ = (ushort)((ulonglong)dVar2 >> 0x30), exp = fVar7,
-         (uStack_8._2_2_ & 0x7fff) != 0x7ff0)) goto LAB_005ffea7;
+      dVar1 = (double)fVar3;
+      sStack_a = (short)((ulonglong)dVar1 >> 0x10);
+      sStack_8 = (short)((ulonglong)dVar1 >> 0x20);
+      if (((SUB82 /* extract 2-byte value */(dVar1,0) != 0 || sStack_a != 0) || sStack_8 != 0) ||
+         (uStack_6 = (ushort)((ulonglong)dVar1 >> 0x30), exp = fVar4, (uStack_6 & 0x7fff) != 0x7ff0)
+         ) goto LAB_005ffea7;
     }
     else {
-      uVar4 = _local_c;
-      if (fVar7 == exp) goto LAB_005ffe01;
+      if (fVar4 == exp) goto LAB_005ffe01;
 LAB_005ffe88:
-      _local_c = uVar4;
-      fVar6 = crt_math_c_exp_FUN_006068e2((float10)0.6931471805599453 * exp * ABS(base));
+      fVar3 = crt_math_c_exp_FUN_006068e2((float10)0.6931471805599453 * exp * ABS(base));
       if (extraout_AL == '\0') {
-        if ((_local_c & 0x100) != 0) {
-          fVar6 = -fVar6;
+        if ((exponent & 0x100) != 0) {
+          fVar3 = -fVar3;
         }
         goto LAB_005ffea7;
       }
@@ -99,8 +86,8 @@ LAB_005ffe88:
     error_type = '\0';
   }
 LAB_005ffd8d:
-  dVar8 = crt_math_c_math_domain_error_FUN_00606832(dVar8,(double)exp,error_type);
-  fVar6 = (float10)dVar8;
+  dVar5 = crt_math_c_math_domain_error_FUN_00606832(dVar5,(double)exp,error_type);
+  fVar3 = (float10)dVar5;
 LAB_005ffea7:
-  return (float10)(double)fVar6;
+  return (float10)(double)fVar3;
 }

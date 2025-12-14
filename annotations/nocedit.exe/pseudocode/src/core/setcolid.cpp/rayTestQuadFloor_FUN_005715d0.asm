@@ -44,8 +44,8 @@ section .text
     PUSH EBX                            ; 005715e9
     LEA EAX,[ESP + 0xc]                 ; 005715ea
     PUSH EAX                            ; 005715ee
-    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790 ; 005715ef | void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
-        ;   XREF to: 0049a790 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790 ; 005715ef
+        ;   XREF to: 0049a790 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 005715f4
     MOV EDI,dword ptr [ESP + 0x60]      ; 005715f7
     PUSH EDI                            ; 005715fb
@@ -54,8 +54,8 @@ section .text
     PUSH EBP                            ; 00571604
     LEA EAX,[ESP + 0xc]                 ; 00571605
     PUSH EAX                            ; 00571609
-    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 0057160a | int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
-        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 0057160a
+        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
     ADD ESP,0x10                        ; 0057160f
     MOV EBX,EAX                         ; 00571612
     MOV EAX,dword ptr [ESP + 0x70]      ; 00571614
@@ -66,21 +66,21 @@ section .text
     PUSH ECX                            ; 00571622
     LEA EAX,[ESP + 0xc]                 ; 00571623
     PUSH EAX                            ; 00571627
-    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790 ; 00571628 | void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
-        ;   XREF to: 0049a790 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790 ; 00571628
+        ;   XREF to: 0049a790 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0057162d
     PUSH EDI                            ; 00571630
     PUSH dword ptr [ESP + 0x60]         ; 00571631
     PUSH EBP                            ; 00571635
     LEA EAX,[ESP + 0xc]                 ; 00571636
     PUSH EAX                            ; 0057163a
-    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 0057163b | int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
-        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 0057163b
+        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
     MOV EDX,EBX                         ; 00571640
     ADD ESP,0x10                        ; 00571642
     OR EDX,EAX                          ; 00571645
-    JZ 0x00571679                       ; 00571647 | LAB_00571679
-        ;   XREF to: 00571679 (CONDITIONAL_JUMP)
+    JZ 0x00571679                       ; 00571647
+        ;   XREF to: 00571679 (CONDITIONAL_JUMP)  ; LAB_00571679
     FLD float ptr [ESP + 0x24]          ; 00571649
     FLD float ptr [ESP + 0x28]          ; 0057164d
     FLD float ptr [ESP + 0x2c]          ; 00571651
@@ -97,8 +97,8 @@ section .text
     FSTP float ptr [ESP + 0x40]         ; 0057166d
     FSTP float ptr [ESP + 0x38]         ; 00571671
     CMP ESI,EAX                         ; 00571675
-    JNZ 0x00571683                      ; 00571677 | LAB_00571683
-        ;   XREF to: 00571683 (CONDITIONAL_JUMP)
+    JNZ 0x00571683                      ; 00571677
+        ;   XREF to: 00571683 (CONDITIONAL_JUMP)  ; LAB_00571683
     MOV EAX,EDX                         ; 00571679
         ;   Label: LAB_00571679
     ADD ESP,0x44                        ; 0057167b

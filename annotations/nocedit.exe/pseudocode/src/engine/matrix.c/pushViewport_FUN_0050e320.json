@@ -1,370 +1,370 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 56, 
-    "pseudocode_lines": 31, 
-    "cross_reference_count": 5, 
-    "global_count": 41, 
-    "total_lines": 109, 
-    "assembly_lines": 78, 
-    "suspect_count": 2, 
+    "assembly_lines": 78,
+    "complexity_score": 56,
+    "cross_reference_count": 5,
+    "function_call_count": 2,
+    "global_count": 41,
+    "pseudocode_lines": 31,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_2d.c_setupViewportAndClipping_FUN_00401800", 
-      "addr": "00401800"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_matrix_c_00635b25", 
-      "addr": "00635b25", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_3D_windows_00635b38", 
-      "addr": "00635b38", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ProjectionScale", 
-      "addr": "006793c0", 
-      "value": "0x10000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterXFixed", 
-      "addr": "02d02548", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterYFixed", 
-      "addr": "02d0254c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportRightFixed", 
-      "addr": "02d02550", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportBottomFixed", 
-      "addr": "02d02554", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraOriginX", 
-      "addr": "02d052c4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraOriginY", 
-      "addr": "02d052c8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraOriginZ", 
-      "addr": "02d052cc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationPitch", 
-      "addr": "02d052d0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationYaw", 
-      "addr": "02d052d4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationRoll", 
-      "addr": "02d052d8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionX", 
-      "addr": "02d052dc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionY", 
-      "addr": "02d052e0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionZ", 
-      "addr": "02d052e4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportStackIndex", 
-      "addr": "02f0d61c", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_CenterX", 
-      "addr": "02f0d620", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_CenterY", 
-      "addr": "02f0d648", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_RightFixed", 
-      "addr": "02f0d670", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_BottomFixed", 
-      "addr": "02f0d698", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_ProjectionScale", 
-      "addr": "02f0d6c0", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_CameraX", 
-      "addr": "02f0d6e8", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_CameraY", 
-      "addr": "02f0d710", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_CameraZ", 
-      "addr": "02f0d738", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_RotationPitch", 
-      "addr": "02f0d760", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_RotationYaw", 
-      "addr": "02f0d788", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_RotationRoll", 
-      "addr": "02f0d7b0", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_ExtraState1", 
-      "addr": "02f0d7d8", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_ExtraState2", 
-      "addr": "02f0d800", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_ExtraState3", 
-      "addr": "02f0d828", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_ClipLeft", 
-      "addr": "02f0d850", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_ClipRight", 
-      "addr": "02f0d878", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_ClipTop", 
-      "addr": "02f0d8a0", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_ViewportStack_ClipBottom", 
-      "addr": "02f0d8c8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_2d_c_setupViewportAndClipping_FUN_00401800(y,width,y + height,width + in_stack_00000014);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050e320", 
-    "signature": "void engine_matrix.c_pushViewport_FUN_0050e320(int x, int y, int width, int height)", 
-    "address_range": [
-      [
-        "0050e320", 
-        "0050e479"
-      ]
-    ], 
-    "name": "engine_matrix.c_pushViewport_FUN_0050e320"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 109
+  },
   "cross_references": [
     {
-      "from_addr": "0053c58a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053c4f0", 
-      "addr": "0053c4f0"
-    }, 
+      "addr": "0053c4f0",
+      "from_addr": "0053c58a",
+      "name": "core_msnedit.cpp_FUN_0053c4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00564606", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_005645d0", 
-      "addr": "005645d0"
-    }, 
+      "addr": "005645d0",
+      "from_addr": "00564606",
+      "name": "core_script.cpp_FUN_005645d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005dc81c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760", 
-      "addr": "005dc760"
-    }, 
+      "addr": "005dc760",
+      "from_addr": "005dc81c",
+      "name": "core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c8a6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890", 
-      "addr": "0048c890"
-    }, 
+      "addr": "0048c890",
+      "from_addr": "0048c8a6",
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a1020", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
-      "addr": "004a0f80"
+      "addr": "004a0f80",
+      "from_addr": "004a1020",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050e320",
+    "address_range": [
+      [
+        "0050e320",
+        "0050e479"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_pushViewport_FUN_0050e320",
+    "signature": "void engine_matrix.c_pushViewport_FUN_0050e320(int x, int y, int width, int height)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00401800",
+      "name": "engine_2d.c_setupViewportAndClipping_FUN_00401800"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635b25",
+      "name": "s_engine_matrix_c_00635b25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635b38",
+      "name": "s_Too_many_3D_windows_00635b38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006793c0",
+      "name": "g_ProjectionScale",
+      "type": "int",
+      "value": "0x10000"
+    },
+    {
+      "addr": "02d02548",
+      "name": "g_ViewportCenterXFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_ViewportCenterYFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02550",
+      "name": "g_ViewportRightFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02554",
+      "name": "g_ViewportBottomFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c4",
+      "name": "g_CameraOriginX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c8",
+      "name": "g_CameraOriginY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052cc",
+      "name": "g_CameraOriginZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d0",
+      "name": "g_CameraRotationPitch",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d4",
+      "name": "g_CameraRotationYaw",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d8",
+      "name": "g_CameraRotationRoll",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052dc",
+      "name": "g_LightDirectionX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e0",
+      "name": "g_LightDirectionY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e4",
+      "name": "g_LightDirectionZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d61c",
+      "name": "g_ViewportStackIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d620",
+      "name": "g_ViewportStack_CenterX",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d648",
+      "name": "g_ViewportStack_CenterY",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d670",
+      "name": "g_ViewportStack_RightFixed",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d698",
+      "name": "g_ViewportStack_BottomFixed",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d6c0",
+      "name": "g_ViewportStack_ProjectionScale",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d6e8",
+      "name": "g_ViewportStack_CameraX",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d710",
+      "name": "g_ViewportStack_CameraY",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d738",
+      "name": "g_ViewportStack_CameraZ",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d760",
+      "name": "g_ViewportStack_RotationPitch",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d788",
+      "name": "g_ViewportStack_RotationYaw",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d7b0",
+      "name": "g_ViewportStack_RotationRoll",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d7d8",
+      "name": "g_ViewportStack_ExtraState1",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d800",
+      "name": "g_ViewportStack_ExtraState2",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d828",
+      "name": "g_ViewportStack_ExtraState3",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d850",
+      "name": "g_ViewportStack_ClipLeft",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d878",
+      "name": "g_ViewportStack_ClipRight",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d8a0",
+      "name": "g_ViewportStack_ClipTop",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d8c8",
+      "name": "g_ViewportStack_ClipBottom",
+      "type": "int[10]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000014",
+      "text": "engine_2d_c_setupViewportAndClipping_FUN_00401800(y,width,y + height,width + in_stack_00000014);",
+      "type": "stack_param"
     }
   ]
 }

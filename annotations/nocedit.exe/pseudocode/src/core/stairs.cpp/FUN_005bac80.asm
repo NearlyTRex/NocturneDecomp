@@ -17,13 +17,13 @@
 
 section .text
 
-    PUSH 0x65c990                       ; 005bac80 | WatcomTypeInfo g_CDemonTriangleTypeInfo
+    PUSH 0x65c990                       ; 005bac80 | g_CDemonTriangleTypeInfo
         ;   Label: core_stairs.cpp_FUN_005bac80
     PUSH 0x28                           ; 005bac85
     MOV EDX,dword ptr [ESP + 0xc]       ; 005bac87
     PUSH EDX                            ; 005bac8b
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 005bac8c | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 005bac8c
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005bac91
     RET                                 ; 005bac94
 

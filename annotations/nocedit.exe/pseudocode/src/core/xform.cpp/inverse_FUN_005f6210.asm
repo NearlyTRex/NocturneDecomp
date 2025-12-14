@@ -67,8 +67,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 005f621e
     MOV dword ptr [ESP + 0x88],ESI      ; 005f6221
     PUSH EBX                            ; 005f6228
-    CALL core_xform.cpp_determinant_FUN_005f61c0 ; 005f6229 | double core_xform.cpp_determinant_FUN_005f61c0(CMatrix3x4f * matrix)
-        ;   XREF to: 005f61c0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_determinant_FUN_005f61c0 ; 005f6229
+        ;   XREF to: 005f61c0 (UNCONDITIONAL_CALL)  ; double core_xform.cpp_determinant_FUN_005f61c0(CMatrix3x4f * matrix)
     MOV dword ptr [ESP + 0x7c],EAX      ; 005f622e
     MOV dword ptr [ESP + 0x80],EDX      ; 005f6232
     FLD double ptr [ESP + 0x7c]         ; 005f6239
@@ -77,11 +77,11 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005f6243
     MOV ECX,dword ptr [ESP]             ; 005f6247
     TEST EDX,0x7fffffff                 ; 005f624a
-    JNZ 0x005f625a                      ; 005f6250 | LAB_005f625a
-        ;   XREF to: 005f625a (CONDITIONAL_JUMP)
+    JNZ 0x005f625a                      ; 005f6250
+        ;   XREF to: 005f625a (CONDITIONAL_JUMP)  ; LAB_005f625a
     TEST ECX,ECX                        ; 005f6252
-    JZ 0x005f6431                       ; 005f6254 | LAB_005f6431
-        ;   XREF to: 005f6431 (CONDITIONAL_JUMP)
+    JZ 0x005f6431                       ; 005f6254
+        ;   XREF to: 005f6431 (CONDITIONAL_JUMP)  ; LAB_005f6431
     FLD float ptr [EBX + 0x14]          ; 005f625a
         ;   Label: LAB_005f625a
     FMUL float ptr [EBX + 0x28]         ; 005f625d
@@ -249,15 +249,15 @@ section .text
     POP EDI                             ; 005f642e
     POP EBX                             ; 005f642f
     RET                                 ; 005f6430
-    MOV ESI,0x658389                    ; 005f6431 | = "..\\core\\xform.cpp" | s_core_xform_cpp_00658389 = ..\core\xform.cpp
+    MOV ESI,0x658389                    ; 005f6431 | = "..\\core\\xform.cpp"
         ;   Label: LAB_005f6431
     MOV EDI,0x23e                       ; 005f6436
-    PUSH 0x65839b                       ; 005f643b | = "inverse() - Singular matrix" | s_inverse_Singular_matrix_0065839b = inverse() - Singular matrix
-    MOV dword ptr [0x02f0ca48],ESI      ; 005f6440 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 005f6446 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005f644c | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x65839b                       ; 005f643b | = "inverse() - Singular matrix"
+    MOV dword ptr [0x02f0ca48],ESI      ; 005f6440 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 005f6446 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005f644c
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005f6451
-    JMP 0x005f625a                      ; 005f6454 | LAB_005f625a
-        ;   XREF to: 005f625a (UNCONDITIONAL_JUMP)
+    JMP 0x005f625a                      ; 005f6454
+        ;   XREF to: 005f625a (UNCONDITIONAL_JUMP)  ; LAB_005f625a
 

@@ -123,7 +123,7 @@ shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970
       g_CurrentLineNumber = 0x809;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory to open editor window.");
     }
-    puVar16 = (uint *)g_WindowStack[iVar2].screen_backup_buffer;
+    puVar16 = g_WindowStack[iVar2].screen_backup_buffer;
     iVar4 = 0;
     if (0 < g_WindowStack[iVar2].backup_height) {
       do {

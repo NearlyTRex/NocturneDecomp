@@ -37,11 +37,11 @@ section .text
     SUB ESP,0x200                       ; 004fb9a3
     MOV EDX,dword ptr [ESP + 0x218]     ; 004fb9a9
     PUSH EDX                            ; 004fb9b0
-    PUSH 0x62fc6e                       ; 004fb9b1 | = "%d" | s_d_0062fc6e = %d
+    PUSH 0x62fc6e                       ; 004fb9b1 | = "%d"
     LEA EAX,[ESP + 0x108]               ; 004fb9b6
     PUSH EAX                            ; 004fb9bd
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fb9be | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fb9be
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fb9c3
     MOV ECX,dword ptr [ESP + 0x21c]     ; 004fb9c6
     PUSH ECX                            ; 004fb9cd
@@ -54,18 +54,18 @@ section .text
     PUSH EBX                            ; 004fb9e7
     MOV ESI,dword ptr [ESP + 0x224]     ; 004fb9e8
     PUSH ESI                            ; 004fb9ef
-    PUSH 0x2db8a60                      ; 004fb9f0 | CIni g_CIniInstance
-    CALL engine_ini.cpp_CIni_getProfileString_FUN_004fb250 ; 004fb9f5 | int engine_ini.cpp_CIni_getProfileString_FUN_004fb250(CIni * this_ptr, char * section, char * key, char * default_value, ...)
-        ;   XREF to: 004fb250 (UNCONDITIONAL_CALL)
+    PUSH 0x2db8a60                      ; 004fb9f0 | g_CIniInstance
+    CALL engine_ini.cpp_CIni_getProfileString_FUN_004fb250 ; 004fb9f5
+        ;   XREF to: 004fb250 (UNCONDITIONAL_CALL)  ; int engine_ini.cpp_CIni_getProfileString_FUN_004fb250(CIni * this_ptr, char * section, char * key, char * default_value, ...)
     ADD ESP,0x1c                        ; 004fb9fa
     TEST EAX,EAX                        ; 004fb9fd
-    JZ 0x004fba16                       ; 004fb9ff | LAB_004fba16
-        ;   XREF to: 004fba16 (CONDITIONAL_JUMP)
+    JZ 0x004fba16                       ; 004fb9ff
+        ;   XREF to: 004fba16 (CONDITIONAL_JUMP)  ; LAB_004fba16
     MOV EAX,ESP                         ; 004fba01
         ;   Label: LAB_004fba01
     PUSH EAX                            ; 004fba03
-    CALL crt_stdlib.c_atoi_FUN_005ffef0 ; 004fba04 | int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
-        ;   XREF to: 005ffef0 (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_atoi_FUN_005ffef0 ; 004fba04
+        ;   XREF to: 005ffef0 (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_atoi_FUN_005ffef0(char * string_ptr)
     ADD ESP,0x4                         ; 004fba09
     ADD ESP,0x200                       ; 004fba0c
     POP EBP                             ; 004fba12
@@ -74,15 +74,15 @@ section .text
     RET                                 ; 004fba15
     PUSH EDI                            ; 004fba16
         ;   Label: LAB_004fba16
-    MOV EDI,0x62fc71                    ; 004fba17 | = "..\\engine\\ini.cpp" | s_engine_ini_cpp_0062fc71 = ..\engine\ini.cpp
+    MOV EDI,0x62fc71                    ; 004fba17 | = "..\\engine\\ini.cpp"
     MOV EBP,0x235                       ; 004fba1c
-    PUSH 0x62fc83                       ; 004fba21 | = "Bad ini read!" | s_Bad_ini_read_0062fc83 = Bad ini read!
-    MOV dword ptr [0x02f0ca48],EDI      ; 004fba26 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 004fba2c | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004fba32 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x62fc83                       ; 004fba21 | = "Bad ini read!"
+    MOV dword ptr [0x02f0ca48],EDI      ; 004fba26 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 004fba2c | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004fba32
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004fba37
     POP EDI                             ; 004fba3a
-    JMP 0x004fba01                      ; 004fba3b | LAB_004fba01
-        ;   XREF to: 004fba01 (UNCONDITIONAL_JUMP)
+    JMP 0x004fba01                      ; 004fba3b
+        ;   XREF to: 004fba01 (UNCONDITIONAL_JUMP)  ; LAB_004fba01
 

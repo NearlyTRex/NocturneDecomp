@@ -23,8 +23,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 0052dcb5
     MOV dword ptr [EBX],EAX             ; 0052dcb9
     CMP byte ptr [EBX + 0x30],0x0       ; 0052dcbb
-    JNZ 0x0052dcc3                      ; 0052dcbf | LAB_0052dcc3
-        ;   XREF to: 0052dcc3 (CONDITIONAL_JUMP)
+    JNZ 0x0052dcc3                      ; 0052dcbf
+        ;   XREF to: 0052dcc3 (CONDITIONAL_JUMP)  ; LAB_0052dcc3
     POP EBX                             ; 0052dcc1
     RET                                 ; 0052dcc2
     PUSH 0x1                            ; 0052dcc3
@@ -33,8 +33,8 @@ section .text
     PUSH EAX                            ; 0052dcc8
     MOV EDX,dword ptr [EBX]             ; 0052dcc9
     PUSH EDX                            ; 0052dccb
-    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0052dccc | int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0052dccc
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
     MOV byte ptr [EBX + 0x30],0x0       ; 0052dcd1
     ADD ESP,0xc                         ; 0052dcd5
     MOV dword ptr [EBX + 0x4],EAX       ; 0052dcd8

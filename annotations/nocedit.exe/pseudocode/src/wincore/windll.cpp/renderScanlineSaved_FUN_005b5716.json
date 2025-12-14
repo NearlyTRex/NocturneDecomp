@@ -1,192 +1,192 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 168, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 39, 
-    "assembly_lines": 21, 
-    "suspect_count": 14, 
+    "assembly_lines": 21,
+    "complexity_score": 168,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 5,
+    "pseudocode_lines": 18,
+    "suspect_count": 14,
     "suspect_types": [
-      "unaffected_reg", 
+      "unaffected_reg",
       "register_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_SavedRegisterEAX", 
-      "addr": "00682634", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SavedRegisterEBX", 
-      "addr": "00682638", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SavedRegisterECX", 
-      "addr": "0068263c", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SavedRegisterEDX", 
-      "addr": "00682640", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "RenderScanlineFunc*", 
-      "name": "g_ScanlineRenderFunc", 
-      "addr": "02d0257c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "int in_EAX;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "int in_ECX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "int in_EDX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "void *unaff_ESI;"
-    }, 
-    {
-      "line": 13, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "void *unaff_EDI;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "g_SavedRegisterEAX = in_EAX;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_SavedRegisterEBX = unaff_EBX;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "g_SavedRegisterECX = in_ECX;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "g_SavedRegisterEDX = in_EDX;"
-    }, 
-    {
-      "line": 19, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(*g_ScanlineRenderFunc)(unaff_EDI,unaff_ESI,unaff_EBP);"
-    }, 
-    {
-      "line": 19, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(*g_ScanlineRenderFunc)(unaff_EDI,unaff_ESI,unaff_EBP);"
-    }, 
-    {
-      "line": 19, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(*g_ScanlineRenderFunc)(unaff_EDI,unaff_ESI,unaff_EBP);"
-    }
-  ], 
+    ],
+    "total_lines": 39
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005b5716", 
-    "signature": "void wincore_windll.cpp_renderScanlineSaved_FUN_005b5716(void * scanline_data, int scanline_y, int render_flags)", 
+    "address": "005b5716",
     "address_range": [
       [
-        "005b5716", 
+        "005b5716",
         "005b575b"
       ]
-    ], 
-    "name": "wincore_windll.cpp_renderScanlineSaved_FUN_005b5716"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_renderScanlineSaved_FUN_005b5716",
+    "signature": "void wincore_windll.cpp_renderScanlineSaved_FUN_005b5716(void * scanline_data, int scanline_y, int render_flags)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00682634",
+      "name": "g_SavedRegisterEAX",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "00682638",
+      "name": "g_SavedRegisterEBX",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "0068263c",
+      "name": "g_SavedRegisterECX",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "00682640",
+      "name": "g_SavedRegisterEDX",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "RenderScanlineFunc*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "scanline_data"
-      }, 
+        "is_param": true,
+        "name": "scanline_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "scanline_y"
-      }, 
+        "is_param": true,
+        "name": "scanline_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_flags"
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_EAX",
+      "text": "int in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ECX",
+      "text": "int in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EDX",
+      "text": "int in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "text": "void *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EDI",
+      "text": "void *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_EAX",
+      "text": "g_SavedRegisterEAX = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "text": "g_SavedRegisterEBX = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_ECX",
+      "text": "g_SavedRegisterECX = in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_EDX",
+      "text": "g_SavedRegisterEDX = in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EDI",
+      "text": "(*g_ScanlineRenderFunc)(unaff_EDI,unaff_ESI,unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_ESI",
+      "text": "(*g_ScanlineRenderFunc)(unaff_EDI,unaff_ESI,unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EBP",
+      "text": "(*g_ScanlineRenderFunc)(unaff_EDI,unaff_ESI,unaff_EBP);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

@@ -11,8 +11,7 @@ void core_haystack_cpp_FUN_004f0bd0(void)
 {
   CHaystack *this_ptr;
   
-  this_ptr = (CHaystack *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fbec,"..\\core\\haystack.cpp",0x5c);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1fbec,"..\\core\\haystack.cpp",0x5c);
   if (this_ptr == (CHaystack *)0x0) {
     return;
   }

@@ -30,8 +30,8 @@ section .text
     FCOMPP                              ; 00427a85
     FNSTSW AX                           ; 00427a87
     SAHF                                ; 00427a89
-    JNC 0x00427ab1                      ; 00427a8a | LAB_00427ab1
-        ;   XREF to: 00427ab1 (CONDITIONAL_JUMP)
+    JNC 0x00427ab1                      ; 00427a8a
+        ;   XREF to: 00427ab1 (CONDITIONAL_JUMP)  ; LAB_00427ab1
     FLD1                                ; 00427a8c
     FLD float ptr [EDX]                 ; 00427a8e
     FXCH                                ; 00427a90

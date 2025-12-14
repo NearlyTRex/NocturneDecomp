@@ -11,8 +11,7 @@ void core_boneguy_cpp_constructor_FUN_0041b820(void)
 {
   CBoneGuy *this_ptr;
   
-  this_ptr = (CBoneGuy *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc4e4,"..\\core\\boneguy.cpp",0x74);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc4e4,"..\\core\\boneguy.cpp",0x74);
   if (this_ptr == (CBoneGuy *)0x0) {
     return;
   }

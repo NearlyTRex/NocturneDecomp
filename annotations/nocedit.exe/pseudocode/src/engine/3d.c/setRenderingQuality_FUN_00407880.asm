@@ -15,6 +15,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00407880
         ;   Label: engine_3d.c_setRenderingQuality_FUN_00407880
-    MOV [0x006793b8],EAX                ; 00407884 | int g_RenderingQuality
+    MOV [0x006793b8],EAX                ; 00407884 | g_RenderingQuality
     RET                                 ; 00407889
 

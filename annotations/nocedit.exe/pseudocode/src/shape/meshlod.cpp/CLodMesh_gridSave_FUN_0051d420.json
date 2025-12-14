@@ -1,93 +1,93 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 78, 
-    "assembly_lines": 56, 
-    "suspect_count": 1, 
+    "assembly_lines": 56,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_006381fb", 
-      "addr": "006381fb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_006381ff", 
-      "addr": "006381ff", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_00638203", 
-      "addr": "00638203", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0051d420", 
-    "signature": "void shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420(CLodMesh * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "0051d420", 
-        "0051d490"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 78
+  },
   "cross_references": [
     {
-      "from_addr": "00516db9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50", 
-      "addr": "00516d50"
+      "addr": "00516d50",
+      "from_addr": "00516db9",
+      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051d420",
+    "address_range": [
+      [
+        "0051d420",
+        "0051d490"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420",
+    "signature": "void shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420(CLodMesh * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006381fb",
+      "name": "s_d_006381fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006381ff",
+      "name": "s_d_006381ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00638203",
+      "name": "s_d_00638203",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar2);",
+      "type": "pointer_cast"
     }
   ]
 }

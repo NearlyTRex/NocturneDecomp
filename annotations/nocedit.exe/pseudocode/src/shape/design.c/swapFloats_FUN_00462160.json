@@ -1,72 +1,72 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 31, 
-    "assembly_lines": 23, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00462160", 
-    "signature": "void shape_design.c_swapFloats_FUN_00462160(float * value1_ptr, float * value2_ptr)", 
-    "address_range": [
-      [
-        "00462160", 
-        "0046218c"
-      ]
-    ], 
-    "name": "shape_design.c_swapFloats_FUN_00462160"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "value1_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "value2_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 23,
+    "complexity_score": 8,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
   "cross_references": [
     {
-      "from_addr": "004623c3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_mergeTrianglesIntoQuad_FUN_00462190", 
-      "addr": "00462190"
-    }, 
+      "addr": "00462190",
+      "from_addr": "004623c3",
+      "name": "shape_design.c_mergeTrianglesIntoQuad_FUN_00462190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004672cb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_turnModelInsideOut_FUN_004671e0", 
-      "addr": "004671e0"
+      "addr": "004671e0",
+      "from_addr": "004672cb",
+      "name": "shape_design.c_turnModelInsideOut_FUN_004671e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00462160",
+    "address_range": [
+      [
+        "00462160",
+        "0046218c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_swapFloats_FUN_00462160",
+    "signature": "void shape_design.c_swapFloats_FUN_00462160(float * value1_ptr, float * value2_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "value1_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "value2_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "suspects": []
 }

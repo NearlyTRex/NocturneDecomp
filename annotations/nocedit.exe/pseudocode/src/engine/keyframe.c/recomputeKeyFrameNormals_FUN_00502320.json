@@ -1,213 +1,213 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 227, 
-    "pseudocode_lines": 52, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 171, 
-    "assembly_lines": 119, 
-    "suspect_count": 17, 
+    "assembly_lines": 119,
+    "complexity_score": 227,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 52,
+    "suspect_count": 17,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00", 
-      "addr": "00501a00"
-    }, 
-    {
-      "name": "engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0", 
-      "addr": "00501bc0"
-    }, 
-    {
-      "name": "engine_model.c_getMRGLSize_FUN_00528700", 
-      "addr": "00528700"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_keyframe_c_00630d70", 
-      "addr": "00630d70", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_recomputeKeyFrameNormals_00630d85", 
-      "addr": "00630d85", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_keyframe_c_00630db0", 
-      "addr": "00630db0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_recomputeKeyFrameNormals_00630dc5", 
-      "addr": "00630dc5", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "SSurfaceNormal *in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = ((SMRGLHeaderBasic *)&in_stack_00000004->unknown)->type;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((SMRGLHeaderBasic *)&in_stack_00000004->unknown)->type == 2) {"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "vertex_data = (CVector3i *)&in_stack_00000004->normal_y;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = ((SMRGLHeaderBasic *)&in_stack_00000004->unknown)->type;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar3 = in_stack_00000004;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar2 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)in_stack_00000004);"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004 ="
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(SSurfaceNormal *)(in_stack_00000004->field7_0x1c + ((uVar2 & 0xfffffffc) - 0x1c));"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = ((SMRGLHeaderBasic *)&in_stack_00000004->unknown)->type;"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar2 = in_stack_00000004->unknown;"
-    }, 
-    {
-      "line": 40, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(vertex_data,in_stack_00000004);"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(vertex_data,(SSurfacePackedNormal *)in_stack_00000004);"
-    }, 
-    {
-      "line": 48, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar2 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)in_stack_00000004);"
-    }, 
-    {
-      "line": 49, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004 ="
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(SSurfaceNormal *)(in_stack_00000004->field7_0x1c + ((uVar2 & 0xfffffffc) - 0x1c));"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004->unknown == 0) {"
-    }
-  ], 
+    ],
+    "total_lines": 171
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00502320", 
-    "signature": "void engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320(void)", 
+    "address": "00502320",
     "address_range": [
       [
-        "00502320", 
+        "00502320",
         "0050240f"
       ]
-    ], 
-    "name": "engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320",
+    "signature": "void engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00501a00",
+      "name": "engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00"
+    },
+    {
+      "addr": "00501bc0",
+      "name": "engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0"
+    },
+    {
+      "addr": "00528700",
+      "name": "engine_model.c_getMRGLSize_FUN_00528700"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00630d70",
+      "name": "s_engine_keyframe_c_00630d70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630d85",
+      "name": "s_recomputeKeyFrameNormals_00630d85",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630db0",
+      "name": "s_engine_keyframe_c_00630db0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00630dc5",
+      "name": "s_recomputeKeyFrameNormals_00630dc5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "SSurfaceNormal *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = ((SMRGLHeaderBasic *)&in_stack_00000004->unknown)->type;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "if (((SMRGLHeaderBasic *)&in_stack_00000004->unknown)->type == 2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "vertex_data = (CVector3i *)&in_stack_00000004->normal_y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = ((SMRGLHeaderBasic *)&in_stack_00000004->unknown)->type;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "pSVar3 = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "uVar2 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "(SSurfaceNormal *)(in_stack_00000004->field7_0x1c + ((uVar2 & 0xfffffffc) - 0x1c));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = ((SMRGLHeaderBasic *)&in_stack_00000004->unknown)->type;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "text": "uVar2 = in_stack_00000004->unknown;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000004",
+      "text": "engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(vertex_data,in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "(vertex_data,(SSurfacePackedNormal *)in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "text": "uVar2 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000004",
+      "text": "(SSurfaceNormal *)(in_stack_00000004->field7_0x1c + ((uVar2 & 0xfffffffc) - 0x1c));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004->unknown == 0) {",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -33,7 +33,7 @@ section .text
     MOV EBP,ESP                         ; 004a2511
     SUB ESP,0x24                        ; 004a2513
     MOV EAX,dword ptr [EBP + 0xc]       ; 004a2516
-    FLD float ptr [0x006235ce]          ; 004a2519 | float FLOAT_006235ce
+    FLD float ptr [0x006235ce]          ; 004a2519 | FLOAT_006235ce
     FLD float ptr [EAX]                 ; 004a251f
     FMUL ST1                            ; 004a2521
     FSTP float ptr [EBP + -0xc]         ; 004a2523
@@ -67,8 +67,8 @@ section .text
     FSTP float ptr [EBP + -0x14]        ; 004a2567
     PUSH ECX                            ; 004a256a
     FSTP float ptr [EBP + -0x10]        ; 004a256b
-    CALL shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 ; 004a256e | void shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools * this_ptr, CVector3f * corner1, CVector3f * corner2, int color_value)
-        ;   XREF to: 004a2050 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 ; 004a256e
+        ;   XREF to: 004a2050 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CEditorTools * this_ptr, CVector3f * corner1, CVector3f * corner2, int color_value)
     ADD ESP,0x10                        ; 004a2573
     MOV ESP,EBP                         ; 004a2576
     POP EBP                             ; 004a2578

@@ -19,6 +19,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00402840
         ;   Label: engine_2d.c_setTextColor_FUN_00402840
-    MOV [0x0066df78],EAX                ; 00402844 | int g_CurrentTextColor
+    MOV [0x0066df78],EAX                ; 00402844 | g_CurrentTextColor
     RET                                 ; 00402849
 

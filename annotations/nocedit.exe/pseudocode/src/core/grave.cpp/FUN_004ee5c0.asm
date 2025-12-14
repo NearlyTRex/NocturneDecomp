@@ -27,16 +27,16 @@ section .text
     SUB ESP,0x8                         ; 004ee5c3
     MOV EBX,dword ptr [ESP + 0x18]      ; 004ee5c6
     CMP dword ptr [EBX + 0x2dc],0x0     ; 004ee5ca
-    JNZ 0x004ee5ee                      ; 004ee5d1 | LAB_004ee5ee
-        ;   XREF to: 004ee5ee (CONDITIONAL_JUMP)
+    JNZ 0x004ee5ee                      ; 004ee5d1
+        ;   XREF to: 004ee5ee (CONDITIONAL_JUMP)  ; LAB_004ee5ee
     CMP dword ptr [EBX + 0x2e0],0x0     ; 004ee5d3
-    JZ 0x004ee5fa                       ; 004ee5da | LAB_004ee5fa
-        ;   XREF to: 004ee5fa (CONDITIONAL_JUMP)
+    JZ 0x004ee5fa                       ; 004ee5da
+        ;   XREF to: 004ee5fa (CONDITIONAL_JUMP)  ; LAB_004ee5fa
     MOV EDI,dword ptr [EBX + 0x2e0]     ; 004ee5dc
         ;   Label: LAB_004ee5dc
     CMP EDI,0x1                         ; 004ee5e2
-    JZ 0x004ee61f                       ; 004ee5e5 | LAB_004ee61f
-        ;   XREF to: 004ee61f (CONDITIONAL_JUMP)
+    JZ 0x004ee61f                       ; 004ee5e5
+        ;   XREF to: 004ee61f (CONDITIONAL_JUMP)  ; LAB_004ee61f
     ADD ESP,0x8                         ; 004ee5e7
         ;   Label: LAB_004ee5e7
     POP EDI                             ; 004ee5ea
@@ -45,30 +45,30 @@ section .text
     RET                                 ; 004ee5ed
     MOV dword ptr [EBX + 0x104],0x1     ; 004ee5ee
         ;   Label: LAB_004ee5ee
-    JMP 0x004ee5e7                      ; 004ee5f8 | LAB_004ee5e7
-        ;   XREF to: 004ee5e7 (UNCONDITIONAL_JUMP)
+    JMP 0x004ee5e7                      ; 004ee5f8
+        ;   XREF to: 004ee5e7 (UNCONDITIONAL_JUMP)  ; LAB_004ee5e7
     LEA EAX,[EBX + 0x2e8]               ; 004ee5fa
         ;   Label: LAB_004ee5fa
     PUSH EAX                            ; 004ee600
-    MOV ESI,dword ptr [0x006793d0]      ; 004ee601 | CEventList * g_CEventListPtr
-    PUSH ESI                            ; 004ee607 | CEventList g_CEventListInstance
-    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004ee608 | int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
-        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)
+    MOV ESI,dword ptr [0x006793d0]      ; 004ee601 | g_CEventListPtr
+    PUSH ESI                            ; 004ee607 | g_CEventListInstance
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004ee608
+        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
     ADD ESP,0x8                         ; 004ee60d
     TEST EAX,EAX                        ; 004ee610
-    JZ 0x004ee5dc                       ; 004ee612 | LAB_004ee5dc
-        ;   XREF to: 004ee5dc (CONDITIONAL_JUMP)
+    JZ 0x004ee5dc                       ; 004ee612
+        ;   XREF to: 004ee5dc (CONDITIONAL_JUMP)  ; LAB_004ee5dc
     PUSH EBX                            ; 004ee614
-    CALL core_grave.cpp_FUN_004ee790    ; 004ee615 | undefined core_grave.cpp_FUN_004ee790()
-        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)
+    CALL core_grave.cpp_FUN_004ee790    ; 004ee615
+        ;   XREF to: 004ee790 (UNCONDITIONAL_CALL)  ; undefined core_grave.cpp_FUN_004ee790()
     ADD ESP,0x4                         ; 004ee61a
-    JMP 0x004ee5dc                      ; 004ee61d | LAB_004ee5dc
-        ;   XREF to: 004ee5dc (UNCONDITIONAL_JUMP)
+    JMP 0x004ee5dc                      ; 004ee61d
+        ;   XREF to: 004ee5dc (UNCONDITIONAL_JUMP)  ; LAB_004ee5dc
     LEA EAX,[EBX + 0x158]               ; 004ee61f
         ;   Label: LAB_004ee61f
     PUSH EAX                            ; 004ee625
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004ee626 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004ee626
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     FLD float ptr [EBX + 0x2d8]         ; 004ee62b
     MOV EAX,dword ptr [EAX + 0x100]     ; 004ee631
     ADD ESP,0x4                         ; 004ee637
@@ -84,8 +84,8 @@ section .text
     FCOMP float ptr [ESP]               ; 004ee65b
     FNSTSW AX                           ; 004ee65e
     SAHF                                ; 004ee660
-    JC 0x004ee5e7                       ; 004ee661 | LAB_004ee5e7
-        ;   XREF to: 004ee5e7 (CONDITIONAL_JUMP)
+    JC 0x004ee5e7                       ; 004ee661
+        ;   XREF to: 004ee5e7 (CONDITIONAL_JUMP)  ; LAB_004ee5e7
     MOV EAX,dword ptr [ESP]             ; 004ee663
     MOV dword ptr [EBX + 0x2e0],0x2     ; 004ee666
     MOV dword ptr [EBX + 0x2d4],EAX     ; 004ee670

@@ -1,101 +1,101 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 6, 
-    "global_count": 0, 
-    "total_lines": 22, 
-    "assembly_lines": 13, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_constructTypedObjectArray_FUN_00601232", 
-      "addr": "00601232"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00601272", 
-    "signature": "void * crt_memory.c_constructTypedObjectArray_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)", 
-    "address_range": [
-      [
-        "00601272", 
-        "0060128b"
-      ]
-    ], 
-    "name": "crt_memory.c_constructTypedObjectArray_FUN_00601272"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "array_memory"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "element_count"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "WatcomTypeInfo *", 
-        "size": 4, 
-        "name": "type_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 13,
+    "complexity_score": 9,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
   "cross_references": [
     {
-      "from_addr": "0054ba93", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0", 
-      "addr": "0054b9b0"
-    }, 
+      "addr": "0054b9b0",
+      "from_addr": "0054ba93",
+      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054be02", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0", 
-      "addr": "0054bdb0"
-    }, 
+      "addr": "0054bdb0",
+      "from_addr": "0054be02",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004943c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380", 
-      "addr": "00494380"
-    }, 
+      "addr": "00494380",
+      "from_addr": "004943c0",
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0059a630", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510", 
-      "addr": "0059a510"
-    }, 
+      "addr": "0059a510",
+      "from_addr": "0059a630",
+      "name": "core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ba04f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40", 
-      "addr": "004b9f40"
-    }, 
+      "addr": "004b9f40",
+      "from_addr": "004ba04f",
+      "name": "engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049ea6c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0", 
-      "addr": "0049e9d0"
+      "addr": "0049e9d0",
+      "from_addr": "0049ea6c",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00601272",
+    "address_range": [
+      [
+        "00601272",
+        "0060128b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_memory.c_constructTypedObjectArray_FUN_00601272",
+    "signature": "void * crt_memory.c_constructTypedObjectArray_FUN_00601272(void * array_memory, int element_count, WatcomTypeInfo * type_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601232",
+      "name": "crt_memory.c_constructTypedObjectArray_FUN_00601232"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "array_memory",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "element_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "type_info",
+        "offset": 12,
+        "size": 4,
+        "type": "WatcomTypeInfo *"
+      }
+    ]
+  },
+  "suspects": []
 }

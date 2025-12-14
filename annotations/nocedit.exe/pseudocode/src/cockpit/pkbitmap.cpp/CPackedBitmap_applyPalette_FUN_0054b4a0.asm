@@ -23,8 +23,8 @@ section .text
         ;   Label: cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0
     PUSH EAX                            ; 0054b4a4
     PUSH EAX                            ; 0054b4a5
-    CALL cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0 ; 0054b4a6 | void cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0(char * act_filename, CPackedBitmap * bitmap_ptr)
-        ;   XREF to: 0054b3f0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0 ; 0054b4a6
+        ;   XREF to: 0054b3f0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0(char * act_filename, CPackedBitmap * bitmap_ptr)
     ADD ESP,0x8                         ; 0054b4ab
     RET                                 ; 0054b4ae
 

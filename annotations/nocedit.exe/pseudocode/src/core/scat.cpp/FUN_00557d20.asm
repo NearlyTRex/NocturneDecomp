@@ -38,16 +38,16 @@ section .text
         ;   Label: LAB_00557d35
     PUSH EAX                            ; 00557d38
     PUSH EDI                            ; 00557d39
-    CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 00557d3a | int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
-        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_advance_FUN_0052d610 ; 00557d3a
+        ;   XREF to: 0052d610 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advance_FUN_0052d610(CMotionController * this_ptr)
     ADD ESP,0x8                         ; 00557d3f
     CMP EAX,0x64                        ; 00557d42
-    JZ 0x00557d64                       ; 00557d45 | LAB_00557d64
-        ;   XREF to: 00557d64 (CONDITIONAL_JUMP)
+    JZ 0x00557d64                       ; 00557d45
+        ;   XREF to: 00557d64 (CONDITIONAL_JUMP)  ; LAB_00557d64
     PUSH EAX                            ; 00557d47
     PUSH ESI                            ; 00557d48
-    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 00557d49 | void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
-        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042ec40 ; 00557d49
+        ;   XREF to: 0042ec40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042ec40(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00557d4e
         ;   Label: LAB_00557d4e
     FLD float ptr [EBP + 0x18]          ; 00557d51
@@ -56,8 +56,8 @@ section .text
     FCOMPP                              ; 00557d56
     FNSTSW AX                           ; 00557d58
     SAHF                                ; 00557d5a
-    JC 0x00557d35                       ; 00557d5b | LAB_00557d35
-        ;   XREF to: 00557d35 (CONDITIONAL_JUMP)
+    JC 0x00557d35                       ; 00557d5b
+        ;   XREF to: 00557d35 (CONDITIONAL_JUMP)  ; LAB_00557d35
     MOV ESP,EBP                         ; 00557d5d
     POP EBP                             ; 00557d5f
     POP EDI                             ; 00557d60
@@ -69,17 +69,17 @@ section .text
     PUSH EDX                            ; 00557d6a
     MOV ECX,dword ptr [ESI + 0x2598]    ; 00557d6b
     PUSH ECX                            ; 00557d71
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00557d72 | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 00557d72
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 00557d77
     ADD ESP,0x8                         ; 00557d79
     TEST EAX,EAX                        ; 00557d7c
-    JZ 0x00557d51                       ; 00557d7e | LAB_00557d51
-        ;   XREF to: 00557d51 (CONDITIONAL_JUMP)
+    JZ 0x00557d51                       ; 00557d7e
+        ;   XREF to: 00557d51 (CONDITIONAL_JUMP)  ; LAB_00557d51
     MOV EAX,ESP                         ; 00557d80
     PUSH EAX                            ; 00557d82
-    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 00557d83 | SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
-        ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 00557d83
+        ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
     MOV EAX,0x40a00000                  ; 00557d88
     ADD ESP,0x4                         ; 00557d8d
     MOV EDX,ESP                         ; 00557d90
@@ -90,6 +90,6 @@ section .text
     PUSH EBX                            ; 00557d9f
     MOV EAX,dword ptr [EBX + 0x154]     ; 00557da0
     CALL dword ptr [EAX + 0x11c]        ; 00557da6
-    JMP 0x00557d4e                      ; 00557dac | LAB_00557d4e
-        ;   XREF to: 00557d4e (UNCONDITIONAL_JUMP)
+    JMP 0x00557d4e                      ; 00557dac
+        ;   XREF to: 00557d4e (UNCONDITIONAL_JUMP)  ; LAB_00557d4e
 

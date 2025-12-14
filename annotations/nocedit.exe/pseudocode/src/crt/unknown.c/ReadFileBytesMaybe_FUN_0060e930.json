@@ -1,283 +1,283 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 325, 
-    "pseudocode_lines": 105, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 343, 
-    "assembly_lines": 238, 
-    "suspect_count": 20, 
+    "assembly_lines": 238,
+    "complexity_score": 325,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 8,
+    "pseudocode_lines": 105,
+    "suspect_count": 20,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
-      "addr": "006083fc"
-    }, 
-    {
-      "name": "crt_errno.c_setErrno_FUN_00602790", 
-      "addr": "00602790"
-    }, 
-    {
-      "name": "crt_io.c_getFileTypeFlags_FUN_006088b0", 
-      "addr": "006088b0"
-    }, 
-    {
-      "name": "crt_stdio.c_lseek_FUN_00606690", 
-      "addr": "00606690"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }, 
-    {
-      "name": "GetLastError", 
-      "addr": "EXTERNAL:00000074"
-    }, 
-    {
-      "name": "ReadFile", 
-      "addr": "EXTERNAL:0000008c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GetLastError*", 
-      "name": "GetLastError", 
-      "addr": "006115a4", 
-      "value": "00211f22"
-    }, 
-    {
-      "type": "ReadFile*", 
-      "name": "PTR_ReadFile_00611604", 
-      "addr": "00611604", 
-      "value": "002120f2"
-    }, 
-    {
-      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
-      "addr": "00684ee8", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
-      "addr": "00684eec", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_MaxHandleCount", 
-      "addr": "00685214", 
-      "value": "0x14"
-    }, 
-    {
-      "type": "SIOControlBlock*", 
-      "name": "g_IOControlBlock", 
-      "addr": "0068526c", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "IS_SPECIAL_DEVICE_FUNC*", 
-      "name": "g_IsSpecialDeviceFuncPtr", 
-      "addr": "00685284", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "SPECIAL_DEVICE_READ_FUNC*", 
-      "name": "g_SpecialDeviceReadFuncPtr", 
-      "addr": "006852ac", 
-      "value": "00000000"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,uint param_5"
-    }, 
-    {
-      "line": 17, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 18, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "DWORD unaff_ESI;"
-    }, 
-    {
-      "line": 19, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EDI;"
-    }, 
-    {
-      "line": 44, 
-      "match": "&stack0xfffffff4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,"
-    }, 
-    {
-      "line": 44, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,"
-    }, 
-    {
-      "line": 56, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,unaff_EBX);"
-    }, 
-    {
-      "line": 56, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,unaff_EBX);"
-    }, 
-    {
-      "line": 58, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EDI == 0) break;"
-    }, 
-    {
-      "line": 62, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EDI != 0) {"
-    }, 
-    {
-      "line": 65, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "crt_stdio_c_lseek_FUN_00606690(param_10,(uVar7 - unaff_EDI) + 1,1);"
-    }, 
-    {
-      "line": 76, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while (uVar7 < unaff_EDI);"
-    }, 
-    {
-      "line": 78, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI - iVar3;"
-    }, 
-    {
-      "line": 78, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI - iVar3;"
-    }, 
-    {
-      "line": 80, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (((unaff_EBX & 0x2000) != 0) || (unaff_ESI == 0)) break;"
-    }, 
-    {
-      "line": 80, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (((unaff_EBX & 0x2000) != 0) || (unaff_ESI == 0)) break;"
-    }, 
-    {
-      "line": 84, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uVar2 = unaff_EDI;"
-    }, 
-    {
-      "line": 86, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_5), uVar2 = unaff_EDI, iVar3 == 0)) {"
-    }, 
-    {
-      "line": 88, 
-      "match": "&stack0xfffffff4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,(LPOVERLAPPED)0x0"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0060e930", 
-    "signature": "undefined crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930()", 
-    "address_range": [
-      [
-        "0060e930", 
-        "0060eb38"
-      ]
-    ], 
-    "name": "crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "unaffected_reg",
+      "register_param",
+      "stack_ref",
+      "badspacebase"
+    ],
+    "total_lines": 343
+  },
   "cross_references": [
     {
-      "from_addr": "0060db7a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_fstream.cpp_filebuf_underflow_FUN_0060da87", 
-      "addr": "0060da87"
+      "addr": "0060da87",
+      "from_addr": "0060db7a",
+      "name": "crt_fstream.cpp_filebuf_underflow_FUN_0060da87",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060e930",
+    "address_range": [
+      [
+        "0060e930",
+        "0060eb38"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930",
+    "signature": "undefined crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930()"
+  },
+  "function_calls": [
+    {
+      "addr": "006083fc",
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc"
+    },
+    {
+      "addr": "00602790",
+      "name": "crt_errno.c_setErrno_FUN_00602790"
+    },
+    {
+      "addr": "006088b0",
+      "name": "crt_io.c_getFileTypeFlags_FUN_006088b0"
+    },
+    {
+      "addr": "00606690",
+      "name": "crt_stdio.c_lseek_FUN_00606690"
+    },
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    },
+    {
+      "addr": "EXTERNAL:00000074",
+      "name": "GetLastError"
+    },
+    {
+      "addr": "EXTERNAL:0000008c",
+      "name": "ReadFile"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006115a4",
+      "name": "GetLastError",
+      "type": "GetLastError*",
+      "value": "00211f22"
+    },
+    {
+      "addr": "00611604",
+      "name": "PTR_ReadFile_00611604",
+      "type": "ReadFile*",
+      "value": "002120f2"
+    },
+    {
+      "addr": "00684ee8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684eec",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec",
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00685214",
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
+    },
+    {
+      "addr": "0068526c",
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
+    },
+    {
+      "addr": "00685284",
+      "name": "g_IsSpecialDeviceFuncPtr",
+      "type": "IS_SPECIAL_DEVICE_FUNC*",
+      "value": "00000000"
+    },
+    {
+      "addr": "006852ac",
+      "name": "g_SpecialDeviceReadFuncPtr",
+      "type": "SPECIAL_DEVICE_READ_FUNC*",
+      "value": "00000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,uint param_5",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 17,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_ESI",
+      "text": "DWORD unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EDI",
+      "text": "uint unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0xfffffff4",
+      "text": "(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_ESI",
+      "text": "(unaff_retaddr,param_6,unaff_ESI,(LPDWORD)&stack0xfffffff4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_EBX",
+      "text": "unaff_EDI = (*g_SpecialDeviceReadFuncPtr)(iVar3,param_6,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 58,
+      "match": "unaff_EDI",
+      "text": "if (unaff_EDI == 0) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_EDI",
+      "text": "if (unaff_EDI != 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_EDI",
+      "text": "crt_stdio_c_lseek_FUN_00606690(param_10,(uVar7 - unaff_EDI) + 1,1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_EDI",
+      "text": "} while (uVar7 < unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 78,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI - iVar3;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 78,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI - iVar3;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 80,
+      "match": "unaff_EBX",
+      "text": "if (((unaff_EBX & 0x2000) != 0) || (unaff_ESI == 0)) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 80,
+      "match": "unaff_ESI",
+      "text": "if (((unaff_EBX & 0x2000) != 0) || (unaff_ESI == 0)) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 84,
+      "match": "unaff_EDI",
+      "text": "uVar2 = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 86,
+      "match": "unaff_EDI",
+      "text": "(iVar3 = (*g_IsSpecialDeviceFuncPtr)(param_5), uVar2 = unaff_EDI, iVar3 == 0)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 88,
+      "match": "&stack0xfffffff4",
+      "text": "(unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,(LPOVERLAPPED)0x0",
+      "type": "stack_ref"
     }
   ]
 }

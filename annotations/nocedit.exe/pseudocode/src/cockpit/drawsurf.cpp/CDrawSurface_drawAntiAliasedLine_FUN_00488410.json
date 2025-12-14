@@ -1,191 +1,191 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 119, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 92, 
-    "assembly_lines": 63, 
-    "suspect_count": 8, 
+    "assembly_lines": 63,
+    "complexity_score": 119,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 29,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_ckptutil.c_drawLineAA_FUN_00433c90", 
-      "addr": "00433c90"
-    }, 
-    {
-      "name": "cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660", 
-      "addr": "00434660"
-    }, 
-    {
-      "name": "cockpit_ckptutil.c_setLineClippingDisabled_FUN_00434680", 
-      "addr": "00434680"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_PaletteColorIndex", 
-      "addr": "02c6d554", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(x2 + this_ptr->x,y2 + this_ptr->y,in_stack_00000018 + this_ptr->x,"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000001c + this_ptr->y,g_PaletteColorIndex);"
-    }, 
-    {
-      "line": 28, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_ClipTop = unaff_ESI;"
-    }, 
-    {
-      "line": 30, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "g_ClipBottom = unaff_EBX;"
-    }
-  ], 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 92
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00488410", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)", 
+    "address": "00488410",
     "address_range": [
       [
-        "00488410", 
+        "00488410",
         "004884c9"
       ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00433c90",
+      "name": "cockpit_ckptutil.c_drawLineAA_FUN_00433c90"
+    },
+    {
+      "addr": "00434660",
+      "name": "cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660"
+    },
+    {
+      "addr": "00434680",
+      "name": "cockpit_ckptutil.c_setLineClippingDisabled_FUN_00434680"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02c6d554",
+      "name": "g_PaletteColorIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 48,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x1"
-      }, 
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y1"
-      }, 
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x2"
-      }, 
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y2"
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000018",
+      "text": "(x2 + this_ptr->x,y2 + this_ptr->y,in_stack_00000018 + this_ptr->x,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_0000001c",
+      "text": "in_stack_0000001c + this_ptr->y,g_PaletteColorIndex);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_ESI",
+      "text": "g_ClipTop = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_EBX",
+      "text": "g_ClipBottom = unaff_EBX;",
+      "type": "unaffected_reg"
+    }
+  ]
 }

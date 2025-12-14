@@ -21,10 +21,10 @@ section .text
     MOV ECX,0x603bf5                    ; 005fde67
     MOV EBX,0x603dc8                    ; 005fde6c
     MOV ESI,0x60477a                    ; 005fde71
-    MOV dword ptr [0x00684fbc],EDX      ; 005fde76 | void * PTR_crt_stdio.c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fbc
-    MOV dword ptr [0x00684fc0],ECX      ; 005fde7c | void * PTR_crt_stdio.c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc0
-    MOV dword ptr [0x00684fc4],EBX      ; 005fde82 | void * PTR_crt_stdio.c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc4
-    MOV dword ptr [0x00684fc8],ESI      ; 005fde88 | void * PTR_crt_stdio.c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc8
+    MOV dword ptr [0x00684fbc],EDX      ; 005fde76 | PTR_crt_stdio.c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fbc
+    MOV dword ptr [0x00684fc0],ECX      ; 005fde7c | PTR_crt_stdio.c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc0
+    MOV dword ptr [0x00684fc4],EBX      ; 005fde82 | PTR_crt_stdio.c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc4
+    MOV dword ptr [0x00684fc8],ESI      ; 005fde88 | PTR_crt_stdio.c_reportCPPFloatingPointSupportProblem_FUN_0060477f_00684fc8
     POP ESI                             ; 005fde8e
     POP EBX                             ; 005fde8f
     RET                                 ; 005fde90

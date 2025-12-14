@@ -1,190 +1,190 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 174, 
-    "pseudocode_lines": 44, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 138, 
-    "assembly_lines": 94, 
-    "suspect_count": 11, 
+    "assembly_lines": 94,
+    "complexity_score": 174,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 5,
+    "pseudocode_lines": 44,
+    "suspect_count": 11,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
-      "addr": "00408f10"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0", 
-      "addr": "0052dce0"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90", 
-      "addr": "0052db90"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0", 
-      "addr": "0052d4f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_GETGRABBED_0062eb80", 
-      "addr": "0062eb80", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_GETGRABBED_FRONT_0062eb8b", 
-      "addr": "0062eb8b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_GETGRABBED_FRONT_0062eb9c", 
-      "addr": "0062eb9c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_GETGRABBED_BACK_0062ebad", 
-      "addr": "0062ebad", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_GETGRABBED_0062ebbd", 
-      "addr": "0062ebbd", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_0000001c;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_0000000c == 0) {"
-    }, 
-    {
-      "line": 32, 
-      "match": "&stack0xfffffffc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffffc,"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(CVector3f *)(in_stack_00000018 + 0x20));"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr->base_character).grabbed_by = in_stack_0000001c;"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr->base_character).grabbed_type = in_stack_00000020;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004f28d0", 
-    "signature": "int core_hero.cpp_CHero_FUN_004f28d0(CHero * this_ptr)", 
-    "address_range": [
-      [
-        "004f28d0", 
-        "004f29a5"
-      ]
-    ], 
-    "name": "core_hero.cpp_CHero_FUN_004f28d0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CHero *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 138
+  },
   "cross_references": [
     {
-      "from_addr": "005c66db", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005c66a0", 
-      "addr": "005c66a0"
+      "addr": "005c66a0",
+      "from_addr": "005c66db",
+      "name": "core_stranger.cpp_CStranger_FUN_005c66a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f28d0",
+    "address_range": [
+      [
+        "004f28d0",
+        "004f29a5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_FUN_004f28d0",
+    "signature": "int core_hero.cpp_CHero_FUN_004f28d0(CHero * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408f10",
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
+    },
+    {
+      "addr": "0052dce0",
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
+    },
+    {
+      "addr": "0052db90",
+      "name": "core_motion.cpp_CMotionController_setDesiredStateByName_FUN_0052db90"
+    },
+    {
+      "addr": "0052d4f0",
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062eb80",
+      "name": "s_GETGRABBED_0062eb80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062eb8b",
+      "name": "s_GETGRABBED_FRONT_0062eb8b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062eb9c",
+      "name": "s_GETGRABBED_FRONT_0062eb9c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ebad",
+      "name": "s_GETGRABBED_BACK_0062ebad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ebbd",
+      "name": "s_GETGRABBED_0062ebbd",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000001c",
+      "text": "CDemonActor *in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xfffffffc",
+      "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffffc,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000018",
+      "text": "(CVector3f *)(in_stack_00000018 + 0x20));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_0000001c",
+      "text": "(this_ptr->base_character).grabbed_by = in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000020",
+      "text": "(this_ptr->base_character).grabbed_type = in_stack_00000020;",
+      "type": "stack_param"
     }
   ]
 }

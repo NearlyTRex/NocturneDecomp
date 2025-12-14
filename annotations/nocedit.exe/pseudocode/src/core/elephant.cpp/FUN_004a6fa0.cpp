@@ -11,8 +11,7 @@ void core_elephant_cpp_FUN_004a6fa0(void)
 {
   CElephantGun *this_ptr;
   
-  this_ptr = (CElephantGun *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\elephant.cpp",0x2e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\elephant.cpp",0x2e);
   if (this_ptr == (CElephantGun *)0x0) {
     return;
   }

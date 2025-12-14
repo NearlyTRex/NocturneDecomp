@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f6bb28                   ; 005bb110 | CDemonActorType g_CStrangerClassInfo
+    MOV EAX,0x3f6bb28                   ; 005bb110 | g_CStrangerClassInfo
         ;   Label: core_stranger.cpp_CStranger_getActorType_FUN_005bb110
     RET                                 ; 005bb115
 

@@ -1,309 +1,309 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 93, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 27, 
-    "global_count": 1, 
-    "total_lines": 82, 
-    "assembly_lines": 54, 
-    "suspect_count": 5, 
+    "assembly_lines": 54,
+    "complexity_score": 93,
+    "cross_reference_count": 27,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 28,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
-      "addr": "0040b5c0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_ActorReadingMode", 
-      "addr": "00822038", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 2, 
-    "patterns": [
-      {
-        "address": "0040b99d", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }, 
-      {
-        "address": "0040b9b8", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "&stack0xffffff30", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar3 = &stack0xffffff30;"
-    }, 
-    {
-      "line": 15, 
-      "match": "&stack0xffffff30", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff30,property_name);"
-    }, 
-    {
-      "line": 29, 
-      "match": "&stack0xffffff30", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff30,property_name);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040b970", 
-    "signature": "void core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970(CDeformableModelInstance * model_ptr, char * property_name)", 
-    "address_range": [
-      [
-        "0040b970", 
-        "0040b9ea"
-      ]
-    ], 
-    "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970"
-  }, 
-  "stack_frame": {
-    "local_size": 212, 
-    "variables": [
-      {
-        "offset": -208, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_d0"
-      }, 
-      {
-        "offset": -207, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_cf"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "model_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "property_name"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 220, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 82
+  },
   "cross_references": [
     {
-      "from_addr": "004123cf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_armour.cpp_CArmour_serialize_FUN_004123a0", 
-      "addr": "004123a0"
-    }, 
+      "addr": "004123a0",
+      "from_addr": "004123cf",
+      "name": "core_armour.cpp_CArmour_serialize_FUN_004123a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00415d9f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batcreat.cpp_CBatCreature_serialize_FUN_00415d70", 
-      "addr": "00415d70"
-    }, 
+      "addr": "00415d70",
+      "from_addr": "00415d9f",
+      "name": "core_batcreat.cpp_CBatCreature_serialize_FUN_00415d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004175af", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_batman.cpp_CBatman_serialize_FUN_00417580", 
-      "addr": "00417580"
-    }, 
+      "addr": "00417580",
+      "from_addr": "004175af",
+      "name": "core_batman.cpp_CBatman_serialize_FUN_00417580",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041835f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_beast.cpp_CBeast_load_FUN_00418330", 
-      "addr": "00418330"
-    }, 
+      "addr": "00418330",
+      "from_addr": "0041835f",
+      "name": "core_beast.cpp_CBeast_load_FUN_00418330",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00418aef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_biggs.cpp_CBiggs_load_FUN_00418ac0", 
-      "addr": "00418ac0"
-    }, 
+      "addr": "00418ac0",
+      "from_addr": "00418aef",
+      "name": "core_biggs.cpp_CBiggs_load_FUN_00418ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041d2aa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_CBoneGuy_load_FUN_0041d270", 
-      "addr": "0041d270"
-    }, 
+      "addr": "0041d270",
+      "from_addr": "0041d2aa",
+      "name": "core_boneguy.cpp_CBoneGuy_load_FUN_0041d270",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00424585", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bride.cpp_CBride_load_FUN_00424560", 
-      "addr": "00424560"
-    }, 
+      "addr": "00424560",
+      "from_addr": "00424585",
+      "name": "core_bride.cpp_CBride_load_FUN_00424560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044486e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cow.cpp_CZombieCow_load_FUN_00444840", 
-      "addr": "00444840"
-    }, 
+      "addr": "00444840",
+      "from_addr": "0044486e",
+      "name": "core_cow.cpp_CZombieCow_load_FUN_00444840",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047f7de", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dog.cpp_CZombieDog_serialize_FUN_0047f7b0", 
-      "addr": "0047f7b0"
-    }, 
+      "addr": "0047f7b0",
+      "from_addr": "0047f7de",
+      "name": "core_dog.cpp_CZombieDog_serialize_FUN_0047f7b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00485dff", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dracbrid.cpp_CDraculaBride_load_FUN_00485dd0", 
-      "addr": "00485dd0"
-    }, 
+      "addr": "00485dd0",
+      "from_addr": "00485dff",
+      "name": "core_dracbrid.cpp_CDraculaBride_load_FUN_00485dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048f31e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_drone.cpp_CDrone_load_FUN_0048f2f0", 
-      "addr": "0048f2f0"
-    }, 
+      "addr": "0048f2f0",
+      "from_addr": "0048f31e",
+      "name": "core_drone.cpp_CDrone_load_FUN_0048f2f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e549f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gargoyle.cpp_CGargoyle_load_FUN_004e5470", 
-      "addr": "004e5470"
-    }, 
+      "addr": "004e5470",
+      "from_addr": "004e549f",
+      "name": "core_gargoyle.cpp_CGargoyle_load_FUN_004e5470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e81e9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ghoul.cpp_CGhoul_load_FUN_004e81c0", 
-      "addr": "004e81c0"
-    }, 
+      "addr": "004e81c0",
+      "from_addr": "004e81e9",
+      "name": "core_ghoul.cpp_CGhoul_load_FUN_004e81c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f6347", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_CHostage_load_FUN_004f6170", 
-      "addr": "004f6170"
-    }, 
+      "addr": "004f6170",
+      "from_addr": "004f6347",
+      "name": "core_hostage.cpp_CHostage_load_FUN_004f6170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f76ef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0", 
-      "addr": "004f76c0"
-    }, 
+      "addr": "004f76c0",
+      "from_addr": "004f76ef",
+      "name": "core_hotdemon.cpp_CHotDemon_load_FUN_004f76c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004fab2f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_imp.cpp_CImp_load_FUN_004fab00", 
-      "addr": "004fab00"
-    }, 
+      "addr": "004fab00",
+      "from_addr": "004fab2f",
+      "name": "core_imp.cpp_CImp_load_FUN_004fab00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050398e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_larva.cpp_CLarva_load_FUN_00503960", 
-      "addr": "00503960"
-    }, 
+      "addr": "00503960",
+      "from_addr": "0050398e",
+      "name": "core_larva.cpp_CLarva_load_FUN_00503960",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052095f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_CMimic_load_FUN_00520930", 
-      "addr": "00520930"
-    }, 
+      "addr": "00520930",
+      "from_addr": "0052095f",
+      "name": "core_mimic.cpp_CMimic_load_FUN_00520930",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052725e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_CMobster_load_FUN_00527230", 
-      "addr": "00527230"
-    }, 
+      "addr": "00527230",
+      "from_addr": "0052725e",
+      "name": "core_mobster.cpp_CMobster_load_FUN_00527230",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00544bcf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_npc.cpp_CNPC_serialize_FUN_00544ba0", 
-      "addr": "00544ba0"
-    }, 
+      "addr": "00544ba0",
+      "from_addr": "00544bcf",
+      "name": "core_npc.cpp_CNPC_serialize_FUN_00544ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005461f7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_passngr.cpp_CPassenger_load_FUN_00546190", 
-      "addr": "00546190"
-    }, 
+      "addr": "00546190",
+      "from_addr": "005461f7",
+      "name": "core_passngr.cpp_CPassenger_load_FUN_00546190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00568c8a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sentinel.cpp_CSentinel_load_FUN_00568c70", 
-      "addr": "00568c70"
-    }, 
+      "addr": "00568c70",
+      "from_addr": "00568c8a",
+      "name": "core_sentinel.cpp_CSentinel_load_FUN_00568c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a324f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_smiley.cpp_CSmiley_load_FUN_005a3220", 
-      "addr": "005a3220"
-    }, 
+      "addr": "005a3220",
+      "from_addr": "005a324f",
+      "name": "core_smiley.cpp_CSmiley_load_FUN_005a3220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c773f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_succubus.cpp_CSuccubus_serialize_FUN_005c7710", 
-      "addr": "005c7710"
-    }, 
+      "addr": "005c7710",
+      "from_addr": "005c773f",
+      "name": "core_succubus.cpp_CSuccubus_serialize_FUN_005c7710",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005db89b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tentacle.cpp_CTentacle_serialize_FUN_005db880", 
-      "addr": "005db880"
-    }, 
+      "addr": "005db880",
+      "from_addr": "005db89b",
+      "name": "core_tentacle.cpp_CTentacle_serialize_FUN_005db880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f19ae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_werewolf.cpp_CWerewolf_serialize_FUN_005f1980", 
-      "addr": "005f1980"
-    }, 
+      "addr": "005f1980",
+      "from_addr": "005f19ae",
+      "name": "core_werewolf.cpp_CWerewolf_serialize_FUN_005f1980",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005fbfff", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_CZombie_serialize_FUN_005fbfd0", 
-      "addr": "005fbfd0"
+      "addr": "005fbfd0",
+      "from_addr": "005fbfff",
+      "name": "core_zombie.cpp_CZombie_serialize_FUN_005fbfd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040b970",
+    "address_range": [
+      [
+        "0040b970",
+        "0040b9ea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970",
+    "signature": "void core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970(CDeformableModelInstance * model_ptr, char * property_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b5c0",
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00822038",
+      "name": "g_ActorReadingMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 220,
+    "local_size": 212,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_cf",
+        "offset": -207,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0040b99d",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0040b9b8",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 13,
+      "match": "&stack0xffffff30",
+      "text": "pcVar3 = &stack0xffffff30;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xffffff30",
+      "text": "core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff30,property_name);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0xffffff30",
+      "text": "core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff30,property_name);",
+      "type": "stack_ref"
     }
   ]
 }

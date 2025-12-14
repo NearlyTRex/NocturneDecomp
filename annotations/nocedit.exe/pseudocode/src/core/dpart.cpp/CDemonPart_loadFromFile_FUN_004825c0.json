@@ -1,340 +1,340 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 297, 
-    "pseudocode_lines": 117, 
-    "cross_reference_count": 1, 
-    "global_count": 18, 
-    "total_lines": 402, 
-    "assembly_lines": 285, 
-    "suspect_count": 17, 
+    "assembly_lines": 285,
+    "complexity_score": 297,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 18,
+    "pseudocode_lines": 117,
+    "suspect_count": 17,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dpart.cpp_CDemonPart_alloc_FUN_00482180", 
-      "addr": "00482180"
-    }, 
-    {
-      "name": "core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0", 
-      "addr": "004824f0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_newformat_006217ef", 
-      "addr": "006217ef", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "g_WorldToVertexScale", 
-      "addr": "006217fe", 
-      "value": "256"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_VertexToWorldScale", 
-      "addr": "00621806", 
-      "value": "0.00390625"
-    }, 
-    {
-      "type": "char[72]", 
-      "name": "g_PolyDataConversionBuffer", 
-      "addr": "02c14d30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d34", 
-      "addr": "02c14d34", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d38", 
-      "addr": "02c14d38", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d3c", 
-      "addr": "02c14d3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d40", 
-      "addr": "02c14d40", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d44", 
-      "addr": "02c14d44", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d48", 
-      "addr": "02c14d48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d54", 
-      "addr": "02c14d54", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d60", 
-      "addr": "02c14d60", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d6c", 
-      "addr": "02c14d6c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d80", 
-      "addr": "02c14d80", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d84", 
-      "addr": "02c14d84", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d88", 
-      "addr": "02c14d88", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d8c", 
-      "addr": "02c14d8c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14d90", 
-      "addr": "02c14d90", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 19, 
-      "match": "in_stack_00000044", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float *in_stack_00000044;"
-    }, 
-    {
-      "line": 54, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).A + iVar5) ="
-    }, 
-    {
-      "line": 56, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).B + iVar5) ="
-    }, 
-    {
-      "line": 58, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).C + iVar5) ="
-    }, 
-    {
-      "line": 60, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).D + iVar5) ="
-    }, 
-    {
-      "line": 62, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar5) ="
-    }, 
-    {
-      "line": 64, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar5) ="
-    }, 
-    {
-      "line": 66, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar5) ="
-    }, 
-    {
-      "line": 69, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar5) = 0xffffffff;"
-    }, 
-    {
-      "line": 72, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar5) ="
-    }, 
-    {
-      "line": 81, 
-      "match": "in_stack_00000044", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000044 != (float *)0x0) {"
-    }, 
-    {
-      "line": 83, 
-      "match": "in_stack_00000044", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar9 = (float10)in_stack_00000044[1] * fVar8;"
-    }, 
-    {
-      "line": 84, 
-      "match": "in_stack_00000044", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar10 = (float10)in_stack_00000044[2] * fVar8;"
-    }, 
-    {
-      "line": 87, 
-      "match": "in_stack_00000044", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)*in_stack_00000044 * fVar8));"
-    }, 
-    {
-      "line": 95, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);"
-    }, 
-    {
-      "line": 97, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);"
-    }, 
-    {
-      "line": 99, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004825c0", 
-    "signature": "void core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart * this_ptr, FILE * file_handle, CVector3f * offset_position)", 
-    "address_range": [
-      [
-        "004825c0", 
-        "004828aa"
-      ]
-    ], 
-    "name": "core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonPart *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "offset_position"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 402
+  },
   "cross_references": [
     {
-      "from_addr": "00494790", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710", 
-      "addr": "00494710"
+      "addr": "00494710",
+      "from_addr": "00494790",
+      "name": "core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004825c0",
+    "address_range": [
+      [
+        "004825c0",
+        "004828aa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0",
+    "signature": "void core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart * this_ptr, FILE * file_handle, CVector3f * offset_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "00482180",
+      "name": "core_dpart.cpp_CDemonPart_alloc_FUN_00482180"
+    },
+    {
+      "addr": "004824f0",
+      "name": "core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006217ef",
+      "name": "s_newformat_006217ef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006217fe",
+      "name": "g_WorldToVertexScale",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "00621806",
+      "name": "g_VertexToWorldScale",
+      "type": "double",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "02c14d30",
+      "name": "g_PolyDataConversionBuffer",
+      "type": "char[72]",
+      "value": null
+    },
+    {
+      "addr": "02c14d34",
+      "name": "DAT_02c14d34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d38",
+      "name": "DAT_02c14d38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d3c",
+      "name": "DAT_02c14d3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d40",
+      "name": "DAT_02c14d40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d44",
+      "name": "DAT_02c14d44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d48",
+      "name": "DAT_02c14d48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d54",
+      "name": "DAT_02c14d54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d60",
+      "name": "DAT_02c14d60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d6c",
+      "name": "DAT_02c14d6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d80",
+      "name": "DAT_02c14d80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d84",
+      "name": "DAT_02c14d84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d88",
+      "name": "DAT_02c14d88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d8c",
+      "name": "DAT_02c14d8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c14d90",
+      "name": "DAT_02c14d90",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonPart *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "offset_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000044",
+      "text": "float *in_stack_00000044;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(this_ptr->face_data->plane).A + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(this_ptr->face_data->plane).B + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(this_ptr->face_data->plane).C + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(this_ptr->face_data->plane).D + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar5) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 81,
+      "match": "in_stack_00000044",
+      "text": "if (in_stack_00000044 != (float *)0x0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_00000044",
+      "text": "fVar9 = (float10)in_stack_00000044[1] * fVar8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_00000044",
+      "text": "fVar10 = (float10)in_stack_00000044[2] * fVar8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_00000044",
+      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)*in_stack_00000044 * fVar8));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);",
+      "type": "pointer_cast"
     }
   ]
 }

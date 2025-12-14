@@ -1,509 +1,509 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 473, 
-    "pseudocode_lines": 133, 
-    "cross_reference_count": 1, 
-    "global_count": 24, 
-    "total_lines": 379, 
-    "assembly_lines": 246, 
-    "suspect_count": 33, 
+    "assembly_lines": 246,
+    "complexity_score": 473,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 24,
+    "pseudocode_lines": 133,
+    "suspect_count": 33,
     "suspect_types": [
-      "extra_output", 
+      "extra_output",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0", 
-      "addr": "00477bf0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690", 
-      "addr": "00477690"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_00620eb3", 
-      "addr": "00620eb3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CKeyFramedModel_exportTo_00620ec6", 
-      "addr": "00620ec6", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620efb", 
-      "addr": "00620efb", 
-      "value": "256"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620f03", 
-      "addr": "00620f03", 
-      "value": "65536"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_VertexCount", 
-      "addr": "01626408", 
-      "value": null
-    }, 
-    {
-      "type": "SVertexData[20000]", 
-      "name": "g_LoadedVertices", 
-      "addr": "0162640c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01626410", 
-      "addr": "01626410", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LoadedVertices[0].vertex.z", 
-      "addr": "01626414", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01626420", 
-      "addr": "01626420", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PolygonCount", 
-      "addr": "016e990c", 
-      "value": null
-    }, 
-    {
-      "type": "SShapeEditorPolygon[20000]", 
-      "name": "g_ModelPolygonData", 
-      "addr": "016e9910", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9914", 
-      "addr": "016e9914", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9915", 
-      "addr": "016e9915", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9916", 
-      "addr": "016e9916", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9917", 
-      "addr": "016e9917", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b4", 
-      "addr": "016e99b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c8", 
-      "addr": "016e99c8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99cc", 
-      "addr": "016e99cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a08", 
-      "addr": "016e9a08", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a0c", 
-      "addr": "016e9a0c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a48", 
-      "addr": "016e9a48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e9a98", 
-      "addr": "016e9a98", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX_00;"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_ECX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX_01;"
-    }, 
-    {
-      "line": 13, 
-      "match": "extraout_ECX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX_02;"
-    }, 
-    {
-      "line": 15, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 16, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX_00;"
-    }, 
-    {
-      "line": 17, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX_01;"
-    }, 
-    {
-      "line": 18, 
-      "match": "extraout_EDX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX_02;"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EDX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX_03;"
-    }, 
-    {
-      "line": 45, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((double)((float10)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4) *"
-    }, 
-    {
-      "line": 47, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)ppCVar3 + iVar5) = (int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 50, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((double)((float10)*(float *)((int)&g_LoadedVertices[0].vertex.y +"
-    }, 
-    {
-      "line": 51, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "extraout_ECX) * fVar10));"
-    }, 
-    {
-      "line": 52, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)((int)ppCVar3 + extraout_EDX + 4) = (int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 52, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)ppCVar3 + extraout_EDX + 4) = (int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 55, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((double)((float10)*(float *)((int)&g_LoadedVertices[0].vertex.z +"
-    }, 
-    {
-      "line": 56, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "extraout_ECX_00) * fVar10));"
-    }, 
-    {
-      "line": 57, 
-      "match": "extraout_ECX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar4 = extraout_ECX_01 + 0x14;"
-    }, 
-    {
-      "line": 58, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)((int)ppCVar3 + extraout_EDX_00 + 8) = (int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 58, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)ppCVar3 + extraout_EDX_00 + 8) = (int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 60, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar5 = extraout_EDX_01 + 0xc;"
-    }, 
-    {
-      "line": 73, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)this_ptr->poly_vert_list + local_c + 4) ="
-    }, 
-    {
-      "line": 79, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)this_ptr->poly_vert_list + iVar5 + local_c + 0x18) ="
-    }, 
-    {
-      "line": 80, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);"
-    }, 
-    {
-      "line": 82, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((double)((float10)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4)"
-    }, 
-    {
-      "line": 87, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((double)((float10)*(float *)((int)g_ModelPolygonData[0].uv_v +"
-    }, 
-    {
-      "line": 88, 
-      "match": "extraout_EDX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "extraout_EDX_02) * fVar10));"
-    }, 
-    {
-      "line": 89, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)(extraout_EAX + extraout_ECX_02 + 0x20) = (int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 89, 
-      "match": "extraout_ECX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)(extraout_EAX + extraout_ECX_02 + 0x20) = (int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 90, 
-      "match": "extraout_EDX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar4 = extraout_EDX_03 + 4;"
-    }, 
-    {
-      "line": 92, 
-      "match": "extraout_ECX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "iVar5 = extraout_ECX_02 + 0xc;"
-    }, 
-    {
-      "line": 127, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->poly_texture_index_list + local_14) = iVar4;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0047ea10", 
-    "signature": "void core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFramedModel * this_ptr)", 
-    "address_range": [
-      [
-        "0047ea10", 
-        "0047ecf0"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 379
+  },
   "cross_references": [
     {
-      "from_addr": "0047e3da", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
-      "addr": "0047cbc0"
+      "addr": "0047cbc0",
+      "from_addr": "0047e3da",
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047ea10",
+    "address_range": [
+      [
+        "0047ea10",
+        "0047ecf0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10",
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFramedModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00477bf0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0"
+    },
+    {
+      "addr": "00477690",
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00620eb3",
+      "name": "s_core_dmodel_cpp_00620eb3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620ec6",
+      "name": "s_CKeyFramedModel_exportTo_00620ec6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620efb",
+      "name": "DOUBLE_00620efb",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "00620f03",
+      "name": "DOUBLE_00620f03",
+      "type": "double",
+      "value": "65536"
+    },
+    {
+      "addr": "01626408",
+      "name": "g_VertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0162640c",
+      "name": "g_LoadedVertices",
+      "type": "SVertexData[20000]",
+      "value": null
+    },
+    {
+      "addr": "01626410",
+      "name": "DAT_01626410",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626414",
+      "name": "g_LoadedVertices[0].vertex.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626420",
+      "name": "DAT_01626420",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e990c",
+      "name": "g_PolygonCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "016e9910",
+      "name": "g_ModelPolygonData",
+      "type": "SShapeEditorPolygon[20000]",
+      "value": null
+    },
+    {
+      "addr": "016e9914",
+      "name": "DAT_016e9914",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9915",
+      "name": "DAT_016e9915",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9916",
+      "name": "DAT_016e9916",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9917",
+      "name": "DAT_016e9917",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b4",
+      "name": "DAT_016e99b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c8",
+      "name": "DAT_016e99c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99cc",
+      "name": "DAT_016e99cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a08",
+      "name": "DAT_016e9a08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a0c",
+      "name": "DAT_016e9a0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a48",
+      "name": "DAT_016e9a48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e9a98",
+      "name": "DAT_016e9a98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_ECX",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_ECX_00",
+      "text": "int extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_ECX_01",
+      "text": "int extraout_ECX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_ECX_02",
+      "text": "int extraout_ECX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EDX_00",
+      "text": "int extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EDX_01",
+      "text": "int extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_EDX_02",
+      "text": "int extraout_EDX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX_03",
+      "text": "int extraout_EDX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(float *)((int)",
+      "text": "((double)((float10)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)ppCVar3 + iVar5) = (int)ROUND(dVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(float *)((int)",
+      "text": "((double)((float10)*(float *)((int)&g_LoadedVertices[0].vertex.y +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_ECX",
+      "text": "extraout_ECX) * fVar10));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 52,
+      "match": "extraout_EDX",
+      "text": "*(int *)((int)ppCVar3 + extraout_EDX + 4) = (int)ROUND(dVar11);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)ppCVar3 + extraout_EDX + 4) = (int)ROUND(dVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(float *)((int)",
+      "text": "((double)((float10)*(float *)((int)&g_LoadedVertices[0].vertex.z +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 56,
+      "match": "extraout_ECX_00",
+      "text": "extraout_ECX_00) * fVar10));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 57,
+      "match": "extraout_ECX_01",
+      "text": "iVar4 = extraout_ECX_01 + 0x14;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 58,
+      "match": "extraout_EDX_00",
+      "text": "*(int *)((int)ppCVar3 + extraout_EDX_00 + 8) = (int)ROUND(dVar11);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)ppCVar3 + extraout_EDX_00 + 8) = (int)ROUND(dVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 60,
+      "match": "extraout_EDX_01",
+      "text": "iVar5 = extraout_EDX_01 + 0xc;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->poly_vert_list + local_c + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->poly_vert_list + iVar5 + local_c + 0x18) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(float *)((int)",
+      "text": "((double)((float10)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(float *)((int)",
+      "text": "((double)((float10)*(float *)((int)g_ModelPolygonData[0].uv_v +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 88,
+      "match": "extraout_EDX_02",
+      "text": "extraout_EDX_02) * fVar10));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 89,
+      "match": "extraout_EAX",
+      "text": "*(int *)(extraout_EAX + extraout_ECX_02 + 0x20) = (int)ROUND(dVar11);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 89,
+      "match": "extraout_ECX_02",
+      "text": "*(int *)(extraout_EAX + extraout_ECX_02 + 0x20) = (int)ROUND(dVar11);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 90,
+      "match": "extraout_EDX_03",
+      "text": "iVar4 = extraout_EDX_03 + 4;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 92,
+      "match": "extraout_ECX_02",
+      "text": "iVar5 = extraout_ECX_02 + 0xc;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->poly_texture_index_list + local_14) = iVar4;",
+      "type": "pointer_cast"
     }
   ]
 }

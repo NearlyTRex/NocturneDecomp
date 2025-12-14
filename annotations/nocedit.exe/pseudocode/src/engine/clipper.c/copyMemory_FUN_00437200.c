@@ -11,15 +11,13 @@ void __cdecl engine_clipper_c_copyMemory_FUN_00437200(void *dest_ptr,void *src_p
 {
   uint uVar1;
   
-                    /* WARNING: Load size is inaccurate */
   for (uVar1 = (uint)byte_count >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
-    *(uint *)dest_ptr = *src_ptr;
+    *(uint *)dest_ptr = *(uint *)src_ptr;
     src_ptr = (uint *)((int)src_ptr + 4);
     dest_ptr = (uint *)((int)dest_ptr + 4);
   }
-                    /* WARNING: Load size is inaccurate */
   for (uVar1 = byte_count & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
-    *(byte *)dest_ptr = *src_ptr;
+    *(byte *)dest_ptr = *(byte *)src_ptr;
     src_ptr = (uint *)((int)src_ptr + 1);
     dest_ptr = (uint *)((int)dest_ptr + 1);
   }

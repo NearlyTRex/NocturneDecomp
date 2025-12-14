@@ -11,7 +11,7 @@ void core_drip_cpp_FUN_0048dfc0(void)
 {
   CDrip *this_ptr;
   
-  this_ptr = (CDrip *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x33c,"..\\core\\drip.cpp",0x32);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x33c,"..\\core\\drip.cpp",0x32);
   if (this_ptr == (CDrip *)0x0) {
     return;
   }

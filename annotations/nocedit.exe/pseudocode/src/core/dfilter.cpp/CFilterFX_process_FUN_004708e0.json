@@ -1,158 +1,158 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 115, 
-    "pseudocode_lines": 35, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 93, 
-    "assembly_lines": 58, 
-    "suspect_count": 7, 
+    "assembly_lines": 58,
+    "complexity_score": 115,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 35,
+    "suspect_count": 7,
     "suspect_types": [
-      "extra_output", 
+      "extra_output",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0", 
-      "addr": "004701a0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_movscrn_raw_0061e84e", 
-      "addr": "0061e84e", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "g_MovieFrameRateMultiplier", 
-      "addr": "0061e85e", 
-      "value": "30"
-    }, 
-    {
-      "type": "CFilterCache*", 
-      "name": "g_CFilterCachePtr", 
-      "addr": "0066efcc", 
-      "value": "020a4c08"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CFilterCache", 
-      "name": "g_CFilterCacheInstance", 
-      "addr": "020a4c08", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint extraout_ECX;"
-    }, 
-    {
-      "line": 24, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar3 = (uint *)((int)this_ptr->movie_data + (int)ROUND(dVar6) * 0x2000);"
-    }, 
-    {
-      "line": 25, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (uint *)((int)pCVar1->data_buffer + 0x1000);"
-    }, 
-    {
-      "line": 26, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "for (uVar2 = extraout_ECX >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {"
-    }, 
-    {
-      "line": 31, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "for (uVar2 = extraout_ECX & 3; uVar2 != 0; uVar2 = uVar2 - 1) {"
-    }, 
-    {
-      "line": 33, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);"
-    }, 
-    {
-      "line": 34, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004708e0", 
-    "signature": "void core_dfilter.cpp_CFilterFX_process_FUN_004708e0(CFilterFx * this_ptr)", 
-    "address_range": [
-      [
-        "004708e0", 
-        "00470970"
-      ]
-    ], 
-    "name": "core_dfilter.cpp_CFilterFX_process_FUN_004708e0"
-  }, 
-  "stack_frame": {
-    "local_size": 16, 
-    "variables": [
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFilterFx *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 93
+  },
   "cross_references": [
     {
-      "from_addr": "004e31f7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_process_FUN_004e3190", 
-      "addr": "004e3190"
+      "addr": "004e3190",
+      "from_addr": "004e31f7",
+      "name": "core_game.cpp_CGame_process_FUN_004e3190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004708e0",
+    "address_range": [
+      [
+        "004708e0",
+        "00470970"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CFilterFX_process_FUN_004708e0",
+    "signature": "void core_dfilter.cpp_CFilterFX_process_FUN_004708e0(CFilterFx * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004701a0",
+      "name": "core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061e84e",
+      "name": "s_movscrn_raw_0061e84e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e85e",
+      "name": "g_MovieFrameRateMultiplier",
+      "type": "double",
+      "value": "30"
+    },
+    {
+      "addr": "0066efcc",
+      "name": "g_CFilterCachePtr",
+      "type": "CFilterCache*",
+      "value": "020a4c08"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "020a4c08",
+      "name": "g_CFilterCacheInstance",
+      "type": "CFilterCache",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFilterFx *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_ECX",
+      "text": "uint extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)this_ptr->movie_data + (int)ROUND(dVar6) * 0x2000);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)pCVar1->data_buffer + 0x1000);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_ECX",
+      "text": "for (uVar2 = extraout_ECX >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_ECX",
+      "text": "for (uVar2 = extraout_ECX & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

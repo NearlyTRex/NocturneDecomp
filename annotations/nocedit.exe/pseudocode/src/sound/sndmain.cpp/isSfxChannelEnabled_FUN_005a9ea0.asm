@@ -35,25 +35,25 @@ section .text
         ;   Label: sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005a9ea1
     TEST EBX,EBX                        ; 005a9ea5
-    JL 0x005a9eb7                       ; 005a9ea7 | LAB_005a9eb7
-        ;   XREF to: 005a9eb7 (CONDITIONAL_JUMP)
+    JL 0x005a9eb7                       ; 005a9ea7
+        ;   XREF to: 005a9eb7 (CONDITIONAL_JUMP)  ; LAB_005a9eb7
     CMP EBX,0x20                        ; 005a9ea9
-    JGE 0x005a9eb7                      ; 005a9eac | LAB_005a9eb7
-        ;   XREF to: 005a9eb7 (CONDITIONAL_JUMP)
-    MOV EAX,dword ptr [EBX*0x4 + 0x3f68928] ; 005a9eae | int[32] g_SfxChannelEnabled
+    JGE 0x005a9eb7                      ; 005a9eac
+        ;   XREF to: 005a9eb7 (CONDITIONAL_JUMP)  ; LAB_005a9eb7
+    MOV EAX,dword ptr [EBX*0x4 + 0x3f68928] ; 005a9eae | g_SfxChannelEnabled
     POP EBX                             ; 005a9eb5
     RET                                 ; 005a9eb6
     PUSH EBX                            ; 005a9eb7
         ;   Label: LAB_005a9eb7
-    MOV EDX,0x650aee                    ; 005a9eb8 | = "..\\sound\\sndmain.cpp" | s_sound_sndmain_cpp_00650aee = ..\sound\sndmain.cpp
+    MOV EDX,0x650aee                    ; 005a9eb8 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xfb0                       ; 005a9ebd
-    PUSH 0x650b03                       ; 005a9ec2 | = "isSfxChannelEnabled - invalid channel..." | s_isSfxChannelEnabled_inva_00650b03 = isSfxChannelEnabled - invalid channel index: %d
-    MOV dword ptr [0x02f0ca48],EDX      ; 005a9ec7 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 005a9ecd | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a9ed3 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x650b03                       ; 005a9ec2 | = "isSfxChannelEnabled - invalid channel..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 005a9ec7 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 005a9ecd | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a9ed3
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 005a9ed8
-    MOV EAX,dword ptr [EBX*0x4 + 0x3f68928] ; 005a9edb | int[32] g_SfxChannelEnabled
+    MOV EAX,dword ptr [EBX*0x4 + 0x3f68928] ; 005a9edb | g_SfxChannelEnabled
     POP EBX                             ; 005a9ee2
     RET                                 ; 005a9ee3
 

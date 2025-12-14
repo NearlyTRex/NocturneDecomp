@@ -1,66 +1,66 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 36, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 28, 
-    "assembly_lines": 17, 
-    "suspect_count": 2, 
+    "assembly_lines": 17,
+    "complexity_score": 36,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_boxactor.cpp_FUN_00423110", 
-      "addr": "00423110"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Select_type_of_light_to__00616a47", 
-      "addr": "00616a47", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000008 + 0x66c) = iVar1;"
-    }
-  ], 
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00423590", 
-    "signature": "undefined core_boxactor.cpp_CLightActor_FUN_00423590()", 
+    "address": "00423590",
     "address_range": [
       [
-        "00423590", 
+        "00423590",
         "004235b7"
       ]
-    ], 
-    "name": "core_boxactor.cpp_CLightActor_FUN_00423590"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_boxactor.cpp_CLightActor_FUN_00423590",
+    "signature": "undefined core_boxactor.cpp_CLightActor_FUN_00423590()"
+  },
+  "function_calls": [
+    {
+      "addr": "00423110",
+      "name": "core_boxactor.cpp_FUN_00423110"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616a47",
+      "name": "s_Select_type_of_light_to__00616a47",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "*(int *)(in_stack_00000008 + 0x66c) = iVar1;",
+      "type": "stack_param"
+    }
+  ]
 }

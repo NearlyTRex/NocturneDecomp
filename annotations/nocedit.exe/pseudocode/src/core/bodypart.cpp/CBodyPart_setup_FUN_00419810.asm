@@ -19,6 +19,6 @@ section .text
     PUSH EBP                            ; 00419812
     MOV EDI,dword ptr [ESP + 0x10]      ; 00419813
     PUSH EDI                            ; 00419817
-    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 00419818 | void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 00419818
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
 

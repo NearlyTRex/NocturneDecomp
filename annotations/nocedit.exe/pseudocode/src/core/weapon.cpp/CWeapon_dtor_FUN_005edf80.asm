@@ -41,46 +41,46 @@ section .text
         ;   Label: core_weapon.cpp_CWeapon_dtor_FUN_005edf80
     MOV EBX,dword ptr [ESP + 0x8]       ; 005edf81
     TEST byte ptr [ESP + 0xc],0x4       ; 005edf85
-    JNZ 0x005edfc7                      ; 005edf8a | LAB_005edfc7
-        ;   XREF to: 005edfc7 (CONDITIONAL_JUMP)
+    JNZ 0x005edfc7                      ; 005edf8a
+        ;   XREF to: 005edfc7 (CONDITIONAL_JUMP)  ; LAB_005edfc7
     PUSH 0x0                            ; 005edf8c
     ADD EBX,0x308                       ; 005edf8e
     PUSH EBX                            ; 005edf94
-    MOV dword ptr [EBX + 0xfffffe4c],0x6655b4 ; 005edf95 | CDemonActor_vtable g_CWeaponVTable
-    CALL core_box.cpp_CBox_dtor_FUN_0041dd00 ; 005edf9f | CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr)
-        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EBX + 0xfffffe4c],0x6655b4 ; 005edf95 | g_CWeaponVTable
+    CALL core_box.cpp_CBox_dtor_FUN_0041dd00 ; 005edf9f
+        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)  ; CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr)
     ADD ESP,0x8                         ; 005edfa4
     PUSH 0x1                            ; 005edfa7
     LEA EBX,[EAX + 0xfffffcf8]          ; 005edfa9
     PUSH EBX                            ; 005edfaf
-    CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005edfb0 | CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
-        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005edfb0
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
     ADD ESP,0x8                         ; 005edfb5
     MOV DL,byte ptr [ESP + 0xc]         ; 005edfb8
     MOV EBX,EAX                         ; 005edfbc
     TEST DL,0x2                         ; 005edfbe
-    JNZ 0x005edfe2                      ; 005edfc1 | LAB_005edfe2
-        ;   XREF to: 005edfe2 (CONDITIONAL_JUMP)
+    JNZ 0x005edfe2                      ; 005edfc1
+        ;   XREF to: 005edfe2 (CONDITIONAL_JUMP)  ; LAB_005edfe2
     MOV EAX,EBX                         ; 005edfc3
     POP EBX                             ; 005edfc5
     RET                                 ; 005edfc6
-    PUSH 0x6656c0                       ; 005edfc7 | WatcomTypeInfo g_CWeaponTypeInfo
+    PUSH 0x6656c0                       ; 005edfc7 | g_CWeaponTypeInfo
         ;   Label: LAB_005edfc7
     PUSH EBX                            ; 005edfcc
-    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 005edfcd | void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 005edfcd
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005edfd2
     PUSH EAX                            ; 005edfd5
-    CALL crt_memory.c_free_FUN_005fe659 ; 005edfd6 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 005edfd6
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 005edfdb
     MOV EAX,EBX                         ; 005edfde
     POP EBX                             ; 005edfe0
     RET                                 ; 005edfe1
     PUSH EAX                            ; 005edfe2
         ;   Label: LAB_005edfe2
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005edfe3 | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005edfe3
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005edfe8
     MOV EAX,EBX                         ; 005edfeb
     POP EBX                             ; 005edfed

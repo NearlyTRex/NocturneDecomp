@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x82245c                    ; 004127a0 | CDemonActorType g_CBackgroundActorClassInfo
+    MOV EAX,0x82245c                    ; 004127a0 | g_CBackgroundActorClassInfo
         ;   Label: core_backgnd.cpp_CBackgroundActor_getActorType_FUN_004127a0
     RET                                 ; 004127a5
 

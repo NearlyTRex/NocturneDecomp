@@ -1,272 +1,272 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 26, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 3, 
-    "global_count": 35, 
-    "total_lines": 78, 
-    "assembly_lines": 52, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_matrix_c_00635a71", 
-      "addr": "00635a71", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Matrix_unbalance_00635a84", 
-      "addr": "00635a84", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeX", 
-      "addr": "02d052b8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeY", 
-      "addr": "02d052bc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RelativeZ", 
-      "addr": "02d052c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionX", 
-      "addr": "02d052dc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionY", 
-      "addr": "02d052e0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LightDirectionZ", 
-      "addr": "02d052e4", 
-      "value": null
-    }, 
-    {
-      "type": "CMatrix3x3i", 
-      "name": "g_TransformMatrix", 
-      "addr": "02d052e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[0][1]", 
-      "addr": "02d052ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[0][2]", 
-      "addr": "02d052f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[1][0]", 
-      "addr": "02d052f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[1][1]", 
-      "addr": "02d052f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[1][2]", 
-      "addr": "02d052fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[2][0]", 
-      "addr": "02d05300", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[2][1]", 
-      "addr": "02d05304", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[2][2]", 
-      "addr": "02d05308", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MatrixStackIndex", 
-      "addr": "02f0d3c0", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_M00", 
-      "addr": "02f0d3c4", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_M01", 
-      "addr": "02f0d3ec", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_M02", 
-      "addr": "02f0d414", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_M10", 
-      "addr": "02f0d43c", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_M11", 
-      "addr": "02f0d464", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_M12", 
-      "addr": "02f0d48c", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_M20", 
-      "addr": "02f0d4b4", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_M21", 
-      "addr": "02f0d4dc", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_M22", 
-      "addr": "02f0d504", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_RelX", 
-      "addr": "02f0d52c", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_RelY", 
-      "addr": "02f0d554", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_RelZ", 
-      "addr": "02f0d57c", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_Unk1", 
-      "addr": "02f0d5a4", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_Unk2", 
-      "addr": "02f0d5cc", 
-      "value": null
-    }, 
-    {
-      "type": "int[10]", 
-      "name": "g_MatrixStack_Unk3", 
-      "addr": "02f0d5f4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050d620", 
-    "signature": "void engine_matrix.c_matrixPush_FUN_0050d620(void)", 
-    "address_range": [
-      [
-        "0050d620", 
-        "0050d71e"
-      ]
-    ], 
-    "name": "engine_matrix.c_matrixPush_FUN_0050d620"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 52,
+    "complexity_score": 26,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 35,
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 78
+  },
   "cross_references": [
     {
-      "from_addr": "0052069f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_CMimic_FUN_005205f0", 
-      "addr": "005205f0"
-    }, 
+      "addr": "005205f0",
+      "from_addr": "0052069f",
+      "name": "core_mimic.cpp_CMimic_FUN_005205f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051f133", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mimic.cpp_FUN_0051f130", 
-      "addr": "0051f130"
-    }, 
+      "addr": "0051f130",
+      "from_addr": "0051f133",
+      "name": "core_mimic.cpp_FUN_0051f130",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c630", 
-      "type": "UNCONDITIONAL_JUMP", 
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620", 
-      "addr": "0048c630"
+      "addr": "0048c630",
+      "from_addr": "0048c630",
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620",
+      "type": "UNCONDITIONAL_JUMP"
     }
-  ]
+  ],
+  "function": {
+    "address": "0050d620",
+    "address_range": [
+      [
+        "0050d620",
+        "0050d71e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_matrixPush_FUN_0050d620",
+    "signature": "void engine_matrix.c_matrixPush_FUN_0050d620(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635a71",
+      "name": "s_engine_matrix_c_00635a71",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635a84",
+      "name": "s_Matrix_unbalance_00635a84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d052b8",
+      "name": "g_RelativeX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052bc",
+      "name": "g_RelativeY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c0",
+      "name": "g_RelativeZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052dc",
+      "name": "g_LightDirectionX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e0",
+      "name": "g_LightDirectionY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e4",
+      "name": "g_LightDirectionZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e8",
+      "name": "g_TransformMatrix",
+      "type": "CMatrix3x3i",
+      "value": null
+    },
+    {
+      "addr": "02d052ec",
+      "name": "g_TransformMatrix[0][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f0",
+      "name": "g_TransformMatrix[0][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f4",
+      "name": "g_TransformMatrix[1][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f8",
+      "name": "g_TransformMatrix[1][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052fc",
+      "name": "g_TransformMatrix[1][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05300",
+      "name": "g_TransformMatrix[2][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05304",
+      "name": "g_TransformMatrix[2][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05308",
+      "name": "g_TransformMatrix[2][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d3c0",
+      "name": "g_MatrixStackIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d3c4",
+      "name": "g_MatrixStack_M00",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d3ec",
+      "name": "g_MatrixStack_M01",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d414",
+      "name": "g_MatrixStack_M02",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d43c",
+      "name": "g_MatrixStack_M10",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d464",
+      "name": "g_MatrixStack_M11",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d48c",
+      "name": "g_MatrixStack_M12",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d4b4",
+      "name": "g_MatrixStack_M20",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d4dc",
+      "name": "g_MatrixStack_M21",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d504",
+      "name": "g_MatrixStack_M22",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d52c",
+      "name": "g_MatrixStack_RelX",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d554",
+      "name": "g_MatrixStack_RelY",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d57c",
+      "name": "g_MatrixStack_RelZ",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d5a4",
+      "name": "g_MatrixStack_Unk1",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d5cc",
+      "name": "g_MatrixStack_Unk2",
+      "type": "int[10]",
+      "value": null
+    },
+    {
+      "addr": "02f0d5f4",
+      "name": "g_MatrixStack_Unk3",
+      "type": "int[10]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

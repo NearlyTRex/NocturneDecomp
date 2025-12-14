@@ -85,12 +85,12 @@ section .text
     SUB ESP,0x100                       ; 004a2054
     MOV EBX,dword ptr [ESP + 0x118]     ; 004a205a
     MOV ESI,dword ptr [ESP + 0x11c]     ; 004a2061
-    PUSH 0x6598c0                       ; 004a2068 | WatcomTypeInfo g_CVectorTypeInfo
+    PUSH 0x6598c0                       ; 004a2068 | g_CVectorTypeInfo
     PUSH 0x8                            ; 004a206d
     LEA EAX,[ESP + 0x8]                 ; 004a206f
     PUSH EAX                            ; 004a2073
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004a2074 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004a2074
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004a2079
     XOR EAX,EAX                         ; 004a207c
     MOV EDX,dword ptr [ESI]             ; 004a207e
@@ -101,16 +101,16 @@ section .text
         ;   Label: LAB_004a208a
     MOV dword ptr [ESP + EDX*0x1],EDI   ; 004a2091
     TEST AL,0x2                         ; 004a2094
-    JNZ 0x004a24fb                      ; 004a2096 | LAB_004a24fb
-        ;   XREF to: 004a24fb (CONDITIONAL_JUMP)
+    JNZ 0x004a24fb                      ; 004a2096
+        ;   XREF to: 004a24fb (CONDITIONAL_JUMP)  ; LAB_004a24fb
     MOV EDI,dword ptr [ESI + 0x4]       ; 004a209c
     MOV dword ptr [ESP + 0xfc],EDI      ; 004a209f
         ;   Label: LAB_004a209f
     MOV EDI,dword ptr [ESP + 0xfc]      ; 004a20a6
     MOV dword ptr [ESP + EDX*0x1 + 0x4],EDI ; 004a20ad
     TEST AL,0x4                         ; 004a20b1
-    JZ 0x004a2503                       ; 004a20b3 | LAB_004a2503
-        ;   XREF to: 004a2503 (CONDITIONAL_JUMP)
+    JZ 0x004a2503                       ; 004a20b3
+        ;   XREF to: 004a2503 (CONDITIONAL_JUMP)  ; LAB_004a2503
     MOV EDI,dword ptr [EBX + 0x8]       ; 004a20b9
     MOV dword ptr [ESP + 0xf8],EDI      ; 004a20bc
         ;   Label: LAB_004a20bc
@@ -119,13 +119,13 @@ section .text
     INC EAX                             ; 004a20cd
     MOV dword ptr [ESP + EDX*0x1 + -0x4],EDI ; 004a20ce
     CMP EAX,0x8                         ; 004a20d2
-    JL 0x004a24e5                       ; 004a20d5 | LAB_004a24e5
-        ;   XREF to: 004a24e5 (CONDITIONAL_JUMP)
+    JL 0x004a24e5                       ; 004a20d5
+        ;   XREF to: 004a24e5 (CONDITIONAL_JUMP)  ; LAB_004a24e5
     MOV EAX,dword ptr [ESP + 0x120]     ; 004a20db
     XOR EDX,EDX                         ; 004a20e2
     MOV EBP,ESP                         ; 004a20e4
     MOV dword ptr [ESP + 0xf0],EDX      ; 004a20e6
-    MOV [0x02d02570],EAX                ; 004a20ed | int g_ActiveRenderColor
+    MOV [0x02d02570],EAX                ; 004a20ed | g_ActiveRenderColor
     MOV EAX,dword ptr [ESP + 0xf0]      ; 004a20f2
         ;   Label: LAB_004a20f2
     XOR AL,0x1                          ; 004a20f9
@@ -135,37 +135,37 @@ section .text
     ADD ESI,EAX                         ; 004a2107
     MOV EAX,EBP                         ; 004a2109
     FLD float ptr [EAX]                 ; 004a210b
-    FMUL float ptr [0x0065d44c]         ; 004a210d | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a210d | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 004a2113
     FLD float ptr [EAX + 0x4]           ; 004a2115
-    FMUL float ptr [0x0065d44c]         ; 004a2118 | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a2118 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004a211e
     FLD float ptr [EAX + 0x8]           ; 004a2121
-    FMUL float ptr [0x0065d44c]         ; 004a2124 | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a2124 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 004a212a
     LEA EAX,[ESP + 0x84]                ; 004a212d
     PUSH EAX                            ; 004a2134
     PUSH 0x0                            ; 004a2135
-    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a2137 | void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
-        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a2137
+        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
     FLD float ptr [ESI]                 ; 004a213c
-    FMUL float ptr [0x006235c6]         ; 004a213e | float g_CubeEdgeScale1
+    FMUL float ptr [0x006235c6]         ; 004a213e | g_CubeEdgeScale1
     ADD ESP,0x8                         ; 004a2144
     FSTP float ptr [ESP + 0xa8]         ; 004a2147
     FLD float ptr [ESI + 0x4]           ; 004a214e
-    FMUL float ptr [0x006235c6]         ; 004a2151 | float g_CubeEdgeScale1
+    FMUL float ptr [0x006235c6]         ; 004a2151 | g_CubeEdgeScale1
     FSTP float ptr [ESP + 0xac]         ; 004a2157
     FLD float ptr [ESI + 0x8]           ; 004a215e
-    FMUL float ptr [0x006235c6]         ; 004a2161 | float g_CubeEdgeScale1
+    FMUL float ptr [0x006235c6]         ; 004a2161 | g_CubeEdgeScale1
     FSTP float ptr [ESP + 0xb0]         ; 004a2167
     FLD float ptr [EBP]                 ; 004a216e
-    FMUL float ptr [0x006235ca]         ; 004a2171 | float g_CubeEdgeScale2
+    FMUL float ptr [0x006235ca]         ; 004a2171 | g_CubeEdgeScale2
     FSTP float ptr [ESP + 0xd8]         ; 004a2177
     FLD float ptr [EBP + 0x4]           ; 004a217e
-    FMUL float ptr [0x006235ca]         ; 004a2181 | float g_CubeEdgeScale2
+    FMUL float ptr [0x006235ca]         ; 004a2181 | g_CubeEdgeScale2
     FSTP float ptr [ESP + 0xdc]         ; 004a2187
     FLD float ptr [EBP + 0x8]           ; 004a218e
-    FMUL float ptr [0x006235ca]         ; 004a2191 | float g_CubeEdgeScale2
+    FMUL float ptr [0x006235ca]         ; 004a2191 | g_CubeEdgeScale2
     LEA EBX,[ESP + 0x84]                ; 004a2197
     LEA EAX,[ESP + 0xcc]                ; 004a219e
     FLD float ptr [ESP + 0xd8]          ; 004a21a5
@@ -181,32 +181,32 @@ section .text
     FSTP float ptr [ESP + 0xd0]         ; 004a21dc
     FSTP float ptr [ESP + 0xd4]         ; 004a21e3
     FLD float ptr [EAX]                 ; 004a21ea
-    FMUL float ptr [0x0065d44c]         ; 004a21ec | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a21ec | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 004a21f2
     FLD float ptr [EAX + 0x4]           ; 004a21f4
-    FMUL float ptr [0x0065d44c]         ; 004a21f7 | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a21f7 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004a21fd
     FLD float ptr [EAX + 0x8]           ; 004a2200
-    FMUL float ptr [0x0065d44c]         ; 004a2203 | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a2203 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 004a2209
     LEA EAX,[ESP + 0x84]                ; 004a220c
     PUSH EAX                            ; 004a2213
     PUSH 0x1                            ; 004a2214
-    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a2216 | void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
-        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a2216
+        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 004a221b
     MOV ESI,0x688044                    ; 004a221e | DAT_00688044
     SUB ESP,0x30                        ; 004a2223
     MOV ECX,0xc                         ; 004a2226
     MOV EDI,ESP                         ; 004a222b
-    MOVSD.REP ES:EDI,ESI                ; 004a222d | DAT_00688044
+    MOVSD.REP ES:EDI,ESI                ; 004a222d | DAT_00688044 | DAT_00688048
     SUB ESP,0x30                        ; 004a222f
     MOV ECX,0xc                         ; 004a2232
-    MOV ESI,0x688014                    ; 004a2237 | SRenderVertex[16] g_RenderVertexBuffer
+    MOV ESI,0x688014                    ; 004a2237 | g_RenderVertexBuffer
     MOV EDI,ESP                         ; 004a223c
-    MOVSD.REP ES:EDI,ESI                ; 004a223e | SRenderVertex[16] g_RenderVertexBuffer
-    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a2240 | void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)
+    MOVSD.REP ES:EDI,ESI                ; 004a223e | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a2240
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
     ADD ESP,0x60                        ; 004a2245
     MOV ESI,dword ptr [ESP + 0xf0]      ; 004a2248
     XOR SI,0x2                          ; 004a224f
@@ -216,37 +216,37 @@ section .text
     ADD ESI,EAX                         ; 004a225c
     MOV EAX,EBP                         ; 004a225e
     FLD float ptr [EAX]                 ; 004a2260
-    FMUL float ptr [0x0065d44c]         ; 004a2262 | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a2262 | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 004a2268
     FLD float ptr [EAX + 0x4]           ; 004a226a
-    FMUL float ptr [0x0065d44c]         ; 004a226d | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a226d | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004a2273
     FLD float ptr [EAX + 0x8]           ; 004a2276
-    FMUL float ptr [0x0065d44c]         ; 004a2279 | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a2279 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 004a227f
     LEA EAX,[ESP + 0x60]                ; 004a2282
     PUSH EAX                            ; 004a2286
     PUSH 0x0                            ; 004a2287
-    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a2289 | void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
-        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a2289
+        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
     FLD float ptr [ESI]                 ; 004a228e
-    FMUL float ptr [0x006235c6]         ; 004a2290 | float g_CubeEdgeScale1
+    FMUL float ptr [0x006235c6]         ; 004a2290 | g_CubeEdgeScale1
     ADD ESP,0x8                         ; 004a2296
     FSTP float ptr [ESP + 0x78]         ; 004a2299
     FLD float ptr [ESI + 0x4]           ; 004a229d
-    FMUL float ptr [0x006235c6]         ; 004a22a0 | float g_CubeEdgeScale1
+    FMUL float ptr [0x006235c6]         ; 004a22a0 | g_CubeEdgeScale1
     FSTP float ptr [ESP + 0x7c]         ; 004a22a6
     FLD float ptr [ESI + 0x8]           ; 004a22aa
-    FMUL float ptr [0x006235c6]         ; 004a22ad | float g_CubeEdgeScale1
+    FMUL float ptr [0x006235c6]         ; 004a22ad | g_CubeEdgeScale1
     FSTP float ptr [ESP + 0x80]         ; 004a22b3
     FLD float ptr [EBP]                 ; 004a22ba
-    FMUL float ptr [0x006235ca]         ; 004a22bd | float g_CubeEdgeScale2
+    FMUL float ptr [0x006235ca]         ; 004a22bd | g_CubeEdgeScale2
     FSTP float ptr [ESP + 0x9c]         ; 004a22c3
     FLD float ptr [EBP + 0x4]           ; 004a22ca
-    FMUL float ptr [0x006235ca]         ; 004a22cd | float g_CubeEdgeScale2
+    FMUL float ptr [0x006235ca]         ; 004a22cd | g_CubeEdgeScale2
     FSTP float ptr [ESP + 0xa0]         ; 004a22d3
     FLD float ptr [EBP + 0x8]           ; 004a22da
-    FMUL float ptr [0x006235ca]         ; 004a22dd | float g_CubeEdgeScale2
+    FMUL float ptr [0x006235ca]         ; 004a22dd | g_CubeEdgeScale2
     FLD float ptr [ESP + 0x9c]          ; 004a22e3
     FADD float ptr [ESP + 0x78]         ; 004a22ea
     FLD float ptr [ESP + 0xa0]          ; 004a22ee
@@ -262,32 +262,32 @@ section .text
     LEA EBX,[ESP + 0x60]                ; 004a2322
     LEA EAX,[ESP + 0xe4]                ; 004a2326
     FLD float ptr [EAX]                 ; 004a232d
-    FMUL float ptr [0x0065d44c]         ; 004a232f | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a232f | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 004a2335
     FLD float ptr [EAX + 0x4]           ; 004a2337
-    FMUL float ptr [0x0065d44c]         ; 004a233a | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a233a | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004a2340
     FLD float ptr [EAX + 0x8]           ; 004a2343
-    FMUL float ptr [0x0065d44c]         ; 004a2346 | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a2346 | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 004a234c
     LEA EAX,[ESP + 0x60]                ; 004a234f
     PUSH EAX                            ; 004a2353
     PUSH 0x1                            ; 004a2354
-    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a2356 | void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
-        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a2356
+        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 004a235b
     MOV ESI,0x688044                    ; 004a235e | DAT_00688044
     SUB ESP,0x30                        ; 004a2363
     MOV ECX,0xc                         ; 004a2366
     MOV EDI,ESP                         ; 004a236b
-    MOVSD.REP ES:EDI,ESI                ; 004a236d | DAT_00688044
+    MOVSD.REP ES:EDI,ESI                ; 004a236d | DAT_00688044 | DAT_00688048
     SUB ESP,0x30                        ; 004a236f
     MOV ECX,0xc                         ; 004a2372
-    MOV ESI,0x688014                    ; 004a2377 | SRenderVertex[16] g_RenderVertexBuffer
+    MOV ESI,0x688014                    ; 004a2377 | g_RenderVertexBuffer
     MOV EDI,ESP                         ; 004a237c
-    MOVSD.REP ES:EDI,ESI                ; 004a237e | SRenderVertex[16] g_RenderVertexBuffer
-    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a2380 | void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)
+    MOVSD.REP ES:EDI,ESI                ; 004a237e | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a2380
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
     ADD ESP,0x60                        ; 004a2385
     MOV EAX,dword ptr [ESP + 0xf0]      ; 004a2388
     XOR AL,0x4                          ; 004a238f
@@ -297,20 +297,20 @@ section .text
     ADD ESI,EAX                         ; 004a239d
     MOV EAX,EBP                         ; 004a239f
     FLD float ptr [EAX]                 ; 004a23a1
-    FMUL float ptr [0x0065d44c]         ; 004a23a3 | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a23a3 | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 004a23a9
     FLD float ptr [EAX + 0x4]           ; 004a23ab
-    FMUL float ptr [0x0065d44c]         ; 004a23ae | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a23ae | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004a23b4
     FLD float ptr [EAX + 0x8]           ; 004a23b7
-    FMUL float ptr [0x0065d44c]         ; 004a23ba | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a23ba | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 004a23c0
     LEA EAX,[ESP + 0xc0]                ; 004a23c3
     PUSH EAX                            ; 004a23ca
     PUSH 0x0                            ; 004a23cb
-    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a23cd | void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
-        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)
-    FLD float ptr [0x006235c6]          ; 004a23d2 | float g_CubeEdgeScale1
+    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a23cd
+        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
+    FLD float ptr [0x006235c6]          ; 004a23d2 | g_CubeEdgeScale1
     FLD float ptr [ESI]                 ; 004a23d8
     FMUL ST1                            ; 004a23da
     ADD ESP,0x8                         ; 004a23dc
@@ -320,7 +320,7 @@ section .text
     FSTP float ptr [ESP + 0x94]         ; 004a23eb
     FMUL float ptr [ESI + 0x8]          ; 004a23f2
     FSTP float ptr [ESP + 0x98]         ; 004a23f5
-    FLD float ptr [0x006235ca]          ; 004a23fc | float g_CubeEdgeScale2
+    FLD float ptr [0x006235ca]          ; 004a23fc | g_CubeEdgeScale2
     FLD float ptr [EBP]                 ; 004a2402
     FMUL ST1                            ; 004a2405
     FSTP float ptr [ESP + 0x6c]         ; 004a2407
@@ -343,40 +343,40 @@ section .text
     FSTP float ptr [ESP + 0xb8]         ; 004a2453
     FSTP float ptr [ESP + 0xbc]         ; 004a245a
     FLD float ptr [EAX]                 ; 004a2461
-    FMUL float ptr [0x0065d44c]         ; 004a2463 | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a2463 | g_WorldToScreenScale2
     FISTP dword ptr [EBX]               ; 004a2469
     FLD float ptr [EAX + 0x4]           ; 004a246b
-    FMUL float ptr [0x0065d44c]         ; 004a246e | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a246e | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x4]         ; 004a2474
     FLD float ptr [EAX + 0x8]           ; 004a2477
-    FMUL float ptr [0x0065d44c]         ; 004a247a | float g_WorldToScreenScale2
+    FMUL float ptr [0x0065d44c]         ; 004a247a | g_WorldToScreenScale2
     FISTP dword ptr [EBX + 0x8]         ; 004a2480
     LEA EAX,[ESP + 0xc0]                ; 004a2483
     PUSH EAX                            ; 004a248a
     PUSH 0x1                            ; 004a248b
-    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a248d | void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
-        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_transformToCache_FUN_0050cd70 ; 004a248d
+        ;   XREF to: 0050cd70 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)
     ADD ESP,0x8                         ; 004a2492
     MOV ESI,0x688044                    ; 004a2495 | DAT_00688044
     SUB ESP,0x30                        ; 004a249a
     MOV ECX,0xc                         ; 004a249d
     MOV EDI,ESP                         ; 004a24a2
-    MOVSD.REP ES:EDI,ESI                ; 004a24a4 | DAT_00688044
+    MOVSD.REP ES:EDI,ESI                ; 004a24a4 | DAT_00688044 | DAT_00688048
     SUB ESP,0x30                        ; 004a24a6
     MOV ECX,0xc                         ; 004a24a9
-    MOV ESI,0x688014                    ; 004a24ae | SRenderVertex[16] g_RenderVertexBuffer
+    MOV ESI,0x688014                    ; 004a24ae | g_RenderVertexBuffer
     MOV EDI,ESP                         ; 004a24b3
-    MOVSD.REP ES:EDI,ESI                ; 004a24b5 | SRenderVertex[16] g_RenderVertexBuffer
-    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a24b7 | void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
-        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)
+    MOVSD.REP ES:EDI,ESI                ; 004a24b5 | g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407d70 ; 004a24b7
+        ;   XREF to: 00407d70 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex * vertex1, SRenderVertex * vertex2)
     ADD ESP,0x60                        ; 004a24bc
     MOV ECX,dword ptr [ESP + 0xf0]      ; 004a24bf
     INC ECX                             ; 004a24c6
     ADD EBP,0xc                         ; 004a24c7
     MOV dword ptr [ESP + 0xf0],ECX      ; 004a24ca
     CMP ECX,0x8                         ; 004a24d1
-    JL 0x004a20f2                       ; 004a24d4 | LAB_004a20f2
-        ;   XREF to: 004a20f2 (CONDITIONAL_JUMP)
+    JL 0x004a20f2                       ; 004a24d4
+        ;   XREF to: 004a20f2 (CONDITIONAL_JUMP)  ; LAB_004a20f2
     ADD ESP,0x100                       ; 004a24da
     POP EBP                             ; 004a24e0
     POP EDI                             ; 004a24e1
@@ -385,18 +385,18 @@ section .text
     RET                                 ; 004a24e4
     TEST AL,0x1                         ; 004a24e5
         ;   Label: LAB_004a24e5
-    JZ 0x004a207e                       ; 004a24e7 | LAB_004a207e
-        ;   XREF to: 004a207e (CONDITIONAL_JUMP)
+    JZ 0x004a207e                       ; 004a24e7
+        ;   XREF to: 004a207e (CONDITIONAL_JUMP)  ; LAB_004a207e
     MOV EDI,dword ptr [EBX]             ; 004a24ed
     MOV dword ptr [ESP + 0xf4],EDI      ; 004a24ef
-    JMP 0x004a208a                      ; 004a24f6 | LAB_004a208a
-        ;   XREF to: 004a208a (UNCONDITIONAL_JUMP)
+    JMP 0x004a208a                      ; 004a24f6
+        ;   XREF to: 004a208a (UNCONDITIONAL_JUMP)  ; LAB_004a208a
     MOV EDI,dword ptr [EBX + 0x4]       ; 004a24fb
         ;   Label: LAB_004a24fb
-    JMP 0x004a209f                      ; 004a24fe | LAB_004a209f
-        ;   XREF to: 004a209f (UNCONDITIONAL_JUMP)
+    JMP 0x004a209f                      ; 004a24fe
+        ;   XREF to: 004a209f (UNCONDITIONAL_JUMP)  ; LAB_004a209f
     MOV EDI,dword ptr [ESI + 0x8]       ; 004a2503
         ;   Label: LAB_004a2503
-    JMP 0x004a20bc                      ; 004a2506 | LAB_004a20bc
-        ;   XREF to: 004a20bc (UNCONDITIONAL_JUMP)
+    JMP 0x004a20bc                      ; 004a2506
+        ;   XREF to: 004a20bc (UNCONDITIONAL_JUMP)  ; LAB_004a20bc
 

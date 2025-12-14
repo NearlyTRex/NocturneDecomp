@@ -1,98 +1,98 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 79, 
-    "assembly_lines": 59, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_quantize_cpp_006411b2", 
-      "addr": "006411b2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_quantize_cpp_006411c8", 
-      "addr": "006411c8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_quantize_cpp_006411de", 
-      "addr": "006411de", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00556c20", 
-    "signature": "CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr)", 
-    "address_range": [
-      [
-        "00556c20", 
-        "00556ca7"
-      ]
-    ], 
-    "name": "shape_quantize.cpp_CBitmap_dtor_FUN_00556c20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 59,
+    "complexity_score": 20,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
+  },
   "cross_references": [
     {
-      "from_addr": "00556256", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180", 
-      "addr": "00556180"
-    }, 
+      "addr": "00556180",
+      "from_addr": "00556256",
+      "name": "shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0055679c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_quantize.cpp_quantizeRawPixelData_FUN_00556490", 
-      "addr": "00556490"
+      "addr": "00556490",
+      "from_addr": "0055679c",
+      "name": "shape_quantize.cpp_quantizeRawPixelData_FUN_00556490",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00556c20",
+    "address_range": [
+      [
+        "00556c20",
+        "00556ca7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_quantize.cpp_CBitmap_dtor_FUN_00556c20",
+    "signature": "CBitmap * shape_quantize.cpp_CBitmap_dtor_FUN_00556c20(CBitmap * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006411b2",
+      "name": "s_shape_quantize_cpp_006411b2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006411c8",
+      "name": "s_shape_quantize_cpp_006411c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006411de",
+      "name": "s_shape_quantize_cpp_006411de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitmap *"
+      }
+    ]
+  },
+  "suspects": []
 }

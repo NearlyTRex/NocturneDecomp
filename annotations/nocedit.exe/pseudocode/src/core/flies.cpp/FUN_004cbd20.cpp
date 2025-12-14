@@ -11,8 +11,7 @@ void core_flies_cpp_FUN_004cbd20(void)
 {
   CFlies *this_ptr;
   
-  this_ptr = (CFlies *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2a20,"..\\core\\flies.cpp",0x19);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2a20,"..\\core\\flies.cpp",0x19);
   if (this_ptr == (CFlies *)0x0) {
     return;
   }

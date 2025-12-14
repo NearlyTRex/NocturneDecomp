@@ -1,549 +1,549 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 320, 
-    "pseudocode_lines": 200, 
-    "cross_reference_count": 4, 
-    "global_count": 18, 
-    "total_lines": 741, 
-    "assembly_lines": 541, 
-    "suspect_count": 11, 
+    "assembly_lines": 541,
+    "complexity_score": 320,
+    "cross_reference_count": 4,
+    "function_call_count": 9,
+    "global_count": 18,
+    "pseudocode_lines": 200,
+    "suspect_count": 11,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdlib.c_atexit_FUN_005ff060", 
-      "addr": "005ff060"
-    }, 
-    {
-      "name": "engine_2d.c_drawRect_FUN_00403120", 
-      "addr": "00403120"
-    }, 
-    {
-      "name": "engine_2d.c_drawTextXY_FUN_00402130", 
-      "addr": "00402130"
-    }, 
-    {
-      "name": "engine_font.cpp_packPixelNative_FUN_004d1170", 
-      "addr": "004d1170"
-    }, 
-    {
-      "name": "engine_font.cpp_packPixelScaled_FUN_004d1110", 
-      "addr": "004d1110"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0", 
-      "addr": "004a5ae0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0", 
-      "addr": "004a5fc0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10", 
-      "addr": "004a5c10"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60", 
-      "addr": "004a5b60"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "WatcomStaticDestructorNode", 
-      "name": "DAT_006816b0", 
-      "addr": "006816b0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseX", 
-      "addr": "02cf6a8c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseY", 
-      "addr": "02cf6a90", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MouseButtonFlags", 
-      "addr": "02cf6a94", 
-      "value": null
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "uchar[32768]", 
-      "name": "g_ColorCubeLookup", 
-      "addr": "02cf9020", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03364ce0", 
-      "addr": "03364ce0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03364ce4", 
-      "addr": "03364ce4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03364ce8", 
-      "addr": "03364ce8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_03364d14", 
-      "addr": "03364d14", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03365cc0", 
-      "addr": "03365cc0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03365cc4", 
-      "addr": "03365cc4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03365dc0", 
-      "addr": "03365dc0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 20, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000018;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_0000001c;"
-    }, 
-    {
-      "line": 75, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *in_stack_00000018) {"
-    }, 
-    {
-      "line": 76, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_74 = in_stack_00000018;"
-    }, 
-    {
-      "line": 77, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_78 = in_stack_0000001c;"
-    }, 
-    {
-      "line": 94, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_0000001c != (int *)0x0) && (*local_78 != 0)) {"
-    }, 
-    {
-      "line": 97, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (local_5c == in_stack_00000018[0x56ba9]) {"
-    }, 
-    {
-      "line": 111, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar9 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_18) + iVar10);"
-    }, 
-    {
-      "line": 131, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(*(int *)((int)g_ScreenBufferArray + local_18) + iVar10 * 2);"
-    }, 
-    {
-      "line": 149, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + iVar10 * 4"
-    }, 
-    {
-      "line": 189, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (local_5c < *in_stack_00000018);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00577af0", 
-    "signature": "int core_setedit.cpp_CDemonSet_FUN_00577af0(CDemonSet * this_ptr)", 
-    "address_range": [
-      [
-        "00577af0", 
-        "00578193"
-      ]
-    ], 
-    "name": "core_setedit.cpp_CDemonSet_FUN_00577af0"
-  }, 
-  "stack_frame": {
-    "local_size": 164, 
-    "variables": [
-      {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a0"
-      }, 
-      {
-        "offset": -156, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_9c"
-      }, 
-      {
-        "offset": -152, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_98"
-      }, 
-      {
-        "offset": -148, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_94"
-      }, 
-      {
-        "offset": -144, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_90"
-      }, 
-      {
-        "offset": -140, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8c"
-      }, 
-      {
-        "offset": -136, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_88"
-      }, 
-      {
-        "offset": -132, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_84"
-      }, 
-      {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_80"
-      }, 
-      {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_7c"
-      }, 
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 168, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 741
+  },
   "cross_references": [
     {
-      "from_addr": "0053956e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
-    }, 
+      "addr": "005390f0",
+      "from_addr": "0053956e",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057b0aa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
-      "addr": "0057ae50"
-    }, 
+      "addr": "0057ae50",
+      "from_addr": "0057b0aa",
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057ea20", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0", 
-      "addr": "0057e7c0"
-    }, 
+      "addr": "0057e7c0",
+      "from_addr": "0057ea20",
+      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00580a39", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
-      "addr": "00580730"
+      "addr": "00580730",
+      "from_addr": "00580a39",
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00577af0",
+    "address_range": [
+      [
+        "00577af0",
+        "00578193"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_CDemonSet_FUN_00577af0",
+    "signature": "int core_setedit.cpp_CDemonSet_FUN_00577af0(CDemonSet * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff060",
+      "name": "crt_stdlib.c_atexit_FUN_005ff060"
+    },
+    {
+      "addr": "00403120",
+      "name": "engine_2d.c_drawRect_FUN_00403120"
+    },
+    {
+      "addr": "00402130",
+      "name": "engine_2d.c_drawTextXY_FUN_00402130"
+    },
+    {
+      "addr": "004d1170",
+      "name": "engine_font.cpp_packPixelNative_FUN_004d1170"
+    },
+    {
+      "addr": "004d1110",
+      "name": "engine_font.cpp_packPixelScaled_FUN_004d1110"
+    },
+    {
+      "addr": "004a5ae0",
+      "name": "shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0"
+    },
+    {
+      "addr": "004a5fc0",
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0"
+    },
+    {
+      "addr": "004a5c10",
+      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10"
+    },
+    {
+      "addr": "004a5b60",
+      "name": "shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "006816b0",
+      "name": "DAT_006816b0",
+      "type": "WatcomStaticDestructorNode",
+      "value": null
+    },
+    {
+      "addr": "02cf6a8c",
+      "name": "g_MouseX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a90",
+      "name": "g_MouseY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a94",
+      "name": "g_MouseButtonFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf9020",
+      "name": "g_ColorCubeLookup",
+      "type": "uchar[32768]",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03364ce0",
+      "name": "DAT_03364ce0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03364ce4",
+      "name": "DAT_03364ce4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03364ce8",
+      "name": "DAT_03364ce8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03364d14",
+      "name": "DAT_03364d14",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "03365cc0",
+      "name": "DAT_03365cc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03365cc4",
+      "name": "DAT_03365cc4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03365dc0",
+      "name": "DAT_03365dc0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 168,
+    "local_size": 164,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000018",
+      "text": "int *in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000001c",
+      "text": "int *in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_00000018",
+      "text": "if (0 < *in_stack_00000018) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_00000018",
+      "text": "local_74 = in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 77,
+      "match": "in_stack_0000001c",
+      "text": "local_78 = in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 94,
+      "match": "in_stack_0000001c",
+      "text": "if ((in_stack_0000001c != (int *)0x0) && (*local_78 != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 97,
+      "match": "in_stack_00000018",
+      "text": "if (local_5c == in_stack_00000018[0x56ba9]) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(int *)((int)",
+      "text": "puVar9 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_18) + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(int *)((int)",
+      "text": "(*(int *)((int)g_ScreenBufferArray + local_18) + iVar10 * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(int *)((int)",
+      "text": "puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + iVar10 * 4",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 189,
+      "match": "in_stack_00000018",
+      "text": "} while (local_5c < *in_stack_00000018);",
+      "type": "stack_param"
     }
   ]
 }

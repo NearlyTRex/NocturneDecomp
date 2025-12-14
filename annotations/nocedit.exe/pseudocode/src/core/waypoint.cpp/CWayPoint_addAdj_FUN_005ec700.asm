@@ -31,18 +31,18 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 005ec705
     MOV ESI,dword ptr [ESP + 0x20]      ; 005ec709
     PUSH EBX                            ; 005ec70d
-    CALL core_waypoint.cpp_FUN_005ec830 ; 005ec70e | undefined core_waypoint.cpp_FUN_005ec830()
-        ;   XREF to: 005ec830 (UNCONDITIONAL_CALL)
+    CALL core_waypoint.cpp_FUN_005ec830 ; 005ec70e
+        ;   XREF to: 005ec830 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_FUN_005ec830()
     ADD ESP,0x4                         ; 005ec713
     PUSH ESI                            ; 005ec716
     PUSH EBX                            ; 005ec717
-    CALL core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640 ; 005ec718 | undefined core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640()
-        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)
+    CALL core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640 ; 005ec718
+        ;   XREF to: 005ec640 (UNCONDITIONAL_CALL)  ; undefined core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640()
     MOV EDX,dword ptr [EBX + 0x370]     ; 005ec71d
     ADD ESP,0x8                         ; 005ec723
     CMP EDX,0x3c                        ; 005ec726
-    JGE 0x005ec77d                      ; 005ec729 | LAB_005ec77d
-        ;   XREF to: 005ec77d (CONDITIONAL_JUMP)
+    JGE 0x005ec77d                      ; 005ec729
+        ;   XREF to: 005ec77d (CONDITIONAL_JUMP)  ; LAB_005ec77d
     MOV EAX,dword ptr [EBX + 0x370]     ; 005ec72b
         ;   Label: LAB_005ec72b
     LEA EDX,[EBX + 0x20]                ; 005ec731
@@ -72,15 +72,15 @@ section .text
     RET                                 ; 005ec77c
     PUSH EDI                            ; 005ec77d
         ;   Label: LAB_005ec77d
-    MOV ECX,0x657634                    ; 005ec77e | = "..\\core\\waypoint.cpp" | s_core_waypoint_cpp_00657634 = ..\core\waypoint.cpp
+    MOV ECX,0x657634                    ; 005ec77e | = "..\\core\\waypoint.cpp"
     MOV EDI,0x188                       ; 005ec783
-    PUSH 0x657649                       ; 005ec788 | = "CWayPoint::addAdj - too many adjacent..." | s_CWayPoint_addAdj_too_man_00657649 = CWayPoint::addAdj - too many adjacent waypoints!
-    MOV dword ptr [0x02f0ca48],ECX      ; 005ec78d | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 005ec793 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005ec799 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x657649                       ; 005ec788 | = "CWayPoint::addAdj - too many adjacent..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 005ec78d | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 005ec793 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005ec799
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005ec79e
     POP EDI                             ; 005ec7a1
-    JMP 0x005ec72b                      ; 005ec7a2 | LAB_005ec72b
-        ;   XREF to: 005ec72b (UNCONDITIONAL_JUMP)
+    JMP 0x005ec72b                      ; 005ec7a2
+        ;   XREF to: 005ec72b (UNCONDITIONAL_JUMP)  ; LAB_005ec72b
 

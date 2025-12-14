@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,[0x02ceea64]                ; 0049cbb0 | int g_ClipOutputVertexCount
+    MOV EAX,[0x02ceea64]                ; 0049cbb0 | g_ClipOutputVertexCount
         ;   Label: core_dtri.cpp_getClippedVertexCount_FUN_0049cbb0
     RET                                 ; 0049cbb5
 

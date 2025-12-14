@@ -1,68 +1,68 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 49, 
-    "assembly_lines": 34, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_memmove_FUN_005fe5e0", 
-      "addr": "005fe5e0"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60", 
-      "addr": "00515d60"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00515d10", 
-    "signature": "void shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10(CLodEdge * this_ptr, int tri_index)", 
-    "address_range": [
-      [
-        "00515d10", 
-        "00515d50"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodEdge *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "tri_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 34,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
+  },
   "cross_references": [
     {
-      "from_addr": "00518419", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0", 
-      "addr": "005183e0"
+      "addr": "005183e0",
+      "from_addr": "00518419",
+      "name": "shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00515d10",
+    "address_range": [
+      [
+        "00515d10",
+        "00515d50"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10",
+    "signature": "void shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10(CLodEdge * this_ptr, int tri_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe5e0",
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    },
+    {
+      "addr": "00515d60",
+      "name": "shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodEdge *"
+      },
+      {
+        "is_param": true,
+        "name": "tri_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

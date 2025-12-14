@@ -38,8 +38,8 @@ section .text
     PUSH EBP                            ; 0052b53c
     ADD EAX,EDX                         ; 0052b53d
     PUSH EAX                            ; 0052b53f
-    CALL core_morph.cpp_CMorphModel_addPart_FUN_0052a580 ; 0052b540 | void core_morph.cpp_CMorphModel_addPart_FUN_0052a580(CMorphModel * this_ptr)
-        ;   XREF to: 0052a580 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_CMorphModel_addPart_FUN_0052a580 ; 0052b540
+        ;   XREF to: 0052a580 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_addPart_FUN_0052a580(CMorphModel * this_ptr)
     ADD ESP,0x20                        ; 0052b545
     POP EBP                             ; 0052b548
     POP EDI                             ; 0052b549

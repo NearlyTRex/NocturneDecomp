@@ -16,10 +16,10 @@
 
 section .text
 
-    CMP dword ptr [0x02d05248],0x0      ; 00431780 | BOOL g_MMXSupported
+    CMP dword ptr [0x02d05248],0x0      ; 00431780 | g_MMXSupported
         ;   Label: cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00431780
-    JZ 0x0043178f                       ; 00431787 | LAB_0043178f
-        ;   XREF to: 0043178f (CONDITIONAL_JUMP)
+    JZ 0x0043178f                       ; 00431787
+        ;   XREF to: 0043178f (CONDITIONAL_JUMP)  ; LAB_0043178f
     MOV EAX,0x431622                    ; 00431789
     RET                                 ; 0043178e
     MOV EAX,0x431528                    ; 0043178f

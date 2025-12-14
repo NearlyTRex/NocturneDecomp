@@ -60,9 +60,9 @@ section .text
     PUSH EBP                            ; 005304f3
     MOV EBP,ESP                         ; 005304f4
     SUB ESP,0xd4                        ; 005304f6
-    CMP dword ptr [0x0067e170],0x0      ; 005304fc | int g_MpegSynthesisTableInitialized
-    JNZ 0x005306be                      ; 00530503 | LAB_005306be
-        ;   XREF to: 005306be (CONDITIONAL_JUMP)
+    CMP dword ptr [0x0067e170],0x0      ; 005304fc | g_MpegSynthesisTableInitialized
+    JNZ 0x005306be                      ; 00530503
+        ;   XREF to: 005306be (CONDITIONAL_JUMP)  ; LAB_005306be
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00530509
         ;   Label: LAB_00530509
     MOV ECX,dword ptr [EBP + 0x14]      ; 0053050c
@@ -87,24 +87,24 @@ section .text
     ADD EAX,ESI                         ; 00530552
     FLD float ptr [EAX]                 ; 00530554
     FABS                                ; 00530556
-    FCOMP double ptr [0x0063ae8a]       ; 00530558 | double DOUBLE_0063ae8a
+    FCOMP double ptr [0x0063ae8a]       ; 00530558 | DOUBLE_0063ae8a
     FNSTSW AX                           ; 0053055e
     SAHF                                ; 00530560
-    JBE 0x00530570                      ; 00530561 | LAB_00530570
-        ;   XREF to: 00530570 (CONDITIONAL_JUMP)
+    JBE 0x00530570                      ; 00530561
+        ;   XREF to: 00530570 (CONDITIONAL_JUMP)  ; LAB_00530570
     MOV EAX,dword ptr [EBP + -0x3c]     ; 00530563
     MOV dword ptr [EBP + EAX*0x4 + 0xffffff2c],EBX ; 00530566
     INC dword ptr [EBP + -0x3c]         ; 0053056d
     INC EBX                             ; 00530570
         ;   Label: LAB_00530570
     CMP EBX,0x20                        ; 00530571
-    JL 0x0053054b                       ; 00530574 | LAB_0053054b
-        ;   XREF to: 0053054b (CONDITIONAL_JUMP)
+    JL 0x0053054b                       ; 00530574
+        ;   XREF to: 0053054b (CONDITIONAL_JUMP)  ; LAB_0053054b
     XOR EAX,EAX                         ; 00530576
     MOV dword ptr [EBP + -0x10],EAX     ; 00530578
     MOV EAX,dword ptr [EBP + -0x10]     ; 0053057b
         ;   Label: LAB_0053057b
-    MOV EBX,0x2f43980                   ; 0053057e | float[64][32] g_MpegSynthesisDctTable
+    MOV EBX,0x2f43980                   ; 0053057e | g_MpegSynthesisDctTable
     SHL EAX,0x7                         ; 00530583
     ADD EBX,EAX                         ; 00530586
     MOV dword ptr [EBP + -0x30],EBX     ; 00530588
@@ -113,8 +113,8 @@ section .text
     FLDZ                                ; 00530591
     MOV ECX,dword ptr [EBP + 0xffffffc4] ; 00530593
     SUB ECX,0x1                         ; 00530599
-    JL 0x005305be                       ; 0053059c | LAB_005305be
-        ;   XREF to: 005305be (CONDITIONAL_JUMP)
+    JL 0x005305be                       ; 0053059c
+        ;   XREF to: 005305be (CONDITIONAL_JUMP)  ; LAB_005305be
     MOV EBX,dword ptr [EBP + 0xffffffd0] ; 0053059e
     MOV EDX,dword ptr [EBP + 0xffffffd4] ; 005305a4
     MOV EAX,dword ptr [EBP + ECX*0x4 + 0xffffff2c] ; 005305aa
@@ -123,8 +123,8 @@ section .text
     FMUL float ptr [EDX + EAX*0x4]      ; 005305b4
     FADDP                               ; 005305b7
     SUB ECX,0x1                         ; 005305b9
-    JGE 0x005305aa                      ; 005305bc | LAB_005305aa
-        ;   XREF to: 005305aa (CONDITIONAL_JUMP)
+    JGE 0x005305aa                      ; 005305bc
+        ;   XREF to: 005305aa (CONDITIONAL_JUMP)  ; LAB_005305aa
     MOV EBX,dword ptr [EBP + 0xffffffcc] ; 005305be
         ;   Label: LAB_005305be
     FSTP float ptr [EBX]                ; 005305c4
@@ -133,13 +133,13 @@ section .text
     INC ECX                             ; 005305cd
     MOV dword ptr [EBP + -0x10],ECX     ; 005305ce
     CMP ECX,0x40                        ; 005305d1
-    JL 0x0053057b                       ; 005305d4 | LAB_0053057b
-        ;   XREF to: 0053057b (CONDITIONAL_JUMP)
+    JL 0x0053057b                       ; 005305d4
+        ;   XREF to: 0053057b (CONDITIONAL_JUMP)  ; LAB_0053057b
     XOR ESI,ESI                         ; 005305d6
     MOV dword ptr [EBP + -0x38],ESI     ; 005305d8
     CMP dword ptr [EBP + -0x38],0x20    ; 005305db
-    JGE 0x005306b7                      ; 005305df | LAB_005306b7
-        ;   XREF to: 005306b7 (CONDITIONAL_JUMP)
+    JGE 0x005306b7                      ; 005305df
+        ;   XREF to: 005306b7 (CONDITIONAL_JUMP)  ; LAB_005306b7
     MOV EAX,dword ptr [EBP + 0x1c]      ; 005305e5
     MOV EBX,dword ptr [EBP + 0x14]      ; 005305e8
     SHL EAX,0x2                         ; 005305eb
@@ -165,7 +165,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0xfffffff8] ; 0053062d
     MOV ECX,0x8                         ; 00530633
     MOV ESI,dword ptr [EBP + 0xffffffd8] ; 00530638
-    FLD float ptr [EBX*0x4 + 0x67d970]  ; 0053063e | float[16][32] g_MpegSynthesisWindow
+    FLD float ptr [EBX*0x4 + 0x67d970]  ; 0053063e | g_MpegSynthesisWindow
         ;   Label: LAB_0053063e
     AND EDX,0x3ff                       ; 00530645
     FMUL float ptr [ESI + EDX*0x4]      ; 0053064b
@@ -178,16 +178,16 @@ section .text
     FADDP                               ; 00530667
     FADDP                               ; 00530669
     DEC ECX                             ; 0053066b
-    JNZ 0x0053063e                      ; 0053066c | LAB_0053063e
-        ;   XREF to: 0053063e (CONDITIONAL_JUMP)
+    JNZ 0x0053063e                      ; 0053066c
+        ;   XREF to: 0053063e (CONDITIONAL_JUMP)  ; LAB_0053063e
     FMUL float ptr [EBP + 0xffffffdc]   ; 0053066e
     FISTP dword ptr [EBP + 0xffffffe0]  ; 00530674
     CMP dword ptr [EBP + -0x20],0x8000  ; 0053067a
-    JGE 0x00530792                      ; 00530681 | LAB_00530792
-        ;   XREF to: 00530792 (CONDITIONAL_JUMP)
+    JGE 0x00530792                      ; 00530681
+        ;   XREF to: 00530792 (CONDITIONAL_JUMP)  ; LAB_00530792
     CMP dword ptr [EBP + -0x20],0xffff8000 ; 00530687
-    JGE 0x00530697                      ; 0053068e | LAB_00530697
-        ;   XREF to: 00530697 (CONDITIONAL_JUMP)
+    JGE 0x00530697                      ; 0053068e
+        ;   XREF to: 00530697 (CONDITIONAL_JUMP)  ; LAB_00530697
     MOV dword ptr [EBP + -0x20],0xffff8000 ; 00530690
     MOV EBX,dword ptr [EBP + -0x38]     ; 00530697
         ;   Label: LAB_00530697
@@ -199,8 +199,8 @@ section .text
     MOV EAX,dword ptr [EBP + -0x38]     ; 005306a7
     INC dword ptr [EBP + -0x38]         ; 005306aa
     CMP dword ptr [EBP + -0x38],0x20    ; 005306ad
-    JL 0x00530607                       ; 005306b1 | LAB_00530607
-        ;   XREF to: 00530607 (CONDITIONAL_JUMP)
+    JL 0x00530607                       ; 005306b1
+        ;   XREF to: 00530607 (CONDITIONAL_JUMP)  ; LAB_00530607
     MOV ESP,EBP                         ; 005306b7
         ;   Label: LAB_005306b7
     POP EBP                             ; 005306b9
@@ -210,10 +210,10 @@ section .text
     RET                                 ; 005306bd
     XOR ECX,ECX                         ; 005306be
         ;   Label: LAB_005306be
-    MOV EBX,0x2f43980                   ; 005306c0 | float[64][32] g_MpegSynthesisDctTable
+    MOV EBX,0x2f43980                   ; 005306c0 | g_MpegSynthesisDctTable
     MOV dword ptr [EBP + -0xc],ECX      ; 005306c5
-    MOV dword ptr [EBP + -0x14],EBX     ; 005306c8 | float[64][32] g_MpegSynthesisDctTable
-    MOV EBX,dword ptr [EBP + -0x14]     ; 005306cb | float[64][32] g_MpegSynthesisDctTable
+    MOV dword ptr [EBP + -0x14],EBX     ; 005306c8 | g_MpegSynthesisDctTable
+    MOV EBX,dword ptr [EBP + -0x14]     ; 005306cb | g_MpegSynthesisDctTable
         ;   Label: LAB_005306cb
     MOV EDI,0x1                         ; 005306ce
     MOV ESI,EBX                         ; 005306d3
@@ -221,46 +221,46 @@ section .text
         ;   Label: LAB_005306d5
     MOV dword ptr [EBP + -0x4],EAX      ; 005306d8
     FILD dword ptr [EBP + -0x4]         ; 005306db
-    FMUL double ptr [0x0063ae5a]        ; 005306de | double DOUBLE_0063ae5a
-    FADD double ptr [0x0063ae72]        ; 005306e4 | double DOUBLE_0063ae72
+    FMUL double ptr [0x0063ae5a]        ; 005306de | DOUBLE_0063ae5a
+    FADD double ptr [0x0063ae72]        ; 005306e4 | DOUBLE_0063ae72
     MOV dword ptr [EBP + -0x4],EDI      ; 005306ea
     FILD dword ptr [EBP + -0x4]         ; 005306ed
     FMULP                               ; 005306f0
     FCOS                                ; 005306f2
-    FMUL double ptr [0x0063ae62]        ; 005306f4 | double DOUBLE_0063ae62
+    FMUL double ptr [0x0063ae62]        ; 005306f4 | DOUBLE_0063ae62
     FLDZ                                ; 005306fa
     FXCH                                ; 005306fc
-    FSTP float ptr [EBX]                ; 005306fe | float[64][32] g_MpegSynthesisDctTable
-    FCOMP float ptr [EBX]               ; 00530700 | float[64][32] g_MpegSynthesisDctTable
+    FSTP float ptr [EBX]                ; 005306fe | g_MpegSynthesisDctTable | DAT_02f43984 | DAT_02f43a00
+    FCOMP float ptr [EBX]               ; 00530700 | g_MpegSynthesisDctTable | DAT_02f43984 | DAT_02f43a00
     FNSTSW AX                           ; 00530702
     SAHF                                ; 00530704
-    JA 0x00530771                       ; 00530705 | LAB_00530771
-        ;   XREF to: 00530771 (CONDITIONAL_JUMP)
-    FLD float ptr [EBX]                 ; 00530707 | float[64][32] g_MpegSynthesisDctTable
+    JA 0x00530771                       ; 00530705
+        ;   XREF to: 00530771 (CONDITIONAL_JUMP)  ; LAB_00530771
+    FLD float ptr [EBX]                 ; 00530707 | g_MpegSynthesisDctTable
     LEA EAX,[EBP + -0x54]               ; 00530709
     FSTP double ptr [EBP + -0x54]       ; 0053070c
-    FLD float ptr [EBX]                 ; 0053070f | float[64][32] g_MpegSynthesisDctTable
+    FLD float ptr [EBX]                 ; 0053070f | g_MpegSynthesisDctTable
     PUSH EAX                            ; 00530711
-    FADD double ptr [0x0063ae82]        ; 00530712 | double DOUBLE_0063ae82
+    FADD double ptr [0x0063ae82]        ; 00530712 | DOUBLE_0063ae82
     SUB ESP,0x8                         ; 00530718
     FSTP double ptr [ESP]               ; 0053071b
-    CALL crt_math.c_modf_FUN_00602102   ; 0053071e | double crt_math.c_modf_FUN_00602102(double value, double * integer_part)
-        ;   XREF to: 00602102 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_modf_FUN_00602102   ; 0053071e
+        ;   XREF to: 00602102 (UNCONDITIONAL_CALL)  ; double crt_math.c_modf_FUN_00602102(double value, double * integer_part)
     FLD double ptr [EBP + -0x54]        ; 00530723
     ADD ESP,0xc                         ; 00530726
         ;   Label: LAB_00530726
-    FSTP float ptr [EBX]                ; 00530729 | float[64][32] g_MpegSynthesisDctTable
-    FLD float ptr [ESI]                 ; 0053072b | float[64][32] g_MpegSynthesisDctTable
+    FSTP float ptr [EBX]                ; 00530729 | g_MpegSynthesisDctTable | DAT_02f43984
+    FLD float ptr [ESI]                 ; 0053072b | g_MpegSynthesisDctTable | DAT_02f43984
     FLD ST0                             ; 0053072d
-    FMUL double ptr [0x0063ae6a]        ; 0053072f | double DOUBLE_0063ae6a
+    FMUL double ptr [0x0063ae6a]        ; 0053072f | DOUBLE_0063ae6a
     ADD EBX,0x4                         ; 00530735
     ADD EDI,0x2                         ; 00530738
     ADD ESI,0x4                         ; 0053073b
     FSTP ST1                            ; 0053073e
-    FSTP float ptr [ESI + -0x4]         ; 00530740 | float[64][32] g_MpegSynthesisDctTable
+    FSTP float ptr [ESI + -0x4]         ; 00530740 | g_MpegSynthesisDctTable | DAT_02f43984
     CMP EDI,0x41                        ; 00530743
-    JNZ 0x005306d5                      ; 00530746 | LAB_005306d5
-        ;   XREF to: 005306d5 (CONDITIONAL_JUMP)
+    JNZ 0x005306d5                      ; 00530746
+        ;   XREF to: 005306d5 (CONDITIONAL_JUMP)  ; LAB_005306d5
     MOV EDI,dword ptr [EBP + -0xc]      ; 00530748
     MOV ESI,dword ptr [EBP + -0x14]     ; 0053074b
     INC EDI                             ; 0053074e
@@ -268,28 +268,28 @@ section .text
     MOV dword ptr [EBP + -0xc],EDI      ; 00530755
     MOV dword ptr [EBP + -0x14],ESI     ; 00530758 | DAT_02f43a00
     CMP EDI,0x40                        ; 0053075b
-    JL 0x005306cb                       ; 0053075e | LAB_005306cb
-        ;   XREF to: 005306cb (CONDITIONAL_JUMP)
+    JL 0x005306cb                       ; 0053075e
+        ;   XREF to: 005306cb (CONDITIONAL_JUMP)  ; LAB_005306cb
     XOR EDX,EDX                         ; 00530764
-    MOV dword ptr [0x0067e170],EDX      ; 00530766 | int g_MpegSynthesisTableInitialized
-    JMP 0x00530509                      ; 0053076c | LAB_00530509
-        ;   XREF to: 00530509 (UNCONDITIONAL_JUMP)
-    FLD float ptr [EBX]                 ; 00530771 | float[64][32] g_MpegSynthesisDctTable
+    MOV dword ptr [0x0067e170],EDX      ; 00530766 | g_MpegSynthesisTableInitialized
+    JMP 0x00530509                      ; 0053076c
+        ;   XREF to: 00530509 (UNCONDITIONAL_JUMP)  ; LAB_00530509
+    FLD float ptr [EBX]                 ; 00530771 | g_MpegSynthesisDctTable | DAT_02f43984
         ;   Label: LAB_00530771
     LEA EAX,[EBP + -0x4c]               ; 00530773
     FSTP double ptr [EBP + -0x4c]       ; 00530776
-    FLD float ptr [EBX]                 ; 00530779 | float[64][32] g_MpegSynthesisDctTable
+    FLD float ptr [EBX]                 ; 00530779 | g_MpegSynthesisDctTable | DAT_02f43984
     PUSH EAX                            ; 0053077b
-    FADD double ptr [0x0063ae7a]        ; 0053077c | double DOUBLE_0063ae7a
+    FADD double ptr [0x0063ae7a]        ; 0053077c | DOUBLE_0063ae7a
     SUB ESP,0x8                         ; 00530782
     FSTP double ptr [ESP]               ; 00530785
-    CALL crt_math.c_modf_FUN_00602102   ; 00530788 | double crt_math.c_modf_FUN_00602102(double value, double * integer_part)
-        ;   XREF to: 00602102 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_modf_FUN_00602102   ; 00530788
+        ;   XREF to: 00602102 (UNCONDITIONAL_CALL)  ; double crt_math.c_modf_FUN_00602102(double value, double * integer_part)
     FLD double ptr [EBP + -0x4c]        ; 0053078d
-    JMP 0x00530726                      ; 00530790 | LAB_00530726
-        ;   XREF to: 00530726 (UNCONDITIONAL_JUMP)
+    JMP 0x00530726                      ; 00530790
+        ;   XREF to: 00530726 (UNCONDITIONAL_JUMP)  ; LAB_00530726
     MOV dword ptr [EBP + -0x20],0x7fff  ; 00530792
         ;   Label: LAB_00530792
-    JMP 0x00530697                      ; 00530799 | LAB_00530697
-        ;   XREF to: 00530697 (UNCONDITIONAL_JUMP)
+    JMP 0x00530697                      ; 00530799
+        ;   XREF to: 00530697 (UNCONDITIONAL_JUMP)  ; LAB_00530697
 

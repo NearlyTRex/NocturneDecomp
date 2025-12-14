@@ -22,8 +22,8 @@ section .text
     PUSH EDX                            ; 005b8128
     ADD EAX,0x1dc8                      ; 005b8129
     PUSH EAX                            ; 005b812e
-    CALL wincore_windll.cpp_switchRenderer_FUN_005b8140 ; 005b812f | int wincore_windll.cpp_switchRenderer_FUN_005b8140(char * new_dll_name, int renderer_handle)
-        ;   XREF to: 005b8140 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_switchRenderer_FUN_005b8140 ; 005b812f
+        ;   XREF to: 005b8140 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_switchRenderer_FUN_005b8140(char * new_dll_name, int renderer_handle)
     ADD ESP,0x8                         ; 005b8134
     RET                                 ; 005b8137
 

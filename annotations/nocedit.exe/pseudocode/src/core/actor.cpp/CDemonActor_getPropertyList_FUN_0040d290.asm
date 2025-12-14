@@ -48,62 +48,62 @@ section .text
     PUSH 0x40d270                       ; 0040d29b
     PUSH 0x1e                           ; 0040d2a0
     PUSH EBX                            ; 0040d2a2
-    PUSH 0x61441c                       ; 0040d2a3 | = "Name" | s_Name_0061441c = Name
+    PUSH 0x61441c                       ; 0040d2a3 | = "Name"
     PUSH ESI                            ; 0040d2a8
     MOV dword ptr [ESI],EBX             ; 0040d2a9
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 0040d2ab | void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e290 ; 0040d2ab
+        ;   XREF to: 0040e290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e290(CActorPropertyList * this_ptr)
     ADD ESP,0x14                        ; 0040d2b0
     PUSH 0x0                            ; 0040d2b3
     LEA EAX,[EBX + 0x20]                ; 0040d2b5
     PUSH EAX                            ; 0040d2b8
-    PUSH 0x614421                       ; 0040d2b9 | = "Pos" | s_Pos_00614421 = Pos
+    PUSH 0x614421                       ; 0040d2b9 | = "Pos"
     PUSH ESI                            ; 0040d2be
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e260 ; 0040d2bf | void core_actor.cpp_CActorPropertyList_FUN_0040e260(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e260 ; 0040d2bf
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e260(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 0040d2c4
     PUSH 0x0                            ; 0040d2c7
     LEA EAX,[EBX + 0x30]                ; 0040d2c9
     PUSH EAX                            ; 0040d2cc
-    PUSH 0x614425                       ; 0040d2cd | = "PHB" | s_PHB_00614425 = PHB
+    PUSH 0x614425                       ; 0040d2cd | = "PHB"
     PUSH ESI                            ; 0040d2d2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e260 ; 0040d2d3 | void core_actor.cpp_CActorPropertyList_FUN_0040e260(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e260 ; 0040d2d3
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e260(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 0040d2d8
     LEA EDI,[EBX + 0x78]                ; 0040d2db
     PUSH EDI                            ; 0040d2de
-    PUSH 0x614429                       ; 0040d2df | = "Creation event" | s_Creation_event_00614429 = Creation event
+    PUSH 0x614429                       ; 0040d2df | = "Creation event"
     PUSH ESI                            ; 0040d2e4
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 0040d2e5 | void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 0040d2e5
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
     MOV AH,byte ptr [EBX + 0x78]        ; 0040d2ea
     ADD ESP,0xc                         ; 0040d2ed
     TEST AH,AH                          ; 0040d2f0
-    JNZ 0x0040d2f8                      ; 0040d2f2 | LAB_0040d2f8
-        ;   XREF to: 0040d2f8 (CONDITIONAL_JUMP)
+    JNZ 0x0040d2f8                      ; 0040d2f2
+        ;   XREF to: 0040d2f8 (CONDITIONAL_JUMP)  ; LAB_0040d2f8
     POP EDI                             ; 0040d2f4
         ;   Label: LAB_0040d2f4
     POP ESI                             ; 0040d2f5
     POP EBX                             ; 0040d2f6
     RET                                 ; 0040d2f7
-    PUSH 0x614438                       ; 0040d2f8 | = "none" | s_none_00614438 = none
+    PUSH 0x614438                       ; 0040d2f8 | = "none"
         ;   Label: LAB_0040d2f8
     PUSH EDI                            ; 0040d2fd
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0040d2fe | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 0040d2fe
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0040d303
     TEST EAX,EAX                        ; 0040d306
-    JZ 0x0040d2f4                       ; 0040d308 | LAB_0040d2f4
-        ;   XREF to: 0040d2f4 (CONDITIONAL_JUMP)
+    JZ 0x0040d2f4                       ; 0040d308
+        ;   XREF to: 0040d2f4 (CONDITIONAL_JUMP)  ; LAB_0040d2f4
     PUSH 0x0                            ; 0040d30a
     PUSH 0x3f800000                     ; 0040d30c
     ADD EBX,0x74                        ; 0040d311
     PUSH 0x0                            ; 0040d314
     PUSH EBX                            ; 0040d316
-    PUSH 0x61443d                       ; 0040d317 | = "Probability" | s_Probability_0061443d = Probability
+    PUSH 0x61443d                       ; 0040d317 | = "Probability"
     PUSH ESI                            ; 0040d31c
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1a0 ; 0040d31d | void core_actor.cpp_CActorPropertyList_FUN_0040e1a0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e1a0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e1a0 ; 0040d31d
+        ;   XREF to: 0040e1a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e1a0(CActorPropertyList * this_ptr)
     ADD ESP,0x18                        ; 0040d322
     POP EDI                             ; 0040d325
     POP ESI                             ; 0040d326

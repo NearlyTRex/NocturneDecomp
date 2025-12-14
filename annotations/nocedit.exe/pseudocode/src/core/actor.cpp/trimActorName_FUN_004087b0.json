@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 87, 
-    "assembly_lines": 57, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_memmove_FUN_005fe5e0", 
-      "addr": "005fe5e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 57,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 87
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004087b0", 
-    "signature": "void core_actor.cpp_trimActorName_FUN_004087b0(CDemonActor * actor_ptr)", 
+    "address": "004087b0",
     "address_range": [
       [
-        "004087b0", 
+        "004087b0",
         "00408814"
       ]
-    ], 
-    "name": "core_actor.cpp_trimActorName_FUN_004087b0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_trimActorName_FUN_004087b0",
+    "signature": "void core_actor.cpp_trimActorName_FUN_004087b0(CDemonActor * actor_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe5e0",
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "actor_ptr"
+        "is_param": true,
+        "name": "actor_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

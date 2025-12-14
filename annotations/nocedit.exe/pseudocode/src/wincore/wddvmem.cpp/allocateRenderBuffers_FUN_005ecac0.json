@@ -1,148 +1,148 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 49, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 0, 
-    "global_count": 14, 
-    "total_lines": 94, 
-    "assembly_lines": 70, 
-    "suspect_count": 2, 
+    "assembly_lines": 70,
+    "complexity_score": 49,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 14,
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_006576b4", 
-      "addr": "006576b4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_006576cb", 
-      "addr": "006576cb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_WDDVMEM_Fatal_out_of_fra_006576e2", 
-      "addr": "006576e2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_0065770e", 
-      "addr": "0065770e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_00657725", 
-      "addr": "00657725", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_WDDVMEM_Fatal_out_of_Z_b_0065773c", 
-      "addr": "0065773c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_BackBuffer", 
-      "addr": "00688010", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_SoftwareZBuffer", 
-      "addr": "0077262c", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_SoftwareFrameBuffer", 
-      "addr": "03f95930", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 18, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);"
-    }, 
-    {
-      "line": 24, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);"
-    }
-  ], 
+    ],
+    "total_lines": 94
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ecac0", 
-    "signature": "void wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0(void)", 
+    "address": "005ecac0",
     "address_range": [
       [
-        "005ecac0", 
+        "005ecac0",
         "005ecb99"
       ]
-    ], 
-    "name": "wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0",
+    "signature": "void wincore_wddvmem.cpp_allocateRenderBuffers_FUN_005ecac0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006576b4",
+      "name": "s_wincore_wddvmem_cpp_006576b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006576cb",
+      "name": "s_wincore_wddvmem_cpp_006576cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006576e2",
+      "name": "s_WDDVMEM_Fatal_out_of_fra_006576e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065770e",
+      "name": "s_wincore_wddvmem_cpp_0065770e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657725",
+      "name": "s_wincore_wddvmem_cpp_00657725",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065773c",
+      "name": "s_WDDVMEM_Fatal_out_of_Z_b_0065773c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00688010",
+      "name": "g_BackBuffer",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "0077262c",
+      "name": "g_SoftwareZBuffer",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f95930",
+      "name": "g_SoftwareFrameBuffer",
+      "type": "void*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(void *)((int)",
+      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(void *)((int)",
+      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
+    }
+  ]
 }

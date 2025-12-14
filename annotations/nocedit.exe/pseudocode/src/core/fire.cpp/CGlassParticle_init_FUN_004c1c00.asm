@@ -80,7 +80,7 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 004c1c49
     FADD float ptr [EAX]                ; 004c1c4d
     FST float ptr [ESP + 0x60]          ; 004c1c4f
-    FDIV float ptr [0x00629ce3]         ; 004c1c53 | float FLOAT_00629ce3
+    FDIV float ptr [0x00629ce3]         ; 004c1c53 | FLOAT_00629ce3
     FLD float ptr [ESP + 0x34]          ; 004c1c59
     FADD float ptr [EAX + 0x4]          ; 004c1c5d
     FLD float ptr [ESP + 0x38]          ; 004c1c60
@@ -89,7 +89,7 @@ section .text
     FXCH                                ; 004c1c6a
     FADD float ptr [EAX + 0x8]          ; 004c1c6c
     FXCH                                ; 004c1c6f
-    FLD float ptr [0x00629ce7]          ; 004c1c71 | float FLOAT_00629ce7
+    FLD float ptr [0x00629ce7]          ; 004c1c71 | FLOAT_00629ce7
     FXCH                                ; 004c1c77
     FMUL ST1                            ; 004c1c79
     FXCH ST2                            ; 004c1c7b
@@ -102,8 +102,8 @@ section .text
     FSTP float ptr [ESP + 0x2c]         ; 004c1c91
     FSTP float ptr [ESP + 0x24]         ; 004c1c95
     CMP EDX,EAX                         ; 004c1c99
-    JZ 0x004c1cb5                       ; 004c1c9b | LAB_004c1cb5
-        ;   XREF to: 004c1cb5 (CONDITIONAL_JUMP)
+    JZ 0x004c1cb5                       ; 004c1c9b
+        ;   XREF to: 004c1cb5 (CONDITIONAL_JUMP)  ; LAB_004c1cb5
     MOV EAX,dword ptr [ESP + 0x24]      ; 004c1c9d
     MOV dword ptr [ESP + 0x54],EAX      ; 004c1ca1
     MOV EAX,dword ptr [ESP + 0x28]      ; 004c1ca5
@@ -125,6 +125,6 @@ section .text
     MOV EAX,dword ptr [EDI + 0x8]       ; 004c1cd6
     PUSH 0x0                            ; 004c1cd9
     MOV dword ptr [EBX + 0x74],EAX      ; 004c1cdb
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c1cde | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c1cde
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

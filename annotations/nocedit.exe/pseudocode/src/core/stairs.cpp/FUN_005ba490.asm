@@ -16,7 +16,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005ba494
     FLD float ptr [EDX + 0x160]         ; 005ba498
     FCHS                                ; 005ba49e
-    FLD double ptr [0x00653062]         ; 005ba4a0 | double DOUBLE_00653062
+    FLD double ptr [0x00653062]         ; 005ba4a0 | DOUBLE_00653062
     FXCH                                ; 005ba4a6
     FMUL ST1                            ; 005ba4a8
     FSTP float ptr [EAX]                ; 005ba4aa

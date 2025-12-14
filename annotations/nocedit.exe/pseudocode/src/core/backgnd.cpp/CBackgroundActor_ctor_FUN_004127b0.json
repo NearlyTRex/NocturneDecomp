@@ -1,95 +1,95 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 40, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 40, 
-    "assembly_lines": 25, 
-    "suspect_count": 2, 
+    "assembly_lines": 25,
+    "complexity_score": 40,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 15,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
-      "addr": "004088b0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
-      "addr": "00478ce0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_candle_kfm_00614e53", 
-      "addr": "00614e53", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CBackgroundActorVTable", 
-      "addr": "00659f44", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "this_ptr_00[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CBackgroundActorVTable;"
-    }, 
-    {
-      "line": 17, 
-      "match": "this_ptr_00[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CBackgroundActor *)(this_ptr_00[-1].part_visibility_flags + 9);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004127b0", 
-    "signature": "CBackgroundActor * core_backgnd.cpp_CBackgroundActor_ctor_FUN_004127b0(CBackgroundActor * this_ptr)", 
-    "address_range": [
-      [
-        "004127b0", 
-        "00412807"
-      ]
-    ], 
-    "name": "core_backgnd.cpp_CBackgroundActor_ctor_FUN_004127b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBackgroundActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 40
+  },
   "cross_references": [
     {
-      "from_addr": "0041278a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_backgnd.cpp_FUN_00412770", 
-      "addr": "00412770"
+      "addr": "00412770",
+      "from_addr": "0041278a",
+      "name": "core_backgnd.cpp_FUN_00412770",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004127b0",
+    "address_range": [
+      [
+        "004127b0",
+        "00412807"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_backgnd.cpp_CBackgroundActor_ctor_FUN_004127b0",
+    "signature": "CBackgroundActor * core_backgnd.cpp_CBackgroundActor_ctor_FUN_004127b0(CBackgroundActor * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088b0",
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+    },
+    {
+      "addr": "00478ce0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0"
+    },
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00614e53",
+      "name": "s_candle_kfm_00614e53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00659f44",
+      "name": "g_CBackgroundActorVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBackgroundActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "this_ptr_00[-1].",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CBackgroundActorVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "this_ptr_00[-1].",
+      "text": "return (CBackgroundActor *)(this_ptr_00[-1].part_visibility_flags + 9);",
+      "type": "negative_offset"
     }
   ]
 }

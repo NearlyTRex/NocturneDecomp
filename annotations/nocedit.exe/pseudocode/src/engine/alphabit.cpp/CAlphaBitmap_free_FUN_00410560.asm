@@ -34,45 +34,45 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00410563
     MOV EDX,dword ptr [EBX]             ; 00410567
     TEST EDX,EDX                        ; 00410569
-    JNZ 0x00410596                      ; 0041056b | LAB_00410596
-        ;   XREF to: 00410596 (CONDITIONAL_JUMP)
+    JNZ 0x00410596                      ; 0041056b
+        ;   XREF to: 00410596 (CONDITIONAL_JUMP)  ; LAB_00410596
     MOV ESI,dword ptr [EBX + 0x4]       ; 0041056d
         ;   Label: LAB_0041056d
     TEST ESI,ESI                        ; 00410570
-    JZ 0x0041058b                       ; 00410572 | LAB_0041058b
-        ;   XREF to: 0041058b (CONDITIONAL_JUMP)
+    JZ 0x0041058b                       ; 00410572
+        ;   XREF to: 0041058b (CONDITIONAL_JUMP)  ; LAB_0041058b
     PUSH 0x33                           ; 00410574
-    PUSH 0x614719                       ; 00410576 | = "..\\engine\\alphabit.cpp" | s_engine_alphabit_cpp_00614719 = ..\engine\alphabit.cpp
+    PUSH 0x614719                       ; 00410576 | = "..\\engine\\alphabit.cpp"
     PUSH ESI                            ; 0041057b
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0041057c | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0041057c
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 00410581
     MOV dword ptr [EBX + 0x4],0x0       ; 00410584
     MOV EBP,dword ptr [EBX + 0x8]       ; 0041058b
         ;   Label: LAB_0041058b
     TEST EBP,EBP                        ; 0041058e
-    JNZ 0x004105ae                      ; 00410590 | LAB_004105ae
-        ;   XREF to: 004105ae (CONDITIONAL_JUMP)
+    JNZ 0x004105ae                      ; 00410590
+        ;   XREF to: 004105ae (CONDITIONAL_JUMP)  ; LAB_004105ae
     POP EBP                             ; 00410592
     POP ESI                             ; 00410593
     POP EBX                             ; 00410594
     RET                                 ; 00410595
     PUSH 0x2f                           ; 00410596
         ;   Label: LAB_00410596
-    PUSH 0x614702                       ; 00410598 | = "..\\engine\\alphabit.cpp" | s_engine_alphabit_cpp_00614702 = ..\engine\alphabit.cpp
+    PUSH 0x614702                       ; 00410598 | = "..\\engine\\alphabit.cpp"
     PUSH EDX                            ; 0041059d
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0041059e | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0041059e
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 004105a3
     MOV dword ptr [EBX],0x0             ; 004105a6
-    JMP 0x0041056d                      ; 004105ac | LAB_0041056d
-        ;   XREF to: 0041056d (UNCONDITIONAL_JUMP)
+    JMP 0x0041056d                      ; 004105ac
+        ;   XREF to: 0041056d (UNCONDITIONAL_JUMP)  ; LAB_0041056d
     PUSH 0x37                           ; 004105ae
         ;   Label: LAB_004105ae
-    PUSH 0x614730                       ; 004105b0 | = "..\\engine\\alphabit.cpp" | s_engine_alphabit_cpp_00614730 = ..\engine\alphabit.cpp
+    PUSH 0x614730                       ; 004105b0 | = "..\\engine\\alphabit.cpp"
     PUSH EBP                            ; 004105b5
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 004105b6 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 004105b6
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 004105bb
     MOV dword ptr [EBX + 0x8],0x0       ; 004105be
     POP EBP                             ; 004105c5

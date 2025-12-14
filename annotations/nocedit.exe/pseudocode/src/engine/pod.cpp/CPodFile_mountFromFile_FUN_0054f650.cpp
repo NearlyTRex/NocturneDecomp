@@ -106,8 +106,7 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
         pcVar6[1] = cVar9;
         pcVar6 = pcVar6 + 2;
       } while (cVar9 != '\0');
-      pCVar2 = (CPodDirectoryEntry *)
-               shape_memdbg_cpp_debugMalloc_FUN_0050f250
+      pCVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                          (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x16c);
       this_ptr->directory_entries = pCVar2;
       if (pCVar2 != (CPodDirectoryEntry *)0x0) {
@@ -131,9 +130,9 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
             size = size + ~uVar4;
             if ((int)this_ptr < (int)size) {
               this_ptr = (CPodFile *)((this_ptr_00->file_count - (int)pod_filename) * 0x30 + size);
-              pcVar6 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                                         (this_ptr_00->file_data_buffer,(int)this_ptr,
-                                          "..\\engine\\pod.cpp",0x17b);
+              pcVar6 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                                 (this_ptr_00->file_data_buffer,(int)this_ptr,
+                                  "..\\engine\\pod.cpp",0x17b);
               this_ptr_00->file_data_buffer = pcVar6;
               if (pcVar6 == (char *)0x0) {
                 g_CurrentFilename = "..\\engine\\pod.cpp";
@@ -215,8 +214,7 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
         this_ptr->audit_count = uStack_368;
         this_ptr->dependency_count = local_370;
         this_ptr->mount_priority = local_378;
-        pCVar2 = (CPodDirectoryEntry *)
-                 shape_memdbg_cpp_debugMalloc_FUN_0050f250
+        pCVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                            (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1ab);
         this_ptr->directory_entries = pCVar2;
         if (pCVar2 != (CPodDirectoryEntry *)0x0) {
@@ -225,8 +223,8 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
           ;
           if ((((file->_flag & 0x20) == 0) && (this_ptr->file_count <= (int)uStack_368)) &&
              ((int)uStack_368 <= this_ptr->file_count * 0x100)) {
-            pcVar6 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                                       (uStack_368,"..\\engine\\pod.cpp",0x1ba);
+            pcVar6 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                               (uStack_368,"..\\engine\\pod.cpp",0x1ba);
             this_ptr->file_data_buffer = pcVar6;
             if (pcVar6 == (char *)0x0) {
               g_CurrentFilename = "..\\engine\\pod.cpp";
@@ -263,8 +261,7 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
         } while (cVar9 != '\0');
         this_ptr->file_count = iStack_f0;
         this_ptr->audit_count = uStack_ec;
-        pCVar2 = (CPodDirectoryEntry *)
-                 shape_memdbg_cpp_debugMalloc_FUN_0050f250
+        pCVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                            (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1da);
         this_ptr->directory_entries = pCVar2;
         if (pCVar2 != (CPodDirectoryEntry *)0x0) {
@@ -272,8 +269,8 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
           iVar1 = this_ptr->file_count;
           size = (this_ptr->directory_entries->offset - 0x60) + iVar1 * -0x14;
           if ((iVar1 <= (int)size) && ((int)size <= iVar1 * 0x100)) {
-            pcVar6 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                                       (size,"..\\engine\\pod.cpp",0x1e7);
+            pcVar6 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\pod.cpp",0x1e7)
+            ;
             this_ptr->file_data_buffer = pcVar6;
             if (pcVar6 == (char *)0x0) {
               g_CurrentFilename = "..\\engine\\pod.cpp";
@@ -305,8 +302,7 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
             pcVar6[1] = cVar9;
             pcVar6 = pcVar6 + 2;
           } while (cVar9 != '\0');
-          pCVar2 = (CPodDirectoryEntry *)
-                   shape_memdbg_cpp_debugMalloc_FUN_0050f250
+          pCVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                              (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x20a);
           this_ptr->directory_entries = pCVar2;
           if (pCVar2 != (CPodDirectoryEntry *)0x0) {
@@ -328,9 +324,9 @@ engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_
                 size = size + ~uVar4;
                 if ((int)pod_filename < (int)size) {
                   pod_filename = (char *)((this_ptr->file_count - unaff_retaddr) * 0x30 + size);
-                  pcVar6 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                                             (this_ptr->file_data_buffer,(int)pod_filename,
-                                              "..\\engine\\pod.cpp",0x219);
+                  pcVar6 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                                     (this_ptr->file_data_buffer,(int)pod_filename,
+                                      "..\\engine\\pod.cpp",0x219);
                   this_ptr->file_data_buffer = pcVar6;
                   if (pcVar6 == (char *)0x0) {
                     g_CurrentFilename = "..\\engine\\pod.cpp";
@@ -366,9 +362,9 @@ LAB_0054f9a8:
             shape_memdbg_cpp_closeFile_FUN_0050f9b0
                       (in_stack_0000000c,"..\\engine\\pod.cpp",0x22d);
             if (unaff_EBX != 0) {
-              pcVar6 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                                         (this_ptr_00->file_data_buffer,size,
-                                          "..\\engine\\pod.cpp",0x233);
+              pcVar6 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                                 (this_ptr_00->file_data_buffer,size,"..\\engine\\pod.cpp",0x233
+                                 );
               this_ptr_00->file_data_buffer = pcVar6;
               if (pcVar6 == (char *)0x0) {
                 g_CurrentFilename = "..\\engine\\pod.cpp";

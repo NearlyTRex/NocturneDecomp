@@ -1,66 +1,66 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 18, 
-    "assembly_lines": 6, 
-    "suspect_count": 2, 
+    "assembly_lines": 6,
+    "complexity_score": 37,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_tls.c_cleanup_thread_tls_data_FUN_0060a334", 
-      "addr": "0060a334"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "BOOL extraout_EAX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "BVar1 = extraout_EAX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a388", 
-    "signature": "BOOL crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388(void)", 
-    "address_range": [
-      [
-        "0060a388", 
-        "0060a393"
-      ]
-    ], 
-    "name": "crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "0060a45f", 
-      "type": "DATA", 
-      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4", 
-      "addr": "0060a3b4"
+      "addr": "0060a3b4",
+      "from_addr": "0060a45f",
+      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0060a388",
+    "address_range": [
+      [
+        "0060a388",
+        "0060a393"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388",
+    "signature": "BOOL crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060a334",
+      "name": "crt_tls.c_cleanup_thread_tls_data_FUN_0060a334"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "BOOL extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "text": "BVar1 = extraout_EAX;",
+      "type": "extra_output"
     }
   ]
 }

@@ -11,8 +11,7 @@ void core_litecone_cpp_FUN_00506ad0(void)
 {
   CLightCone *this_ptr;
   
-  this_ptr = (CLightCone *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22c,"..\\core\\litecone.cpp",0x26);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22c,"..\\core\\litecone.cpp",0x26);
   if (this_ptr == (CLightCone *)0x0) {
     return;
   }

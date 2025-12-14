@@ -1,145 +1,145 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 39, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 0, 
-    "global_count": 11, 
-    "total_lines": 52, 
-    "assembly_lines": 38, 
-    "suspect_count": 2, 
+    "assembly_lines": 38,
+    "complexity_score": 39,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 11,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
-      "addr": "00441890"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
-      "addr": "005f2dc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_3_2f_ms_0062d3e9", 
-      "addr": "0062d3e9", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062d3fd", 
-      "addr": "0062d3fd", 
-      "value": "0.0555555555555556"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062d405", 
-      "addr": "0062d405", 
-      "value": "0.0000152587890625"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062d40d", 
-      "addr": "0062d40d", 
-      "value": "1000"
-    }, 
-    {
-      "type": "CConsole*", 
-      "name": "g_CConsolePtr", 
-      "addr": "0066e8e0", 
-      "value": "0083b1a4"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CConsole", 
-      "name": "g_ConsolePtr", 
-      "addr": "0083b1a4", 
-      "value": null
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81ca8", 
-      "addr": "02d81ca8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ProfileStartTime", 
-      "addr": "02d831fc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000008;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CConsolePtr,\"%s : %3.2f ms\\n\",in_stack_00000008,"
-    }
-  ], 
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004e3110", 
-    "signature": "undefined core_game.cpp_FUN_004e3110()", 
+    "address": "004e3110",
     "address_range": [
       [
-        "004e3110", 
+        "004e3110",
         "004e3181"
       ]
-    ], 
-    "name": "core_game.cpp_FUN_004e3110"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_FUN_004e3110",
+    "signature": "undefined core_game.cpp_FUN_004e3110()"
+  },
+  "function_calls": [
+    {
+      "addr": "00441890",
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
+    },
+    {
+      "addr": "005f2dc0",
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062d3e9",
+      "name": "s_s_3_2f_ms_0062d3e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062d3fd",
+      "name": "DOUBLE_0062d3fd",
+      "type": "double",
+      "value": "0.0555555555555556"
+    },
+    {
+      "addr": "0062d405",
+      "name": "DOUBLE_0062d405",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "0062d40d",
+      "name": "DOUBLE_0062d40d",
+      "type": "double",
+      "value": "1000"
+    },
+    {
+      "addr": "0066e8e0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "0083b1a4"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0083b1a4",
+      "name": "g_ConsolePtr",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81ca8",
+      "name": "DAT_02d81ca8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d831fc",
+      "name": "g_ProfileStartTime",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 32, 
+    "frame_size": 32,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4"
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "uint in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "(g_CConsolePtr,\"%s : %3.2f ms\\n\",in_stack_00000008,",
+      "type": "stack_param"
+    }
+  ]
 }

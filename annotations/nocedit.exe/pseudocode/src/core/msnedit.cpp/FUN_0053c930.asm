@@ -35,8 +35,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0053c95b
     PUSH EDI                            ; 0053c95f
     PUSH ECX                            ; 0053c960
-    CALL core_msnedit.cpp_BeginAndEndScene_FUN_0053c970 ; 0053c961 | undefined core_msnedit.cpp_BeginAndEndScene_FUN_0053c970()
-        ;   XREF to: 0053c970 (UNCONDITIONAL_CALL)
+    CALL core_msnedit.cpp_BeginAndEndScene_FUN_0053c970 ; 0053c961
+        ;   XREF to: 0053c970 (UNCONDITIONAL_CALL)  ; undefined core_msnedit.cpp_BeginAndEndScene_FUN_0053c970()
     ADD ESP,0x10                        ; 0053c966
     POP EDI                             ; 0053c969
     POP ESI                             ; 0053c96a

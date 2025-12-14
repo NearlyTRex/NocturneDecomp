@@ -16,6 +16,6 @@
 section .text
 
     JMP 0x00608d20                      ; 0060128c
-        ;   Label: crt_io.c_getcwd_wrapper_FUN_00608d20
         ;   XREF to: 00608d20 (UNCONDITIONAL_JUMP)
+        ;   Label: crt_io.c_getcwd_wrapper_FUN_00608d20
 

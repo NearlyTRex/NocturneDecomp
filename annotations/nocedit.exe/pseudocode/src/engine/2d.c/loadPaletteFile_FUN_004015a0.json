@@ -1,130 +1,130 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 3, 
-    "global_count": 8, 
-    "total_lines": 55, 
-    "assembly_lines": 42, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fread_FUN_005fd990", 
-      "addr": "005fd990"
-    }, 
-    {
-      "name": "engine_dosio.c_getFile_FUN_00481a50", 
-      "addr": "00481a50"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rb_006130ac", 
-      "addr": "006130ac", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_006130af", 
-      "addr": "006130af", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_006130b3", 
-      "addr": "006130b3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_open_VGA_palet_006130c2", 
-      "addr": "006130c2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_2d_c_006130dd", 
-      "addr": "006130dd", 
-      "value": null
-    }, 
-    {
-      "type": "char[768]", 
-      "name": "g_SourcePaletteData", 
-      "addr": "02d01f48", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004015a0", 
-    "signature": "void engine_2d.c_loadPaletteFile_FUN_004015a0(char * filename)", 
-    "address_range": [
-      [
-        "004015a0", 
-        "0040160e"
-      ]
-    ], 
-    "name": "engine_2d.c_loadPaletteFile_FUN_004015a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 42,
+    "complexity_score": 13,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 8,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
+  },
   "cross_references": [
     {
-      "from_addr": "00401054", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010", 
-      "addr": "00401010"
-    }, 
+      "addr": "00401010",
+      "from_addr": "00401054",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046e9d3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadPalette_FUN_0046e810", 
-      "addr": "0046e810"
-    }, 
+      "addr": "0046e810",
+      "from_addr": "0046e9d3",
+      "name": "shape_design.c_loadPalette_FUN_0046e810",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046f2bc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
-      "addr": "0046f290"
+      "addr": "0046f290",
+      "from_addr": "0046f2bc",
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004015a0",
+    "address_range": [
+      [
+        "004015a0",
+        "0040160e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_loadPaletteFile_FUN_004015a0",
+    "signature": "void engine_2d.c_loadPaletteFile_FUN_004015a0(char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fd990",
+      "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "00481a50",
+      "name": "engine_dosio.c_getFile_FUN_00481a50"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006130ac",
+      "name": "s_rb_006130ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006130af",
+      "name": "s_art_006130af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006130b3",
+      "name": "s_engine_2d_c_006130b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006130c2",
+      "name": "s_Unable_to_open_VGA_palet_006130c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006130dd",
+      "name": "s_engine_2d_c_006130dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d01f48",
+      "name": "g_SourcePaletteData",
+      "type": "char[768]",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

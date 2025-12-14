@@ -18,14 +18,14 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x00684ee0]      ; 0060a394 | DWORD g_TLSIndex
+    MOV EDX,dword ptr [0x00684ee0]      ; 0060a394 | g_TLSIndex
         ;   Label: crt_unknown.c_FUN_0060a394
     CMP EDX,-0x1                        ; 0060a39a
-    JZ 0x0060a3b1                       ; 0060a39d | LAB_0060a3b1
-        ;   XREF to: 0060a3b1 (CONDITIONAL_JUMP)
+    JZ 0x0060a3b1                       ; 0060a39d
+        ;   XREF to: 0060a3b1 (CONDITIONAL_JUMP)  ; LAB_0060a3b1
     PUSH EDX                            ; 0060a39f
-    CALL dword ptr CS:[0x611650]        ; 0060a3a0 | TlsFree * PTR_TlsFree_00611650
-    MOV dword ptr [0x00684ee0],0xffffffff ; 0060a3a7 | DWORD g_TLSIndex
+    CALL dword ptr CS:[0x611650]        ; 0060a3a0 | PTR_TlsFree_00611650
+    MOV dword ptr [0x00684ee0],0xffffffff ; 0060a3a7 | g_TLSIndex
     RET                                 ; 0060a3b1
         ;   Label: LAB_0060a3b1
 

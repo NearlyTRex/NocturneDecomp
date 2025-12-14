@@ -35,28 +35,28 @@ section .text
     SUB ESP,0x14                        ; 004f2174
     MOV EBX,dword ptr [ESP + 0x28]      ; 004f2177
     MOV EDX,0x7149f2ca                  ; 004f217b
-    MOV ECX,dword ptr [0x02db87bc]      ; 004f2180 | int g_HeroCount
+    MOV ECX,dword ptr [0x02db87bc]      ; 004f2180 | g_HeroCount
     XOR ESI,ESI                         ; 004f2186
     MOV dword ptr [ESP + 0x8],EDX       ; 004f2188
     TEST ECX,ECX                        ; 004f218c
-    JLE 0x004f21aa                      ; 004f218e | LAB_004f21aa
-        ;   XREF to: 004f21aa (CONDITIONAL_JUMP)
+    JLE 0x004f21aa                      ; 004f218e
+        ;   XREF to: 004f21aa (CONDITIONAL_JUMP)  ; LAB_004f21aa
     LEA EDI,[ECX*0x4 + 0x0]             ; 004f2190
     XOR EDX,EDX                         ; 004f2197
-    MOV EBP,dword ptr [EDX + 0x2db87c0] ; 004f2199 | CHero *[4] g_HeroActors
+    MOV EBP,dword ptr [EDX + 0x2db87c0] ; 004f2199 | g_HeroActors | DAT_02db87c4
         ;   Label: LAB_004f2199
     TEST EBP,EBP                        ; 004f219f
-    JNZ 0x004f21b8                      ; 004f21a1 | LAB_004f21b8
-        ;   XREF to: 004f21b8 (CONDITIONAL_JUMP)
+    JNZ 0x004f21b8                      ; 004f21a1
+        ;   XREF to: 004f21b8 (CONDITIONAL_JUMP)  ; LAB_004f21b8
     ADD EDX,0x4                         ; 004f21a3
         ;   Label: LAB_004f21a3
     CMP EDX,EDI                         ; 004f21a6
-    JL 0x004f2199                       ; 004f21a8 | LAB_004f2199
-        ;   XREF to: 004f2199 (CONDITIONAL_JUMP)
+    JL 0x004f2199                       ; 004f21a8
+        ;   XREF to: 004f2199 (CONDITIONAL_JUMP)  ; LAB_004f2199
     TEST ESI,ESI                        ; 004f21aa
         ;   Label: LAB_004f21aa
-    JZ 0x004f21f2                       ; 004f21ac | LAB_004f21f2
-        ;   XREF to: 004f21f2 (CONDITIONAL_JUMP)
+    JZ 0x004f21f2                       ; 004f21ac
+        ;   XREF to: 004f21f2 (CONDITIONAL_JUMP)  ; LAB_004f21f2
     MOV EAX,ESI                         ; 004f21ae
     ADD ESP,0x14                        ; 004f21b0
     POP EBP                             ; 004f21b3
@@ -83,21 +83,21 @@ section .text
     FCOMP float ptr [ESP + 0x8]         ; 004f21dd
     FNSTSW AX                           ; 004f21e1
     SAHF                                ; 004f21e3
-    JNC 0x004f21a3                      ; 004f21e4 | LAB_004f21a3
-        ;   XREF to: 004f21a3 (CONDITIONAL_JUMP)
+    JNC 0x004f21a3                      ; 004f21e4
+        ;   XREF to: 004f21a3 (CONDITIONAL_JUMP)  ; LAB_004f21a3
     MOV EAX,dword ptr [ESP + 0xc]       ; 004f21e6
     MOV ESI,EBP                         ; 004f21ea
     MOV dword ptr [ESP + 0x8],EAX       ; 004f21ec
-    JMP 0x004f21a3                      ; 004f21f0 | LAB_004f21a3
-        ;   XREF to: 004f21a3 (UNCONDITIONAL_JUMP)
-    MOV EBX,0x62ea7d                    ; 004f21f2 | = "..\\core\\hero.cpp" | s_core_hero_cpp_0062ea7d = ..\core\hero.cpp
+    JMP 0x004f21a3                      ; 004f21f0
+        ;   XREF to: 004f21a3 (UNCONDITIONAL_JUMP)  ; LAB_004f21a3
+    MOV EBX,0x62ea7d                    ; 004f21f2 | = "..\\core\\hero.cpp"
         ;   Label: LAB_004f21f2
     MOV EDI,0x34                        ; 004f21f7
-    PUSH 0x62ea8e                       ; 004f21fc | = "closestHeroToPoint - no heros!" | s_closestHeroToPoint_no_he_0062ea8e = closestHeroToPoint - no heros!
-    MOV dword ptr [0x02f0ca48],EBX      ; 004f2201 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 004f2207 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004f220d | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x62ea8e                       ; 004f21fc | = "closestHeroToPoint - no heros!"
+    MOV dword ptr [0x02f0ca48],EBX      ; 004f2201 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 004f2207 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004f220d
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004f2212
     MOV EAX,ESI                         ; 004f2215
     ADD ESP,0x14                        ; 004f2217

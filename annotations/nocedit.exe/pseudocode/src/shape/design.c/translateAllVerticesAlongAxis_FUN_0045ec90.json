@@ -1,238 +1,238 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 185, 
-    "pseudocode_lines": 75, 
-    "cross_reference_count": 0, 
-    "global_count": 8, 
-    "total_lines": 288, 
-    "assembly_lines": 213, 
-    "suspect_count": 9, 
+    "assembly_lines": 213,
+    "complexity_score": 185,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 8,
+    "pseudocode_lines": 75,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
-      "addr": "005ff9e0"
-    }, 
-    {
-      "name": "crt_stdlib.c_atoi_FUN_005ffef0", 
-      "addr": "005ffef0"
-    }, 
-    {
-      "name": "crt_string.c_strtod_FUN_005ff0f3", 
-      "addr": "005ff0f3"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0", 
-      "addr": "004032c0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
-      "addr": "005f2e90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_distance_or_locati_0061b633", 
-      "addr": "0061b633", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Press_Enter_or_enter_poi_0061b659", 
-      "addr": "0061b659", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Invalid_point_0061b68c", 
-      "addr": "0061b68c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Which_axis_to_use_X_Y_or_0061b69b", 
-      "addr": "0061b69b", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_VertexCount", 
-      "addr": "01626408", 
-      "value": null
-    }, 
-    {
-      "type": "SVertexData[20000]", 
-      "name": "g_LoadedVertices", 
-      "addr": "0162640c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01626410", 
-      "addr": "01626410", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_LoadedVertices[0].vertex.z", 
-      "addr": "01626414", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_ffffffb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "ulonglong in_stack_ffffffb0;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_ffffffb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "str = (char *)((ulonglong)in_stack_ffffffb0 >> 0x20);"
-    }, 
-    {
-      "line": 21, 
-      "match": "&stack0xffffffb8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffffb8,10,0,0,\"Enter distance or location in feet : \");"
-    }, 
-    {
-      "line": 23, 
-      "match": "&stack0xffffffb8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar4 = &stack0xffffffb8;"
-    }, 
-    {
-      "line": 34, 
-      "match": "&stack0xffffffb8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffffb8,0x14,0,0x16,\"Press <Enter> or enter point to set to location : \");"
-    }, 
-    {
-      "line": 37, 
-      "match": "&stack0xffffffb8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar4 = &stack0xffffffb8;"
-    }, 
-    {
-      "line": 45, 
-      "match": "&stack0xffffffb8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar3 = crt_stdlib_c_atoi_FUN_005ffef0(&stack0xffffffb8);"
-    }
-  ], 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 288
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0045ec90", 
-    "signature": "undefined shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90()", 
+    "address": "0045ec90",
     "address_range": [
       [
-        "0045ec90", 
+        "0045ec90",
         "0045ee61"
       ]
-    ], 
-    "name": "shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90",
+    "signature": "undefined shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90()"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9e0",
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0"
+    },
+    {
+      "addr": "005ffef0",
+      "name": "crt_stdlib.c_atoi_FUN_005ffef0"
+    },
+    {
+      "addr": "005ff0f3",
+      "name": "crt_string.c_strtod_FUN_005ff0f3"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "004032c0",
+      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    },
+    {
+      "addr": "005f2e90",
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b633",
+      "name": "s_Enter_distance_or_locati_0061b633",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b659",
+      "name": "s_Press_Enter_or_enter_poi_0061b659",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b68c",
+      "name": "s_Invalid_point_0061b68c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b69b",
+      "name": "s_Which_axis_to_use_X_Y_or_0061b69b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01626408",
+      "name": "g_VertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0162640c",
+      "name": "g_LoadedVertices",
+      "type": "SVertexData[20000]",
+      "value": null
+    },
+    {
+      "addr": "01626410",
+      "name": "DAT_01626410",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626414",
+      "name": "g_LoadedVertices[0].vertex.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 88, 
+    "frame_size": 88,
+    "local_size": 88,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_50"
-      }, 
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_48"
-      }, 
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 88, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffffb0",
+      "text": "ulonglong in_stack_ffffffb0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffffb0",
+      "text": "str = (char *)((ulonglong)in_stack_ffffffb0 >> 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 21,
+      "match": "&stack0xffffffb8",
+      "text": "(&stack0xffffffb8,10,0,0,\"Enter distance or location in feet : \");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xffffffb8",
+      "text": "pcVar4 = &stack0xffffffb8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xffffffb8",
+      "text": "(&stack0xffffffb8,0x14,0,0x16,\"Press <Enter> or enter point to set to location : \");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 37,
+      "match": "&stack0xffffffb8",
+      "text": "pcVar4 = &stack0xffffffb8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 45,
+      "match": "&stack0xffffffb8",
+      "text": "iVar3 = crt_stdlib_c_atoi_FUN_005ffef0(&stack0xffffffb8);",
+      "type": "stack_ref"
+    }
+  ]
 }

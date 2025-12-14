@@ -87,14 +87,14 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0057d367
     LEA ESI,[EBX + 0x104]               ; 0057d36a
     TEST EDX,EDX                        ; 0057d370
-    JZ 0x0057d5e5                       ; 0057d372 | LAB_0057d5e5
-        ;   XREF to: 0057d5e5 (CONDITIONAL_JUMP)
+    JZ 0x0057d5e5                       ; 0057d372
+        ;   XREF to: 0057d5e5 (CONDITIONAL_JUMP)  ; LAB_0057d5e5
     PUSH EBX                            ; 0057d378
-    PUSH 0x647dca                       ; 0057d379 | = "%sn" | s_sn_00647dca = %sn
+    PUSH 0x647dca                       ; 0057d379 | = "%sn"
     LEA EAX,[EBP + 0xffffff6a]          ; 0057d37e
     PUSH EAX                            ; 0057d384
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d385 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d385
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057d38a
     PUSH 0x3f800000                     ; 0057d38d
     PUSH 0x1fe                          ; 0057d392
@@ -118,15 +118,15 @@ section .text
     MOV dword ptr [EBP + -0x6],EAX      ; 0057d3cb
     LEA EAX,[EBP + -0xe]                ; 0057d3ce
     PUSH EAX                            ; 0057d3d1
-    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d3d2 | undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d3d2
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d3d7
     PUSH EBX                            ; 0057d3da
-    PUSH 0x647dce                       ; 0057d3db | = "%ss" | s_ss_00647dce = %ss
+    PUSH 0x647dce                       ; 0057d3db | = "%ss"
     LEA EAX,[EBP + 0xffffff6a]          ; 0057d3e0
     PUSH EAX                            ; 0057d3e6
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d3e7 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d3e7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057d3ec
     PUSH 0x3f800000                     ; 0057d3ef
     PUSH 0x1fe                          ; 0057d3f4
@@ -151,15 +151,15 @@ section .text
     MOV dword ptr [EBP + 0x1e],EAX      ; 0057d432
     LEA EAX,[EBP + 0x16]                ; 0057d435
     PUSH EAX                            ; 0057d438
-    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d439 | undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d439
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d43e
     PUSH EBX                            ; 0057d441
-    PUSH 0x647dd2                       ; 0057d442 | = "%se" | s_se_00647dd2 = %se
+    PUSH 0x647dd2                       ; 0057d442 | = "%se"
     LEA EAX,[EBP + 0xffffff6a]          ; 0057d447
     PUSH EAX                            ; 0057d44d
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d44e | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d44e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057d453
     PUSH 0x3f800000                     ; 0057d456
     PUSH 0x1fe                          ; 0057d45b
@@ -184,15 +184,15 @@ section .text
     MOV dword ptr [EBP + 0x2a],EAX      ; 0057d499
     LEA EAX,[EBP + 0x22]                ; 0057d49c
     PUSH EAX                            ; 0057d49f
-    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d4a0 | undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d4a0
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d4a5
     PUSH EBX                            ; 0057d4a8
-    PUSH 0x647dd6                       ; 0057d4a9 | = "%sw" | s_sw_00647dd6 = %sw
+    PUSH 0x647dd6                       ; 0057d4a9 | = "%sw"
     LEA EAX,[EBP + 0xffffff6a]          ; 0057d4ae
     PUSH EAX                            ; 0057d4b4
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d4b5 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d4b5
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057d4ba
     PUSH 0x3f800000                     ; 0057d4bd
     PUSH 0x1fe                          ; 0057d4c2
@@ -217,15 +217,15 @@ section .text
     MOV dword ptr [EBP + -0x1e],EAX     ; 0057d500
     LEA EAX,[EBP + -0x26]               ; 0057d503
     PUSH EAX                            ; 0057d506
-    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d507 | undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d507
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d50c
     PUSH EBX                            ; 0057d50f
-    PUSH 0x647dda                       ; 0057d510 | = "%su" | s_su_00647dda = %su
+    PUSH 0x647dda                       ; 0057d510 | = "%su"
     LEA EAX,[EBP + 0xffffff6a]          ; 0057d515
     PUSH EAX                            ; 0057d51b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d51c | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d51c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057d521
     PUSH 0x3f800000                     ; 0057d524
     PUSH 0x1fe                          ; 0057d529
@@ -250,15 +250,15 @@ section .text
     MOV dword ptr [EBP + 0x36],EAX      ; 0057d567
     LEA EAX,[EBP + 0x2e]                ; 0057d56a
     PUSH EAX                            ; 0057d56d
-    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d56e | undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d56e
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d573
     PUSH EBX                            ; 0057d576
-    PUSH 0x647dde                       ; 0057d577 | = "%sd" | s_sd_00647dde = %sd
+    PUSH 0x647dde                       ; 0057d577 | = "%sd"
     LEA EAX,[EBP + 0xffffff6a]          ; 0057d57c
     PUSH EAX                            ; 0057d582
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d583 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057d583
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0057d588
     PUSH 0x3f800000                     ; 0057d58b
     PUSH 0x1fe                          ; 0057d590
@@ -283,8 +283,8 @@ section .text
     MOV dword ptr [EBP + 0x4e],EAX      ; 0057d5ce
     LEA EAX,[EBP + 0x46]                ; 0057d5d1
     PUSH EAX                            ; 0057d5d4
-    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d5d5 | undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d5d5
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d5da
     LEA ESP,[EBP + 0x7a]                ; 0057d5dd
     POP EBP                             ; 0057d5e0
@@ -294,7 +294,7 @@ section .text
     RET                                 ; 0057d5e4
     FLD float ptr [EBX + 0x144]         ; 0057d5e5
         ;   Label: LAB_0057d5e5
-    FDIVR double ptr [0x00647de5]       ; 0057d5eb | double DOUBLE_00647de5
+    FDIVR double ptr [0x00647de5]       ; 0057d5eb | DOUBLE_00647de5
     SUB ESP,0x4                         ; 0057d5f1
     FSTP float ptr [ESP]                ; 0057d5f4
     PUSH 0x1df                          ; 0057d5f7
@@ -322,8 +322,8 @@ section .text
     MOV dword ptr [EBP + 0x66],EAX      ; 0057d63e
     LEA EAX,[EBP + 0x5e]                ; 0057d641
     PUSH EAX                            ; 0057d644
-    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d645 | undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
-        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_WriteActBackdrop_FUN_0057ce80 ; 0057d645
+        ;   XREF to: 0057ce80 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_WriteActBackdrop_FUN_0057ce80()
     ADD ESP,0x20                        ; 0057d64a
     LEA ESP,[EBP + 0x7a]                ; 0057d64d
     POP EBP                             ; 0057d650

@@ -12,13 +12,15 @@ core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
 
 {
   int iVar1;
+  int iVar2;
   
   if ((condition_expression == (char *)0x0) || (*condition_expression == '\0')) {
     iVar1 = 0;
   }
   else {
-    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(condition_expression,"none");
-    if (iVar1 != 0) {
+    iVar2 = crt_string_c_stricmp_FUN_005fe7f0(condition_expression,"none");
+    iVar1 = 0;
+    if (iVar2 != 0) {
       DAT_02d0a45c = 0;
       iVar1 = core_event_cpp_CEventList_FUN_004add80((CEventList *)condition_expression);
       if (iVar1 < 0) {

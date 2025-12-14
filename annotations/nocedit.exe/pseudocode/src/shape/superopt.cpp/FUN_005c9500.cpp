@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void * shape_superopt_cpp_FUN_005c9500(void)
+int shape_superopt_cpp_FUN_005c9500(void)
 
 {
   bool bVar1;
@@ -98,11 +98,8 @@ void * shape_superopt_cpp_FUN_005c9500(void)
   void *local_14;
   
   bVar11 = 0;
-  if ((*(int *)(in_stack_00000004 + 0x2c) == 0) ||
-     (iVar7 = *(int *)(in_stack_00000004 + 0x30), iVar7 == 0)) {
-    local_1c = (void *)0x0;
-  }
-  else {
+  if ((*(int *)(in_stack_00000004 + 0x2c) != 0) &&
+     (iVar7 = *(int *)(in_stack_00000004 + 0x30), iVar7 != 0)) {
     puVar9 = (uint *)(iVar7 + 0x10);
     puVar10 = local_e0;
     for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -159,7 +156,7 @@ void * shape_superopt_cpp_FUN_005c9500(void)
       local_24 = 0;
       if (local_20 == (void *)0x0) {
         crt_memory_c_free_FUN_005fe659(local_18);
-        return (void *)0x0;
+        return 0;
       }
       if (*in_stack_00000008 + 0.5 <
           (double)CONCAT44 /* combine 2-byte values */(in_stack_fffffe7c,size) - (double)CONCAT44 /* combine 2-byte values */(local_e0[1],local_e0[0])) {
@@ -226,7 +223,7 @@ void * shape_superopt_cpp_FUN_005c9500(void)
             (double)CONCAT44 /* combine 2-byte values */(uStack_cc,local_d0) <= in_stack_00000008[2] + 0.5) {
           crt_memory_c_free_FUN_005fe659(local_18);
           crt_memory_c_free_FUN_005fe659(local_20);
-          return (void *)0x0;
+          return 0;
         }
         local_98 = 0;
         local_94 = 0;
@@ -285,38 +282,39 @@ void * shape_superopt_cpp_FUN_005c9500(void)
         if (iVar7 == 0) {
           crt_memory_c_free_FUN_005fe659(pvVar4);
           crt_memory_c_free_FUN_005fe659(local_14);
-          return (void *)0x0;
+          return 0;
         }
         iVar7 = shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590();
         if (iVar7 == 0) {
           crt_memory_c_free_FUN_005fe659(pvVar4);
           crt_memory_c_free_FUN_005fe659(local_14);
-          return (void *)0x0;
+          return 0;
         }
       }
       pvVar4 = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34);
+      iVar7 = 0;
       if (pvVar4 != (void *)0x0) {
-        pvVar4 = (void *)shape_superopt_cpp_FUN_005c79a0();
+        iVar7 = shape_superopt_cpp_FUN_005c79a0();
       }
-      if (pvVar4 != (void *)0x0) {
-        *(uint *)((int)pvVar4 + 0x10) = *(uint *)(in_stack_00000004 + 0x10);
-        *(uint *)((int)pvVar4 + 0x14) = *(uint *)(in_stack_00000004 + 0x14);
-        *(uint *)((int)pvVar4 + 0x18) = *(uint *)(in_stack_00000004 + 0x18);
-        *(uint *)((int)pvVar4 + 0x1c) = *(uint *)(in_stack_00000004 + 0x1c);
-        *(uint *)((int)pvVar4 + 0x20) = *(uint *)(in_stack_00000004 + 0x20);
-        *(uint *)((int)pvVar4 + 0x24) = *(uint *)(in_stack_00000004 + 0x24);
-        *(uint *)((int)pvVar4 + 0x28) = *(uint *)(in_stack_00000004 + 0x28);
-        *(int *)((int)pvVar4 + 0x2c) = local_28;
-        *(void **)((int)pvVar4 + 0x30) = local_1c;
-        shape_superopt_cpp_FUN_005c79f0();
-        *(int *)(in_stack_00000004 + 0x2c) = local_24;
-        *(void **)(in_stack_00000004 + 0x30) = local_14;
-        return pvVar4;
+      if (iVar7 == 0) {
+        crt_memory_c_free_FUN_005fe659(local_1c);
+        crt_memory_c_free_FUN_005fe659(local_14);
+        return 0;
       }
-      crt_memory_c_free_FUN_005fe659(local_1c);
-      crt_memory_c_free_FUN_005fe659(local_14);
-      return (void *)0x0;
+      *(uint *)(iVar7 + 0x10) = *(uint *)(in_stack_00000004 + 0x10);
+      *(uint *)(iVar7 + 0x14) = *(uint *)(in_stack_00000004 + 0x14);
+      *(uint *)(iVar7 + 0x18) = *(uint *)(in_stack_00000004 + 0x18);
+      *(uint *)(iVar7 + 0x1c) = *(uint *)(in_stack_00000004 + 0x1c);
+      *(uint *)(iVar7 + 0x20) = *(uint *)(in_stack_00000004 + 0x20);
+      *(uint *)(iVar7 + 0x24) = *(uint *)(in_stack_00000004 + 0x24);
+      *(uint *)(iVar7 + 0x28) = *(uint *)(in_stack_00000004 + 0x28);
+      *(int *)(iVar7 + 0x2c) = local_28;
+      *(void **)(iVar7 + 0x30) = local_1c;
+      shape_superopt_cpp_FUN_005c79f0();
+      *(int *)(in_stack_00000004 + 0x2c) = local_24;
+      *(void **)(in_stack_00000004 + 0x30) = local_14;
+      return iVar7;
     }
   }
-  return local_1c;
+  return 0;
 }

@@ -31,8 +31,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 004285ea
     PUSH ECX                            ; 004285ee
     PUSH EBX                            ; 004285ef
-    CALL core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0 ; 004285f0 | void core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(CDemonActor * this_ptr, CVector3f * new_position, CVector3f * new_orientation)
-        ;   XREF to: 00409fb0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0 ; 004285f0
+        ;   XREF to: 00409fb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(CDemonActor * this_ptr, CVector3f * new_position, CVector3f * new_orientation)
     LEA EAX,[EBX + 0x2428]              ; 004285f5
     FLD float ptr [0x0065b834]          ; 004285fb | DAT_0065b834
     MOV dword ptr [EAX + 0x8],0x0       ; 00428601

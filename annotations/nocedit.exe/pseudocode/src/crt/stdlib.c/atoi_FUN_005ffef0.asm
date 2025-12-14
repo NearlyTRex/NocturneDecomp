@@ -33,20 +33,20 @@ section .text
         ;   Label: LAB_005ffef5
     INC DL                              ; 005ffef7
     AND EDX,0xff                        ; 005ffef9
-    TEST byte ptr [EDX + 0x6849c4],0x2  ; 005ffeff | char[256] g_CharacterClassificationTable
-    JZ 0x005fff0b                       ; 005fff06 | LAB_005fff0b
-        ;   XREF to: 005fff0b (CONDITIONAL_JUMP)
+    TEST byte ptr [EDX + 0x6849c4],0x2  ; 005ffeff | g_CharacterClassificationTable
+    JZ 0x005fff0b                       ; 005fff06
+        ;   XREF to: 005fff0b (CONDITIONAL_JUMP)  ; LAB_005fff0b
     INC EAX                             ; 005fff08
-    JMP 0x005ffef5                      ; 005fff09 | LAB_005ffef5
-        ;   XREF to: 005ffef5 (UNCONDITIONAL_JUMP)
+    JMP 0x005ffef5                      ; 005fff09
+        ;   XREF to: 005ffef5 (UNCONDITIONAL_JUMP)  ; LAB_005ffef5
     MOV CL,byte ptr [EAX]               ; 005fff0b
         ;   Label: LAB_005fff0b
     CMP CL,0x2b                         ; 005fff0d
-    JZ 0x005fff17                       ; 005fff10 | LAB_005fff17
-        ;   XREF to: 005fff17 (CONDITIONAL_JUMP)
+    JZ 0x005fff17                       ; 005fff10
+        ;   XREF to: 005fff17 (CONDITIONAL_JUMP)  ; LAB_005fff17
     CMP CL,0x2d                         ; 005fff12
-    JNZ 0x005fff18                      ; 005fff15 | LAB_005fff18
-        ;   XREF to: 005fff18 (CONDITIONAL_JUMP)
+    JNZ 0x005fff18                      ; 005fff15
+        ;   XREF to: 005fff18 (CONDITIONAL_JUMP)  ; LAB_005fff18
     INC EAX                             ; 005fff17
         ;   Label: LAB_005fff17
     XOR EDX,EDX                         ; 005fff18
@@ -55,21 +55,21 @@ section .text
         ;   Label: LAB_005fff1a
     INC BL                              ; 005fff1c
     AND EBX,0xff                        ; 005fff1e
-    TEST byte ptr [EBX + 0x6849c4],0x20 ; 005fff24 | char[256] g_CharacterClassificationTable
-    JZ 0x005fff3c                       ; 005fff2b | LAB_005fff3c
-        ;   XREF to: 005fff3c (CONDITIONAL_JUMP)
+    TEST byte ptr [EBX + 0x6849c4],0x20 ; 005fff24 | g_CharacterClassificationTable
+    JZ 0x005fff3c                       ; 005fff2b
+        ;   XREF to: 005fff3c (CONDITIONAL_JUMP)  ; LAB_005fff3c
     IMUL EDX,EDX,0xa                    ; 005fff2d
     XOR EBX,EBX                         ; 005fff30
     MOV BL,byte ptr [EAX]               ; 005fff32
     ADD EDX,EBX                         ; 005fff34
     INC EAX                             ; 005fff36
     SUB EDX,0x30                        ; 005fff37
-    JMP 0x005fff1a                      ; 005fff3a | LAB_005fff1a
-        ;   XREF to: 005fff1a (UNCONDITIONAL_JUMP)
+    JMP 0x005fff1a                      ; 005fff3a
+        ;   XREF to: 005fff1a (UNCONDITIONAL_JUMP)  ; LAB_005fff1a
     CMP CL,0x2d                         ; 005fff3c
         ;   Label: LAB_005fff3c
-    JNZ 0x005fff43                      ; 005fff3f | LAB_005fff43
-        ;   XREF to: 005fff43 (CONDITIONAL_JUMP)
+    JNZ 0x005fff43                      ; 005fff3f
+        ;   XREF to: 005fff43 (CONDITIONAL_JUMP)  ; LAB_005fff43
     NEG EDX                             ; 005fff41
     MOV EAX,EDX                         ; 005fff43
         ;   Label: LAB_005fff43

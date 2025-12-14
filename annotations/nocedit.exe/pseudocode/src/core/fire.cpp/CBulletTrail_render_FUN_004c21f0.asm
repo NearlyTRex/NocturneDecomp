@@ -97,8 +97,8 @@ section .text
     FCOMPP                              ; 004c226d
     FNSTSW AX                           ; 004c226f
     SAHF                                ; 004c2271
-    JNC 0x004c2339                      ; 004c2272 | LAB_004c2339
-        ;   XREF to: 004c2339 (CONDITIONAL_JUMP)
+    JNC 0x004c2339                      ; 004c2272
+        ;   XREF to: 004c2339 (CONDITIONAL_JUMP)  ; LAB_004c2339
     FLD float ptr [EBX + 0x1c]          ; 004c2278
     MOV EDX,0x2                         ; 004c227b
     FLDZ                                ; 004c2280
@@ -106,17 +106,17 @@ section .text
     FCOMPP                              ; 004c2286
     FNSTSW AX                           ; 004c2288
     SAHF                                ; 004c228a
-    JNC 0x004c22ad                      ; 004c228b | LAB_004c22ad
-        ;   XREF to: 004c22ad (CONDITIONAL_JUMP)
+    JNC 0x004c22ad                      ; 004c228b
+        ;   XREF to: 004c22ad (CONDITIONAL_JUMP)  ; LAB_004c22ad
     FLD float ptr [ESP + 0x4]           ; 004c228d
     FDIV float ptr [EBX + 0x1c]         ; 004c2291
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004c2294 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004c2294
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x60]        ; 004c2299
     MOV ECX,dword ptr [ESP + 0x60]      ; 004c229d
     CMP ECX,EDX                         ; 004c22a1
-    JGE 0x004c2340                      ; 004c22a3 | LAB_004c2340
-        ;   XREF to: 004c2340 (CONDITIONAL_JUMP)
+    JGE 0x004c2340                      ; 004c22a3
+        ;   XREF to: 004c2340 (CONDITIONAL_JUMP)  ; LAB_004c2340
     MOV dword ptr [ESP + 0x60],EDX      ; 004c22a9
     MOV EAX,dword ptr [ESP + 0x60]      ; 004c22ad
         ;   Label: LAB_004c22ad
@@ -141,34 +141,34 @@ section .text
     FSTP float ptr [ESP + 0x34]         ; 004c22e5
     FSTP float ptr [ESP + 0x38]         ; 004c22e9
     FSTP float ptr [ESP + 0x3c]         ; 004c22ed
-    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004c22f1 | CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
-        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)
+    CALL core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 ; 004c22f1
+        ;   XREF to: 005e7830 (UNCONDITIONAL_CALL)  ; CVector3f * core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(CVector3f * out_euler_angles, CVector3f * in_direction_vector)
     ADD ESP,0x8                         ; 004c22f6
     MOV EDX,dword ptr [ESP + 0x60]      ; 004c22f9
     XOR ESI,ESI                         ; 004c22fd
     TEST EDX,EDX                        ; 004c22ff
-    JLE 0x004c2339                      ; 004c2301 | LAB_004c2339
-        ;   XREF to: 004c2339 (CONDITIONAL_JUMP)
+    JLE 0x004c2339                      ; 004c2301
+        ;   XREF to: 004c2339 (CONDITIONAL_JUMP)  ; LAB_004c2339
     LEA EDI,[EDX + -0x1]                ; 004c2303
     MOV dword ptr [ESP + 0x6c],ESI      ; 004c2306
         ;   Label: LAB_004c2306
     FILD dword ptr [ESP + 0x6c]         ; 004c230a
     FST float ptr [ESP + 0x68]          ; 004c230e
-    FMUL float ptr [0x00629cf3]         ; 004c2312 | float FLOAT_00629cf3
+    FMUL float ptr [0x00629cf3]         ; 004c2312 | FLOAT_00629cf3
     MOV dword ptr [ESP + 0x6c],EDI      ; 004c2318
     FILD dword ptr [ESP + 0x6c]         ; 004c231c
     FDIVP                               ; 004c2320
     FST float ptr [ESP]                 ; 004c2322
-    FCOMP double ptr [0x00629cfb]       ; 004c2325 | double DOUBLE_00629cfb
+    FCOMP double ptr [0x00629cfb]       ; 004c2325 | DOUBLE_00629cfb
     FNSTSW AX                           ; 004c232b
     SAHF                                ; 004c232d
-    JA 0x004c2356                       ; 004c232e | LAB_004c2356
-        ;   XREF to: 004c2356 (CONDITIONAL_JUMP)
+    JA 0x004c2356                       ; 004c232e
+        ;   XREF to: 004c2356 (CONDITIONAL_JUMP)  ; LAB_004c2356
     MOV ECX,dword ptr [ESP + 0x60]      ; 004c2330
     INC ESI                             ; 004c2334
     CMP ESI,ECX                         ; 004c2335
-    JL 0x004c2306                       ; 004c2337 | LAB_004c2306
-        ;   XREF to: 004c2306 (CONDITIONAL_JUMP)
+    JL 0x004c2306                       ; 004c2337
+        ;   XREF to: 004c2306 (CONDITIONAL_JUMP)  ; LAB_004c2306
     MOV ESP,EBP                         ; 004c2339
         ;   Label: LAB_004c2339
     POP EBP                             ; 004c233b
@@ -178,11 +178,11 @@ section .text
     RET                                 ; 004c233f
     CMP ECX,0x64                        ; 004c2340
         ;   Label: LAB_004c2340
-    JLE 0x004c22ad                      ; 004c2343 | LAB_004c22ad
-        ;   XREF to: 004c22ad (CONDITIONAL_JUMP)
+    JLE 0x004c22ad                      ; 004c2343
+        ;   XREF to: 004c22ad (CONDITIONAL_JUMP)  ; LAB_004c22ad
     MOV dword ptr [ESP + 0x60],0x64     ; 004c2349
-    JMP 0x004c22ad                      ; 004c2351 | LAB_004c22ad
-        ;   XREF to: 004c22ad (UNCONDITIONAL_JUMP)
+    JMP 0x004c22ad                      ; 004c2351
+        ;   XREF to: 004c22ad (UNCONDITIONAL_JUMP)  ; LAB_004c22ad
     FLD float ptr [ESP + 0x68]          ; 004c2356
         ;   Label: LAB_004c2356
     FLD float ptr [ESP + 0x2c]          ; 004c235a
@@ -202,14 +202,14 @@ section .text
     FSTP float ptr [ESP + 0x48]         ; 004c2385
     FLD float ptr [EBX + 0x4]           ; 004c2389
     FADD float ptr [ESP + 0x58]         ; 004c238c
-    MOV EAX,[0x006703ec]                ; 004c2390 | CDemonRenderer * g_CDemonRendererPtr
+    MOV EAX,[0x006703ec]                ; 004c2390 | g_CDemonRendererPtr
     FSTP float ptr [ESP + 0x4c]         ; 004c2395
     FLD float ptr [EBX + 0x8]           ; 004c2399
     FADD float ptr [ESP + 0x5c]         ; 004c239c
-    PUSH EAX                            ; 004c23a0 | CDemonRenderer g_CDemonRendererInstance
+    PUSH EAX                            ; 004c23a0 | g_CDemonRendererInstance
     FSTP float ptr [ESP + 0x54]         ; 004c23a1
-    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 004c23a5 | void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
-        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 ; 004c23a5
+        ;   XREF to: 0048c450 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 004c23aa
     XOR EDX,EDX                         ; 004c23ad
     LEA EAX,[ESP + 0x38]                ; 004c23af
@@ -219,14 +219,14 @@ section .text
     MOV dword ptr [ESP + 0x40],EDX      ; 004c23bc
     PUSH EAX                            ; 004c23c0
     MOV dword ptr [ESP + 0x48],EDX      ; 004c23c1
-    MOV EDX,dword ptr [0x006703ec]      ; 004c23c5 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDX                            ; 004c23cb | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c23cc | void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006703ec]      ; 004c23c5 | g_CDemonRendererPtr
+    PUSH EDX                            ; 004c23cb | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c23cc
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
     ADD ESP,0xc                         ; 004c23d1
     FLD float ptr [ESP]                 ; 004c23d4
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004c23d7 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004c23d7
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x6c]        ; 004c23dc
     MOV ECX,dword ptr [ESP + 0x6c]      ; 004c23e0
     PUSH ECX                            ; 004c23e4
@@ -234,11 +234,11 @@ section .text
     PUSH 0x0                            ; 004c23e7
     MOV EAX,dword ptr [EBX + 0x18]      ; 004c23e9
     PUSH EAX                            ; 004c23ec
-    CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 004c23ed | void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
-        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850 ; 004c23ed
+        ;   XREF to: 00477850 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index, int render_flags)
     ADD ESP,0x10                        ; 004c23f2
-    MOV EDX,dword ptr [0x006703ec]      ; 004c23f5 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDX                            ; 004c23fb | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c23fc | void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
-        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006703ec]      ; 004c23f5 | g_CDemonRendererPtr
+    PUSH EDX                            ; 004c23fb | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720 ; 004c23fc
+        ;   XREF to: 0048c640 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720()
 

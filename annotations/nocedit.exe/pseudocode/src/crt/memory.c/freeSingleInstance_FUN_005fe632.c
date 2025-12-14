@@ -13,7 +13,6 @@ crt_memory_c_freeSingleInstance_FUN_005fe632(void *object_ptr,WatcomTypeInfo *ty
   if (object_ptr == (void *)0x0) {
     return (void *)0x0;
   }
-  crt_memory_c_freeTypeArray_FUN_005feee9
-            ((void **)object_ptr,*(int *)((int)object_ptr + -4),type_info);
+  crt_memory_c_freeTypeArray_FUN_005feee9(object_ptr,*(int *)((int)object_ptr + -4),type_info);
   return (int *)((int)object_ptr + -4);
 }

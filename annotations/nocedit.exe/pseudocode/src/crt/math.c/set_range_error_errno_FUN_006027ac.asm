@@ -19,8 +19,8 @@ section .text
 
     PUSH 0xe                            ; 006027ac
         ;   Label: crt_math.c_set_range_error_errno_FUN_006027ac
-    CALL crt_errno.c_setErrno_FUN_00602790 ; 006027ae | void crt_errno.c_setErrno_FUN_00602790(int error_code)
-        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_setErrno_FUN_00602790 ; 006027ae
+        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00602790(int error_code)
     ADD ESP,0x4                         ; 006027b3
     RET                                 ; 006027b6
 

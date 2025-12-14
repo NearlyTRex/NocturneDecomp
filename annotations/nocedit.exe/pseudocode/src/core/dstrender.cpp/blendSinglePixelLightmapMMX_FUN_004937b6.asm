@@ -39,22 +39,22 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 004937c2
     MOV EBP,dword ptr [EBP + 0x14]      ; 004937c5
     PXOR MM7,MM7                        ; 004937c8
-    MOVD MM5,dword ptr [0x02d052a8]     ; 004937cb | int g_SolidColorMode
+    MOVD MM5,dword ptr [0x02d052a8]     ; 004937cb | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 004937d2
     PSLLW MM5,0x6                       ; 004937d5
     MOVZX EDX,byte ptr [EBX]            ; 004937d9
     MOVD MM0,dword ptr [ESI]            ; 004937dc
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 004937df | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 004937df | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 004937e7
     PUNPCKLBW MM0,MM7                   ; 004937eb
     SHR EDX,0x1                         ; 004937ee
     PUNPCKLBW MM2,MM7                   ; 004937f0
     ADD EAX,EDX                         ; 004937f3
     PMULLW MM0,MM2                      ; 004937f5
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 004937f8 | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 004937f8 | g_LightmapData
     MOVQ MM2,MM3                        ; 00493800
     MOVQ MM4,MM5                        ; 00493803
-    PXOR MM2,qword ptr [0x006781e8]     ; 00493806 | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00493806 | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 0049380d
     PMULHW MM4,MM3                      ; 00493810
     PADDW MM0,MM4                       ; 00493813
@@ -62,12 +62,12 @@ section .text
     PACKUSWB MM0,MM7                    ; 0049381a
     MOVQ MM2,MM0                        ; 0049381d
     MOVQ MM3,MM0                        ; 00493820
-    PAND MM0,qword ptr [0x006827a0]     ; 00493823 | ulonglong g_BlueMask32
-    PAND MM2,qword ptr [0x00682780]     ; 0049382a | ulonglong g_GreenMask32
-    PAND MM3,qword ptr [0x00682760]     ; 00493831 | ulonglong g_RedMask32
-    PSRLQ MM0,qword ptr [0x006827e8]    ; 00493838 | ulonglong g_BlueBitShift
-    PSRLQ MM2,qword ptr [0x006827c8]    ; 0049383f | ulonglong g_GreenBlueBits
-    PSRLQ MM3,qword ptr [0x006827a8]    ; 00493846 | ulonglong g_TotalColorBits
+    PAND MM0,qword ptr [0x006827a0]     ; 00493823 | g_BlueMask32
+    PAND MM2,qword ptr [0x00682780]     ; 0049382a | g_GreenMask32
+    PAND MM3,qword ptr [0x00682760]     ; 00493831 | g_RedMask32
+    PSRLQ MM0,qword ptr [0x006827e8]    ; 00493838 | g_BlueBitShift
+    PSRLQ MM2,qword ptr [0x006827c8]    ; 0049383f | g_GreenBlueBits
+    PSRLQ MM3,qword ptr [0x006827a8]    ; 00493846 | g_TotalColorBits
     POR MM0,MM2                         ; 0049384d
     POR MM0,MM3                         ; 00493850
     MOVD EAX,MM0                        ; 00493853

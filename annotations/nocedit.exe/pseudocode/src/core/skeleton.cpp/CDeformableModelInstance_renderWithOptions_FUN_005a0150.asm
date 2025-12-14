@@ -43,31 +43,31 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a0157
     MOV ESI,EAX                         ; 005a015b
     TEST EAX,EAX                        ; 005a015d
-    JL 0x005a0197                       ; 005a015f | LAB_005a0197
-        ;   XREF to: 005a0197 (CONDITIONAL_JUMP)
+    JL 0x005a0197                       ; 005a015f
+        ;   XREF to: 005a0197 (CONDITIONAL_JUMP)  ; LAB_005a0197
     PUSH ESI                            ; 005a0161
         ;   Label: LAB_005a0161
     PUSH EBX                            ; 005a0162
-    CALL core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250 ; 005a0163 | void core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(CDeformableModelInstance * this_ptr, int lod_index)
-        ;   XREF to: 005a0250 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250 ; 005a0163
+        ;   XREF to: 005a0250 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 005a0168
     CMP dword ptr [ESP + 0x1c],0x0      ; 005a016b
-    JNZ 0x005a01b4                      ; 005a0170 | LAB_005a01b4
-        ;   XREF to: 005a01b4 (CONDITIONAL_JUMP)
+    JNZ 0x005a01b4                      ; 005a0170
+        ;   XREF to: 005a01b4 (CONDITIONAL_JUMP)  ; LAB_005a01b4
     CMP dword ptr [ESP + 0x18],0x0      ; 005a0172
-    JL 0x005a01c0                       ; 005a0177 | LAB_005a01c0
-        ;   XREF to: 005a01c0 (CONDITIONAL_JUMP)
+    JL 0x005a01c0                       ; 005a0177
+        ;   XREF to: 005a01c0 (CONDITIONAL_JUMP)  ; LAB_005a01c0
     TEST byte ptr [ESP + 0x19],0x1      ; 005a0179
-    JZ 0x005a01c0                       ; 005a017e | LAB_005a01c0
-        ;   XREF to: 005a01c0 (CONDITIONAL_JUMP)
+    JZ 0x005a01c0                       ; 005a017e
+        ;   XREF to: 005a01c0 (CONDITIONAL_JUMP)  ; LAB_005a01c0
     MOV ESI,dword ptr [ESP + 0x20]      ; 005a0180
         ;   Label: LAB_005a0180
     PUSH ESI                            ; 005a0184
     MOV EDI,dword ptr [ESP + 0x1c]      ; 005a0185
     PUSH EDI                            ; 005a0189
     PUSH EBX                            ; 005a018a
-    CALL core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340 ; 005a018b | void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0340 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340 ; 005a018b
+        ;   XREF to: 005a0340 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(CDeformableModelInstance * this_ptr)
     ADD ESP,0xc                         ; 005a0190
     POP EDI                             ; 005a0193
     POP ESI                             ; 005a0194
@@ -77,30 +77,30 @@ section .text
         ;   Label: LAB_005a0197
     PUSH EAX                            ; 005a019d
     PUSH EBX                            ; 005a019e
-    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005a019f | CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 005a019f
+        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a01a4
     PUSH EAX                            ; 005a01a7
-    CALL core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40 ; 005a01a8 | int core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40(CDeformableModel * this_ptr, CBoundingBox3D * bounding_box)
-        ;   XREF to: 0059ce40 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40 ; 005a01a8
+        ;   XREF to: 0059ce40 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40(CDeformableModel * this_ptr, CBoundingBox3D * bounding_box)
     ADD ESP,0x8                         ; 005a01ad
     MOV ESI,EAX                         ; 005a01b0
-    JMP 0x005a0161                      ; 005a01b2 | LAB_005a0161
-        ;   XREF to: 005a0161 (UNCONDITIONAL_JUMP)
+    JMP 0x005a0161                      ; 005a01b2
+        ;   XREF to: 005a0161 (UNCONDITIONAL_JUMP)  ; LAB_005a0161
     PUSH ESI                            ; 005a01b4
         ;   Label: LAB_005a01b4
     PUSH EBX                            ; 005a01b5
-    CALL core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0 ; 005a01b6 | void core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0(CDeformableModelInstance * this_ptr, int lod_index)
-        ;   XREF to: 005a02a0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0 ; 005a01b6
+        ;   XREF to: 005a02a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 005a01bb
-    JMP 0x005a0180                      ; 005a01be | LAB_005a0180
-        ;   XREF to: 005a0180 (UNCONDITIONAL_JUMP)
+    JMP 0x005a0180                      ; 005a01be
+        ;   XREF to: 005a0180 (UNCONDITIONAL_JUMP)  ; LAB_005a0180
     PUSH ESI                            ; 005a01c0
         ;   Label: LAB_005a01c0
     PUSH EBX                            ; 005a01c1
-    CALL core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0 ; 005a01c2 | void core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0(CDeformableModelInstance * this_ptr, int lod_index)
-        ;   XREF to: 005a02f0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0 ; 005a01c2
+        ;   XREF to: 005a02f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 005a01c7
-    JMP 0x005a0180                      ; 005a01ca | LAB_005a0180
-        ;   XREF to: 005a0180 (UNCONDITIONAL_JUMP)
+    JMP 0x005a0180                      ; 005a01ca
+        ;   XREF to: 005a0180 (UNCONDITIONAL_JUMP)  ; LAB_005a0180
 

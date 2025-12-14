@@ -19,11 +19,11 @@ section .text
 
     PUSH 0x4c8                          ; 004098e0
         ;   Label: core_actor.cpp_CDemonActor_getTargetPoints_FUN_004098e0
-    PUSH 0x6138ce                       ; 004098e5 | = "..\\core\\actor.cpp" | s_core_actor_cpp_006138ce = ..\core\actor.cpp
+    PUSH 0x6138ce                       ; 004098e5 | = "..\\core\\actor.cpp"
     MOV EDX,dword ptr [ESP + 0xc]       ; 004098ea
     PUSH EDX                            ; 004098ee
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 004098ef | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 004098ef
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     ADD ESP,0xc                         ; 004098f4
     XOR EAX,EAX                         ; 004098f7
     RET                                 ; 004098f9

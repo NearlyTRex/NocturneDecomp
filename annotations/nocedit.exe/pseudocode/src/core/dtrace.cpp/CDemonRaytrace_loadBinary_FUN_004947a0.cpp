@@ -19,16 +19,17 @@ core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,
   SIZE_T *pSVar6;
   void *pvVar7;
   CDemonPart *pCVar8;
-  uchar *puVar9;
+  CDemonPart *pCVar9;
+  uchar *puVar10;
   int unaff_EBX;
   uint cube_index;
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
-  int iVar10;
-  int *piVar11;
-  int iVar12;
-  SIZE_T *buffer;
+  int iVar11;
+  int *piVar12;
   int iVar13;
+  SIZE_T *buffer;
+  int iVar14;
   FILE *in_stack_0000000c;
   int in_stack_00000010;
   FILE *in_stack_00000014;
@@ -76,9 +77,9 @@ core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,
     if (unaff_EBX < 3) {
       this_ptr = (CDemonRaytrace *)0x0;
       for (in_stack_0000000c = (FILE *)0x0;
-          iVar10 = (this_ptr_00->grid_coord).x * (this_ptr_00->grid_coord).y *
+          iVar11 = (this_ptr_00->grid_coord).x * (this_ptr_00->grid_coord).y *
                    (this_ptr_00->grid_coord).z,
-          iVar10 - (int)in_stack_0000000c != 0 && (int)in_stack_0000000c <= iVar10;
+          iVar11 - (int)in_stack_0000000c != 0 && (int)in_stack_0000000c <= iVar11;
           in_stack_0000000c = (FILE *)((int)in_stack_0000000c + 1)) {
         buffer = (SIZE_T *)
                  ((int)((SVoxelCubeMetadata *)(this_ptr_00->cube_list->voxel_data + -5))->voxel_data
@@ -86,8 +87,7 @@ core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,
         crt_stdio_c_fread_FUN_005fd990(buffer,4,1,in_stack_00000030);
         SVar1 = *buffer;
         if (SVar1 != 0) {
-          pSVar5 = (SIZE_T *)
-                   shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+          pSVar5 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                              (SVar1 * 0x38 + 4,"..\\core\\dtrace.cpp",0x172);
           pSVar6 = pSVar5;
           if (pSVar5 != (SIZE_T *)0x0) {
@@ -103,24 +103,24 @@ core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,
             g_CurrentLineNumber = 0x175;
             core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::loadBinary - out of memory!");
           }
-          iVar10 = 0;
+          iVar11 = 0;
           if (0 < (int)*buffer) {
-            iVar12 = 0;
+            iVar13 = 0;
             do {
-              iVar10 = iVar10 + 1;
+              iVar11 = iVar11 + 1;
               core_dtri_cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0
-                        ((CDemonTriangle *)(buffer[1] + iVar12),in_stack_00000040);
-              iVar12 = iVar12 + 0x38;
-            } while (iVar10 < (int)*buffer);
+                        ((CDemonTriangle *)(buffer[1] + iVar13),in_stack_00000040);
+              iVar13 = iVar13 + 0x38;
+            } while (iVar11 < (int)*buffer);
           }
-          pCVar8 = (CDemonPart *)
-                   shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x388,"..\\core\\dtrace.cpp",0x17a);
+          pCVar8 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x388,"..\\core\\dtrace.cpp",0x17a);
+          pCVar9 = (CDemonPart *)0x0;
           if (pCVar8 != (CDemonPart *)0x0) {
-            pCVar8 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(pCVar8);
+            pCVar9 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(pCVar8);
           }
-          buffer[3] = (SIZE_T)pCVar8;
+          buffer[3] = (SIZE_T)pCVar9;
           core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
-                    (this_ptr_00,pCVar8,in_stack_00000024,in_stack_00000048);
+                    (this_ptr_00,pCVar9,in_stack_00000024,in_stack_00000048);
         }
         crt_stdio_c_fread_FUN_005fd990(buffer + 5,0x40,1,in_stack_0000004c);
         if (in_stack_0000001c < 2) {
@@ -134,70 +134,70 @@ core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,
       core_dtrace_cpp_CDemonRaytrace_consolidateTriList_FUN_00494450((CDemonRaytrace *)0x494acd);
     }
     else {
-      iVar12 = 0;
-      iVar10 = 0;
-      while (iVar10 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z
+      iVar13 = 0;
+      iVar11 = 0;
+      while (iVar11 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z
             ) {
-        piVar11 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);
-        crt_stdio_c_fread_FUN_005fd990(piVar11,4,1,in_stack_00000030);
-        if (*piVar11 < 1) {
-          crt_memory_c_memset_FUN_005fde40(piVar11 + 5,0,0x40);
-          iVar10 = iVar10 + 1;
-          iVar12 = iVar12 + 0x58;
+        piVar12 = (int *)((int)this_ptr->cube_list->voxel_data + iVar13 + -0x14);
+        crt_stdio_c_fread_FUN_005fd990(piVar12,4,1,in_stack_00000030);
+        if (*piVar12 < 1) {
+          crt_memory_c_memset_FUN_005fde40(piVar12 + 5,0,0x40);
+          iVar11 = iVar11 + 1;
+          iVar13 = iVar13 + 0x58;
         }
         else {
-          pCVar8 = (CDemonPart *)
-                   shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x388,"..\\core\\dtrace.cpp",0x19a);
+          pCVar8 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x388,"..\\core\\dtrace.cpp",0x19a);
+          pCVar9 = (CDemonPart *)0x0;
           if (pCVar8 != (CDemonPart *)0x0) {
-            pCVar8 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(pCVar8);
+            pCVar9 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(pCVar8);
           }
-          piVar11[3] = (int)pCVar8;
-          if (pCVar8 == (CDemonPart *)0x0) {
+          piVar12[3] = (int)pCVar9;
+          if (pCVar9 == (CDemonPart *)0x0) {
             g_CurrentFilename = "..\\core\\dtrace.cpp";
             g_CurrentLineNumber = 0x19b;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for cube model loading dtrace database");
           }
           core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
-                    (this_ptr,(void *)piVar11[3],iVar10,in_stack_0000003c);
-          crt_stdio_c_fread_FUN_005fd990(piVar11 + 5,0x40,1,in_stack_00000040);
-          iVar10 = iVar10 + 1;
-          iVar12 = iVar12 + 0x58;
+                    (this_ptr,(void *)piVar12[3],iVar11,in_stack_0000003c);
+          crt_stdio_c_fread_FUN_005fd990(piVar12 + 5,0x40,1,in_stack_00000040);
+          iVar11 = iVar11 + 1;
+          iVar13 = iVar13 + 0x58;
         }
       }
-      iVar10 = 0;
+      iVar11 = 0;
       this_ptr->triangle_count = in_stack_00000010;
       core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00494600(this_ptr);
       if (0 < this_ptr->triangle_count) {
-        iVar12 = 0;
+        iVar13 = 0;
         do {
-          iVar10 = iVar10 + 1;
+          iVar11 = iVar11 + 1;
           core_dtri_cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0
-                    ((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar12),
+                    ((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar13),
                      in_stack_00000034);
-          iVar12 = iVar12 + 0x38;
-        } while (iVar10 < this_ptr->triangle_count);
+          iVar13 = iVar13 + 0x38;
+        } while (iVar11 < this_ptr->triangle_count);
       }
-      iVar12 = 0;
       iVar13 = 0;
+      iVar14 = 0;
       crt_stdio_c_fread_FUN_005fd990
                 (this_ptr->triangle_flags,this_ptr->triangle_count,1,in_stack_00000034);
-      iVar10 = 0;
-      while (iVar12 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z
+      iVar11 = 0;
+      while (iVar13 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z
             ) {
-        piVar11 = (int *)((int)this_ptr->cube_list->voxel_data + iVar13 + -0x14);
-        if (*piVar11 < 1) {
-          piVar11[0x15] = 0;
-          piVar11[1] = 0;
-          iVar12 = iVar12 + 1;
-          iVar13 = iVar13 + 0x58;
+        piVar12 = (int *)((int)this_ptr->cube_list->voxel_data + iVar14 + -0x14);
+        if (*piVar12 < 1) {
+          piVar12[0x15] = 0;
+          piVar12[1] = 0;
+          iVar13 = iVar13 + 1;
+          iVar14 = iVar14 + 0x58;
         }
         else {
-          piVar11[1] = (int)(this_ptr->triangle_list + iVar10);
-          puVar9 = this_ptr->triangle_flags + iVar10;
-          iVar10 = iVar10 + *piVar11;
-          piVar11[0x15] = (int)puVar9;
-          iVar12 = iVar12 + 1;
-          iVar13 = iVar13 + 0x58;
+          piVar12[1] = (int)(this_ptr->triangle_list + iVar11);
+          puVar10 = this_ptr->triangle_flags + iVar11;
+          iVar11 = iVar11 + *piVar12;
+          piVar12[0x15] = (int)puVar10;
+          iVar13 = iVar13 + 1;
+          iVar14 = iVar14 + 0x58;
         }
       }
     }
@@ -205,28 +205,28 @@ core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,
     cube_index = 0;
     shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
               (g_CEditorToolsPtr,"Converting .GEO file to version 4");
-    iVar10 = 0;
+    iVar11 = 0;
     while ((int)cube_index <
            (this_ptr_00->grid_coord).x * (this_ptr_00->grid_coord).y * (this_ptr_00->grid_coord).z)
     {
       pSVar2 = this_ptr_00->cube_list;
       core_dtrace_cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0
                 (this_ptr_00,(CVector3f *)&stack0xfffffff4,cube_index);
-      piVar11 = (int *)((int)pSVar2->voxel_data + iVar10 + -0x14);
+      piVar12 = (int *)((int)pSVar2->voxel_data + iVar11 + -0x14);
       core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
                 ((CDemonCube *)((int)&this_ptr_00->cube_data->voxel_buffer1 + in_stack_0000001c),
-                 (void *)piVar11[1],*piVar11,(CVector3f *)&stack0xfffffff8,
-                 (CVector3f *)&stack0xffffffec,(uchar *)piVar11[0x15],(uint *)(piVar11 + 5));
+                 (void *)piVar12[1],*piVar12,(CVector3f *)&stack0xfffffff8,
+                 (CVector3f *)&stack0xffffffec,(uchar *)piVar12[0x15],(uint *)(piVar12 + 5));
       if ((cube_index & 0xf) == 0) {
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                   (g_CEditorToolsPtr,(float)(int)(cube_index + 1),
                    (float)((this_ptr_00->grid_coord).x * (this_ptr_00->grid_coord).y *
                           (this_ptr_00->grid_coord).z));
-        iVar10 = iVar10 + 0x58;
+        iVar11 = iVar11 + 0x58;
         cube_index = cube_index + 1;
       }
       else {
-        iVar10 = iVar10 + 0x58;
+        iVar11 = iVar11 + 0x58;
         cube_index = cube_index + 1;
       }
     }
@@ -237,14 +237,14 @@ core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,
   }
   else {
     core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(this_ptr);
-    iVar10 = 0;
-    for (iVar12 = 0;
-        iVar12 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z;
-        iVar12 = iVar12 + 1) {
+    iVar11 = 0;
+    for (iVar13 = 0;
+        iVar13 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z;
+        iVar13 = iVar13 + 1) {
       core_dcube_cpp_CDemonCube_load_FUN_00457530
-                ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar10),in_stack_0000004c
+                ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar11),in_stack_0000004c
                 );
-      iVar10 = iVar10 + 0x34;
+      iVar11 = iVar11 + 0x34;
     }
   }
   if ((in_stack_0000004c->_flag & 0x20) != 0) {

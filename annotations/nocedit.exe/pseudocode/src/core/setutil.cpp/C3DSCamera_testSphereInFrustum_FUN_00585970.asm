@@ -47,51 +47,51 @@ section .text
     LEA EAX,[EBX + 0x118]               ; 005859a1
     PUSH EAX                            ; 005859a7
     FSTP float ptr [ESP + 0x14]         ; 005859a8
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 005859ac | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 005859ac
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 005859b1
     FLD float ptr [ESP + 0xc]           ; 005859b4
     FADD float ptr [ESP + 0x28]         ; 005859b8
     FCOMP float ptr [EBX + 0x17c]       ; 005859bc
     FNSTSW AX                           ; 005859c2
     SAHF                                ; 005859c4
-    JC 0x00585a26                       ; 005859c5 | LAB_00585a26
-        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)
+    JC 0x00585a26                       ; 005859c5
+        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)  ; LAB_00585a26
     FLD float ptr [ESP + 0x10]          ; 005859c7
     FADD float ptr [ESP + 0x28]         ; 005859cb
     FCOMP float ptr [EBX + 0x180]       ; 005859cf
     FNSTSW AX                           ; 005859d5
     SAHF                                ; 005859d7
-    JC 0x00585a26                       ; 005859d8 | LAB_00585a26
-        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)
+    JC 0x00585a26                       ; 005859d8
+        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)  ; LAB_00585a26
     FLD float ptr [ESP + 0x14]          ; 005859da
     FADD float ptr [ESP + 0x28]         ; 005859de
     FCOMP float ptr [EBX + 0x184]       ; 005859e2
     FNSTSW AX                           ; 005859e8
     SAHF                                ; 005859ea
-    JC 0x00585a26                       ; 005859eb | LAB_00585a26
-        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)
+    JC 0x00585a26                       ; 005859eb
+        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)  ; LAB_00585a26
     FLD float ptr [ESP + 0xc]           ; 005859ed
     FSUB float ptr [ESP + 0x28]         ; 005859f1
     FCOMP float ptr [EBX + 0x188]       ; 005859f5
     FNSTSW AX                           ; 005859fb
     SAHF                                ; 005859fd
-    JA 0x00585a26                       ; 005859fe | LAB_00585a26
-        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)
+    JA 0x00585a26                       ; 005859fe
+        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)  ; LAB_00585a26
     FLD float ptr [ESP + 0x10]          ; 00585a00
     FSUB float ptr [ESP + 0x28]         ; 00585a04
     FCOMP float ptr [EBX + 0x18c]       ; 00585a08
     FNSTSW AX                           ; 00585a0e
     SAHF                                ; 00585a10
-    JA 0x00585a26                       ; 00585a11 | LAB_00585a26
-        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)
+    JA 0x00585a26                       ; 00585a11
+        ;   XREF to: 00585a26 (CONDITIONAL_JUMP)  ; LAB_00585a26
     FLD float ptr [ESP + 0x14]          ; 00585a13
     FSUB float ptr [ESP + 0x28]         ; 00585a17
     FCOMP float ptr [EBX + 0x190]       ; 00585a1b
     FNSTSW AX                           ; 00585a21
     SAHF                                ; 00585a23
-    JBE 0x00585a2d                      ; 00585a24 | LAB_00585a2d
-        ;   XREF to: 00585a2d (CONDITIONAL_JUMP)
+    JBE 0x00585a2d                      ; 00585a24
+        ;   XREF to: 00585a2d (CONDITIONAL_JUMP)  ; LAB_00585a2d
     XOR EAX,EAX                         ; 00585a26
         ;   Label: LAB_00585a26
     ADD ESP,0x18                        ; 00585a28

@@ -19,8 +19,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0060a144
         ;   Label: crt_io.c_register_handle_wrapper_FUN_0060a144
     PUSH EDX                            ; 0060a148
-    CALL crt_io.c_register_handle_FUN_00608990 ; 0060a149 | int crt_io.c_register_handle_FUN_00608990(HANDLE handle)
-        ;   XREF to: 00608990 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_register_handle_FUN_00608990 ; 0060a149
+        ;   XREF to: 00608990 (UNCONDITIONAL_CALL)  ; int crt_io.c_register_handle_FUN_00608990(HANDLE handle)
     ADD ESP,0x4                         ; 0060a14e
     RET                                 ; 0060a151
 

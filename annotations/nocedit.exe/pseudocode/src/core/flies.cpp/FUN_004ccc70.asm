@@ -24,18 +24,18 @@ section .text
     PUSH EBX                            ; 004ccc77
     MOV EDX,dword ptr [ESP + 0x14]      ; 004ccc78
     PUSH EDX                            ; 004ccc7c
-    CALL core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150 ; 004ccc7d | void core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor * this_ptr, int * y_pos)
-        ;   XREF to: 0040d150 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150 ; 004ccc7d
+        ;   XREF to: 0040d150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150(CDemonActor * this_ptr, int * y_pos)
     MOV ECX,dword ptr [EBX]             ; 004ccc82
     ADD ESP,0x8                         ; 004ccc84
     ADD ECX,0xb                         ; 004ccc87
     PUSH ECX                            ; 004ccc8a
-    MOV EDI,dword ptr [0x02d02558]      ; 004ccc8b | int g_ClipLeft
+    MOV EDI,dword ptr [0x02d02558]      ; 004ccc8b | g_ClipLeft
     PUSH EDI                            ; 004ccc91
-    PUSH 0x62a486                       ; 004ccc92 | = "With CTRL held down, use slew keys to..." | s_With_CTRL_held_down_use__0062a486 = With CTRL held down, use slew keys to size box.
+    PUSH 0x62a486                       ; 004ccc92 | = "With CTRL held down, use slew keys to..."
     MOV dword ptr [EBX],ECX             ; 004ccc97
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 004ccc99 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 004ccc99
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     MOV EBP,dword ptr [EBX]             ; 004ccc9e
     ADD EBP,0xb                         ; 004ccca0
     ADD ESP,0xc                         ; 004ccca3

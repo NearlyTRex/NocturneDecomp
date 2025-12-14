@@ -1,100 +1,100 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 60, 
-    "assembly_lines": 45, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdlib.c_qsort_FUN_005fdf38", 
-      "addr": "005fdf38"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_0062383b", 
-      "addr": "0062383b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CStrList_sort_invalid_ra_00623851", 
-      "addr": "00623851", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a2f00", 
-    "signature": "void shape_edittool.cpp_CStrList_sort_FUN_004a2f00(CStrList * this_ptr, int sort_type, int sort_order)", 
-    "address_range": [
-      [
-        "004a2f00", 
-        "004a2f63"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CStrList_sort_FUN_004a2f00"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "sort_type"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "sort_order"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 45,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 60
+  },
   "cross_references": [
     {
-      "from_addr": "004a5813", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CPickList_sort_FUN_004a57f0", 
-      "addr": "004a57f0"
+      "addr": "004a57f0",
+      "from_addr": "004a5813",
+      "name": "shape_edittool.cpp_CPickList_sort_FUN_004a57f0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a2f00",
+    "address_range": [
+      [
+        "004a2f00",
+        "004a2f63"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_sort_FUN_004a2f00",
+    "signature": "void shape_edittool.cpp_CStrList_sort_FUN_004a2f00(CStrList * this_ptr, int sort_type, int sort_order)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fdf38",
+      "name": "crt_stdlib.c_qsort_FUN_005fdf38"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062383b",
+      "name": "s_shape_edittool_cpp_0062383b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623851",
+      "name": "s_CStrList_sort_invalid_ra_00623851",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "sort_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "sort_order",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

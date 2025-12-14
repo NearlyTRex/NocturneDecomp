@@ -1,113 +1,113 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 42, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 87, 
-    "assembly_lines": 70, 
-    "suspect_count": 2, 
+    "assembly_lines": 70,
+    "complexity_score": 42,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0062e356", 
-      "addr": "0062e356", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_d_d_0062e360", 
-      "addr": "0062e360", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_0062e36a", 
-      "addr": "0062e36a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_d_d_d_d_d_d_0062e374", 
-      "addr": "0062e374", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 18, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "param_5[0xe],param_5[0xf],param_5[0x10],unaff_EBX);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004ecb90", 
-    "signature": "undefined core_gore.cpp_FUN_004ecb90()", 
-    "address_range": [
-      [
-        "004ecb90", 
-        "004ecc35"
-      ]
-    ], 
-    "name": "core_gore.cpp_FUN_004ecb90"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 87
+  },
   "cross_references": [
     {
-      "from_addr": "004ee318", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gore.cpp_FUN_004ee290", 
-      "addr": "004ee290"
+      "addr": "004ee290",
+      "from_addr": "004ee318",
+      "name": "core_gore.cpp_FUN_004ee290",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ecb90",
+    "address_range": [
+      [
+        "004ecb90",
+        "004ecc35"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_gore.cpp_FUN_004ecb90",
+    "signature": "undefined core_gore.cpp_FUN_004ecb90()"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062e356",
+      "name": "s_f_f_f_0062e356",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e360",
+      "name": "s_d_d_d_0062e360",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e36a",
+      "name": "s_f_f_f_0062e36a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062e374",
+      "name": "s_d_d_d_d_d_d_d_0062e374",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "text": "param_5[0xe],param_5[0xf],param_5[0x10],unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

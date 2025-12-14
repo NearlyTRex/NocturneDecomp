@@ -1,129 +1,129 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 65, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 51, 
-    "assembly_lines": 31, 
-    "suspect_count": 4, 
+    "assembly_lines": 31,
+    "complexity_score": 65,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 4,
+    "pseudocode_lines": 20,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_exception.c_installExceptionHandler_FUN_0060aba8", 
-      "addr": "0060aba8"
-    }, 
-    {
-      "name": "crt_init.c_ProcessInitTermHandlers_FUN_0060ac30", 
-      "addr": "0060ac30"
-    }, 
-    {
-      "name": "crt_memory.c_GetMemoryBounds_FUN_0060a6a0", 
-      "addr": "0060a6a0"
-    }, 
-    {
-      "name": "crt_startup.c_initialize_runtime_FUN_0060245c", 
-      "addr": "0060245c"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602458", 
-      "addr": "00602458"
-    }, 
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }, 
-    {
-      "name": "GetModuleHandleA", 
-      "addr": "EXTERNAL:00000078"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GetModuleHandleA*", 
-      "name": "GetModuleHandleA", 
-      "addr": "006115b4", 
-      "value": "00211f6e"
-    }, 
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f24", 
-      "addr": "00684f24", 
-      "value": "00602458"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00684ff4", 
-      "addr": "00684ff4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_startup_c_initialize_runtime_FUN_0060245c(unaff_retaddr,in_stack_00000004,in_stack_00000008);"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_startup_c_initialize_runtime_FUN_0060245c(unaff_retaddr,in_stack_00000004,in_stack_00000008);"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "006026a8", 
-    "signature": "void crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8(void * pParam)", 
-    "address_range": [
-      [
-        "006026a8", 
-        "006026fe"
-      ]
-    ], 
-    "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 51
+  },
   "cross_references": [
     {
-      "from_addr": "00609eb1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.cpp_WinMainBootstrap_FUN_00609e70", 
-      "addr": "00609e70"
+      "addr": "00609e70",
+      "from_addr": "00609eb1",
+      "name": "crt_startup.cpp_WinMainBootstrap_FUN_00609e70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "006026a8",
+    "address_range": [
+      [
+        "006026a8",
+        "006026fe"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8",
+    "signature": "void crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8(void * pParam)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060aba8",
+      "name": "crt_exception.c_installExceptionHandler_FUN_0060aba8"
+    },
+    {
+      "addr": "0060ac30",
+      "name": "crt_init.c_ProcessInitTermHandlers_FUN_0060ac30"
+    },
+    {
+      "addr": "0060a6a0",
+      "name": "crt_memory.c_GetMemoryBounds_FUN_0060a6a0"
+    },
+    {
+      "addr": "0060245c",
+      "name": "crt_startup.c_initialize_runtime_FUN_0060245c"
+    },
+    {
+      "addr": "00602458",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602458"
+    },
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    },
+    {
+      "addr": "EXTERNAL:00000078",
+      "name": "GetModuleHandleA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006115b4",
+      "name": "GetModuleHandleA",
+      "type": "GetModuleHandleA*",
+      "value": "00211f6e"
+    },
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    },
+    {
+      "addr": "00684f24",
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f24",
+      "type": "void*",
+      "value": "00602458"
+    },
+    {
+      "addr": "00684ff4",
+      "name": "DAT_00684ff4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "void *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "crt_startup_c_initialize_runtime_FUN_0060245c(unaff_retaddr,in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "crt_startup_c_initialize_runtime_FUN_0060245c(unaff_retaddr,in_stack_00000004,in_stack_00000008);",
+      "type": "stack_param"
     }
   ]
 }

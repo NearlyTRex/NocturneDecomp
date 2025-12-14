@@ -1,114 +1,114 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 28, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 97, 
-    "assembly_lines": 69, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CSkeleton_load_FUN_00599b10", 
-      "addr": "00599b10"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064f093", 
-      "addr": "0064f093", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_load_s_because_ske_0064f0a8", 
-      "addr": "0064f0a8", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SkeletonPoolCount", 
-      "addr": "038cc8a0", 
-      "value": null
-    }, 
-    {
-      "type": "CSkeleton[40]", 
-      "name": "g_SkeletonPool", 
-      "addr": "038cc8a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_038f4dac", 
-      "addr": "038f4dac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0391e5d8", 
-      "addr": "0391e5d8", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a1df0", 
-    "signature": "CSkeleton * core_skeleton.cpp_loadSkeleton_FUN_005a1df0(char * filename)", 
-    "address_range": [
-      [
-        "005a1df0", 
-        "005a1e9b"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_loadSkeleton_FUN_005a1df0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 69,
+    "complexity_score": 28,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 8,
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 97
+  },
   "cross_references": [
     {
-      "from_addr": "0059a792", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780", 
-      "addr": "0059a780"
+      "addr": "0059a780",
+      "from_addr": "0059a792",
+      "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005a1df0",
+    "address_range": [
+      [
+        "005a1df0",
+        "005a1e9b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_loadSkeleton_FUN_005a1df0",
+    "signature": "CSkeleton * core_skeleton.cpp_loadSkeleton_FUN_005a1df0(char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00599b10",
+      "name": "core_skeleton.cpp_CSkeleton_load_FUN_00599b10"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064f093",
+      "name": "s_core_skeleton_cpp_0064f093",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064f0a8",
+      "name": "s_Can_t_load_s_because_ske_0064f0a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "038cc8a0",
+      "name": "g_SkeletonPoolCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "038cc8a4",
+      "name": "g_SkeletonPool",
+      "type": "CSkeleton[40]",
+      "value": null
+    },
+    {
+      "addr": "038f4dac",
+      "name": "DAT_038f4dac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0391e5d8",
+      "name": "DAT_0391e5d8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

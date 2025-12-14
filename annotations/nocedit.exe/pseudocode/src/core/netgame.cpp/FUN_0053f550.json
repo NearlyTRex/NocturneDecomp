@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 58, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 54, 
-    "assembly_lines": 36, 
-    "suspect_count": 3, 
+    "assembly_lines": 36,
+    "complexity_score": 58,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_SimFrameCount", 
-      "addr": "02f9c0c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SimFrameHistory", 
-      "addr": "02f9c0c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f9c128", 
-      "addr": "02f9c128", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {"
-    }, 
-    {
-      "line": 13, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {"
-    }
-  ], 
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0053f550", 
-    "signature": "undefined core_netgame.cpp_FUN_0053f550()", 
+    "address": "0053f550",
     "address_range": [
       [
-        "0053f550", 
+        "0053f550",
         "0053f592"
       ]
-    ], 
-    "name": "core_netgame.cpp_FUN_0053f550"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_netgame.cpp_FUN_0053f550",
+    "signature": "undefined core_netgame.cpp_FUN_0053f550()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02f9c0c0",
+      "name": "g_SimFrameCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f9c0c4",
+      "name": "g_SimFrameHistory",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f9c128",
+      "name": "DAT_02f9c128",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)",
+      "text": "if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {",
+      "type": "pointer_cast"
+    }
+  ]
 }

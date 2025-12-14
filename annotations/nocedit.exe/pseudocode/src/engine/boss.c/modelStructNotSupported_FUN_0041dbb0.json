@@ -1,99 +1,99 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 34, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 19, 
-    "assembly_lines": 10, 
-    "suspect_count": 2, 
+    "assembly_lines": 10,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_boss_c_006163ee", 
-      "addr": "006163ee", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelStruct_not_supporte_006163ff", 
-      "addr": "006163ff", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SMRGLHeaderExtended *extraout_EAX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return extraout_EAX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0041dbb0", 
-    "signature": "SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041dbb0(SMRGLHeaderExtended * header)", 
-    "address_range": [
-      [
-        "0041dbb0", 
-        "0041dbd3"
-      ]
-    ], 
-    "name": "engine_boss.c_modelStructNotSupported_FUN_0041dbb0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderExtended *", 
-        "size": 4, 
-        "name": "header"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 19
+  },
   "cross_references": [
     {
-      "from_addr": "005280ca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_model.c_freeMRGLData_FUN_005280b0", 
-      "addr": "005280b0"
+      "addr": "005280b0",
+      "from_addr": "005280ca",
+      "name": "engine_model.c_freeMRGLData_FUN_005280b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041dbb0",
+    "address_range": [
+      [
+        "0041dbb0",
+        "0041dbd3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_boss.c_modelStructNotSupported_FUN_0041dbb0",
+    "signature": "SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041dbb0(SMRGLHeaderExtended * header)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006163ee",
+      "name": "s_engine_boss_c_006163ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006163ff",
+      "name": "s_modelStruct_not_supporte_006163ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "header",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "text": "SMRGLHeaderExtended *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
     }
   ]
 }

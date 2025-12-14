@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00601bb0
         ;   Label: crt_memory.c_malloc_FUN_00601bb0
     PUSH EDX                            ; 00601bb4
-    CALL crt_heap.c_InternalHeapAlloc_FUN_00601bc0 ; 00601bb5 | void * crt_heap.c_InternalHeapAlloc_FUN_00601bc0(ulong size)
-        ;   XREF to: 00601bc0 (UNCONDITIONAL_CALL)
+    CALL crt_heap.c_InternalHeapAlloc_FUN_00601bc0 ; 00601bb5
+        ;   XREF to: 00601bc0 (UNCONDITIONAL_CALL)  ; void * crt_heap.c_InternalHeapAlloc_FUN_00601bc0(ulong size)
     ADD ESP,0x4                         ; 00601bba
     RET                                 ; 00601bbd
 

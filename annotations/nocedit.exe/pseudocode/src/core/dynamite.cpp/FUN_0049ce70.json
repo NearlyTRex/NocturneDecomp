@@ -1,118 +1,118 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 102, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 56, 
-    "assembly_lines": 39, 
-    "suspect_count": 8, 
+    "assembly_lines": 39,
+    "complexity_score": 102,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 17,
+    "suspect_count": 8,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8dd0", 
-      "addr": "004c8dd0"
-    }, 
-    {
-      "name": "core_weapon.cpp_FUN_005ee6e0", 
-      "addr": "005ee6e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CFireEffect*", 
-      "name": "g_CFireEffectPtr", 
-      "addr": "0067a3d0", 
-      "value": "02d12db0"
-    }, 
-    {
-      "type": "CFireEffect", 
-      "name": "g_CFireEffectInstance", 
-      "addr": "02d12db0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x588) = 0;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x578) = 0xbf800000;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x584) = 0;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x580) = *(uint *)(in_stack_00000004 + 0x584);"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x580) = *(uint *)(in_stack_00000004 + 0x584);"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x57c) = *(uint *)(in_stack_00000004 + 0x580);"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004 + 0x57c) = *(uint *)(in_stack_00000004 + 0x580);"
-    }
-  ], 
+    ],
+    "total_lines": 56
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0049ce70", 
-    "signature": "undefined core_dynamite.cpp_FUN_0049ce70()", 
+    "address": "0049ce70",
     "address_range": [
       [
-        "0049ce70", 
+        "0049ce70",
         "0049cedd"
       ]
-    ], 
-    "name": "core_dynamite.cpp_FUN_0049ce70"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_dynamite.cpp_FUN_0049ce70",
+    "signature": "undefined core_dynamite.cpp_FUN_0049ce70()"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8dd0",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8dd0"
+    },
+    {
+      "addr": "005ee6e0",
+      "name": "core_weapon.cpp_FUN_005ee6e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x588) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x578) = 0xbf800000;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x584) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x580) = *(uint *)(in_stack_00000004 + 0x584);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x580) = *(uint *)(in_stack_00000004 + 0x584);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x57c) = *(uint *)(in_stack_00000004 + 0x580);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x57c) = *(uint *)(in_stack_00000004 + 0x580);",
+      "type": "stack_param"
+    }
+  ]
 }

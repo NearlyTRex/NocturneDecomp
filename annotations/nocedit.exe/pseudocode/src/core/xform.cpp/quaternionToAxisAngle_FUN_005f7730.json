@@ -1,146 +1,146 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 85, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 124, 
-    "assembly_lines": 84, 
-    "suspect_count": 4, 
+    "assembly_lines": 84,
+    "complexity_score": 85,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 40,
+    "suspect_count": 4,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_acos_FUN_00600162", 
-      "addr": "00600162"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_QuaternionAxisAngleNegativeOne", 
-      "addr": "006583ed", 
-      "value": "-1"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_QuaternionAxisAngleDoubler", 
-      "addr": "006583f5", 
-      "value": "2"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005f7737", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CQuaternion4f *extraout_ECX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CVector3f *extraout_EDX;"
-    }, 
-    {
-      "line": 18, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "quat_ptr = extraout_ECX;"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "axis_out = extraout_EDX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f7730", 
-    "signature": "void core_xform.cpp_quaternionToAxisAngle_FUN_005f7730(CQuaternion4f * quat_ptr, float * angle_out, CVector3f * axis_out)", 
-    "address_range": [
-      [
-        "005f7730", 
-        "005f77da"
-      ]
-    ], 
-    "name": "core_xform.cpp_quaternionToAxisAngle_FUN_005f7730"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CQuaternion4f *", 
-        "size": 4, 
-        "name": "quat_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "angle_out"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "axis_out"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 124
+  },
   "cross_references": [
     {
-      "from_addr": "0059ff5a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20", 
-      "addr": "0059ff20"
+      "addr": "0059ff20",
+      "from_addr": "0059ff5a",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005f7730",
+    "address_range": [
+      [
+        "005f7730",
+        "005f77da"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_quaternionToAxisAngle_FUN_005f7730",
+    "signature": "void core_xform.cpp_quaternionToAxisAngle_FUN_005f7730(CQuaternion4f * quat_ptr, float * angle_out, CVector3f * axis_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "00600162",
+      "name": "crt_math.c_acos_FUN_00600162"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006583ed",
+      "name": "g_QuaternionAxisAngleNegativeOne",
+      "type": "double",
+      "value": "-1"
+    },
+    {
+      "addr": "006583f5",
+      "name": "g_QuaternionAxisAngleDoubler",
+      "type": "double",
+      "value": "2"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "quat_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "angle_out",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "axis_out",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005f7737",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX",
+      "text": "CQuaternion4f *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EDX",
+      "text": "CVector3f *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_ECX",
+      "text": "quat_ptr = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX",
+      "text": "axis_out = extraout_EDX;",
+      "type": "extra_output"
     }
   ]
 }

@@ -1,106 +1,106 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 32, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 96, 
-    "assembly_lines": 64, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560", 
-      "addr": "00522560"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820", 
-      "addr": "0048a820"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c6d590", 
-      "addr": "02c6d590", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81c8c", 
-      "addr": "02d81c8c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005708e0", 
-    "signature": "void core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count)", 
-    "address_range": [
-      [
-        "005708e0", 
-        "00570959"
-      ]
-    ], 
-    "name": "core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "primitive_array"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "primitive_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 64,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 96
+  },
   "cross_references": [
     {
-      "from_addr": "00456741", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0", 
-      "addr": "004566e0"
+      "addr": "004566e0",
+      "from_addr": "00456741",
+      "name": "core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_004566e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005708e0",
+    "address_range": [
+      [
+        "005708e0",
+        "00570959"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0",
+    "signature": "void core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00522560",
+      "name": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560"
+    },
+    {
+      "addr": "0048a820",
+      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02c6d590",
+      "name": "DAT_02c6d590",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81c8c",
+      "name": "DAT_02d81c8c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "primitive_array",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      },
+      {
+        "is_param": true,
+        "name": "primitive_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

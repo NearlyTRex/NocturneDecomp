@@ -23,20 +23,19 @@ section .text
     PUSH ESI                            ; 0043e0a1
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043e0a2
     PUSH EDX                            ; 0043e0a6
-    PUSH 0x618ac9                       ; 0043e0a7 | = "models\\%s\n" | s_models_s_00618ac9 = models\%s
-
+    PUSH 0x618ac9                       ; 0043e0a7 | = "models\\%s\n"
     MOV ECX,dword ptr [ESP + 0x18]      ; 0043e0ac
     PUSH ECX                            ; 0043e0b0
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0043e0b1 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 0043e0b1
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0043e0b6
     PUSH 0x0                            ; 0043e0b9
     MOV EBX,dword ptr [ESP + 0x14]      ; 0043e0bb
     PUSH EBX                            ; 0043e0bf
     MOV ESI,dword ptr [ESP + 0x14]      ; 0043e0c0
     PUSH ESI                            ; 0043e0c4
-    CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 0043e0c5 | void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
-        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00 ; 0043e0c5
+        ;   XREF to: 0047ed00 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)
     ADD ESP,0xc                         ; 0043e0ca
     POP ESI                             ; 0043e0cd
     POP EBX                             ; 0043e0ce

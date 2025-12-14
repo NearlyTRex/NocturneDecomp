@@ -1,80 +1,80 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 39, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 67, 
-    "assembly_lines": 28, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
-      "addr": "00478dd0"
-    }, 
-    {
-      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
-      "addr": "005ede70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_elephantgun_kfm_00623fc4", 
-      "addr": "00623fc4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065d52c", 
-      "addr": "0065d52c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_0065d534", 
-      "addr": "0065d534", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a6fe0", 
-    "signature": "CElephantGun * core_elephant.cpp_ctor_FUN_004a6fe0(CElephantGun * this_ptr)", 
-    "address_range": [
-      [
-        "004a6fe0", 
-        "004a7069"
-      ]
-    ], 
-    "name": "core_elephant.cpp_ctor_FUN_004a6fe0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CElephantGun *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 28,
+    "complexity_score": 39,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 39,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
+  },
   "cross_references": [
     {
-      "from_addr": "004a6fba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_elephant.cpp_FUN_004a6fa0", 
-      "addr": "004a6fa0"
+      "addr": "004a6fa0",
+      "from_addr": "004a6fba",
+      "name": "core_elephant.cpp_FUN_004a6fa0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a6fe0",
+    "address_range": [
+      [
+        "004a6fe0",
+        "004a7069"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_elephant.cpp_ctor_FUN_004a6fe0",
+    "signature": "CElephantGun * core_elephant.cpp_ctor_FUN_004a6fe0(CElephantGun * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478dd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
+    },
+    {
+      "addr": "005ede70",
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623fc4",
+      "name": "s_elephantgun_kfm_00623fc4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065d52c",
+      "name": "DAT_0065d52c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0065d534",
+      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_0065d534",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CElephantGun *"
+      }
+    ]
+  },
+  "suspects": []
 }

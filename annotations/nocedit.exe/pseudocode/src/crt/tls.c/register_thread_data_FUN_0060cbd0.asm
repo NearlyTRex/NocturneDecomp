@@ -31,31 +31,31 @@ section .text
     PUSH ESI                            ; 0060cbd1
     PUSH EDI                            ; 0060cbd2
     MOV EDI,dword ptr [ESP + 0x14]      ; 0060cbd3
-    CALL dword ptr [0x00684f10]         ; 0060cbd7 | ENTER_THREAD_CRITICAL_SECTION_FUNC * PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f10
+    CALL dword ptr [0x00684f10]         ; 0060cbd7 | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f10
     PUSH 0x10                           ; 0060cbdd
     MOV ESI,0x1                         ; 0060cbdf
     PUSH ESI                            ; 0060cbe4
-    CALL crt_memory.c_calloc_FUN_0060ca90 ; 0060cbe5 | void * crt_memory.c_calloc_FUN_0060ca90(ulong count, ulong size)
-        ;   XREF to: 0060ca90 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_calloc_FUN_0060ca90 ; 0060cbe5
+        ;   XREF to: 0060ca90 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_calloc_FUN_0060ca90(ulong count, ulong size)
     MOV EBX,EAX                         ; 0060cbea
     ADD ESP,0x8                         ; 0060cbec
     TEST EAX,EAX                        ; 0060cbef
-    JZ 0x0060cc2e                       ; 0060cbf1 | LAB_0060cc2e
-        ;   XREF to: 0060cc2e (CONDITIONAL_JUMP)
+    JZ 0x0060cc2e                       ; 0060cbf1
+        ;   XREF to: 0060cc2e (CONDITIONAL_JUMP)  ; LAB_0060cc2e
     PUSH EDI                            ; 0060cbf3
-    CALL crt_unknown.c_CallReturnZero6_FUN_0060e880 ; 0060cbf4 | undefined crt_unknown.c_CallReturnZero6_FUN_0060e880()
-        ;   XREF to: 0060e880 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_CallReturnZero6_FUN_0060e880 ; 0060cbf4
+        ;   XREF to: 0060e880 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_CallReturnZero6_FUN_0060e880()
     ADD ESP,0x4                         ; 0060cbf9
     TEST EAX,EAX                        ; 0060cbfc
-    JZ 0x0060cc0d                       ; 0060cbfe | LAB_0060cc0d
-        ;   XREF to: 0060cc0d (CONDITIONAL_JUMP)
+    JZ 0x0060cc0d                       ; 0060cbfe
+        ;   XREF to: 0060cc0d (CONDITIONAL_JUMP)  ; LAB_0060cc0d
     PUSH EBX                            ; 0060cc00
-    CALL crt_memory.c_free_FUN_00601cd0 ; 0060cc01 | void crt_memory.c_free_FUN_00601cd0(void * ptr)
-        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_00601cd0 ; 0060cc01
+        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_00601cd0(void * ptr)
     XOR ESI,ESI                         ; 0060cc06
     ADD ESP,0x4                         ; 0060cc08
-    JMP 0x0060cc30                      ; 0060cc0b | LAB_0060cc30
-        ;   XREF to: 0060cc30 (UNCONDITIONAL_JUMP)
+    JMP 0x0060cc30                      ; 0060cc0b
+        ;   XREF to: 0060cc30 (UNCONDITIONAL_JUMP)  ; LAB_0060cc30
     MOV EAX,dword ptr [ESP + 0x10]      ; 0060cc0d
         ;   Label: LAB_0060cc0d
     MOV dword ptr [EBX + 0x8],EDI       ; 0060cc11
@@ -63,14 +63,14 @@ section .text
     XOR EAX,EAX                         ; 0060cc17
     MOV AL,byte ptr [EDI + 0x52]        ; 0060cc19
     MOV dword ptr [EBX + 0xc],EAX       ; 0060cc1c
-    MOV EAX,[0x03f9c160]                ; 0060cc1f | ThreadRegistryEntry * g_ThreadDataRegistryList
-    MOV dword ptr [0x03f9c160],EBX      ; 0060cc24 | ThreadRegistryEntry * g_ThreadDataRegistryList
+    MOV EAX,[0x03f9c160]                ; 0060cc1f | g_ThreadDataRegistryList
+    MOV dword ptr [0x03f9c160],EBX      ; 0060cc24 | g_ThreadDataRegistryList
     MOV dword ptr [EBX],EAX             ; 0060cc2a
-    JMP 0x0060cc30                      ; 0060cc2c | LAB_0060cc30
-        ;   XREF to: 0060cc30 (UNCONDITIONAL_JUMP)
+    JMP 0x0060cc30                      ; 0060cc2c
+        ;   XREF to: 0060cc30 (UNCONDITIONAL_JUMP)  ; LAB_0060cc30
     XOR ESI,ESI                         ; 0060cc2e
         ;   Label: LAB_0060cc2e
-    CALL dword ptr [0x00684f14]         ; 0060cc30 | EXIT_THREAD_CRITICAL_SECTION_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f14
+    CALL dword ptr [0x00684f14]         ; 0060cc30 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f14
         ;   Label: LAB_0060cc30
     MOV EAX,ESI                         ; 0060cc36
     POP EDI                             ; 0060cc38

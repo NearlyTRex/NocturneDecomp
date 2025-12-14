@@ -27,24 +27,24 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 004f2225
     FLD float ptr [ESP + 0x1c]          ; 004f2229
     FMUL ST0                            ; 004f222d
-    MOV EDX,dword ptr [0x02db87bc]      ; 004f222f | int g_HeroCount
+    MOV EDX,dword ptr [0x02db87bc]      ; 004f222f | g_HeroCount
     FSTP float ptr [ESP + 0x1c]         ; 004f2235
     TEST EDX,EDX                        ; 004f2239
-    JLE 0x004f2259                      ; 004f223b | LAB_004f2259
-        ;   XREF to: 004f2259 (CONDITIONAL_JUMP)
-    MOV EBX,dword ptr [0x02db87bc]      ; 004f223d | int g_HeroCount
+    JLE 0x004f2259                      ; 004f223b
+        ;   XREF to: 004f2259 (CONDITIONAL_JUMP)  ; LAB_004f2259
+    MOV EBX,dword ptr [0x02db87bc]      ; 004f223d | g_HeroCount
     XOR EDX,EDX                         ; 004f2243
     SHL EBX,0x2                         ; 004f2245
-    MOV ESI,dword ptr [EDX + 0x2db87c0] ; 004f2248 | CHero *[4] g_HeroActors
+    MOV ESI,dword ptr [EDX + 0x2db87c0] ; 004f2248 | g_HeroActors | DAT_02db87c4
         ;   Label: LAB_004f2248
     TEST ESI,ESI                        ; 004f224e
-    JNZ 0x004f2261                      ; 004f2250 | LAB_004f2261
-        ;   XREF to: 004f2261 (CONDITIONAL_JUMP)
+    JNZ 0x004f2261                      ; 004f2250
+        ;   XREF to: 004f2261 (CONDITIONAL_JUMP)  ; LAB_004f2261
     ADD EDX,0x4                         ; 004f2252
         ;   Label: LAB_004f2252
     CMP EDX,EBX                         ; 004f2255
-    JL 0x004f2248                       ; 004f2257 | LAB_004f2248
-        ;   XREF to: 004f2248 (CONDITIONAL_JUMP)
+    JL 0x004f2248                       ; 004f2257
+        ;   XREF to: 004f2248 (CONDITIONAL_JUMP)  ; LAB_004f2248
     XOR EAX,EAX                         ; 004f2259
         ;   Label: LAB_004f2259
     ADD ESP,0xc                         ; 004f225b
@@ -68,8 +68,8 @@ section .text
     FCOMP float ptr [ESP + 0x1c]        ; 004f2280
     FNSTSW AX                           ; 004f2284
     SAHF                                ; 004f2286
-    JNC 0x004f2252                      ; 004f2287 | LAB_004f2252
-        ;   XREF to: 004f2252 (CONDITIONAL_JUMP)
+    JNC 0x004f2252                      ; 004f2287
+        ;   XREF to: 004f2252 (CONDITIONAL_JUMP)  ; LAB_004f2252
     MOV EAX,0x1                         ; 004f2289
     ADD ESP,0xc                         ; 004f228e
     POP ESI                             ; 004f2291

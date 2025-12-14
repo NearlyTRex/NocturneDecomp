@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 13, 
-    "assembly_lines": 5, 
-    "suspect_count": 2, 
+    "assembly_lines": 5,
+    "complexity_score": 33,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0", 
-      "addr": "00408bb0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000008 + 0x158));"
-    }
-  ], 
+    ],
+    "total_lines": 13
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00411d70", 
-    "signature": "void core_anvil.cpp_CAnvil_FUN_00411d70(CAnvil * this_ptr)", 
+    "address": "00411d70",
     "address_range": [
       [
-        "00411d70", 
+        "00411d70",
         "00411d79"
       ]
-    ], 
-    "name": "core_anvil.cpp_CAnvil_FUN_00411d70"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_anvil.cpp_CAnvil_FUN_00411d70",
+    "signature": "void core_anvil.cpp_CAnvil_FUN_00411d70(CAnvil * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408bb0",
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CAnvil *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAnvil *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000008 + 0x158));",
+      "type": "stack_param"
+    }
+  ]
 }

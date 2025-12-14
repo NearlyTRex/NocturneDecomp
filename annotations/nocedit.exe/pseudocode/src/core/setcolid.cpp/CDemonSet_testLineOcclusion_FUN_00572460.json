@@ -1,143 +1,143 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 17, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 6, 
-    "global_count": 1, 
-    "total_lines": 80, 
-    "assembly_lines": 63, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220", 
-      "addr": "00496220"
-    }, 
-    {
-      "name": "core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10", 
-      "addr": "00572a10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRaytrace", 
-      "name": "g_CDemonRaytraceInstance", 
-      "addr": "03277d14", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00572469", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00572460", 
-    "signature": "int core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * end_pos)", 
-    "address_range": [
-      [
-        "00572460", 
-        "005724d8"
-      ]
-    ], 
-    "name": "core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "start_pos"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "end_pos"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 63,
+    "complexity_score": 17,
+    "cross_reference_count": 6,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 80
+  },
   "cross_references": [
     {
-      "from_addr": "0042d939", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0", 
-      "addr": "0042d5a0"
-    }, 
+      "addr": "0042d5a0",
+      "from_addr": "0042d939",
+      "name": "core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d70c8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d6f80", 
-      "addr": "004d6f80"
-    }, 
+      "addr": "004d6f80",
+      "from_addr": "004d70c8",
+      "name": "core_gabriela.cpp_FUN_004d6f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b334b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0", 
-      "addr": "005b2fd0"
-    }, 
+      "addr": "005b2fd0",
+      "from_addr": "005b334b",
+      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b2855", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_processTrainSounds_FUN_005b2770", 
-      "addr": "005b2770"
-    }, 
+      "addr": "005b2770",
+      "from_addr": "005b2855",
+      "name": "core_sound.cpp_processTrainSounds_FUN_005b2770",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c40e9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005c3960", 
-      "addr": "005c3960"
-    }, 
+      "addr": "005c3960",
+      "from_addr": "005c40e9",
+      "name": "core_stranger.cpp_CStranger_FUN_005c3960",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f9716", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470", 
-      "addr": "005f9470"
+      "addr": "005f9470",
+      "from_addr": "005f9716",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00572460",
+    "address_range": [
+      [
+        "00572460",
+        "005724d8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460",
+    "signature": "int core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * end_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "00496220",
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220"
+    },
+    {
+      "addr": "00572a10",
+      "name": "core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03277d14",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "start_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "end_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00572469",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

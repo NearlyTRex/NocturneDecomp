@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 146, 
-    "pseudocode_lines": 96, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 256, 
-    "assembly_lines": 160, 
-    "suspect_count": 4, 
+    "assembly_lines": 160,
+    "complexity_score": 146,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 96,
+    "suspect_count": 4,
     "suspect_types": [
-      "concat_artifact", 
+      "concat_artifact",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "iVar7 = CONCAT22 /* combine 2-byte values */(unaff_0000000e,segment);"
-    }, 
-    {
-      "line": 19, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar1 = (uint *)((int)ptr - 4);"
-    }, 
-    {
-      "line": 24, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pbVar2 = (byte *)((int)puVar1 + uVar6);"
-    }, 
-    {
-      "line": 60, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (uint *)((int)puVar4 + (uVar6 & 0xfffffffe));"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "006094c0", 
-    "signature": "void crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0(void * ptr, HeapBlock * heap_block, ushort segment)", 
-    "address_range": [
-      [
-        "006094c0", 
-        "006095ed"
-      ]
-    ], 
-    "name": "crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 256
+  },
   "cross_references": [
     {
-      "from_addr": "00601dad", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0", 
-      "addr": "00601ce0"
+      "addr": "00601ce0",
+      "from_addr": "00601dad",
+      "name": "crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "006094c0",
+    "address_range": [
+      [
+        "006094c0",
+        "006095ed"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0",
+    "signature": "void crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0(void * ptr, HeapBlock * heap_block, ushort segment)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 15,
+      "match": "CONCAT22",
+      "text": "iVar7 = CONCAT22 /* combine 2-byte values */(unaff_0000000e,segment);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)ptr - 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(byte *)((int)",
+      "text": "pbVar2 = (byte *)((int)puVar1 + uVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)puVar4 + (uVar6 & 0xfffffffe));",
+      "type": "pointer_cast"
     }
   ]
 }

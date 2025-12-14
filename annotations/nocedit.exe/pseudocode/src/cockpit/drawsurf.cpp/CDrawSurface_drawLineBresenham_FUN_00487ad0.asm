@@ -45,8 +45,8 @@ section .text
     SUB ESI,EDX                         ; 00487afd
     SUB EBP,ECX                         ; 00487aff
     CMP EBX,ESI                         ; 00487b01
-    JLE 0x00487b11                      ; 00487b03 | LAB_00487b11
-        ;   XREF to: 00487b11 (CONDITIONAL_JUMP)
+    JLE 0x00487b11                      ; 00487b03
+        ;   XREF to: 00487b11 (CONDITIONAL_JUMP)  ; LAB_00487b11
     MOV EAX,EDI                         ; 00487b05
     MOV EDI,EBP                         ; 00487b07
     MOV EBP,EAX                         ; 00487b09
@@ -58,32 +58,32 @@ section .text
     SUB EBP,EDI                         ; 00487b13
     MOV dword ptr [ESP + 0xc],ESI       ; 00487b15
     TEST EBP,EBP                        ; 00487b19
-    JL 0x00487b6b                       ; 00487b1b | LAB_00487b6b
-        ;   XREF to: 00487b6b (CONDITIONAL_JUMP)
+    JL 0x00487b6b                       ; 00487b1b
+        ;   XREF to: 00487b6b (CONDITIONAL_JUMP)  ; LAB_00487b6b
     MOV ESI,EDI                         ; 00487b1d
         ;   Label: LAB_00487b1d
     MOV EDI,dword ptr [ESP + 0xc]       ; 00487b1f
     CMP EBP,EDI                         ; 00487b23
-    JLE 0x00487b77                      ; 00487b25 | LAB_00487b77
-        ;   XREF to: 00487b77 (CONDITIONAL_JUMP)
+    JLE 0x00487b77                      ; 00487b25
+        ;   XREF to: 00487b77 (CONDITIONAL_JUMP)  ; LAB_00487b77
     XOR EAX,EAX                         ; 00487b27
     ADD EDI,EDI                         ; 00487b29
     MOV dword ptr [ESP + 0x4],EAX       ; 00487b2b
     SUB EDI,EBP                         ; 00487b2f
     TEST EBP,EBP                        ; 00487b31
-    JL 0x00487b63                       ; 00487b33 | LAB_00487b63
-        ;   XREF to: 00487b63 (CONDITIONAL_JUMP)
+    JL 0x00487b63                       ; 00487b33
+        ;   XREF to: 00487b63 (CONDITIONAL_JUMP)  ; LAB_00487b63
     PUSH EBX                            ; 00487b35
         ;   Label: LAB_00487b35
     PUSH ESI                            ; 00487b36
     MOV EDX,dword ptr [ESP + 0x2c]      ; 00487b37
     PUSH EDX                            ; 00487b3b
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487b3c | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487b3c
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 00487b41
     TEST EDI,EDI                        ; 00487b44
-    JLE 0x00487b4b                      ; 00487b46 | LAB_00487b4b
-        ;   XREF to: 00487b4b (CONDITIONAL_JUMP)
+    JLE 0x00487b4b                      ; 00487b46
+        ;   XREF to: 00487b4b (CONDITIONAL_JUMP)  ; LAB_00487b4b
     INC EBX                             ; 00487b48
     SUB EDI,EBP                         ; 00487b49
     MOV EAX,dword ptr [ESP]             ; 00487b4b
@@ -95,8 +95,8 @@ section .text
     ADD EDI,EDX                         ; 00487b59
     MOV dword ptr [ESP + 0x4],ECX       ; 00487b5b
     CMP EBP,ECX                         ; 00487b5f
-    JGE 0x00487b35                      ; 00487b61 | LAB_00487b35
-        ;   XREF to: 00487b35 (CONDITIONAL_JUMP)
+    JGE 0x00487b35                      ; 00487b61
+        ;   XREF to: 00487b35 (CONDITIONAL_JUMP)  ; LAB_00487b35
     ADD ESP,0x10                        ; 00487b63
         ;   Label: LAB_00487b63
     POP EBP                             ; 00487b66
@@ -108,8 +108,8 @@ section .text
         ;   Label: LAB_00487b6b
     NEG EBP                             ; 00487b70
     MOV dword ptr [ESP],ECX             ; 00487b72
-    JMP 0x00487b1d                      ; 00487b75 | LAB_00487b1d
-        ;   XREF to: 00487b1d (UNCONDITIONAL_JUMP)
+    JMP 0x00487b1d                      ; 00487b75
+        ;   XREF to: 00487b1d (UNCONDITIONAL_JUMP)  ; LAB_00487b1d
     MOV EAX,dword ptr [ESP + 0xc]       ; 00487b77
         ;   Label: LAB_00487b77
     XOR EDX,EDX                         ; 00487b7b
@@ -117,19 +117,19 @@ section .text
     MOV dword ptr [ESP + 0x8],EDX       ; 00487b81
     SUB EDI,EAX                         ; 00487b85
     TEST EAX,EAX                        ; 00487b87
-    JL 0x00487b63                       ; 00487b89 | LAB_00487b63
-        ;   XREF to: 00487b63 (CONDITIONAL_JUMP)
+    JL 0x00487b63                       ; 00487b89
+        ;   XREF to: 00487b63 (CONDITIONAL_JUMP)  ; LAB_00487b63
     PUSH EBX                            ; 00487b8b
         ;   Label: LAB_00487b8b
     PUSH ESI                            ; 00487b8c
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00487b8d
     PUSH EAX                            ; 00487b91
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487b92 | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487b92
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 00487b97
     TEST EDI,EDI                        ; 00487b9a
-    JLE 0x00487ba9                      ; 00487b9c | LAB_00487ba9
-        ;   XREF to: 00487ba9 (CONDITIONAL_JUMP)
+    JLE 0x00487ba9                      ; 00487b9c
+        ;   XREF to: 00487ba9 (CONDITIONAL_JUMP)  ; LAB_00487ba9
     MOV ECX,dword ptr [ESP + 0xc]       ; 00487b9e
     MOV EDX,dword ptr [ESP]             ; 00487ba2
     SUB EDI,ECX                         ; 00487ba5
@@ -142,8 +142,8 @@ section .text
     ADD EDI,EBP                         ; 00487bb3
     MOV dword ptr [ESP + 0x8],EDX       ; 00487bb5
     CMP EDX,ECX                         ; 00487bb9
-    JG 0x00487b63                       ; 00487bbb | LAB_00487b63
-        ;   XREF to: 00487b63 (CONDITIONAL_JUMP)
-    JMP 0x00487b8b                      ; 00487bbd | LAB_00487b8b
-        ;   XREF to: 00487b8b (UNCONDITIONAL_JUMP)
+    JG 0x00487b63                       ; 00487bbb
+        ;   XREF to: 00487b63 (CONDITIONAL_JUMP)  ; LAB_00487b63
+    JMP 0x00487b8b                      ; 00487bbd
+        ;   XREF to: 00487b8b (UNCONDITIONAL_JUMP)  ; LAB_00487b8b
 

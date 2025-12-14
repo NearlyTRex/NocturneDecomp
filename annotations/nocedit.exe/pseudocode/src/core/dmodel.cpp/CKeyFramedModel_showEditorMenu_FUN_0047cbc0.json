@@ -1,2132 +1,2156 @@
 {
   "complexity": {
-    "function_call_count": 71, 
-    "complexity_score": 1284, 
-    "pseudocode_lines": 904, 
-    "cross_reference_count": 2, 
-    "global_count": 122, 
-    "total_lines": 3345, 
-    "assembly_lines": 2441, 
-    "suspect_count": 33, 
+    "assembly_lines": 2429,
+    "complexity_score": 1280,
+    "cross_reference_count": 2,
+    "function_call_count": 71,
+    "global_count": 126,
+    "pseudocode_lines": 900,
+    "suspect_count": 33,
     "suspect_types": [
-      "undefined_type", 
-      "stack_param", 
-      "negative_offset", 
-      "sub_artifact", 
-      "concat_artifact", 
-      "extra_output", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "sub_artifact",
+      "concat_artifact",
+      "negative_offset",
+      "extra_output",
+      "pointer_cast",
+      "badspacebase",
+      "undefined_type",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_course.cpp_CCourse_ctor_FUN_004424c0", 
-      "addr": "004424c0"
-    }, 
-    {
-      "name": "core_course.cpp_CCourse_dtor_FUN_004424e0", 
-      "addr": "004424e0"
-    }, 
-    {
-      "name": "core_course.cpp_CCourse_FUN_00442710", 
-      "addr": "00442710"
-    }, 
-    {
-      "name": "core_course.cpp_CCourse_load_FUN_00442580", 
-      "addr": "00442580"
-    }, 
-    {
-      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30", 
-      "addr": "00471d30"
-    }, 
-    {
-      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0", 
-      "addr": "00471fd0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370", 
-      "addr": "0047c370"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0", 
-      "addr": "0047c2d0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830", 
-      "addr": "00478830"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010", 
-      "addr": "00478010"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50", 
-      "addr": "0047ca50"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10", 
-      "addr": "00478e10"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810", 
-      "addr": "0047e810"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30", 
-      "addr": "00479f30"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690", 
-      "addr": "00477690"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10", 
-      "addr": "0047ea10"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
-      "addr": "00479330"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0", 
-      "addr": "00476db0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0", 
-      "addr": "0047a3e0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850", 
-      "addr": "00477850"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_recenter_FUN_0047c220", 
-      "addr": "0047c220"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00", 
-      "addr": "0047aa00"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0", 
-      "addr": "0047bdb0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0", 
-      "addr": "0047bbc0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0", 
-      "addr": "0047c4d0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0", 
-      "addr": "0047c4a0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0", 
-      "addr": "0047c5f0"
-    }, 
-    {
-      "name": "core_dmodel.cpp_copyFile_FUN_0047c930", 
-      "addr": "0047c930"
-    }, 
-    {
-      "name": "core_dmodel.cpp_freeAllModels_FUN_00478cb0", 
-      "addr": "00478cb0"
-    }, 
-    {
-      "name": "core_game.cpp_CGame_saveClockTime_FUN_004d7d80", 
-      "addr": "004d7d80"
-    }, 
-    {
-      "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90", 
-      "addr": "004d7d90"
-    }, 
-    {
-      "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390", 
-      "addr": "005f5390"
-    }, 
-    {
-      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0", 
-      "addr": "005f4dc0"
-    }, 
-    {
-      "name": "crt_file.c_makepath_FUN_005febfc", 
-      "addr": "005febfc"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
-      "addr": "0060013c"
-    }, 
-    {
-      "name": "crt_string.c_splitpath_FUN_005ff178", 
-      "addr": "005ff178"
-    }, 
-    {
-      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
-      "addr": "00403260"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }, 
-    {
-      "name": "engine_dosio.c_findFile_FUN_00481760", 
-      "addr": "00481760"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
-      "addr": "0048c4f0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
-      "addr": "0048c640"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
-      "addr": "0048c450"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150", 
-      "addr": "0048c150"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650", 
-      "addr": "0048c650"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0", 
-      "addr": "0048c1d0"
-    }, 
-    {
-      "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470", 
-      "addr": "00502470"
-    }, 
-    {
-      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_005490c0", 
-      "addr": "005490c0"
-    }, 
-    {
-      "name": "shape_design.c_calculateTextureQualityLevel_FUN_0046a930", 
-      "addr": "0046a930"
-    }, 
-    {
-      "name": "shape_design.c_initializeTextureManager_FUN_0046a880", 
-      "addr": "0046a880"
-    }, 
-    {
-      "name": "shape_design.c_setTextureQualityParameter_FUN_0046a8e0", 
-      "addr": "0046a8e0"
-    }, 
-    {
-      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
-      "addr": "0046f290"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
-      "addr": "0049e790"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0", 
-      "addr": "004a00f0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020", 
-      "addr": "004a0020"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300", 
-      "addr": "004a0300"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060", 
-      "addr": "0049f060"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420", 
-      "addr": "0049f420"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70", 
-      "addr": "0049fb70"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270", 
-      "addr": "0049f270"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
-      "addr": "004a03d0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0", 
-      "addr": "005ecef0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4", 
-      "addr": "005b3ed4"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_clearKeypresses_FUN_005f2e70", 
-      "addr": "005f2e70"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_processWindowMessages_FUN_005f35e0", 
-      "addr": "005f35e0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00", 
-      "addr": "005f2f00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_No_model_00620667", 
-      "addr": "00620667", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Model_not_crammed_00620672", 
-      "addr": "00620672", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nocturne_R_Keyframed_Mod_00620699", 
-      "addr": "00620699", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_1_Load_model_006206c0", 
-      "addr": "006206c0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_2_Save_model_006206cf", 
-      "addr": "006206cf", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_3_Import_S3D_006206de", 
-      "addr": "006206de", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_4_Get_model_and_textur_006206ee", 
-      "addr": "006206ee", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_5_Put_model_and_textur_00620716", 
-      "addr": "00620716", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_6_CramTex_0062073c", 
-      "addr": "0062073c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_7_Reduce_00620748", 
-      "addr": "00620748", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_8_Remove_Null_duplicat_00620753", 
-      "addr": "00620753", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_9_Export_S3D_00620774", 
-      "addr": "00620774", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_R_Recenter_bias_00620784", 
-      "addr": "00620784", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_G_Ground_bias_00620796", 
-      "addr": "00620796", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_B_Bias_model_using_manua_006207a6", 
-      "addr": "006207a6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ACTIVE_006207c8", 
-      "addr": "006207c8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_INACTIVE_006207cf", 
-      "addr": "006207cf", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_S_Scale_006207f7", 
-      "addr": "006207f7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_X_Reorient_model_00620801", 
-      "addr": "00620801", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_C_Reorient_to_put_model__00620814", 
-      "addr": "00620814", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_F1_Hide_menu_00620838", 
-      "addr": "00620838", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_D_Demented_TM_Shape_Edit_00620846", 
-      "addr": "00620846", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Model_options_00620864", 
-      "addr": "00620864", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ENABLED_00620873", 
-      "addr": "00620873", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DISABLED_0062087b", 
-      "addr": "0062087b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ENABLED_006208a7", 
-      "addr": "006208a7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DISABLED_006208af", 
-      "addr": "006208af", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Vertex_count_d_006208dd", 
-      "addr": "006208dd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Poly_count_d_006208ee", 
-      "addr": "006208ee", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Frame_count_d_006208fd", 
-      "addr": "006208fd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_noc_d_pcx_0062090d", 
-      "addr": "0062090d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_kfm_00620917", 
-      "addr": "00620917", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_models_0062091d", 
-      "addr": "0062091d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Load_Keyframed_model_00620924", 
-      "addr": "00620924", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_You_haven_t_crammed_this_00620939", 
-      "addr": "00620939", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_kfm_00620967", 
-      "addr": "00620967", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_models_0062096b", 
-      "addr": "0062096b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Save_Keyframed_model_00620972", 
-      "addr": "00620972", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_save_00620987", 
-      "addr": "00620987", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_models_00620998", 
-      "addr": "00620998", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_odels_00620999", 
-      "addr": "00620999", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_dels\\_0062099a", 
-      "addr": "0062099a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_els\\_0062099b", 
-      "addr": "0062099b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s3d_006209a0", 
-      "addr": "006209a0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Import_Keyframed_model_006209a6", 
-      "addr": "006209a6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_kfm_006209bd", 
-      "addr": "006209bd", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006209be", 
-      "addr": "006209be", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_fm_006209bf", 
-      "addr": "006209bf", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_m_006209c0", 
-      "addr": "006209c0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_kfm_006209c2", 
-      "addr": "006209c2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Get_model_and_textures_f_006209c8", 
-      "addr": "006209c8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_models_006209ec", 
-      "addr": "006209ec", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_is_in_mounted_pod_s_006209f3", 
-      "addr": "006209f3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_00620a0b", 
-      "addr": "00620a0b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_No_model_00620a0f", 
-      "addr": "00620a0f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_kfm_00620a3d", 
-      "addr": "00620a3d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_art_00620a41", 
-      "addr": "00620a41", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_cram_00620a45", 
-      "addr": "00620a45", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_number_of_crams_00620a56", 
-      "addr": "00620a56", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_base_name_for_cram_00620a6c", 
-      "addr": "00620a6c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Must_enter_something_00620a85", 
-      "addr": "00620a85", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_crams_output_size_00620a9b", 
-      "addr": "00620a9b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Cram_size_must_be_64_128_00620ab3", 
-      "addr": "00620ab3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_vertex_tolerance_00620ad5", 
-      "addr": "00620ad5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_angle_tolerance_de_00620aec", 
-      "addr": "00620aec", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_reduce_00620b0c", 
-      "addr": "00620b0c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_do_00620b1f", 
-      "addr": "00620b1f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Enter_S3D_filename_00620b2e", 
-      "addr": "00620b2e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_export_00620b41", 
-      "addr": "00620b41", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_recenter_00620b54", 
-      "addr": "00620b54", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_bias_00620b69", 
-      "addr": "00620b69", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Current_dimensions_on_fr_00620b7a", 
-      "addr": "00620b7a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_bias_00620c19", 
-      "addr": "00620c19", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_bias_00620c2a", 
-      "addr": "00620c2a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Current_dimensions_on_fr_00620c3b", 
-      "addr": "00620c3b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_00620cee", 
-      "addr": "00620cee", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Please_enter_either_a_si_00620cf7", 
-      "addr": "00620cf7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Nothing_to_scale_00620d47", 
-      "addr": "00620d47", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_pth_00620d59", 
-      "addr": "00620d59", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_data_00620d5f", 
-      "addr": "00620d5f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Reorient_using_course_00620d64", 
-      "addr": "00620d64", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_import_multi_frame_00620d7a", 
-      "addr": "00620d7a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_00620dbb", 
-      "addr": "00620dbb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Building_exact_collision_00620dce", 
-      "addr": "00620dce", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00620def", 
-      "addr": "00620def", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00620df3", 
-      "addr": "00620df3", 
-      "value": "3"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620dfb", 
-      "addr": "00620dfb", 
-      "value": "3.14159265350000"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00620e03", 
-      "addr": "00620e03", 
-      "value": "10"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620e0b", 
-      "addr": "00620e0b", 
-      "value": "0.00555555555555555"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620e13", 
-      "addr": "00620e13", 
-      "value": "0.00390625"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620e1b", 
-      "addr": "00620e1b", 
-      "value": "256"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00620e23", 
-      "addr": "00620e23", 
-      "value": "-1"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620e2b", 
-      "addr": "00620e2b", 
-      "value": "-1.57079632675000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620e33", 
-      "addr": "00620e33", 
-      "value": "1.57079632675000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00620e3b", 
-      "addr": "00620e3b", 
-      "value": "40"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065c96c", 
-      "addr": "0065c96c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_t_00670108", 
-      "addr": "00670108", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00670210", 
-      "addr": "00670210", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00670214", 
-      "addr": "00670214", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703e8", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CKeys*", 
-      "name": "g_CKeysPtr", 
-      "addr": "0067cf44", 
-      "value": "02dcd7d4"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CKeyFramedModel*", 
-      "name": "g_KeyFrameModelPoolEnd", 
-      "addr": "02c14c84", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02c14c88", 
-      "addr": "02c14c88", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.game_pixy", 
-      "addr": "02d81aa0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CKeysPtr", 
-      "addr": "02dcd7d4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0e8", 
-      "addr": "0326f0e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0ec", 
-      "addr": "0326f0ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0f0", 
-      "addr": "0326f0f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0f4", 
-      "addr": "0326f0f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0326f0f8", 
-      "addr": "0326f0f8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "undefined3 extraout_var", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var;"
-    }, 
-    {
-      "line": 16, 
-      "match": "undefined3 extraout_var_00", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var_00;"
-    }, 
-    {
-      "line": 17, 
-      "match": "undefined3 extraout_var_01", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var_01;"
-    }, 
-    {
-      "line": 18, 
-      "match": "undefined3 extraout_var_02", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var_02;"
-    }, 
-    {
-      "line": 19, 
-      "match": "undefined3 extraout_var_03", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var_03;"
-    }, 
-    {
-      "line": 20, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 21, 
-      "match": "undefined3 extraout_var_04", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 extraout_var_04;"
-    }, 
-    {
-      "line": 24, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_fffff154", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CGame *in_stack_fffff154;"
-    }, 
-    {
-      "line": 145, 
-      "match": "in_stack_fffff154", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff154);"
-    }, 
-    {
-      "line": 205, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar11 + 3) & 0x80) == 0) {"
-    }, 
-    {
-      "line": 206, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar11) >> 0x10;"
-    }, 
-    {
-      "line": 207, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar11) >> 0x10;"
-    }, 
-    {
-      "line": 431, 
-      "match": "local_1c[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);"
-    }, 
-    {
-      "line": 431, 
-      "match": "(CKeyFramedModelInstance *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);"
-    }, 
-    {
-      "line": 446, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar7) != 0) {"
-    }, 
-    {
-      "line": 454, 
-      "match": "SUB41", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "\"models\",\"*.kfm\",SUB41 /* extract 2-byte value */(local_408,0)),"
-    }, 
-    {
-      "line": 471, 
-      "match": "SUB41", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "\"models\",0x620967,SUB41 /* extract 2-byte value */(this_ptr,0)),"
-    }, 
-    {
-      "line": 472, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar7) != 0)) {"
-    }, 
-    {
-      "line": 493, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar7) != 0) {"
-    }, 
-    {
-      "line": 505, 
-      "match": "(CKeyFramedModel *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar15 = (CKeyFramedModel *)((int)pCVar10 + (uint)bVar16 * -2 + 1);"
-    }, 
-    {
-      "line": 509, 
-      "match": "pCVar15[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pcVar12 = (char *)((int)&pCVar15[-1].padding + 3);"
-    }, 
-    {
-      "line": 509, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pcVar12 = (char *)((int)&pCVar15[-1].padding + 3);"
-    }, 
-    {
-      "line": 525, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_04,bVar7) != 0) {"
-    }, 
-    {
-      "line": 529, 
-      "match": "&stack0xfffff150", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xfffff150,(char *)0x0,\"models\",local_698,local_b98);"
-    }, 
-    {
-      "line": 530, 
-      "match": "&stack0xfffff150", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar9 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);"
-    }, 
-    {
-      "line": 532, 
-      "match": "&stack0xfffff150", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar9 = core_dmodel_cpp_copyFile_FUN_0047c930(\"t:\\\\\",&stack0xfffff150,1);"
-    }, 
-    {
-      "line": 604, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar7) != 0) {"
-    }, 
-    {
-      "line": 722, 
-      "match": "SUB41", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "\"*.pth\",SUB41 /* extract 2-byte value */(local_340,0));"
-    }, 
-    {
-      "line": 749, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(CKeyFramedModelInstance **)(extraout_EAX + iVar9 + 4) = local_1c;"
-    }, 
-    {
-      "line": 781, 
-      "match": "pCVar4[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "crt_memory_c_free_FUN_005fe659(&pCVar4[-1].area);"
-    }, 
-    {
-      "line": 898, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_03,bVar7) == 0) goto LAB_0047d6c7;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0047cbc0", 
-    "signature": "void core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFramedModel * this_ptr)", 
-    "address_range": [
-      [
-        "0047cbc0", 
-        "0047cdf1"
-      ], 
-      [
-        "0047ce5a", 
-        "0047d1bb"
-      ], 
-      [
-        "0047d250", 
-        "0047e805"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0"
-  }, 
-  "stack_frame": {
-    "local_size": 3764, 
-    "variables": [
-      {
-        "offset": -3760, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_eb0"
-      }, 
-      {
-        "offset": -3504, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_db0"
-      }, 
-      {
-        "offset": -3240, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_ca8"
-      }, 
-      {
-        "offset": -3228, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_c9c"
-      }, 
-      {
-        "offset": -2968, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_b98"
-      }, 
-      {
-        "offset": -2712, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_a98"
-      }, 
-      {
-        "offset": -2456, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_998"
-      }, 
-      {
-        "offset": -2200, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_898"
-      }, 
-      {
-        "offset": -1944, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_798"
-      }, 
-      {
-        "offset": -1688, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_698"
-      }, 
-      {
-        "offset": -1432, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_598"
-      }, 
-      {
-        "offset": -1232, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_4d0"
-      }, 
-      {
-        "offset": -1032, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_408"
-      }, 
-      {
-        "offset": -1031, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_407"
-      }, 
-      {
-        "offset": -832, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_340"
-      }, 
-      {
-        "offset": -732, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_2dc"
-      }, 
-      {
-        "offset": -632, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_278"
-      }, 
-      {
-        "offset": -532, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_214"
-      }, 
-      {
-        "offset": -484, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1e4"
-      }, 
-      {
-        "offset": -444, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1bc"
-      }, 
-      {
-        "offset": -440, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1b8"
-      }, 
-      {
-        "offset": -436, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1b4"
-      }, 
-      {
-        "offset": -432, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1b0"
-      }, 
-      {
-        "offset": -428, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1ac"
-      }, 
-      {
-        "offset": -424, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1a8"
-      }, 
-      {
-        "offset": -420, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1a4"
-      }, 
-      {
-        "offset": -416, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1a0"
-      }, 
-      {
-        "offset": -412, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_19c"
-      }, 
-      {
-        "offset": -408, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_198"
-      }, 
-      {
-        "offset": -404, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_194"
-      }, 
-      {
-        "offset": -400, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_190"
-      }, 
-      {
-        "offset": -396, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18c"
-      }, 
-      {
-        "offset": -392, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_188"
-      }, 
-      {
-        "offset": -388, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_184"
-      }, 
-      {
-        "offset": -384, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_180"
-      }, 
-      {
-        "offset": -380, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_17c"
-      }, 
-      {
-        "offset": -376, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_178"
-      }, 
-      {
-        "offset": -372, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_174"
-      }, 
-      {
-        "offset": -368, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_170"
-      }, 
-      {
-        "offset": -364, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_16c"
-      }, 
-      {
-        "offset": -360, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_168"
-      }, 
-      {
-        "offset": -356, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_164"
-      }, 
-      {
-        "offset": -352, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_160"
-      }, 
-      {
-        "offset": -348, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_15c"
-      }, 
-      {
-        "offset": -336, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_150"
-      }, 
-      {
-        "offset": -332, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14c"
-      }, 
-      {
-        "offset": -328, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_148"
-      }, 
-      {
-        "offset": -324, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_144"
-      }, 
-      {
-        "offset": -320, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_140"
-      }, 
-      {
-        "offset": -316, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_13c"
-      }, 
-      {
-        "offset": -312, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_138"
-      }, 
-      {
-        "offset": -300, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_12c"
-      }, 
-      {
-        "offset": -296, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_128"
-      }, 
-      {
-        "offset": -292, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_124"
-      }, 
-      {
-        "offset": -288, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_120"
-      }, 
-      {
-        "offset": -284, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_11c"
-      }, 
-      {
-        "offset": -280, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_118"
-      }, 
-      {
-        "offset": -276, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_114"
-      }, 
-      {
-        "offset": -272, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_110"
-      }, 
-      {
-        "offset": -268, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10c"
-      }, 
-      {
-        "offset": -264, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_108"
-      }, 
-      {
-        "offset": -260, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_104"
-      }, 
-      {
-        "offset": -256, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_100"
-      }, 
-      {
-        "offset": -252, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_fc"
-      }, 
-      {
-        "offset": -240, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_f0"
-      }, 
-      {
-        "offset": -228, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_e4"
-      }, 
-      {
-        "offset": -224, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_e0"
-      }, 
-      {
-        "offset": -220, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_dc"
-      }, 
-      {
-        "offset": -216, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_d8"
-      }, 
-      {
-        "offset": -212, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_d4"
-      }, 
-      {
-        "offset": -208, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_d0"
-      }, 
-      {
-        "offset": -204, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_cc"
-      }, 
-      {
-        "offset": -200, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c8"
-      }, 
-      {
-        "offset": -196, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c4"
-      }, 
-      {
-        "offset": -192, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c0"
-      }, 
-      {
-        "offset": -188, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_bc"
-      }, 
-      {
-        "offset": -184, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_b8"
-      }, 
-      {
-        "offset": -180, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_b4"
-      }, 
-      {
-        "offset": -168, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a8"
-      }, 
-      {
-        "offset": -164, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a4"
-      }, 
-      {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_a0"
-      }, 
-      {
-        "offset": -156, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_9c"
-      }, 
-      {
-        "offset": -144, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_90"
-      }, 
-      {
-        "offset": -140, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8c"
-      }, 
-      {
-        "offset": -136, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_88"
-      }, 
-      {
-        "offset": -132, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_84"
-      }, 
-      {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_80"
-      }, 
-      {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_7c"
-      }, 
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 3768, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 3329
+  },
   "cross_references": [
     {
-      "from_addr": "005077f8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
-      "addr": "005073a0"
-    }, 
+      "addr": "005073a0",
+      "from_addr": "005077f8",
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053af94", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053af50", 
-      "addr": "0053af50"
+      "addr": "0053af50",
+      "from_addr": "0053af94",
+      "name": "core_msnedit.cpp_FUN_0053af50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047cbc0",
+    "address_range": [
+      [
+        "0047cbc0",
+        "0047cdf1"
+      ],
+      [
+        "0047ce5a",
+        "0047d1bb"
+      ],
+      [
+        "0047d250",
+        "0047e805"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFramedModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004424c0",
+      "name": "core_course.cpp_CCourse_ctor_FUN_004424c0"
+    },
+    {
+      "addr": "004424e0",
+      "name": "core_course.cpp_CCourse_dtor_FUN_004424e0"
+    },
+    {
+      "addr": "00442710",
+      "name": "core_course.cpp_CCourse_FUN_00442710"
+    },
+    {
+      "addr": "00442580",
+      "name": "core_course.cpp_CCourse_load_FUN_00442580"
+    },
+    {
+      "addr": "00471d30",
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
+    },
+    {
+      "addr": "00471fd0",
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0"
+    },
+    {
+      "addr": "0047c370",
+      "name": "core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370"
+    },
+    {
+      "addr": "0047c2d0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0"
+    },
+    {
+      "addr": "00478830",
+      "name": "core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830"
+    },
+    {
+      "addr": "00478010",
+      "name": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010"
+    },
+    {
+      "addr": "0047ca50",
+      "name": "core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50"
+    },
+    {
+      "addr": "00478e10",
+      "name": "core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10"
+    },
+    {
+      "addr": "0047e810",
+      "name": "core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810"
+    },
+    {
+      "addr": "00479f30",
+      "name": "core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30"
+    },
+    {
+      "addr": "00477690",
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690"
+    },
+    {
+      "addr": "0047ea10",
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10"
+    },
+    {
+      "addr": "00479330",
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330"
+    },
+    {
+      "addr": "00476db0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0"
+    },
+    {
+      "addr": "0047a3e0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0"
+    },
+    {
+      "addr": "00477850",
+      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850"
+    },
+    {
+      "addr": "0047c220",
+      "name": "core_dmodel.cpp_CKeyFramedModel_recenter_FUN_0047c220"
+    },
+    {
+      "addr": "0047aa00",
+      "name": "core_dmodel.cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00"
+    },
+    {
+      "addr": "0047bdb0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0"
+    },
+    {
+      "addr": "0047bbc0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0"
+    },
+    {
+      "addr": "0047c4d0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0"
+    },
+    {
+      "addr": "0047c4a0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0"
+    },
+    {
+      "addr": "0047c5f0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0"
+    },
+    {
+      "addr": "0047c930",
+      "name": "core_dmodel.cpp_copyFile_FUN_0047c930"
+    },
+    {
+      "addr": "00478cb0",
+      "name": "core_dmodel.cpp_freeAllModels_FUN_00478cb0"
+    },
+    {
+      "addr": "004d7d80",
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004d7d80"
+    },
+    {
+      "addr": "004d7d90",
+      "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90"
+    },
+    {
+      "addr": "005f5390",
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390"
+    },
+    {
+      "addr": "005f4dc0",
+      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0"
+    },
+    {
+      "addr": "005febfc",
+      "name": "crt_file.c_makepath_FUN_005febfc"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "0060013c",
+      "name": "crt_stdio.c_sscanf_FUN_0060013c"
+    },
+    {
+      "addr": "005ff178",
+      "name": "crt_string.c_splitpath_FUN_005ff178"
+    },
+    {
+      "addr": "00403260",
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    },
+    {
+      "addr": "00481760",
+      "name": "engine_dosio.c_findFile_FUN_00481760"
+    },
+    {
+      "addr": "0048c4f0",
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
+    },
+    {
+      "addr": "0048c640",
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
+    },
+    {
+      "addr": "0048c450",
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
+    },
+    {
+      "addr": "0048c150",
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150"
+    },
+    {
+      "addr": "0048c650",
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650"
+    },
+    {
+      "addr": "0048c1d0",
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0"
+    },
+    {
+      "addr": "00502470",
+      "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470"
+    },
+    {
+      "addr": "005490c0",
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_005490c0"
+    },
+    {
+      "addr": "0046a930",
+      "name": "shape_design.c_calculateTextureQualityLevel_FUN_0046a930"
+    },
+    {
+      "addr": "0046a880",
+      "name": "shape_design.c_initializeTextureManager_FUN_0046a880"
+    },
+    {
+      "addr": "0046a8e0",
+      "name": "shape_design.c_setTextureQualityParameter_FUN_0046a8e0"
+    },
+    {
+      "addr": "0046f290",
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290"
+    },
+    {
+      "addr": "0049e790",
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
+    },
+    {
+      "addr": "004a00f0",
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0"
+    },
+    {
+      "addr": "004a0020",
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020"
+    },
+    {
+      "addr": "004a0300",
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300"
+    },
+    {
+      "addr": "0049f060",
+      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060"
+    },
+    {
+      "addr": "0049f420",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "0049fb70",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70"
+    },
+    {
+      "addr": "0049f270",
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270"
+    },
+    {
+      "addr": "004a03d0",
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
+    },
+    {
+      "addr": "005ecef0",
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3ed4",
+      "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4"
+    },
+    {
+      "addr": "005f2e70",
+      "name": "wincore_winrun.cpp_clearKeypresses_FUN_005f2e70"
+    },
+    {
+      "addr": "005f35e0",
+      "name": "wincore_winrun.cpp_processWindowMessages_FUN_005f35e0"
+    },
+    {
+      "addr": "005f2f00",
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00620667",
+      "name": "s_No_model_00620667",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620672",
+      "name": "s_Model_not_crammed_00620672",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620699",
+      "name": "s_Nocturne_R_Keyframed_Mod_00620699",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006206c0",
+      "name": "s_s_1_Load_model_006206c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006206cf",
+      "name": "s_s_2_Save_model_006206cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006206de",
+      "name": "s_s_3_Import_S3D_006206de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006206ee",
+      "name": "s_s_4_Get_model_and_textur_006206ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620716",
+      "name": "s_s_5_Put_model_and_textur_00620716",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062073c",
+      "name": "s_s_6_CramTex_0062073c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620748",
+      "name": "s_s_7_Reduce_00620748",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620753",
+      "name": "s_s_8_Remove_Null_duplicat_00620753",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620774",
+      "name": "s_s_9_Export_S3D_00620774",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620784",
+      "name": "s_R_Recenter_bias_00620784",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620796",
+      "name": "s_G_Ground_bias_00620796",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006207a6",
+      "name": "s_B_Bias_model_using_manua_006207a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006207c8",
+      "name": "s_ACTIVE_006207c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006207cf",
+      "name": "s_INACTIVE_006207cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006207d8",
+      "name": "s_I_Interactive_bias_is_no_006207d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006207f7",
+      "name": "s_S_Scale_006207f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620801",
+      "name": "s_X_Reorient_model_00620801",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620814",
+      "name": "s_C_Reorient_to_put_model__00620814",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620838",
+      "name": "s_F1_Hide_menu_00620838",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620846",
+      "name": "s_D_Demented_TM_Shape_Edit_00620846",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620864",
+      "name": "s_Model_options_00620864",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620873",
+      "name": "s_ENABLED_00620873",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062087b",
+      "name": "s_DISABLED_0062087b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620884",
+      "name": "s_E_Exact_collision_curren_00620884",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006208a7",
+      "name": "s_ENABLED_006208a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006208af",
+      "name": "s_DISABLED_006208af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006208b8",
+      "name": "s_T_Transparent_pixel_curr_006208b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006208dd",
+      "name": "s_Vertex_count_d_006208dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006208ee",
+      "name": "s_Poly_count_d_006208ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006208fd",
+      "name": "s_Frame_count_d_006208fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062090d",
+      "name": "s_noc_d_pcx_0062090d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620917",
+      "name": "s_kfm_00620917",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062091d",
+      "name": "s_models_0062091d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620924",
+      "name": "s_Load_Keyframed_model_00620924",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620939",
+      "name": "s_You_haven_t_crammed_this_00620939",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620967",
+      "name": "s_kfm_00620967",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062096b",
+      "name": "s_models_0062096b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620972",
+      "name": "s_Save_Keyframed_model_00620972",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620987",
+      "name": "s_Nothing_to_save_00620987",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620998",
+      "name": "s_models_00620998",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620999",
+      "name": "s_odels_00620999",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062099a",
+      "name": "s_dels\\_0062099a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062099b",
+      "name": "s_els\\_0062099b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006209a0",
+      "name": "s_s3d_006209a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006209a6",
+      "name": "s_Import_Keyframed_model_006209a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006209bd",
+      "name": "s_kfm_006209bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006209be",
+      "name": "DAT_006209be",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006209bf",
+      "name": "s_fm_006209bf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006209c0",
+      "name": "s_m_006209c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006209c2",
+      "name": "s_kfm_006209c2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006209c8",
+      "name": "s_Get_model_and_textures_f_006209c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006209ec",
+      "name": "s_models_006209ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006209f3",
+      "name": "s_s_is_in_mounted_pod_s_006209f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a0b",
+      "name": "s_art_00620a0b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a0f",
+      "name": "s_No_model_00620a0f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a18",
+      "name": "s_Enter_network_model_file_00620a18",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a3d",
+      "name": "s_kfm_00620a3d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a41",
+      "name": "s_art_00620a41",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a45",
+      "name": "s_Nothing_to_cram_00620a45",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a56",
+      "name": "s_Enter_number_of_crams_00620a56",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a6c",
+      "name": "s_Enter_base_name_for_cram_00620a6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a85",
+      "name": "s_Must_enter_something_00620a85",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620a9b",
+      "name": "s_Enter_crams_output_size_00620a9b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620ab3",
+      "name": "s_Cram_size_must_be_64_128_00620ab3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620ad5",
+      "name": "s_Enter_vertex_tolerance_00620ad5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620aec",
+      "name": "s_Enter_angle_tolerance_de_00620aec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620b0c",
+      "name": "s_Nothing_to_reduce_00620b0c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620b1f",
+      "name": "s_Nothing_to_do_00620b1f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620b2e",
+      "name": "s_Enter_S3D_filename_00620b2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620b41",
+      "name": "s_Nothing_to_export_00620b41",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620b54",
+      "name": "s_Nothing_to_recenter_00620b54",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620b69",
+      "name": "s_Nothing_to_bias_00620b69",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620b7a",
+      "name": "s_Current_dimensions_on_fr_00620b7a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620c19",
+      "name": "s_Nothing_to_bias_00620c19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620c2a",
+      "name": "s_Nothing_to_bias_00620c2a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620c3b",
+      "name": "s_Current_dimensions_on_fr_00620c3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620cee",
+      "name": "s_f_f_f_00620cee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620cf7",
+      "name": "s_Please_enter_either_a_si_00620cf7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620d47",
+      "name": "s_Nothing_to_scale_00620d47",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620d59",
+      "name": "s_pth_00620d59",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620d5f",
+      "name": "s_data_00620d5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620d64",
+      "name": "s_Reorient_using_course_00620d64",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620d7a",
+      "name": "s_Can_t_import_multi_frame_00620d7a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620dbb",
+      "name": "s_core_dmodel_cpp_00620dbb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620dce",
+      "name": "s_Building_exact_collision_00620dce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620def",
+      "name": "DAT_00620def",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00620df3",
+      "name": "FLOAT_00620df3",
+      "type": "float",
+      "value": "3"
+    },
+    {
+      "addr": "00620dfb",
+      "name": "DOUBLE_00620dfb",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00620e03",
+      "name": "FLOAT_00620e03",
+      "type": "float",
+      "value": "10"
+    },
+    {
+      "addr": "00620e0b",
+      "name": "DOUBLE_00620e0b",
+      "type": "double",
+      "value": "0.00555555555555555"
+    },
+    {
+      "addr": "00620e13",
+      "name": "DOUBLE_00620e13",
+      "type": "double",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "00620e1b",
+      "name": "DOUBLE_00620e1b",
+      "type": "double",
+      "value": "256"
+    },
+    {
+      "addr": "00620e23",
+      "name": "FLOAT_00620e23",
+      "type": "float",
+      "value": "-1"
+    },
+    {
+      "addr": "00620e2b",
+      "name": "DOUBLE_00620e2b",
+      "type": "double",
+      "value": "-1.57079632675000"
+    },
+    {
+      "addr": "00620e33",
+      "name": "DOUBLE_00620e33",
+      "type": "double",
+      "value": "1.57079632675000"
+    },
+    {
+      "addr": "00620e3b",
+      "name": "DOUBLE_00620e3b",
+      "type": "double",
+      "value": "40"
+    },
+    {
+      "addr": "0065c96c",
+      "name": "DAT_0065c96c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00670108",
+      "name": "s_t_00670108",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00670210",
+      "name": "DAT_00670210",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00670214",
+      "name": "DAT_00670214",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006703e8",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02c14c84",
+      "name": "g_KeyFrameModelPoolEnd",
+      "type": "CKeyFramedModel*",
+      "value": null
+    },
+    {
+      "addr": "02c14c88",
+      "name": "DAT_02c14c88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81aa0",
+      "name": "g_CGameInstance.game_pixy",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysPtr",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0326f0e8",
+      "name": "DAT_0326f0e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326f0ec",
+      "name": "DAT_0326f0ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326f0f0",
+      "name": "DAT_0326f0f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326f0f4",
+      "name": "DAT_0326f0f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0326f0f8",
+      "name": "DAT_0326f0f8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 3768,
+    "local_size": 3764,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_eb0",
+        "offset": -3760,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_db0",
+        "offset": -3504,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ca8",
+        "offset": -3240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c9c",
+        "offset": -3228,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_b98",
+        "offset": -2968,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a98",
+        "offset": -2712,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_998",
+        "offset": -2456,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_898",
+        "offset": -2200,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_798",
+        "offset": -1944,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_698",
+        "offset": -1688,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_598",
+        "offset": -1432,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4d0",
+        "offset": -1232,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_408",
+        "offset": -1032,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_407",
+        "offset": -1031,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_340",
+        "offset": -832,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_2dc",
+        "offset": -732,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_278",
+        "offset": -632,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_214",
+        "offset": -532,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1e4",
+        "offset": -484,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1bc",
+        "offset": -444,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b8",
+        "offset": -440,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b4",
+        "offset": -436,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b0",
+        "offset": -432,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1ac",
+        "offset": -428,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a8",
+        "offset": -424,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a4",
+        "offset": -420,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1a0",
+        "offset": -416,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_19c",
+        "offset": -412,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_198",
+        "offset": -408,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_194",
+        "offset": -404,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_190",
+        "offset": -400,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18c",
+        "offset": -396,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_188",
+        "offset": -392,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_184",
+        "offset": -388,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_180",
+        "offset": -384,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_17c",
+        "offset": -380,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_178",
+        "offset": -376,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_174",
+        "offset": -372,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_170",
+        "offset": -368,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_16c",
+        "offset": -364,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_168",
+        "offset": -360,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_164",
+        "offset": -356,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_160",
+        "offset": -352,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_15c",
+        "offset": -348,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_150",
+        "offset": -336,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14c",
+        "offset": -332,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_140",
+        "offset": -320,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_138",
+        "offset": -312,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_12c",
+        "offset": -300,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_128",
+        "offset": -296,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_120",
+        "offset": -288,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_118",
+        "offset": -280,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc",
+        "offset": -252,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved type",
+      "line": 14,
+      "match": "undefined3 extraout_var",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 15,
+      "match": "undefined3 extraout_var_00",
+      "text": "undefined3 extraout_var_00;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 16,
+      "match": "undefined3 extraout_var_01",
+      "text": "undefined3 extraout_var_01;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 17,
+      "match": "undefined3 extraout_var_02",
+      "text": "undefined3 extraout_var_02;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 18,
+      "match": "undefined3 extraout_var_03",
+      "text": "undefined3 extraout_var_03;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 20,
+      "match": "undefined3 extraout_var_04",
+      "text": "undefined3 extraout_var_04;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 23,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 23,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_fffff154",
+      "text": "CGame *in_stack_fffff154;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 144,
+      "match": "in_stack_fffff154",
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff154);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 204,
+      "match": "(byte *)((int)",
+      "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar10 + 3) & 0x80) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 205,
+      "match": "(int *)((int)",
+      "text": "local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar10) >> 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 206,
+      "match": "(int *)((int)",
+      "text": "x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar10) >> 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 430,
+      "match": "local_1c[-1].",
+      "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 430,
+      "match": "(CKeyFramedModelInstance *)((int)",
+      "text": "local_1c = (CKeyFramedModelInstance *)((int)&local_1c[-1].model_ptr + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 445,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar6) != 0) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 453,
+      "match": "SUB41",
+      "text": "\"models\",\"*.kfm\",SUB41 /* extract 2-byte value */(local_408,0)),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 470,
+      "match": "SUB41",
+      "text": "\"models\",0x620967,SUB41 /* extract 2-byte value */(this_ptr,0)),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 471,
+      "match": "CONCAT31",
+      "text": "CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar6) != 0)) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 492,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar6) != 0) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 504,
+      "match": "(CKeyFramedModel *)((int)",
+      "text": "pCVar14 = (CKeyFramedModel *)((int)pCVar9 + (uint)bVar15 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 508,
+      "match": "pCVar14[-1].",
+      "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 508,
+      "match": "(char *)((int)",
+      "text": "pcVar11 = (char *)((int)&pCVar14[-1].padding + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 524,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_04,bVar6) != 0) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 528,
+      "match": "&stack0xfffff150",
+      "text": "(&stack0xfffff150,(char *)0x0,\"models\",local_698,local_b98);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 529,
+      "match": "&stack0xfffff150",
+      "text": "iVar8 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 531,
+      "match": "&stack0xfffff150",
+      "text": "iVar8 = core_dmodel_cpp_copyFile_FUN_0047c930(\"t:\\\\\",&stack0xfffff150,1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 603,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar6) != 0) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 721,
+      "match": "SUB41",
+      "text": "\"*.pth\",SUB41 /* extract 2-byte value */(local_340,0));",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 748,
+      "match": "extraout_EAX",
+      "text": "*(CKeyFramedModelInstance **)(extraout_EAX + iVar8 + 4) = local_1c;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 778,
+      "match": "collision_triangle_list[-1].",
+      "text": "crt_memory_c_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 894,
+      "match": "CONCAT31",
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_03,bVar6) == 0) goto LAB_0047d6c7;",
+      "type": "concat_artifact"
     }
   ]
 }

@@ -23,8 +23,8 @@ section .text
     PUSH 0x1dc8                         ; 005b7f95
     PUSH 0x0                            ; 005b7f9a
     PUSH EBX                            ; 005b7f9c
-    CALL crt_memory.c_memset_FUN_005fde40 ; 005b7f9d | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 005b7f9d
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV word ptr [EBX + 0x200],0x100    ; 005b7fa2
     MOV dword ptr [EBX + 0x208],0x0     ; 005b7fab
     MOV AH,byte ptr [EBX + 0x208]       ; 005b7fb5

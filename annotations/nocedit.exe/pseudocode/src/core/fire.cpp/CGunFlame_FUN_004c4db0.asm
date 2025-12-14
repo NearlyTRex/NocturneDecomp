@@ -40,8 +40,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x78]      ; 004c4dbd
     LEA EAX,[EBX + 0x4]                 ; 004c4dc1
     CMP EAX,EDX                         ; 004c4dc4
-    JZ 0x004c4dd8                       ; 004c4dc6 | LAB_004c4dd8
-        ;   XREF to: 004c4dd8 (CONDITIONAL_JUMP)
+    JZ 0x004c4dd8                       ; 004c4dc6
+        ;   XREF to: 004c4dd8 (CONDITIONAL_JUMP)  ; LAB_004c4dd8
     MOV ECX,dword ptr [EDX]             ; 004c4dc8
     MOV dword ptr [EAX],ECX             ; 004c4dca
     MOV ECX,dword ptr [EDX + 0x4]       ; 004c4dcc
@@ -51,6 +51,6 @@ section .text
     PUSH 0x3f800000                     ; 004c4dd8
         ;   Label: LAB_004c4dd8
     PUSH 0x3f666666                     ; 004c4ddd
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c4de2 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c4de2
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

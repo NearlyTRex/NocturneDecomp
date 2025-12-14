@@ -30,18 +30,18 @@ section .text
         ;   Label: core_flies.cpp_FUN_004cbd60
     MOV EDX,dword ptr [ESP + 0x10]      ; 004cbd63
     PUSH EDX                            ; 004cbd67
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004cbd68 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004cbd68
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004cbd6d
-    PUSH 0x65e610                       ; 004cbd70 | WatcomTypeInfo g_SFlyTypeInfo
+    PUSH 0x65e610                       ; 004cbd70 | g_SFlyTypeInfo
     PUSH 0xc8                           ; 004cbd75
     ADD EAX,0x168                       ; 004cbd7a
     PUSH EAX                            ; 004cbd7f
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004cbd80 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004cbd80
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffe98]          ; 004cbd85
     MOV ECX,0x40a00000                  ; 004cbd8b
-    MOV dword ptr [EDX + 0x154],0x65e524 ; 004cbd90 | CDemonActor_vtable PTR_core_flies.cpp_FUN_004cbe20_0065e524
+    MOV dword ptr [EDX + 0x154],0x65e524 ; 004cbd90 | PTR_core_flies.cpp_FUN_004cbe20_0065e524
     ADD ESP,0xc                         ; 004cbd9a
     MOV dword ptr [EDX + 0x164],0x14    ; 004cbd9d
     MOV EAX,ESP                         ; 004cbda7
@@ -50,8 +50,8 @@ section .text
     MOV dword ptr [ESP + 0x8],ECX       ; 004cbdb0
     LEA ECX,[EDX + 0x158]               ; 004cbdb4
     CMP ECX,EAX                         ; 004cbdba
-    JNZ 0x004cbe00                      ; 004cbdbc | LAB_004cbe00
-        ;   XREF to: 004cbe00 (CONDITIONAL_JUMP)
+    JNZ 0x004cbe00                      ; 004cbdbc
+        ;   XREF to: 004cbe00 (CONDITIONAL_JUMP)  ; LAB_004cbe00
     MOV dword ptr [EDX + 0x2a14],0x0    ; 004cbdbe
         ;   Label: LAB_004cbdbe
     MOV dword ptr [EDX + 0x2a10],0x0    ; 004cbdc8
@@ -68,6 +68,6 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 004cbe0a
     MOV EAX,dword ptr [ESP + 0x8]       ; 004cbe0d
     MOV dword ptr [ECX + 0x8],EAX       ; 004cbe11
-    JMP 0x004cbdbe                      ; 004cbe14 | LAB_004cbdbe
-        ;   XREF to: 004cbdbe (UNCONDITIONAL_JUMP)
+    JMP 0x004cbdbe                      ; 004cbe14
+        ;   XREF to: 004cbdbe (UNCONDITIONAL_JUMP)  ; LAB_004cbdbe
 

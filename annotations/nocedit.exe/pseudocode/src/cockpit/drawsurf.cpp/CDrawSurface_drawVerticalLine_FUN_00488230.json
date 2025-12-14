@@ -1,245 +1,209 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 199, 
-    "pseudocode_lines": 89, 
-    "cross_reference_count": 1, 
-    "global_count": 13, 
-    "total_lines": 290, 
-    "assembly_lines": 201, 
-    "suspect_count": 10, 
+    "assembly_lines": 201,
+    "complexity_score": 143,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 13,
+    "pseudocode_lines": 88,
+    "suspect_count": 5,
     "suspect_types": [
-      "sborrow_artifact", 
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_drawsurf_cpp_00621ddd", 
-      "addr": "00621ddd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Invalid_bitsPerPixel_00621df5", 
-      "addr": "00621df5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_drawsurf_cpp_00621e0b", 
-      "addr": "00621e0b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Invalid_bitsPerPixel_00621e23", 
-      "addr": "00621e23", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDrawColor", 
-      "addr": "02c6d550", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseRGBConversion", 
-      "addr": "02c6d55c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_OriginalColorValue", 
-      "addr": "02c6d560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PackedPixelColor", 
-      "addr": "02c6d570", 
-      "value": null
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 38, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);"
-    }, 
-    {
-      "line": 43, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (iVar3 == iVar5 || SBORROW /* signed borrow */4(iVar3,iVar5) != iVar3 + iVar4 * -4 < 0);"
-    }, 
-    {
-      "line": 48, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar7 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar3) + iVar6 * 4);"
-    }, 
-    {
-      "line": 51, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (iVar3 == iVar5 || SBORROW /* signed borrow */4(iVar3,iVar5) != iVar3 + iVar4 * -4 < 0);"
-    }, 
-    {
-      "line": 69, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);"
-    }, 
-    {
-      "line": 72, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (iVar3 == iVar5 || SBORROW /* signed borrow */4(iVar3,iVar5) != iVar3 + iVar4 * -4 < 0);"
-    }, 
-    {
-      "line": 76, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);"
-    }, 
-    {
-      "line": 79, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (iVar3 == iVar5 || SBORROW /* signed borrow */4(iVar3,iVar5) != iVar3 + iVar4 * -4 < 0);"
-    }, 
-    {
-      "line": 84, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);"
-    }, 
-    {
-      "line": 87, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (iVar3 == iVar5 || SBORROW /* signed borrow */4(iVar3,iVar5) != iVar3 + iVar4 * -4 < 0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00488230", 
-    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230(CDrawSurface * this_ptr, int x, int start_y, int end_y)", 
-    "address_range": [
-      [
-        "00488230", 
-        "00488400"
-      ]
-    ], 
-    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDrawSurface *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "start_y"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "end_y"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 289
+  },
   "cross_references": [
     {
-      "from_addr": "0048850c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0", 
-      "addr": "004884d0"
+      "addr": "004884d0",
+      "from_addr": "0048850c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00488230",
+    "address_range": [
+      [
+        "00488230",
+        "00488400"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230",
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230(CDrawSurface * this_ptr, int x, int start_y, int end_y)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00621ddd",
+      "name": "s_cockpit_drawsurf_cpp_00621ddd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621df5",
+      "name": "s_Invalid_bitsPerPixel_00621df5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621e0b",
+      "name": "s_cockpit_drawsurf_cpp_00621e0b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621e23",
+      "name": "s_Invalid_bitsPerPixel_00621e23",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02c6d550",
+      "name": "g_CurrentDrawColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d55c",
+      "name": "g_UseRGBConversion",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d560",
+      "name": "g_OriginalColorValue",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d570",
+      "name": "g_PackedPixelColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "start_y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "end_y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)",
+      "text": "puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar3) + iVar5 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
+      "type": "pointer_cast"
     }
   ]
 }

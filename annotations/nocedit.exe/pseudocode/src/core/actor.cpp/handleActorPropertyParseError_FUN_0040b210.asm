@@ -47,43 +47,38 @@ section .text
     PUSH EDI                            ; 0040b212
     PUSH EBP                            ; 0040b213
     MOV ESI,dword ptr [ESP + 0x18]      ; 0040b214
-    MOV EAX,0x613e08                    ; 0040b218 | = "(unknown)" | s_unknown_00613e08 = (unknown)
-    MOV EDX,dword ptr [0x0082203c]      ; 0040b21d | CDemonActor * g_CurrentActorBeingProcessed
-    MOV EBX,0x613dfe                    ; 0040b223 | = "(unknown)" | s_unknown_00613dfe = (unknown)
+    MOV EAX,0x613e08                    ; 0040b218 | = "(unknown)"
+    MOV EDX,dword ptr [0x0082203c]      ; 0040b21d | g_CurrentActorBeingProcessed
+    MOV EBX,0x613dfe                    ; 0040b223 | = "(unknown)"
     TEST EDX,EDX                        ; 0040b228
-    JNZ 0x0040b27b                      ; 0040b22a | LAB_0040b27b
-        ;   XREF to: 0040b27b (CONDITIONAL_JUMP)
+    JNZ 0x0040b27b                      ; 0040b22a
+        ;   XREF to: 0040b27b (CONDITIONAL_JUMP)  ; LAB_0040b27b
     TEST ESI,ESI                        ; 0040b22c
         ;   Label: LAB_0040b22c
-    JNZ 0x0040b235                      ; 0040b22e | LAB_0040b235
-        ;   XREF to: 0040b235 (CONDITIONAL_JUMP)
-    MOV ESI,0x613e12                    ; 0040b230 | = "(unknown)" | s_unknown_00613e12 = (unknown)
-    MOV ECX,dword ptr [0x00822038]      ; 0040b235 | int g_ActorReadingMode
+    JNZ 0x0040b235                      ; 0040b22e
+        ;   XREF to: 0040b235 (CONDITIONAL_JUMP)  ; LAB_0040b235
+    MOV ESI,0x613e12                    ; 0040b230 | = "(unknown)"
+    MOV ECX,dword ptr [0x00822038]      ; 0040b235 | g_ActorReadingMode
         ;   Label: LAB_0040b235
-    MOV EDX,0x613e1c                    ; 0040b23b | = "load" | s_load_00613e1c = load
+    MOV EDX,0x613e1c                    ; 0040b23b | = "load"
     CMP ECX,0x2                         ; 0040b240
-    JNZ 0x0040b24a                      ; 0040b243 | LAB_0040b24a
-        ;   XREF to: 0040b24a (CONDITIONAL_JUMP)
-    MOV EDX,0x613e21                    ; 0040b245 | = "save" | s_save_00613e21 = save
+    JNZ 0x0040b24a                      ; 0040b243
+        ;   XREF to: 0040b24a (CONDITIONAL_JUMP)  ; LAB_0040b24a
+    MOV EDX,0x613e21                    ; 0040b245 | = "save"
     MOV ECX,dword ptr [ESP + 0x14]      ; 0040b24a
         ;   Label: LAB_0040b24a
     PUSH ECX                            ; 0040b24e
-    PUSH ESI                            ; 0040b24f | = "(unknown)" | s_unknown_00613e12 = (unknown)
-    PUSH EAX                            ; 0040b250 | = "(unknown)" | s_unknown_00613e08 = (unknown)
-    PUSH EBX                            ; 0040b251 | = "(unknown)" | s_unknown_00613dfe = (unknown)
-    PUSH EDX                            ; 0040b252 | = "save" | s_load_00613e1c = load | s_save_00613e21 = save
-    MOV EDI,0x613e26                    ; 0040b253 | = "..\\core\\actor.cpp" | s_core_actor_cpp_00613e26 = ..\core\actor.cpp
+    PUSH ESI                            ; 0040b24f | = "(unknown)"
+    PUSH EAX                            ; 0040b250 | = "(unknown)"
+    PUSH EBX                            ; 0040b251 | = "(unknown)"
+    PUSH EDX                            ; 0040b252 | = "load" | s_save_00613e21
+    MOV EDI,0x613e26                    ; 0040b253 | = "..\\core\\actor.cpp"
     MOV EBP,0x7ec                       ; 0040b258
-    PUSH 0x613e38                       ; 0040b25d | = "Error %sing actor property.\nActor na..." | s_Error_sing_actor_propert_00613e38 = Error %sing actor property.
-    %s                                  ; Actor name
-    %s                                  ; Actor type
-    %s                                  ; Property description
-    %s                                  ; Property type
-
-    MOV dword ptr [0x02f0ca48],EDI      ; 0040b262 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBP      ; 0040b268 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0040b26e | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x613e38                       ; 0040b25d | = "Error %sing actor property.\nActor na..."
+    MOV dword ptr [0x02f0ca48],EDI      ; 0040b262 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBP      ; 0040b268 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0040b26e
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x18                        ; 0040b273
     POP EBP                             ; 0040b276
     POP EDI                             ; 0040b277
@@ -93,9 +88,9 @@ section .text
     PUSH EDX                            ; 0040b27b
         ;   Label: LAB_0040b27b
     MOV EBX,EDX                         ; 0040b27c
-    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90 ; 0040b27e | char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor * this_ptr)
-        ;   XREF to: 00408b90 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90 ; 0040b27e
+        ;   XREF to: 00408b90 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040b283
-    JMP 0x0040b22c                      ; 0040b286 | LAB_0040b22c
-        ;   XREF to: 0040b22c (UNCONDITIONAL_JUMP)
+    JMP 0x0040b22c                      ; 0040b286
+        ;   XREF to: 0040b22c (UNCONDITIONAL_JUMP)  ; LAB_0040b22c
 

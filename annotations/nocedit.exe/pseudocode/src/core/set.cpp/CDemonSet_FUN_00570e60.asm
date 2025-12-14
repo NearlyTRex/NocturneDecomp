@@ -26,20 +26,20 @@ section .text
     MOV EDX,dword ptr [EDI]             ; 00570e6c
     XOR EBX,EBX                         ; 00570e6e
     TEST EDX,EDX                        ; 00570e70
-    JLE 0x00570e8b                      ; 00570e72 | LAB_00570e8b
-        ;   XREF to: 00570e8b (CONDITIONAL_JUMP)
+    JLE 0x00570e8b                      ; 00570e72
+        ;   XREF to: 00570e8b (CONDITIONAL_JUMP)  ; LAB_00570e8b
     MOV ESI,EDI                         ; 00570e74
     CMP EBP,dword ptr [ESI + 0x150]     ; 00570e76
         ;   Label: LAB_00570e76
-    JZ 0x00570e90                       ; 00570e7c | LAB_00570e90
-        ;   XREF to: 00570e90 (CONDITIONAL_JUMP)
+    JZ 0x00570e90                       ; 00570e7c
+        ;   XREF to: 00570e90 (CONDITIONAL_JUMP)  ; LAB_00570e90
     INC EBX                             ; 00570e7e
         ;   Label: LAB_00570e7e
     MOV ECX,dword ptr [EDI]             ; 00570e7f
     ADD ESI,0x1a4                       ; 00570e81
     CMP EBX,ECX                         ; 00570e87
-    JL 0x00570e76                       ; 00570e89 | LAB_00570e76
-        ;   XREF to: 00570e76 (CONDITIONAL_JUMP)
+    JL 0x00570e76                       ; 00570e89
+        ;   XREF to: 00570e76 (CONDITIONAL_JUMP)  ; LAB_00570e76
     POP EBP                             ; 00570e8b
         ;   Label: LAB_00570e8b
     POP EDI                             ; 00570e8c
@@ -50,9 +50,9 @@ section .text
         ;   Label: LAB_00570e90
     PUSH EBX                            ; 00570e94
     PUSH EDI                            ; 00570e95
-    CALL core_set.cpp_CDemonSet_FUN_00570e20 ; 00570e96 | void core_set.cpp_CDemonSet_FUN_00570e20(CDemonSet * this_ptr)
-        ;   XREF to: 00570e20 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_FUN_00570e20 ; 00570e96
+        ;   XREF to: 00570e20 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_00570e20(CDemonSet * this_ptr)
     ADD ESP,0xc                         ; 00570e9b
-    JMP 0x00570e7e                      ; 00570e9e | LAB_00570e7e
-        ;   XREF to: 00570e7e (UNCONDITIONAL_JUMP)
+    JMP 0x00570e7e                      ; 00570e9e
+        ;   XREF to: 00570e7e (UNCONDITIONAL_JUMP)  ; LAB_00570e7e
 

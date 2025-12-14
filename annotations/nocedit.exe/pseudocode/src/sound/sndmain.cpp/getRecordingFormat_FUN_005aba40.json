@@ -1,91 +1,91 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 19, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 56, 
-    "assembly_lines": 37, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_RecordingBitsPerSample", 
-      "addr": "00681b54", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RecordingChannelCount", 
-      "addr": "00681b58", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RecordingSampleRate", 
-      "addr": "00681b5c", 
-      "value": "0x2b11"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RecordingSamplesSigned", 
-      "addr": "03f69c5c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 37,
+    "complexity_score": 19,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 56
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005aba40", 
-    "signature": "void sound_sndmain.cpp_getRecordingFormat_FUN_005aba40(int * out_bits_per_sample, int * out_channels, int * out_sample_rate, int * out_signed)", 
+    "address": "005aba40",
     "address_range": [
       [
-        "005aba40", 
+        "005aba40",
         "005aba82"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_getRecordingFormat_FUN_005aba40"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getRecordingFormat_FUN_005aba40",
+    "signature": "void sound_sndmain.cpp_getRecordingFormat_FUN_005aba40(int * out_bits_per_sample, int * out_channels, int * out_sample_rate, int * out_signed)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00681b54",
+      "name": "g_RecordingBitsPerSample",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00681b58",
+      "name": "g_RecordingChannelCount",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "00681b5c",
+      "name": "g_RecordingSampleRate",
+      "type": "int",
+      "value": "0x2b11"
+    },
+    {
+      "addr": "03f69c5c",
+      "name": "g_RecordingSamplesSigned",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_bits_per_sample"
-      }, 
+        "is_param": true,
+        "name": "out_bits_per_sample",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_channels"
-      }, 
+        "is_param": true,
+        "name": "out_channels",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_sample_rate"
-      }, 
+        "is_param": true,
+        "name": "out_sample_rate",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_signed"
+        "is_param": true,
+        "name": "out_signed",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

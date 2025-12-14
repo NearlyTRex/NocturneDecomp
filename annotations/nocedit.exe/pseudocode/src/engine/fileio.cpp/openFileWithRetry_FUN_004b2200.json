@@ -1,78 +1,78 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 23, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 76, 
-    "assembly_lines": 53, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_errno_FUN_00601450", 
-      "addr": "00601450"
-    }, 
-    {
-      "name": "crt_stdio.c_setvbuf_FUN_00601490", 
-      "addr": "00601490"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "Sleep*", 
-      "name": "Sleep", 
-      "addr": "00611644", 
-      "value": "00212228"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_fileio_cpp_00626129", 
-      "addr": "00626129", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 53,
+    "complexity_score": 23,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004b2200", 
-    "signature": "FILE * engine_fileio.cpp_openFileWithRetry_FUN_004b2200(char * filename, char * mode)", 
+    "address": "004b2200",
     "address_range": [
       [
-        "004b2200", 
+        "004b2200",
         "004b2265"
       ]
-    ], 
-    "name": "engine_fileio.cpp_openFileWithRetry_FUN_004b2200"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_openFileWithRetry_FUN_004b2200",
+    "signature": "FILE * engine_fileio.cpp_openFileWithRetry_FUN_004b2200(char * filename, char * mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601450",
+      "name": "crt_errno.c_errno_FUN_00601450"
+    },
+    {
+      "addr": "00601490",
+      "name": "crt_stdio.c_setvbuf_FUN_00601490"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611644",
+      "name": "Sleep",
+      "type": "Sleep*",
+      "value": "00212228"
+    },
+    {
+      "addr": "00626129",
+      "name": "s_engine_fileio_cpp_00626129",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "mode"
+        "is_param": true,
+        "name": "mode",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

@@ -1,86 +1,86 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 2, 
-    "global_count": 3, 
-    "total_lines": 50, 
-    "assembly_lines": 32, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4", 
-      "addr": "00601ee4"
-    }, 
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ef8", 
-      "addr": "00684ef8", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684efc", 
-      "addr": "00684efc", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "FileListNode*", 
-      "name": "g_AllocatedListHead", 
-      "addr": "03f9b200", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00601ea0", 
-    "signature": "int crt_stdio.c_closeTrackedFile_FUN_00601ea0(FILE * file_handle)", 
-    "address_range": [
-      [
-        "00601ea0", 
-        "00601ee0"
-      ]
-    ], 
-    "name": "crt_stdio.c_closeTrackedFile_FUN_00601ea0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 32,
+    "complexity_score": 18,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
+  },
   "cross_references": [
     {
-      "from_addr": "0050fc81", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0", 
-      "addr": "0050fbc0"
-    }, 
+      "addr": "0050fbc0",
+      "from_addr": "0050fc81",
+      "name": "shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050fa88", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
+      "addr": "0050f9b0",
+      "from_addr": "0050fa88",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00601ea0",
+    "address_range": [
+      [
+        "00601ea0",
+        "00601ee0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_closeTrackedFile_FUN_00601ea0",
+    "signature": "int crt_stdio.c_closeTrackedFile_FUN_00601ea0(FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601ee4",
+      "name": "crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4"
+    },
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ef8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ef8",
+      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684efc",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684efc",
+      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "03f9b200",
+      "name": "g_AllocatedListHead",
+      "type": "FileListNode*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": []
 }

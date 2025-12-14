@@ -1,129 +1,129 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 43, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 65, 
-    "assembly_lines": 47, 
-    "suspect_count": 2, 
+    "assembly_lines": 47,
+    "complexity_score": 43,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_insert_FUN_004a2bc0", 
-      "addr": "004a2bc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623c23", 
-      "addr": "00623c23", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CPickList_insert_can_t_d_00623c39", 
-      "addr": "00623c39", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623c81", 
-      "addr": "00623c81", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CPickList_insert_can_t_d_00623c97", 
-      "addr": "00623c97", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000010;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&this_ptr->base_strlist,item_data,in_stack_00000010);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a5670", 
-    "signature": "void shape_edittool.cpp_CPickList_insert_FUN_004a5670(CPickList * this_ptr, int insert_index, int item_data)", 
-    "address_range": [
-      [
-        "004a5670", 
-        "004a56e8"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CPickList_insert_FUN_004a5670"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPickList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "insert_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "item_data"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 65
+  },
   "cross_references": [
     {
-      "from_addr": "005678b4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_005677a0", 
-      "addr": "005677a0"
+      "addr": "005677a0",
+      "from_addr": "005678b4",
+      "name": "core_script.cpp_FUN_005677a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a5670",
+    "address_range": [
+      [
+        "004a5670",
+        "004a56e8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CPickList_insert_FUN_004a5670",
+    "signature": "void shape_edittool.cpp_CPickList_insert_FUN_004a5670(CPickList * this_ptr, int insert_index, int item_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "004a2bc0",
+      "name": "shape_edittool.cpp_CStrList_insert_FUN_004a2bc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623c23",
+      "name": "s_shape_edittool_cpp_00623c23",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623c39",
+      "name": "s_CPickList_insert_can_t_d_00623c39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623c81",
+      "name": "s_shape_edittool_cpp_00623c81",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623c97",
+      "name": "s_CPickList_insert_can_t_d_00623c97",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "insert_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "item_data",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "char *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "text": "(&this_ptr->base_strlist,item_data,in_stack_00000010);",
+      "type": "stack_param"
     }
   ]
 }

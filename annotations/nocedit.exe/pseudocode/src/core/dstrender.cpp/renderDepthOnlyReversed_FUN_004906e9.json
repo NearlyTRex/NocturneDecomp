@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 46, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 84, 
-    "assembly_lines": 38, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d02584", 
-      "addr": "02d02584", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004906e9", 
-    "signature": "void core_dstrender.cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
-    "address_range": [
-      [
-        "004906e9", 
-        "0049072e"
-      ]
-    ], 
-    "name": "core_dstrender.cpp_renderDepthOnlyReversed_FUN_004906e9"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 38,
+    "complexity_score": 46,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 46,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 84
+  },
   "cross_references": [
     {
-      "from_addr": "0048d557", 
-      "type": "DATA", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410", 
-      "addr": "0048d410"
+      "addr": "0048d410",
+      "from_addr": "0048d557",
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "004906e9",
+    "address_range": [
+      [
+        "004906e9",
+        "0049072e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dstrender.cpp_renderDepthOnlyReversed_FUN_004906e9",
+    "signature": "void core_dstrender.cpp_renderDepthOnlyReversed_FUN_004906e9(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d02584",
+      "name": "DAT_02d02584",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

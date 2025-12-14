@@ -1,86 +1,86 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 4, 
-    "global_count": 0, 
-    "total_lines": 20, 
-    "assembly_lines": 10, 
-    "suspect_count": 3, 
+    "assembly_lines": 10,
+    "complexity_score": 45,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (-1 < in_stack_00000008 + -1) {"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return in_stack_00000008 + -1;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0050aef0", 
-    "signature": "undefined core_manpuz.cpp_FUN_0050aef0()", 
-    "address_range": [
-      [
-        "0050aef0", 
-        "0050aeff"
-      ]
-    ], 
-    "name": "core_manpuz.cpp_FUN_0050aef0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 20
+  },
   "cross_references": [
     {
-      "from_addr": "0050b09b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040", 
-      "addr": "0050b040"
-    }, 
+      "addr": "0050b040",
+      "from_addr": "0050b09b",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050abb1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0", 
-      "addr": "0050aba0"
-    }, 
+      "addr": "0050aba0",
+      "from_addr": "0050abb1",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050a86f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_FUN_0050a610", 
-      "addr": "0050a610"
-    }, 
+      "addr": "0050a610",
+      "from_addr": "0050a86f",
+      "name": "core_manpuz.cpp_FUN_0050a610",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050ab3c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_FUN_0050a8d0", 
-      "addr": "0050a8d0"
+      "addr": "0050a8d0",
+      "from_addr": "0050ab3c",
+      "name": "core_manpuz.cpp_FUN_0050a8d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050aef0",
+    "address_range": [
+      [
+        "0050aef0",
+        "0050aeff"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_manpuz.cpp_FUN_0050aef0",
+    "signature": "undefined core_manpuz.cpp_FUN_0050aef0()"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "if (-1 < in_stack_00000008 + -1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "return in_stack_00000008 + -1;",
+      "type": "stack_param"
     }
   ]
 }

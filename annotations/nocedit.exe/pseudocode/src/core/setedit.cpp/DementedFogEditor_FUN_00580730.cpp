@@ -77,7 +77,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
   int iStack_14;
   
   bVar13 = 0;
-  core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0((CDemonSet *)unk);
+  core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(unk);
   local_2c = (int)unk + 4;
   *(uint *)((int)unk + 0x15aea4) = 0;
   local_20 = (int)unk + 0x15ac30;
@@ -143,20 +143,18 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
       }
       engine_2d_c_drawText_FUN_00401fd0(acStack_e8,0,0xa5);
       engine_2d_c_drawText_FUN_00401fd0("V.  Test reverb",0,0xb0);
-                    /* WARNING: Load size is inaccurate */
       iVar3 = 0;
-      if (0 < *unk) {
+      if (0 < *(int *)unk) {
         iVar9 = 0;
         pvVar5 = unk;
         do {
           *(uint *)((int)&DAT_03659388 + iVar9) = *(uint *)((int)pvVar5 + 0x154);
           iVar9 = iVar9 + 4;
           iVar3 = iVar3 + 1;
-                    /* WARNING: Load size is inaccurate */
           pvVar5 = (void *)((int)pvVar5 + 0x1a4);
-        } while (iVar3 < *unk);
+        } while (iVar3 < *(int *)unk);
       }
-      iVar3 = core_setedit_cpp_CDemonSet_FUN_00577af0((CDemonSet *)unk);
+      iVar3 = core_setedit_cpp_CDemonSet_FUN_00577af0(unk);
       if (iVar3 != -1) {
         iVar9 = *(int *)((int)unk + 0x15aea4);
         if (iVar3 == iVar9) {
@@ -359,7 +357,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
                         (g_CEditorToolsPtr,"Save set","models",0x64888c,
                          SUB41 /* extract 2-byte value */(acStack_cc,0));
       if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) != 0) {
-        core_setedit_cpp_CDemonSet_save_FUN_0057a2a0((CDemonSet *)unk,acStack_c8);
+        core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(unk,acStack_c8);
       }
     }
     else if (uVar6 < 0x55) {

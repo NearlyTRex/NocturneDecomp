@@ -11,8 +11,7 @@ void core_chain_cpp_FUN_0042fb40(void)
 {
   CChain *this_ptr;
   
-  this_ptr = (CChain *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\chain.cpp",0x30);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\chain.cpp",0x30);
   if (this_ptr == (CChain *)0x0) {
     return;
   }

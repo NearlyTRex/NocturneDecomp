@@ -31,24 +31,24 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004a2f02
     MOV ESI,dword ptr [ESP + 0x14]      ; 004a2f06
     CMP EBX,ESI                         ; 004a2f0a
-    JGE 0x004a2f61                      ; 004a2f0c | LAB_004a2f61
-        ;   XREF to: 004a2f61 (CONDITIONAL_JUMP)
+    JGE 0x004a2f61                      ; 004a2f0c
+        ;   XREF to: 004a2f61 (CONDITIONAL_JUMP)  ; LAB_004a2f61
     TEST EBX,EBX                        ; 004a2f0e
-    JL 0x004a2f1a                       ; 004a2f10 | LAB_004a2f1a
-        ;   XREF to: 004a2f1a (CONDITIONAL_JUMP)
+    JL 0x004a2f1a                       ; 004a2f10
+        ;   XREF to: 004a2f1a (CONDITIONAL_JUMP)  ; LAB_004a2f1a
     MOV EAX,dword ptr [ESP + 0xc]       ; 004a2f12
     CMP ESI,dword ptr [EAX]             ; 004a2f16
-    JL 0x004a2f3f                       ; 004a2f18 | LAB_004a2f3f
-        ;   XREF to: 004a2f3f (CONDITIONAL_JUMP)
+    JL 0x004a2f3f                       ; 004a2f18
+        ;   XREF to: 004a2f3f (CONDITIONAL_JUMP)  ; LAB_004a2f3f
     PUSH EDI                            ; 004a2f1a
         ;   Label: LAB_004a2f1a
-    MOV ECX,0x62383b                    ; 004a2f1b | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_0062383b = ..\shape\edittool.cpp
+    MOV ECX,0x62383b                    ; 004a2f1b | = "..\\shape\\edittool.cpp"
     MOV EDI,0xbaa                       ; 004a2f20
-    PUSH 0x623851                       ; 004a2f25 | = "CStrList::sort - invalid range!" | s_CStrList_sort_invalid_ra_00623851 = CStrList::sort - invalid range!
-    MOV dword ptr [0x02f0ca48],ECX      ; 004a2f2a | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 004a2f30 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a2f36 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x623851                       ; 004a2f25 | = "CStrList::sort - invalid range!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 004a2f2a | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 004a2f30 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a2f36
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004a2f3b
     POP EDI                             ; 004a2f3e
     MOV EAX,ESI                         ; 004a2f3f
@@ -63,8 +63,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x8]       ; 004a2f53
     ADD EAX,EBX                         ; 004a2f56
     PUSH EAX                            ; 004a2f58
-    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 004a2f59 | void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
-        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_qsort_FUN_005fdf38 ; 004a2f59
+        ;   XREF to: 005fdf38 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c_qsort_FUN_005fdf38(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 004a2f5e
     POP ESI                             ; 004a2f61
         ;   Label: LAB_004a2f61

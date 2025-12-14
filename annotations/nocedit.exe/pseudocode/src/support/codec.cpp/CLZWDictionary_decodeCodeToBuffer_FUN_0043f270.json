@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 24, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 71, 
-    "assembly_lines": 47, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043f270", 
-    "signature": "int support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270(CLZWDictionary * this_ptr, int code, char * * buffer_ptr_ptr)", 
-    "address_range": [
-      [
-        "0043f270", 
-        "0043f2cf"
-      ]
-    ], 
-    "name": "support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWDictionary *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "code"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char * *", 
-        "size": 4, 
-        "name": "buffer_ptr_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 47,
+    "complexity_score": 24,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 24,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
+  },
   "cross_references": [
     {
-      "from_addr": "0043f601", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0", 
-      "addr": "0043f5d0"
+      "addr": "0043f5d0",
+      "from_addr": "0043f601",
+      "name": "support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0043f270",
+    "address_range": [
+      [
+        "0043f270",
+        "0043f2cf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270",
+    "signature": "int support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270(CLZWDictionary * this_ptr, int code, char * * buffer_ptr_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDictionary *"
+      },
+      {
+        "is_param": true,
+        "name": "code",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_ptr_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "char * *"
+      }
+    ]
+  },
+  "suspects": []
 }

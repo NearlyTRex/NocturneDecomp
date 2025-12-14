@@ -1,114 +1,114 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 3, 
-    "global_count": 5, 
-    "total_lines": 47, 
-    "assembly_lines": 31, 
-    "suspect_count": 1, 
+    "assembly_lines": 31,
+    "complexity_score": 31,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 16,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
-      "addr": "005a9c40"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005ab130", 
-      "addr": "005ab130"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_SoundAudioInitialized", 
-      "addr": "03f6b7ac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6b7c8", 
-      "addr": "03f6b7c8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6b7d8", 
-      "addr": "03f6b7d8", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_TrainRailNoiseHandle", 
-      "addr": "03f6b870", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_TrainExteriorAmbientHandle", 
-      "addr": "03f6b874", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sound_handle + iVar2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b2f70", 
-    "signature": "void core_sound.cpp_CSound_shutdown_FUN_005b2f70(CSound * this_ptr)", 
-    "address_range": [
-      [
-        "005b2f70", 
-        "005b2fbb"
-      ]
-    ], 
-    "name": "core_sound.cpp_CSound_shutdown_FUN_005b2f70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSound *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 47
+  },
   "cross_references": [
     {
-      "from_addr": "004db754", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
-    }, 
+      "addr": "004daf80",
+      "from_addr": "004db754",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004dcf63", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_SaveRelated_FUN_004dcee0", 
-      "addr": "004dcee0"
-    }, 
+      "addr": "004dcee0",
+      "from_addr": "004dcf63",
+      "name": "core_game.cpp_SaveRelated_FUN_004dcee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053ec32", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053eb40", 
-      "addr": "0053eb40"
+      "addr": "0053eb40",
+      "from_addr": "0053ec32",
+      "name": "core_msnedit.cpp_FUN_0053eb40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b2f70",
+    "address_range": [
+      [
+        "005b2f70",
+        "005b2fbb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_shutdown_FUN_005b2f70",
+    "signature": "void core_sound.cpp_CSound_shutdown_FUN_005b2f70(CSound * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a9c40",
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    },
+    {
+      "addr": "005ab130",
+      "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005ab130"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f6b7ac",
+      "name": "g_SoundAudioInitialized",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b7c8",
+      "name": "DAT_03f6b7c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6b7d8",
+      "name": "DAT_03f6b7d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6b870",
+      "name": "g_TrainRailNoiseHandle",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "03f6b874",
+      "name": "g_TrainExteriorAmbientHandle",
+      "type": "uint",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sound_handle + iVar2);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,83 +1,83 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 43, 
-    "pseudocode_lines": 43, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 223, 
-    "assembly_lines": 180, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005f51e9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
+    "assembly_lines": 180,
+    "complexity_score": 43,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 223
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005f51e0", 
-    "signature": "void core_xform.cpp_normalizeMatrix_FUN_005f51e0(CMatrix3x4f * matrix)", 
+    "address": "005f51e0",
     "address_range": [
       [
-        "005f51e0", 
+        "005f51e0",
         "005f536a"
       ]
-    ], 
-    "name": "core_xform.cpp_normalizeMatrix_FUN_005f51e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_normalizeMatrix_FUN_005f51e0",
+    "signature": "void core_xform.cpp_normalizeMatrix_FUN_005f51e0(CMatrix3x4f * matrix)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 68, 
+    "frame_size": 72,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_40"
-      }, 
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMatrix3x4f *", 
-        "size": 4, 
-        "name": "matrix"
+        "is_param": true,
+        "name": "matrix",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x4f *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 72, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005f51e9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

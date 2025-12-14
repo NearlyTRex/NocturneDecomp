@@ -38,8 +38,8 @@ section .text
     PUSH EAX                            ; 004ef8a1
     MOV ESI,dword ptr [EBX + 0x28]      ; 004ef8a2
     PUSH ESI                            ; 004ef8a5
-    CALL core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270 ; 004ef8a6 | void core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270(CTextureList * this_ptr, uint texture_index)
-        ;   XREF to: 005dc270 (UNCONDITIONAL_CALL)
+    CALL core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270 ; 004ef8a6
+        ;   XREF to: 005dc270 (UNCONDITIONAL_CALL)  ; void core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270(CTextureList * this_ptr, uint texture_index)
     MOV EDX,dword ptr [EBX + 0x50]      ; 004ef8ab
     LEA EAX,[EDX*0x4 + 0x0]             ; 004ef8ae
     SUB EAX,EDX                         ; 004ef8b5

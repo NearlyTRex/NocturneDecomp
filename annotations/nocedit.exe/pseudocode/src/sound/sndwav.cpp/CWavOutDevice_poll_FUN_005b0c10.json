@@ -1,121 +1,121 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 60, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 0, 
-    "global_count": 7, 
-    "total_lines": 89, 
-    "assembly_lines": 64, 
-    "suspect_count": 3, 
+    "assembly_lines": 64,
+    "complexity_score": 60,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 25,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
-    }, 
-    {
-      "name": "sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0", 
-      "addr": "005b06c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_WavOutDevice_poll_NULL_p_006523b7", 
-      "addr": "006523b7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_WavOutDevice_poll_sendWa_006523db", 
-      "addr": "006523db", 
-      "value": null
-    }, 
-    {
-      "type": "LPWAVEHDR[8]", 
-      "name": "g_WaveOutHeaders", 
-      "addr": "03f6ad58", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6ad5c", 
-      "addr": "03f6ad5c", 
-      "value": null
-    }, 
-    {
-      "type": "LPVOID[8]", 
-      "name": "g_WaveOutBuffers", 
-      "addr": "03f6ad98", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6ad9c", 
-      "addr": "03f6ad9c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WaveOutNumBuffers", 
-      "addr": "03f6adc8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if ((*(int *)((int)g_WaveOutHeaders + iVar2) == 0) ||"
-    }, 
-    {
-      "line": 14, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(*(int *)((int)g_WaveOutBuffers + iVar2) == 0)) {"
-    }, 
-    {
-      "line": 18, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (((*(byte *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0x10) & 1) != 0) &&"
-    }
-  ], 
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005b0c10", 
-    "signature": "int sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10(CWavOutDevice * this_ptr)", 
+    "address": "005b0c10",
     "address_range": [
       [
-        "005b0c10", 
+        "005b0c10",
         "005b0c88"
       ]
-    ], 
-    "name": "sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10",
+    "signature": "int sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10(CWavOutDevice * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005adba0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
+    },
+    {
+      "addr": "005b06c0",
+      "name": "sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006523b7",
+      "name": "s_WavOutDevice_poll_NULL_p_006523b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006523db",
+      "name": "s_WavOutDevice_poll_sendWa_006523db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "03f6ad58",
+      "name": "g_WaveOutHeaders",
+      "type": "LPWAVEHDR[8]",
+      "value": null
+    },
+    {
+      "addr": "03f6ad5c",
+      "name": "DAT_03f6ad5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6ad98",
+      "name": "g_WaveOutBuffers",
+      "type": "LPVOID[8]",
+      "value": null
+    },
+    {
+      "addr": "03f6ad9c",
+      "name": "DAT_03f6ad9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6adc8",
+      "name": "g_WaveOutNumBuffers",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWavOutDevice *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWavOutDevice *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)",
+      "text": "if ((*(int *)((int)g_WaveOutHeaders + iVar2) == 0) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)",
+      "text": "(*(int *)((int)g_WaveOutBuffers + iVar2) == 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)",
+      "text": "if (((*(byte *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0x10) & 1) != 0) &&",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -27,16 +27,16 @@ section .text
         ;   Label: core_bride.cpp_CBride_ctor_FUN_004237a0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004237a1
     PUSH EDX                            ; 004237a5
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004237a6 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004237a6
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004237ab
-    PUSH 0x616ab6                       ; 004237ae | = "bride.dfm" | s_bride_dfm_00616ab6 = bride.dfm
+    PUSH 0x616ab6                       ; 004237ae | = "bride.dfm"
     MOV EBX,EAX                         ; 004237b3
     ADD EAX,0x158                       ; 004237b5
     PUSH EAX                            ; 004237ba
-    MOV dword ptr [EAX + -0x4],0x65b424 ; 004237bb | CDemonActor_vtable g_CBrideVTable
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004237c2 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x65b424 ; 004237bb | g_CBrideVTable
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004237c2
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x0065b410]          ; 004237c7 | DAT_0065b410
     MOV dword ptr [EBX + 0x2ddc],0x3f400000 ; 004237cd
     FLD float ptr [0x0065b414]          ; 004237d7 | PTR_FUN_0065b411+3

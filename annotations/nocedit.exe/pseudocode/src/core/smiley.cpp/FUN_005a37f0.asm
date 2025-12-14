@@ -16,8 +16,8 @@ section .text
     PUSH EDX                            ; 005a37f4
     MOV ECX,dword ptr [ESP + 0x8]       ; 005a37f5
     PUSH ECX                            ; 005a37f9
-    CALL core_charactr.cpp_CCharacter_FUN_0042bc20 ; 005a37fa | int core_charactr.cpp_CCharacter_FUN_0042bc20(CCharacter * this_ptr)
-        ;   XREF to: 0042bc20 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042bc20 ; 005a37fa
+        ;   XREF to: 0042bc20 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_FUN_0042bc20(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 005a37ff
     RET                                 ; 005a3802
 

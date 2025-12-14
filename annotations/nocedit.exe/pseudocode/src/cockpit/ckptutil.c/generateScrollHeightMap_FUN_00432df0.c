@@ -25,7 +25,6 @@ cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0
   int local_18;
   int *local_14;
   int *local_10;
-  int *piVar8;
   
   if (bitmap_data != (void *)0x0) {
     if (num_height_rows < (end_x - bitmap_height) + 1) {
@@ -62,8 +61,8 @@ cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0
     iVar7 = 1;
     if (1 < in_stack_00000024) {
       iVar3 = bitmap_height + -1;
-      piVar8 = in_stack_00000020 + 1;
       do {
+        in_stack_00000020 = in_stack_00000020 + 1;
         iVar6 = num_height_rows + -1;
         for (pbVar5 = (byte *)(iVar3 + (num_height_rows + -1) * end_x + local_30 + iVar7);
             (-1 < iVar6 && ((uint)*pbVar5 != transparency_color)); pbVar5 = pbVar5 + -end_x) {
@@ -92,8 +91,7 @@ cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0
           } while (iVar6 < bitmap_height);
         }
         iVar7 = iVar7 + 1;
-        *piVar8 = iVar4;
-        piVar8 = piVar8 + 1;
+        *in_stack_00000020 = iVar4;
       } while (iVar7 < in_stack_00000024);
     }
     g_CurrentDebugFilename = "..\\cockpit\\ckptutil.c";

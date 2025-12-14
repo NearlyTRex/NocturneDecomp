@@ -37,16 +37,16 @@ section .text
     FCOMP double ptr [ESP]              ; 005f5208
     FNSTSW AX                           ; 005f520b
     SAHF                                ; 005f520d
-    JNC 0x005f5262                      ; 005f520e | LAB_005f5262
-        ;   XREF to: 005f5262 (CONDITIONAL_JUMP)
+    JNC 0x005f5262                      ; 005f520e
+        ;   XREF to: 005f5262 (CONDITIONAL_JUMP)  ; LAB_005f5262
     MOV ECX,dword ptr [ESP + 0x4]       ; 005f5210
     MOV EBX,dword ptr [ESP]             ; 005f5214
     CMP ECX,0x3ff00000                  ; 005f5217
-    JNZ 0x005f5223                      ; 005f521d | LAB_005f5223
-        ;   XREF to: 005f5223 (CONDITIONAL_JUMP)
+    JNZ 0x005f5223                      ; 005f521d
+        ;   XREF to: 005f5223 (CONDITIONAL_JUMP)  ; LAB_005f5223
     TEST EBX,EBX                        ; 005f521f
-    JZ 0x005f5262                       ; 005f5221 | LAB_005f5262
-        ;   XREF to: 005f5262 (CONDITIONAL_JUMP)
+    JZ 0x005f5262                       ; 005f5221
+        ;   XREF to: 005f5262 (CONDITIONAL_JUMP)  ; LAB_005f5262
     FLD double ptr [ESP]                ; 005f5223
         ;   Label: LAB_005f5223
     FSQRT                               ; 005f5226
@@ -90,16 +90,16 @@ section .text
     FCOMP double ptr [ESP + 0x10]       ; 005f527d
     FNSTSW AX                           ; 005f5281
     SAHF                                ; 005f5283
-    JNC 0x005f52e0                      ; 005f5284 | LAB_005f52e0
-        ;   XREF to: 005f52e0 (CONDITIONAL_JUMP)
+    JNC 0x005f52e0                      ; 005f5284
+        ;   XREF to: 005f52e0 (CONDITIONAL_JUMP)  ; LAB_005f52e0
     MOV ESI,dword ptr [ESP + 0x14]      ; 005f5286
     MOV EDI,dword ptr [ESP + 0x10]      ; 005f528a
     CMP ESI,0x3ff00000                  ; 005f528e
-    JNZ 0x005f529a                      ; 005f5294 | LAB_005f529a
-        ;   XREF to: 005f529a (CONDITIONAL_JUMP)
+    JNZ 0x005f529a                      ; 005f5294
+        ;   XREF to: 005f529a (CONDITIONAL_JUMP)  ; LAB_005f529a
     TEST EDI,EDI                        ; 005f5296
-    JZ 0x005f52e0                       ; 005f5298 | LAB_005f52e0
-        ;   XREF to: 005f52e0 (CONDITIONAL_JUMP)
+    JZ 0x005f52e0                       ; 005f5298
+        ;   XREF to: 005f52e0 (CONDITIONAL_JUMP)  ; LAB_005f52e0
     FLD double ptr [ESP + 0x10]         ; 005f529a
         ;   Label: LAB_005f529a
     FSQRT                               ; 005f529e
@@ -143,16 +143,16 @@ section .text
     FCOMP double ptr [ESP + 0x8]        ; 005f52fb
     FNSTSW AX                           ; 005f52ff
     SAHF                                ; 005f5301
-    JNC 0x005f5317                      ; 005f5302 | LAB_005f5317
-        ;   XREF to: 005f5317 (CONDITIONAL_JUMP)
+    JNC 0x005f5317                      ; 005f5302
+        ;   XREF to: 005f5317 (CONDITIONAL_JUMP)  ; LAB_005f5317
     MOV EAX,dword ptr [ESP + 0xc]       ; 005f5304
     MOV ECX,dword ptr [ESP + 0x8]       ; 005f5308
     CMP EAX,0x3ff00000                  ; 005f530c
-    JNZ 0x005f531e                      ; 005f5311 | LAB_005f531e
-        ;   XREF to: 005f531e (CONDITIONAL_JUMP)
+    JNZ 0x005f531e                      ; 005f5311
+        ;   XREF to: 005f531e (CONDITIONAL_JUMP)  ; LAB_005f531e
     TEST ECX,ECX                        ; 005f5313
-    JNZ 0x005f531e                      ; 005f5315 | LAB_005f531e
-        ;   XREF to: 005f531e (CONDITIONAL_JUMP)
+    JNZ 0x005f531e                      ; 005f5315
+        ;   XREF to: 005f531e (CONDITIONAL_JUMP)  ; LAB_005f531e
     MOV ESP,EBP                         ; 005f5317
         ;   Label: LAB_005f5317
     POP EBP                             ; 005f5319

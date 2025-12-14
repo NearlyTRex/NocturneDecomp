@@ -1,102 +1,102 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 66, 
-    "assembly_lines": 45, 
-    "suspect_count": 2, 
+    "assembly_lines": 45,
+    "complexity_score": 46,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
-      "addr": "005a7100"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00", 
-      "addr": "005a5d00"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CSoundDevice*", 
-      "name": "g_CSoundDevicePtr", 
-      "addr": "03f69268", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CVector3d *in_stack_0000000c;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr->options).position_source_ptr = in_stack_0000000c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a98b0", 
-    "signature": "int sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0(uint sfx_handle, CVector3f * position_source_ptr)", 
-    "address_range": [
-      [
-        "005a98b0", 
-        "005a990b"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "sfx_handle"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "position_source_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 66
+  },
   "cross_references": [
     {
-      "from_addr": "004c7e34", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c7db0", 
-      "addr": "004c7db0"
-    }, 
+      "addr": "004c7db0",
+      "from_addr": "004c7e34",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c8e32", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8dd0", 
-      "addr": "004c8dd0"
+      "addr": "004c8dd0",
+      "from_addr": "004c8e32",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8dd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a98b0",
+    "address_range": [
+      [
+        "005a98b0",
+        "005a990b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0",
+    "signature": "int sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0(uint sfx_handle, CVector3f * position_source_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a7100",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100"
+    },
+    {
+      "addr": "005a5d00",
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f69268",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "position_source_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "CVector3d *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr->options).position_source_ptr = in_stack_0000000c;",
+      "type": "stack_param"
     }
   ]
 }

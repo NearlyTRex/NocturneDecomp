@@ -20,9 +20,8 @@ int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(tm *timeptr)
   dst_rule *pdVar6;
   int local_1c;
   
-                    /* WARNING: Load size is inaccurate */
   uVar5 = 0;
-  if (*PTR_s_EDT_006851c4 == '\0') goto LAB_00607c7b;
+  if (*(char *)PTR_s_EDT_006851c4 == '\0') goto LAB_00607c7b;
   iVar1 = crt_unknown_c_FUN_00607958();
   if (iVar1 == 0) {
     piVar3 = &g_DstStartRule.seconds;

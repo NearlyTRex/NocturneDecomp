@@ -21,6 +21,6 @@ section .text
     PUSH EDI                            ; 0054ca22
     MOV ESI,dword ptr [ESP + 0x10]      ; 0054ca23
     PUSH ESI                            ; 0054ca27
-    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 0054ca28 | void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 0054ca28
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
 

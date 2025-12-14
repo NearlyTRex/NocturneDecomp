@@ -40,31 +40,31 @@ section .text
     SHL EBX,CL                          ; 0043f0f2
     MOV dword ptr [ESP],EAX             ; 0043f0f4
     TEST EBX,EBX                        ; 0043f0f7
-    JZ 0x0043f119                       ; 0043f0f9 | LAB_0043f119
-        ;   XREF to: 0043f119 (CONDITIONAL_JUMP)
+    JZ 0x0043f119                       ; 0043f0f9
+        ;   XREF to: 0043f119 (CONDITIONAL_JUMP)  ; LAB_0043f119
     TEST dword ptr [ESP],EBX            ; 0043f0fb
         ;   Label: LAB_0043f0fb
-    JZ 0x0043f130                       ; 0043f0fe | LAB_0043f130
-        ;   XREF to: 0043f130 (CONDITIONAL_JUMP)
+    JZ 0x0043f130                       ; 0043f0fe
+        ;   XREF to: 0043f130 (CONDITIONAL_JUMP)  ; LAB_0043f130
     PUSH EBP                            ; 0043f100
     MOV ECX,dword ptr [ESP + 0x24]      ; 0043f101
     PUSH ECX                            ; 0043f105
     PUSH 0x1                            ; 0043f106
     PUSH EDI                            ; 0043f108
-    CALL support_codec.cpp_extractBitsFromBuffer_FUN_0043e840 ; 0043f109 | int support_codec.cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer * bit_state, int bit_count, byte * * output_pos, int * bytes_remaining)
-        ;   XREF to: 0043e840 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_extractBitsFromBuffer_FUN_0043e840 ; 0043f109
+        ;   XREF to: 0043e840 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer * bit_state, int bit_count, byte * * output_pos, int * bytes_remaining)
     ADD ESP,0x10                        ; 0043f10e
     TEST EAX,EAX                        ; 0043f111
-    JL 0x0043f127                       ; 0043f113 | LAB_0043f127
-        ;   XREF to: 0043f127 (CONDITIONAL_JUMP)
-    JNZ 0x0043f12e                      ; 0043f115 | LAB_0043f12e
-        ;   XREF to: 0043f12e (CONDITIONAL_JUMP)
+    JL 0x0043f127                       ; 0043f113
+        ;   XREF to: 0043f127 (CONDITIONAL_JUMP)  ; LAB_0043f127
+    JNZ 0x0043f12e                      ; 0043f115
+        ;   XREF to: 0043f12e (CONDITIONAL_JUMP)  ; LAB_0043f12e
     SAR EBX,0x1                         ; 0043f117
         ;   Label: LAB_0043f117
     TEST EBX,EBX                        ; 0043f119
         ;   Label: LAB_0043f119
-    JNZ 0x0043f144                      ; 0043f11b | LAB_0043f144
-        ;   XREF to: 0043f144 (CONDITIONAL_JUMP)
+    JNZ 0x0043f144                      ; 0043f11b
+        ;   XREF to: 0043f144 (CONDITIONAL_JUMP)  ; LAB_0043f144
     MOV EAX,ESI                         ; 0043f11d
     ADD ESP,0x4                         ; 0043f11f
         ;   Label: LAB_0043f11f
@@ -75,18 +75,18 @@ section .text
     RET                                 ; 0043f126
     MOV EAX,0xffffffff                  ; 0043f127
         ;   Label: LAB_0043f127
-    JMP 0x0043f11f                      ; 0043f12c | LAB_0043f11f
-        ;   XREF to: 0043f11f (UNCONDITIONAL_JUMP)
+    JMP 0x0043f11f                      ; 0043f12c
+        ;   XREF to: 0043f11f (UNCONDITIONAL_JUMP)  ; LAB_0043f11f
     OR ESI,EBX                          ; 0043f12e
         ;   Label: LAB_0043f12e
     SAR EBX,0x1                         ; 0043f130
         ;   Label: LAB_0043f130
     TEST EBX,EBX                        ; 0043f132
-    JNZ 0x0043f0fb                      ; 0043f134 | LAB_0043f0fb
-        ;   XREF to: 0043f0fb (CONDITIONAL_JUMP)
+    JNZ 0x0043f0fb                      ; 0043f134
+        ;   XREF to: 0043f0fb (CONDITIONAL_JUMP)  ; LAB_0043f0fb
     TEST EBX,EBX                        ; 0043f136
-    JNZ 0x0043f144                      ; 0043f138 | LAB_0043f144
-        ;   XREF to: 0043f144 (CONDITIONAL_JUMP)
+    JNZ 0x0043f144                      ; 0043f138
+        ;   XREF to: 0043f144 (CONDITIONAL_JUMP)  ; LAB_0043f144
     MOV EAX,ESI                         ; 0043f13a
     ADD ESP,0x4                         ; 0043f13c
     POP EBP                             ; 0043f13f
@@ -100,19 +100,19 @@ section .text
     PUSH EAX                            ; 0043f149
     PUSH 0x1                            ; 0043f14a
     PUSH EDI                            ; 0043f14c
-    CALL support_codec.cpp_extractBitsFromBuffer_FUN_0043e840 ; 0043f14d | int support_codec.cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer * bit_state, int bit_count, byte * * output_pos, int * bytes_remaining)
-        ;   XREF to: 0043e840 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_extractBitsFromBuffer_FUN_0043e840 ; 0043f14d
+        ;   XREF to: 0043e840 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer * bit_state, int bit_count, byte * * output_pos, int * bytes_remaining)
     ADD ESP,0x10                        ; 0043f152
     TEST EAX,EAX                        ; 0043f155
-    JL 0x0043f127                       ; 0043f157 | LAB_0043f127
-        ;   XREF to: 0043f127 (CONDITIONAL_JUMP)
-    JZ 0x0043f117                       ; 0043f159 | LAB_0043f117
-        ;   XREF to: 0043f117 (CONDITIONAL_JUMP)
+    JL 0x0043f127                       ; 0043f157
+        ;   XREF to: 0043f127 (CONDITIONAL_JUMP)  ; LAB_0043f127
+    JZ 0x0043f117                       ; 0043f159
+        ;   XREF to: 0043f117 (CONDITIONAL_JUMP)  ; LAB_0043f117
     OR ESI,EBX                          ; 0043f15b
     SAR EBX,0x1                         ; 0043f15d
     TEST EBX,EBX                        ; 0043f15f
-    JNZ 0x0043f144                      ; 0043f161 | LAB_0043f144
-        ;   XREF to: 0043f144 (CONDITIONAL_JUMP)
+    JNZ 0x0043f144                      ; 0043f161
+        ;   XREF to: 0043f144 (CONDITIONAL_JUMP)  ; LAB_0043f144
     MOV EAX,ESI                         ; 0043f163
     ADD ESP,0x4                         ; 0043f165
     POP EBP                             ; 0043f168

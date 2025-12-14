@@ -30,10 +30,10 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 00409fb7
     MOV ESI,dword ptr [ESP + 0x18]      ; 00409fbb
     PUSH 0x56e                          ; 00409fbf
-    PUSH 0x6139ad                       ; 00409fc4 | = "..\\core\\actor.cpp" | s_core_actor_cpp_006139ad = ..\core\actor.cpp
+    PUSH 0x6139ad                       ; 00409fc4 | = "..\\core\\actor.cpp"
     PUSH EBX                            ; 00409fc9
-    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00409fca | void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
-        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 ; 00409fca
+        ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     LEA EAX,[EBX + 0x20]                ; 00409fcf
     MOV EDX,dword ptr [EDI]             ; 00409fd2
     MOV dword ptr [EAX],EDX             ; 00409fd4
@@ -44,8 +44,8 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 00409fe2
     ADD ESP,0xc                         ; 00409fe5
     CMP EAX,ESI                         ; 00409fe8
-    JZ 0x00409ffc                       ; 00409fea | LAB_00409ffc
-        ;   XREF to: 00409ffc (CONDITIONAL_JUMP)
+    JZ 0x00409ffc                       ; 00409fea
+        ;   XREF to: 00409ffc (CONDITIONAL_JUMP)  ; LAB_00409ffc
     MOV EDX,dword ptr [ESI]             ; 00409fec
     MOV dword ptr [EAX],EDX             ; 00409fee
     MOV EDX,dword ptr [ESI + 0x4]       ; 00409ff0
@@ -54,8 +54,8 @@ section .text
     MOV dword ptr [EAX + 0x8],EDX       ; 00409ff9
     PUSH EBX                            ; 00409ffc
         ;   Label: LAB_00409ffc
-    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00409ffd | void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00409ffd
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040a002
     POP EDI                             ; 0040a005
     POP ESI                             ; 0040a006

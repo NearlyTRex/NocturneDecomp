@@ -1,329 +1,329 @@
 {
   "complexity": {
-    "function_call_count": 10, 
-    "complexity_score": 247, 
-    "pseudocode_lines": 72, 
-    "cross_reference_count": 10, 
-    "global_count": 6, 
-    "total_lines": 274, 
-    "assembly_lines": 202, 
-    "suspect_count": 16, 
+    "assembly_lines": 202,
+    "complexity_score": 247,
+    "cross_reference_count": 10,
+    "function_call_count": 10,
+    "global_count": 6,
+    "pseudocode_lines": 72,
+    "suspect_count": 16,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
-      "addr": "00408ec0"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b190", 
-      "addr": "0042b190"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b5b0", 
-      "addr": "0042b5b0"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b8e0", 
-      "addr": "0042b8e0"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b930", 
-      "addr": "0042b930"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042b9e0", 
-      "addr": "0042b9e0"
-    }, 
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042d060", 
-      "addr": "0042d060"
-    }, 
-    {
-      "name": "core_game.cpp_CGame_FUN_004e0bf0", 
-      "addr": "004e0bf0"
-    }, 
-    {
-      "name": "core_gore.cpp_FUN_004edbb0", 
-      "addr": "004edbb0"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CGore*", 
-      "name": "g_CGorePtr", 
-      "addr": "0067b9a0", 
-      "value": "02d83364"
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "CGore", 
-      "name": "g_CGoreInstance", 
-      "addr": "02d83364", 
-      "value": null
-    }, 
-    {
-      "type": "CHero*[4]", 
-      "name": "g_HeroActors", 
-      "addr": "02db87c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LocalHeroIndex", 
-      "addr": "02db87d0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint *in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CCharacter *in_stack_ffffffc8;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((float)in_stack_00000008[1] <= 0.0) {"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar1 = in_stack_00000008[0xc];"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc8 = (CCharacter *)0x42c426;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc8 = this_ptr;"
-    }, 
-    {
-      "line": 52, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000008[10] == 5) {"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&this_ptr->base_actor,&CStack_24,(CVector3f *)(in_stack_00000008 + 7));"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc8 = (CCharacter *)*in_stack_00000008;"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc8 = (CCharacter *)*in_stack_00000008;"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0.0 < (float)in_stack_00000008[2]) {"
-    }, 
-    {
-      "line": 61, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double)((float)in_stack_00000008[1] * (float)in_stack_00000008[2]));"
-    }, 
-    {
-      "line": 61, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double)((float)in_stack_00000008[1] * (float)in_stack_00000008[2]));"
-    }, 
-    {
-      "line": 64, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&this_ptr->base_actor,(CVector3f *)in_stack_ffffffc8,input_local_point);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0042c3c0", 
-    "signature": "void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)", 
-    "address_range": [
-      [
-        "0042c3c0", 
-        "0042c579"
-      ]
-    ], 
-    "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0"
-  }, 
-  "stack_frame": {
-    "local_size": 52, 
-    "variables": [
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCharacter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 56, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 274
+  },
   "cross_references": [
     {
-      "from_addr": "00413ce1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_CBaron_FUN_00413cd0", 
-      "addr": "00413cd0"
-    }, 
+      "addr": "00413cd0",
+      "from_addr": "00413ce1",
+      "name": "core_baron.cpp_CBaron_FUN_00413cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004405a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_colonel.cpp_CColonel_FUN_004404b0", 
-      "addr": "004404b0"
-    }, 
+      "addr": "004404b0",
+      "from_addr": "004405a0",
+      "name": "core_colonel.cpp_CColonel_FUN_004404b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a9f2d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_enemy.cpp_FUN_004a9f10", 
-      "addr": "004a9f10"
-    }, 
+      "addr": "004a9f10",
+      "from_addr": "004a9f2d",
+      "name": "core_enemy.cpp_FUN_004a9f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d6c88", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_CGabriella_FUN_004d6b30", 
-      "addr": "004d6b30"
-    }, 
+      "addr": "004d6b30",
+      "from_addr": "004d6c88",
+      "name": "core_gabriela.cpp_CGabriella_FUN_004d6b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f1c00", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_haystack.cpp_CHaystack_FUN_004f1b70", 
-      "addr": "004f1b70"
-    }, 
+      "addr": "004f1b70",
+      "from_addr": "004f1c00",
+      "name": "core_haystack.cpp_CHaystack_FUN_004f1b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f9721", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_icepick.cpp_CIcePick_FUN_004f95b0", 
-      "addr": "004f95b0"
-    }, 
+      "addr": "004f95b0",
+      "from_addr": "004f9721",
+      "name": "core_icepick.cpp_CIcePick_FUN_004f95b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00544e01", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_npc.cpp_CNPC_FUN_00544d30", 
-      "addr": "00544d30"
-    }, 
+      "addr": "00544d30",
+      "from_addr": "00544e01",
+      "name": "core_npc.cpp_CNPC_FUN_00544d30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00557fa2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_scat.cpp_FUN_00557ea0", 
-      "addr": "00557ea0"
-    }, 
+      "addr": "00557ea0",
+      "from_addr": "00557fa2",
+      "name": "core_scat.cpp_FUN_00557ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c4afd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005c48b0", 
-      "addr": "005c48b0"
-    }, 
+      "addr": "005c48b0",
+      "from_addr": "005c4afd",
+      "name": "core_stranger.cpp_CStranger_FUN_005c48b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d9e80", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_svetlana.cpp_FUN_005d9d30", 
-      "addr": "005d9d30"
+      "addr": "005d9d30",
+      "from_addr": "005d9e80",
+      "name": "core_svetlana.cpp_FUN_005d9d30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042c3c0",
+    "address_range": [
+      [
+        "0042c3c0",
+        "0042c579"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0",
+    "signature": "void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ec0",
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
+    },
+    {
+      "addr": "0042b190",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b190"
+    },
+    {
+      "addr": "0042b5b0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b5b0"
+    },
+    {
+      "addr": "0042b8e0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b8e0"
+    },
+    {
+      "addr": "0042b930",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b930"
+    },
+    {
+      "addr": "0042b9e0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b9e0"
+    },
+    {
+      "addr": "0042d060",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d060"
+    },
+    {
+      "addr": "004e0bf0",
+      "name": "core_game.cpp_CGame_FUN_004e0bf0"
+    },
+    {
+      "addr": "004edbb0",
+      "name": "core_gore.cpp_FUN_004edbb0"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "uint *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffffc8",
+      "text": "CCharacter *in_stack_ffffffc8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "if ((float)in_stack_00000008[1] <= 0.0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "uVar1 = in_stack_00000008[0xc];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffffc8",
+      "text": "in_stack_ffffffc8 = (CCharacter *)0x42c426;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_ffffffc8",
+      "text": "in_stack_ffffffc8 = this_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008[10] == 5) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000008",
+      "text": "(&this_ptr->base_actor,&CStack_24,(CVector3f *)(in_stack_00000008 + 7));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_ffffffc8",
+      "text": "in_stack_ffffffc8 = (CCharacter *)*in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000008",
+      "text": "in_stack_ffffffc8 = (CCharacter *)*in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_00000008",
+      "text": "if (0.0 < (float)in_stack_00000008[2]) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000008",
+      "text": "((double)((float)in_stack_00000008[1] * (float)in_stack_00000008[2]));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000008",
+      "text": "((double)((float)in_stack_00000008[1] * (float)in_stack_00000008[2]));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_ffffffc8",
+      "text": "(&this_ptr->base_actor,(CVector3f *)in_stack_ffffffc8,input_local_point);",
+      "type": "stack_param"
     }
   ]
 }

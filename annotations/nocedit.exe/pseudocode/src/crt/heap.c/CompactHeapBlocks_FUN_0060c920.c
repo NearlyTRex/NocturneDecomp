@@ -12,7 +12,7 @@ void __cdecl crt_heap_c_CompactHeapBlocks_FUN_0060c920(void)
   HeapBlock *pHVar1;
   HeapBlock *block;
   
-  (*(code *)PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
+  (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
   pHVar1 = (HeapBlock *)g_MainHeap;
   while (block = pHVar1, block != (HeapBlock *)0x0) {
     pHVar1 = block->next;
@@ -20,6 +20,6 @@ void __cdecl crt_heap_c_CompactHeapBlocks_FUN_0060c920(void)
       crt_heap_c_UnlinkAndFreeBlock_FUN_0060c9bc(block);
     }
   }
-  (*(code *)PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
+  (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
   return;
 }

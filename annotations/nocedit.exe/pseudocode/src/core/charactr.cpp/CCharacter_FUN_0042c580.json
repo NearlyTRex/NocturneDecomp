@@ -1,95 +1,95 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 49, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 72, 
-    "assembly_lines": 48, 
-    "suspect_count": 2, 
+    "assembly_lines": 48,
+    "complexity_score": 49,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0", 
-      "addr": "0052dcf0"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }, 
-    {
-      "name": "crt_string.c_strnicmp_FUN_005ff070", 
-      "addr": "005ff070"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DIE_006171a2", 
-      "addr": "006171a2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_DEAD_006171a6", 
-      "addr": "006171a6", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar1,str2,unaff_EBX);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0042c580", 
-    "signature": "int core_charactr.cpp_CCharacter_FUN_0042c580(CCharacter * this_ptr)", 
-    "address_range": [
-      [
-        "0042c580", 
-        "0042c5e0"
-      ]
-    ], 
-    "name": "core_charactr.cpp_CCharacter_FUN_0042c580"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCharacter *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 72
+  },
   "cross_references": [
     {
-      "from_addr": "005c67e0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005c67c0", 
-      "addr": "005c67c0"
+      "addr": "005c67c0",
+      "from_addr": "005c67e0",
+      "name": "core_stranger.cpp_CStranger_FUN_005c67c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042c580",
+    "address_range": [
+      [
+        "0042c580",
+        "0042c5e0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_FUN_0042c580",
+    "signature": "int core_charactr.cpp_CCharacter_FUN_0042c580(CCharacter * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052dcf0",
+      "name": "core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    },
+    {
+      "addr": "005ff070",
+      "name": "crt_string.c_strnicmp_FUN_005ff070"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006171a2",
+      "name": "s_DIE_006171a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006171a6",
+      "name": "s_DEAD_006171a6",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBX",
+      "text": "iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar1,str2,unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

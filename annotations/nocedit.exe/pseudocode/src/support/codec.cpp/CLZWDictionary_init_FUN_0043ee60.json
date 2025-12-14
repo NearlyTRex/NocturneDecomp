@@ -1,130 +1,130 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 26, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 82, 
-    "assembly_lines": 56, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }, 
-    {
-      "name": "support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0", 
-      "addr": "0043eef0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_support_codec_cpp_00618b22", 
-      "addr": "00618b22", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_support_codec_cpp_00618b37", 
-      "addr": "00618b37", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CLZWDictionary_init_out__00618b4c", 
-      "addr": "00618b4c", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043ee60", 
-    "signature": "void support_codec.cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary * this_ptr, int new_dict_size, int new_num_bits, int normal_code_width, int fallback_code_width)", 
-    "address_range": [
-      [
-        "0043ee60", 
-        "0043eee1"
-      ]
-    ], 
-    "name": "support_codec.cpp_CLZWDictionary_init_FUN_0043ee60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWDictionary *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "new_dict_size"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "new_num_bits"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "normal_code_width"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "fallback_code_width"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 56,
+    "complexity_score": 25,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 81
+  },
   "cross_references": [
     {
-      "from_addr": "0043f335", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWCompress_init_FUN_0043f320", 
-      "addr": "0043f320"
-    }, 
+      "addr": "0043f320",
+      "from_addr": "0043f335",
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_0043f320",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043f4e5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDecompress_init_FUN_0043f4d0", 
-      "addr": "0043f4d0"
+      "addr": "0043f4d0",
+      "from_addr": "0043f4e5",
+      "name": "support_codec.cpp_CLZWDecompress_init_FUN_0043f4d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0043ee60",
+    "address_range": [
+      [
+        "0043ee60",
+        "0043eee1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDictionary_init_FUN_0043ee60",
+    "signature": "void support_codec.cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary * this_ptr, int new_dict_size, int new_num_bits, int normal_code_width, int fallback_code_width)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    },
+    {
+      "addr": "0043eef0",
+      "name": "support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00618b22",
+      "name": "s_support_codec_cpp_00618b22",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618b37",
+      "name": "s_support_codec_cpp_00618b37",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618b4c",
+      "name": "s_CLZWDictionary_init_out__00618b4c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDictionary *"
+      },
+      {
+        "is_param": true,
+        "name": "new_dict_size",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "new_num_bits",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "normal_code_width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "fallback_code_width",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

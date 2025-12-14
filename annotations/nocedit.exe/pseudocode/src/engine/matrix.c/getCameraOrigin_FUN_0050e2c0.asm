@@ -27,12 +27,12 @@ section .text
         ;   Label: engine_matrix.c_getCameraOrigin_FUN_0050e2c0
     SUB ESP,0xc                         ; 0050e2c1
     MOV EAX,ESI                         ; 0050e2c4
-    MOV EDX,dword ptr [0x02d052c4]      ; 0050e2c6 | int g_CameraOriginX
+    MOV EDX,dword ptr [0x02d052c4]      ; 0050e2c6 | g_CameraOriginX
     MOV dword ptr [ESP],EDX             ; 0050e2cc
-    MOV EDX,dword ptr [0x02d052c8]      ; 0050e2cf | int g_CameraOriginY
+    MOV EDX,dword ptr [0x02d052c8]      ; 0050e2cf | g_CameraOriginY
     MOV EDI,ESI                         ; 0050e2d5
     MOV dword ptr [ESP + 0x4],EDX       ; 0050e2d7
-    MOV EDX,dword ptr [0x02d052cc]      ; 0050e2db | int g_CameraOriginZ
+    MOV EDX,dword ptr [0x02d052cc]      ; 0050e2db | g_CameraOriginZ
     MOV ESI,ESP                         ; 0050e2e1
     MOV dword ptr [ESP + 0x8],EDX       ; 0050e2e3
     MOVSD ES:EDI,ESI                    ; 0050e2e7

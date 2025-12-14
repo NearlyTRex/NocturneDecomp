@@ -24,23 +24,21 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 005607e4
     MOV EAX,dword ptr [EAX]             ; 005607e8
     TEST EAX,EAX                        ; 005607ea
-    JNZ 0x00560802                      ; 005607ec | LAB_00560802
-        ;   XREF to: 00560802 (CONDITIONAL_JUMP)
-    PUSH 0x680d58                       ; 005607ee | = "(none)" | s_none_00680d58 = (none)
-    PUSH 0x6433e6                       ; 005607f3 | = "\"%s\"\n" | s_s_006433e6 = "%s"
-
+    JNZ 0x00560802                      ; 005607ec
+        ;   XREF to: 00560802 (CONDITIONAL_JUMP)  ; LAB_00560802
+    PUSH 0x680d58                       ; 005607ee | = "(none)"
+    PUSH 0x6433e6                       ; 005607f3 | = "\"%s\"\n"
     PUSH EDX                            ; 005607f8
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005607f9 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005607f9
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 005607fe
     RET                                 ; 00560801
     PUSH EAX                            ; 00560802
         ;   Label: LAB_00560802
-    PUSH 0x6433ec                       ; 00560803 | = "\"%s\"\n" | s_s_006433ec = "%s"
-
+    PUSH 0x6433ec                       ; 00560803 | = "\"%s\"\n"
     PUSH EDX                            ; 00560808
-    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00560809 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
-        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00560809
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
     ADD ESP,0xc                         ; 0056080e
     RET                                 ; 00560811
 

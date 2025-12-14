@@ -1,225 +1,225 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 93, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 9, 
-    "global_count": 1, 
-    "total_lines": 65, 
-    "assembly_lines": 47, 
-    "suspect_count": 7, 
+    "assembly_lines": 47,
+    "complexity_score": 93,
+    "cross_reference_count": 9,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 18,
+    "suspect_count": 7,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 2, 
-    "patterns": [
-      {
-        "address": "0044d2da", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }, 
-      {
-        "address": "0044d2fd", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int *unaff_ESI;"
-    }, 
-    {
-      "line": 12, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = (int)output_ptr << 0x10;"
-    }, 
-    {
-      "line": 13, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[1] = screen_x << 0x10;"
-    }, 
-    {
-      "line": 14, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[2] = 0x7fffffff;"
-    }, 
-    {
-      "line": 17, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = (int)output_ptr << 0x10;"
-    }, 
-    {
-      "line": 18, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[1] = screen_x << 0x10;"
-    }, 
-    {
-      "line": 19, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[2] = (int)(0x7fffffff / (longlong)(int)uVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0044d2a0", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y)", 
-    "address_range": [
-      [
-        "0044d2a0", 
-        "0044d30b"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "output_ptr"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "screen_x"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "screen_y"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 65
+  },
   "cross_references": [
     {
-      "from_addr": "00454408", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060", 
-      "addr": "00454060"
-    }, 
+      "addr": "00454060",
+      "from_addr": "00454408",
+      "name": "core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044e41b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360", 
-      "addr": "0044e360"
-    }, 
+      "addr": "0044e360",
+      "from_addr": "0044e41b",
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00452921", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900", 
-      "addr": "00452900"
-    }, 
+      "addr": "00452900",
+      "from_addr": "00452921",
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004da2ea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
-    }, 
+      "addr": "004da100",
+      "from_addr": "004da2ea",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00535c82", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_00535c60", 
-      "addr": "00535c60"
-    }, 
+      "addr": "00535c60",
+      "from_addr": "00535c82",
+      "name": "core_msnedit.cpp_FUN_00535c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053e5e6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
-      "addr": "0053e220"
-    }, 
+      "addr": "0053e220",
+      "from_addr": "0053e5e6",
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058011a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_FUN_005800d0", 
-      "addr": "005800d0"
-    }, 
+      "addr": "005800d0",
+      "from_addr": "0058011a",
+      "name": "core_setedit.cpp_CDemonSet_FUN_005800d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057fdc5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00", 
-      "addr": "0057fd00"
-    }, 
+      "addr": "0057fd00",
+      "from_addr": "0057fdc5",
+      "name": "core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b1c1b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_updateListeners_FUN_005b1870", 
-      "addr": "005b1870"
+      "addr": "005b1870",
+      "from_addr": "005b1c1b",
+      "name": "core_sound.cpp_updateListeners_FUN_005b1870",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044d2a0",
+    "address_range": [
+      [
+        "0044d2a0",
+        "0044d30b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0",
+    "signature": "void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "output_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "screen_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "screen_y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0044d2da",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044d2fd",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_ESI",
+      "text": "int *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = (int)output_ptr << 0x10;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[1] = screen_x << 0x10;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[2] = 0x7fffffff;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = (int)output_ptr << 0x10;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[1] = screen_x << 0x10;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[2] = (int)(0x7fffffff / (longlong)(int)uVar1);",
+      "type": "unaffected_reg"
     }
   ]
 }

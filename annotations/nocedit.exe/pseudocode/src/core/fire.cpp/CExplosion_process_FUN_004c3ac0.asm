@@ -31,9 +31,9 @@ section .text
     FCOMP double ptr [ESP]              ; 004c3ad4
     FNSTSW AX                           ; 004c3ad7
     SAHF                                ; 004c3ad9
-    JNC 0x004c3af6                      ; 004c3ada | LAB_004c3af6
-        ;   XREF to: 004c3af6 (CONDITIONAL_JUMP)
-    MOV EAX,[0x0067b654]                ; 004c3adc | CGame * g_CGamePtr
+    JNC 0x004c3af6                      ; 004c3ada
+        ;   XREF to: 004c3af6 (CONDITIONAL_JUMP)  ; LAB_004c3af6
+    MOV EAX,[0x0067b654]                ; 004c3adc | g_CGamePtr
     FLD float ptr [EAX + 0x264]         ; 004c3ae1 | g_CGameInstance.delta_time_float
     FSUBR double ptr [ESP]              ; 004c3ae7
     FST float ptr [EDX + 0xc]           ; 004c3aea
@@ -41,8 +41,8 @@ section .text
     FCOMPP                              ; 004c3aef
     FNSTSW AX                           ; 004c3af1
     SAHF                                ; 004c3af3
-    JA 0x004c3afa                       ; 004c3af4 | LAB_004c3afa
-        ;   XREF to: 004c3afa (CONDITIONAL_JUMP)
+    JA 0x004c3afa                       ; 004c3af4
+        ;   XREF to: 004c3afa (CONDITIONAL_JUMP)  ; LAB_004c3afa
     MOV ESP,EBP                         ; 004c3af6
         ;   Label: LAB_004c3af6
     POP EBP                             ; 004c3af8

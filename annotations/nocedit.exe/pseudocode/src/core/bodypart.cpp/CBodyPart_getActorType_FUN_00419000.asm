@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x822908                    ; 00419000 | CDemonActorType g_CBodyPartClassInfo
+    MOV EAX,0x822908                    ; 00419000 | g_CBodyPartClassInfo
         ;   Label: core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000
     RET                                 ; 00419005
 

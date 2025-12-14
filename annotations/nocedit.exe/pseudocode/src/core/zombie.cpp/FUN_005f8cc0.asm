@@ -21,8 +21,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x8]       ; 005f8cc9
     MOV dword ptr [ESP + 0x24],0x3f800000 ; 005f8ccc
     TEST ECX,ECX                        ; 005f8cd4
-    JNZ 0x005f8ce0                      ; 005f8cd6 | LAB_005f8ce0
-        ;   XREF to: 005f8ce0 (CONDITIONAL_JUMP)
+    JNZ 0x005f8ce0                      ; 005f8cd6
+        ;   XREF to: 005f8ce0 (CONDITIONAL_JUMP)  ; LAB_005f8ce0
     MOV EAX,dword ptr [ESP + 0x24]      ; 005f8cd8
     MOV ESP,EBP                         ; 005f8cdc
     POP EBP                             ; 005f8cde

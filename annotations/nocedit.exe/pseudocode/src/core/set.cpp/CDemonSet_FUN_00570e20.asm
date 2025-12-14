@@ -29,15 +29,15 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00570e2f
     MOV dword ptr [EDX + EAX*0x1 + 0x14c],EBX ; 00570e33
     CMP ECX,dword ptr [EDX + 0x15aea4]  ; 00570e3a
-    JZ 0x00570e44                       ; 00570e40 | LAB_00570e44
-        ;   XREF to: 00570e44 (CONDITIONAL_JUMP)
+    JZ 0x00570e44                       ; 00570e40
+        ;   XREF to: 00570e44 (CONDITIONAL_JUMP)  ; LAB_00570e44
     POP EBX                             ; 00570e42
     RET                                 ; 00570e43
     PUSH dword ptr [ESP + 0x10]         ; 00570e44
         ;   Label: LAB_00570e44
-    PUSH 0x32758e4                      ; 00570e48 | CDemonCamera g_CDemonCameraInstance
-    CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0 ; 00570e4d | void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera * this_ptr, float intensity)
-        ;   XREF to: 004528e0 (UNCONDITIONAL_CALL)
+    PUSH 0x32758e4                      ; 00570e48 | g_CDemonCameraInstance
+    CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0 ; 00570e4d
+        ;   XREF to: 004528e0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 00570e52
     POP EBX                             ; 00570e55
     RET                                 ; 00570e56

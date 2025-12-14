@@ -83,8 +83,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x20]      ; 00409485
     MOV EDX,dword ptr [EBP + 0x28]      ; 00409488
     TEST EDX,EDX                        ; 0040948b
-    JNZ 0x004094a8                      ; 0040948d | LAB_004094a8
-        ;   XREF to: 004094a8 (CONDITIONAL_JUMP)
+    JNZ 0x004094a8                      ; 0040948d
+        ;   XREF to: 004094a8 (CONDITIONAL_JUMP)  ; LAB_004094a8
     MOV dword ptr [ESP + 0xa0],0x40000000 ; 0040948f
         ;   Label: LAB_0040948f
     MOV EAX,dword ptr [ESP + 0xa0]      ; 0040949a
@@ -101,18 +101,18 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 004094ad
     PUSH EAX                            ; 004094b1
     PUSH EDI                            ; 004094b2
-    CALL core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 ; 004094b3 | CBoundingBox3D * core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor * this_ptr, CBoundingBox3D * output_bbox, SCollisionInfo * collision_info, int bounding_box_type)
-        ;   XREF to: 00409270 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 ; 004094b3
+        ;   XREF to: 00409270 (UNCONDITIONAL_CALL)  ; CBoundingBox3D * core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor * this_ptr, CBoundingBox3D * output_bbox, SCollisionInfo * collision_info, int bounding_box_type)
     ADD ESP,0x10                        ; 004094b8
     MOV EDX,dword ptr [EBP + 0x2c]      ; 004094bb
     TEST EDX,EDX                        ; 004094be
-    JNZ 0x00409666                      ; 004094c0 | LAB_00409666
-        ;   XREF to: 00409666 (CONDITIONAL_JUMP)
+    JNZ 0x00409666                      ; 004094c0
+        ;   XREF to: 00409666 (CONDITIONAL_JUMP)  ; LAB_00409666
     LEA EAX,[ESP + 0x4c]                ; 004094c6
     MOV EDX,ESI                         ; 004094ca
     CMP EAX,ESI                         ; 004094cc
-    JZ 0x004094e4                       ; 004094ce | LAB_004094e4
-        ;   XREF to: 004094e4 (CONDITIONAL_JUMP)
+    JZ 0x004094e4                       ; 004094ce
+        ;   XREF to: 004094e4 (CONDITIONAL_JUMP)  ; LAB_004094e4
     MOV EAX,dword ptr [ESI]             ; 004094d0
     MOV dword ptr [ESP + 0x4c],EAX      ; 004094d2
     MOV EAX,dword ptr [ESI + 0x4]       ; 004094d6
@@ -122,8 +122,8 @@ section .text
     LEA EAX,[ESP + 0x58]                ; 004094e4
         ;   Label: LAB_004094e4
     CMP EAX,EDX                         ; 004094e8
-    JZ 0x00409500                       ; 004094ea | LAB_00409500
-        ;   XREF to: 00409500 (CONDITIONAL_JUMP)
+    JZ 0x00409500                       ; 004094ea
+        ;   XREF to: 00409500 (CONDITIONAL_JUMP)  ; LAB_00409500
     MOV EAX,dword ptr [EDX]             ; 004094ec
     MOV dword ptr [ESP + 0x58],EAX      ; 004094ee
     MOV EAX,dword ptr [EDX + 0x4]       ; 004094f2
@@ -145,42 +145,42 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 00409520
     PUSH EAX                            ; 00409524
     FSTP float ptr [ESP + 0x80]         ; 00409525
-    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 0040952c | void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
-        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_expand_FUN_00420240 ; 0040952c
+        ;   XREF to: 00420240 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_expand_FUN_00420240(CBoundingBox3D * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 00409531
     LEA EAX,[ESP + 0x1c]                ; 00409534
     PUSH EAX                            ; 00409538
     LEA EAX,[ESP + 0x50]                ; 00409539
     PUSH EAX                            ; 0040953d
-    CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010 ; 0040953e | int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
-        ;   XREF to: 00421010 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010 ; 0040953e
+        ;   XREF to: 00421010 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 00409543
     TEST EAX,EAX                        ; 00409546
-    JZ 0x0040948f                       ; 00409548 | LAB_0040948f
-        ;   XREF to: 0040948f (CONDITIONAL_JUMP)
+    JZ 0x0040948f                       ; 00409548
+        ;   XREF to: 0040948f (CONDITIONAL_JUMP)  ; LAB_0040948f
     PUSH ESI                            ; 0040954e
         ;   Label: LAB_0040954e
     LEA EAX,[ESP + 0x80]                ; 0040954f
     PUSH EAX                            ; 00409556
     PUSH EDI                            ; 00409557
-    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 ; 00409558 | CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
-        ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10 ; 00409558
+        ;   XREF to: 00408f10 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(CDemonActor * this_ptr, CVector3f * output_local_point, CVector3f * input_world_point)
     ADD ESP,0xc                         ; 0040955d
     MOV ECX,dword ptr [EBP + 0x1c]      ; 00409560
     PUSH ECX                            ; 00409563
     LEA EAX,[ESP + 0x68]                ; 00409564
     PUSH EAX                            ; 00409568
     PUSH EDI                            ; 00409569
-    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 ; 0040956a | CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
-        ;   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 ; 0040956a
+        ;   XREF to: 00408ea0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 0040956f
     MOV ESI,dword ptr [EBP + 0x28]      ; 00409572
     CMP ESI,0x2                         ; 00409575
-    JNC 0x004096cb                      ; 00409578 | LAB_004096cb
-        ;   XREF to: 004096cb (CONDITIONAL_JUMP)
+    JNC 0x004096cb                      ; 00409578
+        ;   XREF to: 004096cb (CONDITIONAL_JUMP)  ; LAB_004096cb
     CMP ESI,0x1                         ; 0040957e
-    JNZ 0x004096d2                      ; 00409581 | LAB_004096d2
-        ;   XREF to: 004096d2 (CONDITIONAL_JUMP)
+    JNZ 0x004096d2                      ; 00409581
+        ;   XREF to: 004096d2 (CONDITIONAL_JUMP)  ; LAB_004096d2
     LEA EAX,[ESP + 0x88]                ; 00409587
     PUSH EAX                            ; 0040958e
     LEA EAX,[ESP + 0x68]                ; 0040958f
@@ -194,8 +194,8 @@ section .text
     CALL dword ptr [EAX + 0x14]         ; 004095a8
     ADD ESP,0x8                         ; 004095ab
     PUSH EAX                            ; 004095ae
-    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940 ; 004095af | float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
-        ;   XREF to: 00420940 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940 ; 004095af
+        ;   XREF to: 00420940 (UNCONDITIONAL_CALL)  ; float core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940(CBoundingBox3D * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
     MOV dword ptr [ESP + 0xb4],EAX      ; 004095b4
         ;   Label: LAB_004095b4
     FLD float ptr [ESP + 0xb4]          ; 004095bb
@@ -209,35 +209,35 @@ section .text
     FCOMP double ptr [ESP + 0x8]        ; 004095d5
     FNSTSW AX                           ; 004095d9
     SAHF                                ; 004095db
-    JA 0x0040948f                       ; 004095dc | LAB_0040948f
-        ;   XREF to: 0040948f (CONDITIONAL_JUMP)
+    JA 0x0040948f                       ; 004095dc
+        ;   XREF to: 0040948f (CONDITIONAL_JUMP)  ; LAB_0040948f
     FLD1                                ; 004095e2
     FCOMP double ptr [ESP + 0x8]        ; 004095e4
     FNSTSW AX                           ; 004095e8
     SAHF                                ; 004095ea
-    JC 0x0040948f                       ; 004095eb | LAB_0040948f
-        ;   XREF to: 0040948f (CONDITIONAL_JUMP)
+    JC 0x0040948f                       ; 004095eb
+        ;   XREF to: 0040948f (CONDITIONAL_JUMP)  ; LAB_0040948f
     MOV dword ptr [EBX + 0x10],0xffffffff ; 004095f1
     MOV dword ptr [EBX + 0x14],0xffffffff ; 004095f8
     MOV dword ptr [EBX + 0x18],0xffffffff ; 004095ff
-    MOV EAX,[0x006810c8]                ; 00409606 | CDemonSet * g_CDemonSetPtr
+    MOV EAX,[0x006810c8]                ; 00409606 | g_CDemonSetPtr
     MOV dword ptr [EBX + 0xc],0xffffffff ; 0040960b
     MOV EAX,dword ptr [EAX + 0x15f6dc]  ; 00409612 | DAT_03273954
     TEST EAX,EAX                        ; 00409618
-    JZ 0x004096f9                       ; 0040961a | LAB_004096f9
-        ;   XREF to: 004096f9 (CONDITIONAL_JUMP)
+    JZ 0x004096f9                       ; 0040961a
+        ;   XREF to: 004096f9 (CONDITIONAL_JUMP)  ; LAB_004096f9
     LEA EAX,[ESP + 0x88]                ; 00409620
         ;   Label: LAB_00409620
     PUSH EAX                            ; 00409627
     LEA EAX,[ESP + 0x98]                ; 00409628
     PUSH EAX                            ; 0040962f
     PUSH EDI                            ; 00409630
-    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 00409631 | CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 00409631
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00409636
     CMP EBX,EAX                         ; 00409639
-    JZ 0x0040964d                       ; 0040963b | LAB_0040964d
-        ;   XREF to: 0040964d (CONDITIONAL_JUMP)
+    JZ 0x0040964d                       ; 0040963b
+        ;   XREF to: 0040964d (CONDITIONAL_JUMP)  ; LAB_0040964d
     MOV EDX,dword ptr [EAX]             ; 0040963d
     MOV dword ptr [EBX],EDX             ; 0040963f
     MOV EDX,dword ptr [EAX + 0x4]       ; 00409641
@@ -258,14 +258,14 @@ section .text
         ;   Label: LAB_00409666
     PUSH EAX                            ; 0040966a
     PUSH EDX                            ; 0040966b
-    CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010 ; 0040966c | int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
-        ;   XREF to: 00421010 (UNCONDITIONAL_CALL)
+    CALL core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010 ; 0040966c
+        ;   XREF to: 00421010 (UNCONDITIONAL_CALL)  ; int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(CBoundingBox3D * this_ptr, CBoundingBox3D * other)
     ADD ESP,0x8                         ; 00409671
     TEST EAX,EAX                        ; 00409674
-    JNZ 0x0040954e                      ; 00409676 | LAB_0040954e
-        ;   XREF to: 0040954e (CONDITIONAL_JUMP)
-    JMP 0x0040948f                      ; 0040967c | LAB_0040948f
-        ;   XREF to: 0040948f (UNCONDITIONAL_JUMP)
+    JNZ 0x0040954e                      ; 00409676
+        ;   XREF to: 0040954e (CONDITIONAL_JUMP)  ; LAB_0040954e
+    JMP 0x0040948f                      ; 0040967c
+        ;   XREF to: 0040948f (UNCONDITIONAL_JUMP)  ; LAB_0040948f
     LEA EAX,[ESP + 0x88]                ; 00409681
         ;   Label: LAB_00409681
     PUSH EAX                            ; 00409688
@@ -275,10 +275,10 @@ section .text
     PUSH EAX                            ; 00409695
     MOV ECX,dword ptr [EBP + 0x24]      ; 00409696
     PUSH ECX                            ; 00409699
-    CALL core_actor.cpp_rayCylinderIntersect_FUN_00408340 ; 0040969a | float core_actor.cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
-        ;   XREF to: 00408340 (UNCONDITIONAL_CALL)
-    JMP 0x004095b4                      ; 0040969f | LAB_004095b4
-        ;   XREF to: 004095b4 (UNCONDITIONAL_JUMP)
+    CALL core_actor.cpp_rayCylinderIntersect_FUN_00408340 ; 0040969a
+        ;   XREF to: 00408340 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)
+    JMP 0x004095b4                      ; 0040969f
+        ;   XREF to: 004095b4 (UNCONDITIONAL_JUMP)  ; LAB_004095b4
     LEA EAX,[ESP + 0x88]                ; 004096a4
         ;   Label: LAB_004096a4
     PUSH EAX                            ; 004096ab
@@ -289,34 +289,34 @@ section .text
     MOV EDX,dword ptr [EDI + 0x154]     ; 004096b9
     PUSH EDI                            ; 004096bf
     CALL dword ptr [EDX + 0xb0]         ; 004096c0
-    JMP 0x004095b4                      ; 004096c6 | LAB_004095b4
-        ;   XREF to: 004095b4 (UNCONDITIONAL_JUMP)
-    JBE 0x00409681                      ; 004096cb | LAB_00409681
+    JMP 0x004095b4                      ; 004096c6
+        ;   XREF to: 004095b4 (UNCONDITIONAL_JUMP)  ; LAB_004095b4
+    JBE 0x00409681                      ; 004096cb
+        ;   XREF to: 00409681 (CONDITIONAL_JUMP)  ; LAB_00409681
         ;   Label: LAB_004096cb
-        ;   XREF to: 00409681 (CONDITIONAL_JUMP)
     CMP ESI,0x3                         ; 004096cd
-    JZ 0x004096a4                       ; 004096d0 | LAB_004096a4
-        ;   XREF to: 004096a4 (CONDITIONAL_JUMP)
-    MOV EAX,0x613840                    ; 004096d2 | = "..\\core\\actor.cpp" | s_core_actor_cpp_00613840 = ..\core\actor.cpp
+    JZ 0x004096a4                       ; 004096d0
+        ;   XREF to: 004096a4 (CONDITIONAL_JUMP)  ; LAB_004096a4
+    MOV EAX,0x613840                    ; 004096d2 | = "..\\core\\actor.cpp"
         ;   Label: LAB_004096d2
     MOV EDX,0x45b                       ; 004096d7
-    PUSH 0x613852                       ; 004096dc | = "CDemonActor::rayIntersect - Invalid c..." | s_CDemonActor_rayIntersect_00613852 = CDemonActor::rayIntersect - Invalid collision type!
-    MOV [0x02f0ca48],EAX                ; 004096e1 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 004096e6 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004096ec | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x613852                       ; 004096dc | = "CDemonActor::rayIntersect - Invalid c..."
+    MOV [0x02f0ca48],EAX                ; 004096e1 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 004096e6 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004096ec
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004096f1
-    JMP 0x004095c9                      ; 004096f4 | LAB_004095c9
-        ;   XREF to: 004095c9 (UNCONDITIONAL_JUMP)
+    JMP 0x004095c9                      ; 004096f4
+        ;   XREF to: 004095c9 (UNCONDITIONAL_JUMP)  ; LAB_004095c9
     MOV EAX,dword ptr [EBP + 0x24]      ; 004096f9
         ;   Label: LAB_004096f9
     MOV ECX,dword ptr [EAX + 0x20]      ; 004096fc
     TEST ECX,ECX                        ; 004096ff
-    JNZ 0x00409773                      ; 00409701 | LAB_00409773
-        ;   XREF to: 00409773 (CONDITIONAL_JUMP)
+    JNZ 0x00409773                      ; 00409701
+        ;   XREF to: 00409773 (CONDITIONAL_JUMP)  ; LAB_00409773
     CMP dword ptr [EAX + 0x24],0x0      ; 00409703
-    JZ 0x00409620                       ; 00409707 | LAB_00409620
-        ;   XREF to: 00409620 (CONDITIONAL_JUMP)
+    JZ 0x00409620                       ; 00409707
+        ;   XREF to: 00409620 (CONDITIONAL_JUMP)  ; LAB_00409620
     LEA EAX,[ESP + 0x88]                ; 0040970d
     PUSH EAX                            ; 00409714
     LEA EAX,[ESP + 0x68]                ; 00409715
@@ -327,12 +327,12 @@ section .text
     PUSH ECX                            ; 00409725
     MOV EDX,dword ptr [EAX + 0x24]      ; 00409726
     PUSH EDX                            ; 00409729
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0040972a | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 0040972a
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040972f
     PUSH EAX                            ; 00409732
-    CALL core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 ; 00409733 | float core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0(CKeyFramedModel * this_ptr, int frame_index, CVector3f * ray_origin, CVector3f * ray_direction, ...)
-        ;   XREF to: 004781d0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 ; 00409733
+        ;   XREF to: 004781d0 (UNCONDITIONAL_CALL)  ; float core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0(CKeyFramedModel * this_ptr, int frame_index, CVector3f * ray_origin, CVector3f * ray_direction, ...)
     MOV dword ptr [ESP + 0xb8],EAX      ; 00409738
     FLD float ptr [ESP + 0xb8]          ; 0040973f
     ADD ESP,0x14                        ; 00409746
@@ -343,16 +343,16 @@ section .text
     FCOMP double ptr [ESP]              ; 00409754
     FNSTSW AX                           ; 00409757
     SAHF                                ; 00409759
-    JA 0x0040948f                       ; 0040975a | LAB_0040948f
-        ;   XREF to: 0040948f (CONDITIONAL_JUMP)
+    JA 0x0040948f                       ; 0040975a
+        ;   XREF to: 0040948f (CONDITIONAL_JUMP)  ; LAB_0040948f
     FLD1                                ; 00409760
     FCOMP double ptr [ESP]              ; 00409762
     FNSTSW AX                           ; 00409765
     SAHF                                ; 00409767
-    JNC 0x00409620                      ; 00409768 | LAB_00409620
-        ;   XREF to: 00409620 (CONDITIONAL_JUMP)
-    JMP 0x0040948f                      ; 0040976e | LAB_0040948f
-        ;   XREF to: 0040948f (UNCONDITIONAL_JUMP)
+    JNC 0x00409620                      ; 00409768
+        ;   XREF to: 00409620 (CONDITIONAL_JUMP)  ; LAB_00409620
+    JMP 0x0040948f                      ; 0040976e
+        ;   XREF to: 0040948f (UNCONDITIONAL_JUMP)  ; LAB_0040948f
     LEA EAX,[ESP + 0x64]                ; 00409773
         ;   Label: LAB_00409773
     PUSH EAX                            ; 00409777
@@ -361,8 +361,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x24]      ; 00409780
     MOV ESI,dword ptr [EAX + 0x20]      ; 00409783
     PUSH ESI                            ; 00409786
-    CALL core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0 ; 00409787 | float core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0(CDeformableModelInstance * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
-        ;   XREF to: 005a10e0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0 ; 00409787
+        ;   XREF to: 005a10e0 (UNCONDITIONAL_CALL)  ; float core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0(CDeformableModelInstance * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     MOV dword ptr [ESP + 0xb0],EAX      ; 0040978c
     FLD float ptr [ESP + 0xb0]          ; 00409793
     ADD ESP,0xc                         ; 0040979a
@@ -373,44 +373,44 @@ section .text
     FCOMP double ptr [ESP + 0x10]       ; 004097a9
     FNSTSW AX                           ; 004097ad
     SAHF                                ; 004097af
-    JA 0x0040948f                       ; 004097b0 | LAB_0040948f
-        ;   XREF to: 0040948f (CONDITIONAL_JUMP)
+    JA 0x0040948f                       ; 004097b0
+        ;   XREF to: 0040948f (CONDITIONAL_JUMP)  ; LAB_0040948f
     FLD1                                ; 004097b6
     FCOMP double ptr [ESP + 0x10]       ; 004097b8
     FNSTSW AX                           ; 004097bc
     SAHF                                ; 004097be
-    JC 0x0040948f                       ; 004097bf | LAB_0040948f
-        ;   XREF to: 0040948f (CONDITIONAL_JUMP)
-    MOV EAX,[0x0368c884]                ; 004097c5 | int g_DeformableModelRayHitPartIndex
+    JC 0x0040948f                       ; 004097bf
+        ;   XREF to: 0040948f (CONDITIONAL_JUMP)  ; LAB_0040948f
+    MOV EAX,[0x0368c884]                ; 004097c5 | g_DeformableModelRayHitPartIndex
     MOV dword ptr [EBX + 0xc],EAX       ; 004097ca
-    MOV EAX,[0x0368c894]                ; 004097cd | int g_DeformableModelRayHitLodIndex
+    MOV EAX,[0x0368c894]                ; 004097cd | g_DeformableModelRayHitLodIndex
     MOV dword ptr [EBX + 0x10],EAX      ; 004097d2
-    MOV EAX,[0x0368c898]                ; 004097d5 | int g_DeformableModelRayHitTriangleIndex
-    MOV EDX,dword ptr [0x0368c894]      ; 004097da | int g_DeformableModelRayHitLodIndex
+    MOV EAX,[0x0368c898]                ; 004097d5 | g_DeformableModelRayHitTriangleIndex
+    MOV EDX,dword ptr [0x0368c894]      ; 004097da | g_DeformableModelRayHitLodIndex
     PUSH EAX                            ; 004097e0
     MOV dword ptr [EBX + 0x14],EAX      ; 004097e1
     MOV EAX,dword ptr [EBP + 0x24]      ; 004097e4
     PUSH EDX                            ; 004097e7
     MOV ECX,dword ptr [EAX + 0x20]      ; 004097e8
     PUSH ECX                            ; 004097eb
-    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 004097ec | CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0 ; 004097ec
+        ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004097f1
     PUSH EAX                            ; 004097f4
-    CALL core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0 ; 004097f5 | int core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel * this_ptr, int lod_level, int triangle_index)
-        ;   XREF to: 0059dca0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0 ; 004097f5
+        ;   XREF to: 0059dca0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel * this_ptr, int lod_level, int triangle_index)
     MOV dword ptr [EBX + 0x18],EAX      ; 004097fa
     LEA EAX,[ESP + 0x94]                ; 004097fd
     ADD ESP,0xc                         ; 00409804
-    CMP EAX,0x368c888                   ; 00409807 | CVector3f g_DeformableModelRayHitNormal
-    JZ 0x00409620                       ; 0040980c | LAB_00409620
-        ;   XREF to: 00409620 (CONDITIONAL_JUMP)
-    MOV EAX,[0x0368c888]                ; 00409812 | CVector3f g_DeformableModelRayHitNormal
+    CMP EAX,0x368c888                   ; 00409807 | g_DeformableModelRayHitNormal
+    JZ 0x00409620                       ; 0040980c
+        ;   XREF to: 00409620 (CONDITIONAL_JUMP)  ; LAB_00409620
+    MOV EAX,[0x0368c888]                ; 00409812 | g_DeformableModelRayHitNormal
     MOV dword ptr [ESP + 0x88],EAX      ; 00409817
     MOV EAX,[0x0368c88c]                ; 0040981e | g_DeformableModelRayHitNormal.y
     MOV dword ptr [ESP + 0x8c],EAX      ; 00409823
     MOV EAX,[0x0368c890]                ; 0040982a | g_DeformableModelRayHitNormal.z
     MOV dword ptr [ESP + 0x90],EAX      ; 0040982f
-    JMP 0x00409620                      ; 00409836 | LAB_00409620
-        ;   XREF to: 00409620 (UNCONDITIONAL_JUMP)
+    JMP 0x00409620                      ; 00409836
+        ;   XREF to: 00409620 (UNCONDITIONAL_JUMP)  ; LAB_00409620
 

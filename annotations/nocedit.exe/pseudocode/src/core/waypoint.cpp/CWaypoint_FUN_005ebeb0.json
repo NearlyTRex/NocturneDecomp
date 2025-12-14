@@ -1,95 +1,95 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 36, 
-    "pseudocode_lines": 36, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 118, 
-    "assembly_lines": 82, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_trigger.cpp_CTrigger_FUN_005df990", 
-      "addr": "005df990"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_none_0065753c", 
-      "addr": "0065753c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_true_00657541", 
-      "addr": "00657541", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_waypoint_cpp_00657546", 
-      "addr": "00657546", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_have_creation_even_0065755b", 
-      "addr": "0065755b", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 82,
+    "complexity_score": 36,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 6,
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 118
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005ebeb0", 
-    "signature": "void core_waypoint.cpp_CWaypoint_FUN_005ebeb0(CWayPoint * this_ptr)", 
+    "address": "005ebeb0",
     "address_range": [
       [
-        "005ebeb0", 
+        "005ebeb0",
         "005ebf6b"
       ]
-    ], 
-    "name": "core_waypoint.cpp_CWaypoint_FUN_005ebeb0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_waypoint.cpp_CWaypoint_FUN_005ebeb0",
+    "signature": "void core_waypoint.cpp_CWaypoint_FUN_005ebeb0(CWayPoint * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005df990",
+      "name": "core_trigger.cpp_CTrigger_FUN_005df990"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065753c",
+      "name": "s_none_0065753c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657541",
+      "name": "s_true_00657541",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657546",
+      "name": "s_core_waypoint_cpp_00657546",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065755b",
+      "name": "s_Can_t_have_creation_even_0065755b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWayPoint *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWayPoint *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

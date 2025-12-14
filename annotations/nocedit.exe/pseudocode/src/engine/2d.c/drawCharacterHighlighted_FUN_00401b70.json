@@ -1,170 +1,170 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 82, 
-    "pseudocode_lines": 57, 
-    "cross_reference_count": 1, 
-    "global_count": 12, 
-    "total_lines": 172, 
-    "assembly_lines": 115, 
-    "suspect_count": 2, 
+    "assembly_lines": 115,
+    "complexity_score": 82,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 12,
+    "pseudocode_lines": 57,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "g_FontTable", 
-      "addr": "00666040", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00666041", 
-      "addr": "00666041", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00666042", 
-      "addr": "00666042", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_FontTable[0].bitmap[0][2]", 
-      "addr": "00666043", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ColorTable16[255]", 
-      "addr": "02d0121e", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 26, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos);"
-    }, 
-    {
-      "line": 43, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos * 2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00401b70", 
-    "signature": "int engine_2d.c_drawCharacterHighlighted_FUN_00401b70(int char_code, int x_pos, int y_pos)", 
-    "address_range": [
-      [
-        "00401b70", 
-        "00401c5a"
-      ]
-    ], 
-    "name": "engine_2d.c_drawCharacterHighlighted_FUN_00401b70"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "char_code"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_pos"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_pos"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 172
+  },
   "cross_references": [
     {
-      "from_addr": "00402117", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawStringHighlighted_FUN_004020e0", 
-      "addr": "004020e0"
+      "addr": "004020e0",
+      "from_addr": "00402117",
+      "name": "engine_2d.c_drawStringHighlighted_FUN_004020e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00401b70",
+    "address_range": [
+      [
+        "00401b70",
+        "00401c5a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawCharacterHighlighted_FUN_00401b70",
+    "signature": "int engine_2d.c_drawCharacterHighlighted_FUN_00401b70(int char_code, int x_pos, int y_pos)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00666040",
+      "name": "g_FontTable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00666041",
+      "name": "DAT_00666041",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00666042",
+      "name": "DAT_00666042",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00666043",
+      "name": "g_FontTable[0].bitmap[0][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0121e",
+      "name": "g_ColorTable16[255]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "char_code",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)",
+      "text": "puVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(int *)((int)",
+      "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos * 2);",
+      "type": "pointer_cast"
     }
   ]
 }

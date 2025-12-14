@@ -47,16 +47,16 @@ section .text
     FCOMPP                              ; 005a1b85
     FNSTSW AX                           ; 005a1b87
     SAHF                                ; 005a1b89
-    JA 0x005a1cda                       ; 005a1b8a | LAB_005a1cda
-        ;   XREF to: 005a1cda (CONDITIONAL_JUMP)
+    JA 0x005a1cda                       ; 005a1b8a
+        ;   XREF to: 005a1cda (CONDITIONAL_JUMP)  ; LAB_005a1cda
     FLD float ptr [ESP + 0x64]          ; 005a1b90
         ;   Label: LAB_005a1b90
     FLD1                                ; 005a1b94
     FCOMPP                              ; 005a1b96
     FNSTSW AX                           ; 005a1b98
     SAHF                                ; 005a1b9a
-    JNC 0x005a1ba5                      ; 005a1b9b | LAB_005a1ba5
-        ;   XREF to: 005a1ba5 (CONDITIONAL_JUMP)
+    JNC 0x005a1ba5                      ; 005a1b9b
+        ;   XREF to: 005a1ba5 (CONDITIONAL_JUMP)  ; LAB_005a1ba5
     MOV dword ptr [ESP + 0x64],0x3f800000 ; 005a1b9d
     FLD float ptr [ESP + 0x64]          ; 005a1ba5
         ;   Label: LAB_005a1ba5
@@ -97,8 +97,8 @@ section .text
     FSTP float ptr [ESP + 0x14]         ; 005a1c15
     FSTP float ptr [ESP + 0x18]         ; 005a1c19
     CMP EAX,EBX                         ; 005a1c1d
-    JZ 0x005a1c35                       ; 005a1c1f | LAB_005a1c35
-        ;   XREF to: 005a1c35 (CONDITIONAL_JUMP)
+    JZ 0x005a1c35                       ; 005a1c1f
+        ;   XREF to: 005a1c35 (CONDITIONAL_JUMP)  ; LAB_005a1c35
     MOV EAX,dword ptr [ESP + 0x10]      ; 005a1c21
     MOV dword ptr [EBX],EAX             ; 005a1c25
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a1c27
@@ -108,15 +108,15 @@ section .text
     MOV EBP,dword ptr [ESP + 0x68]      ; 005a1c35
         ;   Label: LAB_005a1c35
     PUSH EBP                            ; 005a1c39
-    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a1c3a | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
-        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 005a1c3a
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005a1c3f
     MOV EDX,dword ptr [EAX + 0x28558]   ; 005a1c42
     XOR EBP,EBP                         ; 005a1c48
     MOV dword ptr [ESP + 0x38],EAX      ; 005a1c4a
     TEST EDX,EDX                        ; 005a1c4e
-    JLE 0x005a1cc0                      ; 005a1c50 | LAB_005a1cc0
-        ;   XREF to: 005a1cc0 (CONDITIONAL_JUMP)
+    JLE 0x005a1cc0                      ; 005a1c50
+        ;   XREF to: 005a1cc0 (CONDITIONAL_JUMP)  ; LAB_005a1cc0
     MOV EBX,dword ptr [ESP + 0x58]      ; 005a1c52
     ADD EDI,0xc                         ; 005a1c56
     ADD ESI,0xc                         ; 005a1c59
@@ -129,8 +129,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x48]      ; 005a1c6d
     PUSH ESI                            ; 005a1c71
     LEA ESI,[ESP + 0xc]                 ; 005a1c72
-    CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 005a1c76 | CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
-        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_slerpQuaternion_FUN_005f77e0 ; 005a1c76
+        ;   XREF to: 005f77e0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)
     LEA ESI,[ESP + 0xc]                 ; 005a1c7b
     ADD ESP,0xc                         ; 005a1c7f
     LEA EDI,[EBX + 0xc]                 ; 005a1c82
@@ -149,8 +149,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x28558]   ; 005a1ca3
     MOV dword ptr [ESP + 0x40],EDI      ; 005a1ca9
     CMP EBP,EDX                         ; 005a1cad
-    JL 0x005a1c64                       ; 005a1caf | LAB_005a1c64
-        ;   XREF to: 005a1c64 (CONDITIONAL_JUMP)
+    JL 0x005a1c64                       ; 005a1caf
+        ;   XREF to: 005a1c64 (CONDITIONAL_JUMP)  ; LAB_005a1c64
     LEA EAX,[EAX]                       ; 005a1cb1
     LEA EDX,[EDX]                       ; 005a1cb7
     LEA EAX,[EAX]                       ; 005a1cbd
@@ -159,8 +159,8 @@ section .text
     PUSH ECX                            ; 005a1cc4
     MOV EBX,dword ptr [ESP + 0x5c]      ; 005a1cc5
     PUSH EBX                            ; 005a1cc9
-    CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 ; 005a1cca | void core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransformData * bone_data, CDeformableModelInstance * instance_ptr)
-        ;   XREF to: 005a1950 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 ; 005a1cca
+        ;   XREF to: 005a1950 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950(SBoneTransformData * bone_data, CDeformableModelInstance * instance_ptr)
     ADD ESP,0x8                         ; 005a1ccf
     ADD ESP,0x44                        ; 005a1cd2
     POP EBP                             ; 005a1cd5
@@ -171,6 +171,6 @@ section .text
     XOR EDX,EDX                         ; 005a1cda
         ;   Label: LAB_005a1cda
     MOV dword ptr [ESP + 0x64],EDX      ; 005a1cdc
-    JMP 0x005a1b90                      ; 005a1ce0 | LAB_005a1b90
-        ;   XREF to: 005a1b90 (UNCONDITIONAL_JUMP)
+    JMP 0x005a1b90                      ; 005a1ce0
+        ;   XREF to: 005a1b90 (UNCONDITIONAL_JUMP)  ; LAB_005a1b90
 

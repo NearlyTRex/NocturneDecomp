@@ -1,110 +1,110 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 105, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 80, 
-    "assembly_lines": 50, 
-    "suspect_count": 6, 
+    "assembly_lines": 50,
+    "complexity_score": 105,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 30,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_crc32ProcessByte_FUN_0040ce30", 
-      "addr": "0040ce30"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_00000004 + 0x30)) {"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pbVar2 = *(byte **)(iVar4 + 4 + *(int *)(in_stack_00000004 + 0x34));"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar5 < *(int *)(in_stack_00000004 + 0x30));"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00560d80", 
-    "signature": "undefined core_script.cpp_CalculateCRC_FUN_00560d80()", 
-    "address_range": [
-      [
-        "00560d80", 
-        "00560dd5"
-      ]
-    ], 
-    "name": "core_script.cpp_CalculateCRC_FUN_00560d80"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 80
+  },
   "cross_references": [
     {
-      "from_addr": "00560d5f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_WriteScriptFile_FUN_00560b50", 
-      "addr": "00560b50"
-    }, 
+      "addr": "00560b50",
+      "from_addr": "00560d5f",
+      "name": "core_script.cpp_CScript_WriteScriptFile_FUN_00560b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00560b17", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_loadState_FUN_00560820", 
-      "addr": "00560820"
+      "addr": "00560820",
+      "from_addr": "00560b17",
+      "name": "core_script.cpp_CScript_loadState_FUN_00560820",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00560d80",
+    "address_range": [
+      [
+        "00560d80",
+        "00560dd5"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_script.cpp_CalculateCRC_FUN_00560d80",
+    "signature": "undefined core_script.cpp_CalculateCRC_FUN_00560d80()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce30",
+      "name": "core_actor.cpp_crc32ProcessByte_FUN_0040ce30"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x30)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "pbVar2 = *(byte **)(iVar4 + 4 + *(int *)(in_stack_00000004 + 0x34));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar5 < *(int *)(in_stack_00000004 + 0x30));",
+      "type": "stack_param"
     }
   ]
 }

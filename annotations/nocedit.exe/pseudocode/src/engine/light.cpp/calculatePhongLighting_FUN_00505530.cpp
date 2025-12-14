@@ -31,13 +31,11 @@ engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int
           ((uint)((longlong)world_z * (longlong)g_LightDirectionZ) >> 0x10 |
           (int)((ulonglong)((longlong)world_z * (longlong)g_LightDirectionZ) >> 0x20) << 0x10);
   iVar4 = -iVar3;
-  if (iVar3 < 1) {
-    if (iVar3 != -0xffff && 0xfffe < iVar4) {
-      iVar4 = 0xffff;
-    }
-  }
-  else {
+  if (iVar4 < 0) {
     iVar4 = 0;
+  }
+  else if (iVar3 != -0xffff && 0xfffe < iVar4) {
+    iVar4 = 0xffff;
   }
   lVar1 = (longlong)iVar4 * (longlong)(0xffff - g_AmbientLightLevel);
   uVar5 = g_AmbientLightLevel + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
@@ -82,7 +80,7 @@ engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int
                   (int)((ulonglong)((longlong)unaff_EBP * (longlong)g_NormalizedViewVector.z) >>
                        0x20) << 0x10);
   iVar4 = -iVar3;
-  if (0 < iVar3) goto LAB_005056f8;
+  if (iVar4 < 0) goto LAB_005056f8;
   if (iVar3 == -0xffff || iVar4 < 0xffff) {
     if (iVar3 != -48000 && 47999 < iVar4) goto LAB_005056ad;
     uVar2 = 0;

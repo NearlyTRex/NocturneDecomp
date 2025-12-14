@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 17, 
-    "assembly_lines": 9, 
-    "suspect_count": 2, 
+    "assembly_lines": 9,
+    "complexity_score": 33,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550", 
-      "addr": "005a8550"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return iVar1 * *(int *)(in_stack_00000008 + 0x160);"
-    }
-  ], 
+    ],
+    "total_lines": 17
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005add90", 
-    "signature": "int sound_sndmain.cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90(CSfxSample * this_ptr)", 
+    "address": "005add90",
     "address_range": [
       [
-        "005add90", 
+        "005add90",
         "005adda8"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90",
+    "signature": "int sound_sndmain.cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90(CSfxSample * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a8550",
+      "name": "sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSfxSample *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "return iVar1 * *(int *)(in_stack_00000008 + 0x160);",
+      "type": "stack_param"
+    }
+  ]
 }

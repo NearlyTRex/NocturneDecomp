@@ -1,79 +1,79 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 55, 
-    "pseudocode_lines": 55, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 169, 
-    "assembly_lines": 114, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_io.c_parseFileInfo_FUN_0060e3b0", 
-      "addr": "0060e3b0"
-    }, 
-    {
-      "name": "crt_memory.c_free_FUN_00601cd0", 
-      "addr": "00601cd0"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_0060c640", 
-      "addr": "0060c640"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char*", 
-      "name": "g_EnvironmentStrings", 
-      "addr": "00685011", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "char**", 
-      "name": "g_EnvironStringArea", 
-      "addr": "03f9b860", 
-      "value": null
-    }, 
-    {
-      "type": "char**", 
-      "name": "g_EnvironmentBlock", 
-      "addr": "03f9b864", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9c150", 
-      "addr": "03f9c150", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 114,
+    "complexity_score": 55,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 55,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 169
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0060c650", 
-    "signature": "void crt_environ.c_staticInit_FUN_0060c650(void)", 
+    "address": "0060c650",
     "address_range": [
       [
-        "0060c650", 
+        "0060c650",
         "0060c738"
       ]
-    ], 
-    "name": "crt_environ.c_staticInit_FUN_0060c650"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "crt_environ.c_staticInit_FUN_0060c650",
+    "signature": "void crt_environ.c_staticInit_FUN_0060c650(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060e3b0",
+      "name": "crt_io.c_parseFileInfo_FUN_0060e3b0"
+    },
+    {
+      "addr": "00601cd0",
+      "name": "crt_memory.c_free_FUN_00601cd0"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "0060c640",
+      "name": "crt_unknown.c_FUN_0060c640"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00685011",
+      "name": "g_EnvironmentStrings",
+      "type": "char*",
+      "value": "00000000"
+    },
+    {
+      "addr": "03f9b860",
+      "name": "g_EnvironStringArea",
+      "type": "char**",
+      "value": null
+    },
+    {
+      "addr": "03f9b864",
+      "name": "g_EnvironmentBlock",
+      "type": "char**",
+      "value": null
+    },
+    {
+      "addr": "03f9c150",
+      "name": "DAT_03f9c150",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 49, 
-    "pseudocode_lines": 49, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 147, 
-    "assembly_lines": 98, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "support_codec.cpp_extractBitsFromBuffer_FUN_0043e840", 
-      "addr": "0043e840"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043f0d0", 
-    "signature": "int support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, byte * output_stream, int * bytes_remaining, int code_value)", 
-    "address_range": [
-      [
-        "0043f0d0", 
-        "0043f16c"
-      ]
-    ], 
-    "name": "support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLZWDictionary *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SBitBuffer *", 
-        "size": 4, 
-        "name": "bit_buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "byte *", 
-        "size": 4, 
-        "name": "output_stream"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "bytes_remaining"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "code_value"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 98,
+    "complexity_score": 49,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 147
+  },
   "cross_references": [
     {
-      "from_addr": "0043f645", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0", 
-      "addr": "0043f5d0"
+      "addr": "0043f5d0",
+      "from_addr": "0043f645",
+      "name": "support_codec.cpp_CLZWDecompress_processBuffer_FUN_0043f5d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0043f0d0",
+    "address_range": [
+      [
+        "0043f0d0",
+        "0043f16c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0",
+    "signature": "int support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, byte * output_stream, int * bytes_remaining, int code_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043e840",
+      "name": "support_codec.cpp_extractBitsFromBuffer_FUN_0043e840"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLZWDictionary *"
+      },
+      {
+        "is_param": true,
+        "name": "bit_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "SBitBuffer *"
+      },
+      {
+        "is_param": true,
+        "name": "output_stream",
+        "offset": 12,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "bytes_remaining",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "code_value",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

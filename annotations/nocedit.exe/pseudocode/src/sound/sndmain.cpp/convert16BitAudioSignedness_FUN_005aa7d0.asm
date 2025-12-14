@@ -18,8 +18,8 @@ section .text
         ;   Label: sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0
     MOV EAX,dword ptr [ESP + 0x4]       ; 005aa7d4
     TEST EDX,EDX                        ; 005aa7d8
-    JLE 0x005aa7ef                      ; 005aa7da | LAB_005aa7ef
-        ;   XREF to: 005aa7ef (CONDITIONAL_JUMP)
+    JLE 0x005aa7ef                      ; 005aa7da
+        ;   XREF to: 005aa7ef (CONDITIONAL_JUMP)  ; LAB_005aa7ef
     PUSH EBX                            ; 005aa7dc
     MOV BL,byte ptr [EAX + 0x1]         ; 005aa7dd
         ;   Label: LAB_005aa7dd
@@ -28,8 +28,8 @@ section .text
     DEC EDX                             ; 005aa7e6
     MOV byte ptr [EAX + -0x1],BL        ; 005aa7e7
     TEST EDX,EDX                        ; 005aa7ea
-    JG 0x005aa7dd                       ; 005aa7ec | LAB_005aa7dd
-        ;   XREF to: 005aa7dd (CONDITIONAL_JUMP)
+    JG 0x005aa7dd                       ; 005aa7ec
+        ;   XREF to: 005aa7dd (CONDITIONAL_JUMP)  ; LAB_005aa7dd
     POP EBX                             ; 005aa7ee
     RET                                 ; 005aa7ef
         ;   Label: LAB_005aa7ef

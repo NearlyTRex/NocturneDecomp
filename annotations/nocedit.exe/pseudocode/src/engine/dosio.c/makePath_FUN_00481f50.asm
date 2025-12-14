@@ -44,8 +44,8 @@ section .text
     PUSH ESI                            ; 00481f66
     MOV EDI,dword ptr [ESP + 0x20]      ; 00481f67
     PUSH EDI                            ; 00481f6b
-    CALL crt_file.c_makepath_FUN_005febfc ; 00481f6c | void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)
+    CALL crt_file.c_makepath_FUN_005febfc ; 00481f6c
+        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00481f71
     POP EDI                             ; 00481f74
     POP ESI                             ; 00481f75

@@ -55,8 +55,8 @@ section .text
     FCOMPP                              ; 00455a55
     FNSTSW AX                           ; 00455a57
     SAHF                                ; 00455a59
-    JNC 0x00455e33                      ; 00455a5a | LAB_00455e33
-        ;   XREF to: 00455e33 (CONDITIONAL_JUMP)
+    JNC 0x00455e33                      ; 00455a5a
+        ;   XREF to: 00455e33 (CONDITIONAL_JUMP)  ; LAB_00455e33
     MOV EBP,dword ptr [ESI]             ; 00455a60
     FLD float ptr [EBP + 0x8]           ; 00455a62
     FMUL float ptr [EBX + 0x1c]         ; 00455a65
@@ -85,15 +85,15 @@ section .text
     FCOMP float ptr [ESP + 0x64]        ; 00455aa8
     FNSTSW AX                           ; 00455aac
     SAHF                                ; 00455aae
-    JA 0x00455e3d                       ; 00455aaf | LAB_00455e3d
-        ;   XREF to: 00455e3d (CONDITIONAL_JUMP)
+    JA 0x00455e3d                       ; 00455aaf
+        ;   XREF to: 00455e3d (CONDITIONAL_JUMP)  ; LAB_00455e3d
     FLD float ptr [ESP + 0x64]          ; 00455ab5
         ;   Label: LAB_00455ab5
     FCOMP float ptr [ESP + 0x4c]        ; 00455ab9
     FNSTSW AX                           ; 00455abd
     SAHF                                ; 00455abf
-    JBE 0x00455ae4                      ; 00455ac0 | LAB_00455ae4
-        ;   XREF to: 00455ae4 (CONDITIONAL_JUMP)
+    JBE 0x00455ae4                      ; 00455ac0
+        ;   XREF to: 00455ae4 (CONDITIONAL_JUMP)  ; LAB_00455ae4
     MOV EAX,dword ptr [ESP + 0x64]      ; 00455ac2
     MOV dword ptr [ESP + 0x40],EAX      ; 00455ac6
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00455aca
@@ -108,8 +108,8 @@ section .text
     FCOMP float ptr [ESP + 0x64]        ; 00455ae8
     FNSTSW AX                           ; 00455aec
     SAHF                                ; 00455aee
-    JBE 0x00455aff                      ; 00455aef | LAB_00455aff
-        ;   XREF to: 00455aff (CONDITIONAL_JUMP)
+    JBE 0x00455aff                      ; 00455aef
+        ;   XREF to: 00455aff (CONDITIONAL_JUMP)  ; LAB_00455aff
     MOV EAX,dword ptr [ESP + 0x64]      ; 00455af1
     MOV dword ptr [ESP + 0x54],EAX      ; 00455af5
     MOV EAX,EBP                         ; 00455af9
@@ -120,14 +120,14 @@ section .text
     FCOMP float ptr [EBX + 0x2c]        ; 00455b03
     FNSTSW AX                           ; 00455b06
     SAHF                                ; 00455b08
-    JC 0x00455e33                       ; 00455b09 | LAB_00455e33
-        ;   XREF to: 00455e33 (CONDITIONAL_JUMP)
+    JC 0x00455e33                       ; 00455b09
+        ;   XREF to: 00455e33 (CONDITIONAL_JUMP)  ; LAB_00455e33
     FLD float ptr [ESP + 0x54]          ; 00455b0f
     FCOMP float ptr [EBX + 0x30]        ; 00455b13
     FNSTSW AX                           ; 00455b16
     SAHF                                ; 00455b18
-    JA 0x00455e33                       ; 00455b19 | LAB_00455e33
-        ;   XREF to: 00455e33 (CONDITIONAL_JUMP)
+    JA 0x00455e33                       ; 00455b19
+        ;   XREF to: 00455e33 (CONDITIONAL_JUMP)  ; LAB_00455e33
     MOV EAX,dword ptr [ESI]             ; 00455b1f
     XOR EDX,EDX                         ; 00455b21
     FLD float ptr [EAX + 0x4]           ; 00455b23
@@ -135,8 +135,8 @@ section .text
     FCOMP float ptr [EBX + 0x24]        ; 00455b2a
     FNSTSW AX                           ; 00455b2d
     SAHF                                ; 00455b2f
-    JC 0x00455b3a                       ; 00455b30 | LAB_00455b3a
-        ;   XREF to: 00455b3a (CONDITIONAL_JUMP)
+    JC 0x00455b3a                       ; 00455b30
+        ;   XREF to: 00455b3a (CONDITIONAL_JUMP)  ; LAB_00455b3a
     MOV dword ptr [ESP + 0x58],0x1      ; 00455b32
     MOV EAX,dword ptr [ESI]             ; 00455b3a
         ;   Label: LAB_00455b3a
@@ -144,8 +144,8 @@ section .text
     FCOMP float ptr [EBX + 0x28]        ; 00455b3f
     FNSTSW AX                           ; 00455b42
     SAHF                                ; 00455b44
-    JA 0x00455b4c                       ; 00455b45 | LAB_00455b4c
-        ;   XREF to: 00455b4c (CONDITIONAL_JUMP)
+    JA 0x00455b4c                       ; 00455b45
+        ;   XREF to: 00455b4c (CONDITIONAL_JUMP)  ; LAB_00455b4c
     OR byte ptr [ESP + 0x58],0x2        ; 00455b47
     XOR EAX,EAX                         ; 00455b4c
         ;   Label: LAB_00455b4c
@@ -155,8 +155,8 @@ section .text
     FCOMP float ptr [EBX + 0x24]        ; 00455b58
     FNSTSW AX                           ; 00455b5b
     SAHF                                ; 00455b5d
-    JC 0x00455b68                       ; 00455b5e | LAB_00455b68
-        ;   XREF to: 00455b68 (CONDITIONAL_JUMP)
+    JC 0x00455b68                       ; 00455b5e
+        ;   XREF to: 00455b68 (CONDITIONAL_JUMP)  ; LAB_00455b68
     MOV dword ptr [ESP + 0x5c],0x1      ; 00455b60
     MOV EAX,dword ptr [ESI + 0x4]       ; 00455b68
         ;   Label: LAB_00455b68
@@ -164,8 +164,8 @@ section .text
     FCOMP float ptr [EBX + 0x28]        ; 00455b6e
     FNSTSW AX                           ; 00455b71
     SAHF                                ; 00455b73
-    JA 0x00455b7b                       ; 00455b74 | LAB_00455b7b
-        ;   XREF to: 00455b7b (CONDITIONAL_JUMP)
+    JA 0x00455b7b                       ; 00455b74
+        ;   XREF to: 00455b7b (CONDITIONAL_JUMP)  ; LAB_00455b7b
     OR byte ptr [ESP + 0x5c],0x2        ; 00455b76
     MOV EAX,dword ptr [ESI + 0x8]       ; 00455b7b
         ;   Label: LAB_00455b7b
@@ -175,8 +175,8 @@ section .text
     FCOMP float ptr [EBX + 0x24]        ; 00455b87
     FNSTSW AX                           ; 00455b8a
     SAHF                                ; 00455b8c
-    JC 0x00455b97                       ; 00455b8d | LAB_00455b97
-        ;   XREF to: 00455b97 (CONDITIONAL_JUMP)
+    JC 0x00455b97                       ; 00455b8d
+        ;   XREF to: 00455b97 (CONDITIONAL_JUMP)  ; LAB_00455b97
     MOV dword ptr [ESP + 0x60],0x1      ; 00455b8f
     MOV EAX,dword ptr [ESI + 0x8]       ; 00455b97
         ;   Label: LAB_00455b97
@@ -184,8 +184,8 @@ section .text
     FCOMP float ptr [EBX + 0x28]        ; 00455b9d
     FNSTSW AX                           ; 00455ba0
     SAHF                                ; 00455ba2
-    JA 0x00455baa                       ; 00455ba3 | LAB_00455baa
-        ;   XREF to: 00455baa (CONDITIONAL_JUMP)
+    JA 0x00455baa                       ; 00455ba3
+        ;   XREF to: 00455baa (CONDITIONAL_JUMP)  ; LAB_00455baa
     OR byte ptr [ESP + 0x60],0x2        ; 00455ba5
     MOV EAX,dword ptr [ESP + 0x58]      ; 00455baa
         ;   Label: LAB_00455baa
@@ -193,20 +193,20 @@ section .text
     MOV ECX,dword ptr [ESP + 0x60]      ; 00455bb2
     AND EAX,EDX                         ; 00455bb6
     TEST EAX,ECX                        ; 00455bb8
-    JNZ 0x00455e33                      ; 00455bba | LAB_00455e33
-        ;   XREF to: 00455e33 (CONDITIONAL_JUMP)
+    JNZ 0x00455e33                      ; 00455bba
+        ;   XREF to: 00455e33 (CONDITIONAL_JUMP)  ; LAB_00455e33
     FLDZ                                ; 00455bc0
     FCOMP float ptr [ESI + 0x10]        ; 00455bc2
     FNSTSW AX                           ; 00455bc5
     SAHF                                ; 00455bc7
-    JA 0x00455cf6                       ; 00455bc8 | LAB_00455cf6
-        ;   XREF to: 00455cf6 (CONDITIONAL_JUMP)
+    JA 0x00455cf6                       ; 00455bc8
+        ;   XREF to: 00455cf6 (CONDITIONAL_JUMP)  ; LAB_00455cf6
     MOV EDX,dword ptr [ESP + 0x58]      ; 00455bce
     XOR EDX,dword ptr [ESP + 0x5c]      ; 00455bd2
     XOR EAX,EAX                         ; 00455bd6
     TEST DL,0x1                         ; 00455bd8
-    JZ 0x00455c19                       ; 00455bdb | LAB_00455c19
-        ;   XREF to: 00455c19 (CONDITIONAL_JUMP)
+    JZ 0x00455c19                       ; 00455bdb
+        ;   XREF to: 00455c19 (CONDITIONAL_JUMP)  ; LAB_00455c19
     MOV EDX,dword ptr [ESI + 0x4]       ; 00455bdd
     MOV EAX,dword ptr [ESI]             ; 00455be0
     FLD float ptr [EDX + 0x4]           ; 00455be2
@@ -233,8 +233,8 @@ section .text
         ;   Label: LAB_00455c19
     XOR EDX,dword ptr [ESP + 0x60]      ; 00455c1d
     TEST DL,0x1                         ; 00455c21
-    JZ 0x00455c70                       ; 00455c24 | LAB_00455c70
-        ;   XREF to: 00455c70 (CONDITIONAL_JUMP)
+    JZ 0x00455c70                       ; 00455c24
+        ;   XREF to: 00455c70 (CONDITIONAL_JUMP)  ; LAB_00455c70
     MOV ECX,dword ptr [ESI + 0x8]       ; 00455c26
     MOV EDX,dword ptr [ESI + 0x4]       ; 00455c29
     FLD float ptr [ECX + 0x4]           ; 00455c2c
@@ -265,8 +265,8 @@ section .text
         ;   Label: LAB_00455c70
     XOR EDX,dword ptr [ESP + 0x58]      ; 00455c74
     TEST DL,0x1                         ; 00455c78
-    JZ 0x00455cc4                       ; 00455c7b | LAB_00455cc4
-        ;   XREF to: 00455cc4 (CONDITIONAL_JUMP)
+    JZ 0x00455cc4                       ; 00455c7b
+        ;   XREF to: 00455cc4 (CONDITIONAL_JUMP)  ; LAB_00455cc4
     MOV ECX,dword ptr [ESI]             ; 00455c7d
     MOV EDX,dword ptr [ESI + 0x8]       ; 00455c7f
     FLD float ptr [ECX + 0x4]           ; 00455c82
@@ -294,8 +294,8 @@ section .text
     FSTP float ptr [ESP + EDX*0x1 + 0xc] ; 00455cc0
     CMP EAX,0x2                         ; 00455cc4
         ;   Label: LAB_00455cc4
-    JL 0x00455cf6                       ; 00455cc7 | LAB_00455cf6
-        ;   XREF to: 00455cf6 (CONDITIONAL_JUMP)
+    JL 0x00455cf6                       ; 00455cc7
+        ;   XREF to: 00455cf6 (CONDITIONAL_JUMP)  ; LAB_00455cf6
     MOV EAX,dword ptr [ESP + 0x18]      ; 00455cc9
     MOV dword ptr [EBX + 0x3c],EAX      ; 00455ccd
     MOV EAX,dword ptr [ESP + 0xc]       ; 00455cd0
@@ -305,31 +305,31 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 00455cde
     PUSH EBX                            ; 00455ce2
     MOV dword ptr [EBX + 0x48],EAX      ; 00455ce3
-    CALL core_dcube.cpp_intersectXZCapsule_FUN_004556b0 ; 00455ce6 | int core_dcube.cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder * cylinder)
-        ;   XREF to: 004556b0 (UNCONDITIONAL_CALL)
+    CALL core_dcube.cpp_intersectXZCapsule_FUN_004556b0 ; 00455ce6
+        ;   XREF to: 004556b0 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder * cylinder)
     ADD ESP,0x4                         ; 00455ceb
     TEST EAX,EAX                        ; 00455cee
-    JNZ 0x00455df4                      ; 00455cf0 | LAB_00455df4
-        ;   XREF to: 00455df4 (CONDITIONAL_JUMP)
+    JNZ 0x00455df4                      ; 00455cf0
+        ;   XREF to: 00455df4 (CONDITIONAL_JUMP)  ; LAB_00455df4
     FLDZ                                ; 00455cf6
         ;   Label: LAB_00455cf6
     FCOMP float ptr [ESI + 0x10]        ; 00455cf8
     FNSTSW AX                           ; 00455cfb
     SAHF                                ; 00455cfd
-    JC 0x00455ea0                       ; 00455cfe | LAB_00455ea0
-        ;   XREF to: 00455ea0 (CONDITIONAL_JUMP)
+    JC 0x00455ea0                       ; 00455cfe
+        ;   XREF to: 00455ea0 (CONDITIONAL_JUMP)  ; LAB_00455ea0
     MOV EDX,dword ptr [ESP + 0x58]      ; 00455d04
     XOR EDX,dword ptr [ESP + 0x5c]      ; 00455d08
     XOR EAX,EAX                         ; 00455d0c
     TEST DL,0x2                         ; 00455d0e
-    JNZ 0x00455e60                      ; 00455d11 | LAB_00455e60
-        ;   XREF to: 00455e60 (CONDITIONAL_JUMP)
+    JNZ 0x00455e60                      ; 00455d11
+        ;   XREF to: 00455e60 (CONDITIONAL_JUMP)  ; LAB_00455e60
     MOV EDX,dword ptr [ESP + 0x5c]      ; 00455d17
         ;   Label: LAB_00455d17
     XOR EDX,dword ptr [ESP + 0x60]      ; 00455d1b
     TEST DL,0x2                         ; 00455d1f
-    JZ 0x00455d6c                       ; 00455d22 | LAB_00455d6c
-        ;   XREF to: 00455d6c (CONDITIONAL_JUMP)
+    JZ 0x00455d6c                       ; 00455d22
+        ;   XREF to: 00455d6c (CONDITIONAL_JUMP)  ; LAB_00455d6c
     MOV ECX,dword ptr [ESI + 0x8]       ; 00455d24
     MOV EDX,dword ptr [ESI + 0x4]       ; 00455d27
     FLD float ptr [ECX + 0x4]           ; 00455d2a
@@ -359,8 +359,8 @@ section .text
         ;   Label: LAB_00455d6c
     XOR EDX,dword ptr [ESP + 0x58]      ; 00455d70
     TEST DL,0x2                         ; 00455d74
-    JZ 0x00455dbf                       ; 00455d77 | LAB_00455dbf
-        ;   XREF to: 00455dbf (CONDITIONAL_JUMP)
+    JZ 0x00455dbf                       ; 00455d77
+        ;   XREF to: 00455dbf (CONDITIONAL_JUMP)  ; LAB_00455dbf
     MOV ECX,dword ptr [ESI]             ; 00455d79
     MOV EDX,dword ptr [ESI + 0x8]       ; 00455d7b
     FLD float ptr [ECX + 0x4]           ; 00455d7e
@@ -388,8 +388,8 @@ section .text
     FSTP float ptr [ESP + EDX*0x1]      ; 00455dbc
     CMP EAX,0x2                         ; 00455dbf
         ;   Label: LAB_00455dbf
-    JL 0x00455ea0                       ; 00455dc2 | LAB_00455ea0
-        ;   XREF to: 00455ea0 (CONDITIONAL_JUMP)
+    JL 0x00455ea0                       ; 00455dc2
+        ;   XREF to: 00455ea0 (CONDITIONAL_JUMP)  ; LAB_00455ea0
     MOV EAX,dword ptr [ESP + 0x24]      ; 00455dc8
     MOV dword ptr [EBX + 0x3c],EAX      ; 00455dcc
     MOV EAX,dword ptr [ESP]             ; 00455dcf
@@ -399,12 +399,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00455ddc
     PUSH EBX                            ; 00455de0
     MOV dword ptr [EBX + 0x48],EAX      ; 00455de1
-    CALL core_dcube.cpp_intersectXZCapsule_FUN_004556b0 ; 00455de4 | int core_dcube.cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder * cylinder)
-        ;   XREF to: 004556b0 (UNCONDITIONAL_CALL)
+    CALL core_dcube.cpp_intersectXZCapsule_FUN_004556b0 ; 00455de4
+        ;   XREF to: 004556b0 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_intersectXZCapsule_FUN_004556b0(SIntersectXZCylinder * cylinder)
     ADD ESP,0x4                         ; 00455de9
     TEST EAX,EAX                        ; 00455dec
-    JZ 0x00455ea0                       ; 00455dee | LAB_00455ea0
-        ;   XREF to: 00455ea0 (CONDITIONAL_JUMP)
+    JZ 0x00455ea0                       ; 00455dee
+        ;   XREF to: 00455ea0 (CONDITIONAL_JUMP)  ; LAB_00455ea0
     FLD float ptr [EBX + 0x18]          ; 00455df4
         ;   Label: LAB_00455df4
     FMUL float ptr [EBX + 0x4c]         ; 00455df7
@@ -448,8 +448,8 @@ section .text
     MOV EAX,EBP                         ; 00455e55
     MOV EBP,EDI                         ; 00455e57
     MOV EDI,EAX                         ; 00455e59
-    JMP 0x00455ab5                      ; 00455e5b | LAB_00455ab5
-        ;   XREF to: 00455ab5 (UNCONDITIONAL_JUMP)
+    JMP 0x00455ab5                      ; 00455e5b
+        ;   XREF to: 00455ab5 (UNCONDITIONAL_JUMP)  ; LAB_00455ab5
     MOV EDX,dword ptr [ESI + 0x4]       ; 00455e60
         ;   Label: LAB_00455e60
     MOV EAX,dword ptr [ESI]             ; 00455e63
@@ -473,22 +473,22 @@ section .text
     FADD float ptr [EAX + 0x8]          ; 00455e90
     FSTP float ptr [ESP]                ; 00455e93
     MOV EAX,0x1                         ; 00455e96
-    JMP 0x00455d17                      ; 00455e9b | LAB_00455d17
-        ;   XREF to: 00455d17 (UNCONDITIONAL_JUMP)
+    JMP 0x00455d17                      ; 00455e9b
+        ;   XREF to: 00455d17 (UNCONDITIONAL_JUMP)  ; LAB_00455d17
     PUSH EDI                            ; 00455ea0
         ;   Label: LAB_00455ea0
     PUSH EBP                            ; 00455ea1
     PUSH EBX                            ; 00455ea2
-    CALL core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990 ; 00455ea3 | int core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990(SIntersectXZCylinder * cylinder, CVector3f * segment_start, CVector3f * segment_end)
-        ;   XREF to: 00455990 (UNCONDITIONAL_CALL)
+    CALL core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990 ; 00455ea3
+        ;   XREF to: 00455990 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990(SIntersectXZCylinder * cylinder, CVector3f * segment_start, CVector3f * segment_end)
     ADD ESP,0xc                         ; 00455ea8
     MOV EDI,dword ptr [ESP + 0x50]      ; 00455eab
     PUSH EDI                            ; 00455eaf
     PUSH EBP                            ; 00455eb0
     PUSH EBX                            ; 00455eb1
     MOV ESI,EAX                         ; 00455eb2
-    CALL core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990 ; 00455eb4 | int core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990(SIntersectXZCylinder * cylinder, CVector3f * segment_start, CVector3f * segment_end)
-        ;   XREF to: 00455990 (UNCONDITIONAL_CALL)
+    CALL core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990 ; 00455eb4
+        ;   XREF to: 00455990 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_intersectXZCapsuleWithHeight_FUN_00455990(SIntersectXZCylinder * cylinder, CVector3f * segment_start, CVector3f * segment_end)
     ADD ESP,0xc                         ; 00455eb9
     OR EAX,ESI                          ; 00455ebc
     ADD ESP,0x74                        ; 00455ebe

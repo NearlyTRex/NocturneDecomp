@@ -21,14 +21,14 @@ section .text
         ;   Label: shape_meshlod.cpp_CLodFace_findVertexIndex_FUN_00515e90
     MOV EDX,dword ptr [ESP + 0x8]       ; 00515e94
     CMP EDX,dword ptr [EAX + 0x10]      ; 00515e98
-    JZ 0x005151dd                       ; 00515e9b | LAB_005151dd
-        ;   XREF to: 005151dd (CONDITIONAL_JUMP)
+    JZ 0x005151dd                       ; 00515e9b
+        ;   XREF to: 005151dd (CONDITIONAL_JUMP)  ; LAB_005151dd
     CMP EDX,dword ptr [EAX + 0x14]      ; 00515ea1
-    JZ 0x005151d7                       ; 00515ea4 | LAB_005151d7
-        ;   XREF to: 005151d7 (CONDITIONAL_JUMP)
+    JZ 0x005151d7                       ; 00515ea4
+        ;   XREF to: 005151d7 (CONDITIONAL_JUMP)  ; LAB_005151d7
     CMP EDX,dword ptr [EAX + 0x18]      ; 00515eaa
-    JNZ 0x00515eb5                      ; 00515ead | LAB_00515eb5
-        ;   XREF to: 00515eb5 (CONDITIONAL_JUMP)
+    JNZ 0x00515eb5                      ; 00515ead
+        ;   XREF to: 00515eb5 (CONDITIONAL_JUMP)  ; LAB_00515eb5
     MOV EAX,0x2                         ; 00515eaf
     RET                                 ; 00515eb4
     MOV EAX,0xffffffff                  ; 00515eb5

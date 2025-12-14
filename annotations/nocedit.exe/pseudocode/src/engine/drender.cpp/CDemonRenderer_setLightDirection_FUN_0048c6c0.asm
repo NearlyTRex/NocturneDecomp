@@ -26,8 +26,8 @@ section .text
     PUSH ECX                            ; 0048c6cc
     MOV EBX,dword ptr [EAX]             ; 0048c6cd
     PUSH EBX                            ; 0048c6cf
-    CALL engine_light.cpp_setDirectionalLightVector_FUN_005054d0 ; 0048c6d0 | void engine_light.cpp_setDirectionalLightVector_FUN_005054d0(int dir_x, int dir_y, int dir_z)
-        ;   XREF to: 005054d0 (UNCONDITIONAL_CALL)
+    CALL engine_light.cpp_setDirectionalLightVector_FUN_005054d0 ; 0048c6d0
+        ;   XREF to: 005054d0 (UNCONDITIONAL_CALL)  ; void engine_light.cpp_setDirectionalLightVector_FUN_005054d0(int dir_x, int dir_y, int dir_z)
     ADD ESP,0xc                         ; 0048c6d5
     POP EBX                             ; 0048c6d8
     RET                                 ; 0048c6d9

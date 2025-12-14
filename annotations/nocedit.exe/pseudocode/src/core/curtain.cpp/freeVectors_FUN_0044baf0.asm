@@ -21,13 +21,13 @@
 
 section .text
 
-    PUSH 0x6598c0                       ; 0044baf0 | WatcomTypeInfo g_CVectorTypeInfo
+    PUSH 0x6598c0                       ; 0044baf0 | g_CVectorTypeInfo
         ;   Label: core_curtain.cpp_freeVectors_FUN_0044baf0
     PUSH 0x64                           ; 0044baf5
     MOV EDX,dword ptr [ESP + 0xc]       ; 0044baf7
     PUSH EDX                            ; 0044bafb
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0044bafc | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0044bafc
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0044bb01
     RET                                 ; 0044bb04
 

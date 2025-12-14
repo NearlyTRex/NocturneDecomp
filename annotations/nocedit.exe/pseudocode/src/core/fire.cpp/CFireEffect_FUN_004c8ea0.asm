@@ -23,29 +23,29 @@ section .text
 
     PUSH dword ptr [ESP + 0xc]          ; 004c8ea0
         ;   Label: core_fire.cpp_CFireEffect_FUN_004c8ea0
-    MOV EAX,[0x02d6c6a0]                ; 004c8ea4 | CToss * g_TossActiveListHead
+    MOV EAX,[0x02d6c6a0]                ; 004c8ea4 | g_TossActiveListHead
     MOV EDX,dword ptr [ESP + 0xc]       ; 004c8ea9
     SHL EAX,0x4                         ; 004c8ead
     PUSH EDX                            ; 004c8eb0
     MOV EDX,EAX                         ; 004c8eb1
     SHL EAX,0x3                         ; 004c8eb3
     SUB EAX,EDX                         ; 004c8eb6
-    ADD EAX,0x2d6c6a4                   ; 004c8eb8 | CCrater[20] g_CraterPool
+    ADD EAX,0x2d6c6a4                   ; 004c8eb8 | g_CraterPool
     PUSH EAX                            ; 004c8ebd
-    CALL core_fire.cpp_CCrater_FUN_004c4200 ; 004c8ebe | void core_fire.cpp_CCrater_FUN_004c4200(CCrater * this_ptr)
-        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)
-    MOV ECX,dword ptr [0x02d6c6a0]      ; 004c8ec3 | CToss * g_TossActiveListHead
+    CALL core_fire.cpp_CCrater_FUN_004c4200 ; 004c8ebe
+        ;   XREF to: 004c4200 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_FUN_004c4200(CCrater * this_ptr)
+    MOV ECX,dword ptr [0x02d6c6a0]      ; 004c8ec3 | g_TossActiveListHead
     INC ECX                             ; 004c8ec9
     ADD ESP,0xc                         ; 004c8eca
-    MOV dword ptr [0x02d6c6a0],ECX      ; 004c8ecd | CToss * g_TossActiveListHead
+    MOV dword ptr [0x02d6c6a0],ECX      ; 004c8ecd | g_TossActiveListHead
     CMP ECX,0x14                        ; 004c8ed3
-    JGE 0x004c8ed9                      ; 004c8ed6 | LAB_004c8ed9
-        ;   XREF to: 004c8ed9 (CONDITIONAL_JUMP)
+    JGE 0x004c8ed9                      ; 004c8ed6
+        ;   XREF to: 004c8ed9 (CONDITIONAL_JUMP)  ; LAB_004c8ed9
     RET                                 ; 004c8ed8
     PUSH ESI                            ; 004c8ed9
         ;   Label: LAB_004c8ed9
     XOR ESI,ESI                         ; 004c8eda
-    MOV dword ptr [0x02d6c6a0],ESI      ; 004c8edc | CToss * g_TossActiveListHead
+    MOV dword ptr [0x02d6c6a0],ESI      ; 004c8edc | g_TossActiveListHead
     POP ESI                             ; 004c8ee2
     RET                                 ; 004c8ee3
 

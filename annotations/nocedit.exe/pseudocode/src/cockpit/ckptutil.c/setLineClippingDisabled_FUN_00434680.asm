@@ -18,6 +18,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00434680
         ;   Label: cockpit_ckptutil.c_setLineClippingDisabled_FUN_00434680
-    MOV [0x0066e800],EAX                ; 00434684 | int g_LineClippingDisabled
+    MOV [0x0066e800],EAX                ; 00434684 | g_LineClippingDisabled
     RET                                 ; 00434689
 

@@ -1,165 +1,165 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 75, 
-    "pseudocode_lines": 50, 
-    "cross_reference_count": 3, 
-    "global_count": 10, 
-    "total_lines": 140, 
-    "assembly_lines": 90, 
-    "suspect_count": 2, 
+    "assembly_lines": 90,
+    "complexity_score": 75,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 10,
+    "pseudocode_lines": 50,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623871", 
-      "addr": "00623871", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CStrList_set_invalid_ind_00623887", 
-      "addr": "00623887", 
-      "value": null
-    }, 
-    {
-      "type": "char", 
-      "name": "s_EmpyStringLiteral_006238a5", 
-      "addr": "006238a5", 
-      "value": "\u0000"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_006238a6", 
-      "addr": "006238a6", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_.\\shape\\edittool.cpp_006238a7", 
-      "addr": "006238a7", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_\\shape\\edittool.cpp_006238a8", 
-      "addr": "006238a8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_006238bc", 
-      "addr": "006238bc", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CStrList_set_out_of_memo_006238d2", 
-      "addr": "006238d2", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 40, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar2 = this_ptr->data_array[in_stack_00000014];"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a3120", 
-    "signature": "void shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120(CStrList * this_ptr, int index, char * new_string)", 
-    "address_range": [
-      [
-        "004a3120", 
-        "004a31ed"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "new_string"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 140
+  },
   "cross_references": [
     {
-      "from_addr": "005662d9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_editorPutLine_FUN_005662a0", 
-      "addr": "005662a0"
-    }, 
+      "addr": "005662a0",
+      "from_addr": "005662d9",
+      "name": "core_script.cpp_CScript_editorPutLine_FUN_005662a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049eb23", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0", 
-      "addr": "0049e9d0"
-    }, 
+      "addr": "0049e9d0",
+      "from_addr": "0049eb23",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ad127", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20", 
-      "addr": "005acf20"
+      "addr": "005acf20",
+      "from_addr": "005ad127",
+      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a3120",
+    "address_range": [
+      [
+        "004a3120",
+        "004a31ed"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120",
+    "signature": "void shape_edittool.cpp_CStrList_setStringAt_FUN_004a3120(CStrList * this_ptr, int index, char * new_string)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623871",
+      "name": "s_shape_edittool_cpp_00623871",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623887",
+      "name": "s_CStrList_set_invalid_ind_00623887",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006238a5",
+      "name": "s_EmpyStringLiteral_006238a5",
+      "type": "char",
+      "value": "\u0000"
+    },
+    {
+      "addr": "006238a6",
+      "name": "s_shape_edittool_cpp_006238a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006238a7",
+      "name": "s_.\\shape\\edittool.cpp_006238a7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006238a8",
+      "name": "s_\\shape\\edittool.cpp_006238a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006238bc",
+      "name": "s_shape_edittool_cpp_006238bc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006238d2",
+      "name": "s_CStrList_set_out_of_memo_006238d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "new_string",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000014",
+      "text": "pcVar2 = this_ptr->data_array[in_stack_00000014];",
+      "type": "stack_param"
     }
   ]
 }

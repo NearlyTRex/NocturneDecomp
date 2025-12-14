@@ -21,12 +21,12 @@ section .text
         ;   Label: sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005a63b0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005a63b1
     CMP dword ptr [EBX + 0x158],0x0     ; 005a63b5
-    JZ 0x005a63d2                       ; 005a63bc | LAB_005a63d2
-        ;   XREF to: 005a63d2 (CONDITIONAL_JUMP)
-    MOV ECX,dword ptr [0x03f69268]      ; 005a63be | CSoundDevice * g_CSoundDevicePtr
+    JZ 0x005a63d2                       ; 005a63bc
+        ;   XREF to: 005a63d2 (CONDITIONAL_JUMP)  ; LAB_005a63d2
+    MOV ECX,dword ptr [0x03f69268]      ; 005a63be | g_CSoundDevicePtr
     TEST ECX,ECX                        ; 005a63c4
-    JNZ 0x005a63d4                      ; 005a63c6 | LAB_005a63d4
-        ;   XREF to: 005a63d4 (CONDITIONAL_JUMP)
+    JNZ 0x005a63d4                      ; 005a63c6
+        ;   XREF to: 005a63d4 (CONDITIONAL_JUMP)  ; LAB_005a63d4
     MOV dword ptr [EBX + 0x158],0x0     ; 005a63c8
     POP EBX                             ; 005a63d2
         ;   Label: LAB_005a63d2

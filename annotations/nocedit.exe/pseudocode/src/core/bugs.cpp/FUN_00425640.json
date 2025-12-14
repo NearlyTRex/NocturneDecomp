@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 34, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 19, 
-    "assembly_lines": 10, 
-    "suspect_count": 2, 
+    "assembly_lines": 10,
+    "complexity_score": 34,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_enemy.cpp_FUN_004a9f10", 
-      "addr": "004a9f10"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;"
-    }
-  ], 
+    ],
+    "total_lines": 19
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00425640", 
-    "signature": "undefined core_bugs.cpp_FUN_00425640()", 
+    "address": "00425640",
     "address_range": [
       [
-        "00425640", 
+        "00425640",
         "00425659"
       ]
-    ], 
-    "name": "core_bugs.cpp_FUN_00425640"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_bugs.cpp_FUN_00425640",
+    "signature": "undefined core_bugs.cpp_FUN_00425640()"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9f10",
+      "name": "core_enemy.cpp_FUN_004a9f10"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "type": "stack_param"
+    }
+  ]
 }

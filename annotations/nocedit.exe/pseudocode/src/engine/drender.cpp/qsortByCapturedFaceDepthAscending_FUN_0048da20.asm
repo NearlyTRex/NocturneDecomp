@@ -23,10 +23,10 @@ section .text
     MOV ECX,dword ptr [EDX + 0x8]       ; 0048da2d
     MOV EBX,dword ptr [EAX + 0x8]       ; 0048da30
     CMP ECX,EBX                         ; 0048da33
-    JG 0x0048da40                       ; 0048da35 | LAB_0048da40
-        ;   XREF to: 0048da40 (CONDITIONAL_JUMP)
-    JGE 0x0048da47                      ; 0048da37 | LAB_0048da47
-        ;   XREF to: 0048da47 (CONDITIONAL_JUMP)
+    JG 0x0048da40                       ; 0048da35
+        ;   XREF to: 0048da40 (CONDITIONAL_JUMP)  ; LAB_0048da40
+    JGE 0x0048da47                      ; 0048da37
+        ;   XREF to: 0048da47 (CONDITIONAL_JUMP)  ; LAB_0048da47
     MOV EAX,0xffffffff                  ; 0048da39
     POP EBX                             ; 0048da3e
     RET                                 ; 0048da3f

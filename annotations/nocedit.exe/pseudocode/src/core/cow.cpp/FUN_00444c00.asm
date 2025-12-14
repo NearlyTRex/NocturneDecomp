@@ -24,12 +24,12 @@ section .text
     PUSH EAX                            ; 00444c17
     LEA EAX,[EDX + 0x158]               ; 00444c18
     PUSH EAX                            ; 00444c1e
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 00444c1f | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 00444c1f
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 00444c24
     CMP EBX,EAX                         ; 00444c27
-    JNZ 0x00444c35                      ; 00444c29 | LAB_00444c35
-        ;   XREF to: 00444c35 (CONDITIONAL_JUMP)
+    JNZ 0x00444c35                      ; 00444c29
+        ;   XREF to: 00444c35 (CONDITIONAL_JUMP)  ; LAB_00444c35
     MOV EAX,0x1                         ; 00444c2b
     ADD ESP,0xc                         ; 00444c30
     POP EBX                             ; 00444c33

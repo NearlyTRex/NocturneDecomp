@@ -33,8 +33,8 @@ section .text
     ADD EDX,EAX                         ; 0051a9ac
     MOV EAX,dword ptr [EDX]             ; 0051a9ae
     CMP EAX,EBX                         ; 0051a9b0
-    JNZ 0x0051a9b7                      ; 0051a9b2 | LAB_0051a9b7
-        ;   XREF to: 0051a9b7 (CONDITIONAL_JUMP)
+    JNZ 0x0051a9b7                      ; 0051a9b2
+        ;   XREF to: 0051a9b7 (CONDITIONAL_JUMP)  ; LAB_0051a9b7
     MOV EAX,dword ptr [EDX + 0x4]       ; 0051a9b4
     POP EBX                             ; 0051a9b7
         ;   Label: LAB_0051a9b7

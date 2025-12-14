@@ -1,80 +1,80 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 45, 
-    "assembly_lines": 30, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "DeleteDC", 
-      "addr": "EXTERNAL:00000005"
-    }, 
-    {
-      "name": "SelectObject", 
-      "addr": "EXTERNAL:0000000a"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "DeleteDC*", 
-      "name": "DeleteDC", 
-      "addr": "006113d8", 
-      "value": "00211784"
-    }, 
-    {
-      "type": "SelectObject*", 
-      "name": "SelectObject", 
-      "addr": "006113ec", 
-      "value": "002117d6"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f2a30", 
-    "signature": "void engine_winfont.cpp_CWinFont_reset_FUN_005f2a30(CWinFont * this_ptr)", 
-    "address_range": [
-      [
-        "005f2a30", 
-        "005f2a90"
-      ]
-    ], 
-    "name": "engine_winfont.cpp_CWinFont_reset_FUN_005f2a30"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWinFont *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 30,
+    "complexity_score": 15,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 45
+  },
   "cross_references": [
     {
-      "from_addr": "005f28d8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860", 
-      "addr": "005f2860"
-    }, 
+      "addr": "005f2860",
+      "from_addr": "005f28d8",
+      "name": "engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f23a3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_winfont.cpp_CWinFont_dtor_FUN_005f2390", 
-      "addr": "005f2390"
+      "addr": "005f2390",
+      "from_addr": "005f23a3",
+      "name": "engine_winfont.cpp_CWinFont_dtor_FUN_005f2390",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005f2a30",
+    "address_range": [
+      [
+        "005f2a30",
+        "005f2a90"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_winfont.cpp_CWinFont_reset_FUN_005f2a30",
+    "signature": "void engine_winfont.cpp_CWinFont_reset_FUN_005f2a30(CWinFont * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000005",
+      "name": "DeleteDC"
+    },
+    {
+      "addr": "EXTERNAL:0000000a",
+      "name": "SelectObject"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006113d8",
+      "name": "DeleteDC",
+      "type": "DeleteDC*",
+      "value": "00211784"
+    },
+    {
+      "addr": "006113ec",
+      "name": "SelectObject",
+      "type": "SelectObject*",
+      "value": "002117d6"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWinFont *"
+      }
+    ]
+  },
+  "suspects": []
 }

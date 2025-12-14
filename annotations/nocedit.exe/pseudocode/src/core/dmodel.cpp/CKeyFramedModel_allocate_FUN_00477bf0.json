@@ -1,226 +1,226 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 102, 
-    "pseudocode_lines": 77, 
-    "cross_reference_count": 4, 
-    "global_count": 15, 
-    "total_lines": 264, 
-    "assembly_lines": 187, 
-    "suspect_count": 2, 
+    "assembly_lines": 187,
+    "complexity_score": 98,
+    "cross_reference_count": 4,
+    "function_call_count": 3,
+    "global_count": 15,
+    "pseudocode_lines": 73,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690", 
-      "addr": "00477690"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
-      "addr": "0050f1f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f5c3", 
-      "addr": "0061f5c3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_materials_0061f5d6", 
-      "addr": "0061f5d6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f5ea", 
-      "addr": "0061f5ea", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_parts_0061f5fd", 
-      "addr": "0061f5fd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f60d", 
-      "addr": "0061f60d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f620", 
-      "addr": "0061f620", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f633", 
-      "addr": "0061f633", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f646", 
-      "addr": "0061f646", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f659", 
-      "addr": "0061f659", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_in_CKeyFra_0061f66c", 
-      "addr": "0061f66c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f6c5", 
-      "addr": "0061f6c5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f6d8", 
-      "addr": "0061f6d8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_for_vertex_0061f6eb", 
-      "addr": "0061f6eb", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->frame_count = in_stack_0000001c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00477bf0", 
-    "signature": "void core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedModel * this_ptr, int vertex_count, int poly_count, int texture_count, int part_count, int frame_count)", 
-    "address_range": [
-      [
-        "00477bf0", 
-        "00477e56"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_count"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "poly_count"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "texture_count"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "part_count"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "frame_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    ],
+    "total_lines": 260
+  },
   "cross_references": [
     {
-      "from_addr": "0047ea4e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10", 
-      "addr": "0047ea10"
-    }, 
+      "addr": "0047ea10",
+      "from_addr": "0047ea4e",
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004794f3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
-      "addr": "00479330"
-    }, 
+      "addr": "00479330",
+      "from_addr": "004794f3",
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00476fdf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20", 
-      "addr": "00476f20"
-    }, 
+      "addr": "00476f20",
+      "from_addr": "00476fdf",
+      "name": "core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004771f4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110", 
-      "addr": "00477110"
+      "addr": "00477110",
+      "from_addr": "004771f4",
+      "name": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00477bf0",
+    "address_range": [
+      [
+        "00477bf0",
+        "00477e56"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0",
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedModel * this_ptr, int vertex_count, int poly_count, int texture_count, int part_count, int frame_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00477690",
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f1f0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061f5c3",
+      "name": "s_core_dmodel_cpp_0061f5c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f5d6",
+      "name": "s_Too_many_materials_0061f5d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f5ea",
+      "name": "s_core_dmodel_cpp_0061f5ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f5fd",
+      "name": "s_Too_many_parts_0061f5fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f60d",
+      "name": "s_core_dmodel_cpp_0061f60d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f620",
+      "name": "s_core_dmodel_cpp_0061f620",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f633",
+      "name": "s_core_dmodel_cpp_0061f633",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f646",
+      "name": "s_core_dmodel_cpp_0061f646",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f659",
+      "name": "s_core_dmodel_cpp_0061f659",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f66c",
+      "name": "s_Out_of_memory_in_CKeyFra_0061f66c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f6c5",
+      "name": "s_core_dmodel_cpp_0061f6c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f6d8",
+      "name": "s_core_dmodel_cpp_0061f6d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f6eb",
+      "name": "s_Out_of_memory_for_vertex_0061f6eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "poly_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "texture_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "part_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "frame_count",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000001c",
+      "text": "this_ptr->frame_count = in_stack_0000001c;",
+      "type": "stack_param"
     }
   ]
 }

@@ -1,88 +1,88 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 33, 
-    "assembly_lines": 20, 
-    "suspect_count": 2, 
+    "assembly_lines": 20,
+    "complexity_score": 38,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000014;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (pCVar1 != in_stack_00000014) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040d000", 
-    "signature": "void core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000(CDemonActor * this_ptr, CDemonActor * deleted_actor)", 
-    "address_range": [
-      [
-        "0040d000", 
-        "0040d030"
-      ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "deleted_actor"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 33
+  },
   "cross_references": [
     {
-      "from_addr": "0042f8ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042f8a0", 
-      "addr": "0042f8a0"
-    }, 
+      "addr": "0042f8a0",
+      "from_addr": "0042f8ac",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042f8a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005babfa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stairs.cpp_FUN_005babf0", 
-      "addr": "005babf0"
-    }, 
+      "addr": "005babf0",
+      "from_addr": "005babfa",
+      "name": "core_stairs.cpp_FUN_005babf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005dab7b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_teleport.cpp_CTeleport_FUN_005dab70", 
-      "addr": "005dab70"
+      "addr": "005dab70",
+      "from_addr": "005dab7b",
+      "name": "core_teleport.cpp_CTeleport_FUN_005dab70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040d000",
+    "address_range": [
+      [
+        "0040d000",
+        "0040d030"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000",
+    "signature": "void core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000(CDemonActor * this_ptr, CDemonActor * deleted_actor)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "deleted_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000014",
+      "text": "CDemonActor *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000014",
+      "text": "if (pCVar1 != in_stack_00000014) {",
+      "type": "stack_param"
     }
   ]
 }

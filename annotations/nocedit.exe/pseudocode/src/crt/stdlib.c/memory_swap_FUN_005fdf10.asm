@@ -17,28 +17,28 @@ section .text
     POP ES                              ; 005fdf12
     MOVZX EDX,CL                        ; 005fdf13
     SHR ECX,0x2                         ; 005fdf16
-    JZ 0x005fdf26                       ; 005fdf19 | LAB_005fdf26
-        ;   XREF to: 005fdf26 (CONDITIONAL_JUMP)
+    JZ 0x005fdf26                       ; 005fdf19
+        ;   XREF to: 005fdf26 (CONDITIONAL_JUMP)  ; LAB_005fdf26
     MOV EAX,dword ptr [EDI]             ; 005fdf1b
         ;   Label: LAB_005fdf1b
     XCHG dword ptr [ESI],EAX            ; 005fdf1d
     STOSD ES:EDI                        ; 005fdf1f
     ADD ESI,0x4                         ; 005fdf20
     DEC ECX                             ; 005fdf23
-    JNZ 0x005fdf1b                      ; 005fdf24 | LAB_005fdf1b
-        ;   XREF to: 005fdf1b (CONDITIONAL_JUMP)
+    JNZ 0x005fdf1b                      ; 005fdf24
+        ;   XREF to: 005fdf1b (CONDITIONAL_JUMP)  ; LAB_005fdf1b
     AND DL,0x3                          ; 005fdf26
         ;   Label: LAB_005fdf26
-    JZ 0x005fdf34                       ; 005fdf29 | LAB_005fdf34
-        ;   XREF to: 005fdf34 (CONDITIONAL_JUMP)
+    JZ 0x005fdf34                       ; 005fdf29
+        ;   XREF to: 005fdf34 (CONDITIONAL_JUMP)  ; LAB_005fdf34
     MOV AL,byte ptr [EDI]               ; 005fdf2b
         ;   Label: LAB_005fdf2b
     XCHG byte ptr [ESI],AL              ; 005fdf2d
     STOSB ES:EDI                        ; 005fdf2f
     INC ESI                             ; 005fdf30
     DEC EDX                             ; 005fdf31
-    JNZ 0x005fdf2b                      ; 005fdf32 | LAB_005fdf2b
-        ;   XREF to: 005fdf2b (CONDITIONAL_JUMP)
+    JNZ 0x005fdf2b                      ; 005fdf32
+        ;   XREF to: 005fdf2b (CONDITIONAL_JUMP)  ; LAB_005fdf2b
     POP ES                              ; 005fdf34
         ;   Label: LAB_005fdf34
     RET                                 ; 005fdf35

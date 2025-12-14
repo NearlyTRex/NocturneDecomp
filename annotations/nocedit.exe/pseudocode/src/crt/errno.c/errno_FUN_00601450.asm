@@ -27,7 +27,7 @@
 
 section .text
 
-    CALL dword ptr [0x00684ee4]         ; 00601450 | GET_TLS_FUNC * PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
+    CALL dword ptr [0x00684ee4]         ; 00601450 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
         ;   Label: crt_errno.c_errno_FUN_00601450
     ADD EAX,0x4                         ; 00601456
     RET                                 ; 00601459

@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 35, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 34, 
-    "assembly_lines": 24, 
-    "suspect_count": 2, 
+    "assembly_lines": 24,
+    "complexity_score": 35,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 10,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return (in_stack_0000001c - (int)this_ptr->vertex_data) / 0x38;"
-    }
-  ], 
+    ],
+    "total_lines": 34
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005d32e0", 
-    "signature": "int shape_superopt.cpp_CObj_findVertexIndex_FUN_005d32e0(CObj * this_ptr, CVert * vertex_ptr)", 
+    "address": "005d32e0",
     "address_range": [
       [
-        "005d32e0", 
+        "005d32e0",
         "005d3313"
       ]
-    ], 
-    "name": "shape_superopt.cpp_CObj_findVertexIndex_FUN_005d32e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CObj_findVertexIndex_FUN_005d32e0",
+    "signature": "int shape_superopt.cpp_CObj_findVertexIndex_FUN_005d32e0(CObj * this_ptr, CVert * vertex_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CObj *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVert *", 
-        "size": 4, 
-        "name": "vertex_ptr"
+        "is_param": true,
+        "name": "vertex_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVert *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000001c",
+      "text": "return (in_stack_0000001c - (int)this_ptr->vertex_data) / 0x38;",
+      "type": "stack_param"
+    }
+  ]
 }

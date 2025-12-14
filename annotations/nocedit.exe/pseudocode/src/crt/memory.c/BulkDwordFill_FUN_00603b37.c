@@ -25,7 +25,7 @@ void crt_memory_c_BulkDwordFill_FUN_00603b37(void *dest,uint replicated_value,ui
       iVar2 = (in_ECX >> 2) - 1;
       if (iVar2 != 0) {
         do {
-          puVar1 = (uint *)dest;
+          puVar1 = dest;
           *puVar1 = replicated_value;
           puVar1[1] = replicated_value;
           puVar1[2] = replicated_value;

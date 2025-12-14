@@ -31,8 +31,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x204]     ; 00449f1b
     XOR EDI,EDI                         ; 00449f21
     TEST EDX,EDX                        ; 00449f23
-    JLE 0x00449f9c                      ; 00449f25 | LAB_00449f9c
-        ;   XREF to: 00449f9c (CONDITIONAL_JUMP)
+    JLE 0x00449f9c                      ; 00449f25
+        ;   XREF to: 00449f9c (CONDITIONAL_JUMP)  ; LAB_00449f9c
     MOV EBP,dword ptr [ESP + 0x34]      ; 00449f27
     ADD EAX,0x208                       ; 00449f2b
     MOV EBX,dword ptr [ESP + 0x34]      ; 00449f30
@@ -61,20 +61,20 @@ section .text
     FSUB float ptr [EBP + 0x8]          ; 00449f76
     PUSH EDX                            ; 00449f79
     FSTP float ptr [ESP + 0x14]         ; 00449f7a
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 00449f7e | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030 ; 00449f7e
+        ;   XREF to: 00472030 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)
     ADD ESP,0xc                         ; 00449f83
     CMP ESI,EAX                         ; 00449f86
-    JNZ 0x00449fa4                      ; 00449f88 | LAB_00449fa4
-        ;   XREF to: 00449fa4 (CONDITIONAL_JUMP)
+    JNZ 0x00449fa4                      ; 00449f88
+        ;   XREF to: 00449fa4 (CONDITIONAL_JUMP)  ; LAB_00449fa4
     MOV EAX,dword ptr [ESP + 0x34]      ; 00449f8a
         ;   Label: LAB_00449f8a
     INC EDI                             ; 00449f8e
     MOV ECX,dword ptr [EAX + 0x204]     ; 00449f8f
     ADD EBX,0x74                        ; 00449f95
     CMP EDI,ECX                         ; 00449f98
-    JL 0x00449f4c                       ; 00449f9a | LAB_00449f4c
-        ;   XREF to: 00449f4c (CONDITIONAL_JUMP)
+    JL 0x00449f4c                       ; 00449f9a
+        ;   XREF to: 00449f4c (CONDITIONAL_JUMP)  ; LAB_00449f4c
     ADD ESP,0x20                        ; 00449f9c
         ;   Label: LAB_00449f9c
     POP EBP                             ; 00449f9f
@@ -89,6 +89,6 @@ section .text
     MOV dword ptr [ESI + 0x4],EDX       ; 00449fab
     MOV EDX,dword ptr [EAX + 0x8]       ; 00449fae
     MOV dword ptr [ESI + 0x8],EDX       ; 00449fb1
-    JMP 0x00449f8a                      ; 00449fb4 | LAB_00449f8a
-        ;   XREF to: 00449f8a (UNCONDITIONAL_JUMP)
+    JMP 0x00449f8a                      ; 00449fb4
+        ;   XREF to: 00449f8a (UNCONDITIONAL_JUMP)  ; LAB_00449f8a
 

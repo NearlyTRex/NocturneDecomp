@@ -1,84 +1,90 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 19, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 55, 
-    "assembly_lines": 36, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_fr46_03d_raw_00629f33", 
-      "addr": "00629f33", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "SMRGLTextureBasic[20]", 
-      "name": "g_GunFlameTextures", 
-      "addr": "02d13cd4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d13cdc", 
-      "addr": "02d13cdc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d13cf4", 
-      "addr": "02d13cf4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c4d50", 
-    "signature": "void core_fire.cpp_loadGunFlameTextures_FUN_004c4d50(void)", 
-    "address_range": [
-      [
-        "004c4d50", 
-        "004c4d9a"
-      ]
-    ], 
-    "name": "core_fire.cpp_loadGunFlameTextures_FUN_004c4d50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 36,
+    "complexity_score": 19,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
+  },
   "cross_references": [
     {
-      "from_addr": "004c7b01", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0", 
-      "addr": "004c7ab0"
+      "addr": "004c7ab0",
+      "from_addr": "004c7b01",
+      "name": "core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c4d50",
+    "address_range": [
+      [
+        "004c4d50",
+        "004c4d9a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_loadGunFlameTextures_FUN_004c4d50",
+    "signature": "void core_fire.cpp_loadGunFlameTextures_FUN_004c4d50(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00629f33",
+      "name": "s_fr46_03d_raw_00629f33",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d13cd4",
+      "name": "g_GunFlameTextures",
+      "type": "SMRGLTextureBasic[20]",
+      "value": null
+    },
+    {
+      "addr": "02d13cdc",
+      "name": "DAT_02d13cdc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d13cf4",
+      "name": "DAT_02d13cf4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

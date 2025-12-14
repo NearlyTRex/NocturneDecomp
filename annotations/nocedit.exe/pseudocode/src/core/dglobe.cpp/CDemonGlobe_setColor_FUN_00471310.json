@@ -1,180 +1,180 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 129, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 7, 
-    "global_count": 1, 
-    "total_lines": 59, 
-    "assembly_lines": 35, 
-    "suspect_count": 10, 
+    "assembly_lines": 35,
+    "complexity_score": 129,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 24,
+    "suspect_count": 10,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0061ec32", 
-      "addr": "0061ec32", 
-      "value": "256"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 7, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX_00;"
-    }, 
-    {
-      "line": 8, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int *extraout_ECX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX_00;"
-    }, 
-    {
-      "line": 10, 
-      "match": "extraout_ECX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX_01;"
-    }, 
-    {
-      "line": 21, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*extraout_ECX = (int)ROUND(dVar2);"
-    }, 
-    {
-      "line": 22, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)((float10)*(float *)(extraout_EAX + 4) * fVar1));"
-    }, 
-    {
-      "line": 23, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)(extraout_ECX_00 + 4) = (int)ROUND(dVar2);"
-    }, 
-    {
-      "line": 24, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float10)*(float *)(extraout_EAX_00 + 8)));"
-    }, 
-    {
-      "line": 25, 
-      "match": "extraout_ECX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)(extraout_ECX_01 + 8) = (int)ROUND(dVar2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00471310", 
-    "signature": "void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)", 
-    "address_range": [
-      [
-        "00471310", 
-        "0047135c"
-      ]
-    ], 
-    "name": "core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonGlobe *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CColor3f *", 
-        "size": 4, 
-        "name": "color"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 59
+  },
   "cross_references": [
     {
-      "from_addr": "00422b22", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_FUN_00422a50", 
-      "addr": "00422a50"
-    }, 
+      "addr": "00422a50",
+      "from_addr": "00422b22",
+      "name": "core_boxactor.cpp_FUN_00422a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a81a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_emitter.cpp_FUN_004a8070", 
-      "addr": "004a8070"
-    }, 
+      "addr": "004a8070",
+      "from_addr": "004a81a5",
+      "name": "core_emitter.cpp_FUN_004a8070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c0b99", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireball_process_FUN_004c0b30", 
-      "addr": "004c0b30"
-    }, 
+      "addr": "004c0b30",
+      "from_addr": "004c0b99",
+      "name": "core_fire.cpp_CFireball_process_FUN_004c0b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c1953", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_FUN_004c1940", 
-      "addr": "004c1940"
-    }, 
+      "addr": "004c1940",
+      "from_addr": "004c1953",
+      "name": "core_fire.cpp_FUN_004c1940",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004caddc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flamecan.cpp_FUN_004cad90", 
-      "addr": "004cad90"
-    }, 
+      "addr": "004cad90",
+      "from_addr": "004caddc",
+      "name": "core_flamecan.cpp_FUN_004cad90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00501740", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_keyactor.cpp_FUN_00501710", 
-      "addr": "00501710"
-    }, 
+      "addr": "00501710",
+      "from_addr": "00501740",
+      "name": "core_keyactor.cpp_FUN_00501710",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ee5e0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_weapon.cpp_CWeapon_FUN_005ee4a0", 
-      "addr": "005ee4a0"
+      "addr": "005ee4a0",
+      "from_addr": "005ee5e0",
+      "name": "core_weapon.cpp_CWeapon_FUN_005ee4a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00471310",
+    "address_range": [
+      [
+        "00471310",
+        "0047135c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310",
+    "signature": "void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061ec32",
+      "name": "DOUBLE_0061ec32",
+      "type": "double",
+      "value": "256"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonGlobe *"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 8,
+        "size": 4,
+        "type": "CColor3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX_00",
+      "text": "int extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX",
+      "text": "int *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_ECX_00",
+      "text": "int extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_ECX_01",
+      "text": "int extraout_ECX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_ECX",
+      "text": "*extraout_ECX = (int)ROUND(dVar2);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_EAX",
+      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)((float10)*(float *)(extraout_EAX + 4) * fVar1));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 23,
+      "match": "extraout_ECX_00",
+      "text": "*(int *)(extraout_ECX_00 + 4) = (int)ROUND(dVar2);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_EAX_00",
+      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float10)*(float *)(extraout_EAX_00 + 8)));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_ECX_01",
+      "text": "*(int *)(extraout_ECX_01 + 8) = (int)ROUND(dVar2);",
+      "type": "extra_output"
     }
   ]
 }

@@ -41,7 +41,7 @@ void __cdecl core_main_c_showPromoScreen_FUN_00508340(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar4 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     g_GlobalDeltaTimeInt = (iVar4 - iVar3) / 0x12;
-    if (g_GlobalDeltaTimeInt < 0) {
+    if (0x7fffffff < (uint)g_GlobalDeltaTimeInt) {
       g_GlobalDeltaTimeInt = 0;
     }
     if (0x4000 < g_GlobalDeltaTimeInt) {

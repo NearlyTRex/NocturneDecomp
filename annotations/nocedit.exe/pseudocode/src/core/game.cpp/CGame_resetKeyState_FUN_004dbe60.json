@@ -1,311 +1,311 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 353, 
-    "pseudocode_lines": 93, 
-    "cross_reference_count": 5, 
-    "global_count": 7, 
-    "total_lines": 440, 
-    "assembly_lines": 347, 
-    "suspect_count": 25, 
+    "assembly_lines": 347,
+    "complexity_score": 353,
+    "cross_reference_count": 5,
+    "function_call_count": 3,
+    "global_count": 7,
+    "pseudocode_lines": 93,
+    "suspect_count": 25,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_keys.cpp_CKeys_clearKeyPressState_FUN_005024a0", 
-      "addr": "005024a0"
-    }, 
-    {
-      "name": "engine_keys.cpp_CKeys_setKeyAsPressed_FUN_00502490", 
-      "addr": "00502490"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getJoystickState_FUN_005f43a0", 
-      "addr": "005f43a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CKeys*", 
-      "name": "g_CKeysPtr", 
-      "addr": "0067cf44", 
-      "value": "02dcd7d4"
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_JoyXPos", 
-      "addr": "02d051f8", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_JoyYPos", 
-      "addr": "02d051fc", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_JoyButtons", 
-      "addr": "02d05208", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_JoyButtons+1", 
-      "addr": "02d05209", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_JoystickPresent", 
-      "addr": "02d0520c", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CKeysPtr", 
-      "addr": "02dcd7d4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EBP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EDI;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 16, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EBP & 1) == 0) {"
-    }, 
-    {
-      "line": 22, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EDI & 2) == 0) {"
-    }, 
-    {
-      "line": 28, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EDI & 4) == 0) {"
-    }, 
-    {
-      "line": 34, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EDI & 8) == 0) {"
-    }, 
-    {
-      "line": 40, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EDI & 0x10) == 0) {"
-    }, 
-    {
-      "line": 46, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EDI & 0x20) == 0) {"
-    }, 
-    {
-      "line": 52, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EDI & 0x40) == 0) {"
-    }, 
-    {
-      "line": 58, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EDI & 0x80) == 0) {"
-    }, 
-    {
-      "line": 64, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EDI & 0x100) == 0) {"
-    }, 
-    {
-      "line": 70, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "else if ((unaff_EDI & 0x200) == 0) {"
-    }, 
-    {
-      "line": 78, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0xa4) -"
-    }, 
-    {
-      "line": 79, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(int *)(in_stack_00000004 + 0xa4) - *(int *)(in_stack_00000004 + 0xac)) / 2) {"
-    }, 
-    {
-      "line": 79, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(int *)(in_stack_00000004 + 0xa4) - *(int *)(in_stack_00000004 + 0xac)) / 2) {"
-    }, 
-    {
-      "line": 82, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((*(int *)(in_stack_00000004 + 0xb0) - *(int *)(in_stack_00000004 + 0xa4)) / 2 +"
-    }, 
-    {
-      "line": 82, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((*(int *)(in_stack_00000004 + 0xb0) - *(int *)(in_stack_00000004 + 0xa4)) / 2 +"
-    }, 
-    {
-      "line": 83, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0xa4) < (int)g_JoyXPos) {"
-    }, 
-    {
-      "line": 87, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0xa8) -"
-    }, 
-    {
-      "line": 88, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(int *)(in_stack_00000004 + 0xa8) - *(int *)(in_stack_00000004 + 0xb4)) / 2) {"
-    }, 
-    {
-      "line": 88, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(int *)(in_stack_00000004 + 0xa8) - *(int *)(in_stack_00000004 + 0xb4)) / 2) {"
-    }, 
-    {
-      "line": 91, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((*(int *)(in_stack_00000004 + 0xb8) - *(int *)(in_stack_00000004 + 0xa8)) / 2 +"
-    }, 
-    {
-      "line": 91, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((*(int *)(in_stack_00000004 + 0xb8) - *(int *)(in_stack_00000004 + 0xa8)) / 2 +"
-    }, 
-    {
-      "line": 92, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0xa8) < (int)g_JoyYPos) {"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004dbe60", 
-    "signature": "undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()", 
-    "address_range": [
-      [
-        "004dbe60", 
-        "004dc22d"
-      ]
-    ], 
-    "name": "core_game.cpp_CGame_resetKeyState_FUN_004dbe60"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "unaffected_reg",
+      "stack_param"
+    ],
+    "total_lines": 440
+  },
   "cross_references": [
     {
-      "from_addr": "004e2ef3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_openSomething_FUN_004e2910", 
-      "addr": "004e2910"
-    }, 
+      "addr": "004e2910",
+      "from_addr": "004e2ef3",
+      "name": "core_game.cpp_CGame_openSomething_FUN_004e2910",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004dc236", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CallToJoystickStuff_FUN_004dc230", 
-      "addr": "004dc230"
-    }, 
+      "addr": "004dc230",
+      "from_addr": "004dc236",
+      "name": "core_game.cpp_CallToJoystickStuff_FUN_004dc230",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005105a8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0", 
-      "addr": "005104d0"
-    }, 
+      "addr": "005104d0",
+      "from_addr": "005105a8",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00514ac4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0", 
-      "addr": "005138e0"
-    }, 
+      "addr": "005138e0",
+      "from_addr": "00514ac4",
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00513896", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_getSinglePressedKey_FUN_00513860", 
-      "addr": "00513860"
+      "addr": "00513860",
+      "from_addr": "00513896",
+      "name": "core_menu.cpp_getSinglePressedKey_FUN_00513860",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dbe60",
+    "address_range": [
+      [
+        "004dbe60",
+        "004dc22d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_CGame_resetKeyState_FUN_004dbe60",
+    "signature": "undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()"
+  },
+  "function_calls": [
+    {
+      "addr": "005024a0",
+      "name": "engine_keys.cpp_CKeys_clearKeyPressState_FUN_005024a0"
+    },
+    {
+      "addr": "00502490",
+      "name": "engine_keys.cpp_CKeys_setKeyAsPressed_FUN_00502490"
+    },
+    {
+      "addr": "005f43a0",
+      "name": "wincore_winrun.cpp_getJoystickState_FUN_005f43a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "02d051f8",
+      "name": "g_JoyXPos",
+      "type": "DWORD",
+      "value": null
+    },
+    {
+      "addr": "02d051fc",
+      "name": "g_JoyYPos",
+      "type": "DWORD",
+      "value": null
+    },
+    {
+      "addr": "02d05208",
+      "name": "g_JoyButtons",
+      "type": "DWORD",
+      "value": null
+    },
+    {
+      "addr": "02d05209",
+      "name": "g_JoyButtons+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0520c",
+      "name": "g_JoystickPresent",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysPtr",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBP",
+      "text": "uint unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "text": "uint unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "text": "else if ((unaff_EBP & 1) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EDI",
+      "text": "else if ((unaff_EDI & 2) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EDI",
+      "text": "else if ((unaff_EDI & 4) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EDI",
+      "text": "else if ((unaff_EDI & 8) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_EDI",
+      "text": "else if ((unaff_EDI & 0x10) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_EDI",
+      "text": "else if ((unaff_EDI & 0x20) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_EDI",
+      "text": "else if ((unaff_EDI & 0x40) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 58,
+      "match": "unaff_EDI",
+      "text": "else if ((unaff_EDI & 0x80) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 64,
+      "match": "unaff_EDI",
+      "text": "else if ((unaff_EDI & 0x100) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 70,
+      "match": "unaff_EDI",
+      "text": "else if ((unaff_EDI & 0x200) == 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0xa4) -",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_00000004",
+      "text": "(*(int *)(in_stack_00000004 + 0xa4) - *(int *)(in_stack_00000004 + 0xac)) / 2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_00000004",
+      "text": "(*(int *)(in_stack_00000004 + 0xa4) - *(int *)(in_stack_00000004 + 0xac)) / 2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000004",
+      "text": "if ((*(int *)(in_stack_00000004 + 0xb0) - *(int *)(in_stack_00000004 + 0xa4)) / 2 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000004",
+      "text": "if ((*(int *)(in_stack_00000004 + 0xb0) - *(int *)(in_stack_00000004 + 0xa4)) / 2 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0xa4) < (int)g_JoyXPos) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0xa8) -",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_00000004",
+      "text": "(*(int *)(in_stack_00000004 + 0xa8) - *(int *)(in_stack_00000004 + 0xb4)) / 2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_00000004",
+      "text": "(*(int *)(in_stack_00000004 + 0xa8) - *(int *)(in_stack_00000004 + 0xb4)) / 2) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_00000004",
+      "text": "if ((*(int *)(in_stack_00000004 + 0xb8) - *(int *)(in_stack_00000004 + 0xa8)) / 2 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_00000004",
+      "text": "if ((*(int *)(in_stack_00000004 + 0xb8) - *(int *)(in_stack_00000004 + 0xa8)) / 2 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 92,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0xa8) < (int)g_JoyYPos) {",
+      "type": "stack_param"
     }
   ]
 }

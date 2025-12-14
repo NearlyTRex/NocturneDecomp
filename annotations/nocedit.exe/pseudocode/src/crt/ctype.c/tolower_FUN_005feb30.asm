@@ -25,11 +25,11 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005feb30
         ;   Label: crt_ctype.c_tolower_FUN_005feb30
     CMP EAX,0x41                        ; 005feb34
-    JL 0x005feb41                       ; 005feb37 | LAB_005feb41
-        ;   XREF to: 005feb41 (CONDITIONAL_JUMP)
+    JL 0x005feb41                       ; 005feb37
+        ;   XREF to: 005feb41 (CONDITIONAL_JUMP)  ; LAB_005feb41
     CMP EAX,0x5a                        ; 005feb39
-    JG 0x005feb41                       ; 005feb3c | LAB_005feb41
-        ;   XREF to: 005feb41 (CONDITIONAL_JUMP)
+    JG 0x005feb41                       ; 005feb3c
+        ;   XREF to: 005feb41 (CONDITIONAL_JUMP)  ; LAB_005feb41
     ADD EAX,0x20                        ; 005feb3e
     RET                                 ; 005feb41
         ;   Label: LAB_005feb41

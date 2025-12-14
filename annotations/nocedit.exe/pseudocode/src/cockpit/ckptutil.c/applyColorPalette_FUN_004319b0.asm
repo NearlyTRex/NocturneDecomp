@@ -22,8 +22,8 @@ section .text
     PUSH EBP                            ; 00431831
     MOV EBX,dword ptr [ESP + 0x10]      ; 00431832
     TEST EBX,EBX                        ; 00431836
-    JNZ 0x0043183d                      ; 00431838 | LAB_0043183d
-        ;   XREF to: 0043183d (CONDITIONAL_JUMP)
+    JNZ 0x0043183d                      ; 00431838
+        ;   XREF to: 0043183d (CONDITIONAL_JUMP)  ; LAB_0043183d
     POP EBP                             ; 0043183a
     POP EBX                             ; 0043183b
     RET                                 ; 0043183c
@@ -35,8 +35,8 @@ section .text
     PUSH EBX                            ; 00431844
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00431845
     PUSH ECX                            ; 00431849
-    CALL cockpit_ckptutil.c_readBitmapFile_FUN_00431870 ; 0043184a | void * cockpit_ckptutil.c_readBitmapFile_FUN_00431870(char * filename, void * buffer, int size)
-        ;   XREF to: 00431870 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_readBitmapFile_FUN_00431870 ; 0043184a
+        ;   XREF to: 00431870 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_readBitmapFile_FUN_00431870(char * filename, void * buffer, int size)
     ADD ESP,0xc                         ; 0043184f
     MOV ESI,dword ptr [ESP + 0x20]      ; 00431852
     PUSH ESI                            ; 00431856
@@ -45,8 +45,8 @@ section .text
     PUSH EBX                            ; 0043185c
     MOV EBP,dword ptr [ESP + 0x20]      ; 0043185d
     PUSH EBP                            ; 00431861
-    CALL cockpit_ckptutil.c_applyActPalette_FUN_004319b0 ; 00431862 | void cockpit_ckptutil.c_applyActPalette_FUN_004319b0(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)
-        ;   XREF to: 004319b0 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_applyActPalette_FUN_004319b0 ; 00431862
+        ;   XREF to: 004319b0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_applyActPalette_FUN_004319b0(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)
     ADD ESP,0x10                        ; 00431867
     POP ESI                             ; 0043186a
     POP EDI                             ; 0043186b

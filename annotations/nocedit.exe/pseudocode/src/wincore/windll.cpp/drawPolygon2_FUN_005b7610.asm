@@ -25,10 +25,10 @@
 
 section .text
 
-    CMP dword ptr [0x02d03e94],0x0      ; 005b7610 | int g_UseExternalRenderer
+    CMP dword ptr [0x02d03e94],0x0      ; 005b7610 | g_UseExternalRenderer
         ;   Label: wincore_windll.cpp_drawPolygon2_FUN_005b7610
-    JNZ 0x005b761c                      ; 005b7617 | LAB_005b761c
-        ;   XREF to: 005b761c (CONDITIONAL_JUMP)
+    JNZ 0x005b761c                      ; 005b7617
+        ;   XREF to: 005b761c (CONDITIONAL_JUMP)  ; LAB_005b761c
     XOR EAX,EAX                         ; 005b7619
     RET                                 ; 005b761b
     PUSH ESI                            ; 005b761c
@@ -40,7 +40,7 @@ section .text
     PUSH EBX                            ; 005b7627
     MOV ESI,dword ptr [ESP + 0x14]      ; 005b7628
     PUSH ESI                            ; 005b762c
-    CALL dword ptr [0x03f6b8cc]         ; 005b762d | APIDLL_drawPolygon2 * g_APIDLL_drawPolygon2
+    CALL dword ptr [0x03f6b8cc]         ; 005b762d | g_APIDLL_drawPolygon2
     ADD ESP,0xc                         ; 005b7633
     POP EBX                             ; 005b7636
     POP ESI                             ; 005b7637

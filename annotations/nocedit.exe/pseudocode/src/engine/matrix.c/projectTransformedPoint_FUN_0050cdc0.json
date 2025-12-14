@@ -1,100 +1,83 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 63, 
-    "pseudocode_lines": 38, 
-    "cross_reference_count": 2, 
-    "global_count": 4, 
-    "total_lines": 117, 
-    "assembly_lines": 79, 
-    "suspect_count": 2, 
-    "suspect_types": [
-      "sborrow_artifact"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterXFixed", 
-      "addr": "02d02548", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterYFixed", 
-      "addr": "02d0254c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportRightFixed", 
-      "addr": "02d02550", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportBottomFixed", 
-      "addr": "02d02554", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 21, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "if (SBORROW /* signed borrow */4(iVar3,-iVar2) != iVar3 + iVar2 < 0) {"
-    }, 
-    {
-      "line": 27, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "if (SBORROW /* signed borrow */4(iVar1,-iVar2) != iVar1 + iVar2 < 0) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0050cdc0", 
-    "signature": "void engine_matrix.c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex * point)", 
-    "address_range": [
-      [
-        "0050cdc0", 
-        "0050ce5d"
-      ]
-    ], 
-    "name": "engine_matrix.c_projectTransformedPoint_FUN_0050cdc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SProjectedVertex *", 
-        "size": 4, 
-        "name": "point"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 79,
+    "complexity_score": 38,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
+  },
   "cross_references": [
     {
-      "from_addr": "00574cd3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0", 
-      "addr": "00574ba0"
-    }, 
+      "addr": "00574ba0",
+      "from_addr": "00574cd3",
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050cdb6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_matrix.c_projectCachedPoint_FUN_0050cda0", 
-      "addr": "0050cda0"
+      "addr": "0050cda0",
+      "from_addr": "0050cdb6",
+      "name": "engine_matrix.c_projectCachedPoint_FUN_0050cda0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0050cdc0",
+    "address_range": [
+      [
+        "0050cdc0",
+        "0050ce5d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_matrix.c_projectTransformedPoint_FUN_0050cdc0",
+    "signature": "void engine_matrix.c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex * point)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d02548",
+      "name": "g_ViewportCenterXFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_ViewportCenterYFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02550",
+      "name": "g_ViewportRightFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02554",
+      "name": "g_ViewportBottomFixed",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "point",
+        "offset": 4,
+        "size": 4,
+        "type": "SProjectedVertex *"
+      }
+    ]
+  },
+  "suspects": []
 }

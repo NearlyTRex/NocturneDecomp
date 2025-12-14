@@ -16,8 +16,8 @@ section .text
         ;   Label: crt_strstream.cpp_strstreambuf_setbuf_FUN_0060ba70
     MOV EDX,dword ptr [ESP + 0xc]       ; 0060ba74
     TEST EDX,EDX                        ; 0060ba78
-    JLE 0x0060ba7f                      ; 0060ba7a | LAB_0060ba7f
-        ;   XREF to: 0060ba7f (CONDITIONAL_JUMP)
+    JLE 0x0060ba7f                      ; 0060ba7a
+        ;   XREF to: 0060ba7f (CONDITIONAL_JUMP)  ; LAB_0060ba7f
     MOV dword ptr [EAX + 0x34],EDX      ; 0060ba7c
     RET                                 ; 0060ba7f
         ;   Label: LAB_0060ba7f

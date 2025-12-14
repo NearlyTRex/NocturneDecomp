@@ -18,9 +18,7 @@ void core_stairs_cpp_FUN_005ba660(void)
   SIntersectXZCylinder *in_stack_00000008;
   
   triangle = (CDemonTriangle *)(in_stack_00000004 + 0x170);
-  for (iVar1 = 0;
-      SBORROW /* signed borrow */4(iVar1,*(int *)(in_stack_00000004 + 0x16c) * 2) !=
-      iVar1 + *(int *)(in_stack_00000004 + 0x16c) * -2 < 0; iVar1 = iVar1 + 1) {
+  for (iVar1 = 0; iVar1 < *(int *)(in_stack_00000004 + 0x16c) * 2; iVar1 = iVar1 + 1) {
     core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(triangle,in_stack_00000008);
     triangle = triangle + 1;
   }

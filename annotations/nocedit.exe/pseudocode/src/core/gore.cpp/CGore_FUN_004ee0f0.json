@@ -1,287 +1,287 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 147, 
-    "pseudocode_lines": 42, 
-    "cross_reference_count": 1, 
-    "global_count": 24, 
-    "total_lines": 154, 
-    "assembly_lines": 112, 
-    "suspect_count": 10, 
+    "assembly_lines": 112,
+    "complexity_score": 147,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 24,
+    "pseudocode_lines": 42,
+    "suspect_count": 10,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062e43a", 
-      "addr": "0062e43a", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0062e442", 
-      "addr": "0062e442", 
-      "value": "1.33300000000000"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873d8", 
-      "addr": "02d873d8", 
-      "value": null
-    }, 
-    {
-      "type": "CBloodSplat[2000]", 
-      "name": "DAT_02d873dc", 
-      "addr": "02d873dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873e0", 
-      "addr": "02d873e0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873e4", 
-      "addr": "02d873e4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873e8", 
-      "addr": "02d873e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873ec", 
-      "addr": "02d873ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d873f0", 
-      "addr": "02d873f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d87424", 
-      "addr": "02d87424", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d87428", 
-      "addr": "02d87428", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d8742c", 
-      "addr": "02d8742c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d87430", 
-      "addr": "02d87430", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d87434", 
-      "addr": "02d87434", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8720", 
-      "addr": "02da8720", 
-      "value": null
-    }, 
-    {
-      "type": "CBloodPool[32]", 
-      "name": "DAT_02da8724", 
-      "addr": "02da8724", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8728", 
-      "addr": "02da8728", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da872c", 
-      "addr": "02da872c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8730", 
-      "addr": "02da8730", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8734", 
-      "addr": "02da8734", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8750", 
-      "addr": "02da8750", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8754", 
-      "addr": "02da8754", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da8758", 
-      "addr": "02da8758", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02da875c", 
-      "addr": "02da875c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004ee0f6", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float *in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint *in_stack_0000000c;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (((ABS(in_stack_00000008[1] - *(float *)(pCVar1->field0_0x0 + 8)) <= (float)0.5"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": ") && (ABS(*in_stack_00000008 - *(float *)(pCVar1->field0_0x0 + 4)) <="
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(ABS(in_stack_00000008[2] - *(float *)(pCVar1->field0_0x0 + 0xc)) <= (float)1.333"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = *(uint *)(pCVar1->field0_0x0 + 0x10);"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(ABS(in_stack_00000008[1] - *(float *)(pCVar2->field0_0x0 + 8)) <= (float)0.5)"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": ") && ((ABS(*in_stack_00000008 - *(float *)(pCVar2->field0_0x0 + 4)) <="
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(ABS(in_stack_00000008[2] - *(float *)(pCVar2->field0_0x0 + 0xc)) <="
-    }, 
-    {
-      "line": 37, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = *(uint *)(pCVar2->field0_0x0 + 0x14);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004ee0f0", 
-    "signature": "int core_gore.cpp_CGore_FUN_004ee0f0(CGore * this_ptr)", 
-    "address_range": [
-      [
-        "004ee0f0", 
-        "004ee1df"
-      ]
-    ], 
-    "name": "core_gore.cpp_CGore_FUN_004ee0f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGore *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 154
+  },
   "cross_references": [
     {
-      "from_addr": "0040caaa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10", 
-      "addr": "0040ca10"
+      "addr": "0040ca10",
+      "from_addr": "0040caaa",
+      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ee0f0",
+    "address_range": [
+      [
+        "004ee0f0",
+        "004ee1df"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_FUN_004ee0f0",
+    "signature": "int core_gore.cpp_CGore_FUN_004ee0f0(CGore * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0062e43a",
+      "name": "DOUBLE_0062e43a",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0062e442",
+      "name": "DOUBLE_0062e442",
+      "type": "double",
+      "value": "1.33300000000000"
+    },
+    {
+      "addr": "02d873d8",
+      "name": "DAT_02d873d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873dc",
+      "name": "DAT_02d873dc",
+      "type": "CBloodSplat[2000]",
+      "value": null
+    },
+    {
+      "addr": "02d873e0",
+      "name": "DAT_02d873e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873e4",
+      "name": "DAT_02d873e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873e8",
+      "name": "DAT_02d873e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873ec",
+      "name": "DAT_02d873ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d873f0",
+      "name": "DAT_02d873f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d87424",
+      "name": "DAT_02d87424",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d87428",
+      "name": "DAT_02d87428",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d8742c",
+      "name": "DAT_02d8742c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d87430",
+      "name": "DAT_02d87430",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d87434",
+      "name": "DAT_02d87434",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8720",
+      "name": "DAT_02da8720",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8724",
+      "name": "DAT_02da8724",
+      "type": "CBloodPool[32]",
+      "value": null
+    },
+    {
+      "addr": "02da8728",
+      "name": "DAT_02da8728",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da872c",
+      "name": "DAT_02da872c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8730",
+      "name": "DAT_02da8730",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8734",
+      "name": "DAT_02da8734",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8750",
+      "name": "DAT_02da8750",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8754",
+      "name": "DAT_02da8754",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da8758",
+      "name": "DAT_02da8758",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02da875c",
+      "name": "DAT_02da875c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004ee0f6",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "float *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "uint *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "if (((ABS(in_stack_00000008[1] - *(float *)(pCVar1->field0_0x0 + 8)) <= (float)0.5",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": ") && (ABS(*in_stack_00000008 - *(float *)(pCVar1->field0_0x0 + 4)) <=",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "(ABS(in_stack_00000008[2] - *(float *)(pCVar1->field0_0x0 + 0xc)) <= (float)1.333",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *(uint *)(pCVar1->field0_0x0 + 0x10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000008",
+      "text": "(ABS(in_stack_00000008[1] - *(float *)(pCVar2->field0_0x0 + 8)) <= (float)0.5)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000008",
+      "text": ") && ((ABS(*in_stack_00000008 - *(float *)(pCVar2->field0_0x0 + 4)) <=",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000008",
+      "text": "(ABS(in_stack_00000008[2] - *(float *)(pCVar2->field0_0x0 + 0xc)) <=",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *(uint *)(pCVar2->field0_0x0 + 0x14);",
+      "type": "stack_param"
     }
   ]
 }

@@ -40,50 +40,50 @@ section .text
     PUSH EBP                            ; 004a0dd0
         ;   Label: shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
     SUB ESP,0x12c0                      ; 004a0dd1
-    CALL shape_edittool.cpp_paintWindowBackground_FUN_0049e590 ; 004a0dd7 | void shape_edittool.cpp_paintWindowBackground_FUN_0049e590()
-        ;   XREF to: 0049e590 (UNCONDITIONAL_CALL)
-    CMP dword ptr [0x02d03e94],0x0      ; 004a0ddc | int g_UseExternalRenderer
-    JZ 0x004a0e79                       ; 004a0de3 | LAB_004a0e79
-        ;   XREF to: 004a0e79 (CONDITIONAL_JUMP)
+    CALL shape_edittool.cpp_paintWindowBackground_FUN_0049e590 ; 004a0dd7
+        ;   XREF to: 0049e590 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_paintWindowBackground_FUN_0049e590()
+    CMP dword ptr [0x02d03e94],0x0      ; 004a0ddc | g_UseExternalRenderer
+    JZ 0x004a0e79                       ; 004a0de3
+        ;   XREF to: 004a0e79 (CONDITIONAL_JUMP)  ; LAB_004a0e79
     PUSH ESI                            ; 004a0de9
     PUSH EBX                            ; 004a0dea
-    MOV ECX,dword ptr [0x00679398]      ; 004a0deb | int g_WindowHeight
+    MOV ECX,dword ptr [0x00679398]      ; 004a0deb | g_WindowHeight
     TEST ECX,ECX                        ; 004a0df1
-    JLE 0x004a0e10                      ; 004a0df3 | LAB_004a0e10
-        ;   XREF to: 004a0e10 (CONDITIONAL_JUMP)
+    JLE 0x004a0e10                      ; 004a0df3
+        ;   XREF to: 004a0e10 (CONDITIONAL_JUMP)  ; LAB_004a0e10
     LEA EBX,[ECX*0x4 + 0x0]             ; 004a0df5
     XOR EAX,EAX                         ; 004a0dfc
     ADD EAX,0x4                         ; 004a0dfe
         ;   Label: LAB_004a0dfe
-    MOV EDX,dword ptr [EAX + 0x2cf6a98] ; 004a0e01 | void *[1024] g_ScreenBufferArray
+    MOV EDX,dword ptr [EAX + 0x2cf6a98] ; 004a0e01 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     MOV dword ptr [ESP + EAX*0x1 + 0x4],EDX ; 004a0e07
     CMP EAX,EBX                         ; 004a0e0b
-    JL 0x004a0dfe                       ; 004a0e0d | LAB_004a0dfe
-        ;   XREF to: 004a0dfe (CONDITIONAL_JUMP)
+    JL 0x004a0dfe                       ; 004a0e0d
+        ;   XREF to: 004a0dfe (CONDITIONAL_JUMP)  ; LAB_004a0dfe
     NOP                                 ; 004a0e0f
-    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 004a0e10 | int wincore_windll.cpp_lockFrame_FUN_005b7210()
+    CALL wincore_windll.cpp_lockFrame_FUN_005b7210 ; 004a0e10
+        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_lockFrame_FUN_005b7210()
         ;   Label: LAB_004a0e10
-        ;   XREF to: 005b7210 (UNCONDITIONAL_CALL)
-    MOV EDX,dword ptr [0x00679394]      ; 004a0e15 | int g_WindowWidth
-    MOV EBX,dword ptr [0x0067939c]      ; 004a0e1b | int g_BitsPerPixel
+    MOV EDX,dword ptr [0x00679394]      ; 004a0e15 | g_WindowWidth
+    MOV EBX,dword ptr [0x0067939c]      ; 004a0e1b | g_BitsPerPixel
     IMUL EDX,EBX                        ; 004a0e21
     MOV EAX,EDX                         ; 004a0e24
     SAR EDX,0x1f                        ; 004a0e26
     SHL EDX,0x3                         ; 004a0e29
     SBB EAX,EDX                         ; 004a0e2c
     SAR EAX,0x3                         ; 004a0e2e
-    MOV ESI,dword ptr [0x00679398]      ; 004a0e31 | int g_WindowHeight
+    MOV ESI,dword ptr [0x00679398]      ; 004a0e31 | g_WindowHeight
     XOR EBX,EBX                         ; 004a0e37
     MOV EBP,EAX                         ; 004a0e39
     TEST ESI,ESI                        ; 004a0e3b
-    JLE 0x004a0e6d                      ; 004a0e3d | LAB_004a0e6d
-        ;   XREF to: 004a0e6d (CONDITIONAL_JUMP)
+    JLE 0x004a0e6d                      ; 004a0e3d
+        ;   XREF to: 004a0e6d (CONDITIONAL_JUMP)  ; LAB_004a0e6d
     PUSH EDI                            ; 004a0e3f
     XOR EDX,EDX                         ; 004a0e40
     MOV ECX,EBP                         ; 004a0e42
         ;   Label: LAB_004a0e42
     MOV ESI,dword ptr [ESP + EDX*0x1 + 0xc] ; 004a0e44
-    MOV EDI,dword ptr [EDX + 0x2cf6a9c] ; 004a0e48 | void *[1024] g_ScreenBufferArray
+    MOV EDI,dword ptr [EDX + 0x2cf6a9c] ; 004a0e48 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     PUSH EDI                            ; 004a0e4e
     MOV EAX,ECX                         ; 004a0e4f
     SHR ECX,0x2                         ; 004a0e51
@@ -93,24 +93,24 @@ section .text
     MOVSB.REP ES:EDI,ESI                ; 004a0e5b
     POP EDI                             ; 004a0e5d
     INC EBX                             ; 004a0e5e
-    MOV EDI,dword ptr [0x00679398]      ; 004a0e5f | int g_WindowHeight
+    MOV EDI,dword ptr [0x00679398]      ; 004a0e5f | g_WindowHeight
     ADD EDX,0x4                         ; 004a0e65
     CMP EBX,EDI                         ; 004a0e68
-    JL 0x004a0e42                       ; 004a0e6a | LAB_004a0e42
-        ;   XREF to: 004a0e42 (CONDITIONAL_JUMP)
+    JL 0x004a0e42                       ; 004a0e6a
+        ;   XREF to: 004a0e42 (CONDITIONAL_JUMP)  ; LAB_004a0e42
     POP EDI                             ; 004a0e6c
     PUSH 0x1                            ; 004a0e6d
         ;   Label: LAB_004a0e6d
-    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 004a0e6f | void wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 004a0e6f
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 004a0e74
     POP EBX                             ; 004a0e77
     POP ESI                             ; 004a0e78
     MOV EBP,dword ptr [ESP + 0x12c8]    ; 004a0e79
         ;   Label: LAB_004a0e79
     PUSH EBP                            ; 004a0e80
-    CALL shape_edittool.cpp_CEditorTools_popWindowState_FUN_004a0ea0 ; 004a0e81 | void shape_edittool.cpp_CEditorTools_popWindowState_FUN_004a0ea0(CEditorTools * this_ptr)
-        ;   XREF to: 004a0ea0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEditorTools_popWindowState_FUN_004a0ea0 ; 004a0e81
+        ;   XREF to: 004a0ea0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_popWindowState_FUN_004a0ea0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004a0e86
     ADD ESP,0x12c0                      ; 004a0e89
     POP EBP                             ; 004a0e8f

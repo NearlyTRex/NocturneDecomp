@@ -20,13 +20,13 @@ section .text
 
     CMP dword ptr [ESP + 0x8],0x0       ; 005024b0
         ;   Label: engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0
-    JZ 0x005024c3                       ; 005024b5 | LAB_005024c3
-        ;   XREF to: 005024c3 (CONDITIONAL_JUMP)
+    JZ 0x005024c3                       ; 005024b5
+        ;   XREF to: 005024c3 (CONDITIONAL_JUMP)  ; LAB_005024c3
     MOV EDX,0x1ff                       ; 005024b7
-    MOV dword ptr [0x006793a8],EDX      ; 005024bc | int g_InputKeyMask
+    MOV dword ptr [0x006793a8],EDX      ; 005024bc | g_InputKeyMask
     RET                                 ; 005024c2
     MOV EDX,0x7f                        ; 005024c3
         ;   Label: LAB_005024c3
-    MOV dword ptr [0x006793a8],EDX      ; 005024c8 | int g_InputKeyMask
+    MOV dword ptr [0x006793a8],EDX      ; 005024c8 | g_InputKeyMask
     RET                                 ; 005024ce
 

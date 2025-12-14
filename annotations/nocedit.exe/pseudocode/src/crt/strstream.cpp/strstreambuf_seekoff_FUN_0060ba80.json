@@ -1,180 +1,180 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 208, 
-    "pseudocode_lines": 48, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 161, 
-    "assembly_lines": 113, 
-    "suspect_count": 15, 
+    "assembly_lines": 113,
+    "complexity_score": 208,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 48,
+    "suspect_count": 15,
     "suspect_types": [
-      "unknown_field", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_iostream.cpp_validateBufferSeek_FUN_0060d725", 
-      "addr": "0060d725"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "int in_ECX;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_0060d725"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "if (in_ECX != -1) {"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "pcVar2 = (this_ptr->streambuf).__get_base + in_ECX;"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_0060d725"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(this_ptr->streambuf).__put_ptr,pcVar3,pcVar3), in_ECX != -1)) {"
-    }, 
-    {
-      "line": 38, 
-      "match": "._0_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar1._0_2_ = this_ptr->__minbuf_size;"
-    }, 
-    {
-      "line": 39, 
-      "match": "._2_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar1._2_1_ = this_ptr->__bit_flags;"
-    }, 
-    {
-      "line": 40, 
-      "match": "._3_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar1._3_1_ = this_ptr->padding;"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "(this_ptr->streambuf).__put_ptr = (this_ptr->streambuf).__put_ptr + in_ECX;"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "if (iVar1 < in_ECX) {"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "this_ptr->__minbuf_size = (short)in_ECX;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "this_ptr->__bit_flags = (char)((uint)in_ECX >> 0x10);"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "this_ptr->padding = (char)((uint)in_ECX >> 0x18);"
-    }, 
-    {
-      "line": 48, 
-      "match": "in_ECX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "return in_ECX;"
-    }
-  ], 
+      "register_param",
+      "unknown_field"
+    ],
+    "total_lines": 161
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__watcallStack", 
-    "address": "0060ba80", 
-    "signature": "int crt_strstream.cpp_strstreambuf_seekoff_FUN_0060ba80(strstreambuf * this_ptr, int seek_distance, int seek_mode, int flags)", 
+    "address": "0060ba80",
     "address_range": [
       [
-        "0060ba80", 
+        "0060ba80",
         "0060bb5e"
       ]
-    ], 
-    "name": "crt_strstream.cpp_strstreambuf_seekoff_FUN_0060ba80"
-  }, 
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_strstream.cpp_strstreambuf_seekoff_FUN_0060ba80",
+    "signature": "int crt_strstream.cpp_strstreambuf_seekoff_FUN_0060ba80(strstreambuf * this_ptr, int seek_distance, int seek_mode, int flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060d725",
+      "name": "crt_iostream.cpp_validateBufferSeek_FUN_0060d725"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "strstreambuf *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "strstreambuf *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "seek_distance"
-      }, 
+        "is_param": true,
+        "name": "seek_distance",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "seek_mode"
-      }, 
+        "is_param": true,
+        "name": "seek_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "flags"
+        "is_param": true,
+        "name": "flags",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ECX",
+      "text": "int in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_ECX",
+      "text": "in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_0060d725",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 21,
+      "match": "in_ECX",
+      "text": "if (in_ECX != -1) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 23,
+      "match": "in_ECX",
+      "text": "pcVar2 = (this_ptr->streambuf).__get_base + in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 33,
+      "match": "in_ECX",
+      "text": "in_ECX = crt_iostream_cpp_validateBufferSeek_FUN_0060d725",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 35,
+      "match": "in_ECX",
+      "text": "(this_ptr->streambuf).__put_ptr,pcVar3,pcVar3), in_ECX != -1)) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 38,
+      "match": "._0_2_",
+      "text": "iVar1._0_2_ = this_ptr->__minbuf_size;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 39,
+      "match": "._2_1_",
+      "text": "iVar1._2_1_ = this_ptr->__bit_flags;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._3_1_",
+      "text": "iVar1._3_1_ = this_ptr->padding;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 41,
+      "match": "in_ECX",
+      "text": "(this_ptr->streambuf).__put_ptr = (this_ptr->streambuf).__put_ptr + in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 42,
+      "match": "in_ECX",
+      "text": "if (iVar1 < in_ECX) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 43,
+      "match": "in_ECX",
+      "text": "this_ptr->__minbuf_size = (short)in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 44,
+      "match": "in_ECX",
+      "text": "this_ptr->__bit_flags = (char)((uint)in_ECX >> 0x10);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 45,
+      "match": "in_ECX",
+      "text": "this_ptr->padding = (char)((uint)in_ECX >> 0x18);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 48,
+      "match": "in_ECX",
+      "text": "return in_ECX;",
+      "type": "register_param"
+    }
+  ]
 }

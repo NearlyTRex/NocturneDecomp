@@ -27,25 +27,25 @@ section .text
     MOV EDX,dword ptr [EDI + 0x8]       ; 004fea2c
     XOR EBX,EBX                         ; 004fea2f
     TEST EDX,EDX                        ; 004fea31
-    JLE 0x004fea53                      ; 004fea33 | LAB_004fea53
-        ;   XREF to: 004fea53 (CONDITIONAL_JUMP)
+    JLE 0x004fea53                      ; 004fea33
+        ;   XREF to: 004fea53 (CONDITIONAL_JUMP)  ; LAB_004fea53
     MOV ESI,EDI                         ; 004fea35
     PUSH EBP                            ; 004fea37
         ;   Label: LAB_004fea37
     MOV EAX,dword ptr [ESI + 0xc]       ; 004fea38
     PUSH EAX                            ; 004fea3b
-    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 004fea3c | int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
-        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 004fea3c
+        ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c6d0(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004fea41
     TEST EAX,EAX                        ; 004fea44
-    JNZ 0x004fea5a                      ; 004fea46 | LAB_004fea5a
-        ;   XREF to: 004fea5a (CONDITIONAL_JUMP)
+    JNZ 0x004fea5a                      ; 004fea46
+        ;   XREF to: 004fea5a (CONDITIONAL_JUMP)  ; LAB_004fea5a
     INC EBX                             ; 004fea48
     MOV ECX,dword ptr [EDI + 0x8]       ; 004fea49
     ADD ESI,0x4                         ; 004fea4c
     CMP EBX,ECX                         ; 004fea4f
-    JL 0x004fea37                       ; 004fea51 | LAB_004fea37
-        ;   XREF to: 004fea37 (CONDITIONAL_JUMP)
+    JL 0x004fea37                       ; 004fea51
+        ;   XREF to: 004fea37 (CONDITIONAL_JUMP)  ; LAB_004fea37
     XOR EAX,EAX                         ; 004fea53
         ;   Label: LAB_004fea53
     POP EBP                             ; 004fea55

@@ -95,7 +95,7 @@ section .text
     FSTP double ptr [ESP + 0x8]         ; 005d0dda
     FSTP double ptr [ESP + 0x10]        ; 005d0dde
     MOVSD.REP ES:EDI,ESI                ; 005d0de2
-    FLD double ptr [0x0065430a]         ; 005d0de4 | double DOUBLE_0065430a
+    FLD double ptr [0x0065430a]         ; 005d0de4 | DOUBLE_0065430a
     FLD double ptr [ESP + 0x60]         ; 005d0dea
     FMUL ST1                            ; 005d0dee
     FLD double ptr [ESP + 0x68]         ; 005d0df0

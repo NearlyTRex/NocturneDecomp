@@ -51,44 +51,44 @@ section .text
     LEA EAX,[ESP + 0x70]                ; 0058808b
     PUSH EAX                            ; 0058808f
     PUSH EBX                            ; 00588090
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 00588091 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 00588091
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 00588096
     PUSH EBX                            ; 00588099
-    CALL core_weapon.cpp_FUN_005ee6e0   ; 0058809a | undefined core_weapon.cpp_FUN_005ee6e0()
-        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)
+    CALL core_weapon.cpp_FUN_005ee6e0   ; 0058809a
+        ;   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_005ee6e0()
     ADD ESP,0x4                         ; 0058809f
     TEST EAX,EAX                        ; 005880a2
-    JZ 0x00588398                       ; 005880a4 | LAB_00588398
-        ;   XREF to: 00588398 (CONDITIONAL_JUMP)
+    JZ 0x00588398                       ; 005880a4
+        ;   XREF to: 00588398 (CONDITIONAL_JUMP)  ; LAB_00588398
     FLD float ptr [EBX + 0x578]         ; 005880aa
-    FMUL double ptr [0x00649b27]        ; 005880b0 | double DOUBLE_00649b27
-    FMUL double ptr [0x00649b2f]        ; 005880b6 | double DOUBLE_00649b2f
+    FMUL double ptr [0x00649b27]        ; 005880b0 | DOUBLE_00649b27
+    FMUL double ptr [0x00649b2f]        ; 005880b6 | DOUBLE_00649b2f
     FPTAN                               ; 005880bc
     FSTP ST0                            ; 005880be
     PUSH 0xf                            ; 005880c0
     FMUL float ptr [EBX + 0x2e8]        ; 005880c2
     PUSH 0xa                            ; 005880c8
     FSTP float ptr [ESP + 0xec]         ; 005880ca
-    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 005880d1 | int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
-        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 005880d1
+        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
     ADD ESP,0x8                         ; 005880d6
     XOR ECX,ECX                         ; 005880d9
     MOV dword ptr [ESP + 0xf0],EAX      ; 005880db
     MOV dword ptr [ESP + 0xe8],ECX      ; 005880e2
     TEST EAX,EAX                        ; 005880e9
-    JLE 0x0058830a                      ; 005880eb | LAB_0058830a
-        ;   XREF to: 0058830a (CONDITIONAL_JUMP)
+    JLE 0x0058830a                      ; 005880eb
+        ;   XREF to: 0058830a (CONDITIONAL_JUMP)  ; LAB_0058830a
     PUSH 0x40c90fdb                     ; 005880f1
         ;   Label: LAB_005880f1
     PUSH 0x0                            ; 005880f6
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005880f8 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
-    MOV EAX,[0x006810c8]                ; 0058830a | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 005880f8
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+    MOV EAX,[0x006810c8]                ; 0058830a | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0058830a
-    PUSH EAX                            ; 0058830f | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 00588310 | void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
-        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)
+    PUSH EAX                            ; 0058830f | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 00588310
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00588315
     MOV EAX,dword ptr [ESP + 0x6c]      ; 00588318
     MOV dword ptr [ESP + 0x9c],EAX      ; 0058831c
@@ -97,25 +97,25 @@ section .text
     MOV EAX,dword ptr [ESP + 0x74]      ; 0058832e
     MOV dword ptr [ESP + 0xa4],EAX      ; 00588332
     LEA EAX,[EBX + 0x3c]                ; 00588339
-    MOV EDX,dword ptr [0x0067a3d0]      ; 0058833c | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
+    MOV EDX,dword ptr [0x0067a3d0]      ; 0058833c | g_CFireEffectPtr | g_CFireEffectInstance
     PUSH EAX                            ; 00588342
     LEA EAX,[ESP + 0xa0]                ; 00588343
     FLD float ptr [ESP + 0xa4]          ; 0058834a
     PUSH EAX                            ; 00588351
-    FADD float ptr [0x00649b37]         ; 00588352 | float FLOAT_00649b37
-    PUSH EDX                            ; 00588358 | CFireEffect g_CFireEffectInstance
+    FADD float ptr [0x00649b37]         ; 00588352 | FLOAT_00649b37
+    PUSH EDX                            ; 00588358 | g_CFireEffectInstance
     FSTP float ptr [ESP + 0xac]         ; 00588359
-    CALL core_fire.cpp_CFireEffect_FUN_004c7a60 ; 00588360 | void core_fire.cpp_CFireEffect_FUN_004c7a60(CFireEffect * this_ptr)
-        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_CFireEffect_FUN_004c7a60 ; 00588360
+        ;   XREF to: 004c7a60 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c7a60(CFireEffect * this_ptr)
     ADD ESP,0xc                         ; 00588365
     LEA EAX,[ESP + 0x6c]                ; 00588368
     PUSH EAX                            ; 0058836c
-    PUSH 0x649b1b                       ; 0058836d | = "shotgun.wav" | s_shotgun_wav_00649b1b = shotgun.wav
+    PUSH 0x649b1b                       ; 0058836d | = "shotgun.wav"
     PUSH EBX                            ; 00588372
-    MOV ECX,dword ptr [0x00681ef8]      ; 00588373 | CSound g_CSoundInstance | CSound * g_CSoundPtr
-    PUSH ECX                            ; 00588379 | CSound g_CSoundInstance
-    CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 0058837a | void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
-        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x00681ef8]      ; 00588373 | g_CSoundPtr | g_CSoundInstance
+    PUSH ECX                            ; 00588379 | g_CSoundInstance
+    CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 0058837a
+        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     MOV EAX,0x1                         ; 0058837f
     ADD ESP,0x10                        ; 00588384
     MOV dword ptr [EBX + 0x300],0x3f2a7efa ; 00588387
@@ -128,12 +128,12 @@ section .text
     LEA EAX,[ESP + 0x6c]                ; 00588398
         ;   Label: LAB_00588398
     PUSH EAX                            ; 0058839c
-    PUSH 0x649b08                       ; 0058839d | = "shotgun-noammo.wav" | s_shotgun_noammo_wav_00649b08 = shotgun-noammo.wav
+    PUSH 0x649b08                       ; 0058839d | = "shotgun-noammo.wav"
     PUSH EBX                            ; 005883a2
-    MOV EDX,dword ptr [0x00681ef8]      ; 005883a3 | CSound g_CSoundInstance | CSound * g_CSoundPtr
-    PUSH EDX                            ; 005883a9 | CSound g_CSoundInstance
-    CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 005883aa | void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
-        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x00681ef8]      ; 005883a3 | g_CSoundPtr | g_CSoundInstance
+    PUSH EDX                            ; 005883a9 | g_CSoundInstance
+    CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 005883aa
+        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 005883af
     XOR EAX,EAX                         ; 005883b2
     MOV ESP,EBP                         ; 005883b4

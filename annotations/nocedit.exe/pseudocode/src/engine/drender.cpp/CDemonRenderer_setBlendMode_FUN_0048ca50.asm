@@ -30,8 +30,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0048ca50
         ;   Label: engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50
     PUSH EDX                            ; 0048ca54
-    CALL engine_3d.c_setBlendMode_FUN_00406dd0 ; 0048ca55 | void engine_3d.c_setBlendMode_FUN_00406dd0(int blend_mode)
-        ;   XREF to: 00406dd0 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_setBlendMode_FUN_00406dd0 ; 0048ca55
+        ;   XREF to: 00406dd0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_00406dd0(int blend_mode)
     ADD ESP,0x4                         ; 0048ca5a
     RET                                 ; 0048ca5d
 

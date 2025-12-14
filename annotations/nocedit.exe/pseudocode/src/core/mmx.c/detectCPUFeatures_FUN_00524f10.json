@@ -1,90 +1,90 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 25, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_mmx.c_detectIntelProcessor_FUN_00524f4c", 
-      "addr": "00524f4c"
-    }, 
-    {
-      "name": "core_mmx.c_detectMMXSupport_FUN_00524ff9", 
-      "addr": "00524ff9"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "uint", 
-      "name": "g_CPUFamily", 
-      "addr": "006793b0", 
-      "value": "0x5"
-    }, 
-    {
-      "type": "byte", 
-      "name": "g_CPUInfoFamily", 
-      "addr": "0067d6d8", 
-      "value": "0x96"
-    }, 
-    {
-      "type": "bool", 
-      "name": "g_CPUInfoIntelCPU", 
-      "addr": "0067d6dc", 
-      "value": "False"
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "g_CPUInfoMMXSupported", 
-      "addr": "0067d6e1", 
-      "value": null
-    }, 
-    {
-      "type": "BOOL", 
-      "name": "g_MMXSupported", 
-      "addr": "02d05248", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CPUModel", 
-      "addr": "02d0524c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00524f10", 
-    "signature": "void core_mmx.c_detectCPUFeatures_FUN_00524f10(void)", 
-    "address_range": [
-      [
-        "00524f10", 
-        "00524f40"
-      ]
-    ], 
-    "name": "core_mmx.c_detectCPUFeatures_FUN_00524f10"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 16,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
   "cross_references": [
     {
-      "from_addr": "00507b87", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
+      "addr": "00507a60",
+      "from_addr": "00507b87",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00524f10",
+    "address_range": [
+      [
+        "00524f10",
+        "00524f40"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mmx.c_detectCPUFeatures_FUN_00524f10",
+    "signature": "void core_mmx.c_detectCPUFeatures_FUN_00524f10(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00524f4c",
+      "name": "core_mmx.c_detectIntelProcessor_FUN_00524f4c"
+    },
+    {
+      "addr": "00524ff9",
+      "name": "core_mmx.c_detectMMXSupport_FUN_00524ff9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006793b0",
+      "name": "g_CPUFamily",
+      "type": "uint",
+      "value": "0x5"
+    },
+    {
+      "addr": "0067d6d8",
+      "name": "g_CPUInfoFamily",
+      "type": "byte",
+      "value": "0x96"
+    },
+    {
+      "addr": "0067d6dc",
+      "name": "g_CPUInfoIntelCPU",
+      "type": "bool",
+      "value": "False"
+    },
+    {
+      "addr": "0067d6e1",
+      "name": "g_CPUInfoMMXSupported",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "02d05248",
+      "name": "g_MMXSupported",
+      "type": "BOOL",
+      "value": null
+    },
+    {
+      "addr": "02d0524c",
+      "name": "g_CPUModel",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

@@ -22,14 +22,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0044c3e0
         ;   Label: core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0
     MOV ECX,dword ptr [ESP + 0x8]       ; 0044c3e4
-    MOV dword ptr [0x00823a74],EDX      ; 0044c3e8 | CDemonCamera * g_CurrentSceneCamera
+    MOV dword ptr [0x00823a74],EDX      ; 0044c3e8 | g_CurrentSceneCamera
     TEST ECX,ECX                        ; 0044c3ee
-    JZ 0x0044c3f9                       ; 0044c3f0 | LAB_0044c3f9
-        ;   XREF to: 0044c3f9 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x00902f70],EDX      ; 0044c3f2 | CDemonCamera * g_SkipClearBuffersSceneCamera
+    JZ 0x0044c3f9                       ; 0044c3f0
+        ;   XREF to: 0044c3f9 (CONDITIONAL_JUMP)  ; LAB_0044c3f9
+    MOV dword ptr [0x00902f70],EDX      ; 0044c3f2 | g_SkipClearBuffersSceneCamera
     RET                                 ; 0044c3f8
     XOR EDX,EDX                         ; 0044c3f9
         ;   Label: LAB_0044c3f9
-    MOV dword ptr [0x00902f70],EDX      ; 0044c3fb | CDemonCamera * g_SkipClearBuffersSceneCamera
+    MOV dword ptr [0x00902f70],EDX      ; 0044c3fb | g_SkipClearBuffersSceneCamera
     RET                                 ; 0044c401
 

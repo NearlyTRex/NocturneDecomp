@@ -32,11 +32,11 @@ section .text
         ;   Label: core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0
     MOV EBX,dword ptr [ESP + 0xc]       ; 005b3cc1
     TEST EBX,EBX                        ; 005b3cc5
-    JL 0x005b3cf4                       ; 005b3cc7 | LAB_005b3cf4
-        ;   XREF to: 005b3cf4 (CONDITIONAL_JUMP)
+    JL 0x005b3cf4                       ; 005b3cc7
+        ;   XREF to: 005b3cf4 (CONDITIONAL_JUMP)  ; LAB_005b3cf4
     CMP EBX,0x1b                        ; 005b3cc9
-    JGE 0x005b3cf4                      ; 005b3ccc | LAB_005b3cf4
-        ;   XREF to: 005b3cf4 (CONDITIONAL_JUMP)
+    JGE 0x005b3cf4                      ; 005b3ccc
+        ;   XREF to: 005b3cf4 (CONDITIONAL_JUMP)  ; LAB_005b3cf4
     MOV EAX,EBX                         ; 005b3cce
         ;   Label: LAB_005b3cce
     SHL EAX,0x4                         ; 005b3cd0
@@ -45,20 +45,20 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005b3cdf
     PUSH dword ptr [EAX + 0x681f00]     ; 005b3ce3 | DAT_00681f00
     PUSH EBX                            ; 005b3ce9
-    CALL core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90 ; 005b3cea | void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)
-        ;   XREF to: 005b3c90 (UNCONDITIONAL_CALL)
+    CALL core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90 ; 005b3cea
+        ;   XREF to: 005b3c90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)
     ADD ESP,0x10                        ; 005b3cef
     POP EBX                             ; 005b3cf2
     RET                                 ; 005b3cf3
-    MOV EDX,0x65281b                    ; 005b3cf4 | = "..\\core\\sound.cpp" | s_core_sound_cpp_0065281b = ..\core\sound.cpp
+    MOV EDX,0x65281b                    ; 005b3cf4 | = "..\\core\\sound.cpp"
         ;   Label: LAB_005b3cf4
     MOV ECX,0x402                       ; 005b3cf9
-    PUSH 0x65282d                       ; 005b3cfe | = "CSound::setReverbPreset - invalid index" | s_CSound_setReverbPreset_i_0065282d = CSound::setReverbPreset - invalid index
-    MOV dword ptr [0x02f0ca48],EDX      ; 005b3d03 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 005b3d09 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005b3d0f | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x65282d                       ; 005b3cfe | = "CSound::setReverbPreset - invalid index"
+    MOV dword ptr [0x02f0ca48],EDX      ; 005b3d03 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 005b3d09 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005b3d0f
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005b3d14
-    JMP 0x005b3cce                      ; 005b3d17 | LAB_005b3cce
-        ;   XREF to: 005b3cce (UNCONDITIONAL_JUMP)
+    JMP 0x005b3cce                      ; 005b3d17
+        ;   XREF to: 005b3cce (UNCONDITIONAL_JUMP)  ; LAB_005b3cce
 

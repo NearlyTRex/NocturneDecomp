@@ -32,13 +32,13 @@ section .text
         ;   Label: sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070
     SUB ESP,0x18                        ; 005a7071
     MOV EBX,dword ptr [ESP + 0x20]      ; 005a7074
-    CMP dword ptr [0x03f6940c],0x0      ; 005a7078 | int g_SoundLockCount
-    JLE 0x005a709a                      ; 005a707f | LAB_005a709a
-        ;   XREF to: 005a709a (CONDITIONAL_JUMP)
+    CMP dword ptr [0x03f6940c],0x0      ; 005a7078 | g_SoundLockCount
+    JLE 0x005a709a                      ; 005a707f
+        ;   XREF to: 005a709a (CONDITIONAL_JUMP)  ; LAB_005a709a
     TEST byte ptr [EBX + 0x5c],0x1      ; 005a7081
         ;   Label: LAB_005a7081
-    JZ 0x005a70c1                       ; 005a7085 | LAB_005a70c1
-        ;   XREF to: 005a70c1 (CONDITIONAL_JUMP)
+    JZ 0x005a70c1                       ; 005a7085
+        ;   XREF to: 005a70c1 (CONDITIONAL_JUMP)  ; LAB_005a70c1
     MOV dword ptr [EBX + 0x4c],0x0      ; 005a7087
     MOV dword ptr [EBX + 0x50],0x0      ; 005a708e
     ADD ESP,0x18                        ; 005a7095
@@ -46,20 +46,20 @@ section .text
     RET                                 ; 005a7099
     PUSH ESI                            ; 005a709a
         ;   Label: LAB_005a709a
-    MOV ECX,0x6501e7                    ; 005a709b | = "..\\sound\\sndmain.cpp" | s_sound_sndmain_cpp_006501e7 = ..\sound\sndmain.cpp
+    MOV ECX,0x6501e7                    ; 005a709b | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x942                       ; 005a70a0
-    PUSH 0x6501fc                       ; 005a70a5 | = "SfxSlot::autoCalcDelayRemaining - mus..." | s_SfxSlot_autoCalcDelayRem_006501fc = SfxSlot::autoCalcDelayRemaining - must be locked!
-    MOV dword ptr [0x02f0ca48],ECX      ; 005a70aa | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 005a70b0 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a70b6 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6501fc                       ; 005a70a5 | = "SfxSlot::autoCalcDelayRemaining - mus..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 005a70aa | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 005a70b0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005a70b6
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005a70bb
     POP ESI                             ; 005a70be
-    JMP 0x005a7081                      ; 005a70bf | LAB_005a7081
-        ;   XREF to: 005a7081 (UNCONDITIONAL_JUMP)
+    JMP 0x005a7081                      ; 005a70bf
+        ;   XREF to: 005a7081 (UNCONDITIONAL_JUMP)  ; LAB_005a7081
     FLD double ptr [EBX + 0x4]          ; 005a70c1
         ;   Label: LAB_005a70c1
-    FSUB double ptr [0x03f68830]        ; 005a70c4 | CVector3d g_Cached3DListenerPos
+    FSUB double ptr [0x03f68830]        ; 005a70c4 | g_Cached3DListenerPos
     FMUL ST0                            ; 005a70ca
     FLD double ptr [EBX + 0xc]          ; 005a70cc
     FSUB double ptr [0x03f68838]        ; 005a70cf | g_Cached3DListenerPos.y
@@ -71,8 +71,8 @@ section .text
     FMUL ST0                            ; 005a70e4
     FADDP                               ; 005a70e6
     FSQRT                               ; 005a70e8
-    FMUL double ptr [0x00681b30]        ; 005a70ea | double DOUBLE_00681b30
-    FDIV double ptr [0x00663140]        ; 005a70f0 | double DOUBLE_00663140
+    FMUL double ptr [0x00681b30]        ; 005a70ea | DOUBLE_00681b30
+    FDIV double ptr [0x00663140]        ; 005a70f0 | DOUBLE_00663140
     FSTP double ptr [EBX + 0x4c]        ; 005a70f6
     ADD ESP,0x18                        ; 005a70f9
     POP EBX                             ; 005a70fc

@@ -1,72 +1,72 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 64, 
-    "assembly_lines": 48, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80", 
-      "addr": "004a2b80"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0", 
-      "addr": "004a2cc0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
-      "addr": "004a2f70"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a2ac0", 
-    "signature": "CStrList * shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0(CStrList * dest_ptr, CStrList * source_ptr)", 
-    "address_range": [
-      [
-        "004a2ac0", 
-        "004a2b0c"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "dest_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CStrList *", 
-        "size": 4, 
-        "name": "source_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 48,
+    "complexity_score": 16,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
   "cross_references": [
     {
-      "from_addr": "004a2aaf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CStrList_copy_FUN_004a2a90", 
-      "addr": "004a2a90"
+      "addr": "004a2a90",
+      "from_addr": "004a2aaf",
+      "name": "shape_edittool.cpp_CStrList_copy_FUN_004a2a90",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a2ac0",
+    "address_range": [
+      [
+        "004a2ac0",
+        "004a2b0c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0",
+    "signature": "CStrList * shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0(CStrList * dest_ptr, CStrList * source_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a2b80",
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
+    },
+    {
+      "addr": "004a2cc0",
+      "name": "shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0"
+    },
+    {
+      "addr": "004a2f70",
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStrList *"
+      },
+      {
+        "is_param": true,
+        "name": "source_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CStrList *"
+      }
+    ]
+  },
+  "suspects": []
 }

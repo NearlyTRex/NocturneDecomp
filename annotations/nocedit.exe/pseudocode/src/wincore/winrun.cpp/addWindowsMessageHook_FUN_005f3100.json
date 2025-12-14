@@ -1,96 +1,96 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 39, 
-    "assembly_lines": 26, 
-    "suspect_count": 2, 
+    "assembly_lines": 26,
+    "complexity_score": 38,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_winrun_cpp_00657f4c", 
-      "addr": "00657f4c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_addWindowsMessageHook_to_00657f62", 
-      "addr": "00657f62", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_NumWindowMessageHandlers", 
-      "addr": "03f98ddc", 
-      "value": null
-    }, 
-    {
-      "type": "WNDPROC[4]", 
-      "name": "g_WindowMessageHandlers", 
-      "addr": "03f98de0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 3, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 10, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"addWindowsMessageHook - too many!\",unaff_EBX);"
-    }
-  ], 
+    ],
+    "total_lines": 39
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "005f3100", 
-    "signature": "undefined wincore_winrun.cpp_addWindowsMessageHook_FUN_005f3100()", 
+    "address": "005f3100",
     "address_range": [
       [
-        "005f3100", 
+        "005f3100",
         "005f314b"
       ]
-    ], 
-    "name": "wincore_winrun.cpp_addWindowsMessageHook_FUN_005f3100"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "wincore_winrun.cpp_addWindowsMessageHook_FUN_005f3100",
+    "signature": "undefined wincore_winrun.cpp_addWindowsMessageHook_FUN_005f3100()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657f4c",
+      "name": "s_wincore_winrun_cpp_00657f4c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657f62",
+      "name": "s_addWindowsMessageHook_to_00657f62",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f98ddc",
+      "name": "g_NumWindowMessageHandlers",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f98de0",
+      "name": "g_WindowMessageHandlers",
+      "type": "WNDPROC[4]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 3,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"addWindowsMessageHook - too many!\",unaff_EBX);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

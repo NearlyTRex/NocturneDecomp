@@ -31,35 +31,35 @@ section .text
     PUSH 0x0                            ; 0060c967
     PUSH ESI                            ; 0060c969
     MOV EBX,dword ptr [ESI + 0x8]       ; 0060c96a
-    CALL dword ptr CS:[0x611664]        ; 0060c96d | VirtualFree * PTR_VirtualFree_00611664
+    CALL dword ptr CS:[0x611664]        ; 0060c96d | PTR_VirtualFree_00611664
     TEST EAX,EAX                        ; 0060c974
-    JNZ 0x0060c980                      ; 0060c976 | LAB_0060c980
-        ;   XREF to: 0060c980 (CONDITIONAL_JUMP)
+    JNZ 0x0060c980                      ; 0060c976
+        ;   XREF to: 0060c980 (CONDITIONAL_JUMP)  ; LAB_0060c980
     MOV EAX,0xffffffff                  ; 0060c978
     POP ESI                             ; 0060c97d
     POP EBX                             ; 0060c97e
     RET                                 ; 0060c97f
-    CMP ESI,dword ptr [0x00684ed8]      ; 0060c980 | Heap * g_SecondaryHeap
+    CMP ESI,dword ptr [0x00684ed8]      ; 0060c980 | g_SecondaryHeap
         ;   Label: LAB_0060c980
-    JNZ 0x0060c9a4                      ; 0060c986 | LAB_0060c9a4
-        ;   XREF to: 0060c9a4 (CONDITIONAL_JUMP)
+    JNZ 0x0060c9a4                      ; 0060c986
+        ;   XREF to: 0060c9a4 (CONDITIONAL_JUMP)  ; LAB_0060c9a4
     TEST EBX,EBX                        ; 0060c988
-    JZ 0x0060c994                       ; 0060c98a | LAB_0060c994
-        ;   XREF to: 0060c994 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x00684ed8],EBX      ; 0060c98c | Heap * g_SecondaryHeap
-    JMP 0x0060c9a4                      ; 0060c992 | LAB_0060c9a4
-        ;   XREF to: 0060c9a4 (UNCONDITIONAL_JUMP)
-    MOV EAX,[0x00684ed4]                ; 0060c994 | Heap * g_MainHeap
+    JZ 0x0060c994                       ; 0060c98a
+        ;   XREF to: 0060c994 (CONDITIONAL_JUMP)  ; LAB_0060c994
+    MOV dword ptr [0x00684ed8],EBX      ; 0060c98c | g_SecondaryHeap
+    JMP 0x0060c9a4                      ; 0060c992
+        ;   XREF to: 0060c9a4 (UNCONDITIONAL_JUMP)  ; LAB_0060c9a4
+    MOV EAX,[0x00684ed4]                ; 0060c994 | g_MainHeap
         ;   Label: LAB_0060c994
-    MOV dword ptr [0x00684edc],EBX      ; 0060c999 | undefined4 DAT_00684edc
-    MOV [0x00684ed8],EAX                ; 0060c99f | Heap * g_SecondaryHeap
-    MOV ECX,dword ptr [0x03f9b210]      ; 0060c9a4 | undefined4 DAT_03f9b210
+    MOV dword ptr [0x00684edc],EBX      ; 0060c999 | DAT_00684edc
+    MOV [0x00684ed8],EAX                ; 0060c99f | g_SecondaryHeap
+    MOV ECX,dword ptr [0x03f9b210]      ; 0060c9a4 | DAT_03f9b210
         ;   Label: LAB_0060c9a4
     CMP ESI,ECX                         ; 0060c9aa
-    JNZ 0x0060c9b6                      ; 0060c9ac | LAB_0060c9b6
-        ;   XREF to: 0060c9b6 (CONDITIONAL_JUMP)
+    JNZ 0x0060c9b6                      ; 0060c9ac
+        ;   XREF to: 0060c9b6 (CONDITIONAL_JUMP)  ; LAB_0060c9b6
     XOR ESI,ECX                         ; 0060c9ae
-    MOV dword ptr [0x03f9b210],ESI      ; 0060c9b0 | undefined4 DAT_03f9b210
+    MOV dword ptr [0x03f9b210],ESI      ; 0060c9b0 | DAT_03f9b210
     XOR EAX,EAX                         ; 0060c9b6
         ;   Label: LAB_0060c9b6
     POP ESI                             ; 0060c9b8

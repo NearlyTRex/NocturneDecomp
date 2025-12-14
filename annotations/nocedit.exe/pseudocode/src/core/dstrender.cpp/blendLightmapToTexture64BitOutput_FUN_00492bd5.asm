@@ -37,7 +37,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 00492be4
     MOV EBP,dword ptr [EBP + 0x14]      ; 00492be7
     PXOR MM7,MM7                        ; 00492bea
-    MOVD MM5,dword ptr [0x02d052a8]     ; 00492bed | int g_SolidColorMode
+    MOVD MM5,dword ptr [0x02d052a8]     ; 00492bed | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00492bf4
     PSLLW MM5,0x6                       ; 00492bf7
     MOV EAX,dword ptr [ESI]             ; 00492bfb
@@ -123,21 +123,21 @@ section .text
     MOVZX EDX,byte ptr [EBX]            ; 00492dce
         ;   Label: LAB_00492dce
     MOVQ MM0,qword ptr [ESI]            ; 00492dd1
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492dd4 | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492dd4 | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00492ddc
     PUNPCKLBW MM0,MM7                   ; 00492de0
     SHR EDX,0x1                         ; 00492de3
     PUNPCKLBW MM2,MM7                   ; 00492de5
     ADD EAX,EDX                         ; 00492de8
     PMULLW MM0,MM2                      ; 00492dea
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492ded | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492ded | g_LightmapData
     MOVQ MM2,MM3                        ; 00492df5
     MOVQ MM4,MM5                        ; 00492df8
-    PXOR MM2,qword ptr [0x006781e8]     ; 00492dfb | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00492dfb | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 00492e02
     PMULHW MM4,MM3                      ; 00492e05
     PADDW MM0,MM4                       ; 00492e08
-    PADDW MM0,qword ptr [0x00676488]    ; 00492e0b | ulonglong g_AmbientLightMMX1
+    PADDW MM0,qword ptr [0x00676488]    ; 00492e0b | g_AmbientLightMMX1
     PSRLW MM0,0x4                       ; 00492e12
     PACKUSWB MM0,MM7                    ; 00492e16
     MOVD dword ptr [EDI],MM0            ; 00492e19
@@ -147,21 +147,21 @@ section .text
     ADD EDI,0x4                         ; 00492e21
     MOVZX EDX,byte ptr [EBX]            ; 00492e24
     MOVQ MM0,qword ptr [ESI]            ; 00492e27
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492e2a | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492e2a | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00492e32
     PUNPCKLBW MM0,MM7                   ; 00492e36
     SHR EDX,0x1                         ; 00492e39
     PUNPCKLBW MM2,MM7                   ; 00492e3b
     ADD EAX,EDX                         ; 00492e3e
     PMULLW MM0,MM2                      ; 00492e40
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492e43 | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492e43 | g_LightmapData
     MOVQ MM2,MM3                        ; 00492e4b
     MOVQ MM4,MM5                        ; 00492e4e
-    PXOR MM2,qword ptr [0x006781e8]     ; 00492e51 | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00492e51 | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 00492e58
     PMULHW MM4,MM3                      ; 00492e5b
     PADDW MM0,MM4                       ; 00492e5e
-    PADDW MM0,qword ptr [0x00676490]    ; 00492e61 | ulonglong g_AmbientLightMMX2
+    PADDW MM0,qword ptr [0x00676490]    ; 00492e61 | g_AmbientLightMMX2
     PSRLW MM0,0x4                       ; 00492e68
     PACKUSWB MM0,MM7                    ; 00492e6c
     MOVD dword ptr [EDI],MM0            ; 00492e6f
@@ -170,8 +170,8 @@ section .text
     INC EBP                             ; 00492e76
     ADD EDI,0x4                         ; 00492e77
     SUB ECX,0x2                         ; 00492e7a
-    JG 0x00492dce                       ; 00492e7d | LAB_00492dce
-        ;   XREF to: 00492dce (CONDITIONAL_JUMP)
+    JG 0x00492dce                       ; 00492e7d
+        ;   XREF to: 00492dce (CONDITIONAL_JUMP)  ; LAB_00492dce
     POP EBP                             ; 00492e83
     EMMS                                ; 00492e84
     POP EDI                             ; 00492e86

@@ -21,23 +21,23 @@
 
 section .text
 
-    CMP dword ptr [0x03f6b878],0x0      ; 005edc50 | int g_FullscreenMode
+    CMP dword ptr [0x03f6b878],0x0      ; 005edc50 | g_FullscreenMode
         ;   Label: wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50
-    JZ 0x005edc62                       ; 005edc57 | LAB_005edc62
-        ;   XREF to: 005edc62 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x03f95938],0x0      ; 005edc59 | int g_GraphicsResetFlag
-    JNZ 0x005edc63                      ; 005edc60 | LAB_005edc63
-        ;   XREF to: 005edc63 (CONDITIONAL_JUMP)
+    JZ 0x005edc62                       ; 005edc57
+        ;   XREF to: 005edc62 (CONDITIONAL_JUMP)  ; LAB_005edc62
+    CMP dword ptr [0x03f95938],0x0      ; 005edc59 | g_GraphicsResetFlag
+    JNZ 0x005edc63                      ; 005edc60
+        ;   XREF to: 005edc63 (CONDITIONAL_JUMP)  ; LAB_005edc63
     RET                                 ; 005edc62
         ;   Label: LAB_005edc62
     PUSH EBX                            ; 005edc63
         ;   Label: LAB_005edc63
-    CALL wincore_windll.cpp_restoreVideoMode_FUN_005b75b0 ; 005edc64 | int wincore_windll.cpp_restoreVideoMode_FUN_005b75b0()
-        ;   XREF to: 005b75b0 (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_restoreVideoMode_FUN_005b75b0 ; 005edc64
+        ;   XREF to: 005b75b0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_restoreVideoMode_FUN_005b75b0()
     PUSH 0x6                            ; 005edc69
-    MOV EBX,dword ptr [0x03f98468]      ; 005edc6b | HWND g_MainWindowHandle
+    MOV EBX,dword ptr [0x03f98468]      ; 005edc6b | g_MainWindowHandle
     PUSH EBX                            ; 005edc71
-    CALL dword ptr CS:[0x6114f4]        ; 005edc72 | ShowWindow * ShowWindow
+    CALL dword ptr CS:[0x6114f4]        ; 005edc72 | ShowWindow
     POP EBX                             ; 005edc79
     RET                                 ; 005edc7a
 

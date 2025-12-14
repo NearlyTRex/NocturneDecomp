@@ -26,12 +26,12 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 0042d39c
     PUSH EAX                            ; 0042d3a2
     MOV dword ptr [EBX + 0x25cc],0x0    ; 0042d3a3
-    CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 0042d3ad | CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
-        ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 0042d3ad
+        ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0042d3b2
     PUSH EAX                            ; 0042d3b5
-    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0042d3b6 | int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
-        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460 ; 0042d3b6
+        ;   XREF to: 0052d460 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460(CMotionList * this_ptr)
     ADD ESP,0xc                         ; 0042d3bb
     MOV dword ptr [EBX + 0x25c8],EAX    ; 0042d3be
     TEST EAX,EAX                        ; 0042d3c4

@@ -14,13 +14,15 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   char *pcVar3;
   int iVar4;
   int iVar5;
+  CKeyFramedModel *this_ptr;
   CKeyFramedModel *pCVar6;
-  CMorphModel *this_ptr;
+  void *pvVar7;
   void *ptr;
+  CMorphModel *this_ptr_00;
   FILE *output_file;
   BADSPACEBASE *in_ESP;
   int unaff_ESI;
-  byte bVar7;
+  byte bVar8;
   byte uStack0000007c;
   byte uStack0000007d;
   byte uStack0000007e;
@@ -40,7 +42,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   byte auStack_f8 [180];
   CEdScrollBar CStack_44;
   
-  bVar7 = 0;
+  bVar8 = 0;
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
                     (&g_CDemonFileManagerInstance.base_filemanager);
   if (iVar1 == 0) {
@@ -86,10 +88,10 @@ LAB_0050740e:
           core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(g_CDemonSetPtr);
         }
         else if (uVar2 < 0x36) {
-          pCVar6 = (CKeyFramedModel *)
-                   shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x56d8,"..\\core\\main.c",0x274);
-          if (pCVar6 != (CKeyFramedModel *)0x0) {
-            pCVar6 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(pCVar6);
+          this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x56d8,"..\\core\\main.c",0x274);
+          pCVar6 = (CKeyFramedModel *)0x0;
+          if (this_ptr != (CKeyFramedModel *)0x0) {
+            pCVar6 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(this_ptr);
           }
           if (pCVar6 == (CKeyFramedModel *)0x0) {
             g_CurrentFilename = "..\\core\\main.c";
@@ -120,17 +122,17 @@ LAB_0050740e:
                       (&g_CDemonFileManagerInstance);
           }
           else if (uVar2 == 0x42) {
-            this_ptr = (CMorphModel *)
-                       shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc2c,"..\\core\\main.c",0x292);
-            if (this_ptr != (CMorphModel *)0x0) {
-              this_ptr = (CMorphModel *)core_morph_cpp_FUN_0052b310();
+            pvVar7 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xc2c,"..\\core\\main.c",0x292);
+            this_ptr_00 = (CMorphModel *)0x0;
+            if (pvVar7 != (void *)0x0) {
+              this_ptr_00 = (CMorphModel *)core_morph_cpp_FUN_0052b310();
             }
-            if (this_ptr != (CMorphModel *)0x0) {
+            if (this_ptr_00 != (CMorphModel *)0x0) {
               core_morph_cpp_FUN_0052bcb0();
               g_CurrentDebugLine = 0x295;
               g_CurrentDebugFilename = "..\\core\\main.c";
-              if (this_ptr != (CMorphModel *)0x0) {
-                core_morph_cpp_CMorphModel_FUN_0052b330(this_ptr);
+              if (this_ptr_00 != (CMorphModel *)0x0) {
+                core_morph_cpp_CMorphModel_FUN_0052b330(this_ptr_00);
                 shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
               }
             }
@@ -156,10 +158,10 @@ LAB_0050740e:
           uStack0000007d = "memdump.txt"[1];
           uStack0000007e = "memdump.txt"[2];
           uStack0000007f = "memdump.txt"[3];
-          *(uint *)(&stack0x00000080 + (uint)bVar7 * -8) =
-               *(uint *)("memdump.txt" + (uint)bVar7 * -8 + 4);
-          *(uint *)(&stack0x00000084 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
-               *(uint *)("memdump.txt" + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+          *(uint *)(&stack0x00000080 + (uint)bVar8 * -8) =
+               *(uint *)("memdump.txt" + (uint)bVar8 * -8 + 4);
+          *(uint *)(&stack0x00000084 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+               *(uint *)("memdump.txt" + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           output_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                   (pcVar3,directory,mode,source_file,iVar1);
           if (output_file == (FILE *)0x0) {

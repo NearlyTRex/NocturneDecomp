@@ -1,170 +1,170 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 180, 
-    "pseudocode_lines": 55, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 193, 
-    "assembly_lines": 138, 
-    "suspect_count": 12, 
+    "assembly_lines": 138,
+    "complexity_score": 180,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 55,
+    "suspect_count": 12,
     "suspect_types": [
       "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_model.c_freeMRGLData_FUN_005280b0", 
-      "addr": "005280b0"
-    }, 
-    {
-      "name": "engine_model.c_getMRGLSize_FUN_00528700", 
-      "addr": "00528700"
-    }, 
-    {
-      "name": "engine_model.c_loadModelFile_FUN_00527ec0", 
-      "addr": "00527ec0"
-    }, 
-    {
-      "name": "engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0", 
-      "addr": "00544fc0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "SMRGLHeaderExtended *in_EAX;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EAX = (SMRGLHeaderExtended *)0x545122;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "} while (iVar2 < in_EAX->child_count);"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EAX = unk;"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EAX = (SMRGLHeaderExtended *)unk[2].base.type;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "if (0 < (int)in_EAX) {"
-    }, 
-    {
-      "line": 41, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "while (iVar2 = (in_EAX->base).type, iVar2 != 0) {"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "if ((iVar2 == 0xd) || (pSVar1 = in_EAX, iVar2 == 0x40)) {"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "pSVar1 = in_EAX;"
-    }, 
-    {
-      "line": 46, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EAX = pSVar1;"
-    }, 
-    {
-      "line": 53, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "engine_model_c_getMRGLSize_FUN_00528700(in_EAX);"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "return in_EAX;"
-    }
-  ], 
+    ],
+    "total_lines": 193
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00545060", 
-    "signature": "SMRGLHeaderExtended * engine_palette.cpp_CPaletteManager_FUN_00545060(CPaletteManager * this_ptr, SMRGLHeaderExtended * unk)", 
+    "address": "00545060",
     "address_range": [
       [
-        "00545060", 
+        "00545060",
         "00545172"
       ]
-    ], 
-    "name": "engine_palette.cpp_CPaletteManager_FUN_00545060"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_palette.cpp_CPaletteManager_FUN_00545060",
+    "signature": "SMRGLHeaderExtended * engine_palette.cpp_CPaletteManager_FUN_00545060(CPaletteManager * this_ptr, SMRGLHeaderExtended * unk)"
+  },
+  "function_calls": [
+    {
+      "addr": "005280b0",
+      "name": "engine_model.c_freeMRGLData_FUN_005280b0"
+    },
+    {
+      "addr": "00528700",
+      "name": "engine_model.c_getMRGLSize_FUN_00528700"
+    },
+    {
+      "addr": "00527ec0",
+      "name": "engine_model.c_loadModelFile_FUN_00527ec0"
+    },
+    {
+      "addr": "00544fc0",
+      "name": "engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fc0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPaletteManager *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPaletteManager *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLHeaderExtended *", 
-        "size": 4, 
-        "name": "unk"
+        "is_param": true,
+        "name": "unk",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EAX",
+      "text": "SMRGLHeaderExtended *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 19,
+      "match": "in_EAX",
+      "text": "in_EAX = (SMRGLHeaderExtended *)0x545122;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 23,
+      "match": "in_EAX",
+      "text": "} while (iVar2 < in_EAX->child_count);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 27,
+      "match": "in_EAX",
+      "text": "in_EAX = unk;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 29,
+      "match": "in_EAX",
+      "text": "in_EAX = (SMRGLHeaderExtended *)unk[2].base.type;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 31,
+      "match": "in_EAX",
+      "text": "if (0 < (int)in_EAX) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 41,
+      "match": "in_EAX",
+      "text": "while (iVar2 = (in_EAX->base).type, iVar2 != 0) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 42,
+      "match": "in_EAX",
+      "text": "if ((iVar2 == 0xd) || (pSVar1 = in_EAX, iVar2 == 0x40)) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 44,
+      "match": "in_EAX",
+      "text": "pSVar1 = in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 46,
+      "match": "in_EAX",
+      "text": "in_EAX = pSVar1;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 53,
+      "match": "in_EAX",
+      "text": "engine_model_c_getMRGLSize_FUN_00528700(in_EAX);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 57,
+      "match": "in_EAX",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    }
+  ]
 }

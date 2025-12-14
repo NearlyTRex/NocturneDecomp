@@ -26,10 +26,10 @@ section .text
 
     FLD float ptr [ESP + 0x8]           ; 004528e0
         ;   Label: core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
-    FMUL double ptr [0x0061a33a]        ; 004528e4 | double g_CameraEffectIntensityScaleFactor
+    FMUL double ptr [0x0061a33a]        ; 004528e4 | g_CameraEffectIntensityScaleFactor
     MOV EAX,dword ptr [ESP + 0x4]       ; 004528ea
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004528ee | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004528ee
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [EAX + 0x11e8]      ; 004528f3
     RET                                 ; 004528f9
 

@@ -34,8 +34,8 @@ section .text
     XOR ESI,ESI                         ; 0052f863
         ;   Label: LAB_0052f863
     TEST EBP,EBP                        ; 0052f865
-    JLE 0x0052f897                      ; 0052f867 | LAB_0052f897
-        ;   XREF to: 0052f897 (CONDITIONAL_JUMP)
+    JLE 0x0052f897                      ; 0052f867
+        ;   XREF to: 0052f897 (CONDITIONAL_JUMP)  ; LAB_0052f897
     MOV EBX,dword ptr [ESP]             ; 0052f869
     MOV EDI,dword ptr [ESP + 0x20]      ; 0052f86c
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0052f870
@@ -44,23 +44,23 @@ section .text
     ADD EDI,EAX                         ; 0052f879
     CMP dword ptr [EDI],0x0             ; 0052f87b
         ;   Label: LAB_0052f87b
-    JNZ 0x0052f8b0                      ; 0052f87e | LAB_0052f8b0
-        ;   XREF to: 0052f8b0 (CONDITIONAL_JUMP)
+    JNZ 0x0052f8b0                      ; 0052f87e
+        ;   XREF to: 0052f8b0 (CONDITIONAL_JUMP)  ; LAB_0052f8b0
     MOV dword ptr [EBX],0x3f            ; 0052f880
     ADD EBX,0x180                       ; 0052f886
         ;   Label: LAB_0052f886
     INC ESI                             ; 0052f88c
     ADD EDI,0x80                        ; 0052f88d
     CMP ESI,EBP                         ; 0052f893
-    JL 0x0052f87b                       ; 0052f895 | LAB_0052f87b
-        ;   XREF to: 0052f87b (CONDITIONAL_JUMP)
+    JL 0x0052f87b                       ; 0052f895
+        ;   XREF to: 0052f87b (CONDITIONAL_JUMP)  ; LAB_0052f87b
     MOV ECX,dword ptr [ESP]             ; 0052f897
         ;   Label: LAB_0052f897
     ADD ECX,0x4                         ; 0052f89a
     MOV dword ptr [ESP],ECX             ; 0052f89d
     CMP ECX,0x80                        ; 0052f8a0
-    JNZ 0x0052f863                      ; 0052f8a6 | LAB_0052f863
-        ;   XREF to: 0052f863 (CONDITIONAL_JUMP)
+    JNZ 0x0052f863                      ; 0052f8a6
+        ;   XREF to: 0052f863 (CONDITIONAL_JUMP)  ; LAB_0052f863
     ADD ESP,0x4                         ; 0052f8a8
     POP EBP                             ; 0052f8ab
     POP EDI                             ; 0052f8ac
@@ -71,10 +71,10 @@ section .text
         ;   Label: LAB_0052f8b0
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0052f8b2
     PUSH ECX                            ; 0052f8b6
-    CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40 ; 0052f8b7 | uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)
-        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)
+    CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40 ; 0052f8b7
+        ;   XREF to: 0052ef40 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream * bitstream, int num_bits)
     ADD ESP,0x8                         ; 0052f8bc
     MOV dword ptr [EBX],EAX             ; 0052f8bf
-    JMP 0x0052f886                      ; 0052f8c1 | LAB_0052f886
-        ;   XREF to: 0052f886 (UNCONDITIONAL_JUMP)
+    JMP 0x0052f886                      ; 0052f8c1
+        ;   XREF to: 0052f886 (UNCONDITIONAL_JUMP)  ; LAB_0052f886
 

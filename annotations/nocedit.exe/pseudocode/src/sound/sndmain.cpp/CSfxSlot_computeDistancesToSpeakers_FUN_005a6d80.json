@@ -1,134 +1,134 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 88, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 1, 
-    "global_count": 7, 
-    "total_lines": 72, 
-    "assembly_lines": 44, 
-    "suspect_count": 5, 
+    "assembly_lines": 44,
+    "complexity_score": 88,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 7,
+    "pseudocode_lines": 28,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_AudioChannelCount", 
-      "addr": "00681b18", 
-      "value": "0x2"
-    }, 
-    {
-      "type": "double[8]", 
-      "name": "g_VirtualSpeakerXPositions", 
-      "addr": "03f69328", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VirtualSpeakerXPositions[1]", 
-      "addr": "03f69330", 
-      "value": null
-    }, 
-    {
-      "type": "double[8]", 
-      "name": "g_VirtualSpeakerYPositions", 
-      "addr": "03f69368", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VirtualSpeakerYPositions[1]", 
-      "addr": "03f69370", 
-      "value": null
-    }, 
-    {
-      "type": "double[8]", 
-      "name": "g_VirtualSpeakerZPositions", 
-      "addr": "03f693a8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VirtualSpeakerZPositions[1]", 
-      "addr": "03f693b0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "int in_EAX;"
-    }, 
-    {
-      "line": 19, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(float10)*(double *)((int)g_VirtualSpeakerXPositions + iVar2);"
-    }, 
-    {
-      "line": 21, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(float10)*(double *)((int)g_VirtualSpeakerYPositions + iVar2);"
-    }, 
-    {
-      "line": 23, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(float10)*(double *)((int)g_VirtualSpeakerZPositions + iVar2);"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "return in_EAX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a6d80", 
-    "signature": "int sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot * this_ptr)", 
-    "address_range": [
-      [
-        "005a6d80", 
-        "005a6dec"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSfxSlot *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "register_param",
+      "pointer_cast"
+    ],
+    "total_lines": 72
+  },
   "cross_references": [
     {
-      "from_addr": "005a7259", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
-      "addr": "005a7100"
+      "addr": "005a7100",
+      "from_addr": "005a7259",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a6d80",
+    "address_range": [
+      [
+        "005a6d80",
+        "005a6dec"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80",
+    "signature": "int sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80(CSfxSlot * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00681b18",
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
+    },
+    {
+      "addr": "03f69328",
+      "name": "g_VirtualSpeakerXPositions",
+      "type": "double[8]",
+      "value": null
+    },
+    {
+      "addr": "03f69330",
+      "name": "g_VirtualSpeakerXPositions[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69368",
+      "name": "g_VirtualSpeakerYPositions",
+      "type": "double[8]",
+      "value": null
+    },
+    {
+      "addr": "03f69370",
+      "name": "g_VirtualSpeakerYPositions[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f693a8",
+      "name": "g_VirtualSpeakerZPositions",
+      "type": "double[8]",
+      "value": null
+    },
+    {
+      "addr": "03f693b0",
+      "name": "g_VirtualSpeakerZPositions[1]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "text": "int in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(double *)((int)",
+      "text": "(float10)*(double *)((int)g_VirtualSpeakerXPositions + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(double *)((int)",
+      "text": "(float10)*(double *)((int)g_VirtualSpeakerYPositions + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(double *)((int)",
+      "text": "(float10)*(double *)((int)g_VirtualSpeakerZPositions + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 30,
+      "match": "in_EAX",
+      "text": "return in_EAX;",
+      "type": "register_param"
     }
   ]
 }

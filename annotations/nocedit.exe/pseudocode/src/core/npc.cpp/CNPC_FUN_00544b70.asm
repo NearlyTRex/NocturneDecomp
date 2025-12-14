@@ -20,17 +20,17 @@ section .text
         ;   Label: core_npc.cpp_CNPC_FUN_00544b70
     MOV EDX,dword ptr [ESP + 0x8]       ; 00544b74
     CMP dword ptr [EAX + 0x1f704],0x0   ; 00544b78
-    JZ 0x00544b99                       ; 00544b7f | LAB_00544b99
-        ;   XREF to: 00544b99 (CONDITIONAL_JUMP)
+    JZ 0x00544b99                       ; 00544b7f
+        ;   XREF to: 00544b99 (CONDITIONAL_JUMP)  ; LAB_00544b99
     TEST EDX,EDX                        ; 00544b81
-    JZ 0x00544b8f                       ; 00544b83 | LAB_00544b8f
-        ;   XREF to: 00544b8f (CONDITIONAL_JUMP)
+    JZ 0x00544b8f                       ; 00544b83
+        ;   XREF to: 00544b8f (CONDITIONAL_JUMP)  ; LAB_00544b8f
     MOV dword ptr [EAX + 0x240c],0x1    ; 00544b85
     PUSH EDX                            ; 00544b8f
         ;   Label: LAB_00544b8f
     PUSH EAX                            ; 00544b90
-    CALL core_charactr.cpp_CCharacter_FUN_0042a390 ; 00544b91 | void core_charactr.cpp_CCharacter_FUN_0042a390(CCharacter * this_ptr)
-        ;   XREF to: 0042a390 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042a390 ; 00544b91
+        ;   XREF to: 0042a390 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042a390(CCharacter * this_ptr)
     ADD ESP,0x8                         ; 00544b96
     RET                                 ; 00544b99
         ;   Label: LAB_00544b99

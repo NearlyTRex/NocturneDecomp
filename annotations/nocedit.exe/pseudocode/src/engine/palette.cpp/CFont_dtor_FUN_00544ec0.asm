@@ -18,6 +18,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00544ec0
         ;   Label: engine_palette.cpp_CFont_dtor_FUN_00544ec0
-    MOV dword ptr [EAX],0x661eec        ; 00544ec4 | CFont_vtable g_CFontVTable
+    MOV dword ptr [EAX],0x661eec        ; 00544ec4 | g_CFontVTable
     RET                                 ; 00544eca
 

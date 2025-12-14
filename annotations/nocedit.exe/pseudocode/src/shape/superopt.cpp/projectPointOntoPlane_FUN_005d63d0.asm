@@ -54,8 +54,8 @@ section .text
     FCHS                                ; 005d63fc
     PUSH ESI                            ; 005d63fe
     FSTP double ptr [EBP + -0x54]       ; 005d63ff
-    CALL shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500 ; 005d6402 | double shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d * plane_point, CVector3d * plane_normal)
-        ;   XREF to: 005d6500 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500 ; 005d6402
+        ;   XREF to: 005d6500 (UNCONDITIONAL_CALL)  ; double shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d * plane_point, CVector3d * plane_normal)
     FLD double ptr [EBX]                ; 005d6407
     FCHS                                ; 005d6409
     FSTP double ptr [EBP + -0x34]       ; 005d640b

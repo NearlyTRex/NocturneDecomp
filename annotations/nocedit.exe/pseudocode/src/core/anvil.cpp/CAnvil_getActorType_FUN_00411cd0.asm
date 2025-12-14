@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x8223e4                    ; 00411cd0 | CDemonActorType g_CAnvilClassInfo
+    MOV EAX,0x8223e4                    ; 00411cd0 | g_CAnvilClassInfo
         ;   Label: core_anvil.cpp_CAnvil_getActorType_FUN_00411cd0
     RET                                 ; 00411cd5
 

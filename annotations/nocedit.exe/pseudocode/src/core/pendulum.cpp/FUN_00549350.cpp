@@ -11,8 +11,7 @@ void core_pendulum_cpp_FUN_00549350(void)
 {
   CPendulum *this_ptr;
   
-  this_ptr = (CPendulum *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x444,"..\\core\\pendulum.cpp",0x2b);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x444,"..\\core\\pendulum.cpp",0x2b);
   if (this_ptr == (CPendulum *)0x0) {
     return;
   }

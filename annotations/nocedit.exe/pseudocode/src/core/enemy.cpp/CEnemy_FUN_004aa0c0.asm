@@ -14,8 +14,8 @@ section .text
         ;   Label: core_enemy.cpp_CEnemy_FUN_004aa0c0
     MOV EAX,dword ptr [ESP + 0x8]       ; 004aa0c4
     CMP EAX,dword ptr [EDX + 0xbe3c]    ; 004aa0c8
-    JZ 0x004aa0d1                       ; 004aa0ce | LAB_004aa0d1
-        ;   XREF to: 004aa0d1 (CONDITIONAL_JUMP)
+    JZ 0x004aa0d1                       ; 004aa0ce
+        ;   XREF to: 004aa0d1 (CONDITIONAL_JUMP)  ; LAB_004aa0d1
     RET                                 ; 004aa0d0
     PUSH EDX                            ; 004aa0d1
         ;   Label: LAB_004aa0d1

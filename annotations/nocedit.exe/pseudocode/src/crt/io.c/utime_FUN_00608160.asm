@@ -47,16 +47,16 @@ section .text
     PUSH 0xc0000000                     ; 00608174
     MOV EDX,dword ptr [ESP + 0x70]      ; 00608179
     PUSH EDX                            ; 0060817d
-    CALL dword ptr CS:[0x611510]        ; 0060817e | CreateFileA * PTR_CreateFileA_00611510
+    CALL dword ptr CS:[0x611510]        ; 0060817e | PTR_CreateFileA_00611510
     MOV EBX,EAX                         ; 00608185
     MOV ESI,EAX                         ; 00608187
     CMP EAX,-0x1                        ; 00608189
-    JNZ 0x00608198                      ; 0060818c | LAB_00608198
-        ;   XREF to: 00608198 (CONDITIONAL_JUMP)
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 0060818e | DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)
-    JMP 0x006082cf                      ; 00608193 | LAB_006082cf
-        ;   XREF to: 006082cf (UNCONDITIONAL_JUMP)
+    JNZ 0x00608198                      ; 0060818c
+        ;   XREF to: 00608198 (CONDITIONAL_JUMP)  ; LAB_00608198
+    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 0060818e
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
+    JMP 0x006082cf                      ; 00608193
+        ;   XREF to: 006082cf (UNCONDITIONAL_JUMP)  ; LAB_006082cf
     LEA EAX,[ESP + 0x20]                ; 00608198
         ;   Label: LAB_00608198
     PUSH EAX                            ; 0060819c
@@ -65,14 +65,14 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 006081a2
     PUSH EAX                            ; 006081a6
     PUSH EBX                            ; 006081a7
-    CALL dword ptr CS:[0x611598]        ; 006081a8 | GetFileTime * PTR_GetFileTime_00611598
+    CALL dword ptr CS:[0x611598]        ; 006081a8 | PTR_GetFileTime_00611598
     TEST EAX,EAX                        ; 006081af
-    JNZ 0x006081c7                      ; 006081b1 | LAB_006081c7
-        ;   XREF to: 006081c7 (CONDITIONAL_JUMP)
+    JNZ 0x006081c7                      ; 006081b1
+        ;   XREF to: 006081c7 (CONDITIONAL_JUMP)  ; LAB_006081c7
     PUSH EBX                            ; 006081b3
-    CALL dword ptr CS:[0x611504]        ; 006081b4 | CloseHandle * CloseHandle
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006081bb | DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)
+    CALL dword ptr CS:[0x611504]        ; 006081b4 | CloseHandle
+    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006081bb
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
     ADD ESP,0x48                        ; 006081c0
     POP EDI                             ; 006081c3
     POP ESI                             ; 006081c4
@@ -80,11 +80,11 @@ section .text
     RET                                 ; 006081c6
     TEST EDI,EDI                        ; 006081c7
         ;   Label: LAB_006081c7
-    JNZ 0x006081e0                      ; 006081c9 | LAB_006081e0
-        ;   XREF to: 006081e0 (CONDITIONAL_JUMP)
+    JNZ 0x006081e0                      ; 006081c9
+        ;   XREF to: 006081e0 (CONDITIONAL_JUMP)  ; LAB_006081e0
     PUSH EDI                            ; 006081cb
-    CALL crt_time.c_time_with_rounding_FUN_006001f0 ; 006081cc | time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
-        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)
+    CALL crt_time.c_time_with_rounding_FUN_006001f0 ; 006081cc
+        ;   XREF to: 006001f0 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_time_with_rounding_FUN_006001f0(time_t * optional_output)
     ADD ESP,0x4                         ; 006081d1
     LEA EDI,[ESP + 0x38]                ; 006081d4
     MOV dword ptr [ESP + 0x3c],EAX      ; 006081d8
@@ -92,8 +92,8 @@ section .text
     LEA EAX,[EDI + 0x4]                 ; 006081e0
         ;   Label: LAB_006081e0
     PUSH EAX                            ; 006081e3
-    CALL crt_time.c_localtime_FUN_00600288 ; 006081e4 | tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
-        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)
+    CALL crt_time.c_localtime_FUN_00600288 ; 006081e4
+        ;   XREF to: 00600288 (UNCONDITIONAL_CALL)  ; tm * crt_time.c_localtime_FUN_00600288(time_t * timer)
     MOV EDX,EAX                         ; 006081e9
     MOV AX,word ptr [EAX + 0x14]        ; 006081eb
     ADD ESP,0x4                         ; 006081ef
@@ -123,22 +123,22 @@ section .text
     PUSH EAX                            ; 00608251
     MOV word ptr [ESP + 0x26],DX        ; 00608252
     MOV word ptr [ESP + 0x16],DX        ; 00608257
-    CALL dword ptr CS:[0x611648]        ; 0060825c | SystemTimeToFileTime * PTR_SystemTimeToFileTime_00611648
+    CALL dword ptr CS:[0x611648]        ; 0060825c | PTR_SystemTimeToFileTime_00611648
     LEA EAX,[ESP + 0x20]                ; 00608263
     PUSH EAX                            ; 00608267
     LEA EAX,[ESP + 0x2c]                ; 00608268
     PUSH EAX                            ; 0060826c
-    CALL dword ptr CS:[0x6115ec]        ; 0060826d | LocalFileTimeToFileTime * PTR_LocalFileTimeToFileTime_006115ec
+    CALL dword ptr CS:[0x6115ec]        ; 0060826d | PTR_LocalFileTimeToFileTime_006115ec
     LEA EAX,[ESP + 0x28]                ; 00608274
     PUSH EAX                            ; 00608278
     LEA EAX,[ESP + 0x14]                ; 00608279
     PUSH EAX                            ; 0060827d
-    CALL dword ptr CS:[0x611648]        ; 0060827e | SystemTimeToFileTime * PTR_SystemTimeToFileTime_00611648
+    CALL dword ptr CS:[0x611648]        ; 0060827e | PTR_SystemTimeToFileTime_00611648
     LEA EAX,[ESP + 0x40]                ; 00608285
     PUSH EAX                            ; 00608289
     LEA EAX,[ESP + 0x2c]                ; 0060828a
     PUSH EAX                            ; 0060828e
-    CALL dword ptr CS:[0x6115ec]        ; 0060828f | LocalFileTimeToFileTime * PTR_LocalFileTimeToFileTime_006115ec
+    CALL dword ptr CS:[0x6115ec]        ; 0060828f | PTR_LocalFileTimeToFileTime_006115ec
     LEA EAX,[ESP + 0x20]                ; 00608296
     PUSH EAX                            ; 0060829a
     LEA EAX,[ESP + 0x44]                ; 0060829b
@@ -146,14 +146,14 @@ section .text
     LEA EAX,[ESP + 0x38]                ; 006082a0
     PUSH EAX                            ; 006082a4
     PUSH ESI                            ; 006082a5
-    CALL dword ptr CS:[0x611630]        ; 006082a6 | SetFileTime * PTR_SetFileTime_00611630
+    CALL dword ptr CS:[0x611630]        ; 006082a6 | PTR_SetFileTime_00611630
     TEST EAX,EAX                        ; 006082ad
-    JNZ 0x006082c5                      ; 006082af | LAB_006082c5
-        ;   XREF to: 006082c5 (CONDITIONAL_JUMP)
+    JNZ 0x006082c5                      ; 006082af
+        ;   XREF to: 006082c5 (CONDITIONAL_JUMP)  ; LAB_006082c5
     PUSH ESI                            ; 006082b1
-    CALL dword ptr CS:[0x611504]        ; 006082b2 | CloseHandle * CloseHandle
-    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006082b9 | DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
-        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)
+    CALL dword ptr CS:[0x611504]        ; 006082b2 | CloseHandle
+    CALL crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc ; 006082b9
+        ;   XREF to: 006083fc (UNCONDITIONAL_CALL)  ; DWORD crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc()
     ADD ESP,0x48                        ; 006082be
     POP EDI                             ; 006082c1
     POP ESI                             ; 006082c2
@@ -161,7 +161,7 @@ section .text
     RET                                 ; 006082c4
     PUSH ESI                            ; 006082c5
         ;   Label: LAB_006082c5
-    CALL dword ptr CS:[0x611504]        ; 006082c6 | CloseHandle * CloseHandle
+    CALL dword ptr CS:[0x611504]        ; 006082c6 | CloseHandle
     XOR EAX,EAX                         ; 006082cd
     ADD ESP,0x48                        ; 006082cf
         ;   Label: LAB_006082cf

@@ -44,7 +44,7 @@ crt_iostream_cpp_streambuf_do_sputn_FUN_00606780
       if ((int)bytes_to_write < (int)uVar1) {
         uVar1 = bytes_to_write;
       }
-      pcVar4 = (char *)input_buffer;
+      pcVar4 = input_buffer;
       pcVar5 = buffer->__put_ptr;
       for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
         *(uint *)pcVar5 = *(uint *)pcVar4;

@@ -30,7 +30,7 @@ wincore_windll_cpp_drawPolyList2_FUN_005b7780
   if (0 < polygon_count) {
     iVar2 = 0;
     do {
-      puVar1 = (ushort *)*polygons;
+      puVar1 = *polygons;
       local_1c = (void *)((int)vertex_buffer + (uint)*puVar1 * 0x30);
       local_18 = (void *)((int)vertex_buffer + (uint)puVar1[1] * 0x30);
       local_14 = (void *)((int)vertex_buffer + (uint)puVar1[2] * 0x30);

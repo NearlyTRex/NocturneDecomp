@@ -1,129 +1,129 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 49, 
-    "pseudocode_lines": 49, 
-    "cross_reference_count": 3, 
-    "global_count": 5, 
-    "total_lines": 187, 
-    "assembly_lines": 138, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodVert_addAdjacentEdge_FUN_00515d90", 
-      "addr": "00515d90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006374e0", 
-      "addr": "006374e0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006374f5", 
-      "addr": "006374f5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_0063750a", 
-      "addr": "0063750a", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00515ec0", 
-    "signature": "int shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, int create_if_missing)", 
-    "address_range": [
-      [
-        "00515ec0", 
-        "00515ffe"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_idx_1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_idx_2"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "create_if_missing"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 138,
+    "complexity_score": 48,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 186
+  },
   "cross_references": [
     {
-      "from_addr": "00515c2d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0", 
-      "addr": "00515ba0"
-    }, 
+      "addr": "00515ba0",
+      "from_addr": "00515c2d",
+      "name": "shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00517655", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630", 
-      "addr": "00517630"
-    }, 
+      "addr": "00517630",
+      "from_addr": "00517655",
+      "name": "shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005184ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490", 
-      "addr": "00518490"
+      "addr": "00518490",
+      "from_addr": "005184ac",
+      "name": "shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00515ec0",
+    "address_range": [
+      [
+        "00515ec0",
+        "00515ffe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0",
+    "signature": "int shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, int create_if_missing)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    },
+    {
+      "addr": "00515d90",
+      "name": "shape_meshlod.cpp_CLodVert_addAdjacentEdge_FUN_00515d90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006374e0",
+      "name": "s_shape_meshlod_cpp_006374e0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006374f5",
+      "name": "s_shape_meshlod_cpp_006374f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063750a",
+      "name": "s_Out_of_memory_0063750a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_idx_1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_idx_2",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "create_if_missing",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

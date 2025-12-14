@@ -25,15 +25,15 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x006703ec]      ; 00574ef0 | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 00574ef0 | g_CDemonRendererInstance | g_CDemonRendererPtr
         ;   Label: core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0
-    PUSH EDX                            ; 00574ef6 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 00574ef7 | void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)
-    MOV EAX,[0x033648ec]                ; 00574efc | int g_SavedWindowWidth
-    MOV [0x00679394],EAX                ; 00574f01 | int g_WindowWidth
-    MOV EAX,[0x033648f0]                ; 00574f06 | int g_SavedWindowHeight
+    PUSH EDX                            ; 00574ef6 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480 ; 00574ef7
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480(CDemonRenderer * this_ptr)
+    MOV EAX,[0x033648ec]                ; 00574efc | g_SavedWindowWidth
+    MOV [0x00679394],EAX                ; 00574f01 | g_WindowWidth
+    MOV EAX,[0x033648f0]                ; 00574f06 | g_SavedWindowHeight
     ADD ESP,0x4                         ; 00574f0b
-    MOV [0x00679398],EAX                ; 00574f0e | int g_WindowHeight
+    MOV [0x00679398],EAX                ; 00574f0e | g_WindowHeight
     RET                                 ; 00574f13
 

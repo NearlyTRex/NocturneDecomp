@@ -25,8 +25,8 @@ section .text
     PUSH EDX                            ; 00601a83
     MOV EBX,dword ptr [ESP + 0x10]      ; 00601a84
     PUSH EBX                            ; 00601a88
-    CALL crt_stdio.c_fopenWithFlags_FUN_00601a20 ; 00601a89 | FILE * crt_stdio.c_fopenWithFlags_FUN_00601a20(char * filename, char * mode, int flags)
-        ;   XREF to: 00601a20 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fopenWithFlags_FUN_00601a20 ; 00601a89
+        ;   XREF to: 00601a20 (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_fopenWithFlags_FUN_00601a20(char * filename, char * mode, int flags)
     ADD ESP,0xc                         ; 00601a8e
     POP EBX                             ; 00601a91
     RET                                 ; 00601a92

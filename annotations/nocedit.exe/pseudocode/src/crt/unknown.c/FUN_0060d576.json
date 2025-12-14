@@ -1,127 +1,127 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 144, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 102, 
-    "assembly_lines": 68, 
-    "suspect_count": 10, 
+    "assembly_lines": 68,
+    "complexity_score": 144,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 34,
+    "suspect_count": 10,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
-      "addr": "00606020"
-    }, 
-    {
-      "name": "crt_stdio.c_stream_valid_FUN_00608cd1", 
-      "addr": "00608cd1"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = crt_stdio_c_stream_valid_FUN_00608cd1(in_stack_00000004,1);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->_cnt = 0;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = *(int *)((int)&in_stack_00000004->_cnt + *(int *)(in_stack_00000004->_ptr + 4));"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = *(int *)((int)&in_stack_00000004->_cnt + *(int *)(in_stack_00000004->_ptr + 4));"
-    }, 
-    {
-      "line": 16, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar2 = *(int *)((int)&in_stack_00000004->_cnt + *(int *)(in_stack_00000004->_ptr + 4));"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->_cnt = 1;"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((int)&in_stack_00000004->_ptr + *(int *)(in_stack_00000004->_ptr + 4)),4);"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((int)&in_stack_00000004->_ptr + *(int *)(in_stack_00000004->_ptr + 4)),4);"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->_cnt = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0060d576", 
-    "signature": "undefined crt_unknown.c_FUN_0060d576()", 
-    "address_range": [
-      [
-        "0060d576", 
-        "0060d5fe"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_0060d576"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 102
+  },
   "cross_references": [
     {
-      "from_addr": "0060b70c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_mbstrncpy_core_FUN_0060b670", 
-      "addr": "0060b6d7"
+      "addr": "0060b6d7",
+      "from_addr": "0060b70c",
+      "name": "crt_string.c_mbstrncpy_core_FUN_0060b670",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060d576",
+    "address_range": [
+      [
+        "0060d576",
+        "0060d5fe"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_0060d576",
+    "signature": "undefined crt_unknown.c_FUN_0060d576()"
+  },
+  "function_calls": [
+    {
+      "addr": "00606020",
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020"
+    },
+    {
+      "addr": "00608cd1",
+      "name": "crt_stdio.c_stream_valid_FUN_00608cd1"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "FILE *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "iVar2 = crt_stdio_c_stream_valid_FUN_00608cd1(in_stack_00000004,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->_cnt = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "iVar2 = *(int *)((int)&in_stack_00000004->_cnt + *(int *)(in_stack_00000004->_ptr + 4));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "iVar2 = *(int *)((int)&in_stack_00000004->_cnt + *(int *)(in_stack_00000004->_ptr + 4));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(int *)((int)",
+      "text": "iVar2 = *(int *)((int)&in_stack_00000004->_cnt + *(int *)(in_stack_00000004->_ptr + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->_cnt = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "((int)&in_stack_00000004->_ptr + *(int *)(in_stack_00000004->_ptr + 4)),4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "((int)&in_stack_00000004->_ptr + *(int *)(in_stack_00000004->_ptr + 4)),4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->_cnt = 0;",
+      "type": "stack_param"
     }
   ]
 }

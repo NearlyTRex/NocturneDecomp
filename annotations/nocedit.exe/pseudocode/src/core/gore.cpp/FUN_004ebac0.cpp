@@ -137,7 +137,7 @@ LAB_004ebdb7:
     *(uint *)((int)&g_RenderVertexBuffer[0].fog + iVar3) = 0;
     iVar3 = iVar4;
   } while (iVar4 != 0xc0);
-  (*(code *)((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+  (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr,0xffff - (int)g_PerspectiveReciprocal);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
@@ -219,7 +219,7 @@ LAB_004ebdb7:
            (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
       iVar4 = iVar5;
     } while (iVar5 != 0xc0);
-    (*(code *)((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
+    (*((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
               (g_CDemonRendererPtr,0xffff - (int)g_PerspectiveReciprocal);
     engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0

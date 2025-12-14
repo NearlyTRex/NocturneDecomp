@@ -30,11 +30,11 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0060adfb
     MOVSD ES:EDI,ESI                    ; 0060adfc
     CMP ECX,0xa                         ; 0060adfd
-    JNZ 0x0060ae35                      ; 0060ae00 | LAB_0060ae35
-        ;   XREF to: 0060ae35 (CONDITIONAL_JUMP)
+    JNZ 0x0060ae35                      ; 0060ae00
+        ;   XREF to: 0060ae35 (CONDITIONAL_JUMP)  ; LAB_0060ae35
     TEST byte ptr [ESP + 0x7],0x80      ; 0060ae02
-    JZ 0x0060ae35                       ; 0060ae07 | LAB_0060ae35
-        ;   XREF to: 0060ae35 (CONDITIONAL_JUMP)
+    JZ 0x0060ae35                       ; 0060ae07
+        ;   XREF to: 0060ae35 (CONDITIONAL_JUMP)  ; LAB_0060ae35
     MOV byte ptr [EBX],0x2d             ; 0060ae09
     MOV EDX,dword ptr [ESP]             ; 0060ae0c
     MOV ESI,dword ptr [ESP + 0x4]       ; 0060ae0f
@@ -46,11 +46,11 @@ section .text
     LEA EDX,[EBX + 0x1]                 ; 0060ae21
     INC EDI                             ; 0060ae24
     MOV dword ptr [ESP],EDI             ; 0060ae25
-    JNZ 0x0060ae2f                      ; 0060ae28 | LAB_0060ae2f
-        ;   XREF to: 0060ae2f (CONDITIONAL_JUMP)
+    JNZ 0x0060ae2f                      ; 0060ae28
+        ;   XREF to: 0060ae2f (CONDITIONAL_JUMP)  ; LAB_0060ae2f
     LEA EAX,[ESI + 0x1]                 ; 0060ae2a
-    JMP 0x0060ae31                      ; 0060ae2d | LAB_0060ae31
-        ;   XREF to: 0060ae31 (UNCONDITIONAL_JUMP)
+    JMP 0x0060ae31                      ; 0060ae2d
+        ;   XREF to: 0060ae31 (UNCONDITIONAL_JUMP)  ; LAB_0060ae31
     MOV EAX,ESI                         ; 0060ae2f
         ;   Label: LAB_0060ae2f
     MOV dword ptr [ESP + 0x4],EAX       ; 0060ae31
@@ -60,8 +60,8 @@ section .text
     PUSH EDX                            ; 0060ae36
     LEA EAX,[ESP + 0x8]                 ; 0060ae37
     PUSH EAX                            ; 0060ae3b
-    CALL crt_stdlib.c_i64toa_FUN_0060ad40 ; 0060ae3c | char * crt_stdlib.c_i64toa_FUN_0060ad40(longlong * value, char * buffer, int base)
-        ;   XREF to: 0060ad40 (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_i64toa_FUN_0060ad40 ; 0060ae3c
+        ;   XREF to: 0060ad40 (UNCONDITIONAL_CALL)  ; char * crt_stdlib.c_i64toa_FUN_0060ad40(longlong * value, char * buffer, int base)
     ADD ESP,0xc                         ; 0060ae41
     MOV EAX,EBX                         ; 0060ae44
     ADD ESP,0x8                         ; 0060ae46

@@ -43,17 +43,17 @@ section .text
     MOV EDI,dword ptr [EBP + 0x14]      ; 00422d6f
     MOV EAX,dword ptr [EDI + 0x66c]     ; 00422d72
     CMP EAX,0x1                         ; 00422d78
-    JC 0x00422da1                       ; 00422d7b | LAB_00422da1
-        ;   XREF to: 00422da1 (CONDITIONAL_JUMP)
+    JC 0x00422da1                       ; 00422d7b
+        ;   XREF to: 00422da1 (CONDITIONAL_JUMP)  ; LAB_00422da1
     LEA EBX,[EDI + 0x670]               ; 00422d7d
     MOV dword ptr [ESP + 0xb8],EBX      ; 00422d83
     LEA EBX,[EDI + 0x3628]              ; 00422d8a
     LEA ESI,[EDI + 0x158]               ; 00422d90
-    JBE 0x00422da8                      ; 00422d96 | LAB_00422da8
-        ;   XREF to: 00422da8 (CONDITIONAL_JUMP)
+    JBE 0x00422da8                      ; 00422d96
+        ;   XREF to: 00422da8 (CONDITIONAL_JUMP)  ; LAB_00422da8
     CMP EAX,0x2                         ; 00422d98
-    JZ 0x00422ed3                       ; 00422d9b | LAB_00422ed3
-        ;   XREF to: 00422ed3 (CONDITIONAL_JUMP)
+    JZ 0x00422ed3                       ; 00422d9b
+        ;   XREF to: 00422ed3 (CONDITIONAL_JUMP)  ; LAB_00422ed3
     MOV ESP,EBP                         ; 00422da1
         ;   Label: LAB_00422da1
     POP EBP                             ; 00422da3
@@ -61,15 +61,15 @@ section .text
     POP ESI                             ; 00422da5
     POP EBX                             ; 00422da6
     RET                                 ; 00422da7
-    PUSH 0x616955                       ; 00422da8 | = "flashlit.kfm" | s_flashlit_kfm_00616955 = flashlit.kfm
+    PUSH 0x616955                       ; 00422da8 | = "flashlit.kfm"
         ;   Label: LAB_00422da8
     PUSH ESI                            ; 00422dad
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00422dae | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00422dae
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00422db3
     PUSH ESI                            ; 00422db6
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 00422db7 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 00422db7
+        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00422dbc
     LEA EAX,[ESP + 0x40]                ; 00422dbf
     PUSH EAX                            ; 00422dc3
@@ -80,7 +80,7 @@ section .text
     FLD float ptr [ESP + 0x40]          ; 00422dd1
     FADD float ptr [ESP + 0x4c]         ; 00422dd5
     FST float ptr [ESP + 0xac]          ; 00422dd9
-    FLD float ptr [0x0061697f]          ; 00422de0 | float FLOAT_0061697f
+    FLD float ptr [0x0061697f]          ; 00422de0 | FLOAT_0061697f
     FXCH                                ; 00422de6
     FMUL ST1                            ; 00422de8
     FLD float ptr [ESP + 0x48]          ; 00422dea
@@ -122,7 +122,7 @@ section .text
     FSTP float ptr [ESP + 0xa8]         ; 00422e71
     MOV dword ptr [EDI + 0x3620],EAX    ; 00422e78
     FLD float ptr [ESP + 0x54]          ; 00422e7e
-    FADD double ptr [0x00616987]        ; 00422e82 | double DOUBLE_00616987
+    FADD double ptr [0x00616987]        ; 00422e82 | DOUBLE_00616987
     FSTP float ptr [EDI + 0x3624]       ; 00422e88
     MOV dword ptr [EBX + 0x8],0x0       ; 00422e8e
     MOV EAX,dword ptr [ESP + 0xb8]      ; 00422e95
@@ -140,15 +140,15 @@ section .text
     POP ESI                             ; 00422ed0
     POP EBX                             ; 00422ed1
     RET                                 ; 00422ed2
-    PUSH 0x616962                       ; 00422ed3 | = "lantern.kfm" | s_lantern_kfm_00616962 = lantern.kfm
+    PUSH 0x616962                       ; 00422ed3 | = "lantern.kfm"
         ;   Label: LAB_00422ed3
     PUSH ESI                            ; 00422ed8
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00422ed9 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 00422ed9
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00422ede
     PUSH ESI                            ; 00422ee1
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 00422ee2 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 00422ee2
+        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00422ee7
     LEA ESI,[ESP + 0x28]                ; 00422eea
     PUSH ESI                            ; 00422eee
@@ -159,7 +159,7 @@ section .text
     FLD float ptr [ESP + 0x28]          ; 00422efc
     FADD float ptr [ESP + 0x34]         ; 00422f00
     FST float ptr [ESP + 0x88]          ; 00422f04
-    FLD float ptr [0x0061697f]          ; 00422f0b | float FLOAT_0061697f
+    FLD float ptr [0x0061697f]          ; 00422f0b | FLOAT_0061697f
     FXCH                                ; 00422f11
     FMUL ST1                            ; 00422f13
     FLD float ptr [ESP + 0x30]          ; 00422f15
@@ -212,42 +212,42 @@ section .text
     MOV dword ptr [EDI + 0x2324],0x0    ; 00422fdf
     MOV dword ptr [EAX + 0x38],0x42600000 ; 00422fe9
     MOV dword ptr [EDI + 0x7b0],0x42000000 ; 00422ff0
-    MOV EDX,dword ptr [0x008229ac]      ; 00422ffa | undefined4 DAT_008229ac
+    MOV EDX,dword ptr [0x008229ac]      ; 00422ffa | DAT_008229ac
     MOV dword ptr [EDI + 0x314],0x3     ; 00423000
     TEST EDX,EDX                        ; 0042300a
-    JNZ 0x00423047                      ; 0042300c | LAB_00423047
-        ;   XREF to: 00423047 (CONDITIONAL_JUMP)
-    MOV ESI,0x8229ec                    ; 0042300e | CDemonFilter[8] CDemonFilter_ARRAY_008229ec
+    JNZ 0x00423047                      ; 0042300c
+        ;   XREF to: 00423047 (CONDITIONAL_JUMP)  ; LAB_00423047
+    MOV ESI,0x8229ec                    ; 0042300e | CDemonFilter_ARRAY_008229ec
     XOR EBX,EBX                         ; 00423013
     PUSH EBX                            ; 00423015
         ;   Label: LAB_00423015
-    PUSH 0x61696e                       ; 00423016 | = "lantern%d.raw" | s_lantern_d_raw_0061696e = lantern%d.raw
+    PUSH 0x61696e                       ; 00423016 | = "lantern%d.raw"
     LEA EAX,[ESP + 0x8]                 ; 0042301b
     PUSH EAX                            ; 0042301f
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00423020 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00423020
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00423025
     MOV EAX,ESP                         ; 00423028
     PUSH EAX                            ; 0042302a
-    PUSH ESI                            ; 0042302b | CDemonFilter[8] CDemonFilter_ARRAY_008229ec
+    PUSH ESI                            ; 0042302b | CDemonFilter_ARRAY_008229ec
     INC EBX                             ; 0042302c
-    CALL core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 ; 0042302d | void core_dfilter.cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter * this_ptr, char * filename)
-        ;   XREF to: 004702f0 (UNCONDITIONAL_CALL)
+    CALL core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 ; 0042302d
+        ;   XREF to: 004702f0 (UNCONDITIONAL_CALL)  ; void core_dfilter.cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00423032
     ADD ESI,0x4c                        ; 00423035
     CMP EBX,0x8                         ; 00423038
-    JL 0x00423015                       ; 0042303b | LAB_00423015
-        ;   XREF to: 00423015 (CONDITIONAL_JUMP)
-    MOV dword ptr [0x008229ac],0x1      ; 0042303d | undefined4 DAT_008229ac
+    JL 0x00423015                       ; 0042303b
+        ;   XREF to: 00423015 (CONDITIONAL_JUMP)  ; LAB_00423015
+    MOV dword ptr [0x008229ac],0x1      ; 0042303d | DAT_008229ac
     PUSH 0x0                            ; 00423047
         ;   Label: LAB_00423047
     PUSH 0x0                            ; 00423049
     PUSH 0x0                            ; 0042304b
-    PUSH 0x8229ec                       ; 0042304d | CDemonFilter[8] CDemonFilter_ARRAY_008229ec
+    PUSH 0x8229ec                       ; 0042304d | CDemonFilter_ARRAY_008229ec
     ADD EDI,0x670                       ; 00423052
     PUSH EDI                            ; 00423058
-    CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 ; 00423059 | void core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
-        ;   XREF to: 00474770 (UNCONDITIONAL_CALL)
+    CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 ; 00423059
+        ;   XREF to: 00474770 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 0042305e
     MOV ESP,EBP                         ; 00423061
     POP EBP                             ; 00423063

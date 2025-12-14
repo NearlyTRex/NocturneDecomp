@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2f0cb20                   ; 0050bb50 | CDemonActorType g_CMarqueeClassInfo
+    MOV EAX,0x2f0cb20                   ; 0050bb50 | g_CMarqueeClassInfo
         ;   Label: core_marquee.cpp_FUN_0050bb50
     RET                                 ; 0050bb55
 

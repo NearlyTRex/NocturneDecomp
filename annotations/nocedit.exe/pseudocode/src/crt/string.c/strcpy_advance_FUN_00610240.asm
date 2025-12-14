@@ -23,12 +23,12 @@ section .text
         ;   Label: LAB_00610249
     MOV byte ptr [EAX],BL               ; 0061024b
     TEST BL,BL                          ; 0061024d
-    JZ 0x00610255                       ; 0061024f | LAB_00610255
-        ;   XREF to: 00610255 (CONDITIONAL_JUMP)
+    JZ 0x00610255                       ; 0061024f
+        ;   XREF to: 00610255 (CONDITIONAL_JUMP)  ; LAB_00610255
     INC EAX                             ; 00610251
     INC EDX                             ; 00610252
-    JMP 0x00610249                      ; 00610253 | LAB_00610249
-        ;   XREF to: 00610249 (UNCONDITIONAL_JUMP)
+    JMP 0x00610249                      ; 00610253
+        ;   XREF to: 00610249 (UNCONDITIONAL_JUMP)  ; LAB_00610249
     POP EBX                             ; 00610255
         ;   Label: LAB_00610255
     RET                                 ; 00610256

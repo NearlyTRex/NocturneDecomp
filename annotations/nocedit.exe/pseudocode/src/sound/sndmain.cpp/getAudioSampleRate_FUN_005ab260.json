@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 4, 
-    "pseudocode_lines": 4, 
-    "cross_reference_count": 5, 
-    "global_count": 1, 
-    "total_lines": 7, 
-    "assembly_lines": 3, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_AudioSampleRate", 
-      "addr": "00681b1c", 
-      "value": "0x5622"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ab260", 
-    "signature": "int sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260(void)", 
-    "address_range": [
-      [
-        "005ab260", 
-        "005ab265"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 3,
+    "complexity_score": 4,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 7
+  },
   "cross_references": [
     {
-      "from_addr": "0051228c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
-      "addr": "00511e50"
-    }, 
+      "addr": "00511e50",
+      "from_addr": "0051228c",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b3951", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_configure_FUN_005b3830", 
-      "addr": "005b3830"
-    }, 
+      "addr": "005b3830",
+      "from_addr": "005b3951",
+      "name": "core_sound.cpp_CSound_configure_FUN_005b3830",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005add2e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
-    }, 
+      "addr": "005adba0",
+      "from_addr": "005add2e",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ab280", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_setAudioBitDepth_FUN_005ab280", 
-      "addr": "005ab280"
-    }, 
+      "addr": "005ab280",
+      "from_addr": "005ab280",
+      "name": "sound_sndmain.cpp_setAudioBitDepth_FUN_005ab280",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ab2a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_setAudioChannelCount_FUN_005ab2a0", 
-      "addr": "005ab2a0"
+      "addr": "005ab2a0",
+      "from_addr": "005ab2a0",
+      "name": "sound_sndmain.cpp_setAudioChannelCount_FUN_005ab2a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005ab260",
+    "address_range": [
+      [
+        "005ab260",
+        "005ab265"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260",
+    "signature": "int sound_sndmain.cpp_getAudioSampleRate_FUN_005ab260(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00681b1c",
+      "name": "g_AudioSampleRate",
+      "type": "int",
+      "value": "0x5622"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

@@ -39,13 +39,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 00432547
     MOV ESI,dword ptr [ESP + 0x3c]      ; 0043254b
     MOV EDI,dword ptr [ESP + 0x40]      ; 0043254f
-    MOV EDX,dword ptr [0x02cf6a9c]      ; 00432553 | void *[1024] g_ScreenBufferArray
+    MOV EDX,dword ptr [0x02cf6a9c]      ; 00432553 | g_ScreenBufferArray
     MOV EBP,dword ptr [0x02cf6aa0]      ; 00432559 | g_ScreenBufferArray[1]
     SUB EBP,EDX                         ; 0043255f
     MOV dword ptr [ESP + 0x8],EBP       ; 00432561
     TEST EBX,EBX                        ; 00432565
-    JNZ 0x00432578                      ; 00432567 | LAB_00432578
-        ;   XREF to: 00432578 (CONDITIONAL_JUMP)
+    JNZ 0x00432578                      ; 00432567
+        ;   XREF to: 00432578 (CONDITIONAL_JUMP)  ; LAB_00432578
     LEA EAX,[EAX]                       ; 00432569
     NOP                                 ; 0043256f
     ADD ESP,0x1c                        ; 00432570
@@ -55,24 +55,24 @@ section .text
     POP ESI                             ; 00432575
     POP EBX                             ; 00432576
     RET                                 ; 00432577
-    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760 ; 00432578 | ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760()
+    CALL cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760 ; 00432578
+        ;   XREF to: 00431760 (UNCONDITIONAL_CALL)  ; ColorConversionFunc * cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760()
         ;   Label: LAB_00432578
-        ;   XREF to: 00431760 (UNCONDITIONAL_CALL)
     MOV dword ptr [ESP + 0xc],EAX       ; 0043257d
     MOV EAX,dword ptr [ESP + 0x38]      ; 00432581
-    MOV ECX,dword ptr [0x0067939c]      ; 00432585 | int g_BitsPerPixel
+    MOV ECX,dword ptr [0x0067939c]      ; 00432585 | g_BitsPerPixel
     SHL EAX,0x2                         ; 0043258b
     CMP ECX,0x8                         ; 0043258e
-    JNZ 0x004325d0                      ; 00432591 | LAB_004325d0
-        ;   XREF to: 004325d0 (CONDITIONAL_JUMP)
+    JNZ 0x004325d0                      ; 00432591
+        ;   XREF to: 004325d0 (CONDITIONAL_JUMP)  ; LAB_004325d0
     MOV ECX,dword ptr [ESP + 0x34]      ; 00432593
-    MOV EBP,dword ptr [EAX + 0x2cf6a9c] ; 00432597 | void *[1024] g_ScreenBufferArray
+    MOV EBP,dword ptr [EAX + 0x2cf6a9c] ; 00432597 | g_ScreenBufferArray
     XOR EAX,EAX                         ; 0043259d
     ADD EBP,ECX                         ; 0043259f
     MOV dword ptr [ESP + 0x14],EAX      ; 004325a1
     TEST EDI,EDI                        ; 004325a5
-    JLE 0x00432570                      ; 004325a7 | LAB_00432570
-        ;   XREF to: 00432570 (CONDITIONAL_JUMP)
+    JLE 0x00432570                      ; 004325a7
+        ;   XREF to: 00432570 (CONDITIONAL_JUMP)  ; LAB_00432570
     PUSH ESI                            ; 004325a9
         ;   Label: LAB_004325a9
     PUSH EBX                            ; 004325aa
@@ -86,8 +86,8 @@ section .text
     ADD EBP,ECX                         ; 004325be
     MOV dword ptr [ESP + 0x14],EDX      ; 004325c0
     CMP EDI,EDX                         ; 004325c4
-    JG 0x004325a9                       ; 004325c6 | LAB_004325a9
-        ;   XREF to: 004325a9 (CONDITIONAL_JUMP)
+    JG 0x004325a9                       ; 004325c6
+        ;   XREF to: 004325a9 (CONDITIONAL_JUMP)  ; LAB_004325a9
     ADD ESP,0x1c                        ; 004325c8
     POP EBP                             ; 004325cb
     POP EDI                             ; 004325cc
@@ -96,10 +96,10 @@ section .text
     RET                                 ; 004325cf
     CMP ECX,0x10                        ; 004325d0
         ;   Label: LAB_004325d0
-    JNZ 0x0043262d                      ; 004325d3 | LAB_0043262d
-        ;   XREF to: 0043262d (CONDITIONAL_JUMP)
+    JNZ 0x0043262d                      ; 004325d3
+        ;   XREF to: 0043262d (CONDITIONAL_JUMP)  ; LAB_0043262d
     MOV EDX,dword ptr [ESP + 0x34]      ; 004325d5
-    MOV EBP,dword ptr [EAX + 0x2cf6a9c] ; 004325d9 | void *[1024] g_ScreenBufferArray
+    MOV EBP,dword ptr [EAX + 0x2cf6a9c] ; 004325d9 | g_ScreenBufferArray
     ADD EDX,EDX                         ; 004325df
     MOV EAX,dword ptr [ESP + 0x8]       ; 004325e1
     ADD EBP,EDX                         ; 004325e5
@@ -111,8 +111,8 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004325f2
     MOV dword ptr [ESP + 0x18],EDX      ; 004325f6
     TEST EDI,EDI                        ; 004325fa
-    JLE 0x00432570                      ; 004325fc | LAB_00432570
-        ;   XREF to: 00432570 (CONDITIONAL_JUMP)
+    JLE 0x00432570                      ; 004325fc
+        ;   XREF to: 00432570 (CONDITIONAL_JUMP)  ; LAB_00432570
     ADD EAX,EAX                         ; 00432602
     MOV dword ptr [ESP],EAX             ; 00432604
     PUSH ESI                            ; 00432607
@@ -128,8 +128,8 @@ section .text
     ADD EBP,ECX                         ; 0043261b
     MOV dword ptr [ESP + 0x18],EDX      ; 0043261d
     CMP EDI,EDX                         ; 00432621
-    JG 0x00432607                       ; 00432623 | LAB_00432607
-        ;   XREF to: 00432607 (CONDITIONAL_JUMP)
+    JG 0x00432607                       ; 00432623
+        ;   XREF to: 00432607 (CONDITIONAL_JUMP)  ; LAB_00432607
     ADD ESP,0x1c                        ; 00432625
     POP EBP                             ; 00432628
     POP EDI                             ; 00432629
@@ -138,7 +138,7 @@ section .text
     RET                                 ; 0043262c
     MOV EDX,dword ptr [ESP + 0x34]      ; 0043262d
         ;   Label: LAB_0043262d
-    MOV EBP,dword ptr [EAX + 0x2cf6a9c] ; 00432631 | void *[1024] g_ScreenBufferArray
+    MOV EBP,dword ptr [EAX + 0x2cf6a9c] ; 00432631 | g_ScreenBufferArray
     SHL EDX,0x2                         ; 00432637
     MOV EAX,dword ptr [ESP + 0x8]       ; 0043263a
     ADD EBP,EDX                         ; 0043263e
@@ -151,8 +151,8 @@ section .text
     XOR EAX,EAX                         ; 00432651
     MOV dword ptr [ESP + 0x10],EAX      ; 00432653
     TEST EDI,EDI                        ; 00432657
-    JLE 0x00432570                      ; 00432659 | LAB_00432570
-        ;   XREF to: 00432570 (CONDITIONAL_JUMP)
+    JLE 0x00432570                      ; 00432659
+        ;   XREF to: 00432570 (CONDITIONAL_JUMP)  ; LAB_00432570
     MOV EAX,dword ptr [ESP + 0x8]       ; 0043265f
     SHL EAX,0x2                         ; 00432663
     MOV dword ptr [ESP + 0x4],EAX       ; 00432666
@@ -169,8 +169,8 @@ section .text
     ADD EBP,ECX                         ; 0043267f
     MOV dword ptr [ESP + 0x10],EDX      ; 00432681
     CMP EDI,EDX                         ; 00432685
-    JG 0x0043266a                       ; 00432687 | LAB_0043266a
-        ;   XREF to: 0043266a (CONDITIONAL_JUMP)
+    JG 0x0043266a                       ; 00432687
+        ;   XREF to: 0043266a (CONDITIONAL_JUMP)  ; LAB_0043266a
     ADD ESP,0x1c                        ; 00432689
     POP EBP                             ; 0043268c
     POP EDI                             ; 0043268d

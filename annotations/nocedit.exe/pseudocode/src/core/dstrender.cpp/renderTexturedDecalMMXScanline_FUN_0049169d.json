@@ -1,177 +1,177 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 97, 
-    "pseudocode_lines": 62, 
-    "cross_reference_count": 1, 
-    "global_count": 18, 
-    "total_lines": 145, 
-    "assembly_lines": 83, 
-    "suspect_count": 3, 
+    "assembly_lines": 83,
+    "complexity_score": 97,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 18,
+    "pseudocode_lines": 62,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "uint", 
-      "name": "g_PerspectiveNextU", 
-      "addr": "006723a8", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_PerspectiveNextV", 
-      "addr": "006723ac", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_StartDepthZ", 
-      "addr": "006723b4", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DeltaTextureU", 
-      "addr": "006723c4", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DeltaTextureV", 
-      "addr": "006723c8", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DeltaDepthZ", 
-      "addr": "006723cc", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_PerspectiveScanlineColorPtr", 
-      "addr": "006723d0", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PerspectiveScanlinePixelCount", 
-      "addr": "006723d4", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "uint*", 
-      "name": "g_PerspectiveScanlineZPtr", 
-      "addr": "006723d8", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TextureShift1", 
-      "addr": "006826e0", 
-      "value": "0x10"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TextureShift2", 
-      "addr": "00682700", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TextureMask1", 
-      "addr": "00682720", 
-      "value": "0xff"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TextureMask2", 
-      "addr": "00682740", 
-      "value": "0xff00"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }, 
-    {
-      "type": "uint[256]", 
-      "name": "g_Hardware32BitPalette", 
-      "addr": "02d01924", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d02584", 
-      "addr": "02d02584", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CurrentTextureData", 
-      "addr": "02d03e80", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 27, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);"
-    }, 
-    {
-      "line": 50, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {"
-    }, 
-    {
-      "line": 51, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_PerspectiveScanlineColorPtr + uVar6) ="
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0049169d", 
-    "signature": "void core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
-    "address_range": [
-      [
-        "0049169d", 
-        "004917bb"
-      ]
-    ], 
-    "name": "core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 145
+  },
   "cross_references": [
     {
-      "from_addr": "0048b52d", 
-      "type": "DATA", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420", 
-      "addr": "0048b420"
+      "addr": "0048b420",
+      "from_addr": "0048b52d",
+      "name": "engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "0049169d",
+    "address_range": [
+      [
+        "0049169d",
+        "004917bb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d",
+    "signature": "void core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006723a8",
+      "name": "g_PerspectiveNextU",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723ac",
+      "name": "g_PerspectiveNextV",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723b4",
+      "name": "g_StartDepthZ",
+      "type": "uint",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723c4",
+      "name": "g_DeltaTextureU",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723c8",
+      "name": "g_DeltaTextureV",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723cc",
+      "name": "g_DeltaDepthZ",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723d0",
+      "name": "g_PerspectiveScanlineColorPtr",
+      "type": "void*",
+      "value": "00000000"
+    },
+    {
+      "addr": "006723d4",
+      "name": "g_PerspectiveScanlinePixelCount",
+      "type": "int",
+      "value": "0x0"
+    },
+    {
+      "addr": "006723d8",
+      "name": "g_PerspectiveScanlineZPtr",
+      "type": "uint*",
+      "value": "00000000"
+    },
+    {
+      "addr": "006826e0",
+      "name": "g_TextureShift1",
+      "type": "ulonglong",
+      "value": "0x10"
+    },
+    {
+      "addr": "00682700",
+      "name": "g_TextureShift2",
+      "type": "ulonglong",
+      "value": "0x8"
+    },
+    {
+      "addr": "00682720",
+      "name": "g_TextureMask1",
+      "type": "ulonglong",
+      "value": "0xff"
+    },
+    {
+      "addr": "00682740",
+      "name": "g_TextureMask2",
+      "type": "ulonglong",
+      "value": "0xff00"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d01924",
+      "name": "g_Hardware32BitPalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "02d02584",
+      "name": "DAT_02d02584",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03e80",
+      "name": "g_CurrentTextureData",
+      "type": "void*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(void *)((int)",
+      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_PerspectiveScanlineColorPtr + uVar6) =",
+      "type": "pointer_cast"
     }
   ]
 }

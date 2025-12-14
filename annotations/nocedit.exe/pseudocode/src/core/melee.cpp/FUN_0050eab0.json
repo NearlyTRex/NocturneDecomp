@@ -1,80 +1,80 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 60, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 35, 
-    "assembly_lines": 20, 
-    "suspect_count": 4, 
+    "assembly_lines": 20,
+    "complexity_score": 60,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 15,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
-      "addr": "0040c6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CHero_00635cdc", 
-      "addr": "00635cdc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000008;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004 + 0x588) != 0) {"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,\"CHero\");"
-    }
-  ], 
+    ],
+    "total_lines": 35
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0050eab0", 
-    "signature": "undefined core_melee.cpp_FUN_0050eab0()", 
+    "address": "0050eab0",
     "address_range": [
       [
-        "0050eab0", 
+        "0050eab0",
         "0050eade"
       ]
-    ], 
-    "name": "core_melee.cpp_FUN_0050eab0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_melee.cpp_FUN_0050eab0",
+    "signature": "undefined core_melee.cpp_FUN_0050eab0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c6d0",
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635cdc",
+      "name": "s_CHero_00635cdc",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "CDemonActor *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0x588) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,\"CHero\");",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -33,13 +33,13 @@ section .text
     MOV EDX,dword ptr [ESP + 0x128]     ; 005606fc
     PUSH EDX                            ; 00560703
     XOR EBX,EBX                         ; 00560704
-    CALL crt_string.c_splitpath_FUN_005ff178 ; 00560706 | void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
-        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_splitpath_FUN_005ff178 ; 00560706
+        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     MOV ECX,dword ptr [EDI + 0x1c]      ; 0056070b
     ADD ESP,0x14                        ; 0056070e
     TEST ECX,ECX                        ; 00560711
-    JLE 0x0056073a                      ; 00560713 | LAB_0056073a
-        ;   XREF to: 0056073a (CONDITIONAL_JUMP)
+    JLE 0x0056073a                      ; 00560713
+        ;   XREF to: 0056073a (CONDITIONAL_JUMP)  ; LAB_0056073a
     XOR ESI,ESI                         ; 00560715
     MOV EAX,ESP                         ; 00560717
         ;   Label: LAB_00560717
@@ -47,18 +47,18 @@ section .text
     MOV EAX,dword ptr [EDI + 0x20]      ; 0056071a
     ADD EAX,ESI                         ; 0056071d
     PUSH EAX                            ; 0056071f
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00560720 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 00560720
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00560725
     TEST EAX,EAX                        ; 00560728
-    JZ 0x0056074a                       ; 0056072a | LAB_0056074a
-        ;   XREF to: 0056074a (CONDITIONAL_JUMP)
+    JZ 0x0056074a                       ; 0056072a
+        ;   XREF to: 0056074a (CONDITIONAL_JUMP)  ; LAB_0056074a
     INC EBX                             ; 0056072c
     MOV EBP,dword ptr [EDI + 0x1c]      ; 0056072d
     ADD ESI,0x226                       ; 00560730
     CMP EBX,EBP                         ; 00560736
-    JL 0x00560717                       ; 00560738 | LAB_00560717
-        ;   XREF to: 00560717 (CONDITIONAL_JUMP)
+    JL 0x00560717                       ; 00560738
+        ;   XREF to: 00560717 (CONDITIONAL_JUMP)  ; LAB_00560717
     MOV EAX,0xffffffff                  ; 0056073a
         ;   Label: LAB_0056073a
     ADD ESP,0x100                       ; 0056073f

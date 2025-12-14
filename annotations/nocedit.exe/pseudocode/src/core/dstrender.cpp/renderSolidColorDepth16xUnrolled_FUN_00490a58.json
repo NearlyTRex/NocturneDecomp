@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 177, 
-    "pseudocode_lines": 162, 
-    "cross_reference_count": 2, 
-    "global_count": 4, 
-    "total_lines": 400, 
-    "assembly_lines": 238, 
-    "suspect_count": 1, 
+    "assembly_lines": 238,
+    "complexity_score": 177,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 162,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }, 
-    {
-      "type": "uint[1600]", 
-      "name": "g_ReciprocalLookupTable", 
-      "addr": "02d02580", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 34, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar6 = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00490a58", 
-    "signature": "void core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
-    "address_range": [
-      [
-        "00490a58", 
-        "00490c36"
-      ]
-    ], 
-    "name": "core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 400
+  },
   "cross_references": [
     {
-      "from_addr": "0048a909", 
-      "type": "PARAM", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0", 
-      "addr": "0048a8a0"
-    }, 
+      "addr": "0048a8a0",
+      "from_addr": "0048a909",
+      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0",
+      "type": "PARAM"
+    },
     {
-      "from_addr": "0048a882", 
-      "type": "DATA", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820", 
-      "addr": "0048a820"
+      "addr": "0048a820",
+      "from_addr": "0048a882",
+      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "00490a58",
+    "address_range": [
+      [
+        "00490a58",
+        "00490c36"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58",
+    "signature": "void core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02580",
+      "name": "g_ReciprocalLookupTable",
+      "type": "uint[1600]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(int *)((int)",
+      "text": "piVar6 = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
+      "type": "pointer_cast"
     }
   ]
 }

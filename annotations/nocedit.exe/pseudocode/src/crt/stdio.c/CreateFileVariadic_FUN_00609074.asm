@@ -34,8 +34,8 @@ section .text
     PUSH EBX                            ; 0060908b
     MOV ECX,dword ptr [ESP + 0x18]      ; 0060908c
     PUSH ECX                            ; 00609090
-    CALL crt_stdio.c_CreateFileImpl_FUN_006090a0 ; 00609091 | HANDLE crt_stdio.c_CreateFileImpl_FUN_006090a0(char * filename, dword access_mode, dword share_mode, va_list_t * extra_args)
-        ;   XREF to: 006090a0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_CreateFileImpl_FUN_006090a0 ; 00609091
+        ;   XREF to: 006090a0 (UNCONDITIONAL_CALL)  ; HANDLE crt_stdio.c_CreateFileImpl_FUN_006090a0(char * filename, dword access_mode, dword share_mode, va_list_t * extra_args)
     ADD ESP,0x10                        ; 00609096
     ADD ESP,0x4                         ; 00609099
     POP EBX                             ; 0060909c

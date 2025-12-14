@@ -30,8 +30,8 @@ section .text
         ;   Label: engine_pod.cpp_CPodFile_dtor_FUN_0054f610
     MOV EBX,dword ptr [ESP + 0x8]       ; 0054f611
     PUSH EBX                            ; 0054f615
-    CALL engine_pod.cpp_CPodFile_cleanup_FUN_00550090 ; 0054f616 | void engine_pod.cpp_CPodFile_cleanup_FUN_00550090(CPodFile * this_ptr)
-        ;   XREF to: 00550090 (UNCONDITIONAL_CALL)
+    CALL engine_pod.cpp_CPodFile_cleanup_FUN_00550090 ; 0054f616
+        ;   XREF to: 00550090 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPodFile_cleanup_FUN_00550090(CPodFile * this_ptr)
     ADD ESP,0x4                         ; 0054f61b
     MOV EAX,EBX                         ; 0054f61e
     POP EBX                             ; 0054f620

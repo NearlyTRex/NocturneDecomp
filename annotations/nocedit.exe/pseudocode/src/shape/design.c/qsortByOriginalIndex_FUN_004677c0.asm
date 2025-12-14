@@ -36,11 +36,11 @@ section .text
     SUB ESP,0xc                         ; 004677c6
     MOV EAX,dword ptr [EBP + 0x14]      ; 004677cc
     CMP EAX,dword ptr [EBP + 0x18]      ; 004677cf
-    JNZ 0x004677dd                      ; 004677d2 | LAB_004677dd
-        ;   XREF to: 004677dd (CONDITIONAL_JUMP)
+    JNZ 0x004677dd                      ; 004677d2
+        ;   XREF to: 004677dd (CONDITIONAL_JUMP)  ; LAB_004677dd
     MOV dword ptr [EBP + -0xc],0x0      ; 004677d4
-    JMP 0x00467838                      ; 004677db | LAB_00467838
-        ;   XREF to: 00467838 (UNCONDITIONAL_JUMP)
+    JMP 0x00467838                      ; 004677db
+        ;   XREF to: 00467838 (UNCONDITIONAL_JUMP)  ; LAB_00467838
     MOV EAX,dword ptr [EBP + 0x14]      ; 004677dd
         ;   Label: LAB_004677dd
     MOV EAX,dword ptr [EAX]             ; 004677e0
@@ -50,26 +50,26 @@ section .text
     MOV dword ptr [EBP + -0x4],EAX      ; 004677ea
     MOV EAX,dword ptr [EBP + -0x8]      ; 004677ed
     CMP EAX,dword ptr [EBP + -0x4]      ; 004677f0
-    JGE 0x004677fe                      ; 004677f3 | LAB_004677fe
-        ;   XREF to: 004677fe (CONDITIONAL_JUMP)
+    JGE 0x004677fe                      ; 004677f3
+        ;   XREF to: 004677fe (CONDITIONAL_JUMP)  ; LAB_004677fe
     MOV dword ptr [EBP + -0xc],0xffffffff ; 004677f5
-    JMP 0x00467838                      ; 004677fc | LAB_00467838
-        ;   XREF to: 00467838 (UNCONDITIONAL_JUMP)
+    JMP 0x00467838                      ; 004677fc
+        ;   XREF to: 00467838 (UNCONDITIONAL_JUMP)  ; LAB_00467838
     MOV EAX,dword ptr [EBP + -0x8]      ; 004677fe
         ;   Label: LAB_004677fe
     CMP EAX,dword ptr [EBP + -0x4]      ; 00467801
-    JLE 0x0046780f                      ; 00467804 | LAB_0046780f
-        ;   XREF to: 0046780f (CONDITIONAL_JUMP)
+    JLE 0x0046780f                      ; 00467804
+        ;   XREF to: 0046780f (CONDITIONAL_JUMP)  ; LAB_0046780f
     MOV dword ptr [EBP + -0xc],0x1      ; 00467806
-    JMP 0x00467838                      ; 0046780d | LAB_00467838
-        ;   XREF to: 00467838 (UNCONDITIONAL_JUMP)
-    MOV dword ptr [0x02f0ca48],0x61c9ef ; 0046780f | char * g_CurrentFilename | = "..\\shape\\design.c" | s_shape_design_c_0061c9ef = ..\shape\design.c
+    JMP 0x00467838                      ; 0046780d
+        ;   XREF to: 00467838 (UNCONDITIONAL_JUMP)  ; LAB_00467838
+    MOV dword ptr [0x02f0ca48],0x61c9ef ; 0046780f | g_CurrentFilename | = "..\\shape\\design.c"
         ;   Label: LAB_0046780f
-    MOV dword ptr [0x02f0ca4c],0x2078   ; 00467819 | int g_CurrentLineNumber
-    MOV EAX,0x61ca01                    ; 00467823 | = "Hell froze." | s_Hell_froze_0061ca01 = Hell froze.
-    PUSH EAX                            ; 00467828 | = "Hell froze." | s_Hell_froze_0061ca01 = Hell froze.
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00467829 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02f0ca4c],0x2078   ; 00467819 | g_CurrentLineNumber
+    MOV EAX,0x61ca01                    ; 00467823 | = "Hell froze."
+    PUSH EAX                            ; 00467828 | = "Hell froze."
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00467829
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0046782e
     MOV dword ptr [EBP + -0xc],0x0      ; 00467831
     MOV EAX,dword ptr [EBP + -0xc]      ; 00467838

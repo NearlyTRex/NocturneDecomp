@@ -1,317 +1,317 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 183, 
-    "pseudocode_lines": 93, 
-    "cross_reference_count": 5, 
-    "global_count": 20, 
-    "total_lines": 254, 
-    "assembly_lines": 161, 
-    "suspect_count": 7, 
+    "assembly_lines": 161,
+    "complexity_score": 183,
+    "cross_reference_count": 5,
+    "function_call_count": 3,
+    "global_count": 20,
+    "pseudocode_lines": 93,
+    "suspect_count": 7,
     "suspect_types": [
-      "suspect_float", 
-      "extra_output", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160", 
-      "addr": "00472160"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "engine_matrix.c_invertTransformMatrix_FUN_0050c640", 
-      "addr": "0050c640"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_CameraRotationInvPi", 
-      "addr": "00621ffd", 
-      "value": "0.318309886192889"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_CameraRotationFixedPoint", 
-      "addr": "00622005", 
-      "value": "32768"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_FixedPointMatrixScale", 
-      "addr": "0062200d", 
-      "value": "65536"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ProjectionScale", 
-      "addr": "006793c0", 
-      "value": "0x10000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationPitch", 
-      "addr": "02d052d0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationYaw", 
-      "addr": "02d052d4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraRotationRoll", 
-      "addr": "02d052d8", 
-      "value": null
-    }, 
-    {
-      "type": "CMatrix3x3i", 
-      "name": "g_TransformMatrix", 
-      "addr": "02d052e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[0][1]", 
-      "addr": "02d052ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[0][2]", 
-      "addr": "02d052f0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[1][0]", 
-      "addr": "02d052f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[1][1]", 
-      "addr": "02d052f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[1][2]", 
-      "addr": "02d052fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[2][0]", 
-      "addr": "02d05300", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[2][1]", 
-      "addr": "02d05304", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TransformMatrix[2][2]", 
-      "addr": "02d05308", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0048c209", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 12, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 14, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 36, 
-      "match": "6.681925e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_20.x = 6.681925e-39;"
-    }, 
-    {
-      "line": 77, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(SRenderVertex *)(((longlong)extraout_EAX * (longlong)extraout_EDX) / (longlong)iVar2);"
-    }, 
-    {
-      "line": 77, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(SRenderVertex *)(((longlong)extraout_EAX * (longlong)extraout_EDX) / (longlong)iVar2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048c200", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix, CVector3f * rotation_angles)", 
-    "address_range": [
-      [
-        "0048c200", 
-        "0048c41d"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CMatrix3x3f *", 
-        "size": 4, 
-        "name": "transform_matrix"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "rotation_angles"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "suspect_float",
+      "register_param",
+      "extra_output",
+      "badspacebase"
+    ],
+    "total_lines": 254
+  },
   "cross_references": [
     {
-      "from_addr": "0044c639", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430", 
-      "addr": "0044c430"
-    }, 
+      "addr": "0044c430",
+      "from_addr": "0044c639",
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00472b3d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80", 
-      "addr": "00472a80"
-    }, 
+      "addr": "00472a80",
+      "from_addr": "00472b3d",
+      "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005214b5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mirror.cpp_setupMirrorCamera_FUN_00521480", 
-      "addr": "00521480"
-    }, 
+      "addr": "00521480",
+      "from_addr": "005214b5",
+      "name": "core_mirror.cpp_setupMirrorCamera_FUN_00521480",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057d05b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80", 
-      "addr": "0057ce80"
-    }, 
+      "addr": "0057ce80",
+      "from_addr": "0057d05b",
+      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c1ed", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0", 
-      "addr": "0048c1d0"
+      "addr": "0048c1d0",
+      "from_addr": "0048c1ed",
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048c200",
+    "address_range": [
+      [
+        "0048c200",
+        "0048c41d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200",
+    "signature": "void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix, CVector3f * rotation_angles)"
+  },
+  "function_calls": [
+    {
+      "addr": "00472160",
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "0050c640",
+      "name": "engine_matrix.c_invertTransformMatrix_FUN_0050c640"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00621ffd",
+      "name": "g_CameraRotationInvPi",
+      "type": "double",
+      "value": "0.318309886192889"
+    },
+    {
+      "addr": "00622005",
+      "name": "g_CameraRotationFixedPoint",
+      "type": "double",
+      "value": "32768"
+    },
+    {
+      "addr": "0062200d",
+      "name": "g_FixedPointMatrixScale",
+      "type": "double",
+      "value": "65536"
+    },
+    {
+      "addr": "006793c0",
+      "name": "g_ProjectionScale",
+      "type": "int",
+      "value": "0x10000"
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d0",
+      "name": "g_CameraRotationPitch",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d4",
+      "name": "g_CameraRotationYaw",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052d8",
+      "name": "g_CameraRotationRoll",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052e8",
+      "name": "g_TransformMatrix",
+      "type": "CMatrix3x3i",
+      "value": null
+    },
+    {
+      "addr": "02d052ec",
+      "name": "g_TransformMatrix[0][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f0",
+      "name": "g_TransformMatrix[0][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f4",
+      "name": "g_TransformMatrix[1][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052f8",
+      "name": "g_TransformMatrix[1][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052fc",
+      "name": "g_TransformMatrix[1][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05300",
+      "name": "g_TransformMatrix[2][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05304",
+      "name": "g_TransformMatrix[2][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d05308",
+      "name": "g_TransformMatrix[2][2]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "transform_matrix",
+        "offset": 8,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      },
+      {
+        "is_param": true,
+        "name": "rotation_angles",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0048c209",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 14,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 36,
+      "match": "6.681925e-39",
+      "text": "local_20.x = 6.681925e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 77,
+      "match": "extraout_EAX",
+      "text": "(SRenderVertex *)(((longlong)extraout_EAX * (longlong)extraout_EDX) / (longlong)iVar2);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 77,
+      "match": "extraout_EDX",
+      "text": "(SRenderVertex *)(((longlong)extraout_EAX * (longlong)extraout_EDX) / (longlong)iVar2);",
+      "type": "extra_output"
     }
   ]
 }

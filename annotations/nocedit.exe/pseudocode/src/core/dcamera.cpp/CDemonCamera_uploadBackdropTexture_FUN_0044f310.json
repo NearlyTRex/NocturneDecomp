@@ -1,171 +1,171 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 119, 
-    "pseudocode_lines": 64, 
-    "cross_reference_count": 0, 
-    "global_count": 13, 
-    "total_lines": 140, 
-    "assembly_lines": 76, 
-    "suspect_count": 5, 
+    "assembly_lines": 76,
+    "complexity_score": 119,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 13,
+    "pseudocode_lines": 64,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30", 
-      "addr": "0048dc30"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SMRGLTextureBasic", 
-      "name": "g_CameraBackdropTexture", 
-      "addr": "0066ed50", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "SRGBColorPalette", 
-      "name": "g_CameraImagePaletteData", 
-      "addr": "00c196f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00c196fc", 
-      "addr": "00c196fc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00c196fd", 
-      "addr": "00c196fd", 
-      "value": null
-    }, 
-    {
-      "type": "char[307200]", 
-      "name": "g_CameraIndexedImageData", 
-      "addr": "0151bfa8", 
-      "value": null
-    }, 
-    {
-      "type": "uint[16384]", 
-      "name": "g_CameraTextureWorkBuffer", 
-      "addr": "01566fa8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01566fa8+1", 
-      "addr": "01566fa9", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01566fac", 
-      "addr": "01566fac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01566fad", 
-      "addr": "01566fad", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "byte*", 
-      "name": "g_CurrentPalette", 
-      "addr": "02d01920", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CurrentTextureData", 
-      "addr": "02d03e80", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 28, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar4) ="
-    }, 
-    {
-      "line": 49, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar11 * -2 + 1);"
-    }, 
-    {
-      "line": 50, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);"
-    }, 
-    {
-      "line": 56, 
-      "match": "(SRGBColorPalette *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -8 + 4);"
-    }, 
-    {
-      "line": 61, 
-      "match": "(SRGBColorPalette *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -2 + 1);"
-    }
-  ], 
+    ],
+    "total_lines": 140
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0044f310", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CDemonCamera * this_ptr)", 
+    "address": "0044f310",
     "address_range": [
       [
-        "0044f310", 
+        "0044f310",
         "0044f3de"
       ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310",
+    "signature": "void core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CDemonCamera * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    },
+    {
+      "addr": "0048dc30",
+      "name": "engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0066ed50",
+      "name": "g_CameraBackdropTexture",
+      "type": "SMRGLTextureBasic",
+      "value": null
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00c196f8",
+      "name": "g_CameraImagePaletteData",
+      "type": "SRGBColorPalette",
+      "value": null
+    },
+    {
+      "addr": "00c196fc",
+      "name": "DAT_00c196fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c196fd",
+      "name": "DAT_00c196fd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0151bfa8",
+      "name": "g_CameraIndexedImageData",
+      "type": "char[307200]",
+      "value": null
+    },
+    {
+      "addr": "01566fa8",
+      "name": "g_CameraTextureWorkBuffer",
+      "type": "uint[16384]",
+      "value": null
+    },
+    {
+      "addr": "01566fa9",
+      "name": "DAT_01566fa8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01566fac",
+      "name": "DAT_01566fac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01566fad",
+      "name": "DAT_01566fad",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d01920",
+      "name": "g_CurrentPalette",
+      "type": "byte*",
+      "value": null
+    },
+    {
+      "addr": "02d03e80",
+      "name": "g_CurrentTextureData",
+      "type": "void*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)",
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(SRGBColorPalette *)((int)",
+      "text": "pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(SRGBColorPalette *)((int)",
+      "text": "pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    }
+  ]
 }

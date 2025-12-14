@@ -1,166 +1,166 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 139, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 74, 
-    "assembly_lines": 45, 
-    "suspect_count": 10, 
+    "assembly_lines": 45,
+    "complexity_score": 139,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 29,
+    "suspect_count": 10,
     "suspect_types": [
-      "extra_output", 
+      "extra_output",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
-      "addr": "005fe667"
-    }, 
-    {
-      "name": "support_trisock.cpp_invalidateSocket_FUN_005e1ae0", 
-      "addr": "005e1ae0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_MyComputer_0063d2b1", 
-      "addr": "0063d2b1", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_yComputer_0063d2b2", 
-      "addr": "0063d2b2", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_Computer_0063d2b3", 
-      "addr": "0063d2b3", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_omputer_0063d2b4", 
-      "addr": "0063d2b4", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_SNetPlayerTypeInfo", 
-      "addr": "00661d00", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 13, 
-      "match": "(SSocketContext *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "support_trisock_cpp_invalidateSocket_FUN_005e1ae0((SSocketContext *)((int)pvVar2 + 0x150));"
-    }, 
-    {
-      "line": 14, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((CNetGame *)(extraout_EAX + -0x170))->connection_type = 0;"
-    }, 
-    {
-      "line": 15, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x16c) = 0;"
-    }, 
-    {
-      "line": 17, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x154) = 0;"
-    }, 
-    {
-      "line": 18, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x60) = 0xffffffff;"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pcVar4 = (char *)(extraout_EAX + -0x168);"
-    }, 
-    {
-      "line": 20, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -0x5c) = 0xffffffff;"
-    }, 
-    {
-      "line": 30, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(uint *)(extraout_EAX + -8) = 0;"
-    }, 
-    {
-      "line": 31, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return (CNetGame *)(extraout_EAX + -0x170);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0053f6d0", 
-    "signature": "CNetGame * core_netgame.cpp_CNetGame_ctor_FUN_0053f6d0(CNetGame * this_ptr)", 
-    "address_range": [
-      [
-        "0053f6d0", 
-        "0053f755"
-      ]
-    ], 
-    "name": "core_netgame.cpp_CNetGame_ctor_FUN_0053f6d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CNetGame *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 74
+  },
   "cross_references": [
     {
-      "from_addr": "0053f315", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_staticInit_FUN_0053f310", 
-      "addr": "0053f310"
+      "addr": "0053f310",
+      "from_addr": "0053f315",
+      "name": "core_netgame.cpp_staticInit_FUN_0053f310",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053f6d0",
+    "address_range": [
+      [
+        "0053f6d0",
+        "0053f755"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_ctor_FUN_0053f6d0",
+    "signature": "CNetGame * core_netgame.cpp_CNetGame_ctor_FUN_0053f6d0(CNetGame * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe667",
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
+    },
+    {
+      "addr": "005e1ae0",
+      "name": "support_trisock.cpp_invalidateSocket_FUN_005e1ae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063d2b1",
+      "name": "s_MyComputer_0063d2b1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063d2b2",
+      "name": "s_yComputer_0063d2b2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063d2b3",
+      "name": "s_Computer_0063d2b3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0063d2b4",
+      "name": "s_omputer_0063d2b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00661d00",
+      "name": "g_SNetPlayerTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(SSocketContext *)((int)",
+      "text": "support_trisock_cpp_invalidateSocket_FUN_005e1ae0((SSocketContext *)((int)pvVar2 + 0x150));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "text": "((CNetGame *)(extraout_EAX + -0x170))->connection_type = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x16c) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x154) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x60) = 0xffffffff;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EAX",
+      "text": "pcVar4 = (char *)(extraout_EAX + -0x168);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 20,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -0x5c) = 0xffffffff;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_EAX",
+      "text": "*(uint *)(extraout_EAX + -8) = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_EAX",
+      "text": "return (CNetGame *)(extraout_EAX + -0x170);",
+      "type": "extra_output"
     }
   ]
 }

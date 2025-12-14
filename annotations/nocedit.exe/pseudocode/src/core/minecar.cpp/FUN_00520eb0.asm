@@ -21,16 +21,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00520eb1
     PUSH dword ptr [ESP + 0xc]          ; 00520eb5
     PUSH EBX                            ; 00520eb9
-    CALL core_platfrm.cpp_FUN_0054cc30  ; 00520eba | undefined core_platfrm.cpp_FUN_0054cc30()
-        ;   XREF to: 0054cc30 (UNCONDITIONAL_CALL)
+    CALL core_platfrm.cpp_FUN_0054cc30  ; 00520eba
+        ;   XREF to: 0054cc30 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_0054cc30()
     MOV EDX,dword ptr [EBX + 0x2d4]     ; 00520ebf
     ADD ESP,0x8                         ; 00520ec5
     CMP EDX,0x3                         ; 00520ec8
-    JZ 0x00520ed2                       ; 00520ecb | LAB_00520ed2
-        ;   XREF to: 00520ed2 (CONDITIONAL_JUMP)
+    JZ 0x00520ed2                       ; 00520ecb
+        ;   XREF to: 00520ed2 (CONDITIONAL_JUMP)  ; LAB_00520ed2
     CMP EDX,0x4                         ; 00520ecd
-    JNZ 0x00520eeb                      ; 00520ed0 | LAB_00520eeb
-        ;   XREF to: 00520eeb (CONDITIONAL_JUMP)
+    JNZ 0x00520eeb                      ; 00520ed0
+        ;   XREF to: 00520eeb (CONDITIONAL_JUMP)  ; LAB_00520eeb
     FLD float ptr [EBX + 0x72c]         ; 00520ed2
         ;   Label: LAB_00520ed2
     FSUB float ptr [ESP + 0xc]          ; 00520ed8
@@ -39,8 +39,8 @@ section .text
     FCOMPP                              ; 00520ee4
     FNSTSW AX                           ; 00520ee6
     SAHF                                ; 00520ee8
-    JA 0x00520eed                       ; 00520ee9 | LAB_00520eed
-        ;   XREF to: 00520eed (CONDITIONAL_JUMP)
+    JA 0x00520eed                       ; 00520ee9
+        ;   XREF to: 00520eed (CONDITIONAL_JUMP)  ; LAB_00520eed
     POP EBX                             ; 00520eeb
         ;   Label: LAB_00520eeb
     RET                                 ; 00520eec
@@ -53,10 +53,10 @@ section .text
     ADD EBX,0x20                        ; 00520f00
     PUSH EBX                            ; 00520f03
     MOV dword ptr [EBX + 0x70c],0x3dcccccd ; 00520f04
-    MOV EBX,dword ptr [0x0067a3d0]      ; 00520f0e | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
-    PUSH EBX                            ; 00520f14 | CFireEffect g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 00520f15 | void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
-        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)
+    MOV EBX,dword ptr [0x0067a3d0]      ; 00520f0e | g_CFireEffectInstance | g_CFireEffectPtr
+    PUSH EBX                            ; 00520f14 | g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 00520f15
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
     ADD ESP,0x1c                        ; 00520f1a
     POP EBX                             ; 00520f1d
     RET                                 ; 00520f1e

@@ -29,8 +29,8 @@ section .text
     PUSH EDI                            ; 0042e5d2
     MOV EBX,dword ptr [ESP + 0x10]      ; 0042e5d3
     CMP dword ptr [EBX + 0x2628],0x14   ; 0042e5d7
-    JGE 0x0042e63e                      ; 0042e5de | LAB_0042e63e
-        ;   XREF to: 0042e63e (CONDITIONAL_JUMP)
+    JGE 0x0042e63e                      ; 0042e5de
+        ;   XREF to: 0042e63e (CONDITIONAL_JUMP)  ; LAB_0042e63e
     MOV EAX,dword ptr [EBX + 0x2628]    ; 0042e5e0
         ;   Label: LAB_0042e5e0
     SHL EAX,0x3                         ; 0042e5e6
@@ -53,15 +53,15 @@ section .text
         ;   Label: LAB_0042e61a
     MOV byte ptr [EDI],AL               ; 0042e61c
     CMP AL,0x0                          ; 0042e61e
-    JZ 0x0042e632                       ; 0042e620 | LAB_0042e632
-        ;   XREF to: 0042e632 (CONDITIONAL_JUMP)
+    JZ 0x0042e632                       ; 0042e620
+        ;   XREF to: 0042e632 (CONDITIONAL_JUMP)  ; LAB_0042e632
     MOV AL,byte ptr [ESI + 0x1]         ; 0042e622
     ADD ESI,0x2                         ; 0042e625
     MOV byte ptr [EDI + 0x1],AL         ; 0042e628
     ADD EDI,0x2                         ; 0042e62b
     CMP AL,0x0                          ; 0042e62e
-    JNZ 0x0042e61a                      ; 0042e630 | LAB_0042e61a
-        ;   XREF to: 0042e61a (CONDITIONAL_JUMP)
+    JNZ 0x0042e61a                      ; 0042e630
+        ;   XREF to: 0042e61a (CONDITIONAL_JUMP)  ; LAB_0042e61a
     POP EDI                             ; 0042e632
         ;   Label: LAB_0042e632
     MOV EAX,dword ptr [ESP + 0x20]      ; 0042e633
@@ -70,15 +70,15 @@ section .text
     POP ESI                             ; 0042e63b
     POP EBX                             ; 0042e63c
     RET                                 ; 0042e63d
-    MOV ECX,0x61752d                    ; 0042e63e | = "..\\core\\charactr.cpp" | s_core_charactr_cpp_0061752d = ..\core\charactr.cpp
+    MOV ECX,0x61752d                    ; 0042e63e | = "..\\core\\charactr.cpp"
         ;   Label: LAB_0042e63e
     MOV ESI,0xf42                       ; 0042e643
-    PUSH 0x617542                       ; 0042e648 | = "CCharacter::addLayerAction - too many" | s_CCharacter_addLayerActio_00617542 = CCharacter::addLayerAction - too many
-    MOV dword ptr [0x02f0ca48],ECX      ; 0042e64d | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 0042e653 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0042e659 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x617542                       ; 0042e648 | = "CCharacter::addLayerAction - too many"
+    MOV dword ptr [0x02f0ca48],ECX      ; 0042e64d | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 0042e653 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0042e659
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0042e65e
-    JMP 0x0042e5e0                      ; 0042e661 | LAB_0042e5e0
-        ;   XREF to: 0042e5e0 (UNCONDITIONAL_JUMP)
+    JMP 0x0042e5e0                      ; 0042e661
+        ;   XREF to: 0042e5e0 (UNCONDITIONAL_JUMP)  ; LAB_0042e5e0
 

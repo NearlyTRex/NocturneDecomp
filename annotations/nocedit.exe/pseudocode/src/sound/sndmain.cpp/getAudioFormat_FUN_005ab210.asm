@@ -27,26 +27,26 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 005ab215
     MOV EDX,dword ptr [ESP + 0x10]      ; 005ab219
     TEST EBX,EBX                        ; 005ab21d
-    JNZ 0x005ab232                      ; 005ab21f | LAB_005ab232
-        ;   XREF to: 005ab232 (CONDITIONAL_JUMP)
+    JNZ 0x005ab232                      ; 005ab21f
+        ;   XREF to: 005ab232 (CONDITIONAL_JUMP)  ; LAB_005ab232
     TEST ECX,ECX                        ; 005ab221
         ;   Label: LAB_005ab221
-    JZ 0x005ab22c                       ; 005ab223 | LAB_005ab22c
-        ;   XREF to: 005ab22c (CONDITIONAL_JUMP)
-    MOV EAX,[0x00681b18]                ; 005ab225 | int g_AudioChannelCount
+    JZ 0x005ab22c                       ; 005ab223
+        ;   XREF to: 005ab22c (CONDITIONAL_JUMP)  ; LAB_005ab22c
+    MOV EAX,[0x00681b18]                ; 005ab225 | g_AudioChannelCount
     MOV dword ptr [ECX],EAX             ; 005ab22a
     TEST EDX,EDX                        ; 005ab22c
         ;   Label: LAB_005ab22c
-    JNZ 0x005ab23b                      ; 005ab22e | LAB_005ab23b
-        ;   XREF to: 005ab23b (CONDITIONAL_JUMP)
+    JNZ 0x005ab23b                      ; 005ab22e
+        ;   XREF to: 005ab23b (CONDITIONAL_JUMP)  ; LAB_005ab23b
     POP EBX                             ; 005ab230
     RET                                 ; 005ab231
-    MOV EAX,[0x00681b14]                ; 005ab232 | int g_AudioBitsPerSample
+    MOV EAX,[0x00681b14]                ; 005ab232 | g_AudioBitsPerSample
         ;   Label: LAB_005ab232
     MOV dword ptr [EBX],EAX             ; 005ab237
-    JMP 0x005ab221                      ; 005ab239 | LAB_005ab221
-        ;   XREF to: 005ab221 (UNCONDITIONAL_JUMP)
-    MOV EAX,[0x00681b1c]                ; 005ab23b | int g_AudioSampleRate
+    JMP 0x005ab221                      ; 005ab239
+        ;   XREF to: 005ab221 (UNCONDITIONAL_JUMP)  ; LAB_005ab221
+    MOV EAX,[0x00681b1c]                ; 005ab23b | g_AudioSampleRate
         ;   Label: LAB_005ab23b
     MOV dword ptr [EDX],EAX             ; 005ab240
     POP EBX                             ; 005ab242

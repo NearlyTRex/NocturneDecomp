@@ -1,135 +1,135 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 29, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 0, 
-    "global_count": 7, 
-    "total_lines": 125, 
-    "assembly_lines": 96, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_acos_FUN_00600162", 
-      "addr": "00600162"
-    }, 
-    {
-      "name": "crt_math.c_asin_FUN_00600b94", 
-      "addr": "00600b94"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_Atan2SinCosThreshold", 
-      "addr": "0061edeb", 
-      "value": "0.707000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_Atan2SinCosThresholdNeg", 
-      "addr": "0061edf3", 
-      "value": "-0.707000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_Atan2NegativeOne", 
-      "addr": "0061edfb", 
-      "value": "-1"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_Atan2Pi", 
-      "addr": "0061ee03", 
-      "value": "3.14159265359000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_Atan2NegativePi", 
-      "addr": "0061ee0b", 
-      "value": "-3.14159265359000"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_Atan2TwoPi", 
-      "addr": "0061ee13", 
-      "value": "6.283185"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_Atan2NegativeTwoPi", 
-      "addr": "0061ee17", 
-      "value": "-6.283185"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00472096", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
+    "assembly_lines": 96,
+    "complexity_score": 29,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 125
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00472090", 
-    "signature": "float core_dirmat.cpp_atan2Custom_FUN_00472090(double y, double x)", 
+    "address": "00472090",
     "address_range": [
       [
-        "00472090", 
+        "00472090",
         "0047215d"
       ]
-    ], 
-    "name": "core_dirmat.cpp_atan2Custom_FUN_00472090"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dirmat.cpp_atan2Custom_FUN_00472090",
+    "signature": "float core_dirmat.cpp_atan2Custom_FUN_00472090(double y, double x)"
+  },
+  "function_calls": [
+    {
+      "addr": "00600162",
+      "name": "crt_math.c_acos_FUN_00600162"
+    },
+    {
+      "addr": "00600b94",
+      "name": "crt_math.c_asin_FUN_00600b94"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061edeb",
+      "name": "g_Atan2SinCosThreshold",
+      "type": "double",
+      "value": "0.707000000000000"
+    },
+    {
+      "addr": "0061edf3",
+      "name": "g_Atan2SinCosThresholdNeg",
+      "type": "double",
+      "value": "-0.707000000000000"
+    },
+    {
+      "addr": "0061edfb",
+      "name": "g_Atan2NegativeOne",
+      "type": "double",
+      "value": "-1"
+    },
+    {
+      "addr": "0061ee03",
+      "name": "g_Atan2Pi",
+      "type": "double",
+      "value": "3.14159265359000"
+    },
+    {
+      "addr": "0061ee0b",
+      "name": "g_Atan2NegativePi",
+      "type": "double",
+      "value": "-3.14159265359000"
+    },
+    {
+      "addr": "0061ee13",
+      "name": "g_Atan2TwoPi",
+      "type": "float",
+      "value": "6.283185"
+    },
+    {
+      "addr": "0061ee17",
+      "name": "g_Atan2NegativeTwoPi",
+      "type": "float",
+      "value": "-6.283185"
+    }
+  ],
   "stack_frame": {
-    "local_size": 16, 
+    "frame_size": 32,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "y"
-      }, 
+        "is_param": true,
+        "name": "y",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "x"
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 8,
+        "type": "double"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00472096",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

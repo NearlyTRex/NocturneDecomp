@@ -1,62 +1,62 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 10, 
-    "assembly_lines": 4, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallRegister", 
-    "address": "005feb50", 
-    "signature": "uint * crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50(void)", 
-    "address_range": [
-      [
-        "005feb50", 
-        "005feb59"
-      ]
-    ], 
-    "name": "crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 4,
+    "complexity_score": 6,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 10
+  },
   "cross_references": [
     {
-      "from_addr": "005feb5c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
-      "addr": "005feb5c"
-    }, 
+      "addr": "005feb5c",
+      "from_addr": "005feb5c",
+      "name": "crt_stdlib.c_rand_FUN_005feb5c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005feb80", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdlib.c_srand_FUN_005feb80", 
-      "addr": "005feb80"
+      "addr": "005feb80",
+      "from_addr": "005feb80",
+      "name": "crt_stdlib.c_srand_FUN_005feb80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005feb50",
+    "address_range": [
+      [
+        "005feb50",
+        "005feb59"
+      ]
+    ],
+    "convention": "__watcallRegister",
+    "name": "crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50",
+    "signature": "uint * crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

@@ -1,164 +1,164 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 2, 
-    "global_count": 6, 
-    "total_lines": 87, 
-    "assembly_lines": 66, 
-    "suspect_count": 2, 
+    "assembly_lines": 66,
+    "complexity_score": 46,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b210", 
-      "addr": "0040b210"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeDescription_FUN_0040b290", 
-      "addr": "0040b290"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_f_00613eed", 
-      "addr": "00613eed", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_g_g_g_g_00613ef9", 
-      "addr": "00613ef9", 
-      "value": null
-    }, 
-    {
-      "type": "string", 
-      "name": "s_Quaternion_0066e118", 
-      "addr": "0066e118", 
-      "value": null
-    }, 
-    {
-      "type": "char[104]", 
-      "name": "g_PropertyNamePrefix", 
-      "addr": "0066e178", 
-      "value": null
-    }, 
-    {
-      "type": "FILE*", 
-      "name": "g_ActorDataFile", 
-      "addr": "00822034", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActorReadingMode", 
-      "addr": "00822038", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_0000000c;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_actor_cpp_serializeDescription_FUN_0040b290(\"Quaternion\",in_stack_0000000c);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040b520", 
-    "signature": "void core_actor.cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f * quat_ptr, char * property_type)", 
-    "address_range": [
-      [
-        "0040b520", 
-        "0040b5bd"
-      ]
-    ], 
-    "name": "core_actor.cpp_serializeQuaternion_FUN_0040b520"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CQuaternion4f *", 
-        "size": 4, 
-        "name": "quat_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "property_type"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 87
+  },
   "cross_references": [
     {
-      "from_addr": "0041d3e7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_CBoneGuy_load_FUN_0041d270", 
-      "addr": "0041d270"
-    }, 
+      "addr": "0041d270",
+      "from_addr": "0041d3e7",
+      "name": "core_boneguy.cpp_CBoneGuy_load_FUN_0041d270",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054dec7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_platfrm.cpp_CPlatform_load_FUN_0054dbc0", 
-      "addr": "0054dbc0"
+      "addr": "0054dbc0",
+      "from_addr": "0054dec7",
+      "name": "core_platfrm.cpp_CPlatform_load_FUN_0054dbc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040b520",
+    "address_range": [
+      [
+        "0040b520",
+        "0040b5bd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_serializeQuaternion_FUN_0040b520",
+    "signature": "void core_actor.cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f * quat_ptr, char * property_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b210",
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b210"
+    },
+    {
+      "addr": "0040b290",
+      "name": "core_actor.cpp_serializeDescription_FUN_0040b290"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00613eed",
+      "name": "s_f_f_f_f_00613eed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613ef9",
+      "name": "s_s_g_g_g_g_00613ef9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e118",
+      "name": "s_Quaternion_0066e118",
+      "type": "string",
+      "value": null
+    },
+    {
+      "addr": "0066e178",
+      "name": "g_PropertyNamePrefix",
+      "type": "char[104]",
+      "value": null
+    },
+    {
+      "addr": "00822034",
+      "name": "g_ActorDataFile",
+      "type": "FILE*",
+      "value": null
+    },
+    {
+      "addr": "00822038",
+      "name": "g_ActorReadingMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "quat_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "property_type",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000000c",
+      "text": "core_actor_cpp_serializeDescription_FUN_0040b290(\"Quaternion\",in_stack_0000000c);",
+      "type": "stack_param"
     }
   ]
 }

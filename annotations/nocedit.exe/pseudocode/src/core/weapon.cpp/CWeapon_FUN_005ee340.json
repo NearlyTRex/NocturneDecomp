@@ -1,157 +1,157 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 152, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 108, 
-    "assembly_lines": 76, 
-    "suspect_count": 11, 
+    "assembly_lines": 76,
+    "complexity_score": 152,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 32,
+    "suspect_count": 11,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "unknown_field"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
-      "addr": "0040c6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CIcePick_00657b0a", 
-      "addr": "00657b0a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CHero_00657b13", 
-      "addr": "00657b13", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00657b19", 
-      "addr": "00657b19", 
-      "value": "0.5"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonActor *in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar2._0_1_ = this_ptr->carried_by_actor;"
-    }, 
-    {
-      "line": 10, 
-      "match": "._1_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar2._1_1_ = this_ptr->field9_0x305[0];"
-    }, 
-    {
-      "line": 11, 
-      "match": "._2_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar2._2_1_ = this_ptr->field9_0x305[1];"
-    }, 
-    {
-      "line": 12, 
-      "match": "._3_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar2._3_1_ = this_ptr->field9_0x305[2];"
-    }, 
-    {
-      "line": 19, 
-      "match": "._0_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "|| (iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->field9_0x305[0],"
-    }, 
-    {
-      "line": 19, 
-      "match": "._1_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "|| (iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->field9_0x305[0],"
-    }, 
-    {
-      "line": 20, 
-      "match": "._2_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar1._2_1_ = this_ptr->field9_0x305[1], iVar1._3_1_ = this_ptr->field9_0x305[2], iVar1 != 0"
-    }, 
-    {
-      "line": 20, 
-      "match": "._3_1_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar1._2_1_ = this_ptr->field9_0x305[1], iVar1._3_1_ = this_ptr->field9_0x305[2], iVar1 != 0"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,\"CIcePick\");"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,\"CHero\");"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ee340", 
-    "signature": "int core_weapon.cpp_CWeapon_FUN_005ee340(CWeapon * this_ptr)", 
-    "address_range": [
-      [
-        "005ee340", 
-        "005ee3dd"
-      ]
-    ], 
-    "name": "core_weapon.cpp_CWeapon_FUN_005ee340"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWeapon *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 108
+  },
   "cross_references": [
     {
-      "from_addr": "005e3c8c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_CTurret_FUN_005e3c70", 
-      "addr": "005e3c70"
+      "addr": "005e3c70",
+      "from_addr": "005e3c8c",
+      "name": "core_turret.cpp_CTurret_FUN_005e3c70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ee340",
+    "address_range": [
+      [
+        "005ee340",
+        "005ee3dd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_FUN_005ee340",
+    "signature": "int core_weapon.cpp_CWeapon_FUN_005ee340(CWeapon * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c6d0",
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657b0a",
+      "name": "s_CIcePick_00657b0a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657b13",
+      "name": "s_CHero_00657b13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657b19",
+      "name": "DOUBLE_00657b19",
+      "type": "double",
+      "value": "0.5"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "CDemonActor *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 9,
+      "match": "._0_1_",
+      "text": "iVar2._0_1_ = this_ptr->carried_by_actor;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 10,
+      "match": "._1_1_",
+      "text": "iVar2._1_1_ = this_ptr->field9_0x305[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 11,
+      "match": "._2_1_",
+      "text": "iVar2._2_1_ = this_ptr->field9_0x305[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 12,
+      "match": "._3_1_",
+      "text": "iVar2._3_1_ = this_ptr->field9_0x305[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 19,
+      "match": "._0_1_",
+      "text": "|| (iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->field9_0x305[0],",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 19,
+      "match": "._1_1_",
+      "text": "|| (iVar1._0_1_ = this_ptr->carried_by_actor, iVar1._1_1_ = this_ptr->field9_0x305[0],",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 20,
+      "match": "._2_1_",
+      "text": "iVar1._2_1_ = this_ptr->field9_0x305[1], iVar1._3_1_ = this_ptr->field9_0x305[2], iVar1 != 0",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 20,
+      "match": "._3_1_",
+      "text": "iVar1._2_1_ = this_ptr->field9_0x305[1], iVar1._3_1_ = this_ptr->field9_0x305[2], iVar1 != 0",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,\"CIcePick\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,\"CHero\");",
+      "type": "stack_param"
     }
   ]
 }

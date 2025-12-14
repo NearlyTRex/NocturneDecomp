@@ -28,11 +28,11 @@ section .text
 
     PUSH 0x0                            ; 0050f1d0
         ;   Label: shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
-    PUSH 0x67d200                       ; 0050f1d2 | = "(unknown)" | s_unknown_0067d200 = (unknown)
+    PUSH 0x67d200                       ; 0050f1d2 | = "(unknown)"
     MOV EDX,dword ptr [ESP + 0xc]       ; 0050f1d7
     PUSH EDX                            ; 0050f1db
-    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 0050f1dc | void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
-        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 0050f1dc
+        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 0050f1e1
     RET                                 ; 0050f1e4
 

@@ -11,8 +11,7 @@ void core_turret_cpp_FUN_005e20b0(void)
 {
   CTurret *this_ptr;
   
-  this_ptr = (CTurret *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8bc,"..\\core\\turret.cpp",0xa2);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8bc,"..\\core\\turret.cpp",0xa2);
   if (this_ptr == (CTurret *)0x0) {
     return;
   }

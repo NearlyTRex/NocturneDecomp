@@ -19,8 +19,8 @@ section .text
     DEC EDX                             ; 004c21d7
     MOV dword ptr [EAX + 0x20],EDX      ; 004c21d8
     TEST EDX,EDX                        ; 004c21db
-    JL 0x004c21e0                       ; 004c21dd | LAB_004c21e0
-        ;   XREF to: 004c21e0 (CONDITIONAL_JUMP)
+    JL 0x004c21e0                       ; 004c21dd
+        ;   XREF to: 004c21e0 (CONDITIONAL_JUMP)  ; LAB_004c21e0
     RET                                 ; 004c21df
     MOV dword ptr [EAX + 0x20],0x0      ; 004c21e0
         ;   Label: LAB_004c21e0

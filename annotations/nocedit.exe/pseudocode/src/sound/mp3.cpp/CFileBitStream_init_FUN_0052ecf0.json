@@ -1,178 +1,178 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 94, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 0, 
-    "global_count": 8, 
-    "total_lines": 127, 
-    "assembly_lines": 88, 
-    "suspect_count": 5, 
+    "assembly_lines": 88,
+    "complexity_score": 94,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 8,
+    "pseudocode_lines": 39,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
-    }, 
-    {
-      "name": "crt_stdio.c_ftell_FUN_00601560", 
-      "addr": "00601560"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063ace1", 
-      "addr": "0063ace1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063acf2", 
-      "addr": "0063acf2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063ad03", 
-      "addr": "0063ad03", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063ad14", 
-      "addr": "0063ad14", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_File_s_0063ad25", 
-      "addr": "0063ad25", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_CurrentMp3Filename", 
-      "addr": "02f68188", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->stream_length = in_stack_00000018;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->buffer_size = in_stack_00000014;"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000014,\"..\\\\sound\\\\mp3.cpp\",0x1ff);"
-    }
-  ], 
+    ],
+    "total_lines": 127
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0052ecf0", 
-    "signature": "void sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0(CFileBitStream * this_ptr, FILE * file_handle, int buffer_size, int stream_length)", 
+    "address": "0052ecf0",
     "address_range": [
       [
-        "0052ecf0", 
+        "0052ecf0",
         "0052ede8"
       ]
-    ], 
-    "name": "sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0",
+    "signature": "void sound_mp3.cpp_CFileBitStream_init_FUN_0052ecf0(CFileBitStream * this_ptr, FILE * file_handle, int buffer_size, int stream_length)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005ffacc",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc"
+    },
+    {
+      "addr": "00601560",
+      "name": "crt_stdio.c_ftell_FUN_00601560"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ace1",
+      "name": "s_sound_mp3_cpp_0063ace1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063acf2",
+      "name": "s_sound_mp3_cpp_0063acf2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ad03",
+      "name": "s_sound_mp3_cpp_0063ad03",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ad14",
+      "name": "s_sound_mp3_cpp_0063ad14",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ad25",
+      "name": "s_Out_of_memory_File_s_0063ad25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f68188",
+      "name": "g_CurrentMp3Filename",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileBitStream *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileBitStream *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }, 
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_size"
-      }, 
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "stream_length"
+        "is_param": true,
+        "name": "stream_length",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000018",
+      "text": "this_ptr->stream_length = in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000014",
+      "text": "this_ptr->buffer_size = in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000014",
+      "text": "(in_stack_00000014,\"..\\\\sound\\\\mp3.cpp\",0x1ff);",
+      "type": "stack_param"
+    }
+  ]
 }

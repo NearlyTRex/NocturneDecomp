@@ -1,137 +1,137 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 65, 
-    "pseudocode_lines": 65, 
-    "cross_reference_count": 0, 
-    "global_count": 9, 
-    "total_lines": 185, 
-    "assembly_lines": 120, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00", 
-      "addr": "00435c00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_0043618c", 
-      "addr": "0043618c", 
-      "value": "004361f1"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_1_00436190", 
-      "addr": "00436190", 
-      "value": "0043621c"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_00436198", 
-      "addr": "00436198", 
-      "value": "004361f6"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_clipper_c_00618103", 
-      "addr": "00618103", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Ran_out_of_clipped_verts_00618117", 
-      "addr": "00618117", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex[12]", 
-      "name": "g_ClipperTempBuffer", 
-      "addr": "00825aac", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipperTempCount", 
-      "addr": "00825cec", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 120,
+    "complexity_score": 65,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 9,
+    "pseudocode_lines": 65,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 185
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004361a0", 
-    "signature": "int engine_clipper.c_clipPolygonBottomPlane_FUN_004361a0(SRenderVertex * * input_vertices, SRenderVertex * * output_vertices, int vertex_count)", 
+    "address": "004361a0",
     "address_range": [
       [
-        "004361a0", 
+        "004361a0",
         "004362c7"
       ]
-    ], 
-    "name": "engine_clipper.c_clipPolygonBottomPlane_FUN_004361a0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_clipper.c_clipPolygonBottomPlane_FUN_004361a0",
+    "signature": "int engine_clipper.c_clipPolygonBottomPlane_FUN_004361a0(SRenderVertex * * input_vertices, SRenderVertex * * output_vertices, int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00435c00",
+      "name": "engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0043618c",
+      "name": "switchdataD_0043618c",
+      "type": "void*",
+      "value": "004361f1"
+    },
+    {
+      "addr": "00436190",
+      "name": "PTR_caseD_1_00436190",
+      "type": "void*",
+      "value": "0043621c"
+    },
+    {
+      "addr": "00436198",
+      "name": "PTR_caseD_3_00436198",
+      "type": "void*",
+      "value": "004361f6"
+    },
+    {
+      "addr": "00618103",
+      "name": "s_engine_clipper_c_00618103",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618117",
+      "name": "s_Ran_out_of_clipped_verts_00618117",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00825aac",
+      "name": "g_ClipperTempBuffer",
+      "type": "SRenderVertex[12]",
+      "value": null
+    },
+    {
+      "addr": "00825cec",
+      "name": "g_ClipperTempCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SRenderVertex * *", 
-        "size": 4, 
-        "name": "input_vertices"
-      }, 
+        "is_param": true,
+        "name": "input_vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SRenderVertex * *", 
-        "size": 4, 
-        "name": "output_vertices"
-      }, 
+        "is_param": true,
+        "name": "output_vertices",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_count"
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

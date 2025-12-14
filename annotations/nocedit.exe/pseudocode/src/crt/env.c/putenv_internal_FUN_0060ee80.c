@@ -35,8 +35,7 @@ int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
     if (pcVar1 == in_stack_00000008) {
       return -1;
     }
-    pcVar3 = (char *)crt_memory_c_malloc_FUN_00601bb0
-                               ((ulong)(pcVar1 + (1 - (int)in_stack_00000008)));
+    pcVar3 = crt_memory_c_malloc_FUN_00601bb0((ulong)(pcVar1 + (1 - (int)in_stack_00000008)));
     if (pcVar3 == (char *)0x0) {
       return -1;
     }
@@ -58,7 +57,7 @@ int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
       unaff_EDI = (LPCSTR)0x0;
     }
     else {
-      unaff_ESI = (char *)crt_memory_c_malloc_FUN_00601bb0(uVar5 + 1);
+      unaff_ESI = crt_memory_c_malloc_FUN_00601bb0(uVar5 + 1);
       if (unaff_ESI == (char *)0x0) {
         crt_memory_c_free_FUN_00601cd0(pcVar3);
         return -1;

@@ -1,177 +1,177 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 41, 
-    "cross_reference_count": 15, 
-    "global_count": 4, 
-    "total_lines": 129, 
-    "assembly_lines": 88, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
-      "addr": "00403950"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
-      "addr": "0048a740"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "RenderScanlineFunc*", 
-      "name": "g_ScanlineRenderFunc", 
-      "addr": "02d0257c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048bad0", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)", 
-    "address_range": [
-      [
-        "0048bad0", 
-        "0048bb99"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "polygon_info"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 88,
+    "complexity_score": 41,
+    "cross_reference_count": 15,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 129
+  },
   "cross_references": [
     {
-      "from_addr": "0040e020", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_FUN_0040dec0", 
-      "addr": "0040dec0"
-    }, 
+      "addr": "0040dec0",
+      "from_addr": "0040e020",
+      "name": "core_actor.cpp_CDemonActor_FUN_0040dec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00471752", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0", 
-      "addr": "004715e0"
-    }, 
+      "addr": "004715e0",
+      "from_addr": "00471752",
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00473f32", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20", 
-      "addr": "00473a20"
-    }, 
+      "addr": "00473a20",
+      "from_addr": "00473f32",
+      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00475834", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210", 
-      "addr": "00475210"
-    }, 
+      "addr": "00475210",
+      "from_addr": "00475834",
+      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004751d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0", 
-      "addr": "00474ad0"
-    }, 
+      "addr": "00474ad0",
+      "from_addr": "004751d5",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00476590", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_renderConeLightGeometry_FUN_004760d0", 
-      "addr": "004760d0"
-    }, 
+      "addr": "004760d0",
+      "from_addr": "00476590",
+      "name": "core_dlight.cpp_renderConeLightGeometry_FUN_004760d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c55ca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CGunFlame_render_FUN_004c50b0", 
-      "addr": "004c50b0"
-    }, 
+      "addr": "004c50b0",
+      "from_addr": "004c55ca",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_004c50b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c2d37", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0", 
-      "addr": "004c25c0"
-    }, 
+      "addr": "004c25c0",
+      "from_addr": "004c2d37",
+      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c67f4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0", 
-      "addr": "004c64c0"
-    }, 
+      "addr": "004c64c0",
+      "from_addr": "004c67f4",
+      "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c6b9e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CRainDrop_render_FUN_004c6830", 
-      "addr": "004c6830"
-    }, 
+      "addr": "004c6830",
+      "from_addr": "004c6b9e",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004c6830",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c0554", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CSpark_render_FUN_004c0420", 
-      "addr": "004c0420"
-    }, 
+      "addr": "004c0420",
+      "from_addr": "004c0554",
+      "name": "core_fire.cpp_CSpark_render_FUN_004c0420",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ca603", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flame.cpp_FUN_004ca110", 
-      "addr": "004ca110"
-    }, 
+      "addr": "004ca110",
+      "from_addr": "004ca603",
+      "name": "core_flame.cpp_FUN_004ca110",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00581a25", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_FUN_005817d0", 
-      "addr": "005817d0"
-    }, 
+      "addr": "005817d0",
+      "from_addr": "00581a25",
+      "name": "core_setedit.cpp_FUN_005817d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ba241", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stairs.cpp_FUN_005b9c10", 
-      "addr": "005b9c10"
-    }, 
+      "addr": "005b9c10",
+      "from_addr": "005ba241",
+      "name": "core_stairs.cpp_FUN_005b9c10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f17f9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_werewolf.cpp_FUN_005f1230", 
-      "addr": "005f1230"
+      "addr": "005f1230",
+      "from_addr": "005f17f9",
+      "name": "core_werewolf.cpp_FUN_005f1230",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0048bad0",
+    "address_range": [
+      [
+        "0048bad0",
+        "0048bb99"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0",
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00403950",
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950"
+    },
+    {
+      "addr": "0048a740",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02d0257c",
+      "name": "g_ScanlineRenderFunc",
+      "type": "RenderScanlineFunc*",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "polygon_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": []
 }

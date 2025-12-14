@@ -11,8 +11,7 @@ void core_gargoyle_cpp_FUN_004e44a0(void)
 {
   CGargoyle *this_ptr;
   
-  this_ptr = (CGargoyle *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf18,"..\\core\\gargoyle.cpp",0x58);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbf18,"..\\core\\gargoyle.cpp",0x58);
   if (this_ptr == (CGargoyle *)0x0) {
     return;
   }

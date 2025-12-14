@@ -24,7 +24,7 @@ section .text
     PUSH EDI                            ; 00561c72
     PUSH EBP                            ; 00561c73
     PUSH 0x78                           ; 00561c74
-    PUSH 0x680e28                       ; 00561c76 | void * PTR_s_label_006441c0_00680e28
+    PUSH 0x680e28                       ; 00561c76 | PTR_s_label_006441c0_00680e28
     MOV EDX,dword ptr [ESP + 0x34]      ; 00561c7b
     PUSH EDX                            ; 00561c7f
     MOV ECX,dword ptr [ESP + 0x34]      ; 00561c80
@@ -39,8 +39,8 @@ section .text
     PUSH EBP                            ; 00561c98
     MOV EAX,dword ptr [ESP + 0x34]      ; 00561c99
     PUSH EAX                            ; 00561c9d
-    CALL core_script.cpp_FUN_00561690   ; 00561c9e | undefined core_script.cpp_FUN_00561690()
-        ;   XREF to: 00561690 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_00561690   ; 00561c9e
+        ;   XREF to: 00561690 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00561690()
     ADD ESP,0x24                        ; 00561ca3
     POP EBP                             ; 00561ca6
     POP EDI                             ; 00561ca7

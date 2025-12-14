@@ -23,8 +23,8 @@ section .text
         ;   Label: core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60
     MOV EDX,dword ptr [ESP + 0x8]       ; 00575f62
     PUSH EDX                            ; 00575f66
-    CALL core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0 ; 00575f67 | void core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet * this_ptr, FILE * file_handle)
-        ;   XREF to: 00575bc0 (UNCONDITIONAL_CALL)
+    CALL core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0 ; 00575f67
+        ;   XREF to: 00575bc0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet * this_ptr, FILE * file_handle)
     ADD ESP,0x8                         ; 00575f6c
     RET                                 ; 00575f6f
 

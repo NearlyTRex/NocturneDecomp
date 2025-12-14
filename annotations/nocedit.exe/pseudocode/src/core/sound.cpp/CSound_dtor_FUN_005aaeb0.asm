@@ -13,6 +13,6 @@
 section .text
 
     JMP 0x005aaeb0                      ; 005b2d60
-        ;   Label: core_sound.cpp_CSound_dtor_FUN_005aaeb0
         ;   XREF to: 005aaeb0 (UNCONDITIONAL_JUMP)
+        ;   Label: core_sound.cpp_CSound_dtor_FUN_005aaeb0
 

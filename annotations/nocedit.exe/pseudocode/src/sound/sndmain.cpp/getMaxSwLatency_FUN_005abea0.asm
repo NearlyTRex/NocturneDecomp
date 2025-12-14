@@ -17,7 +17,7 @@
 
 section .text
 
-    MOV EAX,[0x00681b48]                ; 005abea0 | float g_MaxSoftwareLatency
+    MOV EAX,[0x00681b48]                ; 005abea0 | g_MaxSoftwareLatency
         ;   Label: sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0
     RET                                 ; 005abea5
 

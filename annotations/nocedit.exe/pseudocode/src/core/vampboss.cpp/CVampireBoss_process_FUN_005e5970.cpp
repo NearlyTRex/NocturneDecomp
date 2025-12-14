@@ -415,61 +415,58 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     goto LAB_005e5f5f;
   }
   local_2c = &(this_ptr->base_enemy).base_character.model;
-  if (0.0 < in_stack_00000008) {
-    do {
-      uVar12 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&local_20->motion_controller);
-      if (uVar12 < 2) {
-        if (uVar12 == 1) {
-          core_vampboss_cpp_AnotherVoicuSummonWavCall_FUN_005e7390();
-          goto LAB_005e648e;
-        }
-      }
-      else {
-        if (uVar12 < 3) {
-          core_vampboss_cpp_VoicuSummonWavFile2_FUN_005e7410();
-        }
-        else {
-          if (3 < uVar12) {
-            if (uVar12 == 0x29a) {
-              (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].renderTargetPoints)
-                        ((CDemonActor *)this_ptr);
-              CStack_a4.x = 0.0;
-              CStack_a4.y = 20.0;
-              CStack_a4.z = 20.0;
-              core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                        ((CDemonActor *)this_ptr,&local_ec,&CStack_a4);
-              volume = &local_ec.y;
-              core_charactr_cpp_CCharacter_FUN_0042b9e0((CCharacter *)this_ptr);
-              iVar7 = 0;
-              for (; (int)local_1c < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c);
-                  local_1c = (float)((int)local_1c + 1)) {
-                this_ptr_01 = core_actor_cpp_castToClassHash_FUN_0040c790
-                                        (*(CDemonActor **)
-                                          (g_CDemonSetPtr->field19_0x14f0a0 + iVar7 + 8000),
-                                         g_CTVBatClassInfo.name_hash);
-                if ((this_ptr_01 != (CDemonActor *)0x0) &&
-                   (this_ptr_01[0x8f].orient_matrix.m[0].x != 0.0)) {
-                  core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0
-                            ((SDamageInfo *)(auStack_21c + 0x28));
-                  iStack_1ec = 0x4479c000;
-                  (*this_ptr_01->vtable[1].playAmbientSoundWithVolume)
-                            (this_ptr_01,acStack_1f0,(float)volume);
-                }
-                iVar7 = iVar7 + 4;
-              }
-            }
-            goto LAB_005e649b;
-          }
-          core_vampboss_cpp_VoicuSummonWavFile_FUN_005e7320();
-        }
+  fVar9 = in_stack_00000008;
+  while (0.0 < fVar9) {
+    uVar12 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&local_20->motion_controller);
+    fVar9 = local_68;
+    if (uVar12 < 2) {
+      if (uVar12 == 1) {
+        core_vampboss_cpp_AnotherVoicuSummonWavCall_FUN_005e7390();
 LAB_005e648e:
         this_ptr->field5_0xce8f4[0] = '\0';
         this_ptr->field5_0xce8f4[1] = '\0';
         this_ptr->field5_0xce8f4[2] = -0x80;
         this_ptr->field5_0xce8f4[3] = '?';
+        fVar9 = local_68;
       }
-LAB_005e649b:
-    } while (0.0 < local_68);
+    }
+    else {
+      if (uVar12 < 3) {
+        core_vampboss_cpp_VoicuSummonWavFile2_FUN_005e7410();
+        goto LAB_005e648e;
+      }
+      if (uVar12 < 4) {
+        core_vampboss_cpp_VoicuSummonWavFile_FUN_005e7320();
+        goto LAB_005e648e;
+      }
+      if (uVar12 == 0x29a) {
+        (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].renderTargetPoints)
+                  ((CDemonActor *)this_ptr);
+        CStack_a4.x = 0.0;
+        CStack_a4.y = 20.0;
+        CStack_a4.z = 20.0;
+        core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                  ((CDemonActor *)this_ptr,&local_ec,&CStack_a4);
+        volume = &local_ec.y;
+        core_charactr_cpp_CCharacter_FUN_0042b9e0((CCharacter *)this_ptr);
+        iVar7 = 0;
+        for (; fVar9 = local_68, (int)local_1c < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c)
+            ; local_1c = (float)((int)local_1c + 1)) {
+          this_ptr_01 = core_actor_cpp_castToClassHash_FUN_0040c790
+                                  (*(CDemonActor **)
+                                    (g_CDemonSetPtr->field19_0x14f0a0 + iVar7 + 8000),
+                                   g_CTVBatClassInfo.name_hash);
+          if ((this_ptr_01 != (CDemonActor *)0x0) && (this_ptr_01[0x8f].orient_matrix.m[0].x != 0.0)
+             ) {
+            core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)(auStack_21c + 0x28));
+            iStack_1ec = 0x4479c000;
+            (*this_ptr_01->vtable[1].playAmbientSoundWithVolume)
+                      (this_ptr_01,acStack_1f0,(float)volume);
+          }
+          iVar7 = iVar7 + 4;
+        }
+      }
+    }
   }
   pCVar11 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
                       (local_20,(CBoundingBox3D *)auStack_15c);

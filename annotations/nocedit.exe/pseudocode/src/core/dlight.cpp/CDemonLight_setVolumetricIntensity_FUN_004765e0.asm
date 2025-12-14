@@ -38,23 +38,23 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004765e7
     MOV dword ptr [EAX + 0x2fa8],EDX    ; 004765eb
     CMP dword ptr [EAX + 0x1cc0],0x100  ; 004765f1
-    JLE 0x00476633                      ; 004765fb | LAB_00476633
-        ;   XREF to: 00476633 (CONDITIONAL_JUMP)
+    JLE 0x00476633                      ; 004765fb
+        ;   XREF to: 00476633 (CONDITIONAL_JUMP)  ; LAB_00476633
     PUSH EBX                            ; 004765fd
     FLD float ptr [EAX + 0x2fa8]        ; 004765fe
     PUSH 0x0                            ; 00476604
-    FMUL double ptr [0x0061f2d3]        ; 00476606 | double g_VolumetricFilterScaleHighRes
+    FMUL double ptr [0x0061f2d3]        ; 00476606 | g_VolumetricFilterScaleHighRes
     PUSH 0x0                            ; 0047660c
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0047660e | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0047660e
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0xc]         ; 00476613
     MOV EDX,dword ptr [ESP + 0xc]       ; 00476617
     PUSH 0x0                            ; 0047661b
-    MOV EBX,dword ptr [EDX*0x4 + 0x66efbc] ; 0047661d | CDemonFilter * g_PlayerFilters
+    MOV EBX,dword ptr [EDX*0x4 + 0x66efbc] ; 0047661d | g_PlayerFilters
     PUSH EBX                            ; 00476624
     PUSH EAX                            ; 00476625
-    CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 ; 00476626 | void core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
-        ;   XREF to: 00474770 (UNCONDITIONAL_CALL)
+    CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 ; 00476626
+        ;   XREF to: 00474770 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 0047662b
     POP EBX                             ; 0047662e
     ADD ESP,0x4                         ; 0047662f
@@ -62,18 +62,18 @@ section .text
     FLD float ptr [EAX + 0x2fa8]        ; 00476633
         ;   Label: LAB_00476633
     PUSH 0x0                            ; 00476639
-    FMUL double ptr [0x0061f2cb]        ; 0047663b | double g_VolumetricFilterScaleLowRes
+    FMUL double ptr [0x0061f2cb]        ; 0047663b | g_VolumetricFilterScaleLowRes
     PUSH 0x0                            ; 00476641
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00476643 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00476643
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 00476648
     MOV EDX,dword ptr [ESP + 0x8]       ; 0047664c
     PUSH 0x0                            ; 00476650
-    MOV ECX,dword ptr [EDX*0x4 + 0x66ef9c] ; 00476652 | CDemonFilter * g_GlobalFilters
+    MOV ECX,dword ptr [EDX*0x4 + 0x66ef9c] ; 00476652 | g_GlobalFilters
     PUSH ECX                            ; 00476659
     PUSH EAX                            ; 0047665a
-    CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 ; 0047665b | void core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
-        ;   XREF to: 00474770 (UNCONDITIONAL_CALL)
+    CALL core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 ; 0047665b
+        ;   XREF to: 00474770 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight * this_ptr, CDemonFilter * filter_ptr, int filter_index, int filter_pos_x, ...)
     ADD ESP,0x14                        ; 00476660
     ADD ESP,0x4                         ; 00476663
     RET                                 ; 00476666

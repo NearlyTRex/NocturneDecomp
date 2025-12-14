@@ -1,162 +1,162 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 47, 
-    "cross_reference_count": 3, 
-    "global_count": 10, 
-    "total_lines": 148, 
-    "assembly_lines": 101, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0", 
-      "addr": "0059a2b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e50e", 
-      "addr": "0064e50e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_texture_sets_in_0064e523", 
-      "addr": "0064e523", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e575", 
-      "addr": "0064e575", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_textures_in_CDe_0064e58a", 
-      "addr": "0064e58a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e5d8", 
-      "addr": "0064e5d8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_parts_in_CDefor_0064e5ed", 
-      "addr": "0064e5ed", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeleton_cpp_0064e638", 
-      "addr": "0064e638", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Too_many_LODs_in_CDeform_0064e64d", 
-      "addr": "0064e64d", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059a3f0", 
-    "signature": "void core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0(CDeformableModel * this_ptr, int num_lods, int num_texture_sets, int num_textures, int num_parts)", 
-    "address_range": [
-      [
-        "0059a3f0", 
-        "0059a50e"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "num_lods"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "num_texture_sets"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "num_textures"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "num_parts"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 101,
+    "complexity_score": 47,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 10,
+    "pseudocode_lines": 47,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 148
+  },
   "cross_references": [
     {
-      "from_addr": "0058b7ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b660", 
-      "addr": "0058b660"
-    }, 
+      "addr": "0058b660",
+      "from_addr": "0058b7ac",
+      "name": "core_skeledit.cpp_FUN_0058b660",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058c2e7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058c190", 
-      "addr": "0058c190"
-    }, 
+      "addr": "0058c190",
+      "from_addr": "0058c2e7",
+      "name": "core_skeledit.cpp_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0059bb99", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970", 
-      "addr": "0059b970"
+      "addr": "0059b970",
+      "from_addr": "0059bb99",
+      "name": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0059a3f0",
+    "address_range": [
+      [
+        "0059a3f0",
+        "0059a50e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0",
+    "signature": "void core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0(CDeformableModel * this_ptr, int num_lods, int num_texture_sets, int num_textures, int num_parts)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0059a2b0",
+      "name": "core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064e50e",
+      "name": "s_core_skeleton_cpp_0064e50e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e523",
+      "name": "s_Too_many_texture_sets_in_0064e523",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e575",
+      "name": "s_core_skeleton_cpp_0064e575",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e58a",
+      "name": "s_Too_many_textures_in_CDe_0064e58a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e5d8",
+      "name": "s_core_skeleton_cpp_0064e5d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e5ed",
+      "name": "s_Too_many_parts_in_CDefor_0064e5ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e638",
+      "name": "s_core_skeleton_cpp_0064e638",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064e64d",
+      "name": "s_Too_many_LODs_in_CDeform_0064e64d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "num_lods",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "num_texture_sets",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "num_textures",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "num_parts",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

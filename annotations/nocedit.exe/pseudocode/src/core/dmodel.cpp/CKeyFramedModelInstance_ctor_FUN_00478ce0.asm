@@ -32,8 +32,8 @@ section .text
     MOV byte ptr [EBX + 0x78],0x0       ; 00478ce5
     PUSH EBX                            ; 00478ce9
     MOV dword ptr [EBX + 0x178],0x0     ; 00478cea
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00 ; 00478cf4 | CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d00 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00 ; 00478cf4
+        ;   XREF to: 00478d00 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_00478d00(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00478cf9
     MOV EAX,EBX                         ; 00478cfc
     POP EBX                             ; 00478cfe

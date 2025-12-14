@@ -1,129 +1,129 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 92, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 80, 
-    "assembly_lines": 53, 
-    "suspect_count": 6, 
+    "assembly_lines": 53,
+    "complexity_score": 92,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 27,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setedit_cpp_00647b0d", 
-      "addr": "00647b0d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Can_t_resolve_master_lig_00647b21", 
-      "addr": "00647b21", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonLight*[96]", 
-      "name": "g_MasterLightList", 
-      "addr": "03276db0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < *(int *)(in_stack_00000004 + 0x19a2c)) {"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "str2 = (char *)(in_stack_00000004 + 0x19a34);"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((g_MasterLightList[in_stack_00000008]->base).camera_name,str2);"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0x19a2c));"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0057c550", 
-    "signature": "undefined core_setedit.cpp_ResolveMasterLights_FUN_0057c550()", 
-    "address_range": [
-      [
-        "0057c550", 
-        "0057c5cc"
-      ]
-    ], 
-    "name": "core_setedit.cpp_ResolveMasterLights_FUN_0057c550"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 80
+  },
   "cross_references": [
     {
-      "from_addr": "0057cc12", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
-      "addr": "0057c5d0"
+      "addr": "0057c5d0",
+      "from_addr": "0057cc12",
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057c550",
+    "address_range": [
+      [
+        "0057c550",
+        "0057c5cc"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_setedit.cpp_ResolveMasterLights_FUN_0057c550",
+    "signature": "undefined core_setedit.cpp_ResolveMasterLights_FUN_0057c550()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00647b0d",
+      "name": "s_core_setedit_cpp_00647b0d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00647b21",
+      "name": "s_Can_t_resolve_master_lig_00647b21",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03276db0",
+      "name": "g_MasterLightList",
+      "type": "CDemonLight*[96]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x19a2c)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "str2 = (char *)(in_stack_00000004 + 0x19a34);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "((g_MasterLightList[in_stack_00000008]->base).camera_name,str2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0x19a2c));",
+      "type": "stack_param"
     }
   ]
 }

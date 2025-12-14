@@ -21,21 +21,21 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x032776c8]      ; 0056d110 | int g_CoronaGlobeCount
+    MOV EDX,dword ptr [0x032776c8]      ; 0056d110 | g_CoronaGlobeCount
         ;   Label: core_set.cpp_CDemonSet_FUN_0056d110
     MOV ECX,dword ptr [ESP + 0x8]       ; 0056d116
     CMP dword ptr [ECX + 0xc],0x100     ; 0056d11a
-    JL 0x0056d128                       ; 0056d121 | LAB_0056d128
-        ;   XREF to: 0056d128 (CONDITIONAL_JUMP)
+    JL 0x0056d128                       ; 0056d121
+        ;   XREF to: 0056d128 (CONDITIONAL_JUMP)  ; LAB_0056d128
     CMP EDX,0x64                        ; 0056d123
-    JL 0x0056d12f                       ; 0056d126 | LAB_0056d12f
-        ;   XREF to: 0056d12f (CONDITIONAL_JUMP)
-    MOV dword ptr [0x032776c8],EDX      ; 0056d128 | int g_CoronaGlobeCount
+    JL 0x0056d12f                       ; 0056d126
+        ;   XREF to: 0056d12f (CONDITIONAL_JUMP)  ; LAB_0056d12f
+    MOV dword ptr [0x032776c8],EDX      ; 0056d128 | g_CoronaGlobeCount
         ;   Label: LAB_0056d128
     RET                                 ; 0056d12e
     INC EDX                             ; 0056d12f
         ;   Label: LAB_0056d12f
-    MOV dword ptr [EDX*0x4 + 0x32776c8],ECX ; 0056d130 | int g_CoronaGlobeCount
-    MOV dword ptr [0x032776c8],EDX      ; 0056d137 | int g_CoronaGlobeCount
+    MOV dword ptr [EDX*0x4 + 0x32776c8],ECX ; 0056d130 | g_CoronaGlobeCount
+    MOV dword ptr [0x032776c8],EDX      ; 0056d137 | g_CoronaGlobeCount
     RET                                 ; 0056d13d
 

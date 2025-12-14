@@ -1,107 +1,107 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 67, 
-    "assembly_lines": 45, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_dtor_FUN_0044c090", 
-      "addr": "0044c090"
-    }, 
-    {
-      "name": "core_dlight.cpp_CDemonLight_free_FUN_004728b0", 
-      "addr": "004728b0"
-    }, 
-    {
-      "name": "crt_memory.c_free_FUN_005fe659", 
-      "addr": "005fe659"
-    }, 
-    {
-      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
-      "addr": "005fe632"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CCameraView_vtable", 
-      "name": "g_CDemonLightVTable", 
-      "addr": "0065c924", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CDemonLight", 
-      "addr": "0065c940", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00472760", 
-    "signature": "CDemonLight * core_dlight.cpp_CDemonLight_dtor_FUN_00472760(CDemonLight * this_ptr, uint d1, uint d2, uint d3)", 
-    "address_range": [
-      [
-        "00472760", 
-        "004727bd"
-      ]
-    ], 
-    "name": "core_dlight.cpp_CDemonLight_dtor_FUN_00472760"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonLight *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d2"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "d3"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 45,
+    "complexity_score": 22,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 2,
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
+  },
   "cross_references": [
     {
-      "from_addr": "00423605", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_CLightActor_dtor_FUN_004235f0", 
-      "addr": "004235f0"
+      "addr": "004235f0",
+      "from_addr": "00423605",
+      "name": "core_boxactor.cpp_CLightActor_dtor_FUN_004235f0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00472760",
+    "address_range": [
+      [
+        "00472760",
+        "004727bd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_dtor_FUN_00472760",
+    "signature": "CDemonLight * core_dlight.cpp_CDemonLight_dtor_FUN_00472760(CDemonLight * this_ptr, uint d1, uint d2, uint d3)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044c090",
+      "name": "core_dcamera.cpp_CDemonCamera_dtor_FUN_0044c090"
+    },
+    {
+      "addr": "004728b0",
+      "name": "core_dlight.cpp_CDemonLight_free_FUN_004728b0"
+    },
+    {
+      "addr": "005fe659",
+      "name": "crt_memory.c_free_FUN_005fe659"
+    },
+    {
+      "addr": "005fe632",
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065c924",
+      "name": "g_CDemonLightVTable",
+      "type": "CCameraView_vtable",
+      "value": null
+    },
+    {
+      "addr": "0065c940",
+      "name": "g_CDemonLight",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "d1",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "d2",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "d3",
+        "offset": 16,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
 }

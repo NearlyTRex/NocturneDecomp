@@ -58,8 +58,8 @@ section .text
     MOV EAX,ESP                         ; 005f4e7b
     FSTP float ptr [ESP + 0x8]          ; 005f4e7d
     CMP EDX,EAX                         ; 005f4e81
-    JNZ 0x005f4e8b                      ; 005f4e83 | LAB_005f4e8b
-        ;   XREF to: 005f4e8b (CONDITIONAL_JUMP)
+    JNZ 0x005f4e8b                      ; 005f4e83
+        ;   XREF to: 005f4e8b (CONDITIONAL_JUMP)  ; LAB_005f4e8b
     MOV EAX,ECX                         ; 005f4e85
     ADD ESP,0xc                         ; 005f4e87
     RET                                 ; 005f4e8a

@@ -27,8 +27,8 @@ section .text
     PUSH 0xff                           ; 005852a0
     LEA ECX,[ESP + 0x8]                 ; 005852a5
     PUSH ECX                            ; 005852a9
-    CALL crt_stdio.c_fgets_FUN_005fefd0 ; 005852aa | char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
-        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgets_FUN_005fefd0 ; 005852aa
+        ;   XREF to: 005fefd0 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
     ADD ESP,0xc                         ; 005852af
     MOV EDI,ESP                         ; 005852b2
     SUB ECX,ECX                         ; 005852b4
@@ -38,8 +38,8 @@ section .text
     NOT ECX                             ; 005852bb
     DEC ECX                             ; 005852bd
     TEST ECX,ECX                        ; 005852be
-    JLE 0x005852c8                      ; 005852c0 | LAB_005852c8
-        ;   XREF to: 005852c8 (CONDITIONAL_JUMP)
+    JLE 0x005852c8                      ; 005852c0
+        ;   XREF to: 005852c8 (CONDITIONAL_JUMP)  ; LAB_005852c8
     XOR AH,AH                           ; 005852c2
     MOV byte ptr [ESP + ECX*0x1 + -0x1],AH ; 005852c4
     MOV EDI,ESP                         ; 005852c8
@@ -60,15 +60,15 @@ section .text
         ;   Label: LAB_005852ea
     MOV byte ptr [EDI],AL               ; 005852ec
     CMP AL,0x0                          ; 005852ee
-    JZ 0x00585302                       ; 005852f0 | LAB_00585302
-        ;   XREF to: 00585302 (CONDITIONAL_JUMP)
+    JZ 0x00585302                       ; 005852f0
+        ;   XREF to: 00585302 (CONDITIONAL_JUMP)  ; LAB_00585302
     MOV AL,byte ptr [ESI + 0x1]         ; 005852f2
     ADD ESI,0x2                         ; 005852f5
     MOV byte ptr [EDI + 0x1],AL         ; 005852f8
     ADD EDI,0x2                         ; 005852fb
     CMP AL,0x0                          ; 005852fe
-    JNZ 0x005852ea                      ; 00585300 | LAB_005852ea
-        ;   XREF to: 005852ea (CONDITIONAL_JUMP)
+    JNZ 0x005852ea                      ; 00585300
+        ;   XREF to: 005852ea (CONDITIONAL_JUMP)  ; LAB_005852ea
     POP EDI                             ; 00585302
         ;   Label: LAB_00585302
     ADD ESP,0x100                       ; 00585303

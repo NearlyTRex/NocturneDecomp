@@ -1,102 +1,102 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 47, 
-    "assembly_lines": 32, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0", 
-      "addr": "00438cb0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
-      "addr": "0050f1f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_cloth_cpp_00618162", 
-      "addr": "00618162", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_cloth_cpp_00618174", 
-      "addr": "00618174", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CCloth_allocMemory_Out_o_00618186", 
-      "addr": "00618186", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00438c50", 
-    "signature": "void core_cloth.cpp_CCloth_allocMemory_FUN_00438c50(CCloth * this_ptr)", 
-    "address_range": [
-      [
-        "00438c50", 
-        "00438ca7"
-      ]
-    ], 
-    "name": "core_cloth.cpp_CCloth_allocMemory_FUN_00438c50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCloth *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 32,
+    "complexity_score": 15,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
+  },
   "cross_references": [
     {
-      "from_addr": "00438f4a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_CCloth_load_FUN_00438cf0", 
-      "addr": "00438cf0"
-    }, 
+      "addr": "00438cf0",
+      "from_addr": "00438f4a",
+      "name": "core_cloth.cpp_CCloth_load_FUN_00438cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043dd71", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_FUN_0043dcc0", 
-      "addr": "0043dcc0"
+      "addr": "0043dcc0",
+      "from_addr": "0043dd71",
+      "name": "core_cloth.cpp_FUN_0043dcc0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00438c50",
+    "address_range": [
+      [
+        "00438c50",
+        "00438ca7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_allocMemory_FUN_00438c50",
+    "signature": "void core_cloth.cpp_CCloth_allocMemory_FUN_00438c50(CCloth * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00438cb0",
+      "name": "core_cloth.cpp_UnknownSomethingAndFreeMem_FUN_00438cb0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f1f0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00618162",
+      "name": "s_core_cloth_cpp_00618162",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618174",
+      "name": "s_core_cloth_cpp_00618174",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618186",
+      "name": "s_CCloth_allocMemory_Out_o_00618186",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      }
+    ]
+  },
+  "suspects": []
 }

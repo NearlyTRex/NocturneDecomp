@@ -30,8 +30,8 @@ section .text
         ;   Label: engine_dosio.c_CFileFinder_dtor_FUN_00481c50
     MOV EBX,dword ptr [ESP + 0x8]       ; 00481c51
     PUSH EBX                            ; 00481c55
-    CALL engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70 ; 00481c56 | void engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder * this_ptr)
-        ;   XREF to: 00481d70 (UNCONDITIONAL_CALL)
+    CALL engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70 ; 00481c56
+        ;   XREF to: 00481d70 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00481c5b
     MOV EAX,EBX                         ; 00481c5e
     POP EBX                             ; 00481c60

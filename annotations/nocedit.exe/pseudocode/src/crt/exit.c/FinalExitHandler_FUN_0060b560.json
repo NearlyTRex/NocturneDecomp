@@ -1,97 +1,97 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 36, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 24, 
-    "assembly_lines": 13, 
-    "suspect_count": 2, 
+    "assembly_lines": 13,
+    "complexity_score": 36,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_exit.c_ExitHookStub_FUN_0060b530", 
-      "addr": "0060b530"
-    }, 
-    {
-      "name": "crt_exit.c_ExitProcess_FUN_00602700", 
-      "addr": "00602700"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_006852c4", 
-      "addr": "006852c4", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_crt_exit.c_ExitHookStub_FUN_0060b530_00685478", 
-      "addr": "00685478", 
-      "value": "0060b530"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_crt_exit.c_ExitHookStub_FUN_0060b530_0068547c", 
-      "addr": "0068547c", 
-      "value": "0060b530"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 12, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "crt_exit_c_ExitProcess_FUN_00602700(unaff_EBX);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060b560", 
-    "signature": "void crt_exit.c_FinalExitHandler_FUN_0060b560(int exit_code)", 
-    "address_range": [
-      [
-        "0060b560", 
-        "0060b585"
-      ]
-    ], 
-    "name": "crt_exit.c_FinalExitHandler_FUN_0060b560"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "exit_code"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 24
+  },
   "cross_references": [
     {
-      "from_addr": "0060b557", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.c_ExitApplication_FUN_0060b534", 
-      "addr": "0060b534"
+      "addr": "0060b534",
+      "from_addr": "0060b557",
+      "name": "crt_startup.c_ExitApplication_FUN_0060b534",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060b560",
+    "address_range": [
+      [
+        "0060b560",
+        "0060b585"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_exit.c_FinalExitHandler_FUN_0060b560",
+    "signature": "void crt_exit.c_FinalExitHandler_FUN_0060b560(int exit_code)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060b530",
+      "name": "crt_exit.c_ExitHookStub_FUN_0060b530"
+    },
+    {
+      "addr": "00602700",
+      "name": "crt_exit.c_ExitProcess_FUN_00602700"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006852c4",
+      "name": "DAT_006852c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00685478",
+      "name": "PTR_crt_exit.c_ExitHookStub_FUN_0060b530_00685478",
+      "type": "void*",
+      "value": "0060b530"
+    },
+    {
+      "addr": "0068547c",
+      "name": "PTR_crt_exit.c_ExitHookStub_FUN_0060b530_0068547c",
+      "type": "void*",
+      "value": "0060b530"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "exit_code",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBX",
+      "text": "crt_exit_c_ExitProcess_FUN_00602700(unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

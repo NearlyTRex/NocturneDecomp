@@ -1,96 +1,96 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 94, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 33, 
-    "assembly_lines": 14, 
-    "suspect_count": 6, 
+    "assembly_lines": 14,
+    "complexity_score": 94,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 19,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_type", 
-      "concat_artifact", 
-      "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_unknown.c_FUN_00604104", 
-      "addr": "00604104"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 4, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "void crt_unknown_c_FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX)"
-    }, 
-    {
-      "line": 9, 
-      "match": "undefined3 unaff_retaddr", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 unaff_retaddr;"
-    }, 
-    {
-      "line": 16, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar1 = (ushort)CONCAT31 /* combine 2-byte values */(unaff_retaddr,(char)((uint3)unaff_retaddr >> 8));"
-    }, 
-    {
-      "line": 18, 
-      "match": "CONCAT11", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar1 = CONCAT11 /* combine 2-byte values */((char)((ushort)unaff_retaddr % 10),(char)((ushort)unaff_retaddr / 10));"
-    }, 
-    {
-      "line": 20, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_EBX = (char)uVar1 + '0';"
-    }, 
-    {
-      "line": 21, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX[1] = (char)((ushort)uVar1 >> 8) + '0';"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "006040ed", 
-    "signature": "undefined crt_unknown.c_FUN_006040ed()", 
-    "address_range": [
-      [
-        "006040ed", 
-        "00604103"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_006040ed"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "unaffected_reg",
+      "concat_artifact",
+      "undefined_type"
+    ],
+    "total_lines": 33
+  },
   "cross_references": [
     {
-      "from_addr": "006040e7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_006040d7", 
-      "addr": "006040d7"
+      "addr": "006040d7",
+      "from_addr": "006040e7",
+      "name": "crt_unknown.c_FUN_006040d7",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "006040ed",
+    "address_range": [
+      [
+        "006040ed",
+        "00604103"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_006040ed",
+    "signature": "undefined crt_unknown.c_FUN_006040ed()"
+  },
+  "function_calls": [
+    {
+      "addr": "00604104",
+      "name": "crt_unknown.c_FUN_00604104"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 4,
+      "match": "unaff_EBX",
+      "text": "void crt_unknown_c_FUN_006040ed(uint param_1,uint param_2,char *unaff_EBX)",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 9,
+      "match": "undefined3 unaff_retaddr",
+      "text": "undefined3 unaff_retaddr;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 16,
+      "match": "CONCAT31",
+      "text": "uVar1 = (ushort)CONCAT31 /* combine 2-byte values */(unaff_retaddr,(char)((uint3)unaff_retaddr >> 8));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 18,
+      "match": "CONCAT11",
+      "text": "uVar1 = CONCAT11 /* combine 2-byte values */((char)((ushort)unaff_retaddr % 10),(char)((ushort)unaff_retaddr / 10));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBX",
+      "text": "*unaff_EBX = (char)uVar1 + '0';",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX[1] = (char)((ushort)uVar1 >> 8) + '0';",
+      "type": "unaffected_reg"
     }
   ]
 }

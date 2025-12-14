@@ -45,41 +45,41 @@ section .text
     FCOMP double ptr [ESP]              ; 004b05b9
     FNSTSW AX                           ; 004b05bc
     SAHF                                ; 004b05be
-    JBE 0x004b05f2                      ; 004b05bf | LAB_004b05f2
-        ;   XREF to: 004b05f2 (CONDITIONAL_JUMP)
+    JBE 0x004b05f2                      ; 004b05bf
+        ;   XREF to: 004b05f2 (CONDITIONAL_JUMP)  ; LAB_004b05f2
     MOV ESI,dword ptr [ESP + 0x4]       ; 004b05c1
     PUSH ESI                            ; 004b05c5
     MOV EDI,dword ptr [ESP + 0x4]       ; 004b05c6
     PUSH EDI                            ; 004b05ca
     MOV EAX,dword ptr [EBP + 0x18]      ; 004b05cb
     PUSH EAX                            ; 004b05ce
-    MOV EDX,0x625b32                    ; 004b05cf | = "..\\core\\event.cpp" | s_core_event_cpp_00625b32 = ..\core\event.cpp
+    MOV EDX,0x625b32                    ; 004b05cf | = "..\\core\\event.cpp"
     MOV ECX,0xa5d                       ; 004b05d4
-    PUSH 0x625b44                       ; 004b05d9 | = "CEventList::setTimerEvent - invalid d..." | s_CEventList_setTimerEvent_00625b44 = CEventList::setTimerEvent - invalid duration for %s: %f
-    MOV dword ptr [0x02f0ca48],EDX      ; 004b05de | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 004b05e4 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b05ea | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x625b44                       ; 004b05d9 | = "CEventList::setTimerEvent - invalid d..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 004b05de | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 004b05e4 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b05ea
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x10                        ; 004b05ef
     MOV EDX,dword ptr [EBP + 0x18]      ; 004b05f2
         ;   Label: LAB_004b05f2
     PUSH EDX                            ; 004b05f5
     PUSH EBX                            ; 004b05f6
-    CALL core_event.cpp_CEventList_FUN_004b0900 ; 004b05f7 | int core_event.cpp_CEventList_FUN_004b0900(CEventList * this_ptr)
-        ;   XREF to: 004b0900 (UNCONDITIONAL_CALL)
+    CALL core_event.cpp_CEventList_FUN_004b0900 ; 004b05f7
+        ;   XREF to: 004b0900 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004b0900(CEventList * this_ptr)
     MOV ESI,EAX                         ; 004b05fc
     ADD ESP,0x8                         ; 004b05fe
     TEST EAX,EAX                        ; 004b0601
-    JL 0x004b0690                       ; 004b0603 | LAB_004b0690
-        ;   XREF to: 004b0690 (CONDITIONAL_JUMP)
+    JL 0x004b0690                       ; 004b0603
+        ;   XREF to: 004b0690 (CONDITIONAL_JUMP)  ; LAB_004b0690
     FLD float ptr [EBP + 0x1c]          ; 004b0609
     FLDZ                                ; 004b060c
     LEA EDI,[EAX*0x4 + 0x0]             ; 004b060e
     FCOMPP                              ; 004b0615
     FNSTSW AX                           ; 004b0617
     SAHF                                ; 004b0619
-    JNC 0x004b062d                      ; 004b061a | LAB_004b062d
-        ;   XREF to: 004b062d (CONDITIONAL_JUMP)
+    JNC 0x004b062d                      ; 004b061a
+        ;   XREF to: 004b062d (CONDITIONAL_JUMP)  ; LAB_004b062d
     MOV EAX,dword ptr [EBP + 0x1c]      ; 004b061c
     MOV dword ptr [EDI + EBX*0x1 + 0x3354],EAX ; 004b061f
     MOV ESP,EBP                         ; 004b0626
@@ -107,8 +107,8 @@ section .text
     PUSH ECX                            ; 004b065a
     ADD EAX,EDX                         ; 004b065b
     PUSH EAX                            ; 004b065d
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b065e | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b065e
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     MOV EAX,dword ptr [EBX + 0x3210]    ; 004b0663
     SUB EAX,ESI                         ; 004b0669
     ADD ESP,0xc                         ; 004b066b
@@ -120,8 +120,8 @@ section .text
     PUSH EAX                            ; 004b067d
     ADD EBX,EDI                         ; 004b067e
     PUSH EBX                            ; 004b0680
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b0681 | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 004b0681
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004b0686
     MOV ESP,EBP                         ; 004b0689
     POP EBP                             ; 004b068b
@@ -135,18 +135,18 @@ section .text
     FCOMPP                              ; 004b0695
     FNSTSW AX                           ; 004b0697
     SAHF                                ; 004b0699
-    JNC 0x004b0626                      ; 004b069a | LAB_004b0626
-        ;   XREF to: 004b0626 (CONDITIONAL_JUMP)
+    JNC 0x004b0626                      ; 004b069a
+        ;   XREF to: 004b0626 (CONDITIONAL_JUMP)  ; LAB_004b0626
     CMP dword ptr [EBX + 0x3210],0xa    ; 004b069c
-    JL 0x004b06c8                       ; 004b06a3 | LAB_004b06c8
-        ;   XREF to: 004b06c8 (CONDITIONAL_JUMP)
-    MOV ESI,0x625b7c                    ; 004b06a5 | = "..\\core\\event.cpp" | s_core_event_cpp_00625b7c = ..\core\event.cpp
+    JL 0x004b06c8                       ; 004b06a3
+        ;   XREF to: 004b06c8 (CONDITIONAL_JUMP)  ; LAB_004b06c8
+    MOV ESI,0x625b7c                    ; 004b06a5 | = "..\\core\\event.cpp"
     MOV EDI,0xa7e                       ; 004b06aa
-    PUSH 0x625b8e                       ; 004b06af | = "CEventList::setTimerEvent - too many ..." | s_CEventList_setTimerEvent_00625b8e = CEventList::setTimerEvent - too many timers!
-    MOV dword ptr [0x02f0ca48],ESI      ; 004b06b4 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 004b06ba | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b06c0 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x625b8e                       ; 004b06af | = "CEventList::setTimerEvent - too many ..."
+    MOV dword ptr [0x02f0ca48],ESI      ; 004b06b4 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 004b06ba | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004b06c0
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004b06c5
     MOV EDI,dword ptr [EBX + 0x3210]    ; 004b06c8
         ;   Label: LAB_004b06c8
@@ -159,15 +159,15 @@ section .text
         ;   Label: LAB_004b06dd
     MOV byte ptr [EDI],AL               ; 004b06df
     CMP AL,0x0                          ; 004b06e1
-    JZ 0x004b06f5                       ; 004b06e3 | LAB_004b06f5
-        ;   XREF to: 004b06f5 (CONDITIONAL_JUMP)
+    JZ 0x004b06f5                       ; 004b06e3
+        ;   XREF to: 004b06f5 (CONDITIONAL_JUMP)  ; LAB_004b06f5
     MOV AL,byte ptr [ESI + 0x1]         ; 004b06e5
     ADD ESI,0x2                         ; 004b06e8
     MOV byte ptr [EDI + 0x1],AL         ; 004b06eb
     ADD EDI,0x2                         ; 004b06ee
     CMP AL,0x0                          ; 004b06f1
-    JNZ 0x004b06dd                      ; 004b06f3 | LAB_004b06dd
-        ;   XREF to: 004b06dd (CONDITIONAL_JUMP)
+    JNZ 0x004b06dd                      ; 004b06f3
+        ;   XREF to: 004b06dd (CONDITIONAL_JUMP)  ; LAB_004b06dd
     POP EDI                             ; 004b06f5
         ;   Label: LAB_004b06f5
     MOV EAX,dword ptr [EBX + 0x3210]    ; 004b06f6

@@ -27,7 +27,7 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("paintWindowBackground called but no window was opened!");
   }
   iVar3 = g_WindowStackCount + -1;
-  puVar7 = (uint *)g_WindowStack[iVar3].screen_backup_buffer;
+  puVar7 = g_WindowStack[iVar3].screen_backup_buffer;
   if (puVar7 != (uint *)0x0) {
     iVar4 = g_WindowStack[iVar3].backup_width * g_BitsPerPixel;
     iVar5 = iVar4 >> 0x1f;

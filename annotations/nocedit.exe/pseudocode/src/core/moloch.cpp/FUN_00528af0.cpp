@@ -11,8 +11,7 @@ void core_moloch_cpp_FUN_00528af0(void)
 {
   CMoloch *this_ptr;
   
-  this_ptr = (CMoloch *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b98,"..\\core\\moloch.cpp",0x2e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b98,"..\\core\\moloch.cpp",0x2e);
   if (this_ptr == (CMoloch *)0x0) {
     return;
   }

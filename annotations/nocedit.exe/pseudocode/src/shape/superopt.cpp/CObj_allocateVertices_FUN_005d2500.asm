@@ -30,26 +30,26 @@ section .text
     SHL EAX,0x3                         ; 005d2510
     SUB EAX,EDX                         ; 005d2513
     PUSH EAX                            ; 005d2515
-    CALL crt_memory.c_malloc_FUN_00601bb0 ; 005d2516 | void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
-        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_malloc_FUN_00601bb0 ; 005d2516
+        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
     ADD ESP,0x4                         ; 005d251b
     MOV dword ptr [EBX + 0x4],EAX       ; 005d251e
     TEST EAX,EAX                        ; 005d2521
-    JNZ 0x005d2554                      ; 005d2523 | LAB_005d2554
-        ;   XREF to: 005d2554 (CONDITIONAL_JUMP)
+    JNZ 0x005d2554                      ; 005d2523
+        ;   XREF to: 005d2554 (CONDITIONAL_JUMP)  ; LAB_005d2554
     MOV ECX,dword ptr [EBX + 0xc]       ; 005d2525
     TEST ECX,ECX                        ; 005d2528
-    JZ 0x005d2535                       ; 005d252a | LAB_005d2535
-        ;   XREF to: 005d2535 (CONDITIONAL_JUMP)
+    JZ 0x005d2535                       ; 005d252a
+        ;   XREF to: 005d2535 (CONDITIONAL_JUMP)  ; LAB_005d2535
     PUSH ECX                            ; 005d252c
-    CALL crt_memory.c_free_FUN_00601cd0 ; 005d252d | void crt_memory.c_free_FUN_00601cd0(void * ptr)
-        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_00601cd0 ; 005d252d
+        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_00601cd0(void * ptr)
     ADD ESP,0x4                         ; 005d2532
-    PUSH 0x654376                       ; 005d2535 | = "Unable to allocate RAM for object ver..." | s_Unable_to_allocate_RAM_f_00654376 = Unable to allocate RAM for object vertices
+    PUSH 0x654376                       ; 005d2535 | = "Unable to allocate RAM for object ver..."
         ;   Label: LAB_005d2535
     MOV dword ptr [EBX + 0xc],0x0       ; 005d253a
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d2541 | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d2541
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     ADD ESP,0x4                         ; 005d2546
     MOV dword ptr [EBX + 0x14],0x0      ; 005d2549
     XOR EAX,EAX                         ; 005d2550
@@ -66,8 +66,8 @@ section .text
     PUSH 0x0                            ; 005d2562
     MOV EDI,dword ptr [EBX + 0x4]       ; 005d2564
     PUSH EDI                            ; 005d2567
-    CALL crt_memory.c_memset_FUN_005fde40 ; 005d2568 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 005d2568
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV EAX,0x1                         ; 005d256d
     ADD ESP,0xc                         ; 005d2572
     POP EDI                             ; 005d2575

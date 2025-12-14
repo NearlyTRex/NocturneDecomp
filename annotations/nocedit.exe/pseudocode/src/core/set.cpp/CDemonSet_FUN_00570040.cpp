@@ -91,7 +91,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570040(CDemonSet *this_ptr)
             *(int *)((int)&uStack_9c + iVar5) = *(int *)((int)&uStack_9c + iVar5) + -0x10000;
           }
           iVar5 = iVar5 + 4;
-        } while (SBORROW /* signed borrow */4(iVar5,SStack_e4.base.count * 4) != iVar5 + SStack_e4.base.count * -4 < 0);
+        } while (iVar5 < SStack_e4.base.count * 4);
       }
       iVar5 = 0;
       if (0 < SStack_e4.base.count) {

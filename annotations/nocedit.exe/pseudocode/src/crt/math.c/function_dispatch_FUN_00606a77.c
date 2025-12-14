@@ -11,6 +11,6 @@ void crt_math_c_function_dispatch_FUN_00606a77(int function_index)
 {
                     /* WARNING: Could not recover jumptable at 0x00606a7a. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (*(code *)(&PTR_FUN_006873d4)[function_index])();
+  (*(&PTR_FUN_006873d4)[function_index])();
   return;
 }

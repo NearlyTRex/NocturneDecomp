@@ -29,8 +29,8 @@ section .text
     MOV AL,byte ptr [ESI]               ; 0060b596
         ;   Label: LAB_0060b596
     CMP AL,0x0                          ; 0060b598
-    JZ 0x0060b5cb                       ; 0060b59a | LAB_0060b5cb
-        ;   XREF to: 0060b5cb (CONDITIONAL_JUMP)
+    JZ 0x0060b5cb                       ; 0060b59a
+        ;   XREF to: 0060b5cb (CONDITIONAL_JUMP)  ; LAB_0060b5cb
     MOV EDI,EDX                         ; 0060b59c
     MOV EBX,ECX                         ; 0060b59e
     MOV EAX,EBP                         ; 0060b5a0
@@ -53,13 +53,13 @@ section .text
     ADC ECX,0x0                         ; 0060b5c2
     ADC EDX,0x0                         ; 0060b5c5
     INC ESI                             ; 0060b5c8
-    JMP 0x0060b596                      ; 0060b5c9 | LAB_0060b596
-        ;   XREF to: 0060b596 (UNCONDITIONAL_JUMP)
+    JMP 0x0060b596                      ; 0060b5c9
+        ;   XREF to: 0060b596 (UNCONDITIONAL_JUMP)  ; LAB_0060b596
     MOV EAX,ECX                         ; 0060b5cb
         ;   Label: LAB_0060b5cb
     MOV EDI,0x405e                      ; 0060b5cd
-    CALL crt_unknown.c_FUN_0060b5e8     ; 0060b5d2 | undefined crt_unknown.c_FUN_0060b5e8()
-        ;   XREF to: 0060b5e8 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_FUN_0060b5e8     ; 0060b5d2
+        ;   XREF to: 0060b5e8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060b5e8()
     POP EBP                             ; 0060b5d7
     MOV dword ptr [EBP + 0x4],EDX       ; 0060b5d8
     MOV dword ptr [EBP],EAX             ; 0060b5db

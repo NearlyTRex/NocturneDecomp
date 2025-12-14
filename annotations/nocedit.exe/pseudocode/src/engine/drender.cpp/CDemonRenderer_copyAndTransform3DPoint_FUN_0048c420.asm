@@ -34,8 +34,8 @@ section .text
     MOV dword ptr [ESP + 0xc],EAX       ; 0048c437
     MOV EAX,ESP                         ; 0048c43b
     PUSH EAX                            ; 0048c43d
-    CALL engine_3d.c_processCameraRelativePoint_FUN_004037e0 ; 0048c43e | SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f * input_point)
-        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_processCameraRelativePoint_FUN_004037e0 ; 0048c43e
+        ;   XREF to: 004037e0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f * input_point)
     ADD ESP,0x4                         ; 0048c443
     ADD ESP,0x10                        ; 0048c446
     RET                                 ; 0048c449

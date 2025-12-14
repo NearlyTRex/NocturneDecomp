@@ -40,22 +40,22 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_FUN_004c79d0
     PUSH EDI                            ; 004c79d1
     PUSH EBP                            ; 004c79d2
-    MOV EDX,dword ptr [0x02d53dfc]      ; 004c79d3 | CStake * g_StakeActiveListHead
+    MOV EDX,dword ptr [0x02d53dfc]      ; 004c79d3 | g_StakeActiveListHead
     LEA EAX,[EDX*0x4 + 0x0]             ; 004c79d9
     ADD EAX,EDX                         ; 004c79e0
     SHL EAX,0x2                         ; 004c79e2
-    MOV EBX,0x2d53e00                   ; 004c79e5 | CSpark[256] g_SparkPool
+    MOV EBX,0x2d53e00                   ; 004c79e5 | g_SparkPool
     SUB EAX,EDX                         ; 004c79ea
     INC EDX                             ; 004c79ec
     SHL EAX,0x2                         ; 004c79ed
-    MOV dword ptr [0x02d53dfc],EDX      ; 004c79f0 | CStake * g_StakeActiveListHead
+    MOV dword ptr [0x02d53dfc],EDX      ; 004c79f0 | g_StakeActiveListHead
     ADD EBX,EAX                         ; 004c79f6
     CMP EDX,0x100                       ; 004c79f8
-    JL 0x004c7a0a                       ; 004c79fe | LAB_004c7a0a
-        ;   XREF to: 004c7a0a (CONDITIONAL_JUMP)
+    JL 0x004c7a0a                       ; 004c79fe
+        ;   XREF to: 004c7a0a (CONDITIONAL_JUMP)  ; LAB_004c7a0a
     PUSH ESI                            ; 004c7a00
     XOR ESI,ESI                         ; 004c7a01
-    MOV dword ptr [0x02d53dfc],ESI      ; 004c7a03 | CStake * g_StakeActiveListHead
+    MOV dword ptr [0x02d53dfc],ESI      ; 004c7a03 | g_StakeActiveListHead
     POP ESI                             ; 004c7a09
     MOV EDI,dword ptr [ESP + 0x18]      ; 004c7a0a
         ;   Label: LAB_004c7a0a
@@ -68,8 +68,8 @@ section .text
     ADD ESP,0xc                         ; 004c7a1a
     PUSH 0xffff                         ; 004c7a1d
     PUSH 0xc000                         ; 004c7a22
-    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 004c7a27 | int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
-        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc70 ; 004c7a27
+        ;   XREF to: 0040cc70 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc70(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c7a2c
     MOV EDX,EAX                         ; 004c7a2f
     MOV EAX,dword ptr [ESP + 0x20]      ; 004c7a31

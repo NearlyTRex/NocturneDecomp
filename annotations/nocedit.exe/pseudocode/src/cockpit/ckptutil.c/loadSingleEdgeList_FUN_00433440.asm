@@ -27,8 +27,8 @@ section .text
     XOR EDX,EDX                         ; 0043344e
     PUSH ECX                            ; 00433450
     MOV dword ptr [ESP + 0xc],EDX       ; 00433451
-    CALL cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0 ; 00433455 | void cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0(char * filename, SEdgeList * edge_lists, int expected_count)
-        ;   XREF to: 004331f0 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0 ; 00433455
+        ;   XREF to: 004331f0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0(char * filename, SEdgeList * edge_lists, int expected_count)
     ADD ESP,0xc                         ; 0043345a
     MOV EDX,dword ptr [ESP + 0x10]      ; 0043345d
     MOV EAX,dword ptr [ESP]             ; 00433461

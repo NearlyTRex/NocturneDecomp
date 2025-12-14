@@ -23,8 +23,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
   CMotionList *this_ptr;
   BADSPACEBASE *in_ESP;
   int iVar8;
-  bool bVar9;
-  double dVar10;
+  double dVar9;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
   CCharacter *local_78;
@@ -102,9 +101,8 @@ void core_ghoul_cpp_FUN_004e87e0(void)
         pCVar4 = in_stack_00000004;
         if (0 < *(int *)(in_stack_00000004->cloth_data + 0x35c)) {
           do {
-            bVar9 = *(float *)(pCVar4->cloth_data + 0x360) ==
-                    in_stack_00000004[1].base_actor.field12_0xe0.x;
-            if ((bVar9) || (bVar9)) {
+            if (*(float *)(pCVar4->cloth_data + 0x360) ==
+                in_stack_00000004[1].base_actor.field12_0xe0.x) {
               iVar8 = 8;
               break;
             }
@@ -129,8 +127,8 @@ void core_ghoul_cpp_FUN_004e87e0(void)
       (pCVar4->base_actor).create_event[0x2d] = '\0';
       (pCVar4->base_actor).create_event[0x2e] = '\n';
       (pCVar4->base_actor).create_event[0x2f] = '\0';
-      dVar10 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * fVar7));
-      *(int *)(in_stack_00000004[1].base_actor.create_event + 0x28) = (int)ROUND(dVar10);
+      dVar9 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * fVar7));
+      *(int *)(in_stack_00000004[1].base_actor.create_event + 0x28) = (int)ROUND(dVar9);
       (**(code **)(extraout_EAX + 0xa0))();
     }
   }

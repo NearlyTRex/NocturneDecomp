@@ -29,13 +29,13 @@ section .text
         ;   Label: core_course.cpp_CCourse_free_FUN_004426c0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004426c1
     MOV ECX,0xa8                        ; 004426c5
-    MOV EDX,0x618f98                    ; 004426ca | = "..\\core\\course.cpp" | s_core_course_cpp_00618f98 = ..\core\course.cpp
+    MOV EDX,0x618f98                    ; 004426ca | = "..\\core\\course.cpp"
     MOV EAX,dword ptr [EBX + 0x4]       ; 004426cf
-    MOV dword ptr [0x02f0d944],ECX      ; 004426d2 | int g_CurrentDebugLine
-    MOV dword ptr [0x0067d20c],EDX      ; 004426d8 | char * g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ECX      ; 004426d2 | g_CurrentDebugLine
+    MOV dword ptr [0x0067d20c],EDX      ; 004426d8 | g_CurrentDebugFilename
     TEST EAX,EAX                        ; 004426de
-    JNZ 0x004426f1                      ; 004426e0 | LAB_004426f1
-        ;   XREF to: 004426f1 (CONDITIONAL_JUMP)
+    JNZ 0x004426f1                      ; 004426e0
+        ;   XREF to: 004426f1 (CONDITIONAL_JUMP)  ; LAB_004426f1
     MOV dword ptr [EBX],0x0             ; 004426e2
     MOV dword ptr [EBX + 0x4],0x0       ; 004426e8
     POP EBX                             ; 004426ef
@@ -43,8 +43,8 @@ section .text
     SUB EAX,0x4                         ; 004426f1
         ;   Label: LAB_004426f1
     PUSH EAX                            ; 004426f4
-    CALL crt_memory.c_free_FUN_005fe659 ; 004426f5 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 004426f5
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 004426fa
     MOV dword ptr [EBX],0x0             ; 004426fd
     MOV dword ptr [EBX + 0x4],0x0       ; 00442703

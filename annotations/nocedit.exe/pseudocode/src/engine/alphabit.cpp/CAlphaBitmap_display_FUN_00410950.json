@@ -1,250 +1,250 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 117, 
-    "pseudocode_lines": 82, 
-    "cross_reference_count": 12, 
-    "global_count": 4, 
-    "total_lines": 265, 
-    "assembly_lines": 183, 
-    "suspect_count": 3, 
+    "assembly_lines": 183,
+    "complexity_score": 117,
+    "cross_reference_count": 12,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 82,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0", 
-      "addr": "00410cf0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7", 
-      "addr": "005b55f7"
-    }, 
-    {
-      "name": "wincore_windll.cpp_renderAlphaRow32_FUN_005b555c", 
-      "addr": "005b555c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000014;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000014,iVar1);"
-    }, 
-    {
-      "line": 74, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000014,iVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00410950", 
-    "signature": "void engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap * this_ptr, int x, int y, int alpha)", 
-    "address_range": [
-      [
-        "00410950", 
-        "00410af8"
-      ]
-    ], 
-    "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950"
-  }, 
-  "stack_frame": {
-    "local_size": 48, 
-    "variables": [
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CAlphaBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "alpha"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 64, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 265
+  },
   "cross_references": [
     {
-      "from_addr": "004e384f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800", 
-      "addr": "004e3800"
-    }, 
+      "addr": "004e3800",
+      "from_addr": "004e384f",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e3cda", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90", 
-      "addr": "004e3b90"
-    }, 
+      "addr": "004e3b90",
+      "from_addr": "004e3cda",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e41ba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
-      "addr": "004e4010"
-    }, 
+      "addr": "004e4010",
+      "from_addr": "004e41ba",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004daf48", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0", 
-      "addr": "004daed0"
-    }, 
+      "addr": "004daed0",
+      "from_addr": "004daf48",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00501222", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690", 
-      "addr": "00500690"
-    }, 
+      "addr": "00500690",
+      "from_addr": "00501222",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00503ec4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_level.cpp_CLevelLoader_show_FUN_00503dc0", 
-      "addr": "00503dc0"
-    }, 
+      "addr": "00503dc0",
+      "from_addr": "00503ec4",
+      "name": "core_level.cpp_CLevelLoader_show_FUN_00503dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00508615", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
-      "addr": "00508570"
-    }, 
+      "addr": "00508570",
+      "from_addr": "00508615",
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005080e6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
-    }, 
+      "addr": "00507a60",
+      "from_addr": "005080e6",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005083b4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_showPromoScreen_FUN_00508340", 
-      "addr": "00508340"
-    }, 
+      "addr": "00508340",
+      "from_addr": "005083b4",
+      "name": "core_main.c_showPromoScreen_FUN_00508340",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00510aea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_00510a50", 
-      "addr": "00510a50"
-    }, 
+      "addr": "00510a50",
+      "from_addr": "00510aea",
+      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_00510a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052a293", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0", 
-      "addr": "00529ed0"
-    }, 
+      "addr": "00529ed0",
+      "from_addr": "0052a293",
+      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054461c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_newmsg.cpp_FUN_005445c0", 
-      "addr": "005445c0"
+      "addr": "005445c0",
+      "from_addr": "0054461c",
+      "name": "support_newmsg.cpp_FUN_005445c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00410950",
+    "address_range": [
+      [
+        "00410950",
+        "00410af8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950",
+    "signature": "void engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap * this_ptr, int x, int y, int alpha)"
+  },
+  "function_calls": [
+    {
+      "addr": "00410cf0",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0"
+    },
+    {
+      "addr": "005b55f7",
+      "name": "wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7"
+    },
+    {
+      "addr": "005b555c",
+      "name": "wincore_windll.cpp_renderAlphaRow32_FUN_005b555c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAlphaBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000014",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014,iVar1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014,iVar1);",
+      "type": "stack_param"
     }
   ]
 }

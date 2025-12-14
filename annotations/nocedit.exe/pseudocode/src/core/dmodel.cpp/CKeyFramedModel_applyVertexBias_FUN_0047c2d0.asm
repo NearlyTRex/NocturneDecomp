@@ -34,20 +34,20 @@ section .text
     SUB ESP,0xc                         ; 0047c2d3
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0047c2d6
     PUSH EBX                            ; 0047c2da
-    CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c2db | void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c2db
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
     ADD ESP,0x4                         ; 0047c2e0
     MOV EDX,dword ptr [ESP + 0x20]      ; 0047c2e3
     LEA EAX,[EDX*0x4 + 0x0]             ; 0047c2e7
     SUB EAX,EDX                         ; 0047c2ee
     MOV EDX,dword ptr [EBX + 0x5690]    ; 0047c2f0
     FLD float ptr [EDX + EAX*0x8 + 0x4] ; 0047c2f6
-    FMUL double ptr [0x0062055b]        ; 0047c2fa | double g_BiasMultiplier
-    FADD double ptr [0x00620563]        ; 0047c300 | double g_BiasOffset
+    FMUL double ptr [0x0062055b]        ; 0047c2fa | g_BiasMultiplier
+    FADD double ptr [0x00620563]        ; 0047c300 | g_BiasOffset
     SUB ESP,0x8                         ; 0047c306
     FSTP double ptr [ESP]               ; 0047c309
-    CALL crt_math.c_floor_FUN_005feb90  ; 0047c30c | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 0047c30c
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 0047c311
     MOV dword ptr [ESP + 0xc],EDX       ; 0047c315
     XOR ECX,ECX                         ; 0047c319
@@ -55,16 +55,16 @@ section .text
     FCHS                                ; 0047c31f
     XOR EDX,EDX                         ; 0047c321
     ADD ESP,0x8                         ; 0047c323
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0047c326 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0047c326
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0047c32b
     MOV ESI,dword ptr [EBX + 0x104]     ; 0047c32f
         ;   Label: LAB_0047c32f
     MOV EAX,dword ptr [EBX + 0x100]     ; 0047c335
     IMUL EAX,ESI                        ; 0047c33b
     CMP ECX,EAX                         ; 0047c33e
-    JGE 0x0047c35c                      ; 0047c340 | LAB_0047c35c
-        ;   XREF to: 0047c35c (CONDITIONAL_JUMP)
+    JGE 0x0047c35c                      ; 0047c340
+        ;   XREF to: 0047c35c (CONDITIONAL_JUMP)  ; LAB_0047c35c
     MOV ESI,dword ptr [EBX + 0x10c]     ; 0047c342
     MOV EAX,dword ptr [ESP + 0x8]       ; 0047c348
     MOV EDI,dword ptr [EDX + ESI*0x1 + 0x4] ; 0047c34c
@@ -72,12 +72,12 @@ section .text
     ADD EDI,EAX                         ; 0047c353
     INC ECX                             ; 0047c355
     MOV dword ptr [EDX + ESI*0x1 + -0x8],EDI ; 0047c356
-    JMP 0x0047c32f                      ; 0047c35a | LAB_0047c32f
-        ;   XREF to: 0047c32f (UNCONDITIONAL_JUMP)
+    JMP 0x0047c32f                      ; 0047c35a
+        ;   XREF to: 0047c32f (UNCONDITIONAL_JUMP)  ; LAB_0047c32f
     PUSH EBX                            ; 0047c35c
         ;   Label: LAB_0047c35c
-    CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c35d | void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
-        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 ; 0047c35d
+        ;   XREF to: 00478010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel * model_ptr)
     ADD ESP,0x4                         ; 0047c362
     ADD ESP,0xc                         ; 0047c365
     POP EDI                             ; 0047c368

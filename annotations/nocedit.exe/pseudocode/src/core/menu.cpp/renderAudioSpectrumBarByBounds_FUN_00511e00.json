@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 22, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70", 
-      "addr": "0050fe70"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 16,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00511e00", 
-    "signature": "void core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_00511e00(int x_center, int y_bottom, int y_top)", 
+    "address": "00511e00",
     "address_range": [
       [
-        "00511e00", 
+        "00511e00",
         "00511e1e"
       ]
-    ], 
-    "name": "core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_00511e00"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_00511e00",
+    "signature": "void core_menu.cpp_renderAudioSpectrumBarByBounds_FUN_00511e00(int x_center, int y_bottom, int y_top)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050fe70",
+      "name": "core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x_center"
-      }, 
+        "is_param": true,
+        "name": "x_center",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_bottom"
-      }, 
+        "is_param": true,
+        "name": "y_bottom",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_top"
+        "is_param": true,
+        "name": "y_top",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

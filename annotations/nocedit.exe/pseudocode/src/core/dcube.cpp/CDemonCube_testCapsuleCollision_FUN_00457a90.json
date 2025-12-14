@@ -1,119 +1,119 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 47, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 139, 
-    "assembly_lines": 92, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcube.cpp_intersectTriangleWithXZCapsule_FUN_00455a30", 
-      "addr": "00455a30"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CVector3f", 
-      "name": "g_TempNormal0", 
-      "addr": "015c4800", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TempNormal0.y", 
-      "addr": "015c4804", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TempNormal0.z", 
-      "addr": "015c4808", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_TempNormal1", 
-      "addr": "015c480c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TempNormal1.y", 
-      "addr": "015c4810", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TempNormal1.z", 
-      "addr": "015c4814", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_TempNormal2", 
-      "addr": "015c4818", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TempNormal2.y", 
-      "addr": "015c481c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_TempNormal2.z", 
-      "addr": "015c4820", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00457a90", 
-    "signature": "void core_dcube.cpp_CDemonCube_testCapsuleCollision_FUN_00457a90(CDemonCube * this_ptr, SIntersectXZCylinder * capsule_data)", 
-    "address_range": [
-      [
-        "00457a90", 
-        "00457b5f"
-      ]
-    ], 
-    "name": "core_dcube.cpp_CDemonCube_testCapsuleCollision_FUN_00457a90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCube *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SIntersectXZCylinder *", 
-        "size": 4, 
-        "name": "capsule_data"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 92,
+    "complexity_score": 47,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 47,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 139
+  },
   "cross_references": [
     {
-      "from_addr": "00496dda", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60", 
-      "addr": "00496c60"
+      "addr": "00496c60",
+      "from_addr": "00496dda",
+      "name": "core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00457a90",
+    "address_range": [
+      [
+        "00457a90",
+        "00457b5f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcube.cpp_CDemonCube_testCapsuleCollision_FUN_00457a90",
+    "signature": "void core_dcube.cpp_CDemonCube_testCapsuleCollision_FUN_00457a90(CDemonCube * this_ptr, SIntersectXZCylinder * capsule_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "00455a30",
+      "name": "core_dcube.cpp_intersectTriangleWithXZCapsule_FUN_00455a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "015c4800",
+      "name": "g_TempNormal0",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "015c4804",
+      "name": "g_TempNormal0.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4808",
+      "name": "g_TempNormal0.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c480c",
+      "name": "g_TempNormal1",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "015c4810",
+      "name": "g_TempNormal1.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4814",
+      "name": "g_TempNormal1.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4818",
+      "name": "g_TempNormal2",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "015c481c",
+      "name": "g_TempNormal2.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c4820",
+      "name": "g_TempNormal2.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCube *"
+      },
+      {
+        "is_param": true,
+        "name": "capsule_data",
+        "offset": 8,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      }
+    ]
+  },
+  "suspects": []
 }

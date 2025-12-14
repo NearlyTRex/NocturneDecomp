@@ -1,306 +1,306 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 150, 
-    "pseudocode_lines": 60, 
-    "cross_reference_count": 4, 
-    "global_count": 28, 
-    "total_lines": 193, 
-    "assembly_lines": 133, 
-    "suspect_count": 8, 
+    "assembly_lines": 133,
+    "complexity_score": 150,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 28,
+    "pseudocode_lines": 60,
+    "suspect_count": 8,
     "suspect_types": [
-      "unknown_field", 
-      "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_RedMask16", 
-      "addr": "00682748", 
-      "value": "0xf800"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_GreenMask16", 
-      "addr": "00682750", 
-      "value": "0x7e0"
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_BlueMask16", 
-      "addr": "00682758", 
-      "value": "0x1f"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_RedMask32", 
-      "addr": "00682760", 
-      "value": "0xf80000"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_GreenMask32", 
-      "addr": "00682780", 
-      "value": "0xfc00"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_BlueMask32", 
-      "addr": "006827a0", 
-      "value": "0xf8"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_TotalColorBits", 
-      "addr": "006827a8", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_GreenBlueBits", 
-      "addr": "006827c8", 
-      "value": "0x5"
-    }, 
-    {
-      "type": "ulonglong", 
-      "name": "g_BlueBitShift", 
-      "addr": "006827e8", 
-      "value": "0x3"
-    }, 
-    {
-      "type": "ushort[256]", 
-      "name": "g_ColorTable16", 
-      "addr": "02d01020", 
-      "value": null
-    }, 
-    {
-      "type": "uint[256]", 
-      "name": "g_ColorTable32", 
-      "addr": "02d01220", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ColorTable32[1]", 
-      "addr": "02d01224", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitPosition", 
-      "addr": "02d01f24", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedScaleFactor", 
-      "addr": "02d01f28", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RedBitCount", 
-      "addr": "02d01f2c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitPosition", 
-      "addr": "02d01f30", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenScaleFactor", 
-      "addr": "02d01f34", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GreenBitCount", 
-      "addr": "02d01f38", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitPosition", 
-      "addr": "02d01f3c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueScaleFactor", 
-      "addr": "02d01f40", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BlueBitCount", 
-      "addr": "02d01f44", 
-      "value": null
-    }, 
-    {
-      "type": "char[768]", 
-      "name": "g_SourcePaletteData", 
-      "addr": "02d01f48", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f49", 
-      "addr": "02d01f49", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4a", 
-      "addr": "02d01f4a", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4b", 
-      "addr": "02d01f4b", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4c", 
-      "addr": "02d01f4c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "CHAR_ARRAY_02d01f4d", 
-      "addr": "02d01f4d", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 26, 
-      "match": "(ushort *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(ushort *)((int)g_ColorTable16 + iVar5) ="
-    }, 
-    {
-      "line": 40, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_RedMask32._0_4_ = (uVar4 << ((byte)g_RedBitCount & 0x1f)) << 0x10;"
-    }, 
-    {
-      "line": 41, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_GreenMask32._0_4_ = (uVar7 << ((byte)g_GreenBitCount & 0x1f)) << 8;"
-    }, 
-    {
-      "line": 42, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_BlueBitShift._0_4_ = g_BlueBitCount;"
-    }, 
-    {
-      "line": 43, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_TotalColorBits._0_4_ = g_RedBitCount + g_GreenBitCount + g_BlueBitCount;"
-    }, 
-    {
-      "line": 44, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_BlueMask32._0_4_ = uVar9 << ((byte)g_BlueBitCount & 0x1f);"
-    }, 
-    {
-      "line": 45, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_GreenBlueBits._0_4_ = g_GreenBitCount + g_BlueBitCount;"
-    }, 
-    {
-      "line": 56, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ColorTable32 + iVar5) ="
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004f41c0", 
-    "signature": "void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0(void)", 
-    "address_range": [
-      [
-        "004f41c0", 
-        "004f4372"
-      ]
-    ], 
-    "name": "wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "pointer_cast",
+      "unknown_field"
+    ],
+    "total_lines": 193
+  },
   "cross_references": [
     {
-      "from_addr": "005ed8ca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_analyzePixelFormat_FUN_005ed730", 
-      "addr": "005ed730"
-    }, 
+      "addr": "005ed730",
+      "from_addr": "005ed8ca",
+      "name": "wincore_wddvmem.cpp_analyzePixelFormat_FUN_005ed730",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ed9f3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0", 
-      "addr": "005ed8f0"
-    }, 
+      "addr": "005ed8f0",
+      "from_addr": "005ed9f3",
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b75a6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_windll.cpp_setColorTable16_FUN_005b7579", 
-      "addr": "005b7579"
-    }, 
+      "addr": "005b7579",
+      "from_addr": "005b75a6",
+      "name": "wincore_windll.cpp_setColorTable16_FUN_005b7579",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b74ce", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460", 
-      "addr": "005b7460"
+      "addr": "005b7460",
+      "from_addr": "005b74ce",
+      "name": "wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f41c0",
+    "address_range": [
+      [
+        "004f41c0",
+        "004f4372"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0",
+    "signature": "void wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00682748",
+      "name": "g_RedMask16",
+      "type": "uint",
+      "value": "0xf800"
+    },
+    {
+      "addr": "00682750",
+      "name": "g_GreenMask16",
+      "type": "uint",
+      "value": "0x7e0"
+    },
+    {
+      "addr": "00682758",
+      "name": "g_BlueMask16",
+      "type": "uint",
+      "value": "0x1f"
+    },
+    {
+      "addr": "00682760",
+      "name": "g_RedMask32",
+      "type": "ulonglong",
+      "value": "0xf80000"
+    },
+    {
+      "addr": "00682780",
+      "name": "g_GreenMask32",
+      "type": "ulonglong",
+      "value": "0xfc00"
+    },
+    {
+      "addr": "006827a0",
+      "name": "g_BlueMask32",
+      "type": "ulonglong",
+      "value": "0xf8"
+    },
+    {
+      "addr": "006827a8",
+      "name": "g_TotalColorBits",
+      "type": "ulonglong",
+      "value": "0x8"
+    },
+    {
+      "addr": "006827c8",
+      "name": "g_GreenBlueBits",
+      "type": "ulonglong",
+      "value": "0x5"
+    },
+    {
+      "addr": "006827e8",
+      "name": "g_BlueBitShift",
+      "type": "ulonglong",
+      "value": "0x3"
+    },
+    {
+      "addr": "02d01020",
+      "name": "g_ColorTable16",
+      "type": "ushort[256]",
+      "value": null
+    },
+    {
+      "addr": "02d01220",
+      "name": "g_ColorTable32",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "02d01224",
+      "name": "g_ColorTable32[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f24",
+      "name": "g_RedBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f28",
+      "name": "g_RedScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f2c",
+      "name": "g_RedBitCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f30",
+      "name": "g_GreenBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f34",
+      "name": "g_GreenScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f38",
+      "name": "g_GreenBitCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f3c",
+      "name": "g_BlueBitPosition",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f40",
+      "name": "g_BlueScaleFactor",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f44",
+      "name": "g_BlueBitCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d01f48",
+      "name": "g_SourcePaletteData",
+      "type": "char[768]",
+      "value": null
+    },
+    {
+      "addr": "02d01f49",
+      "name": "CHAR_ARRAY_02d01f49",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4a",
+      "name": "CHAR_ARRAY_02d01f4a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4b",
+      "name": "CHAR_ARRAY_02d01f4b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4c",
+      "name": "CHAR_ARRAY_02d01f4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d01f4d",
+      "name": "CHAR_ARRAY_02d01f4d",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(ushort *)((int)",
+      "text": "*(ushort *)((int)g_ColorTable16 + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._0_4_",
+      "text": "g_RedMask32._0_4_ = (uVar4 << ((byte)g_RedBitCount & 0x1f)) << 0x10;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 41,
+      "match": "._0_4_",
+      "text": "g_GreenMask32._0_4_ = (uVar7 << ((byte)g_GreenBitCount & 0x1f)) << 8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 42,
+      "match": "._0_4_",
+      "text": "g_BlueBitShift._0_4_ = g_BlueBitCount;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._0_4_",
+      "text": "g_TotalColorBits._0_4_ = g_RedBitCount + g_GreenBitCount + g_BlueBitCount;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 44,
+      "match": "._0_4_",
+      "text": "g_BlueMask32._0_4_ = uVar9 << ((byte)g_BlueBitCount & 0x1f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 45,
+      "match": "._0_4_",
+      "text": "g_GreenBlueBits._0_4_ = g_GreenBitCount + g_BlueBitCount;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ColorTable32 + iVar5) =",
+      "type": "pointer_cast"
     }
   ]
 }

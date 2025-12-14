@@ -23,8 +23,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 0046fcc9
     MOV EDX,dword ptr [EAX + 0x158]     ; 0046fccd
     TEST EDX,EDX                        ; 0046fcd3
-    JNZ 0x0046fd34                      ; 0046fcd5 | LAB_0046fd34
-        ;   XREF to: 0046fd34 (CONDITIONAL_JUMP)
+    JNZ 0x0046fd34                      ; 0046fcd5
+        ;   XREF to: 0046fd34 (CONDITIONAL_JUMP)  ; LAB_0046fd34
     PUSH ESI                            ; 0046fcd7
     MOV ESI,0xbdcccccd                  ; 0046fcd8
     MOV ECX,0xbf800000                  ; 0046fcdd

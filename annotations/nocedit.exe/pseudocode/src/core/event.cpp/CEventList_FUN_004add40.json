@@ -1,105 +1,105 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 39, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 4, 
-    "global_count": 2, 
-    "total_lines": 41, 
-    "assembly_lines": 27, 
-    "suspect_count": 2, 
+    "assembly_lines": 27,
+    "complexity_score": 39,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_event.cpp_CEventList_FUN_004aac00", 
-      "addr": "004aac00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d0a45c", 
-      "addr": "02d0a45c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_02d0a460", 
-      "addr": "02d0a460", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*in_stack_00000008 != '\\0') {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004add40", 
-    "signature": "int core_event.cpp_CEventList_FUN_004add40(CEventList * this_ptr)", 
-    "address_range": [
-      [
-        "004add40", 
-        "004add79"
-      ]
-    ], 
-    "name": "core_event.cpp_CEventList_FUN_004add40"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEventList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 41
+  },
   "cross_references": [
     {
-      "from_addr": "0040f9de", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0", 
-      "addr": "0040eed0"
-    }, 
+      "addr": "0040eed0",
+      "from_addr": "0040f9de",
+      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041000d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_FUN_0040fffe", 
-      "addr": "0040fffe"
-    }, 
+      "addr": "0040fffe",
+      "from_addr": "0041000d",
+      "name": "core_actor.cpp_FUN_0040fffe",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004df21d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
-      "addr": "004ddaf0"
-    }, 
+      "addr": "004ddaf0",
+      "from_addr": "004df21d",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0055bb91", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
+      "addr": "0055a810",
+      "from_addr": "0055bb91",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004add40",
+    "address_range": [
+      [
+        "004add40",
+        "004add79"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_FUN_004add40",
+    "signature": "int core_event.cpp_CEventList_FUN_004add40(CEventList * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004aac00",
+      "name": "core_event.cpp_CEventList_FUN_004aac00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d0a45c",
+      "name": "DAT_02d0a45c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0a460",
+      "name": "DAT_02d0a460",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "if (*in_stack_00000008 != '\\0') {",
+      "type": "stack_param"
     }
   ]
 }

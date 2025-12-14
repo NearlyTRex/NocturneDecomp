@@ -43,12 +43,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 0054b5c7
     MOV EBP,dword ptr [ESP + 0x34]      ; 0054b5cb
     MOV ECX,0x4                         ; 0054b5cf
-    MOV ESI,0x680c9c                    ; 0054b5d4 | = "PBM\032PBG\032" | s_anon_00680c9c = PBM\x1aPBG\x1a
+    MOV ESI,0x680c9c                    ; 0054b5d4 | = "PBM\032PBG\032"
     MOV EDI,ESP                         ; 0054b5d9
     PUSH EDI                            ; 0054b5db
     MOV EAX,ECX                         ; 0054b5dc
     SHR ECX,0x2                         ; 0054b5de
-    MOVSD.REP ES:EDI,ESI                ; 0054b5e1 | = "PBM\032PBG\032" | s_anon_00680c9c = PBM\x1aPBG\x1a
+    MOVSD.REP ES:EDI,ESI                ; 0054b5e1 | = "PBM\032PBG\032"
     MOV CL,AL                           ; 0054b5e3
     AND CL,0x3                          ; 0054b5e5
     MOVSB.REP ES:EDI,ESI                ; 0054b5e8 | s_PBG_00680ca0
@@ -71,8 +71,8 @@ section .text
     MOV dword ptr [ESP + 0x24],EAX      ; 0054b614
     LEA EAX,[ESP + 0xc]                 ; 0054b618
     PUSH EAX                            ; 0054b61c
-    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0054b61d | SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0054b61d
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
     ADD ESP,0x10                        ; 0054b622
     MOV EAX,dword ptr [EBX + 0x1c]      ; 0054b625
     PUSH EBP                            ; 0054b628
@@ -81,8 +81,8 @@ section .text
     PUSH 0x4                            ; 0054b62b
     MOV ESI,dword ptr [EBX + 0x20]      ; 0054b62d
     PUSH ESI                            ; 0054b630
-    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0054b631 | SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0054b631
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
     ADD ESP,0x10                        ; 0054b636
     PUSH EBP                            ; 0054b639
     MOV EDI,dword ptr [EBX + 0x1c]      ; 0054b63a
@@ -92,27 +92,27 @@ section .text
     PUSH EDX                            ; 0054b645
     MOV ECX,dword ptr [EBX + 0x14]      ; 0054b646
     PUSH ECX                            ; 0054b649
-    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0054b64a | SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 0054b64a
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
     MOV AH,byte ptr [EBP + 0xc]         ; 0054b64f
     ADD ESP,0x10                        ; 0054b652
     TEST AH,0x20                        ; 0054b655
-    JNZ 0x0054b662                      ; 0054b658 | LAB_0054b662
-        ;   XREF to: 0054b662 (CONDITIONAL_JUMP)
+    JNZ 0x0054b662                      ; 0054b658
+        ;   XREF to: 0054b662 (CONDITIONAL_JUMP)  ; LAB_0054b662
     ADD ESP,0x1c                        ; 0054b65a
     POP EBP                             ; 0054b65d
     POP EDI                             ; 0054b65e
     POP ESI                             ; 0054b65f
     POP EBX                             ; 0054b660
     RET                                 ; 0054b661
-    MOV EBX,0x63f0f1                    ; 0054b662 | = "..\\cockpit\\pkbitmap.cpp" | s_cockpit_pkbitmap_cpp_0063f0f1 = ..\cockpit\pkbitmap.cpp
+    MOV EBX,0x63f0f1                    ; 0054b662 | = "..\\cockpit\\pkbitmap.cpp"
         ;   Label: LAB_0054b662
     MOV ESI,0x49a                       ; 0054b667
-    PUSH 0x63f109                       ; 0054b66c | = "Error writing PBM" | s_Error_writing_PBM_0063f109 = Error writing PBM
-    MOV dword ptr [0x02f0ca48],EBX      ; 0054b671 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 0054b677 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0054b67d | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63f109                       ; 0054b66c | = "Error writing PBM"
+    MOV dword ptr [0x02f0ca48],EBX      ; 0054b671 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 0054b677 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0054b67d
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0054b682
     ADD ESP,0x1c                        ; 0054b685
     POP EBP                             ; 0054b688

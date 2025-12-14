@@ -1,164 +1,164 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 19, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 6, 
-    "global_count": 10, 
-    "total_lines": 71, 
-    "assembly_lines": 52, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterXFixed", 
-      "addr": "02d02548", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterYFixed", 
-      "addr": "02d0254c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportRightFixed", 
-      "addr": "02d02550", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportBottomFixed", 
-      "addr": "02d02554", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportWidth", 
-      "addr": "02d02568", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportHeight", 
-      "addr": "02d0256c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00401800", 
-    "signature": "void engine_2d.c_setupViewportAndClipping_FUN_00401800(int left, int top, int right, int bottom)", 
-    "address_range": [
-      [
-        "00401800", 
-        "00401896"
-      ]
-    ], 
-    "name": "engine_2d.c_setupViewportAndClipping_FUN_00401800"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "left"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "top"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "right"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bottom"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 52,
+    "complexity_score": 19,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 10,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
+  },
   "cross_references": [
     {
-      "from_addr": "0053971c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
-    }, 
+      "addr": "005390f0",
+      "from_addr": "0053971c",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057dbcf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
-      "addr": "0057d660"
-    }, 
+      "addr": "0057d660",
+      "from_addr": "0057dbcf",
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050e43c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_matrix.c_pushViewport_FUN_0050e320", 
-      "addr": "0050e320"
-    }, 
+      "addr": "0050e320",
+      "from_addr": "0050e43c",
+      "name": "engine_matrix.c_pushViewport_FUN_0050e320",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046f2ae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
-      "addr": "0046f290"
-    }, 
+      "addr": "0046f290",
+      "from_addr": "0046f2ae",
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a0d66", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970", 
-      "addr": "004a0970"
-    }, 
+      "addr": "004a0970",
+      "from_addr": "004a0d66",
+      "name": "shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ed246", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0", 
-      "addr": "005ecef0"
+      "addr": "005ecef0",
+      "from_addr": "005ed246",
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00401800",
+    "address_range": [
+      [
+        "00401800",
+        "00401896"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_setupViewportAndClipping_FUN_00401800",
+    "signature": "void engine_2d.c_setupViewportAndClipping_FUN_00401800(int left, int top, int right, int bottom)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d02548",
+      "name": "g_ViewportCenterXFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_ViewportCenterYFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02550",
+      "name": "g_ViewportRightFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02554",
+      "name": "g_ViewportBottomFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02568",
+      "name": "g_ViewportWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0256c",
+      "name": "g_ViewportHeight",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "left",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "top",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bottom",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

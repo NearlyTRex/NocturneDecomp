@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 14, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 48, 
-    "assembly_lines": 34, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_free_FUN_00601cd0", 
-      "addr": "00601cd0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005d2600", 
-    "signature": "void shape_superopt.cpp_CObj_free_FUN_005d2600(CObj * this_ptr)", 
-    "address_range": [
-      [
-        "005d2600", 
-        "005d2642"
-      ]
-    ], 
-    "name": "shape_superopt.cpp_CObj_free_FUN_005d2600"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 34,
+    "complexity_score": 14,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 48
+  },
   "cross_references": [
     {
-      "from_addr": "005d226d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CObj_dtor_FUN_005d2260", 
-      "addr": "005d2260"
-    }, 
+      "addr": "005d2260",
+      "from_addr": "005d226d",
+      "name": "shape_superopt.cpp_CObj_dtor_FUN_005d2260",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d7009", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_COptimize_FUN_005d7000", 
-      "addr": "005d7000"
-    }, 
+      "addr": "005d7000",
+      "from_addr": "005d7009",
+      "name": "shape_superopt.cpp_COptimize_FUN_005d7000",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d7d24", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
-      "addr": "005d77a0"
+      "addr": "005d77a0",
+      "from_addr": "005d7d24",
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005d2600",
+    "address_range": [
+      [
+        "005d2600",
+        "005d2642"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CObj_free_FUN_005d2600",
+    "signature": "void shape_superopt.cpp_CObj_free_FUN_005d2600(CObj * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601cd0",
+      "name": "crt_memory.c_free_FUN_00601cd0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CObj *"
+      }
+    ]
+  },
+  "suspects": []
 }

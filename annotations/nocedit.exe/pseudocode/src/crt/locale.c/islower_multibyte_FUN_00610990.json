@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 28, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 45, 
-    "assembly_lines": 32, 
-    "suspect_count": 1, 
+    "assembly_lines": 32,
+    "complexity_score": 28,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_locale.c_ismultibyte_FUN_00610a20", 
-      "addr": "00610a20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000006", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "ushort in_stack_00000006;"
-    }
-  ], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00610990", 
-    "signature": "int crt_locale.c_islower_multibyte_FUN_00610990(wchar_t character)", 
-    "address_range": [
-      [
-        "00610990", 
-        "006109d4"
-      ]
-    ], 
-    "name": "crt_locale.c_islower_multibyte_FUN_00610990"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "wchar_t", 
-        "size": 2, 
-        "name": "character"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 6, 
-    "param_offset": 4, 
-    "param_size": 2
-  }, 
+    ],
+    "total_lines": 45
+  },
   "cross_references": [
     {
-      "from_addr": "0060ffb6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_locale.c_fullwidth_toupper_FUN_0060ffb0", 
-      "addr": "0060ffb0"
+      "addr": "0060ffb0",
+      "from_addr": "0060ffb6",
+      "name": "crt_locale.c_fullwidth_toupper_FUN_0060ffb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00610990",
+    "address_range": [
+      [
+        "00610990",
+        "006109d4"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_locale.c_islower_multibyte_FUN_00610990",
+    "signature": "int crt_locale.c_islower_multibyte_FUN_00610990(wchar_t character)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610a20",
+      "name": "crt_locale.c_ismultibyte_FUN_00610a20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 6,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 2,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 4,
+        "size": 2,
+        "type": "wchar_t"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000006",
+      "text": "ushort in_stack_00000006;",
+      "type": "stack_param"
     }
   ]
 }

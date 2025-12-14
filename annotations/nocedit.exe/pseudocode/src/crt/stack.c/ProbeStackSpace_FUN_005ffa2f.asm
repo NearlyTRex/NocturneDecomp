@@ -24,8 +24,8 @@ section .text
         ;   Label: LAB_005ffa3a
     SUB EBX,0x1000                      ; 005ffa3d
     SUB EAX,0x1000                      ; 005ffa43
-    JG 0x005ffa3a                       ; 005ffa48 | LAB_005ffa3a
-        ;   XREF to: 005ffa3a (CONDITIONAL_JUMP)
+    JG 0x005ffa3a                       ; 005ffa48
+        ;   XREF to: 005ffa3a (CONDITIONAL_JUMP)  ; LAB_005ffa3a
     POP EBX                             ; 005ffa4a
     POP EAX                             ; 005ffa4b
     RET 0x4                             ; 005ffa4c

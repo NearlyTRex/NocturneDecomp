@@ -26,18 +26,18 @@ section .text
     MOVQ MM0,qword ptr [ESI + 0xffffff00] ; 00492193
     MOVQ MM2,qword ptr [ESI]            ; 0049219a
     MOVQ MM3,qword ptr [ESI + 0x100]    ; 0049219d
-    PUNPCKLBW MM0,dword ptr [0x00676438] ; 004921a4 | ulonglong g_FilterBlendConstant
-    PUNPCKLBW MM2,dword ptr [0x00676438] ; 004921ab | ulonglong g_FilterBlendConstant
-    PUNPCKLBW MM3,dword ptr [0x00676438] ; 004921b2 | ulonglong g_FilterBlendConstant
+    PUNPCKLBW MM0,dword ptr [0x00676438] ; 004921a4 | g_FilterBlendConstant
+    PUNPCKLBW MM2,dword ptr [0x00676438] ; 004921ab | g_FilterBlendConstant
+    PUNPCKLBW MM3,dword ptr [0x00676438] ; 004921b2 | g_FilterBlendConstant
     PADDUSW MM0,MM2                     ; 004921b9
     PADDUSW MM2,MM3                     ; 004921bc
     PADDUSW MM0,MM2                     ; 004921bf
     MOVQ MM1,qword ptr [ESI + 0xfffffef8] ; 004921c2
     MOVQ MM2,qword ptr [ESI + -0x8]     ; 004921c9
     MOVQ MM3,qword ptr [ESI + 0xf8]     ; 004921cd
-    PUNPCKHBW MM1,qword ptr [0x00676438] ; 004921d4 | ulonglong g_FilterBlendConstant
-    PUNPCKHBW MM2,qword ptr [0x00676438] ; 004921db | ulonglong g_FilterBlendConstant
-    PUNPCKHBW MM3,qword ptr [0x00676438] ; 004921e2 | ulonglong g_FilterBlendConstant
+    PUNPCKHBW MM1,qword ptr [0x00676438] ; 004921d4 | g_FilterBlendConstant
+    PUNPCKHBW MM2,qword ptr [0x00676438] ; 004921db | g_FilterBlendConstant
+    PUNPCKHBW MM3,qword ptr [0x00676438] ; 004921e2 | g_FilterBlendConstant
     PADDUSW MM1,MM2                     ; 004921e9
     PADDUSW MM2,MM3                     ; 004921ec
     PADDUSW MM1,MM2                     ; 004921ef
@@ -53,9 +53,9 @@ section .text
     MOVQ MM1,qword ptr [ESI + 0xffffff00] ; 0049220d
     MOVQ MM2,qword ptr [ESI]            ; 00492214
     MOVQ MM3,qword ptr [ESI + 0x100]    ; 00492217
-    PUNPCKHBW MM1,qword ptr [0x00676438] ; 0049221e | ulonglong g_FilterBlendConstant
-    PUNPCKHBW MM2,qword ptr [0x00676438] ; 00492225 | ulonglong g_FilterBlendConstant
-    PUNPCKHBW MM3,qword ptr [0x00676438] ; 0049222c | ulonglong g_FilterBlendConstant
+    PUNPCKHBW MM1,qword ptr [0x00676438] ; 0049221e | g_FilterBlendConstant
+    PUNPCKHBW MM2,qword ptr [0x00676438] ; 00492225 | g_FilterBlendConstant
+    PUNPCKHBW MM3,qword ptr [0x00676438] ; 0049222c | g_FilterBlendConstant
     PADDUSW MM1,MM2                     ; 00492233
     PADDUSW MM2,MM3                     ; 00492236
     PADDUSW MM1,MM2                     ; 00492239
@@ -74,9 +74,9 @@ section .text
     MOVQ MM0,qword ptr [ESI + 0xffffff08] ; 00492264
     MOVQ MM2,qword ptr [ESI + 0x8]      ; 0049226b
     MOVQ MM3,qword ptr [ESI + 0x108]    ; 0049226f
-    PUNPCKLBW MM0,dword ptr [0x00676438] ; 00492276 | ulonglong g_FilterBlendConstant
-    PUNPCKLBW MM2,dword ptr [0x00676438] ; 0049227d | ulonglong g_FilterBlendConstant
-    PUNPCKLBW MM3,dword ptr [0x00676438] ; 00492284 | ulonglong g_FilterBlendConstant
+    PUNPCKLBW MM0,dword ptr [0x00676438] ; 00492276 | g_FilterBlendConstant
+    PUNPCKLBW MM2,dword ptr [0x00676438] ; 0049227d | g_FilterBlendConstant
+    PUNPCKLBW MM3,dword ptr [0x00676438] ; 00492284 | g_FilterBlendConstant
     PADDUSW MM0,MM2                     ; 0049228b
     PADDUSW MM2,MM3                     ; 0049228e
     PADDUSW MM0,MM2                     ; 00492291
@@ -92,8 +92,8 @@ section .text
     MOVQ qword ptr [EDI],MM6            ; 004922b3
     ADD EDI,0x8                         ; 004922b6
     SUB ECX,0x8                         ; 004922b9
-    JG 0x004921f6                       ; 004922bc | LAB_004921f6
-        ;   XREF to: 004921f6 (CONDITIONAL_JUMP)
+    JG 0x004921f6                       ; 004922bc
+        ;   XREF to: 004921f6 (CONDITIONAL_JUMP)  ; LAB_004921f6
     EMMS                                ; 004922c2
     POP EDI                             ; 004922c4
     POP ESI                             ; 004922c5

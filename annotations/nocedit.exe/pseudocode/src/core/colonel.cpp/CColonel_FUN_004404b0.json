@@ -1,144 +1,144 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 110, 
-    "pseudocode_lines": 45, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 167, 
-    "assembly_lines": 122, 
-    "suspect_count": 6, 
+    "assembly_lines": 122,
+    "complexity_score": 110,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 45,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0", 
-      "addr": "0042c3c0"
-    }, 
-    {
-      "name": "core_gore.cpp_CGore_FUN_004ee030", 
-      "addr": "004ee030"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
-      "addr": "0052dab0"
-    }, 
-    {
-      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
-      "addr": "0052db00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065bd48", 
-      "addr": "0065bd48", 
-      "value": null
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CGore*", 
-      "name": "g_CGorePtr", 
-      "addr": "0067b9a0", 
-      "value": "02d83364"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81c6c", 
-      "addr": "02d81c6c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81cc8", 
-      "addr": "02d81cc8", 
-      "value": null
-    }, 
-    {
-      "type": "CGore", 
-      "name": "g_CGoreInstance", 
-      "addr": "02d83364", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000008 + 4) = 0;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = (this_ptr->base_hero).base_character.hit_points - *(float *)(in_stack_00000008 + 4);"
-    }, 
-    {
-      "line": 40, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "else if (0.0 < *(float *)(in_stack_00000008 + 4)) {"
-    }
-  ], 
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004404b0", 
-    "signature": "void core_colonel.cpp_CColonel_FUN_004404b0(CColonel * this_ptr)", 
+    "address": "004404b0",
     "address_range": [
       [
-        "004404b0", 
+        "004404b0",
         "004405c8"
       ]
-    ], 
-    "name": "core_colonel.cpp_CColonel_FUN_004404b0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_colonel.cpp_CColonel_FUN_004404b0",
+    "signature": "void core_colonel.cpp_CColonel_FUN_004404b0(CColonel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042c3c0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0"
+    },
+    {
+      "addr": "004ee030",
+      "name": "core_gore.cpp_CGore_FUN_004ee030"
+    },
+    {
+      "addr": "0052dab0",
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
+    },
+    {
+      "addr": "0052db00",
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065bd48",
+      "name": "DAT_0065bd48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "0067b9a0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "02d83364"
+    },
+    {
+      "addr": "02d81c6c",
+      "name": "DAT_02d81c6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d81cc8",
+      "name": "DAT_02d81cc8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d83364",
+      "name": "g_CGoreInstance",
+      "type": "CGore",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CColonel *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CColonel *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "text": "fVar1 = (this_ptr->base_hero).base_character.hit_points - *(float *)(in_stack_00000008 + 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000008",
+      "text": "else if (0.0 < *(float *)(in_stack_00000008 + 4)) {",
+      "type": "stack_param"
+    }
+  ]
 }

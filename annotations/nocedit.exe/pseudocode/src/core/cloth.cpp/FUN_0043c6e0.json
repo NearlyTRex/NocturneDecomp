@@ -1,132 +1,132 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 87, 
-    "pseudocode_lines": 42, 
-    "cross_reference_count": 3, 
-    "global_count": 4, 
-    "total_lines": 193, 
-    "assembly_lines": 151, 
-    "suspect_count": 4, 
+    "assembly_lines": 151,
+    "complexity_score": 87,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 42,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_plotPixel_FUN_00401140", 
-      "addr": "00401140"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((int)(pSVar1[in_stack_00000004].projected_vertex.screen_x & -0x80000000) == 0) {"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = pSVar1[in_stack_00000004].projected_vertex.screen_y >> 0x10;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "x = pSVar1[in_stack_00000004].projected_vertex.screen_x >> 0x10;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0043c6e0", 
-    "signature": "undefined core_cloth.cpp_FUN_0043c6e0()", 
-    "address_range": [
-      [
-        "0043c6e0", 
-        "0043c813"
-      ]
-    ], 
-    "name": "core_cloth.cpp_FUN_0043c6e0"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 193
+  },
   "cross_references": [
     {
-      "from_addr": "0043cbdc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880", 
-      "addr": "0043c880"
-    }, 
+      "addr": "0043c880",
+      "from_addr": "0043cbdc",
+      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043c86b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_FUN_0043c820", 
-      "addr": "0043c820"
-    }, 
+      "addr": "0043c820",
+      "from_addr": "0043c86b",
+      "name": "core_cloth.cpp_FUN_0043c820",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043d873", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590", 
-      "addr": "0043d590"
+      "addr": "0043d590",
+      "from_addr": "0043d873",
+      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043c6e0",
+    "address_range": [
+      [
+        "0043c6e0",
+        "0043c813"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_cloth.cpp_FUN_0043c6e0",
+    "signature": "undefined core_cloth.cpp_FUN_0043c6e0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00401140",
+      "name": "engine_2d.c_plotPixel_FUN_00401140"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "if ((int)(pSVar1[in_stack_00000004].projected_vertex.screen_x & -0x80000000) == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "iVar2 = pSVar1[in_stack_00000004].projected_vertex.screen_y >> 0x10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "x = pSVar1[in_stack_00000004].projected_vertex.screen_x >> 0x10;",
+      "type": "stack_param"
     }
   ]
 }

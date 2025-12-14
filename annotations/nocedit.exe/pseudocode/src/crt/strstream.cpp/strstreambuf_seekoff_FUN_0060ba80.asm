@@ -26,23 +26,23 @@ section .text
     MOV EDX,dword ptr [EBP + 0x20]      ; 0060ba89
     AND EDX,0x3                         ; 0060ba8c
     MOV dword ptr [EBP + 0x20],EDX      ; 0060ba8f
-    JZ 0x0060bb45                       ; 0060ba92 | LAB_0060bb45
-        ;   XREF to: 0060bb45 (CONDITIONAL_JUMP)
+    JZ 0x0060bb45                       ; 0060ba92
+        ;   XREF to: 0060bb45 (CONDITIONAL_JUMP)  ; LAB_0060bb45
     CMP dword ptr [EBP + 0x1c],0x1      ; 0060ba98
-    JNZ 0x0060baa7                      ; 0060ba9c | LAB_0060baa7
-        ;   XREF to: 0060baa7 (CONDITIONAL_JUMP)
+    JNZ 0x0060baa7                      ; 0060ba9c
+        ;   XREF to: 0060baa7 (CONDITIONAL_JUMP)  ; LAB_0060baa7
     CMP EDX,0x3                         ; 0060ba9e
-    JZ 0x0060bb45                       ; 0060baa1 | LAB_0060bb45
-        ;   XREF to: 0060bb45 (CONDITIONAL_JUMP)
+    JZ 0x0060bb45                       ; 0060baa1
+        ;   XREF to: 0060bb45 (CONDITIONAL_JUMP)  ; LAB_0060bb45
     TEST byte ptr [EBP + 0x20],0x1      ; 0060baa7
         ;   Label: LAB_0060baa7
-    JZ 0x0060baf6                       ; 0060baab | LAB_0060baf6
-        ;   XREF to: 0060baf6 (CONDITIONAL_JUMP)
+    JZ 0x0060baf6                       ; 0060baab
+        ;   XREF to: 0060baf6 (CONDITIONAL_JUMP)  ; LAB_0060baf6
     MOV EAX,dword ptr [EBX + 0x20]      ; 0060baad
     MOV EDX,EAX                         ; 0060bab0
     TEST EAX,EAX                        ; 0060bab2
-    JNZ 0x0060bb4f                      ; 0060bab4 | LAB_0060bb4f
-        ;   XREF to: 0060bb4f (CONDITIONAL_JUMP)
+    JNZ 0x0060bb4f                      ; 0060bab4
+        ;   XREF to: 0060bb4f (CONDITIONAL_JUMP)  ; LAB_0060bb4f
     MOV EDX,dword ptr [EBX + 0x10]      ; 0060baba
         ;   Label: LAB_0060baba
     PUSH EDX                            ; 0060babd
@@ -57,27 +57,27 @@ section .text
     PUSH EDX                            ; 0060bacd
     MOV ECX,dword ptr [EBP + 0x18]      ; 0060bace
     PUSH ECX                            ; 0060bad1
-    CALL crt_iostream.cpp_validateBufferSeek_FUN_0060d725 ; 0060bad2 | int crt_iostream.cpp_validateBufferSeek_FUN_0060d725(int seek_distance, int whence, char * buffer_start, char * current_ptr, ...)
-        ;   XREF to: 0060d725 (UNCONDITIONAL_CALL)
+    CALL crt_iostream.cpp_validateBufferSeek_FUN_0060d725 ; 0060bad2
+        ;   XREF to: 0060d725 (UNCONDITIONAL_CALL)  ; int crt_iostream.cpp_validateBufferSeek_FUN_0060d725(int seek_distance, int whence, char * buffer_start, char * current_ptr, ...)
     ADD ESP,0x18                        ; 0060bad7
     MOV ECX,EAX                         ; 0060bada
     CMP EAX,-0x1                        ; 0060badc
-    JZ 0x0060baf6                       ; 0060badf | LAB_0060baf6
-        ;   XREF to: 0060baf6 (CONDITIONAL_JUMP)
+    JZ 0x0060baf6                       ; 0060badf
+        ;   XREF to: 0060baf6 (CONDITIONAL_JUMP)  ; LAB_0060baf6
     MOV EDX,dword ptr [EBX + 0xc]       ; 0060bae1
     MOV ESI,dword ptr [EBX + 0x10]      ; 0060bae4
     ADD EAX,EDX                         ; 0060bae7
     CMP EAX,ESI                         ; 0060bae9
-    JBE 0x0060baf0                      ; 0060baeb | LAB_0060baf0
-        ;   XREF to: 0060baf0 (CONDITIONAL_JUMP)
+    JBE 0x0060baf0                      ; 0060baeb
+        ;   XREF to: 0060baf0 (CONDITIONAL_JUMP)  ; LAB_0060baf0
     MOV ESI,dword ptr [EBX + 0x1c]      ; 0060baed
     MOV dword ptr [EBX + 0x14],EAX      ; 0060baf0
         ;   Label: LAB_0060baf0
     MOV dword ptr [EBX + 0x10],ESI      ; 0060baf3
     TEST byte ptr [EBP + 0x20],0x2      ; 0060baf6
         ;   Label: LAB_0060baf6
-    JZ 0x0060bb3e                       ; 0060bafa | LAB_0060bb3e
-        ;   XREF to: 0060bb3e (CONDITIONAL_JUMP)
+    JZ 0x0060bb3e                       ; 0060bafa
+        ;   XREF to: 0060bb3e (CONDITIONAL_JUMP)  ; LAB_0060bb3e
     MOV EAX,dword ptr [EBX + 0x1c]      ; 0060bafc
     PUSH EAX                            ; 0060baff
     PUSH EAX                            ; 0060bb00
@@ -89,13 +89,13 @@ section .text
     PUSH ESI                            ; 0060bb0c
     MOV EDI,dword ptr [EBP + 0x18]      ; 0060bb0d
     PUSH EDI                            ; 0060bb10
-    CALL crt_iostream.cpp_validateBufferSeek_FUN_0060d725 ; 0060bb11 | int crt_iostream.cpp_validateBufferSeek_FUN_0060d725(int seek_distance, int whence, char * buffer_start, char * current_ptr, ...)
-        ;   XREF to: 0060d725 (UNCONDITIONAL_CALL)
+    CALL crt_iostream.cpp_validateBufferSeek_FUN_0060d725 ; 0060bb11
+        ;   XREF to: 0060d725 (UNCONDITIONAL_CALL)  ; int crt_iostream.cpp_validateBufferSeek_FUN_0060d725(int seek_distance, int whence, char * buffer_start, char * current_ptr, ...)
     ADD ESP,0x18                        ; 0060bb16
     MOV ECX,EAX                         ; 0060bb19
     CMP EAX,-0x1                        ; 0060bb1b
-    JZ 0x0060bb3e                       ; 0060bb1e | LAB_0060bb3e
-        ;   XREF to: 0060bb3e (CONDITIONAL_JUMP)
+    JZ 0x0060bb3e                       ; 0060bb1e
+        ;   XREF to: 0060bb3e (CONDITIONAL_JUMP)  ; LAB_0060bb3e
     MOV EDX,dword ptr [EBX + 0x18]      ; 0060bb20
     MOV dword ptr [EBX + 0x20],EDX      ; 0060bb23
     MOV ESI,dword ptr [EBX + 0x1c]      ; 0060bb26
@@ -105,8 +105,8 @@ section .text
     MOV ESI,dword ptr [EBX + 0x38]      ; 0060bb31
     MOV dword ptr [EBX + 0x20],EDX      ; 0060bb34
     CMP EAX,ESI                         ; 0060bb37
-    JLE 0x0060bb3e                      ; 0060bb39 | LAB_0060bb3e
-        ;   XREF to: 0060bb3e (CONDITIONAL_JUMP)
+    JLE 0x0060bb3e                      ; 0060bb39
+        ;   XREF to: 0060bb3e (CONDITIONAL_JUMP)  ; LAB_0060bb3e
     MOV dword ptr [EBX + 0x38],EAX      ; 0060bb3b
     MOV EAX,ECX                         ; 0060bb3e
         ;   Label: LAB_0060bb3e
@@ -125,8 +125,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x10]      ; 0060bb4f
         ;   Label: LAB_0060bb4f
     CMP EAX,ECX                         ; 0060bb52
-    JC 0x0060baba                       ; 0060bb54 | LAB_0060baba
-        ;   XREF to: 0060baba (CONDITIONAL_JUMP)
-    JMP 0x0060babd                      ; 0060bb5a | LAB_0060babd
-        ;   XREF to: 0060babd (UNCONDITIONAL_JUMP)
+    JC 0x0060baba                       ; 0060bb54
+        ;   XREF to: 0060baba (CONDITIONAL_JUMP)  ; LAB_0060baba
+    JMP 0x0060babd                      ; 0060bb5a
+        ;   XREF to: 0060babd (UNCONDITIONAL_JUMP)  ; LAB_0060babd
 

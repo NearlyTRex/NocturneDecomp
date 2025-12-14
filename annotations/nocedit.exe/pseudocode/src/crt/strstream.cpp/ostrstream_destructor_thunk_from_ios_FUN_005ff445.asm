@@ -21,8 +21,8 @@ section .text
     PUSH ECX                            ; 005ff450
     SUB EAX,EDX                         ; 005ff451
     PUSH EAX                            ; 005ff453
-    CALL crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a ; 005ff454 | ostrstream * crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a(ostrstream * this_ptr, int d1)
-        ;   XREF to: 005ff48a (UNCONDITIONAL_CALL)
+    CALL crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a ; 005ff454
+        ;   XREF to: 005ff48a (UNCONDITIONAL_CALL)  ; ostrstream * crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a(ostrstream * this_ptr, int d1)
     ADD ESP,0x8                         ; 005ff459
     RET                                 ; 005ff45c
 

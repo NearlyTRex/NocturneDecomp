@@ -42,52 +42,52 @@ section .text
     PUSH EBX                            ; 0040d150
         ;   Label: core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150
     MOV EBX,dword ptr [ESP + 0xc]       ; 0040d151
-    PUSH 0x614340                       ; 0040d155 | = "Use standard slew keys to move:" | s_Use_standard_slew_keys_t_00614340 = Use standard slew keys to move:
+    PUSH 0x614340                       ; 0040d155 | = "Use standard slew keys to move:"
     PUSH EBX                            ; 0040d15a
-    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d15b | void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
-        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d15b
+        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
     ADD ESP,0x8                         ; 0040d160
-    PUSH 0x614360                       ; 0040d163 | = "  Arrow keys move around" | s_Arrow_keys_move_around_00614360 =   Arrow keys move around
+    PUSH 0x614360                       ; 0040d163 | = "  Arrow keys move around"
     PUSH EBX                            ; 0040d168
-    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d169 | void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
-        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d169
+        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
     ADD ESP,0x8                         ; 0040d16e
-    PUSH 0x614379                       ; 0040d171 | = "  Q/A move up/down" | s_Q_A_move_up_down_00614379 =   Q/A move up/down
+    PUSH 0x614379                       ; 0040d171 | = "  Q/A move up/down"
     PUSH EBX                            ; 0040d176
-    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d177 | void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
-        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d177
+        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
     ADD ESP,0x8                         ; 0040d17c
-    PUSH 0x61438c                       ; 0040d17f | = "  End/PgDn rotate hozontally (heading)" | s_End_PgDn_rotate_hozontal_0061438c =   End/PgDn rotate hozontally (heading)
+    PUSH 0x61438c                       ; 0040d17f | = "  End/PgDn rotate hozontally (heading)"
     PUSH EBX                            ; 0040d184
-    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d185 | void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
-        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d185
+        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
     ADD ESP,0x8                         ; 0040d18a
-    PUSH 0x6143b3                       ; 0040d18d | = "  F5/F8 Pitch" | s_F5_F8_Pitch_006143b3 =   F5/F8 Pitch
+    PUSH 0x6143b3                       ; 0040d18d | = "  F5/F8 Pitch"
     PUSH EBX                            ; 0040d192
-    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d193 | void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
-        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d193
+        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
     ADD ESP,0x8                         ; 0040d198
-    PUSH 0x6143c1                       ; 0040d19b | = "  Home/PgUp bank" | s_Home_PgUp_bank_006143c1 =   Home/PgUp bank
+    PUSH 0x6143c1                       ; 0040d19b | = "  Home/PgUp bank"
     PUSH EBX                            ; 0040d1a0
-    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d1a1 | void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
-        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d1a1
+        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
     ADD ESP,0x8                         ; 0040d1a6
     MOV EDX,dword ptr [EBX]             ; 0040d1a9
-    PUSH 0x6143d2                       ; 0040d1ab | = "Use right mouse button to move to the..." | s_Use_right_mouse_button_t_006143d2 = Use right mouse button to move to the mouse cursor.
+    PUSH 0x6143d2                       ; 0040d1ab | = "Use right mouse button to move to the..."
     ADD EDX,0xb                         ; 0040d1b0
     PUSH EBX                            ; 0040d1b3
     MOV dword ptr [EBX],EDX             ; 0040d1b4
-    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d1b6 | void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
-        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_drawTextLine_FUN_0040d240 ; 0040d1b6
+        ;   XREF to: 0040d240 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)
     ADD ESP,0x8                         ; 0040d1bb
-    PUSH 0x614406                       ; 0040d1be | = "Position to ground." | s_Position_to_ground_00614406 = Position to ground.
+    PUSH 0x614406                       ; 0040d1be | = "Position to ground."
     MOV ECX,dword ptr [EBX]             ; 0040d1c3
-    PUSH 0x61441a                       ; 0040d1c5 | = "G" | s_G_0061441a = G
+    PUSH 0x61441a                       ; 0040d1c5 | = "G"
     ADD ECX,0xb                         ; 0040d1ca
     PUSH EBX                            ; 0040d1cd
     MOV dword ptr [EBX],ECX             ; 0040d1ce
-    CALL core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 ; 0040d1d0 | void core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0(int * y_position, char * left_text, char * right_text)
-        ;   XREF to: 0040d1e0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 ; 0040d1d0
+        ;   XREF to: 0040d1e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0(int * y_position, char * left_text, char * right_text)
     ADD ESP,0xc                         ; 0040d1d5
     POP EBX                             ; 0040d1d8
     RET                                 ; 0040d1d9

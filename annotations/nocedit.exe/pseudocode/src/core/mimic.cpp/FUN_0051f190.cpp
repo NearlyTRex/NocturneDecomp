@@ -11,8 +11,7 @@ void core_mimic_cpp_FUN_0051f190(void)
 {
   CMimic *this_ptr;
   
-  this_ptr = (CMimic *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4ca58,"..\\core\\mimic.cpp",0x77);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4ca58,"..\\core\\mimic.cpp",0x77);
   if (this_ptr == (CMimic *)0x0) {
     return;
   }

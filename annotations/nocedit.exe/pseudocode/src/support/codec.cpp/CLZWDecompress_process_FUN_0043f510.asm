@@ -27,8 +27,8 @@ section .text
     PUSH EBP                            ; 0043f512
     MOV EBX,dword ptr [ESP + 0x10]      ; 0043f513
     CMP dword ptr [EBX + 0x2c],0x0      ; 0043f517
-    JL 0x0043f55c                       ; 0043f51b | LAB_0043f55c
-        ;   XREF to: 0043f55c (CONDITIONAL_JUMP)
+    JL 0x0043f55c                       ; 0043f51b
+        ;   XREF to: 0043f55c (CONDITIONAL_JUMP)  ; LAB_0043f55c
     MOV EBP,dword ptr [ESP + 0x1c]      ; 0043f51d
         ;   Label: LAB_0043f51d
     PUSH EBP                            ; 0043f521
@@ -36,22 +36,22 @@ section .text
     PUSH EAX                            ; 0043f525
     LEA ESI,[EBX + 0x4]                 ; 0043f526
     PUSH ESI                            ; 0043f529
-    CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 ; 0043f52a | int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, FILE * output_file)
-        ;   XREF to: 0043f200 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200 ; 0043f52a
+        ;   XREF to: 0043f200 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary * this_ptr, int code, FILE * output_file)
     MOV EDX,dword ptr [EBX + 0x28]      ; 0043f52f
     ADD ESP,0xc                         ; 0043f532
     TEST EDX,EDX                        ; 0043f535
-    JL 0x0043f54f                       ; 0043f537 | LAB_0043f54f
-        ;   XREF to: 0043f54f (CONDITIONAL_JUMP)
+    JL 0x0043f54f                       ; 0043f537
+        ;   XREF to: 0043f54f (CONDITIONAL_JUMP)  ; LAB_0043f54f
     PUSH EDX                            ; 0043f539
     PUSH EAX                            ; 0043f53a
     PUSH ESI                            ; 0043f53b
-    CALL support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90 ; 0043f53c | int support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary * this_ptr, int code, int parent_index)
-        ;   XREF to: 0043ef90 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90 ; 0043f53c
+        ;   XREF to: 0043ef90 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary * this_ptr, int code, int parent_index)
     ADD ESP,0xc                         ; 0043f541
     TEST EAX,EAX                        ; 0043f544
-    JZ 0x0043f54f                       ; 0043f546 | LAB_0043f54f
-        ;   XREF to: 0043f54f (CONDITIONAL_JUMP)
+    JZ 0x0043f54f                       ; 0043f546
+        ;   XREF to: 0043f54f (CONDITIONAL_JUMP)  ; LAB_0043f54f
     MOV dword ptr [EBX + 0x2c],0xffffffff ; 0043f548
     MOV EAX,dword ptr [EBX + 0x2c]      ; 0043f54f
         ;   Label: LAB_0043f54f
@@ -66,13 +66,13 @@ section .text
     PUSH EAX                            ; 0043f569
     LEA EAX,[EBX + 0x4]                 ; 0043f56a
     PUSH EAX                            ; 0043f56d
-    CALL support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030 ; 0043f56e | int support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, FILE * input_file, int * bytes_remaining)
-        ;   XREF to: 0043f030 (UNCONDITIONAL_CALL)
+    CALL support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030 ; 0043f56e
+        ;   XREF to: 0043f030 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, FILE * input_file, int * bytes_remaining)
     ADD ESP,0x10                        ; 0043f573
     MOV dword ptr [EBX + 0x2c],EAX      ; 0043f576
     TEST EAX,EAX                        ; 0043f579
-    JGE 0x0043f51d                      ; 0043f57b | LAB_0043f51d
-        ;   XREF to: 0043f51d (CONDITIONAL_JUMP)
+    JGE 0x0043f51d                      ; 0043f57b
+        ;   XREF to: 0043f51d (CONDITIONAL_JUMP)  ; LAB_0043f51d
     MOV EAX,0x1                         ; 0043f57d
     POP EBP                             ; 0043f582
     POP ESI                             ; 0043f583

@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,[0x0067cfc8]                ; 005054c0 | int g_AmbientLightLevel
+    MOV EAX,[0x0067cfc8]                ; 005054c0 | g_AmbientLightLevel
         ;   Label: engine_light.cpp_getAmbientLightLevel_FUN_005054c0
     RET                                 ; 005054c5
 

@@ -1,83 +1,83 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 54, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 69, 
-    "assembly_lines": 40, 
-    "suspect_count": 2, 
+    "assembly_lines": 40,
+    "complexity_score": 54,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double[64]", 
-      "name": "g_MpegScalefactorTable", 
-      "addr": "0067e3c0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 19, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar4 = (int *)((int)scalefactor_indices + iVar6);"
-    }, 
-    {
-      "line": 20, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pfVar3 = (float *)((int)sample_array + iVar6);"
-    }
-  ], 
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005303a0", 
-    "signature": "void sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0(float * sample_array, int * scalefactor_indices, SMpegFrame * frame_info)", 
+    "address": "005303a0",
     "address_range": [
       [
-        "005303a0", 
+        "005303a0",
         "005303f7"
       ]
-    ], 
-    "name": "sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0",
+    "signature": "void sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0(float * sample_array, int * scalefactor_indices, SMpegFrame * frame_info)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0067e3c0",
+      "name": "g_MpegScalefactorTable",
+      "type": "double[64]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "sample_array"
-      }, 
+        "is_param": true,
+        "name": "sample_array",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "scalefactor_indices"
-      }, 
+        "is_param": true,
+        "name": "scalefactor_indices",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SMpegFrame *", 
-        "size": 4, 
-        "name": "frame_info"
+        "is_param": true,
+        "name": "frame_info",
+        "offset": 12,
+        "size": 4,
+        "type": "SMpegFrame *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(int *)((int)",
+      "text": "piVar4 = (int *)((int)scalefactor_indices + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(float *)((int)",
+      "text": "pfVar3 = (float *)((int)sample_array + iVar6);",
+      "type": "pointer_cast"
+    }
+  ]
 }

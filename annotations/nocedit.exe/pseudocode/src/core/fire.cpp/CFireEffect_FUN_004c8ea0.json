@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 12, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 39, 
-    "assembly_lines": 27, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CCrater_FUN_004c4200", 
-      "addr": "004c4200"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CToss*", 
-      "name": "g_TossActiveListHead", 
-      "addr": "02d6c6a0", 
-      "value": null
-    }, 
-    {
-      "type": "CCrater[20]", 
-      "name": "g_CraterPool", 
-      "addr": "02d6c6a4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c8ea0", 
-    "signature": "void core_fire.cpp_CFireEffect_FUN_004c8ea0(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c8ea0", 
-        "004c8ee3"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c8ea0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 27,
+    "complexity_score": 12,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
   "cross_references": [
     {
-      "from_addr": "00413796", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_FUN_004136b0", 
-      "addr": "004136b0"
-    }, 
+      "addr": "004136b0",
+      "from_addr": "00413796",
+      "name": "core_baron.cpp_FUN_004136b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c8c79", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_FUN_004c8c10", 
-      "addr": "004c8c10"
+      "addr": "004c8c10",
+      "from_addr": "004c8c79",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8c10",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c8ea0",
+    "address_range": [
+      [
+        "004c8ea0",
+        "004c8ee3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c8ea0",
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c8ea0(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c4200",
+      "name": "core_fire.cpp_CCrater_FUN_004c4200"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d6c6a0",
+      "name": "g_TossActiveListHead",
+      "type": "CToss*",
+      "value": null
+    },
+    {
+      "addr": "02d6c6a4",
+      "name": "g_CraterPool",
+      "type": "CCrater[20]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": []
 }

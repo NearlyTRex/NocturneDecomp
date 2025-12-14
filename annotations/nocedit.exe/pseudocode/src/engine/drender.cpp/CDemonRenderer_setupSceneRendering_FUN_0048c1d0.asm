@@ -35,15 +35,15 @@ section .text
     PUSH EDX                            ; 0048c1d7
     LEA EAX,[ESP + 0x4]                 ; 0048c1d8
     PUSH EAX                            ; 0048c1dc
-    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0048c1dd | void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0048c1dd
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0048c1e2
     MOV EAX,ESP                         ; 0048c1e5
     PUSH EAX                            ; 0048c1e7
     MOV ECX,dword ptr [ESP + 0x30]      ; 0048c1e8
     PUSH ECX                            ; 0048c1ec
-    CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 ; 0048c1ed | void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix, CVector3f * rotation_angles)
-        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 ; 0048c1ed
+        ;   XREF to: 0048c200 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200(CDemonRenderer * this_ptr, CMatrix3x3f * transform_matrix, CVector3f * rotation_angles)
     ADD ESP,0x8                         ; 0048c1f2
     ADD ESP,0x28                        ; 0048c1f5
     RET                                 ; 0048c1f8

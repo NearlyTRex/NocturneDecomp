@@ -33,18 +33,18 @@ section .text
         ;   Label: core_hero.cpp_FUN_004f2340
     MOV EBX,dword ptr [ESP + 0x8]       ; 004f2341
     PUSH EBX                            ; 004f2345
-    CALL core_charactr.cpp_CCharacter_ctor_FUN_00427e20 ; 004f2346 | CCharacter * core_charactr.cpp_CCharacter_ctor_FUN_00427e20(CCharacter * this_ptr)
-        ;   XREF to: 00427e20 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_ctor_FUN_00427e20 ; 004f2346
+        ;   XREF to: 00427e20 (UNCONDITIONAL_CALL)  ; CCharacter * core_charactr.cpp_CCharacter_ctor_FUN_00427e20(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004f234b
     ADD EAX,0xbe58                      ; 004f234e
     PUSH EAX                            ; 004f2353
-    CALL core_path.cpp_CPathMap_ctor_FUN_00546450 ; 004f2354 | CPathMap * core_path.cpp_CPathMap_ctor_FUN_00546450(CPathMap * this_ptr)
-        ;   XREF to: 00546450 (UNCONDITIONAL_CALL)
+    CALL core_path.cpp_CPathMap_ctor_FUN_00546450 ; 004f2354
+        ;   XREF to: 00546450 (UNCONDITIONAL_CALL)  ; CPathMap * core_path.cpp_CPathMap_ctor_FUN_00546450(CPathMap * this_ptr)
     ADD ESP,0x4                         ; 004f2359
     ADD EAX,0x138e0                     ; 004f235c
     PUSH EAX                            ; 004f2361
-    CALL core_inv.cpp_CInventory_ctor_FUN_004fd020 ; 004f2362 | void core_inv.cpp_CInventory_ctor_FUN_004fd020(CInventory * this_ptr)
-        ;   XREF to: 004fd020 (UNCONDITIONAL_CALL)
+    CALL core_inv.cpp_CInventory_ctor_FUN_004fd020 ; 004f2362
+        ;   XREF to: 004fd020 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_ctor_FUN_004fd020(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004f2367
     PUSH 0x2c                           ; 004f236a
     LEA EBX,[EAX + 0xfffe08c8]          ; 004f236c
@@ -52,9 +52,9 @@ section .text
     MOV dword ptr [EBX + 0x1f73c],EBX   ; 004f2374
     LEA EAX,[EBX + 0xbe2c]              ; 004f237a
     PUSH EAX                            ; 004f2380
-    MOV dword ptr [EBX + 0x154],0x65f6d4 ; 004f2381 | CDemonActor_vtable g_CHeroVTable
-    CALL crt_memory.c_memset_FUN_005fde40 ; 004f238b | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EBX + 0x154],0x65f6d4 ; 004f2381 | g_CHeroVTable
+    CALL crt_memory.c_memset_FUN_005fde40 ; 004f238b
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0xbe24],0x0    ; 004f2390
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 004f239a
     MOV dword ptr [EBX + 0x2de0],0x3f666666 ; 004f23a4
@@ -74,8 +74,8 @@ section .text
     MOV dword ptr [EBX + 0x1fbb4],0x0   ; 004f2429
     PUSH EBX                            ; 004f2433
     MOV dword ptr [EBX + 0x1fb98],0x0   ; 004f2434
-    CALL core_hero.cpp_CHero_FUN_004f2a30 ; 004f243e | void core_hero.cpp_CHero_FUN_004f2a30(CHero * this_ptr)
-        ;   XREF to: 004f2a30 (UNCONDITIONAL_CALL)
+    CALL core_hero.cpp_CHero_FUN_004f2a30 ; 004f243e
+        ;   XREF to: 004f2a30 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_FUN_004f2a30(CHero * this_ptr)
     MOV dword ptr [EBX + 0x1fbd0],0x2   ; 004f2443
     ADD ESP,0x4                         ; 004f244d
     MOV dword ptr [EBX + 0x2624],0x0    ; 004f2450

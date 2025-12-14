@@ -35,11 +35,11 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 005411c3
     MOV EBX,dword ptr [ESP + 0x14]      ; 005411c7
     TEST EBX,EBX                        ; 005411cb
-    JL 0x005411fd                       ; 005411cd | LAB_005411fd
-        ;   XREF to: 005411fd (CONDITIONAL_JUMP)
+    JL 0x005411fd                       ; 005411cd
+        ;   XREF to: 005411fd (CONDITIONAL_JUMP)  ; LAB_005411fd
     CMP EBX,dword ptr [ESI + 0x1c]      ; 005411cf
-    JGE 0x005411fd                      ; 005411d2 | LAB_005411fd
-        ;   XREF to: 005411fd (CONDITIONAL_JUMP)
+    JGE 0x005411fd                      ; 005411d2
+        ;   XREF to: 005411fd (CONDITIONAL_JUMP)  ; LAB_005411fd
     LEA EAX,[EBX*0x8 + 0x0]             ; 005411d4
         ;   Label: LAB_005411d4
     MOV EDX,EAX                         ; 005411db
@@ -52,8 +52,8 @@ section .text
     ADD EAX,0x1c                        ; 005411ec
     PUSH EAX                            ; 005411ef
     PUSH ESI                            ; 005411f0
-    CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 005411f1 | undefined core_netgame.cpp_CNetGame_FUN_00541230()
-        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)
+    CALL core_netgame.cpp_CNetGame_FUN_00541230 ; 005411f1
+        ;   XREF to: 00541230 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_FUN_00541230()
     ADD ESP,0xc                         ; 005411f6
     POP EBP                             ; 005411f9
     POP ESI                             ; 005411fa
@@ -61,15 +61,15 @@ section .text
     RET                                 ; 005411fc
     PUSH EDI                            ; 005411fd
         ;   Label: LAB_005411fd
-    MOV ECX,0x63d90d                    ; 005411fe | = "..\\core\\netgame.cpp" | s_core_netgame_cpp_0063d90d = ..\core\netgame.cpp
+    MOV ECX,0x63d90d                    ; 005411fe | = "..\\core\\netgame.cpp"
     MOV EDI,0x5c5                       ; 00541203
-    PUSH 0x63d921                       ; 00541208 | = "CNetGame::send - invalid player index" | s_CNetGame_send_invalid_pl_0063d921 = CNetGame::send - invalid player index
-    MOV dword ptr [0x02f0ca48],ECX      ; 0054120d | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 00541213 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00541219 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63d921                       ; 00541208 | = "CNetGame::send - invalid player index"
+    MOV dword ptr [0x02f0ca48],ECX      ; 0054120d | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 00541213 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00541219
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0054121e
     POP EDI                             ; 00541221
-    JMP 0x005411d4                      ; 00541222 | LAB_005411d4
-        ;   XREF to: 005411d4 (UNCONDITIONAL_JUMP)
+    JMP 0x005411d4                      ; 00541222
+        ;   XREF to: 005411d4 (UNCONDITIONAL_JUMP)  ; LAB_005411d4
 

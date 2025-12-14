@@ -1,122 +1,122 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 54, 
-    "assembly_lines": 33, 
-    "suspect_count": 2, 
+    "assembly_lines": 33,
+    "complexity_score": 46,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "pseudocode_lines": 21,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "wincore_windll.cpp_kill_FUN_005b71e0", 
-      "addr": "005b71e0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_loadExternalRenderer_FUN_005b6750", 
-      "addr": "005b6750"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "g_RendererDllName", 
-      "addr": "00684010", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00684011", 
-      "addr": "00684011", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_id3d_dll_00684012", 
-      "addr": "00684012", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_d3d.dll_00684013", 
-      "addr": "00684013", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RendererHandle", 
-      "addr": "03f6b87c", 
-      "value": null
-    }, 
-    {
-      "type": "HWND", 
-      "name": "g_StoredWindowHandle", 
-      "addr": "03f6b98c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_RendererHandle = in_stack_0000000c;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b8140", 
-    "signature": "int wincore_windll.cpp_switchRenderer_FUN_005b8140(char * new_dll_name, int renderer_handle)", 
-    "address_range": [
-      [
-        "005b8140", 
-        "005b8184"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_switchRenderer_FUN_005b8140"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "new_dll_name"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "renderer_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "005b812f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_windll.cpp_CExternalRenderer_switchRenderer_FUN_005b8117", 
-      "addr": "005b8117"
+      "addr": "005b8117",
+      "from_addr": "005b812f",
+      "name": "wincore_windll.cpp_CExternalRenderer_switchRenderer_FUN_005b8117",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b8140",
+    "address_range": [
+      [
+        "005b8140",
+        "005b8184"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_switchRenderer_FUN_005b8140",
+    "signature": "int wincore_windll.cpp_switchRenderer_FUN_005b8140(char * new_dll_name, int renderer_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b71e0",
+      "name": "wincore_windll.cpp_kill_FUN_005b71e0"
+    },
+    {
+      "addr": "005b6750",
+      "name": "wincore_windll.cpp_loadExternalRenderer_FUN_005b6750"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684010",
+      "name": "g_RendererDllName",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00684011",
+      "name": "DAT_00684011",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00684012",
+      "name": "s_id3d_dll_00684012",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00684013",
+      "name": "s_d3d.dll_00684013",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6b87c",
+      "name": "g_RendererHandle",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b98c",
+      "name": "g_StoredWindowHandle",
+      "type": "HWND",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "new_dll_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "renderer_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "text": "g_RendererHandle = in_stack_0000000c;",
+      "type": "stack_param"
     }
   ]
 }

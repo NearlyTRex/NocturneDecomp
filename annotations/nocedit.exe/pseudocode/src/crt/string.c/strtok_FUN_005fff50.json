@@ -1,106 +1,106 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 72, 
-    "pseudocode_lines": 42, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 128, 
-    "assembly_lines": 86, 
-    "suspect_count": 2, 
+    "assembly_lines": 86,
+    "complexity_score": 69,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 39,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
-      "addr": "0060242c"
-    }, 
-    {
-      "name": "crt_unknown.c_FUN_00607080", 
-      "addr": "00607080"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_00665f28", 
-      "addr": "00665f28", 
-      "value": null
-    }, 
-    {
-      "type": "GET_TLS_FUNC*", 
-      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
-      "addr": "00684ee4", 
-      "value": "0060242c"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005fff50", 
-    "signature": "char * crt_string.c_strtok_FUN_005fff50(char * str, char * delimiters)", 
-    "address_range": [
-      [
-        "005fff50", 
-        "00600001"
-      ]
-    ], 
-    "name": "crt_string.c_strtok_FUN_005fff50"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "str"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "delimiters"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 125
+  },
   "cross_references": [
     {
-      "from_addr": "00458f4a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadModelFile_FUN_00458ac0", 
-      "addr": "00458ac0"
+      "addr": "00458ac0",
+      "from_addr": "00458f4a",
+      "name": "shape_design.c_loadModelFile_FUN_00458ac0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005fff50",
+    "address_range": [
+      [
+        "005fff50",
+        "00600001"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c_strtok_FUN_005fff50",
+    "signature": "char * crt_string.c_strtok_FUN_005fff50(char * str, char * delimiters)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060242c",
+      "name": "crt_thread.c_GetTLS_FUN_0060242c"
+    },
+    {
+      "addr": "00607080",
+      "name": "crt_unknown.c_FUN_00607080"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00665f28",
+      "name": "DAT_00665f28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00684ee4",
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4",
+      "type": "GET_TLS_FUNC*",
+      "value": "0060242c"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "delimiters",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

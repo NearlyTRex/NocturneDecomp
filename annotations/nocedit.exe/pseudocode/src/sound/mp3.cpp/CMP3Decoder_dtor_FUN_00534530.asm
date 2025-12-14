@@ -22,8 +22,8 @@ section .text
         ;   Label: sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530
     MOV EBX,dword ptr [ESP + 0x8]       ; 00534531
     PUSH EBX                            ; 00534535
-    CALL sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0 ; 00534536 | void sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0(CMP3Decoder * this_ptr)
-        ;   XREF to: 005349e0 (UNCONDITIONAL_CALL)
+    CALL sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0 ; 00534536
+        ;   XREF to: 005349e0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0(CMP3Decoder * this_ptr)
     ADD ESP,0x4                         ; 0053453b
     MOV EAX,EBX                         ; 0053453e
     POP EBX                             ; 00534540

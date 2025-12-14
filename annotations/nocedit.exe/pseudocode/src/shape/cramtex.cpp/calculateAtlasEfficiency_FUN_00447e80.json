@@ -1,182 +1,182 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 15, 
-    "total_lines": 78, 
-    "assembly_lines": 56, 
-    "suspect_count": 1, 
+    "assembly_lines": 56,
+    "complexity_score": 37,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 15,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
       "concat_artifact"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_CramPercentMultiplier", 
-      "addr": "00619a2a", 
-      "value": "100"
-    }, 
-    {
-      "type": "SCramWorkingEntry[1]", 
-      "name": "g_CramSortedTextureEntries", 
-      "addr": "0083c1dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c20c", 
-      "addr": "0083c20c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c210", 
-      "addr": "0083c210", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c214", 
-      "addr": "0083c214", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c218", 
-      "addr": "0083c218", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c228", 
-      "addr": "0083c228", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c258", 
-      "addr": "0083c258", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c25c", 
-      "addr": "0083c25c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c260", 
-      "addr": "0083c260", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c264", 
-      "addr": "0083c264", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CramTextureCount", 
-      "addr": "0084a854", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramTotalMaps", 
-      "addr": "0084a858", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramPaddingCalculation", 
-      "addr": "0084a880", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramCurrentAcceptableSize", 
-      "addr": "0084a884", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00447e93", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 21, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "return (double)CONCAT44 /* combine 2-byte values */(g_CramTextureCount,"
-    }
-  ], 
+    ],
+    "total_lines": 78
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00447e80", 
-    "signature": "double shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80(void)", 
+    "address": "00447e80",
     "address_range": [
       [
-        "00447e80", 
+        "00447e80",
         "00447f15"
       ]
-    ], 
-    "name": "shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80",
+    "signature": "double shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00619a2a",
+      "name": "g_CramPercentMultiplier",
+      "type": "double",
+      "value": "100"
+    },
+    {
+      "addr": "0083c1dc",
+      "name": "g_CramSortedTextureEntries",
+      "type": "SCramWorkingEntry[1]",
+      "value": null
+    },
+    {
+      "addr": "0083c20c",
+      "name": "DAT_0083c20c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c210",
+      "name": "DAT_0083c210",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c214",
+      "name": "DAT_0083c214",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c218",
+      "name": "DAT_0083c218",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c228",
+      "name": "DAT_0083c228",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c258",
+      "name": "DAT_0083c258",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c25c",
+      "name": "DAT_0083c25c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c260",
+      "name": "DAT_0083c260",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c264",
+      "name": "DAT_0083c264",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0084a854",
+      "name": "g_CramTextureCount",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "0084a858",
+      "name": "g_CramTotalMaps",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a880",
+      "name": "g_CramPaddingCalculation",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a884",
+      "name": "g_CramCurrentAcceptableSize",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 36, 
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00447e93",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 21,
+      "match": "CONCAT44",
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(g_CramTextureCount,",
+      "type": "concat_artifact"
+    }
+  ]
 }

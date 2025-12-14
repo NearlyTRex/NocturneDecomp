@@ -34,8 +34,8 @@ section .text
     PUSH ECX                            ; 0052b623
     ADD EAX,EBX                         ; 0052b624
     PUSH EAX                            ; 0052b626
-    CALL core_morph.cpp_FUN_0052aa30    ; 0052b627 | undefined core_morph.cpp_FUN_0052aa30()
-        ;   XREF to: 0052aa30 (UNCONDITIONAL_CALL)
+    CALL core_morph.cpp_FUN_0052aa30    ; 0052b627
+        ;   XREF to: 0052aa30 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_FUN_0052aa30()
     ADD ESP,0xc                         ; 0052b62c
     POP EBX                             ; 0052b62f
     RET                                 ; 0052b630

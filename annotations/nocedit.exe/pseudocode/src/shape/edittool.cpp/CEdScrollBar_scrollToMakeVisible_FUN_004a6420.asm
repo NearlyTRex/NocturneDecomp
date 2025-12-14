@@ -27,17 +27,17 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 004a642f
     SUB EDX,EBX                         ; 004a6431
     CMP EDX,ESI                         ; 004a6433
-    JGE 0x004a6449                      ; 004a6435 | LAB_004a6449
-        ;   XREF to: 004a6449 (CONDITIONAL_JUMP)
+    JGE 0x004a6449                      ; 004a6435
+        ;   XREF to: 004a6449 (CONDITIONAL_JUMP)  ; LAB_004a6449
     CMP ECX,dword ptr [EAX]             ; 004a6437
         ;   Label: LAB_004a6437
-    JGE 0x004a643d                      ; 004a6439 | LAB_004a643d
-        ;   XREF to: 004a643d (CONDITIONAL_JUMP)
+    JGE 0x004a643d                      ; 004a6439
+        ;   XREF to: 004a643d (CONDITIONAL_JUMP)  ; LAB_004a643d
     MOV dword ptr [EAX],ECX             ; 004a643b
     PUSH EAX                            ; 004a643d
         ;   Label: LAB_004a643d
-    CALL shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380 ; 004a643e | void shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380(CEdScrollBar * this_ptr)
-        ;   XREF to: 004a6380 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380 ; 004a643e
+        ;   XREF to: 004a6380 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_004a6380(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 004a6443
     POP ESI                             ; 004a6446
     POP EBX                             ; 004a6447
@@ -45,6 +45,6 @@ section .text
     INC EDX                             ; 004a6449
         ;   Label: LAB_004a6449
     MOV dword ptr [EAX],EDX             ; 004a644a
-    JMP 0x004a6437                      ; 004a644c | LAB_004a6437
-        ;   XREF to: 004a6437 (UNCONDITIONAL_JUMP)
+    JMP 0x004a6437                      ; 004a644c
+        ;   XREF to: 004a6437 (UNCONDITIONAL_JUMP)  ; LAB_004a6437
 

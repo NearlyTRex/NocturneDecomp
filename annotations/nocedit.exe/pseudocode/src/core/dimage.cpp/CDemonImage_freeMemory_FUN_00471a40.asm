@@ -25,16 +25,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00471a41
     MOV EDX,dword ptr [EBX + 0x300]     ; 00471a45
     TEST EDX,EDX                        ; 00471a4b
-    JNZ 0x00471a51                      ; 00471a4d | LAB_00471a51
-        ;   XREF to: 00471a51 (CONDITIONAL_JUMP)
+    JNZ 0x00471a51                      ; 00471a4d
+        ;   XREF to: 00471a51 (CONDITIONAL_JUMP)  ; LAB_00471a51
     POP EBX                             ; 00471a4f
     RET                                 ; 00471a50
     PUSH 0x36                           ; 00471a51
         ;   Label: LAB_00471a51
-    PUSH 0x61ecaa                       ; 00471a53 | = "..\\core\\dimage.cpp" | s_core_dimage_cpp_0061ecaa = ..\core\dimage.cpp
+    PUSH 0x61ecaa                       ; 00471a53 | = "..\\core\\dimage.cpp"
     PUSH EDX                            ; 00471a58
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00471a59 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00471a59
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 00471a5e
     MOV dword ptr [EBX + 0x300],0x0     ; 00471a61
     POP EBX                             ; 00471a6b

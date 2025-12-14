@@ -1,75 +1,75 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 50, 
-    "assembly_lines": 35, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9650", 
-      "addr": "004a9650"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
-      "addr": "005a0820"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450", 
-      "addr": "005a0450"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0", 
-      "addr": "00599fc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bip01_Spine1_00620fa4", 
-      "addr": "00620fa4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bip01_Head_00620fb1", 
-      "addr": "00620fb1", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 35,
+    "complexity_score": 15,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0047f0c0", 
-    "signature": "void core_dog.cpp_CZombieDog_setup_FUN_0047f0c0(CZombieDog * this_ptr)", 
+    "address": "0047f0c0",
     "address_range": [
       [
-        "0047f0c0", 
+        "0047f0c0",
         "0047f117"
       ]
-    ], 
-    "name": "core_dog.cpp_CZombieDog_setup_FUN_0047f0c0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dog.cpp_CZombieDog_setup_FUN_0047f0c0",
+    "signature": "void core_dog.cpp_CZombieDog_setup_FUN_0047f0c0(CZombieDog * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9650",
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9650"
+    },
+    {
+      "addr": "005a0820",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    },
+    {
+      "addr": "005a0450",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450"
+    },
+    {
+      "addr": "00599fc0",
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00620fa4",
+      "name": "s_Bip01_Spine1_00620fa4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620fb1",
+      "name": "s_Bip01_Head_00620fb1",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CZombieDog *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombieDog *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

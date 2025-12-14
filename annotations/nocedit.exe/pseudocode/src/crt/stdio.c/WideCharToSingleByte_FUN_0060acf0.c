@@ -14,7 +14,7 @@ int __cdecl crt_stdio_c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char,char
   ushort in_stack_00000006;
   
   if (_wide_char == (LPSTR)0x0) {
-    return (int)_wide_char;
+    return 0;
   }
   iVar1 = (*PTR_WideCharToMultiByte_00611670)
                     (g_CodePage,0x200,(LPCWSTR)&output_buffer,1,_wide_char,2,(LPCSTR)0x0,(LPBOOL)0x0

@@ -31,8 +31,8 @@ section .text
         ;   Label: core_actor.cpp_castToClassHash_FUN_0040c790
     MOV EBX,dword ptr [ESP + 0x8]       ; 0040c791
     TEST EBX,EBX                        ; 0040c795
-    JNZ 0x0040c79d                      ; 0040c797 | LAB_0040c79d
-        ;   XREF to: 0040c79d (CONDITIONAL_JUMP)
+    JNZ 0x0040c79d                      ; 0040c797
+        ;   XREF to: 0040c79d (CONDITIONAL_JUMP)  ; LAB_0040c79d
     XOR EAX,EAX                         ; 0040c799
     POP EBX                             ; 0040c79b
         ;   Label: LAB_0040c79b
@@ -41,12 +41,12 @@ section .text
         ;   Label: LAB_0040c79d
     PUSH EDX                            ; 0040c7a1
     PUSH EBX                            ; 0040c7a2
-    CALL core_actor.cpp_isOfClassHash_FUN_0040c760 ; 0040c7a3 | int core_actor.cpp_isOfClassHash_FUN_0040c760(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c760 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_isOfClassHash_FUN_0040c760 ; 0040c7a3
+        ;   XREF to: 0040c760 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClassHash_FUN_0040c760(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0040c7a8
     TEST EAX,EAX                        ; 0040c7ab
-    JZ 0x0040c79b                       ; 0040c7ad | LAB_0040c79b
-        ;   XREF to: 0040c79b (CONDITIONAL_JUMP)
+    JZ 0x0040c79b                       ; 0040c7ad
+        ;   XREF to: 0040c79b (CONDITIONAL_JUMP)  ; LAB_0040c79b
     MOV EAX,EBX                         ; 0040c7af
     POP EBX                             ; 0040c7b1
     RET                                 ; 0040c7b2

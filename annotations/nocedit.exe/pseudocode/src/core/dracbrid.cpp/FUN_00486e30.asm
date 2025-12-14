@@ -19,13 +19,13 @@
 
 section .text
 
-    PUSH 0x6598c0                       ; 00486e30 | WatcomTypeInfo g_CVectorTypeInfo
+    PUSH 0x6598c0                       ; 00486e30 | g_CVectorTypeInfo
         ;   Label: core_dracbrid.cpp_FUN_00486e30
     PUSH 0x4                            ; 00486e35
     MOV EDX,dword ptr [ESP + 0xc]       ; 00486e37
     PUSH EDX                            ; 00486e3b
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 00486e3c | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 00486e3c
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00486e41
     RET                                 ; 00486e44
 

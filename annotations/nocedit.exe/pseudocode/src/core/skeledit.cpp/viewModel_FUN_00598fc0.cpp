@@ -13,6 +13,7 @@ void core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   FILE *pFVar2;
   int iVar3;
   CDeformableModelInstance *this_ptr;
+  CDeformableModelInstance *this_ptr_00;
   int iVar4;
   byte *puVar5;
   BADSPACEBASE *in_ESP;
@@ -147,25 +148,25 @@ LAB_00599119:
        (iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                           (g_CEditorToolsPtr,"Select model to view","models",
                            "*.dfm",SUB41 /* extract 2-byte value */(&stack0xffffff14,0)), iVar3 != 0)) {
-      this_ptr = (CDeformableModelInstance *)
-                 shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+      this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                            (0x22b4,"..\\core\\skeledit.cpp",0x1b79);
+      this_ptr_00 = (CDeformableModelInstance *)0x0;
       if (this_ptr != (CDeformableModelInstance *)0x0) {
-        this_ptr = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(this_ptr);
+        this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(this_ptr);
       }
-      if (this_ptr == (CDeformableModelInstance *)0x0) {
+      if (this_ptr_00 == (CDeformableModelInstance *)0x0) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x1b7a;
         core_main_c_displayErrorAndQuit_FUN_00506f10("viewModel - out of memory!");
       }
-      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,&stack0xffffff18);
-      core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
+      core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,&stack0xffffff18);
+      core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
       core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(in_stack_ffffff28);
       g_CurrentDebugLine = 0x1b7e;
       g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
-      if (this_ptr != (CDeformableModelInstance *)0x0) {
+      if (this_ptr_00 != (CDeformableModelInstance *)0x0) {
         in_stack_ffffff28 = (CDeformableModelInstance *)&DAT_00000002;
-        (*((this_ptr->motion_controller).vtable)->dtor)(&this_ptr->motion_controller);
+        (*((this_ptr_00->motion_controller).vtable)->dtor)(&this_ptr_00->motion_controller);
       }
     }
   } while (iVar4 != 0x1b);

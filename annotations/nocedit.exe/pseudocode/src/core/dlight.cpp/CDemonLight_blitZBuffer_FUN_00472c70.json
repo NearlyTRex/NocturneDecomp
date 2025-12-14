@@ -1,93 +1,93 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 26, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 101, 
-    "assembly_lines": 75, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dstrender.cpp_memcpyMMX_FUN_00492001", 
-      "addr": "00492001"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dlight_cpp_0061efc4", 
-      "addr": "0061efc4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonLight_blitZBuffer__0061efd7", 
-      "addr": "0061efd7", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00472c70", 
-    "signature": "void core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70(CDemonLight * this_ptr, CRect * source_rect)", 
-    "address_range": [
-      [
-        "00472c70", 
-        "00472d2c"
-      ]
-    ], 
-    "name": "core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonLight *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CRect *", 
-        "size": 4, 
-        "name": "source_rect"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 75,
+    "complexity_score": 26,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 101
+  },
   "cross_references": [
     {
-      "from_addr": "004731b7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80", 
-      "addr": "00472f80"
+      "addr": "00472f80",
+      "from_addr": "004731b7",
+      "name": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00472c70",
+    "address_range": [
+      [
+        "00472c70",
+        "00472d2c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70",
+    "signature": "void core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70(CDemonLight * this_ptr, CRect * source_rect)"
+  },
+  "function_calls": [
+    {
+      "addr": "00492001",
+      "name": "core_dstrender.cpp_memcpyMMX_FUN_00492001"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061efc4",
+      "name": "s_core_dlight_cpp_0061efc4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061efd7",
+      "name": "s_CDemonLight_blitZBuffer__0061efd7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "source_rect",
+        "offset": 8,
+        "size": 4,
+        "type": "CRect *"
+      }
+    ]
+  },
+  "suspects": []
 }

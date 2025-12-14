@@ -1,93 +1,93 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 39, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 122, 
-    "assembly_lines": 83, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_texlist_cpp_00655095", 
-      "addr": "00655095", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CTextureList_addTextureS_006550a9", 
-      "addr": "006550a9", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005dc5e0", 
-    "signature": "int core_texlist.cpp_CTextureList_addTextureSelection_FUN_005dc5e0(CTextureList * this_ptr, char * filename)", 
-    "address_range": [
-      [
-        "005dc5e0", 
-        "005dc684"
-      ]
-    ], 
-    "name": "core_texlist.cpp_CTextureList_addTextureSelection_FUN_005dc5e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CTextureList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 83,
+    "complexity_score": 39,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 39,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 122
+  },
   "cross_references": [
     {
-      "from_addr": "005dc697", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_texlist.cpp_CTextureList_addMasterTextureSelection_FUN_005dc68e", 
-      "addr": "005dc68e"
+      "addr": "005dc68e",
+      "from_addr": "005dc697",
+      "name": "core_texlist.cpp_CTextureList_addMasterTextureSelection_FUN_005dc68e",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005dc5e0",
+    "address_range": [
+      [
+        "005dc5e0",
+        "005dc684"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_texlist.cpp_CTextureList_addTextureSelection_FUN_005dc5e0",
+    "signature": "int core_texlist.cpp_CTextureList_addTextureSelection_FUN_005dc5e0(CTextureList * this_ptr, char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00655095",
+      "name": "s_core_texlist_cpp_00655095",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006550a9",
+      "name": "s_CTextureList_addTextureS_006550a9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTextureList *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

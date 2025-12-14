@@ -33,12 +33,12 @@ section .text
     PUSH EAX                            ; 005d2598
     MOV EDX,dword ptr [EBX + 0x4]       ; 005d2599
     PUSH EDX                            ; 005d259c
-    CALL crt_memory.c_realloc_FUN_00601df0 ; 005d259d | void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)
-        ;   XREF to: 00601df0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_realloc_FUN_00601df0 ; 005d259d
+        ;   XREF to: 00601df0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 005d25a2
     TEST EAX,EAX                        ; 005d25a5
-    JZ 0x005d25e7                       ; 005d25a7 | LAB_005d25e7
-        ;   XREF to: 005d25e7 (CONDITIONAL_JUMP)
+    JZ 0x005d25e7                       ; 005d25a7
+        ;   XREF to: 005d25e7 (CONDITIONAL_JUMP)  ; LAB_005d25e7
     MOV dword ptr [EBX + 0x4],EAX       ; 005d25a9
     LEA EAX,[ESI*0x8 + 0x0]             ; 005d25ac
     MOV EDX,EAX                         ; 005d25b3
@@ -55,8 +55,8 @@ section .text
     PUSH 0x0                            ; 005d25cc
     ADD EAX,EDX                         ; 005d25ce
     PUSH EAX                            ; 005d25d0
-    CALL crt_memory.c_memset_FUN_005fde40 ; 005d25d1 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 005d25d1
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV ECX,dword ptr [EBX]             ; 005d25d6
     MOV EAX,0x1                         ; 005d25d8
     ADD ECX,ESI                         ; 005d25dd
@@ -65,10 +65,10 @@ section .text
     POP ESI                             ; 005d25e4
     POP EBX                             ; 005d25e5
     RET                                 ; 005d25e6
-    PUSH 0x6543a1                       ; 005d25e7 | = "Unable to add verts to object" | s_Unable_to_add_verts_to_o_006543a1 = Unable to add verts to object
+    PUSH 0x6543a1                       ; 005d25e7 | = "Unable to add verts to object"
         ;   Label: LAB_005d25e7
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d25ec | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d25ec
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     ADD ESP,0x4                         ; 005d25f1
     XOR EAX,EAX                         ; 005d25f4
     POP ESI                             ; 005d25f6

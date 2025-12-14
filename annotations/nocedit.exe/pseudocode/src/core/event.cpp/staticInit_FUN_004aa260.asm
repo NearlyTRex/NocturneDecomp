@@ -14,10 +14,10 @@
 
 section .text
 
-    PUSH 0x2d05310                      ; 004aa260 | CEventList g_CEventListInstance
+    PUSH 0x2d05310                      ; 004aa260 | g_CEventListInstance
         ;   Label: core_event.cpp_staticInit_FUN_004aa260
-    CALL core_event.cpp_CEventList_ctor_FUN_004aaa50 ; 004aa265 | CEventList * core_event.cpp_CEventList_ctor_FUN_004aaa50(CEventList * this_ptr)
-        ;   XREF to: 004aaa50 (UNCONDITIONAL_CALL)
+    CALL core_event.cpp_CEventList_ctor_FUN_004aaa50 ; 004aa265
+        ;   XREF to: 004aaa50 (UNCONDITIONAL_CALL)  ; CEventList * core_event.cpp_CEventList_ctor_FUN_004aaa50(CEventList * this_ptr)
     ADD ESP,0x4                         ; 004aa26a
     RET                                 ; 004aa26d
 

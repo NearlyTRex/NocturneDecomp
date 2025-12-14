@@ -1,159 +1,159 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 150, 
-    "pseudocode_lines": 80, 
-    "cross_reference_count": 0, 
-    "global_count": 8, 
-    "total_lines": 232, 
-    "assembly_lines": 152, 
-    "suspect_count": 5, 
+    "assembly_lines": 152,
+    "complexity_score": 150,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 8,
+    "pseudocode_lines": 80,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_box.cpp_CBox_process_FUN_0041e2f0", 
-      "addr": "0041e2f0"
-    }, 
-    {
-      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0", 
-      "addr": "00471fd0"
-    }, 
-    {
-      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0", 
-      "addr": "004adca0"
-    }, 
-    {
-      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
-      "addr": "005feb5c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_00649c02", 
-      "addr": "00649c02", 
-      "value": "0.00003051851"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00649c0a", 
-      "addr": "00649c0a", 
-      "value": "-0.5"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00649c12", 
-      "addr": "00649c12", 
-      "value": "3.14159265350000"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00649c1a", 
-      "addr": "00649c1a", 
-      "value": "2"
-    }, 
-    {
-      "type": "CEventList*", 
-      "name": "g_CEventListPtr", 
-      "addr": "006793d0", 
-      "value": "02d05310"
-    }, 
-    {
-      "type": "CKeys*", 
-      "name": "g_CKeysPtr", 
-      "addr": "0067cf44", 
-      "value": "02dcd7d4"
-    }, 
-    {
-      "type": "CEventList", 
-      "name": "g_CEventListInstance", 
-      "addr": "02d05310", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_CKeysPtr", 
-      "addr": "02dcd7d4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000010;"
-    }, 
-    {
-      "line": 39, 
-      "match": "&stack0xffffffec", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(CVector3f *)&stack0xffffffec,"
-    }, 
-    {
-      "line": 69, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CBox *)(this_ptr->field1_0x158 + 0x200),in_stack_00000010);"
-    }
-  ], 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 232
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00588f20", 
-    "signature": "void core_simbox.cpp_CSimBox_process_FUN_00588f20(CSimBox * this_ptr)", 
+    "address": "00588f20",
     "address_range": [
       [
-        "00588f20", 
+        "00588f20",
         "005890e6"
       ]
-    ], 
-    "name": "core_simbox.cpp_CSimBox_process_FUN_00588f20"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_simbox.cpp_CSimBox_process_FUN_00588f20",
+    "signature": "void core_simbox.cpp_CSimBox_process_FUN_00588f20(CSimBox * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041e2f0",
+      "name": "core_box.cpp_CBox_process_FUN_0041e2f0"
+    },
+    {
+      "addr": "00471fd0",
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0"
+    },
+    {
+      "addr": "004adca0",
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
+    },
+    {
+      "addr": "005feb5c",
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649c02",
+      "name": "FLOAT_00649c02",
+      "type": "float",
+      "value": "0.00003051851"
+    },
+    {
+      "addr": "00649c0a",
+      "name": "DOUBLE_00649c0a",
+      "type": "double",
+      "value": "-0.5"
+    },
+    {
+      "addr": "00649c12",
+      "name": "DOUBLE_00649c12",
+      "type": "double",
+      "value": "3.14159265350000"
+    },
+    {
+      "addr": "00649c1a",
+      "name": "DOUBLE_00649c1a",
+      "type": "double",
+      "value": "2"
+    },
+    {
+      "addr": "006793d0",
+      "name": "g_CEventListPtr",
+      "type": "CEventList*",
+      "value": "02d05310"
+    },
+    {
+      "addr": "0067cf44",
+      "name": "g_CKeysPtr",
+      "type": "CKeys*",
+      "value": "02dcd7d4"
+    },
+    {
+      "addr": "02d05310",
+      "name": "g_CEventListInstance",
+      "type": "CEventList",
+      "value": null
+    },
+    {
+      "addr": "02dcd7d4",
+      "name": "g_CKeysPtr",
+      "type": "void*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 28, 
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSimBox *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimBox *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "float in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 39,
+      "match": "&stack0xffffffec",
+      "text": "(CVector3f *)&stack0xffffffec,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000010",
+      "text": "((CBox *)(this_ptr->field1_0x158 + 0x200),in_stack_00000010);",
+      "type": "stack_param"
+    }
+  ]
 }

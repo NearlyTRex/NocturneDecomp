@@ -58,8 +58,8 @@ section .text
     FADDP                               ; 00471e52
     FSTP float ptr [ESP]                ; 00471e54
     TEST dword ptr [ESP],0x7fffffff     ; 00471e57
-    JZ 0x00471f9b                       ; 00471e5e | LAB_00471f9b
-        ;   XREF to: 00471f9b (CONDITIONAL_JUMP)
+    JZ 0x00471f9b                       ; 00471e5e
+        ;   XREF to: 00471f9b (CONDITIONAL_JUMP)  ; LAB_00471f9b
     FLD float ptr [EBX + 0x10]          ; 00471e64
         ;   Label: LAB_00471e64
     FMUL float ptr [EBX + 0x20]         ; 00471e67
@@ -179,15 +179,15 @@ section .text
     POP ESI                             ; 00471f98
     POP EBX                             ; 00471f99
     RET                                 ; 00471f9a
-    MOV ECX,0x61edb3                    ; 00471f9b | = "..\\core\\dirmat.cpp" | s_core_dirmat_cpp_0061edb3 = ..\core\dirmat.cpp
+    MOV ECX,0x61edb3                    ; 00471f9b | = "..\\core\\dirmat.cpp"
         ;   Label: LAB_00471f9b
     MOV ESI,0x69                        ; 00471fa0
-    PUSH 0x61edc6                       ; 00471fa5 | = "CMatrix::invert - Singular matrix" | s_CMatrix_invert_Singular__0061edc6 = CMatrix::invert - Singular matrix
-    MOV dword ptr [0x02f0ca48],ECX      ; 00471faa | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 00471fb0 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00471fb6 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x61edc6                       ; 00471fa5 | = "CMatrix::invert - Singular matrix"
+    MOV dword ptr [0x02f0ca48],ECX      ; 00471faa | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 00471fb0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00471fb6
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00471fbb
-    JMP 0x00471e64                      ; 00471fbe | LAB_00471e64
-        ;   XREF to: 00471e64 (UNCONDITIONAL_JUMP)
+    JMP 0x00471e64                      ; 00471fbe
+        ;   XREF to: 00471e64 (UNCONDITIONAL_JUMP)  ; LAB_00471e64
 

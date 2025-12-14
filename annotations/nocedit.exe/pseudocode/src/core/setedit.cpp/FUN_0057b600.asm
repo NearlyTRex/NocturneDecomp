@@ -37,8 +37,8 @@ section .text
     SUB ESP,0x4                         ; 0057b604
     MOV EBX,dword ptr [ESP + 0x18]      ; 0057b607
     CMP dword ptr [EBX + 0x19a2c],0xc8  ; 0057b60b
-    JGE 0x0057b871                      ; 0057b615 | LAB_0057b871
-        ;   XREF to: 0057b871 (CONDITIONAL_JUMP)
+    JGE 0x0057b871                      ; 0057b615
+        ;   XREF to: 0057b871 (CONDITIONAL_JUMP)  ; LAB_0057b871
     IMUL EAX,dword ptr [ESP + 0x1c],0x1898 ; 0057b61b
     LEA EBP,[EBX + 0x19a30]             ; 0057b623
     MOV ESI,dword ptr [EBX + 0x19a2c]   ; 0057b629
@@ -58,14 +58,14 @@ section .text
     LEA ESI,[EBP + 0x104]               ; 0057b656
     LEA ECX,[EAX + 0x104]               ; 0057b65c
     CMP ESI,ECX                         ; 0057b662
-    JNZ 0x0057b887                      ; 0057b664 | LAB_0057b887
-        ;   XREF to: 0057b887 (CONDITIONAL_JUMP)
+    JNZ 0x0057b887                      ; 0057b664
+        ;   XREF to: 0057b887 (CONDITIONAL_JUMP)  ; LAB_0057b887
     LEA ESI,[EAX + 0x110]               ; 0057b66a
         ;   Label: LAB_0057b66a
     LEA ECX,[EDX + 0x110]               ; 0057b670
     CMP ECX,ESI                         ; 0057b676
-    JNZ 0x0057b89c                      ; 0057b678 | LAB_0057b89c
-        ;   XREF to: 0057b89c (CONDITIONAL_JUMP)
+    JNZ 0x0057b89c                      ; 0057b678
+        ;   XREF to: 0057b89c (CONDITIONAL_JUMP)  ; LAB_0057b89c
     FLD float ptr [EAX + 0x11c]         ; 0057b67e
         ;   Label: LAB_0057b67e
     MOV ECX,0x3e                        ; 0057b684
@@ -150,29 +150,29 @@ section .text
     PUSH 0x100                          ; 0057b823
     ADD EAX,0x4                         ; 0057b828
     PUSH EAX                            ; 0057b82b
-    PUSH 0x64782d                       ; 0057b82c | = "Enter new name for cloned light" | s_Enter_new_name_for_clone_0064782d = Enter new name for cloned light
-    MOV EAX,[0x00678a60]                ; 0057b831 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
-    PUSH EAX                            ; 0057b836 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0057b837 | int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
-        ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)
+    PUSH 0x64782d                       ; 0057b82c | = "Enter new name for cloned light"
+    MOV EAX,[0x00678a60]                ; 0057b831 | g_CEditorToolsPtr
+    PUSH EAX                            ; 0057b836 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 0057b837
+        ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 0057b83c
     TEST EAX,EAX                        ; 0057b83f
-    JZ 0x0057b869                       ; 0057b841 | LAB_0057b869
-        ;   XREF to: 0057b869 (CONDITIONAL_JUMP)
+    JZ 0x0057b869                       ; 0057b841
+        ;   XREF to: 0057b869 (CONDITIONAL_JUMP)  ; LAB_0057b869
     IMUL EAX,dword ptr [EBX + 0x19a2c],0x1898 ; 0057b843
     LEA EDX,[EBX + EAX*0x1]             ; 0057b84d
     CMP byte ptr [EDX + 0x19a34],0x0    ; 0057b850
-    JZ 0x0057b815                       ; 0057b857 | LAB_0057b815
-        ;   XREF to: 0057b815 (CONDITIONAL_JUMP)
+    JZ 0x0057b815                       ; 0057b857
+        ;   XREF to: 0057b815 (CONDITIONAL_JUMP)  ; LAB_0057b815
     ADD EAX,ESI                         ; 0057b859
     PUSH EAX                            ; 0057b85b
     PUSH EBX                            ; 0057b85c
-    CALL core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 ; 0057b85d | undefined core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
-        ;   XREF to: 0057ae50 (UNCONDITIONAL_CALL)
+    CALL core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50 ; 0057b85d
+        ;   XREF to: 0057ae50 (UNCONDITIONAL_CALL)  ; undefined core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50()
     ADD ESP,0x8                         ; 0057b862
     TEST EAX,EAX                        ; 0057b865
-    JNZ 0x0057b8b1                      ; 0057b867 | LAB_0057b8b1
-        ;   XREF to: 0057b8b1 (CONDITIONAL_JUMP)
+    JNZ 0x0057b8b1                      ; 0057b867
+        ;   XREF to: 0057b8b1 (CONDITIONAL_JUMP)  ; LAB_0057b8b1
     ADD ESP,0x4                         ; 0057b869
         ;   Label: LAB_0057b869
     POP EBP                             ; 0057b86c
@@ -180,15 +180,15 @@ section .text
     POP ESI                             ; 0057b86e
     POP EBX                             ; 0057b86f
     RET                                 ; 0057b870
-    PUSH 0x647814                       ; 0057b871 | = "Too many lights already!" | s_Too_many_lights_already_00647814 = Too many lights already!
+    PUSH 0x647814                       ; 0057b871 | = "Too many lights already!"
         ;   Label: LAB_0057b871
-    MOV EDI,dword ptr [0x00678a60]      ; 0057b876 | CEditorTools * g_CEditorToolsPtr
-    PUSH EDI                            ; 0057b87c | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057b87d | void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
-        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x00678a60]      ; 0057b876 | g_CEditorToolsPtr
+    PUSH EDI                            ; 0057b87c | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 ; 0057b87d
+        ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0057b882
-    JMP 0x0057b869                      ; 0057b885 | LAB_0057b869
-        ;   XREF to: 0057b869 (UNCONDITIONAL_JUMP)
+    JMP 0x0057b869                      ; 0057b885
+        ;   XREF to: 0057b869 (UNCONDITIONAL_JUMP)  ; LAB_0057b869
     MOV EDI,dword ptr [ECX]             ; 0057b887
         ;   Label: LAB_0057b887
     MOV dword ptr [ESI],EDI             ; 0057b889
@@ -196,8 +196,8 @@ section .text
     MOV dword ptr [ESI + 0x4],EDI       ; 0057b88e
     MOV EDI,dword ptr [ECX + 0x8]       ; 0057b891
     MOV dword ptr [ESI + 0x8],EDI       ; 0057b894
-    JMP 0x0057b66a                      ; 0057b897 | LAB_0057b66a
-        ;   XREF to: 0057b66a (UNCONDITIONAL_JUMP)
+    JMP 0x0057b66a                      ; 0057b897
+        ;   XREF to: 0057b66a (UNCONDITIONAL_JUMP)  ; LAB_0057b66a
     MOV EDI,dword ptr [ESI]             ; 0057b89c
         ;   Label: LAB_0057b89c
     MOV dword ptr [ECX],EDI             ; 0057b89e
@@ -205,36 +205,36 @@ section .text
     MOV dword ptr [ECX + 0x4],EDI       ; 0057b8a3
     MOV EDI,dword ptr [ESI + 0x8]       ; 0057b8a6
     MOV dword ptr [ECX + 0x8],EDI       ; 0057b8a9
-    JMP 0x0057b67e                      ; 0057b8ac | LAB_0057b67e
-        ;   XREF to: 0057b67e (UNCONDITIONAL_JUMP)
+    JMP 0x0057b67e                      ; 0057b8ac
+        ;   XREF to: 0057b67e (UNCONDITIONAL_JUMP)  ; LAB_0057b67e
     MOV ECX,dword ptr [EBX + 0x19a2c]   ; 0057b8b1
         ;   Label: LAB_0057b8b1
     INC ECX                             ; 0057b8b7
     PUSH EBX                            ; 0057b8b8
     MOV dword ptr [EBX + 0x19a2c],ECX   ; 0057b8b9
-    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0057b8bf | void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
-        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_FUN_0056d2d0 ; 0057b8bf
+        ;   XREF to: 0056d2d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057b8c4
-    PUSH 0x64784d                       ; 0057b8c7 | = "Precompute light visibility?" | s_Precompute_light_visibil_0064784d = Precompute light visibility?
-    MOV ESI,dword ptr [0x00678a60]      ; 0057b8cc | CEditorTools * g_CEditorToolsPtr
-    PUSH ESI                            ; 0057b8d2 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057b8d3 | int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)
+    PUSH 0x64784d                       ; 0057b8c7 | = "Precompute light visibility?"
+    MOV ESI,dword ptr [0x00678a60]      ; 0057b8cc | g_CEditorToolsPtr
+    PUSH ESI                            ; 0057b8d2 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057b8d3
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0057b8d8
     TEST EAX,EAX                        ; 0057b8db
-    JZ 0x0057b8f0                       ; 0057b8dd | LAB_0057b8f0
-        ;   XREF to: 0057b8f0 (CONDITIONAL_JUMP)
+    JZ 0x0057b8f0                       ; 0057b8dd
+        ;   XREF to: 0057b8f0 (CONDITIONAL_JUMP)  ; LAB_0057b8f0
     MOV EAX,dword ptr [EBX + 0x19a2c]   ; 0057b8df
     DEC EAX                             ; 0057b8e5
     PUSH EAX                            ; 0057b8e6
     PUSH EBX                            ; 0057b8e7
-    CALL core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 ; 0057b8e8 | void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr)
-        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 ; 0057b8e8
+        ;   XREF to: 0056a470 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 0057b8ed
     PUSH EBX                            ; 0057b8f0
         ;   Label: LAB_0057b8f0
-    CALL core_set.cpp_CDemonSet_initScene_FUN_0056aa10 ; 0057b8f1 | void core_set.cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet * this_ptr)
-        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_initScene_FUN_0056aa10 ; 0057b8f1
+        ;   XREF to: 0056aa10 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057b8f6
     ADD ESP,0x4                         ; 0057b8f9
     POP EBP                             ; 0057b8fc

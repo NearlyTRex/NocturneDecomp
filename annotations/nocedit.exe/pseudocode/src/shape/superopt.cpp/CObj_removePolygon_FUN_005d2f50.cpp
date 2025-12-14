@@ -23,13 +23,11 @@ int __cdecl shape_superopt_cpp_CObj_removePolygon_FUN_005d2f50(CObj *this_ptr,ui
     ;
   }
   if (this_ptr->poly_count != 0) {
-    pCVar2 = (CPoly *)crt_memory_c_realloc_FUN_00601df0
-                                (this_ptr->poly_array,this_ptr->poly_count * 0x68);
+    pCVar2 = crt_memory_c_realloc_FUN_00601df0(this_ptr->poly_array,this_ptr->poly_count * 0x68);
     if (pCVar2 != (CPoly *)0x0) {
       this_ptr->poly_array = pCVar2;
-      pCVar2 = (CPoly *)&DAT_00000001;
     }
-    return (int)pCVar2;
+    return (uint)(pCVar2 != (CPoly *)0x0);
   }
   crt_memory_c_free_FUN_00601cd0(this_ptr->poly_array);
   this_ptr->poly_array = (CPoly *)0x0;

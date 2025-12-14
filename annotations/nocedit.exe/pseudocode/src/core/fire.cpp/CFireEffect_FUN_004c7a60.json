@@ -1,94 +1,94 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 5, 
-    "global_count": 2, 
-    "total_lines": 40, 
-    "assembly_lines": 31, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_FUN_004c1940", 
-      "addr": "004c1940"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_SparkActiveCount", 
-      "addr": "02d58a00", 
-      "value": null
-    }, 
-    {
-      "type": "CMuzzleFlash[20]", 
-      "name": "g_MuzzleFlashPool", 
-      "addr": "02d58a04", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c7a60", 
-    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7a60(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c7a60", 
-        "004c7aa9"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c7a60"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 31,
+    "complexity_score": 9,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
+  },
   "cross_references": [
     {
-      "from_addr": "004a7444", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_elephant.cpp_FUN_004a7160", 
-      "addr": "004a7160"
-    }, 
+      "addr": "004a7160",
+      "from_addr": "004a7444",
+      "name": "core_elephant.cpp_FUN_004a7160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f0596", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gun.cpp_FUN_004f0350", 
-      "addr": "004f0350"
-    }, 
+      "addr": "004f0350",
+      "from_addr": "004f0596",
+      "name": "core_gun.cpp_FUN_004f0350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00588360", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_shotgun.cpp_FUN_00588060", 
-      "addr": "00588060"
-    }, 
+      "addr": "00588060",
+      "from_addr": "00588360",
+      "name": "core_shotgun.cpp_FUN_00588060",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005dddbc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tommygun.cpp_FUN_005ddb30", 
-      "addr": "005ddb30"
-    }, 
+      "addr": "005ddb30",
+      "from_addr": "005dddbc",
+      "name": "core_tommygun.cpp_FUN_005ddb30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e3b4b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_turret.cpp_FUN_005e3750", 
-      "addr": "005e3750"
+      "addr": "005e3750",
+      "from_addr": "005e3b4b",
+      "name": "core_turret.cpp_FUN_005e3750",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c7a60",
+    "address_range": [
+      [
+        "004c7a60",
+        "004c7aa9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c7a60",
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7a60(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c1940",
+      "name": "core_fire.cpp_FUN_004c1940"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d58a00",
+      "name": "g_SparkActiveCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d58a04",
+      "name": "g_MuzzleFlashPool",
+      "type": "CMuzzleFlash[20]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": []
 }

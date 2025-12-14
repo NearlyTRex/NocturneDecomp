@@ -13,20 +13,20 @@ shape_superopt_cpp_CPoly_copyFrom_FUN_005cc6a0(CPoly *this_ptr,CPoly *source,COb
   int iVar1;
   CPoly *pCVar2;
   CVector2d *pCVar3;
-  int *piVar4;
+  CPoly *pCVar4;
   CVector2d *pCVar5;
   
   this_ptr->parent_obj = parent_obj;
-  piVar4 = &this_ptr->vertex_idx_0;
   pCVar2 = source;
-  for (iVar1 = 3; pCVar2 = (CPoly *)&pCVar2->vertex_idx_0, iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar4 = *(int *)pCVar2;
-    piVar4 = piVar4 + 1;
+  pCVar4 = this_ptr;
+  for (iVar1 = 3; pCVar4 = (CPoly *)&pCVar4->vertex_idx_0, pCVar2 = (CPoly *)&pCVar2->vertex_idx_0,
+      iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(int *)pCVar4 = *(int *)pCVar2;
   }
   for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(char *)piVar4 = (char)*(int *)pCVar2;
+    *(char *)pCVar4 = (char)*(int *)pCVar2;
     pCVar2 = (CPoly *)((int)pCVar2 + 1);
-    piVar4 = (int *)((int)piVar4 + 1);
+    pCVar4 = (CPoly *)((int)pCVar4 + 1);
   }
   pCVar3 = source->uv_coords;
   pCVar5 = this_ptr->uv_coords;

@@ -1,119 +1,119 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 83, 
-    "pseudocode_lines": 33, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 103, 
-    "assembly_lines": 70, 
-    "suspect_count": 4, 
+    "assembly_lines": 70,
+    "complexity_score": 83,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 33,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = width * in_stack_00000010;"
-    }, 
-    {
-      "line": 29, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "} while (puVar3 < (byte *)((int)bitmap_data + iVar2));"
-    }, 
-    {
-      "line": 32, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "bitmap_data = (void *)((int)bitmap_data + iVar2);"
-    }
-  ], 
+    ],
+    "total_lines": 103
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00433160", 
-    "signature": "void cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160(void * bitmap_data, int width, int height)", 
+    "address": "00433160",
     "address_range": [
       [
-        "00433160", 
+        "00433160",
         "004331ef"
       ]
-    ], 
-    "name": "cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160",
+    "signature": "void cockpit_ckptutil.c_mirrorBitmapHorizontally_FUN_00433160(void * bitmap_data, int width, int height)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 36, 
+    "frame_size": 48,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "bitmap_data"
-      }, 
+        "is_param": true,
+        "name": "bitmap_data",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
+        "is_param": true,
+        "name": "width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
+        "is_param": true,
+        "name": "height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000010",
+      "text": "iVar2 = width * in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(byte *)((int)",
+      "text": "} while (puVar3 < (byte *)((int)bitmap_data + iVar2));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(void *)((int)",
+      "text": "bitmap_data = (void *)((int)bitmap_data + iVar2);",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -18,8 +18,8 @@ cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
   
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(this_ptr);
   cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_0054a990(this_ptr,(char *)width);
-  bitmap_data = (uchar *)cockpit_ckptutil_c_readBitmapFile_FUN_00431870
-                                   (this_ptr->filename,(void *)0x0,stride * width);
+  bitmap_data = cockpit_ckptutil_c_readBitmapFile_FUN_00431870
+                          (this_ptr->filename,(void *)0x0,stride * width);
   cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190
             (this_ptr,bitmap_data,width,apply_palette_flag,in_stack_00000020,(uchar)width);
   shape_memdbg_cpp_debugFree_FUN_0050f460(bitmap_data,"..\\cockpit\\pkbitmap.cpp",0x2fb);

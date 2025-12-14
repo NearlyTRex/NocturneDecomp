@@ -17,12 +17,13 @@ core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
   
   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
             (this_ptr,world_position,surface_normal,start_vertex_index,0);
-  iVar1 = vertex_count * 0x30 + 0x688044;
-  for (iVar2 = vertex_count + -1; 0 < iVar2; iVar2 = iVar2 + -1) {
-    *(float *)(iVar1 + 0x20) = g_RenderVertexBuffer[vertex_count].light;
-    *(int *)(iVar1 + 0x24) = g_RenderVertexBuffer[vertex_count].color;
-    *(float *)(iVar1 + 0x28) = g_RenderVertexBuffer[vertex_count].fog;
-    iVar1 = iVar1 + 0x30;
+  iVar2 = vertex_count * 0x30 + 0x688044;
+  iVar1 = vertex_count;
+  while (iVar1 = iVar1 + -1, 0 < iVar1) {
+    *(float *)(iVar2 + 0x20) = g_RenderVertexBuffer[vertex_count].light;
+    *(int *)(iVar2 + 0x24) = g_RenderVertexBuffer[vertex_count].color;
+    *(float *)(iVar2 + 0x28) = g_RenderVertexBuffer[vertex_count].fog;
+    iVar2 = iVar2 + 0x30;
   }
-  return iVar1;
+  return iVar2;
 }

@@ -30,8 +30,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0040c6d0
         ;   Label: core_actor.cpp_isOfClass_FUN_0040c6d0
     TEST EAX,EAX                        ; 0040c6d4
-    JNZ 0x0040c6d9                      ; 0040c6d6 | LAB_0040c6d9
-        ;   XREF to: 0040c6d9 (CONDITIONAL_JUMP)
+    JNZ 0x0040c6d9                      ; 0040c6d6
+        ;   XREF to: 0040c6d9 (CONDITIONAL_JUMP)  ; LAB_0040c6d9
     RET                                 ; 0040c6d8
     MOV EDX,dword ptr [ESP + 0x8]       ; 0040c6d9
         ;   Label: LAB_0040c6d9
@@ -41,8 +41,8 @@ section .text
     CALL dword ptr [EDX + 0xc4]         ; 0040c6e5
     ADD ESP,0x4                         ; 0040c6eb
     PUSH EAX                            ; 0040c6ee
-    CALL core_actor.cpp_matchesClassName_FUN_0040c740 ; 0040c6ef | int core_actor.cpp_matchesClassName_FUN_0040c740(CDemonActorType * type_ptr, char * class_name)
-        ;   XREF to: 0040c740 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_matchesClassName_FUN_0040c740 ; 0040c6ef
+        ;   XREF to: 0040c740 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchesClassName_FUN_0040c740(CDemonActorType * type_ptr, char * class_name)
     ADD ESP,0x8                         ; 0040c6f4
     RET                                 ; 0040c6f7
 

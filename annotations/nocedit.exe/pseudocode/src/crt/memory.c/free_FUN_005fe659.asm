@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005fe659
         ;   Label: crt_memory.c_free_FUN_005fe659
     PUSH EDX                            ; 005fe65d
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005fe65e | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005fe65e
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005fe663
     RET                                 ; 005fe666
 

@@ -1,83 +1,83 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 16, 
-    "assembly_lines": 7, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_ProjectionScaleDivisor", 
-      "addr": "00622045", 
-      "value": "65536"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ProjectionScale", 
-      "addr": "006793c0", 
-      "value": "0x10000"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048c670", 
-    "signature": "void engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670(CDemonRenderer * this_ptr, float scale_factor)", 
-    "address_range": [
-      [
-        "0048c670", 
-        "0048c685"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "scale_factor"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 7,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "00574ed0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70", 
-      "addr": "00574e70"
-    }, 
+      "addr": "00574e70",
+      "from_addr": "00574ed0",
+      "name": "core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057d044", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80", 
-      "addr": "0057ce80"
+      "addr": "0057ce80",
+      "from_addr": "0057d044",
+      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0048c670",
+    "address_range": [
+      [
+        "0048c670",
+        "0048c685"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670",
+    "signature": "void engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670(CDemonRenderer * this_ptr, float scale_factor)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622045",
+      "name": "g_ProjectionScaleDivisor",
+      "type": "double",
+      "value": "65536"
+    },
+    {
+      "addr": "006793c0",
+      "name": "g_ProjectionScale",
+      "type": "int",
+      "value": "0x10000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "scale_factor",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 116, 
-    "pseudocode_lines": 61, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 143, 
-    "assembly_lines": 82, 
-    "suspect_count": 5, 
+    "assembly_lines": 82,
+    "complexity_score": 113,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 58,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 17, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "cVar2 = *(char *)((int)param_2 + 1);"
-    }, 
-    {
-      "line": 18, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "param_4 = (uint *)((int)param_4 + 1);"
-    }, 
-    {
-      "line": 19, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "param_2 = (uint *)((int)param_2 + 1);"
-    }, 
-    {
-      "line": 31, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)param_4 + 2) = 0;"
-    }, 
-    {
-      "line": 52, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)param_4 + 6) = 0;"
-    }
-  ], 
+    ],
+    "total_lines": 140
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004b1b5c", 
-    "signature": "undefined core_event.cpp_FUN_004b1b5c()", 
+    "address": "004b1b5c",
     "address_range": [
       [
-        "004b1b5c", 
+        "004b1b5c",
         "004b1bcc"
-      ], 
+      ],
       [
-        "004b1bd0", 
+        "004b1bd0",
         "004b1bde"
-      ], 
+      ],
       [
-        "004b1be0", 
+        "004b1be0",
         "004b1be9"
-      ], 
+      ],
       [
-        "004b1bec", 
+        "004b1bec",
         "004b1bfe"
       ]
-    ], 
-    "name": "core_event.cpp_FUN_004b1b5c"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_event.cpp_FUN_004b1b5c",
+    "signature": "undefined core_event.cpp_FUN_004b1b5c()"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(uint *)((int)",
+      "text": "for (; ((uint)param_4 & 7) != 0; param_4 = (uint *)((int)param_4 + 1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(char *)((int)",
+      "text": "cVar2 = *(char *)((int)param_2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)",
+      "text": "param_2 = (uint *)((int)param_2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)param_4 + 2) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)param_4 + 6) = 0;",
+      "type": "pointer_cast"
+    }
+  ]
 }

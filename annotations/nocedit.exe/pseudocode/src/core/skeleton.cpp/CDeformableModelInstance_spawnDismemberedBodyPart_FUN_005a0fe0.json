@@ -1,93 +1,93 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 64, 
-    "assembly_lines": 49, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_bodypart.cpp_CreateBodyPart_FUN_00418e10", 
-      "addr": "00418e10"
-    }, 
-    {
-      "name": "core_bodypart.cpp_FUN_0041a050", 
-      "addr": "0041a050"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040", 
-      "addr": "005a1040"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 49,
+    "complexity_score": 15,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a0fe0", 
-    "signature": "CBodyPart * core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance * this_ptr, int part_index, COrientation * orientation, CVector3f * velocity, CDemonActor * source_actor, int unknown)", 
+    "address": "005a0fe0",
     "address_range": [
       [
-        "005a0fe0", 
+        "005a0fe0",
         "005a1037"
       ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0",
+    "signature": "CBodyPart * core_skeleton.cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0(CDeformableModelInstance * this_ptr, int part_index, COrientation * orientation, CVector3f * velocity, CDemonActor * source_actor, int unknown)"
+  },
+  "function_calls": [
+    {
+      "addr": "00418e10",
+      "name": "core_bodypart.cpp_CreateBodyPart_FUN_00418e10"
+    },
+    {
+      "addr": "0041a050",
+      "name": "core_bodypart.cpp_FUN_0041a050"
+    },
+    {
+      "addr": "005a1040",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModelInstance *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "part_index"
-      }, 
+        "is_param": true,
+        "name": "part_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "COrientation *", 
-        "size": 4, 
-        "name": "orientation"
-      }, 
+        "is_param": true,
+        "name": "orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "COrientation *"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "velocity"
-      }, 
+        "is_param": true,
+        "name": "velocity",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "source_actor"
-      }, 
+        "is_param": true,
+        "name": "source_actor",
+        "offset": 20,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "unknown"
+        "is_param": true,
+        "name": "unknown",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

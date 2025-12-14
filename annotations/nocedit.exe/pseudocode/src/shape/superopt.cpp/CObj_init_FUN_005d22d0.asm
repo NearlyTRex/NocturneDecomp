@@ -26,13 +26,13 @@ section .text
     ADD ESP,0x4                         ; 005d22dd
     MOV EDX,dword ptr [ESP + 0x10]      ; 005d22e0
     TEST EDX,EDX                        ; 005d22e4
-    JNZ 0x005d22f8                      ; 005d22e6 | LAB_005d22f8
-        ;   XREF to: 005d22f8 (CONDITIONAL_JUMP)
+    JNZ 0x005d22f8                      ; 005d22e6
+        ;   XREF to: 005d22f8 (CONDITIONAL_JUMP)  ; LAB_005d22f8
     MOV ESI,dword ptr [ESP + 0x14]      ; 005d22e8
         ;   Label: LAB_005d22e8
     TEST ESI,ESI                        ; 005d22ec
-    JNZ 0x005d230a                      ; 005d22ee | LAB_005d230a
-        ;   XREF to: 005d230a (CONDITIONAL_JUMP)
+    JNZ 0x005d230a                      ; 005d22ee
+        ;   XREF to: 005d230a (CONDITIONAL_JUMP)  ; LAB_005d230a
     MOV EAX,0x1                         ; 005d22f0
         ;   Label: LAB_005d22f0
     POP ESI                             ; 005d22f5
@@ -45,8 +45,8 @@ section .text
     CALL dword ptr [EAX + 0xc]          ; 005d22fd
     ADD ESP,0x8                         ; 005d2300
     TEST EAX,EAX                        ; 005d2303
-    JNZ 0x005d22e8                      ; 005d2305 | LAB_005d22e8
-        ;   XREF to: 005d22e8 (CONDITIONAL_JUMP)
+    JNZ 0x005d22e8                      ; 005d2305
+        ;   XREF to: 005d22e8 (CONDITIONAL_JUMP)  ; LAB_005d22e8
     POP ESI                             ; 005d2307
     POP EBX                             ; 005d2308
     RET                                 ; 005d2309
@@ -57,8 +57,8 @@ section .text
     CALL dword ptr [EAX + 0x14]         ; 005d230f
     ADD ESP,0x8                         ; 005d2312
     TEST EAX,EAX                        ; 005d2315
-    JNZ 0x005d22f0                      ; 005d2317 | LAB_005d22f0
-        ;   XREF to: 005d22f0 (CONDITIONAL_JUMP)
+    JNZ 0x005d22f0                      ; 005d2317
+        ;   XREF to: 005d22f0 (CONDITIONAL_JUMP)  ; LAB_005d22f0
     POP ESI                             ; 005d2319
     POP EBX                             ; 005d231a
     RET                                 ; 005d231b

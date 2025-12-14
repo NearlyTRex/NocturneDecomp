@@ -21,23 +21,23 @@ section .text
         ;   Label: sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0
     MOV EAX,dword ptr [ESP + 0x8]       ; 005a87d1
     CMP dword ptr [EAX + 0x124],0x1     ; 005a87d5
-    JG 0x005a87f6                       ; 005a87dc | LAB_005a87f6
-        ;   XREF to: 005a87f6 (CONDITIONAL_JUMP)
+    JG 0x005a87f6                       ; 005a87dc
+        ;   XREF to: 005a87f6 (CONDITIONAL_JUMP)  ; LAB_005a87f6
     MOV ECX,dword ptr [EAX + 0x110]     ; 005a87de
     CMP ECX,dword ptr [EAX + 0x128]     ; 005a87e4
-    JNZ 0x005a87f6                      ; 005a87ea | LAB_005a87f6
-        ;   XREF to: 005a87f6 (CONDITIONAL_JUMP)
+    JNZ 0x005a87f6                      ; 005a87ea
+        ;   XREF to: 005a87f6 (CONDITIONAL_JUMP)  ; LAB_005a87f6
     MOV EBX,dword ptr [EAX + 0x13c]     ; 005a87ec
     TEST EBX,EBX                        ; 005a87f2
-    JLE 0x005a87fd                      ; 005a87f4 | LAB_005a87fd
-        ;   XREF to: 005a87fd (CONDITIONAL_JUMP)
+    JLE 0x005a87fd                      ; 005a87f4
+        ;   XREF to: 005a87fd (CONDITIONAL_JUMP)  ; LAB_005a87fd
     MOV EAX,0x2                         ; 005a87f6
         ;   Label: LAB_005a87f6
     POP EBX                             ; 005a87fb
     RET                                 ; 005a87fc
-    JNZ 0x005a8806                      ; 005a87fd | LAB_005a8806
+    JNZ 0x005a8806                      ; 005a87fd
+        ;   XREF to: 005a8806 (CONDITIONAL_JUMP)  ; LAB_005a8806
         ;   Label: LAB_005a87fd
-        ;   XREF to: 005a8806 (CONDITIONAL_JUMP)
     MOV EAX,0x1                         ; 005a87ff
     POP EBX                             ; 005a8804
     RET                                 ; 005a8805

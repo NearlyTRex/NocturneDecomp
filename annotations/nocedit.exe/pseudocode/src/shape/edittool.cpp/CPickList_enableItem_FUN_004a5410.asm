@@ -38,24 +38,24 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 004a5414
     MOV ESI,dword ptr [ESP + 0x18]      ; 004a5418
     TEST ESI,ESI                        ; 004a541c
-    JL 0x004a5424                       ; 004a541e | LAB_004a5424
-        ;   XREF to: 004a5424 (CONDITIONAL_JUMP)
+    JL 0x004a5424                       ; 004a541e
+        ;   XREF to: 004a5424 (CONDITIONAL_JUMP)  ; LAB_004a5424
     CMP ESI,dword ptr [EBX]             ; 004a5420
-    JL 0x004a5447                       ; 004a5422 | LAB_004a5447
-        ;   XREF to: 004a5447 (CONDITIONAL_JUMP)
-    MOV ECX,0x623ab6                    ; 004a5424 | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_00623ab6 = ..\shape\edittool.cpp
+    JL 0x004a5447                       ; 004a5422
+        ;   XREF to: 004a5447 (CONDITIONAL_JUMP)  ; LAB_004a5447
+    MOV ECX,0x623ab6                    ; 004a5424 | = "..\\shape\\edittool.cpp"
         ;   Label: LAB_004a5424
     MOV EDI,0x1025                      ; 004a5429
-    PUSH 0x623acc                       ; 004a542e | = "CPickList::enableItem - invalid index" | s_CPickList_enableItem_inv_00623acc = CPickList::enableItem - invalid index
-    MOV dword ptr [0x02f0ca48],ECX      ; 004a5433 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 004a5439 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a543f | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x623acc                       ; 004a542e | = "CPickList::enableItem - invalid index"
+    MOV dword ptr [0x02f0ca48],ECX      ; 004a5433 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 004a5439 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a543f
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004a5444
     CMP ESI,dword ptr [EBX + 0x194]     ; 004a5447
         ;   Label: LAB_004a5447
-    JGE 0x004a546a                      ; 004a544d | LAB_004a546a
-        ;   XREF to: 004a546a (CONDITIONAL_JUMP)
+    JGE 0x004a546a                      ; 004a544d
+        ;   XREF to: 004a546a (CONDITIONAL_JUMP)  ; LAB_004a546a
     CMP dword ptr [ESP + 0x1c],0x0      ; 004a544f
         ;   Label: LAB_004a544f
     SETNZ AL                            ; 004a5454
@@ -70,38 +70,38 @@ section .text
     PUSH 0x102b                         ; 004a546a
         ;   Label: LAB_004a546a
     MOV EAX,dword ptr [EBX]             ; 004a546f
-    PUSH 0x623af2                       ; 004a5471 | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_00623af2 = ..\shape\edittool.cpp
+    PUSH 0x623af2                       ; 004a5471 | = "..\\shape\\edittool.cpp"
     SHL EAX,0x2                         ; 004a5476
     PUSH EAX                            ; 004a5479
     MOV EAX,dword ptr [EBX + 0x198]     ; 004a547a
     PUSH EAX                            ; 004a5480
-    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004a5481 | void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
-        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugRealloc_FUN_0050f540 ; 004a5481
+        ;   XREF to: 0050f540 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugRealloc_FUN_0050f540(void * ptr, int new_size, char * filename, int line_number)
     ADD ESP,0x10                        ; 004a5486
     MOV dword ptr [EBX + 0x198],EAX     ; 004a5489
     TEST EAX,EAX                        ; 004a548f
-    JZ 0x004a54b4                       ; 004a5491 | LAB_004a54b4
-        ;   XREF to: 004a54b4 (CONDITIONAL_JUMP)
+    JZ 0x004a54b4                       ; 004a5491
+        ;   XREF to: 004a54b4 (CONDITIONAL_JUMP)  ; LAB_004a54b4
     MOV EBP,dword ptr [EBX]             ; 004a5493
         ;   Label: LAB_004a5493
     MOV EAX,dword ptr [EBX + 0x194]     ; 004a5495
     CMP EAX,EBP                         ; 004a549b
-    JGE 0x004a544f                      ; 004a549d | LAB_004a544f
-        ;   XREF to: 004a544f (CONDITIONAL_JUMP)
+    JGE 0x004a544f                      ; 004a549d
+        ;   XREF to: 004a544f (CONDITIONAL_JUMP)  ; LAB_004a544f
     MOV EDX,dword ptr [EBX + 0x198]     ; 004a549f
     MOV dword ptr [EDX + EAX*0x4],0x1   ; 004a54a5
     INC dword ptr [EBX + 0x194]         ; 004a54ac
-    JMP 0x004a5493                      ; 004a54b2 | LAB_004a5493
-        ;   XREF to: 004a5493 (UNCONDITIONAL_JUMP)
-    MOV ECX,0x623b08                    ; 004a54b4 | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_00623b08 = ..\shape\edittool.cpp
+    JMP 0x004a5493                      ; 004a54b2
+        ;   XREF to: 004a5493 (UNCONDITIONAL_JUMP)  ; LAB_004a5493
+    MOV ECX,0x623b08                    ; 004a54b4 | = "..\\shape\\edittool.cpp"
         ;   Label: LAB_004a54b4
     MOV EDI,0x102c                      ; 004a54b9
-    PUSH 0x623b1e                       ; 004a54be | = "Out of memory" | s_Out_of_memory_00623b1e = Out of memory
-    MOV dword ptr [0x02f0ca48],ECX      ; 004a54c3 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 004a54c9 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a54cf | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x623b1e                       ; 004a54be | = "Out of memory"
+    MOV dword ptr [0x02f0ca48],ECX      ; 004a54c3 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 004a54c9 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a54cf
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004a54d4
-    JMP 0x004a5493                      ; 004a54d7 | LAB_004a5493
-        ;   XREF to: 004a5493 (UNCONDITIONAL_JUMP)
+    JMP 0x004a5493                      ; 004a54d7
+        ;   XREF to: 004a5493 (UNCONDITIONAL_JUMP)  ; LAB_004a5493
 

@@ -11,8 +11,7 @@ void core_vessel_cpp_FUN_005e8e20(void)
 {
   CCryptVessel *this_ptr;
   
-  this_ptr = (CCryptVessel *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x7f4,"..\\core\\vessel.cpp",0x26);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x7f4,"..\\core\\vessel.cpp",0x26);
   if (this_ptr == (CCryptVessel *)0x0) {
     return;
   }

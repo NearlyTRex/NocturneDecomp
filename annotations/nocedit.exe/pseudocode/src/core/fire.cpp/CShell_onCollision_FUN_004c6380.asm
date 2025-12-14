@@ -33,19 +33,19 @@ section .text
     SUB EAX,EDX                         ; 004c6394
     MOV dword ptr [EBP + -0x4],EAX      ; 004c6396
     FILD dword ptr [EBP + -0x4]         ; 004c6399
-    FMUL double ptr [0x00629ff3]        ; 004c639c | double DOUBLE_00629ff3
+    FMUL double ptr [0x00629ff3]        ; 004c639c | DOUBLE_00629ff3
     FST float ptr [EBP + -0x8]          ; 004c63a2
     FLDZ                                ; 004c63a5
     FCOMPP                              ; 004c63a7
     FNSTSW AX                           ; 004c63a9
     SAHF                                ; 004c63ab
-    JBE 0x004c63b3                      ; 004c63ac | LAB_004c63b3
-        ;   XREF to: 004c63b3 (CONDITIONAL_JUMP)
+    JBE 0x004c63b3                      ; 004c63ac
+        ;   XREF to: 004c63b3 (CONDITIONAL_JUMP)  ; LAB_004c63b3
     XOR ECX,ECX                         ; 004c63ae
     MOV dword ptr [EBP + -0x8],ECX      ; 004c63b0
     PUSH 0x40c90fdb                     ; 004c63b3
         ;   Label: LAB_004c63b3
     PUSH 0xc0c90fdb                     ; 004c63b8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c63bd | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c63bd
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

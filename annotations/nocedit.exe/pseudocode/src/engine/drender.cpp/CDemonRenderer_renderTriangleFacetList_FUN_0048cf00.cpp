@@ -18,8 +18,9 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
   int extraout_EAX_00;
   int extraout_EAX_01;
   int iVar2;
+  SMRGLHeaderPrimitive *pSVar3;
   BADSPACEBASE *in_ESP;
-  int iVar3;
+  int iVar4;
   int local_28;
   int local_24;
   int local_20;
@@ -67,7 +68,7 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
         }
       }
       else {
-        iVar3 = 0;
+        iVar4 = 0;
         local_14 = 0;
         if (0 < primitive_count) {
           local_18 = 0;
@@ -75,15 +76,15 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
             iVar2 = engine_prim_c_getTriangleWindingFromIndices_FUN_00552210
                               ((STriangleIndices *)primitive_array);
             if (iVar2 != 0) {
-              iVar3 = iVar3 + 1;
+              iVar4 = iVar4 + 1;
               iVar2 = local_1c + 4;
               *(SMRGLHeaderPrimitive **)((int)g_VisibleFacePointers + local_1c) = primitive_array;
               local_1c = iVar2;
-              if (1999 < iVar3) {
+              if (1999 < iVar4) {
                 g_CurrentFilename = "..\\engine\\drender.cpp";
                 g_CurrentLineNumber = 0x9b6;
                 core_main_c_displayErrorAndQuit_FUN_00506f10
-                          ("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar3);
+                          ("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar4);
               }
             }
             local_14 = local_14 + 1;
@@ -93,11 +94,11 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
             in_EAX = render_flags;
           } while (local_14 < primitive_count);
         }
-        if (0 < iVar3) {
-          iVar3 = wincore_windll_cpp_drawPolyList_FUN_005b7640
-                            (this_ptr->vertex_buffer_ptr,g_VisibleFacePointers,iVar3,
+        if (0 < iVar4) {
+          iVar4 = wincore_windll_cpp_drawPolyList_FUN_005b7640
+                            (this_ptr->vertex_buffer_ptr,g_VisibleFacePointers,iVar4,
                              g_RenderStateFlags);
-          return iVar3;
+          return iVar4;
         }
       }
     }
@@ -105,35 +106,32 @@ engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00
       g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       g_RenderStateFlags = 0;
       g_RenderStateFlag2 = g_RenderStateFlags;
-      if (0 < primitive_count) {
-        do {
-          local_28 = primitive_array[1].base.type;
-          local_24 = primitive_array[1].surface_normal.B;
-          local_20 = primitive_array[2].base.type;
-          if ((primitive_array->base).count == 4) {
-            local_1c = primitive_array[2].surface_normal.B;
-          }
-          pSVar1 = &primitive_array->base;
-          primitive_count = primitive_count + -1;
-          primitive_array =
-               (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + render_flags);
-          engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_28,pSVar1->count);
-          in_EAX = extraout_EAX_00;
-        } while (0 < primitive_count);
+      for (; pSVar3 = primitive_array, 0 < primitive_count; primitive_count = primitive_count + -1)
+      {
+        local_28 = pSVar3[1].base.type;
+        local_24 = pSVar3[1].surface_normal.B;
+        local_20 = pSVar3[2].base.type;
+        if ((pSVar3->base).count == 4) {
+          local_1c = pSVar3[2].surface_normal.B;
+        }
+        pSVar1 = &pSVar3->base;
+        pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + render_flags);
+        engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_28,pSVar1->count);
+        in_EAX = extraout_EAX_00;
       }
     }
   }
   else {
-    iVar3 = 0;
+    iVar4 = 0;
     if (0 < primitive_count) {
       do {
         engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
                   (this_ptr,primitive_array,primitive_stride);
-        iVar3 = iVar3 + 1;
+        iVar4 = iVar4 + 1;
         primitive_array =
              (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);
         in_EAX = extraout_EAX;
-      } while (iVar3 < primitive_count);
+      } while (iVar4 < primitive_count);
     }
   }
   return in_EAX;

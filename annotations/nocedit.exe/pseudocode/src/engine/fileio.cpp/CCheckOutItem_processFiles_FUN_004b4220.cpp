@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Removing unreachable block (ram,0x004b4aea) */
+
 int __cdecl
 engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
           (CCheckOutItem *this_ptr,int operation_mode,char *filename)
@@ -170,17 +172,15 @@ engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
       iVar5 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
                         (this_ptr_00,(char *)operation_mode,acStack_630,
                          "Select file to undo check out","*");
-      if (iVar5 != 0) {
-        iVar5 = engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
-                          (this_ptr_00,auStack_62c);
-        if (iVar5 != 0) {
-          iVar5 = engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220
-                            (this_ptr_00->name,acStack_628);
-          goto LAB_004b458d;
-        }
+      if ((iVar5 == 0) ||
+         (iVar5 = engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
+                            (this_ptr_00,auStack_62c), iVar5 == 0)) {
+        iVar5 = 0;
       }
-      iVar5 = 0;
-LAB_004b458d:
+      else {
+        iVar5 = engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220
+                          (this_ptr_00->name,acStack_628);
+      }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
                 ((CPickList *)&stack0xffffec6c,0,(uint)in_stack_ffffec6c,in_stack_ffffec70,
                  (uint)in_stack_ffffec74,(uint)in_stack_ffffec78,in_stack_ffffec7c);
@@ -346,9 +346,6 @@ LAB_004b458d:
         pFVar3 = (FILE *)0x0;
 LAB_004b4ad9:
         if (pFVar3 == (FILE *)0x0) {
-          if (pFVar3 != (FILE *)0x0) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)0x0,"..\\engine\\fileio.cpp",0xc4);
-          }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Can't access %s.  Get Fletch.");
           engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0xfffffff8);
@@ -369,155 +366,157 @@ LAB_004b4ad9:
                     (g_CEditorToolsPtr,"Hell froze - we no longer have the file checked out!!!!");
         }
         engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&this_ptr);
-        goto LAB_004b4768;
       }
+      else {
 LAB_004b4980:
-      shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                (g_CEditorToolsPtr,"Finalizing %s to network...");
-      engine_2d_c_clearInputAndWait_FUN_00403260();
-      pFVar3 = (FILE *)0x0;
-      while( true ) {
-        engine_dosio_c_setFileAttributes_FUN_004819f0(auStack_1010 + 0x38,0);
-        crt_io_c_deleteFile_FUN_005ff9d0(auStack_1010 + 0x3c);
-        iVar5 = crt_stdio_c_rename_FUN_006015d0(acStack_a18,auStack_1010 + 0x40);
-        if (iVar5 == 0) break;
-        if (0x27 < (int)pFVar3) {
-          if (filename != (char *)0x0) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                      ((FILE *)filename,"..\\engine\\fileio.cpp",0xc4);
-            in_stack_00000010 = (FILE *)0x0;
-          }
-          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"Error renaming %s -> %s.\nThe file was not checked in.\nThe most likely cause is that somebody is currently trying to get\nthe file you are checking in.  No file files have been modified,\nand you still have the file checked out.  Wait a little bit and\ntry again.");
-          shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000010);
-          goto LAB_004b4768;
-        }
-        pFVar3 = (FILE *)((int)&pFVar3->_ptr + 1);
-        if (pFVar3 == (FILE *)&DAT_00000001) {
-          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ba4,"Waiting for %s to become available.\nPress ESC to cancel check in.");
-          shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
-                    (g_CEditorToolsPtr,acStack_ba0);
-        }
-        wincore_winrun_cpp_sleep_FUN_005f40e0(0.5);
-        in_stack_00000030 = pFVar3;
-        shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                  (g_CEditorToolsPtr,(float)(int)pFVar3,40.0);
-        iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
-        if (iVar5 != 0) {
-          pFVar3 = (FILE *)0x28;
-        }
-      }
-      if (0 < (int)pFVar3) {
-        shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-      }
-      iVar5 = engine_dosio_c_copyFileTimestamp_FUN_00481910(auStack_1010 + 0x48,pcStack_ba8);
-      if (iVar5 == 0) {
-        if (in_stack_00000014 != (CCheckOutItem *)0x0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                    ((FILE *)in_stack_00000014,"..\\engine\\fileio.cpp",0xc4);
-          in_stack_00000018 = (CCheckOutItem *)0x0;
-        }
-        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                  (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network,\nbut the date on the network file is incorrect.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nAnother possibility is that the time of the file is newer than\nthe current system time on your computer.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n");
-        engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000014);
-        goto LAB_004b4768;
-      }
-      bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0(auStack_1010 + 0x4c,8);
-      if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {
-        if (in_stack_00000018 != (CCheckOutItem *)0x0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                    ((FILE *)in_stack_00000018,"..\\engine\\fileio.cpp",0xc4);
-          in_stack_0000001c = (CCheckOutItem *)0x0;
-        }
-        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                  (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n");
-        engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000018);
-        goto LAB_004b4768;
-      }
-      iVar5 = 0;
-      do {
-        pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (acStack_904,(char *)0x0,"at","..\\engine\\fileio.cpp",0x153
-                           );
-        if (pFVar3 != (FILE *)0x0) {
-          crt_stdio_c_setvbuf_FUN_00601490(pFVar3,(char *)0x0,0,0x400);
-          goto LAB_004b4d50;
-        }
-        piVar4 = (int *)crt_errno_c_errno_FUN_00601450();
-        if (*piVar4 != 6) break;
-        iVar5 = iVar5 + 1;
-        (*Sleep)(500);
-      } while (iVar5 < 10);
-      pFVar3 = (FILE *)0x0;
-LAB_004b4d50:
-      in_stack_00000040 = pFVar3;
-      if (pFVar3 != (FILE *)0x0) {
-        in_stack_00000028 = crt_time_c_time_with_rounding_FUN_006001f0((time_t *)0x0);
-        crt_time_c_localtime_FUN_00600288(&stack0x00000028);
-        crt_stdio_c_fprintf_FUN_005fe6d0(pFVar3,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n");
-        crt_stdio_c_fflush_FUN_00601540(pFVar3);
-        if ((pFVar3->_flag & 0x20) == 0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\engine\\fileio.cpp",0xc4);
-          in_stack_00000054 = 0;
-          engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
-          if (in_stack_00000048 != (CCheckOutItem *)0x0) {
-            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000030);
-            return 2;
-          }
-          iVar5 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70
-                            ((CCheckOutList *)&stack0x00000030,(int)in_stack_00000040);
-          if (iVar5 == 0) {
-            if (in_stack_0000003c != (CCheckOutItem *)0x0) {
+        shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
+                  (g_CEditorToolsPtr,"Finalizing %s to network...");
+        engine_2d_c_clearInputAndWait_FUN_00403260();
+        pFVar3 = (FILE *)0x0;
+        while( true ) {
+          engine_dosio_c_setFileAttributes_FUN_004819f0(auStack_1010 + 0x38,0);
+          crt_io_c_deleteFile_FUN_005ff9d0(auStack_1010 + 0x3c);
+          iVar5 = crt_stdio_c_rename_FUN_006015d0(acStack_a18,auStack_1010 + 0x40);
+          if (iVar5 == 0) break;
+          if (0x27 < (int)pFVar3) {
+            if (filename != (char *)0x0) {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                        ((FILE *)in_stack_0000003c,"..\\engine\\fileio.cpp",0xc4);
-              in_stack_0000003c = in_stack_00000048;
+                        ((FILE *)filename,"..\\engine\\fileio.cpp",0xc4);
+              in_stack_00000010 = (FILE *)0x0;
             }
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                      (g_CEditorToolsPtr,"Out of memory...Restart the application NOW.\nBetter yet, reboot the computer.");
+                      (g_CEditorToolsPtr,"Error renaming %s -> %s.\nThe file was not checked in.\nThe most likely cause is that somebody is currently trying to get\nthe file you are checking in.  No file files have been modified,\nand you still have the file checked out.  Wait a little bit and\ntry again.");
+            shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
+            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000010);
+            goto LAB_004b4768;
+          }
+          pFVar3 = (FILE *)((int)&pFVar3->_ptr + 1);
+          if (pFVar3 == (FILE *)&DAT_00000001) {
+            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ba4,"Waiting for %s to become available.\nPress ESC to cancel check in.");
+            shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
+                      (g_CEditorToolsPtr,acStack_ba0);
+          }
+          wincore_winrun_cpp_sleep_FUN_005f40e0(0.5);
+          in_stack_00000030 = pFVar3;
+          shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
+                    (g_CEditorToolsPtr,(float)(int)pFVar3,40.0);
+          iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+          if (iVar5 != 0) {
+            pFVar3 = (FILE *)0x28;
+          }
+        }
+        if (0 < (int)pFVar3) {
+          shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
+        }
+        iVar5 = engine_dosio_c_copyFileTimestamp_FUN_00481910(auStack_1010 + 0x48,pcStack_ba8);
+        if (iVar5 == 0) {
+          if (in_stack_00000014 != (CCheckOutItem *)0x0) {
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0
+                      ((FILE *)in_stack_00000014,"..\\engine\\fileio.cpp",0xc4);
+            in_stack_00000018 = (CCheckOutItem *)0x0;
+          }
+          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                    (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network,\nbut the date on the network file is incorrect.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nAnother possibility is that the time of the file is newer than\nthe current system time on your computer.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n");
+          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000014);
+        }
+        else {
+          bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0(auStack_1010 + 0x4c,8);
+          if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {
+            if (in_stack_00000018 != (CCheckOutItem *)0x0) {
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0
+                        ((FILE *)in_stack_00000018,"..\\engine\\fileio.cpp",0xc4);
+              in_stack_0000001c = (CCheckOutItem *)0x0;
+            }
+            shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                      (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n");
+            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000018);
           }
           else {
-            iVar5 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0
-                              ((CCheckOutList *)&stack0x00000034,(FILE **)&stack0x0000003c);
-            if (iVar5 != 0) {
-              if (in_stack_00000040 != (FILE *)0x0) {
-                shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                          (in_stack_00000040,"..\\engine\\fileio.cpp",0xc4);
-                in_stack_00000044 = 0;
+            iVar5 = 0;
+            do {
+              pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                                 (acStack_904,(char *)0x0,"at","..\\engine\\fileio.cpp"
+                                  ,0x153);
+              if (pFVar3 != (FILE *)0x0) {
+                crt_stdio_c_setvbuf_FUN_00601490(pFVar3,(char *)0x0,0,0x400);
+                goto LAB_004b4d50;
               }
-              iVar5 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,acStack_d80);
-              if (iVar5 < 0) {
-LAB_004b4ff2:
-                if (-1 < iVar5) goto LAB_004b5011;
+              piVar4 = (int *)crt_errno_c_errno_FUN_00601450();
+              if (*piVar4 != 6) break;
+              iVar5 = iVar5 + 1;
+              (*Sleep)(500);
+            } while (iVar5 < 10);
+            pFVar3 = (FILE *)0x0;
+LAB_004b4d50:
+            in_stack_00000040 = pFVar3;
+            if (pFVar3 != (FILE *)0x0) {
+              in_stack_00000028 = crt_time_c_time_with_rounding_FUN_006001f0((time_t *)0x0);
+              crt_time_c_localtime_FUN_00600288(&stack0x00000028);
+              crt_stdio_c_fprintf_FUN_005fe6d0(pFVar3,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n");
+              crt_stdio_c_fflush_FUN_00601540(pFVar3);
+              if ((pFVar3->_flag & 0x20) == 0) {
+                shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\engine\\fileio.cpp",0xc4);
+                in_stack_00000054 = 0;
+                engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
+                if (in_stack_00000048 != (CCheckOutItem *)0x0) {
+                  engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860
+                            ((CCheckOutList *)&stack0x00000030);
+                  return 2;
+                }
+                iVar5 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70
+                                  ((CCheckOutList *)&stack0x00000030,(int)in_stack_00000040);
+                if (iVar5 == 0) {
+                  if (in_stack_0000003c != (CCheckOutItem *)0x0) {
+                    shape_memdbg_cpp_closeFile_FUN_0050f9b0
+                              ((FILE *)in_stack_0000003c,"..\\engine\\fileio.cpp",0xc4);
+                    in_stack_0000003c = in_stack_00000048;
+                  }
+                  shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                            (g_CEditorToolsPtr,"Out of memory...Restart the application NOW.\nBetter yet, reboot the computer.");
+                }
+                else {
+                  iVar5 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0
+                                    ((CCheckOutList *)&stack0x00000034,(FILE **)&stack0x0000003c);
+                  if (iVar5 != 0) {
+                    if (in_stack_00000040 != (FILE *)0x0) {
+                      shape_memdbg_cpp_closeFile_FUN_0050f9b0
+                                (in_stack_00000040,"..\\engine\\fileio.cpp",0xc4);
+                      in_stack_00000044 = 0;
+                    }
+                    iVar5 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,acStack_d80);
+                    if (((-1 < iVar5) &&
+                        (bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0
+                                           (acStack_d7c,(byte)iVar5 | 8),
+                        CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0)) || (iVar5 < 0)) {
+                      shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
+                                (g_CEditorToolsPtr,"Error marking local file %s as read only.\n(But your check-in did complete to the network successfully.)");
+                    }
+                    engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860
+                              ((CCheckOutList *)&stack0x00000048);
+                    return 1;
+                  }
+                }
+                engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860
+                          ((CCheckOutList *)&stack0x00000038);
+                goto LAB_004b4768;
               }
-              else {
-                bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0(acStack_d7c,(byte)iVar5 | 8);
-                if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) != 0) goto LAB_004b4ff2;
-              }
-              shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
-                        (g_CEditorToolsPtr,"Error marking local file %s as read only.\n(But your check-in did complete to the network successfully.)");
-LAB_004b5011:
-              engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000048);
-              return 1;
             }
+            if (in_stack_00000020 != (CCheckOutItem *)0x0) {
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0
+                        ((FILE *)in_stack_00000020,"..\\engine\\fileio.cpp",0xc4);
+              in_stack_00000020 = (CCheckOutItem *)0x0;
+            }
+            if (in_stack_00000040 != (FILE *)0x0) {
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0
+                        (in_stack_00000040,"..\\engine\\fileio.cpp",0xc4);
+              in_stack_00000040 = (FILE *)0x0;
+            }
+            shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                      (g_CEditorToolsPtr,"Error creating history record in %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n");
+            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x0000001c);
           }
-          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000038);
-          goto LAB_004b4768;
         }
       }
-      if (in_stack_00000020 != (CCheckOutItem *)0x0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                  ((FILE *)in_stack_00000020,"..\\engine\\fileio.cpp",0xc4);
-        in_stack_00000020 = (CCheckOutItem *)0x0;
-      }
-      if (in_stack_00000040 != (FILE *)0x0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000040,"..\\engine\\fileio.cpp",0xc4)
-        ;
-        in_stack_00000040 = (FILE *)0x0;
-      }
-      shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                (g_CEditorToolsPtr,"Error creating history record in %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n");
-      engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x0000001c);
       goto LAB_004b4768;
     }
     pcVar6 = "%s\nGet Fletch.";

@@ -11,8 +11,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocCubeList_FUN_00494270(CDemonRay
 {
   SVoxelCubeMetadata *pSVar1;
   
-  pSVar1 = (SVoxelCubeMetadata *)
-           shape_memdbg_cpp_debugCalloc_FUN_0050f350
+  pSVar1 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (0x58,(this_ptr->grid_coord).x * (this_ptr->grid_coord).y *
                            (this_ptr->grid_coord).z,"..\\core\\dtrace.cpp",0x87);
   this_ptr->cube_list = pSVar1;

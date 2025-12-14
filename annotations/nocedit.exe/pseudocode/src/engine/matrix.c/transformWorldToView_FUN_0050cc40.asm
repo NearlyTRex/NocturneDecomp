@@ -39,16 +39,16 @@ section .text
     SUB ESP,0xc                         ; 0050cc43
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0050cc46
     MOV EBP,ESI                         ; 0050cc4a
-    MOV EDX,dword ptr [0x02d052b8]      ; 0050cc4c | int g_RelativeX
-    MOV EDI,dword ptr [0x02d052bc]      ; 0050cc52 | int g_RelativeY
-    MOV EAX,[0x02d052c0]                ; 0050cc58 | int g_RelativeZ
+    MOV EDX,dword ptr [0x02d052b8]      ; 0050cc4c | g_RelativeX
+    MOV EDI,dword ptr [0x02d052bc]      ; 0050cc52 | g_RelativeY
+    MOV EAX,[0x02d052c0]                ; 0050cc58 | g_RelativeZ
     MOV ESI,dword ptr [EBX]             ; 0050cc5d
     MOV ECX,dword ptr [EBX + 0x4]       ; 0050cc5f
     SUB ESI,EDX                         ; 0050cc62
     MOV EBX,dword ptr [EBX + 0x8]       ; 0050cc64
     MOV EDX,ESI                         ; 0050cc67
     SUB EBX,EAX                         ; 0050cc69
-    MOV EAX,[0x02d052e8]                ; 0050cc6b | CMatrix3x3i g_TransformMatrix
+    MOV EAX,[0x02d052e8]                ; 0050cc6b | g_TransformMatrix
     SUB ECX,EDI                         ; 0050cc70
     IMUL EDX                            ; 0050cc72
     SHRD EAX,EDX,0x10                   ; 0050cc74

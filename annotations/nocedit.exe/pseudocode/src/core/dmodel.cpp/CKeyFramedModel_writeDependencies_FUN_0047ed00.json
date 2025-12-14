@@ -1,208 +1,208 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 82, 
-    "pseudocode_lines": 52, 
-    "cross_reference_count": 10, 
-    "global_count": 2, 
-    "total_lines": 148, 
-    "assembly_lines": 96, 
-    "suspect_count": 2, 
+    "assembly_lines": 96,
+    "complexity_score": 82,
+    "cross_reference_count": 10,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 52,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ART_s_RAW_00620f0b", 
-      "addr": "00620f0b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ART_s_ACT_00620f17", 
-      "addr": "00620f17", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 4, 
-    "patterns": [
-      {
-        "address": "0047ed27", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }, 
-      {
-        "address": "0047ed47", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }, 
-      {
-        "address": "0047ed6f", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }, 
-      {
-        "address": "0047ed87", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0047ed00", 
-    "signature": "void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)", 
-    "address_range": [
-      [
-        "0047ed00", 
-        "0047edc7"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00"
-  }, 
-  "stack_frame": {
-    "local_size": 220, 
-    "variables": [
-      {
-        "offset": -216, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_d8"
-      }, 
-      {
-        "offset": -215, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_d7"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "dependency_file"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "skip_raw_files"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 232, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 148
+  },
   "cross_references": [
     {
-      "from_addr": "004120cf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_anvil.cpp_CAnvil_FUN_00412090", 
-      "addr": "00412090"
-    }, 
+      "addr": "00412090",
+      "from_addr": "004120cf",
+      "name": "core_anvil.cpp_CAnvil_FUN_00412090",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041814f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_battery.cpp_FUN_00418110", 
-      "addr": "00418110"
-    }, 
+      "addr": "00418110",
+      "from_addr": "0041814f",
+      "name": "core_battery.cpp_FUN_00418110",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00422938", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_FUN_00422900", 
-      "addr": "00422900"
-    }, 
+      "addr": "00422900",
+      "from_addr": "00422938",
+      "name": "core_boxactor.cpp_FUN_00422900",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043e0c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_FUN_0043e0a0", 
-      "addr": "0043e0a0"
-    }, 
+      "addr": "0043e0a0",
+      "from_addr": "0043e0c5",
+      "name": "core_cloth.cpp_FUN_0043e0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00448b9f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_crate.cpp_FUN_00448b60", 
-      "addr": "00448b60"
-    }, 
+      "addr": "00448b60",
+      "from_addr": "00448b9f",
+      "name": "core_crate.cpp_FUN_00448b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047ee1c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0", 
-      "addr": "0047edd0"
-    }, 
+      "addr": "0047edd0",
+      "from_addr": "0047ee1c",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047eea7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_writeModelDependencies_FUN_0047ee30", 
-      "addr": "0047ee30"
-    }, 
+      "addr": "0047ee30",
+      "from_addr": "0047eea7",
+      "name": "core_dmodel.cpp_writeModelDependencies_FUN_0047ee30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004be9ef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_filmreel.cpp_FUN_004be9b0", 
-      "addr": "004be9b0"
-    }, 
+      "addr": "004be9b0",
+      "from_addr": "004be9ef",
+      "name": "core_filmreel.cpp_FUN_004be9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cb78f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flamecan.cpp_FUN_004cb750", 
-      "addr": "004cb750"
-    }, 
+      "addr": "004cb750",
+      "from_addr": "004cb78f",
+      "name": "core_flamecan.cpp_FUN_004cb750",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e5f2f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gasmask.cpp_FUN_004e5ef0", 
-      "addr": "004e5ef0"
+      "addr": "004e5ef0",
+      "from_addr": "004e5f2f",
+      "name": "core_gasmask.cpp_FUN_004e5ef0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047ed00",
+    "address_range": [
+      [
+        "0047ed00",
+        "0047edc7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00",
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00620f0b",
+      "name": "s_ART_s_RAW_00620f0b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00620f17",
+      "name": "s_ART_s_ACT_00620f17",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 232,
+    "local_size": 220,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_d7",
+        "offset": -215,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "dependency_file",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "skip_raw_files",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 4,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0047ed27",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047ed47",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047ed6f",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047ed87",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

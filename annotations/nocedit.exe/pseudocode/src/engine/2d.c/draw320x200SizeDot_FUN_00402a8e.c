@@ -16,10 +16,8 @@ void engine_2d_c_draw320x200SizeDot_FUN_00402a8e(void)
   int in_stack_0000000c;
   
   if ((((0 < in_stack_0000000c) && (in_stack_00000004 <= in_stack_0000000c)) &&
-      (SBORROW /* signed borrow */4(in_stack_00000004,-in_stack_0000000c) == in_stack_00000004 + in_stack_0000000c < 0))
-     && ((in_stack_00000008 <= in_stack_0000000c &&
-         (SBORROW /* signed borrow */4(in_stack_00000008,-in_stack_0000000c) ==
-          in_stack_00000008 + in_stack_0000000c < 0)))) {
+      (-in_stack_0000000c <= in_stack_00000004)) &&
+     ((in_stack_00000008 <= in_stack_0000000c && (-in_stack_0000000c <= in_stack_00000008)))) {
     if ((uint)g_WindowHeight < 400) {
       if (g_WindowHeight != 200) {
 LAB_00402be6:

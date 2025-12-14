@@ -25,8 +25,8 @@ section .text
     PUSH EBX                            ; 006021ca
     MOV ECX,dword ptr [ESP + 0x10]      ; 006021cb
     PUSH ECX                            ; 006021cf
-    CALL crt_stdio.c_vfprintf_FUN_00604850 ; 006021d0 | int crt_stdio.c_vfprintf_FUN_00604850(FILE * file, char * format, va_list_t args)
-        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vfprintf_FUN_00604850 ; 006021d0
+        ;   XREF to: 00604850 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vfprintf_FUN_00604850(FILE * file, char * format, va_list_t args)
     ADD ESP,0xc                         ; 006021d5
     POP EBX                             ; 006021d8
     RET                                 ; 006021d9

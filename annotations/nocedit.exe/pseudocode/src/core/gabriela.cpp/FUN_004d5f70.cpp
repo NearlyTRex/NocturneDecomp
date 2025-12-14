@@ -8,23 +8,19 @@
 
 /* Signature: byte actors_hero_gabriella.cpp_FUN_004d5f70(uint param_1) */
 
-int core_gabriela_cpp_FUN_004d5f70(void)
+uint core_gabriela_cpp_FUN_004d5f70(void)
 
 {
   int iVar1;
   int in_stack_00000004;
   
-  if (((((*(byte *)(in_stack_00000004 + 0x1fbd4) & 2) == 0) ||
-       (*(float *)(in_stack_00000004 + 0x1fbdc) < 1.0)) ||
-      (*(float *)(in_stack_00000004 + 0x1fc10) < 1.0)) ||
-     (0.0 < *(float *)(in_stack_00000004 + 0x1fc0c))) {
-    iVar1 = 0;
+  if (((((*(byte *)(in_stack_00000004 + 0x1fbd4) & 2) != 0) &&
+       (1.0 <= *(float *)(in_stack_00000004 + 0x1fbdc))) &&
+      (1.0 <= *(float *)(in_stack_00000004 + 0x1fc10))) &&
+     ((*(float *)(in_stack_00000004 + 0x1fc0c) <= 0.0 &&
+      (iVar1 = (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x1fa68) + 0x154) + 0xfc))(),
+      iVar1 != 0)))) {
+    return 1;
   }
-  else {
-    iVar1 = (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x1fa68) + 0x154) + 0xfc))();
-    if (iVar1 != 0) {
-      return 1;
-    }
-  }
-  return iVar1;
+  return 0;
 }

@@ -1,63 +1,63 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 29, 
-    "assembly_lines": 19, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_restoreVideoMode*", 
-      "name": "g_APIDLL_restoreVideoMode", 
-      "addr": "03f6b8a0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b75b0", 
-    "signature": "int wincore_windll.cpp_restoreVideoMode_FUN_005b75b0(void)", 
-    "address_range": [
-      [
-        "005b75b0", 
-        "005b75d7"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_restoreVideoMode_FUN_005b75b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 19,
+    "complexity_score": 10,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
   "cross_references": [
     {
-      "from_addr": "005ed4c8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0", 
-      "addr": "005ed4b0"
-    }, 
+      "addr": "005ed4b0",
+      "from_addr": "005ed4c8",
+      "name": "wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005edc64", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50", 
-      "addr": "005edc50"
+      "addr": "005edc50",
+      "from_addr": "005edc64",
+      "name": "wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b75b0",
+    "address_range": [
+      [
+        "005b75b0",
+        "005b75d7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_restoreVideoMode_FUN_005b75b0",
+    "signature": "int wincore_windll.cpp_restoreVideoMode_FUN_005b75b0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8a0",
+      "name": "g_APIDLL_restoreVideoMode",
+      "type": "APIDLL_restoreVideoMode*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

@@ -23,16 +23,16 @@ section .text
     ADD EAX,EDX                         ; 005c67ff
     MOV EAX,dword ptr [EBX + EAX*0x4 + 0x24b4] ; 005c6801
     CMP EAX,dword ptr [EBX + 0x1fc2c]   ; 005c6808
-    JZ 0x005c6826                       ; 005c680e | LAB_005c6826
-        ;   XREF to: 005c6826 (CONDITIONAL_JUMP)
+    JZ 0x005c6826                       ; 005c680e
+        ;   XREF to: 005c6826 (CONDITIONAL_JUMP)  ; LAB_005c6826
     MOV ECX,dword ptr [ESP + 0x14]      ; 005c6810
         ;   Label: LAB_005c6810
     PUSH ECX                            ; 005c6814
     MOV ESI,dword ptr [ESP + 0x14]      ; 005c6815
     PUSH ESI                            ; 005c6819
     PUSH EBX                            ; 005c681a
-    CALL core_charactr.cpp_CCharacter_FUN_0042cfe0 ; 005c681b | void core_charactr.cpp_CCharacter_FUN_0042cfe0(CCharacter * this_ptr)
-        ;   XREF to: 0042cfe0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042cfe0 ; 005c681b
+        ;   XREF to: 0042cfe0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042cfe0(CCharacter * this_ptr)
     ADD ESP,0xc                         ; 005c6820
     POP ESI                             ; 005c6823
     POP EBX                             ; 005c6824
@@ -44,6 +44,6 @@ section .text
     MOV dword ptr [EBX + 0x1fc2c],0x0   ; 005c682f
     CALL dword ptr [EAX + 0x158]        ; 005c6839
     ADD ESP,0x8                         ; 005c683f
-    JMP 0x005c6810                      ; 005c6842 | LAB_005c6810
-        ;   XREF to: 005c6810 (UNCONDITIONAL_JUMP)
+    JMP 0x005c6810                      ; 005c6842
+        ;   XREF to: 005c6810 (UNCONDITIONAL_JUMP)  ; LAB_005c6810
 

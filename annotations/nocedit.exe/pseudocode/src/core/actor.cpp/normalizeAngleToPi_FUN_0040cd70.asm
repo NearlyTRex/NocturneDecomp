@@ -46,17 +46,17 @@ section .text
     AND ESP,0xfffffff8                  ; 0040cd76
     FLD float ptr [EBP + 0x8]           ; 0040cd79
     FST double ptr [ESP]                ; 0040cd7c
-    FCOMP double ptr [0x00614310]       ; 0040cd7f | double DOUBLE_00614310
+    FCOMP double ptr [0x00614310]       ; 0040cd7f | DOUBLE_00614310
     FNSTSW AX                           ; 0040cd85
     SAHF                                ; 0040cd87
-    JC 0x0040cda7                       ; 0040cd88 | LAB_0040cda7
-        ;   XREF to: 0040cda7 (CONDITIONAL_JUMP)
+    JC 0x0040cda7                       ; 0040cd88
+        ;   XREF to: 0040cda7 (CONDITIONAL_JUMP)  ; LAB_0040cda7
     FLD double ptr [ESP]                ; 0040cd8a
-    FCOMP double ptr [0x00614318]       ; 0040cd8d | double DOUBLE_00614318
+    FCOMP double ptr [0x00614318]       ; 0040cd8d | DOUBLE_00614318
     FNSTSW AX                           ; 0040cd93
     SAHF                                ; 0040cd95
-    JA 0x0040cde3                       ; 0040cd96 | LAB_0040cde3
-        ;   XREF to: 0040cde3 (CONDITIONAL_JUMP)
+    JA 0x0040cde3                       ; 0040cd96
+        ;   XREF to: 0040cde3 (CONDITIONAL_JUMP)  ; LAB_0040cde3
     MOV EAX,dword ptr [EBP + 0x8]       ; 0040cd98
     MOV dword ptr [ESP + 0x10],EAX      ; 0040cd9b
     MOV EAX,dword ptr [ESP + 0x10]      ; 0040cd9f
@@ -66,37 +66,37 @@ section .text
     RET                                 ; 0040cda6
     FLD double ptr [ESP]                ; 0040cda7
         ;   Label: LAB_0040cda7
-    FADD double ptr [0x00614318]        ; 0040cdaa | double DOUBLE_00614318
-    FMUL double ptr [0x00614330]        ; 0040cdb0 | double DOUBLE_00614330
+    FADD double ptr [0x00614318]        ; 0040cdaa | DOUBLE_00614318
+    FMUL double ptr [0x00614330]        ; 0040cdb0 | DOUBLE_00614330
     SUB ESP,0x8                         ; 0040cdb6
     FSTP double ptr [ESP]               ; 0040cdb9
-    CALL crt_math.c_floor_FUN_005feb90  ; 0040cdbc | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 0040cdbc
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x10],EAX      ; 0040cdc1
     MOV dword ptr [ESP + 0x14],EDX      ; 0040cdc5
     FLD double ptr [ESP + 0x10]         ; 0040cdc9
     FLD1                                ; 0040cdcd
     FADDP                               ; 0040cdcf
-    FMUL double ptr [0x00614338]        ; 0040cdd1 | double DOUBLE_00614338
+    FMUL double ptr [0x00614338]        ; 0040cdd1 | DOUBLE_00614338
     ADD ESP,0x8                         ; 0040cdd7
     FADD double ptr [ESP]               ; 0040cdda
     FSTP float ptr [ESP + 0x10]         ; 0040cddd
-    JMP 0x0040cd9f                      ; 0040cde1 | LAB_0040cd9f
-        ;   XREF to: 0040cd9f (UNCONDITIONAL_JUMP)
+    JMP 0x0040cd9f                      ; 0040cde1
+        ;   XREF to: 0040cd9f (UNCONDITIONAL_JUMP)  ; LAB_0040cd9f
     FLD double ptr [ESP]                ; 0040cde3
         ;   Label: LAB_0040cde3
-    FADD double ptr [0x00614310]        ; 0040cde6 | double DOUBLE_00614310
-    FMUL double ptr [0x00614320]        ; 0040cdec | double DOUBLE_00614320
+    FADD double ptr [0x00614310]        ; 0040cde6 | DOUBLE_00614310
+    FMUL double ptr [0x00614320]        ; 0040cdec | DOUBLE_00614320
     SUB ESP,0x8                         ; 0040cdf2
     FSTP double ptr [ESP]               ; 0040cdf5
-    CALL crt_math.c_floor_FUN_005feb90  ; 0040cdf8 | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 0040cdf8
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x10],EAX      ; 0040cdfd
     MOV dword ptr [ESP + 0x14],EDX      ; 0040ce01
     FLD double ptr [ESP + 0x10]         ; 0040ce05
     FLD1                                ; 0040ce09
     FADDP                               ; 0040ce0b
-    FMUL double ptr [0x00614328]        ; 0040ce0d | double DOUBLE_00614328
+    FMUL double ptr [0x00614328]        ; 0040ce0d | DOUBLE_00614328
     ADD ESP,0x8                         ; 0040ce13
     FADD double ptr [ESP]               ; 0040ce16
     FSTP float ptr [ESP + 0x10]         ; 0040ce19

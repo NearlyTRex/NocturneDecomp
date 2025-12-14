@@ -19,13 +19,13 @@ section .text
     PUSH EDI                            ; 0054c661
     MOV EDI,dword ptr [ESP + 0xc]       ; 0054c662
     CMP byte ptr [EDI + 0x8],0x0        ; 0054c666
-    JNZ 0x0054c693                      ; 0054c66a | LAB_0054c693
-        ;   XREF to: 0054c693 (CONDITIONAL_JUMP)
+    JNZ 0x0054c693                      ; 0054c66a
+        ;   XREF to: 0054c693 (CONDITIONAL_JUMP)  ; LAB_0054c693
     MOV EDX,dword ptr [EDI]             ; 0054c66c
     XOR EBX,EBX                         ; 0054c66e
     TEST EDX,EDX                        ; 0054c670
-    JLE 0x0054c690                      ; 0054c672 | LAB_0054c690
-        ;   XREF to: 0054c690 (CONDITIONAL_JUMP)
+    JLE 0x0054c690                      ; 0054c672
+        ;   XREF to: 0054c690 (CONDITIONAL_JUMP)  ; LAB_0054c690
     PUSH ESI                            ; 0054c674
     XOR ESI,ESI                         ; 0054c675
     MOV EAX,dword ptr [EDI + 0x4]       ; 0054c677
@@ -33,14 +33,14 @@ section .text
     ADD EAX,ESI                         ; 0054c67a
     PUSH EAX                            ; 0054c67c
     INC EBX                             ; 0054c67d
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0 ; 0054c67e | void cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0(CPackedBitmap * this_ptr)
-        ;   XREF to: 0054b4a0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0 ; 0054c67e
+        ;   XREF to: 0054b4a0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0(CPackedBitmap * this_ptr)
     ADD ESI,0x24                        ; 0054c683
     MOV ECX,dword ptr [EDI]             ; 0054c686
     ADD ESP,0x4                         ; 0054c688
     CMP EBX,ECX                         ; 0054c68b
-    JL 0x0054c677                       ; 0054c68d | LAB_0054c677
-        ;   XREF to: 0054c677 (CONDITIONAL_JUMP)
+    JL 0x0054c677                       ; 0054c68d
+        ;   XREF to: 0054c677 (CONDITIONAL_JUMP)  ; LAB_0054c677
     POP ESI                             ; 0054c68f
     POP EDI                             ; 0054c690
         ;   Label: LAB_0054c690
@@ -48,8 +48,8 @@ section .text
     RET                                 ; 0054c692
     PUSH EDI                            ; 0054c693
         ;   Label: LAB_0054c693
-    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_0054c710 ; 0054c694 | void cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_0054c710(CPackedBitmapSet * this_ptr)
-        ;   XREF to: 0054c710 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_0054c710 ; 0054c694
+        ;   XREF to: 0054c710 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_0054c710(CPackedBitmapSet * this_ptr)
     ADD ESP,0x4                         ; 0054c699
     POP EDI                             ; 0054c69c
     POP EBX                             ; 0054c69d

@@ -29,8 +29,8 @@ section .text
     CALL dword ptr [EAX + 0x4]          ; 005d2dec
     ADD ESP,0x4                         ; 005d2def
     TEST EAX,EAX                        ; 005d2df2
-    JZ 0x005d2e35                       ; 005d2df4 | LAB_005d2e35
-        ;   XREF to: 005d2e35 (CONDITIONAL_JUMP)
+    JZ 0x005d2e35                       ; 005d2df4
+        ;   XREF to: 005d2e35 (CONDITIONAL_JUMP)  ; LAB_005d2e35
     MOV EAX,dword ptr [EBP + 0x14]      ; 005d2df6
     XOR ECX,ECX                         ; 005d2df9
     MOV EDX,dword ptr [EBP + 0x14]      ; 005d2dfb
@@ -38,15 +38,15 @@ section .text
     MOV ESI,dword ptr [EAX]             ; 005d2e05
     MOV EDX,dword ptr [EDX + 0x4]       ; 005d2e07
     TEST ESI,ESI                        ; 005d2e0a
-    JBE 0x005d2e35                      ; 005d2e0c | LAB_005d2e35
-        ;   XREF to: 005d2e35 (CONDITIONAL_JUMP)
+    JBE 0x005d2e35                      ; 005d2e0c
+        ;   XREF to: 005d2e35 (CONDITIONAL_JUMP)  ; LAB_005d2e35
     MOV EDI,dword ptr [EBP + 0x18]      ; 005d2e0e
         ;   Label: LAB_005d2e0e
     MOV EAX,dword ptr [EDX + 0x34]      ; 005d2e11
     AND EAX,EDI                         ; 005d2e14
     CMP EAX,EDI                         ; 005d2e16
-    JZ 0x005d2e3c                       ; 005d2e18 | LAB_005d2e3c
-        ;   XREF to: 005d2e3c (CONDITIONAL_JUMP)
+    JZ 0x005d2e3c                       ; 005d2e18
+        ;   XREF to: 005d2e3c (CONDITIONAL_JUMP)  ; LAB_005d2e3c
     MOV EDI,dword ptr [ESP + 0x90]      ; 005d2e1a
         ;   Label: LAB_005d2e1a
     MOV ECX,dword ptr [EBP + 0x14]      ; 005d2e21
@@ -55,8 +55,8 @@ section .text
     MOV ESI,dword ptr [ECX]             ; 005d2e28
     MOV dword ptr [ESP + 0x90],EDI      ; 005d2e2a
     CMP EDI,ESI                         ; 005d2e31
-    JC 0x005d2e0e                       ; 005d2e33 | LAB_005d2e0e
-        ;   XREF to: 005d2e0e (CONDITIONAL_JUMP)
+    JC 0x005d2e0e                       ; 005d2e33
+        ;   XREF to: 005d2e0e (CONDITIONAL_JUMP)  ; LAB_005d2e0e
     MOV ESP,EBP                         ; 005d2e35
         ;   Label: LAB_005d2e35
     POP EBP                             ; 005d2e37
@@ -150,6 +150,6 @@ section .text
     MOV dword ptr [EDX + 0x10],EAX      ; 005d2f3c
     MOV EAX,dword ptr [ESP + 0x2c]      ; 005d2f3f
     MOV dword ptr [EDX + 0x14],EAX      ; 005d2f43
-    JMP 0x005d2e1a                      ; 005d2f46 | LAB_005d2e1a
-        ;   XREF to: 005d2e1a (UNCONDITIONAL_JUMP)
+    JMP 0x005d2e1a                      ; 005d2f46
+        ;   XREF to: 005d2e1a (UNCONDITIONAL_JUMP)  ; LAB_005d2e1a
 

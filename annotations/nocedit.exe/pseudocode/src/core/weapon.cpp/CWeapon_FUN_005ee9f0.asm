@@ -33,30 +33,30 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 005ee9f6
     PUSH ESI                            ; 005ee9fa
     PUSH EBX                            ; 005ee9fb
-    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 005ee9fc | void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
-        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 005ee9fc
+        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 005eea01
     PUSH 0x0                            ; 005eea04
     LEA EAX,[EBX + 0x158]               ; 005eea06
     PUSH EAX                            ; 005eea0c
-    PUSH 0x657b31                       ; 005eea0d | = "Model file (.kfm)" | s_Model_file_kfm_00657b31 = Model file (.kfm)
+    PUSH 0x657b31                       ; 005eea0d | = "Model file (.kfm)"
     PUSH ESI                            ; 005eea12
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 005eea13 | void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 005eea13
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 005eea18
     LEA EAX,[EBX + 0x2d4]               ; 005eea1b
     PUSH EAX                            ; 005eea21
-    PUSH 0x6848b4                       ; 005eea22 | void * PTR_s_Lying_Around_006848b4
+    PUSH 0x6848b4                       ; 005eea22 | PTR_s_Lying_Around_006848b4
     PUSH 0x4                            ; 005eea27
-    PUSH 0x657b6d                       ; 005eea29 | = "Weapon state" | s_Weapon_state_00657b6d = Weapon state
+    PUSH 0x657b6d                       ; 005eea29 | = "Weapon state"
     PUSH ESI                            ; 005eea2e
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e640 ; 005eea2f | void core_actor.cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e640 ; 005eea2f
+        ;   XREF to: 0040e640 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e640(CActorPropertyList * this_ptr)
     MOV EDX,dword ptr [EBX + 0x2d4]     ; 005eea34
     ADD ESP,0x14                        ; 005eea3a
     TEST EDX,EDX                        ; 005eea3d
-    JZ 0x005eea44                       ; 005eea3f | LAB_005eea44
-        ;   XREF to: 005eea44 (CONDITIONAL_JUMP)
+    JZ 0x005eea44                       ; 005eea3f
+        ;   XREF to: 005eea44 (CONDITIONAL_JUMP)  ; LAB_005eea44
     POP ESI                             ; 005eea41
     POP EBX                             ; 005eea42
     RET                                 ; 005eea43
@@ -64,10 +64,10 @@ section .text
         ;   Label: LAB_005eea44
     ADD EBX,0x570                       ; 005eea45
     PUSH EBX                            ; 005eea4b
-    PUSH 0x657b7a                       ; 005eea4c | = "Sim timer" | s_Sim_timer_00657b7a = Sim timer
+    PUSH 0x657b7a                       ; 005eea4c | = "Sim timer"
     PUSH ESI                            ; 005eea51
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 005eea52 | void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 005eea52
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 005eea57
     POP ESI                             ; 005eea5a
     POP EBX                             ; 005eea5b

@@ -24,9 +24,9 @@ section .text
 
     PUSH EBP                            ; 005b7d20
         ;   Label: wincore_windll.cpp_restoreZBuffer_FUN_005b7d20
-    CMP dword ptr [0x02d03e94],0x0      ; 005b7d21 | int g_UseExternalRenderer
-    JNZ 0x005b7d2e                      ; 005b7d28 | LAB_005b7d2e
-        ;   XREF to: 005b7d2e (CONDITIONAL_JUMP)
+    CMP dword ptr [0x02d03e94],0x0      ; 005b7d21 | g_UseExternalRenderer
+    JNZ 0x005b7d2e                      ; 005b7d28
+        ;   XREF to: 005b7d2e (CONDITIONAL_JUMP)  ; LAB_005b7d2e
     XOR EAX,EAX                         ; 005b7d2a
     POP EBP                             ; 005b7d2c
     RET                                 ; 005b7d2d
@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 005b7d44
     MOV EBP,dword ptr [ESP + 0x24]      ; 005b7d45
     PUSH EBP                            ; 005b7d49
-    CALL dword ptr [0x03f6b910]         ; 005b7d4a | APIDLL_restoreZBuffer * g_APIDLL_restoreZBuffer
+    CALL dword ptr [0x03f6b910]         ; 005b7d4a | g_APIDLL_restoreZBuffer
     ADD ESP,0x14                        ; 005b7d50
     POP EBX                             ; 005b7d53
     POP ESI                             ; 005b7d54

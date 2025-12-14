@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 17, 
-    "assembly_lines": 12, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_box.cpp_CBox_processPhysics_FUN_0041e350", 
-      "addr": "0041e350"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CGameInstance.delta_time_float", 
-      "addr": "02d81d00", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c0210", 
-    "signature": "void core_fire.cpp_CStake_process_FUN_004c0210(CStake * this_ptr)", 
-    "address_range": [
-      [
-        "004c0210", 
-        "004c0231"
-      ]
-    ], 
-    "name": "core_fire.cpp_CStake_process_FUN_004c0210"
-  }, 
-  "stack_frame": {
-    "local_size": 8, 
-    "variables": [
-      {
-        "offset": -4, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CStake *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 12,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
   "cross_references": [
     {
-      "from_addr": "004c6f57", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0", 
-      "addr": "004c6ec0"
+      "addr": "004c6ec0",
+      "from_addr": "004c6f57",
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004c0210",
+    "address_range": [
+      [
+        "004c0210",
+        "004c0231"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CStake_process_FUN_004c0210",
+    "signature": "void core_fire.cpp_CStake_process_FUN_004c0210(CStake * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041e350",
+      "name": "core_box.cpp_CBox_processPhysics_FUN_0041e350"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02d81d00",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStake *"
+      }
+    ]
+  },
+  "suspects": []
 }

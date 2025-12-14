@@ -20,21 +20,21 @@ section .text
     MOV EDX,dword ptr [ESI]             ; 005d328b
     XOR EBX,EBX                         ; 005d328d
     TEST EDX,EDX                        ; 005d328f
-    JBE 0x005d32a8                      ; 005d3291 | LAB_005d32a8
-        ;   XREF to: 005d32a8 (CONDITIONAL_JUMP)
+    JBE 0x005d32a8                      ; 005d3291
+        ;   XREF to: 005d32a8 (CONDITIONAL_JUMP)  ; LAB_005d32a8
     IMUL EDX,EBX,0x38                   ; 005d3293
         ;   Label: LAB_005d3293
     MOV EAX,dword ptr [ESI + 0x4]       ; 005d3296
     MOV EAX,dword ptr [EDX + EAX*0x1 + 0x34] ; 005d3299
     AND EAX,EDI                         ; 005d329d
     CMP EAX,EDI                         ; 005d329f
-    JZ 0x005d32b9                       ; 005d32a1 | LAB_005d32b9
-        ;   XREF to: 005d32b9 (CONDITIONAL_JUMP)
+    JZ 0x005d32b9                       ; 005d32a1
+        ;   XREF to: 005d32b9 (CONDITIONAL_JUMP)  ; LAB_005d32b9
     INC EBX                             ; 005d32a3
         ;   Label: LAB_005d32a3
     CMP EBX,dword ptr [ESI]             ; 005d32a4
-    JC 0x005d3293                       ; 005d32a6 | LAB_005d3293
-        ;   XREF to: 005d3293 (CONDITIONAL_JUMP)
+    JC 0x005d3293                       ; 005d32a6
+        ;   XREF to: 005d3293 (CONDITIONAL_JUMP)  ; LAB_005d3293
     PUSH ESI                            ; 005d32a8
         ;   Label: LAB_005d32a8
     MOV EAX,dword ptr [ESI + 0x18]      ; 005d32a9
@@ -52,17 +52,17 @@ section .text
     CALL dword ptr [EAX + 0x48]         ; 005d32be
     ADD ESP,0x8                         ; 005d32c1
     TEST EAX,EAX                        ; 005d32c4
-    JZ 0x005d32b5                       ; 005d32c6 | LAB_005d32b5
-        ;   XREF to: 005d32b5 (CONDITIONAL_JUMP)
+    JZ 0x005d32b5                       ; 005d32c6
+        ;   XREF to: 005d32b5 (CONDITIONAL_JUMP)  ; LAB_005d32b5
     PUSH EBX                            ; 005d32c8
     MOV EAX,dword ptr [ESI + 0x18]      ; 005d32c9
     PUSH ESI                            ; 005d32cc
     CALL dword ptr [EAX + 0x54]         ; 005d32cd
     ADD ESP,0x8                         ; 005d32d0
     TEST EAX,EAX                        ; 005d32d3
-    JZ 0x005d32b5                       ; 005d32d5 | LAB_005d32b5
-        ;   XREF to: 005d32b5 (CONDITIONAL_JUMP)
+    JZ 0x005d32b5                       ; 005d32d5
+        ;   XREF to: 005d32b5 (CONDITIONAL_JUMP)  ; LAB_005d32b5
     DEC EBX                             ; 005d32d7
-    JMP 0x005d32a3                      ; 005d32d8 | LAB_005d32a3
-        ;   XREF to: 005d32a3 (UNCONDITIONAL_JUMP)
+    JMP 0x005d32a3                      ; 005d32d8
+        ;   XREF to: 005d32a3 (UNCONDITIONAL_JUMP)  ; LAB_005d32a3
 

@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 58, 
-    "pseudocode_lines": 58, 
-    "cross_reference_count": 6, 
-    "global_count": 4, 
-    "total_lines": 256, 
-    "assembly_lines": 198, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_time.c_determine_dst_status_FUN_006079b4", 
-      "addr": "006079b4"
-    }, 
-    {
-      "name": "crt_time.c_gmtime_r_FUN_00607690", 
-      "addr": "00607690"
-    }, 
-    {
-      "name": "crt_time.c_is_leap_year_FUN_00607820", 
-      "addr": "00607820"
-    }, 
-    {
-      "name": "crt_time.c_tzset_FUN_006072f8", 
-      "addr": "006072f8"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "short", 
-      "name": "g_DaysInMonth_Normal", 
-      "addr": "00665f38", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "short", 
-      "name": "g_DaysInMonth_Leap", 
-      "addr": "00665f52", 
-      "value": "0x0"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_TimezoneOffset", 
-      "addr": "006851c8", 
-      "value": "0x4650"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_DaylightSavingOffset", 
-      "addr": "006851d0", 
-      "value": "0xe10"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00600f80", 
-    "signature": "time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)", 
-    "address_range": [
-      [
-        "00600f80", 
-        "00601132"
-      ]
-    ], 
-    "name": "crt_time.c_mktime_FUN_00600f80"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "tm *", 
-        "size": 4, 
-        "name": "timeptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 198,
+    "complexity_score": 58,
+    "cross_reference_count": 6,
+    "function_call_count": 4,
+    "global_count": 4,
+    "pseudocode_lines": 58,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 256
+  },
   "cross_references": [
     {
-      "from_addr": "0060c245", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0", 
-      "addr": "0060c1e0"
-    }, 
+      "addr": "0060c1e0",
+      "from_addr": "0060c245",
+      "name": "crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00609e59", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_time.c_filetime_to_time_t_FUN_00609da0", 
-      "addr": "00609da0"
-    }, 
+      "addr": "00609da0",
+      "from_addr": "00609e59",
+      "name": "crt_time.c_filetime_to_time_t_FUN_00609da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00600210", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_time.c_time_with_rounding_FUN_006001f0", 
-      "addr": "006001f0"
-    }, 
+      "addr": "006001f0",
+      "from_addr": "00600210",
+      "name": "crt_time.c_time_with_rounding_FUN_006001f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006078d9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_00607858", 
-      "addr": "00607858"
-    }, 
+      "addr": "00607858",
+      "from_addr": "006078d9",
+      "name": "crt_unknown.c_FUN_00607858",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00481f00", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0", 
-      "addr": "00481dc0"
-    }, 
+      "addr": "00481dc0",
+      "from_addr": "00481f00",
+      "name": "engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bd3ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190", 
-      "addr": "004bd190"
+      "addr": "004bd190",
+      "from_addr": "004bd3ab",
+      "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00600f80",
+    "address_range": [
+      [
+        "00600f80",
+        "00601132"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c_mktime_FUN_00600f80",
+    "signature": "time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "006079b4",
+      "name": "crt_time.c_determine_dst_status_FUN_006079b4"
+    },
+    {
+      "addr": "00607690",
+      "name": "crt_time.c_gmtime_r_FUN_00607690"
+    },
+    {
+      "addr": "00607820",
+      "name": "crt_time.c_is_leap_year_FUN_00607820"
+    },
+    {
+      "addr": "006072f8",
+      "name": "crt_time.c_tzset_FUN_006072f8"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00665f38",
+      "name": "g_DaysInMonth_Normal",
+      "type": "short",
+      "value": "0x0"
+    },
+    {
+      "addr": "00665f52",
+      "name": "g_DaysInMonth_Leap",
+      "type": "short",
+      "value": "0x0"
+    },
+    {
+      "addr": "006851c8",
+      "name": "g_TimezoneOffset",
+      "type": "int",
+      "value": "0x4650"
+    },
+    {
+      "addr": "006851d0",
+      "name": "g_DaylightSavingOffset",
+      "type": "int",
+      "value": "0xe10"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "timeptr",
+        "offset": 4,
+        "size": 4,
+        "type": "tm *"
+      }
+    ]
+  },
+  "suspects": []
 }

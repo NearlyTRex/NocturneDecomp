@@ -36,8 +36,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x4]       ; 0043f28e
     MOV dword ptr [ESP],EDX             ; 0043f291
     TEST EAX,EAX                        ; 0043f294
-    JGE 0x0043f283                      ; 0043f296 | LAB_0043f283
-        ;   XREF to: 0043f283 (CONDITIONAL_JUMP)
+    JGE 0x0043f283                      ; 0043f296
+        ;   XREF to: 0043f283 (CONDITIONAL_JUMP)  ; LAB_0043f283
     MOV EDX,EBX                         ; 0043f298
     MOV EAX,ESI                         ; 0043f29a
     SHL EDX,0x4                         ; 0043f29c
@@ -53,8 +53,8 @@ section .text
     MOV EBX,dword ptr [ECX + 0x10]      ; 0043f2b4
     MOV EDX,dword ptr [EDX + EBX*0x1 + 0x4] ; 0043f2b7
     TEST EDX,EDX                        ; 0043f2bb
-    JGE 0x0043f29c                      ; 0043f2bd | LAB_0043f29c
-        ;   XREF to: 0043f29c (CONDITIONAL_JUMP)
+    JGE 0x0043f29c                      ; 0043f2bd
+        ;   XREF to: 0043f29c (CONDITIONAL_JUMP)  ; LAB_0043f29c
     MOV EAX,dword ptr [ESP + 0x20]      ; 0043f2bf
     ADD dword ptr [EAX],ESI             ; 0043f2c3
     MOV EAX,dword ptr [ESP]             ; 0043f2c5

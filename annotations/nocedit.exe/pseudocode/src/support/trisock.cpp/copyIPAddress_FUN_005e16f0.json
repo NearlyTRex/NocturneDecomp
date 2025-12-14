@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 12, 
-    "assembly_lines": 7, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005e16f0", 
-    "signature": "uint * support_trisock.cpp_copyIPAddress_FUN_005e16f0(uint * dest_ip, uint * src_ip)", 
-    "address_range": [
-      [
-        "005e16f0", 
-        "005e16fe"
-      ]
-    ], 
-    "name": "support_trisock.cpp_copyIPAddress_FUN_005e16f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint *", 
-        "size": 4, 
-        "name": "dest_ip"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint *", 
-        "size": 4, 
-        "name": "src_ip"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 7,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 12
+  },
   "cross_references": [
     {
-      "from_addr": "005e198c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_trisock.cpp_convertSockAddr_FUN_005e1960", 
-      "addr": "005e1960"
+      "addr": "005e1960",
+      "from_addr": "005e198c",
+      "name": "support_trisock.cpp_convertSockAddr_FUN_005e1960",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005e16f0",
+    "address_range": [
+      [
+        "005e16f0",
+        "005e16fe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_copyIPAddress_FUN_005e16f0",
+    "signature": "uint * support_trisock.cpp_copyIPAddress_FUN_005e16f0(uint * dest_ip, uint * src_ip)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest_ip",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "src_ip",
+        "offset": 8,
+        "size": 4,
+        "type": "uint *"
+      }
+    ]
+  },
+  "suspects": []
 }

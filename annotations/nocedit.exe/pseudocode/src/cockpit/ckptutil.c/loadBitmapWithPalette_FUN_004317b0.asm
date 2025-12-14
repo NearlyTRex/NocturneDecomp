@@ -33,15 +33,15 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 004317bb
     IMUL ESI,dword ptr [ESP + 0x18]     ; 004317bf
     TEST EDI,EDI                        ; 004317c4
-    JZ 0x00431811                       ; 004317c6 | LAB_00431811
-        ;   XREF to: 00431811 (CONDITIONAL_JUMP)
+    JZ 0x00431811                       ; 004317c6
+        ;   XREF to: 00431811 (CONDITIONAL_JUMP)  ; LAB_00431811
     PUSH EBX                            ; 004317c8
         ;   Label: LAB_004317c8
     PUSH ESI                            ; 004317c9
     PUSH EDI                            ; 004317ca
     PUSH EBP                            ; 004317cb
-    CALL cockpit_ckptutil.c_readBitmapFile_FUN_00431870 ; 004317cc | void * cockpit_ckptutil.c_readBitmapFile_FUN_00431870(char * filename, void * buffer, int size)
-        ;   XREF to: 00431870 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_readBitmapFile_FUN_00431870 ; 004317cc
+        ;   XREF to: 00431870 (UNCONDITIONAL_CALL)  ; void * cockpit_ckptutil.c_readBitmapFile_FUN_00431870(char * filename, void * buffer, int size)
     ADD ESP,0xc                         ; 004317d1
     MOV ECX,dword ptr [ESP + 0x28]      ; 004317d4
     PUSH ECX                            ; 004317d8
@@ -50,13 +50,13 @@ section .text
     PUSH EBP                            ; 004317db
     MOV EBX,EAX                         ; 004317dc
     MOV EDI,EAX                         ; 004317de
-    CALL cockpit_ckptutil.c_applyActPalette_FUN_004319b0 ; 004317e0 | void cockpit_ckptutil.c_applyActPalette_FUN_004319b0(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)
-        ;   XREF to: 004319b0 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_applyActPalette_FUN_004319b0 ; 004317e0
+        ;   XREF to: 004319b0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_applyActPalette_FUN_004319b0(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)
     ADD ESP,0x10                        ; 004317e5
     MOV ESI,dword ptr [ESP + 0x20]      ; 004317e8
     TEST ESI,ESI                        ; 004317ec
-    JZ 0x0043180a                       ; 004317ee | LAB_0043180a
-        ;   XREF to: 0043180a (CONDITIONAL_JUMP)
+    JZ 0x0043180a                       ; 004317ee
+        ;   XREF to: 0043180a (CONDITIONAL_JUMP)  ; LAB_0043180a
     MOV EAX,dword ptr [ESP + 0x28]      ; 004317f0
     PUSH EAX                            ; 004317f4
     MOV EDX,dword ptr [ESP + 0x20]      ; 004317f5
@@ -66,8 +66,8 @@ section .text
     PUSH ESI                            ; 004317ff
     PUSH EBP                            ; 00431800
     PUSH EBX                            ; 00431801
-    CALL cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730 ; 00431802 | void cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730(void * bitmap_buffer, char * filename, int width, int height, ...)
-        ;   XREF to: 00435730 (UNCONDITIONAL_CALL)
+    CALL cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730 ; 00431802
+        ;   XREF to: 00435730 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730(void * bitmap_buffer, char * filename, int width, int height, ...)
     ADD ESP,0x18                        ; 00431807
     MOV EAX,EDI                         ; 0043180a
         ;   Label: LAB_0043180a
@@ -78,15 +78,15 @@ section .text
     RET                                 ; 00431810
     PUSH 0x99                           ; 00431811
         ;   Label: LAB_00431811
-    PUSH 0x61796b                       ; 00431816 | = "..\\cockpit\\ckptutil.c" | s_cockpit_ckptutil_c_0061796b = ..\cockpit\ckptutil.c
+    PUSH 0x61796b                       ; 00431816 | = "..\\cockpit\\ckptutil.c"
     PUSH ESI                            ; 0043181b
-    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 0043181c | void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
-        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 0043181c
+        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00431821
     MOV EDI,EAX                         ; 00431824
     TEST EAX,EAX                        ; 00431826
-    JNZ 0x004317c8                      ; 00431828 | LAB_004317c8
-        ;   XREF to: 004317c8 (CONDITIONAL_JUMP)
+    JNZ 0x004317c8                      ; 00431828
+        ;   XREF to: 004317c8 (CONDITIONAL_JUMP)  ; LAB_004317c8
     POP EBP                             ; 0043182a
     POP EDI                             ; 0043182b
     POP ESI                             ; 0043182c

@@ -19,10 +19,10 @@
 
 section .text
 
-    CMP dword ptr [0x03f6b978],0x0      ; 005b7d60 | int g_ExternalRendererActive
+    CMP dword ptr [0x03f6b978],0x0      ; 005b7d60 | g_ExternalRendererActive
         ;   Label: wincore_windll.cpp_getVideoMemory_FUN_005b7d60
-    JNZ 0x005b7d6c                      ; 005b7d67 | LAB_005b7d6c
-        ;   XREF to: 005b7d6c (CONDITIONAL_JUMP)
+    JNZ 0x005b7d6c                      ; 005b7d67
+        ;   XREF to: 005b7d6c (CONDITIONAL_JUMP)  ; LAB_005b7d6c
     XOR EAX,EAX                         ; 005b7d69
     RET                                 ; 005b7d6b
     PUSH ESI                            ; 005b7d6c
@@ -34,7 +34,7 @@ section .text
     PUSH EBX                            ; 005b7d77
     MOV ESI,dword ptr [ESP + 0x14]      ; 005b7d78
     PUSH ESI                            ; 005b7d7c
-    CALL dword ptr [0x03f6b914]         ; 005b7d7d | APIDLL_getVideoMemory * g_APIDLL_getVideoMemory
+    CALL dword ptr [0x03f6b914]         ; 005b7d7d | g_APIDLL_getVideoMemory
     ADD ESP,0xc                         ; 005b7d83
     POP EBX                             ; 005b7d86
     POP ESI                             ; 005b7d87

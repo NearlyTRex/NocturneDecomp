@@ -1,165 +1,165 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 181, 
-    "pseudocode_lines": 31, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 85, 
-    "assembly_lines": 54, 
-    "suspect_count": 12, 
+    "assembly_lines": 54,
+    "complexity_score": 181,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 0,
+    "pseudocode_lines": 31,
+    "suspect_count": 12,
     "suspect_types": [
-      "concat_artifact", 
-      "unaffected_reg", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "concat_artifact",
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_locale.c_mblen_FUN_00605a40", 
-      "addr": "00605a40"
-    }, 
-    {
-      "name": "crt_locale.c_toupper_multibyte_FUN_0060f300", 
-      "addr": "0060f300"
-    }, 
-    {
-      "name": "crt_locale.c_wchar_to_bytes_FUN_00605a20", 
-      "addr": "00605a20"
-    }, 
-    {
-      "name": "crt_mbstring.c_copyMbChar_FUN_0060e590", 
-      "addr": "0060e590"
-    }, 
-    {
-      "name": "crt_string.c_mbstring_termination_check_FUN_0060b630", 
-      "addr": "0060b630"
-    }, 
-    {
-      "name": "crt_string.c_mbtowc_next_FUN_00605a70", 
-      "addr": "00605a70"
-    }, 
-    {
-      "name": "crt_string.c_mbtowc_peek_FUN_006059e0", 
-      "addr": "006059e0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 14, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 23, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2),unaff_EBX);"
-    }, 
-    {
-      "line": 23, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2),unaff_EBX);"
-    }, 
-    {
-      "line": 24, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_locale_c_wchar_to_bytes_FUN_00605a20(wVar2,&stack0x00000000);"
-    }, 
-    {
-      "line": 25, 
-      "match": "&stack0x00000004", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar3 = crt_locale_c_mblen_FUN_00605a40(&stack0x00000004);"
-    }, 
-    {
-      "line": 26, 
-      "match": "&stack0x00000008", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "param_5 = &stack0x00000008;"
-    }, 
-    {
-      "line": 27, 
-      "match": "&stack0x00000008", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(byte *)((int)&stack0x00000008 + iVar3) = 0;"
-    }, 
-    {
-      "line": 27, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)&stack0x00000008 + iVar3) = 0;"
-    }, 
-    {
-      "line": 28, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = (char *)0x60e61f;"
-    }, 
-    {
-      "line": 29, 
-      "match": "&stack0x00000008", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_mbstring_c_copyMbChar_FUN_0060e590(str,&stack0x00000008);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0060e5d0", 
-    "signature": "undefined crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0()", 
-    "address_range": [
-      [
-        "0060e5d0", 
-        "0060e636"
-      ]
-    ], 
-    "name": "crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 85
+  },
   "cross_references": [
     {
-      "from_addr": "0060c7e3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_compare_mb_chars_ci_FUN_0060c790", 
-      "addr": "0060c790"
+      "addr": "0060c790",
+      "from_addr": "0060c7e3",
+      "name": "crt_string.c_compare_mb_chars_ci_FUN_0060c790",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060e5d0",
+    "address_range": [
+      [
+        "0060e5d0",
+        "0060e636"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0",
+    "signature": "undefined crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00605a40",
+      "name": "crt_locale.c_mblen_FUN_00605a40"
+    },
+    {
+      "addr": "0060f300",
+      "name": "crt_locale.c_toupper_multibyte_FUN_0060f300"
+    },
+    {
+      "addr": "00605a20",
+      "name": "crt_locale.c_wchar_to_bytes_FUN_00605a20"
+    },
+    {
+      "addr": "0060e590",
+      "name": "crt_mbstring.c_copyMbChar_FUN_0060e590"
+    },
+    {
+      "addr": "0060b630",
+      "name": "crt_string.c_mbstring_termination_check_FUN_0060b630"
+    },
+    {
+      "addr": "00605a70",
+      "name": "crt_string.c_mbtowc_next_FUN_00605a70"
+    },
+    {
+      "addr": "006059e0",
+      "name": "crt_string.c_mbtowc_peek_FUN_006059e0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 14,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 14,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBX",
+      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2),unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 23,
+      "match": "CONCAT22",
+      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2),unaff_EBX);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0x00000000",
+      "text": "crt_locale_c_wchar_to_bytes_FUN_00605a20(wVar2,&stack0x00000000);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0x00000004",
+      "text": "iVar3 = crt_locale_c_mblen_FUN_00605a40(&stack0x00000004);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 26,
+      "match": "&stack0x00000008",
+      "text": "param_5 = &stack0x00000008;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0x00000008",
+      "text": "*(byte *)((int)&stack0x00000008 + iVar3) = 0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)&stack0x00000008 + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EBX",
+      "text": "unaff_EBX = (char *)0x60e61f;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0x00000008",
+      "text": "crt_mbstring_c_copyMbChar_FUN_0060e590(str,&stack0x00000008);",
+      "type": "stack_ref"
     }
   ]
 }

@@ -1,106 +1,106 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 8, 
-    "global_count": 1, 
-    "total_lines": 34, 
-    "assembly_lines": 21, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "LeaveCriticalSection", 
-      "addr": "EXTERNAL:00000084"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "LeaveCriticalSection*", 
-      "name": "PTR_LeaveCriticalSection_006115e4", 
-      "addr": "006115e4", 
-      "value": "00212044"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060a0c4", 
-    "signature": "void crt_sync.c_leave_reentrant_critical_section_FUN_0060a0c4(ReentrantCriticalSection * rcs)", 
-    "address_range": [
-      [
-        "0060a0c4", 
-        "0060a0ea"
-      ]
-    ], 
-    "name": "crt_sync.c_leave_reentrant_critical_section_FUN_0060a0c4"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ReentrantCriticalSection *", 
-        "size": 4, 
-        "name": "rcs"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 21,
+    "complexity_score": 13,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 34
+  },
   "cross_references": [
     {
-      "from_addr": "0060a0a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_sync.c_enter_reentrant_critical_section_FUN_0060a060", 
-      "addr": "0060a060"
-    }, 
+      "addr": "0060a060",
+      "from_addr": "0060a0a5",
+      "name": "crt_sync.c_enter_reentrant_critical_section_FUN_0060a060",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a101", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_sync.c_leave_global_critical_section_FUN_0060a0fc", 
-      "addr": "0060a0fc"
-    }, 
+      "addr": "0060a0fc",
+      "from_addr": "0060a101",
+      "name": "crt_sync.c_leave_global_critical_section_FUN_0060a0fc",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a1d1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_sync.c_leave_global_io_critical_section_FUN_0060a1cc", 
-      "addr": "0060a1cc"
-    }, 
+      "addr": "0060a1cc",
+      "from_addr": "0060a1d1",
+      "name": "crt_sync.c_leave_global_io_critical_section_FUN_0060a1cc",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a191", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_sync.c_leave_global_memory_critical_section_FUN_0060a18c", 
-      "addr": "0060a18c"
-    }, 
+      "addr": "0060a18c",
+      "from_addr": "0060a191",
+      "name": "crt_sync.c_leave_global_memory_critical_section_FUN_0060a18c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a1f1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_sync.c_leave_global_runtime_critical_section_FUN_0060a1ec", 
-      "addr": "0060a1ec"
-    }, 
+      "addr": "0060a1ec",
+      "from_addr": "0060a1f1",
+      "name": "crt_sync.c_leave_global_runtime_critical_section_FUN_0060a1ec",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a1b1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_sync.c_leave_global_thread_critical_section_FUN_0060a1ac", 
-      "addr": "0060a1ac"
-    }, 
+      "addr": "0060a1ac",
+      "from_addr": "0060a1b1",
+      "name": "crt_sync.c_leave_global_thread_critical_section_FUN_0060a1ac",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a40e", 
-      "type": "PARAM", 
-      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4", 
-      "addr": "0060a3b4"
-    }, 
+      "addr": "0060a3b4",
+      "from_addr": "0060a40e",
+      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4",
+      "type": "PARAM"
+    },
     {
-      "from_addr": "0060a138", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_tls.c_leave_critical_section_by_index_FUN_0060a128", 
-      "addr": "0060a128"
+      "addr": "0060a128",
+      "from_addr": "0060a138",
+      "name": "crt_tls.c_leave_critical_section_by_index_FUN_0060a128",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060a0c4",
+    "address_range": [
+      [
+        "0060a0c4",
+        "0060a0ea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_sync.c_leave_reentrant_critical_section_FUN_0060a0c4",
+    "signature": "void crt_sync.c_leave_reentrant_critical_section_FUN_0060a0c4(ReentrantCriticalSection * rcs)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000084",
+      "name": "LeaveCriticalSection"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006115e4",
+      "name": "PTR_LeaveCriticalSection_006115e4",
+      "type": "LeaveCriticalSection*",
+      "value": "00212044"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "rcs",
+        "offset": 4,
+        "size": 4,
+        "type": "ReentrantCriticalSection *"
+      }
+    ]
+  },
+  "suspects": []
 }

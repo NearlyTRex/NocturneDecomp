@@ -25,17 +25,17 @@ section .text
     PUSH ESI                            ; 004fffa0
         ;   Label: core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0
     MOV EAX,dword ptr [ESP + 0x8]       ; 004fffa1
-    MOV EDX,dword ptr [0x02db87d0]      ; 004fffa5 | int g_LocalHeroIndex
+    MOV EDX,dword ptr [0x02db87d0]      ; 004fffa5 | g_LocalHeroIndex
     MOV ECX,dword ptr [EAX + 0x4]       ; 004fffab
-    CMP ECX,dword ptr [EDX*0x4 + 0x2db87c0] ; 004fffae | CHero *[4] g_HeroActors
-    JNZ 0x004fffd3                      ; 004fffb5 | LAB_004fffd3
-        ;   XREF to: 004fffd3 (CONDITIONAL_JUMP)
+    CMP ECX,dword ptr [EDX*0x4 + 0x2db87c0] ; 004fffae | g_HeroActors
+    JNZ 0x004fffd3                      ; 004fffb5
+        ;   XREF to: 004fffd3 (CONDITIONAL_JUMP)  ; LAB_004fffd3
     MOV dword ptr [EAX + 0x33c],0x0     ; 004fffb7
     MOV ESI,dword ptr [ESP + 0xc]       ; 004fffc1
     MOV dword ptr [EAX + 0x338],0x40a00000 ; 004fffc5
     TEST ESI,ESI                        ; 004fffcf
-    JNZ 0x004fffd5                      ; 004fffd1 | LAB_004fffd5
-        ;   XREF to: 004fffd5 (CONDITIONAL_JUMP)
+    JNZ 0x004fffd5                      ; 004fffd1
+        ;   XREF to: 004fffd5 (CONDITIONAL_JUMP)  ; LAB_004fffd5
     POP ESI                             ; 004fffd3
         ;   Label: LAB_004fffd3
     RET                                 ; 004fffd4

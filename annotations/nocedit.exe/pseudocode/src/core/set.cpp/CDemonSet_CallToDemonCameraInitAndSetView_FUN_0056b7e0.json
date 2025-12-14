@@ -1,116 +1,116 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 64, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 4, 
-    "global_count": 1, 
-    "total_lines": 24, 
-    "assembly_lines": 15, 
-    "suspect_count": 5, 
+    "assembly_lines": 15,
+    "complexity_score": 64,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_init_FUN_0044c190", 
-      "addr": "0044c190"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
-      "addr": "0056ae50"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonCamera", 
-      "name": "g_CDemonCameraInstance", 
-      "addr": "032758e4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CDemonSet *in_stack_00000008;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,in_stack_00000010);"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008,in_stack_00000008->selected_camera_index);"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008,in_stack_00000008->selected_camera_index);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0056b7e0", 
-    "signature": "undefined core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0()", 
-    "address_range": [
-      [
-        "0056b7e0", 
-        "0056b806"
-      ]
-    ], 
-    "name": "core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 24
+  },
   "cross_references": [
     {
-      "from_addr": "004ddfdd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
-      "addr": "004ddaf0"
-    }, 
+      "addr": "004ddaf0",
+      "from_addr": "004ddfdd",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004dd0a7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_SaveRelated_FUN_004dcee0", 
-      "addr": "004dcee0"
-    }, 
+      "addr": "004dcee0",
+      "from_addr": "004dd0a7",
+      "name": "core_game.cpp_SaveRelated_FUN_004dcee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005390a9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060", 
-      "addr": "00539060"
-    }, 
+      "addr": "00539060",
+      "from_addr": "005390a9",
+      "name": "core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057b302", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
-      "addr": "0057ae50"
+      "addr": "0057ae50",
+      "from_addr": "0057b302",
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056b7e0",
+    "address_range": [
+      [
+        "0056b7e0",
+        "0056b806"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0",
+    "signature": "undefined core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0()"
+  },
+  "function_calls": [
+    {
+      "addr": "0044c190",
+      "name": "core_dcamera.cpp_CDemonCamera_init_FUN_0044c190"
+    },
+    {
+      "addr": "0056ae50",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "032758e4",
+      "name": "g_CDemonCameraInstance",
+      "type": "CDemonCamera",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "CDemonSet *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000010",
+      "text": "core_dcamera_cpp_CDemonCamera_init_FUN_0044c190(&g_CDemonCameraInstance,in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,in_stack_00000008->selected_camera_index);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,in_stack_00000008->selected_camera_index);",
+      "type": "stack_param"
     }
   ]
 }

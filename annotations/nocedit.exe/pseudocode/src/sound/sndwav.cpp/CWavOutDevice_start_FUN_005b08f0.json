@@ -1,166 +1,166 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 105, 
-    "pseudocode_lines": 35, 
-    "cross_reference_count": 0, 
-    "global_count": 9, 
-    "total_lines": 112, 
-    "assembly_lines": 77, 
-    "suspect_count": 6, 
+    "assembly_lines": 77,
+    "complexity_score": 105,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 35,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00", 
-      "addr": "005abc00"
-    }, 
-    {
-      "name": "sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0", 
-      "addr": "005b06c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_00652387", 
-      "addr": "00652387", 
-      "value": "0.333333333333333"
-    }, 
-    {
-      "type": "LPWAVEHDR[8]", 
-      "name": "g_WaveOutHeaders", 
-      "addr": "03f6ad58", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f6ad5c", 
-      "addr": "03f6ad5c", 
-      "value": null
-    }, 
-    {
-      "type": "LPVOID[8]", 
-      "name": "g_WaveOutBuffers", 
-      "addr": "03f6ad98", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WaveOutBitsPerSample", 
-      "addr": "03f6adb8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WaveOutChannels", 
-      "addr": "03f6adbc", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WaveOutSampleRate", 
-      "addr": "03f6adc0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WaveOutBufferSize", 
-      "addr": "03f6adc4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WaveOutNumBuffers", 
-      "addr": "03f6adc8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CSoundDevice *in_stack_00000008;"
-    }, 
-    {
-      "line": 17, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_WaveOutBuffers + iVar3);"
-    }, 
-    {
-      "line": 18, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar3) + 0xc) = buffer_index;"
-    }, 
-    {
-      "line": 19, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar3) + 4) ="
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*in_stack_00000008->vtable->reset)(in_stack_00000008);"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*in_stack_00000008->vtable->reset)(in_stack_00000008);"
-    }
-  ], 
+    ],
+    "total_lines": 112
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005b08f0", 
-    "signature": "int sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0(CWavOutDevice * this_ptr)", 
+    "address": "005b08f0",
     "address_range": [
       [
-        "005b08f0", 
+        "005b08f0",
         "005b09b6"
       ]
-    ], 
-    "name": "sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0",
+    "signature": "int sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0(CWavOutDevice * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005abc00",
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00"
+    },
+    {
+      "addr": "005b06c0",
+      "name": "sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00652387",
+      "name": "DOUBLE_00652387",
+      "type": "double",
+      "value": "0.333333333333333"
+    },
+    {
+      "addr": "03f6ad58",
+      "name": "g_WaveOutHeaders",
+      "type": "LPWAVEHDR[8]",
+      "value": null
+    },
+    {
+      "addr": "03f6ad5c",
+      "name": "DAT_03f6ad5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6ad98",
+      "name": "g_WaveOutBuffers",
+      "type": "LPVOID[8]",
+      "value": null
+    },
+    {
+      "addr": "03f6adb8",
+      "name": "g_WaveOutBitsPerSample",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6adbc",
+      "name": "g_WaveOutChannels",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6adc0",
+      "name": "g_WaveOutSampleRate",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6adc4",
+      "name": "g_WaveOutBufferSize",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6adc8",
+      "name": "g_WaveOutNumBuffers",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 24, 
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWavOutDevice *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWavOutDevice *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "CSoundDevice *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_WaveOutBuffers + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar3) + 0xc) = buffer_index;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(int *)((int)",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar3) + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000008",
+      "text": "(*in_stack_00000008->vtable->reset)(in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000008",
+      "text": "(*in_stack_00000008->vtable->reset)(in_stack_00000008);",
+      "type": "stack_param"
+    }
+  ]
 }

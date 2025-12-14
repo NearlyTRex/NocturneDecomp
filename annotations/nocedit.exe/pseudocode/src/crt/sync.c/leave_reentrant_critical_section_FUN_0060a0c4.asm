@@ -32,17 +32,17 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 0060a0c6
     MOV EDX,dword ptr [EAX + 0xc]       ; 0060a0ca
     TEST EDX,EDX                        ; 0060a0cd
-    JBE 0x0060a0e8                      ; 0060a0cf | LAB_0060a0e8
-        ;   XREF to: 0060a0e8 (CONDITIONAL_JUMP)
+    JBE 0x0060a0e8                      ; 0060a0cf
+        ;   XREF to: 0060a0e8 (CONDITIONAL_JUMP)  ; LAB_0060a0e8
     LEA EBX,[EDX + -0x1]                ; 0060a0d1
     MOV dword ptr [EAX + 0xc],EBX       ; 0060a0d4
     TEST EBX,EBX                        ; 0060a0d7
-    JNZ 0x0060a0e8                      ; 0060a0d9 | LAB_0060a0e8
-        ;   XREF to: 0060a0e8 (CONDITIONAL_JUMP)
+    JNZ 0x0060a0e8                      ; 0060a0d9
+        ;   XREF to: 0060a0e8 (CONDITIONAL_JUMP)  ; LAB_0060a0e8
     MOV ESI,dword ptr [EAX]             ; 0060a0db
     PUSH ESI                            ; 0060a0dd
     MOV dword ptr [EAX + 0x8],EBX       ; 0060a0de
-    CALL dword ptr CS:[0x6115e4]        ; 0060a0e1 | LeaveCriticalSection * PTR_LeaveCriticalSection_006115e4
+    CALL dword ptr CS:[0x6115e4]        ; 0060a0e1 | PTR_LeaveCriticalSection_006115e4
     POP ESI                             ; 0060a0e8
         ;   Label: LAB_0060a0e8
     POP EBX                             ; 0060a0e9

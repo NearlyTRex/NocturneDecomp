@@ -1,216 +1,216 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 189, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 158, 
-    "assembly_lines": 119, 
-    "suspect_count": 13, 
+    "assembly_lines": 119,
+    "complexity_score": 189,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 39,
+    "suspect_count": 13,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderedTriangleCount", 
-      "addr": "030e56b8", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_drawPolygon2*", 
-      "name": "g_APIDLL_drawPolygon2", 
-      "addr": "03f6b8cc", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_drawPolyList2*", 
-      "name": "g_APIDLL_drawPolyList2", 
-      "addr": "03f6b8d4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000028;"
-    }, 
-    {
-      "line": 27, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_1c = (void *)((int)vertex_buffer + (uint)*puVar1 * 0x30);"
-    }, 
-    {
-      "line": 28, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_18 = (void *)((int)vertex_buffer + (uint)puVar1[1] * 0x30);"
-    }, 
-    {
-      "line": 29, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_14 = (void *)((int)vertex_buffer + (uint)puVar1[2] * 0x30);"
-    }, 
-    {
-      "line": 30, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_1c + 0x18) = (uint)puVar1[3] << 8;"
-    }, 
-    {
-      "line": 31, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_1c + 0x1c) = (uint)puVar1[6] << 8;"
-    }, 
-    {
-      "line": 32, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_18 + 0x18) = (uint)puVar1[4] << 8;"
-    }, 
-    {
-      "line": 33, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_18 + 0x1c) = (uint)puVar1[7] << 8;"
-    }, 
-    {
-      "line": 34, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_14 + 0x18) = (uint)puVar1[5] << 8;"
-    }, 
-    {
-      "line": 35, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_14 + 0x1c) = (uint)puVar1[8] << 8;"
-    }, 
-    {
-      "line": 39, 
-      "match": "in_stack_00000028", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar2 < in_stack_00000028);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b7780", 
-    "signature": "int wincore_windll.cpp_drawPolyList2_FUN_005b7780(void * vertex_buffer, void * * polygons, int polygon_count, int render_flags)", 
-    "address_range": [
-      [
-        "005b7780", 
-        "005b78bc"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_drawPolyList2_FUN_005b7780"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "vertex_buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void * *", 
-        "size": 4, 
-        "name": "polygons"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "polygon_count"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_flags"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "register_param",
+      "stack_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 158
+  },
   "cross_references": [
     {
-      "from_addr": "0048d3f5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170", 
-      "addr": "0048d170"
+      "addr": "0048d170",
+      "from_addr": "0048d3f5",
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b7780",
+    "address_range": [
+      [
+        "005b7780",
+        "005b78bc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_drawPolyList2_FUN_005b7780",
+    "signature": "int wincore_windll.cpp_drawPolyList2_FUN_005b7780(void * vertex_buffer, void * * polygons, int polygon_count, int render_flags)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e56b8",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8cc",
+      "name": "g_APIDLL_drawPolygon2",
+      "type": "APIDLL_drawPolygon2*",
+      "value": null
+    },
+    {
+      "addr": "03f6b8d4",
+      "name": "g_APIDLL_drawPolyList2",
+      "type": "APIDLL_drawPolyList2*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "polygons",
+        "offset": 8,
+        "size": 4,
+        "type": "void * *"
+      },
+      {
+        "is_param": true,
+        "name": "polygon_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000028",
+      "text": "int in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(void *)((int)",
+      "text": "local_1c = (void *)((int)vertex_buffer + (uint)*puVar1 * 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(void *)((int)",
+      "text": "local_18 = (void *)((int)vertex_buffer + (uint)puVar1[1] * 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(void *)((int)",
+      "text": "local_14 = (void *)((int)vertex_buffer + (uint)puVar1[2] * 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_1c + 0x18) = (uint)puVar1[3] << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_1c + 0x1c) = (uint)puVar1[6] << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + 0x18) = (uint)puVar1[4] << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + 0x1c) = (uint)puVar1[7] << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_14 + 0x18) = (uint)puVar1[5] << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_14 + 0x1c) = (uint)puVar1[8] << 8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000028",
+      "text": "} while (iVar2 < in_stack_00000028);",
+      "type": "stack_param"
     }
   ]
 }

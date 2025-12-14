@@ -50,34 +50,34 @@ section .text
     MOV EBP,dword ptr [ESP + 0x20]      ; 0056e7c7
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0056e7cb
     CMP EDX,0x4e20                      ; 0056e7cf
-    JG 0x0056e84a                       ; 0056e7d5 | LAB_0056e84a
-        ;   XREF to: 0056e84a (CONDITIONAL_JUMP)
+    JG 0x0056e84a                       ; 0056e7d5
+        ;   XREF to: 0056e84a (CONDITIONAL_JUMP)  ; LAB_0056e84a
     PUSH 0x1                            ; 0056e7db
         ;   Label: LAB_0056e7db
-    MOV EDI,dword ptr [0x006703ec]      ; 0056e7dd | CDemonRenderer * g_CDemonRendererPtr
-    PUSH EDI                            ; 0056e7e3 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0056e7e4 | void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)
-        ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)
-    MOV ESI,dword ptr [0x006703ec]      ; 0056e7e9 | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDI,dword ptr [0x006703ec]      ; 0056e7dd | g_CDemonRendererPtr
+    PUSH EDI                            ; 0056e7e3 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0056e7e4
+        ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)
+    MOV ESI,dword ptr [0x006703ec]      ; 0056e7e9 | g_CDemonRendererPtr
     ADD ESP,0x8                         ; 0056e7ef
     XOR EAX,EAX                         ; 0056e7f2
     XOR EDI,EDI                         ; 0056e7f4
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0056e7f6
     MOV dword ptr [ESP],EAX             ; 0056e7fa
-    MOV ESI,dword ptr [ESI]             ; 0056e7fd | CDemonRenderer g_CDemonRendererInstance
+    MOV ESI,dword ptr [ESI]             ; 0056e7fd | g_CDemonRendererInstance
     TEST EDX,EDX                        ; 0056e7ff
-    JLE 0x0056e827                      ; 0056e801 | LAB_0056e827
-        ;   XREF to: 0056e827 (CONDITIONAL_JUMP)
+    JLE 0x0056e827                      ; 0056e801
+        ;   XREF to: 0056e827 (CONDITIONAL_JUMP)  ; LAB_0056e827
     PUSH EBP                            ; 0056e803
         ;   Label: LAB_0056e803
     PUSH ESI                            ; 0056e804
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0056e805 | void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
-        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)
+    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c ; 0056e805
+        ;   XREF to: 005b575c (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)
     MOV AH,byte ptr [ESI + 0x13]        ; 0056e80a
     ADD ESP,0x8                         ; 0056e80d
     TEST AH,0x80                        ; 0056e810
-    JNZ 0x0056e818                      ; 0056e813 | LAB_0056e818
-        ;   XREF to: 0056e818 (CONDITIONAL_JUMP)
+    JNZ 0x0056e818                      ; 0056e813
+        ;   XREF to: 0056e818 (CONDITIONAL_JUMP)  ; LAB_0056e818
     INC dword ptr [ESP]                 ; 0056e815
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0056e818
         ;   Label: LAB_0056e818
@@ -85,20 +85,20 @@ section .text
     INC EDI                             ; 0056e81f
     ADD EBP,0xc                         ; 0056e820
     CMP EDI,ECX                         ; 0056e823
-    JL 0x0056e803                       ; 0056e825 | LAB_0056e803
-        ;   XREF to: 0056e803 (CONDITIONAL_JUMP)
+    JL 0x0056e803                       ; 0056e825
+        ;   XREF to: 0056e803 (CONDITIONAL_JUMP)  ; LAB_0056e803
     MOV ESI,dword ptr [ESP]             ; 0056e827
         ;   Label: LAB_0056e827
     CMP ESI,dword ptr [ESP + 0x1c]      ; 0056e82a
-    JZ 0x0056e878                       ; 0056e82e | LAB_0056e878
-        ;   XREF to: 0056e878 (CONDITIONAL_JUMP)
+    JZ 0x0056e878                       ; 0056e82e
+        ;   XREF to: 0056e878 (CONDITIONAL_JUMP)  ; LAB_0056e878
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0056e830
         ;   Label: LAB_0056e830
     PUSH EDX                            ; 0056e834
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0056e835
     PUSH ECX                            ; 0056e839
-    CALL core_set.cpp_CDemonSet_FUN_0056e5d0 ; 0056e83a | void core_set.cpp_CDemonSet_FUN_0056e5d0(CDemonSet * this_ptr)
-        ;   XREF to: 0056e5d0 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_FUN_0056e5d0 ; 0056e83a
+        ;   XREF to: 0056e5d0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_FUN_0056e5d0(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 0056e83f
     ADD ESP,0x4                         ; 0056e842
     POP EBP                             ; 0056e845
@@ -109,23 +109,23 @@ section .text
     PUSH 0x4e20                         ; 0056e84a
         ;   Label: LAB_0056e84a
     PUSH EDX                            ; 0056e84f
-    MOV ECX,0x645e93                    ; 0056e850 | = "..\\core\\set.cpp" | s_core_set_cpp_00645e93 = ..\core\set.cpp
+    MOV ECX,0x645e93                    ; 0056e850 | = "..\\core\\set.cpp"
     MOV EBX,0xd94                       ; 0056e855
-    PUSH 0x645ea3                       ; 0056e85a | = "CDemonSet::rotateVerticies - tried to..." | s_CDemonSet_rotateVerticie_00645ea3 = CDemonSet::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d
-    MOV dword ptr [0x02f0ca48],ECX      ; 0056e85f | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 0056e865 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0056e86b | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x645ea3                       ; 0056e85a | = "CDemonSet::rotateVerticies - tried to..."
+    MOV dword ptr [0x02f0ca48],ECX      ; 0056e85f | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 0056e865 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0056e86b
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0xc                         ; 0056e870
-    JMP 0x0056e7db                      ; 0056e873 | LAB_0056e7db
-        ;   XREF to: 0056e7db (UNCONDITIONAL_JUMP)
+    JMP 0x0056e7db                      ; 0056e873
+        ;   XREF to: 0056e7db (UNCONDITIONAL_JUMP)  ; LAB_0056e7db
     PUSH 0x0                            ; 0056e878
         ;   Label: LAB_0056e878
-    MOV ESI,dword ptr [0x006703ec]      ; 0056e87a | CDemonRenderer * g_CDemonRendererPtr
-    PUSH ESI                            ; 0056e880 | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0056e881 | void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)
-        ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)
+    MOV ESI,dword ptr [0x006703ec]      ; 0056e87a | g_CDemonRendererPtr
+    PUSH ESI                            ; 0056e880 | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0 ; 0056e881
+        ;   XREF to: 0048caa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0056e886
-    JMP 0x0056e830                      ; 0056e889 | LAB_0056e830
-        ;   XREF to: 0056e830 (UNCONDITIONAL_JUMP)
+    JMP 0x0056e830                      ; 0056e889
+        ;   XREF to: 0056e830 (UNCONDITIONAL_JUMP)  ; LAB_0056e830
 

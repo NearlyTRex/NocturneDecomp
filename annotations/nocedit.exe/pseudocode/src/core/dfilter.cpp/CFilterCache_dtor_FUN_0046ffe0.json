@@ -1,50 +1,50 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 15, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dfilter.cpp_CFilterCache_free_FUN_00470000", 
-      "addr": "00470000"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 10,
+    "complexity_score": 5,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0046ffe0", 
-    "signature": "CFilterCache * core_dfilter.cpp_CFilterCache_dtor_FUN_0046ffe0(CFilterCache * this_ptr)", 
+    "address": "0046ffe0",
     "address_range": [
       [
-        "0046ffe0", 
+        "0046ffe0",
         "0046fff1"
       ]
-    ], 
-    "name": "core_dfilter.cpp_CFilterCache_dtor_FUN_0046ffe0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dfilter.cpp_CFilterCache_dtor_FUN_0046ffe0",
+    "signature": "CFilterCache * core_dfilter.cpp_CFilterCache_dtor_FUN_0046ffe0(CFilterCache * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00470000",
+      "name": "core_dfilter.cpp_CFilterCache_free_FUN_00470000"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFilterCache *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFilterCache *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

@@ -1,189 +1,189 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 83, 
-    "pseudocode_lines": 58, 
-    "cross_reference_count": 7, 
-    "global_count": 6, 
-    "total_lines": 180, 
-    "assembly_lines": 122, 
-    "suspect_count": 2, 
+    "assembly_lines": 122,
+    "complexity_score": 83,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 58,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_006204cb", 
-      "addr": "006204cb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CKeyFramedModel_part_ver_006204de", 
-      "addr": "006204de", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0062050c", 
-      "addr": "0062050c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CKeyFramedModel_partList_0062051f", 
-      "addr": "0062051f", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 31, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "while (iVar3 < *(int *)((int)this_ptr->poly_vert_list + local_18 + 4)) {"
-    }, 
-    {
-      "line": 32, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar1 = *(int *)((int)this_ptr->poly_vert_list + iVar6 + 0x18 + local_18);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0047bf40", 
-    "signature": "void core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyFramedModel * this_ptr)", 
-    "address_range": [
-      [
-        "0047bf40", 
-        "0047c078"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 180
+  },
   "cross_references": [
     {
-      "from_addr": "00479efb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
-      "addr": "00479330"
-    }, 
+      "addr": "00479330",
+      "from_addr": "00479efb",
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047b490", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0", 
-      "addr": "0047b1e0"
-    }, 
+      "addr": "0047b1e0",
+      "from_addr": "0047b490",
+      "name": "core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047bdbc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0", 
-      "addr": "0047bdb0"
-    }, 
+      "addr": "0047bdb0",
+      "from_addr": "0047bdbc",
+      "name": "core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047bbcc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0", 
-      "addr": "0047bbc0"
-    }, 
+      "addr": "0047bbc0",
+      "from_addr": "0047bbcc",
+      "name": "core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047aa4f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30", 
-      "addr": "0047aa30"
-    }, 
+      "addr": "0047aa30",
+      "from_addr": "0047aa4f",
+      "name": "core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047a9eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820", 
-      "addr": "0047a820"
-    }, 
+      "addr": "0047a820",
+      "from_addr": "0047a9eb",
+      "name": "core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047b021", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0", 
-      "addr": "0047ada0"
+      "addr": "0047ada0",
+      "from_addr": "0047b021",
+      "name": "core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047bf40",
+    "address_range": [
+      [
+        "0047bf40",
+        "0047c078"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40",
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyFramedModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006204cb",
+      "name": "s_core_dmodel_cpp_006204cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006204de",
+      "name": "s_CKeyFramedModel_part_ver_006204de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062050c",
+      "name": "s_core_dmodel_cpp_0062050c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062051f",
+      "name": "s_CKeyFramedModel_partList_0062051f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)",
+      "text": "while (iVar3 < *(int *)((int)this_ptr->poly_vert_list + local_18 + 4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)this_ptr->poly_vert_list + iVar6 + 0x18 + local_18);",
+      "type": "pointer_cast"
     }
   ]
 }

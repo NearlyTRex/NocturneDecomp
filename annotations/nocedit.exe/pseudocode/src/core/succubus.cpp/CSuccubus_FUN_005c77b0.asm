@@ -26,22 +26,22 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 005c77b6
     PUSH ESI                            ; 005c77ba
     PUSH EBX                            ; 005c77bb
-    CALL core_enemy.cpp_CEnemy_FUN_004aa170 ; 005c77bc | int core_enemy.cpp_CEnemy_FUN_004aa170(CEnemy * this_ptr)
-        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_FUN_004aa170 ; 005c77bc
+        ;   XREF to: 004aa170 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_FUN_004aa170(CEnemy * this_ptr)
     ADD ESP,0x8                         ; 005c77c1
     PUSH 0x0                            ; 005c77c4
     ADD EBX,0x158                       ; 005c77c6
     PUSH EBX                            ; 005c77cc
-    PUSH 0x6541d6                       ; 005c77cd | = "Model" | s_Model_006541d6 = Model
+    PUSH 0x6541d6                       ; 005c77cd | = "Model"
     PUSH ESI                            ; 005c77d2
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 005c77d3 | void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4a0 ; 005c77d3
+        ;   XREF to: 0040e4a0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4a0(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 005c77d8
     PUSH EBX                            ; 005c77db
-    PUSH 0x6541dc                       ; 005c77dc | = "State" | s_State_006541dc = State
+    PUSH 0x6541dc                       ; 005c77dc | = "State"
     PUSH ESI                            ; 005c77e1
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 005c77e2 | void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e4d0 ; 005c77e2
+        ;   XREF to: 0040e4d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e4d0(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 005c77e7
     POP ESI                             ; 005c77ea
     POP EBX                             ; 005c77eb

@@ -10,10 +10,12 @@ uint __cdecl sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0(void)
 
 {
   uint uVar1;
+  uint uVar2;
   
   uVar1 = sound_sndmain_cpp_isSoundSystemActive_FUN_005ab530();
+  uVar2 = 0;
   if (uVar1 != 0) {
-    uVar1 = g_HasHardware3DSound;
+    uVar2 = g_HasHardware3DSound;
   }
-  return uVar1;
+  return uVar2;
 }

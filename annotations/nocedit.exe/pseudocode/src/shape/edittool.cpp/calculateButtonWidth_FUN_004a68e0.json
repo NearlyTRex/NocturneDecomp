@@ -1,144 +1,144 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 5, 
-    "global_count": 9, 
-    "total_lines": 64, 
-    "assembly_lines": 48, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
-      "addr": "004d01d0"
-    }, 
-    {
-      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
-      "addr": "004cfe80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00622eae", 
-      "addr": "00622eae", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_gEdFont_must_be_set_by_t_00622ec4", 
-      "addr": "00622ec4", 
-      "value": null
-    }, 
-    {
-      "type": "char", 
-      "name": "g_DefaultButtonText", 
-      "addr": "00623fa0", 
-      "value": "\u0000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "CBitFont*", 
-      "name": "g_EditorFont", 
-      "addr": "02cf1cd0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FontCharacterHeight", 
-      "addr": "02cf2668", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_FontCharacterWidth", 
-      "addr": "02cf266c", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a68e0", 
-    "signature": "int shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0(char * button_text)", 
-    "address_range": [
-      [
-        "004a68e0", 
-        "004a6965"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "button_text"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 48,
+    "complexity_score": 16,
+    "cross_reference_count": 5,
+    "function_call_count": 3,
+    "global_count": 9,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
   "cross_references": [
     {
-      "from_addr": "004a6567", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_004a6550", 
-      "addr": "004a6550"
-    }, 
+      "addr": "004a6550",
+      "from_addr": "004a6567",
+      "name": "shape_edittool.cpp_CEdButton_calculateAndSetBounds_FUN_004a6550",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a49c0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0", 
-      "addr": "004a45d0"
-    }, 
+      "addr": "004a45d0",
+      "from_addr": "004a49c0",
+      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049e242", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
-      "addr": "0049e130"
-    }, 
+      "addr": "0049e130",
+      "from_addr": "0049e242",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049eb69", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0", 
-      "addr": "0049e9d0"
-    }, 
+      "addr": "0049e9d0",
+      "from_addr": "0049eb69",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049dbf2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10", 
-      "addr": "0049db10"
+      "addr": "0049db10",
+      "from_addr": "0049dbf2",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004a68e0",
+    "address_range": [
+      [
+        "004a68e0",
+        "004a6965"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0",
+    "signature": "int shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0(char * button_text)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "004d01d0",
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
+    },
+    {
+      "addr": "004cfe80",
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622eae",
+      "name": "s_shape_edittool_cpp_00622eae",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00622ec4",
+      "name": "s_gEdFont_must_be_set_by_t_00622ec4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623fa0",
+      "name": "g_DefaultButtonText",
+      "type": "char",
+      "value": "\u0000"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "02cf1cd0",
+      "name": "g_EditorFont",
+      "type": "CBitFont*",
+      "value": null
+    },
+    {
+      "addr": "02cf2668",
+      "name": "g_FontCharacterHeight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02cf266c",
+      "name": "g_FontCharacterWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "button_text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,114 +1,114 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 48, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 41, 
-    "assembly_lines": 28, 
-    "suspect_count": 3, 
+    "assembly_lines": 28,
+    "complexity_score": 48,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 0,
+    "pseudocode_lines": 13,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0", 
-      "addr": "005b1fd0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
-      "addr": "005a8cb0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
-      "addr": "005a8c30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40", 
-      "addr": "005a8b40"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char *in_stack_00000014;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40((double)(float)in_stack_00000014);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((void *)delay,in_stack_00000014,0.0,0.0,0.0,(CVector3f *)0x0,1);"
-    }
-  ], 
+    ],
+    "total_lines": 41
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005b3aa0", 
-    "signature": "uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0(CSound * this_ptr, CDemonActor * actor, char * sound_name, float delay)", 
+    "address": "005b3aa0",
     "address_range": [
       [
-        "005b3aa0", 
+        "005b3aa0",
         "005b3ade"
       ]
-    ], 
-    "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0",
+    "signature": "uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0(CSound * this_ptr, CDemonActor * actor, char * sound_name, float delay)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b1fd0",
+      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0"
+    },
+    {
+      "addr": "005a8cb0",
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a8b40",
+      "name": "sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 16, 
+    "frame_size": 32,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSound *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "actor"
-      }, 
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "sound_name"
-      }, 
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "delay"
+        "is_param": true,
+        "name": "delay",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000014",
+      "text": "char *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000014",
+      "text": "sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40((double)(float)in_stack_00000014);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000014",
+      "text": "((void *)delay,in_stack_00000014,0.0,0.0,0.0,(CVector3f *)0x0,1);",
+      "type": "stack_param"
+    }
+  ]
 }

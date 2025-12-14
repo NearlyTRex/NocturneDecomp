@@ -1,182 +1,182 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 135, 
-    "pseudocode_lines": 110, 
-    "cross_reference_count": 0, 
-    "global_count": 15, 
-    "total_lines": 420, 
-    "assembly_lines": 310, 
-    "suspect_count": 2, 
+    "assembly_lines": 310,
+    "complexity_score": 135,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 15,
+    "pseudocode_lines": 110,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
-      "addr": "005ff9d0"
-    }, 
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
-      "addr": "005fe840"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0", 
-      "addr": "0049e6a0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
-      "addr": "0050f7a0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeledit_cpp_00649d0a", 
-      "addr": "00649d0a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_rt_00649d1f", 
-      "addr": "00649d1f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_00649d22", 
-      "addr": "00649d22", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeledit_cpp_00649d26", 
-      "addr": "00649d26", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Deleting_old_s_file_00649d3b", 
-      "addr": "00649d3b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeledit_cpp_00649d51", 
-      "addr": "00649d51", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_skeledit_ini_00681868", 
-      "addr": "00681868", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_03670848", 
-      "addr": "03670848", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_03670849", 
-      "addr": "03670849", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_03670950", 
-      "addr": "03670950", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_03670951", 
-      "addr": "03670951", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_03670a58", 
-      "addr": "03670a58", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_03670a59", 
-      "addr": "03670a59", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 2, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "void core_skeledit_cpp_FUN_005897b0(uint param_1,uint param_2,int unaff_EBX)"
-    }, 
-    {
-      "line": 23, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EBX != 1) {"
-    }
-  ], 
+    ],
+    "total_lines": 420
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "005897b0", 
-    "signature": "undefined core_skeledit.cpp_FUN_005897b0()", 
+    "address": "005897b0",
     "address_range": [
       [
-        "005897b0", 
+        "005897b0",
         "00589a33"
       ]
-    ], 
-    "name": "core_skeledit.cpp_FUN_005897b0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_skeledit.cpp_FUN_005897b0",
+    "signature": "undefined core_skeledit.cpp_FUN_005897b0()"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9d0",
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0"
+    },
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "005fe840",
+      "name": "crt_stdio.c_fgetc_FUN_005fe840"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    },
+    {
+      "addr": "0049e6a0",
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f7a0",
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649d0a",
+      "name": "s_core_skeledit_cpp_00649d0a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649d1f",
+      "name": "s_rt_00649d1f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649d22",
+      "name": "s_d_00649d22",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649d26",
+      "name": "s_core_skeledit_cpp_00649d26",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649d3b",
+      "name": "s_Deleting_old_s_file_00649d3b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649d51",
+      "name": "s_core_skeledit_cpp_00649d51",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "00681868",
+      "name": "s_skeledit_ini_00681868",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "03670848",
+      "name": "DAT_03670848",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "03670849",
+      "name": "DAT_03670849",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "03670950",
+      "name": "DAT_03670950",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "03670951",
+      "name": "DAT_03670951",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "03670a58",
+      "name": "DAT_03670a58",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "03670a59",
+      "name": "DAT_03670a59",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 20, 
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 2,
+      "match": "unaff_EBX",
+      "text": "void core_skeledit_cpp_FUN_005897b0(uint param_1,uint param_2,int unaff_EBX)",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBX",
+      "text": "if (unaff_EBX != 1) {",
+      "type": "unaffected_reg"
+    }
+  ]
 }

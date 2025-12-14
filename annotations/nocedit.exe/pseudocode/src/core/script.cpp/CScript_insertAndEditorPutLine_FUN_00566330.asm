@@ -30,37 +30,37 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1c]      ; 0056633c
     PUSH EBP                            ; 00566340
     PUSH ESI                            ; 00566341
-    CALL core_script.cpp_FUN_00566230   ; 00566342 | undefined core_script.cpp_FUN_00566230()
-        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_00566230   ; 00566342
+        ;   XREF to: 00566230 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00566230()
     ADD ESP,0x8                         ; 00566347
-    MOV EDI,0x31101c0                   ; 0056634a | undefined1 DAT_031101c0
+    MOV EDI,0x31101c0                   ; 0056634a | DAT_031101c0
     SUB ECX,ECX                         ; 0056634f
     DEC ECX                             ; 00566351
     XOR EAX,EAX                         ; 00566352
-    SCASB.REPNE ES:EDI                  ; 00566354 | undefined1 DAT_031101c0 | DAT_031101c1
+    SCASB.REPNE ES:EDI                  ; 00566354 | DAT_031101c0 | DAT_031101c1
     NOT ECX                             ; 00566356
     DEC ECX                             ; 00566358
     CMP EBX,ECX                         ; 00566359
-    JLE 0x0056635f                      ; 0056635b | LAB_0056635f
-        ;   XREF to: 0056635f (CONDITIONAL_JUMP)
+    JLE 0x0056635f                      ; 0056635b
+        ;   XREF to: 0056635f (CONDITIONAL_JUMP)  ; LAB_0056635f
     MOV EBX,ECX                         ; 0056635d
-    MOV ECX,0x31101c0                   ; 0056635f | undefined1 DAT_031101c0
+    MOV ECX,0x31101c0                   ; 0056635f | DAT_031101c0
         ;   Label: LAB_0056635f
     ADD ECX,EBX                         ; 00566364
-    PUSH ECX                            ; 00566366 | undefined1 DAT_031101c0 | DAT_031101c1
+    PUSH ECX                            ; 00566366 | DAT_031101c0 | DAT_031101c1
     LEA ECX,[EBP + 0x1]                 ; 00566367
     PUSH ECX                            ; 0056636a
     LEA ECX,[ESI + 0x38]                ; 0056636b
     PUSH ECX                            ; 0056636e
-    CALL shape_edittool.cpp_CStrList_insert_FUN_004a2bc0 ; 0056636f | void shape_edittool.cpp_CStrList_insert_FUN_004a2bc0(CStrList * this_ptr, int insert_index, char * string_data)
-        ;   XREF to: 004a2bc0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_insert_FUN_004a2bc0 ; 0056636f
+        ;   XREF to: 004a2bc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_insert_FUN_004a2bc0(CStrList * this_ptr, int insert_index, char * string_data)
     ADD ESP,0xc                         ; 00566374
     PUSH EBP                            ; 00566377
     XOR AH,AH                           ; 00566378
     PUSH ESI                            ; 0056637a
-    MOV byte ptr [EBX + 0x31101c0],AH   ; 0056637b | undefined1 DAT_031101c0
-    CALL core_script.cpp_CScript_editorPutLine_FUN_005662a0 ; 00566381 | undefined core_script.cpp_CScript_editorPutLine_FUN_005662a0()
-        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)
+    MOV byte ptr [EBX + 0x31101c0],AH   ; 0056637b | DAT_031101c0
+    CALL core_script.cpp_CScript_editorPutLine_FUN_005662a0 ; 00566381
+        ;   XREF to: 005662a0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_CScript_editorPutLine_FUN_005662a0()
     ADD ESP,0x8                         ; 00566386
     POP EBP                             ; 00566389
     POP EDI                             ; 0056638a

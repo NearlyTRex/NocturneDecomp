@@ -1,147 +1,147 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 124, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 52, 
-    "assembly_lines": 33, 
-    "suspect_count": 10, 
+    "assembly_lines": 33,
+    "complexity_score": 124,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 6,
+    "pseudocode_lines": 19,
+    "suspect_count": 10,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CPathQueueNode[5000]", 
-      "name": "g_PathfindingQueue", 
-      "addr": "030c3dec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_PathfindingQueue[0].cost", 
-      "addr": "030c3df0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_PathfindingQueue[0].z", 
-      "addr": "030c3df4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PathfindingQueueTail", 
-      "addr": "030d2850", 
-      "value": null
-    }, 
-    {
-      "type": "char[101][100]", 
-      "name": "g_PathfindingVisited", 
-      "addr": "030d2858", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PathfindingNodesExpanded", 
-      "addr": "030d4fcc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000000c;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "char in_stack_00000010;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_PathfindingVisited[in_stack_0000000c][in_stack_00000004] = in_stack_00000010;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_PathfindingVisited[in_stack_0000000c][in_stack_00000004] = in_stack_00000010;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_PathfindingVisited[in_stack_0000000c][in_stack_00000004] = in_stack_00000010;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_PathfindingQueue[g_PathfindingQueueTail].x = in_stack_00000004;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_PathfindingQueue[g_PathfindingQueueTail].cost = in_stack_00000008;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_PathfindingQueue[g_PathfindingQueueTail].z = in_stack_0000000c;"
-    }
-  ], 
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00546350", 
-    "signature": "undefined core_path.cpp_FUN_00546350()", 
+    "address": "00546350",
     "address_range": [
       [
-        "00546350", 
+        "00546350",
         "005463c5"
       ]
-    ], 
-    "name": "core_path.cpp_FUN_00546350"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_path.cpp_FUN_00546350",
+    "signature": "undefined core_path.cpp_FUN_00546350()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "030c3dec",
+      "name": "g_PathfindingQueue",
+      "type": "CPathQueueNode[5000]",
+      "value": null
+    },
+    {
+      "addr": "030c3df0",
+      "name": "g_PathfindingQueue[0].cost",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3df4",
+      "name": "g_PathfindingQueue[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030d2850",
+      "name": "g_PathfindingQueueTail",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030d2858",
+      "name": "g_PathfindingVisited",
+      "type": "char[101][100]",
+      "value": null
+    },
+    {
+      "addr": "030d4fcc",
+      "name": "g_PathfindingNodesExpanded",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000010",
+      "text": "char in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "text": "g_PathfindingVisited[in_stack_0000000c][in_stack_00000004] = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "g_PathfindingVisited[in_stack_0000000c][in_stack_00000004] = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000010",
+      "text": "g_PathfindingVisited[in_stack_0000000c][in_stack_00000004] = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "g_PathfindingQueue[g_PathfindingQueueTail].x = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "g_PathfindingQueue[g_PathfindingQueueTail].cost = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "g_PathfindingQueue[g_PathfindingQueueTail].z = in_stack_0000000c;",
+      "type": "stack_param"
+    }
+  ]
 }

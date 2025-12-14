@@ -40,27 +40,27 @@ section .text
     SUB ESP,0x18                        ; 005e20f3
     MOV EBX,dword ptr [ESP + 0x28]      ; 005e20f6
     PUSH EBX                            ; 005e20fa
-    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 005e20fb | CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
-        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)
+    CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70 ; 005e20fb
+        ;   XREF to: 005ede70 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_ctor_FUN_005ede70(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 005e2100
     ADD EAX,0x584                       ; 005e2103
     PUSH EAX                            ; 005e2108
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 005e2109 | CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0 ; 005e2109
+        ;   XREF to: 00478ce0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005e210e
     LEA EBX,[EAX + 0xfffffa7c]          ; 005e2111
-    PUSH 0x6565c3                       ; 005e2117 | = "gturret_head.kfm" | s_gturret_head_kfm_006565c3 = gturret_head.kfm
+    PUSH 0x6565c3                       ; 005e2117 | = "gturret_head.kfm"
     LEA EAX,[EBX + 0x158]               ; 005e211c
     PUSH EAX                            ; 005e2122
-    MOV dword ptr [EBX + 0x154],0x664b84 ; 005e2123 | CDemonActor_vtable g_CTurretVTable
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 005e212d | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EBX + 0x154],0x664b84 ; 005e2123 | g_CTurretVTable
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 005e212d
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005e2132
-    PUSH 0x6565d4                       ; 005e2135 | = "gturret_tripod.kfm" | s_gturret_tripod_kfm_006565d4 = gturret_tripod.kfm
+    PUSH 0x6565d4                       ; 005e2135 | = "gturret_tripod.kfm"
     LEA EAX,[EBX + 0x584]               ; 005e213a
     PUSH EAX                            ; 005e2140
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 005e2141 | void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
-        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 005e2141
+        ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     MOV dword ptr [EBX + 0x700],0x0     ; 005e2146
     MOV byte ptr [EBX + 0x704],0x0      ; 005e2150
     MOV dword ptr [EBX + 0x768],0x40400000 ; 005e2157
@@ -68,26 +68,26 @@ section .text
     MOV dword ptr [EBX + 0x770],0x40400000 ; 005e216b
     MOV dword ptr [EBX + 0x774],0x3e4ccccd ; 005e2175
     MOV dword ptr [EBX + 0x778],0x41f00000 ; 005e217f
-    MOV ESI,0x6565e7                    ; 005e2189 | = "CCharacter" | s_CCharacter_006565e7 = CCharacter
+    MOV ESI,0x6565e7                    ; 005e2189 | = "CCharacter"
     MOV dword ptr [EBX + 0x77c],0x0     ; 005e218e
     ADD ESP,0x8                         ; 005e2198
     MOV dword ptr [EBX + 0x300],0x0     ; 005e219b
     LEA EDI,[EBX + 0x784]               ; 005e21a5
     MOV dword ptr [EBX + 0x780],0x0     ; 005e21ab
     PUSH EDI                            ; 005e21b5
-    MOV AL,byte ptr [ESI]               ; 005e21b6 | = "CCharacter" | s_CCharacter_006565e7 = CCharacter
+    MOV AL,byte ptr [ESI]               ; 005e21b6 | = "CCharacter" | s_haracter_006565e9
         ;   Label: LAB_005e21b6
     MOV byte ptr [EDI],AL               ; 005e21b8
     CMP AL,0x0                          ; 005e21ba
-    JZ 0x005e21ce                       ; 005e21bc | LAB_005e21ce
-        ;   XREF to: 005e21ce (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 005e21be | s_Character_006565e8
+    JZ 0x005e21ce                       ; 005e21bc
+        ;   XREF to: 005e21ce (CONDITIONAL_JUMP)  ; LAB_005e21ce
+    MOV AL,byte ptr [ESI + 0x1]         ; 005e21be | s_Character_006565e8 | s_aracter_006565ea
     ADD ESI,0x2                         ; 005e21c1
     MOV byte ptr [EDI + 0x1],AL         ; 005e21c4
     ADD EDI,0x2                         ; 005e21c7
     CMP AL,0x0                          ; 005e21ca
-    JNZ 0x005e21b6                      ; 005e21cc | LAB_005e21b6
-        ;   XREF to: 005e21b6 (CONDITIONAL_JUMP)
+    JNZ 0x005e21b6                      ; 005e21cc
+        ;   XREF to: 005e21b6 (CONDITIONAL_JUMP)  ; LAB_005e21b6
     POP EDI                             ; 005e21ce
         ;   Label: LAB_005e21ce
     LEA EAX,[ESP + 0xc]                 ; 005e21cf
@@ -100,13 +100,13 @@ section .text
     PUSH EBX                            ; 005e21e4
     MOV dword ptr [ESP + 0x1c],EDX      ; 005e21e5
     MOV dword ptr [ESP + 0x20],ESI      ; 005e21e9
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005e21ed | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 005e21ed
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EDX,[EBX + 0x84c]               ; 005e21f2
     ADD ESP,0xc                         ; 005e21f8
     CMP EDX,EAX                         ; 005e21fb
-    JNZ 0x005e2226                      ; 005e21fd | LAB_005e2226
-        ;   XREF to: 005e2226 (CONDITIONAL_JUMP)
+    JNZ 0x005e2226                      ; 005e21fd
+        ;   XREF to: 005e2226 (CONDITIONAL_JUMP)  ; LAB_005e2226
     MOV dword ptr [EBX + 0x85c],0x0     ; 005e21ff
         ;   Label: LAB_005e21ff
     MOV dword ptr [EBX + 0x86c],0x0     ; 005e2209
@@ -124,6 +124,6 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 005e222d
     MOV ECX,dword ptr [EAX + 0x8]       ; 005e2230
     MOV dword ptr [EDX + 0x8],ECX       ; 005e2233
-    JMP 0x005e21ff                      ; 005e2236 | LAB_005e21ff
-        ;   XREF to: 005e21ff (UNCONDITIONAL_JUMP)
+    JMP 0x005e21ff                      ; 005e2236
+        ;   XREF to: 005e21ff (UNCONDITIONAL_JUMP)  ; LAB_005e21ff
 

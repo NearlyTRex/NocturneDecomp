@@ -48,7 +48,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x48]      ; 00401467
     MOV ESI,dword ptr [ESP + 0x50]      ; 0040146b
     LEA EAX,[ESI*0x4 + 0x0]             ; 0040146f
-    MOV ECX,0x2d01f48                   ; 00401476 | char[768] g_SourcePaletteData
+    MOV ECX,0x2d01f48                   ; 00401476 | g_SourcePaletteData
     SUB EAX,ESI                         ; 0040147b
     ADD ECX,EAX                         ; 0040147d
     MOV EAX,dword ptr [ESP + 0x44]      ; 0040147f
@@ -66,19 +66,19 @@ section .text
     FADDP                               ; 004014a7
     FSQRT                               ; 004014a9
     MOV EDX,0x7149f2ca                  ; 004014ab
-    FMUL double ptr [0x00613084]        ; 004014b0 | double g_PaletteLuminanceScaleFactor
+    FMUL double ptr [0x00613084]        ; 004014b0 | g_PaletteLuminanceScaleFactor
     MOV dword ptr [ESP + 0x20],EDX      ; 004014b6
     MOV EBX,ESI                         ; 004014ba
     MOV EAX,dword ptr [ESP + 0x54]      ; 004014bc
     FSTP float ptr [ESP + 0x1c]         ; 004014c0
     CMP ESI,EAX                         ; 004014c4
-    JG 0x0040157e                       ; 004014c6 | LAB_0040157e
-        ;   XREF to: 0040157e (CONDITIONAL_JUMP)
+    JG 0x0040157e                       ; 004014c6
+        ;   XREF to: 0040157e (CONDITIONAL_JUMP)  ; LAB_0040157e
     SHL ESI,0x2                         ; 004014cc
     XOR EAX,EAX                         ; 004014cf
         ;   Label: LAB_004014cf
     MOV EDX,dword ptr [ESP + 0x44]      ; 004014d1
-    MOV AL,byte ptr [ECX]               ; 004014d5 | char[768] g_SourcePaletteData
+    MOV AL,byte ptr [ECX]               ; 004014d5 | g_SourcePaletteData | CHAR_ARRAY_02d01f4b
     SUB EDX,EAX                         ; 004014d7
     MOV EAX,EDX                         ; 004014d9
     CDQ                                 ; 004014db
@@ -87,7 +87,7 @@ section .text
     MOV dword ptr [ESP + 0x2c],EAX      ; 004014e0
     XOR EAX,EAX                         ; 004014e4
     MOV EDX,EBP                         ; 004014e6
-    MOV AL,byte ptr [ECX + 0x1]         ; 004014e8 | CHAR_ARRAY_02d01f49
+    MOV AL,byte ptr [ECX + 0x1]         ; 004014e8 | CHAR_ARRAY_02d01f49 | CHAR_ARRAY_02d01f4c
     SUB EDX,EAX                         ; 004014eb
     FILD dword ptr [ESP + 0x2c]         ; 004014ed
     MOV EAX,EDX                         ; 004014f1
@@ -107,39 +107,39 @@ section .text
     XOR EAX,EDX                         ; 00401515
     SUB EAX,EDX                         ; 00401517
     FLD float ptr [ESP + 0x1c]          ; 00401519
-    FSUB float ptr [ESI + 0x772638]     ; 0040151d | float[256] g_PaletteLuminanceCache
+    FSUB float ptr [ESI + 0x772638]     ; 0040151d | g_PaletteLuminanceCache | DAT_0077263c
     MOV dword ptr [ESP + 0x2c],EAX      ; 00401523
     FABS                                ; 00401527
     FLD float ptr [ESP + 0x8]           ; 00401529
     FMUL ST0                            ; 0040152d
-    FMUL double ptr [0x0061308c]        ; 0040152f | double g_RedComponentWeight
+    FMUL double ptr [0x0061308c]        ; 0040152f | g_RedComponentWeight
     FLD float ptr [ESP]                 ; 00401535
     FMUL ST0                            ; 00401538
-    FMUL double ptr [0x00613094]        ; 0040153a | double g_GreenComponentWeight
+    FMUL double ptr [0x00613094]        ; 0040153a | g_GreenComponentWeight
     FADDP                               ; 00401540
     FILD dword ptr [ESP + 0x2c]         ; 00401542
     FMUL ST0                            ; 00401546
-    FMUL double ptr [0x0061309c]        ; 00401548 | double g_BlueComponentWeight
+    FMUL double ptr [0x0061309c]        ; 00401548 | g_BlueComponentWeight
     FADDP                               ; 0040154e
     FLD ST1                             ; 00401550
     FMULP ST2                           ; 00401552
     FXCH                                ; 00401554
-    FMUL double ptr [0x006130a4]        ; 00401556 | double g_LuminanceDifferenceWeight
+    FMUL double ptr [0x006130a4]        ; 00401556 | g_LuminanceDifferenceWeight
     FADDP                               ; 0040155c
     FST float ptr [ESP + 0x24]          ; 0040155e
     FCOMP float ptr [ESP + 0x20]        ; 00401562
     FNSTSW AX                           ; 00401566
     SAHF                                ; 00401568
-    JC 0x00401591                       ; 00401569 | LAB_00401591
-        ;   XREF to: 00401591 (CONDITIONAL_JUMP)
+    JC 0x00401591                       ; 00401569
+        ;   XREF to: 00401591 (CONDITIONAL_JUMP)  ; LAB_00401591
     MOV EDX,dword ptr [ESP + 0x54]      ; 0040156b
         ;   Label: LAB_0040156b
     ADD ECX,0x3                         ; 0040156f
     INC EBX                             ; 00401572
     ADD ESI,0x4                         ; 00401573
     CMP EBX,EDX                         ; 00401576
-    JLE 0x004014cf                      ; 00401578 | LAB_004014cf
-        ;   XREF to: 004014cf (CONDITIONAL_JUMP)
+    JLE 0x004014cf                      ; 00401578
+        ;   XREF to: 004014cf (CONDITIONAL_JUMP)  ; LAB_004014cf
     MOV EAX,EDI                         ; 0040157e
         ;   Label: LAB_0040157e
     ADD ESP,0x30                        ; 00401580
@@ -153,6 +153,6 @@ section .text
         ;   Label: LAB_00401591
     MOV EDI,EBX                         ; 00401595
     MOV dword ptr [ESP + 0x20],EAX      ; 00401597
-    JMP 0x0040156b                      ; 0040159b | LAB_0040156b
-        ;   XREF to: 0040156b (UNCONDITIONAL_JUMP)
+    JMP 0x0040156b                      ; 0040159b
+        ;   XREF to: 0040156b (UNCONDITIONAL_JUMP)  ; LAB_0040156b
 

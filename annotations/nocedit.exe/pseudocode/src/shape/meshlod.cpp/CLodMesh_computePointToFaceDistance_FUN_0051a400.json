@@ -1,255 +1,255 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 193, 
-    "pseudocode_lines": 93, 
-    "cross_reference_count": 3, 
-    "global_count": 7, 
-    "total_lines": 384, 
-    "assembly_lines": 291, 
-    "suspect_count": 8, 
+    "assembly_lines": 291,
+    "complexity_score": 193,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 7,
+    "pseudocode_lines": 93,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870", 
-      "addr": "00518870"
-    }, 
-    {
-      "name": "shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90", 
-      "addr": "00514f90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_0051a3e4", 
-      "addr": "0051a3e4", 
-      "value": "0051a567"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_5_0051a3ec", 
-      "addr": "0051a3ec", 
-      "value": "0051a5d5"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0051a3f4", 
-      "addr": "0051a3f4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_00637aa5", 
-      "addr": "00637aa5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_00637aba", 
-      "addr": "00637aba", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0051a40c", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CLodMesh *in_stack_00000004;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar5 = in_stack_00000004->vertex_data;"
-    }, 
-    {
-      "line": 23, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_38 = pCVar5 + *(int *)((int)&sample_point->distance_to_triangle + 4);"
-    }, 
-    {
-      "line": 30, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(float)this_ptr->tri_count * *(float *)((int)&sample_point[3].distance_to_triangle + 4) +"
-    }, 
-    {
-      "line": 44, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((float)this_ptr->tri_count * *(float *)((int)&sample_point[2].distance_to_triangle + 4)"
-    }, 
-    {
-      "line": 90, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004,(CVector3f *)auStack_7c,(CLodFace *)sample_point);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0051a400", 
-    "signature": "double shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh * this_ptr, SLodSamplePoint * sample_point, CLodFace * face)", 
-    "address_range": [
-      [
-        "0051a400", 
-        "0051a690"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400"
-  }, 
-  "stack_frame": {
-    "local_size": 164, 
-    "variables": [
-      {
-        "offset": -160, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_a0"
-      }, 
-      {
-        "offset": -152, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_98"
-      }, 
-      {
-        "offset": -140, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_8c"
-      }, 
-      {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_80"
-      }, 
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SLodSamplePoint *", 
-        "size": 4, 
-        "name": "sample_point"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CLodFace *", 
-        "size": 4, 
-        "name": "face"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 180, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "register_param",
+      "stack_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 384
+  },
   "cross_references": [
     {
-      "from_addr": "00519408", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910", 
-      "addr": "00518910"
-    }, 
+      "addr": "00518910",
+      "from_addr": "00519408",
+      "name": "shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00518378", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300", 
-      "addr": "00518300"
-    }, 
+      "addr": "00518300",
+      "from_addr": "00518378",
+      "name": "shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051a0eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030", 
-      "addr": "0051a030"
+      "addr": "0051a030",
+      "from_addr": "0051a0eb",
+      "name": "shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051a400",
+    "address_range": [
+      [
+        "0051a400",
+        "0051a690"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400",
+    "signature": "double shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh * this_ptr, SLodSamplePoint * sample_point, CLodFace * face)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00518870",
+      "name": "shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870"
+    },
+    {
+      "addr": "00514f90",
+      "name": "shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0051a3e4",
+      "name": "PTR_caseD_3_0051a3e4",
+      "type": "void*",
+      "value": "0051a567"
+    },
+    {
+      "addr": "0051a3ec",
+      "name": "PTR_caseD_5_0051a3ec",
+      "type": "void*",
+      "value": "0051a5d5"
+    },
+    {
+      "addr": "0051a3f4",
+      "name": "DAT_0051a3f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00637aa5",
+      "name": "s_shape_meshlod_cpp_00637aa5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00637aba",
+      "name": "s_anon_00637aba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 180,
+    "local_size": 164,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CLodMesh *"
+      },
+      {
+        "is_param": true,
+        "name": "sample_point",
+        "offset": 12,
+        "size": 4,
+        "type": "SLodSamplePoint *"
+      },
+      {
+        "is_param": true,
+        "name": "face",
+        "offset": 16,
+        "size": 4,
+        "type": "CLodFace *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0051a40c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "CLodMesh *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "pCVar5 = in_stack_00000004->vertex_data;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(int *)((int)",
+      "text": "local_38 = pCVar5 + *(int *)((int)&sample_point->distance_to_triangle + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(float *)((int)",
+      "text": "(float)this_ptr->tri_count * *(float *)((int)&sample_point[3].distance_to_triangle + 4) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(float *)((int)",
+      "text": "((float)this_ptr->tri_count * *(float *)((int)&sample_point[2].distance_to_triangle + 4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,(CVector3f *)auStack_7c,(CLodFace *)sample_point);",
+      "type": "stack_param"
     }
   ]
 }

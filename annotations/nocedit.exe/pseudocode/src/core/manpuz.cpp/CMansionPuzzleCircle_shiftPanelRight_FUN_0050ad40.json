@@ -1,138 +1,138 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 78, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 91, 
-    "assembly_lines": 68, 
-    "suspect_count": 5, 
+    "assembly_lines": 68,
+    "complexity_score": 78,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 5,
+    "pseudocode_lines": 23,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_manpuz.cpp_FUN_0050aee0", 
-      "addr": "0050aee0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
-      "addr": "005a8cb0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
-      "addr": "005a8c30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940", 
-      "addr": "005a8940"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
-      "addr": "005a8e90"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_manpuz_cpp_00635835", 
-      "addr": "00635835", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CMansionPuzzleCircle_shi_00635848", 
-      "addr": "00635848", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_manpuz_doorslide_wav_00635879", 
-      "addr": "00635879", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "piVar1 = (int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100);"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "piVar1 = (int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100);"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((((*piVar1 == 0) || (*(int *)(in_stack_00000004 + 0x5f0 + iVar2 * 100) != 0)) ||"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "0050ad40", 
-    "signature": "undefined core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40()", 
-    "address_range": [
-      [
-        "0050ad40", 
-        "0050adee"
-      ]
-    ], 
-    "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 91
+  },
   "cross_references": [
     {
-      "from_addr": "0050a8a3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_manpuz.cpp_FUN_0050a610", 
-      "addr": "0050a610"
+      "addr": "0050a610",
+      "from_addr": "0050a8a3",
+      "name": "core_manpuz.cpp_FUN_0050a610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050ad40",
+    "address_range": [
+      [
+        "0050ad40",
+        "0050adee"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40",
+    "signature": "undefined core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050aee0",
+      "name": "core_manpuz.cpp_FUN_0050aee0"
+    },
+    {
+      "addr": "005a8cb0",
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
+    },
+    {
+      "addr": "005a8c30",
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+    },
+    {
+      "addr": "005a8940",
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940"
+    },
+    {
+      "addr": "005a8e90",
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00635835",
+      "name": "s_core_manpuz_cpp_00635835",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635848",
+      "name": "s_CMansionPuzzleCircle_shi_00635848",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00635879",
+      "name": "s_manpuz_doorslide_wav_00635879",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "piVar1 = (int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "piVar1 = (int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "if ((((*piVar1 == 0) || (*(int *)(in_stack_00000004 + 0x5f0 + iVar2 * 100) != 0)) ||",
+      "type": "stack_param"
     }
   ]
 }

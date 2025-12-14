@@ -1,157 +1,157 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 64, 
-    "pseudocode_lines": 39, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 91, 
-    "assembly_lines": 52, 
-    "suspect_count": 2, 
+    "assembly_lines": 52,
+    "complexity_score": 64,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 39,
+    "suspect_count": 2,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0061a4ca", 
-      "addr": "0061a4ca", 
-      "value": "65536"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakePeakValue", 
-      "addr": "0066ecf8", 
-      "value": "0x10000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakeSustainValue", 
-      "addr": "0066ecfc", 
-      "value": "0xc80000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakeState", 
-      "addr": "0066ed00", 
-      "value": "0x3"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakeSustainTimer", 
-      "addr": "013da758", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakeAttackTime", 
-      "addr": "013da75c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakeAttackAccum", 
-      "addr": "013da760", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakeDecayDuration", 
-      "addr": "013da764", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraShakeDecayTimer", 
-      "addr": "013da768", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 31, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "g_CameraShakeState = extraout_EDX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00453fc0", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCamera * this_ptr, float peak_intensity, float attack_time, float sustain_duration, float decay_time)", 
-    "address_range": [
-      [
-        "00453fc0", 
-        "0045405a"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "peak_intensity"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "attack_time"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "sustain_duration"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "decay_time"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    ],
+    "total_lines": 91
+  },
   "cross_references": [
     {
-      "from_addr": "00570fb5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_00570fa0", 
-      "addr": "00570fa0"
+      "addr": "00570fa0",
+      "from_addr": "00570fb5",
+      "name": "core_set.cpp_CDemonSet_FUN_00570fa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00453fc0",
+    "address_range": [
+      [
+        "00453fc0",
+        "0045405a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0",
+    "signature": "void core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0(CDemonCamera * this_ptr, float peak_intensity, float attack_time, float sustain_duration, float decay_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061a4ca",
+      "name": "DOUBLE_0061a4ca",
+      "type": "double",
+      "value": "65536"
+    },
+    {
+      "addr": "0066ecf8",
+      "name": "g_CameraShakePeakValue",
+      "type": "int",
+      "value": "0x10000"
+    },
+    {
+      "addr": "0066ecfc",
+      "name": "g_CameraShakeSustainValue",
+      "type": "int",
+      "value": "0xc80000"
+    },
+    {
+      "addr": "0066ed00",
+      "name": "g_CameraShakeState",
+      "type": "int",
+      "value": "0x3"
+    },
+    {
+      "addr": "013da758",
+      "name": "g_CameraShakeSustainTimer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013da75c",
+      "name": "g_CameraShakeAttackTime",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013da760",
+      "name": "g_CameraShakeAttackAccum",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013da764",
+      "name": "g_CameraShakeDecayDuration",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "013da768",
+      "name": "g_CameraShakeDecayTimer",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "peak_intensity",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "attack_time",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "sustain_duration",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "decay_time",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_EDX",
+      "text": "g_CameraShakeState = extraout_EDX;",
+      "type": "extra_output"
     }
   ]
 }

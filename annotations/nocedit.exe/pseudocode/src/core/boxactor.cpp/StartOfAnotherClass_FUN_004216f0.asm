@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x8229b0                    ; 004216f0 | CDemonActorType g_CBoxActorClassInfo
+    MOV EAX,0x8229b0                    ; 004216f0 | g_CBoxActorClassInfo
         ;   Label: core_boxactor.cpp_StartOfAnotherClass_FUN_004216f0
     RET                                 ; 004216f5
 

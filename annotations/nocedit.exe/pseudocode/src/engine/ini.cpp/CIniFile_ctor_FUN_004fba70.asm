@@ -30,14 +30,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004fba75
     PUSH EDX                            ; 004fba79
     PUSH EBX                            ; 004fba7a
-    CALL engine_ini.cpp_CIniFile_init_FUN_004fbaa0 ; 004fba7b | void engine_ini.cpp_CIniFile_init_FUN_004fbaa0(char * dest, char * source)
-        ;   XREF to: 004fbaa0 (UNCONDITIONAL_CALL)
+    CALL engine_ini.cpp_CIniFile_init_FUN_004fbaa0 ; 004fba7b
+        ;   XREF to: 004fbaa0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_init_FUN_004fbaa0(char * dest, char * source)
     ADD ESP,0x8                         ; 004fba80
     MOV ECX,dword ptr [ESP + 0x10]      ; 004fba83
     PUSH ECX                            ; 004fba87
     PUSH EBX                            ; 004fba88
-    CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0 ; 004fba89 | void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this, char * section)
-        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)
+    CALL engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0 ; 004fba89
+        ;   XREF to: 004fbae0 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile * this, char * section)
     ADD ESP,0x8                         ; 004fba8e
     MOV EAX,EBX                         ; 004fba91
     POP EBX                             ; 004fba93

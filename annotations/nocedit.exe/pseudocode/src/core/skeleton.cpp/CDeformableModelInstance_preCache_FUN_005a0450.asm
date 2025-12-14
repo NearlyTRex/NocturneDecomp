@@ -31,14 +31,14 @@ section .text
         ;   Label: core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
     ADD EAX,0x2260                      ; 005a0454
     PUSH EAX                            ; 005a0459
-    CALL core_skeleton.cpp_getDeformableModel_FUN_005a1cf0 ; 005a045a | CDeformableModel * core_skeleton.cpp_getDeformableModel_FUN_005a1cf0(char * model_filename)
-        ;   XREF to: 005a1cf0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_getDeformableModel_FUN_005a1cf0 ; 005a045a
+        ;   XREF to: 005a1cf0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_getDeformableModel_FUN_005a1cf0(char * model_filename)
     ADD ESP,0x4                         ; 005a045f
     PUSH EAX                            ; 005a0462
     MOV EDX,dword ptr [ESP + 0x8]       ; 005a0463
     PUSH EDX                            ; 005a0467
-    CALL core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480 ; 005a0468 | void core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(CDeformableModelInstance * this_ptr, CDeformableModel * model_ptr)
-        ;   XREF to: 005a0480 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480 ; 005a0468
+        ;   XREF to: 005a0480 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(CDeformableModelInstance * this_ptr, CDeformableModel * model_ptr)
     ADD ESP,0x8                         ; 005a046d
     RET                                 ; 005a0470
 

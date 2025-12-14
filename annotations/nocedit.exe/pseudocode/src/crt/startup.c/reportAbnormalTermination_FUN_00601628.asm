@@ -20,10 +20,9 @@ section .text
 
     PUSH 0xff                           ; 00601628
         ;   Label: crt_startup.c_reportAbnormalTermination_FUN_00601628
-    PUSH 0x658f98                       ; 0060162d | = "ABNORMAL TERMINATION\r\n" | s_ABNORMAL_TERMINATION_00658f98 = ABNORMAL TERMINATION
-
-    CALL crt_startup.c_HandleRuntimeError_FUN_00606660 ; 00601632 | void crt_startup.c_HandleRuntimeError_FUN_00606660(char * error_message, int error_level)
-        ;   XREF to: 00606660 (UNCONDITIONAL_CALL)
+    PUSH 0x658f98                       ; 0060162d | = "ABNORMAL TERMINATION\r\n"
+    CALL crt_startup.c_HandleRuntimeError_FUN_00606660 ; 00601632
+        ;   XREF to: 00606660 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_00606660(char * error_message, int error_level)
     ADD ESP,0x8                         ; 00601637
     RET                                 ; 0060163a
 

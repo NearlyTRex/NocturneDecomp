@@ -24,18 +24,18 @@
 
 section .text
 
-    CMP dword ptr [0x03f9c020],0x0      ; 00605a40 | int g_MultibyteLocaleActive
+    CMP dword ptr [0x03f9c020],0x0      ; 00605a40 | g_MultibyteLocaleActive
         ;   Label: crt_locale.c_mblen_FUN_00605a40
-    JZ 0x00605a66                       ; 00605a47 | LAB_00605a66
-        ;   XREF to: 00605a66 (CONDITIONAL_JUMP)
+    JZ 0x00605a66                       ; 00605a47
+        ;   XREF to: 00605a66 (CONDITIONAL_JUMP)  ; LAB_00605a66
     MOV EDX,dword ptr [ESP + 0x4]       ; 00605a49
     XOR EAX,EAX                         ; 00605a4d
     MOV AL,byte ptr [EDX]               ; 00605a4f
-    MOV AL,byte ptr [EAX + 0x3f9c031]   ; 00605a51 | char[256] g_LeadByteTable
+    MOV AL,byte ptr [EAX + 0x3f9c031]   ; 00605a51 | g_LeadByteTable
     AND AL,0x1                          ; 00605a57
     AND EAX,0xff                        ; 00605a59
-    JZ 0x00605a66                       ; 00605a5e | LAB_00605a66
-        ;   XREF to: 00605a66 (CONDITIONAL_JUMP)
+    JZ 0x00605a66                       ; 00605a5e
+        ;   XREF to: 00605a66 (CONDITIONAL_JUMP)  ; LAB_00605a66
     MOV EAX,0x2                         ; 00605a60
     RET                                 ; 00605a65
     MOV EAX,0x1                         ; 00605a66

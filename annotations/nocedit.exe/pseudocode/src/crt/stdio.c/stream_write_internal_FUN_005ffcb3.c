@@ -28,15 +28,13 @@ crt_stdio_c_stream_write_internal_FUN_005ffcb3(FILE *stream,void *buffer,SIZE_T 
       iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));
       if ((int)count < *(int *)(iVar1 + 0x1c) - (int)*(uint **)(iVar1 + 0x20)) {
         puVar5 = *(uint **)(iVar1 + 0x20);
-                    /* WARNING: Load size is inaccurate */
         for (uVar4 = count >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-          *puVar5 = *buffer;
+          *puVar5 = *(uint *)buffer;
           buffer = (uint *)((int)buffer + ((uint)bVar6 * -2 + 1) * 4);
           puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
         }
-                    /* WARNING: Load size is inaccurate */
         for (uVar4 = count & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-          *(byte *)puVar5 = *buffer;
+          *(byte *)puVar5 = *(byte *)buffer;
           buffer = (uint *)((int)buffer + (uint)bVar6 * -2 + 1);
           puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);
         }

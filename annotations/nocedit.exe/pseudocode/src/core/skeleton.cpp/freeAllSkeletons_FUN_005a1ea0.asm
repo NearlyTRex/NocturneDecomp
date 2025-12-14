@@ -28,21 +28,21 @@ section .text
     PUSH EBX                            ; 005a1ea0
         ;   Label: core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
     PUSH ESI                            ; 005a1ea1
-    MOV EBX,0x38cc8a4                   ; 005a1ea2 | CSkeleton[40] g_SkeletonPool
-    CALL core_skeleton.cpp_freeAllModels_FUN_005a1dc0 ; 005a1ea7 | void core_skeleton.cpp_freeAllModels_FUN_005a1dc0()
-        ;   XREF to: 005a1dc0 (UNCONDITIONAL_CALL)
+    MOV EBX,0x38cc8a4                   ; 005a1ea2 | g_SkeletonPool
+    CALL core_skeleton.cpp_freeAllModels_FUN_005a1dc0 ; 005a1ea7
+        ;   XREF to: 005a1dc0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllModels_FUN_005a1dc0()
     LEA ESI,[EBX + 0x67c6e0]            ; 005a1eac | s_.RAW_0067c6e0
-    PUSH EBX                            ; 005a1eb2 | CSkeleton[40] g_SkeletonPool
+    PUSH EBX                            ; 005a1eb2 | g_SkeletonPool | DAT_038f60d0
         ;   Label: LAB_005a1eb2
-    CALL core_skeleton.cpp_CSkeleton_free_FUN_00599a50 ; 005a1eb3 | void core_skeleton.cpp_CSkeleton_free_FUN_00599a50(CSkeleton * this_ptr)
-        ;   XREF to: 00599a50 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CSkeleton_free_FUN_00599a50 ; 005a1eb3
+        ;   XREF to: 00599a50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_free_FUN_00599a50(CSkeleton * this_ptr)
     ADD EBX,0x2982c                     ; 005a1eb8 | DAT_038f60d0
     ADD ESP,0x4                         ; 005a1ebe
     CMP EBX,ESI                         ; 005a1ec1
-    JNZ 0x005a1eb2                      ; 005a1ec3 | LAB_005a1eb2
-        ;   XREF to: 005a1eb2 (CONDITIONAL_JUMP)
+    JNZ 0x005a1eb2                      ; 005a1ec3
+        ;   XREF to: 005a1eb2 (CONDITIONAL_JUMP)  ; LAB_005a1eb2
     XOR EDX,EDX                         ; 005a1ec5
-    MOV dword ptr [0x038cc8a0],EDX      ; 005a1ec7 | int g_SkeletonPoolCount
+    MOV dword ptr [0x038cc8a0],EDX      ; 005a1ec7 | g_SkeletonPoolCount
     POP ESI                             ; 005a1ecd
     POP EBX                             ; 005a1ece
     RET                                 ; 005a1ecf

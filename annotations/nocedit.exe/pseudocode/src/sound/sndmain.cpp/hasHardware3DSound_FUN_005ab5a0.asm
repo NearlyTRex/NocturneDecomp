@@ -23,13 +23,13 @@
 
 section .text
 
-    CALL sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530 ; 005ab5a0 | uint sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530()
+    CALL sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530 ; 005ab5a0
+        ;   XREF to: 005ab530 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530()
         ;   Label: sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0
-        ;   XREF to: 005ab530 (UNCONDITIONAL_CALL)
     TEST EAX,EAX                        ; 005ab5a5
-    JZ 0x005ab5ae                       ; 005ab5a7 | LAB_005ab5ae
-        ;   XREF to: 005ab5ae (CONDITIONAL_JUMP)
-    MOV EAX,[0x03f69270]                ; 005ab5a9 | int g_HasHardware3DSound
+    JZ 0x005ab5ae                       ; 005ab5a7
+        ;   XREF to: 005ab5ae (CONDITIONAL_JUMP)  ; LAB_005ab5ae
+    MOV EAX,[0x03f69270]                ; 005ab5a9 | g_HasHardware3DSound
     RET                                 ; 005ab5ae
         ;   Label: LAB_005ab5ae
 

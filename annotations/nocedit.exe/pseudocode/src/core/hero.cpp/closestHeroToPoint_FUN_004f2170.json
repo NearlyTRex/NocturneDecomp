@@ -1,160 +1,152 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 111, 
-    "pseudocode_lines": 36, 
-    "cross_reference_count": 2, 
-    "global_count": 7, 
-    "total_lines": 115, 
-    "assembly_lines": 79, 
-    "suspect_count": 6, 
+    "assembly_lines": 79,
+    "complexity_score": 96,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 7,
+    "pseudocode_lines": 36,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
-      "sborrow_artifact", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_hero_cpp_0062ea7d", 
-      "addr": "0062ea7d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_closestHeroToPoint_no_he_0062ea8e", 
-      "addr": "0062ea8e", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_HeroCount", 
-      "addr": "02db87bc", 
-      "value": null
-    }, 
-    {
-      "type": "CHero*[4]", 
-      "name": "g_HeroActors", 
-      "addr": "02db87c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02db87c4", 
-      "addr": "02db87c4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float *in_stack_00000004;"
-    }, 
-    {
-      "line": 21, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar1 = *(int *)((int)g_HeroActors + iVar5);"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(fVar2 = *(float *)(iVar1 + 0x20) - *in_stack_00000004,"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar4 = *(float *)(iVar1 + 0x24) - in_stack_00000004[1],"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar3 = *(float *)(iVar1 + 0x28) - in_stack_00000004[2],"
-    }, 
-    {
-      "line": 31, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar5,g_HeroCount * 4) != iVar5 + g_HeroCount * -4 < 0);"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004f2170", 
-    "signature": "undefined core_hero.cpp_closestHeroToPoint_FUN_004f2170()", 
-    "address_range": [
-      [
-        "004f2170", 
-        "004f221e"
-      ]
-    ], 
-    "name": "core_hero.cpp_closestHeroToPoint_FUN_004f2170"
-  }, 
-  "stack_frame": {
-    "local_size": 32, 
-    "variables": [
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 115
+  },
   "cross_references": [
     {
-      "from_addr": "0042ee67", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042ede0", 
-      "addr": "0042ede0"
-    }, 
+      "addr": "0042ede0",
+      "from_addr": "0042ee67",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042ede0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a7e91", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_emitter.cpp_FUN_004a7e80", 
-      "addr": "004a7e80"
+      "addr": "004a7e80",
+      "from_addr": "004a7e91",
+      "name": "core_emitter.cpp_FUN_004a7e80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f2170",
+    "address_range": [
+      [
+        "004f2170",
+        "004f221e"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_hero.cpp_closestHeroToPoint_FUN_004f2170",
+    "signature": "undefined core_hero.cpp_closestHeroToPoint_FUN_004f2170()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062ea7d",
+      "name": "s_core_hero_cpp_0062ea7d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0062ea8e",
+      "name": "s_closestHeroToPoint_no_he_0062ea8e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02db87bc",
+      "name": "g_HeroCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87c4",
+      "name": "DAT_02db87c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "float *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)g_HeroActors + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "(fVar2 = *(float *)(iVar1 + 0x20) - *in_stack_00000004,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "fVar4 = *(float *)(iVar1 + 0x24) - in_stack_00000004[1],",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "fVar3 = *(float *)(iVar1 + 0x28) - in_stack_00000004[2],",
+      "type": "stack_param"
     }
   ]
 }

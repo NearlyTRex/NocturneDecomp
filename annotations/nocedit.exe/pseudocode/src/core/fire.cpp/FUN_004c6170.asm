@@ -28,13 +28,13 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 004c6182
     PUSH ECX                            ; 004c6186
     PUSH EBX                            ; 004c6187
-    CALL core_particle.cpp_CParticle_setup_FUN_00545680 ; 004c6188 | void core_particle.cpp_CParticle_setup_FUN_00545680(CParticle * this_ptr, CVector3f * position, CVector3f * velocity)
-        ;   XREF to: 00545680 (UNCONDITIONAL_CALL)
+    CALL core_particle.cpp_CParticle_setup_FUN_00545680 ; 004c6188
+        ;   XREF to: 00545680 (UNCONDITIONAL_CALL)  ; void core_particle.cpp_CParticle_setup_FUN_00545680(CParticle * this_ptr, CVector3f * position, CVector3f * velocity)
     LEA EAX,[EBX + 0x38]                ; 004c618d
     ADD ESP,0xc                         ; 004c6190
     CMP EAX,ESI                         ; 004c6193
-    JZ 0x004c61a7                       ; 004c6195 | LAB_004c61a7
-        ;   XREF to: 004c61a7 (CONDITIONAL_JUMP)
+    JZ 0x004c61a7                       ; 004c6195
+        ;   XREF to: 004c61a7 (CONDITIONAL_JUMP)  ; LAB_004c61a7
     MOV EDX,dword ptr [ESI]             ; 004c6197
     MOV dword ptr [EAX],EDX             ; 004c6199
     MOV EDX,dword ptr [ESI + 0x4]       ; 004c619b
@@ -46,6 +46,6 @@ section .text
     MOV EAX,dword ptr [ESP + 0x24]      ; 004c61ac
     PUSH 0xc0c90fdb                     ; 004c61b0
     MOV dword ptr [EBX + 0x54],EAX      ; 004c61b5
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c61b8 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004c61b8
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

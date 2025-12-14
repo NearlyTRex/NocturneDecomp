@@ -1,88 +1,88 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 54, 
-    "assembly_lines": 36, 
-    "suspect_count": 1, 
+    "assembly_lines": 36,
+    "complexity_score": 33,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "g_PerspectiveReciprocal", 
-      "addr": "02d051f4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->w_recip + iVar1) ="
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059ab90", 
-    "signature": "void core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel * this_ptr, int lod_index)", 
-    "address_range": [
-      [
-        "0059ab90", 
-        "0059abe0"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "lod_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "005a031a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0", 
-      "addr": "005a02f0"
+      "addr": "005a02f0",
+      "from_addr": "005a031a",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0059ab90",
+    "address_range": [
+      [
+        "0059ab90",
+        "0059abe0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90",
+    "signature": "void core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel * this_ptr, int lod_index)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d051f4",
+      "name": "g_PerspectiveReciprocal",
+      "type": "float",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->w_recip + iVar1) =",
+      "type": "pointer_cast"
     }
   ]
 }

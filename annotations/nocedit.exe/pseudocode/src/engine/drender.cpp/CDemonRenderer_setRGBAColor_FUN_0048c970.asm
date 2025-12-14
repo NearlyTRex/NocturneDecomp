@@ -36,13 +36,13 @@ section .text
     PUSH ESI                            ; 0048c971
     MOV EBX,dword ptr [ESP + 0x14]      ; 0048c972
     MOV EDX,dword ptr [ESP + 0x18]      ; 0048c976
-    MOV CL,byte ptr [0x02d01f3c]        ; 0048c97a | int g_BlueBitPosition
+    MOV CL,byte ptr [0x02d01f3c]        ; 0048c97a | g_BlueBitPosition
     MOV ESI,EBX                         ; 0048c980
     SHL EDX,CL                          ; 0048c982
-    MOV CL,byte ptr [0x02d01f30]        ; 0048c984 | int g_GreenBitPosition
+    MOV CL,byte ptr [0x02d01f30]        ; 0048c984 | g_GreenBitPosition
     MOV EAX,dword ptr [ESP + 0x10]      ; 0048c98a
     SHL ESI,CL                          ; 0048c98e
-    MOV CL,byte ptr [0x02d01f24]        ; 0048c990 | int g_RedBitPosition
+    MOV CL,byte ptr [0x02d01f24]        ; 0048c990 | g_RedBitPosition
     SHL EBX,0x8                         ; 0048c996
     SHL EAX,CL                          ; 0048c999
     MOV ECX,dword ptr [ESP + 0x10]      ; 0048c99b
@@ -52,30 +52,30 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 0048c9a6
     OR ECX,EBX                          ; 0048c9aa
     OR EAX,ECX                          ; 0048c9ac
-    CMP dword ptr [0x02d03e94],0x0      ; 0048c9ae | int g_UseExternalRenderer
-    JNZ 0x0048c9d6                      ; 0048c9b5 | LAB_0048c9d6
-        ;   XREF to: 0048c9d6 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x0067939c],0x20     ; 0048c9b7 | int g_BitsPerPixel
-    JNZ 0x0048c9c2                      ; 0048c9be | LAB_0048c9c2
-        ;   XREF to: 0048c9c2 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x02d03e94],0x0      ; 0048c9ae | g_UseExternalRenderer
+    JNZ 0x0048c9d6                      ; 0048c9b5
+        ;   XREF to: 0048c9d6 (CONDITIONAL_JUMP)  ; LAB_0048c9d6
+    CMP dword ptr [0x0067939c],0x20     ; 0048c9b7 | g_BitsPerPixel
+    JNZ 0x0048c9c2                      ; 0048c9be
+        ;   XREF to: 0048c9c2 (CONDITIONAL_JUMP)  ; LAB_0048c9c2
     MOV EAX,EDX                         ; 0048c9c0
     MOV EDX,dword ptr [ESP + 0xc]       ; 0048c9c2
         ;   Label: LAB_0048c9c2
     MOV ECX,EAX                         ; 0048c9c6
     MOV EDX,dword ptr [EDX + 0x14]      ; 0048c9c8
     OR ECX,EDX                          ; 0048c9cb
-    MOV dword ptr [0x02d02570],ECX      ; 0048c9cd | int g_ActiveRenderColor
+    MOV dword ptr [0x02d02570],ECX      ; 0048c9cd | g_ActiveRenderColor
     POP ESI                             ; 0048c9d3
     POP EBX                             ; 0048c9d4
     RET                                 ; 0048c9d5
-    CMP dword ptr [0x0067939c],0x20     ; 0048c9d6 | int g_BitsPerPixel
+    CMP dword ptr [0x0067939c],0x20     ; 0048c9d6 | g_BitsPerPixel
         ;   Label: LAB_0048c9d6
-    JNZ 0x0048c9e1                      ; 0048c9dd | LAB_0048c9e1
-        ;   XREF to: 0048c9e1 (CONDITIONAL_JUMP)
+    JNZ 0x0048c9e1                      ; 0048c9dd
+        ;   XREF to: 0048c9e1 (CONDITIONAL_JUMP)  ; LAB_0048c9e1
     MOV EAX,EDX                         ; 0048c9df
     MOV ECX,EAX                         ; 0048c9e1
         ;   Label: LAB_0048c9e1
-    MOV dword ptr [0x02d02570],ECX      ; 0048c9e3 | int g_ActiveRenderColor
+    MOV dword ptr [0x02d02570],ECX      ; 0048c9e3 | g_ActiveRenderColor
     POP ESI                             ; 0048c9e9
     POP EBX                             ; 0048c9ea
     RET                                 ; 0048c9eb

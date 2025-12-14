@@ -39,7 +39,7 @@ section .text
     SUB ESP,0x18                        ; 0056e962
     MOV ECX,dword ptr [ESP + 0x24]      ; 0056e965
     MOV EBX,ESI                         ; 0056e969
-    MOV EAX,[0x02d052e8]                ; 0056e96b | CMatrix3x3i g_TransformMatrix
+    MOV EAX,[0x02d052e8]                ; 0056e96b | g_TransformMatrix
     MOV EDX,dword ptr [ECX]             ; 0056e970
     IMUL EDX                            ; 0056e972
     SHRD EAX,EDX,0x10                   ; 0056e974
@@ -87,7 +87,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 0056e9fa
     MOV EDX,dword ptr [ESP + 0xc]       ; 0056e9fe
     ADD ESI,EAX                         ; 0056ea02
-    MOV EAX,[0x02f0d364]                ; 0056ea04 | CMatrix3x3i g_InverseMatrix
+    MOV EAX,[0x02f0d364]                ; 0056ea04 | g_InverseMatrix
     IMUL EDX                            ; 0056ea09
     SHRD EAX,EDX,0x10                   ; 0056ea0b
     MOV EDX,dword ptr [ESP + 0x10]      ; 0056ea0f

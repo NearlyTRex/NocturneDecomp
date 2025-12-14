@@ -1,156 +1,156 @@
 {
   "complexity": {
-    "function_call_count": 7, 
-    "complexity_score": 112, 
-    "pseudocode_lines": 82, 
-    "cross_reference_count": 0, 
-    "global_count": 7, 
-    "total_lines": 290, 
-    "assembly_lines": 208, 
-    "suspect_count": 2, 
+    "assembly_lines": 208,
+    "complexity_score": 112,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 7,
+    "pseudocode_lines": 82,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0", 
-      "addr": "00427db0"
-    }, 
-    {
-      "name": "core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360", 
-      "addr": "00471360"
-    }, 
-    {
-      "name": "core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310", 
-      "addr": "00471310"
-    }, 
-    {
-      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20", 
-      "addr": "004c7b20"
-    }, 
-    {
-      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0", 
-      "addr": "004c79d0"
-    }, 
-    {
-      "name": "core_particle.cpp_CParticle_process_FUN_00545760", 
-      "addr": "00545760"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_0056d110", 
-      "addr": "0056d110"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CFireEffect*", 
-      "name": "g_CFireEffectPtr", 
-      "addr": "0067a3d0", 
-      "value": "02d12db0"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GlobalDeltaTimeInt", 
-      "addr": "02cf6a80", 
-      "value": null
-    }, 
-    {
-      "type": "CFireEffect", 
-      "name": "g_CFireEffectInstance", 
-      "addr": "02d12db0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.damage_listener_count", 
-      "addr": "03263310", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_CDemonSetInstance.damage_listeners", 
-      "addr": "03263314", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 290
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004c0b30", 
-    "signature": "void core_fire.cpp_CFireball_process_FUN_004c0b30(CFireball * this_ptr)", 
+    "address": "004c0b30",
     "address_range": [
       [
-        "004c0b30", 
+        "004c0b30",
         "004c0d7e"
       ]
-    ], 
-    "name": "core_fire.cpp_CFireball_process_FUN_004c0b30"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireball_process_FUN_004c0b30",
+    "signature": "void core_fire.cpp_CFireball_process_FUN_004c0b30(CFireball * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00427db0",
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
+    },
+    {
+      "addr": "00471360",
+      "name": "core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360"
+    },
+    {
+      "addr": "00471310",
+      "name": "core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310"
+    },
+    {
+      "addr": "004c7b20",
+      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20"
+    },
+    {
+      "addr": "004c79d0",
+      "name": "core_fire.cpp_CFireEffect_FUN_004c79d0"
+    },
+    {
+      "addr": "00545760",
+      "name": "core_particle.cpp_CParticle_process_FUN_00545760"
+    },
+    {
+      "addr": "0056d110",
+      "name": "core_set.cpp_CDemonSet_FUN_0056d110"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0067a3d0",
+      "name": "g_CFireEffectPtr",
+      "type": "CFireEffect*",
+      "value": "02d12db0"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02cf6a80",
+      "name": "g_GlobalDeltaTimeInt",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d12db0",
+      "name": "g_CFireEffectInstance",
+      "type": "CFireEffect",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "03263310",
+      "name": "g_CDemonSetInstance.damage_listener_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03263314",
+      "name": "g_CDemonSetInstance.damage_listeners",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 84, 
+    "frame_size": 88,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireball *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireball *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 88, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    }
+  ]
 }

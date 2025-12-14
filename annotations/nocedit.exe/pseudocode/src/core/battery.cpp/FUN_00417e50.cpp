@@ -11,8 +11,7 @@ void core_battery_cpp_FUN_00417e50(void)
 {
   CBattery *this_ptr;
   
-  this_ptr = (CBattery *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2e0,"..\\core\\battery.cpp",0x1f);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2e0,"..\\core\\battery.cpp",0x1f);
   if (this_ptr == (CBattery *)0x0) {
     return;
   }

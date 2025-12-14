@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 9, 
-    "assembly_lines": 4, 
-    "suspect_count": 1, 
+    "assembly_lines": 4,
+    "complexity_score": 20,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "state->input_ptr = (void *)((int)state->input_ptr + -1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006000f8", 
-    "signature": "int crt_stdio.c_string_ungetc_FUN_006000f8(int ch, scanf_state_t * state)", 
-    "address_range": [
-      [
-        "006000f8", 
-        "006000ff"
-      ]
-    ], 
-    "name": "crt_stdio.c_string_ungetc_FUN_006000f8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "ch"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "scanf_state_t *", 
-        "size": 4, 
-        "name": "state"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 9
+  },
   "cross_references": [
     {
-      "from_addr": "00600120", 
-      "type": "PARAM", 
-      "name": "crt_stdio.c_vsscanf_FUN_00600100", 
-      "addr": "00600100"
+      "addr": "00600100",
+      "from_addr": "00600120",
+      "name": "crt_stdio.c_vsscanf_FUN_00600100",
+      "type": "PARAM"
+    }
+  ],
+  "function": {
+    "address": "006000f8",
+    "address_range": [
+      [
+        "006000f8",
+        "006000ff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_string_ungetc_FUN_006000f8",
+    "signature": "int crt_stdio.c_string_ungetc_FUN_006000f8(int ch, scanf_state_t * state)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "ch",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "state",
+        "offset": 8,
+        "size": 4,
+        "type": "scanf_state_t *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 5,
+      "match": "(void *)((int)",
+      "text": "state->input_ptr = (void *)((int)state->input_ptr + -1);",
+      "type": "pointer_cast"
     }
   ]
 }

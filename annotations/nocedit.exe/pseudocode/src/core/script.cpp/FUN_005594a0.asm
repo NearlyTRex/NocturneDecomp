@@ -26,15 +26,15 @@ section .text
     PUSH EDX                            ; 005594a6
     MOV ECX,dword ptr [ESP + 0xc]       ; 005594a7
     PUSH ECX                            ; 005594ab
-    CALL core_script.cpp_FUN_005593f0   ; 005594ac | undefined core_script.cpp_FUN_005593f0()
-        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_005593f0   ; 005594ac
+        ;   XREF to: 005593f0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_005593f0()
     ADD ESP,0xc                         ; 005594b1
     TEST EAX,EAX                        ; 005594b4
-    JNZ 0x005594c1                      ; 005594b6 | LAB_005594c1
-        ;   XREF to: 005594c1 (CONDITIONAL_JUMP)
-    CMP dword ptr [0x0310ec9c],0x0      ; 005594b8 | undefined4 DAT_0310ec9c
-    JNZ 0x005594c2                      ; 005594bf | LAB_005594c2
-        ;   XREF to: 005594c2 (CONDITIONAL_JUMP)
+    JNZ 0x005594c1                      ; 005594b6
+        ;   XREF to: 005594c1 (CONDITIONAL_JUMP)  ; LAB_005594c1
+    CMP dword ptr [0x0310ec9c],0x0      ; 005594b8 | DAT_0310ec9c
+    JNZ 0x005594c2                      ; 005594bf
+        ;   XREF to: 005594c2 (CONDITIONAL_JUMP)  ; LAB_005594c2
     RET                                 ; 005594c1
         ;   Label: LAB_005594c1
     PUSH EDI                            ; 005594c2
@@ -42,10 +42,10 @@ section .text
     PUSH ESI                            ; 005594c3
     MOV ESI,dword ptr [ESP + 0x10]      ; 005594c4
     PUSH ESI                            ; 005594c8
-    MOV EDI,dword ptr [0x006793d0]      ; 005594c9 | CEventList * g_CEventListPtr
-    PUSH EDI                            ; 005594cf | CEventList g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004add00 ; 005594d0 | int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
-        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)
+    MOV EDI,dword ptr [0x006793d0]      ; 005594c9 | g_CEventListPtr
+    PUSH EDI                            ; 005594cf | g_CEventListInstance
+    CALL core_event.cpp_CEventList_FUN_004add00 ; 005594d0
+        ;   XREF to: 004add00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add00(CEventList * this_ptr)
     ADD ESP,0x8                         ; 005594d5
     POP ESI                             ; 005594d8
     POP EDI                             ; 005594d9

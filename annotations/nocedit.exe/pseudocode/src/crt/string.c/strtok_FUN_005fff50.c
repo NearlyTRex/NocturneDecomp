@@ -24,15 +24,12 @@ char * __cdecl crt_string_c_strtok_FUN_005fff50(char *str,char *delimiters)
     }
   }
   crt_unknown_c_FUN_00607080();
-  while( true ) {
-    bVar1 = *str;
-    pbVar3 = (byte *)(uint)bVar1;
-    if ((pbVar3 == (byte *)0x0) || ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVar1 & 7]) == 0))
-    break;
+  while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVar1 & 7]) != 0))) {
     str = (char *)((byte *)str + 1);
   }
+  pbVar3 = (byte *)0x0;
   pbVar4 = (byte *)str;
-  if (pbVar3 != (byte *)0x0) {
+  if (bVar1 != 0) {
     for (; bVar1 = *pbVar4, bVar1 != 0; pbVar4 = pbVar4 + 1) {
       if ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVar1 & 7]) != 0) {
         *pbVar4 = 0;

@@ -15,6 +15,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00505500
         ;   Label: engine_light.cpp_setSpecularEnabled_FUN_00505500
-    MOV [0x0067cfcc],EAX                ; 00505504 | int g_SpecularEnabled
+    MOV [0x0067cfcc],EAX                ; 00505504 | g_SpecularEnabled
     RET                                 ; 00505509
 

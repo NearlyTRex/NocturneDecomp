@@ -21,8 +21,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0060d7a0
         ;   Label: crt_iostream.cpp_freeBuffer_FUN_0060d7a0
     PUSH EDX                            ; 0060d7a4
-    CALL crt_memory.c_free_FUN_00601cd0 ; 0060d7a5 | void crt_memory.c_free_FUN_00601cd0(void * ptr)
-        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_00601cd0 ; 0060d7a5
+        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_00601cd0(void * ptr)
     ADD ESP,0x4                         ; 0060d7aa
     RET                                 ; 0060d7ad
 

@@ -1,68 +1,68 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 42, 
-    "assembly_lines": 32, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640", 
-      "addr": "0049a640"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_f_f_f_f_f_f_f_f_f_00622dc2", 
-      "addr": "00622dc2", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 32,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0049a4e0", 
-    "signature": "void core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle * this_ptr, FILE * file_handle)", 
+    "address": "0049a4e0",
     "address_range": [
       [
-        "0049a4e0", 
+        "0049a4e0",
         "0049a522"
       ]
-    ], 
-    "name": "core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0",
+    "signature": "void core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0(CDemonTriangle * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049a640",
+      "name": "core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622dc2",
+      "name": "s_f_f_f_f_f_f_f_f_f_00622dc2",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonTriangle *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonTriangle *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

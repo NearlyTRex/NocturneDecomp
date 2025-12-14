@@ -28,17 +28,17 @@ section .text
     MOV ESI,dword ptr [ESP + 0x8]       ; 00483fc1
     PUSH EBX                            ; 00483fc5
     PUSH ESI                            ; 00483fc6
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 00483fc7 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 00483fc7
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00483fcc
     MOV EBX,EAX                         ; 00483fcf
-    PUSH 0x621869                       ; 00483fd1 | = "nbride2.dfm" | s_nbride2_dfm_00621869 = nbride2.dfm
+    PUSH 0x621869                       ; 00483fd1 | = "nbride2.dfm"
     MOV ESI,EAX                         ; 00483fd6
     ADD EAX,0x158                       ; 00483fd8
     PUSH EAX                            ; 00483fdd
-    MOV dword ptr [EAX + -0x4],0x65cd94 ; 00483fde | CDemonActor_vtable PTR_core_dracbrid.cpp_DraculaBrideModels_FUN_0065cd94
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00483fe5 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x65cd94 ; 00483fde | PTR_core_dracbrid.cpp_DraculaBrideModels_FUN_0065cd94
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00483fe5
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x3f000000 ; 00483fea
     MOV dword ptr [EBX + 0x2de0],0x3f800000 ; 00483ff4
     MOV byte ptr [EBX + 0xbee0],0x0     ; 00483ffe
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_00484072
     MOV dword ptr [EAX + 0xbf68],0x0    ; 00484075
     CMP EAX,EDX                         ; 0048407f
-    JNZ 0x00484072                      ; 00484081 | LAB_00484072
-        ;   XREF to: 00484072 (CONDITIONAL_JUMP)
+    JNZ 0x00484072                      ; 00484081
+        ;   XREF to: 00484072 (CONDITIONAL_JUMP)  ; LAB_00484072
     MOV dword ptr [ESI + 0xbf68],0x0    ; 00484083
     MOV dword ptr [ESI + 0xbfe8],0x0    ; 0048408d
     MOV dword ptr [ESI + 0xbf54],0x0    ; 00484097

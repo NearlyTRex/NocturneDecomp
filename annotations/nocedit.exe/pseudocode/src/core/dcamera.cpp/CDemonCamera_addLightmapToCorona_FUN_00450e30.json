@@ -1,170 +1,170 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 98, 
-    "pseudocode_lines": 73, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 215, 
-    "assembly_lines": 142, 
-    "suspect_count": 2, 
+    "assembly_lines": 142,
+    "complexity_score": 98,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 5,
+    "pseudocode_lines": 73,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "char[241][320]", 
-      "name": "g_CoronaBlurOutputBuffer", 
-      "addr": "00ba8c78", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00ba8db8", 
-      "addr": "00ba8db8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00ba8db9", 
-      "addr": "00ba8db9", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00ba8ef8", 
-      "addr": "00ba8ef8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_015c2eac", 
-      "addr": "015c2eac", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 31, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar3 = (uint *)((int)light_source->corona_visibility_buffers +"
-    }, 
-    {
-      "line": 35, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar4 = (int *)((int)light_source->corona_lightmap_indices +"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00450e30", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDemonCamera * this_ptr, CDemonLight * light_source)", 
-    "address_range": [
-      [
-        "00450e30", 
-        "00450fba"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30"
-  }, 
-  "stack_frame": {
-    "local_size": 56, 
-    "variables": [
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CDemonLight *", 
-        "size": 4, 
-        "name": "light_source"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 64, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 215
+  },
   "cross_references": [
     {
-      "from_addr": "0056c26e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
+      "addr": "0056c1a0",
+      "from_addr": "0056c26e",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00450e30",
+    "address_range": [
+      [
+        "00450e30",
+        "00450fba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30",
+    "signature": "void core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDemonCamera * this_ptr, CDemonLight * light_source)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00ba8c78",
+      "name": "g_CoronaBlurOutputBuffer",
+      "type": "char[241][320]",
+      "value": null
+    },
+    {
+      "addr": "00ba8db8",
+      "name": "DAT_00ba8db8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00ba8db9",
+      "name": "DAT_00ba8db9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00ba8ef8",
+      "name": "DAT_00ba8ef8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "015c2eac",
+      "name": "DAT_015c2eac",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "light_source",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)light_source->corona_visibility_buffers +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(int *)((int)",
+      "text": "piVar4 = (int *)((int)light_source->corona_lightmap_indices +",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,257 +1,257 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 212, 
-    "pseudocode_lines": 87, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 282, 
-    "assembly_lines": 195, 
-    "suspect_count": 12, 
+    "assembly_lines": 195,
+    "complexity_score": 212,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 87,
+    "suspect_count": 12,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70", 
-      "addr": "0044bb70"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
-      "addr": "005feb5c"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 18, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "SFogGrid *in_stack_0000000c;"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_34 = in_stack_00000008;"
-    }, 
-    {
-      "line": 36, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "puVar6 = (byte *)(iVar13 * 0x10 + iVar9 + in_stack_00000008);"
-    }, 
-    {
-      "line": 56, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_38 = in_stack_0000000c->planes[0].grid[0] + (uVar7 + 1 & 0xf) + local_14;"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar10 = in_stack_0000000c->planes[0].grid[0] + (local_28 & 0xf) + local_14;"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar3 = in_stack_0000000c->planes[0].grid[local_18 + 1U & 0xf] + uVar7;"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_40 = in_stack_0000000c->planes[0].grid[local_1c & 0xf] + uVar7;"
-    }, 
-    {
-      "line": 61, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pcVar8 = in_stack_0000000c->planes[0].grid[0] + uVar7 + local_14;"
-    }, 
-    {
-      "line": 73, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)(byte)in_stack_0000000c->planes[uVar4].grid[0][uVar7 + local_14] +"
-    }, 
-    {
-      "line": 74, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(uint)(byte)in_stack_0000000c->planes[uVar12 & 0xf].grid[0]"
-    }, 
-    {
-      "line": 88, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_dcamera_cpp_resetFogSamplingOffset_FUN_0044bb70(in_stack_0000000c);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0044bba0", 
-    "signature": "void core_dcamera.cpp_generateFogGrid_FUN_0044bba0(SFogGrid * fog)", 
-    "address_range": [
-      [
-        "0044bba0", 
-        "0044bdc8"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_generateFogGrid_FUN_0044bba0"
-  }, 
-  "stack_frame": {
-    "local_size": 80, 
-    "variables": [
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SFogGrid *", 
-        "size": 4, 
-        "name": "fog"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 84, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 282
+  },
   "cross_references": [
     {
-      "from_addr": "004529a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_004529a0", 
-      "addr": "004529a0"
+      "addr": "004529a0",
+      "from_addr": "004529a5",
+      "name": "core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_004529a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044bba0",
+    "address_range": [
+      [
+        "0044bba0",
+        "0044bdc8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_generateFogGrid_FUN_0044bba0",
+    "signature": "void core_dcamera.cpp_generateFogGrid_FUN_0044bba0(SFogGrid * fog)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044bb70",
+      "name": "core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005feb5c",
+      "name": "crt_stdlib.c_rand_FUN_005feb5c"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 80,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "fog",
+        "offset": 4,
+        "size": 4,
+        "type": "SFogGrid *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "text": "SFogGrid *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "local_34 = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000008",
+      "text": "puVar6 = (byte *)(iVar13 * 0x10 + iVar9 + in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_0000000c",
+      "text": "local_38 = in_stack_0000000c->planes[0].grid[0] + (uVar7 + 1 & 0xf) + local_14;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_0000000c",
+      "text": "pcVar10 = in_stack_0000000c->planes[0].grid[0] + (local_28 & 0xf) + local_14;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_0000000c",
+      "text": "pcVar3 = in_stack_0000000c->planes[0].grid[local_18 + 1U & 0xf] + uVar7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_0000000c",
+      "text": "local_40 = in_stack_0000000c->planes[0].grid[local_1c & 0xf] + uVar7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_0000000c",
+      "text": "pcVar8 = in_stack_0000000c->planes[0].grid[0] + uVar7 + local_14;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_0000000c",
+      "text": "(uint)(byte)in_stack_0000000c->planes[uVar4].grid[0][uVar7 + local_14] +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_0000000c",
+      "text": "(uint)(byte)in_stack_0000000c->planes[uVar12 & 0xf].grid[0]",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 88,
+      "match": "in_stack_0000000c",
+      "text": "core_dcamera_cpp_resetFogSamplingOffset_FUN_0044bb70(in_stack_0000000c);",
+      "type": "stack_param"
     }
   ]
 }

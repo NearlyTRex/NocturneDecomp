@@ -24,25 +24,25 @@ section .text
     SUB ESI,0x2                         ; 0052ec4e
     SUB ESI,EDX                         ; 0052ec51
     TEST ESI,ESI                        ; 0052ec53
-    JL 0x0052ec72                       ; 0052ec55 | LAB_0052ec72
-        ;   XREF to: 0052ec72 (CONDITIONAL_JUMP)
+    JL 0x0052ec72                       ; 0052ec55
+        ;   XREF to: 0052ec72 (CONDITIONAL_JUMP)  ; LAB_0052ec72
     CMP dword ptr [EBX + 0x18],0x0      ; 0052ec57
         ;   Label: LAB_0052ec57
-    JNZ 0x0052ec72                      ; 0052ec5b | LAB_0052ec72
-        ;   XREF to: 0052ec72 (CONDITIONAL_JUMP)
+    JNZ 0x0052ec72                      ; 0052ec5b
+        ;   XREF to: 0052ec72 (CONDITIONAL_JUMP)  ; LAB_0052ec72
     MOV EDI,dword ptr [EBX + 0x28]      ; 0052ec5d
     XOR EAX,EAX                         ; 0052ec60
     TEST EDI,EDI                        ; 0052ec62
-    JG 0x0052ec77                       ; 0052ec64 | LAB_0052ec77
-        ;   XREF to: 0052ec77 (CONDITIONAL_JUMP)
+    JG 0x0052ec77                       ; 0052ec64
+        ;   XREF to: 0052ec77 (CONDITIONAL_JUMP)  ; LAB_0052ec77
     CMP EAX,0x1                         ; 0052ec66
         ;   Label: LAB_0052ec66
-    JNZ 0x0052ec91                      ; 0052ec69 | LAB_0052ec91
-        ;   XREF to: 0052ec91 (CONDITIONAL_JUMP)
+    JNZ 0x0052ec91                      ; 0052ec69
+        ;   XREF to: 0052ec91 (CONDITIONAL_JUMP)  ; LAB_0052ec91
     DEC dword ptr [EBX + 0x28]          ; 0052ec6b
     TEST ESI,ESI                        ; 0052ec6e
-    JGE 0x0052ec57                      ; 0052ec70 | LAB_0052ec57
-        ;   XREF to: 0052ec57 (CONDITIONAL_JUMP)
+    JGE 0x0052ec57                      ; 0052ec70
+        ;   XREF to: 0052ec57 (CONDITIONAL_JUMP)  ; LAB_0052ec57
     POP EBP                             ; 0052ec72
         ;   Label: LAB_0052ec72
     POP EDI                             ; 0052ec73
@@ -59,17 +59,17 @@ section .text
     ADD EAX,EDX                         ; 0052ec83
     PUSH EAX                            ; 0052ec85
     DEC ESI                             ; 0052ec86
-    CALL crt_stdio.c_fread_FUN_005fd990 ; 0052ec87 | SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fread_FUN_005fd990 ; 0052ec87
+        ;   XREF to: 005fd990 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005fd990(void * buffer, SIZE_T size, SIZE_T count, FILE * file)
     ADD ESP,0x10                        ; 0052ec8c
-    JMP 0x0052ec66                      ; 0052ec8f | LAB_0052ec66
-        ;   XREF to: 0052ec66 (UNCONDITIONAL_JUMP)
+    JMP 0x0052ec66                      ; 0052ec8f
+        ;   XREF to: 0052ec66 (UNCONDITIONAL_JUMP)  ; LAB_0052ec66
     LEA EAX,[ESI + 0x1]                 ; 0052ec91
         ;   Label: LAB_0052ec91
     MOV dword ptr [EBX + 0x18],EAX      ; 0052ec94
     TEST ESI,ESI                        ; 0052ec97
-    JGE 0x0052ec57                      ; 0052ec99 | LAB_0052ec57
-        ;   XREF to: 0052ec57 (CONDITIONAL_JUMP)
+    JGE 0x0052ec57                      ; 0052ec99
+        ;   XREF to: 0052ec57 (CONDITIONAL_JUMP)  ; LAB_0052ec57
     POP EBP                             ; 0052ec9b
     POP EDI                             ; 0052ec9c
     POP ESI                             ; 0052ec9d

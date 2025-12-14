@@ -42,14 +42,14 @@ section .text
     SHL EBX,0x10                        ; 0044d2b1
     MOV dword ptr [ESP],EBX             ; 0044d2b4
     MOV EBX,EDX                         ; 0044d2b7
-    MOV EDX,dword ptr [EDX*0x4 + 0x2cf7d5c] ; 0044d2b9 | uint *[1024] g_ZBufferScanlineArray
+    MOV EDX,dword ptr [EDX*0x4 + 0x2cf7d5c] ; 0044d2b9 | g_ZBufferScanlineArray
     SHL EBX,0x10                        ; 0044d2c0
     MOV EAX,dword ptr [EDX + EAX*0x4]   ; 0044d2c3
     MOV dword ptr [ESP + 0x4],EBX       ; 0044d2c6
     MOV dword ptr [ESP + 0x8],EAX       ; 0044d2ca
     TEST EAX,EAX                        ; 0044d2ce
-    JNZ 0x0044d2e9                      ; 0044d2d0 | LAB_0044d2e9
-        ;   XREF to: 0044d2e9 (CONDITIONAL_JUMP)
+    JNZ 0x0044d2e9                      ; 0044d2d0
+        ;   XREF to: 0044d2e9 (CONDITIONAL_JUMP)  ; LAB_0044d2e9
     MOV dword ptr [ESP + 0x8],0x7fffffff ; 0044d2d2
     MOV ESI,ESP                         ; 0044d2da
     MOV EDI,ECX                         ; 0044d2dc

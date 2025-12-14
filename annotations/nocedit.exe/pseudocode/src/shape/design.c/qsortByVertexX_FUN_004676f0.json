@@ -1,130 +1,130 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 40, 
-    "pseudocode_lines": 40, 
-    "cross_reference_count": 1, 
-    "global_count": 5, 
-    "total_lines": 119, 
-    "assembly_lines": 79, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_design_c_0061c9d1", 
-      "addr": "0061c9d1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hell_froze_0061c9e3", 
-      "addr": "0061c9e3", 
-      "value": null
-    }, 
-    {
-      "type": "SVertexData[20000]", 
-      "name": "g_LoadedVertices", 
-      "addr": "0162640c", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004676f0", 
-    "signature": "int shape_design.c_qsortByVertexX_FUN_004676f0(SVertexPair * a, SVertexPair * b)", 
-    "address_range": [
-      [
-        "004676f0", 
-        "004677b6"
-      ]
-    ], 
-    "name": "shape_design.c_qsortByVertexX_FUN_004676f0"
-  }, 
-  "stack_frame": {
-    "local_size": 40, 
-    "variables": [
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SVertexPair *", 
-        "size": 4, 
-        "name": "a"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SVertexPair *", 
-        "size": 4, 
-        "name": "b"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 79,
+    "complexity_score": 40,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 40,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 119
+  },
   "cross_references": [
     {
-      "from_addr": "00467a58", 
-      "type": "DATA", 
-      "name": "shape_design.c_vertexReducer_FUN_00467850", 
-      "addr": "00467850"
+      "addr": "00467850",
+      "from_addr": "00467a58",
+      "name": "shape_design.c_vertexReducer_FUN_00467850",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "004676f0",
+    "address_range": [
+      [
+        "004676f0",
+        "004677b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_qsortByVertexX_FUN_004676f0",
+    "signature": "int shape_design.c_qsortByVertexX_FUN_004676f0(SVertexPair * a, SVertexPair * b)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061c9d1",
+      "name": "s_shape_design_c_0061c9d1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061c9e3",
+      "name": "s_Hell_froze_0061c9e3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0162640c",
+      "name": "g_LoadedVertices",
+      "type": "SVertexData[20000]",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "a",
+        "offset": 4,
+        "size": 4,
+        "type": "SVertexPair *"
+      },
+      {
+        "is_param": true,
+        "name": "b",
+        "offset": 8,
+        "size": 4,
+        "type": "SVertexPair *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -43,15 +43,15 @@ section .text
     FCOMP double ptr [ESP]              ; 00414d14
     FNSTSW AX                           ; 00414d17
     SAHF                                ; 00414d19
-    JBE 0x00414d8c                      ; 00414d1a | LAB_00414d8c
-        ;   XREF to: 00414d8c (CONDITIONAL_JUMP)
+    JBE 0x00414d8c                      ; 00414d1a
+        ;   XREF to: 00414d8c (CONDITIONAL_JUMP)  ; LAB_00414d8c
     FLD float ptr [ESP + 0x8]           ; 00414d1c
     FCHS                                ; 00414d20
     FDIV float ptr [ESP + 0xc]          ; 00414d22
     SUB ESP,0x8                         ; 00414d26
     FSTP double ptr [ESP]               ; 00414d29
-    CALL crt_math.c_floor_FUN_005feb90  ; 00414d2c | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 00414d2c
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x18],EAX      ; 00414d31
     MOV dword ptr [ESP + 0x1c],EDX      ; 00414d35
     FLD double ptr [ESP + 0x18]         ; 00414d39
@@ -63,8 +63,8 @@ section .text
     FCOMPP                              ; 00414d4d
     FNSTSW AX                           ; 00414d4f
     SAHF                                ; 00414d51
-    JBE 0x00414d60                      ; 00414d52 | LAB_00414d60
-        ;   XREF to: 00414d60 (CONDITIONAL_JUMP)
+    JBE 0x00414d60                      ; 00414d52
+        ;   XREF to: 00414d60 (CONDITIONAL_JUMP)  ; LAB_00414d60
     FLD float ptr [ESP + 0x8]           ; 00414d54
     FADD float ptr [ESP + 0xc]          ; 00414d58
     FSTP float ptr [ESP + 0x8]          ; 00414d5c
@@ -79,8 +79,8 @@ section .text
     ADD EBX,0x178                       ; 00414d72
     PUSH dword ptr [EBX + 0x18c]        ; 00414d78
     PUSH EBX                            ; 00414d7e
-    CALL core_course.cpp_CCourse_FUN_00442710 ; 00414d7f | void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
-        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)
+    CALL core_course.cpp_CCourse_FUN_00442710 ; 00414d7f
+        ;   XREF to: 00442710 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_FUN_00442710(CCourse * this_ptr)
     ADD ESP,0x10                        ; 00414d84
     MOV ESP,EBP                         ; 00414d87
     POP EBP                             ; 00414d89
@@ -91,14 +91,14 @@ section .text
     FDIV float ptr [ESP + 0xc]          ; 00414d90
     SUB ESP,0x8                         ; 00414d94
     FSTP double ptr [ESP]               ; 00414d97
-    CALL crt_math.c_floor_FUN_005feb90  ; 00414d9a | double crt_math.c_floor_FUN_005feb90(double input_value)
-        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_floor_FUN_005feb90  ; 00414d9a
+        ;   XREF to: 005feb90 (UNCONDITIONAL_CALL)  ; double crt_math.c_floor_FUN_005feb90(double input_value)
     MOV dword ptr [ESP + 0x18],EAX      ; 00414d9f
     MOV dword ptr [ESP + 0x1c],EDX      ; 00414da3
     FLD double ptr [ESP + 0x18]         ; 00414da7
     ADD ESP,0x8                         ; 00414dab
     FMUL float ptr [ESP + 0xc]          ; 00414dae
     FSUBR double ptr [ESP]              ; 00414db2
-    JMP 0x00414d5c                      ; 00414db5 | LAB_00414d5c
-        ;   XREF to: 00414d5c (UNCONDITIONAL_JUMP)
+    JMP 0x00414d5c                      ; 00414db5
+        ;   XREF to: 00414d5c (UNCONDITIONAL_JUMP)  ; LAB_00414d5c
 

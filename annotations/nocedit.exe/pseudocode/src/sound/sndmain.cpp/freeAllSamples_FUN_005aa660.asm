@@ -26,23 +26,23 @@ section .text
     PUSH EBX                            ; 005aa660
         ;   Label: sound_sndmain.cpp_freeAllSamples_FUN_005aa660
     PUSH ESI                            ; 005aa661
-    CALL sound_sndmain.cpp_lockSound_FUN_005abd30 ; 005aa662 | void sound_sndmain.cpp_lockSound_FUN_005abd30()
-        ;   XREF to: 005abd30 (UNCONDITIONAL_CALL)
-    MOV EBX,0x3f6282c                   ; 005aa667 | CSfxSample[64] g_SfxSamples
-    CALL sound_sndmain.cpp_killAllSfx_FUN_005a9cc0 ; 005aa66c | void sound_sndmain.cpp_killAllSfx_FUN_005a9cc0()
-        ;   XREF to: 005a9cc0 (UNCONDITIONAL_CALL)
-    LEA ESI,[EBX + 0x6000]              ; 005aa671 | CSfxSample * g_SfxSamplesEnd
-    PUSH EBX                            ; 005aa677 | CSfxSample[64] g_SfxSamples
+    CALL sound_sndmain.cpp_lockSound_FUN_005abd30 ; 005aa662
+        ;   XREF to: 005abd30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005abd30()
+    MOV EBX,0x3f6282c                   ; 005aa667 | g_SfxSamples
+    CALL sound_sndmain.cpp_killAllSfx_FUN_005a9cc0 ; 005aa66c
+        ;   XREF to: 005a9cc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_killAllSfx_FUN_005a9cc0()
+    LEA ESI,[EBX + 0x6000]              ; 005aa671 | g_SfxSamplesEnd
+    PUSH EBX                            ; 005aa677 | g_SfxSamples | DAT_03f629ac
         ;   Label: LAB_005aa677
-    CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 ; 005aa678 | void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample * this_ptr)
-        ;   XREF to: 005a62c0 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0 ; 005aa678
+        ;   XREF to: 005a62c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample * this_ptr)
     ADD EBX,0x180                       ; 005aa67d
     ADD ESP,0x4                         ; 005aa683
     CMP EBX,ESI                         ; 005aa686
-    JNZ 0x005aa677                      ; 005aa688 | LAB_005aa677
-        ;   XREF to: 005aa677 (CONDITIONAL_JUMP)
-    CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0 ; 005aa68a | void sound_sndmain.cpp_unlockSound_FUN_005abdc0()
-        ;   XREF to: 005abdc0 (UNCONDITIONAL_CALL)
+    JNZ 0x005aa677                      ; 005aa688
+        ;   XREF to: 005aa677 (CONDITIONAL_JUMP)  ; LAB_005aa677
+    CALL sound_sndmain.cpp_unlockSound_FUN_005abdc0 ; 005aa68a
+        ;   XREF to: 005abdc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_005abdc0()
     POP ESI                             ; 005aa68f
     POP EBX                             ; 005aa690
     RET                                 ; 005aa691

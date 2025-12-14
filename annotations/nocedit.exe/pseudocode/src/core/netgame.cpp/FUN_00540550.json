@@ -1,94 +1,94 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 63, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 75, 
-    "assembly_lines": 47, 
-    "suspect_count": 3, 
+    "assembly_lines": 47,
+    "complexity_score": 63,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 28,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "support_trisock.cpp_isSocketValid_FUN_005e1b70", 
-      "addr": "005e1b70"
-    }, 
-    {
-      "name": "support_trisock.cpp_receiveSocketData_FUN_005e1c20", 
-      "addr": "005e1c20"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_ForceMessagePump", 
-      "addr": "006849a8", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_NetworkPacketSize", 
-      "addr": "02fa88c8", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SSocketContext *)(in_stack_00000004 + 0x170));"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SSocketContext *)(in_stack_00000004 + 0x170),(char *)&g_NetworkPacketSize,"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00540550", 
-    "signature": "undefined core_netgame.cpp_FUN_00540550()", 
-    "address_range": [
-      [
-        "00540550", 
-        "005405ac"
-      ]
-    ], 
-    "name": "core_netgame.cpp_FUN_00540550"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 75
+  },
   "cross_references": [
     {
-      "from_addr": "0053fc54", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_netgame.cpp_initializeNetwork_FUN_0053fbc0", 
-      "addr": "0053fbc0"
+      "addr": "0053fbc0",
+      "from_addr": "0053fc54",
+      "name": "core_netgame.cpp_initializeNetwork_FUN_0053fbc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00540550",
+    "address_range": [
+      [
+        "00540550",
+        "005405ac"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_netgame.cpp_FUN_00540550",
+    "signature": "undefined core_netgame.cpp_FUN_00540550()"
+  },
+  "function_calls": [
+    {
+      "addr": "005e1b70",
+      "name": "support_trisock.cpp_isSocketValid_FUN_005e1b70"
+    },
+    {
+      "addr": "005e1c20",
+      "name": "support_trisock.cpp_receiveSocketData_FUN_005e1c20"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006849a8",
+      "name": "g_ForceMessagePump",
+      "type": "int",
+      "value": "0x1"
+    },
+    {
+      "addr": "02fa88c8",
+      "name": "g_NetworkPacketSize",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "((SSocketContext *)(in_stack_00000004 + 0x170));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "((SSocketContext *)(in_stack_00000004 + 0x170),(char *)&g_NetworkPacketSize,",
+      "type": "stack_param"
     }
   ]
 }

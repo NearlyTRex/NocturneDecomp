@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 59, 
-    "assembly_lines": 44, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_edittool.cpp_CEditorTools_popWindowState_FUN_004a0ea0", 
-      "addr": "004a0ea0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00622f94", 
-      "addr": "00622f94", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_ClipboardBackupText", 
-      "addr": "02cf1cd8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowStackCount", 
-      "addr": "02cf1cdc", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 44,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 57
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0049dfb0", 
-    "signature": "CEditorTools * shape_edittool.cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools * this_ptr)", 
+    "address": "0049dfb0",
     "address_range": [
       [
-        "0049dfb0", 
+        "0049dfb0",
         "0049e010"
       ]
-    ], 
-    "name": "shape_edittool.cpp_CEditorTools_dtor_FUN_0049dfb0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_dtor_FUN_0049dfb0",
+    "signature": "CEditorTools * shape_edittool.cpp_CEditorTools_dtor_FUN_0049dfb0(CEditorTools * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a0ea0",
+      "name": "shape_edittool.cpp_CEditorTools_popWindowState_FUN_004a0ea0"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622f94",
+      "name": "s_shape_edittool_cpp_00622f94",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02cf1cd8",
+      "name": "g_ClipboardBackupText",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02cf1cdc",
+      "name": "g_WindowStackCount",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEditorTools *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

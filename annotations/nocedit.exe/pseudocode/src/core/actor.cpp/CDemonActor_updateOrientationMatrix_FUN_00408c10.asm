@@ -34,22 +34,22 @@ section .text
     SUB ESP,0x4                         ; 00408c11
     MOV EBX,dword ptr [ESP + 0xc]       ; 00408c14
     PUSH dword ptr [EBX + 0x30]         ; 00408c18
-    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 00408c1b | float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
-        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 00408c1b
+        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
     MOV dword ptr [ESP + 0x4],EAX       ; 00408c20
     FLD float ptr [ESP + 0x4]           ; 00408c24
     ADD ESP,0x4                         ; 00408c28
     PUSH dword ptr [EBX + 0x38]         ; 00408c2b
     FSTP float ptr [EBX + 0x30]         ; 00408c2e
-    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 00408c31 | float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
-        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 00408c31
+        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
     MOV dword ptr [ESP + 0x4],EAX       ; 00408c36
     FLD float ptr [ESP + 0x4]           ; 00408c3a
     ADD ESP,0x4                         ; 00408c3e
     PUSH dword ptr [EBX + 0x34]         ; 00408c41
     FSTP float ptr [EBX + 0x38]         ; 00408c44
-    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 00408c47 | float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
-        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 ; 00408c47
+        ;   XREF to: 0040cd70 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd70(float angle_radians)
     MOV dword ptr [ESP + 0x4],EAX       ; 00408c4c
     FLD float ptr [ESP + 0x4]           ; 00408c50
     ADD ESP,0x4                         ; 00408c54
@@ -58,8 +58,8 @@ section .text
     ADD EBX,0x3c                        ; 00408c5b
     PUSH EBX                            ; 00408c5e
     FSTP float ptr [EBX + -0x8]         ; 00408c5f
-    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 00408c62 | void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 00408c62
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00408c67
     ADD ESP,0x4                         ; 00408c6a
     POP EBX                             ; 00408c6d

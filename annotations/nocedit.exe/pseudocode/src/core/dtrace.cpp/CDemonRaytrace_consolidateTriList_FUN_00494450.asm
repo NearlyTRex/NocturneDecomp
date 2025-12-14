@@ -44,15 +44,15 @@ section .text
     PUSH EBP                            ; 00494453
     SUB ESP,0x10                        ; 00494454
     MOV EBX,dword ptr [ESP + 0x24]      ; 00494457
-    PUSH 0x622670                       ; 0049445b | = "Consolidating raytrace geometry array..." | s_Consolidating_raytrace_g_00622670 = Consolidating raytrace geometry arrays...
-    MOV EDX,dword ptr [0x00678a60]      ; 00494460 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
-    PUSH EDX                            ; 00494466 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 00494467 | void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
-        ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)
+    PUSH 0x622670                       ; 0049445b | = "Consolidating raytrace geometry array..."
+    MOV EDX,dword ptr [0x00678a60]      ; 00494460 | g_CEditorToolsPtr
+    PUSH EDX                            ; 00494466 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 00494467
+        ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 0049446c
     PUSH EBX                            ; 0049446f
-    CALL core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690 ; 00494470 | void core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytrace * this_ptr)
-        ;   XREF to: 00494690 (UNCONDITIONAL_CALL)
+    CALL core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690 ; 00494470
+        ;   XREF to: 00494690 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytrace * this_ptr)
     ADD ESP,0x4                         ; 00494475
     MOV dword ptr [EBX + 0x4],0x0       ; 00494478
     XOR EAX,EAX                         ; 0049447f
@@ -63,8 +63,8 @@ section .text
     IMUL EBP,ECX                        ; 00494489
     IMUL EBP,dword ptr [EBX + 0x48]     ; 0049448c
     CMP EAX,EBP                         ; 00494490
-    JGE 0x004944a8                      ; 00494492 | LAB_004944a8
-        ;   XREF to: 004944a8 (CONDITIONAL_JUMP)
+    JGE 0x004944a8                      ; 00494492
+        ;   XREF to: 004944a8 (CONDITIONAL_JUMP)  ; LAB_004944a8
     MOV ECX,dword ptr [EBX + 0x4c]      ; 00494494
     MOV ESI,dword ptr [EBX + 0x4]       ; 00494497
     MOV ECX,dword ptr [ECX + EDX*0x1]   ; 0049449a
@@ -72,12 +72,12 @@ section .text
     ADD ESI,ECX                         ; 004944a0
     INC EAX                             ; 004944a2
     MOV dword ptr [EBX + 0x4],ESI       ; 004944a3
-    JMP 0x00494483                      ; 004944a6 | LAB_00494483
-        ;   XREF to: 00494483 (UNCONDITIONAL_JUMP)
+    JMP 0x00494483                      ; 004944a6
+        ;   XREF to: 00494483 (UNCONDITIONAL_JUMP)  ; LAB_00494483
     PUSH EBX                            ; 004944a8
         ;   Label: LAB_004944a8
-    CALL core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600 ; 004944a9 | void core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRaytrace * this_ptr)
-        ;   XREF to: 00494600 (UNCONDITIONAL_CALL)
+    CALL core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600 ; 004944a9
+        ;   XREF to: 00494600 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRaytrace * this_ptr)
     XOR EDI,EDI                         ; 004944ae
     ADD ESP,0x4                         ; 004944b0
     MOV dword ptr [ESP + 0x8],EDI       ; 004944b3
@@ -89,15 +89,15 @@ section .text
     IMUL EBP,EDI                        ; 004944c4
     IMUL EBP,dword ptr [EBX + 0x48]     ; 004944c7
     CMP EBP,dword ptr [ESP + 0x4]       ; 004944cb
-    JLE 0x004945e2                      ; 004944cf | LAB_004945e2
-        ;   XREF to: 004945e2 (CONDITIONAL_JUMP)
+    JLE 0x004945e2                      ; 004944cf
+        ;   XREF to: 004945e2 (CONDITIONAL_JUMP)  ; LAB_004945e2
     MOV ECX,dword ptr [ESP]             ; 004944d5
     MOV EBP,dword ptr [EBX + 0x4c]      ; 004944d8
     ADD EBP,ECX                         ; 004944db
     MOV ESI,dword ptr [EBP]             ; 004944dd
     TEST ESI,ESI                        ; 004944e0
-    JLE 0x00494593                      ; 004944e2 | LAB_00494593
-        ;   XREF to: 00494593 (CONDITIONAL_JUMP)
+    JLE 0x00494593                      ; 004944e2
+        ;   XREF to: 00494593 (CONDITIONAL_JUMP)  ; LAB_00494593
     IMUL ECX,ESI,0x38                   ; 004944e8
     IMUL EDI,dword ptr [ESP + 0x8],0x38 ; 004944eb
     MOV EAX,dword ptr [EBX + 0x8]       ; 004944f0
@@ -124,28 +124,28 @@ section .text
     AND CL,0x3                          ; 00494521
     MOVSB.REP ES:EDI,ESI                ; 00494524
     POP EDI                             ; 00494526
-    MOV ECX,0x62269a                    ; 00494527 | = "..\\core\\dtrace.cpp" | s_core_dtrace_cpp_0062269a = ..\core\dtrace.cpp
+    MOV ECX,0x62269a                    ; 00494527 | = "..\\core\\dtrace.cpp"
     MOV ESI,0xe0                        ; 0049452c
     MOV EAX,dword ptr [EBP + 0x4]       ; 00494531
-    MOV dword ptr [0x0067d20c],ECX      ; 00494534 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],ESI      ; 0049453a | int g_CurrentDebugLine
+    MOV dword ptr [0x0067d20c],ECX      ; 00494534 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ESI      ; 0049453a | g_CurrentDebugLine
     TEST EAX,EAX                        ; 00494540
-    JZ 0x00494550                       ; 00494542 | LAB_00494550
-        ;   XREF to: 00494550 (CONDITIONAL_JUMP)
+    JZ 0x00494550                       ; 00494542
+        ;   XREF to: 00494550 (CONDITIONAL_JUMP)  ; LAB_00494550
     SUB EAX,0x4                         ; 00494544
     PUSH EAX                            ; 00494547
-    CALL crt_memory.c_free_FUN_005fe659 ; 00494548 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_005fe659 ; 00494548
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0049454d
-    MOV EDI,0x6226ad                    ; 00494550 | = "..\\core\\dtrace.cpp" | s_core_dtrace_cpp_006226ad = ..\core\dtrace.cpp
+    MOV EDI,0x6226ad                    ; 00494550 | = "..\\core\\dtrace.cpp"
         ;   Label: LAB_00494550
     MOV EDX,dword ptr [EBP + 0x54]      ; 00494555
     MOV EAX,0xe1                        ; 00494558
     PUSH EDX                            ; 0049455d
-    MOV dword ptr [0x0067d20c],EDI      ; 0049455e | char * g_CurrentDebugFilename
-    MOV [0x02f0d944],EAX                ; 00494564 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00494569 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],EDI      ; 0049455e | g_CurrentDebugFilename
+    MOV [0x02f0d944],EAX                ; 00494564 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 00494569
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 0049456e
     MOV ECX,dword ptr [ESP + 0x8]       ; 00494571
     IMUL EAX,ECX,0x38                   ; 00494575
@@ -172,23 +172,23 @@ section .text
     FSTP float ptr [ESP]                ; 004945b4
     FILD dword ptr [ESP + 0x10]         ; 004945b7
     SUB ESP,0x4                         ; 004945bb
-    MOV EDX,dword ptr [0x00678a60]      ; 004945be | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 004945be | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 004945c4
-    PUSH EDX                            ; 004945c7 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 004945c8 | void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)
+    PUSH EDX                            ; 004945c7 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 004945c8
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     ADD ESP,0xc                         ; 004945cd
     MOV ECX,dword ptr [ESP]             ; 004945d0
     ADD ECX,0x58                        ; 004945d3
     MOV dword ptr [ESP + 0x4],ESI       ; 004945d6
     MOV dword ptr [ESP],ECX             ; 004945da
-    JMP 0x004944be                      ; 004945dd | LAB_004944be
-        ;   XREF to: 004944be (UNCONDITIONAL_JUMP)
-    MOV EBX,dword ptr [0x00678a60]      ; 004945e2 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
+    JMP 0x004944be                      ; 004945dd
+        ;   XREF to: 004944be (UNCONDITIONAL_JUMP)  ; LAB_004944be
+    MOV EBX,dword ptr [0x00678a60]      ; 004945e2 | g_CEditorToolsPtr
         ;   Label: LAB_004945e2
-    PUSH EBX                            ; 004945e8 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 004945e9 | void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
-        ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)
+    PUSH EBX                            ; 004945e8 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 004945e9
+        ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004945ee
     ADD ESP,0x10                        ; 004945f1
     POP EBP                             ; 004945f4

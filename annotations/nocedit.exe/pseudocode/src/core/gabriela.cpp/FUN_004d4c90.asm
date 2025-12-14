@@ -28,19 +28,19 @@ section .text
     PUSH EDX                            ; 004d4c9e
     MOV ECX,dword ptr [EAX + 0x24b4]    ; 004d4c9f
     PUSH ECX                            ; 004d4ca5
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004d4ca6 | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 004d4ca6
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d4cab
     TEST EAX,EAX                        ; 004d4cae
-    JZ 0x004d4cd1                       ; 004d4cb0 | LAB_004d4cd1
-        ;   XREF to: 004d4cd1 (CONDITIONAL_JUMP)
+    JZ 0x004d4cd1                       ; 004d4cb0
+        ;   XREF to: 004d4cd1 (CONDITIONAL_JUMP)  ; LAB_004d4cd1
     MOV EBX,dword ptr [EAX + 0x66c]     ; 004d4cb2
     CMP EBX,0x2                         ; 004d4cb8
-    JZ 0x004d4cc2                       ; 004d4cbb | LAB_004d4cc2
-        ;   XREF to: 004d4cc2 (CONDITIONAL_JUMP)
+    JZ 0x004d4cc2                       ; 004d4cbb
+        ;   XREF to: 004d4cc2 (CONDITIONAL_JUMP)  ; LAB_004d4cc2
     CMP EBX,0x3                         ; 004d4cbd
-    JNZ 0x004d4cd1                      ; 004d4cc0 | LAB_004d4cd1
-        ;   XREF to: 004d4cd1 (CONDITIONAL_JUMP)
+    JNZ 0x004d4cd1                      ; 004d4cc0
+        ;   XREF to: 004d4cd1 (CONDITIONAL_JUMP)  ; LAB_004d4cd1
     MOV dword ptr [ESP],0xbf860a92      ; 004d4cc2
         ;   Label: LAB_004d4cc2
     MOV EAX,dword ptr [ESP]             ; 004d4cc9

@@ -25,6 +25,6 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00545670
         ;   Label: core_particle.cpp_CParticle_dtor_FUN_00545670
-    MOV dword ptr [EAX + 0x34],0x661f24 ; 00545674 | CParticle_vtable g_CParticleVTable
+    MOV dword ptr [EAX + 0x34],0x661f24 ; 00545674 | g_CParticleVTable
     RET                                 ; 0054567b
 

@@ -41,8 +41,8 @@ section .text
     PUSH EAX                            ; 004f1ac4
     LEA EAX,[EBP + 0x158]               ; 004f1ac5
     PUSH EAX                            ; 004f1acb
-    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004f1acc | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
-        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00 ; 004f1acc
+        ;   XREF to: 0059fb00 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00(CDeformableModelInstance * this_ptr, CVector3f * out_position, int bone_index)
     ADD ESP,0xc                         ; 004f1ad1
     PUSH EAX                            ; 004f1ad4
     LEA EAX,[ESP + 0x4c]                ; 004f1ad5
@@ -50,28 +50,28 @@ section .text
     PUSH EBP                            ; 004f1ada
     XOR EDI,EDI                         ; 004f1adb
     XOR ESI,ESI                         ; 004f1add
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 004f1adf | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 004f1adf
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004f1ae4
-    MOV EBX,dword ptr [0x006810c8]      ; 004f1ae7 | CDemonSet * g_CDemonSetPtr
+    MOV EBX,dword ptr [0x006810c8]      ; 004f1ae7 | g_CDemonSetPtr
         ;   Label: LAB_004f1ae7
     CMP EDI,dword ptr [EBX + 0x14f098]  ; 004f1aed | g_CDemonSetInstance.damage_listener_count
-    JGE 0x004f1b41                      ; 004f1af3 | LAB_004f1b41
-        ;   XREF to: 004f1b41 (CONDITIONAL_JUMP)
-    MOV EBX,dword ptr [ESI + EBX*0x1 + 0x14f09c] ; 004f1af5 | g_CDemonSetInstance.damage_listeners
+    JGE 0x004f1b41                      ; 004f1af3
+        ;   XREF to: 004f1b41 (CONDITIONAL_JUMP)  ; LAB_004f1b41
+    MOV EBX,dword ptr [ESI + EBX*0x1 + 0x14f09c] ; 004f1af5 | g_CDemonSetInstance.damage_listeners | DAT_03263318
     CMP EBX,EBP                         ; 004f1afc
-    JNZ 0x004f1b06                      ; 004f1afe | LAB_004f1b06
-        ;   XREF to: 004f1b06 (CONDITIONAL_JUMP)
+    JNZ 0x004f1b06                      ; 004f1afe
+        ;   XREF to: 004f1b06 (CONDITIONAL_JUMP)  ; LAB_004f1b06
     INC EDI                             ; 004f1b00
         ;   Label: LAB_004f1b00
     ADD ESI,0x4                         ; 004f1b01
-    JMP 0x004f1ae7                      ; 004f1b04 | LAB_004f1ae7
-        ;   XREF to: 004f1ae7 (UNCONDITIONAL_JUMP)
+    JMP 0x004f1ae7                      ; 004f1b04
+        ;   XREF to: 004f1ae7 (UNCONDITIONAL_JUMP)  ; LAB_004f1ae7
     MOV EAX,ESP                         ; 004f1b06
         ;   Label: LAB_004f1b06
     PUSH EAX                            ; 004f1b08
-    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 004f1b09 | SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
-        ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0 ; 004f1b09
+        ;   XREF to: 00427db0 (UNCONDITIONAL_CALL)  ; SDamageInfo * core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0(SDamageInfo * this_ptr)
     MOV EAX,0x41200000                  ; 004f1b0e
     ADD ESP,0x4                         ; 004f1b13
     MOV dword ptr [ESP + 0x4],EAX       ; 004f1b16
@@ -86,8 +86,8 @@ section .text
     PUSH EBX                            ; 004f1b35
     CALL dword ptr [EDX + 0x114]        ; 004f1b36
     ADD ESP,0x10                        ; 004f1b3c
-    JMP 0x004f1b00                      ; 004f1b3f | LAB_004f1b00
-        ;   XREF to: 004f1b00 (UNCONDITIONAL_JUMP)
+    JMP 0x004f1b00                      ; 004f1b3f
+        ;   XREF to: 004f1b00 (UNCONDITIONAL_JUMP)  ; LAB_004f1b00
     ADD ESP,0x54                        ; 004f1b41
         ;   Label: LAB_004f1b41
     POP EBP                             ; 004f1b44

@@ -1,111 +1,111 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 34, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 133, 
-    "assembly_lines": 99, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950", 
-      "addr": "00478950"
-    }, 
-    {
-      "name": "core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80", 
-      "addr": "0049ad80"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f7a3", 
-      "addr": "0061f7a3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Tried_to_call_CKeyFramed_0061f7b6", 
-      "addr": "0061f7b6", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00478650", 
-    "signature": "void core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00478650(CKeyFramedModel * this_ptr, int frame_index, SIntersectXZCylinder * cylinder, CVector3f * transform_vector)", 
-    "address_range": [
-      [
-        "00478650", 
-        "0047873e"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00478650"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "frame_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SIntersectXZCylinder *", 
-        "size": 4, 
-        "name": "cylinder"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "transform_vector"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 99,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 133
+  },
   "cross_references": [
     {
-      "from_addr": "00573857", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470", 
-      "addr": "00573470"
+      "addr": "00573470",
+      "from_addr": "00573857",
+      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00478650",
+    "address_range": [
+      [
+        "00478650",
+        "0047873e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00478650",
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_00478650(CKeyFramedModel * this_ptr, int frame_index, SIntersectXZCylinder * cylinder, CVector3f * transform_vector)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478950",
+      "name": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950"
+    },
+    {
+      "addr": "0049ad80",
+      "name": "core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061f7a3",
+      "name": "s_core_dmodel_cpp_0061f7a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f7b6",
+      "name": "s_Tried_to_call_CKeyFramed_0061f7b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "frame_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "cylinder",
+        "offset": 12,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      },
+      {
+        "is_param": true,
+        "name": "transform_vector",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
 }

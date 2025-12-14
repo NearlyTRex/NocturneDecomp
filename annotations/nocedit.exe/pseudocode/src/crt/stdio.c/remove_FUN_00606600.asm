@@ -22,7 +22,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00606600
         ;   Label: crt_stdio.c_remove_FUN_00606600
     PUSH EDX                            ; 00606604
-    CALL dword ptr CS:[0x611524]        ; 00606605 | DeleteFileA * PTR_DeleteFileA_00611524
+    CALL dword ptr CS:[0x611524]        ; 00606605 | PTR_DeleteFileA_00611524
     TEST EAX,EAX                        ; 0060660c
     JZ 0x006083fc                       ; 0060660e
         ;   XREF to: 006083fc (CONDITIONAL_JUMP)

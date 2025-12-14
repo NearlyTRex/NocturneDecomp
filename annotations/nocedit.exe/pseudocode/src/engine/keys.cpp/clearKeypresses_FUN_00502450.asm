@@ -9,6 +9,6 @@
 section .text
 
     JMP 0x005f2e70                      ; 00502450
-        ;   Label: engine_keys.cpp_clearKeypresses_FUN_00502450
         ;   XREF to: 005f2e70 (UNCONDITIONAL_JUMP)
+        ;   Label: engine_keys.cpp_clearKeypresses_FUN_00502450
 

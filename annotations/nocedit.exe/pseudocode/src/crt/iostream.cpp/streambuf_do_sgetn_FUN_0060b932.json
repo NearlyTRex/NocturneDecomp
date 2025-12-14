@@ -1,76 +1,76 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 61, 
-    "pseudocode_lines": 46, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 117, 
-    "assembly_lines": 71, 
-    "suspect_count": 1, 
+    "assembly_lines": 71,
+    "complexity_score": 61,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 46,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 45, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "output_buffer = (void *)((int)output_buffer + uVar1);"
-    }
-  ], 
+    ],
+    "total_lines": 117
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__watcallStack", 
-    "address": "0060b932", 
-    "signature": "int crt_iostream.cpp_streambuf_do_sgetn_FUN_0060b932(streambuf * buffer, void * output_buffer, SIZE_T bytes_to_read)", 
+    "address": "0060b932",
     "address_range": [
       [
-        "0060b932", 
+        "0060b932",
         "0060b9b6"
       ]
-    ], 
-    "name": "crt_iostream.cpp_streambuf_do_sgetn_FUN_0060b932"
-  }, 
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_iostream.cpp_streambuf_do_sgetn_FUN_0060b932",
+    "signature": "int crt_iostream.cpp_streambuf_do_sgetn_FUN_0060b932(streambuf * buffer, void * output_buffer, SIZE_T bytes_to_read)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 24, 
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "streambuf *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "streambuf *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }, 
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "typedef SIZE_T ULONG_PTR", 
-        "size": 4, 
-        "name": "bytes_to_read"
+        "is_param": true,
+        "name": "bytes_to_read",
+        "offset": 12,
+        "size": 4,
+        "type": "typedef SIZE_T ULONG_PTR"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(void *)((int)",
+      "text": "output_buffer = (void *)((int)output_buffer + uVar1);",
+      "type": "pointer_cast"
+    }
+  ]
 }

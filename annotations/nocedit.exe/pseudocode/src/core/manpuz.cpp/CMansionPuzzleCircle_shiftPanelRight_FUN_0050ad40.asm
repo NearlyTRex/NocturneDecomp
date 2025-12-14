@@ -41,8 +41,8 @@ section .text
     SHL EAX,0x2                         ; 0050ad60
     PUSH EDX                            ; 0050ad63
     LEA EBX,[ESI + EAX*0x1]             ; 0050ad64
-    CALL core_manpuz.cpp_FUN_0050aee0   ; 0050ad67 | undefined core_manpuz.cpp_FUN_0050aee0()
-        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)
+    CALL core_manpuz.cpp_FUN_0050aee0   ; 0050ad67
+        ;   XREF to: 0050aee0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_0050aee0()
     MOV EDX,EAX                         ; 0050ad6c
     SHL EAX,0x2                         ; 0050ad6e
     SUB EAX,EDX                         ; 0050ad71
@@ -53,45 +53,45 @@ section .text
     MOV EDX,dword ptr [EBX]             ; 0050ad7e
     ADD ESI,EAX                         ; 0050ad80
     TEST EDX,EDX                        ; 0050ad82
-    JZ 0x0050adcb                       ; 0050ad84 | LAB_0050adcb
-        ;   XREF to: 0050adcb (CONDITIONAL_JUMP)
+    JZ 0x0050adcb                       ; 0050ad84
+        ;   XREF to: 0050adcb (CONDITIONAL_JUMP)  ; LAB_0050adcb
     CMP dword ptr [ESI],0x0             ; 0050ad86
-    JNZ 0x0050adcb                      ; 0050ad89 | LAB_0050adcb
-        ;   XREF to: 0050adcb (CONDITIONAL_JUMP)
+    JNZ 0x0050adcb                      ; 0050ad89
+        ;   XREF to: 0050adcb (CONDITIONAL_JUMP)  ; LAB_0050adcb
     TEST dword ptr [EBX + 0x4],0x7fffffff ; 0050ad8b
-    JNZ 0x0050adcb                      ; 0050ad92 | LAB_0050adcb
-        ;   XREF to: 0050adcb (CONDITIONAL_JUMP)
+    JNZ 0x0050adcb                      ; 0050ad92
+        ;   XREF to: 0050adcb (CONDITIONAL_JUMP)  ; LAB_0050adcb
     TEST dword ptr [EBX + 0x8],0x7fffffff ; 0050ad94
-    JNZ 0x0050adcb                      ; 0050ad9b | LAB_0050adcb
-        ;   XREF to: 0050adcb (CONDITIONAL_JUMP)
+    JNZ 0x0050adcb                      ; 0050ad9b
+        ;   XREF to: 0050adcb (CONDITIONAL_JUMP)  ; LAB_0050adcb
     MOV dword ptr [EBX + 0x8],0x3f800000 ; 0050ad9d
         ;   Label: LAB_0050ad9d
     ADD EBX,0x58                        ; 0050ada4
-    CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 ; 0050ada7 | void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30()
-        ;   XREF to: 005a8c30 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 ; 0050ada7
+        ;   XREF to: 005a8c30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30()
     PUSH EBX                            ; 0050adac
-    CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940 ; 0050adad | void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(CVector3f * position_source_ptr)
-        ;   XREF to: 005a8940 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940 ; 0050adad
+        ;   XREF to: 005a8940 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 0050adb2
-    PUSH 0x635879                       ; 0050adb5 | = "manpuz-doorslide.wav" | s_manpuz_doorslide_wav_00635879 = manpuz-doorslide.wav
-    CALL sound_sndmain.cpp_startSfx_FUN_005a8e90 ; 0050adba | uint sound_sndmain.cpp_startSfx_FUN_005a8e90(char * filename)
-        ;   XREF to: 005a8e90 (UNCONDITIONAL_CALL)
+    PUSH 0x635879                       ; 0050adb5 | = "manpuz-doorslide.wav"
+    CALL sound_sndmain.cpp_startSfx_FUN_005a8e90 ; 0050adba
+        ;   XREF to: 005a8e90 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_005a8e90(char * filename)
     ADD ESP,0x4                         ; 0050adbf
-    CALL sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0 ; 0050adc2 | void sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0()
-        ;   XREF to: 005a8cb0 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0 ; 0050adc2
+        ;   XREF to: 005a8cb0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0()
     POP EBP                             ; 0050adc7
     POP ESI                             ; 0050adc8
     POP EBX                             ; 0050adc9
     RET                                 ; 0050adca
-    MOV EBP,0x635835                    ; 0050adcb | = "..\\core\\manpuz.cpp" | s_core_manpuz_cpp_00635835 = ..\core\manpuz.cpp
+    MOV EBP,0x635835                    ; 0050adcb | = "..\\core\\manpuz.cpp"
         ;   Label: LAB_0050adcb
     MOV EAX,0x57d                       ; 0050add0
-    PUSH 0x635848                       ; 0050add5 | = "CMansionPuzzleCircle::shiftPanelRight..." | s_CMansionPuzzleCircle_shi_00635848 = CMansionPuzzleCircle::shiftPanelRight - fubared.
-    MOV dword ptr [0x02f0ca48],EBP      ; 0050adda | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 0050ade0 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050ade5 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x635848                       ; 0050add5 | = "CMansionPuzzleCircle::shiftPanelRight..."
+    MOV dword ptr [0x02f0ca48],EBP      ; 0050adda | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 0050ade0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0050ade5
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0050adea
-    JMP 0x0050ad9d                      ; 0050aded | LAB_0050ad9d
-        ;   XREF to: 0050ad9d (UNCONDITIONAL_JUMP)
+    JMP 0x0050ad9d                      ; 0050aded
+        ;   XREF to: 0050ad9d (UNCONDITIONAL_JUMP)  ; LAB_0050ad9d
 

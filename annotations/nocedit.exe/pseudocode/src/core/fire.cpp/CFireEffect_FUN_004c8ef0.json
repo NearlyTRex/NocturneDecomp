@@ -1,120 +1,113 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 70, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 3, 
-    "global_count": 2, 
-    "total_lines": 57, 
-    "assembly_lines": 42, 
-    "suspect_count": 5, 
+    "assembly_lines": 42,
+    "complexity_score": 57,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 12,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CGunFlame_FUN_004c4db0", 
-      "addr": "004c4db0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CCrater*", 
-      "name": "g_CraterActiveListHead", 
-      "addr": "02d6cf64", 
-      "value": null
-    }, 
-    {
-      "type": "CGunFlame[500]", 
-      "name": "g_GunFlamePool", 
-      "addr": "02d6cf68", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < in_stack_00000010) {"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 + -1;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000010 = in_stack_00000010 + -1;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (0 < in_stack_00000010);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c8ef0", 
-    "signature": "void core_fire.cpp_CFireEffect_FUN_004c8ef0(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c8ef0", 
-        "004c8f48"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c8ef0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "00484cfe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dracbrid.cpp_FUN_00484410", 
-      "addr": "00484410"
-    }, 
+      "addr": "00484410",
+      "from_addr": "00484cfe",
+      "name": "core_dracbrid.cpp_FUN_00484410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a849e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_emitter.cpp_FUN_004a8070", 
-      "addr": "004a8070"
-    }, 
+      "addr": "004a8070",
+      "from_addr": "004a849e",
+      "name": "core_emitter.cpp_FUN_004a8070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cb971", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flamegun.cpp_FUN_004cb920", 
-      "addr": "004cb920"
+      "addr": "004cb920",
+      "from_addr": "004cb971",
+      "name": "core_flamegun.cpp_FUN_004cb920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c8ef0",
+    "address_range": [
+      [
+        "004c8ef0",
+        "004c8f48"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c8ef0",
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c8ef0(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c4db0",
+      "name": "core_fire.cpp_CGunFlame_FUN_004c4db0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d6cf64",
+      "name": "g_CraterActiveListHead",
+      "type": "CCrater*",
+      "value": null
+    },
+    {
+      "addr": "02d6cf68",
+      "name": "g_GunFlamePool",
+      "type": "CGunFlame[500]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000010",
+      "text": "for (; 0 < in_stack_00000010; in_stack_00000010 = in_stack_00000010 + -1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000010",
+      "text": "for (; 0 < in_stack_00000010; in_stack_00000010 = in_stack_00000010 + -1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000010",
+      "text": "for (; 0 < in_stack_00000010; in_stack_00000010 = in_stack_00000010 + -1) {",
+      "type": "stack_param"
     }
   ]
 }

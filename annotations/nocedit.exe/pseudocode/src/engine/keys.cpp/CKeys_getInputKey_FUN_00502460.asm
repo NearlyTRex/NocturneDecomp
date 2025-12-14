@@ -25,9 +25,9 @@
 
 section .text
 
-    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 00502460 | int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
+    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 00502460
+        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
         ;   Label: engine_keys.cpp_CKeys_getInputKey_FUN_00502460
-        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)
     AND EAX,0xff                        ; 00502465
     RET                                 ; 0050246a
 

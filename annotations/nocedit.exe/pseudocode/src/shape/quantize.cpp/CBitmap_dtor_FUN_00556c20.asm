@@ -32,51 +32,51 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00556c23
     MOV EDX,dword ptr [EBX + 0x1c]      ; 00556c27
     TEST EDX,EDX                        ; 00556c2a
-    JNZ 0x00556c60                      ; 00556c2c | LAB_00556c60
-        ;   XREF to: 00556c60 (CONDITIONAL_JUMP)
+    JNZ 0x00556c60                      ; 00556c2c
+        ;   XREF to: 00556c60 (CONDITIONAL_JUMP)  ; LAB_00556c60
     MOV EBP,dword ptr [EBX + 0x20]      ; 00556c2e
         ;   Label: LAB_00556c2e
     TEST EBP,EBP                        ; 00556c31
-    JZ 0x00556c53                       ; 00556c33 | LAB_00556c53
-        ;   XREF to: 00556c53 (CONDITIONAL_JUMP)
-    MOV EAX,0x6411c8                    ; 00556c35 | = "..\\shape\\quantize.cpp" | s_shape_quantize_cpp_006411c8 = ..\shape\quantize.cpp
+    JZ 0x00556c53                       ; 00556c33
+        ;   XREF to: 00556c53 (CONDITIONAL_JUMP)  ; LAB_00556c53
+    MOV EAX,0x6411c8                    ; 00556c35 | = "..\\shape\\quantize.cpp"
     MOV EDX,0x4b7                       ; 00556c3a
     PUSH EBP                            ; 00556c3f
-    MOV [0x0067d20c],EAX                ; 00556c40 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EDX      ; 00556c45 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00556c4b | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV [0x0067d20c],EAX                ; 00556c40 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDX      ; 00556c45 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 00556c4b
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00556c50
     MOV ESI,dword ptr [EBX + 0x24]      ; 00556c53
         ;   Label: LAB_00556c53
     TEST ESI,ESI                        ; 00556c56
-    JNZ 0x00556c81                      ; 00556c58 | LAB_00556c81
-        ;   XREF to: 00556c81 (CONDITIONAL_JUMP)
+    JNZ 0x00556c81                      ; 00556c58
+        ;   XREF to: 00556c81 (CONDITIONAL_JUMP)  ; LAB_00556c81
     MOV EAX,EBX                         ; 00556c5a
     POP EBP                             ; 00556c5c
     POP ESI                             ; 00556c5d
     POP EBX                             ; 00556c5e
     RET                                 ; 00556c5f
-    MOV ECX,0x6411b2                    ; 00556c60 | = "..\\shape\\quantize.cpp" | s_shape_quantize_cpp_006411b2 = ..\shape\quantize.cpp
+    MOV ECX,0x6411b2                    ; 00556c60 | = "..\\shape\\quantize.cpp"
         ;   Label: LAB_00556c60
     MOV ESI,0x4b6                       ; 00556c65
     PUSH EDX                            ; 00556c6a
-    MOV dword ptr [0x0067d20c],ECX      ; 00556c6b | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],ESI      ; 00556c71 | int g_CurrentDebugLine
-    CALL crt_memory.c_free_FUN_005fe659 ; 00556c77 | void crt_memory.c_free_FUN_005fe659(void * ptr)
-        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],ECX      ; 00556c6b | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],ESI      ; 00556c71 | g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 00556c77
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005fe659(void * ptr)
     ADD ESP,0x4                         ; 00556c7c
-    JMP 0x00556c2e                      ; 00556c7f | LAB_00556c2e
-        ;   XREF to: 00556c2e (UNCONDITIONAL_JUMP)
+    JMP 0x00556c2e                      ; 00556c7f
+        ;   XREF to: 00556c2e (UNCONDITIONAL_JUMP)  ; LAB_00556c2e
     PUSH EDI                            ; 00556c81
         ;   Label: LAB_00556c81
-    MOV EDI,0x6411de                    ; 00556c82 | = "..\\shape\\quantize.cpp" | s_shape_quantize_cpp_006411de = ..\shape\quantize.cpp
+    MOV EDI,0x6411de                    ; 00556c82 | = "..\\shape\\quantize.cpp"
     MOV EBP,0x4b8                       ; 00556c87
     PUSH ESI                            ; 00556c8c
-    MOV dword ptr [0x0067d20c],EDI      ; 00556c8d | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EBP      ; 00556c93 | int g_CurrentDebugLine
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00556c99 | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x0067d20c],EDI      ; 00556c8d | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EBP      ; 00556c93 | g_CurrentDebugLine
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 00556c99
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 00556c9e
     POP EDI                             ; 00556ca1
     MOV EAX,EBX                         ; 00556ca2

@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 37, 
-    "assembly_lines": 22, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "DeleteCriticalSection*", 
-      "name": "PTR_DeleteCriticalSection_00611520", 
-      "addr": "00611520", 
-      "value": "00211caa"
-    }, 
-    {
-      "type": "CRITICAL_SECTION[64]", 
-      "name": "g_StaticCriticalSectionArray", 
-      "addr": "03f9b9d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_StaticCriticalSectionArray[1].DebugInfo", 
-      "addr": "03f9b9e8", 
-      "value": null
-    }, 
-    {
-      "type": "DWORD", 
-      "name": "g_StaticCriticalSectionCounter", 
-      "addr": "03f9c000", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00609fc8", 
-    "signature": "undefined crt_unknown.c_FUN_00609fc8()", 
-    "address_range": [
-      [
-        "00609fc8", 
-        "00609ff3"
-      ]
-    ], 
-    "name": "crt_unknown.c_FUN_00609fc8"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 22,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 4,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
   "cross_references": [
     {
-      "from_addr": "0060a54d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_staticFinal_FUN_0060a4cc", 
-      "addr": "0060a4cc"
+      "addr": "0060a4cc",
+      "from_addr": "0060a54d",
+      "name": "crt_unknown.c_staticFinal_FUN_0060a4cc",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00609fc8",
+    "address_range": [
+      [
+        "00609fc8",
+        "00609ff3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00609fc8",
+    "signature": "undefined crt_unknown.c_FUN_00609fc8()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00611520",
+      "name": "PTR_DeleteCriticalSection_00611520",
+      "type": "DeleteCriticalSection*",
+      "value": "00211caa"
+    },
+    {
+      "addr": "03f9b9d0",
+      "name": "g_StaticCriticalSectionArray",
+      "type": "CRITICAL_SECTION[64]",
+      "value": null
+    },
+    {
+      "addr": "03f9b9e8",
+      "name": "g_StaticCriticalSectionArray[1].DebugInfo",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9c000",
+      "name": "g_StaticCriticalSectionCounter",
+      "type": "DWORD",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

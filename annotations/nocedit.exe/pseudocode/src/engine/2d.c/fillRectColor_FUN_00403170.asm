@@ -49,59 +49,59 @@ section .text
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0040317b
     MOV EDI,dword ptr [ESP + 0x20]      ; 0040317f
     MOV ESI,dword ptr [ESP + 0x24]      ; 00403183
-    MOV EDX,dword ptr [0x02d02558]      ; 00403187 | int g_ClipLeft
+    MOV EDX,dword ptr [0x02d02558]      ; 00403187 | g_ClipLeft
     CMP EBP,EDX                         ; 0040318d
-    JGE 0x00403193                      ; 0040318f | LAB_00403193
-        ;   XREF to: 00403193 (CONDITIONAL_JUMP)
+    JGE 0x00403193                      ; 0040318f
+        ;   XREF to: 00403193 (CONDITIONAL_JUMP)  ; LAB_00403193
     MOV EBP,EDX                         ; 00403191
-    MOV ECX,dword ptr [0x02d02560]      ; 00403193 | int g_ClipRight
+    MOV ECX,dword ptr [0x02d02560]      ; 00403193 | g_ClipRight
         ;   Label: LAB_00403193
     CMP EDI,ECX                         ; 00403199
-    JLE 0x0040319f                      ; 0040319b | LAB_0040319f
-        ;   XREF to: 0040319f (CONDITIONAL_JUMP)
+    JLE 0x0040319f                      ; 0040319b
+        ;   XREF to: 0040319f (CONDITIONAL_JUMP)  ; LAB_0040319f
     MOV EDI,ECX                         ; 0040319d
     CMP EBP,EDI                         ; 0040319f
         ;   Label: LAB_0040319f
-    JG 0x004031f8                       ; 004031a1 | LAB_004031f8
-        ;   XREF to: 004031f8 (CONDITIONAL_JUMP)
-    MOV EAX,[0x02d0255c]                ; 004031a3 | int g_ClipTop
+    JG 0x004031f8                       ; 004031a1
+        ;   XREF to: 004031f8 (CONDITIONAL_JUMP)  ; LAB_004031f8
+    MOV EAX,[0x02d0255c]                ; 004031a3 | g_ClipTop
     CMP EBX,EAX                         ; 004031a8
-    JGE 0x004031ae                      ; 004031aa | LAB_004031ae
-        ;   XREF to: 004031ae (CONDITIONAL_JUMP)
+    JGE 0x004031ae                      ; 004031aa
+        ;   XREF to: 004031ae (CONDITIONAL_JUMP)  ; LAB_004031ae
     MOV EBX,EAX                         ; 004031ac
-    MOV EDX,dword ptr [0x02d02564]      ; 004031ae | int g_ClipBottom
+    MOV EDX,dword ptr [0x02d02564]      ; 004031ae | g_ClipBottom
         ;   Label: LAB_004031ae
     CMP ESI,EDX                         ; 004031b4
-    JLE 0x004031ba                      ; 004031b6 | LAB_004031ba
-        ;   XREF to: 004031ba (CONDITIONAL_JUMP)
+    JLE 0x004031ba                      ; 004031b6
+        ;   XREF to: 004031ba (CONDITIONAL_JUMP)  ; LAB_004031ba
     MOV ESI,EDX                         ; 004031b8
     CMP EBX,ESI                         ; 004031ba
         ;   Label: LAB_004031ba
-    JG 0x004031f8                       ; 004031bc | LAB_004031f8
-        ;   XREF to: 004031f8 (CONDITIONAL_JUMP)
-    MOV EAX,[0x02d02570]                ; 004031be | int g_ActiveRenderColor
+    JG 0x004031f8                       ; 004031bc
+        ;   XREF to: 004031f8 (CONDITIONAL_JUMP)  ; LAB_004031f8
+    MOV EAX,[0x02d02570]                ; 004031be | g_ActiveRenderColor
     MOV dword ptr [ESP],EAX             ; 004031c3
     MOV EAX,dword ptr [ESP + 0x28]      ; 004031c6
-    MOV [0x02d02570],EAX                ; 004031ca | int g_ActiveRenderColor
-    JG 0x004031f0                       ; 004031cf | LAB_004031f0
-        ;   XREF to: 004031f0 (CONDITIONAL_JUMP)
+    MOV [0x02d02570],EAX                ; 004031ca | g_ActiveRenderColor
+    JG 0x004031f0                       ; 004031cf
+        ;   XREF to: 004031f0 (CONDITIONAL_JUMP)  ; LAB_004031f0
     PUSH EDI                            ; 004031d1
         ;   Label: LAB_004031d1
     PUSH EBX                            ; 004031d2
     PUSH EBP                            ; 004031d3
-    CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 004031d4 | void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
-        ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 004031d4
+        ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
     INC EBX                             ; 004031d9
     ADD ESP,0xc                         ; 004031da
     CMP EBX,ESI                         ; 004031dd
-    JLE 0x004031d1                      ; 004031df | LAB_004031d1
-        ;   XREF to: 004031d1 (CONDITIONAL_JUMP)
+    JLE 0x004031d1                      ; 004031df
+        ;   XREF to: 004031d1 (CONDITIONAL_JUMP)  ; LAB_004031d1
     LEA EAX,[EAX]                       ; 004031e1
     LEA EDX,[EDX]                       ; 004031e7
     LEA EAX,[EAX]                       ; 004031ed
     MOV EAX,dword ptr [ESP]             ; 004031f0
         ;   Label: LAB_004031f0
-    MOV [0x02d02570],EAX                ; 004031f3 | int g_ActiveRenderColor
+    MOV [0x02d02570],EAX                ; 004031f3 | g_ActiveRenderColor
     ADD ESP,0x4                         ; 004031f8
         ;   Label: LAB_004031f8
     POP EBP                             ; 004031fb

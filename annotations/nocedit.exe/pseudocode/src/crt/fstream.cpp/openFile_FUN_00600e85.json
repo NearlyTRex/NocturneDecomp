@@ -1,122 +1,122 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 63, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 84, 
-    "assembly_lines": 56, 
-    "suspect_count": 3, 
+    "assembly_lines": 56,
+    "complexity_score": 63,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 28,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_fstream.cpp_filebuf_open_FUN_00608c15", 
-      "addr": "00608c15"
-    }, 
-    {
-      "name": "crt_stdio.c_clear_and_preserve_state_FUN_00600e64", 
-      "addr": "00600e64"
-    }, 
-    {
-      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
-      "addr": "00606020"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)(stream_obj->fstreambase_core).layout_info + 4) + -0x38);"
-    }, 
-    {
-      "line": 21, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)(stream_obj->fstreambase_core).layout_info + 4) + -0x38),0);"
-    }, 
-    {
-      "line": 27, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)(stream_obj->fstreambase_core).layout_info + 4) + -0x38);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00600e85", 
-    "signature": "void crt_fstream.cpp_openFile_FUN_00600e85(ifstream * stream_obj, char * filename, int open_mode, SIZE_T buffer_size)", 
-    "address_range": [
-      [
-        "00600e85", 
-        "00600ee3"
-      ]
-    ], 
-    "name": "crt_fstream.cpp_openFile_FUN_00600e85"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ifstream *", 
-        "size": 4, 
-        "name": "stream_obj"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "open_mode"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "typedef SIZE_T ULONG_PTR", 
-        "size": 4, 
-        "name": "buffer_size"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 84
+  },
   "cross_references": [
     {
-      "from_addr": "004e15ba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
-      "addr": "004e12b0"
-    }, 
+      "addr": "004e12b0",
+      "from_addr": "004e15ba",
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e0fcf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
-      "addr": "004e0cd0"
-    }, 
+      "addr": "004e0cd0",
+      "from_addr": "004e0fcf",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00481bc3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_dosio.c_reopenFileStream_FUN_00481b50", 
-      "addr": "00481b50"
+      "addr": "00481b50",
+      "from_addr": "00481bc3",
+      "name": "engine_dosio.c_reopenFileStream_FUN_00481b50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00600e85",
+    "address_range": [
+      [
+        "00600e85",
+        "00600ee3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_fstream.cpp_openFile_FUN_00600e85",
+    "signature": "void crt_fstream.cpp_openFile_FUN_00600e85(ifstream * stream_obj, char * filename, int open_mode, SIZE_T buffer_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "00608c15",
+      "name": "crt_fstream.cpp_filebuf_open_FUN_00608c15"
+    },
+    {
+      "addr": "00600e64",
+      "name": "crt_stdio.c_clear_and_preserve_state_FUN_00600e64"
+    },
+    {
+      "addr": "00606020",
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream_obj",
+        "offset": 4,
+        "size": 4,
+        "type": "ifstream *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "open_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 16,
+        "size": 4,
+        "type": "typedef SIZE_T ULONG_PTR"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)(stream_obj->fstreambase_core).layout_info + 4) + -0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)(stream_obj->fstreambase_core).layout_info + 4) + -0x38),0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)(stream_obj->fstreambase_core).layout_info + 4) + -0x38);",
+      "type": "pointer_cast"
     }
   ]
 }

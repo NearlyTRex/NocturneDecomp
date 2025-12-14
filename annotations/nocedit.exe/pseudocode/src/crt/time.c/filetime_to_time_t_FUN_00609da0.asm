@@ -27,11 +27,11 @@ section .text
     SUB ESP,0x3c                        ; 00609da1
     MOV EDX,dword ptr [ESP + 0x44]      ; 00609da4
     CMP dword ptr [EDX],0x0             ; 00609da8
-    JNZ 0x00609dbd                      ; 00609dab | LAB_00609dbd
-        ;   XREF to: 00609dbd (CONDITIONAL_JUMP)
+    JNZ 0x00609dbd                      ; 00609dab
+        ;   XREF to: 00609dbd (CONDITIONAL_JUMP)  ; LAB_00609dbd
     CMP dword ptr [EDX + 0x4],0x0       ; 00609dad
-    JNZ 0x00609dbd                      ; 00609db1 | LAB_00609dbd
-        ;   XREF to: 00609dbd (CONDITIONAL_JUMP)
+    JNZ 0x00609dbd                      ; 00609db1
+        ;   XREF to: 00609dbd (CONDITIONAL_JUMP)  ; LAB_00609dbd
     MOV EAX,0xffffffff                  ; 00609db3
     ADD ESP,0x3c                        ; 00609db8
     POP ESI                             ; 00609dbb
@@ -40,10 +40,10 @@ section .text
         ;   Label: LAB_00609dbd
     PUSH EAX                            ; 00609dc1
     PUSH EDX                            ; 00609dc2
-    CALL dword ptr CS:[0x611540]        ; 00609dc3 | FileTimeToLocalFileTime * PTR_FileTimeToLocalFileTime_00611540
+    CALL dword ptr CS:[0x611540]        ; 00609dc3 | PTR_FileTimeToLocalFileTime_00611540
     TEST EAX,EAX                        ; 00609dca
-    JNZ 0x00609dd8                      ; 00609dcc | LAB_00609dd8
-        ;   XREF to: 00609dd8 (CONDITIONAL_JUMP)
+    JNZ 0x00609dd8                      ; 00609dcc
+        ;   XREF to: 00609dd8 (CONDITIONAL_JUMP)  ; LAB_00609dd8
     MOV EAX,0xffffffff                  ; 00609dce
     ADD ESP,0x3c                        ; 00609dd3
     POP ESI                             ; 00609dd6
@@ -53,10 +53,10 @@ section .text
     PUSH EAX                            ; 00609ddc
     LEA EAX,[ESP + 0x38]                ; 00609ddd
     PUSH EAX                            ; 00609de1
-    CALL dword ptr CS:[0x611544]        ; 00609de2 | FileTimeToSystemTime * PTR_FileTimeToSystemTime_00611544
+    CALL dword ptr CS:[0x611544]        ; 00609de2 | PTR_FileTimeToSystemTime_00611544
     TEST EAX,EAX                        ; 00609de9
-    JNZ 0x00609df7                      ; 00609deb | LAB_00609df7
-        ;   XREF to: 00609df7 (CONDITIONAL_JUMP)
+    JNZ 0x00609df7                      ; 00609deb
+        ;   XREF to: 00609df7 (CONDITIONAL_JUMP)  ; LAB_00609df7
     MOV EAX,0xffffffff                  ; 00609ded
     ADD ESP,0x3c                        ; 00609df2
     POP ESI                             ; 00609df5
@@ -90,8 +90,8 @@ section .text
     PUSH EAX                            ; 00609e50
     MOV dword ptr [ESP + 0x20],ESI      ; 00609e51
     MOV dword ptr [ESP + 0x24],ESI      ; 00609e55
-    CALL crt_time.c_mktime_FUN_00600f80 ; 00609e59 | time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
-        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)
+    CALL crt_time.c_mktime_FUN_00600f80 ; 00609e59
+        ;   XREF to: 00600f80 (UNCONDITIONAL_CALL)  ; time_t crt_time.c_mktime_FUN_00600f80(tm * timeptr)
     ADD ESP,0x4                         ; 00609e5e
     ADD ESP,0x3c                        ; 00609e61
     POP ESI                             ; 00609e64

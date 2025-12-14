@@ -1,613 +1,613 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 572, 
-    "pseudocode_lines": 122, 
-    "cross_reference_count": 3, 
-    "global_count": 7, 
-    "total_lines": 379, 
-    "assembly_lines": 257, 
-    "suspect_count": 41, 
+    "assembly_lines": 257,
+    "complexity_score": 572,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 7,
+    "pseudocode_lines": 122,
+    "suspect_count": 41,
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
-      "unaffected_reg", 
-      "unknown_field", 
-      "extra_output", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0", 
-      "addr": "004966f0"
-    }, 
-    {
-      "name": "crt_math.c_floor_FUN_005feb90", 
-      "addr": "005feb90"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "FLOAT_00616ddf", 
-      "addr": "00616ddf", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00616de3", 
-      "addr": "00616de3", 
-      "value": "11"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00616deb", 
-      "addr": "00616deb", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0065b5c8", 
-      "addr": "0065b5c8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00822d08", 
-      "addr": "00822d08", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_00822d0c", 
-      "addr": "00822d0c", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRaytrace", 
-      "name": "g_CDemonRaytraceInstance", 
-      "addr": "03277d14", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EBX;"
-    }, 
-    {
-      "line": 10, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_5c.y = *(float *)(in_stack_00000004 + 0x199cc) + *(float *)(in_stack_00000004 + 0x199d8);"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_5c.y = *(float *)(in_stack_00000004 + 0x199cc) + *(float *)(in_stack_00000004 + 0x199d8);"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_5c.z = *(float *)(in_stack_00000004 + 0x199d0) + *(float *)(in_stack_00000004 + 0x199dc);"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_5c.z = *(float *)(in_stack_00000004 + 0x199d0) + *(float *)(in_stack_00000004 + 0x199dc);"
-    }, 
-    {
-      "line": 46, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_50 = *(float *)(in_stack_00000004 + 0x199d4) + *(float *)(in_stack_00000004 + 0x199e0);"
-    }, 
-    {
-      "line": 46, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_50 = *(float *)(in_stack_00000004 + 0x199d4) + *(float *)(in_stack_00000004 + 0x199e0);"
-    }, 
-    {
-      "line": 49, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar4 = *(float *)(in_stack_00000004 + 0x24);"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double)((*(float *)(in_stack_00000004 + 0x20) + local_5c.y * 0.5f"
-    }, 
-    {
-      "line": 57, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_18 = local_44._4_4_;"
-    }, 
-    {
-      "line": 58, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "fVar9 = (float10)(int)local_44._4_4_ * (float10)_DAT_0065b5c8;"
-    }, 
-    {
-      "line": 63, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(float *)(extraout_EBX + 0x199ec) ="
-    }, 
-    {
-      "line": 64, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(float)((fVar9 - (float10)*(float *)(extraout_EBX + 0x20)) - fVar10);"
-    }, 
-    {
-      "line": 65, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(float *)(extraout_EBX + 0x199f0) ="
-    }, 
-    {
-      "line": 66, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(float)(((float10)local_20 * fVar8 - (float10)*(float *)(extraout_EBX + 0x28)) - fVar10);"
-    }, 
-    {
-      "line": 67, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if (((int)local_44 != *(int *)(extraout_EBX + 0x199e4)) ||"
-    }, 
-    {
-      "line": 68, 
-      "match": "extraout_EBX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "(local_20 != *(int *)(extraout_EBX + 0x199e8))) {"
-    }, 
-    {
-      "line": 69, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_28 = *(int *)((int)local_c + 0x199e4) - (int)local_44;"
-    }, 
-    {
-      "line": 70, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_2c = *(int *)((int)local_c + 0x199e8) - local_20;"
-    }, 
-    {
-      "line": 73, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar3 = (uint *)((int)local_c + 0x128b8);"
-    }, 
-    {
-      "line": 82, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar7 * -2 + 1);"
-    }, 
-    {
-      "line": 83, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);"
-    }, 
-    {
-      "line": 85, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_5c.y = *(float *)((int)local_c + 0x24);"
-    }, 
-    {
-      "line": 86, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar12 = CONCAT44 /* combine 2-byte values */(local_5c.y,"
-    }, 
-    {
-      "line": 87, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)local_c + 0x20) + *(float *)((int)local_c + 0x199ec));"
-    }, 
-    {
-      "line": 87, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)local_c + 0x20) + *(float *)((int)local_c + 0x199ec));"
-    }, 
-    {
-      "line": 88, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar13 = (ulonglong)(uint)(*(float *)((int)local_c + 0x28) + *(float *)((int)local_c + 0x199f0))"
-    }, 
-    {
-      "line": 88, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar13 = (ulonglong)(uint)(*(float *)((int)local_c + 0x28) + *(float *)((int)local_c + 0x199f0))"
-    }, 
-    {
-      "line": 92, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_44._4_4_ = (float)(local_2c * 4);"
-    }, 
-    {
-      "line": 97, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "iVar2 = iStack_3c - (int)local_44._4_4_;"
-    }, 
-    {
-      "line": 106, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(&g_CDemonRaytraceInstance,&local_5c,(int *)((int)&local_4c + 4),"
-    }, 
-    {
-      "line": 108, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*(float *)((int)fVar6 + 0x128b8) = local_18 - *(float *)(unaff_EBP + 0x24);"
-    }, 
-    {
-      "line": 108, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)fVar6 + 0x128b8) = local_18 - *(float *)(unaff_EBP + 0x24);"
-    }, 
-    {
-      "line": 111, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)fVar4 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar2);"
-    }, 
-    {
-      "line": 111, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)fVar4 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar2);"
-    }, 
-    {
-      "line": 122, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)local_c + 0x199e4) = (int)local_44;"
-    }, 
-    {
-      "line": 123, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)local_c + 0x199e8) = local_20;"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "004257f0", 
-    "signature": "undefined core_bugs.cpp_FUN_004257f0()", 
-    "address_range": [
-      [
-        "004257f0", 
-        "00425b61"
-      ]
-    ], 
-    "name": "core_bugs.cpp_FUN_004257f0"
-  }, 
-  "stack_frame": {
-    "local_size": 136, 
-    "variables": [
-      {
-        "offset": -132, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_84"
-      }, 
-      {
-        "offset": -124, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_7c"
-      }, 
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -100, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_64"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -84, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_54"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_4c"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 136, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "concat_artifact",
+      "extra_output",
+      "pointer_cast",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param",
+      "unknown_field"
+    ],
+    "total_lines": 379
+  },
   "cross_references": [
     {
-      "from_addr": "00425fb9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bugs.cpp_FUN_00425cc0", 
-      "addr": "00425cc0"
-    }, 
+      "addr": "00425cc0",
+      "from_addr": "00425fb9",
+      "name": "core_bugs.cpp_FUN_00425cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004263f4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bugs.cpp_FUN_00425fe0", 
-      "addr": "00425fe0"
-    }, 
+      "addr": "00425fe0",
+      "from_addr": "004263f4",
+      "name": "core_bugs.cpp_FUN_00425fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00427951", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bugs.cpp_FUN_004278d0", 
-      "addr": "004278d0"
+      "addr": "004278d0",
+      "from_addr": "00427951",
+      "name": "core_bugs.cpp_FUN_004278d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004257f0",
+    "address_range": [
+      [
+        "004257f0",
+        "00425b61"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_bugs.cpp_FUN_004257f0",
+    "signature": "undefined core_bugs.cpp_FUN_004257f0()"
+  },
+  "function_calls": [
+    {
+      "addr": "004966f0",
+      "name": "core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0"
+    },
+    {
+      "addr": "005feb90",
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616ddf",
+      "name": "FLOAT_00616ddf",
+      "type": "float",
+      "value": "0.5"
+    },
+    {
+      "addr": "00616de3",
+      "name": "FLOAT_00616de3",
+      "type": "float",
+      "value": "11"
+    },
+    {
+      "addr": "00616deb",
+      "name": "DOUBLE_00616deb",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0065b5c8",
+      "name": "DAT_0065b5c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00822d08",
+      "name": "DAT_00822d08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00822d0c",
+      "name": "DAT_00822d0c",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "03277d14",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 136,
+    "local_size": 136,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EBX",
+      "text": "int extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "text": "local_5c.y = *(float *)(in_stack_00000004 + 0x199cc) + *(float *)(in_stack_00000004 + 0x199d8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "text": "local_5c.y = *(float *)(in_stack_00000004 + 0x199cc) + *(float *)(in_stack_00000004 + 0x199d8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "local_5c.z = *(float *)(in_stack_00000004 + 0x199d0) + *(float *)(in_stack_00000004 + 0x199dc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "local_5c.z = *(float *)(in_stack_00000004 + 0x199d0) + *(float *)(in_stack_00000004 + 0x199dc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000004",
+      "text": "local_50 = *(float *)(in_stack_00000004 + 0x199d4) + *(float *)(in_stack_00000004 + 0x199e0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000004",
+      "text": "local_50 = *(float *)(in_stack_00000004 + 0x199d4) + *(float *)(in_stack_00000004 + 0x199e0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "text": "fVar4 = *(float *)(in_stack_00000004 + 0x24);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "((double)((*(float *)(in_stack_00000004 + 0x20) + local_5c.y * 0.5f",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._4_4_",
+      "text": "local_18 = local_44._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._4_4_",
+      "text": "fVar9 = (float10)(int)local_44._4_4_ * (float10)_DAT_0065b5c8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 63,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 0x199ec) =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 64,
+      "match": "extraout_EBX",
+      "text": "(float)((fVar9 - (float10)*(float *)(extraout_EBX + 0x20)) - fVar10);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 65,
+      "match": "extraout_EBX",
+      "text": "*(float *)(extraout_EBX + 0x199f0) =",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 66,
+      "match": "extraout_EBX",
+      "text": "(float)(((float10)local_20 * fVar8 - (float10)*(float *)(extraout_EBX + 0x28)) - fVar10);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 67,
+      "match": "extraout_EBX",
+      "text": "if (((int)local_44 != *(int *)(extraout_EBX + 0x199e4)) ||",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 68,
+      "match": "extraout_EBX",
+      "text": "(local_20 != *(int *)(extraout_EBX + 0x199e8))) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)",
+      "text": "local_28 = *(int *)((int)local_c + 0x199e4) - (int)local_44;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)",
+      "text": "local_2c = *(int *)((int)local_c + 0x199e8) - local_20;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)local_c + 0x128b8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(float *)((int)",
+      "text": "local_5c.y = *(float *)((int)local_c + 0x24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 86,
+      "match": "CONCAT44",
+      "text": "uVar12 = CONCAT44 /* combine 2-byte values */(local_5c.y,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)local_c + 0x20) + *(float *)((int)local_c + 0x199ec));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)local_c + 0x20) + *(float *)((int)local_c + 0x199ec));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(float *)((int)",
+      "text": "uVar13 = (ulonglong)(uint)(*(float *)((int)local_c + 0x28) + *(float *)((int)local_c + 0x199f0))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(float *)((int)",
+      "text": "uVar13 = (ulonglong)(uint)(*(float *)((int)local_c + 0x28) + *(float *)((int)local_c + 0x199f0))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 92,
+      "match": "._4_4_",
+      "text": "local_44._4_4_ = (float)(local_2c * 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 97,
+      "match": "._4_4_",
+      "text": "iVar2 = iStack_3c - (int)local_44._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(int *)((int)",
+      "text": "(&g_CDemonRaytraceInstance,&local_5c,(int *)((int)&local_4c + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 108,
+      "match": "unaff_EBP",
+      "text": "*(float *)((int)fVar6 + 0x128b8) = local_18 - *(float *)(unaff_EBP + 0x24);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)fVar6 + 0x128b8) = local_18 - *(float *)(unaff_EBP + 0x24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)fVar4 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)fVar4 + 0x128b8) = *(uint *)((int)&DAT_00822d08 + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_c + 0x199e4) = (int)local_44;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_c + 0x199e8) = local_20;",
+      "type": "pointer_cast"
     }
   ]
 }

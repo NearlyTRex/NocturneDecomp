@@ -37,8 +37,8 @@ section .text
     ADD EAX,ECX                         ; 0051985c
     PUSH EAX                            ; 0051985e
     PUSH EDX                            ; 0051985f
-    CALL shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 ; 00519860 | int shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace * this_ptr, CVector3f * vertex0_pos, CVector3f * vertex1_pos, CVector3f * vertex2_pos)
-        ;   XREF to: 00519870 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870 ; 00519860
+        ;   XREF to: 00519870 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace * this_ptr, CVector3f * vertex0_pos, CVector3f * vertex1_pos, CVector3f * vertex2_pos)
     ADD ESP,0x10                        ; 00519865
     POP EDI                             ; 00519868
     POP ESI                             ; 00519869

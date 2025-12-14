@@ -19,16 +19,16 @@
 
 section .text
 
-    CMP dword ptr [0x03f6b978],0x0      ; 005b7d90 | int g_ExternalRendererActive
+    CMP dword ptr [0x03f6b978],0x0      ; 005b7d90 | g_ExternalRendererActive
         ;   Label: wincore_windll.cpp_selectCard_FUN_005b7d90
-    JNZ 0x005b7d9c                      ; 005b7d97 | LAB_005b7d9c
-        ;   XREF to: 005b7d9c (CONDITIONAL_JUMP)
+    JNZ 0x005b7d9c                      ; 005b7d97
+        ;   XREF to: 005b7d9c (CONDITIONAL_JUMP)  ; LAB_005b7d9c
     XOR EAX,EAX                         ; 005b7d99
     RET                                 ; 005b7d9b
     MOV ECX,dword ptr [ESP + 0x4]       ; 005b7d9c
         ;   Label: LAB_005b7d9c
     PUSH ECX                            ; 005b7da0
-    CALL dword ptr [0x03f6b918]         ; 005b7da1 | APIDLL_selectCard * g_APIDLL_selectCard
+    CALL dword ptr [0x03f6b918]         ; 005b7da1 | g_APIDLL_selectCard
     ADD ESP,0x4                         ; 005b7da7
     RET                                 ; 005b7daa
 

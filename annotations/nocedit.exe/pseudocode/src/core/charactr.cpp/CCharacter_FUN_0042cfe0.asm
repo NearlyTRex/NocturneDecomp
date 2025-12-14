@@ -34,23 +34,23 @@ section .text
     LEA EBX,[ECX + 0x24ac]              ; 0042cffa
     ADD EBX,EAX                         ; 0042d000
     CMP dword ptr [EBX + 0x8],0x0       ; 0042d002
-    JZ 0x0042d058                       ; 0042d006 | LAB_0042d058
-        ;   XREF to: 0042d058 (CONDITIONAL_JUMP)
+    JZ 0x0042d058                       ; 0042d006
+        ;   XREF to: 0042d058 (CONDITIONAL_JUMP)  ; LAB_0042d058
     TEST EDX,EDX                        ; 0042d008
-    JZ 0x0042d03d                       ; 0042d00a | LAB_0042d03d
-        ;   XREF to: 0042d03d (CONDITIONAL_JUMP)
+    JZ 0x0042d03d                       ; 0042d00a
+        ;   XREF to: 0042d03d (CONDITIONAL_JUMP)  ; LAB_0042d03d
     PUSH EDX                            ; 0042d00c
     LEA EAX,[ESP + 0x4]                 ; 0042d00d
     PUSH EAX                            ; 0042d011
     PUSH ECX                            ; 0042d012
-    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 0042d013 | CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 0042d013
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
     MOV EDX,EAX                         ; 0042d018
     LEA EAX,[ESP + 0x18]                ; 0042d01a
     ADD ESP,0xc                         ; 0042d01e
     CMP EAX,EDX                         ; 0042d021
-    JZ 0x0042d039                       ; 0042d023 | LAB_0042d039
-        ;   XREF to: 0042d039 (CONDITIONAL_JUMP)
+    JZ 0x0042d039                       ; 0042d023
+        ;   XREF to: 0042d039 (CONDITIONAL_JUMP)  ; LAB_0042d039
     MOV EAX,dword ptr [EDX]             ; 0042d025
     MOV dword ptr [ESP + 0xc],EAX       ; 0042d027
     MOV EAX,dword ptr [EDX + 0x4]       ; 0042d02b

@@ -43,18 +43,18 @@ section .text
     SUB ESP,0x10                        ; 0040cc10
         ;   Label: core_actor.cpp_getRandomFloat_FUN_0040cc10
     FLD float ptr [ESP + 0x18]          ; 0040cc13
-    MOV EAX,[0x0067b654]                ; 0040cc17 | CGame g_CGameInstance | CGame * g_CGamePtr
+    MOV EAX,[0x0067b654]                ; 0040cc17 | g_CGameInstance | g_CGamePtr
     FSUB float ptr [ESP + 0x14]         ; 0040cc1c
     MOV EDX,dword ptr [EAX + 0x23c]     ; 0040cc20 | DAT_02d81cd8
     FSTP float ptr [ESP + 0x4]          ; 0040cc26
     TEST EDX,EDX                        ; 0040cc2a
-    JZ 0x0040cc5b                       ; 0040cc2c | LAB_0040cc5b
-        ;   XREF to: 0040cc5b (CONDITIONAL_JUMP)
-    CALL core_actor.cpp_generateRandomValue_FUN_0040cba0 ; 0040cc2e | uint core_actor.cpp_generateRandomValue_FUN_0040cba0()
-        ;   XREF to: 0040cba0 (UNCONDITIONAL_CALL)
+    JZ 0x0040cc5b                       ; 0040cc2c
+        ;   XREF to: 0040cc5b (CONDITIONAL_JUMP)  ; LAB_0040cc5b
+    CALL core_actor.cpp_generateRandomValue_FUN_0040cba0 ; 0040cc2e
+        ;   XREF to: 0040cba0 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040cba0()
     MOV dword ptr [ESP + 0xc],EAX       ; 0040cc33
     FILD dword ptr [ESP + 0xc]          ; 0040cc37
-    FMUL float ptr [0x006142f4]         ; 0040cc3b | int g_RandToFloatFixedMultiplier
+    FMUL float ptr [0x006142f4]         ; 0040cc3b | g_RandToFloatFixedMultiplier
     FSTP float ptr [ESP + 0x8]          ; 0040cc41
         ;   Label: LAB_0040cc41
     FLD float ptr [ESP + 0x8]           ; 0040cc45
@@ -64,12 +64,12 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 0040cc54
     ADD ESP,0x10                        ; 0040cc57
     RET                                 ; 0040cc5a
-    CALL crt_stdlib.c_rand_FUN_005feb5c ; 0040cc5b | int crt_stdlib.c_rand_FUN_005feb5c()
+    CALL crt_stdlib.c_rand_FUN_005feb5c ; 0040cc5b
+        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
         ;   Label: LAB_0040cc5b
-        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)
     MOV dword ptr [ESP + 0xc],EAX       ; 0040cc60
     FILD dword ptr [ESP + 0xc]          ; 0040cc64
-    FMUL float ptr [0x006142f0]         ; 0040cc68 | float g_RandToFloatMultiplier
-    JMP 0x0040cc41                      ; 0040cc6e | LAB_0040cc41
-        ;   XREF to: 0040cc41 (UNCONDITIONAL_JUMP)
+    FMUL float ptr [0x006142f0]         ; 0040cc68 | g_RandToFloatMultiplier
+    JMP 0x0040cc41                      ; 0040cc6e
+        ;   XREF to: 0040cc41 (UNCONDITIONAL_JUMP)  ; LAB_0040cc41
 

@@ -1,137 +1,137 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 37, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 9, 
-    "global_count": 1, 
-    "total_lines": 40, 
-    "assembly_lines": 28, 
-    "suspect_count": 2, 
+    "assembly_lines": 28,
+    "complexity_score": 37,
+    "cross_reference_count": 9,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeledit.cpp_FUN_0058a2b0", 
-      "addr": "0058a2b0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
-      "addr": "005a07a0"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_MODELS_s_0062edc4", 
-      "addr": "0062edc4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_0000000c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_0000000c,\"MODELS\\\\%s\\n\",pCVar1->model_filename);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004f3fa0", 
-    "signature": "void core_hero.cpp_CHero_FUN_004f3fa0(CHero * this_ptr)", 
-    "address_range": [
-      [
-        "004f3fa0", 
-        "004f3fe4"
-      ]
-    ], 
-    "name": "core_hero.cpp_CHero_FUN_004f3fa0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CHero *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 40
+  },
   "cross_references": [
     {
-      "from_addr": "0041407a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_baron.cpp_CBaron_FUN_00414070", 
-      "addr": "00414070"
-    }, 
+      "addr": "00414070",
+      "from_addr": "0041407a",
+      "name": "core_baron.cpp_CBaron_FUN_00414070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0044063a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_colonel.cpp_FUN_00440630", 
-      "addr": "00440630"
-    }, 
+      "addr": "00440630",
+      "from_addr": "0044063a",
+      "name": "core_colonel.cpp_FUN_00440630",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d763a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_gabriela.cpp_FUN_004d7630", 
-      "addr": "004d7630"
-    }, 
+      "addr": "004d7630",
+      "from_addr": "004d763a",
+      "name": "core_gabriela.cpp_FUN_004d7630",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f1cfa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_haystack.cpp_FUN_004f1cf0", 
-      "addr": "004f1cf0"
-    }, 
+      "addr": "004f1cf0",
+      "from_addr": "004f1cfa",
+      "name": "core_haystack.cpp_FUN_004f1cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f97ca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_icepick.cpp_FUN_004f97c0", 
-      "addr": "004f97c0"
-    }, 
+      "addr": "004f97c0",
+      "from_addr": "004f97ca",
+      "name": "core_icepick.cpp_FUN_004f97c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005299ba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_moloch.cpp_FUN_005299b0", 
-      "addr": "005299b0"
-    }, 
+      "addr": "005299b0",
+      "from_addr": "005299ba",
+      "name": "core_moloch.cpp_FUN_005299b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0055914a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_scat.cpp_FUN_00559140", 
-      "addr": "00559140"
-    }, 
+      "addr": "00559140",
+      "from_addr": "0055914a",
+      "name": "core_scat.cpp_FUN_00559140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005c691a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_stranger.cpp_CStranger_FUN_005c6910", 
-      "addr": "005c6910"
-    }, 
+      "addr": "005c6910",
+      "from_addr": "005c691a",
+      "name": "core_stranger.cpp_CStranger_FUN_005c6910",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d9f3a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_svetlana.cpp_CSvetlana_FUN_005d9f30", 
-      "addr": "005d9f30"
+      "addr": "005d9f30",
+      "from_addr": "005d9f3a",
+      "name": "core_svetlana.cpp_CSvetlana_FUN_005d9f30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f3fa0",
+    "address_range": [
+      [
+        "004f3fa0",
+        "004f3fe4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_FUN_004f3fa0",
+    "signature": "void core_hero.cpp_CHero_FUN_004f3fa0(CHero * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0058a2b0",
+      "name": "core_skeledit.cpp_FUN_0058a2b0"
+    },
+    {
+      "addr": "005a07a0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0062edc4",
+      "name": "s_MODELS_s_0062edc4",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "FILE *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_0000000c,\"MODELS\\\\%s\\n\",pCVar1->model_filename);",
+      "type": "stack_param"
     }
   ]
 }

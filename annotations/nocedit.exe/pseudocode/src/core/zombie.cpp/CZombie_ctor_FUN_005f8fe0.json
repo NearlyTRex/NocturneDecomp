@@ -1,121 +1,121 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 88, 
-    "pseudocode_lines": 88, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 138, 
-    "assembly_lines": 50, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
-      "addr": "0040cc10"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
-      "addr": "004a9500"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_zombie1_dfm_00658488", 
-      "addr": "00658488", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_true_00658494", 
-      "addr": "00658494", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_rue_00658495", 
-      "addr": "00658495", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ue_00658496", 
-      "addr": "00658496", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_e_00658497", 
-      "addr": "00658497", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006659cc", 
-      "addr": "006659cc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "PTR_FUN_006659cd+3", 
-      "addr": "006659d0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_zombie.cpp_CZombie_FUN_006659e4", 
-      "addr": "006659e4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f8fe0", 
-    "signature": "CZombie * core_zombie.cpp_CZombie_ctor_FUN_005f8fe0(CZombie * this_ptr)", 
-    "address_range": [
-      [
-        "005f8fe0", 
-        "005f9085"
-      ]
-    ], 
-    "name": "core_zombie.cpp_CZombie_ctor_FUN_005f8fe0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CZombie *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 50,
+    "complexity_score": 88,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 8,
+    "pseudocode_lines": 88,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 138
+  },
   "cross_references": [
     {
-      "from_addr": "005f8fbd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_zombie.cpp_FUN_005f8fa0", 
-      "addr": "005f8fa0"
+      "addr": "005f8fa0",
+      "from_addr": "005f8fbd",
+      "name": "core_zombie.cpp_FUN_005f8fa0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005f8fe0",
+    "address_range": [
+      [
+        "005f8fe0",
+        "005f9085"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_zombie.cpp_CZombie_ctor_FUN_005f8fe0",
+    "signature": "CZombie * core_zombie.cpp_CZombie_ctor_FUN_005f8fe0(CZombie * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "004a9500",
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00658488",
+      "name": "s_zombie1_dfm_00658488",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00658494",
+      "name": "s_true_00658494",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00658495",
+      "name": "s_rue_00658495",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00658496",
+      "name": "s_ue_00658496",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00658497",
+      "name": "s_e_00658497",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006659cc",
+      "name": "DAT_006659cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006659d0",
+      "name": "PTR_FUN_006659cd+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006659e4",
+      "name": "PTR_core_zombie.cpp_CZombie_FUN_006659e4",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
+  },
+  "suspects": []
 }

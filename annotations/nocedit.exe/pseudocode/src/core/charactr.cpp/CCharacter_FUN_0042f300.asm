@@ -28,8 +28,8 @@ section .text
     FCOMPP                              ; 0042f30c
     FNSTSW AX                           ; 0042f30e
     SAHF                                ; 0042f310
-    JNC 0x0042f314                      ; 0042f311 | LAB_0042f314
-        ;   XREF to: 0042f314 (CONDITIONAL_JUMP)
+    JNC 0x0042f314                      ; 0042f311
+        ;   XREF to: 0042f314 (CONDITIONAL_JUMP)  ; LAB_0042f314
     RET                                 ; 0042f313
     MOV ECX,dword ptr [ESP + 0x8]       ; 0042f314
         ;   Label: LAB_0042f314

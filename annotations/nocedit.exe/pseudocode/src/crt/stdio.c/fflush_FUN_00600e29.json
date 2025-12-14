@@ -1,105 +1,105 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 66, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 52, 
-    "assembly_lines": 36, 
-    "suspect_count": 4, 
+    "assembly_lines": 36,
+    "complexity_score": 66,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 4,
     "suspect_types": [
-      "extra_output", 
+      "extra_output",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_fstream.cpp_filebuf_close_FUN_00608bcc", 
-      "addr": "00608bcc"
-    }, 
-    {
-      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
-      "addr": "00606020"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "(FileEmbeddedData *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));"
-    }, 
-    {
-      "line": 15, 
-      "match": "(FileEmbeddedData *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));"
-    }, 
-    {
-      "line": 18, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return extraout_EAX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00600e29", 
-    "signature": "int crt_stdio.c_fflush_FUN_00600e29(FILE * stream)", 
-    "address_range": [
-      [
-        "00600e29", 
-        "00600e63"
-      ]
-    ], 
-    "name": "crt_stdio.c_fflush_FUN_00600e29"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "stream"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 52
+  },
   "cross_references": [
     {
-      "from_addr": "004e1640", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
-      "addr": "004e12b0"
-    }, 
+      "addr": "004e12b0",
+      "from_addr": "004e1640",
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e10c4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
-      "addr": "004e0cd0"
-    }, 
+      "addr": "004e0cd0",
+      "from_addr": "004e10c4",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00481b68", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_dosio.c_reopenFileStream_FUN_00481b50", 
-      "addr": "00481b50"
+      "addr": "00481b50",
+      "from_addr": "00481b68",
+      "name": "engine_dosio.c_reopenFileStream_FUN_00481b50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00600e29",
+    "address_range": [
+      [
+        "00600e29",
+        "00600e63"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_fflush_FUN_00600e29",
+    "signature": "int crt_stdio.c_fflush_FUN_00600e29(FILE * stream)"
+  },
+  "function_calls": [
+    {
+      "addr": "00608bcc",
+      "name": "crt_fstream.cpp_filebuf_close_FUN_00608bcc"
+    },
+    {
+      "addr": "00606020",
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(FileEmbeddedData *)((int)",
+      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(FileEmbeddedData *)((int)",
+      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_EAX",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
     }
   ]
 }

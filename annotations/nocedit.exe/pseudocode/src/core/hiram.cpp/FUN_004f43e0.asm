@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2db884c                   ; 004f43e0 | CDemonActorType g_CHiramClassInfo
+    MOV EAX,0x2db884c                   ; 004f43e0 | g_CHiramClassInfo
         ;   Label: core_hiram.cpp_FUN_004f43e0
     RET                                 ; 004f43e5
 

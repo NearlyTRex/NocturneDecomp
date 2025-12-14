@@ -11,6 +11,6 @@ int __watcallStack crt_stdio_c_ungetc_helper_FUN_005fe720(int character,scanf_st
 {
   int iVar1;
   
-  iVar1 = crt_stdio_c_fputc_FUN_005fea10(character,(FILE *)state->input_ptr);
+  iVar1 = crt_stdio_c_fputc_FUN_005fea10(character,state->input_ptr);
   return iVar1;
 }

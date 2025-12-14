@@ -48,62 +48,62 @@ section .text
     PUSH EBP                            ; 0045bbc3
     MOV EBP,ESP                         ; 0045bbc4
     SUB ESP,0x60                        ; 0045bbc6
-    FILD dword ptr [0x00679394]         ; 0045bbcc | int g_WindowWidth
-    FMUL double ptr [0x0061b2c6]        ; 0045bbd2 | double g_MouseAspectRatioMultiplier
-    FILD dword ptr [0x00679398]         ; 0045bbd8 | int g_WindowHeight
+    FILD dword ptr [0x00679394]         ; 0045bbcc | g_WindowWidth
+    FMUL double ptr [0x0061b2c6]        ; 0045bbd2 | g_MouseAspectRatioMultiplier
+    FILD dword ptr [0x00679398]         ; 0045bbd8 | g_WindowHeight
     FDIVP                               ; 0045bbde
-    FMUL double ptr [0x0061b2ce]        ; 0045bbe0 | double g_AspectRatioCorrection
+    FMUL double ptr [0x0061b2ce]        ; 0045bbe0 | g_AspectRatioCorrection
     FSTP float ptr [EBP + -0x8]         ; 0045bbe6
-    FILD dword ptr [0x00679394]         ; 0045bbe9 | int g_WindowWidth
-    FMUL double ptr [0x0061b2d6]        ; 0045bbef | double g_MouseViewportCenterOffset
-    FILD dword ptr [0x02cf6a8c]         ; 0045bbf5 | int g_MouseX
+    FILD dword ptr [0x00679394]         ; 0045bbe9 | g_WindowWidth
+    FMUL double ptr [0x0061b2d6]        ; 0045bbef | g_MouseViewportCenterOffset
+    FILD dword ptr [0x02cf6a8c]         ; 0045bbf5 | g_MouseX
     FSUBRP                              ; 0045bbfb
-    FILD dword ptr [0x00679394]         ; 0045bbfd | int g_WindowWidth
-    FMUL double ptr [0x0061b2d6]        ; 0045bc03 | double g_MouseViewportCenterOffset
+    FILD dword ptr [0x00679394]         ; 0045bbfd | g_WindowWidth
+    FMUL double ptr [0x0061b2d6]        ; 0045bc03 | g_MouseViewportCenterOffset
     FDIVP                               ; 0045bc09
     FSTP float ptr [EBP + -0x4]         ; 0045bc0b
-    FILD dword ptr [0x00679398]         ; 0045bc0e | int g_WindowHeight
-    FMUL double ptr [0x0061b2d6]        ; 0045bc14 | double g_MouseViewportCenterOffset
-    FILD dword ptr [0x02cf6a90]         ; 0045bc1a | int g_MouseY
+    FILD dword ptr [0x00679398]         ; 0045bc0e | g_WindowHeight
+    FMUL double ptr [0x0061b2d6]        ; 0045bc14 | g_MouseViewportCenterOffset
+    FILD dword ptr [0x02cf6a90]         ; 0045bc1a | g_MouseY
     FSUBRP                              ; 0045bc20
     FCHS                                ; 0045bc22
-    FILD dword ptr [0x00679398]         ; 0045bc24 | int g_WindowHeight
-    FMUL double ptr [0x0061b2d6]        ; 0045bc2a | double g_MouseViewportCenterOffset
+    FILD dword ptr [0x00679398]         ; 0045bc24 | g_WindowHeight
+    FMUL double ptr [0x0061b2d6]        ; 0045bc2a | g_MouseViewportCenterOffset
     FDIVP                               ; 0045bc30
     FSTP float ptr [EBP + -0xc]         ; 0045bc32
-    FILD dword ptr [0x01626344]         ; 0045bc35 | int g_ZoomLevel
+    FILD dword ptr [0x01626344]         ; 0045bc35 | g_ZoomLevel
     FMUL float ptr [EBP + -0x4]         ; 0045bc3b
-    FMUL float ptr [0x0061b2de]         ; 0045bc3e | float g_MouseWorldScaleFactor
+    FMUL float ptr [0x0061b2de]         ; 0045bc3e | g_MouseWorldScaleFactor
     FMUL float ptr [EBP + -0x8]         ; 0045bc44
     FSTP float ptr [EBP + -0x4]         ; 0045bc47
-    FILD dword ptr [0x01626344]         ; 0045bc4a | int g_ZoomLevel
+    FILD dword ptr [0x01626344]         ; 0045bc4a | g_ZoomLevel
     FMUL float ptr [EBP + -0xc]         ; 0045bc50
-    FMUL float ptr [0x0061b2de]         ; 0045bc53 | float g_MouseWorldScaleFactor
+    FMUL float ptr [0x0061b2de]         ; 0045bc53 | g_MouseWorldScaleFactor
     FSTP float ptr [EBP + -0xc]         ; 0045bc59
-    TEST byte ptr [0x02cf6a94],0x1      ; 0045bc5c | int g_MouseButtonFlags
-    JZ 0x0045bc6e                       ; 0045bc63 | LAB_0045bc6e
-        ;   XREF to: 0045bc6e (CONDITIONAL_JUMP)
-    CMP dword ptr [0x02cf6a8c],0x7      ; 0045bc65 | int g_MouseX
-    JL 0x0045bc70                       ; 0045bc6c | LAB_0045bc70
-        ;   XREF to: 0045bc70 (CONDITIONAL_JUMP)
-    JMP 0x0045bc82                      ; 0045bc6e | LAB_0045bc82
+    TEST byte ptr [0x02cf6a94],0x1      ; 0045bc5c | g_MouseButtonFlags
+    JZ 0x0045bc6e                       ; 0045bc63
+        ;   XREF to: 0045bc6e (CONDITIONAL_JUMP)  ; LAB_0045bc6e
+    CMP dword ptr [0x02cf6a8c],0x7      ; 0045bc65 | g_MouseX
+    JL 0x0045bc70                       ; 0045bc6c
+        ;   XREF to: 0045bc70 (CONDITIONAL_JUMP)  ; LAB_0045bc70
+    JMP 0x0045bc82                      ; 0045bc6e
+        ;   XREF to: 0045bc82 (UNCONDITIONAL_JUMP)  ; LAB_0045bc82
         ;   Label: LAB_0045bc6e
-        ;   XREF to: 0045bc82 (UNCONDITIONAL_JUMP)
     MOV EAX,dword ptr [EBP + -0xc]      ; 0045bc70
         ;   Label: LAB_0045bc70
-    MOV [0x01626360],EAX                ; 0045bc73 | int g_StoredWorldYCoordinate
-    MOV EAX,[0x02cf6a90]                ; 0045bc78 | int g_MouseY
-    MOV [0x0066eda4],EAX                ; 0045bc7d | int g_MouseReferenceY
-    MOV EAX,[0x01626360]                ; 0045bc82 | int g_StoredWorldYCoordinate
+    MOV [0x01626360],EAX                ; 0045bc73 | g_StoredWorldYCoordinate
+    MOV EAX,[0x02cf6a90]                ; 0045bc78 | g_MouseY
+    MOV [0x0066eda4],EAX                ; 0045bc7d | g_MouseReferenceY
+    MOV EAX,[0x01626360]                ; 0045bc82 | g_StoredWorldYCoordinate
         ;   Label: LAB_0045bc82
     MOV dword ptr [EBP + -0x10],EAX     ; 0045bc87
-    MOV dword ptr [0x02d02570],0x1f     ; 0045bc8a | int g_ActiveRenderColor
-    PUSH dword ptr [0x0066eda4]         ; 0045bc94 | int g_MouseReferenceY
+    MOV dword ptr [0x02d02570],0x1f     ; 0045bc8a | g_ActiveRenderColor
+    PUSH dword ptr [0x0066eda4]         ; 0045bc94 | g_MouseReferenceY
     PUSH 0x6                            ; 0045bc9a
-    PUSH dword ptr [0x0066eda4]         ; 0045bc9c | int g_MouseReferenceY
+    PUSH dword ptr [0x0066eda4]         ; 0045bc9c | g_MouseReferenceY
     PUSH 0x0                            ; 0045bca2
-    CALL engine_2d.c_drawLine_FUN_004011b0 ; 0045bca4 | void engine_2d.c_drawLine_FUN_004011b0(int x1, int y1, int x2, int y2)
-        ;   XREF to: 004011b0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawLine_FUN_004011b0 ; 0045bca4
+        ;   XREF to: 004011b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawLine_FUN_004011b0(int x1, int y1, int x2, int y2)
     ADD ESP,0x10                        ; 0045bca9
     FLD float ptr [EBP + -0x10]         ; 0045bcac
     SUB ESP,0x8                         ; 0045bcaf
@@ -114,18 +114,18 @@ section .text
     FLD float ptr [EBP + -0x4]          ; 0045bcbe
     SUB ESP,0x8                         ; 0045bcc1
     FSTP double ptr [ESP]               ; 0045bcc4
-    MOV EAX,0x61b2e2                    ; 0045bcc7 | = "%f,%f,%f" | s_f_f_f_0061b2e2 = %f,%f,%f
-    PUSH EAX                            ; 0045bccc | = "%f,%f,%f" | s_f_f_f_0061b2e2 = %f,%f,%f
+    MOV EAX,0x61b2e2                    ; 0045bcc7 | = "%f,%f,%f"
+    PUSH EAX                            ; 0045bccc | = "%f,%f,%f"
     LEA EAX,[EBP + -0x60]               ; 0045bccd
     PUSH EAX                            ; 0045bcd0
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045bcd1 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045bcd1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x20                        ; 0045bcd6
-    MOV EAX,[0x00679398]                ; 0045bcd9 | int g_WindowHeight
+    MOV EAX,[0x00679398]                ; 0045bcd9 | g_WindowHeight
     SUB EAX,0xb                         ; 0045bcde
     PUSH EAX                            ; 0045bce1
-    MOV EAX,[0x00679394]                ; 0045bce2 | int g_WindowWidth
-    MOV EDX,dword ptr [0x00679394]      ; 0045bce7 | int g_WindowWidth
+    MOV EAX,[0x00679394]                ; 0045bce2 | g_WindowWidth
+    MOV EDX,dword ptr [0x00679394]      ; 0045bce7 | g_WindowWidth
     SAR EDX,0x1f                        ; 0045bced
     SUB EAX,EDX                         ; 0045bcf0
     SAR EAX,0x1                         ; 0045bcf2
@@ -133,8 +133,8 @@ section .text
     PUSH EAX                            ; 0045bcf7
     LEA EAX,[EBP + -0x60]               ; 0045bcf8
     PUSH EAX                            ; 0045bcfb
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045bcfc | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0045bcfc
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 0045bd01
     MOV ESP,EBP                         ; 0045bd04
     POP EBP                             ; 0045bd06

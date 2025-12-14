@@ -18,8 +18,8 @@ section .text
     PUSH EDX                            ; 005ee654
     MOV ECX,dword ptr [ESP + 0x8]       ; 005ee655
     PUSH ECX                            ; 005ee659
-    CALL core_actor.cpp_CDemonActor_onPickup_FUN_0040a010 ; 005ee65a | void core_actor.cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor * this_ptr, CDemonActor * owner)
-        ;   XREF to: 0040a010 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_onPickup_FUN_0040a010 ; 005ee65a
+        ;   XREF to: 0040a010 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor * this_ptr, CDemonActor * owner)
     ADD ESP,0x8                         ; 005ee65f
     RET                                 ; 005ee662
 

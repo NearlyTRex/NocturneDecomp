@@ -39,26 +39,26 @@ section .text
     ADD EAX,ESI                         ; 005d233e
     SHL EAX,0x3                         ; 005d2340
     PUSH EAX                            ; 005d2343
-    CALL crt_memory.c_malloc_FUN_00601bb0 ; 005d2344 | void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
-        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_malloc_FUN_00601bb0 ; 005d2344
+        ;   XREF to: 00601bb0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_00601bb0(ulong size)
     ADD ESP,0x4                         ; 005d2349
     MOV dword ptr [EBX + 0xc],EAX       ; 005d234c
     TEST EAX,EAX                        ; 005d234f
-    JNZ 0x005d2389                      ; 005d2351 | LAB_005d2389
-        ;   XREF to: 005d2389 (CONDITIONAL_JUMP)
+    JNZ 0x005d2389                      ; 005d2351
+        ;   XREF to: 005d2389 (CONDITIONAL_JUMP)  ; LAB_005d2389
     MOV ECX,dword ptr [EBX + 0x4]       ; 005d2353
     TEST ECX,ECX                        ; 005d2356
-    JZ 0x005d2363                       ; 005d2358 | LAB_005d2363
-        ;   XREF to: 005d2363 (CONDITIONAL_JUMP)
+    JZ 0x005d2363                       ; 005d2358
+        ;   XREF to: 005d2363 (CONDITIONAL_JUMP)  ; LAB_005d2363
     PUSH ECX                            ; 005d235a
-    CALL crt_memory.c_free_FUN_00601cd0 ; 005d235b | void crt_memory.c_free_FUN_00601cd0(void * ptr)
-        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_free_FUN_00601cd0 ; 005d235b
+        ;   XREF to: 00601cd0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_00601cd0(void * ptr)
     ADD ESP,0x4                         ; 005d2360
-    PUSH 0x65432a                       ; 005d2363 | = "Unable to allocate RAM for object pol..." | s_Unable_to_allocate_RAM_f_0065432a = Unable to allocate RAM for object polygons
+    PUSH 0x65432a                       ; 005d2363 | = "Unable to allocate RAM for object pol..."
         ;   Label: LAB_005d2363
     MOV dword ptr [EBX + 0x4],0x0       ; 005d2368
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d236f | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d236f
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     XOR ESI,ESI                         ; 005d2374
     ADD ESP,0x4                         ; 005d2376
     MOV dword ptr [EBX + 0x14],0x0      ; 005d2379
@@ -74,14 +74,14 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005d238c
     PUSH EAX                            ; 005d2390
     XOR EDI,EDI                         ; 005d2391
-    CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620 ; 005d2393 | CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)
-        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620 ; 005d2393
+        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)
     ADD ESP,0x8                         ; 005d2398
     MOV EBP,dword ptr [EBX + 0x8]       ; 005d239b
     MOV dword ptr [ESP + 0x6c],EDI      ; 005d239e
     TEST EBP,EBP                        ; 005d23a2
-    JBE 0x005d23f0                      ; 005d23a4 | LAB_005d23f0
-        ;   XREF to: 005d23f0 (CONDITIONAL_JUMP)
+    JBE 0x005d23f0                      ; 005d23a4
+        ;   XREF to: 005d23f0 (CONDITIONAL_JUMP)  ; LAB_005d23f0
     XOR EBP,EBP                         ; 005d23a6
     MOV ECX,0x68                        ; 005d23a8
         ;   Label: LAB_005d23a8
@@ -109,8 +109,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x8]       ; 005d23dd
     MOV dword ptr [ESP + 0x6c],EAX      ; 005d23e0
     CMP EAX,EDX                         ; 005d23e4
-    JC 0x005d23a8                       ; 005d23e6 | LAB_005d23a8
-        ;   XREF to: 005d23a8 (CONDITIONAL_JUMP)
+    JC 0x005d23a8                       ; 005d23e6
+        ;   XREF to: 005d23a8 (CONDITIONAL_JUMP)  ; LAB_005d23a8
     LEA EAX,[EAX]                       ; 005d23e8
     MOV EDX,EDX                         ; 005d23ee
     PUSH 0x0                            ; 005d23f0
@@ -118,8 +118,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005d23f2
     PUSH EAX                            ; 005d23f6
     MOV ESI,0x1                         ; 005d23f7
-    CALL shape_superopt.cpp_CPoly_dtor_FUN_005cc660 ; 005d23fc | CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
-        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_CPoly_dtor_FUN_005cc660 ; 005d23fc
+        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
     ADD ESP,0x8                         ; 005d2401
     POP EDI                             ; 005d2404
     MOV EAX,ESI                         ; 005d2405

@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 31, 
-    "assembly_lines": 21, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "wincore_winrun.cpp_createMutex_FUN_005f3fe0", 
-      "addr": "005f3fe0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_waitForMutex_FUN_005f3ff0", 
-      "addr": "005f3ff0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "BOOL", 
-      "name": "g_RecursiveCallFlag", 
-      "addr": "02f0ca50", 
-      "value": null
-    }, 
-    {
-      "type": "HANDLE", 
-      "name": "g_FileMutex", 
-      "addr": "02f0d93c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 21,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0050ee5e", 
-    "signature": "void shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e(void)", 
+    "address": "0050ee5e",
     "address_range": [
       [
-        "0050ee5e", 
+        "0050ee5e",
         "0050ee8d"
       ]
-    ], 
-    "name": "shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e",
+    "signature": "void shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f3fe0",
+      "name": "wincore_winrun.cpp_createMutex_FUN_005f3fe0"
+    },
+    {
+      "addr": "005f3ff0",
+      "name": "wincore_winrun.cpp_waitForMutex_FUN_005f3ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02f0ca50",
+      "name": "g_RecursiveCallFlag",
+      "type": "BOOL",
+      "value": null
+    },
+    {
+      "addr": "02f0d93c",
+      "name": "g_FileMutex",
+      "type": "HANDLE",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

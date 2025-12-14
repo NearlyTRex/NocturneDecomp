@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 54, 
-    "pseudocode_lines": 54, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 164, 
-    "assembly_lines": 110, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_matchClassTerm_FUN_0040c4f0", 
-      "addr": "0040c4f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040c610", 
-    "signature": "int core_actor.cpp_matchClassExpression_FUN_0040c610(CDemonActorType * type_ptr, char * * parse_pos)", 
-    "address_range": [
-      [
-        "0040c610", 
-        "0040c6c1"
-      ]
-    ], 
-    "name": "core_actor.cpp_matchClassExpression_FUN_0040c610"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActorType *", 
-        "size": 4, 
-        "name": "type_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char * *", 
-        "size": 4, 
-        "name": "parse_pos"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 110,
+    "complexity_score": 54,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 54,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 164
+  },
   "cross_references": [
     {
-      "from_addr": "0040c54f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_matchClassTerm_FUN_0040c4f0", 
-      "addr": "0040c4f0"
-    }, 
+      "addr": "0040c4f0",
+      "from_addr": "0040c54f",
+      "name": "core_actor.cpp_matchClassTerm_FUN_0040c4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040c74a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_matchesClassName_FUN_0040c740", 
-      "addr": "0040c740"
+      "addr": "0040c740",
+      "from_addr": "0040c74a",
+      "name": "core_actor.cpp_matchesClassName_FUN_0040c740",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0040c610",
+    "address_range": [
+      [
+        "0040c610",
+        "0040c6c1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_matchClassExpression_FUN_0040c610",
+    "signature": "int core_actor.cpp_matchClassExpression_FUN_0040c610(CDemonActorType * type_ptr, char * * parse_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c4f0",
+      "name": "core_actor.cpp_matchClassTerm_FUN_0040c4f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "type_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActorType *"
+      },
+      {
+        "is_param": true,
+        "name": "parse_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "char * *"
+      }
+    ]
+  },
+  "suspects": []
 }

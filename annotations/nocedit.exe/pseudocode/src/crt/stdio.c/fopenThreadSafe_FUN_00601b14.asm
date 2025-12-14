@@ -37,33 +37,33 @@ section .text
     PUSH EAX                            ; 00601b21
     MOV EDX,dword ptr [ESP + 0x20]      ; 00601b22
     PUSH EDX                            ; 00601b26
-    CALL crt_stdio.c_OpenModeStringParser_FUN_006017d0 ; 00601b27 | int crt_stdio.c_OpenModeStringParser_FUN_006017d0(char * mode_string, char * output_flags)
-        ;   XREF to: 006017d0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_OpenModeStringParser_FUN_006017d0 ; 00601b27
+        ;   XREF to: 006017d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_OpenModeStringParser_FUN_006017d0(char * mode_string, char * output_flags)
     ADD ESP,0x8                         ; 00601b2c
     MOV EDI,EAX                         ; 00601b2f
     TEST EAX,EAX                        ; 00601b31
-    JZ 0x00601b9e                       ; 00601b33 | LAB_00601b9e
-        ;   XREF to: 00601b9e (CONDITIONAL_JUMP)
+    JZ 0x00601b9e                       ; 00601b33
+        ;   XREF to: 00601b9e (CONDITIONAL_JUMP)  ; LAB_00601b9e
     MOV EBX,dword ptr [ESI + 0x10]      ; 00601b35
     PUSH EBX                            ; 00601b38
-    CALL dword ptr [0x00684ee8]         ; 00601b39 | ENTER_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
-    MOV ECX,dword ptr [0x00685288]      ; 00601b3f | SPECIAL_DEVICE_CLEANUP_FUNC * g_SpecialDeviceCleanupFunc
+    CALL dword ptr [0x00684ee8]         ; 00601b39 | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
+    MOV ECX,dword ptr [0x00685288]      ; 00601b3f | g_SpecialDeviceCleanupFunc
     ADD ESP,0x4                         ; 00601b45
     TEST ECX,ECX                        ; 00601b48
-    JZ 0x00601b56                       ; 00601b4a | LAB_00601b56
-        ;   XREF to: 00601b56 (CONDITIONAL_JUMP)
+    JZ 0x00601b56                       ; 00601b4a
+        ;   XREF to: 00601b56 (CONDITIONAL_JUMP)  ; LAB_00601b56
     PUSH EBX                            ; 00601b4c
-    CALL dword ptr [0x00685288]         ; 00601b4d | SPECIAL_DEVICE_CLEANUP_FUNC * g_SpecialDeviceCleanupFunc
+    CALL dword ptr [0x00685288]         ; 00601b4d | g_SpecialDeviceCleanupFunc
     ADD ESP,0x4                         ; 00601b53
     PUSH ESI                            ; 00601b56
         ;   Label: LAB_00601b56
-    CALL crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94 ; 00601b57 | undefined crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94()
-        ;   XREF to: 00601a94 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94 ; 00601b57
+        ;   XREF to: 00601a94 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_MultipleDoNothingCalls_FUN_00601a94()
     ADD ESP,0x4                         ; 00601b5c
     MOV ESI,EAX                         ; 00601b5f
     TEST EAX,EAX                        ; 00601b61
-    JZ 0x00601b92                       ; 00601b63 | LAB_00601b92
-        ;   XREF to: 00601b92 (CONDITIONAL_JUMP)
+    JZ 0x00601b92                       ; 00601b63
+        ;   XREF to: 00601b92 (CONDITIONAL_JUMP)  ; LAB_00601b92
     MOV ESI,dword ptr [EAX + 0xc]       ; 00601b65
     AND ESI,0x4000                      ; 00601b68
     PUSH EAX                            ; 00601b6e
@@ -78,13 +78,13 @@ section .text
     PUSH EAX                            ; 00601b82
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00601b83
     PUSH EAX                            ; 00601b87
-    CALL crt_stdio.c_OpenFileAndInitialize_FUN_0060190c ; 00601b88 | FILE * crt_stdio.c_OpenFileAndInitialize_FUN_0060190c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, ...)
-        ;   XREF to: 0060190c (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_OpenFileAndInitialize_FUN_0060190c ; 00601b88
+        ;   XREF to: 0060190c (UNCONDITIONAL_CALL)  ; FILE * crt_stdio.c_OpenFileAndInitialize_FUN_0060190c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, ...)
     ADD ESP,0x18                        ; 00601b8d
     MOV ESI,EAX                         ; 00601b90
     PUSH EBX                            ; 00601b92
         ;   Label: LAB_00601b92
-    CALL dword ptr [0x00684eec]         ; 00601b93 | EXIT_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
+    CALL dword ptr [0x00684eec]         ; 00601b93 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 00601b99
     MOV EAX,ESI                         ; 00601b9c
     ADD ESP,0x4                         ; 00601b9e

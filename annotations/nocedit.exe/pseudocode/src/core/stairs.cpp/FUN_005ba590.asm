@@ -38,8 +38,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x16c]     ; 005ba5b6
     ADD EAX,EAX                         ; 005ba5bc
     CMP EDI,EAX                         ; 005ba5be
-    JL 0x005ba5cd                       ; 005ba5c0 | LAB_005ba5cd
-        ;   XREF to: 005ba5cd (CONDITIONAL_JUMP)
+    JL 0x005ba5cd                       ; 005ba5c0
+        ;   XREF to: 005ba5cd (CONDITIONAL_JUMP)  ; LAB_005ba5cd
     MOV EAX,dword ptr [ESP + 0x18]      ; 005ba5c2
     MOV ESP,EBP                         ; 005ba5c6
     POP EBP                             ; 005ba5c8
@@ -53,8 +53,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 005ba5d1
     PUSH EAX                            ; 005ba5d4
     PUSH EBX                            ; 005ba5d5
-    CALL core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ; 005ba5d6 | float core_dtri.cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
-        ;   XREF to: 0049a800 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ; 005ba5d6
+        ;   XREF to: 0049a800 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0x28],EAX      ; 005ba5db
     FLD float ptr [ESP + 0x28]          ; 005ba5df
     ADD ESP,0xc                         ; 005ba5e3
@@ -65,20 +65,20 @@ section .text
     FCOMP double ptr [ESP]              ; 005ba5f1
     FNSTSW AX                           ; 005ba5f4
     SAHF                                ; 005ba5f6
-    JA 0x005ba651                       ; 005ba5f7 | LAB_005ba651
-        ;   XREF to: 005ba651 (CONDITIONAL_JUMP)
+    JA 0x005ba651                       ; 005ba5f7
+        ;   XREF to: 005ba651 (CONDITIONAL_JUMP)  ; LAB_005ba651
     FLD float ptr [ESP + 0x8]           ; 005ba5f9
     FCOMP float ptr [ESP + 0x18]        ; 005ba5fd
     FNSTSW AX                           ; 005ba601
     SAHF                                ; 005ba603
-    JNC 0x005ba651                      ; 005ba604 | LAB_005ba651
-        ;   XREF to: 005ba651 (CONDITIONAL_JUMP)
+    JNC 0x005ba651                      ; 005ba604
+        ;   XREF to: 005ba651 (CONDITIONAL_JUMP)  ; LAB_005ba651
     FLD1                                ; 005ba606
     FCOMP double ptr [ESP]              ; 005ba608
     FNSTSW AX                           ; 005ba60b
     SAHF                                ; 005ba60d
-    JC 0x005ba651                       ; 005ba60e | LAB_005ba651
-        ;   XREF to: 005ba651 (CONDITIONAL_JUMP)
+    JC 0x005ba651                       ; 005ba60e
+        ;   XREF to: 005ba651 (CONDITIONAL_JUMP)  ; LAB_005ba651
     MOV EAX,dword ptr [ESP + 0x8]       ; 005ba610
     MOV dword ptr [ESP + 0x18],EAX      ; 005ba614
     LEA EAX,[EBX + 0x24]                ; 005ba618
@@ -93,8 +93,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 005ba631
     FSTP float ptr [ESP + 0x14]         ; 005ba635
     CMP ESI,EAX                         ; 005ba639
-    JZ 0x005ba651                       ; 005ba63b | LAB_005ba651
-        ;   XREF to: 005ba651 (CONDITIONAL_JUMP)
+    JZ 0x005ba651                       ; 005ba63b
+        ;   XREF to: 005ba651 (CONDITIONAL_JUMP)  ; LAB_005ba651
     MOV EAX,dword ptr [ESP + 0xc]       ; 005ba63d
     MOV dword ptr [ESI],EAX             ; 005ba641
     MOV EAX,dword ptr [ESP + 0x10]      ; 005ba643
@@ -104,6 +104,6 @@ section .text
     INC EDI                             ; 005ba651
         ;   Label: LAB_005ba651
     ADD EBX,0x38                        ; 005ba652
-    JMP 0x005ba5b3                      ; 005ba655 | LAB_005ba5b3
-        ;   XREF to: 005ba5b3 (UNCONDITIONAL_JUMP)
+    JMP 0x005ba5b3                      ; 005ba655
+        ;   XREF to: 005ba5b3 (UNCONDITIONAL_JUMP)  ; LAB_005ba5b3
 

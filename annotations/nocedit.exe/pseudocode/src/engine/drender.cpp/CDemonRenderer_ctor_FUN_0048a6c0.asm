@@ -19,7 +19,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0048a6c0
         ;   Label: engine_drender.cpp_CDemonRenderer_ctor_FUN_0048a6c0
     MOV dword ptr [EAX + 0x8],0x0       ; 0048a6c4
-    MOV dword ptr [EAX],0x688014        ; 0048a6cb | SRenderVertex[16] g_RenderVertexBuffer
+    MOV dword ptr [EAX],0x688014        ; 0048a6cb | g_RenderVertexBuffer
     MOV dword ptr [EAX + 0xc],0x1       ; 0048a6d1
     MOV dword ptr [EAX + 0x10],0x1      ; 0048a6d8
     MOV dword ptr [EAX + 0x14],0x0      ; 0048a6df

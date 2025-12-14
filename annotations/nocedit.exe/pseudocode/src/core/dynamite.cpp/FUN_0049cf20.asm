@@ -24,13 +24,13 @@ section .text
         ;   Label: core_dynamite.cpp_FUN_0049cf20
     SUB ESP,0x64                        ; 0049cf21
     MOV EBX,dword ptr [ESP + 0x6c]      ; 0049cf24
-    PUSH 0x622e93                       ; 0049cf28 | = "fuse.wav" | s_fuse_wav_00622e93 = fuse.wav
+    PUSH 0x622e93                       ; 0049cf28 | = "fuse.wav"
     LEA EAX,[ESP + 0x4]                 ; 0049cf2d
     FLD float ptr [0x0065d30c]          ; 0049cf31 | DAT_0065d30c
     PUSH EAX                            ; 0049cf37
     FSTP float ptr [EBX + 0x578]        ; 0049cf38
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0049cf3e | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0049cf3e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0049cf43
     MOV EAX,ESP                         ; 0049cf46
     PUSH EAX                            ; 0049cf48

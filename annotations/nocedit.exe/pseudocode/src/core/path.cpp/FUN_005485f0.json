@@ -1,106 +1,106 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 0, 
-    "global_count": 7, 
-    "total_lines": 81, 
-    "assembly_lines": 59, 
-    "suspect_count": 2, 
+    "assembly_lines": 59,
+    "complexity_score": 47,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_path.cpp_FUN_00547fc0", 
-      "addr": "00547fc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_path_cpp_0063ea78", 
-      "addr": "0063ea78", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Global_pathmap_list_corr_0063ea89", 
-      "addr": "0063ea89", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PathMapCount", 
-      "addr": "030c3ab8", 
-      "value": null
-    }, 
-    {
-      "type": "CPathMap*[200]", 
-      "name": "g_PathMapList", 
-      "addr": "030c3abc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030c3ac0", 
-      "addr": "030c3ac0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {"
-    }, 
-    {
-      "line": 17, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)(*(int *)((int)g_PathMapList + iVar1) + 0x138c0) < 0x461c3c01) {"
-    }
-  ], 
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "005485f0", 
-    "signature": "undefined core_path.cpp_FUN_005485f0()", 
+    "address": "005485f0",
     "address_range": [
       [
-        "005485f0", 
+        "005485f0",
         "00548673"
       ]
-    ], 
-    "name": "core_path.cpp_FUN_005485f0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_path.cpp_FUN_005485f0",
+    "signature": "undefined core_path.cpp_FUN_005485f0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00547fc0",
+      "name": "core_path.cpp_FUN_00547fc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ea78",
+      "name": "s_core_path_cpp_0063ea78",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ea89",
+      "name": "s_Global_pathmap_list_corr_0063ea89",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3ab8",
+      "name": "g_PathMapCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3abc",
+      "name": "g_PathMapList",
+      "type": "CPathMap*[200]",
+      "value": null
+    },
+    {
+      "addr": "030c3ac0",
+      "name": "DAT_030c3ac0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)(*(int *)((int)g_PathMapList + iVar1) + 0x138c0) < 0x461c3c01) {",
+      "type": "pointer_cast"
+    }
+  ]
 }

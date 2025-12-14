@@ -31,16 +31,16 @@ section .text
     ADD EAX,EDX                         ; 004a2d90
     PUSH EAX                            ; 004a2d92
     PUSH EDI                            ; 004a2d93
-    CALL shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0 ; 004a2d94 | void shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0(CStrList * this_ptr, int new_capacity)
-        ;   XREF to: 004a2cc0 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0 ; 004a2d94
+        ;   XREF to: 004a2cc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0(CStrList * this_ptr, int new_capacity)
     ADD ESP,0x8                         ; 004a2d99
     XOR EBX,EBX                         ; 004a2d9c
     MOV ESI,dword ptr [ESP + 0x18]      ; 004a2d9e
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004a2da2
     MOV EAX,dword ptr [EAX]             ; 004a2da6
     CMP EBX,EAX                         ; 004a2da8
-    JL 0x004a2db1                       ; 004a2daa | LAB_004a2db1
-        ;   XREF to: 004a2db1 (CONDITIONAL_JUMP)
+    JL 0x004a2db1                       ; 004a2daa
+        ;   XREF to: 004a2db1 (CONDITIONAL_JUMP)  ; LAB_004a2db1
     POP EBP                             ; 004a2dac
     POP EDI                             ; 004a2dad
     POP ESI                             ; 004a2dae
@@ -51,8 +51,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 004a2db2
     PUSH ECX                            ; 004a2db6
     MOV EBP,dword ptr [EDI + 0xc]       ; 004a2db7
-    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004a2dba | char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
-        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70 ; 004a2dba
+        ;   XREF to: 004a2f70 (UNCONDITIONAL_CALL)  ; char * shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70(CStrList * this_ptr, int index)
     ADD ESP,0x8                         ; 004a2dbf
     PUSH EAX                            ; 004a2dc2
     PUSH ESI                            ; 004a2dc3
@@ -64,8 +64,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004a2dcd
     MOV EAX,dword ptr [EAX]             ; 004a2dd1
     CMP EBX,EAX                         ; 004a2dd3
-    JL 0x004a2db1                       ; 004a2dd5 | LAB_004a2db1
-        ;   XREF to: 004a2db1 (CONDITIONAL_JUMP)
+    JL 0x004a2db1                       ; 004a2dd5
+        ;   XREF to: 004a2db1 (CONDITIONAL_JUMP)  ; LAB_004a2db1
     POP EBP                             ; 004a2dd7
     POP EDI                             ; 004a2dd8
     POP ESI                             ; 004a2dd9

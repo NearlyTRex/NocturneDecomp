@@ -1,65 +1,65 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 19, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CHero*[4]", 
-      "name": "g_HeroActors", 
-      "addr": "02db87c0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_LocalHeroIndex", 
-      "addr": "02db87d0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00500020", 
-    "signature": "void core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020(CInventory * this_ptr)", 
-    "address_range": [
-      [
-        "00500020", 
-        "00500041"
-      ]
-    ], 
-    "name": "core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CInventory *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
   "cross_references": [
     {
-      "from_addr": "004e0be2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_FUN_004e0bd0", 
-      "addr": "004e0bd0"
+      "addr": "004e0bd0",
+      "from_addr": "004e0be2",
+      "name": "core_game.cpp_CGame_FUN_004e0bd0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00500020",
+    "address_range": [
+      [
+        "00500020",
+        "00500041"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020",
+    "signature": "void core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020(CInventory * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02db87c0",
+      "name": "g_HeroActors",
+      "type": "CHero*[4]",
+      "value": null
+    },
+    {
+      "addr": "02db87d0",
+      "name": "g_LocalHeroIndex",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": []
 }

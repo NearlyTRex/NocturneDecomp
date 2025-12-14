@@ -1,234 +1,234 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 48, 
-    "pseudocode_lines": 48, 
-    "cross_reference_count": 10, 
-    "global_count": 11, 
-    "total_lines": 202, 
-    "assembly_lines": 154, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_design.c_calculatePolygonNormal_FUN_0045caa0", 
-      "addr": "0045caa0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_NormalizeThreshold", 
-      "addr": "0061b30e", 
-      "value": "0.00100000000000000"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_VertexCount", 
-      "addr": "01626408", 
-      "value": null
-    }, 
-    {
-      "type": "SVertexData[20000]", 
-      "name": "g_VertexNormals", 
-      "addr": "01687e8c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01687e90", 
-      "addr": "01687e90", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01687e94", 
-      "addr": "01687e94", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PolygonCount", 
-      "addr": "016e990c", 
-      "value": null
-    }, 
-    {
-      "type": "SShapeEditorPolygon[20000]", 
-      "name": "g_ModelPolygonData", 
-      "addr": "016e9910", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b4", 
-      "addr": "016e99b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99b8", 
-      "addr": "016e99b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99bc", 
-      "addr": "016e99bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_016e99c0", 
-      "addr": "016e99c0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0045be40", 
-    "signature": "void shape_design.c_calculateVertexNormals_FUN_0045be40(void)", 
-    "address_range": [
-      [
-        "0045be40", 
-        "0045bfe8"
-      ]
-    ], 
-    "name": "shape_design.c_calculateVertexNormals_FUN_0045be40"
-  }, 
-  "stack_frame": {
-    "local_size": 68, 
-    "variables": [
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 68, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 154,
+    "complexity_score": 48,
+    "cross_reference_count": 10,
+    "function_call_count": 1,
+    "global_count": 11,
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 202
+  },
   "cross_references": [
     {
-      "from_addr": "004572a0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0", 
-      "addr": "004570a0"
-    }, 
+      "addr": "004570a0",
+      "from_addr": "004572a0",
+      "name": "core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00482e4b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40", 
-      "addr": "00482e40"
-    }, 
+      "addr": "00482e40",
+      "from_addr": "00482e4b",
+      "name": "core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00458878", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadModelBinary_FUN_00458170", 
-      "addr": "00458170"
-    }, 
+      "addr": "00458170",
+      "from_addr": "00458878",
+      "name": "shape_design.c_loadModelBinary_FUN_00458170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00459342", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadModelFile_FUN_00458ac0", 
-      "addr": "00458ac0"
-    }, 
+      "addr": "00458ac0",
+      "from_addr": "00459342",
+      "name": "shape_design.c_loadModelFile_FUN_00458ac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00459a00", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_loadS3DModelFile_FUN_004593a0", 
-      "addr": "004593a0"
-    }, 
+      "addr": "004593a0",
+      "from_addr": "00459a00",
+      "name": "shape_design.c_loadS3DModelFile_FUN_004593a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045d670", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0", 
-      "addr": "0045d5d0"
-    }, 
+      "addr": "0045d5d0",
+      "from_addr": "0045d670",
+      "name": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045f073", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_realignObject_FUN_0045ee70", 
-      "addr": "0045ee70"
-    }, 
+      "addr": "0045ee70",
+      "from_addr": "0045f073",
+      "name": "shape_design.c_realignObject_FUN_0045ee70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045f2ff", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
-      "addr": "0045f1d0"
-    }, 
+      "addr": "0045f1d0",
+      "from_addr": "0045f2ff",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048fa3f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960", 
-      "addr": "0048f960"
-    }, 
+      "addr": "0048f960",
+      "from_addr": "0048fa3f",
+      "name": "shape_dsemodel.cpp_CDSEModel_load_FUN_0048f960",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d80dc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00", 
-      "addr": "005d7e00"
+      "addr": "005d7e00",
+      "from_addr": "005d80dc",
+      "name": "shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0045be40",
+    "address_range": [
+      [
+        "0045be40",
+        "0045bfe8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_calculateVertexNormals_FUN_0045be40",
+    "signature": "void shape_design.c_calculateVertexNormals_FUN_0045be40(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045caa0",
+      "name": "shape_design.c_calculatePolygonNormal_FUN_0045caa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b30e",
+      "name": "g_NormalizeThreshold",
+      "type": "double",
+      "value": "0.00100000000000000"
+    },
+    {
+      "addr": "01626408",
+      "name": "g_VertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01687e8c",
+      "name": "g_VertexNormals",
+      "type": "SVertexData[20000]",
+      "value": null
+    },
+    {
+      "addr": "01687e90",
+      "name": "DAT_01687e90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01687e94",
+      "name": "DAT_01687e94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e990c",
+      "name": "g_PolygonCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "016e9910",
+      "name": "g_ModelPolygonData",
+      "type": "SShapeEditorPolygon[20000]",
+      "value": null
+    },
+    {
+      "addr": "016e99b4",
+      "name": "DAT_016e99b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99b8",
+      "name": "DAT_016e99b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99bc",
+      "name": "DAT_016e99bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "016e99c0",
+      "name": "DAT_016e99c0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": []
 }

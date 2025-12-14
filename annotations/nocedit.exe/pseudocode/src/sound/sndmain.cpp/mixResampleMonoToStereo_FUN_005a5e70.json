@@ -1,332 +1,332 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 299, 
-    "pseudocode_lines": 64, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 179, 
-    "assembly_lines": 115, 
-    "suspect_count": 22, 
+    "assembly_lines": 115,
+    "complexity_score": 299,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 64,
+    "suspect_count": 22,
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
-      "unknown_field"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_floor_FUN_005feb90", 
-      "addr": "005feb90"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0064fcaf", 
-      "addr": "0064fcaf", 
-      "value": "4294967296"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000008;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float *in_stack_0000000c;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000010;"
-    }, 
-    {
-      "line": 28, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (0 < resample_position._0_4_) {"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_00000010));"
-    }, 
-    {
-      "line": 29, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_00000010));"
-    }, 
-    {
-      "line": 31, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);"
-    }, 
-    {
-      "line": 36, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);"
-    }, 
-    {
-      "line": 38, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers));"
-    }, 
-    {
-      "line": 40, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);"
-    }, 
-    {
-      "line": 44, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) - (double)local_34) *"
-    }, 
-    {
-      "line": 46, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);"
-    }, 
-    {
-      "line": 47, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar3 = *in_stack_0000000c;"
-    }, 
-    {
-      "line": 48, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar4 = in_stack_0000000c[1];"
-    }, 
-    {
-      "line": 49, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = in_stack_00000008[1];"
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar6 = *in_stack_00000008;"
-    }, 
-    {
-      "line": 53, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "sVar2 = *(short *)(in_stack_00000004 + iVar10 * 2);"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(float)*(short *)(in_stack_00000004 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);"
-    }, 
-    {
-      "line": 62, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "} while (iVar9 < resample_position._0_4_);"
-    }, 
-    {
-      "line": 64, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)resample_position._0_4_ * (double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) +"
-    }, 
-    {
-      "line": 64, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)resample_position._0_4_ * (double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) +"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a5e70", 
-    "signature": "double sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70(short * sample_data, SStereoBuffers * channel_buffers, SStereoGains * channel_gains, double resample_position, double resample_delta, int samples_to_process)", 
-    "address_range": [
-      [
-        "005a5e70", 
-        "005a5fa9"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70"
-  }, 
-  "stack_frame": {
-    "local_size": 64, 
-    "variables": [
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "short *", 
-        "size": 4, 
-        "name": "sample_data"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "SStereoBuffers *", 
-        "size": 4, 
-        "name": "channel_buffers"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "SStereoGains *", 
-        "size": 4, 
-        "name": "channel_gains"
-      }, 
-      {
-        "offset": 32, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "resample_position"
-      }, 
-      {
-        "offset": 40, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "resample_delta"
-      }, 
-      {
-        "offset": 48, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "samples_to_process"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 112, 
-    "param_offset": 4, 
-    "param_size": 48
-  }, 
+      "stack_param",
+      "unknown_field",
+      "concat_artifact"
+    ],
+    "total_lines": 179
+  },
   "cross_references": [
     {
-      "from_addr": "005a7d87", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0", 
-      "addr": "005a75e0"
+      "addr": "005a75e0",
+      "from_addr": "005a7d87",
+      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a5e70",
+    "address_range": [
+      [
+        "005a5e70",
+        "005a5fa9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70",
+    "signature": "double sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70(short * sample_data, SStereoBuffers * channel_buffers, SStereoGains * channel_gains, double resample_position, double resample_delta, int samples_to_process)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feb90",
+      "name": "crt_math.c_floor_FUN_005feb90"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064fcaf",
+      "name": "DOUBLE_0064fcaf",
+      "type": "double",
+      "value": "4294967296"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 112,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 48,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "sample_data",
+        "offset": 20,
+        "size": 4,
+        "type": "short *"
+      },
+      {
+        "is_param": true,
+        "name": "channel_buffers",
+        "offset": 24,
+        "size": 4,
+        "type": "SStereoBuffers *"
+      },
+      {
+        "is_param": true,
+        "name": "channel_gains",
+        "offset": 28,
+        "size": 4,
+        "type": "SStereoGains *"
+      },
+      {
+        "is_param": true,
+        "name": "resample_position",
+        "offset": 32,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "resample_delta",
+        "offset": 40,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "samples_to_process",
+        "offset": 48,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "text": "float *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
+      "match": "._0_4_",
+      "text": "if (0 < resample_position._0_4_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000010",
+      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_00000010));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 29,
+      "match": "CONCAT44",
+      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_00000010));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 31,
+      "match": "._0_4_",
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._0_4_",
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 38,
+      "match": "CONCAT44",
+      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._0_4_",
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 44,
+      "match": "CONCAT44",
+      "text": "(((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) - (double)local_34) *",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 46,
+      "match": "._0_4_",
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_0000000c",
+      "text": "fVar3 = *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_0000000c",
+      "text": "fVar4 = in_stack_0000000c[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000008",
+      "text": "iVar5 = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000008",
+      "text": "iVar6 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000004",
+      "text": "sVar2 = *(short *)(in_stack_00000004 + iVar10 * 2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000004",
+      "text": "(float)*(short *)(in_stack_00000004 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "text": "} while (iVar9 < resample_position._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._0_4_",
+      "text": "(double)resample_position._0_4_ * (double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) +",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 64,
+      "match": "CONCAT44",
+      "text": "(double)resample_position._0_4_ * (double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) +",
+      "type": "concat_artifact"
     }
   ]
 }

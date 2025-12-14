@@ -27,16 +27,16 @@ section .text
         ;   Label: core_gargoyle.cpp_FUN_004e44e0
     MOV EDX,dword ptr [ESP + 0x8]       ; 004e44e1
     PUSH EDX                            ; 004e44e5
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004e44e6 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 004e44e6
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 004e44eb
-    PUSH 0x62d7d6                       ; 004e44ee | = "gargoyle.dfm" | s_gargoyle_dfm_0062d7d6 = gargoyle.dfm
+    PUSH 0x62d7d6                       ; 004e44ee | = "gargoyle.dfm"
     MOV EBX,EAX                         ; 004e44f3
     ADD EAX,0x158                       ; 004e44f5
     PUSH EAX                            ; 004e44fa
-    MOV dword ptr [EAX + -0x4],0x65ea44 ; 004e44fb | CDemonActor_vtable PTR_core_gargoyle.cpp_CGargoyle_FUN_0065ea44
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004e4502 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x65ea44 ; 004e44fb | PTR_core_gargoyle.cpp_CGargoyle_FUN_0065ea44
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 004e4502
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x3f19999a ; 004e4507
     MOV dword ptr [EBX + 0x2de0],0x3f19999a ; 004e4511
     MOV dword ptr [EBX + 0x2610],0x2    ; 004e451b

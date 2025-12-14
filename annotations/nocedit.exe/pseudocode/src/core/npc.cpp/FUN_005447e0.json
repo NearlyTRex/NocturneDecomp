@@ -1,173 +1,173 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 104, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 7, 
-    "global_count": 2, 
-    "total_lines": 49, 
-    "assembly_lines": 30, 
-    "suspect_count": 8, 
+    "assembly_lines": 30,
+    "complexity_score": 104,
+    "cross_reference_count": 7,
+    "function_call_count": 3,
+    "global_count": 2,
+    "pseudocode_lines": 19,
+    "suspect_count": 8,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_ctor_FUN_00427e20", 
-      "addr": "00427e20"
-    }, 
-    {
-      "name": "core_path.cpp_CPathMap_ctor_FUN_00546450", 
-      "addr": "00546450"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_priest_dfm_0063e309", 
-      "addr": "0063e309", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_npc.cpp_FUN_00661d94", 
-      "addr": "00661d94", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar2[-1].height_cache[0x4f][0x1b] = (int)&PTR_core_npc_cpp_FUN_00661d94;"
-    }, 
-    {
-      "line": 11, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar2[-1].height_cache_tags[7][0x4d] = 0x3f19999a;"
-    }, 
-    {
-      "line": 12, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar2[-1].height_cache_tags[7][0x4e] = 0x3f666666;"
-    }, 
-    {
-      "line": 13, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar2[-1].height_cache_tags[7][0x51] = 0x3fcccccd;"
-    }, 
-    {
-      "line": 14, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar2[-1].height_cache_tags[7][0x52] = -0x3b864000;"
-    }, 
-    {
-      "line": 16, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4f] + 0x1c),"
-    }, 
-    {
-      "line": 18, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "pCVar2[-1].height_cache_tags[2][0x53] = 0;"
-    }, 
-    {
-      "line": 21, 
-      "match": "pCVar2[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CNPC *)(pCVar2[-1].height_cache[0x4e] + 0x2a);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005447e0", 
-    "signature": "CNPC * core_npc.cpp_FUN_005447e0(CNPC * this_ptr)", 
-    "address_range": [
-      [
-        "005447e0", 
-        "00544869"
-      ]
-    ], 
-    "name": "core_npc.cpp_FUN_005447e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CNPC *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 49
+  },
   "cross_references": [
     {
-      "from_addr": "004f43f8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hiram.cpp_FUN_004f43f0", 
-      "addr": "004f43f0"
-    }, 
+      "addr": "004f43f0",
+      "from_addr": "004f43f8",
+      "name": "core_hiram.cpp_FUN_004f43f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f4848", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hostage.cpp_FUN_004f4840", 
-      "addr": "004f4840"
-    }, 
+      "addr": "004f4840",
+      "from_addr": "004f4848",
+      "name": "core_hostage.cpp_FUN_004f4840",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f7b78", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hpriest.cpp_FUN_004f7b70", 
-      "addr": "004f7b70"
-    }, 
+      "addr": "004f7b70",
+      "from_addr": "004f7b78",
+      "name": "core_hpriest.cpp_FUN_004f7b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005447ba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_npc.cpp_FUN_005447a0", 
-      "addr": "005447a0"
-    }, 
+      "addr": "005447a0",
+      "from_addr": "005447ba",
+      "name": "core_npc.cpp_FUN_005447a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00545b38", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_passngr.cpp_CPassenger_ctor_FUN_00545b30", 
-      "addr": "00545b30"
-    }, 
+      "addr": "00545b30",
+      "from_addr": "00545b38",
+      "name": "core_passngr.cpp_CPassenger_ctor_FUN_00545b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005da066", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tbplayer.cpp_CBassPlayer_ctor_FUN_005da060", 
-      "addr": "005da060"
-    }, 
+      "addr": "005da060",
+      "from_addr": "005da066",
+      "name": "core_tbplayer.cpp_CBassPlayer_ctor_FUN_005da060",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005da2c6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tbplayer.cpp_CDrummer_ctor_FUN_005da2c0", 
-      "addr": "005da2c0"
+      "addr": "005da2c0",
+      "from_addr": "005da2c6",
+      "name": "core_tbplayer.cpp_CDrummer_ctor_FUN_005da2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005447e0",
+    "address_range": [
+      [
+        "005447e0",
+        "00544869"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_FUN_005447e0",
+    "signature": "CNPC * core_npc.cpp_FUN_005447e0(CNPC * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00427e20",
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_00427e20"
+    },
+    {
+      "addr": "00546450",
+      "name": "core_path.cpp_CPathMap_ctor_FUN_00546450"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063e309",
+      "name": "s_priest_dfm_0063e309",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00661d94",
+      "name": "PTR_core_npc.cpp_FUN_00661d94",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 10,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache[0x4f][0x1b] = (int)&PTR_core_npc_cpp_FUN_00661d94;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[7][0x4d] = 0x3f19999a;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[7][0x4e] = 0x3f666666;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[7][0x51] = 0x3fcccccd;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 14,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[7][0x52] = -0x3b864000;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "pCVar2[-1].",
+      "text": "((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4f] + 0x1c),",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar2[-1].",
+      "text": "pCVar2[-1].height_cache_tags[2][0x53] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar2[-1].",
+      "text": "return (CNPC *)(pCVar2[-1].height_cache[0x4e] + 0x2a);",
+      "type": "negative_offset"
     }
   ]
 }

@@ -28,8 +28,8 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
     MOV ECX,dword ptr [EDX + 0x4]       ; 0048d6c4
     TEST ECX,ECX                        ; 0048d6c7
-    JZ 0x0048d6d3                       ; 0048d6c9 | LAB_0048d6d3
-        ;   XREF to: 0048d6d3 (CONDITIONAL_JUMP)
+    JZ 0x0048d6d3                       ; 0048d6c9
+        ;   XREF to: 0048d6d3 (CONDITIONAL_JUMP)  ; LAB_0048d6d3
     MOV dword ptr [EDX + 0x1c],0x0      ; 0048d6cb
     RET                                 ; 0048d6d2
     PUSH EDI                            ; 0048d6d3
@@ -38,9 +38,9 @@ section .text
     SETNZ AL                            ; 0048d6d9
     MOV EDI,0xffffffff                  ; 0048d6dc
     AND EAX,0xff                        ; 0048d6e1
-    MOV dword ptr [0x02c6d5ec],ECX      ; 0048d6e6 | int g_CaptureFaceCount
+    MOV dword ptr [0x02c6d5ec],ECX      ; 0048d6e6 | g_CaptureFaceCount
     INC EAX                             ; 0048d6ec
-    MOV dword ptr [0x02c6d5f0],EDI      ; 0048d6ed | int g_CaptureTextureCount
+    MOV dword ptr [0x02c6d5f0],EDI      ; 0048d6ed | g_CaptureTextureCount
     MOV dword ptr [EDX + 0x1c],EAX      ; 0048d6f3
     POP EDI                             ; 0048d6f6
     RET                                 ; 0048d6f7

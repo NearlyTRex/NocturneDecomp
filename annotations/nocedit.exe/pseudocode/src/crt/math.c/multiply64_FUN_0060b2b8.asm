@@ -13,11 +13,11 @@ section .text
 
     TEST EDX,EDX                        ; 0060b2b8
         ;   Label: crt_math.c_multiply64_FUN_0060b2b8
-    JNZ 0x0060b2c3                      ; 0060b2ba | LAB_0060b2c3
-        ;   XREF to: 0060b2c3 (CONDITIONAL_JUMP)
+    JNZ 0x0060b2c3                      ; 0060b2ba
+        ;   XREF to: 0060b2c3 (CONDITIONAL_JUMP)  ; LAB_0060b2c3
     TEST ECX,ECX                        ; 0060b2bc
-    JNZ 0x0060b2c3                      ; 0060b2be | LAB_0060b2c3
-        ;   XREF to: 0060b2c3 (CONDITIONAL_JUMP)
+    JNZ 0x0060b2c3                      ; 0060b2be
+        ;   XREF to: 0060b2c3 (CONDITIONAL_JUMP)  ; LAB_0060b2c3
     MUL EBX                             ; 0060b2c0
     RET                                 ; 0060b2c2
     PUSH EAX                            ; 0060b2c3

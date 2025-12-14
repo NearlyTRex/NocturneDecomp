@@ -32,18 +32,18 @@ section .text
     PUSH EAX                            ; 00606668
     MOV EDX,dword ptr [ESP + 0xc]       ; 00606669
     PUSH EDX                            ; 0060666d
-    CALL crt_debug.c_TriggerDebuggerBreak_FUN_0060b500 ; 0060666e | int crt_debug.c_TriggerDebuggerBreak_FUN_0060b500(char * error_message, ushort flags)
-        ;   XREF to: 0060b500 (UNCONDITIONAL_CALL)
+    CALL crt_debug.c_TriggerDebuggerBreak_FUN_0060b500 ; 0060666e
+        ;   XREF to: 0060b500 (UNCONDITIONAL_CALL)  ; int crt_debug.c_TriggerDebuggerBreak_FUN_0060b500(char * error_message, ushort flags)
     ADD ESP,0x8                         ; 00606673
     TEST EAX,EAX                        ; 00606676
-    JNZ 0x0060668c                      ; 00606678 | LAB_0060668c
-        ;   XREF to: 0060668c (CONDITIONAL_JUMP)
+    JNZ 0x0060668c                      ; 00606678
+        ;   XREF to: 0060668c (CONDITIONAL_JUMP)  ; LAB_0060668c
     MOV EBX,dword ptr [ESP + 0xc]       ; 0060667a
     PUSH EBX                            ; 0060667e
     MOV ECX,dword ptr [ESP + 0xc]       ; 0060667f
     PUSH ECX                            ; 00606683
-    CALL crt_startup.c_WriteErrorAndExit_FUN_00606620 ; 00606684 | void crt_startup.c_WriteErrorAndExit_FUN_00606620(char * error_message, int exit_code)
-        ;   XREF to: 00606620 (UNCONDITIONAL_CALL)
+    CALL crt_startup.c_WriteErrorAndExit_FUN_00606620 ; 00606684
+        ;   XREF to: 00606620 (UNCONDITIONAL_CALL)  ; void crt_startup.c_WriteErrorAndExit_FUN_00606620(char * error_message, int exit_code)
     ADD ESP,0x8                         ; 00606689
     POP EBX                             ; 0060668c
         ;   Label: LAB_0060668c

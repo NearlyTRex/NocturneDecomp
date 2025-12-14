@@ -1,303 +1,303 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 27, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 31, 
-    "global_count": 5, 
-    "total_lines": 97, 
-    "assembly_lines": 70, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawHLine_FUN_00402ee0", 
-      "addr": "00402ee0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_ClipLeft", 
-      "addr": "02d02558", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipTop", 
-      "addr": "02d0255c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipRight", 
-      "addr": "02d02560", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipBottom", 
-      "addr": "02d02564", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00403170", 
-    "signature": "void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, int color)", 
-    "address_range": [
-      [
-        "00403170", 
-        "004031ff"
-      ]
-    ], 
-    "name": "engine_2d.c_fillRectColor_FUN_00403170"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x1"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y1"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "x2"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y2"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "color"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 70,
+    "complexity_score": 27,
+    "cross_reference_count": 31,
+    "function_call_count": 1,
+    "global_count": 5,
+    "pseudocode_lines": 27,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 97
+  },
   "cross_references": [
     {
-      "from_addr": "0043ca97", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880", 
-      "addr": "0043c880"
-    }, 
+      "addr": "0043c880",
+      "from_addr": "0043ca97",
+      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043d6d1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590", 
-      "addr": "0043d590"
-    }, 
+      "addr": "0043d590",
+      "from_addr": "0043d6d1",
+      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047cc6c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
-      "addr": "0047cbc0"
-    }, 
+      "addr": "0047cbc0",
+      "from_addr": "0047cc6c",
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d8378", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040", 
-      "addr": "004d8040"
-    }, 
+      "addr": "004d8040",
+      "from_addr": "004d8378",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e4287", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
-      "addr": "004e4010"
-    }, 
+      "addr": "004e4010",
+      "from_addr": "004e4287",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d802a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_FUN_004d7fa0", 
-      "addr": "004d7fa0"
-    }, 
+      "addr": "004d7fa0",
+      "from_addr": "004d802a",
+      "name": "core_game.cpp_FUN_004d7fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004e0b78", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_FUN_004e0aa0", 
-      "addr": "004e0aa0"
-    }, 
+      "addr": "004e0aa0",
+      "from_addr": "004e0b78",
+      "name": "core_game.cpp_FUN_004e0aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00500d1c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690", 
-      "addr": "00500690"
-    }, 
+      "addr": "00500690",
+      "from_addr": "00500d1c",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00504709", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
-      "addr": "00504160"
-    }, 
+      "addr": "00504160",
+      "from_addr": "00504709",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00510935", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_005107c0", 
-      "addr": "005107c0"
-    }, 
+      "addr": "005107c0",
+      "from_addr": "00510935",
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_005107c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052bfaf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_FUN_0052bcb0", 
-      "addr": "0052bcb0"
-    }, 
+      "addr": "0052bcb0",
+      "from_addr": "0052bfaf",
+      "name": "core_morph.cpp_FUN_0052bcb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0052caff", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_morph.cpp_FUN_0052ca90", 
-      "addr": "0052ca90"
-    }, 
+      "addr": "0052ca90",
+      "from_addr": "0052caff",
+      "name": "core_morph.cpp_FUN_0052ca90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00559bea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_00559b20", 
-      "addr": "00559b20"
-    }, 
+      "addr": "00559b20",
+      "from_addr": "00559bea",
+      "name": "core_script.cpp_FUN_00559b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056462b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_005645d0", 
-      "addr": "005645d0"
-    }, 
+      "addr": "005645d0",
+      "from_addr": "0056462b",
+      "name": "core_script.cpp_FUN_005645d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00566593", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_FUN_005664d0", 
-      "addr": "005664d0"
-    }, 
+      "addr": "005664d0",
+      "from_addr": "00566593",
+      "name": "core_script.cpp_FUN_005664d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00596b9e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
-      "addr": "005968b0"
-    }, 
+      "addr": "005968b0",
+      "from_addr": "00596b9e",
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0040321c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_fillRectWithBorder_FUN_00403200", 
-      "addr": "00403200"
-    }, 
+      "addr": "00403200",
+      "from_addr": "0040321c",
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403200",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d08b1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850", 
-      "addr": "004d0850"
-    }, 
+      "addr": "004d0850",
+      "from_addr": "004d08b1",
+      "name": "engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d04dc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0", 
-      "addr": "004d04b0"
-    }, 
+      "addr": "004d04b0",
+      "from_addr": "004d04dc",
+      "name": "engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00447aee", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0", 
-      "addr": "00447ab0"
-    }, 
+      "addr": "00447ab0",
+      "from_addr": "00447aee",
+      "name": "shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00447cf2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20", 
-      "addr": "00447c20"
-    }, 
+      "addr": "00447c20",
+      "from_addr": "00447cf2",
+      "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004480af", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20", 
-      "addr": "00447f20"
-    }, 
+      "addr": "00447f20",
+      "from_addr": "004480af",
+      "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00461622", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_displayPalette_FUN_00461560", 
-      "addr": "00461560"
-    }, 
+      "addr": "00461560",
+      "from_addr": "00461622",
+      "name": "shape_design.c_displayPalette_FUN_00461560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0045f36d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
-      "addr": "0045f1d0"
-    }, 
+      "addr": "0045f1d0",
+      "from_addr": "0045f36d",
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a1121", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
-      "addr": "004a0f80"
-    }, 
+      "addr": "004a0f80",
+      "from_addr": "004a1121",
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a070a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530", 
-      "addr": "004a0530"
-    }, 
+      "addr": "004a0530",
+      "from_addr": "004a070a",
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0049dab9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CInputString_draw_FUN_0049d9b0", 
-      "addr": "0049d9b0"
-    }, 
+      "addr": "0049d9b0",
+      "from_addr": "0049dab9",
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_0049d9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a5046", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40", 
-      "addr": "004a4d40"
-    }, 
+      "addr": "004a4d40",
+      "from_addr": "004a5046",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004a597f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_edittool.cpp_draw3DBorder_FUN_004a58f0", 
-      "addr": "004a58f0"
-    }, 
+      "addr": "004a58f0",
+      "from_addr": "004a597f",
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_004a58f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051dba2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
-      "addr": "0051d990"
-    }, 
+      "addr": "0051d990",
+      "from_addr": "0051dba2",
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051d588", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520", 
-      "addr": "0051d520"
+      "addr": "0051d520",
+      "from_addr": "0051d588",
+      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00403170",
+    "address_range": [
+      [
+        "00403170",
+        "004031ff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_fillRectColor_FUN_00403170",
+    "signature": "void engine_2d.c_fillRectColor_FUN_00403170(int x1, int y1, int x2, int y2, int color)"
+  },
+  "function_calls": [
+    {
+      "addr": "00402ee0",
+      "name": "engine_2d.c_drawHLine_FUN_00402ee0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d02558",
+      "name": "g_ClipLeft",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0255c",
+      "name": "g_ClipTop",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02560",
+      "name": "g_ClipRight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02564",
+      "name": "g_ClipBottom",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "color",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

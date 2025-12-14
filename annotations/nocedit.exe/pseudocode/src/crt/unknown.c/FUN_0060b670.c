@@ -11,26 +11,17 @@
 char * crt_unknown_c_FUN_0060b670(void)
 
 {
-  char cVar1;
-  char *pcVar2;
   char *dest;
   char *in_stack_00000004;
   char *in_stack_00000008;
   ulong in_stack_0000000c;
   
-  pcVar2 = in_stack_00000004;
   dest = in_stack_00000004;
-  if (in_stack_0000000c != 0) {
-    do {
-      dest = pcVar2;
-      if (*in_stack_00000008 == '\0') break;
-      dest = pcVar2 + 1;
-      cVar1 = *in_stack_00000008;
-      in_stack_00000008 = in_stack_00000008 + 1;
-      in_stack_0000000c = in_stack_0000000c - 1;
-      *pcVar2 = cVar1;
-      pcVar2 = dest;
-    } while (in_stack_0000000c != 0);
+  for (; (in_stack_0000000c != 0 && (*in_stack_00000008 != '\0'));
+      in_stack_00000008 = in_stack_00000008 + 1) {
+    in_stack_0000000c = in_stack_0000000c - 1;
+    *dest = *in_stack_00000008;
+    dest = dest + 1;
   }
   if ((((*in_stack_00000008 != '\0') && (in_stack_00000004 < dest)) &&
       (g_MultibyteLocaleActive != 0)) && ((g_LeadByteTable[(byte)in_stack_00000008[-1]] & 1U) != 0))

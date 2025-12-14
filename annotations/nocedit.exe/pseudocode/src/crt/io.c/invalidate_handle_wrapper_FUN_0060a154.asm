@@ -24,15 +24,15 @@ section .text
         ;   Label: crt_io.c_invalidate_handle_wrapper_FUN_0060a154
     AND EAX,0xf                         ; 0060a158
     SHL EAX,0x4                         ; 0060a15b
-    ADD EAX,0x3f9b8c0                   ; 0060a15e | void * g_TlsDataBase
+    ADD EAX,0x3f9b8c0                   ; 0060a15e | g_TlsDataBase
     PUSH EAX                            ; 0060a163
-    CALL crt_sync.c_reset_reentrant_critical_section_state_FUN_0060a04c ; 0060a164 | void crt_sync.c_reset_reentrant_critical_section_state_FUN_0060a04c(ReentrantCriticalSection * rcs)
-        ;   XREF to: 0060a04c (UNCONDITIONAL_CALL)
+    CALL crt_sync.c_reset_reentrant_critical_section_state_FUN_0060a04c ; 0060a164
+        ;   XREF to: 0060a04c (UNCONDITIONAL_CALL)  ; void crt_sync.c_reset_reentrant_critical_section_state_FUN_0060a04c(ReentrantCriticalSection * rcs)
     ADD ESP,0x4                         ; 0060a169
     MOV EDX,dword ptr [ESP + 0x4]       ; 0060a16c
     PUSH EDX                            ; 0060a170
-    CALL crt_io.c_invalidate_handle_FUN_00608af4 ; 0060a171 | void crt_io.c_invalidate_handle_FUN_00608af4(int handle_index)
-        ;   XREF to: 00608af4 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_invalidate_handle_FUN_00608af4 ; 0060a171
+        ;   XREF to: 00608af4 (UNCONDITIONAL_CALL)  ; void crt_io.c_invalidate_handle_FUN_00608af4(int handle_index)
     ADD ESP,0x4                         ; 0060a176
     RET                                 ; 0060a179
 

@@ -1,69 +1,69 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 43, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 37, 
-    "assembly_lines": 19, 
-    "suspect_count": 2, 
+    "assembly_lines": 19,
+    "complexity_score": 43,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 17, 
-      "match": "(CLodVert *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "source = (CLodVert *)((int)&(source->position).x + 1);"
-    }, 
-    {
-      "line": 18, 
-      "match": "(CLodVert *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar2 = (CLodVert *)((int)&(pCVar2->position).x + 1);"
-    }
-  ], 
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0051ee70", 
-    "signature": "CLodVert * shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70(CLodVert * destination, CLodVert * source)", 
+    "address": "0051ee70",
     "address_range": [
       [
-        "0051ee70", 
+        "0051ee70",
         "0051ee95"
       ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70",
+    "signature": "CLodVert * shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70(CLodVert * destination, CLodVert * source)"
+  },
+  "function_calls": [],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodVert *", 
-        "size": 4, 
-        "name": "destination"
-      }, 
+        "is_param": true,
+        "name": "destination",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodVert *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CLodVert *", 
-        "size": 4, 
-        "name": "source"
+        "is_param": true,
+        "name": "source",
+        "offset": 8,
+        "size": 4,
+        "type": "CLodVert *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(CLodVert *)((int)",
+      "text": "source = (CLodVert *)((int)&(source->position).x + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(CLodVert *)((int)",
+      "text": "pCVar2 = (CLodVert *)((int)&(pCVar2->position).x + 1);",
+      "type": "pointer_cast"
+    }
+  ]
 }

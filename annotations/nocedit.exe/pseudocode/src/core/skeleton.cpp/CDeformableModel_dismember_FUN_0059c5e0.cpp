@@ -75,7 +75,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
         puVar6 = (ushort *)(iVar4 + 4 + iVar3);
         iVar3 = iVar3 + 0x12;
         g_VertexRemapTable[*puVar6] = 1;
-      } while (SBORROW /* signed borrow */4(iVar3,local_2c * 0x12) != iVar3 + local_2c * -0x12 < 0);
+      } while (iVar3 < local_2c * 0x12);
     }
     if (local_28 < in_stack_ffffffb8) {
       local_28 = local_28 * 0x12;
@@ -86,8 +86,7 @@ core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
         puVar6 = (ushort *)(iVar2 + 4 + local_28);
         local_28 = local_28 + 0x12;
         g_VertexRemapTable[*puVar6] = 1;
-      } while (SBORROW /* signed borrow */4(local_28,in_stack_ffffffb8 * 0x12) !=
-               local_28 + in_stack_ffffffb8 * -0x12 < 0);
+      } while (local_28 < in_stack_ffffffb8 * 0x12);
     }
     iVar2 = *(int *)(body_part_ptr->field1_0x158 + 0x1c);
     for (iVar3 = 0;

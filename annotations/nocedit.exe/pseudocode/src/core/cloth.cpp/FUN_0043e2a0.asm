@@ -13,7 +13,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0043e2a0
         ;   Label: core_cloth.cpp_FUN_0043e2a0
-    MOV EDX,dword ptr [0x02d7a7bc]      ; 0043e2a4 | int g_LightAttenuationMax
+    MOV EDX,dword ptr [0x02d7a7bc]      ; 0043e2a4 | g_LightAttenuationMax
     SAR EAX,0x1                         ; 0043e2aa
     SUB EDX,EAX                         ; 0043e2ac
     MOV EAX,EDX                         ; 0043e2ae

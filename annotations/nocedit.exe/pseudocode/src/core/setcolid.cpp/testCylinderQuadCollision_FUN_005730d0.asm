@@ -34,15 +34,15 @@ section .text
     PUSH EBX                            ; 005730e5
     LEA EAX,[ESP + 0xc]                 ; 005730e6
     PUSH EAX                            ; 005730ea
-    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790 ; 005730eb | void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
-        ;   XREF to: 0049a790 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790 ; 005730eb
+        ;   XREF to: 0049a790 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 005730f0
     MOV ESI,dword ptr [ESP + 0x4c]      ; 005730f3
     PUSH ESI                            ; 005730f7
     LEA EAX,[ESP + 0x4]                 ; 005730f8
     PUSH EAX                            ; 005730fc
-    CALL core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80 ; 005730fd | void core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
-        ;   XREF to: 0049ad80 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80 ; 005730fd
+        ;   XREF to: 0049ad80 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00573102
     MOV EDI,dword ptr [ESP + 0x5c]      ; 00573105
     PUSH EDI                            ; 00573109
@@ -51,14 +51,14 @@ section .text
     PUSH EBX                            ; 0057310f
     LEA EAX,[ESP + 0xc]                 ; 00573110
     PUSH EAX                            ; 00573114
-    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790 ; 00573115 | void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
-        ;   XREF to: 0049a790 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790 ; 00573115
+        ;   XREF to: 0049a790 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790(CDemonTriangle * this_ptr, CVector3f * vertex1, CVector3f * vertex2, CVector3f * vertex3)
     ADD ESP,0x10                        ; 0057311a
     PUSH ESI                            ; 0057311d
     LEA EAX,[ESP + 0x4]                 ; 0057311e
     PUSH EAX                            ; 00573122
-    CALL core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80 ; 00573123 | void core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
-        ;   XREF to: 0049ad80 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80 ; 00573123
+        ;   XREF to: 0049ad80 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00573128
     ADD ESP,0x38                        ; 0057312b
     POP EBP                             ; 0057312e

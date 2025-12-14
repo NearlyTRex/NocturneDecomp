@@ -42,8 +42,8 @@ section .text
     MOV EDX,dword ptr [ESI + 0xbec0]    ; 004276fb
     XOR ECX,ECX                         ; 00427701
     TEST EDX,EDX                        ; 00427703
-    JLE 0x00427760                      ; 00427705 | LAB_00427760
-        ;   XREF to: 00427760 (CONDITIONAL_JUMP)
+    JLE 0x00427760                      ; 00427705
+        ;   XREF to: 00427760 (CONDITIONAL_JUMP)  ; LAB_00427760
     LEA EAX,[ESI + 0xbecc]              ; 00427707
     FLD float ptr [EAX]                 ; 0042770d
         ;   Label: LAB_0042770d
@@ -73,8 +73,8 @@ section .text
     MOV EBX,dword ptr [ESI + 0xbec0]    ; 00427750
     ADD EAX,0x40                        ; 00427756
     CMP ECX,EBX                         ; 00427759
-    JL 0x0042770d                       ; 0042775b | LAB_0042770d
-        ;   XREF to: 0042770d (CONDITIONAL_JUMP)
+    JL 0x0042770d                       ; 0042775b
+        ;   XREF to: 0042770d (CONDITIONAL_JUMP)  ; LAB_0042770d
     LEA EAX,[EAX]                       ; 0042775d
     LEA EAX,[ESI + 0x199cc]             ; 00427760
         ;   Label: LAB_00427760
@@ -113,13 +113,13 @@ section .text
     ADD EAX,0x4                         ; 004277c0
     FSTP float ptr [EAX + 0x128b4]      ; 004277c3
     CMP EAX,EDX                         ; 004277c9
-    JNZ 0x004277b6                      ; 004277cb | LAB_004277b6
-        ;   XREF to: 004277b6 (CONDITIONAL_JUMP)
+    JNZ 0x004277b6                      ; 004277cb
+        ;   XREF to: 004277b6 (CONDITIONAL_JUMP)  ; LAB_004277b6
     INC ECX                             ; 004277cd
     ADD EBX,0x30                        ; 004277ce
     CMP ECX,0xc                         ; 004277d1
-    JL 0x004277af                       ; 004277d4 | LAB_004277af
-        ;   XREF to: 004277af (CONDITIONAL_JUMP)
+    JL 0x004277af                       ; 004277d4
+        ;   XREF to: 004277af (CONDITIONAL_JUMP)  ; LAB_004277af
     ADD ESP,0xc                         ; 004277d6
     POP ESI                             ; 004277d9
     POP EBX                             ; 004277da

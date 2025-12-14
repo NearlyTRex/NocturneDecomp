@@ -23,8 +23,8 @@ section .text
     PUSH ESI                            ; 0060b146
     PUSH EDI                            ; 0060b147
     MOV EBX,dword ptr [EBP + 0x14]      ; 0060b148
-    CALL crt_unknown.c_FUN_0060d480     ; 0060b14b | undefined crt_unknown.c_FUN_0060d480()
-        ;   XREF to: 0060d480 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_FUN_0060d480     ; 0060b14b
+        ;   XREF to: 0060d480 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060d480()
     PUSH EAX                            ; 0060b150
     PUSH 0x46                           ; 0060b151
     MOV EDX,dword ptr [EBP + 0x18]      ; 0060b153
@@ -36,8 +36,8 @@ section .text
     PUSH ESI                            ; 0060b15f
     MOV EDI,dword ptr [EBP + 0x8]       ; 0060b160
     PUSH EDI                            ; 0060b163
-    CALL crt_unknown.c_FUN_0060d48c     ; 0060b164 | undefined crt_unknown.c_FUN_0060d48c()
-        ;   XREF to: 0060d48c (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_FUN_0060d48c     ; 0060b164
+        ;   XREF to: 0060d48c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060d48c()
     MOV EDX,dword ptr [EBP + 0x10]      ; 0060b169
     MOV ECX,dword ptr [EBX]             ; 0060b16c
     ADD ESP,0x1c                        ; 0060b16e

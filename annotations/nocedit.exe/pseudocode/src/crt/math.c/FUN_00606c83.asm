@@ -19,8 +19,8 @@ section .text
     FLD ST0                             ; 00606c89
     FSTP extended double ptr [ESP]      ; 00606c8b
     FSTP extended double ptr [ESP + 0x20] ; 00606c8e
-    CALL crt_math.c_fdiv_FUN_00606960   ; 00606c92 | float10 crt_math.c_fdiv_FUN_00606960(float10 dividend, float10 divisor)
-        ;   XREF to: 00606960 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_fdiv_FUN_00606960   ; 00606c92
+        ;   XREF to: 00606960 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_fdiv_FUN_00606960(float10 dividend, float10 divisor)
     FXCH ST3                            ; 00606c97
     FLD extended double ptr [ESP + 0x20] ; 00606c99
     FXCH ST4                            ; 00606c9d

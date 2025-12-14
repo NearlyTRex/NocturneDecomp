@@ -27,16 +27,16 @@ section .text
         ;   Label: core_larva.cpp_FUN_00502f90
     MOV EDX,dword ptr [ESP + 0x8]       ; 00502f91
     PUSH EDX                            ; 00502f95
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 00502f96 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 00502f96
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 00502f9b
-    PUSH 0x630edc                       ; 00502f9e | = "worm.dfm" | s_worm_dfm_00630edc = worm.dfm
+    PUSH 0x630edc                       ; 00502f9e | = "worm.dfm"
     MOV EBX,EAX                         ; 00502fa3
     ADD EAX,0x158                       ; 00502fa5
     PUSH EAX                            ; 00502faa
-    MOV dword ptr [EAX + -0x4],0x660734 ; 00502fab | CDemonActor_vtable PTR_core_larva.cpp_FUN_00660734
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00502fb2 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x660734 ; 00502fab | PTR_core_larva.cpp_FUN_00660734
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00502fb2
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2ddc],0x3e800000 ; 00502fb7
     MOV dword ptr [EBX + 0x2de0],0x3f000000 ; 00502fc1
     MOV dword ptr [EBX + 0x2610],0x1    ; 00502fcb

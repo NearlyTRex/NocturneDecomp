@@ -18,7 +18,7 @@ int __cdecl crt_process_c_execv_FUN_006101f0(int argc,char *program,char **argv)
   if (pTVar1->errno_value != 0) {
     return -1;
   }
-  (*(code *)PTR_crt_exit_c_ExitHookStub_FUN_0060b530_00685478)();
+  (*PTR_crt_exit_c_ExitHookStub_FUN_0060b530_00685478)();
   iVar2 = (*PTR_ExitProcess_00611534)(uExitCode);
   return iVar2;
 }

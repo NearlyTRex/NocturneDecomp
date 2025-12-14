@@ -26,8 +26,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 006021da
         ;   Label: crt_memory.c_malloc_FUN_006021da
     PUSH EDX                            ; 006021de
-    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1d0 ; 006021df | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1d0(int size)
-        ;   XREF to: 0050f1d0 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1d0 ; 006021df
+        ;   XREF to: 0050f1d0 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugAlloc_FUN_0050f1d0(int size)
     ADD ESP,0x4                         ; 006021e4
     RET                                 ; 006021e7
 

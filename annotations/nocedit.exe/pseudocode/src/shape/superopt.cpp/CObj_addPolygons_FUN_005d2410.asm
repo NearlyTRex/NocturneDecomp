@@ -40,19 +40,19 @@ section .text
     PUSH EAX                            ; 005d2437
     MOV ECX,dword ptr [EBX + 0xc]       ; 005d2438
     PUSH ECX                            ; 005d243b
-    CALL crt_memory.c_realloc_FUN_00601df0 ; 005d243c | void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)
-        ;   XREF to: 00601df0 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_realloc_FUN_00601df0 ; 005d243c
+        ;   XREF to: 00601df0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00601df0(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 005d2441
     TEST EAX,EAX                        ; 005d2444
-    JZ 0x005d24c6                       ; 005d2446 | LAB_005d24c6
-        ;   XREF to: 005d24c6 (CONDITIONAL_JUMP)
+    JZ 0x005d24c6                       ; 005d2446
+        ;   XREF to: 005d24c6 (CONDITIONAL_JUMP)  ; LAB_005d24c6
     PUSH EDI                            ; 005d244c
     PUSH 0x0                            ; 005d244d
     MOV dword ptr [EBX + 0xc],EAX       ; 005d244f
     LEA EAX,[ESP + 0x8]                 ; 005d2452
     PUSH EAX                            ; 005d2456
-    CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620 ; 005d2457 | CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)
-        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_CPoly_ctor_FUN_005cc620 ; 005d2457
+        ;   XREF to: 005cc620 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)
     ADD ESP,0x8                         ; 005d245c
     MOV EAX,dword ptr [EBX + 0x8]       ; 005d245f
     MOV dword ptr [ESP + 0x6c],EAX      ; 005d2462
@@ -67,8 +67,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x6c]      ; 005d2481
     ADD ESI,EDI                         ; 005d2485
     CMP ESI,EAX                         ; 005d2487
-    JBE 0x005d24de                      ; 005d2489 | LAB_005d24de
-        ;   XREF to: 005d24de (CONDITIONAL_JUMP)
+    JBE 0x005d24de                      ; 005d2489
+        ;   XREF to: 005d24de (CONDITIONAL_JUMP)  ; LAB_005d24de
     MOV ECX,0x68                        ; 005d248b
     MOV EDI,dword ptr [EBX + 0xc]       ; 005d2490
     LEA ESI,[ESP + 0x4]                 ; 005d2493
@@ -92,12 +92,12 @@ section .text
     INC EDX                             ; 005d24bc
     ADD EBP,0x68                        ; 005d24bd
     MOV dword ptr [ESP + 0x6c],EDX      ; 005d24c0
-    JMP 0x005d2477                      ; 005d24c4 | LAB_005d2477
-        ;   XREF to: 005d2477 (UNCONDITIONAL_JUMP)
-    PUSH 0x654355                       ; 005d24c6 | = "Unable to add polygons to object" | s_Unable_to_add_polygons_t_00654355 = Unable to add polygons to object
+    JMP 0x005d2477                      ; 005d24c4
+        ;   XREF to: 005d2477 (UNCONDITIONAL_JUMP)  ; LAB_005d2477
+    PUSH 0x654355                       ; 005d24c6 | = "Unable to add polygons to object"
         ;   Label: LAB_005d24c6
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d24cb | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d24cb
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     XOR ESI,ESI                         ; 005d24d0
     ADD ESP,0x4                         ; 005d24d2
     MOV EAX,ESI                         ; 005d24d5
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 005d24e4
     MOV dword ptr [EBX + 0x8],ESI       ; 005d24e5
     MOV ESI,0x1                         ; 005d24e8
-    CALL shape_superopt.cpp_CPoly_dtor_FUN_005cc660 ; 005d24ed | CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
-        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_CPoly_dtor_FUN_005cc660 ; 005d24ed
+        ;   XREF to: 005cc660 (UNCONDITIONAL_CALL)  ; CPoly * shape_superopt.cpp_CPoly_dtor_FUN_005cc660(CPoly * this_ptr)
     ADD ESP,0x8                         ; 005d24f2
     POP EDI                             ; 005d24f5
     MOV EAX,ESI                         ; 005d24f6

@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0040e131
     PUSH EBX                            ; 0040e135
     MOV dword ptr [EBX],0x0             ; 0040e136
-    CALL core_actor.cpp_FUN_0040e150    ; 0040e13c | void core_actor.cpp_FUN_0040e150()
-        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_FUN_0040e150    ; 0040e13c
+        ;   XREF to: 0040e150 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040e150()
     ADD ESP,0x4                         ; 0040e141
     MOV EAX,EBX                         ; 0040e144
     POP EBX                             ; 0040e146

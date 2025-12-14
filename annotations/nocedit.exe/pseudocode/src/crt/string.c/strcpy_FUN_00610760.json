@@ -1,65 +1,65 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 38, 
-    "assembly_lines": 20, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00610760", 
-    "signature": "char * crt_string.c_strcpy_FUN_00610760(char * dest, char * src)", 
-    "address_range": [
-      [
-        "00610760", 
-        "00610784"
-      ]
-    ], 
-    "name": "crt_string.c_strcpy_FUN_00610760"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "dest"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "src"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 20,
+    "complexity_score": 18,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
+  },
   "cross_references": [
     {
-      "from_addr": "0061035c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_build_cmdline_FUN_00610258", 
-      "addr": "00610258"
-    }, 
+      "addr": "00610258",
+      "from_addr": "0061035c",
+      "name": "crt_process.c_build_cmdline_FUN_00610258",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060f788", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
-      "addr": "0060f39c"
+      "addr": "0060f39c",
+      "from_addr": "0060f788",
+      "name": "crt_process.c_spawnvp_FUN_0060f39c",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00610760",
+    "address_range": [
+      [
+        "00610760",
+        "00610784"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c_strcpy_FUN_00610760",
+    "signature": "char * crt_string.c_strcpy_FUN_00610760(char * dest, char * src)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

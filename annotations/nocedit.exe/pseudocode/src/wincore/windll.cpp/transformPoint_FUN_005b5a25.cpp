@@ -39,13 +39,13 @@ wincore_windll_cpp_transformPoint_FUN_005b5a25(SProjectedVertex *output,CVector3
     if ((int)uVar5 < (int)uVar3) {
       uVar6 = 0x80000001;
     }
-    if (SBORROW /* signed borrow */4(uVar3,-uVar5) != (int)(uVar3 + uVar5) < 0) {
+    if ((int)uVar3 < (int)-uVar5) {
       uVar6 = uVar6 | 0x80000002;
     }
     if ((int)uVar5 < (int)uVar4) {
       uVar6 = uVar6 | 0x80000004;
     }
-    if (SBORROW /* signed borrow */4(uVar4,-uVar5) != (int)(uVar4 + uVar5) < 0) {
+    if ((int)uVar4 < (int)-uVar5) {
       uVar6 = uVar6 | 0x80000008;
     }
     if ((int)uVar5 < 1) {

@@ -44,18 +44,18 @@ section .text
     PUSH EAX                            ; 0049e74d
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049e74e
     PUSH EDX                            ; 0049e752
-    PUSH 0x2cef530                      ; 0049e753 | char[256] g_ErrorMessageBuffer
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e758 | int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)
+    PUSH 0x2cef530                      ; 0049e753 | g_ErrorMessageBuffer
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e758
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 0049e75d
-    MOV EBX,dword ptr [0x02cf2a94]      ; 0049e760 | CEditorTools * g_CUserInterfacePtr
+    MOV EBX,dword ptr [0x02cf2a94]      ; 0049e760 | g_CUserInterfacePtr
     PUSH EBX                            ; 0049e766
-    PUSH 0x2cef530                      ; 0049e767 | char[256] g_ErrorMessageBuffer
+    PUSH 0x2cef530                      ; 0049e767 | g_ErrorMessageBuffer
     XOR ECX,ECX                         ; 0049e76c
-    PUSH 0x623018                       ; 0049e76e | = "Error" | s_Error_00623018 = Error
+    PUSH 0x623018                       ; 0049e76e | = "Error"
     MOV dword ptr [ESP + 0xc],ECX       ; 0049e773
-    CALL shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130 ; 0049e777 | void shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130(char * title, char * message, int color)
-        ;   XREF to: 0049e130 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130 ; 0049e777
+        ;   XREF to: 0049e130 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130(char * title, char * message, int color)
     ADD ESP,0xc                         ; 0049e77c
     ADD ESP,0x4                         ; 0049e77f
     POP EBX                             ; 0049e782

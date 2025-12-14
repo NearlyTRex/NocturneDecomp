@@ -11,13 +11,16 @@ void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(FILE *file_handle,int line
 {
   int iVar1;
   
-  if (0 < line_count) {
+  do {
+    if (line_count < 1) {
+      return;
+    }
     do {
       iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
       if (iVar1 < 0) {
         return;
       }
-    } while ((iVar1 != 10) || (line_count = line_count + -1, 0 < line_count));
-  }
-  return;
+    } while (iVar1 != 10);
+    line_count = line_count + -1;
+  } while( true );
 }

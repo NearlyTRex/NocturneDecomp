@@ -11,8 +11,7 @@ void core_dest_cpp_FUN_0046f8c0(void)
 {
   CActorDestination *this_ptr;
   
-  this_ptr = (CActorDestination *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(500,"..\\core\\dest.cpp",0x29);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(500,"..\\core\\dest.cpp",0x29);
   if (this_ptr == (CActorDestination *)0x0) {
     return;
   }

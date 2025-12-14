@@ -23,15 +23,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0xc]       ; 00606f99
     AND EAX,0x7ff00000                  ; 00606f9d
     CMP EAX,0x7ff00000                  ; 00606fa2
-    JZ 0x00606fdc                       ; 00606fa7 | LAB_00606fdc
-        ;   XREF to: 00606fdc (CONDITIONAL_JUMP)
+    JZ 0x00606fdc                       ; 00606fa7
+        ;   XREF to: 00606fdc (CONDITIONAL_JUMP)  ; LAB_00606fdc
     FNSTSW AX                           ; 00606fa9
     AND EAX,0x3800                      ; 00606fab
-    JZ 0x00606fbf                       ; 00606fb0 | LAB_00606fbf
-        ;   XREF to: 00606fbf (CONDITIONAL_JUMP)
+    JZ 0x00606fbf                       ; 00606fb0
+        ;   XREF to: 00606fbf (CONDITIONAL_JUMP)  ; LAB_00606fbf
     FLD double ptr [ESP + 0x8]          ; 00606fb2
-    CALL crt_math.c_pentiumFdivpWorkaround_FUN_00606f13 ; 00606fb6 | float10 crt_math.c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend, float10 divisor)
-        ;   XREF to: 00606f13 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_pentiumFdivpWorkaround_FUN_00606f13 ; 00606fb6
+        ;   XREF to: 00606f13 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend, float10 divisor)
     POP EAX                             ; 00606fbb
     RET 0x8                             ; 00606fbc
     FXCH                                ; 00606fbf
@@ -39,8 +39,8 @@ section .text
     SUB ESP,0xc                         ; 00606fc1
     FSTP extended double ptr [ESP]      ; 00606fc4
     FLD double ptr [ESP + 0x14]         ; 00606fc7
-    CALL crt_math.c_pentiumFdivpWorkaround_FUN_00606f13 ; 00606fcb | float10 crt_math.c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend, float10 divisor)
-        ;   XREF to: 00606f13 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_pentiumFdivpWorkaround_FUN_00606f13 ; 00606fcb
+        ;   XREF to: 00606f13 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend, float10 divisor)
     FLD extended double ptr [ESP]       ; 00606fd0
     FXCH                                ; 00606fd3
     ADD ESP,0xc                         ; 00606fd5

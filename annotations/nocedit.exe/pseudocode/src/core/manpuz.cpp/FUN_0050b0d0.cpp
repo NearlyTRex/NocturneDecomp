@@ -11,8 +11,7 @@ void core_manpuz_cpp_FUN_0050b0d0(void)
 {
   CMirrorHack *this_ptr;
   
-  this_ptr = (CMirrorHack *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\manpuz.cpp",0x616);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2d8,"..\\core\\manpuz.cpp",0x616);
   if (this_ptr == (CMirrorHack *)0x0) {
     return;
   }

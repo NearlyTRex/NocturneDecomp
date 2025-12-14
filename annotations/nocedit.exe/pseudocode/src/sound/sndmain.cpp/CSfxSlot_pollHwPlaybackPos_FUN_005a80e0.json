@@ -1,150 +1,150 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 96, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 3, 
-    "global_count": 2, 
-    "total_lines": 90, 
-    "assembly_lines": 69, 
-    "suspect_count": 6, 
+    "assembly_lines": 69,
+    "complexity_score": 96,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 21,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
-      "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170", 
-      "addr": "005a8170"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
-      "addr": "005adba0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Error_polling_hw_playbac_00650541", 
-      "addr": "00650541", 
-      "value": null
-    }, 
-    {
-      "type": "CSoundDevice*", 
-      "name": "g_CSoundDevicePtr", 
-      "addr": "03f69268", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005a80e8", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint extraout_EDX;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CSfxSlot *in_stack_ffffffe0;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_ffffffe0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((double *)g_CSoundDevicePtr,(CSoundDevice *)this_ptr,in_stack_ffffffe0);"
-    }, 
-    {
-      "line": 14, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {"
-    }, 
-    {
-      "line": 14, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {"
-    }, 
-    {
-      "line": 20, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,pdVar1));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a80e0", 
-    "signature": "int sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot * this_ptr)", 
-    "address_range": [
-      [
-        "005a80e0", 
-        "005a8167"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSfxSlot *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "stack_param",
+      "extra_output",
+      "concat_artifact"
+    ],
+    "total_lines": 90
+  },
   "cross_references": [
     {
-      "from_addr": "005a67e4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730", 
-      "addr": "005a6730"
-    }, 
+      "addr": "005a6730",
+      "from_addr": "005a67e4",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a9fba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80", 
-      "addr": "005a9f80"
-    }, 
+      "addr": "005a9f80",
+      "from_addr": "005a9fba",
+      "name": "sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a9750", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720", 
-      "addr": "005a9720"
+      "addr": "005a9720",
+      "from_addr": "005a9750",
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a80e0",
+    "address_range": [
+      [
+        "005a80e0",
+        "005a8167"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0",
+    "signature": "int sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a8170",
+      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170"
+    },
+    {
+      "addr": "005adba0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00650541",
+      "name": "s_Error_polling_hw_playbac_00650541",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "03f69268",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSlot *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005a80e8",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EDX",
+      "text": "uint extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_ffffffe0",
+      "text": "CSfxSlot *in_stack_ffffffe0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_ffffffe0",
+      "text": "((double *)g_CSoundDevicePtr,(CSoundDevice *)this_ptr,in_stack_ffffffe0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EDX",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 14,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 20,
+      "match": "CONCAT44",
+      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,pdVar1));",
+      "type": "concat_artifact"
     }
   ]
 }

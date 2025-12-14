@@ -26,36 +26,36 @@ section .text
         ;   Label: engine_texture.cpp_freeTextureCache_FUN_005dd7a0
     PUSH ESI                            ; 005dd7a1
     PUSH EDI                            ; 005dd7a2
-    MOV EDX,dword ptr [0x03f87358]      ; 005dd7a3 | CTextureCache * g_TextureCacheInstance
+    MOV EDX,dword ptr [0x03f87358]      ; 005dd7a3 | g_TextureCacheInstance
     PUSH EDX                            ; 005dd7a9
     MOV EBX,0x284                       ; 005dd7aa
-    CALL engine_texture.cpp_CTextureCache_dtor_FUN_005dcb20 ; 005dd7af | void engine_texture.cpp_CTextureCache_dtor_FUN_005dcb20(CTextureCache * cache)
-        ;   XREF to: 005dcb20 (UNCONDITIONAL_CALL)
-    MOV ECX,0x65546b                    ; 005dd7b4 | = "..\\engine\\texture.cpp" | s_engine_texture_cpp_0065546b = ..\engine\texture.cpp
-    MOV ESI,dword ptr [0x03f87358]      ; 005dd7b9 | CTextureCache * g_TextureCacheInstance
+    CALL engine_texture.cpp_CTextureCache_dtor_FUN_005dcb20 ; 005dd7af
+        ;   XREF to: 005dcb20 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_dtor_FUN_005dcb20(CTextureCache * cache)
+    MOV ECX,0x65546b                    ; 005dd7b4 | = "..\\engine\\texture.cpp"
+    MOV ESI,dword ptr [0x03f87358]      ; 005dd7b9 | g_TextureCacheInstance
     ADD ESP,0x4                         ; 005dd7bf
-    MOV dword ptr [0x02f0d944],EBX      ; 005dd7c2 | int g_CurrentDebugLine
-    MOV dword ptr [0x0067d20c],ECX      ; 005dd7c8 | char * g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EBX      ; 005dd7c2 | g_CurrentDebugLine
+    MOV dword ptr [0x0067d20c],ECX      ; 005dd7c8 | g_CurrentDebugFilename
     TEST ESI,ESI                        ; 005dd7ce
-    JNZ 0x005dd7de                      ; 005dd7d0 | LAB_005dd7de
-        ;   XREF to: 005dd7de (CONDITIONAL_JUMP)
+    JNZ 0x005dd7de                      ; 005dd7d0
+        ;   XREF to: 005dd7de (CONDITIONAL_JUMP)  ; LAB_005dd7de
     XOR EDI,EDI                         ; 005dd7d2
-    MOV dword ptr [0x03f87358],EDI      ; 005dd7d4 | CTextureCache * g_TextureCacheInstance
+    MOV dword ptr [0x03f87358],EDI      ; 005dd7d4 | g_TextureCacheInstance
     POP EDI                             ; 005dd7da
     POP ESI                             ; 005dd7db
     POP EBX                             ; 005dd7dc
     RET                                 ; 005dd7dd
     PUSH ESI                            ; 005dd7de
         ;   Label: LAB_005dd7de
-    CALL engine_texture.cpp_CTextureCache_free_FUN_005dcb30 ; 005dd7df | void engine_texture.cpp_CTextureCache_free_FUN_005dcb30(CTextureCache * cache)
-        ;   XREF to: 005dcb30 (UNCONDITIONAL_CALL)
+    CALL engine_texture.cpp_CTextureCache_free_FUN_005dcb30 ; 005dd7df
+        ;   XREF to: 005dcb30 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_CTextureCache_free_FUN_005dcb30(CTextureCache * cache)
     ADD ESP,0x4                         ; 005dd7e4
     PUSH ESI                            ; 005dd7e7
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005dd7e8 | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
-        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005dd7e8
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
     ADD ESP,0x4                         ; 005dd7ed
     XOR EDI,EDI                         ; 005dd7f0
-    MOV dword ptr [0x03f87358],EDI      ; 005dd7f2 | CTextureCache * g_TextureCacheInstance
+    MOV dword ptr [0x03f87358],EDI      ; 005dd7f2 | g_TextureCacheInstance
     POP EDI                             ; 005dd7f8
     POP ESI                             ; 005dd7f9
     POP EBX                             ; 005dd7fa

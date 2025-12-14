@@ -1,620 +1,704 @@
 {
   "complexity": {
-    "function_call_count": 17, 
-    "complexity_score": 201, 
-    "pseudocode_lines": 156, 
-    "cross_reference_count": 4, 
-    "global_count": 72, 
-    "total_lines": 503, 
-    "assembly_lines": 347, 
-    "suspect_count": 4, 
+    "assembly_lines": 347,
+    "complexity_score": 201,
+    "cross_reference_count": 4,
+    "function_call_count": 17,
+    "global_count": 86,
+    "pseudocode_lines": 156,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_fire.cpp_CBulletHole_initRender_FUN_004bfa40", 
-      "addr": "004bfa40"
-    }, 
-    {
-      "name": "core_fire.cpp_CBulletHole_render_FUN_004bfac0", 
-      "addr": "004bfac0"
-    }, 
-    {
-      "name": "core_fire.cpp_CBulletTrail_render_FUN_004c21f0", 
-      "addr": "004c21f0"
-    }, 
-    {
-      "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10", 
-      "addr": "004c3b10"
-    }, 
-    {
-      "name": "core_fire.cpp_CFireball_initRender_FUN_004c0d80", 
-      "addr": "004c0d80"
-    }, 
-    {
-      "name": "core_fire.cpp_CGunFlame_render_FUN_004c50b0", 
-      "addr": "004c50b0"
-    }, 
-    {
-      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0", 
-      "addr": "004c25c0"
-    }, 
-    {
-      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720", 
-      "addr": "004c5720"
-    }, 
-    {
-      "name": "core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30", 
-      "addr": "004c1a30"
-    }, 
-    {
-      "name": "core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0", 
-      "addr": "004bf1f0"
-    }, 
-    {
-      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0", 
-      "addr": "004bf4c0"
-    }, 
-    {
-      "name": "core_fire.cpp_CSpark_initRender_FUN_004c0300", 
-      "addr": "004c0300"
-    }, 
-    {
-      "name": "core_fire.cpp_CStake_render_FUN_004c0140", 
-      "addr": "004c0140"
-    }, 
-    {
-      "name": "core_fire.cpp_CToss_render_FUN_004c4160", 
-      "addr": "004c4160"
-    }, 
-    {
-      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90", 
-      "addr": "004c5e90"
-    }, 
-    {
-      "name": "core_set.cpp_CDemonSet_FUN_0056d380", 
-      "addr": "0056d380"
-    }, 
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
-      "addr": "0048cae0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonSet*", 
-      "name": "g_CDemonSetPtr", 
-      "addr": "006810c8", 
-      "value": "03114278"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "CSmokeParticle[2048]", 
-      "name": "g_SmokeParticlePool", 
-      "addr": "02d141ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d14218", 
-      "addr": "02d14218", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BulletHoleActiveCount", 
-      "addr": "02d2a1ec", 
-      "value": null
-    }, 
-    {
-      "type": "CBulletHole[256]", 
-      "name": "g_BulletHolePool", 
-      "addr": "02d2a1f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d2a204", 
-      "addr": "02d2a204", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d2a230", 
-      "addr": "02d2a230", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d2a240", 
-      "addr": "02d2a240", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StakeActiveCount", 
-      "addr": "02d2ddf4", 
-      "value": null
-    }, 
-    {
-      "type": "CStake[256]", 
-      "name": "g_StakePool", 
-      "addr": "02d2ddfc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d2e05c", 
-      "addr": "02d2e05c", 
-      "value": null
-    }, 
-    {
-      "type": "CSpark[256]", 
-      "name": "g_SparkPool", 
-      "addr": "02d53e00", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d53e18", 
-      "addr": "02d53e18", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d53e4c", 
-      "addr": "02d53e4c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d53e64", 
-      "addr": "02d53e64", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SparkActiveCount", 
-      "addr": "02d58a00", 
-      "value": null
-    }, 
-    {
-      "type": "CMuzzleFlash[20]", 
-      "name": "g_MuzzleFlashPool", 
-      "addr": "02d58a04", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d58a60", 
-      "addr": "02d58a60", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_GlassParticleNextIndex", 
-      "addr": "02d59134", 
-      "value": null
-    }, 
-    {
-      "type": "CGlassParticle[256]", 
-      "name": "g_GlassParticlePool", 
-      "addr": "02d59138", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d59150", 
-      "addr": "02d59150", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d591d4", 
-      "addr": "02d591d4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d591ec", 
-      "addr": "02d591ec", 
-      "value": null
-    }, 
-    {
-      "type": "CGlassParticle*", 
-      "name": "g_CFireEffectGlassParticlesEnd", 
-      "addr": "02d62d38", 
-      "value": null
-    }, 
-    {
-      "type": "CBulletTrail[10]", 
-      "name": "g_BulletTrailPool", 
-      "addr": "02d62d3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62d5c", 
-      "addr": "02d62d5c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62d60", 
-      "addr": "02d62d60", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62d80", 
-      "addr": "02d62d80", 
-      "value": null
-    }, 
-    {
-      "type": "CBulletTrail*", 
-      "name": "g_BulletTrailActiveListHead", 
-      "addr": "02d62ea4", 
-      "value": null
-    }, 
-    {
-      "type": "CFireball[64]", 
-      "name": "g_FireballPool", 
-      "addr": "02d62ea8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62ec0", 
-      "addr": "02d62ec0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62f44", 
-      "addr": "02d62f44", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62f5c", 
-      "addr": "02d62f5c", 
-      "value": null
-    }, 
-    {
-      "type": "CFireball*", 
-      "name": "g_CFireEffectFireballsEnd", 
-      "addr": "02d655a8", 
-      "value": null
-    }, 
-    {
-      "type": "CRock[64]", 
-      "name": "g_RockPool", 
-      "addr": "02d655ac", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d655c4", 
-      "addr": "02d655c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d655f4", 
-      "addr": "02d655f4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d6560c", 
-      "addr": "02d6560c", 
-      "value": null
-    }, 
-    {
-      "type": "CRock*", 
-      "name": "g_CFireEffectRocksEnd", 
-      "addr": "02d667ac", 
-      "value": null
-    }, 
-    {
-      "type": "CLaserBeam[64]", 
-      "name": "g_LaserBeamPool", 
-      "addr": "02d667b0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d667f0", 
-      "addr": "02d667f0", 
-      "value": null
-    }, 
-    {
-      "type": "CExplosion[10]", 
-      "name": "g_ExplosionPool", 
-      "addr": "02d677b4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d677d0", 
-      "addr": "02d677d0", 
-      "value": null
-    }, 
-    {
-      "type": "CExplosion*", 
-      "name": "g_ExplosionActiveListHead", 
-      "addr": "02d678cc", 
-      "value": null
-    }, 
-    {
-      "type": "CToss[20]", 
-      "name": "g_TossPool", 
-      "addr": "02d678d0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d67cb4", 
-      "addr": "02d67cb4", 
-      "value": null
-    }, 
-    {
-      "type": "CToss*", 
-      "name": "g_TossActiveListHead", 
-      "addr": "02d6c6a0", 
-      "value": null
-    }, 
-    {
-      "type": "CGunFlame[500]", 
-      "name": "g_GunFlamePool", 
-      "addr": "02d6cf68", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d6cf8c", 
-      "addr": "02d6cf8c", 
-      "value": null
-    }, 
-    {
-      "type": "CGunFlame*", 
-      "name": "g_GunFlameActiveListHead", 
-      "addr": "02d715b8", 
-      "value": null
-    }, 
-    {
-      "type": "CLightningBolt[10]", 
-      "name": "g_LightningBoltPool", 
-      "addr": "02d715bc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d715e8", 
-      "addr": "02d715e8", 
-      "value": null
-    }, 
-    {
-      "type": "CLightningBolt*", 
-      "name": "g_LightningBoltActiveListHead", 
-      "addr": "02d71774", 
-      "value": null
-    }, 
-    {
-      "type": "CTrail[100]", 
-      "name": "g_TrailPool", 
-      "addr": "02d71778", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d7179c", 
-      "addr": "02d7179c", 
-      "value": null
-    }, 
-    {
-      "type": "CTrail*", 
-      "name": "g_TrailActiveListHead", 
-      "addr": "02d72588", 
-      "value": null
-    }, 
-    {
-      "type": "CShell[50]", 
-      "name": "g_ShellPool", 
-      "addr": "02d7258c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d725e4", 
-      "addr": "02d725e4", 
-      "value": null
-    }, 
-    {
-      "type": "CShell*", 
-      "name": "g_CFireEffectShellsEnd", 
-      "addr": "02d736bc", 
-      "value": null
-    }, 
-    {
-      "type": "CPopcorn[256]", 
-      "name": "g_PopcornPool", 
-      "addr": "02d736c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d736d8", 
-      "addr": "02d736d8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d736f8", 
-      "addr": "02d736f8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d73710", 
-      "addr": "02d73710", 
-      "value": null
-    }, 
-    {
-      "type": "CPopcorn*", 
-      "name": "g_CFireEffectPopcornsEnd", 
-      "addr": "02d76ec0", 
-      "value": null
-    }, 
-    {
-      "type": "CRainDrop[256]", 
-      "name": "g_RainDropPool", 
-      "addr": "02d76ec4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d76edc", 
-      "addr": "02d76edc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d76efc", 
-      "addr": "02d76efc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d76f14", 
-      "addr": "02d76f14", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActorType", 
-      "name": "g_CFlameClassInfo", 
-      "addr": "02d7a6c4", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonSet", 
-      "name": "g_CDemonSetInstance", 
-      "addr": "03114278", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "004c7186", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 28, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) == 0) {"
-    }, 
-    {
-      "line": 30, 
-      "match": "(CStake *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c));"
-    }, 
-    {
-      "line": 64, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {"
-    }, 
-    {
-      "line": 66, 
-      "match": "(CBulletHole *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c7180", 
-    "signature": "void core_fire.cpp_CFireEffect_render_FUN_004c7180(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c7180", 
-        "004c7497"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_render_FUN_004c7180"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 503
+  },
   "cross_references": [
     {
-      "from_addr": "0053a375", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
-    }, 
+      "addr": "005390f0",
+      "from_addr": "0053a375",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056c072", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056be80", 
-      "addr": "0056be80"
-    }, 
+      "addr": "0056be80",
+      "from_addr": "0056c072",
+      "name": "core_set.cpp_CDemonSet_FUN_0056be80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056c511", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
-      "addr": "0056c1a0"
-    }, 
+      "addr": "0056c1a0",
+      "from_addr": "0056c511",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056cb86", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
-      "addr": "0056c990"
+      "addr": "0056c990",
+      "from_addr": "0056cb86",
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c7180",
+    "address_range": [
+      [
+        "004c7180",
+        "004c7497"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_render_FUN_004c7180",
+    "signature": "void core_fire.cpp_CFireEffect_render_FUN_004c7180(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004bfa40",
+      "name": "core_fire.cpp_CBulletHole_initRender_FUN_004bfa40"
+    },
+    {
+      "addr": "004bfac0",
+      "name": "core_fire.cpp_CBulletHole_render_FUN_004bfac0"
+    },
+    {
+      "addr": "004c21f0",
+      "name": "core_fire.cpp_CBulletTrail_render_FUN_004c21f0"
+    },
+    {
+      "addr": "004c3b10",
+      "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10"
+    },
+    {
+      "addr": "004c0d80",
+      "name": "core_fire.cpp_CFireball_initRender_FUN_004c0d80"
+    },
+    {
+      "addr": "004c50b0",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_004c50b0"
+    },
+    {
+      "addr": "004c25c0",
+      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0"
+    },
+    {
+      "addr": "004c5720",
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720"
+    },
+    {
+      "addr": "004c1a30",
+      "name": "core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30"
+    },
+    {
+      "addr": "004bf1f0",
+      "name": "core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0"
+    },
+    {
+      "addr": "004bf4c0",
+      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0"
+    },
+    {
+      "addr": "004c0300",
+      "name": "core_fire.cpp_CSpark_initRender_FUN_004c0300"
+    },
+    {
+      "addr": "004c0140",
+      "name": "core_fire.cpp_CStake_render_FUN_004c0140"
+    },
+    {
+      "addr": "004c4160",
+      "name": "core_fire.cpp_CToss_render_FUN_004c4160"
+    },
+    {
+      "addr": "004c5e90",
+      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90"
+    },
+    {
+      "addr": "0056d380",
+      "name": "core_set.cpp_CDemonSet_FUN_0056d380"
+    },
+    {
+      "addr": "0048cae0",
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "006810c8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "03114278"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d141ec",
+      "name": "g_SmokeParticlePool",
+      "type": "CSmokeParticle[2048]",
+      "value": null
+    },
+    {
+      "addr": "02d14218",
+      "name": "DAT_02d14218",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d2a1ec",
+      "name": "g_BulletHoleActiveCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d2a1f4",
+      "name": "g_BulletHolePool",
+      "type": "CBulletHole[256]",
+      "value": null
+    },
+    {
+      "addr": "02d2a204",
+      "name": "DAT_02d2a204",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d2a230",
+      "name": "DAT_02d2a230",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d2a240",
+      "name": "DAT_02d2a240",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d2ddf4",
+      "name": "g_StakeActiveCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d2ddfc",
+      "name": "g_StakePool",
+      "type": "CStake[256]",
+      "value": null
+    },
+    {
+      "addr": "02d2e05c",
+      "name": "DAT_02d2e05c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d53e00",
+      "name": "g_SparkPool",
+      "type": "CSpark[256]",
+      "value": null
+    },
+    {
+      "addr": "02d53e18",
+      "name": "DAT_02d53e18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d53e34",
+      "name": "DAT_02d53e34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d53e4c",
+      "name": "DAT_02d53e4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d53e64",
+      "name": "DAT_02d53e64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d53e80",
+      "name": "DAT_02d53e80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d58a00",
+      "name": "g_SparkActiveCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d58a04",
+      "name": "g_MuzzleFlashPool",
+      "type": "CMuzzleFlash[20]",
+      "value": null
+    },
+    {
+      "addr": "02d58a60",
+      "name": "DAT_02d58a60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d59134",
+      "name": "g_GlassParticleNextIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d59138",
+      "name": "g_GlassParticlePool",
+      "type": "CGlassParticle[256]",
+      "value": null
+    },
+    {
+      "addr": "02d59150",
+      "name": "DAT_02d59150",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d5916c",
+      "name": "DAT_02d5916c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d591d4",
+      "name": "DAT_02d591d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d591ec",
+      "name": "DAT_02d591ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d59208",
+      "name": "DAT_02d59208",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62d38",
+      "name": "g_CFireEffectGlassParticlesEnd",
+      "type": "CGlassParticle*",
+      "value": null
+    },
+    {
+      "addr": "02d62d3c",
+      "name": "g_BulletTrailPool",
+      "type": "CBulletTrail[10]",
+      "value": null
+    },
+    {
+      "addr": "02d62d5c",
+      "name": "DAT_02d62d5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62d60",
+      "name": "DAT_02d62d60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62d80",
+      "name": "DAT_02d62d80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62ea4",
+      "name": "g_BulletTrailActiveListHead",
+      "type": "CBulletTrail*",
+      "value": null
+    },
+    {
+      "addr": "02d62ea8",
+      "name": "g_FireballPool",
+      "type": "CFireball[64]",
+      "value": null
+    },
+    {
+      "addr": "02d62ec0",
+      "name": "DAT_02d62ec0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62edc",
+      "name": "DAT_02d62edc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62f44",
+      "name": "DAT_02d62f44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62f5c",
+      "name": "DAT_02d62f5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62f78",
+      "name": "DAT_02d62f78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d655a8",
+      "name": "g_CFireEffectFireballsEnd",
+      "type": "CFireball*",
+      "value": null
+    },
+    {
+      "addr": "02d655ac",
+      "name": "g_RockPool",
+      "type": "CRock[64]",
+      "value": null
+    },
+    {
+      "addr": "02d655c4",
+      "name": "DAT_02d655c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d655e0",
+      "name": "DAT_02d655e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d655f4",
+      "name": "DAT_02d655f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d6560c",
+      "name": "DAT_02d6560c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d65628",
+      "name": "DAT_02d65628",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d667ac",
+      "name": "g_CFireEffectRocksEnd",
+      "type": "CRock*",
+      "value": null
+    },
+    {
+      "addr": "02d667b0",
+      "name": "g_LaserBeamPool",
+      "type": "CLaserBeam[64]",
+      "value": null
+    },
+    {
+      "addr": "02d667f0",
+      "name": "DAT_02d667f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d677b4",
+      "name": "g_ExplosionPool",
+      "type": "CExplosion[10]",
+      "value": null
+    },
+    {
+      "addr": "02d677d0",
+      "name": "DAT_02d677d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d678cc",
+      "name": "g_ExplosionActiveListHead",
+      "type": "CExplosion*",
+      "value": null
+    },
+    {
+      "addr": "02d678d0",
+      "name": "g_TossPool",
+      "type": "CToss[20]",
+      "value": null
+    },
+    {
+      "addr": "02d67cb4",
+      "name": "DAT_02d67cb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d6c6a0",
+      "name": "g_TossActiveListHead",
+      "type": "CToss*",
+      "value": null
+    },
+    {
+      "addr": "02d6cf68",
+      "name": "g_GunFlamePool",
+      "type": "CGunFlame[500]",
+      "value": null
+    },
+    {
+      "addr": "02d6cf8c",
+      "name": "DAT_02d6cf8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d715b8",
+      "name": "g_GunFlameActiveListHead",
+      "type": "CGunFlame*",
+      "value": null
+    },
+    {
+      "addr": "02d715bc",
+      "name": "g_LightningBoltPool",
+      "type": "CLightningBolt[10]",
+      "value": null
+    },
+    {
+      "addr": "02d715e8",
+      "name": "DAT_02d715e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d71774",
+      "name": "g_LightningBoltActiveListHead",
+      "type": "CLightningBolt*",
+      "value": null
+    },
+    {
+      "addr": "02d71778",
+      "name": "g_TrailPool",
+      "type": "CTrail[100]",
+      "value": null
+    },
+    {
+      "addr": "02d7179c",
+      "name": "DAT_02d7179c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d72588",
+      "name": "g_TrailActiveListHead",
+      "type": "CTrail*",
+      "value": null
+    },
+    {
+      "addr": "02d7258c",
+      "name": "g_ShellPool",
+      "type": "CShell[50]",
+      "value": null
+    },
+    {
+      "addr": "02d725c0",
+      "name": "DAT_02d725c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d725e4",
+      "name": "DAT_02d725e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d72618",
+      "name": "DAT_02d72618",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d736bc",
+      "name": "g_CFireEffectShellsEnd",
+      "type": "CShell*",
+      "value": null
+    },
+    {
+      "addr": "02d736c0",
+      "name": "g_PopcornPool",
+      "type": "CPopcorn[256]",
+      "value": null
+    },
+    {
+      "addr": "02d736d8",
+      "name": "DAT_02d736d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d736f4",
+      "name": "DAT_02d736f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d736f8",
+      "name": "DAT_02d736f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d73710",
+      "name": "DAT_02d73710",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7372c",
+      "name": "DAT_02d7372c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d76ec0",
+      "name": "g_CFireEffectPopcornsEnd",
+      "type": "CPopcorn*",
+      "value": null
+    },
+    {
+      "addr": "02d76ec4",
+      "name": "g_RainDropPool",
+      "type": "CRainDrop[256]",
+      "value": null
+    },
+    {
+      "addr": "02d76edc",
+      "name": "DAT_02d76edc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d76ef8",
+      "name": "DAT_02d76ef8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d76efc",
+      "name": "DAT_02d76efc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d76f14",
+      "name": "DAT_02d76f14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d76f30",
+      "name": "DAT_02d76f30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d7a6c4",
+      "name": "g_CFlameClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    },
+    {
+      "addr": "03114278",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004c7186",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CStake *)((int)",
+      "text": "((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(CBulletHole *)((int)",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
+      "type": "pointer_cast"
     }
   ]
 }

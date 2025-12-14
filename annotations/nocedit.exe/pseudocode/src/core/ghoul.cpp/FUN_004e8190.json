@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 57, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 32, 
-    "assembly_lines": 20, 
-    "suspect_count": 4, 
+    "assembly_lines": 20,
+    "complexity_score": 57,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9fa0", 
-      "addr": "004a9fa0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CEnemy *in_stack_00000004;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000004[1].base_character.base_actor.location.position.z == 0.0) &&"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((int)in_stack_00000004[1].base_character.base_actor.location.position.y < 1)) {"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_enemy_cpp_CEnemy_FUN_004a9fa0(in_stack_00000004);"
-    }
-  ], 
+    ],
+    "total_lines": 32
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004e8190", 
-    "signature": "undefined core_ghoul.cpp_FUN_004e8190()", 
+    "address": "004e8190",
     "address_range": [
       [
-        "004e8190", 
+        "004e8190",
         "004e81b7"
       ]
-    ], 
-    "name": "core_ghoul.cpp_FUN_004e8190"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_ghoul.cpp_FUN_004e8190",
+    "signature": "undefined core_ghoul.cpp_FUN_004e8190()"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9fa0",
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9fa0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "CEnemy *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004[1].base_character.base_actor.location.position.z == 0.0) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "((int)in_stack_00000004[1].base_character.base_actor.location.position.y < 1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "core_enemy_cpp_CEnemy_FUN_004a9fa0(in_stack_00000004);",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -1,478 +1,478 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 405, 
-    "pseudocode_lines": 150, 
-    "cross_reference_count": 9, 
-    "global_count": 27, 
-    "total_lines": 482, 
-    "assembly_lines": 332, 
-    "suspect_count": 23, 
+    "assembly_lines": 332,
+    "complexity_score": 405,
+    "cross_reference_count": 9,
+    "function_call_count": 8,
+    "global_count": 27,
+    "pseudocode_lines": 150,
+    "suspect_count": 23,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "engine_2d.c_setupViewportAndClipping_FUN_00401800", 
-      "addr": "00401800"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0", 
-      "addr": "005ed8f0"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_006576b4", 
-      "addr": "006576b4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_006576cb", 
-      "addr": "006576cb", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_WDDVMEM_Fatal_out_of_fra_006576e2", 
-      "addr": "006576e2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_0065770e", 
-      "addr": "0065770e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_00657725", 
-      "addr": "00657725", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_WDDVMEM_Fatal_out_of_Z_b_0065773c", 
-      "addr": "0065773c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_00657764", 
-      "addr": "00657764", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_0065777b", 
-      "addr": "0065777b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_wincore_wddvmem_cpp_00657792", 
-      "addr": "00657792", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_setScreenResolution_Crea_006577a9", 
-      "addr": "006577a9", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_BackBuffer", 
-      "addr": "00688010", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_SoftwareZBuffer", 
-      "addr": "0077262c", 
-      "value": null
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ZBufferScanlineArray[1]", 
-      "addr": "02cf7d60", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectDraw*", 
-      "name": "g_DirectDrawObject", 
-      "addr": "03f95920", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectDrawSurface*", 
-      "name": "g_DirectDrawSurface", 
-      "addr": "03f95924", 
-      "value": null
-    }, 
-    {
-      "type": "IDirectDrawSurface*", 
-      "name": "g_SoftwareRenderSurface", 
-      "addr": "03f95928", 
-      "value": null
-    }, 
-    {
-      "type": "IUnknown*", 
-      "name": "g_DirectDrawUnknown", 
-      "addr": "03f9592c", 
-      "value": null
-    }, 
-    {
-      "type": "void*", 
-      "name": "g_SoftwareFrameBuffer", 
-      "addr": "03f95930", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseSoftwareRendering", 
-      "addr": "03f9593c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "DWORD in_stack_0000001c;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "DWORD in_stack_00000020;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "DWORD in_stack_00000034;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000080", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000080;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000098", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000098;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_0000009c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000009c;"
-    }, 
-    {
-      "line": 48, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_WindowHeight = in_stack_00000010;"
-    }, 
-    {
-      "line": 75, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);"
-    }, 
-    {
-      "line": 77, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_DirectDrawObject,in_stack_0000001c,in_stack_00000020,bits_per_pixel);"
-    }, 
-    {
-      "line": 77, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_DirectDrawObject,in_stack_0000001c,in_stack_00000020,bits_per_pixel);"
-    }, 
-    {
-      "line": 83, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_DirectDrawObject,in_stack_0000001c,in_stack_00000034,0x18);"
-    }, 
-    {
-      "line": 83, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_DirectDrawObject,in_stack_0000001c,in_stack_00000034,0x18);"
-    }, 
-    {
-      "line": 89, 
-      "match": "&stack0xffffffbc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_memory_c_memset_FUN_005fde40(&stack0xffffffbc,0,0x6c);"
-    }, 
-    {
-      "line": 113, 
-      "match": "&stack0x00000068", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_memory_c_memset_FUN_005fde40(&stack0x00000068,0,4);"
-    }, 
-    {
-      "line": 116, 
-      "match": "&stack0x0000006c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(g_DirectDrawSurface,&stack0x0000006c,&g_SoftwareRenderSurface);"
-    }, 
-    {
-      "line": 124, 
-      "match": "in_stack_00000080", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000080 = g_WindowWidth * 4;"
-    }, 
-    {
-      "line": 131, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;"
-    }, 
-    {
-      "line": 133, 
-      "match": "in_stack_00000080", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar7 = iVar7 + in_stack_00000080;"
-    }, 
-    {
-      "line": 138, 
-      "match": "in_stack_00000098", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(0,0,in_stack_00000098 + -1,in_stack_0000009c + -1);"
-    }, 
-    {
-      "line": 138, 
-      "match": "in_stack_0000009c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(0,0,in_stack_00000098 + -1,in_stack_0000009c + -1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ecef0", 
-    "signature": "int wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0(int width, int height, int bits_per_pixel)", 
-    "address_range": [
-      [
-        "005ecef0", 
-        "005ed29e"
-      ]
-    ], 
-    "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "width"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "height"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bits_per_pixel"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 482
+  },
   "cross_references": [
     {
-      "from_addr": "0047cc3c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
-      "addr": "0047cbc0"
-    }, 
+      "addr": "0047cbc0",
+      "from_addr": "0047cc3c",
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004dae0f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0", 
-      "addr": "004dade0"
-    }, 
+      "addr": "004dade0",
+      "from_addr": "004dae0f",
+      "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004daefb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0", 
-      "addr": "004daed0"
-    }, 
+      "addr": "004daed0",
+      "from_addr": "004daefb",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00507bee", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
-      "addr": "00507a60"
-    }, 
+      "addr": "00507a60",
+      "from_addr": "00507bee",
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00401047", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010", 
-      "addr": "00401010"
-    }, 
+      "addr": "00401010",
+      "from_addr": "00401047",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051ed6f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_testLodGeneration_FUN_0051ed60", 
-      "addr": "0051ed60"
-    }, 
+      "addr": "0051ed60",
+      "from_addr": "0051ed6f",
+      "name": "shape_meshlod.cpp_testLodGeneration_FUN_0051ed60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ed571", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0", 
-      "addr": "005ed4b0"
-    }, 
+      "addr": "005ed4b0",
+      "from_addr": "005ed571",
+      "name": "wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ed421", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ed2a0", 
-      "addr": "005ed2a0"
-    }, 
+      "addr": "005ed2a0",
+      "from_addr": "005ed421",
+      "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ed2a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005edd58", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_videoRestore_FUN_005edc80", 
-      "addr": "005edc80"
+      "addr": "005edc80",
+      "from_addr": "005edd58",
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_005edc80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ecef0",
+    "address_range": [
+      [
+        "005ecef0",
+        "005ed29e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0",
+    "signature": "int wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0(int width, int height, int bits_per_pixel)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "00401800",
+      "name": "engine_2d.c_setupViewportAndClipping_FUN_00401800"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    },
+    {
+      "addr": "005ed8f0",
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006576b4",
+      "name": "s_wincore_wddvmem_cpp_006576b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006576cb",
+      "name": "s_wincore_wddvmem_cpp_006576cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006576e2",
+      "name": "s_WDDVMEM_Fatal_out_of_fra_006576e2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065770e",
+      "name": "s_wincore_wddvmem_cpp_0065770e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657725",
+      "name": "s_wincore_wddvmem_cpp_00657725",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065773c",
+      "name": "s_WDDVMEM_Fatal_out_of_Z_b_0065773c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657764",
+      "name": "s_wincore_wddvmem_cpp_00657764",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0065777b",
+      "name": "s_wincore_wddvmem_cpp_0065777b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657792",
+      "name": "s_wincore_wddvmem_cpp_00657792",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006577a9",
+      "name": "s_setScreenResolution_Crea_006577a9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "00688010",
+      "name": "g_BackBuffer",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "0077262c",
+      "name": "g_SoftwareZBuffer",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d60",
+      "name": "g_ZBufferScanlineArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f95920",
+      "name": "g_DirectDrawObject",
+      "type": "IDirectDraw*",
+      "value": null
+    },
+    {
+      "addr": "03f95924",
+      "name": "g_DirectDrawSurface",
+      "type": "IDirectDrawSurface*",
+      "value": null
+    },
+    {
+      "addr": "03f95928",
+      "name": "g_SoftwareRenderSurface",
+      "type": "IDirectDrawSurface*",
+      "value": null
+    },
+    {
+      "addr": "03f9592c",
+      "name": "g_DirectDrawUnknown",
+      "type": "IUnknown*",
+      "value": null
+    },
+    {
+      "addr": "03f95930",
+      "name": "g_SoftwareFrameBuffer",
+      "type": "void*",
+      "value": null
+    },
+    {
+      "addr": "03f9593c",
+      "name": "g_UseSoftwareRendering",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bits_per_pixel",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000001c",
+      "text": "DWORD in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000020",
+      "text": "DWORD in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000034",
+      "text": "DWORD in_stack_00000034;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000080",
+      "text": "int in_stack_00000080;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000098",
+      "text": "int in_stack_00000098;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000009c",
+      "text": "int in_stack_0000009c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000010",
+      "text": "g_WindowHeight = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(void *)((int)",
+      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 77,
+      "match": "in_stack_0000001c",
+      "text": "(g_DirectDrawObject,in_stack_0000001c,in_stack_00000020,bits_per_pixel);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 77,
+      "match": "in_stack_00000020",
+      "text": "(g_DirectDrawObject,in_stack_0000001c,in_stack_00000020,bits_per_pixel);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_0000001c",
+      "text": "(g_DirectDrawObject,in_stack_0000001c,in_stack_00000034,0x18);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_00000034",
+      "text": "(g_DirectDrawObject,in_stack_0000001c,in_stack_00000034,0x18);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 89,
+      "match": "&stack0xffffffbc",
+      "text": "crt_memory_c_memset_FUN_005fde40(&stack0xffffffbc,0,0x6c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 113,
+      "match": "&stack0x00000068",
+      "text": "crt_memory_c_memset_FUN_005fde40(&stack0x00000068,0,4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 116,
+      "match": "&stack0x0000006c",
+      "text": "(g_DirectDrawSurface,&stack0x0000006c,&g_SoftwareRenderSurface);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 124,
+      "match": "in_stack_00000080",
+      "text": "in_stack_00000080 = g_WindowWidth * 4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 133,
+      "match": "in_stack_00000080",
+      "text": "iVar7 = iVar7 + in_stack_00000080;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 138,
+      "match": "in_stack_00000098",
+      "text": "(0,0,in_stack_00000098 + -1,in_stack_0000009c + -1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 138,
+      "match": "in_stack_0000009c",
+      "text": "(0,0,in_stack_00000098 + -1,in_stack_0000009c + -1);",
+      "type": "stack_param"
     }
   ]
 }

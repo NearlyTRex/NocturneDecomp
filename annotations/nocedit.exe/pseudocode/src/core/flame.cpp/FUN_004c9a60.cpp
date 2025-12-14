@@ -11,8 +11,7 @@ void core_flame_cpp_FUN_004c9a60(void)
 {
   CFlame *this_ptr;
   
-  this_ptr = (CFlame *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2a4,"..\\core\\flame.cpp",0x75);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2a4,"..\\core\\flame.cpp",0x75);
   if (this_ptr == (CFlame *)0x0) {
     return;
   }

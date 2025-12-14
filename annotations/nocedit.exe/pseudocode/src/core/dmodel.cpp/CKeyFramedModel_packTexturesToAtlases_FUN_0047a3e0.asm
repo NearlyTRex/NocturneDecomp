@@ -62,20 +62,20 @@ section .text
     SUB ESP,0xb0                        ; 0047a3e6
     AND ESP,0xfffffff8                  ; 0047a3ec
     PUSH 0x1                            ; 0047a3ef
-    CALL shape_design.c_initializeTextureManager_FUN_0046a880 ; 0047a3f1 | void shape_design.c_initializeTextureManager_FUN_0046a880(int initialization_mode)
-        ;   XREF to: 0046a880 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_initializeTextureManager_FUN_0046a880 ; 0047a3f1
+        ;   XREF to: 0046a880 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeTextureManager_FUN_0046a880(int initialization_mode)
     ADD ESP,0x4                         ; 0047a3f6
     PUSH 0x40                           ; 0047a3f9
-    CALL shape_design.c_setTextureQualityParameter_FUN_0046a8e0 ; 0047a3fb | void shape_design.c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param)
-        ;   XREF to: 0046a8e0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_setTextureQualityParameter_FUN_0046a8e0 ; 0047a3fb
+        ;   XREF to: 0046a8e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param)
     ADD ESP,0x4                         ; 0047a400
     MOV EAX,dword ptr [EBP + 0x14]      ; 0047a403
     XOR EDX,EDX                         ; 0047a406
     MOV ECX,dword ptr [EAX + 0x120]     ; 0047a408
     MOV dword ptr [ESP + 0x9c],EDX      ; 0047a40e
     TEST ECX,ECX                        ; 0047a415
-    JLE 0x0047a554                      ; 0047a417 | LAB_0047a554
-        ;   XREF to: 0047a554 (CONDITIONAL_JUMP)
+    JLE 0x0047a554                      ; 0047a417
+        ;   XREF to: 0047a554 (CONDITIONAL_JUMP)  ; LAB_0047a554
     ADD EAX,0x12c                       ; 0047a41d
     MOV dword ptr [ESP + 0x84],EAX      ; 0047a422
     MOV ESI,0x7fffffff                  ; 0047a429
@@ -88,8 +88,8 @@ section .text
     MOV EBX,dword ptr [EAX + 0x110]     ; 0047a441
     MOV EDX,EDI                         ; 0047a447
     TEST EBX,EBX                        ; 0047a449
-    JLE 0x0047a50b                      ; 0047a44b | LAB_0047a50b
-        ;   XREF to: 0047a50b (CONDITIONAL_JUMP)
+    JLE 0x0047a50b                      ; 0047a44b
+        ;   XREF to: 0047a50b (CONDITIONAL_JUMP)  ; LAB_0047a50b
     MOV EAX,dword ptr [EAX + 0x118]     ; 0047a451
     MOV dword ptr [ESP + 0xa0],EAX      ; 0047a457
     XOR EAX,EAX                         ; 0047a45e
@@ -98,8 +98,8 @@ section .text
         ;   Label: LAB_0047a467
     MOV EBX,dword ptr [ESP + 0x9c]      ; 0047a46e
     CMP EBX,dword ptr [EAX]             ; 0047a475
-    JNZ 0x0047a4c9                      ; 0047a477 | LAB_0047a4c9
-        ;   XREF to: 0047a4c9 (CONDITIONAL_JUMP)
+    JNZ 0x0047a4c9                      ; 0047a477
+        ;   XREF to: 0047a4c9 (CONDITIONAL_JUMP)  ; LAB_0047a4c9
     MOV EAX,dword ptr [EBP + 0x14]      ; 0047a479
     MOV EBX,dword ptr [ESP + 0xa4]      ; 0047a47c
     MOV EAX,dword ptr [EAX + 0x114]     ; 0047a483
@@ -110,33 +110,33 @@ section .text
     MOV EBX,dword ptr [EAX + 0x1c]      ; 0047a497
         ;   Label: LAB_0047a497
     CMP ESI,EBX                         ; 0047a49a
-    JLE 0x0047a4a0                      ; 0047a49c | LAB_0047a4a0
-        ;   XREF to: 0047a4a0 (CONDITIONAL_JUMP)
+    JLE 0x0047a4a0                      ; 0047a49c
+        ;   XREF to: 0047a4a0 (CONDITIONAL_JUMP)  ; LAB_0047a4a0
     MOV ESI,EBX                         ; 0047a49e
     MOV EBX,dword ptr [EAX + 0x1c]      ; 0047a4a0
         ;   Label: LAB_0047a4a0
     CMP EDI,EBX                         ; 0047a4a3
-    JGE 0x0047a4a9                      ; 0047a4a5 | LAB_0047a4a9
-        ;   XREF to: 0047a4a9 (CONDITIONAL_JUMP)
+    JGE 0x0047a4a9                      ; 0047a4a5
+        ;   XREF to: 0047a4a9 (CONDITIONAL_JUMP)  ; LAB_0047a4a9
     MOV EDI,EBX                         ; 0047a4a7
     MOV EBX,dword ptr [EAX + 0x20]      ; 0047a4a9
         ;   Label: LAB_0047a4a9
     CMP ECX,EBX                         ; 0047a4ac
-    JLE 0x0047a4b2                      ; 0047a4ae | LAB_0047a4b2
-        ;   XREF to: 0047a4b2 (CONDITIONAL_JUMP)
+    JLE 0x0047a4b2                      ; 0047a4ae
+        ;   XREF to: 0047a4b2 (CONDITIONAL_JUMP)  ; LAB_0047a4b2
     MOV ECX,EBX                         ; 0047a4b0
     MOV EBX,dword ptr [EAX + 0x20]      ; 0047a4b2
         ;   Label: LAB_0047a4b2
     CMP EDX,EBX                         ; 0047a4b5
-    JGE 0x0047a4bb                      ; 0047a4b7 | LAB_0047a4bb
-        ;   XREF to: 0047a4bb (CONDITIONAL_JUMP)
+    JGE 0x0047a4bb                      ; 0047a4b7
+        ;   XREF to: 0047a4bb (CONDITIONAL_JUMP)  ; LAB_0047a4bb
     MOV EDX,EBX                         ; 0047a4b9
     MOV EBX,dword ptr [ESP + 0xac]      ; 0047a4bb
         ;   Label: LAB_0047a4bb
     ADD EAX,0xc                         ; 0047a4c2
     CMP EAX,EBX                         ; 0047a4c5
-    JNZ 0x0047a497                      ; 0047a4c7 | LAB_0047a497
-        ;   XREF to: 0047a497 (CONDITIONAL_JUMP)
+    JNZ 0x0047a497                      ; 0047a4c7
+        ;   XREF to: 0047a497 (CONDITIONAL_JUMP)  ; LAB_0047a497
     MOV EBX,dword ptr [ESP + 0xa0]      ; 0047a4c9
         ;   Label: LAB_0047a4c9
     ADD EBX,0x4                         ; 0047a4d0
@@ -150,20 +150,20 @@ section .text
     MOV EAX,EBX                         ; 0047a4fa
     MOV EBX,dword ptr [EBP + 0x14]      ; 0047a4fc
     CMP EAX,dword ptr [EBX + 0x110]     ; 0047a4ff
-    JL 0x0047a467                       ; 0047a505 | LAB_0047a467
-        ;   XREF to: 0047a467 (CONDITIONAL_JUMP)
+    JL 0x0047a467                       ; 0047a505
+        ;   XREF to: 0047a467 (CONDITIONAL_JUMP)  ; LAB_0047a467
     CMP ESI,EDI                         ; 0047a50b
         ;   Label: LAB_0047a50b
-    JG 0x0047a523                       ; 0047a50d | LAB_0047a523
-        ;   XREF to: 0047a523 (CONDITIONAL_JUMP)
+    JG 0x0047a523                       ; 0047a50d
+        ;   XREF to: 0047a523 (CONDITIONAL_JUMP)  ; LAB_0047a523
     PUSH EDX                            ; 0047a50f
     PUSH EDI                            ; 0047a510
     PUSH ECX                            ; 0047a511
     PUSH ESI                            ; 0047a512
     MOV ESI,dword ptr [ESP + 0x94]      ; 0047a513
     PUSH ESI                            ; 0047a51a
-    CALL shape_design.c_cramTextures_FUN_0046a970 ; 0047a51b | void shape_design.c_cramTextures_FUN_0046a970(char * texture_filename, int min_u, int min_v, int max_u, ...)
-        ;   XREF to: 0046a970 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_cramTextures_FUN_0046a970 ; 0047a51b
+        ;   XREF to: 0046a970 (UNCONDITIONAL_CALL)  ; void shape_design.c_cramTextures_FUN_0046a970(char * texture_filename, int min_u, int min_v, int max_u, ...)
     ADD ESP,0x14                        ; 0047a520
     MOV EBX,dword ptr [ESP + 0x84]      ; 0047a523
         ;   Label: LAB_0047a523
@@ -175,13 +175,13 @@ section .text
     MOV dword ptr [ESP + 0x84],EBX      ; 0047a53e
     MOV dword ptr [ESP + 0x9c],ESI      ; 0047a545
     CMP ESI,EDI                         ; 0047a54c
-    JL 0x0047a429                       ; 0047a54e | LAB_0047a429
-        ;   XREF to: 0047a429 (CONDITIONAL_JUMP)
+    JL 0x0047a429                       ; 0047a54e
+        ;   XREF to: 0047a429 (CONDITIONAL_JUMP)  ; LAB_0047a429
     LEA EAX,[ESP + 0x8]                 ; 0047a554
         ;   Label: LAB_0047a554
     PUSH EAX                            ; 0047a558
-    CALL shape_design.c_initializeCramConfig_FUN_0046b6e0 ; 0047a559 | void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
-        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_initializeCramConfig_FUN_0046b6e0 ; 0047a559
+        ;   XREF to: 0046b6e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_initializeCramConfig_FUN_0046b6e0(SCramConfig * cram_config)
     ADD ESP,0x4                         ; 0047a55e
     LEA EDI,[ESP + 0x8]                 ; 0047a561
     MOV ESI,dword ptr [EBP + 0x18]      ; 0047a565
@@ -191,15 +191,15 @@ section .text
         ;   Label: LAB_0047a56e
     MOV byte ptr [EDI],AL               ; 0047a570
     CMP AL,0x0                          ; 0047a572
-    JZ 0x0047a586                       ; 0047a574 | LAB_0047a586
-        ;   XREF to: 0047a586 (CONDITIONAL_JUMP)
+    JZ 0x0047a586                       ; 0047a574
+        ;   XREF to: 0047a586 (CONDITIONAL_JUMP)  ; LAB_0047a586
     MOV AL,byte ptr [ESI + 0x1]         ; 0047a576
     ADD ESI,0x2                         ; 0047a579
     MOV byte ptr [EDI + 0x1],AL         ; 0047a57c
     ADD EDI,0x2                         ; 0047a57f
     CMP AL,0x0                          ; 0047a582
-    JNZ 0x0047a56e                      ; 0047a584 | LAB_0047a56e
-        ;   XREF to: 0047a56e (CONDITIONAL_JUMP)
+    JNZ 0x0047a56e                      ; 0047a584
+        ;   XREF to: 0047a56e (CONDITIONAL_JUMP)  ; LAB_0047a56e
     POP EDI                             ; 0047a586
         ;   Label: LAB_0047a586
     MOV EAX,dword ptr [EBP + 0x20]      ; 0047a587
@@ -216,15 +216,15 @@ section .text
     PUSH EAX                            ; 0047a5b3
     MOV dword ptr [ESP + 0x70],EDX      ; 0047a5b4
     MOV dword ptr [ESP + 0x74],EDX      ; 0047a5b8
-    CALL shape_design.c_cramTextureList_FUN_0046bb80 ; 0047a5bc | int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)
-        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_cramTextureList_FUN_0046bb80 ; 0047a5bc
+        ;   XREF to: 0046bb80 (UNCONDITIONAL_CALL)  ; int shape_design.c_cramTextureList_FUN_0046bb80(SCramConfig * cram_config)
     ADD ESP,0x4                         ; 0047a5c1
     XOR EAX,EAX                         ; 0047a5c4
     MOV dword ptr [ESP + 0x90],EAX      ; 0047a5c6
     MOV EAX,dword ptr [EBP + 0x14]      ; 0047a5cd
     CMP dword ptr [EAX + 0x110],0x0     ; 0047a5d0
-    JLE 0x0047a784                      ; 0047a5d7 | LAB_0047a784
-        ;   XREF to: 0047a784 (CONDITIONAL_JUMP)
+    JLE 0x0047a784                      ; 0047a5d7
+        ;   XREF to: 0047a784 (CONDITIONAL_JUMP)  ; LAB_0047a784
     ADD EAX,0x124                       ; 0047a5dd
     XOR EDI,EDI                         ; 0047a5e2
     MOV dword ptr [ESP + 0x80],EAX      ; 0047a5e4
@@ -236,8 +236,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x118]     ; 0047a603
     ADD EAX,EDX                         ; 0047a609
     CMP dword ptr [EAX],0x0             ; 0047a60b
-    JL 0x0047a808                       ; 0047a60e | LAB_0047a808
-        ;   XREF to: 0047a808 (CONDITIONAL_JUMP)
+    JL 0x0047a808                       ; 0047a60e
+        ;   XREF to: 0047a808 (CONDITIONAL_JUMP)  ; LAB_0047a808
     MOV EAX,dword ptr [EBP + 0x14]      ; 0047a614
         ;   Label: LAB_0047a614
     MOV EBX,dword ptr [ESP + 0x94]      ; 0047a617
@@ -247,8 +247,8 @@ section .text
     ADD EAX,dword ptr [ESP + 0x80]      ; 0047a629
     ADD EAX,0x8                         ; 0047a630
     PUSH EAX                            ; 0047a633
-    CALL shape_design.c_findTextureByFilename_FUN_0046dfc0 ; 0047a634 | int shape_design.c_findTextureByFilename_FUN_0046dfc0(char * filename)
-        ;   XREF to: 0046dfc0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_findTextureByFilename_FUN_0046dfc0 ; 0047a634
+        ;   XREF to: 0046dfc0 (UNCONDITIONAL_CALL)  ; int shape_design.c_findTextureByFilename_FUN_0046dfc0(char * filename)
     ADD ESP,0x4                         ; 0047a639
     MOV EBX,dword ptr [EBP + 0x14]      ; 0047a63c
     MOV dword ptr [ESP + 0x98],EAX      ; 0047a63f
@@ -258,10 +258,10 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4]       ; 0047a655
     XOR EDI,EDI                         ; 0047a658
     TEST EDX,EDX                        ; 0047a65a
-    JLE 0x0047a725                      ; 0047a65c | LAB_0047a725
-        ;   XREF to: 0047a725 (CONDITIONAL_JUMP)
+    JLE 0x0047a725                      ; 0047a65c
+        ;   XREF to: 0047a725 (CONDITIONAL_JUMP)  ; LAB_0047a725
     MOV ESI,EBX                         ; 0047a662
-    FLD double ptr [0x0062022b]         ; 0047a664 | double g_FixedPointToFloat
+    FLD double ptr [0x0062022b]         ; 0047a664 | g_FixedPointToFloat
         ;   Label: LAB_0047a664
     FILD dword ptr [ESI + 0x1c]         ; 0047a66a
     FMUL ST1                            ; 0047a66d
@@ -276,17 +276,17 @@ section .text
     FCOMPP                              ; 0047a685
     FNSTSW AX                           ; 0047a687
     SAHF                                ; 0047a689
-    JBE 0x0047a692                      ; 0047a68a | LAB_0047a692
-        ;   XREF to: 0047a692 (CONDITIONAL_JUMP)
+    JBE 0x0047a692                      ; 0047a68a
+        ;   XREF to: 0047a692 (CONDITIONAL_JUMP)  ; LAB_0047a692
     XOR ECX,ECX                         ; 0047a68c
     MOV dword ptr [ESP + 0x4],ECX       ; 0047a68e
     FLD float ptr [ESP + 0x4]           ; 0047a692
         ;   Label: LAB_0047a692
-    FCOMP double ptr [0x00620233]       ; 0047a696 | double g_MaxTextureCoordinate
+    FCOMP double ptr [0x00620233]       ; 0047a696 | g_MaxTextureCoordinate
     FNSTSW AX                           ; 0047a69c
     SAHF                                ; 0047a69e
-    JBE 0x0047a6a9                      ; 0047a69f | LAB_0047a6a9
-        ;   XREF to: 0047a6a9 (CONDITIONAL_JUMP)
+    JBE 0x0047a6a9                      ; 0047a69f
+        ;   XREF to: 0047a6a9 (CONDITIONAL_JUMP)  ; LAB_0047a6a9
     MOV dword ptr [ESP + 0x4],0x437fffbe ; 0047a6a1
     FLD float ptr [ESP]                 ; 0047a6a9
         ;   Label: LAB_0047a6a9
@@ -294,17 +294,17 @@ section .text
     FCOMPP                              ; 0047a6ae
     FNSTSW AX                           ; 0047a6b0
     SAHF                                ; 0047a6b2
-    JBE 0x0047a6ba                      ; 0047a6b3 | LAB_0047a6ba
-        ;   XREF to: 0047a6ba (CONDITIONAL_JUMP)
+    JBE 0x0047a6ba                      ; 0047a6b3
+        ;   XREF to: 0047a6ba (CONDITIONAL_JUMP)  ; LAB_0047a6ba
     XOR EDX,EDX                         ; 0047a6b5
     MOV dword ptr [ESP],EDX             ; 0047a6b7
     FLD float ptr [ESP]                 ; 0047a6ba
         ;   Label: LAB_0047a6ba
-    FCOMP double ptr [0x00620233]       ; 0047a6bd | double g_MaxTextureCoordinate
+    FCOMP double ptr [0x00620233]       ; 0047a6bd | g_MaxTextureCoordinate
     FNSTSW AX                           ; 0047a6c3
     SAHF                                ; 0047a6c5
-    JBE 0x0047a6cf                      ; 0047a6c6 | LAB_0047a6cf
-        ;   XREF to: 0047a6cf (CONDITIONAL_JUMP)
+    JBE 0x0047a6cf                      ; 0047a6c6
+        ;   XREF to: 0047a6cf (CONDITIONAL_JUMP)  ; LAB_0047a6cf
     MOV dword ptr [ESP],0x437fffbe      ; 0047a6c8
     MOV EAX,ESP                         ; 0047a6cf
         ;   Label: LAB_0047a6cf
@@ -313,20 +313,20 @@ section .text
     PUSH EAX                            ; 0047a6d6
     MOV EAX,dword ptr [ESP + 0xa0]      ; 0047a6d7
     PUSH EAX                            ; 0047a6de
-    CALL shape_design.c_fixupCramUV_FUN_0046e090 ; 0047a6df | void shape_design.c_fixupCramUV_FUN_0046e090(int atlas_texture_index, float * u_coord, float * v_coord)
-        ;   XREF to: 0046e090 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_fixupCramUV_FUN_0046e090 ; 0047a6df
+        ;   XREF to: 0046e090 (UNCONDITIONAL_CALL)  ; void shape_design.c_fixupCramUV_FUN_0046e090(int atlas_texture_index, float * u_coord, float * v_coord)
     ADD ESP,0xc                         ; 0047a6e4
-    FLD double ptr [0x00620223]         ; 0047a6e7 | double g_TextureScaleFactor
+    FLD double ptr [0x00620223]         ; 0047a6e7 | g_TextureScaleFactor
     FLD float ptr [ESP + 0x4]           ; 0047a6ed
     FMUL ST1                            ; 0047a6f1
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0047a6f3 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0047a6f3
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x7c]        ; 0047a6f8
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0047a6fc
     MOV dword ptr [ESI + 0x1c],EAX      ; 0047a700
     FMUL float ptr [ESP]                ; 0047a703
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0047a706 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0047a706
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x7c]        ; 0047a70b
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0047a70f
     MOV dword ptr [ESI + 0x20],EAX      ; 0047a713
@@ -334,13 +334,13 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4]       ; 0047a717
     ADD ESI,0xc                         ; 0047a71a
     CMP EDI,EDX                         ; 0047a71d
-    JL 0x0047a664                       ; 0047a71f | LAB_0047a664
-        ;   XREF to: 0047a664 (CONDITIONAL_JUMP)
+    JL 0x0047a664                       ; 0047a71f
+        ;   XREF to: 0047a664 (CONDITIONAL_JUMP)  ; LAB_0047a664
     MOV ESI,dword ptr [ESP + 0x98]      ; 0047a725
         ;   Label: LAB_0047a725
     PUSH ESI                            ; 0047a72c
-    CALL shape_design.c_getAtlasMapIndex_FUN_0046e030 ; 0047a72d | int shape_design.c_getAtlasMapIndex_FUN_0046e030(int texture_entry_index)
-        ;   XREF to: 0046e030 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_getAtlasMapIndex_FUN_0046e030 ; 0047a72d
+        ;   XREF to: 0046e030 (UNCONDITIONAL_CALL)  ; int shape_design.c_getAtlasMapIndex_FUN_0046e030(int texture_entry_index)
     ADD ESP,0x4                         ; 0047a732
     MOV EDX,dword ptr [EBP + 0x14]      ; 0047a735
     MOV EDI,dword ptr [ESP + 0x94]      ; 0047a738
@@ -358,23 +358,23 @@ section .text
     MOV EBX,dword ptr [EDX + 0x110]     ; 0047a76f
     MOV dword ptr [ESP + 0x88],EAX      ; 0047a775
     CMP ECX,EBX                         ; 0047a77c
-    JL 0x0047a5f9                       ; 0047a77e | LAB_0047a5f9
-        ;   XREF to: 0047a5f9 (CONDITIONAL_JUMP)
-    CALL shape_design.c_getLastTextureProcessIndex_FUN_0046a860 ; 0047a784 | int shape_design.c_getLastTextureProcessIndex_FUN_0046a860()
+    JL 0x0047a5f9                       ; 0047a77e
+        ;   XREF to: 0047a5f9 (CONDITIONAL_JUMP)  ; LAB_0047a5f9
+    CALL shape_design.c_getLastTextureProcessIndex_FUN_0046a860 ; 0047a784
+        ;   XREF to: 0046a860 (UNCONDITIONAL_CALL)  ; int shape_design.c_getLastTextureProcessIndex_FUN_0046a860()
         ;   Label: LAB_0047a784
-        ;   XREF to: 0046a860 (UNCONDITIONAL_CALL)
     MOV EDX,dword ptr [EBP + 0x14]      ; 0047a789
     XOR EBX,EBX                         ; 0047a78c
     MOV dword ptr [EDX + 0x120],EAX     ; 0047a78e
     TEST EAX,EAX                        ; 0047a794
-    JLE 0x0047a7f0                      ; 0047a796 | LAB_0047a7f0
-        ;   XREF to: 0047a7f0 (CONDITIONAL_JUMP)
+    JLE 0x0047a7f0                      ; 0047a796
+        ;   XREF to: 0047a7f0 (CONDITIONAL_JUMP)  ; LAB_0047a7f0
     LEA EAX,[EDX + 0x12c]               ; 0047a798
     MOV dword ptr [ESP + 0x8c],EAX      ; 0047a79e
     PUSH EBX                            ; 0047a7a5
         ;   Label: LAB_0047a7a5
-    CALL shape_design.c_getTextureName_FUN_0046e060 ; 0047a7a6 | char * shape_design.c_getTextureName_FUN_0046e060(int texture_index)
-        ;   XREF to: 0046e060 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_getTextureName_FUN_0046e060 ; 0047a7a6
+        ;   XREF to: 0046e060 (UNCONDITIONAL_CALL)  ; char * shape_design.c_getTextureName_FUN_0046e060(int texture_index)
     ADD ESP,0x4                         ; 0047a7ab
     MOV ESI,EAX                         ; 0047a7ae
     MOV EDI,dword ptr [ESP + 0x8c]      ; 0047a7b0
@@ -383,15 +383,15 @@ section .text
         ;   Label: LAB_0047a7b8
     MOV byte ptr [EDI],AL               ; 0047a7ba
     CMP AL,0x0                          ; 0047a7bc
-    JZ 0x0047a7d0                       ; 0047a7be | LAB_0047a7d0
-        ;   XREF to: 0047a7d0 (CONDITIONAL_JUMP)
+    JZ 0x0047a7d0                       ; 0047a7be
+        ;   XREF to: 0047a7d0 (CONDITIONAL_JUMP)  ; LAB_0047a7d0
     MOV AL,byte ptr [ESI + 0x1]         ; 0047a7c0
     ADD ESI,0x2                         ; 0047a7c3
     MOV byte ptr [EDI + 0x1],AL         ; 0047a7c6
     ADD EDI,0x2                         ; 0047a7c9
     CMP AL,0x0                          ; 0047a7cc
-    JNZ 0x0047a7b8                      ; 0047a7ce | LAB_0047a7b8
-        ;   XREF to: 0047a7b8 (CONDITIONAL_JUMP)
+    JNZ 0x0047a7b8                      ; 0047a7ce
+        ;   XREF to: 0047a7b8 (CONDITIONAL_JUMP)  ; LAB_0047a7b8
     POP EDI                             ; 0047a7d0
         ;   Label: LAB_0047a7d0
     MOV EAX,dword ptr [EBP + 0x14]      ; 0047a7d1
@@ -400,18 +400,18 @@ section .text
     MOV ESI,dword ptr [EAX + 0x120]     ; 0047a7d8
     MOV dword ptr [ESP + 0x8c],ECX      ; 0047a7de
     CMP EBX,ESI                         ; 0047a7e5
-    JL 0x0047a7a5                       ; 0047a7e7 | LAB_0047a7a5
-        ;   XREF to: 0047a7a5 (CONDITIONAL_JUMP)
+    JL 0x0047a7a5                       ; 0047a7e7
+        ;   XREF to: 0047a7a5 (CONDITIONAL_JUMP)  ; LAB_0047a7a5
     LEA EAX,[EAX]                       ; 0047a7e9
     NOP                                 ; 0047a7ef
     MOV ESI,dword ptr [EBP + 0x14]      ; 0047a7f0
         ;   Label: LAB_0047a7f0
     PUSH ESI                            ; 0047a7f3
-    CALL core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 ; 0047a7f4 | void core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel * model_ptr)
-        ;   XREF to: 0047a820 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820 ; 0047a7f4
+        ;   XREF to: 0047a820 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel * model_ptr)
     ADD ESP,0x4                         ; 0047a7f9
-    CALL engine_texture.cpp_clearTextureCache_FUN_005dd8e0 ; 0047a7fc | void engine_texture.cpp_clearTextureCache_FUN_005dd8e0()
-        ;   XREF to: 005dd8e0 (UNCONDITIONAL_CALL)
+    CALL engine_texture.cpp_clearTextureCache_FUN_005dd8e0 ; 0047a7fc
+        ;   XREF to: 005dd8e0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_005dd8e0()
     MOV ESP,EBP                         ; 0047a801
     POP EBP                             ; 0047a803
     POP EDI                             ; 0047a804
@@ -420,6 +420,6 @@ section .text
     RET                                 ; 0047a807
     MOV dword ptr [EAX],0x0             ; 0047a808
         ;   Label: LAB_0047a808
-    JMP 0x0047a614                      ; 0047a80e | LAB_0047a614
-        ;   XREF to: 0047a614 (UNCONDITIONAL_JUMP)
+    JMP 0x0047a614                      ; 0047a80e
+        ;   XREF to: 0047a614 (UNCONDITIONAL_JUMP)  ; LAB_0047a614
 

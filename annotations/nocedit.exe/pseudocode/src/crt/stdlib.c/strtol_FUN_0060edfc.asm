@@ -27,8 +27,8 @@ section .text
     PUSH EBX                            ; 0060ee08
     MOV ECX,dword ptr [ESP + 0x14]      ; 0060ee09
     PUSH ECX                            ; 0060ee0d
-    CALL crt_stdlib.c_strtol_internal_FUN_0060ec70 ; 0060ee0e | long crt_stdlib.c_strtol_internal_FUN_0060ec70(char * str, char * * endptr, int base, int is_signed)
-        ;   XREF to: 0060ec70 (UNCONDITIONAL_CALL)
+    CALL crt_stdlib.c_strtol_internal_FUN_0060ec70 ; 0060ee0e
+        ;   XREF to: 0060ec70 (UNCONDITIONAL_CALL)  ; long crt_stdlib.c_strtol_internal_FUN_0060ec70(char * str, char * * endptr, int base, int is_signed)
     ADD ESP,0x10                        ; 0060ee13
     POP EBX                             ; 0060ee16
     RET                                 ; 0060ee17

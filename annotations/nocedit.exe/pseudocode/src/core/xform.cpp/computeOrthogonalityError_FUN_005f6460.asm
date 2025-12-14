@@ -90,15 +90,15 @@ section .text
     FCOMP double ptr [ESP + 0x40]       ; 005f650c
     FNSTSW AX                           ; 005f6510
     SAHF                                ; 005f6512
-    JNC 0x005f665f                      ; 005f6513 | LAB_005f665f
-        ;   XREF to: 005f665f (CONDITIONAL_JUMP)
+    JNC 0x005f665f                      ; 005f6513
+        ;   XREF to: 005f665f (CONDITIONAL_JUMP)  ; LAB_005f665f
     FLDZ                                ; 005f6519
         ;   Label: LAB_005f6519
     FCOMP double ptr [ESP + 0x38]       ; 005f651b
     FNSTSW AX                           ; 005f651f
     SAHF                                ; 005f6521
-    JC 0x005f6533                       ; 005f6522 | LAB_005f6533
-        ;   XREF to: 005f6533 (CONDITIONAL_JUMP)
+    JC 0x005f6533                       ; 005f6522
+        ;   XREF to: 005f6533 (CONDITIONAL_JUMP)  ; LAB_005f6533
     XOR EBX,EBX                         ; 005f6524
     MOV ESI,0x3ff00000                  ; 005f6526
     MOV dword ptr [ESP + 0x38],EBX      ; 005f652b
@@ -108,8 +108,8 @@ section .text
     FCOMP double ptr [ESP + 0x30]       ; 005f6535
     FNSTSW AX                           ; 005f6539
     SAHF                                ; 005f653b
-    JNC 0x005f6673                      ; 005f653c | LAB_005f6673
-        ;   XREF to: 005f6673 (CONDITIONAL_JUMP)
+    JNC 0x005f6673                      ; 005f653c
+        ;   XREF to: 005f6673 (CONDITIONAL_JUMP)  ; LAB_005f6673
     FLD1                                ; 005f6542
         ;   Label: LAB_005f6542
     FDIV double ptr [ESP + 0x40]        ; 005f6544
@@ -211,13 +211,13 @@ section .text
     MOV ECX,0x3ff00000                  ; 005f6661
     MOV dword ptr [ESP + 0x40],EDX      ; 005f6666
     MOV dword ptr [ESP + 0x44],ECX      ; 005f666a
-    JMP 0x005f6519                      ; 005f666e | LAB_005f6519
-        ;   XREF to: 005f6519 (UNCONDITIONAL_JUMP)
+    JMP 0x005f6519                      ; 005f666e
+        ;   XREF to: 005f6519 (UNCONDITIONAL_JUMP)  ; LAB_005f6519
     XOR EDI,EDI                         ; 005f6673
         ;   Label: LAB_005f6673
     MOV EAX,0x3ff00000                  ; 005f6675
     MOV dword ptr [ESP + 0x30],EDI      ; 005f667a
     MOV dword ptr [ESP + 0x34],EAX      ; 005f667e
-    JMP 0x005f6542                      ; 005f6682 | LAB_005f6542
-        ;   XREF to: 005f6542 (UNCONDITIONAL_JUMP)
+    JMP 0x005f6542                      ; 005f6682
+        ;   XREF to: 005f6542 (UNCONDITIONAL_JUMP)  ; LAB_005f6542
 

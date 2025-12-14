@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f873a4                   ; 005dda80 | CDemonActorType g_CTommyGunClassInfo
+    MOV EAX,0x3f873a4                   ; 005dda80 | g_CTommyGunClassInfo
         ;   Label: core_tommygun.cpp_CTommyGun_getActorType_FUN_005dda80
     RET                                 ; 005dda85
 

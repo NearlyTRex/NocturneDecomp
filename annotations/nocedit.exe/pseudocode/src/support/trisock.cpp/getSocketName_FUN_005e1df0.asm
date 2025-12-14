@@ -32,11 +32,11 @@ section .text
     MOV dword ptr [ESP + 0x20],EDX      ; 005e1e06
     MOV ECX,dword ptr [EAX]             ; 005e1e0a
     PUSH ECX                            ; 005e1e0c
-    CALL crt_wsock32.c_getsockname      ; 005e1e0d | int crt_wsock32.c_getsockname(SOCKET s, SOCKADDR * name, int * namelen)
-        ;   XREF to: 00610eec (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_getsockname      ; 005e1e0d
+        ;   XREF to: 00610eec (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_getsockname(SOCKET s, SOCKADDR * name, int * namelen)
     TEST EAX,EAX                        ; 005e1e12
-    JZ 0x005e1e1c                       ; 005e1e14 | LAB_005e1e1c
-        ;   XREF to: 005e1e1c (CONDITIONAL_JUMP)
+    JZ 0x005e1e1c                       ; 005e1e14
+        ;   XREF to: 005e1e1c (CONDITIONAL_JUMP)  ; LAB_005e1e1c
     XOR EAX,EAX                         ; 005e1e16
     ADD ESP,0x1c                        ; 005e1e18
     RET                                 ; 005e1e1b
@@ -47,8 +47,8 @@ section .text
     PUSH EAX                            ; 005e1e22
     LEA EAX,[ESP + 0x1c]                ; 005e1e23
     PUSH EAX                            ; 005e1e27
-    CALL support_trisock.cpp_convertSockAddr_FUN_005e1960 ; 005e1e28 | SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN * dest_addr, SOCKADDR * src_addr)
-        ;   XREF to: 005e1960 (UNCONDITIONAL_CALL)
+    CALL support_trisock.cpp_convertSockAddr_FUN_005e1960 ; 005e1e28
+        ;   XREF to: 005e1960 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN * dest_addr, SOCKADDR * src_addr)
     ADD ESP,0x8                         ; 005e1e2d
     MOV ESI,EAX                         ; 005e1e30
     MOV EDI,dword ptr [ESP + 0x2c]      ; 005e1e32

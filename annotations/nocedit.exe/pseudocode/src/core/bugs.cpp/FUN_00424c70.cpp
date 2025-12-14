@@ -11,8 +11,7 @@ void core_bugs_cpp_FUN_00424c70(void)
 {
   CBugs *this_ptr;
   
-  this_ptr = (CBugs *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
-                                (0x199f8,"..\\core\\bugs.cpp",0x3e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x199f8,"..\\core\\bugs.cpp",0x3e);
   if (this_ptr == (CBugs *)0x0) {
     return;
   }

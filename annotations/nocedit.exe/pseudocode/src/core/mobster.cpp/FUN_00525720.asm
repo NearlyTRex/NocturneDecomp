@@ -37,8 +37,8 @@ section .text
     SUB ESP,0x30                        ; 00525723
     MOV EBX,dword ptr [ESP + 0x40]      ; 00525726
     CMP dword ptr [EBX + 0xbee4],0x0    ; 0052572a
-    JZ 0x005257c9                       ; 00525731 | LAB_005257c9
-        ;   XREF to: 005257c9 (CONDITIONAL_JUMP)
+    JZ 0x005257c9                       ; 00525731
+        ;   XREF to: 005257c9 (CONDITIONAL_JUMP)  ; LAB_005257c9
     MOV ESI,0xc0166666                  ; 00525737
     MOV EDI,0xbfcccccd                  ; 0052573c
     MOV ECX,0xc0866666                  ; 00525741
@@ -48,15 +48,15 @@ section .text
     MOV dword ptr [ESP + 0x8],EDI       ; 00525750
     MOV dword ptr [ESP],ECX             ; 00525754
     CMP EDX,EAX                         ; 00525757
-    JZ 0x00525767                       ; 00525759 | LAB_00525767
-        ;   XREF to: 00525767 (CONDITIONAL_JUMP)
+    JZ 0x00525767                       ; 00525759
+        ;   XREF to: 00525767 (CONDITIONAL_JUMP)  ; LAB_00525767
     MOV dword ptr [ESP + 0x1c],ESI      ; 0052575b
     MOV dword ptr [ESP + 0x20],EDI      ; 0052575f
     MOV dword ptr [ESP + 0x18],ECX      ; 00525763
     MOV EAX,dword ptr [EBX + 0xbee0]    ; 00525767
         ;   Label: LAB_00525767
     FLD float ptr [EAX + 0x34]          ; 0052576d
-    FADD double ptr [0x0063983e]        ; 00525770 | double DOUBLE_0063983e
+    FADD double ptr [0x0063983e]        ; 00525770 | DOUBLE_0063983e
     FSTP float ptr [EBX + 0x34]         ; 00525776
         ;   Label: LAB_00525776
     LEA EAX,[ESP + 0x18]                ; 00525779
@@ -65,8 +65,8 @@ section .text
     PUSH EAX                            ; 00525782
     MOV ECX,dword ptr [EBX + 0xbee0]    ; 00525783
     PUSH ECX                            ; 00525789
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0052578a | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 0052578a
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     LEA EDX,[EBX + 0x20]                ; 0052578f
     FLD float ptr [EAX]                 ; 00525792
     ADD ESP,0xc                         ; 00525794
@@ -80,8 +80,8 @@ section .text
     PUSH EBX                            ; 005257ac
     FSTP float ptr [EDX + 0x8]          ; 005257ad
     MOV dword ptr [EBX + 0xbd88],0x0    ; 005257b0
-    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 005257ba | void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
-        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 005257ba
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
     ADD ESP,0xc                         ; 005257bf
     ADD ESP,0x30                        ; 005257c2
     POP EDI                             ; 005257c5
@@ -98,15 +98,15 @@ section .text
     MOV dword ptr [ESP + 0x2c],EDI      ; 005257e4
     MOV dword ptr [ESP + 0x24],ECX      ; 005257e8
     CMP EDX,EAX                         ; 005257ec
-    JZ 0x005257fc                       ; 005257ee | LAB_005257fc
-        ;   XREF to: 005257fc (CONDITIONAL_JUMP)
+    JZ 0x005257fc                       ; 005257ee
+        ;   XREF to: 005257fc (CONDITIONAL_JUMP)  ; LAB_005257fc
     MOV dword ptr [ESP + 0x1c],ESI      ; 005257f0
     MOV dword ptr [ESP + 0x20],EDI      ; 005257f4
     MOV dword ptr [ESP + 0x18],ECX      ; 005257f8
     MOV EAX,dword ptr [EBX + 0xbee0]    ; 005257fc
         ;   Label: LAB_005257fc
     FLD float ptr [EAX + 0x34]          ; 00525802
-    FADD double ptr [0x00639836]        ; 00525805 | double DOUBLE_00639836
-    JMP 0x00525776                      ; 0052580b | LAB_00525776
-        ;   XREF to: 00525776 (UNCONDITIONAL_JUMP)
+    FADD double ptr [0x00639836]        ; 00525805 | DOUBLE_00639836
+    JMP 0x00525776                      ; 0052580b
+        ;   XREF to: 00525776 (UNCONDITIONAL_JUMP)  ; LAB_00525776
 

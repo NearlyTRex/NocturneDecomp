@@ -45,7 +45,7 @@ section .text
     MOV EBX,0x3db851ec                  ; 004d2942
     MOV ESI,0x3e4ccccd                  ; 004d2947
     MOV EDI,0xbea147ae                  ; 004d294c
-    PUSH 0x2db87d4                      ; 004d2951 | CDemonActorType g_CHeroClassInfo
+    PUSH 0x2db87d4                      ; 004d2951 | g_CHeroClassInfo
     MOV EAX,0x3fc90fdb                  ; 004d2956
     XOR EBP,EBP                         ; 004d295b
     PUSH 0x3                            ; 004d295d
@@ -61,19 +61,19 @@ section .text
     FXCH ST2                            ; 004d2994
     FSTP float ptr [0x02d7b808]         ; 004d2996 | DAT_02d7b808
     FSTP float ptr [0x02d7b80c]         ; 004d299c | DAT_02d7b80c
-    PUSH 0x67b5a4                       ; 004d29a2 | undefined4 g_CGabriellaClassVersion
+    PUSH 0x67b5a4                       ; 004d29a2 | g_CGabriellaClassVersion
     FSTP float ptr [0x02d7b810]         ; 004d29a7 | DAT_02d7b810
     PUSH 0x4d2ae0                       ; 004d29ad
     MOV ECX,0x3eb33333                  ; 004d29b2
     MOV EBX,0x40133333                  ; 004d29b7
-    PUSH 0x62ac6d                       ; 004d29bc | = "CGabriella" | s_CGabriella_0062ac6d = CGabriella
+    PUSH 0x62ac6d                       ; 004d29bc | = "CGabriella"
     MOV ESI,0x408ccccd                  ; 004d29c1
     MOV dword ptr [0x02d7b834],ECX      ; 004d29c6 | DAT_02d7b834
-    PUSH 0x2d7b898                      ; 004d29cc | CDemonActorType g_CGabriellaClassInfo
+    PUSH 0x2d7b898                      ; 004d29cc | g_CGabriellaClassInfo
     MOV dword ptr [0x02d7b838],EBX      ; 004d29d1 | DAT_02d7b838
     MOV dword ptr [0x02d7b83c],ESI      ; 004d29d7 | DAT_02d7b83c
-    CALL core_actor.cpp_registerActorClass_FUN_0040c2e0 ; 004d29dd | CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
-        ;   XREF to: 0040c2e0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_registerActorClass_FUN_0040c2e0 ; 004d29dd
+        ;   XREF to: 0040c2e0 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_registerActorClass_FUN_0040c2e0(CDemonActorType * this_ptr, char * class_name, CDemonActor_FactoryFunc * factor_func, int * max_version, ...)
     ADD ESP,0x18                        ; 004d29e2
     POP EBP                             ; 004d29e5
     POP EDI                             ; 004d29e6

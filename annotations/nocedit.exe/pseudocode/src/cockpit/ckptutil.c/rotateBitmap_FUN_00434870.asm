@@ -48,25 +48,25 @@ section .text
     IMUL EBX,dword ptr [ESP + 0x84]     ; 0043488f
     IMUL EBX,EBP                        ; 00434897
     PUSH 0x807                          ; 0043489a
-    PUSH 0x617f25                       ; 0043489f | = "..\\cockpit\\ckptutil.c" | s_cockpit_ckptutil_c_00617f25 = ..\cockpit\ckptutil.c
+    PUSH 0x617f25                       ; 0043489f | = "..\\cockpit\\ckptutil.c"
     PUSH EBX                            ; 004348a4
     MOV dword ptr [ESP + 0x6c],EAX      ; 004348a5
-    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 004348a9 | void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
-        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 004348a9
+        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 004348ae
     MOV dword ptr [ESP + 0x54],EAX      ; 004348b1
     TEST EAX,EAX                        ; 004348b5
-    JZ 0x00434970                       ; 004348b7 | LAB_00434970
-        ;   XREF to: 00434970 (CONDITIONAL_JUMP)
+    JZ 0x00434970                       ; 004348b7
+        ;   XREF to: 00434970 (CONDITIONAL_JUMP)  ; LAB_00434970
     CMP EBP,0x1                         ; 004348bd
         ;   Label: LAB_004348bd
-    JNZ 0x004349a9                      ; 004348c0 | LAB_004349a9
-        ;   XREF to: 004349a9 (CONDITIONAL_JUMP)
+    JNZ 0x004349a9                      ; 004348c0
+        ;   XREF to: 004349a9 (CONDITIONAL_JUMP)  ; LAB_004349a9
     MOV EAX,dword ptr [ESP + 0x84]      ; 004348c6
     XOR ESI,ESI                         ; 004348cd
     TEST EAX,EAX                        ; 004348cf
-    JBE 0x00434927                      ; 004348d1 | LAB_00434927
-        ;   XREF to: 00434927 (CONDITIONAL_JUMP)
+    JBE 0x00434927                      ; 004348d1
+        ;   XREF to: 00434927 (CONDITIONAL_JUMP)  ; LAB_00434927
     MOV EAX,dword ptr [ESP + 0x60]      ; 004348d3
     MOV dword ptr [ESP + 0x50],EAX      ; 004348d7
     IMUL EDI,EAX,0x0                    ; 004348db
@@ -81,8 +81,8 @@ section .text
     ADD EBX,EAX                         ; 004348f6
     XOR EAX,EAX                         ; 004348f8
     TEST ECX,ECX                        ; 004348fa
-    JBE 0x00434915                      ; 004348fc | LAB_00434915
-        ;   XREF to: 00434915 (CONDITIONAL_JUMP)
+    JBE 0x00434915                      ; 004348fc
+        ;   XREF to: 00434915 (CONDITIONAL_JUMP)  ; LAB_00434915
     MOV CL,byte ptr [EDX]               ; 004348fe
         ;   Label: LAB_004348fe
     MOV byte ptr [EBX],CL               ; 00434900
@@ -92,16 +92,16 @@ section .text
     MOV ECX,dword ptr [ESP + 0x60]      ; 0043490c
     INC EDX                             ; 00434910
     CMP EAX,ECX                         ; 00434911
-    JC 0x004348fe                       ; 00434913 | LAB_004348fe
-        ;   XREF to: 004348fe (CONDITIONAL_JUMP)
+    JC 0x004348fe                       ; 00434913
+        ;   XREF to: 004348fe (CONDITIONAL_JUMP)  ; LAB_004348fe
     MOV EBX,dword ptr [ESP + 0x50]      ; 00434915
         ;   Label: LAB_00434915
     MOV EAX,dword ptr [ESP + 0x84]      ; 00434919
     INC ESI                             ; 00434920
     ADD EDI,EBX                         ; 00434921
     CMP ESI,EAX                         ; 00434923
-    JC 0x004348de                       ; 00434925 | LAB_004348de
-        ;   XREF to: 004348de (CONDITIONAL_JUMP)
+    JC 0x004348de                       ; 00434925
+        ;   XREF to: 004348de (CONDITIONAL_JUMP)  ; LAB_004348de
     MOV ECX,dword ptr [ESP + 0x80]      ; 00434927
         ;   Label: LAB_00434927
     IMUL ECX,dword ptr [ESP + 0x84]     ; 0043492e
@@ -117,11 +117,11 @@ section .text
     MOVSB.REP ES:EDI,ESI                ; 0043494e
     POP EDI                             ; 00434950
     PUSH 0x82b                          ; 00434951
-    PUSH 0x617f8b                       ; 00434956 | = "..\\cockpit\\ckptutil.c" | s_cockpit_ckptutil_c_00617f8b = ..\cockpit\ckptutil.c
+    PUSH 0x617f8b                       ; 00434956 | = "..\\cockpit\\ckptutil.c"
     MOV ESI,dword ptr [ESP + 0x5c]      ; 0043495b
     PUSH ESI                            ; 0043495f
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00434960 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00434960
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 00434965
     ADD ESP,0x68                        ; 00434968
     POP EBP                             ; 0043496b
@@ -131,30 +131,30 @@ section .text
     RET                                 ; 0043496f
     PUSH EBX                            ; 00434970
         ;   Label: LAB_00434970
-    PUSH 0x617f3b                       ; 00434971 | = "Unable to allocate %u bytes for tempo..." | s_Unable_to_allocate_u_byt_00617f3b = Unable to allocate %u bytes for temporary rotated bitmap.
+    PUSH 0x617f3b                       ; 00434971 | = "Unable to allocate %u bytes for tempo..."
     LEA EAX,[ESP + 0x8]                 ; 00434976
     PUSH EAX                            ; 0043497a
     MOV EBX,0x80a                       ; 0043497b
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00434980 | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00434980
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00434985
     MOV EAX,ESP                         ; 00434988
-    MOV ECX,0x617f75                    ; 0043498a | = "..\\cockpit\\ckptutil.c" | s_cockpit_ckptutil_c_00617f75 = ..\cockpit\ckptutil.c
+    MOV ECX,0x617f75                    ; 0043498a | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 0043498f
-    MOV dword ptr [0x02f0ca4c],EBX      ; 00434990 | int g_CurrentLineNumber
-    MOV dword ptr [0x02f0ca48],ECX      ; 00434996 | char * g_CurrentFilename
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0043499c | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02f0ca4c],EBX      ; 00434990 | g_CurrentLineNumber
+    MOV dword ptr [0x02f0ca48],ECX      ; 00434996 | g_CurrentFilename
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0043499c
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004349a1
-    JMP 0x004348bd                      ; 004349a4 | LAB_004348bd
-        ;   XREF to: 004348bd (UNCONDITIONAL_JUMP)
+    JMP 0x004348bd                      ; 004349a4
+        ;   XREF to: 004348bd (UNCONDITIONAL_JUMP)  ; LAB_004348bd
     XOR ESI,ESI                         ; 004349a9
         ;   Label: LAB_004349a9
     MOV EDI,dword ptr [ESP + 0x84]      ; 004349ab
     MOV dword ptr [ESP + 0x58],ESI      ; 004349b2
     TEST EDI,EDI                        ; 004349b6
-    JBE 0x00434927                      ; 004349b8 | LAB_00434927
-        ;   XREF to: 00434927 (CONDITIONAL_JUMP)
+    JBE 0x00434927                      ; 004349b8
+        ;   XREF to: 00434927 (CONDITIONAL_JUMP)  ; LAB_00434927
     MOV EAX,EDI                         ; 004349be
     IMUL EAX,EBP                        ; 004349c0
     MOV dword ptr [ESP + 0x5c],EAX      ; 004349c3
@@ -173,8 +173,8 @@ section .text
     ADD EDX,ESI                         ; 004349ef
     MOV dword ptr [ESP + 0x64],EAX      ; 004349f1
     TEST ECX,ECX                        ; 004349f5
-    JBE 0x00434a28                      ; 004349f7 | LAB_00434a28
-        ;   XREF to: 00434a28 (CONDITIONAL_JUMP)
+    JBE 0x00434a28                      ; 004349f7
+        ;   XREF to: 00434a28 (CONDITIONAL_JUMP)  ; LAB_00434a28
     MOV ECX,EBP                         ; 004349f9
         ;   Label: LAB_004349f9
     MOV ESI,EDX                         ; 004349fb
@@ -195,16 +195,16 @@ section .text
     ADD EBX,ESI                         ; 00434a1e
     MOV dword ptr [ESP + 0x64],EDI      ; 00434a20
     CMP EDI,ECX                         ; 00434a24
-    JC 0x004349f9                       ; 00434a26 | LAB_004349f9
-        ;   XREF to: 004349f9 (CONDITIONAL_JUMP)
+    JC 0x004349f9                       ; 00434a26
+        ;   XREF to: 004349f9 (CONDITIONAL_JUMP)  ; LAB_004349f9
     MOV EDX,dword ptr [ESP + 0x58]      ; 00434a28
         ;   Label: LAB_00434a28
     INC EDX                             ; 00434a2c
     MOV ECX,dword ptr [ESP + 0x84]      ; 00434a2d
     MOV dword ptr [ESP + 0x58],EDX      ; 00434a34
     CMP EDX,ECX                         ; 00434a38
-    JNC 0x00434927                      ; 00434a3a | LAB_00434927
-        ;   XREF to: 00434927 (CONDITIONAL_JUMP)
-    JMP 0x004349c7                      ; 00434a40 | LAB_004349c7
-        ;   XREF to: 004349c7 (UNCONDITIONAL_JUMP)
+    JNC 0x00434927                      ; 00434a3a
+        ;   XREF to: 00434927 (CONDITIONAL_JUMP)  ; LAB_00434927
+    JMP 0x004349c7                      ; 00434a40
+        ;   XREF to: 004349c7 (UNCONDITIONAL_JUMP)  ; LAB_004349c7
 

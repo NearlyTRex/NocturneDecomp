@@ -1,103 +1,103 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 5, 
-    "global_count": 2, 
-    "total_lines": 31, 
-    "assembly_lines": 20, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_drawPolygon*", 
-      "name": "g_APIDLL_drawPolygon", 
-      "addr": "03f6b8c8", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b75e0", 
-    "signature": "int wincore_windll.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)", 
-    "address_range": [
-      [
-        "005b75e0", 
-        "005b7608"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_drawPolygon_FUN_005b75e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SRenderVertex *", 
-        "size": 4, 
-        "name": "vertices"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_count"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "render_flags"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    "assembly_lines": 20,
+    "complexity_score": 11,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
   "cross_references": [
     {
-      "from_addr": "005fd2b0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0", 
-      "addr": "005fcfc0"
-    }, 
+      "addr": "005fcfc0",
+      "from_addr": "005fd2b0",
+      "name": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005526fe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510", 
-      "addr": "00552510"
-    }, 
+      "addr": "00552510",
+      "from_addr": "005526fe",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00553748", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_prim.c_renderScanlinePolygon_FUN_00553470", 
-      "addr": "00553470"
-    }, 
+      "addr": "00553470",
+      "from_addr": "00553748",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_00553470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005dd664", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_texture.cpp_CTextureCache_renderAllTextures_FUN_005dd580", 
-      "addr": "005dd580"
-    }, 
+      "addr": "005dd580",
+      "from_addr": "005dd664",
+      "name": "engine_texture.cpp_CTextureCache_renderAllTextures_FUN_005dd580",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b7aed", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_windll.cpp_drawFullScreenQuad_FUN_005b7a50", 
-      "addr": "005b7a50"
+      "addr": "005b7a50",
+      "from_addr": "005b7aed",
+      "name": "wincore_windll.cpp_drawFullScreenQuad_FUN_005b7a50",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b75e0",
+    "address_range": [
+      [
+        "005b75e0",
+        "005b7608"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_drawPolygon_FUN_005b75e0",
+    "signature": "int wincore_windll.cpp_drawPolygon_FUN_005b75e0(SRenderVertex * vertices, int vertex_count, int render_flags)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b8c8",
+      "name": "g_APIDLL_drawPolygon",
+      "type": "APIDLL_drawPolygon*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

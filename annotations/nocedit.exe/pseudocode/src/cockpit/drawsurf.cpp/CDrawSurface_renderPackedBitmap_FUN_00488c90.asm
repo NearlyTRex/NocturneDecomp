@@ -40,8 +40,8 @@ section .text
     PUSH EDX                            ; 00488cbb
     MOV EDI,dword ptr [ESP + 0x38]      ; 00488cbc
     PUSH EDI                            ; 00488cc0
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0 ; 00488cc1 | void cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0(CPackedBitmap * this_ptr, int dest_x, int dest_y, int rect_left, ...)
-        ;   XREF to: 0054adb0 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0 ; 00488cc1
+        ;   XREF to: 0054adb0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0(CPackedBitmap * this_ptr, int dest_x, int dest_y, int rect_left, ...)
     ADD ESP,0x1c                        ; 00488cc6
     POP EBP                             ; 00488cc9
     POP EDI                             ; 00488cca

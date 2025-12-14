@@ -20,13 +20,11 @@ int __cdecl engine_light_cpp_calculateLighting_FUN_00505780(int normal_x,int nor
           ((uint)((longlong)normal_z * (longlong)g_LightDirectionZ) >> 0x10 |
           (int)((ulonglong)((longlong)normal_z * (longlong)g_LightDirectionZ) >> 0x20) << 0x10);
   iVar2 = -iVar3;
-  if (iVar3 < 1) {
-    if (iVar3 != -0xffff && 0xfffe < iVar2) {
-      iVar2 = 0xffff;
-    }
-  }
-  else {
+  if (iVar2 < 0) {
     iVar2 = 0;
+  }
+  else if (iVar3 != -0xffff && 0xfffe < iVar2) {
+    iVar2 = 0xffff;
   }
   lVar1 = (longlong)iVar2 * (longlong)(0xffff - g_AmbientLightLevel);
   iVar3 = g_AmbientLightLevel + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 79, 
-    "assembly_lines": 54, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
-      "addr": "0040c790"
-    }, 
-    {
-      "name": "core_inv.cpp_CInventory_removeItem_FUN_004fea70", 
-      "addr": "004fea70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "g_CKeyActorClassInfo.name_hash", 
-      "addr": "02dcd7d0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005014a0", 
-    "signature": "void core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory * this_ptr, uint key_mask)", 
-    "address_range": [
-      [
-        "005014a0", 
-        "005014fb"
-      ]
-    ], 
-    "name": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CInventory *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "key_mask"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 54,
+    "complexity_score": 25,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 79
+  },
   "cross_references": [
     {
-      "from_addr": "004f3b7e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hero.cpp_CHero_FUN_004f3b20", 
-      "addr": "004f3b20"
-    }, 
+      "addr": "004f3b20",
+      "from_addr": "004f3b7e",
+      "name": "core_hero.cpp_CHero_FUN_004f3b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004f391f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_hero.cpp_FUN_004f3910", 
-      "addr": "004f3910"
+      "addr": "004f3910",
+      "from_addr": "004f391f",
+      "name": "core_hero.cpp_FUN_004f3910",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005014a0",
+    "address_range": [
+      [
+        "005014a0",
+        "005014fb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0",
+    "signature": "void core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0(CInventory * this_ptr, uint key_mask)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
+    },
+    {
+      "addr": "004fea70",
+      "name": "core_inv.cpp_CInventory_removeItem_FUN_004fea70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02dcd7d0",
+      "name": "g_CKeyActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "key_mask",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
 }

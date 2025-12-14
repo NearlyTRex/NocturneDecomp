@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 67, 
-    "pseudocode_lines": 52, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 99, 
-    "assembly_lines": 47, 
-    "suspect_count": 1, 
+    "assembly_lines": 47,
+    "complexity_score": 67,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 52,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d02584", 
-      "addr": "02d02584", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 32, 
-      "match": "(short *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0049077d", 
-    "signature": "void core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
-    "address_range": [
-      [
-        "0049077d", 
-        "004907d0"
-      ], 
-      [
-        "004907e0", 
-        "004907e6"
-      ]
-    ], 
-    "name": "core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 99
+  },
   "cross_references": [
     {
-      "from_addr": "0048a9df", 
-      "type": "PARAM", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950", 
-      "addr": "0048a950"
+      "addr": "0048a950",
+      "from_addr": "0048a9df",
+      "name": "engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950",
+      "type": "PARAM"
+    }
+  ],
+  "function": {
+    "address": "0049077d",
+    "address_range": [
+      [
+        "0049077d",
+        "004907d0"
+      ],
+      [
+        "004907e0",
+        "004907e6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d",
+    "signature": "void core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02d02584",
+      "name": "DAT_02d02584",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(short *)((int)",
+      "text": "psVar9 = (short *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);",
+      "type": "pointer_cast"
     }
   ]
 }

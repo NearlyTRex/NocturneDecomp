@@ -33,7 +33,7 @@ section .text
     XOR EDX,EDX                         ; 00455261
     SUB EAX,ESI                         ; 00455263
     DIV ECX                             ; 00455265
-    MOV [0x015c4824],EAX                ; 00455267 | uint[3] g_TempTriangleIndices
+    MOV [0x015c4824],EAX                ; 00455267 | g_TempTriangleIndices
     MOV EAX,dword ptr [EBX + 0x4]       ; 0045526c
     XOR EDX,EDX                         ; 0045526f
     SUB EAX,ESI                         ; 00455271
@@ -47,10 +47,10 @@ section .text
     PUSH EDX                            ; 00455287
     PUSH 0x4                            ; 00455288
     PUSH 0x3                            ; 0045528a
-    PUSH 0x15c4824                      ; 0045528c | uint[3] g_TempTriangleIndices
+    PUSH 0x15c4824                      ; 0045528c | g_TempTriangleIndices
     MOV [0x015c482c],EAX                ; 00455291 | g_TempTriangleIndices[2]
-    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00455296 | SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 00455296
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
     ADD ESP,0x10                        ; 0045529b
     MOV ECX,dword ptr [ESP + 0x10]      ; 0045529e
     PUSH ECX                            ; 004552a2
@@ -58,8 +58,8 @@ section .text
     PUSH 0x14                           ; 004552a5
     ADD EBX,0xc                         ; 004552a7
     PUSH EBX                            ; 004552aa
-    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 004552ab | SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
-        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fwrite_FUN_005fdc00 ; 004552ab
+        ;   XREF to: 005fdc00 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fwrite_FUN_005fdc00(void * ptr, SIZE_T size, SIZE_T count, FILE * file)
     ADD ESP,0x10                        ; 004552b0
     POP ESI                             ; 004552b3
     POP EBX                             ; 004552b4

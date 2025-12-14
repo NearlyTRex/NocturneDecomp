@@ -22,14 +22,14 @@
 
 section .text
 
-    MOV EDX,0x616444                    ; 0041dc20 | = "..\\engine\\boss.c" | s_engine_boss_c_00616444 = ..\engine\boss.c
+    MOV EDX,0x616444                    ; 0041dc20 | = "..\\engine\\boss.c"
         ;   Label: engine_boss.c_modelStructNotSupported_FUN_0041dc20
     MOV ECX,0x49                        ; 0041dc25
-    PUSH 0x616455                       ; 0041dc2a | = "modelStruct not supported" | s_modelStruct_not_supporte_00616455 = modelStruct not supported
-    MOV dword ptr [0x02f0ca48],EDX      ; 0041dc2f | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0041dc35 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0041dc3b | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x616455                       ; 0041dc2a | = "modelStruct not supported"
+    MOV dword ptr [0x02f0ca48],EDX      ; 0041dc2f | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0041dc35 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0041dc3b
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0041dc40
     RET                                 ; 0041dc43
 

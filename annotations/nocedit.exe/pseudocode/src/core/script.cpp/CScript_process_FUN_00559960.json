@@ -1,171 +1,171 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 60, 
-    "pseudocode_lines": 60, 
-    "cross_reference_count": 1, 
-    "global_count": 11, 
-    "total_lines": 208, 
-    "assembly_lines": 148, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042f9e0", 
-      "addr": "0042f9e0"
-    }, 
-    {
-      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70", 
-      "addr": "004dce70"
-    }, 
-    {
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
-      "addr": "0049e740"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
-      "addr": "005a9c40"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Error_processing_script__00641720", 
-      "addr": "00641720", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_WARNING_Infinite_loop_de_0064175d", 
-      "addr": "0064175d", 
-      "value": null
-    }, 
-    {
-      "type": "CEditorTools*", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "00678a60", 
-      "value": "02cf1cd4"
-    }, 
-    {
-      "type": "CGame*", 
-      "name": "g_CGamePtr", 
-      "addr": "0067b654", 
-      "value": "02d81a9c"
-    }, 
-    {
-      "type": "CEditorTools", 
-      "name": "g_CEditorToolsPtr", 
-      "addr": "02cf1cd4", 
-      "value": null
-    }, 
-    {
-      "type": "CGame", 
-      "name": "g_CGameInstance", 
-      "addr": "02d81a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d81b68", 
-      "addr": "02d81b68", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0310ec9c", 
-      "addr": "0310ec9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined1", 
-      "name": "DAT_0310eca0", 
-      "addr": "0310eca0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0310f4a4", 
-      "addr": "0310f4a4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0310f4a8", 
-      "addr": "0310f4a8", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00559969", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00559960", 
-    "signature": "void core_script.cpp_CScript_process_FUN_00559960(CScript * this_ptr)", 
-    "address_range": [
-      [
-        "00559960", 
-        "00559ab9"
-      ]
-    ], 
-    "name": "core_script.cpp_CScript_process_FUN_00559960"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CScript *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 145,
+    "complexity_score": 60,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 11,
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 205
+  },
   "cross_references": [
     {
-      "from_addr": "004e3282", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_process_FUN_004e3190", 
-      "addr": "004e3190"
+      "addr": "004e3190",
+      "from_addr": "004e3282",
+      "name": "core_game.cpp_CGame_process_FUN_004e3190",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00559960",
+    "address_range": [
+      [
+        "00559960",
+        "00559ab9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_process_FUN_00559960",
+    "signature": "void core_script.cpp_CScript_process_FUN_00559960(CScript * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042f9e0",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042f9e0"
+    },
+    {
+      "addr": "004dce70",
+      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70"
+    },
+    {
+      "addr": "0055a810",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810"
+    },
+    {
+      "addr": "0049e740",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
+    },
+    {
+      "addr": "005a9c40",
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00641720",
+      "name": "s_Error_processing_script__00641720",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064175d",
+      "name": "s_WARNING_Infinite_loop_de_0064175d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00678a60",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "02cf1cd4"
+    },
+    {
+      "addr": "0067b654",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "02d81a9c"
+    },
+    {
+      "addr": "02cf1cd4",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools",
+      "value": null
+    },
+    {
+      "addr": "02d81a9c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "02d81b68",
+      "name": "DAT_02d81b68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310ec9c",
+      "name": "DAT_0310ec9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310eca0",
+      "name": "DAT_0310eca0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0310f4a4",
+      "name": "DAT_0310f4a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0310f4a8",
+      "name": "DAT_0310f4a8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00559969",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

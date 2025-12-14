@@ -11,8 +11,7 @@ void core_shovel_cpp_FUN_00588b60(void)
 {
   CShovel *this_ptr;
   
-  this_ptr = (CShovel *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\shovel.cpp",0x20);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x578,"..\\core\\shovel.cpp",0x20);
   if (this_ptr == (CShovel *)0x0) {
     return;
   }

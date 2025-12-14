@@ -1,106 +1,106 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 2, 
-    "global_count": 4, 
-    "total_lines": 100, 
-    "assembly_lines": 68, 
-    "suspect_count": 1, 
+    "assembly_lines": 68,
+    "complexity_score": 44,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 29,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dpart.cpp_CDemonPart_dtor_FUN_00482160", 
-      "addr": "00482160"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
-      "addr": "0050f210"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_006225df", 
-      "addr": "006225df", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dtrace_cpp_006225f2", 
-      "addr": "006225f2", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentDebugFilename", 
-      "addr": "0067d20c", 
-      "value": "0067d200"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentDebugLine", 
-      "addr": "02f0d944", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 15, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar2 = (uint *)((int)this_ptr->cube_list->voxel_data + iVar4 + -0x14);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004942d0", 
-    "signature": "void core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0(CDemonRaytrace * this_ptr)", 
-    "address_range": [
-      [
-        "004942d0", 
-        "00494375"
-      ]
-    ], 
-    "name": "core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRaytrace *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 97
+  },
   "cross_references": [
     {
-      "from_addr": "00494246", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240", 
-      "addr": "00494240"
-    }, 
+      "addr": "00494240",
+      "from_addr": "00494246",
+      "name": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00494d7c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0", 
-      "addr": "004947a0"
+      "addr": "004947a0",
+      "from_addr": "00494d7c",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004942d0",
+    "address_range": [
+      [
+        "004942d0",
+        "00494375"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0",
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0(CDemonRaytrace * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00482160",
+      "name": "core_dpart.cpp_CDemonPart_dtor_FUN_00482160"
+    },
+    {
+      "addr": "0050f210",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006225df",
+      "name": "s_core_dtrace_cpp_006225df",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006225f2",
+      "name": "s_core_dtrace_cpp_006225f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d20c",
+      "name": "g_CurrentDebugFilename",
+      "type": "char*",
+      "value": "0067d200"
+    },
+    {
+      "addr": "02f0d944",
+      "name": "g_CurrentDebugLine",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)this_ptr->cube_list->voxel_data + iVar3 + -0x14);",
+      "type": "pointer_cast"
     }
   ]
 }

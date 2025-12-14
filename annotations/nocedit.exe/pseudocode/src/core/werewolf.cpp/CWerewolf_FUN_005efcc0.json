@@ -1,104 +1,104 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 52, 
-    "pseudocode_lines": 52, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 112, 
-    "assembly_lines": 60, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
-      "addr": "0040cc10"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_FUN_004a9650", 
-      "addr": "004a9650"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
-      "addr": "005a0820"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450", 
-      "addr": "005a0450"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0", 
-      "addr": "00599fc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bip01_Spine3_00657c5f", 
-      "addr": "00657c5f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bip01_L_Finger1_00657c6c", 
-      "addr": "00657c6c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bip01_R_Finger1_00657c7c", 
-      "addr": "00657c7c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bip01jaw2_00657c8c", 
-      "addr": "00657c8c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bip01_Head_00657c96", 
-      "addr": "00657c96", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 60,
+    "complexity_score": 52,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 5,
+    "pseudocode_lines": 52,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 112
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005efcc0", 
-    "signature": "void core_werewolf.cpp_CWerewolf_FUN_005efcc0(CWerewolf * this_ptr)", 
+    "address": "005efcc0",
     "address_range": [
       [
-        "005efcc0", 
+        "005efcc0",
         "005efd71"
       ]
-    ], 
-    "name": "core_werewolf.cpp_CWerewolf_FUN_005efcc0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_werewolf.cpp_CWerewolf_FUN_005efcc0",
+    "signature": "void core_werewolf.cpp_CWerewolf_FUN_005efcc0(CWerewolf * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc10",
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
+    },
+    {
+      "addr": "004a9650",
+      "name": "core_enemy.cpp_CEnemy_FUN_004a9650"
+    },
+    {
+      "addr": "005a0820",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
+    },
+    {
+      "addr": "005a0450",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450"
+    },
+    {
+      "addr": "00599fc0",
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00657c5f",
+      "name": "s_Bip01_Spine3_00657c5f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657c6c",
+      "name": "s_Bip01_L_Finger1_00657c6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657c7c",
+      "name": "s_Bip01_R_Finger1_00657c7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657c8c",
+      "name": "s_Bip01jaw2_00657c8c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00657c96",
+      "name": "s_Bip01_Head_00657c96",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 16, 
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWerewolf *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWerewolf *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

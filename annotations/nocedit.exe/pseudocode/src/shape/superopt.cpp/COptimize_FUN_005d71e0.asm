@@ -32,23 +32,23 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 005d71e8
     MOV EDX,dword ptr [ESP + 0x18]      ; 005d71ec
     TEST EDX,EDX                        ; 005d71f0
-    JZ 0x005d7248                       ; 005d71f2 | LAB_005d7248
-        ;   XREF to: 005d7248 (CONDITIONAL_JUMP)
+    JZ 0x005d7248                       ; 005d71f2
+        ;   XREF to: 005d7248 (CONDITIONAL_JUMP)  ; LAB_005d7248
     TEST EDI,EDI                        ; 005d71f4
-    JZ 0x005d7248                       ; 005d71f6 | LAB_005d7248
-        ;   XREF to: 005d7248 (CONDITIONAL_JUMP)
+    JZ 0x005d7248                       ; 005d71f6
+        ;   XREF to: 005d7248 (CONDITIONAL_JUMP)  ; LAB_005d7248
     PUSH EDX                            ; 005d71f8
     PUSH EBP                            ; 005d71f9
-    CALL shape_superopt.cpp_CObj_copyFrom_FUN_005d2650 ; 005d71fa | int shape_superopt.cpp_CObj_copyFrom_FUN_005d2650(CObj * this_ptr, CObj * source)
-        ;   XREF to: 005d2650 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_CObj_copyFrom_FUN_005d2650 ; 005d71fa
+        ;   XREF to: 005d2650 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CObj_copyFrom_FUN_005d2650(CObj * this_ptr, CObj * source)
     ADD ESP,0x8                         ; 005d71ff
     TEST EAX,EAX                        ; 005d7202
-    JZ 0x005d725c                       ; 005d7204 | LAB_005d725c
-        ;   XREF to: 005d725c (CONDITIONAL_JUMP)
+    JZ 0x005d725c                       ; 005d7204
+        ;   XREF to: 005d725c (CONDITIONAL_JUMP)  ; LAB_005d725c
     MOV ESI,0x1                         ; 005d7206
     CMP EDI,ESI                         ; 005d720b
-    JBE 0x005d723e                      ; 005d720d | LAB_005d723e
-        ;   XREF to: 005d723e (CONDITIONAL_JUMP)
+    JBE 0x005d723e                      ; 005d720d
+        ;   XREF to: 005d723e (CONDITIONAL_JUMP)  ; LAB_005d723e
     SHL EDI,0x2                         ; 005d720f
     LEA EAX,[EDI*0x8 + 0x0]             ; 005d7212
     MOV EBX,dword ptr [ESP + 0x18]      ; 005d7219
@@ -59,17 +59,17 @@ section .text
     PUSH EBX                            ; 005d7228
         ;   Label: LAB_005d7228
     PUSH EBP                            ; 005d7229
-    CALL shape_superopt.cpp_CObj_appendTo_FUN_005d2720 ; 005d722a | int shape_superopt.cpp_CObj_appendTo_FUN_005d2720(CObj * this_ptr, CObj * dest_obj)
-        ;   XREF to: 005d2720 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_CObj_appendTo_FUN_005d2720 ; 005d722a
+        ;   XREF to: 005d2720 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CObj_appendTo_FUN_005d2720(CObj * this_ptr, CObj * dest_obj)
     ADD ESP,0x8                         ; 005d722f
     TEST EAX,EAX                        ; 005d7232
-    JZ 0x005d7270                       ; 005d7234 | LAB_005d7270
-        ;   XREF to: 005d7270 (CONDITIONAL_JUMP)
+    JZ 0x005d7270                       ; 005d7234
+        ;   XREF to: 005d7270 (CONDITIONAL_JUMP)  ; LAB_005d7270
     ADD EBX,0x1c                        ; 005d7236
     INC ESI                             ; 005d7239
     CMP EBX,EDI                         ; 005d723a
-    JC 0x005d7228                       ; 005d723c | LAB_005d7228
-        ;   XREF to: 005d7228 (CONDITIONAL_JUMP)
+    JC 0x005d7228                       ; 005d723c
+        ;   XREF to: 005d7228 (CONDITIONAL_JUMP)  ; LAB_005d7228
     MOV EAX,0x1                         ; 005d723e
         ;   Label: LAB_005d723e
     POP EBP                             ; 005d7243
@@ -77,10 +77,10 @@ section .text
     POP ESI                             ; 005d7245
     POP EBX                             ; 005d7246
     RET                                 ; 005d7247
-    PUSH 0x654572                       ; 005d7248 | = "Invalid inputs to setGeometry" | s_Invalid_inputs_to_setGeo_00654572 = Invalid inputs to setGeometry
+    PUSH 0x654572                       ; 005d7248 | = "Invalid inputs to setGeometry"
         ;   Label: LAB_005d7248
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d724d | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d724d
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     ADD ESP,0x4                         ; 005d7252
     XOR EAX,EAX                         ; 005d7255
     POP EBP                             ; 005d7257
@@ -88,10 +88,10 @@ section .text
     POP ESI                             ; 005d7259
     POP EBX                             ; 005d725a
     RET                                 ; 005d725b
-    PUSH 0x6545a0                       ; 005d725c | = "Unable to copy object for optimize" | s_Unable_to_copy_object_fo_006545a0 = Unable to copy object for optimize
+    PUSH 0x6545a0                       ; 005d725c | = "Unable to copy object for optimize"
         ;   Label: LAB_005d725c
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d7261 | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d7261
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     ADD ESP,0x4                         ; 005d7266
     XOR EAX,EAX                         ; 005d7269
     POP EBP                             ; 005d726b
@@ -101,9 +101,9 @@ section .text
     RET                                 ; 005d726f
     PUSH ESI                            ; 005d7270
         ;   Label: LAB_005d7270
-    PUSH 0x6545c3                       ; 005d7271 | = "Unable to copy merge with object %d f..." | s_Unable_to_copy_merge_wit_006545c3 = Unable to copy merge with object %d for optimize
-    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d7276 | void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
-        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)
+    PUSH 0x6545c3                       ; 005d7271 | = "Unable to copy merge with object %d f..."
+    CALL shape_superopt.cpp_logToFile_FUN_005c7910 ; 005d7276
+        ;   XREF to: 005c7910 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_logToFile_FUN_005c7910(char * format)
     ADD ESP,0x8                         ; 005d727b
     XOR EAX,EAX                         ; 005d727e
     POP EBP                             ; 005d7280

@@ -9,12 +9,9 @@
 void __cdecl sound_sndmain_cpp_convert8BitAudioSignedness_FUN_005aa7b0(byte *buffer,int num_bytes)
 
 {
-  if (0 < num_bytes) {
-    do {
-      num_bytes = num_bytes + -1;
-      *buffer = *buffer ^ 0x80;
-      buffer = buffer + 1;
-    } while (0 < num_bytes);
+  for (; 0 < num_bytes; num_bytes = num_bytes + -1) {
+    *buffer = *buffer ^ 0x80;
+    buffer = buffer + 1;
   }
   return;
 }

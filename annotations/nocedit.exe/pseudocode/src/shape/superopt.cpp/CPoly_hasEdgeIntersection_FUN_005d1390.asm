@@ -125,8 +125,8 @@ section .text
     FCOMP double ptr [EDX + 0x40]       ; 005d13a7
     FNSTSW AX                           ; 005d13aa
     SAHF                                ; 005d13ac
-    JBE 0x005d1a0a                      ; 005d13ad | LAB_005d1a0a
-        ;   XREF to: 005d1a0a (CONDITIONAL_JUMP)
+    JBE 0x005d1a0a                      ; 005d13ad
+        ;   XREF to: 005d1a0a (CONDITIONAL_JUMP)  ; LAB_005d1a0a
     FLD double ptr [EDX + 0x40]         ; 005d13b3
     FCHS                                ; 005d13b6
     FSTP double ptr [ESP]               ; 005d13b8
@@ -139,8 +139,8 @@ section .text
     FCOMP double ptr [EDX + 0x48]       ; 005d13cc
     FNSTSW AX                           ; 005d13cf
     SAHF                                ; 005d13d1
-    JA 0x005d1a1c                       ; 005d13d2 | LAB_005d1a1c
-        ;   XREF to: 005d1a1c (CONDITIONAL_JUMP)
+    JA 0x005d1a1c                       ; 005d13d2
+        ;   XREF to: 005d1a1c (CONDITIONAL_JUMP)  ; LAB_005d1a1c
     MOV EAX,dword ptr [EDX + 0x48]      ; 005d13d8
     MOV dword ptr [ESP + 0x8],EAX       ; 005d13db
     MOV EAX,dword ptr [EDX + 0x4c]      ; 005d13df
@@ -154,8 +154,8 @@ section .text
     FCOMP double ptr [EDX + 0x50]       ; 005d13f8
     FNSTSW AX                           ; 005d13fb
     SAHF                                ; 005d13fd
-    JA 0x005d1a2a                       ; 005d13fe | LAB_005d1a2a
-        ;   XREF to: 005d1a2a (CONDITIONAL_JUMP)
+    JA 0x005d1a2a                       ; 005d13fe
+        ;   XREF to: 005d1a2a (CONDITIONAL_JUMP)  ; LAB_005d1a2a
     MOV EAX,dword ptr [EDX + 0x50]      ; 005d1404
     MOV dword ptr [ESP + 0x20],EAX      ; 005d1407
     MOV EAX,dword ptr [EDX + 0x54]      ; 005d140b
@@ -213,14 +213,14 @@ section .text
     FCOMP double ptr [ESP + 0x28]       ; 005d14b0
     FNSTSW AX                           ; 005d14b4
     SAHF                                ; 005d14b6
-    JC 0x005d1a38                       ; 005d14b7 | LAB_005d1a38
-        ;   XREF to: 005d1a38 (CONDITIONAL_JUMP)
+    JC 0x005d1a38                       ; 005d14b7
+        ;   XREF to: 005d1a38 (CONDITIONAL_JUMP)  ; LAB_005d1a38
     FLD double ptr [ESP + 0x18]         ; 005d14bd
     FCOMP double ptr [ESP + 0x20]       ; 005d14c1
     FNSTSW AX                           ; 005d14c5
     SAHF                                ; 005d14c7
-    JC 0x005d1a38                       ; 005d14c8 | LAB_005d1a38
-        ;   XREF to: 005d1a38 (CONDITIONAL_JUMP)
+    JC 0x005d1a38                       ; 005d14c8
+        ;   XREF to: 005d1a38 (CONDITIONAL_JUMP)  ; LAB_005d1a38
     MOV EAX,dword ptr [ESP + 0x1b4]     ; 005d14ce
     MOV EAX,dword ptr [EAX + 0x8]       ; 005d14d5
     MOV dword ptr [ESP + 0x128],EAX     ; 005d14d8
@@ -330,21 +330,21 @@ section .text
     FCOMP double ptr [ESP + 0x60]       ; 005d170e
     FNSTSW AX                           ; 005d1712
     SAHF                                ; 005d1714
-    JZ 0x005d1ec8                       ; 005d1715 | LAB_005d1ec8
-        ;   XREF to: 005d1ec8 (CONDITIONAL_JUMP)
+    JZ 0x005d1ec8                       ; 005d1715
+        ;   XREF to: 005d1ec8 (CONDITIONAL_JUMP)  ; LAB_005d1ec8
     FLD double ptr [ESP + 0x30]         ; 005d171b
         ;   Label: LAB_005d171b
     FCOMP double ptr [ESP + 0x80]       ; 005d171f
     FNSTSW AX                           ; 005d1726
     SAHF                                ; 005d1728
-    JNZ 0x005d173b                      ; 005d1729 | LAB_005d173b
-        ;   XREF to: 005d173b (CONDITIONAL_JUMP)
+    JNZ 0x005d173b                      ; 005d1729
+        ;   XREF to: 005d173b (CONDITIONAL_JUMP)  ; LAB_005d173b
     FLD double ptr [ESP + 0x38]         ; 005d172b
     FCOMP double ptr [ESP + 0x88]       ; 005d172f
     FNSTSW AX                           ; 005d1736
     SAHF                                ; 005d1738
-    JZ 0x005d1762                       ; 005d1739 | LAB_005d1762
-        ;   XREF to: 005d1762 (CONDITIONAL_JUMP)
+    JZ 0x005d1762                       ; 005d1739
+        ;   XREF to: 005d1762 (CONDITIONAL_JUMP)  ; LAB_005d1762
     LEA EAX,[ESP + 0x60]                ; 005d173b
         ;   Label: LAB_005d173b
     PUSH EAX                            ; 005d173f
@@ -354,32 +354,32 @@ section .text
     PUSH EAX                            ; 005d174c
     LEA EAX,[ESP + 0x5c]                ; 005d174d
     PUSH EAX                            ; 005d1751
-    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d1752 | int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
-        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d1752
+        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
     ADD ESP,0x10                        ; 005d1757
     TEST EAX,EAX                        ; 005d175a
-    JNZ 0x005d19fe                      ; 005d175c | LAB_005d19fe
-        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)
+    JNZ 0x005d19fe                      ; 005d175c
+        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)  ; LAB_005d19fe
     FLD double ptr [ESP + 0x50]         ; 005d1762
         ;   Label: LAB_005d1762
     FCOMP double ptr [ESP + 0x70]       ; 005d1766
     FNSTSW AX                           ; 005d176a
     SAHF                                ; 005d176c
-    JZ 0x005d1ede                       ; 005d176d | LAB_005d1ede
-        ;   XREF to: 005d1ede (CONDITIONAL_JUMP)
+    JZ 0x005d1ede                       ; 005d176d
+        ;   XREF to: 005d1ede (CONDITIONAL_JUMP)  ; LAB_005d1ede
     FLD double ptr [ESP + 0x30]         ; 005d1773
         ;   Label: LAB_005d1773
     FCOMP double ptr [ESP + 0x60]       ; 005d1777
     FNSTSW AX                           ; 005d177b
     SAHF                                ; 005d177d
-    JNZ 0x005d178d                      ; 005d177e | LAB_005d178d
-        ;   XREF to: 005d178d (CONDITIONAL_JUMP)
+    JNZ 0x005d178d                      ; 005d177e
+        ;   XREF to: 005d178d (CONDITIONAL_JUMP)  ; LAB_005d178d
     FLD double ptr [ESP + 0x38]         ; 005d1780
     FCOMP double ptr [ESP + 0x68]       ; 005d1784
     FNSTSW AX                           ; 005d1788
     SAHF                                ; 005d178a
-    JZ 0x005d17b1                       ; 005d178b | LAB_005d17b1
-        ;   XREF to: 005d17b1 (CONDITIONAL_JUMP)
+    JZ 0x005d17b1                       ; 005d178b
+        ;   XREF to: 005d17b1 (CONDITIONAL_JUMP)  ; LAB_005d17b1
     LEA EAX,[ESP + 0x70]                ; 005d178d
         ;   Label: LAB_005d178d
     PUSH EAX                            ; 005d1791
@@ -389,32 +389,32 @@ section .text
     PUSH EAX                            ; 005d179b
     LEA EAX,[ESP + 0x5c]                ; 005d179c
     PUSH EAX                            ; 005d17a0
-    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d17a1 | int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
-        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d17a1
+        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
     ADD ESP,0x10                        ; 005d17a6
     TEST EAX,EAX                        ; 005d17a9
-    JNZ 0x005d19fe                      ; 005d17ab | LAB_005d19fe
-        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)
+    JNZ 0x005d19fe                      ; 005d17ab
+        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)  ; LAB_005d19fe
     FLD double ptr [ESP + 0x50]         ; 005d17b1
         ;   Label: LAB_005d17b1
     FCOMP double ptr [ESP + 0x80]       ; 005d17b5
     FNSTSW AX                           ; 005d17bc
     SAHF                                ; 005d17be
-    JZ 0x005d1ef4                       ; 005d17bf | LAB_005d1ef4
-        ;   XREF to: 005d1ef4 (CONDITIONAL_JUMP)
+    JZ 0x005d1ef4                       ; 005d17bf
+        ;   XREF to: 005d1ef4 (CONDITIONAL_JUMP)  ; LAB_005d1ef4
     FLD double ptr [ESP + 0x30]         ; 005d17c5
         ;   Label: LAB_005d17c5
     FCOMP double ptr [ESP + 0x70]       ; 005d17c9
     FNSTSW AX                           ; 005d17cd
     SAHF                                ; 005d17cf
-    JNZ 0x005d17df                      ; 005d17d0 | LAB_005d17df
-        ;   XREF to: 005d17df (CONDITIONAL_JUMP)
+    JNZ 0x005d17df                      ; 005d17d0
+        ;   XREF to: 005d17df (CONDITIONAL_JUMP)  ; LAB_005d17df
     FLD double ptr [ESP + 0x38]         ; 005d17d2
     FCOMP double ptr [ESP + 0x78]       ; 005d17d6
     FNSTSW AX                           ; 005d17da
     SAHF                                ; 005d17dc
-    JZ 0x005d1806                       ; 005d17dd | LAB_005d1806
-        ;   XREF to: 005d1806 (CONDITIONAL_JUMP)
+    JZ 0x005d1806                       ; 005d17dd
+        ;   XREF to: 005d1806 (CONDITIONAL_JUMP)  ; LAB_005d1806
     LEA EAX,[ESP + 0x80]                ; 005d17df
         ;   Label: LAB_005d17df
     PUSH EAX                            ; 005d17e6
@@ -424,32 +424,32 @@ section .text
     PUSH EAX                            ; 005d17f0
     LEA EAX,[ESP + 0x5c]                ; 005d17f1
     PUSH EAX                            ; 005d17f5
-    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d17f6 | int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
-        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d17f6
+        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
     ADD ESP,0x10                        ; 005d17fb
     TEST EAX,EAX                        ; 005d17fe
-    JNZ 0x005d19fe                      ; 005d1800 | LAB_005d19fe
-        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)
+    JNZ 0x005d19fe                      ; 005d1800
+        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)  ; LAB_005d19fe
     FLD double ptr [ESP + 0x30]         ; 005d1806
         ;   Label: LAB_005d1806
     FCOMP double ptr [ESP + 0x70]       ; 005d180a
     FNSTSW AX                           ; 005d180e
     SAHF                                ; 005d1810
-    JZ 0x005d1f0d                       ; 005d1811 | LAB_005d1f0d
-        ;   XREF to: 005d1f0d (CONDITIONAL_JUMP)
+    JZ 0x005d1f0d                       ; 005d1811
+        ;   XREF to: 005d1f0d (CONDITIONAL_JUMP)  ; LAB_005d1f0d
     FLD double ptr [ESP + 0x40]         ; 005d1817
         ;   Label: LAB_005d1817
     FCOMP double ptr [ESP + 0x60]       ; 005d181b
     FNSTSW AX                           ; 005d181f
     SAHF                                ; 005d1821
-    JNZ 0x005d1831                      ; 005d1822 | LAB_005d1831
-        ;   XREF to: 005d1831 (CONDITIONAL_JUMP)
+    JNZ 0x005d1831                      ; 005d1822
+        ;   XREF to: 005d1831 (CONDITIONAL_JUMP)  ; LAB_005d1831
     FLD double ptr [ESP + 0x48]         ; 005d1824
     FCOMP double ptr [ESP + 0x68]       ; 005d1828
     FNSTSW AX                           ; 005d182c
     SAHF                                ; 005d182e
-    JZ 0x005d1855                       ; 005d182f | LAB_005d1855
-        ;   XREF to: 005d1855 (CONDITIONAL_JUMP)
+    JZ 0x005d1855                       ; 005d182f
+        ;   XREF to: 005d1855 (CONDITIONAL_JUMP)  ; LAB_005d1855
     LEA EAX,[ESP + 0x70]                ; 005d1831
         ;   Label: LAB_005d1831
     PUSH EAX                            ; 005d1835
@@ -459,32 +459,32 @@ section .text
     PUSH EAX                            ; 005d183f
     LEA EAX,[ESP + 0x3c]                ; 005d1840
     PUSH EAX                            ; 005d1844
-    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d1845 | int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
-        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d1845
+        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
     ADD ESP,0x10                        ; 005d184a
     TEST EAX,EAX                        ; 005d184d
-    JNZ 0x005d19fe                      ; 005d184f | LAB_005d19fe
-        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)
+    JNZ 0x005d19fe                      ; 005d184f
+        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)  ; LAB_005d19fe
     FLD double ptr [ESP + 0x30]         ; 005d1855
         ;   Label: LAB_005d1855
     FCOMP double ptr [ESP + 0x80]       ; 005d1859
     FNSTSW AX                           ; 005d1860
     SAHF                                ; 005d1862
-    JZ 0x005d1f23                       ; 005d1863 | LAB_005d1f23
-        ;   XREF to: 005d1f23 (CONDITIONAL_JUMP)
+    JZ 0x005d1f23                       ; 005d1863
+        ;   XREF to: 005d1f23 (CONDITIONAL_JUMP)  ; LAB_005d1f23
     FLD double ptr [ESP + 0x40]         ; 005d1869
         ;   Label: LAB_005d1869
     FCOMP double ptr [ESP + 0x70]       ; 005d186d
     FNSTSW AX                           ; 005d1871
     SAHF                                ; 005d1873
-    JNZ 0x005d1883                      ; 005d1874 | LAB_005d1883
-        ;   XREF to: 005d1883 (CONDITIONAL_JUMP)
+    JNZ 0x005d1883                      ; 005d1874
+        ;   XREF to: 005d1883 (CONDITIONAL_JUMP)  ; LAB_005d1883
     FLD double ptr [ESP + 0x48]         ; 005d1876
     FCOMP double ptr [ESP + 0x78]       ; 005d187a
     FNSTSW AX                           ; 005d187e
     SAHF                                ; 005d1880
-    JZ 0x005d18aa                       ; 005d1881 | LAB_005d18aa
-        ;   XREF to: 005d18aa (CONDITIONAL_JUMP)
+    JZ 0x005d18aa                       ; 005d1881
+        ;   XREF to: 005d18aa (CONDITIONAL_JUMP)  ; LAB_005d18aa
     LEA EAX,[ESP + 0x80]                ; 005d1883
         ;   Label: LAB_005d1883
     PUSH EAX                            ; 005d188a
@@ -494,32 +494,32 @@ section .text
     PUSH EAX                            ; 005d1894
     LEA EAX,[ESP + 0x3c]                ; 005d1895
     PUSH EAX                            ; 005d1899
-    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d189a | int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
-        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d189a
+        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
     ADD ESP,0x10                        ; 005d189f
     TEST EAX,EAX                        ; 005d18a2
-    JNZ 0x005d19fe                      ; 005d18a4 | LAB_005d19fe
-        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)
+    JNZ 0x005d19fe                      ; 005d18a4
+        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)  ; LAB_005d19fe
     FLD double ptr [ESP + 0x30]         ; 005d18aa
         ;   Label: LAB_005d18aa
     FCOMP double ptr [ESP + 0x60]       ; 005d18ae
     FNSTSW AX                           ; 005d18b2
     SAHF                                ; 005d18b4
-    JZ 0x005d1f3c                       ; 005d18b5 | LAB_005d1f3c
-        ;   XREF to: 005d1f3c (CONDITIONAL_JUMP)
+    JZ 0x005d1f3c                       ; 005d18b5
+        ;   XREF to: 005d1f3c (CONDITIONAL_JUMP)  ; LAB_005d1f3c
     FLD double ptr [ESP + 0x40]         ; 005d18bb
         ;   Label: LAB_005d18bb
     FCOMP double ptr [ESP + 0x80]       ; 005d18bf
     FNSTSW AX                           ; 005d18c6
     SAHF                                ; 005d18c8
-    JNZ 0x005d18db                      ; 005d18c9 | LAB_005d18db
-        ;   XREF to: 005d18db (CONDITIONAL_JUMP)
+    JNZ 0x005d18db                      ; 005d18c9
+        ;   XREF to: 005d18db (CONDITIONAL_JUMP)  ; LAB_005d18db
     FLD double ptr [ESP + 0x48]         ; 005d18cb
     FCOMP double ptr [ESP + 0x88]       ; 005d18cf
     FNSTSW AX                           ; 005d18d6
     SAHF                                ; 005d18d8
-    JZ 0x005d1902                       ; 005d18d9 | LAB_005d1902
-        ;   XREF to: 005d1902 (CONDITIONAL_JUMP)
+    JZ 0x005d1902                       ; 005d18d9
+        ;   XREF to: 005d1902 (CONDITIONAL_JUMP)  ; LAB_005d1902
     LEA EAX,[ESP + 0x60]                ; 005d18db
         ;   Label: LAB_005d18db
     PUSH EAX                            ; 005d18df
@@ -529,32 +529,32 @@ section .text
     PUSH EAX                            ; 005d18ec
     LEA EAX,[ESP + 0x3c]                ; 005d18ed
     PUSH EAX                            ; 005d18f1
-    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d18f2 | int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
-        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d18f2
+        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
     ADD ESP,0x10                        ; 005d18f7
     TEST EAX,EAX                        ; 005d18fa
-    JNZ 0x005d19fe                      ; 005d18fc | LAB_005d19fe
-        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)
+    JNZ 0x005d19fe                      ; 005d18fc
+        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)  ; LAB_005d19fe
     FLD double ptr [ESP + 0x40]         ; 005d1902
         ;   Label: LAB_005d1902
     FCOMP double ptr [ESP + 0x80]       ; 005d1906
     FNSTSW AX                           ; 005d190d
     SAHF                                ; 005d190f
-    JZ 0x005d1f52                       ; 005d1910 | LAB_005d1f52
-        ;   XREF to: 005d1f52 (CONDITIONAL_JUMP)
+    JZ 0x005d1f52                       ; 005d1910
+        ;   XREF to: 005d1f52 (CONDITIONAL_JUMP)  ; LAB_005d1f52
     FLD double ptr [ESP + 0x50]         ; 005d1916
         ;   Label: LAB_005d1916
     FCOMP double ptr [ESP + 0x70]       ; 005d191a
     FNSTSW AX                           ; 005d191e
     SAHF                                ; 005d1920
-    JNZ 0x005d1930                      ; 005d1921 | LAB_005d1930
-        ;   XREF to: 005d1930 (CONDITIONAL_JUMP)
+    JNZ 0x005d1930                      ; 005d1921
+        ;   XREF to: 005d1930 (CONDITIONAL_JUMP)  ; LAB_005d1930
     FLD double ptr [ESP + 0x58]         ; 005d1923
     FCOMP double ptr [ESP + 0x78]       ; 005d1927
     FNSTSW AX                           ; 005d192b
     SAHF                                ; 005d192d
-    JZ 0x005d1957                       ; 005d192e | LAB_005d1957
-        ;   XREF to: 005d1957 (CONDITIONAL_JUMP)
+    JZ 0x005d1957                       ; 005d192e
+        ;   XREF to: 005d1957 (CONDITIONAL_JUMP)  ; LAB_005d1957
     LEA EAX,[ESP + 0x80]                ; 005d1930
         ;   Label: LAB_005d1930
     PUSH EAX                            ; 005d1937
@@ -564,32 +564,32 @@ section .text
     PUSH EAX                            ; 005d1941
     LEA EAX,[ESP + 0x4c]                ; 005d1942
     PUSH EAX                            ; 005d1946
-    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d1947 | int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
-        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d1947
+        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
     ADD ESP,0x10                        ; 005d194c
     TEST EAX,EAX                        ; 005d194f
-    JNZ 0x005d19fe                      ; 005d1951 | LAB_005d19fe
-        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)
+    JNZ 0x005d19fe                      ; 005d1951
+        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)  ; LAB_005d19fe
     FLD double ptr [ESP + 0x40]         ; 005d1957
         ;   Label: LAB_005d1957
     FCOMP double ptr [ESP + 0x60]       ; 005d195b
     FNSTSW AX                           ; 005d195f
     SAHF                                ; 005d1961
-    JZ 0x005d1f6b                       ; 005d1962 | LAB_005d1f6b
-        ;   XREF to: 005d1f6b (CONDITIONAL_JUMP)
+    JZ 0x005d1f6b                       ; 005d1962
+        ;   XREF to: 005d1f6b (CONDITIONAL_JUMP)  ; LAB_005d1f6b
     FLD double ptr [ESP + 0x50]         ; 005d1968
         ;   Label: LAB_005d1968
     FCOMP double ptr [ESP + 0x80]       ; 005d196c
     FNSTSW AX                           ; 005d1973
     SAHF                                ; 005d1975
-    JNZ 0x005d1988                      ; 005d1976 | LAB_005d1988
-        ;   XREF to: 005d1988 (CONDITIONAL_JUMP)
+    JNZ 0x005d1988                      ; 005d1976
+        ;   XREF to: 005d1988 (CONDITIONAL_JUMP)  ; LAB_005d1988
     FLD double ptr [ESP + 0x58]         ; 005d1978
     FCOMP double ptr [ESP + 0x88]       ; 005d197c
     FNSTSW AX                           ; 005d1983
     SAHF                                ; 005d1985
-    JZ 0x005d19ab                       ; 005d1986 | LAB_005d19ab
-        ;   XREF to: 005d19ab (CONDITIONAL_JUMP)
+    JZ 0x005d19ab                       ; 005d1986
+        ;   XREF to: 005d19ab (CONDITIONAL_JUMP)  ; LAB_005d19ab
     LEA EAX,[ESP + 0x60]                ; 005d1988
         ;   Label: LAB_005d1988
     PUSH EAX                            ; 005d198c
@@ -599,32 +599,32 @@ section .text
     PUSH EAX                            ; 005d1999
     LEA EAX,[ESP + 0x4c]                ; 005d199a
     PUSH EAX                            ; 005d199e
-    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d199f | int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
-        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d199f
+        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
     ADD ESP,0x10                        ; 005d19a4
     TEST EAX,EAX                        ; 005d19a7
-    JNZ 0x005d19fe                      ; 005d19a9 | LAB_005d19fe
-        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)
+    JNZ 0x005d19fe                      ; 005d19a9
+        ;   XREF to: 005d19fe (CONDITIONAL_JUMP)  ; LAB_005d19fe
     FLD double ptr [ESP + 0x40]         ; 005d19ab
         ;   Label: LAB_005d19ab
     FCOMP double ptr [ESP + 0x70]       ; 005d19af
     FNSTSW AX                           ; 005d19b3
     SAHF                                ; 005d19b5
-    JZ 0x005d1f81                       ; 005d19b6 | LAB_005d1f81
-        ;   XREF to: 005d1f81 (CONDITIONAL_JUMP)
+    JZ 0x005d1f81                       ; 005d19b6
+        ;   XREF to: 005d1f81 (CONDITIONAL_JUMP)  ; LAB_005d1f81
     FLD double ptr [ESP + 0x50]         ; 005d19bc
         ;   Label: LAB_005d19bc
     FCOMP double ptr [ESP + 0x60]       ; 005d19c0
     FNSTSW AX                           ; 005d19c4
     SAHF                                ; 005d19c6
-    JNZ 0x005d19da                      ; 005d19c7 | LAB_005d19da
-        ;   XREF to: 005d19da (CONDITIONAL_JUMP)
+    JNZ 0x005d19da                      ; 005d19c7
+        ;   XREF to: 005d19da (CONDITIONAL_JUMP)  ; LAB_005d19da
     FLD double ptr [ESP + 0x58]         ; 005d19c9
     FCOMP double ptr [ESP + 0x68]       ; 005d19cd
     FNSTSW AX                           ; 005d19d1
     SAHF                                ; 005d19d3
-    JZ 0x005d1f92                       ; 005d19d4 | LAB_005d1f92
-        ;   XREF to: 005d1f92 (CONDITIONAL_JUMP)
+    JZ 0x005d1f92                       ; 005d19d4
+        ;   XREF to: 005d1f92 (CONDITIONAL_JUMP)  ; LAB_005d1f92
     LEA EAX,[ESP + 0x70]                ; 005d19da
         ;   Label: LAB_005d19da
     PUSH EAX                            ; 005d19de
@@ -634,12 +634,12 @@ section .text
     PUSH EAX                            ; 005d19e8
     LEA EAX,[ESP + 0x4c]                ; 005d19e9
     PUSH EAX                            ; 005d19ed
-    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d19ee | int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
-        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0 ; 005d19ee
+        ;   XREF to: 005d5bb0 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_segmentsIntersect2D_FUN_005d5bb0(CVector2d * point_a, CVector2d * point_b, CVector2d * point_c, CVector2d * point_d)
     ADD ESP,0x10                        ; 005d19f3
     TEST EAX,EAX                        ; 005d19f6
-    JZ 0x005d1f92                       ; 005d19f8 | LAB_005d1f92
-        ;   XREF to: 005d1f92 (CONDITIONAL_JUMP)
+    JZ 0x005d1f92                       ; 005d19f8
+        ;   XREF to: 005d1f92 (CONDITIONAL_JUMP)  ; LAB_005d1f92
     MOV EAX,0x1                         ; 005d19fe
         ;   Label: LAB_005d19fe
     MOV ESP,EBP                         ; 005d1a03
@@ -653,33 +653,33 @@ section .text
     MOV dword ptr [ESP],EAX             ; 005d1a0d
     MOV EAX,dword ptr [EDX + 0x44]      ; 005d1a10
     MOV dword ptr [ESP + 0x4],EAX       ; 005d1a13
-    JMP 0x005d13bb                      ; 005d1a17 | LAB_005d13bb
-        ;   XREF to: 005d13bb (UNCONDITIONAL_JUMP)
+    JMP 0x005d13bb                      ; 005d1a17
+        ;   XREF to: 005d13bb (UNCONDITIONAL_JUMP)  ; LAB_005d13bb
     FLD double ptr [EDX + 0x48]         ; 005d1a1c
         ;   Label: LAB_005d1a1c
     FCHS                                ; 005d1a1f
     FSTP double ptr [ESP + 0x8]         ; 005d1a21
-    JMP 0x005d13e6                      ; 005d1a25 | LAB_005d13e6
-        ;   XREF to: 005d13e6 (UNCONDITIONAL_JUMP)
+    JMP 0x005d13e6                      ; 005d1a25
+        ;   XREF to: 005d13e6 (UNCONDITIONAL_JUMP)  ; LAB_005d13e6
     FLD double ptr [EDX + 0x50]         ; 005d1a2a
         ;   Label: LAB_005d1a2a
     FCHS                                ; 005d1a2d
     FSTP double ptr [ESP + 0x20]        ; 005d1a2f
-    JMP 0x005d1412                      ; 005d1a33 | LAB_005d1412
-        ;   XREF to: 005d1412 (UNCONDITIONAL_JUMP)
+    JMP 0x005d1412                      ; 005d1a33
+        ;   XREF to: 005d1412 (UNCONDITIONAL_JUMP)  ; LAB_005d1412
     FLD double ptr [ESP + 0x28]         ; 005d1a38
         ;   Label: LAB_005d1a38
     FCOMP double ptr [ESP + 0x18]       ; 005d1a3c
     FNSTSW AX                           ; 005d1a40
     SAHF                                ; 005d1a42
-    JC 0x005d1c91                       ; 005d1a43 | LAB_005d1c91
-        ;   XREF to: 005d1c91 (CONDITIONAL_JUMP)
+    JC 0x005d1c91                       ; 005d1a43
+        ;   XREF to: 005d1c91 (CONDITIONAL_JUMP)  ; LAB_005d1c91
     FLD double ptr [ESP + 0x28]         ; 005d1a49
     FCOMP double ptr [ESP + 0x10]       ; 005d1a4d
     FNSTSW AX                           ; 005d1a51
     SAHF                                ; 005d1a53
-    JC 0x005d1c91                       ; 005d1a54 | LAB_005d1c91
-        ;   XREF to: 005d1c91 (CONDITIONAL_JUMP)
+    JC 0x005d1c91                       ; 005d1a54
+        ;   XREF to: 005d1c91 (CONDITIONAL_JUMP)  ; LAB_005d1c91
     MOV EAX,dword ptr [ESP + 0x1b4]     ; 005d1a5a
     MOV EAX,dword ptr [EAX]             ; 005d1a61
     MOV dword ptr [ESP + 0x118],EAX     ; 005d1a63
@@ -783,8 +783,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0xa8]      ; 005d1c7a
     MOV dword ptr [ESP + 0x78],EAX      ; 005d1c81
     MOV EAX,dword ptr [ESP + 0xac]      ; 005d1c85
-    JMP 0x005d1706                      ; 005d1c8c | LAB_005d1706
-        ;   XREF to: 005d1706 (UNCONDITIONAL_JUMP)
+    JMP 0x005d1706                      ; 005d1c8c
+        ;   XREF to: 005d1706 (UNCONDITIONAL_JUMP)  ; LAB_005d1706
     MOV EAX,dword ptr [ESP + 0x1b4]     ; 005d1c91
         ;   Label: LAB_005d1c91
     MOV EAX,dword ptr [EAX]             ; 005d1c98
@@ -889,87 +889,87 @@ section .text
     MOV EAX,dword ptr [ESP + 0x160]     ; 005d1eb1
     MOV dword ptr [ESP + 0x78],EAX      ; 005d1eb8
     MOV EAX,dword ptr [ESP + 0x164]     ; 005d1ebc
-    JMP 0x005d1706                      ; 005d1ec3 | LAB_005d1706
-        ;   XREF to: 005d1706 (UNCONDITIONAL_JUMP)
+    JMP 0x005d1706                      ; 005d1ec3
+        ;   XREF to: 005d1706 (UNCONDITIONAL_JUMP)  ; LAB_005d1706
     FLD double ptr [ESP + 0x58]         ; 005d1ec8
         ;   Label: LAB_005d1ec8
     FCOMP double ptr [ESP + 0x68]       ; 005d1ecc
     FNSTSW AX                           ; 005d1ed0
     SAHF                                ; 005d1ed2
-    JNZ 0x005d171b                      ; 005d1ed3 | LAB_005d171b
-        ;   XREF to: 005d171b (CONDITIONAL_JUMP)
-    JMP 0x005d1762                      ; 005d1ed9 | LAB_005d1762
-        ;   XREF to: 005d1762 (UNCONDITIONAL_JUMP)
+    JNZ 0x005d171b                      ; 005d1ed3
+        ;   XREF to: 005d171b (CONDITIONAL_JUMP)  ; LAB_005d171b
+    JMP 0x005d1762                      ; 005d1ed9
+        ;   XREF to: 005d1762 (UNCONDITIONAL_JUMP)  ; LAB_005d1762
     FLD double ptr [ESP + 0x58]         ; 005d1ede
         ;   Label: LAB_005d1ede
     FCOMP double ptr [ESP + 0x78]       ; 005d1ee2
     FNSTSW AX                           ; 005d1ee6
     SAHF                                ; 005d1ee8
-    JNZ 0x005d1773                      ; 005d1ee9 | LAB_005d1773
-        ;   XREF to: 005d1773 (CONDITIONAL_JUMP)
-    JMP 0x005d17b1                      ; 005d1eef | LAB_005d17b1
-        ;   XREF to: 005d17b1 (UNCONDITIONAL_JUMP)
+    JNZ 0x005d1773                      ; 005d1ee9
+        ;   XREF to: 005d1773 (CONDITIONAL_JUMP)  ; LAB_005d1773
+    JMP 0x005d17b1                      ; 005d1eef
+        ;   XREF to: 005d17b1 (UNCONDITIONAL_JUMP)  ; LAB_005d17b1
     FLD double ptr [ESP + 0x58]         ; 005d1ef4
         ;   Label: LAB_005d1ef4
     FCOMP double ptr [ESP + 0x88]       ; 005d1ef8
     FNSTSW AX                           ; 005d1eff
     SAHF                                ; 005d1f01
-    JNZ 0x005d17c5                      ; 005d1f02 | LAB_005d17c5
-        ;   XREF to: 005d17c5 (CONDITIONAL_JUMP)
-    JMP 0x005d1806                      ; 005d1f08 | LAB_005d1806
-        ;   XREF to: 005d1806 (UNCONDITIONAL_JUMP)
+    JNZ 0x005d17c5                      ; 005d1f02
+        ;   XREF to: 005d17c5 (CONDITIONAL_JUMP)  ; LAB_005d17c5
+    JMP 0x005d1806                      ; 005d1f08
+        ;   XREF to: 005d1806 (UNCONDITIONAL_JUMP)  ; LAB_005d1806
     FLD double ptr [ESP + 0x38]         ; 005d1f0d
         ;   Label: LAB_005d1f0d
     FCOMP double ptr [ESP + 0x78]       ; 005d1f11
     FNSTSW AX                           ; 005d1f15
     SAHF                                ; 005d1f17
-    JNZ 0x005d1817                      ; 005d1f18 | LAB_005d1817
-        ;   XREF to: 005d1817 (CONDITIONAL_JUMP)
-    JMP 0x005d1855                      ; 005d1f1e | LAB_005d1855
-        ;   XREF to: 005d1855 (UNCONDITIONAL_JUMP)
+    JNZ 0x005d1817                      ; 005d1f18
+        ;   XREF to: 005d1817 (CONDITIONAL_JUMP)  ; LAB_005d1817
+    JMP 0x005d1855                      ; 005d1f1e
+        ;   XREF to: 005d1855 (UNCONDITIONAL_JUMP)  ; LAB_005d1855
     FLD double ptr [ESP + 0x38]         ; 005d1f23
         ;   Label: LAB_005d1f23
     FCOMP double ptr [ESP + 0x88]       ; 005d1f27
     FNSTSW AX                           ; 005d1f2e
     SAHF                                ; 005d1f30
-    JNZ 0x005d1869                      ; 005d1f31 | LAB_005d1869
-        ;   XREF to: 005d1869 (CONDITIONAL_JUMP)
-    JMP 0x005d18aa                      ; 005d1f37 | LAB_005d18aa
-        ;   XREF to: 005d18aa (UNCONDITIONAL_JUMP)
+    JNZ 0x005d1869                      ; 005d1f31
+        ;   XREF to: 005d1869 (CONDITIONAL_JUMP)  ; LAB_005d1869
+    JMP 0x005d18aa                      ; 005d1f37
+        ;   XREF to: 005d18aa (UNCONDITIONAL_JUMP)  ; LAB_005d18aa
     FLD double ptr [ESP + 0x38]         ; 005d1f3c
         ;   Label: LAB_005d1f3c
     FCOMP double ptr [ESP + 0x68]       ; 005d1f40
     FNSTSW AX                           ; 005d1f44
     SAHF                                ; 005d1f46
-    JNZ 0x005d18bb                      ; 005d1f47 | LAB_005d18bb
-        ;   XREF to: 005d18bb (CONDITIONAL_JUMP)
-    JMP 0x005d1902                      ; 005d1f4d | LAB_005d1902
-        ;   XREF to: 005d1902 (UNCONDITIONAL_JUMP)
+    JNZ 0x005d18bb                      ; 005d1f47
+        ;   XREF to: 005d18bb (CONDITIONAL_JUMP)  ; LAB_005d18bb
+    JMP 0x005d1902                      ; 005d1f4d
+        ;   XREF to: 005d1902 (UNCONDITIONAL_JUMP)  ; LAB_005d1902
     FLD double ptr [ESP + 0x48]         ; 005d1f52
         ;   Label: LAB_005d1f52
     FCOMP double ptr [ESP + 0x88]       ; 005d1f56
     FNSTSW AX                           ; 005d1f5d
     SAHF                                ; 005d1f5f
-    JNZ 0x005d1916                      ; 005d1f60 | LAB_005d1916
-        ;   XREF to: 005d1916 (CONDITIONAL_JUMP)
-    JMP 0x005d1957                      ; 005d1f66 | LAB_005d1957
-        ;   XREF to: 005d1957 (UNCONDITIONAL_JUMP)
+    JNZ 0x005d1916                      ; 005d1f60
+        ;   XREF to: 005d1916 (CONDITIONAL_JUMP)  ; LAB_005d1916
+    JMP 0x005d1957                      ; 005d1f66
+        ;   XREF to: 005d1957 (UNCONDITIONAL_JUMP)  ; LAB_005d1957
     FLD double ptr [ESP + 0x48]         ; 005d1f6b
         ;   Label: LAB_005d1f6b
     FCOMP double ptr [ESP + 0x68]       ; 005d1f6f
     FNSTSW AX                           ; 005d1f73
     SAHF                                ; 005d1f75
-    JNZ 0x005d1968                      ; 005d1f76 | LAB_005d1968
-        ;   XREF to: 005d1968 (CONDITIONAL_JUMP)
-    JMP 0x005d19ab                      ; 005d1f7c | LAB_005d19ab
-        ;   XREF to: 005d19ab (UNCONDITIONAL_JUMP)
+    JNZ 0x005d1968                      ; 005d1f76
+        ;   XREF to: 005d1968 (CONDITIONAL_JUMP)  ; LAB_005d1968
+    JMP 0x005d19ab                      ; 005d1f7c
+        ;   XREF to: 005d19ab (UNCONDITIONAL_JUMP)  ; LAB_005d19ab
     FLD double ptr [ESP + 0x48]         ; 005d1f81
         ;   Label: LAB_005d1f81
     FCOMP double ptr [ESP + 0x78]       ; 005d1f85
     FNSTSW AX                           ; 005d1f89
     SAHF                                ; 005d1f8b
-    JNZ 0x005d19bc                      ; 005d1f8c | LAB_005d19bc
-        ;   XREF to: 005d19bc (CONDITIONAL_JUMP)
+    JNZ 0x005d19bc                      ; 005d1f8c
+        ;   XREF to: 005d19bc (CONDITIONAL_JUMP)  ; LAB_005d19bc
     XOR EAX,EAX                         ; 005d1f92
         ;   Label: LAB_005d1f92
     MOV ESP,EBP                         ; 005d1f94

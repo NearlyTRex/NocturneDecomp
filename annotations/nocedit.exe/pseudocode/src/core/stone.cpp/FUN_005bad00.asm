@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x3f6ba60                   ; 005bad00 | CDemonActorType g_CTempleStoneClassInfo
+    MOV EAX,0x3f6ba60                   ; 005bad00 | g_CTempleStoneClassInfo
         ;   Label: core_stone.cpp_FUN_005bad00
     RET                                 ; 005bad05
 

@@ -14,13 +14,13 @@
 
 section .text
 
-    CMP dword ptr [0x03f6b920],0x0      ; 005b7df0 | APIDLL_lockHoldBuffer * g_APIDLL_lockHoldBuffer
+    CMP dword ptr [0x03f6b920],0x0      ; 005b7df0 | g_APIDLL_lockHoldBuffer
         ;   Label: wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0
-    JNZ 0x005b7dfc                      ; 005b7df7 | LAB_005b7dfc
-        ;   XREF to: 005b7dfc (CONDITIONAL_JUMP)
+    JNZ 0x005b7dfc                      ; 005b7df7
+        ;   XREF to: 005b7dfc (CONDITIONAL_JUMP)  ; LAB_005b7dfc
     XOR EAX,EAX                         ; 005b7df9
     RET                                 ; 005b7dfb
-    CALL dword ptr [0x03f6b920]         ; 005b7dfc | APIDLL_lockHoldBuffer * g_APIDLL_lockHoldBuffer
+    CALL dword ptr [0x03f6b920]         ; 005b7dfc | g_APIDLL_lockHoldBuffer
         ;   Label: LAB_005b7dfc
     RET                                 ; 005b7e02
 

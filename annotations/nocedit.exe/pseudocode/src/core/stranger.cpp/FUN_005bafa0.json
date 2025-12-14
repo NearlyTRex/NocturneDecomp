@@ -1,68 +1,68 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 55, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 31, 
-    "assembly_lines": 11, 
-    "suspect_count": 3, 
+    "assembly_lines": 11,
+    "complexity_score": 55,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 20,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_005baf70", 
-      "addr": "005baf70", 
-      "value": "005bafba"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004 != 0) {"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "switch(*(uint *)(in_stack_00000004 + 0x2e0)) {"
-    }
-  ], 
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "005bafa0", 
-    "signature": "undefined core_stranger.cpp_FUN_005bafa0()", 
+    "address": "005bafa0",
     "address_range": [
       [
-        "005bafa0", 
+        "005bafa0",
         "005bafb9"
       ]
-    ], 
-    "name": "core_stranger.cpp_FUN_005bafa0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_stranger.cpp_FUN_005bafa0",
+    "signature": "undefined core_stranger.cpp_FUN_005bafa0()"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005baf70",
+      "name": "switchdataD_005baf70",
+      "type": "void*",
+      "value": "005bafba"
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004 != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "switch(*(uint *)(in_stack_00000004 + 0x2e0)) {",
+      "type": "stack_param"
+    }
+  ]
 }

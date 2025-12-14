@@ -11,8 +11,7 @@ void core_tommygun_cpp_FUN_005dda50(void)
 {
   CTommyGun *this_ptr;
   
-  this_ptr = (CTommyGun *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\tommygun.cpp",0x2f);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x584,"..\\core\\tommygun.cpp",0x2f);
   if (this_ptr == (CTommyGun *)0x0) {
     return;
   }

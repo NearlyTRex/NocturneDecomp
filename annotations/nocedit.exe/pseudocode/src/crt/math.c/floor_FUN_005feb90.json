@@ -1,331 +1,331 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 39, 
-    "global_count": 1, 
-    "total_lines": 44, 
-    "assembly_lines": 33, 
-    "suspect_count": 2, 
+    "assembly_lines": 33,
+    "complexity_score": 41,
+    "cross_reference_count": 39,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_modf_FUN_00602102", 
-      "addr": "00602102"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_MathDomainAdjustment", 
-      "addr": "00658aec", 
-      "value": "-1"
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 5, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__softfp_double", 
-    "address": "005feb90", 
-    "signature": "double crt_math.c_floor_FUN_005feb90(double input_value)", 
-    "address_range": [
-      [
-        "005feb90", 
-        "005febd4"
-      ]
-    ], 
-    "name": "crt_math.c_floor_FUN_005feb90"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_8"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "input_value"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 0, 
-    "param_size": 12
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 44
+  },
   "cross_references": [
     {
-      "from_addr": "0040cdf8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70", 
-      "addr": "0040cd70"
-    }, 
+      "addr": "0040cd70",
+      "from_addr": "0040cdf8",
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00414719", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bat.cpp_FUN_004146f0", 
-      "addr": "004146f0"
-    }, 
+      "addr": "004146f0",
+      "from_addr": "00414719",
+      "name": "core_bat.cpp_FUN_004146f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00414d2c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bat.cpp_FUN_00414ce0", 
-      "addr": "00414ce0"
-    }, 
+      "addr": "00414ce0",
+      "from_addr": "00414d2c",
+      "name": "core_bat.cpp_FUN_00414ce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0041bb27", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boneguy.cpp_FUN_0041ba10", 
-      "addr": "0041ba10"
-    }, 
+      "addr": "0041ba10",
+      "from_addr": "0041bb27",
+      "name": "core_boneguy.cpp_FUN_0041ba10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00421a1f", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_CBoxActor_process_FUN_004219e0", 
-      "addr": "004219e0"
-    }, 
+      "addr": "004219e0",
+      "from_addr": "00421a1f",
+      "name": "core_boxactor.cpp_CBoxActor_process_FUN_004219e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004258c4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bugs.cpp_FUN_004257f0", 
-      "addr": "004257f0"
-    }, 
+      "addr": "004257f0",
+      "from_addr": "004258c4",
+      "name": "core_bugs.cpp_FUN_004257f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00442429", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_conveyor.cpp_FUN_00442400", 
-      "addr": "00442400"
-    }, 
+      "addr": "00442400",
+      "from_addr": "00442429",
+      "name": "core_conveyor.cpp_FUN_00442400",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004429b3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_CCourse_FUN_004427a0", 
-      "addr": "004427a0"
-    }, 
+      "addr": "004427a0",
+      "from_addr": "004429b3",
+      "name": "core_course.cpp_CCourse_FUN_004427a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00443c51", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_FUN_00443bc0", 
-      "addr": "00443bc0"
-    }, 
+      "addr": "00443bc0",
+      "from_addr": "00443c51",
+      "name": "core_course.cpp_FUN_00443bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047c3c4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370", 
-      "addr": "0047c370"
-    }, 
+      "addr": "0047c370",
+      "from_addr": "0047c3c4",
+      "name": "core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047c30c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0", 
-      "addr": "0047c2d0"
-    }, 
+      "addr": "0047c2d0",
+      "from_addr": "0047c30c",
+      "name": "core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047c520", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0", 
-      "addr": "0047c4d0"
-    }, 
+      "addr": "0047c4d0",
+      "from_addr": "0047c520",
+      "name": "core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047c8ee", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0", 
-      "addr": "0047c5f0"
-    }, 
+      "addr": "0047c5f0",
+      "from_addr": "0047c8ee",
+      "name": "core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004962cb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220", 
-      "addr": "00496220"
-    }, 
+      "addr": "00496220",
+      "from_addr": "004962cb",
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00495bc9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70", 
-      "addr": "00495b70"
-    }, 
+      "addr": "00495b70",
+      "from_addr": "00495bc9",
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00499846", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0", 
-      "addr": "004997d0"
-    }, 
+      "addr": "004997d0",
+      "from_addr": "00499846",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004998c8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880", 
-      "addr": "00499880"
-    }, 
+      "addr": "00499880",
+      "from_addr": "004998c8",
+      "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004cc184", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flies.cpp_FUN_004cbf00", 
-      "addr": "004cbf00"
-    }, 
+      "addr": "004cbf00",
+      "from_addr": "004cc184",
+      "name": "core_flies.cpp_FUN_004cbf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d1ee2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_frankgen.cpp_FUN_004d1ec0", 
-      "addr": "004d1ec0"
-    }, 
+      "addr": "004d1ec0",
+      "from_addr": "004d1ee2",
+      "name": "core_frankgen.cpp_FUN_004d1ec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004d209d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_frankgen.cpp_FUN_004d1f70", 
-      "addr": "004d1f70"
-    }, 
+      "addr": "004d1f70",
+      "from_addr": "004d209d",
+      "name": "core_frankgen.cpp_FUN_004d1f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00502e15", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ladder.cpp_FUN_00502d00", 
-      "addr": "00502d00"
-    }, 
+      "addr": "00502d00",
+      "from_addr": "00502e15",
+      "name": "core_ladder.cpp_FUN_00502d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00537142", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_00536e20", 
-      "addr": "00536e20"
-    }, 
+      "addr": "00536e20",
+      "from_addr": "00537142",
+      "name": "core_msnedit.cpp_FUN_00536e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00549c21", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_pendulum.cpp_FUN_00549b90", 
-      "addr": "00549b90"
-    }, 
+      "addr": "00549b90",
+      "from_addr": "00549c21",
+      "name": "core_pendulum.cpp_FUN_00549b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057c44a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0", 
-      "addr": "0057bbe0"
-    }, 
+      "addr": "0057bbe0",
+      "from_addr": "0057c44a",
+      "name": "core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058baa3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058b9b0", 
-      "addr": "0058b9b0"
-    }, 
+      "addr": "0058b9b0",
+      "from_addr": "0058baa3",
+      "name": "core_skeledit.cpp_FUN_0058b9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a0d63", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10", 
-      "addr": "005a0d10"
-    }, 
+      "addr": "005a0d10",
+      "from_addr": "005a0d63",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005de497", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360", 
-      "addr": "005de360"
-    }, 
+      "addr": "005de360",
+      "from_addr": "005de497",
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006001c3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_math.c_ceil_FUN_006001b2", 
-      "addr": "006001b2"
-    }, 
+      "addr": "006001b2",
+      "from_addr": "006001c3",
+      "name": "crt_math.c_ceil_FUN_006001b2",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046e447", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_normalizeUVCoordinates_FUN_0046e340", 
-      "addr": "0046e340"
-    }, 
+      "addr": "0046e340",
+      "from_addr": "0046e447",
+      "name": "shape_design.c_normalizeUVCoordinates_FUN_0046e340",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0046ae7b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_design.c_sampleAndFilterPixel_FUN_0046ae20", 
-      "addr": "0046ae20"
-    }, 
+      "addr": "0046ae20",
+      "from_addr": "0046ae7b",
+      "name": "shape_design.c_sampleAndFilterPixel_FUN_0046ae20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051bbc3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0", 
-      "addr": "0051bac0"
-    }, 
+      "addr": "0051bac0",
+      "from_addr": "0051bbc3",
+      "name": "shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005afaf4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750", 
-      "addr": "005af750"
-    }, 
+      "addr": "005af750",
+      "from_addr": "005afaf4",
+      "name": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a879d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0", 
-      "addr": "005a86f0"
-    }, 
+      "addr": "005a86f0",
+      "from_addr": "005a879d",
+      "name": "sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a7884", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0", 
-      "addr": "005a75e0"
-    }, 
+      "addr": "005a75e0",
+      "from_addr": "005a7884",
+      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a8360", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170", 
-      "addr": "005a8170"
-    }, 
+      "addr": "005a8170",
+      "from_addr": "005a8360",
+      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ac7e5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400", 
-      "addr": "005ac400"
-    }, 
+      "addr": "005ac400",
+      "from_addr": "005ac7e5",
+      "name": "sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a5e1e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10", 
-      "addr": "005a5e10"
-    }, 
+      "addr": "005a5e10",
+      "from_addr": "005a5e1e",
+      "name": "sound_sndmain.cpp_convertDoubleToFixed_FUN_005a5e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a5ea0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70", 
-      "addr": "005a5e70"
-    }, 
+      "addr": "005a5e70",
+      "from_addr": "005a5ea0",
+      "name": "sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005a5fe0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0", 
-      "addr": "005a5fb0"
+      "addr": "005a5fb0",
+      "from_addr": "005a5fe0",
+      "name": "sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005feb90",
+    "address_range": [
+      [
+        "005feb90",
+        "005febd4"
+      ]
+    ],
+    "convention": "__softfp_double",
+    "name": "crt_math.c_floor_FUN_005feb90",
+    "signature": "double crt_math.c_floor_FUN_005feb90(double input_value)"
+  },
+  "function_calls": [
+    {
+      "addr": "00602102",
+      "name": "crt_math.c_modf_FUN_00602102"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00658aec",
+      "name": "g_MathDomainAdjustment",
+      "type": "double",
+      "value": "-1"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 0,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "input_value",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 5,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

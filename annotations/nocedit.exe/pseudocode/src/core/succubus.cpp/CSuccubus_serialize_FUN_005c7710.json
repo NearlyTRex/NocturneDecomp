@@ -1,81 +1,81 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 0, 
-    "global_count": 3, 
-    "total_lines": 39, 
-    "assembly_lines": 28, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970", 
-      "addr": "0040b970"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
-      "addr": "0040b770"
-    }, 
-    {
-      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
-      "addr": "0040b9f0"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660", 
-      "addr": "004a9660"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_speed_006541b9", 
-      "addr": "006541b9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_modelName_006541bf", 
-      "addr": "006541bf", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_motion_state_006541c9", 
-      "addr": "006541c9", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 28,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005c7710", 
-    "signature": "void core_succubus.cpp_CSuccubus_serialize_FUN_005c7710(CSuccubus * this_ptr)", 
+    "address": "005c7710",
     "address_range": [
       [
-        "005c7710", 
+        "005c7710",
         "005c7757"
       ]
-    ], 
-    "name": "core_succubus.cpp_CSuccubus_serialize_FUN_005c7710"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_succubus.cpp_CSuccubus_serialize_FUN_005c7710",
+    "signature": "void core_succubus.cpp_CSuccubus_serialize_FUN_005c7710(CSuccubus * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b970",
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970"
+    },
+    {
+      "addr": "0040b770",
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770"
+    },
+    {
+      "addr": "0040b9f0",
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0"
+    },
+    {
+      "addr": "004a9660",
+      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006541b9",
+      "name": "s_speed_006541b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006541bf",
+      "name": "s_modelName_006541bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006541c9",
+      "name": "s_motion_state_006541c9",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSuccubus *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSuccubus *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

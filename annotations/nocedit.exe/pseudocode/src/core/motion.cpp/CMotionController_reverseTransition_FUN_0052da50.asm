@@ -33,11 +33,11 @@ section .text
     MOV dword ptr [EDX],EBX             ; 0052da77
     MOV EDX,dword ptr [EAX + 0xc]       ; 0052da79
     CMP EDX,0x5                         ; 0052da7c
-    JZ 0x0052da93                       ; 0052da7f | LAB_0052da93
-        ;   XREF to: 0052da93 (CONDITIONAL_JUMP)
+    JZ 0x0052da93                       ; 0052da7f
+        ;   XREF to: 0052da93 (CONDITIONAL_JUMP)  ; LAB_0052da93
     CMP EDX,0x4                         ; 0052da81
-    JZ 0x0052da9c                       ; 0052da84 | LAB_0052da9c
-        ;   XREF to: 0052da9c (CONDITIONAL_JUMP)
+    JZ 0x0052da9c                       ; 0052da84
+        ;   XREF to: 0052da9c (CONDITIONAL_JUMP)  ; LAB_0052da9c
     FLD float ptr [EAX + 0x14]          ; 0052da86
         ;   Label: LAB_0052da86
     FLD1                                ; 0052da89
@@ -48,8 +48,8 @@ section .text
     RET                                 ; 0052da92
     MOV dword ptr [EAX + 0xc],0x4       ; 0052da93
         ;   Label: LAB_0052da93
-    JMP 0x0052da86                      ; 0052da9a | LAB_0052da86
-        ;   XREF to: 0052da86 (UNCONDITIONAL_JUMP)
+    JMP 0x0052da86                      ; 0052da9a
+        ;   XREF to: 0052da86 (UNCONDITIONAL_JUMP)  ; LAB_0052da86
     MOV dword ptr [EAX + 0xc],0x5       ; 0052da9c
         ;   Label: LAB_0052da9c
     FLD float ptr [EAX + 0x14]          ; 0052daa3

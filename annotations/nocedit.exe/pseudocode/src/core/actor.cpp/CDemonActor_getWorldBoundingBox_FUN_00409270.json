@@ -1,160 +1,160 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 174, 
-    "pseudocode_lines": 74, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 242, 
-    "assembly_lines": 168, 
-    "suspect_count": 8, 
+    "assembly_lines": 168,
+    "complexity_score": 174,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 74,
+    "suspect_count": 8,
     "suspect_types": [
-      "suspect_float", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80", 
-      "addr": "00408e80"
-    }, 
-    {
-      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240", 
-      "addr": "00420240"
-    }, 
-    {
-      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0", 
-      "addr": "004202b0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 44, 
-      "match": "&stack0xffffffac", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);"
-    }, 
-    {
-      "line": 45, 
-      "match": "5.930106e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_50 = 5.930106e-39;"
-    }, 
-    {
-      "line": 47, 
-      "match": "&stack0xffffffc0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CBoundingBox3D *)&stack0xffffffc0,aCStack_28,0);"
-    }, 
-    {
-      "line": 50, 
-      "match": "&stack0x00000000", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(this_ptr,(CVector3f *)&stack0x00000000,pCVar1);"
-    }, 
-    {
-      "line": 64, 
-      "match": "&stack0xffffffc8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CBoundingBox3D *)&stack0xffffffc8,(CVector3f *)&aCStack_28[1].z,"
-    }, 
-    {
-      "line": 67, 
-      "match": "&stack0xfffffffc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(this_ptr,(CVector3f *)&stack0xfffffffc,pCVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00409270", 
-    "signature": "CBoundingBox3D * core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor * this_ptr, CBoundingBox3D * output_bbox, SCollisionInfo * collision_info, int bounding_box_type)", 
-    "address_range": [
-      [
-        "00409270", 
-        "004093ee"
-      ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CBoundingBox3D *", 
-        "size": 4, 
-        "name": "output_bbox"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "SCollisionInfo *", 
-        "size": 4, 
-        "name": "collision_info"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bounding_box_type"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "stack_ref",
+      "register_param",
+      "suspect_float",
+      "badspacebase"
+    ],
+    "total_lines": 242
+  },
   "cross_references": [
     {
-      "from_addr": "004094b3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470", 
-      "addr": "00409470"
-    }, 
+      "addr": "00409470",
+      "from_addr": "004094b3",
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005719c5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0", 
-      "addr": "005716b0"
-    }, 
+      "addr": "005716b0",
+      "from_addr": "005719c5",
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00573776", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470", 
-      "addr": "00573470"
+      "addr": "00573470",
+      "from_addr": "00573776",
+      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00409270",
+    "address_range": [
+      [
+        "00409270",
+        "004093ee"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270",
+    "signature": "CBoundingBox3D * core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor * this_ptr, CBoundingBox3D * output_bbox, SCollisionInfo * collision_info, int bounding_box_type)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408e80",
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
+    },
+    {
+      "addr": "00420240",
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240"
+    },
+    {
+      "addr": "004202b0",
+      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "output_bbox",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 12,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      },
+      {
+        "is_param": true,
+        "name": "bounding_box_type",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 13,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0xffffffac",
+      "text": "(*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 45,
+      "match": "5.930106e-39",
+      "text": "fStack_50 = 5.930106e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 47,
+      "match": "&stack0xffffffc0",
+      "text": "((CBoundingBox3D *)&stack0xffffffc0,aCStack_28,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 50,
+      "match": "&stack0x00000000",
+      "text": "(this_ptr,(CVector3f *)&stack0x00000000,pCVar1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 64,
+      "match": "&stack0xffffffc8",
+      "text": "((CBoundingBox3D *)&stack0xffffffc8,(CVector3f *)&aCStack_28[1].z,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
+      "match": "&stack0xfffffffc",
+      "text": "(this_ptr,(CVector3f *)&stack0xfffffffc,pCVar1);",
+      "type": "stack_ref"
     }
   ]
 }

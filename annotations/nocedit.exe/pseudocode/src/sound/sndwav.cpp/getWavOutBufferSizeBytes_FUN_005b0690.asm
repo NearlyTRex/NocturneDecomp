@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV ECX,dword ptr [0x03f6adb8]      ; 005b0690 | int g_WaveOutBitsPerSample
+    MOV ECX,dword ptr [0x03f6adb8]      ; 005b0690 | g_WaveOutBitsPerSample
         ;   Label: sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690
     MOV EDX,ECX                         ; 005b0696
     MOV EAX,ECX                         ; 005b0698
@@ -21,7 +21,7 @@ section .text
     SHL EDX,0x3                         ; 005b069d
     SBB EAX,EDX                         ; 005b06a0
     SAR EAX,0x3                         ; 005b06a2
-    IMUL EAX,dword ptr [0x03f6adc4]     ; 005b06a5 | int g_WaveOutBufferSize
-    IMUL EAX,dword ptr [0x03f6adbc]     ; 005b06ac | int g_WaveOutChannels
+    IMUL EAX,dword ptr [0x03f6adc4]     ; 005b06a5 | g_WaveOutBufferSize
+    IMUL EAX,dword ptr [0x03f6adbc]     ; 005b06ac | g_WaveOutChannels
     RET                                 ; 005b06b3
 

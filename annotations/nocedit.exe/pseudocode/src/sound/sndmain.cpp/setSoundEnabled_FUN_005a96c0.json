@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 20, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 4, 
-    "global_count": 1, 
-    "total_lines": 27, 
-    "assembly_lines": 7, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_SoundEnabled", 
-      "addr": "03f69274", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a96c0", 
-    "signature": "int sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0(int enable)", 
-    "address_range": [
-      [
-        "005a96c0", 
-        "005a96d1"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "enable"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 7,
+    "complexity_score": 20,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
   "cross_references": [
     {
-      "from_addr": "004dd030", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_SaveRelated_FUN_004dcee0", 
-      "addr": "004dcee0"
-    }, 
+      "addr": "004dcee0",
+      "from_addr": "004dd030",
+      "name": "core_game.cpp_SaveRelated_FUN_004dcee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005126de", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
-      "addr": "00511e50"
-    }, 
+      "addr": "00511e50",
+      "from_addr": "005126de",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051322d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40", 
-      "addr": "00512f40"
-    }, 
+      "addr": "00512f40",
+      "from_addr": "0051322d",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ac131", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_readIni_FUN_005abf20", 
-      "addr": "005abf20"
+      "addr": "005abf20",
+      "from_addr": "005ac131",
+      "name": "sound_sndmain.cpp_readIni_FUN_005abf20",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005a96c0",
+    "address_range": [
+      [
+        "005a96c0",
+        "005a96d1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0",
+    "signature": "int sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0(int enable)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f69274",
+      "name": "g_SoundEnabled",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "enable",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

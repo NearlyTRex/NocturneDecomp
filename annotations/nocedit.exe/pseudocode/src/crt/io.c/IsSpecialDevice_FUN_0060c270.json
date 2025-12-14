@@ -1,104 +1,104 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 26, 
-    "pseudocode_lines": 26, 
-    "cross_reference_count": 3, 
-    "global_count": 5, 
-    "total_lines": 69, 
-    "assembly_lines": 43, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
-      "addr": "00602434"
-    }, 
-    {
-      "name": "GetFileType", 
-      "addr": "EXTERNAL:00000072"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "GetFileType*", 
-      "name": "PTR_GetFileType_0061159c", 
-      "addr": "0061159c", 
-      "value": "00211f00"
-    }, 
-    {
-      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
-      "addr": "00684ee8", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
-      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
-      "addr": "00684eec", 
-      "value": "00602434"
-    }, 
-    {
-      "type": "SIOControlBlock*", 
-      "name": "g_IOControlBlock", 
-      "addr": "0068526c", 
-      "value": "00000000"
-    }, 
-    {
-      "type": "IS_SPECIAL_DEVICE_FUNC*", 
-      "name": "g_IsSpecialDeviceFuncPtr", 
-      "addr": "00685284", 
-      "value": "00000000"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060c270", 
-    "signature": "int crt_io.c_IsSpecialDevice_FUN_0060c270(int handle_index)", 
-    "address_range": [
-      [
-        "0060c270", 
-        "0060c2db"
-      ]
-    ], 
-    "name": "crt_io.c_IsSpecialDevice_FUN_0060c270"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "handle_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 43,
+    "complexity_score": 26,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 69
+  },
   "cross_references": [
     {
-      "from_addr": "006088e7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_getFileTypeFlags_FUN_006088b0", 
-      "addr": "006088b0"
-    }, 
+      "addr": "006088b0",
+      "from_addr": "006088e7",
+      "name": "crt_io.c_getFileTypeFlags_FUN_006088b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00609275", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0", 
-      "addr": "006090a0"
-    }, 
+      "addr": "006090a0",
+      "from_addr": "00609275",
+      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00608eef", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0", 
-      "addr": "00608ee0"
+      "addr": "00608ee0",
+      "from_addr": "00608eef",
+      "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060c270",
+    "address_range": [
+      [
+        "0060c270",
+        "0060c2db"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_IsSpecialDevice_FUN_0060c270",
+    "signature": "int crt_io.c_IsSpecialDevice_FUN_0060c270(int handle_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00602434",
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434"
+    },
+    {
+      "addr": "EXTERNAL:00000072",
+      "name": "GetFileType"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061159c",
+      "name": "PTR_GetFileType_0061159c",
+      "type": "GetFileType*",
+      "value": "00211f00"
+    },
+    {
+      "addr": "00684ee8",
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8",
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "00684eec",
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec",
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*",
+      "value": "00602434"
+    },
+    {
+      "addr": "0068526c",
+      "name": "g_IOControlBlock",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
+    },
+    {
+      "addr": "00685284",
+      "name": "g_IsSpecialDeviceFuncPtr",
+      "type": "IS_SPECIAL_DEVICE_FUNC*",
+      "value": "00000000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "handle_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

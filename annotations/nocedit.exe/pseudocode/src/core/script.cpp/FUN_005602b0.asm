@@ -21,8 +21,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x4]       ; 005602b5
     PUSH EDX                            ; 005602b8
     PUSH EBX                            ; 005602b9
-    CALL core_script.cpp_FUN_00560140   ; 005602ba | undefined core_script.cpp_FUN_00560140()
-        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_00560140   ; 005602ba
+        ;   XREF to: 00560140 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00560140()
     MOV dword ptr [EBX + 0x4c],0x0      ; 005602bf
     ADD ESP,0x8                         ; 005602c6
     MOV dword ptr [EBX + 0x50],0x0      ; 005602c9

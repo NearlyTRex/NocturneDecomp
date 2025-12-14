@@ -1,120 +1,120 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 91, 
-    "pseudocode_lines": 91, 
-    "cross_reference_count": 2, 
-    "global_count": 8, 
-    "total_lines": 164, 
-    "assembly_lines": 73, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70", 
-      "addr": "0040cc70"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
-      "addr": "004a9500"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_mobster1_dfm_006396ca", 
-      "addr": "006396ca", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_none_006396d7", 
-      "addr": "006396d7", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006396d8", 
-      "addr": "006396d8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006396d9", 
-      "addr": "006396d9", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_006396da", 
-      "addr": "006396da", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00661780", 
-      "addr": "00661780", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00661784", 
-      "addr": "00661784", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "PTR_core_mobster.cpp_FUN_00525340_00661794", 
-      "addr": "00661794", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00525200", 
-    "signature": "CMobster * core_mobster.cpp_CMobster_ctor_FUN_00525200(CMobster * this_ptr)", 
-    "address_range": [
-      [
-        "00525200", 
-        "00525337"
-      ]
-    ], 
-    "name": "core_mobster.cpp_CMobster_ctor_FUN_00525200"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMobster *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 73,
+    "complexity_score": 91,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 8,
+    "pseudocode_lines": 91,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 164
+  },
   "cross_references": [
     {
-      "from_addr": "005251dd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mobster.cpp_FUN_005251c0", 
-      "addr": "005251c0"
-    }, 
+      "addr": "005251c0",
+      "from_addr": "005251dd",
+      "name": "core_mobster.cpp_FUN_005251c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005e842d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80", 
-      "addr": "005e7e80"
+      "addr": "005e7e80",
+      "from_addr": "005e842d",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00525200",
+    "address_range": [
+      [
+        "00525200",
+        "00525337"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mobster.cpp_CMobster_ctor_FUN_00525200",
+    "signature": "CMobster * core_mobster.cpp_CMobster_ctor_FUN_00525200(CMobster * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc70",
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "004a9500",
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006396ca",
+      "name": "s_mobster1_dfm_006396ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006396d7",
+      "name": "s_none_006396d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006396d8",
+      "name": "DAT_006396d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006396d9",
+      "name": "DAT_006396d9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006396da",
+      "name": "DAT_006396da",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00661780",
+      "name": "DAT_00661780",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00661784",
+      "name": "DAT_00661784",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00661794",
+      "name": "PTR_core_mobster.cpp_FUN_00525340_00661794",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMobster *"
+      }
+    ]
+  },
+  "suspects": []
 }

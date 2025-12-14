@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x823de4                    ; 0042fb70 | CDemonActorType g_CChainClassInfo
+    MOV EAX,0x823de4                    ; 0042fb70 | g_CChainClassInfo
         ;   Label: core_chain.cpp_StartOfClass_FUN_0042fb70
     RET                                 ; 0042fb75
 

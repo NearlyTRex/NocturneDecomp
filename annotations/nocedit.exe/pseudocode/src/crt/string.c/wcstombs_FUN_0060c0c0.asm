@@ -32,38 +32,38 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 0060c0cb
     XOR EBP,EBP                         ; 0060c0cf
     TEST EDX,EDX                        ; 0060c0d1
-    JZ 0x0060c150                       ; 0060c0d3 | LAB_0060c150
-        ;   XREF to: 0060c150 (CONDITIONAL_JUMP)
+    JZ 0x0060c150                       ; 0060c0d3
+        ;   XREF to: 0060c150 (CONDITIONAL_JUMP)  ; LAB_0060c150
     CMP dword ptr [ESP + 0x20],0x0      ; 0060c0d9
         ;   Label: LAB_0060c0d9
-    JBE 0x0060c177                      ; 0060c0de | LAB_0060c177
-        ;   XREF to: 0060c177 (CONDITIONAL_JUMP)
+    JBE 0x0060c177                      ; 0060c0de
+        ;   XREF to: 0060c177 (CONDITIONAL_JUMP)  ; LAB_0060c177
     MOV CX,word ptr [EBX]               ; 0060c0e4
     TEST CX,CX                          ; 0060c0e7
-    JZ 0x0060c112                       ; 0060c0ea | LAB_0060c112
-        ;   XREF to: 0060c112 (CONDITIONAL_JUMP)
+    JZ 0x0060c112                       ; 0060c0ea
+        ;   XREF to: 0060c112 (CONDITIONAL_JUMP)  ; LAB_0060c112
     XOR EAX,EAX                         ; 0060c0ec
     MOV AX,CX                           ; 0060c0ee
     PUSH EAX                            ; 0060c0f1
     LEA EAX,[ESP + 0x4]                 ; 0060c0f2
     PUSH EAX                            ; 0060c0f6
-    CALL crt_stdio.c_WideCharToSingleByte_FUN_0060acf0 ; 0060c0f7 | int crt_stdio.c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char, char * output_buffer)
-        ;   XREF to: 0060acf0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_WideCharToSingleByte_FUN_0060acf0 ; 0060c0f7
+        ;   XREF to: 0060acf0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char, char * output_buffer)
     MOV EDX,EAX                         ; 0060c0fc
     ADD ESP,0x8                         ; 0060c0fe
     CMP EAX,-0x1                        ; 0060c101
-    JZ 0x0060c179                       ; 0060c104 | LAB_0060c179
-        ;   XREF to: 0060c179 (CONDITIONAL_JUMP)
+    JZ 0x0060c179                       ; 0060c104
+        ;   XREF to: 0060c179 (CONDITIONAL_JUMP)  ; LAB_0060c179
     CMP EAX,dword ptr [ESP + 0x20]      ; 0060c10a
-    JA 0x0060c177                       ; 0060c10e | LAB_0060c177
-        ;   XREF to: 0060c177 (CONDITIONAL_JUMP)
-    JMP 0x0060c11b                      ; 0060c110 | LAB_0060c11b
-        ;   XREF to: 0060c11b (UNCONDITIONAL_JUMP)
+    JA 0x0060c177                       ; 0060c10e
+        ;   XREF to: 0060c177 (CONDITIONAL_JUMP)  ; LAB_0060c177
+    JMP 0x0060c11b                      ; 0060c110
+        ;   XREF to: 0060c11b (UNCONDITIONAL_JUMP)  ; LAB_0060c11b
     MOV EAX,dword ptr [ESP + 0x18]      ; 0060c112
         ;   Label: LAB_0060c112
     MOV byte ptr [EAX],0x0              ; 0060c116
-    JMP 0x0060c177                      ; 0060c119 | LAB_0060c177
-        ;   XREF to: 0060c177 (UNCONDITIONAL_JUMP)
+    JMP 0x0060c177                      ; 0060c119
+        ;   XREF to: 0060c177 (UNCONDITIONAL_JUMP)  ; LAB_0060c177
     MOV ESI,ESP                         ; 0060c11b
         ;   Label: LAB_0060c11b
     MOV EDI,dword ptr [ESP + 0x18]      ; 0060c11d
@@ -87,28 +87,28 @@ section .text
     SUB EAX,EDX                         ; 0060c144
     MOV dword ptr [ESP + 0x18],EDI      ; 0060c146
     MOV dword ptr [ESP + 0x20],EAX      ; 0060c14a
-    JMP 0x0060c0d9                      ; 0060c14e | LAB_0060c0d9
-        ;   XREF to: 0060c0d9 (UNCONDITIONAL_JUMP)
+    JMP 0x0060c0d9                      ; 0060c14e
+        ;   XREF to: 0060c0d9 (UNCONDITIONAL_JUMP)  ; LAB_0060c0d9
     MOV DX,word ptr [EBX]               ; 0060c150
         ;   Label: LAB_0060c150
     TEST DX,DX                          ; 0060c153
-    JZ 0x0060c177                       ; 0060c156 | LAB_0060c177
-        ;   XREF to: 0060c177 (CONDITIONAL_JUMP)
+    JZ 0x0060c177                       ; 0060c156
+        ;   XREF to: 0060c177 (CONDITIONAL_JUMP)  ; LAB_0060c177
     XOR EAX,EAX                         ; 0060c158
     MOV AX,DX                           ; 0060c15a
     PUSH EAX                            ; 0060c15d
     LEA EAX,[ESP + 0x4]                 ; 0060c15e
     PUSH EAX                            ; 0060c162
-    CALL crt_stdio.c_WideCharToSingleByte_FUN_0060acf0 ; 0060c163 | int crt_stdio.c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char, char * output_buffer)
-        ;   XREF to: 0060acf0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_WideCharToSingleByte_FUN_0060acf0 ; 0060c163
+        ;   XREF to: 0060acf0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char, char * output_buffer)
     ADD ESP,0x8                         ; 0060c168
     CMP EAX,-0x1                        ; 0060c16b
-    JZ 0x0060c179                       ; 0060c16e | LAB_0060c179
-        ;   XREF to: 0060c179 (CONDITIONAL_JUMP)
+    JZ 0x0060c179                       ; 0060c16e
+        ;   XREF to: 0060c179 (CONDITIONAL_JUMP)  ; LAB_0060c179
     ADD EBX,0x2                         ; 0060c170
     ADD EBP,EAX                         ; 0060c173
-    JMP 0x0060c150                      ; 0060c175 | LAB_0060c150
-        ;   XREF to: 0060c150 (UNCONDITIONAL_JUMP)
+    JMP 0x0060c150                      ; 0060c175
+        ;   XREF to: 0060c150 (UNCONDITIONAL_JUMP)  ; LAB_0060c150
     MOV EAX,EBP                         ; 0060c177
         ;   Label: LAB_0060c177
     ADD ESP,0x4                         ; 0060c179

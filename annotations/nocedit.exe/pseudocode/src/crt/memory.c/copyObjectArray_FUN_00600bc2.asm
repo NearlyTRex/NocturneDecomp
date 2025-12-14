@@ -43,8 +43,8 @@ section .text
     MOV EBP,dword ptr [EBP + 0x10]      ; 00600bed
     TEST EDI,EDI                        ; 00600bf0
         ;   Label: LAB_00600bf0
-    JA 0x00600c00                       ; 00600bf2 | LAB_00600c00
-        ;   XREF to: 00600c00 (CONDITIONAL_JUMP)
+    JA 0x00600c00                       ; 00600bf2
+        ;   XREF to: 00600c00 (CONDITIONAL_JUMP)  ; LAB_00600c00
     MOV EAX,dword ptr [ESP + 0x8]       ; 00600bf4
     ADD ESP,0x10                        ; 00600bf8
     POP EBP                             ; 00600bfb
@@ -63,6 +63,6 @@ section .text
     INC ECX                             ; 00600c0f
     ADD EBX,EBP                         ; 00600c10
     MOV dword ptr [ESP],ECX             ; 00600c12
-    JMP 0x00600bf0                      ; 00600c15 | LAB_00600bf0
-        ;   XREF to: 00600bf0 (UNCONDITIONAL_JUMP)
+    JMP 0x00600bf0                      ; 00600c15
+        ;   XREF to: 00600bf0 (UNCONDITIONAL_JUMP)  ; LAB_00600bf0
 

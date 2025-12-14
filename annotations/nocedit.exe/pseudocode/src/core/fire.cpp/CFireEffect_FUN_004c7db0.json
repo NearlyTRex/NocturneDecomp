@@ -1,187 +1,187 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 141, 
-    "pseudocode_lines": 36, 
-    "cross_reference_count": 1, 
-    "global_count": 8, 
-    "total_lines": 101, 
-    "assembly_lines": 65, 
-    "suspect_count": 10, 
+    "assembly_lines": 65,
+    "complexity_score": 141,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 8,
+    "pseudocode_lines": 36,
+    "suspect_count": 10,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70", 
-      "addr": "0040cc70"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0", 
-      "addr": "005a98b0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00", 
-      "addr": "005a9a00"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CBulletTrail*", 
-      "name": "g_BulletTrailActiveListHead", 
-      "addr": "02d62ea4", 
-      "value": null
-    }, 
-    {
-      "type": "CFireball[64]", 
-      "name": "g_FireballPool", 
-      "addr": "02d62ea8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62edc", 
-      "addr": "02d62edc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62ee0", 
-      "addr": "02d62ee0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62ee4", 
-      "addr": "02d62ee4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62ee8", 
-      "addr": "02d62ee8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62eec", 
-      "addr": "02d62eec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d62f00", 
-      "addr": "02d62f00", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CVector3f *in_stack_00000008;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CVector3f *in_stack_0000000c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000030;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000034;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&this_ptr_00->base,in_stack_00000008,in_stack_0000000c);"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(&this_ptr_00->base,in_stack_00000008,in_stack_0000000c);"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000030 == 0) {"
-    }, 
-    {
-      "line": 31, 
-      "match": "in_stack_00000030", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_FireballPool[(int)pCVar2].lighting_active = in_stack_00000030;"
-    }, 
-    {
-      "line": 33, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_FireballPool[(int)pCVar2].field9_0x58 = in_stack_00000034;"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_00000034", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000034,(CVector3f *)this_ptr_00);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004c7db0", 
-    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7db0(CFireEffect * this_ptr)", 
-    "address_range": [
-      [
-        "004c7db0", 
-        "004c7e58"
-      ]
-    ], 
-    "name": "core_fire.cpp_CFireEffect_FUN_004c7db0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFireEffect *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 101
+  },
   "cross_references": [
     {
-      "from_addr": "004c16be", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CFireball_onCollision_FUN_004c1690", 
-      "addr": "004c1690"
+      "addr": "004c1690",
+      "from_addr": "004c16be",
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_004c1690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c7db0",
+    "address_range": [
+      [
+        "004c7db0",
+        "004c7e58"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_FUN_004c7db0",
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7db0(CFireEffect * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc70",
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70"
+    },
+    {
+      "addr": "005a98b0",
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0"
+    },
+    {
+      "addr": "005a9a00",
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02d62ea4",
+      "name": "g_BulletTrailActiveListHead",
+      "type": "CBulletTrail*",
+      "value": null
+    },
+    {
+      "addr": "02d62ea8",
+      "name": "g_FireballPool",
+      "type": "CFireball[64]",
+      "value": null
+    },
+    {
+      "addr": "02d62edc",
+      "name": "DAT_02d62edc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62ee0",
+      "name": "DAT_02d62ee0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62ee4",
+      "name": "DAT_02d62ee4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62ee8",
+      "name": "DAT_02d62ee8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62eec",
+      "name": "DAT_02d62eec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d62f00",
+      "name": "DAT_02d62f00",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "CVector3f *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000000c",
+      "text": "CVector3f *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000030",
+      "text": "int in_stack_00000030;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000034",
+      "text": "uint in_stack_00000034;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "(&this_ptr_00->base,in_stack_00000008,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000000c",
+      "text": "(&this_ptr_00->base,in_stack_00000008,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000030",
+      "text": "if (in_stack_00000030 == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000030",
+      "text": "g_FireballPool[(int)pCVar2].lighting_active = in_stack_00000030;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000034",
+      "text": "g_FireballPool[(int)pCVar2].field9_0x58 = in_stack_00000034;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000034",
+      "text": "(in_stack_00000034,(CVector3f *)this_ptr_00);",
+      "type": "stack_param"
     }
   ]
 }

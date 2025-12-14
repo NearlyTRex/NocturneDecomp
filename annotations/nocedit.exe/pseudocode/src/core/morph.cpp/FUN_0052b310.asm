@@ -23,13 +23,13 @@
 
 section .text
 
-    PUSH 0x661b60                       ; 0052b310 | WatcomTypeInfo g_CMorphModelTypeInfo
+    PUSH 0x661b60                       ; 0052b310 | g_CMorphModelTypeInfo
         ;   Label: core_morph.cpp_FUN_0052b310
     PUSH 0x2                            ; 0052b315
     MOV EDX,dword ptr [ESP + 0xc]       ; 0052b317
     PUSH EDX                            ; 0052b31b
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0052b31c | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 0052b31c
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052b321
     MOV dword ptr [EAX + 0xc28],0x1     ; 0052b324
     RET                                 ; 0052b32e

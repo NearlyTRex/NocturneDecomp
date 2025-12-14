@@ -50,7 +50,7 @@ section .text
     MOV EAX,0x1                         ; 004c030b
     MOV EBX,0x80000                     ; 004c0310
     MOV ESI,0xf80000                    ; 004c0315 | DAT_00f80000
-    MOV EDI,0x2d12db4                   ; 004c031a | CVector3i g_BillboardCameraRight
+    MOV EDI,0x2d12db4                   ; 004c031a | g_BillboardCameraRight
     XOR ECX,ECX                         ; 004c031f
     MOV dword ptr [0x02d12dd0],EDX      ; 004c0321 | g_BillboardPrimitive.base.base.count
     MOV dword ptr [0x02d12dd4],ECX      ; 004c0327 | g_BillboardPrimitive.base.surface_normal.A
@@ -69,19 +69,19 @@ section .text
     MOV dword ptr [0x006880c0],EBX      ; 004c0374 | g_RenderVertexBuffer[3].v
     MOV EDX,0x2                         ; 004c037a
     MOV ECX,0x3                         ; 004c037f
-    MOV ESI,dword ptr [0x006703ec]      ; 004c0384 | CDemonRenderer * g_CDemonRendererPtr
+    MOV ESI,dword ptr [0x006703ec]      ; 004c0384 | g_CDemonRendererPtr
     MOV dword ptr [0x02d12dec],EDX      ; 004c038a | g_BillboardPrimitive.vertices[2]
-    PUSH ESI                            ; 004c0390 | CDemonRenderer g_CDemonRendererInstance
+    PUSH ESI                            ; 004c0390 | g_CDemonRendererInstance
     LEA ESI,[ESP + 0x54]                ; 004c0391
     MOV dword ptr [0x02d12df0],ECX      ; 004c0395 | g_BillboardPrimitive.vertices[3]
-    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 ; 004c039b | void engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
-        ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 ; 004c039b
+        ;   XREF to: 0048c7e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004c03a0
     ADD ESP,0x4                         ; 004c03a4
-    MOVSD ES:EDI,ESI                    ; 004c03a7 | CVector3i g_BillboardCameraRight
+    MOVSD ES:EDI,ESI                    ; 004c03a7 | g_BillboardCameraRight
     MOVSD ES:EDI,ESI                    ; 004c03a8 | g_BillboardCameraRight.y
     MOVSD ES:EDI,ESI                    ; 004c03a9 | DAT_02d12dbc
-    MOV ESI,dword ptr [0x00823a74]      ; 004c03aa | CDemonCamera * g_CurrentSceneCamera
+    MOV ESI,dword ptr [0x00823a74]      ; 004c03aa | g_CurrentSceneCamera
     MOV ECX,0xa                         ; 004c03b0
     XOR EDI,EDI                         ; 004c03b5
     LEA ESI,[ESI + 0x10]                ; 004c03b7
@@ -92,7 +92,7 @@ section .text
     MOV EDI,ESP                         ; 004c03cb
     LEA ESI,[ESP + 0x28]                ; 004c03cd
     MOVSD.REP ES:EDI,ESI                ; 004c03d1
-    FLD double ptr [0x00629c6b]         ; 004c03d3 | double DOUBLE_00629c6b
+    FLD double ptr [0x00629c6b]         ; 004c03d3 | DOUBLE_00629c6b
     FLD float ptr [ESP + 0x8]           ; 004c03d9
     FMUL ST1                            ; 004c03dd
     FLD float ptr [ESP + 0x14]          ; 004c03df
@@ -100,16 +100,16 @@ section .text
     FLD float ptr [ESP + 0x20]          ; 004c03e5
     FMULP ST3                           ; 004c03e9
     FXCH                                ; 004c03eb
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004c03ed | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004c03ed
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 004c03f2
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004c03f4 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004c03f4
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH ST2                            ; 004c03f9
-    CALL crt_math.c_round_FUN_005fe6b0  ; 004c03fb | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 004c03fb
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FXCH                                ; 004c0400
-    FISTP dword ptr [0x02d12dc0]        ; 004c0402 | CVector3i g_BillboardCameraUp
+    FISTP dword ptr [0x02d12dc0]        ; 004c0402 | g_BillboardCameraUp
     FXCH                                ; 004c0408
     FISTP dword ptr [0x02d12dc4]        ; 004c040a | g_BillboardCameraUp.y
     FISTP dword ptr [0x02d12dc8]        ; 004c0410 | g_BillboardCameraUp.z

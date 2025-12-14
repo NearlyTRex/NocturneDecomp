@@ -20,8 +20,8 @@ section .text
     JNC 0x005e50f0                      ; 005e50e1
         ;   XREF to: 005e50f0 (CONDITIONAL_JUMP)
     CMP dword ptr [EDX + 0xc078],0x3    ; 005e50e3
-    JNZ 0x005e50f3                      ; 005e50ea | LAB_005e50f3
-        ;   XREF to: 005e50f3 (CONDITIONAL_JUMP)
+    JNZ 0x005e50f3                      ; 005e50ea
+        ;   XREF to: 005e50f3 (CONDITIONAL_JUMP)  ; LAB_005e50f3
     LEA EAX,[EAX]                       ; 005e50ec
     MOV EAX,0x1                         ; 005e50f3
         ;   Label: LAB_005e50f3

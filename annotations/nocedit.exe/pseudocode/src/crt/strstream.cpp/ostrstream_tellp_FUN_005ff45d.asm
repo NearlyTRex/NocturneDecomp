@@ -21,8 +21,8 @@ section .text
     ADD EAX,EDX                         ; 005ff466
     MOV EDX,dword ptr [EAX + 0x10]      ; 005ff468
     AND EDX,0x3                         ; 005ff46b
-    JZ 0x005ff476                       ; 005ff46e | LAB_005ff476
-        ;   XREF to: 005ff476 (CONDITIONAL_JUMP)
+    JZ 0x005ff476                       ; 005ff46e
+        ;   XREF to: 005ff476 (CONDITIONAL_JUMP)  ; LAB_005ff476
     MOV EAX,0xffffffff                  ; 005ff470
     RET                                 ; 005ff475
     PUSH 0x2                            ; 005ff476

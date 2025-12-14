@@ -111,7 +111,7 @@ LAB_005f37d1:
   windowClass.style = 3;
   windowClass.hIcon = (*LoadIconA)(hInstance,(LPCSTR)0x65);
   windowClass.hCursor = (*LoadCursorA)((HINSTANCE)0x0,(LPCSTR)0x7f00);
-  windowClass.hbrBackground = (HBRUSH)(*GetStockObject)(4);
+  windowClass.hbrBackground = (*GetStockObject)(4);
   windowClass.lpszClassName = g_ApplicationTitle;
   windowClass.lpszMenuName = (LPCSTR)0x0;
   (*RegisterClassA)(&windowClass);

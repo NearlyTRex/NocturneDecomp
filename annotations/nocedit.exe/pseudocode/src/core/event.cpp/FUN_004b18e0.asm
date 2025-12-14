@@ -23,12 +23,12 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004b18e0
         ;   Label: core_event.cpp_FUN_004b18e0
     PUSH EDX                            ; 004b18e4
-    CALL core_event.cpp_FUN_004b1890    ; 004b18e5 | undefined core_event.cpp_FUN_004b1890()
-        ;   XREF to: 004b1890 (UNCONDITIONAL_CALL)
+    CALL core_event.cpp_FUN_004b1890    ; 004b18e5
+        ;   XREF to: 004b1890 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_004b1890()
     ADD ESP,0x4                         ; 004b18ea
     TEST EAX,EAX                        ; 004b18ed
-    JGE 0x004b18f4                      ; 004b18ef | LAB_004b18f4
-        ;   XREF to: 004b18f4 (CONDITIONAL_JUMP)
+    JGE 0x004b18f4                      ; 004b18ef
+        ;   XREF to: 004b18f4 (CONDITIONAL_JUMP)  ; LAB_004b18f4
     XOR EAX,EAX                         ; 004b18f1
     RET                                 ; 004b18f3
     MOV EDX,EAX                         ; 004b18f4
@@ -42,10 +42,10 @@ section .text
     ADD EDX,0x1f8                       ; 004b1907
     ADD EAX,EDX                         ; 004b190d
     PUSH EAX                            ; 004b190f
-    MOV ECX,dword ptr [0x006793d0]      ; 004b1910 | CEventList g_CEventListInstance | CEventList * g_CEventListPtr
-    PUSH ECX                            ; 004b1916 | CEventList g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 004b1917 | void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x006793d0]      ; 004b1910 | g_CEventListInstance | g_CEventListPtr
+    PUSH ECX                            ; 004b1916 | g_CEventListInstance
+    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 004b1917
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
     MOV EAX,0x1                         ; 004b191c
     ADD ESP,0x8                         ; 004b1921
     RET                                 ; 004b1924

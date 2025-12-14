@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 26, 
-    "assembly_lines": 18, 
-    "suspect_count": 2, 
+    "assembly_lines": 18,
+    "complexity_score": 33,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_boxactor.cpp_FUN_00421830", 
-      "addr": "00421830"
-    }, 
-    {
-      "name": "core_boxactor.cpp_FUN_00422d60", 
-      "addr": "00422d60"
-    }, 
-    {
-      "name": "core_dlight.cpp_CDemonLight_init_FUN_004727c0", 
-      "addr": "004727c0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_dlight_cpp_CDemonLight_init_FUN_004727c0((CDemonLight *)(in_stack_00000004 + 0x670));"
-    }
-  ], 
+    ],
+    "total_lines": 26
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "00422a20", 
-    "signature": "undefined core_boxactor.cpp_FUN_00422a20()", 
+    "address": "00422a20",
     "address_range": [
       [
-        "00422a20", 
+        "00422a20",
         "00422a47"
       ]
-    ], 
-    "name": "core_boxactor.cpp_FUN_00422a20"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_boxactor.cpp_FUN_00422a20",
+    "signature": "undefined core_boxactor.cpp_FUN_00422a20()"
+  },
+  "function_calls": [
+    {
+      "addr": "00421830",
+      "name": "core_boxactor.cpp_FUN_00421830"
+    },
+    {
+      "addr": "00422d60",
+      "name": "core_boxactor.cpp_FUN_00422d60"
+    },
+    {
+      "addr": "004727c0",
+      "name": "core_dlight.cpp_CDemonLight_init_FUN_004727c0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "text": "core_dlight_cpp_CDemonLight_init_FUN_004727c0((CDemonLight *)(in_stack_00000004 + 0x670));",
+      "type": "stack_param"
+    }
+  ]
 }

@@ -31,8 +31,8 @@ section .text
     PUSH EDX                            ; 00402305
     LEA EAX,[ESP + 0x8]                 ; 00402306
     PUSH EAX                            ; 0040230a
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0040230b | int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0040230b
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 00402310
     MOV EBX,dword ptr [ESP + 0x1014]    ; 00402313
     PUSH EBX                            ; 0040231a
@@ -42,8 +42,8 @@ section .text
     XOR ECX,ECX                         ; 00402327
     PUSH EAX                            ; 00402329
     MOV dword ptr [ESP + 0x100c],ECX    ; 0040232a
-    CALL engine_2d.c_drawTextCenteredAt_FUN_00402280 ; 00402331 | void engine_2d.c_drawTextCenteredAt_FUN_00402280(char * text, int center_x, int y_pos)
-        ;   XREF to: 00402280 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawTextCenteredAt_FUN_00402280 ; 00402331
+        ;   XREF to: 00402280 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredAt_FUN_00402280(char * text, int center_x, int y_pos)
     ADD ESP,0xc                         ; 00402336
     ADD ESP,0x1004                      ; 00402339
     POP ESI                             ; 0040233f

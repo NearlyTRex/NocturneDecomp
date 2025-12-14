@@ -1,131 +1,131 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 45, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 54, 
-    "assembly_lines": 39, 
-    "suspect_count": 2, 
+    "assembly_lines": 39,
+    "complexity_score": 45,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_time.c_mktime_FUN_00600f80", 
-      "addr": "00600f80"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060c1e0", 
-    "signature": "time_t crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0(WORD dos_date, WORD dos_time)", 
-    "address_range": [
-      [
-        "0060c1e0", 
-        "0060c251"
-      ]
-    ], 
-    "name": "crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef WORD ushort", 
-        "size": 2, 
-        "name": "dos_date"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "typedef WORD ushort", 
-        "size": 2, 
-        "name": "dos_time"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 50, 
-    "param_offset": 4, 
-    "param_size": 6
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 54
+  },
   "cross_references": [
     {
-      "from_addr": "00608100", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_stat_FUN_00607e64", 
-      "addr": "00607e64"
+      "addr": "00607e64",
+      "from_addr": "00608100",
+      "name": "crt_io.c_stat_FUN_00607e64",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060c1e0",
+    "address_range": [
+      [
+        "0060c1e0",
+        "0060c251"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0",
+    "signature": "time_t crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0(WORD dos_date, WORD dos_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00600f80",
+      "name": "crt_time.c_mktime_FUN_00600f80"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 50,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 6,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "dos_date",
+        "offset": 4,
+        "size": 2,
+        "type": "typedef WORD ushort"
+      },
+      {
+        "is_param": true,
+        "name": "dos_time",
+        "offset": 8,
+        "size": 2,
+        "type": "typedef WORD ushort"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

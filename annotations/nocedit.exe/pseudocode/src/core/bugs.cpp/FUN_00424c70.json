@@ -1,60 +1,60 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 28, 
-    "assembly_lines": 17, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_bugs.cpp_CBugs_ctor_FUN_00424cb0", 
-      "addr": "00424cb0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
-      "addr": "0050f1b0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_bugs_cpp_00616ccf", 
-      "addr": "00616ccf", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00424c70", 
-    "signature": "undefined core_bugs.cpp_FUN_00424c70()", 
-    "address_range": [
-      [
-        "00424c70", 
-        "00424c92"
-      ]
-    ], 
-    "name": "core_bugs.cpp_FUN_00424c70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 17,
+    "complexity_score": 10,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
   "cross_references": [
     {
-      "from_addr": "00424c4c", 
-      "type": "DATA", 
-      "name": "core_bugs.cpp_staticInit_FUN_00424c40", 
-      "addr": "00424c40"
+      "addr": "00424c40",
+      "from_addr": "00424c4c",
+      "name": "core_bugs.cpp_staticInit_FUN_00424c40",
+      "type": "DATA"
     }
-  ]
+  ],
+  "function": {
+    "address": "00424c70",
+    "address_range": [
+      [
+        "00424c70",
+        "00424c92"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_bugs.cpp_FUN_00424c70",
+    "signature": "undefined core_bugs.cpp_FUN_00424c70()"
+  },
+  "function_calls": [
+    {
+      "addr": "00424cb0",
+      "name": "core_bugs.cpp_CBugs_ctor_FUN_00424cb0"
+    },
+    {
+      "addr": "0050f1b0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616ccf",
+      "name": "s_core_bugs_cpp_00616ccf",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

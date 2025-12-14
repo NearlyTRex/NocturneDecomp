@@ -1,132 +1,132 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 34, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 127, 
-    "assembly_lines": 93, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_time.c_formatTwoDigits_FUN_00601640", 
-      "addr": "00601640"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char[12]", 
-      "name": "g_MonthInitial", 
-      "addr": "00684c88", 
-      "value": null
-    }, 
-    {
-      "type": "char[12]", 
-      "name": "g_MonthSecondInitial", 
-      "addr": "00684c94", 
-      "value": null
-    }, 
-    {
-      "type": "char[12]", 
-      "name": "g_MonthThirdInitial", 
-      "addr": "00684ca0", 
-      "value": null
-    }, 
-    {
-      "type": "char[7]", 
-      "name": "g_WeekdayInitial", 
-      "addr": "00684cac", 
-      "value": null
-    }, 
-    {
-      "type": "char[7]", 
-      "name": "g_WeekdaySecondInitial", 
-      "addr": "00684cb3", 
-      "value": null
-    }, 
-    {
-      "type": "char[7]", 
-      "name": "g_WeekdayThirdInitial", 
-      "addr": "00684cba", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00601729", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00601678", 
-    "signature": "char * crt_time.c_asctimeFormat_FUN_00601678(tm * timeptr, char * buffer)", 
-    "address_range": [
-      [
-        "00601678", 
-        "00601767"
-      ]
-    ], 
-    "name": "crt_time.c_asctimeFormat_FUN_00601678"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "tm *", 
-        "size": 4, 
-        "name": "timeptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 36, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 93,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 127
+  },
   "cross_references": [
     {
-      "from_addr": "00601777", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_time.c_asctime_FUN_00601768", 
-      "addr": "00601768"
+      "addr": "00601768",
+      "from_addr": "00601777",
+      "name": "crt_time.c_asctime_FUN_00601768",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00601678",
+    "address_range": [
+      [
+        "00601678",
+        "00601767"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_time.c_asctimeFormat_FUN_00601678",
+    "signature": "char * crt_time.c_asctimeFormat_FUN_00601678(tm * timeptr, char * buffer)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601640",
+      "name": "crt_time.c_formatTwoDigits_FUN_00601640"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00684c88",
+      "name": "g_MonthInitial",
+      "type": "char[12]",
+      "value": null
+    },
+    {
+      "addr": "00684c94",
+      "name": "g_MonthSecondInitial",
+      "type": "char[12]",
+      "value": null
+    },
+    {
+      "addr": "00684ca0",
+      "name": "g_MonthThirdInitial",
+      "type": "char[12]",
+      "value": null
+    },
+    {
+      "addr": "00684cac",
+      "name": "g_WeekdayInitial",
+      "type": "char[7]",
+      "value": null
+    },
+    {
+      "addr": "00684cb3",
+      "name": "g_WeekdaySecondInitial",
+      "type": "char[7]",
+      "value": null
+    },
+    {
+      "addr": "00684cba",
+      "name": "g_WeekdayThirdInitial",
+      "type": "char[7]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "timeptr",
+        "offset": 4,
+        "size": 4,
+        "type": "tm *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00601729",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

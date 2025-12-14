@@ -28,8 +28,8 @@ section .text
     PUSH EBP                            ; 004fd0e1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004fd0e2
     CMP dword ptr [EBX + 0x8],0x0       ; 004fd0e6
-    JLE 0x004fd114                      ; 004fd0ea | LAB_004fd114
-        ;   XREF to: 004fd114 (CONDITIONAL_JUMP)
+    JLE 0x004fd114                      ; 004fd0ea
+        ;   XREF to: 004fd114 (CONDITIONAL_JUMP)  ; LAB_004fd114
     PUSH EDI                            ; 004fd0ec
     PUSH ESI                            ; 004fd0ed
     CMP dword ptr [EBX + 0x450],0x0     ; 004fd0ee
@@ -40,13 +40,13 @@ section .text
     MOV ESI,dword ptr [EBX + 0xc]       ; 004fd0fe
     PUSH ESI                            ; 004fd101
     PUSH EBX                            ; 004fd102
-    CALL core_inv.cpp_CInventory_removeItem_FUN_004fea70 ; 004fd103 | void core_inv.cpp_CInventory_removeItem_FUN_004fea70(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
-        ;   XREF to: 004fea70 (UNCONDITIONAL_CALL)
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004fea70 ; 004fd103
+        ;   XREF to: 004fea70 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004fea70(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     MOV EDI,dword ptr [EBX + 0x8]       ; 004fd108
     ADD ESP,0xc                         ; 004fd10b
     TEST EDI,EDI                        ; 004fd10e
-    JG 0x004fd0ee                       ; 004fd110 | LAB_004fd0ee
-        ;   XREF to: 004fd0ee (CONDITIONAL_JUMP)
+    JG 0x004fd0ee                       ; 004fd110
+        ;   XREF to: 004fd0ee (CONDITIONAL_JUMP)  ; LAB_004fd0ee
     POP ESI                             ; 004fd112
     POP EDI                             ; 004fd113
     MOV dword ptr [EBX + 0x334],0x0     ; 004fd114
@@ -55,15 +55,15 @@ section .text
     MOV EBP,dword ptr [EBX + 0x458]     ; 004fd128
     MOV dword ptr [EBX + 0x330],0x0     ; 004fd12e
     TEST EBP,EBP                        ; 004fd138
-    JZ 0x004fd15f                       ; 004fd13a | LAB_004fd15f
-        ;   XREF to: 004fd15f (CONDITIONAL_JUMP)
-    MOV EAX,0x6303b4                    ; 004fd13c | = "..\\core\\inv.cpp" | s_core_inv_cpp_006303b4 = ..\core\inv.cpp
+    JZ 0x004fd15f                       ; 004fd13a
+        ;   XREF to: 004fd15f (CONDITIONAL_JUMP)  ; LAB_004fd15f
+    MOV EAX,0x6303b4                    ; 004fd13c | = "..\\core\\inv.cpp"
     MOV EDX,0x102                       ; 004fd141
-    MOV [0x0067d20c],EAX                ; 004fd146 | char * g_CurrentDebugFilename
-    MOV dword ptr [0x02f0d944],EDX      ; 004fd14b | int g_CurrentDebugLine
+    MOV [0x0067d20c],EAX                ; 004fd146 | g_CurrentDebugFilename
+    MOV dword ptr [0x02f0d944],EDX      ; 004fd14b | g_CurrentDebugLine
     MOV EAX,EBP                         ; 004fd151
-    JNZ 0x004fd162                      ; 004fd153 | LAB_004fd162
-        ;   XREF to: 004fd162 (CONDITIONAL_JUMP)
+    JNZ 0x004fd162                      ; 004fd153
+        ;   XREF to: 004fd162 (CONDITIONAL_JUMP)  ; LAB_004fd162
     MOV dword ptr [EBX + 0x458],0x0     ; 004fd155
     POP EBP                             ; 004fd15f
         ;   Label: LAB_004fd15f

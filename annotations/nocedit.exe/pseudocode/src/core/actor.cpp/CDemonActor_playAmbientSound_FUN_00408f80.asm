@@ -26,10 +26,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 00408f89
     PUSH ECX                            ; 00408f8d
     PUSH EDX                            ; 00408f8e
-    MOV EBX,dword ptr [0x00681ef8]      ; 00408f8f | CSound g_CSoundInstance | CSound * g_CSoundPtr
-    PUSH EBX                            ; 00408f95 | CSound g_CSoundInstance
-    CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70 ; 00408f96 | uint core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)
-        ;   XREF to: 005b3a70 (UNCONDITIONAL_CALL)
+    MOV EBX,dword ptr [0x00681ef8]      ; 00408f8f | g_CSoundInstance | g_CSoundPtr
+    PUSH EBX                            ; 00408f95 | g_CSoundInstance
+    CALL core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70 ; 00408f96
+        ;   XREF to: 005b3a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)
     ADD ESP,0x10                        ; 00408f9b
     POP EBX                             ; 00408f9e
     RET                                 ; 00408f9f

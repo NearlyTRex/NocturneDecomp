@@ -30,7 +30,7 @@ int core_script_cpp_FUN_005675a0(void)
       if (uVar1 < *(uint *)(in_stack_00000008 + 0x104)) {
         return -1;
       }
-      if (uVar1 <= *(uint *)(in_stack_00000008 + 0x104)) {
+      if (uVar1 == *(uint *)(in_stack_00000008 + 0x104)) {
         if (uVar1 == 0) {
           iVar4 = *(int *)(in_stack_00000008 + 0x10c);
           iVar2 = *(int *)(in_stack_00000004 + 0x10c);

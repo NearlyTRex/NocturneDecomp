@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [EDI + 0x4]       ; 005d35ee
     XOR ESI,ESI                         ; 005d35f1
     TEST EDX,EDX                        ; 005d35f3
-    JBE 0x005d3610                      ; 005d35f5 | LAB_005d3610
-        ;   XREF to: 005d3610 (CONDITIONAL_JUMP)
+    JBE 0x005d3610                      ; 005d35f5
+        ;   XREF to: 005d3610 (CONDITIONAL_JUMP)  ; LAB_005d3610
     MOV EAX,EBP                         ; 005d35f7
         ;   Label: LAB_005d35f7
     MOV ECX,dword ptr [EBX + 0x34]      ; 005d35f9
@@ -38,16 +38,16 @@ section .text
     MOV EAX,dword ptr [EDI]             ; 005d3604
     ADD EBX,0x38                        ; 005d3606
     CMP ESI,EAX                         ; 005d3609
-    JC 0x005d35f7                       ; 005d360b | LAB_005d35f7
-        ;   XREF to: 005d35f7 (CONDITIONAL_JUMP)
+    JC 0x005d35f7                       ; 005d360b
+        ;   XREF to: 005d35f7 (CONDITIONAL_JUMP)  ; LAB_005d35f7
     LEA EAX,[EAX]                       ; 005d360d
     MOV EDX,dword ptr [EDI + 0x8]       ; 005d3610
         ;   Label: LAB_005d3610
     MOV EBX,dword ptr [EDI + 0xc]       ; 005d3613
     XOR ESI,ESI                         ; 005d3616
     TEST EDX,EDX                        ; 005d3618
-    JBE 0x005d3640                      ; 005d361a | LAB_005d3640
-        ;   XREF to: 005d3640 (CONDITIONAL_JUMP)
+    JBE 0x005d3640                      ; 005d361a
+        ;   XREF to: 005d3640 (CONDITIONAL_JUMP)  ; LAB_005d3640
     PUSH EBP                            ; 005d361c
         ;   Label: LAB_005d361c
     MOV EAX,dword ptr [EBX + 0x64]      ; 005d361d
@@ -58,8 +58,8 @@ section .text
     MOV ECX,dword ptr [EDI + 0x8]       ; 005d3628
     ADD EBX,0x68                        ; 005d362b
     CMP ESI,ECX                         ; 005d362e
-    JC 0x005d361c                       ; 005d3630 | LAB_005d361c
-        ;   XREF to: 005d361c (CONDITIONAL_JUMP)
+    JC 0x005d361c                       ; 005d3630
+        ;   XREF to: 005d361c (CONDITIONAL_JUMP)  ; LAB_005d361c
     LEA EAX,[EAX]                       ; 005d3632
     LEA EDX,[EDX]                       ; 005d3638
     MOV EAX,EAX                         ; 005d363e

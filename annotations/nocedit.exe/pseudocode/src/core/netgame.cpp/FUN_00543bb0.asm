@@ -60,8 +60,8 @@ section .text
     MOV dword ptr [ESP + 0x1c],EAX      ; 00543bdc
     LEA EAX,[ESP + 0x20]                ; 00543be0
     PUSH EAX                            ; 00543be4
-    CALL core_netgame.cpp_FUN_00543e30  ; 00543be5 | undefined core_netgame.cpp_FUN_00543e30()
-        ;   XREF to: 00543e30 (UNCONDITIONAL_CALL)
+    CALL core_netgame.cpp_FUN_00543e30  ; 00543be5
+        ;   XREF to: 00543e30 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_00543e30()
     ADD ESP,0x8                         ; 00543bea
     MOV AX,word ptr [ESI + 0x4]         ; 00543bed
     MOV word ptr [ESP + 0x20],AX        ; 00543bf1

@@ -1,697 +1,697 @@
 {
   "complexity": {
-    "function_call_count": 9, 
-    "complexity_score": 490, 
-    "pseudocode_lines": 75, 
-    "cross_reference_count": 9, 
-    "global_count": 47, 
-    "total_lines": 284, 
-    "assembly_lines": 209, 
-    "suspect_count": 40, 
+    "assembly_lines": 209,
+    "complexity_score": 490,
+    "cross_reference_count": 9,
+    "function_call_count": 9,
+    "global_count": 47,
+    "pseudocode_lines": 75,
+    "suspect_count": 40,
     "suspect_types": [
-      "concat_artifact", 
-      "unknown_field", 
-      "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_memset_FUN_005fde40", 
-      "addr": "005fde40"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_isSoundBusy_FUN_005ab540", 
-      "addr": "005ab540"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0", 
-      "addr": "005a96b0"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530", 
-      "addr": "005ab530"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
-      "addr": "005abd30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005ab130", 
-      "addr": "005ab130"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170", 
-      "addr": "005ab170"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }, 
-    {
-      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
-      "addr": "005f2dc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_AudioBitsPerSample", 
-      "addr": "00681b14", 
-      "value": "0x10"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AudioChannelCount", 
-      "addr": "00681b18", 
-      "value": "0x2"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AudioSampleRate", 
-      "addr": "00681b1c", 
-      "value": "0x5622"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00681b30", 
-      "addr": "00681b30", 
-      "value": "1"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DOUBLE_00681b30+4", 
-      "addr": "00681b34", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3d", 
-      "name": "g_Cached3DListenerPos", 
-      "addr": "03f68830", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.x+4", 
-      "addr": "03f68834", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.y", 
-      "addr": "03f68838", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.y+4", 
-      "addr": "03f6883c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.z", 
-      "addr": "03f68840", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.z+4", 
-      "addr": "03f68844", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3d", 
-      "name": "g_Cached3DListenerVelocity", 
-      "addr": "03f68848", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerVelocity.x+4", 
-      "addr": "03f6884c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerVelocity.y", 
-      "addr": "03f68850", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerVelocity.y+4", 
-      "addr": "03f68854", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerVelocity.z", 
-      "addr": "03f68858", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerVelocity.z+4", 
-      "addr": "03f6885c", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3d", 
-      "name": "g_Cached3DListenerOrientFront", 
-      "addr": "03f68860", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientFront.x+4", 
-      "addr": "03f68864", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientFront.y", 
-      "addr": "03f68868", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientFront.y+4", 
-      "addr": "03f6886c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientFront.z", 
-      "addr": "03f68870", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientFront.z+4", 
-      "addr": "03f68874", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3d", 
-      "name": "g_Cached3DListenerOrientUp", 
-      "addr": "03f68878", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientUp.x+4", 
-      "addr": "03f6887c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientUp.y", 
-      "addr": "03f68880", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientUp.y+4", 
-      "addr": "03f68884", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientUp.z", 
-      "addr": "03f68888", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientUp.z+4", 
-      "addr": "03f6888c", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3d", 
-      "name": "g_Cached3DListenerOrientRight", 
-      "addr": "03f68890", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientRight.x+4", 
-      "addr": "03f68894", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientRight.y", 
-      "addr": "03f68898", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientRight.y+4", 
-      "addr": "03f6889c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientRight.z", 
-      "addr": "03f688a0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientRight.z+4", 
-      "addr": "03f688a4", 
-      "value": null
-    }, 
-    {
-      "type": "CSoundDevice*", 
-      "name": "g_CSoundDevicePtr", 
-      "addr": "03f69268", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundBusyFlag", 
-      "addr": "03f6926c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MixBufferReadIndex", 
-      "addr": "03f69278", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MixBufferWriteIndex", 
-      "addr": "03f6927c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_MixBufferSize", 
-      "addr": "03f69280", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_NumMixBuffers", 
-      "addr": "03f69284", 
-      "value": null
-    }, 
-    {
-      "type": "void*[8]", 
-      "name": "g_ChannelPrimaryBuffers", 
-      "addr": "03f692b0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ChannelPrimaryBuffers[1]", 
-      "addr": "03f692b4", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3f", 
-      "name": "g_DeferredOrientRight", 
-      "addr": "03f693e8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_DeferredOrientRight.y", 
-      "addr": "03f693ec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_DeferredOrientRight.z", 
-      "addr": "03f693f0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SoundStartTime", 
-      "addr": "03f69410", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 30, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);"
-    }, 
-    {
-      "line": 40, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),"
-    }, 
-    {
-      "line": 40, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),"
-    }, 
-    {
-      "line": 40, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),"
-    }, 
-    {
-      "line": 41, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),"
-    }, 
-    {
-      "line": 41, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),"
-    }, 
-    {
-      "line": 41, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),"
-    }, 
-    {
-      "line": 42, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));"
-    }, 
-    {
-      "line": 42, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));"
-    }, 
-    {
-      "line": 42, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));"
-    }, 
-    {
-      "line": 45, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.x._4_4_,"
-    }, 
-    {
-      "line": 45, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.x._4_4_,"
-    }, 
-    {
-      "line": 46, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_Cached3DListenerOrientFront.x._0_4_),"
-    }, 
-    {
-      "line": 47, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.y._4_4_,"
-    }, 
-    {
-      "line": 47, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.y._4_4_,"
-    }, 
-    {
-      "line": 48, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_Cached3DListenerOrientFront.y._0_4_),"
-    }, 
-    {
-      "line": 49, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.z._4_4_,"
-    }, 
-    {
-      "line": 49, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.z._4_4_,"
-    }, 
-    {
-      "line": 50, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_Cached3DListenerOrientFront.z._0_4_),"
-    }, 
-    {
-      "line": 51, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.x._4_4_,"
-    }, 
-    {
-      "line": 51, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.x._4_4_,"
-    }, 
-    {
-      "line": 52, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_Cached3DListenerOrientUp.x._0_4_),"
-    }, 
-    {
-      "line": 53, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.y._4_4_,"
-    }, 
-    {
-      "line": 53, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.y._4_4_,"
-    }, 
-    {
-      "line": 54, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_Cached3DListenerOrientUp.y._0_4_),"
-    }, 
-    {
-      "line": 55, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.z._4_4_,"
-    }, 
-    {
-      "line": 55, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.z._4_4_,"
-    }, 
-    {
-      "line": 56, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_Cached3DListenerOrientUp.z._0_4_));"
-    }, 
-    {
-      "line": 59, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.x._4_4_,"
-    }, 
-    {
-      "line": 59, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.x._4_4_,"
-    }, 
-    {
-      "line": 60, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_Cached3DListenerVelocity.x._0_4_),"
-    }, 
-    {
-      "line": 61, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.y._4_4_,"
-    }, 
-    {
-      "line": 61, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.y._4_4_,"
-    }, 
-    {
-      "line": 62, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_Cached3DListenerVelocity.y._0_4_),"
-    }, 
-    {
-      "line": 63, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.z._4_4_,"
-    }, 
-    {
-      "line": 63, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.z._4_4_,"
-    }, 
-    {
-      "line": 64, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "g_Cached3DListenerVelocity.z._0_4_));"
-    }, 
-    {
-      "line": 66, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));"
-    }, 
-    {
-      "line": 66, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));"
-    }, 
-    {
-      "line": 66, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005aaef0", 
-    "signature": "int sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0(void)", 
-    "address_range": [
-      [
-        "005aaef0", 
-        "005ab124"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+      "concat_artifact",
+      "pointer_cast",
+      "unknown_field"
+    ],
+    "total_lines": 284
+  },
   "cross_references": [
     {
-      "from_addr": "004e40f9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
-      "addr": "004e4010"
-    }, 
+      "addr": "004e4010",
+      "from_addr": "004e40f9",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0053eb61", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_FUN_0053eb40", 
-      "addr": "0053eb40"
-    }, 
+      "addr": "0053eb40",
+      "from_addr": "0053eb61",
+      "name": "core_msnedit.cpp_FUN_0053eb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00580f86", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
-      "addr": "00580730"
-    }, 
+      "addr": "00580730",
+      "from_addr": "00580f86",
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00589b1b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589b10", 
-      "addr": "00589b10"
-    }, 
+      "addr": "00589b10",
+      "from_addr": "00589b1b",
+      "name": "core_skeledit.cpp_FUN_00589b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00589e8c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589c20", 
-      "addr": "00589c20"
-    }, 
+      "addr": "00589c20",
+      "from_addr": "00589e8c",
+      "name": "core_skeledit.cpp_FUN_00589c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0058d1f4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_0058c190", 
-      "addr": "0058c190"
-    }, 
+      "addr": "0058c190",
+      "from_addr": "0058d1f4",
+      "name": "core_skeledit.cpp_FUN_0058c190",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b3933", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_configure_FUN_005b3830", 
-      "addr": "005b3830"
-    }, 
+      "addr": "005b3830",
+      "from_addr": "005b3933",
+      "name": "core_sound.cpp_CSound_configure_FUN_005b3830",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b2e33", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0", 
-      "addr": "005b2dd0"
-    }, 
+      "addr": "005b2dd0",
+      "from_addr": "005b2e33",
+      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ad6d1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0", 
-      "addr": "005ad5c0"
+      "addr": "005ad5c0",
+      "from_addr": "005ad6d1",
+      "name": "sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005aaef0",
+    "address_range": [
+      [
+        "005aaef0",
+        "005ab124"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0",
+    "signature": "int sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fde40",
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "005ab540",
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_005ab540"
+    },
+    {
+      "addr": "005a96b0",
+      "name": "sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0"
+    },
+    {
+      "addr": "005ab530",
+      "name": "sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530"
+    },
+    {
+      "addr": "005abd30",
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30"
+    },
+    {
+      "addr": "005ab130",
+      "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005ab130"
+    },
+    {
+      "addr": "005ab170",
+      "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    },
+    {
+      "addr": "005f2dc0",
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00681b14",
+      "name": "g_AudioBitsPerSample",
+      "type": "int",
+      "value": "0x10"
+    },
+    {
+      "addr": "00681b18",
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
+    },
+    {
+      "addr": "00681b1c",
+      "name": "g_AudioSampleRate",
+      "type": "int",
+      "value": "0x5622"
+    },
+    {
+      "addr": "00681b30",
+      "name": "DOUBLE_00681b30",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "addr": "00681b34",
+      "name": "DOUBLE_00681b30+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68830",
+      "name": "g_Cached3DListenerPos",
+      "type": "CVector3d",
+      "value": null
+    },
+    {
+      "addr": "03f68834",
+      "name": "g_Cached3DListenerPos.x+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68838",
+      "name": "g_Cached3DListenerPos.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6883c",
+      "name": "g_Cached3DListenerPos.y+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68840",
+      "name": "g_Cached3DListenerPos.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68844",
+      "name": "g_Cached3DListenerPos.z+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68848",
+      "name": "g_Cached3DListenerVelocity",
+      "type": "CVector3d",
+      "value": null
+    },
+    {
+      "addr": "03f6884c",
+      "name": "g_Cached3DListenerVelocity.x+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68850",
+      "name": "g_Cached3DListenerVelocity.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68854",
+      "name": "g_Cached3DListenerVelocity.y+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68858",
+      "name": "g_Cached3DListenerVelocity.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6885c",
+      "name": "g_Cached3DListenerVelocity.z+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68860",
+      "name": "g_Cached3DListenerOrientFront",
+      "type": "CVector3d",
+      "value": null
+    },
+    {
+      "addr": "03f68864",
+      "name": "g_Cached3DListenerOrientFront.x+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68868",
+      "name": "g_Cached3DListenerOrientFront.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6886c",
+      "name": "g_Cached3DListenerOrientFront.y+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68870",
+      "name": "g_Cached3DListenerOrientFront.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68874",
+      "name": "g_Cached3DListenerOrientFront.z+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68878",
+      "name": "g_Cached3DListenerOrientUp",
+      "type": "CVector3d",
+      "value": null
+    },
+    {
+      "addr": "03f6887c",
+      "name": "g_Cached3DListenerOrientUp.x+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68880",
+      "name": "g_Cached3DListenerOrientUp.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68884",
+      "name": "g_Cached3DListenerOrientUp.y+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68888",
+      "name": "g_Cached3DListenerOrientUp.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6888c",
+      "name": "g_Cached3DListenerOrientUp.z+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68890",
+      "name": "g_Cached3DListenerOrientRight",
+      "type": "CVector3d",
+      "value": null
+    },
+    {
+      "addr": "03f68894",
+      "name": "g_Cached3DListenerOrientRight.x+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68898",
+      "name": "g_Cached3DListenerOrientRight.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6889c",
+      "name": "g_Cached3DListenerOrientRight.y+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f688a0",
+      "name": "g_Cached3DListenerOrientRight.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f688a4",
+      "name": "g_Cached3DListenerOrientRight.z+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69268",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
+      "value": null
+    },
+    {
+      "addr": "03f6926c",
+      "name": "g_SoundBusyFlag",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69278",
+      "name": "g_MixBufferReadIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6927c",
+      "name": "g_MixBufferWriteIndex",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69280",
+      "name": "g_MixBufferSize",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f69284",
+      "name": "g_NumMixBuffers",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f692b0",
+      "name": "g_ChannelPrimaryBuffers",
+      "type": "void*[8]",
+      "value": null
+    },
+    {
+      "addr": "03f692b4",
+      "name": "g_ChannelPrimaryBuffers[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f693e8",
+      "name": "g_DeferredOrientRight",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "03f693ec",
+      "name": "g_DeferredOrientRight.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f693f0",
+      "name": "g_DeferredOrientRight.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69410",
+      "name": "g_SoundStartTime",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._0_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 40,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 41,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 41,
+      "match": "._0_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 41,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 42,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 42,
+      "match": "._0_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 42,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 45,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.x._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 45,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.x._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 46,
+      "match": "._0_4_",
+      "text": "g_Cached3DListenerOrientFront.x._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.y._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 47,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.y._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._0_4_",
+      "text": "g_Cached3DListenerOrientFront.y._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 49,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.z._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 49,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.z._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._0_4_",
+      "text": "g_Cached3DListenerOrientFront.z._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 51,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.x._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 51,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.x._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 52,
+      "match": "._0_4_",
+      "text": "g_Cached3DListenerOrientUp.x._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.y._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 53,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.y._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._0_4_",
+      "text": "g_Cached3DListenerOrientUp.y._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.z._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 55,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.z._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._0_4_",
+      "text": "g_Cached3DListenerOrientUp.z._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.x._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 59,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.x._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._0_4_",
+      "text": "g_Cached3DListenerVelocity.x._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.y._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 61,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.y._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "text": "g_Cached3DListenerVelocity.y._0_4_),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.z._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 63,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.z._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._0_4_",
+      "text": "g_Cached3DListenerVelocity.z._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._4_4_",
+      "text": "(g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._0_4_",
+      "text": "(g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 66,
+      "match": "CONCAT44",
+      "text": "(g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));",
+      "type": "concat_artifact"
     }
   ]
 }

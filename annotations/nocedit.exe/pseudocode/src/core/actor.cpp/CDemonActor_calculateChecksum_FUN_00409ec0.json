@@ -1,83 +1,83 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 48, 
-    "assembly_lines": 37, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
-      "addr": "0040ac80"
-    }, 
-    {
-      "name": "core_actor.cpp_crc32ProcessInt_FUN_0040cf50", 
-      "addr": "0040cf50"
-    }, 
-    {
-      "name": "core_actor.cpp_crc32ProcessString_FUN_0040cf90", 
-      "addr": "0040cf90"
-    }, 
-    {
-      "name": "core_actor.cpp_crc32ProcessVector_FUN_0040cf70", 
-      "addr": "0040cf70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_actor_cpp_00613904", 
-      "addr": "00613904", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00409ec0", 
-    "signature": "void core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0(CDemonActor * this_ptr, uint * out_crc)", 
-    "address_range": [
-      [
-        "00409ec0", 
-        "00409f10"
-      ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uint *", 
-        "size": 4, 
-        "name": "out_crc"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 37,
+    "complexity_score": 11,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 48
+  },
   "cross_references": [
     {
-      "from_addr": "0042dded", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_charactr.cpp_CCharacter_FUN_0042dde0", 
-      "addr": "0042dde0"
+      "addr": "0042dde0",
+      "from_addr": "0042dded",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042dde0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00409ec0",
+    "address_range": [
+      [
+        "00409ec0",
+        "00409f10"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0",
+    "signature": "void core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0(CDemonActor * this_ptr, uint * out_crc)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    },
+    {
+      "addr": "0040cf50",
+      "name": "core_actor.cpp_crc32ProcessInt_FUN_0040cf50"
+    },
+    {
+      "addr": "0040cf90",
+      "name": "core_actor.cpp_crc32ProcessString_FUN_0040cf90"
+    },
+    {
+      "addr": "0040cf70",
+      "name": "core_actor.cpp_crc32ProcessVector_FUN_0040cf70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00613904",
+      "name": "s_core_actor_cpp_00613904",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "out_crc",
+        "offset": 8,
+        "size": 4,
+        "type": "uint *"
+      }
+    ]
+  },
+  "suspects": []
 }

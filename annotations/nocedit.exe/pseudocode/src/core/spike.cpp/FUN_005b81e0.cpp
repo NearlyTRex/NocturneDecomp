@@ -11,8 +11,7 @@ void core_spike_cpp_FUN_005b81e0(void)
 {
   CSpike *this_ptr;
   
-  this_ptr = (CSpike *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x560,"..\\core\\spike.cpp",0x21);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x560,"..\\core\\spike.cpp",0x21);
   if (this_ptr == (CSpike *)0x0) {
     return;
   }

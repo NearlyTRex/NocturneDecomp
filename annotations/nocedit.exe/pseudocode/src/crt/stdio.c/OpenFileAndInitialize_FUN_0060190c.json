@@ -1,155 +1,155 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 132, 
-    "pseudocode_lines": 62, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 187, 
-    "assembly_lines": 125, 
-    "suspect_count": 5, 
+    "assembly_lines": 125,
+    "complexity_score": 132,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 0,
+    "pseudocode_lines": 62,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param", 
-      "undefined_type", 
-      "concat_artifact", 
-      "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_ctype.c_tolower_FUN_005feb30", 
-      "addr": "005feb30"
-    }, 
-    {
-      "name": "crt_stdio.c_CreateFileVariadic_FUN_00609074", 
-      "addr": "00609074"
-    }, 
-    {
-      "name": "crt_stdio.c_DeallocateFileStruct_FUN_006093b0", 
-      "addr": "006093b0"
-    }, 
-    {
-      "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0", 
-      "addr": "00608ee0"
-    }, 
-    {
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_00000009", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "undefined3 in_stack_00000009;"
-    }, 
-    {
-      "line": 12, 
-      "match": "undefined3 in_stack_00000009", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined3 in_stack_00000009;"
-    }, 
-    {
-      "line": 40, 
-      "match": "CONCAT11", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar2 = CONCAT11 /* combine 2-byte values */(1,bVar1);"
-    }, 
-    {
-      "line": 43, 
-      "match": "CONCAT11", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar2 = CONCAT11 /* combine 2-byte values */(2,bVar1);"
-    }, 
-    {
-      "line": 58, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060190c", 
-    "signature": "FILE * crt_stdio.c_OpenFileAndInitialize_FUN_0060190c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, int additional_flags, FILE * file_struct)", 
-    "address_range": [
-      [
-        "0060190c", 
-        "00601a1d"
-      ]
-    ], 
-    "name": "crt_stdio.c_OpenFileAndInitialize_FUN_0060190c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char", 
-        "size": 1, 
-        "name": "mode_char"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "parsed_mode_flags"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "stage1_result"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "additional_flags"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_struct"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+      "stack_param",
+      "pointer_cast",
+      "concat_artifact",
+      "undefined_type"
+    ],
+    "total_lines": 187
+  },
   "cross_references": [
     {
-      "from_addr": "00601b88", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fopenThreadSafe_FUN_00601b14", 
-      "addr": "00601b14"
-    }, 
+      "addr": "00601b14",
+      "from_addr": "00601b88",
+      "name": "crt_stdio.c_fopenThreadSafe_FUN_00601b14",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00601a66", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_fopenWithFlags_FUN_00601a20", 
-      "addr": "00601a20"
+      "addr": "00601a20",
+      "from_addr": "00601a66",
+      "name": "crt_stdio.c_fopenWithFlags_FUN_00601a20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0060190c",
+    "address_range": [
+      [
+        "0060190c",
+        "00601a1d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_OpenFileAndInitialize_FUN_0060190c",
+    "signature": "FILE * crt_stdio.c_OpenFileAndInitialize_FUN_0060190c(char * filename, char mode_char, int parsed_mode_flags, int stage1_result, int additional_flags, FILE * file_struct)"
+  },
+  "function_calls": [
+    {
+      "addr": "005feb30",
+      "name": "crt_ctype.c_tolower_FUN_005feb30"
+    },
+    {
+      "addr": "00609074",
+      "name": "crt_stdio.c_CreateFileVariadic_FUN_00609074"
+    },
+    {
+      "addr": "006093b0",
+      "name": "crt_stdio.c_DeallocateFileStruct_FUN_006093b0"
+    },
+    {
+      "addr": "00608ee0",
+      "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0"
+    },
+    {
+      "addr": "005ffacc",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mode_char",
+        "offset": 8,
+        "size": 1,
+        "type": "char"
+      },
+      {
+        "is_param": true,
+        "name": "parsed_mode_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "stage1_result",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "additional_flags",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "file_struct",
+        "offset": 24,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000009",
+      "text": "undefined3 in_stack_00000009;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 12,
+      "match": "undefined3 in_stack_00000009",
+      "text": "undefined3 in_stack_00000009;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 40,
+      "match": "CONCAT11",
+      "text": "uVar2 = CONCAT11 /* combine 2-byte values */(1,bVar1);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 43,
+      "match": "CONCAT11",
+      "text": "uVar2 = CONCAT11 /* combine 2-byte values */(2,bVar1);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

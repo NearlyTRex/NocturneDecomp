@@ -32,16 +32,16 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00
     MOV EDX,dword ptr [ESP + 0xc]       ; 0048ca01
     TEST EDX,EDX                        ; 0048ca05
-    JZ 0x0048ca3e                       ; 0048ca07 | LAB_0048ca3e
-        ;   XREF to: 0048ca3e (CONDITIONAL_JUMP)
+    JZ 0x0048ca3e                       ; 0048ca07
+        ;   XREF to: 0048ca3e (CONDITIONAL_JUMP)  ; LAB_0048ca3e
     MOV EAX,dword ptr [ESP + 0x8]       ; 0048ca09
     CMP dword ptr [EAX + 0x18],0x0      ; 0048ca0d
-    JZ 0x0048ca3a                       ; 0048ca11 | LAB_0048ca3a
-        ;   XREF to: 0048ca3a (CONDITIONAL_JUMP)
+    JZ 0x0048ca3a                       ; 0048ca11
+        ;   XREF to: 0048ca3a (CONDITIONAL_JUMP)  ; LAB_0048ca3a
     PUSH 0x2                            ; 0048ca13
-    CALL engine_prim.c_setCullingMode_FUN_00551b90 ; 0048ca15 | void engine_prim.c_setCullingMode_FUN_00551b90(int culling_mode)
+    CALL engine_prim.c_setCullingMode_FUN_00551b90 ; 0048ca15
+        ;   XREF to: 00551b90 (UNCONDITIONAL_CALL)  ; void engine_prim.c_setCullingMode_FUN_00551b90(int culling_mode)
         ;   Label: LAB_0048ca15
-        ;   XREF to: 00551b90 (UNCONDITIONAL_CALL)
     ADD ESP,0x4                         ; 0048ca1a
     CMP dword ptr [ESP + 0xc],0x0       ; 0048ca1d
     SETZ AL                             ; 0048ca22
@@ -49,17 +49,17 @@ section .text
     PUSH EAX                            ; 0048ca2a
     MOV ESI,dword ptr [ESP + 0xc]       ; 0048ca2b
     PUSH ESI                            ; 0048ca2f
-    CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0 ; 0048ca30 | void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(CDemonRenderer * this_ptr, int enabled)
-        ;   XREF to: 0048c9f0 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0 ; 0048ca30
+        ;   XREF to: 0048c9f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0048ca35
     POP ESI                             ; 0048ca38
     RET                                 ; 0048ca39
     PUSH 0x1                            ; 0048ca3a
         ;   Label: LAB_0048ca3a
-    JMP 0x0048ca15                      ; 0048ca3c | LAB_0048ca15
-        ;   XREF to: 0048ca15 (UNCONDITIONAL_JUMP)
+    JMP 0x0048ca15                      ; 0048ca3c
+        ;   XREF to: 0048ca15 (UNCONDITIONAL_JUMP)  ; LAB_0048ca15
     PUSH EDX                            ; 0048ca3e
         ;   Label: LAB_0048ca3e
-    JMP 0x0048ca15                      ; 0048ca3f | LAB_0048ca15
-        ;   XREF to: 0048ca15 (UNCONDITIONAL_JUMP)
+    JMP 0x0048ca15                      ; 0048ca3f
+        ;   XREF to: 0048ca15 (UNCONDITIONAL_JUMP)  ; LAB_0048ca15
 

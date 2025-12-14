@@ -32,14 +32,14 @@ section .text
     MOV ECX,dword ptr [EDX + 0x148]     ; 00453c9c
     XOR ESI,ESI                         ; 00453ca2
     TEST ECX,ECX                        ; 00453ca4
-    JLE 0x00453cda                      ; 00453ca6 | LAB_00453cda
-        ;   XREF to: 00453cda (CONDITIONAL_JUMP)
+    JLE 0x00453cda                      ; 00453ca6
+        ;   XREF to: 00453cda (CONDITIONAL_JUMP)  ; LAB_00453cda
     MOV EBP,dword ptr [EDX + 0x144]     ; 00453ca8
         ;   Label: LAB_00453ca8
     XOR EAX,EAX                         ; 00453cae
     TEST EBP,EBP                        ; 00453cb0
-    JLE 0x00453cd1                      ; 00453cb2 | LAB_00453cd1
-        ;   XREF to: 00453cd1 (CONDITIONAL_JUMP)
+    JLE 0x00453cd1                      ; 00453cb2
+        ;   XREF to: 00453cd1 (CONDITIONAL_JUMP)  ; LAB_00453cd1
     MOV ECX,dword ptr [EDX + 0x144]     ; 00453cb4
         ;   Label: LAB_00453cb4
     IMUL ECX,ESI                        ; 00453cba
@@ -48,13 +48,13 @@ section .text
     MOV dword ptr [EBX + ECX*0x4],EDI   ; 00453cc5
     INC EAX                             ; 00453cc8
     CMP EAX,dword ptr [EDX + 0x144]     ; 00453cc9
-    JL 0x00453cb4                       ; 00453ccf | LAB_00453cb4
-        ;   XREF to: 00453cb4 (CONDITIONAL_JUMP)
+    JL 0x00453cb4                       ; 00453ccf
+        ;   XREF to: 00453cb4 (CONDITIONAL_JUMP)  ; LAB_00453cb4
     INC ESI                             ; 00453cd1
         ;   Label: LAB_00453cd1
     CMP ESI,dword ptr [EDX + 0x148]     ; 00453cd2
-    JL 0x00453ca8                       ; 00453cd8 | LAB_00453ca8
-        ;   XREF to: 00453ca8 (CONDITIONAL_JUMP)
+    JL 0x00453ca8                       ; 00453cd8
+        ;   XREF to: 00453ca8 (CONDITIONAL_JUMP)  ; LAB_00453ca8
     MOV ESI,0x140                       ; 00453cda
         ;   Label: LAB_00453cda
     XOR ECX,ECX                         ; 00453cdf
@@ -64,16 +64,16 @@ section .text
     IMUL EAX,ECX,0x140                  ; 00453ce5
     INC EAX                             ; 00453ceb
         ;   Label: LAB_00453ceb
-    MOV byte ptr [EAX + 0x13ed377],BL   ; 00453cec | DAT_013ed4b8 | g_CameraImageDecompressBuffer
-    MOV byte ptr [EAX + 0x13da777],BL   ; 00453cf2 | DAT_013da8b8 | g_CameraPlaneWorkBuffer
+    MOV byte ptr [EAX + 0x13ed377],BL   ; 00453cec | g_CameraImageDecompressBuffer | DAT_013ed379 | DAT_013ed4b8
+    MOV byte ptr [EAX + 0x13da777],BL   ; 00453cf2 | g_CameraPlaneWorkBuffer | DAT_013da779 | DAT_013da8b8
     CMP EAX,EDX                         ; 00453cf8
-    JNZ 0x00453ceb                      ; 00453cfa | LAB_00453ceb
-        ;   XREF to: 00453ceb (CONDITIONAL_JUMP)
+    JNZ 0x00453ceb                      ; 00453cfa
+        ;   XREF to: 00453ceb (CONDITIONAL_JUMP)  ; LAB_00453ceb
     INC ECX                             ; 00453cfc
     ADD ESI,0x140                       ; 00453cfd
     CMP ECX,0xf0                        ; 00453d03
-    JL 0x00453ce1                       ; 00453d09 | LAB_00453ce1
-        ;   XREF to: 00453ce1 (CONDITIONAL_JUMP)
+    JL 0x00453ce1                       ; 00453d09
+        ;   XREF to: 00453ce1 (CONDITIONAL_JUMP)  ; LAB_00453ce1
     POP EBP                             ; 00453d0b
     POP EDI                             ; 00453d0c
     POP ESI                             ; 00453d0d

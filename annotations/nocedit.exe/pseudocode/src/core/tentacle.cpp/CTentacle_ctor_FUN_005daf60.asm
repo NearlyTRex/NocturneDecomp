@@ -25,16 +25,16 @@ section .text
         ;   Label: core_tentacle.cpp_CTentacle_ctor_FUN_005daf60
     MOV EDX,dword ptr [ESP + 0x8]       ; 005daf61
     PUSH EDX                            ; 005daf65
-    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 005daf66 | CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
-        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500 ; 005daf66
+        ;   XREF to: 004a9500 (UNCONDITIONAL_CALL)  ; CEnemy * core_enemy.cpp_CEnemy_ctor_FUN_004a9500(CEnemy * this_ptr)
     ADD ESP,0x4                         ; 005daf6b
-    PUSH 0x654db3                       ; 005daf6e | = "tentacle.dfm" | s_tentacle_dfm_00654db3 = tentacle.dfm
+    PUSH 0x654db3                       ; 005daf6e | = "tentacle.dfm"
     MOV EBX,EAX                         ; 005daf73
     ADD EAX,0x158                       ; 005daf75
     PUSH EAX                            ; 005daf7a
-    MOV dword ptr [EAX + -0x4],0x664474 ; 005daf7b | CDemonActor_vtable g_CTentacleVTable
-    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 005daf82 | void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)
+    MOV dword ptr [EAX + -0x4],0x664474 ; 005daf7b | g_CTentacleVTable
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 005daf82
+        ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2de4],0x42480000 ; 005daf87
     MOV dword ptr [EBX + 0x2de8],0x42c80000 ; 005daf91
     MOV dword ptr [EBX + 0xbebc],0x0    ; 005daf9b

@@ -23,8 +23,8 @@ section .text
     PUSH 0xffff                         ; 005e1e9d
     MOV EDX,dword ptr [EAX]             ; 005e1ea2
     PUSH EDX                            ; 005e1ea4
-    CALL crt_wsock32.c_setsockopt       ; 005e1ea5 | int crt_wsock32.c_setsockopt(SOCKET s, int level, int optname, char * optval, ...)
-        ;   XREF to: 00610ee0 (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_setsockopt       ; 005e1ea5
+        ;   XREF to: 00610ee0 (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_setsockopt(SOCKET s, int level, int optname, char * optval, ...)
     TEST EAX,EAX                        ; 005e1eaa
     SETZ AL                             ; 005e1eac
     AND EAX,0xff                        ; 005e1eaf

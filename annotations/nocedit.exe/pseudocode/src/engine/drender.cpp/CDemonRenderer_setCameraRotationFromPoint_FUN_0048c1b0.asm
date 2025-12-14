@@ -23,8 +23,8 @@ section .text
     PUSH ECX                            ; 0048c1bc
     MOV EBX,dword ptr [EAX]             ; 0048c1bd
     PUSH EBX                            ; 0048c1bf
-    CALL engine_matrix.c_setCameraRotation_FUN_0050e290 ; 0048c1c0 | void engine_matrix.c_setCameraRotation_FUN_0050e290(ushort pitch, ushort yaw, ushort roll)
-        ;   XREF to: 0050e290 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_setCameraRotation_FUN_0050e290 ; 0048c1c0
+        ;   XREF to: 0050e290 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_setCameraRotation_FUN_0050e290(ushort pitch, ushort yaw, ushort roll)
     ADD ESP,0xc                         ; 0048c1c5
     POP EBX                             ; 0048c1c8
     RET                                 ; 0048c1c9

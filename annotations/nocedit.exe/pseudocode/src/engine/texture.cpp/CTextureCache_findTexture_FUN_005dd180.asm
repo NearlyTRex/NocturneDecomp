@@ -27,33 +27,33 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 005dd188
     MOV EBP,dword ptr [ESP + 0x1c]      ; 005dd18c
     TEST EBX,EBX                        ; 005dd190
-    JL 0x005dd199                       ; 005dd192 | LAB_005dd199
-        ;   XREF to: 005dd199 (CONDITIONAL_JUMP)
+    JL 0x005dd199                       ; 005dd192
+        ;   XREF to: 005dd199 (CONDITIONAL_JUMP)  ; LAB_005dd199
     CMP EBX,dword ptr [EDI + 0x4]       ; 005dd194
-    JL 0x005dd1d1                       ; 005dd197 | LAB_005dd1d1
-        ;   XREF to: 005dd1d1 (CONDITIONAL_JUMP)
+    JL 0x005dd1d1                       ; 005dd197
+        ;   XREF to: 005dd1d1 (CONDITIONAL_JUMP)  ; LAB_005dd1d1
     MOV ECX,dword ptr [EDI + 0x14008]   ; 005dd199
         ;   Label: LAB_005dd199
     XOR EBX,EBX                         ; 005dd19f
     TEST ECX,ECX                        ; 005dd1a1
-    JLE 0x005dd1c7                      ; 005dd1a3 | LAB_005dd1c7
-        ;   XREF to: 005dd1c7 (CONDITIONAL_JUMP)
+    JLE 0x005dd1c7                      ; 005dd1a3
+        ;   XREF to: 005dd1c7 (CONDITIONAL_JUMP)  ; LAB_005dd1c7
     LEA ESI,[EDI + 0x3008]              ; 005dd1a5
     PUSH EBP                            ; 005dd1ab
         ;   Label: LAB_005dd1ab
     PUSH ESI                            ; 005dd1ac
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 005dd1ad | int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strcmp_FUN_005fef20 ; 005dd1ad
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005dd1b2
     TEST EAX,EAX                        ; 005dd1b5
-    JZ 0x005dd1ec                       ; 005dd1b7 | LAB_005dd1ec
-        ;   XREF to: 005dd1ec (CONDITIONAL_JUMP)
+    JZ 0x005dd1ec                       ; 005dd1b7
+        ;   XREF to: 005dd1ec (CONDITIONAL_JUMP)  ; LAB_005dd1ec
     INC EBX                             ; 005dd1b9
     MOV EAX,dword ptr [EDI + 0x14008]   ; 005dd1ba
     ADD ESI,0x40                        ; 005dd1c0
     CMP EBX,EAX                         ; 005dd1c3
-    JL 0x005dd1ab                       ; 005dd1c5 | LAB_005dd1ab
-        ;   XREF to: 005dd1ab (CONDITIONAL_JUMP)
+    JL 0x005dd1ab                       ; 005dd1c5
+        ;   XREF to: 005dd1ab (CONDITIONAL_JUMP)  ; LAB_005dd1ab
     MOV EAX,0xffffffff                  ; 005dd1c7
         ;   Label: LAB_005dd1c7
     POP EBP                             ; 005dd1cc
@@ -68,12 +68,12 @@ section .text
     PUSH EBP                            ; 005dd1dc
     ADD EAX,ESI                         ; 005dd1dd
     PUSH EAX                            ; 005dd1df
-    CALL crt_string.c_strcmp_FUN_005fef20 ; 005dd1e0 | int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
-        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_strcmp_FUN_005fef20 ; 005dd1e0
+        ;   XREF to: 005fef20 (UNCONDITIONAL_CALL)  ; int crt_string.c_strcmp_FUN_005fef20(char * str1, char * str2)
     ADD ESP,0x8                         ; 005dd1e5
     TEST EAX,EAX                        ; 005dd1e8
-    JNZ 0x005dd199                      ; 005dd1ea | LAB_005dd199
-        ;   XREF to: 005dd199 (CONDITIONAL_JUMP)
+    JNZ 0x005dd199                      ; 005dd1ea
+        ;   XREF to: 005dd199 (CONDITIONAL_JUMP)  ; LAB_005dd199
     MOV EAX,EBX                         ; 005dd1ec
         ;   Label: LAB_005dd1ec
     POP EBP                             ; 005dd1ee

@@ -1,166 +1,166 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 48, 
-    "pseudocode_lines": 23, 
-    "cross_reference_count": 6, 
-    "global_count": 7, 
-    "total_lines": 72, 
-    "assembly_lines": 49, 
-    "suspect_count": 2, 
+    "assembly_lines": 49,
+    "complexity_score": 48,
+    "cross_reference_count": 6,
+    "function_call_count": 4,
+    "global_count": 7,
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60", 
-      "addr": "005a7e60"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
-      "addr": "005abd30"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_sndmain_cpp_00650aac", 
-      "addr": "00650aac", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_enableSfxChannel_invalid_00650ac1", 
-      "addr": "00650ac1", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CSfxSlot[64]", 
-      "name": "g_SfxSlots", 
-      "addr": "03f5daa4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SfxSlots[1].status", 
-      "addr": "03f5dbcc", 
-      "value": null
-    }, 
-    {
-      "type": "int[32]", 
-      "name": "g_SfxChannelEnabled", 
-      "addr": "03f68928", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 17, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (channel_index == *(int *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54)) {"
-    }, 
-    {
-      "line": 19, 
-      "match": "(CSfxSlot *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((CSfxSlot *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a9e20", 
-    "signature": "void sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20(int channel_index, int enable_state)", 
-    "address_range": [
-      [
-        "005a9e20", 
-        "005a9e94"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "channel_index"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "enable_state"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 72
+  },
   "cross_references": [
     {
-      "from_addr": "00512841", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
-      "addr": "00511e50"
-    }, 
+      "addr": "00511e50",
+      "from_addr": "00512841",
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b2e76", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0", 
-      "addr": "005b2dd0"
-    }, 
+      "addr": "005b2dd0",
+      "from_addr": "005b2e76",
+      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b3231", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0", 
-      "addr": "005b2fd0"
-    }, 
+      "addr": "005b2fd0",
+      "from_addr": "005b3231",
+      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005b2d85", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70", 
-      "addr": "005b2d70"
-    }, 
+      "addr": "005b2d70",
+      "from_addr": "005b2d85",
+      "name": "core_sound.cpp_syncChannel3WithChannel0_FUN_005b2d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ac18e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_readIni_FUN_005abf20", 
-      "addr": "005abf20"
-    }, 
+      "addr": "005abf20",
+      "from_addr": "005ac18e",
+      "name": "sound_sndmain.cpp_readIni_FUN_005abf20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005aae14", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00", 
-      "addr": "005aae00"
+      "addr": "005aae00",
+      "from_addr": "005aae14",
+      "name": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a9e20",
+    "address_range": [
+      [
+        "005a9e20",
+        "005a9e94"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20",
+    "signature": "void sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20(int channel_index, int enable_state)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005a7e60",
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60"
+    },
+    {
+      "addr": "005abd30",
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00650aac",
+      "name": "s_sound_sndmain_cpp_00650aac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00650ac1",
+      "name": "s_enableSfxChannel_invalid_00650ac1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f5daa4",
+      "name": "g_SfxSlots",
+      "type": "CSfxSlot[64]",
+      "value": null
+    },
+    {
+      "addr": "03f5dbcc",
+      "name": "g_SfxSlots[1].status",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68928",
+      "name": "g_SfxChannelEnabled",
+      "type": "int[32]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "channel_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "enable_state",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)",
+      "text": "if (channel_index == *(int *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(CSfxSlot *)((int)",
+      "text": "((CSfxSlot *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54));",
+      "type": "pointer_cast"
     }
   ]
 }

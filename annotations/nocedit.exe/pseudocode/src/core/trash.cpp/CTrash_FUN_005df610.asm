@@ -29,8 +29,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 005df619
     LEA EAX,[ESI + 0x158]               ; 005df61d
     PUSH EAX                            ; 005df623
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 005df624 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 005df624
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EAX + 0x5690]    ; 005df629
     MOV EDX,dword ptr [EAX]             ; 005df62f
     LEA ECX,[EAX + 0x4]                 ; 005df631
@@ -60,8 +60,8 @@ section .text
     PUSH ESI                            ; 005df675
     MOV dword ptr [ESP + 0x18],EDX      ; 005df676
     MOV dword ptr [ESP + 0x20],EDX      ; 005df67a
-    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 ; 005df67e | CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
-        ;   XREF to: 00408ea0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0 ; 005df67e
+        ;   XREF to: 00408ea0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0(CDemonActor * this_ptr, CVector3f * output_vector, CVector3f * input_vector)
     ADD ESP,0xc                         ; 005df683
     FLD float ptr [EBX]                 ; 005df686
     FADD float ptr [ESP]                ; 005df688

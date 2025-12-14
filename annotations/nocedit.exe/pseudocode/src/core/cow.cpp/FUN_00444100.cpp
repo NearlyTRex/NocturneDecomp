@@ -11,8 +11,7 @@ void core_cow_cpp_FUN_00444100(void)
 {
   CZombieCow *this_ptr;
   
-  this_ptr = (CZombieCow *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbef0,"..\\core\\cow.cpp",0x36);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xbef0,"..\\core\\cow.cpp",0x36);
   if (this_ptr == (CZombieCow *)0x0) {
     return;
   }

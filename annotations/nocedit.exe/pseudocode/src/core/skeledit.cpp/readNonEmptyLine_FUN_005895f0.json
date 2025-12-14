@@ -1,145 +1,145 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 77, 
-    "pseudocode_lines": 37, 
-    "cross_reference_count": 1, 
-    "global_count": 6, 
-    "total_lines": 120, 
-    "assembly_lines": 83, 
-    "suspect_count": 3, 
+    "assembly_lines": 83,
+    "complexity_score": 77,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "pseudocode_lines": 37,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
-      "addr": "005fe840"
-    }, 
-    {
-      "name": "crt_string.c_strstr_FUN_005fedd0", 
-      "addr": "005fedd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_skeledit_cpp_00649cda", 
-      "addr": "00649cda", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unexpected_end_of_file_00649cef", 
-      "addr": "00649cef", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_00649d07", 
-      "addr": "00649d07", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000018;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000018 != 0) {"
-    }, 
-    {
-      "line": 27, 
-      "match": "(FILE *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pFVar3 = (FILE *)((int)&pFVar3->_ptr + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005895f0", 
-    "signature": "int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, FILE * file, int require_content)", 
-    "address_range": [
-      [
-        "005895f0", 
-        "005896a1"
-      ]
-    ], 
-    "name": "core_skeledit.cpp_readNonEmptyLine_FUN_005895f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "require_content"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    ],
+    "total_lines": 120
+  },
   "cross_references": [
     {
-      "from_addr": "00592a7a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00592690", 
-      "addr": "00592690"
+      "addr": "00592690",
+      "from_addr": "00592a7a",
+      "name": "core_skeledit.cpp_FUN_00592690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005895f0",
+    "address_range": [
+      [
+        "005895f0",
+        "005896a1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeledit.cpp_readNonEmptyLine_FUN_005895f0",
+    "signature": "int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, FILE * file, int require_content)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "005fe840",
+      "name": "crt_stdio.c_fgetc_FUN_005fe840"
+    },
+    {
+      "addr": "005fedd0",
+      "name": "crt_string.c_strstr_FUN_005fedd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00649cda",
+      "name": "s_core_skeledit_cpp_00649cda",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649cef",
+      "name": "s_Unexpected_end_of_file_00649cef",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00649d07",
+      "name": "s_anon_00649d07",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 12,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "require_content",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000018",
+      "text": "if (in_stack_00000018 != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(FILE *)((int)",
+      "text": "pFVar3 = (FILE *)((int)&pFVar3->_ptr + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

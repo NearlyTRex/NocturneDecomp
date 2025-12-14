@@ -53,5 +53,5 @@ core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50
       }
     }
   }
-  return iVar1;
+  return 0;
 }

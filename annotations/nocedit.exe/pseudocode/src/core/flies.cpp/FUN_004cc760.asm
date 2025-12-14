@@ -41,12 +41,12 @@ section .text
     PUSH EBP                            ; 004cc78f
     MOV dword ptr [ESP + 0x24],EBX      ; 004cc790
     ADD EBX,0x4                         ; 004cc794
-    CALL core_flies.cpp_FUN_004cc820    ; 004cc797 | undefined core_flies.cpp_FUN_004cc820()
-        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)
+    CALL core_flies.cpp_FUN_004cc820    ; 004cc797
+        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cc820()
     ADD ESP,0xc                         ; 004cc79c
     CMP EBX,EAX                         ; 004cc79f
-    JNZ 0x004cc808                      ; 004cc7a1 | LAB_004cc808
-        ;   XREF to: 004cc808 (CONDITIONAL_JUMP)
+    JNZ 0x004cc808                      ; 004cc7a1
+        ;   XREF to: 004cc808 (CONDITIONAL_JUMP)  ; LAB_004cc808
     MOV EDI,dword ptr [ESP + 0x18]      ; 004cc7a3
         ;   Label: LAB_004cc7a3
     MOV EBX,dword ptr [ESP + 0x18]      ; 004cc7a7
@@ -59,12 +59,12 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 004cc7b7
     PUSH EAX                            ; 004cc7bb
     PUSH EBP                            ; 004cc7bc
-    CALL core_flies.cpp_FUN_004cc820    ; 004cc7bd | undefined core_flies.cpp_FUN_004cc820()
-        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)
+    CALL core_flies.cpp_FUN_004cc820    ; 004cc7bd
+        ;   XREF to: 004cc820 (UNCONDITIONAL_CALL)  ; undefined core_flies.cpp_FUN_004cc820()
     ADD ESP,0xc                         ; 004cc7c2
     CMP EBX,EAX                         ; 004cc7c5
-    JZ 0x004cc7d9                       ; 004cc7c7 | LAB_004cc7d9
-        ;   XREF to: 004cc7d9 (CONDITIONAL_JUMP)
+    JZ 0x004cc7d9                       ; 004cc7c7
+        ;   XREF to: 004cc7d9 (CONDITIONAL_JUMP)  ; LAB_004cc7d9
     MOV EDX,dword ptr [EAX]             ; 004cc7c9
     MOV dword ptr [EBX],EDX             ; 004cc7cb
     MOV EDX,dword ptr [EAX + 0x4]       ; 004cc7cd
@@ -75,12 +75,12 @@ section .text
         ;   Label: LAB_004cc7d9
     ADD EBX,0xc                         ; 004cc7dc
     CMP ESI,EDI                         ; 004cc7df
-    JNZ 0x004cc7b6                      ; 004cc7e1 | LAB_004cc7b6
-        ;   XREF to: 004cc7b6 (CONDITIONAL_JUMP)
+    JNZ 0x004cc7b6                      ; 004cc7e1
+        ;   XREF to: 004cc7b6 (CONDITIONAL_JUMP)  ; LAB_004cc7b6
     PUSH 0x3f800000                     ; 004cc7e3
     PUSH 0x0                            ; 004cc7e8
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004cc7ea | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004cc7ea
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
     MOV EDX,dword ptr [EAX]             ; 004cc808
         ;   Label: LAB_004cc808
     MOV dword ptr [EBX],EDX             ; 004cc80a
@@ -88,6 +88,6 @@ section .text
     MOV dword ptr [EBX + 0x4],EDX       ; 004cc80f
     MOV EDX,dword ptr [EAX + 0x8]       ; 004cc812
     MOV dword ptr [EBX + 0x8],EDX       ; 004cc815
-    JMP 0x004cc7a3                      ; 004cc818 | LAB_004cc7a3
-        ;   XREF to: 004cc7a3 (UNCONDITIONAL_JUMP)
+    JMP 0x004cc7a3                      ; 004cc818
+        ;   XREF to: 004cc7a3 (UNCONDITIONAL_JUMP)  ; LAB_004cc7a3
 

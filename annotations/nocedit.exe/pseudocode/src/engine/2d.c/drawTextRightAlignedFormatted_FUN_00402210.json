@@ -1,115 +1,115 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 67, 
-    "pseudocode_lines": 12, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 42, 
-    "assembly_lines": 30, 
-    "suspect_count": 4, 
+    "assembly_lines": 30,
+    "complexity_score": 67,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 12,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_vsprintf_FUN_005fdba8", 
-      "addr": "005fdba8"
-    }, 
-    {
-      "name": "engine_2d.c_drawTextRightAligned_FUN_004021c0", 
-      "addr": "004021c0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "&stack0x00000010", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "local_c = &stack0x00000010;"
-    }, 
-    {
-      "line": 12, 
-      "match": "&stack0xffffeff4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)right_x,&local_c);"
-    }
-  ], 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00402210", 
-    "signature": "void engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210(char * format_string, int y_pos, int right_x, ...)", 
+    "address": "00402210",
     "address_range": [
       [
-        "00402210", 
+        "00402210",
         "00402271"
       ]
-    ], 
-    "name": "engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210",
+    "signature": "void engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210(char * format_string, int y_pos, int right_x, ...)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdba8",
+      "name": "crt_stdio.c_vsprintf_FUN_005fdba8"
+    },
+    {
+      "addr": "004021c0",
+      "name": "engine_2d.c_drawTextRightAligned_FUN_004021c0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4112, 
+    "frame_size": 4124,
+    "local_size": 4112,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -4108, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_100c"
-      }, 
+        "is_param": false,
+        "name": "local_100c",
+        "offset": -4108,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "format_string"
-      }, 
+        "is_param": true,
+        "name": "format_string",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_pos"
-      }, 
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "right_x"
+        "is_param": true,
+        "name": "right_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 4124, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 7,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 11,
+      "match": "&stack0x00000010",
+      "text": "local_c = &stack0x00000010;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 12,
+      "match": "&stack0xffffeff4",
+      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)right_x,&local_c);",
+      "type": "stack_ref"
+    }
+  ]
 }

@@ -37,7 +37,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 004517fc
     LEA EAX,[EDX*0x4 + 0x0]             ; 004517ff
     ADD EAX,EDX                         ; 00451806
-    MOV EDX,0xba8c78                    ; 00451808 | char[241][320] g_CoronaBlurOutputBuffer
+    MOV EDX,0xba8c78                    ; 00451808 | g_CoronaBlurOutputBuffer
     SHL EAX,0x6                         ; 0045180d
     ADD EDX,EAX                         ; 00451810
     ADD EDX,ECX                         ; 00451812
@@ -50,7 +50,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00451827
     SUB EAX,ECX                         ; 0045182a
     MOV dword ptr [EBP + -0x8],EAX      ; 0045182c
-    MOV EAX,[0x015c4170]                ; 0045182f | CDemonGlobe * g_CurrentGlobe
+    MOV EAX,[0x015c4170]                ; 0045182f | g_CurrentGlobe
     MOV EAX,dword ptr [EAX + 0x3c]      ; 00451834
     MOV dword ptr [EBP + -0x4],EAX      ; 00451837
     MOV ECX,dword ptr [EBP + 0xfffffff8] ; 0045183a
@@ -72,24 +72,24 @@ section .text
     PUNPCKLBW MM6,MM7                   ; 00451879
     TEST EDI,0x3                        ; 0045187c
         ;   Label: LAB_0045187c
-    JZ 0x0045189b                       ; 00451882 | LAB_0045189b
-        ;   XREF to: 0045189b (CONDITIONAL_JUMP)
+    JZ 0x0045189b                       ; 00451882
+        ;   XREF to: 0045189b (CONDITIONAL_JUMP)  ; LAB_0045189b
     MOVZX EAX,byte ptr [ESI]            ; 00451884
     SHL EAX,0x6                         ; 00451887
     ADD EAX,EBX                         ; 0045188a
-    MOV AL,byte ptr [EAX + 0x13d9758]   ; 0045188c | char[4096] g_CameraLookupTable
+    MOV AL,byte ptr [EAX + 0x13d9758]   ; 0045188c | g_CameraLookupTable
     ADD byte ptr [EDI],AL               ; 00451892
     INC ESI                             ; 00451894
     INC EDI                             ; 00451895
     DEC ECX                             ; 00451896
-    JG 0x0045187c                       ; 00451897 | LAB_0045187c
-        ;   XREF to: 0045187c (CONDITIONAL_JUMP)
-    JMP 0x004518db                      ; 00451899 | LAB_004518db
-        ;   XREF to: 004518db (UNCONDITIONAL_JUMP)
+    JG 0x0045187c                       ; 00451897
+        ;   XREF to: 0045187c (CONDITIONAL_JUMP)  ; LAB_0045187c
+    JMP 0x004518db                      ; 00451899
+        ;   XREF to: 004518db (UNCONDITIONAL_JUMP)  ; LAB_004518db
     SUB ECX,0x4                         ; 0045189b
         ;   Label: LAB_0045189b
-    JL 0x004518c1                       ; 0045189e | LAB_004518c1
-        ;   XREF to: 004518c1 (CONDITIONAL_JUMP)
+    JL 0x004518c1                       ; 0045189e
+        ;   XREF to: 004518c1 (CONDITIONAL_JUMP)  ; LAB_004518c1
     MOVD MM0,dword ptr [ESI]            ; 004518a0
     MOVD MM1,dword ptr [EDI]            ; 004518a3
     PUNPCKLBW MM0,MM7                   ; 004518a6
@@ -100,23 +100,23 @@ section .text
     MOVD dword ptr [EDI],MM0            ; 004518b6
     ADD ESI,0x4                         ; 004518b9
     ADD EDI,0x4                         ; 004518bc
-    JMP 0x0045189b                      ; 004518bf | LAB_0045189b
-        ;   XREF to: 0045189b (UNCONDITIONAL_JUMP)
+    JMP 0x0045189b                      ; 004518bf
+        ;   XREF to: 0045189b (UNCONDITIONAL_JUMP)  ; LAB_0045189b
     ADD ECX,0x4                         ; 004518c1
         ;   Label: LAB_004518c1
-    JZ 0x004518db                       ; 004518c4 | LAB_004518db
-        ;   XREF to: 004518db (CONDITIONAL_JUMP)
+    JZ 0x004518db                       ; 004518c4
+        ;   XREF to: 004518db (CONDITIONAL_JUMP)  ; LAB_004518db
     MOVZX EAX,byte ptr [ESI]            ; 004518c6
         ;   Label: LAB_004518c6
     SHL EAX,0x6                         ; 004518c9
     ADD EAX,EBX                         ; 004518cc
-    MOV AL,byte ptr [EAX + 0x13d9758]   ; 004518ce | char[4096] g_CameraLookupTable
+    MOV AL,byte ptr [EAX + 0x13d9758]   ; 004518ce | g_CameraLookupTable
     ADD byte ptr [EDI],AL               ; 004518d4
     INC ESI                             ; 004518d6
     INC EDI                             ; 004518d7
     DEC ECX                             ; 004518d8
-    JG 0x004518c6                       ; 004518d9 | LAB_004518c6
-        ;   XREF to: 004518c6 (CONDITIONAL_JUMP)
+    JG 0x004518c6                       ; 004518d9
+        ;   XREF to: 004518c6 (CONDITIONAL_JUMP)  ; LAB_004518c6
     EMMS                                ; 004518db
         ;   Label: LAB_004518db
     MOV ESP,EBP                         ; 004518dd

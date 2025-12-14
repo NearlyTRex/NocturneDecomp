@@ -33,17 +33,17 @@ section .text
     MOV EDX,dword ptr [EBX + 0xfb4]     ; 00441837
     MOV dword ptr [EBX + 0xfb8],EAX     ; 0044183d
     CMP EDX,0x1                         ; 00441843
-    JL 0x0044186e                       ; 00441846 | LAB_0044186e
-        ;   XREF to: 0044186e (CONDITIONAL_JUMP)
+    JL 0x0044186e                       ; 00441846
+        ;   XREF to: 0044186e (CONDITIONAL_JUMP)  ; LAB_0044186e
     CMP dword ptr [EBX + 0xfb8],0x1     ; 00441848
         ;   Label: LAB_00441848
-    JGE 0x0044185b                      ; 0044184f | LAB_0044185b
-        ;   XREF to: 0044185b (CONDITIONAL_JUMP)
+    JGE 0x0044185b                      ; 0044184f
+        ;   XREF to: 0044185b (CONDITIONAL_JUMP)  ; LAB_0044185b
     MOV dword ptr [EBX + 0xfb8],0x1     ; 00441851
     PUSH EBX                            ; 0044185b
         ;   Label: LAB_0044185b
-    CALL engine_console.cpp_CConsole_reset_FUN_00441a40 ; 0044185c | void engine_console.cpp_CConsole_reset_FUN_00441a40(CConsole * this_ptr)
-        ;   XREF to: 00441a40 (UNCONDITIONAL_CALL)
+    CALL engine_console.cpp_CConsole_reset_FUN_00441a40 ; 0044185c
+        ;   XREF to: 00441a40 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_reset_FUN_00441a40(CConsole * this_ptr)
     ADD ESP,0x4                         ; 00441861
     MOV EAX,EBX                         ; 00441864
     MOV dword ptr [EBX],0x0             ; 00441866
@@ -51,6 +51,6 @@ section .text
     RET                                 ; 0044186d
     MOV dword ptr [EBX + 0xfb4],0x1     ; 0044186e
         ;   Label: LAB_0044186e
-    JMP 0x00441848                      ; 00441878 | LAB_00441848
-        ;   XREF to: 00441848 (UNCONDITIONAL_JUMP)
+    JMP 0x00441848                      ; 00441878
+        ;   XREF to: 00441848 (UNCONDITIONAL_JUMP)  ; LAB_00441848
 

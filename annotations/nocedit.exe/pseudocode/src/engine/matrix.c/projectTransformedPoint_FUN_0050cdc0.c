@@ -25,13 +25,13 @@ void __cdecl engine_matrix_c_projectTransformedPoint_FUN_0050cdc0(SProjectedVert
     return;
   }
   bVar6 = iVar2 < iVar3;
-  if (SBORROW /* signed borrow */4(iVar3,-iVar2) != iVar3 + iVar2 < 0) {
+  if (iVar3 < -iVar2) {
     bVar6 = bVar6 | 2;
   }
   if (iVar2 < iVar1) {
     bVar6 = bVar6 | 4;
   }
-  if (SBORROW /* signed borrow */4(iVar1,-iVar2) != iVar1 + iVar2 < 0) {
+  if (iVar1 < -iVar2) {
     bVar6 = bVar6 | 8;
   }
   if (bVar6 != 0) {

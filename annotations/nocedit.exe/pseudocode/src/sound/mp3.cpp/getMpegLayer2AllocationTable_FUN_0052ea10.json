@@ -1,94 +1,94 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 0, 
-    "global_count": 6, 
-    "total_lines": 54, 
-    "assembly_lines": 43, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063aca4", 
-      "addr": "0063aca4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_js_bound_bad_layer_modex_0063acb5", 
-      "addr": "0063acb5", 
-      "value": null
-    }, 
-    {
-      "type": "void*[4][4]", 
-      "name": "g_MpegLayer2AllocationTables", 
-      "addr": "0067d820", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_CurrentMp3Filename", 
-      "addr": "02f68188", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 43,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 6,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 54
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0052ea10", 
-    "signature": "void * sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_0052ea10(int layer, int mode_extension)", 
+    "address": "0052ea10",
     "address_range": [
       [
-        "0052ea10", 
+        "0052ea10",
         "0052ea7a"
       ]
-    ], 
-    "name": "sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_0052ea10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_0052ea10",
+    "signature": "void * sound_mp3.cpp_getMpegLayer2AllocationTable_FUN_0052ea10(int layer, int mode_extension)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063aca4",
+      "name": "s_sound_mp3_cpp_0063aca4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063acb5",
+      "name": "s_js_bound_bad_layer_modex_0063acb5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0067d820",
+      "name": "g_MpegLayer2AllocationTables",
+      "type": "void*[4][4]",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f68188",
+      "name": "g_CurrentMp3Filename",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "layer"
-      }, 
+        "is_param": true,
+        "name": "layer",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "mode_extension"
+        "is_param": true,
+        "name": "mode_extension",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

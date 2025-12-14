@@ -44,8 +44,8 @@ section .text
     PUSH ESI                            ; 00481f36
     MOV EDI,dword ptr [ESP + 0x20]      ; 00481f37
     PUSH EDI                            ; 00481f3b
-    CALL crt_string.c_splitpath_FUN_005ff178 ; 00481f3c | void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
-        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_splitpath_FUN_005ff178 ; 00481f3c
+        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 00481f41
     POP EDI                             ; 00481f44
     POP ESI                             ; 00481f45

@@ -28,38 +28,38 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 004cb6e6
     PUSH ESI                            ; 004cb6ea
     PUSH EBX                            ; 004cb6eb
-    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 004cb6ec | void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
-        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 004cb6ec
+        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 004cb6f1
     PUSH 0x0                            ; 004cb6f4
     LEA EAX,[EBX + 0x158]               ; 004cb6f6
     PUSH EAX                            ; 004cb6fc
-    PUSH 0x62a31f                       ; 004cb6fd | = "Model file (.kfm)" | s_Model_file_kfm_0062a31f = Model file (.kfm)
+    PUSH 0x62a31f                       ; 004cb6fd | = "Model file (.kfm)"
     PUSH ESI                            ; 004cb702
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 004cb703 | void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 004cb703
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 004cb708
     PUSH 0x0                            ; 004cb70b
     LEA EAX,[EBX + 0x2d8]               ; 004cb70d
     PUSH EAX                            ; 004cb713
-    PUSH 0x62a331                       ; 004cb714 | = "Time to explode" | s_Time_to_explode_0062a331 = Time to explode
+    PUSH 0x62a331                       ; 004cb714 | = "Time to explode"
     PUSH ESI                            ; 004cb719
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 004cb71a | void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 004cb71a
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
     ADD ESP,0x10                        ; 004cb71f
     LEA EAX,[EBX + 0x2d4]               ; 004cb722
     PUSH EAX                            ; 004cb728
-    PUSH 0x62a341                       ; 004cb729 | = "On fire" | s_On_fire_0062a341 = On fire
+    PUSH 0x62a341                       ; 004cb729 | = "On fire"
     PUSH ESI                            ; 004cb72e
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 004cb72f | void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 004cb72f
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 004cb734
     ADD EBX,0x2dc                       ; 004cb737
     PUSH EBX                            ; 004cb73d
-    PUSH 0x62a349                       ; 004cb73e | = "Event to catch on fire" | s_Event_to_catch_on_fire_0062a349 = Event to catch on fire
+    PUSH 0x62a349                       ; 004cb73e | = "Event to catch on fire"
     PUSH ESI                            ; 004cb743
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 004cb744 | void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 004cb744
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
     ADD ESP,0xc                         ; 004cb749
     POP ESI                             ; 004cb74c
     POP EBX                             ; 004cb74d

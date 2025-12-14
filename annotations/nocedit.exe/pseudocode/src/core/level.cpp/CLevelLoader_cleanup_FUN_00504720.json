@@ -1,86 +1,86 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 10, 
-    "pseudocode_lines": 10, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 26, 
-    "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690", 
-      "addr": "00477690"
-    }, 
-    {
-      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
-      "addr": "00441890"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_gLevelIndicator_Used_d_c_00631038", 
-      "addr": "00631038", 
-      "value": null
-    }, 
-    {
-      "type": "CConsole*", 
-      "name": "g_CConsolePtr", 
-      "addr": "0066e8e0", 
-      "value": "0083b1a4"
-    }, 
-    {
-      "type": "CConsole", 
-      "name": "g_ConsolePtr", 
-      "addr": "0083b1a4", 
-      "value": null
-    }, 
-    {
-      "type": "CKeyFramedModel", 
-      "name": "g_LoadingMoonModel", 
-      "addr": "02dcd980", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00504720", 
-    "signature": "void core_level.cpp_CLevelLoader_cleanup_FUN_00504720(CLevelLoader * this_ptr)", 
-    "address_range": [
-      [
-        "00504720", 
-        "0050474f"
-      ]
-    ], 
-    "name": "core_level.cpp_CLevelLoader_cleanup_FUN_00504720"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLevelLoader *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 16,
+    "complexity_score": 10,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
   "cross_references": [
     {
-      "from_addr": "004db316", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
+      "addr": "004daf80",
+      "from_addr": "004db316",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00504720",
+    "address_range": [
+      [
+        "00504720",
+        "0050474f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_level.cpp_CLevelLoader_cleanup_FUN_00504720",
+    "signature": "void core_level.cpp_CLevelLoader_cleanup_FUN_00504720(CLevelLoader * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00477690",
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690"
+    },
+    {
+      "addr": "00441890",
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00631038",
+      "name": "s_gLevelIndicator_Used_d_c_00631038",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e8e0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "0083b1a4"
+    },
+    {
+      "addr": "0083b1a4",
+      "name": "g_ConsolePtr",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "02dcd980",
+      "name": "g_LoadingMoonModel",
+      "type": "CKeyFramedModel",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLevelLoader *"
+      }
+    ]
+  },
+  "suspects": []
 }

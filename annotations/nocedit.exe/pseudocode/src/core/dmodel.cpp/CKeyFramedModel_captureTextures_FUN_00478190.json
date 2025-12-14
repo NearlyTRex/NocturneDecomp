@@ -1,82 +1,82 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 3, 
-    "global_count": 2, 
-    "total_lines": 46, 
-    "assembly_lines": 31, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
-      "addr": "0048db80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00478190", 
-    "signature": "void core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190(CKeyFramedModel * this_ptr)", 
-    "address_range": [
-      [
-        "00478190", 
-        "004781cc"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 31,
+    "complexity_score": 15,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 46
+  },
   "cross_references": [
     {
-      "from_addr": "00438dc9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_CCloth_load_FUN_00438cf0", 
-      "addr": "00438cf0"
-    }, 
+      "addr": "00438cf0",
+      "from_addr": "00438dc9",
+      "name": "core_cloth.cpp_CCloth_load_FUN_00438cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043dcd6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_FUN_0043dcc0", 
-      "addr": "0043dcc0"
-    }, 
+      "addr": "0043dcc0",
+      "from_addr": "0043dcd6",
+      "name": "core_cloth.cpp_FUN_0043dcc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00478c93", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dmodel.cpp_loadModel_FUN_00478c00", 
-      "addr": "00478c00"
+      "addr": "00478c00",
+      "from_addr": "00478c93",
+      "name": "core_dmodel.cpp_loadModel_FUN_00478c00",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00478190",
+    "address_range": [
+      [
+        "00478190",
+        "004781cc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190",
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190(CKeyFramedModel * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048db80",
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      }
+    ]
+  },
+  "suspects": []
 }

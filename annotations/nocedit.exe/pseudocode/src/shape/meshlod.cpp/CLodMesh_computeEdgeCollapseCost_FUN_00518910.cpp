@@ -306,8 +306,7 @@ LAB_0051919d:
                 pdVar1 = (double *)((int)g_SampleDistances + iVar11);
                 iVar11 = iVar11 + 8;
                 local_fc = *pdVar1 * in_stack_fffffeec + local_fc;
-              } while (SBORROW /* signed borrow */4(iVar11,g_SamplePointCount * 8) !=
-                       iVar11 + g_SamplePointCount * -8 < 0);
+              } while (iVar11 < g_SamplePointCount * 8);
             }
             if (*(double *)(local_44 + 2) < local_fc) goto LAB_00518f71;
           }

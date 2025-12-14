@@ -21,8 +21,8 @@ section .text
         ;   Label: core_setutil.cpp_C3DSLight_ctor_FUN_005862f0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005862f1
     PUSH EBX                            ; 005862f5
-    CALL core_setutil.cpp_C3DSLight_reset_FUN_005879b0 ; 005862f6 | void core_setutil.cpp_C3DSLight_reset_FUN_005879b0(C3DSLight * this_ptr)
-        ;   XREF to: 005879b0 (UNCONDITIONAL_CALL)
+    CALL core_setutil.cpp_C3DSLight_reset_FUN_005879b0 ; 005862f6
+        ;   XREF to: 005879b0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_reset_FUN_005879b0(C3DSLight * this_ptr)
     ADD ESP,0x4                         ; 005862fb
     MOV EAX,EBX                         ; 005862fe
     POP EBX                             ; 00586300

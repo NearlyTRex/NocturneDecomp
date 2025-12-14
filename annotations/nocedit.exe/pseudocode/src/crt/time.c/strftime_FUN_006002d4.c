@@ -209,7 +209,7 @@ LAB_006004a2:
         if (bVar2 != 0x7a) goto LAB_006006b4;
 LAB_006006a3:
         crt_time_c_tzset_FUN_006072f8();
-        pacVar6 = (char (*) [4])(&PTR_s_EST_006851c0)[time_ptr->tm_isdst];
+        pacVar6 = (&PTR_s_EST_006851c0)[time_ptr->tm_isdst];
       }
     }
   }

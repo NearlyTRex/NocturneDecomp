@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 22, 
-    "assembly_lines": 14, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "undefined4", 
-      "name": "DAT_02d831ec", 
-      "addr": "02d831ec", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004e0b90", 
-    "signature": "undefined4 core_game.cpp_CGame_fadeIn_FUN_004e0b90(CGame * this_ptr)", 
-    "address_range": [
-      [
-        "004e0b90", 
-        "004e0ba7"
-      ]
-    ], 
-    "name": "core_game.cpp_CGame_fadeIn_FUN_004e0b90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CGame *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 14,
+    "complexity_score": 8,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
   "cross_references": [
     {
-      "from_addr": "004af173", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_event.cpp_CEventList_FUN_004ae140", 
-      "addr": "004ae140"
-    }, 
+      "addr": "004ae140",
+      "from_addr": "004af173",
+      "name": "core_event.cpp_CEventList_FUN_004ae140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004dbb43", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
-    }, 
+      "addr": "004daf80",
+      "from_addr": "004dbb43",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0055cf8e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
-      "addr": "0055a810"
+      "addr": "0055a810",
+      "from_addr": "0055cf8e",
+      "name": "core_script.cpp_CScript_step_FUN_0055a810",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004e0b90",
+    "address_range": [
+      [
+        "004e0b90",
+        "004e0ba7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_fadeIn_FUN_004e0b90",
+    "signature": "undefined4 core_game.cpp_CGame_fadeIn_FUN_004e0b90(CGame * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d831ec",
+      "name": "DAT_02d831ec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": []
 }

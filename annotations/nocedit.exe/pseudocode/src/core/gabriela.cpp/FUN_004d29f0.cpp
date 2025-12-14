@@ -12,18 +12,13 @@
 float core_gabriela_cpp_FUN_004d29f0(void)
 
 {
-  float fVar1;
+  double dVar1;
   float in_stack_0000000c;
   int in_stack_00000010;
   
-  if (in_stack_00000010 < 1) {
-    fVar1 = (float)0.90000000000000002;
+  dVar1 = 0.90000000000000002;
+  if ((0 < in_stack_00000010) && (dVar1 = 0.94999999999999996, in_stack_00000010 != 1)) {
+    return in_stack_0000000c;
   }
-  else {
-    if (in_stack_00000010 != 1) {
-      return in_stack_0000000c;
-    }
-    fVar1 = (float)0.94999999999999996;
-  }
-  return in_stack_0000000c * fVar1;
+  return in_stack_0000000c * (float)dVar1;
 }

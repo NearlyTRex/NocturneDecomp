@@ -24,26 +24,26 @@ section .text
     FCOMP float ptr [ESP + 0x10]        ; 005a56c7
     FNSTSW AX                           ; 005a56cb
     SAHF                                ; 005a56cd
-    JC 0x005a5708                       ; 005a56ce | LAB_005a5708
-        ;   XREF to: 005a5708 (CONDITIONAL_JUMP)
+    JC 0x005a5708                       ; 005a56ce
+        ;   XREF to: 005a5708 (CONDITIONAL_JUMP)  ; LAB_005a5708
     FLD float ptr [ESP + 0x8]           ; 005a56d0
         ;   Label: LAB_005a56d0
     FCOMP float ptr [ESP + 0x14]        ; 005a56d4
     FNSTSW AX                           ; 005a56d8
     SAHF                                ; 005a56da
-    JBE 0x005a56e5                      ; 005a56db | LAB_005a56e5
-        ;   XREF to: 005a56e5 (CONDITIONAL_JUMP)
+    JBE 0x005a56e5                      ; 005a56db
+        ;   XREF to: 005a56e5 (CONDITIONAL_JUMP)  ; LAB_005a56e5
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a56dd
     MOV dword ptr [ESP + 0x8],EAX       ; 005a56e1
     FLD float ptr [ESP + 0xc]           ; 005a56e5
         ;   Label: LAB_005a56e5
-    FMUL double ptr [0x0064fadf]        ; 005a56e9 | double DOUBLE_0064fadf
+    FMUL double ptr [0x0064fadf]        ; 005a56e9 | DOUBLE_0064fadf
     FLD float ptr [ESP + 0x8]           ; 005a56ef
     FCOMPP                              ; 005a56f3
     FNSTSW AX                           ; 005a56f5
     SAHF                                ; 005a56f7
-    JA 0x005a5712                       ; 005a56f8 | LAB_005a5712
-        ;   XREF to: 005a5712 (CONDITIONAL_JUMP)
+    JA 0x005a5712                       ; 005a56f8
+        ;   XREF to: 005a5712 (CONDITIONAL_JUMP)  ; LAB_005a5712
     MOV dword ptr [ESP],0x41a00000      ; 005a56fa
     MOV EAX,dword ptr [ESP]             ; 005a5701
     ADD ESP,0x4                         ; 005a5704
@@ -51,8 +51,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 005a5708
         ;   Label: LAB_005a5708
     MOV dword ptr [ESP + 0x8],EAX       ; 005a570c
-    JMP 0x005a56d0                      ; 005a5710 | LAB_005a56d0
-        ;   XREF to: 005a56d0 (UNCONDITIONAL_JUMP)
+    JMP 0x005a56d0                      ; 005a5710
+        ;   XREF to: 005a56d0 (UNCONDITIONAL_JUMP)  ; LAB_005a56d0
     FLD float ptr [ESP + 0xc]           ; 005a5712
         ;   Label: LAB_005a5712
     FDIV float ptr [ESP + 0x8]          ; 005a5716

@@ -27,7 +27,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0048cac0
         ;   Label: engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0
     MOV EDX,dword ptr [ESP + 0x4]       ; 0048cac4
-    MOV [0x00772a74],EAX                ; 0048cac8 | int g_TexturesDisabled
+    MOV [0x00772a74],EAX                ; 0048cac8 | g_TexturesDisabled
     MOV dword ptr [EDX + 0x4],EAX       ; 0048cacd
     RET                                 ; 0048cad0
 

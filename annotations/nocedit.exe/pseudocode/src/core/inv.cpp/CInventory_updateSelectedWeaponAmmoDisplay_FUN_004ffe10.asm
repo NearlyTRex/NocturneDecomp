@@ -25,8 +25,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004ffe11
     MOV EDX,dword ptr [EBX + 0x330]     ; 004ffe15
     TEST EDX,EDX                        ; 004ffe1b
-    JNZ 0x004ffe21                      ; 004ffe1d | LAB_004ffe21
-        ;   XREF to: 004ffe21 (CONDITIONAL_JUMP)
+    JNZ 0x004ffe21                      ; 004ffe1d
+        ;   XREF to: 004ffe21 (CONDITIONAL_JUMP)  ; LAB_004ffe21
     POP EBX                             ; 004ffe1f
     RET                                 ; 004ffe20
     PUSH ESI                            ; 004ffe21
@@ -41,14 +41,14 @@ section .text
     MOV dword ptr [EDX + 0x318],EAX     ; 004ffe48
     MOV ECX,dword ptr [EBX + 0x330]     ; 004ffe4e
     PUSH ECX                            ; 004ffe54
-    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90 ; 004ffe55 | char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor * this_ptr)
-        ;   XREF to: 00408b90 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90 ; 004ffe55
+        ;   XREF to: 00408b90 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004ffe5a
     PUSH EAX                            ; 004ffe5d
     MOV ESI,dword ptr [EBX + 0x458]     ; 004ffe5e
     PUSH ESI                            ; 004ffe64
-    CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004ffe65 | undefined core_ammo.cpp_CAmmo_FUN_00410fd0()
-        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)
+    CALL core_ammo.cpp_CAmmo_FUN_00410fd0 ; 004ffe65
+        ;   XREF to: 00410fd0 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_CAmmo_FUN_00410fd0()
     ADD ESP,0x8                         ; 004ffe6a
     POP ESI                             ; 004ffe6d
     POP EBX                             ; 004ffe6e

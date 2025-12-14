@@ -20,7 +20,7 @@ section .text
 
     XOR EDX,EDX                         ; 0044c410
         ;   Label: core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410
-    MOV dword ptr [0x00902f70],EDX      ; 0044c412 | CDemonCamera * g_SkipClearBuffersSceneCamera
-    MOV dword ptr [0x00823a74],EDX      ; 0044c418 | CDemonCamera * g_CurrentSceneCamera
+    MOV dword ptr [0x00902f70],EDX      ; 0044c412 | g_SkipClearBuffersSceneCamera
+    MOV dword ptr [0x00823a74],EDX      ; 0044c418 | g_CurrentSceneCamera
     RET                                 ; 0044c41e
 

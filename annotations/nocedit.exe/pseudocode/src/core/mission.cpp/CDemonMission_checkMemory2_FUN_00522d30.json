@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 4, 
-    "global_count": 2, 
-    "total_lines": 42, 
-    "assembly_lines": 24, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_mission.cpp_CDemonMission_FUN_00523f50", 
-      "addr": "00523f50"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0", 
-      "addr": "0050efe0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_mission_cpp_0063899d", 
-      "addr": "0063899d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_mission_cpp_006389b1", 
-      "addr": "006389b1", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00522d30", 
-    "signature": "void core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMission * this_ptr)", 
-    "address_range": [
-      [
-        "00522d30", 
-        "00522d8c"
-      ]
-    ], 
-    "name": "core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonMission *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 24,
+    "complexity_score": 18,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
+  },
   "cross_references": [
     {
-      "from_addr": "00522d25", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_checkMemory_FUN_00522d20", 
-      "addr": "00522d20"
-    }, 
+      "addr": "00522d20",
+      "from_addr": "00522d25",
+      "name": "core_mission.cpp_CDemonMission_checkMemory_FUN_00522d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00522ec2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0", 
-      "addr": "00522eb0"
-    }, 
+      "addr": "00522eb0",
+      "from_addr": "00522ec2",
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005244cd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_run_FUN_00524420", 
-      "addr": "00524420"
-    }, 
+      "addr": "00524420",
+      "from_addr": "005244cd",
+      "name": "core_mission.cpp_CDemonMission_run_FUN_00524420",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00538206", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
-      "addr": "005381e0"
+      "addr": "005381e0",
+      "from_addr": "00538206",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00522d30",
+    "address_range": [
+      [
+        "00522d30",
+        "00522d8c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30",
+    "signature": "void core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30(CDemonMission * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00523f50",
+      "name": "core_mission.cpp_CDemonMission_FUN_00523f50"
+    },
+    {
+      "addr": "0050efe0",
+      "name": "shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063899d",
+      "name": "s_core_mission_cpp_0063899d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006389b1",
+      "name": "s_core_mission_cpp_006389b1",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": []
 }

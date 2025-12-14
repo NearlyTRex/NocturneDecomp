@@ -1,142 +1,142 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 86, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 0, 
-    "global_count": 9, 
-    "total_lines": 62, 
-    "assembly_lines": 41, 
-    "suspect_count": 6, 
+    "assembly_lines": 41,
+    "complexity_score": 86,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 9,
+    "pseudocode_lines": 21,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_path_cpp_0063e878", 
-      "addr": "0063e878", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_queuePop_empty_queue_0063e889", 
-      "addr": "0063e889", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "CPathQueueNode[5000]", 
-      "name": "g_PathfindingQueue", 
-      "addr": "030c3dec", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_PathfindingQueue[0].cost", 
-      "addr": "030c3df0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_PathfindingQueue[0].z", 
-      "addr": "030c3df4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PathfindingQueueHead", 
-      "addr": "030d284c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PathfindingQueueTail", 
-      "addr": "030d2850", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000008;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_0000000c;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000010;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000008 = g_PathfindingQueue[g_PathfindingQueueHead].x;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = g_PathfindingQueue[g_PathfindingQueueHead].cost;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_00000010 = g_PathfindingQueue[g_PathfindingQueueHead].z;"
-    }
-  ], 
+    ],
+    "total_lines": 62
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "005463d0", 
-    "signature": "undefined core_path.cpp_FUN_005463d0()", 
+    "address": "005463d0",
     "address_range": [
       [
-        "005463d0", 
+        "005463d0",
         "0054644e"
       ]
-    ], 
-    "name": "core_path.cpp_FUN_005463d0"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_path.cpp_FUN_005463d0",
+    "signature": "undefined core_path.cpp_FUN_005463d0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063e878",
+      "name": "s_core_path_cpp_0063e878",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063e889",
+      "name": "s_queuePop_empty_queue_0063e889",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030c3dec",
+      "name": "g_PathfindingQueue",
+      "type": "CPathQueueNode[5000]",
+      "value": null
+    },
+    {
+      "addr": "030c3df0",
+      "name": "g_PathfindingQueue[0].cost",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030c3df4",
+      "name": "g_PathfindingQueue[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "030d284c",
+      "name": "g_PathfindingQueueHead",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030d2850",
+      "name": "g_PathfindingQueueTail",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "int *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000010",
+      "text": "int *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = g_PathfindingQueue[g_PathfindingQueueHead].x;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = g_PathfindingQueue[g_PathfindingQueueHead].cost;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "*in_stack_00000010 = g_PathfindingQueue[g_PathfindingQueueHead].z;",
+      "type": "stack_param"
+    }
+  ]
 }

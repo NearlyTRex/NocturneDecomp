@@ -9,14 +9,12 @@
 void crt_unknown_c_FUN_006093e8(void)
 
 {
-  int *piVar1;
+  uint *puVar1;
   
-  if (g_FreeListHeadPointer != (int *)0x0) {
-    do {
-      piVar1 = (int *)*g_FreeListHeadPointer;
-      crt_memory_c_free_FUN_00601cd0(g_FreeListHeadPointer);
-      g_FreeListHeadPointer = piVar1;
-    } while (piVar1 != (int *)0x0);
+  while (g_FreeListHeadPointer != (uint *)0x0) {
+    puVar1 = (uint *)*g_FreeListHeadPointer;
+    crt_memory_c_free_FUN_00601cd0(g_FreeListHeadPointer);
+    g_FreeListHeadPointer = puVar1;
   }
   return;
 }

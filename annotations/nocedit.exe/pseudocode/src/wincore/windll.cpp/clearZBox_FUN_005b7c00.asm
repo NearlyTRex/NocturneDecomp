@@ -20,10 +20,10 @@
 
 section .text
 
-    CMP dword ptr [0x02d03e94],0x0      ; 005b7c00 | int g_UseExternalRenderer
+    CMP dword ptr [0x02d03e94],0x0      ; 005b7c00 | g_UseExternalRenderer
         ;   Label: wincore_windll.cpp_clearZBox_FUN_005b7c00
-    JNZ 0x005b7c0c                      ; 005b7c07 | LAB_005b7c0c
-        ;   XREF to: 005b7c0c (CONDITIONAL_JUMP)
+    JNZ 0x005b7c0c                      ; 005b7c07
+        ;   XREF to: 005b7c0c (CONDITIONAL_JUMP)  ; LAB_005b7c0c
     XOR EAX,EAX                         ; 005b7c09
     RET                                 ; 005b7c0b
     PUSH EDI                            ; 005b7c0c
@@ -38,7 +38,7 @@ section .text
     PUSH ESI                            ; 005b7c1d
     MOV EDI,dword ptr [ESP + 0x1c]      ; 005b7c1e
     PUSH EDI                            ; 005b7c22
-    CALL dword ptr [0x03f6b8fc]         ; 005b7c23 | APIDLL_clearZBox * g_APIDLL_clearZBox
+    CALL dword ptr [0x03f6b8fc]         ; 005b7c23 | g_APIDLL_clearZBox
     ADD ESP,0x10                        ; 005b7c29
     POP EBX                             ; 005b7c2c
     POP ESI                             ; 005b7c2d

@@ -19,13 +19,13 @@
 
 section .text
 
-    PUSH 0x65af20                       ; 0052ccd0 | WatcomTypeInfo g_CDeformableModelInstanceTypeInfo
+    PUSH 0x65af20                       ; 0052ccd0 | g_CDeformableModelInstanceTypeInfo
         ;   Label: core_morph.cpp_freeDeformableModelInstances_FUN_0052ccd0
     PUSH 0x2                            ; 0052ccd5
     MOV EDX,dword ptr [ESP + 0xc]       ; 0052ccd7
     PUSH EDX                            ; 0052ccdb
-    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0052ccdc | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0052ccdc
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)  ; int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052cce1
     RET                                 ; 0052cce4
 

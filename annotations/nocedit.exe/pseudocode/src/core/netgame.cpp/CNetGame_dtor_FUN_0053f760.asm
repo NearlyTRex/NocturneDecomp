@@ -18,8 +18,8 @@ section .text
     PUSH 0x0                            ; 0053f764
     ADD EAX,0x170                       ; 0053f766
     PUSH EAX                            ; 0053f76b
-    CALL support_trisock.cpp_bindSocketWrapper_FUN_005e1af0 ; 0053f76c | SSocketContext * support_trisock.cpp_bindSocketWrapper_FUN_005e1af0(SSocketContext * socket_ctx)
-        ;   XREF to: 005e1af0 (UNCONDITIONAL_CALL)
+    CALL support_trisock.cpp_bindSocketWrapper_FUN_005e1af0 ; 0053f76c
+        ;   XREF to: 005e1af0 (UNCONDITIONAL_CALL)  ; SSocketContext * support_trisock.cpp_bindSocketWrapper_FUN_005e1af0(SSocketContext * socket_ctx)
     ADD ESP,0x8                         ; 0053f771
     SUB EAX,0x170                       ; 0053f774
     RET                                 ; 0053f779

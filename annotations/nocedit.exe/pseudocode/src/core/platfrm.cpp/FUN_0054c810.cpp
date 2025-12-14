@@ -11,8 +11,7 @@ void core_platfrm_cpp_FUN_0054c810(void)
 {
   CPlatform *this_ptr;
   
-  this_ptr = (CPlatform *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x72c,"..\\core\\platfrm.cpp",0x31);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x72c,"..\\core\\platfrm.cpp",0x31);
   if (this_ptr == (CPlatform *)0x0) {
     return;
   }

@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x2d83328                   ; 004e9030 | CDemonActorType g_CGlassClassInfo
+    MOV EAX,0x2d83328                   ; 004e9030 | g_CGlassClassInfo
         ;   Label: core_glass.cpp_CGlass_getActorType_FUN_004e9030
     RET                                 ; 004e9035
 

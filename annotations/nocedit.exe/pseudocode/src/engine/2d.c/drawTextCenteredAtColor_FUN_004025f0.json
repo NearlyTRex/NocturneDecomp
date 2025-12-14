@@ -1,104 +1,104 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 3, 
-    "global_count": 0, 
-    "total_lines": 32, 
-    "assembly_lines": 24, 
-    "suspect_count": 2, 
+    "assembly_lines": 24,
+    "complexity_score": 33,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_2d.c_drawTextColor_FUN_00402430", 
-      "addr": "00402430"
-    }, 
-    {
-      "name": "engine_2d.c_getStringWidth_FUN_004018a0", 
-      "addr": "004018a0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 9, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "engine_2d_c_drawTextColor_FUN_00402430((char *)center_x,y_pos - (iVar1 + -1) / 2,unaff_EBX);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004025f0", 
-    "signature": "void engine_2d.c_drawTextCenteredAtColor_FUN_004025f0(char * text, int center_x, int y_pos)", 
-    "address_range": [
-      [
-        "004025f0", 
-        "00402624"
-      ]
-    ], 
-    "name": "engine_2d.c_drawTextCenteredAtColor_FUN_004025f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "text"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "center_x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "y_pos"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 32
+  },
   "cross_references": [
     {
-      "from_addr": "00489363", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
-      "addr": "00489120"
-    }, 
+      "addr": "00489120",
+      "from_addr": "00489363",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004026a1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650", 
-      "addr": "00402650"
-    }, 
+      "addr": "00402650",
+      "from_addr": "004026a1",
+      "name": "engine_2d.c_drawTextCenteredAtColorFormatted_FUN_00402650",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00402640", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_2d.c_drawTextCenteredAtColorWrapper_FUN_00402630", 
-      "addr": "00402630"
+      "addr": "00402630",
+      "from_addr": "00402640",
+      "name": "engine_2d.c_drawTextCenteredAtColorWrapper_FUN_00402630",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004025f0",
+    "address_range": [
+      [
+        "004025f0",
+        "00402624"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_drawTextCenteredAtColor_FUN_004025f0",
+    "signature": "void engine_2d.c_drawTextCenteredAtColor_FUN_004025f0(char * text, int center_x, int y_pos)"
+  },
+  "function_calls": [
+    {
+      "addr": "00402430",
+      "name": "engine_2d.c_drawTextColor_FUN_00402430"
+    },
+    {
+      "addr": "004018a0",
+      "name": "engine_2d.c_getStringWidth_FUN_004018a0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "center_x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "text": "engine_2d_c_drawTextColor_FUN_00402430((char *)center_x,y_pos - (iVar1 + -1) / 2,unaff_EBX);",
+      "type": "unaffected_reg"
     }
   ]
 }

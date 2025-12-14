@@ -63,23 +63,23 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 0060ad88
     MOV ECX,dword ptr [EBX + 0x4]       ; 0060ad8a
     MOV EBX,dword ptr [EBX]             ; 0060ad8d
-    CALL crt_math.c_udivmod64_FUN_0060d3ed ; 0060ad8f | ulonglong crt_math.c_udivmod64_FUN_0060d3ed(ulonglong dividend, ulonglong divisor)
-        ;   XREF to: 0060d3ed (UNCONDITIONAL_CALL)
+    CALL crt_math.c_udivmod64_FUN_0060d3ed ; 0060ad8f
+        ;   XREF to: 0060d3ed (UNCONDITIONAL_CALL)  ; ulonglong crt_math.c_udivmod64_FUN_0060d3ed(ulonglong dividend, ulonglong divisor)
     MOV dword ptr [ESI + 0x4],EDX       ; 0060ad94
     MOV dword ptr [ESI],EAX             ; 0060ad97
     MOV dword ptr [EDI + 0x4],ECX       ; 0060ad99
     MOV dword ptr [EDI],EBX             ; 0060ad9c
     MOV EAX,dword ptr [ESP + 0x24]      ; 0060ad9e
-    MOV AL,byte ptr [EAX + 0x685414]    ; 0060ada2 | char[36] g_AlphaNumericCharacters1
+    MOV AL,byte ptr [EAX + 0x685414]    ; 0060ada2 | g_AlphaNumericCharacters1
     MOV byte ptr [EBP],AL               ; 0060ada8
     MOV EBX,dword ptr [ESP + 0x34]      ; 0060adab
     INC EBP                             ; 0060adaf
     TEST EBX,EBX                        ; 0060adb0
-    JNZ 0x0060ad75                      ; 0060adb2 | LAB_0060ad75
-        ;   XREF to: 0060ad75 (CONDITIONAL_JUMP)
+    JNZ 0x0060ad75                      ; 0060adb2
+        ;   XREF to: 0060ad75 (CONDITIONAL_JUMP)  ; LAB_0060ad75
     CMP dword ptr [ESP + 0x38],0x0      ; 0060adb4
-    JNZ 0x0060ad75                      ; 0060adb9 | LAB_0060ad75
-        ;   XREF to: 0060ad75 (CONDITIONAL_JUMP)
+    JNZ 0x0060ad75                      ; 0060adb9
+        ;   XREF to: 0060ad75 (CONDITIONAL_JUMP)  ; LAB_0060ad75
     MOV EBX,dword ptr [ESP + 0x3c]      ; 0060adbb
         ;   Label: LAB_0060adbb
     MOV AL,byte ptr [EBP + -0x1]        ; 0060adbf
@@ -88,8 +88,8 @@ section .text
     MOV byte ptr [EBX],AL               ; 0060adc6
     MOV dword ptr [ESP + 0x3c],ESI      ; 0060adc8
     TEST AL,AL                          ; 0060adcc
-    JNZ 0x0060adbb                      ; 0060adce | LAB_0060adbb
-        ;   XREF to: 0060adbb (CONDITIONAL_JUMP)
+    JNZ 0x0060adbb                      ; 0060adce
+        ;   XREF to: 0060adbb (CONDITIONAL_JUMP)  ; LAB_0060adbb
     MOV EAX,dword ptr [ESP + 0x5c]      ; 0060add0
     ADD ESP,0x40                        ; 0060add4
     POP EBP                             ; 0060add7

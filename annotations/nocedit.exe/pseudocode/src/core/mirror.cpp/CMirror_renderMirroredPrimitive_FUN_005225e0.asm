@@ -46,27 +46,27 @@ section .text
     MOV EDX,dword ptr [EAX + 0x24]      ; 0052261a
     MOV dword ptr [0x02f33728],EDX      ; 0052261d | DAT_02f33728
     MOV EDX,dword ptr [EAX + 0x30]      ; 00522623
-    PUSH 0x2f3370c                      ; 00522626 | SMRGLHeaderPrimitive g_MirrorTempPrimitive
+    PUSH 0x2f3370c                      ; 00522626 | g_MirrorTempPrimitive
     MOV dword ptr [0x02f3372c],EDX      ; 0052262b | DAT_02f3372c
     MOV EDX,dword ptr [ESP + 0x8]       ; 00522631
     MOV EAX,dword ptr [EAX + 0x3c]      ; 00522635
     PUSH EDX                            ; 00522638
     MOV [0x02f33730],EAX                ; 00522639 | DAT_02f33730
-    CALL core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 ; 0052263e | uint core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirror * this_ptr, SMRGLHeaderPrimitive * primitive)
-        ;   XREF to: 00522310 (UNCONDITIONAL_CALL)
+    CALL core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 ; 0052263e
+        ;   XREF to: 00522310 (UNCONDITIONAL_CALL)  ; uint core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirror * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 00522643
     TEST EAX,EAX                        ; 00522646
-    JNZ 0x0052264b                      ; 00522648 | LAB_0052264b
-        ;   XREF to: 0052264b (CONDITIONAL_JUMP)
+    JNZ 0x0052264b                      ; 00522648
+        ;   XREF to: 0052264b (CONDITIONAL_JUMP)  ; LAB_0052264b
     RET                                 ; 0052264a
     MOV EAX,dword ptr [ESP + 0x4]       ; 0052264b
         ;   Label: LAB_0052264b
     ADD EAX,0xe8                        ; 0052264f
     PUSH EAX                            ; 00522654
-    MOV ECX,dword ptr [0x006703ec]      ; 00522655 | CDemonRenderer * g_CDemonRendererPtr
-    PUSH ECX                            ; 0052265b | CDemonRenderer g_CDemonRendererInstance
-    CALL engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 ; 0052265c | void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
-        ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x006703ec]      ; 00522655 | g_CDemonRendererPtr
+    PUSH ECX                            ; 0052265b | g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820 ; 0052265c
+        ;   XREF to: 0048a820 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)
     ADD ESP,0x8                         ; 00522661
     RET                                 ; 00522664
 

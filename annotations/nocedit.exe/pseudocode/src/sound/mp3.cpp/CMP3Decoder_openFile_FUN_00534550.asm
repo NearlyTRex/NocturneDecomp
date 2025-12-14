@@ -45,59 +45,59 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 00534554
     MOV ESI,dword ptr [ESP + 0x18]      ; 00534558
     PUSH ESI                            ; 0053455c
-    PUSH 0x63b22a                       ; 0053455d | = "sound" | s_sound_0063b22a = sound
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00534562 | int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)
+    PUSH 0x63b22a                       ; 0053455d | = "sound"
+    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00534562
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 00534567
     MOV EBP,EAX                         ; 0053456a
     TEST EAX,EAX                        ; 0053456c
-    JLE 0x005345da                      ; 0053456e | LAB_005345da
-        ;   XREF to: 005345da (CONDITIONAL_JUMP)
-    PUSH 0x63b24f                       ; 00534570 | = "rb" | s_rb_0063b24f = rb
+    JLE 0x005345da                      ; 0053456e
+        ;   XREF to: 005345da (CONDITIONAL_JUMP)  ; LAB_005345da
+    PUSH 0x63b24f                       ; 00534570 | = "rb"
         ;   Label: LAB_00534570
     PUSH ESI                            ; 00534575
-    PUSH 0x63b252                       ; 00534576 | = "sound" | s_sound_0063b252 = sound
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0053457b | FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)
+    PUSH 0x63b252                       ; 00534576 | = "sound"
+    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0053457b
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00534580
     MOV EBX,EAX                         ; 00534583
     TEST EAX,EAX                        ; 00534585
-    JNZ 0x005345ac                      ; 00534587 | LAB_005345ac
-        ;   XREF to: 005345ac (CONDITIONAL_JUMP)
+    JNZ 0x005345ac                      ; 00534587
+        ;   XREF to: 005345ac (CONDITIONAL_JUMP)  ; LAB_005345ac
     PUSH ESI                            ; 00534589
-    MOV EAX,0x63b258                    ; 0053458a | = "..\\sound\\mp3.cpp" | s_sound_mp3_cpp_0063b258 = ..\sound\mp3.cpp
+    MOV EAX,0x63b258                    ; 0053458a | = "..\\sound\\mp3.cpp"
     MOV EDX,0xe19                       ; 0053458f
-    PUSH 0x63b269                       ; 00534594 | = "Can't open %s" | s_Can_t_open_s_0063b269 = Can't open %s
-    MOV [0x02f0ca48],EAX                ; 00534599 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 0053459e | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005345a4 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63b269                       ; 00534594 | = "Can't open %s"
+    MOV [0x02f0ca48],EAX                ; 00534599 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 0053459e | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005345a4
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 005345a9
     PUSH EBP                            ; 005345ac
         ;   Label: LAB_005345ac
     PUSH EBX                            ; 005345ad
     PUSH EDI                            ; 005345ae
-    CALL sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 ; 005345af | int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder * this_ptr, FILE * file_handle, int file_size)
-        ;   XREF to: 00534630 (UNCONDITIONAL_CALL)
+    CALL sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 ; 005345af
+        ;   XREF to: 00534630 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder * this_ptr, FILE * file_handle, int file_size)
     ADD ESP,0xc                         ; 005345b4
     TEST EAX,EAX                        ; 005345b7
-    JZ 0x00534603                       ; 005345b9 | LAB_00534603
-        ;   XREF to: 00534603 (CONDITIONAL_JUMP)
+    JZ 0x00534603                       ; 005345b9
+        ;   XREF to: 00534603 (CONDITIONAL_JUMP)  ; LAB_00534603
     PUSH EDI                            ; 005345bb
         ;   Label: LAB_005345bb
     MOV AL,byte ptr [ESI]               ; 005345bc
         ;   Label: LAB_005345bc
     MOV byte ptr [EDI],AL               ; 005345be
     CMP AL,0x0                          ; 005345c0
-    JZ 0x005345d4                       ; 005345c2 | LAB_005345d4
-        ;   XREF to: 005345d4 (CONDITIONAL_JUMP)
+    JZ 0x005345d4                       ; 005345c2
+        ;   XREF to: 005345d4 (CONDITIONAL_JUMP)  ; LAB_005345d4
     MOV AL,byte ptr [ESI + 0x1]         ; 005345c4
     ADD ESI,0x2                         ; 005345c7
     MOV byte ptr [EDI + 0x1],AL         ; 005345ca
     ADD EDI,0x2                         ; 005345cd
     CMP AL,0x0                          ; 005345d0
-    JNZ 0x005345bc                      ; 005345d2 | LAB_005345bc
-        ;   XREF to: 005345bc (CONDITIONAL_JUMP)
+    JNZ 0x005345bc                      ; 005345d2
+        ;   XREF to: 005345bc (CONDITIONAL_JUMP)  ; LAB_005345bc
     POP EDI                             ; 005345d4
         ;   Label: LAB_005345d4
     POP EBP                             ; 005345d5
@@ -107,26 +107,26 @@ section .text
     RET                                 ; 005345d9
     PUSH ESI                            ; 005345da
         ;   Label: LAB_005345da
-    MOV EDX,0x63b230                    ; 005345db | = "..\\sound\\mp3.cpp" | s_sound_mp3_cpp_0063b230 = ..\sound\mp3.cpp
+    MOV EDX,0x63b230                    ; 005345db | = "..\\sound\\mp3.cpp"
     MOV ECX,0xe14                       ; 005345e0
-    PUSH 0x63b241                       ; 005345e5 | = "Can't open %s" | s_Can_t_open_s_0063b241 = Can't open %s
-    MOV dword ptr [0x02f0ca48],EDX      ; 005345ea | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 005345f0 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005345f6 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63b241                       ; 005345e5 | = "Can't open %s"
+    MOV dword ptr [0x02f0ca48],EDX      ; 005345ea | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 005345f0 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005345f6
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 005345fb
-    JMP 0x00534570                      ; 005345fe | LAB_00534570
-        ;   XREF to: 00534570 (UNCONDITIONAL_JUMP)
+    JMP 0x00534570                      ; 005345fe
+        ;   XREF to: 00534570 (UNCONDITIONAL_JUMP)  ; LAB_00534570
     PUSH ESI                            ; 00534603
         ;   Label: LAB_00534603
-    MOV ECX,0x63b277                    ; 00534604 | = "..\\sound\\mp3.cpp" | s_sound_mp3_cpp_0063b277 = ..\sound\mp3.cpp
+    MOV ECX,0x63b277                    ; 00534604 | = "..\\sound\\mp3.cpp"
     MOV EBX,0xe1e                       ; 00534609
-    PUSH 0x63b288                       ; 0053460e | = "Error preparing to decode %s" | s_Error_preparing_to_decod_0063b288 = Error preparing to decode %s
-    MOV dword ptr [0x02f0ca48],ECX      ; 00534613 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EBX      ; 00534619 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0053461f | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63b288                       ; 0053460e | = "Error preparing to decode %s"
+    MOV dword ptr [0x02f0ca48],ECX      ; 00534613 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 00534619 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0053461f
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x8                         ; 00534624
-    JMP 0x005345bb                      ; 00534627 | LAB_005345bb
-        ;   XREF to: 005345bb (UNCONDITIONAL_JUMP)
+    JMP 0x005345bb                      ; 00534627
+        ;   XREF to: 005345bb (UNCONDITIONAL_JUMP)  ; LAB_005345bb
 

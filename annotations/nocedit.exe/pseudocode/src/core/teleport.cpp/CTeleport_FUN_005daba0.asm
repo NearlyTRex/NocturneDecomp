@@ -24,20 +24,20 @@ section .text
     PUSH EDX                            ; 005daba5
     MOV ECX,dword ptr [ESP + 0xc]       ; 005daba6
     PUSH ECX                            ; 005dabaa
-    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 005dabab | void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
-        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 005dabab
+        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
     ADD ESP,0x8                         ; 005dabb0
     PUSH 0x0                            ; 005dabb3
-    PUSH 0x654ceb                       ; 005dabb5 | = "CTeleportDest" | s_CTeleportDest_00654ceb = CTeleportDest
+    PUSH 0x654ceb                       ; 005dabb5 | = "CTeleportDest"
     MOV EAX,dword ptr [ESP + 0x10]      ; 005dabba
     PUSH 0x0                            ; 005dabbe
     ADD EAX,0x164                       ; 005dabc0
     PUSH EAX                            ; 005dabc5
-    PUSH 0x654cf9                       ; 005dabc6 | = "Destination" | s_Destination_00654cf9 = Destination
+    PUSH 0x654cf9                       ; 005dabc6 | = "Destination"
     MOV EBX,dword ptr [ESP + 0x20]      ; 005dabcb
     PUSH EBX                            ; 005dabcf
-    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 005dabd0 | int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
-        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e350 ; 005dabd0
+        ;   XREF to: 0040e350 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList * this_ptr)
     ADD ESP,0x18                        ; 005dabd5
     POP EBX                             ; 005dabd8
     RET                                 ; 005dabd9

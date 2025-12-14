@@ -18,8 +18,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x8]       ; 004c5644
     LEA EAX,[EDX + 0x4]                 ; 004c5648
     CMP EAX,ECX                         ; 004c564b
-    JNZ 0x004c566b                      ; 004c564d | LAB_004c566b
-        ;   XREF to: 004c566b (CONDITIONAL_JUMP)
+    JNZ 0x004c566b                      ; 004c564d
+        ;   XREF to: 004c566b (CONDITIONAL_JUMP)  ; LAB_004c566b
     MOV dword ptr [EDX + 0x14],0x3e800000 ; 004c564f
         ;   Label: LAB_004c564f
     MOV EAX,dword ptr [ESP + 0xc]       ; 004c5656
@@ -37,6 +37,6 @@ section .text
     MOV EBX,dword ptr [ECX + 0x8]       ; 004c5676
     MOV dword ptr [EAX + 0x8],EBX       ; 004c5679
     POP EBX                             ; 004c567c
-    JMP 0x004c564f                      ; 004c567d | LAB_004c564f
-        ;   XREF to: 004c564f (UNCONDITIONAL_JUMP)
+    JMP 0x004c564f                      ; 004c567d
+        ;   XREF to: 004c564f (UNCONDITIONAL_JUMP)  ; LAB_004c564f
 

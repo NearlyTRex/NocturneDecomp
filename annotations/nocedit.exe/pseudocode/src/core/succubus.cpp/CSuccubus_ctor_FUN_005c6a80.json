@@ -1,128 +1,128 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 41, 
-    "cross_reference_count": 1, 
-    "global_count": 9, 
-    "total_lines": 110, 
-    "assembly_lines": 69, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_cloth.cpp_FUN_0043bf40", 
-      "addr": "0043bf40"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
-      "addr": "004a9500"
-    }, 
-    {
-      "name": "core_morph.cpp_FUN_0052b310", 
-      "addr": "0052b310"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0", 
-      "addr": "0059ddc0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_succubus_dfm_00653fd8", 
-      "addr": "00653fd8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_hotdemon_dfm_00653fe5", 
-      "addr": "00653fe5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_hdwing_cth_00653ff2", 
-      "addr": "00653ff2", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_dwing.cth_00653ff3", 
-      "addr": "00653ff3", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_wing.cth_00653ff4", 
-      "addr": "00653ff4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "s_ing.cth_00653ff5", 
-      "addr": "00653ff5", 
-      "value": null
-    }, 
-    {
-      "type": "float", 
-      "name": "DAT_0066392c", 
-      "addr": "0066392c", 
-      "value": "50"
-    }, 
-    {
-      "type": "float", 
-      "name": "FLOAT_00663930", 
-      "addr": "00663930", 
-      "value": "100"
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CSuccubusVTable", 
-      "addr": "00663944", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005c6a80", 
-    "signature": "CSuccubus * core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus * this_ptr)", 
-    "address_range": [
-      [
-        "005c6a80", 
-        "005c6b54"
-      ]
-    ], 
-    "name": "core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSuccubus *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 69,
+    "complexity_score": 41,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 9,
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 110
+  },
   "cross_references": [
     {
-      "from_addr": "005c6a5a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_succubus.cpp_FUN_005c6a40", 
-      "addr": "005c6a40"
+      "addr": "005c6a40",
+      "from_addr": "005c6a5a",
+      "name": "core_succubus.cpp_FUN_005c6a40",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005c6a80",
+    "address_range": [
+      [
+        "005c6a80",
+        "005c6b54"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80",
+    "signature": "CSuccubus * core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043bf40",
+      "name": "core_cloth.cpp_FUN_0043bf40"
+    },
+    {
+      "addr": "004a9500",
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "0052b310",
+      "name": "core_morph.cpp_FUN_0052b310"
+    },
+    {
+      "addr": "0059ddc0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00653fd8",
+      "name": "s_succubus_dfm_00653fd8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653fe5",
+      "name": "s_hotdemon_dfm_00653fe5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653ff2",
+      "name": "s_hdwing_cth_00653ff2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00653ff3",
+      "name": "s_dwing.cth_00653ff3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00653ff4",
+      "name": "s_wing.cth_00653ff4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00653ff5",
+      "name": "s_ing.cth_00653ff5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0066392c",
+      "name": "DAT_0066392c",
+      "type": "float",
+      "value": "50"
+    },
+    {
+      "addr": "00663930",
+      "name": "FLOAT_00663930",
+      "type": "float",
+      "value": "100"
+    },
+    {
+      "addr": "00663944",
+      "name": "g_CSuccubusVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSuccubus *"
+      }
+    ]
+  },
+  "suspects": []
 }

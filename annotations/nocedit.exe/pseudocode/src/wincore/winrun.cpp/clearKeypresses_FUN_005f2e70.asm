@@ -25,8 +25,8 @@ section .text
     XOR EDX,EDX                         ; 005f2e70
         ;   Label: wincore_winrun.cpp_clearKeypresses_FUN_005f2e70
     XOR EAX,EAX                         ; 005f2e72
-    MOV dword ptr [0x03f96c1c],EDX      ; 005f2e74 | int g_InputWriteIndex
-    MOV dword ptr [0x03f96c18],EDX      ; 005f2e7a | int g_InputReadIndex
-    MOV dword ptr [0x03f96c20],EDX      ; 005f2e80 | int g_InputCountMaybe
+    MOV dword ptr [0x03f96c1c],EDX      ; 005f2e74 | g_InputWriteIndex
+    MOV dword ptr [0x03f96c18],EDX      ; 005f2e7a | g_InputReadIndex
+    MOV dword ptr [0x03f96c20],EDX      ; 005f2e80 | g_InputCountMaybe
     RET                                 ; 005f2e86
 

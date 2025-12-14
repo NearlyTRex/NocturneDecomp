@@ -26,8 +26,8 @@ section .text
     PUSH EDX                            ; 00402285
     MOV ECX,dword ptr [ESP + 0xc]       ; 00402286
     PUSH ECX                            ; 0040228a
-    CALL engine_2d.c_getStringWidth_FUN_004018a0 ; 0040228b | int engine_2d.c_getStringWidth_FUN_004018a0(char * text)
-        ;   XREF to: 004018a0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_getStringWidth_FUN_004018a0 ; 0040228b
+        ;   XREF to: 004018a0 (UNCONDITIONAL_CALL)  ; int engine_2d.c_getStringWidth_FUN_004018a0(char * text)
     LEA EDX,[EAX + -0x1]                ; 00402290
     MOV EAX,EDX                         ; 00402293
     SAR EDX,0x1f                        ; 00402295
@@ -39,8 +39,8 @@ section .text
     PUSH EDX                            ; 004022a5
     MOV EBX,dword ptr [ESP + 0x10]      ; 004022a6
     PUSH EBX                            ; 004022aa
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 004022ab | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 004022ab
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 004022b0
     POP EBX                             ; 004022b3
     RET                                 ; 004022b4

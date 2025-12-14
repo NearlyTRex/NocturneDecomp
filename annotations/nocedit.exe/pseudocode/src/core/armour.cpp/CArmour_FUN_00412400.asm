@@ -24,10 +24,10 @@ section .text
     PUSH 0xbf800000                     ; 00412407
     PUSH 0x0                            ; 0041240c
     PUSH EBX                            ; 0041240e
-    CALL core_charactr.cpp_CCharacter_FUN_0042b9e0 ; 0041240f | void core_charactr.cpp_CCharacter_FUN_0042b9e0(CCharacter * this_ptr)
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042b9e0 ; 0041240f
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042b9e0(CCharacter * this_ptr)
     ADD ESP,0x10                        ; 00412414
-    PUSH 0x614e0c                       ; 00412417 | = "armour.wav" | s_armour_wav_00614e0c = armour.wav
+    PUSH 0x614e0c                       ; 00412417 | = "armour.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0041241c
     PUSH EBX                            ; 00412422
     CALL dword ptr [EAX + 0x24]         ; 00412423
@@ -35,8 +35,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00412429
     PUSH EDX                            ; 0041242d
     PUSH EBX                            ; 0041242e
-    CALL core_enemy.cpp_FUN_004a9f10    ; 0041242f | undefined core_enemy.cpp_FUN_004a9f10()
-        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)
+    CALL core_enemy.cpp_FUN_004a9f10    ; 0041242f
+        ;   XREF to: 004a9f10 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a9f10()
     ADD ESP,0x8                         ; 00412434
     POP EBX                             ; 00412437
     RET                                 ; 00412438

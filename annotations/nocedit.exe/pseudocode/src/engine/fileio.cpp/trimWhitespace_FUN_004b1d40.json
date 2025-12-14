@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 30, 
-    "pseudocode_lines": 30, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 87, 
-    "assembly_lines": 57, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_memmove_FUN_005fe5e0", 
-      "addr": "005fe5e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 57,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 87
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "004b1d40", 
-    "signature": "void engine_fileio.cpp_trimWhitespace_FUN_004b1d40(char * string)", 
+    "address": "004b1d40",
     "address_range": [
       [
-        "004b1d40", 
+        "004b1d40",
         "004b1da4"
       ]
-    ], 
-    "name": "engine_fileio.cpp_trimWhitespace_FUN_004b1d40"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_fileio.cpp_trimWhitespace_FUN_004b1d40",
+    "signature": "void engine_fileio.cpp_trimWhitespace_FUN_004b1d40(char * string)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe5e0",
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "string"
+        "is_param": true,
+        "name": "string",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

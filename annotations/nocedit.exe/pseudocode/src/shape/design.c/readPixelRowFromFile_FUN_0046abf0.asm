@@ -29,52 +29,52 @@ section .text
     SUB ESP,0x0                         ; 0046abf6
     CMP dword ptr [EBP + 0x20],0x0      ; 0046abfc
         ;   Label: LAB_0046abfc
-    JLE 0x0046ac66                      ; 0046ac00 | LAB_0046ac66
-        ;   XREF to: 0046ac66 (CONDITIONAL_JUMP)
+    JLE 0x0046ac66                      ; 0046ac00
+        ;   XREF to: 0046ac66 (CONDITIONAL_JUMP)  ; LAB_0046ac66
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046ac02
     PUSH EAX                            ; 0046ac05
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac06 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac06
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0046ac0b
     MOV EDX,dword ptr [EBP + 0x18]      ; 0046ac0e
     INC dword ptr [EBP + 0x18]          ; 0046ac11
     MOV byte ptr [EDX],AL               ; 0046ac14
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046ac16
     PUSH EAX                            ; 0046ac19
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac1a | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac1a
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0046ac1f
     MOV EDX,dword ptr [EBP + 0x18]      ; 0046ac22
     INC dword ptr [EBP + 0x18]          ; 0046ac25
     MOV byte ptr [EDX],AL               ; 0046ac28
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046ac2a
     PUSH EAX                            ; 0046ac2d
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac2e | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac2e
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0046ac33
     MOV EDX,dword ptr [EBP + 0x18]      ; 0046ac36
     INC dword ptr [EBP + 0x18]          ; 0046ac39
     MOV byte ptr [EDX],AL               ; 0046ac3c
     CMP dword ptr [EBP + 0x24],0x20     ; 0046ac3e
-    JNZ 0x0046ac57                      ; 0046ac42 | LAB_0046ac57
-        ;   XREF to: 0046ac57 (CONDITIONAL_JUMP)
+    JNZ 0x0046ac57                      ; 0046ac42
+        ;   XREF to: 0046ac57 (CONDITIONAL_JUMP)  ; LAB_0046ac57
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046ac44
     PUSH EAX                            ; 0046ac47
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac48 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0046ac48
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0046ac4d
     MOV EDX,dword ptr [EBP + 0x1c]      ; 0046ac50
     MOV byte ptr [EDX],AL               ; 0046ac53
-    JMP 0x0046ac5d                      ; 0046ac55 | LAB_0046ac5d
-        ;   XREF to: 0046ac5d (UNCONDITIONAL_JUMP)
+    JMP 0x0046ac5d                      ; 0046ac55
+        ;   XREF to: 0046ac5d (UNCONDITIONAL_JUMP)  ; LAB_0046ac5d
     MOV EAX,dword ptr [EBP + 0x1c]      ; 0046ac57
         ;   Label: LAB_0046ac57
     MOV byte ptr [EAX],0xff             ; 0046ac5a
     INC dword ptr [EBP + 0x1c]          ; 0046ac5d
         ;   Label: LAB_0046ac5d
     ADD dword ptr [EBP + 0x20],-0x1     ; 0046ac60
-    JMP 0x0046abfc                      ; 0046ac64 | LAB_0046abfc
-        ;   XREF to: 0046abfc (UNCONDITIONAL_JUMP)
+    JMP 0x0046abfc                      ; 0046ac64
+        ;   XREF to: 0046abfc (UNCONDITIONAL_JUMP)  ; LAB_0046abfc
     POP EBP                             ; 0046ac66
         ;   Label: LAB_0046ac66
     POP EDI                             ; 0046ac67

@@ -19,8 +19,7 @@ CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00424cb0(CBugs *this_ptr)
   pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   pvVar3 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                      (pCVar2[1].base_character.base_actor.actor_name + 0x10,400,&g_SBugTypeInfo);
-  this_ptr_00 = (CKeyFramedModelInstance *)
-                crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
+  this_ptr_00 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                           ((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);
   this_ptr_00[-0xc3].part_visibility_flags[0] = (int)&g_CBugsVTable;
   this_ptr_00[-0xffffffff00000044].animation_state[8] = '\0';

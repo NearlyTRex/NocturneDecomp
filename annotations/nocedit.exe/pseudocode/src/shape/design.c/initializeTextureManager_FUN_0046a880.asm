@@ -35,26 +35,26 @@ section .text
     MOV EBP,ESP                         ; 0046a884
     SUB ESP,0x1c                        ; 0046a886
     MOV EAX,dword ptr [EBP + 0x14]      ; 0046a88c
-    MOV [0x01eb1484],EAX                ; 0046a88f | int g_TextureManagerMode
-    MOV dword ptr [0x01e8d260],0x0      ; 0046a894 | int g_TextureProcessedCount
+    MOV [0x01eb1484],EAX                ; 0046a88f | g_TextureManagerMode
+    MOV dword ptr [0x01e8d260],0x0      ; 0046a894 | g_TextureProcessedCount
     MOV dword ptr [EBP + -0x4],0x0      ; 0046a89e
-    JMP 0x0046a8ad                      ; 0046a8a5 | LAB_0046a8ad
-        ;   XREF to: 0046a8ad (UNCONDITIONAL_JUMP)
+    JMP 0x0046a8ad                      ; 0046a8a5
+        ;   XREF to: 0046a8ad (UNCONDITIONAL_JUMP)  ; LAB_0046a8ad
     MOV EAX,dword ptr [EBP + -0x4]      ; 0046a8a7
         ;   Label: LAB_0046a8a7
     INC dword ptr [EBP + -0x4]          ; 0046a8aa
     CMP dword ptr [EBP + -0x4],0xfa     ; 0046a8ad
         ;   Label: LAB_0046a8ad
-    JGE 0x0046a8c6                      ; 0046a8b4 | LAB_0046a8c6
-        ;   XREF to: 0046a8c6 (CONDITIONAL_JUMP)
+    JGE 0x0046a8c6                      ; 0046a8b4
+        ;   XREF to: 0046a8c6 (CONDITIONAL_JUMP)  ; LAB_0046a8c6
     IMUL EAX,dword ptr [EBP + -0x4],0x250 ; 0046a8b6
-    MOV byte ptr [EAX + 0x1e8d264],0x0  ; 0046a8bd | STextureAtlasEntry[250] g_TextureAtlasEntries
-    JMP 0x0046a8a7                      ; 0046a8c4 | LAB_0046a8a7
-        ;   XREF to: 0046a8a7 (UNCONDITIONAL_JUMP)
+    MOV byte ptr [EAX + 0x1e8d264],0x0  ; 0046a8bd | g_TextureAtlasEntries
+    JMP 0x0046a8a7                      ; 0046a8c4
+        ;   XREF to: 0046a8a7 (UNCONDITIONAL_JUMP)  ; LAB_0046a8a7
     PUSH 0x10                           ; 0046a8c6
         ;   Label: LAB_0046a8c6
-    CALL shape_design.c_setTextureQualityParameter_FUN_0046a8e0 ; 0046a8c8 | void shape_design.c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param)
-        ;   XREF to: 0046a8e0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_setTextureQualityParameter_FUN_0046a8e0 ; 0046a8c8
+        ;   XREF to: 0046a8e0 (UNCONDITIONAL_CALL)  ; void shape_design.c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param)
     ADD ESP,0x4                         ; 0046a8cd
     MOV ESP,EBP                         ; 0046a8d0
     POP EBP                             ; 0046a8d2

@@ -32,19 +32,19 @@ section .text
     PUSH EBP                            ; 005280b1
     MOV EBP,dword ptr [ESP + 0xc]       ; 005280b2
     TEST EBP,EBP                        ; 005280b6
-    JZ 0x005280d2                       ; 005280b8 | LAB_005280d2
-        ;   XREF to: 005280d2 (CONDITIONAL_JUMP)
+    JZ 0x005280d2                       ; 005280b8
+        ;   XREF to: 005280d2 (CONDITIONAL_JUMP)  ; LAB_005280d2
     MOV EDX,dword ptr [EBP]             ; 005280ba
     MOV EDI,EBP                         ; 005280bd
     CMP EDX,0x20                        ; 005280bf
-    JZ 0x005280d5                       ; 005280c2 | LAB_005280d5
-        ;   XREF to: 005280d5 (CONDITIONAL_JUMP)
+    JZ 0x005280d5                       ; 005280c2
+        ;   XREF to: 005280d5 (CONDITIONAL_JUMP)  ; LAB_005280d5
     CMP EDX,0x26                        ; 005280c4
-    JNZ 0x00528128                      ; 005280c7 | LAB_00528128
-        ;   XREF to: 00528128 (CONDITIONAL_JUMP)
+    JNZ 0x00528128                      ; 005280c7
+        ;   XREF to: 00528128 (CONDITIONAL_JUMP)  ; LAB_00528128
     PUSH EBP                            ; 005280c9
-    CALL engine_boss.c_modelStructNotSupported_FUN_0041dbb0 ; 005280ca | SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041dbb0(SMRGLHeaderExtended * header)
-        ;   XREF to: 0041dbb0 (UNCONDITIONAL_CALL)
+    CALL engine_boss.c_modelStructNotSupported_FUN_0041dbb0 ; 005280ca
+        ;   XREF to: 0041dbb0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041dbb0(SMRGLHeaderExtended * header)
     ADD ESP,0x4                         ; 005280cf
     POP EBP                             ; 005280d2
         ;   Label: LAB_005280d2
@@ -55,35 +55,35 @@ section .text
     PUSH EBX                            ; 005280d6
     MOV EBX,dword ptr [EBP + 0x14]      ; 005280d7
     PUSH EBX                            ; 005280da
-    CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 005280db | void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)
+    CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 005280db
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
     ADD ESP,0x4                         ; 005280e0
     MOV ESI,dword ptr [EBP + 0x8]       ; 005280e3
     XOR EBX,EBX                         ; 005280e6
     TEST ESI,ESI                        ; 005280e8
-    JLE 0x00528110                      ; 005280ea | LAB_00528110
-        ;   XREF to: 00528110 (CONDITIONAL_JUMP)
+    JLE 0x00528110                      ; 005280ea
+        ;   XREF to: 00528110 (CONDITIONAL_JUMP)  ; LAB_00528110
     MOV ESI,EBP                         ; 005280ec
     MOV EAX,dword ptr [ESI + 0x118]     ; 005280ee
         ;   Label: LAB_005280ee
     PUSH EAX                            ; 005280f4
     ADD ESI,0x4                         ; 005280f5
     INC EBX                             ; 005280f8
-    CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 005280f9 | void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
-        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)
+    CALL engine_model.c_freeMRGLData_FUN_005280b0 ; 005280f9
+        ;   XREF to: 005280b0 (UNCONDITIONAL_CALL)  ; void engine_model.c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended * modelStruct)
     MOV EDX,dword ptr [EDI + 0x8]       ; 005280fe
     ADD ESP,0x4                         ; 00528101
     CMP EBX,EDX                         ; 00528104
-    JL 0x005280ee                       ; 00528106 | LAB_005280ee
-        ;   XREF to: 005280ee (CONDITIONAL_JUMP)
+    JL 0x005280ee                       ; 00528106
+        ;   XREF to: 005280ee (CONDITIONAL_JUMP)  ; LAB_005280ee
     LEA EAX,[EAX]                       ; 00528108
     MOV EDX,EDX                         ; 0052810e
     PUSH 0x133                          ; 00528110
         ;   Label: LAB_00528110
-    PUSH 0x639bb3                       ; 00528115 | = "..\\engine\\model.c" | s_engine_model_c_00639bb3 = ..\engine\model.c
+    PUSH 0x639bb3                       ; 00528115 | = "..\\engine\\model.c"
     PUSH EBP                            ; 0052811a
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0052811b | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 0052811b
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 00528120
     POP EBX                             ; 00528123
     POP ESI                             ; 00528124
@@ -92,10 +92,10 @@ section .text
     RET                                 ; 00528127
     PUSH 0x13c                          ; 00528128
         ;   Label: LAB_00528128
-    PUSH 0x639bc5                       ; 0052812d | = "..\\engine\\model.c" | s_engine_model_c_00639bc5 = ..\engine\model.c
+    PUSH 0x639bc5                       ; 0052812d | = "..\\engine\\model.c"
     PUSH EBP                            ; 00528132
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00528133 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00528133
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 00528138
     POP EBP                             ; 0052813b
     POP EDI                             ; 0052813c

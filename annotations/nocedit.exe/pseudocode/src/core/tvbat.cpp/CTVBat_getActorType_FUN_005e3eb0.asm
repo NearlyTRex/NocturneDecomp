@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f874e0                   ; 005e3eb0 | CDemonActorType g_CTVBatClassInfo
+    MOV EAX,0x3f874e0                   ; 005e3eb0 | g_CTVBatClassInfo
         ;   Label: core_tvbat.cpp_CTVBat_getActorType_FUN_005e3eb0
     RET                                 ; 005e3eb5
 

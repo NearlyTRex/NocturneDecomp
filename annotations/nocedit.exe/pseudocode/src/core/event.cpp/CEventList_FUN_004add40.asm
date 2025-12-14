@@ -27,8 +27,8 @@ section .text
         ;   Label: core_event.cpp_CEventList_FUN_004add40
     MOV EAX,dword ptr [ESP + 0xc]       ; 004add41
     CMP byte ptr [EAX],0x0              ; 004add45
-    JNZ 0x004add4e                      ; 004add48 | LAB_004add4e
-        ;   XREF to: 004add4e (CONDITIONAL_JUMP)
+    JNZ 0x004add4e                      ; 004add48
+        ;   XREF to: 004add4e (CONDITIONAL_JUMP)  ; LAB_004add4e
     XOR EAX,EAX                         ; 004add4a
         ;   Label: LAB_004add4a
     POP EBX                             ; 004add4c
@@ -39,15 +39,15 @@ section .text
     MOV EDX,0x1                         ; 004add53
     PUSH ECX                            ; 004add58
     XOR EBX,EBX                         ; 004add59
-    MOV dword ptr [0x02d0a45c],EDX      ; 004add5b | undefined4 DAT_02d0a45c
-    CALL core_event.cpp_CEventList_FUN_004aac00 ; 004add61 | int core_event.cpp_CEventList_FUN_004aac00(CEventList * this_ptr)
-        ;   XREF to: 004aac00 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02d0a45c],EDX      ; 004add5b | DAT_02d0a45c
+    CALL core_event.cpp_CEventList_FUN_004aac00 ; 004add61
+        ;   XREF to: 004aac00 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004aac00(CEventList * this_ptr)
     ADD ESP,0x8                         ; 004add66
-    MOV dword ptr [0x02d0a45c],EBX      ; 004add69 | undefined4 DAT_02d0a45c
+    MOV dword ptr [0x02d0a45c],EBX      ; 004add69 | DAT_02d0a45c
     TEST EAX,EAX                        ; 004add6f
-    JNZ 0x004add4a                      ; 004add71 | LAB_004add4a
-        ;   XREF to: 004add4a (CONDITIONAL_JUMP)
-    MOV EAX,0x2d0a460                   ; 004add73 | undefined1 DAT_02d0a460
+    JNZ 0x004add4a                      ; 004add71
+        ;   XREF to: 004add4a (CONDITIONAL_JUMP)  ; LAB_004add4a
+    MOV EAX,0x2d0a460                   ; 004add73 | DAT_02d0a460
     POP EBX                             ; 004add78
     RET                                 ; 004add79
 

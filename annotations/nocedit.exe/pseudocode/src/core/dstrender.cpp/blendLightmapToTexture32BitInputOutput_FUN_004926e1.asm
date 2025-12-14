@@ -47,7 +47,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x10]      ; 004926f0
     MOV EBP,dword ptr [EBP + 0x14]      ; 004926f3
     PXOR MM7,MM7                        ; 004926f6
-    MOVD MM5,dword ptr [0x02d052a8]     ; 004926f9 | int g_SolidColorMode
+    MOVD MM5,dword ptr [0x02d052a8]     ; 004926f9 | g_SolidColorMode
     PUNPCKLBW MM5,MM7                   ; 00492700
     PSLLW MM5,0x6                       ; 00492703
     MOV EAX,dword ptr [EBX]             ; 00492707
@@ -150,7 +150,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x9a0]     ; 00492927
     MOV EAX,dword ptr [ESI + 0x9c0]     ; 0049292d
     MOV EAX,dword ptr [ESI + 0x9e0]     ; 00492933
-    MOV EAX,[0x00c19dfc]                ; 00492939 | uint[256] g_LightmapTexturePalette
+    MOV EAX,[0x00c19dfc]                ; 00492939 | g_LightmapTexturePalette
     MOV EAX,[0x00c19e1c]                ; 0049293e | g_LightmapTexturePalette[8]
     MOV EAX,[0x00c19e3c]                ; 00492943 | g_LightmapTexturePalette[16]
     MOV EAX,[0x00c19e5c]                ; 00492948 | g_LightmapTexturePalette[24]
@@ -182,7 +182,7 @@ section .text
     MOV EAX,[0x00c1a19c]                ; 004929ca | g_LightmapTexturePalette[232]
     MOV EAX,[0x00c1a1bc]                ; 004929cf | g_LightmapTexturePalette[240]
     MOV EAX,[0x00c1a1dc]                ; 004929d4 | g_LightmapTexturePalette[248]
-    MOV EAX,[0x006779f0]                ; 004929d9 | ushort[384] g_LightmapData
+    MOV EAX,[0x006779f0]                ; 004929d9 | g_LightmapData
     MOV EAX,[0x00677a10]                ; 004929de | g_LightmapData[16]
     MOV EAX,[0x00677a30]                ; 004929e3 | g_LightmapData[32]
     MOV EAX,[0x00677a50]                ; 004929e8 | g_LightmapData[48]
@@ -206,64 +206,64 @@ section .text
     MOV EAX,[0x00677c90]                ; 00492a42 | g_LightmapData[336]
     MOV EAX,[0x00677cb0]                ; 00492a47 | g_LightmapData[352]
     MOV EAX,[0x00677cd0]                ; 00492a4c | g_LightmapData[368]
-    MOV EAX,[0x00677cf0]                ; 00492a51 | undefined4 DAT_00677cf0
-    MOV EAX,[0x00677d10]                ; 00492a56 | undefined4 DAT_00677d10
-    MOV EAX,[0x00677d30]                ; 00492a5b | undefined4 DAT_00677d30
-    MOV EAX,[0x00677d50]                ; 00492a60 | undefined4 DAT_00677d50
-    MOV EAX,[0x00677d70]                ; 00492a65 | undefined4 DAT_00677d70
-    MOV EAX,[0x00677d90]                ; 00492a6a | undefined4 DAT_00677d90
-    MOV EAX,[0x00677db0]                ; 00492a6f | undefined4 DAT_00677db0
-    MOV EAX,[0x00677dd0]                ; 00492a74 | undefined4 DAT_00677dd0
-    MOV EAX,[0x00677df0]                ; 00492a79 | undefined4 DAT_00677df0
-    MOV EAX,[0x00677e10]                ; 00492a7e | undefined4 DAT_00677e10
-    MOV EAX,[0x00677e30]                ; 00492a83 | undefined4 DAT_00677e30
-    MOV EAX,[0x00677e50]                ; 00492a88 | undefined4 DAT_00677e50
-    MOV EAX,[0x00677e70]                ; 00492a8d | undefined4 DAT_00677e70
-    MOV EAX,[0x00677e90]                ; 00492a92 | undefined4 DAT_00677e90
-    MOV EAX,[0x00677eb0]                ; 00492a97 | undefined4 DAT_00677eb0
-    MOV EAX,[0x00677ed0]                ; 00492a9c | undefined4 DAT_00677ed0
-    MOV EAX,[0x00677ef0]                ; 00492aa1 | undefined4 DAT_00677ef0
-    MOV EAX,[0x00677f10]                ; 00492aa6 | undefined4 DAT_00677f10
-    MOV EAX,[0x00677f30]                ; 00492aab | undefined4 DAT_00677f30
-    MOV EAX,[0x00677f50]                ; 00492ab0 | undefined4 DAT_00677f50
-    MOV EAX,[0x00677f70]                ; 00492ab5 | undefined4 DAT_00677f70
-    MOV EAX,[0x00677f90]                ; 00492aba | undefined4 DAT_00677f90
-    MOV EAX,[0x00677fb0]                ; 00492abf | undefined4 DAT_00677fb0
-    MOV EAX,[0x00677fd0]                ; 00492ac4 | undefined4 DAT_00677fd0
-    MOV EAX,[0x00677ff0]                ; 00492ac9 | undefined4 DAT_00677ff0
-    MOV EAX,[0x00678010]                ; 00492ace | undefined4 DAT_00678010
-    MOV EAX,[0x00678030]                ; 00492ad3 | undefined4 DAT_00678030
-    MOV EAX,[0x00678050]                ; 00492ad8 | undefined4 DAT_00678050
-    MOV EAX,[0x00678070]                ; 00492add | undefined4 DAT_00678070
-    MOV EAX,[0x00678090]                ; 00492ae2 | undefined4 DAT_00678090
-    MOV EAX,[0x006780b0]                ; 00492ae7 | undefined4 DAT_006780b0
-    MOV EAX,[0x006780d0]                ; 00492aec | undefined4 DAT_006780d0
-    MOV EAX,[0x006780f0]                ; 00492af1 | undefined4 DAT_006780f0
-    MOV EAX,[0x00678110]                ; 00492af6 | undefined4 DAT_00678110
-    MOV EAX,[0x00678130]                ; 00492afb | undefined4 DAT_00678130
-    MOV EAX,[0x00678150]                ; 00492b00 | undefined4 DAT_00678150
-    MOV EAX,[0x00678170]                ; 00492b05 | undefined4 DAT_00678170
-    MOV EAX,[0x00678190]                ; 00492b0a | undefined4 DAT_00678190
-    MOV EAX,[0x006781b0]                ; 00492b0f | undefined4 DAT_006781b0
-    MOV EAX,[0x006781d0]                ; 00492b14 | undefined4 DAT_006781d0
+    MOV EAX,[0x00677cf0]                ; 00492a51 | DAT_00677cf0
+    MOV EAX,[0x00677d10]                ; 00492a56 | DAT_00677d10
+    MOV EAX,[0x00677d30]                ; 00492a5b | DAT_00677d30
+    MOV EAX,[0x00677d50]                ; 00492a60 | DAT_00677d50
+    MOV EAX,[0x00677d70]                ; 00492a65 | DAT_00677d70
+    MOV EAX,[0x00677d90]                ; 00492a6a | DAT_00677d90
+    MOV EAX,[0x00677db0]                ; 00492a6f | DAT_00677db0
+    MOV EAX,[0x00677dd0]                ; 00492a74 | DAT_00677dd0
+    MOV EAX,[0x00677df0]                ; 00492a79 | DAT_00677df0
+    MOV EAX,[0x00677e10]                ; 00492a7e | DAT_00677e10
+    MOV EAX,[0x00677e30]                ; 00492a83 | DAT_00677e30
+    MOV EAX,[0x00677e50]                ; 00492a88 | DAT_00677e50
+    MOV EAX,[0x00677e70]                ; 00492a8d | DAT_00677e70
+    MOV EAX,[0x00677e90]                ; 00492a92 | DAT_00677e90
+    MOV EAX,[0x00677eb0]                ; 00492a97 | DAT_00677eb0
+    MOV EAX,[0x00677ed0]                ; 00492a9c | DAT_00677ed0
+    MOV EAX,[0x00677ef0]                ; 00492aa1 | DAT_00677ef0
+    MOV EAX,[0x00677f10]                ; 00492aa6 | DAT_00677f10
+    MOV EAX,[0x00677f30]                ; 00492aab | DAT_00677f30
+    MOV EAX,[0x00677f50]                ; 00492ab0 | DAT_00677f50
+    MOV EAX,[0x00677f70]                ; 00492ab5 | DAT_00677f70
+    MOV EAX,[0x00677f90]                ; 00492aba | DAT_00677f90
+    MOV EAX,[0x00677fb0]                ; 00492abf | DAT_00677fb0
+    MOV EAX,[0x00677fd0]                ; 00492ac4 | DAT_00677fd0
+    MOV EAX,[0x00677ff0]                ; 00492ac9 | DAT_00677ff0
+    MOV EAX,[0x00678010]                ; 00492ace | DAT_00678010
+    MOV EAX,[0x00678030]                ; 00492ad3 | DAT_00678030
+    MOV EAX,[0x00678050]                ; 00492ad8 | DAT_00678050
+    MOV EAX,[0x00678070]                ; 00492add | DAT_00678070
+    MOV EAX,[0x00678090]                ; 00492ae2 | DAT_00678090
+    MOV EAX,[0x006780b0]                ; 00492ae7 | DAT_006780b0
+    MOV EAX,[0x006780d0]                ; 00492aec | DAT_006780d0
+    MOV EAX,[0x006780f0]                ; 00492af1 | DAT_006780f0
+    MOV EAX,[0x00678110]                ; 00492af6 | DAT_00678110
+    MOV EAX,[0x00678130]                ; 00492afb | DAT_00678130
+    MOV EAX,[0x00678150]                ; 00492b00 | DAT_00678150
+    MOV EAX,[0x00678170]                ; 00492b05 | DAT_00678170
+    MOV EAX,[0x00678190]                ; 00492b0a | DAT_00678190
+    MOV EAX,[0x006781b0]                ; 00492b0f | DAT_006781b0
+    MOV EAX,[0x006781d0]                ; 00492b14 | DAT_006781d0
     MOVZX EDX,byte ptr [EBX]            ; 00492b19
         ;   Label: LAB_00492b19
     MOVD MM0,dword ptr [ESI]            ; 00492b1c
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492b1f | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492b1f | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00492b27
     PUNPCKLBW MM0,MM7                   ; 00492b2b
     SHR EDX,0x1                         ; 00492b2e
     PUNPCKLBW MM2,MM7                   ; 00492b30
     ADD EAX,EDX                         ; 00492b33
     PMULLW MM0,MM2                      ; 00492b35
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492b38 | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492b38 | g_LightmapData
     MOVQ MM2,MM3                        ; 00492b40
     MOVQ MM4,MM5                        ; 00492b43
-    PXOR MM2,qword ptr [0x006781e8]     ; 00492b46 | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00492b46 | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 00492b4d
     PMULHW MM4,MM3                      ; 00492b50
     PADDW MM0,MM4                       ; 00492b53
-    PADDW MM0,qword ptr [0x00676478]    ; 00492b56 | ulonglong g_LightmapBlendBias1
+    PADDW MM0,qword ptr [0x00676478]    ; 00492b56 | g_LightmapBlendBias1
     PSRLW MM0,0x4                       ; 00492b5d
     PACKUSWB MM0,MM7                    ; 00492b61
     MOVD dword ptr [EDI],MM0            ; 00492b64
@@ -273,21 +273,21 @@ section .text
     ADD EDI,0x4                         ; 00492b6c
     MOVZX EDX,byte ptr [EBX]            ; 00492b6f
     MOVD MM0,dword ptr [ESI]            ; 00492b72
-    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492b75 | uint[256] g_LightmapTexturePalette
+    MOVD MM2,dword ptr [EDX*0x4 + 0xc19dfc] ; 00492b75 | g_LightmapTexturePalette
     MOVZX EAX,byte ptr [EBP]            ; 00492b7d
     PUNPCKLBW MM0,MM7                   ; 00492b81
     SHR EDX,0x1                         ; 00492b84
     PUNPCKLBW MM2,MM7                   ; 00492b86
     ADD EAX,EDX                         ; 00492b89
     PMULLW MM0,MM2                      ; 00492b8b
-    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492b8e | ushort[384] g_LightmapData
+    MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 00492b8e | g_LightmapData
     MOVQ MM2,MM3                        ; 00492b96
     MOVQ MM4,MM5                        ; 00492b99
-    PXOR MM2,qword ptr [0x006781e8]     ; 00492b9c | double g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00492b9c | g_LightmapXorMask
     PMULHW MM0,MM2                      ; 00492ba3
     PMULHW MM4,MM3                      ; 00492ba6
     PADDW MM0,MM4                       ; 00492ba9
-    PADDW MM0,qword ptr [0x00676480]    ; 00492bac | ulonglong g_LightmapBlendBias2
+    PADDW MM0,qword ptr [0x00676480]    ; 00492bac | g_LightmapBlendBias2
     PSRLW MM0,0x4                       ; 00492bb3
     PACKUSWB MM0,MM7                    ; 00492bb7
     MOVD dword ptr [EDI],MM0            ; 00492bba
@@ -296,8 +296,8 @@ section .text
     INC EBP                             ; 00492bc1
     ADD EDI,0x4                         ; 00492bc2
     SUB ECX,0x2                         ; 00492bc5
-    JG 0x00492b19                       ; 00492bc8 | LAB_00492b19
-        ;   XREF to: 00492b19 (CONDITIONAL_JUMP)
+    JG 0x00492b19                       ; 00492bc8
+        ;   XREF to: 00492b19 (CONDITIONAL_JUMP)  ; LAB_00492b19
     POP EBP                             ; 00492bce
     EMMS                                ; 00492bcf
     POP EDI                             ; 00492bd1

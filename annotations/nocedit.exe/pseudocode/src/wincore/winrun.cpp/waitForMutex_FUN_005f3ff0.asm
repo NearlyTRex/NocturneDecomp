@@ -30,13 +30,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005f3ff0
         ;   Label: wincore_winrun.cpp_waitForMutex_FUN_005f3ff0
     TEST EAX,EAX                        ; 005f3ff4
-    JNZ 0x005f3ff9                      ; 005f3ff6 | LAB_005f3ff9
-        ;   XREF to: 005f3ff9 (CONDITIONAL_JUMP)
+    JNZ 0x005f3ff9                      ; 005f3ff6
+        ;   XREF to: 005f3ff9 (CONDITIONAL_JUMP)  ; LAB_005f3ff9
     RET                                 ; 005f3ff8
     PUSH -0x1                           ; 005f3ff9
         ;   Label: LAB_005f3ff9
     PUSH EAX                            ; 005f3ffb
-    CALL dword ptr CS:[0x61166c]        ; 005f3ffc | WaitForSingleObject * WaitForSingleObject
+    CALL dword ptr CS:[0x61166c]        ; 005f3ffc | WaitForSingleObject
     TEST EAX,EAX                        ; 005f4003
     SETZ AL                             ; 005f4005
     AND EAX,0xff                        ; 005f4008

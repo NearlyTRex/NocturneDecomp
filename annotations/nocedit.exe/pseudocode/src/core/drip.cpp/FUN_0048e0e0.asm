@@ -20,8 +20,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0048e0e4
     LEA EAX,[EBX + 0x158]               ; 0048e0e8
     PUSH EAX                            ; 0048e0ee
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 0048e0ef | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60 ; 0048e0ef
+        ;   XREF to: 00478d60 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelInstance * this_ptr)
     LEA EAX,[EBX + 0x20]                ; 0048e0f4
     LEA EDX,[EBX + 0x2f8]               ; 0048e0f7
     MOV dword ptr [EBX + 0x2ec],0x0     ; 0048e0fd
@@ -34,6 +34,6 @@ section .text
     MOV dword ptr [EAX + 0x8],ECX       ; 0048e117
     PUSH dword ptr [EBX + 0x2e4]        ; 0048e11a
     PUSH dword ptr [EBX + 0x2e0]        ; 0048e120
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0048e126 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 0048e126
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

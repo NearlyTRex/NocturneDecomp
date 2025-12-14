@@ -1,66 +1,66 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 15, 
-    "assembly_lines": 9, 
-    "suspect_count": 2, 
+    "assembly_lines": 9,
+    "complexity_score": 31,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_memory.c_freeTypeArray_FUN_005feee9", 
-      "addr": "005feee9"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CFootstepTypeInfo", 
-      "addr": "0065f0e0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void **in_stack_00000004;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,1000,&g_CFootstepTypeInfo);"
-    }
-  ], 
+    ],
+    "total_lines": 15
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "004ee420", 
-    "signature": "undefined core_gore.cpp_FUN_004ee420()", 
+    "address": "004ee420",
     "address_range": [
       [
-        "004ee420", 
+        "004ee420",
         "004ee437"
       ]
-    ], 
-    "name": "core_gore.cpp_FUN_004ee420"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_gore.cpp_FUN_004ee420",
+    "signature": "undefined core_gore.cpp_FUN_004ee420()"
+  },
+  "function_calls": [
+    {
+      "addr": "005feee9",
+      "name": "crt_memory.c_freeTypeArray_FUN_005feee9"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065f0e0",
+      "name": "g_CFootstepTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000004",
+      "text": "void **in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,1000,&g_CFootstepTypeInfo);",
+      "type": "stack_param"
+    }
+  ]
 }

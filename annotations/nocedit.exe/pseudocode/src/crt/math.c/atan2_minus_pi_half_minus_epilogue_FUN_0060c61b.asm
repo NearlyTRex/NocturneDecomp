@@ -11,7 +11,7 @@
 
 section .text
 
-    FLD extended double ptr [0x0068750e] ; 0060c61b | float10 g_HalfCalculatedPi
+    FLD extended double ptr [0x0068750e] ; 0060c61b | g_HalfCalculatedPi
         ;   Label: crt_math.c_atan2_minus_pi_half_minus_epilogue_FUN_0060c61b
     FADDP                               ; 0060c621
     FCHS                                ; 0060c623

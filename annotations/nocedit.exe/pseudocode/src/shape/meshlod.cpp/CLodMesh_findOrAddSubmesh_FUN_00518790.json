@@ -1,109 +1,109 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 46, 
-    "pseudocode_lines": 46, 
-    "cross_reference_count": 2, 
-    "global_count": 5, 
-    "total_lines": 143, 
-    "assembly_lines": 97, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
-      "addr": "005fe7f0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006378dd", 
-      "addr": "006378dd", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006378f2", 
-      "addr": "006378f2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_00637907", 
-      "addr": "00637907", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00518790", 
-    "signature": "int shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(CLodMesh * this_ptr, char * texture_filename)", 
-    "address_range": [
-      [
-        "00518790", 
-        "00518863"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "texture_filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 97,
+    "complexity_score": 45,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "pseudocode_lines": 45,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 142
+  },
   "cross_references": [
     {
-      "from_addr": "0051bcb3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0", 
-      "addr": "0051bac0"
-    }, 
+      "addr": "0051bac0",
+      "from_addr": "0051bcb3",
+      "name": "shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0051b0c8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080", 
-      "addr": "0051b080"
+      "addr": "0051b080",
+      "from_addr": "0051b0c8",
+      "name": "shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00518790",
+    "address_range": [
+      [
+        "00518790",
+        "00518863"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790",
+    "signature": "int shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790(CLodMesh * this_ptr, char * texture_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe7f0",
+      "name": "crt_string.c_stricmp_FUN_005fe7f0"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006378dd",
+      "name": "s_shape_meshlod_cpp_006378dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006378f2",
+      "name": "s_shape_meshlod_cpp_006378f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00637907",
+      "name": "s_Out_of_memory_00637907",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

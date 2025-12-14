@@ -138,7 +138,7 @@ uint shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
   dVar8 = (double)CONCAT44 /* combine 2-byte values */(local_308,uStack_30c);
   bVar18 = 0;
   local_20 = (uint *)0x0;
-  puVar10 = (uint *)crt_memory_c_malloc_FUN_006021da(*in_stack_0000000c << 2);
+  puVar10 = crt_memory_c_malloc_FUN_006021da(*in_stack_0000000c << 2);
   local_18 = puVar10;
   if (puVar10 == (uint *)0x0) {
     return 0;

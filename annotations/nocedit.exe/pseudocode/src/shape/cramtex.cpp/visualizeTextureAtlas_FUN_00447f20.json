@@ -1,474 +1,480 @@
 {
   "complexity": {
-    "function_call_count": 8, 
-    "complexity_score": 184, 
-    "pseudocode_lines": 104, 
-    "cross_reference_count": 3, 
-    "global_count": 36, 
-    "total_lines": 370, 
-    "assembly_lines": 266, 
-    "suspect_count": 6, 
+    "assembly_lines": 266,
+    "complexity_score": 184,
+    "cross_reference_count": 3,
+    "function_call_count": 8,
+    "global_count": 37,
+    "pseudocode_lines": 104,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "engine_2d.c_drawText_FUN_00401fd0", 
-      "addr": "00401fd0"
-    }, 
-    {
-      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
-      "addr": "00403170"
-    }, 
-    {
-      "name": "engine_2d.c_plotPixel_FUN_00401140", 
-      "addr": "00401140"
-    }, 
-    {
-      "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20", 
-      "addr": "00447c20"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
-    }, 
-    {
-      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
-      "addr": "005b3e70"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_result_00619a32", 
-      "addr": "00619a32", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_progress_00619a39", 
-      "addr": "00619a39", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Done_Press_a_key_00619a96", 
-      "addr": "00619a96", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Hit_Esc_when_you_ve_had__00619aac", 
-      "addr": "00619aac", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "g_CramPercentageMultiplier", 
-      "addr": "00619ad2", 
-      "value": "100"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "SCramWorkingEntry[1]", 
-      "name": "g_CramSortedTextureEntries", 
-      "addr": "0083c1dc", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c20c", 
-      "addr": "0083c20c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c210", 
-      "addr": "0083c210", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c214", 
-      "addr": "0083c214", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c218", 
-      "addr": "0083c218", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c228", 
-      "addr": "0083c228", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c258", 
-      "addr": "0083c258", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c25c", 
-      "addr": "0083c25c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c260", 
-      "addr": "0083c260", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_0083c264", 
-      "addr": "0083c264", 
-      "value": null
-    }, 
-    {
-      "type": "SCramRectangle[50]", 
-      "name": "g_CramRectangles", 
-      "addr": "00840c14", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c18", 
-      "addr": "00840c18", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c1c", 
-      "addr": "00840c1c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c38", 
-      "addr": "00840c38", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c3c", 
-      "addr": "00840c3c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c40", 
-      "addr": "00840c40", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c44", 
-      "addr": "00840c44", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00840c60", 
-      "addr": "00840c60", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CramTextureCount", 
-      "addr": "0084a854", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramTotalMaps", 
-      "addr": "0084a858", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramPlacedTextureCount", 
-      "addr": "0084a85c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramRectangleCount", 
-      "addr": "0084a860", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramAcceptableSize", 
-      "addr": "0084a874", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramAtlasWidth", 
-      "addr": "0084a878", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramPaddingCalculation", 
-      "addr": "0084a880", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramCurrentAcceptableSize", 
-      "addr": "0084a884", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramMapNumber", 
-      "addr": "0084a890", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CramVisualizationFlag", 
-      "addr": "0084a894", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActiveRenderColor", 
-      "addr": "02d02570", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 20, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_ffffff1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffff1c;"
-    }, 
-    {
-      "line": 51, 
-      "match": "&stack0xffffff08", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&stack0xffffff08,\"CramTex II %s:  N=%d  Map %d/%d  Coverage: %4.1f%%  Shrink: %4.1f%%  Size: %u (%u)\\n\",pcVar6,g_CramTextureCount,"
-    }, 
-    {
-      "line": 58, 
-      "match": "&stack0xffffff08", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff08,0,0);"
-    }, 
-    {
-      "line": 81, 
-      "match": "in_stack_ffffff1c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SCramWorkingEntry *)completion_mode,10,0x36,draw_y,draw_width,in_stack_ffffff1c)"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00447f20", 
-    "signature": "void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int visualization_mode, int completion_mode, int display_mode)", 
-    "address_range": [
-      [
-        "00447f20", 
-        "004481c8"
-      ]
-    ], 
-    "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20"
-  }, 
-  "stack_frame": {
-    "local_size": 284, 
-    "variables": [
-      {
-        "offset": -280, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_118"
-      }, 
-      {
-        "offset": -272, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_110"
-      }, 
-      {
-        "offset": -256, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_100"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "visualization_mode"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "completion_mode"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "display_mode"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 300, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+      "stack_ref",
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 370
+  },
   "cross_references": [
     {
-      "from_addr": "004452b4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90", 
-      "addr": "00444d90"
-    }, 
+      "addr": "00444d90",
+      "from_addr": "004452b4",
+      "name": "shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00445c96", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_generateTextureAtlas_FUN_00445820", 
-      "addr": "00445820"
-    }, 
+      "addr": "00445820",
+      "from_addr": "00445c96",
+      "name": "shape_cramtex.cpp_generateTextureAtlas_FUN_00445820",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00446946", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160", 
-      "addr": "00446160"
+      "addr": "00446160",
+      "from_addr": "00446946",
+      "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00447f20",
+    "address_range": [
+      [
+        "00447f20",
+        "004481c8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20",
+    "signature": "void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int visualization_mode, int completion_mode, int display_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "00401fd0",
+      "name": "engine_2d.c_drawText_FUN_00401fd0"
+    },
+    {
+      "addr": "00403170",
+      "name": "engine_2d.c_fillRectColor_FUN_00403170"
+    },
+    {
+      "addr": "00401140",
+      "name": "engine_2d.c_plotPixel_FUN_00401140"
+    },
+    {
+      "addr": "00447c20",
+      "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20"
+    },
+    {
+      "addr": "005eda20",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+    },
+    {
+      "addr": "005b3e70",
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00619a32",
+      "name": "s_result_00619a32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619a39",
+      "name": "s_progress_00619a39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619a42",
+      "name": "s_CramTex_II_s_N_d_Map_d_d_00619a42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619a96",
+      "name": "s_Done_Press_a_key_00619a96",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619aac",
+      "name": "s_Hit_Esc_when_you_ve_had__00619aac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619ad2",
+      "name": "g_CramPercentageMultiplier",
+      "type": "double",
+      "value": "100"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0083c1dc",
+      "name": "g_CramSortedTextureEntries",
+      "type": "SCramWorkingEntry[1]",
+      "value": null
+    },
+    {
+      "addr": "0083c20c",
+      "name": "DAT_0083c20c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c210",
+      "name": "DAT_0083c210",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c214",
+      "name": "DAT_0083c214",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c218",
+      "name": "DAT_0083c218",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c228",
+      "name": "DAT_0083c228",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c258",
+      "name": "DAT_0083c258",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c25c",
+      "name": "DAT_0083c25c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c260",
+      "name": "DAT_0083c260",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0083c264",
+      "name": "DAT_0083c264",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c14",
+      "name": "g_CramRectangles",
+      "type": "SCramRectangle[50]",
+      "value": null
+    },
+    {
+      "addr": "00840c18",
+      "name": "DAT_00840c18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c1c",
+      "name": "DAT_00840c1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c38",
+      "name": "DAT_00840c38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c3c",
+      "name": "DAT_00840c3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c40",
+      "name": "DAT_00840c40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c44",
+      "name": "DAT_00840c44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00840c60",
+      "name": "DAT_00840c60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0084a854",
+      "name": "g_CramTextureCount",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "0084a858",
+      "name": "g_CramTotalMaps",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a85c",
+      "name": "g_CramPlacedTextureCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a860",
+      "name": "g_CramRectangleCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a874",
+      "name": "g_CramAcceptableSize",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a878",
+      "name": "g_CramAtlasWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a880",
+      "name": "g_CramPaddingCalculation",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a884",
+      "name": "g_CramCurrentAcceptableSize",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a890",
+      "name": "g_CramMapNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0084a894",
+      "name": "g_CramVisualizationFlag",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02570",
+      "name": "g_ActiveRenderColor",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 300,
+    "local_size": 284,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_118",
+        "offset": -280,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "visualization_mode",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "completion_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "display_mode",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 20,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 20,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_ffffff1c",
+      "text": "int in_stack_ffffff1c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xffffff08",
+      "text": "(&stack0xffffff08,\"CramTex II %s:  N=%d  Map %d/%d  Coverage: %4.1f%%  Shrink: %4.1f%%  Size: %u (%u)\\n\",pcVar6,g_CramTextureCount,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 58,
+      "match": "&stack0xffffff08",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff08,0,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 81,
+      "match": "in_stack_ffffff1c",
+      "text": "((SCramWorkingEntry *)completion_mode,10,0x36,draw_y,draw_width,in_stack_ffffff1c)",
+      "type": "stack_param"
     }
   ]
 }

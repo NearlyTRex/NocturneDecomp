@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 4, 
-    "total_lines": 19, 
-    "assembly_lines": 12, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdlib.c_atexit_FUN_005ff060", 
-      "addr": "005ff060"
-    }, 
-    {
-      "name": "engine_pod.cpp_CPod_ctor_FUN_00550980", 
-      "addr": "00550980"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CDemonPod_vtable", 
-      "name": "g_CDemonPodVTable", 
-      "addr": "00662404", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomStaticDestructorNode", 
-      "name": "g_CDemonPodDestructorNode", 
-      "addr": "00680ccc", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonPod", 
-      "name": "g_CDemonPodInstance", 
-      "addr": "030e5090", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_030e5224", 
-      "addr": "030e5224", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 12,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00551990", 
-    "signature": "void core_podmain.cpp_staticInit_FUN_00551990(void)", 
+    "address": "00551990",
     "address_range": [
       [
-        "00551990", 
+        "00551990",
         "005519b5"
       ]
-    ], 
-    "name": "core_podmain.cpp_staticInit_FUN_00551990"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_podmain.cpp_staticInit_FUN_00551990",
+    "signature": "void core_podmain.cpp_staticInit_FUN_00551990(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ff060",
+      "name": "crt_stdlib.c_atexit_FUN_005ff060"
+    },
+    {
+      "addr": "00550980",
+      "name": "engine_pod.cpp_CPod_ctor_FUN_00550980"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00662404",
+      "name": "g_CDemonPodVTable",
+      "type": "CDemonPod_vtable",
+      "value": null
+    },
+    {
+      "addr": "00680ccc",
+      "name": "g_CDemonPodDestructorNode",
+      "type": "WatcomStaticDestructorNode",
+      "value": null
+    },
+    {
+      "addr": "030e5090",
+      "name": "g_CDemonPodInstance",
+      "type": "CDemonPod",
+      "value": null
+    },
+    {
+      "addr": "030e5224",
+      "name": "DAT_030e5224",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

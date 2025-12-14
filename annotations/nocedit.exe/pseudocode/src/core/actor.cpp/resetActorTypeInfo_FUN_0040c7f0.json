@@ -1,73 +1,73 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 32, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 40, 
-    "assembly_lines": 23, 
-    "suspect_count": 1, 
+    "assembly_lines": 23,
+    "complexity_score": 32,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 3,
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_NumActorClassTypes", 
-      "addr": "00822044", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActorType*[200]", 
-      "name": "g_ActorClassRegistrations", 
-      "addr": "00822048", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ActorClassRegistrations[1]", 
-      "addr": "0082204c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar2);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040c7f0", 
-    "signature": "void core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0(void)", 
-    "address_range": [
-      [
-        "0040c7f0", 
-        "0040c827"
-      ]
-    ], 
-    "name": "core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 40
+  },
   "cross_references": [
     {
-      "from_addr": "00523020", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0", 
-      "addr": "00522eb0"
+      "addr": "00522eb0",
+      "from_addr": "00523020",
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040c7f0",
+    "address_range": [
+      [
+        "0040c7f0",
+        "0040c827"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0",
+    "signature": "void core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00822044",
+      "name": "g_NumActorClassTypes",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00822048",
+      "name": "g_ActorClassRegistrations",
+      "type": "CDemonActorType*[200]",
+      "value": null
+    },
+    {
+      "addr": "0082204c",
+      "name": "g_ActorClassRegistrations[1]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar2);",
+      "type": "pointer_cast"
     }
   ]
 }

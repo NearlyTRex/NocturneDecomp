@@ -28,8 +28,8 @@ section .text
         ;   Label: core_cloth.cpp_FUN_0043bf80
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043bf81
     PUSH EBX                            ; 0043bf85
-    CALL core_cloth.cpp_FUN_0043c070    ; 0043bf86 | undefined core_cloth.cpp_FUN_0043c070()
-        ;   XREF to: 0043c070 (UNCONDITIONAL_CALL)
+    CALL core_cloth.cpp_FUN_0043c070    ; 0043bf86
+        ;   XREF to: 0043c070 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c070()
     ADD ESP,0x4                         ; 0043bf8b
     MOV EAX,EBX                         ; 0043bf8e
     POP EBX                             ; 0043bf90

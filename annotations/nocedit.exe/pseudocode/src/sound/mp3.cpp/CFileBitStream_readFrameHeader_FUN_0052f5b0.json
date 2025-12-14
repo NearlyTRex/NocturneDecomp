@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 33, 
-    "pseudocode_lines": 33, 
-    "cross_reference_count": 2, 
-    "global_count": 0, 
-    "total_lines": 113, 
-    "assembly_lines": 80, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_0052ee50", 
-      "addr": "0052ee50"
-    }, 
-    {
-      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40", 
-      "addr": "0052ef40"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0052f5b0", 
-    "signature": "void sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream * this_ptr, SMpegFrameHeader * header_out)", 
-    "address_range": [
-      [
-        "0052f5b0", 
-        "0052f66a"
-      ]
-    ], 
-    "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CFileBitStream *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SMpegFrameHeader *", 
-        "size": 4, 
-        "name": "header_out"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 80,
+    "complexity_score": 33,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 113
+  },
   "cross_references": [
     {
-      "from_addr": "00534e44", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
-      "addr": "00534d40"
-    }, 
+      "addr": "00534d40",
+      "from_addr": "00534e44",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005347c7", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630", 
-      "addr": "00534630"
+      "addr": "00534630",
+      "from_addr": "005347c7",
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0052f5b0",
+    "address_range": [
+      [
+        "0052f5b0",
+        "0052f66a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0",
+    "signature": "void sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0(CFileBitStream * this_ptr, SMpegFrameHeader * header_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "0052ee50",
+      "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_0052ee50"
+    },
+    {
+      "addr": "0052ef40",
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileBitStream *"
+      },
+      {
+        "is_param": true,
+        "name": "header_out",
+        "offset": 8,
+        "size": 4,
+        "type": "SMpegFrameHeader *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -29,7 +29,7 @@ section .text
     FLD float ptr [ESP]                 ; 005250c0
     FADD float ptr [ESP + 0xc]          ; 005250c3
     FST float ptr [ESP + 0x18]          ; 005250c7
-    FLD float ptr [0x00639696]          ; 005250cb | float FLOAT_00639696
+    FLD float ptr [0x00639696]          ; 005250cb | FLOAT_00639696
     FXCH                                ; 005250d1
     FMUL ST1                            ; 005250d3
     FLD float ptr [ESP + 0x8]           ; 005250d5
@@ -44,7 +44,7 @@ section .text
     FMUL float ptr [ESP + 0x1c]         ; 005250f3
     FSTP float ptr [EBX + 0x4]          ; 005250f7
     FLD float ptr [ESP + 0x8]           ; 005250fa
-    FADD double ptr [0x0063969e]        ; 005250fe | double DOUBLE_0063969e
+    FADD double ptr [0x0063969e]        ; 005250fe | DOUBLE_0063969e
     MOV EAX,EBX                         ; 00525104
     FSTP float ptr [EBX + 0x8]          ; 00525106
     MOV ESP,EBP                         ; 00525109

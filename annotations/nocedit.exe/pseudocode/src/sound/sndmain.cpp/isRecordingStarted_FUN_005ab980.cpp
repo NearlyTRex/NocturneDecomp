@@ -10,10 +10,12 @@ int __cdecl sound_sndmain_cpp_isRecordingStarted_FUN_005ab980(void)
 
 {
   int iVar1;
+  int iVar2;
   
   iVar1 = sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970();
+  iVar2 = 0;
   if (iVar1 != 0) {
-    iVar1 = isRecordingStarted;
+    iVar2 = isRecordingStarted;
   }
-  return iVar1;
+  return iVar2;
 }

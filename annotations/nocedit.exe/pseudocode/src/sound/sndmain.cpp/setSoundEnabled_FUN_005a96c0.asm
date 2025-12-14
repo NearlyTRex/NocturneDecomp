@@ -21,7 +21,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 005a96c0
         ;   Label: sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0
-    MOV [0x03f69274],EAX                ; 005a96c4 | int g_SoundEnabled
+    MOV [0x03f69274],EAX                ; 005a96c4 | g_SoundEnabled
     TEST EAX,EAX                        ; 005a96c9
     JNZ 0x005ab130                      ; 005a96cb
         ;   XREF to: 005ab130 (CONDITIONAL_JUMP)

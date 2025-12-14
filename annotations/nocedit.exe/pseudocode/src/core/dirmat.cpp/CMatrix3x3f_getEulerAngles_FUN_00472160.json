@@ -1,525 +1,525 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 442, 
-    "pseudocode_lines": 157, 
-    "cross_reference_count": 13, 
-    "global_count": 7, 
-    "total_lines": 523, 
-    "assembly_lines": 366, 
-    "suspect_count": 28, 
+    "assembly_lines": 366,
+    "complexity_score": 442,
+    "cross_reference_count": 13,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 157,
+    "suspect_count": 28,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_math.c_acos_FUN_00600162", 
-      "addr": "00600162"
-    }, 
-    {
-      "name": "crt_math.c_asin_FUN_00600b94", 
-      "addr": "00600b94"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_EulerGimbalLockThreshold", 
-      "addr": "0061ee1b", 
-      "value": "-1"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_EulerSinCosThreshold", 
-      "addr": "0061ee23", 
-      "value": "0.707000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_EulerSinCosThresholdNeg", 
-      "addr": "0061ee2b", 
-      "value": "-0.707000000000000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_EulerPi", 
-      "addr": "0061ee33", 
-      "value": "3.14159265359000"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_EulerNegPi", 
-      "addr": "0061ee3b", 
-      "value": "-3.14159265359000"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_EulerTwoPi", 
-      "addr": "0061ee43", 
-      "value": "6.283185"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_EulerNegTwoPi", 
-      "addr": "0061ee47", 
-      "value": "-6.283185"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "0047216b", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 10, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CMatrix3x3f *extraout_ECX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CMatrix3x3f *extraout_ECX_00;"
-    }, 
-    {
-      "line": 13, 
-      "match": "extraout_ECX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CMatrix3x3f *extraout_ECX_01;"
-    }, 
-    {
-      "line": 14, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CVector3f *extraout_EDX;"
-    }, 
-    {
-      "line": 15, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CVector3f *extraout_EDX_00;"
-    }, 
-    {
-      "line": 16, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CVector3f *extraout_EDX_01;"
-    }, 
-    {
-      "line": 17, 
-      "match": "extraout_EDX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CVector3f *extraout_EDX_02;"
-    }, 
-    {
-      "line": 18, 
-      "match": "extraout_EDX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CVector3f *extraout_EDX_03;"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EDX_04", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CVector3f *extraout_EDX_04;"
-    }, 
-    {
-      "line": 21, 
-      "match": "extraout_EDX_05", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "CVector3f *extraout_EDX_05;"
-    }, 
-    {
-      "line": 24, 
-      "match": "extraout_ST1", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "float10 extraout_ST1;"
-    }, 
-    {
-      "line": 36, 
-      "match": "extraout_ST1", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);"
-    }, 
-    {
-      "line": 36, 
-      "match": "extraout_ST1", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);"
-    }, 
-    {
-      "line": 37, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "extraout_EDX_00->x = (float)fVar6;"
-    }, 
-    {
-      "line": 38, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "this_ptr = extraout_ECX;"
-    }, 
-    {
-      "line": 39, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "euler_angles = extraout_EDX_00;"
-    }, 
-    {
-      "line": 41, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "fVar3 = extraout_ECX->m[0].z * (1.0 / (float)fVar7);"
-    }, 
-    {
-      "line": 43, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "dVar8 = (double)(extraout_ECX->m[2].z * (1.0 / (float)fVar7));"
-    }, 
-    {
-      "line": 45, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pCVar4 = extraout_ECX;"
-    }, 
-    {
-      "line": 46, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pCVar5 = extraout_EDX_00;"
-    }, 
-    {
-      "line": 51, 
-      "match": "extraout_ECX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pCVar4 = extraout_ECX_01;"
-    }, 
-    {
-      "line": 52, 
-      "match": "extraout_EDX_04", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pCVar5 = extraout_EDX_04;"
-    }, 
-    {
-      "line": 68, 
-      "match": "extraout_ECX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pCVar4 = extraout_ECX_00;"
-    }, 
-    {
-      "line": 69, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pCVar5 = extraout_EDX_01;"
-    }, 
-    {
-      "line": 88, 
-      "match": "extraout_EDX_05", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pCVar5 = extraout_EDX_05;"
-    }, 
-    {
-      "line": 104, 
-      "match": "extraout_EDX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "pCVar5 = extraout_EDX_02;"
-    }, 
-    {
-      "line": 131, 
-      "match": "extraout_EDX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "euler_angles = extraout_EDX_03;"
-    }, 
-    {
-      "line": 147, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "euler_angles = extraout_EDX;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00472160", 
-    "signature": "CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(CMatrix3x3f * this_ptr, CVector3f * euler_angles)", 
-    "address_range": [
-      [
-        "00472160", 
-        "00472536"
-      ]
-    ], 
-    "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160"
-  }, 
-  "stack_frame": {
-    "local_size": 156, 
-    "variables": [
-      {
-        "offset": -152, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_98"
-      }, 
-      {
-        "offset": -144, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_90"
-      }, 
-      {
-        "offset": -136, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_88"
-      }, 
-      {
-        "offset": -128, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_80"
-      }, 
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -112, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_70"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -96, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_60"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMatrix3x3f *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "euler_angles"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 164, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 523
+  },
   "cross_references": [
     {
-      "from_addr": "0041e8af", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_box.cpp_CBox_processPhysics_FUN_0041e350", 
-      "addr": "0041e350"
-    }, 
+      "addr": "0041e350",
+      "from_addr": "0041e8af",
+      "name": "core_box.cpp_CBox_processPhysics_FUN_0041e350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00426f84", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bugs.cpp_FUN_004268e0", 
-      "addr": "004268e0"
-    }, 
+      "addr": "004268e0",
+      "from_addr": "00426f84",
+      "name": "core_bugs.cpp_FUN_004268e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0043b806", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_cloth.cpp_FUN_0043b7e0", 
-      "addr": "0043b7e0"
-    }, 
+      "addr": "0043b7e0",
+      "from_addr": "0043b806",
+      "name": "core_cloth.cpp_FUN_0043b7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004736f1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0", 
-      "addr": "004736c0"
-    }, 
+      "addr": "004736c0",
+      "from_addr": "004736f1",
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00475b03", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0", 
-      "addr": "004758d0"
-    }, 
+      "addr": "004758d0",
+      "from_addr": "00475b03",
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0047524e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210", 
-      "addr": "00475210"
-    }, 
+      "addr": "00475210",
+      "from_addr": "0047524e",
+      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c19bc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_FUN_004c1940", 
-      "addr": "004c1940"
-    }, 
+      "addr": "004c1940",
+      "from_addr": "004c19bc",
+      "name": "core_fire.cpp_FUN_004c1940",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00539457", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
-      "addr": "005390f0"
-    }, 
+      "addr": "005390f0",
+      "from_addr": "00539457",
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056b128", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
-      "addr": "0056ae50"
-    }, 
+      "addr": "0056ae50",
+      "from_addr": "0056b128",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00581bbc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0", 
-      "addr": "00581aa0"
-    }, 
+      "addr": "00581aa0",
+      "from_addr": "00581bbc",
+      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005832ca", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
-      "addr": "00583170"
-    }, 
+      "addr": "00583170",
+      "from_addr": "005832ca",
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057a782", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0", 
-      "addr": "0057a2a0"
-    }, 
+      "addr": "0057a2a0",
+      "from_addr": "0057a782",
+      "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c216", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200", 
-      "addr": "0048c200"
+      "addr": "0048c200",
+      "from_addr": "0048c216",
+      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00472160",
+    "address_range": [
+      [
+        "00472160",
+        "00472536"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160",
+    "signature": "CVector3f * core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(CMatrix3x3f * this_ptr, CVector3f * euler_angles)"
+  },
+  "function_calls": [
+    {
+      "addr": "00600162",
+      "name": "crt_math.c_acos_FUN_00600162"
+    },
+    {
+      "addr": "00600b94",
+      "name": "crt_math.c_asin_FUN_00600b94"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061ee1b",
+      "name": "g_EulerGimbalLockThreshold",
+      "type": "double",
+      "value": "-1"
+    },
+    {
+      "addr": "0061ee23",
+      "name": "g_EulerSinCosThreshold",
+      "type": "double",
+      "value": "0.707000000000000"
+    },
+    {
+      "addr": "0061ee2b",
+      "name": "g_EulerSinCosThresholdNeg",
+      "type": "double",
+      "value": "-0.707000000000000"
+    },
+    {
+      "addr": "0061ee33",
+      "name": "g_EulerPi",
+      "type": "double",
+      "value": "3.14159265359000"
+    },
+    {
+      "addr": "0061ee3b",
+      "name": "g_EulerNegPi",
+      "type": "double",
+      "value": "-3.14159265359000"
+    },
+    {
+      "addr": "0061ee43",
+      "name": "g_EulerTwoPi",
+      "type": "float",
+      "value": "6.283185"
+    },
+    {
+      "addr": "0061ee47",
+      "name": "g_EulerNegTwoPi",
+      "type": "float",
+      "value": "-6.283185"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 164,
+    "local_size": 156,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      },
+      {
+        "is_param": true,
+        "name": "euler_angles",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0047216b",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_ECX",
+      "text": "CMatrix3x3f *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_ECX_00",
+      "text": "CMatrix3x3f *extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_ECX_01",
+      "text": "CMatrix3x3f *extraout_ECX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EDX",
+      "text": "CVector3f *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EDX_00",
+      "text": "CVector3f *extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EDX_01",
+      "text": "CVector3f *extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EDX_02",
+      "text": "CVector3f *extraout_EDX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_EDX_03",
+      "text": "CVector3f *extraout_EDX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX_04",
+      "text": "CVector3f *extraout_EDX_04;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_EDX_05",
+      "text": "CVector3f *extraout_EDX_05;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_ST1",
+      "text": "float10 extraout_ST1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 36,
+      "match": "extraout_ST1",
+      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 36,
+      "match": "extraout_ST1",
+      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 37,
+      "match": "extraout_EDX_00",
+      "text": "extraout_EDX_00->x = (float)fVar6;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 38,
+      "match": "extraout_ECX",
+      "text": "this_ptr = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 39,
+      "match": "extraout_EDX_00",
+      "text": "euler_angles = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 41,
+      "match": "extraout_ECX",
+      "text": "fVar3 = extraout_ECX->m[0].z * (1.0 / (float)fVar7);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 43,
+      "match": "extraout_ECX",
+      "text": "dVar8 = (double)(extraout_ECX->m[2].z * (1.0 / (float)fVar7));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 45,
+      "match": "extraout_ECX",
+      "text": "pCVar4 = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 46,
+      "match": "extraout_EDX_00",
+      "text": "pCVar5 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 51,
+      "match": "extraout_ECX_01",
+      "text": "pCVar4 = extraout_ECX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 52,
+      "match": "extraout_EDX_04",
+      "text": "pCVar5 = extraout_EDX_04;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 68,
+      "match": "extraout_ECX_00",
+      "text": "pCVar4 = extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 69,
+      "match": "extraout_EDX_01",
+      "text": "pCVar5 = extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 88,
+      "match": "extraout_EDX_05",
+      "text": "pCVar5 = extraout_EDX_05;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 104,
+      "match": "extraout_EDX_02",
+      "text": "pCVar5 = extraout_EDX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 131,
+      "match": "extraout_EDX_03",
+      "text": "euler_angles = extraout_EDX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 147,
+      "match": "extraout_EDX",
+      "text": "euler_angles = extraout_EDX;",
+      "type": "extra_output"
     }
   ]
 }

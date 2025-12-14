@@ -35,30 +35,30 @@ section .text
     ADD ESI,ECX                         ; 004878fb
     PUSH ESI                            ; 004878fd
     PUSH EBX                            ; 004878fe
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 004878ff | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 004878ff
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 00487904
     MOV EBP,dword ptr [ESP + 0x18]      ; 00487907
     PUSH EDI                            ; 0048790b
     SUB EBP,dword ptr [ESP + 0x24]      ; 0048790c
     PUSH EBP                            ; 00487910
     PUSH EBX                            ; 00487911
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487912 | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487912
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 00487917
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0048791a
     SUB EDI,dword ptr [ESP + 0x24]      ; 0048791e
     PUSH EDI                            ; 00487922
     PUSH ESI                            ; 00487923
     PUSH EBX                            ; 00487924
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487925 | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487925
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 0048792a
     PUSH EDI                            ; 0048792d
     PUSH EBP                            ; 0048792e
     PUSH EBX                            ; 0048792f
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487930 | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487930
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 00487935
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00487938
     MOV EDX,dword ptr [ESP + 0x20]      ; 0048793c
@@ -69,8 +69,8 @@ section .text
     ADD EDI,ECX                         ; 0048794b
     PUSH EDI                            ; 0048794d
     PUSH EBX                            ; 0048794e
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 0048794f | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 0048794f
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 00487954
     MOV EBP,dword ptr [ESP + 0x24]      ; 00487957
     PUSH ESI                            ; 0048795b
@@ -78,22 +78,22 @@ section .text
     SUB ESI,EBP                         ; 00487960
     PUSH ESI                            ; 00487962
     PUSH EBX                            ; 00487963
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487964 | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487964
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 00487969
     MOV EBP,dword ptr [ESP + 0x1c]      ; 0048796c
     SUB EBP,dword ptr [ESP + 0x20]      ; 00487970
     PUSH EBP                            ; 00487974
     PUSH EDI                            ; 00487975
     PUSH EBX                            ; 00487976
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487977 | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487977
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 0048797c
     PUSH EBP                            ; 0048797f
     PUSH ESI                            ; 00487980
     PUSH EBX                            ; 00487981
-    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487982 | void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
-        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 ; 00487982
+        ;   XREF to: 004874d0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)
     ADD ESP,0xc                         ; 00487987
     POP EBP                             ; 0048798a
     POP EDI                             ; 0048798b

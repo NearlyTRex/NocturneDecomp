@@ -31,8 +31,8 @@ section .text
     PUSH EDX                            ; 005f614e
     LEA ESI,[ESP + 0x4]                 ; 005f614f
     LEA EDI,[ESP + 0x34]                ; 005f6153
-    CALL core_xform.cpp_inverse_FUN_005f6210 ; 005f6157 | CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
-        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_inverse_FUN_005f6210 ; 005f6157
+        ;   XREF to: 005f6210 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_inverse_FUN_005f6210(CMatrix3x4f * output_matrix, CMatrix3x4f * input_matrix)
     MOV ECX,0xc                         ; 005f615c
     LEA ESI,[ESP + 0x4]                 ; 005f6161
     ADD ESP,0x4                         ; 005f6165
@@ -40,8 +40,8 @@ section .text
     PUSH EBX                            ; 005f616a
     LEA ESI,[ESP + 0x34]                ; 005f616b
     PUSH ESI                            ; 005f616f
-    CALL core_xform.cpp_getTranslation_FUN_005f6110 ; 005f6170 | void core_xform.cpp_getTranslation_FUN_005f6110(CVector3f * output_vector, CMatrix3x4f * input_matrix)
-        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_getTranslation_FUN_005f6110 ; 005f6170
+        ;   XREF to: 005f6110 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_getTranslation_FUN_005f6110(CVector3f * output_vector, CMatrix3x4f * input_matrix)
     ADD ESP,0x8                         ; 005f6175
     MOV EAX,EBX                         ; 005f6178
     ADD ESP,0x60                        ; 005f617a

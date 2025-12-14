@@ -38,11 +38,11 @@ section .text
     FCOMP double ptr [EBP + 0x1c]       ; 00461e36
     FNSTSW AX                           ; 00461e39
     SAHF                                ; 00461e3b
-    JA 0x00461e47                       ; 00461e3c | LAB_00461e47
-        ;   XREF to: 00461e47 (CONDITIONAL_JUMP)
+    JA 0x00461e47                       ; 00461e3c
+        ;   XREF to: 00461e47 (CONDITIONAL_JUMP)  ; LAB_00461e47
     MOV dword ptr [EBP + -0x4],0x1      ; 00461e3e
-    JMP 0x00461e4e                      ; 00461e45 | LAB_00461e4e
-        ;   XREF to: 00461e4e (UNCONDITIONAL_JUMP)
+    JMP 0x00461e4e                      ; 00461e45
+        ;   XREF to: 00461e4e (UNCONDITIONAL_JUMP)  ; LAB_00461e4e
     MOV dword ptr [EBP + -0x4],0x0      ; 00461e47
         ;   Label: LAB_00461e47
     MOV EAX,dword ptr [EBP + -0x4]      ; 00461e4e

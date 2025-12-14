@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2dcd814                   ; 00502f80 | CDemonActorType g_CLarvaClassInfo
+    MOV EAX,0x2dcd814                   ; 00502f80 | g_CLarvaClassInfo
         ;   Label: core_larva.cpp_FUN_00502f80
     RET                                 ; 00502f85
 

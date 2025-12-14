@@ -1,172 +1,172 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 132, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 68, 
-    "assembly_lines": 41, 
-    "suspect_count": 8, 
+    "assembly_lines": 41,
+    "complexity_score": 132,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 27,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param", 
+      "pointer_cast",
+      "badspacebase",
+      "register_param",
+      "stack_param",
       "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020", 
-      "addr": "005d6020"
-    }
-  ], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005d64a9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CVector3d *in_stack_00000004;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(in_stack_00000004,segStart,segEnd);"
-    }, 
-    {
-      "line": 20, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar1 = (uint *)((int)&uStack_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);"
-    }, 
-    {
-      "line": 21, 
-      "match": "&stack0xffffffc0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*(uint *)(&uStack_34 + -(uint)bVar2) = *(uint *)(&stack0xffffffc0 + (uint)bVar2 * -8);"
-    }, 
-    {
-      "line": 22, 
-      "match": "&stack0xffffffc4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "*puVar1 = *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);"
-    }, 
-    {
-      "line": 25, 
-      "match": "&stack0xffffffc4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((int)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)"
-    }
-  ], 
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005d64a0", 
-    "signature": "double shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d * segStart, CVector3d * segEnd, CVector3d * point)", 
+    "address": "005d64a0",
     "address_range": [
       [
-        "005d64a0", 
+        "005d64a0",
         "005d64f7"
       ]
-    ], 
-    "name": "shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0",
+    "signature": "double shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d * segStart, CVector3d * segEnd, CVector3d * point)"
+  },
+  "function_calls": [
+    {
+      "addr": "005d6020",
+      "name": "shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 76, 
+    "frame_size": 92,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_48"
-      }, 
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_30"
-      }, 
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3d *", 
-        "size": 4, 
-        "name": "segStart"
-      }, 
+        "is_param": true,
+        "name": "segStart",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3d *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "CVector3d *", 
-        "size": 4, 
-        "name": "segEnd"
-      }, 
+        "is_param": true,
+        "name": "segEnd",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3d *"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "CVector3d *", 
-        "size": 4, 
-        "name": "point"
+        "is_param": true,
+        "name": "point",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3d *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 92, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005d64a9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 7,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000004",
+      "text": "CVector3d *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(in_stack_00000004,segStart,segEnd);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)&uStack_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 21,
+      "match": "&stack0xffffffc0",
+      "text": "*(uint *)(&uStack_34 + -(uint)bVar2) = *(uint *)(&stack0xffffffc0 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 22,
+      "match": "&stack0xffffffc4",
+      "text": "*puVar1 = *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffffc4",
+      "text": "((int)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)",
+      "type": "stack_ref"
+    }
+  ]
 }

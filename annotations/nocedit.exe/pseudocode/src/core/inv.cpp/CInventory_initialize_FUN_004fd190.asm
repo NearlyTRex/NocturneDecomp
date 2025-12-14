@@ -36,36 +36,36 @@ section .text
     SUB ESP,0x4                         ; 004fd193
     MOV EDI,dword ptr [ESP + 0x14]      ; 004fd196
     PUSH EDI                            ; 004fd19a
-    CALL core_inv.cpp_CInventory_clear_FUN_004fd0e0 ; 004fd19b | void core_inv.cpp_CInventory_clear_FUN_004fd0e0(CInventory * this_ptr)
-        ;   XREF to: 004fd0e0 (UNCONDITIONAL_CALL)
+    CALL core_inv.cpp_CInventory_clear_FUN_004fd0e0 ; 004fd19b
+        ;   XREF to: 004fd0e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_clear_FUN_004fd0e0(CInventory * this_ptr)
     MOV EBX,EDI                         ; 004fd1a0
     ADD ESP,0x4                         ; 004fd1a2
     LEA ESI,[EDI + 0x190]               ; 004fd1a5
-    CALL crt_stdlib.c_rand_FUN_005feb5c ; 004fd1ab | int crt_stdlib.c_rand_FUN_005feb5c()
+    CALL crt_stdlib.c_rand_FUN_005feb5c ; 004fd1ab
+        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_005feb5c()
         ;   Label: LAB_004fd1ab
-        ;   XREF to: 005feb5c (UNCONDITIONAL_CALL)
     MOV dword ptr [ESP],EAX             ; 004fd1b0
     FILD dword ptr [ESP]                ; 004fd1b3
-    FMUL float ptr [0x006303ca]         ; 004fd1b6 | float g_InventoryRandNormalizationFactor
-    FMUL double ptr [0x006303d2]        ; 004fd1bc | double g_InventoryRandPiFactor
-    FMUL double ptr [0x006303da]        ; 004fd1c2 | double g_InventoryRandTwoFactor
+    FMUL float ptr [0x006303ca]         ; 004fd1b6 | g_InventoryRandNormalizationFactor
+    FMUL double ptr [0x006303d2]        ; 004fd1bc | g_InventoryRandPiFactor
+    FMUL double ptr [0x006303da]        ; 004fd1c2 | g_InventoryRandTwoFactor
     ADD EBX,0x4                         ; 004fd1c8
     FSTP float ptr [EBX + 0x198]        ; 004fd1cb
     CMP EBX,ESI                         ; 004fd1d1
-    JNZ 0x004fd1ab                      ; 004fd1d3 | LAB_004fd1ab
-        ;   XREF to: 004fd1ab (CONDITIONAL_JUMP)
+    JNZ 0x004fd1ab                      ; 004fd1d3
+        ;   XREF to: 004fd1ab (CONDITIONAL_JUMP)  ; LAB_004fd1ab
     CMP dword ptr [EDI + 0x458],0x0     ; 004fd1d5
-    JZ 0x004fd1e5                       ; 004fd1dc | LAB_004fd1e5
-        ;   XREF to: 004fd1e5 (CONDITIONAL_JUMP)
+    JZ 0x004fd1e5                       ; 004fd1dc
+        ;   XREF to: 004fd1e5 (CONDITIONAL_JUMP)  ; LAB_004fd1e5
     ADD ESP,0x4                         ; 004fd1de
     POP EDI                             ; 004fd1e1
     POP ESI                             ; 004fd1e2
     POP EBX                             ; 004fd1e3
     RET                                 ; 004fd1e4
-    PUSH 0x6303c4                       ; 004fd1e5 | = "CAmmo" | s_CAmmo_006303c4 = CAmmo
+    PUSH 0x6303c4                       ; 004fd1e5 | = "CAmmo"
         ;   Label: LAB_004fd1e5
-    CALL core_actor.cpp_createActorByName_FUN_0040c430 ; 004fd1ea | CDemonActor * core_actor.cpp_createActorByName_FUN_0040c430(char * class_name)
-        ;   XREF to: 0040c430 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_createActorByName_FUN_0040c430 ; 004fd1ea
+        ;   XREF to: 0040c430 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c430(char * class_name)
     ADD ESP,0x4                         ; 004fd1ef
     MOV dword ptr [EDI + 0x458],EAX     ; 004fd1f2
     PUSH EAX                            ; 004fd1f8

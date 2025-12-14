@@ -24,16 +24,16 @@ section .text
     MOV EDX,dword ptr [ESP + 0x10]      ; 0056b7e0
         ;   Label: core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0
     PUSH EDX                            ; 0056b7e4
-    PUSH 0x32758e4                      ; 0056b7e5 | CDemonCamera g_CDemonCameraInstance
-    CALL core_dcamera.cpp_CDemonCamera_init_FUN_0044c190 ; 0056b7ea | void core_dcamera.cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera * this_ptr, int screen_height)
-        ;   XREF to: 0044c190 (UNCONDITIONAL_CALL)
+    PUSH 0x32758e4                      ; 0056b7e5 | g_CDemonCameraInstance
+    CALL core_dcamera.cpp_CDemonCamera_init_FUN_0044c190 ; 0056b7ea
+        ;   XREF to: 0044c190 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera * this_ptr, int screen_height)
     ADD ESP,0x8                         ; 0056b7ef
     MOV EAX,dword ptr [ESP + 0x4]       ; 0056b7f2
     MOV ECX,dword ptr [EAX + 0x15aea4]  ; 0056b7f6
     PUSH ECX                            ; 0056b7fc
     PUSH EAX                            ; 0056b7fd
-    CALL core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 ; 0056b7fe | void core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet * this_ptr, int index)
-        ;   XREF to: 0056ae50 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 ; 0056b7fe
+        ;   XREF to: 0056ae50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet * this_ptr, int index)
     ADD ESP,0x8                         ; 0056b803
     RET                                 ; 0056b806
 

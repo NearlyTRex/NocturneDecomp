@@ -50,7 +50,7 @@ section .text
     FLD float ptr [EAX + 0x4]           ; 004f2b1f
     FADD float ptr [EDX + 0x4]          ; 004f2b22
     FXCH                                ; 004f2b25
-    FLD float ptr [0x0062ec0a]          ; 004f2b27 | float FLOAT_0062ec0a
+    FLD float ptr [0x0062ec0a]          ; 004f2b27 | FLOAT_0062ec0a
     FXCH                                ; 004f2b2d
     FMUL ST1                            ; 004f2b2f
     FXCH ST2                            ; 004f2b31
@@ -80,27 +80,27 @@ section .text
     XOR EBX,EBX                         ; 004f2b7c
     PUSH ESI                            ; 004f2b7e
     FSTP float ptr [ESP + 0x54]         ; 004f2b7f
-    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 004f2b83 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 004f2b83
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
     ADD ESP,0xc                         ; 004f2b88
     XOR ESI,ESI                         ; 004f2b8b
     MOV dword ptr [ESP + 0x4c],EDI      ; 004f2b8d
     XOR EDI,EDI                         ; 004f2b91
-    MOV EAX,[0x006810c8]                ; 004f2b93 | CDemonSet * g_CDemonSetPtr
+    MOV EAX,[0x006810c8]                ; 004f2b93 | g_CDemonSetPtr
         ;   Label: LAB_004f2b93
     CMP ESI,dword ptr [EAX + 0x14d154]  ; 004f2b98 | g_CDemonSetInstance.actor_list_ptr
-    JL 0x004f2bd2                       ; 004f2b9e | LAB_004f2bd2
-        ;   XREF to: 004f2bd2 (CONDITIONAL_JUMP)
+    JL 0x004f2bd2                       ; 004f2b9e
+        ;   XREF to: 004f2bd2 (CONDITIONAL_JUMP)  ; LAB_004f2bd2
     TEST EDI,EDI                        ; 004f2ba0
-    JZ 0x004f2c2b                       ; 004f2ba2 | LAB_004f2c2b
-        ;   XREF to: 004f2c2b (CONDITIONAL_JUMP)
+    JZ 0x004f2c2b                       ; 004f2ba2
+        ;   XREF to: 004f2c2b (CONDITIONAL_JUMP)  ; LAB_004f2c2b
     PUSH EDI                            ; 004f2ba8
     MOV EAX,dword ptr [EDI + 0x154]     ; 004f2ba9
     CALL dword ptr [EAX + 0x5c]         ; 004f2baf
     ADD ESP,0x4                         ; 004f2bb2
     TEST EAX,EAX                        ; 004f2bb5
-    JZ 0x004f2bc6                       ; 004f2bb7 | LAB_004f2bc6
-        ;   XREF to: 004f2bc6 (CONDITIONAL_JUMP)
+    JZ 0x004f2bc6                       ; 004f2bb7
+        ;   XREF to: 004f2bc6 (CONDITIONAL_JUMP)  ; LAB_004f2bc6
     MOV EAX,dword ptr [EBP + 0x14]      ; 004f2bb9
     MOV dword ptr [EAX + 0xbe38],0x0    ; 004f2bbc
     MOV EAX,0x1                         ; 004f2bc6
@@ -128,23 +128,23 @@ section .text
     FCOMPP                              ; 004f2bfc
     FNSTSW AX                           ; 004f2bfe
     SAHF                                ; 004f2c00
-    JA 0x004f2c22                       ; 004f2c01 | LAB_004f2c22
-        ;   XREF to: 004f2c22 (CONDITIONAL_JUMP)
+    JA 0x004f2c22                       ; 004f2c01
+        ;   XREF to: 004f2c22 (CONDITIONAL_JUMP)  ; LAB_004f2c22
     FLD float ptr [ESP]                 ; 004f2c03
     FCOMP float ptr [ESP + 0x4c]        ; 004f2c06
     FNSTSW AX                           ; 004f2c0a
     SAHF                                ; 004f2c0c
-    JNC 0x004f2c22                      ; 004f2c0d | LAB_004f2c22
-        ;   XREF to: 004f2c22 (CONDITIONAL_JUMP)
+    JNC 0x004f2c22                      ; 004f2c0d
+        ;   XREF to: 004f2c22 (CONDITIONAL_JUMP)  ; LAB_004f2c22
     MOV EAX,dword ptr [ESP]             ; 004f2c0f
     MOV dword ptr [ESP + 0x4c],EAX      ; 004f2c12
-    MOV EAX,[0x006810c8]                ; 004f2c16 | CDemonSet * g_CDemonSetPtr
+    MOV EAX,[0x006810c8]                ; 004f2c16 | g_CDemonSetPtr
     MOV EDI,dword ptr [EBX + EAX*0x1 + 0x14d158] ; 004f2c1b | g_CDemonSetInstance.actor_list_data[0]
     INC ESI                             ; 004f2c22
         ;   Label: LAB_004f2c22
     ADD EBX,0x4                         ; 004f2c23
-    JMP 0x004f2b93                      ; 004f2c26 | LAB_004f2b93
-        ;   XREF to: 004f2b93 (UNCONDITIONAL_JUMP)
+    JMP 0x004f2b93                      ; 004f2c26
+        ;   XREF to: 004f2b93 (UNCONDITIONAL_JUMP)  ; LAB_004f2b93
     XOR EAX,EAX                         ; 004f2c2b
         ;   Label: LAB_004f2c2b
     MOV ESP,EBP                         ; 004f2c2d

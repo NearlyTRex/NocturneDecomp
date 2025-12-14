@@ -41,10 +41,10 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 00401807
     MOV ECX,dword ptr [ESP + 0x1c]      ; 0040180b
     MOV EAX,dword ptr [ESP + 0x14]      ; 0040180f
-    MOV dword ptr [0x02d02560],EBX      ; 00401813 | int g_ClipRight
-    MOV dword ptr [0x02d02564],ECX      ; 00401819 | int g_ClipBottom
+    MOV dword ptr [0x02d02560],EBX      ; 00401813 | g_ClipRight
+    MOV dword ptr [0x02d02564],ECX      ; 00401819 | g_ClipBottom
     SUB EBX,EDI                         ; 0040181f
-    MOV [0x02d0255c],EAX                ; 00401821 | int g_ClipTop
+    MOV [0x02d0255c],EAX                ; 00401821 | g_ClipTop
     INC EBX                             ; 00401826
     SUB ECX,EAX                         ; 00401827
     MOV EDX,EBX                         ; 00401829
@@ -60,9 +60,9 @@ section .text
     MOV EAX,ECX                         ; 00401842
     SUB EAX,EDX                         ; 00401844
     SAR EAX,0x1                         ; 00401846
-    MOV dword ptr [0x02d02558],EDI      ; 00401848 | int g_ClipLeft
-    MOV dword ptr [0x02d02568],EBX      ; 0040184e | int g_ViewportWidth
-    MOV dword ptr [0x02d0256c],ECX      ; 00401854 | int g_ViewportHeight
+    MOV dword ptr [0x02d02558],EDI      ; 00401848 | g_ClipLeft
+    MOV dword ptr [0x02d02568],EBX      ; 0040184e | g_ViewportWidth
+    MOV dword ptr [0x02d0256c],ECX      ; 00401854 | g_ViewportHeight
     AND EAX,0xffff                      ; 0040185a
     MOV EDX,ESI                         ; 0040185f
     ADD ESI,EDI                         ; 00401861
@@ -70,8 +70,8 @@ section .text
     INC ESI                             ; 00401864
     SHL EDX,0x10                        ; 00401865
     SHL ESI,0x10                        ; 00401868
-    MOV dword ptr [0x02d02548],EDX      ; 0040186b | int g_ViewportCenterXFixed
-    MOV dword ptr [0x02d02550],ESI      ; 00401871 | int g_ViewportRightFixed
+    MOV dword ptr [0x02d02548],EDX      ; 0040186b | g_ViewportCenterXFixed
+    MOV dword ptr [0x02d02550],ESI      ; 00401871 | g_ViewportRightFixed
     MOV ESI,dword ptr [ESP + 0x14]      ; 00401877
     MOV EDX,EAX                         ; 0040187b
     ADD EAX,ESI                         ; 0040187d
@@ -79,8 +79,8 @@ section .text
     INC EAX                             ; 00401881
     SHL EDX,0x10                        ; 00401882
     SHL EAX,0x10                        ; 00401885
-    MOV dword ptr [0x02d0254c],EDX      ; 00401888 | int g_ViewportCenterYFixed
-    MOV [0x02d02554],EAX                ; 0040188e | int g_ViewportBottomFixed
+    MOV dword ptr [0x02d0254c],EDX      ; 00401888 | g_ViewportCenterYFixed
+    MOV [0x02d02554],EAX                ; 0040188e | g_ViewportBottomFixed
     POP EDI                             ; 00401893
     POP ESI                             ; 00401894
     POP EBX                             ; 00401895

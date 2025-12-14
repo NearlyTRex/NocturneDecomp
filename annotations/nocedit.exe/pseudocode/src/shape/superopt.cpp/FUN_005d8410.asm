@@ -15,8 +15,8 @@ section .text
     FCOMP double ptr [ECX]              ; 005d841a
     FNSTSW AX                           ; 005d841c
     SAHF                                ; 005d841e
-    JZ 0x005d8424                       ; 005d841f | LAB_005d8424
-        ;   XREF to: 005d8424 (CONDITIONAL_JUMP)
+    JZ 0x005d8424                       ; 005d841f
+        ;   XREF to: 005d8424 (CONDITIONAL_JUMP)  ; LAB_005d8424
     XOR EAX,EAX                         ; 005d8421
         ;   Label: LAB_005d8421
     RET                                 ; 005d8423
@@ -25,8 +25,8 @@ section .text
     FCOMP double ptr [ECX + 0x8]        ; 005d8427
     FNSTSW AX                           ; 005d842a
     SAHF                                ; 005d842c
-    JNZ 0x005d8421                      ; 005d842d | LAB_005d8421
-        ;   XREF to: 005d8421 (CONDITIONAL_JUMP)
+    JNZ 0x005d8421                      ; 005d842d
+        ;   XREF to: 005d8421 (CONDITIONAL_JUMP)  ; LAB_005d8421
     MOV EAX,0x1                         ; 005d842f
     RET                                 ; 005d8434
 

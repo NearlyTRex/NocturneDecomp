@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 15, 
-    "pseudocode_lines": 15, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 40, 
-    "assembly_lines": 25, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060f890", 
-    "signature": "char * crt_string.c_strchr_FUN_0060f890(char * str, int ch)", 
-    "address_range": [
-      [
-        "0060f890", 
-        "0060f8b1"
-      ]
-    ], 
-    "name": "crt_string.c_strchr_FUN_0060f890"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "str"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "ch"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 25,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
+  },
   "cross_references": [
     {
-      "from_addr": "0060e76d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0", 
-      "addr": "0060e6a0"
+      "addr": "0060e6a0",
+      "from_addr": "0060e76d",
+      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060f890",
+    "address_range": [
+      [
+        "0060f890",
+        "0060f8b1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_string.c_strchr_FUN_0060f890",
+    "signature": "char * crt_string.c_strchr_FUN_0060f890(char * str, int ch)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "ch",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

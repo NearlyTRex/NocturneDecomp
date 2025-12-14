@@ -1,137 +1,137 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 79, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 0, 
-    "global_count": 7, 
-    "total_lines": 79, 
-    "assembly_lines": 55, 
-    "suspect_count": 4, 
+    "assembly_lines": 55,
+    "complexity_score": 79,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
-      "extra_output", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_3d_c_006134a9", 
-      "addr": "006134a9", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_renderPrim_Bad_input_poi_006134b8", 
-      "addr": "006134b8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bad_prim_d_006134d6", 
-      "addr": "006134d6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_3d_c_006134e4", 
-      "addr": "006134e4", 
-      "value": null
-    }, 
-    {
-      "type": "MRGLBlockHandlerFunc*[67]", 
-      "name": "g_MRGLBlockHandlerTable", 
-      "addr": "0066df88", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SMRGLHeaderExtended *extraout_EAX;"
-    }, 
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 26, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return extraout_EAX;"
-    }
-  ], 
+      "register_param",
+      "extra_output",
+      "badspacebase"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00407920", 
-    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive * primitive)", 
+    "address": "00407920",
     "address_range": [
       [
-        "00407920", 
+        "00407920",
         "004079b4"
       ]
-    ], 
-    "name": "engine_3d.c_renderPrim_FUN_00407920"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_renderPrim_FUN_00407920",
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive * primitive)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006134a9",
+      "name": "s_engine_3d_c_006134a9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006134b8",
+      "name": "s_renderPrim_Bad_input_poi_006134b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006134d6",
+      "name": "s_Bad_prim_d_006134d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006134e4",
+      "name": "s_engine_3d_c_006134e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066df88",
+      "name": "g_MRGLBlockHandlerTable",
+      "type": "MRGLBlockHandlerFunc*[67]",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 264, 
+    "frame_size": 268,
+    "local_size": 264,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -260, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_104"
-      }, 
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderPrimitive *", 
-        "size": 4, 
-        "name": "primitive"
+        "is_param": true,
+        "name": "primitive",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 268, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EAX",
+      "text": "SMRGLHeaderExtended *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_EAX",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
+    }
+  ]
 }

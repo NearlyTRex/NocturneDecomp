@@ -1,51 +1,51 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 18, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "APIDLL_lockHoldBuffer*", 
-      "name": "g_APIDLL_lockHoldBuffer", 
-      "addr": "03f6b920", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b7df0", 
-    "signature": "int wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0(void)", 
-    "address_range": [
-      [
-        "005b7df0", 
-        "005b7e02"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
   "cross_references": [
     {
-      "from_addr": "00451201", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0", 
-      "addr": "004511c0"
+      "addr": "004511c0",
+      "from_addr": "00451201",
+      "name": "core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b7df0",
+    "address_range": [
+      [
+        "005b7df0",
+        "005b7e02"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0",
+    "signature": "int wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f6b920",
+      "name": "g_APIDLL_lockHoldBuffer",
+      "type": "APIDLL_lockHoldBuffer*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

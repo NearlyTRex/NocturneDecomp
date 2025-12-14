@@ -1,229 +1,229 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 118, 
-    "pseudocode_lines": 43, 
-    "cross_reference_count": 0, 
-    "global_count": 9, 
-    "total_lines": 159, 
-    "assembly_lines": 116, 
-    "suspect_count": 7, 
+    "assembly_lines": 116,
+    "complexity_score": 118,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 9,
+    "pseudocode_lines": 43,
+    "suspect_count": 7,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_WindowAspectRatioMultiplier", 
-      "addr": "0061b2ee", 
-      "value": "3"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_WindowAspectRatioCorrection", 
-      "addr": "0061b2f6", 
-      "value": "0.25"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_WindowViewportCenterOffset", 
-      "addr": "0061b2fe", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "float", 
-      "name": "g_WindowWorldScaleFactor", 
-      "addr": "0061b306", 
-      "value": "0.00390625"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_PolygonScreenCache[19999].view_mode", 
-      "addr": "01626340", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ZoomLevel", 
-      "addr": "01626344", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_StoredWorldYCoordinate", 
-      "addr": "01626360", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "float *unaff_ESI;"
-    }, 
-    {
-      "line": 41, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = local_38;"
-    }, 
-    {
-      "line": 42, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[1] = local_34;"
-    }, 
-    {
-      "line": 43, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[2] = local_30;"
-    }, 
-    {
-      "line": 44, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[3] = fStack_2c;"
-    }, 
-    {
-      "line": 45, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[4] = fStack_28;"
-    }, 
-    {
-      "line": 46, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_ESI;"
-    }
-  ], 
+    ],
+    "total_lines": 159
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0045bd10", 
-    "signature": "void * shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord * input_coords, SVertexData * output_vertex)", 
+    "address": "0045bd10",
     "address_range": [
       [
-        "0045bd10", 
+        "0045bd10",
         "0045be3d"
       ]
-    ], 
-    "name": "shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10",
+    "signature": "void * shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord * input_coords, SVertexData * output_vertex)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0061b2ee",
+      "name": "g_WindowAspectRatioMultiplier",
+      "type": "double",
+      "value": "3"
+    },
+    {
+      "addr": "0061b2f6",
+      "name": "g_WindowAspectRatioCorrection",
+      "type": "double",
+      "value": "0.25"
+    },
+    {
+      "addr": "0061b2fe",
+      "name": "g_WindowViewportCenterOffset",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "0061b306",
+      "name": "g_WindowWorldScaleFactor",
+      "type": "float",
+      "value": "0.00390625"
+    },
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "01626340",
+      "name": "g_PolygonScreenCache[19999].view_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01626344",
+      "name": "g_ZoomLevel",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01626360",
+      "name": "g_StoredWorldYCoordinate",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 80, 
+    "frame_size": 88,
+    "local_size": 80,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -76, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_4c"
-      }, 
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SScreenCoord *", 
-        "size": 4, 
-        "name": "input_coords"
-      }, 
+        "is_param": true,
+        "name": "input_coords",
+        "offset": 4,
+        "size": 4,
+        "type": "SScreenCoord *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SVertexData *", 
-        "size": 4, 
-        "name": "output_vertex"
+        "is_param": true,
+        "name": "output_vertex",
+        "offset": 8,
+        "size": 4,
+        "type": "SVertexData *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 88, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = local_38;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[1] = local_34;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[2] = local_30;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[3] = fStack_2c;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI[4] = fStack_28;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_ESI",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
+    }
+  ]
 }

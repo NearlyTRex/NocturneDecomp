@@ -10,10 +10,12 @@ int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_005ab540(void)
 
 {
   uint uVar1;
+  int iVar2;
   
   uVar1 = sound_sndmain_cpp_isSoundSystemActive_FUN_005ab530();
+  iVar2 = 0;
   if (uVar1 != 0) {
-    uVar1 = g_SoundBusyFlag;
+    iVar2 = g_SoundBusyFlag;
   }
-  return uVar1;
+  return iVar2;
 }

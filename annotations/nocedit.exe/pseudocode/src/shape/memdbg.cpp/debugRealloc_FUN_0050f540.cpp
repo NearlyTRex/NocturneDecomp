@@ -38,8 +38,7 @@ shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size,char *filename
       pSVar1 = (SMemHead *)((int)ptr + -0x28);
       shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(pSVar1,filename,line_number);
       shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(pSVar1);
-      header = (SMemHead *)
-               crt_memory_c_realloc_FUN_00601df0
+      header = crt_memory_c_realloc_FUN_00601df0
                          (pSVar1,(ulong)(filename + GAME_SMEMHEAD_AND_BACKGUARD_SIZE));
       if (header != (SMemHead *)0x0) {
         header->num_bytes = line_number;

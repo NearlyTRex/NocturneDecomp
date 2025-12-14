@@ -11,8 +11,7 @@ void core_succubus_cpp_FUN_005c6a40(void)
 {
   CSuccubus *this_ptr;
   
-  this_ptr = (CSuccubus *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xef68,"..\\core\\succubus.cpp",0x4b);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xef68,"..\\core\\succubus.cpp",0x4b);
   if (this_ptr == (CSuccubus *)0x0) {
     return;
   }

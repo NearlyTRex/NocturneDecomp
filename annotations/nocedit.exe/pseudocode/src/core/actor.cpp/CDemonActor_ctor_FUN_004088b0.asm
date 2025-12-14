@@ -46,10 +46,10 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 004088b3
     ADD EBX,0x128                       ; 004088b7
     PUSH EBX                            ; 004088bd
-    CALL core_actor.cpp_initTransformCache_FUN_00408870 ; 004088be | CDemonActorTransformState * core_actor.cpp_initTransformCache_FUN_00408870(CDemonActorTransformState * transform_cache)
-        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_initTransformCache_FUN_00408870 ; 004088be
+        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; CDemonActorTransformState * core_actor.cpp_initTransformCache_FUN_00408870(CDemonActorTransformState * transform_cache)
     LEA EBX,[EAX + 0xfffffed8]          ; 004088c3
-    MOV dword ptr [EBX + 0x154],0x6597d4 ; 004088c9 | CDemonActor_vtable g_CDemonActorVTable
+    MOV dword ptr [EBX + 0x154],0x6597d4 ; 004088c9 | g_CDemonActorVTable
     MOV byte ptr [EBX],0x0              ; 004088d3
     MOV dword ptr [EBX + 0x14c],0x0     ; 004088d6
     LEA EAX,[EBX + 0x20]                ; 004088e0
@@ -62,32 +62,32 @@ section .text
     MOV dword ptr [EAX],EDX             ; 00408900
     LEA EAX,[EBX + 0x30]                ; 00408902
     MOV dword ptr [EBX + 0x2c],0x0      ; 00408905
-    MOV ESI,0x613578                    ; 0040890c | = "none" | s_none_00613578 = none
+    MOV ESI,0x613578                    ; 0040890c | = "none"
     MOV dword ptr [EAX + 0x8],0x0       ; 00408911
     PUSH EBX                            ; 00408918
     MOV EDX,dword ptr [EAX + 0x8]       ; 00408919
     MOV dword ptr [EAX + 0x4],EDX       ; 0040891c
     MOV EDX,dword ptr [EAX + 0x4]       ; 0040891f
     MOV dword ptr [EAX],EDX             ; 00408922
-    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00408924 | void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
-        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10 ; 00408924
+        ;   XREF to: 00408c10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00408929
     LEA EDI,[EBX + 0x78]                ; 0040892c
     MOV dword ptr [EBX + 0x74],0x3f800000 ; 0040892f
     PUSH EDI                            ; 00408936
-    MOV AL,byte ptr [ESI]               ; 00408937 | = "none" | s_none_00613578 = none
+    MOV AL,byte ptr [ESI]               ; 00408937 | = "none" | DAT_0061357a
         ;   Label: LAB_00408937
     MOV byte ptr [EDI],AL               ; 00408939
     CMP AL,0x0                          ; 0040893b
-    JZ 0x0040894f                       ; 0040893d | LAB_0040894f
-        ;   XREF to: 0040894f (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 0040893f | DAT_00613579
+    JZ 0x0040894f                       ; 0040893d
+        ;   XREF to: 0040894f (CONDITIONAL_JUMP)  ; LAB_0040894f
+    MOV AL,byte ptr [ESI + 0x1]         ; 0040893f | DAT_00613579 | s_e_0061357b
     ADD ESI,0x2                         ; 00408942
     MOV byte ptr [EDI + 0x1],AL         ; 00408945
     ADD EDI,0x2                         ; 00408948
     CMP AL,0x0                          ; 0040894b
-    JNZ 0x00408937                      ; 0040894d | LAB_00408937
-        ;   XREF to: 00408937 (CONDITIONAL_JUMP)
+    JNZ 0x00408937                      ; 0040894d
+        ;   XREF to: 00408937 (CONDITIONAL_JUMP)  ; LAB_00408937
     POP EDI                             ; 0040894f
         ;   Label: LAB_0040894f
     MOV dword ptr [EBX + 0x70],0x0      ; 00408950
@@ -113,24 +113,24 @@ section .text
     MOV dword ptr [EBX + 0x100],0x0     ; 004089cd
     MOV dword ptr [EBX + 0x104],0x0     ; 004089d7
     MOV dword ptr [EBX + 0x64],0x64     ; 004089e1
-    MOV ESI,0x61357d                    ; 004089e8 | = "str" | s_str_0061357d = str
+    MOV ESI,0x61357d                    ; 004089e8 | = "str"
     MOV dword ptr [EBX + 0x148],0x0     ; 004089ed
     LEA EDI,[EBX + 0x11c]               ; 004089f7
     MOV dword ptr [EBX + 0x68],0x78a123 ; 004089fd | DAT_0078a123
     PUSH EDI                            ; 00408a04
-    MOV AL,byte ptr [ESI]               ; 00408a05 | = "str" | s_str_0061357d = str
+    MOV AL,byte ptr [ESI]               ; 00408a05 | = "str" | DAT_0061357f
         ;   Label: LAB_00408a05
     MOV byte ptr [EDI],AL               ; 00408a07
     CMP AL,0x0                          ; 00408a09
-    JZ 0x00408a1d                       ; 00408a0b | LAB_00408a1d
-        ;   XREF to: 00408a1d (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 00408a0d | DAT_0061357e
+    JZ 0x00408a1d                       ; 00408a0b
+        ;   XREF to: 00408a1d (CONDITIONAL_JUMP)  ; LAB_00408a1d
+    MOV AL,byte ptr [ESI + 0x1]         ; 00408a0d | DAT_0061357e | s__00613580
     ADD ESI,0x2                         ; 00408a10
     MOV byte ptr [EDI + 0x1],AL         ; 00408a13
     ADD EDI,0x2                         ; 00408a16
     CMP AL,0x0                          ; 00408a19
-    JNZ 0x00408a05                      ; 00408a1b | LAB_00408a05
-        ;   XREF to: 00408a05 (CONDITIONAL_JUMP)
+    JNZ 0x00408a05                      ; 00408a1b
+        ;   XREF to: 00408a05 (CONDITIONAL_JUMP)  ; LAB_00408a05
     POP EDI                             ; 00408a1d
         ;   Label: LAB_00408a1d
     MOV EAX,EBX                         ; 00408a1e

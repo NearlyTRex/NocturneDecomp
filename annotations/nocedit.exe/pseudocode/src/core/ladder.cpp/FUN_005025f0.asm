@@ -14,6 +14,6 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005025f0
         ;   Label: core_ladder.cpp_FUN_005025f0
     PUSH EDX                            ; 005025f4
-    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 005025f5 | void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 005025f5
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
 

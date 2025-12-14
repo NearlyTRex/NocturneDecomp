@@ -20,8 +20,8 @@ section .text
         ;   Label: core_dpart.cpp_CDemonPart_dtor_FUN_00482160
     MOV EBX,dword ptr [ESP + 0x8]       ; 00482161
     PUSH EBX                            ; 00482165
-    CALL core_dpart.cpp_CDemonPart_free_FUN_004822b0 ; 00482166 | void core_dpart.cpp_CDemonPart_free_FUN_004822b0(CDemonPart * this_ptr)
-        ;   XREF to: 004822b0 (UNCONDITIONAL_CALL)
+    CALL core_dpart.cpp_CDemonPart_free_FUN_004822b0 ; 00482166
+        ;   XREF to: 004822b0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_free_FUN_004822b0(CDemonPart * this_ptr)
     ADD ESP,0x4                         ; 0048216b
     MOV EAX,EBX                         ; 0048216e
     POP EBX                             ; 00482170

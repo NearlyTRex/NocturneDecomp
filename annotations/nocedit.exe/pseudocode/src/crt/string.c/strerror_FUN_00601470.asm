@@ -23,15 +23,15 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00601470
         ;   Label: crt_string.c_strerror_FUN_00601470
     TEST EAX,EAX                        ; 00601474
-    JL 0x00601480                       ; 00601476 | LAB_00601480
-        ;   XREF to: 00601480 (CONDITIONAL_JUMP)
-    CMP EAX,dword ptr [0x00684bdc]      ; 00601478 | int g_MaxErrnoValue
-    JLE 0x00601486                      ; 0060147e | LAB_00601486
-        ;   XREF to: 00601486 (CONDITIONAL_JUMP)
-    MOV EAX,0x658f68                    ; 00601480 | = "unknown error" | s_unknown_error_00658f68 = unknown error
+    JL 0x00601480                       ; 00601476
+        ;   XREF to: 00601480 (CONDITIONAL_JUMP)  ; LAB_00601480
+    CMP EAX,dword ptr [0x00684bdc]      ; 00601478 | g_MaxErrnoValue
+    JLE 0x00601486                      ; 0060147e
+        ;   XREF to: 00601486 (CONDITIONAL_JUMP)  ; LAB_00601486
+    MOV EAX,0x658f68                    ; 00601480 | = "unknown error"
         ;   Label: LAB_00601480
     RET                                 ; 00601485
-    MOV EAX,dword ptr [EAX*0x4 + 0x684be0] ; 00601486 | char *[41] g_ErrorMessageTable
+    MOV EAX,dword ptr [EAX*0x4 + 0x684be0] ; 00601486 | g_ErrorMessageTable
         ;   Label: LAB_00601486
     RET                                 ; 0060148d
 

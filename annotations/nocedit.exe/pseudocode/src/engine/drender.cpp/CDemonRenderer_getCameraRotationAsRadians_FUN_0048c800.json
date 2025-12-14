@@ -1,208 +1,208 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 47, 
-    "pseudocode_lines": 17, 
-    "cross_reference_count": 11, 
-    "global_count": 2, 
-    "total_lines": 55, 
-    "assembly_lines": 38, 
-    "suspect_count": 2, 
+    "assembly_lines": 38,
+    "complexity_score": 47,
+    "cross_reference_count": 11,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_matrix.c_getCameraRotation_FUN_0050e2f0", 
-      "addr": "0050e2f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_AngleToRadianScale", 
-      "addr": "00622065", 
-      "value": "0.000030517578125"
-    }, 
-    {
-      "type": "double", 
-      "name": "g_PiConstant", 
-      "addr": "0062206d", 
-      "value": "3.14159265350000"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 2, 
-    "patterns": [
-      {
-        "address": "0048c808", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }, 
-      {
-        "address": "0048c80e", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment", 
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0048c800", 
-    "signature": "float * engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer * this_ptr, float * output)", 
-    "address_range": [
-      [
-        "0048c800", 
-        "0048c861"
-      ]
-    ], 
-    "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonRenderer *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "output"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 44, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 55
+  },
   "cross_references": [
     {
-      "from_addr": "00473a64", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20", 
-      "addr": "00473a20"
-    }, 
+      "addr": "00473a20",
+      "from_addr": "00473a64",
+      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004743d2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90", 
-      "addr": "00473f90"
-    }, 
+      "addr": "00473f90",
+      "from_addr": "004743d2",
+      "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00474ebd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0", 
-      "addr": "00474ad0"
-    }, 
+      "addr": "00474ad0",
+      "from_addr": "00474ebd",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c3b8a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10", 
-      "addr": "004c3b10"
-    }, 
+      "addr": "004c3b10",
+      "from_addr": "004c3b8a",
+      "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c512a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CGunFlame_render_FUN_004c50b0", 
-      "addr": "004c50b0"
-    }, 
+      "addr": "004c50b0",
+      "from_addr": "004c512a",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_004c50b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c29eb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0", 
-      "addr": "004c25c0"
-    }, 
+      "addr": "004c25c0",
+      "from_addr": "004c29eb",
+      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c5893", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720", 
-      "addr": "004c5720"
-    }, 
+      "addr": "004c5720",
+      "from_addr": "004c5893",
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004c5f37", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90", 
-      "addr": "004c5e90"
-    }, 
+      "addr": "004c5e90",
+      "from_addr": "004c5f37",
+      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004ca6a5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_flame.cpp_FUN_004ca110", 
-      "addr": "004ca110"
-    }, 
+      "addr": "004ca110",
+      "from_addr": "004ca6a5",
+      "name": "core_flame.cpp_FUN_004ca110",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00570a2a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0", 
-      "addr": "005709e0"
-    }, 
+      "addr": "005709e0",
+      "from_addr": "00570a2a",
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005ef1bb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_weather.cpp_CWeather_FUN_005ef190", 
-      "addr": "005ef190"
+      "addr": "005ef190",
+      "from_addr": "005ef1bb",
+      "name": "core_weather.cpp_CWeather_FUN_005ef190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048c800",
+    "address_range": [
+      [
+        "0048c800",
+        "0048c861"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800",
+    "signature": "float * engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer * this_ptr, float * output)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050e2f0",
+      "name": "engine_matrix.c_getCameraRotation_FUN_0050e2f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622065",
+      "name": "g_AngleToRadianScale",
+      "type": "double",
+      "value": "0.000030517578125"
+    },
+    {
+      "addr": "0062206d",
+      "name": "g_PiConstant",
+      "type": "double",
+      "value": "3.14159265350000"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "output",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer",
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0048c808",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      },
+      {
+        "address": "0048c80e",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

@@ -23,8 +23,8 @@ section .text
     PUSH EAX                            ; 0040c744
     MOV EDX,dword ptr [ESP + 0x8]       ; 0040c745
     PUSH EDX                            ; 0040c749
-    CALL core_actor.cpp_matchClassExpression_FUN_0040c610 ; 0040c74a | int core_actor.cpp_matchClassExpression_FUN_0040c610(CDemonActorType * type_ptr, char * * parse_pos)
-        ;   XREF to: 0040c610 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_matchClassExpression_FUN_0040c610 ; 0040c74a
+        ;   XREF to: 0040c610 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassExpression_FUN_0040c610(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040c74f
     TEST EAX,EAX                        ; 0040c752
     SETG AL                             ; 0040c754

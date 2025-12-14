@@ -20,8 +20,8 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_ctor_FUN_004c6c60
     MOV EBX,dword ptr [ESP + 0x8]       ; 004c6c61
     PUSH EBX                            ; 004c6c65
-    CALL core_fire.cpp_CFireEffect_init_FUN_004c6c80 ; 004c6c66 | void core_fire.cpp_CFireEffect_init_FUN_004c6c80(CFireEffect * this_ptr)
-        ;   XREF to: 004c6c80 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_CFireEffect_init_FUN_004c6c80 ; 004c6c66
+        ;   XREF to: 004c6c80 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_init_FUN_004c6c80(CFireEffect * this_ptr)
     ADD ESP,0x4                         ; 004c6c6b
     MOV EAX,EBX                         ; 004c6c6e
     POP EBX                             ; 004c6c70

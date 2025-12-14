@@ -1,62 +1,62 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 2, 
-    "global_count": 1, 
-    "total_lines": 10, 
-    "assembly_lines": 5, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc", 
-      "addr": "0060cdbc"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "HANDLE", 
-      "name": "g_ConsoleOutputHandle", 
-      "addr": "00685500", 
-      "value": "ffffffff"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0060ce3c", 
-    "signature": "HANDLE crt_stdio.c_GetConsoleOutputHandle_FUN_0060ce3c(void)", 
-    "address_range": [
-      [
-        "0060ce3c", 
-        "0060ce46"
-      ]
-    ], 
-    "name": "crt_stdio.c_GetConsoleOutputHandle_FUN_0060ce3c"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    "assembly_lines": 5,
+    "complexity_score": 5,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 10
+  },
   "cross_references": [
     {
-      "from_addr": "0060a7c3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4", 
-      "addr": "0060a7a4"
-    }, 
+      "addr": "0060a7a4",
+      "from_addr": "0060a7c3",
+      "name": "crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060b4c9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_WriteConsoleChar_FUN_0060b490", 
-      "addr": "0060b490"
+      "addr": "0060b490",
+      "from_addr": "0060b4c9",
+      "name": "crt_stdio.c_WriteConsoleChar_FUN_0060b490",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0060ce3c",
+    "address_range": [
+      [
+        "0060ce3c",
+        "0060ce46"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_GetConsoleOutputHandle_FUN_0060ce3c",
+    "signature": "HANDLE crt_stdio.c_GetConsoleOutputHandle_FUN_0060ce3c(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060cdbc",
+      "name": "crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00685500",
+      "name": "g_ConsoleOutputHandle",
+      "type": "HANDLE",
+      "value": "ffffffff"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

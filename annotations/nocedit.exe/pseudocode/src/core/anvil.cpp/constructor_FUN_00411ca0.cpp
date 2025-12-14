@@ -11,8 +11,7 @@ void core_anvil_cpp_constructor_FUN_00411ca0(void)
 {
   CAnvil *this_ptr;
   
-  this_ptr = (CAnvil *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x344,"..\\core\\anvil.cpp",0x20);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x344,"..\\core\\anvil.cpp",0x20);
   if (this_ptr == (CAnvil *)0x0) {
     return;
   }

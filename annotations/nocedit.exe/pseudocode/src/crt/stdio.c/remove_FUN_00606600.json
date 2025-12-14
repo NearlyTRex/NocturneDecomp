@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 22, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "DeleteFileA", 
-      "addr": "EXTERNAL:00000054"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "DeleteFileA*", 
-      "name": "PTR_DeleteFileA_00611524", 
-      "addr": "00611524", 
-      "value": "00211cc2"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "00606600", 
-    "signature": "int crt_stdio.c_remove_FUN_00606600(char * filename)", 
-    "address_range": [
-      [
-        "00606600", 
-        "00606616"
-      ]
-    ], 
-    "name": "crt_stdio.c_remove_FUN_00606600"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 13,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
   "cross_references": [
     {
-      "from_addr": "005ff9d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
-      "addr": "005ff9d0"
+      "addr": "005ff9d0",
+      "from_addr": "005ff9d5",
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00606600",
+    "address_range": [
+      [
+        "00606600",
+        "00606616"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_remove_FUN_00606600",
+    "signature": "int crt_stdio.c_remove_FUN_00606600(char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000054",
+      "name": "DeleteFileA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611524",
+      "name": "PTR_DeleteFileA_00611524",
+      "type": "DeleteFileA*",
+      "value": "00211cc2"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

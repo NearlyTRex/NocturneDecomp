@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 5, 
-    "pseudocode_lines": 5, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 16, 
-    "assembly_lines": 11, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_weather.cpp_CWeather_FUN_005ef8c0", 
-      "addr": "005ef8c0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005eead0", 
-    "signature": "CWeather * core_weather.cpp_CWeather_ctor_FUN_005eead0(CWeather * this_ptr)", 
-    "address_range": [
-      [
-        "005eead0", 
-        "005eeae3"
-      ]
-    ], 
-    "name": "core_weather.cpp_CWeather_ctor_FUN_005eead0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CWeather *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 11,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "005eeaa5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_weather.cpp_staticInit_FUN_005eeaa0", 
-      "addr": "005eeaa0"
+      "addr": "005eeaa0",
+      "from_addr": "005eeaa5",
+      "name": "core_weather.cpp_staticInit_FUN_005eeaa0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005eead0",
+    "address_range": [
+      [
+        "005eead0",
+        "005eeae3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weather.cpp_CWeather_ctor_FUN_005eead0",
+    "signature": "CWeather * core_weather.cpp_CWeather_ctor_FUN_005eead0(CWeather * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ef8c0",
+      "name": "core_weather.cpp_CWeather_FUN_005ef8c0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeather *"
+      }
+    ]
+  },
+  "suspects": []
 }

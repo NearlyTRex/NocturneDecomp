@@ -1,99 +1,99 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 67, 
-    "pseudocode_lines": 22, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 48, 
-    "assembly_lines": 26, 
-    "suspect_count": 4, 
+    "assembly_lines": 26,
+    "complexity_score": 71,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 26,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60", 
-      "addr": "005abb60"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "IDirectSoundCapture*", 
-      "name": "g_RecordingDeviceInterface", 
-      "addr": "03f69c54", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_00000004;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void **in_stack_00000008;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((IUnknown *)g_RecordingDeviceInterface,in_stack_00000004,in_stack_00000008)"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((IUnknown *)g_RecordingDeviceInterface,in_stack_00000004,in_stack_00000008)"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005ab930", 
-    "signature": "int sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930(void)", 
-    "address_range": [
-      [
-        "005ab930", 
-        "005ab964"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 52
+  },
   "cross_references": [
     {
-      "from_addr": "005ab8d0", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0", 
-      "addr": "005ab8d0"
-    }, 
+      "addr": "005ab8d0",
+      "from_addr": "005ab8d0",
+      "name": "sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005abf95", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_readIni_FUN_005abf20", 
-      "addr": "005abf20"
-    }, 
+      "addr": "005abf20",
+      "from_addr": "005abf95",
+      "name": "sound_sndmain.cpp_readIni_FUN_005abf20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005aaed3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0", 
-      "addr": "005aaeb0"
+      "addr": "005aaeb0",
+      "from_addr": "005aaed3",
+      "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005ab930",
+    "address_range": [
+      [
+        "005ab930",
+        "005ab964"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930",
+    "signature": "int sound_sndmain.cpp_releaseRecordingDevice_FUN_005ab930(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005abb60",
+      "name": "sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f69c54",
+      "name": "g_RecordingDeviceInterface",
+      "type": "IDirectSoundCapture*",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "void *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "void **in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "((IUnknown *)g_RecordingDeviceInterface,in_stack_00000004,in_stack_00000008)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "((IUnknown *)g_RecordingDeviceInterface,in_stack_00000004,in_stack_00000008)",
+      "type": "stack_param"
     }
   ]
 }

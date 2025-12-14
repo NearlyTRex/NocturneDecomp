@@ -1,125 +1,125 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 28, 
-    "pseudocode_lines": 28, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 105, 
-    "assembly_lines": 77, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "00496b96", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00496b90", 
-    "signature": "void core_dtrace.cpp_initCapsuleCollisionData_FUN_00496b90(SCapsuleCollision * out_data, float start_x, float start_z, float dir_x, float dir_z, float radius, void * user_data1, void * user_data2)", 
-    "address_range": [
-      [
-        "00496b90", 
-        "00496c51"
-      ]
-    ], 
-    "name": "core_dtrace.cpp_initCapsuleCollisionData_FUN_00496b90"
-  }, 
-  "stack_frame": {
-    "local_size": 28, 
-    "variables": [
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SCapsuleCollision *", 
-        "size": 4, 
-        "name": "out_data"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "start_x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "start_z"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "dir_x"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "dir_z"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "radius"
-      }, 
-      {
-        "offset": 28, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "user_data1"
-      }, 
-      {
-        "offset": 32, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "user_data2"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 60, 
-    "param_offset": 4, 
-    "param_size": 32
-  }, 
+    "assembly_lines": 77,
+    "complexity_score": 28,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 105
+  },
   "cross_references": [
     {
-      "from_addr": "00573caf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470", 
-      "addr": "00573470"
+      "addr": "00573470",
+      "from_addr": "00573caf",
+      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00496b90",
+    "address_range": [
+      [
+        "00496b90",
+        "00496c51"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_initCapsuleCollisionData_FUN_00496b90",
+    "signature": "void core_dtrace.cpp_initCapsuleCollisionData_FUN_00496b90(SCapsuleCollision * out_data, float start_x, float start_z, float dir_x, float dir_z, float radius, void * user_data1, void * user_data2)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 32,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "out_data",
+        "offset": 4,
+        "size": 4,
+        "type": "SCapsuleCollision *"
+      },
+      {
+        "is_param": true,
+        "name": "start_x",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "start_z",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "dir_x",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "dir_z",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "radius",
+        "offset": 24,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "user_data1",
+        "offset": 28,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "user_data2",
+        "offset": 32,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00496b96",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

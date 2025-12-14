@@ -1,411 +1,411 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 386, 
-    "pseudocode_lines": 206, 
-    "cross_reference_count": 2, 
-    "global_count": 23, 
-    "total_lines": 682, 
-    "assembly_lines": 476, 
-    "suspect_count": 17, 
+    "assembly_lines": 476,
+    "complexity_score": 386,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 23,
+    "pseudocode_lines": 206,
+    "suspect_count": 17,
     "suspect_types": [
-      "stack_param", 
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00552150", 
-      "addr": "00552150"
-    }, 
-    {
-      "name": "engine_prim.c_prepareDepthBuffer_FUN_00551fb0", 
-      "addr": "00551fb0"
-    }, 
-    {
-      "name": "engine_prim.c_replaceWWithDepth_FUN_00552110", 
-      "addr": "00552110"
-    }, 
-    {
-      "name": "wincore_windll.cpp_drawPolygon_FUN_005b75e0", 
-      "addr": "005b75e0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_renderScanline_FUN_005b5710", 
-      "addr": "005b5710"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "uint", 
-      "name": "g_VertexProcessingEnabled", 
-      "addr": "006793bc", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_TexturesDisabled", 
-      "addr": "00772a74", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CullingMode", 
-      "addr": "00772a7c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RasterizerDepthBias", 
-      "addr": "02c6d03c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderAbortFlag", 
-      "addr": "02c6d5a8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterXFixed", 
-      "addr": "02d02548", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportCenterYFixed", 
-      "addr": "02d0254c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportRightFixed", 
-      "addr": "02d02550", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ViewportBottomFixed", 
-      "addr": "02d02554", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlags", 
-      "addr": "02d052a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderStateFlag2", 
-      "addr": "02d052a4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderedTriangleCount", 
-      "addr": "030e56b8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RasterizerEdgeCount", 
-      "addr": "03f9ad5c", 
-      "value": null
-    }, 
-    {
-      "type": "SEdgeData[16]", 
-      "name": "g_RasterizerEdgeArray", 
-      "addr": "03f9ad60", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RasterizerEdgeArray[0].y_end", 
-      "addr": "03f9ad64", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RasterizerEdgeArray[0].x_current", 
-      "addr": "03f9ad68", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RasterizerEdgeArray[0].x_delta", 
-      "addr": "03f9ad6c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RasterizerEdgeArray[0].z_current", 
-      "addr": "03f9ad88", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RasterizerEdgeArray[0].z_delta", 
-      "addr": "03f9ad8c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RasterizerEdgeArray[1].y_start", 
-      "addr": "03f9ada8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RasterizerMinY", 
-      "addr": "03f9b1e0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RasterizerMaxY", 
-      "addr": "03f9b1e4", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 18, 
-      "match": "in_stack_ffffffd4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_ffffffd4;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_ffffffd8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "void *in_stack_ffffffd8;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_ffffffdc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffdc;"
-    }, 
-    {
-      "line": 79, 
-      "match": "in_stack_ffffffdc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffdc = vertex_count + iVar11 * 0x30;"
-    }, 
-    {
-      "line": 80, 
-      "match": "in_stack_ffffffdc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar2 = *(int *)(in_stack_ffffffdc + 0x14) >> 0x10;"
-    }, 
-    {
-      "line": 85, 
-      "match": "in_stack_ffffffdc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar10 = in_stack_ffffffdc;"
-    }, 
-    {
-      "line": 86, 
-      "match": "in_stack_ffffffdc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(local_1c + 0x14) < *(int *)(in_stack_ffffffdc + 0x14)) {"
-    }, 
-    {
-      "line": 90, 
-      "match": "in_stack_ffffffdc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_1c = in_stack_ffffffdc;"
-    }, 
-    {
-      "line": 108, 
-      "match": "in_stack_ffffffd4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffd4 = (void *)(uint)(ushort)((ushort)*(uint *)(iVar10 + 0x14) ^ 0xffff);"
-    }, 
-    {
-      "line": 112, 
-      "match": "in_stack_ffffffd4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "lVar1 = (longlong)(int)in_stack_ffffffd4 * (longlong)(int)uVar7;"
-    }, 
-    {
-      "line": 113, 
-      "match": "in_stack_ffffffd8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffd8 = (void *)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);"
-    }, 
-    {
-      "line": 114, 
-      "match": "in_stack_ffffffd8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_RasterizerEdgeArray[iVar8].x_current = *(int *)(iVar10 + 0x10) + (int)in_stack_ffffffd8;"
-    }, 
-    {
-      "line": 119, 
-      "match": "in_stack_ffffffd4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "lVar1 = (longlong)(int)in_stack_ffffffd4 * (longlong)(int)uVar7;"
-    }, 
-    {
-      "line": 193, 
-      "match": "in_stack_ffffffd4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_ffffffd4,in_stack_ffffffd8,in_stack_ffffffdc);"
-    }, 
-    {
-      "line": 193, 
-      "match": "in_stack_ffffffd8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_ffffffd4,in_stack_ffffffd8,in_stack_ffffffdc);"
-    }, 
-    {
-      "line": 193, 
-      "match": "in_stack_ffffffdc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_ffffffd4,in_stack_ffffffd8,in_stack_ffffffdc);"
-    }, 
-    {
-      "line": 204, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (byte *)((int)&(vertex_buffer->projected_vertex).transformed_x + 1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005fcfc0", 
-    "signature": "void engine_3d.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count, int triangle_count)", 
-    "address_range": [
-      [
-        "005fcfc0", 
-        "005fd4b7"
-      ]
-    ], 
-    "name": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0"
-  }, 
-  "stack_frame": {
-    "local_size": 52, 
-    "variables": [
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SRenderVertex *", 
-        "size": 4, 
-        "name": "vertex_buffer"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_count"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "triangle_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 64, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 682
+  },
   "cross_references": [
     {
-      "from_addr": "0048a7fc", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
-      "addr": "0048a740"
-    }, 
+      "addr": "0048a740",
+      "from_addr": "0048a7fc",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048d4ec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410", 
-      "addr": "0048d410"
+      "addr": "0048d410",
+      "from_addr": "0048d4ec",
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005fcfc0",
+    "address_range": [
+      [
+        "005fcfc0",
+        "005fd4b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0",
+    "signature": "void engine_3d.c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex * vertex_buffer, int vertex_count, int triangle_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00552150",
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00552150"
+    },
+    {
+      "addr": "00551fb0",
+      "name": "engine_prim.c_prepareDepthBuffer_FUN_00551fb0"
+    },
+    {
+      "addr": "00552110",
+      "name": "engine_prim.c_replaceWWithDepth_FUN_00552110"
+    },
+    {
+      "addr": "005b75e0",
+      "name": "wincore_windll.cpp_drawPolygon_FUN_005b75e0"
+    },
+    {
+      "addr": "005b5710",
+      "name": "wincore_windll.cpp_renderScanline_FUN_005b5710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006793bc",
+      "name": "g_VertexProcessingEnabled",
+      "type": "uint",
+      "value": "0x1"
+    },
+    {
+      "addr": "00772a74",
+      "name": "g_TexturesDisabled",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00772a7c",
+      "name": "g_CullingMode",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d03c",
+      "name": "g_RasterizerDepthBias",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02c6d5a8",
+      "name": "g_RenderAbortFlag",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02548",
+      "name": "g_ViewportCenterXFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d0254c",
+      "name": "g_ViewportCenterYFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02550",
+      "name": "g_ViewportRightFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d02554",
+      "name": "g_ViewportBottomFixed",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a0",
+      "name": "g_RenderStateFlags",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052a4",
+      "name": "g_RenderStateFlag2",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "030e56b8",
+      "name": "g_RenderedTriangleCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9ad5c",
+      "name": "g_RasterizerEdgeCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9ad60",
+      "name": "g_RasterizerEdgeArray",
+      "type": "SEdgeData[16]",
+      "value": null
+    },
+    {
+      "addr": "03f9ad64",
+      "name": "g_RasterizerEdgeArray[0].y_end",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9ad68",
+      "name": "g_RasterizerEdgeArray[0].x_current",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9ad6c",
+      "name": "g_RasterizerEdgeArray[0].x_delta",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9ad88",
+      "name": "g_RasterizerEdgeArray[0].z_current",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9ad8c",
+      "name": "g_RasterizerEdgeArray[0].z_delta",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9ada8",
+      "name": "g_RasterizerEdgeArray[1].y_start",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9b1e0",
+      "name": "g_RasterizerMinY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9b1e4",
+      "name": "g_RasterizerMaxY",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_ffffffd4",
+      "text": "void *in_stack_ffffffd4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_ffffffd8",
+      "text": "void *in_stack_ffffffd8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_ffffffdc",
+      "text": "int in_stack_ffffffdc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_ffffffdc",
+      "text": "in_stack_ffffffdc = vertex_count + iVar11 * 0x30;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 80,
+      "match": "in_stack_ffffffdc",
+      "text": "iVar2 = *(int *)(in_stack_ffffffdc + 0x14) >> 0x10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_ffffffdc",
+      "text": "iVar10 = in_stack_ffffffdc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 86,
+      "match": "in_stack_ffffffdc",
+      "text": "if (*(int *)(local_1c + 0x14) < *(int *)(in_stack_ffffffdc + 0x14)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_ffffffdc",
+      "text": "local_1c = in_stack_ffffffdc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 108,
+      "match": "in_stack_ffffffd4",
+      "text": "in_stack_ffffffd4 = (void *)(uint)(ushort)((ushort)*(uint *)(iVar10 + 0x14) ^ 0xffff);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_ffffffd4",
+      "text": "lVar1 = (longlong)(int)in_stack_ffffffd4 * (longlong)(int)uVar7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_ffffffd8",
+      "text": "in_stack_ffffffd8 = (void *)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 114,
+      "match": "in_stack_ffffffd8",
+      "text": "g_RasterizerEdgeArray[iVar8].x_current = *(int *)(iVar10 + 0x10) + (int)in_stack_ffffffd8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 119,
+      "match": "in_stack_ffffffd4",
+      "text": "lVar1 = (longlong)(int)in_stack_ffffffd4 * (longlong)(int)uVar7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 193,
+      "match": "in_stack_ffffffd4",
+      "text": "(in_stack_ffffffd4,in_stack_ffffffd8,in_stack_ffffffdc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 193,
+      "match": "in_stack_ffffffd8",
+      "text": "(in_stack_ffffffd4,in_stack_ffffffd8,in_stack_ffffffdc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 193,
+      "match": "in_stack_ffffffdc",
+      "text": "(in_stack_ffffffd4,in_stack_ffffffd8,in_stack_ffffffdc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 204,
+      "match": "(byte *)((int)",
+      "text": "puVar4 = (byte *)((int)&(vertex_buffer->projected_vertex).transformed_x + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

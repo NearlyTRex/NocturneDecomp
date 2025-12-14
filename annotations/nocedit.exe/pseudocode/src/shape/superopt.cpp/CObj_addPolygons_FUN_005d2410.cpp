@@ -20,8 +20,8 @@ int __cdecl shape_superopt_cpp_CObj_addPolygons_FUN_005d2410(CObj *this_ptr,int 
   uint local_10;
   
   bVar6 = 0;
-  pCVar1 = (CPoly *)crt_memory_c_realloc_FUN_00601df0
-                              (this_ptr->poly_array,(this_ptr->poly_count + add_count) * 0x68);
+  pCVar1 = crt_memory_c_realloc_FUN_00601df0
+                     (this_ptr->poly_array,(this_ptr->poly_count + add_count) * 0x68);
   if (pCVar1 != (CPoly *)0x0) {
     this_ptr->poly_array = pCVar1;
     shape_superopt_cpp_CPoly_ctor_FUN_005cc620(&local_78);

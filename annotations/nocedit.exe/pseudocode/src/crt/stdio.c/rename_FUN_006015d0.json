@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 3, 
-    "global_count": 1, 
-    "total_lines": 29, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
-      "addr": "006083fc"
-    }, 
-    {
-      "name": "MoveFileA", 
-      "addr": "EXTERNAL:00000087"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "MoveFileA*", 
-      "name": "PTR_MoveFileA_006115f0", 
-      "addr": "006115f0", 
-      "value": "00212086"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "006015d0", 
-    "signature": "int crt_stdio.c_rename_FUN_006015d0(char * old_filename, char * new_filename)", 
-    "address_range": [
-      [
-        "006015d0", 
-        "006015f0"
-      ]
-    ], 
-    "name": "crt_stdio.c_rename_FUN_006015d0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "old_filename"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "new_filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 18,
+    "complexity_score": 11,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 1,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
   "cross_references": [
     {
-      "from_addr": "004b49d2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
-      "addr": "004b4220"
-    }, 
+      "addr": "004b4220",
+      "from_addr": "004b49d2",
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004bbaa9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
-      "addr": "004baf00"
-    }, 
+      "addr": "004baf00",
+      "from_addr": "004bbaa9",
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004fb87d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004fb660", 
-      "addr": "004fb660"
+      "addr": "004fb660",
+      "from_addr": "004fb87d",
+      "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004fb660",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "006015d0",
+    "address_range": [
+      [
+        "006015d0",
+        "006015f0"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_stdio.c_rename_FUN_006015d0",
+    "signature": "int crt_stdio.c_rename_FUN_006015d0(char * old_filename, char * new_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "006083fc",
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc"
+    },
+    {
+      "addr": "EXTERNAL:00000087",
+      "name": "MoveFileA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006115f0",
+      "name": "PTR_MoveFileA_006115f0",
+      "type": "MoveFileA*",
+      "value": "00212086"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "old_filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "new_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

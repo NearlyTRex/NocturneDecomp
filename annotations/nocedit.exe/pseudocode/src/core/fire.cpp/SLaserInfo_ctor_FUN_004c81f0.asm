@@ -27,7 +27,7 @@ section .text
     MOV dword ptr [EAX + 0x14],0x0      ; 004c820f
     MOV dword ptr [EAX + 0x18],0x0      ; 004c8216
     MOV dword ptr [EAX + 0x1c],0x0      ; 004c821d
-    MOV EDX,dword ptr [0x0065dcc0]      ; 004c8224 | undefined4 DAT_0065dcc0
+    MOV EDX,dword ptr [0x0065dcc0]      ; 004c8224 | DAT_0065dcc0
     MOV dword ptr [EAX + 0x4],EDX       ; 004c822a
     RET                                 ; 004c822d
 

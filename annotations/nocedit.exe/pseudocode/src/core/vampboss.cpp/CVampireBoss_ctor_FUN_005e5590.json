@@ -1,92 +1,92 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 38, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 103, 
-    "assembly_lines": 65, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_cloth.cpp_FUN_00438ba0", 
-      "addr": "00438ba0"
-    }, 
-    {
-      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
-      "addr": "004a9500"
-    }, 
-    {
-      "name": "core_morph.cpp_FUN_0052b310", 
-      "addr": "0052b310"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0", 
-      "addr": "0059ddc0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
-      "addr": "005a0840"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_nosfer_dfm_00656ac5", 
-      "addr": "00656ac5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_batboss_dfm_00656ad0", 
-      "addr": "00656ad0", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonActor_vtable", 
-      "name": "g_CVampireBossVTable", 
-      "addr": "00664e94", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005e5590", 
-    "signature": "CVampireBoss * core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590(CVampireBoss * this_ptr)", 
-    "address_range": [
-      [
-        "005e5590", 
-        "005e56bf"
-      ]
-    ], 
-    "name": "core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CVampireBoss *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 65,
+    "complexity_score": 38,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 3,
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 103
+  },
   "cross_references": [
     {
-      "from_addr": "005e556a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_vampboss.cpp_FUN_005e5550", 
-      "addr": "005e5550"
+      "addr": "005e5550",
+      "from_addr": "005e556a",
+      "name": "core_vampboss.cpp_FUN_005e5550",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005e5590",
+    "address_range": [
+      [
+        "005e5590",
+        "005e56bf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590",
+    "signature": "CVampireBoss * core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590(CVampireBoss * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00438ba0",
+      "name": "core_cloth.cpp_FUN_00438ba0"
+    },
+    {
+      "addr": "004a9500",
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500"
+    },
+    {
+      "addr": "0052b310",
+      "name": "core_morph.cpp_FUN_0052b310"
+    },
+    {
+      "addr": "0059ddc0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0"
+    },
+    {
+      "addr": "005a0840",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00656ac5",
+      "name": "s_nosfer_dfm_00656ac5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00656ad0",
+      "name": "s_batboss_dfm_00656ad0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00664e94",
+      "name": "g_CVampireBossVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      }
+    ]
+  },
+  "suspects": []
 }

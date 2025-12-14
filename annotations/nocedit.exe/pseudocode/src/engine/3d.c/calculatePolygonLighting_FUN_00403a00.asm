@@ -38,10 +38,10 @@ section .text
     PUSH ECX                            ; 00403a0c
     MOV EBX,dword ptr [EAX + 0x8]       ; 00403a0d
     PUSH EBX                            ; 00403a10
-    CALL engine_light.cpp_calculateLighting_FUN_00505780 ; 00403a11 | int engine_light.cpp_calculateLighting_FUN_00505780(int normal_x, int normal_y, int normal_z)
-        ;   XREF to: 00505780 (UNCONDITIONAL_CALL)
+    CALL engine_light.cpp_calculateLighting_FUN_00505780 ; 00403a11
+        ;   XREF to: 00505780 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_00505780(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 00403a16
-    MOV [0x02d02574],EAX                ; 00403a19 | int g_CurrentLightingValue
+    MOV [0x02d02574],EAX                ; 00403a19 | g_CurrentLightingValue
     POP EBX                             ; 00403a1e
     RET                                 ; 00403a1f
 

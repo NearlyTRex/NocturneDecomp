@@ -20,8 +20,8 @@ section .text
 
     PUSH 0x31c                          ; 005896b0
         ;   Label: core_skeledit.cpp_FUN_005896b0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 005896b5 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 005896b5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
     SUB ESP,0x304                       ; 005896ba
     LEA EAX,[ESP + 0x100]               ; 005896c0
     PUSH EAX                            ; 005896c7
@@ -33,12 +33,12 @@ section .text
     PUSH EAX                            ; 005896dc
     MOV EDX,dword ptr [ESP + 0x318]     ; 005896dd
     PUSH EDX                            ; 005896e4
-    CALL crt_string.c_splitpath_FUN_005ff178 ; 005896e5 | void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
-        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_splitpath_FUN_005ff178 ; 005896e5
+        ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 005896ea
     CMP byte ptr [ESP + 0x100],0x0      ; 005896ed
-    JZ 0x005896fe                       ; 005896f5 | LAB_005896fe
-        ;   XREF to: 005896fe (CONDITIONAL_JUMP)
+    JZ 0x005896fe                       ; 005896f5
+        ;   XREF to: 005896fe (CONDITIONAL_JUMP)  ; LAB_005896fe
     ADD ESP,0x304                       ; 005896f7
     RET                                 ; 005896fd
     PUSH EBX                            ; 005896fe
@@ -53,8 +53,8 @@ section .text
     PUSH EAX                            ; 0058971b
     MOV EBX,dword ptr [ESP + 0x31c]     ; 0058971c
     PUSH EBX                            ; 00589723
-    CALL crt_file.c_makepath_FUN_005febfc ; 00589724 | void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
-        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)
+    CALL crt_file.c_makepath_FUN_005febfc ; 00589724
+        ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00589729
     POP EBX                             ; 0058972c
     ADD ESP,0x304                       ; 0058972d

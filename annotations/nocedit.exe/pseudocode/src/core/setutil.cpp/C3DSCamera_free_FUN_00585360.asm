@@ -26,17 +26,17 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00585361
     MOV EDX,dword ptr [EBX + 0x198]     ; 00585365
     TEST EDX,EDX                        ; 0058536b
-    JNZ 0x0058537b                      ; 0058536d | LAB_0058537b
-        ;   XREF to: 0058537b (CONDITIONAL_JUMP)
+    JNZ 0x0058537b                      ; 0058536d
+        ;   XREF to: 0058537b (CONDITIONAL_JUMP)  ; LAB_0058537b
     MOV dword ptr [EBX + 0x194],0x0     ; 0058536f
     POP EBX                             ; 00585379
     RET                                 ; 0058537a
     PUSH 0x61                           ; 0058537b
         ;   Label: LAB_0058537b
-    PUSH 0x6491bb                       ; 0058537d | = "..\\core\\setutil.cpp" | s_core_setutil_cpp_006491bb = ..\core\setutil.cpp
+    PUSH 0x6491bb                       ; 0058537d | = "..\\core\\setutil.cpp"
     PUSH EDX                            ; 00585382
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00585383 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00585383
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 00585388
     MOV dword ptr [EBX + 0x198],0x0     ; 0058538b
     MOV dword ptr [EBX + 0x194],0x0     ; 00585395

@@ -17,7 +17,7 @@
 
 section .text
 
-    CALL dword ptr [0x00685598]         ; 0060e878 | void * PTR_crt_thread.c_exit_thread_FUN_0060fa58_00685598
+    CALL dword ptr [0x00685598]         ; 0060e878 | PTR_crt_thread.c_exit_thread_FUN_0060fa58_00685598
         ;   Label: crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878
     RET                                 ; 0060e87e
 

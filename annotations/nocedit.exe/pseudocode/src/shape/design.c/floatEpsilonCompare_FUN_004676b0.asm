@@ -30,11 +30,11 @@ section .text
     FCOMP float ptr [EBP + 0x1c]        ; 004676ca
     FNSTSW AX                           ; 004676cd
     SAHF                                ; 004676cf
-    JNC 0x004676db                      ; 004676d0 | LAB_004676db
-        ;   XREF to: 004676db (CONDITIONAL_JUMP)
+    JNC 0x004676db                      ; 004676d0
+        ;   XREF to: 004676db (CONDITIONAL_JUMP)  ; LAB_004676db
     MOV dword ptr [EBP + -0x8],0x1      ; 004676d2
-    JMP 0x004676e2                      ; 004676d9 | LAB_004676e2
-        ;   XREF to: 004676e2 (UNCONDITIONAL_JUMP)
+    JMP 0x004676e2                      ; 004676d9
+        ;   XREF to: 004676e2 (UNCONDITIONAL_JUMP)  ; LAB_004676e2
     MOV dword ptr [EBP + -0x8],0x0      ; 004676db
         ;   Label: LAB_004676db
     MOV EAX,dword ptr [EBP + -0x8]      ; 004676e2

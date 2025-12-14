@@ -1,165 +1,165 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 125, 
-    "pseudocode_lines": 50, 
-    "cross_reference_count": 0, 
-    "global_count": 7, 
-    "total_lines": 147, 
-    "assembly_lines": 97, 
-    "suspect_count": 6, 
+    "assembly_lines": 97,
+    "complexity_score": 125,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 50,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_strcmp_FUN_005fef20", 
-      "addr": "005fef20"
-    }, 
-    {
-      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0", 
-      "addr": "004032c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Part_name_0061b4a2", 
-      "addr": "0061b4a2", 
-      "value": null
-    }, 
-    {
-      "type": "SModelPartName[500]", 
-      "name": "g_ModelPartNames", 
-      "addr": "01e50190", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e50191", 
-      "addr": "01e50191", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e50192", 
-      "addr": "01e50192", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_01e50193", 
-      "addr": "01e50193", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_PartsCount", 
-      "addr": "01e528a0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentPartIndex", 
-      "addr": "01e6614c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 7, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 15, 
-      "match": "&stack0xffffffd4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_getInputWithPrompt_FUN_004032c0(&stack0xffffffd4,0x13,0,0xb,\"Part name : \");"
-    }, 
-    {
-      "line": 17, 
-      "match": "&stack0xffffffd4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar3 = &stack0xffffffd4;"
-    }, 
-    {
-      "line": 27, 
-      "match": "&stack0xffffffd4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "iVar2 = crt_string_c_strcmp_FUN_005fef20(&stack0xffffffd4,g_ModelPartNames[local_18].name);"
-    }, 
-    {
-      "line": 34, 
-      "match": "&stack0xffffffd4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar3 = &stack0xffffffd4;"
-    }
-  ], 
+      "stack_ref",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 147
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0045de80", 
-    "signature": "undefined shape_design.c_selectModelPart_FUN_0045de80()", 
+    "address": "0045de80",
     "address_range": [
       [
-        "0045de80", 
+        "0045de80",
         "0045df53"
       ]
-    ], 
-    "name": "shape_design.c_selectModelPart_FUN_0045de80"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "shape_design.c_selectModelPart_FUN_0045de80",
+    "signature": "undefined shape_design.c_selectModelPart_FUN_0045de80()"
+  },
+  "function_calls": [
+    {
+      "addr": "005fef20",
+      "name": "crt_string.c_strcmp_FUN_005fef20"
+    },
+    {
+      "addr": "004032c0",
+      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b4a2",
+      "name": "s_Part_name_0061b4a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01e50190",
+      "name": "g_ModelPartNames",
+      "type": "SModelPartName[500]",
+      "value": null
+    },
+    {
+      "addr": "01e50191",
+      "name": "DAT_01e50191",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e50192",
+      "name": "DAT_01e50192",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e50193",
+      "name": "DAT_01e50193",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e528a0",
+      "name": "g_PartsCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "01e6614c",
+      "name": "g_CurrentPartIndex",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 48, 
+    "frame_size": 48,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_2c"
-      }, 
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined"
+      },
       {
-        "offset": -43, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_2b"
-      }, 
+        "is_param": false,
+        "name": "local_2b",
+        "offset": -43,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 48, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 7,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 7,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xffffffd4",
+      "text": "engine_2d_c_getInputWithPrompt_FUN_004032c0(&stack0xffffffd4,0x13,0,0xb,\"Part name : \");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xffffffd4",
+      "text": "pcVar3 = &stack0xffffffd4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xffffffd4",
+      "text": "iVar2 = crt_string_c_strcmp_FUN_005fef20(&stack0xffffffd4,g_ModelPartNames[local_18].name);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xffffffd4",
+      "text": "pcVar3 = &stack0xffffffd4;",
+      "type": "stack_ref"
+    }
+  ]
 }

@@ -1,169 +1,169 @@
 {
   "complexity": {
-    "function_call_count": 5, 
-    "complexity_score": 87, 
-    "pseudocode_lines": 32, 
-    "cross_reference_count": 3, 
-    "global_count": 6, 
-    "total_lines": 98, 
-    "assembly_lines": 66, 
-    "suspect_count": 4, 
+    "assembly_lines": 66,
+    "complexity_score": 86,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 6,
+    "pseudocode_lines": 31,
+    "suspect_count": 4,
     "suspect_types": [
-      "stack_param", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60", 
-      "addr": "0054bd60"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_memory.c_constructTypedObjectArray_FUN_00601272", 
-      "addr": "00601272"
-    }, 
-    {
-      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
-      "addr": "005fdbd0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
-      "addr": "0050f1f0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbmpset_cpp_0063f3b6", 
-      "addr": "0063f3b6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_allocate_u_byt_0063f3ce", 
-      "addr": "0063f3ce", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_cockpit_pkbmpset_cpp_0063f41b", 
-      "addr": "0063f41b", 
-      "value": null
-    }, 
-    {
-      "type": "WatcomTypeInfo", 
-      "name": "g_CPackedBitmapTypeInfo", 
-      "addr": "00662260", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_ffffff34", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "WatcomTypeInfo *in_stack_ffffff34;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_ffffff34", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(array_memory,(int)element_count,in_stack_ffffff34);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0054bdb0", 
-    "signature": "void cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0(CPackedBitmapSet * this_ptr, int bitmap_count)", 
-    "address_range": [
-      [
-        "0054bdb0", 
-        "0054be60"
-      ]
-    ], 
-    "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0"
-  }, 
-  "stack_frame": {
-    "local_size": 212, 
-    "variables": [
-      {
-        "offset": -208, 
-        "is_param": false, 
-        "type": "undefined", 
-        "size": 1, 
-        "name": "local_d0"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmapSet *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bitmap_count"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 220, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "register_param",
+      "stack_param",
+      "badspacebase"
+    ],
+    "total_lines": 97
+  },
   "cross_references": [
     {
-      "from_addr": "0054bea2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70", 
-      "addr": "0054be70"
-    }, 
+      "addr": "0054be70",
+      "from_addr": "0054bea2",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054c016", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40", 
-      "addr": "0054bf40"
-    }, 
+      "addr": "0054bf40",
+      "from_addr": "0054c016",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054c404", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0", 
-      "addr": "0054c3d0"
+      "addr": "0054c3d0",
+      "from_addr": "0054c404",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054bdb0",
+    "address_range": [
+      [
+        "0054bdb0",
+        "0054be60"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0",
+    "signature": "void cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0(CPackedBitmapSet * this_ptr, int bitmap_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054bd60",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00601272",
+      "name": "crt_memory.c_constructTypedObjectArray_FUN_00601272"
+    },
+    {
+      "addr": "005fdbd0",
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    },
+    {
+      "addr": "0050f1f0",
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063f3b6",
+      "name": "s_cockpit_pkbmpset_cpp_0063f3b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f3ce",
+      "name": "s_Unable_to_allocate_u_byt_0063f3ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063f41b",
+      "name": "s_cockpit_pkbmpset_cpp_0063f41b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00662260",
+      "name": "g_CPackedBitmapTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 220,
+    "local_size": 212,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmapSet *"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_ffffff34",
+      "text": "WatcomTypeInfo *in_stack_ffffff34;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_ffffff34",
+      "text": "(array_memory,(int)element_count,in_stack_ffffff34);",
+      "type": "stack_param"
     }
   ]
 }

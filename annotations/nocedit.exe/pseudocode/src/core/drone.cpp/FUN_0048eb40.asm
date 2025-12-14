@@ -11,7 +11,7 @@
 
 section .text
 
-    MOV EAX,0x2c9b2ec                   ; 0048eb40 | CDemonActorType g_CDroneClassInfo
+    MOV EAX,0x2c9b2ec                   ; 0048eb40 | g_CDroneClassInfo
         ;   Label: core_drone.cpp_FUN_0048eb40
     RET                                 ; 0048eb45
 

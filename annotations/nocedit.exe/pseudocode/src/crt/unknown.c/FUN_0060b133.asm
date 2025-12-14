@@ -17,8 +17,8 @@ section .text
     PUSH EDX                            ; 0060b133
         ;   Label: crt_unknown.c_FUN_0060b133
     PUSH EAX                            ; 0060b134
-    CALL crt_unknown.c_FUN_0060b0c8     ; 0060b135 | undefined crt_unknown.c_FUN_0060b0c8()
-        ;   XREF to: 0060b0c8 (UNCONDITIONAL_CALL)
+    CALL crt_unknown.c_FUN_0060b0c8     ; 0060b135
+        ;   XREF to: 0060b0c8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060b0c8()
     ADD ESP,0x8                         ; 0060b13a
     POP EDI                             ; 0060b13d
     POP ESI                             ; 0060b13e

@@ -70,6 +70,6 @@ section .text
     MOV EDX,dword ptr [EBP + 0x92]      ; 00508a7f
     PUSH EDX                            ; 00508a85
     MOV EBX,dword ptr [EBP + 0x92]      ; 00508a86
-    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 00508a8c | void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
-        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 00508a8c
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
 

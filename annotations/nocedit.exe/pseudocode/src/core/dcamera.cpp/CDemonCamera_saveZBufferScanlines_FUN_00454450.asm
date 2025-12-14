@@ -27,8 +27,8 @@ section .text
     MOV EDX,dword ptr [ESI + 0x148]     ; 00454456
     XOR EBX,EBX                         ; 0045445c
     TEST EDX,EDX                        ; 0045445e
-    JLE 0x0045449d                      ; 00454460 | LAB_0045449d
-        ;   XREF to: 0045449d (CONDITIONAL_JUMP)
+    JLE 0x0045449d                      ; 00454460
+        ;   XREF to: 0045449d (CONDITIONAL_JUMP)  ; LAB_0045449d
     PUSH EDI                            ; 00454462
     XOR EDI,EDI                         ; 00454463
     MOV ECX,dword ptr [ESI + 0x144]     ; 00454465
@@ -39,16 +39,16 @@ section .text
     MOV EAX,dword ptr [ESI + 0x15c]     ; 00454477
     PUSH EDX                            ; 0045447d
     SHL ECX,0x2                         ; 0045447e
-    MOV EDX,dword ptr [EDI + 0x2cf7d5c] ; 00454481 | uint *[1024] g_ZBufferScanlineArray
+    MOV EDX,dword ptr [EDI + 0x2cf7d5c] ; 00454481 | g_ZBufferScanlineArray | g_ZBufferScanlineArray[1]
     ADD ECX,EAX                         ; 00454487
     INC EBX                             ; 00454489
-    CALL core_event.cpp_FUN_004b1a78    ; 0045448a | void core_event.cpp_FUN_004b1a78()
-        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)
+    CALL core_event.cpp_FUN_004b1a78    ; 0045448a
+        ;   XREF to: 004b1a78 (UNCONDITIONAL_CALL)  ; void core_event.cpp_FUN_004b1a78()
     MOV ECX,dword ptr [ESI + 0x148]     ; 0045448f
     ADD EDI,0x4                         ; 00454495
     CMP EBX,ECX                         ; 00454498
-    JL 0x00454465                       ; 0045449a | LAB_00454465
-        ;   XREF to: 00454465 (CONDITIONAL_JUMP)
+    JL 0x00454465                       ; 0045449a
+        ;   XREF to: 00454465 (CONDITIONAL_JUMP)  ; LAB_00454465
     POP EDI                             ; 0045449c
     POP ESI                             ; 0045449d
         ;   Label: LAB_0045449d

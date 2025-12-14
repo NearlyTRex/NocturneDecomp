@@ -68,8 +68,8 @@ section .text
     MOV dword ptr [EBP + 0x4a],EDX      ; 005c8e90
     MOV dword ptr [EBP + 0x4e],EDX      ; 005c8e93
     TEST EAX,EAX                        ; 005c8e96
-    JBE 0x005c8fff                      ; 005c8e98 | LAB_005c8fff
-        ;   XREF to: 005c8fff (CONDITIONAL_JUMP)
+    JBE 0x005c8fff                      ; 005c8e98
+        ;   XREF to: 005c8fff (CONDITIONAL_JUMP)  ; LAB_005c8fff
     LEA EAX,[EBX + 0x14]                ; 005c8e9e
     MOV dword ptr [EBP + 0x5e],EDX      ; 005c8ea1
     MOV dword ptr [EBP + 0x6a],EAX      ; 005c8ea4
@@ -184,16 +184,16 @@ section .text
     PUSH EAX                            ; 005c8fca
     PUSH EBX                            ; 005c8fcb
     MOV dword ptr [EBP + 0x66],EDX      ; 005c8fcc
-    CALL shape_superopt.cpp_FUN_005c9aa0 ; 005c8fcf | undefined shape_superopt.cpp_FUN_005c9aa0()
-        ;   XREF to: 005c9aa0 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_FUN_005c9aa0 ; 005c8fcf
+        ;   XREF to: 005c9aa0 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c9aa0()
     MOV EDI,dword ptr [EBP + 0x5a]      ; 005c8fd4
     ADD ESP,0x1c                        ; 005c8fd7
     TEST EDI,EDI                        ; 005c8fda
-    JZ 0x005c8fe4                       ; 005c8fdc | LAB_005c8fe4
-        ;   XREF to: 005c8fe4 (CONDITIONAL_JUMP)
+    JZ 0x005c8fe4                       ; 005c8fdc
+        ;   XREF to: 005c8fe4 (CONDITIONAL_JUMP)  ; LAB_005c8fe4
     CMP dword ptr [EBP + 0x72],0x0      ; 005c8fde
-    JNZ 0x005c900a                      ; 005c8fe2 | LAB_005c900a
-        ;   XREF to: 005c900a (CONDITIONAL_JUMP)
+    JNZ 0x005c900a                      ; 005c8fe2
+        ;   XREF to: 005c900a (CONDITIONAL_JUMP)  ; LAB_005c900a
     MOV EDX,dword ptr [EBP + 0x5e]      ; 005c8fe4
         ;   Label: LAB_005c8fe4
     MOV ECX,dword ptr [EBP + 0x62]      ; 005c8fe7
@@ -203,8 +203,8 @@ section .text
     MOV dword ptr [EBP + 0x5e],EDX      ; 005c8ff1
     MOV dword ptr [EBP + 0x62],ECX      ; 005c8ff4
     CMP ECX,ESI                         ; 005c8ff7
-    JC 0x005c8ea7                       ; 005c8ff9 | LAB_005c8ea7
-        ;   XREF to: 005c8ea7 (CONDITIONAL_JUMP)
+    JC 0x005c8ea7                       ; 005c8ff9
+        ;   XREF to: 005c8ea7 (CONDITIONAL_JUMP)  ; LAB_005c8ea7
     MOV EAX,dword ptr [EBP + 0x6e]      ; 005c8fff
         ;   Label: LAB_005c8fff
     LEA ESP,[EBP + 0x76]                ; 005c9002
@@ -222,12 +222,12 @@ section .text
     PUSH EDX                            ; 005c901a
     PUSH EBX                            ; 005c901b
     MOV ESI,EDI                         ; 005c901c
-    CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c901e | undefined shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
-        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c901e
+        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
     ADD ESP,0x10                        ; 005c9023
     TEST EAX,EAX                        ; 005c9026
-    JZ 0x005c90e7                       ; 005c9028 | LAB_005c90e7
-        ;   XREF to: 005c90e7 (CONDITIONAL_JUMP)
+    JZ 0x005c90e7                       ; 005c9028
+        ;   XREF to: 005c90e7 (CONDITIONAL_JUMP)  ; LAB_005c90e7
     PUSH 0x1                            ; 005c902e
         ;   Label: LAB_005c902e
     LEA EAX,[EBP + 0x72]                ; 005c9030
@@ -235,27 +235,27 @@ section .text
     MOV ECX,dword ptr [EBP + 0x92]      ; 005c9034
     PUSH ECX                            ; 005c903a
     PUSH EBX                            ; 005c903b
-    CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c903c | undefined shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
-        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590 ; 005c903c
+        ;   XREF to: 005ca590 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590()
     ADD ESP,0x10                        ; 005c9041
     TEST EAX,EAX                        ; 005c9044
-    JZ 0x005c90ee                       ; 005c9046 | LAB_005c90ee
-        ;   XREF to: 005c90ee (CONDITIONAL_JUMP)
+    JZ 0x005c90ee                       ; 005c9046
+        ;   XREF to: 005c90ee (CONDITIONAL_JUMP)  ; LAB_005c90ee
     TEST EDI,EDI                        ; 005c904c
         ;   Label: LAB_005c904c
-    JNZ 0x005c9058                      ; 005c904e | LAB_005c9058
-        ;   XREF to: 005c9058 (CONDITIONAL_JUMP)
+    JNZ 0x005c9058                      ; 005c904e
+        ;   XREF to: 005c9058 (CONDITIONAL_JUMP)  ; LAB_005c9058
     TEST ESI,ESI                        ; 005c9050
-    JZ 0x005c90f5                       ; 005c9052 | LAB_005c90f5
-        ;   XREF to: 005c90f5 (CONDITIONAL_JUMP)
+    JZ 0x005c90f5                       ; 005c9052
+        ;   XREF to: 005c90f5 (CONDITIONAL_JUMP)  ; LAB_005c90f5
     MOV ESI,dword ptr [EBP + 0x5a]      ; 005c9058
         ;   Label: LAB_005c9058
     PUSH ESI                            ; 005c905b
     MOV EDI,dword ptr [EBP + 0x8e]      ; 005c905c
     PUSH EDI                            ; 005c9062
     PUSH EBX                            ; 005c9063
-    CALL shape_superopt.cpp_FUN_005c9100 ; 005c9064 | undefined shape_superopt.cpp_FUN_005c9100()
-        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_FUN_005c9100 ; 005c9064
+        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c9100()
     MOV dword ptr [EBP + 0x52],EAX      ; 005c9069
     MOV dword ptr [EBP + 0x56],EDX      ; 005c906c
     ADD ESP,0xc                         ; 005c906f
@@ -267,8 +267,8 @@ section .text
     FCOMP double ptr [EBP + 0x4a]       ; 005c9081
     FNSTSW AX                           ; 005c9084
     SAHF                                ; 005c9086
-    JBE 0x005c909b                      ; 005c9087 | LAB_005c909b
-        ;   XREF to: 005c909b (CONDITIONAL_JUMP)
+    JBE 0x005c909b                      ; 005c9087
+        ;   XREF to: 005c909b (CONDITIONAL_JUMP)  ; LAB_005c909b
     MOV EAX,dword ptr [EBP + 0x42]      ; 005c9089
     MOV dword ptr [EBP + 0x4a],EAX      ; 005c908c
     MOV EAX,dword ptr [EBP + 0x46]      ; 005c908f
@@ -281,8 +281,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x92]      ; 005c909f
     PUSH EDX                            ; 005c90a5
     PUSH EBX                            ; 005c90a6
-    CALL shape_superopt.cpp_FUN_005c9100 ; 005c90a7 | undefined shape_superopt.cpp_FUN_005c9100()
-        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)
+    CALL shape_superopt.cpp_FUN_005c9100 ; 005c90a7
+        ;   XREF to: 005c9100 (UNCONDITIONAL_CALL)  ; undefined shape_superopt.cpp_FUN_005c9100()
     MOV dword ptr [EBP + 0x52],EAX      ; 005c90ac
     MOV dword ptr [EBP + 0x56],EDX      ; 005c90af
     ADD ESP,0xc                         ; 005c90b2
@@ -294,24 +294,24 @@ section .text
     FCOMP double ptr [EBP + 0x4a]       ; 005c90c4
     FNSTSW AX                           ; 005c90c7
     SAHF                                ; 005c90c9
-    JBE 0x005c8fe4                      ; 005c90ca | LAB_005c8fe4
-        ;   XREF to: 005c8fe4 (CONDITIONAL_JUMP)
+    JBE 0x005c8fe4                      ; 005c90ca
+        ;   XREF to: 005c8fe4 (CONDITIONAL_JUMP)  ; LAB_005c8fe4
     MOV EAX,dword ptr [EBP + 0x32]      ; 005c90d0
     MOV dword ptr [EBP + 0x4a],EAX      ; 005c90d3
     MOV EAX,dword ptr [EBP + 0x36]      ; 005c90d6
     MOV dword ptr [EBP + 0x4e],EAX      ; 005c90d9
     MOV EAX,dword ptr [EBP + 0x66]      ; 005c90dc
     MOV dword ptr [EBP + 0x6e],EAX      ; 005c90df
-    JMP 0x005c8fe4                      ; 005c90e2 | LAB_005c8fe4
-        ;   XREF to: 005c8fe4 (UNCONDITIONAL_JUMP)
+    JMP 0x005c8fe4                      ; 005c90e2
+        ;   XREF to: 005c8fe4 (UNCONDITIONAL_JUMP)  ; LAB_005c8fe4
     XOR EDI,EDI                         ; 005c90e7
         ;   Label: LAB_005c90e7
-    JMP 0x005c902e                      ; 005c90e9 | LAB_005c902e
-        ;   XREF to: 005c902e (UNCONDITIONAL_JUMP)
+    JMP 0x005c902e                      ; 005c90e9
+        ;   XREF to: 005c902e (UNCONDITIONAL_JUMP)  ; LAB_005c902e
     XOR ESI,ESI                         ; 005c90ee
         ;   Label: LAB_005c90ee
-    JMP 0x005c904c                      ; 005c90f0 | LAB_005c904c
-        ;   XREF to: 005c904c (UNCONDITIONAL_JUMP)
+    JMP 0x005c904c                      ; 005c90f0
+        ;   XREF to: 005c904c (UNCONDITIONAL_JUMP)  ; LAB_005c904c
     XOR EAX,EAX                         ; 005c90f5
         ;   Label: LAB_005c90f5
     LEA ESP,[EBP + 0x76]                ; 005c90f7

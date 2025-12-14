@@ -1,141 +1,141 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 54, 
-    "pseudocode_lines": 29, 
-    "cross_reference_count": 2, 
-    "global_count": 7, 
-    "total_lines": 102, 
-    "assembly_lines": 73, 
-    "suspect_count": 2, 
+    "assembly_lines": 73,
+    "complexity_score": 54,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 7,
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623b6b", 
-      "addr": "00623b6b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CPickList_setItemHotKey__00623b81", 
-      "addr": "00623b81", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623baa", 
-      "addr": "00623baa", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_edittool_cpp_00623bc0", 
-      "addr": "00623bc0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_00623bd6", 
-      "addr": "00623bd6", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000010;"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "this_ptr->hotkey_array[item_index] = in_stack_00000010;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a5540", 
-    "signature": "void shape_edittool.cpp_CPickList_setItemHotKey_FUN_004a5540(CPickList * this_ptr, int item_index, int hotkey_code)", 
-    "address_range": [
-      [
-        "004a5540", 
-        "004a5601"
-      ]
-    ], 
-    "name": "shape_edittool.cpp_CPickList_setItemHotKey_FUN_004a5540"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPickList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "item_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "hotkey_code"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+    ],
+    "total_lines": 102
+  },
   "cross_references": [
     {
-      "from_addr": "00578889", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630", 
-      "addr": "00578630"
-    }, 
+      "addr": "00578630",
+      "from_addr": "00578889",
+      "name": "core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004b3048", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90", 
-      "addr": "004b2f90"
+      "addr": "004b2f90",
+      "from_addr": "004b3048",
+      "name": "engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a5540",
+    "address_range": [
+      [
+        "004a5540",
+        "004a5601"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CPickList_setItemHotKey_FUN_004a5540",
+    "signature": "void shape_edittool.cpp_CPickList_setItemHotKey_FUN_004a5540(CPickList * this_ptr, int item_index, int hotkey_code)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00623b6b",
+      "name": "s_shape_edittool_cpp_00623b6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623b81",
+      "name": "s_CPickList_setItemHotKey__00623b81",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623baa",
+      "name": "s_shape_edittool_cpp_00623baa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623bc0",
+      "name": "s_shape_edittool_cpp_00623bc0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00623bd6",
+      "name": "s_Out_of_memory_00623bd6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      },
+      {
+        "is_param": true,
+        "name": "item_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "hotkey_code",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000010",
+      "text": "this_ptr->hotkey_array[item_index] = in_stack_00000010;",
+      "type": "stack_param"
     }
   ]
 }

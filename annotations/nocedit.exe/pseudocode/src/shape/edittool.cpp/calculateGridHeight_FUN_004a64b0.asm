@@ -20,12 +20,12 @@
 
 section .text
 
-    CALL shape_edittool.cpp_calculateGridWidth_FUN_004a6490 ; 004a64b0 | int shape_edittool.cpp_calculateGridWidth_FUN_004a6490()
+    CALL shape_edittool.cpp_calculateGridWidth_FUN_004a6490 ; 004a64b0
+        ;   XREF to: 004a6490 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateGridWidth_FUN_004a6490()
         ;   Label: shape_edittool.cpp_calculateGridHeight_FUN_004a64b0
-        ;   XREF to: 004a6490 (UNCONDITIONAL_CALL)
-    MOV EDX,dword ptr [0x00679398]      ; 004a64b5 | int g_WindowHeight
+    MOV EDX,dword ptr [0x00679398]      ; 004a64b5 | g_WindowHeight
     IMUL EDX,EAX                        ; 004a64bb
-    MOV ECX,dword ptr [0x00679394]      ; 004a64be | int g_WindowWidth
+    MOV ECX,dword ptr [0x00679394]      ; 004a64be | g_WindowWidth
     MOV EAX,EDX                         ; 004a64c4
     SAR EDX,0x1f                        ; 004a64c6
     IDIV ECX                            ; 004a64c9

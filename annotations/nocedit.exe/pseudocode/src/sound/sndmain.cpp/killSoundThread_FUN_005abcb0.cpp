@@ -13,13 +13,11 @@ int __cdecl sound_sndmain_cpp_killSoundThread_FUN_005abcb0(void)
   
   iVar1 = 0;
   g_AudioThreadShutdownFlag = 1;
-  if (g_AudioThreadRunning != 0) {
-    do {
-      iVar1 = iVar1 + 1;
-      wincore_winrun_cpp_sleep_FUN_005f40e0(0.01);
-      if (99 < iVar1) break;
-    } while (g_AudioThreadRunning != 0);
-  }
+  do {
+    if (g_AudioThreadRunning == 0) break;
+    iVar1 = iVar1 + 1;
+    wincore_winrun_cpp_sleep_FUN_005f40e0(0.01);
+  } while (iVar1 < 100);
   if (g_AudioThreadRunning == 0) {
     return 1;
   }

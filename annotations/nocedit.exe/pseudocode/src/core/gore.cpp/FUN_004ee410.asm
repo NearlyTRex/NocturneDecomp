@@ -17,8 +17,8 @@ section .text
         ;   Label: core_gore.cpp_FUN_004ee410
     MOV EDX,dword ptr [ESP + 0x8]       ; 004ee412
     PUSH EDX                            ; 004ee416
-    CALL core_particle.cpp_CParticle_dtor_FUN_00545670 ; 004ee417 | CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr)
-        ;   XREF to: 00545670 (UNCONDITIONAL_CALL)
+    CALL core_particle.cpp_CParticle_dtor_FUN_00545670 ; 004ee417
+        ;   XREF to: 00545670 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr)
     ADD ESP,0x8                         ; 004ee41c
     RET                                 ; 004ee41f
 

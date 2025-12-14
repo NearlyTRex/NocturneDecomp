@@ -1,143 +1,143 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 116, 
-    "pseudocode_lines": 31, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 119, 
-    "assembly_lines": 88, 
-    "suspect_count": 8, 
+    "assembly_lines": 88,
+    "complexity_score": 116,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 3,
+    "pseudocode_lines": 31,
+    "suspect_count": 8,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_superopt.cpp_CObj_appendTo_FUN_005d2720", 
-      "addr": "005d2720"
-    }, 
-    {
-      "name": "shape_superopt.cpp_CObj_copyFrom_FUN_005d2650", 
-      "addr": "005d2650"
-    }, 
-    {
-      "name": "shape_superopt.cpp_logToFile_FUN_005c7910", 
-      "addr": "005c7910"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Invalid_inputs_to_setGeo_00654572", 
-      "addr": "00654572", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_copy_object_fo_006545a0", 
-      "addr": "006545a0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_copy_merge_wit_006545c3", 
-      "addr": "006545c3", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CObj *in_stack_00000008;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_0000000c;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000008 != (CObj *)0x0) && (in_stack_0000000c != 0)) {"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000008 != (CObj *)0x0) && (in_stack_0000000c != 0)) {"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = shape_superopt_cpp_CObj_copyFrom_FUN_005d2650(&this_ptr->obj,in_stack_00000008);"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (1 < in_stack_0000000c) {"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dest_obj = (CObj *)(in_stack_0000000c + 0x1c);"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (dest_obj < (CObj *)(in_stack_0000000c * 0x1d));"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005d71e0", 
-    "signature": "int shape_superopt.cpp_COptimize_FUN_005d71e0(COptimize * this_ptr)", 
-    "address_range": [
-      [
-        "005d71e0", 
-        "005d7284"
-      ]
-    ], 
-    "name": "shape_superopt.cpp_COptimize_FUN_005d71e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "COptimize *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 119
+  },
   "cross_references": [
     {
-      "from_addr": "005d7ccb", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
-      "addr": "005d77a0"
+      "addr": "005d77a0",
+      "from_addr": "005d7ccb",
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005d71e0",
+    "address_range": [
+      [
+        "005d71e0",
+        "005d7284"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_COptimize_FUN_005d71e0",
+    "signature": "int shape_superopt.cpp_COptimize_FUN_005d71e0(COptimize * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005d2720",
+      "name": "shape_superopt.cpp_CObj_appendTo_FUN_005d2720"
+    },
+    {
+      "addr": "005d2650",
+      "name": "shape_superopt.cpp_CObj_copyFrom_FUN_005d2650"
+    },
+    {
+      "addr": "005c7910",
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00654572",
+      "name": "s_Invalid_inputs_to_setGeo_00654572",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006545a0",
+      "name": "s_Unable_to_copy_object_fo_006545a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006545c3",
+      "name": "s_Unable_to_copy_merge_wit_006545c3",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COptimize *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "CObj *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "if ((in_stack_00000008 != (CObj *)0x0) && (in_stack_0000000c != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "text": "if ((in_stack_00000008 != (CObj *)0x0) && (in_stack_0000000c != 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = shape_superopt_cpp_CObj_copyFrom_FUN_005d2650(&this_ptr->obj,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "text": "if (1 < in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "text": "dest_obj = (CObj *)(in_stack_0000000c + 0x1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_0000000c",
+      "text": "} while (dest_obj < (CObj *)(in_stack_0000000c * 0x1d));",
+      "type": "stack_param"
     }
   ]
 }

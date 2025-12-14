@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 24, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 25, 
-    "assembly_lines": 16, 
-    "suspect_count": 1, 
+    "assembly_lines": 16,
+    "complexity_score": 24,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
     "suspect_types": [
       "negative_offset"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_script.cpp_CScript_FreeSomething1_FUN_00559870", 
-      "addr": "00559870"
-    }, 
-    {
-      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40", 
-      "addr": "004a2a40"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "pCVar1[-4].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "return (CScript *)&pCVar1[-4].data_array;"
-    }
-  ], 
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00559840", 
-    "signature": "CScript * core_script.cpp_CScript_dtor_FUN_00559840(CScript * this_ptr)", 
+    "address": "00559840",
     "address_range": [
       [
-        "00559840", 
+        "00559840",
         "00559860"
       ]
-    ], 
-    "name": "core_script.cpp_CScript_dtor_FUN_00559840"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_dtor_FUN_00559840",
+    "signature": "CScript * core_script.cpp_CScript_dtor_FUN_00559840(CScript * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00559870",
+      "name": "core_script.cpp_CScript_FreeSomething1_FUN_00559870"
+    },
+    {
+      "addr": "004a2a40",
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CScript *", 
-        "size": 4, 
-        "name": "this_ptr"
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar1[-4].",
+      "text": "return (CScript *)&pCVar1[-4].data_array;",
+      "type": "negative_offset"
+    }
+  ]
 }

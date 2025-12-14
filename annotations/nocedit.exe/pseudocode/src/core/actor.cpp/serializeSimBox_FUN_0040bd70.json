@@ -1,150 +1,150 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 59, 
-    "pseudocode_lines": 34, 
-    "cross_reference_count": 2, 
-    "global_count": 7, 
-    "total_lines": 139, 
-    "assembly_lines": 105, 
-    "suspect_count": 2, 
+    "assembly_lines": 105,
+    "complexity_score": 59,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 7,
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040aee0", 
-      "addr": "0040aee0"
-    }, 
-    {
-      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b210", 
-      "addr": "0040b210"
-    }, 
-    {
-      "name": "core_box.cpp_CBox_loadFromFile_FUN_0041fe90", 
-      "addr": "0041fe90"
-    }, 
-    {
-      "name": "core_box.cpp_CBox_saveToFile_FUN_00420020", 
-      "addr": "00420020"
-    }, 
-    {
-      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
-      "addr": "005fe840"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sim_box_state_info_openi_0061402e", 
-      "addr": "0061402e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sim_box_state_info_closi_0061404f", 
-      "addr": "0061404f", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_s_00614070", 
-      "addr": "00614070", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_s_0061407b", 
-      "addr": "0061407b", 
-      "value": null
-    }, 
-    {
-      "type": "char[104]", 
-      "name": "g_PropertyNamePrefix", 
-      "addr": "0066e178", 
-      "value": null
-    }, 
-    {
-      "type": "FILE*", 
-      "name": "g_ActorDataFile", 
-      "addr": "00822034", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ActorReadingMode", 
-      "addr": "00822038", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CBox *in_stack_0000000c;"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "core_box_cpp_CBox_saveToFile_FUN_00420020(in_stack_0000000c,g_ActorDataFile);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0040bd70", 
-    "signature": "void core_actor.cpp_serializeSimBox_FUN_0040bd70(CSimBox * simbox_ptr, char * property_name)", 
-    "address_range": [
-      [
-        "0040bd70", 
-        "0040be5b"
-      ]
-    ], 
-    "name": "core_actor.cpp_serializeSimBox_FUN_0040bd70"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSimBox *", 
-        "size": 4, 
-        "name": "simbox_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "property_name"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 139
+  },
   "cross_references": [
     {
-      "from_addr": "00419a05", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_bodypart.cpp_CBodyPart_serialize_FUN_00419880", 
-      "addr": "00419880"
-    }, 
+      "addr": "00419880",
+      "from_addr": "00419a05",
+      "name": "core_bodypart.cpp_CBodyPart_serialize_FUN_00419880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00422190", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_boxactor.cpp_CBoxActor_load_FUN_00422060", 
-      "addr": "00422060"
+      "addr": "00422060",
+      "from_addr": "00422190",
+      "name": "core_boxactor.cpp_CBoxActor_load_FUN_00422060",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040bd70",
+    "address_range": [
+      [
+        "0040bd70",
+        "0040be5b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_serializeSimBox_FUN_0040bd70",
+    "signature": "void core_actor.cpp_serializeSimBox_FUN_0040bd70(CSimBox * simbox_ptr, char * property_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040aee0",
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040aee0"
+    },
+    {
+      "addr": "0040b210",
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b210"
+    },
+    {
+      "addr": "0041fe90",
+      "name": "core_box.cpp_CBox_loadFromFile_FUN_0041fe90"
+    },
+    {
+      "addr": "00420020",
+      "name": "core_box.cpp_CBox_saveToFile_FUN_00420020"
+    },
+    {
+      "addr": "005fe840",
+      "name": "crt_stdio.c_fgetc_FUN_005fe840"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061402e",
+      "name": "s_sim_box_state_info_openi_0061402e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061404f",
+      "name": "s_sim_box_state_info_closi_0061404f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614070",
+      "name": "s_s_s_00614070",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061407b",
+      "name": "s_s_0061407b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066e178",
+      "name": "g_PropertyNamePrefix",
+      "type": "char[104]",
+      "value": null
+    },
+    {
+      "addr": "00822034",
+      "name": "g_ActorDataFile",
+      "type": "FILE*",
+      "value": null
+    },
+    {
+      "addr": "00822038",
+      "name": "g_ActorReadingMode",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "simbox_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimBox *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_0000000c",
+      "text": "CBox *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "text": "core_box_cpp_CBox_saveToFile_FUN_00420020(in_stack_0000000c,g_ActorDataFile);",
+      "type": "stack_param"
     }
   ]
 }

@@ -29,31 +29,31 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1c]      ; 0048ce98
     MOV EDI,dword ptr [ESP + 0x20]      ; 0048ce9c
     CMP EDI,-0x1                        ; 0048cea0
-    JNZ 0x0048ceaa                      ; 0048cea3 | LAB_0048ceaa
-        ;   XREF to: 0048ceaa (CONDITIONAL_JUMP)
+    JNZ 0x0048ceaa                      ; 0048cea3
+        ;   XREF to: 0048ceaa (CONDITIONAL_JUMP)  ; LAB_0048ceaa
     MOV EDI,0x2cd                       ; 0048cea5
     MOV EBX,dword ptr [ESP + 0x14]      ; 0048ceaa
         ;   Label: LAB_0048ceaa
     CMP dword ptr [EBX + 0x1c],0x0      ; 0048ceae
-    JZ 0x0048cee5                       ; 0048ceb2 | LAB_0048cee5
-        ;   XREF to: 0048cee5 (CONDITIONAL_JUMP)
+    JZ 0x0048cee5                       ; 0048ceb2
+        ;   XREF to: 0048cee5 (CONDITIONAL_JUMP)  ; LAB_0048cee5
     XOR EBX,EBX                         ; 0048ceb4
     TEST EBP,EBP                        ; 0048ceb6
-    JLE 0x0048cee0                      ; 0048ceb8 | LAB_0048cee0
-        ;   XREF to: 0048cee0 (CONDITIONAL_JUMP)
+    JLE 0x0048cee0                      ; 0048ceb8
+        ;   XREF to: 0048cee0 (CONDITIONAL_JUMP)  ; LAB_0048cee0
     PUSH EDI                            ; 0048ceba
         ;   Label: LAB_0048ceba
     PUSH ESI                            ; 0048cebb
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0048cebc
     PUSH EAX                            ; 0048cec0
     INC EBX                             ; 0048cec1
-    CALL engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0 ; 0048cec2 | void engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * quad_primitive, int render_flags)
-        ;   XREF to: 0048d7a0 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0 ; 0048cec2
+        ;   XREF to: 0048d7a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * quad_primitive, int render_flags)
     ADD ESI,0x48                        ; 0048cec7
     ADD ESP,0xc                         ; 0048ceca
     CMP EBX,EBP                         ; 0048cecd
-    JL 0x0048ceba                       ; 0048cecf | LAB_0048ceba
-        ;   XREF to: 0048ceba (CONDITIONAL_JUMP)
+    JL 0x0048ceba                       ; 0048cecf
+        ;   XREF to: 0048ceba (CONDITIONAL_JUMP)  ; LAB_0048ceba
     LEA EAX,[EAX]                       ; 0048ced1
     LEA EDX,[EDX]                       ; 0048ced7
     LEA EAX,[EAX]                       ; 0048cedd
@@ -69,8 +69,8 @@ section .text
     PUSH EBP                            ; 0048cee8
     PUSH ESI                            ; 0048cee9
     PUSH EBX                            ; 0048ceea
-    CALL engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 ; 0048ceeb | int engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags, ...)
-        ;   XREF to: 0048cf00 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 ; 0048ceeb
+        ;   XREF to: 0048cf00 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags, ...)
     ADD ESP,0x14                        ; 0048cef0
     POP EBP                             ; 0048cef3
     POP EDI                             ; 0048cef4

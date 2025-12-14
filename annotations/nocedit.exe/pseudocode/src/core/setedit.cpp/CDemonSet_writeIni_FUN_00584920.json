@@ -1,77 +1,77 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 15, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_ini.cpp_CIniFile_setString_FUN_004fbbb0", 
-      "addr": "004fbbb0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_groundTypeDirectory_00648e59", 
-      "addr": "00648e59", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_GroundTypes_006816d8", 
-      "addr": "006816d8", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00584920", 
-    "signature": "void core_setedit.cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet * set, CIniFile * ini_file)", 
-    "address_range": [
-      [
-        "00584920", 
-        "00584937"
-      ]
-    ], 
-    "name": "core_setedit.cpp_CDemonSet_writeIni_FUN_00584920"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonSet *", 
-        "size": 4, 
-        "name": "set"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CIniFile *", 
-        "size": 4, 
-        "name": "ini_file"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 9,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
   "cross_references": [
     {
-      "from_addr": "004fcbbf", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_inivar.cpp_writeIniData_FUN_004fc510", 
-      "addr": "004fc510"
+      "addr": "004fc510",
+      "from_addr": "004fcbbf",
+      "name": "core_inivar.cpp_writeIniData_FUN_004fc510",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00584920",
+    "address_range": [
+      [
+        "00584920",
+        "00584937"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setedit.cpp_CDemonSet_writeIni_FUN_00584920",
+    "signature": "void core_setedit.cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet * set, CIniFile * ini_file)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fbbb0",
+      "name": "engine_ini.cpp_CIniFile_setString_FUN_004fbbb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00648e59",
+      "name": "s_groundTypeDirectory_00648e59",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006816d8",
+      "name": "s_GroundTypes_006816d8",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "set",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "ini_file",
+        "offset": 8,
+        "size": 4,
+        "type": "CIniFile *"
+      }
+    ]
+  },
+  "suspects": []
 }

@@ -1,112 +1,112 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 19, 
-    "pseudocode_lines": 19, 
-    "cross_reference_count": 6, 
-    "global_count": 4, 
-    "total_lines": 59, 
-    "assembly_lines": 40, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_io.c_IsSpecialDevice_FUN_0060c270", 
-      "addr": "0060c270"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "uint", 
-      "name": "g_MaxHandleCount", 
-      "addr": "00685214", 
-      "value": "0x14"
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_FileDescriptorTable", 
-      "addr": "00685218", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00685219", 
-      "addr": "00685219", 
-      "value": null
-    }, 
-    {
-      "type": "FileDescriptor*", 
-      "name": "PTR_g_FileDescriptorTable_00685268", 
-      "addr": "00685268", 
-      "value": "00685218"
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__watcallStack", 
-    "address": "006088b0", 
-    "signature": "uint crt_io.c_getFileTypeFlags_FUN_006088b0(int file_handle_index)", 
-    "address_range": [
-      [
-        "006088b0", 
-        "00608907"
-      ]
-    ], 
-    "name": "crt_io.c_getFileTypeFlags_FUN_006088b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "file_handle_index"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 40,
+    "complexity_score": 19,
+    "cross_reference_count": 6,
+    "function_call_count": 1,
+    "global_count": 4,
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 59
+  },
   "cross_references": [
     {
-      "from_addr": "00608455", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_extend_file_for_append_FUN_00608410", 
-      "addr": "00608410"
-    }, 
+      "addr": "00608410",
+      "from_addr": "00608455",
+      "name": "crt_io.c_extend_file_for_append_FUN_00608410",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00608522", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_write_FUN_006084ec", 
-      "addr": "006084ec"
-    }, 
+      "addr": "006084ec",
+      "from_addr": "00608522",
+      "name": "crt_io.c_write_FUN_006084ec",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0061003c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_build_file_info_env_FUN_0060ffd0", 
-      "addr": "0060ffd0"
-    }, 
+      "addr": "0060ffd0",
+      "from_addr": "0061003c",
+      "name": "crt_process.c_build_file_info_env_FUN_0060ffd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006066c1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_lseek_FUN_00606690", 
-      "addr": "00606690"
-    }, 
+      "addr": "00606690",
+      "from_addr": "006066c1",
+      "name": "crt_stdio.c_lseek_FUN_00606690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00603903", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_write_FUN_006038c0", 
-      "addr": "006038c0"
-    }, 
+      "addr": "006038c0",
+      "from_addr": "00603903",
+      "name": "crt_stdio.c_write_FUN_006038c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060e970", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930", 
-      "addr": "0060e930"
+      "addr": "0060e930",
+      "from_addr": "0060e970",
+      "name": "crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "006088b0",
+    "address_range": [
+      [
+        "006088b0",
+        "00608907"
+      ]
+    ],
+    "convention": "__watcallStack",
+    "name": "crt_io.c_getFileTypeFlags_FUN_006088b0",
+    "signature": "uint crt_io.c_getFileTypeFlags_FUN_006088b0(int file_handle_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "0060c270",
+      "name": "crt_io.c_IsSpecialDevice_FUN_0060c270"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00685214",
+      "name": "g_MaxHandleCount",
+      "type": "uint",
+      "value": "0x14"
+    },
+    {
+      "addr": "00685218",
+      "name": "g_FileDescriptorTable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00685219",
+      "name": "DAT_00685219",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00685268",
+      "name": "PTR_g_FileDescriptorTable_00685268",
+      "type": "FileDescriptor*",
+      "value": "00685218"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

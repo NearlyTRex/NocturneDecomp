@@ -1,85 +1,85 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 16, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 51, 
-    "assembly_lines": 35, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70", 
-      "addr": "0054ae70"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 35,
+    "complexity_score": 16,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "0054afb0", 
-    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_copyToBufferAtPosition_FUN_0054afb0(CPackedBitmap * this_ptr, uchar * dest_buffer, int dest_x, int dest_y, int bits_per_pixel, int buffer_stride)", 
+    "address": "0054afb0",
     "address_range": [
       [
-        "0054afb0", 
+        "0054afb0",
         "0054aff6"
       ]
-    ], 
-    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyToBufferAtPosition_FUN_0054afb0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyToBufferAtPosition_FUN_0054afb0",
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_copyToBufferAtPosition_FUN_0054afb0(CPackedBitmap * this_ptr, uchar * dest_buffer, int dest_x, int dest_y, int bits_per_pixel, int buffer_stride)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054ae70",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CPackedBitmap *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "uchar *", 
-        "size": 4, 
-        "name": "dest_buffer"
-      }, 
+        "is_param": true,
+        "name": "dest_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "uchar *"
+      },
       {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dest_x"
-      }, 
+        "is_param": true,
+        "name": "dest_x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "dest_y"
-      }, 
+        "is_param": true,
+        "name": "dest_y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bits_per_pixel"
-      }, 
+        "is_param": true,
+        "name": "bits_per_pixel",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_stride"
+        "is_param": true,
+        "name": "buffer_stride",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

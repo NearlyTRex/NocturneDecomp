@@ -1,54 +1,54 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 26, 
-    "assembly_lines": 18, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_wsock32.c_shutdown", 
-      "addr": "00610f28"
-    }, 
-    {
-      "name": "support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20", 
-      "addr": "005e1d20"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 18,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005e1b10", 
-    "signature": "int support_trisock.cpp_createSocket_FUN_005e1b10(SSocketContext * socket_ctx)", 
+    "address": "005e1b10",
     "address_range": [
       [
-        "005e1b10", 
+        "005e1b10",
         "005e1b37"
       ]
-    ], 
-    "name": "support_trisock.cpp_createSocket_FUN_005e1b10"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "support_trisock.cpp_createSocket_FUN_005e1b10",
+    "signature": "int support_trisock.cpp_createSocket_FUN_005e1b10(SSocketContext * socket_ctx)"
+  },
+  "function_calls": [
+    {
+      "addr": "00610f28",
+      "name": "crt_wsock32.c_shutdown"
+    },
+    {
+      "addr": "005e1d20",
+      "name": "support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SSocketContext *", 
-        "size": 4, 
-        "name": "socket_ctx"
+        "is_param": true,
+        "name": "socket_ctx",
+        "offset": 4,
+        "size": 4,
+        "type": "SSocketContext *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

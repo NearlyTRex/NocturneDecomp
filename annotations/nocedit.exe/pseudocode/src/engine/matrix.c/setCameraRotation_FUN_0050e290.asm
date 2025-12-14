@@ -30,12 +30,12 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0050e298
     PUSH EDX                            ; 0050e29c
     PUSH ECX                            ; 0050e29d
-    MOV [0x02d052d0],EAX                ; 0050e29e | int g_CameraRotationPitch
+    MOV [0x02d052d0],EAX                ; 0050e29e | g_CameraRotationPitch
     PUSH EAX                            ; 0050e2a3
-    MOV dword ptr [0x02d052d4],ECX      ; 0050e2a4 | int g_CameraRotationYaw
-    MOV dword ptr [0x02d052d8],EDX      ; 0050e2aa | int g_CameraRotationRoll
-    CALL engine_matrix.c_buildRotationMatrix_FUN_0050c920 ; 0050e2b0 | void engine_matrix.c_buildRotationMatrix_FUN_0050c920(ushort pitch, ushort yaw, ushort roll)
-        ;   XREF to: 0050c920 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02d052d4],ECX      ; 0050e2a4 | g_CameraRotationYaw
+    MOV dword ptr [0x02d052d8],EDX      ; 0050e2aa | g_CameraRotationRoll
+    CALL engine_matrix.c_buildRotationMatrix_FUN_0050c920 ; 0050e2b0
+        ;   XREF to: 0050c920 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_buildRotationMatrix_FUN_0050c920(ushort pitch, ushort yaw, ushort roll)
     ADD ESP,0xc                         ; 0050e2b5
     RET                                 ; 0050e2b8
 

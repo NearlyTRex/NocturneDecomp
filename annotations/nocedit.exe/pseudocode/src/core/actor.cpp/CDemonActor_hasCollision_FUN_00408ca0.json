@@ -1,64 +1,64 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 8, 
-    "pseudocode_lines": 8, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 18, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
-      "addr": "0040ac80"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_actor_cpp_0061364e", 
-      "addr": "0061364e", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 10,
+    "complexity_score": 8,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00408ca0", 
-    "signature": "int core_actor.cpp_CDemonActor_hasCollision_FUN_00408ca0(CDemonActor * this_ptr, SCollisionInfo * collision_info)", 
+    "address": "00408ca0",
     "address_range": [
       [
-        "00408ca0", 
+        "00408ca0",
         "00408cbc"
       ]
-    ], 
-    "name": "core_actor.cpp_CDemonActor_hasCollision_FUN_00408ca0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_hasCollision_FUN_00408ca0",
+    "signature": "int core_actor.cpp_CDemonActor_hasCollision_FUN_00408ca0(CDemonActor * this_ptr, SCollisionInfo * collision_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ac80",
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061364e",
+      "name": "s_core_actor_cpp_0061364e",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonActor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "SCollisionInfo *", 
-        "size": 4, 
-        "name": "collision_info"
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

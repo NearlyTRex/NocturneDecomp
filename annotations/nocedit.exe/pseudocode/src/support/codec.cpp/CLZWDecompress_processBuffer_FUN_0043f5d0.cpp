@@ -39,7 +39,7 @@ LAB_0043f633:
   } while (-1 < iVar1);
   *output_length = *output_length - ((int)local_14 - (int)output);
   if (enable_callback != 0) {
-    iVar1 = (*(code *)((this_ptr->base_codec).vtable)->finalizeBuffer)();
+    iVar1 = (*((this_ptr->base_codec).vtable)->finalizeBuffer)();
     if (iVar1 == 0) {
       return 0;
     }

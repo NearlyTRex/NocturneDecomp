@@ -1,133 +1,133 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 100, 
-    "pseudocode_lines": 25, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 85, 
-    "assembly_lines": 60, 
-    "suspect_count": 6, 
+    "assembly_lines": 60,
+    "complexity_score": 100,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
     "suspect_types": [
-      "stack_param", 
-      "unknown_field", 
-      "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
-      "addr": "005a7100"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00", 
-      "addr": "005a5d00"
-    }, 
-    {
-      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
-      "addr": "005abdc0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CSoundDevice*", 
-      "name": "g_CSoundDevicePtr", 
-      "addr": "03f69268", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uint in_stack_00000020;"
-    }, 
-    {
-      "line": 17, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "*(uint *)&(this_ptr->options).velocity.x = vel_x._4_4_;"
-    }, 
-    {
-      "line": 18, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(double *)((int)&(this_ptr->options).velocity.x + 4) = vel_y;"
-    }, 
-    {
-      "line": 19, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(double *)((int)&(this_ptr->options).velocity.y + 4) = vel_z;"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_00000020;"
-    }, 
-    {
-      "line": 21, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_00000020;"
-    }
-  ], 
+      "stack_param",
+      "pointer_cast",
+      "unknown_field"
+    ],
+    "total_lines": 85
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a9970", 
-    "signature": "int sound_sndmain.cpp_setSfxVelocity_FUN_005a9970(uint sfx_handle, double vel_x, double vel_y, double vel_z)", 
+    "address": "005a9970",
     "address_range": [
       [
-        "005a9970", 
+        "005a9970",
         "005a99fb"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_setSfxVelocity_FUN_005a9970"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setSfxVelocity_FUN_005a9970",
+    "signature": "int sound_sndmain.cpp_setSfxVelocity_FUN_005a9970(uint sfx_handle, double vel_x, double vel_y, double vel_z)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a7100",
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100"
+    },
+    {
+      "addr": "005a5d00",
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00"
+    },
+    {
+      "addr": "005abdc0",
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f69268",
+      "name": "g_CSoundDevicePtr",
+      "type": "CSoundDevice*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "uint", 
-        "size": 4, 
-        "name": "sfx_handle"
-      }, 
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "vel_x"
-      }, 
+        "is_param": true,
+        "name": "vel_x",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "vel_y"
-      }, 
+        "is_param": true,
+        "name": "vel_y",
+        "offset": 16,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "vel_z"
+        "is_param": true,
+        "name": "vel_z",
+        "offset": 24,
+        "size": 8,
+        "type": "double"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 28
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000020",
+      "text": "uint in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 17,
+      "match": "._4_4_",
+      "text": "*(uint *)&(this_ptr->options).velocity.x = vel_x._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(double *)((int)",
+      "text": "*(double *)((int)&(this_ptr->options).velocity.x + 4) = vel_y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(double *)((int)",
+      "text": "*(double *)((int)&(this_ptr->options).velocity.y + 4) = vel_z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000020",
+      "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_00000020;",
+      "type": "pointer_cast"
+    }
+  ]
 }

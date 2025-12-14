@@ -1,68 +1,68 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 24, 
-    "assembly_lines": 15, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0", 
-      "addr": "0059d9e0"
-    }, 
-    {
-      "name": "core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_0059dbe0", 
-      "addr": "0059dbe0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0059c1f0", 
-    "signature": "void core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0(CDeformableModel * this_ptr, CSkeleton * skeleton_ptr)", 
-    "address_range": [
-      [
-        "0059c1f0", 
-        "0059c212"
-      ]
-    ], 
-    "name": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDeformableModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CSkeleton *", 
-        "size": 4, 
-        "name": "skeleton_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    "assembly_lines": 15,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
   "cross_references": [
     {
-      "from_addr": "0059a79e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780", 
-      "addr": "0059a780"
+      "addr": "0059a780",
+      "from_addr": "0059a79e",
+      "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0059c1f0",
+    "address_range": [
+      [
+        "0059c1f0",
+        "0059c212"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0",
+    "signature": "void core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0(CDeformableModel * this_ptr, CSkeleton * skeleton_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059d9e0",
+      "name": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0"
+    },
+    {
+      "addr": "0059dbe0",
+      "name": "core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_0059dbe0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "skeleton_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CSkeleton *"
+      }
+    ]
+  },
+  "suspects": []
 }

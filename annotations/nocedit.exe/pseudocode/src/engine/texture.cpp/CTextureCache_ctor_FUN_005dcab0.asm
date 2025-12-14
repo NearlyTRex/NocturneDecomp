@@ -30,8 +30,8 @@ section .text
     MOV dword ptr [EAX + 0x13004],EBX   ; 005dcadf
     MOV dword ptr [EAX + 0x4],EBX       ; 005dcae5
     CMP EAX,EDX                         ; 005dcae8
-    JNZ 0x005dcad0                      ; 005dcaea | LAB_005dcad0
-        ;   XREF to: 005dcad0 (CONDITIONAL_JUMP)
+    JNZ 0x005dcad0                      ; 005dcaea
+        ;   XREF to: 005dcad0 (CONDITIONAL_JUMP)  ; LAB_005dcad0
     MOV EAX,ECX                         ; 005dcaec
     MOV dword ptr [ECX],0x0             ; 005dcaee
     POP EBX                             ; 005dcaf4

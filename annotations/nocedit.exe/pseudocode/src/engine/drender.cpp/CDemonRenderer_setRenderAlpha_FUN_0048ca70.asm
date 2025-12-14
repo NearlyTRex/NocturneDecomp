@@ -28,14 +28,14 @@ section .text
     SUB ESP,0x4                         ; 0048ca70
         ;   Label: engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
     FLD float ptr [ESP + 0xc]           ; 0048ca73
-    FMUL double ptr [0x00622085]        ; 0048ca77 | double g_RenderAlphaFixedScale
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0048ca7d | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    FMUL double ptr [0x00622085]        ; 0048ca77 | g_RenderAlphaFixedScale
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0048ca7d
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP]               ; 0048ca82
     MOV EDX,dword ptr [ESP]             ; 0048ca85
     PUSH EDX                            ; 0048ca88
-    CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0048ca89 | void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0048ca89
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 0048ca8e
     ADD ESP,0x4                         ; 0048ca91
     RET                                 ; 0048ca94

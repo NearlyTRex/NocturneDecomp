@@ -1,173 +1,165 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 88, 
-    "pseudocode_lines": 38, 
-    "cross_reference_count": 2, 
-    "global_count": 15, 
-    "total_lines": 107, 
-    "assembly_lines": 69, 
-    "suspect_count": 4, 
+    "assembly_lines": 69,
+    "complexity_score": 73,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 15,
+    "pseudocode_lines": 38,
+    "suspect_count": 3,
     "suspect_types": [
-      "sborrow_artifact", 
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "DOUBLE_0064fab7", 
-      "addr": "0064fab7", 
-      "value": "0.5"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_AudioChannelCount", 
-      "addr": "00681b18", 
-      "value": "0x2"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_00681b38", 
-      "addr": "00681b38", 
-      "value": "1"
-    }, 
-    {
-      "type": "CVector3d", 
-      "name": "g_Cached3DListenerPos", 
-      "addr": "03f68830", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.y", 
-      "addr": "03f68838", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerPos.z", 
-      "addr": "03f68840", 
-      "value": null
-    }, 
-    {
-      "type": "CVector3d", 
-      "name": "g_Cached3DListenerOrientFront", 
-      "addr": "03f68860", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientFront.y", 
-      "addr": "03f68868", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_Cached3DListenerOrientFront.z", 
-      "addr": "03f68870", 
-      "value": null
-    }, 
-    {
-      "type": "double[8]", 
-      "name": "g_VirtualSpeakerXPositions", 
-      "addr": "03f69328", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VirtualSpeakerXPositions[1]", 
-      "addr": "03f69330", 
-      "value": null
-    }, 
-    {
-      "type": "double[8]", 
-      "name": "g_VirtualSpeakerYPositions", 
-      "addr": "03f69368", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VirtualSpeakerYPositions[1]", 
-      "addr": "03f69370", 
-      "value": null
-    }, 
-    {
-      "type": "double[8]", 
-      "name": "g_VirtualSpeakerZPositions", 
-      "addr": "03f693a8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_VirtualSpeakerZPositions[1]", 
-      "addr": "03f693b0", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 34, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(double *)((int)g_VirtualSpeakerXPositions + iVar4) = dVar1;"
-    }, 
-    {
-      "line": 35, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(double *)((int)g_VirtualSpeakerYPositions + iVar4) = dVar2;"
-    }, 
-    {
-      "line": 36, 
-      "match": "(double *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(double *)((int)g_VirtualSpeakerZPositions + iVar4) = dVar3;"
-    }, 
-    {
-      "line": 38, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar5,g_AudioChannelCount * 8) != iVar5 + g_AudioChannelCount * -8 < 0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005a5530", 
-    "signature": "void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void)", 
-    "address_range": [
-      [
-        "005a5530", 
-        "005a561b"
-      ]
-    ], 
-    "name": "sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 107
+  },
   "cross_references": [
     {
-      "from_addr": "005acdc4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0", 
-      "addr": "005acdb0"
-    }, 
+      "addr": "005acdb0",
+      "from_addr": "005acdc4",
+      "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005acaf9", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90", 
-      "addr": "005aca90"
+      "addr": "005aca90",
+      "from_addr": "005acaf9",
+      "name": "sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a5530",
+    "address_range": [
+      [
+        "005a5530",
+        "005a561b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530",
+    "signature": "void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0064fab7",
+      "name": "DOUBLE_0064fab7",
+      "type": "double",
+      "value": "0.5"
+    },
+    {
+      "addr": "00681b18",
+      "name": "g_AudioChannelCount",
+      "type": "int",
+      "value": "0x2"
+    },
+    {
+      "addr": "00681b38",
+      "name": "DOUBLE_00681b38",
+      "type": "double",
+      "value": "1"
+    },
+    {
+      "addr": "03f68830",
+      "name": "g_Cached3DListenerPos",
+      "type": "CVector3d",
+      "value": null
+    },
+    {
+      "addr": "03f68838",
+      "name": "g_Cached3DListenerPos.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68840",
+      "name": "g_Cached3DListenerPos.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68860",
+      "name": "g_Cached3DListenerOrientFront",
+      "type": "CVector3d",
+      "value": null
+    },
+    {
+      "addr": "03f68868",
+      "name": "g_Cached3DListenerOrientFront.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f68870",
+      "name": "g_Cached3DListenerOrientFront.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69328",
+      "name": "g_VirtualSpeakerXPositions",
+      "type": "double[8]",
+      "value": null
+    },
+    {
+      "addr": "03f69330",
+      "name": "g_VirtualSpeakerXPositions[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f69368",
+      "name": "g_VirtualSpeakerYPositions",
+      "type": "double[8]",
+      "value": null
+    },
+    {
+      "addr": "03f69370",
+      "name": "g_VirtualSpeakerYPositions[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f693a8",
+      "name": "g_VirtualSpeakerZPositions",
+      "type": "double[8]",
+      "value": null
+    },
+    {
+      "addr": "03f693b0",
+      "name": "g_VirtualSpeakerZPositions[1]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(double *)((int)",
+      "text": "*(double *)((int)g_VirtualSpeakerXPositions + iVar4) = dVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(double *)((int)",
+      "text": "*(double *)((int)g_VirtualSpeakerYPositions + iVar4) = dVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(double *)((int)",
+      "text": "*(double *)((int)g_VirtualSpeakerZPositions + iVar4) = dVar3;",
+      "type": "pointer_cast"
     }
   ]
 }

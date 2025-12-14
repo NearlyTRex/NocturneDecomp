@@ -31,23 +31,23 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 00471314
     LEA EDX,[ECX + 0x24]                ; 00471318
     CMP EDX,EAX                         ; 0047131b
-    JNZ 0x00471349                      ; 0047131d | LAB_00471349
-        ;   XREF to: 00471349 (CONDITIONAL_JUMP)
-    FLD double ptr [0x0061ec32]         ; 0047131f | double DOUBLE_0061ec32
+    JNZ 0x00471349                      ; 0047131d
+        ;   XREF to: 00471349 (CONDITIONAL_JUMP)  ; LAB_00471349
+    FLD double ptr [0x0061ec32]         ; 0047131f | DOUBLE_0061ec32
         ;   Label: LAB_0047131f
     FLD float ptr [EAX]                 ; 00471325
     FMUL ST1                            ; 00471327
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00471329 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00471329
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ECX]               ; 0047132e
     FLD float ptr [EAX + 0x4]           ; 00471330
     FMUL ST1                            ; 00471333
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00471335 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00471335
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ECX + 0x4]         ; 0047133a
     FMUL float ptr [EAX + 0x8]          ; 0047133d
-    CALL crt_math.c_round_FUN_005fe6b0  ; 00471340 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 00471340
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ECX + 0x8]         ; 00471345
     RET                                 ; 00471348
     PUSH EBX                            ; 00471349
@@ -59,6 +59,6 @@ section .text
     MOV EBX,dword ptr [EAX + 0x8]       ; 00471354
     MOV dword ptr [EDX + 0x8],EBX       ; 00471357
     POP EBX                             ; 0047135a
-    JMP 0x0047131f                      ; 0047135b | LAB_0047131f
-        ;   XREF to: 0047131f (UNCONDITIONAL_JUMP)
+    JMP 0x0047131f                      ; 0047135b
+        ;   XREF to: 0047131f (UNCONDITIONAL_JUMP)  ; LAB_0047131f
 

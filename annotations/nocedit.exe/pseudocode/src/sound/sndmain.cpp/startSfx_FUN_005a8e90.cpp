@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
 
 {
@@ -18,15 +16,16 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   CSfxSlot *pCVar5;
   int iVar6;
   uint uVar7;
+  CMP3Decoder *this_ptr;
   CMP3Decoder *pCVar8;
   int extraout_EAX;
   FILE *pFVar9;
   long lVar10;
   int extraout_EAX_00;
   int iVar11;
-  CSfxSample *this_ptr;
+  CSfxSample *this_ptr_00;
   BADSPACEBASE *in_ESP;
-  CSfxSlot *this_ptr_00;
+  CSfxSlot *this_ptr_01;
   CSfxOptions *pCVar12;
   int *piVar13;
   char *pcVar14;
@@ -48,11 +47,8 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   CSfxOptions CStack_8c;
   
   bVar17 = 0;
-  if ((filename == (char *)0x0) || (*filename == '\0')) {
-    return 0;
-  }
-  iVar4 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
-  if (iVar4 == 0) {
+  if (((filename == (char *)0x0) || (*filename == '\0')) ||
+     (iVar4 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540(), iVar4 == 0)) {
     return 0;
   }
   sound_sndmain_cpp_CSfxOptions_reset_FUN_005a8830(&CStack_8c);
@@ -99,9 +95,9 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
     return 0;
   }
-  this_ptr_00 = g_SfxSlots + iVar11;
+  this_ptr_01 = g_SfxSlots + iVar11;
   piVar13 = (int *)((int)&CStack_8c.position.y + 4);
-  pCVar5 = this_ptr_00;
+  pCVar5 = this_ptr_01;
   for (iVar4 = 0x1c; iVar4 != 0; iVar4 = iVar4 + -1) {
     (pCVar5->options).channel_index = *piVar13;
     piVar13 = piVar13 + (uint)bVar17 * -2 + 1;
@@ -145,11 +141,11 @@ LAB_005a900a:
          (iVar4 = crt_string_c_stricmp_FUN_005fe7f0(acStack_280,".mp3"), iVar4 == 0)) {
         iVar4 = engine_dosio_c_getFileSize_FUN_00481880("sound",&stack0xfffffc98);
         if (0 < iVar4) {
-          pCVar8 = (CMP3Decoder *)
-                   shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
-                             (0x8630,"..\\sound\\sndmain.cpp",0x3c5);
-          if (pCVar8 != (CMP3Decoder *)0x0) {
-            pCVar8 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(pCVar8);
+          this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+                               (0x8630,"..\\sound\\sndmain.cpp",0x3c5);
+          pCVar8 = (CMP3Decoder *)0x0;
+          if (this_ptr != (CMP3Decoder *)0x0) {
+            pCVar8 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(this_ptr);
           }
           in_stack_0000000c->mp3_data = pCVar8;
           if (pCVar8 == (CMP3Decoder *)0x0) {
@@ -224,10 +220,10 @@ joined_r0x005a94f6:
             in_stack_0000000c->buffer_id = 0;
             dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
             *(int *)(extraout_EAX_00 + 0x160) = (int)ROUND(dVar18);
-            this_ptr->stream_read_position = 0;
-            this_ptr->stream_write_position = 0;
-            this_ptr->streaming_slot_index = (int)unaff_retaddr;
-            iVar4 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(this_ptr);
+            this_ptr_00->stream_read_position = 0;
+            this_ptr_00->stream_write_position = 0;
+            this_ptr_00->streaming_slot_index = (int)unaff_retaddr;
+            iVar4 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(this_ptr_00);
             goto joined_r0x005a94f6;
           }
         }
@@ -244,13 +240,13 @@ LAB_005a9026:
   }
   else {
     pCVar19->ref_count = pCVar19->ref_count + 1;
-    sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(this_ptr_00);
+    sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(this_ptr_01);
     g_SfxSlots[iVar11].is_active = 0;
     fVar1 = g_SfxSlots[iVar11].options.current_volume;
     g_SfxSlots[iVar11].fade_time_remaining = -1.0;
     g_SfxSlots[iVar11].stop_after_fade = 0;
     g_SfxSlots[iVar11].fade_target_volume = fVar1;
-    pCVar5 = this_ptr_00;
+    pCVar5 = this_ptr_01;
     do {
       pCVar16 = &(pCVar5->options).position;
       pCVar5->channel_current_buffer_offsets[0] = -1;
@@ -272,14 +268,14 @@ LAB_005a9026:
     g_SfxSlots[iVar11].playback_state = g_SfxPlaybackStateCounter;
     iVar6 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(pCVar19,999.0,999.0);
     if (iVar6 != 0) {
-      sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr_00,0.0);
+      sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr_01,0.0);
       uVar7 = sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0();
       if (uVar7 != 0) {
         iVar6 = (*g_CSoundDevicePtr->vtable->allocateSfx)
                           (g_CSoundDevicePtr,(g_SfxSlots[iVar11].sample)->buffer_id);
         g_SfxSlots[iVar11].hardware_buffer_handle = iVar6;
         if ((iVar6 == 0) ||
-           (iVar6 = (*g_CSoundDevicePtr->vtable->startSfx)(g_CSoundDevicePtr,this_ptr_00),
+           (iVar6 = (*g_CSoundDevicePtr->vtable->startSfx)(g_CSoundDevicePtr,this_ptr_01),
            iVar6 == 0)) goto LAB_005a9523;
       }
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
@@ -287,7 +283,7 @@ LAB_005a9026:
     }
   }
 LAB_005a9523:
-  sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr_00);
+  sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr_01);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 0;
 }

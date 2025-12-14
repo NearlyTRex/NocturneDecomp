@@ -16,13 +16,13 @@
 
 section .text
 
-    CMP dword ptr [0x02d03e94],0x0      ; 005b72a0 | int g_UseExternalRenderer
+    CMP dword ptr [0x02d03e94],0x0      ; 005b72a0 | g_UseExternalRenderer
         ;   Label: wincore_windll.cpp_endScene_FUN_005b72a0
-    JNZ 0x005b72ac                      ; 005b72a7 | LAB_005b72ac
-        ;   XREF to: 005b72ac (CONDITIONAL_JUMP)
+    JNZ 0x005b72ac                      ; 005b72a7
+        ;   XREF to: 005b72ac (CONDITIONAL_JUMP)  ; LAB_005b72ac
     XOR EAX,EAX                         ; 005b72a9
     RET                                 ; 005b72ab
-    CALL dword ptr [0x03f6b8a8]         ; 005b72ac | APIDLL_endScene * g_APIDLL_endScene
+    CALL dword ptr [0x03f6b8a8]         ; 005b72ac | g_APIDLL_endScene
         ;   Label: LAB_005b72ac
     RET                                 ; 005b72b2
 

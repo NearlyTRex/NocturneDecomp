@@ -88,7 +88,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   iVar3 = g_MoonCloudScrollY >> 0x10;
   local_28 = 0;
   do {
-    puVar6 = (ulonglong *)g_ScreenBufferArray[local_28];
+    puVar6 = g_ScreenBufferArray[local_28];
     uVar4 = 0;
     do {
       uVar7 = paddusb(*puVar6,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette

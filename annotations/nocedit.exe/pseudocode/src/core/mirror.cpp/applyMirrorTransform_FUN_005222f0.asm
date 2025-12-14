@@ -28,8 +28,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 005222fd
     PUSH EDX                            ; 00522301
     PUSH EBX                            ; 00522302
-    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 00522303 | CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)
+    CALL core_xform.cpp_transformVector3x4_FUN_005f4dc0 ; 00522303
+        ;   XREF to: 005f4dc0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_005f4dc0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
     ADD ESP,0xc                         ; 00522308
     MOV EAX,EBX                         ; 0052230b
     POP EBX                             ; 0052230d

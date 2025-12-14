@@ -48,7 +48,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0057736f
         ;   Label: LAB_0057736f
     MOV ECX,dword ptr [ESP]             ; 00577373
-    MOV EAX,dword ptr [EAX + 0x2cf6a9c] ; 00577376 | void *[1024] g_ScreenBufferArray
+    MOV EAX,dword ptr [EAX + 0x2cf6a9c] ; 00577376 | g_ScreenBufferArray | g_ScreenBufferArray[1]
     ADD EAX,ECX                         ; 0057737c
     LEA EBX,[EAX + 0x4]                 ; 0057737e
     MOV EAX,dword ptr [ESP + 0x10]      ; 00577381
@@ -56,9 +56,9 @@ section .text
     SHL EAX,0x8                         ; 00577389
     MOV EBP,dword ptr [ESP + 0xc]       ; 0057738c
     ADD EAX,ESI                         ; 00577390
-    MOV EDX,dword ptr [EAX + 0x3365cc0] ; 00577392 | DAT_03365cc0
+    MOV EDX,dword ptr [EAX + 0x3365cc0] ; 00577392 | DAT_03365cc0 | DAT_03365cc4
         ;   Label: LAB_00577392
-    MOV ECX,dword ptr [0x0067939c]      ; 00577398 | int g_BitsPerPixel
+    MOV ECX,dword ptr [0x0067939c]      ; 00577398 | g_BitsPerPixel
     MOV EDI,EDX                         ; 0057739e
     MOV ESI,EDX                         ; 005773a0
     AND EDI,0xff                        ; 005773a2
@@ -67,13 +67,13 @@ section .text
     AND ESI,0xff                        ; 005773ae
     AND EDX,0xff                        ; 005773b4
     CMP ECX,0x20                        ; 005773ba
-    JNZ 0x0057741d                      ; 005773bd | LAB_0057741d
-        ;   XREF to: 0057741d (CONDITIONAL_JUMP)
-    MOV CL,byte ptr [0x02d01f24]        ; 005773bf | int g_RedBitPosition
+    JNZ 0x0057741d                      ; 005773bd
+        ;   XREF to: 0057741d (CONDITIONAL_JUMP)  ; LAB_0057741d
+    MOV CL,byte ptr [0x02d01f24]        ; 005773bf | g_RedBitPosition
     SHL EDI,CL                          ; 005773c5
-    MOV CL,byte ptr [0x02d01f30]        ; 005773c7 | int g_GreenBitPosition
+    MOV CL,byte ptr [0x02d01f30]        ; 005773c7 | g_GreenBitPosition
     SHL ESI,CL                          ; 005773cd
-    MOV CL,byte ptr [0x02d01f3c]        ; 005773cf | int g_BlueBitPosition
+    MOV CL,byte ptr [0x02d01f3c]        ; 005773cf | g_BlueBitPosition
     OR EDI,ESI                          ; 005773d5
     SHL EDX,CL                          ; 005773d7
     MOV ECX,EDI                         ; 005773d9
@@ -83,8 +83,8 @@ section .text
     ADD EAX,0x4                         ; 005773e0
     MOV dword ptr [EBX + -0x4],ECX      ; 005773e3
     CMP EAX,EBP                         ; 005773e6
-    JNZ 0x00577392                      ; 005773e8 | LAB_00577392
-        ;   XREF to: 00577392 (CONDITIONAL_JUMP)
+    JNZ 0x00577392                      ; 005773e8
+        ;   XREF to: 00577392 (CONDITIONAL_JUMP)  ; LAB_00577392
     MOV ESI,dword ptr [ESP + 0x8]       ; 005773ea
     MOV EDI,dword ptr [ESP + 0x10]      ; 005773ee
     MOV EBX,dword ptr [ESP + 0xc]       ; 005773f2
@@ -95,8 +95,8 @@ section .text
     MOV dword ptr [ESP + 0x10],EDI      ; 00577404
     MOV dword ptr [ESP + 0xc],EBX       ; 00577408
     CMP EDI,0x30                        ; 0057740c
-    JL 0x0057736f                       ; 0057740f | LAB_0057736f
-        ;   XREF to: 0057736f (CONDITIONAL_JUMP)
+    JL 0x0057736f                       ; 0057740f
+        ;   XREF to: 0057736f (CONDITIONAL_JUMP)  ; LAB_0057736f
     ADD ESP,0x14                        ; 00577415
     POP EBP                             ; 00577418
     POP EDI                             ; 00577419
@@ -108,6 +108,6 @@ section .text
     SHL ESI,0x8                         ; 0057741f
     SHL ECX,0x10                        ; 00577422
     OR ECX,ESI                          ; 00577425
-    JMP 0x005773db                      ; 00577427 | LAB_005773db
-        ;   XREF to: 005773db (UNCONDITIONAL_JUMP)
+    JMP 0x005773db                      ; 00577427
+        ;   XREF to: 005773db (UNCONDITIONAL_JUMP)  ; LAB_005773db
 

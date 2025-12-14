@@ -1,93 +1,93 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 13, 
-    "pseudocode_lines": 13, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 42, 
-    "assembly_lines": 29, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "APIDLL_buildCardList*", 
-      "name": "g_APIDLL_buildCardList", 
-      "addr": "03f6b91c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ExternalRendererActive", 
-      "addr": "03f6b978", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b7db0", 
-    "signature": "int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, int * out_device_ids)", 
-    "address_range": [
-      [
-        "005b7db0", 
-        "005b7de7"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_buildCardList_FUN_005b7db0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_card_count"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "void *", 
-        "size": 4, 
-        "name": "enum_data_buffer"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char * *", 
-        "size": 4, 
-        "name": "out_card_names"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_vendor_ids"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "out_device_ids"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 20
-  }, 
+    "assembly_lines": 29,
+    "complexity_score": 13,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
+  },
   "cross_references": [
     {
-      "from_addr": "00511769", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80", 
-      "addr": "00510c80"
+      "addr": "00510c80",
+      "from_addr": "00511769",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b7db0",
+    "address_range": [
+      [
+        "005b7db0",
+        "005b7de7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_buildCardList_FUN_005b7db0",
+    "signature": "int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, int * out_device_ids)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f6b91c",
+      "name": "g_APIDLL_buildCardList",
+      "type": "APIDLL_buildCardList*",
+      "value": null
+    },
+    {
+      "addr": "03f6b978",
+      "name": "g_ExternalRendererActive",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "out_card_count",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "enum_data_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "out_card_names",
+        "offset": 12,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "out_vendor_ids",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "out_device_ids",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
 }

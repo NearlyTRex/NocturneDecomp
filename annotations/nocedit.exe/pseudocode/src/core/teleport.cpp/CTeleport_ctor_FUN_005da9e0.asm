@@ -22,9 +22,9 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005da9e0
         ;   Label: core_teleport.cpp_CTeleport_ctor_FUN_005da9e0
     PUSH EDX                            ; 005da9e4
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 005da9e5 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
-    MOV dword ptr [EAX + 0x154],0x664324 ; 005da9ea | CDemonActor_vtable g_CTeleportVTable
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 005da9e5
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
+    MOV dword ptr [EAX + 0x154],0x664324 ; 005da9ea | g_CTeleportVTable
     MOV dword ptr [EAX + 0x158],0x40a00000 ; 005da9f4
     MOV dword ptr [EAX + 0x15c],0x41100000 ; 005da9fe
     MOV dword ptr [EAX + 0x160],0x40a00000 ; 005daa08

@@ -38,8 +38,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 00587713
     MOV ESI,dword ptr [ESP + 0x14]      ; 00587717
     PUSH EBX                            ; 0058771b
-    CALL core_setutil.cpp_C3DSLight_reset_FUN_005879b0 ; 0058771c | void core_setutil.cpp_C3DSLight_reset_FUN_005879b0(C3DSLight * this_ptr)
-        ;   XREF to: 005879b0 (UNCONDITIONAL_CALL)
+    CALL core_setutil.cpp_C3DSLight_reset_FUN_005879b0 ; 0058771c
+        ;   XREF to: 005879b0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_reset_FUN_005879b0(C3DSLight * this_ptr)
     ADD ESP,0x4                         ; 00587721
     LEA EAX,[EBX + 0x11cc]              ; 00587724
     PUSH EAX                            ; 0058772a
@@ -56,46 +56,45 @@ section .text
     PUSH EBX                            ; 0058774e
     LEA EAX,[EBX + 0x4]                 ; 0058774f
     PUSH EAX                            ; 00587752
-    PUSH 0x64999f                       ; 00587753 | = "\"%[^\"]\",%d,%f,%f,%f,%f,%f,%f " | s_d_f_f_f_f_f_f_0064999f = "%[^"]",%d,%f,%f,%f,%f,%f,%f
+    PUSH 0x64999f                       ; 00587753 | = "\"%[^\"]\",%d,%f,%f,%f,%f,%f,%f "
     PUSH ESI                            ; 00587758
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00587759 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00587759
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x28                        ; 0058775e
     CMP EAX,0x8                         ; 00587761
-    JNZ 0x00587796                      ; 00587764 | LAB_00587796
-        ;   XREF to: 00587796 (CONDITIONAL_JUMP)
+    JNZ 0x00587796                      ; 00587764
+        ;   XREF to: 00587796 (CONDITIONAL_JUMP)  ; LAB_00587796
     MOV EDI,dword ptr [EBX]             ; 00587766
         ;   Label: LAB_00587766
     TEST EDI,EDI                        ; 00587768
-    JZ 0x005877bb                       ; 0058776a | LAB_005877bb
-        ;   XREF to: 005877bb (CONDITIONAL_JUMP)
+    JZ 0x005877bb                       ; 0058776a
+        ;   XREF to: 005877bb (CONDITIONAL_JUMP)  ; LAB_005877bb
     CMP EDI,0x1                         ; 0058776c
-    JNZ 0x0058781d                      ; 0058776f | LAB_0058781d
-        ;   XREF to: 0058781d (CONDITIONAL_JUMP)
+    JNZ 0x0058781d                      ; 0058776f
+        ;   XREF to: 0058781d (CONDITIONAL_JUMP)  ; LAB_0058781d
     LEA EAX,[EBX + 0x11d4]              ; 00587775
     PUSH EAX                            ; 0058777b
     LEA EAX,[EBX + 0x11d0]              ; 0058777c
     PUSH EAX                            ; 00587782
-    PUSH 0x6499fd                       ; 00587783 | = ",%f,%f\n" | s_f_f_006499fd = ,%f,%f
-
+    PUSH 0x6499fd                       ; 00587783 | = ",%f,%f\n"
     PUSH ESI                            ; 00587788
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00587789 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 00587789
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x10                        ; 0058778e
     CMP EAX,0x2                         ; 00587791
-    JZ 0x005877e7                       ; 00587794 | LAB_005877e7
-        ;   XREF to: 005877e7 (CONDITIONAL_JUMP)
-    MOV EDX,0x6499bd                    ; 00587796 | = "..\\core\\setutil.cpp" | s_core_setutil_cpp_006499bd = ..\core\setutil.cpp
+    JZ 0x005877e7                       ; 00587794
+        ;   XREF to: 005877e7 (CONDITIONAL_JUMP)  ; LAB_005877e7
+    MOV EDX,0x6499bd                    ; 00587796 | = "..\\core\\setutil.cpp"
         ;   Label: LAB_00587796
     MOV ECX,0x49d                       ; 0058779b
-    PUSH 0x6499d1                       ; 005877a0 | = "Can't parse light from S3D file." | s_Can_t_parse_light_from_S_006499d1 = Can't parse light from S3D file.
-    MOV dword ptr [0x02f0ca48],EDX      ; 005877a5 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 005877ab | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005877b1 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x6499d1                       ; 005877a0 | = "Can't parse light from S3D file."
+    MOV dword ptr [0x02f0ca48],EDX      ; 005877a5 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 005877ab | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 005877b1
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 005877b6
-    JMP 0x00587766                      ; 005877b9 | LAB_00587766
-        ;   XREF to: 00587766 (UNCONDITIONAL_JUMP)
+    JMP 0x00587766                      ; 005877b9
+        ;   XREF to: 00587766 (UNCONDITIONAL_JUMP)  ; LAB_00587766
     LEA EAX,[EBX + 0x114]               ; 005877bb
         ;   Label: LAB_005877bb
     PUSH EAX                            ; 005877c1
@@ -103,15 +102,14 @@ section .text
     PUSH EAX                            ; 005877c8
     LEA EAX,[EBX + 0x110]               ; 005877c9
     PUSH EAX                            ; 005877cf
-    PUSH 0x6499f2                       ; 005877d0 | = ",%f,%f,%f\n" | s_f_f_f_006499f2 = ,%f,%f,%f
-
+    PUSH 0x6499f2                       ; 005877d0 | = ",%f,%f,%f\n"
     PUSH ESI                            ; 005877d5
-    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005877d6 | int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
-        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005877d6
+        ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(FILE * file, char * format)
     ADD ESP,0x14                        ; 005877db
     CMP EAX,0x3                         ; 005877de
-    JNZ 0x00587796                      ; 005877e1 | LAB_00587796
-        ;   XREF to: 00587796 (CONDITIONAL_JUMP)
+    JNZ 0x00587796                      ; 005877e1
+        ;   XREF to: 00587796 (CONDITIONAL_JUMP)  ; LAB_00587796
     POP EDI                             ; 005877e3
         ;   Label: LAB_005877e3
     POP ESI                             ; 005877e4
@@ -123,8 +121,8 @@ section .text
     FCOMPP                              ; 005877ef
     FNSTSW AX                           ; 005877f1
     SAHF                                ; 005877f3
-    JBE 0x00587800                      ; 005877f4 | LAB_00587800
-        ;   XREF to: 00587800 (CONDITIONAL_JUMP)
+    JBE 0x00587800                      ; 005877f4
+        ;   XREF to: 00587800 (CONDITIONAL_JUMP)  ; LAB_00587800
     MOV dword ptr [EBX + 0x11d0],0x0    ; 005877f6
     FLD float ptr [EBX + 0x11d4]        ; 00587800
         ;   Label: LAB_00587800
@@ -132,21 +130,21 @@ section .text
     FCOMPP                              ; 00587808
     FNSTSW AX                           ; 0058780a
     SAHF                                ; 0058780c
-    JBE 0x005877e3                      ; 0058780d | LAB_005877e3
-        ;   XREF to: 005877e3 (CONDITIONAL_JUMP)
+    JBE 0x005877e3                      ; 0058780d
+        ;   XREF to: 005877e3 (CONDITIONAL_JUMP)  ; LAB_005877e3
     MOV dword ptr [EBX + 0x11d4],0x0    ; 0058780f
     POP EDI                             ; 00587819
     POP ESI                             ; 0058781a
     POP EBX                             ; 0058781b
     RET                                 ; 0058781c
-    MOV EAX,0x649a05                    ; 0058781d | = "..\\core\\setutil.cpp" | s_core_setutil_cpp_00649a05 = ..\core\setutil.cpp
+    MOV EAX,0x649a05                    ; 0058781d | = "..\\core\\setutil.cpp"
         ;   Label: LAB_0058781d
     MOV EDX,0x4a9                       ; 00587822
-    PUSH 0x649a19                       ; 00587827 | = "Unknown light type!" | s_Unknown_light_type_00649a19 = Unknown light type!
-    MOV [0x02f0ca48],EAX                ; 0058782c | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 00587831 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00587837 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x649a19                       ; 00587827 | = "Unknown light type!"
+    MOV [0x02f0ca48],EAX                ; 0058782c | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 00587831 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00587837
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0058783c
     POP EDI                             ; 0058783f
     POP ESI                             ; 00587840

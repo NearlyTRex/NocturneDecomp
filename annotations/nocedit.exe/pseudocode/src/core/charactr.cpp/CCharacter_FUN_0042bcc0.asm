@@ -34,12 +34,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0042bcc3
     LEA ESI,[EBX + 0x23b8]              ; 0042bcc7
     CMP byte ptr [ESI],0x0              ; 0042bccd
-    JZ 0x0042bce0                       ; 0042bcd0 | LAB_0042bce0
-        ;   XREF to: 0042bce0 (CONDITIONAL_JUMP)
+    JZ 0x0042bce0                       ; 0042bcd0
+        ;   XREF to: 0042bce0 (CONDITIONAL_JUMP)  ; LAB_0042bce0
     MOV ESI,dword ptr [ESP + 0x14]      ; 0042bcd2
     CMP dword ptr [EBX + ESI*0x4 + 0x2298],0x0 ; 0042bcd6
-    JNZ 0x0042bce4                      ; 0042bcde | LAB_0042bce4
-        ;   XREF to: 0042bce4 (CONDITIONAL_JUMP)
+    JNZ 0x0042bce4                      ; 0042bcde
+        ;   XREF to: 0042bce4 (CONDITIONAL_JUMP)  ; LAB_0042bce4
     POP EBP                             ; 0042bce0
         ;   Label: LAB_0042bce0
     POP ESI                             ; 0042bce1
@@ -58,8 +58,8 @@ section .text
     PUSH ESI                            ; 0042bcf9
     LEA ESI,[EBX + 0x20]                ; 0042bcfa
     PUSH ESI                            ; 0042bcfd
-    CALL core_bodypart.cpp_CreateBodyPart_FUN_00418e10 ; 0042bcfe | undefined core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
-        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)
+    CALL core_bodypart.cpp_CreateBodyPart_FUN_00418e10 ; 0042bcfe
+        ;   XREF to: 00418e10 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_CreateBodyPart_FUN_00418e10()
     ADD ESP,0x1c                        ; 0042bd03
     MOV EDI,dword ptr [ESP + 0x20]      ; 0042bd06
     PUSH EDI                            ; 0042bd0a
@@ -68,12 +68,12 @@ section .text
     PUSH EAX                            ; 0042bd10
     PUSH EBX                            ; 0042bd11
     MOV ESI,EAX                         ; 0042bd12
-    CALL core_charactr.cpp_CCharacter_FUN_0042bd30 ; 0042bd14 | void core_charactr.cpp_CCharacter_FUN_0042bd30(CCharacter * this_ptr)
-        ;   XREF to: 0042bd30 (UNCONDITIONAL_CALL)
+    CALL core_charactr.cpp_CCharacter_FUN_0042bd30 ; 0042bd14
+        ;   XREF to: 0042bd30 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_FUN_0042bd30(CCharacter * this_ptr)
     ADD ESP,0x10                        ; 0042bd19
     PUSH ESI                            ; 0042bd1c
-    CALL core_bodypart.cpp_FUN_0041a050 ; 0042bd1d | undefined core_bodypart.cpp_FUN_0041a050()
-        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)
+    CALL core_bodypart.cpp_FUN_0041a050 ; 0042bd1d
+        ;   XREF to: 0041a050 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_0041a050()
     ADD ESP,0x4                         ; 0042bd22
     POP EDI                             ; 0042bd25
     POP EBP                             ; 0042bd26

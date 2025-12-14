@@ -1,99 +1,99 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 9, 
-    "pseudocode_lines": 9, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 35, 
-    "assembly_lines": 26, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004fb250", 
-      "addr": "004fb250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CIni", 
-      "name": "g_CIniInstance", 
-      "addr": "02db8a60", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004fb960", 
-    "signature": "void engine_ini.cpp_getProfileString_FUN_004fb960(char * section, char * key, char * default_value, char * output_buffer, int buffer_size, char * filename)", 
-    "address_range": [
-      [
-        "004fb960", 
-        "004fb993"
-      ]
-    ], 
-    "name": "engine_ini.cpp_getProfileString_FUN_004fb960"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "section"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "key"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "default_value"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "output_buffer"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "buffer_size"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "filename"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    "assembly_lines": 26,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
+  },
   "cross_references": [
     {
-      "from_addr": "004fbb4c", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_ini.cpp_CIniFile_getString_FUN_004fbb20", 
-      "addr": "004fbb20"
+      "addr": "004fbb20",
+      "from_addr": "004fbb4c",
+      "name": "engine_ini.cpp_CIniFile_getString_FUN_004fbb20",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004fb960",
+    "address_range": [
+      [
+        "004fb960",
+        "004fb993"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_ini.cpp_getProfileString_FUN_004fb960",
+    "signature": "void engine_ini.cpp_getProfileString_FUN_004fb960(char * section, char * key, char * default_value, char * output_buffer, int buffer_size, char * filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fb250",
+      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004fb250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02db8a60",
+      "name": "g_CIniInstance",
+      "type": "CIni",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "section",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "key",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "default_value",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 24,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
 }

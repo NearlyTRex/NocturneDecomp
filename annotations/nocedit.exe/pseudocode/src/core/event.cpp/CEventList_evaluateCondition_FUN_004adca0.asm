@@ -41,43 +41,42 @@ section .text
         ;   Label: core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
     MOV EBX,dword ptr [ESP + 0xc]       ; 004adca1
     TEST EBX,EBX                        ; 004adca5
-    JZ 0x004adcae                       ; 004adca7 | LAB_004adcae
-        ;   XREF to: 004adcae (CONDITIONAL_JUMP)
+    JZ 0x004adcae                       ; 004adca7
+        ;   XREF to: 004adcae (CONDITIONAL_JUMP)  ; LAB_004adcae
     CMP byte ptr [EBX],0x0              ; 004adca9
-    JNZ 0x004adcb2                      ; 004adcac | LAB_004adcb2
-        ;   XREF to: 004adcb2 (CONDITIONAL_JUMP)
+    JNZ 0x004adcb2                      ; 004adcac
+        ;   XREF to: 004adcb2 (CONDITIONAL_JUMP)  ; LAB_004adcb2
     XOR EAX,EAX                         ; 004adcae
         ;   Label: LAB_004adcae
     POP EBX                             ; 004adcb0
         ;   Label: LAB_004adcb0
     RET                                 ; 004adcb1
-    PUSH 0x6252ae                       ; 004adcb2 | = "none" | s_none_006252ae = none
+    PUSH 0x6252ae                       ; 004adcb2 | = "none"
         ;   Label: LAB_004adcb2
     PUSH EBX                            ; 004adcb7
-    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004adcb8 | int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
-        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_stricmp_FUN_005fe7f0 ; 004adcb8
+        ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c_stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 004adcbd
     TEST EAX,EAX                        ; 004adcc0
-    JZ 0x004adcb0                       ; 004adcc2 | LAB_004adcb0
-        ;   XREF to: 004adcb0 (CONDITIONAL_JUMP)
+    JZ 0x004adcb0                       ; 004adcc2
+        ;   XREF to: 004adcb0 (CONDITIONAL_JUMP)  ; LAB_004adcb0
     PUSH EBX                            ; 004adcc4
     MOV ECX,dword ptr [ESP + 0xc]       ; 004adcc5
     XOR EDX,EDX                         ; 004adcc9
     PUSH ECX                            ; 004adccb
-    MOV dword ptr [0x02d0a45c],EDX      ; 004adccc | undefined4 DAT_02d0a45c
-    CALL core_event.cpp_CEventList_FUN_004add80 ; 004adcd2 | int core_event.cpp_CEventList_FUN_004add80(CEventList * this_ptr)
-        ;   XREF to: 004add80 (UNCONDITIONAL_CALL)
+    MOV dword ptr [0x02d0a45c],EDX      ; 004adccc | DAT_02d0a45c
+    CALL core_event.cpp_CEventList_FUN_004add80 ; 004adcd2
+        ;   XREF to: 004add80 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_FUN_004add80(CEventList * this_ptr)
     ADD ESP,0x8                         ; 004adcd7
     TEST EAX,EAX                        ; 004adcda
-    JGE 0x004adcb0                      ; 004adcdc | LAB_004adcb0
-        ;   XREF to: 004adcb0 (CONDITIONAL_JUMP)
-    PUSH 0x2d0a460                      ; 004adcde | undefined1 DAT_02d0a460
-    PUSH 0x6252b3                       ; 004adce3 | = "%s\n" | s_s_006252b3 = %s
-
-    MOV EBX,dword ptr [0x0066e8e0]      ; 004adce8 | CConsole g_ConsolePtr | CConsole * g_CConsolePtr
-    PUSH EBX                            ; 004adcee | CConsole g_ConsolePtr
-    CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004adcef | void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
-        ;   XREF to: 00441890 (UNCONDITIONAL_CALL)
+    JGE 0x004adcb0                      ; 004adcdc
+        ;   XREF to: 004adcb0 (CONDITIONAL_JUMP)  ; LAB_004adcb0
+    PUSH 0x2d0a460                      ; 004adcde | DAT_02d0a460
+    PUSH 0x6252b3                       ; 004adce3 | = "%s\n"
+    MOV EBX,dword ptr [0x0066e8e0]      ; 004adce8 | g_ConsolePtr | g_CConsolePtr
+    PUSH EBX                            ; 004adcee | g_ConsolePtr
+    CALL engine_console.cpp_CConsole_printf_FUN_00441890 ; 004adcef
+        ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004adcf4
     XOR EAX,EAX                         ; 004adcf7
     POP EBX                             ; 004adcf9

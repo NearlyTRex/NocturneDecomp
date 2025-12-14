@@ -26,8 +26,8 @@ section .text
 
     PUSH 0x18                           ; 0058abb0
         ;   Label: core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
-    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058abb5 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 0058abb5
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
     PUSH EBX                            ; 0058abba
     PUSH ESI                            ; 0058abbb
     PUSH EDI                            ; 0058abbc
@@ -40,45 +40,45 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 0058abca
     SHL EAX,0x2                         ; 0058abcc
     CMP EDI,EAX                         ; 0058abcf
-    JGE 0x0058abf2                      ; 0058abd1 | LAB_0058abf2
-        ;   XREF to: 0058abf2 (CONDITIONAL_JUMP)
+    JGE 0x0058abf2                      ; 0058abd1
+        ;   XREF to: 0058abf2 (CONDITIONAL_JUMP)  ; LAB_0058abf2
     MOV EBX,0x1                         ; 0058abd3
     PUSH ESI                            ; 0058abd8
         ;   Label: LAB_0058abd8
-    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058abd9 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
-        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058abd9
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
     ADD ESP,0x4                         ; 0058abde
     TEST EAX,EAX                        ; 0058abe1
-    JL 0x0058abef                       ; 0058abe3 | LAB_0058abef
-        ;   XREF to: 0058abef (CONDITIONAL_JUMP)
+    JL 0x0058abef                       ; 0058abe3
+        ;   XREF to: 0058abef (CONDITIONAL_JUMP)  ; LAB_0058abef
     CMP EAX,0xa                         ; 0058abe5
-    JNZ 0x0058abd8                      ; 0058abe8 | LAB_0058abd8
-        ;   XREF to: 0058abd8 (CONDITIONAL_JUMP)
+    JNZ 0x0058abd8                      ; 0058abe8
+        ;   XREF to: 0058abd8 (CONDITIONAL_JUMP)  ; LAB_0058abd8
     DEC EBX                             ; 0058abea
     TEST EBX,EBX                        ; 0058abeb
-    JG 0x0058abd8                       ; 0058abed | LAB_0058abd8
-        ;   XREF to: 0058abd8 (CONDITIONAL_JUMP)
+    JG 0x0058abd8                       ; 0058abed
+        ;   XREF to: 0058abd8 (CONDITIONAL_JUMP)  ; LAB_0058abd8
     INC EDI                             ; 0058abef
         ;   Label: LAB_0058abef
-    JMP 0x0058abc6                      ; 0058abf0 | LAB_0058abc6
-        ;   XREF to: 0058abc6 (UNCONDITIONAL_JUMP)
+    JMP 0x0058abc6                      ; 0058abf0
+        ;   XREF to: 0058abc6 (UNCONDITIONAL_JUMP)  ; LAB_0058abc6
     TEST byte ptr [EBP + 0xc],0x20      ; 0058abf2
         ;   Label: LAB_0058abf2
-    JNZ 0x0058abfd                      ; 0058abf6 | LAB_0058abfd
-        ;   XREF to: 0058abfd (CONDITIONAL_JUMP)
+    JNZ 0x0058abfd                      ; 0058abf6
+        ;   XREF to: 0058abfd (CONDITIONAL_JUMP)  ; LAB_0058abfd
     POP EBP                             ; 0058abf8
     POP EDI                             ; 0058abf9
     POP ESI                             ; 0058abfa
     POP EBX                             ; 0058abfb
     RET                                 ; 0058abfc
-    MOV EDX,0x64a490                    ; 0058abfd | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_0064a490 = ..\core\skeledit.cpp
+    MOV EDX,0x64a490                    ; 0058abfd | = "..\\core\\skeledit.cpp"
         ;   Label: LAB_0058abfd
     MOV ECX,0x34a                       ; 0058ac02
-    PUSH 0x64a4a5                       ; 0058ac07 | = "CBoneStructure::skipBONframe - error ..." | s_CBoneStructure_skipBONfr_0064a4a5 = CBoneStructure::skipBONframe - error reading file!
-    MOV dword ptr [0x02f0ca48],EDX      ; 0058ac0c | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ECX      ; 0058ac12 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0058ac18 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x64a4a5                       ; 0058ac07 | = "CBoneStructure::skipBONframe - error ..."
+    MOV dword ptr [0x02f0ca48],EDX      ; 0058ac0c | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0058ac12 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0058ac18
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0058ac1d
     POP EBP                             ; 0058ac20
     POP EDI                             ; 0058ac21

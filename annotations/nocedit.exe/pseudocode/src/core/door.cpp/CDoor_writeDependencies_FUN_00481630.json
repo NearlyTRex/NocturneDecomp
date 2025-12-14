@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 0, 
-    "global_count": 0, 
-    "total_lines": 16, 
-    "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0", 
-      "addr": "0047edd0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
+    "assembly_lines": 10,
+    "complexity_score": 6,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00481630", 
-    "signature": "void core_door.cpp_CDoor_writeDependencies_FUN_00481630(CDoor * this_ptr, FILE * file_handle)", 
+    "address": "00481630",
     "address_range": [
       [
-        "00481630", 
+        "00481630",
         "00481647"
       ]
-    ], 
-    "name": "core_door.cpp_CDoor_writeDependencies_FUN_00481630"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_door.cpp_CDoor_writeDependencies_FUN_00481630",
+    "signature": "void core_door.cpp_CDoor_writeDependencies_FUN_00481630(CDoor * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0047edd0",
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0"
+    }
+  ],
+  "globals": [],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDoor *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoor *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

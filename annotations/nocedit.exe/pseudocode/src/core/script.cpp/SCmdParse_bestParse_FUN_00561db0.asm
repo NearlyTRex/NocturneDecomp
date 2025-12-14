@@ -49,8 +49,8 @@ section .text
     MOV dword ptr [ESP + 0x450],EDX     ; 00561dca
     MOV dword ptr [ESP + 0x44c],EBX     ; 00561dd1
     TEST ESI,ESI                        ; 00561dd8
-    JLE 0x00561e1f                      ; 00561dda | LAB_00561e1f
-        ;   XREF to: 00561e1f (CONDITIONAL_JUMP)
+    JLE 0x00561e1f                      ; 00561dda
+        ;   XREF to: 00561e1f (CONDITIONAL_JUMP)  ; LAB_00561e1f
     MOV EBP,dword ptr [ESP + 0x474]     ; 00561ddc
     MOV ECX,dword ptr [EBP]             ; 00561de3
         ;   Label: LAB_00561de3
@@ -59,38 +59,38 @@ section .text
     PUSH ESI                            ; 00561dee
     MOV EAX,dword ptr [ESP + 0x470]     ; 00561def
     PUSH EAX                            ; 00561df6
-    CALL core_script.cpp_SCmdParse_parse_FUN_00561fd0 ; 00561df7 | undefined core_script.cpp_SCmdParse_parse_FUN_00561fd0()
-        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_SCmdParse_parse_FUN_00561fd0 ; 00561df7
+        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_SCmdParse_parse_FUN_00561fd0()
     ADD ESP,0xc                         ; 00561dfc
     MOV EDX,dword ptr [ESP + 0x450]     ; 00561dff
     MOV ESI,EAX                         ; 00561e06
     CMP EAX,EDX                         ; 00561e08
-    JGE 0x00561efd                      ; 00561e0a | LAB_00561efd
-        ;   XREF to: 00561efd (CONDITIONAL_JUMP)
+    JGE 0x00561efd                      ; 00561e0a
+        ;   XREF to: 00561efd (CONDITIONAL_JUMP)  ; LAB_00561efd
     MOV EAX,dword ptr [ESP + 0x478]     ; 00561e10
         ;   Label: LAB_00561e10
     INC EDI                             ; 00561e17
     ADD EBP,0x4                         ; 00561e18
     CMP EDI,EAX                         ; 00561e1b
-    JL 0x00561de3                       ; 00561e1d | LAB_00561de3
-        ;   XREF to: 00561de3 (CONDITIONAL_JUMP)
+    JL 0x00561de3                       ; 00561e1d
+        ;   XREF to: 00561de3 (CONDITIONAL_JUMP)  ; LAB_00561de3
     CMP EBX,0x1                         ; 00561e1f
         ;   Label: LAB_00561e1f
-    JL 0x00561f98                       ; 00561e22 | LAB_00561f98
-        ;   XREF to: 00561f98 (CONDITIONAL_JUMP)
+    JL 0x00561f98                       ; 00561e22
+        ;   XREF to: 00561f98 (CONDITIONAL_JUMP)  ; LAB_00561f98
     MOV EDX,dword ptr [ESP + 0x44c]     ; 00561e28
     XOR ESI,ESI                         ; 00561e2f
     TEST EDX,EDX                        ; 00561e31
-    JZ 0x00561eaf                       ; 00561e33 | LAB_00561eaf
-        ;   XREF to: 00561eaf (CONDITIONAL_JUMP)
+    JZ 0x00561eaf                       ; 00561e33
+        ;   XREF to: 00561eaf (CONDITIONAL_JUMP)  ; LAB_00561eaf
     MOV EAX,ESP                         ; 00561e39
     PUSH EAX                            ; 00561e3b
-    CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 00561e3c | CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
-        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 ; 00561e3c
+        ;   XREF to: 004a3b90 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_ctor_FUN_004a3b90(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00561e41
     TEST EBX,EBX                        ; 00561e44
-    JLE 0x00561e80                      ; 00561e46 | LAB_00561e80
-        ;   XREF to: 00561e80 (CONDITIONAL_JUMP)
+    JLE 0x00561e80                      ; 00561e46
+        ;   XREF to: 00561e80 (CONDITIONAL_JUMP)  ; LAB_00561e80
     MOV EDI,dword ptr [ESP + 0x474]     ; 00561e48
     SHL EBX,0x2                         ; 00561e4f
     MOV EAX,dword ptr [ESP + ESI*0x1 + 0x3a8] ; 00561e52
@@ -102,33 +102,33 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00561e61
     PUSH EAX                            ; 00561e65
     ADD ESI,0x4                         ; 00561e66
-    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 00561e69 | void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
-        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 00561e69
+        ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 00561e6e
     CMP ESI,EBX                         ; 00561e71
-    JL 0x00561e52                       ; 00561e73 | LAB_00561e52
-        ;   XREF to: 00561e52 (CONDITIONAL_JUMP)
+    JL 0x00561e52                       ; 00561e73
+        ;   XREF to: 00561e52 (CONDITIONAL_JUMP)  ; LAB_00561e52
     LEA EAX,[EAX]                       ; 00561e75
     LEA EDX,[EDX]                       ; 00561e7b
     MOV EBX,EBX                         ; 00561e7e
     PUSH 0x0                            ; 00561e80
         ;   Label: LAB_00561e80
     PUSH -0x1                           ; 00561e82
-    PUSH 0x643b45                       ; 00561e84 | = "Choose command form" | s_Choose_command_form_00643b45 = Choose command form
+    PUSH 0x643b45                       ; 00561e84 | = "Choose command form"
     LEA EAX,[ESP + 0xc]                 ; 00561e89
     PUSH EAX                            ; 00561e8d
-    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 00561e8e | int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
-        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20 ; 00561e8e
+        ;   XREF to: 004a3e20 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)
     ADD ESP,0x10                        ; 00561e93
     MOV ESI,EAX                         ; 00561e96
     TEST EAX,EAX                        ; 00561e98
-    JL 0x00561faa                       ; 00561e9a | LAB_00561faa
-        ;   XREF to: 00561faa (CONDITIONAL_JUMP)
+    JL 0x00561faa                       ; 00561e9a
+        ;   XREF to: 00561faa (CONDITIONAL_JUMP)  ; LAB_00561faa
     PUSH 0x0                            ; 00561ea0
     LEA EAX,[ESP + 0x4]                 ; 00561ea2
     PUSH EAX                            ; 00561ea6
-    CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00561ea7 | CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00561ea7
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
     ADD ESP,0x8                         ; 00561eac
     MOV EAX,dword ptr [ESP + ESI*0x4 + 0x3a8] ; 00561eaf
         ;   Label: LAB_00561eaf
@@ -141,14 +141,14 @@ section .text
     PUSH EBX                            ; 00561ecc
     MOV ESI,dword ptr [ESP + 0x470]     ; 00561ecd
     PUSH ESI                            ; 00561ed4
-    CALL core_script.cpp_SCmdParse_parse_FUN_00561fd0 ; 00561ed5 | undefined core_script.cpp_SCmdParse_parse_FUN_00561fd0()
-        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_SCmdParse_parse_FUN_00561fd0 ; 00561ed5
+        ;   XREF to: 00561fd0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_SCmdParse_parse_FUN_00561fd0()
     ADD ESP,0xc                         ; 00561eda
     MOV EDI,dword ptr [ESP + 0x470]     ; 00561edd
     PUSH EDI                            ; 00561ee4
     PUSH ESI                            ; 00561ee5
-    CALL core_script.cpp_FUN_00562620   ; 00561ee6 | undefined core_script.cpp_FUN_00562620()
-        ;   XREF to: 00562620 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_00562620   ; 00561ee6
+        ;   XREF to: 00562620 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00562620()
     ADD ESP,0x8                         ; 00561eeb
     MOV ESI,EAX                         ; 00561eee
     MOV EAX,ESI                         ; 00561ef0
@@ -163,16 +163,16 @@ section .text
     PUSH ECX                            ; 00561f04
     MOV EAX,dword ptr [ESP + 0x46c]     ; 00561f05
     PUSH EAX                            ; 00561f0c
-    CALL core_script.cpp_FUN_00562620   ; 00561f0d | undefined core_script.cpp_FUN_00562620()
-        ;   XREF to: 00562620 (UNCONDITIONAL_CALL)
+    CALL core_script.cpp_FUN_00562620   ; 00561f0d
+        ;   XREF to: 00562620 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00562620()
     ADD ESP,0x8                         ; 00561f12
     MOV dword ptr [ESP + 0x448],EAX     ; 00561f15
     TEST EAX,EAX                        ; 00561f1c
-    JL 0x00561e10                       ; 00561f1e | LAB_00561e10
-        ;   XREF to: 00561e10 (CONDITIONAL_JUMP)
+    JL 0x00561e10                       ; 00561f1e
+        ;   XREF to: 00561e10 (CONDITIONAL_JUMP)  ; LAB_00561e10
     CMP ESI,dword ptr [ESP + 0x450]     ; 00561f24
-    JLE 0x00561f6e                      ; 00561f2b | LAB_00561f6e
-        ;   XREF to: 00561f6e (CONDITIONAL_JUMP)
+    JLE 0x00561f6e                      ; 00561f2b
+        ;   XREF to: 00561f6e (CONDITIONAL_JUMP)  ; LAB_00561f6e
     XOR EBX,EBX                         ; 00561f2d
     MOV dword ptr [ESP + 0x450],ESI     ; 00561f2f
     MOV dword ptr [ESP + 0x44c],EBX     ; 00561f36
@@ -182,27 +182,27 @@ section .text
     MOV EDX,dword ptr [ESP + 0x3f8]     ; 00561f4b
     MOV dword ptr [ESP + EBX*0x4 + 0x3a8],EDI ; 00561f52
     CMP ESI,EDX                         ; 00561f59
-    JZ 0x00561f68                       ; 00561f5b | LAB_00561f68
-        ;   XREF to: 00561f68 (CONDITIONAL_JUMP)
+    JZ 0x00561f68                       ; 00561f5b
+        ;   XREF to: 00561f68 (CONDITIONAL_JUMP)  ; LAB_00561f68
     MOV dword ptr [ESP + 0x44c],0x1     ; 00561f5d
     INC EBX                             ; 00561f68
         ;   Label: LAB_00561f68
-    JMP 0x00561e10                      ; 00561f69 | LAB_00561e10
-        ;   XREF to: 00561e10 (UNCONDITIONAL_JUMP)
+    JMP 0x00561e10                      ; 00561f69
+        ;   XREF to: 00561e10 (UNCONDITIONAL_JUMP)  ; LAB_00561e10
     CMP EBX,0x14                        ; 00561f6e
         ;   Label: LAB_00561f6e
-    JL 0x00561f3d                       ; 00561f71 | LAB_00561f3d
-        ;   XREF to: 00561f3d (CONDITIONAL_JUMP)
-    MOV ECX,0x643b09                    ; 00561f73 | = "..\\core\\script.cpp" | s_core_script_cpp_00643b09 = ..\core\script.cpp
+    JL 0x00561f3d                       ; 00561f71
+        ;   XREF to: 00561f3d (CONDITIONAL_JUMP)  ; LAB_00561f3d
+    MOV ECX,0x643b09                    ; 00561f73 | = "..\\core\\script.cpp"
     MOV ESI,0x1289                      ; 00561f78
-    PUSH 0x643b1c                       ; 00561f7d | = "SCmdParse::bestParse - too many matches!" | s_SCmdParse_bestParse_too__00643b1c = SCmdParse::bestParse - too many matches!
-    MOV dword ptr [0x02f0ca48],ECX      ; 00561f82 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],ESI      ; 00561f88 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00561f8e | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x643b1c                       ; 00561f7d | = "SCmdParse::bestParse - too many matches!"
+    MOV dword ptr [0x02f0ca48],ECX      ; 00561f82 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ESI      ; 00561f88 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00561f8e
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00561f93
-    JMP 0x00561f3d                      ; 00561f96 | LAB_00561f3d
-        ;   XREF to: 00561f3d (UNCONDITIONAL_JUMP)
+    JMP 0x00561f3d                      ; 00561f96
+        ;   XREF to: 00561f3d (UNCONDITIONAL_JUMP)  ; LAB_00561f3d
     MOV ESI,0xffffffff                  ; 00561f98
         ;   Label: LAB_00561f98
     MOV EAX,ESI                         ; 00561f9d
@@ -217,8 +217,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00561fac
     PUSH EAX                            ; 00561fb0
     MOV ESI,0xffffffff                  ; 00561fb1
-    CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00561fb6 | CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
-        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 00561fb6
+        ;   XREF to: 004a3c80 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_004a3c80(CPickList * this_ptr, uint d1, uint d2, uint d3, ...)
     ADD ESP,0x8                         ; 00561fbb
     MOV EAX,ESI                         ; 00561fbe
     ADD ESP,0x454                       ; 00561fc0

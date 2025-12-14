@@ -1,87 +1,87 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 42, 
-    "pseudocode_lines": 27, 
-    "cross_reference_count": 0, 
-    "global_count": 5, 
-    "total_lines": 78, 
-    "assembly_lines": 51, 
-    "suspect_count": 1, 
+    "assembly_lines": 51,
+    "complexity_score": 42,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 5,
+    "pseudocode_lines": 27,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50", 
-      "addr": "00405b50"
-    }, 
-    {
-      "name": "wincore_windll.cpp_drawPolyList_FUN_005b7640", 
-      "addr": "005b7640"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "SRenderVertex[16]", 
-      "name": "g_RenderVertexBuffer", 
-      "addr": "00688014", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_RenderFaceCount", 
-      "addr": "00820070", 
-      "value": null
-    }, 
-    {
-      "type": "SMRGLHeaderPrimitive*[2000]", 
-      "name": "g_RenderFaceArray", 
-      "addr": "00820074", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderFaceArray[1]", 
-      "addr": "00820078", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 20, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar2);"
-    }
-  ], 
+    ],
+    "total_lines": 78
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00407a30", 
-    "signature": "void engine_3d.c_flushRenderQueue_FUN_00407a30(void)", 
+    "address": "00407a30",
     "address_range": [
       [
-        "00407a30", 
+        "00407a30",
         "00407a99"
       ]
-    ], 
-    "name": "engine_3d.c_flushRenderQueue_FUN_00407a30"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_flushRenderQueue_FUN_00407a30",
+    "signature": "void engine_3d.c_flushRenderQueue_FUN_00407a30(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00405b50",
+      "name": "engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50"
+    },
+    {
+      "addr": "005b7640",
+      "name": "wincore_windll.cpp_drawPolyList_FUN_005b7640"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00688014",
+      "name": "g_RenderVertexBuffer",
+      "type": "SRenderVertex[16]",
+      "value": null
+    },
+    {
+      "addr": "00820070",
+      "name": "g_RenderFaceCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00820074",
+      "name": "g_RenderFaceArray",
+      "type": "SMRGLHeaderPrimitive*[2000]",
+      "value": null
+    },
+    {
+      "addr": "00820078",
+      "name": "g_RenderFaceArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(uint *)((int)",
+      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar2);",
+      "type": "pointer_cast"
+    }
+  ]
 }

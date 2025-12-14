@@ -27,29 +27,29 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 005e187e
     MOV ESI,dword ptr [ESP + 0x10]      ; 005e1882
     TEST ESI,ESI                        ; 005e1886
-    JL 0x005e18b6                       ; 005e1888 | LAB_005e18b6
-        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)
+    JL 0x005e18b6                       ; 005e1888
+        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)  ; LAB_005e18b6
     CMP ESI,0xff                        ; 005e188a
-    JG 0x005e18b6                       ; 005e1890 | LAB_005e18b6
-        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)
+    JG 0x005e18b6                       ; 005e1890
+        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)  ; LAB_005e18b6
     TEST EBX,EBX                        ; 005e1892
-    JL 0x005e18b6                       ; 005e1894 | LAB_005e18b6
-        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)
+    JL 0x005e18b6                       ; 005e1894
+        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)  ; LAB_005e18b6
     CMP EBX,0xff                        ; 005e1896
-    JG 0x005e18b6                       ; 005e189c | LAB_005e18b6
-        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)
+    JG 0x005e18b6                       ; 005e189c
+        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)  ; LAB_005e18b6
     TEST ECX,ECX                        ; 005e189e
-    JL 0x005e18b6                       ; 005e18a0 | LAB_005e18b6
-        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)
+    JL 0x005e18b6                       ; 005e18a0
+        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)  ; LAB_005e18b6
     CMP ECX,0xff                        ; 005e18a2
-    JG 0x005e18b6                       ; 005e18a8 | LAB_005e18b6
-        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)
+    JG 0x005e18b6                       ; 005e18a8
+        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)  ; LAB_005e18b6
     TEST EDX,EDX                        ; 005e18aa
-    JL 0x005e18b6                       ; 005e18ac | LAB_005e18b6
-        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)
+    JL 0x005e18b6                       ; 005e18ac
+        ;   XREF to: 005e18b6 (CONDITIONAL_JUMP)  ; LAB_005e18b6
     CMP EDX,0xff                        ; 005e18ae
-    JLE 0x005e18bb                      ; 005e18b4 | LAB_005e18bb
-        ;   XREF to: 005e18bb (CONDITIONAL_JUMP)
+    JLE 0x005e18bb                      ; 005e18b4
+        ;   XREF to: 005e18bb (CONDITIONAL_JUMP)  ; LAB_005e18bb
     XOR EAX,EAX                         ; 005e18b6
         ;   Label: LAB_005e18b6
     POP ESI                             ; 005e18b8

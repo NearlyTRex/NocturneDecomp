@@ -1,270 +1,270 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 232, 
-    "pseudocode_lines": 67, 
-    "cross_reference_count": 6, 
-    "global_count": 1, 
-    "total_lines": 258, 
-    "assembly_lines": 191, 
-    "suspect_count": 16, 
+    "assembly_lines": 191,
+    "complexity_score": 232,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 67,
+    "suspect_count": 16,
     "suspect_types": [
       "unaffected_reg"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "double", 
-      "name": "g_QuaternionMatrixConversionHalf", 
-      "addr": "006583e5", 
-      "value": "0.5"
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005f7427", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CQuaternion4f *unaff_ESI;"
-    }, 
-    {
-      "line": 27, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->w = local_48;"
-    }, 
-    {
-      "line": 28, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->x = local_44;"
-    }, 
-    {
-      "line": 29, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->y = fVar2;"
-    }, 
-    {
-      "line": 30, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->z = fVar1;"
-    }, 
-    {
-      "line": 31, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_ESI;"
-    }, 
-    {
-      "line": 42, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->w = (quat_out->y - quat_out[2].w) * fVar6;"
-    }, 
-    {
-      "line": 43, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->x = (fVar1 + fVar4) * fVar6;"
-    }, 
-    {
-      "line": 44, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->y = fVar5 * fVar7;"
-    }, 
-    {
-      "line": 45, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->z = (fVar2 + fVar3) * fVar6;"
-    }, 
-    {
-      "line": 46, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_ESI;"
-    }, 
-    {
-      "line": 65, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->w = (quat_out[1].w - quat_out->x) * fVar6;"
-    }, 
-    {
-      "line": 66, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->x = (fVar2 + fVar3) * fVar6;"
-    }, 
-    {
-      "line": 67, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->y = (fVar1 + fVar4) * fVar6;"
-    }, 
-    {
-      "line": 68, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI->z = fVar5 * fVar7;"
-    }, 
-    {
-      "line": 69, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "return unaff_ESI;"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f7420", 
-    "signature": "CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)", 
-    "address_range": [
-      [
-        "005f7420", 
-        "005f75d5"
-      ]
-    ], 
-    "name": "core_xform.cpp_matrixToQuaternion_FUN_005f7420"
-  }, 
-  "stack_frame": {
-    "local_size": 84, 
-    "variables": [
-      {
-        "offset": -80, 
-        "is_param": false, 
-        "type": "undefined8", 
-        "size": 8, 
-        "name": "local_50"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -64, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_40"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CQuaternion4f *", 
-        "size": 4, 
-        "name": "quat_out"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CMatrix3x3f *", 
-        "size": 4, 
-        "name": "matrix_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 92, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 258
+  },
   "cross_references": [
     {
-      "from_addr": "00443006", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_course.cpp_CCourse_importMatrices_FUN_00442ea0", 
-      "addr": "00442ea0"
-    }, 
+      "addr": "00442ea0",
+      "from_addr": "00443006",
+      "name": "core_course.cpp_CCourse_importMatrices_FUN_00442ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0054ef87", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_platfrm.cpp_FUN_0054ea00", 
-      "addr": "0054ea00"
-    }, 
+      "addr": "0054ea00",
+      "from_addr": "0054ef87",
+      "name": "core_platfrm.cpp_FUN_0054ea00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00595af4", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00592690", 
-      "addr": "00592690"
-    }, 
+      "addr": "00592690",
+      "from_addr": "00595af4",
+      "name": "core_skeledit.cpp_FUN_00592690",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f7ba2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70", 
-      "addr": "005f7b70"
-    }, 
+      "addr": "005f7b70",
+      "from_addr": "005f7ba2",
+      "name": "core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f7b52", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20", 
-      "addr": "005f7b20"
-    }, 
+      "addr": "005f7b20",
+      "from_addr": "005f7b52",
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005f71ac", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140", 
-      "addr": "005f7140"
+      "addr": "005f7140",
+      "from_addr": "005f71ac",
+      "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005f7420",
+    "address_range": [
+      [
+        "005f7420",
+        "005f75d5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_matrixToQuaternion_FUN_005f7420",
+    "signature": "CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "006583e5",
+      "name": "g_QuaternionMatrixConversionHalf",
+      "type": "double",
+      "value": "0.5"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 92,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "quat_out",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "matrix_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CMatrix3x3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005f7427",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_ESI",
+      "text": "CQuaternion4f *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->w = local_48;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->x = local_44;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->y = fVar2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->z = fVar1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_ESI",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->w = (quat_out->y - quat_out[2].w) * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->x = (fVar1 + fVar4) * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->y = fVar5 * fVar7;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->z = (fVar2 + fVar3) * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_ESI",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->w = (quat_out[1].w - quat_out->x) * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 66,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->x = (fVar2 + fVar3) * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 67,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->y = (fVar1 + fVar4) * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 68,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->z = fVar5 * fVar7;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_ESI",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
     }
   ]
 }

@@ -1,229 +1,229 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 256, 
-    "pseudocode_lines": 51, 
-    "cross_reference_count": 1, 
-    "global_count": 2, 
-    "total_lines": 191, 
-    "assembly_lines": 140, 
-    "suspect_count": 19, 
+    "assembly_lines": 140,
+    "complexity_score": 256,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "pseudocode_lines": 51,
+    "suspect_count": 19,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
+      "unaffected_reg",
+      "stack_param",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "shape_superopt.cpp_logToFile_FUN_005c7910", 
-      "addr": "005c7910"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_add_vertices_t_006543e6", 
-      "addr": "006543e6", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Unable_to_add_polygons_t_00654407", 
-      "addr": "00654407", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_EBP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int *in_stack_00000010;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000010[2] != 0) &&"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(iVar3 = (*this_ptr->vtable->addPolygons)(this_ptr,in_stack_00000010[2]), iVar3 == 0)) {"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "puVar5 = (uint *)in_stack_00000010[1];"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "for (uVar4 = (uint)(*in_stack_00000010 * 0x38) >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {"
-    }, 
-    {
-      "line": 32, 
-      "match": "(CVert *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -8 + 4);"
-    }, 
-    {
-      "line": 36, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);"
-    }, 
-    {
-      "line": 37, 
-      "match": "(CVert *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -2 + 1);"
-    }, 
-    {
-      "line": 39, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EBP < (uint)this_ptr->poly_count) {"
-    }, 
-    {
-      "line": 40, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar3 = unaff_EBP * 0x68;"
-    }, 
-    {
-      "line": 42, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar3 + 4) + 4))();"
-    }, 
-    {
-      "line": 43, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -0xc);"
-    }, 
-    {
-      "line": 45, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -8);"
-    }, 
-    {
-      "line": 47, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -4) ="
-    }, 
-    {
-      "line": 48, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -4) + iVar2;"
-    }, 
-    {
-      "line": 49, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = unaff_EBP + 1;"
-    }, 
-    {
-      "line": 49, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBP = unaff_EBP + 1;"
-    }, 
-    {
-      "line": 51, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while (unaff_EBP < (uint)this_ptr->poly_count);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005d2720", 
-    "signature": "int shape_superopt.cpp_CObj_appendTo_FUN_005d2720(CObj * this_ptr, CObj * dest_obj)", 
-    "address_range": [
-      [
-        "005d2720", 
-        "005d2871"
-      ]
-    ], 
-    "name": "shape_superopt.cpp_CObj_appendTo_FUN_005d2720"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CObj *", 
-        "size": 4, 
-        "name": "dest_obj"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 191
+  },
   "cross_references": [
     {
-      "from_addr": "005d722a", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_COptimize_FUN_005d71e0", 
-      "addr": "005d71e0"
+      "addr": "005d71e0",
+      "from_addr": "005d722a",
+      "name": "shape_superopt.cpp_COptimize_FUN_005d71e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005d2720",
+    "address_range": [
+      [
+        "005d2720",
+        "005d2871"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_superopt.cpp_CObj_appendTo_FUN_005d2720",
+    "signature": "int shape_superopt.cpp_CObj_appendTo_FUN_005d2720(CObj * this_ptr, CObj * dest_obj)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c7910",
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006543e6",
+      "name": "s_Unable_to_add_vertices_t_006543e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00654407",
+      "name": "s_Unable_to_add_polygons_t_00654407",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CObj *"
+      },
+      {
+        "is_param": true,
+        "name": "dest_obj",
+        "offset": 8,
+        "size": 4,
+        "type": "CObj *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "text": "uint unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000010",
+      "text": "int *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000010",
+      "text": "if ((in_stack_00000010[2] != 0) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000010",
+      "text": "(iVar3 = (*this_ptr->vtable->addPolygons)(this_ptr,in_stack_00000010[2]), iVar3 == 0)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000010",
+      "text": "puVar5 = (uint *)in_stack_00000010[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000010",
+      "text": "for (uVar4 = (uint)(*in_stack_00000010 * 0x38) >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(CVert *)((int)",
+      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(CVert *)((int)",
+      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EBP",
+      "text": "if (unaff_EBP < (uint)this_ptr->poly_count) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_EBP",
+      "text": "iVar3 = unaff_EBP * 0x68;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(int *)((int)",
+      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar3 + 4) + 4))();",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(int *)((int)",
+      "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar3 + -4) + iVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = unaff_EBP + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EBP",
+      "text": "} while (unaff_EBP < (uint)this_ptr->poly_count);",
+      "type": "unaffected_reg"
     }
   ]
 }

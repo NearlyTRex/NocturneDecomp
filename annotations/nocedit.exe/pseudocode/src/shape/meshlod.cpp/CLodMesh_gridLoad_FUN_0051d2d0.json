@@ -1,199 +1,199 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 112, 
-    "pseudocode_lines": 42, 
-    "cross_reference_count": 1, 
-    "global_count": 13, 
-    "total_lines": 163, 
-    "assembly_lines": 121, 
-    "suspect_count": 5, 
+    "assembly_lines": 121,
+    "complexity_score": 110,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 13,
+    "pseudocode_lines": 40,
+    "suspect_count": 5,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
-      "addr": "0050f540"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_00638147", 
-      "addr": "00638147", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_0063815c", 
-      "addr": "0063815c", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_00638171", 
-      "addr": "00638171", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_00638180", 
-      "addr": "00638180", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_00638184", 
-      "addr": "00638184", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_LodMesh_gridLoad_file_is_00638199", 
-      "addr": "00638199", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_006381ba", 
-      "addr": "006381ba", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006381be", 
-      "addr": "006381be", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_shape_meshlod_cpp_006381d3", 
-      "addr": "006381d3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_006381e8", 
-      "addr": "006381e8", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_006381f7", 
-      "addr": "006381f7", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 20, 
-      "match": "&stack0xfffffff4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\",&stack0xfffffff4);"
-    }, 
-    {
-      "line": 21, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_ESI != 0x10) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0051d2d0", 
-    "signature": "void shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh * this_ptr, FILE * file_handle)", 
-    "address_range": [
-      [
-        "0051d2d0", 
-        "0051d419"
-      ]
-    ], 
-    "name": "shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CLodMesh *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 32, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+      "unaffected_reg",
+      "register_param",
+      "stack_ref",
+      "badspacebase"
+    ],
+    "total_lines": 161
+  },
   "cross_references": [
     {
-      "from_addr": "0051b8db", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0", 
-      "addr": "0051b8a0"
+      "addr": "0051b8a0",
+      "from_addr": "0051b8db",
+      "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_0051b8a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051d2d0",
+    "address_range": [
+      [
+        "0051d2d0",
+        "0051d419"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0",
+    "signature": "void shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh * this_ptr, FILE * file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    },
+    {
+      "addr": "0050f540",
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00638147",
+      "name": "s_shape_meshlod_cpp_00638147",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063815c",
+      "name": "s_shape_meshlod_cpp_0063815c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00638171",
+      "name": "s_Out_of_memory_00638171",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00638180",
+      "name": "s_d_00638180",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00638184",
+      "name": "s_shape_meshlod_cpp_00638184",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00638199",
+      "name": "s_LodMesh_gridLoad_file_is_00638199",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006381ba",
+      "name": "s_d_006381ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006381be",
+      "name": "s_shape_meshlod_cpp_006381be",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006381d3",
+      "name": "s_shape_meshlod_cpp_006381d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006381e8",
+      "name": "s_Out_of_memory_006381e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006381f7",
+      "name": "s_d_006381f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xfffffff4",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\",&stack0xfffffff4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_ESI",
+      "text": "if (unaff_ESI != 0x10) {",
+      "type": "unaffected_reg"
     }
   ]
 }

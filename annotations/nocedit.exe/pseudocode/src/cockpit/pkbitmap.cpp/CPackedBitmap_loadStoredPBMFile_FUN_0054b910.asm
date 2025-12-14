@@ -23,8 +23,8 @@ section .text
     PUSH EDX                            ; 0054b918
     PUSH EAX                            ; 0054b919
     PUSH EAX                            ; 0054b91a
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860 ; 0054b91b | void cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap * this_ptr, char * filename, int post_load_processing)
-        ;   XREF to: 0054b860 (UNCONDITIONAL_CALL)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860 ; 0054b91b
+        ;   XREF to: 0054b860 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860(CPackedBitmap * this_ptr, char * filename, int post_load_processing)
     ADD ESP,0xc                         ; 0054b920
     RET                                 ; 0054b923
 

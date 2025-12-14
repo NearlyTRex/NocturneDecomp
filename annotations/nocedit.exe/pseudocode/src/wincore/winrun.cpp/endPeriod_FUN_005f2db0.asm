@@ -20,6 +20,6 @@ section .text
 
     PUSH 0x1                            ; 005f2db0
         ;   Label: wincore_winrun.cpp_endPeriod_FUN_005f2db0
-    CALL dword ptr CS:[0x611418]        ; 005f2db2 | timeEndPeriod * PTR_timeEndPeriod_00611418
+    CALL dword ptr CS:[0x611418]        ; 005f2db2 | PTR_timeEndPeriod_00611418
     RET                                 ; 005f2db9
 

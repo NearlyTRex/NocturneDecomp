@@ -32,8 +32,8 @@ section .text
     MOV EBX,ESI                         ; 0048c765
     MOV ESI,ESP                         ; 0048c767
     MOV EDI,EBX                         ; 0048c769
-    CALL engine_matrix.c_getCameraOrigin_FUN_0050e2c0 ; 0048c76b | void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
-        ;   XREF to: 0050e2c0 (UNCONDITIONAL_CALL)
+    CALL engine_matrix.c_getCameraOrigin_FUN_0050e2c0 ; 0048c76b
+        ;   XREF to: 0050e2c0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraOrigin_FUN_0050e2c0(CVector3i * output)
     MOV ESI,ESP                         ; 0048c770
     MOVSD ES:EDI,ESI                    ; 0048c772
     MOVSD ES:EDI,ESI                    ; 0048c773

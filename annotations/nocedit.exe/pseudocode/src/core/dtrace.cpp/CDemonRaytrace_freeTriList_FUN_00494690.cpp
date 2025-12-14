@@ -9,15 +9,10 @@
 void __cdecl core_dtrace_cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytrace *this_ptr)
 
 {
-  CDemonTriangle *pCVar1;
-  
-  pCVar1 = this_ptr->triangle_list;
-  if (pCVar1 != (CDemonTriangle *)0x0) {
+  if (this_ptr->triangle_list != (CDemonTriangle *)0x0) {
     g_CurrentDebugLine = 0x104;
     g_CurrentDebugFilename = "..\\core\\dtrace.cpp";
-    if (pCVar1 != (CDemonTriangle *)0x0) {
-      crt_memory_c_free_FUN_005fe659(&pCVar1[-1].area);
-    }
+    crt_memory_c_free_FUN_005fe659(&this_ptr->triangle_list[-1].area);
   }
   if (this_ptr->triangle_flags != (uchar *)0x0) {
     g_CurrentDebugFilename = "..\\core\\dtrace.cpp";

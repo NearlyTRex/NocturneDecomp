@@ -35,16 +35,16 @@ section .text
     MOV EBX,dword ptr [ESP + 0x20]      ; 0048d704
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0048d708
     CMP dword ptr [EAX + 0xc],0x0       ; 0048d70c
-    JZ 0x0048d727                       ; 0048d710 | LAB_0048d727
-        ;   XREF to: 0048d727 (CONDITIONAL_JUMP)
+    JZ 0x0048d727                       ; 0048d710
+        ;   XREF to: 0048d727 (CONDITIONAL_JUMP)  ; LAB_0048d727
     LEA EAX,[EBX + 0x8]                 ; 0048d712
     PUSH EAX                            ; 0048d715
-    CALL engine_3d.c_isVisiblePlane_FUN_00403950 ; 0048d716 | int engine_3d.c_isVisiblePlane_FUN_00403950(SClipPlane * plane)
-        ;   XREF to: 00403950 (UNCONDITIONAL_CALL)
+    CALL engine_3d.c_isVisiblePlane_FUN_00403950 ; 0048d716
+        ;   XREF to: 00403950 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403950(SClipPlane * plane)
     ADD ESP,0x4                         ; 0048d71b
     TEST EAX,EAX                        ; 0048d71e
-    JNZ 0x0048d727                      ; 0048d720 | LAB_0048d727
-        ;   XREF to: 0048d727 (CONDITIONAL_JUMP)
+    JNZ 0x0048d727                      ; 0048d720
+        ;   XREF to: 0048d727 (CONDITIONAL_JUMP)  ; LAB_0048d727
     ADD ESP,0x14                        ; 0048d722
     POP EBX                             ; 0048d725
     RET                                 ; 0048d726
@@ -79,8 +79,8 @@ section .text
     PUSH EAX                            ; 0048d78c
     MOV EBX,dword ptr [ESP + 0x24]      ; 0048d78d
     PUSH EBX                            ; 0048d791
-    CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0 ; 0048d792 | void engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
-        ;   XREF to: 0048d8a0 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0 ; 0048d792
+        ;   XREF to: 0048d8a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0(CDemonRenderer * this_ptr, STrianglePackedIndices * triangle_indices, int render_flags)
     ADD ESP,0xc                         ; 0048d797
     ADD ESP,0x14                        ; 0048d79a
     POP EBX                             ; 0048d79d

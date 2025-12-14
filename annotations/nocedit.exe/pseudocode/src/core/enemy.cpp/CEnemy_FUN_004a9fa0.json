@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 39, 
-    "pseudocode_lines": 14, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 32, 
-    "assembly_lines": 18, 
-    "suspect_count": 2, 
+    "assembly_lines": 18,
+    "complexity_score": 39,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_charactr.cpp_CCharacter_FUN_0042a390", 
-      "addr": "0042a390"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000008 != 0) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004a9fa0", 
-    "signature": "void core_enemy.cpp_CEnemy_FUN_004a9fa0(CEnemy * this_ptr)", 
-    "address_range": [
-      [
-        "004a9fa0", 
-        "004a9fc9"
-      ]
-    ], 
-    "name": "core_enemy.cpp_CEnemy_FUN_004a9fa0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEnemy *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 32
+  },
   "cross_references": [
     {
-      "from_addr": "004e81ae", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_ghoul.cpp_FUN_004e8190", 
-      "addr": "004e8190"
+      "addr": "004e8190",
+      "from_addr": "004e81ae",
+      "name": "core_ghoul.cpp_FUN_004e8190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9fa0",
+    "address_range": [
+      [
+        "004a9fa0",
+        "004a9fc9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_enemy.cpp_CEnemy_FUN_004a9fa0",
+    "signature": "void core_enemy.cpp_CEnemy_FUN_004a9fa0(CEnemy * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042a390",
+      "name": "core_charactr.cpp_CCharacter_FUN_0042a390"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEnemy *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 != 0) {",
+      "type": "stack_param"
     }
   ]
 }

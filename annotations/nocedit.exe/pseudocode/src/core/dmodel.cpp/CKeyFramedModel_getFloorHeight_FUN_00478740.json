@@ -1,125 +1,125 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 41, 
-    "cross_reference_count": 1, 
-    "global_count": 4, 
-    "total_lines": 147, 
-    "assembly_lines": 106, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950", 
-      "addr": "00478950"
-    }, 
-    {
-      "name": "core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0", 
-      "addr": "0049b2f0"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dmodel_cpp_0061f82e", 
-      "addr": "0061f82e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Tried_to_call_CKeyFramed_0061f841", 
-      "addr": "0061f841", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00478740", 
-    "signature": "int core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel * this_ptr, int frame_index, float x, float z, float * out_height, CVector3f * transform_vector)", 
-    "address_range": [
-      [
-        "00478740", 
-        "0047882a"
-      ]
-    ], 
-    "name": "core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeyFramedModel *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "frame_index"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "x"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "z"
-      }, 
-      {
-        "offset": 20, 
-        "is_param": true, 
-        "type": "float *", 
-        "size": 4, 
-        "name": "out_height"
-      }, 
-      {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "CVector3f *", 
-        "size": 4, 
-        "name": "transform_vector"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 28, 
-    "param_offset": 4, 
-    "param_size": 24
-  }, 
+    "assembly_lines": 106,
+    "complexity_score": 41,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 147
+  },
   "cross_references": [
     {
-      "from_addr": "005721aa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0", 
-      "addr": "005716b0"
+      "addr": "005716b0",
+      "from_addr": "005721aa",
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00478740",
+    "address_range": [
+      [
+        "00478740",
+        "0047882a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740",
+    "signature": "int core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740(CKeyFramedModel * this_ptr, int frame_index, float x, float z, float * out_height, CVector3f * transform_vector)"
+  },
+  "function_calls": [
+    {
+      "addr": "00478950",
+      "name": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950"
+    },
+    {
+      "addr": "0049b2f0",
+      "name": "core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061f82e",
+      "name": "s_core_dmodel_cpp_0061f82e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f841",
+      "name": "s_Tried_to_call_CKeyFramed_0061f841",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "frame_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "z",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "out_height",
+        "offset": 20,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "transform_vector",
+        "offset": 24,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
 }

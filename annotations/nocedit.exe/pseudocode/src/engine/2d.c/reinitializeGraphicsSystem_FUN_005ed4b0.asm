@@ -12,6 +12,6 @@
 section .text
 
     JMP 0x005ed4b0                      ; 00402a80
-        ;   Label: engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0
         ;   XREF to: 005ed4b0 (UNCONDITIONAL_JUMP)
+        ;   Label: engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0
 

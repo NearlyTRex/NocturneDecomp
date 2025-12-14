@@ -34,37 +34,37 @@ section .text
     PUSH EDI                            ; 004496a1
     MOV EDX,dword ptr [ESP + 0xc]       ; 004496a2
     PUSH EDX                            ; 004496a6
-    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004496a7 | CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
-        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_ctor_FUN_004088b0 ; 004496a7
+        ;   XREF to: 004088b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004496ac
-    PUSH 0x65c5f0                       ; 004496af | WatcomTypeInfo g_SCurtainVertexTypeInfo
+    PUSH 0x65c5f0                       ; 004496af | g_SCurtainVertexTypeInfo
     PUSH 0x3e8                          ; 004496b4
     ADD EAX,0x208                       ; 004496b9
     PUSH EAX                            ; 004496be
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004496bf | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 004496bf
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffdf8]          ; 004496c4
-    MOV dword ptr [EDX + 0x154],0x65c4e4 ; 004496ca | CDemonActor_vtable PTR_core_curtain.cpp_FUN_0065c4e4
-    MOV ESI,0x619bd7                    ; 004496d4 | = "SGLASS.RAW" | s_SGLASS_RAW_00619bd7 = SGLASS.RAW
+    MOV dword ptr [EDX + 0x154],0x65c4e4 ; 004496ca | PTR_core_curtain.cpp_FUN_0065c4e4
+    MOV ESI,0x619bd7                    ; 004496d4 | = "SGLASS.RAW"
     MOV dword ptr [EDX + 0x158],0x40800000 ; 004496d9
     ADD ESP,0xc                         ; 004496e3
     MOV dword ptr [EDX + 0x15c],0x40800000 ; 004496e6
     LEA EDI,[EDX + 0x16c]               ; 004496f0
     MOV dword ptr [EDX + 0x160],0x3dcccccd ; 004496f6
     PUSH EDI                            ; 00449700
-    MOV AL,byte ptr [ESI]               ; 00449701 | = "SGLASS.RAW" | s_SGLASS_RAW_00619bd7 = SGLASS.RAW
+    MOV AL,byte ptr [ESI]               ; 00449701 | = "SGLASS.RAW" | s_LASS.RAW_00619bd9
         ;   Label: LAB_00449701
     MOV byte ptr [EDI],AL               ; 00449703
     CMP AL,0x0                          ; 00449705
-    JZ 0x00449719                       ; 00449707 | LAB_00449719
-        ;   XREF to: 00449719 (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 00449709 | s_GLASS.RAW_00619bd8
+    JZ 0x00449719                       ; 00449707
+        ;   XREF to: 00449719 (CONDITIONAL_JUMP)  ; LAB_00449719
+    MOV AL,byte ptr [ESI + 0x1]         ; 00449709 | s_GLASS.RAW_00619bd8 | s_ASS.RAW_00619bda
     ADD ESI,0x2                         ; 0044970c
     MOV byte ptr [EDI + 0x1],AL         ; 0044970f
     ADD EDI,0x2                         ; 00449712
     CMP AL,0x0                          ; 00449715
-    JNZ 0x00449701                      ; 00449717 | LAB_00449701
-        ;   XREF to: 00449701 (CONDITIONAL_JUMP)
+    JNZ 0x00449701                      ; 00449717
+        ;   XREF to: 00449701 (CONDITIONAL_JUMP)  ; LAB_00449701
     POP EDI                             ; 00449719
         ;   Label: LAB_00449719
     MOV dword ptr [EDX + 0x168],0x0     ; 0044971a
@@ -73,24 +73,24 @@ section .text
     MOV dword ptr [EDX + 0x180],0x1     ; 00449738
     MOV dword ptr [EDX + 0x18c],0x0     ; 00449742
     MOV dword ptr [EDX + 0x188],0x0     ; 0044974c
-    MOV ESI,0x619be2                    ; 00449756 | = "none" | s_none_00619be2 = none
+    MOV ESI,0x619be2                    ; 00449756 | = "none"
     MOV dword ptr [EDX + 0x184],0x0     ; 0044975b
     LEA EDI,[EDX + 0x194]               ; 00449765
     MOV dword ptr [EDX + 0x190],0x0     ; 0044976b
     PUSH EDI                            ; 00449775
-    MOV AL,byte ptr [ESI]               ; 00449776 | = "none" | s_none_00619be2 = none
+    MOV AL,byte ptr [ESI]               ; 00449776 | = "none" | s_ne_00619be4
         ;   Label: LAB_00449776
     MOV byte ptr [EDI],AL               ; 00449778
     CMP AL,0x0                          ; 0044977a
-    JZ 0x0044978e                       ; 0044977c | LAB_0044978e
-        ;   XREF to: 0044978e (CONDITIONAL_JUMP)
-    MOV AL,byte ptr [ESI + 0x1]         ; 0044977e | s_one_00619be3
+    JZ 0x0044978e                       ; 0044977c
+        ;   XREF to: 0044978e (CONDITIONAL_JUMP)  ; LAB_0044978e
+    MOV AL,byte ptr [ESI + 0x1]         ; 0044977e | s_one_00619be3 | s_e_00619be5
     ADD ESI,0x2                         ; 00449781
     MOV byte ptr [EDI + 0x1],AL         ; 00449784
     ADD EDI,0x2                         ; 00449787
     CMP AL,0x0                          ; 0044978a
-    JNZ 0x00449776                      ; 0044978c | LAB_00449776
-        ;   XREF to: 00449776 (CONDITIONAL_JUMP)
+    JNZ 0x00449776                      ; 0044978c
+        ;   XREF to: 00449776 (CONDITIONAL_JUMP)  ; LAB_00449776
     POP EDI                             ; 0044978e
         ;   Label: LAB_0044978e
     MOV dword ptr [EDX + 0x65b14],0x3f800000 ; 0044978f

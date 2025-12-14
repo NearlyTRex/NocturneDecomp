@@ -19,8 +19,8 @@ section .text
     PUSH EDX                            ; 0048c744
     MOV ECX,dword ptr [ESP + 0xc]       ; 0048c745
     PUSH ECX                            ; 0048c749
-    CALL engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850 ; 0048c74a | void engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850(int vertex_index, CVector3i * vertex_position)
-        ;   XREF to: 00505850 (UNCONDITIONAL_CALL)
+    CALL engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850 ; 0048c74a
+        ;   XREF to: 00505850 (UNCONDITIONAL_CALL)  ; void engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850(int vertex_index, CVector3i * vertex_position)
     ADD ESP,0x8                         ; 0048c74f
     RET                                 ; 0048c752
 

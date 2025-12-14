@@ -39,17 +39,17 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 0044d615
     MOV EAX,dword ptr [ECX]             ; 0044d619
     MOV dword ptr [ESP],EAX             ; 0044d61b
-    MOV EDX,dword ptr [0x006703ec]      ; 0044d61e | CDemonRenderer * g_CDemonRendererPtr
+    MOV EDX,dword ptr [0x006703ec]      ; 0044d61e | g_CDemonRendererPtr
     MOV EAX,dword ptr [ECX + 0x4]       ; 0044d624
-    PUSH EDX                            ; 0044d627 | CDemonRenderer g_CDemonRendererInstance
+    PUSH EDX                            ; 0044d627 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x8],EAX       ; 0044d628
-    CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00 ; 0044d62c | int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(CDemonRenderer * this_ptr)
-        ;   XREF to: 0048ce00 (UNCONDITIONAL_CALL)
+    CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00 ; 0044d62c
+        ;   XREF to: 0048ce00 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(CDemonRenderer * this_ptr)
     MOV EBX,EAX                         ; 0044d631
     ADD ESP,0x4                         ; 0044d633
     TEST EAX,EAX                        ; 0044d636
-    JNZ 0x0044d6f0                      ; 0044d638 | LAB_0044d6f0
-        ;   XREF to: 0044d6f0 (CONDITIONAL_JUMP)
+    JNZ 0x0044d6f0                      ; 0044d638
+        ;   XREF to: 0044d6f0 (CONDITIONAL_JUMP)  ; LAB_0044d6f0
     MOV ESI,ESP                         ; 0044d63e
     LEA EDI,[EBP + 0x19c]               ; 0044d640
     MOV EAX,dword ptr [ESI]             ; 0044d646
@@ -176,6 +176,6 @@ section .text
     SHRD EAX,EDX,0x10                   ; 0044d7b6
     MOV ECX,dword ptr [EBP + 0x11f4]    ; 0044d7ba
     ADD EAX,EBX                         ; 0044d7c0
-    JMP 0x0044d6d4                      ; 0044d7c2 | LAB_0044d6d4
-        ;   XREF to: 0044d6d4 (UNCONDITIONAL_JUMP)
+    JMP 0x0044d6d4                      ; 0044d7c2
+        ;   XREF to: 0044d6d4 (UNCONDITIONAL_JUMP)  ; LAB_0044d6d4
 

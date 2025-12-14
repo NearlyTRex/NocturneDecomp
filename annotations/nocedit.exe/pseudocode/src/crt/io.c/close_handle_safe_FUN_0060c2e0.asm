@@ -30,15 +30,15 @@ section .text
     PUSH ESI                            ; 0060c2e1
     MOV EBX,dword ptr [ESP + 0xc]       ; 0060c2e2
     TEST EBX,EBX                        ; 0060c2e6
-    JL 0x0060c2f2                       ; 0060c2e8 | LAB_0060c2f2
-        ;   XREF to: 0060c2f2 (CONDITIONAL_JUMP)
-    CMP EBX,dword ptr [0x00685214]      ; 0060c2ea | uint g_MaxHandleCount
-    JBE 0x0060c304                      ; 0060c2f0 | LAB_0060c304
-        ;   XREF to: 0060c304 (CONDITIONAL_JUMP)
+    JL 0x0060c2f2                       ; 0060c2e8
+        ;   XREF to: 0060c2f2 (CONDITIONAL_JUMP)  ; LAB_0060c2f2
+    CMP EBX,dword ptr [0x00685214]      ; 0060c2ea | g_MaxHandleCount
+    JBE 0x0060c304                      ; 0060c2f0
+        ;   XREF to: 0060c304 (CONDITIONAL_JUMP)  ; LAB_0060c304
     PUSH 0x4                            ; 0060c2f2
         ;   Label: LAB_0060c2f2
-    CALL crt_errno.c_setErrno_FUN_00602790 ; 0060c2f4 | void crt_errno.c_setErrno_FUN_00602790(int error_code)
-        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)
+    CALL crt_errno.c_setErrno_FUN_00602790 ; 0060c2f4
+        ;   XREF to: 00602790 (UNCONDITIONAL_CALL)  ; void crt_errno.c_setErrno_FUN_00602790(int error_code)
     MOV EAX,0xffffffff                  ; 0060c2f9
     ADD ESP,0x4                         ; 0060c2fe
     POP ESI                             ; 0060c301
@@ -46,18 +46,18 @@ section .text
     RET                                 ; 0060c303
     PUSH EBX                            ; 0060c304
         ;   Label: LAB_0060c304
-    CALL dword ptr [0x00684ee8]         ; 0060c305 | ENTER_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
+    CALL dword ptr [0x00684ee8]         ; 0060c305 | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8
     ADD ESP,0x4                         ; 0060c30b
     PUSH EBX                            ; 0060c30e
-    CALL crt_io.c_close_FUN_00609bd0    ; 0060c30f | int crt_io.c_close_FUN_00609bd0(int fd)
-        ;   XREF to: 00609bd0 (UNCONDITIONAL_CALL)
+    CALL crt_io.c_close_FUN_00609bd0    ; 0060c30f
+        ;   XREF to: 00609bd0 (UNCONDITIONAL_CALL)  ; int crt_io.c_close_FUN_00609bd0(int fd)
     ADD ESP,0x4                         ; 0060c314
     PUSH EBX                            ; 0060c317
     MOV ESI,EAX                         ; 0060c318
-    CALL dword ptr [0x00684eec]         ; 0060c31a | EXIT_CRITICAL_SECTION_BY_INDEX_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
+    CALL dword ptr [0x00684eec]         ; 0060c31a | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec
     ADD ESP,0x4                         ; 0060c320
     PUSH EBX                            ; 0060c323
-    CALL dword ptr [0x00684ef4]         ; 0060c324 | INVALIDATE_HANDLE_FUNC * PTR_crt_sync.c_InvalidateHandle_FUN_00602448_00684ef4
+    CALL dword ptr [0x00684ef4]         ; 0060c324 | PTR_crt_sync.c_InvalidateHandle_FUN_00602448_00684ef4
     ADD ESP,0x4                         ; 0060c32a
     MOV EAX,ESI                         ; 0060c32d
     POP ESI                             ; 0060c32f

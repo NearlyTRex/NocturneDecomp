@@ -1,303 +1,303 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 196, 
-    "pseudocode_lines": 81, 
-    "cross_reference_count": 1, 
-    "global_count": 16, 
-    "total_lines": 230, 
-    "assembly_lines": 149, 
-    "suspect_count": 10, 
+    "assembly_lines": 149,
+    "complexity_score": 196,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 16,
+    "pseudocode_lines": 81,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase", 
-      "pointer_cast", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0", 
-      "addr": "004202b0"
-    }, 
-    {
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
-      "addr": "005b575c"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "float", 
-      "name": "g_BoundingBoxWorldToIntegerScale", 
-      "addr": "0065b160", 
-      "value": "256"
-    }, 
-    {
-      "type": "CDemonRenderer*", 
-      "name": "g_CDemonRendererPtr", 
-      "addr": "006703ec", 
-      "value": "02c6d578"
-    }, 
-    {
-      "type": "CDemonCamera*", 
-      "name": "g_CurrentSceneCamera", 
-      "addr": "00823a74", 
-      "value": null
-    }, 
-    {
-      "type": "CDemonRenderer", 
-      "name": "g_CDemonRendererInstance", 
-      "addr": "02c6d578", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraOriginX", 
-      "addr": "02d052c4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraOriginY", 
-      "addr": "02d052c8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraOriginZ", 
-      "addr": "02d052cc", 
-      "value": null
-    }, 
-    {
-      "type": "CMatrix3x3i", 
-      "name": "g_InverseMatrix", 
-      "addr": "02f0d364", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_InverseMatrix[0][1]", 
-      "addr": "02f0d368", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_InverseMatrix[0][2]", 
-      "addr": "02f0d36c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_InverseMatrix[1][0]", 
-      "addr": "02f0d370", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_InverseMatrix[1][1]", 
-      "addr": "02f0d374", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_InverseMatrix[1][2]", 
-      "addr": "02f0d378", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_InverseMatrix[2][0]", 
-      "addr": "02f0d37c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_InverseMatrix[2][1]", 
-      "addr": "02f0d380", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_InverseMatrix[2][2]", 
-      "addr": "02f0d384", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 8, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 32, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if ((*(byte *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +"
-    }, 
-    {
-      "line": 37, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar4 = uVar4 & *(uint *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex)."
-    }, 
-    {
-      "line": 48, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "iVar2 = *(int *)((int)&(pSVar1->projected_vertex).transformed_x + iVar5);"
-    }, 
-    {
-      "line": 49, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_18 = *(int *)((int)&(pSVar1->projected_vertex).transformed_y + iVar5);"
-    }, 
-    {
-      "line": 50, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_14 = *(int *)((int)&(pSVar1->projected_vertex).transformed_z + iVar5);"
-    }, 
-    {
-      "line": 52, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_94 + iVar6) ="
-    }, 
-    {
-      "line": 61, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_94 + iVar6 + 4) ="
-    }, 
-    {
-      "line": 70, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)local_94 + iVar6 + 8) ="
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00420680", 
-    "signature": "int core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundingBox3D * this_ptr)", 
-    "address_range": [
-      [
-        "00420680", 
-        "0042083e"
-      ]
-    ], 
-    "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680"
-  }, 
-  "stack_frame": {
-    "local_size": 152, 
-    "variables": [
-      {
-        "offset": -148, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_94"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CBoundingBox3D *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 156, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+      "register_param",
+      "pointer_cast",
+      "badspacebase"
+    ],
+    "total_lines": 230
+  },
   "cross_references": [
     {
-      "from_addr": "004204fa", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
-      "addr": "004204f0"
+      "addr": "004204f0",
+      "from_addr": "004204fa",
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00420680",
+    "address_range": [
+      [
+        "00420680",
+        "0042083e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680",
+    "signature": "int core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundingBox3D * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004202b0",
+      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0"
+    },
+    {
+      "addr": "005b575c",
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0065b160",
+      "name": "g_BoundingBoxWorldToIntegerScale",
+      "type": "float",
+      "value": "256"
+    },
+    {
+      "addr": "006703ec",
+      "name": "g_CDemonRendererPtr",
+      "type": "CDemonRenderer*",
+      "value": "02c6d578"
+    },
+    {
+      "addr": "00823a74",
+      "name": "g_CurrentSceneCamera",
+      "type": "CDemonCamera*",
+      "value": null
+    },
+    {
+      "addr": "02c6d578",
+      "name": "g_CDemonRendererInstance",
+      "type": "CDemonRenderer",
+      "value": null
+    },
+    {
+      "addr": "02d052c4",
+      "name": "g_CameraOriginX",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052c8",
+      "name": "g_CameraOriginY",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02d052cc",
+      "name": "g_CameraOriginZ",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0d364",
+      "name": "g_InverseMatrix",
+      "type": "CMatrix3x3i",
+      "value": null
+    },
+    {
+      "addr": "02f0d368",
+      "name": "g_InverseMatrix[0][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0d36c",
+      "name": "g_InverseMatrix[0][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0d370",
+      "name": "g_InverseMatrix[1][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0d374",
+      "name": "g_InverseMatrix[1][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0d378",
+      "name": "g_InverseMatrix[1][2]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0d37c",
+      "name": "g_InverseMatrix[2][0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0d380",
+      "name": "g_InverseMatrix[2][1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0d384",
+      "name": "g_InverseMatrix[2][2]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 156,
+    "local_size": 152,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(byte *)((int)",
+      "text": "if ((*(byte *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "uVar4 = uVar4 & *(uint *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)",
+      "text": "iVar2 = *(int *)((int)&(pSVar1->projected_vertex).transformed_x + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(int *)((int)",
+      "text": "local_18 = *(int *)((int)&(pSVar1->projected_vertex).transformed_y + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(int *)((int)",
+      "text": "local_14 = *(int *)((int)&(pSVar1->projected_vertex).transformed_z + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_94 + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_94 + iVar6 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_94 + iVar6 + 8) =",
+      "type": "pointer_cast"
     }
   ]
 }

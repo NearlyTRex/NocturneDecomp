@@ -24,8 +24,8 @@ section .text
         ;   Label: LAB_005ba6b2
     ADD EAX,EAX                         ; 005ba6b8
     CMP EBX,EAX                         ; 005ba6ba
-    JL 0x005ba6c5                       ; 005ba6bc | LAB_005ba6c5
-        ;   XREF to: 005ba6c5 (CONDITIONAL_JUMP)
+    JL 0x005ba6c5                       ; 005ba6bc
+        ;   XREF to: 005ba6c5 (CONDITIONAL_JUMP)  ; LAB_005ba6c5
     MOV EAX,EDI                         ; 005ba6be
     POP EBP                             ; 005ba6c0
     POP EDI                             ; 005ba6c1
@@ -39,16 +39,16 @@ section .text
     PUSH dword ptr [ESP + 0x20]         ; 005ba6ce
     PUSH ECX                            ; 005ba6d2
     PUSH ESI                            ; 005ba6d3
-    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 005ba6d4 | int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
-        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)
+    CALL core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 ; 005ba6d4
+        ;   XREF to: 0049b2f0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0(CDemonTriangle * triangle, float x, float z, float * out_height)
     ADD ESP,0x10                        ; 005ba6d9
     TEST EAX,EAX                        ; 005ba6dc
-    JZ 0x005ba6e5                       ; 005ba6de | LAB_005ba6e5
-        ;   XREF to: 005ba6e5 (CONDITIONAL_JUMP)
+    JZ 0x005ba6e5                       ; 005ba6de
+        ;   XREF to: 005ba6e5 (CONDITIONAL_JUMP)  ; LAB_005ba6e5
     MOV EDI,0x1                         ; 005ba6e0
     INC EBX                             ; 005ba6e5
         ;   Label: LAB_005ba6e5
     ADD ESI,0x38                        ; 005ba6e6
-    JMP 0x005ba6b2                      ; 005ba6e9 | LAB_005ba6b2
-        ;   XREF to: 005ba6b2 (UNCONDITIONAL_JUMP)
+    JMP 0x005ba6b2                      ; 005ba6e9
+        ;   XREF to: 005ba6b2 (UNCONDITIONAL_JUMP)  ; LAB_005ba6b2
 

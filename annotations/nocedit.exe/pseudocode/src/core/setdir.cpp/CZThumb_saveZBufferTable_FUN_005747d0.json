@@ -1,131 +1,123 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 60, 
-    "pseudocode_lines": 20, 
-    "cross_reference_count": 0, 
-    "global_count": 8, 
-    "total_lines": 56, 
-    "assembly_lines": 36, 
-    "suspect_count": 3, 
+    "assembly_lines": 36,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 8,
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
     "suspect_types": [
-      "sborrow_artifact", 
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_setdir_cpp_006463fe", 
-      "addr": "006463fe", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_saveZBufferTable_already_00646411", 
-      "addr": "00646411", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArray", 
-      "addr": "02cf7d5c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ZBufferScanlineArray[1]", 
-      "addr": "02cf7d60", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "uint*[1024]", 
-      "name": "g_ZBufferScanlineArrayBackup", 
-      "addr": "0336362c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03363630", 
-      "addr": "03363630", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 17, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar2) ="
-    }, 
-    {
-      "line": 18, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar2);"
-    }, 
-    {
-      "line": 20, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar1,count * 4) != iVar1 + count * -4 < 0);"
-    }
-  ], 
+    ],
+    "total_lines": 56
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005747d0", 
-    "signature": "void core_setdir.cpp_CZThumb_saveZBufferTable_FUN_005747d0(CZThumb * this_ptr, int count)", 
+    "address": "005747d0",
     "address_range": [
       [
-        "005747d0", 
+        "005747d0",
         "00574828"
       ]
-    ], 
-    "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_005747d0"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_005747d0",
+    "signature": "void core_setdir.cpp_CZThumb_saveZBufferTable_FUN_005747d0(CZThumb * this_ptr, int count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006463fe",
+      "name": "s_core_setdir_cpp_006463fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00646411",
+      "name": "s_saveZBufferTable_already_00646411",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02cf7d5c",
+      "name": "g_ZBufferScanlineArray",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf7d60",
+      "name": "g_ZBufferScanlineArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0336362c",
+      "name": "g_ZBufferScanlineArrayBackup",
+      "type": "uint*[1024]",
+      "value": null
+    },
+    {
+      "addr": "03363630",
+      "name": "DAT_03363630",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CZThumb *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZThumb *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "count"
+        "is_param": true,
+        "name": "count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar2);",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -1,193 +1,193 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 111, 
-    "pseudocode_lines": 56, 
-    "cross_reference_count": 0, 
-    "global_count": 10, 
-    "total_lines": 155, 
-    "assembly_lines": 99, 
-    "suspect_count": 4, 
+    "assembly_lines": 99,
+    "complexity_score": 111,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 10,
+    "pseudocode_lines": 56,
+    "suspect_count": 4,
     "suspect_types": [
-      "unaffected_reg", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
-      "addr": "005fe6d0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ART_s_00619e8b", 
-      "addr": "00619e8b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_curtain_cpp_00619e93", 
-      "addr": "00619e93", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Cannot_find_curtain_text_00619ea7", 
-      "addr": "00619ea7", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ACT_00619ecd", 
-      "addr": "00619ecd", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00619ece", 
-      "addr": "00619ece", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00619ecf", 
-      "addr": "00619ecf", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00619ed0", 
-      "addr": "00619ed0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_ART_s_00619ed2", 
-      "addr": "00619ed2", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 3, 
-    "patterns": [
-      {
-        "address": "0044b98b", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (EDI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV EDI,ESP"
-      }, 
-      {
-        "address": "0044b9a9", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }, 
-      {
-        "address": "0044b9e8", 
-        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
-        "description": "Alternative frame pointer (ESI = ESP)", 
-        "pattern_id": "alt_frame_pointer", 
-        "instruction": "MOV ESI,ESP"
-      }
-    ], 
-    "pattern_types": [
-      "alt_frame_pointer"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 6, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 11, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 45, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Cannot find curtain texture extension\",unaff_EBX);"
-    }
-  ], 
+      "unaffected_reg",
+      "register_param",
+      "badspacebase"
+    ],
+    "total_lines": 155
+  },
+  "cross_references": [],
   "function": {
-    "convention": "unknown", 
-    "address": "0044b960", 
-    "signature": "undefined core_curtain.cpp_FindCurtainTextures_FUN_0044b960()", 
+    "address": "0044b960",
     "address_range": [
       [
-        "0044b960", 
+        "0044b960",
         "0044ba2f"
       ]
-    ], 
-    "name": "core_curtain.cpp_FindCurtainTextures_FUN_0044b960"
-  }, 
+    ],
+    "convention": "unknown",
+    "name": "core_curtain.cpp_FindCurtainTextures_FUN_0044b960",
+    "signature": "undefined core_curtain.cpp_FindCurtainTextures_FUN_0044b960()"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe6d0",
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00619e8b",
+      "name": "s_ART_s_00619e8b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619e93",
+      "name": "s_core_curtain_cpp_00619e93",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619ea7",
+      "name": "s_Cannot_find_curtain_text_00619ea7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619ecd",
+      "name": "s_ACT_00619ecd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619ece",
+      "name": "DAT_00619ece",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00619ecf",
+      "name": "DAT_00619ecf",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00619ed0",
+      "name": "DAT_00619ed0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00619ed2",
+      "name": "s_ART_s_00619ed2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 268, 
+    "frame_size": 268,
+    "local_size": 268,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -264, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_108"
-      }, 
+        "is_param": false,
+        "name": "local_108",
+        "offset": -264,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -263, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_107"
-      }, 
+        "is_param": false,
+        "name": "local_107",
+        "offset": -263,
+        "size": 1,
+        "type": "undefined1"
+      },
       {
-        "offset": -261, 
-        "is_param": false, 
-        "type": "undefined1", 
-        "size": 1, 
-        "name": "local_105"
+        "is_param": false,
+        "name": "local_105",
+        "offset": -261,
+        "size": 1,
+        "type": "undefined1"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 268, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
-  "cross_references": []
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 3,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0044b98b",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044b9a9",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044b9e8",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_EBX",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Cannot find curtain texture extension\",unaff_EBX);",
+      "type": "unaffected_reg"
+    }
+  ]
 }

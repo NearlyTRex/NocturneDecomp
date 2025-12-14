@@ -42,38 +42,38 @@ section .text
     MOV EDX,dword ptr [EBX + 0x44]      ; 0051971e
     ADD ESP,0x4                         ; 00519721
     TEST EDX,EDX                        ; 00519724
-    JLE 0x00519740                      ; 00519726 | LAB_00519740
-        ;   XREF to: 00519740 (CONDITIONAL_JUMP)
+    JLE 0x00519740                      ; 00519726
+        ;   XREF to: 00519740 (CONDITIONAL_JUMP)  ; LAB_00519740
     PUSH 0x1                            ; 00519728
         ;   Label: LAB_00519728
     PUSH ESI                            ; 0051972a
     PUSH EBX                            ; 0051972b
-    CALL shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000 ; 0051972c | void shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000(CLodMesh * this_ptr, int edge_index, int full_check)
-        ;   XREF to: 00516000 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000 ; 0051972c
+        ;   XREF to: 00516000 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000(CLodMesh * this_ptr, int edge_index, int full_check)
     INC ESI                             ; 00519731
     MOV ECX,dword ptr [EBX + 0x44]      ; 00519732
     ADD ESP,0xc                         ; 00519735
     CMP ESI,ECX                         ; 00519738
-    JL 0x00519728                       ; 0051973a | LAB_00519728
-        ;   XREF to: 00519728 (CONDITIONAL_JUMP)
+    JL 0x00519728                       ; 0051973a
+        ;   XREF to: 00519728 (CONDITIONAL_JUMP)  ; LAB_00519728
     LEA EAX,[EAX]                       ; 0051973c
-    PUSH 0x6379ed                       ; 00519740 | = "Computing initial edge collapse costs..." | s_Computing_initial_edge_c_006379ed = Computing initial edge collapse costs...
+    PUSH 0x6379ed                       ; 00519740 | = "Computing initial edge collapse costs..."
         ;   Label: LAB_00519740
-    MOV ESI,dword ptr [0x00678a60]      ; 00519745 | CEditorTools * g_CEditorToolsPtr
-    PUSH ESI                            ; 0051974b | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 0051974c | void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
-        ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)
+    MOV ESI,dword ptr [0x00678a60]      ; 00519745 | g_CEditorToolsPtr
+    PUSH ESI                            ; 0051974b | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430 ; 0051974c
+        ;   XREF to: 004a0430 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 00519751
     MOV EDI,dword ptr [EBX + 0x44]      ; 00519754
     XOR ESI,ESI                         ; 00519757
     TEST EDI,EDI                        ; 00519759
-    JLE 0x005197a0                      ; 0051975b | LAB_005197a0
-        ;   XREF to: 005197a0 (CONDITIONAL_JUMP)
+    JLE 0x005197a0                      ; 0051975b
+        ;   XREF to: 005197a0 (CONDITIONAL_JUMP)  ; LAB_005197a0
     PUSH ESI                            ; 0051975d
         ;   Label: LAB_0051975d
     PUSH EBX                            ; 0051975e
-    CALL shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 ; 0051975f | void shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLodMesh * this_ptr, int edge_index)
-        ;   XREF to: 00518910 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 ; 0051975f
+        ;   XREF to: 00518910 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLodMesh * this_ptr, int edge_index)
     FILD dword ptr [EBX + 0x44]         ; 00519764
     ADD ESP,0x8                         ; 00519767
     LEA EAX,[ESI + 0x1]                 ; 0051976a
@@ -82,24 +82,24 @@ section .text
     FSTP float ptr [ESP]                ; 00519774
     FILD dword ptr [ESP + 0x4]          ; 00519777
     SUB ESP,0x4                         ; 0051977b
-    MOV EBP,dword ptr [0x00678a60]      ; 0051977e | CEditorTools * g_CEditorToolsPtr
+    MOV EBP,dword ptr [0x00678a60]      ; 0051977e | g_CEditorToolsPtr
     FSTP float ptr [ESP]                ; 00519784
-    PUSH EBP                            ; 00519787 | CEditorTools g_CEditorToolsPtr
+    PUSH EBP                            ; 00519787 | g_CEditorToolsPtr
     INC ESI                             ; 00519788
-    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00519789 | void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)
+    CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00519789
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
     MOV EAX,dword ptr [EBX + 0x44]      ; 0051978e
     ADD ESP,0xc                         ; 00519791
     CMP ESI,EAX                         ; 00519794
-    JL 0x0051975d                       ; 00519796 | LAB_0051975d
-        ;   XREF to: 0051975d (CONDITIONAL_JUMP)
+    JL 0x0051975d                       ; 00519796
+        ;   XREF to: 0051975d (CONDITIONAL_JUMP)  ; LAB_0051975d
     LEA EAX,[EAX]                       ; 00519798
     MOV EDX,EDX                         ; 0051979e
-    MOV EDX,dword ptr [0x00678a60]      ; 005197a0 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
+    MOV EDX,dword ptr [0x00678a60]      ; 005197a0 | g_CEditorToolsPtr
         ;   Label: LAB_005197a0
-    PUSH EDX                            ; 005197a6 | CEditorTools g_CEditorToolsPtr
-    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005197a7 | void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
-        ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)
+    PUSH EDX                            ; 005197a6 | g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 ; 005197a7
+        ;   XREF to: 004a0dd0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 005197ac
     ADD ESP,0x4                         ; 005197af
     POP EBP                             ; 005197b2

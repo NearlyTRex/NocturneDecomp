@@ -35,8 +35,8 @@ section .text
     DEC EDX                             ; 00440cae
     SAR EDI,0x10                        ; 00440caf
     CMP EDX,EAX                         ; 00440cb2
-    JLE 0x00440d34                      ; 00440cb4 | LAB_00440d34
-        ;   XREF to: 00440d34 (CONDITIONAL_JUMP)
+    JLE 0x00440d34                      ; 00440cb4
+        ;   XREF to: 00440d34 (CONDITIONAL_JUMP)  ; LAB_00440d34
     SHL EAX,0x2                         ; 00440cba
     MOV dword ptr [ESP],EAX             ; 00440cbd
     MOV ESI,dword ptr [ESP]             ; 00440cc0
@@ -46,25 +46,25 @@ section .text
     MOV AL,byte ptr [EAX + 0x1]         ; 00440ccb
     AND EAX,0xff                        ; 00440cce
     CMP EAX,EDI                         ; 00440cd3
-    JLE 0x00440d1e                      ; 00440cd5 | LAB_00440d1e
-        ;   XREF to: 00440d1e (CONDITIONAL_JUMP)
+    JLE 0x00440d1e                      ; 00440cd5
+        ;   XREF to: 00440d1e (CONDITIONAL_JUMP)  ; LAB_00440d1e
     MOV ESI,dword ptr [ESP + 0x4]       ; 00440cd7
     LEA EAX,[EDX*0x4 + 0x0]             ; 00440cdb
     SHL ESI,0x2                         ; 00440ce2
     CMP ESI,EAX                         ; 00440ce5
         ;   Label: LAB_00440ce5
-    JGE 0x00440d03                      ; 00440ce7 | LAB_00440d03
-        ;   XREF to: 00440d03 (CONDITIONAL_JUMP)
+    JGE 0x00440d03                      ; 00440ce7
+        ;   XREF to: 00440d03 (CONDITIONAL_JUMP)  ; LAB_00440d03
     MOV ECX,dword ptr [EBX + 0x2004]    ; 00440ce9
     MOV CL,byte ptr [ECX + EAX*0x1 + 0x1] ; 00440cef
     AND ECX,0xff                        ; 00440cf3
     CMP ECX,EDI                         ; 00440cf9
-    JLE 0x00440d03                      ; 00440cfb | LAB_00440d03
-        ;   XREF to: 00440d03 (CONDITIONAL_JUMP)
+    JLE 0x00440d03                      ; 00440cfb
+        ;   XREF to: 00440d03 (CONDITIONAL_JUMP)  ; LAB_00440d03
     DEC EDX                             ; 00440cfd
     SUB EAX,0x4                         ; 00440cfe
-    JMP 0x00440ce5                      ; 00440d01 | LAB_00440ce5
-        ;   XREF to: 00440ce5 (UNCONDITIONAL_JUMP)
+    JMP 0x00440ce5                      ; 00440d01
+        ;   XREF to: 00440ce5 (UNCONDITIONAL_JUMP)  ; LAB_00440ce5
     MOV ECX,dword ptr [ESP]             ; 00440d03
         ;   Label: LAB_00440d03
     MOV ESI,dword ptr [EBX + 0x2004]    ; 00440d06
@@ -82,8 +82,8 @@ section .text
     MOV dword ptr [ESP],EBP             ; 00440d29
     MOV dword ptr [ESP + 0x4],EAX       ; 00440d2c
     CMP EDX,EAX                         ; 00440d30
-    JG 0x00440cc0                       ; 00440d32 | LAB_00440cc0
-        ;   XREF to: 00440cc0 (CONDITIONAL_JUMP)
+    JG 0x00440cc0                       ; 00440d32
+        ;   XREF to: 00440cc0 (CONDITIONAL_JUMP)  ; LAB_00440cc0
     MOV EAX,dword ptr [ESP + 0x24]      ; 00440d34
         ;   Label: LAB_00440d34
     MOV ESI,dword ptr [ESP + 0x20]      ; 00440d38
@@ -103,14 +103,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 00440d76
     PUSH EDX                            ; 00440d7a
     PUSH EBX                            ; 00440d7b
-    CALL engine_colquant.c_FUN_00441260 ; 00440d7c | undefined engine_colquant.c_FUN_00441260()
-        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441260 ; 00440d7c
+        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441260()
     ADD ESP,0x8                         ; 00440d81
     MOV ECX,dword ptr [ESP + 0x24]      ; 00440d84
     PUSH ECX                            ; 00440d88
     PUSH EBX                            ; 00440d89
-    CALL engine_colquant.c_FUN_00441260 ; 00440d8a | undefined engine_colquant.c_FUN_00441260()
-        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441260 ; 00440d8a
+        ;   XREF to: 00441260 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441260()
     ADD ESP,0x8                         ; 00440d8f
     MOV dword ptr [ESI + EBX*0x1 + 0x4044],EDI ; 00440d92
     MOV ESI,dword ptr [ESP + 0x24]      ; 00440d99
@@ -118,8 +118,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x24]      ; 00440d9e
     PUSH EDI                            ; 00440da2
     PUSH EBX                            ; 00440da3
-    CALL engine_colquant.c_FUN_00441110 ; 00440da4 | undefined engine_colquant.c_FUN_00441110()
-        ;   XREF to: 00441110 (UNCONDITIONAL_CALL)
+    CALL engine_colquant.c_FUN_00441110 ; 00440da4
+        ;   XREF to: 00441110 (UNCONDITIONAL_CALL)  ; undefined engine_colquant.c_FUN_00441110()
     ADD ESP,0xc                         ; 00440da9
     ADD ESP,0x8                         ; 00440dac
     POP EBP                             ; 00440daf

@@ -13,7 +13,7 @@
 
 section .text
 
-    MOV EAX,0x3f8751c                   ; 005e5580 | CDemonActorType g_CVampireBossClassInfo
+    MOV EAX,0x3f8751c                   ; 005e5580 | g_CVampireBossClassInfo
         ;   Label: core_vampboss.cpp_CVampireBoss_getActorType_FUN_005e5580
     RET                                 ; 005e5585
 

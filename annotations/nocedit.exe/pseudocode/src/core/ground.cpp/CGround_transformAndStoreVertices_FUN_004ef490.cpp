@@ -165,9 +165,8 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004ef490(CGro
   this_ptr->visible_min_x = local_14;
   this_ptr->visible_min_y = local_18;
   local_1c = -this_ptr->grid_width;
-  iVar3 = this_ptr->visible_min_x;
-  if (iVar3 != local_1c && SBORROW /* signed borrow */4(iVar3,local_1c) == iVar3 + this_ptr->grid_width < 0) {
-    local_1c = iVar3;
+  if (-this_ptr->grid_width < this_ptr->visible_min_x) {
+    local_1c = this_ptr->visible_min_x;
   }
   iVar3 = this_ptr->grid_width;
   if (this_ptr->visible_max_x < this_ptr->grid_width) {

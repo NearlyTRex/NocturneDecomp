@@ -35,23 +35,23 @@ section .text
     SUB ESP,0x54                        ; 00575bc2
     MOV EBP,dword ptr [ESP + 0x60]      ; 00575bc5
     PUSH EBP                            ; 00575bc9
-    CALL core_setdir.cpp_CDemonSet_freeThumbs_FUN_00575df0 ; 00575bca | void core_setdir.cpp_CDemonSet_freeThumbs_FUN_00575df0(CDemonSet * this_ptr)
-        ;   XREF to: 00575df0 (UNCONDITIONAL_CALL)
+    CALL core_setdir.cpp_CDemonSet_freeThumbs_FUN_00575df0 ; 00575bca
+        ;   XREF to: 00575df0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_freeThumbs_FUN_00575df0(CDemonSet * this_ptr)
     XOR EBX,EBX                         ; 00575bcf
     ADD ESP,0x4                         ; 00575bd1
     CMP EBX,dword ptr [EBP]             ; 00575bd4
         ;   Label: LAB_00575bd4
-    JGE 0x00575de7                      ; 00575bd7 | LAB_00575de7
-        ;   XREF to: 00575de7 (CONDITIONAL_JUMP)
+    JGE 0x00575de7                      ; 00575bd7
+        ;   XREF to: 00575de7 (CONDITIONAL_JUMP)  ; LAB_00575de7
     PUSH EDI                            ; 00575bdd
     PUSH ESI                            ; 00575bde
     IMUL EDI,EBX,0x1a4                  ; 00575bdf
     LEA EAX,[EBP + 0x4]                 ; 00575be5
     ADD EDI,EAX                         ; 00575be8
     CMP dword ptr [EDI + 0x140],0x0     ; 00575bea
-    JZ 0x00575d9c                       ; 00575bf1 | LAB_00575d9c
-        ;   XREF to: 00575d9c (CONDITIONAL_JUMP)
+    JZ 0x00575d9c                       ; 00575bf1
+        ;   XREF to: 00575d9c (CONDITIONAL_JUMP)  ; LAB_00575d9c
     XOR ESI,ESI                         ; 00575bf7
-    JMP dword ptr [ESI*0x4 + 0x575ba0]  ; 00575bf9 | pointer switchdataD_00575ba0
+    JMP dword ptr [ESI*0x4 + 0x575ba0]  ; 00575bf9 | default | caseD_1 | caseD_2
         ;   Label: switchD
 

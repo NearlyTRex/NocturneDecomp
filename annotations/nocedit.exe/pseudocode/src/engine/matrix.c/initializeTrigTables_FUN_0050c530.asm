@@ -30,9 +30,9 @@ section .text
     AND ESP,0xfffffff8                  ; 0050c536
     XOR EDX,EDX                         ; 0050c539
     XOR ECX,ECX                         ; 0050c53b
-    FLD double ptr [0x00635a35]         ; 0050c53d | double g_FixedPoint16Scale
-    FLD double ptr [0x00635a2d]         ; 0050c543 | double g_TrigTableStepSize
-    FLD double ptr [0x00635a25]         ; 0050c549 | double g_PI
+    FLD double ptr [0x00635a35]         ; 0050c53d | g_FixedPoint16Scale
+    FLD double ptr [0x00635a2d]         ; 0050c543 | g_TrigTableStepSize
+    FLD double ptr [0x00635a25]         ; 0050c549 | g_PI
     MOV dword ptr [ESP + 0x8],ECX       ; 0050c54f
         ;   Label: LAB_0050c54f
     FILD dword ptr [ESP + 0x8]          ; 0050c553
@@ -48,20 +48,20 @@ section .text
     FMUL ST4                            ; 0050c569
     ADD EDX,0x4                         ; 0050c56b
     FXCH                                ; 0050c56e
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c570 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c570
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x8]         ; 0050c575
-    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c579 | double crt_math.c_round_FUN_005fe6b0(double value)
-        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)
+    CALL crt_math.c_round_FUN_005fe6b0  ; 0050c579
+        ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     MOV EAX,dword ptr [ESP + 0x8]       ; 0050c57e
     FISTP dword ptr [ESP + 0x8]         ; 0050c582
-    MOV dword ptr [EDX + 0x2f0cb58],EAX ; 0050c586 | int[257] g_SinTable
+    MOV dword ptr [EDX + 0x2f0cb58],EAX ; 0050c586 | g_SinTable
     MOV EAX,dword ptr [ESP + 0x8]       ; 0050c58c
     INC ECX                             ; 0050c590
-    MOV dword ptr [EDX + 0x2f0cf5c],EAX ; 0050c591 | int[257] g_CosTable
+    MOV dword ptr [EDX + 0x2f0cf5c],EAX ; 0050c591 | g_CosTable
     CMP ECX,0x101                       ; 0050c597
-    JL 0x0050c54f                       ; 0050c59d | LAB_0050c54f
-        ;   XREF to: 0050c54f (CONDITIONAL_JUMP)
+    JL 0x0050c54f                       ; 0050c59d
+        ;   XREF to: 0050c54f (CONDITIONAL_JUMP)  ; LAB_0050c54f
     FSTP ST0                            ; 0050c59f
     FSTP ST0                            ; 0050c5a1
     FSTP ST0                            ; 0050c5a3

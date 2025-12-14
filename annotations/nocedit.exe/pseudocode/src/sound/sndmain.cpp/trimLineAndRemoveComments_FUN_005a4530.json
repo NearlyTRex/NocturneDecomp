@@ -1,67 +1,67 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 42, 
-    "pseudocode_lines": 42, 
-    "cross_reference_count": 0, 
-    "global_count": 2, 
-    "total_lines": 127, 
-    "assembly_lines": 85, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_string.c_memmove_FUN_005fe5e0", 
-      "addr": "005fe5e0"
-    }, 
-    {
-      "name": "crt_string.c_strstr_FUN_005fedd0", 
-      "addr": "005fedd0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064f583", 
-      "addr": "0064f583", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_CharacterClassificationTable", 
-      "addr": "006849c4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 85,
+    "complexity_score": 42,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "pseudocode_lines": 42,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 127
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005a4530", 
-    "signature": "void sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530(char * line)", 
+    "address": "005a4530",
     "address_range": [
       [
-        "005a4530", 
+        "005a4530",
         "005a45bd"
       ]
-    ], 
-    "name": "sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530",
+    "signature": "void sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530(char * line)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fe5e0",
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    },
+    {
+      "addr": "005fedd0",
+      "name": "crt_string.c_strstr_FUN_005fedd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064f583",
+      "name": "s_anon_0064f583",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006849c4",
+      "name": "g_CharacterClassificationTable",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "char *", 
-        "size": 4, 
-        "name": "line"
+        "is_param": true,
+        "name": "line",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

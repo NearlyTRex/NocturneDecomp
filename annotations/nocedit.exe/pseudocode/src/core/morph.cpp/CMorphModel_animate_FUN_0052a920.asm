@@ -38,20 +38,20 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 0052a928
     MOV EBP,dword ptr [ESP + 0x24]      ; 0052a92c
     TEST EBX,EBX                        ; 0052a930
-    JL 0x0052a93c                       ; 0052a932 | LAB_0052a93c
-        ;   XREF to: 0052a93c (CONDITIONAL_JUMP)
+    JL 0x0052a93c                       ; 0052a932
+        ;   XREF to: 0052a93c (CONDITIONAL_JUMP)  ; LAB_0052a93c
     MOV EDX,dword ptr [ESP + 0x14]      ; 0052a934
     CMP EBX,dword ptr [EDX]             ; 0052a938
-    JL 0x0052a95e                       ; 0052a93a | LAB_0052a95e
-        ;   XREF to: 0052a95e (CONDITIONAL_JUMP)
-    MOV ESI,0x63a229                    ; 0052a93c | = "..\\core\\morph.cpp" | s_core_morph_cpp_0063a229 = ..\core\morph.cpp
+    JL 0x0052a95e                       ; 0052a93a
+        ;   XREF to: 0052a95e (CONDITIONAL_JUMP)  ; LAB_0052a95e
+    MOV ESI,0x63a229                    ; 0052a93c | = "..\\core\\morph.cpp"
         ;   Label: LAB_0052a93c
     MOV EAX,0x112                       ; 0052a941
-    PUSH 0x63a23b                       ; 0052a946 | = "CMorphModel::animate - invalid part i..." | s_CMorphModel_animate_inva_0063a23b = CMorphModel::animate - invalid part index
-    MOV dword ptr [0x02f0ca48],ESI      ; 0052a94b | char * g_CurrentFilename
-    MOV [0x02f0ca4c],EAX                ; 0052a951 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052a956 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63a23b                       ; 0052a946 | = "CMorphModel::animate - invalid part i..."
+    MOV dword ptr [0x02f0ca48],ESI      ; 0052a94b | g_CurrentFilename
+    MOV [0x02f0ca4c],EAX                ; 0052a951 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052a956
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0052a95b
     MOV ECX,EBX                         ; 0052a95e
         ;   Label: LAB_0052a95e
@@ -64,21 +64,21 @@ section .text
     LEA EDX,[EBX + ESI*0x1]             ; 0052a971
     LEA ECX,[EDI + EBP*0x1]             ; 0052a974
     CMP ECX,EDX                         ; 0052a977
-    JLE 0x0052a99d                      ; 0052a979 | LAB_0052a99d
-        ;   XREF to: 0052a99d (CONDITIONAL_JUMP)
-    MOV EAX,0x63a265                    ; 0052a97b | = "..\\core\\morph.cpp" | s_core_morph_cpp_0063a265 = ..\core\morph.cpp
+    JLE 0x0052a99d                      ; 0052a979
+        ;   XREF to: 0052a99d (CONDITIONAL_JUMP)  ; LAB_0052a99d
+    MOV EAX,0x63a265                    ; 0052a97b | = "..\\core\\morph.cpp"
     MOV EDX,0x119                       ; 0052a980
-    PUSH 0x63a277                       ; 0052a985 | = "CMorphModel::animate - invalid vertex..." | s_CMorphModel_animate_inva_0063a277 = CMorphModel::animate - invalid vertex range
-    MOV [0x02f0ca48],EAX                ; 0052a98a | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDX      ; 0052a98f | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052a995 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x63a277                       ; 0052a985 | = "CMorphModel::animate - invalid vertex..."
+    MOV [0x02f0ca48],EAX                ; 0052a98a | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDX      ; 0052a98f | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0052a995
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 0052a99a
     XOR ECX,ECX                         ; 0052a99d
         ;   Label: LAB_0052a99d
     TEST EBP,EBP                        ; 0052a99f
-    JLE 0x0052a9f0                      ; 0052a9a1 | LAB_0052a9f0
-        ;   XREF to: 0052a9f0 (CONDITIONAL_JUMP)
+    JLE 0x0052a9f0                      ; 0052a9a1
+        ;   XREF to: 0052a9f0 (CONDITIONAL_JUMP)  ; LAB_0052a9f0
     MOV ESI,EDI                         ; 0052a9a3
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0052a9a5
     SHL ESI,0x4                         ; 0052a9a9
@@ -92,18 +92,18 @@ section .text
     ADD EBX,0x4                         ; 0052a9b9
     ADD EDX,0xc                         ; 0052a9bc
     FILD dword ptr [EAX]                ; 0052a9bf
-    FMUL float ptr [0x00661b48]         ; 0052a9c1 | float FLOAT_00661b48
+    FMUL float ptr [0x00661b48]         ; 0052a9c1 | FLOAT_00661b48
     FSTP float ptr [EBX]                ; 0052a9c7
     FILD dword ptr [EAX + 0x4]          ; 0052a9c9
-    FMUL float ptr [0x00661b48]         ; 0052a9cc | float FLOAT_00661b48
+    FMUL float ptr [0x00661b48]         ; 0052a9cc | FLOAT_00661b48
     FSTP float ptr [EBX + 0x4]          ; 0052a9d2
     FILD dword ptr [EAX + 0x8]          ; 0052a9d5
-    FMUL float ptr [0x00661b48]         ; 0052a9d8 | float FLOAT_00661b48
+    FMUL float ptr [0x00661b48]         ; 0052a9d8 | FLOAT_00661b48
     FSTP float ptr [EBX + 0x8]          ; 0052a9de
     ADD ESI,0x10                        ; 0052a9e1
     CMP ECX,EBP                         ; 0052a9e4
-    JL 0x0052a9ac                       ; 0052a9e6 | LAB_0052a9ac
-        ;   XREF to: 0052a9ac (CONDITIONAL_JUMP)
+    JL 0x0052a9ac                       ; 0052a9e6
+        ;   XREF to: 0052a9ac (CONDITIONAL_JUMP)  ; LAB_0052a9ac
     LEA EAX,[EAX]                       ; 0052a9e8
     MOV EDX,EDX                         ; 0052a9ee
     POP EBP                             ; 0052a9f0

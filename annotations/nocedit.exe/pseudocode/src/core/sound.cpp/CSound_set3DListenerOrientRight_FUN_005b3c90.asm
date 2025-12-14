@@ -26,7 +26,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 005b3c90
         ;   Label: core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
-    MOV [0x03f6af88],EAX                ; 005b3c94 | CVector3f g_SoundListenerOrient
+    MOV [0x03f6af88],EAX                ; 005b3c94 | g_SoundListenerOrient
     MOV EAX,dword ptr [ESP + 0xc]       ; 005b3c99
     MOV [0x03f6af8c],EAX                ; 005b3c9d | g_SoundListenerOrient.y
     MOV EAX,dword ptr [ESP + 0x10]      ; 005b3ca2
@@ -34,8 +34,8 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 005b3ca7
     PUSH dword ptr [ESP + 0x10]         ; 005b3cab
     MOV [0x03f6af90],EAX                ; 005b3caf | g_SoundListenerOrient.z
-    CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0 ; 005b3cb4 | void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0(float orient_right_x, float orient_right_y, float orient_right_z)
-        ;   XREF to: 005ab6e0 (UNCONDITIONAL_CALL)
+    CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0 ; 005b3cb4
+        ;   XREF to: 005ab6e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0(float orient_right_x, float orient_right_y, float orient_right_z)
     ADD ESP,0xc                         ; 005b3cb9
     RET                                 ; 005b3cbc
 

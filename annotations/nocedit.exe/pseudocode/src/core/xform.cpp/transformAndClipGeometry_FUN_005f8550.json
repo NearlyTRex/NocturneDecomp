@@ -1,839 +1,839 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 1053, 
-    "pseudocode_lines": 488, 
-    "cross_reference_count": 3, 
-    "global_count": 53, 
-    "total_lines": 1281, 
-    "assembly_lines": 793, 
-    "suspect_count": 55, 
+    "assembly_lines": 793,
+    "complexity_score": 1053,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 53,
+    "pseudocode_lines": 488,
+    "suspect_count": 55,
     "suspect_types": [
-      "unknown_field", 
-      "extra_output", 
+      "extra_output",
+      "unknown_field",
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00", 
-      "addr": "005f7e00"
-    }, 
-    {
-      "name": "core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80", 
-      "addr": "005f7c80"
-    }, 
-    {
-      "name": "core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0", 
-      "addr": "005f7bc0"
-    }, 
-    {
-      "name": "core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40", 
-      "addr": "005f7d40"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "void*", 
-      "name": "switchdataD_005f850c", 
-      "addr": "005f850c", 
-      "value": "005f86dc"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_005f8518", 
-      "addr": "005f8518", 
-      "value": "005f8721"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_1_005f8520", 
-      "addr": "005f8520", 
-      "value": "005f8a76"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_005f8528", 
-      "addr": "005f8528", 
-      "value": "005f87eb"
-    }, 
-    {
-      "type": "void*", 
-      "name": "switchdataD_005f852c", 
-      "addr": "005f852c", 
-      "value": "005f886b"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_005f8538", 
-      "addr": "005f8538", 
-      "value": "005f88b0"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_1_005f8540", 
-      "addr": "005f8540", 
-      "value": "005f8baa"
-    }, 
-    {
-      "type": "void*", 
-      "name": "PTR_caseD_3_005f8548", 
-      "addr": "005f8548", 
-      "value": "005f897b"
-    }, 
-    {
-      "type": "SRenderVertex[16]", 
-      "name": "g_RenderVertexBuffer", 
-      "addr": "00688014", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y", 
-      "addr": "00688018", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_z", 
-      "addr": "0068801c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.inv_z", 
-      "addr": "00688020", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x", 
-      "addr": "00688024", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClippedVertexCount", 
-      "addr": "00824e24", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex[16]", 
-      "name": "g_ClippedVertexBuffer", 
-      "addr": "00824e28", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00824e2c", 
-      "addr": "00824e2c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClippedVertexBuffer[0].projected_vertex.transformed_z", 
-      "addr": "00824e30", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00824e34", 
-      "addr": "00824e34", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00824e58", 
-      "addr": "00824e58", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00824e5c", 
-      "addr": "00824e5c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_00824e60", 
-      "addr": "00824e60", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipVertexCountStage1", 
-      "addr": "03f99510", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipVertexCountStage2", 
-      "addr": "03f99514", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipVertexCountStage3", 
-      "addr": "03f99518", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ClipVertexCountStage4", 
-      "addr": "03f9951c", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex[32]", 
-      "name": "g_ClipVertexBufferStage2", 
-      "addr": "03f99520", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipVertexBufferStage2[0].projected_vertex.transformed_y", 
-      "addr": "03f99524", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f99528", 
-      "addr": "03f99528", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9952c", 
-      "addr": "03f9952c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f99550", 
-      "addr": "03f99550", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f99558", 
-      "addr": "03f99558", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex[32]", 
-      "name": "g_ClipVertexBufferStage1", 
-      "addr": "03f99b20", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f99b28", 
-      "addr": "03f99b28", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f99b2c", 
-      "addr": "03f99b2c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f99b50", 
-      "addr": "03f99b50", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f99b54", 
-      "addr": "03f99b54", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f99b54+4", 
-      "addr": "03f99b58", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f99b5c", 
-      "addr": "03f99b5c", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex[32]", 
-      "name": "g_ClipVertexBufferStage3", 
-      "addr": "03f9a120", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipVertexBufferStage3[0].projected_vertex.transformed_y", 
-      "addr": "03f9a124", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a128", 
-      "addr": "03f9a128", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a12c", 
-      "addr": "03f9a12c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a150", 
-      "addr": "03f9a150", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a154", 
-      "addr": "03f9a154", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a158", 
-      "addr": "03f9a158", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a15c", 
-      "addr": "03f9a15c", 
-      "value": null
-    }, 
-    {
-      "type": "SRenderVertex[32]", 
-      "name": "g_ClipVertexBufferStage4", 
-      "addr": "03f9a720", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ClipVertexBufferStage4[0].projected_vertex.transformed_y", 
-      "addr": "03f9a724", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a728", 
-      "addr": "03f9a728", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a72c", 
-      "addr": "03f9a72c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a750", 
-      "addr": "03f9a750", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a754", 
-      "addr": "03f9a754", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_03f9a758", 
-      "addr": "03f9a758", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 30, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SRenderVertex *extraout_EAX;"
-    }, 
-    {
-      "line": 31, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SRenderVertex *extraout_EAX_00;"
-    }, 
-    {
-      "line": 32, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SRenderVertex *extraout_EAX_01;"
-    }, 
-    {
-      "line": 33, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SRenderVertex *extraout_EAX_02;"
-    }, 
-    {
-      "line": 34, 
-      "match": "extraout_EAX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SRenderVertex *extraout_EAX_03;"
-    }, 
-    {
-      "line": 35, 
-      "match": "extraout_EAX_04", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SRenderVertex *extraout_EAX_04;"
-    }, 
-    {
-      "line": 36, 
-      "match": "extraout_EAX_05", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SRenderVertex *extraout_EAX_05;"
-    }, 
-    {
-      "line": 37, 
-      "match": "extraout_EAX_06", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "SRenderVertex *extraout_EAX_06;"
-    }, 
-    {
-      "line": 63, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_28 = (int *)((int)&(((SRenderVertex *)local_28)->projected_vertex).transformed_x + 1);"
-    }, 
-    {
-      "line": 77, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar1._0_4_ = (pSVar19->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 78, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar1._4_4_ = (pSVar19->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 93, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_28 = (int *)((int)&(local_24->projected_vertex).transformed_x + 1);"
-    }, 
-    {
-      "line": 114, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar2._0_4_ = (pSVar19->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 115, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar2._4_4_ = (pSVar19->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 156, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar3._0_4_ = (pSVar20->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 157, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar3._4_4_ = (pSVar20->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 168, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) ="
-    }, 
-    {
-      "line": 169, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
-    }, 
-    {
-      "line": 178, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "local_28 = (int *)extraout_EAX;"
-    }, 
-    {
-      "line": 185, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar7._0_4_ = (pSVar19->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 186, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar7._4_4_ = (pSVar19->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 197, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) ="
-    }, 
-    {
-      "line": 198, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);"
-    }, 
-    {
-      "line": 205, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "local_28 = (int *)extraout_EAX_00;"
-    }, 
-    {
-      "line": 235, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar4._0_4_ = (pSVar20->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 236, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar4._4_4_ = (pSVar20->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 247, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) ="
-    }, 
-    {
-      "line": 248, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
-    }, 
-    {
-      "line": 257, 
-      "match": "extraout_EAX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "local_28 = (int *)extraout_EAX_01;"
-    }, 
-    {
-      "line": 264, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar8._0_4_ = (pSVar19->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 265, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar8._4_4_ = (pSVar19->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 276, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) ="
-    }, 
-    {
-      "line": 277, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);"
-    }, 
-    {
-      "line": 284, 
-      "match": "extraout_EAX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "local_28 = (int *)extraout_EAX_02;"
-    }, 
-    {
-      "line": 312, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar5._0_4_ = (pSVar20->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 313, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar5._4_4_ = (pSVar20->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 325, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) ="
-    }, 
-    {
-      "line": 326, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
-    }, 
-    {
-      "line": 336, 
-      "match": "extraout_EAX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "local_28 = (int *)extraout_EAX_03;"
-    }, 
-    {
-      "line": 343, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar9._0_4_ = (pSVar20->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 344, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar9._4_4_ = (pSVar20->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 356, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) ="
-    }, 
-    {
-      "line": 357, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
-    }, 
-    {
-      "line": 365, 
-      "match": "extraout_EAX_04", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "local_28 = (int *)extraout_EAX_04;"
-    }, 
-    {
-      "line": 393, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar6._0_4_ = (pSVar20->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 394, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar6._4_4_ = (pSVar20->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 406, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) ="
-    }, 
-    {
-      "line": 407, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
-    }, 
-    {
-      "line": 417, 
-      "match": "extraout_EAX_05", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "local_28 = (int *)extraout_EAX_05;"
-    }, 
-    {
-      "line": 424, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar10._0_4_ = (pSVar20->projected_vertex).transformed_x;"
-    }, 
-    {
-      "line": 425, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "lVar10._4_4_ = (pSVar20->projected_vertex).transformed_y;"
-    }, 
-    {
-      "line": 437, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) ="
-    }, 
-    {
-      "line": 438, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
-    }, 
-    {
-      "line": 446, 
-      "match": "extraout_EAX_06", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "local_28 = (int *)extraout_EAX_06;"
-    }, 
-    {
-      "line": 483, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_28 = (int *)((int)local_28 + 0x30);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005f8550", 
-    "signature": "SRenderVertex * core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)", 
-    "address_range": [
-      [
-        "005f8550", 
-        "005f8c84"
-      ]
-    ], 
-    "name": "core_xform.cpp_transformAndClipGeometry_FUN_005f8550"
-  }, 
-  "stack_frame": {
-    "local_size": 44, 
-    "variables": [
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "vertex_count"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "vertex_indices"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 52, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 1281
+  },
   "cross_references": [
     {
-      "from_addr": "0048a7e3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
-      "addr": "0048a740"
-    }, 
+      "addr": "0048a740",
+      "from_addr": "0048a7e3",
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048c92e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0", 
-      "addr": "0048c8d0"
-    }, 
+      "addr": "0048c8d0",
+      "from_addr": "0048c92e",
+      "name": "engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0048d4d3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410", 
-      "addr": "0048d410"
+      "addr": "0048d410",
+      "from_addr": "0048d4d3",
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005f8550",
+    "address_range": [
+      [
+        "005f8550",
+        "005f8c84"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_xform.cpp_transformAndClipGeometry_FUN_005f8550",
+    "signature": "SRenderVertex * core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)"
+  },
+  "function_calls": [
+    {
+      "addr": "005f7e00",
+      "name": "core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00"
+    },
+    {
+      "addr": "005f7c80",
+      "name": "core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80"
+    },
+    {
+      "addr": "005f7bc0",
+      "name": "core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0"
+    },
+    {
+      "addr": "005f7d40",
+      "name": "core_xform.cpp_clipInterpolateTopPlane_FUN_005f7d40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f850c",
+      "name": "switchdataD_005f850c",
+      "type": "void*",
+      "value": "005f86dc"
+    },
+    {
+      "addr": "005f8518",
+      "name": "PTR_caseD_3_005f8518",
+      "type": "void*",
+      "value": "005f8721"
+    },
+    {
+      "addr": "005f8520",
+      "name": "PTR_caseD_1_005f8520",
+      "type": "void*",
+      "value": "005f8a76"
+    },
+    {
+      "addr": "005f8528",
+      "name": "PTR_caseD_3_005f8528",
+      "type": "void*",
+      "value": "005f87eb"
+    },
+    {
+      "addr": "005f852c",
+      "name": "switchdataD_005f852c",
+      "type": "void*",
+      "value": "005f886b"
+    },
+    {
+      "addr": "005f8538",
+      "name": "PTR_caseD_3_005f8538",
+      "type": "void*",
+      "value": "005f88b0"
+    },
+    {
+      "addr": "005f8540",
+      "name": "PTR_caseD_1_005f8540",
+      "type": "void*",
+      "value": "005f8baa"
+    },
+    {
+      "addr": "005f8548",
+      "name": "PTR_caseD_3_005f8548",
+      "type": "void*",
+      "value": "005f897b"
+    },
+    {
+      "addr": "00688014",
+      "name": "g_RenderVertexBuffer",
+      "type": "SRenderVertex[16]",
+      "value": null
+    },
+    {
+      "addr": "00688018",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0068801c",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688020",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.inv_z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00688024",
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00824e24",
+      "name": "g_ClippedVertexCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "00824e28",
+      "name": "g_ClippedVertexBuffer",
+      "type": "SRenderVertex[16]",
+      "value": null
+    },
+    {
+      "addr": "00824e2c",
+      "name": "DAT_00824e2c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00824e30",
+      "name": "g_ClippedVertexBuffer[0].projected_vertex.transformed_z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00824e34",
+      "name": "DAT_00824e34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00824e58",
+      "name": "DAT_00824e58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00824e5c",
+      "name": "DAT_00824e5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00824e60",
+      "name": "DAT_00824e60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99510",
+      "name": "g_ClipVertexCountStage1",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f99514",
+      "name": "g_ClipVertexCountStage2",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f99518",
+      "name": "g_ClipVertexCountStage3",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f9951c",
+      "name": "g_ClipVertexCountStage4",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f99520",
+      "name": "g_ClipVertexBufferStage2",
+      "type": "SRenderVertex[32]",
+      "value": null
+    },
+    {
+      "addr": "03f99524",
+      "name": "g_ClipVertexBufferStage2[0].projected_vertex.transformed_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99528",
+      "name": "DAT_03f99528",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9952c",
+      "name": "DAT_03f9952c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99550",
+      "name": "DAT_03f99550",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99558",
+      "name": "DAT_03f99558",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99b20",
+      "name": "g_ClipVertexBufferStage1",
+      "type": "SRenderVertex[32]",
+      "value": null
+    },
+    {
+      "addr": "03f99b28",
+      "name": "DAT_03f99b28",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99b2c",
+      "name": "DAT_03f99b2c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99b50",
+      "name": "DAT_03f99b50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99b54",
+      "name": "DAT_03f99b54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99b58",
+      "name": "DAT_03f99b54+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f99b5c",
+      "name": "DAT_03f99b5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a120",
+      "name": "g_ClipVertexBufferStage3",
+      "type": "SRenderVertex[32]",
+      "value": null
+    },
+    {
+      "addr": "03f9a124",
+      "name": "g_ClipVertexBufferStage3[0].projected_vertex.transformed_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a128",
+      "name": "DAT_03f9a128",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a12c",
+      "name": "DAT_03f9a12c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a150",
+      "name": "DAT_03f9a150",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a154",
+      "name": "DAT_03f9a154",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a158",
+      "name": "DAT_03f9a158",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a15c",
+      "name": "DAT_03f9a15c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a720",
+      "name": "g_ClipVertexBufferStage4",
+      "type": "SRenderVertex[32]",
+      "value": null
+    },
+    {
+      "addr": "03f9a724",
+      "name": "g_ClipVertexBufferStage4[0].projected_vertex.transformed_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a728",
+      "name": "DAT_03f9a728",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a72c",
+      "name": "DAT_03f9a72c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a750",
+      "name": "DAT_03f9a750",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a754",
+      "name": "DAT_03f9a754",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f9a758",
+      "name": "DAT_03f9a758",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_indices",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_EAX",
+      "text": "SRenderVertex *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 31,
+      "match": "extraout_EAX_00",
+      "text": "SRenderVertex *extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 32,
+      "match": "extraout_EAX_01",
+      "text": "SRenderVertex *extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 33,
+      "match": "extraout_EAX_02",
+      "text": "SRenderVertex *extraout_EAX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 34,
+      "match": "extraout_EAX_03",
+      "text": "SRenderVertex *extraout_EAX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 35,
+      "match": "extraout_EAX_04",
+      "text": "SRenderVertex *extraout_EAX_04;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 36,
+      "match": "extraout_EAX_05",
+      "text": "SRenderVertex *extraout_EAX_05;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 37,
+      "match": "extraout_EAX_06",
+      "text": "SRenderVertex *extraout_EAX_06;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(int *)((int)",
+      "text": "local_28 = (int *)((int)&(((SRenderVertex *)local_28)->projected_vertex).transformed_x + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 77,
+      "match": "._0_4_",
+      "text": "lVar1._0_4_ = (pSVar19->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._4_4_",
+      "text": "lVar1._4_4_ = (pSVar19->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(int *)((int)",
+      "text": "local_28 = (int *)((int)&(local_24->projected_vertex).transformed_x + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 114,
+      "match": "._0_4_",
+      "text": "lVar2._0_4_ = (pSVar19->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 115,
+      "match": "._4_4_",
+      "text": "lVar2._4_4_ = (pSVar19->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 156,
+      "match": "._0_4_",
+      "text": "lVar3._0_4_ = (pSVar20->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 157,
+      "match": "._4_4_",
+      "text": "lVar3._4_4_ = (pSVar20->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 168,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 169,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 178,
+      "match": "extraout_EAX",
+      "text": "local_28 = (int *)extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 185,
+      "match": "._0_4_",
+      "text": "lVar7._0_4_ = (pSVar19->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 186,
+      "match": "._4_4_",
+      "text": "lVar7._4_4_ = (pSVar19->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 197,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 198,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 205,
+      "match": "extraout_EAX_00",
+      "text": "local_28 = (int *)extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 235,
+      "match": "._0_4_",
+      "text": "lVar4._0_4_ = (pSVar20->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 236,
+      "match": "._4_4_",
+      "text": "lVar4._4_4_ = (pSVar20->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 247,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 248,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 257,
+      "match": "extraout_EAX_01",
+      "text": "local_28 = (int *)extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 264,
+      "match": "._0_4_",
+      "text": "lVar8._0_4_ = (pSVar19->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 265,
+      "match": "._4_4_",
+      "text": "lVar8._4_4_ = (pSVar19->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 276,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar21 + (uint)bVar22 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 277,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 284,
+      "match": "extraout_EAX_02",
+      "text": "local_28 = (int *)extraout_EAX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 312,
+      "match": "._0_4_",
+      "text": "lVar5._0_4_ = (pSVar20->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 313,
+      "match": "._4_4_",
+      "text": "lVar5._4_4_ = (pSVar20->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 325,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 326,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 336,
+      "match": "extraout_EAX_03",
+      "text": "local_28 = (int *)extraout_EAX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 343,
+      "match": "._0_4_",
+      "text": "lVar9._0_4_ = (pSVar20->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 344,
+      "match": "._4_4_",
+      "text": "lVar9._4_4_ = (pSVar20->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 356,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 357,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 365,
+      "match": "extraout_EAX_04",
+      "text": "local_28 = (int *)extraout_EAX_04;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 393,
+      "match": "._0_4_",
+      "text": "lVar6._0_4_ = (pSVar20->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 394,
+      "match": "._4_4_",
+      "text": "lVar6._4_4_ = (pSVar20->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 406,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 407,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 417,
+      "match": "extraout_EAX_05",
+      "text": "local_28 = (int *)extraout_EAX_05;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 424,
+      "match": "._0_4_",
+      "text": "lVar10._0_4_ = (pSVar20->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 425,
+      "match": "._4_4_",
+      "text": "lVar10._4_4_ = (pSVar20->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 437,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 438,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 446,
+      "match": "extraout_EAX_06",
+      "text": "local_28 = (int *)extraout_EAX_06;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 483,
+      "match": "(int *)((int)",
+      "text": "local_28 = (int *)((int)local_28 + 0x30);",
+      "type": "pointer_cast"
     }
   ]
 }

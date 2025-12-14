@@ -24,8 +24,8 @@ section .text
     MOV EBP,ESP                         ; 0046acc4
     SUB ESP,0x4                         ; 0046acc6
     CMP dword ptr [EBP + 0x14],0x0      ; 0046accc
-    JGE 0x0046ace7                      ; 0046acd0 | LAB_0046ace7
-        ;   XREF to: 0046ace7 (CONDITIONAL_JUMP)
+    JGE 0x0046ace7                      ; 0046acd0
+        ;   XREF to: 0046ace7 (CONDITIONAL_JUMP)  ; LAB_0046ace7
     MOV EDX,dword ptr [EBP + 0x14]      ; 0046acd2
     NEG EDX                             ; 0046acd5
     MOV EAX,EDX                         ; 0046acd7

@@ -1,57 +1,57 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 13, 
-    "assembly_lines": 7, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_io.c_register_handle_FUN_00608990", 
-      "addr": "00608990"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00602438", 
-    "signature": "int crt_io.c_register_handler_wrapper_FUN_00602438(HANDLE file_handle)", 
-    "address_range": [
-      [
-        "00602438", 
-        "00602445"
-      ]
-    ], 
-    "name": "crt_io.c_register_handler_wrapper_FUN_00602438"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "typedef HANDLE void *", 
-        "size": 4, 
-        "name": "file_handle"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 7,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
   "cross_references": [
     {
-      "from_addr": "00609141", 
-      "type": "COMPUTED_CALL", 
-      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0", 
-      "addr": "006090a0"
+      "addr": "006090a0",
+      "from_addr": "00609141",
+      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0",
+      "type": "COMPUTED_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00602438",
+    "address_range": [
+      [
+        "00602438",
+        "00602445"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_io.c_register_handler_wrapper_FUN_00602438",
+    "signature": "int crt_io.c_register_handler_wrapper_FUN_00602438(HANDLE file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00608990",
+      "name": "crt_io.c_register_handle_FUN_00608990"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "typedef HANDLE void *"
+      }
+    ]
+  },
+  "suspects": []
 }

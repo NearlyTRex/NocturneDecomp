@@ -1,80 +1,80 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 49, 
-    "pseudocode_lines": 49, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 153, 
-    "assembly_lines": 104, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "uchar[8]", 
-      "name": "g_LightBitMaskLookup", 
-      "addr": "0066fed0", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00473270", 
-    "signature": "ushort * core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270(CDemonLight * this_ptr, CVector3i * projected_coord, uchar x_round_flag, uchar y_round_flag)", 
-    "address_range": [
-      [
-        "00473270", 
-        "00473358"
-      ]
-    ], 
-    "name": "core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonLight *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "CVector3i *", 
-        "size": 4, 
-        "name": "projected_coord"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "uchar", 
-        "size": 1, 
-        "name": "x_round_flag"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "uchar", 
-        "size": 1, 
-        "name": "y_round_flag"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 17, 
-    "param_offset": 4, 
-    "param_size": 13
-  }, 
+    "assembly_lines": 104,
+    "complexity_score": 49,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 153
+  },
   "cross_references": [
     {
-      "from_addr": "0044e29e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10", 
-      "addr": "0044de10"
+      "addr": "0044de10",
+      "from_addr": "0044e29e",
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00473270",
+    "address_range": [
+      [
+        "00473270",
+        "00473358"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270",
+    "signature": "ushort * core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270(CDemonLight * this_ptr, CVector3i * projected_coord, uchar x_round_flag, uchar y_round_flag)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0066fed0",
+      "name": "g_LightBitMaskLookup",
+      "type": "uchar[8]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 17,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 13,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "projected_coord",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      },
+      {
+        "is_param": true,
+        "name": "x_round_flag",
+        "offset": 12,
+        "size": 1,
+        "type": "uchar"
+      },
+      {
+        "is_param": true,
+        "name": "y_round_flag",
+        "offset": 16,
+        "size": 1,
+        "type": "uchar"
+      }
+    ]
+  },
+  "suspects": []
 }

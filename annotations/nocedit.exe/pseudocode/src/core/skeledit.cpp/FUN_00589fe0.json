@@ -1,265 +1,265 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 209, 
-    "pseudocode_lines": 24, 
-    "cross_reference_count": 1, 
-    "global_count": 13, 
-    "total_lines": 123, 
-    "assembly_lines": 99, 
-    "suspect_count": 18, 
+    "assembly_lines": 94,
+    "complexity_score": 209,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 13,
+    "pseudocode_lines": 24,
+    "suspect_count": 18,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_skeledit.cpp_FUN_00589fc0", 
-      "addr": "00589fc0"
-    }, 
-    {
-      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
-      "addr": "005ff9f3"
-    }, 
-    {
-      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
-      "addr": "005fe7c0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a15e", 
-      "addr": "0064a15e", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_0064a166", 
-      "addr": "0064a166", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a16a", 
-      "addr": "0064a16a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a172", 
-      "addr": "0064a172", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a17a", 
-      "addr": "0064a17a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a17d", 
-      "addr": "0064a17d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a185", 
-      "addr": "0064a185", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a18d", 
-      "addr": "0064a18d", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a190", 
-      "addr": "0064a190", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a198", 
-      "addr": "0064a198", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a1a0", 
-      "addr": "0064a1a0", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_anon_0064a1a3", 
-      "addr": "0064a1a3", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_d_0064a1ab", 
-      "addr": "0064a1ab", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "byte *in_stack_0000000c;"
-    }, 
-    {
-      "line": 6, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "FILE *in_stack_00000010;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%d\\n\");"
-    }, 
-    {
-      "line": 12, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*in_stack_0000000c = 0;"
-    }, 
-    {
-      "line": 14, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\" \\\"%[^\\\"]\");"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"\\\"\\n\");"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c[0x100] = 0;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\" \\\"%[^\\\"]\");"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"\\\"\\n\");"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c[0x200] = 0;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\" \\\"%[^\\\"]\");"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"\\\"\\n\");"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%d\\n\");"
-    }
-  ], 
-  "function": {
-    "convention": "unknown", 
-    "address": "00589fe0", 
-    "signature": "undefined core_skeledit.cpp_FUN_00589fe0()", 
-    "address_range": [
-      [
-        "00589fe0", 
-        "0058a0e5"
-      ]
-    ], 
-    "name": "core_skeledit.cpp_FUN_00589fe0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [], 
-    "return_addr_offset": 0, 
-    "frame_size": 4, 
-    "param_offset": 4, 
-    "param_size": 0
-  }, 
+    ],
+    "total_lines": 118
+  },
   "cross_references": [
     {
-      "from_addr": "00589db8", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_skeledit.cpp_FUN_00589c20", 
-      "addr": "00589c20"
+      "addr": "00589c20",
+      "from_addr": "00589db8",
+      "name": "core_skeledit.cpp_FUN_00589c20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00589fe0",
+    "address_range": [
+      [
+        "00589fe0",
+        "0058a0e5"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_skeledit.cpp_FUN_00589fe0",
+    "signature": "undefined core_skeledit.cpp_FUN_00589fe0()"
+  },
+  "function_calls": [
+    {
+      "addr": "00589fc0",
+      "name": "core_skeledit.cpp_FUN_00589fc0"
+    },
+    {
+      "addr": "005ff9f3",
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
+    },
+    {
+      "addr": "005fe7c0",
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0064a15e",
+      "name": "s_anon_0064a15e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a166",
+      "name": "s_d_0064a166",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a16a",
+      "name": "s_anon_0064a16a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a172",
+      "name": "s_anon_0064a172",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a17a",
+      "name": "s_anon_0064a17a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a17d",
+      "name": "s_anon_0064a17d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a185",
+      "name": "s_anon_0064a185",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a18d",
+      "name": "s_anon_0064a18d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a190",
+      "name": "s_anon_0064a190",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a198",
+      "name": "s_anon_0064a198",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a1a0",
+      "name": "s_anon_0064a1a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a1a3",
+      "name": "s_anon_0064a1a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0064a1ab",
+      "name": "s_d_0064a1ab",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 5,
+      "match": "in_stack_0000000c",
+      "text": "byte *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000010",
+      "text": "FILE *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%d\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\" \\\"%[^\\\"]\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"\\\"\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c[0x100] = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\" \\\"%[^\\\"]\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"\\\"\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c[0x200] = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\" \\\"%[^\\\"]\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"\\\"\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%*[^\\n]\\n\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%d\\n\");",
+      "type": "stack_param"
     }
   ]
 }

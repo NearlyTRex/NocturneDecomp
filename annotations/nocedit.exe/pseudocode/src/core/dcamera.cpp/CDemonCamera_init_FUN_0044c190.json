@@ -1,174 +1,174 @@
 {
   "complexity": {
-    "function_call_count": 3, 
-    "complexity_score": 72, 
-    "pseudocode_lines": 47, 
-    "cross_reference_count": 4, 
-    "global_count": 11, 
-    "total_lines": 173, 
-    "assembly_lines": 126, 
-    "suspect_count": 2, 
+    "assembly_lines": 126,
+    "complexity_score": 72,
+    "cross_reference_count": 4,
+    "function_call_count": 3,
+    "global_count": 11,
+    "pseudocode_lines": 47,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_dcamera.cpp_CDemonCamera_free_FUN_0044c360", 
-      "addr": "0044c360"
-    }, 
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dcamera_cpp_00619eda", 
-      "addr": "00619eda", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dcamera_cpp_00619eee", 
-      "addr": "00619eee", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonCamera_init_Unable_00619f02", 
-      "addr": "00619f02", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dcamera_cpp_00619f34", 
-      "addr": "00619f34", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_dcamera_cpp_00619f48", 
-      "addr": "00619f48", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CDemonCamera_init_Unable_00619f5c", 
-      "addr": "00619f5c", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraDownscaleIterations", 
-      "addr": "013bc260", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraScreenWidth", 
-      "addr": "0151a3a4", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CameraScreenHeight", 
-      "addr": "0151a3a8", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 47, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "this_ptr->framebuffer_aligned = (void *)((int)this_ptr->framebuffer_raw + 0x10U & 0xfffffff0);"
-    }, 
-    {
-      "line": 48, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "this_ptr->zbuffer_aligned = (void *)((int)this_ptr->zbuffer_raw + 0x10U & 0xfffffff0);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0044c190", 
-    "signature": "void core_dcamera.cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera * this_ptr, int screen_height)", 
-    "address_range": [
-      [
-        "0044c190", 
-        "0044c354"
-      ]
-    ], 
-    "name": "core_dcamera.cpp_CDemonCamera_init_FUN_0044c190"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDemonCamera *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "screen_height"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
+    ],
+    "total_lines": 173
+  },
   "cross_references": [
     {
-      "from_addr": "0044c111", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0", 
-      "addr": "0044c0f0"
-    }, 
+      "addr": "0044c0f0",
+      "from_addr": "0044c111",
+      "name": "core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "004dae7d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0", 
-      "addr": "004dade0"
-    }, 
+      "addr": "004dade0",
+      "from_addr": "004dae7d",
+      "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0056b7ea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0", 
-      "addr": "0056b7e0"
-    }, 
+      "addr": "0056b7e0",
+      "from_addr": "0056b7ea",
+      "name": "core_set.cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0057d9a2", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
-      "addr": "0057d660"
+      "addr": "0057d660",
+      "from_addr": "0057d9a2",
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044c190",
+    "address_range": [
+      [
+        "0044c190",
+        "0044c354"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_init_FUN_0044c190",
+    "signature": "void core_dcamera.cpp_CDemonCamera_init_FUN_0044c190(CDemonCamera * this_ptr, int screen_height)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044c360",
+      "name": "core_dcamera.cpp_CDemonCamera_free_FUN_0044c360"
+    },
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00619eda",
+      "name": "s_core_dcamera_cpp_00619eda",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619eee",
+      "name": "s_core_dcamera_cpp_00619eee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619f02",
+      "name": "s_CDemonCamera_init_Unable_00619f02",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619f34",
+      "name": "s_core_dcamera_cpp_00619f34",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619f48",
+      "name": "s_core_dcamera_cpp_00619f48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00619f5c",
+      "name": "s_CDemonCamera_init_Unable_00619f5c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "013bc260",
+      "name": "g_CameraDownscaleIterations",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151a3a4",
+      "name": "g_CameraScreenWidth",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "0151a3a8",
+      "name": "g_CameraScreenHeight",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "screen_height",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(void *)((int)",
+      "text": "this_ptr->framebuffer_aligned = (void *)((int)this_ptr->framebuffer_raw + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(void *)((int)",
+      "text": "this_ptr->zbuffer_aligned = (void *)((int)this_ptr->zbuffer_raw + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
     }
   ]
 }

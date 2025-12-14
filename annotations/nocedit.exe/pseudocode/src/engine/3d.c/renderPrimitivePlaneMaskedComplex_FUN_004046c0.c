@@ -11,12 +11,11 @@ engine_3d_c_renderPrimitivePlaneMaskedComplex_FUN_004046c0(SMRGLHeaderPrimitive 
 
 {
   int iVar1;
-  int iVar2;
-  SMRGLHeaderPrimitive *pSVar3;
-  int *piVar4;
+  SMRGLHeaderPrimitive *pSVar2;
+  int *piVar3;
   
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&primitive->surface_normal);
-  if (iVar2 == 0) goto LAB_004046e0;
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&primitive->surface_normal);
+  if (iVar1 == 0) goto LAB_004046e0;
   engine_3d_c_calculatePolygonLighting_FUN_00403a00(primitive);
   if (g_PerspectiveReciprocal == 0.0) {
     if (g_MMXSupported == 0) {
@@ -44,19 +43,18 @@ LAB_00404736:
 LAB_004047c8:
     g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
   }
-  piVar4 = g_ProcessedVertexIndices;
+  piVar3 = g_ProcessedVertexIndices;
   g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
   g_RenderStateFlags = RENDER_FULL_FEATURED;
-  pSVar3 = primitive + 1;
-  for (iVar2 = 0; iVar1 = (primitive->base).count,
-      SBORROW /* signed borrow */4(iVar2,iVar1 * 3) != iVar2 + iVar1 * -3 < 0; iVar2 = iVar2 + 3) {
-    *piVar4 = (pSVar3->base).type + g_ProcessedVertexOffset;
-    g_RenderVertexBuffer[(pSVar3->base).type + g_ProcessedVertexOffset].u =
-         (float)(pSVar3->base).count;
-    piVar4 = piVar4 + 1;
-    g_RenderVertexBuffer[(pSVar3->base).type + g_ProcessedVertexOffset].v =
-         (float)(pSVar3->surface_normal).A;
-    pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
+  pSVar2 = primitive + 1;
+  for (iVar1 = 0; iVar1 < (primitive->base).count * 3; iVar1 = iVar1 + 3) {
+    *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;
+    g_RenderVertexBuffer[(pSVar2->base).type + g_ProcessedVertexOffset].u =
+         (float)(pSVar2->base).count;
+    piVar3 = piVar3 + 1;
+    g_RenderVertexBuffer[(pSVar2->base).type + g_ProcessedVertexOffset].v =
+         (float)(pSVar2->surface_normal).A;
+    pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
   engine_clipper_c_clipAndRasterize_FUN_004371b0((primitive->base).count,g_ProcessedVertexIndices);
 LAB_004046e0:

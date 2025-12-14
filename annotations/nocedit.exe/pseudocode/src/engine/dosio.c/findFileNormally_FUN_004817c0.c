@@ -20,11 +20,9 @@ int __cdecl engine_dosio_c_findFileNormally_FUN_004817c0(SFoundFileInfo *info)
   
   if ((info != (SFoundFileInfo *)0x0) && (info->found_path[0] != '\0')) {
     iVar2 = engine_dosio_c_getFullPath_FUN_004820c0(&stack0xfffffeb4,info->found_path);
-    if (iVar2 == 0) {
-      return 0;
-    }
-    iVar2 = crt_io_c_stat_thunk_00600c18(&stack0xfffffeb8,(stat *)(acStack_144 + 0xfc));
-    if (iVar2 == 0) {
+    if ((iVar2 != 0) &&
+       (iVar2 = crt_io_c_stat_thunk_00600c18(&stack0xfffffeb8,(stat *)(acStack_144 + 0xfc)),
+       iVar2 == 0)) {
       info->file_size = local_2e;
       info->file_offset = 0;
       pcVar3 = acStack_144;

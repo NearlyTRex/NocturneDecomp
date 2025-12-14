@@ -1,97 +1,97 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 11, 
-    "pseudocode_lines": 11, 
-    "cross_reference_count": 1, 
-    "global_count": 3, 
-    "total_lines": 25, 
-    "assembly_lines": 14, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0", 
-      "addr": "005ab6e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "CVector3f", 
-      "name": "g_SoundListenerOrient", 
-      "addr": "03f6af88", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SoundListenerOrient.y", 
-      "addr": "03f6af8c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SoundListenerOrient.z", 
-      "addr": "03f6af90", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b3c90", 
-    "signature": "void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)", 
-    "address_range": [
-      [
-        "005b3c90", 
-        "005b3cbc"
-      ]
-    ], 
-    "name": "core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CSound *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "listener_orient_x"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "listener_orient_y"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "float", 
-        "size": 4, 
-        "name": "listener_orient_z"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 20, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 14,
+    "complexity_score": 11,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
+  },
   "cross_references": [
     {
-      "from_addr": "005b3cea", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0", 
-      "addr": "005b3cc0"
+      "addr": "005b3cc0",
+      "from_addr": "005b3cea",
+      "name": "core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "005b3c90",
+    "address_range": [
+      [
+        "005b3c90",
+        "005b3cbc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90",
+    "signature": "void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ab6e0",
+      "name": "sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "03f6af88",
+      "name": "g_SoundListenerOrient",
+      "type": "CVector3f",
+      "value": null
+    },
+    {
+      "addr": "03f6af8c",
+      "name": "g_SoundListenerOrient.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "03f6af90",
+      "name": "g_SoundListenerOrient.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      },
+      {
+        "is_param": true,
+        "name": "listener_orient_x",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "listener_orient_y",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "listener_orient_z",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
 }

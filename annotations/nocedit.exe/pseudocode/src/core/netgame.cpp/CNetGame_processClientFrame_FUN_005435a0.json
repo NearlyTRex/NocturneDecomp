@@ -1,232 +1,232 @@
 {
   "complexity": {
-    "function_call_count": 6, 
-    "complexity_score": 143, 
-    "pseudocode_lines": 98, 
-    "cross_reference_count": 1, 
-    "global_count": 13, 
-    "total_lines": 320, 
-    "assembly_lines": 222, 
-    "suspect_count": 4, 
+    "assembly_lines": 222,
+    "complexity_score": 143,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 13,
+    "pseudocode_lines": 98,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800", 
-      "addr": "00543800"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0", 
-      "addr": "005405b0"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970", 
-      "addr": "00543970"
-    }, 
-    {
-      "name": "core_netgame.cpp_CNetGame_updatePing_FUN_00541c80", 
-      "addr": "00541c80"
-    }, 
-    {
-      "name": "crt_string.c_memmove_FUN_005fe5e0", 
-      "addr": "005fe5e0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_core_netgame_cpp_0063df08", 
-      "addr": "0063df08", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_CNetGame_processClientFr_0063df1c", 
-      "addr": "0063df1c", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063df55", 
-      "addr": "0063df55", 
-      "value": "0.0000152587890625"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063df5d", 
-      "addr": "0063df5d", 
-      "value": "30"
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063df65", 
-      "addr": "0063df65", 
-      "value": "0.100000000000000"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_CurrentGameTime", 
-      "addr": "02f7c8b8", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f7c8c8", 
-      "addr": "02f7c8c8", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_SimFrameCount", 
-      "addr": "02f9c0c0", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_SimFrameHistory", 
-      "addr": "02f9c0c4", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f9c128", 
-      "addr": "02f9c128", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "DAT_02f9c18c", 
-      "addr": "02f9c18c", 
-      "value": null
-    }
-  ], 
-  "stack_patterns": {
-    "severity": "medium", 
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
-    "pattern_count": 1, 
-    "patterns": [
-      {
-        "address": "005435a9", 
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
-        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
-        "pattern_id": "stack_alignment", 
-        "instruction": "AND ESP,0xfffffff8"
-      }
-    ], 
-    "pattern_types": [
-      "stack_alignment"
-    ]
-  }, 
-  "suspects": [
-    {
-      "line": 29, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&g_SimFrameHistory + iVar1)) {"
-    }, 
-    {
-      "line": 39, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)&g_SimFrameHistory + iVar3) < iVar2) {"
-    }, 
-    {
-      "line": 42, 
-      "match": "(void *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "((void *)((int)&g_SimFrameHistory + iVar3),src,"
-    }, 
-    {
-      "line": 63, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&g_SimFrameHistory + iVar3)) {"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005435a0", 
-    "signature": "void core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame * this_ptr)", 
-    "address_range": [
-      [
-        "005435a0", 
-        "005437f1"
-      ]
-    ], 
-    "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0"
-  }, 
-  "stack_frame": {
-    "local_size": 36, 
-    "variables": [
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CNetGame *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 320
+  },
   "cross_references": [
     {
-      "from_addr": "004da169", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
-      "addr": "004da100"
+      "addr": "004da100",
+      "from_addr": "004da169",
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005435a0",
+    "address_range": [
+      [
+        "005435a0",
+        "005437f1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0",
+    "signature": "void core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "00543800",
+      "name": "core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800"
+    },
+    {
+      "addr": "005405b0",
+      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0"
+    },
+    {
+      "addr": "00543970",
+      "name": "core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970"
+    },
+    {
+      "addr": "00541c80",
+      "name": "core_netgame.cpp_CNetGame_updatePing_FUN_00541c80"
+    },
+    {
+      "addr": "005fe5e0",
+      "name": "crt_string.c_memmove_FUN_005fe5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063df08",
+      "name": "s_core_netgame_cpp_0063df08",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063df1c",
+      "name": "s_CNetGame_processClientFr_0063df1c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063df55",
+      "name": "DOUBLE_0063df55",
+      "type": "double",
+      "value": "0.0000152587890625"
+    },
+    {
+      "addr": "0063df5d",
+      "name": "DOUBLE_0063df5d",
+      "type": "double",
+      "value": "30"
+    },
+    {
+      "addr": "0063df65",
+      "name": "DOUBLE_0063df65",
+      "type": "double",
+      "value": "0.100000000000000"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f7c8b8",
+      "name": "g_CurrentGameTime",
+      "type": "uint",
+      "value": null
+    },
+    {
+      "addr": "02f7c8c8",
+      "name": "DAT_02f7c8c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f9c0c0",
+      "name": "g_SimFrameCount",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f9c0c4",
+      "name": "g_SimFrameHistory",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f9c128",
+      "name": "DAT_02f9c128",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02f9c18c",
+      "name": "DAT_02f9c18c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005435a9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_SimFrameHistory + iVar1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)&g_SimFrameHistory + iVar3) < iVar2) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(void *)((int)",
+      "text": "((void *)((int)&g_SimFrameHistory + iVar3),src,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_SimFrameHistory + iVar3)) {",
+      "type": "pointer_cast"
     }
   ]
 }

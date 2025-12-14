@@ -19,13 +19,13 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005dab75
     PUSH EDX                            ; 005dab79
     PUSH EBX                            ; 005dab7a
-    CALL core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000 ; 005dab7b | void core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000(CDemonActor * this_ptr, CDemonActor * deleted_actor)
-        ;   XREF to: 0040d000 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000 ; 005dab7b
+        ;   XREF to: 0040d000 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000(CDemonActor * this_ptr, CDemonActor * deleted_actor)
     ADD ESP,0x8                         ; 005dab80
     MOV ECX,dword ptr [EBX + 0x164]     ; 005dab83
     CMP ECX,dword ptr [ESP + 0xc]       ; 005dab89
-    JZ 0x005dab91                       ; 005dab8d | LAB_005dab91
-        ;   XREF to: 005dab91 (CONDITIONAL_JUMP)
+    JZ 0x005dab91                       ; 005dab8d
+        ;   XREF to: 005dab91 (CONDITIONAL_JUMP)  ; LAB_005dab91
     POP EBX                             ; 005dab8f
     RET                                 ; 005dab90
     MOV dword ptr [EBX + 0x164],0x0     ; 005dab91

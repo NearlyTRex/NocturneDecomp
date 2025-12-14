@@ -24,10 +24,10 @@ section .text
         ;   Label: core_door.cpp_FUN_0047fcf0
     ADD EAX,0x2e8                       ; 0047fcf4
     PUSH EAX                            ; 0047fcf9
-    MOV EDX,dword ptr [0x006793d0]      ; 0047fcfa | CEventList g_CEventListInstance | CEventList * g_CEventListPtr
-    PUSH EDX                            ; 0047fd00 | CEventList g_CEventListInstance
-    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 0047fd01 | void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
-        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006793d0]      ; 0047fcfa | g_CEventListInstance | g_CEventListPtr
+    PUSH EDX                            ; 0047fd00 | g_CEventListInstance
+    CALL core_event.cpp_CEventList_FUN_004aabe0 ; 0047fd01
+        ;   XREF to: 004aabe0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_FUN_004aabe0(CEventList * this_ptr)
     ADD ESP,0x8                         ; 0047fd06
     RET                                 ; 0047fd09
 

@@ -29,8 +29,8 @@ section .text
     PUSH EAX                            ; 005a0c9f
     MOV EDX,dword ptr [ESP + 0x28]      ; 005a0ca0
     PUSH EDX                            ; 005a0ca4
-    CALL core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 ; 005a0ca5 | CVector3f * core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance * this_ptr, CVector3f * output_buffer, float start_frame, float end_frame)
-        ;   XREF to: 005a0d10 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 ; 005a0ca5
+        ;   XREF to: 005a0d10 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance * this_ptr, CVector3f * output_buffer, float start_frame, float end_frame)
     ADD ESP,0x10                        ; 005a0caa
     FLD float ptr [ESP + 0x28]          ; 005a0cad
     FLD float ptr [EAX]                 ; 005a0cb1

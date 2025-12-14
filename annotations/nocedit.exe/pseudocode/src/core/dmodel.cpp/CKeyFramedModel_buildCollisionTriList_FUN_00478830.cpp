@@ -11,10 +11,9 @@ core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(CKeyFramedMod
 
 {
   int iVar1;
-  CDemonTriangle *pCVar2;
+  int *piVar2;
   CDemonTriangle *pCVar3;
   int iVar4;
-  float fVar5;
   
   g_CurrentDebugLine = 0x45e;
   g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
@@ -35,14 +34,13 @@ core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(CKeyFramedMod
         iVar1 = iVar1 + 0x48;
       } while (iVar4 < this_ptr->poly_count);
     }
-    fVar5 = (float)(this_ptr->frame_count * this_ptr->collision_triangle_count);
-    pCVar2 = (CDemonTriangle *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                       ((int)fVar5 * 0x38 + 4,"..\\core\\dmodel.cpp",0x46f);
-    pCVar3 = pCVar2;
-    if (pCVar2 != (CDemonTriangle *)0x0) {
-      pCVar3 = (CDemonTriangle *)&(pCVar2->vertex1).y;
-      (pCVar2->vertex1).x = fVar5;
+    iVar4 = this_ptr->frame_count * this_ptr->collision_triangle_count;
+    piVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                       (iVar4 * 0x38 + 4,"..\\core\\dmodel.cpp",0x46f);
+    pCVar3 = (CDemonTriangle *)0x0;
+    if (piVar2 != (int *)0x0) {
+      pCVar3 = (CDemonTriangle *)(piVar2 + 1);
+      *piVar2 = iVar4;
     }
     this_ptr->collision_triangle_list = pCVar3;
     if (pCVar3 == (CDemonTriangle *)0x0) {

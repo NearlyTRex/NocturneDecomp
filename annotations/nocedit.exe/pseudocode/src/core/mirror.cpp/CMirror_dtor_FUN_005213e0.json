@@ -1,74 +1,74 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 31, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 16, 
-    "assembly_lines": 10, 
-    "suspect_count": 2, 
+    "assembly_lines": 10,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "extra_output"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_mirror.cpp_freeClipPlaneArray_FUN_00522c10", 
-      "addr": "00522c10"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 8, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "return (CMirror *)(extraout_EAX + -0x98);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005213e0", 
-    "signature": "CMirror * core_mirror.cpp_CMirror_dtor_FUN_005213e0(CMirror * this_ptr)", 
-    "address_range": [
-      [
-        "005213e0", 
-        "005213f9"
-      ]
-    ], 
-    "name": "core_mirror.cpp_CMirror_dtor_FUN_005213e0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMirror *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 16
+  },
   "cross_references": [
     {
-      "from_addr": "004eb845", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_glass.cpp_CGlass_dtor_FUN_004eb820", 
-      "addr": "004eb820"
+      "addr": "004eb820",
+      "from_addr": "004eb845",
+      "name": "core_glass.cpp_CGlass_dtor_FUN_004eb820",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005213e0",
+    "address_range": [
+      [
+        "005213e0",
+        "005213f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mirror.cpp_CMirror_dtor_FUN_005213e0",
+    "signature": "CMirror * core_mirror.cpp_CMirror_dtor_FUN_005213e0(CMirror * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00522c10",
+      "name": "core_mirror.cpp_freeClipPlaneArray_FUN_00522c10"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirror *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "text": "return (CMirror *)(extraout_EAX + -0x98);",
+      "type": "extra_output"
     }
   ]
 }

@@ -53,9 +53,9 @@ section .text
     MOV EAX,dword ptr [ESP + 0x70]      ; 004c7bbf
     XOR EBX,EBX                         ; 004c7bc3
     CMP EAX,0xa                         ; 004c7bc5
-    JA 0x004c7bd6                       ; 004c7bc8 | default
-        ;   XREF to: 004c7bd6 (CONDITIONAL_JUMP)
-    JMP dword ptr [EAX*0x4 + 0x4c7b78]  ; 004c7bca | void * switchdataD_004c7b78
+    JA 0x004c7bd6                       ; 004c7bc8
+        ;   XREF to: 004c7bd6 (CONDITIONAL_JUMP)  ; default
+    JMP dword ptr [EAX*0x4 + 0x4c7b78]  ; 004c7bca | caseD_5 | caseD_6 | caseD_9
         ;   Label: switchD
     MOV EBX,0x1                         ; 004c7bd1
         ;   Label: caseD_8
@@ -63,8 +63,8 @@ section .text
         ;   Label: default
     LEA EAX,[ESP + 0x4]                 ; 004c7bd7
     PUSH EAX                            ; 004c7bdb
-    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 004c7bdc | void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 004c7bdc
+        ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004c7be1
     LEA EAX,[ESP + 0x28]                ; 004c7be4
     MOV EBP,0x3f333333                  ; 004c7be8
@@ -77,8 +77,8 @@ section .text
     PUSH EAX                            ; 004c7bfd
     MOV dword ptr [ESP + 0x38],EDX      ; 004c7bfe
     MOV dword ptr [ESP + 0x3c],EBP      ; 004c7c02
-    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 004c7c06 | CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
-        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)
+    CALL core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0 ; 004c7c06
+        ;   XREF to: 00471fd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0(CMatrix3x3f * this_ptr, CVector3f * output, CVector3f * input)
     FLD float ptr [ESI]                 ; 004c7c0b
     FSUB float ptr [EAX]                ; 004c7c0d
     ADD ESP,0xc                         ; 004c7c0f
@@ -90,38 +90,38 @@ section .text
     FSUB float ptr [EAX + 0x8]          ; 004c7c23
     FSTP float ptr [ESP + 0x48]         ; 004c7c26
     TEST EBX,EBX                        ; 004c7c2a
-    JZ 0x004c7c98                       ; 004c7c2c | LAB_004c7c98
-        ;   XREF to: 004c7c98 (CONDITIONAL_JUMP)
+    JZ 0x004c7c98                       ; 004c7c2c
+        ;   XREF to: 004c7c98 (CONDITIONAL_JUMP)  ; LAB_004c7c98
     MOV ECX,dword ptr [ESP + 0x6c]      ; 004c7c2e
     PUSH ECX                            ; 004c7c32
     PUSH EDI                            ; 004c7c33
     LEA EAX,[ESP + 0x48]                ; 004c7c34
-    MOV EDX,dword ptr [0x02d2ddf8]      ; 004c7c38 | int g_StakeAllocIndex
+    MOV EDX,dword ptr [0x02d2ddf8]      ; 004c7c38 | g_StakeAllocIndex
     PUSH EAX                            ; 004c7c3e
     LEA EAX,[EDX*0x4 + 0x0]             ; 004c7c3f
     ADD EAX,EDX                         ; 004c7c46
     SHL EAX,0x2                         ; 004c7c48
     SUB EAX,EDX                         ; 004c7c4b
     SHL EAX,0x5                         ; 004c7c4d
-    ADD EAX,0x2d2ddfc                   ; 004c7c50 | CStake[256] g_StakePool
+    ADD EAX,0x2d2ddfc                   ; 004c7c50 | g_StakePool
     PUSH EAX                            ; 004c7c55
-    CALL core_fire.cpp_CStake_spawn_FUN_004bfe90 ; 004c7c56 | void core_fire.cpp_CStake_spawn_FUN_004bfe90(CStake * this_ptr, float spawn_scale, CVector3f * orientation_angles, CVector3f * launch_direction, ...)
-        ;   XREF to: 004bfe90 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_CStake_spawn_FUN_004bfe90 ; 004c7c56
+        ;   XREF to: 004bfe90 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_spawn_FUN_004bfe90(CStake * this_ptr, float spawn_scale, CVector3f * orientation_angles, CVector3f * launch_direction, ...)
     ADD ESP,0x10                        ; 004c7c5b
-    MOV EBX,dword ptr [0x02d2ddf8]      ; 004c7c5e | int g_StakeAllocIndex
+    MOV EBX,dword ptr [0x02d2ddf8]      ; 004c7c5e | g_StakeAllocIndex
         ;   Label: LAB_004c7c5e
     INC EBX                             ; 004c7c64
-    MOV dword ptr [0x02d2ddf8],EBX      ; 004c7c65 | int g_StakeAllocIndex
+    MOV dword ptr [0x02d2ddf8],EBX      ; 004c7c65 | g_StakeAllocIndex
     CMP EBX,0x100                       ; 004c7c6b
-    JL 0x004c7c7b                       ; 004c7c71 | LAB_004c7c7b
-        ;   XREF to: 004c7c7b (CONDITIONAL_JUMP)
+    JL 0x004c7c7b                       ; 004c7c71
+        ;   XREF to: 004c7c7b (CONDITIONAL_JUMP)  ; LAB_004c7c7b
     XOR EDI,EDI                         ; 004c7c73
-    MOV dword ptr [0x02d2ddf8],EDI      ; 004c7c75 | int g_StakeAllocIndex
-    MOV EBP,dword ptr [0x02d2ddf4]      ; 004c7c7b | int g_StakeActiveCount
+    MOV dword ptr [0x02d2ddf8],EDI      ; 004c7c75 | g_StakeAllocIndex
+    MOV EBP,dword ptr [0x02d2ddf4]      ; 004c7c7b | g_StakeActiveCount
         ;   Label: LAB_004c7c7b
     CMP EBP,0x100                       ; 004c7c81
-    JL 0x004c7ceb                       ; 004c7c87 | LAB_004c7ceb
-        ;   XREF to: 004c7ceb (CONDITIONAL_JUMP)
+    JL 0x004c7ceb                       ; 004c7c87
+        ;   XREF to: 004c7ceb (CONDITIONAL_JUMP)  ; LAB_004c7ceb
     ADD ESP,0x4c                        ; 004c7c89
         ;   Label: caseD_6
     POP EBP                             ; 004c7c8c
@@ -131,39 +131,39 @@ section .text
     RET                                 ; 004c7c90
     XOR EBX,EBX                         ; 004c7c91
         ;   Label: caseD_a
-    JMP 0x004c7bd6                      ; 004c7c93 | default
-        ;   XREF to: 004c7bd6 (UNCONDITIONAL_JUMP)
+    JMP 0x004c7bd6                      ; 004c7c93
+        ;   XREF to: 004c7bd6 (UNCONDITIONAL_JUMP)  ; default
     LEA EAX,[ESP + 0x40]                ; 004c7c98
         ;   Label: LAB_004c7c98
     PUSH 0x3e6b851f                     ; 004c7c9c
     PUSH EAX                            ; 004c7ca1
-    PUSH 0x62a053                       ; 004c7ca2 | = "a-wood?.wav" | s_a_wood_wav_0062a053 = a-wood?.wav
+    PUSH 0x62a053                       ; 004c7ca2 | = "a-wood?.wav"
     MOV EAX,dword ptr [ESP + 0x6c]      ; 004c7ca7
     PUSH EAX                            ; 004c7cab
-    MOV EDX,dword ptr [0x00681ef8]      ; 004c7cac | CSound g_CSoundInstance | CSound * g_CSoundPtr
-    PUSH EDX                            ; 004c7cb2 | CSound g_CSoundInstance
-    CALL core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0 ; 004c7cb3 | uint core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
-        ;   XREF to: 005b3ae0 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x00681ef8]      ; 004c7cac | g_CSoundInstance | g_CSoundPtr
+    PUSH EDX                            ; 004c7cb2 | g_CSoundInstance
+    CALL core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0 ; 004c7cb3
+        ;   XREF to: 005b3ae0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
     ADD ESP,0x14                        ; 004c7cb8
     PUSH EDI                            ; 004c7cbb
     LEA EAX,[ESP + 0x44]                ; 004c7cbc
-    MOV EDX,dword ptr [0x02d2ddf8]      ; 004c7cc0 | int g_StakeAllocIndex
+    MOV EDX,dword ptr [0x02d2ddf8]      ; 004c7cc0 | g_StakeAllocIndex
     PUSH EAX                            ; 004c7cc6
     LEA EAX,[EDX*0x4 + 0x0]             ; 004c7cc7
     ADD EAX,EDX                         ; 004c7cce
     SHL EAX,0x2                         ; 004c7cd0
     SUB EAX,EDX                         ; 004c7cd3
     SHL EAX,0x5                         ; 004c7cd5
-    ADD EAX,0x2d2ddfc                   ; 004c7cd8 | CStake[256] g_StakePool
+    ADD EAX,0x2d2ddfc                   ; 004c7cd8 | g_StakePool
     PUSH EAX                            ; 004c7cdd
-    CALL core_fire.cpp_CStake_init_FUN_004bfe20 ; 004c7cde | void core_fire.cpp_CStake_init_FUN_004bfe20(CStake * this_ptr, CVector3f * position, CVector3f * orientation)
-        ;   XREF to: 004bfe20 (UNCONDITIONAL_CALL)
+    CALL core_fire.cpp_CStake_init_FUN_004bfe20 ; 004c7cde
+        ;   XREF to: 004bfe20 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_init_FUN_004bfe20(CStake * this_ptr, CVector3f * position, CVector3f * orientation)
     ADD ESP,0xc                         ; 004c7ce3
-    JMP 0x004c7c5e                      ; 004c7ce6 | LAB_004c7c5e
-        ;   XREF to: 004c7c5e (UNCONDITIONAL_JUMP)
+    JMP 0x004c7c5e                      ; 004c7ce6
+        ;   XREF to: 004c7c5e (UNCONDITIONAL_JUMP)  ; LAB_004c7c5e
     LEA EAX,[EBP + 0x1]                 ; 004c7ceb
         ;   Label: LAB_004c7ceb
-    MOV [0x02d2ddf4],EAX                ; 004c7cee | int g_StakeActiveCount
+    MOV [0x02d2ddf4],EAX                ; 004c7cee | g_StakeActiveCount
     ADD ESP,0x4c                        ; 004c7cf3
     POP EBP                             ; 004c7cf6
     POP EDI                             ; 004c7cf7

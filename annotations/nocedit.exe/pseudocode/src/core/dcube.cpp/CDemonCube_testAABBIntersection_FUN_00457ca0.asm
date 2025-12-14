@@ -28,8 +28,8 @@ section .text
     MOV EDX,dword ptr [EDI + 0x28]      ; 00457cac
     XOR ESI,ESI                         ; 00457caf
     TEST EDX,EDX                        ; 00457cb1
-    JLE 0x00457cda                      ; 00457cb3 | LAB_00457cda
-        ;   XREF to: 00457cda (CONDITIONAL_JUMP)
+    JLE 0x00457cda                      ; 00457cb3
+        ;   XREF to: 00457cda (CONDITIONAL_JUMP)  ; LAB_00457cda
     XOR EBX,EBX                         ; 00457cb5
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00457cb7
         ;   Label: LAB_00457cb7
@@ -38,18 +38,18 @@ section .text
     PUSH EBP                            ; 00457cbf
     ADD EAX,EBX                         ; 00457cc0
     PUSH EAX                            ; 00457cc2
-    CALL core_dcube.cpp_clipTriangleToAABB_FUN_00456400 ; 00457cc3 | uint core_dcube.cpp_clipTriangleToAABB_FUN_00456400(CVector3f * * triangle_vertices, CVector3f * aabb_min, CVector3f * aabb_max)
-        ;   XREF to: 00456400 (UNCONDITIONAL_CALL)
+    CALL core_dcube.cpp_clipTriangleToAABB_FUN_00456400 ; 00457cc3
+        ;   XREF to: 00456400 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_clipTriangleToAABB_FUN_00456400(CVector3f * * triangle_vertices, CVector3f * aabb_min, CVector3f * aabb_max)
     ADD ESP,0xc                         ; 00457cc8
     TEST EAX,EAX                        ; 00457ccb
-    JNZ 0x00457ce1                      ; 00457ccd | LAB_00457ce1
-        ;   XREF to: 00457ce1 (CONDITIONAL_JUMP)
+    JNZ 0x00457ce1                      ; 00457ccd
+        ;   XREF to: 00457ce1 (CONDITIONAL_JUMP)  ; LAB_00457ce1
     INC ESI                             ; 00457ccf
     MOV ECX,dword ptr [EDI + 0x28]      ; 00457cd0
     ADD EBX,0x20                        ; 00457cd3
     CMP ESI,ECX                         ; 00457cd6
-    JL 0x00457cb7                       ; 00457cd8 | LAB_00457cb7
-        ;   XREF to: 00457cb7 (CONDITIONAL_JUMP)
+    JL 0x00457cb7                       ; 00457cd8
+        ;   XREF to: 00457cb7 (CONDITIONAL_JUMP)  ; LAB_00457cb7
     XOR EAX,EAX                         ; 00457cda
         ;   Label: LAB_00457cda
     POP EBP                             ; 00457cdc

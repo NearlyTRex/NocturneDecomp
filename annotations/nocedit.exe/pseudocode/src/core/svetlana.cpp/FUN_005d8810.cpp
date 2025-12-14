@@ -11,8 +11,7 @@ void core_svetlana_cpp_FUN_005d8810(void)
 {
   CSvetlana *this_ptr;
   
-  this_ptr = (CSvetlana *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x9f8d8,"..\\core\\svetlana.cpp",0x6e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x9f8d8,"..\\core\\svetlana.cpp",0x6e);
   if (this_ptr == (CSvetlana *)0x0) {
     return;
   }

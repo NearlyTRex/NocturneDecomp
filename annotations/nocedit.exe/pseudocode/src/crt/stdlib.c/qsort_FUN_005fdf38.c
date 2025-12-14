@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Removing unreachable block (ram,0x005fe232) */
+
 void __cdecl
 crt_stdlib_c_qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
 
@@ -82,15 +84,14 @@ LAB_005fdfad:
             local_64 = (SIZE_T)crt_stdlib_c_median_of_3_FUN_005fdea0
                                          (local_48,(void *)((int)local_48 + iVar8),
                                           (void *)((int)local_48 + local_68),local_3c);
-            b = (int *)crt_stdlib_c_median_of_3_FUN_005fdea0
-                                 ((void *)((int)b - iVar8),b,(int *)((int)b + iVar8),
-                                  (QSORT_COMPARATOR)local_44);
+            b = crt_stdlib_c_median_of_3_FUN_005fdea0
+                          ((void *)((int)b - iVar8),b,(int *)((int)b + iVar8),local_44);
             pvVar4 = crt_stdlib_c_median_of_3_FUN_005fdea0
                                ((void *)((int)pvVar4 - local_6c),(void *)((int)pvVar4 - iVar8),
                                 pvVar4,(QSORT_COMPARATOR)local_40);
           }
           pvVar7 = local_5c;
-          b = (int *)crt_stdlib_c_median_of_3_FUN_005fdea0(local_5c,b,pvVar4,local_3c);
+          b = crt_stdlib_c_median_of_3_FUN_005fdea0(local_5c,b,pvVar4,local_3c);
         }
         pvVar4 = (void *)local_38;
         if (local_38 == 0) {
@@ -99,16 +100,7 @@ LAB_005fdfad:
         }
         else {
           local_44 = local_48;
-          if (local_38 == 0) {
-                    /* WARNING: Load size is inaccurate */
-            iVar8 = *local_48;
-            *(int *)local_48 = *b;
-            *b = iVar8;
-            pvVar4 = local_48;
-          }
-          else {
-            crt_stdlib_c_memory_swap_FUN_005fdf10(local_48,pvVar7,local_38);
-          }
+          crt_stdlib_c_memory_swap_FUN_005fdf10(local_48,pvVar7,local_38);
         }
         local_28 = local_48;
         local_34 = local_48;
@@ -124,10 +116,8 @@ LAB_005fe29f:
           if (0 < (int)ptr1) break;
           if (ptr1 == (void *)0x0) {
             if (local_38 == 0) {
-                    /* WARNING: Load size is inaccurate */
-                    /* WARNING: Load size is inaccurate */
-              uVar2 = *local_34;
-              *(uint *)local_34 = *local_28;
+              uVar2 = *(uint *)local_34;
+              *(uint *)local_34 = *(uint *)local_28;
               *(uint *)local_28 = uVar2;
               ptr1 = local_28;
               pvVar7 = local_34;
@@ -147,10 +137,8 @@ LAB_005fe29f:
           if ((int)ptr1 < 0) break;
           if (ptr1 == (void *)0x0) {
             if (local_38 == 0) {
-                    /* WARNING: Load size is inaccurate */
-                    /* WARNING: Load size is inaccurate */
-              pvVar7 = *local_2c;
-              *(uint *)local_2c = *local_30;
+              pvVar7 = *(void **)local_2c;
+              *(uint *)local_2c = *(uint *)local_30;
               *(void **)local_30 = pvVar7;
               ptr1 = local_30;
             }
@@ -165,10 +153,8 @@ LAB_005fe29f:
         }
         if (local_24 != 0) {
           if (local_38 == 0) {
-                    /* WARNING: Load size is inaccurate */
-                    /* WARNING: Load size is inaccurate */
-            uVar2 = *local_28;
-            *(uint *)local_28 = *local_2c;
+            uVar2 = *(uint *)local_28;
+            *(uint *)local_28 = *(uint *)local_2c;
             *(uint *)local_2c = uVar2;
             pvVar7 = local_2c;
           }
@@ -195,7 +181,7 @@ LAB_005fe46e:
         }
         if (uVar6 != 0) {
           puVar10 = (uint *)((int)local_28 - uVar6);
-          puVar9 = (uint *)local_48;
+          puVar9 = local_48;
           for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
             LOCK();
             uVar2 = *puVar9;
@@ -225,7 +211,7 @@ LAB_005fe46e:
         }
         if (uVar6 != 0) {
           puVar10 = (uint *)((int)pvVar7 - uVar6);
-          puVar9 = (uint *)local_28;
+          puVar9 = local_28;
           for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
             LOCK();
             uVar2 = *puVar9;

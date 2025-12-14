@@ -1,80 +1,80 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 52, 
-    "pseudocode_lines": 52, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 196, 
-    "assembly_lines": 144, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "0043e840", 
-    "signature": "int support_codec.cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer * bit_state, int bit_count, byte * * output_pos, int * bytes_remaining)", 
-    "address_range": [
-      [
-        "0043e840", 
-        "0043e997"
-      ]
-    ], 
-    "name": "support_codec.cpp_extractBitsFromBuffer_FUN_0043e840"
-  }, 
-  "stack_frame": {
-    "local_size": 24, 
-    "variables": [
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SBitBuffer *", 
-        "size": 4, 
-        "name": "bit_state"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "bit_count"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "byte * *", 
-        "size": 4, 
-        "name": "output_pos"
-      }, 
-      {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "int *", 
-        "size": 4, 
-        "name": "bytes_remaining"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 40, 
-    "param_offset": 4, 
-    "param_size": 16
-  }, 
+    "assembly_lines": 144,
+    "complexity_score": 52,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "pseudocode_lines": 52,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 196
+  },
   "cross_references": [
     {
-      "from_addr": "0043f109", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0", 
-      "addr": "0043f0d0"
+      "addr": "0043f0d0",
+      "from_addr": "0043f109",
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeToStream_FUN_0043f0d0",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "0043e840",
+    "address_range": [
+      [
+        "0043e840",
+        "0043e997"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_extractBitsFromBuffer_FUN_0043e840",
+    "signature": "int support_codec.cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer * bit_state, int bit_count, byte * * output_pos, int * bytes_remaining)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "bit_state",
+        "offset": 4,
+        "size": 4,
+        "type": "SBitBuffer *"
+      },
+      {
+        "is_param": true,
+        "name": "bit_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "output_pos",
+        "offset": 12,
+        "size": 4,
+        "type": "byte * *"
+      },
+      {
+        "is_param": true,
+        "name": "bytes_remaining",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": []
 }

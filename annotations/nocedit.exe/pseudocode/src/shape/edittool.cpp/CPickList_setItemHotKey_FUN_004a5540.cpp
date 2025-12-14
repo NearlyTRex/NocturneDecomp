@@ -20,9 +20,9 @@ shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::setItemHotKey - invalid index");
   }
   if (this_ptr->hotkey_capacity <= item_index) {
-    piVar1 = (int *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                              (this_ptr->hotkey_array,(this_ptr->base_strlist).item_count << 2,
-                               "..\\shape\\edittool.cpp",0x1054);
+    piVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                       (this_ptr->hotkey_array,(this_ptr->base_strlist).item_count << 2,
+                        "..\\shape\\edittool.cpp",0x1054);
     this_ptr->hotkey_array = piVar1;
     if (piVar1 == (int *)0x0) {
       g_CurrentFilename = "..\\shape\\edittool.cpp";

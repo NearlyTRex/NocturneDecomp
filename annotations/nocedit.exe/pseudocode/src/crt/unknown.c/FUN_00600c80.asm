@@ -29,39 +29,39 @@ section .text
     PUSH 0x0                            ; 00600c9e
     PUSH EBX                            ; 00600ca0
     PUSH EDI                            ; 00600ca1
-    CALL crt_stdio.c_lseek_FUN_00606690 ; 00600ca2 | int crt_stdio.c_lseek_FUN_00606690(int file_handle_index, long distance_to_move, int move_method)
-        ;   XREF to: 00606690 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_lseek_FUN_00606690 ; 00600ca2
+        ;   XREF to: 00606690 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_lseek_FUN_00606690(int file_handle_index, long distance_to_move, int move_method)
     ADD ESP,0xc                         ; 00600ca7
     CMP EAX,EBX                         ; 00600caa
-    JNZ 0x00600ce4                      ; 00600cac | LAB_00600ce4
-        ;   XREF to: 00600ce4 (CONDITIONAL_JUMP)
+    JNZ 0x00600ce4                      ; 00600cac
+        ;   XREF to: 00600ce4 (CONDITIONAL_JUMP)  ; LAB_00600ce4
     PUSH 0x200                          ; 00600cae
     PUSH 0x0                            ; 00600cb3
     LEA EAX,[ESP + 0x8]                 ; 00600cb5
     PUSH EAX                            ; 00600cb9
-    CALL crt_memory.c_memset_FUN_005fde40 ; 00600cba | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 00600cba
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00600cbf
     MOV EBX,0x200                       ; 00600cc2
         ;   Label: LAB_00600cc2
     CMP ESI,EBX                         ; 00600cc7
-    JGE 0x00600ccd                      ; 00600cc9 | LAB_00600ccd
-        ;   XREF to: 00600ccd (CONDITIONAL_JUMP)
+    JGE 0x00600ccd                      ; 00600cc9
+        ;   XREF to: 00600ccd (CONDITIONAL_JUMP)  ; LAB_00600ccd
     MOV EBX,ESI                         ; 00600ccb
     PUSH EBX                            ; 00600ccd
         ;   Label: LAB_00600ccd
     LEA EAX,[ESP + 0x4]                 ; 00600cce
     PUSH EAX                            ; 00600cd2
     PUSH EDI                            ; 00600cd3
-    CALL crt_io.c_write_FUN_006084ec    ; 00600cd4 | int crt_io.c_write_FUN_006084ec(int fd, void * buffer, SIZE_T count)
-        ;   XREF to: 006084ec (UNCONDITIONAL_CALL)
+    CALL crt_io.c_write_FUN_006084ec    ; 00600cd4
+        ;   XREF to: 006084ec (UNCONDITIONAL_CALL)  ; int crt_io.c_write_FUN_006084ec(int fd, void * buffer, SIZE_T count)
     ADD ESP,0xc                         ; 00600cd9
     CMP EAX,EBX                         ; 00600cdc
-    JNZ 0x00600ce4                      ; 00600cde | LAB_00600ce4
-        ;   XREF to: 00600ce4 (CONDITIONAL_JUMP)
+    JNZ 0x00600ce4                      ; 00600cde
+        ;   XREF to: 00600ce4 (CONDITIONAL_JUMP)  ; LAB_00600ce4
     SUB ESI,EBX                         ; 00600ce0
-    JNZ 0x00600cc2                      ; 00600ce2 | LAB_00600cc2
-        ;   XREF to: 00600cc2 (CONDITIONAL_JUMP)
+    JNZ 0x00600cc2                      ; 00600ce2
+        ;   XREF to: 00600cc2 (CONDITIONAL_JUMP)  ; LAB_00600cc2
     ADD ESP,0x200                       ; 00600ce4
         ;   Label: LAB_00600ce4
     POP EDI                             ; 00600cea

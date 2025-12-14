@@ -13,7 +13,7 @@
 
 section .text
 
-    CMP dword ptr [0x03f6a9bc],0x0      ; 005aee20 | IDirectSound3DListener * g_DirectSound3DListener
+    CMP dword ptr [0x03f6a9bc],0x0      ; 005aee20 | g_DirectSound3DListener
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20
     SETNZ AL                            ; 005aee27
     AND EAX,0xff                        ; 005aee2a

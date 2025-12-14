@@ -25,8 +25,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x30]      ; 005e1bd5
     PUSH EDX                            ; 005e1bd9
     LEA ESI,[ESP + 0x14]                ; 005e1bda
-    CALL support_trisock.cpp_buildSockaddrIn_FUN_005e19d0 ; 005e1bde | SOCKADDR_IN * support_trisock.cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr * net_addr, SOCKADDR_IN * dest_buffer)
-        ;   XREF to: 005e19d0 (UNCONDITIONAL_CALL)
+    CALL support_trisock.cpp_buildSockaddrIn_FUN_005e19d0 ; 005e1bde
+        ;   XREF to: 005e19d0 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr * net_addr, SOCKADDR_IN * dest_buffer)
     ADD ESP,0x4                         ; 005e1be3
     MOV EDI,ESP                         ; 005e1be6
     PUSH 0x10                           ; 005e1be8
@@ -40,8 +40,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005e1bfa
     MOV ECX,dword ptr [EAX]             ; 005e1bfb
     PUSH ECX                            ; 005e1bfd
-    CALL crt_wsock32.c_connect          ; 005e1bfe | int crt_wsock32.c_connect(SOCKET s, SOCKADDR * name, int namelen)
-        ;   XREF to: 00610f1c (UNCONDITIONAL_CALL)
+    CALL crt_wsock32.c_connect          ; 005e1bfe
+        ;   XREF to: 00610f1c (UNCONDITIONAL_CALL)  ; int crt_wsock32.c_connect(SOCKET s, SOCKADDR * name, int namelen)
     TEST EAX,EAX                        ; 005e1c03
     SETZ AL                             ; 005e1c05
     AND EAX,0xff                        ; 005e1c08

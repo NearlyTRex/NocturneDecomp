@@ -11,8 +11,7 @@ void core_stone_cpp_FUN_005bacd0(void)
 {
   CTempleStone *this_ptr;
   
-  this_ptr = (CTempleStone *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x670,"..\\core\\stone.cpp",0x1e);
+  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x670,"..\\core\\stone.cpp",0x1e);
   if (this_ptr == (CTempleStone *)0x0) {
     return;
   }

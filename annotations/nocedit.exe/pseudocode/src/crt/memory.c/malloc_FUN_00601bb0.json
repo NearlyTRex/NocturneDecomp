@@ -1,201 +1,201 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 25, 
-    "global_count": 0, 
-    "total_lines": 13, 
-    "assembly_lines": 7, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "crt_heap.c_InternalHeapAlloc_FUN_00601bc0", 
-      "addr": "00601bc0"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00601bb0", 
-    "signature": "void * crt_memory.c_malloc_FUN_00601bb0(ulong size)", 
-    "address_range": [
-      [
-        "00601bb0", 
-        "00601bbd"
-      ]
-    ], 
-    "name": "crt_memory.c_malloc_FUN_00601bb0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "ulong", 
-        "size": 4, 
-        "name": "size"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 7,
+    "complexity_score": 6,
+    "cross_reference_count": 25,
+    "function_call_count": 1,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
   "cross_references": [
     {
-      "from_addr": "0060efec", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_env.c_putenv_internal_FUN_0060ee80", 
-      "addr": "0060ee80"
-    }, 
+      "addr": "0060ee80",
+      "from_addr": "0060efec",
+      "name": "crt_env.c_putenv_internal_FUN_0060ee80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060f126", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_env.c_updateEnvironTable_FUN_0060f04c", 
-      "addr": "0060f04c"
-    }, 
+      "addr": "0060f04c",
+      "from_addr": "0060f126",
+      "name": "crt_env.c_updateEnvironTable_FUN_0060f04c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00608d61", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_getcwd_FUN_00608d20", 
-      "addr": "00608d20"
-    }, 
+      "addr": "00608d20",
+      "from_addr": "00608d61",
+      "name": "crt_io.c_getcwd_FUN_00608d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060115d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_io.c_realpath_FUN_00601140", 
-      "addr": "00601140"
-    }, 
+      "addr": "00601140",
+      "from_addr": "0060115d",
+      "name": "crt_io.c_realpath_FUN_00601140",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00608f5b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_ioinit.c_staticInit_FUN_00608f20", 
-      "addr": "00608f20"
-    }, 
+      "addr": "00608f20",
+      "from_addr": "00608f5b",
+      "name": "crt_ioinit.c_staticInit_FUN_00608f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060d795", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_iostream.cpp_streambuf_allocBuffer_FUN_0060d790", 
-      "addr": "0060d790"
-    }, 
+      "addr": "0060d790",
+      "from_addr": "0060d795",
+      "name": "crt_iostream.cpp_streambuf_allocBuffer_FUN_0060d790",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060ca9b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_memory.c_calloc_FUN_0060ca90", 
-      "addr": "0060ca90"
-    }, 
+      "addr": "0060ca90",
+      "from_addr": "0060ca9b",
+      "name": "crt_memory.c_calloc_FUN_0060ca90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "006102d5", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_build_cmdline_FUN_00610258", 
-      "addr": "00610258"
-    }, 
+      "addr": "00610258",
+      "from_addr": "006102d5",
+      "name": "crt_process.c_build_cmdline_FUN_00610258",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00610005", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_build_file_info_env_FUN_0060ffd0", 
-      "addr": "0060ffd0"
-    }, 
+      "addr": "0060ffd0",
+      "from_addr": "00610005",
+      "name": "crt_process.c_build_file_info_env_FUN_0060ffd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060f3fd", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
-      "addr": "0060f39c"
-    }, 
+      "addr": "0060f39c",
+      "from_addr": "0060f3fd",
+      "name": "crt_process.c_spawnvp_FUN_0060f39c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a599", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_startup.c_GetModuleFileNameCompat_FUN_0060a560", 
-      "addr": "0060a560"
-    }, 
+      "addr": "0060a560",
+      "from_addr": "0060a599",
+      "name": "crt_startup.c_GetModuleFileNameCompat_FUN_0060a560",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00609331", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_AllocateFileStruct_FUN_006092f0", 
-      "addr": "006092f0"
-    }, 
+      "addr": "006092f0",
+      "from_addr": "00609331",
+      "name": "crt_stdio.c_AllocateFileStruct_FUN_006092f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00602820", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0", 
-      "addr": "006027e0"
-    }, 
+      "addr": "006027e0",
+      "from_addr": "00602820",
+      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a62d", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_strdup_FUN_0060a610", 
-      "addr": "0060a610"
-    }, 
+      "addr": "0060a610",
+      "from_addr": "0060a62d",
+      "name": "crt_string.c_strdup_FUN_0060a610",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060a678", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_string.c_wcsdup_FUN_0060a660", 
-      "addr": "0060a660"
-    }, 
+      "addr": "0060a660",
+      "from_addr": "0060a678",
+      "name": "crt_string.c_wcsdup_FUN_0060a660",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060c645", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060c640", 
-      "addr": "0060c640"
-    }, 
+      "addr": "0060c640",
+      "from_addr": "0060c645",
+      "name": "crt_unknown.c_FUN_0060c640",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060e547", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060e4f0", 
-      "addr": "0060e4f0"
-    }, 
+      "addr": "0060e4f0",
+      "from_addr": "0060e547",
+      "name": "crt_unknown.c_FUN_0060e4f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060fb90", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060fb40", 
-      "addr": "0060fb40"
-    }, 
+      "addr": "0060fb40",
+      "from_addr": "0060fb90",
+      "name": "crt_unknown.c_FUN_0060fb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0060fd67", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_0060fcf4", 
-      "addr": "0060fcf4"
-    }, 
+      "addr": "0060fcf4",
+      "from_addr": "0060fd67",
+      "name": "crt_unknown.c_FUN_0060fcf4",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00610828", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_006107f0", 
-      "addr": "006107f0"
-    }, 
+      "addr": "006107f0",
+      "from_addr": "00610828",
+      "name": "crt_unknown.c_FUN_006107f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0061092b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_FUN_00610900", 
-      "addr": "00610900"
-    }, 
+      "addr": "00610900",
+      "from_addr": "0061092b",
+      "name": "crt_unknown.c_FUN_00610900",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050f3ab", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350", 
-      "addr": "0050f350"
-    }, 
+      "addr": "0050f350",
+      "from_addr": "0050f3ab",
+      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "0050f2a3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }, 
+      "addr": "0050f250",
+      "from_addr": "0050f2a3",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d2344", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320", 
-      "addr": "005d2320"
-    }, 
+      "addr": "005d2320",
+      "from_addr": "005d2344",
+      "name": "shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005d2516", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500", 
-      "addr": "005d2500"
+      "addr": "005d2500",
+      "from_addr": "005d2516",
+      "name": "shape_superopt.cpp_CObj_allocateVertices_FUN_005d2500",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00601bb0",
+    "address_range": [
+      [
+        "00601bb0",
+        "00601bbd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_memory.c_malloc_FUN_00601bb0",
+    "signature": "void * crt_memory.c_malloc_FUN_00601bb0(ulong size)"
+  },
+  "function_calls": [
+    {
+      "addr": "00601bc0",
+      "name": "crt_heap.c_InternalHeapAlloc_FUN_00601bc0"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 4,
+        "size": 4,
+        "type": "ulong"
+      }
+    ]
+  },
+  "suspects": []
 }

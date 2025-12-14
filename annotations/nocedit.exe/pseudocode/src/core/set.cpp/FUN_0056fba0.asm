@@ -18,14 +18,14 @@ section .text
     FCOMP float ptr [ECX + 0x4]         ; 0056fbab
     FNSTSW AX                           ; 0056fbae
     SAHF                                ; 0056fbb0
-    JA 0x0056fbc4                       ; 0056fbb1 | LAB_0056fbc4
-        ;   XREF to: 0056fbc4 (CONDITIONAL_JUMP)
+    JA 0x0056fbc4                       ; 0056fbb1
+        ;   XREF to: 0056fbc4 (CONDITIONAL_JUMP)  ; LAB_0056fbc4
     FLD float ptr [EDX + 0x4]           ; 0056fbb3
     FCOMP float ptr [ECX + 0x4]         ; 0056fbb6
     FNSTSW AX                           ; 0056fbb9
     SAHF                                ; 0056fbbb
-    JNC 0x0056fbca                      ; 0056fbbc | LAB_0056fbca
-        ;   XREF to: 0056fbca (CONDITIONAL_JUMP)
+    JNC 0x0056fbca                      ; 0056fbbc
+        ;   XREF to: 0056fbca (CONDITIONAL_JUMP)  ; LAB_0056fbca
     MOV EAX,0xffffffff                  ; 0056fbbe
     RET                                 ; 0056fbc3
     MOV EAX,0x1                         ; 0056fbc4

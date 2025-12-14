@@ -28,10 +28,12 @@
 ;   TerminatedCString s_shape_design_c_0061c098
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
+;   undefined4 DAT_01626410
 ;   undefined4 g_LoadedVertices[0].vertex.z
 ;   undefined4 DAT_01626418
 ;   undefined4 DAT_0162641c
 ;   undefined4 DAT_01626420
+;   undefined4 DAT_01626424
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
 ;   undefined4 DAT_016e99b4
@@ -56,75 +58,75 @@ section .text
     PUSH EBP                            ; 00463833
     MOV EBP,ESP                         ; 00463834
     SUB ESP,0x1c                        ; 00463836
-    CMP dword ptr [0x01626408],0x1      ; 0046383c | int g_VertexCount
-    JGE 0x0046384a                      ; 00463843 | LAB_0046384a
-        ;   XREF to: 0046384a (CONDITIONAL_JUMP)
-    JMP 0x00463a19                      ; 00463845 | LAB_00463a19
-        ;   XREF to: 00463a19 (UNCONDITIONAL_JUMP)
+    CMP dword ptr [0x01626408],0x1      ; 0046383c | g_VertexCount
+    JGE 0x0046384a                      ; 00463843
+        ;   XREF to: 0046384a (CONDITIONAL_JUMP)  ; LAB_0046384a
+    JMP 0x00463a19                      ; 00463845
+        ;   XREF to: 00463a19 (UNCONDITIONAL_JUMP)  ; LAB_00463a19
     PUSH 0x189a                         ; 0046384a
         ;   Label: LAB_0046384a
-    MOV EAX,0x61c04e                    ; 0046384f | = "..\\shape\\design.c" | s_shape_design_c_0061c04e = ..\shape\design.c
-    PUSH EAX                            ; 00463854 | = "..\\shape\\design.c" | s_shape_design_c_0061c04e = ..\shape\design.c
-    MOV EAX,[0x01626408]                ; 00463855 | int g_VertexCount
+    MOV EAX,0x61c04e                    ; 0046384f | = "..\\shape\\design.c"
+    PUSH EAX                            ; 00463854 | = "..\\shape\\design.c"
+    MOV EAX,[0x01626408]                ; 00463855 | g_VertexCount
     SHL EAX,0x2                         ; 0046385a
     PUSH EAX                            ; 0046385d
-    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 0046385e | void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
-        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugMalloc_FUN_0050f250 ; 0046385e
+        ;   XREF to: 0050f250 (UNCONDITIONAL_CALL)  ; void * shape_memdbg.cpp_debugMalloc_FUN_0050f250(int size, char * filename, int line_number)
     ADD ESP,0xc                         ; 00463863
     MOV dword ptr [EBP + -0x8],EAX      ; 00463866
     CMP dword ptr [EBP + -0x8],0x0      ; 00463869
-    JNZ 0x00463895                      ; 0046386d | LAB_00463895
-        ;   XREF to: 00463895 (CONDITIONAL_JUMP)
-    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046386f | void wincore_windll.cpp_clearScreen_FUN_005b3e70()
-        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)
+    JNZ 0x00463895                      ; 0046386d
+        ;   XREF to: 00463895 (CONDITIONAL_JUMP)  ; LAB_00463895
+    CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 0046386f
+        ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
     PUSH 0x0                            ; 00463874
     PUSH 0x0                            ; 00463876
-    MOV EAX,0x61c060                    ; 00463878 | = "ERROR: Can't allocate memory to remov..." | s_ERROR_Can_t_allocate_mem_0061c060 = ERROR: Can't allocate memory to remove unused vertices.
-    PUSH EAX                            ; 0046387d | = "ERROR: Can't allocate memory to remov..." | s_ERROR_Can_t_allocate_mem_0061c060 = ERROR: Can't allocate memory to remove unused vertices.
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046387e | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    MOV EAX,0x61c060                    ; 00463878 | = "ERROR: Can't allocate memory to remov..."
+    PUSH EAX                            ; 0046387d | = "ERROR: Can't allocate memory to remov..."
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 0046387e
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 00463883
-    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00463886 | void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)
-    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0046388b | int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
-        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)
-    JMP 0x00463a19                      ; 00463890 | LAB_00463a19
-        ;   XREF to: 00463a19 (UNCONDITIONAL_JUMP)
-    MOV EAX,[0x01626408]                ; 00463895 | int g_VertexCount
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00463886
+        ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
+    CALL wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 ; 0046388b
+        ;   XREF to: 005f2e90 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005f2e90()
+    JMP 0x00463a19                      ; 00463890
+        ;   XREF to: 00463a19 (UNCONDITIONAL_JUMP)  ; LAB_00463a19
+    MOV EAX,[0x01626408]                ; 00463895 | g_VertexCount
         ;   Label: LAB_00463895
     SHL EAX,0x2                         ; 0046389a
     PUSH EAX                            ; 0046389d
     PUSH 0x0                            ; 0046389e
     MOV EAX,dword ptr [EBP + -0x8]      ; 004638a0
     PUSH EAX                            ; 004638a3
-    CALL crt_memory.c_memset_FUN_005fde40 ; 004638a4 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
-        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_memset_FUN_005fde40 ; 004638a4
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 004638a9
     MOV dword ptr [EBP + -0xc],0x0      ; 004638ac
-    JMP 0x004638b8                      ; 004638b3 | LAB_004638b8
-        ;   XREF to: 004638b8 (UNCONDITIONAL_JUMP)
+    JMP 0x004638b8                      ; 004638b3
+        ;   XREF to: 004638b8 (UNCONDITIONAL_JUMP)  ; LAB_004638b8
     INC dword ptr [EBP + -0xc]          ; 004638b5
         ;   Label: LAB_004638b5
     MOV EAX,dword ptr [EBP + -0xc]      ; 004638b8
         ;   Label: LAB_004638b8
-    CMP EAX,dword ptr [0x016e990c]      ; 004638bb | int g_PolygonCount
-    JGE 0x0046390d                      ; 004638c1 | LAB_0046390d
-        ;   XREF to: 0046390d (CONDITIONAL_JUMP)
+    CMP EAX,dword ptr [0x016e990c]      ; 004638bb | g_PolygonCount
+    JGE 0x0046390d                      ; 004638c1
+        ;   XREF to: 0046390d (CONDITIONAL_JUMP)  ; LAB_0046390d
     IMUL EAX,dword ptr [EBP + -0xc],0x184 ; 004638c3
-    MOV EDX,0x16e9910                   ; 004638ca | SShapeEditorPolygon[20000] g_ModelPolygonData
+    MOV EDX,0x16e9910                   ; 004638ca | g_ModelPolygonData
     ADD EDX,EAX                         ; 004638cf
     MOV dword ptr [EBP + -0x10],EDX     ; 004638d1
     MOV dword ptr [EBP + -0x14],0x0     ; 004638d4
-    JMP 0x004638e0                      ; 004638db | LAB_004638e0
-        ;   XREF to: 004638e0 (UNCONDITIONAL_JUMP)
+    JMP 0x004638e0                      ; 004638db
+        ;   XREF to: 004638e0 (UNCONDITIONAL_JUMP)  ; LAB_004638e0
     INC dword ptr [EBP + -0x14]         ; 004638dd
         ;   Label: LAB_004638dd
     MOV EAX,dword ptr [EBP + -0x14]     ; 004638e0
         ;   Label: LAB_004638e0
     MOV EDX,dword ptr [EBP + -0x10]     ; 004638e3
     CMP EAX,dword ptr [EDX + 0xa4]      ; 004638e6 | DAT_016e99b4
-    JGE 0x0046390b                      ; 004638ec | LAB_0046390b
-        ;   XREF to: 0046390b (CONDITIONAL_JUMP)
+    JGE 0x0046390b                      ; 004638ec
+        ;   XREF to: 0046390b (CONDITIONAL_JUMP)  ; LAB_0046390b
     MOV EAX,dword ptr [EBP + -0x14]     ; 004638ee
     SHL EAX,0x2                         ; 004638f1
     ADD EAX,dword ptr [EBP + -0x10]     ; 004638f4
@@ -132,40 +134,40 @@ section .text
     SHL EAX,0x2                         ; 004638fd
     ADD EAX,dword ptr [EBP + -0x8]      ; 00463900
     MOV dword ptr [EAX],0x1             ; 00463903
-    JMP 0x004638dd                      ; 00463909 | LAB_004638dd
-        ;   XREF to: 004638dd (UNCONDITIONAL_JUMP)
-    JMP 0x004638b5                      ; 0046390b | LAB_004638b5
+    JMP 0x004638dd                      ; 00463909
+        ;   XREF to: 004638dd (UNCONDITIONAL_JUMP)  ; LAB_004638dd
+    JMP 0x004638b5                      ; 0046390b
+        ;   XREF to: 004638b5 (UNCONDITIONAL_JUMP)  ; LAB_004638b5
         ;   Label: LAB_0046390b
-        ;   XREF to: 004638b5 (UNCONDITIONAL_JUMP)
-    MOV EAX,[0x01626408]                ; 0046390d | int g_VertexCount
+    MOV EAX,[0x01626408]                ; 0046390d | g_VertexCount
         ;   Label: LAB_0046390d
     MOV dword ptr [EBP + -0x4],EAX      ; 00463912
-    MOV dword ptr [0x01626408],0x0      ; 00463915 | int g_VertexCount
+    MOV dword ptr [0x01626408],0x0      ; 00463915 | g_VertexCount
     MOV dword ptr [EBP + -0xc],0x0      ; 0046391f
-    JMP 0x0046392b                      ; 00463926 | LAB_0046392b
-        ;   XREF to: 0046392b (UNCONDITIONAL_JUMP)
+    JMP 0x0046392b                      ; 00463926
+        ;   XREF to: 0046392b (UNCONDITIONAL_JUMP)  ; LAB_0046392b
     INC dword ptr [EBP + -0xc]          ; 00463928
         ;   Label: LAB_00463928
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046392b
         ;   Label: LAB_0046392b
     CMP EAX,dword ptr [EBP + -0x4]      ; 0046392e
-    JGE 0x00463992                      ; 00463931 | LAB_00463992
-        ;   XREF to: 00463992 (CONDITIONAL_JUMP)
+    JGE 0x00463992                      ; 00463931
+        ;   XREF to: 00463992 (CONDITIONAL_JUMP)  ; LAB_00463992
     MOV EAX,dword ptr [EBP + -0xc]      ; 00463933
     SHL EAX,0x2                         ; 00463936
     ADD EAX,dword ptr [EBP + -0x8]      ; 00463939
     CMP dword ptr [EAX],0x0             ; 0046393c
-    JZ 0x00463981                       ; 0046393f | LAB_00463981
-        ;   XREF to: 00463981 (CONDITIONAL_JUMP)
-    MOV EAX,[0x01626408]                ; 00463941 | int g_VertexCount
+    JZ 0x00463981                       ; 0046393f
+        ;   XREF to: 00463981 (CONDITIONAL_JUMP)  ; LAB_00463981
+    MOV EAX,[0x01626408]                ; 00463941 | g_VertexCount
     CMP EAX,dword ptr [EBP + -0xc]      ; 00463946
-    JZ 0x00463967                       ; 00463949 | LAB_00463967
-        ;   XREF to: 00463967 (CONDITIONAL_JUMP)
+    JZ 0x00463967                       ; 00463949
+        ;   XREF to: 00463967 (CONDITIONAL_JUMP)  ; LAB_00463967
     IMUL ESI,dword ptr [EBP + -0xc],0x14 ; 0046394b
-    IMUL EDI,dword ptr [0x01626408],0x14 ; 0046394f | int g_VertexCount
-    LEA EDI,[EDI + 0x162640c]           ; 00463956 | SVertexData[20000] g_LoadedVertices
-    LEA ESI,[ESI + 0x162640c]           ; 0046395c | SVertexData[20000] g_LoadedVertices
-    MOVSD ES:EDI,ESI                    ; 00463962 | DAT_01626420 | SVertexData[20000] g_LoadedVertices
+    IMUL EDI,dword ptr [0x01626408],0x14 ; 0046394f | g_VertexCount
+    LEA EDI,[EDI + 0x162640c]           ; 00463956 | g_LoadedVertices
+    LEA ESI,[ESI + 0x162640c]           ; 0046395c | g_LoadedVertices
+    MOVSD ES:EDI,ESI                    ; 00463962 | DAT_01626420 | g_LoadedVertices
     MOVSD ES:EDI,ESI                    ; 00463963 | DAT_01626424 | DAT_01626410
     MOVSD ES:EDI,ESI                    ; 00463964 | g_LoadedVertices[0].vertex.z
     MOVSD ES:EDI,ESI                    ; 00463965 | DAT_01626418
@@ -175,45 +177,45 @@ section .text
     SHL EAX,0x2                         ; 0046396a
     MOV EDX,dword ptr [EBP + -0x8]      ; 0046396d
     ADD EDX,EAX                         ; 00463970
-    MOV EAX,[0x01626408]                ; 00463972 | int g_VertexCount
+    MOV EAX,[0x01626408]                ; 00463972 | g_VertexCount
     MOV dword ptr [EDX],EAX             ; 00463977
-    INC dword ptr [0x01626408]          ; 00463979 | int g_VertexCount
-    JMP 0x00463990                      ; 0046397f | LAB_00463990
-        ;   XREF to: 00463990 (UNCONDITIONAL_JUMP)
+    INC dword ptr [0x01626408]          ; 00463979 | g_VertexCount
+    JMP 0x00463990                      ; 0046397f
+        ;   XREF to: 00463990 (UNCONDITIONAL_JUMP)  ; LAB_00463990
     MOV EAX,dword ptr [EBP + -0xc]      ; 00463981
         ;   Label: LAB_00463981
     SHL EAX,0x2                         ; 00463984
     ADD EAX,dword ptr [EBP + -0x8]      ; 00463987
     MOV dword ptr [EAX],0xffffffff      ; 0046398a
-    JMP 0x00463928                      ; 00463990 | LAB_00463928
+    JMP 0x00463928                      ; 00463990
+        ;   XREF to: 00463928 (UNCONDITIONAL_JUMP)  ; LAB_00463928
         ;   Label: LAB_00463990
-        ;   XREF to: 00463928 (UNCONDITIONAL_JUMP)
     MOV dword ptr [EBP + -0xc],0x0      ; 00463992
         ;   Label: LAB_00463992
-    JMP 0x0046399e                      ; 00463999 | LAB_0046399e
-        ;   XREF to: 0046399e (UNCONDITIONAL_JUMP)
+    JMP 0x0046399e                      ; 00463999
+        ;   XREF to: 0046399e (UNCONDITIONAL_JUMP)  ; LAB_0046399e
     INC dword ptr [EBP + -0xc]          ; 0046399b
         ;   Label: LAB_0046399b
     MOV EAX,dword ptr [EBP + -0xc]      ; 0046399e
         ;   Label: LAB_0046399e
-    CMP EAX,dword ptr [0x016e990c]      ; 004639a1 | int g_PolygonCount
-    JGE 0x00463a02                      ; 004639a7 | LAB_00463a02
-        ;   XREF to: 00463a02 (CONDITIONAL_JUMP)
+    CMP EAX,dword ptr [0x016e990c]      ; 004639a1 | g_PolygonCount
+    JGE 0x00463a02                      ; 004639a7
+        ;   XREF to: 00463a02 (CONDITIONAL_JUMP)  ; LAB_00463a02
     IMUL EAX,dword ptr [EBP + -0xc],0x184 ; 004639a9
-    MOV EDX,0x16e9910                   ; 004639b0 | SShapeEditorPolygon[20000] g_ModelPolygonData
+    MOV EDX,0x16e9910                   ; 004639b0 | g_ModelPolygonData
     ADD EDX,EAX                         ; 004639b5
     MOV dword ptr [EBP + -0x18],EDX     ; 004639b7
     MOV dword ptr [EBP + -0x1c],0x0     ; 004639ba
-    JMP 0x004639c6                      ; 004639c1 | LAB_004639c6
-        ;   XREF to: 004639c6 (UNCONDITIONAL_JUMP)
+    JMP 0x004639c6                      ; 004639c1
+        ;   XREF to: 004639c6 (UNCONDITIONAL_JUMP)  ; LAB_004639c6
     INC dword ptr [EBP + -0x1c]         ; 004639c3
         ;   Label: LAB_004639c3
     MOV EAX,dword ptr [EBP + -0x1c]     ; 004639c6
         ;   Label: LAB_004639c6
     MOV EDX,dword ptr [EBP + -0x18]     ; 004639c9
     CMP EAX,dword ptr [EDX + 0xa4]      ; 004639cc | DAT_016e99b4
-    JGE 0x00463a00                      ; 004639d2 | LAB_00463a00
-        ;   XREF to: 00463a00 (CONDITIONAL_JUMP)
+    JGE 0x00463a00                      ; 004639d2
+        ;   XREF to: 00463a00 (CONDITIONAL_JUMP)  ; LAB_00463a00
     MOV EAX,dword ptr [EBP + -0x1c]     ; 004639d4
     SHL EAX,0x2                         ; 004639d7
     ADD EAX,dword ptr [EBP + -0x18]     ; 004639da
@@ -227,19 +229,19 @@ section .text
     ADD ECX,EAX                         ; 004639f4
     MOV EAX,dword ptr [EDX]             ; 004639f6
     MOV dword ptr [ECX + 0xb8],EAX      ; 004639f8
-    JMP 0x004639c3                      ; 004639fe | LAB_004639c3
-        ;   XREF to: 004639c3 (UNCONDITIONAL_JUMP)
-    JMP 0x0046399b                      ; 00463a00 | LAB_0046399b
+    JMP 0x004639c3                      ; 004639fe
+        ;   XREF to: 004639c3 (UNCONDITIONAL_JUMP)  ; LAB_004639c3
+    JMP 0x0046399b                      ; 00463a00
+        ;   XREF to: 0046399b (UNCONDITIONAL_JUMP)  ; LAB_0046399b
         ;   Label: LAB_00463a00
-        ;   XREF to: 0046399b (UNCONDITIONAL_JUMP)
     PUSH 0x18d4                         ; 00463a02
         ;   Label: LAB_00463a02
-    MOV EAX,0x61c098                    ; 00463a07 | = "..\\shape\\design.c" | s_shape_design_c_0061c098 = ..\shape\design.c
-    PUSH EAX                            ; 00463a0c | = "..\\shape\\design.c" | s_shape_design_c_0061c098 = ..\shape\design.c
+    MOV EAX,0x61c098                    ; 00463a07 | = "..\\shape\\design.c"
+    PUSH EAX                            ; 00463a0c | = "..\\shape\\design.c"
     MOV EAX,dword ptr [EBP + -0x8]      ; 00463a0d
     PUSH EAX                            ; 00463a10
-    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00463a11 | void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
-        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f460 ; 00463a11
+        ;   XREF to: 0050f460 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_debugFree_FUN_0050f460(void * ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 00463a16
     MOV ESP,EBP                         ; 00463a19
         ;   Label: LAB_00463a19

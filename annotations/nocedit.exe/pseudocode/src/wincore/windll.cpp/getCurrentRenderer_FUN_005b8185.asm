@@ -19,8 +19,8 @@ section .text
     LEA EDX,[EDX]                       ; 005b818b
     MOV EBX,EBX                         ; 005b818e
     MOV EDX,dword ptr [ESP + 0x4]       ; 005b8190
-    MOV EAX,[0x03f6b87c]                ; 005b8194 | int g_RendererHandle
+    MOV EAX,[0x03f6b87c]                ; 005b8194 | g_RendererHandle
     MOV dword ptr [EDX],EAX             ; 005b8199
-    MOV EAX,0x684010                    ; 005b819b | = "trid3d.dll" | g_RendererDllName = trid3d.dll
+    MOV EAX,0x684010                    ; 005b819b | = "trid3d.dll"
     RET                                 ; 005b81a0
 

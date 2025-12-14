@@ -22,8 +22,8 @@ section .text
     PUSH EBP                            ; 004735c3
     MOV ECX,dword ptr [ESP + 0x14]      ; 004735c4
     CMP dword ptr [ECX + 0x1cb8],0x0    ; 004735c8
-    JZ 0x00473586                       ; 004735cf | LAB_00473586
-        ;   XREF to: 00473586 (CONDITIONAL_JUMP)
+    JZ 0x00473586                       ; 004735cf
+        ;   XREF to: 00473586 (CONDITIONAL_JUMP)  ; LAB_00473586
     XOR ESI,ESI                         ; 004735d1
     MOV EAX,dword ptr [ECX + 0x1cc4]    ; 004735d3
         ;   Label: LAB_004735d3
@@ -32,8 +32,8 @@ section .text
     SUB EAX,EDX                         ; 004735de
     SAR EAX,0x1                         ; 004735e0
     CMP ESI,EAX                         ; 004735e2
-    JGE 0x00473586                      ; 004735e4 | LAB_00473586
-        ;   XREF to: 00473586 (CONDITIONAL_JUMP)
+    JGE 0x00473586                      ; 004735e4
+        ;   XREF to: 00473586 (CONDITIONAL_JUMP)  ; LAB_00473586
     XOR EBX,EBX                         ; 004735e6
     MOV EAX,dword ptr [ECX + 0x1cc0]    ; 004735e8
         ;   Label: LAB_004735e8
@@ -42,11 +42,11 @@ section .text
     SUB EAX,EDX                         ; 004735f3
     SAR EAX,0x1                         ; 004735f5
     CMP EBX,EAX                         ; 004735f7
-    JL 0x004735fe                       ; 004735f9 | LAB_004735fe
-        ;   XREF to: 004735fe (CONDITIONAL_JUMP)
+    JL 0x004735fe                       ; 004735f9
+        ;   XREF to: 004735fe (CONDITIONAL_JUMP)  ; LAB_004735fe
     INC ESI                             ; 004735fb
-    JMP 0x004735d3                      ; 004735fc | LAB_004735d3
-        ;   XREF to: 004735d3 (UNCONDITIONAL_JUMP)
+    JMP 0x004735d3                      ; 004735fc
+        ;   XREF to: 004735d3 (UNCONDITIONAL_JUMP)  ; LAB_004735d3
     MOV EDI,EAX                         ; 004735fe
         ;   Label: LAB_004735fe
     MOV EAX,dword ptr [ECX + 0x1cc4]    ; 00473600
@@ -69,8 +69,8 @@ section .text
     IMUL EBP,EBP                        ; 00473634
     ADD EDI,EBP                         ; 00473637
     CMP EDI,EAX                         ; 00473639
-    JLE 0x004736b9                      ; 0047363b | LAB_004736b9
-        ;   XREF to: 004736b9 (CONDITIONAL_JUMP)
+    JLE 0x004736b9                      ; 0047363b
+        ;   XREF to: 004736b9 (CONDITIONAL_JUMP)  ; LAB_004736b9
     MOV EAX,dword ptr [ECX + 0x1cc0]    ; 0047363d
     IMUL EAX,ESI                        ; 00473643
     MOV EDX,dword ptr [ECX + 0x2f94]    ; 00473646
@@ -104,6 +104,6 @@ section .text
     MOV word ptr [EDX + EAX*0x2],0x0    ; 004736b3
     INC EBX                             ; 004736b9
         ;   Label: LAB_004736b9
-    JMP 0x004735e8                      ; 004736ba | LAB_004735e8
-        ;   XREF to: 004735e8 (UNCONDITIONAL_JUMP)
+    JMP 0x004735e8                      ; 004736ba
+        ;   XREF to: 004735e8 (UNCONDITIONAL_JUMP)  ; LAB_004735e8
 

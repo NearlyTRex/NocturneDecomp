@@ -23,9 +23,8 @@ void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_004a2cc0(CStrList *this_pt
   }
   if (this_ptr->capacity < new_capacity) {
     this_ptr->capacity = new_capacity;
-    ppcVar1 = (char **)shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                                 (this_ptr->data_array,new_capacity * 4,
-                                  "..\\shape\\edittool.cpp",0xb50);
+    ppcVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                        (this_ptr->data_array,new_capacity * 4,"..\\shape\\edittool.cpp",0xb50);
     this_ptr->data_array = ppcVar1;
     if (ppcVar1 == (char **)0x0) {
       g_CurrentFilename = "..\\shape\\edittool.cpp";

@@ -1,181 +1,181 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 81, 
-    "pseudocode_lines": 16, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 47, 
-    "assembly_lines": 31, 
-    "suspect_count": 6, 
+    "assembly_lines": 31,
+    "complexity_score": 81,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 16,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param"
-    ]
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "IDirectSound3DListener*", 
-      "name": "g_DirectSound3DListener", 
-      "addr": "03f6a9bc", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 8, 
-      "match": "in_stack_00000038", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "double in_stack_00000038;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_stack_00000040", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "double in_stack_00000040;"
-    }, 
-    {
-      "line": 10, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "double in_stack_00000048;"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000038", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_DirectSound3DListener,(float)in_stack_00000038,(float)in_stack_00000040,"
-    }, 
-    {
-      "line": 16, 
-      "match": "in_stack_00000040", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_DirectSound3DListener,(float)in_stack_00000038,(float)in_stack_00000040,"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000048", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(float)in_stack_00000048,(float)x_top,(float)y_top,(float)z_top,0);"
-    }
-  ], 
+    ],
+    "total_lines": 47
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "005aee70", 
-    "signature": "void sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70(CDirectSoundDevice * this_ptr, double x_front, double y_front, double z_front, double x_top, double y_top, double z_top)", 
+    "address": "005aee70",
     "address_range": [
       [
-        "005aee70", 
+        "005aee70",
         "005aeec1"
       ]
-    ], 
-    "name": "sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70",
+    "signature": "void sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_005aee70(CDirectSoundDevice * this_ptr, double x_front, double y_front, double z_front, double x_top, double y_top, double z_top)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f6a9bc",
+      "name": "g_DirectSound3DListener",
+      "type": "IDirectSound3DListener*",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 32, 
+    "frame_size": 84,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 52,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -16, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_10"
-      }, 
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -12, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_c"
-      }, 
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CDirectSoundDevice *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "x_front"
-      }, 
+        "is_param": true,
+        "name": "x_front",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 16, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "y_front"
-      }, 
+        "is_param": true,
+        "name": "y_front",
+        "offset": 16,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 24, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "z_front"
-      }, 
+        "is_param": true,
+        "name": "z_front",
+        "offset": 24,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 32, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "x_top"
-      }, 
+        "is_param": true,
+        "name": "x_top",
+        "offset": 32,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 40, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "y_top"
-      }, 
+        "is_param": true,
+        "name": "y_top",
+        "offset": 40,
+        "size": 8,
+        "type": "double"
+      },
       {
-        "offset": 48, 
-        "is_param": true, 
-        "type": "double", 
-        "size": 8, 
-        "name": "z_top"
+        "is_param": true,
+        "name": "z_top",
+        "offset": 48,
+        "size": 8,
+        "type": "double"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 84, 
-    "param_offset": 4, 
-    "param_size": 52
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000038",
+      "text": "double in_stack_00000038;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000040",
+      "text": "double in_stack_00000040;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000048",
+      "text": "double in_stack_00000048;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000038",
+      "text": "(g_DirectSound3DListener,(float)in_stack_00000038,(float)in_stack_00000040,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000040",
+      "text": "(g_DirectSound3DListener,(float)in_stack_00000038,(float)in_stack_00000040,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000048",
+      "text": "(float)in_stack_00000048,(float)x_top,(float)y_top,(float)z_top,0);",
+      "type": "stack_param"
+    }
+  ]
 }

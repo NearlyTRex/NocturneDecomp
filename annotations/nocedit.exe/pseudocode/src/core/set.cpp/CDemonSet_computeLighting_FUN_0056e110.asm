@@ -53,32 +53,32 @@ section .text
     PUSH ESI                            ; 0056e127
     MOV EDI,dword ptr [ESP + 0x20]      ; 0056e128
     PUSH EDI                            ; 0056e12c
-    CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 ; 0056e12d | void core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
-        ;   XREF to: 0056ddb0 (UNCONDITIONAL_CALL)
+    CALL core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 ; 0056e12d
+        ;   XREF to: 0056ddb0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, ...)
     ADD ESP,0x14                        ; 0056e132
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0056e135
     LEA EAX,[EDX*0x4 + 0x0]             ; 0056e139
     SUB EAX,EDX                         ; 0056e140
-    MOV EDX,0x688014                    ; 0056e142 | SRenderVertex[16] g_RenderVertexBuffer
+    MOV EDX,0x688014                    ; 0056e142 | g_RenderVertexBuffer
     SHL EAX,0x4                         ; 0056e147
     ADD EDX,EAX                         ; 0056e14a
     DEC EBX                             ; 0056e14c
     LEA EAX,[EDX + 0x30]                ; 0056e14d
     TEST EBX,EBX                        ; 0056e150
-    JLE 0x0056e170                      ; 0056e152 | LAB_0056e170
-        ;   XREF to: 0056e170 (CONDITIONAL_JUMP)
+    JLE 0x0056e170                      ; 0056e152
+        ;   XREF to: 0056e170 (CONDITIONAL_JUMP)  ; LAB_0056e170
     MOV ECX,dword ptr [EDX + 0x20]      ; 0056e154 | g_RenderVertexBuffer[0].light
         ;   Label: LAB_0056e154
-    MOV dword ptr [EAX + 0x20],ECX      ; 0056e157 | g_RenderVertexBuffer[1].light
+    MOV dword ptr [EAX + 0x20],ECX      ; 0056e157 | g_RenderVertexBuffer[1].light | g_RenderVertexBuffer[2].light
     MOV ECX,dword ptr [EDX + 0x24]      ; 0056e15a | g_RenderVertexBuffer[0].color
-    MOV dword ptr [EAX + 0x24],ECX      ; 0056e15d | g_RenderVertexBuffer[1].color
+    MOV dword ptr [EAX + 0x24],ECX      ; 0056e15d | g_RenderVertexBuffer[1].color | g_RenderVertexBuffer[2].color
     ADD EAX,0x30                        ; 0056e160
     MOV ECX,dword ptr [EDX + 0x28]      ; 0056e163 | g_RenderVertexBuffer[0].fog
     DEC EBX                             ; 0056e166
-    MOV dword ptr [EAX + -0x8],ECX      ; 0056e167 | g_RenderVertexBuffer[1].fog
+    MOV dword ptr [EAX + -0x8],ECX      ; 0056e167 | g_RenderVertexBuffer[1].fog | g_RenderVertexBuffer[2].fog
     TEST EBX,EBX                        ; 0056e16a
-    JG 0x0056e154                       ; 0056e16c | LAB_0056e154
-        ;   XREF to: 0056e154 (CONDITIONAL_JUMP)
+    JG 0x0056e154                       ; 0056e16c
+        ;   XREF to: 0056e154 (CONDITIONAL_JUMP)  ; LAB_0056e154
     MOV EAX,EAX                         ; 0056e16e
     POP EDI                             ; 0056e170
         ;   Label: LAB_0056e170

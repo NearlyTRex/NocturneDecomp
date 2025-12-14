@@ -54,17 +54,17 @@ section .text
     PUSH EAX                            ; 004b22bb
     LEA EAX,[ESP + 0x224]               ; 004b22bc
     PUSH EAX                            ; 004b22c3
-    PUSH 0x62613e                       ; 004b22c4 | = "%d: %d / %d / %d %d : %d : %d \"%[^\"..." | s_d_d_d_d_d_d_d_n_n_0062613e = %d: %d / %d / %d %d : %d : %d "%[^"]"%n %n
+    PUSH 0x62613e                       ; 004b22c4 | = "%d: %d / %d / %d %d : %d : %d \"%[^\"..."
     MOV ECX,dword ptr [ESP + 0x254]     ; 004b22c9
     MOV EDX,0xffffffff                  ; 004b22d0
     PUSH ECX                            ; 004b22d5
     MOV dword ptr [ESP + 0x24c],EDX     ; 004b22d6
-    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004b22dd | int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
-        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sscanf_FUN_0060013c ; 004b22dd
+        ;   XREF to: 0060013c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sscanf_FUN_0060013c(char * str, char * format)
     ADD ESP,0x30                        ; 004b22e2
     CMP dword ptr [ESP + 0x21c],0x0     ; 004b22e5
-    JGE 0x004b22f9                      ; 004b22ed | LAB_004b22f9
-        ;   XREF to: 004b22f9 (CONDITIONAL_JUMP)
+    JGE 0x004b22f9                      ; 004b22ed
+        ;   XREF to: 004b22f9 (CONDITIONAL_JUMP)  ; LAB_004b22f9
     XOR EAX,EAX                         ; 004b22ef
     ADD ESP,0x220                       ; 004b22f1
     POP EBX                             ; 004b22f7
@@ -96,15 +96,15 @@ section .text
         ;   Label: LAB_004b236a
     MOV byte ptr [EDI],AL               ; 004b236c
     CMP AL,0x0                          ; 004b236e
-    JZ 0x004b2382                       ; 004b2370 | LAB_004b2382
-        ;   XREF to: 004b2382 (CONDITIONAL_JUMP)
+    JZ 0x004b2382                       ; 004b2370
+        ;   XREF to: 004b2382 (CONDITIONAL_JUMP)  ; LAB_004b2382
     MOV AL,byte ptr [ESI + 0x1]         ; 004b2372
     ADD ESI,0x2                         ; 004b2375
     MOV byte ptr [EDI + 0x1],AL         ; 004b2378
     ADD EDI,0x2                         ; 004b237b
     CMP AL,0x0                          ; 004b237e
-    JNZ 0x004b236a                      ; 004b2380 | LAB_004b236a
-        ;   XREF to: 004b236a (CONDITIONAL_JUMP)
+    JNZ 0x004b236a                      ; 004b2380
+        ;   XREF to: 004b236a (CONDITIONAL_JUMP)  ; LAB_004b236a
     POP EDI                             ; 004b2382
         ;   Label: LAB_004b2382
     MOV EAX,0x1                         ; 004b2383

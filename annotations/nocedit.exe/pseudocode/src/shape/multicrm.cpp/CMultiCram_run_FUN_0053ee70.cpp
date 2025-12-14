@@ -21,8 +21,7 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   this_ptr->model_count = g_PartsCount;
   for (local_1c = 0; (int)local_1c < this_ptr->model_count; local_1c = local_1c + 1) {
-    pCVar1 = (CDSEModel *)
-             shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f20dc,"..\\shape\\multicrm.cpp",0x42);
+    pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x1f20dc,"..\\shape\\multicrm.cpp",0x42);
     this_ptr->models[local_1c] = pCVar1;
     if (this_ptr->models[local_1c] == (CDSEModel *)0x0) {
       g_CurrentFilename = "..\\shape\\multicrm.cpp";

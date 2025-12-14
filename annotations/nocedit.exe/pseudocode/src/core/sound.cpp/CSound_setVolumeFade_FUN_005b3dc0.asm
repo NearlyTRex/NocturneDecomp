@@ -21,8 +21,8 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x8]       ; 005b3dc0
         ;   Label: core_sound.cpp_CSound_setVolumeFade_FUN_005b3dc0
-    MOV [0x03f6b7b4],EAX                ; 005b3dc4 | float g_TargetVolumeMultiplier
+    MOV [0x03f6b7b4],EAX                ; 005b3dc4 | g_TargetVolumeMultiplier
     MOV EAX,dword ptr [ESP + 0xc]       ; 005b3dc9
-    MOV [0x03f6b7b8],EAX                ; 005b3dcd | float g_VolumeFadeTimeRemaining
+    MOV [0x03f6b7b8],EAX                ; 005b3dcd | g_VolumeFadeTimeRemaining
     RET                                 ; 005b3dd2
 

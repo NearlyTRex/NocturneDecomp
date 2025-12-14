@@ -14,12 +14,12 @@ void __cdecl crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0(void *ptr)
   ushort in_DS;
   
   if (ptr != (void *)0x0) {
-    (*(code *)PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
+    (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
     if (((DAT_03f9b210 == (Heap *)0x0) ||
         ((((ptr < DAT_03f9b210 ||
            (pHVar2 = DAT_03f9b210,
            (void *)((int)&DAT_03f9b210->heap_size + DAT_03f9b210->heap_size) <= ptr)) &&
-          ((pHVar2 = (Heap *)DAT_03f9b210->heap_base, pHVar2 == (Heap *)0x0 ||
+          ((pHVar2 = DAT_03f9b210->heap_base, pHVar2 == (Heap *)0x0 ||
            ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&
          ((pHVar2 = DAT_03f9b210->next_heap_block, pHVar2 == (Heap *)0x0 ||
           ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))))) &&
@@ -27,7 +27,7 @@ void __cdecl crt_heap_c_ValidateHeapIntegrity_FUN_00601ce0(void *ptr)
         ((((ptr < g_SecondaryHeap ||
            (pHVar2 = g_SecondaryHeap,
            (void *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= ptr)) &&
-          ((pHVar2 = (Heap *)g_SecondaryHeap->heap_base, pHVar2 == (Heap *)0x0 ||
+          ((pHVar2 = g_SecondaryHeap->heap_base, pHVar2 == (Heap *)0x0 ||
            ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&
          ((pHVar2 = g_SecondaryHeap->next_heap_block, pHVar2 == (Heap *)0x0 ||
           ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr))))))))))
@@ -47,7 +47,7 @@ LAB_00601d9c:
       DAT_03f9b850 = 0;
       DAT_03f9b210 = pHVar2;
     }
-    (*(code *)PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
+    (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
   }
   return;
 }

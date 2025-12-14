@@ -55,6 +55,6 @@ section .text
     MOV ESI,dword ptr [EBP + 0x1c]      ; 004cc832
     PUSH 0x3f800000                     ; 004cc835
     PUSH 0x0                            ; 004cc83a
-    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004cc83c | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
-        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004cc83c
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
 

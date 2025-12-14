@@ -1,112 +1,112 @@
 {
   "complexity": {
-    "function_call_count": 1, 
-    "complexity_score": 21, 
-    "pseudocode_lines": 21, 
-    "cross_reference_count": 2, 
-    "global_count": 8, 
-    "total_lines": 76, 
-    "assembly_lines": 55, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_3d_c_00613474", 
-      "addr": "00613474", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bad_pointer_00613483", 
-      "addr": "00613483", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_engine_3d_c_00613490", 
-      "addr": "00613490", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Bad_code_0061349f", 
-      "addr": "0061349f", 
-      "value": null
-    }, 
-    {
-      "type": "MRGLBlockHandlerFunc*[67]", 
-      "name": "g_MRGLBlockHandlerTable", 
-      "addr": "0066df88", 
-      "value": null
-    }, 
-    {
-      "type": "uint", 
-      "name": "g_VertexProcessingEnabled", 
-      "addr": "006793bc", 
-      "value": "0x1"
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00407890", 
-    "signature": "void engine_3d.c_dispatchMRGLBlockChain_FUN_00407890(SMRGLHeaderExtended * chain)", 
-    "address_range": [
-      [
-        "00407890", 
-        "00407910"
-      ]
-    ], 
-    "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_00407890"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "SMRGLHeaderExtended *", 
-        "size": 4, 
-        "name": "chain"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 55,
+    "complexity_score": 21,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 8,
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
+  },
   "cross_references": [
     {
-      "from_addr": "00407b4e", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0", 
-      "addr": "00407aa0"
-    }, 
+      "addr": "00407aa0",
+      "from_addr": "00407b4e",
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005022b1", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30", 
-      "addr": "00501f30"
+      "addr": "00501f30",
+      "from_addr": "005022b1",
+      "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00407890",
+    "address_range": [
+      [
+        "00407890",
+        "00407910"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_00407890",
+    "signature": "void engine_3d.c_dispatchMRGLBlockChain_FUN_00407890(SMRGLHeaderExtended * chain)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00613474",
+      "name": "s_engine_3d_c_00613474",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613483",
+      "name": "s_Bad_pointer_00613483",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00613490",
+      "name": "s_engine_3d_c_00613490",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061349f",
+      "name": "s_Bad_code_0061349f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0066df88",
+      "name": "g_MRGLBlockHandlerTable",
+      "type": "MRGLBlockHandlerFunc*[67]",
+      "value": null
+    },
+    {
+      "addr": "006793bc",
+      "name": "g_VertexProcessingEnabled",
+      "type": "uint",
+      "value": "0x1"
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "chain",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "suspects": []
 }

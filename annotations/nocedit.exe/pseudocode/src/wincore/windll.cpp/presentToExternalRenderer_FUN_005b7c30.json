@@ -1,155 +1,155 @@
 {
   "complexity": {
-    "function_call_count": 4, 
-    "complexity_score": 83, 
-    "pseudocode_lines": 48, 
-    "cross_reference_count": 2, 
-    "global_count": 8, 
-    "total_lines": 128, 
-    "assembly_lines": 80, 
-    "suspect_count": 3, 
+    "assembly_lines": 80,
+    "complexity_score": 83,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 8,
+    "pseudocode_lines": 48,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630", 
-      "addr": "005ed630"
-    }, 
-    {
-      "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580", 
-      "addr": "005ed580"
-    }, 
-    {
-      "name": "wincore_windll.cpp_lockFrame_FUN_005b7210", 
-      "addr": "005b7210"
-    }, 
-    {
-      "name": "wincore_windll.cpp_unlockFrame_FUN_005b7250", 
-      "addr": "005b7250"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "int", 
-      "name": "g_WindowWidth", 
-      "addr": "00679394", 
-      "value": "0x140"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_WindowHeight", 
-      "addr": "00679398", 
-      "value": "0xc8"
-    }, 
-    {
-      "type": "int", 
-      "name": "g_BitsPerPixel", 
-      "addr": "0067939c", 
-      "value": "0x8"
-    }, 
-    {
-      "type": "void*[1024]", 
-      "name": "g_ScreenBufferArray", 
-      "addr": "02cf6a9c", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_ScreenBufferArray[1]", 
-      "addr": "02cf6aa0", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_UseExternalRenderer", 
-      "addr": "02d03e94", 
-      "value": null
-    }, 
-    {
-      "type": "APIDLL_toggle*", 
-      "name": "g_APIDLL_toggle", 
-      "addr": "03f6b894", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_ExternalFrameLocked", 
-      "addr": "03f6b99c", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 37, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);"
-    }, 
-    {
-      "line": 38, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);"
-    }, 
-    {
-      "line": 42, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (uint *)((int)puVar4 + uVar1);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "005b7c30", 
-    "signature": "void wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)", 
-    "address_range": [
-      [
-        "005b7c30", 
-        "005b7cfb"
-      ]
-    ], 
-    "name": "wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30"
-  }, 
-  "stack_frame": {
-    "local_size": 12, 
-    "variables": [
-      {
-        "offset": -8, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_8"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "skip_buffer_copy"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    ],
+    "total_lines": 128
+  },
   "cross_references": [
     {
-      "from_addr": "004dbab6", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
-      "addr": "004daf80"
-    }, 
+      "addr": "004daf80",
+      "from_addr": "004dbab6",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005edb08", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
-      "addr": "005eda20"
+      "addr": "005eda20",
+      "from_addr": "005edb08",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b7c30",
+    "address_range": [
+      [
+        "005b7c30",
+        "005b7cfb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30",
+    "signature": "void wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30(int skip_buffer_copy)"
+  },
+  "function_calls": [
+    {
+      "addr": "005ed630",
+      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630"
+    },
+    {
+      "addr": "005ed580",
+      "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580"
+    },
+    {
+      "addr": "005b7210",
+      "name": "wincore_windll.cpp_lockFrame_FUN_005b7210"
+    },
+    {
+      "addr": "005b7250",
+      "name": "wincore_windll.cpp_unlockFrame_FUN_005b7250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00679394",
+      "name": "g_WindowWidth",
+      "type": "int",
+      "value": "0x140"
+    },
+    {
+      "addr": "00679398",
+      "name": "g_WindowHeight",
+      "type": "int",
+      "value": "0xc8"
+    },
+    {
+      "addr": "0067939c",
+      "name": "g_BitsPerPixel",
+      "type": "int",
+      "value": "0x8"
+    },
+    {
+      "addr": "02cf6a9c",
+      "name": "g_ScreenBufferArray",
+      "type": "void*[1024]",
+      "value": null
+    },
+    {
+      "addr": "02cf6aa0",
+      "name": "g_ScreenBufferArray[1]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d03e94",
+      "name": "g_UseExternalRenderer",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "03f6b894",
+      "name": "g_APIDLL_toggle",
+      "type": "APIDLL_toggle*",
+      "value": null
+    },
+    {
+      "addr": "03f6b99c",
+      "name": "g_ExternalFrameLocked",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "skip_buffer_copy",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)",
+      "text": "puVar4 = (uint *)((int)puVar4 + uVar1);",
+      "type": "pointer_cast"
     }
   ]
 }

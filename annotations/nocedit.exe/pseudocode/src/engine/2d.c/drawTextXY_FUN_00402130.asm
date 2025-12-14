@@ -30,8 +30,8 @@ section .text
     PUSH ECX                            ; 0040213a
     MOV EBX,dword ptr [ESP + 0x18]      ; 0040213b
     PUSH EBX                            ; 0040213f
-    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00402140 | void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
-        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)
+    CALL engine_2d.c_drawText_FUN_00401fd0 ; 00402140
+        ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)
     ADD ESP,0xc                         ; 00402145
     POP EBX                             ; 00402148
     RET                                 ; 00402149

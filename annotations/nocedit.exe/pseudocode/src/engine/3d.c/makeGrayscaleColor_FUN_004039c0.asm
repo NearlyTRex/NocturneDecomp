@@ -20,8 +20,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 004039c0
         ;   Label: engine_3d.c_makeGrayscaleColor_FUN_004039c0
     TEST EAX,EAX                        ; 004039c4
-    JL 0x004039e1                       ; 004039c6 | LAB_004039e1
-        ;   XREF to: 004039e1 (CONDITIONAL_JUMP)
+    JL 0x004039e1                       ; 004039c6
+        ;   XREF to: 004039e1 (CONDITIONAL_JUMP)  ; LAB_004039e1
     MOV EAX,0xff                        ; 004039c8
     MOV EDX,EAX                         ; 004039cd
     MOV ECX,EAX                         ; 004039cf

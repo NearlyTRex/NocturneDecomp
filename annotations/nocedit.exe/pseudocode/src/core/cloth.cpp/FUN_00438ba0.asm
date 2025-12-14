@@ -27,22 +27,22 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00438ba0
         ;   Label: core_cloth.cpp_FUN_00438ba0
     PUSH EAX                            ; 00438ba4
-    CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0 ; 00438ba5 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel * this_ptr)
-        ;   XREF to: 00476cf0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0 ; 00438ba5
+        ;   XREF to: 00476cf0 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00438baa
-    PUSH 0x65bb80                       ; 00438bad | WatcomTypeInfo g_SClothVertexTypeInfo
+    PUSH 0x65bb80                       ; 00438bad | g_SClothVertexTypeInfo
     PUSH 0x320                          ; 00438bb2
     ADD EAX,0x56d8                      ; 00438bb7
     PUSH EAX                            ; 00438bbc
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00438bbd | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00438bbd
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00438bc2
-    PUSH 0x65bba0                       ; 00438bc5 | WatcomTypeInfo g_SClothBoneTypeInfo
+    PUSH 0x65bba0                       ; 00438bc5 | g_SClothBoneTypeInfo
     PUSH 0x32                           ; 00438bca
     ADD EAX,0x377b8                     ; 00438bcc
     PUSH EAX                            ; 00438bd1
-    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00438bd2 | void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
-        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)
+    CALL crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667 ; 00438bd2
+        ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     MOV dword ptr [EAX + 0x2fac],0x0    ; 00438bd7
     MOV dword ptr [EAX + -0x4],0x0      ; 00438be1
     ADD ESP,0xc                         ; 00438be8

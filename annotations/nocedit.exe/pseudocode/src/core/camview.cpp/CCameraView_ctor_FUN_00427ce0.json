@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 1, 
-    "global_count": 1, 
-    "total_lines": 13, 
-    "assembly_lines": 6, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "CCameraView_vtable", 
-      "name": "g_CCameraViewVTable", 
-      "addr": "0065b7d4", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00427ce0", 
-    "signature": "CCameraView * core_camview.cpp_CCameraView_ctor_FUN_00427ce0(CCameraView * this_ptr)", 
-    "address_range": [
-      [
-        "00427ce0", 
-        "00427cf8"
-      ]
-    ], 
-    "name": "core_camview.cpp_CCameraView_ctor_FUN_00427ce0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CCameraView *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 6,
+    "complexity_score": 7,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
+  },
   "cross_references": [
     {
-      "from_addr": "0044c035", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030", 
-      "addr": "0044c030"
+      "addr": "0044c030",
+      "from_addr": "0044c035",
+      "name": "core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "00427ce0",
+    "address_range": [
+      [
+        "00427ce0",
+        "00427cf8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_camview.cpp_CCameraView_ctor_FUN_00427ce0",
+    "signature": "CCameraView * core_camview.cpp_CCameraView_ctor_FUN_00427ce0(CCameraView * this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0065b7d4",
+      "name": "g_CCameraViewVTable",
+      "type": "CCameraView_vtable",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCameraView *"
+      }
+    ]
+  },
+  "suspects": []
 }

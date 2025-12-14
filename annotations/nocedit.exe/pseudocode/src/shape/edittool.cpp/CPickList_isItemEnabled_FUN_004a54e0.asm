@@ -31,26 +31,26 @@ section .text
     MOV ESI,dword ptr [ESP + 0xc]       ; 004a54e2
     MOV EBX,dword ptr [ESP + 0x10]      ; 004a54e6
     TEST EBX,EBX                        ; 004a54ea
-    JL 0x004a54f2                       ; 004a54ec | LAB_004a54f2
-        ;   XREF to: 004a54f2 (CONDITIONAL_JUMP)
+    JL 0x004a54f2                       ; 004a54ec
+        ;   XREF to: 004a54f2 (CONDITIONAL_JUMP)  ; LAB_004a54f2
     CMP EBX,dword ptr [ESI]             ; 004a54ee
-    JL 0x004a5517                       ; 004a54f0 | LAB_004a5517
-        ;   XREF to: 004a5517 (CONDITIONAL_JUMP)
+    JL 0x004a5517                       ; 004a54f0
+        ;   XREF to: 004a5517 (CONDITIONAL_JUMP)  ; LAB_004a5517
     PUSH EDI                            ; 004a54f2
         ;   Label: LAB_004a54f2
-    MOV ECX,0x623b2c                    ; 004a54f3 | = "..\\shape\\edittool.cpp" | s_shape_edittool_cpp_00623b2c = ..\shape\edittool.cpp
+    MOV ECX,0x623b2c                    ; 004a54f3 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x103d                      ; 004a54f8
-    PUSH 0x623b42                       ; 004a54fd | = "CPickList::isItemEnabled - invalid index" | s_CPickList_isItemEnabled__00623b42 = CPickList::isItemEnabled - invalid index
-    MOV dword ptr [0x02f0ca48],ECX      ; 004a5502 | char * g_CurrentFilename
-    MOV dword ptr [0x02f0ca4c],EDI      ; 004a5508 | int g_CurrentLineNumber
-    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a550e | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
-        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    PUSH 0x623b42                       ; 004a54fd | = "CPickList::isItemEnabled - invalid index"
+    MOV dword ptr [0x02f0ca48],ECX      ; 004a5502 | g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EDI      ; 004a5508 | g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004a550e
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 004a5513
     POP EDI                             ; 004a5516
     CMP EBX,dword ptr [ESI + 0x194]     ; 004a5517
         ;   Label: LAB_004a5517
-    JL 0x004a5527                       ; 004a551d | LAB_004a5527
-        ;   XREF to: 004a5527 (CONDITIONAL_JUMP)
+    JL 0x004a5527                       ; 004a551d
+        ;   XREF to: 004a5527 (CONDITIONAL_JUMP)  ; LAB_004a5527
     MOV EAX,0x1                         ; 004a551f
     POP ESI                             ; 004a5524
     POP EBX                             ; 004a5525

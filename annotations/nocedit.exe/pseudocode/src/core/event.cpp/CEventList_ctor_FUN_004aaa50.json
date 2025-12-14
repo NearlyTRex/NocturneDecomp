@@ -1,61 +1,61 @@
 {
   "complexity": {
-    "function_call_count": 2, 
-    "complexity_score": 6, 
-    "pseudocode_lines": 6, 
-    "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 20, 
-    "assembly_lines": 14, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [
-    {
-      "name": "core_event.cpp_CEventList_FUN_004aaa70", 
-      "addr": "004aaa70"
-    }, 
-    {
-      "name": "core_event.cpp_CEventList_FUN_004b0460", 
-      "addr": "004b0460"
-    }
-  ], 
-  "globals": [], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "004aaa50", 
-    "signature": "CEventList * core_event.cpp_CEventList_ctor_FUN_004aaa50(CEventList * this_ptr)", 
-    "address_range": [
-      [
-        "004aaa50", 
-        "004aaa6a"
-      ]
-    ], 
-    "name": "core_event.cpp_CEventList_ctor_FUN_004aaa50"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CEventList *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 14,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
+  },
   "cross_references": [
     {
-      "from_addr": "004aa265", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "core_event.cpp_staticInit_FUN_004aa260", 
-      "addr": "004aa260"
+      "addr": "004aa260",
+      "from_addr": "004aa265",
+      "name": "core_event.cpp_staticInit_FUN_004aa260",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "004aaa50",
+    "address_range": [
+      [
+        "004aaa50",
+        "004aaa6a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_CEventList_ctor_FUN_004aaa50",
+    "signature": "CEventList * core_event.cpp_CEventList_ctor_FUN_004aaa50(CEventList * this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004aaa70",
+      "name": "core_event.cpp_CEventList_FUN_004aaa70"
+    },
+    {
+      "addr": "004b0460",
+      "name": "core_event.cpp_CEventList_FUN_004b0460"
+    }
+  ],
+  "globals": [],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEventList *"
+      }
+    ]
+  },
+  "suspects": []
 }

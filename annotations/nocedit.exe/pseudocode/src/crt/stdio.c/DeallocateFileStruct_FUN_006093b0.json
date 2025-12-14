@@ -1,71 +1,71 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 18, 
-    "pseudocode_lines": 18, 
-    "cross_reference_count": 2, 
-    "global_count": 2, 
-    "total_lines": 46, 
-    "assembly_lines": 28, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "FileListNode*", 
-      "name": "g_AllocatedListHead", 
-      "addr": "03f9b200", 
-      "value": null
-    }, 
-    {
-      "type": "undefined4", 
-      "name": "g_FreeListHeadPointer", 
-      "addr": "03f9b204", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "006093b0", 
-    "signature": "void crt_stdio.c_DeallocateFileStruct_FUN_006093b0(FILE * file_struct)", 
-    "address_range": [
-      [
-        "006093b0", 
-        "006093e6"
-      ]
-    ], 
-    "name": "crt_stdio.c_DeallocateFileStruct_FUN_006093b0"
-  }, 
-  "stack_frame": {
-    "local_size": 4, 
-    "variables": [
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_struct"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 8, 
-    "param_offset": 4, 
-    "param_size": 4
-  }, 
+    "assembly_lines": 28,
+    "complexity_score": 18,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 2,
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 46
+  },
   "cross_references": [
     {
-      "from_addr": "006019b3", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_OpenFileAndInitialize_FUN_0060190c", 
-      "addr": "0060190c"
-    }, 
+      "addr": "0060190c",
+      "from_addr": "006019b3",
+      "name": "crt_stdio.c_OpenFileAndInitialize_FUN_0060190c",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "00601efe", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4", 
-      "addr": "00601ee4"
+      "addr": "00601ee4",
+      "from_addr": "00601efe",
+      "name": "crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4",
+      "type": "UNCONDITIONAL_CALL"
     }
-  ]
+  ],
+  "function": {
+    "address": "006093b0",
+    "address_range": [
+      [
+        "006093b0",
+        "006093e6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_stdio.c_DeallocateFileStruct_FUN_006093b0",
+    "signature": "void crt_stdio.c_DeallocateFileStruct_FUN_006093b0(FILE * file_struct)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "03f9b200",
+      "name": "g_AllocatedListHead",
+      "type": "FileListNode*",
+      "value": null
+    },
+    {
+      "addr": "03f9b204",
+      "name": "g_FreeListHeadPointer",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_struct",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      }
+    ]
+  },
+  "suspects": []
 }

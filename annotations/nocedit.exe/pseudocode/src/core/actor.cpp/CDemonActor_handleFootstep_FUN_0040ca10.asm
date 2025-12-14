@@ -69,11 +69,11 @@ section .text
     FSUB float ptr [ESP + 0x6c]         ; 0040ca65
     FMUL ST0                            ; 0040ca69
     FADDP                               ; 0040ca6b
-    FCOMP float ptr [0x006142e4]        ; 0040ca6d | float FLOAT_006142e4
+    FCOMP float ptr [0x006142e4]        ; 0040ca6d | FLOAT_006142e4
     FNSTSW AX                           ; 0040ca73
     SAHF                                ; 0040ca75
-    JBE 0x0040ca82                      ; 0040ca76 | LAB_0040ca82
-        ;   XREF to: 0040ca82 (CONDITIONAL_JUMP)
+    JBE 0x0040ca82                      ; 0040ca76
+        ;   XREF to: 0040ca82 (CONDITIONAL_JUMP)  ; LAB_0040ca82
     XOR EAX,EAX                         ; 0040ca78
     ADD ESP,0x7c                        ; 0040ca7a
     POP EBP                             ; 0040ca7d
@@ -83,27 +83,27 @@ section .text
     RET                                 ; 0040ca81
     PUSH ESI                            ; 0040ca82
         ;   Label: LAB_0040ca82
-    MOV EDX,dword ptr [0x006810c8]      ; 0040ca83 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
-    PUSH EDX                            ; 0040ca89 | CDemonSet g_CDemonSetInstance
-    CALL core_setcolid.cpp_CDemonSet_FUN_00574580 ; 0040ca8a | int core_setcolid.cpp_CDemonSet_FUN_00574580(CDemonSet * this_ptr)
-        ;   XREF to: 00574580 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x006810c8]      ; 0040ca83 | g_CDemonSetInstance | g_CDemonSetPtr
+    PUSH EDX                            ; 0040ca89 | g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_FUN_00574580 ; 0040ca8a
+        ;   XREF to: 00574580 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_FUN_00574580(CDemonSet * this_ptr)
     ADD ESP,0x8                         ; 0040ca8f
     TEST EAX,EAX                        ; 0040ca92
-    JZ 0x0040ca9b                       ; 0040ca94 | LAB_0040ca9b
-        ;   XREF to: 0040ca9b (CONDITIONAL_JUMP)
+    JZ 0x0040ca9b                       ; 0040ca94
+        ;   XREF to: 0040ca9b (CONDITIONAL_JUMP)  ; LAB_0040ca9b
     MOV EDI,0x6                         ; 0040ca96
     LEA EAX,[EBX + 0x118]               ; 0040ca9b
         ;   Label: LAB_0040ca9b
     PUSH EAX                            ; 0040caa1
     PUSH ESI                            ; 0040caa2
-    MOV ECX,dword ptr [0x0067b9a0]      ; 0040caa3 | CGore g_CGoreInstance | CGore * g_CGorePtr
-    PUSH ECX                            ; 0040caa9 | CGore g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee0f0 ; 0040caaa | int core_gore.cpp_CGore_FUN_004ee0f0(CGore * this_ptr)
-        ;   XREF to: 004ee0f0 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x0067b9a0]      ; 0040caa3 | g_CGoreInstance | g_CGorePtr
+    PUSH ECX                            ; 0040caa9 | g_CGoreInstance
+    CALL core_gore.cpp_CGore_FUN_004ee0f0 ; 0040caaa
+        ;   XREF to: 004ee0f0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_FUN_004ee0f0(CGore * this_ptr)
     ADD ESP,0xc                         ; 0040caaf
     TEST EAX,EAX                        ; 0040cab2
-    JZ 0x0040cb55                       ; 0040cab4 | LAB_0040cb55
-        ;   XREF to: 0040cb55 (CONDITIONAL_JUMP)
+    JZ 0x0040cb55                       ; 0040cab4
+        ;   XREF to: 0040cb55 (CONDITIONAL_JUMP)  ; LAB_0040cb55
     MOV dword ptr [EBX + 0x114],0xffff  ; 0040caba
     MOV EDX,dword ptr [EBX + 0x118]     ; 0040cac4
         ;   Label: LAB_0040cac4
@@ -114,43 +114,43 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 0040cad4
     PUSH EAX                            ; 0040cad7
     PUSH ESI                            ; 0040cad8
-    MOV EBP,dword ptr [0x0067b9a0]      ; 0040cad9 | CGore * g_CGorePtr
-    PUSH EBP                            ; 0040cadf | CGore g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee070 ; 0040cae0 | void core_gore.cpp_CGore_FUN_004ee070(CGore * this_ptr)
-        ;   XREF to: 004ee070 (UNCONDITIONAL_CALL)
+    MOV EBP,dword ptr [0x0067b9a0]      ; 0040cad9 | g_CGorePtr
+    PUSH EBP                            ; 0040cadf | g_CGoreInstance
+    CALL core_gore.cpp_CGore_FUN_004ee070 ; 0040cae0
+        ;   XREF to: 004ee070 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ee070(CGore * this_ptr)
     MOV EAX,dword ptr [EBX + 0x114]     ; 0040cae5
     SUB EAX,0x2000                      ; 0040caeb
     ADD ESP,0x18                        ; 0040caf0
     MOV dword ptr [EBX + 0x114],EAX     ; 0040caf3
     TEST EAX,EAX                        ; 0040caf9
-    JGE 0x0040cb07                      ; 0040cafb | LAB_0040cb07
-        ;   XREF to: 0040cb07 (CONDITIONAL_JUMP)
+    JGE 0x0040cb07                      ; 0040cafb
+        ;   XREF to: 0040cb07 (CONDITIONAL_JUMP)  ; LAB_0040cb07
     MOV dword ptr [EBX + 0x114],0x0     ; 0040cafd
     FLD float ptr [ESP + 0x9c]          ; 0040cb07
         ;   Label: LAB_0040cb07
     SUB ESP,0x8                         ; 0040cb0e
     FSTP double ptr [ESP]               ; 0040cb11
     PUSH EDI                            ; 0040cb14
-    CALL core_ground.cpp_getGroundTypeCode_FUN_004eece0 ; 0040cb15 | char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)
-        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004eece0 ; 0040cb15
+        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004eece0(int type)
     ADD ESP,0x4                         ; 0040cb1a
     PUSH EAX                            ; 0040cb1d
     LEA EAX,[EBX + 0x11c]               ; 0040cb1e
     PUSH EAX                            ; 0040cb24
-    PUSH 0x6142c8                       ; 0040cb25 | = "footstep-%s-!-%s-?.wav @ %f" | s_footstep_s_s_wav_f_006142c8 = footstep-%s-!-%s-?.wav @ %f
+    PUSH 0x6142c8                       ; 0040cb25 | = "footstep-%s-!-%s-?.wav @ %f"
     LEA EAX,[ESP + 0x14]                ; 0040cb2a
     PUSH EAX                            ; 0040cb2e
-    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040cb2f | int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040cb2f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 0040cb34
     PUSH ESI                            ; 0040cb37
     LEA EAX,[ESP + 0x4]                 ; 0040cb38
     PUSH EAX                            ; 0040cb3c
     PUSH EBX                            ; 0040cb3d
-    MOV ECX,dword ptr [0x00681ef8]      ; 0040cb3e | CSound g_CSoundInstance | CSound * g_CSoundPtr
-    PUSH ECX                            ; 0040cb44 | CSound g_CSoundInstance
-    CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 0040cb45 | void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
-        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x00681ef8]      ; 0040cb3e | g_CSoundInstance | g_CSoundPtr
+    PUSH ECX                            ; 0040cb44 | g_CSoundInstance
+    CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40 ; 0040cb45
+        ;   XREF to: 005b3a40 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_playActorSound_FUN_005b3a40(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position)
     ADD ESP,0x10                        ; 0040cb4a
     ADD ESP,0x7c                        ; 0040cb4d
     POP EBP                             ; 0040cb50
@@ -160,22 +160,22 @@ section .text
     RET                                 ; 0040cb54
     CMP dword ptr [EBX + 0x114],0x0     ; 0040cb55
         ;   Label: LAB_0040cb55
-    JG 0x0040cac4                       ; 0040cb5c | LAB_0040cac4
-        ;   XREF to: 0040cac4 (CONDITIONAL_JUMP)
+    JG 0x0040cac4                       ; 0040cb5c
+        ;   XREF to: 0040cac4 (CONDITIONAL_JUMP)  ; LAB_0040cac4
     CMP EDI,0x3                         ; 0040cb62
-    JNZ 0x0040cb07                      ; 0040cb65 | LAB_0040cb07
-        ;   XREF to: 0040cb07 (CONDITIONAL_JUMP)
+    JNZ 0x0040cb07                      ; 0040cb65
+        ;   XREF to: 0040cb07 (CONDITIONAL_JUMP)  ; LAB_0040cb07
     PUSH EAX                            ; 0040cb67
     PUSH 0x4000                         ; 0040cb68
     PUSH EDI                            ; 0040cb6d
     LEA EAX,[EBX + 0x30]                ; 0040cb6e
     PUSH EAX                            ; 0040cb71
     PUSH ESI                            ; 0040cb72
-    MOV EAX,[0x0067b9a0]                ; 0040cb73 | CGore g_CGoreInstance | CGore * g_CGorePtr
-    PUSH EAX                            ; 0040cb78 | CGore g_CGoreInstance
-    CALL core_gore.cpp_CGore_FUN_004ee070 ; 0040cb79 | void core_gore.cpp_CGore_FUN_004ee070(CGore * this_ptr)
-        ;   XREF to: 004ee070 (UNCONDITIONAL_CALL)
+    MOV EAX,[0x0067b9a0]                ; 0040cb73 | g_CGoreInstance | g_CGorePtr
+    PUSH EAX                            ; 0040cb78 | g_CGoreInstance
+    CALL core_gore.cpp_CGore_FUN_004ee070 ; 0040cb79
+        ;   XREF to: 004ee070 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_FUN_004ee070(CGore * this_ptr)
     ADD ESP,0x18                        ; 0040cb7e
-    JMP 0x0040cb07                      ; 0040cb81 | LAB_0040cb07
-        ;   XREF to: 0040cb07 (UNCONDITIONAL_JUMP)
+    JMP 0x0040cb07                      ; 0040cb81
+        ;   XREF to: 0040cb07 (UNCONDITIONAL_JUMP)  ; LAB_0040cb07
 

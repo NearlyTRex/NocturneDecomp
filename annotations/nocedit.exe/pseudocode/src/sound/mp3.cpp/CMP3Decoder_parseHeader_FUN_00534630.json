@@ -1,487 +1,487 @@
 {
   "complexity": {
-    "function_call_count": 11, 
-    "complexity_score": 341, 
-    "pseudocode_lines": 126, 
-    "cross_reference_count": 2, 
-    "global_count": 16, 
-    "total_lines": 458, 
-    "assembly_lines": 332, 
-    "suspect_count": 19, 
+    "assembly_lines": 332,
+    "complexity_score": 341,
+    "cross_reference_count": 2,
+    "function_call_count": 11,
+    "global_count": 16,
+    "pseudocode_lines": 126,
+    "suspect_count": 19,
     "suspect_types": [
-      "stack_param", 
-      "unaffected_reg", 
-      "extra_output", 
-      "badspacebase", 
-      "register_param"
-    ]
-  }, 
-  "function_calls": [
-    {
-      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
-      "addr": "00506f10"
-    }, 
-    {
-      "name": "crt_math.c_round_FUN_005fe6b0", 
-      "addr": "005fe6b0"
-    }, 
-    {
-      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
-      "addr": "005ffacc"
-    }, 
-    {
-      "name": "crt_stdio.c_ftell_FUN_00601560", 
-      "addr": "00601560"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
-      "addr": "0050f9b0"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
-      "addr": "0050f460"
-    }, 
-    {
-      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
-      "addr": "0050f250"
-    }, 
-    {
-      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40", 
-      "addr": "0052ef40"
-    }, 
-    {
-      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0", 
-      "addr": "0052f5b0"
-    }, 
-    {
-      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0", 
-      "addr": "005349e0"
-    }, 
-    {
-      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0", 
-      "addr": "00534ba0"
-    }
-  ], 
-  "globals": [
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063ac5a", 
-      "addr": "0063ac5a", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_MPEG_Layer_2_pick_table__0063ac6b", 
-      "addr": "0063ac6b", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063aca4", 
-      "addr": "0063aca4", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_js_bound_bad_layer_modex_0063acb5", 
-      "addr": "0063acb5", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063ace1", 
-      "addr": "0063ace1", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063acf2", 
-      "addr": "0063acf2", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063ad03", 
-      "addr": "0063ad03", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_sound_mp3_cpp_0063ad14", 
-      "addr": "0063ad14", 
-      "value": null
-    }, 
-    {
-      "type": "TerminatedCString", 
-      "name": "s_Out_of_memory_File_s_0063ad25", 
-      "addr": "0063ad25", 
-      "value": null
-    }, 
-    {
-      "type": "double", 
-      "name": "DOUBLE_0063b2aa", 
-      "addr": "0063b2aa", 
-      "value": "1000"
-    }, 
-    {
-      "type": "void*[4][4]", 
-      "name": "g_MpegLayer2AllocationTables", 
-      "addr": "0067d820", 
-      "value": null
-    }, 
-    {
-      "type": "double[2][4]", 
-      "name": "g_MpegSampleRateTable", 
-      "addr": "0067e218", 
-      "value": null
-    }, 
-    {
-      "type": "int[2][3][15]", 
-      "name": "g_MpegBitrateTable", 
-      "addr": "0067e258", 
-      "value": null
-    }, 
-    {
-      "type": "char*", 
-      "name": "g_CurrentFilename", 
-      "addr": "02f0ca48", 
-      "value": null
-    }, 
-    {
-      "type": "int", 
-      "name": "g_CurrentLineNumber", 
-      "addr": "02f0ca4c", 
-      "value": null
-    }, 
-    {
-      "type": "char[256]", 
-      "name": "g_CurrentMp3Filename", 
-      "addr": "02f68188", 
-      "value": null
-    }
-  ], 
-  "suspects": [
-    {
-      "line": 13, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EAX;"
-    }, 
-    {
-      "line": 15, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 17, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 18, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "streambuf *unaff_EBP;"
-    }, 
-    {
-      "line": 22, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000024;"
-    }, 
-    {
-      "line": 49, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "file_handle[0x2f8]._link = unaff_EBP;"
-    }, 
-    {
-      "line": 50, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pvVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250((int)unaff_EBP,\"..\\\\sound\\\\mp3.cpp\",0x1ff);"
-    }, 
-    {
-      "line": 64, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "bitstream = (CFileBitStream *)(in_stack_0000001c + 0x5320);"
-    }, 
-    {
-      "line": 66, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uVar6 = *(uint *)(in_stack_0000001c + 0x532c) & 7;"
-    }, 
-    {
-      "line": 72, 
-      "match": "in_stack_0000001c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(*(int *)(in_stack_0000001c + 0x533c) == 0))) {"
-    }, 
-    {
-      "line": 77, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CFileBitStream *)(in_stack_00000024 + 0x5320),(SMpegFrameHeader *)&local_28);"
-    }, 
-    {
-      "line": 86, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if (((iVar5 == 0x30) && (0x37 < extraout_EDX)) ||"
-    }, 
-    {
-      "line": 87, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {"
-    }, 
-    {
-      "line": 87, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {"
-    }, 
-    {
-      "line": 90, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "else if ((iVar5 == 0x30) || (extraout_EDX < 0x60)) {"
-    }, 
-    {
-      "line": 91, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "if ((iVar5 == 0x20) || (0x30 < extraout_EDX)) {"
-    }, 
-    {
-      "line": 125, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*(int *)(extraout_EAX + 0x100) = (int)ROUND(dVar8);"
-    }
-  ], 
-  "function": {
-    "convention": "__cdecl", 
-    "address": "00534630", 
-    "signature": "int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder * this_ptr, FILE * file_handle, int file_size)", 
-    "address_range": [
-      [
-        "00534630", 
-        "005349dd"
-      ]
-    ], 
-    "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630"
-  }, 
-  "stack_frame": {
-    "local_size": 124, 
-    "variables": [
-      {
-        "offset": -120, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_78"
-      }, 
-      {
-        "offset": -116, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_74"
-      }, 
-      {
-        "offset": -108, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_6c"
-      }, 
-      {
-        "offset": -104, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_68"
-      }, 
-      {
-        "offset": -92, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_5c"
-      }, 
-      {
-        "offset": -88, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_58"
-      }, 
-      {
-        "offset": -72, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_48"
-      }, 
-      {
-        "offset": -68, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_44"
-      }, 
-      {
-        "offset": -60, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_3c"
-      }, 
-      {
-        "offset": -56, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_38"
-      }, 
-      {
-        "offset": -52, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_34"
-      }, 
-      {
-        "offset": -48, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_30"
-      }, 
-      {
-        "offset": -44, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_2c"
-      }, 
-      {
-        "offset": -40, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_28"
-      }, 
-      {
-        "offset": -36, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_24"
-      }, 
-      {
-        "offset": -32, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_20"
-      }, 
-      {
-        "offset": -28, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_1c"
-      }, 
-      {
-        "offset": -24, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_18"
-      }, 
-      {
-        "offset": -20, 
-        "is_param": false, 
-        "type": "undefined4", 
-        "size": 4, 
-        "name": "local_14"
-      }, 
-      {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CMP3Decoder *", 
-        "size": 4, 
-        "name": "this_ptr"
-      }, 
-      {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "FILE *", 
-        "size": 4, 
-        "name": "file_handle"
-      }, 
-      {
-        "offset": 12, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "file_size"
-      }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 136, 
-    "param_offset": 4, 
-    "param_size": 12
-  }, 
+      "extra_output",
+      "badspacebase",
+      "unaffected_reg",
+      "register_param",
+      "stack_param"
+    ],
+    "total_lines": 458
+  },
   "cross_references": [
     {
-      "from_addr": "005345af", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550", 
-      "addr": "00534550"
-    }, 
+      "addr": "00534550",
+      "from_addr": "005345af",
+      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
-      "from_addr": "005acfba", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20", 
-      "addr": "005acf20"
+      "addr": "005acf20",
+      "from_addr": "005acfba",
+      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00534630",
+    "address_range": [
+      [
+        "00534630",
+        "005349dd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630",
+    "signature": "int sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder * this_ptr, FILE * file_handle, int file_size)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fe6b0",
+      "name": "crt_math.c_round_FUN_005fe6b0"
+    },
+    {
+      "addr": "005ffacc",
+      "name": "crt_stdio.c_fseek_FUN_005ffacc"
+    },
+    {
+      "addr": "00601560",
+      "name": "crt_stdio.c_ftell_FUN_00601560"
+    },
+    {
+      "addr": "0050f9b0",
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
+    },
+    {
+      "addr": "0050f460",
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
+    },
+    {
+      "addr": "0050f250",
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
+    },
+    {
+      "addr": "0052ef40",
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40"
+    },
+    {
+      "addr": "0052f5b0",
+      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0"
+    },
+    {
+      "addr": "005349e0",
+      "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0"
+    },
+    {
+      "addr": "00534ba0",
+      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0063ac5a",
+      "name": "s_sound_mp3_cpp_0063ac5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ac6b",
+      "name": "s_MPEG_Layer_2_pick_table__0063ac6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063aca4",
+      "name": "s_sound_mp3_cpp_0063aca4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063acb5",
+      "name": "s_js_bound_bad_layer_modex_0063acb5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ace1",
+      "name": "s_sound_mp3_cpp_0063ace1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063acf2",
+      "name": "s_sound_mp3_cpp_0063acf2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ad03",
+      "name": "s_sound_mp3_cpp_0063ad03",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ad14",
+      "name": "s_sound_mp3_cpp_0063ad14",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063ad25",
+      "name": "s_Out_of_memory_File_s_0063ad25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0063b2aa",
+      "name": "DOUBLE_0063b2aa",
+      "type": "double",
+      "value": "1000"
+    },
+    {
+      "addr": "0067d820",
+      "name": "g_MpegLayer2AllocationTables",
+      "type": "void*[4][4]",
+      "value": null
+    },
+    {
+      "addr": "0067e218",
+      "name": "g_MpegSampleRateTable",
+      "type": "double[2][4]",
+      "value": null
+    },
+    {
+      "addr": "0067e258",
+      "name": "g_MpegBitrateTable",
+      "type": "int[2][3][15]",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    },
+    {
+      "addr": "02f68188",
+      "name": "g_CurrentMp3Filename",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 136,
+    "local_size": 124,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "file_size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 17,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 17,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBP",
+      "text": "streambuf *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000024",
+      "text": "int in_stack_00000024;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_EBP",
+      "text": "file_handle[0x2f8]._link = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EBP",
+      "text": "pvVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250((int)unaff_EBP,\"..\\\\sound\\\\mp3.cpp\",0x1ff);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_0000001c",
+      "text": "bitstream = (CFileBitStream *)(in_stack_0000001c + 0x5320);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_0000001c",
+      "text": "uVar6 = *(uint *)(in_stack_0000001c + 0x532c) & 7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_0000001c",
+      "text": "(*(int *)(in_stack_0000001c + 0x533c) == 0))) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 77,
+      "match": "in_stack_00000024",
+      "text": "((CFileBitStream *)(in_stack_00000024 + 0x5320),(SMpegFrameHeader *)&local_28);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 86,
+      "match": "extraout_EDX",
+      "text": "if (((iVar5 == 0x30) && (0x37 < extraout_EDX)) ||",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 87,
+      "match": "extraout_EDX",
+      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 87,
+      "match": "extraout_EDX",
+      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 90,
+      "match": "extraout_EDX",
+      "text": "else if ((iVar5 == 0x30) || (extraout_EDX < 0x60)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 91,
+      "match": "extraout_EDX",
+      "text": "if ((iVar5 == 0x20) || (0x30 < extraout_EDX)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 125,
+      "match": "extraout_EAX",
+      "text": "*(int *)(extraout_EAX + 0x100) = (int)ROUND(dVar8);",
+      "type": "extra_output"
     }
   ]
 }

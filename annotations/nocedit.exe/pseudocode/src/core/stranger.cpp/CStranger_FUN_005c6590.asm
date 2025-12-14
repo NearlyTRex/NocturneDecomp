@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005c6593
     MOV EDX,dword ptr [EBX + 0x1fc2c]   ; 005c6597
     TEST EDX,EDX                        ; 005c659d
-    JNZ 0x005c65a5                      ; 005c659f | LAB_005c65a5
-        ;   XREF to: 005c65a5 (CONDITIONAL_JUMP)
+    JNZ 0x005c65a5                      ; 005c659f
+        ;   XREF to: 005c65a5 (CONDITIONAL_JUMP)  ; LAB_005c65a5
     POP EDI                             ; 005c65a1
         ;   Label: LAB_005c65a1
     POP ESI                             ; 005c65a2
@@ -43,20 +43,20 @@ section .text
     PUSH ECX                            ; 005c65bc
     MOV ESI,dword ptr [EBX + 0x1fc2c]   ; 005c65bd
     PUSH ESI                            ; 005c65c3
-    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005c65c4 | CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_castToClassHash_FUN_0040c790 ; 005c65c4
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c790(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 005c65c9
     ADD ESP,0x8                         ; 005c65cb
     TEST EAX,EAX                        ; 005c65ce
-    JZ 0x005c65a1                       ; 005c65d0 | LAB_005c65a1
-        ;   XREF to: 005c65a1 (CONDITIONAL_JUMP)
+    JZ 0x005c65a1                       ; 005c65d0
+        ;   XREF to: 005c65a1 (CONDITIONAL_JUMP)  ; LAB_005c65a1
     PUSH EAX                            ; 005c65d2
-    CALL core_dynamite.cpp_FUN_0049cf90 ; 005c65d3 | undefined core_dynamite.cpp_FUN_0049cf90()
-        ;   XREF to: 0049cf90 (UNCONDITIONAL_CALL)
+    CALL core_dynamite.cpp_FUN_0049cf90 ; 005c65d3
+        ;   XREF to: 0049cf90 (UNCONDITIONAL_CALL)  ; undefined core_dynamite.cpp_FUN_0049cf90()
     ADD ESP,0x4                         ; 005c65d8
     TEST EAX,EAX                        ; 005c65db
-    JZ 0x005c65a1                       ; 005c65dd | LAB_005c65a1
-        ;   XREF to: 005c65a1 (CONDITIONAL_JUMP)
+    JZ 0x005c65a1                       ; 005c65dd
+        ;   XREF to: 005c65a1 (CONDITIONAL_JUMP)  ; LAB_005c65a1
     LEA EAX,[ESI + 0x57c]               ; 005c65df
     MOV dword ptr [EAX + 0x8],0x0       ; 005c65e5
     PUSH ESI                            ; 005c65ec
@@ -68,14 +68,14 @@ section .text
     CALL dword ptr [EAX + 0xf8]         ; 005c65fe
     MOV dword ptr [EBX + 0x1fc2c],0x0   ; 005c6604
     MOV dword ptr [EBX + 0x2a8c],0x0    ; 005c660e
-    FLD float ptr [0x00663744]          ; 005c6618 | undefined4 DAT_00663744
+    FLD float ptr [0x00663744]          ; 005c6618 | DAT_00663744
     MOV dword ptr [EBX + 0x2a90],0x0    ; 005c661e
     ADD ESP,0x4                         ; 005c6628
     MOV EDI,dword ptr [EBX + 0x1fc38]   ; 005c662b
     FSTP float ptr [EBX + 0x1fbe4]      ; 005c6631
     CMP EDI,0x3                         ; 005c6637
-    JNZ 0x005c65a1                      ; 005c663a | LAB_005c65a1
-        ;   XREF to: 005c65a1 (CONDITIONAL_JUMP)
+    JNZ 0x005c65a1                      ; 005c663a
+        ;   XREF to: 005c65a1 (CONDITIONAL_JUMP)  ; LAB_005c65a1
     MOV dword ptr [EBX + 0x1fc38],0x0   ; 005c6640
     POP EDI                             ; 005c664a
     POP ESI                             ; 005c664b

@@ -52,8 +52,8 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
   cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_0054bdb0(this_ptr,iVar3);
   this_ptr->base_path = bitmap_height;
   this_ptr->extension = in_stack_00000024;
-  bitmap_data = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                                   ((int)this_ptr,"..\\cockpit\\pkbmpset.cpp",0xd3);
+  bitmap_data = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                          ((int)this_ptr,"..\\cockpit\\pkbmpset.cpp",0xd3);
   if (bitmap_data == (uchar *)0x0) {
     crt_stdio_c_sprintf_FUN_005fdbd0(acStack_c4,"Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW");
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";

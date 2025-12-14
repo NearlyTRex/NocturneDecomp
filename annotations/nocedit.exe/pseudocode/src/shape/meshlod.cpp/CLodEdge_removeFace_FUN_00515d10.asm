@@ -24,12 +24,12 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00515d15
     PUSH EDX                            ; 00515d19
     PUSH EBX                            ; 00515d1a
-    CALL shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60 ; 00515d1b | int shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60(CLodEdge * this_ptr, int tri_index)
-        ;   XREF to: 00515d60 (UNCONDITIONAL_CALL)
+    CALL shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60 ; 00515d1b
+        ;   XREF to: 00515d60 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60(CLodEdge * this_ptr, int tri_index)
     ADD ESP,0x8                         ; 00515d20
     TEST EAX,EAX                        ; 00515d23
-    JGE 0x00515d29                      ; 00515d25 | LAB_00515d29
-        ;   XREF to: 00515d29 (CONDITIONAL_JUMP)
+    JGE 0x00515d29                      ; 00515d25
+        ;   XREF to: 00515d29 (CONDITIONAL_JUMP)  ; LAB_00515d29
     POP EBX                             ; 00515d27
     RET                                 ; 00515d28
     MOV ECX,dword ptr [EBX + 0x24]      ; 00515d29
@@ -47,8 +47,8 @@ section .text
     ADD EAX,EBX                         ; 00515d41
     PUSH EAX                            ; 00515d43
     MOV dword ptr [EBX + -0x4],ECX      ; 00515d44
-    CALL crt_string.c_memmove_FUN_005fe5e0 ; 00515d47 | void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
-        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)
+    CALL crt_string.c_memmove_FUN_005fe5e0 ; 00515d47
+        ;   XREF to: 005fe5e0 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 00515d4c
     POP EBX                             ; 00515d4f
     RET                                 ; 00515d50

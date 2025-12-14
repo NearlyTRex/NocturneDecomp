@@ -1,59 +1,59 @@
 {
   "complexity": {
-    "function_call_count": 0, 
-    "complexity_score": 7, 
-    "pseudocode_lines": 7, 
-    "cross_reference_count": 0, 
-    "global_count": 1, 
-    "total_lines": 16, 
-    "assembly_lines": 9, 
-    "suspect_count": 0, 
-    "suspect_types": []
-  }, 
-  "function_calls": [], 
-  "globals": [
-    {
-      "type": "char[256]", 
-      "name": "g_KeyboardState", 
-      "addr": "02d03e98", 
-      "value": null
-    }
-  ], 
-  "suspects": [], 
+    "assembly_lines": 9,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
+  "cross_references": [],
   "function": {
-    "convention": "__cdecl", 
-    "address": "00502430", 
-    "signature": "char engine_keys.cpp_CKeys_getAndClearKeyState_FUN_00502430(CKeys * this, int keyCode)", 
+    "address": "00502430",
     "address_range": [
       [
-        "00502430", 
+        "00502430",
         "00502446"
       ]
-    ], 
-    "name": "engine_keys.cpp_CKeys_getAndClearKeyState_FUN_00502430"
-  }, 
+    ],
+    "convention": "__cdecl",
+    "name": "engine_keys.cpp_CKeys_getAndClearKeyState_FUN_00502430",
+    "signature": "char engine_keys.cpp_CKeys_getAndClearKeyState_FUN_00502430(CKeys * this, int keyCode)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02d03e98",
+      "name": "g_KeyboardState",
+      "type": "char[256]",
+      "value": null
+    }
+  ],
   "stack_frame": {
-    "local_size": 4, 
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
     "variables": [
       {
-        "offset": 4, 
-        "is_param": true, 
-        "type": "CKeys *", 
-        "size": 4, 
-        "name": "this"
-      }, 
+        "is_param": true,
+        "name": "this",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeys *"
+      },
       {
-        "offset": 8, 
-        "is_param": true, 
-        "type": "int", 
-        "size": 4, 
-        "name": "keyCode"
+        "is_param": true,
+        "name": "keyCode",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
-    ], 
-    "return_addr_offset": 0, 
-    "frame_size": 12, 
-    "param_offset": 4, 
-    "param_size": 8
-  }, 
-  "cross_references": []
+    ]
+  },
+  "suspects": []
 }

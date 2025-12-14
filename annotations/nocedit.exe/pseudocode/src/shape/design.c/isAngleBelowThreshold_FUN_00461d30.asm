@@ -29,8 +29,8 @@ section .text
     PUSH EAX                            ; 00461d3f
     MOV EAX,dword ptr [EBP + 0x14]      ; 00461d40
     PUSH EAX                            ; 00461d43
-    CALL shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0 ; 00461d44 | double shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0(SShapeEditorPolygon * normal1_ptr, SShapeEditorPolygon * normal2_ptr)
-        ;   XREF to: 00461cb0 (UNCONDITIONAL_CALL)
+    CALL shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0 ; 00461d44
+        ;   XREF to: 00461cb0 (UNCONDITIONAL_CALL)  ; double shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0(SShapeEditorPolygon * normal1_ptr, SShapeEditorPolygon * normal2_ptr)
     MOV dword ptr [EBP + -0xc],EAX      ; 00461d49
     MOV dword ptr [EBP + -0x8],EDX      ; 00461d4c
     FLD double ptr [EBP + -0xc]         ; 00461d4f
@@ -38,11 +38,11 @@ section .text
     FCOMP double ptr [EBP + 0x1c]       ; 00461d55
     FNSTSW AX                           ; 00461d58
     SAHF                                ; 00461d5a
-    JNC 0x00461d66                      ; 00461d5b | LAB_00461d66
-        ;   XREF to: 00461d66 (CONDITIONAL_JUMP)
+    JNC 0x00461d66                      ; 00461d5b
+        ;   XREF to: 00461d66 (CONDITIONAL_JUMP)  ; LAB_00461d66
     MOV dword ptr [EBP + -0x4],0x1      ; 00461d5d
-    JMP 0x00461d6d                      ; 00461d64 | LAB_00461d6d
-        ;   XREF to: 00461d6d (UNCONDITIONAL_JUMP)
+    JMP 0x00461d6d                      ; 00461d64
+        ;   XREF to: 00461d6d (UNCONDITIONAL_JUMP)  ; LAB_00461d6d
     MOV dword ptr [EBP + -0x4],0x0      ; 00461d66
         ;   Label: LAB_00461d66
     MOV EAX,dword ptr [EBP + -0x4]      ; 00461d6d

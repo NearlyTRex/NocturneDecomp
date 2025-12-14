@@ -37,8 +37,8 @@ section .text
     PUSH EDX                            ; 00489546
     LEA EAX,[ESP + 0x8]                 ; 00489547
     PUSH EAX                            ; 0048954b
-    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0048954c | int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0048954c
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t * args)
     ADD ESP,0xc                         ; 00489551
     MOV EBX,dword ptr [ESP + 0x101c]    ; 00489554
     PUSH EBX                            ; 0048955b
@@ -50,8 +50,8 @@ section .text
     XOR ECX,ECX                         ; 00489570
     PUSH EDI                            ; 00489572
     MOV dword ptr [ESP + 0x1010],ECX    ; 00489573
-    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 ; 0048957a | void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0(CDrawSurface * this_ptr, int x, int y, int height, ...)
-        ;   XREF to: 004894c0 (UNCONDITIONAL_CALL)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 ; 0048957a
+        ;   XREF to: 004894c0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0(CDrawSurface * this_ptr, int x, int y, int height, ...)
     ADD ESP,0x10                        ; 0048957f
     ADD ESP,0x1004                      ; 00489582
     POP EDI                             ; 00489588

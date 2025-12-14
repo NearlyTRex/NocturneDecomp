@@ -21,18 +21,18 @@ section .text
     SUB ESP,0x4                         ; 004eea71
     MOV EBX,dword ptr [ESP + 0xc]       ; 004eea74
     PUSH EBX                            ; 004eea78
-    CALL core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 ; 004eea79 | void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
-        ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)
+    CALL core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 ; 004eea79
+        ;   XREF to: 0040d040 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004eea7e
-    MOV EAX,[0x0067cf44]                ; 004eea81 | CKeys * g_CKeysPtr
+    MOV EAX,[0x0067cf44]                ; 004eea81 | g_CKeysPtr
     PUSH 0x1d                           ; 004eea86
-    MOV EDX,dword ptr [EAX]             ; 004eea88 | void * g_CKeysPtr
-    PUSH EAX                            ; 004eea8a | void * g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 004eea88 | g_CKeysPtr
+    PUSH EAX                            ; 004eea8a | g_CKeysPtr
     CALL dword ptr [EDX]                ; 004eea8b
     ADD ESP,0x8                         ; 004eea8d
     TEST EAX,EAX                        ; 004eea90
-    JNZ 0x004eea9f                      ; 004eea92 | LAB_004eea9f
-        ;   XREF to: 004eea9f (CONDITIONAL_JUMP)
+    JNZ 0x004eea9f                      ; 004eea92
+        ;   XREF to: 004eea9f (CONDITIONAL_JUMP)  ; LAB_004eea9f
     MOV dword ptr [EBX + 0x2d4],EAX     ; 004eea94
     ADD ESP,0x4                         ; 004eea9a
     POP EBX                             ; 004eea9d
@@ -40,8 +40,8 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004eea9f
         ;   Label: LAB_004eea9f
     PUSH EAX                            ; 004eeaa5
-    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004eeaa6 | CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
-        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80 ; 004eeaa6
+        ;   XREF to: 00478d80 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(CKeyFramedModelInstance * this_ptr)
     MOV EAX,dword ptr [EAX + 0x100]     ; 004eeaab
     ADD ESP,0x4                         ; 004eeab1
     DEC EAX                             ; 004eeab4
